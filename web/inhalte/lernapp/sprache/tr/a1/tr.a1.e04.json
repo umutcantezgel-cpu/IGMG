@@ -1,0 +1,3560 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "tr",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "tr.a1.e04",
+    "reihenfolge": 5,
+    "thema": {
+      "de": "Bei uns zu Hause: Wohnung und Haustiere",
+      "tr": "Bizim evde: ev ve evcil hayvanlar",
+      "ar": "في بيتنا: البيت والحيوانات الأليفة"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann sagen, welche Räume und Möbel es in meiner Wohnung gibt.",
+        "tr": "Evimizde hangi odaların ve eşyaların olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أقول ما في بيتي من غرف وأثاث."
+      },
+      {
+        "de": "Ich kann sagen, was ich habe und was mir fehlt.",
+        "tr": "Neyim olduğunu ve neyim olmadığını söyleyebilirim.",
+        "ar": "أستطيع أن أقول ما عندي وما ليس عندي."
+      },
+      {
+        "de": "Ich kann über ein Haustier sprechen.",
+        "tr": "Bir evcil hayvan hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدث عن حيوان أليف."
+      }
+    ],
+    "symbol": "house",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "tr.a1.e04.var",
+      "lemma": "var",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 22,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.yok",
+      "lemma": "yok",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "frequenzRang": 27,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.ev",
+      "lemma": "ev",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "evler",
+        "akk/poss.3sg": "evi",
+        "dat": "eve",
+        "gen/poss.2sg": "evin",
+        "ins": "evle",
+        "poss.1sg": "evim",
+        "poss.1pl": "evimiz",
+        "poss.2pl": "eviniz",
+        "lok": "evde",
+        "abl": "evden",
+        "poss.3pl": "evleri"
+      },
+      "frequenzRang": 244,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.oda",
+      "lemma": "oda",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "odalar",
+        "akk": "odayı",
+        "dat": "odaya",
+        "gen": "odanın",
+        "ins": "odayla",
+        "poss.1sg": "odam",
+        "poss.2sg": "odan",
+        "poss.3sg": "odası",
+        "poss.1pl": "odamız",
+        "poss.2pl": "odanız",
+        "lok": "odada",
+        "abl": "odadan",
+        "poss.3pl": "odaları"
+      },
+      "frequenzRang": 909,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.mutfak",
+      "lemma": "mutfak",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "mutfak → mutfağ-"
+      },
+      "formen": {
+        "pl": "mutfaklar",
+        "akk/poss.3sg": "mutfağı",
+        "dat": "mutfağa",
+        "gen/poss.2sg": "mutfağın",
+        "ins": "mutfakla",
+        "poss.1sg": "mutfağım",
+        "poss.1pl": "mutfağımız",
+        "poss.2pl": "mutfağınız",
+        "lok": "mutfakta",
+        "abl": "mutfaktan",
+        "poss.3pl": "mutfakları"
+      },
+      "frequenzRang": 5033,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.banyo",
+      "lemma": "banyo",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "banyolar",
+        "akk": "banyoyu",
+        "dat": "banyoya",
+        "gen": "banyonun",
+        "ins": "banyoyla",
+        "poss.1sg": "banyom",
+        "poss.2sg": "banyon",
+        "poss.3sg": "banyosu",
+        "poss.1pl": "banyomuz",
+        "poss.2pl": "banyonuz",
+        "lok": "banyoda",
+        "abl": "banyodan",
+        "poss.3pl": "banyoları"
+      },
+      "frequenzRang": 3519,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.salon",
+      "lemma": "salon",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "salonlar",
+        "akk/poss.3sg": "salonu",
+        "dat": "salona",
+        "gen/poss.2sg": "salonun",
+        "ins": "salonla",
+        "poss.1sg": "salonum",
+        "poss.1pl": "salonumuz",
+        "poss.2pl": "salonunuz",
+        "lok": "salonda",
+        "abl": "salondan",
+        "poss.3pl": "salonları"
+      },
+      "frequenzRang": 4119,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.balkon",
+      "lemma": "balkon",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "balkonlar",
+        "akk/poss.3sg": "balkonu",
+        "dat": "balkona",
+        "gen/poss.2sg": "balkonun",
+        "ins": "balkonla",
+        "poss.1sg": "balkonum",
+        "poss.1pl": "balkonumuz",
+        "poss.2pl": "balkonunuz",
+        "lok": "balkonda",
+        "abl": "balkondan",
+        "poss.3pl": "balkonları"
+      },
+      "frequenzRang": 12022,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.tuvalet",
+      "lemma": "tuvalet",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "tuvaletler",
+        "akk/poss.3sg": "tuvaleti",
+        "dat": "tuvalete",
+        "gen/poss.2sg": "tuvaletin",
+        "ins": "tuvaletle",
+        "poss.1sg": "tuvaletim",
+        "poss.1pl": "tuvaletimiz",
+        "poss.2pl": "tuvaletiniz",
+        "lok": "tuvalette",
+        "abl": "tuvaletten",
+        "poss.3pl": "tuvaletleri"
+      },
+      "frequenzRang": 4231,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.bahce",
+      "lemma": "bahçe",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "bahçeler",
+        "akk": "bahçeyi",
+        "dat": "bahçeye",
+        "gen": "bahçenin",
+        "ins": "bahçeyle",
+        "poss.1sg": "bahçem",
+        "poss.2sg": "bahçen",
+        "poss.3sg": "bahçesi",
+        "poss.1pl": "bahçemiz",
+        "poss.2pl": "bahçeniz",
+        "lok": "bahçede",
+        "abl": "bahçeden",
+        "poss.3pl": "bahçeleri"
+      },
+      "frequenzRang": 4768,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.yatak",
+      "lemma": "yatak",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "yatak → yatağ-"
+      },
+      "formen": {
+        "pl": "yataklar",
+        "akk/poss.3sg": "yatağı",
+        "dat": "yatağa",
+        "gen/poss.2sg": "yatağın",
+        "ins": "yatakla",
+        "poss.1sg": "yatağım",
+        "poss.1pl": "yatağımız",
+        "poss.2pl": "yatağınız",
+        "lok": "yatakta",
+        "abl": "yataktan",
+        "poss.3pl": "yatakları"
+      },
+      "frequenzRang": 1877,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.dolap",
+      "lemma": "dolap",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "dolap → dolab-"
+      },
+      "formen": {
+        "pl": "dolaplar",
+        "akk/poss.3sg": "dolabı",
+        "dat": "dolaba",
+        "gen/poss.2sg": "dolabın",
+        "ins": "dolapla",
+        "poss.1sg": "dolabım",
+        "poss.1pl": "dolabımız",
+        "poss.2pl": "dolabınız",
+        "lok": "dolapta",
+        "abl": "dolaptan",
+        "poss.3pl": "dolapları"
+      },
+      "frequenzRang": 11576,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.kanepe",
+      "lemma": "kanepe",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "kanepeler",
+        "akk": "kanepeyi",
+        "dat": "kanepeye",
+        "gen": "kanepenin",
+        "ins": "kanepeyle",
+        "poss.1sg": "kanepem",
+        "poss.2sg": "kanepen",
+        "poss.3sg": "kanepesi",
+        "poss.1pl": "kanepemiz",
+        "poss.2pl": "kanepeniz",
+        "lok": "kanepede",
+        "abl": "kanepeden",
+        "poss.3pl": "kanepeleri"
+      },
+      "frequenzRang": 23255,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.lamba",
+      "lemma": "lamba",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "lambalar",
+        "akk": "lambayı",
+        "dat": "lambaya",
+        "gen": "lambanın",
+        "ins": "lambayla",
+        "poss.1sg": "lambam",
+        "poss.2sg": "lamban",
+        "poss.3sg": "lambası",
+        "poss.1pl": "lambamız",
+        "poss.2pl": "lambanız",
+        "lok": "lambada",
+        "abl": "lambadan",
+        "poss.3pl": "lambaları"
+      },
+      "frequenzRang": 15699,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.duvar",
+      "lemma": "duvar",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "duvarlar",
+        "akk/poss.3sg": "duvarı",
+        "dat": "duvara",
+        "gen/poss.2sg": "duvarın",
+        "ins": "duvarla",
+        "poss.1sg": "duvarım",
+        "poss.1pl": "duvarımız",
+        "poss.2pl": "duvarınız",
+        "lok": "duvarda",
+        "abl": "duvardan",
+        "poss.3pl": "duvarları"
+      },
+      "frequenzRang": 2564,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.buzdolabi",
+      "lemma": "buzdolabı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "kompositum": "buz + dolap + -ı; Endungen nach -ı mit n (buzdolabında)"
+      },
+      "formen": {
+        "pl": "buzdolapları",
+        "akk": "buzdolabını",
+        "dat": "buzdolabına",
+        "lok": "buzdolabında",
+        "abl": "buzdolabından",
+        "gen": "buzdolabının",
+        "poss.1sg": "buzdolabım",
+        "poss.2sg": "buzdolabın",
+        "poss.1pl": "buzdolabımız"
+      },
+      "frequenzRang": 12286,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.televizyon",
+      "lemma": "televizyon",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "televizyonlar",
+        "akk/poss.3sg": "televizyonu",
+        "dat": "televizyona",
+        "gen/poss.2sg": "televizyonun",
+        "ins": "televizyonla",
+        "poss.1sg": "televizyonum",
+        "poss.1pl": "televizyonumuz",
+        "poss.2pl": "televizyonunuz",
+        "lok": "televizyonda",
+        "abl": "televizyondan",
+        "poss.3pl": "televizyonları"
+      },
+      "frequenzRang": 1367,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.bilgisayar",
+      "lemma": "bilgisayar",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "bilgisayarlar",
+        "akk/poss.3sg": "bilgisayarı",
+        "dat": "bilgisayara",
+        "gen/poss.2sg": "bilgisayarın",
+        "ins": "bilgisayarla",
+        "poss.1sg": "bilgisayarım",
+        "poss.1pl": "bilgisayarımız",
+        "poss.2pl": "bilgisayarınız",
+        "lok": "bilgisayarda",
+        "abl": "bilgisayardan",
+        "poss.3pl": "bilgisayarları"
+      },
+      "frequenzRang": 852,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.telefon",
+      "lemma": "telefon",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "telefonlar",
+        "akk/poss.3sg": "telefonu",
+        "dat": "telefona",
+        "gen/poss.2sg": "telefonun",
+        "ins": "telefonla",
+        "poss.1sg": "telefonum",
+        "poss.1pl": "telefonumuz",
+        "poss.2pl": "telefonunuz",
+        "lok": "telefonda",
+        "abl": "telefondan",
+        "poss.3pl": "telefonları"
+      },
+      "frequenzRang": 484,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.anahtar",
+      "lemma": "anahtar",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "anahtarlar",
+        "akk/poss.3sg": "anahtarı",
+        "dat": "anahtara",
+        "gen/poss.2sg": "anahtarın",
+        "ins": "anahtarla",
+        "poss.1sg": "anahtarım",
+        "poss.1pl": "anahtarımız",
+        "poss.2pl": "anahtarınız",
+        "lok": "anahtarda",
+        "abl": "anahtardan",
+        "poss.3pl": "anahtarları"
+      },
+      "frequenzRang": 2097,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.isik",
+      "lemma": "ışık",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "ışık → ışığ-"
+      },
+      "formen": {
+        "pl": "ışıklar",
+        "akk/poss.3sg": "ışığı",
+        "dat": "ışığa",
+        "gen/poss.2sg": "ışığın",
+        "ins": "ışıkla",
+        "poss.1sg": "ışığım",
+        "poss.1pl": "ışığımız",
+        "poss.2pl": "ışığınız",
+        "lok": "ışıkta",
+        "abl": "ışıktan",
+        "poss.3pl": "ışıkları"
+      },
+      "frequenzRang": 800,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.cicek",
+      "lemma": "çiçek",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "çiçek → çiçeğ-"
+      },
+      "formen": {
+        "pl": "çiçekler",
+        "akk/poss.3sg": "çiçeği",
+        "dat": "çiçeğe",
+        "gen/poss.2sg": "çiçeğin",
+        "ins": "çiçekle",
+        "poss.1sg": "çiçeğim",
+        "poss.1pl": "çiçeğimiz",
+        "poss.2pl": "çiçeğiniz",
+        "lok": "çiçekte",
+        "abl": "çiçekten",
+        "poss.3pl": "çiçekleri"
+      },
+      "frequenzRang": 1407,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.oyuncak",
+      "lemma": "oyuncak",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "oyuncak → oyuncağ-"
+      },
+      "formen": {
+        "pl": "oyuncaklar",
+        "akk/poss.3sg": "oyuncağı",
+        "dat": "oyuncağa",
+        "gen/poss.2sg": "oyuncağın",
+        "ins": "oyuncakla",
+        "poss.1sg": "oyuncağım",
+        "poss.1pl": "oyuncağımız",
+        "poss.2pl": "oyuncağınız",
+        "lok": "oyuncakta",
+        "abl": "oyuncaktan",
+        "poss.3pl": "oyuncakları"
+      },
+      "frequenzRang": 3565,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.kedi",
+      "lemma": "kedi",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "kediler",
+        "akk": "kediyi",
+        "dat": "kediye",
+        "gen": "kedinin",
+        "ins": "kediyle",
+        "poss.1sg": "kedim",
+        "poss.2sg": "kedin",
+        "poss.3sg": "kedisi",
+        "poss.1pl": "kedimiz",
+        "poss.2pl": "kediniz",
+        "lok": "kedide",
+        "abl": "kediden",
+        "poss.3pl": "kedileri"
+      },
+      "frequenzRang": 1691,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.kus",
+      "lemma": "kuş",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "kuşlar",
+        "akk/poss.3sg": "kuşu",
+        "dat": "kuşa",
+        "gen/poss.2sg": "kuşun",
+        "ins": "kuşla",
+        "poss.1sg": "kuşum",
+        "poss.1pl": "kuşumuz",
+        "poss.2pl": "kuşunuz",
+        "lok": "kuşta",
+        "abl": "kuştan",
+        "poss.3pl": "kuşları"
+      },
+      "frequenzRang": 1491,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.balik",
+      "lemma": "balık",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "balık → balığ-"
+      },
+      "formen": {
+        "pl": "balıklar",
+        "akk/poss.3sg": "balığı",
+        "dat": "balığa",
+        "gen/poss.2sg": "balığın",
+        "ins": "balıkla",
+        "poss.1sg": "balığım",
+        "poss.1pl": "balığımız",
+        "poss.2pl": "balığınız",
+        "lok": "balıkta",
+        "abl": "balıktan",
+        "poss.3pl": "balıkları"
+      },
+      "frequenzRang": 995,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.kaplumbaga",
+      "lemma": "kaplumbağa",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "kaplumbağalar",
+        "akk": "kaplumbağayı",
+        "dat": "kaplumbağaya",
+        "gen": "kaplumbağanın",
+        "ins": "kaplumbağayla",
+        "poss.1sg": "kaplumbağam",
+        "poss.2sg": "kaplumbağan",
+        "poss.3sg": "kaplumbağası",
+        "poss.1pl": "kaplumbağamız",
+        "poss.2pl": "kaplumbağanız",
+        "lok": "kaplumbağada",
+        "abl": "kaplumbağadan",
+        "poss.3pl": "kaplumbağaları"
+      },
+      "frequenzRang": 16298,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.hayvan",
+      "lemma": "hayvan",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "hayvanlar",
+        "akk/poss.3sg": "hayvanı",
+        "dat": "hayvana",
+        "gen/poss.2sg": "hayvanın",
+        "ins": "hayvanla",
+        "poss.1sg": "hayvanım",
+        "poss.1pl": "hayvanımız",
+        "poss.2pl": "hayvanınız",
+        "lok": "hayvanda",
+        "abl": "hayvandan",
+        "poss.3pl": "hayvanları"
+      },
+      "frequenzRang": 1077,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.evcil",
+      "lemma": "evcil",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 6538,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.yeni",
+      "lemma": "yeni",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "kop.1sg": "yeniyim",
+        "kop.1pl": "yeniyiz",
+        "kop.2sg": "yenisin",
+        "kop.2pl": "yenisiniz"
+      },
+      "frequenzRang": 35,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.eski",
+      "lemma": "eski",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 141,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.temiz",
+      "lemma": "temiz",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 939,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.guzel",
+      "lemma": "güzel",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 36,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.kat",
+      "lemma": "kat",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "katlar",
+        "akk/poss.3sg": "katı",
+        "dat": "kata",
+        "gen/poss.2sg": "katın",
+        "ins": "katla",
+        "poss.1sg": "katım",
+        "poss.1pl": "katımız",
+        "poss.2pl": "katınız",
+        "lok": "katta",
+        "abl": "kattan",
+        "poss.3pl": "katları"
+      },
+      "frequenzRang": 1321,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.mesaj",
+      "lemma": "mesaj",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "mesajlar",
+        "akk/poss.3sg": "mesajı",
+        "dat": "mesaja",
+        "gen/poss.2sg": "mesajın",
+        "ins": "mesajla",
+        "poss.1sg": "mesajım",
+        "poss.1pl": "mesajımız",
+        "poss.2pl": "mesajınız",
+        "lok": "mesajda",
+        "abl": "mesajdan",
+        "poss.3pl": "mesajları"
+      },
+      "frequenzRang": 664,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.aramak",
+      "lemma": "aramak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "ara",
+        "harmonie": "a/ı",
+        "stammwechsel": "ara → arı- vor -yor"
+      },
+      "formen": {
+        "stamm": "ara",
+        "iyor.3sg": "arıyor",
+        "imp.2pl": "arayın",
+        "aor.3sg": "arar",
+        "iyor.neg.3sg": "aramıyor"
+      },
+      "frequenzRang": 3217,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.bulmak",
+      "lemma": "bulmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "bul",
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "stamm": "bul",
+        "iyor.3sg": "buluyor",
+        "imp.2pl": "bulun",
+        "aor.3sg": "bulur",
+        "iyor.neg.3sg": "bulmuyor",
+        "wendung.perfekt.1pl": "bulduk"
+      },
+      "frequenzRang": 1518,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.gostermek",
+      "lemma": "göstermek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "göster",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "göster",
+        "iyor.3sg": "gösteriyor",
+        "imp.2pl": "gösterin",
+        "aor.3sg": "gösterir",
+        "iyor.neg.3sg": "göstermiyor"
+      },
+      "frequenzRang": 1647,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.peki",
+      "lemma": "peki",
+      "wortart": "interjektion",
+      "frequenzRang": 530,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.oyle",
+      "lemma": "öyle",
+      "wortart": "adverb",
+      "frequenzRang": 100,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.yer",
+      "lemma": "yer",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "yerler",
+        "akk/poss.3sg": "yeri",
+        "dat": "yere",
+        "gen/poss.2sg": "yerin",
+        "ins": "yerle",
+        "poss.1sg": "yerim",
+        "poss.1pl": "yerimiz",
+        "poss.2pl": "yeriniz",
+        "lok": "yerde",
+        "abl": "yerden",
+        "poss.3pl": "yerleri"
+      },
+      "frequenzRang": 54,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.sey",
+      "lemma": "şey",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "şeyler",
+        "akk/poss.3sg": "şeyi",
+        "dat": "şeye",
+        "gen/poss.2sg": "şeyin",
+        "ins": "şeyle",
+        "poss.1sg": "şeyim",
+        "poss.1pl": "şeyimiz",
+        "poss.2pl": "şeyiniz",
+        "lok": "şeyde",
+        "abl": "şeyden",
+        "poss.3pl": "şeyleri"
+      },
+      "frequenzRang": 47,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.hic",
+      "lemma": "hiç",
+      "wortart": "adverb",
+      "frequenzRang": 42,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.kendi",
+      "lemma": "kendi",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Reflexiv"
+      },
+      "formen": {
+        "poss.1sg": "kendim",
+        "poss.2sg": "kendin",
+        "poss.3sg": "kendisi",
+        "poss.1pl": "kendimiz",
+        "poss.2pl": "kendiniz",
+        "poss.3pl": "kendileri"
+      },
+      "frequenzRang": 72,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.kuzen",
+      "lemma": "kuzen",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "kuzenler",
+        "akk/poss.3sg": "kuzeni",
+        "dat": "kuzene",
+        "gen/poss.2sg": "kuzenin",
+        "ins": "kuzenle",
+        "poss.1sg/kop.1sg": "kuzenim",
+        "poss.1pl": "kuzenimiz",
+        "poss.2pl": "kuzeniniz",
+        "lok": "kuzende",
+        "abl": "kuzenden",
+        "poss.3pl": "kuzenleri",
+        "kop.1pl": "kuzeniz",
+        "kop.2sg": "kuzensin",
+        "kop.2pl": "kuzensiniz"
+      },
+      "frequenzRang": 14509,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.rahat",
+      "lemma": "rahat",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "kop.1sg": "rahatım",
+        "kop.1pl": "rahatız",
+        "kop.2sg": "rahatsın",
+        "kop.2pl": "rahatsınız"
+      },
+      "frequenzRang": 444,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.diger",
+      "lemma": "diğer",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 80,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.herkes",
+      "lemma": "herkes",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinit (jeder)"
+      },
+      "formen": {
+        "akk": "herkesi",
+        "dat": "herkese",
+        "gen": "herkesin",
+        "ins": "herkesle"
+      },
+      "frequenzRang": 173,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.kimse",
+      "lemma": "kimse",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinit (niemand, mit Verneinung)"
+      },
+      "formen": {
+        "akk": "kimseyi",
+        "dat": "kimseye",
+        "gen": "kimsenin"
+      },
+      "frequenzRang": 187,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "tr.a1.e04.s0001",
+      "text": "Bu bizim evimiz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0002",
+      "text": "Evde bir mutfak var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0003",
+      "text": "Evde bir banyo var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0004",
+      "text": "Evde büyük bir salon var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0005",
+      "text": "Evde iki tuvalet var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0006",
+      "text": "Evde bahçe yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0007",
+      "text": "Evde balkon var, bahçe yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0008",
+      "text": "Evde kaç oda var?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0009",
+      "text": "Evde dört oda var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0010",
+      "text": "Mutfak var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0011",
+      "text": "Evet, mutfak var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0012",
+      "text": "Balkon var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0013",
+      "text": "Hayır, balkon yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0014",
+      "text": "Bahçe var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0015",
+      "text": "Evet, küçük bir bahçe var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0016",
+      "text": "Bu oda salon mu?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0017",
+      "text": "Hayır, bu mutfak değil, banyo.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0018",
+      "text": "Mutfak küçük, salon büyük.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0019",
+      "text": "Banyo küçük ama temiz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0020",
+      "text": "Salon çok güzel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0021",
+      "text": "Ne güzel bir ev!",
+      "quelle": "tatoeba:4553522",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4553522 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0022",
+      "text": "Ev küçük ama güzel.",
+      "quelle": "tatoeba:4225098",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4225098 von deyta"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0023",
+      "text": "Bu evler çok büyük.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0024",
+      "text": "Odalar küçük mü?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0025",
+      "text": "Hayır, odalar büyük.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0026",
+      "text": "Mutfakta bir masa var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0027",
+      "text": "Mutfakta dört sandalye var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0028",
+      "text": "Mutfakta büyük bir pencere var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0029",
+      "text": "Banyoda pencere yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0030",
+      "text": "Mutfak temiz mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0031",
+      "text": "Evet, mutfak çok temiz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0032",
+      "text": "Okulda bahçe var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0033",
+      "text": "Evet, okulda büyük bir bahçe var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0034",
+      "text": "Salonda bir kanepe var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0035",
+      "text": "Kanepe çok rahat.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0036",
+      "text": "Evet, kanepe çok rahat.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0037",
+      "text": "Salonda bir televizyon var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0038",
+      "text": "Mutfakta bir buzdolabı var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0039",
+      "text": "Buzdolabı büyük ve beyaz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0040",
+      "text": "Odada bir yatak ve bir dolap var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0041",
+      "text": "Masada bir lamba var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0042",
+      "text": "Duvarda bir fotoğraf var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0043",
+      "text": "Duvarlar beyaz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0044",
+      "text": "Masada bir bilgisayar var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0045",
+      "text": "Bilgisayar yeni mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0046",
+      "text": "Hayır, bilgisayar eski.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0047",
+      "text": "Bu telefon kimin?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0048",
+      "text": "Bu senin telefonun mu?",
+      "quelle": "tatoeba:3294784",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3294784 von Gulo_Luscus"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0049",
+      "text": "Masada anahtar var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0050",
+      "text": "Evet, işte anahtar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0051",
+      "text": "Odada çok ışık var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0052",
+      "text": "Balkonda çok çiçek var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0053",
+      "text": "Çiçekler kırmızı ve sarı.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0054",
+      "text": "Bahçede çok çiçek var mı?",
+      "quelle": "tatoeba:1691854",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1691854 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0055",
+      "text": "Ne güzel bir çiçek!",
+      "quelle": "tatoeba:588891",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #588891 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0056",
+      "text": "O dolapta ne var?",
+      "quelle": "tatoeba:3856685",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3856685 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0057",
+      "text": "Masada ne var?",
+      "quelle": "tatoeba:6365328",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6365328 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0058",
+      "text": "Odada televizyon yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0059",
+      "text": "Salonda iki lamba var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0060",
+      "text": "Kanepe yeni, masa eski.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0061",
+      "text": "Evet, yatak çok rahat.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0062",
+      "text": "Bu benim bilgisayarım.",
+      "quelle": "tatoeba:2346885",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2346885 von everylanguage"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0063",
+      "text": "Bu benim yatak odam.",
+      "quelle": "tatoeba:2198221",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2198221 von neytiri"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0064",
+      "text": "Benim odam küçük.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0065",
+      "text": "Senin odan büyük mü?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0066",
+      "text": "Odam küçük ama çok rahat.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0067",
+      "text": "Senin odan var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0068",
+      "text": "Evet, kendi odam var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0069",
+      "text": "Hayır, kendi odam yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0070",
+      "text": "Kaç odanız var?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0071",
+      "text": "Üç odamız var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0072",
+      "text": "Evimiz yeni.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0073",
+      "text": "Sizin eviniz eski mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0074",
+      "text": "Senin evin yeni mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0075",
+      "text": "Benim evim eski ama güzel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0076",
+      "text": "Büyük bir evim var.",
+      "quelle": "tatoeba:2046298",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2046298 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0077",
+      "text": "Büyük bir odam var.",
+      "quelle": "tatoeba:6840254",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6840254 von vvv123"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0078",
+      "text": "Eviniz büyük.",
+      "quelle": "tatoeba:1067179",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1067179 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0079",
+      "text": "Evimiz güzel.",
+      "quelle": "tatoeba:13852824",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13852824 von Adelpa"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0080",
+      "text": "Evim temiz.",
+      "quelle": "tatoeba:13852853",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13852853 von Adelpa"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0081",
+      "text": "Bu benim evim.",
+      "quelle": "tatoeba:698619",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #698619 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0082",
+      "text": "Herkesin kendi yatak odası var.",
+      "quelle": "tatoeba:5977365",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5977365 von deyta"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0083",
+      "text": "Herkes evde mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0084",
+      "text": "Herkes salonda.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0085",
+      "text": "Evimiz iki katlı.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0086",
+      "text": "Bu katta kimse yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0087",
+      "text": "Benim yeni bir telefonum var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0088",
+      "text": "Hayır, bilgisayarım yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0089",
+      "text": "Televizyonum yok.",
+      "quelle": "tatoeba:4696667",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4696667 von tulin"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0090",
+      "text": "Benim bir telefonum yok.",
+      "quelle": "tatoeba:4697543",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4697543 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0091",
+      "text": "Anahtarın var mı?",
+      "quelle": "tatoeba:4823169",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4823169 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0092",
+      "text": "Evet, anahtarım var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0093",
+      "text": "Defne benim kuzenim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0094",
+      "text": "Kuzenim İzmirli.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0095",
+      "text": "Evet, üç kuzenim var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0096",
+      "text": "Diğer odada bir yatak var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0097",
+      "text": "Evimizde çok yer yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0098",
+      "text": "Kanepede yer var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0099",
+      "text": "Evet, yer var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0100",
+      "text": "Yeni bir mesajın var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0101",
+      "text": "Telefonda yeni bir mesaj var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0102",
+      "text": "Mesaj Türkçe mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0103",
+      "text": "Evet, mesaj Türkçe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0104",
+      "text": "Sizin balkonunuz var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0105",
+      "text": "Evet, büyük bir balkonumuz var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0106",
+      "text": "Onların bahçesi var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0107",
+      "text": "Bahçemiz yok.",
+      "quelle": "tatoeba:2686058",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2686058 von Gulo_Luscus"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0108",
+      "text": "Evimiz büyük.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0109",
+      "text": "Bir evcil hayvanın var mı?",
+      "quelle": "tatoeba:1256968",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1256968 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0110",
+      "text": "Evet, bir kedim var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0111",
+      "text": "Onun adı Pamuk.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0112",
+      "text": "Pamuk beyaz bir kedi.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0113",
+      "text": "Kaç kediniz var?",
+      "quelle": "tatoeba:3835123",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3835123 von maydoo"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0114",
+      "text": "İki kedimiz var.",
+      "quelle": "tatoeba:13477002",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13477002 von ninefi"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0115",
+      "text": "Bu benim kedim.",
+      "quelle": "tatoeba:1709455",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1709455 von Translate28"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0116",
+      "text": "Benim evcil hayvanım yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0117",
+      "text": "Benim bir kuşum var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0118",
+      "text": "Kuşum sarı.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0119",
+      "text": "Kuşun sarı.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0120",
+      "text": "İki balığım var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0121",
+      "text": "Balıklar ne renk?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0122",
+      "text": "Balıklar kırmızı.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0123",
+      "text": "Benim bir kaplumbağam var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0124",
+      "text": "Hayır, evde hayvan yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0125",
+      "text": "Kedi kanepede.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0126",
+      "text": "Kedi yatakta mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0127",
+      "text": "Hayır, kedi balkonda.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0128",
+      "text": "Bahçede bir kuş var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0129",
+      "text": "Onun bir oyuncağı var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0130",
+      "text": "Odamda çok oyuncak var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0131",
+      "text": "Amal, senin evcil hayvanın var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0132",
+      "text": "Hayır, evcil hayvanım yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0133",
+      "text": "Lena, kaplumbağan var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0134",
+      "text": "Evet, küçük bir kaplumbağam var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0135",
+      "text": "Mutfakta bir kedi var.",
+      "quelle": "tatoeba:1540255",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1540255 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0136",
+      "text": "Bir kedim var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0137",
+      "text": "Bir kedin var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0138",
+      "text": "Benim kedim beyaz.",
+      "quelle": "tatoeba:4946976",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4946976 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0139",
+      "text": "Ne arıyorsun, Can?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0140",
+      "text": "Baba, şarj aletim yok!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0141",
+      "text": "Odanda mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0142",
+      "text": "Hayır, odamda yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0143",
+      "text": "Peki, salonda mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0144",
+      "text": "Salonda mı? Bilmiyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0145",
+      "text": "Kanepede bir şey var. Bu ne?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0146",
+      "text": "O benim şarj aletim değil.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0147",
+      "text": "Peki, çantanda mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0148",
+      "text": "Evet! İşte şarj aletim!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0149",
+      "text": "Bulduk! Teşekkürler, baba!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0150",
+      "text": "O ne arıyor?",
+      "quelle": "tatoeba:3679183",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3679183 von maydoo"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0151",
+      "text": "Can bir şey arıyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0152",
+      "text": "Anahtarı arıyorum.",
+      "quelle": "tatoeba:4493507",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4493507 von ruth_tatoeba"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0153",
+      "text": "Telefon! Defne arıyor!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0154",
+      "text": "Evinizi gösterir misin?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0155",
+      "text": "Tamam! İşte salon.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0156",
+      "text": "Fotoğrafı gösterir misin?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0157",
+      "text": "Evet, öyle.",
+      "quelle": "tatoeba:4822136",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4822136 von ruth_tatoeba"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0158",
+      "text": "Evde hiç ışık yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0159",
+      "text": "Hiç yer yok!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0160",
+      "text": "Odamda hiç çiçek yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0161",
+      "text": "Evde kimse yok.",
+      "quelle": "tatoeba:2348287",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2348287 von bluwy"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0162",
+      "text": "Odada kimse yok.",
+      "quelle": "tatoeba:1323114",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1323114 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0163",
+      "text": "Çantamda çok şey var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0164",
+      "text": "Peki, mutfak nasıl?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0165",
+      "text": "Odamda bir yatak var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0166",
+      "text": "Odamda televizyon yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0167",
+      "text": "Bizim yeni evimiz",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0168",
+      "text": "Elif ve Defne kuzen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0169",
+      "text": "Defne İzmir'de, Elif Wetzlar'da.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0170",
+      "text": "Merhaba, Elif! Yeni evde nasılsın?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0171",
+      "text": "Merhaba, Defne! İyiyim, ev çok güzel!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0172",
+      "text": "Salon çok büyük! Kanepe de çok güzel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0173",
+      "text": "Salonda bir kanepe ve bir televizyon var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0174",
+      "text": "Balkonunuz var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0175",
+      "text": "Evet, küçük bir balkonumuz var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0176",
+      "text": "Bahçeniz de var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0177",
+      "text": "Hayır, bahçemiz yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0178",
+      "text": "Senin odan nasıl?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0179",
+      "text": "Odamda yatak, masa ve lamba var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0180",
+      "text": "Peki, Pamuk evde mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0181",
+      "text": "Evet, işte Pamuk! O kanepede.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0182",
+      "text": "Merhaba, Pamuk! Ne güzel bir kedi!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0183",
+      "text": "Onun da küçük bir yatağı var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0184",
+      "text": "Öyle mi? Benim de bir kuşum var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0185",
+      "text": "Kuşun ne renk?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0186",
+      "text": "Kuşum sarı. Adı Mavi!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0187",
+      "text": "Merhaba, Defne! Benim de iki balığım var!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0188",
+      "text": "Merhaba, Can! Hayvanlarınız çok güzel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0189",
+      "text": "Eviniz de çok güzel, Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0190",
+      "text": "Teşekkürler, Defne! Hoşça kal!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0191",
+      "text": "Güle güle! Pamuk, sen de hoşça kal!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0192",
+      "text": "Salonda ne var?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0193",
+      "text": "Balkonda ne var?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0194",
+      "text": "Evde bahçe var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0195",
+      "text": "Hayır, bahçe yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0196",
+      "text": "Evet, bahçe var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0197",
+      "text": "Kuş ne renk?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0198",
+      "text": "Defne'den bir mesaj",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0199",
+      "text": "Merhaba Elif! İşte bizim yeni evimiz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0200",
+      "text": "Evimizde üç oda ve büyük bir salon var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0201",
+      "text": "Mutfak küçük ama çok temiz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0202",
+      "text": "Büyük bir balkonumuz var ama bahçemiz yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0203",
+      "text": "Odamda bir yatak ve bir bilgisayar var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0204",
+      "text": "Televizyonumuz yok ama çok kitabımız var!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0205",
+      "text": "Evde üç oda var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0206",
+      "text": "Evde bir bahçe var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0207",
+      "text": "Mutfak çok büyük.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0208",
+      "text": "Evde bir kedi var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0209",
+      "text": "Televizyon var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0210",
+      "text": "Hayır, televizyon yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0211",
+      "text": "Evet, televizyon var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e04.s0212",
+      "text": "Kaç odamız var?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "tr.a1.e04.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Räume nennen und sagen, was es gibt: var und yok",
+        "tr": "Odaları söylemek ve evde ne olduğunu anlatmak: var ve yok",
+        "ar": "تسمية الغرف وقول ما يوجد في البيت: var و yok"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e04.l01.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.ev",
+          "ablenker": ["tr.a1.e04.oda", "tr.a1.e04.mutfak"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.oda",
+          "ablenker": ["tr.a1.e04.ev", "tr.a1.e04.banyo"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.mutfak",
+          "ablenker": ["tr.a1.e04.banyo", "tr.a1.e04.salon"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.var",
+          "ablenker": ["tr.a1.e04.yok", "tr.a1.e02.evet"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.yok",
+          "ablenker": ["tr.a1.e04.var", "tr.a1.e02.hayir"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a07",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.ev", "tr.a1.e04.oda", "tr.a1.e04.mutfak", "tr.a1.e04.banyo", "tr.a1.e04.salon"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.balkon",
+          "ablenker": ["tr.a1.e04.bahce", "tr.a1.e04.tuvalet"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a09",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.balkon", "tr.a1.e04.tuvalet", "tr.a1.e04.bahce", "tr.a1.e04.guzel", "tr.a1.e04.temiz"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e04.s0003",
+          "ablenker": ["tr.a1.e04.s0002", "tr.a1.e04.s0005"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a11",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0010",
+          "wort": 2,
+          "ablenker": ["mi", "mu"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0002",
+          "nach": "ziel",
+          "alternativen": ["Evde mutfak var."],
+          "ablenker": ["yok", "mı"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0018",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0008"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0009",
+          "ablenker": ["tr.a1.e04.s0011", "tr.a1.e04.s0020"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e04.s0019"
+        },
+        {
+          "schluessel": "tr.a1.e04.l01.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e04.s0007"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e04.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Möbel und Dinge im Haus nennen; Mehrzahl mit -ler/-lar",
+        "tr": "Evdeki eşyaları söylemek; -ler/-lar ile çoğul",
+        "ar": "تسمية الأثاث والأشياء في البيت؛ الجمع بـ -ler/-lar"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e04.l02.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.yatak",
+          "ablenker": ["tr.a1.e04.dolap", "tr.a1.e04.kanepe"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.dolap",
+          "ablenker": ["tr.a1.e04.yatak", "tr.a1.e04.duvar"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.kanepe",
+          "ablenker": ["tr.a1.e04.yatak", "tr.a1.e04.lamba"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.lamba",
+          "ablenker": ["tr.a1.e04.kanepe", "tr.a1.e04.duvar"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a06",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.yatak", "tr.a1.e04.dolap", "tr.a1.e04.kanepe", "tr.a1.e04.lamba", "tr.a1.e04.duvar"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.buzdolabi",
+          "ablenker": ["tr.a1.e04.televizyon", "tr.a1.e04.dolap"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.bilgisayar",
+          "ablenker": ["tr.a1.e04.televizyon", "tr.a1.e04.telefon"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a09",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.buzdolabi", "tr.a1.e04.televizyon", "tr.a1.e04.bilgisayar", "tr.a1.e04.telefon", "tr.a1.e04.anahtar"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.isik",
+          "ablenker": ["tr.a1.e04.cicek", "tr.a1.e04.lamba"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a11",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.anahtar", "tr.a1.e04.isik", "tr.a1.e04.cicek", "tr.a1.e04.rahat"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.a1.e04.s0037",
+          "ablenker": ["tr.a1.e04.s0038", "tr.a1.e04.s0041"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a13",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0052",
+          "wort": 2,
+          "ablenker": ["çiçekler", "çiçeklar"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0034",
+          "nach": "ziel",
+          "alternativen": ["Salonda kanepe var."],
+          "ablenker": ["yok", "mutfakta"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0040",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e04.l02.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e04.s0035"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e04.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Sagen, was mir gehört: Besitzendungen wie evim, odan, evimiz",
+        "tr": "Neyin kime ait olduğunu söylemek: evim, odan, evimiz gibi iyelik ekleri",
+        "ar": "التعبير عن الملكية: لواحق الملكية مثل evim و odan و evimiz"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e04.l03.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.yeni",
+          "ablenker": ["tr.a1.e04.eski", "tr.a1.e04.temiz"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.eski",
+          "ablenker": ["tr.a1.e04.yeni", "tr.a1.e04.guzel"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a04",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.yeni", "tr.a1.e04.eski", "tr.a1.e04.kat", "tr.a1.e04.kuzen", "tr.a1.e04.yer"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.kendi",
+          "ablenker": ["tr.a1.e04.herkes", "tr.a1.e04.diger"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.herkes",
+          "ablenker": ["tr.a1.e04.kendi", "tr.a1.e04.diger"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a07",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.kendi", "tr.a1.e04.herkes", "tr.a1.e04.diger", "tr.a1.e04.mesaj"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a08",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e04.s0108",
+          "ablenker": ["tr.a1.e04.s0078"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a09",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0065",
+          "wort": 1,
+          "ablenker": ["odam", "odası"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a10",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0087",
+          "wort": 3,
+          "ablenker": ["telefonun", "telefonu"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0070",
+          "nach": "ziel",
+          "ablenker": ["odamız", "yok"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0082",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0067"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0068",
+          "ablenker": ["tr.a1.e04.s0011", "tr.a1.e04.s0024"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0070"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0071",
+          "ablenker": ["tr.a1.e04.s0095", "tr.a1.e04.s0072"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e04.s0073",
+          "ablenker": ["tr.a1.e04.s0074", "tr.a1.e04.s0072"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l03.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e04.s0070"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e04.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Über Haustiere sprechen: Ich habe … / Ich habe kein …",
+        "tr": "Evcil hayvanlar hakkında konuşmak: … var / … yok",
+        "ar": "الحديث عن الحيوانات الأليفة: عندي … / ليس عندي …"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e04.l04.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.kedi",
+          "ablenker": ["tr.a1.e04.kus", "tr.a1.e04.balik"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.kus",
+          "ablenker": ["tr.a1.e04.kedi", "tr.a1.e04.kaplumbaga"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.balik",
+          "ablenker": ["tr.a1.e04.kus", "tr.a1.e04.hayvan"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.kaplumbaga",
+          "ablenker": ["tr.a1.e04.balik", "tr.a1.e04.kedi"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a06",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.kedi", "tr.a1.e04.kus", "tr.a1.e04.balik", "tr.a1.e04.kaplumbaga"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a07",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.hayvan", "tr.a1.e04.evcil", "tr.a1.e04.oyuncak", "tr.a1.e04.cicek"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a08",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e04.s0136",
+          "ablenker": ["tr.a1.e04.s0137"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.a1.e04.s0120",
+          "ablenker": ["tr.a1.e04.s0114", "tr.a1.e04.s0117"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a10",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0123",
+          "wort": 2,
+          "ablenker": ["kaplumbağan", "kaplumbağası"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a11",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0126",
+          "wort": 2,
+          "ablenker": ["mi", "mu"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0109",
+          "nach": "ziel",
+          "alternativen": ["Evcil hayvanın var mı?"],
+          "ablenker": ["yok", "hayvanım"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0110",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0131"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0132",
+          "ablenker": ["tr.a1.e04.s0195", "tr.a1.e04.s0125"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0109"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0110"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e01.s0040"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0111",
+          "ablenker": ["tr.a1.e04.s0125", "tr.a1.e04.s0120"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l04.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e04.s0112"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e04.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Etwas suchen und finden: Ist es in deinem Zimmer?",
+        "tr": "Bir şey aramak ve bulmak: Odanda mı?",
+        "ar": "البحث عن شيء وإيجاده: هل هو في غرفتك؟"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e04.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.aramak",
+          "ablenker": ["tr.a1.e04.bulmak", "tr.a1.e04.gostermek"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.bulmak",
+          "ablenker": ["tr.a1.e04.aramak", "tr.a1.e04.gostermek"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a04",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.aramak", "tr.a1.e04.bulmak", "tr.a1.e04.gostermek", "tr.a1.e04.peki", "tr.a1.e04.oyle"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.kimse",
+          "ablenker": ["tr.a1.e04.herkes", "tr.a1.e04.sey"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a06",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.sey", "tr.a1.e04.hic", "tr.a1.e04.kimse", "tr.a1.e04.herkes", "tr.a1.e04.yer"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0139"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0140"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0141",
+          "ablenker": ["tr.a1.e04.s0011", "tr.a1.e04.s0016"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0141"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0142"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0143"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0144"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0145"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0146",
+          "ablenker": ["tr.a1.e04.s0036", "tr.a1.e04.s0013"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0147"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0148",
+          "ablenker": ["tr.a1.e04.s0124", "tr.a1.e04.s0009"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a10",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0141",
+          "wort": 1,
+          "ablenker": ["mi", "mu"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a11",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0151",
+          "wort": 3,
+          "ablenker": ["bulduk", "arıyorsun"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0161",
+          "nach": "ziel",
+          "alternativen": ["Kimse evde yok."],
+          "ablenker": ["var", "herkes"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0145",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e04.s0162",
+          "ablenker": ["tr.a1.e04.s0058", "tr.a1.e04.s0161"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e04.s0139"
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e04.s0165"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e04.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Geschichte: Ein Videoanruf aus İzmir",
+        "tr": "Hikâye: İzmir'den görüntülü arama",
+        "ar": "قصة: مكالمة فيديو من إزمير"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e04.l06.a01",
+          "typ": "geschichte",
+          "titel": "tr.a1.e04.s0167",
+          "zeilen": [
+            {
+              "satz": "tr.a1.e04.s0168"
+            },
+            {
+              "satz": "tr.a1.e04.s0169"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0153"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0170"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0171"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0154"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0155"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0172"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0173"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0174"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0175"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0052"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0176"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0177"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0178"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0066"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0179"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0180"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0181"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0182"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0183"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0184"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0185"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0186"
+            },
+            {
+              "sprecher": "c",
+              "satz": "tr.a1.e04.s0187"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0188"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0189"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0190"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0191"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 8,
+              "frage": "tr.a1.e04.s0192",
+              "antwort": "tr.a1.e04.kanepe",
+              "ablenker": ["tr.a1.e04.yatak", "tr.a1.e04.buzdolabi"]
+            },
+            {
+              "nach": 11,
+              "frage": "tr.a1.e04.s0193",
+              "antwort": "tr.a1.e04.cicek",
+              "ablenker": ["tr.a1.e04.kedi", "tr.a1.e04.televizyon"]
+            },
+            {
+              "nach": 13,
+              "frage": "tr.a1.e04.s0194",
+              "antwort": "tr.a1.e04.s0195",
+              "ablenker": ["tr.a1.e04.s0196", "tr.a1.e04.s0015"]
+            },
+            {
+              "nach": 23,
+              "frage": "tr.a1.e04.s0197",
+              "antwort": "tr.a1.e02.sari",
+              "ablenker": ["tr.a1.e02.kirmizi", "tr.a1.e02.beyaz"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.a1.e04.l06.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.s0189",
+          "ablenker": ["tr.a1.e04.s0172", "tr.a1.e04.s0177"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l06.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0154"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0155",
+          "ablenker": ["tr.a1.e04.s0185", "tr.a1.e04.s0110"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l06.a04",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0184",
+          "wort": 5,
+          "ablenker": ["kuşun", "kuşu"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l06.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0175",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e04.l06.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.kuzen",
+          "ablenker": ["tr.a1.e04.kus", "tr.a1.e04.yer"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l06.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e04.s0174"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0175",
+          "ablenker": ["tr.a1.e04.s0177", "tr.a1.e04.s0185"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l06.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0176",
+          "nach": "ziel",
+          "ablenker": ["bahçemiz", "yok"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.a1.e04.s0178",
+          "ablenker": ["tr.a1.e04.s0164", "tr.a1.e04.s0185"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l06.a10",
+          "typ": "sprechen",
+          "satz": "tr.a1.e04.s0184"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e04.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Wiederholung: Zimmer, Möbel, Haustiere und eine Nachricht von Defne",
+        "tr": "Tekrar: odalar, eşyalar, evcil hayvanlar ve Defne'den bir mesaj",
+        "ar": "مراجعة: الغرف والأثاث والحيوانات الأليفة ورسالة قصيرة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e04.l07.a01",
+          "typ": "lesen_fragen",
+          "titel": "tr.a1.e04.s0198",
+          "absaetze": ["tr.a1.e04.s0199", "tr.a1.e04.s0200", "tr.a1.e04.s0201", "tr.a1.e04.s0202", "tr.a1.e04.s0203", "tr.a1.e04.s0204"],
+          "glossen": [
+            "tr.a1.e04.oda",
+            "tr.a1.e04.salon",
+            "tr.a1.e04.mutfak",
+            "tr.a1.e04.temiz",
+            "tr.a1.e04.balkon",
+            "tr.a1.e04.bahce",
+            "tr.a1.e04.yatak",
+            "tr.a1.e04.bilgisayar",
+            "tr.a1.e04.televizyon"
+          ],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.a1.e04.s0205",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.a1.e04.s0206",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.a1.e04.s0207",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.a1.e04.s0208",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.a1.e04.s0209",
+              "antwort": "tr.a1.e04.s0210",
+              "ablenker": ["tr.a1.e04.s0211"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.telefon",
+          "ablenker": ["tr.a1.e04.anahtar", "tr.a1.e04.lamba"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.cicek",
+          "ablenker": ["tr.a1.e04.kanepe", "tr.a1.e04.anahtar"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a04",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.ev", "tr.a1.e04.yatak", "tr.a1.e04.kedi", "tr.a1.e04.yeni", "tr.a1.e04.aramak", "tr.a1.e04.kimse"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.salon",
+          "ablenker": ["tr.a1.e04.mutfak", "tr.a1.e04.oda"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.s0085",
+          "ablenker": ["tr.a1.e04.s0005", "tr.a1.e04.s0120"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0102"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0103",
+          "ablenker": ["tr.a1.e04.s0099", "tr.a1.e04.s0127"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a08",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0116",
+          "wort": 2,
+          "ablenker": ["hayvanın", "hayvanı"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.s0101",
+          "ablenker": ["tr.a1.e04.s0086", "tr.a1.e04.s0042"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a10",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e04.s0070",
+          "ablenker": ["tr.a1.e04.s0212"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.a1.e04.s0083",
+          "ablenker": ["tr.a1.e04.s0161", "tr.a1.e04.s0084"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a12",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e04.s0051"
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0117",
+          "nach": "ziel",
+          "alternativen": ["Bir kuşum var."],
+          "ablenker": ["kuşun", "yok"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0096",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0158",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0121"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0122",
+          "ablenker": ["tr.a1.e04.s0120", "tr.a1.e04.s0128"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a17",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0126"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0127",
+          "ablenker": ["tr.a1.e04.s0061", "tr.a1.e04.s0013"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a18",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0133"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0134",
+          "ablenker": ["tr.a1.e04.s0015", "tr.a1.e04.s0127"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a19",
+          "typ": "sprechen",
+          "satz": "tr.a1.e04.s0067"
+        },
+        {
+          "schluessel": "tr.a1.e04.l07.a20",
+          "typ": "sprechen",
+          "satz": "tr.a1.e04.s0166"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e04.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Prüfstein: Bei uns zu Hause",
+        "tr": "Sınav: Bizim evde",
+        "ar": "محطة الاختبار: في بيتنا"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e04.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.buzdolabi",
+          "ablenker": ["tr.a1.e04.televizyon", "tr.a1.e04.dolap"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.bilgisayar",
+          "ablenker": ["tr.a1.e04.telefon", "tr.a1.e04.televizyon"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e04.tuvalet",
+          "ablenker": ["tr.a1.e04.banyo", "tr.a1.e04.balkon"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e04.kaplumbaga",
+          "ablenker": ["tr.a1.e04.kus", "tr.a1.e04.balik"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a05",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.bahce", "tr.a1.e04.duvar", "tr.a1.e04.isik", "tr.a1.e04.kuzen", "tr.a1.e04.mesaj", "tr.a1.e04.oyuncak"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a06",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e04.var", "tr.a1.e04.yok", "tr.a1.e04.hic", "tr.a1.e04.herkes", "tr.a1.e04.kendi"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a07",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0064",
+          "wort": 1,
+          "ablenker": ["odan", "odası"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a08",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0129",
+          "wort": 2,
+          "ablenker": ["oyuncağım", "oyuncağın"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0038",
+          "nach": "ziel",
+          "alternativen": ["Mutfakta buzdolabı var."],
+          "ablenker": ["yok", "salonda"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0097",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e04.s0098",
+          "ablenker": ["tr.a1.e04.s0060", "tr.a1.e04.s0099"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a12",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e04.s0009",
+          "alternativen": ["Evde 4 oda var."]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a13",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e04.s0118",
+          "ablenker": ["tr.a1.e04.s0119"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0091"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0092",
+          "ablenker": ["tr.a1.e04.s0155", "tr.a1.e04.s0124"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e04.s0139"
+            }
+          ],
+          "antwort": "tr.a1.e04.s0140",
+          "ablenker": ["tr.a1.e04.s0110", "tr.a1.e04.s0149"]
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e04.s0071"
+        }
+      ]
+    }
+  ]
+}
