@@ -1,5 +1,15 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 07:25 UTC:** Alle Läufe brachen um 06:10 am Sitzungslimit ab (≈ 8 Mio. Tokens in 70 min – das
+  Nutzungslimit ist der Engpass; deshalb jetzt höchstens 4 Agenten gleichzeitig und ein Inhalts-Handbuch statt Volllektüre).
+  Gesichert: L2-Zusammenführung fertig (7000ba4, Ergebnis `scratchpad/l2/z-ergebnis.json`), L3-06 als ZWISCHENSTAND 37bd915
+  (Arbeitsbaum B), Inhalte A1: Wortschatzpläne, Vorkurse de/tr/ar, Entwürfe e01/e02 je Sprache (Zweig `lernapp-inhalte-a1`;
+  Rückgaben `scratchpad/l3/a1/ergebnisse-*.json`, Hinweise `hinweise-*.md`). **Laufen:** L2-Gegenprüfung `wf_42e62a63-56e`
+  (`args.z` überspringt die Zusammenführung), L3-06-Fortsetzung `wf_a48f4bea-ac5`, A1 weiter `wf_4786ad44-05d`
+  (`scratchpad/lernapp-a1-weiter.workflow.js`: Handbuch `_lernapp/werkzeuge/inhalte-handbuch.md` + Tabu-Prüfer je Wortform/
+  Sprache, dann je Sprache `lernapp-inhalte.workflow.js` mit `entworfen: [e01, e02]`, Übersetzung beider Richtungen in einem
+  Agenten). Bei Abbruch: fertige Einheiten aus `git log` des Inhalts-Zweigs ablesen → neuer Lauf mit `entworfen`/`nur` je
+  Sprache. Nach L2-Freigabe: Tor L2 (ohne Website-E2E; TBT ruhig nachmessen), FF `main`.
 - **Stand 21.10.2026 05:00 UTC:** L2-Fortsetzung `wf_1f7fcaa5-0e5` läuft (Vorlauf `wf_4f8764fb-9ea` durfte nichts ausführen):
   zuerst die Vorab-Befunde (Test `verwaltung-tickets` für `sprachpruefung`, Spieler „zusätzlich“ 61,2 > 60 KB, `SchriftWahl` ohne
   Überspringen, `GrammatikTipp` lang/dir, E2E auf HEAD), dann Schlussprüfungen einmal, Gegenprüfung. **Parallel L3-07 A1:**
