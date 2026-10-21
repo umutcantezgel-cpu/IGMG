@@ -1300,7 +1300,7 @@
     },
     {
       "schluessel": "de.a1.e03.s0068",
-      "text": "Der Balkon ist sehr laut.",
+      "text": "Das Zimmer ist sehr laut.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1820,7 +1820,7 @@
     },
     {
       "schluessel": "de.a1.e03.s0153",
-      "text": "Guten Tag! Die Wohnung ist aber schön!",
+      "text": "Hallo! Die Wohnung ist aber schön!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2278,6 +2278,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e03.s0008",
           "nach": "ziel",
+          "alternativen": ["Drei Zimmer hat die Wohnung."],
           "ablenker": ["hast", "vier"]
         },
         {
@@ -2330,9 +2331,9 @@
       "schluessel": "de.a1.e03.l02",
       "art": "lektion",
       "ziel": {
-        "de": "Ich kann Möbel benennen, den Plural mitlernen und sagen, wo etwas steht oder liegt.",
-        "tr": "Mobilyaları adlandırabilir, çoğullarını da öğrenebilir ve bir şeyin nerede durduğunu söyleyebilirim.",
-        "ar": "أستطيع أن أسمّي قطع الأثاث وأن أتعلّم جمعها وأن أقول أين يوجد شيء ما."
+        "de": "Ich kann Möbel im Singular und Plural benennen und sagen, wo etwas steht oder liegt.",
+        "tr": "Mobilyaları tekil ve çoğul olarak adlandırabilir ve bir şeyin nerede durduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أسمّي قطع الأثاث بالمفرد والجمع وأن أقول أين يوجد شيء ما."
       },
       "aufgaben": [
         {
@@ -2403,9 +2404,10 @@
           "schluessel": "de.a1.e03.l02.a11",
           "typ": "wortbank",
           "anweisung": "uebersetze",
-          "satz": "de.a1.e03.s0042",
+          "satz": "de.a1.e03.s0045",
           "nach": "ziel",
-          "ablenker": ["Tisch", "dem"]
+          "alternativen": ["Den Tisch stellen wir in die Küche.", "In die Küche stellen wir den Tisch."],
+          "ablenker": ["Stuhl", "stehen"]
         },
         {
           "schluessel": "de.a1.e03.l02.a12",
@@ -2633,7 +2635,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e03.s0118",
           "nach": "ziel",
-          "ablenker": ["dem", "Tisch"]
+          "alternativen": ["Den Stuhl findet Jan nicht."],
+          "ablenker": ["findest", "Tisch"]
         },
         {
           "schluessel": "de.a1.e03.l04.a09",
@@ -2775,7 +2778,7 @@
           "typ": "luecke",
           "ziel": "de.a1.e03.s0128",
           "wort": 0,
-          "ablenker": ["Zu", "Von"]
+          "ablenker": ["Zu", "In"]
         },
         {
           "schluessel": "de.a1.e03.l05.a10",
@@ -2845,7 +2848,7 @@
               "satz": "de.a1.e03.s0151"
             },
             {
-              "sprecher": "c",
+              "sprecher": "a",
               "satz": "de.a1.e03.s0152"
             },
             {
@@ -2982,7 +2985,7 @@
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e03.s0165",
-          "ablenker": ["de.a1.e03.s0181", "de.a1.e03.s0182"]
+          "ablenker": ["de.a1.e03.s0100", "de.a1.e03.s0145"]
         },
         {
           "schluessel": "de.a1.e03.l06.a05",
@@ -3105,15 +3108,19 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e03.s0187",
           "nach": "ziel",
-          "alternativen": ["Ich brauche einen Stuhl und eine Lampe, Opa."],
-          "ablenker": ["ein", "Tisch"]
+          "alternativen": [
+            "Ich brauche einen Stuhl und eine Lampe, Opa.",
+            "Opa, ich brauche eine Lampe und einen Stuhl.",
+            "Ich brauche eine Lampe und einen Stuhl, Opa."
+          ],
+          "ablenker": ["brauchst", "Tisch"]
         },
         {
           "schluessel": "de.a1.e03.l06.a08",
           "typ": "luecke",
           "ziel": "de.a1.e03.s0201",
-          "wort": 5,
-          "ablenker": ["deine", "deinen"]
+          "wort": 2,
+          "ablenker": ["stellt", "stehen"]
         },
         {
           "schluessel": "de.a1.e03.l06.a09",
@@ -3333,7 +3340,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e03.s0101",
           "nach": "ziel",
-          "alternativen": ["Ein Schrank fehlt noch."],
+          "alternativen": ["Ein Schrank fehlt noch.", "Noch fehlt ein Schrank."],
           "ablenker": ["eine", "nicht"]
         },
         {
