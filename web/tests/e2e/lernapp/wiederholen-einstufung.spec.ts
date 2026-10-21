@@ -85,6 +85,8 @@ test('Einstufung: adaptiv über zwei Stufen, Vorschlag mit Einheit, Ereignis und
   for (let n = 1; n <= 4; n++) {
     await expect(page.getByText(formatiere(t.einstufung.aufgabeVon, { nr: n, anzahl: 20 }, 'de'), { exact: true })).toBeVisible();
     await expect(page.getByRole('heading', { name: t.aufgaben.auswahl.waehleAntwort })).toBeVisible();
+    // die Übung lädt als eigener Chunk (kurz „Aufgabe wird geladen …“): erst lesen, wenn die Optionen stehen
+    await expect(page.getByRole('radio')).toHaveCount(2);
     const namen = await page.getByRole('radio').evaluateAll((r) => r.map((x) => x.closest('label')?.textContent ?? ''));
     const stufe = /\[(?:richtig|anders) (a\d)/.exec(namen.join(' '))?.[1];
     expect(stufe).toBe(n <= 2 ? 'a1' : 'a2');

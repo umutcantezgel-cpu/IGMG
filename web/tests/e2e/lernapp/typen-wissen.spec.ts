@@ -118,7 +118,8 @@ async function weiter(page: Page, t: Texte, art: Bedienung) {
 async function waehle(page: Page, t: Texte, art: Bedienung, radio: Locator, { abgeben = true } = {}) {
   await expect(radio).toBeAttached();
   if (art === 'tippen') {
-    await page.locator('main label').filter({ has: radio }).tap();
+    // das Optionsfeld liegt (unsichtbar) in seinem Label: getippt wird das Label
+    await radio.locator('xpath=ancestor::label[1]').tap();
     await expect(radio).toBeChecked();
     if (abgeben) await pruefen(page, t, art);
   } else {
@@ -132,8 +133,9 @@ async function waehle(page: Page, t: Texte, art: Bedienung, radio: Locator, { ab
 const radio = (scope: Page | Locator, name: string) => scope.getByRole('radio', { name, exact: true });
 
 /** Schritte sortieren: je Ziel-Stelle den Schritt nach oben schieben (Tastatur: Alt + Pfeil, Tippen: Knopf). */
-async function sortiere(page: Page, t: Texte, art: Bedienung, ui: 'de' | 'ar') {
-  let folge = startFolge(RF);
+async function sortiere(page: Page, t: Texte, art: Bedienung, ui: 'de' | 'ar', aufgabe: AufgabeVon<'reihenfolge'> = RF) {
+  // Startfolge wie in der Übung: gemischt mit dem Schlüssel der Aufgabe
+  let folge = startFolge(aufgabe);
   for (let ziel = 0; ziel < folge.length; ziel++) {
     while (folge.indexOf(ziel) > ziel) {
       const pos = folge.indexOf(ziel);
@@ -280,7 +282,7 @@ test.describe('Übungstypen aus L2-03 (Wissenskurs, Koran-Arabisch)', () => {
     await weiter(page, t, art);
 
     await expect(page.getByRole('heading', { name: t.aufgaben.reihenfolge.ordne })).toBeVisible();
-    await sortiere(page, t, art, 'ar');
+    await sortiere(page, t, art, 'ar', umbenannt(RF, 'l02'));
     await pruefen(page, t, art);
     await richtig(page, t, art);
 
