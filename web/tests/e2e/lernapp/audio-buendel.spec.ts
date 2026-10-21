@@ -75,12 +75,17 @@ test('Deutsch lernen: Hörübung spielt den Clip aus dem Bündel der Einheit bis
       await page.keyboard.insertText('Brot');
       await page.keyboard.press('Enter');
       await richtigWeiter(page);
-    } else if (typ === 'hoeren_waehlen' && (await page.getByText(t.aufgaben.hoeren.audioFolgt, { exact: true }).isVisible())) {
-      await page.getByRole('button', { name: t.aufgaben.hoeren.ueberspringen, exact: true }).click();
     } else if (typ === 'hoeren_waehlen') {
-      await hoere(page);
-      await waehle(page, 'Das Haus ist neu.');
-      await richtigWeiter(page);
+      // Die Übung lädt nach (lazy, Suspense): erst warten, bis „Audio folgt“ oder „Anhören“ dasteht
+      const folgt = page.getByText(t.aufgaben.hoeren.audioFolgt, { exact: true });
+      await expect(folgt.or(page.getByRole('button', { name: t.aufgaben.hoeren.anhoeren, exact: true }))).toBeVisible();
+      if (await folgt.isVisible()) await page.getByRole('button', { name: t.aufgaben.hoeren.ueberspringen, exact: true }).click();
+      else {
+        await hoere(page);
+        await waehle(page, 'Das Haus ist neu.');
+        await richtigWeiter(page);
+      }
+      await expect(bedeutung).toBeVisible();
     } else throw new Error(`unerwartete Aufgabe ${typ}`);
   }
 

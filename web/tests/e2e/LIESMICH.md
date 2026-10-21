@@ -84,6 +84,10 @@ Hinweise:
 - Verwaltung der Lern-App (L3-06): `lernapp/verwaltung-sprachpruefung.spec.ts` (Rolle „Sprachprüfung“ mit Prüfsprache
   Deutsch, Stichprobe der Zieltexte von `de.a1.e01` bleibt offen) und `lernapp/verwaltung-audio.spec.ts` (Ersatz-Mikrofon
   von Chromium, Ablage unter `MEDIEN_VERZEICHNIS`) brauchen `FUNKTION_LERNAPP=an`; beide nur im Projekt `desktop`.
+- Sprachausgabe (L3-05): `lernapp/audio-buendel.spec.ts` spielt regulär die Testbündel. Mit einem lokal gebauten Bündel der
+  Audio-Kette (`_lernapp/werkzeuge/tts/LIESMICH.md` §4) zusätzlich `E2E_AUDIO_MANIFEST=<manifest>` (Import in die
+  E2E-Datenbank), `LERNAPP_AUDIO_LOKAL=<ordner mit de/…lpa>` (Route) und `E2E_AUDIO_BUENDEL=<datei>.lpa` (genau dieses Bündel
+  muss geladen werden); nur Projekt `desktop`, ohne `LERNAPP_BLOB_BASIS`.
 - ALTCHA rechnet im Browser (Proof-of-Work); die Tests warten bis 60 s (`hilfen/altcha.ts`). Auf 4 Kernen ohne Fremdlast
   dauert eine Lösung 1–9 s; laufen nebenher Bauten, deutlich länger.
 - Mit Cache Components antworten Seiten als Stream mit 200; ein `notFound()` mitten im Stream bleibt bei 200 mit

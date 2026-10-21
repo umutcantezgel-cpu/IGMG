@@ -21,7 +21,8 @@ Hörabnahme der Stimme und der Aussprache-Überschreibungen bleibt LM-06.
 ## 1. Ergebnis
 
 - Die Kette läuft von der Liste bis zum Bündel ohne Netz und ohne Torch. Das gilt für 16 Testkurs-Einträge und für 1.319
-  Einträge des A1-Entwurfs (1.066 Sätze, 253 Lemmata). Die App spielt das lokal gebaute Bündel im echten Spieler ab (E2E, §5).
+  Einträge des A1-Entwurfs (1.066 Sätze, 253 Lemmata). Die App spielt das lokal gebaute Bündel im echten Spieler ab (E2E grün,
+  §5.1).
 - **Erzeugung:** 1.900,9 s Audio in 770,4 s Wandzeit, **effektiver Echtzeitfaktor 0,41** (4 Prozesse × 1 Thread, bei Last
   5–9). Das ist langsamer als S3 ohne Fremdlast (0,29–0,33).
 - **Größe:** 0,43 kB je Clip plus **3,29 kB je Sekunde** (28,7 kbit/s mit Container). Die Bündel tragen zusätzlich ≈ 150 Byte
@@ -168,16 +169,33 @@ A1 de ≈ 16 MB (Plan offline: A1 ≈ 25 MB je Richtung mit Paketen und Bildern)
   Bündel/Manifest, Prüfkette mit Zahlwörtern, Stimmen, Aussprache. **Integration** (`tests/integration/lernapp-audio.test.ts`):
   Manifest-Import abgleichend bzw. ergänzend, fail closed.
 - **E2E** (`tests/e2e/lernapp/audio-buendel.spec.ts`), ein Bau:
-  - regulär mit den Testbündeln: Ergebnis in §5.1
+  - regulär mit den Testbündeln (der Spec selbst und die übrigen Hör-E2E): Ergebnis in §5.1
   - mit dem lokal gebauten Bündel des Testkurses (`E2E_AUDIO_MANIFEST`, `LERNAPP_AUDIO_LOKAL`, `E2E_AUDIO_BUENDEL`): Der Spieler
     lädt genau `de.a1.e01-bb1b1734033e97b6.lpa`, schneidet den Clip und spielt ihn normal und langsam bis `ended`.
 
 ### 5.1 Ergebnis des Baus
 
-(wird nach dem Lauf eingetragen)
+Es liefen zwei Produktionsbauten unter dem gemeinsamen Schloss, mit eigener E2E-Datenbank `igmg_lernapp_c_e2e` auf Port 3223.
+
+1. **Erster Bau ungültig.** Der Bau selbst war grün. Die vorgegebene `.env` setzt aber `FUNKTION_LERNAPP` nicht
+   (`tests/e2e/LIESMICH.md` Schritt 1). Alle Seiten der Lern-App antworteten deshalb mit 404, und 25 Tests waren rot. Für den
+   zweiten Bau kamen in die lokale `.env` dieselben Schalter wie im Tor des Orchestrators: `FUNKTION_LERNAPP`,
+   `FUNKTION_LERNAPP_SYNC`, `FUNKTION_LERNAPP_SPRECHEN` und `FUNKTION_LERNAPP_MELDUNGEN`, je `an`.
+2. **Zweiter Bau grün.** Ergebnis `audio-buendel.spec.ts`, `typen-a.spec.ts`, `rahmen.spec.ts`: **39 bestanden, 16
+   übersprungen (Projekt- bzw. Bildschirmfoto-Bedingungen), 1 rot.**
+   - Typen-Tests und Rahmen sind grün, also auch die Testbündel samt „Audio folgt“ und Wiedergabe bis `ended`.
+   - Rot war der neue Spec im regulären Lauf. Ursache war ein Wettlauf im Test: Die Übung lädt nach (`lazy` mit `Suspense`),
+     und der Test fragte „Audio folgt“ ab, bevor die Übung dastand. Er wartet jetzt auf „Audio folgt“ oder „Anhören“ und danach
+     auf die Folgeübung. **Nicht erneut gelaufen**, weil es keinen dritten Bau geben sollte; die Lern-App-E2E im Tor der
+     Zusammenführung decken ihn ab.
+   - **Mit dem lokal gebauten Bündel** (`E2E_AUDIO_MANIFEST`, `LERNAPP_AUDIO_LOKAL`, `E2E_AUDIO_BUENDEL`): **1 bestanden**.
+     Der Spieler lud ausschließlich `/lern-app/audio/de/de.a1.e01-bb1b1734033e97b6.lpa`. Er spielte die Sprachausgabe der
+     ersten Hörübung und der Hörübung „Bedeutung“ normal und langsam bis `ended`.
 
 ## 6. Offen
 
+- **Tor der Zusammenführung:** Der reguläre Lauf von `audio-buendel.spec.ts` steht nach der Korrektur des Wettlaufs noch aus
+  (§5.1).
 - **LM-06:** Hörabnahme der Stimme, der Überschreibungen und der Hör-Fälle (§3.5).
 - **LM-15:** Hochladen der Bündel. Erst danach gehört `audio-manifest/de.json` ins Repository.
 - **Entscheidung:** bis zu zwei Neuerzeugungen vor dem Hören (§3.4).
