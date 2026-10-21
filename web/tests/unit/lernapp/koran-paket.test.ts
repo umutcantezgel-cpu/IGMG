@@ -1,11 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import type { FreigabeBaustein, Pruefung } from '@/lib/lernapp/freigabe';
+import { FREIGABE_STATUS, gleicherInhalt } from '@/lib/religioes/freigabe';
 import type { KoranPfadDatei } from '@/lib/lernapp/inhalt/schema';
 import { istKoranPaket } from '@/lib/lernapp/lokal/koran';
+import { inhaltHash } from '@/lib/lernapp/paket/hash';
 import {
   baueKoranEinheit,
   baueKoranVerzeichnis,
   koranBedeutungHash,
+  koranBedeutungStatus,
   type KoranWortEingabe,
   sichtbareBedeutung,
 } from '@/lib/lernapp/paket/koran';
@@ -13,8 +16,9 @@ import {
 /**
  * Paketbau des Koran-Arabisch-Pfads (L6-05, ADR 0040 Nr. 5, KERN 4.0 §2.3/§4): Eine Bedeutung steht nur mit zwei religiösen
  * Freigaben verschiedener Personen zum aktuellen Inhalts-Hash im Paket (sonst „Bedeutung folgt“); Verfasser und die
- * Administration zählen nicht; ein Einwand sperrt. Eine Lektion gibt es nur, wenn jede gezeigte Bedeutung (auch die der
- * Ablenker) freigegeben ist. Pakete haben nie Audio, nur Wortzeiten, wenn welche übergeben werden. Testdaten: Wortformen nur
+ * Administration zählen nicht; ein Einwand und ein Website-Entwurf sperren. Eine Lektion gibt es nur, wenn jede gezeigte
+ * Bedeutung (auch die der Ablenker) freigegeben ist. Pakete haben nie Audio, nur Wortzeiten, wenn welche übergeben werden, und
+ * nennen dann die Rezitation. Hash und Statusregel sind der Vertrag mit der Prüfoberfläche (L6-02/03). Testdaten: Wortformen nur
  * als Codepunkte, Bedeutungen als Platzhalter.
  */
 
@@ -22,7 +26,7 @@ const AM = new Date('2026-10-21T10:00:00Z');
 const HOCA = 'person-hoca';
 const STELLEN = ['1:1:1', '1:1:2', '1:1:3'] as const;
 // neutrale Wörter, nur als Codepunkte (KI-Regel 2): b-a-b, d-a-r, q-a-l-a-m
-const FORMEN = ['باب', 'دار', 'قلم'];
+const FORMEN = ['\u0628\u0627\u0628', '\u062F\u0627\u0631', '\u0642\u0644\u0645'];
 const BEDEUTUNGEN = ['[Bedeutung eins]', '[Bedeutung zwei]', '[Bedeutung drei]'];
 
 const einheit: KoranPfadDatei['einheiten'][number] = {
@@ -45,7 +49,14 @@ const einheit: KoranPfadDatei['einheiten'][number] = {
   ],
 };
 
-const hashVon = (i: number, text = BEDEUTUNGEN[i]!) => koranBedeutungHash({ formId: i + 1, sprache: 'de', bedeutung: text });
+const inhalt = (formId: number, bedeutung: string, extra: { sprache?: string; wurzel?: string; anmerkung?: string } = {}) => ({
+  formId,
+  sprache: extra.sprache ?? 'de',
+  bedeutung,
+  wurzel: extra.wurzel ?? null,
+  anmerkung: extra.anmerkung ?? null,
+});
+const hashVon = (i: number, text = BEDEUTUNGEN[i]!) => koranBedeutungHash(inhalt(i + 1, text));
 
 function ok(person: string, hash: string, extra: Partial<Pruefung> = {}): Pruefung {
   return {
@@ -117,8 +128,8 @@ describe('Koran-Paket: Bedeutungen nur mit zwei Freigaben zum aktuellen Hash', (
   it('der Hash bindet den Text: geänderte Bedeutung oder andere Sprache ergibt einen neuen Hash', () => {
     expect(hashVon(0)).toMatch(/^[0-9a-f]{64}$/);
     expect(hashVon(0, '[Bedeutung eins!]')).not.toBe(hashVon(0));
-    expect(koranBedeutungHash({ formId: 1, sprache: 'tr', bedeutung: BEDEUTUNGEN[0]! })).not.toBe(hashVon(0));
-    expect(koranBedeutungHash({ formId: 2, sprache: 'de', bedeutung: BEDEUTUNGEN[0]! })).not.toBe(hashVon(0));
+    expect(koranBedeutungHash(inhalt(1, BEDEUTUNGEN[0]!, { sprache: 'tr' }))).not.toBe(hashVon(0));
+    expect(koranBedeutungHash(inhalt(2, BEDEUTUNGEN[0]!))).not.toBe(hashVon(0));
     // Freigaben zum Hash des alten Texts gelten nicht für den neuen
     const w = woerter(zwei);
     const alt = w.get(STELLEN[0])!;
@@ -158,6 +169,51 @@ describe('Koran-Paket: Bedeutungen nur mit zwei Freigaben zum aktuellen Hash', (
   });
 });
 
+describe('Koran-Paket: Vertrag mit der Prüfoberfläche (L6-02/03)', () => {
+  it('Hash über Form, Sprache, Bedeutung, Wurzel und Anmerkung als kanonisches JSON (wie inhaltHash der Prüfoberfläche)', () => {
+    const b = inhalt(7, '[Bedeutung]', { wurzel: '[W]', anmerkung: '[A]' });
+    expect(koranBedeutungHash(b)).toBe(inhaltHash({ art: 'koran_bedeutung', ...b }));
+    expect(koranBedeutungHash(inhalt(7, '[Bedeutung]'))).toBe(
+      inhaltHash({ art: 'koran_bedeutung', formId: 7, sprache: 'de', bedeutung: '[Bedeutung]', wurzel: null, anmerkung: null }),
+    );
+    // Unicode-Normalform zählt nicht (NFC), jeder Inhalt schon
+    expect(koranBedeutungHash(inhalt(7, 'e\u0301'))).toBe(koranBedeutungHash(inhalt(7, '\u00e9')));
+    expect(koranBedeutungHash(inhalt(7, '[Bedeutung]', { wurzel: '[W2]', anmerkung: '[A]' }))).not.toBe(koranBedeutungHash(b));
+    expect(koranBedeutungHash(inhalt(7, '[Bedeutung]', { wurzel: '[W]', anmerkung: '[A2]' }))).not.toBe(koranBedeutungHash(b));
+  });
+
+  it('jede Änderung, die die Verwaltung als Inhalt erkennt (gleicherInhalt), ergibt einen neuen Hash – und nur sie', () => {
+    const basis = { bedeutung: '[B]', wurzel: '[W]', anmerkung: null };
+    const faelle = [
+      basis,
+      { ...basis, bedeutung: '[B2]' },
+      { ...basis, wurzel: null },
+      { ...basis, wurzel: '[W2]' },
+      { ...basis, anmerkung: '[A]' },
+      { bedeutung: '[B]', anmerkung: null, wurzel: '[W]' },
+    ];
+    const hash = (x: (typeof faelle)[number]) => koranBedeutungHash({ formId: 1, sprache: 'de', ...x });
+    for (const a of faelle) for (const b of faelle) expect(hash(a) === hash(b), JSON.stringify([a, b])).toBe(gleicherInhalt(a, b));
+  });
+
+  it('Statusregel: Website-Entwurf (zurückgewiesen, Freigabe aufgehoben) gesperrt, sonst entscheiden die Freigaben', () => {
+    expect(FREIGABE_STATUS.map((f) => [f, koranBedeutungStatus(f)])).toEqual([
+      ['entwurf', 'gesperrt'],
+      ['zur_pruefung', 'veroeffentlicht'],
+      ['geprueft', 'veroeffentlicht'],
+    ]);
+    const w = woerter(zwei);
+    const x = w.get(STELLEN[0])!;
+    w.set(STELLEN[0], {
+      ...x,
+      bedeutung: { ...x.bedeutung!, freigabe: { ...x.bedeutung!.freigabe, status: koranBedeutungStatus('entwurf') } },
+    });
+    const r = bau(w);
+    expect(r.paket.woerter[0]!.bedeutung).toBeUndefined();
+    expect(r.paket.lektionen).toEqual([]);
+  });
+});
+
 describe('Koran-Paket: kein Audio', () => {
   it('ohne Wortzeiten kein Hörfeld; nie audio, stimme oder Clips – auch nicht in den Aufgaben', () => {
     const r = bau(woerter(zwei));
@@ -174,6 +230,19 @@ describe('Koran-Paket: kein Audio', () => {
     expect(r.paket.woerter[0]!.zeit).toEqual(zeit);
     expect(r.paket.woerter[1]).toEqual({ stelle: '1:1:2', vorkommen: 9, bedeutung: BEDEUTUNGEN[1] });
     expect(r.json).not.toMatch(/"(audio|stimme)"\s*:/);
+  });
+
+  it('Quellen nennen die Rezitation (Name, Rezitator, Lizenz), wenn ihre Wortzeiten im Paket stehen – sonst nicht', () => {
+    const rezitationen = new Map([
+      ['test', '[Rezitation test]'],
+      ['andere', '[Rezitation andere]'],
+    ]);
+    const mit = (w: Map<string, KoranWortEingabe>) =>
+      baueKoranEinheit({ einheit, sprache: 'de', woerter: w, quellen: ['[Quelle]'], rezitationen }).paket.quellen;
+    expect(mit(woerter(zwei))).toEqual(['[Quelle]']);
+    const w = woerter(zwei);
+    w.set(STELLEN[0], { ...w.get(STELLEN[0])!, zeit: { adresse: '/audio/test/a.webm', startMs: 0, endeMs: 500, rezitation: 'test' } });
+    expect(mit(w)).toEqual(['[Quelle]', '[Rezitation test]']);
   });
 
   it('der Browser verwirft Pakete mit Audio-Feld oder fremder Einheit', () => {

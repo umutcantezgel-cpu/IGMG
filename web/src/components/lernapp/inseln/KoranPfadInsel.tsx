@@ -1,8 +1,9 @@
 'use client';
 
 import { BookOpen, Volume2 } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { formatiere, type Ziffern } from '@/lib/lernapp/format';
+import { spieleAusschnitt } from '@/lib/lernapp/koran/ausschnitt';
 import type { Oberflaeche, Stufe } from '@/lib/lernapp/kurse';
 import {
   type BedeutungsSprache,
@@ -33,6 +34,13 @@ export type KoranPfadTexte = {
 };
 
 type Zustand = { art: 'laedt' } | { art: 'leer' } | { art: 'bereit'; v: KoranVerzeichnis };
+
+/** Höchstens eine Wiedergabe auf der Seite: Ein neues Wort, das Schließen einer Einheit und das Verlassen der Seite halten an. */
+let laufend: (() => void) | null = null;
+function halteWiedergabeAn() {
+  laufend?.();
+  laufend = null;
+}
 
 /**
  * Koran-Arabisch-Pfad (L6-05, PLAN §5.3, ADR 0040 Nr. 5): Stufen → Einheiten; je Einheit die Wortformen in der Koranschrift
@@ -68,6 +76,14 @@ export function KoranPfadInsel({
       aktiv = false;
     };
   }, [sprache, ui]);
+
+  useEffect(() => {
+    window.addEventListener('pagehide', halteWiedergabeAn);
+    return () => {
+      window.removeEventListener('pagehide', halteWiedergabeAn);
+      halteWiedergabeAn();
+    };
+  }, []);
 
   if (z.art === 'laedt') return <p className="text-18 text-tinte-2">{texte.laedt}</p>;
   if (z.art === 'leer') return <p className="text-18 text-tinte-2">{texte.leer}</p>;
@@ -117,6 +133,7 @@ function KoranEinheit({
   const thema = e.thema[sprache] ?? e.thema.de ?? e.schluessel;
 
   function oeffnen(offen: boolean) {
+    if (!offen) halteWiedergabeAn();
     if (!offen || paket !== 'zu') return;
     setPaket('laedt');
     void ladeKoranPaket(sprache, e).then((p) => setPaket(p ?? 'fehlt'));
@@ -188,29 +205,11 @@ function KoranEinheit({
   );
 }
 
-/** Wort aus einer geprüften Rezitation abspielen (Ausschnitt nach Wortzeiten); nie eine Computerstimme. */
+/** Wort aus einer geprüften Rezitation abspielen (Ausschnitt nach Wortzeiten, Ende je Bildschirmbild); nie eine Computerstimme. */
 function Anhoeren({ zeit, text }: { zeit: KoranWortZeit; text: string }) {
-  const laeuft = useRef<HTMLAudioElement | null>(null);
   function spiele() {
-    laeuft.current?.pause();
-    const a = new Audio(zeit.adresse);
-    laeuft.current = a;
-    const ende = () => {
-      if (a.currentTime * 1000 >= zeit.endeMs) {
-        a.pause();
-        a.removeEventListener('timeupdate', ende);
-      }
-    };
-    a.addEventListener(
-      'loadedmetadata',
-      () => {
-        a.currentTime = zeit.startMs / 1000;
-        a.addEventListener('timeupdate', ende);
-        void a.play().catch(() => undefined);
-      },
-      { once: true },
-    );
-    a.load();
+    halteWiedergabeAn();
+    laufend = spieleAusschnitt(new Audio(zeit.adresse), zeit);
   }
   return (
     <button

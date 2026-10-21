@@ -5,7 +5,9 @@
 // Nur Verweise: Wortformen stehen als Stelle `Sure:Vers:Wort` (Wortzählung wie `quran_wort`, `src/lib/quran/woerter.ts`) aus
 // dem gepinnten Tanzil-Text (`web/daten/tanzil`); keine arabische Schrift, keine Bedeutungen. Bedeutungen verfassen Menschen
 // (Hoca, MN-05) in `quran_wortbedeutung`; sichtbar werden sie erst mit zwei religiösen Freigaben zum aktuellen Stand
-// (`paket/koran.ts`). Die Arbeitsliste nennt je Wortform Stelle, maschinelle Umschrift und Vorkommen – ohne arabische Schrift.
+// (`paket/koran.ts`). Die Arbeitsliste nennt je Wortform Stelle und Vorkommen, in den Einheiten nach Häufigkeit dazu eine
+// maschinelle Umschrift – ohne arabische Schrift. Einheiten in Lesereihenfolge (Sure 1, Teil 30) bekommen keine Umschrift,
+// damit die Liste keinen Surentext in Umschrift ergibt (KI-Regel 2, Gegenprüfung L6-05/06).
 //
 // Reihenfolge (deterministisch, ≈ 40 Einheiten):
 //   grund       e01 Sure 1 (Wortformen in Lesereihenfolge), e02–e14 die häufigsten Wortformen (je 20, Lektionen zu 5)
@@ -36,7 +38,8 @@ const JE_LEKTION = 5;
 const ABLENKER = 3;
 
 type Form = { text: string; stelle: string; vorkommen: number; erste: number };
-type Einheit = { stufe: 'grund' | 'aufbau' | 'vertiefung'; thema: { de: string; tr: string }; formen: Form[] };
+/** `lesen`: Wortformen in Lesereihenfolge einer Sure (Arbeitsliste ohne Umschrift) */
+type Einheit = { stufe: 'grund' | 'aufbau' | 'vertiefung'; thema: { de: string; tr: string }; formen: Form[]; lesen: boolean };
 
 const { values } = parseArgs({ options: { pruefen: { type: 'boolean', default: false } } });
 
@@ -63,7 +66,7 @@ const einheiten: Einheit[] = [];
 const sure1 = alle
   .filter((w) => w.sure === 1)
   .flatMap((w) => (nimm(formen.get(w.text)!) ? [{ ...formen.get(w.text)!, stelle: stelleIn(w) }] : []));
-einheiten.push({ stufe: 'grund', thema: { de: 'Sure 1', tr: '1. sure' }, formen: sure1 });
+einheiten.push({ stufe: 'grund', thema: { de: 'Sure 1', tr: '1. sure' }, formen: sure1, lesen: true });
 
 // Häufigste Wortformen (Vorkommen absteigend, dann erstes Vorkommen)
 const nachHaeufigkeit = [...formen.values()].sort((a, b) => b.vorkommen - a.vorkommen || a.erste - b.erste);
@@ -75,7 +78,12 @@ function haeufige(anzahl: number, je: number, stufe: Einheit['stufe'], start: nu
       if (nimm(f)) auswahl.push(f);
     }
     const nr = start + n;
-    einheiten.push({ stufe, thema: { de: `Häufige Wortformen ${nr}`, tr: `Sık geçen kelime biçimleri ${nr}` }, formen: auswahl });
+    einheiten.push({
+      stufe,
+      thema: { de: `Häufige Wortformen ${nr}`, tr: `Sık geçen kelime biçimleri ${nr}` },
+      formen: auswahl,
+      lesen: false,
+    });
   }
 }
 haeufige(GRUND_EINHEITEN, GRUND_JE, 'grund', 1);
@@ -106,8 +114,14 @@ for (const e of teil30Einheiten) {
     stufe: 'vertiefung',
     thema: { de: `Teil 30: ${suren}`, tr: `30. cüz: ${e.von === e.bis ? `${bereich}. sure` : `${bereich}. sureler`}` },
     formen: e.formen,
+    lesen: true,
   });
 }
+// Abdeckung von Teil 30 (PLAN §5.3): Wortformen des Teils im Pfad (auch aus anderen Einheiten) und Suren mit fehlenden Formen
+const formenTeil30 = new Set(alle.filter(imTeil30).map((w) => w.text));
+const fehlenTeil30 = [...formenTeil30].filter((t) => !vergeben.has(t));
+const surenFehlend = [...new Set(alle.filter((w) => imTeil30(w) && !vergeben.has(w.text)).map((w) => w.sure))].sort((a, b) => b - a);
+const bereichVon = (liste: number[]) => (liste.length ? `${liste[0]}–${liste.at(-1)}` : '–');
 
 // Datei bauen
 const nummer = new Map<string, number>();
@@ -169,8 +183,10 @@ async function schreibe() {
     '  zurück. Steht an einer Stelle eine abweichende Bedeutung (`quran_wortbedeutung_ort`), zeigt der Pfad dort keine.',
     '- **Abfrage am Live-Stand:** `pnpm lernapp:koran-sichtbar` prüft jede gezeigte Bedeutung gegen die Freigaben in der',
     '  Datenbank (Ausgabe nur Zahlen und Stellen).',
-    '- **Umschrift:** maschinell (DMG-Art, `src/lib/lernapp/koran/umschrift.ts`), nur zur Orientierung; maßgeblich ist die Stelle',
-    '  `Sure:Vers:Wort` (Wortzählung des Tanzil-Texts wie im Koran-Leser).',
+    '- **Umschrift:** maschinell und vereinfacht (DMG-Art, `src/lib/lernapp/koran/umschrift.ts`, z. B. ungenau am Wortanfang),',
+    '  nur zur Orientierung und nur in den Einheiten nach Häufigkeit. In Einheiten in Lesereihenfolge (Sure 1, Teil 30) steht',
+    '  „–“, damit die Liste keinen Surentext in Umschrift ergibt (KI-Regel 2). Maßgeblich ist immer die Stelle `Sure:Vers:Wort`',
+    '  (Wortzählung des Tanzil-Texts wie im Koran-Leser).',
     '- **Vorkommen:** Anzahl gleicher Schreibungen im ganzen Text (`quran_wortform.vorkommen`).',
     '',
     `Umfang: ${datei.einheiten.length} Einheiten, ${datei.einheiten.reduce((n, e) => n + e.lektionen.length, 0)} Lektionen, ${datei.einheiten.reduce((n, e) => n + e.lektionen.reduce((m, l) => m + l.wortformen.length, 0), 0)} Wortformen. Abdeckung der Wörter im Text: ${(
@@ -178,10 +194,13 @@ async function schreibe() {
       alle.length
     ).toFixed(1)} % von ${alle.length}.`,
     '',
+    `Teil 30: eigene Einheiten für die Suren ${teil30Einheiten[0]?.von ?? '–'}–${teil30Einheiten.at(-1)?.bis ?? '–'}; ${formenTeil30.size - fehlenTeil30.length} von ${formenTeil30.size} Wortformen des Teils stehen im Pfad, ${fehlenTeil30.length} fehlen (Suren ${bereichVon(surenFehlend)}). Der Umfang nach PLAN §5.3 ist offen.`,
+    '',
   ];
   const textVon = new Map([...formen.values()].map((f) => [f.text, f]));
   const stelleZuText = new Map(alle.map((w) => [stelleIn(w), w.text]));
-  for (const e of datei.einheiten) {
+  for (const [i, e] of datei.einheiten.entries()) {
+    const lesen = einheiten[i]!.lesen;
     zeilen.push(
       `## ${e.schluessel} – ${e.thema.de}`,
       '',
@@ -193,7 +212,7 @@ async function schreibe() {
       for (const stelle of l.wortformen) {
         const text = stelleZuText.get(stelle)!;
         zeilen.push(
-          `| ${++n} | ${l.schluessel.slice(e.schluessel.length + 1)} | ${stelle} | ${umschrift(text)} | ${textVon.get(text)!.vorkommen} | | |`,
+          `| ${++n} | ${l.schluessel.slice(e.schluessel.length + 1)} | ${stelle} | ${lesen ? '–' : umschrift(text)} | ${textVon.get(text)!.vorkommen} | | |`,
         );
       }
     zeilen.push('');

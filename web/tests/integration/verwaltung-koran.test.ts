@@ -7,7 +7,7 @@ import { angemeldetAls, aufrufe, formular, verwaltungsUmgebung } from './hilfen/
 /**
  * Verwaltung „Koran & Hadith“ (H-Q03/Q04, ADR 0030): Vier-Augen-Freigabe, Rücksetzen bei jeder Änderung, öffentliche
  * Abfragen liefern nur „geprüft“, Rechte (Redaktion nie, Administration laut Matrix ja), Cache-Tags nach Änderungen an
- * öffentlich Sichtbarem, Ausgaben-Freigabe, kuratierte Listen. Alle Texte und Wortformen sind Platzhalter in eckigen
+ * öffentlich Sichtbarem (bei Wortbedeutungen dazu immer der Koran-Pfad der Lern-App), Ausgaben-Freigabe, kuratierte Listen. Alle Texte und Wortformen sind Platzhalter in eckigen
  * Klammern – keine religiösen Inhalte.
  */
 const { client, db } = await verwaltungsUmgebung();
@@ -22,16 +22,14 @@ let formA = 0;
 let formB = 0;
 
 beforeAll(async () => {
-  await db
-    .insert(schema.quranQuelle)
-    .values({
-      id: 'tanzil',
-      bezeichnung: '[Quelle]',
-      url: 'https://example.test',
-      version: 'test',
-      sha256: '0'.repeat(64),
-      lizenz: '[Lizenz]',
-    });
+  await db.insert(schema.quranQuelle).values({
+    id: 'tanzil',
+    bezeichnung: '[Quelle]',
+    url: 'https://example.test',
+    version: 'test',
+    sha256: '0'.repeat(64),
+    lizenz: '[Lizenz]',
+  });
   await db.insert(schema.quranSure).values({ nr: 1, nameAr: '[Sure 1]', verseAnzahl: 2, quelleId: 'tanzil', nameUmschrift: '[Sure Eins]' });
   await db.insert(schema.quranVers).values([
     { sure: 1, vers: 1, textAr: '[a] [b]' },
@@ -135,7 +133,7 @@ describe('Rechte (Matrix: Redaktion nie, Administration ja, religiöse Prüfung 
 
 describe('Wortbedeutungen: Vier-Augen-Freigabe und Rücksetzen', () => {
   let hoca = '';
-  it('Entwurf: gespeichert, nicht öffentlich, keine Cache-Erneuerung', async () => {
+  it('Entwurf: gespeichert, nicht öffentlich; nur der Koran-Pfad der Lern-App wird erneuert', async () => {
     hoca = (await angemeldetAls(PRUEFUNG))!;
     const z = await aktionen.bedeutungSpeichern(
       {},
@@ -143,7 +141,7 @@ describe('Wortbedeutungen: Vier-Augen-Freigabe und Rücksetzen', () => {
     );
     expect(z).toMatchObject({ status: 'entwurf' });
     expect(await bedeutung()).toMatchObject({ freigabe: 'entwurf', verfasstVon: hoca, bedeutung: '[Bedeutung A]' });
-    expect(aufrufe.updateTag).toEqual([]);
+    expect(aufrufe.updateTag).toEqual(['lernapp-kurs-koran']);
     expect((await quran.ladeWortDaten(1))!.bedeutungen).toEqual({});
   });
 
@@ -168,12 +166,12 @@ describe('Wortbedeutungen: Vier-Augen-Freigabe und Rücksetzen', () => {
     expect(await aktionen.statusSetzen({}, status('quran_wortbedeutung', b.id, 'entwurf'))).toMatchObject({ fehler: 'grundFehlt' });
   });
 
-  it('Freigabe durch eine zweite Person: öffentlich sichtbar, Tag „quran“ erneuert', async () => {
+  it('Freigabe durch eine zweite Person: öffentlich sichtbar, Tags „quran“ und Koran-Pfad erneuert', async () => {
     const b = await bedeutung();
     const pruefer = (await angemeldetAls(PRUEFUNG))!;
     expect(await aktionen.statusSetzen({}, status('quran_wortbedeutung', b.id, 'geprueft'))).toMatchObject({ status: 'geprueft' });
     expect(await bedeutung()).toMatchObject({ freigabe: 'geprueft', geprueftVon: pruefer, verfasstVon: hoca });
-    expect(aufrufe.updateTag).toEqual(['quran']);
+    expect(aufrufe.updateTag).toEqual(['quran', 'lernapp-kurs-koran']);
     expect((await quran.ladeWortDaten(1))!.bedeutungen[formA]).toEqual({ de: { b: '[Bedeutung A]', wurzel: '[W]' } });
     // Ein zweites Freigeben ist kein Übergang
     expect(await aktionen.statusSetzen({}, status('quran_wortbedeutung', b.id, 'geprueft'))).toEqual({ fehler: 'uebergang' });
@@ -191,7 +189,7 @@ describe('Wortbedeutungen: Vier-Augen-Freigabe und Rücksetzen', () => {
       await aktionen.bedeutungSpeichern({}, formular({ formId: String(formA), sprache: 'de', bedeutung: '[Bedeutung A2]', wurzel: '[W]' })),
     ).toMatchObject({ status: 'zur_pruefung' });
     expect(await bedeutung()).toMatchObject({ freigabe: 'zur_pruefung', verfasstVon: autor, geprueftVon: null, geprueftAm: null });
-    expect(aufrufe.updateTag).toEqual(['quran']);
+    expect(aufrufe.updateTag).toEqual(['quran', 'lernapp-kurs-koran']);
     expect((await quran.ladeWortDaten(1))!.bedeutungen).toEqual({});
     const b = await bedeutung();
     expect(await aktionen.statusSetzen({}, status('quran_wortbedeutung', b.id, 'geprueft'))).toEqual({ fehler: 'vierAugen' });
@@ -210,7 +208,7 @@ describe('Wortbedeutungen: Vier-Augen-Freigabe und Rücksetzen', () => {
     expect(await aktionen.statusSetzen({}, status('quran_wortbedeutung', b.id, 'entwurf', '[Grund der Prüfung]'))).toMatchObject({
       status: 'entwurf',
     });
-    expect(aufrufe.updateTag).toEqual(['quran']);
+    expect(aufrufe.updateTag).toEqual(['quran', 'lernapp-kurs-koran']);
     expect(await verlauf('quran_wortbedeutung')).toEqual(['zur_pruefung', 'geprueft', 'zur_pruefung', 'geprueft', 'entwurf']);
     const audit = (await db.select().from(schema.auditEintrag).where(eq(schema.auditEintrag.zielTyp, 'quran_wortbedeutung'))).map(
       (z) => z.aktion,

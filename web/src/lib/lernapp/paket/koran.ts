@@ -1,5 +1,13 @@
 import { type AufgabeVon, type Lektion, LektionSchema } from '../aufgaben/schema';
-import { type FreigabeBaustein, type KoranWortFreigabe, koranWortSichtbar, lektionSichtbar, wissenSichtbar } from '../freigabe';
+import type { FreigabeStatus } from '../../religioes/freigabe';
+import {
+  type FreigabeBaustein,
+  type KoranWortFreigabe,
+  koranWortSichtbar,
+  lektionSichtbar,
+  type Status,
+  wissenSichtbar,
+} from '../freigabe';
 import type { KoranPfadDatei } from '../inhalt/schema';
 import {
   type BedeutungsSprache,
@@ -10,7 +18,7 @@ import {
   type KoranWort,
   type KoranWortZeit,
 } from '../koran/typen';
-import { kanonischGeprueft, sha256Hex } from './hash';
+import { inhaltHash, kanonischGeprueft, sha256Hex } from './hash';
 
 /**
  * Paketbau des Koran-Arabisch-Pfads (L6-05, ADR 0039 Nr. 1, ADR 0040 Nr. 5, KERN 4.0 §2.3) – rein, ohne Datenbank. Was
@@ -26,11 +34,41 @@ import { kanonischGeprueft, sha256Hex } from './hash';
  * - **Kein Audio**: keine Sprachausgabe; nur Wortzeiten geprüfter Zeiten aktiver Rezitationen (`zeit`, KERN 4.0 §4).
  */
 
-/** Inhalts-Hash einer Koran-Wortbedeutung für die Prüfungen (`lernapp_pruefung.inhaltTyp = 'koran_bedeutung'`). */
-export function koranBedeutungHash(b: { formId: number; sprache: string; bedeutung: string }): string {
-  return sha256Hex(
-    kanonischGeprueft({ art: 'koran_bedeutung', formId: b.formId, sprache: b.sprache, bedeutung: b.bedeutung.normalize('NFC') }),
-  );
+/**
+ * Inhalt einer Koran-Wortbedeutung, den der Hash bindet: Form und Sprache sowie alle Felder, die die Verwaltung als Inhalt
+ * vergleicht (`gleicherInhalt` in `server/actions/koran.ts`: Bedeutung, Wurzel, Anmerkung) und die Prüfenden sehen.
+ */
+export type KoranBedeutungInhalt = {
+  formId: number;
+  sprache: string;
+  bedeutung: string;
+  wurzel: string | null;
+  anmerkung: string | null;
+};
+
+/**
+ * Inhalts-Hash einer Koran-Wortbedeutung für die religiösen Prüfungen (`lernapp_pruefung.inhaltTyp = 'koran_bedeutung'`).
+ * Einzige Quelle für Paketbau, Abfrage am Live-Stand und Prüfoberfläche (Vertrag mit L6-02/03: dieselben Felder, dasselbe
+ * kanonische JSON). Jede Änderung an Bedeutung, Wurzel oder Anmerkung ergibt einen neuen Hash und setzt beide Freigaben zurück.
+ */
+export function koranBedeutungHash(b: KoranBedeutungInhalt): string {
+  return inhaltHash({
+    art: 'koran_bedeutung',
+    formId: b.formId,
+    sprache: b.sprache,
+    bedeutung: b.bedeutung.normalize('NFC'),
+    wurzel: b.wurzel?.normalize('NFC') ?? null,
+    anmerkung: b.anmerkung?.normalize('NFC') ?? null,
+  });
+}
+
+/**
+ * Status einer Koran-Wortbedeutung im Lern-App-Pfad aus der Freigabe der Website (ADR 0030): Ein Entwurf (nicht eingereicht,
+ * zurückgewiesen oder Freigabe aufgehoben) ist gesperrt; sonst entscheiden die zwei religiösen Freigaben zum aktuellen Hash.
+ * Einzige Statusregel für Paketbau, Abfrage am Live-Stand und Prüfoberfläche (L6-02/03).
+ */
+export function koranBedeutungStatus(freigabe: FreigabeStatus): Status {
+  return freigabe === 'entwurf' ? 'gesperrt' : 'veroeffentlicht';
 }
 
 export type KoranBedeutungEingabe = { text: string; freigabe: FreigabeBaustein };
@@ -53,6 +91,8 @@ export type KoranEinheitEingabe = {
   /** je Stelle (`Sure:Vers:Wort`) */
   woerter: ReadonlyMap<string, KoranWortEingabe>;
   quellen: readonly string[];
+  /** Quellenzeile je Rezitation (Name, Rezitator, Lizenz); das Paket nennt die, deren Wortzeiten es enthält (ADR 0039 Nr. 9) */
+  rezitationen?: ReadonlyMap<string, string>;
 };
 
 export type KoranBauErgebnis = { paket: KoranPaket; json: string; hash: string; bytes: number };
@@ -145,7 +185,12 @@ export function baueKoranEinheit(e: KoranEinheitEingabe): KoranBauErgebnis {
     },
     woerter,
     lektionen,
-    quellen: [...e.quellen],
+    quellen: [
+      ...e.quellen,
+      ...[...new Set(woerter.flatMap((w) => (w.zeit ? [w.zeit.rezitation] : [])))]
+        .sort()
+        .flatMap((r) => (e.rezitationen?.get(r) ? [e.rezitationen.get(r)!] : [])),
+    ],
     lizenz: 'CC-BY-SA-4.0',
   };
   const json = kanonischGeprueft(paket);

@@ -7,13 +7,23 @@ import { db, schema } from '@/lib/db';
 import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { funktionAn } from '@/lib/funktionen';
 import type { KoranPfadDatei } from '@/lib/lernapp/inhalt/schema';
-import { type BedeutungsSprache, BEDEUTUNGS_SPRACHEN, type KoranWortZeit } from '@/lib/lernapp/koran/typen';
+import {
+  type BedeutungsSprache,
+  BEDEUTUNGS_SPRACHEN,
+  type KoranPaket,
+  koranPaketAdresse,
+  type KoranVerzeichnis,
+  koranVerzeichnisAdresse,
+  type KoranWortZeit,
+} from '@/lib/lernapp/koran/typen';
+import { sha256Hex } from '@/lib/lernapp/paket/hash';
 import {
   type KoranBauErgebnis,
   type KoranWortEingabe,
   baueKoranEinheit,
   baueKoranVerzeichnis,
   koranBedeutungHash,
+  koranBedeutungStatus,
 } from '@/lib/lernapp/paket/koran';
 import { inBloecken } from './bloecke';
 import { ladePruefungen } from './pakete';
@@ -22,10 +32,12 @@ import { ladePruefungen } from './pakete';
  * Koran-Arabisch-Pfad aus `web/inhalte/lernapp/koran/pfad.json` (nur Verweise) und der Datenbank (L6-05, ADR 0040 Nr. 5):
  * Wortformen aus `quran_wort`/`quran_wortform` (gepinnter Tanzil-Text), Bedeutungen aus `quran_wortbedeutung` mit den
  * religiösen Prüfungen aus `lernapp_pruefung` (`inhaltTyp = 'koran_bedeutung'`, `inhaltId` = Kennung der Bedeutung,
- * `inhaltHash` = {@link koranBedeutungHash}; nicht an Stellen mit abweichender Bedeutung in `quran_wortbedeutung_ort`),
- * Wortzeiten nur geprüft und nur aktiver Rezitationen. Gecacht mit den Tags
- * `lernapp`, `lernapp-kurs-koran` (jede Freigabe und jedes Zurückziehen ruft `updateTag(TAG.lernappKurs('koran'))`),
- * `quran` (Bedeutungen bearbeitet), `rezitationen` und `einstellungen` (Schalter). Schalter `lernapp` aus → null.
+ * `inhaltHash` = {@link koranBedeutungHash} über Bedeutung, Wurzel und Anmerkung; Status nach {@link koranBedeutungStatus}:
+ * Website-Entwurf gesperrt; nicht an Stellen mit abweichender Bedeutung in `quran_wortbedeutung_ort`), Wortzeiten nur geprüft
+ * und nur aktiver Rezitationen (mit Namensnennung der Rezitation in den Quellen). Gecacht mit den Tags `lernapp`,
+ * `lernapp-kurs-koran` (jede Freigabe und jedes Zurückziehen, dazu jede Änderung an einer Bedeutung, einer Stelle oder ihrem
+ * Website-Status in `server/actions/koran.ts` ruft `updateTag(TAG.lernappKurs('koran'))`), `quran`, `rezitationen` und
+ * `einstellungen` (Schalter). Schalter `lernapp` aus → null.
  */
 
 export const KORAN_PFAD = pfadRoh as unknown as KoranPfadDatei;
@@ -51,7 +63,7 @@ function stellenVon(einheiten: readonly KoranPfadDatei['einheiten'][number][]): 
 export async function ladeKoranEingaben(
   sprache: BedeutungsSprache,
   nur?: string,
-): Promise<{ einheit: KoranPfadDatei['einheiten'][number]; woerter: Map<string, KoranWortEingabe> }[]> {
+): Promise<{ einheit: KoranPfadDatei['einheiten'][number]; woerter: Map<string, KoranWortEingabe>; rezitationen: Map<string, string> }[]> {
   const einheiten = KORAN_PFAD.einheiten.filter((e) => !nur || e.schluessel === nur);
   if (!einheiten.length) return [];
   const stellen = stellenVon(einheiten).map((s) => s.split(':').map(Number) as [number, number, number]);
@@ -107,6 +119,9 @@ export async function ladeKoranEingaben(
         id: schema.quranWortbedeutung.id,
         formId: schema.quranWortbedeutung.formId,
         bedeutung: schema.quranWortbedeutung.bedeutung,
+        wurzel: schema.quranWortbedeutung.wurzel,
+        anmerkung: schema.quranWortbedeutung.anmerkung,
+        freigabe: schema.quranWortbedeutung.freigabe,
         verfasstVon: schema.quranWortbedeutung.verfasstVon,
       })
       .from(schema.quranWortbedeutung)
@@ -169,6 +184,22 @@ export async function ladeKoranEingaben(
     if (datei && z.endeMs > z.startMs)
       zeitJe.set(k, { adresse: datei.pfad, startMs: z.startMs, endeMs: z.endeMs, rezitation: z.rezitation });
   }
+  // Namensnennung der Rezitationen, deren Wortzeiten im Paket stehen (offline lesbar, ADR 0039 Nr. 9)
+  const genutzt = [...new Set([...zeitJe.values()].map((z) => z.rezitation))];
+  const rezitationen = new Map(
+    (genutzt.length
+      ? await db
+          .select({
+            id: schema.quranRezitation.id,
+            name: schema.quranRezitation.name,
+            rezitator: schema.quranRezitation.rezitator,
+            lizenz: schema.quranRezitation.lizenz,
+          })
+          .from(schema.quranRezitation)
+          .where(inArray(schema.quranRezitation.id, genutzt))
+      : []
+    ).map((r) => [r.id, `Rezitation: ${r.name[sprache] ?? r.name.de} – ${r.rezitator}, ${r.lizenz}`]),
+  );
 
   const eingabe = new Map<string, KoranWortEingabe>();
   for (const w of woerter) {
@@ -181,10 +212,16 @@ export async function ladeKoranEingaben(
         ? {
             text: b.bedeutung,
             freigabe: {
-              // Status: gesperrt gibt es nur über Prüfungen (abgelehnt/Änderungsvorschlag); sonst entscheiden die Freigaben
-              status: 'veroeffentlicht',
+              // Website-Entwurf (zurückgewiesen, Freigabe aufgehoben) gesperrt; sonst entscheiden die Freigaben zum Hash
+              status: koranBedeutungStatus(b.freigabe),
               baustein: {
-                inhaltHash: koranBedeutungHash({ formId: w.formId, sprache, bedeutung: b.bedeutung }),
+                inhaltHash: koranBedeutungHash({
+                  formId: w.formId,
+                  sprache,
+                  bedeutung: b.bedeutung,
+                  wurzel: b.wurzel,
+                  anmerkung: b.anmerkung,
+                }),
                 verfasser: [b.verfasstVon],
                 belege: [],
                 belegPflicht: false,
@@ -196,7 +233,7 @@ export async function ladeKoranEingaben(
       ...(zeit ? { zeit } : {}),
     });
   }
-  return einheiten.map((einheit) => ({ einheit, woerter: eingabe }));
+  return einheiten.map((einheit) => ({ einheit, woerter: eingabe, rezitationen }));
 }
 
 /** Alle Einheiten einer Sprache (bzw. eine), gebaut. */
@@ -248,19 +285,65 @@ export type KoranSichtbarkeit = {
   verstoesse: string[];
 };
 
+/** Pakete einer Sprache, wie eine Quelle sie liefert, und Fehler beim Abruf (z. B. Hash passt nicht zur Adresse). */
+export type KoranAuslieferung = { pakete: { paket: KoranPaket; json: string }[]; fehler: string[] };
+export type KoranPaketQuelle = (sprache: BedeutungsSprache) => Promise<KoranAuslieferung>;
+
+/** Quelle „frisch gebaut“: alle Pakete direkt aus der Datenbank (ohne Cache). */
+export const frischGebaut: KoranPaketQuelle = async (sprache) => ({ pakete: await baueKoranPfad(sprache), fehler: [] });
+
 /**
- * Abfrage am Live-Stand (Tor L6, Z-L03; Tor L6 „Integration + Abfrage“): baut alle Pakete beider Sprachen und prüft jede
- * gezeigte Bedeutung gegen die Datenbank, ohne `freigabe.ts` zu fragen – Text gleich der Zeile in `quran_wortbedeutung`,
- * keine Abweichung an der Stelle, mindestens zwei Personen mit Rolle `religioese_pruefung`, deren jüngste religiöse Prüfung
- * zum aktuellen Hash „ok“ ist und die nicht verfasst haben, und niemand mit der Rolle, der zum aktuellen Hash zuletzt anders
- * urteilt. Dazu: Wortformen nur aus `quran_wort`, kein Audio-Feld, Wortzeiten nur geprüft. `pnpm lernapp:koran-sichtbar`.
+ * Quelle „ausgeliefert“: Verzeichnis und Pakete so, wie die Adressen unter `basis` sie gerade ausliefern (Daten-Cache, CDN).
+ * Verzeichnis 404 (Schalter `lernapp` aus) → keine Pakete; ein anderer Fehler bricht ab. Je Paket muss der SHA-256 der Bytes
+ * der Adresse gleichen, und Zahl der Bedeutungen und Lektionen im Verzeichnis müssen zum Paket passen.
  */
-export async function pruefeKoranSichtbarkeit(): Promise<KoranSichtbarkeit> {
+export function ausgeliefert(basis: string, abruf: typeof fetch = fetch): KoranPaketQuelle {
+  return async (sprache) => {
+    const fehler: string[] = [];
+    const r = await abruf(new URL(koranVerzeichnisAdresse(sprache), basis));
+    if (r.status === 404) return { pakete: [], fehler };
+    if (!r.ok) throw new Error(`${sprache}: Verzeichnis antwortet ${r.status}`);
+    const v = (await r.json()) as KoranVerzeichnis;
+    const pakete: KoranAuslieferung['pakete'] = [];
+    for (const e of v.einheiten) {
+      const a = await abruf(new URL(koranPaketAdresse(sprache, e.schluessel, e.hash), basis));
+      if (!a.ok) {
+        fehler.push(`${sprache} ${e.schluessel}: Paket antwortet ${a.status}`);
+        continue;
+      }
+      const json = await a.text();
+      if (sha256Hex(json) !== e.hash) {
+        fehler.push(`${sprache} ${e.schluessel}: Paket passt nicht zum Hash der Adresse`);
+        continue;
+      }
+      const paket = JSON.parse(json) as KoranPaket;
+      if (
+        e.bedeutungen !== paket.woerter.filter((w) => w.bedeutung).length ||
+        e.lektionen.join() !== paket.lektionen.map((l) => l.schluessel).join()
+      )
+        fehler.push(`${sprache} ${e.schluessel}: Verzeichnis und Paket weichen ab`);
+      pakete.push({ paket, json });
+    }
+    return { pakete, fehler };
+  };
+}
+
+/**
+ * Abfrage am Live-Stand (Tor L6, Z-L03; Tor L6 „Integration + Abfrage“): prüft jede gezeigte Bedeutung der Pakete beider
+ * Sprachen gegen die Datenbank, ohne `freigabe.ts` zu fragen – Text gleich der Zeile in `quran_wortbedeutung`, Website-Status
+ * nicht „Entwurf“, keine Abweichung an der Stelle, mindestens zwei Personen mit Rolle `religioese_pruefung`, deren jüngste
+ * religiöse Prüfung zum aktuellen Hash „ok“ ist und die nicht verfasst haben, und niemand mit der Rolle, der zum aktuellen Hash
+ * zuletzt anders urteilt. Dazu: Wortformen nur aus `quran_wort`, kein Audio-Feld, Wortzeiten nur geprüft. Die Pakete kommen
+ * frisch aus der Datenbank ({@link frischGebaut}) oder von den ausgelieferten Adressen ({@link ausgeliefert}: findet auch einen
+ * veralteten Cache). `pnpm lernapp:koran-sichtbar [--basis <url>]`.
+ */
+export async function pruefeKoranSichtbarkeit(quelle: KoranPaketQuelle = frischGebaut): Promise<KoranSichtbarkeit> {
   const verstoesse: string[] = [];
   let sichtbar = 0;
   let lektionen = 0;
   for (const sprache of BEDEUTUNGS_SPRACHEN) {
-    const gebaut = await baueKoranPfad(sprache);
+    const { pakete: gebaut, fehler } = await quelle(sprache);
+    verstoesse.push(...fehler);
     const gezeigt = new Map<string, string>();
     const texte = new Map<string, string>();
     const zeiten = new Map<string, KoranWortZeit>();
@@ -360,6 +443,9 @@ export async function pruefeKoranSichtbarkeit(): Promise<KoranSichtbarkeit> {
           id: schema.quranWortbedeutung.id,
           formId: schema.quranWortbedeutung.formId,
           bedeutung: schema.quranWortbedeutung.bedeutung,
+          wurzel: schema.quranWortbedeutung.wurzel,
+          anmerkung: schema.quranWortbedeutung.anmerkung,
+          freigabe: schema.quranWortbedeutung.freigabe,
           verfasstVon: schema.quranWortbedeutung.verfasstVon,
         })
         .from(schema.quranWortbedeutung)
@@ -407,7 +493,8 @@ export async function pruefeKoranSichtbarkeit(): Promise<KoranSichtbarkeit> {
         continue;
       }
       if (orte.has(stelle)) verstoesse.push(`${sprache} ${stelle}: abweichende Bedeutung an der Stelle`);
-      const hash = koranBedeutungHash({ formId: b.formId, sprache, bedeutung: b.bedeutung });
+      if (b.freigabe === 'entwurf') verstoesse.push(`${sprache} ${stelle}: Bedeutung im Entwurf (gesperrt)`);
+      const hash = koranBedeutungHash({ formId: b.formId, sprache, bedeutung: b.bedeutung, wurzel: b.wurzel, anmerkung: b.anmerkung });
       const zumHash = pruefungen.filter((p) => p.inhaltId === b.id && p.inhaltHash === hash);
       const ok = zumHash.filter((p) => p.urteil === 'ok' && p.pruefendeId !== b.verfasstVon).length;
       if (ok < 2) verstoesse.push(`${sprache} ${stelle}: ${ok} Freigabe(n) zum aktuellen Hash`);

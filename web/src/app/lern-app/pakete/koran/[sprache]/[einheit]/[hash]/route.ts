@@ -7,14 +7,17 @@ import { ladeKoranEinheitJson, ladeKoranPaketParameter } from '@/server/queries/
 /**
  * Einheitenpaket des Koran-Arabisch-Pfads (L6-05): kanonisches JSON unter seinem SHA-256, unveränderlich. Ein alter Hash ergibt
  * 404 (das Verzeichnis nennt den aktuellen). Bedeutungen nur mit zwei Freigaben, Lektionen nur vollständig freigegeben, kein
- * Audio außer Wortzeiten geprüfter Rezitationen (`paket/koran.ts`). Der Kurs-Tag im CDN sorgt dafür, dass ein Zurückziehen
- * sofort wirkt (wie bei den Sprachkursen). Keine Cookies; Schalter `lernapp` aus → 404.
+ * Audio außer Wortzeiten geprüfter Rezitationen (`paket/koran.ts`). Die CDN-Tags sind dieselben wie die des Daten-Caches
+ * (`lernapp`, `lernapp-kurs-koran`, `quran`, `rezitationen`, `einstellungen`): Ein Zurückziehen, jede Änderung an einer Bedeutung
+ * oder an Wortzeiten und Rezitationen nimmt auch eine alte Hash-Adresse sofort aus dem CDN. Keine Cookies; Schalter `lernapp`
+ * aus → 404.
  */
 export function generateStaticParams() {
   return ladeKoranPaketParameter();
 }
 
 const NICHT_DA = { status: 404, headers: { 'Cache-Control': 'no-store' } };
+const KORAN_CDN_TAGS = [TAG.lernapp, TAG.lernappKurs('koran'), TAG.quran, TAG.rezitationen, TAG.einstellungen];
 
 export async function GET(_anfrage: Request, { params }: RouteContext<'/lern-app/pakete/koran/[sprache]/[einheit]/[hash]'>) {
   const { sprache, einheit, hash } = await params;
@@ -27,7 +30,7 @@ export async function GET(_anfrage: Request, { params }: RouteContext<'/lern-app
       'X-Content-Type-Options': 'nosniff',
       'Cache-Control': 'public, max-age=31536000, immutable',
       'Vercel-CDN-Cache-Control': 'max-age=31536000',
-      'Vercel-Cache-Tag': `${TAG.lernapp},${TAG.lernappKurs('koran')},${TAG.einstellungen}`,
+      'Vercel-Cache-Tag': KORAN_CDN_TAGS.join(','),
     },
   });
 }

@@ -5,17 +5,20 @@ import { schema } from '@/lib/db';
 import { KORAN_PAKET_FORMAT, type KoranPaket, type KoranVerzeichnis } from '@/lib/lernapp/koran/typen';
 import { sha256Hex } from '@/lib/lernapp/paket/hash';
 import { koranBedeutungHash } from '@/lib/lernapp/paket/koran';
-import { verwaltungsUmgebung } from './hilfen/verwaltung';
+import { angemeldetAls, aufrufe, formular, verwaltungsUmgebung } from './hilfen/verwaltung';
 
 /**
  * Koran-Arabisch-Pfad gegen PGlite (L6-05, ADR 0040 Nr. 5, KERN 4.0 §2.3/§4, Tor L6): Pfad aus `inhalte/lernapp/koran/pfad.json`
  * (nur Verweise), Wortformen aus `quran_wort`, Bedeutungen aus `quran_wortbedeutung` – im Paket nur mit zwei religiösen
  * Freigaben verschiedener Personen zum aktuellen Inhalts-Hash, sonst „Bedeutung folgt“; Lektionen nur vollständig; kein Audio
- * außer Wortzeiten geprüfter Zeiten aktiver Rezitationen. Dazu die Abfrage am Live-Stand (`pruefeKoranSichtbarkeit`).
- * Wortformen und Bedeutungen sind Platzhalter in eckigen Klammern (keine religiösen Inhalte, keine arabische Schrift).
+ * außer Wortzeiten geprüfter Zeiten aktiver Rezitationen. Dazu die Abfrage am Live-Stand (`pruefeKoranSichtbarkeit`) – auch
+ * gegen die ausgelieferten Adressen und mit einem Negativfall (veraltete Auslieferung) – und die Cache-Erneuerung durch die
+ * Verwaltung „Koran“ bei jeder Änderung an einer Bedeutung (Gegenprüfung L6-05/06). Wortformen und Bedeutungen sind
+ * Platzhalter in eckigen Klammern (keine religiösen Inhalte, keine arabische Schrift).
  */
 const { client, db } = await verwaltungsUmgebung();
 const koran = await import('@/server/queries/lernapp/koran');
+const aktionen = await import('@/server/actions/koran');
 const verzeichnisRoute = await import('@/app/lern-app/pakete/koran/[sprache]/route');
 const einheitRoute = await import('@/app/lern-app/pakete/koran/[sprache]/[einheit]/[hash]/route');
 afterAll(() => client.close());
@@ -75,11 +78,20 @@ async function person(rolle: 'religioese_pruefung' | 'administration' | null) {
   return id;
 }
 
-/** Bedeutungen (de) für Stellen; Rückgabe: Kennung je Stelle. */
+/** Bedeutungen (de) für Stellen, auf der Website eingereicht („zur Prüfung“); Rückgabe: Kennung je Stelle. */
 async function bedeutungen(stellen: readonly string[], verfasstVon: string): Promise<Map<string, string>> {
   const zeilen = await db
     .insert(schema.quranWortbedeutung)
-    .values(stellen.map((s) => ({ formId: formId.get(s)!, sprache: 'de', bedeutung: `[Bedeutung ${s}]`, verfasstVon })))
+    .values(
+      stellen.map((s) => ({
+        formId: formId.get(s)!,
+        sprache: 'de',
+        bedeutung: `[Bedeutung ${s}]`,
+        wurzel: '[W]',
+        freigabe: 'zur_pruefung' as const,
+        verfasstVon,
+      })),
+    )
     .returning({ id: schema.quranWortbedeutung.id, formId: schema.quranWortbedeutung.formId });
   return new Map(stellen.map((s) => [s, zeilen.find((z) => z.formId === formId.get(s))!.id]));
 }
@@ -92,7 +104,7 @@ async function pruefe(ids: Map<string, string>, wer: string, urteil: 'ok' | 'abg
     await db.insert(schema.lernappPruefung).values({
       inhaltTyp: 'koran_bedeutung',
       inhaltId: id,
-      inhaltHash: koranBedeutungHash({ formId: b.formId, sprache: 'de', bedeutung: b.bedeutung }),
+      inhaltHash: koranBedeutungHash(b),
       art: 'religioes',
       pruefendeId: wer,
       urteil,
@@ -221,8 +233,10 @@ describe('Koran-Pfad: Verzeichnis und Paket', () => {
     expect(await zeit()).toBeUndefined();
     await db.update(schema.quranWortzeit).set({ geprueft: true });
     expect(await zeit()).toEqual({ adresse: datei, startMs: 100, endeMs: 900, rezitation: 'test-rezitation' });
-    const { text } = await paket();
+    const { paket: p, text } = await paket();
     expect(text).not.toMatch(/"(audio|stimme|clip)"\s*:/);
+    // Namensnennung der Rezitation im Paket (offline lesbar)
+    expect(p.quellen).toContain('Rezitation: [Rezitation] – [Name], [Lizenz]');
     expect((await koran.pruefeKoranSichtbarkeit()).verstoesse).toEqual([]);
     await db.update(schema.quranRezitation).set({ aktiv: false });
     expect(await zeit()).toBeUndefined();
@@ -240,5 +254,137 @@ describe('Koran-Pfad: Verzeichnis und Paket', () => {
     process.env.FUNKTION_LERNAPP = 'aus';
     expect((await verzeichnisRoute.GET(anfrage('/x'), kontext({ sprache: 'de' }))).status).toBe(404);
     expect((await einheitRoute.GET(anfrage('/x'), kontext({ sprache: 'de', einheit: E01.schluessel, hash: e.hash }))).status).toBe(404);
+  });
+});
+
+describe('Koran-Pfad: Website-Status, Verwaltung und Auslieferung (Gegenprüfung L6-05/06)', () => {
+  const L02 = E01.lektionen[1]!;
+  const STELLEN_L02 = stellenVon(L02);
+  let ids2 = new Map<string, string>();
+  const zeile = async (stelle: string) =>
+    (
+      await db
+        .select()
+        .from(schema.quranWortbedeutung)
+        .where(eq(schema.quranWortbedeutung.id, ids2.get(stelle)!))
+    )[0]!;
+  const lektionenDe = async () => (await paket()).paket.lektionen.map((l) => l.schluessel);
+  /** ausgelieferte Adressen über die Route Handler (ohne Cache im Test) */
+  const routen = (async (eingabe: string | URL) => {
+    const url = new URL(String(eingabe));
+    const [, , , sprache, einheit, hash] = url.pathname.split('/').filter(Boolean);
+    return einheit
+      ? einheitRoute.GET(new Request(url), kontext({ sprache, einheit, hash }))
+      : verzeichnisRoute.GET(new Request(url), kontext({ sprache }));
+  }) as unknown as typeof fetch;
+
+  it('zwei Freigaben zum Hash über Bedeutung, Wurzel und Anmerkung; ein Website-Entwurf sperrt', async () => {
+    ids2 = await bedeutungen(STELLEN_L02, await person('religioese_pruefung'));
+    await pruefe(ids2, await person('religioese_pruefung'));
+    await pruefe(ids2, await person('religioese_pruefung'));
+    expect(await lektionenDe()).toContain(L02.schluessel);
+
+    const [erste] = L02.wortformen as [string];
+    await db
+      .update(schema.quranWortbedeutung)
+      .set({ freigabe: 'entwurf' })
+      .where(eq(schema.quranWortbedeutung.id, ids2.get(erste)!));
+    let p = (await paket()).paket;
+    expect(gezeigt(p)).not.toContain(erste);
+    expect(p.lektionen.map((l) => l.schluessel)).not.toContain(L02.schluessel);
+    expect((await koran.pruefeKoranSichtbarkeit()).verstoesse).toEqual([]);
+    await db
+      .update(schema.quranWortbedeutung)
+      .set({ freigabe: 'geprueft' })
+      .where(eq(schema.quranWortbedeutung.id, ids2.get(erste)!));
+    expect(await lektionenDe()).toContain(L02.schluessel);
+
+    // nur die Anmerkung geändert: neuer Hash, beide Freigaben zurückgesetzt
+    await db
+      .update(schema.quranWortbedeutung)
+      .set({ anmerkung: '[Anmerkung]' })
+      .where(eq(schema.quranWortbedeutung.id, ids2.get(erste)!));
+    p = (await paket()).paket;
+    expect(gezeigt(p)).not.toContain(erste);
+    await pruefe(ids2, await person('religioese_pruefung'), 'ok', [erste]);
+    await pruefe(ids2, await person('religioese_pruefung'), 'ok', [erste]);
+    expect(await lektionenDe()).toContain(L02.schluessel);
+  });
+
+  it('Abfrage am Live-Stand gegen die ausgelieferten Adressen; eine veraltete Auslieferung meldet sie als Verstoß', async () => {
+    const basis = 'https://example.test';
+    expect((await koran.pruefeKoranSichtbarkeit(koran.ausgeliefert(basis, routen))).verstoesse).toEqual([]);
+    // Stand vor der Änderung festhalten (wie ein Cache, der nicht erneuert wurde)
+    const vorher = { de: await koran.frischGebaut('de'), tr: await koran.frischGebaut('tr') };
+    const veraltet = async (sprache: 'de' | 'tr') => vorher[sprache];
+    expect((await koran.pruefeKoranSichtbarkeit(veraltet)).verstoesse).toEqual([]);
+
+    const [erste, zweite] = L02.wortformen as [string, string];
+    await db
+      .update(schema.quranWortbedeutung)
+      .set({ wurzel: '[W2]' })
+      .where(eq(schema.quranWortbedeutung.id, ids2.get(erste)!));
+    await db.delete(schema.quranWortbedeutung).where(eq(schema.quranWortbedeutung.id, ids2.get(zweite)!));
+    const befund = (await koran.pruefeKoranSichtbarkeit(veraltet)).verstoesse;
+    expect(befund).toContain(`de ${erste}: 0 Freigabe(n) zum aktuellen Hash`);
+    expect(befund).toContain(`de ${zweite}: Bedeutung ohne passende Zeile`);
+    // frisch gebaut bzw. ausgeliefert (im Test ohne Cache): verborgen, also kein Verstoß
+    expect((await koran.pruefeKoranSichtbarkeit()).verstoesse).toEqual([]);
+    expect((await koran.pruefeKoranSichtbarkeit(koran.ausgeliefert(basis, routen))).verstoesse).toEqual([]);
+
+    // ausgelieferte Bytes passen nicht zur Adresse
+    const verfaelscht = (async (eingabe: string | URL) => {
+      const r = await routen(eingabe);
+      return String(eingabe).includes(`/${E01.schluessel}/`) ? new Response(`${await r.text()} `, { status: r.status }) : r;
+    }) as unknown as typeof fetch;
+    expect((await koran.pruefeKoranSichtbarkeit(koran.ausgeliefert(basis, verfaelscht))).verstoesse).toEqual(
+      expect.arrayContaining([`de ${E01.schluessel}: Paket passt nicht zum Hash der Adresse`]),
+    );
+  });
+
+  it('Verwaltung „Koran“: jede Änderung an Bedeutung, Stelle oder Status erneuert den Koran-Pfad, auch ohne Website-Status „geprüft“', async () => {
+    const [, , dritte] = L02.wortformen as [string, string, string];
+    const z = await zeile(dritte);
+    expect(z.freigabe).toBe('zur_pruefung');
+    const [sure, vers, pos] = teile(dritte);
+    const lernapp = 'lernapp-kurs-koran';
+
+    await angemeldetAls([{ rolle: 'religioese_pruefung' }]);
+    const bearbeitet = await aktionen.bedeutungSpeichern(
+      {},
+      formular({ formId: String(z.formId), sprache: 'de', bedeutung: '[Bedeutung neu]', wurzel: '[W]' }),
+    );
+    expect(bearbeitet).toMatchObject({ status: 'zur_pruefung' });
+    expect(aufrufe.updateTag).toEqual([lernapp]);
+    expect(gezeigt((await paket()).paket)).not.toContain(dritte);
+
+    // unverändert gespeichert: nichts zu erneuern
+    await angemeldetAls([{ rolle: 'religioese_pruefung' }]);
+    await aktionen.bedeutungSpeichern(
+      {},
+      formular({ formId: String(z.formId), sprache: 'de', bedeutung: '[Bedeutung neu]', wurzel: '[W]' }),
+    );
+    expect(aufrufe.updateTag).toEqual([]);
+
+    await angemeldetAls([{ rolle: 'religioese_pruefung' }]);
+    await aktionen.ortSpeichern(
+      {},
+      formular({ sure: String(sure), vers: String(vers), pos: String(pos), sprache: 'de', bedeutung: '[Ort]' }),
+    );
+    expect(aufrufe.updateTag).toEqual([lernapp]);
+    await angemeldetAls([{ rolle: 'religioese_pruefung' }]);
+    await aktionen.ortEntfernen({}, formular({ sure: String(sure), vers: String(vers), pos: String(pos), sprache: 'de' }));
+    expect(aufrufe.updateTag).toEqual([lernapp]);
+
+    await angemeldetAls([{ rolle: 'religioese_pruefung' }]);
+    expect(
+      await aktionen.statusSetzen({}, formular({ art: 'quran_wortbedeutung', kennung: z.id, ziel: 'entwurf', grund: '[Grund]' })),
+    ).toMatchObject({ status: 'entwurf' });
+    expect(aufrufe.updateTag).toEqual([lernapp]);
+
+    await angemeldetAls([{ rolle: 'religioese_pruefung' }]);
+    await aktionen.bedeutungEntfernen({}, formular({ kennung: z.id }));
+    expect(aufrufe.updateTag).toEqual([lernapp]);
+    expect((await koran.pruefeKoranSichtbarkeit()).verstoesse).toEqual([]);
   });
 });

@@ -46,7 +46,8 @@ import {
  * Ausgaben freigeben und als Standard setzen, kuratierte Hadith-Listen pflegen. Jede inhaltliche Änderung setzt
  * einen geprüften Eintrag auf „zur Prüfung“ zurück; öffentlich ist nur „geprüft“. Jeder Statuswechsel steht im
  * Freigabe-Verlauf (`freigabe`) und im Audit (ohne Inhalte). Ändert sich die öffentliche Sicht, erneuern wir die
- * Cache-Tags (`quran`, `tajwid`, `hadith`).
+ * Cache-Tags (`quran`, `tajwid`, `hadith`). Jede Änderung an einer Wortbedeutung (auch an einer Stelle und an ihrem Status)
+ * erneuert dazu den Koran-Pfad der Lern-App (`lernapp-kurs-koran`), dessen Sichtbarkeit nicht am Website-Status hängt.
  */
 export type KoranFehler =
   | 'pruefen'
@@ -133,9 +134,27 @@ async function protokolliereSpeichern(
   }
 }
 
-/** Nach jeder Änderung: Seiten der Verwaltung neu laden; öffentliche Caches nur, wenn „geprüft“ betroffen ist. */
-function nachher(tag: string, alt: FreigabeStatus | null, neu: FreigabeStatus | null, geaendert = true) {
-  if (betrifftOeffentlich(alt, neu, geaendert)) inhaltGeaendert(tag);
+/**
+ * Koran-Pfad der Lern-App je Art: Wortbedeutungen (auch an einer Stelle) speisen Verzeichnis und Pakete des Pfads
+ * (`server/queries/lernapp/koran.ts`, `cacheLife('max')`). Dort entscheidet nicht der Website-Status „geprüft“, sondern die zwei
+ * religiösen Freigaben zum aktuellen Hash; ein Website-Entwurf sperrt (`koranBedeutungStatus`), eine Stelle mit abweichender
+ * Bedeutung verbirgt die Bedeutung dort in jedem Status. Darum erneuert jede Änderung an Inhalt, Status oder Bestand den Pfad –
+ * auch wenn die Website nichts Öffentliches ändert (Gegenprüfung L6-05/06, Mangel 1).
+ */
+const LERNAPP_TAG_JE_ART: Partial<Record<ReligioeseArt, string>> = {
+  quran_wortbedeutung: TAG.lernappKurs('koran'),
+  quran_wortbedeutung_ort: TAG.lernappKurs('koran'),
+};
+
+/**
+ * Nach jeder Änderung: Seiten der Verwaltung neu laden; öffentliche Caches der Website nur, wenn „geprüft“ betroffen ist, den
+ * Koran-Pfad der Lern-App bei jeder Änderung an Inhalt oder Status (`alt = null`: neu, `neu = null`: gelöscht).
+ */
+function nachher(art: ReligioeseArt, alt: FreigabeStatus | null, neu: FreigabeStatus | null, geaendert = true) {
+  const tags = betrifftOeffentlich(alt, neu, geaendert) ? [TAG_JE_ART[art]] : [];
+  const lernapp = LERNAPP_TAG_JE_ART[art];
+  if (lernapp && (geaendert || alt !== neu)) tags.push(lernapp);
+  if (tags.length) inhaltGeaendert(...tags);
   refresh();
 }
 
@@ -189,7 +208,7 @@ export async function bedeutungSpeichern(_: KoranZustand, fd: FormData): Promise
       return { vorher, neu, geaendert };
     });
     if (!ergebnis) return { fehler: 'nichtGefunden' };
-    nachher(TAG.quran, ergebnis.vorher, ergebnis.neu, ergebnis.geaendert);
+    nachher('quran_wortbedeutung', ergebnis.vorher, ergebnis.neu, ergebnis.geaendert);
     return { gespeichert: Date.now(), status: ergebnis.neu };
   });
 }
@@ -218,7 +237,7 @@ export async function bedeutungEntfernen(_: KoranZustand, fd: FormData): Promise
       return z;
     });
     if (!alt) return { fehler: 'nichtGefunden' };
-    nachher(TAG.quran, alt.freigabe, null);
+    nachher('quran_wortbedeutung', alt.freigabe, null);
     return { gespeichert: Date.now() };
   });
 }
@@ -262,7 +281,7 @@ export async function ortSpeichern(_: KoranZustand, fd: FormData): Promise<Koran
       return { vorher, neu, geaendert };
     });
     if (!ergebnis) return { fehler: 'nichtGefunden' };
-    nachher(TAG.quran, ergebnis.vorher, ergebnis.neu, ergebnis.geaendert);
+    nachher('quran_wortbedeutung_ort', ergebnis.vorher, ergebnis.neu, ergebnis.geaendert);
     return { gespeichert: Date.now(), status: ergebnis.neu };
   });
 }
@@ -286,7 +305,7 @@ export async function ortEntfernen(_: KoranZustand, fd: FormData): Promise<Koran
       return z;
     });
     if (!alt) return { fehler: 'nichtGefunden' };
-    nachher(TAG.quran, alt.freigabe, null);
+    nachher('quran_wortbedeutung_ort', alt.freigabe, null);
     return { gespeichert: Date.now() };
   });
 }
@@ -329,7 +348,7 @@ export async function tajwidSpeichern(_: KoranZustand, fd: FormData): Promise<Ko
       return { vorher: alt.freigabe, neu, geaendert };
     });
     if (!ergebnis) return { fehler: 'nichtGefunden' };
-    nachher(TAG.tajwid, ergebnis.vorher, ergebnis.neu, ergebnis.geaendert);
+    nachher('tajwid_regel', ergebnis.vorher, ergebnis.neu, ergebnis.geaendert);
     return { gespeichert: Date.now(), status: ergebnis.neu };
   });
 }
@@ -370,7 +389,7 @@ export async function hadithUebersetzungSpeichern(_: KoranZustand, fd: FormData)
       return { vorher, neu, geaendert };
     });
     if (!ergebnis) return { fehler: 'pruefen', feldFehler: { nummer: 'unbekannt' }, werte: roh };
-    nachher(TAG.hadith, ergebnis.vorher, ergebnis.neu, ergebnis.geaendert);
+    nachher('hadith_uebersetzung', ergebnis.vorher, ergebnis.neu, ergebnis.geaendert);
     return { gespeichert: Date.now(), status: ergebnis.neu };
   });
 }
@@ -394,7 +413,7 @@ export async function hadithUebersetzungEntfernen(_: KoranZustand, fd: FormData)
       return z;
     });
     if (!alt) return { fehler: 'nichtGefunden' };
-    nachher(TAG.hadith, alt.freigabe, null);
+    nachher('hadith_uebersetzung', alt.freigabe, null);
     return { gespeichert: Date.now() };
   });
 }
@@ -491,7 +510,7 @@ export async function statusSetzen(_: KoranZustand, fd: FormData): Promise<Koran
       return { vorher: stand.freigabe };
     });
     if (!('vorher' in ergebnis)) return ergebnis;
-    nachher(TAG_JE_ART[e.art], ergebnis.vorher, e.ziel);
+    nachher(e.art, ergebnis.vorher, e.ziel);
     return { gespeichert: Date.now(), status: e.ziel };
   });
 }
