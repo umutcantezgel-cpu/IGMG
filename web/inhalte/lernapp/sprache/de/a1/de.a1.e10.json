@@ -1116,7 +1116,7 @@
     },
     {
       "schluessel": "de.a1.e10.s0043",
-      "text": "Wie ist das Wetter bei euch?",
+      "text": "Wie ist das Wetter bei dir?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1459,7 +1459,7 @@
     },
     {
       "schluessel": "de.a1.e10.s0098",
-      "text": "Am Freitag scheint die Sonne.",
+      "text": "Am Freitag ist es warm.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1585,7 +1585,7 @@
     },
     {
       "schluessel": "de.a1.e10.s0119",
-      "text": "In Blau sieht sie ganz anders aus.",
+      "text": "In Blau sieht die Jacke ganz anders aus.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1621,7 +1621,7 @@
     },
     {
       "schluessel": "de.a1.e10.s0125",
-      "text": "Haben Sie die Jacke eine Nummer kleiner?",
+      "text": "Haben Sie die Jacke auch in Blau?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1711,7 +1711,7 @@
     },
     {
       "schluessel": "de.a1.e10.s0140",
-      "text": "Tschüss! Jetzt ist mir warm.",
+      "text": "Jetzt ist mir warm. Tschüss!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1867,7 +1867,7 @@
     },
     {
       "schluessel": "de.a1.e10.s0166",
-      "text": "Die blaue Jacke.",
+      "text": "Die grüne Jacke.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2110,6 +2110,18 @@
       "text": "Heute regnet es, ich ziehe eine Jacke an.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0207",
+      "text": "Da kommt Emre.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0208",
+      "text": "Ḫālid fragt eine Frau an der Kasse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     }
   ],
   "lektionen": [
@@ -2193,7 +2205,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e10.s0007",
           "nach": "ziel",
-          "alternativen": ["Jan trägt einen Pullover und eine Hose."],
+          "alternativen": ["Jan trägt einen Pullover und eine Hose.", "Eine Hose und einen Pullover trägt Jan."],
           "ablenker": ["trägst", "Kleid"]
         },
         {
@@ -2344,7 +2356,7 @@
           "satz": "de.a1.e10.s0032",
           "nach": "ziel",
           "alternativen": ["Diese rote Jacke nehme ich."],
-          "ablenker": ["dieser", "roten"]
+          "ablenker": ["dieser", "nimmst"]
         },
         {
           "schluessel": "de.a1.e10.l02.a13",
@@ -2530,7 +2542,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Ich kann über die Jahreszeiten sprechen und sagen, wie das Wetter morgen vielleicht ist.",
-        "tr": "Mevsimler hakkında konuşabilir ve yarın havanın belki nasıl olacağını söyleyebilirim.",
+        "tr": "Mevsimler hakkında konuşabilir ve yarın havanın nasıl olabileceğini söyleyebilirim.",
         "ar": "أستطيع أن أتحدث عن فصول السنة وأن أقول كيف قد يكون الطقس غدًا."
       },
       "aufgaben": [
@@ -2634,7 +2646,12 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e10.s0077",
           "nach": "ziel",
-          "alternativen": ["Es ist am Samstag bestimmt warm.", "Bestimmt ist es am Samstag warm."],
+          "alternativen": [
+            "Es ist am Samstag bestimmt warm.",
+            "Bestimmt ist es am Samstag warm.",
+            "Es ist bestimmt am Samstag warm.",
+            "Warm ist es am Samstag bestimmt."
+          ],
           "ablenker": ["kalt", "vielleicht"]
         },
         {
@@ -2777,7 +2794,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e10.s0109",
           "nach": "ziel",
-          "ablenker": ["anderen", "Farbe"]
+          "ablenker": ["Hast", "Farbe"]
         },
         {
           "schluessel": "de.a1.e10.l05.a11",
@@ -2857,6 +2874,9 @@
               "satz": "de.a1.e10.s0131"
             },
             {
+              "satz": "de.a1.e10.s0207"
+            },
+            {
               "sprecher": "b",
               "satz": "de.a1.e10.s0132"
             },
@@ -2899,13 +2919,13 @@
               "ablenker": ["de.a1.e10.s0050", "de.a1.e10.s0054"]
             },
             {
-              "nach": 5,
+              "nach": 6,
               "frage": "de.a1.e10.s0142",
               "antwort": "de.a1.e10.s0143",
               "ablenker": ["de.a1.e10.s0144", "de.a1.e10.s0145"]
             },
             {
-              "nach": 10,
+              "nach": 11,
               "frage": "de.a1.e10.s0146",
               "antwort": "de.a1.e10.s0147",
               "ablenker": ["de.a1.e10.s0148", "de.a1.e10.s0149"]
@@ -2980,8 +3000,11 @@
               "satz": "de.a1.e10.s0158"
             },
             {
+              "satz": "de.a1.e10.s0208"
+            },
+            {
               "sprecher": "a",
-              "satz": "de.a1.e10.s0125"
+              "satz": "de.a1.e10.s0109"
             },
             {
               "sprecher": "c",
@@ -3017,7 +3040,7 @@
               "ablenker": ["de.a1.e10.s0170", "de.a1.e10.s0171"]
             },
             {
-              "nach": 13,
+              "nach": 14,
               "frage": "de.a1.e10.s0172",
               "antwort": "de.a1.e10.s0173",
               "ablenker": ["de.a1.e10.s0174", "de.a1.e10.s0175"]
@@ -3040,8 +3063,8 @@
           "schluessel": "de.a1.e10.l06.a08",
           "typ": "luecke",
           "ziel": "de.a1.e10.s0156",
-          "wort": 3,
-          "ablenker": ["rot", "roten"]
+          "wort": 2,
+          "ablenker": ["den", "der"]
         },
         {
           "schluessel": "de.a1.e10.l06.a09",
@@ -3137,8 +3160,8 @@
           "schluessel": "de.a1.e10.l07.a07",
           "typ": "luecke",
           "ziel": "de.a1.e10.s0176",
-          "wort": 3,
-          "ablenker": ["schwarz", "schwarzen"]
+          "wort": 1,
+          "ablenker": ["trägt", "trägst"]
         },
         {
           "schluessel": "de.a1.e10.l07.a08",
@@ -3146,7 +3169,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e10.s0180",
           "nach": "ziel",
-          "alternativen": ["Ich brauche im Herbst eine Jacke.", "Eine Jacke brauche ich im Herbst."],
+          "alternativen": ["Ich brauche im Herbst eine Jacke.", "Eine Jacke brauche ich im Herbst.", "Ich brauche eine Jacke im Herbst."],
           "ablenker": ["Sommer", "brauchst"]
         },
         {
@@ -3310,7 +3333,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e10.s0196",
           "nach": "ziel",
-          "ablenker": ["schwarze", "Jacke"]
+          "ablenker": ["suchst", "Jacke"]
         },
         {
           "schluessel": "de.a1.e10.l08.a08",
@@ -3335,8 +3358,8 @@
           "schluessel": "de.a1.e10.l08.a10",
           "typ": "luecke",
           "ziel": "de.a1.e10.s0205",
-          "wort": 0,
-          "ablenker": ["Welcher", "Welches"]
+          "wort": 2,
+          "ablenker": ["brauchst", "brauche"]
         },
         {
           "schluessel": "de.a1.e10.l08.a11",
