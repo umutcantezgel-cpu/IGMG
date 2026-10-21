@@ -2598,7 +2598,8 @@
           "nach": "ziel",
           "alternativen": [
             "فِي السَّاعَةِ الثَّامِنَةِ أَذْهَبُ إِلَى الْمَدْرَسَةِ.",
-            "أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ فِي السَّاعَةِ الثَّامِنَةِ."
+            "أَنَا أَذْهَبُ إِلَى الْمَدْرَسَةِ فِي السَّاعَةِ الثَّامِنَةِ.",
+            "أَذْهَبُ فِي السَّاعَةِ الثَّامِنَةِ إِلَى الْمَدْرَسَةِ."
           ],
           "ablenker": ["التَّاسِعَةِ", "الْبَيْتِ"]
         },
@@ -2631,9 +2632,9 @@
       "schluessel": "ar.a1.e09.l02",
       "art": "lektion",
       "ziel": {
-        "de": "Ich kann halbe und Viertelstunden und Minuten nennen und sagen, ob jemand früh oder spät ist.",
-        "tr": "Buçukları, çeyrekleri ve dakikaları söyleyebilir, birinin erken mi geç mi kaldığını anlatabilirim.",
-        "ar": "أستطيع أن أذكر النصف والربع والدقائق وأن أقول إن شخصا مبكر أو متأخر."
+        "de": "Ich kann halbe und Viertelstunden und Minuten nennen und sagen, ob jemand früh dran ist oder sich verspätet.",
+        "tr": "Buçukları, çeyrekleri ve dakikaları söyleyebilir, birinin erken mi yoksa geç mi geldiğini anlatabilirim.",
+        "ar": "أستطيع أن أذكر النصف والربع والدقائق، وأن أقول هل يصل شخص مبكرا أو متأخرا."
       },
       "aufgaben": [
         {
@@ -2708,7 +2709,11 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e09.s0054",
           "nach": "ziel",
-          "alternativen": ["كُلَّ يَوْمٍ أَسْتَيْقِظُ مُبَكِّرًا.", "أَنَا أَسْتَيْقِظُ مُبَكِّرًا كُلَّ يَوْمٍ."],
+          "alternativen": [
+            "كُلَّ يَوْمٍ أَسْتَيْقِظُ مُبَكِّرًا.",
+            "أَنَا أَسْتَيْقِظُ مُبَكِّرًا كُلَّ يَوْمٍ.",
+            "أَسْتَيْقِظُ كُلَّ يَوْمٍ مُبَكِّرًا."
+          ],
           "ablenker": ["مُتَأَخِّرًا", "أَنَامُ"]
         },
         {
@@ -2914,7 +2919,11 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e09.s0080",
           "nach": "ziel",
-          "alternativen": ["الْيَوْمَ آخِرُ دَرْسٍ هُوَ التَّارِيخُ.", "آخِرُ دَرْسٍ هُوَ التَّارِيخُ الْيَوْمَ."],
+          "alternativen": [
+            "الْيَوْمَ آخِرُ دَرْسٍ هُوَ التَّارِيخُ.",
+            "آخِرُ دَرْسٍ هُوَ التَّارِيخُ الْيَوْمَ.",
+            "التَّارِيخُ هُوَ آخِرُ دَرْسٍ الْيَوْمَ."
+          ],
           "ablenker": ["الْأَوَّلُ", "الرِّيَاضِيَّاتُ"]
         },
         {
@@ -2999,7 +3008,7 @@
           "typ": "luecke",
           "ziel": "ar.a1.e09.s0139",
           "wort": 0,
-          "ablenker": ["لَيْسَ", "لَسْتُ"]
+          "ablenker": ["لَيْسَ", "لَيْسَتْ"]
         },
         {
           "schluessel": "ar.a1.e09.l04.a10",
@@ -3116,7 +3125,7 @@
           "typ": "luecke",
           "ziel": "ar.a1.e09.s0185",
           "wort": 1,
-          "ablenker": ["إِلَى", "فِي"]
+          "ablenker": ["إِلَى", "مِنْ"]
         },
         {
           "schluessel": "ar.a1.e09.l05.a08",
@@ -3366,7 +3375,7 @@
       "ziel": {
         "de": "Ich wiederhole Uhrzeiten, den Stundenplan und die Verneinung.",
         "tr": "Saatleri, ders programını ve olumsuz cümleleri tekrar ediyorum.",
-        "ar": "أراجع الساعات وجدول الدروس والنفي."
+        "ar": "أراجع قراءة الساعة وجدول الدروس والنفي."
       },
       "aufgaben": [
         {
@@ -3427,7 +3436,11 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e09.s0012",
           "nach": "ziel",
-          "alternativen": ["نَحْنُ نَنَامُ فِي السَّاعَةِ الْعَاشِرَةِ مَسَاءً.", "فِي السَّاعَةِ الْعَاشِرَةِ مَسَاءً نَنَامُ."],
+          "alternativen": [
+            "نَحْنُ نَنَامُ فِي السَّاعَةِ الْعَاشِرَةِ مَسَاءً.",
+            "فِي السَّاعَةِ الْعَاشِرَةِ مَسَاءً نَنَامُ.",
+            "نَنَامُ مَسَاءً فِي السَّاعَةِ الْعَاشِرَةِ."
+          ],
           "ablenker": ["أَنَامُ", "صَبَاحًا"]
         },
         {
@@ -3578,7 +3591,8 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e09.s0039",
           "nach": "ziel",
-          "ablenker": ["وَالرُّبْعُ", "الثَّامِنَةُ"]
+          "ablenker": ["وَالرُّبْعُ", "الثَّامِنَةُ"],
+          "alternativen": ["التَّاسِعَةُ إِلَّا رُبْعًا."]
         },
         {
           "schluessel": "ar.a1.e09.l08.a09",
