@@ -7,7 +7,10 @@ Hand ändern; neu erzeugen. Bedeutungen schreibt **kein** Agent (KERN 4.0 §2.2 
   „Koran → Wörter“ (`/verwaltung/koran/woerter/<sure>/<form>`, Tabelle `quran_wortbedeutung`). Die Stelle führt zur Form.
 - **Sichtbar** im Lern-App-Pfad erst mit **zwei** religiösen Freigaben zum aktuellen Stand (Rolle `religioese_pruefung`,
   zwei verschiedene Personen, keine davon Verfasserin; `/verwaltung/lernapp/religioes`, LM-13). Bis dahin zeigt der Pfad
-  „Bedeutung folgt“, und die Übungen der Lektion bleiben verborgen.
+  „Bedeutung folgt“, und die Übungen der Lektion bleiben verborgen. Jede Änderung einer Bedeutung setzt beide Freigaben
+  zurück. Steht an einer Stelle eine abweichende Bedeutung (`quran_wortbedeutung_ort`), zeigt der Pfad dort keine.
+- **Abfrage am Live-Stand:** `pnpm lernapp:koran-sichtbar` prüft jede gezeigte Bedeutung gegen die Freigaben in der
+  Datenbank (Ausgabe nur Zahlen und Stellen).
 - **Umschrift:** maschinell (DMG-Art, `src/lib/lernapp/koran/umschrift.ts`), nur zur Orientierung; maßgeblich ist die Stelle
   `Sure:Vers:Wort` (Wortzählung des Tanzil-Texts wie im Koran-Leser).
 - **Vorkommen:** Anzahl gleicher Schreibungen im ganzen Text (`quran_wortform.vorkommen`).
