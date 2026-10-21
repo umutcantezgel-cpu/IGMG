@@ -51,6 +51,14 @@
    der Verwaltung (Übersicht, Postfach, Tickets, Mediathek, Styleguide). Ihr Einstieg ist die Prüfoberfläche (L3-06); bis
    dahin führt `/verwaltung` auf „kein Zugriff“.
 
+## Fortschreibung nach L3-06b (21.10.2026)
+
+- **Nr. 6, Rückweg der Korrekturen:** `pnpm lernapp:export-korrekturen [--kurs] [--aus]` exportiert offene Befunde und
+  menschliche Korrekturen (Alternativen) je Kurs und Einheit als JSON (`igmg-lernapp-korrekturen/1`, ohne Personendaten).
+  Das Zurückschreiben in `web/inhalte/lernapp/**` ist ein Schritt der Inhalts-Pipeline (Workflow, L3-03): ein Agent übernimmt
+  die Korrekturen in die Inhaltsdateien, `lernapp:pruefen` prüft, ein Commit hält es fest. Die eingefrorenen Einträge
+  (`menschlichGeprueft`) bleiben beim nächsten Import unberührt.
+
 ## Alternativen
 
 - Vollprüfung aller Einträge durch Menschen: verworfen (nicht leistbar bei ≈ 78.000 Zielsätzen und ≈ 156.000 Übersetzungen).

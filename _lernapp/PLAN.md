@@ -611,7 +611,8 @@ Lateinschrift; tr → ar Lehnwörter und falsche Freunde, Elifbe-Vorwissen; de �
 - `web/scripts/lernapp/import.ts` idempotent über SHA-256 je Datei und `inhaltHash` je Eintrag: unverändert → Status bleibt;
   geändert → Status zurück; entfernt → `archiviert`.
 - Jede Veröffentlichung erhöht `lernapp_kurs.version`.
-- `pnpm lernapp:export-korrekturen` schreibt menschliche Korrekturen als Commit nach `web/inhalte/lernapp/**` zurück.
+- `pnpm lernapp:export-korrekturen` exportiert menschliche Korrekturen und offene Befunde als JSON; ein Schritt der
+  Inhalts-Pipeline schreibt sie nach `web/inhalte/lernapp/**` zurück und committet (ADR 0041 Fortschreibung L3-06b).
 
 ### 6.7 Religiöse Pipeline (ADR 0040, Quellen nach ADR 0045 Nr. 12)
 

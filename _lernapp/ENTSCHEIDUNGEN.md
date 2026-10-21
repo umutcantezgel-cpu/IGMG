@@ -271,3 +271,13 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
 - **ar:** Chatterbox hat den Vokalisierungstest nicht bestanden; „Audio folgt“ bis eigene ClArTTS-Stimme oder Aufnahmen.
 - **Folgen:** Hörübungen tr/ar werden bis dahin übersprungen (KERN §4 „Ohne Audio“); Z-L15 kann für tr/ar nur mit Aufnahmen
   erfüllt werden (AUSNAHME mit Grund, ADR 0039 OFFENE FRAGE). Beleg `belege/S3-stimmen.md`; ADR 0045 Fortschreibung S3/S8.
+
+## L3-E13 · 2026-10-21 · Orchestrator · Reihenfolge der Einheiten und Ablage des Vorkurses
+- **Ablage:** Der Schrift-Vorkurs einer Zielsprache steht je Ausgangssprache als eigene Einheit `<kurs>.a1.e00-<ausgang>` mit
+  `nurFuerAusgang` (das Schema erlaubt dort nur eine Sprache; die Rahmenpläne nennen `fuer` mit bis zu zwei).
+- **Reihenfolge:** `reihenfolge` = Einheitennummer + 1; der Vorkurs hat 1, `e01` hat 2 usw. So sortieren Einheiten auch bei
+  gleichem Rang eindeutig; die Bestandsdateien und das Inhalts-Handbuch (`_lernapp/werkzeuge/inhalte-handbuch.md`) folgen dem.
+- **Begründung:** Rückgaben der Vorkurs- und Entwurfs-Agenten (L3-07, 21.10.2026); keine Schemaänderung nötig.
+- **Status:** Standard bis zur Antwort der Redaktion (LM-02); die zwei Warnungen „Vorkurs-Einheit ohne Eintrag im Rahmenplan“
+  bleiben gewollt.
+

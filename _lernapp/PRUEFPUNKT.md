@@ -1,5 +1,11 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 12:20 UTC:** Nach dem Limit (09:35–12:00) fortgesetzt. A1: Entwürfe tr e01–e12, de e01–e08, ar e01–e02,
+  Lektorat tr e01/e02; neuer Lauf `wf_742961e7-df9` (`lernapp-a1-weiter.workflow.js` mit `ohneVorbereitung`, `entworfen`,
+  `lektoriert`; Ergebnisse früherer Läufe `scratchpad/l3/a1/ergebnisse-*.json`, Hinweise `hinweise-*.md`). Code
+  `wf_f1e759ee-f9a`: L3-06b nur Gegenprüfung (Bau `scratchpad/l3-06b-bau.json`), L3-05 Fortsetzung ab 7440de3. Entscheidung
+  L3-E13 (Vorkurs `e00-<ausgang>`, `reihenfolge` = Nummer + 1), ADR 0041 Fortschreibung (Export der Korrekturen). Danach:
+  gemeinsames Tor L3-05/06/06b → FF `main`.
 - **Stand 21.10.2026 09:15 UTC:** Produktion `success` für `main` = acf6e34 (Tor L2). **L3-06 Verwaltung v1 fertig**
   (`wf_a48f4bea-ac5`, Gegenprüfung Runde 2 frei; Mängelrunde 6f84750), in den Branch gemergt (32a3e96), CSP-Ausnahme
   `media-src blob:` unter `/verwaltung/lernapp` in KERN §6/ADR 0042 Nr. 14 (091dc51). Noch kein Tor für L3-06 – es läuft
