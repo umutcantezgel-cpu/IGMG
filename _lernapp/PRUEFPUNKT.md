@@ -1,5 +1,11 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 13:45 UTC – Nachprüfung L3-06 grün:** Unit 3.302 grün, Integration (betroffen) 642 grün, Bau + E2E Lern-App
+  und Verwaltung 82 grün, Sprachen/Religion grün; Lint (erzeugte Modell-Dateien ausgenommen) und Wortlaut (Ausnahme L-02) nach
+  6726e8e grün. `main` = 6726e8e, Produktion `success`. **Offen beim Nutzer:** Lern-App in der Produktion einschalten – die
+  Codeänderung (`lernapp` in `IN_PRODUKTION_AN`) blockiert die Rechteprüfung der Sitzung (Funktionsschalter); Alternative
+  `FUNKTION_LERNAPP=an` im Vercel-Projekt (nicht im Konto des Vercel-Zugangs dieser Sitzung). Laufen weiter: A1
+  `wf_742961e7-df9`, L3-05/L3-06b `wf_f1e759ee-f9a`.
 - **Stand 21.10.2026 13:15 UTC – `main` = a777af9 auf Wunsch des Nutzers ohne abgeschlossenes Tor** („jetzt schon live, ist eh
   eine Test-Domain“; Ausnahme von L3-E12 nur für diesen Schritt). Vorschau-Bau dieses Stands auf Vercel `success`. Das schlanke
   Tor `scratchpad/tor-l3a.sh` (check, betroffene Integration, Sprachen/Religion/Wortlaut, ein Bau mit Lern-App- und
