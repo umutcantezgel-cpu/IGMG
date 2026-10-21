@@ -1,6 +1,9 @@
+import { type Lektion, LektionSchema } from '../aufgaben/schema';
+import type { BedeutungsSprache } from '../koran/typen';
 import { findeClip, leseBuendelKopf, schneideClip, type BuendelKopf } from '../paket/buendel';
 import { type Paket, PaketSchema } from '../paket/typen';
 import type { Speicher } from './db';
+import { ladeKoranPaket, ladeKoranVerzeichnis } from './koran';
 import { type EinheitVerweis, ladePaketGeprueft, type PaketOptionen, paketImVorratGeprueft, type Pruefung } from './vorrat';
 
 /**
@@ -66,4 +69,24 @@ export async function clipAus(buendel: Blob, textHash: string, kopf?: BuendelKop
   const k = kopf ?? (await buendelKopf(buendel));
   const clip = findeClip(k, textHash);
   return clip ? schneideClip(buendel, clip) : null;
+}
+
+/**
+ * Lektion des Koran-Arabisch-Pfads (L6-05) für den Spieler: Verzeichnis der Sprache (Netz zuerst), Einheit mit dieser
+ * Lektion, Paket unter seinem SHA-256, Lektion gegen `LektionSchema` geprüft und nur aus `koran_wort` (sonst `null`). Dazu
+ * der Schlüssel der nächsten spielbaren Lektion im Pfad (aus dem Verzeichnis), sonst `null`.
+ */
+export async function ladeKoranLektion(
+  sprache: BedeutungsSprache,
+  schluessel: string,
+  abruf?: typeof fetch,
+): Promise<{ lektion: Lektion; naechste: string | null } | null> {
+  const v = await ladeKoranVerzeichnis(sprache, abruf);
+  const einheit = v?.einheiten.find((e) => e.lektionen.includes(schluessel));
+  const paket = v && einheit ? await ladeKoranPaket(sprache, einheit, abruf) : null;
+  const roh = paket?.lektionen.find((l) => l.schluessel === schluessel);
+  const lektion = roh ? LektionSchema.safeParse(roh) : null;
+  if (!v || !lektion?.success || lektion.data.kurs !== 'koran' || !lektion.data.aufgaben.every((a) => a.typ === 'koran_wort')) return null;
+  const reihe = v.einheiten.flatMap((e) => e.lektionen);
+  return { lektion: lektion.data, naechste: reihe[reihe.indexOf(schluessel) + 1] ?? null };
 }

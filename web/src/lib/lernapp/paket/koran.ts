@@ -28,7 +28,9 @@ import { kanonischGeprueft, sha256Hex } from './hash';
 
 /** Inhalts-Hash einer Koran-Wortbedeutung für die Prüfungen (`lernapp_pruefung.inhaltTyp = 'koran_bedeutung'`). */
 export function koranBedeutungHash(b: { formId: number; sprache: string; bedeutung: string }): string {
-  return sha256Hex(kanonischGeprueft({ art: 'koran_bedeutung', formId: b.formId, sprache: b.sprache, bedeutung: b.bedeutung.normalize('NFC') }));
+  return sha256Hex(
+    kanonischGeprueft({ art: 'koran_bedeutung', formId: b.formId, sprache: b.sprache, bedeutung: b.bedeutung.normalize('NFC') }),
+  );
 }
 
 export type KoranBedeutungEingabe = { text: string; freigabe: FreigabeBaustein };

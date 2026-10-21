@@ -4,7 +4,13 @@ import { BookOpen, Volume2 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { formatiere, type Ziffern } from '@/lib/lernapp/format';
 import type { Oberflaeche, Stufe } from '@/lib/lernapp/kurse';
-import { type BedeutungsSprache, type KoranPaket, type KoranVerzeichnis, type KoranVerzeichnisEinheit, type KoranWortZeit } from '@/lib/lernapp/koran/typen';
+import {
+  type BedeutungsSprache,
+  type KoranPaket,
+  type KoranVerzeichnis,
+  type KoranVerzeichnisEinheit,
+  type KoranWortZeit,
+} from '@/lib/lernapp/koran/typen';
 import { ladeKoranPaket, ladeKoranVerzeichnis } from '@/lib/lernapp/lokal/koran';
 import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 
@@ -14,7 +20,6 @@ export type KoranPfadTexte = {
   einheit: string;
   wortformen: string;
   bedeutungen: string;
-  zeigen: string;
   laedtEinheit: string;
   nichtGeladen: string;
   liste: string;

@@ -12,7 +12,6 @@ import { beimOeffnen, nachHandlung } from '@/lib/lernapp/oberflaeche/abgleich';
 import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { geraet, heute, meldeStand, merkeWeiter } from '@/lib/lernapp/oberflaeche/geraet';
 import { einheitDerLektion, naechsteEinheit, naechsteLektion } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
-import type { Paket, Verzeichnis } from '@/lib/lernapp/paket/typen';
 import type { AbschlussAnzeige } from '../AbschlussInhalt';
 import type { MeldenTexte, SpielerOptionen, SpielerTexte } from '../typen';
 import { allesGeschrieben, type EreignisKette, melde, neueKette, useAusgangVorladen } from './ausgang';
@@ -60,9 +59,9 @@ type Bereit = {
   art: 'bereit';
   sp: Speicher;
   profil: Profil;
-  v: Verzeichnis;
-  paket: Paket;
   lektion: Lektion;
+  /** nächste Lektion nach dem Abschluss („Weiter lernen“), sonst `null` */
+  folge: () => Promise<Pick<Lektion, 'schluessel' | 'titel'> | null>;
   ziffern: Ziffern;
   /** Einstellungen „Hörübungen aus“ und „Sprechübungen aus“ (KERN 4.0 §8) */
   optionen: Omit<SpielerOptionen, 'spracherkennung'>;
@@ -74,6 +73,8 @@ type Zustand = { art: 'laedt' } | { art: 'ohne' } | { art: 'fehlt' } | Bereit;
  * Einheit im Kursverzeichnis und lädt das Einheitenpaket (Vorrat zuerst, sonst Netz mit Prüfung des Hashs). Der Spieler meldet
  * Ereignisse; sie landen der Reihe nach im Ausgang (`haengeAn`). Am Ende: Ableitung neu (mit Tagesziel, Serie und neuen
  * Abzeichen für den Abschlussbildschirm, L7-01), „Weiter lernen“ auf die nächste Lektion, Abgleich nur mit gebundenem Konto. Die nächste Einheit wird automatisch gespeichert (ADR 0039 Nr. 12).
+ * Koran-Arabisch (L6-05) lädt aus seinem eigenen Verzeichnis je Sprache der Bedeutungen (`ladeKoranLektion`): nur
+ * vollständig freigegebene Lektionen `koran_wort`, ohne Audio.
  */
 export function UebenInsel({
   ui,
@@ -107,6 +108,27 @@ export function UebenInsel({
     async function laden(): Promise<Zustand> {
       if (!l) return { art: 'ohne' };
       void ladeSpieler().catch(() => undefined);
+      if (kurs === 'koran') {
+        // Koran-Arabisch (L6-05): eigenes Verzeichnis je Sprache der Bedeutungen (in der arabischen Oberfläche gibt es den Kurs nicht)
+        if (ui === 'ar') return { art: 'fehlt' };
+        const [{ sp, profil }, e, { ladeKoranLektion }] = await Promise.all([
+          geraet(ui),
+          einstellungsSpeicher(ui).laden(),
+          ladeLektionsteile(),
+        ]);
+        const k = await ladeKoranLektion(ui, l);
+        if (!k) return { art: 'fehlt' };
+        await merkeWeiter(sp, profil.id, { kurs, lektion: k.lektion.schluessel });
+        return {
+          art: 'bereit',
+          sp,
+          profil,
+          lektion: k.lektion,
+          folge: async () => (k.naechste ? { schluessel: k.naechste } : null),
+          ziffern: e.ziffern,
+          optionen: { hoeren: e.hoeren, sprechen: e.sprechen },
+        };
+      }
       const [{ sp, profil }, e, v, { ladePaket }] = await Promise.all([
         geraet(ui),
         einstellungsSpeicher(ui).laden(),
@@ -125,9 +147,12 @@ export function UebenInsel({
         art: 'bereit',
         sp,
         profil,
-        v,
-        paket,
         lektion,
+        folge: async () => {
+          const folgeEinheit = naechsteEinheit(v, paket.einheit.schluessel);
+          const folgePaket = folgeEinheit ? await paketKopfImVorrat(kurs, folgeEinheit) : null;
+          return naechsteLektion(paket, lektion.schluessel, folgePaket);
+        },
         ziffern: e.ziffern,
         optionen: { hoeren: e.hoeren, sprechen: e.sprechen },
       };
@@ -158,14 +183,12 @@ export function UebenInsel({
     );
   }
 
-  const { sp, profil, v, paket, lektion } = z;
+  const { sp, profil, lektion, folge } = z;
   const meldeEreignis = (e: EreignisEntwurf) => melde(kette.current, sp, profil, e);
   const fertig = async () => {
     await allesGeschrieben(kette.current, sp, profil);
     const ende = await nachDerLektion(sp, profil.id);
-    const folgeEinheit = naechsteEinheit(v, paket.einheit.schluessel);
-    const folgePaket = folgeEinheit ? await paketKopfImVorrat(kurs, folgeEinheit) : null;
-    const weiter = naechsteLektion(paket, lektion.schluessel, folgePaket);
+    const weiter = await folge();
     await merkeWeiter(
       sp,
       profil.id,
