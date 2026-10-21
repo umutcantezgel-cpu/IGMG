@@ -2,7 +2,7 @@
 
 import { Plus, Save } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { type ReactNode, type RefObject, useActionState, useEffect, useId, useRef } from 'react';
+import { type ReactNode, type RefObject, useActionState, useEffect, useId, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { eingabe, Rahmen } from '@/components/verwaltung/Feld';
 import { Meldung } from '@/components/verwaltung/Meldung';
@@ -44,7 +44,11 @@ function Rueckmeldung({ z, erfolg, refDiv }: { z: LernappZustand; erfolg?: strin
   );
 }
 
-/** Ein Knopf mit versteckten Feldern (Erledigen, Sperren, Verwerfen, Stimme wählen). */
+/**
+ * Ein Knopf mit versteckten Feldern (Erledigen, Sperren, Verwerfen, Stimme wählen). Mit `bestaetigung` (zerstörerische
+ * Aktionen wie Sperren) fragt der erste Klick nach; erst „Ja“ sendet ab, mit `bestaetigt=1`, das die Action verlangt. Der
+ * Fokus geht auf die Frage und nach „Abbrechen“ zurück auf den Knopf.
+ */
 export function AktionsKnopf({
   aktion,
   felder,
@@ -54,6 +58,7 @@ export function AktionsKnopf({
   icon,
   gedrueckt,
   label,
+  bestaetigung,
 }: {
   aktion: Aktion;
   felder: Record<string, string>;
@@ -65,10 +70,52 @@ export function AktionsKnopf({
   gedrueckt?: boolean;
   /** Zugänglicher Name, wenn der sichtbare Text nicht reicht */
   label?: string;
+  /** Rückfrage vor dem Absenden */
+  bestaetigung?: { frage: string; ja: string; abbrechen: string };
 }) {
   const { t } = useFehlerText();
   const [z, absenden, laeuft] = useActionState(aktion, {});
   const ref = useRueckmeldung(z);
+  // Die Rückfrage gilt für den Stand, bei dem sie gestellt wurde; jedes Ergebnis der Action (neuer Zustand) beendet sie.
+  const [gefragtBei, setGefragtBei] = useState<LernappZustand | null>(null);
+  const fragen = gefragtBei !== null && gefragtBei === z;
+  const frageId = useId();
+  const frageRef = useRef<HTMLParagraphElement>(null);
+  const knopfRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (fragen) frageRef.current?.focus();
+  }, [fragen]);
+  if (bestaetigung && fragen)
+    return (
+      <form action={absenden} className="flex flex-col gap-2 rounded-md border border-fehler p-3">
+        <Rueckmeldung z={z} erfolg={erfolg} refDiv={ref} />
+        {Object.entries(felder).map(([name, wert]) => (
+          <input key={name} type="hidden" name={name} value={wert} />
+        ))}
+        <input type="hidden" name="bestaetigt" value="1" />
+        <p id={frageId} ref={frageRef} tabIndex={-1} className="text-16 font-bold outline-none">
+          {bestaetigung.frage}
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <Button type="submit" variant="destructive" size="sm" disabled={laeuft} aria-describedby={frageId}>
+            {icon}
+            {laeuft ? t('laeuft') : bestaetigung.ja}
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            disabled={laeuft}
+            onClick={() => {
+              setGefragtBei(null);
+              requestAnimationFrame(() => knopfRef.current?.focus());
+            }}
+          >
+            {bestaetigung.abbrechen}
+          </Button>
+        </div>
+      </form>
+    );
   return (
     <form action={absenden} className="flex flex-col gap-2">
       <Rueckmeldung z={z} erfolg={erfolg} refDiv={ref} />
@@ -76,7 +123,9 @@ export function AktionsKnopf({
         <input key={name} type="hidden" name={name} value={wert} />
       ))}
       <Button
-        type="submit"
+        ref={knopfRef}
+        type={bestaetigung ? 'button' : 'submit'}
+        onClick={bestaetigung ? () => setGefragtBei(z) : undefined}
         variant={variante}
         size="sm"
         disabled={laeuft}

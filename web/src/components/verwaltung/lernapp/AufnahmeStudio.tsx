@@ -38,10 +38,25 @@ export function AufnahmeStudio({ eintrag, sprecher }: { eintrag: string; spreche
   const probeUrl = useRef<string | null>(null);
   const dateiFeld = useRef<HTMLInputElement>(null);
   const meldungRef = useRef<HTMLDivElement>(null);
+  const sprecherFeld = useRef<HTMLSelectElement>(null);
+  const startKnopf = useRef<HTMLButtonElement>(null);
+  const stoppKnopf = useRef<HTMLButtonElement>(null);
+  const probeKnopf = useRef<HTMLButtonElement>(null);
+  /** Nur Start und Ende werden angesagt; die sekündliche Zeitanzeige ist keine Live-Region. */
+  const [ansage, setAnsage] = useState('');
 
   useEffect(() => {
     if (meldung) meldungRef.current?.focus();
   }, [meldung]);
+  // Fokusführung (WCAG 2.4.3): Öffnen → Auswahl der Sprecherin; Start → „Aufnahme beenden“; Ende → „Probehören“. Der
+  // ersetzte Knopf verschwindet, der Fokus fiele sonst auf den Seitenanfang zurück.
+  useEffect(() => {
+    if (offen) sprecherFeld.current?.focus();
+  }, [offen]);
+  useEffect(() => {
+    if (laeuft) stoppKnopf.current?.focus();
+    else (probeKnopf.current ?? startKnopf.current)?.focus({ preventScroll: true });
+  }, [laeuft]);
   useEffect(
     () => () => {
       if (takt.current) window.clearInterval(takt.current);
@@ -93,6 +108,7 @@ export function AufnahmeStudio({ eintrag, sprecher }: { eintrag: string; spreche
       if (takt.current) window.clearInterval(takt.current);
       strom.getTracks().forEach((s) => s.stop());
       setLaeuft(false);
+      setAnsage(t('audio.aufnahmeBeendet', { sekunden: Math.floor((performance.now() - beginn) / 1000) }));
       setAufnahme(new Blob(teile, { type: rec.mimeType || typ || 'audio/webm' }));
     };
     recorder.current = rec;
@@ -100,6 +116,7 @@ export function AufnahmeStudio({ eintrag, sprecher }: { eintrag: string; spreche
     setSekunden(0);
     rec.start(500);
     setLaeuft(true);
+    setAnsage(t('audio.aufnahmeGestartet'));
     takt.current = window.setInterval(() => {
       const s = Math.floor((performance.now() - beginn) / 1000);
       setSekunden(s);
@@ -162,7 +179,7 @@ export function AufnahmeStudio({ eintrag, sprecher }: { eintrag: string; spreche
         <label htmlFor={`${id}-sprecher`} className="font-bold">
           {t('audio.sprecher')}
         </label>
-        <select id={`${id}-sprecher`} value={wer} onChange={(e) => setWer(e.target.value)} className={eingabe}>
+        <select ref={sprecherFeld} id={`${id}-sprecher`} value={wer} onChange={(e) => setWer(e.target.value)} className={eingabe}>
           <option value="">{t('audio.sprecherWaehlen')}</option>
           {sprecher.map((s) => (
             <option key={s.id} value={s.id}>
@@ -171,26 +188,27 @@ export function AufnahmeStudio({ eintrag, sprecher }: { eintrag: string; spreche
           ))}
         </select>
       </div>
+      <p role="status" className="sr-only">
+        {ansage}
+      </p>
       <div className="flex flex-wrap items-center gap-2">
         {laeuft ? (
           <>
-            <span role="status" className="font-bold tabular-nums">
-              {t('audio.laeuftAufnahme', { sekunden })}
-            </span>
-            <Button type="button" variant="destructive" size="sm" onClick={stopp}>
+            <span className="font-bold tabular-nums">{t('audio.laeuftAufnahme', { sekunden })}</span>
+            <Button ref={stoppKnopf} type="button" variant="destructive" size="sm" onClick={stopp}>
               <Square aria-hidden />
               {t('audio.stopp')}
             </Button>
           </>
         ) : (
-          <Button type="button" variant="secondary" size="sm" onClick={() => void start()} disabled={sendet}>
+          <Button ref={startKnopf} type="button" variant="secondary" size="sm" onClick={() => void start()} disabled={sendet}>
             <Mic aria-hidden />
             {t('audio.start')}
           </Button>
         )}
         {aufnahme && !laeuft ? (
           <>
-            <Button type="button" variant="outline" size="sm" onClick={probehoeren}>
+            <Button ref={probeKnopf} type="button" variant="outline" size="sm" onClick={probehoeren}>
               <Play aria-hidden />
               {t('audio.probehoeren')}
             </Button>

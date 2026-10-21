@@ -81,11 +81,21 @@ test('Audio-Studio: Sprecherin mit Vereinbarung, Aufnahme, Anhören, Verwerfen',
 
   // Aufnahme mit dem Ersatz-Mikrofon (Sinuston von Chromium)
   const eintrag = page.getByRole('listitem').filter({ has: page.getByText(EINTRAG, { exact: true }) });
+  // Fokusführung: Öffnen → Auswahl der Sprecherin, Start → „Aufnahme beenden“, Ende → „Probehören“; angesagt werden nur
+  // Start und Ende (die sekündliche Zeitanzeige ist keine Live-Region)
   await eintrag.getByRole('button', { name: a.aufnehmenFuer.replace('{schluessel}', EINTRAG) }).click();
+  await expect(eintrag.getByLabel(a.sprecher)).toBeFocused();
   await expect(eintrag.getByLabel(a.sprecher)).toHaveValue(/[0-9a-f-]{36}/);
   await eintrag.getByRole('button', { name: a.start }).click();
-  await expect(eintrag.getByRole('status')).toHaveText(a.laeuftAufnahme.replace('{sekunden}', '2'), { timeout: 10_000 });
+  await expect(eintrag.getByRole('button', { name: a.stopp })).toBeFocused();
+  await expect(eintrag.getByRole('status')).toHaveText(a.aufnahmeGestartet);
+  await expect(eintrag.getByText(a.laeuftAufnahme.replace('{sekunden}', '2'))).toBeVisible({ timeout: 10_000 });
+  await expect(eintrag.getByRole('status')).toHaveText(a.aufnahmeGestartet);
   await eintrag.getByRole('button', { name: a.stopp }).click();
+  await expect(eintrag.getByRole('button', { name: a.probehoeren })).toBeFocused();
+  await expect(eintrag.getByRole('status')).toHaveText(
+    new RegExp(`^${a.aufnahmeBeendet.replace('{sekunden}', '\\d+').replace(/[().]/g, '\\$&')}$`),
+  );
   await eintrag.getByRole('button', { name: a.hochladen }).click();
   await expect(eintrag.getByText(a.ergebnis.neu)).toBeVisible({ timeout: 15_000 });
   await expect(eintrag.getByRole('heading', { name: a.aufnahmen })).toBeVisible();

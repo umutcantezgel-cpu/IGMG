@@ -132,6 +132,7 @@ export default async function Meldungen({ searchParams }: PageProps<'/[locale]/v
                           variante="destructive"
                           icon={<Ban aria-hidden />}
                           erfolg={t('erledigtText')}
+                          bestaetigung={{ frage: t('sperrenFrage', { ziel: m.aufgabe }), ja: t('sperrenJa'), abbrechen: t('abbrechen') }}
                         />
                         {m.verweise.map((v) => (
                           <AktionsKnopf
@@ -142,6 +143,11 @@ export default async function Meldungen({ searchParams }: PageProps<'/[locale]/v
                             variante="outline"
                             icon={<Ban aria-hidden />}
                             erfolg={t('erledigtText')}
+                            bestaetigung={{
+                              frage: t('sperrenFrage', { ziel: v.schluessel }),
+                              ja: t('sperrenJa'),
+                              abbrechen: t('abbrechen'),
+                            }}
                           />
                         ))}
                       </div>

@@ -5,7 +5,7 @@ import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import { datenbankVerfuegbar, ohneLaufzeitDatenbank } from '@/lib/db/verfuegbar';
 import { funktionAn } from '@/lib/funktionen';
-import type { Pruefung } from '@/lib/lernapp/freigabe';
+import { type Pruefung, sprachlichGesperrt } from '@/lib/lernapp/freigabe';
 import { AufgabeVorlageSchema, verweiseVon } from '@/lib/lernapp/inhalt/schema';
 import {
   istRichtung,
@@ -269,7 +269,14 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
       ])
     : [[], []];
   const ohneMensch = new Set(wahlen.filter((w) => w.wahl === 'sprachausgabe').map((w) => w.textHash));
-  const clips = alleClips.filter((c) => !(ohneMensch.has(c.textHash) && c.stimme.startsWith('mensch:')));
+  // Audio-Stichprobe (ADR 0041 Nr. 2, PLAN §6.5): „abgelehnt“ oder kritisch (z. B. falsche Aussprache) zum aktuellen
+  // Inhalts-Hash des Clips verbirgt ihn sofort; dann greift die nächste Stimme oder „Audio folgt“.
+  const clipPruefungen = await ladePruefungen(alleClips.map((c) => ({ typ: 'audio' as const, id: c.id })));
+  const clips = alleClips.filter(
+    (c) =>
+      !(ohneMensch.has(c.textHash) && c.stimme.startsWith('mensch:')) &&
+      !sprachlichGesperrt(c.sha256, clipPruefungen.get(`audio:${c.id}`) ?? []),
+  );
   const buendelNamen = [...new Set(clips.map((c) => c.buendel))];
   const groessen = new Map<string, number>(
     buendelNamen.length

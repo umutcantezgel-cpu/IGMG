@@ -68,7 +68,8 @@
       "audio_leer": "Die Aufnahme ist leer.",
       "audio_zuGross": "Die Aufnahme ist größer als 5 MB.",
       "audio_format": "Das ist keine m4a-, mp3-, ogg- oder webm-Datei.",
-      "hochladenFehlgeschlagen": "Das Hochladen ist fehlgeschlagen. Bitte erneut versuchen."
+      "hochladenFehlgeschlagen": "Das Hochladen ist fehlgeschlagen. Bitte erneut versuchen.",
+      "bestaetigen": "Bitte das Sperren ausdrücklich bestätigen."
     },
     "feldFehler": {
       "urteilFehlt": "Bitte ein Urteil wählen.",
@@ -228,6 +229,8 @@
       "start": "Aufnahme starten",
       "stopp": "Aufnahme beenden",
       "laeuftAufnahme": "Aufnahme läuft: {sekunden} s",
+      "aufnahmeGestartet": "Die Aufnahme läuft.",
+      "aufnahmeBeendet": "Die Aufnahme ist beendet ({sekunden} s).",
       "probehoeren": "Probehören",
       "hochladen": "Aufnahme speichern",
       "verwerfen": "Verwerfen",
@@ -292,6 +295,9 @@
       "sperren": "Sperren",
       "sperrenAufgabe": "Aufgabe sperren",
       "sperrenEintrag": "Eintrag sperren: {text}",
+      "sperrenFrage": "{ziel} wirklich sperren? Der Eintrag verschwindet sofort aus der App. Wieder freigegeben wird er erst mit einer geänderten Fassung aus dem Import.",
+      "sperrenJa": "Ja, sperren",
+      "abbrechen": "Abbrechen",
       "verweise": "Verwendete Einträge",
       "erledigen": "Ohne Änderung erledigen",
       "erledigtText": "Die Meldung ist erledigt."

@@ -37,13 +37,21 @@ async function erledige(
   benutzerId: string,
   aktion: 'alternative' | 'gesperrt' | 'erledigt',
   kategorie: string,
+  /** Schlüssel des gesperrten bzw. ergänzten Eintrags (kein Inhalt), damit das Audit ihn nachvollziehbar nennt */
+  eintrag?: string,
 ) {
   await tx
     .update(schema.lernappMeldung)
     .set({ status: 'erledigt', antwort: null, erledigtAm: new Date(), erledigtVon: benutzerId })
     .where(eq(schema.lernappMeldung.id, meldungId));
   await protokolliere(
-    { benutzerId, aktion: 'lernapp.meldung_bearbeitet', zielTyp: 'lernapp_meldung', zielId: meldungId, details: { aktion, kategorie } },
+    {
+      benutzerId,
+      aktion: 'lernapp.meldung_bearbeitet',
+      zielTyp: 'lernapp_meldung',
+      zielId: meldungId,
+      details: eintrag ? { aktion, kategorie, eintrag } : { aktion, kategorie },
+    },
     tx,
   );
 }
@@ -86,7 +94,7 @@ export async function alternativeErgaenzen(_vorher: LernappZustand, fd: FormData
           .update(schema.lernappAufgabe)
           .set({ daten, inhaltHash: hash, menschlichGeprueft: true, verfasstVon: a.benutzerId })
           .where(eq(schema.lernappAufgabe.id, aufgabe.id));
-        await erledige(tx, m.id, a.benutzerId, 'alternative', m.kategorie);
+        await erledige(tx, m.id, a.benutzerId, 'alternative', m.kategorie, aufgabe.schluessel);
       });
     } else {
       if (!istRichtung(m.k.kurs)) return { fehler: 'keineAlternative' };
@@ -132,7 +140,7 @@ export async function alternativeErgaenzen(_vorher: LernappZustand, fd: FormData
           .update(u)
           .set({ alternativen: neu.liste, inhaltHash: hash, menschlichGeprueft: true, verfasstVon: a.benutzerId })
           .where(eq(u.id, ue.id));
-        await erledige(tx, m.id, a.benutzerId, 'alternative', m.kategorie);
+        await erledige(tx, m.id, a.benutzerId, 'alternative', m.kategorie, ziel.bezug);
       });
     }
     await kursGeaendert([kurs]);
@@ -141,11 +149,15 @@ export async function alternativeErgaenzen(_vorher: LernappZustand, fd: FormData
   });
 }
 
-/** Eintrag sperren (Status `gesperrt`, sofort nicht mehr ausgeliefert): die Aufgabe selbst oder einer ihrer Verweise. */
+/**
+ * Eintrag sperren (Status `gesperrt`, sofort nicht mehr ausgeliefert): die Aufgabe selbst oder einer ihrer Verweise. Nur
+ * mit ausdrücklicher Bestätigung (Feld `bestaetigt=1`, zweiter Schritt des Knopfs); das Audit nennt den Schlüssel.
+ */
 export async function eintragSperren(_vorher: LernappZustand, fd: FormData): Promise<LernappZustand> {
   return mitLernappRecht('lernapp.bearbeiten', async (a) => {
     const m = await ladeMeldung(fd.get('id'));
     if (!m?.k) return { fehler: 'nichtGefunden' };
+    if (fd.get('bestaetigt') !== '1') return { fehler: 'bestaetigen' };
     const ziel = String(fd.get('ziel') ?? '');
     const [aufgabe] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, m.k.aufgabe)).limit(1);
     if (!aufgabe) return { fehler: 'nichtGefunden' };
@@ -162,7 +174,7 @@ export async function eintragSperren(_vorher: LernappZustand, fd: FormData): Pro
       getroffen = await zieheZurueck(lemma ? 'lemma' : 'satz', ziel);
     }
     if (!getroffen) return { fehler: 'nichtGefunden' };
-    await db.transaction((tx) => erledige(tx, m.id, a.benutzerId, 'gesperrt', m.kategorie));
+    await db.transaction((tx) => erledige(tx, m.id, a.benutzerId, 'gesperrt', m.kategorie, ziel));
     refresh();
     return { gespeichert: Date.now() };
   });

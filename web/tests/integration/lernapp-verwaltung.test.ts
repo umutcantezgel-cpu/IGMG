@@ -27,7 +27,7 @@ const audio = await import('@/server/actions/lernapp-audio');
 const meldungRoute = await import('@/app/api/lernapp/meldung/route');
 const aufnahmeRoute = await import('@/app/[locale]/verwaltung/(geschuetzt)/lernapp/audio/aufnahme/[id]/route');
 const { ladeBauEingaben } = await import('@/server/queries/lernapp/pakete');
-const { ladeWarteschlange } = await import('@/server/queries/lernapp/sprachpruefung');
+const { kandidaten, ladeWarteschlange } = await import('@/server/queries/lernapp/sprachpruefung');
 const { ladeKursBaum, ladeLernappUebersicht, ladeVorschau } = await import('@/server/queries/lernapp/verwaltung');
 const { ladeStudio } = await import('@/server/queries/lernapp/audio-studio');
 const { lernappPruefen } = await import('@/lib/startklar/lernapp');
@@ -251,6 +251,28 @@ describe('Stichprobe: ziehen, beurteilen, entscheiden', () => {
     expect(u.quoten.jeSprache.tr!.geprueft).toBe(u.quoten.jeSprache.tr!.gezogen);
     expect(u.quoten.jeSprache.de).toMatchObject({ offen: 0, nachbessern: 1, geprueft: s!.auswahl.length });
   });
+
+  it('gleichzeitige letzte Urteile: genau eine Entscheidung, ein Audit und eine neue Kursversion', async () => {
+    await mitSprachen(SPRACHE, ['ar']);
+    const z = await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.e01', art: 'uebersetzung', richtung: 'tr-aus-ar' }));
+    const [s] = await db.select().from(schema.lernappStichprobe).where(eq(schema.lernappStichprobe.id, z.id!));
+    expect(s!.auswahl.length).toBeGreaterThanOrEqual(2);
+    const vorletzter = s!.auswahl.at(-2)!;
+    const letzter = s!.auswahl.at(-1)!;
+    for (const eintrag of s!.auswahl.slice(0, -2)) await sprache.eintragPruefen({}, formular({ stichprobe: z.id!, eintrag, urteil: 'ok' }));
+    const version = async () =>
+      (await db.select({ v: schema.lernappKurs.version }).from(schema.lernappKurs).where(eq(schema.lernappKurs.id, 'tr')))[0]!.v;
+    const vorher = await version();
+    const ergebnisse = await Promise.all([
+      sprache.eintragPruefen({}, formular({ stichprobe: z.id!, eintrag: vorletzter, urteil: 'ok' })),
+      sprache.eintragPruefen({}, formular({ stichprobe: z.id!, eintrag: letzter, urteil: 'ok' })),
+    ]);
+    expect(ergebnisse.map((e) => e.hinweis)).toContain('bestanden');
+    const [nachher] = await db.select().from(schema.lernappStichprobe).where(eq(schema.lernappStichprobe.id, z.id!));
+    expect(nachher!.entscheidung).toBe('bestanden');
+    expect((await audits('lernapp.stichprobe_entschieden')).filter((a) => a.zielId === z.id)).toHaveLength(1);
+    expect(await version()).toBe(vorher + 1);
+  });
 });
 
 describe('Meldungen: öffentliche Route und Bearbeitung', () => {
@@ -392,16 +414,23 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
       .values({ aufgabeSchluessel: 'tr-aus-de:tr.a1.e01.l01.a01', kategorie: 'fehler_zieltext' })
       .returning();
     expect(await meldungen.alternativeErgaenzen({}, formular({ id: m!.id, alternative: '[x]' }))).toEqual({ fehler: 'keineAlternative' });
-    expect(await meldungen.eintragSperren({}, formular({ id: m!.id, ziel: 'de.a1.e01.w001' }))).toEqual({ fehler: 'nichtGefunden' });
+    expect(await meldungen.eintragSperren({}, formular({ id: m!.id, ziel: 'de.a1.e01.w001', bestaetigt: '1' }))).toEqual({
+      fehler: 'nichtGefunden',
+    });
+    // ohne ausdrückliche Bestätigung (zweiter Schritt des Knopfs) wird nichts gesperrt
+    expect(await meldungen.eintragSperren({}, formular({ id: m!.id, ziel: 'tr.a1.e01.l01.a01' }))).toEqual({ fehler: 'bestaetigen' });
+    const [vorher] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l01.a01'));
+    expect(vorher!.status).not.toBe('gesperrt');
     aufrufe.updateTag.length = 0;
-    expect(await meldungen.eintragSperren({}, formular({ id: m!.id, ziel: 'tr.a1.e01.l01.a01' }))).toMatchObject({
+    expect(await meldungen.eintragSperren({}, formular({ id: m!.id, ziel: 'tr.a1.e01.l01.a01', bestaetigt: '1' }))).toMatchObject({
       gespeichert: expect.any(Number),
     });
     const [a] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l01.a01'));
     expect(a!.status).toBe('gesperrt');
     expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
+    // Audit nennt den Schlüssel des gesperrten Eintrags (kein Inhalt)
     const [audit] = (await audits('lernapp.meldung_bearbeitet')).filter((x) => x.zielId === m!.id);
-    expect(audit!.details).toEqual({ aktion: 'gesperrt', kategorie: 'fehler_zieltext' });
+    expect(audit!.details).toEqual({ aktion: 'gesperrt', kategorie: 'fehler_zieltext', eintrag: 'tr.a1.e01.l01.a01' });
   });
 });
 
@@ -476,6 +505,35 @@ describe('Audio-Studio', () => {
     expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
     await audio.stimmeWaehlen({}, formular({ eintrag: 'tr.a1.e01.w001', wahl: 'mensch' }));
     expect(await stimme()).toBe(`mensch:${sprecherId}`);
+  });
+
+  it('kritisches Audio-Urteil (Aussprache) verbirgt den Clip im Paket sofort; die nächste Stimme greift; Übersicht zählt es', async () => {
+    const kritischVorher = (await ladeLernappUebersicht()).befunde.kritisch;
+    await mitSprachen(SPRACHE, ['tr']);
+    const z = await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.e01', art: 'audio' }));
+    expect(z.id).toEqual(expect.any(String));
+    const [s] = await db.select().from(schema.lernappStichprobe).where(eq(schema.lernappStichprobe.id, z.id!));
+    const alle = await kandidaten('tr.a1.e01', 'audio');
+    const eintrag = s!.auswahl.includes('tr.a1.e01.w001') ? 'tr.a1.e01.w001' : s!.auswahl[0]!;
+    const k = alle.find((x) => x.schluessel === eintrag)!;
+    const hash = textHash(k.text);
+    const imPaket = async () => (await ladeBauEingaben('tr-aus-de', 'tr.a1.e01'))[0]!.audio.get(hash);
+    expect((await imPaket())?.stimme).toBe(k.clip!.stimme);
+    await angemeldetAls(null);
+    const id = (await angemeldetAls(SPRACHE))!;
+    await db.insert(schema.lernappPrueferSprache).values({ benutzerId: id, sprache: 'tr', ebene: 'muttersprache' });
+    expect(
+      await sprache.eintragPruefen({}, formular({ stichprobe: z.id!, eintrag, urteil: 'abgelehnt', kategorie: 'aussprache' })),
+    ).toMatchObject({ gespeichert: expect.any(Number) });
+    const [p] = await db.select().from(schema.lernappPruefung).where(eq(schema.lernappPruefung.stichprobeId, z.id!));
+    expect(p).toMatchObject({ inhaltTyp: 'audio', inhaltId: k.inhaltId, inhaltHash: k.inhaltHash, kategorie: 'aussprache' });
+    // Der beurteilte Clip ist verborgen: eine andere Stimme oder „Audio folgt“ (kein Eintrag)
+    expect((await imPaket())?.stimme).not.toBe(k.clip!.stimme);
+    if (eintrag === 'tr.a1.e01.w001') expect((await imPaket())?.stimme).toBe('test:ton');
+    expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
+    // Kandidat bleibt (Stichprobe stabil); die Übersicht zählt den Befund
+    expect((await kandidaten('tr.a1.e01', 'audio')).find((x) => x.schluessel === eintrag)?.inhaltId).toBe(k.inhaltId);
+    expect((await ladeLernappUebersicht()).befunde.kritisch).toBe(kritischVorher + 1);
   });
 });
 

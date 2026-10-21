@@ -122,7 +122,10 @@ const Kategorie = z.enum(FEHLER);
  * Entscheidung, sobald alle gezogenen Einträge ein Urteil zum aktuellen Hash haben: Annahmeregel; „bestanden“
  * veröffentlicht Einheit, Lektionen, Aufgaben und die geprüften Einträge (Zieltext) bzw. die Übersetzungen der Richtung.
  */
-async function entscheideWennFertig(k: StichprobeKopf, benutzerId: string): Promise<'offen' | 'bestanden' | 'nachbessern'> {
+async function entscheideWennFertig(
+  k: StichprobeKopf,
+  benutzerId: string,
+): Promise<{ entscheidung: 'offen' | 'bestanden' | 'nachbessern'; kursNeu: boolean }> {
   const eintraege = await ladeStichprobenEintraege(k);
   const bewertbar = eintraege.filter((e) => !e.fehlt);
   const urteile = bewertbar.flatMap((e) =>
@@ -130,17 +133,21 @@ async function entscheideWennFertig(k: StichprobeKopf, benutzerId: string): Prom
   );
   const ergebnis = werteAus(urteile);
   const entscheidung = entscheide(ergebnis, bewertbar.length);
-  if (entscheidung === 'offen') return entscheidung;
+  if (entscheidung === 'offen') return { entscheidung, kursNeu: false };
   const kurs = k.kurs as KursId;
   // Vor der Transaktion lesen: eine Abfrage über `db` innerhalb von `db.transaction` wartet bei einer einzelnen
   // Verbindung (PGlite, kleiner Pool) auf die Transaktion selbst.
   const alle = entscheidung === 'bestanden' ? await kandidaten(k.einheit, k.art, k.richtungId) : [];
-  await db.transaction(async (tx) => {
+  const entschieden = await db.transaction(async (tx) => {
     const s = schema.lernappStichprobe;
-    await tx
+    // Bewacht: Hat eine parallele Prüfung schon entschieden, trifft das UPDATE nichts – dann weder veröffentlichen noch
+    // ein zweites Audit oder eine zweite Kursversion.
+    const getroffen = await tx
       .update(s)
       .set({ entscheidung, ergebnis, entschiedenAm: new Date(), entschiedenVon: benutzerId })
-      .where(and(eq(s.id, k.id), eq(s.entscheidung, 'offen')));
+      .where(and(eq(s.id, k.id), eq(s.entscheidung, 'offen')))
+      .returning({ id: s.id });
+    if (!getroffen.length) return false;
     if (entscheidung === 'bestanden') {
       // Nur, wenn sich der Inhalt seit dem Ziehen nicht geändert hat (sonst neu ziehen, ADR 0041 Nr. 7)
       if (standVon(alle) === k.einheitHash) {
@@ -188,9 +195,10 @@ async function entscheideWennFertig(k: StichprobeKopf, benutzerId: string): Prom
       },
       tx,
     );
+    return true;
   });
-  await kursGeaendert([kurs]);
-  return entscheidung;
+  if (entschieden) await kursGeaendert([kurs]);
+  return { entscheidung, kursNeu: entschieden };
 }
 
 /**
@@ -254,9 +262,10 @@ export async function eintragPruefen(_vorher: LernappZustand, fd: FormData): Pro
         tx,
       );
     });
-    const entscheidung = await entscheideWennFertig(k, a.benutzerId);
-    // Kritisch oder abgelehnt: sofort verborgen (freigabe.ts `sprachlichGesperrt`), Pakete neu
-    if (entscheidung === 'offen' && (urteil.data === 'abgelehnt' || istKritisch(kat))) await kursGeaendert([k.kurs as KursId]);
+    const { entscheidung, kursNeu } = await entscheideWennFertig(k, a.benutzerId);
+    // Kritisch oder abgelehnt: sofort verborgen (freigabe.ts `sprachlichGesperrt`, bei Audio der Clip in `ladeBauEingaben`),
+    // Pakete neu – auch wenn eine parallele Prüfung die Stichprobe schon entschieden hat
+    if (!kursNeu && (urteil.data === 'abgelehnt' || istKritisch(kat))) await kursGeaendert([k.kurs as KursId]);
     refresh();
     return { gespeichert: Date.now(), hinweis: entscheidung };
   });

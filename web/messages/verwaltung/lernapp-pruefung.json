@@ -94,7 +94,8 @@
         "abgelehnt": "3: Abgelehnt",
         "naechster": "N: nächster Eintrag",
         "voriger": "P: vorheriger Eintrag",
-        "hinweis": "Die Kürzel wirken nicht, solange ein Textfeld den Fokus hat."
+        "hinweis": "Die Kürzel wirken nur, solange der Fokus im Prüfbereich liegt, und nie in Eingabefeldern.",
+        "schalter": "Tastenkürzel verwenden"
       },
       "ergebnis": {
         "bestanden": "Stichprobe bestanden. Die geprüften Einträge der Einheit sind veröffentlicht.",
@@ -211,7 +212,8 @@
         "abgelehnt": "3: Reddedildi",
         "naechster": "N: sonraki kayıt",
         "voriger": "P: önceki kayıt",
-        "hinweis": "Bir metin alanı odaktayken kısayollar çalışmaz."
+        "hinweis": "Kısayollar yalnızca odak inceleme alanındayken çalışır, giriş alanlarında asla çalışmaz.",
+        "schalter": "Klavye kısayollarını kullan"
       },
       "ergebnis": {
         "bestanden": "Örneklem geçti. Ünitenin denetlenen kayıtları yayımlandı.",
@@ -328,7 +330,8 @@
         "abgelehnt": "3: مرفوض",
         "naechster": "N: المدخل التالي",
         "voriger": "P: المدخل السابق",
-        "hinweis": "لا تعمل الاختصارات ما دام التركيز في حقل نصي."
+        "hinweis": "تعمل الاختصارات فقط عندما يكون التركيز داخل منطقة المراجعة، ولا تعمل أبدًا داخل حقول الإدخال.",
+        "schalter": "استخدام اختصارات لوحة المفاتيح"
       },
       "ergebnis": {
         "bestanden": "نجحت العينة. نُشرت مدخلات الوحدة التي جرى تدقيقها.",

@@ -2,7 +2,7 @@
 
 import { ChevronLeft, ChevronRight, Save, Shuffle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { useEffect, useId, useRef, useState, useTransition } from 'react';
+import { type KeyboardEvent, useId, useRef, useState, useSyncExternalStore, useTransition } from 'react';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { FEHLER, KRITISCHE_FEHLER } from '@/lib/lernapp/freigabe';
@@ -17,8 +17,44 @@ import { ClipAnhoeren, type ClipQuelle } from './ClipAnhoeren';
  * Prüfoberfläche Sprache (ADR 0041 Nr. 10, PLAN §7.2; L3-06). Dreisprachig ist nur die Bedienung (`ui`, Texte als Props aus
  * `messages/verwaltung/lernapp-pruefung.json`); das Gerüst bleibt links-nach-rechts, jeder Text trägt `lang` und `dir`,
  * Inhaltsblöcke die Sprache ihres Inhalts. Tastenkürzel: 1 = in Ordnung und weiter, 2 = Korrektur, 3 = abgelehnt,
- * N/P = nächster bzw. vorheriger Eintrag (nicht in Textfeldern).
+ * N/P = nächster bzw. vorheriger Eintrag. Sie wirken nur, solange der Fokus im Prüfbereich liegt und nicht in einem
+ * Eingabefeld, und lassen sich ausschalten (WCAG 2.1.4, KERN 4.0 §8); gehaltene Tasten und Eingaben während des Speicherns
+ * zählen nicht.
  */
+
+/** Schalter „Tastenkürzel“ je Gerät (Bequemlichkeit, `localStorage`; ohne Speicher gilt er für diese Sitzung). */
+const KUERZEL_SCHLUESSEL = 'igmg-verwaltung-pruefung-kuerzel';
+let kuerzelOhneSpeicher: boolean | null = null;
+const kuerzelHoerer = new Set<() => void>();
+function kuerzelLesen(): boolean {
+  if (kuerzelOhneSpeicher !== null) return kuerzelOhneSpeicher;
+  try {
+    return window.localStorage.getItem(KUERZEL_SCHLUESSEL) !== 'aus';
+  } catch {
+    return true;
+  }
+}
+function kuerzelSetzen(an: boolean) {
+  kuerzelOhneSpeicher = an;
+  try {
+    window.localStorage.setItem(KUERZEL_SCHLUESSEL, an ? 'an' : 'aus');
+  } catch {
+    // ohne Speicher: nur für diese Sitzung
+  }
+  kuerzelHoerer.forEach((f) => f());
+}
+function kuerzelAbo(f: () => void) {
+  kuerzelHoerer.add(f);
+  return () => {
+    kuerzelHoerer.delete(f);
+  };
+}
+
+/** Eingabefelder, in denen Ziffern und Buchstaben Eingaben sind (Kürzel wirken dort nie). */
+function istEingabe(ziel: EventTarget | null): boolean {
+  if (!(ziel instanceof HTMLElement)) return false;
+  return ziel.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(ziel.tagName);
+}
 
 type Texte = Record<string, string>;
 type Urteil = 'ok' | 'korrektur' | 'abgelehnt';
@@ -108,6 +144,10 @@ export function PruefOberflaeche({
   const [meldung, setMeldung] = useState<{ art: 'fehler' | 'erfolg'; text: string } | null>(null);
   const [feldFehler, setFeldFehler] = useState<LernappZustand['feldFehler']>({});
   const [laeuft, starte] = useTransition();
+  const kuerzel = useSyncExternalStore(kuerzelAbo, kuerzelLesen, () => true);
+  // Sperre gegen doppeltes Absenden (gehaltene oder doppelt gedrückte Taste), gilt sofort, nicht erst nach dem Neuzeichnen
+  const sendet = useRef(false);
+  const kuerzelId = useId();
   const kopf = useRef<HTMLHeadingElement>(null);
   const korrekturFeld = useRef<HTMLTextAreaElement>(null);
   const kategorieGruppe = useRef<HTMLFieldSetElement>(null);
@@ -126,13 +166,16 @@ export function PruefOberflaeche({
   }
 
   function sende(neu: Urteil, felder: FormData) {
-    if (!e || e.fehlt || !offen) return;
+    if (!e || e.fehlt || !offen || laeuft || sendet.current) return;
+    sendet.current = true;
     felder.set('stichprobe', stichprobe);
     felder.set('eintrag', e.schluessel);
     felder.set('urteil', neu);
     setMeldung(null);
     starte(async () => {
-      const z = await eintragPruefen({}, felder);
+      const z = await eintragPruefen({}, felder).finally(() => {
+        sendet.current = false;
+      });
       if (z.fehler) {
         setFeldFehler(z.feldFehler ?? {});
         setMeldung({ art: 'fehler', text: texte.fehler[z.fehler] ?? texte.fehler.unbekannt! });
@@ -152,34 +195,28 @@ export function PruefOberflaeche({
     });
   }
 
-  // Tastenkürzel (nicht in Textfeldern)
-  useEffect(() => {
-    function taste(ev: KeyboardEvent) {
-      if (ev.altKey || ev.ctrlKey || ev.metaKey) return;
-      const ziel = ev.target as HTMLElement | null;
-      if (ziel && (ziel.tagName === 'TEXTAREA' || (ziel.tagName === 'INPUT' && (ziel as HTMLInputElement).type === 'text'))) return;
-      if (ev.key === '1') {
-        ev.preventDefault();
-        sende('ok', new FormData());
-      } else if (ev.key === '2') {
-        ev.preventDefault();
-        setUrteil('korrektur');
-        requestAnimationFrame(() => korrekturFeld.current?.focus());
-      } else if (ev.key === '3') {
-        ev.preventDefault();
-        setUrteil('abgelehnt');
-        requestAnimationFrame(() => kategorieGruppe.current?.querySelector('input')?.focus());
-      } else if (ev.key === 'n' || ev.key === 'N') {
-        ev.preventDefault();
-        zeige(nr + 1);
-      } else if (ev.key === 'p' || ev.key === 'P') {
-        ev.preventDefault();
-        zeige(nr - 1);
-      }
+  // Tastenkürzel: nur im Prüfbereich (Hörer am Abschnitt), nur eingeschaltet, nie in Eingabefeldern, ohne Wiederholung
+  function taste(ev: KeyboardEvent<HTMLElement>) {
+    if (!kuerzel || ev.repeat || ev.altKey || ev.ctrlKey || ev.metaKey || istEingabe(ev.target)) return;
+    if (ev.key === '1') {
+      ev.preventDefault();
+      sende('ok', new FormData());
+    } else if (ev.key === '2') {
+      ev.preventDefault();
+      setUrteil('korrektur');
+      requestAnimationFrame(() => korrekturFeld.current?.focus());
+    } else if (ev.key === '3') {
+      ev.preventDefault();
+      setUrteil('abgelehnt');
+      requestAnimationFrame(() => kategorieGruppe.current?.querySelector('input')?.focus());
+    } else if (ev.key === 'n' || ev.key === 'N') {
+      ev.preventDefault();
+      zeige(nr + 1);
+    } else if (ev.key === 'p' || ev.key === 'P') {
+      ev.preventDefault();
+      zeige(nr - 1);
     }
-    document.addEventListener('keydown', taste);
-    return () => document.removeEventListener('keydown', taste);
-  });
+  }
 
   if (!e) return null;
   const geprueft = eintraege.filter((x) => x.urteil && !x.fehlt).length;
@@ -192,6 +229,7 @@ export function PruefOberflaeche({
     <div className="grid gap-6 lg:grid-cols-3">
       <section
         aria-labelledby={`${id}-kopf`}
+        onKeyDown={taste}
         className="flex min-w-0 flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 md:p-6 lg:col-span-2"
       >
         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -293,7 +331,7 @@ export function PruefOberflaeche({
                           value={u}
                           checked={urteil === u}
                           onChange={() => setUrteil(u)}
-                          aria-keyshortcuts={String(i + 1)}
+                          aria-keyshortcuts={kuerzel ? String(i + 1) : undefined}
                           className="size-5"
                         />
                         {texte.urteile[u]}
@@ -407,7 +445,14 @@ export function PruefOberflaeche({
           </>
         )}
         <div className="flex flex-wrap gap-2 border-t border-linie pt-4">
-          <Button type="button" variant="outline" onClick={() => zeige(nr - 1)} disabled={nr === 0} aria-keyshortcuts="P" {...ui$}>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => zeige(nr - 1)}
+            disabled={nr === 0}
+            aria-keyshortcuts={kuerzel ? 'P' : undefined}
+            {...ui$}
+          >
             <ChevronLeft aria-hidden />
             {texte.s.voriger}
           </Button>
@@ -416,7 +461,7 @@ export function PruefOberflaeche({
             variant="outline"
             onClick={() => zeige(nr + 1)}
             disabled={nr >= eintraege.length - 1}
-            aria-keyshortcuts="N"
+            aria-keyshortcuts={kuerzel ? 'N' : undefined}
             {...ui$}
           >
             {texte.s.naechster}
@@ -454,7 +499,17 @@ export function PruefOberflaeche({
           <h2 id={`${id}-tasten`} className="text-20">
             {texte.tasten.titel}
           </h2>
-          <ul className="flex flex-col gap-1 text-16">
+          <label htmlFor={kuerzelId} className="flex min-h-12 cursor-pointer items-center gap-3 font-bold">
+            <input
+              id={kuerzelId}
+              type="checkbox"
+              checked={kuerzel}
+              onChange={(ev) => kuerzelSetzen(ev.currentTarget.checked)}
+              className="size-5"
+            />
+            {texte.tasten.schalter}
+          </label>
+          <ul className={cn('flex flex-col gap-1 text-16', !kuerzel && 'text-tinte-2')}>
             {(['ok', 'korrektur', 'abgelehnt', 'naechster', 'voriger'] as const).map((k) => (
               <li key={k}>{texte.tasten[k]}</li>
             ))}

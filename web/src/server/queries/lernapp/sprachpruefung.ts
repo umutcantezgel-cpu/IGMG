@@ -141,7 +141,8 @@ export async function kandidaten(einheit: string, art: StichprobeArt, richtung?:
         : [];
     });
   }
-  // Audio: vertonbare Zieltexte mit Clip der wirksamen Stimme
+  // Audio: vertonbare Zieltexte mit Clip der wirksamen Stimme. Ein kritisch beurteilter Clip bleibt hier Kandidat (die
+  // Stichprobe und ihr Stand bleiben stabil); im Paket ist er verborgen (`ladeBauEingaben`), bis ein neuer Clip vorliegt.
   const vertonbar = ziel.filter((z) => !z.religionsbezug);
   if (!vertonbar.length) return [];
   const sprache = einheit.split('.')[0] as Sprache;

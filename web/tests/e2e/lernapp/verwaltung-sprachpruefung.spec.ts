@@ -9,7 +9,8 @@ import { ernsteBefunde } from './hilfen';
  * Verwaltung › Lern-App › Sprachprüfung (L3-06, ADR 0041 Nr. 3–5/10, PLAN §6.5/§7.2) mit dem Testkurs aus dem Seed: Die Rolle
  * „Sprachprüfung“ landet nach der Anmeldung direkt in der Warteschlange ihrer Prüfsprache (Deutsch), zieht die Stichprobe der
  * Zieltexte von `de.a1.e01`, beurteilt einen Eintrag mit dem Tastenkürzel 1 und einen mit Korrektur (2, leichte Kategorie,
- * Korrekturvorschlag) und wechselt die Sprache der Oberfläche (tr, ar: Gerüst links-nach-rechts, Texte mit `lang`/`dir`).
+ * Korrekturvorschlag), prüft, dass die Kürzel nur im Prüfbereich wirken und sich ausschalten lassen (WCAG 2.1.4), und
+ * wechselt die Sprache der Oberfläche (tr, ar: Gerüst links-nach-rechts, Texte mit `lang`/`dir`).
  * Die Stichprobe bleibt offen (weder veröffentlicht noch gesperrt), damit die übrigen Specs den Testkurs unverändert sehen.
  * Nur Desktop; Testdaten fiktiv (G-04).
  */
@@ -88,6 +89,24 @@ test('Sprachprüfung: Warteschlange, Stichprobe ziehen, Tastenkürzel, Korrektur
   await page.keyboard.press('p');
   await expect(eintragKopf(page)).toHaveText(`Eintrag 2 von ${anzahl}`);
   await expect(page.getByText(s.beurteilt.replace('{urteil}', `${s.urteile.korrektur} (${s.kategorien.zeichensetzung})`))).toBeVisible();
+
+  // WCAG 2.1.4: Kürzel wirken nur im Prüfbereich – in der Eintragsliste speichert „1“ nichts – und lassen sich ausschalten
+  const dritter = liste.getByRole('button').nth(2);
+  await dritter.focus();
+  await page.keyboard.press('1');
+  await expect(eintragKopf(page)).toHaveText(`Eintrag 2 von ${anzahl}`);
+  await expect(dritter).toContainText(s.offen);
+  const schalter = page.getByRole('checkbox', { name: s.tasten.schalter });
+  await expect(schalter).toBeChecked();
+  await schalter.uncheck();
+  await eintragKopf(page).focus();
+  await page.keyboard.press('n');
+  await page.keyboard.press('1');
+  await expect(eintragKopf(page)).toHaveText(`Eintrag 2 von ${anzahl}`);
+  await expect(dritter).toContainText(s.offen);
+  await expect(page.getByRole('button', { name: s.naechster })).not.toHaveAttribute('aria-keyshortcuts');
+  await schalter.check();
+  await expect(page.getByRole('button', { name: s.naechster })).toHaveAttribute('aria-keyshortcuts', 'N');
 
   // Nach dem Neuladen: Urteile gespeichert, Stand in der Warteschlange
   await page.goto('/verwaltung/lernapp/sprachpruefung');

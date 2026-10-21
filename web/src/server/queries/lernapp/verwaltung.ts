@@ -57,7 +57,7 @@ async function eintraegeJeEinheit(): Promise<Map<string, StatusZaehlung>> {
   return je;
 }
 
-/** Kritische oder abgelehnte Sprachprüfungen zum aktuellen Hash (diese Einträge sind verborgen, bis korrigiert). */
+/** Kritische oder abgelehnte Sprachprüfungen zum aktuellen Hash, auch Audio (diese Einträge sind verborgen, bis korrigiert). */
 async function kritischeBefunde(): Promise<number> {
   const p = schema.lernappPruefung;
   const kritisch = sql`(${p.urteil} = 'abgelehnt' or ${p.kategorie} in (${sql.join(
@@ -77,7 +77,14 @@ async function kritischeBefunde(): Promise<number> {
       .where(and(eq(p.inhaltTyp, typ), sql`${p.art} <> 'religioes'`, kritisch));
     summe += z?.n ?? 0;
   }
-  return summe;
+  // Audio-Stichprobe: Prüfung zum Inhalts-Hash des Clips (`sha256`), der Clip ist dann im Paket verborgen
+  const a = schema.lernappAudio;
+  const [z] = await db
+    .select({ n: sql<number>`count(distinct ${a.id})`.mapWith(Number) })
+    .from(p)
+    .innerJoin(a, and(sql`${p.inhaltId} = ${a.id}::text`, eq(p.inhaltHash, a.sha256)))
+    .where(and(eq(p.inhaltTyp, 'audio'), sql`${p.art} <> 'religioes'`, kritisch));
+  return summe + (z?.n ?? 0);
 }
 
 export async function ladeLernappUebersicht(): Promise<Uebersicht> {
