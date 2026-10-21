@@ -1,0 +1,3406 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e12",
+    "reihenfolge": 13,
+    "thema": {
+      "de": "Berufe und mein Wochenplan",
+      "tr": "Meslekler ve haftalık programım",
+      "ar": "المهن وبرنامجي الأسبوعي"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann meinen Tagesablauf und meine Woche beschreiben.",
+        "tr": "Günlük programımı ve haftamı anlatabilirim.",
+        "ar": "أستطيع أن أصف برنامجي اليومي وأسبوعي."
+      },
+      {
+        "de": "Ich kann sagen, welchen Beruf jemand hat und wo die Person arbeitet.",
+        "tr": "Birinin mesleğinin ne olduğunu ve nerede çalıştığını söyleyebilirim.",
+        "ar": "أستطيع أن أقول ما هي مهنة شخص ما وأين يعمل."
+      }
+    ],
+    "symbol": "briefcase",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a1.e12.werden",
+      "lemma": "werden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "werden",
+        "praes_ich": "werde",
+        "praes_du": "wirst",
+        "praes_er_sie_es": "wird",
+        "praes_wir": "werden",
+        "praes_ihr": "werdet",
+        "praes_sie_Sie": "werden"
+      },
+      "frequenzRang": 8,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.als",
+      "lemma": "als",
+      "wortart": "konjunktion",
+      "frequenzRang": 21,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.anfang",
+      "lemma": "Anfang",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Anfänge"
+      },
+      "formen": {
+        "pl": "Anfänge",
+        "dat_pl": "Anfängen"
+      },
+      "frequenzRang": 355,
+      "quelle": "wiktionary:de:Anfang",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anfang‘ (https://de.wiktionary.org/wiki/Anfang), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.arbeiten",
+      "lemma": "arbeiten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "arbeiten",
+        "praes_ich": "arbeite",
+        "praes_du": "arbeitest",
+        "praes_er_sie_es": "arbeitet",
+        "praes_wir": "arbeiten",
+        "praes_ihr": "arbeitet",
+        "praes_sie_Sie": "arbeiten",
+        "imp_du": "arbeite",
+        "imp_ihr": "arbeitet"
+      },
+      "frequenzRang": 171,
+      "quelle": "wiktionary:de:arbeiten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚arbeiten‘ (https://de.wiktionary.org/wiki/arbeiten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.aufstehen",
+      "lemma": "aufstehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "auf"
+      },
+      "formen": {
+        "infinitiv": "aufstehen",
+        "verbzusatz": "auf",
+        "praes_ich": "stehe",
+        "praes_du": "stehst",
+        "praes_er_sie_es": "steht",
+        "praes_wir": "stehen",
+        "praes_ihr": "steht",
+        "praes_sie_Sie": "stehen",
+        "imp_du": "steh",
+        "imp_ihr": "steht"
+      },
+      "frequenzRang": 2016,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.fruehstuecken",
+      "lemma": "frühstücken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "frühstücken",
+        "praes_ich": "frühstücke",
+        "praes_du": "frühstückst",
+        "praes_er_sie_es": "frühstückt",
+        "praes_wir": "frühstücken",
+        "praes_ihr": "frühstückt",
+        "praes_sie_Sie": "frühstücken",
+        "imp_du": "frühstück",
+        "imp_ihr": "frühstückt"
+      },
+      "frequenzRang": 8007,
+      "quelle": "wiktionary:de:frühstücken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚frühstücken‘ (https://de.wiktionary.org/wiki/frühstücken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.anfangen",
+      "lemma": "anfangen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "anfangen",
+        "verbzusatz": "an",
+        "praes_ich": "fange",
+        "praes_du": "fängst",
+        "praes_er_sie_es": "fängt",
+        "praes_wir": "fangen",
+        "praes_ihr": "fangt",
+        "praes_sie_Sie": "fangen",
+        "imp_du": "fang",
+        "imp_ihr": "fangt"
+      },
+      "frequenzRang": 829,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.beginnen",
+      "lemma": "beginnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "beginnen",
+        "praes_ich": "beginne",
+        "praes_du": "beginnst",
+        "praes_er_sie_es": "beginnt",
+        "praes_wir": "beginnen",
+        "praes_ihr": "beginnt",
+        "praes_sie_Sie": "beginnen"
+      },
+      "frequenzRang": 289,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.abholen",
+      "lemma": "abholen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ab"
+      },
+      "formen": {
+        "infinitiv": "abholen",
+        "verbzusatz": "ab",
+        "praes_ich": "hole",
+        "praes_du": "holst",
+        "praes_er_sie_es": "holt",
+        "praes_wir": "holen",
+        "praes_ihr": "holt",
+        "praes_sie_Sie": "holen",
+        "imp_du": "hol",
+        "imp_ihr": "holt"
+      },
+      "frequenzRang": 2665,
+      "quelle": "wiktionary:de:abholen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚abholen‘ (https://de.wiktionary.org/wiki/abholen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.einkaufen",
+      "lemma": "einkaufen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ein"
+      },
+      "formen": {
+        "infinitiv": "einkaufen",
+        "verbzusatz": "ein",
+        "praes_ich": "kaufe",
+        "praes_du": "kaufst",
+        "praes_er_sie_es": "kauft",
+        "praes_wir": "kaufen",
+        "praes_ihr": "kauft",
+        "praes_sie_Sie": "kaufen",
+        "imp_du": "kauf",
+        "imp_ihr": "kauft"
+      },
+      "frequenzRang": 2587,
+      "quelle": "wiktionary:de:einkaufen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚einkaufen‘ (https://de.wiktionary.org/wiki/einkaufen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.schlafen",
+      "lemma": "schlafen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "schlafen",
+        "praes_ich": "schlafe",
+        "praes_du": "schläfst",
+        "praes_er_sie_es": "schläft",
+        "praes_wir": "schlafen",
+        "praes_ihr": "schlaft",
+        "praes_sie_Sie": "schlafen",
+        "imp_du": "schlaf",
+        "imp_ihr": "schlaft"
+      },
+      "frequenzRang": 637,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.erzaehlen",
+      "lemma": "erzählen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erzählen",
+        "praes_ich": "erzähle",
+        "praes_du": "erzählst",
+        "praes_er_sie_es": "erzählt",
+        "praes_wir": "erzählen",
+        "praes_ihr": "erzählt",
+        "praes_sie_Sie": "erzählen",
+        "imp_du": "erzähl",
+        "imp_ihr": "erzählt"
+      },
+      "frequenzRang": 412,
+      "quelle": "wiktionary:de:erzählen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erzählen‘ (https://de.wiktionary.org/wiki/erzählen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.reden",
+      "lemma": "reden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "reden",
+        "praes_ich": "rede",
+        "praes_du": "redest",
+        "praes_er_sie_es": "redet",
+        "praes_wir": "reden",
+        "praes_ihr": "redet",
+        "praes_sie_Sie": "reden",
+        "imp_du": "rede",
+        "imp_ihr": "redet"
+      },
+      "frequenzRang": 354,
+      "quelle": "wiktionary:de:reden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚reden‘ (https://de.wiktionary.org/wiki/reden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.benutzen",
+      "lemma": "benutzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "benutzen",
+        "praes_ich": "benutze",
+        "praes_du": "benutzt",
+        "praes_er_sie_es": "benutzt",
+        "praes_wir": "benutzen",
+        "praes_ihr": "benutzt",
+        "praes_sie_Sie": "benutzen",
+        "imp_du": "benutz",
+        "imp_ihr": "benutzt"
+      },
+      "frequenzRang": 582,
+      "quelle": "wiktionary:de:benutzen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚benutzen‘ (https://de.wiktionary.org/wiki/benutzen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.nennen",
+      "lemma": "nennen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "nennen",
+        "praes_ich": "nenne",
+        "praes_du": "nennst",
+        "praes_er_sie_es": "nennt",
+        "praes_wir": "nennen",
+        "praes_ihr": "nennt",
+        "praes_sie_Sie": "nennen",
+        "imp_du": "nenn",
+        "imp_ihr": "nennt"
+      },
+      "frequenzRang": 248,
+      "quelle": "wiktionary:de:nennen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚nennen‘ (https://de.wiktionary.org/wiki/nennen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.verdienen",
+      "lemma": "verdienen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verdienen",
+        "praes_ich": "verdiene",
+        "praes_du": "verdienst",
+        "praes_er_sie_es": "verdient",
+        "praes_wir": "verdienen",
+        "praes_ihr": "verdient",
+        "praes_sie_Sie": "verdienen"
+      },
+      "frequenzRang": 539,
+      "quelle": "wiktionary:de:verdienen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verdienen‘ (https://de.wiktionary.org/wiki/verdienen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.erst",
+      "lemma": "erst",
+      "wortart": "adverb",
+      "frequenzRang": 125,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.ab",
+      "lemma": "ab",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Dativ (in A1 mit Uhrzeit: ab acht Uhr)"
+      },
+      "frequenzRang": 86,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.danach",
+      "lemma": "danach",
+      "wortart": "adverb",
+      "frequenzRang": 351,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.selbst",
+      "lemma": "selbst",
+      "wortart": "adverb",
+      "frequenzRang": 100,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.allein",
+      "lemma": "allein",
+      "wortart": "adverb",
+      "frequenzRang": 231,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.arbeit",
+      "lemma": "Arbeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Arbeiten"
+      },
+      "formen": {
+        "pl": "Arbeiten"
+      },
+      "frequenzRang": 200,
+      "quelle": "wiktionary:de:Arbeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Arbeit‘ (https://de.wiktionary.org/wiki/Arbeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.beruf",
+      "lemma": "Beruf",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Berufe"
+      },
+      "formen": {
+        "pl": "Berufe",
+        "dat_pl": "Berufen"
+      },
+      "frequenzRang": 1164,
+      "quelle": "wiktionary:de:Beruf",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Beruf‘ (https://de.wiktionary.org/wiki/Beruf), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.person",
+      "lemma": "Person",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Personen"
+      },
+      "formen": {
+        "pl": "Personen"
+      },
+      "frequenzRang": 204,
+      "quelle": "wiktionary:de:Person",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Person‘ (https://de.wiktionary.org/wiki/Person), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.koch",
+      "lemma": "Koch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Köche",
+        "weiblich": "Köchin"
+      },
+      "formen": {
+        "pl": "Köche",
+        "dat_pl": "Köchen",
+        "weiblich": "Köchin",
+        "weiblich_pl": "Köchinnen"
+      },
+      "frequenzRang": 7697,
+      "quelle": "wiktionary:de:Koch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Koch‘ (https://de.wiktionary.org/wiki/Koch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.krankenpfleger",
+      "lemma": "Krankenpfleger",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Krankenpfleger",
+        "weiblich": "Krankenpflegerin"
+      },
+      "formen": {
+        "dat_pl": "Krankenpflegern",
+        "weiblich": "Krankenpflegerin",
+        "weiblich_pl": "Krankenpflegerinnen"
+      },
+      "frequenzRang": 11397,
+      "quelle": "wiktionary:de:Krankenpfleger",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Krankenpfleger‘ (https://de.wiktionary.org/wiki/Krankenpfleger), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.busfahrer",
+      "lemma": "Busfahrer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Busfahrer",
+        "weiblich": "Busfahrerin"
+      },
+      "formen": {
+        "dat_pl": "Busfahrern",
+        "weiblich": "Busfahrerin",
+        "weiblich_pl": "Busfahrerinnen"
+      },
+      "frequenzRang": 12922,
+      "quelle": "wiktionary:de:Busfahrer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Busfahrer‘ (https://de.wiktionary.org/wiki/Busfahrer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.ingenieur",
+      "lemma": "Ingenieur",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Ingenieure",
+        "weiblich": "Ingenieurin"
+      },
+      "formen": {
+        "pl": "Ingenieure",
+        "dat_pl": "Ingenieuren",
+        "weiblich": "Ingenieurin",
+        "weiblich_pl": "Ingenieurinnen"
+      },
+      "frequenzRang": 4975,
+      "quelle": "wiktionary:de:Ingenieur",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ingenieur‘ (https://de.wiktionary.org/wiki/Ingenieur), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.verkaeufer",
+      "lemma": "Verkäufer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Verkäufer",
+        "weiblich": "Verkäuferin"
+      },
+      "formen": {
+        "dat_pl": "Verkäufern",
+        "weiblich": "Verkäuferin",
+        "weiblich_pl": "Verkäuferinnen"
+      },
+      "frequenzRang": 8554,
+      "quelle": "wiktionary:de:Verkäufer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verkäufer‘ (https://de.wiktionary.org/wiki/Verkäufer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.buero",
+      "lemma": "Büro",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Büros"
+      },
+      "formen": {
+        "pl": "Büros"
+      },
+      "frequenzRang": 1133,
+      "quelle": "wiktionary:de:Büro",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Büro‘ (https://de.wiktionary.org/wiki/Büro), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.werkstatt",
+      "lemma": "Werkstatt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Werkstätten"
+      },
+      "formen": {
+        "pl": "Werkstätten"
+      },
+      "frequenzRang": 2593,
+      "quelle": "wiktionary:de:Werkstatt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Werkstatt‘ (https://de.wiktionary.org/wiki/Werkstatt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.krankenhaus",
+      "lemma": "Krankenhaus",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Krankenhäuser"
+      },
+      "formen": {
+        "pl": "Krankenhäuser",
+        "dat_pl": "Krankenhäusern"
+      },
+      "frequenzRang": 1009,
+      "quelle": "wiktionary:de:Krankenhaus",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Krankenhaus‘ (https://de.wiktionary.org/wiki/Krankenhaus), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.geschaeft",
+      "lemma": "Geschäft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Geschäfte"
+      },
+      "formen": {
+        "pl": "Geschäfte",
+        "dat_pl": "Geschäften"
+      },
+      "frequenzRang": 882,
+      "quelle": "wiktionary:de:Geschäft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Geschäft‘ (https://de.wiktionary.org/wiki/Geschäft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.baustelle",
+      "lemma": "Baustelle",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Baustellen"
+      },
+      "formen": {
+        "pl": "Baustellen"
+      },
+      "frequenzRang": 3570,
+      "quelle": "wiktionary:de:Baustelle",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Baustelle‘ (https://de.wiktionary.org/wiki/Baustelle), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.zukunft",
+      "lemma": "Zukunft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 435,
+      "quelle": "wiktionary:de:Zukunft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zukunft‘ (https://de.wiktionary.org/wiki/Zukunft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.ziel",
+      "lemma": "Ziel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Ziele"
+      },
+      "formen": {
+        "pl": "Ziele",
+        "dat_pl": "Zielen"
+      },
+      "frequenzRang": 353,
+      "quelle": "wiktionary:de:Ziel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ziel‘ (https://de.wiktionary.org/wiki/Ziel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.thema",
+      "lemma": "Thema",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Themen"
+      },
+      "formen": {
+        "pl": "Themen"
+      },
+      "frequenzRang": 227,
+      "quelle": "wiktionary:de:Thema",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Thema‘ (https://de.wiktionary.org/wiki/Thema), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.punkt",
+      "lemma": "Punkt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Punkte"
+      },
+      "formen": {
+        "pl": "Punkte",
+        "dat_pl": "Punkten"
+      },
+      "frequenzRang": 366,
+      "quelle": "wiktionary:de:Punkt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Punkt‘ (https://de.wiktionary.org/wiki/Punkt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.jung",
+      "lemma": "jung",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "junge",
+        "endung_en": "jungen",
+        "endung_er": "junger",
+        "endung_es": "junges",
+        "endung_em": "jungem"
+      },
+      "frequenzRang": 234,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.wichtig",
+      "lemma": "wichtig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "wichtige",
+        "endung_en": "wichtigen",
+        "endung_er": "wichtiger",
+        "endung_es": "wichtiges",
+        "endung_em": "wichtigem"
+      },
+      "frequenzRang": 187,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.online",
+      "lemma": "online",
+      "wortart": "adjektiv",
+      "frequenzRang": 299,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.internet",
+      "lemma": "Internet",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 405,
+      "quelle": "wiktionary:de:Internet",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Internet‘ (https://de.wiktionary.org/wiki/Internet), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.nachricht",
+      "lemma": "Nachricht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Nachrichten"
+      },
+      "formen": {
+        "pl": "Nachrichten"
+      },
+      "frequenzRang": 432,
+      "quelle": "wiktionary:de:Nachricht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nachricht‘ (https://de.wiktionary.org/wiki/Nachricht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.studium",
+      "lemma": "Studium",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Studien"
+      },
+      "formen": {
+        "pl": "Studien"
+      },
+      "frequenzRang": 567,
+      "quelle": "wiktionary:de:Studium",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Studium‘ (https://de.wiktionary.org/wiki/Studium), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.mitarbeiter",
+      "lemma": "Mitarbeiter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Mitarbeiter",
+        "weiblich": "Mitarbeiterin"
+      },
+      "formen": {
+        "dat_pl": "Mitarbeitern",
+        "weiblich": "Mitarbeiterin",
+        "weiblich_pl": "Mitarbeiterinnen"
+      },
+      "frequenzRang": 596,
+      "quelle": "wiktionary:de:Mitarbeiter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mitarbeiter‘ (https://de.wiktionary.org/wiki/Mitarbeiter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e12.s0001",
+      "text": "Was sind Sie von Beruf?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0002",
+      "text": "Was ist Ihr Beruf?",
+      "quelle": "tatoeba:3930429",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3930429 von felvideki (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0003",
+      "text": "Ich bin Ingenieurin.",
+      "quelle": "tatoeba:11818107",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11818107 von Adelpa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0004",
+      "text": "Ich bin Krankenpfleger.",
+      "quelle": "tatoeba:916385",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #916385 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0005",
+      "text": "Ich bin Krankenpflegerin.",
+      "quelle": "tatoeba:8357538",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8357538 von Adelpa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0006",
+      "text": "Murat ist Koch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0007",
+      "text": "Derya ist Krankenpflegerin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0008",
+      "text": "Anna ist Busfahrerin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0009",
+      "text": "Murat arbeitet als Koch in einer Kantine.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0010",
+      "text": "Derya arbeitet als Krankenpflegerin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0011",
+      "text": "Als was arbeitet dein Vater?",
+      "quelle": "tatoeba:704690",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #704690 von Zaghawa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0012",
+      "text": "Er arbeitet als Busfahrer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0013",
+      "text": "Sie ist Verkäuferin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0014",
+      "text": "Sie ist Ingenieurin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0015",
+      "text": "Sie ist Köchin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0016",
+      "text": "Wo arbeitest du?",
+      "quelle": "tatoeba:410316",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #410316 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0017",
+      "text": "Wo arbeiten Sie?",
+      "quelle": "tatoeba:989073",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #989073 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0018",
+      "text": "Ich arbeite hier.",
+      "quelle": "tatoeba:825547",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #825547 von Zaghawa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0019",
+      "text": "Hallo! Arbeitest du hier?",
+      "quelle": "tatoeba:641925",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #641925 von Huluk (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0020",
+      "text": "Ich arbeite gerne.",
+      "quelle": "tatoeba:362810",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #362810 von Wolf (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0021",
+      "text": "Wie viele Personen arbeiten hier?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0022",
+      "text": "Gefällt Ihnen Ihre neue Arbeit?",
+      "quelle": "tatoeba:379807",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #379807 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0023",
+      "text": "Ja, die Arbeit gefällt mir sehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0024",
+      "text": "Welchen Beruf hat deine Mutter?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0025",
+      "text": "Meine Mutter ist Ingenieurin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0026",
+      "text": "Mein Vater ist Ingenieur.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0027",
+      "text": "Paul kocht gern, aber er ist Ingenieur.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0028",
+      "text": "Ich liebe meine Arbeit.",
+      "quelle": "tatoeba:1323675",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1323675 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0029",
+      "text": "Ich koche jeden Tag für viele Personen. Was bin ich?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0030",
+      "text": "Derya arbeitet in einem Krankenhaus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0031",
+      "text": "Das ist mein Büro.",
+      "quelle": "tatoeba:836116",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #836116 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0032",
+      "text": "Emre arbeitet in einer Werkstatt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0033",
+      "text": "In der Werkstatt stehen viele Autos.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0034",
+      "text": "Auf der Baustelle ist es sehr laut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0035",
+      "text": "Der Vater von Can arbeitet auf einer Baustelle.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0036",
+      "text": "Das Geschäft ist ab neun Uhr offen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0037",
+      "text": "Der Verkäufer arbeitet in einem Geschäft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0038",
+      "text": "Wo arbeitet eine Ingenieurin?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0039",
+      "text": "Im Büro oder auf der Baustelle.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0040",
+      "text": "Die Kantine hat zehn Mitarbeiter.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0041",
+      "text": "Sie ist eine neue Mitarbeiterin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0042",
+      "text": "Sie verdient ihr eigenes Geld.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0043",
+      "text": "Im Büro benutzt sie einen Computer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0044",
+      "text": "Ich benutze es jeden Tag.",
+      "quelle": "tatoeba:750973",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #750973 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0045",
+      "text": "Ich gehe fast jeden Tag ins Internet.",
+      "quelle": "tatoeba:1809120",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1809120 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0046",
+      "text": "Papa sucht im Internet eine neue Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0047",
+      "text": "Bist du online?",
+      "quelle": "tatoeba:2322116",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2322116 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0048",
+      "text": "Heute arbeitet Mama online von zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0049",
+      "text": "Hast du meine Nachricht bekommen?",
+      "quelle": "tatoeba:8159824",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8159824 von TheNightAvl (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0050",
+      "text": "Nein, ich habe heute kein Internet.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0051",
+      "text": "Ich arbeite in einem Krankenhaus. Was bin ich?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0052",
+      "text": "Am Freitag arbeite ich im Büro.",
+      "quelle": "tatoeba:7776134",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7776134 von felix63 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0053",
+      "text": "Ich stehe um sechs Uhr auf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0054",
+      "text": "Steh auf!",
+      "quelle": "tatoeba:1293647",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1293647 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0055",
+      "text": "Sie stehen morgens um halb sieben auf.",
+      "quelle": "tatoeba:1541724",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1541724 von Zaghawa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0056",
+      "text": "Du musst früh aufstehen.",
+      "quelle": "tatoeba:6776807",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6776807 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0057",
+      "text": "Wir frühstücken um sieben Uhr zusammen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0058",
+      "text": "Danach gehe ich zur Schule.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0059",
+      "text": "Die Schule fängt um halb neun an.",
+      "quelle": "tatoeba:1287894",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1287894 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0060",
+      "text": "Wann fängt es an?",
+      "quelle": "tatoeba:348136",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #348136 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0061",
+      "text": "Die Arbeit beginnt um acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0062",
+      "text": "Der Film beginnt gleich, kommt ihr?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0063",
+      "text": "Am Anfang ist alles neu.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0064",
+      "text": "Am Anfang ist es schwer.",
+      "quelle": "tatoeba:645574",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #645574 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0065",
+      "text": "Am Sonntag schlafe ich lange.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0066",
+      "text": "Schläfst du?",
+      "quelle": "tatoeba:612166",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #612166 von sigfrido (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0067",
+      "text": "Am Samstag stehe ich erst um acht auf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0068",
+      "text": "Es ist erst Viertel vor acht.",
+      "quelle": "tatoeba:4822238",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4822238 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0069",
+      "text": "Ab acht Uhr bin ich in der Schule.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0070",
+      "text": "Mama schläft noch, sie arbeitet nachts.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0071",
+      "text": "Erst frühstücke ich, danach gehe ich los.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0072",
+      "text": "Ich stehe um sieben Uhr auf und frühstücke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0073",
+      "text": "Derya frühstückt erst um zehn Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0074",
+      "text": "Wann beginnt deine Arbeit?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0075",
+      "text": "Meine Arbeit beginnt um neun Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0076",
+      "text": "Wer holt dich ab?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0077",
+      "text": "Meine Oma holt mich ab.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0078",
+      "text": "Papa holt mich um vier Uhr ab.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0079",
+      "text": "Kannst du mich abholen?",
+      "quelle": "tatoeba:1391455",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1391455 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0080",
+      "text": "Kommst du mich abholen?",
+      "quelle": "tatoeba:1391457",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1391457 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0081",
+      "text": "Wann gehst du einkaufen?",
+      "quelle": "tatoeba:344932",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #344932 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0082",
+      "text": "Am Samstag kaufen wir ein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0083",
+      "text": "Wer geht heute einkaufen?",
+      "quelle": "tatoeba:5319811",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5319811 von raggione (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0084",
+      "text": "Mama kauft nach der Arbeit ein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0085",
+      "text": "Ich arbeite nicht gern allein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0086",
+      "text": "Ich will es selbst machen.",
+      "quelle": "tatoeba:1136208",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1136208 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0087",
+      "text": "Am Sonntag macht Papa das Frühstück selbst.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0088",
+      "text": "Erzähl mir mehr.",
+      "quelle": "tatoeba:699652",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #699652 von jakov (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0089",
+      "text": "Papa erzählt von seiner Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0090",
+      "text": "Können wir reden?",
+      "quelle": "tatoeba:578315",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #578315 von jakov (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0091",
+      "text": "Wir reden oft über die Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0092",
+      "text": "Diese Woche habe ich viel Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0093",
+      "text": "Am Mittwoch muss ich einkaufen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0094",
+      "text": "Am Donnerstag kann Papa mich nicht abholen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0095",
+      "text": "Am Freitag kaufen wir zusammen ein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0096",
+      "text": "Von Montag bis Freitag arbeitet Derya.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0097",
+      "text": "Ab wann hast du am Montag Zeit?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0098",
+      "text": "Ab drei Uhr habe ich Zeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0099",
+      "text": "Am Samstag kaufe ich mit Mama ein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0100",
+      "text": "Was willst du werden?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0101",
+      "text": "Ich will Ingenieurin werden.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0102",
+      "text": "Tom will Lehrer werden.",
+      "quelle": "tatoeba:5494301",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5494301 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0103",
+      "text": "Warum möchtest du Krankenpfleger werden?",
+      "quelle": "tatoeba:3661666",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3661666 von PaulP (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0104",
+      "text": "Ich werde Arzt.",
+      "quelle": "tatoeba:1391324",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1391324 von Dejo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0105",
+      "text": "Jan wird morgen zwölf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0106",
+      "text": "Es wird spät, wir müssen schlafen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0107",
+      "text": "In der Zukunft möchte ich Köchin werden.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0108",
+      "text": "Tom denkt an seine Zukunft.",
+      "quelle": "tatoeba:2623116",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2623116 von Olya (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0109",
+      "text": "Mein Ziel ist ein Studium in Deutschland.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0110",
+      "text": "Das Studium ist schwer, aber interessant.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0111",
+      "text": "Nach dem Studium wird sie Ingenieurin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0112",
+      "text": "Er ist sehr jung.",
+      "quelle": "tatoeba:1433840",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1433840 von Zaghawa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0113",
+      "text": "Die Ingenieurin ist noch sehr jung.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0114",
+      "text": "Er ist noch zu jung für diese Arbeit.",
+      "quelle": "tatoeba:457223",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #457223 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0115",
+      "text": "Das ist nicht wichtig.",
+      "quelle": "tatoeba:1157",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1157 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0116",
+      "text": "Ist es wichtig?",
+      "quelle": "tatoeba:724452",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #724452 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0117",
+      "text": "Arabisch ist eine sehr wichtige Sprache.",
+      "quelle": "tatoeba:135758",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #135758 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0118",
+      "text": "Das ist ein sehr wichtiger Punkt.",
+      "quelle": "tatoeba:13036885",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13036885 von Adelpa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0119",
+      "text": "Das Thema heute ist die Zukunft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0120",
+      "text": "Kannst du fünf Berufe nennen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0121",
+      "text": "Ja: Koch, Lehrer, Ärztin, Verkäufer und Busfahrerin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0122",
+      "text": "Wir fangen um Punkt acht Uhr an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0123",
+      "text": "Ich will in der Zukunft Ärztin werden.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0124",
+      "text": "Drei Personen, drei Berufe",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0125",
+      "text": "Hind ist Ingenieurin. Sie arbeitet in einem Büro. Sie plant Brücken für die Stadt. Ihr Beruf ist sehr wichtig.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0126",
+      "text": "Thomas ist Verkäufer. Er arbeitet in einem Geschäft. Er fängt um neun Uhr an. Er redet gern mit den Kunden.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0127",
+      "text": "Gül ist Köchin. Sie hat ein kleines Restaurant. Sie steht jeden Tag um fünf Uhr auf. Sie kocht Essen aus der Türkei und Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0128",
+      "text": "Hind arbeitet in einem Krankenhaus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0129",
+      "text": "Thomas spricht gern mit den Kunden.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0130",
+      "text": "Gül arbeitet mit ihrem Mann zusammen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0131",
+      "text": "Wann fängt Thomas an?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0132",
+      "text": "Er fängt um neun Uhr an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0133",
+      "text": "Er fängt um fünf Uhr an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0134",
+      "text": "Er fängt um zehn Uhr an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0135",
+      "text": "Berufe in der Familie",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0136",
+      "text": "Heute ist das Thema in der Klasse: Berufe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0137",
+      "text": "Elif erzählt von ihrer Familie.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0138",
+      "text": "Meine Mutter Derya ist Krankenpflegerin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0139",
+      "text": "Sie arbeitet in einem Krankenhaus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0140",
+      "text": "Manchmal arbeitet sie nachts.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0141",
+      "text": "Dann schläft sie am Morgen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0142",
+      "text": "Und was ist dein Vater von Beruf?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0143",
+      "text": "Mein Vater Murat ist Koch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0144",
+      "text": "Er kocht in einer Kantine für hundert Personen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0145",
+      "text": "Er fängt schon um sechs Uhr an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0146",
+      "text": "Dann erzählt Jan von seiner Mutter.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0147",
+      "text": "Meine Mutter Anna ist Busfahrerin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0148",
+      "text": "Sie fährt den Bus durch die Stadt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0149",
+      "text": "Morgens fahren viele Schüler mit ihr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0150",
+      "text": "Das sind wichtige Berufe. Danke, Elif und Jan!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0151",
+      "text": "Wo arbeitet Derya?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0152",
+      "text": "Derya arbeitet in einer Kantine.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0153",
+      "text": "Derya arbeitet in einem Geschäft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0154",
+      "text": "Wann fängt Murat an?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0155",
+      "text": "Murat fängt um sechs Uhr an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0156",
+      "text": "Murat fängt um acht Uhr an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0157",
+      "text": "Murat fängt um zehn Uhr an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0158",
+      "text": "Was ist Anna von Beruf?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0159",
+      "text": "Sie ist Busfahrerin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0160",
+      "text": "Wann stehst du auf?",
+      "quelle": "tatoeba:1288283",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1288283 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e12.s0161",
+      "text": "In der Pause reden Jan und Laylā.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0162",
+      "text": "Laylā, wann stehst du morgens auf?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0163",
+      "text": "Ich stehe um halb sieben auf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0164",
+      "text": "Danach frühstücke ich mit meiner Mutter.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0165",
+      "text": "Ich stehe erst um sieben Uhr auf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0166",
+      "text": "Ich frühstücke schnell in der Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0167",
+      "text": "Wie kommst du zur Schule?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0168",
+      "text": "Ich fahre allein mit dem Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0169",
+      "text": "Mein Vater fährt mich mit dem Auto.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0170",
+      "text": "Er fährt danach zur Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0171",
+      "text": "Am Nachmittag ist die Schule zu Ende.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0172",
+      "text": "Dann kaufen wir zusammen ein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0173",
+      "text": "Ich gehe allein nach Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0174",
+      "text": "Meine Eltern arbeiten bis fünf Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0175",
+      "text": "Wann steht Laylā auf?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0176",
+      "text": "Sie steht um halb sieben auf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0177",
+      "text": "Sie steht um sechs Uhr auf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0178",
+      "text": "Sie steht erst um acht Uhr auf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0179",
+      "text": "Wie kommt Laylā zur Schule?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0180",
+      "text": "Ihr Vater fährt sie mit dem Auto.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0181",
+      "text": "Sie fährt allein mit dem Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0182",
+      "text": "Sie fährt mit dem Bus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0183",
+      "text": "Wer holt Laylā ab?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0184",
+      "text": "Ihre Oma holt sie ab.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0185",
+      "text": "Ihr Vater holt sie ab.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0186",
+      "text": "Ihre Mutter holt sie ab.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0187",
+      "text": "Elif steht am Montag um sieben Uhr auf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0188",
+      "text": "Ja, ich hole dich um vier Uhr ab.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0189",
+      "text": "Um neun Uhr gehe ich schlafen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0190",
+      "text": "Ein Koch arbeitet oft in einer Kantine.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0191",
+      "text": "Die Verkäuferin hilft den Kunden.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0192",
+      "text": "Auf der Baustelle beginnt die Arbeit früh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0193",
+      "text": "Krankenpfleger arbeiten oft auch nachts.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0194",
+      "text": "Ich schreibe die Nachricht selbst.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0195",
+      "text": "Am Wochenende schlafen alle lange.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0196",
+      "text": "Wann stehst du am Sonntag auf?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0197",
+      "text": "Am Sonntag stehe ich erst um neun auf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0198",
+      "text": "Ich bin Verkäufer und arbeite in einem Geschäft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0199",
+      "text": "Die Werkstatt fängt um sieben Uhr an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0200",
+      "text": "Die Busfahrerin steht um fünf Uhr auf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0201",
+      "text": "Ich kaufe heute ein, ich habe Zeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0202",
+      "text": "Kannst du Elif um drei Uhr abholen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0203",
+      "text": "Der Ingenieur benutzt im Büro das Internet.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0204",
+      "text": "Derya muss heute früh zur Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e12.s0205",
+      "text": "Ich stehe früh auf, danach frühstücke ich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e12.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Berufe nennen und sagen, was jemand von Beruf ist.",
+        "tr": "Meslekleri sayabilir ve birinin mesleğini söyleyebilirim.",
+        "ar": "أستطيع أن أذكر المهن وأن أقول ما هي مهنة شخص ما."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e12.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.beruf",
+          "ablenker": ["de.a1.e01.name", "de.a1.e01.sprache"]
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e12.koch",
+            "de.a1.e12.krankenpfleger",
+            "de.a1.e12.busfahrer",
+            "de.a1.e12.ingenieur",
+            "de.a1.e12.verkaeufer",
+            "de.a1.e07.lehrer"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e12.s0006",
+          "ablenker": ["de.a1.e12.s0007", "de.a1.e12.s0008"]
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e12.arbeiten",
+          "ablenker": ["de.a1.e08.spielen", "de.a1.e01.wohnen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0001"
+            }
+          ],
+          "antwort": "de.a1.e12.s0003",
+          "ablenker": ["de.a1.e12.s0054", "de.a1.e12.s0017"]
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0010",
+          "wort": 1,
+          "ablenker": ["arbeite", "arbeitest"]
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0009",
+          "nach": "ziel",
+          "alternativen": [
+            "Murat arbeitet in einer Kantine als Koch.",
+            "In einer Kantine arbeitet Murat als Koch.",
+            "Als Koch arbeitet Murat in einer Kantine."
+          ],
+          "ablenker": ["Köchin", "arbeitest"]
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.person",
+          "ablenker": ["de.a1.e02.familie", "de.a1.e08.gruppe"]
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a10",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0011"
+            }
+          ],
+          "antwort": "de.a1.e12.s0012",
+          "ablenker": ["de.a1.e12.s0031", "de.a1.e12.s0020"]
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e12.koch",
+          "ablenker": ["de.a1.e06.doch"]
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e12.s0013",
+          "ablenker": ["de.a1.e12.s0014", "de.a1.e12.s0015"]
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0004",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e12.s0029"
+        },
+        {
+          "schluessel": "de.a1.e12.l01.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e12.s0027"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e12.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wo jemand arbeitet und was er bei der Arbeit benutzt.",
+        "tr": "Birinin nerede çalıştığını ve işte ne kullandığını söyleyebilirim.",
+        "ar": "أستطيع أن أقول أين يعمل شخص ما وماذا يستخدم في العمل."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e12.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.buero",
+          "ablenker": ["de.a1.e12.werkstatt", "de.a1.e07.schule"]
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e12.buero",
+            "de.a1.e12.werkstatt",
+            "de.a1.e12.krankenhaus",
+            "de.a1.e12.geschaeft",
+            "de.a1.e12.baustelle",
+            "de.a1.e05.kantine"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e12.s0030",
+          "ablenker": ["de.a1.e12.s0032", "de.a1.e12.s0035"]
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0038"
+            }
+          ],
+          "antwort": "de.a1.e12.s0039",
+          "ablenker": ["de.a1.e12.s0036", "de.a1.e12.s0005"]
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0037",
+          "wort": 1,
+          "ablenker": ["Verkäuferin", "Verkäufern"]
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.mitarbeiter",
+          "ablenker": ["de.a1.e07.schueler", "de.a1.e08.freund"]
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0043",
+          "nach": "ziel",
+          "alternativen": [
+            "Sie benutzt im Büro einen Computer.",
+            "Sie benutzt einen Computer im Büro.",
+            "Einen Computer benutzt sie im Büro."
+          ],
+          "ablenker": ["benutze", "Internet"]
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e12.s0047",
+          "ablenker": ["de.a1.e12.s0045", "de.a1.e12.s0046"]
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e12.verdienen",
+          "ablenker": ["de.a1.e06.bezahlen", "de.a1.e06.kosten"]
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0049"
+            }
+          ],
+          "antwort": "de.a1.e12.s0050",
+          "ablenker": ["de.a1.e12.s0064", "de.a1.e12.s0087"]
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0041",
+          "wort": 4,
+          "ablenker": ["Mitarbeiter", "Mitarbeiterinnen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.internet",
+          "ablenker": ["de.a1.e07.buch", "de.a1.e08.film"]
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0048",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e12.s0051"
+        },
+        {
+          "schluessel": "de.a1.e12.l02.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e12.s0033"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e12.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann meinen Tagesablauf beschreiben und sagen, wann etwas anfängt.",
+        "tr": "Günlük programımı anlatabilir ve bir şeyin ne zaman başladığını söyleyebilirim.",
+        "ar": "أستطيع أن أصف برنامجي اليومي وأن أقول متى يبدأ شيء ما."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e12.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.aufstehen",
+          "ablenker": ["de.a1.e12.schlafen", "de.a1.e04.gehen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a02",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e12.s0053",
+          "ablenker": ["de.a1.e12.s0055", "de.a1.e12.s0067"]
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a04",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e12.aufstehen",
+            "de.a1.e12.fruehstuecken",
+            "de.a1.e12.schlafen",
+            "de.a1.e05.essen",
+            "de.a1.e05.kochen",
+            "de.a1.e09.warten"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0053",
+          "wort": 1,
+          "ablenker": ["stehst", "steht"]
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0074"
+            }
+          ],
+          "antwort": "de.a1.e12.s0075",
+          "ablenker": ["de.a1.e12.s0065", "de.a1.e12.s0086"]
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a07",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.anfangen",
+          "ablenker": ["de.a1.e10.vergessen", "de.a1.e05.nehmen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0057",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir frühstücken zusammen um sieben Uhr.",
+            "Um sieben Uhr frühstücken wir zusammen.",
+            "Zusammen frühstücken wir um sieben Uhr."
+          ],
+          "ablenker": ["frühstückt", "acht"]
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e12.s0068",
+          "ablenker": ["de.a1.e12.s0062", "de.a1.e12.s0061"]
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.danach",
+          "ablenker": ["de.a1.e04.gestern", "de.a1.e03.noch"]
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0056"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e12.s0060"
+            }
+          ],
+          "antwort": "de.a1.e12.s0059",
+          "ablenker": ["de.a1.e12.s0063", "de.a1.e12.s0028"]
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a13",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0073",
+          "wort": 1,
+          "ablenker": ["frühstücke", "frühstücken"]
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0070",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e12.s0072"
+        },
+        {
+          "schluessel": "de.a1.e12.l03.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e12.s0069"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e12.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über meine Woche sprechen und fragen, wann jemand Zeit hat.",
+        "tr": "Haftam hakkında konuşabilir ve birinin ne zaman vakti olduğunu sorabilirim.",
+        "ar": "أستطيع أن أتحدث عن أسبوعي وأن أسأل متى يكون عند شخص ما وقت."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e12.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.abholen",
+          "ablenker": ["de.a1.e09.warten", "de.a1.e08.treffen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a02",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e12.s0078",
+          "ablenker": ["de.a1.e12.s0094", "de.a1.e12.s0084"]
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0076"
+            }
+          ],
+          "antwort": "de.a1.e12.s0077",
+          "ablenker": ["de.a1.e12.s0082", "de.a1.e12.s0122"]
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0093",
+          "wort": 4,
+          "ablenker": ["einkaufe", "einkauft"]
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.einkaufen",
+          "ablenker": ["de.a1.e06.verkaufen", "de.a1.e05.kochen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0078",
+          "nach": "ziel",
+          "alternativen": ["Um vier Uhr holt Papa mich ab.", "Um vier Uhr holt mich Papa ab.", "Mich holt Papa um vier Uhr ab."],
+          "ablenker": ["holst", "an"]
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a08",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e12.s0085",
+          "ablenker": ["de.a1.e12.s0092", "de.a1.e12.s0089"]
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.erzaehlen",
+          "ablenker": ["de.a1.e07.lesen", "de.a1.e07.schreiben"]
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0097"
+            }
+          ],
+          "antwort": "de.a1.e12.s0098",
+          "ablenker": ["de.a1.e12.s0077", "de.a1.e12.s0044"]
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e12.reden",
+          "ablenker": ["de.a1.e10.regen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0083"
+            }
+          ],
+          "antwort": "de.a1.e12.s0201",
+          "ablenker": ["de.a1.e12.s0088", "de.a1.e12.s0106"]
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a13",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0094",
+          "wort": 6,
+          "ablenker": ["abholt", "holt"]
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0096",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e12.s0099"
+        },
+        {
+          "schluessel": "de.a1.e12.l04.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e12.s0091"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e12.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, was ich werden will, und kurze Texte über Berufe lesen.",
+        "tr": "Ne olmak istediğimi söyleyebilir ve meslekler hakkında kısa metinler okuyabilirim.",
+        "ar": "أستطيع أن أقول ماذا أريد أن أصبح وأن أقرأ نصوصًا قصيرة عن المهن."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e12.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.zukunft",
+          "ablenker": ["de.a1.e12.ziel", "de.a1.e04.zeit"]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e12.ziel", "de.a1.e12.thema", "de.a1.e12.punkt", "de.a1.e12.studium", "de.a1.e12.zukunft", "de.a1.e07.frage"]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e12.s0101",
+          "ablenker": ["de.a1.e12.s0103", "de.a1.e12.s0102"]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0100"
+            }
+          ],
+          "antwort": "de.a1.e12.s0101",
+          "ablenker": ["de.a1.e12.s0112", "de.a1.e12.s0071"]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0107",
+          "wort": 6,
+          "ablenker": ["werde", "wird"]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e12.werden",
+          "ablenker": ["de.a1.e10.tragen", "de.a1.e04.machen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.a1.e12.s0124",
+          "absaetze": ["de.a1.e12.s0125", "de.a1.e12.s0126", "de.a1.e12.s0127"],
+          "glossen": ["de.a1.e12.ingenieur", "de.a1.e12.verkaeufer", "de.a1.e12.koch", "de.a1.e12.geschaeft"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e12.s0128",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e12.s0129",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e12.s0130",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a1.e12.s0131",
+              "antwort": "de.a1.e12.s0132",
+              "ablenker": ["de.a1.e12.s0133", "de.a1.e12.s0134"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.wichtig",
+          "ablenker": ["de.a1.e12.jung", "de.a1.e03.gross"]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0109",
+          "nach": "ziel",
+          "alternativen": ["Ein Studium in Deutschland ist mein Ziel."],
+          "ablenker": ["Zukunft", "sind"]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e12.wichtig",
+          "ablenker": ["de.a1.e07.richtig"]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e12.s0115",
+          "ablenker": ["de.a1.e12.s0116", "de.a1.e12.s0114"]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0120"
+            }
+          ],
+          "antwort": "de.a1.e12.s0121",
+          "ablenker": ["de.a1.e12.s0119", "de.a1.e12.s0108"]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e12.ziel",
+          "ablenker": ["de.a1.e02.viel"]
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0113",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e12.s0123"
+        },
+        {
+          "schluessel": "de.a1.e12.l05.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e12.s0105",
+          "alternativen": ["Jan wird morgen 12."]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e12.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über Berufe in der Familie und ein Gespräch über den Tag verstehen.",
+        "tr": "Ailedeki meslekler hakkında bir hikâyeyi ve gün hakkında bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن المهن في العائلة وحوارًا عن اليوم."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e12.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a1.e12.s0135",
+          "zeilen": [
+            {
+              "satz": "de.a1.e12.s0136"
+            },
+            {
+              "satz": "de.a1.e12.s0137"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0138"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0139"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0140"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0141"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e12.s0142"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0143"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0144"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0145"
+            },
+            {
+              "satz": "de.a1.e12.s0146"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e12.s0147"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e12.s0148"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e12.s0149"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e12.s0150"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 3,
+              "frage": "de.a1.e12.s0151",
+              "antwort": "de.a1.e12.s0030",
+              "ablenker": ["de.a1.e12.s0152", "de.a1.e12.s0153"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.a1.e12.s0154",
+              "antwort": "de.a1.e12.s0155",
+              "ablenker": ["de.a1.e12.s0156", "de.a1.e12.s0157"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.a1.e12.s0158",
+              "antwort": "de.a1.e12.s0159",
+              "ablenker": ["de.a1.e12.s0015", "de.a1.e12.s0013"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e12.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0145",
+          "wort": 1,
+          "ablenker": ["fange", "fangen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l06.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0142"
+            }
+          ],
+          "antwort": "de.a1.e12.s0143",
+          "ablenker": ["de.a1.e12.s0148", "de.a1.e12.s0077"]
+        },
+        {
+          "schluessel": "de.a1.e12.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0139",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e12.l06.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e12.s0140",
+          "ablenker": ["de.a1.e12.s0144", "de.a1.e12.s0149"]
+        },
+        {
+          "schluessel": "de.a1.e12.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.a1.e12.s0160",
+          "zeilen": [
+            {
+              "satz": "de.a1.e12.s0161"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0162"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e12.s0163"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e12.s0164"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0165"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0166"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e12.s0167"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0168"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e12.s0169"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e12.s0170"
+            },
+            {
+              "satz": "de.a1.e12.s0171"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0076"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e12.s0077"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e12.s0172"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0173"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0174"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.a1.e12.s0175",
+              "antwort": "de.a1.e12.s0176",
+              "ablenker": ["de.a1.e12.s0177", "de.a1.e12.s0178"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.a1.e12.s0179",
+              "antwort": "de.a1.e12.s0180",
+              "ablenker": ["de.a1.e12.s0181", "de.a1.e12.s0182"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.a1.e12.s0183",
+              "antwort": "de.a1.e12.s0184",
+              "ablenker": ["de.a1.e12.s0185", "de.a1.e12.s0186"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e12.l06.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0167"
+            }
+          ],
+          "antwort": "de.a1.e12.s0169",
+          "ablenker": ["de.a1.e12.s0174", "de.a1.e12.s0171"]
+        },
+        {
+          "schluessel": "de.a1.e12.l06.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0172",
+          "wort": 1,
+          "ablenker": ["kauft", "kaufe"]
+        },
+        {
+          "schluessel": "de.a1.e12.l06.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0164",
+          "nach": "ziel",
+          "alternativen": ["Ich frühstücke danach mit meiner Mutter.", "Mit meiner Mutter frühstücke ich danach."],
+          "ablenker": ["frühstückt", "Vater"]
+        },
+        {
+          "schluessel": "de.a1.e12.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e12.s0168",
+          "ablenker": ["de.a1.e12.s0173", "de.a1.e12.s0166"]
+        },
+        {
+          "schluessel": "de.a1.e12.l06.a11",
+          "typ": "sprechen",
+          "satz": "de.a1.e12.s0163"
+        },
+        {
+          "schluessel": "de.a1.e12.l06.a12",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e12.s0174",
+          "alternativen": ["Meine Eltern arbeiten bis 5 Uhr."]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e12.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole Berufe, Arbeitsorte und meinen Tagesablauf.",
+        "tr": "Meslekleri, iş yerlerini ve günlük programımı tekrar ediyorum.",
+        "ar": "أراجع المهن وأماكن العمل وبرنامجي اليومي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e12.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.krankenhaus",
+          "ablenker": ["de.a1.e12.geschaeft", "de.a1.e09.apotheke"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.beginnen",
+          "ablenker": ["de.a1.e08.verlieren", "de.a1.e05.teilen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e12.arbeit",
+            "de.a1.e12.nachricht",
+            "de.a1.e12.person",
+            "de.a1.e12.anfang",
+            "de.a1.e12.studium",
+            "de.a1.e04.woche"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e12.s0084",
+          "ablenker": ["de.a1.e12.s0078", "de.a1.e12.s0096"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e12.s0193",
+          "ablenker": ["de.a1.e12.s0192", "de.a1.e12.s0191"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0024"
+            }
+          ],
+          "antwort": "de.a1.e12.s0025",
+          "ablenker": ["de.a1.e12.s0026", "de.a1.e12.s0098"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0008",
+          "wort": 2,
+          "ablenker": ["Busfahrer", "Busfahrern"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0187",
+          "nach": "ziel",
+          "alternativen": ["Am Montag steht Elif um sieben Uhr auf.", "Um sieben Uhr steht Elif am Montag auf."],
+          "ablenker": ["stehe", "ab"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.selbst",
+          "ablenker": ["de.a1.e05.etwas", "de.a1.e04.schon"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0080"
+            }
+          ],
+          "antwort": "de.a1.e12.s0188",
+          "ablenker": ["de.a1.e12.s0112", "de.a1.e12.s0036"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e12.nennen",
+          "ablenker": ["de.a1.e09.kennen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0042",
+          "wort": 1,
+          "ablenker": ["verdienst", "verdiene"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0019"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e12.s0018"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0021"
+            }
+          ],
+          "antwort": "de.a1.e12.s0040",
+          "ablenker": ["de.a1.e12.s0066", "de.a1.e12.s0117"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.online",
+          "ablenker": ["de.a1.e08.frei", "de.a1.e10.kurz"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0190",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0016"
+            }
+          ],
+          "antwort": "de.a1.e12.s0052",
+          "ablenker": ["de.a1.e12.s0104", "de.a1.e12.s0098"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a17",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e12.benutzen",
+          "ablenker": ["de.a1.e07.verstehen", "de.a1.e05.holen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a18",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e12.s0195",
+          "ablenker": ["de.a1.e12.s0058", "de.a1.e12.s0095"]
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a19",
+          "typ": "sprechen",
+          "satz": "de.a1.e12.s0189"
+        },
+        {
+          "schluessel": "de.a1.e12.l07.a20",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e12.s0194"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e12.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich über Berufe, Arbeitsorte und meinen Tag sprechen kann.",
+        "tr": "Meslekler, iş yerleri ve günüm hakkında konuşabildiğimi gösteririm.",
+        "ar": "أُظهر أنني أستطيع أن أتحدث عن المهن وأماكن العمل وعن يومي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e12.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.busfahrer",
+          "ablenker": ["de.a1.e12.koch", "de.a1.e12.ingenieur"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.fruehstuecken",
+          "ablenker": ["de.a1.e05.trinken", "de.a1.e07.lesen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e12.koch",
+            "de.a1.e12.verkaeufer",
+            "de.a1.e12.krankenpfleger",
+            "de.a1.e12.buero",
+            "de.a1.e12.werkstatt",
+            "de.a1.e12.baustelle"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e12.s0200",
+          "ablenker": ["de.a1.e12.s0034", "de.a1.e12.s0190"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0196"
+            }
+          ],
+          "antwort": "de.a1.e12.s0197",
+          "ablenker": ["de.a1.e12.s0079", "de.a1.e12.s0004"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0202",
+          "wort": 6,
+          "ablenker": ["abholst", "holst"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0203",
+          "nach": "ziel",
+          "alternativen": [
+            "Im Büro benutzt der Ingenieur das Internet.",
+            "Der Ingenieur benutzt das Internet im Büro.",
+            "Das Internet benutzt der Ingenieur im Büro."
+          ],
+          "ablenker": ["benutzen", "Computer"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e12.nachricht",
+          "ablenker": ["de.a1.e07.aufgabe", "de.a1.e08.idee"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0002"
+            }
+          ],
+          "antwort": "de.a1.e12.s0198",
+          "ablenker": ["de.a1.e12.s0065", "de.a1.e12.s0090"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e12.s0204",
+          "wort": 1,
+          "ablenker": ["musst", "müssen"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e12.s0111",
+          "ablenker": ["de.a1.e12.s0110", "de.a1.e12.s0109"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e12.als",
+          "ablenker": ["de.a1.e02.alt"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e12.s0199",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e12.s0022"
+            }
+          ],
+          "antwort": "de.a1.e12.s0023",
+          "ablenker": ["de.a1.e12.s0118", "de.a1.e12.s0081"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e12.allein",
+          "ablenker": ["de.a1.e10.egal", "de.a1.e03.ganz"]
+        },
+        {
+          "schluessel": "de.a1.e12.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e12.s0205"
+        }
+      ]
+    }
+  ]
+}
