@@ -280,6 +280,9 @@
       "schluessel": "de.a1.e01.buchstabieren",
       "lemma": "buchstabieren",
       "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
       "formen": {
         "infinitiv": "buchstabieren",
         "praes_ich": "buchstabiere",
@@ -307,7 +310,7 @@
       "lemma": "wer",
       "wortart": "fragewort",
       "formen": {
-        "form_1": "wen"
+        "akk": "wen"
       },
       "frequenzRang": 106,
       "quelle": "ki:lernapp-inhalte/a1/v1",
@@ -660,9 +663,7 @@
       "text": "Auf Wiedersehen!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0",
-      "tokens": [
-        "Auf Wiedersehen"
-      ]
+      "tokens": ["Auf Wiedersehen"]
     },
     {
       "schluessel": "de.a1.e01.s0006",
@@ -730,7 +731,7 @@
     },
     {
       "schluessel": "de.a1.e01.s0016",
-      "text": "Morgen, Paula!",
+      "text": "Guten Morgen, Paula!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -751,10 +752,7 @@
       "text": "Auf Wiedersehen, Konrad!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0",
-      "tokens": [
-        "Auf Wiedersehen",
-        "Konrad"
-      ]
+      "tokens": ["Auf Wiedersehen", "Konrad"]
     },
     {
       "schluessel": "de.a1.e01.s0020",
@@ -773,10 +771,7 @@
       "text": "Danke! Auf Wiedersehen!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0",
-      "tokens": [
-        "Danke",
-        "Auf Wiedersehen"
-      ]
+      "tokens": ["Danke", "Auf Wiedersehen"]
     },
     {
       "schluessel": "de.a1.e01.s0023",
@@ -1488,7 +1483,7 @@
     },
     {
       "schluessel": "de.a1.e01.s0135",
-      "text": "Was sprichst du?",
+      "text": "Wer spricht Arabisch?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1656,7 +1651,7 @@
     },
     {
       "schluessel": "de.a1.e01.s0163",
-      "text": "Morgen, Jan! Wer ist sie?",
+      "text": "Guten Morgen, Jan! Wer ist sie?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1836,7 +1831,7 @@
     },
     {
       "schluessel": "de.a1.e01.s0193",
-      "text": "Was spricht Konrad?",
+      "text": "Was lernt Ranā?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1868,71 +1863,45 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e01.hallo",
-          "ablenker": [
-            "de.a1.e01.danke",
-            "de.a1.e01.ja"
-          ]
+          "ablenker": ["de.a1.e01.danke", "de.a1.e01.ja"]
         },
         {
           "schluessel": "de.a1.e01.l01.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e01.danke",
-          "ablenker": [
-            "de.a1.e01.hallo",
-            "de.a1.e01.nein"
-          ]
+          "ablenker": ["de.a1.e01.hallo", "de.a1.e01.nein"]
         },
         {
           "schluessel": "de.a1.e01.l01.a03",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e01.hallo",
-            "de.a1.e01.danke",
-            "de.a1.e01.ja",
-            "de.a1.e01.nein"
-          ]
+          "lemmata": ["de.a1.e01.hallo", "de.a1.e01.danke", "de.a1.e01.ja", "de.a1.e01.nein"]
         },
         {
           "schluessel": "de.a1.e01.l01.a04",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e01.tschuess",
-          "ablenker": [
-            "de.a1.e01.hallo",
-            "de.a1.e01.bitte"
-          ]
+          "ablenker": ["de.a1.e01.hallo", "de.a1.e01.bitte"]
         },
         {
           "schluessel": "de.a1.e01.l01.a05",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e01.tag",
-          "ablenker": [
-            "de.a1.e01.morgen",
-            "de.a1.e01.gut"
-          ]
+          "ablenker": ["de.a1.e01.morgen", "de.a1.e01.gut"]
         },
         {
           "schluessel": "de.a1.e01.l01.a06",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e01.s0002",
-          "ablenker": [
-            "de.a1.e01.s0003",
-            "de.a1.e01.s0001"
-          ]
+          "ablenker": ["de.a1.e01.s0003", "de.a1.e01.s0001"]
         },
         {
           "schluessel": "de.a1.e01.l01.a07",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e01.gut",
-            "de.a1.e01.tag",
-            "de.a1.e01.morgen",
-            "de.a1.e01.bitte",
-            "de.a1.e01.auf-wiedersehen"
-          ]
+          "lemmata": ["de.a1.e01.gut", "de.a1.e01.tag", "de.a1.e01.morgen", "de.a1.e01.bitte", "de.a1.e01.auf-wiedersehen"]
         },
         {
           "schluessel": "de.a1.e01.l01.a08",
@@ -1944,20 +1913,14 @@
             }
           ],
           "antwort": "de.a1.e01.s0011",
-          "ablenker": [
-            "de.a1.e01.s0018",
-            "de.a1.e01.s0009"
-          ]
+          "ablenker": ["de.a1.e01.s0018", "de.a1.e01.s0009"]
         },
         {
           "schluessel": "de.a1.e01.l01.a09",
           "typ": "luecke",
           "ziel": "de.a1.e01.s0012",
           "wort": 0,
-          "ablenker": [
-            "Gute",
-            "Guter"
-          ]
+          "ablenker": ["Gute", "Guter"]
         },
         {
           "schluessel": "de.a1.e01.l01.a10",
@@ -1969,10 +1932,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0021",
-          "ablenker": [
-            "de.a1.e01.s0009",
-            "de.a1.e01.s0015"
-          ]
+          "ablenker": ["de.a1.e01.s0009", "de.a1.e01.s0015"]
         },
         {
           "schluessel": "de.a1.e01.l01.a11",
@@ -1980,32 +1940,22 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e01.s0013",
           "nach": "ziel",
-          "alternativen": [
-            "Emre, guten Morgen!"
-          ],
-          "ablenker": [
-            "Tag"
-          ]
+          "alternativen": ["Emre, guten Morgen!"],
+          "ablenker": ["Tag"]
         },
         {
           "schluessel": "de.a1.e01.l01.a12",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e01.s0017",
-          "ablenker": [
-            "de.a1.e01.s0018",
-            "de.a1.e01.s0010"
-          ]
+          "ablenker": ["de.a1.e01.s0018", "de.a1.e01.s0010"]
         },
         {
           "schluessel": "de.a1.e01.l01.a13",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e01.s0014",
-          "ablenker": [
-            "de.a1.e01.s0015",
-            "de.a1.e01.s0019"
-          ]
+          "ablenker": ["de.a1.e01.s0015", "de.a1.e01.s0019"]
         },
         {
           "schluessel": "de.a1.e01.l01.a14",
@@ -2022,10 +1972,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0005",
-          "ablenker": [
-            "de.a1.e01.s0002",
-            "de.a1.e01.s0008"
-          ]
+          "ablenker": ["de.a1.e01.s0002", "de.a1.e01.s0008"]
         },
         {
           "schluessel": "de.a1.e01.l01.a16",
@@ -2048,30 +1995,19 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e01.ich",
-          "ablenker": [
-            "de.a1.e01.du",
-            "de.a1.e01.wir"
-          ]
+          "ablenker": ["de.a1.e01.du", "de.a1.e01.wir"]
         },
         {
           "schluessel": "de.a1.e01.l02.a02",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e01.du",
-          "ablenker": [
-            "de.a1.e01.ich",
-            "de.a1.e01.ihr"
-          ]
+          "ablenker": ["de.a1.e01.ich", "de.a1.e01.ihr"]
         },
         {
           "schluessel": "de.a1.e01.l02.a03",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e01.ich",
-            "de.a1.e01.du",
-            "de.a1.e01.wir",
-            "de.a1.e01.er"
-          ]
+          "lemmata": ["de.a1.e01.ich", "de.a1.e01.du", "de.a1.e01.wir", "de.a1.e01.er"]
         },
         {
           "schluessel": "de.a1.e01.l02.a04",
@@ -2083,20 +2019,14 @@
           "typ": "luecke",
           "ziel": "de.a1.e01.s0024",
           "wort": 1,
-          "ablenker": [
-            "bist",
-            "ist"
-          ]
+          "ablenker": ["bist", "ist"]
         },
         {
           "schluessel": "de.a1.e01.l02.a06",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e01.s0027",
-          "ablenker": [
-            "de.a1.e01.s0028",
-            "de.a1.e01.s0026"
-          ]
+          "ablenker": ["de.a1.e01.s0028", "de.a1.e01.s0026"]
         },
         {
           "schluessel": "de.a1.e01.l02.a07",
@@ -2112,10 +2042,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0023",
-          "ablenker": [
-            "de.a1.e01.s0032",
-            "de.a1.e01.s0044"
-          ]
+          "ablenker": ["de.a1.e01.s0032", "de.a1.e01.s0044"]
         },
         {
           "schluessel": "de.a1.e01.l02.a08",
@@ -2123,14 +2050,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e01.s0033",
           "nach": "ziel",
-          "alternativen": [
-            "Wir sind Jan und Elif.",
-            "Elif und Jan sind wir.",
-            "Jan und Elif sind wir."
-          ],
-          "ablenker": [
-            "seid"
-          ]
+          "alternativen": ["Wir sind Jan und Elif.", "Elif und Jan sind wir.", "Jan und Elif sind wir."],
+          "ablenker": ["seid"]
         },
         {
           "schluessel": "de.a1.e01.l02.a09",
@@ -2152,38 +2073,25 @@
             }
           ],
           "antwort": "de.a1.e01.s0024",
-          "ablenker": [
-            "de.a1.e01.s0031",
-            "de.a1.e01.s0034"
-          ]
+          "ablenker": ["de.a1.e01.s0031", "de.a1.e01.s0043"]
         },
         {
           "schluessel": "de.a1.e01.l02.a12",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e01.sie-hoeflich",
-            "de.a1.e01.und",
-            "de.a1.e01.sein",
-            "de.a1.e01.es"
-          ]
+          "lemmata": ["de.a1.e01.sie-hoeflich", "de.a1.e01.und", "de.a1.e01.sein", "de.a1.e01.es"]
         },
         {
           "schluessel": "de.a1.e01.l02.a13",
           "typ": "luecke",
           "ziel": "de.a1.e01.s0045",
           "wort": 1,
-          "ablenker": [
-            "bist",
-            "sind"
-          ]
+          "ablenker": ["bist", "sind"]
         },
         {
           "schluessel": "de.a1.e01.l02.a14",
           "typ": "minimalpaare",
           "ziel": "de.a1.e01.er",
-          "ablenker": [
-            "de.a1.e01.ihr"
-          ]
+          "ablenker": ["de.a1.e01.ihr"]
         },
         {
           "schluessel": "de.a1.e01.l02.a15",
@@ -2203,10 +2111,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0042",
-          "ablenker": [
-            "de.a1.e01.s0043",
-            "de.a1.e01.s0025"
-          ]
+          "ablenker": ["de.a1.e01.s0043", "de.a1.e01.s0009"]
         },
         {
           "schluessel": "de.a1.e01.l02.a16",
@@ -2229,50 +2134,33 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e01.heissen",
-          "ablenker": [
-            "de.a1.e01.sein",
-            "de.a1.e01.gut"
-          ]
+          "ablenker": ["de.a1.e01.sein", "de.a1.e01.gut"]
         },
         {
           "schluessel": "de.a1.e01.l03.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e01.wie",
-          "ablenker": [
-            "de.a1.e01.wer",
-            "de.a1.e01.ja"
-          ]
+          "ablenker": ["de.a1.e01.wer", "de.a1.e01.ja"]
         },
         {
           "schluessel": "de.a1.e01.l03.a03",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e01.wie",
-            "de.a1.e01.wer",
-            "de.a1.e01.heissen",
-            "de.a1.e01.entschuldigung"
-          ]
+          "lemmata": ["de.a1.e01.wie", "de.a1.e01.wer", "de.a1.e01.heissen", "de.a1.e01.entschuldigung"]
         },
         {
           "schluessel": "de.a1.e01.l03.a04",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e01.s0047",
-          "ablenker": [
-            "de.a1.e01.s0051",
-            "de.a1.e01.s0058"
-          ]
+          "ablenker": ["de.a1.e01.s0051", "de.a1.e01.s0058"]
         },
         {
           "schluessel": "de.a1.e01.l03.a05",
           "typ": "luecke",
           "ziel": "de.a1.e01.s0049",
           "wort": 1,
-          "ablenker": [
-            "heißt",
-            "heißen"
-          ]
+          "ablenker": ["heißt", "heißen"]
         },
         {
           "schluessel": "de.a1.e01.l03.a06",
@@ -2289,20 +2177,14 @@
             }
           ],
           "antwort": "de.a1.e01.s0050",
-          "ablenker": [
-            "de.a1.e01.s0052",
-            "de.a1.e01.s0004"
-          ]
+          "ablenker": ["de.a1.e01.s0052", "de.a1.e01.s0004"]
         },
         {
           "schluessel": "de.a1.e01.l03.a08",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e01.buchstabieren",
-          "ablenker": [
-            "de.a1.e01.heissen",
-            "de.a1.e01.sein"
-          ]
+          "ablenker": ["de.a1.e01.heissen", "de.a1.e01.sein"]
         },
         {
           "schluessel": "de.a1.e01.l03.a09",
@@ -2327,10 +2209,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0066",
-          "ablenker": [
-            "de.a1.e01.s0065",
-            "de.a1.e01.s0037"
-          ]
+          "ablenker": ["de.a1.e01.s0065", "de.a1.e01.s0037"]
         },
         {
           "schluessel": "de.a1.e01.l03.a11",
@@ -2338,20 +2217,14 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e01.s0073",
           "nach": "ziel",
-          "alternativen": [
-            "Sie heißt Selin, und er heißt Can."
-          ],
-          "ablenker": [
-            "heiße"
-          ]
+          "alternativen": ["Sie heißt Selin, und er heißt Can."],
+          "ablenker": ["heiße"]
         },
         {
           "schluessel": "de.a1.e01.l03.a12",
           "typ": "minimalpaare",
           "ziel": "de.a1.e01.wie",
-          "ablenker": [
-            "de.a1.e01.wir"
-          ]
+          "ablenker": ["de.a1.e01.wir"]
         },
         {
           "schluessel": "de.a1.e01.l03.a13",
@@ -2363,10 +2236,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0072",
-          "ablenker": [
-            "de.a1.e01.s0057",
-            "de.a1.e01.s0054"
-          ]
+          "ablenker": ["de.a1.e01.s0057", "de.a1.e01.s0054"]
         },
         {
           "schluessel": "de.a1.e01.l03.a14",
@@ -2383,10 +2253,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0070",
-          "ablenker": [
-            "de.a1.e01.s0068",
-            "de.a1.e01.s0049"
-          ]
+          "ablenker": ["de.a1.e01.s0068", "de.a1.e01.s0049"]
         },
         {
           "schluessel": "de.a1.e01.l03.a16",
@@ -2409,30 +2276,19 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e01.woher",
-          "ablenker": [
-            "de.a1.e01.wo",
-            "de.a1.e01.wie"
-          ]
+          "ablenker": ["de.a1.e01.wo", "de.a1.e01.wie"]
         },
         {
           "schluessel": "de.a1.e01.l04.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e01.kommen",
-          "ablenker": [
-            "de.a1.e01.wohnen",
-            "de.a1.e01.heissen"
-          ]
+          "ablenker": ["de.a1.e01.wohnen", "de.a1.e01.heissen"]
         },
         {
           "schluessel": "de.a1.e01.l04.a03",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e01.woher",
-            "de.a1.e01.wo",
-            "de.a1.e01.kommen",
-            "de.a1.e01.wohnen"
-          ]
+          "lemmata": ["de.a1.e01.woher", "de.a1.e01.wo", "de.a1.e01.kommen", "de.a1.e01.wohnen"]
         },
         {
           "schluessel": "de.a1.e01.l04.a04",
@@ -2444,20 +2300,14 @@
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e01.s0083",
-          "ablenker": [
-            "de.a1.e01.s0078",
-            "de.a1.e01.s0087"
-          ]
+          "ablenker": ["de.a1.e01.s0078", "de.a1.e01.s0087"]
         },
         {
           "schluessel": "de.a1.e01.l04.a06",
           "typ": "luecke",
           "ziel": "de.a1.e01.s0092",
           "wort": 1,
-          "ablenker": [
-            "kommst",
-            "komme"
-          ]
+          "ablenker": ["kommst", "komme"]
         },
         {
           "schluessel": "de.a1.e01.l04.a07",
@@ -2465,13 +2315,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e01.s0090",
           "nach": "ziel",
-          "alternativen": [
-            "Aus Syrien komme ich."
-          ],
-          "ablenker": [
-            "in",
-            "wohne"
-          ]
+          "alternativen": ["Aus Syrien komme ich."],
+          "ablenker": ["in", "wohne"]
         },
         {
           "schluessel": "de.a1.e01.l04.a08",
@@ -2483,20 +2328,14 @@
             }
           ],
           "antwort": "de.a1.e01.s0091",
-          "ablenker": [
-            "de.a1.e01.s0088",
-            "de.a1.e01.s0050"
-          ]
+          "ablenker": ["de.a1.e01.s0088", "de.a1.e01.s0050"]
         },
         {
           "schluessel": "de.a1.e01.l04.a09",
           "typ": "luecke",
           "ziel": "de.a1.e01.s0095",
           "wort": 2,
-          "ablenker": [
-            "aus",
-            "woher"
-          ]
+          "ablenker": ["aus", "woher"]
         },
         {
           "schluessel": "de.a1.e01.l04.a10",
@@ -2508,21 +2347,12 @@
             }
           ],
           "antwort": "de.a1.e01.s0099",
-          "ablenker": [
-            "de.a1.e01.s0096",
-            "de.a1.e01.s0093",
-            "de.a1.e01.s0089"
-          ]
+          "ablenker": ["de.a1.e01.s0096", "de.a1.e01.s0093", "de.a1.e01.s0089"]
         },
         {
           "schluessel": "de.a1.e01.l04.a11",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e01.aus",
-            "de.a1.e01.in",
-            "de.a1.e01.land",
-            "de.a1.e01.ja"
-          ]
+          "lemmata": ["de.a1.e01.aus", "de.a1.e01.in", "de.a1.e01.land", "de.a1.e01.ja"]
         },
         {
           "schluessel": "de.a1.e01.l04.a12",
@@ -2542,18 +2372,13 @@
             }
           ],
           "antwort": "de.a1.e01.s0109",
-          "ablenker": [
-            "de.a1.e01.s0177",
-            "de.a1.e01.s0110"
-          ]
+          "ablenker": ["de.a1.e01.s0177", "de.a1.e01.s0110"]
         },
         {
           "schluessel": "de.a1.e01.l04.a13",
           "typ": "minimalpaare",
           "ziel": "de.a1.e01.wo",
-          "ablenker": [
-            "de.a1.e01.wie"
-          ]
+          "ablenker": ["de.a1.e01.wie"]
         },
         {
           "schluessel": "de.a1.e01.l04.a14",
@@ -2561,15 +2386,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e01.s0105",
           "nach": "ziel",
-          "alternativen": [
-            "Tim und Paula wohnen in Bonn.",
-            "In Bonn wohnen Paula und Tim.",
-            "In Bonn wohnen Tim und Paula."
-          ],
-          "ablenker": [
-            "aus",
-            "wohnt"
-          ]
+          "alternativen": ["Tim und Paula wohnen in Bonn.", "In Bonn wohnen Paula und Tim.", "In Bonn wohnen Tim und Paula."],
+          "ablenker": ["aus", "wohnt"]
         },
         {
           "schluessel": "de.a1.e01.l04.a15",
@@ -2579,7 +2397,7 @@
         {
           "schluessel": "de.a1.e01.l04.a16",
           "typ": "sprechen",
-          "satz": "de.a1.e01.s0111"
+          "satz": "de.a1.e01.s0088"
         }
       ]
     },
@@ -2597,50 +2415,33 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e01.sprechen",
-          "ablenker": [
-            "de.a1.e01.lernen",
-            "de.a1.e01.wohnen"
-          ]
+          "ablenker": ["de.a1.e01.lernen", "de.a1.e01.wohnen"]
         },
         {
           "schluessel": "de.a1.e01.l05.a02",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e01.deutsch",
-            "de.a1.e01.tuerkisch",
-            "de.a1.e01.arabisch",
-            "de.a1.e01.sprache"
-          ]
+          "lemmata": ["de.a1.e01.deutsch", "de.a1.e01.tuerkisch", "de.a1.e01.arabisch", "de.a1.e01.sprache"]
         },
         {
           "schluessel": "de.a1.e01.l05.a03",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e01.lernen",
-          "ablenker": [
-            "de.a1.e01.sprechen",
-            "de.a1.e01.kommen"
-          ]
+          "ablenker": ["de.a1.e01.sprechen", "de.a1.e01.kommen"]
         },
         {
           "schluessel": "de.a1.e01.l05.a04",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e01.s0122",
-          "ablenker": [
-            "de.a1.e01.s0121",
-            "de.a1.e01.s0118"
-          ]
+          "ablenker": ["de.a1.e01.s0121", "de.a1.e01.s0118"]
         },
         {
           "schluessel": "de.a1.e01.l05.a05",
           "typ": "luecke",
           "ziel": "de.a1.e01.s0140",
           "wort": 1,
-          "ablenker": [
-            "sprecht",
-            "spreche"
-          ]
+          "ablenker": ["sprecht", "spreche"]
         },
         {
           "schluessel": "de.a1.e01.l05.a06",
@@ -2653,14 +2454,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e01.s0138",
           "nach": "ziel",
-          "alternativen": [
-            "Ich spreche Deutsch und Türkisch.",
-            "Türkisch und Deutsch spreche ich.",
-            "Deutsch und Türkisch spreche ich."
-          ],
-          "ablenker": [
-            "sprichst"
-          ]
+          "alternativen": ["Ich spreche Deutsch und Türkisch.", "Türkisch und Deutsch spreche ich.", "Deutsch und Türkisch spreche ich."],
+          "ablenker": ["sprichst"]
         },
         {
           "schluessel": "de.a1.e01.l05.a08",
@@ -2672,20 +2467,14 @@
             }
           ],
           "antwort": "de.a1.e01.s0133",
-          "ablenker": [
-            "de.a1.e01.s0125",
-            "de.a1.e01.s0128"
-          ]
+          "ablenker": ["de.a1.e01.s0125", "de.a1.e01.s0128"]
         },
         {
           "schluessel": "de.a1.e01.l05.a09",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e01.was",
-          "ablenker": [
-            "de.a1.e01.wer",
-            "de.a1.e01.wo"
-          ]
+          "ablenker": ["de.a1.e01.wer", "de.a1.e01.wo"]
         },
         {
           "schluessel": "de.a1.e01.l05.a10",
@@ -2697,21 +2486,14 @@
             }
           ],
           "antwort": "de.a1.e01.s0146",
-          "ablenker": [
-            "de.a1.e01.s0144",
-            "de.a1.e01.s0123",
-            "de.a1.e01.s0132"
-          ]
+          "ablenker": ["de.a1.e01.s0094", "de.a1.e01.s0009", "de.a1.e01.s0050"]
         },
         {
           "schluessel": "de.a1.e01.l05.a11",
           "typ": "luecke",
           "ziel": "de.a1.e01.s0147",
           "wort": 4,
-          "ablenker": [
-            "Sprache",
-            "Länder"
-          ]
+          "ablenker": ["Sprache", "Länder"]
         },
         {
           "schluessel": "de.a1.e01.l05.a12",
@@ -2723,35 +2505,23 @@
             }
           ],
           "antwort": "de.a1.e01.s0137",
-          "ablenker": [
-            "de.a1.e01.s0131",
-            "de.a1.e01.s0086"
-          ]
+          "ablenker": ["de.a1.e01.s0131", "de.a1.e01.s0086"]
         },
         {
           "schluessel": "de.a1.e01.l05.a13",
           "typ": "wortbank",
           "anweisung": "uebersetze",
-          "satz": "de.a1.e01.s0148",
+          "satz": "de.a1.e01.s0137",
           "nach": "ziel",
-          "alternativen": [
-            "Wir lernen morgen Türkisch.",
-            "Türkisch lernen wir morgen."
-          ],
-          "ablenker": [
-            "lernt"
-          ]
+          "alternativen": ["Wir lernen Arabisch und Deutsch.", "Deutsch und Arabisch lernen wir.", "Arabisch und Deutsch lernen wir."],
+          "ablenker": ["lernt"]
         },
         {
           "schluessel": "de.a1.e01.l05.a14",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e01.s0131",
-          "ablenker": [
-            "de.a1.e01.s0130",
-            "de.a1.e01.s0129",
-            "de.a1.e01.s0127"
-          ]
+          "ablenker": ["de.a1.e01.s0130", "de.a1.e01.s0129", "de.a1.e01.s0127"]
         },
         {
           "schluessel": "de.a1.e01.l05.a15",
@@ -2872,46 +2642,31 @@
               "nach": 5,
               "frage": "de.a1.e01.s0055",
               "antwort": "de.a1.e01.s0056",
-              "ablenker": [
-                "de.a1.e01.s0057",
-                "de.a1.e01.s0054"
-              ]
+              "ablenker": ["de.a1.e01.s0057", "de.a1.e01.s0054"]
             },
             {
               "nach": 8,
               "frage": "de.a1.e01.s0176",
               "antwort": "de.a1.e01.s0177",
-              "ablenker": [
-                "de.a1.e01.s0178",
-                "de.a1.e01.s0179"
-              ]
+              "ablenker": ["de.a1.e01.s0178", "de.a1.e01.s0179"]
             },
             {
               "nach": 10,
               "frage": "de.a1.e01.s0185",
               "antwort": "de.a1.e01.s0186",
-              "ablenker": [
-                "de.a1.e01.s0187",
-                "de.a1.e01.s0188"
-              ]
+              "ablenker": ["de.a1.e01.s0187", "de.a1.e01.s0188"]
             },
             {
               "nach": 12,
               "frage": "de.a1.e01.s0180",
               "antwort": "de.a1.e01.s0181",
-              "ablenker": [
-                "de.a1.e01.s0182",
-                "de.a1.e01.s0183"
-              ]
+              "ablenker": ["de.a1.e01.s0182", "de.a1.e01.s0183"]
             },
             {
               "nach": 15,
               "frage": "de.a1.e01.s0184",
               "antwort": "de.a1.e01.deutsch",
-              "ablenker": [
-                "de.a1.e01.tuerkisch",
-                "de.a1.e01.arabisch"
-              ]
+              "ablenker": ["de.a1.e01.tuerkisch", "de.a1.e01.arabisch"]
             }
           ]
         },
@@ -2925,20 +2680,14 @@
             }
           ],
           "antwort": "de.a1.e01.s0090",
-          "ablenker": [
-            "de.a1.e01.s0095",
-            "de.a1.e01.s0126"
-          ]
+          "ablenker": ["de.a1.e01.s0095", "de.a1.e01.s0126"]
         },
         {
           "schluessel": "de.a1.e01.l06.a03",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e01.s0167",
-          "ablenker": [
-            "de.a1.e01.s0180",
-            "de.a1.e01.s0172"
-          ]
+          "ablenker": ["de.a1.e01.s0180", "de.a1.e01.s0172"]
         },
         {
           "schluessel": "de.a1.e01.l06.a04",
@@ -2998,7 +2747,7 @@
             },
             {
               "sprecher": "a",
-              "satz": "de.a1.e01.s0022"
+              "satz": "de.a1.e01.s0019"
             },
             {
               "sprecher": "b",
@@ -3010,28 +2759,19 @@
               "nach": 2,
               "frage": "de.a1.e01.s0051",
               "antwort": "de.a1.e01.s0053",
-              "ablenker": [
-                "de.a1.e01.s0054",
-                "de.a1.e01.s0052"
-              ]
+              "ablenker": ["de.a1.e01.s0054", "de.a1.e01.s0052"]
             },
             {
               "nach": 5,
               "frage": "de.a1.e01.s0192",
               "antwort": "de.a1.e01.s0177",
-              "ablenker": [
-                "de.a1.e01.s0179",
-                "de.a1.e01.s0178"
-              ]
+              "ablenker": ["de.a1.e01.s0179", "de.a1.e01.s0178"]
             },
             {
-              "nach": 12,
+              "nach": 10,
               "frage": "de.a1.e01.s0193",
               "antwort": "de.a1.e01.deutsch",
-              "ablenker": [
-                "de.a1.e01.arabisch",
-                "de.a1.e01.tuerkisch"
-              ]
+              "ablenker": ["de.a1.e01.arabisch", "de.a1.e01.tuerkisch"]
             }
           ]
         },
@@ -3049,10 +2789,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0066",
-          "ablenker": [
-            "de.a1.e01.s0190",
-            "de.a1.e01.s0005"
-          ]
+          "ablenker": ["de.a1.e01.s0190", "de.a1.e01.s0005"]
         },
         {
           "schluessel": "de.a1.e01.l06.a06",
@@ -3064,10 +2801,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0191",
-          "ablenker": [
-            "de.a1.e01.s0007",
-            "de.a1.e01.s0009"
-          ]
+          "ablenker": ["de.a1.e01.s0007", "de.a1.e01.s0009"]
         },
         {
           "schluessel": "de.a1.e01.l06.a07",
@@ -3088,33 +2822,21 @@
         {
           "schluessel": "de.a1.e01.l07.a01",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e01.hallo",
-            "de.a1.e01.tschuess",
-            "de.a1.e01.woher",
-            "de.a1.e01.sprache",
-            "de.a1.e01.name"
-          ]
+          "lemmata": ["de.a1.e01.hallo", "de.a1.e01.tschuess", "de.a1.e01.woher", "de.a1.e01.sprache", "de.a1.e01.name"]
         },
         {
           "schluessel": "de.a1.e01.l07.a02",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e01.sie",
-          "ablenker": [
-            "de.a1.e01.du",
-            "de.a1.e01.wir"
-          ]
+          "ablenker": ["de.a1.e01.du", "de.a1.e01.wir"]
         },
         {
           "schluessel": "de.a1.e01.l07.a03",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e01.s0048",
-          "ablenker": [
-            "de.a1.e01.s0055",
-            "de.a1.e01.s0084"
-          ]
+          "ablenker": ["de.a1.e01.s0055", "de.a1.e01.s0084"]
         },
         {
           "schluessel": "de.a1.e01.l07.a04",
@@ -3126,10 +2848,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0002",
-          "ablenker": [
-            "de.a1.e01.s0005",
-            "de.a1.e01.s0006"
-          ]
+          "ablenker": ["de.a1.e01.s0005", "de.a1.e01.s0006"]
         },
         {
           "schluessel": "de.a1.e01.l07.a05",
@@ -3141,10 +2860,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0101",
-          "ablenker": [
-            "de.a1.e01.s0114",
-            "de.a1.e01.s0037"
-          ]
+          "ablenker": ["de.a1.e01.s0114", "de.a1.e01.s0037"]
         },
         {
           "schluessel": "de.a1.e01.l07.a06",
@@ -3156,10 +2872,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0114",
-          "ablenker": [
-            "de.a1.e01.s0115",
-            "de.a1.e01.s0104"
-          ]
+          "ablenker": ["de.a1.e01.s0115", "de.a1.e01.s0104"]
         },
         {
           "schluessel": "de.a1.e01.l07.a07",
@@ -3178,18 +2891,13 @@
             }
           ],
           "antwort": "de.a1.e01.s0034",
-          "ablenker": [
-            "de.a1.e01.s0031",
-            "de.a1.e01.s0030"
-          ]
+          "ablenker": ["de.a1.e01.s0031", "de.a1.e01.s0030"]
         },
         {
           "schluessel": "de.a1.e01.l07.a09",
           "typ": "minimalpaare",
           "ziel": "de.a1.e01.wer",
-          "ablenker": [
-            "de.a1.e01.wir"
-          ]
+          "ablenker": ["de.a1.e01.wir"]
         },
         {
           "schluessel": "de.a1.e01.l07.a10",
@@ -3219,19 +2927,13 @@
               "nach": 2,
               "frage": "de.a1.e01.s0142",
               "antwort": "de.a1.e01.s0140",
-              "ablenker": [
-                "de.a1.e01.s0125",
-                "de.a1.e01.s0128"
-              ]
+              "ablenker": ["de.a1.e01.s0125", "de.a1.e01.s0128"]
             },
             {
               "nach": 5,
               "frage": "de.a1.e01.s0158",
               "antwort": "de.a1.e01.s0156",
-              "ablenker": [
-                "de.a1.e01.s0157",
-                "de.a1.e01.s0177"
-              ]
+              "ablenker": ["de.a1.e01.s0157", "de.a1.e01.s0177"]
             }
           ]
         },
@@ -3245,20 +2947,14 @@
             }
           ],
           "antwort": "de.a1.e01.s0059",
-          "ablenker": [
-            "de.a1.e01.s0052",
-            "de.a1.e01.s0057"
-          ]
+          "ablenker": ["de.a1.e01.s0052", "de.a1.e01.s0057"]
         },
         {
           "schluessel": "de.a1.e01.l07.a12",
           "typ": "luecke",
           "ziel": "de.a1.e01.s0112",
           "wort": 4,
-          "ablenker": [
-            "Land",
-            "Sprachen"
-          ]
+          "ablenker": ["Land", "Sprachen"]
         },
         {
           "schluessel": "de.a1.e01.l07.a13",
@@ -3266,12 +2962,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e01.s0143",
           "nach": "ziel",
-          "alternativen": [
-            "Du lernst Türkisch, und ich lerne Arabisch."
-          ],
-          "ablenker": [
-            "lernt"
-          ]
+          "alternativen": ["Du lernst Türkisch, und ich lerne Arabisch."],
+          "ablenker": ["lernt"]
         },
         {
           "schluessel": "de.a1.e01.l07.a14",
@@ -3283,10 +2975,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0068",
-          "ablenker": [
-            "de.a1.e01.s0070",
-            "de.a1.e01.s0006"
-          ]
+          "ablenker": ["de.a1.e01.s0070", "de.a1.e01.s0006"]
         },
         {
           "schluessel": "de.a1.e01.l07.a15",
@@ -3314,40 +3003,26 @@
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e01.woher",
-          "ablenker": [
-            "de.a1.e01.wo",
-            "de.a1.e01.wie"
-          ]
+          "ablenker": ["de.a1.e01.wo", "de.a1.e01.wie"]
         },
         {
           "schluessel": "de.a1.e01.l08.a02",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e01.ich",
-            "de.a1.e01.wir",
-            "de.a1.e01.du",
-            "de.a1.e01.ihr"
-          ]
+          "lemmata": ["de.a1.e01.ich", "de.a1.e01.wir", "de.a1.e01.du", "de.a1.e01.ihr"]
         },
         {
           "schluessel": "de.a1.e01.l08.a03",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e01.s0081",
-          "ablenker": [
-            "de.a1.e01.s0080",
-            "de.a1.e01.s0085"
-          ]
+          "ablenker": ["de.a1.e01.s0080", "de.a1.e01.s0085"]
         },
         {
           "schluessel": "de.a1.e01.l08.a04",
           "typ": "luecke",
           "ziel": "de.a1.e01.s0195",
           "wort": 1,
-          "ablenker": [
-            "bist",
-            "ist"
-          ]
+          "ablenker": ["bist", "ist"]
         },
         {
           "schluessel": "de.a1.e01.l08.a05",
@@ -3366,10 +3041,7 @@
             }
           ],
           "antwort": "de.a1.e01.s0075",
-          "ablenker": [
-            "de.a1.e01.s0054",
-            "de.a1.e01.s0095"
-          ]
+          "ablenker": ["de.a1.e01.s0054", "de.a1.e01.s0095"]
         },
         {
           "schluessel": "de.a1.e01.l08.a07",
@@ -3381,10 +3053,7 @@
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e01.sprache",
-          "ablenker": [
-            "de.a1.e01.land",
-            "de.a1.e01.tag"
-          ]
+          "ablenker": ["de.a1.e01.land", "de.a1.e01.tag"]
         },
         {
           "schluessel": "de.a1.e01.l08.a09",
@@ -3396,39 +3065,27 @@
             }
           ],
           "antwort": "de.a1.e01.s0094",
-          "ablenker": [
-            "de.a1.e01.s0092",
-            "de.a1.e01.s0115"
-          ]
+          "ablenker": ["de.a1.e01.s0092", "de.a1.e01.s0115"]
         },
         {
           "schluessel": "de.a1.e01.l08.a10",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e01.s0079",
-          "ablenker": [
-            "de.a1.e01.s0084",
-            "de.a1.e01.s0048",
-            "de.a1.e01.s0119"
-          ]
+          "ablenker": ["de.a1.e01.s0084", "de.a1.e01.s0048", "de.a1.e01.s0119"]
         },
         {
           "schluessel": "de.a1.e01.l08.a11",
           "typ": "luecke",
           "ziel": "de.a1.e01.s0149",
           "wort": 0,
-          "ablenker": [
-            "Sprecht",
-            "Spreche"
-          ]
+          "ablenker": ["Sprecht", "Spreche"]
         },
         {
           "schluessel": "de.a1.e01.l08.a12",
           "typ": "minimalpaare",
           "ziel": "de.a1.e01.ihr",
-          "ablenker": [
-            "de.a1.e01.er"
-          ]
+          "ablenker": ["de.a1.e01.er"]
         },
         {
           "schluessel": "de.a1.e01.l08.a13",
@@ -3436,14 +3093,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e01.s0139",
           "nach": "ziel",
-          "alternativen": [
-            "Ich spreche Deutsch und Arabisch.",
-            "Arabisch und Deutsch spreche ich.",
-            "Deutsch und Arabisch spreche ich."
-          ],
-          "ablenker": [
-            "spricht"
-          ]
+          "alternativen": ["Ich spreche Deutsch und Arabisch.", "Arabisch und Deutsch spreche ich.", "Deutsch und Arabisch spreche ich."],
+          "ablenker": ["spricht"]
         },
         {
           "schluessel": "de.a1.e01.l08.a14",
@@ -3455,20 +3106,14 @@
             }
           ],
           "antwort": "de.a1.e01.s0077",
-          "ablenker": [
-            "de.a1.e01.s0036",
-            "de.a1.e01.s0004"
-          ]
+          "ablenker": ["de.a1.e01.s0036", "de.a1.e01.s0004"]
         },
         {
           "schluessel": "de.a1.e01.l08.a15",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e01.buchstabieren",
-          "ablenker": [
-            "de.a1.e01.wohnen",
-            "de.a1.e01.lernen"
-          ]
+          "ablenker": ["de.a1.e01.wohnen", "de.a1.e01.lernen"]
         },
         {
           "schluessel": "de.a1.e01.l08.a16",
