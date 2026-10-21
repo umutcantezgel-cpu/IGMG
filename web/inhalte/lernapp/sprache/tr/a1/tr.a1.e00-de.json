@@ -1,0 +1,260 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "tr",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "tr.a1.e00-de",
+    "reihenfolge": 1,
+    "thema": {
+      "de": "Vorkurs: türkische Buchstaben und Laute",
+      "tr": "Hazırlık: Türkçe harfler ve sesler",
+      "ar": "دورة تمهيدية: الحروف والأصوات التركية"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann das türkische Alphabet lesen und die Buchstaben ç, ğ, ı, İ, ö, ş und ü sicher erkennen.",
+        "tr": "Türk alfabesini okuyabilir, ç, ğ, ı, İ, ö, ş ve ü harflerini tanıyabilirim.",
+        "ar": "أستطيع قراءة الأبجدية التركية وأميّز الحروف ç وğ وı وİ وö وş وü."
+      },
+      {
+        "de": "Ich kann helle und dunkle Vokale unterscheiden und erkennen, welche Endung zu einem Wort passt.",
+        "tr": "İnce ve kalın ünlüleri ayırt edebilir, bir kelimeye hangi ekin uyduğunu anlayabilirim.",
+        "ar": "أستطيع التمييز بين الأصوات الخفيفة والثقيلة، ومعرفة اللاحقة المناسبة للكلمة."
+      }
+    ],
+    "nurFuerAusgang": "de",
+    "kinderGeeignet": true
+  },
+  "lemmata": [],
+  "saetze": [],
+  "lektionen": [
+    {
+      "schluessel": "tr.a1.e00-de.l01",
+      "art": "schrift",
+      "ziel": {
+        "de": "Buchstaben und Laute",
+        "tr": "Harfler ve sesler",
+        "ar": "الحروف والأصوات"
+      },
+      "aufgaben": [
+        { "schluessel": "tr.a1.e00-de.l01.a01", "typ": "grammatik_tipp", "tipp": "t01" },
+        { "schluessel": "tr.a1.e00-de.l01.a02", "typ": "grammatik_tipp", "tipp": "t02" },
+        {
+          "schluessel": "tr.a1.e00-de.l01.a03",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "_ocuk",
+          "optionen": ["ç", "tsch", "c"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l01.a04",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "_ehir",
+          "optionen": ["ş", "sch", "s"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l01.a05",
+          "typ": "schrift_tr",
+          "anweisung": "waehleWort",
+          "vorgabe": "c",
+          "optionen": ["can", "çay", "şehir"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l01.a06",
+          "typ": "schrift_tr",
+          "anweisung": "grossKlein",
+          "vorgabe": "ş",
+          "optionen": ["Ş", "S", "Ç"],
+          "richtig": 0
+        },
+        { "schluessel": "tr.a1.e00-de.l01.a07", "typ": "grammatik_tipp", "tipp": "t03" },
+        {
+          "schluessel": "tr.a1.e00-de.l01.a08",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "deni_",
+          "optionen": ["z", "s"],
+          "richtig": 0
+        },
+        { "schluessel": "tr.a1.e00-de.l01.a09", "typ": "grammatik_tipp", "tipp": "t04" },
+        {
+          "schluessel": "tr.a1.e00-de.l01.a10",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "_ol",
+          "optionen": ["y", "j"],
+          "richtig": 0
+        },
+        { "schluessel": "tr.a1.e00-de.l01.a11", "typ": "grammatik_tipp", "tipp": "t05" },
+        {
+          "schluessel": "tr.a1.e00-de.l01.a12",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "kah_e",
+          "optionen": ["v", "w", "f"],
+          "richtig": 0
+        },
+        { "schluessel": "tr.a1.e00-de.l01.a13", "typ": "grammatik_tipp", "tipp": "t06" },
+        {
+          "schluessel": "tr.a1.e00-de.l01.a14",
+          "typ": "schrift_tr",
+          "anweisung": "grossKlein",
+          "vorgabe": "i",
+          "optionen": ["İ", "I"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l01.a15",
+          "typ": "schrift_tr",
+          "anweisung": "grossKlein",
+          "vorgabe": "ı",
+          "optionen": ["I", "İ"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l01.a16",
+          "typ": "schrift_tr",
+          "anweisung": "waehleWort",
+          "vorgabe": "ı",
+          "optionen": ["kır", "kir"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l01.a17",
+          "typ": "schrift_tr",
+          "anweisung": "waehleWort",
+          "vorgabe": "ü",
+          "optionen": ["üç", "uç"],
+          "richtig": 0
+        },
+        { "schluessel": "tr.a1.e00-de.l01.a18", "typ": "grammatik_tipp", "tipp": "t07" },
+        {
+          "schluessel": "tr.a1.e00-de.l01.a19",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "ö_retmen",
+          "optionen": ["ğ", "g"],
+          "richtig": 0
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e00-de.l02",
+      "art": "schrift",
+      "ziel": {
+        "de": "Vokalharmonie: helle und dunkle Vokale",
+        "tr": "Ünlü uyumu: ince ve kalın ünlüler",
+        "ar": "تناغم الأصوات: الخفيفة والثقيلة"
+      },
+      "aufgaben": [
+        { "schluessel": "tr.a1.e00-de.l02.a01", "typ": "grammatik_tipp", "tipp": "t08" },
+        {
+          "schluessel": "tr.a1.e00-de.l02.a02",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "evl_r",
+          "optionen": ["e", "a"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l02.a03",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "okull_r",
+          "optionen": ["a", "e"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l02.a04",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "okuld_",
+          "optionen": ["a", "e"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l02.a05",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "otobüsl_r",
+          "optionen": ["e", "a"],
+          "richtig": 0
+        },
+        { "schluessel": "tr.a1.e00-de.l02.a06", "typ": "grammatik_tipp", "tipp": "t09" },
+        {
+          "schluessel": "tr.a1.e00-de.l02.a07",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "ev_m",
+          "optionen": ["i", "ı", "ü", "u"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l02.a08",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "ad_m",
+          "optionen": ["ı", "i", "u", "ü"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l02.a09",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "göz_m",
+          "optionen": ["ü", "u", "i", "ı"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l02.a10",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "okul_m",
+          "optionen": ["u", "ü", "ı", "i"],
+          "richtig": 0
+        },
+        { "schluessel": "tr.a1.e00-de.l02.a11", "typ": "grammatik_tipp", "tipp": "t10" },
+        {
+          "schluessel": "tr.a1.e00-de.l02.a12",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "park_a",
+          "optionen": ["t", "d"],
+          "richtig": 0
+        },
+        {
+          "schluessel": "tr.a1.e00-de.l02.a13",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "kita_ı",
+          "optionen": ["b", "p"],
+          "richtig": 0
+        },
+        { "schluessel": "tr.a1.e00-de.l02.a14", "typ": "grammatik_tipp", "tipp": "t11" },
+        {
+          "schluessel": "tr.a1.e00-de.l02.a15",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "a_e",
+          "optionen": ["nn", "n"],
+          "richtig": 0
+        },
+        { "schluessel": "tr.a1.e00-de.l02.a16", "typ": "grammatik_tipp", "tipp": "t12" },
+        {
+          "schluessel": "tr.a1.e00-de.l02.a17",
+          "typ": "schrift_tr",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "bi_",
+          "optionen": ["r", "a"],
+          "richtig": 0
+        }
+      ]
+    }
+  ]
+}
