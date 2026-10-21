@@ -77,6 +77,15 @@ export const BIBLIOTHEKEN: readonly LernQuelle[] = [
     lizenz: 'MIT',
   },
   {
+    // ALTCHA des Melde-Dialogs, im Browser gelöst (eigener Chunk, erst nach dem Klick auf „Fehler melden“, L3-06b)
+    id: 'altcha-lib',
+    name: 'ALTCHA (altcha-lib)',
+    version: '2.6.0',
+    urheber: 'Copyright (c) 2023-2026 Daniel Regeci',
+    adresse: 'https://altcha.org',
+    lizenz: 'MIT',
+  },
+  {
     // Spracherkennung der Sprechübung, im Worker `/lern-app/modelle/sprechen/whisper.worker.mjs` gebündelt (ADR 0042 Nr. 10)
     id: 'transformers',
     name: 'Transformers.js',
