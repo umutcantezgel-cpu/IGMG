@@ -24,6 +24,11 @@ export type TextEintrag = {
   religionsbezug: boolean | null;
   /** Einheit gilt als kindgeeignet (A1–B1 immer, sonst Angabe der Einheit) */
   kinder: boolean;
+  /**
+   * Nur Tipps: Text aus einem Zitatblock, also ein Beispiel in der Zielsprache `kurs` (wie im Paketbau, `tippAbschnitte`).
+   * `sprache` bleibt die Sprache des Tipps; ausgewertet nur vom Tabu-Prüfer.
+   */
+  beispiel?: true;
 };
 
 /** Stufe aus einem Einheitenschlüssel `<kurs>.<stufe>.eNN`. */
@@ -34,11 +39,15 @@ export function stufeVon(einheit: string): SprachStufe {
 
 export const istKinderStufe = (stufe: SprachStufe) => KINDER_STUFEN.includes(stufe);
 
-/** Text-Knoten eines Tiptap-Dokuments in Reihenfolge. */
-export function tiptapTexte(knoten: unknown): string[] {
+/** Text-Knoten eines Tiptap-Dokuments in Reihenfolge; `beispiel`: der Knoten steht in einem Zitatblock. */
+export function tiptapTexte(knoten: unknown, imZitat = false): { text: string; beispiel: boolean }[] {
   if (!knoten || typeof knoten !== 'object') return [];
-  const k = knoten as { text?: unknown; content?: unknown };
-  return [...(typeof k.text === 'string' ? [k.text] : []), ...(Array.isArray(k.content) ? k.content.flatMap(tiptapTexte) : [])];
+  const k = knoten as { type?: unknown; text?: unknown; content?: unknown };
+  const beispiel = imZitat || k.type === 'blockquote';
+  return [
+    ...(typeof k.text === 'string' ? [{ text: k.text, beispiel }] : []),
+    ...(Array.isArray(k.content) ? k.content.flatMap((c) => tiptapTexte(c, beispiel)) : []),
+  ];
 }
 
 const einheitKinder = (d: SprachEinheitDatei) => istKinderStufe(d.stufe) || d.einheit.kinderGeeignet === true;
@@ -106,8 +115,15 @@ export function sammleTexte(inhalte: Inhalte): TextEintrag[] {
       for (const text of e.alternativen ?? []) ergebnis.push({ ...basis, ort, text, art: 'alternative', religionsbezug: r });
     }
     for (const t of d.tipps)
-      for (const text of [...(t.titel ? [t.titel] : []), ...tiptapTexte(t.inhalt)])
-        ergebnis.push({ ...basis, ort: t.schluessel, text, art: 'tipp', religionsbezug: t.religionsbezug ?? false });
+      for (const { text, beispiel } of [...(t.titel ? [{ text: t.titel, beispiel: false }] : []), ...tiptapTexte(t.inhalt)])
+        ergebnis.push({
+          ...basis,
+          ort: t.schluessel,
+          text,
+          art: 'tipp',
+          religionsbezug: t.religionsbezug ?? false,
+          ...(beispiel ? { beispiel: true as const } : {}),
+        });
   }
   return ergebnis;
 }

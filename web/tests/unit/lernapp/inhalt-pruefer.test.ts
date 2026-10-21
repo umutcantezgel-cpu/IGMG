@@ -7,9 +7,10 @@ import { INHALT_WURZEL, inhaltsdateien } from '../../../scripts/lernapp/inhaltsd
 import type { ImportQuelle } from '@/lib/lernapp/inhalt/import';
 import { befundZeile, blockierende, menschlich, pruefeInhalte, type PruefOptionen, warnungen } from '@/lib/lernapp/inhalt/pruefer';
 import { pruefeAusschluesse } from '@/lib/lernapp/inhalt/pruefer/ausschluss';
-import { auszugsTabelle, pruefeAuszuege, pruefeKaikkiOhneBeispiele } from '@/lib/lernapp/inhalt/pruefer/daten';
+import { auszugsTabelle, ladeHaeufigkeit, pruefeAuszuege, pruefeKaikkiOhneBeispiele } from '@/lib/lernapp/inhalt/pruefer/daten';
 import { nahePaare } from '@/lib/lernapp/inhalt/pruefer/dubletten';
-import { baueTabuLexikon, tabuTreffer } from '@/lib/lernapp/inhalt/pruefer/tabu';
+import { arabischNormal } from '@/lib/lernapp/inhalt/pruefer/sprache';
+import { baueTabuLexikon, tabuTreffer, tabuWoerter } from '@/lib/lernapp/inhalt/pruefer/tabu';
 import { vokalLuecken } from '@/lib/lernapp/inhalt/pruefer/vokalisierung';
 import { ladeWaechter } from '@/lib/lernapp/inhalt/religion';
 import { LeitfadenSchema } from '@/lib/lernapp/inhalt/schema';
@@ -388,6 +389,132 @@ describe('Inhaltsleitfaden (Tabu-Lexikon) → menschlich_klaeren, Ausgabe nur mi
     expect(muster).toBeDefined();
     expect(tabuTreffer(`\u0648${muster}`, 'ar', lexikon).map((t) => t.kategorie)).toContain('gluecksspiel');
     expect(tabuTreffer('\u0630\u0647\u0628\u062A \u0625\u0644\u0649 \u0627\u0644\u0633\u0648\u0642', 'ar', lexikon)).toEqual([]);
+  });
+
+  // Register aus kaikki: Urteil je Wortform über alle Einträge (erfundene Wörter in einem eigenen Kernauszug)
+  const REGISTER = ['fluchen_schimpfwoerter', 'sexualitaet'];
+  const registerVon = (text: string, lexikon: ReturnType<typeof baueTabuLexikon>) =>
+    tabuTreffer(text, 'de', lexikon)
+      .filter((t) => REGISTER.includes(t.kategorie))
+      .map((t) => `${t.kategorie}${t.hinweis ? ' (Hinweis)' : ''}`);
+  const eigenerAuszug = (eintraege: Record<string, unknown>[]) => {
+    const d = tempOrdner();
+    mkdirSync(join(d, 'kaikki'));
+    writeFileSync(join(d, 'kaikki/kaikki-kern-de-top20000.jsonl'), eintraege.map((e) => JSON.stringify({ l: 'de', ...e })).join('\n'));
+    return baueTabuLexikon(LEITFADEN, d);
+  };
+
+  it('Register: echtes Register-Wort bleibt Treffer, auch neben unmarkierten Einträgen anderer Ausgaben', () => {
+    const lexikon = eigenerAuszug([
+      {
+        w: 'Zorpel',
+        q: 'en',
+        pos: 'noun',
+        gl: [
+          ['x', 'vulgar'],
+          ['y', 'derogatory'],
+        ],
+        mk: ['vulgar', 'derogatory'],
+      },
+      { w: 'Zorpel', q: 'de', pos: 'noun', gl: [['x', '']] },
+      { w: 'Plinse', q: 'de', pos: 'noun', gl: [['x', '']], mk: ['thema:sex'] },
+      { w: 'Plinse', q: 'de', pos: 'noun', gl: [['y', 'obsolete']] },
+      { w: 'Fnord', q: 'en', pos: 'noun', pl: ['Fnorde'], gl: [['x', 'vulgar']], mk: ['vulgar'] },
+    ]);
+    expect(registerVon('Das ist ein Zorpel.', lexikon)).toEqual(['fluchen_schimpfwoerter']);
+    // eine Bedeutung mit Gebrauchsangabe (hier: obsolete) ist keine unmarkierte Bedeutung
+    expect(registerVon('Das ist eine Plinse.', lexikon)).toEqual(['sexualitaet']);
+    expect(registerVon('Das sind Fnorde.', lexikon)).toEqual(['fluchen_schimpfwoerter']);
+  });
+
+  it('Register: Alltagswort mit ganz markiertem Nebeneintrag ist kein Treffer (nur Hinweis), teils markiert gar nichts', () => {
+    const lexikon = eigenerAuszug([
+      // Adjektiv-Eintrag ganz markiert, Nomen derselben Ausgabe unmarkiert
+      { w: 'quarpe', q: 'en', pos: 'adj', gl: [['x', 'vulgar']], mk: ['vulgar'] },
+      {
+        w: 'Quarpe',
+        q: 'en',
+        pos: 'noun',
+        gl: [
+          ['y', ''],
+          ['z', 'colloquial'],
+        ],
+      },
+      // Nomen ganz markiert, dieselbe Form ist Präteritum eines Verbs ohne Register
+      { w: 'Klumm', q: 'de', pos: 'noun', gl: [['x', 'derogatory']], mk: ['derogatory'] },
+      { w: 'klimmen', q: 'en', pos: 'verb', kf: [['klumm', 'past']], gl: [['y', '']] },
+      // über den Plural: der Plural ist zugleich ein unmarkiertes Wort derselben Ausgabe
+      { w: 'Glumpf', q: 'en', pos: 'noun', pl: ['Glumpfe'], gl: [['x', 'offensive']], mk: ['offensive'] },
+      { w: 'Glumpfe', q: 'en', pos: 'noun', gl: [['y', '']] },
+      // nur teils markiert
+      {
+        w: 'Wobbel',
+        q: 'en',
+        pos: 'noun',
+        gl: [
+          ['x', 'vulgar'],
+          ['y', ''],
+        ],
+        mk: ['vulgar'],
+      },
+    ]);
+    expect(registerVon('Die Quarpe ist rot.', lexikon)).toEqual(['fluchen_schimpfwoerter (Hinweis)']);
+    expect(registerVon('Er klumm hoch.', lexikon)).toEqual(['fluchen_schimpfwoerter (Hinweis)']);
+    expect(registerVon('Ein Glumpf.', lexikon)).toEqual(['fluchen_schimpfwoerter']);
+    expect(registerVon('Zwei Glumpfe.', lexikon)).toEqual(['fluchen_schimpfwoerter (Hinweis)']);
+    expect(registerVon('Der Wobbel.', lexikon)).toEqual([]);
+  });
+
+  it('Register am gepinnten Auszug: Grundwortschatz (Rang ≤ 500) ist kein Treffer, echte Register-Wörter bleiben es', () => {
+    const lexikon = baueTabuLexikon(LEITFADEN, DATEN);
+    for (const sprache of ['de', 'tr', 'ar'] as const) {
+      const voll = (grenze: number) =>
+        [...ladeHaeufigkeit(sprache, DATEN)].filter(([w, rang]) => {
+          const form = sprache === 'ar' ? arabischNormal(w) : tabuWoerter(w, sprache).join(' ');
+          return rang <= grenze && (lexikon.register[sprache].get(form) ?? []).some((r) => r.voll);
+        }).length;
+      expect(voll(500), sprache).toBe(0);
+      if (sprache !== 'ar') expect(voll(2000), sprache).toBeGreaterThan(0);
+    }
+  });
+
+  describe('Tipps: Fließtext in der Tipp-Sprache, Zitatblock in der Zielsprache', () => {
+    const lexikon = baueTabuLexikon(LEITFADEN, DATEN);
+    // Register-Treffer der Zielsprache tr, die im Deutschen sonst nichts treffen: einmal ein bekanntes deutsches Wort, einmal nicht
+    const kandidaten = [...lexikon.register.tr.keys()]
+      .filter((f) => /^\p{Ll}+$/u.test(f) && tabuTreffer(f, 'de', lexikon).length === 0)
+      .filter((f) => JSON.stringify(tabuTreffer(f, 'tr', lexikon)) === '[{"kategorie":"fluchen_schimpfwoerter","hinweis":false}]')
+      .sort();
+    const auchDeutsch = kandidaten.find((f) => lexikon.bekannt.de.has(f))!;
+    const nurTuerkisch = kandidaten.find((f) => !lexikon.bekannt.de.has(f))!;
+    const tipp = (absatz: string, beispiel: string) =>
+      testkursQuellen().map((q) => {
+        if (!q.pfad.includes('uebersetzung/tr-aus-de/')) return q;
+        const d = JSON.parse(q.text) as { tipps: { inhalt: { content: unknown[] } }[] };
+        d.tipps[0]!.inhalt.content = [
+          { type: 'paragraph', content: [{ type: 'text', text: absatz }] },
+          { type: 'blockquote', content: [{ type: 'paragraph', content: [{ type: 'text', text: beispiel }] }] },
+        ];
+        return { pfad: q.pfad, text: JSON.stringify(d) };
+      });
+    const tippBefunde = (quellen: ImportQuelle[]) =>
+      pruefe(quellen)
+        .befunde.filter((x) => x.pruefer === 'tabu' && x.ort === 'tr.a1.e01.de.t01')
+        .map((x) => `${x.schwere} ${x.kategorie}`);
+
+    it('ein deutsches Wort im Fließtext trifft keine gleich geschriebene türkische Form', () => {
+      expect(auchDeutsch).toBeDefined();
+      expect(tippBefunde(tipp(`Wir treffen uns ${auchDeutsch} Montag.`, 'Merhaba.'))).toEqual([]);
+    });
+
+    it('dieselbe Form im Zitatblock (Beispiel in der Zielsprache) trifft', () => {
+      expect(tippBefunde(tipp('Wir treffen uns morgen.', `${auchDeutsch}.`))).toEqual(['mensch fluchen_schimpfwoerter']);
+    });
+
+    it('ein eingestreutes Wort der Zielsprache im Fließtext trifft weiter', () => {
+      expect(nurTuerkisch).toBeDefined();
+      expect(tippBefunde(tipp(`Das Wort „${nurTuerkisch}“ sagt man nicht.`, 'Merhaba.'))).toEqual(['mensch fluchen_schimpfwoerter']);
+    });
   });
 });
 

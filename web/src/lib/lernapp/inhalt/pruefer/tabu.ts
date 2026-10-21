@@ -20,13 +20,28 @@ import { Befunde } from './typen';
  *   gefundenen Einträge, verglichen als ganzes Wort nach Abtrennen der Klitika, als Wortanfang erst ab fünf Buchstaben.
  *   Die Muster entstehen zur Laufzeit und stehen nirgends geschrieben. `mehrdeutig` ergibt nur Hinweise. Umschriften ohne
  *   Eintrag im Kernauszug zählt der Bericht (ohne Wörter); sie bleiben der Sprachprüfung (LM-01).
- * - **Register aus kaikki:** Einträge mit vulgar, offensive, derogatory, slur, pejorative oder ethnic treffen die Kategorie
- *   `fluchen_schimpfwoerter`, mit Thema sex/sexuality die Kategorie `sexualitaet` – aber nur, wenn alle Bedeutungen des
- *   Eintrags so markiert sind. Ein Register an einer Nebenbedeutung (z. B. eines Grundwortschatz-Worts) ist kein Treffer;
- *   sonst wären Alltagswörter dauerhaft Fehlalarme (Entscheidung L3-02, Standard bis zur Antwort der Redaktion, LM-09).
+ * - **Register aus kaikki:** geurteilt wird je Sprache und Wortform (Normalform wie oben) über alle Einträge, deren Stichwort
+ *   oder Plural die Form ist. Ganz markiert ist ein Eintrag, wenn jede Bedeutung vulgar, offensive, derogatory, slur,
+ *   pejorative oder ethnic trägt (Kategorie `fluchen_schimpfwoerter`) bzw. wenn er das Thema sex/sexuality und genau eine
+ *   Bedeutung hat (`sexualitaet`); Verweise (form-of, alt-of) zählen nicht als Bedeutung. Eine unmarkierte Bedeutung hat keine
+ *   Gebrauchsangabe (nur plural/singular). **Treffer** ist eine Form nur, wenn eine Wiktionary-Ausgabe (`q`) sie ganz markiert,
+ *   dieselbe Ausgabe keinen Eintrag mit unmarkierter Bedeutung für sie hat und sie keine Beugungsform (`kf`) eines Lemmas ohne
+ *   Register ist. Sonst ist der ganz markierte Eintrag ein Nebeneintrag und ergibt nur einen Hinweis (z. B. ein Adjektiv-Eintrag
+ *   neben dem Grundwortschatz-Nomen, ein Nomen gleich einer Präteritumform). Einträge mit nur teils markierten Bedeutungen
+ *   ergeben nichts: ein Register an einer Nebenbedeutung ist kein Treffer, sonst wären Alltagswörter dauerhaft Fehlalarme
+ *   (Entscheidung L3-02, Standard bis zur Antwort der Redaktion, LM-09). Die Ausgaben zählen einzeln, weil sie Register
+ *   verschieden auszeichnen (die deutsche und die türkische lassen derbe Wörter oft ohne Angabe); ein unmarkierter Eintrag
+ *   einer anderen Ausgabe machte sonst echte Register-Wörter zum Hinweis.
+ * - **Tipps:** Zitatblöcke sind Beispiele in der Zielsprache (wie im Paketbau, `tippAbschnitte`) und werden nur in ihr
+ *   geprüft. Titel und übriger Fließtext werden in der Sprache des Tipps geprüft, in der Zielsprache nur die Wörter, die in der
+ *   Tipp-Sprache kein bekanntes Wort sind (Stichwort, Plural oder Beugungsform im kaikki-Kernauszug; bekannte Wörter werden zu
+ *   Lücken, über die keine Phrase greift). So trifft ein Wort der Tipp-Sprache keine gleich geschriebene Form der Zielsprache.
+ *   Für Arabisch als Tipp-Sprache entfällt die Liste: Wörter in arabischer Schrift treffen keine Regel für de/tr, und die
+ *   arabische Zerlegung übergeht lateinische Wörter.
  *
  * **Ergebnis:** `verboten` und `offene_frage` → `menschlich_klaeren`; `nur_sachlich` → `menschlich_klaeren` unter `ab_stufe` oder
- * in kindgeeigneten Einheiten, sonst Hinweis. Ausgaben nennen nur Kategorie-IDs, nie die Wörter des Lexikons.
+ * in kindgeeigneten Einheiten, sonst Hinweis. Je Text und Kategorie zählt der stärkste Befund. Ausgaben nennen nur
+ * Kategorie-IDs, nie die Wörter des Lexikons.
  */
 
 type LateinRegeln = {
@@ -49,10 +64,14 @@ type Kategorie = {
   ar: ArRegeln;
 };
 
+export type RegisterTreffer = { kategorie: string; /** Treffer; sonst Hinweis (Nebeneintrag) */ voll: boolean };
+
 export type TabuLexikon = {
   kategorien: Kategorie[];
-  /** Register-Treffer aus kaikki je Sprache: Wortform → {Kategorie, alle Bedeutungen markiert} */
-  register: Record<Sprache, Map<string, { kategorie: string; voll: boolean }>>;
+  /** Register aus kaikki je Sprache: Wortform → Kategorien (geurteilt über alle Einträge der Form) */
+  register: Record<Sprache, Map<string, RegisterTreffer[]>>;
+  /** Bekannte Wortformen (Stichwort, Plural, Beugungsformen) im kaikki-Kernauszug – für den Fließtext der Tipps */
+  bekannt: Record<'de' | 'tr', Set<string>>;
   /** Umschriften ohne Muster je Kategorie (nur Anzahl, ohne Wörter) */
   ohneMuster: Map<string, number>;
 };
@@ -151,8 +170,97 @@ function arabischeMuster(umschrift: string, rom: Map<string, KaikkiEintrag[]>, t
   return ergebnis;
 }
 
+// ——— Register aus kaikki: je Wortform über alle Einträge ———
+
 const REGISTER_SCHIMPF = /^(?:vulgar|offensive|derogatory|slur|pejorative|ethnic)$/;
 const REGISTER_SEX = /^thema:(?:sex|sexuality)$/;
+const ANGABE_SCHIMPF = /vulgar|offensive|derogatory|slur|pejorative|ethnic/;
+/** Angaben einer Bedeutung, die keine Gebrauchsangabe sind */
+const GRAMMATIK = new Set(['plural', 'singular']);
+const ohneAngabe = (r: string | undefined) => (r ?? '').split(/\s+/).every((x) => !x || GRAMMATIK.has(x));
+
+/** Einträge einer Wortform: ganz markierte je Ausgabe (`q`) mit Kategorien, Ausgaben mit unmarkierter Bedeutung. */
+type FormSicht = { ganz: Map<string, Set<string>>; unmarkiert: Set<string> };
+
+type RegisterSprache = { register: Map<string, RegisterTreffer[]>; bekannt: Set<string> };
+const registerCache = new Map<string, RegisterSprache>();
+
+/**
+ * Register und bekannte Wortformen (nur de/tr) einer Sprache aus dem kaikki-Kernauszug; einmal je Prozess wie die Auszüge
+ * selbst (`ladeKaikki`).
+ */
+function registerAus(sprache: Sprache, daten: string, vorhanden: ReadonlySet<string>): RegisterSprache {
+  const schluessel = `${sprache}|${daten}|${[...vorhanden].sort().join(',')}`;
+  const fertig = registerCache.get(schluessel);
+  if (fertig) return fertig;
+  const normalformen = new Map<string, string>();
+  const normal = (w: string) => {
+    let f = normalformen.get(w);
+    if (f === undefined) {
+      f = sprache === 'ar' ? arabischNormal(w) : tabuWoerter(w, sprache).join(' ');
+      normalformen.set(w, f);
+    }
+    return f;
+  };
+  const einzeln = (w: string) => {
+    const f = normal(w);
+    return f && !f.includes(' ') ? f : null;
+  };
+  const formen = new Map<string, FormSicht>();
+  /** Beugungsformen von Lemmata ohne Register (mit unmarkierter Bedeutung) */
+  const gebeugt = new Set<string>();
+  const bekannt = new Set<string>();
+  for (const e of ladeKaikki(sprache, daten)) {
+    const stichwoerter = [e.w, ...(e.pl ?? [])];
+    const beugungen = (e.kf ?? []).map(([f]) => f);
+    if (sprache !== 'ar')
+      for (const w of [...stichwoerter, ...beugungen]) {
+        const f = einzeln(w);
+        if (f) bekannt.add(f);
+      }
+    const mk = e.mk ?? [];
+    const gefunden = mk.some((m) => REGISTER_SCHIMPF.test(m))
+      ? 'fluchen_schimpfwoerter'
+      : mk.some((m) => REGISTER_SEX.test(m))
+        ? 'sexualitaet'
+        : null;
+    const kategorie = gefunden && vorhanden.has(gefunden) ? gefunden : null;
+    const gl = (e.gl ?? []).filter(([, r]) => !/form-of|alt-of/.test(r ?? ''));
+    const ganz =
+      kategorie !== null &&
+      gl.length > 0 &&
+      (kategorie === 'sexualitaet' ? gl.length === 1 : gl.every(([, r]) => ANGABE_SCHIMPF.test(r ?? '')));
+    const unmarkiert = !ganz && gl.some(([, r]) => ohneAngabe(r));
+    if (unmarkiert && !gefunden)
+      for (const w of beugungen) {
+        const f = einzeln(w);
+        if (f) gebeugt.add(f);
+      }
+    if (!ganz && !unmarkiert) continue;
+    for (const w of stichwoerter) {
+      const f = einzeln(w);
+      if (!f) continue;
+      const sicht = formen.get(f) ?? { ganz: new Map<string, Set<string>>(), unmarkiert: new Set<string>() };
+      formen.set(f, sicht);
+      if (ganz && kategorie) sicht.ganz.set(e.q, (sicht.ganz.get(e.q) ?? new Set<string>()).add(kategorie));
+      else sicht.unmarkiert.add(e.q);
+    }
+  }
+  const register = new Map<string, RegisterTreffer[]>();
+  for (const [f, { ganz, unmarkiert }] of formen) {
+    if (!ganz.size) continue;
+    const kategorien = new Map<string, boolean>();
+    for (const [q, ks] of ganz)
+      for (const k of ks) kategorien.set(k, (kategorien.get(k) ?? false) || (!gebeugt.has(f) && !unmarkiert.has(q)));
+    register.set(
+      f,
+      [...kategorien].map(([kategorie, voll]) => ({ kategorie, voll })),
+    );
+  }
+  const ergebnis = { register, bekannt };
+  registerCache.set(schluessel, ergebnis);
+  return ergebnis;
+}
 
 /** Lexikon aus dem Leitfaden und dem kaikki-Kernauszug bauen (einmal je Lauf). */
 export function baueTabuLexikon(leitfaden: Leitfaden, daten: string): TabuLexikon {
@@ -193,32 +301,16 @@ export function baueTabuLexikon(leitfaden: Leitfaden, daten: string): TabuLexiko
     return { id: k.id, regel: k.regel, abStufe: ab, de: lateinRegeln(k.formen.de, 'de'), tr: lateinRegeln(k.formen.tr, 'tr'), ar };
   });
 
-  const register = { de: new Map(), tr: new Map(), ar: new Map() } as TabuLexikon['register'];
   const vorhanden = new Set(kategorien.map((k) => k.id));
-  for (const sprache of ['de', 'tr', 'ar'] as const)
-    for (const e of ladeKaikki(sprache, daten)) {
-      const mk = e.mk ?? [];
-      const kategorie = mk.some((m) => REGISTER_SCHIMPF.test(m))
-        ? 'fluchen_schimpfwoerter'
-        : mk.some((m) => REGISTER_SEX.test(m))
-          ? 'sexualitaet'
-          : null;
-      if (!kategorie || !vorhanden.has(kategorie)) continue;
-      const gl = (e.gl ?? []).filter(([, r]) => !/form-of|alt-of/.test(r ?? ''));
-      const voll =
-        gl.length > 0 &&
-        (kategorie === 'sexualitaet'
-          ? gl.length === 1
-          : gl.every(([, r]) => /vulgar|offensive|derogatory|slur|pejorative|ethnic/.test(r ?? '')));
-      if (!voll) continue;
-      for (const w of [e.w, ...(e.pl ?? [])]) {
-        const f = sprache === 'ar' ? arabischNormal(w) : tabuWoerter(w, sprache).join(' ');
-        if (!f || f.includes(' ')) continue;
-        const alt = register[sprache].get(f);
-        if (!alt || (!alt.voll && voll)) register[sprache].set(f, { kategorie, voll });
-      }
-    }
-  return { kategorien, register, ohneMuster };
+  const de = registerAus('de', daten, vorhanden);
+  const tr = registerAus('tr', daten, vorhanden);
+  const ar = registerAus('ar', daten, vorhanden);
+  return {
+    kategorien,
+    register: { de: de.register, tr: tr.register, ar: ar.register },
+    bekannt: { de: de.bekannt, tr: tr.bekannt },
+    ohneMuster,
+  };
 }
 
 // ——— Abgleich ———
@@ -268,9 +360,10 @@ function trifftArabisch(r: ArRegeln, tokens: string[]): 'treffer' | 'mehrdeutig'
   return null;
 }
 
-/** Treffer eines Texts: Kategorie und ob er nur ein Hinweis ist (mehrdeutig, Nebenbedeutung). */
-export function tabuTreffer(text: string, sprache: Sprache, lexikon: TabuLexikon): { kategorie: string; hinweis: boolean }[] {
-  const tokens = tabuWoerter(text, sprache);
+type Treffer = { kategorie: string; hinweis: boolean };
+
+/** Treffer einer Wortfolge in der Normalform der Sprache (leere Wörter sind Lücken und treffen nichts). */
+function trefferInWoertern(tokens: string[], sprache: Sprache, lexikon: TabuLexikon): Treffer[] {
   const ergebnis = new Map<string, boolean>();
   for (const k of lexikon.kategorien) {
     if (sprache === 'ar') {
@@ -280,43 +373,72 @@ export function tabuTreffer(text: string, sprache: Sprache, lexikon: TabuLexikon
   }
   const register = lexikon.register[sprache];
   for (const t of tokens) {
+    if (!t) continue;
     const kandidaten = sprache === 'ar' ? arabischeKandidaten(t) : [t];
-    for (const c of kandidaten) {
-      const r = register.get(c);
-      if (r) ergebnis.set(r.kategorie, (ergebnis.get(r.kategorie) ?? true) && !r.voll);
-    }
+    for (const c of kandidaten)
+      for (const r of register.get(c) ?? []) ergebnis.set(r.kategorie, (ergebnis.get(r.kategorie) ?? true) && !r.voll);
   }
   return [...ergebnis].map(([kategorie, hinweis]) => ({ kategorie, hinweis }));
+}
+
+/** Treffer eines Texts: Kategorie und ob er nur ein Hinweis ist (mehrdeutig, Nebeneintrag). */
+export function tabuTreffer(text: string, sprache: Sprache, lexikon: TabuLexikon): Treffer[] {
+  return trefferInWoertern(tabuWoerter(text, sprache), sprache, lexikon);
+}
+
+/**
+ * Wörter eines Tipp-Fließtexts für die Prüfung in der Zielsprache: Was in der Tipp-Sprache ein bekanntes Wort ist, wird zur
+ * Lücke; übrig bleiben die eingestreuten Wörter der Zielsprache (Arabisch als Tipp-Sprache: ohne Liste, s. o.).
+ */
+export function zielWoerter(text: string, tippSprache: Sprache, ziel: Sprache, lexikon: TabuLexikon): string[] {
+  const bekannt = tippSprache === 'ar' ? null : lexikon.bekannt[tippSprache];
+  return text
+    .split(/\s+/u)
+    .filter(Boolean)
+    .flatMap((stueck) => {
+      const eigen = bekannt ? tabuWoerter(stueck, tippSprache) : [];
+      return eigen.length && eigen.every((w) => bekannt!.has(w)) ? [''] : tabuWoerter(stueck, ziel);
+    });
+}
+
+/** Treffer eines Texts in seiner Sprache; Tipps wie oben (Zitatblock in der Zielsprache, Fließtext je Sprache). */
+export function tabuTrefferEintrag(t: TextEintrag, lexikon: TabuLexikon): Treffer[] {
+  if (t.art !== 'tipp' || t.sprache === t.kurs) return tabuTreffer(t.text, t.sprache, lexikon);
+  if (t.beispiel) return tabuTreffer(t.text, t.kurs, lexikon);
+  return [
+    ...tabuTreffer(t.text, t.sprache, lexikon),
+    ...trefferInWoertern(zielWoerter(t.text, t.sprache, t.kurs, lexikon), t.kurs, lexikon),
+  ];
 }
 
 /** Tabu-Prüfung aller Texte (Befunde `mensch` bzw. `warnung`, nur mit Kategorie-ID). */
 export function pruefeTabu(texte: readonly TextEintrag[], lexikon: TabuLexikon): Befunde {
   const b = new Befunde('tabu');
   const regeln = new Map(lexikon.kategorien.map((k) => [k.id, k]));
-  const gemeldet = new Set<string>();
-  for (const t of texte) {
-    const sprachen = t.art === 'tipp' ? [...new Set([t.sprache, t.kurs])] : [t.sprache];
-    for (const sprache of sprachen)
-      for (const { kategorie, hinweis } of tabuTreffer(t.text, sprache, lexikon)) {
-        const schluessel = `${t.datei}|${t.ort}|${kategorie}`;
-        if (gemeldet.has(schluessel)) continue;
-        gemeldet.add(schluessel);
-        const k = regeln.get(kategorie);
-        const unterStufe = k?.abStufe ? SPRACH_STUFEN.indexOf(t.stufe) < SPRACH_STUFEN.indexOf(k.abStufe) : false;
-        const mensch =
-          !hinweis &&
-          (!k || k.regel === 'verboten' || k.regel === 'offene_frage' || (k.regel === 'nur_sachlich' && (unterStufe || t.kinder)));
-        if (mensch) b.mensch(t.datei, `Inhaltsleitfaden: Treffer (Regel ${k?.regel ?? 'verboten'}) – menschlich_klaeren`, t.ort, kategorie);
-        else
-          b.warnung(
-            t.datei,
-            hinweis
-              ? 'Inhaltsleitfaden: möglicher Treffer (mehrdeutig bzw. Nebenbedeutung)'
-              : 'Inhaltsleitfaden: nur sachlich, nicht als Normalität',
-            t.ort,
-            kategorie,
-          );
-      }
+  // je Datei, Ort und Kategorie ein Befund; ein Treffer schlägt einen Hinweis (Tipps haben mehrere Texte je Ort)
+  const befunde = new Map<string, { t: TextEintrag; kategorie: string; hinweis: boolean }>();
+  for (const t of texte)
+    for (const { kategorie, hinweis } of tabuTrefferEintrag(t, lexikon)) {
+      const schluessel = `${t.datei}|${t.ort}|${kategorie}`;
+      const alt = befunde.get(schluessel);
+      if (!alt) befunde.set(schluessel, { t, kategorie, hinweis });
+      else if (alt.hinweis && !hinweis) befunde.set(schluessel, { ...alt, t, hinweis });
+    }
+  for (const { t, kategorie, hinweis } of befunde.values()) {
+    const k = regeln.get(kategorie);
+    const unterStufe = k?.abStufe ? SPRACH_STUFEN.indexOf(t.stufe) < SPRACH_STUFEN.indexOf(k.abStufe) : false;
+    const mensch =
+      !hinweis && (!k || k.regel === 'verboten' || k.regel === 'offene_frage' || (k.regel === 'nur_sachlich' && (unterStufe || t.kinder)));
+    if (mensch) b.mensch(t.datei, `Inhaltsleitfaden: Treffer (Regel ${k?.regel ?? 'verboten'}) – menschlich_klaeren`, t.ort, kategorie);
+    else
+      b.warnung(
+        t.datei,
+        hinweis
+          ? 'Inhaltsleitfaden: möglicher Treffer (mehrdeutig bzw. Nebenbedeutung)'
+          : 'Inhaltsleitfaden: nur sachlich, nicht als Normalität',
+        t.ort,
+        kategorie,
+      );
   }
   for (const [kategorie, n] of lexikon.ohneMuster)
     b.warnung(
