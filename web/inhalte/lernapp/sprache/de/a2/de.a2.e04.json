@@ -1478,7 +1478,7 @@
     },
     {
       "schluessel": "de.a2.e04.s0050",
-      "text": "Die alte Familie ist schon ausgezogen.",
+      "text": "Die Familie von oben ist schon ausgezogen.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2228,7 +2228,7 @@
     },
     {
       "schluessel": "de.a2.e04.s0173",
-      "text": "Hallo Elif! Wir sind umgezogen. Mein neues Zimmer ist klein, aber gemütlich. Das Bett steht am Fenster. Rechts steht mein Regal mit den Büchern. An der Wand hängt ein großer Spiegel. Auf dem Boden liegt ein blauer Teppich. Komm mich bald besuchen! Deine Laylā",
+      "text": "Hallo Selin! Wir sind umgezogen. Mein neues Zimmer ist klein, aber gemütlich. Das Bett steht am Fenster. Rechts steht mein Regal mit den Büchern. An der Wand hängt ein großer Spiegel. Auf dem Boden liegt ein blauer Teppich. Komm mich bald besuchen! Deine Laylā",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2742,9 +2742,9 @@
       "schluessel": "de.a2.e04.l01",
       "art": "lektion",
       "ziel": {
-        "de": "Ich kann eine Wohnungsanzeige verstehen und nach Zimmern, Stock und Miete fragen.",
-        "tr": "Bir ev ilanını anlayabilir; odaları, katı ve kirayı sorabilirim.",
-        "ar": "أستطيع أن أفهم إعلانًا عن شقة وأن أسأل عن الغرف والطابق والإيجار."
+        "de": "Ich kann über eine Wohnung sprechen und nach Zimmern, Stock und Miete fragen.",
+        "tr": "Bir ev hakkında konuşabilir; odaları, katı ve kirayı sorabilirim.",
+        "ar": "أستطيع أن أتحدث عن شقة وأن أسأل عن الغرف والطابق والإيجار."
       },
       "aufgaben": [
         {
@@ -2810,7 +2810,7 @@
           "typ": "luecke",
           "ziel": "de.a2.e04.s0036",
           "wort": 6,
-          "ablenker": ["den", "zum"]
+          "ablenker": ["den", "dem"]
         },
         {
           "schluessel": "de.a2.e04.l01.a08",
@@ -3108,7 +3108,11 @@
           "schluessel": "de.a2.e04.l03.a11",
           "typ": "satzbau",
           "ziel": "de.a2.e04.s0097",
-          "alternativen": ["Wir stellen das Regal hinten an die Wand.", "Hinten an die Wand stellen wir das Regal."]
+          "alternativen": [
+            "Wir stellen das Regal hinten an die Wand.",
+            "Hinten an die Wand stellen wir das Regal.",
+            "Hinten stellen wir das Regal an die Wand."
+          ]
         },
         {
           "schluessel": "de.a2.e04.l03.a12",
@@ -3278,9 +3282,9 @@
       "schluessel": "de.a2.e04.l05",
       "art": "lektion",
       "ziel": {
-        "de": "Ich kann über Hausarbeit sprechen, um Hilfe bitten und mich bedanken.",
-        "tr": "Ev işleri hakkında konuşabilir, yardım isteyebilir ve teşekkür edebilirim.",
-        "ar": "أستطيع أن أتحدث عن أعمال البيت وأن أطلب المساعدة وأن أشكر."
+        "de": "Ich kann eine Wohnungsanzeige lesen, über Hausarbeit sprechen, um Hilfe bitten und mich bedanken.",
+        "tr": "Bir ev ilanını okuyabilir, ev işleri hakkında konuşabilir, yardım isteyebilir ve teşekkür edebilirim.",
+        "ar": "أستطيع أن أقرأ إعلانًا عن شقة وأن أتحدث عن أعمال البيت وأن أطلب المساعدة وأن أشكر."
       },
       "aufgaben": [
         {
@@ -3430,7 +3434,8 @@
             "Vielen Dank für die Hilfe beim Umzug!",
             "Danke für die Hilfe beim Umzug!",
             "Danke schön für deine Hilfe beim Umzug!",
-            "Vielen Dank für deine Hilfe bei dem Umzug!"
+            "Vielen Dank für deine Hilfe bei dem Umzug!",
+            "Danke schön für die Hilfe beim Umzug!"
           ]
         },
         {
@@ -3744,7 +3749,7 @@
           "satz": "de.a2.e04.s0178",
           "nach": "ziel",
           "alternativen": ["Ein Wagen mit den Möbeln kommt um neun Uhr.", "Ein Wagen kommt um neun Uhr mit den Möbeln."],
-          "ablenker": ["dem", "Möbel"]
+          "ablenker": ["die", "Möbel"]
         }
       ]
     },
@@ -3962,7 +3967,7 @@
             }
           ],
           "antwort": "de.a2.e04.s0252",
-          "ablenker": ["de.a2.e04.s0029", "de.a2.e04.s0077", "de.a2.e04.s0120"]
+          "ablenker": ["de.a2.e04.s0012", "de.a2.e04.s0077", "de.a2.e04.s0120"]
         },
         {
           "schluessel": "de.a2.e04.l08.a06",
@@ -4009,7 +4014,8 @@
             "Danke für die Hilfe beim Umzug!",
             "Vielen Dank für die Hilfe beim Umzug!",
             "Danke für Ihre Hilfe beim Umzug!",
-            "Vielen Dank für Ihre Hilfe beim Umzug!"
+            "Vielen Dank für Ihre Hilfe beim Umzug!",
+            "Danke schön für eure Hilfe beim Umzug!"
           ]
         },
         {
