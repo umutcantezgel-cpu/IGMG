@@ -1344,7 +1344,7 @@
     },
     {
       "schluessel": "de.a2.e12.s0039",
-      "text": "Ein Pferd ist größer und stärker als eine Kuh.",
+      "text": "Ein Pferd ist schneller als eine Kuh.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1562,7 +1562,7 @@
     },
     {
       "schluessel": "de.a2.e12.s0075",
-      "text": "Wann kann man manchmal einen Igel sehen?",
+      "text": "Wann kann man hier einen Igel sehen?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1795,13 +1795,13 @@
     },
     {
       "schluessel": "de.a2.e12.s0113",
-      "text": "Man unterscheidet die Tonnen an der Farbe.",
+      "text": "Man kann die Tonnen an der Farbe unterscheiden.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "de.a2.e12.s0114",
-      "text": "Diese Verpackung enthält Papier und Plastik.",
+      "text": "Diese Flasche enthält einen Liter Wasser.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1976,7 +1976,7 @@
     },
     {
       "schluessel": "de.a2.e12.s0143",
-      "text": "Mit Blumen im Garten schützt man die Bienen.",
+      "text": "Mit Blumen im Garten hilft man den Bienen.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2375,7 +2375,7 @@
     },
     {
       "schluessel": "de.a2.e12.s0209",
-      "text": "Halt! Heute ist Sonntag. Am Sonntag ist Ruhezeit.",
+      "text": "Moment! Heute ist Sonntag. Am Sonntag ist Ruhezeit.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2459,7 +2459,7 @@
     },
     {
       "schluessel": "de.a2.e12.s0223",
-      "text": "Habt ihr dort auch Tiere?",
+      "text": "Gibt es dort auch Tiere?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2543,7 +2543,7 @@
     },
     {
       "schluessel": "de.a2.e12.s0237",
-      "text": "Für eine Pfandflasche bekommst du 25 Cent.",
+      "text": "Für diese Pfandflasche bekommst du 25 Cent.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2555,7 +2555,7 @@
     },
     {
       "schluessel": "de.a2.e12.s0239",
-      "text": "Müll trennen ist ganz leicht, wenn man die Farben kennt.",
+      "text": "Man kann den Müll ganz leicht trennen, wenn man die Farben kennt.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2627,7 +2627,7 @@
     },
     {
       "schluessel": "de.a2.e12.s0251",
-      "text": "Der Berg ist höher, aber der Wald ist schöner.",
+      "text": "Der Weg auf den Berg ist länger, aber schöner.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2788,7 +2788,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a2.e12.s0011",
           "nach": "ziel",
-          "alternativen": ["In der Türkei sind die Berge höher als hier."],
+          "alternativen": ["In der Türkei sind die Berge höher als hier.", "Die Berge sind in der Türkei höher als hier."],
           "ablenker": ["hoch", "am"]
         },
         {
@@ -3091,7 +3091,14 @@
           "alternativen": [
             "Aus Holz baut Opa ein kleines Haus für Vögel.",
             "Ein kleines Haus für Vögel baut Opa aus Holz.",
-            "Opa baut ein kleines Haus für Vögel aus Holz."
+            "Opa baut ein kleines Haus für Vögel aus Holz.",
+            "Opa baut für Vögel ein kleines Haus aus Holz.",
+            "Opa baut für Vögel aus Holz ein kleines Haus.",
+            "Opa baut aus Holz für Vögel ein kleines Haus.",
+            "Für Vögel baut Opa ein kleines Haus aus Holz.",
+            "Für Vögel baut Opa aus Holz ein kleines Haus.",
+            "Aus Holz baut Opa für Vögel ein kleines Haus.",
+            "Opa baut ein kleines Haus aus Holz für Vögel."
           ]
         },
         {
@@ -3220,7 +3227,11 @@
           "schluessel": "de.a2.e12.l04.a13",
           "typ": "satzbau",
           "ziel": "de.a2.e12.s0131",
-          "alternativen": ["Du wäschst dir zum Schluss die Hände."]
+          "alternativen": [
+            "Du wäschst dir zum Schluss die Hände.",
+            "Du wäschst dir die Hände zum Schluss.",
+            "Die Hände wäschst du dir zum Schluss."
+          ]
         },
         {
           "schluessel": "de.a2.e12.l04.a14",
@@ -3353,7 +3364,7 @@
           "schluessel": "de.a2.e12.l05.a12",
           "typ": "satzbau",
           "ziel": "de.a2.e12.s0154",
-          "alternativen": ["Die Luft ist im Wald frischer als in der Stadt."]
+          "alternativen": ["Die Luft ist im Wald frischer als in der Stadt.", "Die Luft im Wald ist frischer als in der Stadt."]
         },
         {
           "schluessel": "de.a2.e12.l05.a13",
@@ -3494,42 +3505,26 @@
         },
         {
           "schluessel": "de.a2.e12.l06.a03",
-          "typ": "dialog",
-          "zeilen": [
-            {
-              "sprecher": "a",
-              "satz": "de.a2.e12.s0199"
-            },
-            {
-              "sprecher": "b",
-              "satz": "de.a2.e12.s0200"
-            },
-            {
-              "sprecher": "a",
-              "satz": "de.a2.e12.s0201"
-            }
-          ],
-          "antwort": "de.a2.e12.s0202",
-          "ablenker": ["de.a2.e12.s0198", "de.a2.e12.s0207"]
-        },
-        {
-          "schluessel": "de.a2.e12.l06.a04",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a2.e12.s0174",
           "ablenker": ["de.a2.e12.s0045", "de.a2.e12.s0187"]
         },
         {
-          "schluessel": "de.a2.e12.l06.a05",
+          "schluessel": "de.a2.e12.l06.a04",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "de.a2.e12.s0167",
           "nach": "ziel",
-          "alternativen": ["Die Kinder laufen zuerst durch den Wald zum Fluss.", "Durch den Wald laufen die Kinder zuerst zum Fluss."],
+          "alternativen": [
+            "Die Kinder laufen zuerst durch den Wald zum Fluss.",
+            "Durch den Wald laufen die Kinder zuerst zum Fluss.",
+            "Zum Fluss laufen die Kinder zuerst durch den Wald."
+          ],
           "ablenker": ["Wiese", "zur"]
         },
         {
-          "schluessel": "de.a2.e12.l06.a06",
+          "schluessel": "de.a2.e12.l06.a05",
           "typ": "geschichte",
           "titel": "de.a2.e12.s0195",
           "zeilen": [
@@ -3619,6 +3614,34 @@
               "ablenker": ["de.a2.e12.s0220"]
             }
           ]
+        },
+        {
+          "schluessel": "de.a2.e12.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e12.s0197"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e12.s0198"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e12.s0199"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e12.s0200"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e12.s0201"
+            }
+          ],
+          "antwort": "de.a2.e12.s0202",
+          "ablenker": ["de.a2.e12.s0212", "de.a2.e12.s0207"]
         },
         {
           "schluessel": "de.a2.e12.l06.a07",
@@ -3774,7 +3797,10 @@
           "schluessel": "de.a2.e12.l07.a12",
           "typ": "satzbau",
           "ziel": "de.a2.e12.s0239",
-          "alternativen": ["Wenn man die Farben kennt, ist Müll trennen ganz leicht."]
+          "alternativen": [
+            "Wenn man die Farben kennt, kann man den Müll ganz leicht trennen.",
+            "Den Müll kann man ganz leicht trennen, wenn man die Farben kennt."
+          ]
         },
         {
           "schluessel": "de.a2.e12.l07.a13",
@@ -3937,7 +3963,7 @@
           "schluessel": "de.a2.e12.l08.a08",
           "typ": "satzbau",
           "ziel": "de.a2.e12.s0251",
-          "alternativen": ["Der Wald ist schöner, aber der Berg ist höher."]
+          "alternativen": ["Der Weg auf den Berg ist schöner, aber länger.", "Auf den Berg ist der Weg länger, aber schöner."]
         },
         {
           "schluessel": "de.a2.e12.l08.a09",
@@ -3957,7 +3983,11 @@
           "schluessel": "de.a2.e12.l08.a11",
           "typ": "hoeren_schreiben",
           "ziel": "de.a2.e12.s0254",
-          "alternativen": ["Auf der Wiese stehen 12 Kühe und 3 Pferde."]
+          "alternativen": [
+            "Auf der Wiese stehen 12 Kühe und 3 Pferde.",
+            "Auf der Wiese stehen 12 Kühe und drei Pferde.",
+            "Auf der Wiese stehen zwölf Kühe und 3 Pferde."
+          ]
         },
         {
           "schluessel": "de.a2.e12.l08.a12",
