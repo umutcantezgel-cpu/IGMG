@@ -1,5 +1,12 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 22.10.2026 10:25 UTC – nach dem Limit (≈ 05:05, Reset 08:00) fortgesetzt:** Nachprüfung `tor-l6.sh` auf 39479a4f:
+  check, Sprachen, Religion, Wortlaut, Bau und Lern-App-E2E (99) grün; Integration grün bis auf die veraltete
+  Startklar-Erwartung (behoben d933267e). Neu gestartet mit Fortsetzung: Code `wf_17f4825f-3e9` (B = L5-03 ab ZWISCHENSTAND
+  df44ca6a; D = L4-03 ab d79c5624, Restliste a–d fertig 13ecc675…d4f4b9d6), A1 `wf_2d4b54ef-b43` (Übersetzung de 12/12,
+  Rückübersetzung de e01–e05 übersprungen; neu `rueckgeprueft`), A2 tr `wf_c72a6ddc-e7a` (Entwurf e01–e08 fertig), A2 de
+  `wf_34ea39f3-580` (Entwurf e01–e10 fertig), A2 ar `wf_8e47d992-8e7` (Plan, Arbeitsordner `scratchpad/l3/a2/plan-ar-werk`),
+  Wissen `wf_1c6b2621-2c1` (Entwürfe e01–e07 fertig → Belegprüfung; e08 setzt die Teildatei fort). Platte 3,9 GB.
 - **Stand 22.10.2026 04:50 UTC – L6-Code und L8-03/04 frei und auf `main`:** L8-03/04 (Gegenprüfung Runde 2 frei; ad61cd9c +
   Lizenz bei Tatoeba-Nennungen a1e0106c), L6-02/03 Zwei-Prüfer-Freigabe (Runde 2 frei, Migration 0022 lernapp_tag_kurs, S-L3 M-1;
   6bec2eb0) und L6-05/06 Koran-Arabisch-Pfad (Runde 2 frei; 39479a4f, Hash/Status der Koran-Bedeutung nur aus
