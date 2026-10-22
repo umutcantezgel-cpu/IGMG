@@ -1806,7 +1806,7 @@
     },
     {
       "schluessel": "tr.a2.e12.s0019",
-      "text": "Jan'ın ablası pilot oldu.",
+      "text": "Komşumuz Selin Hanım geçen yıl pilot oldu.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1830,7 +1830,7 @@
     },
     {
       "schluessel": "tr.a2.e12.s0023",
-      "text": "Özge Hanım veteriner, bizim kediyi çok seviyor.",
+      "text": "Özge Hanım veteriner, kedimizi çok seviyor.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2813,7 +2813,7 @@
     },
     {
       "schluessel": "tr.a2.e12.s0183",
-      "text": "Benim hayalim veteriner olmak. Hayvanları çok seviyorum ve onlara yardım etmek istiyorum. Bir veteriner hasta hayvanlara bakar ve onlara ilaç verir. Bu iş zor, çünkü çok bilgi ve deneyim gerekiyor. Ama bence çok faydalı bir meslek. Yazın Özge Hanım'ın yanında staj yapacağım. İleride kendi muayenehanemi açacağım.",
+      "text": "Benim hayalim veteriner olmak. Hayvanları çok seviyorum ve onlara yardım etmek istiyorum. Bir veteriner hasta hayvanlara bakar ve onlara ilaç verir. Bu iş zor, çünkü çok bilgi ve deneyim gerekiyor. Ama bence çok faydalı bir meslek. Yazın Özge Hanım'ın yanında staj yapacağım. İleride kendi kliniğimi açacağım.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2837,7 +2837,7 @@
     },
     {
       "schluessel": "tr.a2.e12.s0187",
-      "text": "Öğrenciler bütün gün bir iş yerini tanıyor.",
+      "text": "Öğrenciler bir iş yerine gidiyor ve meslekleri tanıyor.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3167,13 +3167,13 @@
     },
     {
       "schluessel": "tr.a2.e12.s0242",
-      "text": "Saçın çok güzel olmuş!",
+      "text": "Saçın kısalmış!",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a2.e12.s0243",
-      "text": "Teşekkürler, dün kuaföre gittim.",
+      "text": "Evet, dün kuaföre gittim.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3185,7 +3185,7 @@
     },
     {
       "schluessel": "tr.a2.e12.s0245",
-      "text": "Ofisteki yazıcı bozuk, masadaki çalışıyor.",
+      "text": "Alt kattaki yazıcı bozuk, üst kattaki çalışıyor.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3321,7 +3321,13 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e12.s0011",
           "nach": "ziel",
-          "alternativen": ["Doktorun sözlerini tercüman Arapçaya çeviriyor.", "Tercüman Arapçaya doktorun sözlerini çeviriyor."],
+          "alternativen": [
+            "Doktorun sözlerini tercüman Arapçaya çeviriyor.",
+            "Tercüman Arapçaya doktorun sözlerini çeviriyor.",
+            "Doktorun sözlerini Arapçaya tercüman çeviriyor.",
+            "Arapçaya tercüman doktorun sözlerini çeviriyor.",
+            "Arapçaya doktorun sözlerini tercüman çeviriyor."
+          ],
           "ablenker": ["Arapçada", "çeviriyorum"]
         },
         {
@@ -3364,7 +3370,12 @@
           "typ": "frei",
           "ziel": "tr.a2.e12.s0020",
           "nach": "ziel",
-          "alternativen": ["Pilot olmak için gözlerin çok iyi olmalıdır."]
+          "alternativen": [
+            "Pilot olmak için gözlerin çok iyi olmalıdır.",
+            "Pilot olmak için gözler çok iyi olmalı.",
+            "Pilot olmak için gözlerinin çok iyi olması lazım.",
+            "Pilot olmak için gözlerinin çok iyi olması gerekir."
+          ]
         },
         {
           "schluessel": "tr.a2.e12.l01.a13",
@@ -3440,7 +3451,8 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e12.s0046",
           "nach": "ziel",
-          "ablenker": ["lambada", "ediyorum"]
+          "ablenker": ["lambada", "ediyorum"],
+          "alternativen": ["Bozuk lambayı elektrikçi tamir ediyor."]
         },
         {
           "schluessel": "tr.a2.e12.l02.a07",
@@ -3618,7 +3630,13 @@
           "typ": "frei",
           "ziel": "tr.a2.e12.s0081",
           "nach": "ziel",
-          "alternativen": ["Patronumuz çok dakik, hiç toplantılara geç kalmaz."]
+          "alternativen": [
+            "Patronumuz çok dakik, hiç toplantılara geç kalmaz.",
+            "Patronumuz çok dakik ve toplantılara hiç geç kalmaz.",
+            "Patronumuz çok dakik, toplantılara asla geç kalmaz.",
+            "Patronumuz çok dakik, toplantılara hiçbir zaman geç kalmaz.",
+            "Patronumuz çok dakik, toplantılara hiç geç kalmıyor."
+          ]
         },
         {
           "schluessel": "tr.a2.e12.l03.a14",
@@ -3672,7 +3690,7 @@
             }
           ],
           "antwort": "tr.a2.e12.s0141",
-          "ablenker": ["tr.a2.e12.s0024", "tr.a2.e12.s0001", "tr.a2.e12.s0110"]
+          "ablenker": ["tr.a2.e12.s0024", "tr.a2.e12.s0001", "tr.a2.e12.s0072"]
         },
         {
           "schluessel": "tr.a2.e12.l04.a04",
@@ -3761,7 +3779,7 @@
             }
           ],
           "antwort": "tr.a2.e12.s0126",
-          "ablenker": ["tr.a2.e12.s0120", "tr.a2.e12.s0131", "tr.a2.e12.s0041"]
+          "ablenker": ["tr.a2.e12.s0088", "tr.a2.e12.s0131", "tr.a2.e12.s0041"]
         },
         {
           "schluessel": "tr.a2.e12.l04.a14",
@@ -3958,7 +3976,7 @@
       "schluessel": "tr.a2.e12.l06",
       "art": "geschichte",
       "ziel": {
-        "de": "Geschichte: Der Berufetag",
+        "de": "Geschichte: Der Berufserkundungstag",
         "tr": "Hikâye: Meslek günü",
         "ar": "قصة: يوم المهن"
       },
@@ -4152,21 +4170,32 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e12.s0194",
           "nach": "ziel",
-          "alternativen": ["Elif öğle molasında mimar Ebru Hanım ile tanışıyor."],
+          "alternativen": [
+            "Elif öğle molasında mimar Ebru Hanım ile tanışıyor.",
+            "Elif mimar Ebru Hanım ile öğle molasında tanışıyor.",
+            "Öğle molasında mimar Ebru Hanım ile Elif tanışıyor.",
+            "Mimar Ebru Hanım ile Elif öğle molasında tanışıyor.",
+            "Mimar Ebru Hanım ile öğle molasında Elif tanışıyor."
+          ],
           "ablenker": ["molada", "tanışıyorum"]
         },
         {
           "schluessel": "tr.a2.e12.l06.a07",
           "typ": "frei",
           "ziel": "tr.a2.e12.s0202",
-          "nach": "ziel"
+          "nach": "ziel",
+          "alternativen": [
+            "Evet, bazen çok yoğun. Fakat insanlara yardım etmek çok güzel.",
+            "Evet, bazen çok yoğun. Ama insanlara yardım etmek çok hoş.",
+            "Evet, bazen çok yoğundur. Ama insanlara yardım etmek çok güzeldir."
+          ]
         },
         {
           "schluessel": "tr.a2.e12.l06.a08",
           "typ": "luecke",
           "ziel": "tr.a2.e12.s0207",
           "wort": 4,
-          "ablenker": ["olacak", "oldum"]
+          "ablenker": ["olacak", "olacağim"]
         },
         {
           "schluessel": "tr.a2.e12.l06.a09",
@@ -4247,7 +4276,14 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e12.s0043",
           "nach": "ziel",
-          "ablenker": ["denizde", "geç"]
+          "ablenker": ["denizde", "geç"],
+          "alternativen": [
+            "Balıkçılar denize sabah erken çıkıyor.",
+            "Sabah erken balıkçılar denize çıkıyor.",
+            "Sabah erken denize balıkçılar çıkıyor.",
+            "Denize balıkçılar sabah erken çıkıyor.",
+            "Denize sabah erken balıkçılar çıkıyor."
+          ]
         },
         {
           "schluessel": "tr.a2.e12.l07.a05",
@@ -4279,7 +4315,13 @@
           "schluessel": "tr.a2.e12.l07.a08",
           "typ": "satzbau",
           "ziel": "tr.a2.e12.s0060",
-          "alternativen": ["Sabah yedide işçiler işe başlıyor."]
+          "alternativen": [
+            "Sabah yedide işçiler işe başlıyor.",
+            "İşçiler işe sabah yedide başlıyor.",
+            "İşe işçiler sabah yedide başlıyor.",
+            "İşe sabah yedide işçiler başlıyor.",
+            "Sabah yedide işe işçiler başlıyor."
+          ]
         },
         {
           "schluessel": "tr.a2.e12.l07.a09",
@@ -4352,7 +4394,7 @@
             }
           ],
           "antwort": "tr.a2.e12.s0145",
-          "ablenker": ["tr.a2.e12.s0028", "tr.a2.e12.s0024", "tr.a2.e12.s0133"]
+          "ablenker": ["tr.a2.e12.s0028", "tr.a2.e12.s0090", "tr.a2.e12.s0133"]
         },
         {
           "schluessel": "tr.a2.e12.l07.a16",
@@ -4378,7 +4420,8 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e12.s0040",
           "nach": "ziel",
-          "ablenker": ["bakkalda", "aldım"]
+          "ablenker": ["bakkalda", "aldım"],
+          "alternativen": ["Lütfen bakkala git ve süt al."]
         },
         {
           "schluessel": "tr.a2.e12.l07.a19",
@@ -4466,7 +4509,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e12.s0057",
           "nach": "ziel",
-          "alternativen": ["Kasiyer parayı alıyor, fişi veriyor."]
+          "alternativen": ["Kasiyer parayı alıyor, fişi veriyor.", "Kasiyer parayı alıp fişi veriyor."]
         },
         {
           "schluessel": "tr.a2.e12.l08.a10",
@@ -4504,7 +4547,7 @@
           "typ": "luecke",
           "ziel": "tr.a2.e12.s0045",
           "wort": 2,
-          "ablenker": ["pazara", "pazardan"]
+          "ablenker": ["pazarı", "pazardan"]
         },
         {
           "schluessel": "tr.a2.e12.l08.a15",
@@ -4512,7 +4555,14 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e12.s0051",
           "nach": "ziel",
-          "ablenker": ["bisikletim", "ediyor"]
+          "ablenker": ["bisikletim", "ediyor"],
+          "alternativen": [
+            "Tamirci yarım saatte bisikletimi tamir etti.",
+            "Bisikletimi tamirci yarım saatte tamir etti.",
+            "Bisikletimi yarım saatte tamirci tamir etti.",
+            "Yarım saatte tamirci bisikletimi tamir etti.",
+            "Yarım saatte bisikletimi tamirci tamir etti."
+          ]
         },
         {
           "schluessel": "tr.a2.e12.l08.a16",
@@ -4520,6 +4570,20 @@
           "ziel": "tr.a2.e12.s0089",
           "wort": 0,
           "ablenker": ["Bugündeki", "Bugünki"]
+        },
+        {
+          "schluessel": "tr.a2.e12.l08.a17",
+          "typ": "luecke",
+          "ziel": "tr.a2.e12.s0124",
+          "wort": 0,
+          "ablenker": ["Hem", "Ya"]
+        },
+        {
+          "schluessel": "tr.a2.e12.l08.a18",
+          "typ": "luecke",
+          "ziel": "tr.a2.e12.s0153",
+          "wort": 3,
+          "ablenker": ["onunkı", "benimki"]
         }
       ]
     }
