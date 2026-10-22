@@ -1,0 +1,4189 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "ar",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "ar.a2.e01",
+    "reihenfolge": 2,
+    "thema": {
+      "de": "Mit dem Zug nach Frankfurt",
+      "tr": "Trenle Frankfurt’a",
+      "ar": "بالقطار إلى فرانكفورت"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann erzählen, wohin ich gefahren bin und was ich gesehen habe.",
+        "tr": "Nereye gittiğimi ve ne gördüğümü anlatabilirim.",
+        "ar": "أستطيع أن أحكي إلى أين ذهبت وماذا رأيت."
+      },
+      {
+        "de": "Ich kann eine Fahrkarte kaufen und nach Gleis und Abfahrt fragen.",
+        "tr": "Bilet alabilir, peronu ve kalkış saatini sorabilirim.",
+        "ar": "أستطيع أن أشتري تذكرة وأن أسأل عن الرصيف ووقت المغادرة."
+      },
+      {
+        "de": "Ich kann sagen, wie etwas war.",
+        "tr": "Bir şeyin nasıl olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أقول كيف كان الشيء."
+      }
+    ],
+    "symbol": "train-front",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "ar.a2.e01.kana",
+      "lemma": "كَانَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "kāna",
+        "praesens": "يَكُونُ",
+        "verbtyp": "hohl"
+      },
+      "formen": {
+        "praesens_1sg": "أَكُونُ",
+        "praesens_2sg_m": "تَكُونُ",
+        "praesens_3sg_m": "يَكُونُ",
+        "praesens_3sg_f": "تَكُونُ",
+        "praesens_1pl": "نَكُونُ",
+        "praesens_2sg_f": "تَكُونِينَ",
+        "praesens_2pl_m": "تَكُونُونَ",
+        "praesens_3pl_m": "يَكُونُونَ",
+        "subjunktiv_2sg_f": "تَكُونِي",
+        "subjunktiv_2pl_m": "تَكُونُوا",
+        "subjunktiv_3pl_m": "يَكُونُوا",
+        "madi_1sg": "كُنْتُ",
+        "madi_2sg_m": "كُنْتَ",
+        "madi_2sg_f": "كُنْتِ",
+        "madi_3sg_f": "كَانَتْ",
+        "madi_1pl": "كُنَّا",
+        "madi_2pl_m": "كُنْتُمْ",
+        "madi_3pl_m": "كَانُوا",
+        "jussiv_1sg": "أَكُنْ",
+        "jussiv_2sg_m": "تَكُنْ",
+        "jussiv_3sg_m": "يَكُنْ",
+        "jussiv_1pl": "نَكُنْ",
+        "partizip_aktiv": "كَائِن",
+        "partizip_aktiv_f": "كَائِنَة"
+      },
+      "frequenzRang": 21,
+      "quelle": "wiktionary:en:كان",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚كان‘ (https://en.wiktionary.org/wiki/كان#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.lamma",
+      "lemma": "لَمَّا",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "umschrift": "lammā"
+      },
+      "frequenzRang": 1600,
+      "quelle": "wiktionary:en:لما",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚لما‘ (https://en.wiktionary.org/wiki/لما#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.akhiran",
+      "lemma": "أَخِيرًا",
+      "wortart": "adverb",
+      "merkmale": {
+        "umschrift": "aḫīran"
+      },
+      "frequenzRang": 1159,
+      "quelle": "wiktionary:en:أخيرا",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚أخيرا‘ (https://en.wiktionary.org/wiki/أخيرا#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.sabahan",
+      "lemma": "صَبَاحًا",
+      "wortart": "adverb",
+      "merkmale": {
+        "umschrift": "ṣabāḥan"
+      },
+      "frequenzRang": 1461,
+      "quelle": "wiktionary:en:صباحا",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚صباحا‘ (https://en.wiktionary.org/wiki/صباحا#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.mubasharatan",
+      "lemma": "مُبَاشَرَةً",
+      "wortart": "adverb",
+      "merkmale": {
+        "umschrift": "mubāšaratan"
+      },
+      "frequenzRang": 1501,
+      "quelle": "wiktionary:en:مباشرة",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚مباشرة‘ (https://en.wiktionary.org/wiki/مباشرة#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.abra",
+      "lemma": "عَبْرَ",
+      "wortart": "praeposition",
+      "merkmale": {
+        "umschrift": "ʿabra"
+      },
+      "frequenzRang": 1165,
+      "quelle": "wiktionary:en:عبر",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚عبر‘ (https://en.wiktionary.org/wiki/عبر#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.nahwa",
+      "lemma": "نَحْوَ",
+      "wortart": "praeposition",
+      "merkmale": {
+        "umschrift": "naḥwa"
+      },
+      "frequenzRang": 308,
+      "quelle": "wiktionary:en:نحو",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚نحو‘ (https://en.wiktionary.org/wiki/نحو#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.tadhkira",
+      "lemma": "تَذْكِرَة",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "taḏkira",
+        "genus": "f"
+      },
+      "formen": {
+        "plural": "تَذْكِرَات",
+        "plural_2": "تَذَاكِر",
+        "stamm_vor_suffix": "تَذْكِرَت"
+      },
+      "frequenzRang": 3808,
+      "quelle": "wiktionary:en:تذكرة",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚تذكرة‘ (https://en.wiktionary.org/wiki/تذكرة#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.rasif",
+      "lemma": "رَصِيف",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "raṣīf",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "أَرْصِفَة",
+        "akkusativ_indef": "رَصِيفًا"
+      },
+      "frequenzRang": 5075,
+      "quelle": "wiktionary:en:رصيف",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚رصيف‘ (https://en.wiktionary.org/wiki/رصيف#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.mughadara",
+      "lemma": "مُغَادَرَة",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "muġādara",
+        "genus": "f"
+      },
+      "formen": {
+        "stamm_vor_suffix": "مُغَادَرَت"
+      },
+      "frequenzRang": 2788,
+      "quelle": "wiktionary:en:مغادرة",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚مغادرة‘ (https://en.wiktionary.org/wiki/مغادرة#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.takhir",
+      "lemma": "تَأْخِير",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "taʾḫīr",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "تَأْخِيرَات",
+        "akkusativ_indef": "تَأْخِيرًا"
+      },
+      "frequenzRang": 4174,
+      "quelle": "wiktionary:en:تأخير",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚تأخير‘ (https://en.wiktionary.org/wiki/تأخير#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.ala",
+      "lemma": "آلَة",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "āla",
+        "genus": "f"
+      },
+      "formen": {
+        "plural": "آلَات"
+      },
+      "quelle": "wiktionary:en:آلة",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚آلة‘ (https://en.wiktionary.org/wiki/آلة#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.shubbak",
+      "lemma": "شُبَّاك",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "šubbāk",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "شَبَابِيك",
+        "akkusativ_indef": "شُبَّاكًا"
+      },
+      "frequenzRang": 5831,
+      "quelle": "wiktionary:en:شباك",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚شباك‘ (https://en.wiktionary.org/wiki/شباك#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.musafir",
+      "lemma": "مُسَافِر",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "musāfir",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "مُسَافِرُون",
+        "feminin": "مُسَافِرَة",
+        "plural_f": "مُسَافِرَات",
+        "plural_obl": "مُسَافِرِينَ",
+        "akkusativ_indef": "مُسَافِرًا",
+        "feminin_stamm_vor_suffix": "مُسَافِرَت"
+      },
+      "frequenzRang": 2365,
+      "quelle": "wiktionary:en:مسافر",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚مسافر‘ (https://en.wiktionary.org/wiki/مسافر#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.mathaf",
+      "lemma": "مَتْحَف",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "matḥaf",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "مَتَاحِف",
+        "akkusativ_indef": "مَتْحَفًا"
+      },
+      "frequenzRang": 1989,
+      "quelle": "wiktionary:en:متحف",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚متحف‘ (https://en.wiktionary.org/wiki/متحف#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.manzar",
+      "lemma": "مَنْظَر",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "manẓar",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "مَنَاظِر",
+        "akkusativ_indef": "مَنْظَرًا"
+      },
+      "frequenzRang": 3966,
+      "quelle": "wiktionary:en:منظر",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚منظر‘ (https://en.wiktionary.org/wiki/منظر#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.jawla",
+      "lemma": "جَوْلَة",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "ǧawla",
+        "genus": "f"
+      },
+      "formen": {
+        "plural": "جَوْلَات",
+        "stamm_vor_suffix": "جَوْلَت"
+      },
+      "frequenzRang": 937,
+      "quelle": "wiktionary:en:جولة",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚جولة‘ (https://en.wiktionary.org/wiki/جولة#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.zair",
+      "lemma": "زَائِر",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "zāʾir",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "زَائِرُون",
+        "plural_2": "زُوَّار",
+        "feminin": "زَائِرَة",
+        "plural_f": "زَائِرَات",
+        "plural_obl": "زَائِرِينَ",
+        "akkusativ_indef": "زَائِرًا",
+        "feminin_stamm_vor_suffix": "زَائِرَت"
+      },
+      "frequenzRang": 1489,
+      "quelle": "wiktionary:en:زائر",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚زائر‘ (https://en.wiktionary.org/wiki/زائر#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.masafa",
+      "lemma": "مَسَافَة",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "masāfa",
+        "genus": "f"
+      },
+      "formen": {
+        "plural": "مَسَافَات",
+        "stamm_vor_suffix": "مَسَافَت"
+      },
+      "frequenzRang": 1697,
+      "quelle": "wiktionary:en:مسافة",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚مسافة‘ (https://en.wiktionary.org/wiki/مسافة#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.wasila",
+      "lemma": "وَسِيلَة",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "wasīla",
+        "genus": "f"
+      },
+      "formen": {
+        "plural": "وَسَائِل",
+        "stamm_vor_suffix": "وَسِيلَت"
+      },
+      "frequenzRang": 1444,
+      "quelle": "wiktionary:en:وسيلة",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚وسيلة‘ (https://en.wiktionary.org/wiki/وسيلة#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.ilan",
+      "lemma": "إِعْلَان",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "iʿlān",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "إِعْلَانَات",
+        "akkusativ_indef": "إِعْلَانًا"
+      },
+      "frequenzRang": 228,
+      "quelle": "wiktionary:en:إعلان",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚إعلان‘ (https://en.wiktionary.org/wiki/إعلان#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.thuluth",
+      "lemma": "ثُلُث",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "ṯuluṯ",
+        "genus": "m"
+      },
+      "formen": {
+        "akkusativ_indef": "ثُلُثًا"
+      },
+      "frequenzRang": 4301,
+      "quelle": "wiktionary:en:ثلث",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ثلث‘ (https://en.wiktionary.org/wiki/ثلث#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.dhahab",
+      "lemma": "ذَهَاب",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "ḏahāb",
+        "genus": "m"
+      },
+      "formen": {
+        "akkusativ_indef": "ذَهَابًا"
+      },
+      "frequenzRang": 1343,
+      "quelle": "wiktionary:en:ذهاب",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ذهاب‘ (https://en.wiktionary.org/wiki/ذهاب#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.khatt",
+      "lemma": "خَطّ",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "ḫaṭṭ",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "خُطُوط",
+        "akkusativ_indef": "خَطًّا"
+      },
+      "frequenzRang": 427,
+      "quelle": "wiktionary:en:خط",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚خط‘ (https://en.wiktionary.org/wiki/خط#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.ittijah",
+      "lemma": "اِتِّجَاه",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "ittiǧāh",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "اِتِّجَاهَات",
+        "akkusativ_indef": "اِتِّجَاهًا"
+      },
+      "frequenzRang": 764,
+      "quelle": "wiktionary:en:اتجاه",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚اتجاه‘ (https://en.wiktionary.org/wiki/اتجاه#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.madi",
+      "lemma": "مَاضٍ",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "umschrift": "māḍī"
+      },
+      "frequenzRang": 129,
+      "quelle": "wiktionary:en:ماض",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ماض‘ (https://en.wiktionary.org/wiki/ماض#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.farigh",
+      "lemma": "فَارِغ",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "umschrift": "fāriġ"
+      },
+      "formen": {
+        "feminin": "فَارِغَة",
+        "plural_m": "فُرَّاغ",
+        "elativ": "أَفْرَغ",
+        "akkusativ_indef": "فَارِغًا"
+      },
+      "frequenzRang": 3121,
+      "quelle": "wiktionary:en:فارغ",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚فارغ‘ (https://en.wiktionary.org/wiki/فارغ#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.mumti",
+      "lemma": "مُمْتِع",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "umschrift": "mumtiʿ"
+      },
+      "formen": {
+        "feminin": "مُمْتِعَة",
+        "plural_m": "مُمْتِعُون",
+        "plural_f": "مُمْتِعَات",
+        "plural_m_obl": "مُمْتِعِينَ",
+        "akkusativ_indef": "مُمْتِعًا"
+      },
+      "frequenzRang": 3272,
+      "quelle": "wiktionary:en:ممتع",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ممتع‘ (https://en.wiktionary.org/wiki/ممتع#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.mudhish",
+      "lemma": "مُدْهِش",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "umschrift": "mudhiš"
+      },
+      "formen": {
+        "feminin": "مُدْهِشَة",
+        "plural_m": "مُدْهِشُون",
+        "plural_f": "مُدْهِشَات",
+        "plural_m_obl": "مُدْهِشِينَ",
+        "akkusativ_indef": "مُدْهِشًا"
+      },
+      "frequenzRang": 5400,
+      "quelle": "wiktionary:en:مدهش",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚مدهش‘ (https://en.wiktionary.org/wiki/مدهش#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.dakhm",
+      "lemma": "ضَخْم",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "umschrift": "ḍaḫm"
+      },
+      "formen": {
+        "feminin": "ضَخْمَة",
+        "plural_m": "ضَخْمُون",
+        "plural_f": "ضَخْمَات",
+        "plural": "ضِخَام",
+        "plural_m_obl": "ضَخْمِينَ",
+        "akkusativ_indef": "ضَخْمًا"
+      },
+      "frequenzRang": 2068,
+      "quelle": "wiktionary:en:ضخم",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ضخم‘ (https://en.wiktionary.org/wiki/ضخم#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.farhan",
+      "lemma": "فَرْحَان",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "umschrift": "farḥān"
+      },
+      "formen": {
+        "feminin": "فَرْحَى",
+        "plural_m": "فَرْحَانُون",
+        "plural": "فَرَاحَى",
+        "plural_m_obl": "فَرْحَانِينَ"
+      },
+      "frequenzRang": 7658,
+      "quelle": "wiktionary:en:فرحان",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚فرحان‘ (https://en.wiktionary.org/wiki/فرحان#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.mazdahim",
+      "lemma": "مُزْدَحِم",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "umschrift": "mazdaḥim",
+        "wurzel": "z-ḥ-m"
+      },
+      "formen": {
+        "akkusativ_indef": "مُزْدَحِمًا"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.tabii",
+      "lemma": "طَبِيعِيّ",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "umschrift": "ṭabīʿī"
+      },
+      "formen": {
+        "feminin": "طَبِيعِيَّة",
+        "plural_m": "طَبِيعِيُّون",
+        "plural_f": "طَبِيعِيَّات",
+        "akkusativ_indef": "طَبِيعِيًّا"
+      },
+      "frequenzRang": 502,
+      "quelle": "wiktionary:en:طبيعي",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚طبيعي‘ (https://en.wiktionary.org/wiki/طبيعي#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.bati",
+      "lemma": "بَطِيء",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "umschrift": "baṭīʾ"
+      },
+      "formen": {
+        "plural_m": "بَطِيئُون",
+        "plural_f": "بَطِيئَات",
+        "elativ": "أَبْطَأ",
+        "plural": "بِطَاء",
+        "plural_m_obl": "بَطِيئِينَ",
+        "akkusativ_indef": "بَطِيءًا"
+      },
+      "frequenzRang": 5502,
+      "quelle": "wiktionary:en:بطيء",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚بطيء‘ (https://en.wiktionary.org/wiki/بطيء#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.kamil",
+      "lemma": "كَامِل",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "umschrift": "kāmil"
+      },
+      "formen": {
+        "feminin": "كَامِلَة",
+        "plural_m": "كَامِلُون",
+        "plural_f": "كَامِلَات",
+        "elativ": "أَكْمَل",
+        "plural_m_obl": "كَامِلِينَ",
+        "akkusativ_indef": "كَامِلًا"
+      },
+      "frequenzRang": 190,
+      "quelle": "wiktionary:en:كامل",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚كامل‘ (https://en.wiktionary.org/wiki/كامل#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.rakiba",
+      "lemma": "رَكِبَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "rakiba",
+        "praesens": "يَرْكَبُ",
+        "verbtyp": "regel"
+      },
+      "formen": {
+        "praesens_1sg": "أَرْكَبُ",
+        "praesens_2sg_m": "تَرْكَبُ",
+        "praesens_3sg_m": "يَرْكَبُ",
+        "praesens_3sg_f": "تَرْكَبُ",
+        "praesens_1pl": "نَرْكَبُ",
+        "praesens_2sg_f": "تَرْكَبِينَ",
+        "praesens_2pl_m": "تَرْكَبُونَ",
+        "praesens_3pl_m": "يَرْكَبُونَ",
+        "subjunktiv_2sg_f": "تَرْكَبِي",
+        "subjunktiv_2pl_m": "تَرْكَبُوا",
+        "subjunktiv_3pl_m": "يَرْكَبُوا",
+        "madi_1sg": "رَكِبْتُ",
+        "madi_2sg_m": "رَكِبْتَ",
+        "madi_2sg_f": "رَكِبْتِ",
+        "madi_3sg_f": "رَكِبَتْ",
+        "madi_1pl": "رَكِبْنَا",
+        "madi_2pl_m": "رَكِبْتُمْ",
+        "madi_3pl_m": "رَكِبُوا",
+        "imperativ_2sg_m": "اِرْكَبْ",
+        "imperativ_2sg_f": "اِرْكَبِي",
+        "imperativ_2pl_m": "اِرْكَبُوا",
+        "partizip_aktiv": "رَاكِب",
+        "partizip_aktiv_f": "رَاكِبَة"
+      },
+      "frequenzRang": 5923,
+      "quelle": "wiktionary:en:ركب",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ركب‘ (https://en.wiktionary.org/wiki/ركب#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.nazala",
+      "lemma": "نَزَلَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "nazala",
+        "praesens": "يَنْزِلُ",
+        "verbtyp": "regel"
+      },
+      "formen": {
+        "praesens_1sg": "أَنْزِلُ",
+        "praesens_2sg_m": "تَنْزِلُ",
+        "praesens_3sg_m": "يَنْزِلُ",
+        "praesens_3sg_f": "تَنْزِلُ",
+        "praesens_1pl": "نَنْزِلُ",
+        "praesens_2sg_f": "تَنْزِلِينَ",
+        "praesens_2pl_m": "تَنْزِلُونَ",
+        "praesens_3pl_m": "يَنْزِلُونَ",
+        "subjunktiv_2sg_f": "تَنْزِلِي",
+        "subjunktiv_2pl_m": "تَنْزِلُوا",
+        "subjunktiv_3pl_m": "يَنْزِلُوا",
+        "madi_1sg": "نَزَلْتُ",
+        "madi_2sg_m": "نَزَلْتَ",
+        "madi_2sg_f": "نَزَلْتِ",
+        "madi_3sg_f": "نَزَلَتْ",
+        "madi_1pl": "نَزَلْنَا",
+        "madi_2pl_m": "نَزَلْتُمْ",
+        "madi_3pl_m": "نَزَلُوا",
+        "imperativ_2sg_m": "اِنْزِلْ",
+        "imperativ_2sg_f": "اِنْزِلِي",
+        "imperativ_2pl_m": "اِنْزِلُوا",
+        "partizip_aktiv": "نَازِل",
+        "partizip_aktiv_f": "نَازِلَة"
+      },
+      "frequenzRang": 2794,
+      "quelle": "wiktionary:en:نزل",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚نزل‘ (https://en.wiktionary.org/wiki/نزل#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.kharaja",
+      "lemma": "خَرَجَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "ḫaraǧa",
+        "praesens": "يَخْرُجُ",
+        "verbtyp": "regel"
+      },
+      "formen": {
+        "praesens_1sg": "أَخْرُجُ",
+        "praesens_2sg_m": "تَخْرُجُ",
+        "praesens_3sg_m": "يَخْرُجُ",
+        "praesens_3sg_f": "تَخْرُجُ",
+        "praesens_1pl": "نَخْرُجُ",
+        "praesens_2sg_f": "تَخْرُجِينَ",
+        "praesens_2pl_m": "تَخْرُجُونَ",
+        "praesens_3pl_m": "يَخْرُجُونَ",
+        "subjunktiv_2sg_f": "تَخْرُجِي",
+        "subjunktiv_2pl_m": "تَخْرُجُوا",
+        "subjunktiv_3pl_m": "يَخْرُجُوا",
+        "madi_1sg": "خَرَجْتُ",
+        "madi_2sg_m": "خَرَجْتَ",
+        "madi_2sg_f": "خَرَجْتِ",
+        "madi_3sg_f": "خَرَجَتْ",
+        "madi_1pl": "خَرَجْنَا",
+        "madi_2pl_m": "خَرَجْتُمْ",
+        "madi_3pl_m": "خَرَجُوا",
+        "imperativ_2sg_m": "اُخْرُجْ",
+        "imperativ_2sg_f": "اُخْرُجِي",
+        "imperativ_2pl_m": "اُخْرُجُوا",
+        "partizip_aktiv_f": "خَارِجَة"
+      },
+      "frequenzRang": 1481,
+      "quelle": "wiktionary:en:خرج",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚خرج‘ (https://en.wiktionary.org/wiki/خرج#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.ada",
+      "lemma": "عَادَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "ʿāda",
+        "praesens": "يَعُودُ",
+        "verbtyp": "hohl"
+      },
+      "formen": {
+        "praesens_1sg": "أَعُودُ",
+        "praesens_2sg_m": "تَعُودُ",
+        "praesens_3sg_m": "يَعُودُ",
+        "praesens_3sg_f": "تَعُودُ",
+        "praesens_1pl": "نَعُودُ",
+        "praesens_2sg_f": "تَعُودِينَ",
+        "praesens_2pl_m": "تَعُودُونَ",
+        "praesens_3pl_m": "يَعُودُونَ",
+        "subjunktiv_2sg_f": "تَعُودِي",
+        "subjunktiv_2pl_m": "تَعُودُوا",
+        "subjunktiv_3pl_m": "يَعُودُوا",
+        "madi_1sg": "عُدْتُ",
+        "madi_2sg_m": "عُدْتَ",
+        "madi_2sg_f": "عُدْتِ",
+        "madi_3sg_f": "عَادَتْ",
+        "madi_1pl": "عُدْنَا",
+        "madi_2pl_m": "عُدْتُمْ",
+        "madi_3pl_m": "عَادُوا",
+        "jussiv_1sg": "أَعُدْ",
+        "jussiv_2sg_m": "تَعُدْ",
+        "jussiv_3sg_m": "يَعُدْ",
+        "jussiv_1pl": "نَعُدْ",
+        "imperativ_2sg_m": "عُدْ",
+        "imperativ_2sg_f": "عُودِي",
+        "imperativ_2pl_m": "عُودُوا",
+        "partizip_aktiv": "عَائِد",
+        "partizip_aktiv_f": "عَائِدَة"
+      },
+      "frequenzRang": 107,
+      "quelle": "wiktionary:en:عاد",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚عاد‘ (https://en.wiktionary.org/wiki/عاد#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.taakhkhara",
+      "lemma": "تَأَخَّرَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "taʾaḫḫara",
+        "praesens": "يَتَأَخَّرُ",
+        "verbtyp": "regel"
+      },
+      "formen": {
+        "praesens_1sg": "أَتَأَخَّرُ",
+        "praesens_2sg_m": "تَتَأَخَّرُ",
+        "praesens_3sg_m": "يَتَأَخَّرُ",
+        "praesens_3sg_f": "تَتَأَخَّرُ",
+        "praesens_1pl": "نَتَأَخَّرُ",
+        "praesens_2sg_f": "تَتَأَخَّرِينَ",
+        "praesens_2pl_m": "تَتَأَخَّرُونَ",
+        "praesens_3pl_m": "يَتَأَخَّرُونَ",
+        "subjunktiv_2sg_f": "تَتَأَخَّرِي",
+        "subjunktiv_2pl_m": "تَتَأَخَّرُوا",
+        "subjunktiv_3pl_m": "يَتَأَخَّرُوا",
+        "madi_1sg": "تَأَخَّرْتُ",
+        "madi_2sg_m": "تَأَخَّرْتَ",
+        "madi_2sg_f": "تَأَخَّرْتِ",
+        "madi_3sg_f": "تَأَخَّرَتْ",
+        "madi_1pl": "تَأَخَّرْنَا",
+        "madi_2pl_m": "تَأَخَّرْتُمْ",
+        "madi_3pl_m": "تَأَخَّرُوا"
+      },
+      "frequenzRang": 2431,
+      "quelle": "wiktionary:en:تأخر",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚تأخر‘ (https://en.wiktionary.org/wiki/تأخر#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.tawaqqafa",
+      "lemma": "تَوَقَّفَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "tawaqqafa",
+        "praesens": "يَتَوَقَّفُ",
+        "verbtyp": "regel"
+      },
+      "formen": {
+        "praesens_1sg": "أَتَوَقَّفُ",
+        "praesens_2sg_m": "تَتَوَقَّفُ",
+        "praesens_3sg_m": "يَتَوَقَّفُ",
+        "praesens_3sg_f": "تَتَوَقَّفُ",
+        "praesens_1pl": "نَتَوَقَّفُ",
+        "praesens_2sg_f": "تَتَوَقَّفِينَ",
+        "praesens_2pl_m": "تَتَوَقَّفُونَ",
+        "praesens_3pl_m": "يَتَوَقَّفُونَ",
+        "subjunktiv_2sg_f": "تَتَوَقَّفِي",
+        "subjunktiv_2pl_m": "تَتَوَقَّفُوا",
+        "subjunktiv_3pl_m": "يَتَوَقَّفُوا",
+        "madi_1sg": "تَوَقَّفْتُ",
+        "madi_2sg_m": "تَوَقَّفْتَ",
+        "madi_2sg_f": "تَوَقَّفْتِ",
+        "madi_3sg_f": "تَوَقَّفَتْ",
+        "madi_1pl": "تَوَقَّفْنَا",
+        "madi_2pl_m": "تَوَقَّفْتُمْ",
+        "madi_3pl_m": "تَوَقَّفُوا",
+        "imperativ_2sg_m": "تَوَقَّفْ",
+        "imperativ_2sg_f": "تَوَقَّفِي",
+        "imperativ_2pl_m": "تَوَقَّفُوا"
+      },
+      "frequenzRang": 1006,
+      "quelle": "wiktionary:en:توقف",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚توقف‘ (https://en.wiktionary.org/wiki/توقف#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.taharraka",
+      "lemma": "تَحَرَّكَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "taḥarraka",
+        "praesens": "يَتَحَرَّكُ",
+        "verbtyp": "regel"
+      },
+      "formen": {
+        "praesens_1sg": "أَتَحَرَّكُ",
+        "praesens_2sg_m": "تَتَحَرَّكُ",
+        "praesens_3sg_m": "يَتَحَرَّكُ",
+        "praesens_3sg_f": "تَتَحَرَّكُ",
+        "praesens_1pl": "نَتَحَرَّكُ",
+        "praesens_2sg_f": "تَتَحَرَّكِينَ",
+        "praesens_2pl_m": "تَتَحَرَّكُونَ",
+        "praesens_3pl_m": "يَتَحَرَّكُونَ",
+        "subjunktiv_2sg_f": "تَتَحَرَّكِي",
+        "subjunktiv_2pl_m": "تَتَحَرَّكُوا",
+        "subjunktiv_3pl_m": "يَتَحَرَّكُوا",
+        "madi_1sg": "تَحَرَّكْتُ",
+        "madi_2sg_m": "تَحَرَّكْتَ",
+        "madi_2sg_f": "تَحَرَّكْتِ",
+        "madi_3sg_f": "تَحَرَّكَتْ",
+        "madi_1pl": "تَحَرَّكْنَا",
+        "madi_2pl_m": "تَحَرَّكْتُمْ",
+        "madi_3pl_m": "تَحَرَّكُوا",
+        "imperativ_2sg_m": "تَحَرَّكْ",
+        "imperativ_2sg_f": "تَحَرَّكِي",
+        "imperativ_2pl_m": "تَحَرَّكُوا"
+      },
+      "frequenzRang": 1480,
+      "quelle": "wiktionary:en:تحرك",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚تحرك‘ (https://en.wiktionary.org/wiki/تحرك#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.samia",
+      "lemma": "سَمِعَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "samiʿa",
+        "praesens": "يَسْمَعُ",
+        "verbtyp": "regel"
+      },
+      "formen": {
+        "praesens_1sg": "أَسْمَعُ",
+        "praesens_2sg_m": "تَسْمَعُ",
+        "praesens_3sg_m": "يَسْمَعُ",
+        "praesens_3sg_f": "تَسْمَعُ",
+        "praesens_1pl": "نَسْمَعُ",
+        "praesens_2sg_f": "تَسْمَعِينَ",
+        "praesens_2pl_m": "تَسْمَعُونَ",
+        "praesens_3pl_m": "يَسْمَعُونَ",
+        "subjunktiv_2sg_f": "تَسْمَعِي",
+        "subjunktiv_2pl_m": "تَسْمَعُوا",
+        "subjunktiv_3pl_m": "يَسْمَعُوا",
+        "madi_1sg": "سَمِعْتُ",
+        "madi_2sg_m": "سَمِعْتَ",
+        "madi_2sg_f": "سَمِعْتِ",
+        "madi_3sg_f": "سَمِعَتْ",
+        "madi_1pl": "سَمِعْنَا",
+        "madi_2pl_m": "سَمِعْتُمْ",
+        "madi_3pl_m": "سَمِعُوا",
+        "partizip_aktiv": "سَامِع",
+        "partizip_aktiv_f": "سَامِعَة"
+      },
+      "frequenzRang": 1118,
+      "quelle": "wiktionary:en:سمع",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚سمع‘ (https://en.wiktionary.org/wiki/سمع#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.haka",
+      "lemma": "حَكَى",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "ḥakā",
+        "praesens": "يَحْكِي",
+        "verbtyp": "defekt"
+      },
+      "formen": {
+        "praesens_1sg": "أَحْكِي",
+        "praesens_2sg_m": "تَحْكِي",
+        "praesens_3sg_m": "يَحْكِي",
+        "praesens_3sg_f": "تَحْكِي",
+        "praesens_1pl": "نَحْكِي",
+        "praesens_2sg_f": "تَحْكِينَ",
+        "praesens_2pl_m": "تَحْكُونَ",
+        "praesens_3pl_m": "يَحْكُونَ",
+        "subjunktiv_2sg_f": "تَحْكِي",
+        "subjunktiv_2pl_m": "تَحْكُوا",
+        "subjunktiv_3pl_m": "يَحْكُوا",
+        "madi_1sg": "حَكَيْتُ",
+        "madi_2sg_m": "حَكَيْتَ",
+        "madi_2sg_f": "حَكَيْتِ",
+        "madi_3sg_f": "حَكَتْ",
+        "madi_1pl": "حَكَيْنَا",
+        "madi_2pl_m": "حَكَيْتُمْ",
+        "madi_3pl_m": "حَكَوْا",
+        "jussiv_1sg": "أَحْكِ",
+        "jussiv_2sg_m": "تَحْكِ",
+        "jussiv_3sg_m": "يَحْكِ",
+        "jussiv_1pl": "نَحْكِ",
+        "imperativ_2sg_m": "اِحْكِ",
+        "imperativ_2sg_f": "اِحْكِي",
+        "imperativ_2pl_m": "اِحْكُوا"
+      },
+      "frequenzRang": 3627,
+      "quelle": "wiktionary:en:حكى",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚حكى‘ (https://en.wiktionary.org/wiki/حكى#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.ajaba",
+      "lemma": "أَعْجَبَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "aʿǧaba",
+        "praesens": "يُعْجِبُ",
+        "verbtyp": "regel"
+      },
+      "formen": {
+        "praesens_1sg": "أُعْجِبُ",
+        "praesens_2sg_m": "تُعْجِبُ",
+        "praesens_3sg_m": "يُعْجِبُ",
+        "praesens_3sg_f": "تُعْجِبُ",
+        "praesens_1pl": "نُعْجِبُ",
+        "praesens_2sg_f": "تُعْجِبِينَ",
+        "praesens_2pl_m": "تُعْجِبُونَ",
+        "praesens_3pl_m": "يُعْجِبُونَ",
+        "subjunktiv_2sg_f": "تُعْجِبِي",
+        "subjunktiv_2pl_m": "تُعْجِبُوا",
+        "subjunktiv_3pl_m": "يُعْجِبُوا",
+        "madi_1sg": "أَعْجَبْتُ",
+        "madi_2sg_m": "أَعْجَبْتَ",
+        "madi_2sg_f": "أَعْجَبْتِ",
+        "madi_3sg_f": "أَعْجَبَتْ",
+        "madi_1pl": "أَعْجَبْنَا",
+        "madi_2pl_m": "أَعْجَبْتُمْ",
+        "madi_3pl_m": "أَعْجَبُوا"
+      },
+      "frequenzRang": 4933,
+      "quelle": "wiktionary:en:أعجب",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚أعجب‘ (https://en.wiktionary.org/wiki/أعجب#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.tamattaa",
+      "lemma": "تَمَتَّعَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "tamattaʿa",
+        "praesens": "يَتَمَتَّعُ",
+        "verbtyp": "regel"
+      },
+      "formen": {
+        "praesens_1sg": "أَتَمَتَّعُ",
+        "praesens_2sg_m": "تَتَمَتَّعُ",
+        "praesens_3sg_m": "يَتَمَتَّعُ",
+        "praesens_3sg_f": "تَتَمَتَّعُ",
+        "praesens_1pl": "نَتَمَتَّعُ",
+        "praesens_2sg_f": "تَتَمَتَّعِينَ",
+        "praesens_2pl_m": "تَتَمَتَّعُونَ",
+        "praesens_3pl_m": "يَتَمَتَّعُونَ",
+        "subjunktiv_2sg_f": "تَتَمَتَّعِي",
+        "subjunktiv_2pl_m": "تَتَمَتَّعُوا",
+        "subjunktiv_3pl_m": "يَتَمَتَّعُوا",
+        "madi_1sg": "تَمَتَّعْتُ",
+        "madi_2sg_m": "تَمَتَّعْتَ",
+        "madi_2sg_f": "تَمَتَّعْتِ",
+        "madi_3sg_f": "تَمَتَّعَتْ",
+        "madi_1pl": "تَمَتَّعْنَا",
+        "madi_2pl_m": "تَمَتَّعْتُمْ",
+        "madi_3pl_m": "تَمَتَّعُوا",
+        "imperativ_2sg_m": "تَمَتَّعْ",
+        "imperativ_2sg_f": "تَمَتَّعِي",
+        "imperativ_2pl_m": "تَمَتَّعُوا"
+      },
+      "frequenzRang": 1247,
+      "quelle": "wiktionary:en:تمتع",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚تمتع‘ (https://en.wiktionary.org/wiki/تمتع#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.naqala",
+      "lemma": "نَقَلَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "naqala",
+        "praesens": "يَنْقُلُ",
+        "verbtyp": "regel"
+      },
+      "formen": {
+        "praesens_1sg": "أَنْقُلُ",
+        "praesens_2sg_m": "تَنْقُلُ",
+        "praesens_3sg_m": "يَنْقُلُ",
+        "praesens_3sg_f": "تَنْقُلُ",
+        "praesens_1pl": "نَنْقُلُ",
+        "praesens_2sg_f": "تَنْقُلِينَ",
+        "praesens_2pl_m": "تَنْقُلُونَ",
+        "praesens_3pl_m": "يَنْقُلُونَ",
+        "subjunktiv_2sg_f": "تَنْقُلِي",
+        "subjunktiv_2pl_m": "تَنْقُلُوا",
+        "subjunktiv_3pl_m": "يَنْقُلُوا",
+        "madi_1sg": "نَقَلْتُ",
+        "madi_2sg_m": "نَقَلْتَ",
+        "madi_2sg_f": "نَقَلْتِ",
+        "madi_3sg_f": "نَقَلَتْ",
+        "madi_1pl": "نَقَلْنَا",
+        "madi_2pl_m": "نَقَلْتُمْ",
+        "madi_3pl_m": "نَقَلُوا",
+        "imperativ_2sg_m": "اُنْقُلْ",
+        "imperativ_2sg_f": "اُنْقُلِي",
+        "imperativ_2pl_m": "اُنْقُلُوا",
+        "partizip_aktiv": "نَاقِل",
+        "partizip_aktiv_f": "نَاقِلَة"
+      },
+      "frequenzRang": 517,
+      "quelle": "wiktionary:en:نقل",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚نقل‘ (https://en.wiktionary.org/wiki/نقل#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.nasiya",
+      "lemma": "نَسِيَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "nasiya",
+        "praesens": "يَنْسَى",
+        "verbtyp": "defekt_i"
+      },
+      "formen": {
+        "praesens_1sg": "أَنْسَى",
+        "praesens_2sg_m": "تَنْسَى",
+        "praesens_3sg_m": "يَنْسَى",
+        "praesens_3sg_f": "تَنْسَى",
+        "praesens_1pl": "نَنْسَى",
+        "praesens_2sg_f": "تَنْسَيْنَ",
+        "praesens_2pl_m": "تَنْسَوْنَ",
+        "praesens_3pl_m": "يَنْسَوْنَ",
+        "subjunktiv_2sg_f": "تَنْسَيْ",
+        "subjunktiv_2pl_m": "تَنْسَوْا",
+        "subjunktiv_3pl_m": "يَنْسَوْا",
+        "madi_1sg": "نَسِيتُ",
+        "madi_2sg_m": "نَسِيتَ",
+        "madi_2sg_f": "نَسِيتِ",
+        "madi_3sg_f": "نَسِيَتْ",
+        "madi_1pl": "نَسِينَا",
+        "madi_2pl_m": "نَسِيتُمْ",
+        "madi_3pl_m": "نَسُوا",
+        "jussiv_1sg": "أَنْسَ",
+        "jussiv_2sg_m": "تَنْسَ",
+        "jussiv_3sg_m": "يَنْسَ",
+        "jussiv_1pl": "نَنْسَ"
+      },
+      "frequenzRang": 2994,
+      "quelle": "wiktionary:en:نسي",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚نسي‘ (https://en.wiktionary.org/wiki/نسي#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.sawwara",
+      "lemma": "صَوَّرَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "ṣawwara",
+        "praesens": "يُصَوِّرُ",
+        "verbtyp": "regel"
+      },
+      "formen": {
+        "praesens_1sg": "أُصَوِّرُ",
+        "praesens_2sg_m": "تُصَوِّرُ",
+        "praesens_3sg_m": "يُصَوِّرُ",
+        "praesens_3sg_f": "تُصَوِّرُ",
+        "praesens_1pl": "نُصَوِّرُ",
+        "praesens_2sg_f": "تُصَوِّرِينَ",
+        "praesens_2pl_m": "تُصَوِّرُونَ",
+        "praesens_3pl_m": "يُصَوِّرُونَ",
+        "subjunktiv_2sg_f": "تُصَوِّرِي",
+        "subjunktiv_2pl_m": "تُصَوِّرُوا",
+        "subjunktiv_3pl_m": "يُصَوِّرُوا",
+        "madi_1sg": "صَوَّرْتُ",
+        "madi_2sg_m": "صَوَّرْتَ",
+        "madi_2sg_f": "صَوَّرْتِ",
+        "madi_3sg_f": "صَوَّرَتْ",
+        "madi_1pl": "صَوَّرْنَا",
+        "madi_2pl_m": "صَوَّرْتُمْ",
+        "madi_3pl_m": "صَوَّرُوا",
+        "imperativ_2sg_m": "صَوِّرْ",
+        "imperativ_2sg_f": "صَوِّرِي",
+        "imperativ_2pl_m": "صَوِّرُوا",
+        "partizip_aktiv": "صَاوِر",
+        "partizip_aktiv_f": "صَاوِرَة"
+      },
+      "frequenzRang": 209,
+      "quelle": "wiktionary:en:صور",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚صور‘ (https://en.wiktionary.org/wiki/صور#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.istaghraqa",
+      "lemma": "اِسْتَغْرَقَ",
+      "wortart": "verb",
+      "merkmale": {
+        "umschrift": "istaġraqa",
+        "praesens": "يَسْتَغْرِقُ",
+        "verbtyp": "regel"
+      },
+      "formen": {
+        "praesens_1sg": "أَسْتَغْرِقُ",
+        "praesens_2sg_m": "تَسْتَغْرِقُ",
+        "praesens_3sg_m": "يَسْتَغْرِقُ",
+        "praesens_3sg_f": "تَسْتَغْرِقُ",
+        "praesens_1pl": "نَسْتَغْرِقُ",
+        "praesens_2sg_f": "تَسْتَغْرِقِينَ",
+        "praesens_2pl_m": "تَسْتَغْرِقُونَ",
+        "praesens_3pl_m": "يَسْتَغْرِقُونَ",
+        "subjunktiv_2sg_f": "تَسْتَغْرِقِي",
+        "subjunktiv_2pl_m": "تَسْتَغْرِقُوا",
+        "subjunktiv_3pl_m": "يَسْتَغْرِقُوا",
+        "madi_1sg": "اِسْتَغْرَقْتُ",
+        "madi_2sg_m": "اِسْتَغْرَقْتَ",
+        "madi_2sg_f": "اِسْتَغْرَقْتِ",
+        "madi_3sg_f": "اِسْتَغْرَقَتْ",
+        "madi_1pl": "اِسْتَغْرَقْنَا",
+        "madi_2pl_m": "اِسْتَغْرَقْتُمْ",
+        "madi_3pl_m": "اِسْتَغْرَقُوا"
+      },
+      "frequenzRang": 2958,
+      "quelle": "wiktionary:en:استغرق",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚استغرق‘ (https://en.wiktionary.org/wiki/استغرق#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.nahr",
+      "lemma": "نَهْر",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "nahr",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "أَنْهَار",
+        "akkusativ_indef": "نَهْرًا"
+      },
+      "frequenzRang": 1681,
+      "quelle": "wiktionary:en:نهر",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚نهر‘ (https://en.wiktionary.org/wiki/نهر#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.dinasur",
+      "lemma": "دِينَاصُور",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "dīnāṣūr",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "دِينَاصُورَات",
+        "plural_2": "دَنَاصِير",
+        "akkusativ_indef": "دِينَاصُورًا"
+      },
+      "frequenzRang": 8620,
+      "quelle": "wiktionary:en:ديناصور",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ديناصور‘ (https://en.wiktionary.org/wiki/ديناصور#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.marid",
+      "lemma": "مَعْرِض",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "maʿriḍ",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "مَعَارِض",
+        "akkusativ_indef": "مَعْرِضًا"
+      },
+      "frequenzRang": 389,
+      "quelle": "wiktionary:en:معرض",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚معرض‘ (https://en.wiktionary.org/wiki/معرض#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.araba",
+      "lemma": "عَرَبَة",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "ʿaraba",
+        "genus": "f"
+      },
+      "formen": {
+        "plural": "عَرَبَات",
+        "stamm_vor_suffix": "عَرَبَت"
+      },
+      "frequenzRang": 3460,
+      "quelle": "wiktionary:en:عربة",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚عربة‘ (https://en.wiktionary.org/wiki/عربة#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.mawqif",
+      "lemma": "مَوْقِف",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "mawqif",
+        "genus": "m"
+      },
+      "formen": {
+        "plural": "مَوَاقِف",
+        "akkusativ_indef": "مَوْقِفًا"
+      },
+      "frequenzRang": 350,
+      "quelle": "wiktionary:en:موقف",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚موقف‘ (https://en.wiktionary.org/wiki/موقف#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.kharita",
+      "lemma": "خَرِيطَة",
+      "wortart": "nomen",
+      "merkmale": {
+        "umschrift": "ḫarīṭa",
+        "genus": "f"
+      },
+      "formen": {
+        "plural": "خَرَائِط",
+        "stamm_vor_suffix": "خَرِيطَت"
+      },
+      "frequenzRang": 1713,
+      "quelle": "wiktionary:en:خريطة",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚خريطة‘ (https://en.wiktionary.org/wiki/خريطة#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.hina",
+      "lemma": "حِينَ",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "umschrift": "ḥīna"
+      },
+      "frequenzRang": 896,
+      "quelle": "wiktionary:en:حين",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚حين‘ (https://en.wiktionary.org/wiki/حين#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.khilala",
+      "lemma": "خِلَالَ",
+      "wortart": "praeposition",
+      "merkmale": {
+        "umschrift": "ḫilāla"
+      },
+      "frequenzRang": 51,
+      "quelle": "wiktionary:en:خلال",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚خلال‘ (https://en.wiktionary.org/wiki/خلال#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "ar.a2.e01.s0001",
+      "text": "مِنْ فَضْلِكِ، أَيْنَ آلَةُ التَّذَاكِرِ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0002",
+      "text": "آلَةُ التَّذَاكِرِ هُنَاكَ، بِجَانِبِ الشُّبَّاكِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0003",
+      "text": "أُرِيدُ تَذْكِرَةً إِلَى فْرَانْكْفُورْتْ، مِنْ فَضْلِكِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0004",
+      "text": "هَلْ تُرِيدِينَ تَذْكِرَةَ ذَهَابٍ وَعَوْدَةٍ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0005",
+      "text": "نَعَمْ، ذَهَابٌ وَعَوْدَةٌ، مِنْ فَضْلِكِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0006",
+      "text": "لَا، ذَهَابٌ فَقَطْ. أَعُودُ بِالسَّيَّارَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0007",
+      "text": "كَمْ سِعْرُ تَذْكِرَةِ الذَّهَابِ وَالْعَوْدَةِ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0008",
+      "text": "سِعْرُ التَّذْكِرَةِ عِشْرُونَ يُورُو.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0009",
+      "text": "تَذْكِرَةُ الْأَطْفَالِ أَرْخَصُ مِنْ تَذْكِرَةِ الْكِبَارِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0010",
+      "text": "يَتَحَرَّكُ الْقِطَارُ مِنَ الرَّصِيفِ الثَّانِي.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0011",
+      "text": "هَلْ هٰذَا هُوَ الرَّصِيفُ الْخَامِسُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0012",
+      "text": "لَا، هٰذَا الرَّصِيفُ الرَّابِعُ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0013",
+      "text": "مَتَى مُغَادَرَةُ الْقِطَارِ، مِنْ فَضْلِكَ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0014",
+      "text": "مُغَادَرَةُ الْقِطَارِ فِي السَّاعَةِ التَّاسِعَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0015",
+      "text": "فِي الْمَحَطَّةِ مُسَافِرُونَ كَثِيرُونَ الْيَوْمَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0016",
+      "text": "يَرْكَبُ الْمُسَافِرُ الْقِطَارَ فِي فِيتْسْلَارْ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0017",
+      "text": "الْعَرَبَةُ الْأُولَى مُزْدَحِمَةٌ جِدًّا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0018",
+      "text": "الْعَرَبَةُ الْأَخِيرَةُ فَارِغَةٌ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0019",
+      "text": "هَلْ هٰذَا الْمَقْعَدُ فَارِغٌ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0020",
+      "text": "هُنَاكَ إِعْلَانٌ فِي الْمَحَطَّةِ الْآنَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0021",
+      "text": "هَلْ تَسْمَعُ الْإِعْلَانَ يَا خَالِدُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0022",
+      "text": "نَعَمْ، أَسْمَعُهُ جَيِّدًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0023",
+      "text": "هٰذَا الْخَطُّ يَذْهَبُ مُبَاشَرَةً إِلَى الْمَطَارِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0024",
+      "text": "أَيْنَ مَوْقِفُ الْحَافِلَةِ، مِنْ فَضْلِكَ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0025",
+      "text": "مَوْقِفُ الْحَافِلَةِ قَرِيبٌ مِنَ الْمَحَطَّةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0026",
+      "text": "الْقِطَارُ وَسِيلَةُ نَقْلٍ سَرِيعَةٌ وَمُرِيحَةٌ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0027",
+      "text": "مَا وَسَائِلُ النَّقْلِ فِي مَدِينَتِكَ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0028",
+      "text": "فِي مَدِينَتِي وَسَائِلُ نَقْلٍ كَثِيرَةٌ: حَافِلَاتٌ وَقِطَارَاتٌ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0029",
+      "text": "كَمِ الْمَسَافَةُ مِنْ فِيتْسْلَارْ إِلَى فْرَانْكْفُورْتْ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0030",
+      "text": "الْمَسَافَةُ حَوَالَيْ سِتِّينَ كِيلُو مِتْرًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0031",
+      "text": "فِي أَيِّ اتِّجَاهٍ يَذْهَبُ هٰذَا الْقِطَارُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0032",
+      "text": "يَذْهَبُ الْقِطَارُ فِي اتِّجَاهِ الْجَنُوبِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0033",
+      "text": "تَتَحَرَّكُ الْحَافِلَةُ نَحْوَ الشَّمَالِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0034",
+      "text": "اُنْظُرْ إِلَى الْخَرِيطَةِ يَا سَمِيرُ!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0035",
+      "text": "اِنْزِلِي هُنَا يَا أَمَلُ، هٰذِهِ مَحَطَّتُنَا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0036",
+      "text": "أَيْنَ تَذْكِرَتِي؟ هَلْ هِيَ مَعَكِ يَا أُمِّي؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0037",
+      "text": "تَذْكِرَتُكَ فِي الْحَقِيبَةِ يَا يَزَنُ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0038",
+      "text": "مِنْ فَضْلِكِ، مِنْ أَيِّ رَصِيفٍ يَتَحَرَّكُ الْقِطَارُ إِلَى فْرَانْكْفُورْتْ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0039",
+      "text": "مِنَ الرَّصِيفِ الثَّانِي، فِي السَّاعَةِ التَّاسِعَةِ وَالثُّلُثِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0040",
+      "text": "هَلْ يَذْهَبُ الْقِطَارُ إِلَى هُنَاكَ مُبَاشَرَةً؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0041",
+      "text": "نَعَمْ، وَتَسْتَغْرِقُ الرِّحْلَةُ حَوَالَيْ سَاعَةٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0042",
+      "text": "وَأَيْنَ الرَّصِيفُ الثَّانِي؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0043",
+      "text": "الرَّصِيفُ الثَّانِي بِجَانِبِ آلَةِ التَّذَاكِرِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0044",
+      "text": "شُكْرًا لَكِ!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0045",
+      "text": "عَفْوًا. رِحْلَةً سَعِيدَةً!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0046",
+      "text": "الْمَطَارُ فِي اتِّجَاهِ الشَّمَالِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0047",
+      "text": "اِشْتَرَى سَمِيرٌ تَذْكِرَةً مِنَ الْآلَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0048",
+      "text": "السَّاعَةُ الْآنَ الثَّامِنَةُ وَالثُّلُثُ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0049",
+      "text": "السَّاعَةُ الْآنَ التَّاسِعَةُ إِلَّا ثُلُثًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0050",
+      "text": "يَتَحَرَّكُ قِطَارُنَا فِي السَّاعَةِ الْعَاشِرَةِ وَالثُّلُثِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0051",
+      "text": "يَصِلُ الْقِطَارُ فِي السَّاعَةِ الْحَادِيَةَ عَشْرَةَ إِلَّا رُبْعًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0052",
+      "text": "فِي أَيِّ سَاعَةٍ مُغَادَرَةُ الْقِطَارِ إِلَى الْمَطَارِ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0053",
+      "text": "فِي السَّاعَةِ الْخَامِسَةِ إِلَّا ثُلُثًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0054",
+      "text": "تَأْخِيرُ الْقِطَارِ عَشْرُ دَقَائِقَ فَقَطْ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0055",
+      "text": "هُنَاكَ تَأْخِيرٌ الْيَوْمَ بِسَبَبِ الثَّلْجِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0056",
+      "text": "يَتَأَخَّرُ الْقِطَارُ رُبْعَ سَاعَةٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0057",
+      "text": "هٰذَا الْقِطَارُ بَطِيءٌ، يَتَوَقَّفُ فِي كُلِّ مَحَطَّةٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0058",
+      "text": "الْقِطَارُ السَّرِيعُ لَا يَتَوَقَّفُ فِي قَرْيَتِنَا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0059",
+      "text": "يَتَوَقَّفُ الْقِطَارُ هُنَا دَقِيقَةً وَاحِدَةً.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0060",
+      "text": "تَسْتَغْرِقُ الرِّحْلَةُ سَاعَةً وَعَشْرَ دَقَائِقَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0061",
+      "text": "كَمْ دَقِيقَةً تَسْتَغْرِقُ الرِّحْلَةُ إِلَى الْمَطَارِ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0062",
+      "text": "تَسْتَغْرِقُ الرِّحْلَةُ ثَلَاثِينَ دَقِيقَةً.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0063",
+      "text": "خِلَالَ الرِّحْلَةِ أَقْرَأُ كِتَابًا أَوْ أَنْظُرُ مِنَ النَّافِذَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0064",
+      "text": "صَبَاحًا يَكُونُ الْقِطَارُ مُزْدَحِمًا جِدًّا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0065",
+      "text": "مَسَاءً تَكُونُ الْعَرَبَاتُ فَارِغَةً.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0066",
+      "text": "بَعْدَ الْمَدْرَسَةِ أَعُودُ إِلَى الْبَيْتِ مُبَاشَرَةً.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0067",
+      "text": "الْقِطَارُ إِلَى فْرَانْكْفُورْتْ يَتَأَخَّرُ عِشْرِينَ دَقِيقَةً.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0068",
+      "text": "هَلْ سَمِعْتَ الْإِعْلَانَ يَا هِشَامُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0069",
+      "text": "نَعَمْ، سَمِعْتُهُ. الْقِطَارُ يَتَأَخَّرُ قَلِيلًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0070",
+      "text": "اِرْكَبْ بِسُرْعَةٍ يَا فَارِسُ! الْقِطَارُ يَتَحَرَّكُ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0071",
+      "text": "فِي أَيِّ مَحَطَّةٍ نَنْزِلُ يَا أُمِّي؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0072",
+      "text": "نَنْزِلُ فِي الْمَحَطَّةِ الثَّالِثَةِ بَعْدَ الْجِسْرِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0073",
+      "text": "نَصِلُ فِي الْوَقْتِ، فَلَا تَأْخِيرَ الْيَوْمَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0074",
+      "text": "كَمِ السَّاعَةُ الْآنَ يَا كَمَالُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0075",
+      "text": "وَمَتَى يَتَحَرَّكُ قِطَارُنَا؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0076",
+      "text": "فِي السَّاعَةِ الثَّامِنَةِ وَالنِّصْفِ، لٰكِنْ هُنَاكَ تَأْخِيرٌ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0077",
+      "text": "كَمْ دَقِيقَةً تَأَخَّرَ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0078",
+      "text": "الرِّحْلَةُ طَوِيلَةٌ، أَرْبَعُ سَاعَاتٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0079",
+      "text": "ذَهَبْتُ أَمْسِ إِلَى الْمَتْحَفِ بِالْقِطَارِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0080",
+      "text": "رَكِبْتُ الْقِطَارَ فِي السَّاعَةِ الثَّامِنَةِ صَبَاحًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0081",
+      "text": "نَزَلْتُ مِنَ الْقِطَارِ فِي الْمَحَطَّةِ الرَّئِيسِيَّةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0082",
+      "text": "خَرَجْتُ مِنَ الْمَحَطَّةِ وَذَهَبْتُ إِلَى الْمَتْحَفِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0083",
+      "text": "عُدْتُ إِلَى الْبَيْتِ مَسَاءً، وَكُنْتُ مُتْعَبًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0084",
+      "text": "مَتَى عُدْتَ إِلَى الْبَيْتِ يَا يَزَنُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0085",
+      "text": "عُدْتُ فِي السَّاعَةِ السَّابِعَةِ وَالثُّلُثِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0086",
+      "text": "وَأَنْتِ يَا لَيْلَى، إِلَى أَيْنَ ذَهَبْتِ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0087",
+      "text": "ذَهَبْتُ إِلَى مَعْرِضِ صُوَرٍ مَعَ سَمِيرَةَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0088",
+      "text": "هَلْ رَكِبْتِ الْحَافِلَةَ يَا أَمَلُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0089",
+      "text": "لَا، رَكِبْتُ دَرَّاجَتِي إِلَى الْمَحَطَّةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0090",
+      "text": "نَسِيتُ التَّذْكِرَةَ فِي الْبَيْتِ!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0091",
+      "text": "نَسِيَتْ لَيْلَى حَقِيبَتَهَا فِي الْقِطَارِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0092",
+      "text": "هَلْ نَسِيتَ شَيْئًا فِي الْقِطَارِ يَا خَالِدُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0093",
+      "text": "نَعَمْ، نَسِيتُ الْخَرِيطَةَ عَلَى الْمَقْعَدِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0094",
+      "text": "سَمِعَتْ أُمِّي الْإِعْلَانَ فِي الْمَحَطَّةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0095",
+      "text": "صَوَّرْتُ النَّهْرَ مِنَ الْجِسْرِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0096",
+      "text": "حَكَيْتُ لِجَدَّتِي عَنِ الرِّحْلَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0097",
+      "text": "مَاذَا حَكَتْ لَكِ سَمِيرَةُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0098",
+      "text": "حَكَتْ لِي عَنْ زِيَارَتِهَا لِلْمَتْحَفِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0099",
+      "text": "تَأَخَّرَ الْقِطَارُ أَمْسِ نِصْفَ سَاعَةٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0100",
+      "text": "تَوَقَّفَ الْقِطَارُ عَلَى الْجِسْرِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0101",
+      "text": "أَخِيرًا تَحَرَّكَ الْقِطَارُ!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0102",
+      "text": "وَصَلْتُ إِلَى الْبَيْتِ أَخِيرًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0103",
+      "text": "لَمَّا وَصَلْتُ إِلَى الْمَحَطَّةِ، تَحَرَّكَ الْقِطَارُ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0104",
+      "text": "لَمَّا رَكِبْتُ الْقِطَارَ، وَجَدْتُ مَقْعَدًا بِجَانِبِ النَّافِذَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0105",
+      "text": "حِينَ خَرَجْتُ مِنَ الْبَيْتِ، كَانَتِ السَّاعَةُ السَّابِعَةَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0106",
+      "text": "اِسْتَغْرَقَتِ الرِّحْلَةُ سَاعَةً كَامِلَةً.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0107",
+      "text": "فِي الْأُسْبُوعِ الْمَاضِي زَارَ عَمِّي مَدِينَةَ عَمَّانَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0108",
+      "text": "فِي الْعَامِ الْمَاضِي رَكِبْتُ الطَّائِرَةَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0109",
+      "text": "نَقَلَ الْقِطَارُ الْمُسَافِرِينَ إِلَى الْمَدِينَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0110",
+      "text": "أَيْنَ كُنْتَ أَمْسِ يَا هِشَامُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0111",
+      "text": "كُنْتُ فِي مَعْرِضِ سَيَّارَاتٍ مَعَ أَبِي.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0112",
+      "text": "هَلْ خَرَجْتِ مِنَ الْبَيْتِ الْيَوْمَ يَا أَمَلُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0113",
+      "text": "مَاذَا فَعَلْتَ يَوْمَ السَّبْتِ يَا فَارِسُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0114",
+      "text": "رَكِبْتُ الْقِطَارَ وَذَهَبْتُ إِلَى الْمَعْرِضِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0115",
+      "text": "أَيْنَ كُنْتَ يَوْمَ السَّبْتِ يَا يَزَنُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0116",
+      "text": "ذَهَبْتُ إِلَى فْرَانْكْفُورْتْ مَعَ إِمْرَهْ وَيَانْ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0117",
+      "text": "وَكَيْفَ ذَهَبْتَ إِلَى هُنَاكَ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0118",
+      "text": "رَكِبْتُ الْقِطَارَ مِنْ مَحَطَّةِ فِيتْسْلَارْ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0119",
+      "text": "كَيْفَ كَانَتِ الرِّحْلَةُ يَا يَزَنُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0120",
+      "text": "كَانَتِ الرِّحْلَةُ مُمْتِعَةً جِدًّا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0121",
+      "text": "وَكَيْفَ كَانَ الْمَتْحَفُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0122",
+      "text": "كَانَ الْمَتْحَفُ ضَخْمًا وَمُدْهِشًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0123",
+      "text": "كَانَ الْجَوُّ جَمِيلًا يَوْمَ السَّبْتِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0124",
+      "text": "كَانَ الْجَوُّ بَارِدًا فِي الْمَحَطَّةِ أَمْسِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0125",
+      "text": "كَانَتِ الْعَرَبَةُ فَارِغَةً فِي الْمَسَاءِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0126",
+      "text": "كُنْتُ فَرْحَانَ جِدًّا فِي الْمَتْحَفِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0127",
+      "text": "كُنْتُ مُتْعَبًا بَعْدَ الرِّحْلَةِ الطَّوِيلَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0128",
+      "text": "هَلْ كُنْتِ سَعِيدَةً فِي الرِّحْلَةِ يَا لَيْلَى؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0129",
+      "text": "نَعَمْ، كُنْتُ سَعِيدَةً جِدًّا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0130",
+      "text": "كُنْتَ فِي الْمَحَطَّةِ مُبَكِّرًا يَا فَارِسُ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0131",
+      "text": "كَانَ الدِّينَاصُورُ ضَخْمًا جِدًّا!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0132",
+      "text": "كَانَ الْمَنْظَرُ مِنَ النَّافِذَةِ جَمِيلًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0133",
+      "text": "أَعْجَبَنِي الْمَنْظَرُ كَثِيرًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0134",
+      "text": "هَلْ أَعْجَبَكَ الْمَتْحَفُ يَا إِمْرَهْ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0135",
+      "text": "نَعَمْ، أَعْجَبَنِي كَثِيرًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0136",
+      "text": "مَاذَا أَعْجَبَكِ فِي الْمَعْرِضِ يَا سَمِيرَةُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0137",
+      "text": "أَعْجَبَتْنِي الصُّوَرُ الْقَدِيمَةُ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0138",
+      "text": "تَمَتَّعْتُ بِالْمَنْظَرِ مِنَ الْقِطَارِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0139",
+      "text": "تَمَتَّعَتْ أُمِّي بِالْجَوْلَةِ فِي الْمَدِينَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0140",
+      "text": "كَانَ الشُّبَّاكُ مُغْلَقًا، فَاشْتَرَى أَبِي التَّذْكِرَةَ مِنَ الْآلَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0141",
+      "text": "كَانَ جَدُّ إِمْرَهْ سَائِقَ قِطَارٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0142",
+      "text": "كَانَتْ جَدَّتِي مُعَلِّمَةً فِي قَرْيَةٍ صَغِيرَةٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0143",
+      "text": "حِينَ كُنْتُ طِفْلًا، كُنْتُ أُحِبُّ الْقِطَارَاتِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0144",
+      "text": "أَيْنَ كُنْتِ يَا أَمَلُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0145",
+      "text": "كُنْتُ فِي مَوْقِفِ الْحَافِلَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0146",
+      "text": "هَلْ كَانَ الْقِطَارُ مُزْدَحِمًا يَا خَالِدُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0147",
+      "text": "لَا، كَانَ فَارِغًا تَمَامًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0148",
+      "text": "كَانَ الْيَوْمُ مُمْتِعًا، لٰكِنْ كُنْتُ مُتْعَبًا فِي الْمَسَاءِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0149",
+      "text": "كَانَتْ أُخْتِي فَرْحَى بِالرِّحْلَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0150",
+      "text": "كَيْفَ كَانَ الْجَوُّ فِي الرِّحْلَةِ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0151",
+      "text": "زَارَ يَزَنُ مَتْحَفَ التَّارِيخِ الطَّبِيعِيِّ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0152",
+      "text": "فِي الْمَتْحَفِ مَعْرِضٌ عَنِ الدِّينَاصُورَاتِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0153",
+      "text": "الدِّينَاصُورَاتُ حَيَوَانَاتٌ قَدِيمَةٌ جِدًّا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0154",
+      "text": "فِي الْمَتْحَفِ زُوَّارٌ كَثِيرُونَ الْيَوْمَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0155",
+      "text": "يَشْتَرِي الزَّائِرُ تَذْكِرَةً عِنْدَ الشُّبَّاكِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0156",
+      "text": "الزَّائِرُ شَخْصٌ يَزُورُ مَكَانًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0157",
+      "text": "الْمُسَافِرُ شَخْصٌ فِي رِحْلَةٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0158",
+      "text": "الرَّاكِبُ يَرْكَبُ الْحَافِلَةَ أَوِ الْقِطَارَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0159",
+      "text": "الْمَتْحَفُ مَكَانٌ لِلْأَشْيَاءِ الْقَدِيمَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0160",
+      "text": "قَامَ الْأَوْلَادُ بِجَوْلَةٍ فِي الْمَتْحَفِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0161",
+      "text": "يَمُرُّ النَّهْرُ عَبْرَ الْمَدِينَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0162",
+      "text": "عَلَى النَّهْرِ جُسُورٌ كَثِيرَةٌ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0163",
+      "text": "هٰذَا النَّهْرُ طَوِيلٌ جِدًّا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0164",
+      "text": "أَخَذْتُ خَرِيطَةً لِلْمَتْحَفِ عِنْدَ الْبَابِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0165",
+      "text": "نَذْهَبُ مِنْ هُنَا نَحْوَ النَّهْرِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0166",
+      "text": "هَلْ هٰذَا هُوَ الِاتِّجَاهُ الصَّحِيحُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0167",
+      "text": "لَا، الْمَتْحَفُ فِي الِاتِّجَاهِ الْآخَرِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0168",
+      "text": "هٰذَا الْعَصِيرُ طَبِيعِيٌّ وَلَذِيذٌ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0169",
+      "text": "كَانَ الْمَعْرِضُ مُمْتِعًا، وَكَانَ الدِّينَاصُورُ مُدْهِشًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0170",
+      "text": "الْفِيلُ حَيَوَانٌ ضَخْمٌ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0171",
+      "text": "مَا أَفْضَلُ وَسِيلَةٍ إِلَى الْمَتْحَفِ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0172",
+      "text": "أَفْضَلُ وَسِيلَةٍ هِيَ الْقِطَارُ، ثُمَّ الْحَافِلَةُ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0173",
+      "text": "زِيَارَةُ الْمَتْحَفِ مُمْتِعَةٌ لِلْكِبَارِ وَلِلْأَطْفَالِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0174",
+      "text": "لَوْحَةُ الْمُغَادَرَةِ فِي مَحَطَّةِ فِيتْسْلَارْ",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0175",
+      "text": "الْقِطَارُ إِلَى فْرَانْكْفُورْتْ: السَّاعَةُ التَّاسِعَةُ وَالثُّلُثُ، الرَّصِيفُ الثَّانِي.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0176",
+      "text": "التَّأْخِيرُ: عَشْرُ دَقَائِقَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0177",
+      "text": "الْقِطَارُ إِلَى الْمَطَارِ: السَّاعَةُ الْعَاشِرَةُ إِلَّا ثُلُثًا، الرَّصِيفُ الرَّابِعُ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0178",
+      "text": "الْحَافِلَةُ إِلَى وَسَطِ الْمَدِينَةِ: كُلَّ عِشْرِينَ دَقِيقَةً، الْمَوْقِفُ الثَّالِثُ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0179",
+      "text": "يَتَحَرَّكُ الْقِطَارُ إِلَى فْرَانْكْفُورْتْ مِنَ الرَّصِيفِ الثَّانِي.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0180",
+      "text": "يَتَأَخَّرُ الْقِطَارُ إِلَى الْمَطَارِ عَشْرَ دَقَائِقَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0181",
+      "text": "سِعْرُ التَّذْكِرَةِ إِلَى الْمَطَارِ عَشَرَةُ يُورُو.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0182",
+      "text": "مَتَى يَتَحَرَّكُ الْقِطَارُ إِلَى الْمَطَارِ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0183",
+      "text": "فِي السَّاعَةِ الْعَاشِرَةِ إِلَّا ثُلُثًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0184",
+      "text": "فِي السَّاعَةِ التَّاسِعَةِ وَالثُّلُثِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0185",
+      "text": "رِسَالَةٌ مِنْ يَزَنَ إِلَى أُمِّهِ",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0186",
+      "text": "مَرْحَبًا يَا أُمِّي! وَصَلْتُ إِلَى فْرَانْكْفُورْتْ فِي السَّاعَةِ الْعَاشِرَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0187",
+      "text": "تَأَخَّرَ الْقِطَارُ قَلِيلًا، لٰكِنْ كَانَتِ الرِّحْلَةُ مُمْتِعَةً.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0188",
+      "text": "الْآنَ أَنَا فِي الْمَتْحَفِ مَعَ إِمْرَهْ وَيَانْ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0189",
+      "text": "رَأَيْتُ دِينَاصُورًا ضَخْمًا، وَصَوَّرْتُهُ لَكِ!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0190",
+      "text": "أَعُودُ بِالْقِطَارِ فِي السَّاعَةِ الْخَامِسَةِ وَالثُّلُثِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0191",
+      "text": "يَزَنُ فِي الْمَتْحَفِ الْآنَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0192",
+      "text": "وَصَلَ الْقِطَارُ فِي الْوَقْتِ تَمَامًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0193",
+      "text": "اِشْتَرَى يَزَنُ خَرِيطَةً لِلْمَتْحَفِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0194",
+      "text": "مَتَى يَعُودُ يَزَنُ إِلَى فِيتْسْلَارْ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0195",
+      "text": "يَعُودُ فِي السَّاعَةِ الْخَامِسَةِ وَالثُّلُثِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0196",
+      "text": "يَعُودُ فِي السَّاعَةِ الْعَاشِرَةِ صَبَاحًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0197",
+      "text": "يَوْمَ السَّبْتِ ذَهَبْتُ مَعَ صَدِيقِي إِلَى الْمَتْحَفِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0198",
+      "text": "كَانَتِ الرِّحْلَةُ مُمْتِعَةً، وَأَعْجَبَنِي الْمَعْرِضُ كَثِيرًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0199",
+      "text": "تَذْكِرَةً إِلَى الْمَطَارِ، مِنْ فَضْلِكَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0200",
+      "text": "مِنْ أَيِّ رَصِيفٍ يَتَحَرَّكُ الْقِطَارُ، مِنْ فَضْلِكَ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0201",
+      "text": "اُكْتُبْ رِسَالَةً قَصِيرَةً إِلَى عَائِلَتِكَ عَنْ رِحْلَةٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0202",
+      "text": "مَرْحَبًا يَا أُمِّي وَيَا أَبِي! رَكِبْتُ الْقِطَارَ صَبَاحًا، وَوَصَلْتُ فِي السَّاعَةِ التَّاسِعَةِ. ذَهَبْتُ إِلَى الْمَتْحَفِ، وَرَأَيْتُ دِينَاصُورًا ضَخْمًا. كَانَ الْجَوُّ جَمِيلًا. أَعُودُ مَسَاءً بِالْحَافِلَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0203",
+      "text": "رِحْلَةٌ إِلَى فْرَانْكْفُورْتْ",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0204",
+      "text": "فِي يَوْمِ السَّبْتِ ذَهَبَ يَزَنُ إِلَى فْرَانْكْفُورْتْ مَعَ إِمْرَهْ وَيَانْ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0205",
+      "text": "لِأَوَّلِ مَرَّةٍ رَكِبَ يَزَنُ الْقِطَارَ مِنْ غَيْرِ أَبِيهِ وَأُمِّهِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0206",
+      "text": "صَبَاحًا ذَهَبَتْ أُمُّ يَزَنَ مَعَ الْأَوْلَادِ إِلَى الْمَحَطَّةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0207",
+      "text": "هَلِ التَّذَاكِرُ مَعَكَ يَا يَزَنُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0208",
+      "text": "نَعَمْ يَا أُمِّي، التَّذَاكِرُ فِي حَقِيبَتِي.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0209",
+      "text": "اُكْتُبْ لِي رِسَالَةً حِينَ تَصِلُ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0210",
+      "text": "تَحَرَّكَ الْقِطَارُ مِنَ الرَّصِيفِ الْأَوَّلِ فِي السَّاعَةِ التَّاسِعَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0211",
+      "text": "كَانَ الْقِطَارُ مُزْدَحِمًا، لٰكِنْ وَجَدَ الْأَوْلَادُ مَقَاعِدَ فَارِغَةً.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0212",
+      "text": "خِلَالَ الرِّحْلَةِ نَظَرَ يَزَنُ مِنَ النَّافِذَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0213",
+      "text": "اُنْظُرْ يَا يَزَنُ! هٰذَا نَهْرٌ كَبِيرٌ!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0214",
+      "text": "نَعَمْ، الْمَنْظَرُ جَمِيلٌ جِدًّا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0215",
+      "text": "بَعْدَ نِصْفِ سَاعَةٍ تَوَقَّفَ الْقِطَارُ عَلَى جِسْرٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0216",
+      "text": "سَمِعَ الْأَوْلَادُ إِعْلَانًا عَنْ تَأْخِيرٍ قَصِيرٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0217",
+      "text": "هَلْ يَتَأَخَّرُ الْقِطَارُ كَثِيرًا؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0218",
+      "text": "لَا مُشْكِلَةَ، الْمَتْحَفُ مَفْتُوحٌ إِلَى الْمَسَاءِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0219",
+      "text": "أَخِيرًا تَحَرَّكَ الْقِطَارُ، وَوَصَلَ إِلَى فْرَانْكْفُورْتْ فِي السَّاعَةِ الْعَاشِرَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0220",
+      "text": "نَزَلَ الْأَوْلَادُ مِنَ الْقِطَارِ، وَكَتَبَ يَزَنُ رِسَالَةً لِأُمِّهِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0221",
+      "text": "ثُمَّ رَكِبَ الْأَوْلَادُ الْحَافِلَةَ إِلَى الْمَتْحَفِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0222",
+      "text": "فِي مَتْحَفِ التَّارِيخِ الطَّبِيعِيِّ رَأَى يَزَنُ دِينَاصُورًا ضَخْمًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0223",
+      "text": "الدِّينَاصُورُ أَكْبَرُ مِنَ الْحَافِلَةِ!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0224",
+      "text": "صَوَّرَ إِمْرَهْ الدِّينَاصُورَ بِهَاتِفِهِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0225",
+      "text": "ثُمَّ قَامَ الْأَوْلَادُ بِجَوْلَةٍ فِي الْمَعْرِضِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0226",
+      "text": "فِي الْمَسَاءِ عَادَ يَزَنُ إِلَى الْبَيْتِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0227",
+      "text": "حَكَى يَزَنُ لِعَائِلَتِهِ عَنِ الرِّحْلَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0228",
+      "text": "كَانَتْ رِحْلَةً مُمْتِعَةً جِدًّا!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0229",
+      "text": "سَأَلَتْهُ لَيْلَى: «وَهَلْ تَأَخَّرَ الْقِطَارُ؟»",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0230",
+      "text": "نَعَمْ، تَأَخَّرَ قَلِيلًا، لٰكِنْ كَانَ الْمَنْظَرُ مِنَ النَّافِذَةِ جَمِيلًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0231",
+      "text": "كَانَ يَزَنُ مُتْعَبًا، لٰكِنْ كَانَ فَرْحَانَ جِدًّا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0232",
+      "text": "مَعَ مَنْ رَكِبَ يَزَنُ الْقِطَارَ إِلَى فْرَانْكْفُورْتْ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0233",
+      "text": "رَكِبَ الْقِطَارَ مَعَ إِمْرَهْ وَيَانْ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0234",
+      "text": "رَكِبَ الْقِطَارَ مَعَ أُمِّهِ وَأُخْتِهِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0235",
+      "text": "كَيْفَ كَانَ الْقِطَارُ فِي الصَّبَاحِ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0236",
+      "text": "كَانَ الْقِطَارُ مُزْدَحِمًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0237",
+      "text": "كَانَ الْقِطَارُ بَارِدًا جِدًّا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0238",
+      "text": "مَاذَا سَمِعَ يَزَنُ فِي الْقِطَارِ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0239",
+      "text": "سَمِعَ إِعْلَانًا عَنْ تَأْخِيرٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0240",
+      "text": "سَمِعَ صَوْتَ قِطَّةٍ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0241",
+      "text": "مَاذَا رَأَى يَزَنُ فِي الْمَتْحَفِ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0242",
+      "text": "رَأَى دِينَاصُورًا ضَخْمًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0243",
+      "text": "رَأَى قِطَّةً صَغِيرَةً.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0244",
+      "text": "مَتَى عَادَ يَزَنُ إِلَى الْبَيْتِ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0245",
+      "text": "عَادَ فِي الْمَسَاءِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0246",
+      "text": "عَادَ فِي الصَّبَاحِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0247",
+      "text": "اِشْتَرَى خَالِدٌ تَذْكِرَةً، ثُمَّ ذَهَبَ إِلَى الرَّصِيفِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0248",
+      "text": "سَمِعْتُ فِي الْإِعْلَانِ: الْمُغَادَرَةُ مِنَ الرَّصِيفِ الثَّالِثِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0249",
+      "text": "هَلْ كُنْتِ فِي الْمَتْحَفِ أَمْسِ يَا سَمِيرَةُ؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0250",
+      "text": "نَعَمْ، وَكَانَ الْمَعْرِضُ مُدْهِشًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0251",
+      "text": "نَسِيَ كَمَالٌ هَاتِفَهُ فِي الْحَافِلَةِ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0252",
+      "text": "عَادَ فَارِسٌ مِنَ الرِّحْلَةِ فَرْحَانَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0253",
+      "text": "حِينَ وَصَلَ الْقِطَارُ، كَانَتِ السَّاعَةُ الْعَاشِرَةَ وَالثُّلُثَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0254",
+      "text": "وَصَلَتِ الْحَافِلَةُ أَخِيرًا!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0255",
+      "text": "هَلْ أَعْجَبَكَ الْقِطَارُ الْجَدِيدُ يَا أَبِي؟",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0256",
+      "text": "نَعَمْ، كَانَ مُرِيحًا وَسَرِيعًا.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0257",
+      "text": "حَكَى أَبِي عَنْ زِيَارَتِهِ لِعَمَّانَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0258",
+      "text": "اِسْتَغْرَقَ التَّأْخِيرُ عِشْرِينَ دَقِيقَةً.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.a2.e01.s0259",
+      "text": "خِلَالَ الْجَوْلَةِ صَوَّرَتْ لَيْلَى النَّهْرَ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "ar.a2.e01.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann am Bahnhof eine Fahrkarte kaufen und nach Gleis und Abfahrt fragen.",
+        "tr": "Garda bilet alabilir, peronu ve kalkış saatini sorabilirim.",
+        "ar": "أستطيع أن أشتري تذكرة في المحطة وأن أسأل عن الرصيف ووقت المغادرة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "ar.a2.e01.l01.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.tadhkira",
+          "ablenker": ["ar.a2.e01.rasif", "ar.a2.e01.shubbak"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "ar.a2.e01.rasif",
+          "ablenker": ["ar.a2.e01.tadhkira", "ar.a2.e01.mawqif"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a04",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.tadhkira", "ar.a2.e01.rasif", "ar.a2.e01.shubbak", "ar.a2.e01.ala", "ar.a2.e01.musafir"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.mughadara",
+          "ablenker": ["ar.a2.e01.ittijah", "ar.a2.e01.masafa"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a06",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.araba", "ar.a2.e01.ilan", "ar.a2.e01.khatt", "ar.a2.e01.wasila", "ar.a2.e01.kharita"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a07",
+          "typ": "minimalpaare",
+          "ziel": "ar.a2.e01.araba",
+          "ablenker": ["ar.a1.e01.arabi"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0003"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0004"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0005",
+          "ablenker": ["ar.a2.e01.s0017", "ar.a2.e01.s0034", "ar.a2.e01.s0047"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a09",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0018",
+          "wort": 2,
+          "ablenker": ["فَارِغٌ", "فَارِغِينَ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0026",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0025",
+          "nach": "ziel",
+          "ablenker": ["الْمَطَارِ", "الشُّبَّاكِ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0007"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0008",
+          "ablenker": ["ar.a2.e01.s0015", "ar.a2.e01.s0023", "ar.a2.e01.s0011"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a13",
+          "typ": "satzbau",
+          "ziel": "ar.a2.e01.s0010",
+          "alternativen": ["الْقِطَارُ يَتَحَرَّكُ مِنَ الرَّصِيفِ الثَّانِي.", "مِنَ الرَّصِيفِ الثَّانِي يَتَحَرَّكُ الْقِطَارُ."]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "ar.a2.e01.s0019",
+          "ablenker": ["ar.a2.e01.s0020", "ar.a2.e01.s0033"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0038"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0039"
+            },
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0040"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0041"
+            },
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0042"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0043"
+            },
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0044"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0045",
+          "ablenker": ["ar.a2.e01.s0012", "ar.a2.e01.s0006"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l01.a16",
+          "typ": "sprechen",
+          "satz": "ar.a2.e01.s0199"
+        }
+      ]
+    },
+    {
+      "schluessel": "ar.a2.e01.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Abfahrtszeiten mit Drittel- und Viertelstunden verstehen und über Verspätungen sprechen.",
+        "tr": "Yirmi geçe, yirmi var ve çeyrek gibi kalkış saatlerini anlayabilir, gecikmelerden söz edebilirim.",
+        "ar": "أستطيع أن أفهم أوقات المغادرة مع الثلث والربع وأن أتكلم عن التأخير."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "ar.a2.e01.l02.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.thuluth",
+          "ablenker": ["ar.a1.e09.rub", "ar.a1.e09.nisf"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "ar.a2.e01.takhir",
+          "ablenker": ["ar.a2.e01.ilan", "ar.a2.e01.araba"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a04",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.takhir", "ar.a2.e01.thuluth", "ar.a2.e01.sabahan", "ar.a2.e01.mubasharatan", "ar.a2.e01.khilala"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.taakhkhara",
+          "ablenker": ["ar.a2.e01.tawaqqafa", "ar.a2.e01.taharraka"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a06",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.istaghraqa", "ar.a2.e01.samia", "ar.a2.e01.bati", "ar.a2.e01.farigh", "ar.a2.e01.mazdahim"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "ar.a2.e01.s0048",
+          "ablenker": ["ar.a2.e01.s0049", "ar.a2.e01.s0053"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a08",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0049",
+          "wort": 2,
+          "ablenker": ["التِّسْعَةُ", "تِسْعَةٌ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a09",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0050",
+          "wort": 5,
+          "ablenker": ["وَالثَّالِثِ", "وَالثَّلَاثِ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0060",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0056",
+          "nach": "ziel",
+          "alternativen": ["الْقِطَارُ يَتَأَخَّرُ رُبْعَ سَاعَةٍ."],
+          "ablenker": ["يَتَحَرَّكُ", "نِصْفَ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0074"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0048"
+            },
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0075"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0076"
+            },
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0077"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0054",
+          "ablenker": ["ar.a2.e01.s0078", "ar.a2.e01.s0062", "ar.a2.e01.s0059"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0061"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0062",
+          "ablenker": ["ar.a2.e01.s0064", "ar.a2.e01.s0070"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a14",
+          "typ": "satzbau",
+          "ziel": "ar.a2.e01.s0054"
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "ar.a2.e01.s0072"
+        },
+        {
+          "schluessel": "ar.a2.e01.l02.a16",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "ar.a2.e01.s0058",
+          "ablenker": ["ar.a2.e01.s0057", "ar.a2.e01.s0065"]
+        }
+      ]
+    },
+    {
+      "schluessel": "ar.a2.e01.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann erzählen, was ich gestern gemacht habe, und andere danach fragen.",
+        "tr": "Dün ne yaptığımı anlatabilir ve başkalarına sorabilirim.",
+        "ar": "أستطيع أن أحكي ماذا فعلت أمس وأن أسأل الآخرين عن ذلك."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "ar.a2.e01.l03.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.rakiba",
+          "ablenker": ["ar.a2.e01.nazala", "ar.a2.e01.kharaja"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "ar.a2.e01.ada",
+          "ablenker": ["ar.a2.e01.nasiya", "ar.a2.e01.samia"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a04",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.rakiba", "ar.a2.e01.nazala", "ar.a2.e01.kharaja", "ar.a2.e01.ada", "ar.a2.e01.nasiya"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a05",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a06",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.sawwara", "ar.a2.e01.haka", "ar.a2.e01.naqala", "ar.a2.e01.akhiran", "ar.a2.e01.lamma"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a07",
+          "typ": "minimalpaare",
+          "ziel": "ar.a2.e01.nazala",
+          "ablenker": ["ar.a1.e10.nazara"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a08",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0086",
+          "wort": 5,
+          "ablenker": ["ذَهَبَ", "ذَهَبُوا"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a09",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0091",
+          "wort": 0,
+          "ablenker": ["نَسِيَ", "نَسُوا"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0103",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0090",
+          "nach": "ziel",
+          "ablenker": ["الْمَتْحَفِ", "سَمِعْتُ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a12",
+          "typ": "satzbau",
+          "ziel": "ar.a2.e01.s0095",
+          "alternativen": ["مِنَ الْجِسْرِ صَوَّرْتُ النَّهْرَ."]
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0115"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0116"
+            },
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0117"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0118",
+          "ablenker": ["ar.a2.e01.s0083", "ar.a2.e01.s0096"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0086"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0087",
+          "ablenker": ["ar.a2.e01.s0094", "ar.a2.e01.s0106", "ar.a2.e01.s0109"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a15",
+          "typ": "harakat",
+          "ziel": "ar.a2.e01.s0088",
+          "varianten": ["هَلْ رَكِبْتَ الْحَافِلَةَ يَا أَمَلُ؟", "هَلْ رَكِبْتُ الْحَافِلَةَ يَا أَمَلُ؟"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l03.a16",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "ar.a2.e01.s0112",
+          "ablenker": ["ar.a2.e01.s0088", "ar.a2.e01.s0092"]
+        }
+      ]
+    },
+    {
+      "schluessel": "ar.a2.e01.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann mit kāna sagen, wie etwas war, und erzählen, was mir gefallen hat.",
+        "tr": "kāna ile bir şeyin nasıl olduğunu söyleyebilir ve neyin hoşuma gittiğini anlatabilirim.",
+        "ar": "أستطيع أن أقول كيف كانت الرحلة وأن أحكي ماذا أعجبني."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "ar.a2.e01.l04.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.kana",
+          "ablenker": ["ar.a2.e01.ada", "ar.a2.e01.haka"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "ar.a2.e01.mumti",
+          "ablenker": ["ar.a2.e01.dakhm", "ar.a2.e01.farigh"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a04",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.mumti", "ar.a2.e01.mudhish", "ar.a2.e01.dakhm", "ar.a2.e01.farhan", "ar.a2.e01.kamil"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.ajaba",
+          "ablenker": ["ar.a2.e01.tamattaa", "ar.a2.e01.nasiya"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a06",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.manzar", "ar.a2.e01.jawla", "ar.a2.e01.madi", "ar.a2.e01.hina", "ar.a2.e01.ajaba"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a07",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0120",
+          "wort": 0,
+          "ablenker": ["كُنْتُ", "كُنْتُمْ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a08",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0122",
+          "wort": 2,
+          "ablenker": ["ضَخْمٌ", "ضَخْمَةً"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a09",
+          "typ": "harakat",
+          "ziel": "ar.a2.e01.s0123",
+          "varianten": ["كَانَ الْجَوُّ جَمِيلٌ يَوْمَ السَّبْتِ.", "كَانَ الْجَوَّ جَمِيلًا يَوْمَ السَّبْتِ."]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0133",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0127",
+          "nach": "ziel",
+          "alternativen": ["بَعْدَ الرِّحْلَةِ الطَّوِيلَةِ كُنْتُ مُتْعَبًا."],
+          "ablenker": ["سَعِيدٌ", "كَانَتْ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0119"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0120"
+            },
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0121"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0122",
+          "ablenker": ["ar.a2.e01.s0149", "ar.a2.e01.s0141", "ar.a2.e01.s0147"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0134"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0135",
+          "ablenker": ["ar.a2.e01.s0143", "ar.a2.e01.s0140"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a14",
+          "typ": "satzbau",
+          "ziel": "ar.a2.e01.s0141",
+          "alternativen": ["جَدُّ إِمْرَهْ كَانَ سَائِقَ قِطَارٍ."]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "ar.a2.e01.s0126",
+          "ablenker": ["ar.a2.e01.s0127", "ar.a2.e01.s0148"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l04.a16",
+          "typ": "sprechen",
+          "satz": "ar.a2.e01.s0198"
+        }
+      ]
+    },
+    {
+      "schluessel": "ar.a2.e01.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann von einem Museumsbesuch erzählen, eine Anzeigetafel lesen und verwandte Wörter an ihrer Wurzel erkennen.",
+        "tr": "Bir müze ziyaretini anlatabilir, kalkış tabelasını okuyabilir ve akraba kelimeleri köklerinden tanıyabilirim.",
+        "ar": "أستطيع أن أحكي عن زيارة المتحف وأن أقرأ لوحة المغادرة وأن أعرف الكلمات من جذرها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "ar.a2.e01.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.mathaf",
+          "ablenker": ["ar.a2.e01.marid", "ar.a2.e01.zair"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "ar.a2.e01.nahr",
+          "ablenker": ["ar.a2.e01.kharita", "ar.a2.e01.dinasur"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a04",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.mathaf", "ar.a2.e01.marid", "ar.a2.e01.zair", "ar.a2.e01.dinasur", "ar.a2.e01.nahr"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a05",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.kharita", "ar.a2.e01.tabii", "ar.a2.e01.nahwa", "ar.a2.e01.abra", "ar.a2.e01.naqala"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a06",
+          "typ": "minimalpaare",
+          "ziel": "ar.a2.e01.marid",
+          "ablenker": ["ar.a1.e12.marid"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.dhahab",
+          "ablenker": ["ar.a1.e09.awda", "ar.a1.e09.wusul"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a08",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0155",
+          "wort": 1,
+          "ablenker": ["الزِّيَارَةُ", "يَزُورُ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a09",
+          "typ": "lesen_fragen",
+          "titel": "ar.a2.e01.s0174",
+          "absaetze": ["ar.a2.e01.s0175", "ar.a2.e01.s0176", "ar.a2.e01.s0177", "ar.a2.e01.s0178"],
+          "glossen": ["ar.a2.e01.rasif", "ar.a2.e01.mughadara", "ar.a2.e01.takhir", "ar.a2.e01.thuluth", "ar.a2.e01.mawqif"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "ar.a2.e01.s0179",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "ar.a2.e01.s0180",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "ar.a2.e01.s0181",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "ar.a2.e01.s0182",
+              "antwort": "ar.a2.e01.s0183",
+              "ablenker": ["ar.a2.e01.s0184"]
+            }
+          ]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a10",
+          "typ": "lesen_fragen",
+          "titel": "ar.a2.e01.s0185",
+          "absaetze": ["ar.a2.e01.s0186", "ar.a2.e01.s0187", "ar.a2.e01.s0188", "ar.a2.e01.s0189", "ar.a2.e01.s0190"],
+          "glossen": ["ar.a2.e01.mathaf", "ar.a2.e01.dinasur", "ar.a2.e01.dakhm", "ar.a2.e01.mumti"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "ar.a2.e01.s0191",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "ar.a2.e01.s0192",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "ar.a2.e01.s0193",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "ar.a2.e01.s0194",
+              "antwort": "ar.a2.e01.s0195",
+              "ablenker": ["ar.a2.e01.s0196"]
+            }
+          ]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0161",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0153",
+          "nach": "ziel",
+          "ablenker": ["جَدِيدَةٌ", "سَرِيعَةٌ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a13",
+          "typ": "satzbau",
+          "ziel": "ar.a2.e01.s0165",
+          "alternativen": ["مِنْ هُنَا نَذْهَبُ نَحْوَ النَّهْرِ.", "نَذْهَبُ نَحْوَ النَّهْرِ مِنْ هُنَا."]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0166"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0167",
+          "ablenker": ["ar.a2.e01.s0159", "ar.a2.e01.s0154", "ar.a2.e01.s0164"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "ar.a2.e01.s0162",
+          "ablenker": ["ar.a2.e01.s0163", "ar.a2.e01.s0160"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l05.a16",
+          "typ": "sprechen",
+          "satz": "ar.a2.e01.s0197"
+        }
+      ]
+    },
+    {
+      "schluessel": "ar.a2.e01.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte verstehen: Yazan fährt mit Emre und Jan zum ersten Mal allein mit dem Zug nach Frankfurt ins Museum.",
+        "tr": "Bir hikâyeyi anlayabilirim: Yazan, Emre ve Jan ile ilk kez kendi başına trenle Frankfurt’taki müzeye gidiyor.",
+        "ar": "أستطيع أن أفهم قصة: يزن يركب القطار مع إمره ويان لأول مرة وحدهم ويزورون متحفا في فرانكفورت."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "ar.a2.e01.l06.a01",
+          "typ": "geschichte",
+          "titel": "ar.a2.e01.s0203",
+          "zeilen": [
+            {
+              "satz": "ar.a2.e01.s0204"
+            },
+            {
+              "satz": "ar.a2.e01.s0205"
+            },
+            {
+              "satz": "ar.a2.e01.s0206"
+            },
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0207"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0208"
+            },
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0209"
+            },
+            {
+              "satz": "ar.a2.e01.s0210"
+            },
+            {
+              "satz": "ar.a2.e01.s0211"
+            },
+            {
+              "satz": "ar.a2.e01.s0212"
+            },
+            {
+              "sprecher": "c",
+              "satz": "ar.a2.e01.s0213"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0214"
+            },
+            {
+              "satz": "ar.a2.e01.s0215"
+            },
+            {
+              "satz": "ar.a2.e01.s0216"
+            },
+            {
+              "sprecher": "c",
+              "satz": "ar.a2.e01.s0217"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0218"
+            },
+            {
+              "satz": "ar.a2.e01.s0219"
+            },
+            {
+              "satz": "ar.a2.e01.s0220"
+            },
+            {
+              "satz": "ar.a2.e01.s0221"
+            },
+            {
+              "satz": "ar.a2.e01.s0222"
+            },
+            {
+              "sprecher": "c",
+              "satz": "ar.a2.e01.s0223"
+            },
+            {
+              "satz": "ar.a2.e01.s0224"
+            },
+            {
+              "satz": "ar.a2.e01.s0225"
+            },
+            {
+              "satz": "ar.a2.e01.s0226"
+            },
+            {
+              "satz": "ar.a2.e01.s0227"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0228"
+            },
+            {
+              "satz": "ar.a2.e01.s0229"
+            },
+            {
+              "sprecher": "b",
+              "satz": "ar.a2.e01.s0230"
+            },
+            {
+              "satz": "ar.a2.e01.s0231"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 0,
+              "frage": "ar.a2.e01.s0232",
+              "antwort": "ar.a2.e01.s0233",
+              "ablenker": ["ar.a2.e01.s0234"]
+            },
+            {
+              "nach": 7,
+              "frage": "ar.a2.e01.s0235",
+              "antwort": "ar.a2.e01.s0236",
+              "ablenker": ["ar.a2.e01.s0237"]
+            },
+            {
+              "nach": 12,
+              "frage": "ar.a2.e01.s0238",
+              "antwort": "ar.a2.e01.s0239",
+              "ablenker": ["ar.a2.e01.s0240"]
+            },
+            {
+              "nach": 18,
+              "frage": "ar.a2.e01.s0241",
+              "antwort": "ar.a2.e01.s0242",
+              "ablenker": ["ar.a2.e01.s0243"]
+            },
+            {
+              "nach": 22,
+              "frage": "ar.a2.e01.s0244",
+              "antwort": "ar.a2.e01.s0245",
+              "ablenker": ["ar.a2.e01.s0246"]
+            }
+          ]
+        },
+        {
+          "schluessel": "ar.a2.e01.l06.a02",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0205",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "ar.a2.e01.l06.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "ar.a2.e01.s0218",
+          "ablenker": ["ar.a2.e01.s0214"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l06.a04",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0211",
+          "wort": 2,
+          "ablenker": ["مُزْدَحِمٌ", "مُزْدَحِمَةً"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l06.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0207"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0208",
+          "ablenker": ["ar.a2.e01.s0214", "ar.a2.e01.s0223"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l06.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.s0224",
+          "ablenker": ["ar.a2.e01.s0225"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l06.a07",
+          "typ": "satzbau",
+          "ziel": "ar.a2.e01.s0226",
+          "alternativen": [
+            "عَادَ يَزَنُ إِلَى الْبَيْتِ فِي الْمَسَاءِ.",
+            "يَزَنُ عَادَ إِلَى الْبَيْتِ فِي الْمَسَاءِ.",
+            "عَادَ يَزَنُ فِي الْمَسَاءِ إِلَى الْبَيْتِ.",
+            "فِي الْمَسَاءِ يَزَنُ عَادَ إِلَى الْبَيْتِ."
+          ]
+        },
+        {
+          "schluessel": "ar.a2.e01.l06.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0227",
+          "nach": "ziel",
+          "alternativen": ["حَكَى يَزَنُ عَنِ الرِّحْلَةِ لِعَائِلَتِهِ."],
+          "ablenker": ["الْمَتْحَفِ", "سَمِعَ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l06.a09",
+          "typ": "hoeren_schreiben",
+          "ziel": "ar.a2.e01.s0228"
+        },
+        {
+          "schluessel": "ar.a2.e01.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "ar.a2.e01.s0210",
+          "ablenker": ["ar.a2.e01.s0215"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l06.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0219",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "ar.a2.e01.l06.a12",
+          "typ": "sprechen",
+          "satz": "ar.a2.e01.s0230"
+        }
+      ]
+    },
+    {
+      "schluessel": "ar.a2.e01.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Wiederholung: Bahnhof und Fahrkarte, Uhrzeit, Vergangenheit, kāna und der Ausflug ins Museum.",
+        "tr": "Tekrar: gar ve bilet, saat, geçmiş zaman, kāna ve müze gezisi.",
+        "ar": "مراجعة: المحطة والتذكرة والساعة والماضي وكان والرحلة إلى المتحف."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "ar.a2.e01.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "ar.a2.e01.tadhkira",
+            "ar.a2.e01.rasif",
+            "ar.a2.e01.musafir",
+            "ar.a2.e01.mathaf",
+            "ar.a2.e01.nahr",
+            "ar.a2.e01.kharita"
+          ]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a02",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.rakiba", "ar.a2.e01.nazala", "ar.a2.e01.kharaja", "ar.a2.e01.ada", "ar.a2.e01.samia", "ar.a2.e01.nasiya"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "ar.a2.e01.shubbak",
+          "ablenker": ["ar.a2.e01.ala", "ar.a2.e01.araba"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.hina",
+          "ablenker": ["ar.a2.e01.khilala", "ar.a2.e01.nahwa"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a05",
+          "typ": "minimalpaare",
+          "ziel": "ar.a2.e01.musafir",
+          "ablenker": ["ar.a2.e01.masafa"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "ar.a2.e01.s0249",
+          "ablenker": ["ar.a2.e01.s0110"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a07",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0252",
+          "wort": 0,
+          "ablenker": ["عَادَتْ", "عُدْتِ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a08",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0253",
+          "wort": 5,
+          "ablenker": ["الْعَشْرَةَ", "عَشَرَةً"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0254",
+          "nach": "ziel",
+          "alternativen": ["أَخِيرًا وَصَلَتِ الْحَافِلَةُ!", "الْحَافِلَةُ وَصَلَتْ أَخِيرًا!"],
+          "ablenker": ["تَأَخَّرَتْ", "الْقِطَارُ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0247",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0249"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0250",
+          "ablenker": ["ar.a2.e01.s0055", "ar.a2.e01.s0170", "ar.a2.e01.s0107"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0255"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0256",
+          "ablenker": ["ar.a2.e01.s0089", "ar.a2.e01.s0008", "ar.a2.e01.s0063"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0068"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0069",
+          "ablenker": ["ar.a2.e01.s0152", "ar.a2.e01.s0168", "ar.a2.e01.s0081"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0113"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0114",
+          "ablenker": ["ar.a2.e01.s0028", "ar.a2.e01.s0067", "ar.a2.e01.s0173"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0036"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0037",
+          "ablenker": ["ar.a2.e01.s0035", "ar.a2.e01.s0066", "ar.a2.e01.s0016"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a16",
+          "typ": "harakat",
+          "ziel": "ar.a2.e01.s0084",
+          "varianten": ["مَتَى عُدْتِ إِلَى الْبَيْتِ يَا يَزَنُ؟", "مَتَى عُدْتُ إِلَى الْبَيْتِ يَا يَزَنُ؟"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a17",
+          "typ": "harakat",
+          "ziel": "ar.a2.e01.s0127",
+          "varianten": ["كُنْتُ مُتْعَبٌ بَعْدَ الرِّحْلَةِ الطَّوِيلَةِ.", "كُنْتُ مُتْعَبًا بَعْدَ الرِّحْلَةُ الطَّوِيلَةُ."]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a18",
+          "typ": "satzbau",
+          "ziel": "ar.a2.e01.s0251",
+          "alternativen": ["كَمَالٌ نَسِيَ هَاتِفَهُ فِي الْحَافِلَةِ."]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a19",
+          "typ": "hoeren_schreiben",
+          "ziel": "ar.a2.e01.s0258",
+          "alternativen": ["اِسْتَغْرَقَ التَّأْخِيرُ 20 دَقِيقَةً."]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a20",
+          "typ": "hoeren_schreiben",
+          "ziel": "ar.a2.e01.s0102"
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a21",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.s0259",
+          "ablenker": ["ar.a2.e01.s0139", "ar.a2.e01.s0138"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a22",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0257",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a23",
+          "typ": "sprechen",
+          "satz": "ar.a2.e01.s0200"
+        },
+        {
+          "schluessel": "ar.a2.e01.l07.a24",
+          "typ": "schreiben",
+          "aufgabe": "ar.a2.e01.s0201",
+          "woerter": {
+            "min": 20,
+            "max": 30
+          },
+          "muster": ["ar.a2.e01.s0202"]
+        }
+      ]
+    },
+    {
+      "schluessel": "ar.a2.e01.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Prüfstein: Ich kann eine Fahrkarte kaufen, nach Gleis und Abfahrt fragen und erzählen, wie mein Ausflug war.",
+        "tr": "Mihenk taşı: Bilet alabilir, peronu ve kalkışı sorabilir ve gezimin nasıl geçtiğini anlatabilirim.",
+        "ar": "اختبار الوحدة: أستطيع أن أشتري تذكرة وأن أسأل عن الرصيف والمغادرة وأن أحكي كيف كانت رحلتي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "ar.a2.e01.l08.a01",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0001"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0002",
+          "ablenker": ["ar.a2.e01.s0046", "ar.a2.e01.s0032", "ar.a2.e01.s0137"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a2.e01.ittijah",
+          "ablenker": ["ar.a2.e01.masafa", "ar.a2.e01.khatt"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "ar.a2.e01.mudhish",
+          "ablenker": ["ar.a2.e01.kamil", "ar.a2.e01.bati"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a04",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.taakhkhara", "ar.a2.e01.tawaqqafa", "ar.a2.e01.taharraka", "ar.a2.e01.istaghraqa", "ar.a2.e01.sawwara"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a05",
+          "typ": "paare",
+          "lemmata": ["ar.a2.e01.ilan", "ar.a2.e01.takhir", "ar.a2.e01.araba", "ar.a2.e01.mawqif", "ar.a2.e01.wasila", "ar.a2.e01.thuluth"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a06",
+          "typ": "minimalpaare",
+          "ziel": "ar.a2.e01.nahr",
+          "ablenker": ["ar.a1.e06.nahar"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "ar.a2.e01.s0099",
+          "ablenker": ["ar.a2.e01.s0100", "ar.a2.e01.s0108"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a08",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0125",
+          "wort": 2,
+          "ablenker": ["فَارِغٌ", "فَارِغِينَ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a09",
+          "typ": "luecke",
+          "ziel": "ar.a2.e01.s0129",
+          "wort": 1,
+          "ablenker": ["كَانَ", "كَانُوا"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0100",
+          "nach": "ziel",
+          "alternativen": ["الْقِطَارُ تَوَقَّفَ عَلَى الْجِسْرِ."],
+          "ablenker": ["تَحَرَّكَ", "النَّهْرِ"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.a2.e01.s0142",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0084"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0085",
+          "ablenker": ["ar.a2.e01.s0129", "ar.a2.e01.s0008", "ar.a2.e01.s0105"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0013"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0014",
+          "ablenker": ["ar.a2.e01.s0030", "ar.a2.e01.s0111", "ar.a2.e01.s0051"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "ar.a2.e01.s0144"
+            }
+          ],
+          "antwort": "ar.a2.e01.s0145",
+          "ablenker": ["ar.a2.e01.s0151", "ar.a2.e01.s0055", "ar.a2.e01.s0002"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a15",
+          "typ": "satzbau",
+          "ziel": "ar.a2.e01.s0101",
+          "alternativen": ["تَحَرَّكَ الْقِطَارُ أَخِيرًا!", "الْقِطَارُ تَحَرَّكَ أَخِيرًا!"]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a16",
+          "typ": "harakat",
+          "ziel": "ar.a2.e01.s0130",
+          "varianten": ["كُنْتِ فِي الْمَحَطَّةِ مُبَكِّرًا يَا فَارِسُ.", "كُنْتَ فِي الْمَحَطَّةِ مُبَكِّرٌ يَا فَارِسُ."]
+        },
+        {
+          "schluessel": "ar.a2.e01.l08.a17",
+          "typ": "hoeren_schreiben",
+          "ziel": "ar.a2.e01.s0073"
+        }
+      ]
+    }
+  ]
+}
