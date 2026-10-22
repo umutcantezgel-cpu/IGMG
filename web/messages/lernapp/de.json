@@ -221,7 +221,7 @@
     "titel": "Quellen und Lizenzen",
     "einleitung": "Die Lern-App beruht auf freier Software und freien Schriften. Hier steht, von wem sie stammen und unter welcher Lizenz sie stehen. Diese Seite ist auch ohne Netz lesbar.",
     "inhalteTitel": "Lerninhalte",
-    "inhalteText": "Die Lerninhalte stehen unter der Lizenz CC BY-SA 4.0. Quelle und Namensnennung stehen bei jedem Eintrag im Kurs.",
+    "inhalteText": "Die Lerninhalte stehen unter der Lizenz CC BY-SA 4.0. Quelle, Lizenz und Namensnennung stehen je Eintrag im Kurspaket; übernommene Sätze und Einträge stehen mit ihrer Namensnennung weiter unten auf dieser Seite.",
     "softwareTitel": "Programmbibliotheken",
     "schriftenTitel": "Schriften",
     "spracherkennungTitel": "Spracherkennung (Sprechübung)",
@@ -942,6 +942,49 @@
       "erteilt": "Du erscheinst in den Bestenlisten.",
       "nicht": "Du erscheinst nicht in den Bestenlisten.",
       "ohneEinwilligung": "Zustimmen kannst du, sobald deine Einwilligung „Lern-App“ gilt."
+    }
+  },
+  "lizenzverzeichnis": {
+    "datenTitel": "Sprachdaten",
+    "datenText": "Die Sprachkurse nutzen Sätze und Wörterbuchangaben aus offenen Sammlungen. Die Namensnennung je Satz und Eintrag steht im Kurspaket und auf dieser Seite unter „Namensnennung je Satz und Eintrag“ – für jede Einheit auf diesem Gerät, auch ohne Netz. Häufigkeitslisten helfen nur bei der Auswahl der Wörter.",
+    "religionTitel": "Arabische Quelltexte (Koran und Hadith)",
+    "religionText": "Diese Texte werden nur über Verweise genutzt, nie verändert und nie vorgelesen. Die Lern-App prüft mit ihnen außerdem, dass die Sprachkurse keinen solchen Wortlaut enthalten.",
+    "stand": "Stand",
+    "teilmenge": "Teilmenge: {lizenz}",
+    "verwendung": "Verwendung",
+    "namensnennung": "Namensnennung",
+    "verwendungen": {
+      "tatoeba": "Beispielsätze und ihre Übersetzungen in den Sprachkursen. Arabische Sätze sind vokalisiert und als „bearbeitet“ gekennzeichnet.",
+      "wiktionary": "Grundformen, Wortformen und Bedeutungsangaben der Wörter in den Sprachkursen – gekürzt, ohne Beispiele.",
+      "wordfreq": "Nur zur Auswahl und Stufung des Wortschatzes; erscheint nicht in Lektionen.",
+      "camel-msa": "Nur zur Auswahl und Stufung des arabischen Wortschatzes; erscheint nicht in Lektionen.",
+      "frequencywords": "Nur als Gegenprobe bei der Auswahl des Wortschatzes; erscheint nicht in Lektionen.",
+      "tanzil": "Arabischer Korantext, unverändert. Nur über Verweise im Wissenskurs und im Kurs zum Koran-Arabisch; Prüfgrundlage für die Sprachkurse.",
+      "bukhari": "Arabischer Text von Sahih al-Bukhari. Nur über Verweise im Wissenskurs; Prüfgrundlage für die Sprachkurse. Die Rechte am arabischen Text klärt die Gemeinde noch."
+    },
+    "bildkartenTitel": "Bildkarten",
+    "bildkartenText": "Die Bildkarten sind Linien-Symbole aus {quelle} {version} (Lizenz {lizenz}, siehe Programmbibliotheken). Sie zeigen nur Gegenstände und Zeichen, keine Fotos.",
+    "bildkartenFeather": "Diese Symbole stammen aus Feather ({urheber}, Lizenz {lizenz}): {symbole}",
+    "drittlizenzenTitel": "Drittlizenzen von ONNX Runtime",
+    "drittlizenzenText": "ONNX Runtime enthält Teile anderer freier Projekte. Ihre Lizenztexte stehen vollständig in der Datei „ThirdPartyNotices“ (englisch, Stand {stand}). Zum Öffnen brauchst du eine Verbindung.",
+    "drittlizenzenLink": "ThirdPartyNotices öffnen (Textdatei, englisch)",
+    "eigen": "Darunter: {name}, Lizenz {lizenz}. Den Quellcode gibt es frei unter {adresse}.",
+    "gewichte": "Gewichte",
+    "export": "ONNX-Export (SHA-256)",
+    "erzeugung": "Erzeugt mit",
+    "wasserzeichen": "Wasserzeichen",
+    "ohneWasserzeichen": "keines"
+  },
+  "namensnennung": {
+    "titel": "Namensnennung je Satz und Eintrag",
+    "text": "Übernommene Sätze (Tatoeba) und Wörterbuchangaben (Wiktionary) stehen hier einzeln mit ihren Urhebern, der Lizenz und der Adresse der Quelle. Die Angaben kommen aus dem Kurspaket jeder Einheit, die auf diesem Gerät liegt – auch ohne Netz.",
+    "kurs": "{titel} ({fuer})",
+    "insel": {
+      "laedt": "Die Einheiten auf diesem Gerät werden gelesen …",
+      "leer": "Auf diesem Gerät liegt noch keine Einheit. Sobald du eine Lektion öffnest, steht hier die Namensnennung ihrer Sätze und Einträge.",
+      "anzahl": "{n, plural, one {# Eintrag mit Namensnennung} other {# Einträge mit Namensnennung}}",
+      "eigene": "{n, plural, =0 {Weitere Einträge hat diese Einheit nicht.} one {# weiterer Eintrag ist ein eigener Inhalt der Lern-App (CC BY-SA 4.0).} other {# weitere Einträge sind eigene Inhalte der Lern-App (CC BY-SA 4.0).}}",
+      "nurEigene": "Alle Einträge dieser Einheit sind eigene Inhalte der Lern-App (CC BY-SA 4.0)."
     }
   }
 }

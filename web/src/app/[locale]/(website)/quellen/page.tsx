@@ -47,8 +47,32 @@ async function Eintrag({ e }: { e: QuellenEintrag }) {
           },
         ]
       : []),
+    ...(e.drittlizenzen
+      ? [
+          {
+            label: t('felder.drittlizenzen'),
+            wert: (
+              <a href={e.drittlizenzen.url} lang="en" className={LINK_IN_ZEILE}>
+                {e.drittlizenzen.name}
+              </a>
+            ),
+          },
+        ]
+      : []),
     { label: t('felder.verwendung'), wert: t(`eintraege.${e.id}.verwendung`) },
     ...(e.aenderungen ? [{ label: t('felder.aenderungen'), wert: t(`eintraege.${e.id}.aenderungen`) }] : []),
+    ...(e.namensnennung
+      ? [
+          {
+            label: t('felder.namensnennung'),
+            wert: (
+              <span lang="de" className="wrap-anywhere">
+                {e.namensnennung}
+              </span>
+            ),
+          },
+        ]
+      : []),
   ];
   return (
     <article id={e.id} aria-labelledby={`${e.id}-titel`} className="flex scroll-mt-24 flex-col gap-3 border-t border-linie pt-5">
@@ -82,7 +106,8 @@ async function Eintrag({ e }: { e: QuellenEintrag }) {
 /**
  * Quellen und Lizenzen (AUFTRAG 5, ADR 0025): jede übernommene Datenquelle, Schrift und die wichtigsten Bibliotheken mit
  * Urheber, Lizenz, Fassung, Verwendung und Änderungen; jeder Abschnitt und jeder Eintrag hat einen Anker
- * (z. B. /quellen#hadith). Belege in web/daten/<quelle>/QUELLE.md. Statisch.
+ * (z. B. /quellen#hadith). Belege in web/daten/<quelle>/QUELLE.md. Statisch. Lern-App (L8-03, ADR 0045 Nr. 15): Sprachdaten
+ * mit Namensnennung, Bildkarten, Spracherkennung mit den Drittlizenzen von ONNX Runtime (Volltext vom eigenen Ursprung).
  */
 export default async function QuellenSeite() {
   const t = await getTranslations('quellen');

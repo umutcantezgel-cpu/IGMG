@@ -221,7 +221,7 @@
     "titel": "Kaynaklar ve lisanslar",
     "einleitung": "Öğrenme uygulaması özgür yazılıma ve özgür yazı tiplerine dayanır. Burada kimden geldikleri ve hangi lisansla kullanıldıkları yazar. Bu sayfa internetsiz de okunabilir.",
     "inhalteTitel": "Öğrenme içerikleri",
-    "inhalteText": "Öğrenme içerikleri CC BY-SA 4.0 lisansıyla sunulur. Kaynak ve atıf, kurstaki her kaydın yanında yazar.",
+    "inhalteText": "Öğrenme içerikleri CC BY-SA 4.0 lisansıyla sunulur. Kaynak, lisans ve atıf her kayıt için kurs paketinde yer alır; alınan cümleler ve kayıtlar atıflarıyla birlikte bu sayfanın aşağısında listelenir.",
     "softwareTitel": "Program kütüphaneleri",
     "schriftenTitel": "Yazı tipleri",
     "spracherkennungTitel": "Konuşma tanıma (konuşma alıştırması)",
@@ -942,6 +942,49 @@
       "erteilt": "Başarı listelerinde görünüyorsun.",
       "nicht": "Başarı listelerinde görünmüyorsun.",
       "ohneEinwilligung": "„Öğrenme Uygulaması“ onayın geçerli olduğunda kabul edebilirsin."
+    }
+  },
+  "lizenzverzeichnis": {
+    "datenTitel": "Dil verileri",
+    "datenText": "Dil kursları açık koleksiyonlardaki cümleleri ve sözlük bilgilerini kullanır. Cümle ve kayıt bazında atıf, kurs paketinde ve bu sayfada „Cümle ve kayıt bazında atıf“ başlığı altında yer alır; bu cihazdaki her ünite için internetsiz de görünür. Sıklık listeleri yalnızca kelimelerin seçilmesine yardımcı olur.",
+    "religionTitel": "Arapça kaynak metinler (Kur’an ve hadis)",
+    "religionText": "Bu metinler yalnızca göndermeler üzerinden kullanılır; hiçbir zaman değiştirilmez ve seslendirilmez. Öğrenme uygulaması bu metinlerle ayrıca dil kurslarında böyle bir metin bulunmadığını denetler.",
+    "stand": "Sürüm veya tarih",
+    "teilmenge": "Bir kısmı: {lizenz}",
+    "verwendung": "Kullanım",
+    "namensnennung": "Atıf",
+    "verwendungen": {
+      "tatoeba": "Dil kurslarındaki örnek cümleler ve çevirileri. Arapça cümleler harekelenmiş ve „düzenlendi“ olarak işaretlenmiştir.",
+      "wiktionary": "Dil kurslarındaki kelimelerin temel biçimleri, çekimli biçimleri ve anlam bilgileri – kısaltılmış, örneksiz.",
+      "wordfreq": "Yalnızca kelime hazinesinin seçilmesi ve seviyelendirilmesi için; derslerde görünmez.",
+      "camel-msa": "Yalnızca Arapça kelime hazinesinin seçilmesi ve seviyelendirilmesi için; derslerde görünmez.",
+      "frequencywords": "Yalnızca kelime seçiminde karşılaştırma için; derslerde görünmez.",
+      "tanzil": "Kur’an’ın Arapça metni, değiştirilmeden. Yalnızca İslami bilgiler kursunda ve Kur’an Arapçası kursunda göndermeler üzerinden; dil kursları için denetim temeli.",
+      "bukhari": "Sahih-i Buhari’nin Arapça metni. Yalnızca İslami bilgiler kursunda göndermeler üzerinden; dil kursları için denetim temeli. Arapça metnin haklarını cemiyet henüz netleştiriyor."
+    },
+    "bildkartenTitel": "Resimli kartlar",
+    "bildkartenText": "Resimli kartlar {quelle} {version} kütüphanesinin çizgi simgeleridir (lisans {lizenz}, bkz. yazılım kütüphaneleri). Yalnızca eşyaları ve işaretleri gösterir, fotoğraf yoktur.",
+    "bildkartenFeather": "Şu simgeler Feather projesinden gelir ({urheber}, lisans {lizenz}): {symbole}",
+    "drittlizenzenTitel": "ONNX Runtime’ın üçüncü taraf lisansları",
+    "drittlizenzenText": "ONNX Runtime başka özgür projelerin parçalarını içerir. Bunların lisans metinlerinin tamamı „ThirdPartyNotices“ dosyasındadır (İngilizce, sürüm {stand}). Açmak için bağlantı gerekir.",
+    "drittlizenzenLink": "ThirdPartyNotices dosyasını aç (metin dosyası, İngilizce)",
+    "eigen": "Bunlar arasında: {name}, lisans {lizenz}. Kaynak kodu {adresse} adresinde ücretsiz olarak bulunur.",
+    "gewichte": "Model ağırlıkları",
+    "export": "ONNX dönüşümü (SHA-256)",
+    "erzeugung": "Üretim aracı",
+    "wasserzeichen": "Filigran",
+    "ohneWasserzeichen": "yok"
+  },
+  "namensnennung": {
+    "titel": "Cümle ve kayıt bazında atıf",
+    "text": "Alınan cümleler (Tatoeba) ve sözlük bilgileri (Wiktionary) burada tek tek hak sahipleri, lisansları ve kaynak adresleriyle yer alır. Bilgiler bu cihazdaki her ünitenin kurs paketinden gelir; internetsiz de görünür.",
+    "kurs": "{titel} ({fuer})",
+    "insel": {
+      "laedt": "Bu cihazdaki üniteler okunuyor …",
+      "leer": "Bu cihazda henüz ünite yok. Bir dersi açtığında, cümlelerinin ve kayıtlarının atfı burada görünür.",
+      "anzahl": "{n, plural, one {Atıf içeren # kayıt} other {Atıf içeren # kayıt}}",
+      "eigene": "{n, plural, =0 {Bu ünitenin başka kaydı yok.} one {Diğer # kayıt öğrenme uygulamasının kendi içeriğidir (CC BY-SA 4.0).} other {Diğer # kayıt öğrenme uygulamasının kendi içeriğidir (CC BY-SA 4.0).}}",
+      "nurEigene": "Bu ünitedeki tüm kayıtlar öğrenme uygulamasının kendi içeriğidir (CC BY-SA 4.0)."
     }
   }
 }

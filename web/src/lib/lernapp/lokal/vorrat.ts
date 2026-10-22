@@ -1,5 +1,5 @@
 import type { Lektion } from '../aufgaben/schema';
-import { istKurs, istKursSlug, istRichtung, istSprache, STUFEN } from '../kurse';
+import { istKurs, istKursSlug, istRichtung, istSprache, type KursSlug, STUFEN } from '../kurse';
 import { INHALT_LIZENZ, PAKET_FORMAT, paketAdresse, VERZEICHNIS_FORMAT, verzeichnisAdresse } from '../paket/kennungen';
 import type { Paket, Verzeichnis, VerzeichnisEinheit } from '../paket/typen';
 import type { PaketEintrag, Speicher } from './db';
@@ -244,6 +244,30 @@ export const ladePaketKopf = (sp: Speicher, kurs: string, einheit: EinheitVerwei
 /** Paketkopf aus dem Vorrat (ohne Netz). */
 export const paketKopfImVorrat = (kurs: string, einheit: EinheitVerweis, o: PaketOptionen = {}) =>
   paketImVorratGeprueft(kurs, einheit, kopf, o);
+
+const PAKET_PFAD = /^\/lern-app\/pakete\/([^/]+)\/([^/]+)\/([0-9a-f]{64})$/;
+
+/**
+ * Alle Einheitenpakete im Vorrat (ohne Netz), je mit passendem Hash und gültigem Kopf – für die Namensnennung je Satz und
+ * Eintrag auf `/lern-app/<ui>/quellen` (ADR 0039 Nr. 9). Kursverzeichnisse und Ungültiges fallen weg.
+ */
+export async function paketeImVorrat(o: PaketOptionen = {}): Promise<{ kurs: KursSlug; paket: PaketKopf }[]> {
+  const cache = await oeffne(vorratVon(o), VORRAT_PAKETE);
+  let anfragen: readonly Request[] = [];
+  try {
+    anfragen = cache ? await cache.keys() : [];
+  } catch {
+    return [];
+  }
+  const liste: { kurs: KursSlug; paket: PaketKopf }[] = [];
+  for (const anfrage of anfragen) {
+    const [, kurs, schluessel = '', hash = ''] = PAKET_PFAD.exec(new URL(anfrage.url).pathname) ?? [];
+    if (!istKursSlug(kurs)) continue;
+    const paket = await paketImVorratGeprueft(kurs, { schluessel, hash, bytes: 1 }, kopf, o);
+    if (paket?.einheit.schluessel === schluessel) liste.push({ kurs, paket });
+  }
+  return liste;
+}
 
 // ——— Audio-Bündel ———
 

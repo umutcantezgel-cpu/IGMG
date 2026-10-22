@@ -1,8 +1,20 @@
+import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync, realpathSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { ABSCHNITTE, BIBLIOTHEKEN as WEBSITE_BIBLIOTHEKEN } from '@/app/[locale]/(website)/quellen/verzeichnis';
+import { ALLE_STIMMEN } from '@/lib/lernapp/audio/stimmen';
 import { LIZENZTEXTE } from '@/lib/lernapp/lizenztexte';
-import { BIBLIOTHEKEN, SCHRIFTEN, SPRACHERKENNUNG } from '@/lib/lernapp/quellen';
+import {
+  BIBLIOTHEKEN,
+  BILDKARTEN,
+  DATEN,
+  DATEN_IDS,
+  DATEN_LIZENZEN,
+  ORT_DRITTLIZENZEN,
+  SCHRIFTEN,
+  SPRACHERKENNUNG,
+} from '@/lib/lernapp/quellen';
 import { LIZENZ_DATEIEN, MODELL, ORT } from '@/lib/lernapp/sprechen/modell';
 
 /**
@@ -21,6 +33,7 @@ const ordner = (name: string) =>
 const paket = (name: string) => JSON.parse(readFileSync(join(ordner(name), 'package.json'), 'utf8'));
 const lizenzNebenGewichten = (datei: string) => readFileSync(join(WEB, 'public', 'lern-app', 'modelle', MODELL.name, datei), 'utf8');
 const normal = (s: string) => s.replace(/\s+/g, ' ').trim();
+const lernTexte = (sprache: string) => JSON.parse(readFileSync(join(WEB, 'messages', 'lernapp', `${sprache}.json`), 'utf8'));
 
 describe('Quellen der Lern-App', () => {
   it('Bibliotheken: Fassung und Lizenz wie das installierte Paket', () => {
@@ -135,5 +148,125 @@ describe('Quellen der Lern-App', () => {
     expect(MODELL.name).toContain(SPRACHERKENNUNG[1]!.version);
     expect(BIBLIOTHEKEN.find((b) => b.id === 'onnxruntime-web')?.version).toBe(ORT.version);
     expect(LIZENZ_DATEIEN.map((d) => d.pfad)).toEqual(['LIZENZ-whisper-MIT.txt', 'LIZENZ-Apache-2.0.txt']);
+  });
+
+  it('Daten (L8-03, ADR 0045 Nr. 3–7, Z-L17): nur zulässige Lizenzen; Lizenz und Namensnennung wie in web/daten/<ordner>/QUELLE.md', () => {
+    expect(DATEN.map((d) => d.id)).toEqual([...DATEN_IDS]);
+    // KERN 4.0 §1: ausgelieferte Daten nur CC0, CC BY, CC BY-SA (Unlicense = Verzicht wie CC0); nie NC, ND, „nur Forschung“
+    expect(Object.keys(DATEN_LIZENZEN).sort()).toEqual(['CC-BY-2.0-FR', 'CC-BY-3.0', 'CC-BY-SA-4.0', 'CC0-1.0', 'Unlicense']);
+    const quelle = (ordner: string) => normal(readFileSync(join(WEB, 'daten', ordner, 'QUELLE.md'), 'utf8'));
+    for (const d of DATEN.filter((x) => x.gruppe === 'sprache')) {
+      const q = quelle(d.ordner);
+      expect(q, d.id).toContain(DATEN_LIZENZEN[d.lizenz].name);
+      // Tatoeba: die Angabe je Satz aus QUELLE.md; die Zusätze (ohne Benutzername, Paare, „bearbeitet“) stehen dort als Liste
+      const kern = d.id === 'tatoeba' ? d.namensnennung.slice(0, d.namensnennung.indexOf('; ohne Benutzername')) : d.namensnennung;
+      expect(q, d.id).toContain(normal(kern));
+    }
+    expect(quelle('tatoeba')).toContain('Teilmenge CC0 1.0');
+    expect(DATEN.find((d) => d.id === 'tatoeba')?.auchLizenz).toBe('CC0-1.0');
+    expect(quelle('haeufigkeit')).toContain('## wordfreq 3.1.1');
+    expect(quelle('haeufigkeit')).toContain('Release v1.0');
+    expect(quelle('haeufigkeit')).toContain('525f9b560de45753a5ea01069454e72e9aa541c6');
+    const tanzil = quelle('tanzil');
+    expect(tanzil).toContain('Copyright (C) 2007-2026 Tanzil Project');
+    expect(tanzil).toContain('License: Creative Commons Attribution 3.0');
+    expect(tanzil).toContain('Version 1.1');
+    const hadith = quelle('hadith');
+    expect(hadith).toContain('Lizenz: Unlicense');
+    expect(hadith).toContain('df57907be35291c91ad6a6691180e22ca9920784');
+    // Koran und Hadith nur als Verweis und Prüfgrundlage (KERN 4.0 §2.2, §3); die Sprachdaten haben eigene Verwendungstexte
+    expect(DATEN.filter((d) => d.gruppe === 'religion').map((d) => d.id)).toEqual(['tanzil', 'bukhari']);
+    for (const sprache of ['de', 'tr', 'ar'])
+      for (const d of DATEN) expect(lernTexte(sprache).lizenzverzeichnis.verwendungen[d.id], `${sprache} ${d.id}`).toBeTruthy();
+  });
+
+  it('Bildkarten: Lucide-Fassung wie das Paket und symbole.json; die Feather-Symbole laut Lizenzdatei von Lucide', () => {
+    const symbole = JSON.parse(readFileSync(join(WEB, 'inhalte', 'lernapp', 'symbole', 'symbole.json'), 'utf8')).symbole as Record<
+      string,
+      { quelle: string; lizenz: string }
+    >;
+    const namen = new Set<string>();
+    for (const s of Object.values(symbole)) {
+      const [, name, version] = /^lucide:([a-z0-9-]+)@(.+)$/.exec(s.quelle) ?? [];
+      expect(version, s.quelle).toBe(BILDKARTEN.version);
+      expect(s.lizenz).toBe(BILDKARTEN.lizenz);
+      namen.add(name!);
+    }
+    expect(paket('lucide-react').version).toBe(BILDKARTEN.version);
+    const lizenz = readFileSync(join(WEB, 'node_modules', 'lucide-react', 'LICENSE'), 'utf8');
+    const feather = new Set(
+      lizenz
+        .split('derived from the Feather project:')[1]!
+        .split('The MIT License')[0]!
+        .split(/[\s,]+/)
+        .filter(Boolean),
+    );
+    expect([...namen].filter((n) => feather.has(n)).sort()).toEqual([...BILDKARTEN.feather.symbole]);
+    expect(normal(lizenz)).toContain(BILDKARTEN.feather.urheber);
+    expect(normal(lizenz)).toContain(normal(LIZENZTEXTE.MIT));
+  });
+
+  it('Drittlizenzen von ONNX Runtime (ADR 0042 Nr. 10): Volltext gepinnt und ausgeliefert, Stand wie onnxruntime-web', () => {
+    const sha = (pfad: string) => createHash('sha256').update(readFileSync(pfad)).digest('hex');
+    const gepinnt = join(WEB, 'daten', 'lernapp-lizenzen', 'onnxruntime-ThirdPartyNotices.txt');
+    const ausgeliefert = join(WEB, 'public', ...ORT_DRITTLIZENZEN.pfad.split('/').filter(Boolean));
+    expect(sha(gepinnt)).toBe(ORT_DRITTLIZENZEN.sha256);
+    expect(sha(ausgeliefert)).toBe(ORT_DRITTLIZENZEN.sha256);
+    const quelle = readFileSync(join(WEB, 'daten', 'lernapp-lizenzen', 'QUELLE.md'), 'utf8');
+    expect(quelle).toContain(`\`${ORT_DRITTLIZENZEN.sha256}\``);
+    expect(quelle).toContain(ORT_DRITTLIZENZEN.stand);
+    expect(quelle).toContain(`public${ORT_DRITTLIZENZEN.pfad}`);
+    // gleicher Commit wie die ausgelieferte Laufzeit (Fassungskennung endet auf die ersten 9 Zeichen des Commits)
+    expect(ORT.version.endsWith(ORT_DRITTLIZENZEN.stand.slice(0, 9))).toBe(true);
+    const text = readFileSync(gepinnt, 'utf8');
+    expect(text.startsWith('THIRD PARTY SOFTWARE NOTICES AND INFORMATION')).toBe(true);
+    expect(text).toMatch(/\nEigen\n+MPL v2\.0\n/);
+    // nicht unter /lern-app/modelle/ (dort genau 12 Dateien, scripts/lernapp-modelle.mjs)
+    expect(ORT_DRITTLIZENZEN.pfad.startsWith('/lern-app/modelle/')).toBe(false);
+  });
+
+  it('Website /quellen nennt alles, was die Lern-App ausliefert (Daten, Bildkarten, Spracherkennung, Stimmen, Schriften, Bibliotheken)', () => {
+    const eintraege = new Map(ABSCHNITTE.flatMap((a) => a.eintraege.map((e) => [e.id, { ...e, abschnitt: a.id }] as const)));
+    for (const d of DATEN.filter((x) => x.gruppe === 'sprache')) {
+      expect(eintraege.get(d.id)?.abschnitt, d.id).toBe('lernapp-daten');
+      expect(eintraege.get(d.id)?.namensnennung, d.id).toBe(d.namensnennung);
+      expect(eintraege.get(d.id)?.url, d.id).toBe(d.adresse);
+    }
+    expect(eintraege.get('tanzil')?.abschnitt).toBe('koran');
+    expect(eintraege.get('hadith-api')?.abschnitt).toBe('hadith');
+    expect(eintraege.get('lucide-bildkarten')?.abschnitt).toBe('lernapp-daten');
+    expect(eintraege.get('onnxruntime-web')?.drittlizenzen?.url).toBe(ORT_DRITTLIZENZEN.pfad);
+    expect(eintraege.get('whisper')?.lizenz?.name).toBe('MIT');
+    expect(eintraege.get('whisper-onnx')?.lizenz?.name).toBe('Apache-2.0');
+    expect(eintraege.get('transformers-js')?.lizenz?.name).toBe('Apache-2.0');
+    for (const s of ALLE_STIMMEN)
+      expect([...eintraege.values()].some((e) => e.abschnitt === 'sprachausgabe' && e.url === s.modellAdresse)).toBe(true);
+    // Schriften und Bibliotheken der Lern-App (Eintrag auf der Website anders benannt bzw. im Abschnitt Spracherkennung)
+    const schrift: Record<string, string> = {
+      'atkinson-hyperlegible-next': 'atkinson',
+      'noto-sans-arabic': 'noto-sans-arabic',
+      amiri: 'amiri',
+      'igmg-wetzlar-titel': 'source-serif',
+    };
+    for (const s of SCHRIFTEN) expect(eintraege.get(schrift[s.id]!)?.abschnitt, s.id).toBe('schriften');
+    const bibliothek: Record<string, string> = {
+      'lucide-react': 'lucide',
+      'altcha-lib': 'altcha',
+      transformers: 'transformers-js',
+      // im Bündel von Transformers.js, dort in der Fassung genannt
+      tokenizers: 'transformers-js',
+      jinja: 'transformers-js',
+    };
+    const website = new Set([...WEBSITE_BIBLIOTHEKEN.map((b) => b.id), ...eintraege.keys()]);
+    for (const b of BIBLIOTHEKEN) expect(website.has(bibliothek[b.id] ?? b.id), b.id).toBe(true);
+    // Texte je Eintrag in de, tr, en (Fassung und Verwendung Pflicht, Änderungen und Hinweis nach Kennzeichen)
+    const texte = JSON.parse(readFileSync(join(WEB, 'messages', 'bereiche', 'quellen.json'), 'utf8'));
+    for (const sprache of ['de', 'tr', 'en'])
+      for (const e of eintraege.values()) {
+        const t = texte[sprache].quellen.eintraege[e.id];
+        expect(t?.fassung && t?.verwendung, `${sprache} ${e.id}`).toBeTruthy();
+        if (e.aenderungen) expect(t.aenderungen, `${sprache} ${e.id}`).toBeTruthy();
+        if (e.hinweis) expect(t.hinweis, `${sprache} ${e.id}`).toBeTruthy();
+      }
   });
 });

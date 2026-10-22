@@ -177,3 +177,160 @@ export const SCHRIFTEN: readonly LernQuelle[] = [
     lizenz: 'OFL-1.1',
   },
 ];
+
+/**
+ * Lizenzen der Daten (KERN 4.0 §1: ausgelieferte Daten nur CC0, CC BY, CC BY-SA; Unlicense = Verzicht wie CC0) mit Name und
+ * Adresse des Lizenztexts. Die CC-Lizenzen verlangen keine Kopie des Texts, nur den Verweis (Adresse als Text, offline lesbar).
+ */
+export const DATEN_LIZENZEN = {
+  'CC-BY-2.0-FR': { name: 'CC BY 2.0 FR', adresse: 'https://creativecommons.org/licenses/by/2.0/fr/' },
+  'CC-BY-3.0': { name: 'CC BY 3.0', adresse: 'https://creativecommons.org/licenses/by/3.0/' },
+  'CC-BY-SA-4.0': { name: 'CC BY-SA 4.0', adresse: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+  'CC0-1.0': { name: 'CC0 1.0', adresse: 'https://creativecommons.org/publicdomain/zero/1.0/' },
+  Unlicense: { name: 'Unlicense', adresse: 'https://unlicense.org/' },
+} as const;
+export type DatenLizenz = keyof typeof DATEN_LIZENZEN;
+
+/**
+ * Gepinnte Daten der Lern-App (ADR 0045 Nr. 3–7 und 15, Z-L17): je Quelle Urheber, Stand, Lizenz und die Namensnennung wie in
+ * `web/daten/<ordner>/QUELLE.md` (deutsch, auf der Seite mit `lang="de"`). Die Namensnennung je Satz bzw. je Eintrag steht
+ * zusätzlich im Kurspaket (offline, ADR 0039). `gruppe`: `sprache` = Sprachkurse (Sätze, Wörterbuch, Häufigkeit nur zur Auswahl),
+ * `religion` = Korantext und Hadith (nur als Verweis im Wissenskurs und im Koran-Arabisch-Pfad, dazu als Prüfgrundlage des
+ * Religionswächters, KERN 4.0 §3; nie in Sprachkursen). Der Unit-Test `lernapp/quellen` gleicht Lizenz und Namensnennung mit
+ * den `QUELLE.md` ab.
+ */
+export const DATEN_IDS = ['tatoeba', 'wiktionary', 'wordfreq', 'camel-msa', 'frequencywords', 'tanzil', 'bukhari'] as const;
+export type DatenQuelle = {
+  /** Anker `#quelle-<id>` und Schlüssel `lizenzverzeichnis.verwendungen.<id>` */
+  id: (typeof DATEN_IDS)[number];
+  gruppe: 'sprache' | 'religion';
+  name: string;
+  /** Stand bzw. Fassung (sprachneutral: Nummer, Datum ISO, Commit) */
+  version: string;
+  urheber: string;
+  adresse: string;
+  lizenz: DatenLizenz;
+  /** weitere Lizenz eines Teils (Tatoeba: Teilmenge CC0) */
+  auchLizenz?: DatenLizenz;
+  namensnennung: string;
+  /** Ordner unter `web/daten/` mit `QUELLE.md` */
+  ordner: string;
+};
+
+export const DATEN: readonly DatenQuelle[] = [
+  {
+    id: 'tatoeba',
+    gruppe: 'sprache',
+    name: 'Tatoeba',
+    version: '2026-10-10',
+    urheber: 'Tatoeba contributors',
+    adresse: 'https://tatoeba.org',
+    lizenz: 'CC-BY-2.0-FR',
+    auchLizenz: 'CC0-1.0',
+    namensnennung:
+      'Satz #{id} von {benutzer}, Tatoeba (https://tatoeba.org/de/sentences/show/{id}), CC BY 2.0 FR (https://creativecommons.org/licenses/by/2.0/fr/); ohne Benutzername „Tatoeba-Mitwirkende“; bei Paaren beide Sätze; Änderungen als „bearbeitet“ gekennzeichnet',
+    ordner: 'tatoeba',
+  },
+  {
+    id: 'wiktionary',
+    gruppe: 'sprache',
+    name: 'Wiktionary (kaikki.org, Wiktextract)',
+    version: '2026-09-01',
+    urheber: 'Wiktionary contributors; Tatu Ylonen (Wiktextract)',
+    adresse: 'https://kaikki.org/dictionary/',
+    lizenz: 'CC-BY-SA-4.0',
+    namensnennung:
+      'Wörterbuchdaten nach Wiktionary, Artikel ‚{w}‘ (https://{q}.wiktionary.org/wiki/{w}), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0',
+    ordner: 'kaikki',
+  },
+  {
+    id: 'wordfreq',
+    gruppe: 'sprache',
+    name: 'wordfreq',
+    version: '3.1.1',
+    urheber: 'Robyn Speer',
+    adresse: 'https://github.com/rspeer/wordfreq',
+    lizenz: 'CC-BY-SA-4.0',
+    namensnennung:
+      'Häufigkeitsdaten: wordfreq von Robyn Speer (https://github.com/rspeer/wordfreq, DOI 10.5281/zenodo.7199437), CC BY-SA 4.0; enthält Daten aus SUBTLEX (Brysbaert u. a., frei verfügbare Daten), OpenSubtitles (http://www.opensubtitles.org/), Google Books Ngrams (http://books.google.com/ngrams), Wikipedia, Leeds Internet Corpus und ParaCrawl; gefiltert und gekürzt.',
+    ordner: 'haeufigkeit',
+  },
+  {
+    id: 'camel-msa',
+    gruppe: 'sprache',
+    name: 'CAMeL Arabic Frequency Lists (MSA)',
+    version: '1.0',
+    urheber: 'Salam Khalifa, Go Inoue, Bashar Alhafni, Nurpeiis Baimukan, Houda Bouamor, Nizar Habash',
+    adresse: 'https://github.com/CAMeL-Lab/Camel_Arabic_Frequency_Lists',
+    lizenz: 'CC-BY-SA-4.0',
+    namensnennung:
+      'Arabische Häufigkeitsdaten: Camel Arabic Frequency Lists v1.0 (Salam Khalifa, Go Inoue, Bashar Alhafni, Nurpeiis Baimukan, Houda Bouamor, Nizar Habash 2021, https://github.com/CAMeL-Lab/Camel_Arabic_Frequency_Lists), CC BY-SA 4.0; gefiltert und gekürzt.',
+    ordner: 'haeufigkeit',
+  },
+  {
+    id: 'frequencywords',
+    gruppe: 'sprache',
+    name: 'FrequencyWords',
+    version: '2018 (525f9b5)',
+    urheber: 'Hermit Dave',
+    adresse: 'https://github.com/hermitdave/FrequencyWords',
+    lizenz: 'CC-BY-SA-4.0',
+    namensnennung:
+      'Häufigkeitsdaten: FrequencyWords von Hermit Dave (https://github.com/hermitdave/FrequencyWords), CC BY-SA 4.0, auf Grundlage von OpenSubtitles2018 (http://www.opensubtitles.org/, über OPUS); gefiltert.',
+    ordner: 'haeufigkeit',
+  },
+  {
+    id: 'tanzil',
+    gruppe: 'religion',
+    name: 'Tanzil Quran Text (Uthmani)',
+    version: '1.1 (2021-02-12)',
+    urheber: 'Tanzil Project, Copyright (C) 2007-2026',
+    adresse: 'https://tanzil.net',
+    lizenz: 'CC-BY-3.0',
+    namensnennung:
+      'Tanzil Quran Text (Uthmani, Version 1.1), Copyright (C) 2007-2026 Tanzil Project, Creative Commons Attribution 3.0, https://tanzil.net – unverändert',
+    ordner: 'tanzil',
+  },
+  {
+    // Schlüssel ohne das Wort aus dem Formel-Lexikon (KERN 4.0 §3 a gilt auch für Schlüssel in `messages/lernapp/ar.json`)
+    id: 'bukhari',
+    gruppe: 'religion',
+    name: 'hadith-api (ara-bukhari)',
+    version: 'df57907 (2026-06-03)',
+    urheber: 'fawazahmed0',
+    adresse: 'https://github.com/fawazahmed0/hadith-api',
+    lizenz: 'Unlicense',
+    namensnennung:
+      'hadith-api von fawazahmed0 (https://github.com/fawazahmed0/hadith-api), Unlicense; Herkunft des Textes laut Repository: sunnah.com',
+    ordner: 'hadith',
+  },
+];
+
+/**
+ * Bildkarten (KERN 4.0 §5/§7, ADR 0045 Nr. 9): Linien-Symbole aus Lucide (ISC, Eintrag `lucide-react` unter `BIBLIOTHEKEN`), als
+ * Pfade in `web/inhalte/lernapp/symbole/symbole.json`. Einige Lucide-Symbole stammen aus Feather (MIT, Cole Bemis); die
+ * Bildkarten aus Feather stehen hier mit Namen. Der Unit-Test prüft beides gegen `symbole.json` und die Lizenzdatei von Lucide.
+ */
+export const BILDKARTEN = {
+  quelle: 'Lucide',
+  version: '1.55.0',
+  lizenz: 'ISC' as LizenzName,
+  feather: {
+    urheber: 'Copyright (c) 2013-present Cole Bemis',
+    adresse: 'https://github.com/feathericons/feather',
+    lizenz: 'MIT' as LizenzName,
+    symbole: ['calendar', 'clock', 'key', 'shopping-bag'],
+  },
+} as const;
+
+/**
+ * Drittlizenzen von ONNX Runtime (ADR 0042 Nr. 10, Z-L17): Volltext als statische Datei (Herkunft und SHA-256 in
+ * `web/daten/lernapp-lizenzen/QUELLE.md`). Offline nennt die Seite die wichtigste Bedingung selbst: Eigen steht unter MPL-2.0,
+ * der Quellcode ist frei erhältlich (MPL-2.0 §3.2).
+ */
+export const ORT_DRITTLIZENZEN = {
+  pfad: '/lern-app/lizenzen/onnxruntime-ThirdPartyNotices.txt',
+  stand: '8d85527a010e294a26b274749f74294b2a32cec5',
+  sha256: '143764b952fdb1a7c69ce653bfba74a7744d6a8a573bfb73e235fba356c83de3',
+  eigen: { name: 'Eigen', lizenz: 'MPL-2.0', adresse: 'https://gitlab.com/libeigen/eigen' },
+} as const;

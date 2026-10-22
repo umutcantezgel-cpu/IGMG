@@ -2,8 +2,12 @@
  * Verzeichnis der übernommenen Daten, Schriften und Bibliotheken für /quellen (AUFTRAG 5, ADR 0025). Sprachneutrale
  * Angaben (Eigennamen, Urheber wie in der Quelle, Lizenzname, Adressen) stehen hier; Fassung, Verwendung, Änderungen und
  * Hinweise in messages/bereiche/quellen.json unter `quellen.eintraege.<id>`. Belege: web/daten/<quelle>/QUELLE.md,
- * src/fonts/QUELLE.md und *-OFL.txt, package.json (Versionen laut node_modules).
+ * src/fonts/QUELLE.md und *-OFL.txt, package.json (Versionen laut node_modules). Lern-App (L8-03, ADR 0045 Nr. 15, Z-L17):
+ * Sprachdaten, Bildkarten und Spracherkennung mit denselben Angaben wie `/lern-app/[ui]/quellen`; die Namensnennungen der
+ * Daten kommen aus `src/lib/lernapp/quellen.ts` (eine Quelle für beide Seiten, abgeglichen mit `web/daten/<ordner>/QUELLE.md`).
  */
+import { DATEN, ORT_DRITTLIZENZEN } from '@/lib/lernapp/quellen';
+
 export type Lizenz = { name: string; url: string };
 
 export type QuellenEintrag = {
@@ -20,6 +24,17 @@ export type QuellenEintrag = {
   /** Es gibt `quellen.eintraege.<id>.aenderungen` bzw. `.hinweis` */
   aenderungen?: boolean;
   hinweis?: boolean;
+  /** Pflichtangabe der Namensnennung wie in `QUELLE.md` (deutsch, sprachneutral wiedergegeben, `lang="de"`) */
+  namensnennung?: string;
+  /** Volltext weiterer Lizenzen (ONNX Runtime: ThirdPartyNotices) vom eigenen Ursprung */
+  drittlizenzen?: Lizenz;
+};
+
+/** Namensnennung einer Datenquelle der Lern-App (`src/lib/lernapp/quellen.ts`). */
+const namensnennung = (id: string) => {
+  const d = DATEN.find((x) => x.id === id);
+  if (!d) throw new Error(`Datenquelle ${id} fehlt in src/lib/lernapp/quellen.ts`);
+  return d.namensnennung;
 };
 
 const CC_BY_3 = { name: 'CC BY 3.0', url: 'https://creativecommons.org/licenses/by/3.0/' };
@@ -27,6 +42,9 @@ const CC_BY_4 = { name: 'CC BY 4.0', url: 'https://creativecommons.org/licenses/
 const OFL = { name: 'SIL Open Font License 1.1', url: 'https://openfontlicense.org/' };
 const MIT = { name: 'MIT', url: 'https://opensource.org/license/mit' };
 const APACHE = { name: 'Apache-2.0', url: 'https://www.apache.org/licenses/LICENSE-2.0' };
+const CC_BY_2_FR = { name: 'CC BY 2.0 FR', url: 'https://creativecommons.org/licenses/by/2.0/fr/' };
+const CC_BY_SA_4 = { name: 'CC BY-SA 4.0', url: 'https://creativecommons.org/licenses/by-sa/4.0/' };
+const ISC = { name: 'ISC', url: 'https://opensource.org/license/isc-license-txt' };
 
 export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'uebersetzungsbedingungen' }[] = [
   {
@@ -138,6 +156,74 @@ export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'ue
         url: 'https://github.com/aliftype/amiri',
         lizenz: OFL,
       },
+      {
+        // Lern-App: arabische Oberfläche (ADR 0044 Nr. 7)
+        id: 'noto-sans-arabic',
+        name: 'Noto Sans Arabic',
+        urheber: 'The Noto Project Authors, 2022',
+        url: 'https://github.com/notofonts/arabic',
+        lizenz: OFL,
+      },
+    ],
+  },
+  {
+    // Lern-App: gepinnte Sprachdaten (ADR 0045 Nr. 3–7) und Bildkarten (ADR 0045 Nr. 9); Belege web/daten/<ordner>/QUELLE.md
+    id: 'lernapp-daten',
+    eintraege: [
+      {
+        id: 'tatoeba',
+        name: 'Tatoeba',
+        urheber: 'Tatoeba contributors',
+        url: 'https://tatoeba.org',
+        lizenz: CC_BY_2_FR,
+        aenderungen: true,
+        namensnennung: namensnennung('tatoeba'),
+      },
+      {
+        id: 'wiktionary',
+        name: 'Wiktionary (kaikki.org, Wiktextract)',
+        urheber: 'Wiktionary contributors; Tatu Ylonen (Wiktextract)',
+        url: 'https://kaikki.org/dictionary/',
+        lizenz: CC_BY_SA_4,
+        herkunft: { name: 'Wiktionary', url: 'https://www.wiktionary.org' },
+        aenderungen: true,
+        namensnennung: namensnennung('wiktionary'),
+      },
+      {
+        id: 'wordfreq',
+        name: 'wordfreq',
+        urheber: 'Robyn Speer',
+        url: 'https://github.com/rspeer/wordfreq',
+        lizenz: CC_BY_SA_4,
+        aenderungen: true,
+        namensnennung: namensnennung('wordfreq'),
+      },
+      {
+        id: 'camel-msa',
+        name: 'CAMeL Arabic Frequency Lists (MSA)',
+        urheber: 'Salam Khalifa, Go Inoue, Bashar Alhafni, Nurpeiis Baimukan, Houda Bouamor, Nizar Habash',
+        url: 'https://github.com/CAMeL-Lab/Camel_Arabic_Frequency_Lists',
+        lizenz: CC_BY_SA_4,
+        aenderungen: true,
+        namensnennung: namensnennung('camel-msa'),
+      },
+      {
+        id: 'frequencywords',
+        name: 'FrequencyWords',
+        urheber: 'Hermit Dave',
+        url: 'https://github.com/hermitdave/FrequencyWords',
+        lizenz: CC_BY_SA_4,
+        aenderungen: true,
+        namensnennung: namensnennung('frequencywords'),
+      },
+      {
+        id: 'lucide-bildkarten',
+        name: 'Lucide',
+        urheber: 'Lucide Icons and Contributors; Cole Bemis (Feather)',
+        url: 'https://lucide.dev',
+        lizenz: ISC,
+        hinweis: true,
+      },
     ],
   },
   {
@@ -156,6 +242,43 @@ export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'ue
       },
     ],
   },
+  {
+    // Lern-App: Spracherkennung der Sprechübung (ADR 0042 Nr. 3 und 10); Beleg web/daten/lernapp-modelle/QUELLE.md und
+    // web/daten/lernapp-lizenzen/QUELLE.md (ThirdPartyNotices)
+    id: 'lernapp-spracherkennung',
+    eintraege: [
+      {
+        id: 'whisper',
+        name: 'Whisper (base)',
+        urheber: 'OpenAI, Copyright (c) 2022',
+        url: 'https://github.com/openai/whisper',
+        lizenz: MIT,
+      },
+      {
+        id: 'whisper-onnx',
+        name: 'Xenova/whisper-base (ONNX, q8)',
+        urheber: 'Xenova',
+        url: 'https://huggingface.co/Xenova/whisper-base',
+        lizenz: APACHE,
+      },
+      {
+        id: 'transformers-js',
+        name: 'Transformers.js',
+        urheber: 'Hugging Face',
+        url: 'https://github.com/huggingface/transformers.js',
+        lizenz: APACHE,
+      },
+      {
+        id: 'onnxruntime-web',
+        name: 'ONNX Runtime Web',
+        urheber: 'Microsoft Corporation',
+        url: 'https://github.com/microsoft/onnxruntime',
+        lizenz: MIT,
+        drittlizenzen: { name: 'ThirdPartyNotices.txt', url: ORT_DRITTLIZENZEN.pfad },
+        hinweis: true,
+      },
+    ],
+  },
 ];
 
 /** Wichtigste Programmbibliotheken (package.json); Zweck in `quellen.bibliotheken.zweck.<id>`. */
@@ -170,14 +293,13 @@ export const BIBLIOTHEKEN: { id: string; name: string; url: string; lizenz: Lize
   { id: 'better-auth', name: 'Better Auth', url: 'https://better-auth.com', lizenz: MIT },
   { id: 'tiptap', name: 'Tiptap', url: 'https://tiptap.dev', lizenz: MIT },
   { id: 'radix', name: 'Radix UI', url: 'https://radix-ui.com', lizenz: MIT },
-  {
-    id: 'lucide',
-    name: 'Lucide',
-    url: 'https://lucide.dev',
-    lizenz: { name: 'ISC', url: 'https://opensource.org/license/isc-license-txt' },
-  },
+  { id: 'lucide', name: 'Lucide', url: 'https://lucide.dev', lizenz: ISC },
   { id: 'date-fns', name: 'date-fns', url: 'https://date-fns.org', lizenz: MIT },
   { id: 'zod', name: 'Zod', url: 'https://zod.dev', lizenz: MIT },
+  // Lern-App im Browser (ADR 0038); Spracherkennung siehe Abschnitt `lernapp-spracherkennung`
+  { id: 'idb', name: 'idb', url: 'https://github.com/jakearchibald/idb', lizenz: ISC },
+  { id: 'ts-fsrs', name: 'ts-fsrs', url: 'https://github.com/open-spaced-repetition/ts-fsrs', lizenz: MIT },
+  { id: 'fastest-levenshtein', name: 'fastest-levenshtein', url: 'https://github.com/ka-weihe/fastest-levenshtein', lizenz: MIT },
   { id: 'altcha', name: 'ALTCHA', url: 'https://altcha.org', lizenz: MIT },
   { id: 'ical', name: 'ical-generator', url: 'https://github.com/sebbo2002/ical-generator', lizenz: MIT },
   {
