@@ -3061,7 +3061,7 @@
         {
           "schluessel": "tr.a2.e09.l01.a06",
           "typ": "paare",
-          "lemmata": ["tr.a2.e09.buyukbaba", "tr.a2.e09.ebeveyn", "tr.a2.e09.ikiz", "tr.a2.e09.nesil"]
+          "lemmata": ["tr.a2.e09.buyukbaba", "tr.a2.e09.ebeveyn", "tr.a2.e09.ikiz", "tr.a2.e09.nesil", "tr.a2.e09.goruntulu"]
         },
         {
           "schluessel": "tr.a2.e09.l01.a07",
@@ -3088,7 +3088,7 @@
             }
           ],
           "antwort": "tr.a2.e09.s0028",
-          "ablenker": ["tr.a2.e09.s0035", "tr.a2.e09.s0033", "tr.a2.e09.s0030"]
+          "ablenker": ["tr.a2.e09.s0035", "tr.a2.e09.s0003", "tr.a2.e09.s0030"]
         },
         {
           "schluessel": "tr.a2.e09.l01.a10",
@@ -3110,9 +3110,9 @@
         {
           "schluessel": "tr.a2.e09.l01.a12",
           "typ": "auswahl",
-          "anweisung": "waehleWort",
-          "ziel": "tr.a2.e09.goruntulu",
-          "ablenker": ["tr.a2.e01.ilginc", "tr.a2.e04.sessiz"]
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e09.s0036",
+          "ablenker": ["tr.a2.e09.s0035", "tr.a2.e09.s0004"]
         },
         {
           "schluessel": "tr.a2.e09.l01.a13",
@@ -3137,7 +3137,7 @@
           "schluessel": "tr.a2.e09.l01.a15",
           "typ": "wortbank",
           "anweisung": "uebersetze",
-          "satz": "tr.a2.e09.s0030",
+          "satz": "tr.a2.e09.s0006",
           "nach": "ausgang"
         },
         {
@@ -3198,7 +3198,7 @@
         {
           "schluessel": "tr.a2.e09.l02.a07",
           "typ": "paare",
-          "lemmata": ["tr.a2.e09.ozlemek", "tr.a2.e09.tanistirmak", "tr.a2.e09.bahsetmek", "tr.a2.e09.birbiri"]
+          "lemmata": ["tr.a2.e09.ozlemek", "tr.a2.e09.tanistirmak", "tr.a2.e09.bahsetmek", "tr.a2.e09.birbiri", "tr.a2.e09.bagli"]
         },
         {
           "schluessel": "tr.a2.e09.l02.a08",
@@ -3210,7 +3210,7 @@
             }
           ],
           "antwort": "tr.a2.e09.s0042",
-          "ablenker": ["tr.a2.e09.s0046", "tr.a2.e09.s0043", "tr.a2.e09.s0050"]
+          "ablenker": ["tr.a2.e09.s0045", "tr.a2.e09.s0043", "tr.a2.e09.s0050"]
         },
         {
           "schluessel": "tr.a2.e09.l02.a09",
@@ -3235,8 +3235,8 @@
           "schluessel": "tr.a2.e09.l02.a12",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
-          "ziel": "tr.a2.e09.bagli",
-          "ablenker": ["tr.a2.e05.uygun", "tr.a2.e01.serbest"]
+          "ziel": "tr.a2.e09.s0072",
+          "ablenker": ["tr.a2.e09.s0061", "tr.a2.e09.s0065"]
         },
         {
           "schluessel": "tr.a2.e09.l02.a13",
@@ -3304,12 +3304,12 @@
           "typ": "luecke",
           "ziel": "tr.a2.e09.s0078",
           "wort": 5,
-          "ablenker": ["etmezsin", "etmezim"]
+          "ablenker": ["etmezsin", "etmem"]
         },
         {
           "schluessel": "tr.a2.e09.l03.a06",
           "typ": "paare",
-          "lemmata": ["tr.a2.e09.yardimsever", "tr.a2.e09.sevimli", "tr.a2.e09.zeki", "tr.a2.e09.konuskan"]
+          "lemmata": ["tr.a2.e09.yardimsever", "tr.a2.e09.sevimli", "tr.a2.e09.zeki", "tr.a2.e09.konuskan", "tr.a2.e09.karakter"]
         },
         {
           "schluessel": "tr.a2.e09.l03.a07",
@@ -3380,7 +3380,7 @@
             }
           ],
           "antwort": "tr.a2.e09.s0106",
-          "ablenker": ["tr.a2.e09.s0101", "tr.a1.e10.s0110", "tr.a2.e09.s0100"]
+          "ablenker": ["tr.a2.e09.s0101", "tr.a2.e09.s0094", "tr.a2.e09.s0100"]
         },
         {
           "schluessel": "tr.a2.e09.l03.a11",
@@ -3391,8 +3391,8 @@
           "schluessel": "tr.a2.e09.l03.a12",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
-          "ziel": "tr.a2.e09.karakter",
-          "ablenker": ["tr.a2.e06.yetenek", "tr.a2.e03.fikir"]
+          "ziel": "tr.a2.e09.s0099",
+          "ablenker": ["tr.a2.e09.s0098", "tr.a2.e09.s0090"]
         },
         {
           "schluessel": "tr.a2.e09.l03.a13",
@@ -3490,7 +3490,7 @@
             }
           ],
           "antwort": "tr.a2.e09.s0123",
-          "ablenker": ["tr.a2.e09.s0117", "tr.a2.e09.s0132", "tr.a2.e09.s0135"]
+          "ablenker": ["tr.a2.e09.s0138", "tr.a2.e09.s0132", "tr.a2.e09.s0127"]
         },
         {
           "schluessel": "tr.a2.e09.l04.a09",
@@ -3533,7 +3533,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a2.e09.s0095",
-          "ablenker": ["tr.a2.e09.s0053", "tr.a2.e09.s0097"]
+          "ablenker": ["tr.a2.e09.s0096", "tr.a2.e09.s0097"]
         },
         {
           "schluessel": "tr.a2.e09.l04.a15",
@@ -3594,7 +3594,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a2.e09.s0146",
-          "ablenker": ["tr.a2.e09.s0147", "tr.a2.e09.s0164"]
+          "ablenker": ["tr.a2.e09.s0147", "tr.a2.e09.s0148"]
         },
         {
           "schluessel": "tr.a2.e09.l05.a07",
@@ -3614,7 +3614,7 @@
             }
           ],
           "antwort": "tr.a2.e09.s0131",
-          "ablenker": ["tr.a2.e09.s0176", "tr.a2.e09.s0180", "tr.a2.e09.s0181"]
+          "ablenker": ["tr.a2.e09.s0150", "tr.a2.e09.s0177", "tr.a2.e09.s0181"]
         },
         {
           "schluessel": "tr.a2.e09.l05.a09",
@@ -3988,7 +3988,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a2.e09.s0010",
-          "ablenker": ["tr.a2.e09.s0008", "tr.a2.e09.s0030"]
+          "ablenker": ["tr.a2.e09.s0008", "tr.a2.e09.s0007"]
         },
         {
           "schluessel": "tr.a2.e09.l07.a03",
@@ -4015,7 +4015,7 @@
             }
           ],
           "antwort": "tr.a2.e09.s0032",
-          "ablenker": ["tr.a2.e09.s0038", "tr.a2.e09.s0035", "tr.a2.e09.s0056"]
+          "ablenker": ["tr.a2.e09.s0038", "tr.a2.e09.s0019", "tr.a2.e09.s0033"]
         },
         {
           "schluessel": "tr.a2.e09.l07.a06",
@@ -4033,9 +4033,9 @@
         {
           "schluessel": "tr.a2.e09.l07.a08",
           "typ": "auswahl",
-          "anweisung": "waehleWort",
-          "ziel": "tr.a2.e09.cesur",
-          "ablenker": ["tr.a2.e09.utangac", "tr.a2.e09.sabirli"]
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e09.s0113",
+          "ablenker": ["tr.a2.e09.s0109", "tr.a2.e09.s0110"]
         },
         {
           "schluessel": "tr.a2.e09.l07.a09",
@@ -4047,7 +4047,7 @@
             }
           ],
           "antwort": "tr.a2.e09.s0258",
-          "ablenker": ["tr.a2.e09.s0014", "tr.a2.e09.s0009", "tr.a2.e09.s0175"]
+          "ablenker": ["tr.a2.e09.s0014", "tr.a2.e09.s0024", "tr.a2.e09.s0175"]
         },
         {
           "schluessel": "tr.a2.e09.l07.a10",
@@ -4080,8 +4080,8 @@
           "schluessel": "tr.a2.e09.l07.a14",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
-          "ziel": "tr.a2.e09.sayesinde",
-          "ablenker": ["tr.a2.e07.dolayi", "tr.a1.e10.gibi"]
+          "ziel": "tr.a2.e09.s0178",
+          "ablenker": ["tr.a2.e09.s0036", "tr.a2.e09.s0179"]
         },
         {
           "schluessel": "tr.a2.e09.l07.a15",
@@ -4167,7 +4167,7 @@
             }
           ],
           "antwort": "tr.a2.e09.s0259",
-          "ablenker": ["tr.a2.e09.s0108", "tr.a2.e09.s0085", "tr.a2.e09.s0057"]
+          "ablenker": ["tr.a2.e09.s0108", "tr.a2.e09.s0085", "tr.a2.e09.s0092"]
         },
         {
           "schluessel": "tr.a2.e09.l08.a06",
@@ -4202,7 +4202,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a2.e09.s0121",
-          "ablenker": ["tr.a2.e09.s0120", "tr.a2.e09.s0112"]
+          "ablenker": ["tr.a2.e09.s0111", "tr.a2.e09.s0118"]
         },
         {
           "schluessel": "tr.a2.e09.l08.a11",
@@ -4219,7 +4219,7 @@
             }
           ],
           "antwort": "tr.a2.e09.s0171",
-          "ablenker": ["tr.a2.e09.s0183", "tr.a2.e09.s0167", "tr.a2.e09.s0175"]
+          "ablenker": ["tr.a2.e09.s0183", "tr.a2.e09.s0167", "tr.a2.e09.s0169"]
         },
         {
           "schluessel": "tr.a2.e09.l08.a13",
