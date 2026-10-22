@@ -1,0 +1,4464 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "tr",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "tr.a2.e14",
+    "reihenfolge": 15,
+    "thema": {
+      "de": "Paket, Konto, Rechnung",
+      "tr": "Paket, hesap, fatura",
+      "ar": "طرد وحساب وفاتورة"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann bei der Post ein Paket aufgeben und nach Kosten fragen.",
+        "tr": "Postanede paket gönderebilir ve ücretini sorabilirim.",
+        "ar": "أستطيع أن أرسل طردًا في مكتب البريد وأن أسأل عن التكلفة."
+      },
+      {
+        "de": "Ich kann große Zahlen, Preise und Prozentangaben verstehen.",
+        "tr": "Büyük sayıları, fiyatları ve yüzdeleri anlayabilirim.",
+        "ar": "أستطيع أن أفهم الأعداد الكبيرة والأسعار والنسب المئوية."
+      },
+      {
+        "de": "Ich kann am Telefon und im Netz einfache Dienste nutzen und mein Passwort schützen.",
+        "tr": "Telefonda ve internette basit hizmetleri kullanabilir ve şifremi koruyabilirim.",
+        "ar": "أستطيع أن أستخدم خدمات بسيطة بالهاتف وعلى الإنترنت وأن أحمي كلمة المرور."
+      }
+    ],
+    "symbol": "package",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "tr.a2.e14.mektup",
+      "lemma": "mektup",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u",
+        "erweichung": "mektup → mektub-"
+      },
+      "formen": {
+        "pl": "mektuplar",
+        "akk/poss.3sg": "mektubu",
+        "dat": "mektuba",
+        "gen/poss.2sg": "mektubun",
+        "ins": "mektupla",
+        "poss.1sg": "mektubum",
+        "poss.1pl": "mektubumuz",
+        "poss.2pl": "mektubunuz",
+        "lok": "mektupta",
+        "abl": "mektuptan",
+        "poss.3pl": "mektupları"
+      },
+      "frequenzRang": 2839,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.kargo",
+      "lemma": "kargo",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "kargolar",
+        "akk": "kargoyu",
+        "dat": "kargoya",
+        "gen": "kargonun",
+        "ins": "kargoyla",
+        "poss.1sg": "kargom",
+        "poss.2sg": "kargon",
+        "poss.3sg": "kargosu",
+        "poss.1pl": "kargomuz",
+        "poss.2pl": "kargonuz",
+        "lok": "kargoda",
+        "abl": "kargodan",
+        "poss.3pl": "kargoları"
+      },
+      "frequenzRang": 5018,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.pul",
+      "lemma": "pul",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "pullar",
+        "akk/poss.3sg": "pulu",
+        "dat": "pula",
+        "gen/poss.2sg": "pulun",
+        "ins": "pulla",
+        "poss.1sg": "pulum",
+        "poss.1pl": "pulumuz",
+        "poss.2pl": "pulunuz",
+        "lok": "pulda",
+        "abl": "puldan",
+        "poss.3pl": "pulları"
+      },
+      "frequenzRang": 9564,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.havale",
+      "lemma": "havale",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "havaleler",
+        "akk": "havaleyi",
+        "dat": "havaleye",
+        "gen": "havalenin",
+        "ins": "havaleyle",
+        "poss.1sg": "havalem",
+        "poss.2sg": "havalen",
+        "poss.3sg": "havalesi",
+        "poss.1pl": "havalemiz",
+        "poss.2pl": "havaleniz",
+        "lok": "havalede",
+        "abl": "havaleden",
+        "poss.3pl": "havaleleri"
+      },
+      "frequenzRang": 6692,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.fatura",
+      "lemma": "fatura",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "faturalar",
+        "akk": "faturayı",
+        "dat": "faturaya",
+        "gen": "faturanın",
+        "ins": "faturayla",
+        "poss.1sg": "faturam",
+        "poss.2sg": "faturan",
+        "poss.3sg": "faturası",
+        "poss.1pl": "faturamız",
+        "poss.2pl": "faturanız",
+        "lok": "faturada",
+        "abl": "faturadan",
+        "poss.3pl": "faturaları"
+      },
+      "frequenzRang": 9868,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.sifre",
+      "lemma": "şifre",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "şifreler",
+        "akk": "şifreyi",
+        "dat": "şifreye",
+        "gen": "şifrenin",
+        "ins": "şifreyle",
+        "poss.1sg": "şifrem",
+        "poss.2sg": "şifren",
+        "poss.3sg": "şifresi",
+        "poss.1pl": "şifremiz",
+        "poss.2pl": "şifreniz",
+        "lok": "şifrede",
+        "abl": "şifreden",
+        "poss.3pl": "şifreleri"
+      },
+      "frequenzRang": 4042,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.sistem",
+      "lemma": "sistem",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "sistemler",
+        "akk/poss.3sg": "sistemi",
+        "dat": "sisteme",
+        "gen/poss.2sg": "sistemin",
+        "ins": "sistemle",
+        "poss.1sg": "sistemim",
+        "poss.1pl": "sistemimiz",
+        "poss.2pl": "sisteminiz",
+        "lok": "sistemde",
+        "abl": "sistemden",
+        "poss.3pl": "sistemleri"
+      },
+      "frequenzRang": 1015,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.alici",
+      "lemma": "alıcı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "alıcılar",
+        "akk": "alıcıyı",
+        "dat": "alıcıya",
+        "gen": "alıcının",
+        "ins": "alıcıyla",
+        "poss.1sg": "alıcım",
+        "poss.2sg": "alıcın",
+        "poss.3sg": "alıcısı",
+        "poss.1pl": "alıcımız",
+        "poss.2pl": "alıcınız",
+        "lok": "alıcıda",
+        "abl": "alıcıdan",
+        "poss.3pl": "alıcıları"
+      },
+      "frequenzRang": 5084,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.gonderen",
+      "lemma": "gönderen",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "gönderenler",
+        "akk/poss.3sg": "göndereni",
+        "dat": "gönderene",
+        "gen/poss.2sg": "gönderenin",
+        "ins": "gönderenle",
+        "poss.1sg": "gönderenim",
+        "poss.1pl": "gönderenimiz",
+        "poss.2pl": "göndereniniz",
+        "lok": "gönderende",
+        "abl": "gönderenden",
+        "poss.3pl": "gönderenleri"
+      },
+      "frequenzRang": 8449,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.agirlik",
+      "lemma": "ağırlık",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "ağırlık → ağırlığ-"
+      },
+      "formen": {
+        "pl": "ağırlıklar",
+        "akk/poss.3sg": "ağırlığı",
+        "dat": "ağırlığa",
+        "gen/poss.2sg": "ağırlığın",
+        "ins": "ağırlıkla",
+        "poss.1sg": "ağırlığım",
+        "poss.1pl": "ağırlığımız",
+        "poss.2pl": "ağırlığınız",
+        "lok": "ağırlıkta",
+        "abl": "ağırlıktan",
+        "poss.3pl": "ağırlıkları"
+      },
+      "frequenzRang": 3376,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.icerik",
+      "lemma": "içerik",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "içerik → içeriğ-"
+      },
+      "formen": {
+        "pl": "içerikler",
+        "akk/poss.3sg": "içeriği",
+        "dat": "içeriğe",
+        "gen/poss.2sg": "içeriğin",
+        "ins": "içerikle",
+        "poss.1sg": "içeriğim",
+        "poss.1pl": "içeriğimiz",
+        "poss.2pl": "içeriğiniz",
+        "lok": "içerikte",
+        "abl": "içerikten",
+        "poss.3pl": "içerikleri"
+      },
+      "frequenzRang": 4295,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.gumruk",
+      "lemma": "gümrük",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü",
+        "erweichung": "gümrük → gümrüğ-"
+      },
+      "formen": {
+        "pl": "gümrükler",
+        "akk/poss.3sg": "gümrüğü",
+        "dat": "gümrüğe",
+        "gen/poss.2sg": "gümrüğün",
+        "ins": "gümrükle",
+        "poss.1sg": "gümrüğüm",
+        "poss.1pl": "gümrüğümüz",
+        "poss.2pl": "gümrüğünüz",
+        "lok": "gümrükte",
+        "abl": "gümrükten",
+        "poss.3pl": "gümrükleri"
+      },
+      "frequenzRang": 6293,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.tutar",
+      "lemma": "tutar",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "tutarlar",
+        "akk/poss.3sg": "tutarı",
+        "dat": "tutara",
+        "gen/poss.2sg": "tutarın",
+        "ins": "tutarla",
+        "poss.1sg": "tutarım",
+        "poss.1pl": "tutarımız",
+        "poss.2pl": "tutarınız",
+        "lok": "tutarda",
+        "abl": "tutardan",
+        "poss.3pl": "tutarları"
+      },
+      "frequenzRang": 3060,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.kurus",
+      "lemma": "kuruş",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "kuruşlar",
+        "akk/poss.3sg": "kuruşu",
+        "dat": "kuruşa",
+        "gen/poss.2sg": "kuruşun",
+        "ins": "kuruşla",
+        "poss.1sg": "kuruşum",
+        "poss.1pl": "kuruşumuz",
+        "poss.2pl": "kuruşunuz",
+        "lok": "kuruşta",
+        "abl": "kuruştan",
+        "poss.3pl": "kuruşları"
+      },
+      "frequenzRang": 5392,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.banka",
+      "lemma": "banka",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "bankalar",
+        "akk": "bankayı",
+        "dat": "bankaya",
+        "gen": "bankanın",
+        "ins": "bankayla",
+        "poss.1sg": "bankam",
+        "poss.2sg": "bankan",
+        "poss.3sg": "bankası",
+        "poss.1pl": "bankamız",
+        "poss.2pl": "bankanız",
+        "lok": "bankada",
+        "abl": "bankadan",
+        "poss.3pl": "bankaları"
+      },
+      "frequenzRang": 2270,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.kullanici",
+      "lemma": "kullanıcı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "kullanıcılar",
+        "akk": "kullanıcıyı",
+        "dat": "kullanıcıya",
+        "gen": "kullanıcının",
+        "ins": "kullanıcıyla",
+        "poss.1sg": "kullanıcım",
+        "poss.2sg": "kullanıcın",
+        "poss.3sg": "kullanıcısı",
+        "poss.1pl": "kullanıcımız",
+        "poss.2pl": "kullanıcınız",
+        "lok": "kullanıcıda",
+        "abl": "kullanıcıdan",
+        "poss.3pl": "kullanıcıları"
+      },
+      "frequenzRang": 2123,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.e-posta",
+      "lemma": "e-posta",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "e-postalar",
+        "akk": "e-postayı",
+        "dat": "e-postaya",
+        "ins": "e-postayla",
+        "poss.1sg": "e-postam",
+        "poss.2sg": "e-postan",
+        "poss.3sg": "e-postası",
+        "poss.2pl": "e-postanız",
+        "lok": "e-postada"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.ekran",
+      "lemma": "ekran",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "ekranlar",
+        "akk/poss.3sg": "ekranı",
+        "dat": "ekrana",
+        "gen/poss.2sg": "ekranın",
+        "ins": "ekranla",
+        "poss.1sg": "ekranım",
+        "poss.1pl": "ekranımız",
+        "poss.2pl": "ekranınız",
+        "lok": "ekranda",
+        "abl": "ekrandan",
+        "poss.3pl": "ekranları"
+      },
+      "frequenzRang": 2279,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.tablet",
+      "lemma": "tablet",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "tabletler",
+        "akk/poss.3sg": "tableti",
+        "dat": "tablete",
+        "gen/poss.2sg": "tabletin",
+        "ins": "tabletle",
+        "poss.1sg": "tabletim",
+        "poss.1pl": "tabletimiz",
+        "poss.2pl": "tabletiniz",
+        "lok": "tablette",
+        "abl": "tabletten",
+        "poss.3pl": "tabletleri"
+      },
+      "frequenzRang": 9967,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.pil",
+      "lemma": "pil",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "piller",
+        "akk/poss.3sg": "pili",
+        "dat": "pile",
+        "gen/poss.2sg": "pilin",
+        "ins": "pille",
+        "poss.1sg": "pilim",
+        "poss.1pl": "pilimiz",
+        "poss.2pl": "piliniz",
+        "lok": "pilde",
+        "abl": "pilden",
+        "poss.3pl": "pilleri"
+      },
+      "frequenzRang": 7022,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.bildirim",
+      "lemma": "bildirim",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "bildirimler",
+        "akk/poss.3sg": "bildirimi",
+        "dat": "bildirime",
+        "gen/poss.2sg": "bildirimin",
+        "ins": "bildirimle",
+        "poss.1sg": "bildirimim",
+        "poss.1pl": "bildirimimiz",
+        "poss.2pl": "bildiriminiz",
+        "lok": "bildirimde",
+        "abl": "bildirimden",
+        "poss.3pl": "bildirimleri"
+      },
+      "frequenzRang": 7409,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.postane",
+      "lemma": "postane",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "postaneler",
+        "akk": "postaneyi",
+        "dat": "postaneye",
+        "gen": "postanenin",
+        "ins": "postaneyle",
+        "poss.1sg": "postanem",
+        "poss.2sg": "postanen",
+        "poss.3sg": "postanesi",
+        "poss.1pl": "postanemiz",
+        "poss.2pl": "postaneniz",
+        "lok": "postanede",
+        "abl": "postaneden",
+        "poss.3pl": "postaneleri"
+      },
+      "frequenzRang": 41341,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.postaci",
+      "lemma": "postacı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "postacılar",
+        "akk": "postacıyı",
+        "dat": "postacıya",
+        "gen": "postacının",
+        "ins": "postacıyla",
+        "poss.1sg": "postacım",
+        "poss.2sg": "postacın",
+        "poss.3sg": "postacısı",
+        "poss.1pl": "postacımız",
+        "poss.2pl": "postacınız",
+        "lok": "postacıda",
+        "abl": "postacıdan",
+        "poss.3pl": "postacıları",
+        "kop.1sg": "postacıyım",
+        "kop.1pl": "postacıyız",
+        "kop.2sg": "postacısın",
+        "kop.2pl": "postacısınız"
+      },
+      "frequenzRang": 38659,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.odeme",
+      "lemma": "ödeme",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "ödemeler",
+        "akk": "ödemeyi",
+        "dat": "ödemeye",
+        "gen": "ödemenin",
+        "ins": "ödemeyle",
+        "poss.1sg": "ödemem",
+        "poss.2sg": "ödemen",
+        "poss.3sg": "ödemesi",
+        "poss.1pl": "ödememiz",
+        "poss.2pl": "ödemeniz",
+        "lok": "ödemede",
+        "abl": "ödemeden",
+        "poss.3pl": "ödemeleri"
+      },
+      "frequenzRang": 1828,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.cuzdan",
+      "lemma": "cüzdan",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "cüzdanlar",
+        "akk/poss.3sg": "cüzdanı",
+        "dat": "cüzdana",
+        "gen/poss.2sg": "cüzdanın",
+        "ins": "cüzdanla",
+        "poss.1sg": "cüzdanım",
+        "poss.1pl": "cüzdanımız",
+        "poss.2pl": "cüzdanınız",
+        "lok": "cüzdanda",
+        "abl": "cüzdandan",
+        "poss.3pl": "cüzdanları"
+      },
+      "frequenzRang": 17143,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.takip",
+      "lemma": "takip",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "takip → takib-"
+      },
+      "formen": {
+        "pl": "takipler",
+        "akk/poss.3sg": "takibi",
+        "dat": "takibe",
+        "gen/poss.2sg": "takibin",
+        "ins": "takiple",
+        "poss.1sg": "takibim",
+        "poss.1pl": "takibimiz",
+        "poss.2pl": "takibiniz",
+        "lok": "takipte",
+        "abl": "takipten",
+        "poss.3pl": "takipleri"
+      },
+      "frequenzRang": 239,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.toplam",
+      "lemma": "toplam",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "toplamlar",
+        "akk/poss.3sg": "toplamı",
+        "dat": "toplama",
+        "gen/poss.2sg": "toplamın",
+        "ins": "toplamla",
+        "poss.1sg": "toplamım",
+        "poss.1pl": "toplamımız",
+        "poss.2pl": "toplamınız",
+        "lok": "toplamda",
+        "abl": "toplamdan",
+        "poss.3pl": "toplamları"
+      },
+      "frequenzRang": 533,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.elektrik",
+      "lemma": "elektrik",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "elektrik → elektriğ-"
+      },
+      "formen": {
+        "akk/poss.3sg": "elektriği",
+        "dat": "elektriğe",
+        "gen/poss.2sg": "elektriğin",
+        "ins": "elektrikle",
+        "poss.1sg": "elektriğim",
+        "poss.1pl": "elektriğimiz",
+        "poss.2pl": "elektriğiniz",
+        "lok": "elektrikte",
+        "abl": "elektrikten"
+      },
+      "frequenzRang": 573,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.internet",
+      "lemma": "internet",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk/poss.3sg": "interneti",
+        "dat": "internete",
+        "gen/poss.2sg": "internetin",
+        "ins": "internetle",
+        "poss.1sg": "internetim",
+        "poss.1pl": "internetimiz",
+        "poss.2pl": "internetiniz",
+        "lok": "internette",
+        "abl": "internetten"
+      },
+      "frequenzRang": 675,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.site",
+      "lemma": "site",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "siteler",
+        "akk": "siteyi",
+        "dat": "siteye",
+        "gen": "sitenin",
+        "ins": "siteyle",
+        "poss.1sg": "sitem",
+        "poss.2sg": "siten",
+        "poss.3sg": "sitesi",
+        "poss.1pl": "sitemiz",
+        "poss.2pl": "siteniz",
+        "lok": "sitede",
+        "abl": "siteden",
+        "poss.3pl": "siteleri"
+      },
+      "frequenzRang": 719,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.iletisim",
+      "lemma": "iletişim",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "iletişimler",
+        "akk/poss.3sg": "iletişimi",
+        "dat": "iletişime",
+        "gen/poss.2sg": "iletişimin",
+        "ins": "iletişimle",
+        "poss.1sg": "iletişimim",
+        "poss.1pl": "iletişimimiz",
+        "poss.2pl": "iletişiminiz",
+        "lok": "iletişimde",
+        "abl": "iletişimden",
+        "poss.3pl": "iletişimleri"
+      },
+      "frequenzRang": 811,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.teslim",
+      "lemma": "teslim",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "teslimler",
+        "akk/poss.3sg": "teslimi",
+        "dat": "teslime",
+        "gen/poss.2sg": "teslimin",
+        "ins": "teslimle",
+        "poss.1sg": "teslimim",
+        "poss.1pl": "teslimimiz",
+        "poss.2pl": "tesliminiz",
+        "lok": "teslimde",
+        "abl": "teslimden",
+        "poss.3pl": "teslimleri"
+      },
+      "frequenzRang": 820,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.guvenlik",
+      "lemma": "güvenlik",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "güvenlik → güvenliğ-"
+      },
+      "formen": {
+        "pl": "güvenlikler",
+        "akk/poss.3sg": "güvenliği",
+        "dat": "güvenliğe",
+        "gen/poss.2sg": "güvenliğin",
+        "ins": "güvenlikle",
+        "poss.1sg": "güvenliğim",
+        "poss.1pl": "güvenliğimiz",
+        "poss.2pl": "güvenliğiniz",
+        "lok": "güvenlikte",
+        "abl": "güvenlikten",
+        "poss.3pl": "güvenlikleri"
+      },
+      "frequenzRang": 479,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.hesap",
+      "lemma": "hesap",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "hesap → hesab-"
+      },
+      "formen": {
+        "pl": "hesaplar",
+        "akk/poss.3sg": "hesabı",
+        "dat": "hesaba",
+        "gen/poss.2sg": "hesabın",
+        "ins": "hesapla",
+        "poss.1sg": "hesabım",
+        "poss.1pl": "hesabımız",
+        "poss.2pl": "hesabınız",
+        "lok": "hesapta",
+        "abl": "hesaptan",
+        "poss.3pl": "hesapları"
+      },
+      "frequenzRang": 1263,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.uygulama",
+      "lemma": "uygulama",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "uygulamalar",
+        "akk": "uygulamayı",
+        "dat": "uygulamaya",
+        "gen": "uygulamanın",
+        "ins": "uygulamayla",
+        "poss.1sg": "uygulamam",
+        "poss.2sg": "uygulaman",
+        "poss.3sg": "uygulaması",
+        "poss.1pl": "uygulamamız",
+        "poss.2pl": "uygulamanız",
+        "lok": "uygulamada",
+        "abl": "uygulamadan",
+        "poss.3pl": "uygulamaları"
+      },
+      "frequenzRang": 1401,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.yorum",
+      "lemma": "yorum",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "yorumlar",
+        "akk/poss.3sg": "yorumu",
+        "dat": "yoruma",
+        "gen/poss.2sg": "yorumun",
+        "ins": "yorumla",
+        "poss.1sg": "yorumum",
+        "poss.1pl": "yorumumuz",
+        "poss.2pl": "yorumunuz",
+        "lok": "yorumda",
+        "abl": "yorumdan",
+        "poss.3pl": "yorumları"
+      },
+      "frequenzRang": 1404,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.baglanti",
+      "lemma": "bağlantı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "bağlantılar",
+        "akk": "bağlantıyı",
+        "dat": "bağlantıya",
+        "gen": "bağlantının",
+        "ins": "bağlantıyla",
+        "poss.1sg": "bağlantım",
+        "poss.2sg": "bağlantın",
+        "poss.3sg": "bağlantısı",
+        "poss.1pl": "bağlantımız",
+        "poss.2pl": "bağlantınız",
+        "lok": "bağlantıda",
+        "abl": "bağlantıdan",
+        "poss.3pl": "bağlantıları"
+      },
+      "frequenzRang": 1552,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.nokta",
+      "lemma": "nokta",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "noktalar",
+        "akk": "noktayı",
+        "dat": "noktaya",
+        "gen": "noktanın",
+        "ins": "noktayla",
+        "poss.1sg": "noktam",
+        "poss.2sg": "noktan",
+        "poss.3sg": "noktası",
+        "poss.1pl": "noktamız",
+        "poss.2pl": "noktanız",
+        "lok": "noktada",
+        "abl": "noktadan",
+        "poss.3pl": "noktaları"
+      },
+      "frequenzRang": 1574,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.deger",
+      "lemma": "değer",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "değerler",
+        "akk/poss.3sg": "değeri",
+        "dat": "değere",
+        "gen/poss.2sg": "değerin",
+        "ins": "değerle",
+        "poss.1sg": "değerim",
+        "poss.1pl": "değerimiz",
+        "poss.2pl": "değeriniz",
+        "lok": "değerde",
+        "abl": "değerden",
+        "poss.3pl": "değerleri"
+      },
+      "frequenzRang": 590,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.sarj",
+      "lemma": "şarj",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "şarjlar",
+        "akk/poss.3sg": "şarjı",
+        "dat": "şarja",
+        "gen/poss.2sg": "şarjın",
+        "ins": "şarjla",
+        "poss.1sg": "şarjım",
+        "poss.1pl": "şarjımız",
+        "poss.2pl": "şarjınız",
+        "lok": "şarjda",
+        "abl": "şarjdan",
+        "poss.3pl": "şarjları"
+      },
+      "frequenzRang": 3726,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.veri",
+      "lemma": "veri",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "veriler",
+        "akk": "veriyi",
+        "dat": "veriye",
+        "gen": "verinin",
+        "ins": "veriyle",
+        "poss.1sg": "verim",
+        "poss.3sg": "verisi",
+        "poss.1pl": "verimiz",
+        "poss.2pl": "veriniz",
+        "lok": "veride",
+        "abl": "veriden",
+        "poss.3pl": "verileri"
+      },
+      "frequenzRang": 1334,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.nakit",
+      "lemma": "nakit",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 3773,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.ucretsiz",
+      "lemma": "ücretsiz",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 650,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.online",
+      "lemma": "online",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 777,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.ek",
+      "lemma": "ek",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 766,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.dahil",
+      "lemma": "dahil",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 489,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.guvenli",
+      "lemma": "güvenli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 1075,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.aylik",
+      "lemma": "aylık",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 1673,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.milyon",
+      "lemma": "milyon",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "1000000"
+      },
+      "formen": {
+        "pl": "milyonlar",
+        "lok": "milyonda"
+      },
+      "frequenzRang": 277,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.milyar",
+      "lemma": "milyar",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "1000000000"
+      },
+      "formen": {
+        "pl": "milyarlar"
+      },
+      "frequenzRang": 1132,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.binlerce",
+      "lemma": "binlerce",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "Tausende"
+      },
+      "frequenzRang": 1029,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.birer",
+      "lemma": "birer",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "je eins (distributiv: ikişer, üçer, beşer nach Regel)"
+      },
+      "frequenzRang": 1440,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.herhangi",
+      "lemma": "herhangi",
+      "wortart": "determinativ",
+      "frequenzRang": 352,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.ayrica",
+      "lemma": "ayrıca",
+      "wortart": "adverb",
+      "frequenzRang": 140,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.yaklasik",
+      "lemma": "yaklaşık",
+      "wortart": "adverb",
+      "frequenzRang": 354,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.haric",
+      "lemma": "hariç",
+      "wortart": "postposition",
+      "merkmale": {
+        "kasus": "ohne Endung oder Ablativ (pazar hariç)"
+      },
+      "frequenzRang": 1649,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.gondermek",
+      "lemma": "göndermek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "gönder",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "gönder",
+        "iyor.3sg": "gönderiyor",
+        "imp.2pl": "gönderin",
+        "aor.3sg": "gönderir",
+        "iyor.neg.3sg": "göndermiyor",
+        "aor.1sg": "gönderirim",
+        "aor.neg.3sg": "göndermez",
+        "aor.neg.1sg": "göndermem",
+        "di.1sg": "gönderdim",
+        "di.2sg": "gönderdin",
+        "di.3sg": "gönderdi",
+        "di.1pl": "gönderdik",
+        "di.2pl": "gönderdiniz",
+        "di.neg.3sg": "göndermedi",
+        "mis.3sg": "göndermiş",
+        "ecek.3sg": "gönderecek",
+        "ecek.1sg": "göndereceğim",
+        "ecek.1pl": "göndereceğiz",
+        "ebil.3sg": "gönderebilir",
+        "eme.3sg": "gönderemez",
+        "meli.3sg": "göndermeli",
+        "opt.1sg": "göndereyim",
+        "opt.1pl": "gönderelim",
+        "imp3.3sg": "göndersin",
+        "iyordu.3sg": "gönderiyordu",
+        "mek.akk": "göndermeyi"
+      },
+      "frequenzRang": 6414,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.tartmak",
+      "lemma": "tartmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "tart",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "tart",
+        "iyor.3sg": "tartıyor",
+        "imp.2pl": "tartın",
+        "aor.3sg": "tartar",
+        "iyor.neg.3sg": "tartmıyor",
+        "aor.1sg": "tartarım",
+        "aor.neg.3sg": "tartmaz",
+        "aor.neg.1sg": "tartmam",
+        "di.1sg": "tarttım",
+        "di.2sg": "tarttın",
+        "di.3sg": "tarttı",
+        "di.1pl": "tarttık",
+        "di.2pl": "tarttınız",
+        "di.neg.3sg": "tartmadı",
+        "mis.3sg": "tartmış",
+        "ecek.3sg": "tartacak",
+        "ecek.1sg": "tartacağım",
+        "ecek.1pl": "tartacağız",
+        "ebil.3sg": "tartabilir",
+        "eme.3sg": "tartamaz",
+        "meli.3sg": "tartmalı",
+        "opt.1sg": "tartayım",
+        "opt.1pl": "tartalım",
+        "imp3.3sg": "tartsın",
+        "iyordu.3sg": "tartıyordu",
+        "mek.akk": "tartmayı"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.yatirmak",
+      "lemma": "yatırmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "yatır",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "yatır",
+        "iyor.3sg": "yatırıyor",
+        "imp.2pl": "yatırın",
+        "aor.3sg": "yatırır",
+        "iyor.neg.3sg": "yatırmıyor",
+        "aor.1sg": "yatırırım",
+        "aor.neg.3sg": "yatırmaz",
+        "aor.neg.1sg": "yatırmam",
+        "di.1sg": "yatırdım",
+        "di.2sg": "yatırdın",
+        "di.3sg": "yatırdı",
+        "di.1pl": "yatırdık",
+        "di.2pl": "yatırdınız",
+        "di.neg.3sg": "yatırmadı",
+        "mis.3sg": "yatırmış",
+        "ecek.3sg": "yatıracak",
+        "ecek.1sg": "yatıracağım",
+        "ecek.1pl": "yatıracağız",
+        "ebil.3sg": "yatırabilir",
+        "eme.3sg": "yatıramaz",
+        "meli.3sg": "yatırmalı",
+        "opt.1sg": "yatırayım",
+        "opt.1pl": "yatıralım",
+        "imp3.3sg": "yatırsın",
+        "iyordu.3sg": "yatırıyordu",
+        "mek.akk": "yatırmayı"
+      },
+      "frequenzRang": 36884,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.harcamak",
+      "lemma": "harcamak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "harca",
+        "harmonie": "a/ı",
+        "stammwechsel": "harca → harcı- vor -yor"
+      },
+      "formen": {
+        "stamm": "harca",
+        "iyor.3sg": "harcıyor",
+        "imp.2pl": "harcayın",
+        "aor.3sg": "harcar",
+        "iyor.neg.3sg": "harcamıyor",
+        "aor.1sg": "harcarım",
+        "aor.neg.3sg": "harcamaz",
+        "aor.neg.1sg": "harcamam",
+        "di.1sg": "harcadım",
+        "di.2sg": "harcadın",
+        "di.3sg": "harcadı",
+        "di.1pl": "harcadık",
+        "di.2pl": "harcadınız",
+        "di.neg.3sg": "harcamadı",
+        "mis.3sg": "harcamış",
+        "ecek.3sg": "harcayacak",
+        "ecek.1sg": "harcayacağım",
+        "ecek.1pl": "harcayacağız",
+        "ebil.3sg": "harcayabilir",
+        "eme.3sg": "harcayamaz",
+        "meli.3sg": "harcamalı",
+        "opt.1sg": "harcayayım",
+        "opt.1pl": "harcayalım",
+        "imp3.3sg": "harcasın",
+        "iyordu.3sg": "harcıyordu",
+        "mek.akk": "harcamayı"
+      },
+      "frequenzRang": 17540,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.biriktirmek",
+      "lemma": "biriktirmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "biriktir",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "biriktir",
+        "iyor.3sg": "biriktiriyor",
+        "imp.2pl": "biriktirin",
+        "aor.3sg": "biriktirir",
+        "iyor.neg.3sg": "biriktirmiyor",
+        "aor.1sg": "biriktiririm",
+        "aor.neg.3sg": "biriktirmez",
+        "aor.neg.1sg": "biriktirmem",
+        "di.1sg": "biriktirdim",
+        "di.2sg": "biriktirdin",
+        "di.3sg": "biriktirdi",
+        "di.1pl": "biriktirdik",
+        "di.2pl": "biriktirdiniz",
+        "di.neg.3sg": "biriktirmedi",
+        "mis.3sg": "biriktirmiş",
+        "ecek.3sg": "biriktirecek",
+        "ecek.1sg": "biriktireceğim",
+        "ecek.1pl": "biriktireceğiz",
+        "ebil.3sg": "biriktirebilir",
+        "eme.3sg": "biriktiremez",
+        "meli.3sg": "biriktirmeli",
+        "opt.1sg": "biriktireyim",
+        "opt.1pl": "biriktirelim",
+        "imp3.3sg": "biriktirsin",
+        "iyordu.3sg": "biriktiriyordu",
+        "mek.akk": "biriktirmeyi"
+      },
+      "frequenzRang": 43795,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.duzeltmek",
+      "lemma": "düzeltmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "düzelt",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "düzelt",
+        "iyor.3sg": "düzeltiyor",
+        "imp.2pl": "düzeltin",
+        "aor.3sg": "düzeltir",
+        "iyor.neg.3sg": "düzeltmiyor",
+        "aor.1sg": "düzeltirim",
+        "aor.neg.3sg": "düzeltmez",
+        "aor.neg.1sg": "düzeltmem",
+        "di.1sg": "düzelttim",
+        "di.2sg": "düzelttin",
+        "di.3sg": "düzeltti",
+        "di.1pl": "düzelttik",
+        "di.2pl": "düzelttiniz",
+        "di.neg.3sg": "düzeltmedi",
+        "mis.3sg": "düzeltmiş",
+        "ecek.3sg": "düzeltecek",
+        "ecek.1sg": "düzelteceğim",
+        "ecek.1pl": "düzelteceğiz",
+        "ebil.3sg": "düzeltebilir",
+        "eme.3sg": "düzeltemez",
+        "meli.3sg": "düzeltmeli",
+        "opt.1sg": "düzelteyim",
+        "opt.1pl": "düzeltelim",
+        "imp3.3sg": "düzeltsin",
+        "iyordu.3sg": "düzeltiyordu",
+        "mek.akk": "düzeltmeyi"
+      },
+      "frequenzRang": 11365,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.tiklamak",
+      "lemma": "tıklamak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "tıkla",
+        "harmonie": "a/ı",
+        "stammwechsel": "tıkla → tıklı- vor -yor"
+      },
+      "formen": {
+        "stamm": "tıkla",
+        "iyor.3sg": "tıklıyor",
+        "imp.2pl": "tıklayın",
+        "aor.3sg": "tıklar",
+        "iyor.neg.3sg": "tıklamıyor",
+        "aor.1sg": "tıklarım",
+        "aor.neg.3sg": "tıklamaz",
+        "aor.neg.1sg": "tıklamam",
+        "di.1sg": "tıkladım",
+        "di.2sg": "tıkladın",
+        "di.3sg": "tıkladı",
+        "di.1pl": "tıkladık",
+        "di.2pl": "tıkladınız",
+        "di.neg.3sg": "tıklamadı",
+        "mis.3sg": "tıklamış",
+        "ecek.3sg": "tıklayacak",
+        "ecek.1sg": "tıklayacağım",
+        "ecek.1pl": "tıklayacağız",
+        "ebil.3sg": "tıklayabilir",
+        "eme.3sg": "tıklayamaz",
+        "meli.3sg": "tıklamalı",
+        "opt.1sg": "tıklayayım",
+        "opt.1pl": "tıklayalım",
+        "imp3.3sg": "tıklasın",
+        "iyordu.3sg": "tıklıyordu",
+        "mek.akk": "tıklamayı"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.indirmek",
+      "lemma": "indirmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "indir",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "indir",
+        "iyor.3sg": "indiriyor",
+        "imp.2pl": "indirin",
+        "aor.3sg": "indirir",
+        "iyor.neg.3sg": "indirmiyor",
+        "aor.1sg": "indiririm",
+        "aor.neg.3sg": "indirmez",
+        "aor.neg.1sg": "indirmem",
+        "di.1sg": "indirdim",
+        "di.2sg": "indirdin",
+        "di.3sg": "indirdi",
+        "di.1pl": "indirdik",
+        "di.2pl": "indirdiniz",
+        "di.neg.3sg": "indirmedi",
+        "mis.3sg": "indirmiş",
+        "ecek.3sg": "indirecek",
+        "ecek.1sg": "indireceğim",
+        "ecek.1pl": "indireceğiz",
+        "ebil.3sg": "indirebilir",
+        "eme.3sg": "indiremez",
+        "meli.3sg": "indirmeli",
+        "opt.1sg": "indireyim",
+        "opt.1pl": "indirelim",
+        "imp3.3sg": "indirsin",
+        "iyordu.3sg": "indiriyordu",
+        "mek.akk": "indirmeyi"
+      },
+      "frequenzRang": 13145,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.yuklemek",
+      "lemma": "yüklemek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "yükle",
+        "harmonie": "e/i",
+        "stammwechsel": "yükle → yüklü- vor -yor"
+      },
+      "formen": {
+        "stamm": "yükle",
+        "iyor.3sg": "yüklüyor",
+        "imp.2pl": "yükleyin",
+        "aor.3sg": "yükler",
+        "iyor.neg.3sg": "yüklemiyor",
+        "aor.1sg": "yüklerim",
+        "aor.neg.3sg": "yüklemez",
+        "aor.neg.1sg": "yüklemem",
+        "di.1sg": "yükledim",
+        "di.2sg": "yükledin",
+        "di.3sg": "yükledi",
+        "di.1pl": "yükledik",
+        "di.2pl": "yüklediniz",
+        "di.neg.3sg": "yüklemedi",
+        "mis.3sg": "yüklemiş",
+        "ecek.3sg": "yükleyecek",
+        "ecek.1sg": "yükleyeceğim",
+        "ecek.1pl": "yükleyeceğiz",
+        "ebil.3sg": "yükleyebilir",
+        "eme.3sg": "yükleyemez",
+        "meli.3sg": "yüklemeli",
+        "opt.1sg": "yükleyeyim",
+        "opt.1pl": "yükleyelim",
+        "imp3.3sg": "yüklesin",
+        "iyordu.3sg": "yüklüyordu",
+        "mek.akk": "yüklemeyi"
+      },
+      "frequenzRang": 27767,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.kaydetmek",
+      "lemma": "kaydetmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kaydet",
+        "harmonie": "e/i",
+        "stammwechsel": "kaydet → kayded- vor Vokal"
+      },
+      "formen": {
+        "stamm": "kaydet",
+        "iyor.3sg": "kaydediyor",
+        "imp.2pl": "kaydedin",
+        "aor.3sg": "kaydeder",
+        "iyor.neg.3sg": "kaydetmiyor",
+        "aor.1sg": "kaydederim",
+        "aor.neg.3sg": "kaydetmez",
+        "aor.neg.1sg": "kaydetmem",
+        "di.1sg": "kaydettim",
+        "di.2sg": "kaydettin",
+        "di.3sg": "kaydetti",
+        "di.1pl": "kaydettik",
+        "di.2pl": "kaydettiniz",
+        "di.neg.3sg": "kaydetmedi",
+        "mis.3sg": "kaydetmiş",
+        "ecek.3sg": "kaydedecek",
+        "ecek.1sg": "kaydedeceğim",
+        "ecek.1pl": "kaydedeceğiz",
+        "ebil.3sg": "kaydedebilir",
+        "eme.3sg": "kaydedemez",
+        "meli.3sg": "kaydetmeli",
+        "opt.1sg": "kaydedeyim",
+        "opt.1pl": "kaydedelim",
+        "imp3.3sg": "kaydetsin",
+        "iyordu.3sg": "kaydediyordu",
+        "mek.akk": "kaydetmeyi"
+      },
+      "frequenzRang": 20798,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.kullanmak",
+      "lemma": "kullanmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kullan",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "kullan",
+        "iyor.3sg": "kullanıyor",
+        "imp.2pl": "kullanın",
+        "aor.3sg": "kullanır",
+        "iyor.neg.3sg": "kullanmıyor",
+        "aor.1sg": "kullanırım",
+        "aor.neg.3sg": "kullanmaz",
+        "aor.neg.1sg": "kullanmam",
+        "di.1sg": "kullandım",
+        "di.2sg": "kullandın",
+        "di.3sg": "kullandı",
+        "di.1pl": "kullandık",
+        "di.2pl": "kullandınız",
+        "di.neg.3sg": "kullanmadı",
+        "mis.3sg": "kullanmış",
+        "ecek.3sg": "kullanacak",
+        "ecek.1sg": "kullanacağım",
+        "ecek.1pl": "kullanacağız",
+        "ebil.3sg": "kullanabilir",
+        "eme.3sg": "kullanamaz",
+        "meli.3sg": "kullanmalı",
+        "opt.1sg": "kullanayım",
+        "opt.1pl": "kullanalım",
+        "imp3.3sg": "kullansın",
+        "iyordu.3sg": "kullanıyordu",
+        "mek.akk": "kullanmayı"
+      },
+      "frequenzRang": 2342,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "tr.a2.e14.s0001",
+      "text": "Elif postaneye gidiyor, çünkü babaannesine bir paket gönderecek.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0002",
+      "text": "Postane sabah dokuzda açılıyor, akşam altıda kapanıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0003",
+      "text": "Postacı Orhan Bey mektupları her sabah saat onda getiriyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0004",
+      "text": "Bu mektubu göndermek için bir pul lazım.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0005",
+      "text": "Türkiye'ye bir mektup göndermek istiyorum. Pul ne kadar?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0006",
+      "text": "Yurt dışı için pul biraz daha pahalı.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0007",
+      "text": "Paketin üstüne alıcının adını ve adresini yazın, lütfen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0008",
+      "text": "Gönderenin adı ve adresi de paketin üstünde olmalı.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0009",
+      "text": "Alıcı kim? Alıcı benim babaannem, Sevim Kaya.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0010",
+      "text": "Gönderen kim? Gönderen benim, Elif Kaya.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0011",
+      "text": "Görevli paketi tartıyor: iki kilo yüz gram.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0012",
+      "text": "Bu paketi tartabilir misiniz?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0013",
+      "text": "Paketin ağırlığı ne kadar?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0014",
+      "text": "Ağırlık fazla, bu yüzden ücret de biraz yüksek.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0015",
+      "text": "Paketin içeriği ne, efendim?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0016",
+      "text": "İçerik: iki kitap, resimler ve bir mektup.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0017",
+      "text": "Türkiye'ye paket göndermek için gümrük formu doldurmalısınız.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0018",
+      "text": "Gümrük formuna içeriği ve değeri yazın.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0019",
+      "text": "Hediyenin değeri yaklaşık otuz euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0020",
+      "text": "Paket şimdi gümrükte bekliyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0021",
+      "text": "Kargo kaç günde gelir?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0022",
+      "text": "Kargo genellikle üç günde geliyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0023",
+      "text": "Hızlı kargo daha pahalı ama iki günde teslim ediyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0024",
+      "text": "Normal posta daha ucuz, ama yaklaşık bir hafta sürüyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0025",
+      "text": "Paketimi takip edebilir miyim?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0026",
+      "text": "Evet, takip numarası fişin üstünde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0027",
+      "text": "Kargonu internetten takip edebilirsin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0028",
+      "text": "Paketi kapıda kendim teslim aldım.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0029",
+      "text": "Evde kimse yoktu, postacı paketi komşuya teslim etti.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0030",
+      "text": "Paketi postaneden almak için kimliğinizi getirin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0031",
+      "text": "Mektup mu göndereceksin, paket mi?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0032",
+      "text": "Mektup yazmayı severim, ama e-posta daha hızlı.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0033",
+      "text": "Sevim Babaanne hâlâ mektup yazıyor, e-posta kullanmıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0034",
+      "text": "Bir posta puluna ihtiyacım var.",
+      "quelle": "tatoeba:1802746",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1802746 von cihanaxu"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0035",
+      "text": "Benim hobim pul toplamak.",
+      "quelle": "tatoeba:2127874",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2127874 von esso"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0036",
+      "text": "Bir kargo bekliyorum.",
+      "quelle": "tatoeba:7942782",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7942782 von MuadDib"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0037",
+      "text": "Bankalar saat dokuzda açılır.",
+      "quelle": "tatoeba:2750348",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2750348 von Gulo_Luscus"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0038",
+      "text": "Banka buraya uzak mı?",
+      "quelle": "tatoeba:1283313",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1283313 von oxyii"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0039",
+      "text": "Rim'in ablası bir bankada çalışıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0040",
+      "text": "Annem bankada yeni bir hesap açtı.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0041",
+      "text": "Can'ın da artık kendi banka hesabı var.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0042",
+      "text": "Hesabımda ne kadar para var?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0043",
+      "text": "Hesabında yaklaşık iki yüz euro var.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0044",
+      "text": "Bankamatikten nakit para çekiyorum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0045",
+      "text": "Nakit mi ödüyorsunuz, kartla mı?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0046",
+      "text": "Kartla ödüyorum, çünkü yanımda nakit yok.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0047",
+      "text": "Cüzdanımda sadece on euro var.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0048",
+      "text": "Cüzdanımı evde unuttum, kartım da yok!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0049",
+      "text": "Babam cüzdanını her yerde arıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0050",
+      "text": "Elif her hafta biraz para biriktiriyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0051",
+      "text": "Yeni bir bisiklet almak için para biriktiriyorum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0052",
+      "text": "Elif kumbaradaki parayı bankaya yatırıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0053",
+      "text": "Hesabıma yüz euro yatırmak istiyorum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0054",
+      "text": "Can parasını bilgisayar oyunlarına harcıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0055",
+      "text": "Bütün parayı bir günde harcama!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0056",
+      "text": "Bu ay çok para harcadık, gelecek ay daha az harcayalım.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0057",
+      "text": "Kira için her ay ev sahibine havale yapıyoruz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0058",
+      "text": "Havale genellikle bir gün sürüyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0059",
+      "text": "Online havale ücretsiz, bankada ek ücret var.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0060",
+      "text": "Toplam tutar ne kadar?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0061",
+      "text": "Toplam yüz yirmi beş lira elli kuruş.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0062",
+      "text": "Bir lirada yüz kuruş var.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0063",
+      "text": "Bu kalem iki lira elli kuruş.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0064",
+      "text": "Toplam fiyat bin iki yüz elli euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0065",
+      "text": "İstanbul'da on beş milyondan fazla insan yaşıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0066",
+      "text": "Dünyada sekiz milyardan fazla insan yaşıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0067",
+      "text": "Almanya'da yaklaşık 84 milyon insan yaşıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0068",
+      "text": "Stadyumda binlerce taraftar vardı.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0069",
+      "text": "Binlerce insan bu uygulamayı her gün kullanıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0070",
+      "text": "Banka görevlisi Nilay Hanım bize yardım ediyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0071",
+      "text": "Elektrik faturası geldi.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0072",
+      "text": "Bu ayın elektrik faturası çok yüksek.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0073",
+      "text": "Faturayı ne zaman ödemeliyiz?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0074",
+      "text": "Son ödeme tarihi 15 Mart.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0075",
+      "text": "Aylık internet ücreti otuz euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0076",
+      "text": "Aylık kira ne kadardır?",
+      "quelle": "tatoeba:1453347",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1453347 von duran"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0077",
+      "text": "Aylık kira dokuz yüz elli euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0078",
+      "text": "Elektrik ve su kiraya dahil mi?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0079",
+      "text": "Hayır, elektrik hariç, su dahil.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0080",
+      "text": "Kargo ücreti fiyata dahil.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0081",
+      "text": "Fiyata kargo dahil değil, ek ücret var.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0082",
+      "text": "O fiyata kahvaltı dahil mi?",
+      "quelle": "tatoeba:1626880",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1626880 von duran"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0083",
+      "text": "Mağaza pazar hariç her gün açık.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0084",
+      "text": "Ek ücret ne kadar?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0085",
+      "text": "Hızlı kargo için beş euro ek ücret ödüyorsunuz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0086",
+      "text": "Okul kütüphanesi öğrenciler için ücretsiz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0087",
+      "text": "Faturada bir hata var, tutar yanlış.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0088",
+      "text": "Lütfen bu hatayı hemen düzeltin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0089",
+      "text": "Müşteri hizmetleri faturamı iki gün içinde düzeltti.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0090",
+      "text": "Yanlış tutarı düzeltebilir misiniz?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0091",
+      "text": "Her çocuk birer kalem alıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0092",
+      "text": "Öğretmen çocuklara birer elma verdi.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0093",
+      "text": "Herhangi bir sorunuz var mı?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0094",
+      "text": "Herhangi bir gün gelebilirsiniz, pazar hariç.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0095",
+      "text": "Ayrıca su faturası da geldi.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0096",
+      "text": "Bu ay internet faturasında yüzde on indirim var.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0097",
+      "text": "Yüzde yirmi indirimle toplam fiyat 80 euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0098",
+      "text": "Bu eski pulun değeri çok yüksek.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0099",
+      "text": "Faturayı kontrol etmek çok önemli.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0100",
+      "text": "Su faturası geçen aydan daha düşük.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0101",
+      "text": "Bu ay elektriğe daha az para harcadık.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0102",
+      "text": "Bu sabahtan beri elektrik kesik.",
+      "quelle": "tatoeba:1811198",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1811198 von duran"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0103",
+      "text": "Elektrik faturası mı daha yüksek, internet faturası mı?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0104",
+      "text": "Bu ayın elektrik faturası 86 euro 30 sent.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0105",
+      "text": "Bu uygulamayı nasıl kullanıyorsun?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0106",
+      "text": "Uygulamayı telefonuma indirdim.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0107",
+      "text": "Bu uygulama ücretsiz mi?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0108",
+      "text": "Ekranın sağ üstüne tıkla.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0109",
+      "text": "Şifreni kimseye söyleme!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0110",
+      "text": "İyi bir şifrede harfler, rakamlar ve işaretler olmalı.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0111",
+      "text": "Kullanıcı adın ne?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0112",
+      "text": "Kullanıcı adımı ve şifremi unuttum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0113",
+      "text": "Telefonumun şarjı bitti.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0114",
+      "text": "Tabletin şarjı yüzde on, şarj aleti nerede?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0115",
+      "text": "Telefonun şarjı yüzde yüz oldu.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0116",
+      "text": "Kumandanın pili bitti.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0117",
+      "text": "Bu oyuncak pille çalışıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0118",
+      "text": "Yeni pillere ihtiyacımız var.",
+      "quelle": "tatoeba:6734329",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6734329 von deyta"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0119",
+      "text": "Pil şarj olmuyor.",
+      "quelle": "tatoeba:8901407",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8901407 von cagri"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0120",
+      "text": "Tablet telefondan daha büyük ama daha ağır.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0121",
+      "text": "Ekran çok küçük, yazıları okuyamıyorum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0122",
+      "text": "Bankadan bir bildirim geldi: Ödeme tamam.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0123",
+      "text": "Akşamları bildirimleri kapatıyorum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0124",
+      "text": "E-posta adresin ne?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0125",
+      "text": "Sana bir e-posta gönderdim.",
+      "quelle": "tatoeba:1486107",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1486107 von duran"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0126",
+      "text": "Şifreni yabancılara asla verme.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0127",
+      "text": "Banka telefonda şifreni asla sormaz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0128",
+      "text": "Bu e-posta güvenli değil, bağlantıya tıklama!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0129",
+      "text": "Güvenlik için şifreni sık sık değiştir.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0130",
+      "text": "Bu site güvenli mi?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0131",
+      "text": "Metin Dede tablet kullanmayı öğreniyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0132",
+      "text": "Telefonunuzu kullanabilir miyim?",
+      "quelle": "tatoeba:1220525",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1220525 von duran"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0133",
+      "text": "Ekranda bir mesaj var: Şifre yanlış.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0134",
+      "text": "Üç kez yanlış şifre girdim, şimdi bekliyorum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0135",
+      "text": "Kimse senin şifreni bilmesin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0136",
+      "text": "Baba, elektrik faturasını uygulamadan ödeyelim mi?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0137",
+      "text": "Olur, ama ben bu uygulamayı daha önce kullanmadım.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0138",
+      "text": "Çok kolay. Önce kullanıcı adını ve şifreni yaz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0139",
+      "text": "Tamam, yazdım. Şimdi ne yapıyorum?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0140",
+      "text": "Şimdi ekrandaki Havale yazısına tıkla.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0141",
+      "text": "Tamam. Alıcının adını ve hesap numarasını faturadan yazıyorum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0142",
+      "text": "Tutarı da yaz: 68 euro 40 sent.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0143",
+      "text": "Tutarı da yazdım. Şimdi gönderiyor muyum?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0144",
+      "text": "Önce bilgileri kontrol et, sonra Gönder yazısına tıkla.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0145",
+      "text": "Telefonuma bir kod geldi. Bu kodu kime vereceğim?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0146",
+      "text": "Kimseye! Kodu sadece uygulamaya yaz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0147",
+      "text": "Peki, biri bankadan arıyor ve kodu istiyor. Ne yapayım?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0148",
+      "text": "Hemen kapat! Banka şifreni ve kodu asla sormaz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0149",
+      "text": "Ekranda yeşil bir işaret var. Ödeme tamam mı?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0150",
+      "text": "Evet, ödeme tamam. Bu kadar!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0151",
+      "text": "Teşekkürler, Can. Artık faturaları kendim ödeyebilirim.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0152",
+      "text": "İnternet bağlantım çok yavaş.",
+      "quelle": "tatoeba:12480543",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12480543 von deyta"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0153",
+      "text": "Bağlantı yok, sayfa açılmıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0154",
+      "text": "Evde internet yok, bu yüzden ödevimi gönderemiyorum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0155",
+      "text": "Okulun internet sitesinde yeni bir duyuru var.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0156",
+      "text": "Kargo şirketinin sitesinden paketini takip edebilirsin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0157",
+      "text": "Bugün online bir derse katıldım.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0158",
+      "text": "Tatil fotoğraflarını bilgisayara yükledim.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0159",
+      "text": "Ödevini sisteme yükledin mi?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0160",
+      "text": "Dosyayı kaydetmeyi unutma!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0161",
+      "text": "Belgeyi kaydettim ve öğretmene gönderdim.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0162",
+      "text": "Sistem şu anda çalışmıyor, lütfen sonra tekrar deneyin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0163",
+      "text": "Bu uygulama çok veri kullanıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0164",
+      "text": "Kişisel verilerini herkese verme.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0165",
+      "text": "Bu verileri kimse görmesin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0166",
+      "text": "Müşteri hizmetleriyle iletişime geçtim.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0167",
+      "text": "İletişim bilgileri sitenin en altında.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0168",
+      "text": "Bu ürünün yorumları çok iyi.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0169",
+      "text": "Önce yorumları okuyorum, sonra ürünü alıyorum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0170",
+      "text": "Cümlenin sonuna bir nokta koy.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0171",
+      "text": "Bu çok önemli bir nokta.",
+      "quelle": "tatoeba:4130530",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4130530 von Miremir"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0172",
+      "text": "İnternetten bilet almak daha hızlı.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0173",
+      "text": "Dün akşam film izliyordum, birden internet gitti.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0174",
+      "text": "Can ödevini yüklüyordu, birden ekran karardı.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0175",
+      "text": "Uygulama eskiden çok yavaştı, şimdi daha hızlı.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0176",
+      "text": "Yeni site eskisinden daha güvenli.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0177",
+      "text": "Paketim nerede, biliyor musun?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0178",
+      "text": "Telefon faturası",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0179",
+      "text": "Sayın Derya Kaya, ekim ayı faturanız hazır.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0180",
+      "text": "Fatura tarihi 3 Kasım, son ödeme tarihi 17 Kasım.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0181",
+      "text": "Aylık ücret 25 euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0182",
+      "text": "Bu ücrete internet ve bin dakika konuşma dahil.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0183",
+      "text": "Bu ay ek bir internet paketi aldınız: 5 euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0184",
+      "text": "Yurt dışı konuşmaları için ek ücret 4,50 euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0185",
+      "text": "Ayrıca bu ay yüzde on indirim var: 3,45 euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0186",
+      "text": "Toplam tutar 31,05 euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0187",
+      "text": "Tutarı 17 Kasım'da banka hesabınızdan alacağız.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0188",
+      "text": "Sorularınız için sitemizdeki iletişim formunu kullanın.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0189",
+      "text": "Derya Hanım'ın aylık ücreti 25 euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0190",
+      "text": "Bu ay faturada indirim yok.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0191",
+      "text": "Geçen ay Derya Hanım'ın faturası daha düşüktü.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0192",
+      "text": "Son ödeme tarihi 17 Kasım.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0193",
+      "text": "Son ödeme tarihi 3 Kasım.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0194",
+      "text": "Son ödeme tarihi ne zaman?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0195",
+      "text": "Bu ayın toplam tutarı ne kadar?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0196",
+      "text": "Toplam 31 euro 5 sent.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0197",
+      "text": "Toplam 34 euro 50 sent.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0198",
+      "text": "Faturanızda yanlış bir tutar var. Müşteri hizmetlerine kısa bir mesaj yazın.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0199",
+      "text": "Merhaba, ben Derya Kaya. Ekim ayı telefon faturamda bir hata var. Faturada ek internet paketi için 5 euro yazıyor. Ama ben bu ay ek paket almadım. Bu yüzden toplam tutar yanlış. Lütfen faturamı düzeltin ve bana yeni bir fatura gönderin. Cevabınız için şimdiden teşekkür ederim. Saygılarımla, Derya Kaya",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0200",
+      "text": "Postanede",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0201",
+      "text": "Elif, İzmir'deki babaannesine resimlerini göndermek istiyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0202",
+      "text": "Annesiyle birlikte resimleri bir kutuya koyuyor ve postaneye gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0203",
+      "text": "Postanede uzun bir kuyruk var, ama sıra çabuk geliyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0204",
+      "text": "Merhaba, buyurun. Size nasıl yardım edebilirim?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0205",
+      "text": "Merhaba, bu paketi İzmir'e göndermek istiyorum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0206",
+      "text": "Tabii. Önce paketi tartalım.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0207",
+      "text": "Paketin ağırlığı bir kilo iki yüz gram.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0208",
+      "text": "Peki, paketin içinde ne var?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0209",
+      "text": "İçinde benim resimlerim ve bir mektup var.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0210",
+      "text": "Çok güzel! Türkiye için bir gümrük formu doldurmalısınız.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0211",
+      "text": "Paketin değerini de yazmalı mıyız?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0212",
+      "text": "Evet, içeriği ve değeri yazın. Resimler için on euro yeterli.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0213",
+      "text": "Derya Hanım formu dolduruyor, gönderenin ve alıcının adresini yazıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0214",
+      "text": "Ne kadar tutuyor, Fischer Bey?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0215",
+      "text": "Normal paket on dört euro, hızlı kargo yirmi bir euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0216",
+      "text": "Normal paket yaklaşık bir hafta sürüyor, hızlı kargo üç gün.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0217",
+      "text": "Babaannemin doğum günü gelecek hafta. Hızlı kargo daha iyi!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0218",
+      "text": "Tamam, hızlı kargo olsun. Kartla ödeyebilir miyim?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0219",
+      "text": "Tabii. Toplam tutar yirmi bir euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0220",
+      "text": "Derya Hanım kartla ödüyor, Fischer Bey de bir fiş veriyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0221",
+      "text": "Takip numarası fişin üstünde. Paketi internetten takip edebilirsiniz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0222",
+      "text": "Teşekkürler, Fischer Bey! İyi günler!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0223",
+      "text": "Üç gün sonra Elif telefonda bir bildirim görüyor: Paketiniz İzmir'de.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0224",
+      "text": "Akşam Sevim Babaanne arıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0225",
+      "text": "Elif, paketin geldi! Resimlerin harika!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0226",
+      "text": "Mektubu da okudun mu, babaanne?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0227",
+      "text": "Evet, okudum. Mektubunu ve resimlerini duvara asacağım.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0228",
+      "text": "Kargo doğum gününden iki gün önce geldi. Elif çok mutlu.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0229",
+      "text": "Paketin ağırlığı kaç kilo?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0230",
+      "text": "Bir kilo iki yüz gram.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0231",
+      "text": "İki kilo yüz gram.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0232",
+      "text": "Paketin içinde ne var?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0233",
+      "text": "Resimler ve bir mektup var.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0234",
+      "text": "Kitaplar ve oyuncaklar var.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0235",
+      "text": "Gümrük formuna ne yazıyorlar?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0236",
+      "text": "İçeriği ve değeri yazıyorlar.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0237",
+      "text": "Sadece Elif'in adını yazıyorlar.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0238",
+      "text": "Neden hızlı kargo ile gönderiyorlar?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0239",
+      "text": "Çünkü babaannesinin doğum günü gelecek hafta.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0240",
+      "text": "Çünkü hızlı kargo daha ucuz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0241",
+      "text": "Takip numarası nerede?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0242",
+      "text": "Fişin üstünde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0243",
+      "text": "Paketin içinde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0244",
+      "text": "Merhaba, bu paketi Türkiye'ye göndermek istiyorum. Ücreti ne kadar?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0245",
+      "text": "Paketin içinde kitaplar var, ağırlığı yaklaşık iki kilo.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0246",
+      "text": "Şehrimizde bir milyon iki yüz bin insan yaşıyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0247",
+      "text": "Mektubu kim gönderdi? Gönderenin adı yok.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0248",
+      "text": "Faturayı internetten ödemek daha kolay.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0249",
+      "text": "Şifreni kimseyle paylaşma.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0250",
+      "text": "Yeni uygulamayı indirdin mi?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0251",
+      "text": "Bu mektup Almanya'dan geldi.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0252",
+      "text": "Paketin ağırlığı iki kilodan fazla.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0253",
+      "text": "Kira ve elektrik toplam bin euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0254",
+      "text": "Postacı paketi kime teslim etti?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0255",
+      "text": "Bu kargo kime?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0256",
+      "text": "Lena tabletine yeni bir oyun yükledi.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0257",
+      "text": "Postanede kartla ödeme yapabilir miyim?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e14.s0258",
+      "text": "Jan her ay parasının yarısını biriktiriyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "tr.a2.e14.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann bei der Post Briefe und Pakete aufgeben.",
+        "tr": "Postanede mektup ve paket göndermek",
+        "ar": "إرسال الرسائل والطرود في مكتب البريد"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a2.e14.l01.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a02",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.postane", "tr.a2.e14.postaci", "tr.a2.e14.mektup", "tr.a2.e14.pul"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.kargo",
+          "ablenker": ["tr.a1.e05.adres", "tr.a2.e02.kimlik"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e14.gondermek",
+          "ablenker": ["tr.a1.e07.satmak", "tr.a1.e05.beklemek"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a05",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0004",
+          "wort": 2,
+          "ablenker": ["göndermeyi", "gönderdi"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a06",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.alici", "tr.a2.e14.gonderen", "tr.a2.e14.agirlik", "tr.a2.e14.icerik"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0007",
+          "nach": "ziel",
+          "alternativen": [
+            "Lütfen paketin üstüne alıcının adını ve adresini yazın.",
+            "Alıcının adını ve adresini paketin üstüne yazın, lütfen.",
+            "Lütfen alıcının adını ve adresini paketin üstüne yazın."
+          ],
+          "ablenker": ["alıcıya", "yazıyorum"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.tartmak",
+          "ablenker": ["tr.a1.e10.acmak", "tr.a2.e04.tasimak"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0015"
+            }
+          ],
+          "antwort": "tr.a2.e14.s0016",
+          "ablenker": ["tr.a2.e14.s0002", "tr.a2.e14.s0022", "tr.a2.e14.s0030"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.gumruk",
+          "ablenker": ["tr.a2.e02.gise", "tr.a2.e02.kuyruk"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a11",
+          "typ": "satzbau",
+          "ziel": "tr.a2.e14.s0018",
+          "alternativen": [
+            "Gümrük formuna değeri ve içeriği yazın.",
+            "İçeriği ve değeri gümrük formuna yazın.",
+            "Değeri ve içeriği gümrük formuna yazın."
+          ]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a12",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0013",
+          "wort": 1,
+          "ablenker": ["ağırlıkı", "ağırlığu"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e14.teslim",
+          "ablenker": ["tr.a2.e14.takip", "tr.a2.e02.imza"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a14",
+          "typ": "frei",
+          "ziel": "tr.a2.e14.s0025",
+          "nach": "ziel",
+          "alternativen": ["Paketimi izleyebilir miyim?"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0023",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a2.e14.l01.a16",
+          "typ": "sprechen",
+          "satz": "tr.a2.e14.s0244"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a2.e14.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Geld, Konto und Zahlungen sprechen.",
+        "tr": "Para, banka hesabı ve ödemeler hakkında konuşmak",
+        "ar": "التحدث عن المال والحساب المصرفي والدفع"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a2.e14.l02.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a02",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.banka", "tr.a2.e14.hesap", "tr.a2.e14.cuzdan", "tr.a2.e14.nakit"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.havale",
+          "ablenker": ["tr.a2.e05.indirim", "tr.a2.e02.imza"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e14.kurus",
+          "ablenker": ["tr.a1.e07.euro", "tr.a1.e07.para"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a05",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0050",
+          "wort": 5,
+          "ablenker": ["biriktiriyorum", "biriktiriyorsun"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a06",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.yatirmak", "tr.a2.e14.harcamak", "tr.a2.e14.biriktirmek", "tr.a1.e07.odemek"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0046",
+          "nach": "ziel",
+          "ablenker": ["nakitte", "ödüyorsun"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.tutar",
+          "ablenker": ["tr.a2.e14.odeme", "tr.a1.e07.fiyat"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0060"
+            }
+          ],
+          "antwort": "tr.a2.e14.s0061",
+          "ablenker": ["tr.a2.e14.s0070", "tr.a2.e14.s0052", "tr.a2.e14.s0068"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e14.milyon",
+          "ablenker": ["tr.a2.e14.milyar", "tr.a2.e14.binlerce"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a11",
+          "typ": "satzbau",
+          "ziel": "tr.a2.e14.s0051"
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a12",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0065",
+          "wort": 3,
+          "ablenker": ["milyonda", "milyona"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a13",
+          "typ": "frei",
+          "ziel": "tr.a2.e14.s0056",
+          "nach": "ziel",
+          "alternativen": [
+            "Bu ay çok para harcadık, önümüzdeki ay daha az harcayalım.",
+            "Bu ay çok harcadık, gelecek ay daha az harcayalım.",
+            "Bu ay çok para harcadık, gelecek ay daha az para harcayalım."
+          ]
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.toplam",
+          "ablenker": ["tr.a2.e02.ucret", "tr.a1.e03.sayi"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0057",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a2.e14.l02.a16",
+          "typ": "sprechen",
+          "satz": "tr.a2.e14.s0061"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a2.e14.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Rechnungen verstehen: Beträge, Prozent, inklusive und ohne.",
+        "tr": "Faturaları anlamak: tutar, yüzde, dahil ve hariç",
+        "ar": "فهم الفواتير: المبالغ والنسبة المئوية وما يشمله السعر وما لا يشمله"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a2.e14.l03.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a02",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.fatura", "tr.a2.e14.elektrik", "tr.a2.e14.aylik", "tr.a2.e14.ucretsiz"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.dahil",
+          "ablenker": ["tr.a2.e14.haric", "tr.a2.e14.ek"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a04",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0081",
+          "wort": 0,
+          "ablenker": ["Fiyate", "Fiyatı"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0085",
+          "nach": "ziel",
+          "ablenker": ["ödüyoruz", "dahil"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e14.yaklasik",
+          "ablenker": ["tr.a2.e14.ayrica", "tr.a2.e14.herhangi"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a07",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.birer", "tr.a2.e14.deger", "tr.a2.e05.indirim", "tr.a2.e11.kira"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0078"
+            }
+          ],
+          "antwort": "tr.a2.e14.s0079",
+          "ablenker": ["tr.a2.e14.s0075", "tr.a2.e14.s0099", "tr.a2.e14.s0086"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.duzeltmek",
+          "ablenker": ["tr.a2.e05.degistirmek", "tr.a1.e09.unutmak"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a10",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0092",
+          "wort": 1,
+          "ablenker": ["çocuklere", "çocuklardan"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a11",
+          "typ": "frei",
+          "ziel": "tr.a2.e14.s0088",
+          "nach": "ziel",
+          "alternativen": ["Bu hatayı lütfen hemen düzeltin.", "Bu hatayı hemen düzeltin, lütfen.", "Lütfen bu hatayı hemen düzeltiniz."]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a12",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0096",
+          "wort": 4,
+          "ablenker": ["yüzden", "yüzü"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.s0093",
+          "ablenker": ["tr.a2.e14.s0084", "tr.a2.e14.s0073"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a14",
+          "typ": "satzbau",
+          "ziel": "tr.a2.e14.s0083",
+          "alternativen": ["Mağaza her gün açık, pazar hariç."]
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0100",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a2.e14.l03.a16",
+          "typ": "sprechen",
+          "satz": "tr.a2.e14.s0104"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a2.e14.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Apps und Geräte nutzen und mein Passwort schützen.",
+        "tr": "Uygulama ve cihaz kullanmak, şifreyi korumak",
+        "ar": "استخدام التطبيقات والأجهزة وحماية كلمة المرور"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a2.e14.l04.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a02",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.sifre", "tr.a2.e14.kullanici", "tr.a2.e14.e-posta", "tr.a2.e14.ekran"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.uygulama",
+          "ablenker": ["tr.a1.e04.telefon", "tr.a2.e01.video"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a04",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.tablet", "tr.a2.e14.pil", "tr.a2.e14.sarj", "tr.a2.e14.bildirim"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e14.kullanmak",
+          "ablenker": ["tr.a1.e03.calismak", "tr.a1.e09.ogrenmek"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a06",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0108",
+          "wort": 3,
+          "ablenker": ["tıklı", "tıkle"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.indirmek",
+          "ablenker": ["tr.a1.e10.kapatmak", "tr.a1.e04.aramak"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0136"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a2.e14.s0137"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0138"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a2.e14.s0139"
+            }
+          ],
+          "antwort": "tr.a2.e14.s0140",
+          "ablenker": ["tr.a2.e14.s0143", "tr.a2.e14.s0149", "tr.a2.e14.s0117"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a09",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0126",
+          "wort": 1,
+          "ablenker": ["yabancılardan", "yabancılarda"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0127",
+          "nach": "ziel",
+          "alternativen": ["Banka şifreni telefonda asla sormaz.", "Telefonda banka şifreni asla sormaz."],
+          "ablenker": ["sorar", "şifremi"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.guvenli",
+          "ablenker": ["tr.a2.e10.tehlikeli", "tr.a2.e08.basit"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.a2.e14.s0145"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0146"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a2.e14.s0147"
+            }
+          ],
+          "antwort": "tr.a2.e14.s0148",
+          "ablenker": ["tr.a2.e14.s0106", "tr.a2.e14.s0115", "tr.a2.e14.s0120"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a13",
+          "typ": "satzbau",
+          "ziel": "tr.a2.e14.s0129",
+          "alternativen": ["Şifreni güvenlik için sık sık değiştir."]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a14",
+          "typ": "frei",
+          "ziel": "tr.a2.e14.s0112",
+          "nach": "ziel",
+          "alternativen": ["Şifremi ve kullanıcı adımı unuttum."]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e14.tiklamak",
+          "ablenker": ["tr.a2.e14.indirmek", "tr.a1.e06.yazmak"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l04.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0128",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a2.e14.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann im Netz Dienste nutzen, eine Rechnung lesen und eine kurze Nachricht schreiben.",
+        "tr": "İnternette hizmet kullanmak, fatura okumak ve kısa bir mesaj yazmak",
+        "ar": "استخدام الخدمات على الإنترنت وقراءة فاتورة وكتابة رسالة قصيرة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a2.e14.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a02",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.internet", "tr.a2.e14.site", "tr.a2.e14.baglanti", "tr.a2.e14.sistem"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.yuklemek",
+          "ablenker": ["tr.a2.e14.indirmek", "tr.a2.e14.kaydetmek"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e14.yorum",
+          "ablenker": ["tr.a1.e02.soru", "tr.a1.e02.cevap"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a05",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.veri", "tr.a2.e14.iletisim", "tr.a2.e14.nokta", "tr.a2.e14.online"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a06",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0173",
+          "wort": 3,
+          "ablenker": ["izliyorum", "izleyeceğim"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0159",
+          "nach": "ziel",
+          "ablenker": ["sistemde", "yükledim"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a08",
+          "typ": "lesen_fragen",
+          "titel": "tr.a2.e14.s0178",
+          "absaetze": [
+            "tr.a2.e14.s0179",
+            "tr.a2.e14.s0180",
+            "tr.a2.e14.s0181",
+            "tr.a2.e14.s0182",
+            "tr.a2.e14.s0183",
+            "tr.a2.e14.s0184",
+            "tr.a2.e14.s0185",
+            "tr.a2.e14.s0186",
+            "tr.a2.e14.s0187",
+            "tr.a2.e14.s0188"
+          ],
+          "glossen": ["tr.a2.e14.aylik", "tr.a2.e14.dahil", "tr.a2.e14.ek", "tr.a2.e14.tutar", "tr.a2.e05.indirim", "tr.a2.e14.iletisim"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.a2.e14.s0189",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.a2.e14.s0190",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.a2.e14.s0191",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.a2.e14.s0194",
+              "antwort": "tr.a2.e14.s0192",
+              "ablenker": ["tr.a2.e14.s0193"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.a2.e14.s0195",
+              "antwort": "tr.a2.e14.s0196",
+              "ablenker": ["tr.a2.e14.s0197"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0177"
+            }
+          ],
+          "antwort": "tr.a2.e14.s0156",
+          "ablenker": ["tr.a2.e14.s0155", "tr.a2.e14.s0157", "tr.a2.e14.s0170"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a10",
+          "typ": "frei",
+          "ziel": "tr.a2.e14.s0169",
+          "nach": "ziel",
+          "alternativen": ["Önce yorumları okurum, sonra ürünü alırım.", "Önce yorumları okuyorum, sonra ürünü satın alıyorum."]
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a11",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0160",
+          "wort": 1,
+          "ablenker": ["kaydetmek", "kaydetmeye"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a12",
+          "typ": "satzbau",
+          "ziel": "tr.a2.e14.s0166"
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a13",
+          "typ": "schreiben",
+          "aufgabe": "tr.a2.e14.s0198",
+          "woerter": {
+            "min": 40,
+            "max": 60
+          },
+          "muster": ["tr.a2.e14.s0199"],
+          "pflichtwoerter": ["fatura", "tutar"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.s0176",
+          "ablenker": ["tr.a2.e14.s0130", "tr.a2.e14.s0175"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0164",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a2.e14.l05.a16",
+          "typ": "sprechen",
+          "satz": "tr.a2.e14.s0246"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a2.e14.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Geschichte: Ein Paket für Oma Sevim",
+        "tr": "Hikâye: Sevim Babaanne'ye bir paket",
+        "ar": "قصة: طرد للجدة سفيم"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a2.e14.l06.a01",
+          "typ": "geschichte",
+          "titel": "tr.a2.e14.s0200",
+          "zeilen": [
+            {
+              "satz": "tr.a2.e14.s0201"
+            },
+            {
+              "satz": "tr.a2.e14.s0202"
+            },
+            {
+              "satz": "tr.a2.e14.s0203"
+            },
+            {
+              "satz": "tr.a2.e14.s0204",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.a2.e14.s0205",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.a2.e14.s0206",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.a2.e14.s0207",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.a2.e14.s0208",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.a2.e14.s0209",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.a2.e14.s0210",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.a2.e14.s0211",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.a2.e14.s0212",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.a2.e14.s0213"
+            },
+            {
+              "satz": "tr.a2.e14.s0214",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.a2.e14.s0215",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.a2.e14.s0216",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.a2.e14.s0217",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.a2.e14.s0218",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.a2.e14.s0219",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.a2.e14.s0220"
+            },
+            {
+              "satz": "tr.a2.e14.s0221",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.a2.e14.s0222",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.a2.e14.s0223"
+            },
+            {
+              "satz": "tr.a2.e14.s0224"
+            },
+            {
+              "satz": "tr.a2.e14.s0225",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.a2.e14.s0226",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.a2.e14.s0227",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.a2.e14.s0228"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 6,
+              "frage": "tr.a2.e14.s0229",
+              "antwort": "tr.a2.e14.s0230",
+              "ablenker": ["tr.a2.e14.s0231"]
+            },
+            {
+              "nach": 8,
+              "frage": "tr.a2.e14.s0232",
+              "antwort": "tr.a2.e14.s0233",
+              "ablenker": ["tr.a2.e14.s0234"]
+            },
+            {
+              "nach": 12,
+              "frage": "tr.a2.e14.s0235",
+              "antwort": "tr.a2.e14.s0236",
+              "ablenker": ["tr.a2.e14.s0237"]
+            },
+            {
+              "nach": 17,
+              "frage": "tr.a2.e14.s0238",
+              "antwort": "tr.a2.e14.s0239",
+              "ablenker": ["tr.a2.e14.s0240"]
+            },
+            {
+              "nach": 20,
+              "frage": "tr.a2.e14.s0241",
+              "antwort": "tr.a2.e14.s0242",
+              "ablenker": ["tr.a2.e14.s0243"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.a2.e14.l06.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0205"
+            }
+          ],
+          "antwort": "tr.a2.e14.s0206",
+          "ablenker": ["tr.a2.e14.s0224", "tr.a2.e14.s0226", "tr.a2.e14.s0228"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l06.a03",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0211",
+          "wort": 4,
+          "ablenker": ["mıyiz", "miyız"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0213",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a2.e14.l06.a05",
+          "typ": "satzbau",
+          "ziel": "tr.a2.e14.s0216",
+          "alternativen": ["Hızlı kargo üç gün, normal paket yaklaşık bir hafta sürüyor."]
+        },
+        {
+          "schluessel": "tr.a2.e14.l06.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0218",
+          "nach": "ziel",
+          "ablenker": ["ödeyebilirim", "nakit"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l06.a07",
+          "typ": "frei",
+          "ziel": "tr.a2.e14.s0221",
+          "nach": "ziel",
+          "alternativen": [
+            "Takip numarası fişin üzerinde. Paketi internetten takip edebilirsiniz.",
+            "Takip numarası fişin üstünde. Paketi internetten takip edebilirsin.",
+            "Takip numarası fişin üzerinde. Paketi internetten takip edebilirsin."
+          ]
+        },
+        {
+          "schluessel": "tr.a2.e14.l06.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.s0217",
+          "ablenker": ["tr.a2.e14.s0215", "tr.a2.e14.s0219"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.a2.e14.s0227",
+          "ablenker": ["tr.a2.e14.s0226", "tr.a2.e14.s0225"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l06.a10",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0201",
+          "wort": 2,
+          "ablenker": ["babaannesini", "babaannesinde"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l06.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0214"
+            }
+          ],
+          "antwort": "tr.a2.e14.s0215",
+          "ablenker": ["tr.a2.e14.s0204", "tr.a2.e14.s0227", "tr.a2.e14.s0222"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l06.a12",
+          "typ": "sprechen",
+          "satz": "tr.a2.e14.s0205"
+        },
+        {
+          "schluessel": "tr.a2.e14.l06.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a2.e14.s0207",
+          "alternativen": ["Paketin ağırlığı 1 kilo 200 gram."]
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a2.e14.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Wiederholung: Paket, Konto, Rechnung",
+        "tr": "Tekrar: Paket, hesap, fatura",
+        "ar": "مراجعة: طرد وحساب وفاتورة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a2.e14.l07.a01",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.mektup", "tr.a2.e14.pul", "tr.a2.e14.postaci", "tr.a2.e14.kargo"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.alici",
+          "ablenker": ["tr.a2.e14.gonderen", "tr.a1.e05.adres"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a03",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0063",
+          "wort": 5,
+          "ablenker": ["kuruşlar", "kuruşu"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0052",
+          "nach": "ziel",
+          "ablenker": ["bankada", "harcıyor"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0073"
+            }
+          ],
+          "antwort": "tr.a2.e14.s0074",
+          "ablenker": ["tr.a2.e14.s0098", "tr.a2.e14.s0086", "tr.a2.e14.s0091"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e14.sifre",
+          "ablenker": ["tr.a2.e02.imza", "tr.a1.e04.anahtar"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a07",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0054",
+          "wort": 1,
+          "ablenker": ["parası", "parasında"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a08",
+          "typ": "satzbau",
+          "ziel": "tr.a2.e14.s0044"
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a09",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.fatura", "tr.a2.e14.tutar", "tr.a2.e14.odeme", "tr.a2.e14.ucretsiz"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0021"
+            }
+          ],
+          "antwort": "tr.a2.e14.s0022",
+          "ablenker": ["tr.a2.e14.s0010", "tr.a2.e14.s0012", "tr.a2.e14.s0032"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.s0135",
+          "ablenker": ["tr.a2.e14.s0109", "tr.a2.e14.s0111"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a12",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0113",
+          "wort": 1,
+          "ablenker": ["şarjü", "şarjin"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a13",
+          "typ": "frei",
+          "ziel": "tr.a2.e14.s0041",
+          "nach": "ziel",
+          "alternativen": ["Artık Can'ın da kendi banka hesabı var."]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a14",
+          "typ": "minimalpaare",
+          "ziel": "tr.a2.e14.pil",
+          "ablenker": ["tr.a2.e14.pul"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0114",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0136"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a2.e14.s0137"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0138"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a2.e14.s0139"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0140"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a2.e14.s0141"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0142"
+            }
+          ],
+          "antwort": "tr.a2.e14.s0143",
+          "ablenker": ["tr.a2.e14.s0116", "tr.a2.e14.s0037", "tr.a2.e14.s0031"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a17",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0151",
+          "wort": 4,
+          "ablenker": ["kendin", "kendisi"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a18",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e14.bildirim",
+          "ablenker": ["tr.a1.e02.soru", "tr.a2.e02.imza"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a19",
+          "typ": "sprechen",
+          "satz": "tr.a2.e14.s0245"
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a20",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a2.e14.s0062",
+          "alternativen": ["Bir lirada 100 kuruş var.", "1 lirada 100 kuruş var.", "1 lirada yüz kuruş var."]
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a2.e14.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Prüfstein: Paket, Konto, Rechnung",
+        "tr": "Değerlendirme: Paket, hesap, fatura",
+        "ar": "اختبار: طرد وحساب وفاتورة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a2.e14.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.postane",
+          "ablenker": ["tr.a2.e14.banka", "tr.a1.e02.okul"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a02",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.gondermek", "tr.a2.e14.tartmak", "tr.a2.e14.yatirmak", "tr.a2.e14.kaydetmek"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a03",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0008",
+          "wort": 0,
+          "ablenker": ["Gönderenın", "Gönderenün"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0049",
+          "nach": "ziel",
+          "ablenker": ["cüzdanda", "arıyorum"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e14.s0042"
+            }
+          ],
+          "antwort": "tr.a2.e14.s0043",
+          "ablenker": ["tr.a2.e14.s0055", "tr.a2.e14.s0038", "tr.a2.e14.s0071"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e14.fatura",
+          "ablenker": ["tr.a2.e02.belge", "tr.a2.e05.fis"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a07",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0053",
+          "wort": 3,
+          "ablenker": ["yatırdım", "yatırıyor"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0254",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a09",
+          "typ": "frei",
+          "ziel": "tr.a2.e14.s0130",
+          "nach": "ziel",
+          "alternativen": ["Bu internet sitesi güvenli mi?"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a10",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0133",
+          "wort": 0,
+          "ablenker": ["Ekranta", "Ekrande"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a2.e14.ayrica",
+          "ablenker": ["tr.a2.e14.yaklasik", "tr.a2.e14.haric"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a12",
+          "typ": "satzbau",
+          "ziel": "tr.a2.e14.s0058",
+          "alternativen": ["Genellikle havale bir gün sürüyor."]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a13",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0077",
+          "wort": 0,
+          "ablenker": ["Ayluk", "Aylik"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a2.e14.s0155",
+          "nach": "ziel",
+          "ablenker": ["sitesine", "okulda"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a15",
+          "typ": "paare",
+          "lemmata": ["tr.a2.e14.milyon", "tr.a2.e14.binlerce", "tr.a2.e14.kurus", "tr.a2.e14.birer"]
+        },
+        {
+          "schluessel": "tr.a2.e14.l08.a16",
+          "typ": "luecke",
+          "ziel": "tr.a2.e14.s0101",
+          "wort": 2,
+          "ablenker": ["elektriğa", "elektriği"]
+        }
+      ]
+    }
+  ]
+}
