@@ -86,6 +86,7 @@ export default function Abgabe({
   const [gruppe, setGruppe] = useState<string | null>(null);
   const kennung = useRef<string | null>(null);
   const ergebnis = useRef<HTMLParagraphElement>(null);
+  const knopf = useRef<HTMLButtonElement>(null);
   // Gruppennamen gibt es auf Deutsch und Türkisch; die arabische Oberfläche zeigt den deutschen Namen
   const nameLang = ui === 'tr' ? 'tr' : 'de';
 
@@ -104,10 +105,15 @@ export default function Abgabe({
     };
   }, [aufgabe, kurs, ui, uebernimm]);
 
-  // Fokus nur nach einer Handlung (Senden, erneut versuchen) auf das Ergebnis – nie beim ersten Nachfragen
+  // Fokus nur nach einer Handlung (Senden, erneut versuchen) auf das Ergebnis bzw. wieder auf „Senden“ – nie beim ersten
+  // Nachfragen (der Fokus bleibt dann in der Prüfliste)
+  const [fokus, setFokus] = useState(0);
+  useEffect(() => {
+    if (fokus) (ergebnis.current ?? knopf.current)?.focus();
+  }, [fokus]);
   const zeige = (l: Lage) => {
     uebernimm(l);
-    requestAnimationFrame(() => ergebnis.current?.focus());
+    setFokus((n) => n + 1);
   };
   const erneut = () => {
     setLage({ art: 'pruefe' });
@@ -186,7 +192,7 @@ export default function Abgabe({
               ))}
             </fieldset>
           )}
-          <button type="button" onClick={() => void sende(lage.gruppen)} disabled={!gruppe || lage.sendet} className={SENDEN}>
+          <button ref={knopf} type="button" onClick={() => void sende(lage.gruppen)} disabled={!gruppe || lage.sendet} className={SENDEN}>
             <Send aria-hidden className="size-5 shrink-0 rtl:-scale-x-100" />
             {lage.sendet ? texte.sendet : texte.senden}
           </button>
