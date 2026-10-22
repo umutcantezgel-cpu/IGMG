@@ -1,0 +1,4027 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "de.a2.e06",
+    "reihenfolge": 7,
+    "thema": {
+      "de": "Im Kaufhaus",
+      "tr": "Büyük mağazada",
+      "ar": "في المتجر الكبير"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann im Geschäft nach Größe und Farbe fragen und Kleidung anprobieren.",
+        "tr": "Mağazada beden ve renk sorabilir, giysileri deneyebilirim.",
+        "ar": "أستطيع أن أسأل في المتجر عن المقاس واللون وأن أجرّب الملابس."
+      },
+      {
+        "de": "Ich kann sagen, welches Kleidungsstück ich nehme, und eine Ware umtauschen.",
+        "tr": "Hangi giysiyi aldığımı söyleyebilir ve bir ürünü değiştirebilirim.",
+        "ar": "أستطيع أن أقول أيّ قطعة ملابس آخذ وأن أستبدل سلعة."
+      }
+    ],
+    "symbol": "shirt",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a2.e06.statt",
+      "lemma": "statt",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Genitiv, im Alltag auch Dativ (statt einer Jacke, statt dem Rock)"
+      },
+      "frequenzRang": 243,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.davon",
+      "lemma": "davon",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Pronominaladverb (zwei davon)"
+      },
+      "frequenzRang": 193,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.entscheiden",
+      "lemma": "entscheiden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "entscheiden",
+        "praes_ich": "entscheide",
+        "praes_du": "entscheidest",
+        "praes_er_sie_es": "entscheidet",
+        "praes_wir": "entscheiden",
+        "praes_ihr": "entscheidet",
+        "praes_sie_Sie": "entscheiden",
+        "partizip_2": "entschieden",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 565,
+      "quelle": "wiktionary:de:entscheiden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚entscheiden‘ (https://de.wiktionary.org/wiki/entscheiden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.anprobieren",
+      "lemma": "anprobieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an"
+      },
+      "formen": {
+        "infinitiv": "anprobieren",
+        "verbzusatz": "an",
+        "praes_ich": "probiere",
+        "praes_du": "probierst",
+        "praes_er_sie_es": "probiert",
+        "praes_wir": "probieren",
+        "praes_ihr": "probiert",
+        "praes_sie_Sie": "probieren",
+        "imp_du": "probier",
+        "imp_ihr": "probiert",
+        "partizip_2": "anprobiert"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.umtauschen",
+      "lemma": "umtauschen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "um"
+      },
+      "formen": {
+        "infinitiv": "umtauschen",
+        "verbzusatz": "um",
+        "praes_ich": "tausche",
+        "praes_du": "tauschst",
+        "praes_er_sie_es": "tauscht",
+        "praes_wir": "tauschen",
+        "praes_ihr": "tauscht",
+        "praes_sie_Sie": "tauschen",
+        "imp_du": "tausch",
+        "imp_ihr": "tauscht",
+        "partizip_2": "umgetauscht"
+      },
+      "frequenzRang": 34513,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.aussuchen",
+      "lemma": "aussuchen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "aus"
+      },
+      "formen": {
+        "infinitiv": "aussuchen",
+        "verbzusatz": "aus",
+        "praes_ich": "suche",
+        "praes_du": "suchst",
+        "praes_er_sie_es": "sucht",
+        "praes_wir": "suchen",
+        "praes_ihr": "sucht",
+        "praes_sie_Sie": "suchen",
+        "imp_du": "such",
+        "imp_ihr": "sucht",
+        "partizip_2": "ausgesucht"
+      },
+      "frequenzRang": 3221,
+      "quelle": "wiktionary:de:aussuchen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚aussuchen‘ (https://de.wiktionary.org/wiki/aussuchen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.ansehen",
+      "lemma": "ansehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "ansehen",
+        "verbzusatz": "an",
+        "praes_ich": "sehe",
+        "praes_du": "siehst",
+        "praes_er_sie_es": "sieht",
+        "praes_wir": "sehen",
+        "praes_ihr": "seht",
+        "praes_sie_Sie": "sehen",
+        "imp_du": "sieh",
+        "imp_ihr": "seht",
+        "partizip_2": "angesehen"
+      },
+      "frequenzRang": 878,
+      "quelle": "wiktionary:de:ansehen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ansehen‘ (https://de.wiktionary.org/wiki/ansehen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.aussehen",
+      "lemma": "aussehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "aus",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "aussehen",
+        "verbzusatz": "aus",
+        "praes_ich": "sehe",
+        "praes_du": "siehst",
+        "praes_er_sie_es": "sieht",
+        "praes_wir": "sehen",
+        "praes_ihr": "seht",
+        "praes_sie_Sie": "sehen",
+        "partizip_2": "ausgesehen"
+      },
+      "frequenzRang": 1042,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.wechseln",
+      "lemma": "wechseln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben/sein"
+      },
+      "formen": {
+        "infinitiv": "wechseln",
+        "praes_ich": "wechsle",
+        "praes_du": "wechselst",
+        "praes_er_sie_es": "wechselt",
+        "praes_wir": "wechseln",
+        "praes_ihr": "wechselt",
+        "praes_sie_Sie": "wechseln",
+        "imp_du": "wechsle",
+        "imp_ihr": "wechselt",
+        "partizip_2": "gewechselt"
+      },
+      "frequenzRang": 641,
+      "quelle": "wiktionary:de:wechseln",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wechseln‘ (https://de.wiktionary.org/wiki/wechseln), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.ueberlegen",
+      "lemma": "überlegen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "überlegen",
+        "praes_ich": "überlege",
+        "praes_du": "überlegst",
+        "praes_er_sie_es": "überlegt",
+        "praes_wir": "überlegen",
+        "praes_ihr": "überlegt",
+        "praes_sie_Sie": "überlegen",
+        "imp_du": "überleg",
+        "imp_ihr": "überlegt",
+        "partizip_2": "überlegt"
+      },
+      "frequenzRang": 1388,
+      "quelle": "wiktionary:de:überlegen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚überlegen‘ (https://de.wiktionary.org/wiki/überlegen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.kaufhaus",
+      "lemma": "Kaufhaus",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Kaufhäuser"
+      },
+      "formen": {
+        "pl": "Kaufhäuser",
+        "dat_pl": "Kaufhäusern"
+      },
+      "frequenzRang": 9341,
+      "quelle": "wiktionary:de:Kaufhaus",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kaufhaus‘ (https://de.wiktionary.org/wiki/Kaufhaus), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.kleidung",
+      "lemma": "Kleidung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 2269,
+      "quelle": "wiktionary:de:Kleidung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kleidung‘ (https://de.wiktionary.org/wiki/Kleidung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.groesse",
+      "lemma": "Größe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Größen"
+      },
+      "formen": {
+        "pl": "Größen"
+      },
+      "frequenzRang": 870,
+      "quelle": "wiktionary:de:Größe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Größe‘ (https://de.wiktionary.org/wiki/Größe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.muetze",
+      "lemma": "Mütze",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Mützen"
+      },
+      "formen": {
+        "pl": "Mützen"
+      },
+      "frequenzRang": 5524,
+      "quelle": "wiktionary:de:Mütze",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mütze‘ (https://de.wiktionary.org/wiki/Mütze), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.mantel",
+      "lemma": "Mantel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Mäntel"
+      },
+      "formen": {
+        "pl": "Mäntel",
+        "dat_pl": "Mänteln"
+      },
+      "frequenzRang": 4344,
+      "quelle": "wiktionary:de:Mantel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mantel‘ (https://de.wiktionary.org/wiki/Mantel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.hemd",
+      "lemma": "Hemd",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Hemden"
+      },
+      "formen": {
+        "pl": "Hemden"
+      },
+      "frequenzRang": 3867,
+      "quelle": "wiktionary:de:Hemd",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hemd‘ (https://de.wiktionary.org/wiki/Hemd), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.rock",
+      "lemma": "Rock",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Röcke"
+      },
+      "formen": {
+        "pl": "Röcke",
+        "dat_pl": "Röcken"
+      },
+      "frequenzRang": 1637,
+      "quelle": "wiktionary:de:Rock",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rock‘ (https://de.wiktionary.org/wiki/Rock), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.bluse",
+      "lemma": "Bluse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Blusen"
+      },
+      "formen": {
+        "pl": "Blusen"
+      },
+      "frequenzRang": 9027,
+      "quelle": "wiktionary:de:Bluse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bluse‘ (https://de.wiktionary.org/wiki/Bluse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.socke",
+      "lemma": "Socke",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Socken"
+      },
+      "formen": {
+        "pl": "Socken"
+      },
+      "frequenzRang": 11238,
+      "quelle": "wiktionary:de:Socke",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Socke‘ (https://de.wiktionary.org/wiki/Socke), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.stiefel",
+      "lemma": "Stiefel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Stiefel"
+      },
+      "formen": {
+        "dat_pl": "Stiefeln"
+      },
+      "frequenzRang": 5788,
+      "quelle": "wiktionary:de:Stiefel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stiefel‘ (https://de.wiktionary.org/wiki/Stiefel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.handschuh",
+      "lemma": "Handschuh",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Handschuhe"
+      },
+      "formen": {
+        "pl": "Handschuhe",
+        "dat_pl": "Handschuhen"
+      },
+      "frequenzRang": 5726,
+      "quelle": "wiktionary:de:Handschuh",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Handschuh‘ (https://de.wiktionary.org/wiki/Handschuh), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.schal",
+      "lemma": "Schal",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Schals"
+      },
+      "formen": {
+        "pl": "Schals"
+      },
+      "frequenzRang": 3802,
+      "quelle": "wiktionary:de:Schal",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schal‘ (https://de.wiktionary.org/wiki/Schal), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.t-shirt",
+      "lemma": "T-Shirt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "T-Shirts"
+      },
+      "formen": {
+        "pl": "T-Shirts",
+        "teil": "Shirt",
+        "teil_pl": "Shirts"
+      },
+      "quelle": "wiktionary:de:T-Shirt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚T-Shirt‘ (https://de.wiktionary.org/wiki/T-Shirt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.tasche",
+      "lemma": "Tasche",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Taschen"
+      },
+      "formen": {
+        "pl": "Taschen"
+      },
+      "frequenzRang": 1489,
+      "quelle": "wiktionary:de:Tasche",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tasche‘ (https://de.wiktionary.org/wiki/Tasche), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.stoff",
+      "lemma": "Stoff",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Stoffe"
+      },
+      "formen": {
+        "pl": "Stoffe",
+        "dat_pl": "Stoffen"
+      },
+      "frequenzRang": 1607,
+      "quelle": "wiktionary:de:Stoff",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stoff‘ (https://de.wiktionary.org/wiki/Stoff), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.wolle",
+      "lemma": "Wolle",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 2099,
+      "quelle": "wiktionary:de:Wolle",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wolle‘ (https://de.wiktionary.org/wiki/Wolle), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.mode",
+      "lemma": "Mode",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 2552,
+      "quelle": "wiktionary:de:Mode",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mode‘ (https://de.wiktionary.org/wiki/Mode), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.angebot",
+      "lemma": "Angebot",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Angebote"
+      },
+      "formen": {
+        "pl": "Angebote",
+        "dat_pl": "Angeboten"
+      },
+      "frequenzRang": 402,
+      "quelle": "wiktionary:de:Angebot",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Angebot‘ (https://de.wiktionary.org/wiki/Angebot), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.rabatt",
+      "lemma": "Rabatt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Rabatte"
+      },
+      "formen": {
+        "pl": "Rabatte",
+        "dat_pl": "Rabatten"
+      },
+      "frequenzRang": 3820,
+      "quelle": "wiktionary:de:Rabatt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rabatt‘ (https://de.wiktionary.org/wiki/Rabatt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.prozent",
+      "lemma": "Prozent",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Prozent"
+      },
+      "frequenzRang": 425,
+      "quelle": "wiktionary:de:Prozent",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Prozent‘ (https://de.wiktionary.org/wiki/Prozent), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.rechnung",
+      "lemma": "Rechnung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Rechnungen"
+      },
+      "formen": {
+        "pl": "Rechnungen"
+      },
+      "frequenzRang": 1375,
+      "quelle": "wiktionary:de:Rechnung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rechnung‘ (https://de.wiktionary.org/wiki/Rechnung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.kunde",
+      "lemma": "Kunde",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kunden",
+        "weiblich": "Kundin"
+      },
+      "formen": {
+        "pl": "Kunden",
+        "akk_dat_sg": "Kunden",
+        "weiblich": "Kundin",
+        "weiblich_pl": "Kundinnen"
+      },
+      "frequenzRang": 819,
+      "quelle": "wiktionary:de:Kunde",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kunde‘ (https://de.wiktionary.org/wiki/Kunde), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.dame",
+      "lemma": "Dame",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Damen"
+      },
+      "formen": {
+        "pl": "Damen"
+      },
+      "frequenzRang": 736,
+      "quelle": "wiktionary:de:Dame",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Dame‘ (https://de.wiktionary.org/wiki/Dame), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.laden",
+      "lemma": "Laden",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Läden"
+      },
+      "formen": {
+        "pl": "Läden"
+      },
+      "frequenzRang": 608,
+      "quelle": "wiktionary:de:Laden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Laden‘ (https://de.wiktionary.org/wiki/Laden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.paar",
+      "lemma": "Paar",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Paare"
+      },
+      "formen": {
+        "pl": "Paare",
+        "dat_pl": "Paaren"
+      },
+      "frequenzRang": 197,
+      "quelle": "wiktionary:de:Paar",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Paar‘ (https://de.wiktionary.org/wiki/Paar), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.geschmack",
+      "lemma": "Geschmack",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1832,
+      "quelle": "wiktionary:de:Geschmack",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Geschmack‘ (https://de.wiktionary.org/wiki/Geschmack), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.billig",
+      "lemma": "billig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "billige",
+        "endung_en": "billigen",
+        "endung_er": "billiger",
+        "endung_es": "billiges",
+        "endung_em": "billigem",
+        "komparativ": "billiger",
+        "superlativ": "billigsten",
+        "superlativ_e": "billigste"
+      },
+      "frequenzRang": 1655,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.schick",
+      "lemma": "schick",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "schicke",
+        "endung_en": "schicken",
+        "endung_er": "schicker",
+        "endung_es": "schickes",
+        "endung_em": "schickem",
+        "komparativ": "schicker",
+        "superlativ": "schicksten",
+        "superlativ_e": "schickste"
+      },
+      "frequenzRang": 2160,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.huebsch",
+      "lemma": "hübsch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "hübsche",
+        "endung_en": "hübschen",
+        "endung_er": "hübscher",
+        "endung_es": "hübsches",
+        "endung_em": "hübschem",
+        "komparativ": "hübscher",
+        "superlativ": "hübschesten",
+        "superlativ_e": "hübscheste"
+      },
+      "frequenzRang": 1525,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.haesslich",
+      "lemma": "hässlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "hässliche",
+        "endung_en": "hässlichen",
+        "endung_er": "hässlicher",
+        "endung_es": "hässliches",
+        "endung_em": "hässlichem"
+      },
+      "frequenzRang": 2829,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.bunt",
+      "lemma": "bunt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "bunte",
+        "endung_en": "bunten",
+        "endung_er": "bunter",
+        "endung_es": "buntes",
+        "endung_em": "buntem",
+        "komparativ": "bunter",
+        "superlativ": "buntesten",
+        "superlativ_e": "bunteste"
+      },
+      "frequenzRang": 1678,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.braun",
+      "lemma": "braun",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "braune",
+        "endung_en": "braunen",
+        "endung_er": "brauner",
+        "endung_es": "braunes",
+        "endung_em": "braunem"
+      },
+      "frequenzRang": 1225,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.grau",
+      "lemma": "grau",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "graue",
+        "endung_en": "grauen",
+        "endung_er": "grauer",
+        "endung_es": "graues",
+        "endung_em": "grauem"
+      },
+      "frequenzRang": 2127,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.rosa",
+      "lemma": "rosa",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "gebrauch": "unveränderlich (ein rosa Pullover)"
+      },
+      "frequenzRang": 2708,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.lila",
+      "lemma": "lila",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "gebrauch": "unveränderlich (ein rosa Pullover)"
+      },
+      "frequenzRang": 6145,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.orange",
+      "lemma": "orange",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "gebrauch": "unveränderlich (ein rosa Pullover)"
+      },
+      "frequenzRang": 3369,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.eng",
+      "lemma": "eng",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "enge",
+        "endung_en": "engen",
+        "endung_er": "enger",
+        "endung_es": "enges",
+        "endung_em": "engem",
+        "komparativ": "enger",
+        "superlativ": "engsten",
+        "superlativ_e": "engste"
+      },
+      "frequenzRang": 957,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.lang",
+      "lemma": "lang",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "lange",
+        "endung_en": "langen",
+        "endung_er": "langer",
+        "endung_es": "langes",
+        "endung_em": "langem",
+        "komparativ": "länger",
+        "superlativ": "längsten",
+        "superlativ_e": "längste"
+      },
+      "frequenzRang": 849,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.bar",
+      "lemma": "bar",
+      "wortart": "adverb",
+      "frequenzRang": 1536,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.umkleidekabine",
+      "lemma": "Umkleidekabine",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Umkleidekabinen"
+      },
+      "formen": {
+        "pl": "Umkleidekabinen"
+      },
+      "frequenzRang": 49443,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.anzug",
+      "lemma": "Anzug",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Anzüge"
+      },
+      "formen": {
+        "pl": "Anzüge",
+        "dat_pl": "Anzügen"
+      },
+      "frequenzRang": 4158,
+      "quelle": "wiktionary:de:Anzug",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anzug‘ (https://de.wiktionary.org/wiki/Anzug), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.jeans",
+      "lemma": "Jeans",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Jeans"
+      },
+      "frequenzRang": 5880,
+      "quelle": "wiktionary:de:Jeans",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Jeans‘ (https://de.wiktionary.org/wiki/Jeans), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.guertel",
+      "lemma": "Gürtel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Gürtel"
+      },
+      "formen": {
+        "dat_pl": "Gürteln"
+      },
+      "frequenzRang": 5935,
+      "quelle": "wiktionary:de:Gürtel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gürtel‘ (https://de.wiktionary.org/wiki/Gürtel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.brille",
+      "lemma": "Brille",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Brillen"
+      },
+      "formen": {
+        "pl": "Brillen"
+      },
+      "frequenzRang": 3003,
+      "quelle": "wiktionary:de:Brille",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Brille‘ (https://de.wiktionary.org/wiki/Brille), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.regenschirm",
+      "lemma": "Regenschirm",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Regenschirme"
+      },
+      "formen": {
+        "pl": "Regenschirme",
+        "dat_pl": "Regenschirmen"
+      },
+      "frequenzRang": 11559,
+      "quelle": "wiktionary:de:Regenschirm",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Regenschirm‘ (https://de.wiktionary.org/wiki/Regenschirm), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.abteilung",
+      "lemma": "Abteilung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Abteilungen"
+      },
+      "formen": {
+        "pl": "Abteilungen"
+      },
+      "frequenzRang": 1516,
+      "quelle": "wiktionary:de:Abteilung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abteilung‘ (https://de.wiktionary.org/wiki/Abteilung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.etage",
+      "lemma": "Etage",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Etagen"
+      },
+      "formen": {
+        "pl": "Etagen"
+      },
+      "frequenzRang": 4892,
+      "quelle": "wiktionary:de:Etage",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Etage‘ (https://de.wiktionary.org/wiki/Etage), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.prospekt",
+      "lemma": "Prospekt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Prospekte"
+      },
+      "formen": {
+        "pl": "Prospekte",
+        "dat_pl": "Prospekten"
+      },
+      "frequenzRang": 22167,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.cent",
+      "lemma": "Cent",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Cent"
+      },
+      "frequenzRang": 2594,
+      "quelle": "wiktionary:de:Cent",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Cent‘ (https://de.wiktionary.org/wiki/Cent), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.kaputt",
+      "lemma": "kaputt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "kaputte",
+        "endung_en": "kaputten",
+        "endung_er": "kaputter",
+        "endung_es": "kaputtes",
+        "endung_em": "kaputtem"
+      },
+      "frequenzRang": 1538,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a2.e06.s0001",
+      "text": "Das Kaufhaus in unserer Stadt ist sehr groß.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0002",
+      "text": "Das Kaufhaus hat vier Etagen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0003",
+      "text": "Am Samstag sind viele Kunden im Kaufhaus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0004",
+      "text": "Das Kaufhaus öffnet um neun Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0005",
+      "text": "Die Abteilung für Damen ist in der ersten Etage.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0006",
+      "text": "Wo finde ich die Abteilung für Herren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0007",
+      "text": "Die Abteilung für Herren ist in der zweiten Etage.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0008",
+      "text": "Kleidung für Kinder gibt es in der dritten Etage.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0009",
+      "text": "In welcher Etage sind die Schuhe?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0010",
+      "text": "Die Schuhe sind ganz oben, in der dritten Etage.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0011",
+      "text": "In diesem Kaufhaus gibt es viel Kleidung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0012",
+      "text": "Der schwarze Mantel ist sehr warm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0013",
+      "text": "Ich nehme den schwarzen Mantel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0014",
+      "text": "Die Frau mit dem schwarzen Mantel ist meine Lehrerin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0015",
+      "text": "Das weiße Hemd ist zu klein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0016",
+      "text": "Das weiße Hemd ist zu groß.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0017",
+      "text": "Der rote Rock gefällt mir.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0018",
+      "text": "Der rote Rock gefällt ihr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0019",
+      "text": "Der graue Anzug kostet 200 Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0020",
+      "text": "Die blaue Jeans ist sehr bequem.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0021",
+      "text": "Das grüne T-Shirt kostet nur zehn Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0022",
+      "text": "Dieses Geschäft hat viele Kunden.",
+      "quelle": "tatoeba:370436",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #370436 von Wolf (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e06.s0023",
+      "text": "Der kleine Laden an der Ecke hat schöne Taschen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0024",
+      "text": "Dieses Jahr sind bunte Farben in Mode.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0025",
+      "text": "Mode ist mir nicht so wichtig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0026",
+      "text": "Entschuldigung, wo finde ich Hemden für Herren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0027",
+      "text": "Hemden gibt es in der zweiten Etage.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0028",
+      "text": "Und wo sind die Anzüge?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0029",
+      "text": "Die Anzüge sind auch dort, gleich neben den Hemden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0030",
+      "text": "Die rote Bluse ist sehr schön.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0031",
+      "text": "Entschuldigung, in welcher Etage ist die Abteilung für Damen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0032",
+      "text": "Welche Größe haben Sie?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0033",
+      "text": "Ich habe Größe 38.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0034",
+      "text": "Haben Sie diese Hose eine Größe kleiner?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0035",
+      "text": "Haben Sie diesen Pullover auch in Grau?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0036",
+      "text": "In welcher Farbe gibt es die Bluse?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0037",
+      "text": "Die Bluse gibt es in Rosa, Lila und Orange.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0038",
+      "text": "Diese Hose ist zu eng.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0039",
+      "text": "Diese Hose ist zu lang.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0040",
+      "text": "Dieser Rock ist zu lang.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0041",
+      "text": "Welcher Mantel gefällt dir am besten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0042",
+      "text": "Welches Hemd nimmst du, das weiße oder das rosa?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0043",
+      "text": "Ich nehme das rosa Hemd.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0044",
+      "text": "Die lila Bluse gefällt meiner Schwester.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0045",
+      "text": "Das orange T-Shirt ist für den Sommer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0046",
+      "text": "Die braunen Schuhe sind sehr bequem.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0047",
+      "text": "Darf ich die Hose anprobieren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0048",
+      "text": "Probier mal die blaue Jacke an!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0049",
+      "text": "Hast du die Jeans schon anprobiert?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0050",
+      "text": "Alle Umkleidekabinen sind gerade besetzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0051",
+      "text": "Die Hose passt mir nicht, sie ist zu eng.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0052",
+      "text": "Die Jeans ist mir zu lang.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0053",
+      "text": "Die Jacke ist nicht zu eng und nicht zu weit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0054",
+      "text": "Guten Tag, ich suche eine Jeans.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0055",
+      "text": "Gern. Welche Größe brauchen Sie?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0056",
+      "text": "Größe 40, bitte. Kann ich die Jeans anprobieren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0057",
+      "text": "Natürlich. Die Umkleidekabine ist dort hinten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0058",
+      "text": "Welche Farbe hat der neue Mantel?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0059",
+      "text": "Im Winter brauche ich eine Mütze und einen Schal.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0060",
+      "text": "Was kostet diese Mütze?",
+      "quelle": "tatoeba:770480",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #770480 von samueldora (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e06.s0061",
+      "text": "Die Mütze ist zu klein. Ich nehme sie nicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0062",
+      "text": "Der Schal ist aus Wolle.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0063",
+      "text": "Der Schal ist schön warm. Ich nehme ihn.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0064",
+      "text": "Ist der Pullover aus Wolle?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0065",
+      "text": "Wo sind meine Handschuhe?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0066",
+      "text": "Er findet die Handschuhe nicht.",
+      "quelle": "tatoeba:2571171",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2571171 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e06.s0067",
+      "text": "Ohne Handschuhe ist es draußen zu kalt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0068",
+      "text": "Die Stiefel sind bequem. Ich nehme sie.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0069",
+      "text": "Die Stiefel sind bequem, aber ich nehme sie nicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0070",
+      "text": "Ich kaufe drei Paar Socken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0071",
+      "text": "Der braune Gürtel passt gut zur Jeans.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0072",
+      "text": "Die Brille von Opa ist kaputt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0073",
+      "text": "Der Regenschirm ist kaputt.",
+      "quelle": "tatoeba:6837345",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6837345 von rmateo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e06.s0074",
+      "text": "Es regnet. Nimm den Regenschirm mit!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0075",
+      "text": "Die Tasche ist voll.",
+      "quelle": "tatoeba:2478234",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2478234 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e06.s0076",
+      "text": "Aus welchem Stoff ist die Jacke?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0077",
+      "text": "Das Hemd gefällt mir. Ich kaufe es.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0078",
+      "text": "Der Mantel ist schön. Probier ihn doch mal an!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0079",
+      "text": "Papa, mir ist kalt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0080",
+      "text": "Wo sind denn deine Handschuhe?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0081",
+      "text": "Ich habe sie zu Hause vergessen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0082",
+      "text": "Dann nimm meine Handschuhe. Ich brauche sie nicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0083",
+      "text": "Im Winter trage ich eine Mütze aus Wolle.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0084",
+      "text": "Der Mantel sieht sehr warm aus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0085",
+      "text": "Darf ich mir die Taschen ansehen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0086",
+      "text": "Ich habe mir die Mäntel schon angesehen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0087",
+      "text": "Ich suche mir einen Schal aus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0088",
+      "text": "Hast du schon etwas ausgesucht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0089",
+      "text": "Ich überlege es mir noch mal.",
+      "quelle": "tatoeba:396159",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #396159 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e06.s0090",
+      "text": "Ich kann mich nicht entscheiden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0091",
+      "text": "Hast du dich schon entschieden?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0092",
+      "text": "Ich habe mich für den roten Rock entschieden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0093",
+      "text": "Das ist nicht mein Geschmack.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0094",
+      "text": "Du hast einen guten Geschmack.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0095",
+      "text": "Der Anzug ist sehr schick.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0096",
+      "text": "Die Tasche ist hübsch, aber leider zu teuer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0097",
+      "text": "Die Farbe finde ich ein bisschen hässlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0098",
+      "text": "Der graue Mantel gefällt ihm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0099",
+      "text": "Der graue Mantel gefällt ihnen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0100",
+      "text": "Der graue Mantel gefällt uns.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0101",
+      "text": "Die bunte Bluse gefällt ihr nicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0102",
+      "text": "Passt Ihnen die Größe?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0103",
+      "text": "Gehört dir dieser Regenschirm?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0104",
+      "text": "Ich zeige Ihnen gern unsere Mäntel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0105",
+      "text": "Welchen Mantel soll ich nehmen? Was meinst du?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0106",
+      "text": "Ich nehme lieber die Hose statt dem Rock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0107",
+      "text": "Die Socken sind billig. Ich nehme zwei Paar davon.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0108",
+      "text": "Wie findest du die braune Jacke?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0109",
+      "text": "Ich weiß nicht. Die Farbe ist nicht mein Geschmack.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0110",
+      "text": "Und wie findest du die graue Jacke?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0111",
+      "text": "Die graue Jacke ist schick. Die Farbe steht dir!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0112",
+      "text": "Ich kann mich zwischen den zwei Mänteln nicht entscheiden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0113",
+      "text": "Die Stiefel sind heute im Angebot.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0114",
+      "text": "Im Prospekt sind viele Angebote.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0115",
+      "text": "Heute gibt es zwanzig Prozent Rabatt auf alle Mäntel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0116",
+      "text": "Alle T-Shirts kosten heute fünfzig Prozent weniger.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0117",
+      "text": "Hast du den Prospekt vom Kaufhaus gesehen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0118",
+      "text": "Die Socken kosten 4 Euro und 99 Cent.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0119",
+      "text": "Mir fehlen noch fünfzig Cent.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0120",
+      "text": "Die Schuhe sind billig, aber gut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0121",
+      "text": "Ich zahle bar.",
+      "quelle": "tatoeba:1048918",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1048918 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e06.s0122",
+      "text": "Haben Sie die Rechnung noch?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0123",
+      "text": "Die Rechnung ist in meiner Tasche.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0124",
+      "text": "Ich möchte diese Hose umtauschen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0125",
+      "text": "Elif hat den Pullover gestern umgetauscht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0126",
+      "text": "Kann ich den Rock umtauschen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0127",
+      "text": "Die Tasche ist schon nach einer Woche kaputt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0128",
+      "text": "Können Sie mir zwanzig Euro wechseln?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0129",
+      "text": "Ich kaufe die Jacke, weil sie im Angebot ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0130",
+      "text": "Ich nehme das Hemd, weil mir die Farbe gefällt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0131",
+      "text": "Warum nimmst du den grauen Mantel?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0132",
+      "text": "Weil er warm und nicht zu teuer ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0133",
+      "text": "Ich nehme den grauen Mantel, weil er warm ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0134",
+      "text": "Ich möchte diesen Rock umtauschen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0135",
+      "text": "Gefällt er Ihnen nicht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0136",
+      "text": "Doch, aber er ist mir zu lang.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0137",
+      "text": "Kein Problem. Haben Sie die Rechnung dabei?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0138",
+      "text": "Ich kaufe den Schal, weil er billig ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0139",
+      "text": "Unsere Angebote für den Winter",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0140",
+      "text": "Liebe Kundinnen und Kunden, diese Woche gibt es tolle Angebote!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0141",
+      "text": "Erste Etage: Abteilung für Damen",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0142",
+      "text": "Mäntel aus Wolle in Grau und Braun sind jetzt 30 Prozent billiger.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0143",
+      "text": "Bunte Blusen gibt es in allen Größen für nur 19 Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0144",
+      "text": "Zweite Etage: Abteilung für Herren",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0145",
+      "text": "Hemden in Weiß, Blau und Rosa: zwei Stück für 40 Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0146",
+      "text": "Dritte Etage: Kinder und Schuhe",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0147",
+      "text": "Auf warme Stiefel für Kinder gibt es 20 Prozent Rabatt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0148",
+      "text": "Mützen, Schals und Handschuhe kosten ab 5 Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0149",
+      "text": "Sie können bar oder mit Karte bezahlen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0150",
+      "text": "Mit der Rechnung können Sie alles in 14 Tagen umtauschen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0151",
+      "text": "Die Mäntel aus Wolle sind jetzt billiger.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0152",
+      "text": "Die Hemden gibt es nur in Weiß.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0153",
+      "text": "Im Kaufhaus gibt es auch ein Café.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0154",
+      "text": "In welcher Etage ist die Abteilung für Herren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0155",
+      "text": "In der zweiten Etage.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0156",
+      "text": "In der ersten Etage.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0157",
+      "text": "In der dritten Etage.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0158",
+      "text": "Was braucht man zum Umtauschen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0159",
+      "text": "Man braucht die Rechnung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0160",
+      "text": "Man braucht eine Karte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0161",
+      "text": "Man braucht den Prospekt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0162",
+      "text": "Schreib deiner Schwester eine Nachricht: Welche Jacke soll ich nehmen? Wie sehen die Jacken aus?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0163",
+      "text": "Hallo Ayla! Ich bin im Kaufhaus und kann mich nicht entscheiden. Die schwarze Jacke ist warm, aber ein bisschen lang. Die blaue Jacke ist kurz und schick. Sie ist im Angebot. Welche Jacke soll ich nehmen? Liebe Grüße, Derya",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0164",
+      "text": "Neue Kleidung für den Winter",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0165",
+      "text": "Es ist November, und draußen ist es schon kalt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0166",
+      "text": "Derya geht mit ihren Kindern Elif und Emre ins Kaufhaus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0167",
+      "text": "Die Kinder brauchen warme Kleidung für den Winter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0168",
+      "text": "Die Abteilung für Kinder ist in der dritten Etage.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0169",
+      "text": "Emre gefällt sofort die schwarze Jacke.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0170",
+      "text": "Mama, sieh mal! Die Jacke ist toll!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0171",
+      "text": "Ja, sie sieht warm aus. Probier sie doch mal an!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0172",
+      "text": "Emre geht in die Umkleidekabine.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0173",
+      "text": "Die Jacke passt mir genau!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0174",
+      "text": "Gut, dann nehmen wir sie.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0175",
+      "text": "Elif findet den blauen Pullover schön.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0176",
+      "text": "Mama, darf ich den blauen Pullover anprobieren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0177",
+      "text": "Natürlich. Welche Größe brauchst du?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0178",
+      "text": "Ich brauche Größe 146.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0179",
+      "text": "Aber der blaue Pullover ist zu eng.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0180",
+      "text": "Derya holt den Pullover eine Größe größer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0181",
+      "text": "Jetzt passt er, und die Farbe steht Elif gut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0182",
+      "text": "Emre, du brauchst auch noch eine Mütze und Handschuhe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0183",
+      "text": "Die bunte Mütze hier gefällt mir!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0184",
+      "text": "Die nehmen wir auch. Sie ist heute im Angebot.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0185",
+      "text": "An der Kasse bezahlt Derya bar.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0186",
+      "text": "Mit Rabatt kostet alles zusammen 95 Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0187",
+      "text": "Danke, Mama! Jetzt kann der Winter kommen!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0188",
+      "text": "Was gefällt Emre im Kaufhaus?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0189",
+      "text": "Der graue Mantel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0190",
+      "text": "Die braunen Stiefel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0191",
+      "text": "Was möchte Elif anprobieren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0192",
+      "text": "Den blauen Pullover.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0193",
+      "text": "Den roten Rock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0194",
+      "text": "Die schwarze Jacke von Emre.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0195",
+      "text": "Warum passt der blaue Pullover nicht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0196",
+      "text": "Er ist zu eng.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0197",
+      "text": "Er ist zu lang.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0198",
+      "text": "Er ist zu teuer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0199",
+      "text": "Wie bezahlt Derya an der Kasse?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0200",
+      "text": "Sie bezahlt bar.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0201",
+      "text": "Sie bezahlt mit Karte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0202",
+      "text": "Mama, darf ich die schwarze Jacke anprobieren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0203",
+      "text": "Umtauschen an der Kasse",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0204",
+      "text": "Ḫālid hat letzte Woche eine Hose gekauft.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0205",
+      "text": "Zu Hause probiert er sie an. Die Hose ist zu eng.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0206",
+      "text": "Heute geht er ins Kaufhaus und spricht mit einer Verkäuferin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0207",
+      "text": "Guten Tag! Ich möchte diese Hose umtauschen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0208",
+      "text": "Gern. Was ist denn das Problem?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0209",
+      "text": "Ich möchte sie umtauschen, weil sie zu eng ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0210",
+      "text": "Haben Sie die Rechnung dabei?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0211",
+      "text": "Ja, hier ist die Rechnung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0212",
+      "text": "Möchten Sie die Hose eine Größe größer?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0213",
+      "text": "Ja, gern. Gibt es sie auch in Grau?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0214",
+      "text": "Nein, leider nur in Schwarz und Braun.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0215",
+      "text": "Dann nehme ich die braune Hose.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0216",
+      "text": "Gern. Sie kostet so viel wie die alte Hose.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0217",
+      "text": "Prima, dann muss ich nichts bezahlen. Vielen Dank!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0218",
+      "text": "Warum möchte Ḫālid die Hose umtauschen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0219",
+      "text": "Weil sie zu eng ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0220",
+      "text": "Weil sie zu lang ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0221",
+      "text": "Weil sie kaputt ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0222",
+      "text": "Was zeigt Ḫālid an der Kasse?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0223",
+      "text": "Er zeigt die Rechnung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0224",
+      "text": "Er zeigt seine Karte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0225",
+      "text": "Er zeigt den Prospekt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0226",
+      "text": "Welche Hose nimmt Ḫālid am Ende?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0227",
+      "text": "Die braune Hose.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0228",
+      "text": "Die graue Hose.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0229",
+      "text": "Die schwarze Hose.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0230",
+      "text": "Welche Mütze gefällt dir, die rote oder die blaue?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0231",
+      "text": "Mir gefällt die rote Mütze besser.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0232",
+      "text": "Diese Stiefel sind zu eng. Hast du sie anprobiert?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0233",
+      "text": "Der Laden hat heute Rabatt auf alle Taschen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0234",
+      "text": "Ich suche einen Schal für meine Schwester.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0235",
+      "text": "Gefällt dir das bunte T-Shirt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0236",
+      "text": "Ja, das bunte T-Shirt finde ich super.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0237",
+      "text": "Warum kaufst du die Mütze nicht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0238",
+      "text": "Weil sie mir zu klein ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0239",
+      "text": "Wo kann ich die Bluse anprobieren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0240",
+      "text": "Ich tausche die Handschuhe um, weil sie kaputt sind.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0241",
+      "text": "Kaufst du die Jeans? Nein, ich überlege noch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0242",
+      "text": "Ich habe die Rechnung leider nicht mehr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0243",
+      "text": "Hallo Can! Was hast du im Kaufhaus gekauft?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0244",
+      "text": "Einen Anzug für die Hochzeit von meinem Bruder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0245",
+      "text": "Zeig mal! Welche Farbe hat der Anzug?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0246",
+      "text": "Er ist grau, und das Hemd dazu ist weiß.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0247",
+      "text": "Die grauen Socken sind aus Wolle.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0248",
+      "text": "Entschuldigung, haben Sie diese Bluse auch in Größe 40?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0249",
+      "text": "In welcher Farbe gibt es den Mantel?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0250",
+      "text": "Darf ich die braunen Stiefel anprobieren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0251",
+      "text": "Ich nehme diesen Schal, weil er aus Wolle ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0252",
+      "text": "Ich möchte die Mütze umtauschen, weil sie kaputt ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0253",
+      "text": "Die Jacke passt ihm nicht, sie ist zu eng.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0254",
+      "text": "Welchen Rock nimmst du?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0255",
+      "text": "Ich nehme den langen Rock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0256",
+      "text": "Mit Rabatt kostet der Gürtel nur 15 Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0257",
+      "text": "Ich habe mich für die grauen Handschuhe entschieden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0258",
+      "text": "Guten Tag, kann ich Ihnen helfen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0259",
+      "text": "Ja, ich suche ein Hemd für meinen Vater.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0260",
+      "text": "Welche Größe trägt er?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0261",
+      "text": "Er trägt Größe L, am liebsten in Blau.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0262",
+      "text": "Haben Sie die Jacke auch eine Größe größer?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e06.s0263",
+      "text": "Ich möchte diese Mütze umtauschen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a2.e06.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann im Kaufhaus Abteilungen finden und Kleidung benennen.",
+        "tr": "Büyük mağazada reyonları bulabilir ve giysilerin adlarını söyleyebilirim.",
+        "ar": "أستطيع أن أجد الأقسام في المتجر الكبير وأن أسمّي الملابس."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e06.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.kaufhaus",
+          "ablenker": ["de.a2.e06.abteilung", "de.a2.e06.etage"]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e06.mantel", "de.a2.e06.hemd", "de.a2.e06.rock", "de.a2.e06.bluse", "de.a2.e06.anzug", "de.a2.e06.jeans"]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e06.s0015",
+          "ablenker": ["de.a2.e06.s0016", "de.a2.e06.s0012"]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0013",
+          "wort": 3,
+          "ablenker": ["schwarze", "schwarzer"]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0026"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0027"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0028"
+            }
+          ],
+          "antwort": "de.a2.e06.s0029",
+          "ablenker": ["de.a2.e06.s0025", "de.a2.e06.s0021", "de.a2.e06.s0004"]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.kunde",
+          "ablenker": ["de.a2.e06.dame", "de.a1.e12.verkaeufer"]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e06.kleidung",
+          "ablenker": ["de.a2.e06.mode", "de.a2.e06.laden"]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e06.s0005",
+          "nach": "ziel",
+          "alternativen": ["In der ersten Etage ist die Abteilung für Damen."],
+          "ablenker": ["zweiten", "Herren"]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e06.s0007",
+          "ablenker": ["de.a2.e06.s0005", "de.a2.e06.s0008"]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0014",
+          "wort": 4,
+          "ablenker": ["schwarze", "schwarzes"]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e06.s0003",
+          "alternativen": [
+            "Viele Kunden sind am Samstag im Kaufhaus.",
+            "Im Kaufhaus sind am Samstag viele Kunden.",
+            "Am Samstag sind im Kaufhaus viele Kunden."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e06.s0030",
+          "nach": "ziel",
+          "alternativen": [
+            "Die rote Bluse ist wirklich schön.",
+            "Die Bluse in Rot ist sehr schön.",
+            "Die rote Bluse ist sehr hübsch.",
+            "Die rote Bluse ist echt schön."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e06.dame",
+          "ablenker": ["de.a1.e01.name"]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e06.s0002",
+          "alternativen": ["Das Kaufhaus hat 4 Etagen."]
+        },
+        {
+          "schluessel": "de.a2.e06.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e06.s0031"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e06.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann nach Größe und Farbe fragen und Kleidung anprobieren.",
+        "tr": "Beden ve renk sorabilir, giysileri deneyebilirim.",
+        "ar": "أستطيع أن أسأل عن المقاس واللون وأن أجرّب الملابس."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e06.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.groesse",
+          "ablenker": ["de.a1.e10.farbe", "de.a1.e06.preis"]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e06.braun", "de.a2.e06.grau", "de.a2.e06.rosa", "de.a2.e06.lila", "de.a2.e06.orange", "de.a2.e06.bunt"]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e06.eng",
+          "ablenker": ["de.a2.e06.lang", "de.a1.e10.kurz"]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e06.s0038",
+          "ablenker": ["de.a2.e06.s0039", "de.a2.e06.s0040"]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0035",
+          "wort": 2,
+          "ablenker": ["dieser", "dieses"]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0054"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0055"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0056"
+            }
+          ],
+          "antwort": "de.a2.e06.s0057",
+          "ablenker": ["de.a2.e06.s0044", "de.a2.e06.s0045", "de.a2.e06.s0022"]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.umkleidekabine",
+          "ablenker": ["de.a2.e04.spiegel", "de.a1.e06.kasse"]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e06.anprobieren",
+          "ablenker": ["de.a1.e06.kaufen", "de.a1.e10.tragen"]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a10",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0041",
+          "wort": 0,
+          "ablenker": ["Welche", "Welches"]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e06.s0052",
+          "nach": "ziel",
+          "alternativen": ["Mir ist die Jeans zu lang."],
+          "ablenker": ["mich", "kurz"]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e06.s0051",
+          "ablenker": ["de.a2.e06.s0053", "de.a2.e06.s0050"]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e06.s0042",
+          "alternativen": ["Welches Hemd nimmst du, das rosa oder das weiße?"]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e06.s0058",
+          "nach": "ziel",
+          "alternativen": [
+            "Was für eine Farbe hat der neue Mantel?",
+            "In welcher Farbe ist der neue Mantel?",
+            "Welche Farbe hat dein neuer Mantel?",
+            "Welche Farbe hat Ihr neuer Mantel?"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e06.s0033",
+          "alternativen": ["Ich habe Größe achtunddreißig."]
+        },
+        {
+          "schluessel": "de.a2.e06.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e06.s0035"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e06.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Kleidung für den Winter benennen und sagen, was ich nehme.",
+        "tr": "Kışlık giysilerin adlarını söyleyebilir ve ne aldığımı anlatabilirim.",
+        "ar": "أستطيع أن أسمّي ملابس الشتاء وأن أقول ماذا آخذ."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e06.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.muetze",
+          "ablenker": ["de.a2.e06.schal", "de.a2.e06.handschuh"]
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e06.stiefel",
+            "de.a2.e06.socke",
+            "de.a2.e06.guertel",
+            "de.a2.e06.brille",
+            "de.a2.e06.regenschirm",
+            "de.a2.e06.tasche"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e06.wolle",
+          "ablenker": ["de.a2.e06.stoff", "de.a2.e06.paar"]
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0063",
+          "wort": 7,
+          "ablenker": ["sie", "es"]
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e06.s0068",
+          "ablenker": ["de.a2.e06.s0069", "de.a2.e06.s0061"]
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0079"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0080"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0081"
+            }
+          ],
+          "antwort": "de.a2.e06.s0082",
+          "ablenker": ["de.a2.e06.s0070", "de.a2.e06.s0075", "de.a2.e06.s0072"]
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.socke",
+          "ablenker": ["de.a2.e06.stiefel", "de.a1.e10.schuh"]
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0077",
+          "wort": 6,
+          "ablenker": ["ihn", "sie"]
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e06.s0059",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich brauche im Winter eine Mütze und einen Schal.",
+            "Im Winter brauche ich einen Schal und eine Mütze.",
+            "Ich brauche im Winter einen Schal und eine Mütze."
+          ],
+          "ablenker": ["Handschuhe", "Sommer"]
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e06.s0067",
+          "ablenker": ["de.a2.e06.s0065", "de.a2.e06.s0066"]
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e06.s0076"
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e06.s0083",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich trage im Winter eine Mütze aus Wolle.",
+            "Im Winter trage ich eine Wollmütze.",
+            "Ich trage im Winter eine Wollmütze.",
+            "Im Winter habe ich eine Mütze aus Wolle auf."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e06.tasche",
+          "ablenker": ["de.a2.e03.tasse"]
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e06.s0073"
+        },
+        {
+          "schluessel": "de.a2.e06.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e06.s0064"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e06.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann um Rat fragen und sagen, was mir gefällt.",
+        "tr": "Fikir sorabilir ve neyi beğendiğimi söyleyebilirim.",
+        "ar": "أستطيع أن أطلب النصيحة وأن أقول ما يعجبني."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e06.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.aussehen",
+          "ablenker": ["de.a2.e06.ansehen", "de.a2.e06.aussuchen"]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e06.geschmack",
+            "de.a2.e06.ueberlegen",
+            "de.a2.e06.entscheiden",
+            "de.a2.e06.haesslich",
+            "de.a2.e06.statt",
+            "de.a2.e06.davon"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e06.schick",
+          "ablenker": ["de.a2.e06.haesslich", "de.a2.e04.schmutzig"]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e06.s0098",
+          "ablenker": ["de.a2.e06.s0099", "de.a2.e06.s0100"]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0102",
+          "wort": 1,
+          "ablenker": ["Sie", "Ihre"]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0108"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0109"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0110"
+            }
+          ],
+          "antwort": "de.a2.e06.s0111",
+          "ablenker": ["de.a2.e06.s0103", "de.a2.e06.s0033", "de.a2.e06.s0104"]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.huebsch",
+          "ablenker": ["de.a2.e01.langweilig", "de.a2.e04.bequem"]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0101",
+          "wort": 4,
+          "ablenker": ["sie", "ihn"]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e06.s0092",
+          "nach": "ziel",
+          "alternativen": ["Für den roten Rock habe ich mich entschieden."],
+          "ablenker": ["entscheide", "Hose"]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e06.s0093",
+          "ablenker": ["de.a2.e06.s0094", "de.a2.e06.s0097"]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e06.s0086",
+          "alternativen": ["Die Mäntel habe ich mir schon angesehen.", "Ich habe mir schon die Mäntel angesehen."]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e06.s0112",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich kann mich zwischen den beiden Mänteln nicht entscheiden.",
+            "Ich kann mich nicht zwischen den zwei Mänteln entscheiden.",
+            "Ich kann mich nicht zwischen den beiden Mänteln entscheiden.",
+            "Zwischen den zwei Mänteln kann ich mich nicht entscheiden.",
+            "Zwischen den beiden Mänteln kann ich mich nicht entscheiden."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a14",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0106",
+          "wort": 5,
+          "ablenker": ["für", "ohne"]
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e06.s0107"
+        },
+        {
+          "schluessel": "de.a2.e06.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e06.s0105"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e06.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Angebote verstehen, bezahlen und eine Ware umtauschen.",
+        "tr": "İndirimleri anlayabilir, ödeme yapabilir ve bir ürünü değiştirebilirim.",
+        "ar": "أستطيع أن أفهم العروض وأن أدفع وأن أستبدل سلعة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e06.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.angebot",
+          "ablenker": ["de.a2.e06.rechnung", "de.a2.e06.prospekt"]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e06.prozent",
+            "de.a2.e06.cent",
+            "de.a2.e06.bar",
+            "de.a2.e06.billig",
+            "de.a2.e06.kaputt",
+            "de.a2.e06.umtauschen"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e06.rabatt",
+          "ablenker": ["de.a1.e06.preis", "de.a2.e06.cent"]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0129",
+          "wort": 4,
+          "ablenker": ["denn", "und"]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0134"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0135"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0136"
+            }
+          ],
+          "antwort": "de.a2.e06.s0137",
+          "ablenker": ["de.a2.e06.s0120", "de.a2.e06.s0117", "de.a2.e06.s0128"]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.wechseln",
+          "ablenker": ["de.a1.e06.bezahlen", "de.a1.e06.kaufen"]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a08",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e06.s0119",
+          "ablenker": ["de.a2.e06.s0118", "de.a2.e06.s0116"]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e06.s0115",
+          "nach": "ziel",
+          "alternativen": [
+            "Auf alle Mäntel gibt es heute zwanzig Prozent Rabatt.",
+            "Heute gibt es auf alle Mäntel zwanzig Prozent Rabatt.",
+            "Es gibt heute zwanzig Prozent Rabatt auf alle Mäntel.",
+            "Es gibt heute auf alle Mäntel zwanzig Prozent Rabatt."
+          ],
+          "ablenker": ["Mantel", "dreißig"]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a10",
+          "typ": "lesen_fragen",
+          "titel": "de.a2.e06.s0139",
+          "absaetze": [
+            "de.a2.e06.s0140",
+            "de.a2.e06.s0141",
+            "de.a2.e06.s0142",
+            "de.a2.e06.s0143",
+            "de.a2.e06.s0144",
+            "de.a2.e06.s0145",
+            "de.a2.e06.s0146",
+            "de.a2.e06.s0147",
+            "de.a2.e06.s0148",
+            "de.a2.e06.s0149",
+            "de.a2.e06.s0150"
+          ],
+          "glossen": [
+            "de.a2.e06.prospekt",
+            "de.a2.e06.rabatt",
+            "de.a2.e06.prozent",
+            "de.a2.e06.abteilung",
+            "de.a2.e06.etage",
+            "de.a2.e06.wolle"
+          ],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e06.s0151",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e06.s0152",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e06.s0153",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e06.s0154",
+              "antwort": "de.a2.e06.s0155",
+              "ablenker": ["de.a2.e06.s0156", "de.a2.e06.s0157"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e06.s0158",
+              "antwort": "de.a2.e06.s0159",
+              "ablenker": ["de.a2.e06.s0160", "de.a2.e06.s0161"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a11",
+          "typ": "satzbau",
+          "ziel": "de.a2.e06.s0130",
+          "alternativen": ["Ich nehme das Hemd, weil die Farbe mir gefällt.", "Weil mir die Farbe gefällt, nehme ich das Hemd."]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a12",
+          "typ": "frei",
+          "ziel": "de.a2.e06.s0138",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich kaufe den Schal, weil er günstig ist.",
+            "Weil er billig ist, kaufe ich den Schal.",
+            "Ich nehme den Schal, weil er billig ist.",
+            "Ich kaufe den Schal, denn er ist billig.",
+            "Ich kaufe diesen Schal, weil er billig ist."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e06.s0124",
+          "ablenker": ["de.a2.e06.s0126", "de.a2.e06.s0122"]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e06.s0118",
+          "alternativen": ["Die Socken kosten vier Euro und neunundneunzig Cent."]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.a2.e06.s0162",
+          "woerter": {
+            "min": 30,
+            "max": 40
+          },
+          "pflichtwoerter": ["Jacke", "Angebot"],
+          "muster": ["de.a2.e06.s0163"]
+        },
+        {
+          "schluessel": "de.a2.e06.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e06.s0133"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e06.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über einen Einkauf und ein Gespräch an der Kasse verstehen.",
+        "tr": "Bir alışveriş hikâyesini ve kasada geçen bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن التسوّق وحوارًا عند الصندوق."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e06.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a2.e06.s0164",
+          "zeilen": [
+            {
+              "satz": "de.a2.e06.s0165"
+            },
+            {
+              "satz": "de.a2.e06.s0166"
+            },
+            {
+              "satz": "de.a2.e06.s0167"
+            },
+            {
+              "satz": "de.a2.e06.s0168"
+            },
+            {
+              "satz": "de.a2.e06.s0169"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0170"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0171"
+            },
+            {
+              "satz": "de.a2.e06.s0172"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0173"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0174"
+            },
+            {
+              "satz": "de.a2.e06.s0175"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e06.s0176"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0177"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e06.s0178"
+            },
+            {
+              "satz": "de.a2.e06.s0179"
+            },
+            {
+              "satz": "de.a2.e06.s0180"
+            },
+            {
+              "satz": "de.a2.e06.s0181"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0182"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0183"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0184"
+            },
+            {
+              "satz": "de.a2.e06.s0185"
+            },
+            {
+              "satz": "de.a2.e06.s0186"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e06.s0187"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.a2.e06.s0188",
+              "antwort": "de.a1.e10.s0167",
+              "ablenker": ["de.a2.e06.s0189", "de.a2.e06.s0190"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.a2.e06.s0191",
+              "antwort": "de.a2.e06.s0192",
+              "ablenker": ["de.a2.e06.s0193", "de.a2.e06.s0194"]
+            },
+            {
+              "nach": 14,
+              "frage": "de.a2.e06.s0195",
+              "antwort": "de.a2.e06.s0196",
+              "ablenker": ["de.a2.e06.s0197", "de.a2.e06.s0198"]
+            },
+            {
+              "nach": 20,
+              "frage": "de.a2.e06.s0199",
+              "antwort": "de.a2.e06.s0200",
+              "ablenker": ["de.a2.e06.s0201"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0176",
+          "wort": 4,
+          "ablenker": ["blaue", "blauer"]
+        },
+        {
+          "schluessel": "de.a2.e06.l06.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0170"
+            }
+          ],
+          "antwort": "de.a2.e06.s0171",
+          "ablenker": ["de.a2.e06.s0168", "de.a2.e06.s0185", "de.a2.e06.s0004"]
+        },
+        {
+          "schluessel": "de.a2.e06.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e06.s0173",
+          "ablenker": ["de.a2.e06.s0181", "de.a2.e06.s0183"]
+        },
+        {
+          "schluessel": "de.a2.e06.l06.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e06.s0185",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e06.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.a2.e06.s0203",
+          "zeilen": [
+            {
+              "satz": "de.a2.e06.s0204"
+            },
+            {
+              "satz": "de.a2.e06.s0205"
+            },
+            {
+              "satz": "de.a2.e06.s0206"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0207"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0208"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0209"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0210"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0211"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0212"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0213"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0214"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0215"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0216"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0217"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 5,
+              "frage": "de.a2.e06.s0218",
+              "antwort": "de.a2.e06.s0219",
+              "ablenker": ["de.a2.e06.s0220", "de.a2.e06.s0221"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a2.e06.s0222",
+              "antwort": "de.a2.e06.s0223",
+              "ablenker": ["de.a2.e06.s0224", "de.a2.e06.s0225"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.a2.e06.s0226",
+              "antwort": "de.a2.e06.s0227",
+              "ablenker": ["de.a2.e06.s0228", "de.a2.e06.s0229"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l06.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0207"
+            }
+          ],
+          "antwort": "de.a2.e06.s0208",
+          "ablenker": ["de.a2.e06.s0214", "de.a2.e06.s0217", "de.a2.e06.s0185"]
+        },
+        {
+          "schluessel": "de.a2.e06.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.a2.e06.s0209",
+          "alternativen": ["Weil sie zu eng ist, möchte ich sie umtauschen."]
+        },
+        {
+          "schluessel": "de.a2.e06.l06.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0215",
+          "wort": 4,
+          "ablenker": ["braunen", "braunes"]
+        },
+        {
+          "schluessel": "de.a2.e06.l06.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e06.s0180"
+        },
+        {
+          "schluessel": "de.a2.e06.l06.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e06.s0213",
+          "ablenker": ["de.a2.e06.s0214", "de.a2.e06.s0212"]
+        },
+        {
+          "schluessel": "de.a2.e06.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e06.s0212",
+          "nach": "ziel",
+          "ablenker": ["kleiner", "Rock"]
+        },
+        {
+          "schluessel": "de.a2.e06.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.a2.e06.s0202"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e06.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann Wörter und Sätze rund um Kleidung und Einkaufen sicher anwenden.",
+        "tr": "Giysi ve alışverişle ilgili kelimeleri ve cümleleri güvenle kullanabilirim.",
+        "ar": "أستطيع أن أستخدم كلمات وجملًا عن الملابس والتسوّق بثقة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e06.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e06.kaufhaus",
+            "de.a2.e06.umkleidekabine",
+            "de.a2.e06.rechnung",
+            "de.a2.e06.groesse",
+            "de.a2.e06.kunde",
+            "de.a2.e06.prospekt"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.t-shirt",
+          "ablenker": ["de.a2.e06.mantel", "de.a1.e10.jacke"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0231",
+          "wort": 3,
+          "ablenker": ["roter", "roten"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e06.s0018",
+          "ablenker": ["de.a2.e06.s0017", "de.a2.e06.s0101"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0243"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0244"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0245"
+            }
+          ],
+          "antwort": "de.a2.e06.s0246",
+          "ablenker": ["de.a2.e06.s0033", "de.a2.e06.s0121", "de.a2.e06.s0123"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e06.kleidung",
+          "ablenker": ["de.a2.e04.moebel", "de.a2.e03.geschenk"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0240",
+          "wort": 8,
+          "ablenker": ["ist", "seid"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e06.s0237",
+          "nach": "ziel",
+          "ablenker": ["kaufe", "Schal"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e06.s0234",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e06.paar",
+          "ablenker": ["de.a2.e06.bar"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e06.s0241",
+          "ablenker": ["de.a2.e06.s0090", "de.a2.e06.s0088"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e06.s0233",
+          "alternativen": [
+            "Heute hat der Laden Rabatt auf alle Taschen.",
+            "Der Laden hat auf alle Taschen heute Rabatt.",
+            "Auf alle Taschen hat der Laden heute Rabatt.",
+            "Der Laden hat heute auf alle Taschen Rabatt.",
+            "Heute hat der Laden auf alle Taschen Rabatt."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.aussuchen",
+          "ablenker": ["de.a2.e06.ueberlegen", "de.a2.e06.umtauschen"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e06.s0247",
+          "nach": "ziel",
+          "alternativen": ["Die Socken in Grau sind aus Wolle.", "Die grauen Socken bestehen aus Wolle."]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a15",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0230",
+          "wort": 0,
+          "ablenker": ["Welcher", "Welches"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e06.s0242"
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a17",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e06.brille",
+          "ablenker": ["de.a2.e06.regenschirm", "de.a2.e06.guertel"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a18",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0237"
+            }
+          ],
+          "antwort": "de.a2.e06.s0238",
+          "ablenker": ["de.a2.e06.s0060", "de.a2.e06.s0066", "de.a2.e06.s0113"]
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a19",
+          "typ": "sprechen",
+          "satz": "de.a2.e06.s0239"
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a20",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e06.s0235",
+          "ablenker": ["de.a2.e06.s0236", "de.a2.e06.s0045"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e06.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann im Geschäft nach Größe und Farbe fragen, sagen, was ich nehme, und eine Ware umtauschen.",
+        "tr": "Mağazada beden ve renk sorabilir, ne aldığımı söyleyebilir ve bir ürünü değiştirebilirim.",
+        "ar": "أستطيع أن أسأل في المتجر عن المقاس واللون، وأن أقول ماذا آخذ، وأن أستبدل سلعة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e06.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e06.umtauschen",
+          "ablenker": ["de.a2.e06.anprobieren", "de.a2.e06.aussuchen"]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e06.mantel",
+            "de.a2.e06.muetze",
+            "de.a2.e06.stiefel",
+            "de.a2.e06.handschuh",
+            "de.a2.e06.schal",
+            "de.a2.e06.hemd"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0255",
+          "wort": 3,
+          "ablenker": ["lange", "langer"]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0258"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e06.s0259"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0260"
+            }
+          ],
+          "antwort": "de.a2.e06.s0261",
+          "ablenker": ["de.a2.e06.s0121", "de.a2.e06.s0070", "de.a2.e06.s0126"]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e06.s0251",
+          "nach": "ziel",
+          "alternativen": ["Weil er aus Wolle ist, nehme ich diesen Schal."],
+          "ablenker": ["Mütze", "sie"]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a06",
+          "typ": "frei",
+          "ziel": "de.a2.e06.s0263",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich will diese Mütze umtauschen.",
+            "Diese Mütze möchte ich umtauschen.",
+            "Ich möchte die Mütze hier umtauschen.",
+            "Ich würde diese Mütze gern umtauschen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e06.s0253",
+          "ablenker": ["de.a2.e06.s0051", "de.a2.e06.s0053"]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a08",
+          "typ": "satzbau",
+          "ziel": "de.a2.e06.s0257",
+          "alternativen": ["Für die grauen Handschuhe habe ich mich entschieden."]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e06.s0249",
+          "wort": 1,
+          "ablenker": ["welche", "welches"]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e06.billig",
+          "ablenker": ["de.a2.e06.eng", "de.a2.e06.bunt"]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e06.s0256",
+          "alternativen": ["Mit Rabatt kostet der Gürtel nur fünfzehn Euro."]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e06.s0254"
+            }
+          ],
+          "antwort": "de.a2.e06.s0255",
+          "ablenker": ["de.a2.e06.s0256", "de.a2.e06.s0119", "de.a2.e06.s0066"]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e06.s0252",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e06.s0250",
+          "ablenker": ["de.a2.e06.s0047", "de.a2.e06.s0239"]
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a2.e06.s0262"
+        },
+        {
+          "schluessel": "de.a2.e06.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e06.s0248"
+        }
+      ]
+    }
+  ]
+}
