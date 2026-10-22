@@ -450,13 +450,14 @@ describe('Gemeinde-Plattform (PLAN 2.8/2.9, Z-12, Z-20)', () => {
   it('Lern-App (KERN 4.0 §6): Produktion ohne Angaben ohne Befund; gesperrte Schalter melden, Abgleich als Vorbehalt', async () => {
     const ohne = await pruefe(produktionsUmgebung());
     expect(befund(ohne, 'gemeinde.schalter').status).toBe('ok');
-    // lernapp_ungeprueft und lernapp_meldungen sind in der Produktion an, wirken aber ohne lernapp nicht – kein Befund
+    // lernapp, lernapp_ungeprueft und lernapp_meldungen sind in der Produktion an (Nutzer 21.10.2026) – ohne Personendaten, kein Befund
     expect(pg(ohne).map((p) => p.id)).not.toContain('gemeinde.schalter-sperren');
 
     const gesperrt = await pruefe(produktionsUmgebung({ FUNKTION_LERNAPP_SYNC: 'an', FUNKTION_LERNAPP_RANGLISTE: 'an' }));
     const sperren = befund(gesperrt, 'gemeinde.schalter-sperren');
     expect(sperren.status).toBe('warnung');
-    expect(sperren.meldung).toContain('Lern-App: Abgleich mit dem Konto (braucht Lern-App, Konten)');
+    // lernapp ist in der Produktion an; es fehlt nur noch das Konto
+    expect(sperren.meldung).toContain('Lern-App: Abgleich mit dem Konto (braucht Konten)');
     expect(sperren.meldung).toContain('Bestenliste');
     // Gesperrt heißt wirkungslos: kein offener Vorbehalt für Personendaten
     expect(befund(gesperrt, 'gemeinde.schalter').status).toBe('ok');
