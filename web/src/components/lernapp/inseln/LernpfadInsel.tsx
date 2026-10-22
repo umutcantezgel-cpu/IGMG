@@ -2,6 +2,7 @@
 
 import { Check, ChevronDown, Lightbulb } from 'lucide-react';
 import { type CSSProperties, useEffect, useRef, useState } from 'react';
+import { abgeschlosseneStufen } from '@/lib/lernapp/ereignisse/stufen';
 import { formatiere, zahl, type Ziffern } from '@/lib/lernapp/format';
 import { richtung, type KursSlug, type Oberflaeche, type Stufe } from '@/lib/lernapp/kurse';
 import { profilBereich, type PaketEintrag } from '@/lib/lernapp/lokal/db';
@@ -11,6 +12,7 @@ import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { STAND_GEAENDERT, speicher, vorhandenesProfil } from '@/lib/lernapp/oberflaeche/geraet';
 import { type Abschnitt, abschnitte, aktuelleUndNaechste, type Station, themaVon } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
 import type { Verzeichnis, VerzeichnisEinheit } from '@/lib/lernapp/paket/typen';
+import type de from '../../../../messages/lernapp/de.json';
 import { OfflineEinheit, type OfflineTexte } from '../OfflineEinheit';
 import { LernStern } from '../Zeichen';
 
@@ -29,26 +31,42 @@ export type LernpfadTexte = OfflineTexte & {
   ungeprueft: string;
 };
 
+/** Texte zu abgeschlossenen Stufen und Lektionsarten (Namensraum `ansichten.stufen`, L4-03). */
+export type StufenTexte = (typeof de)['ansichten']['stufen'];
+
 type Zustand =
-  { art: 'laedt' } | { art: 'leer' } | { art: 'bereit'; v: Verzeichnis; abschnitte: Abschnitt[]; offline: Map<string, PaketEintrag> };
+  | { art: 'laedt' }
+  | { art: 'leer' }
+  | {
+      art: 'bereit';
+      v: Verzeichnis;
+      abschnitte: Abschnitt[];
+      offline: Map<string, PaketEintrag>;
+      /** in diesem Kurs abgeschlossene Stufen (alle Prüfsteine der Stufe geschafft, `stufen.ts`) */
+      fertig: ReadonlySet<string>;
+    };
 
 /**
  * Lernpfad eines Kurses (PLAN §3.1, B-24, ADR 0039 Nr. 12): Abschnitte (Stufen) → Einheiten als Stationen an der Linie →
  * Lektionen. Daten aus dem Kursverzeichnis (Netz zuerst, ohne Netz der Vorrat) und den Paketen auf dem Gerät; geschaffte
  * Lektionen aus der lokalen Datenbank. Die aktuelle und die nächste Einheit werden automatisch gespeichert; jede Einheit
  * lässt sich bewusst offline speichern (Ring nach Bytes, B-27). Links sind einfache `<a>` (eigenes Dokument je Übung).
+ * Eine Stufe, deren Prüfsteine in diesem Kurs alle geschafft sind, trägt „Stufe abgeschlossen“ (ADR 0043 Nr. 5, kein
+ * Zertifikat); Geschichten und Prüfsteine sind in der Liste der Lektionen als solche benannt (L4-03).
  */
 export function LernpfadInsel({
   ui,
   kurs,
   adresse,
   texte,
+  stufenTexte,
 }: {
   ui: Oberflaeche;
   kurs: KursSlug;
   /** Adresse des Lernpfads (`/lern-app/<ui>/<kurs>`) */
   adresse: string;
   texte: LernpfadTexte;
+  stufenTexte: StufenTexte;
 }) {
   const [z, setZ] = useState<Zustand>({ art: 'laedt' });
   const [ziffern, setZiffern] = useState<Ziffern>('oestlich');
@@ -71,7 +89,9 @@ export function LernpfadInsel({
           .then(() => aktiv && window.dispatchEvent(new Event(STAND_GEAENDERT)))
           .catch(() => undefined);
       const { profil } = await vorhandenesProfil();
-      const erledigt = new Set(profil ? (await sp.alle('lektionen', profilBereich(profil.id))).map((l) => l.lektion) : []);
+      const geschafft = profil ? await sp.alle('lektionen', profilBereich(profil.id)) : [];
+      const erledigt = new Set(geschafft.map((l) => l.lektion));
+      const fertig = new Set<string>(abgeschlosseneStufen(geschafft).get(kurs) ?? []);
       // Pakete auf dem Gerät (ohne Netz), dann die aktuelle und die nächste Einheit automatisch (ADR 0039 Nr. 12)
       await Promise.all(
         v.einheiten.map(async (e) => {
@@ -86,7 +106,7 @@ export function LernpfadInsel({
           if (p) pakete.current.set(e.schluessel, p);
         }
       const offline = new Map((await sp.alle('pakete', [[kurs], [kurs, []]])).map((e) => [e.einheit, e]));
-      if (aktiv) setZ({ art: 'bereit', v, abschnitte: abschnitte(v, erledigt, pakete.current), offline });
+      if (aktiv) setZ({ art: 'bereit', v, abschnitte: abschnitte(v, erledigt, pakete.current), offline, fertig });
     }
     const neu = () => void laden().catch(() => aktiv && setZ((alt) => (alt.art === 'laedt' ? { art: 'leer' } : alt)));
     neu();
@@ -120,9 +140,20 @@ export function LernpfadInsel({
     <div className="flex flex-col gap-8">
       {z.abschnitte.map((a) => (
         <section key={a.stufe} aria-labelledby={`stufe-${a.stufe}`} className="flex flex-col gap-4">
-          <h3 id={`stufe-${a.stufe}`} className="text-30">
-            {texte.stufe[a.stufe]}
-          </h3>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <h3 id={`stufe-${a.stufe}`} className="text-30">
+              {texte.stufe[a.stufe]}
+            </h3>
+            {z.fertig.has(a.stufe) ? (
+              <p
+                data-stufe-abgeschlossen={a.stufe}
+                className="inline-flex items-center gap-2 rounded-pill bg-gruen-50 px-3 py-1 text-16 font-bold text-gruen-800"
+              >
+                <LernStern className="size-5 shrink-0 text-gruen-700" />
+                {stufenTexte.abgeschlossen}
+              </p>
+            ) : null}
+          </div>
           <ol className="relative flex flex-col" style={{ '--n': Math.max(1, gesamt - 1) } as CSSProperties}>
             {a.stationen.map((s, i) => {
               const thema = themaVon(s.einheit, ui, z.v.ausgangssprache);
@@ -185,6 +216,11 @@ export function LernpfadInsel({
                                 ) : (
                                   f(texte.lektion, { n: n + 1 })
                                 )}
+                                {l.art === 'geschichte' || l.art === 'pruefstein' ? (
+                                  <span className="rounded-pill bg-sand px-3 text-16 font-normal text-tinte-2">
+                                    {stufenTexte.art[l.art]}
+                                  </span>
+                                ) : null}
                                 {l.erledigt ? <span className="sr-only">({texte.geschafft})</span> : null}
                               </a>
                             </li>

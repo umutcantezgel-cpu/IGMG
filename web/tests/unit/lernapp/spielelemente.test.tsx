@@ -117,7 +117,15 @@ describe('Abzeichen: Achtstern-Varianten je Rang', () => {
 describe('Fortschritt', () => {
   it('ohne Stand auf dem Gerät (Server, neues Gerät): nur der Hinweis', () => {
     const h = renderToStaticMarkup(
-      <FortschrittInsel ui="de" texte={{ fortschritt: de.fortschritt, serie: de.serie, abzeichen: de.abzeichen }} />,
+      <FortschrittInsel
+        ui="de"
+        texte={{
+          fortschritt: de.fortschritt,
+          serie: de.serie,
+          abzeichen: de.abzeichen,
+          stufen: { stufen: de.ansichten.stufen, ziel: de.kurse.ziel, fuer: de.kurse.fuer, namen: de.lernpfad.stufe },
+        }}
+      />,
     );
     expect(h).toBe(`<p class="text-18 text-tinte-2">${de.fortschritt.leer}</p>`);
   });

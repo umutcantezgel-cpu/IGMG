@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ablauf, frageReihenfolge } from '@/lib/lernapp/aufgaben/auswertung/geschichte';
+import { ablauf, abschnittsEnde, frageReihenfolge, zeilenBis } from '@/lib/lernapp/aufgaben/auswertung/geschichte';
 import { formatiere } from '@/lib/lernapp/format';
 import { InhaltText, isoliert } from '../InhaltText';
 import type { AufgabenProps } from '../typen';
@@ -17,6 +17,10 @@ const KNOPF = 'min-h-12 druck self-start rounded-pill border-2 border-gruen-700 
  * Übungstyp `geschichte` (PLAN §4): Zeile für Zeile mit „Weiter lesen“ (der Fokus springt auf die neue Zeile, Screenreader
  * lesen sie vor), Audio je Zeile, Fragen dazwischen mit sofortiger Rückmeldung als Text (und in der Live-Region). Nach der
  * letzten Zeile gibt „Geschichte abschließen“ die ersten Antworten ab; das Rückmeldeblatt des Spielers folgt.
+ *
+ * Längere Geschichten (A2–B1, L4-03): Die Fragen teilen die Geschichte in Abschnitte. „Bis zur nächsten Frage lesen“ (bzw.
+ * „Bis zum Ende lesen“) deckt den Rest des Abschnitts auf einmal auf; der Fokus springt dann auf die erste neue Zeile, damit
+ * Screenreader von dort weiterlesen. Der Stand „Zeile n von m“ steht als Text daneben (statisch, ohne Zählbewegung).
  */
 export default function Geschichte({
   aufgabe,
@@ -30,8 +34,11 @@ export default function Geschichte({
   optionen,
 }: AufgabenProps<'geschichte'>) {
   const t = weitere.aufgaben2;
+  const a = weitere.ansichten.geschichte;
   const schritte = useMemo(() => ablauf(aufgabe), [aufgabe]);
   const [pos, setPos] = useState(0);
+  /** Schritt, auf den der Fokus nach dem Aufdecken springt (der erste neu aufgedeckte) */
+  const [fokus, setFokus] = useState(0);
   const [wahl, setWahl] = useState<number | null>(null);
   const [wahlen, setWahlen] = useState<(number | null)[]>(() => aufgabe.fragen.map(() => null));
   const neu = useRef<HTMLLIElement>(null);
@@ -48,6 +55,8 @@ export default function Geschichte({
   const aktuell = schritte[pos];
   const offeneFrage = aktuell?.art === 'frage' && wahlen[aktuell.index] == null;
   const amEnde = pos >= schritte.length - 1 && !offeneFrage;
+  const sprung = abschnittsEnde(schritte, pos);
+  const gelesen = zeilenBis(schritte, pos);
 
   function pruefeFrage() {
     if (aktuell?.art !== 'frage' || wahl === null) return;
@@ -61,9 +70,10 @@ export default function Geschichte({
     setWahl(null);
   }
 
-  function weiter() {
+  function weiter(bis = pos + 1) {
     melde('');
-    setPos((p) => Math.min(p + 1, schritte.length - 1));
+    setFokus(pos + 1);
+    setPos(Math.min(bis, schritte.length - 1));
   }
 
   function abschliessen() {
@@ -80,10 +90,11 @@ export default function Geschichte({
       <ol className="flex flex-col gap-4">
         {schritte.slice(0, pos + 1).map((s, i) => {
           const letzte = i === pos;
+          const ziel = i === fokus ? neu : undefined;
           if (s.art === 'zeile') {
             const z = aufgabe.zeilen[s.index]!;
             return (
-              <li key={`z${s.index}`} ref={letzte ? neu : undefined} tabIndex={-1} className="flex flex-col gap-2 outline-none">
+              <li key={`z${s.index}`} ref={ziel} tabIndex={-1} className="flex flex-col gap-2 outline-none">
                 {z.sprecher ? <span className="text-16 font-bold text-tinte-2">{t.gemeinsam.person[z.sprecher]}</span> : null}
                 <span className="text-20">
                   <InhaltText inhalt={z.zeile} />
@@ -104,7 +115,7 @@ export default function Geschichte({
           return (
             <li
               key={`f${s.index}`}
-              ref={letzte ? neu : undefined}
+              ref={ziel}
               tabIndex={-1}
               className="flex flex-col gap-3 rounded-lg border-2 border-linie bg-weiss p-4 outline-none"
             >
@@ -148,10 +159,20 @@ export default function Geschichte({
           </button>
         </div>
       ) : (
-        <button type="button" onClick={weiter} className={KNOPF}>
-          {t.geschichte.weiterLesen}
-        </button>
+        <div className="flex flex-wrap items-center gap-3">
+          <button type="button" onClick={() => weiter()} className={KNOPF}>
+            {t.geschichte.weiterLesen}
+          </button>
+          {sprung > pos + 1 ? (
+            <button type="button" onClick={() => weiter(sprung)} className={KNOPF}>
+              {schritte[sprung]?.art === 'frage' ? a.bisZurFrage : a.bisZumEnde}
+            </button>
+          ) : null}
+        </div>
       )}
+      {aufgabe.zeilen.length > 1 ? (
+        <p className="text-16 text-tinte-2">{formatiere(a.stand, { n: gelesen, gesamt: aufgabe.zeilen.length }, sprache, ziffern)}</p>
+      ) : null}
     </div>
   );
 }

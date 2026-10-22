@@ -122,7 +122,13 @@ export default async function Lernpfad({ params }: PageProps<'/lern-app/[ui]/[ku
               texte={rohTexte(ui, 'koranpfad')}
             />
           ) : (
-            <LernpfadInsel ui={ui} kurs={kurs} adresse={lernAdresse(ui, kurs)} texte={rohTexte(ui, 'lernpfad')} />
+            <LernpfadInsel
+              ui={ui}
+              kurs={kurs}
+              adresse={lernAdresse(ui, kurs)}
+              texte={rohTexte(ui, 'lernpfad')}
+              stufenTexte={rohTexte(ui, 'ansichten').stufen}
+            />
           )}
         </section>
       </div>

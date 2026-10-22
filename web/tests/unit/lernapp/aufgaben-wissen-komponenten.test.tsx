@@ -23,6 +23,7 @@ const TEXTE: SpielerTexte = {
   aufgaben: de.aufgaben,
   tastatur: de.tastatur,
   aufgaben2: de.aufgaben2,
+  ansichten: de.ansichten,
   sprechen: de.sprechen,
   schreiben: de.schreiben,
 };
@@ -31,6 +32,7 @@ const TEXTE_AR = {
   aufgaben: ar.aufgaben,
   tastatur: ar.tastatur,
   aufgaben2: ar.aufgaben2,
+  ansichten: ar.ansichten,
   sprechen: ar.sprechen,
   schreiben: ar.schreiben,
 } as unknown as SpielerTexte;

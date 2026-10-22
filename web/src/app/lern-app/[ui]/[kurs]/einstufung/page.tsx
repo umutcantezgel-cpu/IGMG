@@ -54,6 +54,7 @@ export default async function Einstufung({ params }: PageProps<'/lern-app/[ui]/[
             aufgaben2: rohTexte(ui, 'aufgaben2'),
             sprechen: rohTexte(ui, 'sprechen'),
             schreiben: rohTexte(ui, 'schreiben'),
+            ansichten: rohTexte(ui, 'ansichten'),
           }}
           stufenNamen={rohTexte(ui, 'lernpfad').stufe}
           einheitText={rohTexte(ui, 'lernpfad').einheit}

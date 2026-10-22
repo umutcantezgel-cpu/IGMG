@@ -8,17 +8,24 @@ import { EINSTELLUNGEN_SCHLUESSEL, einstellungsSpeicher } from '@/lib/lernapp/ob
 import { LEERER_FORTSCHRITT, ladeFortschritt, type FortschrittStand } from '@/lib/lernapp/oberflaeche/fortschritt';
 import { STAND_GEAENDERT } from '@/lib/lernapp/oberflaeche/geraet';
 import type de from '../../../../messages/lernapp/de.json';
+import { AbgeschlosseneStufen, type AbgeschlosseneStufenTexte } from '../AbgeschlosseneStufen';
 import { Abzeichen, abzeichenText, type AbzeichenTexte } from '../Abzeichen';
 import { Serie, type SerieTexte } from '../Serie';
 
-export type FortschrittTexte = { fortschritt: (typeof de)['fortschritt']; serie: SerieTexte; abzeichen: AbzeichenTexte };
+export type FortschrittTexte = {
+  fortschritt: (typeof de)['fortschritt'];
+  serie: SerieTexte;
+  abzeichen: AbzeichenTexte;
+  stufen: AbgeschlosseneStufenTexte;
+};
 
 /**
  * Insel „Fortschritt“ (PLAN §3.1, ADR 0043): Kennzahlen (Lerntage gesamt, XP, Lektionen, geübte Wörter und Sätze), die Serie
  * als Wochenband und die Abzeichen – alles aus den abgeleiteten Speichern der lokalen Datenbank (`ladeFortschritt`,
  * ADR 0038), ohne Konto voll nutzbar. Der Server rendert den Zustand eines neuen Geräts. Nur für die Person auf diesem
  * Gerät, ohne Vergleich mit anderen; alle Zahlen stehen statisch. Noch offene Abzeichen stehen zugeklappt darunter, mit
- * ihrer Bedingung und ohne Druck; das Gruppenziel erscheint nur, wenn es erreicht ist (Gruppen: L7-02).
+ * ihrer Bedingung und ohne Druck; das Gruppenziel erscheint nur, wenn es erreicht ist (Gruppen: L7-02). Darunter die
+ * abgeschlossenen Stufen je Sprachkurs (L4-03), sobald es eine gibt.
  */
 export function FortschrittInsel({ ui, texte }: { ui: Oberflaeche; texte: FortschrittTexte }) {
   const [stand, setStand] = useState<FortschrittStand>(LEERER_FORTSCHRITT);
@@ -122,6 +129,8 @@ export function FortschrittInsel({ ui, texte }: { ui: Oberflaeche; texte: Fortsc
           </details>
         ) : null}
       </section>
+
+      <AbgeschlosseneStufen stufen={stand.stufen} texte={texte.stufen} ui={ui} ziffern={ziffern} />
     </div>
   );
 }

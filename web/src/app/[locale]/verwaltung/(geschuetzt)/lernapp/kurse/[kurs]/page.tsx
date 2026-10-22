@@ -83,6 +83,7 @@ export default async function LernappKurs({ params, searchParams }: PageProps<'/
                 aufgaben2: rohTexte('de', 'aufgaben2'),
                 sprechen: rohTexte('de', 'sprechen'),
                 schreiben: rohTexte('de', 'schreiben'),
+                ansichten: rohTexte('de', 'ansichten'),
               }}
               laedt={t('vorschauLaedt')}
               ende={t('vorschauEnde')}

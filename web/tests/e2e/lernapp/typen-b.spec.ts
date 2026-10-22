@@ -144,15 +144,26 @@ async function dialog(page: Page, art: Bedienung, t: Texte, antwort: string, rtl
   await pruefenUndWeiter(page, art, t);
 }
 
-/** Geschichte: Zeile für Zeile („Weiter lesen“, der Fokus springt auf die neue Zeile), Frage mit sofortiger Rückmeldung. */
-async function geschichte(page: Page, art: Bedienung, t: Texte, antwort: string) {
+/**
+ * Geschichte: Zeile für Zeile („Weiter lesen“, der Fokus springt auf die neue Zeile), dann der Rest des Abschnitts auf
+ * einmal („Bis zur nächsten Frage lesen“, L4-03: Fokus auf die erste neue Zeile, Stand „Zeile n von m“), Frage mit
+ * sofortiger Rückmeldung.
+ */
+async function geschichte(page: Page, art: Bedienung, t: Texte, antwort: string, ui: 'de' | 'ar') {
   await ueberschrift(page, t.aufgaben2.geschichte.anweisung);
   const schritte = page.locator('main form ol > li');
-  for (let i = 1; i <= 3; i++) {
-    await druecke(page, art, page.getByRole('button', { name: t.aufgaben2.geschichte.weiterLesen, exact: true }));
-    await expect(schritte).toHaveCount(i + 1);
-    await expect(schritte.last()).toBeFocused();
-  }
+  const stand = (n: number) => page.getByText(formatiere(t.ansichten.geschichte.stand, { n, gesamt: 3 }, ui), { exact: true });
+  await expect(stand(1)).toBeVisible();
+  await druecke(page, art, page.getByRole('button', { name: t.aufgaben2.geschichte.weiterLesen, exact: true }));
+  await expect(schritte).toHaveCount(2);
+  await expect(schritte.last()).toBeFocused();
+  await expect(stand(2)).toBeVisible();
+  // Rest des Abschnitts: die dritte Zeile und die Frage danach
+  await druecke(page, art, page.getByRole('button', { name: t.ansichten.geschichte.bisZurFrage, exact: true }));
+  await expect(schritte).toHaveCount(4);
+  await expect(schritte.nth(2)).toBeFocused();
+  await expect(stand(3)).toBeVisible();
+  await expect(page.getByRole('button', { name: t.ansichten.geschichte.bisZurFrage, exact: true })).toHaveCount(0);
   const radio = page.getByRole('radio', { name: antwort, exact: true });
   await waehle(page, art, radio);
   if (art === 'tippen') await page.getByRole('button', { name: t.aufgaben2.geschichte.fragePruefen, exact: true }).tap();
@@ -165,8 +176,19 @@ async function geschichte(page: Page, art: Bedienung, t: Texte, antwort: string)
   await weiter(page, art, t);
 }
 
-/** Lesen mit Fragen: unterstrichenes Wort antippen → Glosse (und Ansage); Richtig/Falsch/Steht nicht im Text und Auswahl. */
-async function lesen(page: Page, art: Bedienung, t: Texte, glosse: { wort: string; bedeutung: string } | null, auswahl: string) {
+/**
+ * Lesen mit Fragen: unterstrichenes Wort antippen → Glosse (und Ansage); schließen mit Escape (Tastatur) bzw. „Schließen“
+ * (Tippen), der Fokus kehrt auf das Wort zurück (L4-03). Das Glossar unter dem Text nennt alle Wörter mit Bedeutung.
+ * Dann Richtig/Falsch/Steht nicht im Text und Auswahl.
+ */
+async function lesen(
+  page: Page,
+  art: Bedienung,
+  t: Texte,
+  glosse: { wort: string; bedeutung: string } | null,
+  auswahl: string,
+  { ui, glossen }: { ui: 'de' | 'ar'; glossen: number },
+) {
   await ueberschrift(page, t.aufgaben2.lesenFragen.anweisung);
   if (glosse) {
     const wort = page.getByRole('button', { name: glosse.wort, exact: true });
@@ -174,10 +196,19 @@ async function lesen(page: Page, art: Bedienung, t: Texte, glosse: { wort: strin
     await expect(wort).toHaveAttribute('aria-expanded', 'true');
     const kasten = page.locator('main [role="group"]').filter({ hasText: glosse.bedeutung });
     await expect(kasten).toBeVisible();
+    await expect(wort).toHaveAttribute('aria-controls', (await kasten.getAttribute('id'))!);
     await expect(liveRegion(page)).toContainText(glosse.bedeutung);
-    await druecke(page, art, kasten.getByRole('button', { name: t.aufgaben2.lesenFragen.glosseSchliessen, exact: true }));
+    if (art === 'tastatur') await page.keyboard.press('Escape');
+    else await druecke(page, art, kasten.getByRole('button', { name: t.aufgaben2.lesenFragen.glosseSchliessen, exact: true }));
     await expect(kasten).toHaveCount(0);
+    await expect(wort).toBeFocused();
+    await expect(wort).toHaveAttribute('aria-expanded', 'false');
   }
+  // Glossar: aufklappbar, alle Wörter mit Bedeutung
+  const glossar = page.locator('main details').filter({ hasText: formatiere(t.ansichten.lesen.woerter, { n: glossen }, ui) });
+  await druecke(page, art, glossar.locator('summary'));
+  await expect(glossar.locator('dt')).toHaveCount(glossen);
+  if (glosse) await expect(glossar.locator('dd').filter({ hasText: glosse.bedeutung })).toBeVisible();
   await expect(page.getByText(t.aufgaben2.lesenFragen.offen, { exact: true })).toBeVisible();
   await waehle(page, art, page.getByRole('radio', { name: t.aufgaben2.lesenFragen.rfn.richtig, exact: true }));
   await waehle(page, art, page.getByRole('radio', { name: auswahl, exact: true }));
@@ -314,11 +345,11 @@ test.describe('Übungstypen L2-02 – Oberfläche de, Kurs tr-aus-de', () => {
 
     await ueberschrift(page, t.aufgaben2.geschichte.anweisung);
     await axe('geschichte');
-    await geschichte(page, art, t, 'kitap');
+    await geschichte(page, art, t, 'kitap', 'de');
 
     await ueberschrift(page, t.aufgaben2.lesenFragen.anweisung);
     await axe('lesen_fragen');
-    await lesen(page, art, t, { wort: 'Ev', bedeutung: 'Haus' }, 'kitap');
+    await lesen(page, art, t, { wort: 'Ev', bedeutung: 'Haus' }, 'kitap', { ui: 'de', glossen: 2 });
 
     await ueberschrift(page, t.aufgaben2.grammatikTipp.anweisung);
     await axe('grammatik_tipp');
@@ -367,10 +398,10 @@ test.describe('Übungstypen L2-02 – Oberfläche ar (RTL), Kurs ar-aus-de', () 
 
     await ueberschrift(page, t.aufgaben2.geschichte.anweisung);
     await axe('geschichte');
-    await geschichte(page, art, t, AR.w004);
+    await geschichte(page, art, t, AR.w004, 'ar');
 
     // Glossen im arabischen Text: die Wörter stehen mit Artikel, die Glossen gelten der Grundform (Inhalte ab L3)
-    await lesen(page, art, t, null, AR.w004);
+    await lesen(page, art, t, null, AR.w004, { ui: 'ar', glossen: 2 });
     await tipp(page, art, t, AR.s0001);
 
     // schrift_ar erkennen: Glyphe mit neutraler Beschriftung, Antworten sind Buchstabennamen
@@ -423,8 +454,8 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
     await geraet(page, 2);
     await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l04');
     await dialog(page, 'tastatur', t, 'İyiyim, teşekkürler.', false);
-    await geschichte(page, 'tastatur', t, 'kitap');
-    await lesen(page, 'tastatur', t, null, 'kitap');
+    await geschichte(page, 'tastatur', t, 'kitap', 'de');
+    await lesen(page, 'tastatur', t, null, 'kitap', { ui: 'de', glossen: 2 });
     await tipp(page, 'tastatur', t, 'Su içiyorum.');
     await waehle(page, 'tastatur', page.getByRole('radio', { name: 'Ş', exact: true }));
     await pruefenUndWeiter(page, 'tastatur', t);
