@@ -1,0 +1,2940 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "sawm",
+  "stufe": "aufbau",
+  "einheit": {
+    "schluessel": "islam.aufbau.e01",
+    "reihenfolge": 12,
+    "thema": {
+      "de": "Nach hanefitischer Lehre – Fasten I: Pflicht, Arten, Absicht und Monatsbeginn"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Nach hanefitischer Lehre: Ich kann Begriff, Grund und Bedingungen der Fastenpflicht im Ramadan nennen."
+      },
+      {
+        "de": "Ich kann die Arten des Fastens unterscheiden und kenne die Regeln zur Absicht."
+      },
+      {
+        "de": "Ich kann wiedergeben, wie die Werke den Beginn des Ramadan feststellen; strittige Fragen sind als solche gekennzeichnet, Hadithe stehen nur als Verweis."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.aufbau.e01.l01",
+      "titel": "Begriff, Grund und Bedingungen der Pflicht",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.aufbau.e01.l01.a01",
+          "text": "Fasten (ṣawm) heißt nach Nūr al-Īḍāḥ: sich am Tag mit Absicht davon zurückhalten, absichtlich oder versehentlich etwas in den Bauch oder in das, was ihm gleichgestellt ist, gelangen zu lassen, und die geschlechtliche Begierde zu stillen – durch jemanden, der dazu befähigt ist. Al-Qudūrī und al-Hidāya fassen es knapp: Fasten ist das Zurückhalten von Essen, Trinken und Geschlechtsverkehr am Tag, verbunden mit der Absicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Taʿrīfuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 100,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 385,
+              "zitatBis": 478,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 62,
+              "passage": "quduri.ms0024",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms24",
+              "passageSha256Text": "6aa19fc6db70e87e3bc84d6e6b98816793970c2a7dc551a793cacaba5d8308d6",
+              "zitatVon": 317,
+              "zitatBis": 373,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 122,
+              "passage": "hidaya.ms0133",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms133",
+              "passageSha256Text": "4ee737dbf43f78218a3849fd0bfd3db4b01c3c2fa1fe6c9c1069758a0fd82fff",
+              "zitatVon": 484,
+              "zitatBis": 540,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.a02",
+          "text": "Sprachlich bedeutet ṣawm einfach „sich zurückhalten“ (al-Ikhtiyār). Im religiösen Sinn kommt nach al-Hidāya die Absicht hinzu: Durch sie unterscheidet sich die gottesdienstliche Handlung von bloßer Gewohnheit.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 125,
+              "passage": "ikhtiyar.ms0140",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms140",
+              "passageSha256Text": "39d619075568d0d21bc5c0e2cf54314a3403cd8788ea1d5a957406f4ab45b034",
+              "zitatVon": 738,
+              "zitatBis": 766,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 122,
+              "passage": "hidaya.ms0133",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms133",
+              "passageSha256Text": "4ee737dbf43f78218a3849fd0bfd3db4b01c3c2fa1fe6c9c1069758a0fd82fff",
+              "zitatVon": 541,
+              "zitatBis": 675,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.a03",
+          "text": "Die Fastenzeit reicht vom Anbruch der zweiten Morgendämmerung (al-fajr ath-thānī) bis zum Sonnenuntergang (al-Qudūrī, al-Hidāya). Al-Hidāya und al-Ikhtiyār stützen diese Grenze auf Koran 2:187. Nach al-Ikhtiyār ist damit die wahre Morgendämmerung (aṣ-ṣubḥ aṣ-ṣādiq) gemeint: Bis zu ihr sind Essen und Trinken erlaubt, danach nicht mehr.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 62,
+              "passage": "quduri.ms0024",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms24",
+              "passageSha256Text": "6aa19fc6db70e87e3bc84d6e6b98816793970c2a7dc551a793cacaba5d8308d6",
+              "zitatVon": 270,
+              "zitatBis": 316,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 122,
+              "passage": "hidaya.ms0133",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms133",
+              "passageSha256Text": "4ee737dbf43f78218a3849fd0bfd3db4b01c3c2fa1fe6c9c1069758a0fd82fff",
+              "zitatVon": 294,
+              "zitatBis": 483,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 128,
+              "passage": "ikhtiyar.ms0144",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms144",
+              "passageSha256Text": "82ec6fe5d4e09dd6c0fde5e805d189920b8dc3bb98c8bf5ed005a9b27c013fc2",
+              "zitatVon": 1029,
+              "zitatBis": 1263,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "2:187"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.a04",
+          "text": "Das Fasten im Ramadan ist eine feste Pflicht (farīḍa). Al-Ikhtiyār begründet sie mit dem Koran (2:183 und 2:185), mit der Sunna und mit dem Konsens der Gemeinschaft (ijmāʿ). Wer die Pflicht leugnet, gilt nach al-Hidāya und al-Ikhtiyār als Ungläubiger; wer das Fasten unterlässt, ist nach al-Ikhtiyār ein schwerer Sünder (fāsiq).",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 125,
+              "passage": "ikhtiyar.ms0140",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms140",
+              "passageSha256Text": "39d619075568d0d21bc5c0e2cf54314a3403cd8788ea1d5a957406f4ab45b034",
+              "zitatVon": 1134,
+              "zitatBis": 1404,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 118,
+              "passage": "hidaya.ms0128",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms128",
+              "passageSha256Text": "101907ed5639f2afe94175966e46a767d191da1ad6a05ed601058ea0f453dc5f",
+              "zitatVon": 620,
+              "zitatBis": 715,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "2:183"
+            },
+            {
+              "art": "koran",
+              "stelle": "2:185"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.a05",
+          "text": "Grund (sabab) der Pflicht ist der Monat selbst: Wer einen Teil des Ramadan erlebt, für den wird das Fasten Pflicht, und jeder einzelne Tag ist der Grund für das Fasten an diesem Tag (Nūr al-Īḍāḥ). Deshalb wird das Fasten nach dem Monat benannt und wiederholt sich mit ihm (al-Hidāya, al-Ikhtiyār). Grund des gelobten Fastens ist dagegen das Gelübde (al-Hidāya).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Sabab Wujūb Ramaḍān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 100,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 494,
+              "zitatBis": 545,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 118,
+              "passage": "hidaya.ms0128",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms128",
+              "passageSha256Text": "101907ed5639f2afe94175966e46a767d191da1ad6a05ed601058ea0f453dc5f",
+              "zitatVon": 757,
+              "zitatBis": 844,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 125,
+              "passage": "ikhtiyar.ms0140",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms140",
+              "passageSha256Text": "39d619075568d0d21bc5c0e2cf54314a3403cd8788ea1d5a957406f4ab45b034",
+              "zitatVon": 1406,
+              "zitatBis": 1496,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.a06",
+          "text": "Die Pflicht zum Fasten – zur rechten Zeit und als Nachholen – trifft nach Nūr al-Īḍāḥ jeden, bei dem vier Dinge zusammenkommen: Islam, Verstand, Geschlechtsreife und das Wissen um die Pflicht. Wer im Gebiet des Islam lebt, für den gilt dieses Wissen als gegeben; eigens hinzukommen muss es bei jemandem, der außerhalb davon Muslim geworden ist. Al-Ikhtiyār begründet: Wer nicht Muslim ist, ist zu gottesdienstlichen Handlungen nicht befähigt, und Kinder und Geisteskranke sind nicht angesprochen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Ḥukmuhu wa-Shurūṭ Farḍiyyatihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 100,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 564,
+              "zitatBis": 691,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 125,
+              "passage": "ikhtiyar.ms0140",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms140",
+              "passageSha256Text": "39d619075568d0d21bc5c0e2cf54314a3403cd8788ea1d5a957406f4ab45b034",
+              "zitatVon": 1578,
+              "zitatBis": 1666,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.a07",
+          "text": "Damit man das Fasten zur rechten Zeit ausführen muss (wujūb al-adāʾ), nennt Nūr al-Īḍāḥ weitere Bedingungen: Gesundheit, also frei von Krankheit zu sein, frei von Monats- und Wochenbettblutung zu sein, und Ansässigkeit (iqāma), also nicht auf Reise zu sein.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Shurūṭ Wujūb Adāʾihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 100,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 708,
+              "zitatBis": 759,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.a08",
+          "text": "Ein Kranker, der fürchtet, dass das Fasten seine Krankheit verschlimmert, bricht nach al-Qudūrī das Fasten und holt es später nach. Für einen Reisenden, dem das Fasten nicht schadet, ist Fasten vorzüglicher; bricht er es und holt es nach, ist auch das zulässig. Einzelheiten zum Nachholen folgen in der Einheit Fasten II.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 63,
+              "passage": "quduri.ms0024",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms24",
+              "passageSha256Text": "6aa19fc6db70e87e3bc84d6e6b98816793970c2a7dc551a793cacaba5d8308d6",
+              "zitatVon": 1160,
+              "zitatBis": 1273,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.a09",
+          "text": "Gültig ist das Fasten nach Nūr al-Īḍāḥ nur unter drei Bedingungen: mit der Absicht, frei von dem, was ihm widerspricht – Monats- und Wochenbettblutung –, und frei von dem, was es ungültig macht. Frei von großer ritueller Unreinheit (janāba) zu sein, ist dagegen keine Bedingung. Dass Frauen frei von Monats- und Wochenbettblutung sein müssen, damit sie das Fasten gültig ausführen, sagt auch al-Hidāya.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Shurūṭ Ṣiḥḥat Adāʾihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 100,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 775,
+              "zitatBis": 873,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 122,
+              "passage": "hidaya.ms0133",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms133",
+              "passageSha256Text": "4ee737dbf43f78218a3849fd0bfd3db4b01c3c2fa1fe6c9c1069758a0fd82fff",
+              "zitatVon": 785,
+              "zitatBis": 840,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.a10",
+          "text": "Der Grundpfeiler (rukn) des Fastens ist, die Begierden von Bauch und Geschlecht und was ihnen gleichgestellt ist, nicht zu stillen (Nūr al-Īḍāḥ). Al-Hidāya beschreibt das Fasten als einen einzigen Grundpfeiler, der sich über den ganzen Tag erstreckt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Ruknuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 100,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 879,
+              "zitatBis": 930,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 118,
+              "passage": "hidaya.ms0128",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms128",
+              "passageSha256Text": "101907ed5639f2afe94175966e46a767d191da1ad6a05ed601058ea0f453dc5f",
+              "zitatVon": 1335,
+              "zitatBis": 1358,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.a11",
+          "text": "Die Folge (ḥukm) eines gültigen Fastens ist nach Nūr al-Īḍāḥ zweierlei: Die Pflicht fällt von einem ab, und man erhält im Jenseits den Lohn.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Ḥukmuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 100,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 936,
+              "zitatBis": 980,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.aufbau.e01.l01.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l01.a09",
+          "behauptung": "Nach hanefitischer Lehre ist das Fasten ungültig, wenn man am Morgen noch im Zustand der großen rituellen Unreinheit (janāba) ist.",
+          "richtig": false,
+          "begruendung": "Nūr al-Īḍāḥ nennt drei Bedingungen der Gültigkeit: Absicht, Freiheit von Monats- und Wochenbettblutung und Freiheit von dem, was das Fasten ungültig macht. Frei von janāba zu sein, gehört ausdrücklich nicht dazu.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.aufbau.e01.l01.a05",
+          "anweisung": "Ordne nach Nūr al-Īḍāḥ und al-Hidāya jedem Fasten seinen Grund (sabab) zu.",
+          "paare": [
+            {
+              "links": "Fasten im Monat Ramadan",
+              "rechts": "Erleben des Monats Ramadan"
+            },
+            {
+              "links": "Fasten an einem bestimmten Ramadan-Tag",
+              "rechts": "dieser Tag selbst"
+            },
+            {
+              "links": "gelobtes Fasten",
+              "rechts": "das Gelübde"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l01.a06",
+          "fall": "Ein Mann nimmt in einem Land außerhalb des Gebiets des Islam den Islam an. Niemand hat ihm gesagt, dass im Ramadan gefastet wird.",
+          "frage": "Was fehlt nach Nūr al-Īḍāḥ, solange er davon nichts weiß?",
+          "optionen": [
+            "Eine Bedingung der Pflicht: das Wissen um die Pflicht.",
+            "Nichts – die Pflicht besteht für ihn ohne Weiteres.",
+            "Nur die Ansässigkeit (iqāma)."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l01.a08",
+          "fall": "Ein Kranker befürchtet im Ramadan, dass das Fasten seine Krankheit verschlimmert.",
+          "frage": "Was gilt nach al-Qudūrī?",
+          "optionen": [
+            "Er darf das Fasten brechen und holt die Tage später nach.",
+            "Er muss trotzdem fasten.",
+            "Er bricht das Fasten und muss nichts nachholen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.q05",
+          "typ": "reihenfolge",
+          "aussage": "islam.aufbau.e01.l01.a03",
+          "anweisung": "Bringe den Ablauf eines Fastentags nach al-Qudūrī, al-Hidāya und al-Ikhtiyār in die richtige Reihenfolge.",
+          "schritte": [
+            "Ende der Nacht: Essen und Trinken sind noch erlaubt.",
+            "Anbruch der zweiten, wahren Morgendämmerung: Das Fasten beginnt.",
+            "Der Tag: Zurückhalten von Essen, Trinken und Geschlechtsverkehr.",
+            "Sonnenuntergang: Das Fasten endet."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l01.a04",
+          "behauptung": "Nach al-Ikhtiyār stützt sich die Pflicht des Ramadan-Fastens auf den Koran, die Sunna und den Konsens der Gemeinschaft.",
+          "richtig": true,
+          "begruendung": "Al-Ikhtiyār nennt alle drei: den Koran (2:183 und 2:185), die Sunna und den Konsens (ijmāʿ).",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l01.a11",
+          "behauptung": "Nach Nūr al-Īḍāḥ bringt ein gültiges Fasten nur Lohn im Jenseits; die Pflicht bleibt trotzdem bestehen.",
+          "richtig": false,
+          "begruendung": "Nūr al-Īḍāḥ nennt zwei Folgen: Die Pflicht fällt ab, und man erhält im Jenseits den Lohn.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l01.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l01.a07",
+          "behauptung": "Ansässigkeit (iqāma) gehört nach Nūr al-Īḍāḥ zu den Bedingungen dafür, dass man das Fasten zur rechten Zeit ausführen muss.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ nennt als Bedingungen dafür Gesundheit, Freiheit von Monats- und Wochenbettblutung und Ansässigkeit.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.aufbau.e01.l02",
+      "titel": "Arten des Fastens",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.aufbau.e01.l02.a01",
+          "text": "Nūr al-Īḍāḥ teilt das Fasten in sechs Arten ein: Pflicht (farḍ), zum Beispiel der Ramadan; notwendig (wājib), zum Beispiel das Nachholen eines abgebrochenen freiwilligen Fastens; Sunna (masnūn), das Fasten am ʿĀshūrāʾ-Tag mit dem neunten Tag; empfohlen (mandūb), zum Beispiel drei Tage in jedem Monat; freiwillig (nafl), jedes andere Fasten, das nicht verpönt ist; und verpönt (makrūh), zum Beispiel das Fasten an den Festtagen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ṣifat aṣ-Ṣawm wa-Taqsīmihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 101,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 1006,
+              "zitatBis": 1248,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ṣifat aṣ-Ṣawm wa-Taqsīmihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 101,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 0,
+              "zitatBis": 157,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.a02",
+          "text": "Pflicht (farḍ) ist nach Nūr al-Īḍāḥ das Fasten im Ramadan, zur rechten Zeit wie als Nachholen, außerdem das Sühnefasten (kaffārāt) und nach der offenkundigeren Ansicht das gelobte Fasten. Al-Ikhtiyār ordnet Gelübde- und Sühnefasten dagegen als notwendig (wājib) ein und alles übrige Fasten als freiwillig.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ṣifat aṣ-Ṣawm wa-Taqsīmihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 101,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 1068,
+              "zitatBis": 1135,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 125,
+              "passage": "ikhtiyar.ms0140",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms140",
+              "passageSha256Text": "39d619075568d0d21bc5c0e2cf54314a3403cd8788ea1d5a957406f4ab45b034",
+              "zitatVon": 579,
+              "zitatBis": 668,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.a03",
+          "text": "Notwendig (wājib) ist nach Nūr al-Īḍāḥ das Nachholen eines freiwilligen Fastens, das man ungültig gemacht hat.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ṣifat aṣ-Ṣawm wa-Taqsīmihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 101,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 1136,
+              "zitatBis": 1172,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.a04",
+          "text": "Sunna (masnūn) ist nach Nūr al-Īḍāḥ das Fasten am ʿĀshūrāʾ-Tag zusammen mit dem neunten Tag.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ṣifat aṣ-Ṣawm wa-Taqsīmihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 101,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 1173,
+              "zitatBis": 1211,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.a05",
+          "text": "Empfohlen (mandūb) sind nach Nūr al-Īḍāḥ: drei Tage in jedem Monat, am besten die „weißen Tage“, also der 13., 14. und 15. Tag; das Fasten am Montag und am Donnerstag; sechs Tage im Monat Shawwāl – ob man sie besser hintereinander oder verteilt fastet, dazu nennt das Werk zwei Ansichten –; und jedes Fasten, zu dem die Sunna auffordert und für das sie Lohn verheißt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ṣifat aṣ-Ṣawm wa-Taqsīmihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 101,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 1212,
+              "zitatBis": 1418,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.a06",
+          "text": "Als Beispiel nennt Nūr al-Īḍāḥ das Fasten des Propheten Dāwūd: einen Tag fasten, einen Tag nicht fasten. Das Werk nennt es das vorzüglichste Fasten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ṣifat aṣ-Ṣawm wa-Taqsīmihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 101,
+              "passage": "nur_al_idah.ms0041",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms41",
+              "passageSha256Text": "fbe63b1871cff6e18361395984902cc4bea4cf4efcf00e99a6a97e9e49870ebe",
+              "zitatVon": 1419,
+              "zitatBis": 1489,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.a07",
+          "text": "Verpöntes Fasten gibt es nach Nūr al-Īḍāḥ in zwei Stufen: leicht verpönt (makrūh tanzīhan), etwa das Fasten am ʿĀshūrāʾ-Tag allein ohne den neunten Tag, und streng verpönt (makrūh taḥrīman), nämlich das Fasten an den beiden Festtagen und an den Tagen des Tashrīq. Al-Ikhtiyār nennt das Fasten an diesen Tagen verboten (ḥarām).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ṣifat aṣ-Ṣawm wa-Taqsīmihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 101,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 38,
+              "zitatBis": 157,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 125,
+              "passage": "ikhtiyar.ms0140",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms140",
+              "passageSha256Text": "39d619075568d0d21bc5c0e2cf54314a3403cd8788ea1d5a957406f4ab45b034",
+              "zitatVon": 670,
+              "zitatBis": 701,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.a08",
+          "text": "Verpönt ist nach Nūr al-Īḍāḥ auch, allein den Freitag oder allein den Samstag zu fasten, ebenso den Tag von Nayrūz oder Mihrajān – es sei denn, der Tag fällt auf ein Fasten, das man gewohnt ist. Verpönt sind außerdem das ununterbrochene Fasten (wiṣāl), auch nur über zwei Tage, bei dem man nach Sonnenuntergang gar nichts zu sich nimmt, und das Fasten ohne Unterbrechung das ganze Jahr hindurch (ṣawm ad-dahr).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ṣifat aṣ-Ṣawm wa-Taqsīmihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 101,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 158,
+              "zitatBis": 337,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.a09",
+          "text": "Al-Qudūrī ordnet einfacher: Fasten ist entweder verpflichtend (wājib) oder freiwillig (nafl). Das verpflichtende Fasten ist zweierlei: Fasten, das an eine bestimmte Zeit gebunden ist, wie der Ramadan und ein Gelübde für einen bestimmten Tag, und Fasten, das als Schuld besteht, wie das Nachholen des Ramadan, ein Gelübde ohne bestimmte Zeit und die Sühnen. Nach dieser Einteilung richten sich bei al-Qudūrī und in al-Hidāya die Regeln zur Absicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 62,
+              "passage": "quduri.ms0023",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms23",
+              "passageSha256Text": "40d5fe25f4469422c296bb45d86fc8db6d4ab770ccaebd1b72f8395ac9a4b492",
+              "zitatVon": 1155,
+              "zitatBis": 1355,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 118,
+              "passage": "hidaya.ms0128",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms128",
+              "passageSha256Text": "101907ed5639f2afe94175966e46a767d191da1ad6a05ed601058ea0f453dc5f",
+              "zitatVon": 426,
+              "zitatBis": 511,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.aufbau.e01.l02.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.aufbau.e01.l02.a01",
+          "anweisung": "Ordne nach Nūr al-Īḍāḥ jeder Art des Fastens ein Beispiel zu.",
+          "paare": [
+            {
+              "links": "Pflicht (farḍ)",
+              "rechts": "Fasten im Ramadan"
+            },
+            {
+              "links": "notwendig (wājib)",
+              "rechts": "Nachholen eines abgebrochenen freiwilligen Fastens"
+            },
+            {
+              "links": "Sunna (masnūn)",
+              "rechts": "ʿĀshūrāʾ zusammen mit dem neunten Tag"
+            },
+            {
+              "links": "empfohlen (mandūb)",
+              "rechts": "drei Tage in jedem Monat"
+            },
+            {
+              "links": "verpönt (makrūh)",
+              "rechts": "Fasten an den Festtagen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l02.a08",
+          "behauptung": "Nach Nūr al-Īḍāḥ ist es verpönt, allein den Freitag zu fasten, wenn der Tag nicht auf ein gewohntes Fasten fällt.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ nennt das alleinige Fasten am Freitag verpönt, außer wenn der Tag auf ein Fasten fällt, das man gewohnt ist.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l02.a08",
+          "fall": "Jemand fastet seit Jahren jeden zweiten Tag. Diese Woche fällt sein Fastentag auf einen Freitag; den Donnerstag und den Samstag fastet er nicht.",
+          "frage": "Was gilt nach Nūr al-Īḍāḥ für sein Fasten am Freitag?",
+          "optionen": [
+            "Es ist nicht verpönt, weil der Freitag auf sein gewohntes Fasten fällt.",
+            "Es ist verpönt, weil man den Freitag nie allein fasten darf.",
+            "Es ist nur erlaubt, wenn er auch den Samstag fastet."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l02.a07",
+          "behauptung": "Das Fasten am Festtag nach dem Ramadan ist nach Nūr al-Īḍāḥ nur leicht verpönt.",
+          "richtig": false,
+          "begruendung": "Nūr al-Īḍāḥ nennt das Fasten an den beiden Festtagen und den Tagen des Tashrīq streng verpönt (makrūh taḥrīman); al-Ikhtiyār nennt es verboten (ḥarām).",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l02.a04",
+          "fall": "Jemand möchte das ʿĀshūrāʾ-Fasten so halten, wie es Nūr al-Īḍāḥ als Sunna beschreibt.",
+          "frage": "Wie fastet er?",
+          "optionen": [
+            "Am ʿĀshūrāʾ-Tag zusammen mit dem neunten Tag.",
+            "Nur am ʿĀshūrāʾ-Tag allein.",
+            "Nur am neunten Tag."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l02.a09",
+          "behauptung": "Nach al-Qudūrī gehört das Nachholen von Ramadan-Tagen zu dem verpflichtenden Fasten, das an eine bestimmte Zeit gebunden ist.",
+          "richtig": false,
+          "begruendung": "Al-Qudūrī zählt das Nachholen des Ramadan zum Fasten, das als Schuld besteht, zusammen mit dem Gelübde ohne bestimmte Zeit und den Sühnen. An eine bestimmte Zeit gebunden sind der Ramadan selbst und ein Gelübde für einen bestimmten Tag.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l02.a05",
+          "behauptung": "Die „weißen Tage“, an denen das Fasten nach Nūr al-Īḍāḥ empfohlen ist, sind der 13., 14. und 15. Tag des Monats.",
+          "richtig": true,
+          "begruendung": "So nennt Nūr al-Īḍāḥ die weißen Tage; an ihnen hält man am besten die drei empfohlenen Fastentage jedes Monats.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l02.q08",
+          "typ": "reihenfolge",
+          "aussage": "islam.aufbau.e01.l02.a01",
+          "anweisung": "Bringe die Arten des Fastens in die Reihenfolge, in der Nūr al-Īḍāḥ sie aufzählt.",
+          "schritte": [
+            "Pflicht (farḍ)",
+            "notwendig (wājib)",
+            "Sunna (masnūn)",
+            "empfohlen (mandūb)",
+            "freiwillig (nafl)",
+            "verpönt (makrūh)"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.aufbau.e01.l03",
+      "titel": "Die Absicht beim Fasten",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.aufbau.e01.l03.a01",
+          "text": "Die Absicht (niyya) ist Bedingung des Fastens. Sie bedeutet, im Herzen zu wissen, dass man fastet; sie mit der Zunge auszusprechen, ist keine Bedingung. Nach al-Ikhtiyār fehlt sie keinem Muslim in den Nächten des Ramadan. Unstrittig beginnt ihre Zeit mit dem Sonnenuntergang.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 126,
+              "passage": "ikhtiyar.ms0141",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms141",
+              "passageSha256Text": "0b60f17e5e082b1d206698e883af044fc1d36d403555a7b7b44507395301ac4b",
+              "zitatVon": 881,
+              "zitatBis": 1041,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a02",
+          "text": "Al-Ikhtiyār begründet das: Sich zurückhalten kann man aus Gewohnheit, aus fehlendem Appetit, wegen einer Krankheit oder zur Übung. Erst die Absicht macht daraus eine gottesdienstliche Handlung.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 126,
+              "passage": "ikhtiyar.ms0141",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms141",
+              "passageSha256Text": "0b60f17e5e082b1d206698e883af044fc1d36d403555a7b7b44507395301ac4b",
+              "zitatVon": 1416,
+              "zitatBis": 1519,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a03",
+          "text": "Von Zufar wird überliefert, ein gesunder Ansässiger brauche im Ramadan keine Absicht, weil diese Zeit nur für das Pflichtfasten bestimmt sei. Al-Ikhtiyār hält dem entgegen, dass jede gottesdienstliche Handlung die Absicht braucht. Nach al-Ikhtiyār hat al-Karkhī bestritten, dass Zufar das lehrte: Zufar habe nur gemeint, eine einzige Absicht genüge für den ganzen Monat.",
+          "meinung": "zufar",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 126,
+              "passage": "ikhtiyar.ms0141",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms141",
+              "passageSha256Text": "0b60f17e5e082b1d206698e883af044fc1d36d403555a7b7b44507395301ac4b",
+              "zitatVon": 1092,
+              "zitatBis": 1345,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 126,
+              "passage": "ikhtiyar.ms0142",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms142",
+              "passageSha256Text": "d780b1cef0417471d630e112cc3aad36e94754071e6b9f23f03f425a8a6bc615",
+              "zitatVon": 258,
+              "zitatBis": 353,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a04",
+          "text": "Nach al-Ikhtiyār braucht jeder Fastentag eine eigene Absicht: Das Fasten jedes Tages ist eine eigene gottesdienstliche Handlung. Wird ein Tag ungültig, bleiben die anderen gültig, und mit der Nacht endet das Fasten des Tages.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 126,
+              "passage": "ikhtiyar.ms0142",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms142",
+              "passageSha256Text": "d780b1cef0417471d630e112cc3aad36e94754071e6b9f23f03f425a8a6bc615",
+              "zitatVon": 444,
+              "zitatBis": 839,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a05",
+          "text": "Für das Fasten im Ramadan zur rechten Zeit, für ein Gelübde, das an einen bestimmten Tag gebunden ist, und für das freiwillige Fasten muss man die Absicht weder in der Nacht fassen noch näher bestimmen, welches Fasten man hält. Die Absicht ist von der Nacht an bis vor die Mitte des Tages gültig, nach der richtigsten Ansicht. Die Mitte des Tages wird dabei vom Anbruch der Morgendämmerung bis zur Zeit von aḍ-ḍaḥwa al-kubrā gerechnet (Nūr al-Īḍāḥ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā lā yushtaraṭu Tabyīt an-Niyya wa-Taʿyīnuhā fīhi wa-mā yushtaraṭ › Mā lā yushtaraṭu fīhi Taʿyīn an-Niyya",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 102,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 418,
+              "zitatBis": 610,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a06",
+          "text": "Al-Hidāya erklärt unterschiedliche Angaben zur Grenze: Al-Qudūrīs Mukhtaṣar nennt den Mittag (zawāl), al-Jāmiʿ aṣ-Ṣaghīr „vor der Mitte des Tages“. Letzteres ist richtiger, denn die Absicht muss im größeren Teil des Tages vorhanden sein, und die Mitte des Fastentages liegt bei aḍ-ḍaḥwa al-kubrā, nicht beim Mittag.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 118,
+              "passage": "hidaya.ms0128",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms128",
+              "passageSha256Text": "101907ed5639f2afe94175966e46a767d191da1ad6a05ed601058ea0f453dc5f",
+              "zitatVon": 512,
+              "zitatBis": 584,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 118,
+              "passage": "hidaya.ms0129",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms129",
+              "passageSha256Text": "8bf2bd8a03ac5ecd20d17a2fa10cbd624a795a6d87c15c12901e2da14a5425f8",
+              "zitatVon": 0,
+              "zitatBis": 177,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a07",
+          "text": "Das Ramadan-Fasten ist auch gültig, wenn man nur allgemein „Fasten“ beabsichtigt, wenn man freiwilliges Fasten beabsichtigt – nach der richtigsten Ansicht auch bei einem Reisenden oder Kranken – und, bei einem gesunden Ansässigen, wenn man ein anderes Pflichtfasten beabsichtigt: Es zählt dann als Ramadan (Nūr al-Īḍāḥ, al-Hidāya). Al-Ikhtiyār begründet: Die Zeit ist für das Pflichtfasten bestimmt, ein anderes Fasten kann in ihr nicht stattfinden; deshalb genügt die bloße Absicht zu fasten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā lā yushtaraṭu Tabyīt an-Niyya wa-Taʿyīnuhā fīhi wa-mā yushtaraṭ › Mā lā yushtaraṭu fīhi Taʿyīn an-Niyya",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 102,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 611,
+              "zitatBis": 727,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 118,
+              "passage": "hidaya.ms0129",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms129",
+              "passageSha256Text": "8bf2bd8a03ac5ecd20d17a2fa10cbd624a795a6d87c15c12901e2da14a5425f8",
+              "zitatVon": 304,
+              "zitatBis": 368,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 127,
+              "passage": "ikhtiyar.ms0143",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms143",
+              "passageSha256Text": "c2b956e4811d8d89fc429e33c916dca22a7d229c4d508f87f3eeefcedca9dd85",
+              "zitatVon": 1152,
+              "zitatBis": 1281,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a08",
+          "text": "Anders der Reisende: Beabsichtigt er im Ramadan ein anderes Pflichtfasten, zählt es nach Nūr al-Īḍāḥ für das, was er beabsichtigt hat. Beim Kranken ist nach Nūr al-Īḍāḥ umstritten, welche Ansicht vorzuziehen ist.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā lā yushtaraṭu Tabyīt an-Niyya wa-Taʿyīnuhā fīhi wa-mā yushtaraṭ › Mā lā yushtaraṭu fīhi Taʿyīn an-Niyya",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 102,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 728,
+              "zitatBis": 821,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a09",
+          "text": "Nach Abū Ḥanīfa zählt das Fasten eines Kranken oder Reisenden, der im Ramadan ein anderes Pflichtfasten beabsichtigt, für dieses andere Fasten; nach Abū Yūsuf und Muḥammad zählt es in jedem Fall als Ramadan (al-Hidāya). Nach einer in al-Ikhtiyār angeführten Ansicht ist die richtigere Lehre Abū Ḥanīfas, dass es beim Kranken als Ramadan zählt, anders als beim Reisenden.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 119,
+              "passage": "hidaya.ms0129",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms129",
+              "passageSha256Text": "8bf2bd8a03ac5ecd20d17a2fa10cbd624a795a6d87c15c12901e2da14a5425f8",
+              "zitatVon": 642,
+              "zitatBis": 997,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 128,
+              "passage": "ikhtiyar.ms0144",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms144",
+              "passageSha256Text": "82ec6fe5d4e09dd6c0fde5e805d189920b8dc3bb98c8bf5ed005a9b27c013fc2",
+              "zitatVon": 658,
+              "zitatBis": 784,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a10",
+          "text": "Beabsichtigt man an dem Tag, für den man ein Fasten gelobt hat, ein anderes Pflichtfasten, zählt es nicht für das Gelübde, sondern für das andere Pflichtfasten (Nūr al-Īḍāḥ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā lā yushtaraṭu Tabyīt an-Niyya wa-Taʿyīnuhā fīhi wa-mā yushtaraṭ › Mā lā yushtaraṭu fīhi Taʿyīn an-Niyya",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 102,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 822,
+              "zitatBis": 896,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a11",
+          "text": "Für das Nachholen des Ramadan, das Nachholen eines abgebrochenen freiwilligen Fastens, alle Arten des Sühnefastens und ein Gelübde ohne festen Tag muss man die Absicht in der Nacht fassen und genau bestimmen, welches Fasten man hält (Nūr al-Īḍāḥ, al-Qudūrī). Ein Gelübde ohne festen Tag ist zum Beispiel: „Wenn Gott meinen Kranken heilt, faste ich einen Tag.“ Al-Hidāya begründet: Diese Fasten sind an keine Zeit gebunden; darum muss von Anfang an feststehen, welches gemeint ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā lā yushtaraṭu Tabyīt an-Niyya wa-Taʿyīnuhā fīhi wa-mā yushtaraṭ › Mā yushtaraṭu fīhi Taʿyīn an-Niyya",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 102,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 922,
+              "zitatBis": 1099,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 62,
+              "passage": "quduri.ms0023",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms23",
+              "passageSha256Text": "40d5fe25f4469422c296bb45d86fc8db6d4ab770ccaebd1b72f8395ac9a4b492",
+              "zitatVon": 1288,
+              "zitatBis": 1382,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 119,
+              "passage": "hidaya.ms0129",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms129",
+              "passageSha256Text": "8bf2bd8a03ac5ecd20d17a2fa10cbd624a795a6d87c15c12901e2da14a5425f8",
+              "zitatVon": 1002,
+              "zitatBis": 1146,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a12",
+          "text": "Freiwilliges Fasten ist mit einer Absicht vor dem Mittag gültig (al-Qudūrī); eine Absicht erst nach dem Mittag genügt nicht (al-Hidāya). Wer die Absicht am Vormittag fasst, gilt nach al-Hidāya vom Beginn des Tages an als fastend, denn die Absicht muss den größeren Teil des Tages begleiten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 62,
+              "passage": "quduri.ms0023",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms23",
+              "passageSha256Text": "40d5fe25f4469422c296bb45d86fc8db6d4ab770ccaebd1b72f8395ac9a4b492",
+              "zitatVon": 1383,
+              "zitatBis": 1414,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 119,
+              "passage": "hidaya.ms0129",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms129",
+              "passageSha256Text": "8bf2bd8a03ac5ecd20d17a2fa10cbd624a795a6d87c15c12901e2da14a5425f8",
+              "zitatVon": 1394,
+              "zitatBis": 1420,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 119,
+              "passage": "hidaya.ms0130",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms130",
+              "passageSha256Text": "346e1a22bba00d57efdc081560c0904ac548dbe5faa4d135e6714953890d8a37",
+              "zitatVon": 27,
+              "zitatBis": 131,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a13",
+          "text": "Dass die Absicht nach Anbruch der Morgendämmerung noch genügt, dient nach al-Ikhtiyār der Erleichterung: Den Beginn der Morgendämmerung erkennen viele nicht genau, und er fällt in die Zeit des Schlafs. Manche Frau wird erst kurz vor dem Morgen von der Blutung rein, mancher schläft bis zum Morgen, und am Tag des Zweifels kann man die Absicht nicht schon in der Nacht fassen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 127,
+              "passage": "ikhtiyar.ms0143",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms143",
+              "passageSha256Text": "c2b956e4811d8d89fc429e33c916dca22a7d229c4d508f87f3eeefcedca9dd85",
+              "zitatVon": 208,
+              "zitatBis": 574,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.a14",
+          "text": "Am besten ist es nach al-Ikhtiyār, die Absicht schon in der Nacht zu fassen und das Fasten genau zu bestimmen, um aus dem Meinungsstreit herauszukommen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 127,
+              "passage": "ikhtiyar.ms0143",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms143",
+              "passageSha256Text": "c2b956e4811d8d89fc429e33c916dca22a7d229c4d508f87f3eeefcedca9dd85",
+              "zitatVon": 1283,
+              "zitatBis": 1330,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.aufbau.e01.l03.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l03.a01",
+          "behauptung": "Nach hanefitischer Lehre muss man die Absicht zum Fasten mit der Zunge aussprechen.",
+          "richtig": false,
+          "begruendung": "Die Absicht heißt nach al-Ikhtiyār, im Herzen zu wissen, dass man fastet; sie auszusprechen, ist keine Bedingung.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l03.a05",
+          "fall": "Jemand wacht im Ramadan nach Anbruch der Morgendämmerung auf. In der Nacht hat er keine Absicht gefasst; seitdem hat er nichts gegessen oder getrunken. Es ist früher Vormittag.",
+          "frage": "Kann er nach Nūr al-Īḍāḥ das Ramadan-Fasten für diesen Tag noch beabsichtigen?",
+          "optionen": [
+            "Ja, die Absicht ist bis vor die Mitte des Tages gültig.",
+            "Nein, die Absicht muss in der Nacht gefasst werden.",
+            "Nur wenn er den Tag später zusätzlich nachholt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l03.a11",
+          "fall": "Jemand will einen Ramadan-Tag nachholen, den er wegen Krankheit versäumt hat. Die Absicht fasst er erst am Vormittag.",
+          "frage": "Was gilt nach Nūr al-Īḍāḥ und al-Qudūrī?",
+          "optionen": [
+            "So ist das Nachholen nicht gültig; die Absicht muss in der Nacht gefasst und genau bestimmt sein.",
+            "Das Nachholen ist gültig, weil die Absicht vor dem Mittag gefasst wurde.",
+            "Das Nachholen ist gültig, wenn er die Absicht laut ausspricht."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.q04",
+          "typ": "zuordnen",
+          "aussage": "islam.aufbau.e01.l03.a06",
+          "anweisung": "Ordne nach al-Hidāya die Angaben zur Grenze der Absicht zu.",
+          "paare": [
+            {
+              "links": "al-Qudūrīs Mukhtaṣar",
+              "rechts": "bis zum Mittag (zawāl)"
+            },
+            {
+              "links": "al-Jāmiʿ aṣ-Ṣaghīr",
+              "rechts": "vor der Mitte des Tages"
+            },
+            {
+              "links": "Mitte des Fastentages",
+              "rechts": "aḍ-ḍaḥwa al-kubrā"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l03.a08",
+          "behauptung": "Beabsichtigt ein Reisender im Ramadan ein anderes Pflichtfasten, zählt es nach Nūr al-Īḍāḥ trotzdem als Ramadan.",
+          "richtig": false,
+          "begruendung": "Nach Nūr al-Īḍāḥ zählt es beim Reisenden für das, was er beabsichtigt hat. Beim gesunden Ansässigen zählt es dagegen als Ramadan.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.q06",
+          "typ": "reihenfolge",
+          "aussage": "islam.aufbau.e01.l03.a06",
+          "anweisung": "Ordne die Zeitpunkte eines Fastentags nach al-Hidāya vom frühesten zum spätesten.",
+          "schritte": [
+            "Anbruch der zweiten Morgendämmerung",
+            "aḍ-ḍaḥwa al-kubrā – Mitte des Fastentags",
+            "Mittag (zawāl)",
+            "Sonnenuntergang"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l03.a14",
+          "behauptung": "Nach al-Ikhtiyār ist es am besten, die Absicht schon in der Nacht zu fassen und das Fasten genau zu bestimmen.",
+          "richtig": true,
+          "begruendung": "So kommt man nach al-Ikhtiyār aus dem Meinungsstreit heraus, auch wenn eine spätere Absicht beim Ramadan-Fasten genügt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l03.q08",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l03.a10",
+          "fall": "Jemand hat gelobt, am kommenden Donnerstag zu fasten. Am Donnerstag beabsichtigt er schon in der Nacht, einen versäumten Ramadan-Tag nachzuholen.",
+          "frage": "Wofür zählt sein Fasten nach Nūr al-Īḍāḥ?",
+          "optionen": [
+            "Für das Nachholen des Ramadan-Tages, nicht für das Gelübde.",
+            "Für das Gelübde, weil der Tag dafür bestimmt ist.",
+            "Für beides zugleich."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.aufbau.e01.l04",
+      "titel": "Beginn des Ramadan: Sichtung des Neumonds, Tag des Zweifels",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.aufbau.e01.l04.a01",
+          "text": "Der Ramadan beginnt, wenn sein Neumond (hilāl) gesichtet wird oder wenn Shaʿbān dreißig Tage vollendet hat, weil der Neumond verdeckt war (Nūr al-Īḍāḥ). Darum sollen die Menschen am 29. Shaʿbān nach dem Neumond Ausschau halten – nach al-Ikhtiyār ist das Pflicht, und zwar zur Zeit des Sonnenuntergangs: Sehen sie ihn, fasten sie; ist er verdeckt, vollenden sie Shaʿbān mit dreißig Tagen und fasten danach (al-Qudūrī, al-Ikhtiyār). Nach al-Ikhtiyār gilt diese Regel für jeden Monat.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Bi-mā yathbutu Ramaḍān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 103,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 1157,
+              "zitatBis": 1212,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 62,
+              "passage": "quduri.ms0023",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms23",
+              "passageSha256Text": "40d5fe25f4469422c296bb45d86fc8db6d4ab770ccaebd1b72f8395ac9a4b492",
+              "zitatVon": 1415,
+              "zitatBis": 1494,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 62,
+              "passage": "quduri.ms0024",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms24",
+              "passageSha256Text": "6aa19fc6db70e87e3bc84d6e6b98816793970c2a7dc551a793cacaba5d8308d6",
+              "zitatVon": 0,
+              "zitatBis": 46,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 128,
+              "passage": "ikhtiyar.ms0145",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms145",
+              "passageSha256Text": "9a47674ad723fe9c2fd246f3fcacbf544debd345a63203a521184513daa133b4",
+              "zitatVon": 46,
+              "zitatBis": 408,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 1909
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a02",
+          "text": "Die Aussage der Zeitberechner (muwaqqitūn) zählt nach Radd al-Muḥtār für die Fastenpflicht der Menschen nicht; nach dem dort angeführten al-Miʿrāj gilt das sogar nach Konsens. Auch ein Sternkundiger darf nach seiner eigenen Berechnung nicht handeln, und das gilt nach der richtigen Ansicht selbst dann, wenn die Berechner vertrauenswürdig sind.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Mabḥath fī Ṣawm Yawm ash-Shakk › Maṭlab lā ʿibra bi-qawl al-muwaqqitīn fī ṣ-ṣawm",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 387,
+              "passage": "radd_al_muhtar.ms1611",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1611",
+              "passageSha256Text": "8afae653d02ea520d8fe4213a0fd65d7167f5d4ee21161d51539b069a9462832",
+              "zitatVon": 1172,
+              "zitatBis": 1393,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a03",
+          "text": "Ob man sich auf die Berechner stützen darf, ist umstritten. Radd al-Muḥtār berichtet aus al-Qunya: Nach al-Qāḍī ʿAbd al-Jabbār und dem Verfasser von Jamʿ al-ʿUlūm ist es unbedenklich; Ibn Muqātil fragte sie und stützte sich auf sie, wenn eine Gruppe von ihnen übereinstimmte; as-Sarakhsī hielt das für abwegig. Nach al-Ḥalwānī ist die Sichtung die Bedingung für Beginn und Ende des Fastens, ihre Aussage wird nicht übernommen. Nach at-Tarjumānī waren sich die Anhänger Abū Ḥanīfas bis auf wenige einig, dass man sich nicht auf sie stützt.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Maṭlab mā qālahu s-Subkī min al-iʿtimād ʿalā l-ḥisāb mardūd",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 387,
+              "passage": "radd_al_muhtar.ms1612",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1612",
+              "passageSha256Text": "86438ec353bb7f0171f681d8a0b0bf4b2146c302b2a46e34bccca4212ccfc51b",
+              "zitatVon": 1180,
+              "zitatBis": 1581,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Maṭlab mā qālahu s-Subkī min al-iʿtimād ʿalā l-ḥisāb mardūd",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 387,
+              "passage": "radd_al_muhtar.ms1613",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1613",
+              "passageSha256Text": "c8d9b28c9e6a69a9f006ae6616b5b0b851f71753fb1a189dcdf98ce11e57b73f",
+              "zitatVon": 0,
+              "zitatBis": 19,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a04",
+          "text": "Der Tag des Zweifels (yawm ash-shakk) ist der Tag nach dem 29. Shaʿbān, an dem Wissen und Nichtwissen gleich stehen, weil der Neumond verdeckt war (Nūr al-Īḍāḥ) – etwa weil die Leute von einer Sichtung sprechen, die aber nicht feststeht (al-Ikhtiyār). War der Himmel klar und hat niemand den Neumond gesehen, ist es nach Radd al-Muḥtār kein Tag des Zweifels.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Bi-mā yathbutu Ramaḍān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 103,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 1213,
+              "zitatBis": 1302,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 130,
+              "passage": "ikhtiyar.ms0146",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms146",
+              "passageSha256Text": "157f240635743b4a29670821d5bda36212033c6df00078ea73eaba1c84b3dead",
+              "zitatVon": 1511,
+              "zitatBis": 1588,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Mabḥath fī Ṣawm Yawm ash-Shakk",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 381,
+              "passage": "radd_al_muhtar.ms1602",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1602",
+              "passageSha256Text": "9ca503de13bf7634336f20f75cf3b5f60457a5f1615b775e31c18d57d50b6ea6",
+              "zitatVon": 0,
+              "zitatBis": 44,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a05",
+          "text": "Am Tag des Zweifels ist jedes Fasten verpönt außer einem freiwilligen Fasten, das man ohne Schwanken beabsichtigt (Nūr al-Īḍāḥ). Al-Hidāya unterscheidet: Wer an diesem Tag das Ramadan-Fasten beabsichtigt, handelt verpönt, weil er den Leuten der Schrift ähnelt, die ihre Fastenzeit verlängert haben; wer ein anderes Pflichtfasten beabsichtigt, handelt ebenfalls verpönt, aber weniger; wer freiwillig fastet, handelt nicht verpönt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Bi-mā yathbutu Ramaḍān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 103,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 1303,
+              "zitatBis": 1365,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 119,
+              "passage": "hidaya.ms0130",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms130",
+              "passageSha256Text": "346e1a22bba00d57efdc081560c0904ac548dbe5faa4d135e6714953890d8a37",
+              "zitatVon": 446,
+              "zitatBis": 1214,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a06",
+          "text": "Stellt sich heraus, dass der Tag zum Ramadan gehörte, genügt das Fasten an diesem Tag für den Ramadan (Nūr al-Īḍāḥ, al-Hidāya). Hat jemand das Ramadan-Fasten beabsichtigt und gehörte der Tag zu Shaʿbān, gilt sein Fasten als freiwillig; bricht er es ab, muss er es nach al-Hidāya nicht nachholen. Wer dagegen schwankt – „Wenn morgen Ramadan ist, faste ich, sonst nicht“ –, fastet gar nicht (Nūr al-Īḍāḥ, al-Hidāya).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Bi-mā yathbutu Ramaḍān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 103,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 1366,
+              "zitatBis": 1443,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 119,
+              "passage": "hidaya.ms0130",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms130",
+              "passageSha256Text": "346e1a22bba00d57efdc081560c0904ac548dbe5faa4d135e6714953890d8a37",
+              "zitatVon": 665,
+              "zitatBis": 788,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 120,
+              "passage": "hidaya.ms0131",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms131",
+              "passageSha256Text": "4ebb14ff03b75468202ea3f8c120becec9ef5cbcac802de116a1d55970e24067",
+              "zitatVon": 200,
+              "zitatBis": 319,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a07",
+          "text": "Verpönt ist es, einen oder zwei Tage am Ende von Shaʿbān zu fasten; mehr Tage davor sind nicht verpönt (Nūr al-Īḍāḥ). Fällt der Tag auf ein Fasten, das man gewohnt ist, ist das Fasten nach al-Hidāya einhellig vorzüglicher.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Bi-mā yathbutu Ramaḍān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 103,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 1444,
+              "zitatBis": 1496,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 120,
+              "passage": "hidaya.ms0130",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms130",
+              "passageSha256Text": "346e1a22bba00d57efdc081560c0904ac548dbe5faa4d135e6714953890d8a37",
+              "zitatVon": 1406,
+              "zitatBis": 1452,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 1914
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a08",
+          "text": "Der Muftī weist die Allgemeinheit an, sich am Tag des Zweifels zunächst des Essens zu enthalten und abzuwarten (talawwum), bis die Zeit für die Absicht vorüber ist; hat sich die Lage dann nicht geklärt, essen sie. Der Muftī selbst, der Richter und die „Besonderen“ (khawāṣṣ) fasten an diesem Tag. Zu den Besonderen zählt, wer sich davor hüten kann, in der Absicht zu schwanken, und darauf achtet, dass er nicht das Pflichtfasten beabsichtigt (Nūr al-Īḍāḥ). Al-Hidāya nennt das die gewählte Ansicht: Der Muftī fastet aus Vorsicht, die Allgemeinheit wartet bis zum Mittag und isst dann, damit kein Verdacht entsteht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Bi-mā yathbutu Ramaḍān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 103,
+              "passage": "nur_al_idah.ms0042",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms42",
+              "passageSha256Text": "1b393b63ce31bb33ca83746a51a0cc0decbf3fc72b57710417814318cbfbbe14",
+              "zitatVon": 1497,
+              "zitatBis": 1528,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Bi-mā yathbutu Ramaḍān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 103,
+              "passage": "nur_al_idah.ms0043",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms43",
+              "passageSha256Text": "9c678a53f49dfdf21818e25a4d11ff761e63f22a9cab392df90b0c298d7b8d7b",
+              "zitatVon": 0,
+              "zitatBis": 160,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 120,
+              "passage": "hidaya.ms0131",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms131",
+              "passageSha256Text": "4ebb14ff03b75468202ea3f8c120becec9ef5cbcac802de116a1d55970e24067",
+              "zitatVon": 95,
+              "zitatBis": 199,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a09",
+          "text": "Ob am Tag des Zweifels das Fasten oder das Nichtfasten besser ist, ist nach al-Ikhtiyār umstritten: Wer Shaʿbān gefastet hat oder auf wessen gewohntes Fasten der Tag fällt, für den ist Fasten besser. Sonst hält Muḥammad ibn Salama das Nichtfasten für besser, Nuṣayr ibn Yaḥyā das Fasten. Von Abū Yūsuf stammt die gewählte Ansicht: Der Muftī und die ihm Nahestehenden fasten; die Allgemeinheit enthält sich bis vor den Mittag und fastet danach nicht. Denn der Muftī kann so fasten, dass es nicht verpönt ist, die Allgemeinheit nicht.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 130,
+              "passage": "ikhtiyar.ms0147",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms147",
+              "passageSha256Text": "cabfa10fe7a5c5d102fdfc84765b28673f25af11f72712add3a10eb28fe46587",
+              "zitatVon": 951,
+              "zitatBis": 1360,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a10",
+          "text": "Wer den Neumond des Ramadan allein sieht und dessen Aussage zurückgewiesen wird, muss fasten (Nūr al-Īḍāḥ, al-Hidāya). Wer den Neumond von Shawwāl allein sieht, bricht das Fasten nicht, auch wenn er sich sicher ist (Nūr al-Īḍāḥ, al-Qudūrī). Bricht er in einem der beiden Fälle das Fasten, holt er den Tag nach, muss aber keine Sühne (kaffāra) leisten – nach der richtigen Ansicht auch dann nicht, wenn er das Fasten bricht, bevor der Richter seine Aussage zurückgewiesen hat (Nūr al-Īḍāḥ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Ruʾyat al-Hilāl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 103,
+              "passage": "nur_al_idah.ms0043",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms43",
+              "passageSha256Text": "9c678a53f49dfdf21818e25a4d11ff761e63f22a9cab392df90b0c298d7b8d7b",
+              "zitatVon": 173,
+              "zitatBis": 341,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 120,
+              "passage": "hidaya.ms0131",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms131",
+              "passageSha256Text": "4ebb14ff03b75468202ea3f8c120becec9ef5cbcac802de116a1d55970e24067",
+              "zitatVon": 966,
+              "zitatBis": 1125,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 64,
+              "passage": "quduri.ms0025",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms25",
+              "passageSha256Text": "cefd7873faab9324e918c4fe8f5b90393450ea28d44c63b6638ea34ac4e4181b",
+              "zitatVon": 811,
+              "zitatBis": 842,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a11",
+          "text": "Ist der Himmel bedeckt, etwa durch Wolken oder Staub, nimmt der Imam für den Ramadan die Meldung eines einzelnen vertrauenswürdigen (ʿadl) Menschen an – Mann oder Frau, frei oder unfrei (al-Qudūrī). Nach Nūr al-Īḍāḥ genügt nach der richtigen Ansicht auch ein Mensch, über dessen Lebenswandel nichts Nachteiliges bekannt ist (mastūr), selbst wenn er wegen Verleumdung bestraft wurde und bereut hat; eine förmliche Zeugenaussage oder eine Klage ist nicht nötig. Al-Hidāya begründet: Es geht um eine religiöse Angelegenheit, ähnlich der Überlieferung von Nachrichten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 62,
+              "passage": "quduri.ms0024",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms24",
+              "passageSha256Text": "6aa19fc6db70e87e3bc84d6e6b98816793970c2a7dc551a793cacaba5d8308d6",
+              "zitatVon": 101,
+              "zitatBis": 196,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Ruʾyat al-Hilāl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 103,
+              "passage": "nur_al_idah.ms0043",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms43",
+              "passageSha256Text": "9c678a53f49dfdf21818e25a4d11ff761e63f22a9cab392df90b0c298d7b8d7b",
+              "zitatVon": 342,
+              "zitatBis": 532,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 121,
+              "passage": "hidaya.ms0132",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms132",
+              "passageSha256Text": "c1b4ba1fe779b0bed40a18d049d9f25a3c08931212cb1a65e7c8ce4b2ba627dc",
+              "zitatVon": 144,
+              "zitatBis": 257,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a12",
+          "text": "Ist der Himmel klar, wird die Meldung erst angenommen, wenn eine große Gruppe den Neumond sieht, deren Bericht Gewissheit gibt (al-Qudūrī); das gilt nach Nūr al-Īḍāḥ für den Ramadan und für das Fastenbrechen. Wie groß die Gruppe sein muss, entscheidet nach der richtigsten Ansicht der Imam, ohne feste Zahl (Nūr al-Īḍāḥ, al-Ikhtiyār). Al-Hidāya begründet: Wenn bei klarem Himmel nur Einzelne den Neumond sehen, obwohl alle schauen, deutet das auf einen Irrtum hin.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 62,
+              "passage": "quduri.ms0024",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms24",
+              "passageSha256Text": "6aa19fc6db70e87e3bc84d6e6b98816793970c2a7dc551a793cacaba5d8308d6",
+              "zitatVon": 197,
+              "zitatBis": 269,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Ruʾyat al-Hilāl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 104,
+              "passage": "nur_al_idah.ms0043",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms43",
+              "passageSha256Text": "9c678a53f49dfdf21818e25a4d11ff761e63f22a9cab392df90b0c298d7b8d7b",
+              "zitatVon": 612,
+              "zitatBis": 714,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 121,
+              "passage": "hidaya.ms0132",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms132",
+              "passageSha256Text": "c1b4ba1fe779b0bed40a18d049d9f25a3c08931212cb1a65e7c8ce4b2ba627dc",
+              "zitatVon": 993,
+              "zitatBis": 1076,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 129,
+              "passage": "ikhtiyar.ms0146",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms146",
+              "passageSha256Text": "157f240635743b4a29670821d5bda36212033c6df00078ea73eaba1c84b3dead",
+              "zitatVon": 125,
+              "zitatBis": 293,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a13",
+          "text": "Zur Größe der Gruppe nennt al-Hidāya weitere Ansichten: Es heißt, gemeint seien die Bewohner eines Stadtviertels; von Abū Yūsuf wird überliefert: fünfzig Männer. Aṭ-Ṭaḥāwī erwähnt, dass die Aussage eines Einzelnen angenommen wird, wenn er von außerhalb der Stadt kommt oder an einem erhöhten Ort in der Stadt war. Nach einer Überlieferung von al-Ḥasan von Abū Ḥanīfa genügen zwei Zeugen (al-Ikhtiyār).",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 121,
+              "passage": "hidaya.ms0132",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms132",
+              "passageSha256Text": "c1b4ba1fe779b0bed40a18d049d9f25a3c08931212cb1a65e7c8ce4b2ba627dc",
+              "zitatVon": 1157,
+              "zitatBis": 1421,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 129,
+              "passage": "ikhtiyar.ms0146",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms146",
+              "passageSha256Text": "157f240635743b4a29670821d5bda36212033c6df00078ea73eaba1c84b3dead",
+              "zitatVon": 295,
+              "zitatBis": 363,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a14",
+          "text": "Für den Neumond von Shawwāl, also für das Fastenbrechen, verlangen die Werke bei bedecktem Himmel mehr: die förmliche Zeugenaussage zweier freier Männer oder eines freien Mannes und zweier freier Frauen; eine Klage ist nicht nötig (Nūr al-Īḍāḥ, al-Qudūrī). Al-Hidāya begründet das damit, dass es um einen Vorteil der Menschen geht, das Fastenbrechen, wie bei ihren übrigen Rechten. Der Neumond, nach dem sich das Opferfest richtet, wird nach der offenkundigen Überlieferung ebenso behandelt (Nūr al-Īḍāḥ, al-Hidāya).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Ruʾyat al-Hilāl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 104,
+              "passage": "nur_al_idah.ms0043",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms43",
+              "passageSha256Text": "9c678a53f49dfdf21818e25a4d11ff761e63f22a9cab392df90b0c298d7b8d7b",
+              "zitatVon": 533,
+              "zitatBis": 611,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 64,
+              "passage": "quduri.ms0025",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms25",
+              "passageSha256Text": "cefd7873faab9324e918c4fe8f5b90393450ea28d44c63b6638ea34ac4e4181b",
+              "zitatVon": 843,
+              "zitatBis": 917,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 121,
+              "passage": "hidaya.ms0133",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms133",
+              "passageSha256Text": "4ee737dbf43f78218a3849fd0bfd3db4b01c3c2fa1fe6c9c1069758a0fd82fff",
+              "zitatVon": 16,
+              "zitatBis": 113,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Ruʾyat al-Hilāl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 104,
+              "passage": "nur_al_idah.ms0043",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms43",
+              "passageSha256Text": "9c678a53f49dfdf21818e25a4d11ff761e63f22a9cab392df90b0c298d7b8d7b",
+              "zitatVon": 894,
+              "zitatBis": 913,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a15",
+          "text": "Wurde der Ramadan auf die Aussage eines Einzelnen hin begonnen und ist nach dreißig Tagen bei klarem Himmel kein Neumond von Shawwāl zu sehen, darf man nach Nūr al-Īḍāḥ das Fasten nicht brechen; ist der Himmel bedeckt, ist das Fastenbrechen unstrittig erlaubt. Al-Hidāya und al-Ikhtiyār berichten dazu zwei Ansichten: Nach einer Überlieferung von al-Ḥasan von Abū Ḥanīfa brechen die Menschen aus Vorsicht nicht; nach Muḥammad brechen sie, weil der Ramadan auf diese Aussage hin feststand.",
+          "meinung": "muhammad",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Ruʾyat al-Hilāl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 104,
+              "passage": "nur_al_idah.ms0043",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms43",
+              "passageSha256Text": "9c678a53f49dfdf21818e25a4d11ff761e63f22a9cab392df90b0c298d7b8d7b",
+              "zitatVon": 715,
+              "zitatBis": 893,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fī Ruʾyat al-Hilāl",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 121,
+              "passage": "hidaya.ms0132",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms132",
+              "passageSha256Text": "c1b4ba1fe779b0bed40a18d049d9f25a3c08931212cb1a65e7c8ce4b2ba627dc",
+              "zitatVon": 613,
+              "zitatBis": 913,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 129,
+              "passage": "ikhtiyar.ms0145",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms145",
+              "passageSha256Text": "9a47674ad723fe9c2fd246f3fcacbf544debd345a63203a521184513daa133b4",
+              "zitatVon": 1252,
+              "zitatBis": 1468,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a16",
+          "text": "Ist der Neumond an einem Ort festgestellt, gilt das nach der offenkundigen Lehre der Schule (ẓāhir al-madhhab) für alle Menschen; unterschiedliche Aufgangsorte des Mondes (ikhtilāf al-maṭāliʿ) werden nicht berücksichtigt. Darauf beruht nach Nūr al-Īḍāḥ die Fatwa, und so lehren die meisten Lehrer der Schule. Al-Ikhtiyār nennt es nach Qāḍīkhān und as-Sarakhsī die offenkundige Überlieferung; Radd al-Muḥtār nennt es die verlässliche Ansicht der Schule (al-muʿtamad), weil die Anweisung, mit der Sichtung zu fasten, allgemein an die Sichtung geknüpft ist.",
+          "meinung": "fatwa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Ikhtilāf al-Maṭāliʿ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 104,
+              "passage": "nur_al_idah.ms0043",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms43",
+              "passageSha256Text": "9c678a53f49dfdf21818e25a4d11ff761e63f22a9cab392df90b0c298d7b8d7b",
+              "zitatVon": 999,
+              "zitatBis": 1076,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 129,
+              "passage": "ikhtiyar.ms0146",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms146",
+              "passageSha256Text": "157f240635743b4a29670821d5bda36212033c6df00078ea73eaba1c84b3dead",
+              "zitatVon": 564,
+              "zitatBis": 699,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Maṭlab fī Ikhtilāf al-Maṭāliʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 393,
+              "passage": "radd_al_muhtar.ms1623",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1623",
+              "passageSha256Text": "c74c4cfcee128949fe2a209f5a26eca9251b45d909c1798b3dae4678e3674565",
+              "zitatVon": 936,
+              "zitatBis": 1029,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 1909
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a17",
+          "text": "Nach einer anderen Ansicht kommt es auf die Aufgangsorte an. Al-Ikhtiyār führt dazu al-Fatāwā al-Ḥusāmiyya an: Haben die Leute einer Stadt nach Sichtung dreißig Tage gefastet und die einer anderen nach Sichtung neunundzwanzig, müssen diese einen Tag nachholen, wenn beide Städte so nahe beieinander liegen, dass die Aufgangsorte gleich sind; liegen sie weit auseinander, ist keine an das Urteil der anderen gebunden. Radd al-Muḥtār nennt az-Zaylaʿī und den Verfasser von al-Fayḍ als Vertreter dieser Ansicht: Jedes Volk richte sich nach dem, was bei ihm gilt, wie bei den Gebetszeiten.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 129,
+              "passage": "ikhtiyar.ms0146",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms146",
+              "passageSha256Text": "157f240635743b4a29670821d5bda36212033c6df00078ea73eaba1c84b3dead",
+              "zitatVon": 702,
+              "zitatBis": 942,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Maṭlab fī Ikhtilāf al-Maṭāliʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 393,
+              "passage": "radd_al_muhtar.ms1623",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1623",
+              "passageSha256Text": "c74c4cfcee128949fe2a209f5a26eca9251b45d909c1798b3dae4678e3674565",
+              "zitatVon": 503,
+              "zitatBis": 872,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a18",
+          "text": "Beim Hadsch werden die unterschiedlichen Aufgangsorte dagegen berücksichtigt. Radd al-Muḥtār entnimmt das den Ausführungen der Gelehrten zum Hadsch: Die Pilger sind nicht gebunden, wenn sich später zeigt, dass der Neumond in einem anderen Ort einen Tag früher gesehen wurde.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Maṭlab fī Ikhtilāf al-Maṭāliʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 393,
+              "passage": "radd_al_muhtar.ms1623",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1623",
+              "passageSha256Text": "c74c4cfcee128949fe2a209f5a26eca9251b45d909c1798b3dae4678e3674565",
+              "zitatVon": 1110,
+              "zitatBis": 1219,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a19",
+          "text": "Wird der Neumond am Tag gesehen, vor oder nach dem Mittag, zählt das nach der gewählten Ansicht nicht für den laufenden Tag; der Neumond gehört zur kommenden Nacht (Nūr al-Īḍāḥ). Nach Abū Yūsuf gehört er zur vergangenen Nacht, wenn er vor dem Mittag gesehen wird (al-Ikhtiyār).",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl fīmā yathbutu bihi l-Hilāl wa-fī Ṣawm Yawm ash-Shakk wa-ghayrihi › Ruʾyat al-Hilāl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 104,
+              "passage": "nur_al_idah.ms0043",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms43",
+              "passageSha256Text": "9c678a53f49dfdf21818e25a4d11ff761e63f22a9cab392df90b0c298d7b8d7b",
+              "zitatVon": 1077,
+              "zitatBis": 1163,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 130,
+              "passage": "ikhtiyar.ms0147",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms147",
+              "passageSha256Text": "cabfa10fe7a5c5d102fdfc84765b28673f25af11f72712add3a10eb28fe46587",
+              "zitatVon": 509,
+              "zitatBis": 639,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.a20",
+          "text": "Wer den Neumond sieht, ist nach al-Ikhtiyār verpflichtet, es zu bezeugen, wenn der Monatsbeginn ohne seine Aussage nicht festgestellt würde – selbst eine zurückgezogen lebende Frau, auch ohne Erlaubnis ihres Ehemannes.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 129,
+              "passage": "ikhtiyar.ms0145",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms145",
+              "passageSha256Text": "9a47674ad723fe9c2fd246f3fcacbf544debd345a63203a521184513daa133b4",
+              "zitatVon": 1150,
+              "zitatBis": 1250,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.aufbau.e01.l04.q01",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l04.a01",
+          "fall": "Am Abend des 29. Shaʿbān ist der Himmel bedeckt. Niemand kann den Neumond sehen, und es liegt keine Meldung über eine Sichtung vor.",
+          "frage": "Was gilt nach al-Qudūrī und al-Ikhtiyār?",
+          "optionen": [
+            "Shaʿbān wird mit dreißig Tagen vollendet; danach beginnt das Fasten.",
+            "Am nächsten Tag beginnt das Fasten in jedem Fall.",
+            "Man wartet, bis der Neumond am Tag zu sehen ist."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l04.a02",
+          "behauptung": "Nach Radd al-Muḥtār begründet die Berechnung der Zeitberechner (muwaqqitūn) für sich allein die Fastenpflicht der Menschen.",
+          "richtig": false,
+          "begruendung": "Nach Radd al-Muḥtār zählt ihre Aussage für die Fastenpflicht nicht. Die Frage ist innerhalb der Schule umstritten; Radd al-Muḥtār berichtet auch Ansichten, die sich auf die Berechner stützen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.aufbau.e01.l04.a03",
+          "anweisung": "Ordne nach dem Bericht in Radd al-Muḥtār den Gelehrten ihre Ansicht zu den Berechnern zu.",
+          "paare": [
+            {
+              "links": "al-Qāḍī ʿAbd al-Jabbār",
+              "rechts": "Sich auf sie zu stützen, ist unbedenklich."
+            },
+            {
+              "links": "Ibn Muqātil",
+              "rechts": "Stützte sich auf sie, wenn eine Gruppe übereinstimmte."
+            },
+            {
+              "links": "as-Sarakhsī",
+              "rechts": "Hielt das für abwegig."
+            },
+            {
+              "links": "al-Ḥalwānī",
+              "rechts": "Bedingung ist die Sichtung."
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l04.a10",
+          "fall": "Eine Frau sieht am Abend des 29. Ramadan als Einzige den Neumond von Shawwāl. Ihre Meldung wird nicht angenommen.",
+          "frage": "Was tut sie nach Nūr al-Īḍāḥ und al-Qudūrī am nächsten Tag?",
+          "optionen": [
+            "Sie fastet weiter.",
+            "Sie bricht das Fasten, weil sie sich sicher ist.",
+            "Sie bricht das Fasten und leistet eine Sühne."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l04.a11",
+          "behauptung": "Bei bedecktem Himmel genügt nach al-Qudūrī für den Beginn des Ramadan die Meldung eines einzelnen vertrauenswürdigen Menschen, auch einer Frau.",
+          "richtig": true,
+          "begruendung": "Al-Qudūrī: Der Imam nimmt bei einem Hindernis am Himmel die Meldung eines einzelnen Vertrauenswürdigen an, Mann oder Frau, frei oder unfrei.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l04.a12",
+          "fall": "Der Himmel ist völlig klar. Viele Menschen halten Ausschau, aber nur zwei Personen melden, den Neumond des Ramadan gesehen zu haben.",
+          "frage": "Was gilt nach al-Qudūrī und al-Hidāya?",
+          "optionen": [
+            "Die Meldung wird nicht angenommen; bei klarem Himmel braucht es eine große Gruppe.",
+            "Zwei Zeugen genügen immer.",
+            "Der Imam muss die Meldung annehmen, wenn beide vertrauenswürdig sind."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l04.a16",
+          "behauptung": "Nach der Ansicht, auf der nach Nūr al-Īḍāḥ die Fatwa beruht, werden unterschiedliche Aufgangsorte des Mondes beim Fasten nicht berücksichtigt.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ: Ist der Neumond an einem Ort festgestellt, gilt das nach der offenkundigen Lehre für alle Menschen; darauf beruht die Fatwa. Die Gegenansicht berichten al-Ikhtiyār und Radd al-Muḥtār; die Frage ist strittig.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.q08",
+          "typ": "reihenfolge",
+          "aussage": "islam.aufbau.e01.l04.a08",
+          "anweisung": "Bringe nach Nūr al-Īḍāḥ und al-Hidāya in die richtige Reihenfolge, was die Allgemeinheit am Tag des Zweifels tut.",
+          "schritte": [
+            "Am Morgen nichts essen und abwarten.",
+            "Die Zeit für die Absicht verstreicht, ohne dass sich die Lage klärt.",
+            "Dann essen."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.q09",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l04.a05",
+          "behauptung": "Nach al-Hidāya ist es nicht verpönt, am Tag des Zweifels mit der Absicht eines freiwilligen Fastens zu fasten.",
+          "richtig": true,
+          "begruendung": "Al-Hidāya nennt verpönt, an diesem Tag das Ramadan-Fasten oder ein anderes Pflichtfasten zu beabsichtigen; das freiwillige Fasten ist nicht verpönt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l04.q10",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l04.a19",
+          "behauptung": "Wird der Neumond am Nachmittag des 29. gesehen, beginnt nach der in Nūr al-Īḍāḥ gewählten Ansicht der neue Monat schon an diesem Tag.",
+          "richtig": false,
+          "begruendung": "Nach Nūr al-Īḍāḥ zählt eine Sichtung am Tag nicht für den laufenden Tag; der Neumond gehört zur kommenden Nacht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.aufbau.e01.l05",
+      "titel": "Freiwilliges Fasten und Gelübde",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.aufbau.e01.l05.a01",
+          "text": "Wer ein freiwilliges Fasten beginnt und es dann ungültig macht, muss es nachholen (al-Qudūrī, al-Hidāya). Nach al-Ikhtiyār wird das freiwillige Fasten mit dem Beginn verbindlich: Man muss es zu Ende führen, und bricht man es ab, holt man es nach.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 64,
+              "passage": "quduri.ms0025",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms25",
+              "passageSha256Text": "cefd7873faab9324e918c4fe8f5b90393450ea28d44c63b6638ea34ac4e4181b",
+              "zitatVon": 303,
+              "zitatBis": 353,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm › Bāb mā yūjibu l-Qaḍāʾ wa-l-Kaffāra",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 127,
+              "passage": "hidaya.ms0139",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms139",
+              "passageSha256Text": "1a488f5e0dbc207eb9c9abd4b2111cb528da0ac1b8eeaffc290614c5f00b08d6",
+              "zitatVon": 1391,
+              "zitatBis": 1444,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl mā yubāḥu bihi l-Ifṭār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 135,
+              "passage": "ikhtiyar.ms0153",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms153",
+              "passageSha256Text": "6e14c3e2a7966d26526b6f254155af170045fd2644f5265497515b03f3991ca8",
+              "zitatVon": 1373,
+              "zitatBis": 1436,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.a02",
+          "text": "Bricht man ein freiwilliges Fasten ab, muss man es nach Nūr al-Īḍāḥ in jedem Fall nachholen – mit einer Ausnahme: Wer an einem der fünf Tage, den beiden Festtagen und den Tagen des Tashrīq, freiwillig zu fasten begonnen hat, muss nach der offenkundigen Überlieferung nicht nachholen, wenn er das Fasten bricht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Bāb mā yufsidu ṣ-Ṣawm min ghayr Kaffāra › Faṣl fī l-ʿAwāriḍ › Matā yalzamu l-Mutaṭawwiʿ al-Qaḍāʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 112,
+              "passage": "nur_al_idah.ms0047",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms47",
+              "passageSha256Text": "8c2f92260b096363450eb17e0103a1e7b60f1a2895d52da19471e2545490de92",
+              "zitatVon": 1092,
+              "zitatBis": 1225,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.a03",
+          "text": "Nach einer Überlieferung darf, wer freiwillig fastet, das Fasten auch ohne Entschuldigungsgrund brechen. Die Bewirtung ist nach der offenkundigeren Ansicht ein Entschuldigungsgrund, für den Gast wie für den Gastgeber (Nūr al-Īḍāḥ).",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Bāb mā yufsidu ṣ-Ṣawm min ghayr Kaffāra › Faṣl fī l-ʿAwāriḍ › Ṣawm at-Taṭawwuʿ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 112,
+              "passage": "nur_al_idah.ms0047",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms47",
+              "passageSha256Text": "8c2f92260b096363450eb17e0103a1e7b60f1a2895d52da19471e2545490de92",
+              "zitatVon": 960,
+              "zitatBis": 1034,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.a04",
+          "text": "Wer etwas gelobt (nadhr), muss es nach Nūr al-Īḍāḥ erfüllen, wenn drei Bedingungen zusammenkommen: Von dieser Art gibt es eine Pflichthandlung, die Handlung ist um ihrer selbst willen gewollt, und sie ist nicht ohnehin schon Pflicht. Deshalb bindet ein Gelübde nicht, die Gebetswaschung zu vollziehen, die Niederwerfung bei der Rezitation zu machen, einen Kranken zu besuchen oder Pflichten zu erfüllen, die ohnehin bestehen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Bāb mā yalzamu l-Wafāʾ bihi min Mandhūr aṣ-Ṣawm wa-ṣ-Ṣalāh wa-ghayrihā › Matā yalzamu l-Wafāʾ bi-n-Nadhr",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 113,
+              "passage": "nur_al_idah.ms0047",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms47",
+              "passageSha256Text": "8c2f92260b096363450eb17e0103a1e7b60f1a2895d52da19471e2545490de92",
+              "zitatVon": 1303,
+              "zitatBis": 1485,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.a05",
+          "text": "Gültig ist zum Beispiel das Gelübde, einen Sklaven freizulassen, sich in die Moschee zurückzuziehen (iʿtikāf), ein nicht verpflichtendes Gebet zu verrichten oder zu fasten. Ist das Gelübde unbedingt oder an eine Bedingung geknüpft, die eintritt, muss man es erfüllen (Nūr al-Īḍāḥ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Bāb mā yalzamu l-Wafāʾ bihi min Mandhūr aṣ-Ṣawm wa-ṣ-Ṣalāh wa-ghayrihā › Matā yalzamu l-Wafāʾ bi-n-Nadhr",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 113,
+              "passage": "nur_al_idah.ms0047",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms47",
+              "passageSha256Text": "8c2f92260b096363450eb17e0103a1e7b60f1a2895d52da19471e2545490de92",
+              "zitatVon": 1486,
+              "zitatBis": 1585,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.a06",
+          "text": "Gelobtes Fasten ist verpflichtend; al-Hidāya und al-Ikhtiyār stützen das auf Koran 22:29.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 118,
+              "passage": "hidaya.ms0128",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms128",
+              "passageSha256Text": "101907ed5639f2afe94175966e46a767d191da1ad6a05ed601058ea0f453dc5f",
+              "zitatVon": 716,
+              "zitatBis": 756,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 125,
+              "passage": "ikhtiyar.ms0141",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms141",
+              "passageSha256Text": "0b60f17e5e082b1d206698e883af044fc1d36d403555a7b7b44507395301ac4b",
+              "zitatVon": 122,
+              "zitatBis": 204,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "22:29"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.a07",
+          "text": "Gelobt jemand, an den beiden Festtagen und den Tagen des Tashrīq zu fasten, ist das Gelübde nach der gewählten Ansicht gültig. Er muss an diesen Tagen das Fasten brechen und sie später nachholen; fastet er sie dennoch, genügt es, er begeht aber eine verbotene Handlung (Nūr al-Īḍāḥ). Al-Ikhtiyār erklärt: Gelobt wird das Fasten, eine gute Tat; die Sünde liegt nur darin, an diesen Tagen tatsächlich zu fasten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Bāb mā yalzamu l-Wafāʾ bihi min Mandhūr aṣ-Ṣawm wa-ṣ-Ṣalāh wa-ghayrihā › Matā yalzamu l-Wafāʾ bi-n-Nadhr",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 113,
+              "passage": "nur_al_idah.ms0048",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms48",
+              "passageSha256Text": "cb9f7d7558368cb319b6fe2ba105d21bbbbad6c2400caf854fb0e933a13ff6c5",
+              "zitatVon": 3,
+              "zitatBis": 92,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl mā yubāḥu bihi l-Ifṭār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 136,
+              "passage": "ikhtiyar.ms0154",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms154",
+              "passageSha256Text": "1ba353a56d5b3f907c208fbc805ebeba6c0a5f9490c9559761330a79d0d3c3b0",
+              "zitatVon": 719,
+              "zitatBis": 929,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.a08",
+          "text": "Was ein Gelübde über Zeit, Ort, Geldstück und Empfänger festlegt, ist nach Nūr al-Īḍāḥ nicht bindend. Wer gelobt, im Shaʿbān zu fasten, erfüllt das Gelübde auch mit Fasten im Rajab; wer gelobt, in Mekka zwei Gebetseinheiten zu verrichten, erfüllt es auch an einem anderen Ort; wer gelobt, einen bestimmten Dirham zu spenden, kann einen anderen geben, und statt des genannten Armen einen anderen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Bāb mā yalzamu l-Wafāʾ bihi min Mandhūr aṣ-Ṣawm wa-ṣ-Ṣalāh wa-ghayrihā › Matā yalzamu l-Wafāʾ bi-n-Nadhr",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 113,
+              "passage": "nur_al_idah.ms0048",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms48",
+              "passageSha256Text": "cb9f7d7558368cb319b6fe2ba105d21bbbbad6c2400caf854fb0e933a13ff6c5",
+              "zitatVon": 93,
+              "zitatBis": 272,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.a09",
+          "text": "Ist das Gelübde an eine Bedingung geknüpft, genügt es nicht, die gelobte Handlung schon vor Eintritt der Bedingung zu verrichten (Nūr al-Īḍāḥ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Bāb mā yalzamu l-Wafāʾ bihi min Mandhūr aṣ-Ṣawm wa-ṣ-Ṣalāh wa-ghayrihā › al-Wafāʾ qabla sh-Sharṭ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 113,
+              "passage": "nur_al_idah.ms0048",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms48",
+              "passageSha256Text": "cb9f7d7558368cb319b6fe2ba105d21bbbbad6c2400caf854fb0e933a13ff6c5",
+              "zitatVon": 290,
+              "zitatBis": 343,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.a10",
+          "text": "Wer gelobt hat, für immer zu fasten, und dafür zu schwach wird, weil er seinen Lebensunterhalt verdienen muss, bricht das Fasten und leistet eine Ersatzleistung (fidya). Kann er auch sie wegen Armut nicht aufbringen, bittet er Gott um Vergebung und darum, ihm die Pflicht zu erlassen (Nūr al-Īḍāḥ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣawm › Bāb mā yufsidu ṣ-Ṣawm min ghayr Kaffāra › Faṣl fī l-ʿAwāriḍ › Nadhr Ṣawm al-Abad",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 112,
+              "passage": "nur_al_idah.ms0047",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms47",
+              "passageSha256Text": "8c2f92260b096363450eb17e0103a1e7b60f1a2895d52da19471e2545490de92",
+              "zitatVon": 680,
+              "zitatBis": 793,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.a11",
+          "text": "Wer gelobt, „dieses Jahr“ zu fasten, bricht nach al-Ikhtiyār das Fasten an den beiden Festtagen und an den Tagen des Tashrīq und holt diese Tage nach; ebenso, wer ein zusammenhängendes Jahr gelobt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Faṣl mā yubāḥu bihi l-Ifṭār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 136,
+              "passage": "ikhtiyar.ms0154",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms154",
+              "passageSha256Text": "1ba353a56d5b3f907c208fbc805ebeba6c0a5f9490c9559761330a79d0d3c3b0",
+              "zitatVon": 1467,
+              "zitatBis": 1571,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.aufbau.e01.l05.q01",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l05.a03",
+          "fall": "Jemand fastet freiwillig. Mittags lädt ihn ein Freund zum Essen ein, und er isst als Gast mit ihm.",
+          "frage": "Was gilt nach der offenkundigeren Ansicht in Nūr al-Īḍāḥ für das Brechen des Fastens?",
+          "optionen": [
+            "Die Bewirtung ist ein Entschuldigungsgrund; er durfte das Fasten brechen.",
+            "Er durfte nicht brechen, weil die Bewirtung kein Entschuldigungsgrund ist.",
+            "Nur der Gastgeber hat einen Entschuldigungsgrund, nicht der Gast."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l05.a01",
+          "behauptung": "Nach al-Qudūrī muss man ein freiwilliges Fasten, das man begonnen und dann ungültig gemacht hat, nicht nachholen.",
+          "richtig": false,
+          "begruendung": "Al-Qudūrī und al-Hidāya: Wer ein freiwilliges Fasten beginnt und dann ungültig macht, holt es nach. Nach al-Ikhtiyār wird es mit dem Beginn verbindlich.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.aufbau.e01.l05.a08",
+          "anweisung": "Ordne nach Nūr al-Īḍāḥ jedem Gelübde zu, womit man es ebenfalls erfüllt.",
+          "paare": [
+            {
+              "links": "Fasten im Shaʿbān",
+              "rechts": "Fasten im Rajab"
+            },
+            {
+              "links": "zwei Gebetseinheiten in Mekka",
+              "rechts": "zwei Gebetseinheiten an einem anderen Ort"
+            },
+            {
+              "links": "einen bestimmten Dirham spenden",
+              "rechts": "einen anderen Dirham spenden"
+            },
+            {
+              "links": "Spende an einen bestimmten Armen",
+              "rechts": "Spende an einen anderen Armen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l05.a07",
+          "fall": "Jemand hat gelobt, am Tag des Festes des Fastenbrechens zu fasten.",
+          "frage": "Was tut er nach Nūr al-Īḍāḥ?",
+          "optionen": [
+            "Er fastet an dem Festtag nicht und holt den Tag später nach.",
+            "Er muss am Festtag fasten, weil er es gelobt hat.",
+            "Das Gelübde ist ungültig; er muss nichts tun."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l05.a04",
+          "behauptung": "Nach Nūr al-Īḍāḥ muss man ein Gelübde erfüllen, einen Kranken zu besuchen.",
+          "richtig": false,
+          "begruendung": "Nūr al-Īḍāḥ nennt den Krankenbesuch ausdrücklich unter den Gelübden, die nicht binden, weil nicht alle drei Bedingungen erfüllt sind.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.aufbau.e01.l05.a09",
+          "fall": "Jemand gelobt: „Wenn ich die Prüfung bestehe, faste ich drei Tage.“ Schon vor dem Ergebnis fastet er drei Tage. Danach besteht er die Prüfung.",
+          "frage": "Was gilt nach Nūr al-Īḍāḥ?",
+          "optionen": [
+            "Er muss die drei Tage noch fasten; das Fasten vor Eintritt der Bedingung genügt nicht.",
+            "Sein Gelübde ist schon erfüllt.",
+            "Das Gelübde ist ungültig, weil er zu früh gefastet hat."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.aufbau.e01.l05.a10",
+          "behauptung": "Wer für immer zu fasten gelobt hat und wegen der Arbeit für seinen Lebensunterhalt zu schwach wird, darf nach Nūr al-Īḍāḥ das Fasten brechen und eine Ersatzleistung (fidya) geben.",
+          "richtig": true,
+          "begruendung": "So sagt es Nūr al-Īḍāḥ. Kann er auch die Ersatzleistung wegen Armut nicht aufbringen, bittet er Gott um Vergebung und um Erlass.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.aufbau.e01.l05.q08",
+          "typ": "reihenfolge",
+          "aussage": "islam.aufbau.e01.l05.a07",
+          "anweisung": "Bringe nach Nūr al-Īḍāḥ in die richtige Reihenfolge, was bei einem Gelübde für die Festtage geschieht.",
+          "schritte": [
+            "Jemand gelobt, an den Festtagen zu fasten.",
+            "An den Festtagen bricht er das Fasten.",
+            "Später holt er diese Tage nach."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}
