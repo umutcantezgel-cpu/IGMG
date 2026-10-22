@@ -20,12 +20,12 @@
       },
       {
         "de": "Ich kann über Prüfungen, Noten und Lernwege sprechen.",
-        "tr": "Sınavlar, notlar ve çalışma yolları hakkında konuşabilirim.",
+        "tr": "Sınavlar, notlar ve ders çalışma yöntemleri hakkında konuşabilirim.",
         "ar": "أستطيع أن أتحدث عن الامتحانات والعلامات وطرق التعلم."
       },
       {
         "de": "Ich kann Zeitangaben mit vor, nach und bis verwenden.",
-        "tr": "“-den önce”, “-den sonra” ve “-e kadar” ile zaman bildirebilirim.",
+        "tr": "Zaman bildirirken “-den önce”, “-den sonra” ve “-e kadar” kullanabilirim.",
         "ar": "أستطيع أن أرتّب الأحداث في الزمن بكلمات مثل «بعد» و«حتى»."
       }
     ],
@@ -1565,7 +1565,7 @@
     },
     {
       "schluessel": "tr.a2.e08.s0004",
-      "text": "Can'ın matematik notu biraz düşük.",
+      "text": "Can'ın fen notu biraz düşük.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1814,7 +1814,7 @@
     },
     {
       "schluessel": "tr.a2.e08.s0045",
-      "text": "Bilim ve fen benim için çok ilginç.",
+      "text": "Bilim benim için çok ilginç.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1850,13 +1850,13 @@
     },
     {
       "schluessel": "tr.a2.e08.s0051",
-      "text": "Okulumuzun müdürü Orhan Bey.",
+      "text": "Okulumuzun müdürü Özge Hanım.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a2.e08.s0052",
-      "text": "Müdür Bey bugün sınıfımıza geldi.",
+      "text": "Müdür Hanım bugün sınıfımıza geldi.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2610,7 +2610,7 @@
     },
     {
       "schluessel": "tr.a2.e08.s0175",
-      "text": "Pazartesiden perşembeye kadar her gün yeni bir konu var.",
+      "text": "Pazartesiden perşembeye kadar her gün başka bir konu çalışacağım.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2772,7 +2772,7 @@
     },
     {
       "schluessel": "tr.a2.e08.s0202",
-      "text": "Bir okulda doksan altı öğrenci var, dört sınıf var.",
+      "text": "Bir okulda dört sınıf ve doksan altı öğrenci var.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2964,7 +2964,7 @@
     },
     {
       "schluessel": "tr.a2.e08.s0234",
-      "text": "Ara için nereye gidiyorlar?",
+      "text": "Ara vermek için nereye gidiyorlar?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3012,7 +3012,7 @@
     },
     {
       "schluessel": "tr.a2.e08.s0242",
-      "text": "Bir hafta için çalışma planı yaz: günler, dersler ve amaçların.",
+      "text": "Bir haftalık çalışma planı yaz: günler, dersler ve amaçlar.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3126,7 +3126,7 @@
           "satz": "tr.a2.e08.s0005",
           "nach": "ziel",
           "alternativen": ["Notlarım bu dönem daha iyi."],
-          "ablenker": ["notum", "kötü"]
+          "ablenker": ["notlarımı", "kötü"]
         },
         {
           "schluessel": "tr.a2.e08.l01.a08",
@@ -3138,7 +3138,7 @@
             }
           ],
           "antwort": "tr.a2.e08.s0032",
-          "ablenker": ["tr.a2.e08.s0016", "tr.a2.e08.s0027", "tr.a2.e08.s0022", "tr.a2.e08.s0018"]
+          "ablenker": ["tr.a2.e08.s0016", "tr.a2.e08.s0059", "tr.a2.e08.s0022", "tr.a2.e08.s0018"]
         },
         {
           "schluessel": "tr.a2.e08.l01.a09",
@@ -3149,7 +3149,11 @@
           "schluessel": "tr.a2.e08.l01.a10",
           "typ": "satzbau",
           "ziel": "tr.a2.e08.s0017",
-          "alternativen": ["Babam ve annem veli toplantısına gidiyor."]
+          "alternativen": [
+            "Babam ve annem veli toplantısına gidiyor.",
+            "Veli toplantısına annem ve babam gidiyor.",
+            "Veli toplantısına babam ve annem gidiyor."
+          ]
         },
         {
           "schluessel": "tr.a2.e08.l01.a11",
@@ -3177,7 +3181,12 @@
           "typ": "frei",
           "ziel": "tr.a2.e08.s0020",
           "nach": "ziel",
-          "alternativen": ["Elif, bu dönem çok başarılısın!"]
+          "alternativen": [
+            "Elif, bu dönem çok başarılısın!",
+            "Bu dönemde çok başarılısın, Elif!",
+            "Elif, bu dönemde çok başarılısın!",
+            "Sen bu dönem çok başarılısın, Elif!"
+          ]
         },
         {
           "schluessel": "tr.a2.e08.l01.a15",
@@ -3283,7 +3292,14 @@
           "typ": "frei",
           "ziel": "tr.a2.e08.s0049",
           "nach": "ziel",
-          "alternativen": ["Gelecek yıl Can liseye başlayacak.", "Can seneye liseye başlayacak.", "Seneye Can liseye başlayacak."]
+          "alternativen": [
+            "Gelecek yıl Can liseye başlayacak.",
+            "Can seneye liseye başlayacak.",
+            "Seneye Can liseye başlayacak.",
+            "Can gelecek sene liseye başlayacak.",
+            "Can önümüzdeki yıl liseye başlayacak.",
+            "Can gelecek yıl liseye başlıyor."
+          ]
         },
         {
           "schluessel": "tr.a2.e08.l02.a13",
@@ -3411,7 +3427,13 @@
           "typ": "frei",
           "ziel": "tr.a2.e08.s0084",
           "nach": "ziel",
-          "alternativen": ["Metni iki defa okumalısın.", "Metni iki kez okumalısın.", "İki kere metni okumalısın."]
+          "alternativen": [
+            "Metni iki defa okumalısın.",
+            "Metni iki kez okumalısın.",
+            "İki kere metni okumalısın.",
+            "Sen metni iki kere okumalısın.",
+            "Metni iki kere okuman lazım."
+          ]
         },
         {
           "schluessel": "tr.a2.e08.l03.a14",
@@ -3531,7 +3553,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e08.s0131",
           "nach": "ziel",
-          "alternativen": ["Bu problem çok basit."]
+          "alternativen": ["Bu problem çok basit.", "Bu çok kolay bir problem.", "Bu problem çok kolay."]
         },
         {
           "schluessel": "tr.a2.e08.l04.a14",
@@ -3559,7 +3581,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Ich kann einen Lernplan verstehen und Hilfe beim Lernen anbieten.",
-        "tr": "Bir çalışma planını anlamak ve derste yardım önermek",
+        "tr": "Bir çalışma planını anlamak ve derslerde yardım teklif etmek",
         "ar": "فهم خطة للمذاكرة وعرض المساعدة في التعلم"
       },
       "aufgaben": [
@@ -3713,6 +3735,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e08.s0157",
           "nach": "ziel",
+          "alternativen": ["Beşe on kala bitiriyoruz."],
           "ablenker": ["beşi", "geçe"]
         },
         {
@@ -3725,7 +3748,7 @@
             }
           ],
           "antwort": "tr.a2.e08.s0136",
-          "ablenker": ["tr.a2.e08.s0141", "tr.a2.e08.s0144", "tr.a2.e08.s0152", "tr.a2.e08.s0151"]
+          "ablenker": ["tr.a2.e08.s0155", "tr.a2.e08.s0144", "tr.a2.e08.s0152", "tr.a2.e08.s0151"]
         },
         {
           "schluessel": "tr.a2.e08.l05.a13",
@@ -3931,7 +3954,7 @@
             }
           ],
           "antwort": "tr.a2.e08.s0197",
-          "ablenker": ["tr.a2.e08.s0190", "tr.a2.e08.s0194", "tr.a2.e08.s0212"]
+          "ablenker": ["tr.a2.e08.s0205", "tr.a2.e08.s0194", "tr.a2.e08.s0212"]
         },
         {
           "schluessel": "tr.a2.e08.l06.a03",
@@ -3959,6 +3982,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e08.s0208",
           "nach": "ziel",
+          "alternativen": ["Teşekkürler, Can! Çok iyi açıklıyorsun.", "Can, teşekkürler! Sen çok iyi açıklıyorsun."],
           "ablenker": ["açıklıyorum", "kötü"]
         },
         {
@@ -3966,7 +3990,13 @@
           "typ": "frei",
           "ziel": "tr.a2.e08.s0210",
           "nach": "ziel",
-          "alternativen": ["Bence bir ara vermelisiniz.", "Şimdi bir ara vermelisiniz bence."]
+          "alternativen": [
+            "Bence bir ara vermelisiniz.",
+            "Şimdi bir ara vermelisiniz bence.",
+            "Bence şimdi ara vermelisiniz.",
+            "Şimdi bence bir ara vermelisiniz.",
+            "Bence şimdi bir mola vermelisiniz."
+          ]
         },
         {
           "schluessel": "tr.a2.e08.l06.a08",
@@ -4040,6 +4070,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e08.s0055",
           "nach": "ziel",
+          "alternativen": ["Okula otobüsle mi gidiyorsun, servisle mi?"],
           "ablenker": ["servise", "gidiyorum"]
         },
         {
@@ -4114,7 +4145,7 @@
             }
           ],
           "antwort": "tr.a2.e08.s0247",
-          "ablenker": ["tr.a2.e08.s0116", "tr.a2.e08.s0071", "tr.a2.e08.s0078", "tr.a2.e08.s0117"]
+          "ablenker": ["tr.a2.e08.s0058", "tr.a2.e08.s0071", "tr.a2.e08.s0078", "tr.a2.e08.s0117"]
         },
         {
           "schluessel": "tr.a2.e08.l07.a14",
@@ -4151,7 +4182,12 @@
           "typ": "frei",
           "ziel": "tr.a2.e08.s0045",
           "nach": "ziel",
-          "alternativen": ["Fen ve bilim benim için çok ilginç.", "Benim için bilim ve fen çok ilginç.", "Bilim ve fen bence çok ilginç."]
+          "alternativen": [
+            "Benim için bilim çok ilginç.",
+            "Bence bilim çok ilginç.",
+            "Bilim bence çok ilginç.",
+            "Bilimi çok ilginç buluyorum."
+          ]
         },
         {
           "schluessel": "tr.a2.e08.l07.a18",
@@ -4206,7 +4242,7 @@
           "satz": "tr.a2.e08.s0034",
           "nach": "ziel",
           "alternativen": ["Yazılıya sabahtan beri çalışıyorum."],
-          "ablenker": ["sabaha", "yazılıyı"]
+          "ablenker": ["sabaha", "yazılıye"]
         },
         {
           "schluessel": "tr.a2.e08.l08.a05",
@@ -4245,7 +4281,12 @@
           "schluessel": "tr.a2.e08.l08.a09",
           "typ": "frei",
           "ziel": "tr.a2.e08.s0126",
-          "nach": "ziel"
+          "nach": "ziel",
+          "alternativen": [
+            "Ben sunumdan önce çok heyecanlıyım.",
+            "Sunumdan önce ben çok heyecanlıyım.",
+            "Sunumdan önce çok heyecanlanıyorum."
+          ]
         },
         {
           "schluessel": "tr.a2.e08.l08.a10",
@@ -4267,6 +4308,10 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e08.s0033",
           "nach": "ziel",
+          "alternativen": [
+            "Ayla Öğretmen cumaya kadar yazılıları kontrol edecek.",
+            "Cumaya kadar Ayla Öğretmen yazılıları kontrol edecek."
+          ],
           "ablenker": ["cumadan", "edeceğim"]
         },
         {
