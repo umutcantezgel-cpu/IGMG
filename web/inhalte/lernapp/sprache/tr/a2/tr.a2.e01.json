@@ -1610,7 +1610,7 @@
     },
     {
       "schluessel": "tr.a2.e01.s0034",
-      "text": "Elif'in hobisi resim yapmak.",
+      "text": "Elif'in hobisi resim.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1785,7 +1785,7 @@
     },
     {
       "schluessel": "tr.a2.e01.s0063",
-      "text": "Biz parkta top oynadık, sonra koştuk.",
+      "text": "Biz parkta top oynadık, sonra bisiklete bindik.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2451,7 +2451,7 @@
     },
     {
       "schluessel": "tr.a2.e01.s0171",
-      "text": "Biz geldik, ama onlar çoktan gitti.",
+      "text": "Geç kaldık, otobüs çoktan gitti.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2493,7 +2493,7 @@
     },
     {
       "schluessel": "tr.a2.e01.s0178",
-      "text": "Bu gezi güzel bir anı oldu.",
+      "text": "Bu gezi benim için güzel bir anı.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2656,7 +2656,7 @@
     },
     {
       "schluessel": "tr.a2.e01.s0205",
-      "text": "Pazar günü dedemle videoyla satranç oynadım.",
+      "text": "Pazar günü annemle bir müzeye gittim.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2680,7 +2680,7 @@
     },
     {
       "schluessel": "tr.a2.e01.s0209",
-      "text": "Günaydın! Hafta sonunuz nasıl geçti?",
+      "text": "Günaydın Rim! Hafta sonun nasıl geçti?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2758,7 +2758,7 @@
     },
     {
       "schluessel": "tr.a2.e01.s0222",
-      "text": "Evet, ama bilgisayarda videoyla oynadık.",
+      "text": "Evet, ama video görüşmesiyle oynadık.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3022,7 +3022,7 @@
     },
     {
       "schluessel": "tr.a2.e01.s0266",
-      "text": "Defne pazar günü sinemaya gitti.",
+      "text": "Cumartesi hava soğuktu.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3197,7 +3197,10 @@
             "Biz geçen sene İzmir'e gittik.",
             "Biz geçen yıl İzmir'e gittik.",
             "İzmir'e geçen sene gittik.",
-            "İzmir'e geçen yıl gittik."
+            "İzmir'e geçen yıl gittik.",
+            "Biz İzmir'e geçen sene gittik.",
+            "Biz İzmir'e geçen yıl gittik.",
+            "Geçen sene biz İzmir'e gittik."
           ]
         },
         {
@@ -3705,22 +3708,6 @@
           "zeilen": [
             {
               "sprecher": "a",
-              "satz": "tr.a2.e01.s0189"
-            },
-            {
-              "sprecher": "b",
-              "satz": "tr.a2.e01.s0190"
-            },
-            {
-              "sprecher": "a",
-              "satz": "tr.a2.e01.s0191"
-            },
-            {
-              "sprecher": "b",
-              "satz": "tr.a2.e01.s0192"
-            },
-            {
-              "sprecher": "a",
               "satz": "tr.a2.e01.s0193"
             }
           ],
@@ -3760,7 +3747,9 @@
             "Cumartesi Rim'le eğlence parkına gittim.",
             "Cumartesi günü Rim ile eğlence parkına gittim.",
             "Rim ile cumartesi eğlence parkına gittim.",
-            "Cumartesi günü Rim'le eğlence parkına gittim."
+            "Cumartesi günü Rim'le eğlence parkına gittim.",
+            "Rim'le cumartesi eğlence parkına gittim.",
+            "Rim ile cumartesi günü eğlence parkına gittim."
           ]
         },
         {
@@ -3848,7 +3837,7 @@
               "satz": "tr.a2.e01.s0222"
             },
             {
-              "sprecher": "a",
+              "sprecher": "b",
               "satz": "tr.a2.e01.s0223"
             },
             {
@@ -4030,7 +4019,11 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e01.s0216",
           "nach": "ziel",
-          "alternativen": ["Ben bir sanat müzesine annemle gittim."],
+          "alternativen": [
+            "Ben bir sanat müzesine annemle gittim.",
+            "Annemle bir sanat müzesine gittim.",
+            "Bir sanat müzesine annemle gittim."
+          ],
           "ablenker": ["babamla", "müzede"]
         },
         {
@@ -4046,9 +4039,11 @@
           "ziel": "tr.a2.e01.s0205",
           "nach": "ziel",
           "alternativen": [
-            "Pazar günü dedemle video ile satranç oynadım.",
-            "Pazar dedemle videoyla satranç oynadım.",
-            "Pazar günü videoyla dedemle satranç oynadım."
+            "Pazar annemle bir müzeye gittim.",
+            "Pazar günü annemle müzeye gittim.",
+            "Annemle pazar günü bir müzeye gittim.",
+            "Ben pazar günü annemle bir müzeye gittim.",
+            "Pazar günü bir müzeye annemle gittim."
           ]
         },
         {
@@ -4078,8 +4073,8 @@
         {
           "schluessel": "tr.a2.e01.l06.a10",
           "typ": "minimalpaare",
-          "ziel": "tr.a2.e01.gezi",
-          "ablenker": ["tr.a1.e06.gece"]
+          "ziel": "tr.a2.e01.dinlemek",
+          "ablenker": ["tr.a1.e08.dilemek"]
         }
       ]
     },
@@ -4121,7 +4116,7 @@
           "typ": "lesen_fragen",
           "titel": "tr.a2.e01.s0250",
           "absaetze": ["tr.a2.e01.s0203", "tr.a2.e01.s0204", "tr.a2.e01.s0251", "tr.a2.e01.s0173", "tr.a2.e01.s0205", "tr.a2.e01.s0206"],
-          "glossen": ["tr.a2.e01.eglence", "tr.a2.e01.kalabalik", "tr.a2.e01.dondurma", "tr.a2.e01.satranc"],
+          "glossen": ["tr.a2.e01.eglence", "tr.a2.e01.kalabalik", "tr.a2.e01.dondurma"],
           "fragen": [
             {
               "art": "rfn",
@@ -4218,7 +4213,11 @@
           "schluessel": "tr.a2.e01.l07.a14",
           "typ": "satzbau",
           "ziel": "tr.a2.e01.s0150",
-          "alternativen": ["Annem sepete meyve ve peynirli sandviç koydu."]
+          "alternativen": [
+            "Annem sepete meyve ve peynirli sandviç koydu.",
+            "Sepete annem peynirli sandviç ve meyve koydu.",
+            "Sepete annem meyve ve peynirli sandviç koydu."
+          ]
         },
         {
           "schluessel": "tr.a2.e01.l07.a15",
@@ -4259,7 +4258,7 @@
       "art": "pruefstein",
       "ziel": {
         "de": "Prüfstein: Mein Wochenende",
-        "tr": "Sınav: Hafta sonum",
+        "tr": "Değerlendirme: Hafta sonum",
         "ar": "محطة الاختبار: عطلة نهاية الأسبوع"
       },
       "aufgaben": [
@@ -4336,12 +4335,12 @@
           "typ": "frei",
           "ziel": "tr.a2.e01.s0128",
           "nach": "ziel",
-          "alternativen": ["Sen sergiyi beğendin mi?"]
+          "alternativen": ["Sen sergiyi beğendin mi?", "Sergiden hoşlandın mı?", "Sen sergiden hoşlandın mı?"]
         },
         {
           "schluessel": "tr.a2.e01.l08.a12",
           "typ": "frei",
-          "ziel": "tr.a2.e01.s0112",
+          "ziel": "tr.a2.e01.s0176",
           "nach": "ausgang"
         },
         {
