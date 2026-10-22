@@ -1,5 +1,17 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 22.10.2026 04:50 UTC – L6-Code und L8-03/04 frei und auf `main`:** L8-03/04 (Gegenprüfung Runde 2 frei; ad61cd9c +
+  Lizenz bei Tatoeba-Nennungen a1e0106c), L6-02/03 Zwei-Prüfer-Freigabe (Runde 2 frei, Migration 0022 lernapp_tag_kurs, S-L3 M-1;
+  6bec2eb0) und L6-05/06 Koran-Arabisch-Pfad (Runde 2 frei; 39479a4f, Hash/Status der Koran-Bedeutung nur aus
+  `lib/lernapp/paket/koran`). Beim Merge gefunden und behoben: Tabellenzahl 131, Rechte-Matrix ohne `religioesPruefen`,
+  `eintragEntsperren` und `lernapp-gruppe` (seit L3-06b/L7 rot). `main` = 39479a4f. Nachprüfung `scratchpad/tor-l6.sh` läuft
+  einmal (check, volle Integration, Sprachen, Religion, Wortlaut, Bau + Lern-App-E2E). **Restliste (niedrig, späteres
+  Nacharbeitspaket):** `raeumeAuf` im Vorrat nie aufgerufen (alte Paketfassungen auf der Quellen-Seite); Prüfweg für
+  Sprachkurs-Einträge mit Religionsbezug, Wissens-Tipps, Formelliste, Wurzeltabelle (bis dahin gesperrt); Warnung bei
+  Rollenkombination Prüfung + Administration/Befunde; Verweis bei Überlauf in /verwaltung/freigaben; Verfasser = nur letzte
+  Speicherung; E2E Koran-Lektion mit zwei Freigaben; Umfang Koran-Pfad 40 statt ≈ 10 Einheiten (Teil 30: 820 von 1.420 Formen
+  fehlen) – Entscheidung offen. Läuft weiter: A1 `wf_a71357bf-3d3`, A2 tr `wf_6fd0e1b9-fdb`, A2 de `wf_d74ea6c7-421`, Wissen
+  `wf_4a678e4a-1d2`.
 - **Stand 22.10.2026 04:15 UTC – nach dem Limit (21.10. 23:05) fortgesetzt:** A1 `wf_a71357bf-3d3` (Lektorat ar e01–e10 fertig,
   Übersetzung tr e01–e02/de e01–e08 fertig), A2 tr `wf_6fd0e1b9-fdb` (Entwurf e01–e02; e03/e04 Teildateien), A2 de
   `wf_d74ea6c7-421` (Entwurf e01–e04), L6 Wissen `wf_4a678e4a-1d2` (Entwürfe islam.grund.e01–e04 übersprungen → Belegprüfung;
