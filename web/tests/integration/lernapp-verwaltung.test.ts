@@ -619,12 +619,33 @@ describe('Vorschau, Cockpit und Betriebszähler', () => {
     expect(je['lernapp.schalter']!.status).toBe('ok');
     expect(je['lernapp.blob']!.status).toBe('warnung');
     expect(je['lernapp.pruefende-religioes']!.status).toBe('warnung');
+    expect(je['lernapp.pruefende-unabhaengig']!.status).toBe('ok');
     expect(je['lernapp.pruefende-sprache']!.status).toBe('ok');
     expect(je['lernapp.einheiten']!.meldung).toMatch(/veröffentlicht/);
     expect(je['lernapp.grenzen']!.status).toBe('hinweis');
     const aus: { id: string }[] = [];
     await lernappPruefen(db as unknown as Datenbank, { FUNKTION_LERNAPP: 'aus' }, true, new Date(), (p) => aus.push(p));
     expect(aus.map((p) => p.id)).toEqual(['lernapp.schalter']);
+  });
+
+  it('Cockpit-Hinweis: religiöse Prüfung zusammen mit Administration oder Lern-App-Redaktion (Unabhängigkeit, ADR 0040)', async () => {
+    const pruefen = async () => {
+      const liste: { id: string; status: string; meldung: string }[] = [];
+      await lernappPruefen(db as unknown as Datenbank, { FUNKTION_LERNAPP: 'an' }, true, new Date(), (p) => liste.push(p));
+      return liste.find((p) => p.id === 'lernapp.pruefende-unabhaengig')!;
+    };
+    await angemeldetAls([{ rolle: 'religioese_pruefung' }]);
+    expect((await pruefen()).status).toBe('ok');
+    await angemeldetAls([{ rolle: 'religioese_pruefung' }, { rolle: 'administration' }]);
+    const einer = await pruefen();
+    expect(einer.status).toBe('hinweis');
+    expect(einer.meldung).toMatch(/^1 Person mit der Rolle/);
+    await angemeldetAls([{ rolle: 'religioese_pruefung' }, ...BILDUNG]);
+    expect((await pruefen()).meldung).toMatch(/^2 Personen mit der Rolle/);
+    // gesperrte Konten zählen nicht
+    const gesperrt = (await angemeldetAls([{ rolle: 'religioese_pruefung' }, ...ADMIN]))!;
+    await db.update(schema.user).set({ gesperrtAm: new Date() }).where(eq(schema.user.id, gesperrt));
+    expect((await pruefen()).meldung).toMatch(/^2 Personen/);
   });
 });
 
