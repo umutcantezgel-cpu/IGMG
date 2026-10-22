@@ -6,6 +6,7 @@
       "label": "Bereiche der Lern-App",
       "uebersicht": "Übersicht",
       "sprachpruefung": "Sprachprüfung",
+      "religioes": "Religiöse Prüfung",
       "audio": "Audio-Studio",
       "meldungen": "Meldungen",
       "befunde": "Befunde",
@@ -71,7 +72,15 @@
       "audio_format": "Das ist keine m4a-, mp3-, ogg- oder webm-Datei.",
       "hochladenFehlgeschlagen": "Das Hochladen ist fehlgeschlagen. Bitte erneut versuchen.",
       "bestaetigen": "Bitte das Sperren ausdrücklich bestätigen.",
-      "bestaetigenFreigabe": "Bitte die Freigabe ausdrücklich bestätigen."
+      "bestaetigenFreigabe": "Bitte die Freigabe ausdrücklich bestätigen.",
+      "urteil_keineRolle": "Nur Personen mit der Rolle „Religiöse Prüfung“ prüfen religiöse Bausteine. Die Administration ersetzt keine Prüfung.",
+      "urteil_veraltet": "Der Baustein wurde inzwischen geändert. Bitte die Seite neu laden und den neuen Stand prüfen.",
+      "urteil_verfasser": "Sie haben diesen Stand verfasst oder überarbeitet. Prüfen müssen ihn zwei andere Personen.",
+      "urteil_kiHerkunft": "KI-Regel 2: Dieser Inhalt darf nicht von einer KI stammen, ist aber so gekennzeichnet. Er lässt sich nicht freigeben – bitte von einem Menschen verfassen lassen.",
+      "urteil_belegFehlt": "Diese Aussage hat keinen Beleg. Ohne Beleg ist keine Freigabe möglich.",
+      "urteil_belegeBestaetigen": "Bitte jeden Beleg einzeln am eigenen Exemplar prüfen und abhaken.",
+      "urteil_inhaltBestaetigen": "Bitte bestätigen Sie, dass Sie den Inhalt geprüft haben.",
+      "urteil_schonFreigegeben": "Sie haben diesen Stand schon freigegeben. Die zweite Freigabe muss von einer anderen Person kommen."
     },
     "feldFehler": {
       "urteilFehlt": "Bitte ein Urteil wählen.",
@@ -93,7 +102,9 @@
       "datei_defekt": "Die Datei ist beschädigt.",
       "datei_imPapierkorb": "Diese Datei liegt im Papierkorb der Medien. Bitte dort wiederherstellen.",
       "sprecherFehlt": "Bitte eine Sprecherin oder einen Sprecher wählen.",
-      "ohneVereinbarung": "Ohne gültige Vereinbarung ist keine Aufnahme möglich."
+      "ohneVereinbarung": "Ohne gültige Vereinbarung ist keine Aufnahme möglich.",
+      "vorschlagFehlt": "Bitte beschreiben Sie Ihre Rückfrage oder Ihren Änderungsvorschlag.",
+      "begruendungFehlt": "Bitte begründen Sie die Ablehnung."
     },
     "uebersicht": {
       "befunde": "Offene Befunde",
@@ -439,6 +450,167 @@
       "menschen": "Aufnahmen von Menschen",
       "menschenText": "Sprecherinnen und Sprecher mit hinterlegter Vereinbarung (Lizenz der Aufnahmen nach Modul A); Kennung im Manifest „mensch:<id>“.",
       "menschenLeer": "Noch keine Sprecherin und kein Sprecher angelegt."
+    },
+    "religioes": {
+      "titel": "Religiöse Prüfung",
+      "einleitung": "Aussagen, Quizfragen und Lektionen des Wissenskurses sowie Koran-Wortbedeutungen im Lern-App-Pfad. Sichtbar wird ein Baustein erst mit zwei Freigaben von zwei verschiedenen Personen zum aktuellen Stand.",
+      "regeln": "Prüfen Sie jede Aussage an Ihrem eigenen Exemplar des genannten Werks; hier steht nur die Fundstelle. Wer einen Stand verfasst hat, prüft ihn nicht. Jede Änderung setzt beide Freigaben zurück. Sie sehen nicht, wer sonst geprüft hat.",
+      "ansichten": "Ansicht",
+      "offen": "Zu prüfen ({anzahl})",
+      "geprueft": "Freigegeben ({anzahl})",
+      "leer": "Zurzeit wartet kein Baustein auf eine religiöse Prüfung.",
+      "leerGeprueft": "Noch kein Baustein hat zwei Freigaben.",
+      "seiten": "Seite {seite} von {seiten}",
+      "seiteZurueck": "Vorherige Seite",
+      "seiteVor": "Nächste Seite",
+      "beschriftung": "Bausteine zur religiösen Prüfung",
+      "spalte": {
+        "baustein": "Baustein",
+        "inhalt": "Inhalt",
+        "stand": "Freigaben",
+        "hinweis": "Hinweis",
+        "aktion": "Aktion"
+      },
+      "typ": {
+        "aussage": "Aussage",
+        "aufgabe": "Quizfrage",
+        "lektion": "Lektion",
+        "koran_bedeutung": "Koran-Wortbedeutung"
+      },
+      "kurs": {
+        "islam": "Islamisches Wissen",
+        "koran": "Koran-Arabisch",
+        "de": "Deutsch (Religionsbezug)",
+        "tr": "Türkisch (Religionsbezug)",
+        "ar": "Arabisch (Religionsbezug)"
+      },
+      "stand": "{stand}/2",
+      "standName": "{stand} von 2 Freigaben",
+      "standText": {
+        "0": "Noch keine Freigabe. Zwei Personen müssen prüfen.",
+        "1": "Eine Freigabe. Eine zweite Person muss noch prüfen.",
+        "2": "Zwei Freigaben. Der Baustein ist geprüft."
+      },
+      "hinweise": {
+        "unsicher": "Unsicher: Belegprüfung „teilweise“ oder „nicht belegt“",
+        "einwand": "Einwand liegt vor",
+        "eigenesOk": "Von Ihnen freigegeben",
+        "eigenerEinwand": "Ihr Einwand liegt vor",
+        "verfasser": "Von Ihnen verfasst",
+        "kiHerkunft": "KI-Regel 2: nicht freigebbar"
+      },
+      "pruefen": "Prüfen",
+      "pruefenName": "Prüfen: {baustein}",
+      "ansehen": "Ansehen",
+      "zurueck": "Zur Warteschlange",
+      "detailTitel": "Baustein prüfen",
+      "bausteinKennung": "{typ} · {schluessel}",
+      "lektion": "Lektion {schluessel}",
+      "inhaltTitel": "Inhalt",
+      "fundstellenTitel": "Fundstellen",
+      "fundstellenHinweis": "Prüfen Sie am eigenen Exemplar. Den Quelltext zeigt die Verwaltung nicht (Entscheidung der Gemeinde, LM-04).",
+      "belegName": "Beleg {nr}",
+      "keineBelege": "Dieser Baustein hat keine eigenen Belege.",
+      "aussageBezug": "Entsteht aus der Aussage {schluessel} (Freigaben der Aussage: {stand}/2)",
+      "wortform": "Wortform (aus den Koran-Daten)",
+      "feld": {
+        "aussage": "Aussage",
+        "meinung": "Meinung innerhalb der Schule",
+        "strittig": "Strittiges Thema",
+        "kinderGeeignet": "Für Kinder geeignet",
+        "aufgabentyp": "Aufgabentyp",
+        "fall": "Fall",
+        "frage": "Frage",
+        "behauptung": "Behauptung",
+        "anweisung": "Anweisung",
+        "text": "Text",
+        "optionen": "Antworten",
+        "schritte": "Schritte",
+        "paare": "Paare",
+        "loesung": "Lösung",
+        "ablenker": "Ablenker",
+        "richtig": "Richtig",
+        "begruendung": "Begründung",
+        "wortform": "Wortform (Verweis Sure:Vers:Wort)",
+        "art": "Art",
+        "ziel": "Lernziel",
+        "lektionsart": "Art der Lektion",
+        "umfang": "Aussagen / Aufgaben",
+        "sprache": "Sprache",
+        "bedeutung": "Bedeutung",
+        "wurzel": "Wurzel",
+        "anmerkung": "Anmerkung"
+      },
+      "ja": "ja",
+      "nein": "nein",
+      "beleg": {
+        "werk": "Werk",
+        "kapitel": "Kitab › Bab › Fasl",
+        "ausgabe": "Ausgabe",
+        "bandSeite": "Band und Seite",
+        "band": "Band {band}",
+        "seite": "S. {seite}",
+        "passage": "Passage",
+        "fundstelle": "Fundstelle (OpenITI)",
+        "art": "Art des Belegs",
+        "artWert": {
+          "sinngemaess": "sinngemäß (eigene Worte)",
+          "woertlich": "wörtlich (von Menschen übersetzt)"
+        },
+        "belegpruefung": "Belegprüfung (Agent, ordnet nur die Reihenfolge)",
+        "belegpruefungWert": {
+          "belegt": "belegt",
+          "teilweise": "teilweise",
+          "nicht_belegt": "nicht belegt"
+        },
+        "ohne": "–"
+      },
+      "meldung": {
+        "einwand": "Zum aktuellen Stand liegt ein Einwand vor (Rückfrage, Änderungsvorschlag oder Ablehnung). Sichtbar wird der Baustein erst, wenn der Einwand ausgeräumt ist.",
+        "kiHerkunft": "KI-Regel 2: Koran-Wortbedeutungen, Wurzeln, Tajwid-Texte sowie Vers- und Hadith-Übersetzungen verfassen nur Menschen. Dieser Stand ist als KI-Entwurf gekennzeichnet und lässt sich nicht freigeben.",
+        "unsicher": "Die Belegprüfung hält mindestens einen Beleg nur für teilweise oder nicht belegt. Bitte besonders genau prüfen.",
+        "verfasser": "Sie haben diesen Stand verfasst oder überarbeitet. Prüfen müssen ihn zwei andere Personen.",
+        "eigenes": "Ihr Urteil zum aktuellen Stand: {urteil}. Sie können es mit einem neuen Urteil ersetzen.",
+        "belegFehlt": "Diese Aussage hat keinen Beleg und lässt sich nicht freigeben."
+      },
+      "formular": {
+        "titel": "Ihr Urteil",
+        "belege": "Belege am eigenen Exemplar geprüft",
+        "belegHaken": "Quelle geprüft, Aussage stimmt nach hanefitischer Lehre",
+        "inhaltHaken": {
+          "aufgabe": "Quizfrage geprüft, sie stimmt nach hanefitischer Lehre und passt zur Aussage",
+          "lektion": "Lektion geprüft (Lernziel und Eignung für Kinder)",
+          "koran_bedeutung": "Bedeutung geprüft, sie stimmt für diese Wortform"
+        },
+        "urteil": "Urteil",
+        "urteile": {
+          "aenderungsvorschlag": "Unsicher oder Änderungsvorschlag – Rückfrage an die Redaktion",
+          "ok": "In Ordnung – freigeben",
+          "abgelehnt": "Ablehnen"
+        },
+        "urteilHinweis": {
+          "aenderungsvorschlag": "Nicht freigegeben. Die Redaktion klärt bzw. überarbeitet; danach prüfen beide den neuen Stand.",
+          "ok": "Zählt als eine von zwei Freigaben – nur mit allen Haken oben.",
+          "abgelehnt": "Nicht freigegeben. Bitte begründen."
+        },
+        "vorschlag": "Rückfrage oder Änderungsvorschlag",
+        "vorschlagHinweis": "Pflicht bei „Unsicher oder Änderungsvorschlag“. Sie ändern den Baustein nicht selbst; die Redaktion arbeitet den Vorschlag ein.",
+        "kommentar": "Begründung",
+        "kommentarHinweis": "Pflicht beim Ablehnen.",
+        "speichern": "Urteil speichern",
+        "gespeichert": {
+          "stand_1": "Gespeichert: erste Freigabe (1/2). Eine zweite Person muss noch prüfen.",
+          "stand_2": "Gespeichert: zweite Freigabe (2/2). Der Baustein ist geprüft.",
+          "aenderungsvorschlag": "Gespeichert: Ihre Rückfrage geht an die Redaktion.",
+          "abgelehnt": "Gespeichert: Ablehnung mit Begründung."
+        }
+      },
+      "urteilName": {
+        "ok": "freigegeben",
+        "aenderungsvorschlag": "Rückfrage oder Änderungsvorschlag",
+        "abgelehnt": "abgelehnt",
+        "korrektur": "Korrektur"
+      }
     }
   }
 }

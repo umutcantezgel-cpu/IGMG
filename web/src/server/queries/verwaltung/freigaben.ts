@@ -2,8 +2,11 @@ import 'server-only';
 import type { JSONContent } from '@tiptap/core';
 import { and, asc, desc, eq, inArray, isNull } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
+import { funktionAn } from '@/lib/funktionen';
+import { ordneWarteschlange, RELIGIOESE_BAUSTEINE, type ReligioeserBausteinTyp } from '@/lib/lernapp/freigabe';
 import type { OrganisationKuerzel } from '@/lib/rechte/matrix';
 import { gueltigeBloecke } from '@/lib/validierung/bloecke';
+import { ladeReligioeseBausteine } from '@/server/queries/lernapp/religioes';
 
 /**
  * Freigaben (ADR 0030, ADR 0032): Warteschlange aller Inhalte „zur Prüfung“ – freie Seiten (Antrag im Verlauf
@@ -22,8 +25,18 @@ export const RELIGIOESE_TYPEN = [
   'wissen_thema',
 ] as const;
 export type ReligioeserTyp = (typeof RELIGIOESE_TYPEN)[number];
-export type FreigabeTyp = 'seite' | ReligioeserTyp;
-export const FREIGABE_TYPEN = ['seite', ...RELIGIOESE_TYPEN] as const;
+/**
+ * Bausteine der Lern-App mit Zwei-Prüfer-Freigabe (L6-02, ADR 0040 Nr. 5): Sie stehen in der Warteschlange und im Verlauf,
+ * entschieden werden sie nur in `/verwaltung/lernapp/religioes` (zwei Personen, Beleg-Haken je Beleg, aktueller Hash).
+ */
+export const LERNAPP_FREIGABE_TYPEN = RELIGIOESE_BAUSTEINE.map((t) => `lernapp_${t}` as const);
+export type LernappFreigabeTyp = `lernapp_${ReligioeserBausteinTyp}`;
+export type FreigabeTyp = 'seite' | ReligioeserTyp | LernappFreigabeTyp;
+export const FREIGABE_TYPEN = ['seite', ...RELIGIOESE_TYPEN, ...LERNAPP_FREIGABE_TYPEN] as const;
+
+export function istLernappFreigabeTyp(typ: string): typ is LernappFreigabeTyp {
+  return (LERNAPP_FREIGABE_TYPEN as readonly string[]).includes(typ);
+}
 
 /** Angabe in der Karte: `label` ist ein Schlüssel unter `verwaltung.freigaben.angabe`. */
 export type FreigabeAngabe = { label: string; wert: string; lang?: string; dir?: 'rtl'; lang2?: boolean };
@@ -41,6 +54,8 @@ export type FreigabeEintrag = {
   eingereichtAm: Date | null;
   eingereichtVon: string | null;
   organisation: OrganisationKuerzel | null;
+  /** Lern-App: Zwei-Prüfer-Freigabe – Stand (0/2, 1/2) und Adresse der Prüfansicht statt einer Entscheidung hier */
+  zweiPruefer?: { stand: number; href: string };
 };
 
 const GRENZE = 200;
@@ -243,10 +258,39 @@ async function offeneReligioese(): Promise<FreigabeEintrag[]> {
   ];
 }
 
-/** Alle offenen Prüfungen: religiöse zuerst, dann redaktionelle; je Art die ältesten Anträge zuerst. */
-export async function ladeWarteschlange(): Promise<FreigabeEintrag[]> {
-  const [seiten, religioes] = await Promise.all([offeneSeiten(), offeneReligioese()]);
-  const alle = [...seiten, ...religioes];
+/**
+ * Offene Bausteine der Lern-App (noch nicht 2/2, nicht zurückgezogen); nur bei eingeschalteter Lern-App. Erst filtern und
+ * ordnen (was die Person prüfen kann zuerst), dann kürzen – die ganze Warteschlange steht in der religiösen Prüfung.
+ */
+async function offeneLernapp(benutzerId: string): Promise<FreigabeEintrag[]> {
+  if (!(await funktionAn('lernapp'))) return [];
+  const bausteine = await ladeReligioeseBausteine(benutzerId);
+  return ordneWarteschlange(bausteine.filter((b) => !b.lage.geprueft))
+    .slice(0, GRENZE)
+    .map((b) => ({
+      inhaltTyp: `lernapp_${b.typ}` as const,
+      inhaltId: b.id,
+      art: 'religioes' as const,
+      titel: b.titel.length > 160 ? `${b.titel.slice(0, 159)}…` : b.titel,
+      angaben: [
+        { label: 'baustein', wert: b.schluessel },
+        { label: 'zweiPruefer', wert: `${b.stand}/2` },
+      ],
+      text: null,
+      eingereichtAm: null,
+      eingereichtVon: null,
+      organisation: null,
+      zweiPruefer: { stand: b.stand, href: `/verwaltung/lernapp/religioes/${b.typ}-${b.id}` },
+    }));
+}
+
+/**
+ * Alle offenen Prüfungen: religiöse zuerst, dann redaktionelle; je Art die ältesten Anträge zuerst. `benutzerId`: angemeldete
+ * Person (eigene Urteile der Lern-App-Bausteine).
+ */
+export async function ladeWarteschlange(benutzerId = ''): Promise<FreigabeEintrag[]> {
+  const [seiten, religioes, lernapp] = await Promise.all([offeneSeiten(), offeneReligioese(), offeneLernapp(benutzerId)]);
+  const alle = [...seiten, ...religioes, ...lernapp];
   const zeit = (e: FreigabeEintrag) => e.eingereichtAm?.getTime() ?? 0;
   return alle.sort((a, b) => (a.art === b.art ? zeit(a) - zeit(b) : a.art === 'religioes' ? -1 : 1));
 }
@@ -261,9 +305,16 @@ export type VerlaufZeile = {
   am: Date;
   von: string | null;
   kommentar: string | null;
+  /** Lern-App mit Zwei-Prüfer-Freigabe: Person und Kommentar bleiben verdeckt (Unabhängigkeit der Prüfenden) */
+  verdeckt: boolean;
 };
 
-/** Letzte Einträge des Freigabe-Verlaufs (neueste zuerst); Titel für freie Seiten und Wissensthemen. */
+/**
+ * Letzte Einträge des Freigabe-Verlaufs (neueste zuerst); Titel für freie Seiten und Wissensthemen. Schritte der Lern-App
+ * (`lernapp_*`, ADR 0040 Nr. 5) zeigen weder die prüfende Person noch den Kommentar ihres Einwands: Den Verlauf liest jede
+ * Person mit `freigabe.lesen`, auch die zweite prüfende Person vor ihrem eigenen Urteil („Sie sehen nicht, wer sonst geprüft
+ * hat“). Einwände und Vorschläge erreicht die Redaktion ohne Namen über „Befunde“.
+ */
 export async function ladeVerlauf(grenze = 50): Promise<VerlaufZeile[]> {
   const f = schema.freigabe;
   const zeilen = await db
@@ -297,8 +348,14 @@ export async function ladeVerlauf(grenze = 50): Promise<VerlaufZeile[]> {
       : Promise.resolve([]),
   ]);
   const titel = new Map<string, string>([...seiten, ...themen].map((s) => [s.id, s.titel.de]));
-  return zeilen.map((z) => ({
-    ...z,
-    titel: z.inhaltTyp === 'seite' || z.inhaltTyp === 'wissen_thema' ? (titel.get(z.inhaltId) ?? null) : null,
-  }));
+  return zeilen.map((z) => {
+    const verdeckt = istLernappFreigabeTyp(z.inhaltTyp);
+    return {
+      ...z,
+      von: verdeckt ? null : z.von,
+      kommentar: verdeckt ? null : z.kommentar,
+      verdeckt,
+      titel: z.inhaltTyp === 'seite' || z.inhaltTyp === 'wissen_thema' ? (titel.get(z.inhaltId) ?? null) : null,
+    };
+  });
 }

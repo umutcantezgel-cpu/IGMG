@@ -94,6 +94,15 @@ Migration `0021_lernapp_gruppen.sql` (`lernapp_gruppe`, `lernapp_familie`, `lern
     `lernapp_gruppen` und `lernapp_rangliste` in der Produktion aus. Ebenfalls offen (S-L3/L8): Rücknahme der Zustimmung
     auch in den Einstellungen (EL4 nennt sie) und die Tabellen `lernapp_rangliste_zustimmung` und `lernapp_familie` – wie
     alle Server-Daten der Lern-App – im Export nach Art. 15/20 (`exportiereKontodaten`).
+17. **Umgesetzt für D-L03/D-L04 (S-L3 M-1, 21.10.2026):** Der Abgleich leitet XP und Lektionen je Lerntag **und Kurs** ab
+    (`web/src/lib/lernapp/ereignisse/kurs.ts`, Tabelle `lernapp_tag_kurs`, Migration `0022_lernapp_tag_kurs.sql` mit
+    Nachtrag aus dem Ereignisprotokoll). Der Kurs einer Lektion ist ihr Kurs-Slug, sofern der Lektionsschlüssel dazu passt;
+    der Kurs von XP ist der erste Teil ihres Bezugs; alles andere zählt zu `unbekannt` und damit nirgends. Bestenliste
+    (Gruppe und Familie) und Gruppenziel zählen nur die sechs Sprachkurse (D-L04); der Stand der Lehrkraft zählt nur die
+    Kurse der Zuweisungen ihrer Gruppe (D-L03) – ohne Zuweisung stehen dort Nullen. Nur die Lernwoche der Eltern liest
+    weiter die Tagessumme aller Kurse (`lernapp_tag`). Damit ist die Bedingung aus Nr. 16 technisch erfüllt; die Entscheidung
+    der Menschen (LM-08/LM-10) über die Schalter bleibt. Tests: `tests/unit/lernapp/tag-kurs.test.ts`, Integration
+    `lernapp-gruppe` („S-L3 M-1“) und `lernapp-sync`.
 
 ## Alternativen
 

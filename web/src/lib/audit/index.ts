@@ -127,6 +127,8 @@ export type AuditAktion =
   | 'lernapp.stimme_gewaehlt'
   | 'lernapp.meldung_bearbeitet'
   | 'lernapp.eintrag_entsperrt'
+  // Lern-App, religiöse Zwei-Prüfer-Freigabe (L6-02/03, ADR 0040 Nr. 5): Typ, Kennung, Urteil, Stand – ohne Inhalte
+  | 'lernapp.religioes_geprueft'
   // Lern-App, Gruppen (L7-02): Zuweisungen, Gruppenziel, Bestenliste, Zustimmung – nur Kennungen und Schalterstände
   | 'lernapp.zuweisung_angelegt'
   | 'lernapp.zuweisung_entfernt'

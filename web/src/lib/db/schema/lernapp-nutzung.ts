@@ -130,6 +130,27 @@ export const lernappTag = pgTable(
   (t) => [primaryKey({ columns: [t.benutzerId, t.tag] })],
 );
 
+/**
+ * Lerntag je Konto **und Kurs** (S-L3 M-1, ADR 0043 Fortschreibung Nr. 17, Migration 0022): XP und Lektionen, abgeleitet
+ * aus den Ereignissen (`ereignisse/kurs.ts`). Bestenliste und Gruppenziel lesen daraus nur die Sprachkurse (D-L04), der
+ * Stand der Lehrkraft nur die Kurse der Zuweisungen ihrer Gruppe (D-L03) – so lässt keine Zahl auf Lernen im Wissenskurs
+ * oder im Koran-Arabisch-Pfad schließen (Art. 9 DSGVO). `kurs` ist der Kurs-Slug (`tr-aus-de`, `islam`, …) oder
+ * `unbekannt` (zählt nirgends). Gelöscht mit dem Profil.
+ */
+export const lernappTagKurs = pgTable(
+  'lernapp_tag_kurs',
+  {
+    benutzerId: text()
+      .notNull()
+      .references(() => lernappProfil.benutzerId, { onDelete: 'cascade' }),
+    tag: date({ mode: 'string' }).notNull(),
+    kurs: text().notNull(),
+    xp: integer().notNull().default(0),
+    lektionen: smallint().notNull().default(0),
+  },
+  (t) => [primaryKey({ columns: [t.benutzerId, t.tag, t.kurs] })],
+);
+
 export type LernappRubrik = { pruefliste: Record<string, boolean>; selbst?: number };
 
 /**

@@ -122,6 +122,21 @@ export function lernwoche(woche: Woche, tage: readonly TagStand[]): WochenTag[] 
   });
 }
 
+/**
+ * Tagessummen je Kurs (`lernapp_tag_kurs`) zu Tagen zusammenfassen – für den Stand der Lehrkraft, die nur die Kurse der
+ * Zuweisungen ihrer Gruppe sieht (D-L03, S-L3 M-1). Pausen gehören zu keinem Kurs und erscheinen dort nicht.
+ */
+export function tageAusKursen(zeilen: readonly { tag: string; xp: number; lektionen: number }[]): TagStand[] {
+  const je = new Map<string, TagStand>();
+  for (const z of zeilen) {
+    const t = je.get(z.tag) ?? { tag: z.tag, xp: 0, lektionen: 0, pause: false };
+    t.xp += Math.max(0, z.xp);
+    t.lektionen += Math.max(0, z.lektionen);
+    je.set(z.tag, t);
+  }
+  return [...je.values()];
+}
+
 /** Summen einer Lernwoche: XP, Lektionen, Lerntage. */
 export function wochenSumme(tage: readonly WochenTag[]): { xp: number; lektionen: number; lerntage: number } {
   return tage.reduce((s, t) => ({ xp: s.xp + t.xp, lektionen: s.lektionen + t.lektionen, lerntage: s.lerntage + (t.gelernt ? 1 : 0) }), {

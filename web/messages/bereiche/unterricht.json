@@ -245,7 +245,7 @@
         },
         "ziel": {
           "titel": "Gruppenziel",
-          "text": "Die Gruppe sammelt gemeinsam XP für ein Wochenziel – ohne Namen. Die Summe erscheint erst ab drei Lernenden mit Einwilligung.",
+          "text": "Die Gruppe sammelt gemeinsam XP aus den Sprachkursen für ein Wochenziel – ohne Namen. Die Summe erscheint erst ab drei Lernenden mit Einwilligung.",
           "wahl": "Wochenziel",
           "keins": "Kein Gruppenziel",
           "xp": "{n} XP",
@@ -256,7 +256,7 @@
         },
         "bestenliste": {
           "titel": "Bestenliste",
-          "text": "Freiwillig und nur für Lernende ab 16 Jahren, die selbst zugestimmt haben: Vorname mit Initial und XP dieser Woche, ohne Ränge und Medaillen. Kinder unter 16 erscheinen nie und sehen sie nicht.",
+          "text": "Freiwillig und nur für Lernende ab 16 Jahren, die selbst zugestimmt haben: Vorname mit Initial und XP dieser Woche aus den Sprachkursen, ohne Ränge und Medaillen. Kinder unter 16 erscheinen nie und sehen sie nicht.",
           "an": "eingeschaltet",
           "aus": "ausgeschaltet",
           "einschalten": "Bestenliste einschalten",
@@ -264,7 +264,7 @@
         },
         "stand": {
           "titel": "Stand dieser Woche",
-          "text": "Zahlen nur von Lernenden, deren Einwilligung „Lern-App“ gilt. Woche vom {von} bis {bis}.",
+          "text": "Zahlen nur von Lernenden, deren Einwilligung „Lern-App“ gilt, und nur aus den Kursen, die dieser Gruppe zugewiesen sind. Woche vom {von} bis {bis}.",
           "tabelle": "Stand der Lernenden in dieser Woche",
           "name": "Name",
           "lerntage": "Lerntage",
@@ -524,7 +524,7 @@
         },
         "ziel": {
           "titel": "Grup hedefi",
-          "text": "Grup, haftalık bir hedef için birlikte XP toplar – isimsiz. Toplam, onayı olan en az üç öğrenciden itibaren görünür.",
+          "text": "Grup, haftalık bir hedef için dil kurslarından birlikte XP toplar – isimsiz. Toplam, onayı olan en az üç öğrenciden itibaren görünür.",
           "wahl": "Haftalık hedef",
           "keins": "Grup hedefi yok",
           "xp": "{n} XP",
@@ -535,7 +535,7 @@
         },
         "bestenliste": {
           "titel": "Başarı listesi",
-          "text": "İsteğe bağlı ve yalnızca kendisi onay vermiş 16 yaş ve üzeri öğrenciler için: adın baş harfiyle birlikte ad ve bu haftanın XP'leri, sıra ve madalya olmadan. 16 yaş altındaki çocuklar asla görünmez ve listeyi görmez.",
+          "text": "İsteğe bağlı ve yalnızca kendisi onay vermiş 16 yaş ve üzeri öğrenciler için: adın baş harfiyle birlikte ad ve dil kurslarından bu haftanın XP'leri, sıra ve madalya olmadan. 16 yaş altındaki çocuklar asla görünmez ve listeyi görmez.",
           "an": "açık",
           "aus": "kapalı",
           "einschalten": "Başarı listesini aç",
@@ -543,7 +543,7 @@
         },
         "stand": {
           "titel": "Bu haftanın durumu",
-          "text": "Rakamlar yalnızca „Öğrenme Uygulaması“ onayı geçerli olan öğrencilerden. Hafta: {von} – {bis}.",
+          "text": "Rakamlar yalnızca „Öğrenme Uygulaması“ onayı geçerli olan öğrencilerden ve yalnızca bu gruba atanmış kurslardan. Hafta: {von} – {bis}.",
           "tabelle": "Öğrencilerin bu haftaki durumu",
           "name": "Ad",
           "lerntage": "Öğrenme günleri",
@@ -803,7 +803,7 @@
         },
         "ziel": {
           "titel": "Group goal",
-          "text": "The group collects XP together towards a weekly goal – without names. The total only appears from three learners with consent.",
+          "text": "The group collects XP from the language courses together towards a weekly goal – without names. The total only appears from three learners with consent.",
           "wahl": "Weekly goal",
           "keins": "No group goal",
           "xp": "{n} XP",
@@ -814,7 +814,7 @@
         },
         "bestenliste": {
           "titel": "Leaderboard",
-          "text": "Voluntary and only for learners aged 16 and over who have agreed themselves: first name with initial and this week's XP, without ranks or medals. Children under 16 never appear and never see it.",
+          "text": "Voluntary and only for learners aged 16 and over who have agreed themselves: first name with initial and this week's XP from the language courses, without ranks or medals. Children under 16 never appear and never see it.",
           "an": "on",
           "aus": "off",
           "einschalten": "Turn leaderboard on",
@@ -822,7 +822,7 @@
         },
         "stand": {
           "titel": "This week",
-          "text": "Figures only from learners whose “Learning app” consent applies. Week from {von} to {bis}.",
+          "text": "Figures only from learners whose “Learning app” consent applies, and only from the courses assigned to this group. Week from {von} to {bis}.",
           "tabelle": "Learners' progress this week",
           "name": "Name",
           "lerntage": "Learning days",

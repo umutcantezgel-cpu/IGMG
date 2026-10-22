@@ -20,13 +20,16 @@ const STATUS_FARBE = {
 } as const;
 
 function darfEntscheiden(a: Angemeldet, e: FreigabeEintrag): boolean {
+  // Lern-App: zwei Freigaben nur mit der Rolle „Religiöse Prüfung“ (nie per Administration, ADR 0040 Nr. 5)
+  if (e.zweiPruefer) return darf(a.rollen, 'lernapp.religioes.pruefen');
   if (e.art === 'religioes') return darf(a.rollen, 'religioes.freigeben');
   return darf(a.rollen, 'seite.veroeffentlichen', { organisation: e.organisation });
 }
 
 /**
  * Verwaltung › Freigaben (ADR 0030, ADR 0032): Warteschlange „zur Prüfung“ getrennt nach religiös und redaktionell,
- * je Inhalt alle Angaben zum Lesen und die Entscheidung mit Kommentar; der Verlauf zeigt die letzten 50 Schritte.
+ * je Inhalt alle Angaben zum Lesen und die Entscheidung mit Kommentar; der Verlauf zeigt die letzten 50 Schritte (Schritte der
+ * Lern-App ohne prüfende Person und Kommentar, `ladeVerlauf`).
  */
 export default async function Freigaben({ searchParams }: PageProps<'/[locale]/verwaltung/freigaben'>) {
   const a = await verlangeSeitenRecht('freigabe.lesen');
@@ -36,7 +39,7 @@ export default async function Freigaben({ searchParams }: PageProps<'/[locale]/v
   const [t, tg, offen] = await Promise.all([
     getTranslations('verwaltung.freigaben'),
     getTranslations('verwaltung.shell'),
-    ladeWarteschlange(),
+    ladeWarteschlange(a.benutzerId),
   ]);
   const zeit = (d: Date) => `${datumLang(d, 'de')}, ${uhrzeit(d, 'de')}`;
   const ansichten = (
@@ -83,7 +86,7 @@ export default async function Freigaben({ searchParams }: PageProps<'/[locale]/v
                     <td className="px-4 py-3">
                       <span className={cn(PILLE, STATUS_FARBE[z.status])}>{t(`status.${z.status}`)}</span>
                     </td>
-                    <td className="px-4 py-3">{z.von ?? t('unbekannt')}</td>
+                    <td className="px-4 py-3">{z.verdeckt ? t('verdeckt') : (z.von ?? t('unbekannt'))}</td>
                     <td className="px-4 py-3 text-16">{z.kommentar}</td>
                   </tr>
                 ))}
@@ -184,7 +187,20 @@ export default async function Freigaben({ searchParams }: PageProps<'/[locale]/v
                         </div>
                       </section>
                     ))}
-                    {darfEs ? (
+                    {e.zweiPruefer ? (
+                      darfEs ? (
+                        <NextLink
+                          href={e.zweiPruefer.href}
+                          aria-label={t('zweiPrueferPruefenName', { titel: e.titel })}
+                          className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4"
+                        >
+                          {t('zweiPrueferPruefen')}
+                          <ArrowRight aria-hidden className="size-4" />
+                        </NextLink>
+                      ) : (
+                        <Meldung art="info">{t('nurLernappReligioes')}</Meldung>
+                      )
+                    ) : darfEs ? (
                       <FreigabeEntscheidung aktion={entscheideFreigabe} inhaltTyp={e.inhaltTyp} inhaltId={e.inhaltId} titel={e.titel} />
                     ) : (
                       <Meldung art="info">{e.art === 'religioes' ? t('nurReligioes') : t('nurVeroeffentlichen')}</Meldung>
