@@ -288,6 +288,7 @@ Status: **geplant** = in PLAN, KERN oder ADR festgelegt, Code ab L1; **Vorschlag
 | D-L13 | Uhrzeiten: Sehen Eltern und Lehrkräfte Zeitpunkte oder nur Lerntage? | nur Lerntage; die Uhrzeit braucht nur die Wiederholungsplanung | Bildung, DSB |
 | D-L14 | Art. 9 Abs. 2 lit. d (religiöse Organisation) ergänzend zur Einwilligung? | nur ergänzend; Grundlage bleibt die ausdrückliche Einwilligung | Recht |
 | D-L15 | Sprachen der Einwilligung: Lern-App de/tr/ar, „Mein Bereich“ de/tr/en | Text in de, tr, ar und en; Version je angezeigter Sprache (wie D-15) | DSB, Bildung |
+| D-L16 | Kommentar der Lehrkraft zu einer Schreibabgabe eines Kindes (unter 16): Freitext einer erwachsenen Person an ein einzelnes Kind, jederzeit änderbar, ohne zweiten Erwachsenen (die Aufsicht sieht Schreibabgaben bewusst nicht) und ohne Meldeweg. ADR 0042 Nr. 11 lässt den Kommentar zu; zu KERN 4.0 §5 („keine Freitext-Kommunikation zwischen Personen“) besteht eine Spannung (Gegenprüfung L5-03). | bei Kinderkonten Kommentar und Prüfliste auch den Eltern zeigen oder einen Knopf „Kommentar melden“ an die Ansprechperson für Kinderschutz anbieten (wie S-01, S-02, S-07 im Chat) `[Entscheidung Kinderschutz]` | Kinderschutz, DSB, Bildung (LM-08) |
 
 ## 12. Konsultation, Freigabe, Überprüfung
 
