@@ -104,6 +104,15 @@ Migration `0021_lernapp_gruppen.sql` (`lernapp_gruppe`, `lernapp_familie`, `lern
     der Menschen (LM-08/LM-10) über die Schalter bleibt. Tests: `tests/unit/lernapp/tag-kurs.test.ts`, Integration
     `lernapp-gruppe` („S-L3 M-1“) und `lernapp-sync`.
 
+## Fortschreibung durch L4-03 (22.10.2026)
+
+18. **Stufe je Kurs (Nr. 5):** Die Regel „in einem Sprachkurs die Prüfsteine aller Einheiten der Stufe geschafft (Zahl je
+    Stufe nach Rahmenplan)“ steht in `web/src/lib/lernapp/ereignisse/stufen.ts`; `abzeichen.ts` nutzt sie unverändert für
+    die Abzeichen `stufe-a1` … `stufe-c1` (eines je Stufe, gleich in welchem Kurs – der Katalog bleibt bei 41 Arten). Den Kurs
+    nennen der Lernpfad („Stufe abgeschlossen“ an der Stufe) und „Fortschritt“ (abgeschlossene Stufen je Kurs), beide aus dem
+    abgeleiteten Speicher `lektionen` des Geräts, ohne Konto und ohne Vergleich. Wortlaut ohne „Zertifikat“ (Nr. 5).
+    Tests: `tests/unit/lernapp/ansichten-l4.test.tsx`, E2E `lernapp/spielelemente.spec.ts` („Stufe abgeschlossen“).
+
 ## Alternativen
 
 - Spielmechanik wie Duolingo mit Herzen, Ligen und Serien-Alarm: verworfen (Nutzerentscheidung „sanft, ohne Druck“).
