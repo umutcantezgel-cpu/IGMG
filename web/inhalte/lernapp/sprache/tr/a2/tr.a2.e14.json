@@ -1078,7 +1078,7 @@
       "lemma": "online",
       "wortart": "adjektiv",
       "merkmale": {
-        "harmonie": "e/i"
+        "harmonie": "a/ı"
       },
       "frequenzRang": 777,
       "quelle": "ki:lernapp-inhalte/a2/v1",
@@ -1750,7 +1750,7 @@
     },
     {
       "schluessel": "tr.a2.e14.s0016",
-      "text": "İçerik: iki kitap, resimler ve bir mektup.",
+      "text": "İçinde iki kitap, resimler ve bir mektup var.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1893,7 +1893,7 @@
     },
     {
       "schluessel": "tr.a2.e14.s0039",
-      "text": "Rim'in ablası bir bankada çalışıyor.",
+      "text": "Rim'in teyzesi bir bankada çalışıyor.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2500,7 +2500,7 @@
     },
     {
       "schluessel": "tr.a2.e14.s0139",
-      "text": "Tamam, yazdım. Şimdi ne yapıyorum?",
+      "text": "Tamam, yazdım. Şimdi ne yapacağım?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2524,7 +2524,7 @@
     },
     {
       "schluessel": "tr.a2.e14.s0143",
-      "text": "Tutarı da yazdım. Şimdi gönderiyor muyum?",
+      "text": "Tutarı da yazdım. Şimdi göndereyim mi?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2651,7 +2651,7 @@
     },
     {
       "schluessel": "tr.a2.e14.s0164",
-      "text": "Kişisel verilerini herkese verme.",
+      "text": "Kişisel verilerini herkesle paylaşma.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2790,7 +2790,7 @@
     },
     {
       "schluessel": "tr.a2.e14.s0187",
-      "text": "Tutarı 17 Kasım'da banka hesabınızdan alacağız.",
+      "text": "Tutarı 17 Kasım'da banka hesabınızdan çekeceğiz.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3276,7 +3276,11 @@
           "alternativen": [
             "Lütfen paketin üstüne alıcının adını ve adresini yazın.",
             "Alıcının adını ve adresini paketin üstüne yazın, lütfen.",
-            "Lütfen alıcının adını ve adresini paketin üstüne yazın."
+            "Lütfen alıcının adını ve adresini paketin üstüne yazın.",
+            "Paketin üstüne alıcının adını ve adresini lütfen yazın.",
+            "Alıcının adını ve adresini paketin üstüne lütfen yazın.",
+            "Paketin üstüne lütfen alıcının adını ve adresini yazın.",
+            "Alıcının adını ve adresini lütfen paketin üstüne yazın."
           ],
           "ablenker": ["alıcıya", "yazıyorum"]
         },
@@ -3341,7 +3345,7 @@
           "schluessel": "tr.a2.e14.l01.a15",
           "typ": "wortbank",
           "anweisung": "uebersetze",
-          "satz": "tr.a2.e14.s0023",
+          "satz": "tr.a2.e14.s0028",
           "nach": "ausgang"
         },
         {
@@ -3389,7 +3393,7 @@
           "typ": "luecke",
           "ziel": "tr.a2.e14.s0050",
           "wort": 5,
-          "ablenker": ["biriktiriyorum", "biriktiriyorsun"]
+          "ablenker": ["biriktirmek", "biriktirmeyi"]
         },
         {
           "schluessel": "tr.a2.e14.l02.a06",
@@ -3402,6 +3406,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e14.s0046",
           "nach": "ziel",
+          "alternativen": ["Kartla ödüyorum, çünkü nakit yanımda yok."],
           "ablenker": ["nakitte", "ödüyorsun"]
         },
         {
@@ -3450,7 +3455,10 @@
           "alternativen": [
             "Bu ay çok para harcadık, önümüzdeki ay daha az harcayalım.",
             "Bu ay çok harcadık, gelecek ay daha az harcayalım.",
-            "Bu ay çok para harcadık, gelecek ay daha az para harcayalım."
+            "Bu ay çok para harcadık, gelecek ay daha az para harcayalım.",
+            "Bu ay çok para harcadık, önümüzdeki ay daha az para harcayalım.",
+            "Bu ay çok para harcadık, gelecek ay daha az harcamalıyız.",
+            "Bu ay çok para harcadık, önümüzdeki ay daha az harcamalıyız."
           ]
         },
         {
@@ -3478,7 +3486,7 @@
       "schluessel": "tr.a2.e14.l03",
       "art": "lektion",
       "ziel": {
-        "de": "Ich kann Rechnungen verstehen: Beträge, Prozent, inklusive und ohne.",
+        "de": "Ich kann Rechnungen verstehen: Beträge, Prozente, inklusive und exklusive.",
         "tr": "Faturaları anlamak: tutar, yüzde, dahil ve hariç",
         "ar": "فهم الفواتير: المبالغ والنسبة المئوية وما يشمله السعر وما لا يشمله"
       },
@@ -3505,7 +3513,7 @@
           "typ": "luecke",
           "ziel": "tr.a2.e14.s0081",
           "wort": 0,
-          "ablenker": ["Fiyate", "Fiyatı"]
+          "ablenker": ["Fiyate", "Fiyattan"]
         },
         {
           "schluessel": "tr.a2.e14.l03.a05",
@@ -3578,7 +3586,7 @@
           "schluessel": "tr.a2.e14.l03.a14",
           "typ": "satzbau",
           "ziel": "tr.a2.e14.s0083",
-          "alternativen": ["Mağaza her gün açık, pazar hariç."]
+          "alternativen": ["Mağaza her gün açık, pazar hariç.", "Pazar hariç mağaza her gün açık."]
         },
         {
           "schluessel": "tr.a2.e14.l03.a15",
@@ -3683,7 +3691,13 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e14.s0127",
           "nach": "ziel",
-          "alternativen": ["Banka şifreni telefonda asla sormaz.", "Telefonda banka şifreni asla sormaz."],
+          "alternativen": [
+            "Banka şifreni telefonda asla sormaz.",
+            "Telefonda banka şifreni asla sormaz.",
+            "Banka asla telefonda şifreni sormaz.",
+            "Banka telefonda asla şifreni sormaz.",
+            "Banka asla şifreni telefonda sormaz."
+          ],
           "ablenker": ["sorar", "şifremi"]
         },
         {
@@ -3717,14 +3731,14 @@
           "schluessel": "tr.a2.e14.l04.a13",
           "typ": "satzbau",
           "ziel": "tr.a2.e14.s0129",
-          "alternativen": ["Şifreni güvenlik için sık sık değiştir."]
+          "alternativen": ["Şifreni güvenlik için sık sık değiştir.", "Güvenlik için sık sık şifreni değiştir."]
         },
         {
           "schluessel": "tr.a2.e14.l04.a14",
           "typ": "frei",
-          "ziel": "tr.a2.e14.s0112",
+          "ziel": "tr.a2.e14.s0135",
           "nach": "ziel",
-          "alternativen": ["Şifremi ve kullanıcı adımı unuttum."]
+          "alternativen": ["Kimse şifreni bilmesin.", "Şifreni kimse bilmesin.", "Senin şifreni kimse bilmesin."]
         },
         {
           "schluessel": "tr.a2.e14.l04.a15",
@@ -3785,7 +3799,7 @@
           "typ": "luecke",
           "ziel": "tr.a2.e14.s0173",
           "wort": 3,
-          "ablenker": ["izliyorum", "izleyeceğim"]
+          "ablenker": ["izliyordım", "izleyeceğim"]
         },
         {
           "schluessel": "tr.a2.e14.l05.a07",
@@ -3793,6 +3807,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e14.s0159",
           "nach": "ziel",
+          "alternativen": ["Sisteme ödevini yükledin mi?"],
           "ablenker": ["sistemde", "yükledim"]
         },
         {
@@ -3859,7 +3874,11 @@
           "typ": "frei",
           "ziel": "tr.a2.e14.s0169",
           "nach": "ziel",
-          "alternativen": ["Önce yorumları okurum, sonra ürünü alırım.", "Önce yorumları okuyorum, sonra ürünü satın alıyorum."]
+          "alternativen": [
+            "Önce yorumları okurum, sonra ürünü alırım.",
+            "Önce yorumları okuyorum, sonra ürünü satın alıyorum.",
+            "Önce yorumları okurum, sonra ürünü satın alırım."
+          ]
         },
         {
           "schluessel": "tr.a2.e14.l05.a11",
@@ -4188,6 +4207,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e14.s0052",
           "nach": "ziel",
+          "alternativen": ["Elif bankaya kumbaradaki parayı yatırıyor."],
           "ablenker": ["bankada", "harcıyor"]
         },
         {
@@ -4369,6 +4389,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e14.s0049",
           "nach": "ziel",
+          "alternativen": ["Babam her yerde cüzdanını arıyor."],
           "ablenker": ["cüzdanda", "arıyorum"]
         },
         {
@@ -4409,7 +4430,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e14.s0130",
           "nach": "ziel",
-          "alternativen": ["Bu internet sitesi güvenli mi?"]
+          "alternativen": ["Bu internet sitesi güvenli mi?", "Bu web sitesi güvenli mi?"]
         },
         {
           "schluessel": "tr.a2.e14.l08.a10",
