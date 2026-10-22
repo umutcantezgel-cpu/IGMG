@@ -1,5 +1,12 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 22.10.2026 14:20 UTC – nach dem Limit (≈ 11:17, Reset 13:00) fortgesetzt:** L4-03 + Restliste (D) frei (Runde 2 nur
+  niedrig) und gemergt (2691947c; Typen, Lern-App-Unit 1.880, betroffene Integration grün nach angepasster Paket-Erwartung).
+  Seit 10:22 fertig: A1 Übersetzung tr e03–e08; A2 tr und de Entwurf 14/14, Lektorat de e01–e03; A2 ar Plan (900 Lemmata);
+  Wissen Entwurf e08, Belegprüfung e01–e06. Neu gestartet: Code `wf_4afbc8e5-8a0` (nur L5-03, Bau bis 7f282514 fertig → Abschluss,
+  Gegenprüfung, S-L2; Bau löscht `.next/server` sofort), A1 `wf_5bd88056-51e`, A2 tr `wf_6308344a-216`, A2 de `wf_6776c4e2-d8d`,
+  A2 ar `wf_916462a9-3a6`, Wissen `wf_666fb295-949` (neu `belegt` überspringt die Belegprüfung e01–e06). Platte 3,7 GB; Bau
+  und Lern-App-E2E der Nachprüfung gemeinsam mit L5-03.
 - **Stand 22.10.2026 10:25 UTC – nach dem Limit (≈ 05:05, Reset 08:00) fortgesetzt:** Nachprüfung `tor-l6.sh` auf 39479a4f:
   check, Sprachen, Religion, Wortlaut, Bau und Lern-App-E2E (99) grün; Integration grün bis auf die veraltete
   Startklar-Erwartung (behoben d933267e). Neu gestartet mit Fortsetzung: Code `wf_17f4825f-3e9` (B = L5-03 ab ZWISCHENSTAND
