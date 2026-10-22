@@ -73,6 +73,20 @@ describe('nennungenAus', () => {
     expect(nennungenAus([])).toEqual({ fremd: [], eigene: 0 });
   });
 
+  it('nennt die Namensnennung die Lizenz nicht (Tatoeba-Form aus S7 Nr. 7), wird der Lizenzname angehängt', () => {
+    const n = nennungenAus({
+      'tr.a1.e01.s0001': {
+        text: '[Satz]',
+        sprache: 'tr',
+        quelle: 'tatoeba:483496',
+        lizenz: 'CC-BY-2.0-FR',
+        namensnennung: 'Satz #483496 von [Benutzername]',
+      },
+    });
+    expect(n.fremd[0]?.nennung).toBe('Satz #483496 von [Benutzername] · CC BY 2.0 FR');
+    expect(n.fremd[0]?.adresse).toBe('https://tatoeba.org/de/sentences/show/483496');
+  });
+
   it('eigene Quellen wie im Lizenz-Prüfer; Adressen von Tatoeba und Wiktionary', () => {
     expect(['ki:x', 'redaktion', 'test:ton'].every(istEigeneQuelle)).toBe(true);
     expect(['tatoeba:1', 'wiktionary:de:Haus', 'redaktion2'].some(istEigeneQuelle)).toBe(false);

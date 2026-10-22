@@ -8,7 +8,8 @@ import { DATEN_LIZENZEN } from './quellen';
  *
  * - Fremde Quellen (Tatoeba, Wiktionary, …) stehen einzeln mit Text, Sprache und Namensnennung aus dem Paket. Fehlt dort der
  *   Link, ergänzt ihn die Adresse aus der Quelle (Tatoeba: Satzseite wie in `web/daten/tatoeba/QUELLE.md`; Wiktionary:
- *   Artikel). Ohne Namensnennung im Paket steht `<quelle> · <Lizenz>`.
+ *   Artikel). Ohne Namensnennung im Paket steht `<quelle> · <Lizenz>`; nennt die Namensnennung die Lizenz nicht (Tatoeba-Form
+ *   „Satz #<id> von <benutzer>“ aus S7 Nr. 7, Lizenz nur im Feld `lizenz`), wird ` · <Lizenz>` angehängt.
  * - Eigene Inhalte (`ki:`, `redaktion`, `test:`; wie im Lizenz-Prüfer) stehen unter CC BY-SA 4.0 (L0-E02) und werden nur
  *   gezählt, solange sie keine eigene Namensnennung tragen.
  */
@@ -43,6 +44,10 @@ export function quellAdresse(quelle: string): string | undefined {
 
 const istText = (x: unknown): x is string => typeof x === 'string' && x.length > 0;
 
+/** Ob eine Namensnennung ihre Lizenz schon nennt (Kennung, Name oder eine CC-/Unlicense-Angabe). */
+const nenntLizenz = (nennung: string, lizenz: string): boolean =>
+  nennung.includes(lizenz) || nennung.includes(lizenzName(lizenz)) || /\b(CC[ -]?(BY|0)|Unlicense)/i.test(nennung);
+
 /** Namensnennungen einer Einheit aus `paket.eintraege` (ungeprüfte Form aus dem Vorrat), nach Schlüssel geordnet. */
 export function nennungenAus(eintraege: unknown): EinheitNennungen {
   const ergebnis: EinheitNennungen = { fremd: [], eigene: 0 };
@@ -57,7 +62,7 @@ export function nennungenAus(eintraege: unknown): EinheitNennungen {
       ergebnis.eigene++;
       continue;
     }
-    const nennung = eigene ?? `${quelle} · ${lizenzName(lizenz)}`;
+    const nennung = eigene && nenntLizenz(eigene, lizenz) ? eigene : `${eigene ?? quelle} · ${lizenzName(lizenz)}`;
     const adresse = quellAdresse(quelle);
     const mitAdresse = adresse && !nennung.includes(new URL(adresse).hostname) ? adresse : undefined;
     ergebnis.fremd.push({ schluessel, text, sprache, nennung, ...(mitAdresse ? { adresse: mitAdresse } : {}) });
