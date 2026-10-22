@@ -1069,7 +1069,7 @@
       "lemma": "Erwachsene",
       "wortart": "nomen",
       "merkmale": {
-        "numerus": "nur Plural",
+        "numerus": "Plural",
         "artikel": "die",
         "hinweis": "subst. Adjektiv: der/die Erwachsene, ein Erwachsener, die Erwachsenen"
       },
@@ -2164,7 +2164,7 @@
     },
     {
       "schluessel": "de.a2.e02.s0161",
-      "text": "Die Schwestern haben die Fahrkarten schon am Freitag gekauft.",
+      "text": "Ranā hat die Fahrkarten schon am Freitag gekauft.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2200,13 +2200,13 @@
     },
     {
       "schluessel": "de.a2.e02.s0167",
-      "text": "Schnell, Ranā! Der Zug nach Gießen fährt auf Gleis 12.",
+      "text": "Schnell, Laylā! Der Zug nach Gießen fährt auf Gleis 12.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "de.a2.e02.s0168",
-      "text": "Die Schwestern haben sich sehr beeilt.",
+      "text": "Mutter und Tochter haben sich sehr beeilt.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2290,7 +2290,7 @@
     },
     {
       "schluessel": "de.a2.e02.s0182",
-      "text": "Wie viel Zeit hatten die Schwestern in Frankfurt?",
+      "text": "Wie viel Zeit hatten Ranā und Laylā in Frankfurt?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2338,7 +2338,7 @@
     },
     {
       "schluessel": "de.a2.e02.s0190",
-      "text": "Wann sind die Schwestern in Gießen angekommen?",
+      "text": "Wann sind Mutter und Tochter in Gießen angekommen?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2458,7 +2458,7 @@
     },
     {
       "schluessel": "de.a2.e02.s0210",
-      "text": "Vielen Dank, Jan! Das nächste Mal nehme ich dich mit.",
+      "text": "Vielen Dank, Jan! Du hast mir sehr geholfen.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2536,7 +2536,7 @@
     },
     {
       "schluessel": "de.a2.e02.s0223",
-      "text": "Das nächste Mal nehme ich dich mit.",
+      "text": "Du hast mir sehr geholfen.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2972,7 +2972,7 @@
           "satz": "de.a2.e02.s0039",
           "nach": "ziel",
           "alternativen": ["Auf Gleis 4 fährt der Zug nach Gießen.", "Nach Gießen fährt der Zug auf Gleis 4."],
-          "ablenker": ["Gleise", "von"]
+          "ablenker": ["Gleise", "in"]
         },
         {
           "schluessel": "de.a2.e02.l02.a10",
@@ -3265,7 +3265,11 @@
           "typ": "frei",
           "ziel": "de.a2.e02.s0110",
           "nach": "ziel",
-          "alternativen": ["Man kann in der Innenstadt schlecht parken.", "In der Innenstadt kann man nicht gut parken."]
+          "alternativen": [
+            "Man kann in der Innenstadt schlecht parken.",
+            "In der Innenstadt kann man nicht gut parken.",
+            "Man kann in der Innenstadt nicht gut parken."
+          ]
         },
         {
           "schluessel": "de.a2.e02.l04.a14",
@@ -3432,7 +3436,7 @@
           "typ": "frei",
           "ziel": "de.a2.e02.s0118",
           "nach": "ziel",
-          "alternativen": ["Wir haben den Zug verpasst."]
+          "alternativen": ["Wir haben den Zug verpasst.", "Unseren Zug haben wir verpasst."]
         },
         {
           "schluessel": "de.a2.e02.l05.a13",
@@ -3707,7 +3711,7 @@
           "schluessel": "de.a2.e02.l06.a08",
           "typ": "satzbau",
           "ziel": "de.a2.e02.s0223",
-          "alternativen": ["Ich nehme dich das nächste Mal mit."]
+          "alternativen": ["Mir hast du sehr geholfen."]
         },
         {
           "schluessel": "de.a2.e02.l06.a09",
@@ -3719,7 +3723,7 @@
         {
           "schluessel": "de.a2.e02.l06.a10",
           "typ": "hoeren_schreiben",
-          "ziel": "de.a2.e02.s0160"
+          "ziel": "de.a2.e02.s0177"
         },
         {
           "schluessel": "de.a2.e02.l06.a11",
@@ -3831,7 +3835,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a2.e02.s0234",
           "nach": "ziel",
-          "ablenker": ["sind", "verpasst"]
+          "ablenker": ["sind", "verpasst"],
+          "alternativen": ["Wir haben uns beeilt und noch den Bus erreicht."]
         },
         {
           "schluessel": "de.a2.e02.l07.a10",
@@ -3868,7 +3873,7 @@
           "typ": "frei",
           "ziel": "de.a2.e02.s0239",
           "nach": "ziel",
-          "alternativen": ["Die Fahrt hat 3 Stunden gedauert.", "Die Reise hat drei Stunden gedauert."]
+          "alternativen": ["Die Fahrt hat 3 Stunden gedauert.", "Die Reise hat drei Stunden gedauert.", "Die Fahrt dauerte drei Stunden."]
         },
         {
           "schluessel": "de.a2.e02.l07.a15",
