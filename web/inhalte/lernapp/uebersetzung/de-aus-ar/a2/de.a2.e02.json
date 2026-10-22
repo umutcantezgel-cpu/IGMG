@@ -1,0 +1,2755 @@
+{
+  "format": "igmg-lernapp-uebersetzung",
+  "version": 1,
+  "status": "entwurf",
+  "richtung": "de-aus-ar",
+  "einheit": "de.a2.e02",
+  "eintraege": [
+    {
+      "bezug": "de.a2.e02.ausser",
+      "text": "ما عدا، باستثناء (+ Dativ)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.ungefaehr",
+      "text": "تقريبًا، حوالي",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.mindestens",
+      "text": "على الأقلّ",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.hoechstens",
+      "text": "على الأكثر",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.spaetestens",
+      "text": "في موعد أقصاه، على أبعد تقدير",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.rechtzeitig",
+      "text": "في الوقت المناسب",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.unterwegs",
+      "text": "في الطريق",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.puenktlich",
+      "text": "في الموعد، ملتزم بالمواعيد",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.knapp",
+      "text": "ضيّق (الوقت)؛ بالكاد",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.guenstig",
+      "text": "رخيص، بسعر مناسب",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.kostenlos",
+      "text": "مجّانيّ",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.vorsichtig",
+      "text": "حذِر، بحذر",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.erreichen",
+      "text": "لحق بـ (القطار أو الحافلة)؛ وصل إلى",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.verlassen",
+      "text": "غادر (مكانًا)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.dauern",
+      "text": "استغرق، دام",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.umsteigen",
+      "text": "بدّل القطار أو الحافلة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.einsteigen",
+      "text": "ركب، صعد (إلى القطار أو الحافلة)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.ankommen",
+      "text": "وصل",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.abfahren",
+      "text": "انطلق (القطار أو الحافلة)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.verpassen",
+      "text": "فاتَه (القطار أو الحافلة)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.mitnehmen",
+      "text": "أخذ معه، اصطحب",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.parken",
+      "text": "ركن (السيّارة)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.beeilen",
+      "text": "أسرع، استعجل (sich beeilen)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.fahrkarte",
+      "text": "تذكرة سفر",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.ticket",
+      "text": "تذكرة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.karte",
+      "text": "بطاقة؛ تذكرة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.gleis",
+      "text": "سكّة؛ رقم الرصيف (Gleis 7: الرصيف 7)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.abfahrt",
+      "text": "انطلاق، مغادرة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.ankunft",
+      "text": "وصول",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.verspaetung",
+      "text": "تأخير، تأخّر",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.anschluss",
+      "text": "القطار التالي (عند التبديل)، وصلة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.bahn",
+      "text": "قطار، سكّة حديد",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.fahrplan",
+      "text": "جدول المواعيد",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.automat",
+      "text": "آلة بيع التذاكر",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.schalter",
+      "text": "شبّاك (التذاكر)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.bahnsteig",
+      "text": "رصيف المحطّة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.station",
+      "text": "محطّة (على الخطّ)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.linie",
+      "text": "خطّ (حافلة أو ترام)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.richtung",
+      "text": "اتّجاه",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.fahrt",
+      "text": "رحلة، مشوار",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.fahrer",
+      "text": "سائق",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.verkehr",
+      "text": "حركة المرور، السير",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.verkehrsmittel",
+      "text": "وسيلة نقل، وسيلة مواصلات",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.strassenbahn",
+      "text": "ترام",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.taxi",
+      "text": "سيّارة أجرة، تاكسي",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.wagen",
+      "text": "سيّارة (= Auto)؛ عربة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.rad",
+      "text": "درّاجة هوائيّة (= Fahrrad)؛ عجلة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.motorrad",
+      "text": "درّاجة ناريّة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.fuehrerschein",
+      "text": "رخصة القيادة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.kilometer",
+      "text": "كيلومتر",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.strecke",
+      "text": "مسار، خطّ السير (بين مكانين)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.zentrum",
+      "text": "مركز (المدينة)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.innenstadt",
+      "text": "وسط المدينة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.hauptbahnhof",
+      "text": "محطّة القطار الرئيسيّة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.ausgang",
+      "text": "مخرج",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.auskunft",
+      "text": "الاستعلامات",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.information",
+      "text": "معلومة، معلومات",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.hinweis",
+      "text": "تنبيه، ملاحظة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.stau",
+      "text": "ازدحام مروريّ، زحمة سير",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.erwachsene",
+      "text": "بالغون، كبار (der/die Erwachsene: بالغ، بالغة)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.tante",
+      "text": "خالة، عمّة",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.autobahn",
+      "text": "طريق سريع",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.parkplatz",
+      "text": "موقف سيّارات",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.entfernung",
+      "text": "مسافة، بُعد",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.kontrollieren",
+      "text": "فحص، تحقّق من (التذاكر)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0001",
+      "text": "بأيّ وسيلة نقل تأتي إلى العمل؟",
+      "alternativen": ["بأيّ وسيلة نقل تذهب إلى العمل؟", "بماذا تأتي إلى العمل؟", "ما وسيلة النقل التي تأتي بها إلى العمل؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0002",
+      "text": "أذهب إلى العمل بالقطار.",
+      "alternativen": ["أذهب بالقطار إلى العمل.", "أنا أذهب إلى العمل بالقطار.", "بالقطار أذهب إلى العمل."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0003",
+      "text": "أذهب إلى العمل بالدرّاجة.",
+      "alternativen": ["أذهب بالدرّاجة إلى العمل.", "أنا أذهب إلى العمل بالدرّاجة.", "بالدرّاجة أذهب إلى العمل."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0004",
+      "text": "أذهب إلى العمل بالترام.",
+      "alternativen": ["أذهب بالترام إلى العمل.", "أنا أذهب إلى العمل بالترام.", "بالترام أذهب إلى العمل."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0005",
+      "text": "تذهب إليف إلى المدرسة بالترام.",
+      "alternativen": ["إليف تذهب إلى المدرسة بالترام.", "تذهب إليف بالترام إلى المدرسة.", "بالترام تذهب إليف إلى المدرسة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0006",
+      "text": "آتي بالدرّاجة.",
+      "alternativen": ["سآتي بالدرّاجة.", "أنا آتٍ بالدرّاجة.", "أجيء بالدرّاجة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0007",
+      "text": "يذهب مراد بالدرّاجة الناريّة كلّ يوم.",
+      "alternativen": [
+        "مراد يركب الدرّاجة الناريّة كلّ يوم.",
+        "كلّ يوم يذهب مراد بالدرّاجة الناريّة.",
+        "يتنقّل مراد بالدرّاجة الناريّة كلّ يوم."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0008",
+      "text": "الحافلة والقطار والترام وسائل نقل.",
+      "alternativen": [
+        "الحافلة والقطار والترام من وسائل النقل.",
+        "الباص والقطار والترام وسائل مواصلات.",
+        "الحافلة والقطار والترام هي وسائل نقل."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0009",
+      "text": "في الصباح تكون حركة المرور في المدينة كثيفة.",
+      "alternativen": [
+        "صباحًا تكون حركة السير في المدينة كثيفة.",
+        "في الصباح هناك حركة مرور كثيرة في المدينة.",
+        "في الصباح يكون في المدينة زحام كبير."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0010",
+      "text": "على الطريق السريع ازدحام كبير.",
+      "alternativen": [
+        "هناك ازدحام مروريّ كبير على الطريق السريع.",
+        "على الطريق السريع زحمة شديدة.",
+        "هناك زحمة سير شديدة على الطريق السريع."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0011",
+      "text": "نحن عالقون في الازدحام وسنتأخّر.",
+      "alternativen": ["علقنا في زحمة السير وسنصل متأخّرين.", "نحن في الزحمة وسنتأخّر.", "نقف في الازدحام وسنصل متأخّرين."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0012",
+      "text": "السائق يقود بحذر شديد.",
+      "alternativen": ["يقود السائق بحذر شديد.", "السائق حذِر جدًّا في القيادة.", "يقود السائق بحذر كبير."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0013",
+      "text": "السائق يقود بسرعة زائدة.",
+      "alternativen": ["يقود السائق بسرعة زائدة.", "السائق يقود بسرعة مفرطة.", "السائق يسرع أكثر من اللازم."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0014",
+      "text": "هل عندك رخصة قيادة؟",
+      "alternativen": ["هل لديك رخصة قيادة؟", "عندك رخصة قيادة؟", "هل معك رخصة قيادة؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0015",
+      "text": "ليس عندي رخصة قيادة بعد.",
+      "alternativen": ["لا أملك رخصة قيادة بعد.", "لم أحصل على رخصة القيادة بعد.", "ليست لديّ رخصة قيادة حتّى الآن."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0016",
+      "text": "نعم، لكن ليس عندي سيّارة.",
+      "alternativen": ["نعم، ولكن ليست لديّ سيّارة.", "نعم، لكنّي لا أملك سيّارة.", "عندي، لكن ليس عندي سيّارة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0017",
+      "text": "أين يمكننا أن نركن السيّارة؟",
+      "alternativen": ["أين نستطيع أن نركن؟", "أين يمكن أن نركن؟", "أين نركن السيّارة؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0018",
+      "text": "لا يوجد هنا موقف سيّارات.",
+      "alternativen": ["لا يوجد موقف سيّارات هنا.", "ليس هنا موقف للسيّارات.", "هنا لا يوجد موقف سيّارات."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0019",
+      "text": "لا يذهب يان بالدرّاجة عند المطر.",
+      "alternativen": [
+        "عند المطر لا يذهب يان بالدرّاجة.",
+        "يان لا يذهب بالدرّاجة عند المطر.",
+        "لا يركب يان الدرّاجة عند المطر.",
+        "عندما تمطر لا يذهب يان بالدرّاجة.",
+        "يان لا يركب الدرّاجة في المطر."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0020",
+      "text": "الأطفال يذهبون إلى المدرسة بالدرّاجة.",
+      "alternativen": [
+        "يذهب الأطفال إلى المدرسة بالدرّاجة.",
+        "يذهب الأطفال بالدرّاجة إلى المدرسة.",
+        "الأولاد يذهبون إلى المدرسة بالدرّاجة."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0021",
+      "text": "يجب أن تكون حذرًا على الدرّاجة الناريّة.",
+      "alternativen": [
+        "على الدرّاجة الناريّة يجب أن تكون حذرًا.",
+        "عليك أن تنتبه عندما تركب الدرّاجة الناريّة.",
+        "مع الدرّاجة الناريّة يجب أن تكون حذرًا."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0022",
+      "text": "قُدْ بحذر!",
+      "alternativen": ["انتبه في القيادة!", "سُقْ بحذر!", "كن حذرًا في القيادة!"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0023",
+      "text": "أذهب كلّ صباح إلى العمل بالترام.",
+      "alternativen": ["كلّ صباح أذهب إلى العمل بالترام.", "أذهب إلى العمل بالترام كلّ صباح.", "كلّ صباح أذهب بالترام إلى العمل."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0024",
+      "text": "نهارك سعيد! كيف يمكنني أن أساعدك؟",
+      "alternativen": ["نهارك سعيد! ماذا أستطيع أن أفعل لك؟", "طاب يومك! كيف يمكنني أن أساعدك؟", "نهارك سعيد! بماذا أخدمك؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0025",
+      "text": "تذكرة إلى فرانكفورت، من فضلك.",
+      "alternativen": ["من فضلك، تذكرة إلى فرانكفورت.", "أريد تذكرة إلى فرانكفورت، من فضلك.", "تذكرة واحدة إلى فرانكفورت لو سمحت."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0026",
+      "text": "ذهاب فقط أم ذهاب وإياب؟",
+      "alternativen": ["ذهاب فقط أم ذهاب وعودة؟", "اتّجاه واحد أم ذهاب وإياب؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0027",
+      "text": "ذهاب وإياب، من فضلك.",
+      "alternativen": ["ذهاب وعودة، من فضلك.", "من فضلك، ذهاب وإياب."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0028",
+      "text": "كم ثمن التذكرة إلى كولونيا؟",
+      "alternativen": ["بكم التذكرة إلى كولونيا؟", "كم تكلّف تذكرة إلى كولونيا؟", "كم سعر تذكرة إلى كولونيا؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0029",
+      "text": "ثمن التذكرة 24 يورو.",
+      "alternativen": ["التذكرة بـ 24 يورو.", "تكلّف التذكرة 24 يورو.", "سعر التذكرة أربعة وعشرون يورو."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0030",
+      "text": "شخصان بالغان وطفلان، من فضلك.",
+      "alternativen": ["بالغان وطفلان، من فضلك.", "من فضلك، تذكرتان للكبار وتذكرتان للأطفال.", "اثنان بالغان وطفلان، من فضلك."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0031",
+      "text": "الأطفال دون السادسة يسافرون مجّانًا.",
+      "alternativen": [
+        "يركب الأطفال دون ستّ سنوات مجّانًا.",
+        "الأطفال تحت سنّ السادسة يركبون مجّانًا.",
+        "الأطفال الذين أعمارهم أقلّ من ستّ سنوات يسافرون مجّانًا."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0032",
+      "text": "هذا مجّانيّ.",
+      "alternativen": ["هذا مجّانًا.", "هذا بلا مقابل.", "هذا دون مقابل."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0033",
+      "text": "التذكرة رخيصة للتلاميذ.",
+      "alternativen": ["للتلاميذ التذكرة رخيصة.", "التذكرة بسعر مناسب للتلاميذ.", "سعر التذكرة مناسب للتلاميذ."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0034",
+      "text": "هل يمكن شراء تذكرة من الآلة؟",
+      "alternativen": ["هل يمكنني شراء تذكرة من الآلة؟", "هل يمكن شراء التذكرة من آلة التذاكر؟", "هل تُشترى التذكرة من الآلة؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0035",
+      "text": "الآلة لا تعمل. سنذهب إلى الشبّاك.",
+      "alternativen": ["الآلة معطّلة. نذهب إلى الشبّاك.", "آلة التذاكر لا تعمل. لنذهب إلى الشبّاك.", "الآلة لا تعمل، فنذهب إلى الشبّاك."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0036",
+      "text": "الشبّاك مفتوح من الساعة السادسة.",
+      "alternativen": ["يفتح الشبّاك ابتداءً من الساعة السادسة.", "الشبّاك مفتوح ابتداءً من السادسة.", "يُفتح الشبّاك من الساعة 6."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0037",
+      "text": "من أيّ رصيف ينطلق القطار إلى كولونيا؟",
+      "alternativen": ["من أيّ رصيف يغادر القطار المتّجه إلى كولونيا؟", "على أيّ رصيف قطار كولونيا؟", "من أيّ رصيف ينطلق قطار كولونيا؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0038",
+      "text": "من الرصيف 7، هنا على اليمين مباشرة.",
+      "alternativen": ["الرصيف رقم 7، هنا على اليمين.", "من الرصيف السابع، هنا على اليمين مباشرة.", "على الرصيف 7، هنا يمينًا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0039",
+      "text": "القطار إلى غيسن ينطلق من الرصيف 4.",
+      "alternativen": ["ينطلق قطار غيسن من الرصيف 4.", "القطار المتّجه إلى غيسن يغادر من الرصيف رقم 4.", "قطار غيسن على الرصيف الرابع."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0040",
+      "text": "القطار إلى فرانكفورت ينطلق من الرصيف 2.",
+      "alternativen": [
+        "ينطلق قطار فرانكفورت من الرصيف 2.",
+        "القطار المتّجه إلى فرانكفورت يغادر من الرصيف رقم 2.",
+        "قطار فرانكفورت على الرصيف الثاني."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0041",
+      "text": "ننتظر على الرصيف.",
+      "alternativen": ["نحن ننتظر على الرصيف.", "ننتظر على رصيف المحطّة.", "نحن ننتظر على رصيف المحطّة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0042",
+      "text": "في الصباح يكون الرصيف مزدحمًا جدًّا.",
+      "alternativen": ["الرصيف مزدحم جدًّا في الصباح.", "صباحًا يكون الرصيف مليئًا بالناس.", "في الصباح الرصيف مزدحم جدًّا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0043",
+      "text": "هذا القطار يذهب إلى محطّة القطار الرئيسيّة.",
+      "alternativen": [
+        "يتّجه هذا القطار إلى المحطّة الرئيسيّة.",
+        "هذا القطار ذاهب إلى المحطّة الرئيسيّة.",
+        "هذا القطار يذهب إلى المحطّة المركزيّة."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0044",
+      "text": "اسأل في الاستعلامات من فضلك.",
+      "alternativen": ["من فضلك اسأل في مكتب الاستعلامات.", "اسألوا في الاستعلامات من فضلكم.", "تفضّل واسأل في الاستعلامات."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0045",
+      "text": "أرى أنّنا نحتاج إلى معلومات أكثر.",
+      "alternativen": ["أعتقد أنّنا بحاجة إلى مزيد من المعلومات.", "في رأيي نحتاج إلى معلومات أكثر.", "أظنّ أنّنا نحتاج معلومات أكثر."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0046",
+      "text": "المخرج على اليسار بجانب الشبّاك.",
+      "alternativen": ["المخرج بجانب الشبّاك على اليسار.", "المخرج على يسار الشبّاك.", "المخرج يسار الشبّاك."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0047",
+      "text": "لا تنسَ تذكرتك.",
+      "alternativen": ["لا تنسي تذكرتك.", "إيّاك أن تنسى تذكرتك.", "لا تنسَ التذكرة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0048",
+      "text": "لا تنسَ تذكرة السفر.",
+      "alternativen": ["لا تنسوا التذكرة.", "لا تنسي تذكرة السفر.", "من فضلك لا تنسَ التذكرة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0049",
+      "text": "هل يمكن الدفع بالبطاقة؟",
+      "alternativen": ["هل يمكنني الدفع بالبطاقة؟", "هل الدفع بالبطاقة ممكن؟", "هل يمكن أن أدفع بالبطاقة؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0050",
+      "text": "بالبطاقة، من فضلك.",
+      "alternativen": ["من فضلك، بالبطاقة.", "سأدفع بالبطاقة.", "بالبطاقة لو سمحت."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0051",
+      "text": "هل يمكن ركوب الحافلة أيضًا بهذه التذكرة؟",
+      "alternativen": [
+        "هل يمكنني ركوب الحافلة بهذه التذكرة أيضًا؟",
+        "هل تصلح هذه التذكرة للحافلة أيضًا؟",
+        "هل يمكن السفر بالحافلة أيضًا بهذه التذكرة؟"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0052",
+      "text": "ممنوع الركوب بدون تذكرة.",
+      "alternativen": ["لا يُسمح بالسفر بدون تذكرة.", "لا يُسمح بالركوب من غير تذكرة.", "الركوب بدون تذكرة ممنوع."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0053",
+      "text": "تذكرة البالغين بثلاثة يورو.",
+      "alternativen": ["ثمن تذكرة الكبار ثلاثة يورو.", "تكلّف تذكرة البالغ ثلاثة يورو.", "تذكرة الكبار بـ 3 يورو."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0054",
+      "text": "تذكرة إلى غيسن، من فضلك. من أيّ رصيف ينطلق القطار؟",
+      "alternativen": [
+        "من فضلك، تذكرة إلى غيسن. من أيّ رصيف يغادر القطار؟",
+        "تذكرة إلى غيسن لو سمحت. على أيّ رصيف القطار؟",
+        "أريد تذكرة إلى غيسن، من فضلك. من أيّ رصيف ينطلق القطار؟"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0055",
+      "text": "متى ينطلق القطار إلى غيسن؟",
+      "alternativen": ["متى يغادر قطار غيسن؟", "متى ينطلق قطار غيسن؟", "في أيّ ساعة يغادر القطار إلى غيسن؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0056",
+      "text": "ينطلق في التاسعة والربع.",
+      "alternativen": ["يغادر الساعة التاسعة والربع.", "ينطلق القطار في التاسعة والربع.", "ينطلق الساعة 9:15."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0057",
+      "text": "متى نصل إلى كولونيا؟",
+      "alternativen": ["متى سنصل إلى كولونيا؟", "في أيّ ساعة نصل إلى كولونيا؟", "متى سنكون في كولونيا؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0058",
+      "text": "نصل إلى كولونيا في العاشرة والنصف.",
+      "alternativen": ["سنصل إلى كولونيا الساعة العاشرة والنصف.", "نصل في العاشرة والنصف إلى كولونيا.", "نصل إلى كولونيا الساعة 10:30."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0059",
+      "text": "في جدول المواعيد موعد الانطلاق وموعد الوصول.",
+      "alternativen": [
+        "جدول المواعيد يبيّن الانطلاق والوصول.",
+        "في جدول الرحلات مواعيد المغادرة والوصول.",
+        "مكتوب في الجدول وقت الانطلاق ووقت الوصول."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0060",
+      "text": "الانطلاق في الساعة العاشرة.",
+      "alternativen": ["موعد الانطلاق الساعة العاشرة.", "المغادرة في العاشرة.", "الانطلاق الساعة 10."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0061",
+      "text": "الوصول إلى غيسن في الساعة 11:05.",
+      "alternativen": ["موعد الوصول إلى غيسن الساعة 11:05.", "الوصول إلى غيسن الساعة الحادية عشرة وخمس دقائق.", "الوصول إلى غيسن 11:05."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0062",
+      "text": "من أيّ رصيف ينطلق القطار؟",
+      "alternativen": ["من أيّ رصيف يغادر القطار؟", "على أيّ رصيف القطار؟", "من أيّ رصيف سينطلق القطار؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0063",
+      "text": "القطار انطلق بالفعل.",
+      "alternativen": ["لقد غادر القطار.", "القطار غادر بالفعل.", "لقد انطلق القطار."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0064",
+      "text": "وصلت أمس.",
+      "alternativen": ["لقد وصلت أمس.", "وصلت البارحة.", "أنا وصلت أمس."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0065",
+      "text": "وصل أخيرًا!",
+      "alternativen": ["لقد وصل أخيرًا!", "أخيرًا وصل!", "وصل في النهاية!"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0066",
+      "text": "هل يريد أحد أن يركب؟",
+      "alternativen": ["هل هناك من يريد الركوب؟", "هل من أحد يريد أن يصعد؟", "هل يريد أحد الصعود؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0067",
+      "text": "اركبوا بسرعة من فضلكم، القطار سينطلق حالًا!",
+      "alternativen": [
+        "من فضلكم اصعدوا بسرعة، القطار ينطلق الآن!",
+        "اركبوا بسرعة، القطار سيغادر بعد قليل!",
+        "الرجاء الصعود بسرعة، القطار سينطلق حالًا!"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0068",
+      "text": "ركبنا في غيسن.",
+      "alternativen": ["صعدنا إلى القطار في غيسن.", "ركبنا القطار في غيسن.", "نحن ركبنا في غيسن."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0069",
+      "text": "أين يجب أن أبدّل؟",
+      "alternativen": ["أين عليّ أن أغيّر القطار؟", "في أيّ محطّة يجب أن أبدّل؟", "أين يجب أن أغيّر الخطّ؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0070",
+      "text": "تبدّل في فرانكفورت.",
+      "alternativen": ["ستبدّل القطار في فرانكفورت.", "تغيّر القطار في فرانكفورت.", "يبدّلون في فرانكفورت."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0071",
+      "text": "بدّلنا القطار في فرانكفورت.",
+      "alternativen": ["غيّرنا القطار في فرانكفورت.", "في فرانكفورت بدّلنا القطار.", "بدّلنا في فرانكفورت."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0072",
+      "text": "ينزل كثير من الناس في فرانكفورت.",
+      "alternativen": ["في فرانكفورت ينزل ناس كثيرون.", "كثير من الناس ينزلون في فرانكفورت.", "في فرانكفورت ينزل كثيرون."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0073",
+      "text": "كم لديّ من الوقت للتبديل؟",
+      "alternativen": ["كم من الوقت عندي للحاق بالقطار التالي؟", "كم دقيقة عندي للتبديل؟", "ما الوقت المتاح لي للتبديل؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0074",
+      "text": "قطارك التالي ينطلق من الرصيف 9.",
+      "alternativen": ["ينطلق قطارك التالي من الرصيف رقم 9.", "قطاركم التالي يغادر من الرصيف 9.", "قطارها التالي ينطلق من الرصيف 9."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0075",
+      "text": "لديك خمس دقائق للتبديل.",
+      "alternativen": ["عندك خمس دقائق للتبديل.", "لديكم خمس دقائق للحاق بالقطار التالي.", "لديهم خمس دقائق للتبديل."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0076",
+      "text": "أنا دائمًا في الموعد.",
+      "alternativen": ["أنا ملتزم بالمواعيد دائمًا.", "أصل دائمًا في الموعد.", "أنا دقيق في مواعيدي دائمًا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0077",
+      "text": "اليوم القطار في موعده.",
+      "alternativen": ["القطار اليوم في الموعد.", "جاء القطار اليوم في موعده.", "اليوم القطار دون تأخير."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0078",
+      "text": "القطار متأخّر عشر دقائق.",
+      "alternativen": ["تأخّر القطار عشر دقائق.", "القطار متأخّر 10 دقائق.", "تأخير القطار عشر دقائق."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0079",
+      "text": "يبدو أنّ الحافلة تأخّرت.",
+      "alternativen": ["على ما يبدو تأخّرت الحافلة.", "يبدو أنّ الحافلة كانت متأخّرة.", "الظاهر أنّ الباص كان متأخّرًا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0080",
+      "text": "من فضلك، كن في محطّة القطار في موعد أقصاه الساعة السابعة!",
+      "alternativen": [
+        "كن في المحطّة الساعة السابعة على أبعد تقدير، من فضلك!",
+        "من فضلك، لا تتأخّر عن الساعة السابعة في المحطّة!",
+        "من فضلك كن في المحطّة الساعة السابعة على الأكثر!"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0081",
+      "text": "هل سنصل في الوقت المناسب؟",
+      "alternativen": ["هل نصل في الوقت؟", "هل سنصل في الموعد؟", "هل سنصل على الوقت؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0082",
+      "text": "متى ينطلق القطار، وأين يجب أن أبدّل؟",
+      "alternativen": [
+        "متى يغادر القطار وأين عليّ أن أبدّل؟",
+        "متى ينطلق القطار؟ وأين أغيّر القطار؟",
+        "متى ينطلق القطار، وأين عليّ أن أغيّر القطار؟"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0083",
+      "text": "أيّ خطّ يذهب إلى وسط المدينة؟",
+      "alternativen": ["ما الخطّ الذي يذهب إلى وسط المدينة؟", "أيّ خطّ يتّجه إلى وسط البلد؟", "أيّ خطّ يوصل إلى وسط المدينة؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0084",
+      "text": "الخطّ 3 يذهب مباشرة إلى المركز.",
+      "alternativen": [
+        "الخطّ رقم 3 يذهب مباشرة إلى مركز المدينة.",
+        "يذهب الخطّ 3 مباشرة إلى المركز.",
+        "الخطّ ثلاثة يذهب رأسًا إلى المركز."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0085",
+      "text": "الخطّ 5 يذهب مباشرة إلى محطّة القطار.",
+      "alternativen": [
+        "الخطّ رقم 5 يذهب مباشرة إلى المحطّة.",
+        "يذهب الخطّ 5 مباشرة إلى محطّة القطار.",
+        "الخطّ خمسة يذهب رأسًا إلى المحطّة."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0086",
+      "text": "اركب الترام المتّجه إلى المحطّة الرئيسيّة.",
+      "alternativen": [
+        "خذ الترام باتّجاه محطّة القطار الرئيسيّة.",
+        "اركبوا الترام في اتّجاه المحطّة الرئيسيّة.",
+        "اركب الترام باتّجاه المحطّة الرئيسيّة."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0087",
+      "text": "أوه لا، نحن ذاهبون في الاتّجاه الخطأ!",
+      "alternativen": ["لا! نحن نسير في الاتّجاه الخاطئ!", "أوه لا، نسير في الاتّجاه الخطأ!", "أوه، اتّجاهنا خاطئ!"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0088",
+      "text": "ما اسم المحطّة القادمة؟",
+      "alternativen": ["ما اسم المحطّة التالية؟", "ما هي المحطّة القادمة؟", "ما اسم المحطّة التي بعدها؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0089",
+      "text": "عليك أن تركب ثلاث محطّات.",
+      "alternativen": ["يجب أن تسافر ثلاث محطّات.", "يجب عليك أن تمرّ بثلاث محطّات.", "عليكم أن تركبوا ثلاث محطّات."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0090",
+      "text": "سننزل في المحطّة القادمة.",
+      "alternativen": ["ننزل في المحطّة التالية.", "في المحطّة القادمة ننزل.", "سننزل في المحطّة التالية."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0091",
+      "text": "كم المسافة إلى المركز؟",
+      "alternativen": ["كم يبعد المركز؟", "ما المسافة حتّى مركز المدينة؟", "كم تبلغ المسافة إلى وسط المدينة؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0092",
+      "text": "المسافة إلى غيسن حوالي 15 كيلومترًا.",
+      "alternativen": [
+        "تبعد غيسن تقريبًا 15 كيلومترًا.",
+        "المسافة حتّى غيسن خمسة عشر كيلومترًا تقريبًا.",
+        "المسافة إلى غيسن تقريبًا 15 كم."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0093",
+      "text": "إلى المركز حوالي خمسة كيلومترات.",
+      "alternativen": ["المسافة إلى المركز خمسة كيلومترات تقريبًا.", "يبعد المركز حوالي خمسة كيلومترات.", "حتّى المركز حوالي 5 كيلومترات."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0094",
+      "text": "كم تستغرق الرحلة؟",
+      "alternativen": ["كم تدوم الرحلة؟", "كم من الوقت تستغرق الرحلة؟", "كم يستغرق الطريق؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0095",
+      "text": "تستغرق ساعة بالحافلة.",
+      "alternativen": ["بالحافلة تستغرق ساعة.", "تستغرق الرحلة ساعة بالحافلة.", "ساعة واحدة بالباص."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0096",
+      "text": "تستغرق الرحلة 40 دقيقة على الأقلّ.",
+      "alternativen": [
+        "الرحلة تستغرق أربعين دقيقة على الأقلّ.",
+        "تدوم الرحلة 40 دقيقة على الأقلّ.",
+        "تستغرق الرحلة أربعين دقيقة على الأقلّ."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0097",
+      "text": "بالدرّاجة تحتاج عشر دقائق على الأكثر.",
+      "alternativen": [
+        "تحتاج بالدرّاجة إلى عشر دقائق على الأكثر.",
+        "بالدرّاجة لا تحتاج أكثر من عشر دقائق.",
+        "بالدرّاجة يلزمك 10 دقائق على الأكثر."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0098",
+      "text": "تأتي الحافلة تقريبًا كلّ عشر دقائق.",
+      "alternativen": ["الحافلة تأتي كلّ عشر دقائق تقريبًا.", "يأتي الباص حوالي كلّ 10 دقائق.", "تأتي حافلة كلّ عشر دقائق تقريبًا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0099",
+      "text": "الحافلة تعمل كلّ يوم ما عدا الأحد.",
+      "alternativen": [
+        "تسير الحافلة يوميًّا باستثناء الأحد.",
+        "الحافلة تسير كلّ الأيّام ما عدا يوم الأحد.",
+        "تعمل الحافلة كلّ يوم إلّا الأحد."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0100",
+      "text": "الحافلة تعمل يوم الأحد فقط.",
+      "alternativen": ["تسير الحافلة يوم الأحد فقط.", "لا تعمل الحافلة إلّا يوم الأحد.", "الحافلة تعمل في الأحد فقط."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0101",
+      "text": "نزل الجميع ما عدا إمره.",
+      "alternativen": ["نزل الكلّ إلّا إمره.", "الجميع نزلوا باستثناء إمره.", "كلّهم نزلوا ما عدا إمره."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0102",
+      "text": "من فضلك غادر القطار هنا.",
+      "alternativen": ["يرجى مغادرة القطار هنا.", "من فضلكم انزلوا من القطار هنا.", "انزل من القطار هنا من فضلك."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0103",
+      "text": "على اللافتة تنبيه.",
+      "alternativen": ["على اللوحة ملاحظة.", "مكتوب على اللافتة تنبيه.", "هناك تنبيه على اللافتة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0104",
+      "text": "شكرًا على التنبيه!",
+      "alternativen": ["شكرًا على الملاحظة!", "شكرًا لأنّك نبّهتني!", "شكرًا على المعلومة!"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0105",
+      "text": "في الحافلة امرأة تفحص التذاكر.",
+      "alternativen": ["تفحص امرأة التذاكر في الحافلة.", "امرأة تتحقّق من التذاكر في الحافلة.", "في الحافلة تفحص امرأة التذاكر."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0106",
+      "text": "هل يمكنني أن آخذ درّاجتي معي في القطار؟",
+      "alternativen": [
+        "هل يُسمح لي بأخذ درّاجتي في القطار؟",
+        "هل أستطيع أن أصطحب درّاجتي في القطار؟",
+        "هل يمكنني إدخال درّاجتي إلى القطار؟"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0107",
+      "text": "نعم، لكنّ الدرّاجة تحتاج إلى تذكرة خاصّة بها.",
+      "alternativen": ["نعم، ولكن الدرّاجة تحتاج تذكرة خاصّة.", "نعم، لكن يجب شراء تذكرة للدرّاجة.", "نعم، لكن للدرّاجة تذكرة منفصلة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0108",
+      "text": "الطريق إلى غيسن جميل جدًّا.",
+      "alternativen": ["خطّ السير إلى غيسن جميل جدًّا.", "المسار إلى غيسن جميل للغاية.", "الطريق إلى غيسن جميل للغاية."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0109",
+      "text": "تسير على هذا الخطّ قطارات كثيرة.",
+      "alternativen": ["على هذا الخطّ قطارات كثيرة.", "قطارات كثيرة تمرّ على هذا المسار.", "تسير قطارات كثيرة على هذا الخطّ."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0110",
+      "text": "ركن السيّارة صعب في وسط المدينة.",
+      "alternativen": ["من الصعب أن تركن في وسط المدينة.", "في وسط المدينة يصعب ركن السيّارة.", "لا يسهل ركن السيّارة في وسط المدينة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0111",
+      "text": "أيّ خطّ يذهب إلى المركز، وكم تستغرق الرحلة؟",
+      "alternativen": [
+        "ما الخطّ الذي يذهب إلى المركز، وكم تدوم الرحلة؟",
+        "أيّ خطّ يتّجه إلى المركز، وكم تستغرق الرحلة؟",
+        "أيّ خطّ يذهب إلى المركز، وكم تدوم الرحلة؟"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0112",
+      "text": "يوم الأحد زرت خالتي في كولونيا.",
+      "alternativen": ["زرت خالتي في كولونيا يوم الأحد.", "يوم الأحد زرت عمّتي في كولونيا.", "زرت عمّتي في كولونيا يوم الأحد."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0113",
+      "text": "لخالتي ثلاثة أطفال.",
+      "alternativen": ["خالتي عندها ثلاثة أولاد.", "لعمّتي ثلاثة أطفال.", "عند خالتي ثلاثة أطفال."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0114",
+      "text": "ذهبت إلى محطّة القطار بالحافلة.",
+      "alternativen": ["ذهبت بالحافلة إلى المحطّة.", "ركبت الحافلة إلى محطّة القطار.", "أنا ذهبت إلى المحطّة بالحافلة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0115",
+      "text": "ثمّ بدّلت القطار في فرانكفورت.",
+      "alternativen": ["بعد ذلك بدّلت في فرانكفورت.", "ثمّ غيّرت القطار في فرانكفورت.", "ثمّ بدّلت في فرانكفورت."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0116",
+      "text": "في الساعة الثانية عشرة وصلت إلى كولونيا.",
+      "alternativen": ["وصلت إلى كولونيا الساعة الثانية عشرة.", "وصلت إلى كولونيا في الساعة 12.", "عند الثانية عشرة وصلت إلى كولونيا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0117",
+      "text": "ما زلنا في الطريق وسنأتي لاحقًا.",
+      "alternativen": ["نحن ما زلنا في الطريق وسنصل لاحقًا.", "لا نزال في الطريق، سنأتي فيما بعد.", "ما زلنا في الطريق، سنصل فيما بعد."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0118",
+      "text": "فاتنا قطارنا.",
+      "alternativen": ["فاتنا القطار.", "لم نلحق بقطارنا.", "لقد فاتنا قطارنا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0119",
+      "text": "فاتتني الحافلة فذهبت مشيًا.",
+      "alternativen": ["فاتني الباص وذهبت سيرًا على الأقدام.", "لم ألحق بالحافلة، فمشيت.", "فاتتني الحافلة وذهبت ماشيًا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0120",
+      "text": "لحسن الحظّ لحقت بالقطار.",
+      "alternativen": ["لحسن الحظّ أدركت القطار في الوقت.", "من حسن الحظّ أنّني لحقت بالقطار.", "لحسن الحظّ لحقت بالقطار في آخر لحظة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0121",
+      "text": "يجب أن أسرع!",
+      "alternativen": ["عليّ أن أسرع!", "يجب أن أستعجل!", "عليّ أن أستعجل!"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0122",
+      "text": "أسرع يا توم!",
+      "alternativen": ["استعجل يا توم!", "يا توم، أسرع!", "هيّا يا توم، أسرع!"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0123",
+      "text": "أسرع، وإلّا فاتنا القطار.",
+      "alternativen": ["استعجل وإلّا سيفوتنا القطار.", "أسرع، وإلّا لن نلحق بالقطار.", "أسرع وإلّا سيفوتنا القطار."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0124",
+      "text": "أسرعنا كثيرًا.",
+      "alternativen": ["استعجلنا كثيرًا.", "لقد أسرعنا جدًّا.", "أسرعنا جدًّا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0125",
+      "text": "كان الوقت ضيّقًا جدًّا!",
+      "alternativen": ["لحقنا في آخر لحظة!", "كدنا لا نلحق!", "كان ذلك في آخر لحظة!"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0126",
+      "text": "الوقت المتاح للتبديل ضيّق.",
+      "alternativen": ["الوقت للتبديل قليل.", "وقت التبديل ضيّق.", "ليس هناك وقت كثير للتبديل."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0127",
+      "text": "قطاري متأخّر 20 دقيقة.",
+      "alternativen": ["تأخّر قطاري عشرين دقيقة.", "قطاري متأخّر عشرين دقيقة.", "القطار الذي أركبه متأخّر 20 دقيقة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0128",
+      "text": "حافلتي متأخّرة 20 دقيقة.",
+      "alternativen": ["تأخّرت حافلتي عشرين دقيقة.", "حافلتي متأخّرة عشرين دقيقة.", "الحافلة التي أركبها متأخّرة 20 دقيقة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0129",
+      "text": "لن أصل إلّا في الساعة 19.",
+      "alternativen": ["سأصل في الساعة السابعة مساءً فقط.", "لن أصل قبل الساعة 19.", "لن أصل إلّا في الساعة السابعة مساءً."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0130",
+      "text": "هل تأخذني من محطّة القطار، من فضلك؟",
+      "alternativen": ["من فضلك، هل يمكنك أن تأخذني من المحطّة؟", "هل تستقبلني في المحطّة من فضلك؟", "هل تأتي لتأخذني من المحطّة؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0131",
+      "text": "أين أنت الآن؟",
+      "alternativen": ["أين أنت في هذه اللحظة؟", "أين أنت حاليًّا؟", "أين أنت الآن بالضبط؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0132",
+      "text": "أنا في القطار المتّجه إلى غيسن.",
+      "alternativen": ["أجلس في القطار إلى غيسن.", "أنا جالس في قطار غيسن.", "أنا في قطار غيسن."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0133",
+      "text": "ذهبت بالحافلة ثمّ بدّلت. وصلت في الساعة التاسعة.",
+      "alternativen": [
+        "ركبت الحافلة ثمّ غيّرت. في التاسعة وصلت.",
+        "سافرت بالحافلة ثمّ بدّلت. وصلت الساعة التاسعة.",
+        "ذهبت بالحافلة ثمّ غيّرت. وصلت في التاسعة."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0134",
+      "text": "اكتب رسالة إلى عائلتك. قطارك متأخّر. متى تصل الآن؟",
+      "alternativen": [
+        "اكتب رسالة لعائلتك: قطارك متأخّر. متى ستصل الآن؟",
+        "اكتبي رسالة إلى عائلتك. قطارك متأخّر. متى تصلين الآن؟",
+        "اكتب رسالة إلى أهلك. قطارك متأخّر. متى ستصل الآن؟"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0135",
+      "text": "مرحبًا يا أمّي! أنا ما زلت في الطريق. قطاري متأخّر للأسف 30 دقيقة. فاتني القطار التالي. لن أصل إلّا في الساعة 18:40. هل تأخذينني من المحطّة؟ إلى اللقاء!",
+      "alternativen": [
+        "أهلًا يا أمّي! ما زلت في الطريق. للأسف قطاري متأخّر 30 دقيقة. فاتني القطار التالي. سأصل في الساعة 18:40 فقط. هل تأتين لتأخذيني من المحطّة؟ أراكِ لاحقًا!"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0136",
+      "text": "تنبيه مهمّ: أعمال بناء على الخطّ",
+      "alternativen": ["ملاحظة مهمّة: أعمال إنشاء على الخطّ", "تنبيه هامّ: أشغال على خطّ السكّة", "تنبيه مهمّ: أعمال بناء على المسار"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0137",
+      "text": "لا تسير قطارات بين غيسن وفرانكفورت في شهر يوليو.",
+      "alternativen": [
+        "في يوليو لا توجد قطارات بين غيسن وفرانكفورت.",
+        "في تمّوز لا تسير القطارات بين غيسن وفرانكفورت.",
+        "بين غيسن وفرانكفورت لا تسير قطارات في يوليو."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0138",
+      "text": "هناك أعمال بناء على الخطّ.",
+      "alternativen": ["على الخطّ أعمال بناء.", "توجد أشغال على خطّ السكّة.", "هناك أعمال إنشاء على المسار."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0139",
+      "text": "في هذه الفترة تسير حافلات.",
+      "alternativen": ["في هذه المدّة تعمل الحافلات.", "في هذه الفترة توجد حافلات.", "في هذا الوقت تسير الحافلات."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0140",
+      "text": "تنطلق الحافلات من قُدّام محطّة القطار الرئيسيّة.",
+      "alternativen": [
+        "الحافلات تغادر من قُدّام المحطّة الرئيسيّة.",
+        "تنطلق الحافلات من خارج المحطّة الرئيسيّة.",
+        "تنطلق الحافلات من الساحة المقابلة للمحطّة الرئيسيّة."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0141",
+      "text": "تستغرق الرحلة بالحافلة ساعة تقريبًا.",
+      "alternativen": ["الرحلة بالحافلة تستغرق حوالي ساعة.", "تدوم الرحلة بالباص ساعة تقريبًا.", "الرحلة بالحافلة تستغرق ساعة تقريبًا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0142",
+      "text": "الانطلاق من غيسن: 7:10. الوصول إلى فرانكفورت: 8:15.",
+      "alternativen": ["المغادرة من غيسن الساعة 7:10. الوصول إلى فرانكفورت الساعة 8:15.", "انطلاق غيسن: 7:10، وصول فرانكفورت: 8:15."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0143",
+      "text": "يمكنك استعمال تذكرة القطار في الحافلة أيضًا.",
+      "alternativen": [
+        "تستطيعون استخدام تذكرة القطار في الحافلة أيضًا.",
+        "يمكنك أن تستعمل تذكرتك للقطار في الحافلة كذلك.",
+        "يمكنك أن تستخدم تذكرة القطار في الحافلة أيضًا."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0144",
+      "text": "للأسف لا يُسمح بأخذ الدرّاجات في الحافلة.",
+      "alternativen": [
+        "مع الأسف لا يمكنكم أخذ الدرّاجات معكم في الحافلة.",
+        "للأسف لا يمكنك أخذ الدرّاجة في الحافلة.",
+        "للأسف الدرّاجات غير مسموحة في الحافلة."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0145",
+      "text": "يرجى الحضور قبل موعد الانطلاق بعشر دقائق على الأقلّ.",
+      "alternativen": [
+        "من فضلكم كونوا هناك قبل الانطلاق بعشر دقائق على الأقلّ.",
+        "الرجاء الحضور قبل الانطلاق بـ 10 دقائق على الأقلّ.",
+        "من فضلك كن هناك قبل الانطلاق بعشر دقائق على الأقلّ."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0146",
+      "text": "تحصل على مزيد من المعلومات في الاستعلامات.",
+      "alternativen": [
+        "لمزيد من المعلومات اسأل في الاستعلامات.",
+        "تجدون معلومات أخرى عند مكتب الاستعلامات.",
+        "معلومات إضافيّة في الاستعلامات."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0147",
+      "text": "في يوليو تسير حافلات بين غيسن وفرانكفورت.",
+      "alternativen": [
+        "في شهر يوليو توجد حافلات بين غيسن وفرانكفورت.",
+        "تسير الحافلات بين غيسن وفرانكفورت في يوليو.",
+        "في يوليو تعمل حافلات بين غيسن وفرانكفورت."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0148",
+      "text": "يمكن أخذ الدرّاجة في الحافلة.",
+      "alternativen": ["يمكن للمرء أن يأخذ درّاجته في الحافلة.", "يُسمح بأخذ الدرّاجة في الحافلة.", "يمكنك أخذ درّاجتك في الحافلة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0149",
+      "text": "سائقو الحافلات يتكلّمون الإنجليزيّة أيضًا.",
+      "alternativen": [
+        "يتكلّم سائقو الحافلات الإنجليزيّة كذلك.",
+        "السائقون يتحدّثون الإنجليزيّة أيضًا.",
+        "سائقو الحافلات يتحدّثون الإنجليزيّة أيضًا."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0150",
+      "text": "كم تستغرق الرحلة بالحافلة؟",
+      "alternativen": ["كم تدوم الرحلة بالحافلة؟", "كم من الوقت تستغرق الرحلة بالباص؟", "كم من الوقت تستغرق الرحلة بالحافلة؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0151",
+      "text": "ساعة تقريبًا.",
+      "alternativen": ["حوالي ساعة.", "تقريبًا ساعة واحدة.", "ساعة واحدة تقريبًا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0152",
+      "text": "عشر دقائق على الأكثر.",
+      "alternativen": ["على الأكثر عشر دقائق.", "10 دقائق على الأكثر.", "لا أكثر من عشر دقائق."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0153",
+      "text": "ساعتان تقريبًا.",
+      "alternativen": ["حوالي ساعتين.", "تقريبًا ساعتان.", "ساعتان على وجه التقريب."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0154",
+      "text": "من أين تنطلق الحافلات؟",
+      "alternativen": ["من أين تغادر الحافلات؟", "من أيّ مكان تنطلق الحافلات؟", "أين تنطلق الحافلات؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0155",
+      "text": "من قُدّام محطّة القطار الرئيسيّة.",
+      "alternativen": ["قُدّام المحطّة الرئيسيّة.", "من خارج المحطّة الرئيسيّة.", "من الساحة المقابلة للمحطّة الرئيسيّة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0156",
+      "text": "من الرصيف 4.",
+      "alternativen": ["على الرصيف 4.", "من الرصيف الرابع.", "من الرصيف رقم 4."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0157",
+      "text": "عند الاستعلامات.",
+      "alternativen": ["في الاستعلامات.", "عند مكتب الاستعلامات.", "في مكتب الاستعلامات."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0158",
+      "text": "بالقطار إلى الخالة هند",
+      "alternativen": ["إلى الخالة هند بالقطار", "بالقطار إلى العمّة هند"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0159",
+      "text": "يوم السبت سافرت رنا وليلى إلى الخالة هند.",
+      "alternativen": [
+        "سافرت رنا وليلى يوم السبت إلى الخالة هند.",
+        "يوم السبت ذهبت رنا وليلى إلى الخالة هند.",
+        "ذهبت رنا وليلى يوم السبت إلى الخالة هند."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0160",
+      "text": "تسكن الخالة هند في غيسن.",
+      "alternativen": ["الخالة هند تسكن في غيسن.", "تعيش الخالة هند في غيسن.", "تسكن العمّة هند في غيسن."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0161",
+      "text": "اشترت رنا التذاكر مسبقًا يوم الجمعة.",
+      "alternativen": [
+        "كانت رنا قد اشترت التذاكر يوم الجمعة.",
+        "اشترت رنا التذاكر منذ يوم الجمعة.",
+        "اشترت رنا التذاكر يوم الجمعة مسبقًا."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0162",
+      "text": "في الساعة الثامنة كانتا على الرصيف.",
+      "alternativen": ["كانتا على الرصيف الساعة الثامنة.", "في الثامنة كانتا على رصيف المحطّة.", "كانتا على الرصيف في الثامنة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0163",
+      "text": "انظري، قطارنا متأخّر عشر دقائق!",
+      "alternativen": ["انظري، تأخّر قطارنا عشر دقائق!", "انظري! قطارنا متأخّر 10 دقائق!", "انظر، قطارنا متأخّر عشر دقائق!"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0164",
+      "text": "أوه لا! إذن سيكون وقت التبديل في فرانكفورت ضيّقًا.",
+      "alternativen": [
+        "أوه لا! إذن سيضيق وقتنا للتبديل في فرانكفورت.",
+        "لا! إذن سيكون اللحاق بالقطار التالي في فرانكفورت صعبًا.",
+        "أوه لا! إذن سيكون وقت التبديل في فرانكفورت قليلًا."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0165",
+      "text": "لم ينطلق القطار إلّا في الثامنة وعشر دقائق.",
+      "alternativen": [
+        "انطلق القطار في الساعة الثامنة وعشر دقائق فقط.",
+        "لم يغادر القطار إلّا الساعة 8:10.",
+        "انطلق القطار في الثامنة وعشر دقائق فقط."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0166",
+      "text": "في فرانكفورت كانت لديهما أربع دقائق فقط للتبديل.",
+      "alternativen": [
+        "كان عندهما في فرانكفورت أربع دقائق فقط للتبديل.",
+        "لم يكن لديهما في فرانكفورت سوى أربع دقائق للتبديل.",
+        "كانت لديهما في فرانكفورت أربع دقائق فقط للتبديل."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0167",
+      "text": "بسرعة يا ليلى! القطار إلى غيسن ينطلق من الرصيف 12.",
+      "alternativen": [
+        "أسرعي يا ليلى! قطار غيسن على الرصيف 12.",
+        "بسرعة يا ليلى! قطار غيسن ينطلق من الرصيف 12.",
+        "أسرعي يا ليلى! القطار إلى غيسن ينطلق من الرصيف 12."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0168",
+      "text": "أسرعت الأمّ وابنتها كثيرًا.",
+      "alternativen": ["استعجلت الأمّ والبنت كثيرًا.", "الأمّ وابنتها أسرعتا كثيرًا.", "أسرعت الأمّ والبنت كثيرًا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0169",
+      "text": "كان القطار إلى غيسن ما زال هناك.",
+      "alternativen": ["قطار غيسن كان لا يزال هناك.", "كان قطار غيسن ما زال موجودًا.", "كان قطار غيسن لا يزال موجودًا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0170",
+      "text": "ركبتا في آخر لحظة.",
+      "alternativen": ["صعدتا إلى القطار في آخر لحظة.", "بالكاد ركبتا القطار.", "ركبتا القطار في اللحظة الأخيرة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0171",
+      "text": "ثمّ انطلق القطار فورًا.",
+      "alternativen": ["بعدها انطلق القطار على الفور.", "ثمّ غادر القطار حالًا.", "ثمّ انطلق القطار حالًا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0172",
+      "text": "نعم، لكنّنا لحقنا بالقطار التالي.",
+      "alternativen": [
+        "نعم، ولكنّنا لحقنا بالقطار التالي.",
+        "نعم، لكن لحقنا بالقطار التالي.",
+        "نعم، لكنّنا أدركنا القطار التالي.",
+        "نعم، ولكن لحقنا بالقطار التالي."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0173",
+      "text": "في التاسعة والنصف وصلتا إلى غيسن.",
+      "alternativen": ["وصلتا إلى غيسن في التاسعة والنصف.", "وصلتا إلى غيسن الساعة 9:30.", "في الساعة التاسعة والنصف وصلتا إلى غيسن."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0174",
+      "text": "كانت الخالة هند تنتظر بالفعل على الرصيف.",
+      "alternativen": [
+        "الخالة هند كانت تنتظر على الرصيف.",
+        "كانت الخالة هند تنتظرهما على الرصيف.",
+        "الخالة هند كانت تنتظر بالفعل على الرصيف."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0175",
+      "text": "مرحبًا بكما! كيف كانت الرحلة؟",
+      "alternativen": ["أهلًا بكما! كيف كانت الرحلة؟", "مرحبًا! كيف كانت رحلتكما؟", "أهلًا! كيف كانت رحلتكما؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0176",
+      "text": "كانت مشوّقة! كاد القطار التالي يفوتنا.",
+      "alternativen": [
+        "مشوّقة! كدنا نفوّت القطار التالي.",
+        "كانت رحلة مشوّقة! كدنا لا نلحق بالقطار التالي.",
+        "كانت مشوّقة! كدنا نفوّت القطار التالي."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0177",
+      "text": "ثمّ ذهب الجميع معًا إلى البيت.",
+      "alternativen": ["بعد ذلك ذهبوا جميعًا إلى البيت.", "ثمّ رجع الجميع معًا إلى البيت.", "ثمّ ذهبوا كلّهم معًا إلى البيت."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0178",
+      "text": "أين تسكن الخالة هند؟",
+      "alternativen": ["أين تعيش الخالة هند؟", "في أيّ مدينة تسكن الخالة هند؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0179",
+      "text": "تسكن في غيسن.",
+      "alternativen": ["هي تسكن في غيسن.", "تعيش في غيسن.", "هي تعيش في غيسن."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0180",
+      "text": "تسكن في فرانكفورت.",
+      "alternativen": ["هي تسكن في فرانكفورت.", "تعيش في فرانكفورت.", "هي تعيش في فرانكفورت."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0181",
+      "text": "تسكن في كولونيا.",
+      "alternativen": ["هي تسكن في كولونيا.", "تعيش في كولونيا.", "هي تعيش في كولونيا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0182",
+      "text": "كم كان لدى رنا وليلى من الوقت في فرانكفورت؟",
+      "alternativen": [
+        "كم من الوقت كان عند رنا وليلى في فرانكفورت؟",
+        "ما الوقت الذي كان لدى رنا وليلى في فرانكفورت؟",
+        "كم من الوقت كان لدى رنا وليلى في فرانكفورت؟"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0183",
+      "text": "كانت لديهما أربع دقائق فقط.",
+      "alternativen": ["كان عندهما أربع دقائق فقط.", "لم يكن لديهما إلّا أربع دقائق.", "كانت لديهما 4 دقائق فقط."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0184",
+      "text": "كانت لديهما عشر دقائق.",
+      "alternativen": ["كان عندهما عشر دقائق.", "كانت لديهما 10 دقائق.", "كان لديهما عشر دقائق."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0185",
+      "text": "كانت لديهما ساعة.",
+      "alternativen": ["كان عندهما ساعة واحدة.", "كانت لديهما ساعة كاملة.", "كان لديهما ساعة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0186",
+      "text": "هل لحقت رنا وليلى بالقطار التالي؟",
+      "alternativen": [
+        "هل أدركت رنا وليلى القطار التالي؟",
+        "هل استطاعت رنا وليلى اللحاق بالقطار التالي؟",
+        "هل لحقت رنا وليلى بقطار التبديل؟"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0187",
+      "text": "نعم، لحقتا به في آخر لحظة.",
+      "alternativen": ["نعم، لحقتا به بالكاد.", "نعم، أدركتاه في اللحظة الأخيرة.", "نعم، لحقتا به في اللحظة الأخيرة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0188",
+      "text": "لا، فاتهما.",
+      "alternativen": ["لا، فاتهما القطار.", "لا، لم تلحقا به.", "لا، لم تلحقا بالقطار التالي."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0189",
+      "text": "لا، أخذتا سيّارة أجرة.",
+      "alternativen": ["لا، ركبتا تاكسي.", "لا، أخذتا تاكسي.", "لا، ركبتا سيّارة أجرة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0190",
+      "text": "متى وصلت الأمّ وابنتها إلى غيسن؟",
+      "alternativen": ["متى وصلت الأمّ والبنت إلى غيسن؟", "في أيّ ساعة وصلت الأمّ وابنتها إلى غيسن؟", "متى وصلت الأمّ والابنة إلى غيسن؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0191",
+      "text": "في التاسعة والنصف.",
+      "alternativen": ["الساعة التاسعة والنصف.", "في الساعة 9:30.", "التاسعة والنصف."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0192",
+      "text": "في الثامنة وعشر دقائق.",
+      "alternativen": ["الساعة الثامنة وعشر دقائق.", "في الساعة 8:10.", "الساعة 8:10."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0193",
+      "text": "في الساعة الثامنة.",
+      "alternativen": ["في الثامنة.", "الساعة 8.", "الساعة الثامنة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0194",
+      "text": "سافرنا إلى غيسن وبدّلنا القطار في فرانكفورت.",
+      "alternativen": [
+        "ذهبنا إلى غيسن وبدّلنا في فرانكفورت.",
+        "سافرنا إلى غيسن، وفي فرانكفورت غيّرنا القطار.",
+        "ذهبنا إلى غيسن وغيّرنا القطار في فرانكفورت."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0195",
+      "text": "الجدّ كمال عند آلة التذاكر",
+      "alternativen": ["الجدّ كمال عند الآلة", "الجدّ كمال وآلة التذاكر"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0196",
+      "text": "يريد الجدّ كمال أن يذهب بالحافلة إلى المركز.",
+      "alternativen": [
+        "الجدّ كمال يريد أن يذهب إلى مركز المدينة بالحافلة.",
+        "يريد الجدّ كمال الذهاب إلى المركز بالحافلة.",
+        "الجدّ كمال يريد أن يذهب بالحافلة إلى المركز."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0197",
+      "text": "عند الموقف يقابل يان.",
+      "alternativen": ["يلتقي يان في موقف الحافلة.", "يصادف يان عند الموقف.", "يلتقي يان عند الموقف."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0198",
+      "text": "مرحبًا يا يان! هل تساعدني عند الآلة من فضلك؟",
+      "alternativen": [
+        "مرحبًا يا يان! من فضلك، هل تساعدني في آلة التذاكر؟",
+        "أهلًا يا يان! هل يمكنك أن تساعدني عند الآلة؟",
+        "مرحبًا يا يان! هل تساعدني عند آلة التذاكر من فضلك؟"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0199",
+      "text": "بكلّ سرور! إلى أين تريد أن تذهب؟",
+      "alternativen": ["طبعًا! إلى أين تريد الذهاب؟", "بكلّ سرور! إلى أين حضرتك ذاهب؟", "بسرور! إلى أين تريد أن تسافر؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0200",
+      "text": "إلى السوق في المركز. أيّ تذكرة أحتاج؟",
+      "alternativen": [
+        "إلى السوق في وسط المدينة. ما التذكرة التي أحتاجها؟",
+        "إلى سوق المركز. أيّ تذكرة تلزمني؟",
+        "إلى السوق في المركز. ما التذكرة التي أحتاجها؟"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0201",
+      "text": "إذن تحتاج إلى تذكرة للبالغين.",
+      "alternativen": ["إذن تلزمك تذكرة للكبار.", "في هذه الحالة تحتاج تذكرة بالغين.", "إذن تحتاج تذكرة للكبار."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0202",
+      "text": "أليست هناك تذكرة رخيصة لكبار السنّ؟",
+      "alternativen": ["ألا توجد تذكرة مخفّضة للمسنّين؟", "أليس هناك تذكرة بسعر مناسب لكبار السنّ؟", "ألا توجد تذكرة رخيصة لكبار السنّ؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0203",
+      "text": "بلى، لكنّها متاحة فقط ابتداءً من الساعة التاسعة.",
+      "alternativen": [
+        "بلى، لكنّها لا تصلح إلّا من الساعة التاسعة.",
+        "بلى، ولكن ابتداءً من التاسعة فقط.",
+        "بلى، لكنّها لا تُباع إلّا ابتداءً من التاسعة."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0204",
+      "text": "الآن الساعة الثامنة والنصف فقط.",
+      "alternativen": ["الساعة الآن الثامنة والنصف فقط.", "الوقت الآن الثامنة والنصف لا أكثر.", "الساعة الآن الثامنة والنصف لا غير."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0205",
+      "text": "إذن خذ التذكرة العاديّة. ثمنها 2,80 يورو.",
+      "alternativen": [
+        "إذن اشترِ التذكرة العاديّة. سعرها 2,80 يورو.",
+        "خذ إذن التذكرة العاديّة. تكلّف 2,80 يورو.",
+        "إذن خذ التذكرة العاديّة. سعرها 2,80 يورو."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0206",
+      "text": "هل يمكنني أن أدفع هنا بالبطاقة أيضًا؟",
+      "alternativen": ["هل أستطيع الدفع بالبطاقة هنا أيضًا؟", "هل يمكن الدفع هنا بالبطاقة أيضًا؟", "هل يمكنني الدفع هنا بالبطاقة أيضًا؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0207",
+      "text": "نعم، طبعًا. أدخل البطاقة هنا.",
+      "alternativen": ["نعم بالتأكيد. ضع البطاقة هنا.", "طبعًا. أدخل البطاقة هنا.", "نعم، بالطبع. أدخل البطاقة هنا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0208",
+      "text": "رائع، كان ذلك سهلًا! وأين يجب أن أنزل؟",
+      "alternativen": ["ممتاز، كان سهلًا! وأين أنزل؟", "رائع، هذا كان سهلًا! وأين عليّ أن أنزل؟", "رائع، كان سهلًا! وأين يجب أن أنزل؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0209",
+      "text": "عند السوق. هي أربع محطّات فقط.",
+      "alternativen": ["في محطّة السوق. أربع محطّات فقط.", "عند السوق. إنّها أربع محطّات لا غير.", "عند السوق. أربع محطّات فقط."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0210",
+      "text": "شكرًا جزيلًا يا يان! لقد ساعدتني كثيرًا.",
+      "alternativen": [
+        "شكرًا جزيلًا يا يان! ساعدتني كثيرًا.",
+        "ألف شكر يا يان! لقد ساعدتني كثيرًا.",
+        "شكرًا جزيلًا يا يان! ساعدتني كثيرًا جدًّا."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0211",
+      "text": "إلى أين يريد الجدّ كمال أن يذهب؟",
+      "alternativen": ["إلى أين يريد الجدّ كمال الذهاب؟", "أين يريد الجدّ كمال أن يذهب؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0212",
+      "text": "يريد أن يذهب إلى السوق في المركز.",
+      "alternativen": [
+        "يريد الذهاب إلى السوق في وسط المدينة.",
+        "هو يريد أن يذهب إلى السوق في المركز.",
+        "يريد أن يذهب إلى السوق في وسط المدينة."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0213",
+      "text": "يريد أن يذهب إلى محطّة القطار.",
+      "alternativen": ["يريد الذهاب إلى المحطّة.", "هو يريد أن يذهب إلى محطّة القطار.", "يريد الذهاب إلى محطّة القطار."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0214",
+      "text": "يريد أن يذهب إلى غيسن.",
+      "alternativen": ["يريد السفر إلى غيسن.", "هو يريد أن يذهب إلى غيسن.", "يريد الذهاب إلى غيسن."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0215",
+      "text": "أيّ تذكرة يأخذ الجدّ كمال؟",
+      "alternativen": ["ما التذكرة التي يأخذها الجدّ كمال؟", "أيّ تذكرة يختار الجدّ كمال؟", "أيّ تذكرة سيأخذ الجدّ كمال؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0216",
+      "text": "يأخذ التذكرة العاديّة.",
+      "alternativen": ["هو يأخذ التذكرة العاديّة.", "يختار التذكرة العاديّة.", "سيأخذ التذكرة العاديّة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0217",
+      "text": "يأخذ تذكرة كبار السنّ.",
+      "alternativen": ["يأخذ التذكرة الخاصّة بكبار السنّ.", "يختار تذكرة كبار السنّ.", "سيأخذ تذكرة كبار السنّ."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0218",
+      "text": "يأخذ تذكرة للأطفال.",
+      "alternativen": ["يأخذ تذكرة أطفال.", "يختار تذكرة للأطفال.", "سيأخذ تذكرة للأطفال."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0219",
+      "text": "كم محطّة يجب أن يركب الجدّ كمال؟",
+      "alternativen": ["كم محطّة على الجدّ كمال أن يركب؟", "كم محطّة يجب أن يسافر الجدّ كمال؟", "كم محطّة يجب على الجدّ كمال أن يركب؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0220",
+      "text": "أربع محطّات فقط.",
+      "alternativen": ["فقط أربع محطّات.", "4 محطّات فقط.", "أربع محطّات لا غير."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0221",
+      "text": "تسع محطّات.",
+      "alternativen": ["9 محطّات."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0222",
+      "text": "محطّتان.",
+      "alternativen": ["محطّتان اثنتان.", "اثنتان."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0223",
+      "text": "لقد ساعدتني كثيرًا.",
+      "alternativen": ["ساعدتني كثيرًا.", "أنت ساعدتني كثيرًا.", "لقد ساعدتني جدًّا."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0224",
+      "text": "القطار ينطلق اليوم من الرصيف 5.",
+      "alternativen": ["اليوم ينطلق القطار من الرصيف 5.", "ينطلق القطار اليوم من الرصيف الخامس.", "ينطلق القطار اليوم من الرصيف 5."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0225",
+      "text": "تأخّر القطار، وفاتني القطار التالي.",
+      "alternativen": [
+        "كان القطار متأخّرًا ففاتني القطار التالي.",
+        "تأخّر القطار ولم ألحق بالقطار التالي.",
+        "القطار تأخّر، وفاتني القطار التالي."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0226",
+      "text": "ذهبنا إلى محطّة القطار بسيّارة أجرة.",
+      "alternativen": ["ذهبنا بالتاكسي إلى المحطّة.", "أخذنا سيّارة أجرة إلى محطّة القطار.", "ذهبنا إلى المحطّة بسيّارة أجرة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0227",
+      "text": "بالترام تصل بسرعة إلى وسط المدينة.",
+      "alternativen": ["بالترام تكون بسرعة في وسط المدينة.", "مع الترام تصل إلى وسط المدينة بسرعة.", "بالترام تصل إلى وسط المدينة بسرعة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0228",
+      "text": "للدرّاجة الناريّة تحتاج إلى رخصة قيادة.",
+      "alternativen": [
+        "تحتاج إلى رخصة قيادة لقيادة درّاجة ناريّة.",
+        "لركوب الدرّاجة الناريّة تلزمك رخصة قيادة.",
+        "تحتاج إلى رخصة قيادة للدرّاجة الناريّة."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0229",
+      "text": "على الطريق السريع ازدحام، من الأفضل أن نأخذ القطار.",
+      "alternativen": [
+        "هناك زحمة على الطريق السريع، لذلك نفضّل القطار.",
+        "الطريق السريع مزدحم، فلنركب القطار.",
+        "على الطريق السريع زحام، الأفضل أن نركب القطار."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0230",
+      "text": "عند محطّة القطار الرئيسيّة موقف سيّارات كبير.",
+      "alternativen": [
+        "يوجد موقف سيّارات كبير عند المحطّة الرئيسيّة.",
+        "في المحطّة الرئيسيّة موقف سيّارات كبير.",
+        "هناك موقف سيّارات كبير عند محطّة القطار الرئيسيّة.",
+        "عند المحطّة الرئيسيّة موقف سيّارات كبير."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0231",
+      "text": "البالغون يدفعون ثلاثة يورو، والأطفال يركبون مجّانًا.",
+      "alternativen": [
+        "يدفع الكبار ثلاثة يورو، ويسافر الأطفال مجّانًا.",
+        "الكبار يدفعون 3 يورو، والأطفال مجّانًا.",
+        "البالغون يدفعون 3 يورو، والأطفال يركبون مجّانًا."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0232",
+      "text": "الخطّ 5 يذهب في اتّجاه المركز.",
+      "alternativen": ["يسير الخطّ 5 باتّجاه المركز.", "الخطّ رقم 5 متّجه إلى المركز.", "الخطّ 5 يسير باتّجاه المركز."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0233",
+      "text": "نحن في الطريق إلى خالتي.",
+      "alternativen": ["نحن في طريقنا إلى خالتي.", "نحن في الطريق إلى عمّتي.", "نحن ذاهبون إلى خالتي."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0234",
+      "text": "أسرعنا ولحقنا بالحافلة.",
+      "alternativen": ["استعجلنا وأدركنا الحافلة.", "أسرعنا ولحقنا بالحافلة في الوقت.", "أسرعنا ولحقنا بالحافلة مع ذلك."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0235",
+      "text": "وصل الجميع في الموعد ما عدا يان.",
+      "alternativen": ["ما عدا يان، وصل الجميع في الموعد.", "كلّهم وصلوا في الموعد إلّا يان.", "وصل الكلّ في الموعد إلّا يان."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0236",
+      "text": "في القطار فحص رجل التذاكر.",
+      "alternativen": ["فحص رجل التذاكر في القطار.", "في القطار تحقّق رجل من التذاكر.", "رجل فحص التذاكر في القطار."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0237",
+      "text": "أخذت درّاجتي معي في القطار.",
+      "alternativen": ["أخذت درّاجتي معي إلى القطار.", "اصطحبت درّاجتي في القطار.", "أخذت معي درّاجتي في القطار."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0238",
+      "text": "في الساعة الثامنة غادرنا المحطّة الرئيسيّة.",
+      "alternativen": [
+        "غادرنا محطّة القطار الرئيسيّة في الثامنة.",
+        "تركنا المحطّة الرئيسيّة الساعة الثامنة.",
+        "غادرنا المحطّة الرئيسيّة في الساعة الثامنة."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0239",
+      "text": "استغرقت الرحلة ثلاث ساعات.",
+      "alternativen": ["دامت الرحلة ثلاث ساعات.", "الرحلة استغرقت 3 ساعات.", "دامت الرحلة 3 ساعات."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0240",
+      "text": "تنبيه: القطار ينطلق اليوم من الرصيف 8.",
+      "alternativen": [
+        "ملاحظة: ينطلق القطار اليوم من الرصيف 8.",
+        "تنبيه: اليوم يغادر القطار من الرصيف الثامن.",
+        "تنبيه: ينطلق القطار اليوم من الرصيف 8."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0241",
+      "text": "وصلنا في السابعة والنصف تقريبًا.",
+      "alternativen": ["وصلنا حوالي الساعة السابعة والنصف.", "وصلنا تقريبًا في الساعة 7:30.", "وصلنا في حوالي السابعة والنصف."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0242",
+      "text": "أين أحصل هنا على معلومات؟",
+      "alternativen": ["من أين أحصل على المعلومات هنا؟", "أين أجد معلومات هنا؟", "أين يمكنني الحصول على معلومات هنا؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0243",
+      "text": "انطلقت الحافلة في الموعد تمامًا الساعة الثامنة.",
+      "alternativen": [
+        "غادرت الحافلة في الثامنة تمامًا.",
+        "انطلق الباص في الساعة الثامنة بالضبط.",
+        "انطلقت الحافلة في الساعة الثامنة تمامًا."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0244",
+      "text": "عندما تكون حركة المرور كثيفة آخذ القطار.",
+      "alternativen": ["إذا كان المرور كثيفًا أركب القطار.", "عند الزحام أذهب بالقطار.", "حين تكون حركة المرور كثيفة أركب القطار."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0245",
+      "text": "يوم السبت تكون الحافلة في المدينة مجّانيّة.",
+      "alternativen": [
+        "الحافلة في المدينة مجّانيّة يوم السبت.",
+        "في يوم السبت ركوب الحافلة في المدينة مجّانيّ.",
+        "الحافلة مجّانيّة في المدينة يوم السبت."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0246",
+      "text": "أين أحصل على تذكرة رخيصة؟",
+      "alternativen": ["من أين أشتري تذكرة رخيصة؟", "أين أجد تذكرة بسعر مناسب؟", "أين يمكنني أن أحصل على تذكرة رخيصة؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0247",
+      "text": "إلى فرانكفورت حوالي 60 كيلومترًا.",
+      "alternativen": [
+        "المسافة إلى فرانكفورت ستّون كيلومترًا تقريبًا.",
+        "تبعد فرانكفورت حوالي 60 كيلومترًا.",
+        "حتّى فرانكفورت حوالي 60 كيلومترًا."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0248",
+      "text": "تسكن خالتي في مركز غيسن.",
+      "alternativen": ["خالتي تسكن في وسط غيسن.", "تسكن عمّتي في مركز غيسن.", "خالتي تسكن في مركز غيسن."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0249",
+      "text": "لحقنا بالحافلة في الوقت المناسب.",
+      "alternativen": ["أدركنا الحافلة في الوقت.", "وصلنا إلى الحافلة في الوقت المناسب.", "لحقنا بالحافلة في الوقت."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0250",
+      "text": "كيف ذهبت إلى كولونيا؟",
+      "alternativen": ["بماذا سافرت إلى كولونيا؟", "كيف سافرت إلى كولونيا؟", "بأيّ وسيلة ذهبت إلى كولونيا؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0251",
+      "text": "سافرت بالقطار وبدّلت في فرانكفورت.",
+      "alternativen": [
+        "ذهبت بالقطار وغيّرت القطار في فرانكفورت.",
+        "ركبت القطار وبدّلت في فرانكفورت.",
+        "سافرت بالقطار وغيّرت في فرانكفورت."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0252",
+      "text": "متى وصلت؟",
+      "alternativen": ["في أيّ ساعة وصلت؟", "متى جئت؟", "متى وصلت إلى هنا؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0253",
+      "text": "وصلت في الساعة الثامنة.",
+      "alternativen": ["وصلت الساعة الثامنة.", "وصلت في الثامنة.", "وصلت في الساعة 8."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0254",
+      "text": "تذكرة إلى غيسن، ذهاب وإياب، من فضلك.",
+      "alternativen": ["من فضلك، تذكرة ذهاب وإياب إلى غيسن.", "تذكرة ذهاب وعودة إلى غيسن، من فضلك.", "تذكرة ذهاب وإياب إلى غيسن، من فضلك."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0255",
+      "text": "ومن أيّ رصيف ينطلق القطار؟",
+      "alternativen": ["وعلى أيّ رصيف القطار؟", "ومن أيّ رصيف يغادر القطار؟", "وعلى أيّ رصيف ينطلق القطار؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0256",
+      "text": "ينطلق من الرصيف 2.",
+      "alternativen": ["يغادر من الرصيف 2.", "ينطلق من الرصيف الثاني.", "إنّه ينطلق من الرصيف 2."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0257",
+      "text": "المبلغ 18 يورو. هل تدفع بالبطاقة؟",
+      "alternativen": ["الحساب 18 يورو. هل ستدفع بالبطاقة؟", "هذا 18 يورو. هل تدفعين بالبطاقة؟", "المبلغ 18 يورو. هل ستدفع بالبطاقة؟"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "de.a2.e02.s0258",
+      "text": "ذهبت إلى المدرسة بالحافلة.",
+      "alternativen": ["ذهبت بالحافلة إلى المدرسة.", "أنا ذهبت إلى المدرسة بالحافلة.", "بالحافلة ذهبت إلى المدرسة."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "tipps": [
+    {
+      "schluessel": "de.a2.e02.ar.t01",
+      "titel": "بالحافلة → mit dem Bus",
+      "inhalt": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "في العربيّة نقول: بالحافلة، بالقطار، بالدرّاجة، والاسم بعد حرف الجرّ مجرور. وفي الألمانيّة نستعمل mit، وبعدها حالة Dativ: der وdas تصبحان dem، وdie تصبح der."
+              }
+            ]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ich fahre mit dem Rad zur Arbeit."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Elif fährt mit der Straßenbahn zur Schule."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Murat fährt jeden Tag mit dem Motorrad."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1"
+    },
+    {
+      "schluessel": "de.a2.e02.ar.t02",
+      "titel": "Taxi وBus: كلمات تعرفها – وKarte",
+      "inhalt": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "كلمات مثل تاكسي وباص وكيلومتر تعرفها من العربيّة، لكنّ لها في الألمانيّة أداة تحفظها معها: das Taxi، der Bus، der Kilometer."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "وكلمة Karte تعني البطاقة (mit Karte bezahlen) وتعني التذكرة أيضًا، مثل Fahrkarte."
+              }
+            ]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wir sind mit dem Taxi zum Bahnhof gefahren."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mit Karte, bitte."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Für Schüler ist die Karte günstig."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1"
+    },
+    {
+      "schluessel": "de.a2.e02.ar.t03",
+      "titel": "ذهبتُ → ich bin gefahren: الحركة مع sein",
+      "inhalt": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "في العربيّة يكفي الفعل الماضي: ذهبتُ، وصلتُ، بدّلتُ. وفي الألمانيّة يُبنى Perfekt غالبًا مع haben، لكنّ أفعال الحركة من مكان إلى مكان وأفعال التغيّر تأخذ sein: fahren، gehen، kommen، ankommen، einsteigen، umsteigen."
+              }
+            ]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ich bin mit dem Bus zum Bahnhof gefahren."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wir sind in Frankfurt umgestiegen."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Um zwölf Uhr bin ich in Köln angekommen."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1"
+    },
+    {
+      "schluessel": "de.a2.e02.ar.t04",
+      "titel": "حرف الجرّ يحدّد الحالة – كما في العربيّة",
+      "inhalt": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "هذا تعرفه من العربيّة: حرف الجرّ يحدّد حالة الاسم بعده (إلى المركزِ). وفي الألمانيّة تأتي بعد zu وvon وnach وbis zu وaußer دائمًا حالة Dativ."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "وتُختصر zu dem إلى zum، وzu der إلى zur: zum Zentrum، zur Arbeit."
+              }
+            ]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wie weit ist es bis zum Zentrum?"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Der Zug fährt heute von Gleis 5 ab."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Der Bus fährt jeden Tag außer Sonntag."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1"
+    },
+    {
+      "schluessel": "de.a2.e02.ar.t05",
+      "titel": "umgestiegen وbesucht وkontrolliert: أين تذهب ge-؟",
+      "inhalt": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "في الأفعال المنفصلة تدخل ge- بين الجزأين: umsteigen → umgestiegen، ankommen → angekommen."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "أمّا الأفعال التي تبدأ بـ be- أو ver- أو er- والأفعال المنتهية بـ -ieren فلا تأخذ ge-: besucht، verpasst، erreicht، kontrolliert."
+              }
+            ]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Wir sind in Frankfurt umgestiegen."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Am Sonntag habe ich meine Tante in Köln besucht."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Im Zug hat ein Mann die Fahrkarten kontrolliert."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1"
+    }
+  ]
+}
