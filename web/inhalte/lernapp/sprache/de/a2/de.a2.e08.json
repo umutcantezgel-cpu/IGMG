@@ -1637,7 +1637,7 @@
     },
     {
       "schluessel": "de.a2.e08.s0077",
-      "text": "Sehr gut. Für welchen Kurs denn?",
+      "text": "Schön! Für welchen Kurs denn?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1829,7 +1829,7 @@
     },
     {
       "schluessel": "de.a2.e08.s0109",
-      "text": "Jan hat zwei Tore gemacht und Selin eins.",
+      "text": "Jan hat zwei Tore gemacht und Emre eins.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2042,13 +2042,13 @@
     },
     {
       "schluessel": "de.a2.e08.s0144",
-      "text": "Bitte bringt Schuhe für die Halle und Wasser mit.",
+      "text": "Bitte bringt Wasser und Schuhe für die Halle mit.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "de.a2.e08.s0145",
-      "text": "Anmeldung bis 31. August per E-Mail oder im Büro.",
+      "text": "Anmeldung bis Ende August per E-Mail oder im Büro.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2666,7 +2666,7 @@
     },
     {
       "schluessel": "de.a2.e08.s0248",
-      "text": "Ich möchte mich für den Kurs Schwimmen anmelden.",
+      "text": "Ich möchte mich für den Kurs im Schwimmbad anmelden.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2757,6 +2757,12 @@
     {
       "schluessel": "de.a2.e08.s0263",
       "text": "Wie viel kostet der Kurs, und wann beginnt er?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0264",
+      "text": "Heute spielen wir ohne unseren Torwart.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     }
@@ -2866,7 +2872,8 @@
           "alternativen": [
             "Lieber spiele ich Basketball als Handball.",
             "Basketball spiele ich lieber als Handball.",
-            "Ich spiele Basketball lieber als Handball."
+            "Ich spiele Basketball lieber als Handball.",
+            "Lieber als Handball spiele ich Basketball."
           ]
         },
         {
@@ -3098,7 +3105,8 @@
             "Im Monat ist der Beitrag für Kinder acht Euro.",
             "Der Beitrag ist für Kinder acht Euro im Monat.",
             "Der Beitrag für Kinder ist im Monat acht Euro.",
-            "Der Beitrag ist im Monat für Kinder acht Euro."
+            "Der Beitrag ist im Monat für Kinder acht Euro.",
+            "Für Kinder ist der Beitrag im Monat acht Euro."
           ],
           "ablenker": ["dem", "Jahr"]
         },
@@ -3144,7 +3152,9 @@
             "Ich möchte im Verein Mitglied werden.",
             "Ich möchte Mitglied in dem Verein werden.",
             "Ich möchte ein Mitglied im Verein werden.",
-            "Ich will im Verein Mitglied werden."
+            "Ich will im Verein Mitglied werden.",
+            "Ich möchte Vereinsmitglied werden.",
+            "Ich möchte Mitglied des Vereins werden."
           ]
         },
         {
@@ -3264,8 +3274,12 @@
         {
           "schluessel": "de.a2.e08.l04.a12",
           "typ": "satzbau",
-          "ziel": "de.a2.e08.s0095",
-          "alternativen": ["Im September beginnt die neue Saison."]
+          "ziel": "de.a2.e08.s0073",
+          "alternativen": [
+            "Wir spielen am Sonntag gegen den Meister.",
+            "Gegen den Meister spielen wir am Sonntag.",
+            "Wir spielen gegen den Meister am Sonntag."
+          ]
         },
         {
           "schluessel": "de.a2.e08.l04.a13",
@@ -3752,7 +3766,10 @@
           "schluessel": "de.a2.e08.l06.a08",
           "typ": "satzbau",
           "ziel": "de.a2.e08.s0176",
-          "alternativen": ["Die Jungen duschen nach dem Training und ruhen sich aus."]
+          "alternativen": [
+            "Die Jungen duschen nach dem Training und ruhen sich aus.",
+            "Die Jungen duschen und ruhen sich nach dem Training aus."
+          ]
         },
         {
           "schluessel": "de.a2.e08.l06.a09",
@@ -3866,7 +3883,8 @@
             "Mein Vater ist im Verein schon lange Mitglied.",
             "Schon lange ist mein Vater Mitglied im Verein.",
             "Mein Vater ist schon lange im Verein Mitglied.",
-            "Im Verein ist mein Vater schon lange Mitglied."
+            "Im Verein ist mein Vater schon lange Mitglied.",
+            "Schon lange ist mein Vater im Verein Mitglied."
           ],
           "ablenker": ["kurz", "Mitglieder"]
         },
@@ -3920,7 +3938,7 @@
         {
           "schluessel": "de.a2.e08.l07.a16",
           "typ": "hoeren_schreiben",
-          "ziel": "de.a2.e08.s0092"
+          "ziel": "de.a2.e08.s0264"
         },
         {
           "schluessel": "de.a2.e08.l07.a17",
@@ -4017,7 +4035,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a2.e08.s0243",
           "nach": "ziel",
-          "ablenker": ["wie", "teurer"]
+          "ablenker": ["wie", "billig"]
         },
         {
           "schluessel": "de.a2.e08.l08.a06",
@@ -4042,7 +4060,11 @@
           "schluessel": "de.a2.e08.l08.a08",
           "typ": "satzbau",
           "ziel": "de.a2.e08.s0245",
-          "alternativen": ["Mit meinem Vater klettere ich am liebsten.", "Ich klettere am liebsten mit meinem Vater."]
+          "alternativen": [
+            "Mit meinem Vater klettere ich am liebsten.",
+            "Ich klettere am liebsten mit meinem Vater.",
+            "Ich klettere mit meinem Vater am liebsten."
+          ]
         },
         {
           "schluessel": "de.a2.e08.l08.a09",
