@@ -1,0 +1,1871 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "akaid",
+  "stufe": "grund",
+  "einheit": {
+    "schluessel": "islam.grund.e09",
+    "reihenfolge": 9,
+    "thema": {
+      "de": "Nach hanefitischer Lehre – Glaube I: Grundlagen des Glaubens und die Einheit Gottes"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Nach hanefitischer Lehre: Ich kann erklären, was al-Fiqh al-Akbar und die Ṭaḥāwiyya unter Glauben (īmān) verstehen und wie Glaube und Islam zusammenhängen."
+      },
+      {
+        "de": "Ich kann die Lehre von der Einheit Gottes (tawḥīd) in eigenen Worten wiedergeben und erklären, dass Gott den Geschöpfen nicht ähnlich ist."
+      },
+      {
+        "de": "Ich unterscheide wesenhafte Eigenschaften und Handlungseigenschaften Gottes und kenne die Lehre von der angeborenen Veranlagung (fiṭra)."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.grund.e09.l01",
+      "titel": "Was Glaube ist; Glaube und Islam",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e09.l01.a01",
+          "text": "Nach al-Fiqh al-Akbar besteht der Glaube (īmān) im Bekenntnis (iqrār) und im Fürwahrhalten (taṣdīq). Die Ṭaḥāwiyya ordnet beides zu: Das Bekenntnis geschieht mit der Zunge, das Fürwahrhalten mit dem Herzen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Taʿrīf al-Īmān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 55,
+              "passage": "fiqh_akbar.ms0004",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms4",
+              "passageSha256Text": "61e37bf1694b17db1f3403374df616268343558a04a8ebd88a4aed5185687924",
+              "zitatVon": 1047,
+              "zitatBis": 1075,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 62",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 42,
+              "passage": "tahawiyya.ms0005",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms5",
+              "passageSha256Text": "5863390b42be9fd38773aa4eaa072c2665f80dd4b5c765e30fbfb0c7fcd67d8a",
+              "zitatVon": 290,
+              "zitatBis": 337,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.a02",
+          "text": "Zu den Grundlagen des Glaubens gehört nach al-Fiqh al-Akbar, sich zum Glauben an Gott, an Seine Engel, Seine Bücher und Seine Gesandten, an die Auferweckung nach dem Tod und an die Bestimmung (qadar) zu bekennen – dass Gutes wie Schlechtes von Gott kommt. Auch die Abrechnung, die Waage, das Paradies und die Hölle sind wahr. Die Ṭaḥāwiyya nennt dieselben Inhalte des Glaubens: Gott, die Engel, die Bücher, die Gesandten, den Jüngsten Tag und die Bestimmung.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Bayān Uṣūl al-Īmān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 5,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 41,
+              "zitatBis": 210,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 66",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 44,
+              "passage": "tahawiyya.ms0005",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms5",
+              "passageSha256Text": "5863390b42be9fd38773aa4eaa072c2665f80dd4b5c765e30fbfb0c7fcd67d8a",
+              "zitatVon": 575,
+              "zitatBis": 679,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.a03",
+          "text": "Nach der Ṭaḥāwiyya ist der Glaube in seinem Kern einer, und alle Gläubigen sind darin gleich. Unterschiede zwischen ihnen entstehen durch Gottesfurcht (khashya) und Frömmigkeit (taqwā), dadurch, dass sie den eigenen Neigungen widerstehen, und dadurch, dass sie sich an das Bessere halten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 64",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 43,
+              "passage": "tahawiyya.ms0005",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms5",
+              "passageSha256Text": "5863390b42be9fd38773aa4eaa072c2665f80dd4b5c765e30fbfb0c7fcd67d8a",
+              "zitatVon": 409,
+              "zitatBis": 503,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.a04",
+          "text": "Al-Fiqh al-Akbar unterscheidet: Was den Inhalt des Glaubens betrifft – das, woran geglaubt wird –, nimmt der Glaube weder zu noch ab, bei den Bewohnern des Himmels ebenso wenig wie bei denen der Erde. Was die Gewissheit (yaqīn) und das Fürwahrhalten betrifft, nimmt er zu und ab. Im Glauben und im Bekenntnis der Einheit Gottes sind die Gläubigen gleich; in ihren Taten haben sie unterschiedlichen Rang.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Taʿrīf al-Īmān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 55,
+              "passage": "fiqh_akbar.ms0004",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms4",
+              "passageSha256Text": "61e37bf1694b17db1f3403374df616268343558a04a8ebd88a4aed5185687924",
+              "zitatVon": 1076,
+              "zitatBis": 1228,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.a05",
+          "text": "Islam bedeutet nach al-Fiqh al-Akbar, sich Gott zu ergeben (taslīm) und Seinen Geboten zu folgen (inqiyād).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "ʿAlāqat al-Islām wa-l-Īmān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 57,
+              "passage": "fiqh_akbar.ms0004",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms4",
+              "passageSha256Text": "61e37bf1694b17db1f3403374df616268343558a04a8ebd88a4aed5185687924",
+              "zitatVon": 1252,
+              "zitatBis": 1299,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.a06",
+          "text": "Dem Wortsinn nach unterscheiden sich Islam und Glaube. Dennoch gibt es nach al-Fiqh al-Akbar keinen Glauben ohne Islam und keinen Islam ohne Glauben; beide gehören zusammen wie das Äußere und das Innere.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "ʿAlāqat al-Islām wa-l-Īmān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 57,
+              "passage": "fiqh_akbar.ms0004",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms4",
+              "passageSha256Text": "61e37bf1694b17db1f3403374df616268343558a04a8ebd88a4aed5185687924",
+              "zitatVon": 1300,
+              "zitatBis": 1414,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.a07",
+          "text": "Das Wort „Religion“ (dīn) umfasst nach al-Fiqh al-Akbar den Glauben, den Islam und alle religiösen Vorschriften (sharāʾiʿ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "ʿAlāqat al-Islām wa-l-Īmān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 57,
+              "passage": "fiqh_akbar.ms0004",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms4",
+              "passageSha256Text": "61e37bf1694b17db1f3403374df616268343558a04a8ebd88a4aed5185687924",
+              "zitatVon": 1415,
+              "zitatBis": 1466,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.a08",
+          "text": "Nach der Ṭaḥāwiyya verlässt ein Mensch den Glauben nur dadurch, dass er leugnet, was ihn in den Glauben hineingebracht hat.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 61",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 42,
+              "passage": "tahawiyya.ms0005",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms5",
+              "passageSha256Text": "5863390b42be9fd38773aa4eaa072c2665f80dd4b5c765e30fbfb0c7fcd67d8a",
+              "zitatVon": 238,
+              "zitatBis": 289,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.a09",
+          "text": "Die Ṭaḥāwiyya lehrt: Alles, was vom Gesandten Gottes gesichert überliefert ist – an Vorschriften und an Erläuterungen –, ist wahr.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 63",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 43,
+              "passage": "tahawiyya.ms0005",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms5",
+              "passageSha256Text": "5863390b42be9fd38773aa4eaa072c2665f80dd4b5c765e30fbfb0c7fcd67d8a",
+              "zitatVon": 338,
+              "zitatBis": 408,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.a10",
+          "text": "Alle Gläubigen sind nach der Ṭaḥāwiyya Freunde (awliyāʾ) Gottes, des Allerbarmers. Am angesehensten bei Gott ist, wer Ihm am meisten gehorcht und am treuesten dem Koran folgt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 65",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 44,
+              "passage": "tahawiyya.ms0005",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms5",
+              "passageSha256Text": "5863390b42be9fd38773aa4eaa072c2665f80dd4b5c765e30fbfb0c7fcd67d8a",
+              "zitatVon": 504,
+              "zitatBis": 574,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e09.l01.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l01.a01",
+          "behauptung": "Nach al-Fiqh al-Akbar besteht der Glaube im Bekenntnis und im Fürwahrhalten.",
+          "richtig": true,
+          "begruendung": "Al-Fiqh al-Akbar bestimmt den Glauben als Bekenntnis (iqrār) und Fürwahrhalten (taṣdīq).",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e09.l01.a01",
+          "anweisung": "Ordne zu: Womit geschehen nach der Ṭaḥāwiyya die beiden Teile des Glaubens?",
+          "paare": [
+            {
+              "links": "Bekenntnis (iqrār)",
+              "rechts": "mit der Zunge"
+            },
+            {
+              "links": "Fürwahrhalten (taṣdīq)",
+              "rechts": "mit dem Herzen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.q03",
+          "typ": "reihenfolge",
+          "aussage": "islam.grund.e09.l01.a02",
+          "anweisung": "Bringe die Glaubensinhalte in die Reihenfolge, in der al-Fiqh al-Akbar sie am Anfang nennt.",
+          "schritte": [
+            "Gott",
+            "Seine Engel",
+            "Seine Bücher",
+            "Seine Gesandten",
+            "die Auferweckung nach dem Tod",
+            "die Bestimmung (qadar)"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l01.a06",
+          "behauptung": "Nach al-Fiqh al-Akbar kann es Glauben ohne Islam geben.",
+          "richtig": false,
+          "begruendung": "Al-Fiqh al-Akbar sagt: Es gibt keinen Glauben ohne Islam und keinen Islam ohne Glauben; beide gehören zusammen wie das Äußere und das Innere.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e09.l01.a04",
+          "fall": "Zwei Gläubige glauben an dieselben Inhalte des Glaubens. Der eine verrichtet viele freiwillige gute Taten, der andere vor allem die Pflichten.",
+          "frage": "Was gilt in diesem allgemeinen Lehrfall nach al-Fiqh al-Akbar?",
+          "optionen": [
+            "Im Glauben und im Bekenntnis der Einheit Gottes sind beide gleich; im Rang ihrer Taten unterscheiden sie sich.",
+            "Nur wer viele freiwillige Taten verrichtet, hat Glauben.",
+            "Die beiden unterscheiden sich in dem, woran sie glauben."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l01.a08",
+          "behauptung": "Nach der Ṭaḥāwiyya verlässt ein Mensch den Glauben nur, wenn er leugnet, was ihn in den Glauben gebracht hat.",
+          "richtig": true,
+          "begruendung": "So lehrt es die Ṭaḥāwiyya (Nr. 61): Der Glaube wird nur durch das Leugnen dessen verlassen, was in ihn hineingebracht hat.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l01.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l01.a07",
+          "behauptung": "Nach al-Fiqh al-Akbar umfasst das Wort „Religion“ (dīn) nur die Vorschriften, nicht den Glauben.",
+          "richtig": false,
+          "begruendung": "Al-Fiqh al-Akbar sagt: Das Wort „Religion“ umfasst den Glauben, den Islam und alle religiösen Vorschriften.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e09.l02",
+      "titel": "Die Einheit Gottes (tawḥīd)",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e09.l02.a01",
+          "text": "Aṭ-Ṭaḥāwī stellt in seiner ʿAqīda den Glauben der Leute der Sunna und der Gemeinschaft (ahl as-sunna wa-l-jamāʿa) dar, und zwar nach der Lehre der Rechtsgelehrten Abū Ḥanīfa, Abū Yūsuf und Muḥammad ibn al-Ḥasan ash-Shaybānī: was sie über die Grundlagen der Religion glaubten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Einleitung",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 17,
+              "passage": "tahawiyya.ms0001",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms1",
+              "passageSha256Text": "f0fd584dd192a8a148dc6bc60d0ad28f3f3ee47cb36fd46bb6c835956b0b4a09",
+              "zitatVon": 121,
+              "zitatBis": 357,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l02.a02",
+          "text": "Gott ist nach al-Fiqh al-Akbar Einer – nicht im Sinne einer Zahl, sondern in dem Sinne, dass Er keinen Teilhaber hat. Zur Bekräftigung führt das Werk Worte aus dem Koran an (siehe Verweise).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Waḥdāniyyat Allāh taʿālā",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 14,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 230,
+              "zitatBis": 327,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "112:3"
+            },
+            {
+              "art": "koran",
+              "stelle": "112:4"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l02.a03",
+          "text": "Die Ṭaḥāwiyya beginnt mit dem Bekenntnis zur Einheit Gottes (tawḥīd). Die Gläubigen sagen es im Vertrauen auf Gottes Beistand: Gott ist Einer und hat keinen Teilhaber.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 1",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 17,
+              "passage": "tahawiyya.ms0001",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms1",
+              "passageSha256Text": "f0fd584dd192a8a148dc6bc60d0ad28f3f3ee47cb36fd46bb6c835956b0b4a09",
+              "zitatVon": 358,
+              "zitatBis": 422,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l02.a04",
+          "text": "Weiter lehrt die Ṭaḥāwiyya: Nichts ist Gott gleich, nichts kann Ihn machtlos machen, und neben Ihm gibt es keinen anderen Gott.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 2–4",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 18,
+              "passage": "tahawiyya.ms0001",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms1",
+              "passageSha256Text": "f0fd584dd192a8a148dc6bc60d0ad28f3f3ee47cb36fd46bb6c835956b0b4a09",
+              "zitatVon": 423,
+              "zitatBis": 467,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l02.a05",
+          "text": "Gott hat keinen Gegenspieler (ḍidd), nichts Ebenbürtiges (nidd) und nichts Seinesgleichen (mithl). So sagt es al-Fiqh al-Akbar; die Ṭaḥāwiyya lehrt ebenso, dass Gott erhaben ist über Gegenspieler und Ebenbürtige.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī l-Qurʾān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 26,
+              "passage": "fiqh_akbar.ms0002",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms2",
+              "passageSha256Text": "d81b92585c64f3763d9c69a5d0d9f29f7b7b5bffba4e4af77ea5349c541cb5a3",
+              "zitatVon": 374,
+              "zitatBis": 405,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 26",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 22,
+              "passage": "tahawiyya.ms0002",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms2",
+              "passageSha256Text": "372f10c2bd82611e0a886baafd26d5511e648a9c30a36474c828c6ff71a7a5ab",
+              "zitatVon": 47,
+              "zitatBis": 79,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e09.l02.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l02.a02",
+          "behauptung": "Nach al-Fiqh al-Akbar ist Gott Einer im Sinne einer Zahl, die man zählen kann.",
+          "richtig": false,
+          "begruendung": "Al-Fiqh al-Akbar sagt: Gott ist Einer nicht im Sinne einer Zahl, sondern weil Er keinen Teilhaber hat.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l02.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e09.l02.a01",
+          "anweisung": "Aṭ-Ṭaḥāwī stellt den Glauben nach der Lehre von drei Gelehrten dar. Ordne jedem Namen den vollen Namen zu, den er nennt.",
+          "paare": [
+            {
+              "links": "Abū Ḥanīfa",
+              "rechts": "an-Nuʿmān ibn Thābit al-Kūfī"
+            },
+            {
+              "links": "Abū Yūsuf",
+              "rechts": "Yaʿqūb ibn Ibrāhīm al-Anṣārī"
+            },
+            {
+              "links": "Muḥammad",
+              "rechts": "Muḥammad ibn al-Ḥasan ash-Shaybānī"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l02.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e09.l02.a02",
+          "fall": "In einem Unterricht sagt jemand: „Gott ist Einer – so wie man bei einem einzelnen Gegenstand sagt, dass es einer ist.“",
+          "frage": "Wie erklärt al-Fiqh al-Akbar die Einheit Gottes?",
+          "optionen": [
+            "Gott ist Einer, weil Er keinen Teilhaber hat – nicht im Sinne einer Zahl.",
+            "Gott ist Einer im Sinne der Zahl eins.",
+            "Die Einheit Gottes bedeutet nur, dass Er größer ist als alles andere."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l02.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l02.a04",
+          "behauptung": "Nach der Ṭaḥāwiyya gibt es etwas, das Gott machtlos machen kann.",
+          "richtig": false,
+          "begruendung": "Die Ṭaḥāwiyya lehrt: Nichts kann Gott machtlos machen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l02.q05",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e09.l02.a05",
+          "anweisung": "Ordne die Begriffe zu, mit denen al-Fiqh al-Akbar ausschließt, dass Gott etwas neben sich hat.",
+          "paare": [
+            {
+              "links": "ḍidd",
+              "rechts": "Gegenspieler"
+            },
+            {
+              "links": "nidd",
+              "rechts": "Ebenbürtiger"
+            },
+            {
+              "links": "mithl",
+              "rechts": "Seinesgleichen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e09.l03",
+      "titel": "Gott ist ewig und den Geschöpfen nicht ähnlich",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e09.l03.a01",
+          "text": "Nach der Ṭaḥāwiyya ist Gott ewig ohne Anfang (qadīm) und besteht fort ohne Ende. Er vergeht nicht und hört nicht auf zu sein.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 5–6",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 19,
+              "passage": "tahawiyya.ms0001",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms1",
+              "passageSha256Text": "f0fd584dd192a8a148dc6bc60d0ad28f3f3ee47cb36fd46bb6c835956b0b4a09",
+              "zitatVon": 468,
+              "zitatBis": 520,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.a02",
+          "text": "Menschliche Vorstellungen reichen nach der Ṭaḥāwiyya nicht an Gott heran, und der Verstand kann Ihn nicht erfassen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 8",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 19,
+              "passage": "tahawiyya.ms0001",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms1",
+              "passageSha256Text": "f0fd584dd192a8a148dc6bc60d0ad28f3f3ee47cb36fd46bb6c835956b0b4a09",
+              "zitatVon": 546,
+              "zitatBis": 580,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.a03",
+          "text": "Nach der Ṭaḥāwiyya ähnelt Gott den Geschöpfen nicht. Al-Fiqh al-Akbar sagt es von beiden Seiten: Nichts von Seiner Schöpfung gleicht Ihm, und Er gleicht nichts von Seiner Schöpfung.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 9",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 19,
+              "passage": "tahawiyya.ms0001",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms1",
+              "passageSha256Text": "f0fd584dd192a8a148dc6bc60d0ad28f3f3ee47cb36fd46bb6c835956b0b4a09",
+              "zitatVon": 583,
+              "zitatBis": 598,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Waḥdāniyyat Allāh taʿālā",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 14,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 328,
+              "zitatBis": 381,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.a04",
+          "text": "Gott ist lebendig, ohne zu sterben, und Er erhält alles (qayyūm), ohne zu schlafen. So lehrt es die Ṭaḥāwiyya.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 10",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 19,
+              "passage": "tahawiyya.ms0001",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms1",
+              "passageSha256Text": "f0fd584dd192a8a148dc6bc60d0ad28f3f3ee47cb36fd46bb6c835956b0b4a09",
+              "zitatVon": 602,
+              "zitatBis": 625,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.a05",
+          "text": "Gott erschafft, ohne etwas zu brauchen, und versorgt, ohne dass es Ihn belastet. Er lässt sterben, ohne etwas zu fürchten, und erweckt wieder, ohne dass es Ihm Mühe macht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 11–12",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 20,
+              "passage": "tahawiyya.ms0001",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms1",
+              "passageSha256Text": "f0fd584dd192a8a148dc6bc60d0ad28f3f3ee47cb36fd46bb6c835956b0b4a09",
+              "zitatVon": 629,
+              "zitatBis": 688,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.a06",
+          "text": "Al-Fiqh al-Akbar lehrt: Alle Eigenschaften Gottes sind anders als die Eigenschaften der Geschöpfe. Er weiß, aber nicht so, wie wir wissen; Er hat Macht, aber nicht wie unsere Macht; Er sieht, spricht und hört, aber nicht wie wir. Wir sprechen mit Organen und Buchstaben; Gott spricht ohne Organ und ohne Buchstaben.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī l-Qurʾān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 24,
+              "passage": "fiqh_akbar.ms0002",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms2",
+              "passageSha256Text": "d81b92585c64f3763d9c69a5d0d9f29f7b7b5bffba4e4af77ea5349c541cb5a3",
+              "zitatVon": 79,
+              "zitatBis": 257,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.a07",
+          "text": "Gott ist nach al-Fiqh al-Akbar „etwas“ (shayʾ), aber nicht wie die Dinge. Gemeint ist, dass Er wirklich besteht – ohne Körper, ohne Substanz (jawhar), ohne Akzidens (ʿaraḍ) und ohne Grenze.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī l-Qurʾān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 26,
+              "passage": "fiqh_akbar.ms0002",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms2",
+              "passageSha256Text": "d81b92585c64f3763d9c69a5d0d9f29f7b7b5bffba4e4af77ea5349c541cb5a3",
+              "zitatVon": 300,
+              "zitatBis": 373,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.a08",
+          "text": "Die Ṭaḥāwiyya warnt: Wer Gott eine Eigenschaft im Sinne menschlicher Eigenschaften zuschreibt, ist ungläubig geworden. Wer das bedenkt, hält sich von Reden fern, wie die Ungläubigen sie führen, und weiß, dass Gott in Seinen Eigenschaften nicht wie die Menschen ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 34",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 25,
+              "passage": "tahawiyya.ms0002",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms2",
+              "passageSha256Text": "372f10c2bd82611e0a886baafd26d5511e648a9c30a36474c828c6ff71a7a5ab",
+              "zitatVon": 743,
+              "zitatBis": 858,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.a09",
+          "text": "Nach der Ṭaḥāwiyya muss man zwei Irrwege meiden: Gottes Eigenschaften zu leugnen (nafy) und Gott den Geschöpfen ähnlich zu machen (tashbīh). Wer beides nicht meidet, gleitet ab und verfehlt die richtige Lehre von Gottes Erhabenheit (tanzīh). Denn Gott wird mit den Eigenschaften der Einheit und Einzigkeit beschrieben; kein Geschöpf teilt, was Er ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 37 (Ende)",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 28,
+              "passage": "tahawiyya.ms0003",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms3",
+              "passageSha256Text": "5d7ff00c0b06a06e26193afd0df953cef9391a357e84704d3afbb38b23be46d6",
+              "zitatVon": 143,
+              "zitatBis": 276,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.a10",
+          "text": "Gott ist nach der Ṭaḥāwiyya erhaben über Grenzen und Enden, über Bestandteile, Körperteile und Werkzeuge. Die sechs Richtungen umfassen Ihn nicht, so wie sie alle erschaffenen Dinge umfassen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 38",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 28,
+              "passage": "tahawiyya.ms0003",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms3",
+              "passageSha256Text": "5d7ff00c0b06a06e26193afd0df953cef9391a357e84704d3afbb38b23be46d6",
+              "zitatVon": 277,
+              "zitatBis": 369,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.a11",
+          "text": "Gottes Nähe und Ferne sind nach al-Fiqh al-Akbar keine Frage einer langen oder kurzen Entfernung. Gemeint sind Ehre und Erniedrigung: Wer gehorcht, ist Ihm nahe, wer sich widersetzt, ist Ihm fern – ohne dass man fragt, wie (bi-lā kayf).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Maʿnā l-Qurb wa-l-Buʿd",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 67,
+              "passage": "fiqh_akbar.ms0005",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms5",
+              "passageSha256Text": "6361a33a42e77b4b4b79ffbdd90b36353a3d6229c764a37bcc9607b18f63613a",
+              "zitatVon": 1260,
+              "zitatBis": 1395,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e09.l03.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l03.a01",
+          "behauptung": "Nach der Ṭaḥāwiyya hat Gott einen Anfang, aber kein Ende.",
+          "richtig": false,
+          "begruendung": "Die Ṭaḥāwiyya lehrt: Gott ist ewig ohne Anfang und besteht fort ohne Ende.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e09.l03.a06",
+          "anweisung": "Ordne zu, wie al-Fiqh al-Akbar das Sprechen der Menschen und das Sprechen Gottes unterscheidet.",
+          "paare": [
+            {
+              "links": "Die Menschen sprechen",
+              "rechts": "mit Organen und Buchstaben"
+            },
+            {
+              "links": "Gott spricht",
+              "rechts": "ohne Organ und ohne Buchstaben"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e09.l03.a09",
+          "anweisung": "Ordne die Begriffe aus der Ṭaḥāwiyya ihrer Bedeutung zu.",
+          "paare": [
+            {
+              "links": "nafy",
+              "rechts": "Gottes Eigenschaften leugnen"
+            },
+            {
+              "links": "tashbīh",
+              "rechts": "Gott den Geschöpfen ähnlich machen"
+            },
+            {
+              "links": "tanzīh",
+              "rechts": "Gottes Erhabenheit richtig bekennen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e09.l03.a10",
+          "fall": "Ein Kind fragt im Unterricht, ob Gott an einem Ort ist, so wie ein Mensch in einem Zimmer ist.",
+          "frage": "Was lehrt die Ṭaḥāwiyya dazu?",
+          "optionen": [
+            "Die sechs Richtungen umfassen Gott nicht, wie sie die erschaffenen Dinge umfassen.",
+            "Gott ist an einem Ort wie ein Geschöpf.",
+            "Dazu sagt die Ṭaḥāwiyya nichts."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l03.a11",
+          "behauptung": "Nach al-Fiqh al-Akbar bedeutet Gottes Nähe eine kurze räumliche Entfernung.",
+          "richtig": false,
+          "begruendung": "Al-Fiqh al-Akbar sagt: Nähe und Ferne sind keine Frage der Entfernung; gemeint sind Ehre und Erniedrigung.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l03.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l03.a05",
+          "behauptung": "Nach der Ṭaḥāwiyya erschafft Gott, weil Er die Schöpfung braucht.",
+          "richtig": false,
+          "begruendung": "Die Ṭaḥāwiyya lehrt: Gott erschafft, ohne etwas zu brauchen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e09.l04",
+      "titel": "Eigenschaften Gottes: wesenhafte und Handlungseigenschaften",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e09.l04.a01",
+          "text": "Nach al-Fiqh al-Akbar war Gott immer und bleibt immer mit Seinen Namen und Eigenschaften. Die Eigenschaften teilt das Werk in zwei Gruppen: wesenhafte Eigenschaften (ṣifāt dhātiyya) und Handlungseigenschaften (ṣifāt fiʿliyya).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Waḥdāniyyat Allāh taʿālā",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 14,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 382,
+              "zitatBis": 430,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l04.a02",
+          "text": "Zu den wesenhaften Eigenschaften zählt al-Fiqh al-Akbar Leben, Macht, Wissen, Rede, Hören, Sehen und Wollen. Zu den Handlungseigenschaften zählt es Erschaffen, Versorgen, Hervorbringen, Neuschaffen (ibdāʿ), Machen und weitere Eigenschaften des Handelns.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "aṣ-Ṣifāt adh-Dhātiyya wa-l-Fiʿliyya",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 16,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 455,
+              "zitatBis": 599,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l04.a03",
+          "text": "Gott hatte Seine Eigenschaften und Namen schon immer. Nach al-Fiqh al-Akbar ist Ihm keine Eigenschaft und kein Name neu hinzugekommen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "aṣ-Ṣifāt adh-Dhātiyya wa-l-Fiʿliyya",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 16,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 600,
+              "zitatBis": 654,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l04.a04",
+          "text": "Alle Eigenschaften Gottes sind nach al-Fiqh al-Akbar von Ewigkeit her (azalī): Er war immer wissend durch Sein Wissen, mächtig durch Seine Macht, sprechend durch Seine Rede, erschaffend durch Sein Erschaffen und handelnd durch Sein Handeln. Auch Gottes Handeln ist eine ewige Eigenschaft und nicht erschaffen; erschaffen ist das, was durch Sein Handeln entsteht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Ṣifāt Allāh azaliyya",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 18,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 671,
+              "zitatBis": 935,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l04.a05",
+          "text": "Gottes Eigenschaften sind von Ewigkeit her, weder neu entstanden noch erschaffen. Wer sagt, sie seien erschaffen oder neu entstanden, oder wer darin unentschieden bleibt oder zweifelt, ist nach al-Fiqh al-Akbar ungläubig.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī l-Qurʾān (Anfang)",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 20,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 952,
+              "zitatBis": 1057,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l04.a06",
+          "text": "Die Ṭaḥāwiyya lehrt: Gott hatte Seine Eigenschaften schon von Ewigkeit her, bevor Er die Schöpfung erschuf. Durch das Entstehen der Geschöpfe kam Ihm keine Eigenschaft hinzu, die Er vorher nicht hatte. Wie Er von Ewigkeit her mit Seinen Eigenschaften war, so bleibt Er mit ihnen ohne Ende.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 13",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 20,
+              "passage": "tahawiyya.ms0001",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms1",
+              "passageSha256Text": "f0fd584dd192a8a148dc6bc60d0ad28f3f3ee47cb36fd46bb6c835956b0b4a09",
+              "zitatVon": 689,
+              "zitatBis": 808,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l04.a07",
+          "text": "Den Namen „Schöpfer“ hat Gott nach der Ṭaḥāwiyya nicht erst dadurch erhalten, dass Er die Schöpfung hervorbrachte. Er ist Herr, auch als es noch nichts gab, über das Er herrschte, und Schöpfer, auch als es noch nichts Erschaffenes gab. So wie Er den Namen dessen, der die Toten lebendig macht, schon trägt, bevor Er sie belebt, trägt Er den Namen „Schöpfer“ schon vor der Schöpfung.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 14–16",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 20,
+              "passage": "tahawiyya.ms0001",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms1",
+              "passageSha256Text": "f0fd584dd192a8a148dc6bc60d0ad28f3f3ee47cb36fd46bb6c835956b0b4a09",
+              "zitatVon": 809,
+              "zitatBis": 1033,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l04.a08",
+          "text": "Die Ṭaḥāwiyya begründet das so: Gottes Macht erstreckt sich auf alles, alles ist auf Ihn angewiesen, alles ist für Ihn leicht, und Er braucht nichts. Sie schließt mit Worten aus dem Koran (siehe Verweis).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 17",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 20,
+              "passage": "tahawiyya.ms0001",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms1",
+              "passageSha256Text": "f0fd584dd192a8a148dc6bc60d0ad28f3f3ee47cb36fd46bb6c835956b0b4a09",
+              "zitatVon": 1034,
+              "zitatBis": 1146,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "42:11"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l04.a09",
+          "text": "Al-Fiqh al-Akbar lehrt: Gott hat Hand, Gesicht und Selbst (nafs), so wie Er es im Koran erwähnt. Das sind Eigenschaften ohne Wie (bi-lā kayf). Man sagt nicht, Seine Hand sei Seine Macht oder Seine Gunst, denn damit würde die Eigenschaft aufgehoben; das nennt das Werk die Lehre der Qadariyya und der Muʿtazila. Auch Zorn und Wohlgefallen sind Eigenschaften Gottes ohne Wie.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī ṣ-Ṣifāt",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 27,
+              "passage": "fiqh_akbar.ms0002",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms2",
+              "passageSha256Text": "d81b92585c64f3763d9c69a5d0d9f29f7b7b5bffba4e4af77ea5349c541cb5a3",
+              "zitatVon": 422,
+              "zitatBis": 691,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e09.l04.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e09.l04.a02",
+          "anweisung": "Ordne die Beispiele der richtigen Gruppe von Eigenschaften nach al-Fiqh al-Akbar zu.",
+          "paare": [
+            {
+              "links": "Leben, Wissen, Hören, Sehen",
+              "rechts": "wesenhafte Eigenschaften"
+            },
+            {
+              "links": "Erschaffen, Versorgen, Hervorbringen",
+              "rechts": "Handlungseigenschaften"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l04.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l04.a04",
+          "behauptung": "Nach al-Fiqh al-Akbar ist Gottes Handeln erschaffen, so wie das, was durch Sein Handeln entsteht.",
+          "richtig": false,
+          "begruendung": "Erschaffen ist nur, was durch Gottes Handeln entsteht. Gottes Handeln selbst ist eine ewige Eigenschaft und nicht erschaffen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l04.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l04.a07",
+          "behauptung": "Nach der Ṭaḥāwiyya erhielt Gott den Namen „Schöpfer“ erst, nachdem Er die Schöpfung erschaffen hatte.",
+          "richtig": false,
+          "begruendung": "Die Ṭaḥāwiyya lehrt: Gott trägt den Namen „Schöpfer“ schon vor der Schöpfung, wie Er auch Herr ist, bevor es Beherrschtes gab.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l04.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e09.l04.a09",
+          "fall": "In einem Gesprächskreis sagt jemand: „Wenn im Koran von Gottes Hand die Rede ist, ist damit einfach Seine Macht gemeint.“",
+          "frage": "Was sagt al-Fiqh al-Akbar dazu?",
+          "optionen": [
+            "Man sagt nicht, Seine Hand sei Seine Macht; sie ist eine Eigenschaft Gottes ohne Wie.",
+            "Gottes Hand ist wie die Hand eines Menschen.",
+            "Mit Gottes Hand ist immer Seine Gunst gemeint."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l04.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l04.a03",
+          "behauptung": "Nach al-Fiqh al-Akbar ist Gott im Lauf der Zeit ein neuer Name hinzugekommen.",
+          "richtig": false,
+          "begruendung": "Al-Fiqh al-Akbar sagt: Gott hatte Seine Eigenschaften und Namen schon immer; keine Eigenschaft und kein Name ist Ihm neu hinzugekommen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e09.l05",
+      "titel": "Gottes Allmacht, Wissen und Herrschaft",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e09.l05.a01",
+          "text": "Nach der Ṭaḥāwiyya sind der Thron (ʿarsh) und der Schemel (kursī) wahr.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 49",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 36,
+              "passage": "tahawiyya.ms0004",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms4",
+              "passageSha256Text": "416529dbce77c26410f592a0556e3baa4b702cca4d9d9719ecb5b3ab1a395e3f",
+              "zitatVon": 827,
+              "zitatBis": 847,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.a02",
+          "text": "Gott ist auf den Thron und auf alles, was darunter ist, nicht angewiesen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 50",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 36,
+              "passage": "tahawiyya.ms0004",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms4",
+              "passageSha256Text": "416529dbce77c26410f592a0556e3baa4b702cca4d9d9719ecb5b3ab1a395e3f",
+              "zitatVon": 848,
+              "zitatBis": 878,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.a03",
+          "text": "Gott umfasst alles und steht über allem; Seine Geschöpfe aber können Ihn nicht umfassen. So lehrt es die Ṭaḥāwiyya.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 51",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 37,
+              "passage": "tahawiyya.ms0004",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms4",
+              "passageSha256Text": "416529dbce77c26410f592a0556e3baa4b702cca4d9d9719ecb5b3ab1a395e3f",
+              "zitatVon": 879,
+              "zitatBis": 925,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.a04",
+          "text": "Nach der Ṭaḥāwiyya geschieht alles nach Gottes Willen (mashīʾa), Wissen, Ratschluss (qaḍāʾ) und Bestimmung (qadar). Sein Wille ist stärker als jeder andere Wille, Sein Ratschluss stärker als jede List. Er tut, was Er will, und ist niemals ungerecht; Er ist frei von jedem Übel und jedem Makel. Die Ṭaḥāwiyya schließt mit Worten aus dem Koran (siehe Verweis).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 88",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 55,
+              "passage": "tahawiyya.ms0007",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms7",
+              "passageSha256Text": "b4e0ea5c6f7a627df96d490b3d63139a81fe0b3dc29d1fe31b2430c448350454",
+              "zitatVon": 98,
+              "zitatBis": 297,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "21:23"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.a05",
+          "text": "Es geschieht nur, was Gott will. So steht es in der Ṭaḥāwiyya.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 7",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 19,
+              "passage": "tahawiyya.ms0001",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms1",
+              "passageSha256Text": "f0fd584dd192a8a148dc6bc60d0ad28f3f3ee47cb36fd46bb6c835956b0b4a09",
+              "zitatVon": 521,
+              "zitatBis": 543,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.a06",
+          "text": "Gott erhört die Bittgebete der Menschen und erfüllt ihre Anliegen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 90",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 56,
+              "passage": "tahawiyya.ms0007",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms7",
+              "passageSha256Text": "b4e0ea5c6f7a627df96d490b3d63139a81fe0b3dc29d1fe31b2430c448350454",
+              "zitatVon": 341,
+              "zitatBis": 384,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.a07",
+          "text": "Gott besitzt alles, und nichts besitzt Ihn. Niemand kann auch nur einen Augenblick ohne Gott auskommen. Wer meint, auch nur einen Augenblick nicht auf Gott angewiesen zu sein, ist nach der Ṭaḥāwiyya ungläubig geworden und gehört zu den Verlorenen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 91",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 56,
+              "passage": "tahawiyya.ms0007",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms7",
+              "passageSha256Text": "b4e0ea5c6f7a627df96d490b3d63139a81fe0b3dc29d1fe31b2430c448350454",
+              "zitatVon": 385,
+              "zitatBis": 499,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.a08",
+          "text": "Gott zürnt und hat Wohlgefallen, aber nicht wie irgendein Geschöpf. So lehrt es die Ṭaḥāwiyya; auch al-Fiqh al-Akbar nennt Zorn und Wohlgefallen Eigenschaften Gottes ohne Wie.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn › Nr. 92",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 57,
+              "passage": "tahawiyya.ms0007",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms7",
+              "passageSha256Text": "b4e0ea5c6f7a627df96d490b3d63139a81fe0b3dc29d1fe31b2430c448350454",
+              "zitatVon": 500,
+              "zitatBis": 536,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī ṣ-Ṣifāt",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 27,
+              "passage": "fiqh_akbar.ms0002",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms2",
+              "passageSha256Text": "d81b92585c64f3763d9c69a5d0d9f29f7b7b5bffba4e4af77ea5349c541cb5a3",
+              "zitatVon": 646,
+              "zitatBis": 691,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.a09",
+          "text": "Gott wusste nach al-Fiqh al-Akbar von Ewigkeit her um alle Dinge, bevor es sie gab. Sein Wissen ändert sich nicht: Er weiß das Nichtseiende, solange es nicht ist, als nichtseiend und weiß, wie es sein wird, wenn Er es ins Dasein bringt. Wer steht, von dem weiß Er, dass er steht; setzt er sich, weiß Er ihn sitzend – ohne dass sich Sein Wissen ändert oder Ihm neues Wissen entsteht. Veränderung gibt es nur bei den Geschöpfen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī l-Qadar",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 29,
+              "passage": "fiqh_akbar.ms0002",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms2",
+              "passageSha256Text": "d81b92585c64f3763d9c69a5d0d9f29f7b7b5bffba4e4af77ea5349c541cb5a3",
+              "zitatVon": 740,
+              "zitatBis": 789,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī l-Qadar",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 29,
+              "passage": "fiqh_akbar.ms0002",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms2",
+              "passageSha256Text": "d81b92585c64f3763d9c69a5d0d9f29f7b7b5bffba4e4af77ea5349c541cb5a3",
+              "zitatVon": 983,
+              "zitatBis": 1261,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e09.l05.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l05.a02",
+          "behauptung": "Nach der Ṭaḥāwiyya ist Gott auf den Thron angewiesen.",
+          "richtig": false,
+          "begruendung": "Die Ṭaḥāwiyya lehrt: Gott ist auf den Thron und alles, was darunter ist, nicht angewiesen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e09.l05.a04",
+          "anweisung": "Ordne zu, was die Ṭaḥāwiyya über Gottes Willen und Ratschluss sagt.",
+          "paare": [
+            {
+              "links": "Gottes Wille",
+              "rechts": "ist stärker als jeder andere Wille"
+            },
+            {
+              "links": "Gottes Ratschluss",
+              "rechts": "ist stärker als jede List"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e09.l05.a07",
+          "fall": "In einer Unterrichtsstunde wird gefragt, ob ein Mensch, dem es gut geht, wenigstens für eine kurze Zeit nicht auf Gott angewiesen ist.",
+          "frage": "Was lehrt die Ṭaḥāwiyya dazu?",
+          "optionen": [
+            "Niemand kann auch nur einen Augenblick ohne Gott auskommen.",
+            "Wer gesund und wohlhabend ist, ist für diese Zeit nicht auf Gott angewiesen.",
+            "Nur in Notlagen ist der Mensch auf Gott angewiesen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l05.a08",
+          "behauptung": "Nach der Ṭaḥāwiyya zürnt Gott und hat Wohlgefallen wie ein Mensch.",
+          "richtig": false,
+          "begruendung": "Die Ṭaḥāwiyya lehrt: Gott zürnt und hat Wohlgefallen, aber nicht wie irgendein Geschöpf.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l05.a09",
+          "behauptung": "Nach al-Fiqh al-Akbar ändert sich Gottes Wissen, wenn etwas entsteht oder vergeht.",
+          "richtig": false,
+          "begruendung": "Al-Fiqh al-Akbar sagt: Gottes Wissen ändert sich nicht, und Ihm entsteht kein neues Wissen; Veränderung gibt es nur bei den Geschöpfen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l05.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l05.a03",
+          "behauptung": "Nach der Ṭaḥāwiyya können die Geschöpfe Gott nicht umfassen.",
+          "richtig": true,
+          "begruendung": "Die Ṭaḥāwiyya lehrt: Gott umfasst alles, Seine Geschöpfe aber können Ihn nicht umfassen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e09.l06",
+      "titel": "Angeborene Veranlagung (fiṭra) und Gotteserkenntnis",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e09.l06.a01",
+          "text": "Nach al-Fiqh al-Akbar hat Gott die Geschöpfe frei von Unglauben und frei von Glauben erschaffen. Danach hat Er sie angesprochen, ihnen geboten und verboten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Mā faṭara Allāhu ʿalayhi n-Nās",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 31,
+              "passage": "fiqh_akbar.ms0002",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms2",
+              "passageSha256Text": "d81b92585c64f3763d9c69a5d0d9f29f7b7b5bffba4e4af77ea5349c541cb5a3",
+              "zitatVon": 1285,
+              "zitatBis": 1353,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l06.a02",
+          "text": "Wer ungläubig wird, wird es nach al-Fiqh al-Akbar durch sein eigenes Tun – indem er die Wahrheit verneint und leugnet –, und zwar weil Gott ihn im Stich lässt (khidhlān). Wer glaubt, glaubt durch sein eigenes Tun – indem er bekennt und für wahr hält –, und zwar mit Gottes Beistand (tawfīq) und Hilfe.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Mā faṭara Allāhu ʿalayhi n-Nās",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 31,
+              "passage": "fiqh_akbar.ms0002",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms2",
+              "passageSha256Text": "d81b92585c64f3763d9c69a5d0d9f29f7b7b5bffba4e4af77ea5349c541cb5a3",
+              "zitatVon": 1354,
+              "zitatBis": 1481,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l06.a03",
+          "text": "Al-Fiqh al-Akbar beschreibt: Gott holte die Nachkommen Adams aus seinem Rücken hervor und gab ihnen Verstand. Er sprach sie an, gebot ihnen den Glauben und verbot ihnen den Unglauben. Sie bekannten Seine Herrschaft (rubūbiyya); das war Glaube von ihrer Seite. Mit dieser angeborenen Veranlagung (fiṭra) werden die Menschen geboren.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Mā faṭara Allāhu ʿalayhi n-Nās",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 31,
+              "passage": "fiqh_akbar.ms0002",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms2",
+              "passageSha256Text": "d81b92585c64f3763d9c69a5d0d9f29f7b7b5bffba4e4af77ea5349c541cb5a3",
+              "zitatVon": 1482,
+              "zitatBis": 1547,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Mā faṭara Allāhu ʿalayhi n-Nās",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 31,
+              "passage": "fiqh_akbar.ms0003",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms3",
+              "passageSha256Text": "3fae453c7efaca9ef532dae9dd117e7ab953190c359ace8bb9d72e3a85cf3362",
+              "zitatVon": 0,
+              "zitatBis": 75,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l06.a04",
+          "text": "Wer danach ungläubig wird, hat diese Veranlagung nach al-Fiqh al-Akbar verändert und vertauscht. Wer glaubt und für wahr hält, bleibt bei ihr und hält an ihr fest.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Mā faṭara Allāhu ʿalayhi n-Nās",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 31,
+              "passage": "fiqh_akbar.ms0003",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms3",
+              "passageSha256Text": "3fae453c7efaca9ef532dae9dd117e7ab953190c359ace8bb9d72e3a85cf3362",
+              "zitatVon": 76,
+              "zitatBis": 138,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l06.a05",
+          "text": "Gott zwingt niemanden zum Unglauben und niemanden zum Glauben. Er hat die Menschen weder als Gläubige noch als Ungläubige erschaffen, sondern als Personen. Glaube und Unglaube sind nach al-Fiqh al-Akbar Taten der Menschen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Mā faṭara Allāhu ʿalayhi n-Nās",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 33,
+              "passage": "fiqh_akbar.ms0003",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms3",
+              "passageSha256Text": "3fae453c7efaca9ef532dae9dd117e7ab953190c359ace8bb9d72e3a85cf3362",
+              "zitatVon": 139,
+              "zitatBis": 256,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l06.a06",
+          "text": "Gott weiß den Menschen, der ungläubig ist, in seinem Unglauben als ungläubig. Glaubt er danach, weiß Gott ihn in seinem Glauben als gläubig und liebt ihn – ohne dass sich Gottes Wissen oder Seine Eigenschaft ändert. So lehrt es al-Fiqh al-Akbar.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Mā faṭara Allāhu ʿalayhi n-Nās",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 33,
+              "passage": "fiqh_akbar.ms0003",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms3",
+              "passageSha256Text": "3fae453c7efaca9ef532dae9dd117e7ab953190c359ace8bb9d72e3a85cf3362",
+              "zitatVon": 257,
+              "zitatBis": 374,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l06.a07",
+          "text": "Nach al-Fiqh al-Akbar erkennen die Gläubigen Gott so, wie Er sich selbst in Seinem Buch mit all Seinen Eigenschaften beschrieben hat. Niemand aber vermag Gott so anzubeten, wie es Ihm eigentlich gebührt; man betet Ihn so an, wie Er es durch Sein Buch und die Sunna Seines Gesandten geboten hat.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Maʿrifatunā bi-llāh taʿālā",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 59,
+              "passage": "fiqh_akbar.ms0004",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms4",
+              "passageSha256Text": "61e37bf1694b17db1f3403374df616268343558a04a8ebd88a4aed5185687924",
+              "zitatVon": 1487,
+              "zitatBis": 1642,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l06.a08",
+          "text": "Al-Fiqh al-Akbar lehrt weiter: Alle Gläubigen sind gleich darin, dass sie Gott erkennen, Gewissheit haben, Ihm vertrauen (tawakkul), Ihn lieben, mit Ihm zufrieden sind, Ihn fürchten und auf Ihn hoffen, und im Glauben daran. Unterschiede zwischen ihnen gibt es in dem, was über diesen Glauben hinausgeht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Maʿrifatunā bi-llāh taʿālā",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 59,
+              "passage": "fiqh_akbar.ms0004",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms4",
+              "passageSha256Text": "61e37bf1694b17db1f3403374df616268343558a04a8ebd88a4aed5185687924",
+              "zitatVon": 1643,
+              "zitatBis": 1663,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Maʿrifatunā bi-llāh taʿālā",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 59,
+              "passage": "fiqh_akbar.ms0005",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms5",
+              "passageSha256Text": "6361a33a42e77b4b4b79ffbdd90b36353a3d6229c764a37bcc9607b18f63613a",
+              "zitatVon": 0,
+              "zitatBis": 112,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e09.l06.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.grund.e09.l06.a03",
+          "anweisung": "Bringe in die Reihenfolge, in der al-Fiqh al-Akbar beschreibt, wie Gott die Nachkommen Adams ansprach.",
+          "schritte": [
+            "Gott holte die Nachkommen Adams aus seinem Rücken hervor.",
+            "Er gab ihnen Verstand.",
+            "Er sprach sie an und gebot ihnen den Glauben.",
+            "Sie bekannten Seine Herrschaft.",
+            "Mit dieser Veranlagung (fiṭra) werden die Menschen geboren."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l06.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l06.a05",
+          "behauptung": "Nach al-Fiqh al-Akbar zwingt Gott Menschen zum Glauben oder zum Unglauben.",
+          "richtig": false,
+          "begruendung": "Al-Fiqh al-Akbar sagt: Gott zwingt niemanden zum Unglauben und niemanden zum Glauben; Glaube und Unglaube sind Taten der Menschen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l06.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e09.l06.a02",
+          "anweisung": "Ordne zu, wie al-Fiqh al-Akbar Glauben und Unglauben des Menschen beschreibt.",
+          "paare": [
+            {
+              "links": "Glaube",
+              "rechts": "eigenes Tun mit Gottes Beistand (tawfīq)"
+            },
+            {
+              "links": "Unglaube",
+              "rechts": "eigenes Tun, weil Gott den Menschen im Stich lässt (khidhlān)"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l06.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e09.l06.a06",
+          "fall": "Ein Mensch war lange ungläubig und nimmt später den Glauben an. Im Unterricht wird gefragt, ob sich damit Gottes Wissen über ihn geändert hat.",
+          "frage": "Was lehrt al-Fiqh al-Akbar dazu?",
+          "optionen": [
+            "Gott wusste ihn vorher als ungläubig und weiß ihn nun als gläubig, ohne dass sich Sein Wissen ändert.",
+            "Gott erfährt erst davon, wenn der Mensch glaubt.",
+            "Gottes Wissen über den Menschen ist durch dessen Glauben neu geworden."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l06.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l06.a07",
+          "behauptung": "Nach al-Fiqh al-Akbar kann ein Mensch Gott so anbeten, wie es Ihm vollkommen gebührt.",
+          "richtig": false,
+          "begruendung": "Al-Fiqh al-Akbar sagt: Niemand vermag das; man betet Gott so an, wie Er es durch Sein Buch und die Sunna Seines Gesandten geboten hat.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e09.l06.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e09.l06.a01",
+          "behauptung": "Nach al-Fiqh al-Akbar hat Gott die Menschen frei von Glauben und Unglauben erschaffen und sie danach angesprochen.",
+          "richtig": true,
+          "begruendung": "Al-Fiqh al-Akbar lehrt: Gott hat die Geschöpfe frei von Unglauben und Glauben erschaffen; danach hat Er sie angesprochen, ihnen geboten und verboten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}
