@@ -878,7 +878,6 @@
     "senden": "Öğretmene gönder",
     "sendet": "Gönderiliyor …",
     "gesendet": "Gönderildi. Öğretmeninin geri bildirimini „Grup“ altında bulursun.",
-    "zurGruppe": "Gruba git",
     "anmelden": "Giriş yap (yeni bir pencere açılır)",
     "erneut": "Tekrar dene",
     "grund": {
@@ -910,7 +909,11 @@
       "pruefliste": "Kontrol listesine göre değerlendirme",
       "loeschen": "Gönderiyi sil",
       "loeschenAria": "{datum} tarihli gönderiyi sil",
-      "geloescht": "Gönderi silindi."
+      "geloescht": "Gönderi silindi.",
+      "loeschenFrage": "Bu gönderi kalıcı olarak silinsin mi? Sonra öğretmenin de onu göremez.",
+      "loeschenJa": "Kalıcı olarak sil",
+      "abbrechen": "Vazgeç",
+      "loeschenFehler": "Gönderi şu anda silinemiyor. Daha sonra tekrar dene."
     },
     "stufe": {
       "s0": "henüz başında",
@@ -922,6 +925,12 @@
       "erreicht": "Görev iyi çözülmüş",
       "unterwegs": "İyi bir yoldasın",
       "nochmal": "Metni bir kez daha yazmaya değer."
+    },
+    "kriterium": {
+      "aufgabe": "Görev",
+      "zusammenhang": "Bütünlük",
+      "wortschatz": "Kelime bilgisi",
+      "grammatik": "Dil bilgisi"
     }
   },
   "sprachausgabe": {

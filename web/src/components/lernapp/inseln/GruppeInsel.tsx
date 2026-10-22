@@ -7,6 +7,8 @@ import type { GruppeAntwort, ListenPlatz, ZielStand, ZustimmungAntwort } from '@
 import type { Oberflaeche } from '@/lib/lernapp/kurse';
 import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { vorhandenesProfil } from '@/lib/lernapp/oberflaeche/geraet';
+import type { SchreibabgabeTexte } from '../typen';
+import { EigeneAbgaben } from './EigeneAbgaben';
 
 export type GruppeTexte = {
   laden: string;
@@ -56,8 +58,10 @@ type Lage = { art: 'frei' } | { art: 'laedt' } | { art: 'anmelden' } | { art: 'd
  * bis die Person „Meine Gruppe anzeigen“ wählt; ist das Gerät mit einem Konto verbunden, lädt die Insel sofort. Alle
  * Regeln (Alter, Zustimmung, Einwilligung, Gruppenisolation) setzt der Server durch; die Insel zeigt nur, was kommt.
  * Zahlen stehen statisch (keine hochzählenden Zahlen), die Liste ist ungeordnet (keine Ränge, keine Medaillen).
+ * Darunter die eigenen Schreibabgaben mit der Rückmeldung der Lehrkraft (`EigeneAbgaben`, L5-03), sobald die Gruppe mit
+ * Konto geladen ist.
  */
-export function GruppeInsel({ ui, texte }: { ui: Oberflaeche; texte: GruppeTexte }) {
+export function GruppeInsel({ ui, texte, abgaben }: { ui: Oberflaeche; texte: GruppeTexte; abgaben?: SchreibabgabeTexte }) {
   const [lage, setLage] = useState<Lage>({ art: 'frei' });
   const [meldung, setMeldung] = useState('');
   const [ziffern, setZiffern] = useState<'oestlich' | 'westlich'>('oestlich');
@@ -292,6 +296,8 @@ export function GruppeInsel({ ui, texte }: { ui: Oberflaeche; texte: GruppeTexte
               )}
             </section>
           ) : null}
+
+          {abgaben ? <EigeneAbgaben ui={ui} texte={abgaben} ziffern={ziffern} melde={setMeldung} /> : null}
         </>
       )}
       <p role="status" className="min-h-6 text-16 font-bold text-gruen-800">

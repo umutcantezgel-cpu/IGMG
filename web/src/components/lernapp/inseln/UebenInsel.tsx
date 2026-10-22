@@ -5,7 +5,7 @@ import { Component, lazy, type ReactNode, startTransition, Suspense, useEffect, 
 import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import type { Ziffern } from '@/lib/lernapp/format';
-import type { KursSlug, Oberflaeche } from '@/lib/lernapp/kurse';
+import { istRichtung, type KursSlug, type Oberflaeche } from '@/lib/lernapp/kurse';
 import type { Profil, Speicher } from '@/lib/lernapp/lokal/db';
 import { ladeVerzeichnis, paketKopfImVorrat } from '@/lib/lernapp/lokal/vorrat';
 import { beimOeffnen, nachHandlung } from '@/lib/lernapp/oberflaeche/abgleich';
@@ -13,7 +13,7 @@ import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { geraet, heute, meldeStand, merkeWeiter } from '@/lib/lernapp/oberflaeche/geraet';
 import { einheitDerLektion, naechsteEinheit, naechsteLektion } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
 import type { AbschlussAnzeige } from '../AbschlussInhalt';
-import type { MeldenTexte, SpielerOptionen, SpielerTexte } from '../typen';
+import type { MeldenTexte, SchreibabgabeTexte, SpielerOptionen, SpielerTexte } from '../typen';
 import { allesGeschrieben, type EreignisKette, melde, neueKette, useAusgangVorladen } from './ausgang';
 
 /** Spieler als eigener Chunk (KERN 4.0 §9: erst in der Lektion); Übungstypen lädt er selbst per `import()`. */
@@ -84,6 +84,7 @@ export function UebenInsel({
   lernpfad,
   spracherkennung = false,
   melden,
+  schreibabgabe,
 }: {
   ui: Oberflaeche;
   kurs: KursSlug;
@@ -94,6 +95,8 @@ export function UebenInsel({
   spracherkennung?: boolean;
   /** Texte von „Fehler melden“, nur mit Schalter `lernapp_meldungen` (sonst kein Knopf) */
   melden?: MeldenTexte;
+  /** Texte der Schreibabgabe an die Lehrkraft, nur mit Schalter `lernapp_gruppen` (sonst kein Angebot; L5-03) */
+  schreibabgabe?: SchreibabgabeTexte;
 }) {
   const l = useSearchParams().get('l');
   const [z, setZ] = useState<Zustand>({ art: 'laedt' });
@@ -221,6 +224,7 @@ export function UebenInsel({
           zurueckHref={gesichert ? lernpfad.adresse : undefined}
           optionen={{ ...z.optionen, spracherkennung }}
           melden={melden ? { kurs, texte: melden } : undefined}
+          abgabe={schreibabgabe && istRichtung(kurs) ? { kurs, texte: schreibabgabe } : undefined}
           abschluss={abschluss}
         />
       </Suspense>

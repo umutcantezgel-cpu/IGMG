@@ -878,7 +878,6 @@
     "senden": "An die Lehrkraft senden",
     "sendet": "Wird gesendet …",
     "gesendet": "Gesendet. Die Rückmeldung deiner Lehrkraft findest du unter „Gruppe“.",
-    "zurGruppe": "Zur Gruppe",
     "anmelden": "Anmelden (öffnet ein neues Fenster)",
     "erneut": "Erneut versuchen",
     "grund": {
@@ -910,7 +909,11 @@
       "pruefliste": "Einschätzung nach der Prüfliste",
       "loeschen": "Abgabe löschen",
       "loeschenAria": "Abgabe vom {datum} löschen",
-      "geloescht": "Die Abgabe ist gelöscht."
+      "geloescht": "Die Abgabe ist gelöscht.",
+      "loeschenFrage": "Diese Abgabe endgültig löschen? Danach sieht auch deine Lehrkraft sie nicht mehr.",
+      "loeschenJa": "Endgültig löschen",
+      "abbrechen": "Abbrechen",
+      "loeschenFehler": "Gerade lässt sich die Abgabe nicht löschen. Versuche es später noch einmal."
     },
     "stufe": {
       "s0": "noch am Anfang",
@@ -922,6 +925,12 @@
       "erreicht": "Aufgabe gut gelöst",
       "unterwegs": "Auf einem guten Weg",
       "nochmal": "Es lohnt sich, den Text noch einmal zu schreiben."
+    },
+    "kriterium": {
+      "aufgabe": "Aufgabe",
+      "zusammenhang": "Zusammenhang",
+      "wortschatz": "Wortschatz",
+      "grammatik": "Grammatik"
     }
   },
   "sprachausgabe": {
