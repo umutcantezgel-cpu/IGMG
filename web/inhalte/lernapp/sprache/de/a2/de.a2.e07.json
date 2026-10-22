@@ -1,0 +1,4144 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "de.a2.e07",
+    "reihenfolge": 8,
+    "thema": {
+      "de": "Neu in der Nachbarschaft",
+      "tr": "Yeni komşular",
+      "ar": "جديد في الحيّ"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann mich bei neuen Nachbarn vorstellen und Hilfe anbieten.",
+        "tr": "Yeni komşularıma kendimi tanıtabilir ve yardım teklif edebilirim.",
+        "ar": "أستطيع أن أعرّف بنفسي للجيران الجدد وأن أعرض المساعدة."
+      },
+      {
+        "de": "Ich kann die Hausordnung verstehen und sagen, was ich davon halte.",
+        "tr": "Apartmanın kurallarını anlayabilir ve bu kurallar hakkındaki fikrimi söyleyebilirim.",
+        "ar": "أستطيع أن أفهم قواعد العمارة وأن أقول رأيي فيها."
+      }
+    ],
+    "symbol": "door-open",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a2.e07.dass",
+      "lemma": "dass",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Nebensatz, Verb am Ende"
+      },
+      "frequenzRang": 25,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.mancher",
+      "lemma": "mancher",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinitartikel und -pronomen"
+      },
+      "formen": {
+        "endung_e": "manche",
+        "endung_en": "manchen",
+        "endung_es": "manches",
+        "endung_em": "manchem"
+      },
+      "frequenzRang": 414,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.mehrere",
+      "lemma": "mehrere",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinitpronomen (nur Plural)"
+      },
+      "formen": {
+        "endung_n": "mehreren",
+        "endung_r": "mehrerer"
+      },
+      "frequenzRang": 408,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.einander",
+      "lemma": "einander",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "reziprokes Pronomen, unveränderlich (Wir helfen einander.)"
+      },
+      "frequenzRang": 2931,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.gegenseitig",
+      "lemma": "gegenseitig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "gegenseitige",
+        "endung_en": "gegenseitigen",
+        "endung_er": "gegenseitiger",
+        "endung_es": "gegenseitiges",
+        "endung_em": "gegenseitigem"
+      },
+      "frequenzRang": 1731,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.irgendwann",
+      "lemma": "irgendwann",
+      "wortart": "adverb",
+      "frequenzRang": 930,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.irgendwo",
+      "lemma": "irgendwo",
+      "wortart": "adverb",
+      "frequenzRang": 1119,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.ueberall",
+      "lemma": "überall",
+      "wortart": "adverb",
+      "frequenzRang": 645,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.staendig",
+      "lemma": "ständig",
+      "wortart": "adverb",
+      "frequenzRang": 748,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.nebenan",
+      "lemma": "nebenan",
+      "wortart": "adverb",
+      "frequenzRang": 5322,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.glauben",
+      "lemma": "glauben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "glauben",
+        "praes_ich": "glaube",
+        "praes_du": "glaubst",
+        "praes_er_sie_es": "glaubt",
+        "praes_wir": "glauben",
+        "praes_ihr": "glaubt",
+        "praes_sie_Sie": "glauben",
+        "partizip_2": "geglaubt"
+      },
+      "frequenzRang": 309,
+      "quelle": "wiktionary:de:glauben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚glauben‘ (https://de.wiktionary.org/wiki/glauben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.vorstellen",
+      "lemma": "vorstellen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "vor",
+        "reflexiv": "sich (Dativ)"
+      },
+      "formen": {
+        "infinitiv": "vorstellen",
+        "verbzusatz": "vor",
+        "praes_ich": "stelle",
+        "praes_du": "stellst",
+        "praes_er_sie_es": "stellt",
+        "praes_wir": "stellen",
+        "praes_ihr": "stellt",
+        "praes_sie_Sie": "stellen",
+        "partizip_2": "vorgestellt",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 616,
+      "quelle": "wiktionary:de:vorstellen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vorstellen‘ (https://de.wiktionary.org/wiki/vorstellen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.kennenlernen",
+      "lemma": "kennenlernen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "kennen"
+      },
+      "formen": {
+        "infinitiv": "kennenlernen",
+        "verbzusatz": "kennen",
+        "praes_ich": "lerne",
+        "praes_du": "lernst",
+        "praes_er_sie_es": "lernt",
+        "praes_wir": "lernen",
+        "praes_ihr": "lernt",
+        "praes_sie_Sie": "lernen",
+        "partizip_2": "kennengelernt"
+      },
+      "frequenzRang": 1998,
+      "quelle": "wiktionary:de:kennenlernen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚kennenlernen‘ (https://de.wiktionary.org/wiki/kennenlernen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.anbieten",
+      "lemma": "anbieten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an"
+      },
+      "formen": {
+        "infinitiv": "anbieten",
+        "verbzusatz": "an",
+        "praes_ich": "biete",
+        "praes_du": "bietest",
+        "praes_er_sie_es": "bietet",
+        "praes_wir": "bieten",
+        "praes_ihr": "bietet",
+        "praes_sie_Sie": "bieten",
+        "partizip_2": "angeboten"
+      },
+      "frequenzRang": 1839,
+      "quelle": "wiktionary:de:anbieten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚anbieten‘ (https://de.wiktionary.org/wiki/anbieten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.bitten",
+      "lemma": "bitten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "bitten",
+        "praes_ich": "bitte",
+        "praes_du": "bittest",
+        "praes_er_sie_es": "bittet",
+        "praes_wir": "bitten",
+        "praes_ihr": "bittet",
+        "praes_sie_Sie": "bitten",
+        "imp_du": "bitte",
+        "imp_ihr": "bittet"
+      },
+      "frequenzRang": 797,
+      "quelle": "wiktionary:de:bitten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bitten‘ (https://de.wiktionary.org/wiki/bitten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.leihen",
+      "lemma": "leihen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "leihen",
+        "praes_ich": "leihe",
+        "praes_du": "leihst",
+        "praes_er_sie_es": "leiht",
+        "praes_wir": "leihen",
+        "praes_ihr": "leiht",
+        "praes_sie_Sie": "leihen",
+        "partizip_2": "geliehen"
+      },
+      "frequenzRang": 4578,
+      "quelle": "wiktionary:de:leihen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚leihen‘ (https://de.wiktionary.org/wiki/leihen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.klingeln",
+      "lemma": "klingeln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "klingeln",
+        "praes_ich": "klingle",
+        "praes_du": "klingelst",
+        "praes_er_sie_es": "klingelt",
+        "praes_wir": "klingeln",
+        "praes_ihr": "klingelt",
+        "praes_sie_Sie": "klingeln",
+        "partizip_2": "geklingelt"
+      },
+      "frequenzRang": 3735,
+      "quelle": "wiktionary:de:klingeln",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚klingeln‘ (https://de.wiktionary.org/wiki/klingeln), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.stoeren",
+      "lemma": "stören",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "stören",
+        "praes_ich": "störe",
+        "praes_du": "störst",
+        "praes_er_sie_es": "stört",
+        "praes_wir": "stören",
+        "praes_ihr": "stört",
+        "praes_sie_Sie": "stören",
+        "partizip_2": "gestört"
+      },
+      "frequenzRang": 1235,
+      "quelle": "wiktionary:de:stören",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚stören‘ (https://de.wiktionary.org/wiki/stören), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.erlauben",
+      "lemma": "erlauben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erlauben",
+        "praes_ich": "erlaube",
+        "praes_du": "erlaubst",
+        "praes_er_sie_es": "erlaubt",
+        "praes_wir": "erlauben",
+        "praes_ihr": "erlaubt",
+        "praes_sie_Sie": "erlauben",
+        "partizip_2": "erlaubt"
+      },
+      "frequenzRang": 910,
+      "quelle": "wiktionary:de:erlauben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erlauben‘ (https://de.wiktionary.org/wiki/erlauben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.verbieten",
+      "lemma": "verbieten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verbieten",
+        "praes_ich": "verbiete",
+        "praes_du": "verbietest",
+        "praes_er_sie_es": "verbietet",
+        "praes_wir": "verbieten",
+        "praes_ihr": "verbietet",
+        "praes_sie_Sie": "verbieten",
+        "partizip_2": "verboten"
+      },
+      "frequenzRang": 1306,
+      "quelle": "wiktionary:de:verbieten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verbieten‘ (https://de.wiktionary.org/wiki/verbieten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.annehmen",
+      "lemma": "annehmen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "annehmen",
+        "verbzusatz": "an",
+        "praes_ich": "nehme",
+        "praes_du": "nimmst",
+        "praes_er_sie_es": "nimmt",
+        "praes_wir": "nehmen",
+        "praes_ihr": "nehmt",
+        "praes_sie_Sie": "nehmen",
+        "partizip_2": "angenommen"
+      },
+      "frequenzRang": 1041,
+      "quelle": "wiktionary:de:annehmen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚annehmen‘ (https://de.wiktionary.org/wiki/annehmen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.abgeben",
+      "lemma": "abgeben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ab",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "abgeben",
+        "verbzusatz": "ab",
+        "praes_ich": "gebe",
+        "praes_du": "gibst",
+        "praes_er_sie_es": "gibt",
+        "praes_wir": "geben",
+        "praes_ihr": "gebt",
+        "praes_sie_Sie": "geben",
+        "imp_du": "gib",
+        "imp_ihr": "gebt",
+        "partizip_2": "abgegeben"
+      },
+      "frequenzRang": 1702,
+      "quelle": "wiktionary:de:abgeben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚abgeben‘ (https://de.wiktionary.org/wiki/abgeben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.ablehnen",
+      "lemma": "ablehnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ab"
+      },
+      "formen": {
+        "infinitiv": "ablehnen",
+        "verbzusatz": "ab",
+        "praes_ich": "lehne",
+        "praes_du": "lehnst",
+        "praes_er_sie_es": "lehnt",
+        "praes_wir": "lehnen",
+        "praes_ihr": "lehnt",
+        "praes_sie_Sie": "lehnen",
+        "partizip_2": "abgelehnt"
+      },
+      "frequenzRang": 1765,
+      "quelle": "wiktionary:de:ablehnen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ablehnen‘ (https://de.wiktionary.org/wiki/ablehnen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.begruessen",
+      "lemma": "begrüßen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "begrüßen",
+        "praes_ich": "begrüße",
+        "praes_du": "begrüßt",
+        "praes_er_sie_es": "begrüßt",
+        "praes_wir": "begrüßen",
+        "praes_ihr": "begrüßt",
+        "praes_sie_Sie": "begrüßen",
+        "partizip_2": "begrüßt"
+      },
+      "frequenzRang": 1838,
+      "quelle": "wiktionary:de:begrüßen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚begrüßen‘ (https://de.wiktionary.org/wiki/begrüßen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.klaeren",
+      "lemma": "klären",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "klären",
+        "praes_ich": "kläre",
+        "praes_du": "klärst",
+        "praes_er_sie_es": "klärt",
+        "praes_wir": "klären",
+        "praes_ihr": "klärt",
+        "praes_sie_Sie": "klären",
+        "partizip_2": "geklärt"
+      },
+      "frequenzRang": 1573,
+      "quelle": "wiktionary:de:klären",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚klären‘ (https://de.wiktionary.org/wiki/klären), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.beachten",
+      "lemma": "beachten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "beachten",
+        "praes_ich": "beachte",
+        "praes_du": "beachtest",
+        "praes_er_sie_es": "beachtet",
+        "praes_wir": "beachten",
+        "praes_ihr": "beachtet",
+        "praes_sie_Sie": "beachten",
+        "imp_du": "beachte",
+        "imp_ihr": "beachtet",
+        "partizip_2": "beachtet"
+      },
+      "frequenzRang": 1980,
+      "quelle": "wiktionary:de:beachten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚beachten‘ (https://de.wiktionary.org/wiki/beachten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.nachbar",
+      "lemma": "Nachbar",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Nachbarn",
+        "weiblich": "Nachbarin"
+      },
+      "formen": {
+        "pl": "Nachbarn",
+        "weiblich": "Nachbarin",
+        "weiblich_pl": "Nachbarinnen"
+      },
+      "frequenzRang": 1454,
+      "quelle": "wiktionary:de:Nachbar",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nachbar‘ (https://de.wiktionary.org/wiki/Nachbar), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.nachbarschaft",
+      "lemma": "Nachbarschaft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Nachbarschaften"
+      },
+      "formen": {
+        "pl": "Nachbarschaften"
+      },
+      "frequenzRang": 4039,
+      "quelle": "wiktionary:de:Nachbarschaft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nachbarschaft‘ (https://de.wiktionary.org/wiki/Nachbarschaft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.treppenhaus",
+      "lemma": "Treppenhaus",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Treppenhäuser"
+      },
+      "formen": {
+        "pl": "Treppenhäuser",
+        "dat_pl": "Treppenhäusern"
+      },
+      "frequenzRang": 8326,
+      "quelle": "wiktionary:de:Treppenhaus",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Treppenhaus‘ (https://de.wiktionary.org/wiki/Treppenhaus), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.hausordnung",
+      "lemma": "Hausordnung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Hausordnungen"
+      },
+      "formen": {
+        "pl": "Hausordnungen"
+      },
+      "frequenzRang": 44788,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.hausmeister",
+      "lemma": "Hausmeister",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Hausmeister",
+        "weiblich": "Hausmeisterin"
+      },
+      "formen": {
+        "dat_pl": "Hausmeistern",
+        "weiblich": "Hausmeisterin",
+        "weiblich_pl": "Hausmeisterinnen"
+      },
+      "frequenzRang": 8494,
+      "quelle": "wiktionary:de:Hausmeister",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hausmeister‘ (https://de.wiktionary.org/wiki/Hausmeister), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.hof",
+      "lemma": "Hof",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Höfe"
+      },
+      "formen": {
+        "pl": "Höfe",
+        "dat_pl": "Höfen"
+      },
+      "frequenzRang": 1234,
+      "quelle": "wiktionary:de:Hof",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hof‘ (https://de.wiktionary.org/wiki/Hof), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.eingang",
+      "lemma": "Eingang",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Eingänge"
+      },
+      "formen": {
+        "pl": "Eingänge",
+        "dat_pl": "Eingängen"
+      },
+      "frequenzRang": 2338,
+      "quelle": "wiktionary:de:Eingang",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Eingang‘ (https://de.wiktionary.org/wiki/Eingang), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.paket",
+      "lemma": "Paket",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Pakete"
+      },
+      "formen": {
+        "pl": "Pakete",
+        "dat_pl": "Paketen"
+      },
+      "frequenzRang": 1989,
+      "quelle": "wiktionary:de:Paket",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Paket‘ (https://de.wiktionary.org/wiki/Paket), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.post",
+      "lemma": "Post",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1132,
+      "quelle": "wiktionary:de:Post",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Post‘ (https://de.wiktionary.org/wiki/Post), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.briefkasten",
+      "lemma": "Briefkasten",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Briefkästen"
+      },
+      "formen": {
+        "pl": "Briefkästen"
+      },
+      "frequenzRang": 6684,
+      "quelle": "wiktionary:de:Briefkasten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Briefkasten‘ (https://de.wiktionary.org/wiki/Briefkasten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.brief",
+      "lemma": "Brief",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Briefe"
+      },
+      "formen": {
+        "pl": "Briefe",
+        "dat_pl": "Briefen"
+      },
+      "frequenzRang": 1005,
+      "quelle": "wiktionary:de:Brief",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Brief‘ (https://de.wiktionary.org/wiki/Brief), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.zettel",
+      "lemma": "Zettel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zettel"
+      },
+      "formen": {
+        "dat_pl": "Zetteln"
+      },
+      "frequenzRang": 4560,
+      "quelle": "wiktionary:de:Zettel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zettel‘ (https://de.wiktionary.org/wiki/Zettel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.regel",
+      "lemma": "Regel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Regeln"
+      },
+      "formen": {
+        "pl": "Regeln"
+      },
+      "frequenzRang": 744,
+      "quelle": "wiktionary:de:Regel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Regel‘ (https://de.wiktionary.org/wiki/Regel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.laerm",
+      "lemma": "Lärm",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 4121,
+      "quelle": "wiktionary:de:Lärm",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lärm‘ (https://de.wiktionary.org/wiki/Lärm), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.tonne",
+      "lemma": "Tonne",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Tonnen"
+      },
+      "formen": {
+        "pl": "Tonnen"
+      },
+      "frequenzRang": 6639,
+      "quelle": "wiktionary:de:Tonne",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tonne‘ (https://de.wiktionary.org/wiki/Tonne), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.bitte",
+      "lemma": "Bitte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bitten"
+      },
+      "formen": {
+        "pl": "Bitten"
+      },
+      "frequenzRang": 144,
+      "quelle": "wiktionary:de:Bitte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bitte‘ (https://de.wiktionary.org/wiki/Bitte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.meinung",
+      "lemma": "Meinung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Meinungen"
+      },
+      "formen": {
+        "pl": "Meinungen"
+      },
+      "frequenzRang": 451,
+      "quelle": "wiktionary:de:Meinung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Meinung‘ (https://de.wiktionary.org/wiki/Meinung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.gespraech",
+      "lemma": "Gespräch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gespräche"
+      },
+      "formen": {
+        "pl": "Gespräche",
+        "dat_pl": "Gesprächen"
+      },
+      "frequenzRang": 733,
+      "quelle": "wiktionary:de:Gespräch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gespräch‘ (https://de.wiktionary.org/wiki/Gespräch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.kontakt",
+      "lemma": "Kontakt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kontakte"
+      },
+      "formen": {
+        "pl": "Kontakte",
+        "dat_pl": "Kontakten"
+      },
+      "frequenzRang": 780,
+      "quelle": "wiktionary:de:Kontakt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kontakt‘ (https://de.wiktionary.org/wiki/Kontakt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.ruhig",
+      "lemma": "ruhig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ruhige",
+        "endung_en": "ruhigen",
+        "endung_er": "ruhiger",
+        "endung_es": "ruhiges",
+        "endung_em": "ruhigem",
+        "komparativ": "ruhiger",
+        "superlativ": "ruhigsten",
+        "superlativ_e": "ruhigste"
+      },
+      "frequenzRang": 874,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.leise",
+      "lemma": "leise",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "leise",
+        "endung_en": "leisen",
+        "endung_er": "leiser",
+        "endung_es": "leises",
+        "endung_em": "leisem",
+        "komparativ": "leiser",
+        "superlativ": "leisesten",
+        "superlativ_e": "leiseste"
+      },
+      "frequenzRang": 1968,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.freundlich",
+      "lemma": "freundlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "freundliche",
+        "endung_en": "freundlichen",
+        "endung_er": "freundlicher",
+        "endung_es": "freundliches",
+        "endung_em": "freundlichem",
+        "komparativ": "freundlicher",
+        "superlativ": "freundlichsten",
+        "superlativ_e": "freundlichste"
+      },
+      "frequenzRang": 1372,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.nett",
+      "lemma": "nett",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "nette",
+        "endung_en": "netten",
+        "endung_er": "netter",
+        "endung_es": "nettes",
+        "endung_em": "nettem",
+        "komparativ": "netter",
+        "superlativ": "nettesten",
+        "superlativ_e": "netteste"
+      },
+      "frequenzRang": 665,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.wahr",
+      "lemma": "wahr",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "wahre",
+        "endung_en": "wahren",
+        "endung_er": "wahrer",
+        "endung_es": "wahres",
+        "endung_em": "wahrem"
+      },
+      "frequenzRang": 622,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.mieter",
+      "lemma": "Mieter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Mieter",
+        "weiblich": "Mieterin"
+      },
+      "formen": {
+        "dat_pl": "Mietern",
+        "weiblich": "Mieterin",
+        "weiblich_pl": "Mieterinnen"
+      },
+      "frequenzRang": 3395,
+      "quelle": "wiktionary:de:Mieter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mieter‘ (https://de.wiktionary.org/wiki/Mieter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.erdgeschoss",
+      "lemma": "Erdgeschoss",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Erdgeschosse"
+      },
+      "formen": {
+        "pl": "Erdgeschosse",
+        "dat_pl": "Erdgeschossen"
+      },
+      "frequenzRang": 5666,
+      "quelle": "wiktionary:de:Erdgeschoss",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erdgeschoss‘ (https://de.wiktionary.org/wiki/Erdgeschoss), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.haustuer",
+      "lemma": "Haustür",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Haustüren"
+      },
+      "formen": {
+        "pl": "Haustüren"
+      },
+      "frequenzRang": 5315,
+      "quelle": "wiktionary:de:Haustür",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Haustür‘ (https://de.wiktionary.org/wiki/Haustür), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.klingel",
+      "lemma": "Klingel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Klingeln"
+      },
+      "formen": {
+        "pl": "Klingeln"
+      },
+      "frequenzRang": 11203,
+      "quelle": "wiktionary:de:Klingel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Klingel‘ (https://de.wiktionary.org/wiki/Klingel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.ruhezeit",
+      "lemma": "Ruhezeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ruhezeiten"
+      },
+      "formen": {
+        "pl": "Ruhezeiten"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.reinigen",
+      "lemma": "reinigen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "reinigen",
+        "praes_ich": "reinige",
+        "praes_du": "reinigst",
+        "praes_er_sie_es": "reinigt",
+        "praes_wir": "reinigen",
+        "praes_ihr": "reinigt",
+        "praes_sie_Sie": "reinigen",
+        "partizip_2": "gereinigt"
+      },
+      "frequenzRang": 4004,
+      "quelle": "wiktionary:de:reinigen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚reinigen‘ (https://de.wiktionary.org/wiki/reinigen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.waesche",
+      "lemma": "Wäsche",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 4710,
+      "quelle": "wiktionary:de:Wäsche",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wäsche‘ (https://de.wiktionary.org/wiki/Wäsche), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.riechen",
+      "lemma": "riechen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "riechen",
+        "praes_ich": "rieche",
+        "praes_du": "riechst",
+        "praes_er_sie_es": "riecht",
+        "praes_wir": "riechen",
+        "praes_ihr": "riecht",
+        "praes_sie_Sie": "riechen",
+        "partizip_2": "gerochen"
+      },
+      "frequenzRang": 2339,
+      "quelle": "wiktionary:de:riechen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚riechen‘ (https://de.wiktionary.org/wiki/riechen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.einverstanden",
+      "lemma": "einverstanden",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "gebrauch": "nur prädikativ (Ich bin einverstanden.)"
+      },
+      "frequenzRang": 3197,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.selbstverstaendlich",
+      "lemma": "selbstverständlich",
+      "wortart": "adverb",
+      "frequenzRang": 1427,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.pflicht",
+      "lemma": "Pflicht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Pflichten"
+      },
+      "formen": {
+        "pl": "Pflichten"
+      },
+      "frequenzRang": 1860,
+      "quelle": "wiktionary:de:Pflicht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Pflicht‘ (https://de.wiktionary.org/wiki/Pflicht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.ruecksicht",
+      "lemma": "Rücksicht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 4470,
+      "quelle": "wiktionary:de:Rücksicht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rücksicht‘ (https://de.wiktionary.org/wiki/Rücksicht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.leeren",
+      "lemma": "leeren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "leeren",
+        "praes_ich": "leere",
+        "praes_du": "leerst",
+        "praes_er_sie_es": "leert",
+        "praes_wir": "leeren",
+        "praes_ihr": "leert",
+        "praes_sie_Sie": "leeren",
+        "partizip_2": "geleert"
+      },
+      "frequenzRang": 3549,
+      "quelle": "wiktionary:de:leeren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚leeren‘ (https://de.wiktionary.org/wiki/leeren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.zustimmen",
+      "lemma": "zustimmen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "zu"
+      },
+      "formen": {
+        "infinitiv": "zustimmen",
+        "verbzusatz": "zu",
+        "praes_ich": "stimme",
+        "praes_du": "stimmst",
+        "praes_er_sie_es": "stimmt",
+        "praes_wir": "stimmen",
+        "praes_ihr": "stimmt",
+        "praes_sie_Sie": "stimmen",
+        "partizip_2": "zugestimmt"
+      },
+      "frequenzRang": 2790,
+      "quelle": "wiktionary:de:zustimmen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zustimmen‘ (https://de.wiktionary.org/wiki/zustimmen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.irgendetwas",
+      "lemma": "irgendetwas",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinitpronomen, unveränderlich"
+      },
+      "frequenzRang": 3527,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a2.e07.s0001",
+      "text": "Wir sind die neuen Nachbarn aus dem dritten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0002",
+      "text": "Darf ich mich Ihnen vorstellen?",
+      "quelle": "tatoeba:4997159",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4997159 von raggione (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0003",
+      "text": "Darf ich Ihnen meine Frau vorstellen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0004",
+      "text": "Schön, dass wir uns endlich kennenlernen!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0005",
+      "text": "Ich will Tom kennenlernen.",
+      "quelle": "tatoeba:2875961",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2875961 von alik_farber (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0006",
+      "text": "Ich bin Selin und wohne nebenan.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0007",
+      "text": "Wer wohnt in der Wohnung nebenan?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0008",
+      "text": "Ich wohne im Erdgeschoss.",
+      "quelle": "tatoeba:428479",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #428479 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0009",
+      "text": "Herr Kaya wohnt im Erdgeschoss, gleich neben dem Eingang.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0010",
+      "text": "Unser Name steht noch nicht an der Klingel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0011",
+      "text": "Es klingelt. Wer ist das denn?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0012",
+      "text": "Wir klingeln bei den neuen Nachbarn und begrüßen sie.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0013",
+      "text": "Herr Neumann begrüßt die neue Familie sehr herzlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0014",
+      "text": "Bitte schließen Sie nachts die Haustür.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0015",
+      "text": "Die Haustür ist am Tag offen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0016",
+      "text": "Vor dem Eingang stehen viele Fahrräder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0017",
+      "text": "Das Treppenhaus ist hell und sauber.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0018",
+      "text": "Im Treppenhaus treffe ich oft meine Nachbarin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0019",
+      "text": "In unserem Haus wohnen zwölf Mieter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0020",
+      "text": "Meine Nachbarin hat ein kleines Baby.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0021",
+      "text": "Wie nett von dir!",
+      "quelle": "tatoeba:657405",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #657405 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0022",
+      "text": "Er ist mein Nachbar, aber ich kenne ihn nicht gut.",
+      "quelle": "tatoeba:370194",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #370194 von Wolf (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0023",
+      "text": "Wir haben guten Kontakt zu unseren Nachbarn.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0024",
+      "text": "Guten Morgen, Herr Neumann! Ich bin die neue Nachbarin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0025",
+      "text": "Guten Abend, Frau Becker! Sie wohnen auch im Erdgeschoss, oder?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0026",
+      "text": "Guten Tag! Sind Sie die neuen Nachbarn?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0027",
+      "text": "Ja, wir wohnen seit Montag im dritten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0028",
+      "text": "Herzlich willkommen! Ich bin Frau Aydın von nebenan.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0029",
+      "text": "Freut mich! Ich bin Ḫālid, Ihr neuer Nachbar.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0030",
+      "text": "Unsere neuen Nachbarn sind sehr nett.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0031",
+      "text": "Guten Tag! Ich bin Ihr neuer Nachbar aus dem dritten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0032",
+      "text": "Herr Neumann bietet uns seine Hilfe an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0033",
+      "text": "Darf ich Ihnen ein Stück Kuchen anbieten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0034",
+      "text": "Darf ich Sie um Hilfe bitten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0035",
+      "text": "Kann ich dich um etwas bitten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0036",
+      "text": "Ich habe eine kleine Bitte: Können Sie morgen mein Paket annehmen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0037",
+      "text": "Kannst du mir dein Werkzeug leihen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0038",
+      "text": "Können Sie uns für Samstag vier Stühle leihen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0039",
+      "text": "Ich leihe dir gern mein Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0040",
+      "text": "Herr Kaya leiht uns seine Leiter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0041",
+      "text": "Haben Sie vielleicht etwas Zucker für mich?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0042",
+      "text": "Wir nehmen Ihre Hilfe gern an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0043",
+      "text": "Sie lehnt die Hilfe freundlich ab.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0044",
+      "text": "Nein, danke. Ich schaffe das allein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0045",
+      "text": "Ich bin einverstanden. Wir machen es so.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0046",
+      "text": "Alle sind einverstanden.",
+      "quelle": "tatoeba:1075941",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1075941 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0047",
+      "text": "Selbstverständlich helfe ich Ihnen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0048",
+      "text": "In unserem Haus helfen wir einander.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0049",
+      "text": "Wir müssen uns gegenseitig helfen.",
+      "quelle": "tatoeba:448635",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #448635 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0050",
+      "text": "Entschuldigung, darf ich Sie um etwas bitten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0051",
+      "text": "Natürlich. Was brauchen Sie denn?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0052",
+      "text": "Können Sie mir bis morgen Ihren Staubsauger leihen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0053",
+      "text": "Ja, gern. Ich hole ihn sofort.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0054",
+      "text": "Kann ich Ihnen beim Tragen helfen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0055",
+      "text": "Können Sie mir bitte Ihre Leiter leihen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0056",
+      "text": "Das Paket ist leider noch nicht bei mir angekommen.",
+      "quelle": "tatoeba:2405660",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2405660 von Vortarulo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0057",
+      "text": "Das Paket ist ziemlich schwer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0058",
+      "text": "Ich gebe das Paket heute Abend bei Herrn Neumann ab.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0059",
+      "text": "Ich gehe zur Post.",
+      "quelle": "tatoeba:1714589",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1714589 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0060",
+      "text": "Die Post kommt bei uns immer gegen elf Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0061",
+      "text": "Ist heute Post für uns da?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0062",
+      "text": "Der Briefkasten ist leer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0063",
+      "text": "Unser Briefkasten ist schon wieder ganz voll.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0064",
+      "text": "Ich lege den Brief in den Briefkasten von Frau Becker.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0065",
+      "text": "An der Tür hängt ein Zettel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0066",
+      "text": "Was steht auf dem Zettel?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0067",
+      "text": "Niemand war zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0068",
+      "text": "Heute hat niemand bei uns geklingelt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0069",
+      "text": "Hat jemand nach mir gefragt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0070",
+      "text": "Nein, heute ist nichts für Sie gekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0071",
+      "text": "Das Paket muss irgendwo im Treppenhaus sein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0072",
+      "text": "Hast du irgendetwas gehört?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0073",
+      "text": "Ich habe überall gesucht, aber das Paket ist weg.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0074",
+      "text": "Heute sind mehrere Pakete für das Haus gekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0075",
+      "text": "Guten Tag! Ich habe ein Paket für Familie Schulz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0076",
+      "text": "Die Familie ist leider nicht zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0077",
+      "text": "Können Sie das Paket für die Familie annehmen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0078",
+      "text": "Ja, natürlich. Geben Sie es mir!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0079",
+      "text": "Niemand hat das Paket angenommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0080",
+      "text": "Wir haben Ihr Paket angenommen. Hier ist es!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0081",
+      "text": "Ich glaube, dass er morgen kommt.",
+      "quelle": "tatoeba:353763",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #353763 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0082",
+      "text": "Ich glaube, es ist wahr.",
+      "quelle": "tatoeba:742657",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #742657 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0083",
+      "text": "Ich finde, dass unsere Nachbarn sehr nett sind.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0084",
+      "text": "Herr Neumann findet, dass die Kinder im Hof zu laut sind.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0085",
+      "text": "Ich glaube, dass Kinder im Hof spielen dürfen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0086",
+      "text": "Frau Becker sagt, dass das Treppenhaus schmutzig ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0087",
+      "text": "Es ist wichtig, dass alle die Regeln kennen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0088",
+      "text": "Ich weiß, dass Sie abends Ruhe brauchen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0089",
+      "text": "Was ist deine Meinung?",
+      "quelle": "tatoeba:4359966",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4359966 von Adelpa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0090",
+      "text": "Was ist Ihre Meinung dazu, Herr Neumann?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0091",
+      "text": "Da stimme ich Ihnen zu.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0092",
+      "text": "Von oben kommt ständig Lärm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0093",
+      "text": "Bitte nicht stören!",
+      "quelle": "tatoeba:1370324",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1370324 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e07.s0094",
+      "text": "Stört Sie der Lärm von den Kindern?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0095",
+      "text": "Nein, das stört mich überhaupt nicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0096",
+      "text": "Bitte nehmen Sie Rücksicht auf die Nachbarn.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0097",
+      "text": "Im Treppenhaus riecht es nach Essen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0098",
+      "text": "Hm, hier riecht es aber gut!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0099",
+      "text": "Herr Neumann, was ist Ihre Meinung? Dürfen Kinder im Hof Fußball spielen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0100",
+      "text": "Ich finde, dass Kinder draußen spielen müssen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0101",
+      "text": "Aber der Lärm stört doch manche Nachbarn.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0102",
+      "text": "Das stimmt. Aber in den Ruhezeiten sind die Kinder ja leise.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0103",
+      "text": "Ich glaube, dass die Nachbarin recht hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0104",
+      "text": "Ich finde, dass wir das Problem zusammen klären können.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0105",
+      "text": "Die Hausordnung hängt im Treppenhaus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0106",
+      "text": "Alle Mieter müssen die Regeln beachten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0107",
+      "text": "Bitte beachten Sie die Ruhezeiten!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0108",
+      "text": "Unser Haus ist sehr ruhig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0109",
+      "text": "Nachts ist es im Haus ganz ruhig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0110",
+      "text": "Bitte seid leise, das Baby schläft!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0111",
+      "text": "Spielen ist im Hof erlaubt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0112",
+      "text": "Parken ist im Hof verboten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0113",
+      "text": "Es ist unsere Pflicht, das Treppenhaus sauber zu halten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0114",
+      "text": "Herr Kaya ist unser Hausmeister.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0115",
+      "text": "Die Tonnen stehen hinten im Hof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0116",
+      "text": "Die Tonne ist schon wieder voll.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0117",
+      "text": "Die Stadt leert die Tonnen jeden Dienstag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0118",
+      "text": "Im Keller gibt es einen Raum für die Wäsche.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0119",
+      "text": "Nachts darf man keine Wäsche waschen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0120",
+      "text": "Am Sonntag muss man leise sein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0121",
+      "text": "Den Müll bringt man in den Hof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0122",
+      "text": "Herr Kaya, darf ich meine Wäsche in den Hof hängen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0123",
+      "text": "Ja, das ist erlaubt, aber nur bis 20 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0124",
+      "text": "Und wann ist im Haus Ruhezeit?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0125",
+      "text": "Von 22 bis 6 Uhr. Dann sind bitte alle leise.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0126",
+      "text": "Fahrräder darf man nicht ins Treppenhaus stellen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0127",
+      "text": "Entschuldigung, können Sie bitte etwas leiser sein?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0128",
+      "text": "Hausordnung für alle Mieter",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0129",
+      "text": "Liebe Mieterinnen und Mieter, in unserem Haus wohnen viele Menschen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0130",
+      "text": "Für ein gutes Leben im Haus gibt es ein paar Regeln.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0131",
+      "text": "Die Ruhezeiten sind mittags von 13 bis 15 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0132",
+      "text": "Nachts ist von 22 bis 6 Uhr auch Ruhezeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0133",
+      "text": "In diesen Zeiten machen bitte alle keinen Lärm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0134",
+      "text": "Am Sonntag ist den ganzen Tag Ruhezeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0135",
+      "text": "Die Waschmaschine darf man nachts nicht benutzen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0136",
+      "text": "Die Tonnen für den Müll stehen im Hof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0137",
+      "text": "Bitte bringen Sie den Müll in die richtige Tonne.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0138",
+      "text": "Flaschen aus Glas gehören nicht in die Tonnen im Hof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0139",
+      "text": "Jede Woche reinigt eine andere Familie das Treppenhaus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0140",
+      "text": "Der Plan dafür hängt im Eingang neben den Briefkästen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0141",
+      "text": "Fahrräder stehen bitte im Hof, nicht im Treppenhaus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0142",
+      "text": "Bei Fragen hilft Ihnen Herr Kaya, unser Hausmeister.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0143",
+      "text": "Vielen Dank für Ihre Rücksicht!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0144",
+      "text": "Am Sonntag darf man im Haus laut sein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0145",
+      "text": "Die Tonnen stehen im Keller.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0146",
+      "text": "Herr Kaya reinigt jeden Tag den Hof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0147",
+      "text": "Wann ist am Abend Ruhezeit?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0148",
+      "text": "Ab 22 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0149",
+      "text": "Ab 13 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0150",
+      "text": "Ab 20 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0151",
+      "text": "Wer reinigt das Treppenhaus?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0152",
+      "text": "Jede Woche eine andere Familie.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0153",
+      "text": "Nur der Hausmeister.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0154",
+      "text": "Die Stadt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0155",
+      "text": "Schreiben Sie einen Zettel für Ihre Nachbarin: Sie haben ihr Paket angenommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0156",
+      "text": "Liebe Frau Schulz, heute Morgen war die Post hier. Wir haben ein Paket für Sie angenommen. Sie können es heute ab 17 Uhr bei uns abholen. Wir wohnen im Erdgeschoss links. Viele Grüße, Familie Yılmaz",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0157",
+      "text": "Tee bei Familie an-Naǧǧār",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0158",
+      "text": "Familie an-Naǧǧār wohnt jetzt seit drei Wochen im Haus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0159",
+      "text": "Am Samstag lädt sie die Nachbarn zum Tee ein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0160",
+      "text": "Auf einem Zettel im Eingang steht die Einladung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0161",
+      "text": "Um vier Uhr klingelt es an der Tür.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0162",
+      "text": "Herr Neumann, Frau Becker und Familie Yılmaz kommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0163",
+      "text": "Ḫālid öffnet den Nachbarn die Tür.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0164",
+      "text": "Herzlich willkommen! Schön, dass Sie da sind.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0165",
+      "text": "Vielen Dank für die Einladung! Das ist sehr nett.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0166",
+      "text": "Ranā bietet allen Tee und Kuchen an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0167",
+      "text": "Frau Becker sagt, dass der Kuchen wunderbar schmeckt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0168",
+      "text": "Möchten Sie noch etwas Tee, Herr Neumann?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0169",
+      "text": "Ja, gern. Wissen Sie, in diesem Haus helfen alle einander.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0170",
+      "text": "Ich wohne hier schon seit 40 Jahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0171",
+      "text": "Sie brauchen Hilfe? Dann klingeln Sie einfach bei mir!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0172",
+      "text": "Dann klingelt es noch einmal.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0173",
+      "text": "Es ist Herr Kaya, der Hausmeister.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0174",
+      "text": "Guten Tag! Entschuldigung, ich komme etwas spät.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0175",
+      "text": "Kein Problem, Herr Kaya. Kommen Sie rein!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0176",
+      "text": "Herr Kaya, wann leert die Stadt die Tonnen im Hof?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0177",
+      "text": "Am Dienstag. Am Montag stelle ich die Tonnen an die Straße.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0178",
+      "text": "Bitte stellen Sie keinen Müll neben die Tonnen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0179",
+      "text": "Herr Kaya macht das sehr gut. Das ganze Haus ist immer sauber.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0180",
+      "text": "Danke! Aber alle Mieter helfen mit, das ist wichtig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0181",
+      "text": "Um sieben Uhr gehen die Gäste nach Hause.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0182",
+      "text": "Was für ein schöner Nachmittag! Unsere Nachbarn sind wirklich nett.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0183",
+      "text": "Wozu lädt die Familie die Nachbarn ein?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0184",
+      "text": "Zum Tee am Samstag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0185",
+      "text": "Zum Essen am Sonntag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0186",
+      "text": "Zu einer Hochzeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0187",
+      "text": "Was sagt Herr Neumann über das Haus?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0188",
+      "text": "Im Haus helfen alle einander.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0189",
+      "text": "Im Haus ist es ständig laut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0190",
+      "text": "Im Haus kennt niemand die Nachbarn.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0191",
+      "text": "Wann leert die Stadt die Tonnen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0192",
+      "text": "Am Dienstag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0193",
+      "text": "Am Montag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0194",
+      "text": "Am Samstag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0195",
+      "text": "Wie findet die Familie ihre Nachbarn?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0196",
+      "text": "Sie findet die Nachbarn wirklich nett.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0197",
+      "text": "Sie findet die Nachbarn zu laut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0198",
+      "text": "Sie kennt die Nachbarn noch nicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0199",
+      "text": "Vielen Dank für die Einladung! Der Tee riecht wunderbar.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0200",
+      "text": "Ein Paket für Herrn Neumann",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0201",
+      "text": "Heute Morgen war die Post da.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0202",
+      "text": "Herr Neumann war nicht zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0203",
+      "text": "Die Mutter von Elif hat sein Paket angenommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0204",
+      "text": "Am Nachmittag klingelt Elif bei Herrn Neumann.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0205",
+      "text": "Hallo Elif! Wie geht es dir?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0206",
+      "text": "Gut, danke! Wir haben ein Paket für Sie, Herr Neumann.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0207",
+      "text": "Ein Paket für mich? Von wem ist es denn?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0208",
+      "text": "Ich weiß es nicht. Die Post hat es heute Morgen gebracht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0209",
+      "text": "Ach ja! Das sind bestimmt meine neuen Bücher.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0210",
+      "text": "Es ist ziemlich schwer. Kann ich Ihnen helfen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0211",
+      "text": "Danke, das ist nett, aber ich schaffe das schon.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0212",
+      "text": "Vielen Dank, dass ihr das Paket angenommen habt!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0213",
+      "text": "Gern! Das ist doch selbstverständlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0214",
+      "text": "Grüß bitte deine Mutter von mir!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0215",
+      "text": "Mache ich. Auf Wiedersehen, Herr Neumann!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0216",
+      "text": "Warum hat die Mutter von Elif das Paket angenommen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0217",
+      "text": "Weil Herr Neumann nicht zu Hause war.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0218",
+      "text": "Weil das Paket für sie war.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0219",
+      "text": "Weil Elif krank war.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0220",
+      "text": "Was ist wahrscheinlich im Paket?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0221",
+      "text": "Neue Bücher für Herrn Neumann.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0222",
+      "text": "Ein Geschenk für Elif.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0223",
+      "text": "Kuchen von Frau Becker.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0224",
+      "text": "Was sagt Elif zu dem Dank von Herrn Neumann?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0225",
+      "text": "Sie sagt, dass das selbstverständlich ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0226",
+      "text": "Sie sagt, dass das Paket zu schwer ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0227",
+      "text": "Sie sagt, dass sie keine Zeit hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0228",
+      "text": "Ich leihe euch gern unsere Stühle.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0229",
+      "text": "Ich habe eine Bitte: Seid nach 22 Uhr bitte leise!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0230",
+      "text": "Können Sie das Paket bei meiner Nachbarin abgeben?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0231",
+      "text": "Mein Schlüssel muss irgendwo im Treppenhaus liegen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0232",
+      "text": "Ich glaube, dass die Post heute nicht mehr kommt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0233",
+      "text": "Stört es Sie, dass wir abends waschen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0234",
+      "text": "Nein, das stört uns nicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0235",
+      "text": "Manche Mieter beachten die Hausordnung nicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0236",
+      "text": "Der Hausmeister klärt das Problem mit dem Aufzug.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0237",
+      "text": "Hallo! Ich bin Max, Ihr Nachbar von oben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0238",
+      "text": "Hallo Max! Freut mich. Ich bin Frau Doğan.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0239",
+      "text": "Brauchen Sie Hilfe mit den Kartons?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0240",
+      "text": "Das ist sehr nett, aber wir schaffen das schon.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0241",
+      "text": "Wir helfen einander gern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0242",
+      "text": "Guten Abend! Kann ich Sie um etwas bitten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0243",
+      "text": "Im ganzen Haus riecht es nach Kuchen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0244",
+      "text": "Darf ich mich vorstellen? Ich bin die neue Mieterin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0245",
+      "text": "Guten Tag! Ich bin Paula Hoffmann aus dem zweiten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0246",
+      "text": "Guten Tag, Frau Hoffmann! Wie kann ich Ihnen helfen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0247",
+      "text": "Morgen kommt ein Paket für mich. Können Sie es annehmen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0248",
+      "text": "Ja, selbstverständlich. Ich bin den ganzen Tag zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0249",
+      "text": "Ich finde, dass die Regeln im Haus gut sind.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0250",
+      "text": "Bei Familie Schulz ist niemand zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0251",
+      "text": "Ich hänge einen Zettel an die Haustür.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0252",
+      "text": "Der Zettel hängt an der Haustür.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0253",
+      "text": "Danke für das Angebot, aber ich muss leider ablehnen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0254",
+      "text": "Am Montag stellt Herr Kaya die Tonnen an die Straße.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0255",
+      "text": "Darf ich Ihnen meine Hilfe anbieten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0256",
+      "text": "Entschuldigung, können Sie bitte nach 22 Uhr leise sein?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0257",
+      "text": "Ja, natürlich. Das ist doch selbstverständlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e07.s0258",
+      "text": "Ich glaube, dass der Hausmeister im Hof ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a2.e07.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann mich bei neuen Nachbarn vorstellen und sie begrüßen.",
+        "tr": "Yeni komşularıma kendimi tanıtabilir ve onları selamlayabilirim.",
+        "ar": "أستطيع أن أعرّف بنفسي للجيران الجدد وأن أحيّيهم."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e07.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.nachbar",
+          "ablenker": ["de.a2.e04.vermieter", "de.a2.e07.hausmeister"]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e07.erdgeschoss",
+            "de.a2.e07.treppenhaus",
+            "de.a2.e07.eingang",
+            "de.a2.e07.klingel",
+            "de.a2.e07.mieter",
+            "de.a2.e07.nachbarschaft"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.vorstellen",
+          "ablenker": ["de.a2.e07.kennenlernen", "de.a2.e07.begruessen"]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e07.s0008",
+          "ablenker": ["de.a2.e07.s0006", "de.a2.e07.s0019"]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0010",
+          "wort": 6,
+          "ablenker": ["die", "den"]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0026"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0027"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0028"
+            }
+          ],
+          "antwort": "de.a2.e07.s0029",
+          "ablenker": ["de.a2.e07.s0017", "de.a2.e07.s0016"]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e07.nebenan",
+          "ablenker": ["de.a1.e03.oben", "de.a2.e04.unten"]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e07.s0013",
+          "nach": "ziel",
+          "alternativen": ["Sehr herzlich begrüßt Herr Neumann die neue Familie."],
+          "ablenker": ["den", "neuen"]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e07.s0011",
+          "ablenker": ["de.a2.e07.s0015", "de.a2.e07.s0023"]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0003",
+          "wort": 2,
+          "ablenker": ["Sie", "Ihr"]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e07.s0016",
+          "alternativen": ["Viele Fahrräder stehen vor dem Eingang."]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.freundlich",
+          "ablenker": ["de.a2.e04.gemuetlich", "de.a1.e03.laut"]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e07.s0030",
+          "nach": "ziel",
+          "alternativen": [
+            "Unsere neuen Nachbarn sind wirklich nett.",
+            "Unsere neuen Nachbarn sind sehr freundlich.",
+            "Die neuen Nachbarn sind sehr nett.",
+            "Unsere neuen Nachbarinnen sind sehr nett."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e07.nett",
+          "ablenker": ["de.a1.e03.bett"]
+        },
+        {
+          "schluessel": "de.a2.e07.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e07.s0031"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e07.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Hilfe anbieten, um etwas bitten und eine Bitte annehmen oder ablehnen.",
+        "tr": "Yardım teklif edebilir, bir şey rica edebilir ve bir ricayı kabul ya da reddedebilirim.",
+        "ar": "أستطيع أن أعرض المساعدة وأن أطلب شيئًا وأن أقبل طلبًا أو أرفضه."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e07.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.anbieten",
+          "ablenker": ["de.a2.e07.leihen", "de.a2.e07.ablehnen"]
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e07.bitten",
+            "de.a2.e07.leihen",
+            "de.a2.e07.annehmen",
+            "de.a2.e07.ablehnen",
+            "de.a2.e07.einverstanden",
+            "de.a2.e07.selbstverstaendlich"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e07.s0039",
+          "ablenker": ["de.a2.e07.s0037", "de.a2.e07.s0040"]
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0034",
+          "wort": 3,
+          "ablenker": ["für", "nach"]
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0050"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0051"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0052"
+            }
+          ],
+          "antwort": "de.a2.e07.s0053",
+          "ablenker": ["de.a2.e07.s0044", "de.a2.e07.s0001"]
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e07.einander",
+          "ablenker": ["de.a1.e08.zusammen", "de.a1.e02.alle"]
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a08",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e07.s0037",
+          "nach": "ziel",
+          "ablenker": ["mich", "deinen"]
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e07.s0044",
+          "ablenker": ["de.a2.e07.s0045", "de.a2.e07.s0047"]
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0038",
+          "wort": 7,
+          "ablenker": ["bitten", "stören"]
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e07.s0032",
+          "alternativen": ["Seine Hilfe bietet uns Herr Neumann an.", "Uns bietet Herr Neumann seine Hilfe an."]
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.gegenseitig",
+          "ablenker": ["de.a1.e05.wirklich", "de.a1.e04.jeder"]
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e07.s0054",
+          "nach": "ziel",
+          "alternativen": [
+            "Darf ich Ihnen beim Tragen helfen?",
+            "Kann ich dir beim Tragen helfen?",
+            "Soll ich Ihnen beim Tragen helfen?",
+            "Kann ich euch beim Tragen helfen?"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e07.s0047"
+        },
+        {
+          "schluessel": "de.a2.e07.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e07.s0055"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e07.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Post und Pakete sprechen und für Nachbarn ein Paket annehmen.",
+        "tr": "Posta ve paketler hakkında konuşabilir ve komşular için paket teslim alabilirim.",
+        "ar": "أستطيع أن أتحدث عن البريد والطرود وأن أستلم طردًا للجيران."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e07.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.paket",
+          "ablenker": ["de.a2.e07.brief", "de.a2.e07.zettel"]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e07.post",
+            "de.a2.e07.briefkasten",
+            "de.a2.e07.haustuer",
+            "de.a2.e07.irgendwo",
+            "de.a2.e07.ueberall",
+            "de.a2.e07.mehrere"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e07.s0062",
+          "ablenker": ["de.a2.e07.s0063", "de.a2.e07.s0061"]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0064",
+          "wort": 5,
+          "ablenker": ["dem", "die"]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0075"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0076"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0077"
+            }
+          ],
+          "antwort": "de.a2.e07.s0078",
+          "ablenker": ["de.a2.e07.s0070", "de.a2.e07.s0062"]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e07.irgendwann",
+          "ablenker": ["de.a1.e04.heute", "de.a1.e04.gestern"]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a08",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0068",
+          "wort": 2,
+          "ablenker": ["niemanden", "nie"]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e07.s0058",
+          "nach": "ziel",
+          "alternativen": [
+            "Heute Abend gebe ich das Paket bei Herrn Neumann ab.",
+            "Ich gebe heute Abend das Paket bei Herrn Neumann ab.",
+            "Das Paket gebe ich heute Abend bei Herrn Neumann ab."
+          ],
+          "ablenker": ["Herr", "an"]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e07.s0071",
+          "ablenker": ["de.a2.e07.s0073", "de.a2.e07.s0057"]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a11",
+          "typ": "satzbau",
+          "ziel": "de.a2.e07.s0074",
+          "alternativen": [
+            "Mehrere Pakete sind heute für das Haus gekommen.",
+            "Für das Haus sind heute mehrere Pakete gekommen.",
+            "Heute sind für das Haus mehrere Pakete gekommen.",
+            "Mehrere Pakete für das Haus sind heute gekommen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.abgeben",
+          "ablenker": ["de.a2.e07.annehmen", "de.a1.e06.verkaufen"]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e07.s0079",
+          "nach": "ziel",
+          "alternativen": ["Keiner hat das Paket angenommen.", "Das Paket hat niemand angenommen."]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e07.brief",
+          "ablenker": ["de.a1.e11.tief"]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e07.s0060",
+          "alternativen": ["Die Post kommt bei uns immer gegen 11 Uhr."]
+        },
+        {
+          "schluessel": "de.a2.e07.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e07.s0080"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e07.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann meine Meinung sagen und anderen zustimmen.",
+        "tr": "Fikrimi söyleyebilir ve başkalarına katıldığımı belirtebilirim.",
+        "ar": "أستطيع أن أقول رأيي وأن أوافق الآخرين."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e07.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.meinung",
+          "ablenker": ["de.a2.e07.gespraech", "de.a2.e07.kontakt"]
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a02",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e07.glauben",
+            "de.a2.e07.wahr",
+            "de.a2.e07.zustimmen",
+            "de.a2.e07.stoeren",
+            "de.a2.e07.klaeren",
+            "de.a2.e07.riechen"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e07.s0083",
+          "ablenker": ["de.a2.e07.s0085", "de.a2.e07.s0088"]
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0084",
+          "wort": 10,
+          "ablenker": ["ist", "seid"]
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0099"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0100"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0101"
+            }
+          ],
+          "antwort": "de.a2.e07.s0102",
+          "ablenker": ["de.a2.e07.s0060", "de.a2.e07.s0008"]
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e07.staendig",
+          "ablenker": ["de.a1.e08.selten", "de.a1.e04.spaet"]
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a08",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0085",
+          "wort": 2,
+          "ablenker": ["das", "denn"]
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e07.s0086",
+          "nach": "ziel",
+          "ablenker": ["sind", "schmutzigen"]
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e07.s0095",
+          "ablenker": ["de.a2.e07.s0094", "de.a2.e07.s0092"]
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a11",
+          "typ": "satzbau",
+          "ziel": "de.a2.e07.s0087"
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.ruecksicht",
+          "ablenker": ["de.a2.e07.laerm", "de.a2.e05.ruhe"]
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e07.s0103",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich glaube, die Nachbarin hat recht.",
+            "Ich denke, dass die Nachbarin recht hat.",
+            "Ich meine, dass die Nachbarin recht hat.",
+            "Ich denke, die Nachbarin hat recht."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e07.wahr",
+          "ablenker": ["de.a1.e02.jahr"]
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e07.s0092"
+        },
+        {
+          "schluessel": "de.a2.e07.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e07.s0104"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e07.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann die Hausordnung verstehen und Regeln mit „man“ erklären.",
+        "tr": "Apartman kurallarını anlayabilir ve kuralları „man“ ile açıklayabilirim.",
+        "ar": "أستطيع أن أفهم قواعد العمارة وأن أشرح القواعد باستخدام „man“."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e07.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.hausordnung",
+          "ablenker": ["de.a2.e07.ruhezeit", "de.a2.e07.pflicht"]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e07.hausmeister",
+            "de.a2.e07.hof",
+            "de.a2.e07.tonne",
+            "de.a2.e07.waesche",
+            "de.a2.e07.regel",
+            "de.a2.e07.reinigen"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e07.erlauben",
+          "ablenker": ["de.a2.e07.verbieten", "de.a2.e07.beachten"]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e07.s0108",
+          "ablenker": ["de.a2.e07.s0109", "de.a2.e07.s0114"]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0120",
+          "wort": 2,
+          "ablenker": ["müssen", "musst"]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0122"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0123"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0124"
+            }
+          ],
+          "antwort": "de.a2.e07.s0125",
+          "ablenker": ["de.a2.e07.s0117", "de.a2.e07.s0115"]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a08",
+          "typ": "lesen_fragen",
+          "titel": "de.a2.e07.s0128",
+          "absaetze": [
+            "de.a2.e07.s0129",
+            "de.a2.e07.s0130",
+            "de.a2.e07.s0131",
+            "de.a2.e07.s0132",
+            "de.a2.e07.s0133",
+            "de.a2.e07.s0134",
+            "de.a2.e07.s0135",
+            "de.a2.e07.s0136",
+            "de.a2.e07.s0137",
+            "de.a2.e07.s0138",
+            "de.a2.e07.s0139",
+            "de.a2.e07.s0140",
+            "de.a2.e07.s0141",
+            "de.a2.e07.s0142",
+            "de.a2.e07.s0143"
+          ],
+          "glossen": ["de.a2.e07.ruhezeit", "de.a2.e07.tonne", "de.a2.e07.hausmeister", "de.a2.e04.waschmaschine"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e07.s0144",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e07.s0145",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e07.s0146",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e07.s0147",
+              "antwort": "de.a2.e07.s0148",
+              "ablenker": ["de.a2.e07.s0149", "de.a2.e07.s0150"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e07.s0151",
+              "antwort": "de.a2.e07.s0152",
+              "ablenker": ["de.a2.e07.s0153", "de.a2.e07.s0154"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e07.s0117",
+          "nach": "ziel",
+          "alternativen": [
+            "Jeden Dienstag leert die Stadt die Tonnen.",
+            "Die Stadt leert jeden Dienstag die Tonnen.",
+            "Die Tonnen leert die Stadt jeden Dienstag."
+          ],
+          "ablenker": ["leer", "Montag"]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e07.s0112",
+          "ablenker": ["de.a2.e07.s0111", "de.a2.e07.s0121"]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a11",
+          "typ": "satzbau",
+          "ziel": "de.a2.e07.s0118",
+          "alternativen": ["Es gibt im Keller einen Raum für die Wäsche.", "Einen Raum für die Wäsche gibt es im Keller."]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.ruhig",
+          "ablenker": ["de.a1.e03.hell", "de.a2.e04.sauber"]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e07.s0126",
+          "nach": "ziel",
+          "alternativen": [
+            "Man darf Fahrräder nicht ins Treppenhaus stellen.",
+            "Ins Treppenhaus darf man keine Fahrräder stellen.",
+            "Man darf keine Fahrräder ins Treppenhaus stellen.",
+            "Fahrräder darf man nicht in das Treppenhaus stellen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a14",
+          "typ": "schreiben",
+          "aufgabe": "de.a2.e07.s0155",
+          "woerter": {
+            "min": 25,
+            "max": 35
+          },
+          "pflichtwoerter": ["Paket", "angenommen"],
+          "muster": ["de.a2.e07.s0156"]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e07.tonne",
+          "ablenker": ["de.a1.e10.sonne"]
+        },
+        {
+          "schluessel": "de.a2.e07.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e07.s0127"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e07.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über eine Einladung bei Nachbarn und ein Gespräch an der Tür verstehen.",
+        "tr": "Komşulardaki bir davet ve kapıda geçen bir konuşma hakkındaki bir hikâyeyi anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن دعوة عند الجيران وحوارًا عند الباب."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e07.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a2.e07.s0157",
+          "zeilen": [
+            {
+              "satz": "de.a2.e07.s0158"
+            },
+            {
+              "satz": "de.a2.e07.s0159"
+            },
+            {
+              "satz": "de.a2.e07.s0160"
+            },
+            {
+              "satz": "de.a2.e07.s0161"
+            },
+            {
+              "satz": "de.a2.e07.s0162"
+            },
+            {
+              "satz": "de.a2.e07.s0163"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0164"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0165"
+            },
+            {
+              "satz": "de.a2.e07.s0166"
+            },
+            {
+              "satz": "de.a2.e07.s0167"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0168"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0169"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0170"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0171"
+            },
+            {
+              "satz": "de.a2.e07.s0172"
+            },
+            {
+              "satz": "de.a2.e07.s0173"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e07.s0174"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0175"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0176"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e07.s0177"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e07.s0178"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0179"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e07.s0180"
+            },
+            {
+              "satz": "de.a2.e07.s0181"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0182"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.a2.e07.s0183",
+              "antwort": "de.a2.e07.s0184",
+              "ablenker": ["de.a2.e07.s0185", "de.a2.e07.s0186"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.a2.e07.s0187",
+              "antwort": "de.a2.e07.s0188",
+              "ablenker": ["de.a2.e07.s0189", "de.a2.e07.s0190"]
+            },
+            {
+              "nach": 19,
+              "frage": "de.a2.e07.s0191",
+              "antwort": "de.a2.e07.s0192",
+              "ablenker": ["de.a2.e07.s0193", "de.a2.e07.s0194"]
+            },
+            {
+              "nach": 24,
+              "frage": "de.a2.e07.s0195",
+              "antwort": "de.a2.e07.s0196",
+              "ablenker": ["de.a2.e07.s0197", "de.a2.e07.s0198"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0177",
+          "wort": 9,
+          "ablenker": ["der", "den"]
+        },
+        {
+          "schluessel": "de.a2.e07.l06.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0176"
+            }
+          ],
+          "antwort": "de.a2.e07.s0177",
+          "ablenker": ["de.a2.e07.s0170", "de.a2.e07.s0165"]
+        },
+        {
+          "schluessel": "de.a2.e07.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e07.s0171",
+          "ablenker": ["de.a2.e07.s0169", "de.a2.e07.s0179"]
+        },
+        {
+          "schluessel": "de.a2.e07.l06.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e07.s0167",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e07.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.a2.e07.s0200",
+          "zeilen": [
+            {
+              "satz": "de.a2.e07.s0201"
+            },
+            {
+              "satz": "de.a2.e07.s0202"
+            },
+            {
+              "satz": "de.a2.e07.s0203"
+            },
+            {
+              "satz": "de.a2.e07.s0204"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0205"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0206"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0207"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0208"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0209"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0210"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0211"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0212"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0213"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0214"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0215"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.a2.e07.s0216",
+              "antwort": "de.a2.e07.s0217",
+              "ablenker": ["de.a2.e07.s0218", "de.a2.e07.s0219"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.a2.e07.s0220",
+              "antwort": "de.a2.e07.s0221",
+              "ablenker": ["de.a2.e07.s0222", "de.a2.e07.s0223"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a2.e07.s0224",
+              "antwort": "de.a2.e07.s0225",
+              "ablenker": ["de.a2.e07.s0226", "de.a2.e07.s0227"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l06.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0207"
+            }
+          ],
+          "antwort": "de.a2.e07.s0208",
+          "ablenker": ["de.a2.e07.s0213", "de.a2.e07.s0211"]
+        },
+        {
+          "schluessel": "de.a2.e07.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.a2.e07.s0212"
+        },
+        {
+          "schluessel": "de.a2.e07.l06.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0203",
+          "wort": 7,
+          "ablenker": ["annehmen", "angenehmt"]
+        },
+        {
+          "schluessel": "de.a2.e07.l06.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e07.s0202"
+        },
+        {
+          "schluessel": "de.a2.e07.l06.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e07.s0211",
+          "ablenker": ["de.a2.e07.s0213", "de.a2.e07.s0209"]
+        },
+        {
+          "schluessel": "de.a2.e07.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e07.s0214",
+          "nach": "ziel",
+          "alternativen": ["Grüß deine Mutter bitte von mir!", "Bitte grüß deine Mutter von mir!"],
+          "ablenker": ["deinen", "mich"]
+        },
+        {
+          "schluessel": "de.a2.e07.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.a2.e07.s0199"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e07.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann Wörter und Sätze rund um Nachbarn, Post und Hausordnung sicher anwenden.",
+        "tr": "Komşular, posta ve apartman kurallarıyla ilgili kelimeleri ve cümleleri güvenle kullanabilirim.",
+        "ar": "أستطيع أن أستخدم كلمات وجملًا عن الجيران والبريد وقواعد العمارة بثقة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e07.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e07.nachbar",
+            "de.a2.e07.paket",
+            "de.a2.e07.klingel",
+            "de.a2.e07.zettel",
+            "de.a2.e07.regel",
+            "de.a2.e07.meinung"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.irgendetwas",
+          "ablenker": ["de.a1.e05.nichts", "de.a1.e06.niemand"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0230",
+          "wort": 5,
+          "ablenker": ["meine", "meinen"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e07.s0233",
+          "ablenker": ["de.a2.e07.s0234", "de.a2.e07.s0094"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0237"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0238"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0239"
+            }
+          ],
+          "antwort": "de.a2.e07.s0240",
+          "ablenker": ["de.a2.e07.s0115", "de.a2.e07.s0082"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e07.mancher",
+          "ablenker": ["de.a1.e02.alle", "de.a1.e05.nichts"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0232",
+          "wort": 8,
+          "ablenker": ["kommen", "kommst"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e07.s0228",
+          "nach": "ziel",
+          "alternativen": [
+            "Gern leihe ich euch unsere Stühle.",
+            "Unsere Stühle leihe ich euch gern.",
+            "Ich leihe euch unsere Stühle gern."
+          ],
+          "ablenker": ["uns", "leiht"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e07.s0231",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e07.mieter",
+          "ablenker": ["de.a1.e09.meter"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e07.s0235",
+          "ablenker": ["de.a2.e07.s0106", "de.a2.e07.s0236"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e07.s0236",
+          "alternativen": ["Das Problem mit dem Aufzug klärt der Hausmeister."]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.bitte",
+          "ablenker": ["de.a1.e07.frage", "de.a2.e03.geschenk"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e07.s0241",
+          "nach": "ziel",
+          "alternativen": ["Wir helfen uns gern gegenseitig.", "Wir helfen uns gegenseitig gern.", "Gern helfen wir einander."]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a15",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0229",
+          "wort": 4,
+          "ablenker": ["Sind", "Seien"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e07.s0019",
+          "alternativen": ["In unserem Haus wohnen 12 Mieter."]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a17",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e07.leise",
+          "ablenker": ["de.a1.e05.schnell", "de.a2.e02.puenktlich"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a18",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.leeren",
+          "ablenker": ["de.a2.e04.aufraeumen", "de.a1.e05.teilen"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a19",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0233"
+            }
+          ],
+          "antwort": "de.a2.e07.s0234",
+          "ablenker": ["de.a2.e07.s0114", "de.a2.e07.s0057"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a20",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e07.s0243",
+          "ablenker": ["de.a2.e07.s0097", "de.a2.e07.s0098"]
+        },
+        {
+          "schluessel": "de.a2.e07.l07.a21",
+          "typ": "sprechen",
+          "satz": "de.a2.e07.s0242"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e07.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann mich bei Nachbarn vorstellen, um Hilfe bitten und sagen, was ich von den Regeln im Haus halte.",
+        "tr": "Komşularıma kendimi tanıtabilir, yardım isteyebilir ve apartman kuralları hakkındaki fikrimi söyleyebilirim.",
+        "ar": "أستطيع أن أعرّف بنفسي للجيران وأن أطلب المساعدة وأن أقول رأيي في قواعد العمارة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e07.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.kennenlernen",
+          "ablenker": ["de.a2.e07.leihen", "de.a2.e07.klingeln"]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e07.erlauben",
+            "de.a2.e07.verbieten",
+            "de.a2.e07.anbieten",
+            "de.a2.e07.ablehnen",
+            "de.a2.e07.glauben",
+            "de.a2.e07.reinigen"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0251",
+          "wort": 5,
+          "ablenker": ["der", "den"]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0245"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e07.s0246"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0247"
+            }
+          ],
+          "antwort": "de.a2.e07.s0248",
+          "ablenker": ["de.a2.e07.s0044", "de.a2.e07.s0134"]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e07.s0250",
+          "nach": "ziel",
+          "alternativen": ["Niemand ist bei Familie Schulz zu Hause."],
+          "ablenker": ["jemanden", "sind"]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a06",
+          "typ": "frei",
+          "ziel": "de.a2.e07.s0255",
+          "nach": "ziel",
+          "alternativen": [
+            "Kann ich Ihnen meine Hilfe anbieten?",
+            "Darf ich dir meine Hilfe anbieten?",
+            "Kann ich dir meine Hilfe anbieten?",
+            "Darf ich euch meine Hilfe anbieten?"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e07.s0252",
+          "ablenker": ["de.a2.e07.s0251", "de.a2.e07.s0066"]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a08",
+          "typ": "satzbau",
+          "ziel": "de.a2.e07.s0254",
+          "alternativen": [
+            "Herr Kaya stellt am Montag die Tonnen an die Straße.",
+            "Die Tonnen stellt Herr Kaya am Montag an die Straße.",
+            "Herr Kaya stellt die Tonnen am Montag an die Straße."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e07.s0249",
+          "wort": 8,
+          "ablenker": ["ist", "sein"]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e07.treppenhaus",
+          "ablenker": ["de.a2.e04.keller", "de.a2.e04.dach"]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e07.s0258"
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e07.s0244"
+            }
+          ],
+          "antwort": "de.a2.e07.s0004",
+          "ablenker": ["de.a2.e07.s0062", "de.a2.e07.s0116"]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e07.zustimmen",
+          "ablenker": ["de.a2.e07.stoeren", "de.a2.e07.klaeren"]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e07.s0253",
+          "ablenker": ["de.a2.e07.s0042", "de.a2.e07.s0257"]
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a2.e07.s0256"
+        },
+        {
+          "schluessel": "de.a2.e07.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e07.s0257"
+        }
+      ]
+    }
+  ]
+}
