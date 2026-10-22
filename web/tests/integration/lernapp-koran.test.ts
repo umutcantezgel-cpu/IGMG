@@ -66,6 +66,8 @@ async function paket(sprache = 'de', einheit = E01.schluessel): Promise<{ paket:
   );
   expect(r.status).toBe(200);
   expect(r.headers.get('cache-control')).toBe('public, max-age=31536000, immutable');
+  // CDN-Tags wie der Daten-Cache: Änderungen an Bedeutungen und Rezitationen nehmen auch alte Hash-Adressen heraus
+  expect(r.headers.get('vercel-cache-tag')).toBe('lernapp,lernapp-kurs-koran,quran,rezitationen,einstellungen');
   const text = await r.text();
   expect(sha256Hex(text)).toBe(e.hash);
   return { paket: JSON.parse(text) as KoranPaket, text };
