@@ -222,6 +222,9 @@ export async function ladeKoranEingaben(
                   wurzel: b.wurzel,
                   anmerkung: b.anmerkung,
                 }),
+                // Verfasser = wer zuletzt den Inhalt geändert hat (wie die Prüfoberfläche L6-02/03). Jede Änderung ergibt einen
+                // neuen Hash; frühere Verfasser einer älteren Fassung zählen danach als Prüfende – vorgemerkt für die
+                // Zusammenführung mit L6-02/03 (Verfasser aus dem Audit ableiten, an beiden Stellen gleich).
                 verfasser: [b.verfasstVon],
                 belege: [],
                 belegPflicht: false,
