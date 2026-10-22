@@ -1,5 +1,11 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 22.10.2026 04:15 UTC – nach dem Limit (21.10. 23:05) fortgesetzt:** A1 `wf_a71357bf-3d3` (Lektorat ar e01–e10 fertig,
+  Übersetzung tr e01–e02/de e01–e08 fertig), A2 tr `wf_6fd0e1b9-fdb` (Entwurf e01–e02; e03/e04 Teildateien), A2 de
+  `wf_d74ea6c7-421` (Entwurf e01–e04), L6 Wissen `wf_4a678e4a-1d2` (Entwürfe islam.grund.e01–e04 übersprungen → Belegprüfung;
+  e05–e08 Entwurf + Belegprüfung), L6-Code `wf_26fa68e8-998` (B ZWISCHENSTAND c6cf0d6a, C 91998b9e; Gegenprüfung 1 aus
+  `scratchpad/code/*-urteil1.json` übersprungen, nur Mängelrunde mit `fortsetzungM` + Runde 2), L8-03/04 `wf_d113d6eb-3e3` (D bis
+  e00589a9, ebenso). Neue Skript-Argumente: `urteil1`, `fortsetzungM` (Code), `entworfen` (Wissen). Dienste gestartet; Platte 4,2 GB.
 - **Stand 21.10.2026 22:15 UTC – Pause beendet (Nutzer: „proceed“), alle Läufe mit Fortsetzung neu:** A1 `wf_ffae8228-28c`,
   A2 tr `wf_1cf78737-174`, A2 de `wf_e29686b6-423`, L6-Code `wf_2b3cf6ea-6c8` (B ab 6b44dbd inkl. M-1 aus S-L3, C ab 64eabf5),
   L6 Wissen `wf_45c0afe2-3ea` (Lehrplan 86bbf89 übersprungen, Entwürfe islam.grund.e01–e08), L8-03/04 `wf_9b549efc-4d5` (D ab
