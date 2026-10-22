@@ -550,12 +550,15 @@ export async function ladeFreigabe(
 
 /**
  * Sichtbar im Lern-App-Pfad (ADR 0040 Nr. 5)? Aussage, Lektion, Koran-Bedeutung: geprüft und nicht zurückgezogen. Quizfrage:
- * selbst geprüft und ihre Aussage geprüft (ohne Aussage im Wissenskurs nie). Abfrage am Live-Stand für das Tor L6.
+ * selbst geprüft und ihre Aussage geprüft (ohne Aussage im Wissenskurs nie). Aufgabe im Koran-Pfad: nie, solange der
+ * Paketbau (L6-05) die gezeigten Bedeutungen bzw. die Wurzeltabelle nicht auflöst – erst dann gilt `koranWortSichtbar`
+ * (fail-closed wie die Auslieferung, die für `koran` noch keine Einheiten liefert). Abfrage am Live-Stand für das Tor L6.
  */
 export async function religioesSichtbar(typ: ReligioeserBausteinTyp, id: string): Promise<boolean> {
   const f = await ladeFreigabe(typ, id);
   if (!f) return false;
   if (typ !== 'aufgabe') return wissenSichtbar(f.status, f.baustein, f.pruefungen);
+  if (f.kurs === 'koran') return false;
   if (!f.aussageId) return f.kurs !== 'islam' && wissenSichtbar(f.status, f.baustein, f.pruefungen);
   const aussage = await ladeFreigabe('aussage', f.aussageId);
   return aussage !== null && wissensAufgabeSichtbar(f, [aussage]);

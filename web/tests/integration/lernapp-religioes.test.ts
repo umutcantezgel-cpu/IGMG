@@ -295,6 +295,52 @@ describe('Koran-Bedeutungen im Lern-App-Pfad', () => {
     expect(zeile!.freigabe).toBe('zur_pruefung');
     expect(zeile!.geprueftVon).toBeNull();
   });
+
+  it('Aufgabe im Koran-Pfad: auch mit zwei Freigaben nicht sichtbar, solange die gezeigten Bedeutungen nicht aufgelöst sind', async () => {
+    await db.insert(schema.lernappKurs).values({ id: 'koran', art: 'koran', zielsprache: 'ar', aktiv: true }).onConflictDoNothing();
+    const [abschnitt] = await db
+      .insert(schema.lernappAbschnitt)
+      .values({ kursId: 'koran', stufe: 'grund', reihenfolge: 1 })
+      .returning({ id: schema.lernappAbschnitt.id });
+    const [einheit] = await db
+      .insert(schema.lernappEinheit)
+      .values({ abschnittId: abschnitt!.id, schluessel: 'koran.grund.e01', reihenfolge: 1, inhaltHash: h('c'), verfasstVon: 'ki:test' })
+      .returning({ id: schema.lernappEinheit.id });
+    const [lektion] = await db
+      .insert(schema.lernappLektion)
+      .values({
+        einheitId: einheit!.id,
+        schluessel: 'koran.grund.e01.l01',
+        reihenfolge: 1,
+        ziel: { de: '[Lernziel – Platzhalter]' },
+        inhaltHash: h('d'),
+        verfasstVon: 'ki:test',
+        status: 'automatisch_geprueft',
+      })
+      .returning({ id: schema.lernappLektion.id });
+    const [aufgabe] = await db
+      .insert(schema.lernappAufgabe)
+      .values({
+        lektionId: lektion!.id,
+        schluessel: 'koran.grund.e01.l01.a01',
+        typ: 'koran_wort',
+        daten: { anweisung: 'waehleBedeutung', optionen: [{ kennung: 'platzhalter.eins' }, { kennung: 'platzhalter.zwei' }] },
+        reihenfolge: 1,
+        inhaltHash: h('e'),
+        verfasstVon: 'ki:test',
+        status: 'automatisch_geprueft',
+      })
+      .returning({ id: schema.lernappAufgabe.id });
+    await angemeldetAls(RELIGIOES);
+    expect(await urteil('aufgabe', aufgabe!.id)).toMatchObject({ hinweis: 'stand_1' });
+    expect(await urteil('lektion', lektion!.id)).toMatchObject({ hinweis: 'stand_1' });
+    await angemeldetAls(RELIGIOES);
+    expect(await urteil('aufgabe', aufgabe!.id)).toMatchObject({ hinweis: 'stand_2' });
+    expect(await urteil('lektion', lektion!.id)).toMatchObject({ hinweis: 'stand_2' });
+    // zwei Freigaben der Aufgabe selbst reichen im Koran-Pfad nicht (koranWortSichtbar erst mit dem Paketbau L6-05)
+    expect(await religioesSichtbar('aufgabe', aufgabe!.id)).toBe(false);
+    expect(await lektionReligioesSichtbar(lektion!.id)).toBe(false);
+  });
 });
 
 describe('Freigaben-Integration', () => {
