@@ -53,7 +53,7 @@ docs/deploy/VERCEL.md 2.1, docs/BETRIEB.md 6a, docs/GO-LIVE.md G1.
    FUNKTION_NEWSLETTER=an
    FUNKTION_LERNAPP=an        # Lern-App (ADR 0035, in der Produktion bis zur Abnahme aus): tests/e2e/lernapp/*.spec.ts
    FUNKTION_LERNAPP_SYNC=an   # Abgleich mit Konto (Produktion aus bis LM-08): tests/e2e/lernapp/zwei-geraete.spec.ts
-   FUNKTION_LERNAPP_GRUPPEN=an    # Zuweisungen, Gruppenziel (Produktion aus bis LM-08): tests/e2e/lernapp/gruppe.spec.ts
+   FUNKTION_LERNAPP_GRUPPEN=an    # Zuweisungen, Gruppenziel, Schreibabgaben (Produktion aus bis LM-08): gruppe.spec.ts, schreibabgabe.spec.ts
    FUNKTION_LERNAPP_RANGLISTE=an  # Bestenliste ab 16 (Produktion aus bis LM-10): tests/e2e/lernapp/gruppe.spec.ts
    ```
 
