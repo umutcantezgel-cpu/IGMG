@@ -1047,13 +1047,14 @@
       "lemma": "meşgul",
       "wortart": "adjektiv",
       "merkmale": {
-        "harmonie": "a/u"
+        "harmonie": "e/ü",
+        "harmonie_ausnahme": "helle Endungen trotz u (meşgulüm, meşguldü)"
       },
       "formen": {
-        "kop.1sg": "meşgulum",
-        "kop.1pl": "meşguluz",
-        "kop.2sg": "meşgulsun",
-        "kop.2pl": "meşgulsunuz"
+        "kop.1sg": "meşgulüm",
+        "kop.1pl": "meşgulüz",
+        "kop.2sg": "meşgulsün",
+        "kop.2pl": "meşgulsünüz"
       },
       "frequenzRang": 4105,
       "quelle": "ki:lernapp-inhalte/a2/v1",
@@ -2136,7 +2137,7 @@
     },
     {
       "schluessel": "tr.a2.e02.s0108",
-      "text": "E-postada 'Sayın Bayan Kaya' yazıyor.",
+      "text": "E-postada “Sayın Bayan Kaya” yazıyor.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2154,7 +2155,7 @@
     },
     {
       "schluessel": "tr.a2.e02.s0111",
-      "text": "Kimlik kartının ücreti 37 euro.",
+      "text": "Kimlik kartının ücreti 46 euro.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2190,7 +2191,7 @@
     },
     {
       "schluessel": "tr.a2.e02.s0117",
-      "text": "Laylā Manṣūr oğlu için pasaport başvurusu yapıyor.",
+      "text": "Laylā Hanım, oğlu için pasaport başvurusu yapıyor.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2306,10 +2307,9 @@
     },
     {
       "schluessel": "tr.a2.e02.s0136",
-      "text": "Temmuz'da doğdum.",
-      "quelle": "tatoeba:3600766",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #3600766 von vvv123"
+      "text": "Temmuzda doğdum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a2.e02.s0137",
@@ -2607,7 +2607,7 @@
     },
     {
       "schluessel": "tr.a2.e02.s0184",
-      "text": "Formda iki imza var: sizin ve memurun.",
+      "text": "Formda iki imza var: sizin imzanız ve memurun imzası.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2650,7 +2650,7 @@
     },
     {
       "schluessel": "tr.a2.e02.s0191",
-      "text": "Formun sonunu imzalayın, lütfen.",
+      "text": "Formun arkasını imzalayın, lütfen.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2752,7 +2752,7 @@
     },
     {
       "schluessel": "tr.a2.e02.s0208",
-      "text": "Ücret 37 euro; gişede kartla ödüyorsunuz.",
+      "text": "Ücret 46 euro; gişede kartla ödüyorsunuz.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2794,7 +2794,7 @@
     },
     {
       "schluessel": "tr.a2.e02.s0215",
-      "text": "Formu doldurun: isminiz, soyadınız, doğum tarihiniz ve adresiniz.",
+      "text": "Formu Derya Hanım için doldurun: isim, soyadı, doğum tarihi, adres. Bilgiler: Derya Kaya, 12 Mart 1985, Park Caddesi 14.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3074,6 +3074,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e02.s0001",
           "nach": "ziel",
+          "alternativen": ["Artık kimlik kartım geçerli değil."],
           "ablenker": ["geçerlı", "değıl"]
         },
         {
@@ -3242,6 +3243,10 @@
             {
               "sprecher": "a",
               "satz": "tr.a2.e02.s0060"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e02.s0061"
             }
           ],
           "antwort": "tr.a2.e02.s0062",
@@ -3405,7 +3410,7 @@
             }
           ],
           "antwort": "tr.a2.e02.s0122",
-          "ablenker": ["tr.a2.e02.s0107", "tr.a2.e02.s0113", "tr.a2.e02.s0102"]
+          "ablenker": ["tr.a2.e02.s0107", "tr.a2.e02.s0113", "tr.a2.e02.s0016"]
         },
         {
           "schluessel": "tr.a2.e02.l03.a14",
@@ -3493,6 +3498,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e02.s0124",
           "nach": "ziel",
+          "alternativen": ["Soyadım Kaya, ismim Derya."],
           "ablenker": ["soyadın", "ismin"]
         },
         {
@@ -3615,7 +3621,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e02.s0182",
           "nach": "ziel",
-          "ablenker": ["imzası", "eksık"]
+          "ablenker": ["imzayı", "eksık"]
         },
         {
           "schluessel": "tr.a2.e02.l05.a08",
@@ -4015,6 +4021,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e02.s0050",
           "nach": "ziel",
+          "alternativen": ["Hat meşgul, tekrar biraz sonra arıyorum."],
           "ablenker": ["meşgül", "arıyorsun"]
         },
         {
@@ -4079,6 +4086,10 @@
           "schluessel": "tr.a2.e02.l07.a16",
           "typ": "dialog",
           "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.a2.e02.s0174"
+            },
             {
               "sprecher": "a",
               "satz": "tr.a2.e02.s0066"
@@ -4182,6 +4193,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e02.s0006",
           "nach": "ziel",
+          "alternativen": ["Ne zamana kadar pasaportunuz geçerli?"],
           "ablenker": ["zamanda", "geçerlı"]
         },
         {
@@ -4190,6 +4202,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e02.s0194",
           "nach": "ziel",
+          "alternativen": ["Kimlik kartınız kayıt için lazım."],
           "ablenker": ["kartınızı", "içın"]
         },
         {
