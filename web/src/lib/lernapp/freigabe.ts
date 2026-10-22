@@ -268,11 +268,19 @@ export type UrteilsAntrag = {
   /** Hash, den die Person gesehen hat – muss der aktuelle sein */
   gesehenerHash: string;
   urteil: ReligioesesUrteil;
-  /** Belege, für die „Quelle geprüft, Aussage stimmt nach hanefitischer Lehre“ angekreuzt ist (Kennungen) */
+  /**
+   * Belege, für die „Quelle geprüft, Aussage stimmt nach hanefitischer Lehre“ angekreuzt ist – je Haken Kennung und Hash der
+   * gesehenen Fassung ({@link belegHaken}); ein Haken zu einer älteren Fassung des Belegs zählt nicht
+   */
   belegeBestaetigt: readonly string[];
   /** Häkchen „Inhalt geprüft, stimmt nach hanefitischer Lehre“ – Pflicht für „ok“ bei Bausteinen ohne Belege */
   inhaltBestaetigt: boolean;
 };
+
+/** Wert des Hakens je Beleg: Kennung und Hash der Fassung, die die Person gesehen hat (`<id>|<hash>`). */
+export function belegHaken(b: { id: string; inhaltHash: string }): string {
+  return `${b.id}|${b.inhaltHash}`;
+}
 
 export type UrteilsFehler =
   'keineRolle' | 'veraltet' | 'verfasser' | 'kiHerkunft' | 'belegFehlt' | 'belegeBestaetigen' | 'inhaltBestaetigen' | 'schonFreigegeben';
@@ -294,7 +302,7 @@ export function pruefeUrteil(a: UrteilsAntrag, pruefungen: readonly Pruefung[]):
   if (a.baustein.art !== undefined && kiHerkunftVerboten(a.baustein.art, a.baustein.verfasser)) return 'kiHerkunft';
   if (a.baustein.belegPflicht && a.baustein.belege.length === 0) return 'belegFehlt';
   const bestaetigt = new Set(a.belegeBestaetigt);
-  if (!a.baustein.belege.every((b) => bestaetigt.has(b.id))) return 'belegeBestaetigen';
+  if (!a.baustein.belege.every((b) => bestaetigt.has(belegHaken(b)))) return 'belegeBestaetigen';
   if (a.baustein.belege.length === 0 && !a.inhaltBestaetigt) return 'inhaltBestaetigen';
   if (eigenesUrteil(a.pruefendeId, a.baustein.inhaltHash, pruefungen) === 'ok') return 'schonFreigegeben';
   return null;

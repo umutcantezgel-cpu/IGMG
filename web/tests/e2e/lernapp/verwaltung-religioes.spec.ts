@@ -11,7 +11,8 @@ import { ernsteBefunde } from './hilfen';
  * der Rolle „Religiöse Prüfung“ geben eine Aussage des Wissenskurses frei. Geprüft wird die Oberfläche: Warteschlange mit
  * „unsicher“ (Belegprüfung) zuerst, Stand 0/2 → 1/2 → 2/2, Inhalt und Fundstelle (Werk › Kitab/Bab, Ausgabe, Band, Seite)
  * nebeneinander, Urteil „unsicher/Änderungsvorschlag“ zuerst ohne Vorauswahl, „ok“ nur mit dem Haken je Beleg, dieselbe
- * Person nicht zweimal, „Freigegeben“ erst mit zwei Freigaben, Freigaben-Warteschlange mit Verweis statt Entscheidung, axe.
+ * Person nicht zweimal, „Freigegeben“ erst mit zwei Freigaben, Freigaben-Warteschlange mit Verweis statt Entscheidung,
+ * Freigabe-Verlauf ohne prüfende Person (Unabhängigkeit der Prüfenden), axe.
  * Rechte, Hash-Bindung, Rücksetzen und Audit prüft die Integration (`tests/integration/lernapp-religioes.test.ts`).
  * Testdaten nur als Platzhalter in eckigen Klammern – keine religiösen Texte (KI-Regel 2). Nur Desktop.
  */
@@ -201,6 +202,12 @@ test('Religiöse Prüfung: „unsicher“ zuerst, Fundstelle neben der Aussage, 
     await expect(verweis).toHaveAttribute('href', `/verwaltung/lernapp/religioes/aussage-${ids.unsicher}`);
     await expect(b.getByRole('link', { name: fr.zweiPrueferPruefenName.replace('{titel}', TEXT.sicher) })).toHaveCount(0);
     expect(await ernsteBefunde(b, 'freigaben-lernapp')).toEqual([]);
+
+    // Verlauf: Die Schritte beider Personen stehen darin, aber ohne Namen und Kommentar („Sie sehen nicht, wer sonst geprüft hat“)
+    await b.goto('/verwaltung/freigaben?ansicht=verlauf');
+    const schritte = b.getByRole('region', { name: fr.verlauf }).getByRole('row').filter({ hasText: ids.sicher });
+    await expect(schritte).toHaveCount(2);
+    for (const i of [0, 1]) await expect(schritte.nth(i)).toContainText(fr.verdeckt);
   } finally {
     await kontext.close();
   }

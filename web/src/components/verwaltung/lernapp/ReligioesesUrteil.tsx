@@ -31,8 +31,11 @@ export function ReligioesesUrteilFormular({
   typ: ReligioeserBausteinTyp;
   id: string;
   hash: string;
-  /** Kennung und sichtbarer Name je Beleg (z. B. „Beleg 1“) samt der Kennung seiner Karte */
-  belege: readonly { id: string; name: string; karte: string }[];
+  /**
+   * Kennung, Wert des Hakens (Kennung und Hash der gezeigten Fassung, `belegHaken`) und sichtbarer Name je Beleg (z. B.
+   * „Beleg 1“) samt der Kennung seiner Karte
+   */
+  belege: readonly { id: string; wert: string; name: string; karte: string }[];
 }) {
   const t = useTranslations('verwaltung.lernapp');
   const [z, absenden, laeuft] = useActionState(aktion, {});
@@ -73,7 +76,7 @@ export function ReligioesesUrteilFormular({
           <legend className="mb-2 font-bold">{t('religioes.formular.belege')}</legend>
           {belege.map((b) => (
             <label key={b.id} className="flex min-h-12 items-center gap-3">
-              <input type="checkbox" name="beleg" value={b.id} className="size-6 shrink-0" aria-describedby={b.karte} />
+              <input type="checkbox" name="beleg" value={b.wert} className="size-6 shrink-0" aria-describedby={b.karte} />
               <span>
                 <span className="font-bold">{b.name}:</span> {t('religioes.formular.belegHaken')}
               </span>

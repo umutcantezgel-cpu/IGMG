@@ -7,7 +7,7 @@ import { ReligioesesUrteilFormular } from '@/components/verwaltung/lernapp/Relig
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { PILLE } from '@/components/verwaltung/seiten/Ansichten';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
-import { istReligioeserBaustein, type ReligioeserBausteinTyp } from '@/lib/lernapp/freigabe';
+import { belegHaken, istReligioeserBaustein, type ReligioeserBausteinTyp } from '@/lib/lernapp/freigabe';
 import { verlangeLernappSeite } from '@/lib/lernapp/verwaltung/seite';
 import { cn } from '@/lib/utils';
 import { religioesPruefen } from '@/server/actions/lernapp-religioes';
@@ -163,7 +163,12 @@ export default async function ReligioeserBaustein({ params }: PageProps<'/[local
             typ={b.typ}
             id={b.id}
             hash={b.inhaltHash}
-            belege={b.belege.map((beleg, i) => ({ id: beleg.id, name: t('belegName', { nr: i + 1 }), karte: karte(beleg) }))}
+            belege={b.belege.map((beleg, i) => ({
+              id: beleg.id,
+              wert: belegHaken(beleg),
+              name: t('belegName', { nr: i + 1 }),
+              karte: karte(beleg),
+            }))}
           />
         </section>
       ) : null}

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   belegeUnsicher,
+  belegHaken,
   eigenesUrteil,
   freigabeStand,
   ordneWarteschlange,
@@ -60,7 +61,7 @@ const antrag = (extra: Partial<UrteilsAntrag> = {}): UrteilsAntrag => ({
   baustein: aussage(),
   gesehenerHash: HASH,
   urteil: 'ok',
-  belegeBestaetigt: BELEGE.map((b) => b.id),
+  belegeBestaetigt: BELEGE.map(belegHaken),
   inhaltBestaetigt: false,
   ...extra,
 });
@@ -86,8 +87,17 @@ describe('pruefeUrteil – wer darf welches Urteil abgeben', () => {
   });
 
   it('„ok“ nur mit jedem Beleg einzeln bestätigt', () => {
-    expect(pruefeUrteil(antrag({ belegeBestaetigt: ['beleg-1'] }), [])).toBe('belegeBestaetigen');
+    expect(pruefeUrteil(antrag({ belegeBestaetigt: [belegHaken(BELEGE[0]!)] }), [])).toBe('belegeBestaetigen');
     expect(pruefeUrteil(antrag({ belegeBestaetigt: [] }), [])).toBe('belegeBestaetigen');
+  });
+
+  it('Haken gilt nur für die gesehene Fassung des Belegs (Kennung und Hash)', () => {
+    // nur die Kennung (ohne Hash) zählt nicht
+    expect(pruefeUrteil(antrag({ belegeBestaetigt: BELEGE.map((b) => b.id) }), [])).toBe('belegeBestaetigen');
+    // Beleg zwischen Öffnen und Absenden geändert (neuer Beleg-Hash, Aussage-Hash gleich): Haken zur alten Fassung zählt nicht
+    const geaendert = aussage({ belege: BELEGE.map((b, i) => (i === 0 ? { ...b, inhaltHash: NEU } : b)) });
+    expect(pruefeUrteil(antrag({ baustein: geaendert }), [])).toBe('belegeBestaetigen');
+    expect(pruefeUrteil(antrag({ baustein: geaendert, belegeBestaetigt: geaendert.belege.map(belegHaken) }), [])).toBeNull();
   });
 
   it('Aussage ohne Beleg ist nie freigebbar', () => {

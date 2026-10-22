@@ -1,6 +1,7 @@
 import { and, eq } from 'drizzle-orm';
 import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest';
 import { schema } from '@/lib/db';
+import { belegHaken } from '@/lib/lernapp/freigabe';
 import type { RollenZuweisung } from '@/lib/rechte/matrix';
 import { angemeldetAls, aufrufe, formular, verwaltungsUmgebung } from './hilfen/verwaltung';
 
@@ -8,15 +9,17 @@ import { angemeldetAls, aufrufe, formular, verwaltungsUmgebung } from './hilfen/
  * Zwei-Prüfer-Freigabe religiöser Bausteine (L6-02/03, ADR 0040 Nr. 3 und 5, KERN 4.0 §2.3) gegen PGlite: Rechte (nie per
  * Administration), sichtbar erst nach zwei Freigaben verschiedener Personen zum aktuellen Hash (Aussage, Quizfrage, Lektion
  * nur ganz, Koran-Bedeutung), Rücksetzen bei neuem Hash, gleiche Person nicht zweimal, Verfasser ausgeschlossen, Haken je
- * Beleg, KI-Regel 2, Verlauf und Audit ohne Inhalte, Freigaben-Integration. Testdaten nur Platzhalter, keine religiösen Texte.
+ * Beleg, KI-Regel 2 (auch im Freigabeweg der Koran-Verwaltung), Verlauf und Audit ohne Inhalte, Verlauf ohne Person und
+ * Kommentar der anderen Prüfenden, Warteschlange vollständig (Grenze erst nach dem Filter), Freigaben-Integration. Testdaten
+ * nur Platzhalter, keine religiösen Texte.
  */
 const { client, db } = await verwaltungsUmgebung();
 const religioes = await import('@/server/actions/lernapp-religioes');
 const freigaben = await import('@/server/actions/freigaben');
-const { ladeReligioeseBausteine, ladeReligioesenBaustein, religioesSichtbar, lektionReligioesSichtbar, koranBedeutungHash } = await import(
-  '@/server/queries/lernapp/religioes'
-);
-const { ladeWarteschlange } = await import('@/server/queries/verwaltung/freigaben');
+const koran = await import('@/server/actions/koran');
+const { ladeReligioeseBausteine, ladeReligioesenBaustein, religioesSichtbar, lektionReligioesSichtbar, koranBedeutungHash } =
+  await import('@/server/queries/lernapp/religioes');
+const { ladeVerlauf, ladeWarteschlange } = await import('@/server/queries/verwaltung/freigaben');
 
 afterAll(() => client.close());
 afterEach(() => {
@@ -56,7 +59,14 @@ beforeAll(async () => {
   ids.lektion = lektion!.id;
   const [quelle] = await db
     .insert(schema.lernappQuelle)
-    .values({ kurz: 'quduri', werk: '[Werk A]', autor: '[Autor A]', ausgabe: '[Ausgabe 1997]', art: 'fiqh', openitiUri: '0428Test.Werk.Fassung-ara1' })
+    .values({
+      kurz: 'quduri',
+      werk: '[Werk A]',
+      autor: '[Autor A]',
+      ausgabe: '[Ausgabe 1997]',
+      art: 'fiqh',
+      openitiUri: '0428Test.Werk.Fassung-ara1',
+    })
     .returning({ id: schema.lernappQuelle.id });
   ids.quelle = quelle!.id;
   const [aussage] = await db
@@ -108,7 +118,13 @@ beforeAll(async () => {
   ids.bedeutung = bed!.id;
   const [ki] = await db
     .insert(schema.quranWortbedeutung)
-    .values({ formId: form2!.id, sprache: 'de', bedeutung: '[Bedeutung – Platzhalter]', freigabe: 'zur_pruefung', verfasstVon: 'ki:lauf-x' })
+    .values({
+      formId: form2!.id,
+      sprache: 'de',
+      bedeutung: '[Bedeutung – Platzhalter]',
+      freigabe: 'zur_pruefung',
+      verfasstVon: 'ki:lauf-x',
+    })
     .returning({ id: schema.quranWortbedeutung.id });
   ids.kiBedeutung = ki!.id;
 });
@@ -123,7 +139,7 @@ async function urteil(typ: string, id: string, extra: Record<string, string | st
       id,
       hash: b?.inhaltHash ?? h('0'),
       urteil: 'ok',
-      beleg: b?.belege.map((x) => x.id) ?? [],
+      beleg: b?.belege.map(belegHaken) ?? [],
       bestaetigt: '1',
       ...extra,
     }),
@@ -164,7 +180,10 @@ describe('Zwei Freigaben: sichtbar erst nach zwei verschiedenen Personen zum akt
       fehler: 'pruefen',
       feldFehler: { vorschlag: 'vorschlagFehlt' },
     });
-    expect(await urteil('aussage', ids.aussage, { urteil: 'abgelehnt' })).toEqual({ fehler: 'pruefen', feldFehler: { kommentar: 'begruendungFehlt' } });
+    expect(await urteil('aussage', ids.aussage, { urteil: 'abgelehnt' })).toEqual({
+      fehler: 'pruefen',
+      feldFehler: { kommentar: 'begruendungFehlt' },
+    });
     expect(await db.select().from(schema.lernappPruefung)).toHaveLength(0);
   });
 
@@ -263,10 +282,18 @@ describe('Koran-Bedeutungen im Lern-App-Pfad', () => {
     expect(eintrag.lage.kiHerkunft).toBe(true);
     // auch die Website-Freigabe verweigert die KI-Herkunft
     expect(
-      await freigaben.entscheideFreigabe({}, formular({ inhaltTyp: 'quran_wortbedeutung', inhaltId: ids.kiBedeutung, entscheidung: 'freigeben' })),
+      await freigaben.entscheideFreigabe(
+        {},
+        formular({ inhaltTyp: 'quran_wortbedeutung', inhaltId: ids.kiBedeutung, entscheidung: 'freigeben' }),
+      ),
     ).toEqual({ fehler: 'kiHerkunft' });
+    // ebenso der zweite Freigabeweg derselben Inhalte: „Koran & Hadith“ › Freigeben (statusSetzen)
+    expect(
+      await koran.statusSetzen({}, formular({ art: 'quran_wortbedeutung', kennung: ids.kiBedeutung, ziel: 'geprueft', grund: '' })),
+    ).toEqual({ fehler: 'kiRegel' });
     const [zeile] = await db.select().from(schema.quranWortbedeutung).where(eq(schema.quranWortbedeutung.id, ids.kiBedeutung));
     expect(zeile!.freigabe).toBe('zur_pruefung');
+    expect(zeile!.geprueftVon).toBeNull();
   });
 });
 
@@ -307,10 +334,106 @@ describe('Freigaben-Integration', () => {
         formular({ inhaltTyp: 'hadith_uebersetzung', inhaltId: 'testsammlung|1|de', entscheidung: 'freigeben' }),
       ),
     ).toEqual({ fehler: 'kiHerkunft' });
+    // Koran-Verwaltung (statusSetzen): Quelle bzw. Übersetzer mit KI-Angabe – ebenfalls verweigert, kein Verlaufsschritt
+    expect(
+      await koran.statusSetzen({}, formular({ art: 'hadith_uebersetzung', kennung: 'testsammlung|1|de', ziel: 'geprueft', grund: '' })),
+    ).toEqual({ fehler: 'kiRegel' });
+    await db
+      .update(schema.hadithUebersetzung)
+      .set({ quelle: '[Quelle]', uebersetzer: 'KI' })
+      .where(eq(schema.hadithUebersetzung.sammlungId, 'testsammlung'));
+    expect(
+      await koran.statusSetzen({}, formular({ art: 'hadith_uebersetzung', kennung: 'testsammlung|1|de', ziel: 'geprueft', grund: '' })),
+    ).toEqual({ fehler: 'kiRegel' });
     const [z] = await db
       .select()
       .from(schema.hadithUebersetzung)
       .where(and(eq(schema.hadithUebersetzung.sammlungId, 'testsammlung'), eq(schema.hadithUebersetzung.nummer, '1')));
     expect(z!.freigabe).toBe('zur_pruefung');
+    expect(await db.select().from(schema.freigabe).where(eq(schema.freigabe.inhaltTyp, 'hadith_uebersetzung'))).toHaveLength(0);
+  });
+
+  it('Gegenprobe: menschliche Herkunft gibt statusSetzen frei (Vier-Augen bleibt)', async () => {
+    await db
+      .update(schema.hadithUebersetzung)
+      .set({ quelle: '[Quelle]', uebersetzer: '[Übersetzer]' })
+      .where(eq(schema.hadithUebersetzung.sammlungId, 'testsammlung'));
+    await angemeldetAls(RELIGIOES);
+    expect(
+      await koran.statusSetzen({}, formular({ art: 'hadith_uebersetzung', kennung: 'testsammlung|1|de', ziel: 'geprueft', grund: '' })),
+    ).toMatchObject({ status: 'geprueft' });
+  });
+});
+
+describe('Unabhängigkeit der Prüfenden: der Freigabe-Verlauf verrät nicht, wer sonst geprüft hat und was', () => {
+  it('Schritte der Lern-App ohne Person und Kommentar; andere Schritte unverändert', async () => {
+    const person = (await angemeldetAls(RELIGIOES))!;
+    expect(
+      await urteil('aussage', ids.aussage, { urteil: 'abgelehnt', kommentar: '[Einwand – Platzhalter]', beleg: [], bestaetigt: '' }),
+    ).toMatchObject({ hinweis: 'abgelehnt' });
+    // Zum Vergleich ein Schritt einer freien Seite: dort bleiben Person und Kommentar sichtbar
+    await db.insert(schema.freigabe).values({
+      inhaltTyp: 'seite',
+      inhaltId: '00000000-0000-4000-8000-000000000001',
+      art: 'redaktion',
+      status: 'zur_pruefung',
+      von: person,
+      kommentar: '[Kommentar – Platzhalter]',
+    });
+    const verlauf = await ladeVerlauf(500);
+    const lernapp = verlauf.filter((z) => z.inhaltTyp.startsWith('lernapp_'));
+    expect(lernapp.length).toBeGreaterThan(0);
+    expect(lernapp.some((z) => z.inhaltId === ids.aussage && z.status === 'entwurf')).toBe(true);
+    for (const z of lernapp) expect(z).toMatchObject({ von: null, kommentar: null, verdeckt: true });
+    expect(JSON.stringify(lernapp)).not.toContain('Einwand');
+    expect(JSON.stringify(lernapp)).not.toContain('Testperson');
+    expect(verlauf.find((z) => z.inhaltTyp === 'seite')).toMatchObject({
+      von: 'Testperson Eins',
+      kommentar: '[Kommentar – Platzhalter]',
+      verdeckt: false,
+    });
+    // Der Einwand selbst bleibt gespeichert (Befunde der Redaktion, ohne Namen)
+    const [einwand] = await db
+      .select()
+      .from(schema.lernappPruefung)
+      .where(and(eq(schema.lernappPruefung.inhaltId, ids.aussage), eq(schema.lernappPruefung.urteil, 'abgelehnt')));
+    expect(einwand!.kommentar).toBe('[Einwand – Platzhalter]');
+  });
+});
+
+describe('Warteschlange vollständig: die Grenze greift erst nach dem Filter', () => {
+  it('über 500 zurückgezogene Aussagen mit früherem Schlüssel verdecken die offene Aussage nicht', async () => {
+    const [l] = await db
+      .select({ einheitId: schema.lernappLektion.einheitId })
+      .from(schema.lernappLektion)
+      .where(eq(schema.lernappLektion.id, ids.lektion));
+    const [davor] = await db
+      .insert(schema.lernappLektion)
+      .values({
+        einheitId: l!.einheitId,
+        schluessel: 'islam.grund.e01.l00',
+        reihenfolge: 0,
+        ziel: { de: '[Lernziel – Platzhalter]' },
+        inhaltHash: h('7'),
+        verfasstVon: 'ki:test',
+        status: 'gesperrt',
+      })
+      .returning({ id: schema.lernappLektion.id });
+    await db.insert(schema.lernappAussage).values(
+      Array.from({ length: 505 }, (_, i) => ({
+        lektionId: davor!.id,
+        schluessel: `islam.grund.e01.l00.s${String(i).padStart(3, '0')}`,
+        text: '[Zurückgezogen – Platzhalter]',
+        reihenfolge: i + 1,
+        inhaltHash: h('8'),
+        verfasstVon: 'ki:test',
+        status: 'gesperrt' as const,
+      })),
+    );
+    const person = (await angemeldetAls(RELIGIOES))!;
+    const aussagen = (await ladeReligioeseBausteine(person)).filter((b) => b.typ === 'aussage');
+    expect(aussagen.map((b) => b.id)).toEqual([ids.aussage]);
+    const offen = (await ladeWarteschlange(person)).filter((e) => e.inhaltTyp === 'lernapp_aussage');
+    expect(offen.map((e) => e.inhaltId)).toEqual([ids.aussage]);
   });
 });

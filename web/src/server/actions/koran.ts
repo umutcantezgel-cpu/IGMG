@@ -17,6 +17,7 @@ import {
   betrifftOeffentlich,
   gleicherInhalt,
   hadithKennung,
+  kiHerkunftVerboten,
   ortKennung,
   statusNachSpeichern,
   uebergang,
@@ -59,7 +60,8 @@ export type KoranFehler =
   | 'nichtFreigegeben'
   | 'bestaetigen'
   | 'vorhanden'
-  | 'unbekannt';
+  | 'unbekannt'
+  | 'kiRegel';
 
 export type KoranZustand = {
   fehler?: KoranFehler;
@@ -401,7 +403,7 @@ export async function hadithUebersetzungEntfernen(_: KoranZustand, fd: FormData)
 
 // ————————————————————————————————————————— Freigabe-Ablauf
 
-type Stand = { freigabe: FreigabeStatus; verfasstVon: string | null };
+type Stand = { freigabe: FreigabeStatus; verfasstVon: string | null; herkunft: (string | null)[] };
 
 /** Zeile eines religiösen Inhalts über Art und Kennung finden; ungültige Kennung → null. */
 function bedingung(art: ReligioeseArt, kennung: string): SQL | null {
@@ -426,7 +428,17 @@ function bedingung(art: ReligioeseArt, kennung: string): SQL | null {
   }
 }
 
+/** Stand, verfassende Person und Herkunftsangaben (KI-Regel 2: bei Hadith-Übersetzungen auch Quelle und Übersetzer). */
 async function leseStand(tx: Transaktion, art: ReligioeseArt, wo: SQL): Promise<Stand | null> {
+  if (art === 'hadith_uebersetzung') {
+    const u = schema.hadithUebersetzung;
+    const [h] = await tx
+      .select({ freigabe: u.freigabe, verfasstVon: u.verfasstVon, quelle: u.quelle, uebersetzer: u.uebersetzer })
+      .from(u)
+      .where(wo)
+      .limit(1);
+    return h ? { freigabe: h.freigabe, verfasstVon: h.verfasstVon, herkunft: [h.verfasstVon, h.quelle, h.uebersetzer] } : null;
+  }
   const tabelle = {
     quran_wortbedeutung: schema.quranWortbedeutung,
     quran_wortbedeutung_ort: schema.quranWortbedeutungOrt,
@@ -434,7 +446,7 @@ async function leseStand(tx: Transaktion, art: ReligioeseArt, wo: SQL): Promise<
     hadith_uebersetzung: schema.hadithUebersetzung,
   }[art] as typeof schema.tajwidRegel;
   const [z] = await tx.select({ freigabe: tabelle.freigabe, verfasstVon: tabelle.verfasstVon }).from(tabelle).where(wo).limit(1);
-  return z ?? null;
+  return z ? { ...z, herkunft: [z.verfasstVon] } : null;
 }
 
 async function setzeStand(
@@ -462,6 +474,8 @@ async function setzeStand(
 /**
  * Statuswechsel ohne inhaltliche Änderung: einreichen (Recht zum Bearbeiten), freigeben (nur `religioes.freigeben`
  * und nicht die Person, die zuletzt verfasst hat), zurückweisen bzw. Freigabe aufheben (`religioes.freigeben`, Grund).
+ * KI-Regel 2 (ADR 0040 Nr. 3): Zeigt die Herkunft auf eine KI (Verfasser `ki:…`, bei Hadith-Übersetzungen auch Quelle oder
+ * Übersetzer), verweigert das Freigeben – wie `entscheideFreigabe` in „Freigaben“.
  */
 export async function statusSetzen(_: KoranZustand, fd: FormData): Promise<KoranZustand> {
   const p = statusSchema.safeParse(ausFormular(fd));
@@ -480,6 +494,7 @@ export async function statusSetzen(_: KoranZustand, fd: FormData): Promise<Koran
       const schritt = uebergang(stand.freigabe, e.ziel);
       if (!schritt) return { fehler: 'uebergang' };
       if (schritt === 'freigeben' && !vierAugenErfuellt(stand.verfasstVon, a.benutzerId)) return { fehler: 'vierAugen' };
+      if (schritt === 'freigeben' && kiHerkunftVerboten(e.art, stand.herkunft)) return { fehler: 'kiRegel' };
       const freigeben = schritt === 'freigeben';
       await setzeStand(tx, e.art, wo, {
         freigabe: e.ziel,

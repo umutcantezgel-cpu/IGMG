@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, asc, eq, inArray, ne, or } from 'drizzle-orm';
+import { and, asc, eq, gt, inArray, ne, or } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import {
   belegeUnsicher,
@@ -34,7 +34,12 @@ import { ladePruefungen } from './pakete';
  * OpenITI-URI), nie den Quelltext (ADR 0040 Fortschreibung S8 Nr. 2; LM-04).
  */
 
-const GRENZE = 500;
+/**
+ * Zeilen je Abfrage. Ganze Listen (Warteschlange, „Freigegeben“) laden wir seitenweise nach Schlüssel, bis alles gelesen ist –
+ * eine Grenze vor dem Filter auf „offen“ würde sonst bei ≈ 1.400 Aussagen und ≈ 1.700 Quizfragen (PLAN §5.2) offene Bausteine
+ * verdecken. Gekürzt wird erst in der Anzeige, nach Filter und Reihenfolge.
+ */
+const SEITE = 500;
 const RELIGIOESE_KURSE = ['islam', 'koran'] as const;
 
 /** Inhalts-Hash einer Koran-Wortbedeutung im Lern-App-Pfad: alle gezeigten Felder (jede Änderung setzt zurück). */
@@ -90,6 +95,8 @@ type Roh = {
   /** nur Aufgaben: Aussage, aus der die Quizfrage entsteht */
   aussageId?: string | null;
   lektionId?: string;
+  /** nur Koran-Bedeutungen: Sortierschlüssel (Wortform, Sprache) für das Blättern */
+  form?: { formId: number; sprache: string };
 };
 
 async function belegeZu(aussageIds: readonly string[]) {
@@ -135,147 +142,182 @@ function lektionenMitKurs() {
     .innerJoin(schema.lernappAbschnitt, eq(schema.lernappAbschnitt.id, schema.lernappEinheit.abschnittId));
 }
 
-/** Alle Bausteine mit Zwei-Prüfer-Freigabe (roh), optional nur einer. */
-async function ladeRoh(nur?: { typ: ReligioeserBausteinTyp; id: string }): Promise<Roh[]> {
-  const nurTyp = (t: ReligioeserBausteinTyp) => !nur || nur.typ === t;
-  const ergebnis: Roh[] = [];
-  const religioeserKurs = inArray(schema.lernappAbschnitt.kursId, [...RELIGIOESE_KURSE]);
+/** Auswahl einer Abfrage: genau ein Baustein (`id`) oder die nächste Seite nach dem letzten Baustein der vorigen (`nach`). */
+type Auswahl = { id?: string; nach?: Roh };
 
-  if (nurTyp('lektion')) {
-    const l = schema.lernappLektion;
-    const zeilen = await lektionenMitKurs()
-      .where(and(religioeserKurs, nur ? eq(l.id, nur.id) : undefined))
-      .orderBy(asc(l.schluessel))
-      .limit(GRENZE);
-    for (const z of zeilen)
-      ergebnis.push({
-        typ: 'lektion',
-        id: z.id,
-        schluessel: z.schluessel,
-        kurs: z.kurs as KursId,
-        status: z.status,
-        titel: z.ziel.de ?? z.schluessel,
-        titelLang: 'de',
-        lektionId: z.id,
-        baustein: { inhaltHash: z.inhaltHash, verfasser: [z.verfasstVon], belege: [], belegPflicht: false, art: 'lektion' },
-      });
-  }
+async function ladeLektionen(o: Auswahl): Promise<Roh[]> {
+  const l = schema.lernappLektion;
+  const zeilen = await lektionenMitKurs()
+    .where(
+      and(
+        inArray(schema.lernappAbschnitt.kursId, [...RELIGIOESE_KURSE]),
+        o.id !== undefined ? eq(l.id, o.id) : undefined,
+        o.nach ? gt(l.schluessel, o.nach.schluessel) : undefined,
+      ),
+    )
+    .orderBy(asc(l.schluessel))
+    .limit(SEITE);
+  return zeilen.map((z) => ({
+    typ: 'lektion',
+    id: z.id,
+    schluessel: z.schluessel,
+    kurs: z.kurs as KursId,
+    status: z.status,
+    titel: z.ziel.de ?? z.schluessel,
+    titelLang: 'de',
+    lektionId: z.id,
+    baustein: { inhaltHash: z.inhaltHash, verfasser: [z.verfasstVon], belege: [], belegPflicht: false, art: 'lektion' },
+  }));
+}
 
-  if (nurTyp('aussage')) {
-    const a = schema.lernappAussage;
-    const zeilen = await db
-      .select({
-        id: a.id,
-        schluessel: a.schluessel,
-        text: a.text,
-        status: a.status,
-        inhaltHash: a.inhaltHash,
-        verfasstVon: a.verfasstVon,
-        lektionId: a.lektionId,
-        kurs: schema.lernappAbschnitt.kursId,
-      })
-      .from(a)
-      .innerJoin(schema.lernappLektion, eq(schema.lernappLektion.id, a.lektionId))
-      .innerJoin(schema.lernappEinheit, eq(schema.lernappEinheit.id, schema.lernappLektion.einheitId))
-      .innerJoin(schema.lernappAbschnitt, eq(schema.lernappAbschnitt.id, schema.lernappEinheit.abschnittId))
-      .where(nur ? eq(a.id, nur.id) : undefined)
-      .orderBy(asc(a.schluessel))
-      .limit(GRENZE);
-    const belege = await belegeZu(zeilen.map((z) => z.id));
-    for (const z of zeilen)
-      ergebnis.push({
-        typ: 'aussage',
-        id: z.id,
-        schluessel: z.schluessel,
-        kurs: z.kurs as KursId,
-        status: z.status,
-        titel: z.text,
-        titelLang: 'de',
-        lektionId: z.lektionId,
-        baustein: {
-          inhaltHash: z.inhaltHash,
-          verfasser: [z.verfasstVon],
-          belege: belege.filter((b) => b.aussageId === z.id).map((b) => ({ id: b.id, inhaltHash: b.inhaltHash })),
-          belegPflicht: true,
-          art: 'aussage',
-        },
-      });
-  }
+async function ladeAussagen(o: Auswahl): Promise<Roh[]> {
+  const a = schema.lernappAussage;
+  const zeilen = await db
+    .select({
+      id: a.id,
+      schluessel: a.schluessel,
+      text: a.text,
+      status: a.status,
+      inhaltHash: a.inhaltHash,
+      verfasstVon: a.verfasstVon,
+      lektionId: a.lektionId,
+      kurs: schema.lernappAbschnitt.kursId,
+    })
+    .from(a)
+    .innerJoin(schema.lernappLektion, eq(schema.lernappLektion.id, a.lektionId))
+    .innerJoin(schema.lernappEinheit, eq(schema.lernappEinheit.id, schema.lernappLektion.einheitId))
+    .innerJoin(schema.lernappAbschnitt, eq(schema.lernappAbschnitt.id, schema.lernappEinheit.abschnittId))
+    .where(and(o.id !== undefined ? eq(a.id, o.id) : undefined, o.nach ? gt(a.schluessel, o.nach.schluessel) : undefined))
+    .orderBy(asc(a.schluessel))
+    .limit(SEITE);
+  const belege = await belegeZu(zeilen.map((z) => z.id));
+  return zeilen.map((z) => ({
+    typ: 'aussage',
+    id: z.id,
+    schluessel: z.schluessel,
+    kurs: z.kurs as KursId,
+    status: z.status,
+    titel: z.text,
+    titelLang: 'de',
+    lektionId: z.lektionId,
+    baustein: {
+      inhaltHash: z.inhaltHash,
+      verfasser: [z.verfasstVon],
+      belege: belege.filter((b) => b.aussageId === z.id).map((b) => ({ id: b.id, inhaltHash: b.inhaltHash })),
+      belegPflicht: true,
+      art: 'aussage',
+    },
+  }));
+}
 
-  if (nurTyp('aufgabe')) {
-    const t = schema.lernappAufgabe;
-    const zeilen = await db
-      .select({
-        id: t.id,
-        schluessel: t.schluessel,
-        typ: t.typ,
-        status: t.status,
-        inhaltHash: t.inhaltHash,
-        verfasstVon: t.verfasstVon,
-        aussageId: t.aussageId,
-        lektionId: t.lektionId,
-        kurs: schema.lernappAbschnitt.kursId,
-      })
-      .from(t)
-      .innerJoin(schema.lernappLektion, eq(schema.lernappLektion.id, t.lektionId))
-      .innerJoin(schema.lernappEinheit, eq(schema.lernappEinheit.id, schema.lernappLektion.einheitId))
-      .innerJoin(schema.lernappAbschnitt, eq(schema.lernappAbschnitt.id, schema.lernappEinheit.abschnittId))
-      .where(and(or(religioeserKurs, eq(t.religionsbezug, true)), nur ? eq(t.id, nur.id) : undefined))
-      .orderBy(asc(t.schluessel))
-      .limit(GRENZE);
-    for (const z of zeilen)
-      ergebnis.push({
-        typ: 'aufgabe',
-        id: z.id,
-        schluessel: z.schluessel,
-        kurs: z.kurs as KursId,
-        status: z.status,
-        titel: z.schluessel,
-        aussageId: z.aussageId,
-        lektionId: z.lektionId,
-        baustein: { inhaltHash: z.inhaltHash, verfasser: [z.verfasstVon], belege: [], belegPflicht: false, art: 'aufgabe' },
-      });
-  }
+async function ladeAufgaben(o: Auswahl): Promise<Roh[]> {
+  const t = schema.lernappAufgabe;
+  const zeilen = await db
+    .select({
+      id: t.id,
+      schluessel: t.schluessel,
+      typ: t.typ,
+      status: t.status,
+      inhaltHash: t.inhaltHash,
+      verfasstVon: t.verfasstVon,
+      aussageId: t.aussageId,
+      lektionId: t.lektionId,
+      kurs: schema.lernappAbschnitt.kursId,
+    })
+    .from(t)
+    .innerJoin(schema.lernappLektion, eq(schema.lernappLektion.id, t.lektionId))
+    .innerJoin(schema.lernappEinheit, eq(schema.lernappEinheit.id, schema.lernappLektion.einheitId))
+    .innerJoin(schema.lernappAbschnitt, eq(schema.lernappAbschnitt.id, schema.lernappEinheit.abschnittId))
+    .where(
+      and(
+        or(inArray(schema.lernappAbschnitt.kursId, [...RELIGIOESE_KURSE]), eq(t.religionsbezug, true)),
+        o.id !== undefined ? eq(t.id, o.id) : undefined,
+        o.nach ? gt(t.schluessel, o.nach.schluessel) : undefined,
+      ),
+    )
+    .orderBy(asc(t.schluessel))
+    .limit(SEITE);
+  return zeilen.map((z) => ({
+    typ: 'aufgabe',
+    id: z.id,
+    schluessel: z.schluessel,
+    kurs: z.kurs as KursId,
+    status: z.status,
+    titel: z.schluessel,
+    aussageId: z.aussageId,
+    lektionId: z.lektionId,
+    baustein: { inhaltHash: z.inhaltHash, verfasser: [z.verfasstVon], belege: [], belegPflicht: false, art: 'aufgabe' },
+  }));
+}
 
-  if (nurTyp('koran_bedeutung')) {
-    const wb = schema.quranWortbedeutung;
-    const uuid = !nur || /^[0-9a-f-]{36}$/i.test(nur.id);
-    const zeilen = uuid
-      ? await db
-          .select({
-            id: wb.id,
-            formId: wb.formId,
-            sprache: wb.sprache,
-            bedeutung: wb.bedeutung,
-            wurzel: wb.wurzel,
-            anmerkung: wb.anmerkung,
-            freigabe: wb.freigabe,
-            verfasstVon: wb.verfasstVon,
-          })
-          .from(wb)
-          .where(and(ne(wb.freigabe, 'entwurf'), nur ? eq(wb.id, nur.id) : undefined))
-          .orderBy(asc(wb.formId), asc(wb.sprache))
-          .limit(GRENZE)
-      : [];
-    for (const z of zeilen)
-      ergebnis.push({
-        typ: 'koran_bedeutung',
-        id: z.id,
-        schluessel: `koran.bedeutung.${z.formId}.${z.sprache}`,
-        kurs: 'koran',
-        status: koranStatus(z.freigabe),
-        titel: z.bedeutung,
-        titelLang: z.sprache,
-        baustein: {
-          inhaltHash: koranBedeutungHash(z),
-          verfasser: [z.verfasstVon],
-          belege: [],
-          belegPflicht: false,
-          art: 'koran_bedeutung',
-        },
-      });
+async function ladeKoranBedeutungen(o: Auswahl): Promise<Roh[]> {
+  if (o.id !== undefined && !/^[0-9a-f-]{36}$/i.test(o.id)) return [];
+  const wb = schema.quranWortbedeutung;
+  const nach = o.nach?.form;
+  const zeilen = await db
+    .select({
+      id: wb.id,
+      formId: wb.formId,
+      sprache: wb.sprache,
+      bedeutung: wb.bedeutung,
+      wurzel: wb.wurzel,
+      anmerkung: wb.anmerkung,
+      freigabe: wb.freigabe,
+      verfasstVon: wb.verfasstVon,
+    })
+    .from(wb)
+    .where(
+      and(
+        ne(wb.freigabe, 'entwurf'),
+        o.id !== undefined ? eq(wb.id, o.id) : undefined,
+        nach ? or(gt(wb.formId, nach.formId), and(eq(wb.formId, nach.formId), gt(wb.sprache, nach.sprache))) : undefined,
+      ),
+    )
+    .orderBy(asc(wb.formId), asc(wb.sprache))
+    .limit(SEITE);
+  return zeilen.map((z) => ({
+    typ: 'koran_bedeutung',
+    id: z.id,
+    schluessel: `koran.bedeutung.${z.formId}.${z.sprache}`,
+    kurs: 'koran',
+    status: koranStatus(z.freigabe),
+    titel: z.bedeutung,
+    titelLang: z.sprache,
+    form: { formId: z.formId, sprache: z.sprache },
+    baustein: {
+      inhaltHash: koranBedeutungHash(z),
+      verfasser: [z.verfasstVon],
+      belege: [],
+      belegPflicht: false,
+      art: 'koran_bedeutung',
+    },
+  }));
+}
+
+/** Lader je Typ; Reihenfolge der ganzen Liste: Lektionen, Aussagen, Quizfragen, Koran-Bedeutungen (je nach Schlüssel). */
+const LADER = {
+  lektion: ladeLektionen,
+  aussage: ladeAussagen,
+  aufgabe: ladeAufgaben,
+  koran_bedeutung: ladeKoranBedeutungen,
+} as const satisfies Record<ReligioeserBausteinTyp, (o: Auswahl) => Promise<Roh[]>>;
+
+/** Genau ein Baustein (roh) oder keiner. */
+async function ladeRoh(nur: { typ: ReligioeserBausteinTyp; id: string }): Promise<Roh[]> {
+  return LADER[nur.typ]({ id: nur.id });
+}
+
+/** Alle Bausteine, Seite für Seite (je höchstens {@link SEITE}, Cursor nach Schlüssel) – nichts wird abgeschnitten. */
+async function jedeSeite(verarbeite: (seite: Roh[]) => Promise<void>): Promise<void> {
+  for (const lade of Object.values(LADER)) {
+    let nach: Roh | undefined;
+    for (;;) {
+      const seite = await lade({ nach });
+      if (seite.length) await verarbeite(seite);
+      if (seite.length < SEITE) break;
+      nach = seite.at(-1);
+    }
   }
-  return ergebnis;
 }
 
 /** Prüfungen und Belegprüfungen zu den Bausteinen (Prüfungen mit den aktuellen Rollen der Prüfenden). */
@@ -337,12 +379,17 @@ function eintragVon(r: Roh, pruefungen: Pruefung[], belegpruefungen: Belegpruefu
 
 /**
  * Alle Bausteine mit Zwei-Prüfer-Freigabe und ihrem Stand aus Sicht der angemeldeten Person (Reihenfolge wie geladen; die
- * Warteschlange ordnet `ordneWarteschlange`). Zurückgezogene (`gesperrt`) Bausteine stehen nicht darin.
+ * Warteschlange ordnet `ordneWarteschlange`). Zurückgezogene (`gesperrt`) Bausteine stehen nicht darin. Vollständig: Die
+ * Aufrufer filtern (offen, freigegeben) und kürzen erst danach.
  */
 export async function ladeReligioeseBausteine(benutzerId: string): Promise<ReligioeserEintrag[]> {
-  const roh = (await ladeRoh()).filter((r) => r.status !== 'gesperrt');
-  const { je, belegpruefungen } = await pruefungenZu(roh);
-  return roh.map((r) => eintragVon(r, je(r), belegpruefungen(r), benutzerId));
+  const alle: ReligioeserEintrag[] = [];
+  await jedeSeite(async (seite) => {
+    const roh = seite.filter((r) => r.status !== 'gesperrt');
+    const { je, belegpruefungen } = await pruefungenZu(roh);
+    for (const r of roh) alle.push(eintragVon(r, je(r), belegpruefungen(r), benutzerId));
+  });
+  return alle;
 }
 
 export type BausteinDetail = ReligioeserEintrag & {

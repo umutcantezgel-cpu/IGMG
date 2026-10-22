@@ -28,7 +28,8 @@ function darfEntscheiden(a: Angemeldet, e: FreigabeEintrag): boolean {
 
 /**
  * Verwaltung › Freigaben (ADR 0030, ADR 0032): Warteschlange „zur Prüfung“ getrennt nach religiös und redaktionell,
- * je Inhalt alle Angaben zum Lesen und die Entscheidung mit Kommentar; der Verlauf zeigt die letzten 50 Schritte.
+ * je Inhalt alle Angaben zum Lesen und die Entscheidung mit Kommentar; der Verlauf zeigt die letzten 50 Schritte (Schritte der
+ * Lern-App ohne prüfende Person und Kommentar, `ladeVerlauf`).
  */
 export default async function Freigaben({ searchParams }: PageProps<'/[locale]/verwaltung/freigaben'>) {
   const a = await verlangeSeitenRecht('freigabe.lesen');
@@ -85,7 +86,7 @@ export default async function Freigaben({ searchParams }: PageProps<'/[locale]/v
                     <td className="px-4 py-3">
                       <span className={cn(PILLE, STATUS_FARBE[z.status])}>{t(`status.${z.status}`)}</span>
                     </td>
-                    <td className="px-4 py-3">{z.von ?? t('unbekannt')}</td>
+                    <td className="px-4 py-3">{z.verdeckt ? t('verdeckt') : (z.von ?? t('unbekannt'))}</td>
                     <td className="px-4 py-3 text-16">{z.kommentar}</td>
                   </tr>
                 ))}

@@ -12,16 +12,21 @@ import { cn } from '@/lib/utils';
 import { ladeReligioeseBausteine, type ReligioeserEintrag } from '@/server/queries/lernapp/religioes';
 
 const STAND_FARBE = ['bg-sand text-tinte-2', 'bg-info-toenung text-info', 'bg-gruen-50 text-gruen-800'] as const;
+/** Bausteine je Seite der Anzeige; gezählt und geordnet wird vorher über alle (Warteschlange vollständig). */
+const ANZEIGE = 100;
 
 /**
  * Verwaltung › Lern-App › Religiöse Prüfung (L6-03, ADR 0040 Nr. 5, PLAN §6.7 Nr. 6, §7.1): Warteschlange der Bausteine mit
  * Zwei-Prüfer-Freigabe – „unsicher“ (Belegprüfung) zuerst, dann was die Person noch prüfen kann (1/2 vor 0/2). Recht
  * `lernapp.religioes.pruefen` (nie per Administration). Die Ansicht zeigt den Stand und das eigene Urteil, nicht, wer sonst
- * geprüft hat. Ansicht „Freigegeben“: alle Bausteine mit 2/2.
+ * geprüft hat. Ansicht „Freigegeben“: alle Bausteine mit 2/2. Gefiltert, gezählt und geordnet wird über alle Bausteine; erst die
+ * Anzeige blättert (`?seite=`), damit bei ≈ 3.000 Bausteinen keiner hinter einer Grenze verschwindet.
  */
 export default async function ReligioesePruefung({ searchParams }: PageProps<'/[locale]/verwaltung/lernapp/religioes'>) {
   const a = await verlangeLernappSeite('lernapp.religioes.pruefen');
-  const geprueftAnsicht = (await searchParams).ansicht === 'geprueft';
+  const sp = await searchParams;
+  const geprueftAnsicht = sp.ansicht === 'geprueft';
+  const seiteWunsch = Math.max(0, Math.min(10_000, Number.parseInt(String(sp.seite ?? '0'), 10) || 0));
   const [t, tg, alle] = await Promise.all([
     getTranslations('verwaltung.lernapp.religioes'),
     getTranslations('verwaltung.shell'),
@@ -29,7 +34,12 @@ export default async function ReligioesePruefung({ searchParams }: PageProps<'/[
   ]);
   const offen = ordneWarteschlange(alle.filter((b) => !b.lage.geprueft));
   const geprueft = alle.filter((b) => b.lage.geprueft);
-  const liste = geprueftAnsicht ? geprueft : offen;
+  const alleDerAnsicht = geprueftAnsicht ? geprueft : offen;
+  const seiten = Math.max(1, Math.ceil(alleDerAnsicht.length / ANZEIGE));
+  const seite = Math.min(seiteWunsch, seiten - 1);
+  const liste = alleDerAnsicht.slice(seite * ANZEIGE, (seite + 1) * ANZEIGE);
+  const seitenHref = (n: number) =>
+    `/verwaltung/lernapp/religioes?${new URLSearchParams({ ...(geprueftAnsicht ? { ansicht: 'geprueft' } : {}), seite: String(n) })}`;
 
   const hinweise = (b: ReligioeserEintrag) =>
     [
@@ -141,6 +151,21 @@ export default async function ReligioesePruefung({ searchParams }: PageProps<'/[
           </table>
         </TabellenRahmen>
       )}
+      {seiten > 1 ? (
+        <nav aria-label={t('seiten', { seite: seite + 1, seiten })} className="flex flex-wrap items-center gap-3">
+          {seite > 0 ? (
+            <NextLink href={seitenHref(seite - 1)} className="inline-flex min-h-11 items-center font-bold underline underline-offset-4">
+              {t('seiteZurueck')}
+            </NextLink>
+          ) : null}
+          <span>{t('seiten', { seite: seite + 1, seiten })}</span>
+          {seite + 1 < seiten ? (
+            <NextLink href={seitenHref(seite + 1)} className="inline-flex min-h-11 items-center font-bold underline underline-offset-4">
+              {t('seiteVor')}
+            </NextLink>
+          ) : null}
+        </nav>
+      ) : null}
     </>
   );
 }

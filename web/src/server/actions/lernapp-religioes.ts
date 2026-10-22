@@ -59,6 +59,7 @@ export async function religioesPruefen(_vorher: LernappZustand, fd: FormData): P
 
     const f = await ladeFreigabe(typ, id.data);
     if (!f || f.status === 'gesperrt') return { fehler: 'nichtGefunden' };
+    // je Haken Kennung und Hash der gesehenen Fassung (`belegHaken`): ein geänderter Beleg verlangt einen neuen Haken
     const belegeBestaetigt = fd.getAll('beleg').map(String);
     const antrag = {
       pruefendeId: a.benutzerId,
