@@ -2062,13 +2062,13 @@
     },
     {
       "schluessel": "tr.a2.e07.s0100",
-      "text": "Sayın Ayla Hanım, oğlum Can dün akşam hastalandı. Ateşi ve öksürüğü var. Doktora göre iki gün evde dinlenmeli. Bu yüzden Can bugün ve yarın okula gelemeyecek. Doktor raporu da var. Saygılarımla, Derya Kaya",
+      "text": "Sayın Öğretmenim, oğlum Can dün akşam hastalandı. Ateşi ve öksürüğü var. Doktora göre iki gün evde dinlenmeli. Bu yüzden Can bugün ve yarın okula gelemeyecek. Doktor raporu da var. Saygılarımla, Derya Kaya",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a2.e07.s0101",
-      "text": "Merhaba Ayla Hanım, ben Murat Kaya, Elif'in babası. Elif dün okula gelemedi, çünkü hastaydı. Mide bulantısı ve ateşi vardı. Bugün daha iyi ama biraz halsiz. Elif yarın okula gelebilir. Teşekkürler!",
+      "text": "Merhaba Ayla Hanım, ben Murat Kaya, Elif'in babası. Elif dün okula gelemedi, çünkü hastaydı. Mide bulantısı ve ateşi vardı. Bugün daha iyi ama biraz halsiz, bu yüzden evde dinleniyor. Elif yarın okula gelebilir. Teşekkürler!",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2225,7 +2225,7 @@
     },
     {
       "schluessel": "tr.a2.e07.s0127",
-      "text": "Akşam Can, babasının reçetesiyle eczaneye gidiyor.",
+      "text": "Akşam Can babasının reçetesiyle eczaneye gidiyor.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2797,10 +2797,9 @@
     },
     {
       "schluessel": "tr.a2.e07.s0221",
-      "text": "Sağlık, iyi bir uyku ile başlar.",
-      "quelle": "tatoeba:5009838",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #5009838 von yusufbileci"
+      "text": "İyi bir uyku sağlık için çok önemli.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a2.e07.s0222",
@@ -3020,7 +3019,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Ich kann sagen, wo es weh tut und wie ich mich fühle.",
-        "tr": "Nerenin ağrıdığını ve kendimi nasıl hissettiğimi söylemek",
+        "tr": "Neremin ağrıdığını ve kendimi nasıl hissettiğimi söylemek",
         "ar": "قول أين أشعر بالألم وكيف أشعر"
       },
       "aufgaben": [
@@ -3113,7 +3112,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e07.s0011",
           "nach": "ziel",
-          "alternativen": ["Dün akşam babam hastalandı."]
+          "alternativen": ["Dün akşam babam hastalandı.", "Babam dün akşam hasta oldu.", "Dün akşam babam hasta oldu."]
         },
         {
           "schluessel": "tr.a2.e07.l01.a14",
@@ -3401,7 +3400,13 @@
           "typ": "frei",
           "ziel": "tr.a2.e07.s0048",
           "nach": "ziel",
-          "alternativen": ["Doktora mutlaka gitmelisin."]
+          "alternativen": [
+            "Doktora mutlaka gitmelisin.",
+            "Mutlaka bir doktora gitmelisin.",
+            "Mutlaka doktora gitmen lazım.",
+            "Mutlaka doktora gitmen gerekiyor.",
+            "Doktora mutlaka gitmen lazım."
+          ]
         },
         {
           "schluessel": "tr.a2.e07.l03.a13",
@@ -3514,7 +3519,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e07.s0061",
           "nach": "ziel",
-          "alternativen": ["Doktora ihtiyacım var."]
+          "alternativen": ["Doktora ihtiyacım var.", "Bana bir doktor lazım.", "Bana doktor lazım."]
         },
         {
           "schluessel": "tr.a2.e07.l04.a11",
@@ -3701,20 +3706,32 @@
         },
         {
           "schluessel": "tr.a2.e07.l05.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e07.hastalik",
+          "ablenker": ["tr.a1.e12.hasta", "tr.a2.e07.yorgunluk"]
+        },
+        {
+          "schluessel": "tr.a2.e07.l05.a12",
           "typ": "luecke",
           "ziel": "tr.a2.e07.s0097",
           "wort": 0,
           "ablenker": ["Hastalıkından", "Hastalığında"]
         },
         {
-          "schluessel": "tr.a2.e07.l05.a12",
+          "schluessel": "tr.a2.e07.l05.a13",
           "typ": "frei",
           "ziel": "tr.a2.e07.s0098",
           "nach": "ziel",
-          "alternativen": ["Sağlıklı yemekler vücut için iyi."]
+          "alternativen": [
+            "Sağlıklı yemekler vücut için iyi.",
+            "Sağlıklı yemekler vücut için iyidir.",
+            "Sağlıklı yiyecekler vücuda iyi gelir.",
+            "Sağlıklı yiyecekler vücut için iyi."
+          ]
         },
         {
-          "schluessel": "tr.a2.e07.l05.a13",
+          "schluessel": "tr.a2.e07.l05.a14",
           "typ": "schreiben",
           "aufgabe": "tr.a2.e07.s0099",
           "woerter": {
@@ -3724,7 +3741,7 @@
           "muster": ["tr.a2.e07.s0100", "tr.a2.e07.s0101"]
         },
         {
-          "schluessel": "tr.a2.e07.l05.a14",
+          "schluessel": "tr.a2.e07.l05.a15",
           "typ": "dialog",
           "zeilen": [
             {
@@ -3736,14 +3753,14 @@
           "ablenker": ["tr.a2.e07.s0104", "tr.a2.e07.s0105", "tr.a2.e07.s0106"]
         },
         {
-          "schluessel": "tr.a2.e07.l05.a15",
+          "schluessel": "tr.a2.e07.l05.a16",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "tr.a2.e07.s0107",
           "nach": "ausgang"
         },
         {
-          "schluessel": "tr.a2.e07.l05.a16",
+          "schluessel": "tr.a2.e07.l05.a17",
           "typ": "sprechen",
           "satz": "tr.a2.e07.s0108"
         }
@@ -3947,7 +3964,13 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e07.s0134",
           "nach": "ziel",
-          "alternativen": ["Elif evde babasına bal ve limonla ıhlamur yapıyor.", "Elif babasına evde bal ve limonla ıhlamur yapıyor."],
+          "alternativen": [
+            "Elif evde babasına bal ve limonla ıhlamur yapıyor.",
+            "Elif babasına evde bal ve limonla ıhlamur yapıyor.",
+            "Elif evde bal ve limonla babasına ıhlamur yapıyor.",
+            "Evde Elif bal ve limonla babasına ıhlamur yapıyor.",
+            "Elif babasına bal ve limonla evde ıhlamur yapıyor."
+          ],
           "ablenker": ["annesine", "yapıyorum"]
         },
         {
@@ -3955,7 +3978,11 @@
           "typ": "frei",
           "ziel": "tr.a2.e07.s0120",
           "nach": "ziel",
-          "alternativen": ["Bu nezle, grip değil. Merak etmeyin."]
+          "alternativen": [
+            "Bu nezle, grip değil. Merak etmeyin.",
+            "Grip değil, nezle. Merak etmeyin.",
+            "Bu grip değil, bu nezle. Merak etmeyin."
+          ]
         },
         {
           "schluessel": "tr.a2.e07.l06.a08",
@@ -4242,7 +4269,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e07.s0131",
           "nach": "ziel",
-          "alternativen": ["Bir şey ödememiz gerekiyor mu?", "Bir şey ödememiz lazım mı?"]
+          "alternativen": ["Bir şey ödememiz gerekiyor mu?", "Bir şey ödememiz lazım mı?", "Bir şey ödememiz gerekli mi?"]
         },
         {
           "schluessel": "tr.a2.e07.l08.a10",
