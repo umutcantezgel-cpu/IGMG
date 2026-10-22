@@ -1285,7 +1285,7 @@
     },
     {
       "schluessel": "de.a2.e03.s0027",
-      "text": "Wie schön! Herzlichen Glückwunsch zum Baby!",
+      "text": "Wie schön! Herzlichen Glückwunsch an deine Tante!",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1467,10 +1467,9 @@
     },
     {
       "schluessel": "de.a2.e03.s0056",
-      "text": "Ich habe kein so schönes Geschenk von dir erwartet.",
-      "quelle": "tatoeba:1805240",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #1805240 von Tamy (Tatoeba), CC BY 2.0 FR"
+      "text": "So ein schönes Geschenk habe ich nicht erwartet!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "de.a2.e03.s0057",
@@ -1819,7 +1818,7 @@
     },
     {
       "schluessel": "de.a2.e03.s0114",
-      "text": "Ist die Menge genug für zwanzig Leute?",
+      "text": "Reicht die Menge für zwanzig Leute?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1941,7 +1940,7 @@
     },
     {
       "schluessel": "de.a2.e03.s0134",
-      "text": "Danke, für den Nachtisch bin ich zu satt.",
+      "text": "Danke, aber ich bin zu satt für den Nachtisch.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2002,7 +2001,7 @@
     },
     {
       "schluessel": "de.a2.e03.s0144",
-      "text": "In Deutschland bringt man oft Blumen mit. Das ist ein Brauch.",
+      "text": "In Deutschland bringt man oft Blumen mit. Das ist ein alter Brauch.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2068,7 +2067,7 @@
     },
     {
       "schluessel": "de.a2.e03.s0155",
-      "text": "Mein Haus ist das gelbe Haus neben der Bäckerei.",
+      "text": "Ich wohne im gelben Haus neben der Bäckerei.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2110,7 +2109,7 @@
     },
     {
       "schluessel": "de.a2.e03.s0162",
-      "text": "Onkel Murat kommt auch zur Feier.",
+      "text": "Die Gäste bringen Getränke mit.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2266,7 +2265,7 @@
     },
     {
       "schluessel": "de.a2.e03.s0188",
-      "text": "Dann essen alle zusammen Salat, Reis und Hähnchen.",
+      "text": "Danach essen alle zusammen Salat, Reis und Hähnchen.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2698,7 +2697,7 @@
     },
     {
       "schluessel": "de.a2.e03.s0260",
-      "text": "Ich gratuliere dir! Und vielen Dank für das Geschenk.",
+      "text": "Ich gratuliere dir zur neuen Wohnung! Und danke für die Einladung.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     }
@@ -2828,7 +2827,7 @@
         {
           "schluessel": "de.a2.e03.l01.a15",
           "typ": "hoeren_schreiben",
-          "ziel": "de.a2.e03.s0017"
+          "ziel": "de.a2.e03.s0019"
         },
         {
           "schluessel": "de.a2.e03.l01.a16",
@@ -2909,11 +2908,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a2.e03.s0038",
           "nach": "ziel",
-          "alternativen": [
-            "Eine Tasse schenkt Elif ihrer Mutter.",
-            "Ihrer Mutter schenkt Elif eine Tasse.",
-            "Elif schenkt eine Tasse ihrer Mutter."
-          ],
+          "alternativen": ["Eine Tasse schenkt Elif ihrer Mutter.", "Ihrer Mutter schenkt Elif eine Tasse."],
           "ablenker": ["ihre", "Oma"]
         },
         {
@@ -2956,7 +2951,8 @@
           "alternativen": [
             "Für meinen Vater suche ich noch ein Geschenk.",
             "Ich suche für meinen Vater noch ein Geschenk.",
-            "Ich suche noch für meinen Vater ein Geschenk."
+            "Ich suche noch für meinen Vater ein Geschenk.",
+            "Ein Geschenk für meinen Vater suche ich noch."
           ]
         },
         {
@@ -3095,7 +3091,11 @@
           "typ": "frei",
           "ziel": "de.a2.e03.s0080",
           "nach": "ziel",
-          "alternativen": ["Die Gäste bekommen bei uns immer Tee.", "Bei uns bekommen Gäste immer Tee."]
+          "alternativen": [
+            "Die Gäste bekommen bei uns immer Tee.",
+            "Bei uns bekommen Gäste immer Tee.",
+            "Gäste bekommen bei uns immer Tee."
+          ]
         },
         {
           "schluessel": "de.a2.e03.l03.a15",
@@ -3209,7 +3209,11 @@
           "schluessel": "de.a2.e03.l04.a13",
           "typ": "satzbau",
           "ziel": "de.a2.e03.s0098",
-          "alternativen": ["Papa bereitet am Samstag das Essen vor.", "Das Essen bereitet Papa am Samstag vor."]
+          "alternativen": [
+            "Papa bereitet am Samstag das Essen vor.",
+            "Das Essen bereitet Papa am Samstag vor.",
+            "Papa bereitet das Essen am Samstag vor."
+          ]
         },
         {
           "schluessel": "de.a2.e03.l04.a14",
@@ -3361,7 +3365,9 @@
           "alternativen": [
             "Es gibt Obst und Torte zum Nachtisch.",
             "Zum Nachtisch gibt es Torte und Obst.",
-            "Es gibt Torte und Obst zum Nachtisch."
+            "Es gibt Torte und Obst zum Nachtisch.",
+            "Obst und Torte gibt es zum Nachtisch.",
+            "Torte und Obst gibt es zum Nachtisch."
           ],
           "ablenker": ["Salat", "zur"]
         },
@@ -3656,7 +3662,8 @@
             "Jan schenkt am Sonntag seiner Tante die Tasse.",
             "Die Tasse schenkt Jan seiner Tante am Sonntag.",
             "Seiner Tante schenkt Jan am Sonntag die Tasse.",
-            "Am Sonntag schenkt Jan die Tasse seiner Tante."
+            "Die Tasse schenkt Jan am Sonntag seiner Tante.",
+            "Seiner Tante schenkt Jan die Tasse am Sonntag."
           ]
         },
         {
@@ -3767,7 +3774,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a2.e03.s0242",
           "nach": "ziel",
-          "ablenker": ["deine", "zum"]
+          "ablenker": ["deine", "zum"],
+          "alternativen": ["Was schenkst du zur Hochzeit deiner Tante?"]
         },
         {
           "schluessel": "de.a2.e03.l07.a07",
@@ -3873,7 +3881,11 @@
           "typ": "frei",
           "ziel": "de.a2.e03.s0058",
           "nach": "ziel",
-          "alternativen": ["Hast du Oma für das Geschenk schon gedankt?"]
+          "alternativen": [
+            "Hast du Oma für das Geschenk schon gedankt?",
+            "Hast du dich schon bei Oma für das Geschenk bedankt?",
+            "Hast du der Oma schon für das Geschenk gedankt?"
+          ]
         }
       ]
     },
@@ -3951,7 +3963,7 @@
           "typ": "luecke",
           "ziel": "de.a2.e03.s0253",
           "wort": 2,
-          "ablenker": ["gefallen", "gefällst"]
+          "ablenker": ["gefällst", "gefalle"]
         },
         {
           "schluessel": "de.a2.e03.l08.a09",
