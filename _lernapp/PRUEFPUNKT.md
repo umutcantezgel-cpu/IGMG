@@ -11,7 +11,9 @@
   Rollenkombination Prüfung + Administration/Befunde; Verweis bei Überlauf in /verwaltung/freigaben; Verfasser = nur letzte
   Speicherung; E2E Koran-Lektion mit zwei Freigaben; Umfang Koran-Pfad 40 statt ≈ 10 Einheiten (Teil 30: 820 von 1.420 Formen
   fehlen) – Entscheidung offen. Läuft weiter: A1 `wf_a71357bf-3d3`, A2 tr `wf_6fd0e1b9-fdb`, A2 de `wf_d74ea6c7-421`, Wissen
-  `wf_4a678e4a-1d2`.
+  `wf_4a678e4a-1d2`. **Neu gestartet (04:48):** Code `wf_04a7453f-2f1` (`scratchpad/lernapp-l5-code.workflow.js`; B = L5-03
+  Korrekturweg der Lehrkraft, D = L4-03 Geschichten/Lesen/Abzeichen + Restliste a–d; danach S-L2 nur Bericht) und A2 ar
+  `wf_ca33604e-544` (Plan `scratchpad/l3/a2/plan-ar.json`, dann Einheiten).
 - **Stand 22.10.2026 04:15 UTC – nach dem Limit (21.10. 23:05) fortgesetzt:** A1 `wf_a71357bf-3d3` (Lektorat ar e01–e10 fertig,
   Übersetzung tr e01–e02/de e01–e08 fertig), A2 tr `wf_6fd0e1b9-fdb` (Entwurf e01–e02; e03/e04 Teildateien), A2 de
   `wf_d74ea6c7-421` (Entwurf e01–e04), L6 Wissen `wf_4a678e4a-1d2` (Entwürfe islam.grund.e01–e04 übersprungen → Belegprüfung;
