@@ -1812,7 +1812,7 @@
     },
     {
       "schluessel": "tr.a2.e10.s0063",
-      "text": "Böcekler ne soğuğu ne de karı seviyor.",
+      "text": "Böcekler ne soğuğu ne de kışı seviyor.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2579,7 +2579,7 @@
     },
     {
       "schluessel": "tr.a2.e10.s0189",
-      "text": "Fırtınada iki kişi hastaneye gitti.",
+      "text": "Fırtınada iki kişi yaralandı.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2627,7 +2627,7 @@
     },
     {
       "schluessel": "tr.a2.e10.s0197",
-      "text": "Merhaba Lena! Bugün okuldan sonra parkta yürüdüm. Hava serin ama güneşliydi. Gece yağmur yağmış, çimenler ıslaktı. Ağaçların altında birçok sarı yaprak vardı. Bir ağaçta küçük bir kuş yuvası gördüm. Galiba sonbahar gelmiş! Yarın birlikte gidelim mi?",
+      "text": "Merhaba Rim! Bugün okuldan sonra parkta yürüdüm. Hava serin ama güneşliydi. Gece yağmur yağmış, çimenler ıslaktı. Ağaçların altında birçok sarı yaprak vardı. Bir ağaçta küçük bir kuş yuvası gördüm. Galiba sonbahar gelmiş! Yarın birlikte gidelim mi?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2747,7 +2747,7 @@
     },
     {
       "schluessel": "tr.a2.e10.s0217",
-      "text": "Dedesi taşları ve yaprakları kenara koyuyor.",
+      "text": "Dedesi yaprakları ve elmaları kenara koyuyor.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3133,7 +3133,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e10.s0018",
           "nach": "ziel",
-          "alternativen": ["Doğada yürüyüş yapmak çok güzel."]
+          "alternativen": ["Doğada yürüyüş yapmak çok güzel.", "Doğada yürümek çok hoş.", "Doğada gezmek çok güzel."]
         },
         {
           "schluessel": "tr.a2.e10.l01.a14",
@@ -3247,7 +3247,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e10.s0043",
           "nach": "ziel",
-          "alternativen": ["Kelebekler hem renkli hem güzel."]
+          "alternativen": ["Kelebekler hem renkli hem güzel.", "Kelebekler hem güzel hem de renkli.", "Kelebekler hem renkli hem de güzel."]
         },
         {
           "schluessel": "tr.a2.e10.l02.a13",
@@ -3367,7 +3367,12 @@
           "typ": "frei",
           "ziel": "tr.a2.e10.s0094",
           "nach": "ziel",
-          "alternativen": ["Dün gece hava çok soğuktu, göl dondu.", "Göl dondu, çünkü dün gece çok soğuktu."]
+          "alternativen": [
+            "Dün gece hava çok soğuktu, göl dondu.",
+            "Göl dondu, çünkü dün gece çok soğuktu.",
+            "Dün gece çok soğuktu ve göl dondu.",
+            "Dün gece hava çok soğuktu ve göl dondu."
+          ]
         },
         {
           "schluessel": "tr.a2.e10.l03.a13",
@@ -3503,7 +3508,10 @@
           "typ": "frei",
           "ziel": "tr.a2.e10.s0119",
           "nach": "ziel",
-          "alternativen": ["Sabah pencereden baktım ve çok şaşırdım: kar yağmış!"]
+          "alternativen": [
+            "Sabah pencereden baktım ve çok şaşırdım: kar yağmış!",
+            "Sabah pencereden dışarı baktım ve şaşırdım: kar yağmış!"
+          ]
         },
         {
           "schluessel": "tr.a2.e10.l04.a13",
@@ -3552,7 +3560,7 @@
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a2.e10.kaza",
-          "ablenker": ["tr.a2.e10.olay", "tr.a2.e10.zarar"]
+          "ablenker": ["tr.a2.e10.firtina", "tr.a2.e10.zarar"]
         },
         {
           "schluessel": "tr.a2.e10.l05.a03",
@@ -4101,7 +4109,8 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e10.s0258",
           "nach": "ziel",
-          "ablenker": ["tarlaya", "giydim"]
+          "ablenker": ["tarlaya", "giydim"],
+          "alternativen": ["Çizmelerini giy, tarlada çok çamur var."]
         },
         {
           "schluessel": "tr.a2.e10.l07.a19",
@@ -4149,7 +4158,8 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e10.s0122",
           "nach": "ziel",
-          "ablenker": ["güneşli", "yağdı"]
+          "ablenker": ["güneşli", "yağdı"],
+          "alternativen": ["Galiba yağmur yağacak, gökyüzü karanlık görünüyor."]
         },
         {
           "schluessel": "tr.a2.e10.l08.a05",
@@ -4248,6 +4258,13 @@
           "ziel": "tr.a2.e10.s0039",
           "wort": 1,
           "ablenker": ["çiçekden", "çiçekte"]
+        },
+        {
+          "schluessel": "tr.a2.e10.l08.a17",
+          "typ": "luecke",
+          "ziel": "tr.a2.e10.s0249",
+          "wort": 3,
+          "ablenker": ["ne", "ya"]
         }
       ]
     }
