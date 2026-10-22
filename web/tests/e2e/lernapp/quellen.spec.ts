@@ -82,6 +82,17 @@ test('Lern-App offline: Quellen mit allen Namensnennungen aus dem Vorrat', async
       { timeout: 30_000 },
     )
     .toContain('/lern-app/de/quellen');
+  // Die Hülle steht samt Programmteilen (auch dem der Insel „Namensnennung“) im Vorrat: Der Worker antwortet auf die Bitte
+  // `schale` erst, wenn alles geholt ist. Die Seite liegt dort früher als ihre Programmteile – ohne dieses Warten liefe das
+  // Abklemmen mit dem Vorhalten um die Wette.
+  await page.evaluate(
+    () =>
+      new Promise<void>((fertig) => {
+        const kanal = new MessageChannel();
+        kanal.port1.onmessage = () => fertig();
+        navigator.serviceWorker.controller?.postMessage({ art: 'schale', ui: 'de' }, [kanal.port2]);
+      }),
+  );
   // ein Einheitenpaket im Vorrat (wie nach einer Lektion), mit einem Satz aus Tatoeba und einem eigenen Eintrag
   const paket = JSON.stringify({
     format: PAKET_FORMAT,
