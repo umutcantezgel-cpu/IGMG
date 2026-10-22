@@ -151,7 +151,17 @@ export const lernappTagKurs = pgTable(
   (t) => [primaryKey({ columns: [t.benutzerId, t.tag, t.kurs] })],
 );
 
-export type LernappRubrik = { pruefliste: Record<string, boolean>; selbst?: number };
+/**
+ * Prüfliste einer Schreibabgabe (L5-03, `lernapp/schreiben/regeln.ts`): Stufen 0–3 je Kriterium (Aufgabe, Zusammenhang,
+ * Wortschatz, Grammatik). `pruefliste` ist die Selbsteinschätzung der lernenden Person, `lehrkraft` die Einschätzung der
+ * Lehrkraft, `einstufung` ihre Einstufung ohne Note. Keine Freitexte – der Kommentar steht nur verschlüsselt in
+ * `kommentarVerschluesselt`.
+ */
+export type LernappRubrik = {
+  pruefliste: Partial<Record<string, number>>;
+  lehrkraft?: Partial<Record<string, number>>;
+  einstufung?: 'erreicht' | 'unterwegs' | 'nochmal';
+};
 
 /**
  * Schreibabgabe (B1–C1, ADR 0042, KERN 4.0 §5): Text und Kommentar der Lehrkraft nur verschlüsselt (wie `chat_nachricht`).

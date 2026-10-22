@@ -1,5 +1,6 @@
-import { ClipboardList, ListPlus, Target, TrendingUp, UsersRound } from 'lucide-react';
+import { ClipboardList, ListPlus, MessageSquareText, PenLine, Target, TrendingUp, UsersRound } from 'lucide-react';
 import type { Metadata } from 'next';
+import { Link } from '@/i18n/link';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { connection } from 'next/server';
@@ -15,7 +16,11 @@ import { verlangeMeinBereich } from '@/lib/konto/zugang';
 import { datumText } from '@/lib/lernen/ansicht';
 import { einheitenVon, KeinGruppenZugang, lektionenVon, standDerGruppe, zuweisungsDetails } from '@/lib/lernapp/gruppe/dienst';
 import { WOCHENZIELE } from '@/lib/lernapp/gruppe/regeln';
-import { RICHTUNGEN, istRichtung } from '@/lib/lernapp/kurse';
+import { RICHTUNGEN, istRichtung, richtung } from '@/lib/lernapp/kurse';
+import type { AufgabenText, Stufen } from '@/lib/lernapp/schreiben/abgabe';
+import { abgabeFuerLehrkraft, abgabenDerGruppe, KeinZugang } from '@/lib/lernapp/schreiben/dienst';
+import { EINSTUFUNGEN, KOMMENTAR_MAX_ZEICHEN, STUFEN } from '@/lib/lernapp/schreiben/regeln';
+import { KRITERIEN } from '@/lib/lernapp/aufgaben/auswertung/schreiben';
 import type { LernText } from '@/lib/db/schema/lernapp';
 import { ladeGruppenKontext } from '@/lib/rechte/gemeinde';
 import { darfInGruppe } from '@/lib/rechte/gruppen';
@@ -25,6 +30,7 @@ import {
   lernappZuweisen,
   lernappZuweisungEntfernen,
 } from '@/server/actions/lernapp-gruppe';
+import { lernappAbgabeZurueckgeben } from '@/server/actions/lernapp-schreiben';
 
 /** Je Anfrage gerendert, wartet auf die Sitzung (siehe Layout). */
 export const instant = false;
@@ -35,8 +41,19 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const UUID = /^[0-9a-f-]{36}$/i;
-const OK = ['zugewiesen', 'entfernt', 'ziel', 'bestenliste', 'doppelt', 'grenze', 'ungueltig'] as const;
-const FEHLER_OK: ReadonlySet<string> = new Set(['doppelt', 'grenze', 'ungueltig']);
+const OK = [
+  'zugewiesen',
+  'entfernt',
+  'ziel',
+  'bestenliste',
+  'doppelt',
+  'grenze',
+  'ungueltig',
+  'zurueckgegeben',
+  'abgabeLeer',
+  'abgabeWeg',
+] as const;
+const FEHLER_OK: ReadonlySet<string> = new Set(['doppelt', 'grenze', 'ungueltig', 'abgabeLeer', 'abgabeWeg']);
 
 /**
  * Lehrkraft › Lern-App der Gruppe (L7-02; PLAN §3.1 Konto-Seite; ADR 0043 Nr. 7/8; KERN 4.0 §5): Einheit oder Lektion
@@ -44,6 +61,10 @@ const FEHLER_OK: ReadonlySet<string> = new Set(['doppelt', 'grenze', 'ungueltig'
  * Gruppenziel, Bestenliste (nur mit `lernapp_rangliste`) und der Stand der Woche – Zahlen nur von Lernenden mit
  * Einwilligung `lernapp`. Nur die Lehrkraft der Gruppe (`aufgabe.bearbeiten`, nicht die Aufsicht) und nur mit
  * `lernapp_gruppen`; sonst 404 wie „gibt es nicht“.
+ *
+ * Korrekturweg (L5-03, ADR 0042 Nr. 11): Liste der Schreibabgaben der Gruppe ohne Texte; mit `?abgabe=<id>` die eine Abgabe
+ * mit Text, Selbsteinschätzung und dem Formular für die Rückmeldung (Kommentar, Prüfliste, Einstufung ohne Note). Sichtbar
+ * nur, solange die lernende Person laufendes Mitglied ist und ihre Einwilligung gilt (`schreiben/dienst.ts`).
  */
 export default async function LernAppGruppe({ params, searchParams }: PageProps<'/[locale]/mein-bereich/unterricht/[gruppe]/lern-app'>) {
   // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
@@ -56,7 +77,8 @@ export default async function LernAppGruppe({ params, searchParams }: PageProps<
   const kontext = await ladeGruppenKontext(k.benutzerId);
   if (!darfInGruppe(kontext, 'aufgabe.bearbeiten', gruppeId)) notFound();
   const heute = berlinerDatum(new Date());
-  const [stand, rangliste, t, einheiten] = await Promise.all([
+  const abgabeId = typeof sp.abgabe === 'string' && UUID.test(sp.abgabe) ? sp.abgabe : null;
+  const [stand, rangliste, t, einheiten, abgaben, abgabe] = await Promise.all([
     standDerGruppe(kontext, gruppeId, heute).catch((e: unknown) => {
       if (e instanceof KeinGruppenZugang) return null;
       throw e;
@@ -64,13 +86,47 @@ export default async function LernAppGruppe({ params, searchParams }: PageProps<
     funktionAn('lernapp_rangliste'),
     getTranslations('unterricht'),
     Promise.all(RICHTUNGEN.map(async (kurs) => ({ kurs, einheiten: await einheitenVon(kurs) }))),
+    abgabenDerGruppe(kontext, gruppeId),
+    abgabeId
+      ? abgabeFuerLehrkraft(kontext, gruppeId, abgabeId).catch((e: unknown) => {
+          if (e instanceof KeinZugang) return null;
+          throw e;
+        })
+      : null,
   ]);
   if (!stand) notFound();
   const tl = (s: string, w?: Record<string, string | number>) => t(`lernapp.${s}`, w);
   const name = text(stand.name, sprache);
   const themaIn = (thema: LernText | null | undefined) => (thema ? (thema[sprache === 'tr' ? 'tr' : 'de'] ?? thema.de ?? '') : '');
   const kursName = (kurs: string) => (istRichtung(kurs) ? tl(`kurs.${kurs}`) : kurs);
-  const ok = typeof sp.ok === 'string' && (OK as readonly string[]).includes(sp.ok) ? sp.ok : null;
+  const ok = typeof sp.ok === 'string' && (OK as readonly string[]).includes(sp.ok) ? sp.ok : abgabeId && !abgabe ? 'abgabeWeg' : null;
+  const tag = (d: Date) => datumText(berlinerDatum(d), sprache);
+  const stufeText = (w: number | undefined) => (w === undefined ? tl('korrektur.keineAngabe') : tl(`korrektur.stufe.s${w}`));
+  const aufgabeAnzeige = (a: AufgabenText | null) =>
+    a ? (
+      <span lang={a.sprache} dir={richtung(a.sprache)} className={a.sprache === 'ar' ? 'font-arabic' : undefined}>
+        {a.text}
+      </span>
+    ) : (
+      <span className="text-tinte-2">{tl('abgaben.aufgabeFehlt')}</span>
+    );
+  const stufenListe = (stufen: Stufen) => (
+    <dl className="grid grid-cols-1 gap-x-6 gap-y-1 sm:grid-cols-2">
+      {KRITERIEN.map((k) => (
+        <div key={k} className="flex flex-wrap gap-2">
+          <dt className="font-bold">{tl(`korrektur.kriterium.${k}`)}:</dt>
+          <dd>{stufeText(stufen[k])}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+  const seitenZiel = (query?: Record<string, string>, hash?: string) =>
+    ({
+      pathname: '/mein-bereich/unterricht/[gruppe]/lern-app',
+      params: { gruppe: gruppeId },
+      ...(query ? { query } : {}),
+      ...(hash ? { hash } : {}),
+    }) as const;
 
   // Schritt 2: gewählte Einheit (`?einheit=<kurs>|<einheit>`) mit ihren Lektionen
   const wahl = typeof sp.einheit === 'string' ? sp.einheit.split('|') : [];
@@ -225,6 +281,159 @@ export default async function LernAppGruppe({ params, searchParams }: PageProps<
           <p className="text-tinte-2">{tl('zuweisungen.leer')}</p>
         )}
       </Abschnitt>
+
+      <Abschnitt id="abgaben" Icon={PenLine} titel={tl('abgaben.titel')} text={tl('abgaben.text')}>
+        {abgaben.length ? (
+          <ul className="flex flex-col divide-y divide-linie">
+            {abgaben.map((a) => (
+              <li key={a.id} className="flex flex-col gap-3 py-4 first:pt-0 last:pb-0 sm:flex-row sm:items-center">
+                <div className="flex min-w-0 flex-1 flex-col gap-1">
+                  <span className="font-bold">{a.name}</span>
+                  <span className="text-16">
+                    {kursName(a.kurs)} · {aufgabeAnzeige(a.aufgabe)}
+                  </span>
+                  <span className="flex flex-wrap items-center gap-2 text-16 text-tinte-2">
+                    <Pille ton={a.zustand === 'offen' ? 'sand' : 'gruen'}>
+                      {tl(a.zustand === 'offen' ? 'abgaben.offen' : 'abgaben.zurueckgegeben')}
+                    </Pille>
+                    <span>{tl('abgaben.gesendet', { datum: tag(a.eingereichtAm) })}</span>
+                  </span>
+                </div>
+                <Link
+                  href={seitenZiel({ abgabe: a.id }, 'korrektur')}
+                  prefetch={false}
+                  aria-label={tl('abgaben.oeffnenAria', { name: a.name })}
+                  aria-current={abgabe?.id === a.id ? 'true' : undefined}
+                  className={KNOPF_SEKUNDAER}
+                >
+                  {tl('abgaben.oeffnen')}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <LeerHinweis text={tl('abgaben.leer')} />
+        )}
+      </Abschnitt>
+
+      {abgabe ? (
+        <Abschnitt
+          id="korrektur"
+          Icon={MessageSquareText}
+          titel={tl('korrektur.titel')}
+          text={tl('korrektur.von', { name: abgabe.name, datum: tag(abgabe.eingereichtAm) })}
+        >
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-2 rounded-md bg-sand p-4">
+              <h3 className="text-18 font-bold">{tl('korrektur.aufgabe')}</h3>
+              <p className="text-18">
+                {kursName(abgabe.kurs)} · {aufgabeAnzeige(abgabe.aufgabe)}
+              </p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-18 font-bold">{tl('korrektur.text')}</h3>
+              <p
+                lang={abgabe.aufgabe?.sprache}
+                dir={abgabe.aufgabe ? richtung(abgabe.aufgabe.sprache) : 'auto'}
+                className={`rounded-md border-2 border-linie bg-weiss p-4 text-18 whitespace-pre-wrap ${abgabe.aufgabe?.sprache === 'ar' ? 'font-arabic' : ''}`}
+              >
+                {abgabe.text}
+              </p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-18 font-bold">{tl('korrektur.selbst')}</h3>
+              {Object.keys(abgabe.selbst).length ? stufenListe(abgabe.selbst) : <p className="text-tinte-2">{tl('korrektur.selbstLeer')}</p>}
+            </div>
+            {abgabe.korrigiertAm ? (
+              <p className="flex flex-wrap items-center gap-2">
+                <Pille ton="gruen">{tl('abgaben.zurueckgegeben')}</Pille>
+                {tl('korrektur.bisher', { datum: tag(abgabe.korrigiertAm) })}
+              </p>
+            ) : null}
+            <form action={lernappAbgabeZurueckgeben} className="flex flex-col gap-5 rounded-md bg-papier p-4 md:p-5">
+              <input type="hidden" name="sprache" value={sprache} />
+              <input type="hidden" name="gruppe" value={gruppeId} />
+              <input type="hidden" name="abgabe" value={abgabe.id} />
+              <fieldset className="flex flex-col gap-4">
+                <legend className="mb-2 font-bold">{tl('korrektur.pruefliste')}</legend>
+                {KRITERIEN.map((k) => (
+                  <fieldset key={k} className="flex flex-col gap-1">
+                    <legend className="mb-1 font-bold">{tl(`korrektur.kriterium.${k}`)}</legend>
+                    <div className="flex flex-wrap gap-x-5">
+                      <label className="flex min-h-11 cursor-pointer items-center gap-3">
+                        <input
+                          type="radio"
+                          name={`pruefliste.${k}`}
+                          value=""
+                          defaultChecked={abgabe.pruefliste[k] === undefined}
+                          className="size-5 accent-gruen-700"
+                        />
+                        {tl('korrektur.keineAngabe')}
+                      </label>
+                      {STUFEN.map((st) => (
+                        <label key={st} className="flex min-h-11 cursor-pointer items-center gap-3">
+                          <input
+                            type="radio"
+                            name={`pruefliste.${k}`}
+                            value={st}
+                            defaultChecked={abgabe.pruefliste[k] === st}
+                            className="size-5 accent-gruen-700"
+                          />
+                          {stufeText(st)}
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
+                ))}
+              </fieldset>
+              <fieldset className="flex flex-col gap-1">
+                <legend className="mb-2 font-bold">{tl('korrektur.einstufung')}</legend>
+                <label className="flex min-h-11 cursor-pointer items-center gap-3">
+                  <input type="radio" name="einstufung" value="" defaultChecked={!abgabe.einstufung} className="size-5 accent-gruen-700" />
+                  {tl('korrektur.keineAngabe')}
+                </label>
+                {EINSTUFUNGEN.map((e) => (
+                  <label key={e} className="flex min-h-11 cursor-pointer items-center gap-3">
+                    <input
+                      type="radio"
+                      name="einstufung"
+                      value={e}
+                      defaultChecked={abgabe.einstufung === e}
+                      className="size-5 accent-gruen-700"
+                    />
+                    {tl(`korrektur.einstufungen.${e}`)}
+                  </label>
+                ))}
+              </fieldset>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="lernapp-kommentar" className="font-bold">
+                  {tl('korrektur.kommentar')}
+                </label>
+                <textarea
+                  id="lernapp-kommentar"
+                  name="kommentar"
+                  rows={6}
+                  maxLength={KOMMENTAR_MAX_ZEICHEN}
+                  defaultValue={abgabe.kommentar ?? ''}
+                  aria-describedby="lernapp-kommentar-hilfe"
+                  className="w-full rounded-md border-2 border-rand bg-weiss p-3 text-18"
+                />
+                <p id="lernapp-kommentar-hilfe" className="text-16 text-tinte-2">
+                  {tl('korrektur.kommentarHilfe')}
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <button type="submit" className={KNOPF_PRIMAER}>
+                  {tl(abgabe.korrigiertAm ? 'korrektur.aendern' : 'korrektur.zurueckgeben')}
+                </button>
+                <Link href={seitenZiel(undefined, 'abgaben')} prefetch={false} className={KNOPF_LEISE}>
+                  {tl('korrektur.schliessen')}
+                </Link>
+              </div>
+            </form>
+          </div>
+        </Abschnitt>
+      ) : null}
 
       <Abschnitt id="gruppenziel" Icon={Target} titel={tl('ziel.titel')} text={tl('ziel.text')}>
         <div className="flex flex-col gap-4">

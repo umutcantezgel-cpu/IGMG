@@ -868,6 +868,62 @@
       "gut": "Gut"
     }
   },
+  "schreibabgabe": {
+    "titel": "An deine Lehrkraft senden",
+    "text": "Hat dir deine Lehrkraft diese Aufgabe gegeben, kannst du ihr deinen Text schicken. Nur sie sieht ihn und gibt dir eine Rückmeldung. Der Text wird verschlüsselt gespeichert und nach 12 Monaten gelöscht.",
+    "ohneKonto": "Mit deinem Konto kannst du Texte an die Lehrkraft deiner Lerngruppe schicken. Verbinde die Lern-App dazu in den Einstellungen mit deinem Konto.",
+    "laedt": "Wird geprüft …",
+    "an": "Geht an die Lehrkraft der Gruppe {gruppe}.",
+    "gruppeWahl": "An welche Gruppe?",
+    "senden": "An die Lehrkraft senden",
+    "sendet": "Wird gesendet …",
+    "gesendet": "Gesendet. Die Rückmeldung deiner Lehrkraft findest du unter „Gruppe“.",
+    "zurGruppe": "Zur Gruppe",
+    "anmelden": "Anmelden (öffnet ein neues Fenster)",
+    "erneut": "Erneut versuchen",
+    "grund": {
+      "zuweisung": "Diese Aufgabe hat dir deine Lehrkraft nicht zugewiesen. Dein Text bleibt auf diesem Gerät.",
+      "aufgabe": "Diese Aufgabe lässt sich nicht senden. Dein Text bleibt auf diesem Gerät.",
+      "einwilligung": "Ohne deine Einwilligung „Lern-App“ kannst du keinen Text senden. Dein Text bleibt auf diesem Gerät.",
+      "eltern": "Deine Eltern können die Einwilligung „Lern-App“ geben. Bis dahin bleibt dein Text auf diesem Gerät.",
+      "anmeldung": "Bitte melde dich noch einmal an. Dein Text bleibt hier stehen, solange diese Seite offen ist.",
+      "grenze": "Zu dieser Aufgabe hast du schon mehrere Texte gesendet.",
+      "bremse": "Gerade wurde oft gesendet. Versuche es später noch einmal.",
+      "fehler": "Gerade klappt das Senden nicht. Versuche es später noch einmal."
+    },
+    "liste": {
+      "titel": "Meine Schreibabgaben",
+      "einleitung": "Texte, die du an deine Lehrkraft gesendet hast, und ihre Rückmeldungen. Sie werden 12 Monate nach dem Senden gelöscht.",
+      "laedt": "Wird geladen …",
+      "leer": "Du hast noch keinen Text gesendet.",
+      "fehler": "Gerade lassen sich deine Abgaben nicht laden. Versuche es später noch einmal.",
+      "gesendetAm": "gesendet am {datum}",
+      "gruppe": "Gruppe {gruppe}",
+      "offen": "Rückmeldung folgt",
+      "zurueck": "Rückmeldung da",
+      "aufgabe": "Aufgabe",
+      "aufgabeFehlt": "Diese Aufgabe gibt es im Kurs nicht mehr.",
+      "meinText": "Mein Text",
+      "selbst": "Meine Einschätzung",
+      "rueckmeldung": "Rückmeldung deiner Lehrkraft",
+      "kommentar": "Kommentar",
+      "pruefliste": "Einschätzung nach der Prüfliste",
+      "loeschen": "Abgabe löschen",
+      "loeschenAria": "Abgabe vom {datum} löschen",
+      "geloescht": "Die Abgabe ist gelöscht."
+    },
+    "stufe": {
+      "s0": "noch am Anfang",
+      "s1": "teilweise",
+      "s2": "überwiegend",
+      "s3": "sicher"
+    },
+    "einstufung": {
+      "erreicht": "Aufgabe gut gelöst",
+      "unterwegs": "Auf einem guten Weg",
+      "nochmal": "Es lohnt sich, den Text noch einmal zu schreiben."
+    }
+  },
   "sprachausgabe": {
     "titel": "Sprachausgabe (synthetische Stimme)",
     "text": "Die Hörübungen nutzen eine synthetische Stimme. Die Aufnahmen wurden vorab erzeugt und geprüft; auf diesem Gerät läuft keine Sprachausgabe. Gibt es für eine Sprache noch keine freigegebene Stimme, steht bei der Übung „Audio folgt“.",
