@@ -19,7 +19,7 @@ const freigaben = await import('@/server/actions/freigaben');
 const koran = await import('@/server/actions/koran');
 const { ladeReligioeseBausteine, ladeReligioesenBaustein, religioesSichtbar, lektionReligioesSichtbar, koranBedeutungHash } =
   await import('@/server/queries/lernapp/religioes');
-const { ladeVerlauf, ladeWarteschlange } = await import('@/server/queries/verwaltung/freigaben');
+const { ladeVerlauf, ladeWarteschlange, ladeWarteschlangeMitUeberlauf } = await import('@/server/queries/verwaltung/freigaben');
 
 afterAll(() => client.close());
 afterEach(() => {
@@ -358,6 +358,16 @@ describe('Freigaben-Integration', () => {
     expect(
       await freigaben.entscheideFreigabe({}, formular({ inhaltTyp: 'lernapp_aussage', inhaltId: ids.aussage, entscheidung: 'freigeben' })),
     ).toEqual({ fehler: 'zweiPruefer' });
+  });
+
+  it('Überlauf der Grenze: weitere Lern-App-Bausteine werden gezählt (Verweis auf die vollständige Liste)', async () => {
+    const person = (await angemeldetAls(RELIGIOES))!;
+    const alle = (await ladeWarteschlangeMitUeberlauf(person)).eintraege.filter((e) => e.inhaltTyp.startsWith('lernapp_'));
+    expect(alle.length).toBeGreaterThan(1);
+    expect((await ladeWarteschlangeMitUeberlauf(person)).lernappWeitere).toBe(0);
+    const knapp = await ladeWarteschlangeMitUeberlauf(person, 1);
+    expect(knapp.eintraege.filter((e) => e.inhaltTyp.startsWith('lernapp_'))).toHaveLength(1);
+    expect(knapp.lernappWeitere).toBe(alle.length - 1);
   });
 
   it('Hadith-Übersetzung mit KI-Angabe in Quelle oder Übersetzer: Freigabe verweigert', async () => {
