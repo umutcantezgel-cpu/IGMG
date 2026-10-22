@@ -158,18 +158,21 @@ export async function reicheEin(
   if (!m.gruppen.some((g) => g.id === e.gruppe)) throw new AbgabeAbgelehnt('zuweisung');
 
   const A = schema.lernappSchreibabgabe;
-  const [[jeAufgabe], [jeKonto]] = await Promise.all([
-    db
-      .select({ n: count() })
-      .from(A)
-      .where(and(eq(A.benutzerId, konto.benutzerId), eq(A.aufgabeSchluessel, schluessel), eq(A.gruppeId, e.gruppe))),
-    db.select({ n: count() }).from(A).where(eq(A.benutzerId, konto.benutzerId)),
-  ]);
-  if ((jeAufgabe?.n ?? 0) >= ABGABEN_JE_AUFGABE || (jeKonto?.n ?? 0) >= ABGABEN_JE_KONTO) throw new AbgabeAbgelehnt('grenze');
-
   const v = verschluessele({ text: e.text });
   const rubrik: LernappRubrik = { pruefliste: e.pruefliste };
   return db.transaction(async (tx) => {
+    // Grenzen zählen und einfügen in einem Zug: Die Zeile des Kontos bleibt bis zum Ende gesperrt, damit gleichzeitige
+    // Abgaben desselben Kontos nacheinander zählen und die Grenzen nicht gemeinsam überschreiten (Gegenprüfung L5-03).
+    // `no key update` hält Fremdschlüssel-Prüfungen anderer Tabellen (Sitzung, Audit) nicht auf.
+    await tx.select({ id: schema.user.id }).from(schema.user).where(eq(schema.user.id, konto.benutzerId)).for('no key update');
+    const [[jeAufgabe], [jeKonto]] = await Promise.all([
+      tx
+        .select({ n: count() })
+        .from(A)
+        .where(and(eq(A.benutzerId, konto.benutzerId), eq(A.aufgabeSchluessel, schluessel), eq(A.gruppeId, e.gruppe))),
+      tx.select({ n: count() }).from(A).where(eq(A.benutzerId, konto.benutzerId)),
+    ]);
+    if ((jeAufgabe?.n ?? 0) >= ABGABEN_JE_AUFGABE || (jeKonto?.n ?? 0) >= ABGABEN_JE_KONTO) throw new AbgabeAbgelehnt('grenze');
     const neu = await tx
       .insert(A)
       .values({
@@ -434,7 +437,7 @@ export async function gibZurueck(
     ...(r.einstufung ? { einstufung: r.einstufung } : {}),
   };
   await db.transaction(async (tx) => {
-    await tx
+    const getroffen = await tx
       .update(schema.lernappSchreibabgabe)
       .set({
         rubrik,
@@ -443,7 +446,10 @@ export async function gibZurueck(
         korrigiertVon: kontext.benutzerId,
         korrigiertAm: jetzt,
       })
-      .where(and(eq(schema.lernappSchreibabgabe.id, id), eq(schema.lernappSchreibabgabe.gruppeId, gruppeId)));
+      .where(and(eq(schema.lernappSchreibabgabe.id, id), eq(schema.lernappSchreibabgabe.gruppeId, gruppeId)))
+      .returning({ id: schema.lernappSchreibabgabe.id });
+    // Inzwischen gelöscht (die Person hat ihre Abgabe zurückgezogen): keine Rückgabe, also auch kein Audit-Eintrag
+    if (!getroffen.length) throw new KeinZugang();
     await protokolliere(
       {
         benutzerId: kontext.benutzerId,

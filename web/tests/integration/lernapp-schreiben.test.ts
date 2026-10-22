@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { and, eq } from 'drizzle-orm';
-import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest';
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { db as appDb, schema } from '@/lib/db';
 import { verschluessele } from '@/lib/krypto';
 import type { ListeAntwort, PruefAntwort } from '@/lib/lernapp/schreiben/abgabe';
@@ -13,7 +13,25 @@ import { kontoUmgebung } from './hilfen/konto';
  * Administration lesen nie); Austritt und Widerruf machen Abgaben sofort unlesbar; Rückgabe mit Prüfliste und Einstufung,
  * Ansicht der eigenen Abgaben, Löschen jederzeit (auch ohne Schalter), Datenexport, Löschlauf nach 12 Monaten. Route:
  * Ursprung, Anmeldung, Größe, Idempotenz, Grenzen. Testdaten fiktiv, Namen Platzhalter, Texte neutrale Alltagssätze.
+ * Gegenprüfung L5-03: Rückgabe einer gerade gelöschten Abgabe ohne Audit-Eintrag; gleichzeitige Abgaben überschreiten die
+ * Grenzen nicht.
  */
+// Einmaliger Eingriff vor der nächsten Einwilligungsprüfung – in `lesbare` liegt sie zwischen Lesen und Schreiben der
+// Rückgabe; so lässt sich „die Person löscht ihre Abgabe, während die Lehrkraft zurückgibt“ ohne Zufall nachstellen
+const zwischendurch = vi.hoisted(() => ({ einmal: null as null | (() => Promise<unknown>) }));
+vi.mock('@/lib/lernapp/sync/server', async (original) => {
+  const echt = await original<typeof import('@/lib/lernapp/sync/server')>();
+  return {
+    ...echt,
+    lernappEinwilligung: async (...a: Parameters<typeof echt.lernappEinwilligung>) => {
+      const eingriff = zwischendurch.einmal;
+      zwischendurch.einmal = null;
+      if (eingriff) await eingriff();
+      return echt.lernappEinwilligung(...a);
+    },
+  };
+});
+
 const { client, db } = await kontoUmgebung();
 const { auth } = await import('@/lib/auth/server');
 const route = await import('@/app/api/lernapp/schreiben/route');
@@ -66,7 +84,7 @@ async function gruppe(name: string): Promise<string> {
   return g!.id;
 }
 
-const KURS = 'tr-aus-de';
+const KURS = 'tr-aus-de' as const;
 /** Schreibaufgabe des Testkurses (Lektion l04) und eine Aufgabe anderen Typs */
 const AUFGABE = 'tr.a1.e01.l04.a08';
 const KEINE_SCHREIBAUFGABE = 'tr.a1.e01.l01.a01';
@@ -331,6 +349,21 @@ describe('Lehrkraft: nur die eigene Gruppe, nur lesbare Abgaben', () => {
     expect(abgaben.every((x) => x.text !== KIND_TEXT)).toBe(true);
   });
 
+  it('Rückgabe, während die Person ihre Abgabe löscht: KeinZugang und kein Audit-Eintrag „zurückgegeben“', async () => {
+    const a = await kontext(ids.lehrkraftA);
+    const offen = (await dienst.abgabenDerGruppe(a, ids.gruppe1)).find((z) => z.name === '[Erwachsen] W' && z.zustand === 'offen')!;
+    const A = schema.lernappSchreibabgabe;
+    // Zwischen dem Lesen (`lesbare`) und dem Schreiben verschwindet die Abgabe – wie `loescheEigeneAbgabe`
+    zwischendurch.einmal = () => db.delete(A).where(eq(A.id, offen.id));
+    await expect(
+      dienst.gibZurueck(a, ids.gruppe1, offen.id, { kommentar: KOMMENTAR, pruefliste: { aufgabe: 1 }, einstufung: 'nochmal' }),
+    ).rejects.toBeInstanceOf(dienst.KeinZugang);
+    expect(zwischendurch.einmal).toBeNull();
+    expect(await db.select({ id: A.id }).from(A).where(eq(A.id, offen.id))).toEqual([]);
+    const audit = await db.select().from(schema.auditEintrag).where(eq(schema.auditEintrag.aktion, 'lernapp.schreibabgabe_zurueckgegeben'));
+    expect(audit.filter((e) => (e.details as { abgabe?: string } | null)?.abgabe === offen.id)).toEqual([]);
+  });
+
   it('Austritt aus der Gruppe: sofort nicht mehr lesbar (Liste, Abgabe, Rückgabe); die Person sieht sie weiter', async () => {
     const a = await kontext(ids.lehrkraftA);
     const kind = (await dienst.abgabenDerGruppe(a, ids.gruppe1)).find((z) => z.name === '[Kind] K')!;
@@ -415,5 +448,22 @@ describe('Schalter, Löschen, Datenexport, Löschlauf', () => {
     const ergebnis = await gemeindeLoeschlauf(spaeter);
     expect(ergebnis.lernappAbgaben).toBe(vorher);
     expect(await db.select({ id: A.id }).from(A)).toEqual([]);
+  });
+});
+
+describe('Gleichzeitige Abgaben (Gegenprüfung L5-03)', () => {
+  it('überschreiten die Grenze je Aufgabe und Gruppe nicht: Zählen und Einfügen in einem Zug', async () => {
+    const id = await konto('[Erwachsen] P', { rollen: ['schueler'], einwilligung: true });
+    const lernendeId = await lernende(id, '[Erwachsen] P', '2010-01-01');
+    await db.insert(schema.gruppenMitglied).values({ gruppeId: ids.gruppe1, lernendeId });
+    const k = await kontext(id);
+    const versuche = await Promise.allSettled(
+      Array.from({ length: 5 }, () => dienst.reicheEin({ benutzerId: id, istKind: false }, k, abgabe(ids.gruppe1))),
+    );
+    expect(versuche.filter((v) => v.status === 'fulfilled').map((v) => v.value)).toEqual(['eingereicht', 'eingereicht', 'eingereicht']);
+    const abgelehnt = versuche.flatMap((v) => (v.status === 'rejected' ? [v.reason as InstanceType<typeof dienst.AbgabeAbgelehnt>] : []));
+    expect(abgelehnt.map((e) => e.grund)).toEqual(['grenze', 'grenze']);
+    const A = schema.lernappSchreibabgabe;
+    expect(await db.select({ id: A.id }).from(A).where(eq(A.benutzerId, id))).toHaveLength(3);
   });
 });

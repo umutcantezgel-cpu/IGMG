@@ -120,7 +120,7 @@ Mit einem Konto der Gemeinde kannst du später:
 
 - den Lernstand auf **mehreren Geräten** abgleichen (Einstellungen → „Konto und Abgleich“),
 - unter **„Gruppe“** sehen, was deine Lehrkraft dir zugewiesen hat, und das **Gruppenziel** der Woche,
-- Texte aus Schreibübungen mit **„An die Lehrkraft senden“** an deine Lehrkraft schicken, wenn sie dir die Lektion zugewiesen hat. Ihre Rückmeldung (Kommentar, Prüfliste, Einstufung ohne Note) findest du unter **„Gruppe“** → **„Meine Schreibabgaben“**; dort kannst du jede Abgabe löschen. Sonst wird sie 12 Monate nach dem Senden gelöscht,
+- Texte aus Schreibübungen mit **„An die Lehrkraft senden“** an deine Lehrkraft schicken, wenn sie dir die Lektion zugewiesen hat. Ist die Lern-App nicht mit deinem Konto verbunden, wähle zuerst **„Mit meinem Konto prüfen“** (dafür genügt die Anmeldung auf der Website). Ihre Rückmeldung (Kommentar, Prüfliste, Einstufung ohne Note) findest du unter **„Gruppe“** → **„Meine Schreibabgaben“**; dort kannst du jede Abgabe löschen. Sonst wird sie 12 Monate nach dem Senden gelöscht,
 - ab 16 Jahren freiwillig in der **Bestenliste** deiner Gruppe oder Familie erscheinen (nur Vorname mit Initial, nur mit deiner Zustimmung; unter 16 nie).
 
 Dafür braucht es deine **Einwilligung „Lern-App“** im Konto (bei Kindern die der Eltern). Bis die Gemeinde das einschaltet, zeigt die App „Der Abgleich ist gerade nicht verfügbar“. Ohne Konto funktioniert alles andere genauso.

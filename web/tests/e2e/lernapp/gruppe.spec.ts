@@ -3,6 +3,7 @@ import { gzipSync } from 'node:zlib';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, type Page, test } from '@playwright/test';
 import pg from 'pg';
+import fehlerTexte from '../../../messages/bereiche/fehlerseiten.json';
 import kinderTexte from '../../../messages/bereiche/kinder.json';
 import unterrichtTexte from '../../../messages/bereiche/unterricht.json';
 import de from '../../../messages/lernapp/de.json';
@@ -21,8 +22,10 @@ import { ernsteBefunde, KURS, LEKTION_1, liveRegion, spieleLektion1 } from './hi
  * übersprungen.
  *
  * Danach der Korrekturweg (Tor L5 „Schreibabläufe in E2E“; L5-03; PLAN §4.3; ADR 0042 Nr. 11): Die Lehrkraft weist
- * Lektion 4 (mit der Schreibaufgabe) zu; das Kind schreibt den Text, prüft ihn und sendet ihn an die Lehrkraft; die
- * Lehrkraft gibt eine Rückmeldung (Prüfliste, Einstufung ohne Note, Kommentar) zurück; das Kind sieht sie unter „Gruppe“.
+ * Lektion 4 (mit der Schreibaufgabe) zu; das Kind schreibt den Text, prüft ihn und sendet ihn an die Lehrkraft – ohne
+ * verbundenes Gerät über „Mit meinem Konto prüfen“ (die Abgabe braucht keinen Abgleich); die Lehrkraft gibt eine
+ * Rückmeldung (Prüfliste, Einstufung ohne Note, Kommentar) zurück; die Aufsicht derselben Gruppe sieht weder Liste noch
+ * Text (ADR 0042 „Folgen“); das Kind sieht die Rückmeldung unter „Gruppe“.
  * Beide Abläufe teilen Gruppe und Kind und laufen deshalb in dieser Datei nacheinander (nie parallel in zwei Dateien).
  */
 const u = unterrichtTexte.de.unterricht.lernapp;
@@ -265,7 +268,8 @@ test('Kind sendet einen Text an die Lehrkraft, die Lehrkraft gibt ihn mit Rückm
   browser,
 }, info) => {
   test.skip(info.project.name !== 'desktop', 'einmal je Lauf genügt');
-  test.skip(!['FUNKTION_LERNAPP_SYNC', 'FUNKTION_LERNAPP_GRUPPEN'].every(an), 'Schalter der Lern-App-Gruppen aus (LIESMICH)');
+  // Ohne `lernapp_sync`: Die Abgabe geht mit der Anmeldung der Website, ohne verbundenes Gerät (Gegenprüfung L5-03)
+  test.skip(!an('FUNKTION_LERNAPP_GRUPPEN'), 'Schalter der Lern-App-Gruppen aus (LIESMICH)');
   test.setTimeout(300_000);
   const z = beispielkonten();
   const gruppe = z.lernplattform.gruppeId;
@@ -276,6 +280,7 @@ test('Kind sendet einen Text an die Lehrkraft, die Lehrkraft gibt ihn mit Rückm
 
   const lehrkraft = await browser.newContext();
   const kind = await browser.newContext();
+  const aufsicht = await browser.newContext();
   try {
     // 1. Lehrkraft weist Lektion 4 (mit der Schreibaufgabe) zu
     const l = await lehrkraft.newPage();
@@ -289,13 +294,11 @@ test('Kind sendet einen Text an die Lehrkraft, die Lehrkraft gibt ihn mit Rückm
     await expect(l.getByText(u.ok.zugewiesen, { exact: true })).toBeVisible();
     await expect(l.locator('#abgaben')).toContainText(u.abgaben.leer);
 
-    // 2. Kind: Lern-App mit dem Zugang verbinden, Lektion 4 bis zum Schreiben, Text prüfen und an die Lehrkraft senden
+    // 2. Kind: angemeldet, die Lern-App aber nicht mit dem Zugang verbunden; Lektion 4 bis zum Schreiben, Text prüfen,
+    //    „Mit meinem Konto prüfen“ (erst jetzt fragt die Übung den Server) und an die Lehrkraft senden
     const k = await kind.newPage();
     await eigeneAbsenderAdresse(k);
     await kindAnmelden(k, z.kind);
-    await k.goto('/lern-app/de/einstellungen');
-    await k.getByRole('button', { name: de.konto.verbinden }).click();
-    await expect(k.getByText(de.konto.verbunden)).toBeVisible({ timeout: 30_000 });
 
     await k.goto(`/lern-app/de/${KURS}/ueben?l=${LEKTION_4}`);
     await bisZumSchreiben(k);
@@ -305,7 +308,10 @@ test('Kind sendet einen Text an die Lehrkraft, die Lehrkraft gibt ihn mit Rückm
     for (const kriterium of ['aufgabe', 'zusammenhang', 'wortschatz', 'grammatik'] as const)
       await waehle(k, de.schreiben.pruefliste[kriterium].s2);
     const abgabe = k.getByRole('region', { name: sa.titel, exact: true });
+    await expect(abgabe).toContainText(sa.ohneKonto);
+    await abgabe.getByRole('button', { name: sa.kontoPruefen, exact: true }).click();
     await expect(abgabe).toContainText(z.lernplattform.gruppe);
+    await expect(abgabe.getByRole('button', { name: sa.senden, exact: true })).toBeFocused();
     const anfragen: string[] = [];
     k.on('request', (r) => {
       if (r.url().includes('/api/lernapp/schreiben')) anfragen.push(`${r.method()} ${r.postData() ?? ''}`);
@@ -324,6 +330,8 @@ test('Kind sendet einen Text an die Lehrkraft, die Lehrkraft gibt ihn mit Rückm
     await expect(liste).toContainText(emre.name);
     await expect(liste).toContainText(u.abgaben.offen);
     await liste.getByRole('link', { name: u.abgaben.oeffnenAria.replace('{name}', emre.name), exact: true }).click();
+    await expect(l).toHaveURL(/[?&]abgabe=[0-9a-f-]{36}/);
+    const abgabeId = new URL(l.url()).searchParams.get('abgabe')!;
     const korrektur = l.locator('#korrektur');
     await expect(korrektur).toContainText(TEXT);
     await expect(korrektur).toContainText(u.korrektur.selbst);
@@ -342,8 +350,25 @@ test('Kind sendet einen Text an die Lehrkraft, die Lehrkraft gibt ihn mit Rückm
     await expect(l.getByText(u.ok.zurueckgegeben, { exact: true })).toBeVisible();
     await expect(l.locator('#abgaben')).toContainText(u.abgaben.zurueckgegeben);
 
-    // 4. Kind: Rückmeldung unter „Gruppe“ (Kommentar, Prüfliste, Einstufung ohne Note)
+    // 4. Aufsicht derselben Gruppe (ADR 0042 „Folgen“: nur die Lehrkraft der Gruppe sieht den Text): weder die Liste noch
+    //    die Abgabe – „nicht gefunden“ wie bei einer erfundenen Adresse (200 als Soft-404 oder 404, wie
+    //    mein-bereich-lernen.spec.ts), ohne Text und Kommentar
+    const a = await aufsicht.newPage();
+    await eigeneAbsenderAdresse(a);
+    await leitungAnmelden(a, z.aufsicht);
+    for (const pfad of [seite, `${seite}?abgabe=${abgabeId}`]) {
+      const antwort = await a.goto(pfad);
+      expect([200, 404]).toContain(antwort?.status());
+      await expect(a.getByRole('heading', { level: 1, name: fehlerTexte.de.fehlerseiten.nichtGefunden.titel })).toBeVisible();
+      await expect(a.locator('body')).not.toContainText(TEXT);
+      await expect(a.locator('body')).not.toContainText(KOMMENTAR);
+      await expect(a.locator('#abgaben')).toHaveCount(0);
+    }
+
+    // 5. Kind: Rückmeldung unter „Gruppe“ (Kommentar, Prüfliste, Einstufung ohne Note); ohne verbundenes Gerät erst nach
+    //    „Meine Gruppe anzeigen“
     await k.goto('/lern-app/de/gruppe');
+    await k.getByRole('button', { name: de.gruppe.laden, exact: true }).click();
     const meine = k.getByRole('region', { name: sa.liste.titel, exact: true });
     await expect(meine.getByRole('heading', { level: 2, name: sa.liste.titel })).toBeVisible();
     await expect(meine).toContainText(sa.liste.zurueck);
@@ -357,5 +382,6 @@ test('Kind sendet einen Text an die Lehrkraft, die Lehrkraft gibt ihn mit Rückm
   } finally {
     await lehrkraft.close();
     await kind.close();
+    await aufsicht.close();
   }
 });

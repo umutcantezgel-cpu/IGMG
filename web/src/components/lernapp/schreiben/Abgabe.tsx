@@ -17,7 +17,7 @@ const NEBEN = `${KNOPF} border-2 border-gruen-700 bg-weiss text-gruen-800 hover:
 
 type Grund = KeineAbgabe | 'anmeldung' | 'grenze' | 'bremse' | 'fehler';
 type Gruppe = { id: string; name: string };
-type Lage =
+export type Lage =
   | { art: 'pruefe' }
   /** Schalter `lernapp_gruppen` aus (404 ohne Körper) – dann gibt es kein Angebot */
   | { art: 'aus' }
@@ -40,11 +40,17 @@ async function fehlerGrund(r: Response): Promise<Grund> {
   return f?.fehler && GRUENDE.has(f.fehler) ? (f.fehler as Grund) : 'fehler';
 }
 
-/** Darf diese Aufgabe an die Lehrkraft? Ohne verbundenes Konto keine Anfrage (KERN 4.0 §6). */
-async function frage(ui: Oberflaeche, kurs: RichtungId, aufgabe: string): Promise<Lage> {
+/**
+ * Darf diese Aufgabe an die Lehrkraft? Ohne verbundenes Konto fragt die Übung erst nach einer ausdrücklichen Handlung
+ * („Mit meinem Konto prüfen“, KERN 4.0 §6; wie „Meine Gruppe anzeigen“ in `GruppeInsel`). Die Anmeldung der Website
+ * genügt dafür – die Abgabe braucht keinen Abgleich (`lernapp_sync`), sonst wäre sie ohne diesen Schalter eine Sackgasse.
+ */
+export async function frage(ui: Oberflaeche, kurs: RichtungId, aufgabe: string, ausdruecklich = false): Promise<Lage> {
   try {
-    const { profil } = await vorhandenesProfil();
-    if (!profil?.benutzerId) return { art: 'ohneKonto' };
+    if (!ausdruecklich) {
+      const { profil } = await vorhandenesProfil();
+      if (!profil?.benutzerId) return { art: 'ohneKonto' };
+    }
     const such = new URLSearchParams({ ui, kurs, aufgabe });
     const r = await fetch(`${ADRESSE}?${such}`, { headers: { accept: 'application/json' }, cache: 'no-store' });
     if (r.status === 404 && !r.headers.get('content-type')?.includes('json')) return { art: 'aus' };
@@ -59,7 +65,8 @@ async function frage(ui: Oberflaeche, kurs: RichtungId, aufgabe: string): Promis
 /**
  * „An deine Lehrkraft senden“ in der Schreibübung (L5-03; PLAN §4.3; ADR 0042 Nr. 11; KERN 4.0 §5 und §6): eigener Chunk,
  * erst nach „Text prüfen“ geladen und nur mit dem Schalter `lernapp_gruppen`. Ohne verbundenes Konto entsteht keine
- * Anfrage – nur der Hinweis, wie die Abgabe möglich wird. Mit Konto fragt die Übung den Server, ob diese Aufgabe einer
+ * Anfrage, bis die Person „Mit meinem Konto prüfen“ wählt (dann genügt die Anmeldung der Website; ohne sie folgt
+ * „Anmelden“). Mit verbundenem Konto fragt die Übung sofort. Der Server prüft, ob diese Aufgabe einer
  * eigenen Gruppe zugewiesen ist und die Einwilligung `lernapp` gilt (bei Kindern die der Eltern); gesendet wird erst auf
  * Knopfdruck. Die Kennung der Abgabe entsteht einmal je Text: „Erneut versuchen“ sendet dieselbe Kennung, der Server
  * speichert sie nur einmal. Der Text bleibt sonst auf dem Gerät; Meldungen gehen in die eine Live-Region des Spielers.
@@ -115,9 +122,11 @@ export default function Abgabe({
     uebernimm(l);
     setFokus((n) => n + 1);
   };
+  // „Mit meinem Konto prüfen“ und „Erneut versuchen“ sind ausdrückliche Handlungen: Die Übung fragt den Server auch ohne
+  // verbundenes Gerät (Anmeldung der Website; ohne Anmeldung folgt der Hinweis mit „Anmelden“)
   const erneut = () => {
     setLage({ art: 'pruefe' });
-    void frage(ui, kurs, aufgabe).then(zeige);
+    void frage(ui, kurs, aufgabe, true).then(zeige);
   };
 
   const sende = async (gruppen: Gruppe[]) => {
@@ -154,7 +163,14 @@ export default function Abgabe({
       </h4>
       <p className="text-16">{texte.text}</p>
       {lage.art === 'pruefe' ? <p className="text-16 text-tinte-2">{texte.laedt}</p> : null}
-      {lage.art === 'ohneKonto' ? <p className="text-16 text-tinte-2">{texte.ohneKonto}</p> : null}
+      {lage.art === 'ohneKonto' ? (
+        <>
+          <p className="text-16 text-tinte-2">{texte.ohneKonto}</p>
+          <button type="button" onClick={erneut} className={NEBEN}>
+            {texte.kontoPruefen}
+          </button>
+        </>
+      ) : null}
       {lage.art === 'bereit' ? (
         <>
           {lage.gruppen.length === 1 ? (
