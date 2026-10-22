@@ -163,7 +163,7 @@
         },
         {
           "schluessel": "islam.grund.e05.l01.a05",
-          "text": "Anders beim Turban, den man trägt: Ist ein Ende unrein und lässt man es herabfallen, während das reine Ende auf dem Kopf bleibt, ist das Gebet gültig, wenn sich das unreine Ende bei den Bewegungen nicht mitbewegt. Bewegt es sich mit, ist das Gebet nicht gültig.",
+          "text": "Ist ein Ende des Turbans, den man trägt, unrein und lässt man es herabfallen, während das reine Ende auf dem Kopf bleibt, ist das Gebet gültig, wenn sich das unreine Ende bei den Bewegungen nicht mitbewegt. Bewegt es sich mit, ist das Gebet nicht gültig.",
           "strittig": false,
           "kinderGeeignet": true,
           "belege": [
@@ -298,7 +298,8 @@
         {
           "schluessel": "islam.grund.e05.l01.a08",
           "text": "Ist weniger als ein Viertel rein, hat er nach Nūr al-Īḍāḥ die Wahl. Im Kleidungsstück zu beten, selbst wenn es ganz unrein ist, ist dabei lieber, als unbekleidet zu beten. Al-Hidāya und al-Ikhtiyār nennen die Wahl die Ansicht von Abū Ḥanīfa und Abū Yūsuf; auch nach ihnen ist das Gebet im Kleidungsstück besser.",
-          "strittig": false,
+          "meinung": "abu_hanifa",
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -361,7 +362,7 @@
           "schluessel": "islam.grund.e05.l01.a09",
           "text": "Muḥammad ist anderer Ansicht: Auch wenn weniger als ein Viertel rein ist, muss man im Kleidungsstück beten. Denn so lässt man nur eine Pflicht aus, unbekleidet aber mehrere (al-Hidāya, al-Ikhtiyār).",
           "meinung": "muhammad",
-          "strittig": false,
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -603,7 +604,7 @@
         {
           "schluessel": "islam.grund.e05.l01.a15",
           "text": "Bei der freien Frau ist im Gebet der ganze Körper ʿawra außer dem Gesicht und den Händen. Zu den Füßen gibt es zwei Überlieferungen. Nūr al-Īḍāḥ nimmt die Füße aus; al-Hidāya und al-Ikhtiyār halten für richtiger, dass sie im Gebet nicht zur ʿawra gehören.",
-          "strittig": false,
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -652,7 +653,8 @@
         {
           "schluessel": "islam.grund.e05.l01.a16",
           "text": "Wird ein Viertel eines Körperteils der ʿawra aufgedeckt, ist das Gebet nicht gültig. Sind mehrere Stellen aufgedeckt, rechnet man sie zusammen: Erreicht die Summe ein Viertel des kleinsten aufgedeckten Körperteils, ist das Gebet nicht gültig, sonst schon. Al-Hidāya nennt als Beispiel: Betet eine Frau, während ein Viertel oder ein Drittel ihres Unterschenkels unbedeckt ist, wiederholt sie das Gebet nach Abū Ḥanīfa und Muḥammad; bei weniger als einem Viertel nicht.",
-          "strittig": false,
+          "meinung": "abu_hanifa",
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -689,7 +691,7 @@
           "schluessel": "islam.grund.e05.l01.a17",
           "text": "Abū Yūsuf ist anderer Ansicht: Nach ihm wird das Gebet nicht wiederholt, wenn weniger als die Hälfte eines Körperteils aufgedeckt ist; für genau die Hälfte gibt es von ihm zwei Überlieferungen (al-Hidāya).",
           "meinung": "abu_yusuf",
-          "strittig": false,
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -817,9 +819,9 @@
           "schluessel": "islam.grund.e05.l01.q05",
           "typ": "wahr_falsch",
           "aussage": "islam.grund.e05.l01.a16",
-          "behauptung": "Wird weniger als ein Viertel eines Körperteils der ʿawra aufgedeckt, ist das Gebet ungültig.",
+          "behauptung": "Ist an nur einer Stelle weniger als ein Viertel eines Körperteils der ʿawra aufgedeckt, ist das Gebet ungültig.",
           "richtig": false,
-          "begruendung": "Nach Nūr al-Īḍāḥ macht erst ein Viertel des Körperteils das Gebet ungültig; mehrere Stellen werden zusammengerechnet.",
+          "begruendung": "Nach Nūr al-Īḍāḥ macht erst ein Viertel des Körperteils das Gebet ungültig; mehrere aufgedeckte Stellen werden zusammengerechnet.",
           "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
           "lizenz": "CC-BY-SA-4.0"
         },
@@ -1149,7 +1151,7 @@
         {
           "schluessel": "islam.grund.e05.l02.a07",
           "text": "Wer unsicher ist und zu beten beginnt, ohne sich um die Richtung zu bemühen, oder wer jemanden hätte fragen können und es nicht tat, muss das Gebet wiederholen, wenn er sich geirrt hat. Erfährt er erst nach dem Gebet, dass er richtig lag, ist es gültig. Erfährt er es schon während des Gebets, ist es ungültig, und er beginnt neu; ebenso ist es ungültig, wenn er nie erfährt, ob er richtig lag (Nūr al-Īḍāḥ, al-Ikhtiyār).",
-          "strittig": false,
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -1186,7 +1188,7 @@
           "schluessel": "islam.grund.e05.l02.a08",
           "text": "Abū Yūsuf ist anderer Ansicht: Wer ohne Bemühen begonnen hat und während des Gebets erfährt, dass er richtig liegt, setzt das Gebet fort. Ein Neubeginn brächte nichts, weil er sich ohnehin in diese Richtung wenden würde (al-Ikhtiyār).",
           "meinung": "abu_yusuf",
-          "strittig": false,
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -1500,7 +1502,7 @@
           "schluessel": "islam.grund.e05.l02.q01",
           "typ": "fallfrage",
           "aussage": "islam.grund.e05.l02.a05",
-          "fall": "Ein Reisender übernachtet an einem fremden Ort. Er kennt die Gebetsrichtung nicht, und niemand ist da, den er fragen könnte. Er bemüht sich nach bestem Wissen um die Richtung und betet. Am Morgen sieht er, dass er falsch lag.",
+          "fall": "Ein Reisender übernachtet an einem fremden Ort. Er kennt die Gebetsrichtung nicht, niemand ist da, den er fragen könnte, und es gibt keine Gebetsnische. Er bemüht sich nach bestem Wissen um die Richtung und betet. Am Morgen sieht er, dass er falsch lag.",
           "frage": "Was gilt in diesem allgemeinen Lehrfall?",
           "optionen": [
             "Er muss das Gebet wiederholen.",
@@ -1540,9 +1542,9 @@
           "schluessel": "islam.grund.e05.l02.q04",
           "typ": "wahr_falsch",
           "aussage": "islam.grund.e05.l02.a10",
-          "behauptung": "Für die Absicht ist entscheidend, dass man sie laut ausspricht.",
+          "behauptung": "Für die Absicht ist entscheidend, dass man sie mit der Zunge ausspricht.",
           "richtig": false,
-          "begruendung": "Bedingung ist das Wissen im Herzen, welches Gebet man verrichtet. Das Aussprechen ist nach al-Hidāya nicht maßgeblich, aber gut.",
+          "begruendung": "Bedingung ist das Wissen im Herzen, welches Gebet man verrichtet. Das Aussprechen mit der Zunge ist nach al-Hidāya nicht maßgeblich, aber gut.",
           "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
           "lizenz": "CC-BY-SA-4.0"
         },
@@ -1553,12 +1555,8 @@
           "anweisung": "Ordne zu: Was muss man beabsichtigen?",
           "paare": [
             {
-              "links": "Pflichtgebet",
-              "rechts": "Das Gebet genau bestimmen, z. B. Mittagsgebet"
-            },
-            {
-              "links": "Notwendiges Gebet (wājib)",
-              "rechts": "Es ebenfalls genau bestimmen"
+              "links": "Pflichtgebet oder notwendiges Gebet (wājib)",
+              "rechts": "Das Gebet genau bestimmen, z. B. als Mittagsgebet"
             },
             {
               "links": "Freiwilliges Gebet",
@@ -1777,7 +1775,7 @@
           "schluessel": "islam.grund.e05.l03.a07",
           "text": "Über das Mindestmaß der Rezitation gibt es in der Schule zwei Ansichten. Nach Abū Ḥanīfa genügt, was man Koran nennt; al-Ikhtiyār nennt als Maß einen Vers und stützt das auf einen Koranvers (siehe Verweis). Nach Abū Yūsuf und Muḥammad genügen nicht weniger als drei kurze Verse oder ein langer Vers.",
           "meinung": "abu_yusuf",
-          "strittig": false,
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -1924,7 +1922,7 @@
           "schluessel": "islam.grund.e05.l03.a10",
           "text": "Sich nur mit der Nase niederzuwerfen, ohne die Stirn, ist nach Nūr al-Īḍāḥ nur gültig, wenn man an der Stirn eine Entschuldigung hat. Das ist die Ansicht von Abū Yūsuf und Muḥammad; al-Hidāya nennt sie auch als Überlieferung von Abū Ḥanīfa. Ibn ʿĀbidīn berichtet, dass Abū Ḥanīfa zu dieser Ansicht zurückgekehrt sei und dass nach ihr Fatwa gegeben wird. Sich nur auf die Stirn niederzuwerfen, ist nach allen gültig (al-Ikhtiyār).",
           "meinung": "fatwa",
-          "strittig": false,
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -2000,7 +1998,7 @@
           "schluessel": "islam.grund.e05.l03.a11",
           "text": "Nach der bei Qudūrī und in al-Hidāya überlieferten Ansicht Abū Ḥanīfas genügt es, sich nur auf die Nase oder nur auf die Stirn niederzuwerfen. Al-Ikhtiyār sagt dazu: Wer sich nur auf die Nase niederwirft, dessen Gebet ist nach ihm gültig, aber er hat schlecht gehandelt.",
           "meinung": "abu_hanifa",
-          "strittig": false,
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -2270,15 +2268,11 @@
           "anweisung": "Ordne zu: Was gilt für die Niederwerfung nach der Meinung, nach der Fatwa gegeben wird?",
           "paare": [
             {
-              "links": "Nur auf die Stirn",
-              "rechts": "Gültig nach allen"
-            },
-            {
-              "links": "Nur auf die Nase, ohne Entschuldigung",
+              "links": "Nur auf die Nase, ohne Entschuldigung an der Stirn",
               "rechts": "Nicht gültig"
             },
             {
-              "links": "Nur auf die Nase, mit Entschuldigung an der Stirn",
+              "links": "Nur auf die Nase, mit einer Entschuldigung an der Stirn",
               "rechts": "Gültig"
             }
           ],
@@ -2413,7 +2407,8 @@
         {
           "schluessel": "islam.grund.e05.l04.a04",
           "text": "Das ruhige Verweilen in Verbeugung und Niederwerfung ist nach Abū Ḥanīfa und Muḥammad kein Pflichtteil (farḍ). Al-Ikhtiyār nennt es notwendig (wājib): Wer es aus Versehen auslässt, vollzieht die Niederwerfung des Versehens. Al-Hidāya berichtet dazu zwei Einordnungen: nach al-Jurjānī Sunna, nach al-Karkhī notwendig.",
-          "strittig": false,
+          "meinung": "abu_hanifa",
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -2476,7 +2471,7 @@
           "schluessel": "islam.grund.e05.l04.a05",
           "text": "Abū Yūsuf hält für Pflicht (farḍ): das ruhige Verweilen in Verbeugung und Niederwerfung, das vollständige Aufrichten aus der Verbeugung und das Sitzen zwischen den beiden Niederwerfungen (al-Hidāya, al-Ikhtiyār).",
           "meinung": "abu_yusuf",
-          "strittig": false,
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -2511,8 +2506,8 @@
         },
         {
           "schluessel": "islam.grund.e05.l04.a06",
-          "text": "Notwendig sind auch das erste Sitzen, nach der richtigen Ansicht der Tashahhud darin und der Tashahhud im letzten Sitzen. Ebenso ist notwendig, nach dem Tashahhud des ersten Sitzens ohne Verzögerung zur dritten Einheit aufzustehen. Al-Ikhtiyār nennt es richtiger, dass der Tashahhud im ersten Sitzen notwendig ist; den Tashahhud im letzten Sitzen nennen al-Hidāya und al-Ikhtiyār ausdrücklich notwendig.",
-          "strittig": false,
+          "text": "Notwendig sind auch das erste Sitzen, nach der richtigen Ansicht der Tashahhud darin und der Tashahhud im letzten Sitzen. Ebenso ist notwendig, nach dem Tashahhud des ersten Sitzens ohne Verzögerung zur dritten Einheit aufzustehen. Al-Ikhtiyār berichtet, dass aṭ-Ṭaḥāwī und al-Karkhī das erste Sitzen Sunna nennen und andere es notwendig nennen; für den Tashahhud darin nennt es richtiger, dass er notwendig ist; den Tashahhud im letzten Sitzen nennen al-Hidāya und al-Ikhtiyār ausdrücklich notwendig.",
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -2537,7 +2532,7 @@
               "passage": "ikhtiyar.ms0057",
               "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms57",
               "passageSha256Text": "3db872cbcf706bc142cdb570c7ad2e111ec977d63e2eb77919e19cacf061837b",
-              "zitatVon": 1311,
+              "zitatVon": 1226,
               "zitatBis": 1355,
               "art": "sinngemaess"
             },
@@ -2781,7 +2776,7 @@
               "rechts": "Leise"
             },
             {
-              "links": "Allein im Nachtgebet",
+              "links": "Allein in den ersten beiden Einheiten des Nachtgebets",
               "rechts": "Wahl zwischen laut und leise"
             }
           ],
@@ -3066,8 +3061,9 @@
         },
         {
           "schluessel": "islam.grund.e05.l05.a05",
-          "text": "Die Zuflucht gehört zur Rezitation. Darum spricht sie, wer allein oder als Imam betet und wer nach dem Imam verpasste Einheiten nachholt (masbūq), nicht aber, wer hinter dem Imam betet. Bei den Festgebeten spricht man sie erst nach den zusätzlichen Takbīren.",
-          "strittig": false,
+          "text": "Die Zuflucht gehört nach Abū Ḥanīfa und Muḥammad zur Rezitation. Darum spricht sie, wer allein oder als Imam betet und wer nach dem Imam verpasste Einheiten nachholt (masbūq), nicht aber, wer hinter dem Imam betet. Bei den Festgebeten spricht man sie erst nach den zusätzlichen Takbīren. Abū Yūsuf ordnet die Zuflucht dem Eröffnungslob zu; nach ihm spricht sie auch, wer hinter dem Imam betet (al-Hidāya, al-Ikhtiyār).",
+          "meinung": "abu_hanifa",
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -3093,7 +3089,7 @@
               "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms45",
               "passageSha256Text": "c1a52610a805bf96d27b6483dd969d649c94e6c433f58e7265fbaab86db7f6bc",
               "zitatVon": 99,
-              "zitatBis": 234,
+              "zitatBis": 266,
               "art": "sinngemaess"
             },
             {
@@ -3106,7 +3102,7 @@
               "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms52",
               "passageSha256Text": "66dc07413e21315088234e46debbe109facf47bb1548248258eb86a1fc506985",
               "zitatVon": 951,
-              "zitatBis": 1110,
+              "zitatBis": 1156,
               "art": "sinngemaess"
             },
             {
@@ -3128,7 +3124,7 @@
         },
         {
           "schluessel": "islam.grund.e05.l05.a06",
-          "text": "Sunna ist außerdem: dass der Imam die Takbīre und den Satz beim Aufrichten aus der Verbeugung (tasmīʿ) laut spricht; dass man beim Stehen zwischen den Füßen etwa vier Finger Abstand lässt; und dass man beim Hinabgehen zur Verbeugung und zur Niederwerfung sowie beim Aufrichten den Takbīr spricht.",
+          "text": "Sunna ist außerdem: dass der Imam die Takbīre und den Satz beim Aufrichten aus der Verbeugung (tasmīʿ) laut spricht; dass man beim Stehen zwischen den Füßen etwa vier Finger Abstand lässt; und dass man beim Hinabgehen zur Verbeugung und zur Niederwerfung sowie beim Aufrichten aus der Niederwerfung den Takbīr spricht.",
           "strittig": false,
           "kinderGeeignet": true,
           "belege": [
@@ -3178,7 +3174,7 @@
         {
           "schluessel": "islam.grund.e05.l05.a07",
           "text": "Für die Länge der Rezitation nennt Nūr al-Īḍāḥ als Sunna: im Morgen- und im Mittagsgebet Suren aus den langen Suren des Mufaṣṣal, im Nachmittags- und im Nachtgebet aus den mittleren und im Abendgebet aus den kurzen. Das gilt für den Ansässigen; auf Reisen rezitiert man, welche Sure man möchte. Nur im Morgengebet macht man die erste Einheit länger als die zweite; in den übrigen Gebeten ist das nach al-Ikhtiyār verpönt. Der Imam soll nicht so lang rezitieren, dass die Gemeinde kleiner wird (al-Ikhtiyār).",
-          "strittig": false,
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -3228,7 +3224,7 @@
           "schluessel": "islam.grund.e05.l05.a08",
           "text": "Muḥammad hält es für empfohlen, in allen Gebeten die erste Einheit länger zu machen. Al-Ikhtiyār folgt dem nicht: Beide Einheiten haben denselben Anspruch auf Rezitation; das Morgengebet ist eine Ausnahme, weil seine Zeit eine Zeit des Schlafs und der Unachtsamkeit ist.",
           "meinung": "muhammad",
-          "strittig": false,
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -3335,7 +3331,7 @@
         },
         {
           "schluessel": "islam.grund.e05.l05.a11",
-          "text": "Dreimal Lobpreis in Verbeugung und Niederwerfung ist das Mindestmaß. Mehr ist besser, solange man mit einer ungeraden Zahl endet; ein Imam verlängert aber nicht so, dass er die Gemeinde verdrießt (al-Hidāya, al-Ikhtiyār).",
+          "text": "Der Lobpreis in Verbeugung und Niederwerfung ist Sunna; dreimal ist sein Mindestmaß. Mehr ist besser, solange man mit einer ungeraden Zahl endet; ein Imam verlängert aber nicht so, dass er die Gemeinde verdrießt (al-Hidāya, al-Ikhtiyār).",
           "strittig": false,
           "kinderGeeignet": true,
           "belege": [
@@ -3348,8 +3344,8 @@
               "passage": "hidaya.ms0048",
               "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms48",
               "passageSha256Text": "3a768274f9d1255e15f6698409eacac372b0eb00ef730a4db5881a741b5c019b",
-              "zitatVon": 327,
-              "zitatBis": 494,
+              "zitatVon": 297,
+              "zitatBis": 524,
               "art": "sinngemaess"
             },
             {
@@ -3577,7 +3573,7 @@
         },
         {
           "schluessel": "islam.grund.e05.l05.a17",
-          "text": "Die Hände hebt man im Gebet nach Nūr al-Īḍāḥ nur beim Eröffnungs-Takbīr, beim Takbīr vor dem Qunūt im Witr und bei den zusätzlichen Takbīren der Festgebete; bei den übrigen Takbīren hebt man sie nicht (Qudūrī). Al-Hidāya stützt das auf einen Hadith, der sieben Stellen nennt; vier davon gehören zur Pilgerfahrt.",
+          "text": "Die Hände hebt man im Gebet nach Nūr al-Īḍāḥ nur beim Eröffnungs-Takbīr, beim Takbīr vor dem Qunūt im Witr und bei den zusätzlichen Takbīren der Festgebete; bei den übrigen Takbīren hebt man sie nicht (Qudūrī). Al-Hidāya stützt das auf einen Hadith.",
           "strittig": false,
           "kinderGeeignet": true,
           "belege": [
@@ -3688,7 +3684,7 @@
         },
         {
           "schluessel": "islam.grund.e05.l05.a19",
-          "text": "Zum Anstand gehört auch, ein Husten zu unterdrücken, so gut man kann, und beim Gähnen den Mund geschlossen zu halten. Grundlage ist die Demut im Gebet (khushūʿ), die al-Ikhtiyār auf Koranverse stützt (siehe Verweise).",
+          "text": "Zum Anstand gehört auch, ein Husten zu unterdrücken, so gut man kann, und beim Gähnen den Mund geschlossen zu halten. Al-Ikhtiyār sagt allgemein, der Betende solle im Gebet demütig sein (khushūʿ), und stützt das auf Koranverse (siehe Verweise).",
           "strittig": false,
           "kinderGeeignet": true,
           "belege": [
@@ -3780,7 +3776,7 @@
           "aussage": "islam.grund.e05.l05.a09",
           "behauptung": "Es ist verpönt, für ein bestimmtes Gebet immer dieselbe Sure festzulegen und nie eine andere zu rezitieren.",
           "richtig": true,
-          "begruendung": "So sagen es Qudūrī und al-Ikhtiyār: Man vernachlässigt sonst den übrigen Koran.",
+          "begruendung": "So sagen es Qudūrī und al-Ikhtiyār; al-Ikhtiyār begründet es damit, dass man sonst den übrigen Koran vernachlässigt.",
           "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
           "lizenz": "CC-BY-SA-4.0"
         },
@@ -3789,7 +3785,7 @@
           "typ": "fallfrage",
           "aussage": "islam.grund.e05.l05.a05",
           "fall": "Jemand kommt zum Gemeinschaftsgebet zu spät. Nachdem der Imam den Friedensgruß gesprochen hat, steht er auf, um die verpassten Einheiten nachzuholen, und will rezitieren.",
-          "frage": "Spricht er in diesem allgemeinen Lehrfall die Zuflucht (taʿawwudh)?",
+          "frage": "Spricht er in diesem allgemeinen Lehrfall nach Nūr al-Īḍāḥ die Zuflucht (taʿawwudh)?",
           "optionen": [
             "Ja, denn die Zuflucht gehört zur Rezitation.",
             "Nein, denn er hat hinter dem Imam begonnen.",
@@ -3840,7 +3836,7 @@
       "aussagen": [
         {
           "schluessel": "islam.grund.e05.l06.a01",
-          "text": "Wer das Gebet beginnen will, nimmt als Mann die Hände aus den Ärmeln, hebt sie auf Höhe der Ohren und spricht dann mit der Absicht den Takbīr, ohne ihn zu dehnen. Al-Hidāya erklärt: Eine Dehnung am Anfang macht daraus eine Frage und ist ein Fehler in der Religion; eine Dehnung am Ende ist ein sprachlicher Fehler.",
+          "text": "Wer das Gebet beginnen will, nimmt als Mann die Hände aus den Ärmeln, hebt sie auf Höhe der Ohren und spricht dann mit der Absicht den Takbīr, ohne ihn zu dehnen. Al-Hidāya erklärt beim Takbīr zur Verbeugung, warum man den Takbīr nicht dehnt: Eine Dehnung am Anfang macht daraus eine Frage und ist ein Fehler in der Religion; eine Dehnung am Ende ist ein sprachlicher Fehler.",
           "strittig": false,
           "kinderGeeignet": true,
           "belege": [
@@ -3876,7 +3872,7 @@
         },
         {
           "schluessel": "islam.grund.e05.l06.a02",
-          "text": "Das Gebet beginnt gültig mit jedem Gedenken, das allein Gott gilt, etwa einem Lobpreis (tasbīḥ). Notwendig ist aber, gerade mit dem Takbīr zu eröffnen (siehe Lektion 4). Ein Satz, der eine eigene Bitte enthält, genügt zur Eröffnung nicht, weil er keine reine Ehrerbietung ist (al-Hidāya).",
+          "text": "Das Gebet beginnt gültig mit jedem Gedenken, das rein Gott gilt (dhikr khāliṣ), etwa einem Lobpreis (tasbīḥ). Notwendig ist aber, gerade mit dem Takbīr zu eröffnen (siehe Lektion 4). Ein Satz, der eine eigene Bitte enthält, genügt zur Eröffnung nicht, weil er keine reine Ehrerbietung ist (al-Hidāya).",
           "strittig": false,
           "kinderGeeignet": true,
           "belege": [
@@ -3927,7 +3923,7 @@
           "schluessel": "islam.grund.e05.l06.a03",
           "text": "Abū Yūsuf ist anderer Ansicht: Wer den Takbīr gut sprechen kann, beginnt das Gebet nur mit den Wortformen des Takbīr gültig. Nach Abū Ḥanīfa und Muḥammad genügen auch andere Worte, die Gott preisen (Qudūrī, al-Hidāya, al-Ikhtiyār).",
           "meinung": "abu_yusuf",
-          "strittig": false,
+          "strittig": true,
           "kinderGeeignet": true,
           "belege": [
             {
@@ -4474,7 +4470,7 @@
           "schluessel": "islam.grund.e05.l06.q05",
           "typ": "wahr_falsch",
           "aussage": "islam.grund.e05.l06.a02",
-          "behauptung": "Wer das Gebet statt mit dem Takbīr mit einem anderen Gedenken beginnt, das allein Gott gilt, dessen Gebet ist nach Nūr al-Īḍāḥ ungültig.",
+          "behauptung": "Wer das Gebet statt mit dem Takbīr mit einem anderen Gedenken beginnt, das rein Gott gilt, dessen Gebet ist nach Nūr al-Īḍāḥ ungültig.",
           "richtig": false,
           "begruendung": "Der Beginn ist gültig. Der Takbīr ist aber notwendig (wājib); man soll ihn nicht weglassen.",
           "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
