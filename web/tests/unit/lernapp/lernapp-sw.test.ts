@@ -186,6 +186,22 @@ describe('Service Worker der Lern-App', () => {
     expect((await w.anfrage('/lern-app/pakete/tr-aus-de', { mode: 'cors' })!).status).toBe(200);
   });
 
+  it('Koran-Pfad (L6-05): Verzeichnis je Sprache Netz zuerst, Einheitenpaket Vorrat zuerst', async () => {
+    const w = ladeWorker({ bau: 'b3' });
+    const verzeichnis = '/lern-app/pakete/koran/de';
+    const paket = '/lern-app/pakete/koran/de/koran.grund.e01/abcdef';
+    for (const p of [verzeichnis, paket]) await w.anfrage(p, { mode: 'cors' })!;
+    await new Promise((r) => setTimeout(r, 0));
+    expect(w.inhalt('igmg-lernapp-pakete')).toEqual([verzeichnis, paket]);
+    const vorher = w.abgerufen.length;
+    await w.anfrage(paket, { mode: 'cors' })!;
+    expect(w.abgerufen.length).toBe(vorher);
+    await w.anfrage(verzeichnis, { mode: 'cors' })!;
+    expect(w.abgerufen.length).toBe(vorher + 1);
+    w.setNetz(false);
+    expect((await w.anfrage(verzeichnis, { mode: 'cors' })!).status).toBe(200);
+  });
+
   it('Worker der Sprechübung: je Bau eine Fassung im Vorrat der Modelle (ältere fallen weg), die Modelldateien bleiben', async () => {
     const w = ladeWorker({ bau: 'b4' });
     for (const p of [

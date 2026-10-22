@@ -365,7 +365,9 @@ const ZUORDNUNG: Record<string, string[]> = {
   ],
   'rechte-matrix-mitglieder.test.ts': Object.keys(MODULE),
   // Lern-App, Verwaltung v1 (L3-06)
-  'verwaltung/rechte-matrix-lernapp.test.ts': ['lernapp-audio', 'lernapp-meldungen', 'lernapp-sprachpruefung'],
+  'verwaltung/rechte-matrix-lernapp.test.ts': ['lernapp-audio', 'lernapp-meldungen', 'lernapp-religioes', 'lernapp-sprachpruefung'],
+  // Lern-App, Gruppen (L7-02): Lehrkraft nur der eigenen Gruppe, Eltern nur des eigenen Kindes, Schalter je Gruppe
+  'lernapp-gruppe.test.ts': ['lernapp-gruppe'],
   // Öffentliche Formulare: ohne Konto, mit ALTCHA und Ratenbegrenzung (formular-*.test.ts, newsletter-anmeldung.test.ts)
   'öffentliche Formulare': [
     'formulare/kontakt',

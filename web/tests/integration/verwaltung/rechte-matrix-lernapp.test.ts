@@ -50,6 +50,7 @@ const MODULE = {
   'lernapp-sprachpruefung': () => import('@/server/actions/lernapp-sprachpruefung'),
   'lernapp-meldungen': () => import('@/server/actions/lernapp-meldungen'),
   'lernapp-audio': () => import('@/server/actions/lernapp-audio'),
+  'lernapp-religioes': () => import('@/server/actions/lernapp-religioes'),
 } as const;
 type Datei = keyof typeof MODULE;
 
@@ -75,8 +76,10 @@ const FAELLE: Fall[] = [
   ...f('lernapp-sprachpruefung', ['stichprobeZiehen'], 'lernapp.lesen'),
   ...f('lernapp-sprachpruefung', ['eintragPruefen'], 'lernapp.sprache.pruefen'),
   ...f('lernapp-sprachpruefung', ['pruefsprachenSetzen'], 'lernapp.bearbeiten'),
-  ...f('lernapp-meldungen', ['meldungErledigen', 'alternativeErgaenzen', 'eintragSperren'], 'lernapp.bearbeiten'),
+  ...f('lernapp-meldungen', ['meldungErledigen', 'alternativeErgaenzen', 'eintragSperren', 'eintragEntsperren'], 'lernapp.bearbeiten'),
   ...f('lernapp-audio', ['sprecherAnlegen', 'aufnahmeSpeichern', 'aufnahmeVerwerfen', 'stimmeWaehlen'], 'lernapp.audio.bearbeiten'),
+  // Zwei-Prüfer-Freigabe (L6-02/03): nie per Administration
+  ...f('lernapp-religioes', ['religioesPruefen'], 'lernapp.religioes.pruefen'),
 ];
 
 const abgewiesen = (a: Ausgang) => (a.wert as { fehler?: unknown } | null | undefined)?.fehler === 'keinRecht';

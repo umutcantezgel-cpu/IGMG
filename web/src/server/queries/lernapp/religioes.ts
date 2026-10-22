@@ -20,7 +20,7 @@ import {
   wissensAufgabeSichtbar,
 } from '@/lib/lernapp/freigabe';
 import type { KursId } from '@/lib/lernapp/kurse';
-import { inhaltHash } from '@/lib/lernapp/paket/hash';
+import { koranBedeutungHash, koranBedeutungStatus } from '@/lib/lernapp/paket/koran';
 import { ladePruefungen } from './pakete';
 
 /**
@@ -42,27 +42,9 @@ import { ladePruefungen } from './pakete';
 const SEITE = 500;
 const RELIGIOESE_KURSE = ['islam', 'koran'] as const;
 
-/** Inhalts-Hash einer Koran-Wortbedeutung im Lern-App-Pfad: alle gezeigten Felder (jede Änderung setzt zurück). */
-export function koranBedeutungHash(b: {
-  formId: number;
-  sprache: string;
-  bedeutung: string;
-  wurzel: string | null;
-  anmerkung: string | null;
-}) {
-  return inhaltHash({
-    art: 'koran_bedeutung',
-    formId: b.formId,
-    sprache: b.sprache,
-    bedeutung: b.bedeutung.normalize('NFC'),
-    wurzel: b.wurzel?.normalize('NFC') ?? null,
-    anmerkung: b.anmerkung?.normalize('NFC') ?? null,
-  });
-}
-
-/** Status im Lern-App-Pfad aus der Freigabe der Website (ADR 0030): Entwurf (zurückgewiesen, zurückgezogen) → gesperrt. */
-const koranStatus = (freigabe: 'entwurf' | 'zur_pruefung' | 'geprueft'): Status =>
-  freigabe === 'entwurf' ? 'gesperrt' : 'veroeffentlicht';
+/** Hash und Status einer Koran-Wortbedeutung: einzige Quelle im Paketbau (`@/lib/lernapp/paket/koran`, Vertrag L6-05/06). */
+export { koranBedeutungHash };
+const koranStatus = koranBedeutungStatus;
 
 export type BelegFundstelle = {
   id: string;

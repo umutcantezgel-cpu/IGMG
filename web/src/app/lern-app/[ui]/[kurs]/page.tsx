@@ -1,5 +1,6 @@
 import { ClipboardCheck, RotateCcw } from 'lucide-react';
 import type { Metadata } from 'next';
+import { KoranPfadInsel } from '@/components/lernapp/inseln/KoranPfadInsel';
 import { LernpfadInsel } from '@/components/lernapp/inseln/LernpfadInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
@@ -47,12 +48,17 @@ export default async function Lernpfad({ params }: PageProps<'/lern-app/[ui]/[ku
           },
         ]
       : []),
-    {
-      adresse: lernAdresse(ui, kurs, 'wiederholen'),
-      titel: t('lernpfad.wiederholen'),
-      text: t('lernpfad.wiederholenText'),
-      Zeichen: RotateCcw,
-    },
+    // Koran-Arabisch: Übungen ohne Wiederholungskarten (L6-05), deshalb kein Weg zur Wiederholung
+    ...(kurs !== 'koran'
+      ? [
+          {
+            adresse: lernAdresse(ui, kurs, 'wiederholen'),
+            titel: t('lernpfad.wiederholen'),
+            text: t('lernpfad.wiederholenText'),
+            Zeichen: RotateCcw,
+          },
+        ]
+      : []),
   ];
   return (
     <Rahmen ui={ui} bereich={null} pfad={kurs}>
@@ -79,32 +85,45 @@ export default async function Lernpfad({ params }: PageProps<'/lern-app/[ui]/[ku
             ))}
           </ul>
         ) : null}
-        <ul className="grid raster-karten gap-4">
-          {wege.map(({ adresse, titel, text, Zeichen }) => (
-            <li
-              key={adresse}
-              className="group relative flex gap-4 rounded-lg border border-linie bg-weiss p-5 hover:border-gruen-700 hover:bg-gruen-50"
-            >
-              <Zeichen aria-hidden className="mt-1 size-6 shrink-0 text-gruen-700" />
-              <div className="flex flex-col gap-1">
-                <h2 className="text-24 leading-ueberschrift">
-                  <a
-                    href={adresse}
-                    className="text-tinte no-underline group-hover:text-gruen-800 after:absolute after:inset-0 after:rounded-lg"
-                  >
-                    {titel}
-                  </a>
-                </h2>
-                <p className="text-16 text-tinte-2">{text}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+        {wege.length ? (
+          <ul className="grid raster-karten gap-4">
+            {wege.map(({ adresse, titel, text, Zeichen }) => (
+              <li
+                key={adresse}
+                className="group relative flex gap-4 rounded-lg border border-linie bg-weiss p-5 hover:border-gruen-700 hover:bg-gruen-50"
+              >
+                <Zeichen aria-hidden className="mt-1 size-6 shrink-0 text-gruen-700" />
+                <div className="flex flex-col gap-1">
+                  <h2 className="text-24 leading-ueberschrift">
+                    <a
+                      href={adresse}
+                      className="text-tinte no-underline group-hover:text-gruen-800 after:absolute after:inset-0 after:rounded-lg"
+                    >
+                      {titel}
+                    </a>
+                  </h2>
+                  <p className="text-16 text-tinte-2">{text}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : null}
         <section aria-labelledby="lernpfad" className="flex flex-col gap-4">
           <h2 id="lernpfad" className="text-display-2">
             {t('lernpfad.einheiten')}
           </h2>
-          <LernpfadInsel ui={ui} kurs={kurs} adresse={lernAdresse(ui, kurs)} texte={rohTexte(ui, 'lernpfad')} />
+          {kurs === 'koran' && ui !== 'ar' ? (
+            // Koran-Arabisch: eigener Pfad je Sprache der Bedeutungen (L6-05); nur freigegebene Bedeutungen, sonst „Bedeutung folgt“
+            <KoranPfadInsel
+              ui={ui}
+              sprache={ui}
+              adresse={lernAdresse(ui, kurs)}
+              stufen={rohTexte(ui, 'lernpfad').stufe}
+              texte={rohTexte(ui, 'koranpfad')}
+            />
+          ) : (
+            <LernpfadInsel ui={ui} kurs={kurs} adresse={lernAdresse(ui, kurs)} texte={rohTexte(ui, 'lernpfad')} />
+          )}
         </section>
       </div>
     </Rahmen>

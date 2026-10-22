@@ -13,8 +13,8 @@ describe('Migrationen (K-05)', () => {
     // 34 bis Lauf Gestaltung, + 62 Tabellen Lauf Gemeinde-Plattform (Migration 0008), + quran_vers_auswahl (0012),
     // + rollen_antrag (0013, Vier-Augen-Prinzip für Schutzrollen), + mail_zusammenfassung (0016, F-38),
     // + 20 Inhaltstabellen (0018), 6 Nutzungstabellen (0019), 2 Tabellen des Audio-Studios (0020) und 3 Gruppentabellen
-    // (0021) der Lern-App
-    expect(r.rows[0]?.n).toBe(130);
+    // (0021) der Lern-App, + lernapp_tag_kurs (0022, Tagessummen je Kurs, S-L3 M-1)
+    expect(r.rows[0]?.n).toBe(131);
   });
 
   it('Lern-App: 0017 ergänzt nur Enum-Werte, spätere Migrationen nutzen sie nicht als Literal (PostgreSQL 16)', async () => {

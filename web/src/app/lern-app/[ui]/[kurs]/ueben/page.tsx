@@ -52,7 +52,8 @@ export default async function Ueben({ params }: PageProps<'/lern-app/[ui]/[kurs]
               abschluss: { abschluss: rohTexte(ui, 'abschluss'), serie: rohTexte(ui, 'serie'), abzeichen: rohTexte(ui, 'abzeichen') },
             }}
             spracherkennung={await funktionAn('lernapp_sprechen')}
-            melden={(await funktionAn('lernapp_meldungen')) ? rohTexte(ui, 'melden') : undefined}
+            // „Fehler melden“ braucht eine Aufgabe in `lernapp_aufgabe`; der Koran-Pfad hat seine Aufgaben nur im Paket (L6-05)
+            melden={kurs !== 'koran' && (await funktionAn('lernapp_meldungen')) ? rohTexte(ui, 'melden') : undefined}
             lernpfad={lernpfad}
           />
         </Suspense>

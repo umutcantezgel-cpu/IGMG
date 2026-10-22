@@ -217,8 +217,10 @@ self.addEventListener('fetch', (e) => {
   }
   if (pfad.startsWith('/lern-app/pakete/')) {
     const teile = pfad.split('/').filter(Boolean);
-    // /lern-app/pakete/<kurs> = Verzeichnis (Netz zuerst); tiefer = unveränderliches Einheitenpaket (Vorrat zuerst)
-    e.respondWith(teile.length <= 3 ? netzZuerst(anfrage, PAKETE, anfrage) : vorratZuerst(anfrage, PAKETE));
+    // /lern-app/pakete/<kurs> und /lern-app/pakete/koran/<sprache> = Verzeichnis (Netz zuerst); tiefer = unveränderliches
+    // Einheitenpaket (Vorrat zuerst)
+    const verzeichnis = teile.length <= 3 || (teile[2] === 'koran' && teile.length === 4);
+    e.respondWith(verzeichnis ? netzZuerst(anfrage, PAKETE, anfrage) : vorratZuerst(anfrage, PAKETE));
     return;
   }
   if (pfad.startsWith('/lern-app/audio/')) {
