@@ -1,5 +1,11 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 22.10.2026 19:00 UTC – nach dem Limit (≈ 15:07, Reset 18:00) fortgesetzt.** Seit 14:07 fertig: A1 Übersetzung tr
+  12/12, Rückübersetzung tr e01–e06; A2 tr Lektorat e01–e10, A2 de Lektorat e01–e13, A2 ar Entwurf e01–e04; Wissen Belegprüfung
+  grund.e07/e08 (Taharah/Salah komplett), Entwürfe grund.e09–e11 (akaid) und aufbau.e01 (sawm). Neu gestartet: Code
+  `wf_6009b738-73c` (L5-03: Bau-Agent brach dreimal am Limit ab; Stand bb4d8ecb wird als `bau` übergeben → Gegenprüfung,
+  Mängelrunde, Runde 2, S-L2), A1 `wf_7a7acd04-a95`, A2 tr `wf_59719522-a89`, A2 de `wf_b085f11b-25f`, A2 ar
+  `wf_172e0f41-ed5`, Wissen `wf_beaac09f-25a` (Belegprüfung grund.e09–e11/aufbau.e01, Entwurf + Belegprüfung aufbau.e02–e05).
 - **Stand 22.10.2026 14:30 UTC – Wissen Taharah/Salah komplett:** islam.grund.e01–e08 entworfen und belegt (Belegprüfung e07
   9aeb7618, e08 83548b3d; offene Punkte je Einheit für die zwei religiösen Prüfenden in den Rückgaben). Nächste Wissens-Runde
   `wf_5335754d-111`: islam.grund.e09–e11 (Glaube, maturiditisch) und islam.aufbau.e01–e05. Übrige Läufe wie im Eintrag darunter.
