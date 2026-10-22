@@ -20,7 +20,7 @@
       },
       {
         "de": "Ich kann erzählen, was gerade passierte, als etwas anderes geschah.",
-        "tr": "Bir şey olduğu sırada başka neler olduğunu anlatabilirim.",
+        "tr": "Bir şey olduğu sırada neler olup bittiğini anlatabilirim.",
         "ar": "أستطيع أن أحكي ما كان يجري حين حدث شيء آخر."
       },
       {
@@ -1894,7 +1894,7 @@
     },
     {
       "schluessel": "tr.a2.e11.s0042",
-      "text": "Bina çok sakin mi?",
+      "text": "Bina sakin mi?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2432,7 +2432,7 @@
     },
     {
       "schluessel": "tr.a2.e11.s0131",
-      "text": "Kapıyı açık bırakma, kedi dışarı çıkıyor!",
+      "text": "Kapıyı açık bırakma, kedi dışarı çıkar!",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2815,7 +2815,7 @@
     },
     {
       "schluessel": "tr.a2.e11.s0194",
-      "text": "Merhaba Dayı! Gelecek cumartesi yeni daireye taşınıyoruz. Yeni adresimiz Çiçek Sokak 8, Wetzlar. Daire üçüncü katta ve binada asansör var. Çok kutumuz ve ağır mobilyalarımız var. Cumartesi sabah bize yardım edebilir misin? Babam saat sekizde kamyonu getiriyor. Çok teşekkürler, Can",
+      "text": "Merhaba Dayı! Gelecek cumartesi yeni daireye taşınıyoruz. Yeni adresimiz Gül Sokak 3, Wetzlar. Daire üçüncü katta ve binada asansör var. Çok kutumuz ve ağır mobilyalarımız var. Cumartesi sabah bize yardım edebilir misin? Babam saat sekizde kamyonu getiriyor. Çok teşekkürler, Can",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3208,6 +3208,12 @@
       "text": "Sabahtan beri kutuları taşıyoruz.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a2.e11.s0260",
+      "text": "Rim saat on birde geliyor ve Elif'e yardım ediyor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
     }
   ],
   "lektionen": [
@@ -3242,7 +3248,7 @@
         {
           "schluessel": "tr.a2.e11.l01.a04",
           "typ": "grammatik_tipp",
-          "tipp": "t02"
+          "tipp": "t01"
         },
         {
           "schluessel": "tr.a2.e11.l01.a05",
@@ -3259,7 +3265,7 @@
         {
           "schluessel": "tr.a2.e11.l01.a07",
           "typ": "grammatik_tipp",
-          "tipp": "t01"
+          "tipp": "t02"
         },
         {
           "schluessel": "tr.a2.e11.l01.a08",
@@ -3321,7 +3327,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e11.s0035",
           "nach": "ziel",
-          "alternativen": ["Bu binada bir kiralık daire var.", "Bu binada kiralık daire var."]
+          "alternativen": ["Bu binada bir kiralık daire var.", "Bu binada kiralık daire var.", "Bu binada bir daire kiralık."]
         },
         {
           "schluessel": "tr.a2.e11.l01.a15",
@@ -3567,7 +3573,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e11.s0103",
           "nach": "ziel",
-          "alternativen": ["Bu sokakta eskiden bir fırın vardı."]
+          "alternativen": ["Bu sokakta eskiden bir fırın vardı.", "Eskiden bu sokakta fırın vardı."]
         },
         {
           "schluessel": "tr.a2.e11.l03.a14",
@@ -3595,7 +3601,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Ich kann erzählen, was gerade passierte.",
-        "tr": "O sırada ne olduğunu anlatmak",
+        "tr": "O sırada neler olup bittiğini anlatmak",
         "ar": "حكاية ما كان يجري في تلك اللحظة"
       },
       "aufgaben": [
@@ -3630,7 +3636,7 @@
           "satz": "tr.a2.e11.s0112",
           "nach": "ziel",
           "alternativen": ["Kutuları babam ve Can taşıyordu."],
-          "ablenker": ["taşınıyordu", "kutular"]
+          "ablenker": ["taşınıyordu", "kutuleri"]
         },
         {
           "schluessel": "tr.a2.e11.l04.a06",
@@ -3662,7 +3668,11 @@
           "schluessel": "tr.a2.e11.l04.a09",
           "typ": "satzbau",
           "ziel": "tr.a2.e11.s0116",
-          "alternativen": ["Kutuları ben taşıyordum, o sırada telefon çaldı.", "Ben kutuları taşıyordum, telefon o sırada çaldı."]
+          "alternativen": [
+            "Kutuları ben taşıyordum, o sırada telefon çaldı.",
+            "Ben kutuları taşıyordum, telefon o sırada çaldı.",
+            "Kutuları ben taşıyordum, telefon o sırada çaldı."
+          ]
         },
         {
           "schluessel": "tr.a2.e11.l04.a10",
@@ -3676,7 +3686,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e11.s0126",
           "nach": "ziel",
-          "alternativen": ["Ellerini iyice sabunla yıka."]
+          "alternativen": ["Ellerini iyice sabunla yıka.", "Sabunla ellerini iyice yıka."]
         },
         {
           "schluessel": "tr.a2.e11.l04.a12",
@@ -3764,7 +3774,11 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e11.s0145",
           "nach": "ziel",
-          "alternativen": ["Bu hafta Can bulaşıklardan sorumlu.", "Can bu hafta bulaşıklardan sorumlu."],
+          "alternativen": [
+            "Bu hafta Can bulaşıklardan sorumlu.",
+            "Can bu hafta bulaşıklardan sorumlu.",
+            "Bulaşıklardan bu hafta Can sorumlu."
+          ],
           "ablenker": ["bulaşıkları", "sorumluyum"]
         },
         {
@@ -3777,7 +3791,7 @@
             }
           ],
           "antwort": "tr.a2.e11.s0253",
-          "ablenker": ["tr.a2.e11.s0162", "tr.a2.e11.s0147", "tr.a2.e11.s0158"]
+          "ablenker": ["tr.a2.e11.s0162", "tr.a2.e11.s0030", "tr.a2.e11.s0158"]
         },
         {
           "schluessel": "tr.a2.e11.l05.a09",
@@ -3797,7 +3811,11 @@
           "schluessel": "tr.a2.e11.l05.a11",
           "typ": "satzbau",
           "ziel": "tr.a2.e11.s0156",
-          "alternativen": ["Çamaşırları Elif katlıyor, Can onları dolaba koyuyor.", "Elif çamaşırları katlıyor, onları Can dolaba koyuyor."]
+          "alternativen": [
+            "Çamaşırları Elif katlıyor, Can onları dolaba koyuyor.",
+            "Elif çamaşırları katlıyor, onları Can dolaba koyuyor.",
+            "Çamaşırları Elif katlıyor, onları Can dolaba koyuyor."
+          ]
         },
         {
           "schluessel": "tr.a2.e11.l05.a12",
@@ -3821,6 +3839,7 @@
             "tr.a2.e11.s0178",
             "tr.a2.e11.s0179",
             "tr.a2.e11.s0180",
+            "tr.a2.e11.s0260",
             "tr.a2.e11.s0181",
             "tr.a2.e11.s0182",
             "tr.a2.e11.s0183"
@@ -4072,7 +4091,9 @@
           "alternativen": [
             "Derya rafları yeni dairede kuruyor.",
             "Yeni dairede Derya rafları kuruyor.",
-            "Yeni dairede rafları Derya kuruyor."
+            "Yeni dairede rafları Derya kuruyor.",
+            "Rafları Derya yeni dairede kuruyor.",
+            "Rafları yeni dairede Derya kuruyor."
           ]
         },
         {
@@ -4088,7 +4109,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e11.s0225",
           "nach": "ziel",
-          "alternativen": ["Yeni evimizi çok beğendim!"]
+          "alternativen": ["Yeni evimizi çok beğendim!", "Yeni evimizi çok seviyorum!"]
         },
         {
           "schluessel": "tr.a2.e11.l06.a08",
@@ -4257,7 +4278,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e11.s0249",
           "nach": "ziel",
-          "alternativen": ["Eskiden asansör yoktu, şimdi var."]
+          "alternativen": ["Eskiden asansör yoktu, şimdi var.", "Eskiden asansörümüz yoktu ama şimdi var."]
         },
         {
           "schluessel": "tr.a2.e11.l07.a18",
