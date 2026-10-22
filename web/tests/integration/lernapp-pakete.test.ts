@@ -597,10 +597,11 @@ describe('Client: Pakete und Bündel auf dem Gerät (lokal/pakete.ts)', async ()
     expect(new Uint8Array(await clip.arrayBuffer())).toEqual(new Uint8Array(await schneideClip(buendel, c).arrayBuffer()));
     expect(await lokal.clipAus(buendel, '0'.repeat(64), kopf)).toBeNull();
 
-    // Neuer Stand im Verzeichnis: der alte Eintrag verlässt Vorrat und Speicher; offline gespeicherte Einheiten neu laden
+    // Neuer Stand im Verzeichnis: das alte Paket verlässt den Vorrat; eine offline gespeicherte Einheit behält ihren Eintrag
+    // (alter Hash, `offline`) bis zum Nachladen und wird zum Neuladen gemeldet (vorrat.ts, Restliste L8 a)
     const neu = { ...v, einheiten: [{ ...e, hash: 'f'.repeat(64) }] };
     expect(await lokal.raeumeAuf(sp, neu, { vorrat })).toEqual(neu.einheiten);
-    expect(await sp.lies('pakete', ['tr-aus-de', 'tr.a1.e01'])).toBeUndefined();
+    expect(await sp.lies('pakete', ['tr-aus-de', 'tr.a1.e01'])).toMatchObject({ hash: e.hash, offline: true });
     expect(await lokal.paketImVorrat('tr-aus-de', e, { vorrat })).toBeNull();
   });
 });
