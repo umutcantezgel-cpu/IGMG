@@ -11,9 +11,10 @@ Hand ändern; neu erzeugen. Bedeutungen schreibt **kein** Agent (KERN 4.0 §2.2 
   zurück. Steht an einer Stelle eine abweichende Bedeutung (`quran_wortbedeutung_ort`), zeigt der Pfad dort keine.
 - **Abfrage am Live-Stand:** `pnpm lernapp:koran-sichtbar` prüft jede gezeigte Bedeutung gegen die Freigaben in der
   Datenbank (Ausgabe nur Zahlen und Stellen).
-- **Umschrift:** maschinell und vereinfacht (DMG-Art, `src/lib/lernapp/koran/umschrift.ts`, z. B. ungenau am Wortanfang),
-  nur zur Orientierung und nur in den Einheiten nach Häufigkeit. In Einheiten in Lesereihenfolge (Sure 1, Teil 30) steht
-  „–“, damit die Liste keinen Surentext in Umschrift ergibt (KI-Regel 2). Maßgeblich ist immer die Stelle `Sure:Vers:Wort`
+- **Umschrift:** maschinell und vereinfacht (DMG-Art, `src/lib/lernapp/koran/umschrift.ts`), nur zur Orientierung und nur
+  in den Einheiten nach Häufigkeit. In Einheiten in Lesereihenfolge (Sure 1, Teil 30) steht „–“, damit die Liste keinen
+  Surentext in Umschrift ergibt (KI-Regel 2); ebenso, wo die Schrift die Lesung nicht angibt (Alif wasla am Wortanfang
+  ohne Artikel, nicht geschriebene Dehnung nach doppeltem Lam). Maßgeblich ist immer die Stelle `Sure:Vers:Wort`
   (Wortzählung des Tanzil-Texts wie im Koran-Leser).
 - **Vorkommen:** Anzahl gleicher Schreibungen im ganzen Text (`quran_wortform.vorkommen`).
 
@@ -57,12 +58,12 @@ Teil 30: eigene Einheiten für die Suren 114–93; 600 von 1420 Wortformen des T
 | Nr. | Lektion | Stelle | Umschrift | Vorkommen | Bedeutung (de) | Bedeutung (tr) |
 |---|---|---|---|---|---|---|
 | 1 | l01 | 2:10:1 | fī | 1098 | | |
-| 2 | l01 | 2:7:2 | al-lahu | 733 | | |
+| 2 | l01 | 2:7:2 | – | 733 | | |
 | 3 | l01 | 2:4:8 | min | 728 | | |
 | 4 | l01 | 2:17:8 | mā | 714 | | |
 | 5 | l01 | 2:2:3 | lā | 616 | | |
 | 6 | l02 | 2:6:1 | ʾinna | 609 | | |
-| 7 | l02 | 2:9:2 | al-laha | 592 | | |
+| 7 | l02 | 2:9:2 | – | 592 | | |
 | 8 | l02 | 2:26:38 | ʾillā | 562 | | |
 | 9 | l02 | 2:8:9 | wamā | 512 | | |
 | 10 | l02 | 2:26:5 | ʾan | 461 | | |
@@ -86,7 +87,7 @@ Teil 30: eigene Einheiten für die Suren 114–93; 600 von 1420 Wortformen des T
 | 3 | l01 | 2:23:18 | ʾin | 253 | | |
 | 4 | l01 | 2:74:30 | min | 253 | | |
 | 5 | l01 | 2:31:7 | ʿalā | 242 | | |
-| 6 | l02 | 2:19:17 | walllahu | 239 | | |
+| 6 | l02 | 2:19:17 | – | 239 | | |
 | 7 | l02 | 2:8:3 | man | 223 | | |
 | 8 | l02 | 2:11:7 | al-ʾarḍi | 219 | | |
 | 9 | l02 | 2:80:8 | qul | 218 | | |
@@ -123,7 +124,7 @@ Teil 30: eigene Einheiten für die Suren 114–93; 600 von 1420 Wortformen des T
 | 15 | l03 | 2:21:1 | yāʾayyuhā | 142 | | |
 | 16 | l04 | 2:37:8 | ʾinnahū | 141 | | |
 | 17 | l04 | 2:29:11 | ʾilā | 140 | | |
-| 18 | l04 | 2:8:6 | billlahi | 139 | | |
+| 18 | l04 | 2:8:6 | – | 139 | | |
 | 19 | l04 | 2:4:6 | wamā | 134 | | |
 | 20 | l04 | 2:5:1 | ʾulāʾika | 133 | | |
 
@@ -489,7 +490,7 @@ Teil 30: eigene Einheiten für die Suren 114–93; 600 von 1420 Wortformen des T
 | 16 | l04 | 2:82:7 | al-ǧannati | 27 | | |
 | 17 | l04 | 2:95:8 | ʿalīmun | 27 | | |
 | 18 | l04 | 2:111:11 | tilka | 27 | | |
-| 19 | l04 | 2:115:1 | walillahi | 27 | | |
+| 19 | l04 | 2:115:1 | – | 27 | | |
 | 20 | l04 | 2:176:12 | lafī | 27 | | |
 | 21 | l05 | 2:200:15 | rabbanā | 27 | | |
 | 22 | l05 | 2:282:120 | bikum | 27 | | |
@@ -721,7 +722,7 @@ Teil 30: eigene Einheiten für die Suren 114–93; 600 von 1420 Wortformen des T
 | 8 | l02 | 6:164:7 | rabbu | 18 | | |
 | 9 | l02 | 7:61:9 | rrabbi | 18 | | |
 | 10 | l02 | 15:26:2 | ḫalaqnā | 18 | | |
-| 11 | l03 | 2:21:3 | aʿbudū | 17 | | |
+| 11 | l03 | 2:21:3 | – | 17 | | |
 | 12 | l03 | 2:24:6 | fattaqū | 17 | | |
 | 13 | l03 | 2:26:7 | maṯalan | 17 | | |
 | 14 | l03 | 2:53:2 | ʾātaynā | 17 | | |
@@ -749,7 +750,7 @@ Teil 30: eigene Einheiten für die Suren 114–93; 600 von 1420 Wortformen des T
 | 6 | l02 | 3:68:8 | an-nabiʾu | 17 | | |
 | 7 | l02 | 4:122:14 | waʿda | 17 | | |
 | 8 | l02 | 4:151:3 | al-kāfirūna | 17 | | |
-| 9 | l02 | 4:153:24 | attaḫaḏū | 17 | | |
+| 9 | l02 | 4:153:24 | – | 17 | | |
 | 10 | l02 | 5:119:6 | aṣ-ṣādiqīna | 17 | | |
 | 11 | l03 | 6:152:35 | taḏakkarūna | 17 | | |
 | 12 | l03 | 6:161:4 | rabbī | 17 | | |

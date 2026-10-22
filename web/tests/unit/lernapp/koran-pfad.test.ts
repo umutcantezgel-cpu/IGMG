@@ -74,6 +74,44 @@ describe('Umschrift (Arbeitsliste)', () => {
   it('enthält für keine Wortform des Texts arabische Schrift', () => {
     const formen = new Set([...wortAn.values()]);
     expect(formen.size).toBeGreaterThan(18_000);
-    for (const f of formen) expect(ARABISCH.test(umschrift(f))).toBe(false);
+    for (const f of formen) expect(ARABISCH.test(umschrift(f) ?? '')).toBe(false);
+  });
+
+  it('rät nicht: keine Umschrift, wo die Schrift die Lesung nicht angibt (Gegenprüfung L6-05/06)', () => {
+    // Alif wasla am Wortanfang ohne Artikel: Alif wasla, Sin mit Sukun, Mim mit Damma (Anlautvokal nicht geschrieben)
+    expect(umschrift('\u0671\u0633\u0652\u0645\u064F')).toBeNull();
+    // Kunstwort (kein Wort des Texts): Mim mit Fatha, Lam, Lam mit Schadda und Fatha, Ha mit Damma – Dehnung nicht geschrieben
+    expect(umschrift('\u0645\u064E\u0644\u0644\u0651\u064E\u0647\u064F')).toBeNull();
+    // mit Dehnungszeichen (Alif khanjariyya) ist die Lesung angegeben; Alif wasla mit Artikel bleibt umschrieben
+    expect(umschrift('\u0645\u064E\u0644\u0644\u0651\u064E\u0670\u0647\u064F')).not.toBeNull();
+    expect(umschrift('\u0671\u0644\u0652\u062D\u064E\u0645\u0652\u062F\u064F')).toBe('al-ḥamdu');
+  });
+
+  it('die Arbeitsliste zeigt in Einheiten in Lesereihenfolge und bei unklarer Lesung „–“', () => {
+    const liste = readFileSync(join(WEB, '../_lernapp/berichte/koran-arbeitsliste.md'), 'utf8');
+    let lesen = false;
+    let zeilen = 0;
+    for (const z of liste.split('\n')) {
+      if (z.startsWith('## ')) lesen = /– (Sure 1|Teil 30:)/.test(z);
+      if (!/^\| \d+ \| l\d+ \| \d+:\d+:\d+ \|/.test(z)) continue;
+      zeilen++;
+      const [, , , stelle, spalte] = z.split('|').map((s) => s.trim());
+      if (lesen || umschrift(wortAn.get(stelle!)!) === null) expect(spalte, stelle).toBe('–');
+      expect(ARABISCH.test(spalte!)).toBe(false);
+    }
+    expect(zeilen).toBeGreaterThan(500);
+  });
+});
+
+describe('Tests des Koran-Pfads: arabische Schrift nur als Codepunkte (KI-Regel 2)', () => {
+  it('keine arabische Schrift im Quelltext der Tests', () => {
+    const dateien = [
+      'tests/unit/lernapp/koran-paket.test.ts',
+      'tests/unit/lernapp/koran-lokal.test.ts',
+      'tests/unit/lernapp/koran-ausschnitt.test.ts',
+      'tests/unit/lernapp/koran-pfad.test.ts',
+      'tests/integration/lernapp-koran.test.ts',
+    ];
+    for (const d of dateien) expect(ARABISCH.test(readFileSync(join(WEB, d), 'utf8')), d).toBe(false);
   });
 });

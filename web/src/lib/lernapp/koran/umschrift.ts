@@ -7,6 +7,10 @@
  * Waw, Ya und die kleinen Zeichen (Alif khanjariyya, kleines Waw/Ya); Zeichen „nicht gesprochen“ (U+06DF) entfallen; der Artikel
  * am Wortanfang wird mit Bindestrich abgetrennt, bei Sonnenbuchstaben angeglichen (ar-r…). Alle Zeichen stehen als Codepunkte,
  * das Ergebnis enthält nie arabische Schrift.
+ *
+ * Keine Umschrift (`null`, in der Arbeitsliste „–“), wo die Schrift die Lesung nicht angibt und die Regeln sie falsch raten
+ * würden (Gegenprüfung L6-05/06): ein Alif wasla am Wortanfang, das nicht zum Artikel gehört (der Anlautvokal steht nicht da),
+ * und zwei Lam mit Schadda vor Ha ohne Dehnungszeichen (die Dehnung ist nicht geschrieben).
  */
 
 const KONSONANT: Readonly<Record<number, string>> = {
@@ -95,8 +99,24 @@ function dehne(aus: string[], kurz: string, lang: string) {
   else aus.push(lang);
 }
 
-export function umschrift(wort: string): string {
+const HA = 0x0647;
+
+/** Die Schrift gibt die Lesung nicht an (siehe oben): lieber keine Umschrift als eine geratene. */
+function unklar(b: readonly Buchstabe[]): boolean {
+  if (b[0]?.c === ALIF_WASLA && b[1]?.c !== LAM) return true;
+  return b.some(
+    (x, i) =>
+      x.c === LAM &&
+      b[i + 1]?.c === LAM &&
+      b[i + 1]!.marken.includes(SCHADDA) &&
+      !b[i + 1]!.marken.includes(ALIF_KLEIN) &&
+      b[i + 2]?.c === HA,
+  );
+}
+
+export function umschrift(wort: string): string | null {
   const b = buchstaben(wort);
+  if (unklar(b)) return null;
   const aus: string[] = [];
   let i = 0;
   /** Buchstabe nach dem angeglichenen Artikel: Schadda steht schon im Artikel (ar-r…) */

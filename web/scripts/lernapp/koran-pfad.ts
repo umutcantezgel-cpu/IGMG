@@ -183,9 +183,10 @@ async function schreibe() {
     '  zurück. Steht an einer Stelle eine abweichende Bedeutung (`quran_wortbedeutung_ort`), zeigt der Pfad dort keine.',
     '- **Abfrage am Live-Stand:** `pnpm lernapp:koran-sichtbar` prüft jede gezeigte Bedeutung gegen die Freigaben in der',
     '  Datenbank (Ausgabe nur Zahlen und Stellen).',
-    '- **Umschrift:** maschinell und vereinfacht (DMG-Art, `src/lib/lernapp/koran/umschrift.ts`, z. B. ungenau am Wortanfang),',
-    '  nur zur Orientierung und nur in den Einheiten nach Häufigkeit. In Einheiten in Lesereihenfolge (Sure 1, Teil 30) steht',
-    '  „–“, damit die Liste keinen Surentext in Umschrift ergibt (KI-Regel 2). Maßgeblich ist immer die Stelle `Sure:Vers:Wort`',
+    '- **Umschrift:** maschinell und vereinfacht (DMG-Art, `src/lib/lernapp/koran/umschrift.ts`), nur zur Orientierung und nur',
+    '  in den Einheiten nach Häufigkeit. In Einheiten in Lesereihenfolge (Sure 1, Teil 30) steht „–“, damit die Liste keinen',
+    '  Surentext in Umschrift ergibt (KI-Regel 2); ebenso, wo die Schrift die Lesung nicht angibt (Alif wasla am Wortanfang',
+    '  ohne Artikel, nicht geschriebene Dehnung nach doppeltem Lam). Maßgeblich ist immer die Stelle `Sure:Vers:Wort`',
     '  (Wortzählung des Tanzil-Texts wie im Koran-Leser).',
     '- **Vorkommen:** Anzahl gleicher Schreibungen im ganzen Text (`quran_wortform.vorkommen`).',
     '',
@@ -212,7 +213,7 @@ async function schreibe() {
       for (const stelle of l.wortformen) {
         const text = stelleZuText.get(stelle)!;
         zeilen.push(
-          `| ${++n} | ${l.schluessel.slice(e.schluessel.length + 1)} | ${stelle} | ${lesen ? '–' : umschrift(text)} | ${textVon.get(text)!.vorkommen} | | |`,
+          `| ${++n} | ${l.schluessel.slice(e.schluessel.length + 1)} | ${stelle} | ${(!lesen && umschrift(text)) || '–'} | ${textVon.get(text)!.vorkommen} | | |`,
         );
       }
     zeilen.push('');

@@ -15,7 +15,7 @@ import { baueKoranEinheit, baueKoranVerzeichnis, koranBedeutungHash, type KoranW
 
 const STELLEN = ['1:1:1', '1:1:2', '1:1:3', '1:1:4'] as const;
 // neutrale Wörter, nur als Codepunkte (KI-Regel 2): b-a-b, d-a-r, q-a-l-a-m, b-a-y-t
-const FORMEN = ['باب', 'دار', 'قلم', 'بيت'];
+const FORMEN = ['\u0628\u0627\u0628', '\u062F\u0627\u0631', '\u0642\u0644\u0645', '\u0628\u064A\u062A'];
 
 const lektion = (n: number, stellen: readonly string[]) => ({
   schluessel: `koran.grund.e01.l0${n}`,
