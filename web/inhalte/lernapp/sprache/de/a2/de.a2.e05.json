@@ -1754,7 +1754,7 @@
     },
     {
       "schluessel": "de.a2.e05.s0099",
-      "text": "Die Ärztin misst das Fieber.",
+      "text": "Die Ärztin misst Fieber.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2062,7 +2062,7 @@
     },
     {
       "schluessel": "de.a2.e05.s0150",
-      "text": "Am Mittwoch ist die Praxis nur morgens offen.",
+      "text": "An den anderen Tagen ist die Praxis nur morgens offen.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2188,7 +2188,7 @@
     },
     {
       "schluessel": "de.a2.e05.s0171",
-      "text": "Liebe Frau Becker, mein Sohn Can ist krank. Er kann heute nicht kommen, weil er Fieber hat. Die Ärztin sagt, er soll sich zwei Tage ausruhen. Am Donnerstag kommt er wieder in die Schule. Viele Grüße, Derya Kaya",
+      "text": "Liebe Frau Becker, mein Sohn Can ist krank. Er kann heute nicht kommen, weil er Fieber hat. Die Ärztin sagt, er soll sich zwei Tage ausruhen. Am Donnerstag kommt er wieder in die Schule. Viele Grüße, Murat Kaya",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2224,7 +2224,7 @@
     },
     {
       "schluessel": "de.a2.e05.s0177",
-      "text": "Am Morgen fahren die beiden mit dem Bus in die Praxis.",
+      "text": "Am nächsten Morgen fahren die beiden mit dem Bus in die Praxis.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2620,7 +2620,7 @@
     },
     {
       "schluessel": "de.a2.e05.s0243",
-      "text": "Auf dem Finger hat Ela ein Pflaster.",
+      "text": "Ela hat ein Pflaster am Finger.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2817,7 +2817,9 @@
             "Im Rücken hat Mama seit gestern Schmerzen.",
             "Mama hat seit gestern im Rücken Schmerzen.",
             "Seit gestern hat Mama im Rücken Schmerzen.",
-            "Schmerzen im Rücken hat Mama seit gestern."
+            "Schmerzen im Rücken hat Mama seit gestern.",
+            "Mama hat im Rücken seit gestern Schmerzen.",
+            "Schmerzen hat Mama seit gestern im Rücken."
           ],
           "ablenker": ["Schulter", "ist"]
         },
@@ -2850,7 +2852,7 @@
           "typ": "frei",
           "ziel": "de.a2.e05.s0021",
           "nach": "ziel",
-          "alternativen": ["Tut der Finger dir noch weh?", "Tut dein Finger noch weh?"]
+          "alternativen": ["Tut der Finger dir noch weh?", "Tut dein Finger noch weh?", "Tut dir dein Finger noch weh?"]
         },
         {
           "schluessel": "de.a2.e05.l01.a15",
@@ -2980,7 +2982,8 @@
             "Du hast dich wahrscheinlich erkältet.",
             "Wahrscheinlich hast du dich erkältet.",
             "Du bist wohl erkältet.",
-            "Du bist wahrscheinlich erkältet."
+            "Du bist wahrscheinlich erkältet.",
+            "Wahrscheinlich bist du erkältet."
           ]
         },
         {
@@ -3045,7 +3048,7 @@
             }
           ],
           "antwort": "de.a2.e05.s0058",
-          "ablenker": ["de.a2.e05.s0081", "de.a2.e05.s0086", "de.a2.e05.s0077"]
+          "ablenker": ["de.a2.e05.s0081", "de.a2.e05.s0110", "de.a2.e05.s0077"]
         },
         {
           "schluessel": "de.a2.e05.l03.a06",
@@ -3087,7 +3090,7 @@
             }
           ],
           "antwort": "de.a2.e05.s0093",
-          "ablenker": ["de.a2.e05.s0076", "de.a2.e05.s0086", "de.a2.e05.s0079"]
+          "ablenker": ["de.a2.e05.s0076", "de.a2.e05.s0098", "de.a2.e05.s0079"]
         },
         {
           "schluessel": "de.a2.e05.l03.a11",
@@ -3103,7 +3106,8 @@
           "alternativen": [
             "Beim Zahnarzt habe ich einen Termin vereinbart.",
             "Ich habe beim Zahnarzt einen Termin vereinbart.",
-            "Einen Termin beim Zahnarzt habe ich vereinbart."
+            "Einen Termin beim Zahnarzt habe ich vereinbart.",
+            "Einen Termin habe ich beim Zahnarzt vereinbart."
           ]
         },
         {
@@ -3218,7 +3222,7 @@
           "schluessel": "de.a2.e05.l04.a10",
           "typ": "minimalpaare",
           "ziel": "de.a2.e05.messen",
-          "ablenker": ["de.a1.e05.essen"]
+          "ablenker": ["de.a1.e05.essen", "de.a1.e07.muessen"]
         },
         {
           "schluessel": "de.a2.e05.l04.a11",
@@ -3249,7 +3253,7 @@
           "typ": "frei",
           "ziel": "de.a2.e05.s0106",
           "nach": "ziel",
-          "alternativen": ["Nehmen Sie Medikamente regelmäßig?"]
+          "alternativen": ["Nehmen Sie Medikamente regelmäßig?", "Nehmt ihr regelmäßig Medikamente?"]
         },
         {
           "schluessel": "de.a2.e05.l04.a15",
@@ -3327,7 +3331,7 @@
             }
           ],
           "antwort": "de.a2.e05.s0125",
-          "ablenker": ["de.a2.e05.s0133", "de.a2.e05.s0090", "de.a2.e05.s0086"]
+          "ablenker": ["de.a2.e05.s0133", "de.a2.e05.s0090", "de.a2.e05.s0083"]
         },
         {
           "schluessel": "de.a2.e05.l05.a08",
@@ -3590,7 +3594,11 @@
           "anweisung": "uebersetze",
           "satz": "de.a2.e05.s0175",
           "nach": "ziel",
-          "alternativen": ["Opa, morgen begleite ich dich zum Arzt."],
+          "alternativen": [
+            "Opa, morgen begleite ich dich zum Arzt.",
+            "Ich begleite dich morgen zum Arzt, Opa.",
+            "Morgen begleite ich dich zum Arzt, Opa."
+          ],
           "ablenker": ["dir", "begleitet"]
         },
         {
@@ -3692,7 +3700,8 @@
           "alternativen": [
             "Für die Arbeit brauche ich nämlich eine Krankmeldung.",
             "Ich brauche nämlich für die Arbeit eine Krankmeldung.",
-            "Eine Krankmeldung brauche ich nämlich für die Arbeit."
+            "Eine Krankmeldung brauche ich nämlich für die Arbeit.",
+            "Ich brauche für die Arbeit nämlich eine Krankmeldung."
           ]
         },
         {
@@ -3818,23 +3827,25 @@
           "schluessel": "de.a2.e05.l07.a09",
           "typ": "satzbau",
           "ziel": "de.a2.e05.s0243",
-          "alternativen": [
-            "Ela hat ein Pflaster auf dem Finger.",
-            "Ein Pflaster hat Ela auf dem Finger.",
-            "Ela hat auf dem Finger ein Pflaster."
-          ]
+          "alternativen": ["Am Finger hat Ela ein Pflaster.", "Ein Pflaster hat Ela am Finger.", "Ela hat am Finger ein Pflaster."]
         },
         {
           "schluessel": "de.a2.e05.l07.a10",
           "typ": "frei",
           "ziel": "de.a2.e05.s0245",
           "nach": "ziel",
-          "alternativen": ["Ihm ist seine Gesundheit sehr wichtig."]
+          "alternativen": [
+            "Ihm ist seine Gesundheit sehr wichtig.",
+            "Seine Gesundheit ist für ihn sehr wichtig.",
+            "Ihre Gesundheit ist ihr sehr wichtig.",
+            "Ihr ist ihre Gesundheit sehr wichtig."
+          ]
         },
         {
           "schluessel": "de.a2.e05.l07.a11",
           "typ": "hoeren_schreiben",
-          "ziel": "de.a2.e05.s0101"
+          "ziel": "de.a2.e05.s0101",
+          "alternativen": ["Die Behandlung dauert 2 Wochen."]
         },
         {
           "schluessel": "de.a2.e05.l07.a12",
