@@ -1120,10 +1120,9 @@
     },
     {
       "schluessel": "de.a2.e01.s0022",
-      "text": "Ich habe gestern meinen Freund Tom besucht.",
-      "quelle": "tatoeba:343687",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #343687 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+      "text": "Ich habe gestern meinen Opa besucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "de.a2.e01.s0023",
@@ -1339,7 +1338,7 @@
     },
     {
       "schluessel": "de.a2.e01.s0057",
-      "text": "Elif hat ihre Oma gezeichnet.",
+      "text": "Elif hat den Garten gezeichnet.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1813,7 +1812,7 @@
     },
     {
       "schluessel": "de.a2.e01.s0134",
-      "text": "Ich war bisher nie im Theater.",
+      "text": "Ich war bisher noch nie im Theater.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1861,7 +1860,7 @@
     },
     {
       "schluessel": "de.a2.e01.s0142",
-      "text": "Am Freitag hat unsere Klasse einen Ausflug gemacht. Wir waren den ganzen Tag im Wildpark. Am Morgen war es ziemlich kalt.",
+      "text": "Am Samstag hat unsere Klasse einen Ausflug gemacht. Wir waren den ganzen Tag im Wildpark. Am Morgen war es ziemlich kalt.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1915,7 +1914,7 @@
     },
     {
       "schluessel": "de.a2.e01.s0151",
-      "text": "Sie hat die Tiere gezeichnet.",
+      "text": "Sie hat den Park gezeichnet.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1951,7 +1950,7 @@
     },
     {
       "schluessel": "de.a2.e01.s0157",
-      "text": "Ich habe am Samstag mit Mama einen Kuchen gebacken.",
+      "text": "Ich habe am Samstag mit Papa einen Kuchen gebacken.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2675,7 +2674,7 @@
           "typ": "frei",
           "ziel": "de.a2.e01.s0018",
           "nach": "ziel",
-          "alternativen": ["Der Besuch bei der Oma war sehr schön."]
+          "alternativen": ["Der Besuch bei der Oma war sehr schön.", "Der Besuch bei meiner Oma war sehr schön."]
         },
         {
           "schluessel": "de.a2.e01.l01.a15",
@@ -2839,7 +2838,7 @@
         {
           "schluessel": "de.a2.e01.l03.a03",
           "typ": "grammatik_tipp",
-          "tipp": "t05"
+          "tipp": "t03"
         },
         {
           "schluessel": "de.a2.e01.l03.a04",
@@ -2956,7 +2955,7 @@
         {
           "schluessel": "de.a2.e01.l04.a01",
           "typ": "grammatik_tipp",
-          "tipp": "t03"
+          "tipp": "t04"
         },
         {
           "schluessel": "de.a2.e01.l04.a02",
@@ -3072,7 +3071,8 @@
           "schluessel": "de.a2.e01.l04.a15",
           "typ": "frei",
           "ziel": "de.a2.e01.s0093",
-          "nach": "ziel"
+          "nach": "ziel",
+          "alternativen": ["Das Wetter war furchtbar."]
         },
         {
           "schluessel": "de.a2.e01.l04.a16",
@@ -3093,7 +3093,7 @@
         {
           "schluessel": "de.a2.e01.l05.a01",
           "typ": "grammatik_tipp",
-          "tipp": "t04"
+          "tipp": "t05"
         },
         {
           "schluessel": "de.a2.e01.l05.a02",
@@ -3222,7 +3222,8 @@
           "schluessel": "de.a2.e01.l05.a14",
           "typ": "frei",
           "ziel": "de.a2.e01.s0122",
-          "nach": "ziel"
+          "nach": "ziel",
+          "alternativen": ["Das Bild ist eine schöne Erinnerung."]
         },
         {
           "schluessel": "de.a2.e01.l05.a15",
@@ -3232,7 +3233,8 @@
         {
           "schluessel": "de.a2.e01.l05.a16",
           "typ": "hoeren_schreiben",
-          "ziel": "de.a2.e01.s0129"
+          "ziel": "de.a2.e01.s0129",
+          "alternativen": ["Kannst du das bitte noch mal sagen?"]
         }
       ]
     },
@@ -3337,7 +3339,11 @@
           "anweisung": "uebersetze",
           "satz": "de.a2.e01.s0160",
           "nach": "ziel",
-          "alternativen": ["Am Sonntag habe ich meine Oma besucht."],
+          "alternativen": [
+            "Am Sonntag habe ich meine Oma besucht.",
+            "Meine Oma habe ich am Sonntag besucht.",
+            "Ich habe meine Oma am Sonntag besucht."
+          ],
           "ablenker": ["besuchen", "Opa"]
         },
         {
@@ -3595,7 +3601,7 @@
             }
           ],
           "antwort": "de.a2.e01.s0102",
-          "ablenker": ["de.a2.e01.s0031", "de.a2.e01.s0110"]
+          "ablenker": ["de.a2.e01.s0031", "de.a2.e01.s0060"]
         },
         {
           "schluessel": "de.a2.e01.l07.a14",
@@ -3650,7 +3656,7 @@
             }
           ],
           "antwort": "de.a2.e01.s0235",
-          "ablenker": ["de.a2.e01.s0236", "de.a2.e01.s0237"]
+          "ablenker": ["de.a2.e01.s0094", "de.a2.e01.s0237"]
         },
         {
           "schluessel": "de.a2.e01.l07.a19",
@@ -3798,6 +3804,14 @@
           "schluessel": "de.a2.e01.l08.a12",
           "typ": "dialog",
           "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0242"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e01.s0243"
+            },
             {
               "sprecher": "a",
               "satz": "de.a2.e01.s0244"
