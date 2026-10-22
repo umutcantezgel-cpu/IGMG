@@ -7,7 +7,7 @@ import type { AbschlussTexte } from './Abschluss';
 
 /**
  * Gemeinsame Typen der Spieler-Bausteine (Client). Texte kommen als Prop aus `messages/lernapp/<ui>.json`
- * (Namensräume `spieler`, `aufgaben`, `tastatur`, `aufgaben2`, `sprechen` und `schreiben`) und werden mit `format.ts` gefüllt – kein next-intl im Client
+ * (Namensräume `spieler`, `aufgaben`, `tastatur`, `aufgaben2`, `sprechen`, `schreiben` und `ansichten`) und werden mit `format.ts` gefüllt – kein next-intl im Client
  * (ADR 0037).
  */
 
@@ -18,8 +18,16 @@ export { richtung } from '@/lib/lernapp/kurse';
 /** Texte des Melde-Dialogs (Namensraum `melden`, L3-06b). */
 export type MeldenTexte = (typeof de)['melden'];
 
-/** Texte der Übungstypen aus L2-02 (Namensräume `aufgaben2`, `sprechen`, `schreiben`; Form wie `messages/lernapp/de.json`). */
-export type WeitereTexte = { aufgaben2: (typeof de)['aufgaben2']; sprechen: (typeof de)['sprechen']; schreiben: (typeof de)['schreiben'] };
+/**
+ * Texte der Übungstypen aus L2-02 (Namensräume `aufgaben2`, `sprechen`, `schreiben`) und der Lese-Ansichten aus L4-03
+ * (`ansichten`: Geschichte in Abschnitten, Glossar zum Lesetext); Form wie `messages/lernapp/de.json`.
+ */
+export type WeitereTexte = {
+  aufgaben2: (typeof de)['aufgaben2'];
+  sprechen: (typeof de)['sprechen'];
+  schreiben: (typeof de)['schreiben'];
+  ansichten: (typeof de)['ansichten'];
+};
 
 /**
  * Einstellungen, die der Spieler beachtet (KERN 4.0 §8, ADR 0042 Nr. 8/12): „Hörübungen aus“, „Sprechübungen aus“ (beide aus

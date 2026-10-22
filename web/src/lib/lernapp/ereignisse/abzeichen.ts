@@ -1,5 +1,8 @@
 import { EIGENE_STUFEN, SPRACH_STUFEN } from '../kurse';
+import { lektionsTeile, stufenZaehler, zielspracheVon } from './stufen';
 import type { Ereignis } from './typen';
+
+export { EINHEITEN_JE_STUFE } from './stufen';
 
 /**
  * Abzeichen (ADR 0043 Nr. 5, PLAN §8) – Katalog und Ableitung, rein. Jedes Abzeichen folgt allein aus dem Ereignisprotokoll
@@ -14,7 +17,7 @@ import type { Ereignis } from './typen';
  *
  * | Gruppe | Bedingung | Stufen |
  * |---|---|---|
- * | stufe | in einem Sprachkurs die Prüfsteine aller Einheiten der Stufe geschafft (Zahl je Stufe nach Rahmenplan) | A1–C1 |
+ * | stufe | in einem Sprachkurs die Prüfsteine aller Einheiten der Stufe geschafft (Zahl je Stufe nach Rahmenplan; Regel in `stufen.ts`, die auch der Lernpfad und „Fortschritt“ je Kurs nutzen) | A1–C1 |
  * | lerntage | Lerntage gesamt | 7, 30, 100, 365 |
  * | woerter | verschiedene Karten (Wörter und Sätze) mindestens einmal richtig | 100, 500, 1.000, 2.500, 5.000 |
  * | schrift | alle Lektionen des Schrift-Vorkurses einer Zielsprache (Zahl nach Rahmenplan; gleiche Lektion aus zwei Ausgangssprachen zählt einmal) | Arabisch, Latein, Türkisch |
@@ -58,9 +61,6 @@ export type AbzeichenArt = {
   /** Rang innerhalb der Gruppe ab 1 (Form der Achtstern-Variante) */
   rang: number;
 };
-
-/** Einheiten je Sprachstufe laut Rahmenplan (gleich für de, tr, ar; Unit-Test gegen `inhalte/lernapp/rahmen/*.rahmen.json`). */
-export const EINHEITEN_JE_STUFE: Readonly<Record<(typeof SPRACH_STUFEN)[number], number>> = { a1: 12, a2: 14, b1: 16, b2: 16, c1: 14 };
 
 /** Schriften der Vorkurse: Zielsprache → Abzeichen (ar: Arabisch, de: Lateinschrift aus ar, tr: türkische Buchstaben). */
 export const SCHRIFTEN = { ar: 'ar', de: 'latein', tr: 'tr' } as const;
@@ -115,20 +115,6 @@ export type AbzeichenKontext = {
 /** Arten, die einen Tag zum Lerntag machen (wie `ableiten.ts`). */
 const LERNEN: ReadonlySet<Ereignis['art']> = new Set(['bewertung', 'lektion', 'xp', 'einstufung']);
 
-/** Zerlegt einen Lektionsschlüssel `<kurs>.<stufe>.<einheit>.<lektion>`; `null` bei anderer Form. */
-function teile(lektion: string): { kurs: string; stufe: string; einheit: string } | null {
-  const t = lektion.split('.');
-  if (t.length < 4) return null;
-  const [kurs, stufe, einheit] = t as [string, string, string];
-  return { kurs, stufe, einheit };
-}
-
-/** Zielsprache eines Sprachkurses (`tr-aus-de` → `tr`), sonst `null`. */
-function zielsprache(kurs: string): keyof typeof SCHRIFTEN | null {
-  const m = /^(de|tr|ar)-aus-(?:de|tr|ar)$/.exec(kurs);
-  return m ? (m[1] as keyof typeof SCHRIFTEN) : null;
-}
-
 /**
  * Erhaltene Abzeichen aus den Ereignissen. `sortiert`: Ereignisse in der festen Ordnung (`vereinige`). Ergebnis in der
  * Reihenfolge von `ABZEICHEN`. Bis auf `tagesziel` (ein später abgeglichenes Tagesziel kann frühere Tage ändern) wächst die
@@ -150,8 +136,8 @@ export function leiteAbzeichenAb(sortiert: readonly Ereignis[], kontext: Abzeich
   const geschichten = new Set<string>();
   const pruefsteine = new Set<string>();
   let wiederholungen = 0;
-  /** `<kurs>.<stufe>` → Einheiten mit geschafftem Prüfstein */
-  const stufen = new Map<string, Set<string>>();
+  /** Prüfsteine je Kurs und Stufe; meldet die Stufe, sobald alle Einheiten geschafft sind */
+  const stufeFertig = stufenZaehler();
   /** Zielsprache → Lektionen des Schrift-Vorkurses */
   const schrift = new Map<keyof typeof SCHRIFTEN, Set<string>>();
 
@@ -175,17 +161,12 @@ export function leiteAbzeichenAb(sortiert: readonly Ereignis[], kontext: Abzeich
       // Sprechen und Schreiben sind Aufgaben in gewöhnlichen Lektionen (Rahmenplan); das Ereignis nennt sie in `typen`
       if (art === 'sprechen' || typen?.includes('sprechen')) gib('erstes-sprechen', e.tag);
       if (art === 'schreiben' || typen?.includes('schreiben')) gib('erstes-schreiben', e.tag);
-      const t = teile(lektion);
-      const ziel = zielsprache(kurs);
+      const t = lektionsTeile(lektion);
+      const ziel = zielspracheVon(kurs);
       if (art === 'pruefstein') {
         if (!pruefsteine.has(lektion)) zaehle('pruefsteine', pruefsteine.add(lektion).size, e.tag);
-        const stufe = t?.stufe as (typeof SPRACH_STUFEN)[number] | undefined;
-        if (ziel && t && t.kurs === kurs && stufe && stufe in EINHEITEN_JE_STUFE) {
-          const schluessel = `${kurs}.${stufe}`;
-          const einheiten = stufen.get(schluessel) ?? new Set<string>();
-          stufen.set(schluessel, einheiten.add(t.einheit));
-          if (einheiten.size >= EINHEITEN_JE_STUFE[stufe]) gib(`stufe-${stufe}`, e.tag);
-        }
+        const stufe = stufeFertig(kurs, lektion, art);
+        if (stufe) gib(`stufe-${stufe}`, e.tag);
       }
       if (art === 'schrift' && ziel) {
         // dieselbe Vorkurs-Lektion aus zwei Ausgangssprachen (`ar-aus-de.v.l01`, `ar-aus-tr.v.l01`) zählt einmal

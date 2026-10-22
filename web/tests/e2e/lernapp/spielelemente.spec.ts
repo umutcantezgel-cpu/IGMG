@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
 import { ABZEICHEN } from '../../../src/lib/lernapp/ereignisse/abzeichen';
 import { formatiere } from '../../../src/lib/lernapp/format';
@@ -89,5 +90,74 @@ test('Fortschritt, Serie und Abzeichen aus dem Protokoll; Pausetage und Ruhezeit
   // Start: Serie mit dem gewählten Pausetag
   await page.goto('/lern-app/de');
   await expect(page.getByText(formatiere(de.serie.pausetage, { n: 1 }, 'de'))).toBeVisible();
+  expect(befunde).toEqual([]);
+});
+
+/**
+ * Stufe je Kurs abgeschlossen (L4-03, ADR 0043 Nr. 5): Ein Protokoll mit den Prüfsteinen aller zwölf A1-Einheiten von
+ * `tr-aus-de` (synthetisch, als Sicherungsdatei eingelesen – ohne Konto, nur auf dem Gerät) ergibt das Abzeichen „Stufe
+ * A1“, auf „Fortschritt“ den Kurs mit seiner abgeschlossenen Stufe (auch in der arabischen Oberfläche, RTL) und im Lernpfad
+ * „Stufe abgeschlossen“ an der Stufe A1. Kein Zertifikat; axe ohne ernste oder kritische Befunde.
+ */
+test('Stufe abgeschlossen: Abzeichen, Fortschritt je Kurs und Lernpfad', async ({ page }) => {
+  test.setTimeout(90_000);
+  const befunde: string[] = [];
+  const geraet = '00000000-0000-4000-8000-0000000000e3';
+  const ereignisse = Array.from({ length: 12 }, (_, i) => {
+    const tag = tagIn(i - 12);
+    const einheit = `e${String(i + 1).padStart(2, '0')}`;
+    return {
+      geraet,
+      seq: i,
+      am: `${tag}T10:00:00.000Z`,
+      tag,
+      art: 'lektion',
+      daten: { kurs: KURS, lektion: `${KURS}.a1.${einheit}.l08`, art: 'pruefstein', richtig: 9, gesamt: 10 },
+    };
+  });
+  const datei = {
+    format: 'igmg-lernapp-export',
+    version: 1,
+    erstellt: new Date().toISOString(),
+    profil: { name: '[Testprofil]', oberflaeche: 'de', angelegt: new Date().toISOString() },
+    ereignisse,
+  };
+
+  await page.goto('/lern-app/de/einstellungen');
+  const [auswahl] = await Promise.all([
+    page.waitForEvent('filechooser'),
+    page.getByRole('button', { name: de.einstellungen.einlesen }).click(),
+  ]);
+  await auswahl.setFiles({ name: 'stufe-a1.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(datei)) });
+  await expect(page.getByText(formatiere(de.einstellungen.eingelesen, { n: 12 }, 'de'), { exact: true })).toBeVisible({ timeout: 30_000 });
+
+  // Fortschritt: Abzeichen „Stufe A1“ (erhalten, nicht zugeklappt) und der Kurs mit seiner Stufe
+  await page.goto('/lern-app/de/fortschritt');
+  const stand = page.locator('#fortschritt-stand');
+  const stufeA1 = stand.locator('[data-abzeichen="stufe-a1"]');
+  await expect(stufeA1).toBeVisible();
+  await expect(stufeA1).toContainText(formatiere(de.abzeichen.arten.stufe.name, { stufe: 'A1' }, 'de'));
+  // A2 ist noch offen: nur im zugeklappten Teil „weitere Abzeichen“
+  await expect(stand.locator('[data-abzeichen="stufe-a2"]')).toBeHidden();
+  await expect(stand.getByRole('heading', { level: 2, name: de.ansichten.stufen.titel })).toBeVisible();
+  const kurs = stand.locator(`li[data-kurs="${KURS}"]`);
+  await expect(kurs).toContainText(formatiere(de.ansichten.stufen.kurs, { ziel: de.kurse.ziel.tr, fuer: de.kurse.fuer.de }, 'de'));
+  await expect(kurs.locator('[data-stufe]')).toHaveText([de.lernpfad.stufe.a1]);
+  await expect(stand).not.toContainText(/Zertifikat erhalten|Urkunde/);
+  befunde.push(...(await ernsteBefunde(page, 'Fortschritt Stufen')));
+
+  // Lernpfad: „Stufe abgeschlossen“ an A1
+  await page.goto(`/lern-app/de/${KURS}`);
+  const marke = page.locator('[data-stufe-abgeschlossen="a1"]');
+  await expect(marke).toHaveText(de.ansichten.stufen.abgeschlossen);
+  await expect(page.getByRole('heading', { level: 3, name: de.lernpfad.stufe.a1, exact: true })).toBeVisible();
+  befunde.push(...(await ernsteBefunde(page, 'Lernpfad Stufe')));
+
+  // arabische Oberfläche (RTL): derselbe Stand des Geräts, Texte auf Arabisch
+  await page.goto('/lern-app/ar/fortschritt');
+  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  await expect(page.locator(`#fortschritt-stand li[data-kurs="${KURS}"]`)).toContainText(ar.kurse.ziel.tr);
+  await expect(page.locator('#fortschritt-stand').getByRole('heading', { level: 2, name: ar.ansichten.stufen.titel })).toBeVisible();
+  befunde.push(...(await ernsteBefunde(page, 'Fortschritt Stufen ar')));
   expect(befunde).toEqual([]);
 });

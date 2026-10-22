@@ -50,6 +50,7 @@ export default async function Wiederholen({ params }: PageProps<'/lern-app/[ui]/
             aufgaben2: rohTexte(ui, 'aufgaben2'),
             sprechen: rohTexte(ui, 'sprechen'),
             schreiben: rohTexte(ui, 'schreiben'),
+            ansichten: rohTexte(ui, 'ansichten'),
             abschluss: { abschluss: rohTexte(ui, 'abschluss'), serie: rohTexte(ui, 'serie'), abzeichen: rohTexte(ui, 'abzeichen') },
           }}
           spracherkennung={await funktionAn('lernapp_sprechen')}

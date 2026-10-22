@@ -53,6 +53,7 @@ const TEXTE: SpielerTexte = {
   aufgaben: de.aufgaben,
   tastatur: de.tastatur,
   aufgaben2: de.aufgaben2,
+  ansichten: de.ansichten,
   sprechen: de.sprechen,
   schreiben: de.schreiben,
 };
@@ -328,7 +329,7 @@ describe('Komponenten (Server-Rendering, Semantik)', () => {
 
   it('lesen_fragen: Wörter mit Glosse als Knöpfe, Fragen als Radiogruppen, Aussagen mit drei festen Antworten', async () => {
     const html = await vorrendern(<LesenFragen {...props<'lesen_fragen'>(LESEN as Aufgabe)} />);
-    expect(anzahl(html, /<button type="button" aria-expanded="false"/g)).toBe(2);
+    expect(anzahl(html, /<button [^>]*type="button" aria-expanded="false"/g)).toBe(2);
     expect(html).toContain('Steht nicht im Text');
     expect(anzahl(html, /type="radio"/g)).toBe(3 + 3 + 3);
     expect(html).toMatch(/<p lang="de" dir="ltr"/);

@@ -11,7 +11,7 @@ import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { darf, verlangeSeitenRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { cn } from '@/lib/utils';
 import { entscheideFreigabe } from '@/server/actions/freigaben';
-import { ladeVerlauf, ladeWarteschlange, type FreigabeEintrag } from '@/server/queries/verwaltung/freigaben';
+import { ladeVerlauf, ladeWarteschlangeMitUeberlauf, type FreigabeEintrag } from '@/server/queries/verwaltung/freigaben';
 
 const STATUS_FARBE = {
   entwurf: 'bg-sand text-tinte-2',
@@ -36,17 +36,22 @@ export default async function Freigaben({ searchParams }: PageProps<'/[locale]/v
   const sp = await searchParams;
   const verlauf = sp.ansicht === 'verlauf';
   const erledigt = sp.erledigt === 'freigeben' || sp.erledigt === 'zurueckweisen' ? sp.erledigt : null;
-  const [t, tg, offen] = await Promise.all([
+  const [t, tg, { eintraege: offen, lernappWeitere }] = await Promise.all([
     getTranslations('verwaltung.freigaben'),
     getTranslations('verwaltung.shell'),
-    ladeWarteschlange(a.benutzerId),
+    ladeWarteschlangeMitUeberlauf(a.benutzerId),
   ]);
   const zeit = (d: Date) => `${datumLang(d, 'de')}, ${uhrzeit(d, 'de')}`;
   const ansichten = (
     <Ansichten
       label={t('ansichten')}
       eintraege={[
-        { schluessel: 'offen', label: t('offen', { anzahl: offen.length }), href: '/verwaltung/freigaben', aktiv: !verlauf },
+        {
+          schluessel: 'offen',
+          label: t('offen', { anzahl: offen.length + lernappWeitere }),
+          href: '/verwaltung/freigaben',
+          aktiv: !verlauf,
+        },
         { schluessel: 'verlauf', label: t('verlauf'), href: '/verwaltung/freigaben?ansicht=verlauf', aktiv: verlauf },
       ]}
     />
@@ -119,6 +124,21 @@ export default async function Freigaben({ searchParams }: PageProps<'/[locale]/v
               </h2>
               <p className="max-w-einleitung text-16 text-tinte-2">{t(`gruppeHinweis.${art}`)}</p>
             </div>
+            {art === 'religioes' && lernappWeitere > 0 ? (
+              // Überlauf der Grenze (200): die Lern-App-Bausteine stehen vollständig in ihrer eigenen Prüfoberfläche
+              <Meldung art="info">
+                <span className="flex flex-col gap-2">
+                  <span>{t('lernappUeberlauf', { anzahl: lernappWeitere })}</span>
+                  <NextLink
+                    href="/verwaltung/lernapp/religioes"
+                    className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4"
+                  >
+                    {t('lernappUeberlaufLink')}
+                    <ArrowRight aria-hidden className="size-4" />
+                  </NextLink>
+                </span>
+              </Meldung>
+            ) : null}
             <ul className="flex flex-col gap-4">
               {eintraege.map((e) => {
                 const darfEs = darfEntscheiden(a, e);

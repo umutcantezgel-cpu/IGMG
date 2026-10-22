@@ -1,4 +1,6 @@
 import { ABZEICHEN, type ErhaltenesAbzeichen } from '../ereignisse/abzeichen';
+import { abgeschlosseneStufen, type SprachStufe } from '../ereignisse/stufen';
+import { RICHTUNGEN, type RichtungId } from '../kurse';
 import { profilBereich } from '../lokal/db';
 import { frischAbgeleitet, heute, vorhandenesProfil } from './geraet';
 import { type SerieAnzeige, serieVon } from './stand';
@@ -21,7 +23,11 @@ export type FortschrittStand = {
   serie: SerieAnzeige | null;
   /** erhaltene Abzeichen in der Reihenfolge des Katalogs */
   abzeichen: ErhaltenesAbzeichen[];
+  /** abgeschlossene Stufen je Sprachkurs (ADR 0043 Nr. 5 „Stufe je Kurs“), Kurse in der Reihenfolge von `RICHTUNGEN` */
+  stufen: StufenJeKurs[];
 };
+
+export type StufenJeKurs = { kurs: RichtungId; stufen: SprachStufe[] };
 
 export const LEERER_FORTSCHRITT: FortschrittStand = {
   begonnen: false,
@@ -32,7 +38,14 @@ export const LEERER_FORTSCHRITT: FortschrittStand = {
   heute: { xp: 0, lektionen: 0 },
   serie: null,
   abzeichen: [],
+  stufen: [],
 };
+
+/** Abgeschlossene Stufen je Sprachkurs aus geschafften Lektionen, nur Kurse mit mindestens einer Stufe (Reihenfolge `RICHTUNGEN`). */
+export function stufenJeKurs(lektionen: Iterable<{ kurs: string; lektion: string; art: string }>): StufenJeKurs[] {
+  const fertig = abgeschlosseneStufen(lektionen);
+  return RICHTUNGEN.flatMap((kurs) => (fertig.get(kurs)?.length ? [{ kurs, stufen: fertig.get(kurs)! }] : []));
+}
 
 export async function ladeFortschritt(jetzt = new Date()): Promise<FortschrittStand> {
   const { sp, profil } = await vorhandenesProfil();
@@ -58,5 +71,6 @@ export async function ladeFortschritt(jetzt = new Date()): Promise<FortschrittSt
     heute: { xp: tag?.xp ?? 0, lektionen: tag?.lektionen ?? 0 },
     serie,
     abzeichen: ABZEICHEN.flatMap((a) => (erhalten.has(a.id) ? [{ id: a.id, tag: erhalten.get(a.id)! }] : [])),
+    stufen: stufenJeKurs(lektionen),
   };
 }

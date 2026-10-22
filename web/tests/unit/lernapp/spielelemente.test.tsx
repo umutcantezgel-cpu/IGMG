@@ -79,7 +79,7 @@ describe('Abschluss (B-30) mit Tagesziel, Serie und neuen Abzeichen', () => {
     const h = renderToStaticMarkup(
       <Abschluss stand={stand({ ziel: { art: 'lektionen', wert: 2 } })} texte={texte(ar)} ui="ar" ziffern="oestlich" />,
     );
-    expect(h).toContain('١'); // 1
+    expect(h).toContain('\u0661'); // östlich-arabische 1
     expect(h).toContain('rtl:-scale-x-100');
     expect(h).toContain('stroke-dasharray="0.5 1"');
   });
@@ -117,7 +117,15 @@ describe('Abzeichen: Achtstern-Varianten je Rang', () => {
 describe('Fortschritt', () => {
   it('ohne Stand auf dem Gerät (Server, neues Gerät): nur der Hinweis', () => {
     const h = renderToStaticMarkup(
-      <FortschrittInsel ui="de" texte={{ fortschritt: de.fortschritt, serie: de.serie, abzeichen: de.abzeichen }} />,
+      <FortschrittInsel
+        ui="de"
+        texte={{
+          fortschritt: de.fortschritt,
+          serie: de.serie,
+          abzeichen: de.abzeichen,
+          stufen: { stufen: de.ansichten.stufen, ziel: de.kurse.ziel, fuer: de.kurse.fuer, namen: de.lernpfad.stufe },
+        }}
+      />,
     );
     expect(h).toBe(`<p class="text-18 text-tinte-2">${de.fortschritt.leer}</p>`);
   });

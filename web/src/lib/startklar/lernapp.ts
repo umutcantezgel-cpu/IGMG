@@ -9,7 +9,8 @@ import type { Pruefung } from './pruefungen';
 
 /**
  * Cockpit-Karte „Lern-App“ (PLAN §7.1, ADR 0041 Folgen, L3-06): Schalter, Blob-Speicher für Audio, Prüfende (mindestens
- * zwei mit religiöser Prüfung, mindestens eine Person je Prüfsprache), Einheiten je Status, offene Meldungen und abgelehnte
+ * zwei mit religiöser Prüfung, Hinweis bei Rollen-Kombination mit Administration oder Lern-App-Redaktion, mindestens eine
+ * Person je Prüfsprache), Einheiten je Status, offene Meldungen und abgelehnte
  * Abgleiche wegen der Grenzen je Konto (S-L1 M-2, nur Zahlen). Prüfungen dürfen erweitert, nie abgeschwächt werden.
  */
 type Umgebung = Readonly<Record<string, string | undefined>>;
@@ -95,6 +96,42 @@ export async function lernappPruefen(
         : `Nur ${zahl(nReligioes, 'Person hat', 'Personen haben')} die Rolle „religiöse Prüfung“. Wissenskurs, Koran-Arabisch und Einträge mit Religionsbezug brauchen zwei Freigaben von zwei Personen und bleiben bis dahin verborgen.`,
     ort: 'Verwaltung › Benutzer (Vier-Augen-Prinzip), MENSCHEN LM-03',
     aufwand: '30 min',
+  });
+
+  // Unabhängigkeit der Prüfenden (ADR 0040 Nr. 5): religiöse Prüfung zusammen mit Administration (Audit) oder Redaktion der
+  // Lern-App – nur ein Hinweis, keine Sperre; nur Zahlen, keine Namen
+  const konfliktRollen = ROLLEN.filter(
+    (r) => r !== 'religioese_pruefung' && (MATRIX[r].has('audit.lesen') || MATRIX[r].has('lernapp.bearbeiten')),
+  );
+  const [doppelt] = await db
+    .select({ n: sql<number>`count(distinct ${schema.rolleZuweisung.benutzerId})`.mapWith(Number) })
+    .from(schema.rolleZuweisung)
+    .innerJoin(schema.user, eq(schema.user.id, schema.rolleZuweisung.benutzerId))
+    .where(
+      and(
+        eq(schema.rolleZuweisung.rolle, 'religioese_pruefung'),
+        aktiv,
+        inArray(
+          schema.rolleZuweisung.benutzerId,
+          db
+            .select({ id: schema.rolleZuweisung.benutzerId })
+            .from(schema.rolleZuweisung)
+            .where(inArray(schema.rolleZuweisung.rolle, konfliktRollen)),
+        ),
+      ),
+    );
+  const nDoppelt = doppelt?.n ?? 0;
+  neu({
+    id: 'lernapp.pruefende-unabhaengig',
+    bereich: 'lernapp',
+    titel: 'Unabhängigkeit der religiösen Prüfung',
+    status: nDoppelt > 0 ? 'hinweis' : 'ok',
+    meldung:
+      nDoppelt > 0
+        ? `${zahl(nDoppelt, 'Person mit der Rolle „religiöse Prüfung“ hat', 'Personen mit der Rolle „religiöse Prüfung“ haben')} zugleich Administration oder die Redaktion der Lern-App (${konfliktRollen.join(', ')}). Prüfende sollen unabhängig von Verwaltung und Redaktion sein; die Rollen nach Möglichkeit trennen (nur Hinweis, keine Sperre).`
+        : 'Keine Person mit der Rolle „religiöse Prüfung“ hat zugleich Administration oder die Redaktion der Lern-App.',
+    ort: 'Verwaltung › Benutzer (Rollen), ADR 0040 Nr. 5',
+    aufwand: '10 min',
   });
 
   const pruefRollen = ROLLEN.filter((r) => MATRIX[r].has('lernapp.sprache.pruefen'));

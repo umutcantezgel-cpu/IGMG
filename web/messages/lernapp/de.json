@@ -1003,5 +1003,28 @@
       "eigene": "{n, plural, =0 {Weitere Einträge hat diese Einheit nicht.} one {# weiterer Eintrag ist ein eigener Inhalt der Lern-App (CC BY-SA 4.0).} other {# weitere Einträge sind eigene Inhalte der Lern-App (CC BY-SA 4.0).}}",
       "nurEigene": "Alle Einträge dieser Einheit sind eigene Inhalte der Lern-App (CC BY-SA 4.0)."
     }
+  },
+  "ansichten": {
+    "stufen": {
+      "titel": "Abgeschlossene Stufen",
+      "text": "Je Sprachkurs: Alle Prüfsteine der Stufe sind geschafft. Das ist kein Zeugnis und kein Zertifikat.",
+      "kurs": "{ziel} – {fuer}",
+      "abgeschlossen": "Stufe abgeschlossen",
+      "art": {
+        "geschichte": "Geschichte",
+        "pruefstein": "Prüfstein"
+      }
+    },
+    "geschichte": {
+      "stand": "Zeile {n, number} von {gesamt, number}",
+      "bisZurFrage": "Bis zur nächsten Frage lesen",
+      "bisZumEnde": "Bis zum Ende lesen"
+    },
+    "lesen": {
+      "zuDenFragen": "Zu den Fragen springen",
+      "zumText": "Zurück zum Text",
+      "woerter": "{n, plural, one {# Wort zum Text} other {# Wörter zum Text}}",
+      "woerterText": "Alle markierten Wörter mit ihrer Bedeutung."
+    }
   }
 }

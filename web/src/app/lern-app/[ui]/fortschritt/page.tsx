@@ -14,7 +14,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 /**
  * Fortschritt (PLAN §3.1): statische Hülle mit dem leeren Stand eines neuen Geräts; in `#fortschritt-stand` die Insel mit
- * dem Stand aus der lokalen Datenbank (Lerntage, XP, Lektionen, Serie, Abzeichen; ADR 0038, ADR 0043) – Zahlen statisch,
+ * dem Stand aus der lokalen Datenbank (Lerntage, XP, Lektionen, Serie, Abzeichen, abgeschlossene Stufen je Kurs; ADR 0038,
+ * ADR 0043) – Zahlen statisch,
  * ohne Vergleich mit anderen, ohne Cookies.
  */
 export default async function Fortschritt() {
@@ -27,7 +28,17 @@ export default async function Fortschritt() {
       <section id="fortschritt-stand" aria-label={t('fortschritt.titel')} className="rounded-lg border border-linie bg-weiss p-5 md:p-8">
         <FortschrittInsel
           ui={ui}
-          texte={{ fortschritt: rohTexte(ui, 'fortschritt'), serie: rohTexte(ui, 'serie'), abzeichen: rohTexte(ui, 'abzeichen') }}
+          texte={{
+            fortschritt: rohTexte(ui, 'fortschritt'),
+            serie: rohTexte(ui, 'serie'),
+            abzeichen: rohTexte(ui, 'abzeichen'),
+            stufen: {
+              stufen: rohTexte(ui, 'ansichten').stufen,
+              ziel: rohTexte(ui, 'kurse').ziel,
+              fuer: rohTexte(ui, 'kurse').fuer,
+              namen: rohTexte(ui, 'lernpfad').stufe,
+            },
+          }}
         />
       </section>
     </Rahmen>

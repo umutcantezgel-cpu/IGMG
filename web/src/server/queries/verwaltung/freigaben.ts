@@ -262,37 +262,52 @@ async function offeneReligioese(): Promise<FreigabeEintrag[]> {
  * Offene Bausteine der Lern-App (noch nicht 2/2, nicht zurückgezogen); nur bei eingeschalteter Lern-App. Erst filtern und
  * ordnen (was die Person prüfen kann zuerst), dann kürzen – die ganze Warteschlange steht in der religiösen Prüfung.
  */
-async function offeneLernapp(benutzerId: string): Promise<FreigabeEintrag[]> {
-  if (!(await funktionAn('lernapp'))) return [];
+async function offeneLernapp(benutzerId: string, grenze: number): Promise<{ eintraege: FreigabeEintrag[]; weitere: number }> {
+  if (!(await funktionAn('lernapp'))) return { eintraege: [], weitere: 0 };
   const bausteine = await ladeReligioeseBausteine(benutzerId);
-  return ordneWarteschlange(bausteine.filter((b) => !b.lage.geprueft))
-    .slice(0, GRENZE)
-    .map((b) => ({
-      inhaltTyp: `lernapp_${b.typ}` as const,
-      inhaltId: b.id,
-      art: 'religioes' as const,
-      titel: b.titel.length > 160 ? `${b.titel.slice(0, 159)}…` : b.titel,
-      angaben: [
-        { label: 'baustein', wert: b.schluessel },
-        { label: 'zweiPruefer', wert: `${b.stand}/2` },
-      ],
-      text: null,
-      eingereichtAm: null,
-      eingereichtVon: null,
-      organisation: null,
-      zweiPruefer: { stand: b.stand, href: `/verwaltung/lernapp/religioes/${b.typ}-${b.id}` },
-    }));
+  const offen = ordneWarteschlange(bausteine.filter((b) => !b.lage.geprueft));
+  const eintraege = offen.slice(0, grenze).map((b) => ({
+    inhaltTyp: `lernapp_${b.typ}` as const,
+    inhaltId: b.id,
+    art: 'religioes' as const,
+    titel: b.titel.length > 160 ? `${b.titel.slice(0, 159)}…` : b.titel,
+    angaben: [
+      { label: 'baustein', wert: b.schluessel },
+      { label: 'zweiPruefer', wert: `${b.stand}/2` },
+    ],
+    text: null,
+    eingereichtAm: null,
+    eingereichtVon: null,
+    organisation: null,
+    zweiPruefer: { stand: b.stand, href: `/verwaltung/lernapp/religioes/${b.typ}-${b.id}` },
+  }));
+  return { eintraege, weitere: offen.length - eintraege.length };
 }
+
+export type Warteschlange = {
+  eintraege: FreigabeEintrag[];
+  /** Offene Bausteine der Lern-App jenseits der Grenze: Sie stehen vollständig in `/verwaltung/lernapp/religioes`. */
+  lernappWeitere: number;
+};
 
 /**
  * Alle offenen Prüfungen: religiöse zuerst, dann redaktionelle; je Art die ältesten Anträge zuerst. `benutzerId`: angemeldete
- * Person (eigene Urteile der Lern-App-Bausteine).
+ * Person (eigene Urteile der Lern-App-Bausteine). Bausteine der Lern-App höchstens `grenze` (Standard 200); wie viele darüber
+ * hinaus offen sind, sagt `lernappWeitere` (die Seite verweist dann auf die vollständige Liste, Restliste L6).
  */
-export async function ladeWarteschlange(benutzerId = ''): Promise<FreigabeEintrag[]> {
-  const [seiten, religioes, lernapp] = await Promise.all([offeneSeiten(), offeneReligioese(), offeneLernapp(benutzerId)]);
-  const alle = [...seiten, ...religioes, ...lernapp];
+export async function ladeWarteschlangeMitUeberlauf(benutzerId = '', grenze = GRENZE): Promise<Warteschlange> {
+  const [seiten, religioes, lernapp] = await Promise.all([offeneSeiten(), offeneReligioese(), offeneLernapp(benutzerId, grenze)]);
+  const alle = [...seiten, ...religioes, ...lernapp.eintraege];
   const zeit = (e: FreigabeEintrag) => e.eingereichtAm?.getTime() ?? 0;
-  return alle.sort((a, b) => (a.art === b.art ? zeit(a) - zeit(b) : a.art === 'religioes' ? -1 : 1));
+  return {
+    eintraege: alle.sort((a, b) => (a.art === b.art ? zeit(a) - zeit(b) : a.art === 'religioes' ? -1 : 1)),
+    lernappWeitere: lernapp.weitere,
+  };
+}
+
+/** Alle offenen Prüfungen wie {@link ladeWarteschlangeMitUeberlauf}, nur die Einträge. */
+export async function ladeWarteschlange(benutzerId = ''): Promise<FreigabeEintrag[]> {
+  return (await ladeWarteschlangeMitUeberlauf(benutzerId)).eintraege;
 }
 
 export type VerlaufZeile = {

@@ -27,6 +27,7 @@ const TEXTE: SpielerTexte = {
   aufgaben: de.aufgaben,
   tastatur: de.tastatur,
   aufgaben2: de.aufgaben2,
+  ansichten: de.ansichten,
   sprechen: de.sprechen,
   schreiben: de.schreiben,
 };

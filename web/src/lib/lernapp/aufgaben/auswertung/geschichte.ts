@@ -17,6 +17,19 @@ export function ablauf(a: Pick<GeschichteAufgabe, 'zeilen' | 'fragen'>): Geschic
   return schritte;
 }
 
+/**
+ * Ende des laufenden Abschnitts (L4-03: die Fragen teilen eine Geschichte in Abschnitte): die nächste Frage nach `pos`,
+ * sonst der letzte Schritt. „Bis zur nächsten Frage lesen“ deckt bis dorthin auf.
+ */
+export function abschnittsEnde(schritte: readonly GeschichteSchritt[], pos: number): number {
+  for (let i = pos + 1; i < schritte.length; i++) if (schritte[i]!.art === 'frage') return i;
+  return schritte.length - 1;
+}
+
+/** Aufgedeckte Zeilen bis einschließlich Schritt `pos` (Stand „Zeile n von m“). */
+export const zeilenBis = (schritte: readonly GeschichteSchritt[], pos: number): number =>
+  schritte.slice(0, pos + 1).filter((s) => s.art === 'zeile').length;
+
 /** Anzeigereihenfolge der Optionen einer Frage (deterministisch je Aufgabe und Frage). */
 export const frageReihenfolge = (a: Pick<GeschichteAufgabe, 'fragen' | 'schluessel'>, frage: number): number[] =>
   gemischteIndizes(a.fragen[frage]?.optionen.length ?? 0, `${a.schluessel}#${frage}`);
