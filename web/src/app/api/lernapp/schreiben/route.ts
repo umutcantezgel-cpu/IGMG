@@ -12,7 +12,14 @@ import {
   type SchreibenFehler,
   SchreibenUiSchema,
 } from '@/lib/lernapp/schreiben/abgabe';
-import { AbgabeAbgelehnt, alsPruefAntwort, eigeneAbgaben, loescheEigeneAbgabe, pruefeAbgabe, reicheEin } from '@/lib/lernapp/schreiben/dienst';
+import {
+  AbgabeAbgelehnt,
+  alsPruefAntwort,
+  eigeneAbgaben,
+  loescheEigeneAbgabe,
+  pruefeAbgabe,
+  reicheEin,
+} from '@/lib/lernapp/schreiben/dienst';
 import { gleicherUrsprung } from '@/lib/lernapp/sync/server';
 import { ladeGruppenKontext, ladeKontoMitFaktor } from '@/lib/rechte/gemeinde';
 import { pruefeRate } from '@/lib/validierung/ratenbegrenzung';

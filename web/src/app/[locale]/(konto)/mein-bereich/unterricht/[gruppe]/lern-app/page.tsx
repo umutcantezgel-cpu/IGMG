@@ -342,7 +342,11 @@ export default async function LernAppGruppe({ params, searchParams }: PageProps<
             </div>
             <div className="flex flex-col gap-2">
               <h3 className="text-18 font-bold">{tl('korrektur.selbst')}</h3>
-              {Object.keys(abgabe.selbst).length ? stufenListe(abgabe.selbst) : <p className="text-tinte-2">{tl('korrektur.selbstLeer')}</p>}
+              {Object.keys(abgabe.selbst).length ? (
+                stufenListe(abgabe.selbst)
+              ) : (
+                <p className="text-tinte-2">{tl('korrektur.selbstLeer')}</p>
+              )}
             </div>
             {abgabe.korrigiertAm ? (
               <p className="flex flex-wrap items-center gap-2">

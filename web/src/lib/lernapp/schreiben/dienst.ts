@@ -84,7 +84,12 @@ export async function schreibaufgabe(kurs: string, aufgabe: string): Promise<Sch
     if (!a) continue;
     const lektion = lektionAusPaket(l.schluessel);
     if (a.typ !== 'schreiben' || !a.aufgabe || !lektion || lektion.richtung !== ort.kurs) return null;
-    return { kurs: ort.kurs, einheit: ort.einheit, lektion: lektion.schluessel, aufgabe: { text: a.aufgabe.text, sprache: a.aufgabe.sprache } };
+    return {
+      kurs: ort.kurs,
+      einheit: ort.einheit,
+      lektion: lektion.schluessel,
+      aufgabe: { text: a.aufgabe.text, sprache: a.aufgabe.sprache },
+    };
   }
   return null;
 }
@@ -104,7 +109,8 @@ async function zielGruppen(kontext: GruppenKontext, ort: SchreibOrt): Promise<{ 
   return [...gruppen].map(([id, name]) => ({ id, name }));
 }
 
-type Moeglich = { moeglich: true; ort: SchreibOrt; gruppen: { id: string; name: Mehrsprachig }[] } | { moeglich: false; grund: KeineAbgabe };
+type Moeglich =
+  { moeglich: true; ort: SchreibOrt; gruppen: { id: string; name: Mehrsprachig }[] } | { moeglich: false; grund: KeineAbgabe };
 
 /** Kann dieses Konto die Aufgabe abgeben, und an welche Gruppe(n)? */
 export async function pruefeAbgabe(
@@ -382,7 +388,12 @@ export async function abgabenDerGruppe(kontext: GruppenKontext, gruppeId: string
 }
 
 /** Eine Abgabe mit Text für die Lehrkraft der Gruppe (sonst `KeinZugang`). */
-export async function abgabeFuerLehrkraft(kontext: GruppenKontext, gruppeId: string, id: string, jetzt = new Date()): Promise<AbgabeDetail> {
+export async function abgabeFuerLehrkraft(
+  kontext: GruppenKontext,
+  gruppeId: string,
+  id: string,
+  jetzt = new Date(),
+): Promise<AbgabeDetail> {
   const [z] = await lesbare(kontext, gruppeId, jetzt, id);
   const ort = z ? zerlegeAbgabeSchluessel(z.aufgabeSchluessel) : null;
   if (!z || !ort) throw new KeinZugang();
@@ -449,11 +460,7 @@ export async function gibZurueck(
 /** Eigene Abgaben für den Datenexport (Art. 15/20): alles, auch abgelaufene, die der Löschlauf noch nicht entfernt hat. */
 export async function abgabenFuerExport(benutzerId: string): Promise<Record<string, unknown>[]> {
   const A = schema.lernappSchreibabgabe;
-  const zeilen = await db
-    .select()
-    .from(A)
-    .where(eq(A.benutzerId, benutzerId))
-    .orderBy(desc(A.eingereichtAm));
+  const zeilen = await db.select().from(A).where(eq(A.benutzerId, benutzerId)).orderBy(desc(A.eingereichtAm));
   const lies = (daten: Buffer | null, id: number | null) => {
     try {
       return entschluesseleText(daten, id);
@@ -482,4 +489,3 @@ export async function abgabenFuerExport(benutzerId: string): Promise<Record<stri
     };
   });
 }
-
