@@ -3,6 +3,7 @@ import { prerenderToNodeStream } from 'react-dom/static';
 import { describe, expect, it } from 'vitest';
 import { AbgeschlosseneStufen } from '@/components/lernapp/AbgeschlosseneStufen';
 import Geschichte from '@/components/lernapp/aufgaben/Geschichte';
+import { LektionsArtMarke } from '@/components/lernapp/LektionsArtMarke';
 import LesenFragen, { LANGER_TEXT } from '@/components/lernapp/aufgaben/LesenFragen';
 import { type AufgabenProps, type SpielerTexte, STANDARD_OPTIONEN } from '@/components/lernapp/typen';
 import { ablauf, abschnittsEnde, zeilenBis } from '@/lib/lernapp/aufgaben/auswertung/geschichte';
@@ -21,6 +22,9 @@ import { vereinige } from '@/lib/lernapp/ereignisse/zusammenfuehren';
 import { formatiere } from '@/lib/lernapp/format';
 import { SPRACH_STUFEN } from '@/lib/lernapp/kurse';
 import { stufenJeKurs } from '@/lib/lernapp/oberflaeche/fortschritt';
+import { abschnitte } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
+import { VERZEICHNIS_FORMAT } from '@/lib/lernapp/paket/kennungen';
+import type { Verzeichnis } from '@/lib/lernapp/paket/typen';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
 
@@ -242,15 +246,18 @@ const LANGER_LESETEXT = {
   ],
 } as const satisfies Aufgabe;
 
-/** Arabischer Lesetext (Codepunkt-Escapes): „Ich trinke Wasser.“ und „Das Buch ist neu.“ mit zwei Glossen. */
-const AR_WASSER = 'مَاء';
-const AR_KITAB = 'كِتَاب';
+/** Arabischer Lesetext nur als Codepunkt-Escapes (KI-Regel 2): „Ich trinke Wasser.“, „Das Buch ist neu.“, zwei Glossen. */
+const AR_WASSER = '\u0645\u064E\u0627\u0621';
+const AR_KITAB = '\u0643\u0650\u062A\u064E\u0627\u0628';
 const AR_LESETEXT = {
   typ: 'lesen_fragen',
   schluessel: 'ar.a2.e02.a003',
   text: [
-    { text: 'أَنَا أَشْرَبُ الْمَاءَ.', sprache: 'ar' },
-    { text: `الْ${AR_KITAB}ُ جَدِيدٌ.`, sprache: 'ar' },
+    {
+      text: '\u0623\u064E\u0646\u064E\u0627 \u0623\u064E\u0634\u0652\u0631\u064E\u0628\u064F \u0627\u0644\u0652\u0645\u064E\u0627\u0621\u064E.',
+      sprache: 'ar',
+    },
+    { text: `\u0627\u0644\u0652${AR_KITAB}\u064F \u062C\u064E\u062F\u0650\u064A\u062F\u064C.`, sprache: 'ar' },
   ],
   glossen: [
     { wort: AR_WASSER, glosse: deT('Wasser') },
@@ -326,5 +333,48 @@ describe('Fortschritt: abgeschlossene Stufen je Kurs', () => {
     expect(anzahl(html, /<li [^>]*data-stufe=/g)).toBe(3);
     expect(html).not.toMatch(/zertifikat erhalten|urkunde/i);
     expect(await vorrendern(<AbgeschlosseneStufen ui="de" ziffern="oestlich" texte={texte} stufen={[]} />)).toBe('');
+  });
+});
+
+describe('Lernpfad: Geschichte und Prüfstein an den Lektionen (L4-03)', () => {
+  it('die Art kommt aus dem Paketkopf bis zur Lektion; eine Marke nur für Geschichte und Prüfstein, Text aus der Oberfläche', async () => {
+    const v: Verzeichnis = {
+      format: VERZEICHNIS_FORMAT,
+      version: 1,
+      kurs: 'tr-aus-de',
+      kursId: 'tr',
+      zielsprache: 'tr',
+      ausgangssprache: 'de',
+      stand: 1,
+      einheiten: [
+        {
+          schluessel: 'tr.a2.e01',
+          stufe: 'a2',
+          reihenfolge: 1,
+          thema: { de: '[Thema]' },
+          hash: '0'.repeat(64),
+          bytes: 1,
+          lektionen: 3,
+          hinweis: false,
+          audio: [],
+        },
+      ],
+    };
+    const arten = ['lektion', 'geschichte', 'pruefstein'] as const;
+    const kopf = { lektionen: arten.map((art, i) => ({ schluessel: `tr-aus-de.a2.e01.l0${i + 1}`, art })), tipps: [] };
+    const lektionen = abschnitte(v, new Set(), new Map([['tr.a2.e01', kopf]]))[0]?.stationen[0]?.lektionen ?? [];
+    expect(lektionen.map((l) => l.art)).toEqual(arten);
+    const [ohne, geschichte, pruefstein] = await Promise.all(
+      lektionen.map((l) => vorrendern(<LektionsArtMarke art={l.art} texte={de.ansichten.stufen.art} />)),
+    );
+    expect(ohne).toBe('');
+    expect(geschichte).toContain(`>${de.ansichten.stufen.art.geschichte}</span>`);
+    expect(pruefstein).toContain(`>${de.ansichten.stufen.art.pruefstein}</span>`);
+    // andere Oberflächensprache: der Text kommt aus den übergebenen Nachrichten
+    expect(await vorrendern(<LektionsArtMarke art="geschichte" texte={ar.ansichten.stufen.art} />)).toContain(
+      `>${ar.ansichten.stufen.art.geschichte}</span>`,
+    );
+    for (const art of ['wiederholung', 'schrift', 'schreiben', 'sprechen'] as const)
+      expect(await vorrendern(<LektionsArtMarke art={art} texte={de.ansichten.stufen.art} />)).toBe('');
   });
 });

@@ -13,6 +13,7 @@ import { STAND_GEAENDERT, speicher, vorhandenesProfil } from '@/lib/lernapp/ober
 import { type Abschnitt, abschnitte, aktuelleUndNaechste, type Station, themaVon } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
 import type { Verzeichnis, VerzeichnisEinheit } from '@/lib/lernapp/paket/typen';
 import type de from '../../../../messages/lernapp/de.json';
+import { LektionsArtMarke } from '../LektionsArtMarke';
 import { OfflineEinheit, type OfflineTexte } from '../OfflineEinheit';
 import { LernStern } from '../Zeichen';
 
@@ -216,11 +217,7 @@ export function LernpfadInsel({
                                 ) : (
                                   f(texte.lektion, { n: n + 1 })
                                 )}
-                                {l.art === 'geschichte' || l.art === 'pruefstein' ? (
-                                  <span className="rounded-pill bg-sand px-3 text-16 font-normal text-tinte-2">
-                                    {stufenTexte.art[l.art]}
-                                  </span>
-                                ) : null}
+                                <LektionsArtMarke art={l.art} texte={stufenTexte.art} />
                                 {l.erledigt ? <span className="sr-only">({texte.geschafft})</span> : null}
                               </a>
                             </li>

@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { describe, expect, it } from 'vitest';
 import { arbeitsspeicher } from '@/lib/lernapp/lokal/db';
-import { ladePaketKopf, paketeImVorrat, raeumeAuf, VORRAT_PAKETE } from '@/lib/lernapp/lokal/vorrat';
+import { ladePaketKopf, paketeImVorrat, raeumeAuf, speichereOffline, VORRAT_PAKETE } from '@/lib/lernapp/lokal/vorrat';
 import { INHALT_LIZENZ, PAKET_FORMAT, paketAdresse, VERZEICHNIS_FORMAT, verzeichnisAdresse } from '@/lib/lernapp/paket/kennungen';
 import type { Verzeichnis } from '@/lib/lernapp/paket/typen';
 
@@ -143,9 +143,35 @@ describe('alte Paketfassungen', () => {
     await cache.put(paketAdresse('tr-aus-de', 'tr.a1.e01', sha(ohne)), new Response(ohne));
     const v2 = verzeichnis({ [e01]: neu });
     expect(await raeumeAuf(sp, v2, { vorrat: v })).toEqual(v2.einheiten);
-    expect(await sp.lies('pakete', [KURS, e01])).toBeUndefined();
+    // die alte Fassung verlässt den Vorrat; der Vermerk „offline“ bleibt bis zum Nachladen (alter Hash)
+    expect(await sp.lies('pakete', [KURS, e01])).toMatchObject({ hash: sha(alt), offline: true });
     expect(adressen(v)).toEqual([paketAdresse('tr-aus-de', 'tr.a1.e01', sha(ohne))]);
     // ohne Cache Storage läuft es weiter
     expect(await raeumeAuf(arbeitsspeicher(), v2, { vorrat: null })).toEqual([]);
+  });
+
+  it('Netz bricht beim Nachladen ab: die Markierung „offline“ bleibt, das nächste Aufräumen nennt die Einheit erneut', async () => {
+    const e02 = 'de.a1.e02';
+    const weg = paketJson(e02, 'zurückgezogen');
+    const sp = arbeitsspeicher();
+    const v = vorrat();
+    const vorher = verzeichnis({ [e01]: alt, [e02]: weg }).einheiten;
+    for (const e of vorher) await ladePaketKopf(sp, KURS, e, { abruf: netz([alt, weg]), vorrat: v, offline: true });
+    // neue Fassung von e01, e02 zurückgezogen
+    const v2 = verzeichnis({ [e01]: neu });
+    expect(await raeumeAuf(sp, v2, { vorrat: v })).toEqual(v2.einheiten);
+    // zurückgezogen: sofort weg, auch offline (KERN §2.3)
+    expect(await sp.lies('pakete', [KURS, e02])).toBeUndefined();
+    // Nachladen ohne Netz scheitert
+    const ohneNetz = async () => Promise.reject(new TypeError('offline'));
+    expect((await speichereOffline(sp, KURS, v2.einheiten, { abruf: ohneNetz, vorrat: v, nachladen: true })).fehlgeschlagen).toEqual([e01]);
+    expect(await sp.lies('pakete', [KURS, e01])).toMatchObject({ hash: sha(alt), offline: true });
+    expect(adressen(v)).toEqual([]);
+    // nächster Versuch mit Netz: neue Fassung, weiter offline
+    expect(await raeumeAuf(sp, v2, { vorrat: v })).toEqual(v2.einheiten);
+    await speichereOffline(sp, KURS, v2.einheiten, { abruf: netz([neu]), vorrat: v, nachladen: true });
+    expect(await sp.lies('pakete', [KURS, e01])).toMatchObject({ hash: sha(neu), offline: true });
+    expect(adressen(v)).toEqual([paketAdresse(KURS, e01, sha(neu))]);
+    expect(await raeumeAuf(sp, v2, { vorrat: v })).toEqual([]);
   });
 });

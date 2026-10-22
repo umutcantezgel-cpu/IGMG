@@ -378,10 +378,14 @@ export async function speichereOffline(
 }
 
 /**
- * Veraltete Pakete entfernen: Einträge des Kurses, deren Hash das Verzeichnis nicht mehr nennt, verlassen Vorrat und
- * Speicher (ein zurückgezogener Baustein ist damit auch offline weg); ebenso Pakete des Kurses im Vorrat ohne Eintrag (z. B.
- * aus einer Zeit ohne IndexedDB). Ergebnis: Einheiten, die neu zu laden sind, weil sie offline gespeichert waren. Der
- * Lernpfad ruft es nach jedem Laden des Verzeichnisses auf (`LernpfadInsel`).
+ * Veraltete Pakete entfernen: Pakete des Kurses, deren Hash das Verzeichnis nicht mehr nennt, verlassen den Vorrat, auch
+ * solche ohne Eintrag im Speicher (z. B. aus einer Zeit ohne IndexedDB). Der Eintrag im Speicher geht mit, wenn die Einheit
+ * nicht mehr im Verzeichnis steht (ein zurückgezogener Baustein ist damit auch offline sofort weg) oder nicht offline
+ * gespeichert war. Hat eine offline gespeicherte Einheit nur eine neue Fassung, bleibt ihr Eintrag (alter Hash, `offline`),
+ * bis das Nachladen gelingt (`vermerke` ersetzt ihn): Bricht das Netz vorher ab, geht die Markierung nicht verloren, und das
+ * nächste Aufräumen nennt die Einheit erneut; bis dahin zeigt der Ring „nicht gespeichert“ (B-27). Ergebnis: Einheiten, die
+ * neu zu laden sind, weil sie offline gespeichert waren. Der Lernpfad ruft es nach jedem Laden des Verzeichnisses auf
+ * (`LernpfadInsel`).
  */
 export async function raeumeAuf(sp: Speicher, verzeichnis: Verzeichnis, o: PaketOptionen = {}): Promise<VerzeichnisEinheit[]> {
   const aktuell = new Map(verzeichnis.einheiten.map((e) => [e.schluessel, e]));
@@ -391,8 +395,8 @@ export async function raeumeAuf(sp: Speicher, verzeichnis: Verzeichnis, o: Paket
     const e = aktuell.get(eintrag.einheit);
     if (e?.hash === eintrag.hash) continue;
     await entferne(cache, paketAdresse(eintrag.kurs, eintrag.einheit, eintrag.hash));
-    await sp.loesche('pakete', [eintrag.kurs, eintrag.einheit]);
     if (e && eintrag.offline) neuLaden.push(e);
+    else await sp.loesche('pakete', [eintrag.kurs, eintrag.einheit]);
   }
   for (const p of await paketAdressen(cache))
     if (p.kurs === verzeichnis.kurs && aktuell.get(p.schluessel)?.hash !== p.hash) await entferne(cache, p.anfrage);

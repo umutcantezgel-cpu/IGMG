@@ -79,7 +79,7 @@ describe('Abschluss (B-30) mit Tagesziel, Serie und neuen Abzeichen', () => {
     const h = renderToStaticMarkup(
       <Abschluss stand={stand({ ziel: { art: 'lektionen', wert: 2 } })} texte={texte(ar)} ui="ar" ziffern="oestlich" />,
     );
-    expect(h).toContain('١'); // 1
+    expect(h).toContain('\u0661'); // östlich-arabische 1
     expect(h).toContain('rtl:-scale-x-100');
     expect(h).toContain('stroke-dasharray="0.5 1"');
   });
