@@ -1699,7 +1699,7 @@
     },
     {
       "schluessel": "de.a2.e07.s0084",
-      "text": "Herr Neumann findet, dass die Kinder im Hof zu laut sind.",
+      "text": "Unser Nachbar findet, dass die Kinder im Hof zu laut sind.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1875,7 +1875,7 @@
     },
     {
       "schluessel": "de.a2.e07.s0113",
-      "text": "Es ist unsere Pflicht, das Treppenhaus sauber zu halten.",
+      "text": "Jede Familie hat im Haus auch Pflichten.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1995,7 +1995,7 @@
     },
     {
       "schluessel": "de.a2.e07.s0133",
-      "text": "In diesen Zeiten machen bitte alle keinen Lärm.",
+      "text": "Bitte machen Sie in diesen Zeiten keinen Lärm.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2079,7 +2079,7 @@
     },
     {
       "schluessel": "de.a2.e07.s0147",
-      "text": "Wann ist am Abend Ruhezeit?",
+      "text": "Ab wann ist nachts Ruhezeit?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2838,7 +2838,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a2.e07.s0013",
           "nach": "ziel",
-          "alternativen": ["Sehr herzlich begrüßt Herr Neumann die neue Familie."],
+          "alternativen": ["Sehr herzlich begrüßt Herr Neumann die neue Familie.", "Die neue Familie begrüßt Herr Neumann sehr herzlich."],
           "ablenker": ["den", "neuen"]
         },
         {
@@ -2853,7 +2853,7 @@
           "typ": "luecke",
           "ziel": "de.a2.e07.s0003",
           "wort": 2,
-          "ablenker": ["Sie", "Ihr"]
+          "ablenker": ["Sie", "dich"]
         },
         {
           "schluessel": "de.a2.e07.l01.a12",
@@ -2998,7 +2998,11 @@
           "schluessel": "de.a2.e07.l02.a12",
           "typ": "satzbau",
           "ziel": "de.a2.e07.s0032",
-          "alternativen": ["Seine Hilfe bietet uns Herr Neumann an.", "Uns bietet Herr Neumann seine Hilfe an."]
+          "alternativen": [
+            "Seine Hilfe bietet uns Herr Neumann an.",
+            "Uns bietet Herr Neumann seine Hilfe an.",
+            "Seine Hilfe bietet Herr Neumann uns an."
+          ]
         },
         {
           "schluessel": "de.a2.e07.l02.a13",
@@ -3121,7 +3125,9 @@
           "alternativen": [
             "Heute Abend gebe ich das Paket bei Herrn Neumann ab.",
             "Ich gebe heute Abend das Paket bei Herrn Neumann ab.",
-            "Das Paket gebe ich heute Abend bei Herrn Neumann ab."
+            "Das Paket gebe ich heute Abend bei Herrn Neumann ab.",
+            "Bei Herrn Neumann gebe ich das Paket heute Abend ab.",
+            "Ich gebe das Paket bei Herrn Neumann heute Abend ab."
           ],
           "ablenker": ["Herr", "an"]
         },
@@ -3155,13 +3161,13 @@
           "typ": "frei",
           "ziel": "de.a2.e07.s0079",
           "nach": "ziel",
-          "alternativen": ["Keiner hat das Paket angenommen.", "Das Paket hat niemand angenommen."]
+          "alternativen": ["Keiner hat das Paket angenommen.", "Das Paket hat niemand angenommen.", "Das Paket hat keiner angenommen."]
         },
         {
           "schluessel": "de.a2.e07.l03.a14",
           "typ": "minimalpaare",
-          "ziel": "de.a2.e07.brief",
-          "ablenker": ["de.a1.e11.tief"]
+          "ziel": "de.a2.e07.riechen",
+          "ablenker": ["de.a1.e06.reichen"]
         },
         {
           "schluessel": "de.a2.e07.l03.a15",
@@ -3263,7 +3269,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a2.e07.s0086",
           "nach": "ziel",
-          "ablenker": ["sind", "schmutzigen"]
+          "ablenker": ["sind", "schmutzigen"],
+          "alternativen": ["Dass das Treppenhaus schmutzig ist, sagt Frau Becker."]
         },
         {
           "schluessel": "de.a2.e07.l04.a10",
@@ -3275,7 +3282,8 @@
         {
           "schluessel": "de.a2.e07.l04.a11",
           "typ": "satzbau",
-          "ziel": "de.a2.e07.s0087"
+          "ziel": "de.a2.e07.s0087",
+          "alternativen": ["Wichtig ist es, dass alle die Regeln kennen."]
         },
         {
           "schluessel": "de.a2.e07.l04.a12",
@@ -3464,7 +3472,12 @@
           "schluessel": "de.a2.e07.l05.a11",
           "typ": "satzbau",
           "ziel": "de.a2.e07.s0118",
-          "alternativen": ["Es gibt im Keller einen Raum für die Wäsche.", "Einen Raum für die Wäsche gibt es im Keller."]
+          "alternativen": [
+            "Es gibt im Keller einen Raum für die Wäsche.",
+            "Einen Raum für die Wäsche gibt es im Keller.",
+            "Es gibt einen Raum für die Wäsche im Keller.",
+            "Für die Wäsche gibt es im Keller einen Raum."
+          ]
         },
         {
           "schluessel": "de.a2.e07.l05.a12",
@@ -3893,7 +3906,8 @@
           "alternativen": [
             "Gern leihe ich euch unsere Stühle.",
             "Unsere Stühle leihe ich euch gern.",
-            "Ich leihe euch unsere Stühle gern."
+            "Ich leihe euch unsere Stühle gern.",
+            "Euch leihe ich gern unsere Stühle."
           ],
           "ablenker": ["uns", "leiht"]
         },
@@ -4080,7 +4094,8 @@
           "alternativen": [
             "Herr Kaya stellt am Montag die Tonnen an die Straße.",
             "Die Tonnen stellt Herr Kaya am Montag an die Straße.",
-            "Herr Kaya stellt die Tonnen am Montag an die Straße."
+            "Herr Kaya stellt die Tonnen am Montag an die Straße.",
+            "An die Straße stellt Herr Kaya am Montag die Tonnen."
           ]
         },
         {
