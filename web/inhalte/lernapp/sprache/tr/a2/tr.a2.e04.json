@@ -2442,7 +2442,7 @@
     },
     {
       "schluessel": "tr.a2.e04.s0163",
-      "text": "Teşekkürler, kek çok güzel ama yeter.",
+      "text": "Teşekkürler, kek çok güzel ama bana yeter.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2824,7 +2824,7 @@
     },
     {
       "schluessel": "tr.a2.e04.s0226",
-      "text": "Saygılarımızla, Becker Hanım ve kapıcı Hakan Bey",
+      "text": "Saygılarımızla, Petra Becker ve kapıcı Hakan Yılmaz",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2902,7 +2902,7 @@
     },
     {
       "schluessel": "tr.a2.e04.s0239",
-      "text": "Kusura bakmayın, gürültü çok mu?",
+      "text": "Kusura bakmayın, çok mu gürültü yapıyoruz?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3016,7 +3016,7 @@
     },
     {
       "schluessel": "tr.a2.e04.s0258",
-      "text": "Ne zahmet ettiniz! Çok teşekkürler.",
+      "text": "Ne gerek vardı, zahmet ettiniz! Çok teşekkürler.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3046,7 +3046,7 @@
     },
     {
       "schluessel": "tr.a2.e04.s0263",
-      "text": "Becker Hanım çok mutlu: Sizi yeniden bekliyorum!",
+      "text": "Becker Hanım çok mutlu. Komşularını yeniden davet etmek istiyor.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3076,7 +3076,7 @@
     },
     {
       "schluessel": "tr.a2.e04.s0268",
-      "text": "Kaya ailesini davet ediyor.",
+      "text": "Can'ın ailesini davet ediyor.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3128,7 +3128,7 @@
       "schluessel": "tr.a2.e04.l01",
       "art": "lektion",
       "ziel": {
-        "de": "Ich kann Nachbarn begrüßen und höflich anreden.",
+        "de": "Ich kann Nachbarn kennenlernen und höflich anreden.",
         "tr": "Komşularla tanışmak ve kibarca hitap etmek",
         "ar": "التعرف على الجيران ومخاطبتهم بأدب"
       },
@@ -3247,7 +3247,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e04.s0006",
           "nach": "ziel",
-          "alternativen": ["Bizim kapıcımız Hakan Bey çok nazik."]
+          "alternativen": ["Bizim kapıcımız Hakan Bey çok nazik.", "Kapıcımız Hakan Bey çok kibar.", "Bizim kapıcı Hakan Bey çok nazik."]
         }
       ]
     },
@@ -3333,14 +3333,20 @@
           "schluessel": "tr.a2.e04.l02.a11",
           "typ": "satzbau",
           "ziel": "tr.a2.e04.s0050",
-          "alternativen": ["Babaannem her sabah çiçekleri sular.", "Her sabah babaannem çiçekleri sular."]
+          "alternativen": [
+            "Babaannem her sabah çiçekleri sular.",
+            "Her sabah babaannem çiçekleri sular.",
+            "Her sabah çiçekleri babaannem sular.",
+            "Çiçekleri babaannem her sabah sular.",
+            "Çiçekleri her sabah babaannem sular."
+          ]
         },
         {
           "schluessel": "tr.a2.e04.l02.a12",
           "typ": "frei",
           "ziel": "tr.a2.e04.s0053",
           "nach": "ziel",
-          "alternativen": ["Elif kediyi besler."]
+          "alternativen": ["Elif kediyi besler.", "Elif kediyi besliyor.", "Kediyi Elif besliyor."]
         },
         {
           "schluessel": "tr.a2.e04.l02.a13",
@@ -3362,8 +3368,14 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e04.s0055",
           "nach": "ziel",
-          "alternativen": ["Genellikle çöpü babam atar.", "Babam genellikle çöpü atar."],
-          "ablenker": ["atır", "çöpe"]
+          "alternativen": [
+            "Genellikle çöpü babam atar.",
+            "Babam genellikle çöpü atar.",
+            "Babam çöpü genellikle atar.",
+            "Genellikle babam çöpü atar.",
+            "Çöpü babam genellikle atar."
+          ],
+          "ablenker": ["atır", "çöpu"]
         },
         {
           "schluessel": "tr.a2.e04.l02.a16",
@@ -3498,7 +3510,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e04.s0126",
           "nach": "ziel",
-          "alternativen": ["Benim çiçeklerimi sular mısın?"]
+          "alternativen": ["Benim çiçeklerimi sular mısın?", "Çiçeklerimi sulayabilir misin?"]
         },
         {
           "schluessel": "tr.a2.e04.l03.a15",
@@ -3599,7 +3611,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e04.s0169",
           "nach": "ziel",
-          "alternativen": ["Çay içelim ve biraz sohbet edelim."]
+          "alternativen": ["Çay içelim ve biraz sohbet edelim.", "Çay içelim, biraz konuşalım.", "Çay içip biraz sohbet edelim."]
         },
         {
           "schluessel": "tr.a2.e04.l04.a12",
@@ -3626,6 +3638,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e04.s0177",
           "nach": "ziel",
+          "alternativen": ["Size çay getireyim, oturun."],
           "ablenker": ["getirelim", "getiriyim"]
         },
         {
@@ -3964,6 +3977,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e04.s0259",
           "nach": "ziel",
+          "alternativen": ["Becker Hanım kek ve çay ikram ediyor."],
           "ablenker": ["davet", "yiyor"]
         },
         {
@@ -3971,7 +3985,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e04.s0261",
           "nach": "ziel",
-          "alternativen": ["Kurabiyeleriniz harika, ellerinize sağlık!"]
+          "alternativen": ["Kurabiyeleriniz harika, ellerinize sağlık!", "Ellerinize sağlık, kurabiyeler harika!"]
         },
         {
           "schluessel": "tr.a2.e04.l06.a08",
@@ -4058,7 +4072,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e04.s0100",
           "nach": "ziel",
-          "alternativen": ["Paketi yukarıya taşır mısın?"]
+          "alternativen": ["Paketi yukarıya taşır mısın?", "Paketi yukarı çıkarır mısın?", "Paketi yukarı taşıyabilir misin?"]
         },
         {
           "schluessel": "tr.a2.e04.l07.a08",
@@ -4123,6 +4137,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e04.s0166",
           "nach": "ziel",
+          "alternativen": ["Ne ikram edelim? Kek mi, börek mi?"],
           "ablenker": ["edeyim", "kekı"]
         },
         {
@@ -4137,7 +4152,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e04.s0199",
           "nach": "ziel",
-          "alternativen": ["Bütün komşular toplantıya geliyor."]
+          "alternativen": ["Bütün komşular toplantıya geliyor.", "Toplantıya tüm komşular geliyor.", "Tüm komşular toplantıya geliyor."]
         },
         {
           "schluessel": "tr.a2.e04.l07.a19",
@@ -4212,7 +4227,13 @@
           "schluessel": "tr.a2.e04.l08.a07",
           "typ": "satzbau",
           "ziel": "tr.a2.e04.s0079",
-          "alternativen": ["Becker Hanım balkonda her sabah çay içer.", "Her sabah Becker Hanım balkonda çay içer."]
+          "alternativen": [
+            "Becker Hanım balkonda her sabah çay içer.",
+            "Her sabah Becker Hanım balkonda çay içer.",
+            "Her sabah balkonda Becker Hanım çay içer.",
+            "Balkonda Becker Hanım her sabah çay içer.",
+            "Balkonda her sabah Becker Hanım çay içer."
+          ]
         },
         {
           "schluessel": "tr.a2.e04.l08.a08",
@@ -4226,7 +4247,11 @@
           "typ": "frei",
           "ziel": "tr.a2.e04.s0095",
           "nach": "ziel",
-          "alternativen": ["Thomas Bey, bana bir iyilik yapar mısınız?"]
+          "alternativen": [
+            "Thomas Bey, bana bir iyilik yapar mısınız?",
+            "Thomas Bey, bana bir iyilik yapabilir misiniz?",
+            "Bana bir iyilik yapabilir misiniz, Thomas Bey?"
+          ]
         },
         {
           "schluessel": "tr.a2.e04.l08.a10",
@@ -4248,6 +4273,11 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e04.s0149",
           "nach": "ziel",
+          "alternativen": [
+            "Bu akşam sizi çaya davet ediyoruz.",
+            "Sizi çaya bu akşam davet ediyoruz.",
+            "Bu akşam çaya sizi davet ediyoruz."
+          ],
           "ablenker": ["ediyorum", "çayı"]
         },
         {
