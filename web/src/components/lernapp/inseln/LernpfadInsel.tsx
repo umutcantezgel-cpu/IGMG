@@ -5,12 +5,12 @@ import { type CSSProperties, useEffect, useRef, useState } from 'react';
 import { formatiere, zahl, type Ziffern } from '@/lib/lernapp/format';
 import { richtung, type KursSlug, type Oberflaeche, type Stufe } from '@/lib/lernapp/kurse';
 import { profilBereich, type PaketEintrag } from '@/lib/lernapp/lokal/db';
-import { ladePaketKopf, ladeVerzeichnis, type PaketKopf, paketKopfImVorrat } from '@/lib/lernapp/lokal/vorrat';
+import { ladePaketKopf, ladeVerzeichnis, type PaketKopf, paketKopfImVorrat, raeumeAuf, speichereOffline } from '@/lib/lernapp/lokal/vorrat';
 import { beimOeffnen } from '@/lib/lernapp/oberflaeche/abgleich';
 import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { STAND_GEAENDERT, speicher, vorhandenesProfil } from '@/lib/lernapp/oberflaeche/geraet';
 import { type Abschnitt, abschnitte, aktuelleUndNaechste, type Station, themaVon } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
-import type { Verzeichnis } from '@/lib/lernapp/paket/typen';
+import type { Verzeichnis, VerzeichnisEinheit } from '@/lib/lernapp/paket/typen';
 import { OfflineEinheit, type OfflineTexte } from '../OfflineEinheit';
 import { LernStern } from '../Zeichen';
 
@@ -64,6 +64,12 @@ export function LernpfadInsel({
         return;
       }
       const sp = await speicher();
+      // Alte Fassungen verlassen Vorrat und Speicher; offline gespeicherte Einheiten kommen in der neuen Fassung wieder
+      const neuLaden = await raeumeAuf(sp, v).catch((): VerzeichnisEinheit[] => []);
+      if (neuLaden.length)
+        void speichereOffline(sp, kurs, neuLaden, { nachladen: true })
+          .then(() => aktiv && window.dispatchEvent(new Event(STAND_GEAENDERT)))
+          .catch(() => undefined);
       const { profil } = await vorhandenesProfil();
       const erledigt = new Set(profil ? (await sp.alle('lektionen', profilBereich(profil.id))).map((l) => l.lektion) : []);
       // Pakete auf dem Gerät (ohne Netz), dann die aktuelle und die nächste Einheit automatisch (ADR 0039 Nr. 12)

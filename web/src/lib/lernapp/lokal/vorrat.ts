@@ -36,6 +36,15 @@ async function oeffne(vorrat: CacheStorage | null, name: string): Promise<Cache 
   }
 }
 
+/** Eintrag aus dem Vorrat entfernen; Fehler des Cache Storage halten nichts auf. */
+async function entferne(cache: Cache | null, anfrage: RequestInfo): Promise<void> {
+  try {
+    await cache?.delete(anfrage);
+  } catch {
+    // Vorrat nicht verfügbar: nichts zu entfernen
+  }
+}
+
 /** SHA-256 (hex) mit Web Crypto. */
 export async function sha256Hex(daten: ArrayBuffer | Uint8Array): Promise<string> {
   const quelle = daten instanceof Uint8Array ? daten : new Uint8Array(daten);
@@ -187,8 +196,20 @@ export async function paketImVorratGeprueft<P>(
   return pruefe(lies(bytes));
 }
 
-async function vermerke(sp: Speicher, kurs: string, einheit: EinheitVerweis, offline: boolean, jetzt = new Date()): Promise<void> {
+/**
+ * Vermerk im Speicher `pakete`. Hatte die Einheit dort eine andere Fassung (alter Hash), verlässt deren Paket den Vorrat –
+ * je Einheit liegt höchstens die aktuelle Fassung auf dem Gerät (Restliste L6, Quellen-Seite ohne alte Fassungen).
+ */
+async function vermerke(
+  sp: Speicher,
+  kurs: string,
+  einheit: EinheitVerweis,
+  offline: boolean,
+  jetzt = new Date(),
+  cache: Cache | null = null,
+): Promise<void> {
   const alt = await sp.lies('pakete', [kurs, einheit.schluessel]);
+  if (alt && alt.hash !== einheit.hash) await entferne(cache, paketAdresse(kurs, einheit.schluessel, alt.hash));
   const eintrag: PaketEintrag = {
     kurs,
     einheit: einheit.schluessel,
@@ -214,7 +235,7 @@ export async function ladePaketGeprueft<P>(
   const adresse = paketAdresse(kurs, einheit.schluessel, einheit.hash);
   const vorhanden = await paketImVorratGeprueft(kurs, einheit, pruefe, o);
   if (vorhanden) {
-    if (o.offline) await vermerke(sp, kurs, einheit, true, o.jetzt);
+    if (o.offline) await vermerke(sp, kurs, einheit, true, o.jetzt, await oeffne(vorratVon(o), VORRAT_PAKETE));
     return vorhanden;
   }
   let bytes: Uint8Array;
@@ -233,7 +254,7 @@ export async function ladePaketGeprueft<P>(
     adresse,
     new Response(bytes as Uint8Array<ArrayBuffer>, { headers: { 'content-type': 'application/json; charset=utf-8' } }),
   );
-  await vermerke(sp, kurs, einheit, o.offline ?? false, o.jetzt);
+  await vermerke(sp, kurs, einheit, o.offline ?? false, o.jetzt, cache);
   return p;
 }
 
@@ -247,22 +268,48 @@ export const paketKopfImVorrat = (kurs: string, einheit: EinheitVerweis, o: Pake
 
 const PAKET_PFAD = /^\/lern-app\/pakete\/([^/]+)\/([^/]+)\/([0-9a-f]{64})$/;
 
-/**
- * Alle Einheitenpakete im Vorrat (ohne Netz), je mit passendem Hash und gültigem Kopf – für die Namensnennung je Satz und
- * Eintrag auf `/lern-app/<ui>/quellen` (ADR 0039 Nr. 9). Kursverzeichnisse und Ungültiges fallen weg.
- */
-export async function paketeImVorrat(o: PaketOptionen = {}): Promise<{ kurs: KursSlug; paket: PaketKopf }[]> {
-  const cache = await oeffne(vorratVon(o), VORRAT_PAKETE);
+type PaketAdresse = { kurs: string; schluessel: string; hash: string; anfrage: Request };
+
+/** Einheitenpakete im Vorrat nach ihrer Adresse (Kurs, Einheit, Hash); ohne Cache Storage oder bei Fehlern leer. */
+async function paketAdressen(cache: Cache | null): Promise<PaketAdresse[]> {
   let anfragen: readonly Request[] = [];
   try {
     anfragen = cache ? await cache.keys() : [];
   } catch {
     return [];
   }
+  return anfragen.flatMap((anfrage) => {
+    const [, kurs = '', schluessel = '', hash = ''] = PAKET_PFAD.exec(new URL(anfrage.url).pathname) ?? [];
+    return kurs ? [{ kurs, schluessel, hash, anfrage }] : [];
+  });
+}
+
+/** Hash je Einheit aus dem zuletzt gespeicherten Kursverzeichnis (ohne Netz); `null`, wenn es fehlt oder ungültig ist. */
+async function aktuelleHashes(cache: Cache, kurs: string): Promise<Map<string, string> | null> {
+  const r = await cache.match(verzeichnisAdresse(kurs)).catch(() => undefined);
+  const v: unknown = r ? await r.json().catch(() => null) : null;
+  return istVerzeichnis(v) ? new Map(v.einheiten.map((e) => [e.schluessel, e.hash])) : null;
+}
+
+/**
+ * Alle Einheitenpakete im Vorrat (ohne Netz), je mit passendem Hash und gültigem Kopf – für die Namensnennung je Satz und
+ * Eintrag auf `/lern-app/<ui>/quellen` (ADR 0039 Nr. 9). Kursverzeichnisse und Ungültiges fallen weg. Je Einheit zählt nur
+ * die Fassung, die das zuletzt gespeicherte Kursverzeichnis nennt; ältere Fassungen und Einheiten, die es nicht mehr nennt,
+ * verlassen dabei den Vorrat (ohne gespeichertes Verzeichnis bleibt alles, was zum Hash passt).
+ */
+export async function paketeImVorrat(o: PaketOptionen = {}): Promise<{ kurs: KursSlug; paket: PaketKopf }[]> {
+  const cache = await oeffne(vorratVon(o), VORRAT_PAKETE);
+  if (!cache) return [];
+  const aktuell = new Map<string, Map<string, string> | null>();
   const liste: { kurs: KursSlug; paket: PaketKopf }[] = [];
-  for (const anfrage of anfragen) {
-    const [, kurs, schluessel = '', hash = ''] = PAKET_PFAD.exec(new URL(anfrage.url).pathname) ?? [];
+  for (const { kurs, schluessel, hash, anfrage } of await paketAdressen(cache)) {
     if (!istKursSlug(kurs)) continue;
+    if (!aktuell.has(kurs)) aktuell.set(kurs, await aktuelleHashes(cache, kurs));
+    const hashes = aktuell.get(kurs);
+    if (hashes && hashes.get(schluessel) !== hash) {
+      await entferne(cache, anfrage);
+      continue;
+    }
     const paket = await paketImVorratGeprueft(kurs, { schluessel, hash, bytes: 1 }, kopf, o);
     if (paket?.einheit.schluessel === schluessel) liste.push({ kurs, paket });
   }
@@ -293,17 +340,18 @@ export type OfflineErgebnis = { einheiten: number; bytes: number; fehlgeschlagen
 
 /**
  * „Einheit offline speichern“: Pakete und Audio-Bündel der Einheiten in den Vorrat, als offline markiert. Bittet vorher um
- * dauerhaften Speicher. `fortschritt` meldet die geladenen Bytes für den Ring (B-27).
+ * dauerhaften Speicher (nicht beim Nachladen einer neuen Fassung, `nachladen`). `fortschritt` meldet die geladenen Bytes
+ * für den Ring (B-27).
  */
 export async function speichereOffline(
   sp: Speicher,
   kurs: string,
   einheiten: readonly VerzeichnisEinheit[],
-  o: PaketOptionen & { fortschritt?: (geladen: number, gesamt: number) => void } = {},
+  o: PaketOptionen & { fortschritt?: (geladen: number, gesamt: number) => void; nachladen?: boolean } = {},
 ): Promise<OfflineErgebnis> {
   let dauerhaft: boolean | null = null;
   try {
-    dauerhaft = typeof navigator !== 'undefined' && navigator.storage?.persist ? await navigator.storage.persist() : null;
+    dauerhaft = !o.nachladen && typeof navigator !== 'undefined' && navigator.storage?.persist ? await navigator.storage.persist() : null;
   } catch {
     dauerhaft = null;
   }
@@ -331,8 +379,9 @@ export async function speichereOffline(
 
 /**
  * Veraltete Pakete entfernen: Einträge des Kurses, deren Hash das Verzeichnis nicht mehr nennt, verlassen Vorrat und
- * Speicher (ein zurückgezogener Baustein ist damit auch offline weg). Ergebnis: Einheiten, die neu zu laden sind, weil sie
- * offline gespeichert waren.
+ * Speicher (ein zurückgezogener Baustein ist damit auch offline weg); ebenso Pakete des Kurses im Vorrat ohne Eintrag (z. B.
+ * aus einer Zeit ohne IndexedDB). Ergebnis: Einheiten, die neu zu laden sind, weil sie offline gespeichert waren. Der
+ * Lernpfad ruft es nach jedem Laden des Verzeichnisses auf (`LernpfadInsel`).
  */
 export async function raeumeAuf(sp: Speicher, verzeichnis: Verzeichnis, o: PaketOptionen = {}): Promise<VerzeichnisEinheit[]> {
   const aktuell = new Map(verzeichnis.einheiten.map((e) => [e.schluessel, e]));
@@ -341,9 +390,11 @@ export async function raeumeAuf(sp: Speicher, verzeichnis: Verzeichnis, o: Paket
   for (const eintrag of await sp.alle('pakete', [[verzeichnis.kurs], [verzeichnis.kurs, []]])) {
     const e = aktuell.get(eintrag.einheit);
     if (e?.hash === eintrag.hash) continue;
-    await cache?.delete(paketAdresse(eintrag.kurs, eintrag.einheit, eintrag.hash));
+    await entferne(cache, paketAdresse(eintrag.kurs, eintrag.einheit, eintrag.hash));
     await sp.loesche('pakete', [eintrag.kurs, eintrag.einheit]);
     if (e && eintrag.offline) neuLaden.push(e);
   }
+  for (const p of await paketAdressen(cache))
+    if (p.kurs === verzeichnis.kurs && aktuell.get(p.schluessel)?.hash !== p.hash) await entferne(cache, p.anfrage);
   return neuLaden;
 }
