@@ -1,5 +1,8 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 22.10.2026 14:30 UTC – Wissen Taharah/Salah komplett:** islam.grund.e01–e08 entworfen und belegt (Belegprüfung e07
+  9aeb7618, e08 83548b3d; offene Punkte je Einheit für die zwei religiösen Prüfenden in den Rückgaben). Nächste Wissens-Runde
+  `wf_5335754d-111`: islam.grund.e09–e11 (Glaube, maturiditisch) und islam.aufbau.e01–e05. Übrige Läufe wie im Eintrag darunter.
 - **Stand 22.10.2026 14:20 UTC – nach dem Limit (≈ 11:17, Reset 13:00) fortgesetzt:** L4-03 + Restliste (D) frei (Runde 2 nur
   niedrig) und gemergt (2691947c; Typen, Lern-App-Unit 1.880, betroffene Integration grün nach angepasster Paket-Erwartung).
   Seit 10:22 fertig: A1 Übersetzung tr e03–e08; A2 tr und de Entwurf 14/14, Lektorat de e01–e03; A2 ar Plan (900 Lemmata);
