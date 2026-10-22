@@ -2107,7 +2107,7 @@
     },
     {
       "schluessel": "tr.a2.e09.s0110",
-      "text": "Kerem, babası kadar konuşkan değil.",
+      "text": "Kerem babası kadar konuşkan değil.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2265,7 +2265,7 @@
     },
     {
       "schluessel": "tr.a2.e09.s0136",
-      "text": "Can ve Elif bazen anlaşamaz ama birbirlerini çok severler.",
+      "text": "Can ve Elif bazen anlaşamazlar ama birbirlerini çok severler.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2289,7 +2289,7 @@
     },
     {
       "schluessel": "tr.a2.e09.s0140",
-      "text": "Kendi odam yok, odamı kardeşimle paylaşıyorum.",
+      "text": "Kendi odam yok, odayı kardeşimle paylaşıyorum.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2634,7 +2634,7 @@
     },
     {
       "schluessel": "tr.a2.e09.s0197",
-      "text": "Büyükanne tariflerini ne yapar?",
+      "text": "Büyükannesi tariflerini ne yapar?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2682,7 +2682,7 @@
     },
     {
       "schluessel": "tr.a2.e09.s0205",
-      "text": "Amcamın adı Orhan. Babamın erkek kardeşi, Ankara'da oturuyor. Masa, sandalye ve dolap yapar. Amcam çok çalışkan, hatta cumartesi günleri bile çalışır. Çok sabırlı ve cömert biri. Eşi Özge Yenge, ikiz çocukları var. Yazın amcamı ziyaret ediyoruz.",
+      "text": "Amcamın adı Orhan. Babamın erkek kardeşi, Ankara'da oturuyor. Masa, sandalye ve dolap yapar. Amcam çok çalışkan, hatta cumartesi günleri bile çalışır. Çok sabırlı ve cömert biri. Eşi Özge Yenge, ikiz çocukları var. Amcamı çok seviyorum, çünkü bana her zaman yardım eder. Her yaz onları ziyaret ediyoruz.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2808,7 +2808,7 @@
     },
     {
       "schluessel": "tr.a2.e09.s0226",
-      "text": "Kerem çok zeki ve çalışkan. Mühendis olmak istiyor.",
+      "text": "Kerem çok zeki ve çalışkan. Matematiği çok sever.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3023,7 +3023,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Ich kann Verwandte benennen und sagen, zu welcher Seite der Familie sie gehören.",
-        "tr": "Akrabaları saymak ve aileden hangi tarafta olduklarını söylemek",
+        "tr": "Akrabaları saymak ve anne tarafından mı, baba tarafından mı olduklarını söylemek",
         "ar": "تسمية الأقارب وقول من أيّ جهة من العائلة هم"
       },
       "aufgaben": [
@@ -3037,7 +3037,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a2.e09.akraba",
-          "ablenker": ["tr.a1.e03.aile", "tr.a1.e04.kuzen"]
+          "ablenker": ["tr.a1.e03.aile", "tr.a2.e04.komsu"]
         },
         {
           "schluessel": "tr.a2.e09.l01.a03",
@@ -3102,9 +3102,17 @@
           "typ": "satzbau",
           "ziel": "tr.a2.e09.s0012",
           "alternativen": [
-            "Amcam ve yengem bu akşam bize geliyor.",
+            "Yengem ve amcam bize bu akşam geliyor.",
             "Bu akşam yengem ve amcam bize geliyor.",
-            "Bu akşam amcam ve yengem bize geliyor."
+            "Bu akşam bize yengem ve amcam geliyor.",
+            "Bize yengem ve amcam bu akşam geliyor.",
+            "Bize bu akşam yengem ve amcam geliyor.",
+            "Amcam ve yengem bu akşam bize geliyor.",
+            "Amcam ve yengem bize bu akşam geliyor.",
+            "Bu akşam amcam ve yengem bize geliyor.",
+            "Bu akşam bize amcam ve yengem geliyor.",
+            "Bize amcam ve yengem bu akşam geliyor.",
+            "Bize bu akşam amcam ve yengem geliyor."
           ]
         },
         {
@@ -3123,7 +3131,13 @@
             "Büyükbabam ve büyükannem İzmir'de yaşıyor.",
             "Büyükannemle büyükbabam İzmir'de yaşıyor.",
             "Büyükannem ve büyükbabam İzmir'de oturuyor.",
-            "İzmir'de büyükannem ve büyükbabam yaşıyor."
+            "İzmir'de büyükannem ve büyükbabam yaşıyor.",
+            "Büyükannem ve büyükbabam İzmir'de yaşıyorlar.",
+            "Büyükbabam ve büyükannem İzmir'de yaşıyorlar.",
+            "Büyükannemle büyükbabam İzmir'de oturuyor.",
+            "Büyükannem ve dedem İzmir'de yaşıyor.",
+            "Büyükannemle dedem İzmir'de yaşıyor.",
+            "Dedem ve büyükannem İzmir'de yaşıyor."
           ]
         },
         {
@@ -3152,7 +3166,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Ich kann von Kindheit und Jugend erzählen und sagen, wem ich ähnle.",
-        "tr": "Çocukluk ve gençlik hakkında anlatmak, kime benzediğimi söylemek",
+        "tr": "Çocukluktan ve gençlikten bahsetmek, kime benzediğimi söylemek",
         "ar": "الحديث عن الطفولة والشباب وقول من أشبه"
       },
       "aufgaben": [
@@ -3409,7 +3423,9 @@
           "alternativen": [
             "Elif çok cesur, doktordan hiç korkmuyor.",
             "Elif çok cesurdur, doktordan hiç korkmaz.",
-            "Elif çok cesur, hiç doktordan korkmaz."
+            "Elif çok cesur, hiç doktordan korkmaz.",
+            "Elif çok cesur, doktordan asla korkmaz.",
+            "Elif çok cesur, hiç doktordan korkmuyor."
           ]
         },
         {
@@ -3525,7 +3541,8 @@
           "alternativen": [
             "Dedem çok dürüsttür, hiç yalan söylemez.",
             "Dedem çok dürüst, asla yalan söylemez.",
-            "Dedem çok dürüst, hiçbir zaman yalan söylemez."
+            "Dedem çok dürüst, hiçbir zaman yalan söylemez.",
+            "Dedem çok dürüst, hiç yalan söylemiyor."
           ]
         },
         {
@@ -3554,7 +3571,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Ich kann Aussagen verbinden und Gründe nennen.",
-        "tr": "Cümleleri bağlamak ve sebep söylemek",
+        "tr": "Cümleleri bağlamak ve sebep belirtmek",
         "ar": "ربط الجمل وذكر الأسباب"
       },
       "aufgaben": [
@@ -3580,7 +3597,7 @@
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a2.e09.hatta",
-          "ablenker": ["tr.a2.e09.ustelik", "tr.a1.e10.veya"]
+          "ablenker": ["tr.a2.e09.mesela", "tr.a1.e10.veya"]
         },
         {
           "schluessel": "tr.a2.e09.l05.a05",
@@ -3648,7 +3665,11 @@
           "typ": "frei",
           "ziel": "tr.a2.e09.s0176",
           "nach": "ziel",
-          "alternativen": ["Örgüyü babaannem sayesinde öğrendim.", "Babaannem sayesinde örgü örmeyi öğrendim."]
+          "alternativen": [
+            "Örgüyü babaannem sayesinde öğrendim.",
+            "Babaannem sayesinde örgü örmeyi öğrendim.",
+            "Örgü örmeyi babaannem sayesinde öğrendim."
+          ]
         },
         {
           "schluessel": "tr.a2.e09.l05.a14",
@@ -3921,6 +3942,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e09.s0230",
           "nach": "ziel",
+          "alternativen": ["Dede, biz de seni çok özlüyoruz!"],
           "ablenker": ["özlüyorum", "sana"]
         },
         {
@@ -3928,7 +3950,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e09.s0227",
           "nach": "ziel",
-          "alternativen": ["Dede, gençliğinde sen de çok çalışkandın, değil mi?"]
+          "alternativen": ["Dede, gençliğinde sen de çok çalışkandın, değil mi?", "Sen de gençliğinde çok çalışkandın, değil mi, dede?"]
         },
         {
           "schluessel": "tr.a2.e09.l06.a08",
@@ -4155,6 +4177,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e09.s0022",
           "nach": "ziel",
+          "alternativen": ["Büyükannen nerede yaşıyor?"],
           "ablenker": ["büyükannem", "nereye"]
         },
         {
@@ -4241,6 +4264,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e09.s0180",
           "nach": "ziel",
+          "alternativen": ["Dedem ne kahve ne çay içer, sadece ayran."],
           "ablenker": ["hem", "içmez"]
         },
         {
@@ -4254,6 +4278,13 @@
           ],
           "antwort": "tr.a2.e09.s0154",
           "ablenker": ["tr.a2.e09.s0141", "tr.a2.e09.s0075", "tr.a2.e09.s0064"]
+        },
+        {
+          "schluessel": "tr.a2.e09.l08.a17",
+          "typ": "luecke",
+          "ziel": "tr.a2.e09.s0142",
+          "wort": 3,
+          "ablenker": ["kendim", "kendini"]
         }
       ]
     }
