@@ -1899,7 +1899,7 @@
     },
     {
       "schluessel": "tr.a2.e05.s0098",
-      "text": "Bu modelin kaç çeşit rengi var?",
+      "text": "Bu modelin kaç renk çeşidi var?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2001,7 +2001,7 @@
     },
     {
       "schluessel": "tr.a2.e05.s0115",
-      "text": "Mor etek pembeden daha renkli.",
+      "text": "Mor etek pembeden daha koyu.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2044,7 +2044,7 @@
     },
     {
       "schluessel": "tr.a2.e05.s0122",
-      "text": "İpek, pamuktan daha pahalı.",
+      "text": "İpek pamuktan daha pahalı.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2128,7 +2128,7 @@
     },
     {
       "schluessel": "tr.a2.e05.s0136",
-      "text": "Otuz sekiz beden giyiyorum, ama bu model biraz dar.",
+      "text": "Otuz sekiz beden giyiyorum ama bu model biraz dar.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2153,10 +2153,9 @@
     },
     {
       "schluessel": "tr.a2.e05.s0140",
-      "text": "Kurallara uydum.",
-      "quelle": "tatoeba:2494152",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #2494152 von duran"
+      "text": "Bu ceket bana uymadı, çok bol.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a2.e05.s0141",
@@ -2263,7 +2262,7 @@
     },
     {
       "schluessel": "tr.a2.e05.s0158",
-      "text": "Başka bir renk gösterir misiniz?",
+      "text": "Bana başka bir renk gösterir misiniz?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2562,13 +2561,13 @@
     },
     {
       "schluessel": "tr.a2.e05.s0206",
-      "text": "Yeni bir kıyafet aldın. Kumaşını, bedenini ve fiyatını anlat.",
+      "text": "Yeni bir kıyafet aldın. Kumaşını, bedenini ve fiyatını anlat. Beğendin mi?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a2.e05.s0207",
-      "text": "Geçen hafta lacivert bir mont aldım. Kumaşı yüzde yüz pamuk, çok hafif ve sıcak. Beden tam oldu, ne dar ne bol. Fiyatı yetmiş euro, indirim vardı. Bence fiyat oldukça uygun. Rengi de bana çok yakıştı!",
+      "text": "Geçen hafta lacivert bir mont aldım. Kumaşı yüzde yüz pamuk, çok hafif ve sıcak. Bedeni tam oldu, ne dar ne bol. Fiyatı yetmiş euro, indirim vardı. Bence fiyat oldukça uygun. Rengi de bana çok yakıştı!",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2748,7 +2747,7 @@
     },
     {
       "schluessel": "tr.a2.e05.s0237",
-      "text": "Fişi atmayın, lütfen. İade ve değişiklik için fiş lazım.",
+      "text": "Fişi atmayın, lütfen. İade ve değişim için fiş lazım.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2867,7 +2866,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Ich kann Kleidung und Farben benennen.",
-        "tr": "Giysileri ve renkleri söylemek",
+        "tr": "Giysileri ve renkleri adlandırmak",
         "ar": "تسمية الملابس والألوان"
       },
       "aufgaben": [
@@ -2958,7 +2957,11 @@
           "schluessel": "tr.a2.e05.l01.a12",
           "typ": "satzbau",
           "ziel": "tr.a2.e05.s0008",
-          "alternativen": ["Her gün Metin Dede kahverengi bir yelek giyer."]
+          "alternativen": [
+            "Her gün Metin Dede kahverengi bir yelek giyer.",
+            "Metin Dede her gün bir kahverengi yelek giyer.",
+            "Her gün Metin Dede bir kahverengi yelek giyer."
+          ]
         },
         {
           "schluessel": "tr.a2.e05.l01.a13",
@@ -3086,7 +3089,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e05.s0061",
           "nach": "ziel",
-          "alternativen": ["Kış için kalın bir mont lazım."]
+          "alternativen": ["Kış için kalın bir mont lazım.", "Kışın kalın bir mont gerek.", "Kışın kalın bir mont gerekli."]
         },
         {
           "schluessel": "tr.a2.e05.l02.a13",
@@ -3204,7 +3207,7 @@
             }
           ],
           "antwort": "tr.a2.e05.s0119",
-          "ablenker": ["tr.a2.e05.s0106", "tr.a2.e05.s0098", "tr.a2.e05.s0107"]
+          "ablenker": ["tr.a2.e05.s0106", "tr.a2.e05.s0110", "tr.a2.e05.s0117"]
         },
         {
           "schluessel": "tr.a2.e05.l03.a09",
@@ -3231,7 +3234,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e05.s0099",
           "nach": "ziel",
-          "alternativen": ["Pamuk tişörtleri tercih ederim."]
+          "alternativen": ["Pamuk tişörtleri tercih ederim.", "Ben pamuklu tişörtleri tercih ederim.", "Pamuklu tişörtleri tercih ederim."]
         },
         {
           "schluessel": "tr.a2.e05.l03.a13",
@@ -3341,7 +3344,7 @@
             }
           ],
           "antwort": "tr.a2.e05.s0135",
-          "ablenker": ["tr.a2.e05.s0148", "tr.a2.e05.s0140", "tr.a2.e05.s0145"]
+          "ablenker": ["tr.a2.e05.s0148", "tr.a2.e05.s0147", "tr.a2.e05.s0145"]
         },
         {
           "schluessel": "tr.a2.e05.l04.a11",
@@ -3353,7 +3356,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e05.s0141",
           "nach": "ziel",
-          "alternativen": ["Bu renk sana çok yakışır."]
+          "alternativen": ["Bu renk sana çok yakışır.", "Bu renk sana çok yakıştı."]
         },
         {
           "schluessel": "tr.a2.e05.l04.a13",
@@ -3412,7 +3415,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a2.e05.fis",
-          "ablenker": ["tr.a2.e02.belge", "tr.a1.e07.para"]
+          "ablenker": ["tr.a1.e07.poset", "tr.a1.e07.para"]
         },
         {
           "schluessel": "tr.a2.e05.l05.a04",
@@ -3431,7 +3434,7 @@
           "typ": "luecke",
           "ziel": "tr.a2.e05.s0186",
           "wort": 1,
-          "ablenker": ["gömleğe", "gömlekı"]
+          "ablenker": ["gömleki", "gömleğı"]
         },
         {
           "schluessel": "tr.a2.e05.l05.a07",
@@ -3472,14 +3475,15 @@
         {
           "schluessel": "tr.a2.e05.l05.a10",
           "typ": "satzbau",
-          "ziel": "tr.a2.e05.s0203"
+          "ziel": "tr.a2.e05.s0203",
+          "alternativen": ["O zaman griyi beyaz yerine alırım.", "Beyaz yerine o zaman griyi alırım."]
         },
         {
           "schluessel": "tr.a2.e05.l05.a11",
           "typ": "frei",
           "ziel": "tr.a2.e05.s0189",
           "nach": "ziel",
-          "alternativen": ["Fiş iade için lazım.", "İade için fiş gerek."]
+          "alternativen": ["Fiş iade için lazım.", "İade için fiş gerek.", "İade için fiş gerekli."]
         },
         {
           "schluessel": "tr.a2.e05.l05.a12",
@@ -3491,7 +3495,7 @@
             }
           ],
           "antwort": "tr.a2.e05.s0203",
-          "ablenker": ["tr.a2.e05.s0195", "tr.a2.e05.s0166", "tr.a2.e05.s0192"]
+          "ablenker": ["tr.a2.e05.s0195", "tr.a2.e05.s0102", "tr.a2.e05.s0192"]
         },
         {
           "schluessel": "tr.a2.e05.l05.a13",
@@ -3722,7 +3726,7 @@
           "schluessel": "tr.a2.e05.l06.a05",
           "typ": "satzbau",
           "ziel": "tr.a2.e05.s0236",
-          "alternativen": ["Derya Hanım kartla kasada ödüyor ve fişi alıyor."]
+          "alternativen": ["Derya Hanım kartla kasada ödüyor ve fişi alıyor.", "Kasada Derya Hanım kartla ödüyor ve fişi alıyor."]
         },
         {
           "schluessel": "tr.a2.e05.l06.a06",
@@ -3730,6 +3734,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e05.s0229",
           "nach": "ziel",
+          "alternativen": ["Bir beden büyüğünü getirir misiniz, Tolga Bey?"],
           "ablenker": ["mısınız", "büyüğüne"]
         },
         {
@@ -3737,7 +3742,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e05.s0233",
           "nach": "ziel",
-          "alternativen": ["Elif, bu renk sana çok yakıştı."]
+          "alternativen": ["Elif, bu renk sana çok yakıştı.", "Bu renk sana çok yakışıyor, Elif.", "Elif, bu renk sana çok yakışıyor."]
         },
         {
           "schluessel": "tr.a2.e05.l06.a08",
@@ -3791,7 +3796,7 @@
           "typ": "luecke",
           "ziel": "tr.a2.e05.s0053",
           "wort": 1,
-          "ablenker": ["kumaşdan", "kumaşta"]
+          "ablenker": ["kumaşdan", "kumaşa"]
         },
         {
           "schluessel": "tr.a2.e05.l07.a04",
@@ -3799,7 +3804,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a2.e05.s0092",
           "nach": "ziel",
-          "alternativen": ["Bence bu fiyat oldukça uygun."],
+          "alternativen": ["Bence bu fiyat oldukça uygun.", "Bu fiyat oldukça uygun bence."],
           "ablenker": ["fiyatı", "pahalı"]
         },
         {
@@ -3817,13 +3822,15 @@
         {
           "schluessel": "tr.a2.e05.l07.a06",
           "typ": "satzbau",
-          "ziel": "tr.a2.e05.s0100"
+          "ziel": "tr.a2.e05.s0100",
+          "alternativen": ["Rahat ayakkabıları Can tercih eder."]
         },
         {
           "schluessel": "tr.a2.e05.l07.a07",
           "typ": "frei",
           "ziel": "tr.a2.e05.s0147",
-          "nach": "ziel"
+          "nach": "ziel",
+          "alternativen": ["Bu ceketin cepleri yok.", "Bu cekette cep yok."]
         },
         {
           "schluessel": "tr.a2.e05.l07.a08",
@@ -3889,7 +3896,7 @@
           "satz": "tr.a2.e05.s0184",
           "nach": "ziel",
           "alternativen": ["Bu mont indirimle kaç euro?"],
-          "ablenker": ["indirimde", "montu"]
+          "ablenker": ["indirime", "montu"]
         },
         {
           "schluessel": "tr.a2.e05.l07.a17",
@@ -3989,9 +3996,15 @@
         {
           "schluessel": "tr.a2.e05.l08.a09",
           "typ": "frei",
-          "ziel": "tr.a2.e05.s0032",
+          "ziel": "tr.a2.e05.s0158",
           "nach": "ziel",
-          "alternativen": ["Kahverengi çizmeleri çok sevdim."]
+          "alternativen": [
+            "Başka bir renk gösterir misiniz?",
+            "Bana başka bir renk gösterebilir misiniz?",
+            "Başka bir renk gösterebilir misiniz?",
+            "Bana başka renk gösterir misiniz?",
+            "Başka renk gösterir misiniz?"
+          ]
         },
         {
           "schluessel": "tr.a2.e05.l08.a10",
@@ -4038,7 +4051,7 @@
           "typ": "frei",
           "ziel": "tr.a2.e05.s0193",
           "nach": "ziel",
-          "alternativen": ["Bunun yerine bir mavi gömlek istiyorum."]
+          "alternativen": ["Bunun yerine bir mavi gömlek istiyorum.", "Onun yerine mavi bir gömlek istiyorum."]
         },
         {
           "schluessel": "tr.a2.e05.l08.a16",
