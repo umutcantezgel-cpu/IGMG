@@ -14,6 +14,7 @@ import { sha256, verschluessele, zufallsToken } from '@/lib/krypto';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { mitAdministrationsSchutz } from '@/lib/rechte/administration';
 import { KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
+import { hatGruppenzugang } from '@/lib/konto/einladung';
 import { entscheideBezugEnde, entscheideEinladung } from '@/lib/konto/eltern-freigabe';
 import {
   ENTZUG_GESCHUETZT,
@@ -156,7 +157,8 @@ const hat = (rollen: { rolle: string }[], rolle: string) => rollen.some((r) => r
  * Leitung oder Kinderschutz bestätigt (`src/lib/rechte/schutzrollen.ts`) – sonst gäbe sich die Administration über
  * „leitung“ den Weg zu Chat-Inhalten selbst frei. Ebenso der Entzug von Leitung, Kinderschutz und religiöser Prüfung bei
  * anderen Konten (N4): beantragt, bis zur Bestätigung weiter wirksam, Mail an die betroffene Person. Jede Vergabe und
- * jeder Entzug steht im Audit und geht als Hinweis an Leitung und Kinderschutz.
+ * jeder Entzug steht im Audit und geht als Hinweis an Leitung und Kinderschutz. Administration nie an ein Konto mit
+ * Kontoart mit Gruppenzugang oder Gruppenleitung (S-L2 N-1, Gegenrichtung zu `gemeinde-konten.ts` und `gruppen.ts`).
  */
 export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): Promise<BenutzerZustand> {
   const a = await verlangeRecht('benutzer.bearbeiten');
@@ -167,6 +169,10 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
   const neu = alsZuweisungen(p.data);
   const schutz = schutzrollenRegel(konto.rollen, neu, selbst);
   if (schutz) return { fehler: schutz, werte: roh };
+  // NIE_PER_ADMINISTRATION in beiden Richtungen (S2/S3, S-L2 N-1): Wer Lehrkraft, Elternteil oder Schüler*in ist oder eine
+  // Gruppe leitet, bekommt keine Administration – sonst läse das Konto Schreibabgaben, Gruppen- und Elternkanal
+  if (istAdministration(neu) && !istAdministration(konto.rollen) && (await hatGruppenzugang(konto.id)))
+    return { fehler: 'administrationGruppenzugang', werte: roh };
   if (istAdministration(konto.rollen) && !istAdministration(neu)) {
     if (selbst) return { fehler: 'eigeneAdministration', werte: roh };
     if ((await zaehleAdministration(konto.id)) === 0) return { fehler: 'letzteAdministration', werte: roh };

@@ -15,6 +15,7 @@ import { kontoUmgebung, nachher, umleitung } from './hilfen/konto';
  *   Fälle in sicherheit-n4-vier-augen.test.ts)
  * - S2b-3 Schutzrollen leitung/kinderschutz nur im Vier-Augen-Prinzip (M-2 aus S1 nicht mehr umgehbar)
  * - S2a-6 (D-11 Übergang) und S2b-8 (Kinderzugang-Löschung über loescheGemeindeKonto)
+ * - S-L2 N-1: Administration nie an ein Konto mit Kontoart mit Gruppenzugang oder Gruppenleitung (rollenSpeichern, Einladung)
  * Testdaten fiktiv (G-04).
  */
 const { client, db } = await kontoUmgebung();
@@ -478,5 +479,50 @@ describe('Neue Mails (Hinweis an Schutzrollen, Elternbezug, Kinderpasswort) lass
     expect(r.fehler).toBe(0);
     const offen = (await db.select().from(schema.mailAusgang)).filter((m) => !m.gesendetAm);
     expect(offen.map((m) => m.vorlage)).toEqual([]);
+  });
+});
+
+describe('S-L2 N-1: Administration nie an ein Konto mit Gruppenzugang (Gegenrichtung zu S2a-4)', () => {
+  it('rollenSpeichern lehnt Administration ab für Gruppenleitung, Lehrkraft, Elternteil und Schüler*in; reine Gemeinde-Konten gehen', async () => {
+    const [g] = await db
+      .insert(schema.gruppe)
+      .values({ name: { de: 'Gruppe N-1' } })
+      .returning({ id: schema.gruppe.id });
+    const hoca = await person('Hoca N-1', { gemeinde: ['gemeinde', 'lehrkraft'] });
+    await db.insert(schema.gruppenLeitung).values({ gruppeId: g.id, benutzerId: hoca.id, rolle: 'lehrkraft' });
+    als(admin);
+    const administration = (id: string) => benutzer.rollenSpeichern({}, formular({ id, rollen: ['administration'] }));
+    expect(await administration(hoca.id)).toMatchObject({ fehler: 'administrationGruppenzugang' });
+    expect(await db.select().from(schema.rolleZuweisung).where(eq(schema.rolleZuweisung.benutzerId, hoca.id))).toEqual([]);
+    expect(await db.select().from(schema.gruppenLeitung).where(eq(schema.gruppenLeitung.benutzerId, hoca.id))).toHaveLength(1);
+    // Die Gruppenleitung allein genügt (Kontoart schon entzogen)
+    await db
+      .delete(schema.gemeindeRolle)
+      .where(and(eq(schema.gemeindeRolle.benutzerId, hoca.id), eq(schema.gemeindeRolle.rolle, 'lehrkraft')));
+    expect(await administration(hoca.id)).toMatchObject({ fehler: 'administrationGruppenzugang' });
+    for (const art of ['eltern', 'schueler', 'lehrkraft'] as const) {
+      const p = await person(`Konto ${art}`, { gemeinde: ['gemeinde', art] });
+      expect(await administration(p.id)).toMatchObject({ fehler: 'administrationGruppenzugang' });
+    }
+    // Andere Verwaltungsrollen bleiben möglich; ein reines Gemeinde-Konto bekommt Administration
+    expect(await benutzer.rollenSpeichern({}, formular({ id: hoca.id, rollen: ['bildung'] }))).toEqual({ ok: true });
+    const nur = await person('Nur Gemeinde', { gemeinde: ['gemeinde'] });
+    expect(await administration(nur.id)).toEqual({ ok: true });
+  });
+
+  it('eine Einladung mit Rolle Administration übernimmt ein Konto mit Gruppenzugang nicht', async () => {
+    const hoca = await person('Hoca Einladung', { gemeinde: ['gemeinde', 'lehrkraft'] });
+    const token = randomUUID() + randomUUID();
+    const { sha256 } = await import('@/lib/krypto');
+    await db.insert(schema.einladung).values({
+      email: hoca.email,
+      name: 'Hoca',
+      rollen: [{ rolle: 'administration' }],
+      gemeindeRollen: [],
+      tokenHash: sha256(token),
+      laeuftAb: new Date(Date.now() + 86_400_000),
+    });
+    expect(await uebernimmEinladung({ token, benutzerId: hoca.id, email: hoca.email })).toEqual({ ok: false, fehler: 'administration' });
+    expect(await db.select().from(schema.rolleZuweisung).where(eq(schema.rolleZuweisung.benutzerId, hoca.id))).toEqual([]);
   });
 });
