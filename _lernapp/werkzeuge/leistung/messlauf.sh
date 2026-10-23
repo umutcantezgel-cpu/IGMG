@@ -8,6 +8,8 @@
 #   teile: budget messen lighthouse inp axe whisper last (Standard: alle in dieser Reihenfolge)
 #   MESS_FILTER=<regulärer Ausdruck>: nur Routen, deren Pfad passt (Lighthouse und axe; Nachmessung nach einer Behebung)
 #   MESS_ZIEL=<ordner>: Ausgabe (Standard $TMPDIR/leistung); dort lauf.log mit `uptime` je Schritt
+#   MESS_HALTEN=<sekunden>: Server nach den Messungen weiterlaufen lassen (Ende mit `touch <ziel>/stopp`)
+#   MESS_PLATTE_WARTEN=<sekunden>: höchstens so lange auf 4 GB freien Platz warten (Standard 1800)
 # Voraussetzungen: PostgreSQL (127.0.0.1:5432, Rolle igmg) und Mailpit laufen; .env-Vorlage eines Arbeitsbaums (MESS_ENV).
 # Ergebnisse: <ziel>/{budget,messen,lighthouse,inp,a11y,whisper-netz,lasttest}.{md,json}; Rohdaten bleiben außerhalb des Repos.
 set -u
@@ -24,8 +26,18 @@ export MESS_BASIS=http://localhost:$E2E_PORT
 MESS_ENV=${MESS_ENV:-/home/user/IGMG/.claude/worktrees/agent-a360d92e270ea9f2f/web/.env}
 mkdir -p "$TMPDIR" "$MESS_ZIEL"
 
-# Unter das gemeinsame Schloss: das Skript startet sich selbst einmal unter flock (ein Aufruf für Bau, Messung und Aufräumen)
+# Vor dem Schloss: mindestens 4 GB frei abwarten (andere Läufe räumen ihr .next auf), höchstens MESS_PLATTE_WARTEN Sekunden
+platte_mb() { df --output=avail -BM / | tail -1 | tr -dc 0-9; }
 if [ -z "${MESS_IM_SCHLOSS:-}" ]; then
+  ende=$((SECONDS + ${MESS_PLATTE_WARTEN:-1800}))
+  until [ "$(platte_mb)" -ge 4096 ]; do
+    if [ $SECONDS -ge $ende ]; then
+      echo "[$(date -u +%H:%M:%S)] ABBRUCH vor dem Schloss: nur $(platte_mb) MB frei (mindestens 4096 MB)" | tee -a "$MESS_ZIEL/lauf.log"
+      exit 3
+    fi
+    timeout 20 tail -f /dev/null
+  done
+  # Unter das gemeinsame Schloss: das Skript startet sich selbst einmal unter flock (ein Aufruf für Bau, Messung, Aufräumen)
   exec env MESS_IM_SCHLOSS=1 flock "$S/bau.lock" bash "$0" "$@"
 fi
 
@@ -33,9 +45,9 @@ L=$MESS_ZIEL/lauf.log
 TEILE=${*:-budget messen lighthouse inp axe whisper last}
 protokoll() { echo "[$(date -u +%H:%M:%S)] $* · $(uptime | sed 's/.*load average/load average/')" | tee -a "$L"; }
 
-frei_gb=$(df --output=avail -BG / | tail -1 | tr -dc 0-9)
-if [ "$frei_gb" -lt 4 ]; then
-  protokoll "ABBRUCH: nur ${frei_gb} GB frei (mindestens 4 GB vor dem Bau)"
+frei_mb=$(platte_mb)
+if [ "$frei_mb" -lt 4096 ]; then
+  protokoll "ABBRUCH: nur ${frei_mb} MB frei (mindestens 4096 MB vor dem Bau)"
   exit 3
 fi
 
@@ -51,8 +63,9 @@ aufraeumen() {
   protokoll "aufgeräumt (.next, test-results, .env)"
 }
 trap aufraeumen EXIT
+trap 'exit 143' TERM INT
 
-protokoll "Beginn: Stand $(git -C "$W" rev-parse --short HEAD), Teile: $TEILE, frei ${frei_gb} GB"
+protokoll "Beginn: Stand $(git -C "$W" rev-parse --short HEAD), Teile: $TEILE, frei ${frei_mb} MB"
 rm -rf .next test-results
 
 # .env aus der Vorlage (nie eingecheckt), Adresse und Schalter für diesen Lauf
@@ -121,3 +134,12 @@ for teil in $TEILE; do
   protokoll "Ende $teil rc=$?"
 done
 protokoll "Messungen fertig"
+
+# MESS_HALTEN=<sekunden>: Server danach weiterlaufen lassen (Nachmessung einzelner Werkzeuge gegen denselben Bau), bis die
+# Datei <ziel>/stopp existiert oder die Zeit um ist; erst dann beenden und aufräumen (weiter unter demselben Schloss)
+if [ -n "${MESS_HALTEN:-}" ]; then
+  protokoll "Server bleibt bis zu ${MESS_HALTEN} s (Ende: touch $MESS_ZIEL/stopp)"
+  ende=$((SECONDS + MESS_HALTEN))
+  until [ -f "$MESS_ZIEL/stopp" ] || [ $SECONDS -ge $ende ]; do timeout 10 tail -f /dev/null; done
+  rm -f "$MESS_ZIEL/stopp"
+fi
