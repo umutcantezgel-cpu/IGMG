@@ -3,7 +3,7 @@ import { maxNeueTokens, werteAus } from '@/lib/lernapp/sprechen/auswertung';
 import {
   type AnArbeiter,
   MODELL,
-  MODELLE_BASIS,
+  modellBasisAbsolut,
   ORT,
   ortAdresse,
   probeClip,
@@ -34,7 +34,11 @@ const bereich = self as unknown as {
 
 env.allowRemoteModels = false;
 env.allowLocalModels = true;
-env.localModelPath = MODELLE_BASIS;
+// Absolute Adresse (L8-02): Mit Fortschrittsmeldung fragt transformers.js vorab die Größe jeder Modelldatei ab und holt sie
+// bei einem relativen Modellpfad dafür vollständig per GET, ohne den Körper zu lesen – der Service Worker lud Encoder,
+// Decoder und Tokenizer so zweimal (≈ 77 MB doppelt). Bei einer absoluten Adresse entfällt diese Vorabfrage; geladen wird
+// jede Datei genau einmal (Größe aus `Content-Length` der eigentlichen Antwort).
+env.localModelPath = modellBasisAbsolut(bereich.location.origin);
 env.useWasmCache = false;
 env.useBrowserCache = true;
 env.cacheKey = VORRAT_MODELLE;

@@ -54,6 +54,13 @@ export const ORT = {
   wasmBytes: 14_264_838,
 } as const;
 
+/**
+ * Modellordner als absolute Adresse für transformers.js (`env.localModelPath`, L8-02): Bei einem relativen Pfad holt
+ * transformers.js 4.3 für die Fortschrittsanzeige vorab jede Modelldatei vollständig (`get_file_metadata` → GET ohne Lesen
+ * des Körpers); der Service Worker lud Encoder und Decoder dadurch zweimal. Eine absolute Adresse überspringt diese Vorabfrage.
+ */
+export const modellBasisAbsolut = (ursprung: string): string => new URL(MODELLE_BASIS, ursprung).href;
+
 /** Adresse einer ORT-Datei. */
 export const ortAdresse = (datei: string): string => `${MODELLE_BASIS}${ORT.ordner}/${datei}`;
 /** Adresse einer Modelldatei. */
