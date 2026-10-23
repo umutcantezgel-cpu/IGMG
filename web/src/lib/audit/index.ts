@@ -139,7 +139,9 @@ export type AuditAktion =
   // Korrekturweg der Lehrkraft (L5-03): nur Kennungen, nie Text oder Kommentar
   | 'lernapp.schreibabgabe_eingereicht'
   | 'lernapp.schreibabgabe_zurueckgegeben'
-  | 'lernapp.schreibabgabe_geloescht';
+  | 'lernapp.schreibabgabe_geloescht'
+  // Lebenszyklus der Einwilligung `lernapp` (S-L3 N-2): Lernstand auf dem Server gelöscht, nur Anzahl und Anlass
+  | 'lernapp.lernstand_geloescht';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
 

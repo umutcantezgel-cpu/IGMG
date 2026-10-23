@@ -18,6 +18,7 @@ import { meldeAnSorgeberechtigte } from '@/lib/konto/sicherheitsmail';
 import { einwilligungsLage } from '@/lib/konto/sechzehn';
 import { PASSWORT_MIN } from '@/lib/konto/passwort-staerke';
 import { verlangeKontenAktion } from '@/lib/konto/zugang';
+import { lernappMitKontoAn, lernappTextVersion } from '@/lib/lernapp/einwilligung';
 import { folgenDesWiderrufs } from '@/lib/lernapp/schreiben/folgen';
 import { KIND_EINWILLIGUNGEN, type KindEinwilligung } from '@/lib/lernen/ansicht';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
@@ -72,6 +73,10 @@ function wortlaut(art: KindEinwilligung, sprache: Locale): string {
   return `${d.einwilligung[art].text}\n${d.einvernehmen}`;
 }
 
+/** Version des Wortlauts: `lernapp` als Entwurf EL2 (`lernapp/einwilligung.ts`), die übrigen wie bisher. */
+const version = (art: KindEinwilligung, sprache: Locale): string =>
+  art === 'lernapp' ? lernappTextVersion('kind', wortlaut(art, sprache)) : textVersion(KONTO_EINWILLIGUNG_VERSION, wortlaut(art, sprache));
+
 const einwilligungSchema = z.object({
   lernendeId: uuid,
   art: z.enum(KIND_EINWILLIGUNGEN),
@@ -102,11 +107,16 @@ export async function einwilligungAendern(fd: FormData): Promise<void> {
 
   const b = await bezug(konto.benutzerId, lernendeId);
   if (!b) throw new KeinRecht();
+  // Lern-App (S-L3 N-2): Erteilen nur mit einem Schalter mit Personendaten der Lern-App; der Widerruf geht immer
+  if (art === 'lernapp' && aktion === 'erteilen' && !(await lernappMitKontoAn())) throw new KeinRecht();
   if (!b.sorgeberechtigt) zurueck({ fehler: 'sorgerecht', art });
-  // D-11: Ab 16 (nach 30 Tagen Übergang) entscheidet das Kind über Chat und Push selbst – Eltern ändern dort nichts mehr.
-  // Schon ab dem 16. Geburtstag (Übergang) erteilen Eltern keine neue Einwilligung; sonst höben sie einen eigenen Widerruf
-  // des Kindes einfach wieder auf (S2/S3). Widerrufen dürfen sie im Übergang noch.
-  const selbstbestimmt = art === 'gruppenchat' || art === 'push_kind';
+  // N4: Für die Lern-App zählt nur die Einwilligung mit bestätigtem Bezug (`lernappEinwilligungDetail`) – ohne ihn wäre sie
+  // wirkungslos und versperrte dem anderen Elternteil das Erteilen
+  if (art === 'lernapp' && aktion === 'erteilen' && !b.bestaetigtAm) zurueck({ fehler: 'unbestaetigt', art });
+  // D-11: Ab 16 (nach 30 Tagen Übergang) entscheidet das Kind über Chat, Push und Lern-App selbst – Eltern ändern dort
+  // nichts mehr. Schon ab dem 16. Geburtstag (Übergang) erteilen Eltern keine neue Einwilligung; sonst höben sie einen
+  // eigenen Widerruf des Kindes einfach wieder auf (S2/S3). Widerrufen dürfen sie im Übergang noch.
+  const selbstbestimmt = art === 'gruppenchat' || art === 'push_kind' || art === 'lernapp';
   const lage = einwilligungsLage(b.sechzehnAm, berlinerDatum(new Date()));
   if (selbstbestimmt && (lage === 'eigene' || (lage === 'uebergang' && aktion === 'erteilen'))) zurueck({ fehler: 'nurKind', art });
   // Eigenes Konto (ab 16 eingeladen): Die Einwilligung „Kinderzugang“ gilt dafür nicht – kein Erteilen, kein Widerruf, der
@@ -130,7 +140,7 @@ export async function einwilligungAendern(fd: FormData): Promise<void> {
       await tx.insert(schema.kontoEinwilligung).values({
         lernendeId,
         art,
-        textVersion: textVersion(KONTO_EINWILLIGUNG_VERSION, wortlaut(art, sprache)),
+        textVersion: version(art, sprache),
         sprache,
         einvernehmenBestaetigt: true,
         erteiltVon: konto.benutzerId,

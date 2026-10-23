@@ -93,6 +93,12 @@
           "push_kind": {
             "titel": "Benachrichtigungen für Ihr Kind",
             "text": "Ich willige ein, dass mein Kind auf seinem Gerät Benachrichtigungen der Moschee einschalten darf, zum Beispiel zu Gebetszeiten oder Neuem aus der Gruppe. Benachrichtigungen enthalten keine Namen und keine Nachrichteninhalte. Ich kann die Einwilligung jederzeit hier widerrufen; die Benachrichtigungen meines Kindes enden dann sofort."
+          },
+          "lernapp": {
+            "titel": "Lern-App mit Konto",
+            "text": "Ich willige ein, dass die IGMG Wetzlar ([Name und Rechtsform – Vorstand]) den Lernstand meines Kindes aus der Lern-App mit seinem Konto speichert und zwischen seinen Geräten abgleicht.\n\nGespeichert wird: welche Lektionen und Wiederholungen mein Kind gemacht hat, wie es bei den Aufgaben abgeschnitten hat (richtig, mit Hilfe oder falsch), sein Wiederholungsplan, seine XP, sein Tagesziel, seine Lerntage und seine Einstellungen in der Lern-App. Nicht gespeichert wird der Wortlaut seiner Antworten. Sprachaufnahmen verlassen das Gerät nie.\n\nIch sehe in „Mein Bereich“ die Lernwoche meines Kindes: Lerntage, erledigte Lektionen und XP. Ist mein Kind in einer Lerngruppe der Gemeinde, kann ihm die Lehrkraft dieser Gruppe Einheiten zuweisen. Sie sieht, welche zugewiesenen Einheiten mein Kind erledigt hat [und mit welchem Ergebnis – Umfang nach Entscheidung D-L03]. Schreibaufgaben schickt mein Kind nur an diese Lehrkraft. Sie werden verschlüsselt gespeichert und 12 Monate nach der Abgabe gelöscht.\n\nDer Lernstand im Kurs „Islamisches Wissen“ und im Pfad „Koran-Arabisch“ kann Rückschlüsse auf die religiöse Überzeugung zulassen. Ich willige ausdrücklich auch in die Verarbeitung dieser Angaben ein.\n\nMein Kind erscheint nie in einer Bestenliste und sieht keine. Es gibt keine Werbung, keine Weitergabe an Dritte und keine Auswertung über mein Kind als Person. Erinnerungen auf dem Gerät meines Kindes gibt es nur, wenn ich dafür eigens einwillige. Der Lernstand wird 12 Monate nach der letzten Aktivität in der Lern-App gelöscht, außerdem mit dem Kinderkonto.\n\nDie Einwilligung ist freiwillig. Mein Kind kann die Lern-App auch ohne Konto voll nutzen; der Lernstand bleibt dann nur auf seinem Gerät. Die Teilnahme am Unterricht hängt nicht von dieser Einwilligung ab.\n\nAb dem 16. Geburtstag entscheidet mein Kind selbst. Bis es selbst einwilligt, längstens 30 Tage, gilt meine Einwilligung weiter.\n\nWiderruf: Ich kann diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen: hier in „Mein Bereich“ unter „Meine Kinder“ oder per E-Mail an [E-Mail-Adresse]. Dann endet der Abgleich sofort, und der Lernstand meines Kindes auf dem Server wird gelöscht – mit seinen Schreibabgaben. Der Lernstand auf dem Gerät bleibt. Bis zum Widerruf bleibt die Verarbeitung rechtmäßig.",
+            "entwurf": "Entwurf: Dieser Einwilligungstext wird noch von Datenschutz und Recht geprüft.",
+            "widerrufHinweis": "Mit dem Widerruf werden der Lernstand Ihres Kindes auf dem Server und seine Schreibabgaben sofort gelöscht. Der Lernstand auf seinem Gerät bleibt."
           }
         },
         "einvernehmen": "Ich bin sorgeberechtigt und handle im Einvernehmen mit der zweiten sorgeberechtigten Person.",
@@ -117,7 +123,8 @@
           "einvernehmen": "Bitte bestätigen Sie, dass Sie sorgeberechtigt sind und im Einvernehmen handeln.",
           "bestaetigen": "Bitte bestätigen Sie, dass der Zugang Ihres Kindes gelöscht wird.",
           "sorgerecht": "Für dieses Kind sind Sie nicht als sorgeberechtigt eingetragen. Bitte wenden Sie sich an die Bildungsabteilung.",
-          "allgemein": "Das hat nicht geklappt. Bitte versuchen Sie es noch einmal."
+          "allgemein": "Das hat nicht geklappt. Bitte versuchen Sie es noch einmal.",
+          "unbestaetigt": "Ihr Bezug zu diesem Kind ist noch nicht bestätigt. Erst danach können Sie für die Lern-App einwilligen."
         },
         "zugangTitel": "Zugang für Ihr Kind",
         "zugangText": "Mit einem eigenen Zugang sieht Ihr Kind seinen Lernweg, seine Gruppe und – mit Ihrer Einwilligung – den Gruppenchat. Es meldet sich mit einem Benutzernamen an, ohne E-Mail-Adresse, und bleibt höchstens 12 Stunden angemeldet.",
@@ -380,6 +387,12 @@
           "push_kind": {
             "titel": "Çocuğunuz için bildirimler",
             "text": "Çocuğumun kendi cihazında caminin bildirimlerini, örneğin namaz vakitleri veya gruptan haberler için açabilmesine onay veriyorum. Bildirimlerde isim ve mesaj içeriği bulunmaz. Bu onayı istediğim zaman burada geri alabilirim; çocuğumun bildirimleri o anda sona erer."
+          },
+          "lernapp": {
+            "titel": "Hesapla öğrenme uygulaması",
+            "text": "IGMG Wetzlar’ın ([adı ve hukuki şekli – yönetim kurulu]) çocuğumun öğrenme uygulamasındaki öğrenme durumunu hesabıyla birlikte kaydetmesine ve cihazları arasında eşitlemesine onay veriyorum.\n\nKaydedilenler: çocuğumun hangi dersleri ve tekrarları yaptığı, alıştırmalarda nasıl sonuç aldığı (doğru, yardımla veya yanlış), tekrar planı, XP’leri, günlük hedefi, öğrenme günleri ve öğrenme uygulamasındaki ayarları. Cevaplarının metni kaydedilmez. Ses kayıtları cihazdan hiçbir zaman çıkmaz.\n\n„Hesabım“ bölümünde çocuğumun öğrenme haftasını görürüm: öğrenme günleri, tamamlanan dersler ve XP. Çocuğum cemaatin bir öğrenme grubundaysa, bu grubun öğretmeni ona üniteler verebilir. Öğretmen, verilen ünitelerden hangilerini çocuğumun tamamladığını görür [ve hangi sonuçla – kapsam D-L03 kararına göre]. Çocuğum yazma ödevlerini yalnızca bu öğretmene gönderir. Bunlar şifreli olarak saklanır ve teslimden 12 ay sonra silinir.\n\n„İslami bilgi“ kursundaki ve „Kur’an Arapçası“ yolundaki öğrenme durumu dinî inanç hakkında sonuç çıkarılmasına imkân verebilir. Bu bilgilerin işlenmesine de açıkça onay veriyorum.\n\nÇocuğum hiçbir zaman bir sıralama listesinde görünmez ve sıralama listesi görmez. Reklam yoktur, üçüncü kişilere aktarım yoktur ve kişi olarak çocuğum hakkında değerlendirme yapılmaz. Çocuğumun cihazında hatırlatmalar yalnızca buna ayrıca onay verirsem olur. Öğrenme durumu, öğrenme uygulamasındaki son etkinlikten 12 ay sonra ve çocuk hesabıyla birlikte silinir.\n\nOnay isteğe bağlıdır. Çocuğum öğrenme uygulamasını hesap olmadan da tam olarak kullanabilir; öğrenme durumu o zaman yalnızca cihazında kalır. Derslere katılım bu onaya bağlı değildir.\n\n16. doğum gününden itibaren çocuğum kendisi karar verir. Kendisi onay verene kadar, en fazla 30 gün, benim onayım geçerli olmaya devam eder.\n\nGeri alma: Bu onayı gelecekte geçerli olmak üzere her zaman geri alabilirim: burada, „Hesabım“ bölümünde „Çocuklarım“ altında veya [e-posta adresi] adresine e-posta ile. O zaman eşitleme hemen sona erer ve çocuğumun sunucudaki öğrenme durumu silinir – yazma ödevleriyle birlikte. Cihazdaki öğrenme durumu kalır. Geri almaya kadar yapılan işleme hukuka uygun kalır.",
+            "entwurf": "Taslak: Bu onay metni henüz veri koruma ve hukuk açısından inceleniyor.",
+            "widerrufHinweis": "Geri alma ile çocuğunuzun sunucudaki öğrenme durumu ve yazma ödevleri hemen silinir. Cihazındaki öğrenme durumu kalır."
           }
         },
         "einvernehmen": "Velayet hakkına sahibim ve diğer velayet sahibiyle mutabık olarak hareket ediyorum.",
@@ -404,7 +417,8 @@
           "einvernehmen": "Lütfen velayet hakkınız olduğunu ve mutabık hareket ettiğinizi onaylayın.",
           "bestaetigen": "Lütfen çocuğunuzun erişiminin silineceğini onaylayın.",
           "sorgerecht": "Bu çocuk için velayet sahibi olarak kayıtlı değilsiniz. Lütfen eğitim birimine başvurun.",
-          "allgemein": "Bu işlem olmadı. Lütfen tekrar deneyin."
+          "allgemein": "Bu işlem olmadı. Lütfen tekrar deneyin.",
+          "unbestaetigt": "Bu çocukla bağınız henüz onaylanmadı. Öğrenme uygulaması için ancak bundan sonra onay verebilirsiniz."
         },
         "zugangTitel": "Çocuğunuzun erişimi",
         "zugangText": "Kendi erişimiyle çocuğunuz öğrenme yolunu, grubunu ve – sizin onayınızla – grup sohbetini görür. E-posta adresi olmadan bir kullanıcı adıyla giriş yapar ve en fazla 12 saat oturumu açık kalır.",
@@ -667,6 +681,12 @@
           "push_kind": {
             "titel": "Notifications for your child",
             "text": "I consent to my child switching on the mosque's notifications on their device, for example for prayer times or news from the group. Notifications contain no names and no message content. I can withdraw this consent here at any time; my child's notifications then stop immediately."
+          },
+          "lernapp": {
+            "titel": "Learning app with account",
+            "text": "I consent to IGMG Wetzlar ([name and legal form – board]) storing my child’s learning progress from the learning app with their account and synchronising it between their devices.\n\nWhat is stored: which lessons and reviews my child has done, how they did in the exercises (correct, with help or wrong), their review schedule, their XP, their daily goal, their learning days and their settings in the learning app. The wording of their answers is not stored. Voice recordings never leave the device.\n\nIn “My account” I see my child’s learning week: learning days, completed lessons and XP. If my child is in a learning group of the community, the teacher of this group can assign units to them. The teacher sees which assigned units my child has completed [and with what result – scope according to decision D-L03]. My child only sends writing tasks to this teacher. They are stored encrypted and deleted 12 months after submission.\n\nProgress in the course “Islamic knowledge” and in the path “Quranic Arabic” may allow conclusions about religious beliefs. I also explicitly consent to the processing of this information.\n\nMy child never appears in a leaderboard and does not see one. There is no advertising, no disclosure to third parties and no profiling of my child as a person. Reminders on my child’s device only exist if I separately consent to them. Learning progress is deleted 12 months after the last activity in the learning app, and also with the child’s account.\n\nConsent is voluntary. My child can use the learning app fully without an account; progress then stays on their device only. Taking part in lessons does not depend on this consent.\n\nFrom their 16th birthday, my child decides for themselves. Until they consent themselves, for at most 30 days, my consent continues to apply.\n\nWithdrawal: I can withdraw this consent at any time with effect for the future: here in “My account” under “My children” or by email to [email address]. Synchronisation then ends immediately, and my child’s learning progress on the server is deleted – together with their writing submissions. The progress on the device remains. Processing remains lawful until withdrawal.",
+            "entwurf": "Draft: This consent text is still being reviewed for data protection and legal matters.",
+            "widerrufHinweis": "Withdrawing immediately deletes your child’s learning progress on the server and their writing submissions. The progress on their device remains."
           }
         },
         "einvernehmen": "I have parental responsibility and am acting in agreement with the other person with parental responsibility.",
@@ -691,7 +711,8 @@
           "einvernehmen": "Please confirm that you have parental responsibility and are acting in agreement.",
           "bestaetigen": "Please confirm that your child's access will be deleted.",
           "sorgerecht": "You are not registered as having parental responsibility for this child. Please contact the education department.",
-          "allgemein": "That did not work. Please try again."
+          "allgemein": "That did not work. Please try again.",
+          "unbestaetigt": "Your link to this child has not been confirmed yet. Only then can you give consent for the learning app."
         },
         "zugangTitel": "Access for your child",
         "zugangText": "With their own access, your child sees their learning path, their group and – with your consent – the group chat. They sign in with a username, without an email address, and stay signed in for 12 hours at most.",

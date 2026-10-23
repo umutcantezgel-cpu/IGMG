@@ -10,8 +10,12 @@ export type FortschrittStatus = 'begonnen' | 'sicher' | 'abgeschlossen';
 export type KanalArt = 'gruppe' | 'eltern';
 export type Sprache = 'de' | 'tr' | 'en';
 
-/** Einwilligungen, die Eltern für ihr Kind einzeln erteilen und widerrufen (ADR 0026, S-03). */
-export const KIND_EINWILLIGUNGEN = ['lernplattform', 'kinderkonto', 'gruppenchat', 'push_kind'] as const;
+/**
+ * Einwilligungen, die Eltern für ihr Kind einzeln erteilen und widerrufen (ADR 0026, S-03). `lernapp` (S-L3 N-2) erscheint
+ * nur, solange ein Schalter mit Personendaten der Lern-App an ist (`lernapp_sync` oder `lernapp_gruppen`) oder sie gilt –
+ * der Widerruf bleibt immer möglich.
+ */
+export const KIND_EINWILLIGUNGEN = ['lernplattform', 'kinderkonto', 'gruppenchat', 'push_kind', 'lernapp'] as const;
 export type KindEinwilligung = (typeof KIND_EINWILLIGUNGEN)[number];
 
 /** Maßnahmen der Lehrkraft auf eine Chat-Meldung (S-09); „abschließen“ setzt die Meldung danach auf „erledigt“. */

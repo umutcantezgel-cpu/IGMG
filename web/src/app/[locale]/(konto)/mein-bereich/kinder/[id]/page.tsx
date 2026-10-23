@@ -29,6 +29,7 @@ import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { text, waehle } from '@/lib/i18n/inhalt';
 import { verlangeMeinBereich } from '@/lib/konto/zugang';
 import { anwesenheitsZaehlung, datumText, localeFuer, zeitspanne } from '@/lib/lernen/ansicht';
+import { absaetze, lernappMitKontoAn } from '@/lib/lernapp/einwilligung';
 import { KeinGruppenZugang, lernwocheDesKindes } from '@/lib/lernapp/gruppe/dienst';
 import { lernendenUebersicht } from '@/lib/lernen/dienst';
 import { tagPlus } from '@/lib/lernen/termine';
@@ -67,12 +68,13 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
   const kopf = await kindKopf(id, kontext);
   if (!kopf) notFound();
   const heute = berlinerDatum(new Date());
-  const [uebersicht, weg, einwilligungen, zugang, chatAn, t, tu, lernwoche] = await Promise.all([
+  const [uebersicht, weg, alleEinwilligungen, zugang, chatAn, lernappAn, t, tu, lernwoche] = await Promise.all([
     lernendenUebersicht(id, kontext),
     lernwegVon(id, kontext),
     einwilligungenDesKindes(id, kontext),
     kinderzugang(id, kontext),
     funktionAn('chat'),
+    lernappMitKontoAn(),
     getTranslations('kinder.detail'),
     getTranslations('unterricht.fortschritt'),
     // Lernwoche in der Lern-App (L7-02, KERN 4.0 §5): nur mit `lernapp_gruppen`, keine Bestenliste
@@ -85,7 +87,9 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
         : null,
     ),
   ]);
-  if (!einwilligungen) notFound();
+  if (!alleEinwilligungen) notFound();
+  // Lern-App (S-L3 N-2): nur mit einem Schalter mit Personendaten der Lern-App – oder solange sie gilt (Widerruf immer)
+  const einwilligungen = alleEinwilligungen.filter((e) => e.art !== 'lernapp' || lernappAn || e.aktiv);
 
   const gruppenName = new Map(uebersicht.gruppen.map((g) => [g.id, g.name]));
   const ortVon = new Map(uebersicht.gruppen.map((g) => [g.id, g.ort]));
@@ -114,6 +118,17 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
   const rueckmeldungArt = typeof sp.art === 'string' ? sp.art : null;
   // D-11: ab 16 (nach 30 Tagen Übergang) entscheidet das Kind über Chat und Push selbst
   const sechzehn = lageFuerEltern(kopf.sechzehnAm, heute);
+  // Wortlaut je Absatz (der Text der Lern-App hat mehrere); bei der Lern-App mit dem Hinweis „Entwurf“ davor
+  const wortlautTeile = (art: (typeof einwilligungen)[number]['art'], klasse: string) => (
+    <>
+      {art === 'lernapp' ? <p className="max-w-text text-16 font-bold text-tinte-2">{t('einwilligung.lernapp.entwurf')}</p> : null}
+      {absaetze(t(`einwilligung.${art}.text`)).map((a) => (
+        <p key={a} className={klasse}>
+          {a}
+        </p>
+      ))}
+    </>
+  );
 
   const fehlTexte: FehlmeldungTexte = {
     datum: t('fehlen.datum'),
@@ -420,14 +435,14 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
               const zugangLoeschen = e.art === 'kinderkonto' && zugang !== null;
               // D-11: ab 16 erteilen Eltern für Chat und Push nichts Neues mehr (im Übergang nur noch widerrufen, S2/S3);
               // ein eigenes Konto der/des Jugendlichen ist kein Kinderzugang
-              const selbstbestimmt = e.art === 'gruppenchat' || e.art === 'push_kind';
+              const selbstbestimmt = e.art === 'gruppenchat' || e.art === 'push_kind' || e.art === 'lernapp';
               const eigenesKonto = e.art === 'kinderkonto' && kopf.eigenesKonto;
               const nurKind =
                 eigenesKonto || (selbstbestimmt && (sechzehn.lage === 'eigene' || (sechzehn.lage === 'uebergang' && !e.aktiv)));
               const fehler =
                 hier &&
                 typeof sp.fehler === 'string' &&
-                ['einvernehmen', 'bestaetigen', 'sorgerecht', 'nurKind', 'eigenesKonto', 'allgemein'].includes(sp.fehler)
+                ['einvernehmen', 'bestaetigen', 'sorgerecht', 'nurKind', 'eigenesKonto', 'unbestaetigt', 'allgemein'].includes(sp.fehler)
                   ? sp.fehler
                   : null;
               const ok = hier && typeof sp.ok === 'string' && ['erteilt', 'widerrufen'].includes(sp.ok) ? sp.ok : null;
@@ -453,6 +468,8 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
                         <p className="text-16 font-bold text-warnung">{t('zugangWarnung')}</p>
                         <Haken id={`bestaetigt-${e.art}`} name="bestaetigt" label={t('zugangBestaetigen')} />
                       </>
+                    ) : e.art === 'lernapp' ? (
+                      <p className="text-16 font-bold text-warnung">{t('einwilligung.lernapp.widerrufHinweis')}</p>
                     ) : null
                   ) : (
                     <Haken id={`einvernehmen-${e.art}`} name="einvernehmen" label={t('einvernehmen')} />
@@ -514,13 +531,13 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
                           />
                         </summary>
                         <div className="flex flex-col gap-4 pt-1 pb-4">
-                          <p className="max-w-text text-pretty">{t(`einwilligung.${e.art}.text`)}</p>
+                          {wortlautTeile(e.art, 'max-w-text text-pretty')}
                           {formular}
                         </div>
                       </details>
                     ) : (
                       <>
-                        <p className="max-w-text text-16 text-pretty">{t(`einwilligung.${e.art}.text`)}</p>
+                        <div className="flex flex-col gap-3">{wortlautTeile(e.art, 'max-w-text text-16 text-pretty')}</div>
                         <div className="mt-3">{formular}</div>
                       </>
                     )}

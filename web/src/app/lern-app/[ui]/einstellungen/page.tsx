@@ -4,6 +4,7 @@ import { EinstellungenFormular } from '@/components/lernapp/inseln/Einstellungen
 import { KontoInsel } from '@/components/lernapp/inseln/KontoInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
+import { pfadFuer } from '@/i18n/navigation';
 import { funktionAn } from '@/lib/funktionen';
 import { lernAdresse } from '@/lib/lernapp/adressen';
 import { OBERFLAECHEN, richtung, SPRACHEN } from '@/lib/lernapp/kurse';
@@ -29,6 +30,9 @@ export default async function Einstellungen() {
   const ui = await oberflaeche();
   const t = lernTexte(ui);
   const abgleich = await funktionAn('lernapp_sync');
+  // Einwilligung „Lern-App“ in „Mein Bereich › Konto“ (S-L3 N-2): tr bleibt tr, ar und de führen auf die deutsche Fassung
+  const website = ui === 'tr' ? 'tr' : 'de';
+  const einwilligung = { adresse: `${pfadFuer('/mein-bereich/konto', website)}#lern-app`, sprache: website } as const;
   return (
     <Rahmen ui={ui} bereich="einstellungen" pfad="einstellungen">
       <Seitenkopf titel={t('einstellungen.titel')} einleitung={t('einstellungen.einleitung')} />
@@ -60,7 +64,7 @@ export default async function Einstellungen() {
           texte={rohTexte(ui, 'einstellungen')}
           sprachen={SPRACHEN.map((s) => ({ sprache: s, eigenname: lernTexte(s)('sprache.eigenname'), dir: richtung(s) }))}
         />
-        {abgleich ? <KontoInsel ui={ui} texte={rohTexte(ui, 'konto')} /> : null}
+        {abgleich ? <KontoInsel ui={ui} texte={rohTexte(ui, 'konto')} einwilligung={einwilligung} /> : null}
         <section aria-labelledby="bewegung" className="flex flex-col gap-2">
           <h2 id="bewegung" className="text-24">
             {t('einstellungen.bewegung')}
