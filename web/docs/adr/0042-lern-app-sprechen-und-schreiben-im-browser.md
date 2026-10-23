@@ -98,8 +98,8 @@ Gilt vor Nr. 1–12 und den Abschnitten oben, wo es abweicht.
 
 ## Fortschreibung nach der Sicherheitsprüfung S-L2 (23.10.2026, Auflagen M-1, N-2, H-1)
 
-17. **Nr. 11, Austritt, Widerruf, Lehrkraftwechsel (S-L2 N-2):** Beim Austritt (Mitglied entfernt, Lernende beendet, Gruppe
-    archiviert) werden die Abgaben der Person von der Gruppe gelöst (`gruppe_id` und `korrigiert_von` leer,
+17. **Nr. 11, Austritt, Widerruf, Lehrkraftwechsel (S-L2 N-2):** Beim Austritt (Mitglied entfernt – in der Verwaltung oder
+    durch die Leitung im Chat, S-09 –, Lernende beendet, Gruppe archiviert) werden die Abgaben der Person von der Gruppe gelöst (`gruppe_id` und `korrigiert_von` leer,
     `lib/lernapp/schreiben/folgen.ts`); kein Wiedereintritt und keine neue Lehrkraft macht sie wieder lesbar, die Person
     sieht und löscht sie weiter. Die Lehrkraft liest nur Abgaben, die eine geltende Einwilligung schon zur Zeit der Abgabe
     deckte (`lernappEinwilligungDetail.seit`); ein neues Erteilen deckt nie die Zeit davor. Nach einem Widerruf von

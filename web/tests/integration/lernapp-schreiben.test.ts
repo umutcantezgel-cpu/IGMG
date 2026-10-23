@@ -16,9 +16,9 @@ import { formular, kontoUmgebung, umleitung } from './hilfen/konto';
  * Gegenprüfung L5-03: Rückgabe einer gerade gelöschten Abgabe ohne Audit-Eintrag; gleichzeitige Abgaben überschreiten die
  * Grenzen nicht.
  * S-L2-Auflagen: Kommentar an Kinder gesperrt bis D-L16 (Dienst und Action, M-1); Austritt über die Verwaltung löst die
- * Abgaben von der Gruppe, Wiedereintritt macht sie nicht wieder lesbar; Widerruf löscht nicht mehr gedeckte Abgaben, neues
- * Erteilen deckt nie die Zeit davor (N-2); „Mein Bereich › Konto“ löscht alle eigenen Abgaben auch ohne Schalter; Körper
- * ohne Content-Length als Strom begrenzt (H-1).
+ * Abgaben von der Gruppe (ebenso das Entfernen durch die Leitung im Chat, S-09), Wiedereintritt macht sie nicht wieder
+ * lesbar; Widerruf löscht nicht mehr gedeckte Abgaben, neues Erteilen deckt nie die Zeit davor (N-2); „Mein Bereich ›
+ * Konto“ löscht alle eigenen Abgaben auch ohne Schalter; Körper ohne Content-Length als Strom begrenzt (H-1).
  */
 // Einmaliger Eingriff vor der nächsten Einwilligungsprüfung – in `lesbare` liegt sie zwischen Lesen und Schreiben der
 // Rückgabe; so lässt sich „die Person löscht ihre Abgabe, während die Lehrkraft zurückgibt“ ohne Zufall nachstellen
@@ -48,6 +48,7 @@ const { auth } = await import('@/lib/auth/server');
 const folgen = await import('@/lib/lernapp/schreiben/folgen');
 const { lernappAbgabeZurueckgeben } = await import('@/server/actions/lernapp-schreiben');
 const gruppenActions = await import('@/server/actions/gruppen');
+const chat = await import('@/lib/chat/dienst');
 const { schreibabgabenLoeschen } = await import('@/server/actions/mein-bereich');
 const route = await import('@/app/api/lernapp/schreiben/route');
 const dienst = await import('@/lib/lernapp/schreiben/dienst');
@@ -614,6 +615,25 @@ describe('Folgen von Widerruf und Konto-Seite (S-L2 N-2)', () => {
     await folgen.folgenDesWiderrufs('lernapp', { lernendeId: ids.kindL }, ids.eltern);
     expect(await db.select({ id: A.id }).from(A).where(eq(A.benutzerId, ids.kind))).toEqual([]);
     expect(await geloeschtAudit(ids.kind)).toEqual([{ anzahl: 1, anlass: 'widerruf' }]);
+  });
+
+  it('Entfernen durch die Leitung im Chat (S-09): Abgaben von der Gruppe gelöst, auch nach Wiedereintritt unlesbar', async () => {
+    const id = await konto('[Erwachsen] S', { rollen: ['schueler'], einwilligung: true });
+    const lernendeId = await lernende(id, '[Erwachsen] S', '2010-01-01');
+    await db.insert(schema.gruppenMitglied).values({ gruppeId: ids.gruppe1, lernendeId });
+    const eigene = abgabe(ids.gruppe1);
+    await dienst.reicheEin({ benutzerId: id, istKind: false }, await kontext(id), eigene);
+    const lesbar = async () => (await dienst.abgabenDerGruppe(await kontext(ids.lehrkraftA), ids.gruppe1)).map((z) => z.id);
+    expect(await lesbar()).toContain(eigene.id);
+    expect(await chat.entferneMitglied(await kontext(ids.lehrkraftA), ids.gruppe1, lernendeId, '[Grund] Gruppe gewechselt')).toBeNull();
+    expect(await db.select({ g: A.gruppeId, von: A.korrigiertVon }).from(A).where(eq(A.id, eigene.id))).toEqual([{ g: null, von: null }]);
+    // Wiedereintritt (dieselbe Mitgliedszeile lebt auf): die alte Abgabe bleibt unlesbar, die Person sieht sie weiter
+    await db
+      .update(schema.gruppenMitglied)
+      .set({ bis: null })
+      .where(and(eq(schema.gruppenMitglied.gruppeId, ids.gruppe1), eq(schema.gruppenMitglied.lernendeId, lernendeId)));
+    expect(await lesbar()).not.toContain(eigene.id);
+    expect(await folgen.anzahlEigenerAbgaben(id)).toBe(1);
   });
 
   it('„Mein Bereich › Konto“: alle eigenen Abgaben löschen – mit Bestätigung, auch ohne Schalter `lernapp_gruppen`', async () => {

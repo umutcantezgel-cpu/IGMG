@@ -9,10 +9,10 @@ import { lernappEinwilligungDetail } from '../sync/server';
  * Art. 17 Abs. 1 lit. b DSGVO). Vorher waren Abgaben nach Austritt oder Widerruf nur verborgen; ein Wiedereintritt (gleiche
  * Mitgliedszeile) oder ein neues Erteilen machte sie samt Kommentar wieder lesbar.
  *
- * - **Austritt** (Mitgliedschaft endet, Lernende beendet, Gruppe archiviert): Die Abgaben dieser Person an diese Gruppe
- *   werden von der Gruppe gelöst (`gruppe_id = null`, `korrigiert_von = null`). Keine Lehrkraft liest sie danach je wieder –
- *   auch nicht nach einem Wiedereintritt oder mit einer neuen Lehrkraft; die Person selbst sieht und löscht sie weiter, bis
- *   die Frist (12 Monate) sie löscht.
+ * - **Austritt** (Mitglied entfernt – in der Verwaltung oder durch die Leitung im Chat, S-09 –, Lernende beendet, Gruppe
+ *   archiviert): Die Abgaben dieser Person an diese Gruppe werden von der Gruppe gelöst (`gruppe_id = null`,
+ *   `korrigiert_von = null`). Keine Lehrkraft liest sie danach je wieder – auch nicht nach einem Wiedereintritt oder mit
+ *   einer neuen Lehrkraft; die Person selbst sieht und löscht sie weiter, bis die Frist (12 Monate) sie löscht.
  * - **Widerruf** der Einwilligung `lernapp`: Abgaben, die keine geltende Einwilligung mehr deckt, werden gelöscht.
  *   Zusätzlich liest die Lehrkraft nur Abgaben, deren Einwilligung schon vor der Abgabe galt (`lernappEinwilligungDetail`
  *   `seit`) – ein neues Erteilen deckt nie die Zeit davor, auch wenn der Widerruf auf einem Weg geschah, der diese Folgen
