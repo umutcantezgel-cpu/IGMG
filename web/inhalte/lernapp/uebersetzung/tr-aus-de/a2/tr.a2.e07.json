@@ -1,0 +1,3268 @@
+{
+  "format": "igmg-lernapp-uebersetzung",
+  "version": 1,
+  "status": "entwurf",
+  "richtung": "tr-aus-de",
+  "einheit": "tr.a2.e07",
+  "eintraege": [
+    {
+      "bezug": "tr.a2.e07.recete",
+      "text": "Rezept (vom Arzt)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.mide",
+      "text": "Magen",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.bulanti",
+      "text": "Übelkeit (mide bulantısı = Übelkeit)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.alerji",
+      "text": "Allergie",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.yag",
+      "text": "Fett; Öl",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.vitamin",
+      "text": "Vitamin",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.surup",
+      "text": "Sirup, Saft (Arznei; öksürük şurubu = Hustensaft)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.hap",
+      "text": "Tablette",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.damla",
+      "text": "Tropfen (göz damlası = Augentropfen)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.krem",
+      "text": "Creme, Salbe",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.tansiyon",
+      "text": "Blutdruck",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.asi",
+      "text": "Impfung (aşı olmak = geimpft werden)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.eczaci",
+      "text": "Apotheker, Apothekerin",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.disci",
+      "text": "Zahnarzt, Zahnärztin",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.yorgunluk",
+      "text": "Müdigkeit",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.yara",
+      "text": "Wunde",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.bant",
+      "text": "Pflaster (yara bandı); Band",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.gozluk",
+      "text": "Brille",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.yuz",
+      "text": "Gesicht",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.omuz",
+      "text": "Schulter",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.diz",
+      "text": "Knie",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.boyun",
+      "text": "Nacken, Hals (außen)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.kemik",
+      "text": "Knochen",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.bilek",
+      "text": "Handgelenk (ayak bileği = Fußknöchel)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.dirsek",
+      "text": "Ellbogen",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.ihlamur",
+      "text": "Lindenblütentee; Linde",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.nane",
+      "text": "Minze",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.limon",
+      "text": "Zitrone",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.bal",
+      "text": "Honig",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.vucut",
+      "text": "Körper",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.yasam",
+      "text": "Leben (sağlıklı yaşam = gesundes Leben)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.sigorta",
+      "text": "Versicherung (sağlık sigortası = Krankenversicherung)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.ambulans",
+      "text": "Krankenwagen",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.kalp",
+      "text": "Herz",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.ihtiyac",
+      "text": "Bedarf (ihtiyacım var = ich brauche)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.tedavi",
+      "text": "Behandlung",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.test",
+      "text": "Test",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.tavsiye",
+      "text": "Rat, Empfehlung (tavsiye etmek = raten, empfehlen)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.rapor",
+      "text": "Krankschreibung, Attest; Bericht",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.hastalik",
+      "text": "Krankheit",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.uyku",
+      "text": "Schlaf (uykum var = ich bin müde)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.halsiz",
+      "text": "schlapp, kraftlos",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.sekerli",
+      "text": "mit Zucker, gezuckert",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.sekersiz",
+      "text": "ohne Zucker, zuckerfrei",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.tuzlu",
+      "text": "salzig",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.yagli",
+      "text": "fettig",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.aci",
+      "text": "scharf; bitter",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.normal",
+      "text": "normal",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.zorunda",
+      "text": "gezwungen (gitmek zorundayım = ich muss gehen)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.gerekli",
+      "text": "nötig, notwendig",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.saglikli",
+      "text": "gesund",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.saglam",
+      "text": "kräftig, gesund; fest, stabil",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.sart",
+      "text": "unbedingt nötig, ein Muss",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.acil",
+      "text": "dringend; Not- (acil durum = Notfall)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.tok",
+      "text": "satt",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.mutlaka",
+      "text": "unbedingt",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.dolayi",
+      "text": "wegen (mit Ablativ: hastalıktan dolayı = wegen Krankheit)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.olcmek",
+      "text": "messen",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.hastalanmak",
+      "text": "krank werden",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.hapsirmak",
+      "text": "niesen",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.oksurmek",
+      "text": "husten",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.gerekmek",
+      "text": "nötig sein (gerekiyor = man muss, es ist nötig)",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.titremek",
+      "text": "zittern",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0001",
+      "text": "Mein Nacken und meine Schulter tun sehr weh.",
+      "alternativen": [
+        "Mir tun Nacken und Schulter sehr weh.",
+        "Nacken und Schulter tun mir sehr weh.",
+        "Mein Hals und meine Schulter tun sehr weh.",
+        "Mein Nacken und meine Schulter schmerzen sehr."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0002",
+      "text": "Mir ist seit heute Morgen übel.",
+      "alternativen": ["Seit heute Morgen ist mir übel.", "Mir ist seit dem Morgen schlecht.", "Ich habe seit heute Morgen Übelkeit."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0003",
+      "text": "Can niest und hustet.",
+      "alternativen": ["Can niest gerade und hustet.", "Can niest und er hustet."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0004",
+      "text": "Wo tut es dir weh?",
+      "alternativen": ["Was tut dir weh?", "Wo hast du Schmerzen?", "Wo tut es weh?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0005",
+      "text": "Mein Knie tut sehr weh, ich kann nicht laufen.",
+      "alternativen": [
+        "Mein Knie tut sehr weh, ich kann nicht gehen.",
+        "Mir tut das Knie sehr weh, ich kann nicht laufen.",
+        "Mein Knie schmerzt sehr, ich kann nicht gehen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0006",
+      "text": "Ich bin allergisch gegen Katzen.",
+      "alternativen": ["Ich habe eine Katzenallergie.", "Ich habe eine Allergie gegen Katzen.", "Ich reagiere allergisch auf Katzen."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0007",
+      "text": "Meine Mutter ist krank geworden.",
+      "alternativen": ["Meine Mutter wurde krank.", "Meine Mama ist krank geworden."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0008",
+      "text": "Im Frühling niese ich viel.",
+      "alternativen": ["Im Frühling niese ich oft.", "Ich niese im Frühling viel.", "Im Frühjahr niese ich viel."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0009",
+      "text": "Mir ist kalt, mein ganzer Körper zittert.",
+      "alternativen": [
+        "Ich friere, mein ganzer Körper zittert.",
+        "Mir ist kalt, ich zittere am ganzen Körper.",
+        "Ich friere und zittere am ganzen Körper."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0010",
+      "text": "Mein Handgelenk tut weh, ich kann nicht schreiben.",
+      "alternativen": ["Mir tut das Handgelenk weh, ich kann nicht schreiben.", "Mein Handgelenk schmerzt, ich kann nicht schreiben."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0011",
+      "text": "Mein Vater ist gestern Abend krank geworden.",
+      "alternativen": [
+        "Mein Vater wurde gestern Abend krank.",
+        "Gestern Abend ist mein Vater krank geworden.",
+        "Mein Papa ist gestern Abend krank geworden."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0012",
+      "text": "Can, warum zitterst du?",
+      "alternativen": ["Warum zitterst du, Can?", "Can, wieso zitterst du?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0013",
+      "text": "Mir ist kalt und ich bin sehr schlapp, Mama.",
+      "alternativen": [
+        "Ich friere und bin ganz schlapp, Mama.",
+        "Mama, mir ist kalt und ich bin sehr schlapp.",
+        "Mir ist kalt und ich fühle mich sehr schwach, Mama."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0014",
+      "text": "Ich habe eine kleine Wunde am Knie.",
+      "alternativen": [
+        "An meinem Knie ist eine kleine Wunde.",
+        "Am Knie habe ich eine kleine Wunde.",
+        "Ich habe eine kleine Wunde an meinem Knie."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0015",
+      "text": "Schau nicht so viel auf den Computer, sonst tut dir der Nacken weh.",
+      "alternativen": [
+        "Schau nicht zu viel auf den Computer, sonst tut dir der Nacken weh.",
+        "Sieh nicht so viel auf den Computer, sonst tut dein Nacken weh.",
+        "Schau nicht so viel auf den Computer, dein Nacken tut sonst weh."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0016",
+      "text": "Ich möchte einen dringenden Termin bei Frau Pınar.",
+      "alternativen": [
+        "Ich hätte gern einen dringenden Termin bei Frau Pınar.",
+        "Ich möchte bei Frau Pınar einen dringenden Termin bekommen.",
+        "Ich möchte bei Frau Pınar einen Notfalltermin machen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0017",
+      "text": "Heute gibt es leider keinen dringenden Termin. Können Sie morgen früh um neun kommen?",
+      "alternativen": [
+        "Leider gibt es heute keinen Notfalltermin. Können Sie morgen früh um neun Uhr kommen?",
+        "Heute haben wir leider keinen dringenden Termin frei. Können Sie morgen um neun Uhr früh kommen?",
+        "Heute gibt es leider keinen dringenden Termin. Können Sie morgen um 9 Uhr morgens kommen?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0018",
+      "text": "Ja, ich kann kommen.",
+      "alternativen": ["Ja, da kann ich kommen.", "Ja, das kann ich."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0019",
+      "text": "Bringen Sie bitte auch Ihre Versichertenkarte mit.",
+      "alternativen": [
+        "Bitte bringen Sie auch Ihre Versicherungskarte mit.",
+        "Bringen Sie bitte auch Ihre Krankenkassenkarte mit.",
+        "Bringen Sie auch Ihre Versichertenkarte mit, bitte."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0020",
+      "text": "Gut, ich bringe meine Versichertenkarte mit.",
+      "alternativen": [
+        "In Ordnung, ich bringe meine Versicherungskarte mit.",
+        "Okay, ich bringe meine Versichertenkarte mit.",
+        "Gut, ich bringe meine Krankenkassenkarte mit."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0021",
+      "text": "Ihr Blutdruck ist normal, und Ihr Herz ist auch gesund.",
+      "alternativen": [
+        "Ihr Blutdruck ist normal, Ihr Herz ist auch gesund.",
+        "Ihr Blutdruck ist normal und Ihr Herz ist auch in Ordnung.",
+        "Der Blutdruck ist normal, und auch Ihr Herz ist gesund."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0022",
+      "text": "Vergiss nicht, deinen Impfpass mitzubringen!",
+      "alternativen": [
+        "Vergiss nicht, den Impfpass mitzubringen!",
+        "Denk daran, deinen Impfpass mitzubringen!",
+        "Vergiss deinen Impfpass nicht!"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0023",
+      "text": "Beim Test gibt es kein Problem, alles ist normal.",
+      "alternativen": [
+        "Der Test ist in Ordnung, alles ist normal.",
+        "Im Test gibt es kein Problem, alles ist normal.",
+        "Der Test zeigt kein Problem, alles ist normal."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0024",
+      "text": "Gestern war ich sehr schlapp, heute geht es mir besser.",
+      "alternativen": [
+        "Gestern war ich ganz schlapp, heute geht es mir besser.",
+        "Gestern war ich sehr kraftlos, heute geht es mir besser.",
+        "Ich war gestern sehr schlapp, heute geht es mir besser."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0025",
+      "text": "Die Krankenschwester hat meinen Blutdruck gemessen.",
+      "alternativen": [
+        "Die Krankenschwester maß meinen Blutdruck.",
+        "Der Krankenpfleger hat meinen Blutdruck gemessen.",
+        "Die Pflegerin hat meinen Blutdruck gemessen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0026",
+      "text": "Hallo Can, was fehlt dir?",
+      "alternativen": ["Hallo Can, was hast du für Beschwerden?", "Hallo Can, welche Beschwerden hast du?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0027",
+      "text": "Seit gestern tun mir Kopf und Hals weh.",
+      "alternativen": [
+        "Seit gestern tun mein Kopf und mein Hals weh.",
+        "Mein Kopf und mein Hals tun seit gestern weh.",
+        "Ich habe seit gestern Kopf- und Halsschmerzen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0028",
+      "text": "Gestern Abend hatte ich Fieber, heute nicht.",
+      "alternativen": [
+        "Gestern Abend schon, heute nicht.",
+        "Gestern Abend ja, heute nicht mehr.",
+        "Gestern Abend hatte ich welches, heute nicht."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0029",
+      "text": "Wann ist die Impfung des Babys?",
+      "alternativen": ["Wann wird das Baby geimpft?", "Wann ist die Impfung vom Baby?", "Wann bekommt das Baby seine Impfung?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0030",
+      "text": "Für die Gesundheit des Herzens ist Sport sehr wichtig.",
+      "alternativen": [
+        "Sport ist sehr wichtig für die Herzgesundheit.",
+        "Für ein gesundes Herz ist Sport sehr wichtig.",
+        "Sport ist für die Gesundheit des Herzens sehr wichtig."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0031",
+      "text": "Der Arzt hat mich untersucht und meinen Blutdruck gemessen.",
+      "alternativen": [
+        "Die Ärztin hat mich untersucht und meinen Blutdruck gemessen.",
+        "Der Arzt untersuchte mich und maß meinen Blutdruck.",
+        "Die Ärztin untersuchte mich und maß meinen Blutdruck."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0032",
+      "text": "Gestern hatte ich Fieber, aber heute ist es normal.",
+      "alternativen": [
+        "Ich hatte gestern Fieber, aber heute ist es normal.",
+        "Gestern hatte ich Fieber, aber heute ist meine Temperatur normal.",
+        "Gestern hatte ich Fieber, heute aber ist es normal."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0033",
+      "text": "Letzte Woche hatte Elif Übelkeit.",
+      "alternativen": ["Elif hatte letzte Woche Übelkeit.", "Vorige Woche hatte Elif Übelkeit.", "Letzte Woche war Elif oft übel."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0034",
+      "text": "Du solltest viel Wasser trinken und dich ausruhen.",
+      "alternativen": [
+        "Du musst viel Wasser trinken und dich ausruhen.",
+        "Du solltest viel Wasser trinken und dich erholen.",
+        "Du sollst viel Wasser trinken und dich ausruhen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0035",
+      "text": "Hallo Elif, wie geht es deinem Vater?",
+      "alternativen": [
+        "Hallo Elif, wie geht's deinem Vater?",
+        "Hallo Elif, wie geht es deinem Papa?",
+        "Hallo Elif, wie ist der Zustand deines Vaters?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0036",
+      "text": "Mein Vater ist krank, Oma. Er hat Schnupfen.",
+      "alternativen": [
+        "Papa ist krank, Oma. Er ist erkältet.",
+        "Mein Vater ist krank, Oma. Er hat eine Erkältung.",
+        "Mein Papa ist krank, Oma. Er hat Schnupfen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0037",
+      "text": "Gute Besserung! Was hat der Arzt gesagt?",
+      "alternativen": [
+        "Gute Besserung! Was hat die Ärztin gesagt?",
+        "Gute Besserung! Was sagte der Arzt?",
+        "Gute Besserung! Was meint der Arzt?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0038",
+      "text": "Laut dem Arzt soll er zwei Tage zu Hause bleiben.",
+      "alternativen": [
+        "Laut Arzt soll er zwei Tage zu Hause bleiben.",
+        "Der Arzt sagt, er soll zwei Tage zu Hause bleiben.",
+        "Laut der Ärztin soll er zwei Tage zu Hause bleiben.",
+        "Laut dem Arzt muss er zwei Tage zu Hause bleiben."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0039",
+      "text": "Macht eurem Vater Lindenblütentee, mit Honig und Zitrone.",
+      "alternativen": [
+        "Kocht eurem Vater Lindenblütentee mit Honig und Zitrone.",
+        "Macht deinem Papa Lindenblütentee, mit Honig und Zitrone.",
+        "Macht eurem Vater einen Lindenblütentee mit Honig und Zitrone."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0040",
+      "text": "Okay, Oma, ich mache ihn sofort.",
+      "alternativen": ["In Ordnung, Oma, ich mache ihn gleich.", "Gut, Oma, ich mache ihn sofort.", "Okay, Oma, ich mache das sofort."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0041",
+      "text": "Passt auch ihr auf, werdet nicht krank!",
+      "alternativen": [
+        "Passt ihr auch auf, damit ihr nicht krank werdet!",
+        "Passen Sie auch auf, werden Sie nicht krank!",
+        "Passt auch auf euch auf, werdet nicht krank!"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0042",
+      "text": "Du solltest früh ins Bett gehen, Schlaf ist sehr wichtig.",
+      "alternativen": [
+        "Du musst früh schlafen gehen, Schlaf ist sehr wichtig.",
+        "Du solltest früh schlafen gehen, Schlaf ist sehr wichtig.",
+        "Du sollst früh ins Bett gehen, Schlaf ist sehr wichtig."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0043",
+      "text": "Du solltest Lindenblütentee trinken, der tut deinem Hals gut.",
+      "alternativen": [
+        "Du musst Lindenblütentee trinken, der tut deinem Hals gut.",
+        "Du solltest Lindenblütentee trinken, das tut deinem Hals gut.",
+        "Du solltest Lindenblütentee trinken, er ist gut für deinen Hals."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0044",
+      "text": "Hat er auch ein Medikament gegeben?",
+      "alternativen": [
+        "Hat sie auch ein Medikament gegeben?",
+        "Hat der Arzt auch ein Medikament gegeben?",
+        "Hat er auch ein Medikament verschrieben?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0045",
+      "text": "Ja, er hat einen Hustensaft gegeben.",
+      "alternativen": [
+        "Ja, sie hat einen Hustensaft gegeben.",
+        "Ja, er hat einen Hustensirup gegeben.",
+        "Ja, er hat einen Hustensaft verschrieben."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0046",
+      "text": "Wir sollten zweimal im Jahr zum Zahnarzt gehen.",
+      "alternativen": [
+        "Wir müssen zweimal im Jahr zum Zahnarzt gehen.",
+        "Zweimal im Jahr sollten wir zum Zahnarzt gehen.",
+        "Wir sollten zweimal pro Jahr zum Zahnarzt gehen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0047",
+      "text": "Du solltest kein kaltes Wasser trinken, trink heißen Lindenblütentee.",
+      "alternativen": [
+        "Trink kein kaltes Wasser, trink warmen Lindenblütentee.",
+        "Du solltest kein kaltes Wasser trinken, trink lieber heißen Lindenblütentee.",
+        "Du darfst kein kaltes Wasser trinken, trink heißen Lindenblütentee."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0048",
+      "text": "Du musst unbedingt zum Arzt gehen.",
+      "alternativen": ["Du solltest unbedingt zum Arzt gehen.", "Du musst auf jeden Fall zum Arzt gehen.", "Geh unbedingt zum Arzt."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0049",
+      "text": "Für ein gesundes Leben ist Sport ein Muss.",
+      "alternativen": [
+        "Sport ist ein Muss für ein gesundes Leben.",
+        "Für ein gesundes Leben ist Sport unbedingt nötig.",
+        "Sport ist für ein gesundes Leben unbedingt nötig.",
+        "Für ein gesundes Leben ist Sport notwendig.",
+        "Sport ist für ein gesundes Leben notwendig."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0050",
+      "text": "Keine Sorge, Oma. Uns allen geht es gut.",
+      "alternativen": [
+        "Mach dir keine Sorgen, Oma. Uns allen geht es gut.",
+        "Keine Sorge, Oma. Uns geht es allen gut.",
+        "Keine Sorge, Oma. Wir sind alle wohlauf."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0051",
+      "text": "Zum Frühstück essen wir Honig und Käse.",
+      "alternativen": [
+        "Wir essen zum Frühstück Honig und Käse.",
+        "Beim Frühstück essen wir Honig und Käse.",
+        "Zum Frühstück gibt es bei uns Honig und Käse."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0052",
+      "text": "Du solltest viel Wasser trinken, früh ins Bett gehen und Lindenblütentee trinken.",
+      "alternativen": [
+        "Du musst viel Wasser trinken, früh ins Bett gehen und Lindenblütentee trinken.",
+        "Du solltest viel Wasser trinken, früh schlafen gehen und Lindenblütentee trinken."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0053",
+      "text": "Ich muss in die Apotheke, mein Rezept ist hier.",
+      "alternativen": [
+        "Ich muss zur Apotheke gehen, mein Rezept ist hier.",
+        "Ich muss in die Apotheke gehen, hier ist mein Rezept.",
+        "Ich muss zur Apotheke, ich habe mein Rezept hier."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0054",
+      "text": "Sie müssen zwei Tabletten am Tag nehmen: morgens und abends.",
+      "alternativen": [
+        "Sie müssen täglich zwei Tabletten nehmen: morgens und abends.",
+        "Sie müssen pro Tag zwei Tabletten nehmen: morgens und abends.",
+        "Ihr müsst zwei Tabletten am Tag nehmen: morgens und abends."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0055",
+      "text": "Braucht man für diesen Sirup ein Rezept?",
+      "alternativen": [
+        "Braucht man für diesen Saft ein Rezept?",
+        "Ist für diesen Sirup ein Rezept nötig?",
+        "Brauche ich für diesen Sirup ein Rezept?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0056",
+      "text": "Nein, für diesen Sirup braucht man kein Rezept.",
+      "alternativen": [
+        "Nein, für diesen Sirup ist kein Rezept nötig.",
+        "Nein, für diesen Saft braucht man kein Rezept.",
+        "Nein, Sie brauchen für diesen Sirup kein Rezept."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0057",
+      "text": "Bitte schön, hier ist mein Rezept.",
+      "alternativen": ["Bitte, hier ist mein Rezept.", "Hier bitte, mein Rezept.", "Bitte sehr, mein Rezept ist hier."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0058",
+      "text": "Dieser Sirup ist sehr bitter!",
+      "alternativen": ["Der Sirup ist sehr bitter!", "Dieser Saft ist sehr bitter!", "Dieser Sirup ist so bitter!"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0059",
+      "text": "Tragen Sie die Creme zweimal am Tag auf.",
+      "alternativen": [
+        "Tragen Sie die Creme zweimal täglich auf.",
+        "Tragt die Creme zweimal am Tag auf.",
+        "Die Creme zweimal am Tag auftragen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0060",
+      "text": "Wasch die Wunde, dann klebe ein Pflaster darauf.",
+      "alternativen": [
+        "Wasch die Wunde und klebe dann ein Pflaster darauf.",
+        "Wasch die Wunde aus, dann klebe ein Pflaster drauf.",
+        "Wasche die Wunde, dann leg ein Pflaster darauf."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0061",
+      "text": "Ich brauche einen Arzt.",
+      "alternativen": ["Ich brauche eine Ärztin.", "Ich brauche einen Doktor.", "Ich brauche ärztliche Hilfe."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0062",
+      "text": "Muss ich morgen in die Schule gehen?",
+      "alternativen": ["Muss ich morgen zur Schule gehen?", "Muss ich morgen in die Schule?", "Muss ich morgen zur Schule?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0063",
+      "text": "Nein, morgen solltest du dich zu Hause ausruhen.",
+      "alternativen": [
+        "Nein, du solltest dich morgen zu Hause ausruhen.",
+        "Nein, morgen musst du dich zu Hause ausruhen.",
+        "Nein, du sollst dich morgen zu Hause ausruhen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0064",
+      "text": "Pack die nötigen Medikamente für die Reise in deine Tasche.",
+      "alternativen": [
+        "Leg die nötigen Medikamente für die Reise in deine Tasche.",
+        "Pack die Medikamente, die du für die Reise brauchst, in deine Tasche.",
+        "Steck die notwendigen Medikamente für die Reise in deine Tasche."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0065",
+      "text": "Gibt es in der Apotheke Augentropfen?",
+      "alternativen": [
+        "Gibt es Augentropfen in der Apotheke?",
+        "Hat die Apotheke Augentropfen?",
+        "Bekommt man in der Apotheke Augentropfen?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0066",
+      "text": "Du bist krank. Du musst dich ausruhen.",
+      "alternativen": [
+        "Du bist krank. Du musst dich erholen.",
+        "Du bist krank. Du musst dich schonen.",
+        "Du bist krank und musst dich ausruhen.",
+        "Du bist krank und musst dich erholen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0067",
+      "text": "Guten Tag, ich möchte einen Hustensaft für meinen Sohn.",
+      "alternativen": [
+        "Guten Tag, ich hätte gern einen Hustensaft für meinen Sohn.",
+        "Guten Tag, ich möchte einen Hustensirup für meinen Sohn.",
+        "Guten Tag, ich möchte für meinen Sohn einen Hustensaft."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0068",
+      "text": "Wie alt ist Ihr Sohn?",
+      "alternativen": ["Wie alt ist denn Ihr Sohn?", "Wie alt ist euer Sohn?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0069",
+      "text": "Er ist vierzehn Jahre alt.",
+      "alternativen": ["Vierzehn Jahre alt.", "Er ist 14 Jahre alt.", "Er ist vierzehn."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0070",
+      "text": "Dieser Sirup ist für ihn geeignet. Dreimal am Tag, nach dem Essen.",
+      "alternativen": [
+        "Dieser Saft ist für ihn geeignet. Dreimal täglich, nach dem Essen.",
+        "Der Sirup passt für ihn. Dreimal am Tag nach dem Essen.",
+        "Dieser Sirup ist gut für ihn. Dreimal am Tag, nach dem Essen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0071",
+      "text": "Gut. Haben Sie auch Pflaster?",
+      "alternativen": ["In Ordnung. Gibt es auch Pflaster?", "Gut. Haben Sie auch noch Pflaster?", "Okay. Haben Sie außerdem Pflaster?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0072",
+      "text": "Diese Vitamintabletten sind für Kinder.",
+      "alternativen": [
+        "Die Vitamintabletten hier sind für Kinder.",
+        "Diese Vitamintabletten sind für die Kinder.",
+        "Diese Vitamintabletten sind für Kinder gedacht."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0073",
+      "text": "Trinkst du deinen Tee mit oder ohne Zucker?",
+      "alternativen": [
+        "Trinkst du den Tee mit Zucker oder ohne?",
+        "Trinkst du deinen Tee mit Zucker oder ohne Zucker?",
+        "Trinkst du deinen Tee gezuckert oder ungezuckert?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0074",
+      "text": "Dieser Börek ist sehr fettig, er tut meinem Magen nicht gut.",
+      "alternativen": [
+        "Dieser Börek ist zu fettig, er bekommt meinem Magen nicht.",
+        "Der Börek ist sehr fettig, das tut meinem Magen nicht gut.",
+        "Dieser Börek ist sehr fettig und tut meinem Magen nicht gut."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0075",
+      "text": "Nein, danke. Ich bin sehr satt.",
+      "alternativen": [
+        "Nein, danke. Ich bin richtig satt.",
+        "Nein danke, ich bin schon sehr satt.",
+        "Nein, vielen Dank. Ich bin sehr satt."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0076",
+      "text": "Ich mag scharfes Essen sehr.",
+      "alternativen": ["Ich esse sehr gern scharfes Essen.", "Ich mag scharfe Gerichte sehr.", "Scharfes Essen mag ich sehr."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0077",
+      "text": "Meine Mutter tut wenig Salz und wenig Öl ins Essen.",
+      "alternativen": [
+        "Meine Mutter gibt wenig Salz und wenig Fett ans Essen.",
+        "Meine Mutter nimmt für das Essen wenig Salz und wenig Öl.",
+        "Meine Mama tut wenig Salz und wenig Öl ins Essen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0078",
+      "text": "Mein Zahn tut weh, ich muss zum Zahnarzt.",
+      "alternativen": [
+        "Ich habe Zahnschmerzen, ich muss zum Zahnarzt gehen.",
+        "Mein Zahn tut weh, ich muss zum Zahnarzt gehen.",
+        "Mir tut ein Zahn weh, ich muss zum Zahnarzt."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0079",
+      "text": "Hustensaft: Wichtige Informationen",
+      "alternativen": ["Hustensirup: Wichtige Informationen", "Hustensaft: Wichtige Hinweise"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0080",
+      "text": "Dieser Sirup hilft gegen Husten.",
+      "alternativen": ["Dieser Saft hilft gegen Husten.", "Dieser Sirup ist gut gegen Husten.", "Der Sirup hilft bei Husten."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0081",
+      "text": "Erwachsene sollen dreimal am Tag einen Löffel einnehmen.",
+      "alternativen": [
+        "Erwachsene sollten dreimal täglich einen Löffel trinken.",
+        "Erwachsene nehmen dreimal am Tag einen Löffel.",
+        "Erwachsene sollen dreimal täglich einen Löffel einnehmen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0082",
+      "text": "Kinder sollen zweimal am Tag einen halben Löffel einnehmen.",
+      "alternativen": [
+        "Kinder sollten zweimal täglich einen halben Löffel trinken.",
+        "Kinder nehmen zweimal am Tag einen halben Löffel.",
+        "Kinder sollen zweimal täglich einen halben Löffel einnehmen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0083",
+      "text": "Nehmen Sie den Sirup nach dem Essen ein.",
+      "alternativen": [
+        "Trinken Sie den Sirup mit vollem Magen.",
+        "Nehmen Sie den Sirup mit vollem Magen ein.",
+        "Den Sirup nach dem Essen einnehmen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0084",
+      "text": "Dieser Sirup kann müde machen.",
+      "alternativen": ["Dieser Sirup kann schläfrig machen.", "Der Sirup kann müde machen.", "Dieser Saft kann müde machen."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0085",
+      "text": "Kinder unter drei Jahren sollen diesen Sirup nicht einnehmen.",
+      "alternativen": [
+        "Kinder unter drei Jahren sollten diesen Sirup nicht trinken.",
+        "Kinder unter 3 Jahren sollen diesen Sirup nicht einnehmen.",
+        "Kinder jünger als drei Jahre dürfen diesen Sirup nicht nehmen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0086",
+      "text": "Haben Sie eine Allergie? Fragen Sie zuerst Ihren Arzt oder Apotheker.",
+      "alternativen": [
+        "Haben Sie Allergien? Fragen Sie vorher einen Arzt oder Apotheker.",
+        "Sind Sie allergisch? Fragen Sie zuerst den Arzt oder die Apothekerin.",
+        "Haben Sie eine Allergie? Fragen Sie zuerst einen Arzt oder einen Apotheker."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0087",
+      "text": "Geht der Husten nach einer Woche nicht weg? Gehen Sie unbedingt zum Arzt.",
+      "alternativen": [
+        "Ist der Husten nach einer Woche nicht weg? Gehen Sie unbedingt zum Arzt.",
+        "Geht der Husten in einer Woche nicht vorbei? Gehen Sie auf jeden Fall zum Arzt.",
+        "Wenn der Husten nach einer Woche nicht weggeht, gehen Sie unbedingt zum Arzt."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0088",
+      "text": "Kinder sollen den Sirup zweimal am Tag einnehmen.",
+      "alternativen": [
+        "Kinder sollten den Sirup zweimal täglich nehmen.",
+        "Kinder sollen den Sirup zweimal täglich trinken.",
+        "Die Kinder sollen den Sirup zweimal am Tag einnehmen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0089",
+      "text": "Man muss den Sirup auf nüchternen Magen einnehmen.",
+      "alternativen": [
+        "Man muss den Sirup auf leeren Magen trinken.",
+        "Der Sirup muss auf nüchternen Magen eingenommen werden.",
+        "Den Sirup muss man auf leeren Magen einnehmen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0090",
+      "text": "Dieser Sirup ist zuckerfrei.",
+      "alternativen": ["Dieser Sirup ist ohne Zucker.", "Der Sirup ist zuckerfrei.", "Dieser Saft enthält keinen Zucker."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0091",
+      "text": "Wie oft am Tag sollen Erwachsene den Sirup einnehmen?",
+      "alternativen": [
+        "Wie oft täglich sollen Erwachsene den Sirup nehmen?",
+        "Wie oft am Tag sollten Erwachsene den Sirup trinken?",
+        "Wie viele Male am Tag sollen Erwachsene den Sirup einnehmen?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0092",
+      "text": "Dreimal am Tag.",
+      "alternativen": ["Dreimal täglich.", "3-mal am Tag.", "Drei Mal am Tag."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0093",
+      "text": "Zweimal am Tag.",
+      "alternativen": ["Zweimal täglich.", "2-mal am Tag.", "Zwei Mal am Tag."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0094",
+      "text": "Der Husten geht nach einer Woche nicht weg. Was soll man tun?",
+      "alternativen": [
+        "Der Husten ist nach einer Woche nicht weg. Was soll man machen?",
+        "Der Husten geht in einer Woche nicht vorbei. Was sollte man tun?",
+        "Der Husten geht nach einer Woche nicht weg. Was ist zu tun?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0095",
+      "text": "Man soll zum Arzt gehen.",
+      "alternativen": ["Man sollte zum Arzt gehen.", "Man muss zum Arzt gehen.", "Zum Arzt gehen."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0096",
+      "text": "Man soll mehr Sirup einnehmen.",
+      "alternativen": ["Man sollte mehr Sirup trinken.", "Man soll mehr Sirup nehmen.", "Mehr Sirup trinken."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0097",
+      "text": "Wegen seiner Krankheit konnte er nicht zur Schule kommen.",
+      "alternativen": [
+        "Wegen ihrer Krankheit konnte sie nicht zur Schule kommen.",
+        "Er konnte wegen seiner Krankheit nicht in die Schule kommen.",
+        "Sie konnte wegen ihrer Krankheit nicht in die Schule kommen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0098",
+      "text": "Gesundes Essen tut dem Körper gut.",
+      "alternativen": [
+        "Gesunde Speisen tun dem Körper gut.",
+        "Gesunde Gerichte sind gut für den Körper.",
+        "Gesundes Essen ist gut für den Körper."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0099",
+      "text": "Dein Kind ist krank und kann nicht zur Schule kommen. Schreib der Lehrerin eine kurze Nachricht.",
+      "alternativen": [
+        "Dein Kind ist krank und kann nicht zur Schule kommen. Schreib dem Lehrer eine kurze Nachricht.",
+        "Dein Kind ist krank und wird nicht zur Schule kommen können. Schreib der Lehrerin eine kurze Nachricht.",
+        "Dein Kind ist krank und kann nicht in die Schule kommen. Schreibe der Lehrkraft eine kurze Nachricht."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0100",
+      "text": "Sehr geehrte Frau Lehrerin, mein Sohn Can ist gestern Abend krank geworden. Er hat Fieber und Husten. Laut dem Arzt soll er sich zwei Tage zu Hause ausruhen. Deshalb kann Can heute und morgen nicht zur Schule kommen. Ein ärztliches Attest liegt auch vor. Mit freundlichen Grüßen, Derya Kaya",
+      "alternativen": [
+        "Sehr geehrter Herr Lehrer, mein Sohn Can ist gestern Abend krank geworden. Er hat Fieber und Husten. Laut dem Arzt soll er sich zwei Tage zu Hause ausruhen. Deshalb kann Can heute und morgen nicht zur Schule kommen. Ein ärztliches Attest liegt auch vor. Mit freundlichen Grüßen, Derya Kaya",
+        "Sehr geehrte Lehrerin, mein Sohn Can ist gestern Abend krank geworden. Er hat Fieber und Husten. Laut Arzt soll er sich zwei Tage zu Hause ausruhen. Darum kann Can heute und morgen nicht zur Schule kommen. Es gibt auch eine Krankschreibung vom Arzt. Mit freundlichen Grüßen, Derya Kaya"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0101",
+      "text": "Hallo Frau Ayla, hier ist Murat Kaya, Elifs Vater. Elif konnte gestern nicht zur Schule kommen, weil sie krank war. Ihr war übel und sie hatte Fieber. Heute geht es ihr besser, aber sie ist noch etwas schlapp, deshalb ruht sie sich zu Hause aus. Elif kann morgen zur Schule kommen. Danke!",
+      "alternativen": [
+        "Guten Tag Frau Ayla, ich bin Murat Kaya, der Vater von Elif. Elif konnte gestern nicht zur Schule kommen, weil sie krank war. Sie hatte Übelkeit und Fieber. Heute geht es ihr besser, aber sie ist noch etwas schlapp, darum ruht sie sich zu Hause aus. Elif kann morgen zur Schule kommen. Vielen Dank!",
+        "Hallo Frau Ayla, hier spricht Murat Kaya, Elifs Vater. Elif konnte gestern nicht in die Schule kommen, weil sie krank war. Ihr war übel und sie hatte Fieber. Heute geht es ihr besser, aber sie ist noch ein bisschen schlapp, deshalb ruht sie sich zu Hause aus. Elif kann morgen in die Schule kommen. Danke!"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0102",
+      "text": "Warum bist du gestern nicht zur Schule gekommen?",
+      "alternativen": [
+        "Warum warst du gestern nicht in der Schule?",
+        "Wieso bist du gestern nicht zur Schule gekommen?",
+        "Warum bist du gestern nicht in die Schule gekommen?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0103",
+      "text": "Ich war beim Zahnarzt, ich hatte einen Termin.",
+      "alternativen": [
+        "Ich bin zum Zahnarzt gegangen, ich hatte einen Termin.",
+        "Ich war beim Zahnarzt, weil ich einen Termin hatte.",
+        "Ich war bei der Zahnärztin, ich hatte einen Termin."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0104",
+      "text": "Die Zahnärztin, Frau Aslı, ist sehr freundlich.",
+      "alternativen": [
+        "Zahnärztin Aslı ist sehr nett.",
+        "Die Zahnärztin Frau Aslı ist sehr nett.",
+        "Frau Aslı, die Zahnärztin, ist sehr nett."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0105",
+      "text": "Zuckerhaltige Lebensmittel sind nicht gut für die Zähne.",
+      "alternativen": [
+        "Süße Speisen tun den Zähnen nicht gut.",
+        "Zuckerhaltiges Essen tut den Zähnen nicht gut.",
+        "Lebensmittel mit Zucker sind nicht gut für die Zähne."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0106",
+      "text": "Mein Opa kann ohne Brille keine Zeitung lesen.",
+      "alternativen": [
+        "Mein Großvater kann ohne Brille keine Zeitung lesen.",
+        "Ohne Brille kann mein Opa keine Zeitung lesen.",
+        "Mein Opa kann die Zeitung ohne Brille nicht lesen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0107",
+      "text": "Ich bin satt, deshalb möchte ich nichts essen.",
+      "alternativen": [
+        "Ich bin satt, darum möchte ich nichts essen.",
+        "Ich bin satt, deshalb will ich nichts essen.",
+        "Ich bin satt, also möchte ich nichts essen.",
+        "Ich bin satt, daher möchte ich nichts essen.",
+        "Ich bin satt, deswegen möchte ich nichts essen.",
+        "Ich bin satt, darum will ich nichts essen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0108",
+      "text": "Ich trinke meinen Tee ohne Zucker, danke.",
+      "alternativen": [
+        "Ich trinke den Tee ohne Zucker, danke.",
+        "Meinen Tee trinke ich ohne Zucker, danke.",
+        "Ich trinke meinen Tee ohne Zucker, vielen Dank."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0109",
+      "text": "Herr Murat ist krank geworden",
+      "alternativen": ["Herr Murat wurde krank", "Herr Murat wird krank"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0110",
+      "text": "Am Montagmorgen fühlt sich Herr Murat sehr schlapp.",
+      "alternativen": [
+        "Montagmorgen fühlt sich Herr Murat sehr schlapp.",
+        "Am Montagmorgen fühlt Herr Murat sich sehr schwach.",
+        "Herr Murat fühlt sich am Montagmorgen sehr schlapp."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0111",
+      "text": "Er hat Kopfschmerzen und niest ständig.",
+      "alternativen": [
+        "Sein Kopf tut weh und er niest ständig.",
+        "Er hat Kopfschmerzen und niest die ganze Zeit.",
+        "Ihm tut der Kopf weh und er niest dauernd."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0112",
+      "text": "Derya, heute kann ich nicht arbeiten. Ich glaube, ich bin krank geworden.",
+      "alternativen": [
+        "Derya, ich kann heute nicht arbeiten. Ich glaube, ich bin krank.",
+        "Derya, heute kann ich nicht arbeiten. Ich glaube, ich werde krank.",
+        "Derya, ich kann heute nicht arbeiten. Ich glaube, ich bin krank geworden."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0113",
+      "text": "Derya macht einen Termin bei Frau Pınar.",
+      "alternativen": [
+        "Derya vereinbart einen Termin bei Frau Pınar.",
+        "Derya bekommt einen Termin bei Frau Pınar.",
+        "Derya macht bei Frau Pınar einen Termin aus."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0114",
+      "text": "Frau Pınar ist ihre Hausärztin.",
+      "alternativen": ["Frau Pınar ist ihre Familienärztin.", "Frau Pınar ist die Hausärztin der Familie.", "Frau Pınar ist ihr Hausarzt."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0115",
+      "text": "Gute Besserung, Herr Murat. Was fehlt Ihnen?",
+      "alternativen": [
+        "Gute Besserung, Herr Murat. Welche Beschwerden haben Sie?",
+        "Gute Besserung, Herr Murat. Was für Beschwerden haben Sie?",
+        "Gute Besserung, Herr Murat. Was haben Sie für Beschwerden?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0116",
+      "text": "Mein Hals tut weh, ich huste viel und mir tut der ganze Körper weh.",
+      "alternativen": [
+        "Ich habe Halsschmerzen, ich huste viel und mein ganzer Körper tut weh.",
+        "Mein Hals tut weh, ich huste sehr und mein ganzer Körper schmerzt.",
+        "Mein Hals tut weh, ich huste viel und mein ganzer Körper tut weh."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0117",
+      "text": "Haben Sie Fieber?",
+      "alternativen": ["Haben Sie denn Fieber?", "Habt ihr Fieber?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0118",
+      "text": "Letzte Nacht hatte ich Fieber, es waren 38,5 Grad.",
+      "alternativen": [
+        "Gestern Nacht hatte ich Fieber, es waren achtunddreißig Komma fünf Grad.",
+        "Letzte Nacht hatte ich Fieber, achtunddreißigeinhalb Grad.",
+        "Gestern in der Nacht hatte ich Fieber, es waren 38,5 Grad."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0119",
+      "text": "Frau Pınar misst sein Fieber und seinen Blutdruck.",
+      "alternativen": [
+        "Frau Pınar misst seine Temperatur und seinen Blutdruck.",
+        "Frau Pınar misst Fieber und Blutdruck.",
+        "Frau Pınar misst seinen Blutdruck und sein Fieber.",
+        "Frau Pınar misst bei ihm Fieber und Blutdruck.",
+        "Frau Pınar misst ihr Fieber und ihren Blutdruck."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0120",
+      "text": "Das ist keine Grippe, sondern eine Erkältung. Machen Sie sich keine Sorgen.",
+      "alternativen": [
+        "Das ist keine Grippe, das ist eine Erkältung. Keine Sorge.",
+        "Das ist keine Grippe, sondern Schnupfen. Machen Sie sich keine Sorgen.",
+        "Es ist keine Grippe, nur eine Erkältung. Keine Sorge."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0121",
+      "text": "Was muss ich tun? Brauche ich ein Medikament?",
+      "alternativen": [
+        "Was soll ich machen? Ist ein Medikament nötig?",
+        "Was muss ich machen? Brauche ich ein Medikament?",
+        "Was muss ich tun? Ist ein Medikament nötig?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0122",
+      "text": "Sie sollten viel Wasser und Lindenblütentee trinken.",
+      "alternativen": [
+        "Sie müssen viel Wasser und Lindenblütentee trinken.",
+        "Trinken Sie viel Wasser und Lindenblütentee.",
+        "Sie sollen viel Wasser und Lindenblütentee trinken."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0123",
+      "text": "Sie sollten zwei Tage zu Hause bleiben und viel schlafen.",
+      "alternativen": [
+        "Sie müssen zwei Tage zu Hause bleiben und viel schlafen.",
+        "Sie sollten zwei Tage zu Hause bleiben und ganz viel schlafen.",
+        "Bleiben Sie zwei Tage zu Hause und schlafen Sie viel."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0124",
+      "text": "Ich verschreibe Ihnen einen Hustensaft.",
+      "alternativen": [
+        "Ich schreibe Ihnen einen Hustensaft auf.",
+        "Ich verschreibe Ihnen einen Hustensirup.",
+        "Ich verordne Ihnen einen Hustensaft."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0125",
+      "text": "Außerdem schreibe ich Sie für zwei Tage krank.",
+      "alternativen": [
+        "Und ich gebe Ihnen eine Krankschreibung für zwei Tage.",
+        "Außerdem bekommen Sie eine Krankschreibung für zwei Tage.",
+        "Dazu gebe ich Ihnen ein Attest für zwei Tage."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0126",
+      "text": "Vielen Dank, Frau Pınar.",
+      "alternativen": ["Herzlichen Dank, Frau Pınar.", "Danke schön, Frau Pınar.", "Vielen herzlichen Dank, Frau Pınar."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0127",
+      "text": "Am Abend geht Can mit dem Rezept seines Vaters in die Apotheke.",
+      "alternativen": [
+        "Abends geht Can mit dem Rezept seines Vaters zur Apotheke.",
+        "Am Abend geht Can mit dem Rezept von seinem Vater in die Apotheke.",
+        "Can geht am Abend mit dem Rezept seines Vaters in die Apotheke."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0128",
+      "text": "Guten Abend. Hier ist das Rezept meines Vaters.",
+      "alternativen": [
+        "Guten Abend. Ich habe hier das Rezept meines Vaters.",
+        "Guten Abend. Hier ist das Rezept von meinem Vater.",
+        "Guten Abend. Das Rezept meines Vaters ist hier."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0129",
+      "text": "Der Apotheker, Herr Orhan, bringt den Sirup.",
+      "alternativen": [
+        "Apotheker Orhan bringt den Sirup.",
+        "Herr Orhan, der Apotheker, bringt den Sirup.",
+        "Der Apotheker Herr Orhan holt den Sirup."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0130",
+      "text": "Man muss den Sirup dreimal am Tag nach dem Essen einnehmen.",
+      "alternativen": [
+        "Der Sirup muss dreimal täglich nach dem Essen eingenommen werden.",
+        "Den Sirup muss man dreimal am Tag nach dem Essen trinken.",
+        "Man muss den Sirup dreimal täglich nach dem Essen nehmen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0131",
+      "text": "Müssen wir etwas bezahlen?",
+      "alternativen": ["Müssen wir irgendetwas bezahlen?", "Müssen wir etwas zahlen?", "Müssen wir dafür etwas bezahlen?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0132",
+      "text": "Can bezahlt nichts, die Versicherung bezahlt.",
+      "alternativen": [
+        "Can zahlt nichts, die Versicherung zahlt.",
+        "Can bezahlt nichts, das bezahlt die Versicherung.",
+        "Can muss nichts bezahlen, die Versicherung zahlt."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0133",
+      "text": "Can kauft den Sirup und eine Packung Lindenblütentee.",
+      "alternativen": [
+        "Can holt den Sirup und eine Packung Lindenblütentee.",
+        "Can nimmt den Sirup und ein Päckchen Lindenblütentee.",
+        "Can kauft den Sirup und ein Paket Lindenblütentee."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0134",
+      "text": "Zu Hause macht Elif ihrem Vater Lindenblütentee mit Honig und Zitrone.",
+      "alternativen": [
+        "Zu Hause kocht Elif ihrem Vater Lindenblütentee mit Honig und Zitrone.",
+        "Elif macht ihrem Vater zu Hause Lindenblütentee mit Honig und Zitrone.",
+        "Zu Hause macht Elif für ihren Vater Lindenblütentee mit Honig und Zitrone."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0135",
+      "text": "Danke, Kinder, ihr seid sehr lieb!",
+      "alternativen": [
+        "Danke, Kinder, ihr seid so lieb!",
+        "Danke, Kinder, ihr seid wirklich lieb!",
+        "Vielen Dank, Kinder, ihr seid sehr lieb!"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0136",
+      "text": "Zwei Tage später fühlt sich Herr Murat viel besser.",
+      "alternativen": [
+        "Nach zwei Tagen fühlt sich Herr Murat viel besser.",
+        "Zwei Tage später fühlt Herr Murat sich schon viel besser.",
+        "Zwei Tage danach fühlt sich Herr Murat viel besser."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0137",
+      "text": "Warum geht Herr Murat nicht zur Arbeit?",
+      "alternativen": [
+        "Wieso geht Herr Murat nicht zur Arbeit?",
+        "Warum geht Herr Murat nicht arbeiten?",
+        "Weshalb geht Herr Murat nicht zur Arbeit?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0138",
+      "text": "Weil er krank geworden ist, er ist sehr schlapp.",
+      "alternativen": [
+        "Weil er krank geworden ist und sehr schlapp ist.",
+        "Er ist krank geworden und sehr schlapp.",
+        "Weil er krank ist, er ist sehr schlapp."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0139",
+      "text": "Weil heute frei ist.",
+      "alternativen": ["Weil heute ein Feiertag ist.", "Weil er heute frei hat."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0140",
+      "text": "Welche Beschwerden hat Herr Murat?",
+      "alternativen": ["Was fehlt Herrn Murat?", "Was für Beschwerden hat Herr Murat?", "Was hat Herr Murat für Beschwerden?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0141",
+      "text": "Sein Hals tut weh und er hustet viel.",
+      "alternativen": [
+        "Er hat Halsschmerzen und hustet viel.",
+        "Ihm tut der Hals weh und er hustet stark.",
+        "Sein Hals tut weh und er hustet sehr."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0142",
+      "text": "Sein Knie und seine Schulter tun weh.",
+      "alternativen": ["Ihm tun Knie und Schulter weh.", "Knie und Schulter tun ihm weh.", "Er hat Schmerzen im Knie und in der Schulter."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0143",
+      "text": "Wie ist sein Blutdruck?",
+      "alternativen": ["Wie ist ihr Blutdruck?", "Wie ist der Blutdruck?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0144",
+      "text": "Sein Blutdruck ist normal.",
+      "alternativen": ["Ihr Blutdruck ist normal.", "Der Blutdruck ist normal."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0145",
+      "text": "Sein Blutdruck ist sehr hoch.",
+      "alternativen": ["Ihr Blutdruck ist sehr hoch.", "Der Blutdruck ist sehr hoch."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0146",
+      "text": "Was empfiehlt die Ärztin?",
+      "alternativen": ["Was rät die Ärztin?", "Was empfiehlt der Arzt?", "Was rät der Arzt?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0147",
+      "text": "Er soll zu Hause bleiben und viel Wasser trinken.",
+      "alternativen": [
+        "Er sollte zu Hause bleiben und viel Wasser trinken.",
+        "Er muss zu Hause bleiben und viel Wasser trinken.",
+        "Zu Hause bleiben und viel Wasser trinken."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0148",
+      "text": "Er soll morgen zur Arbeit gehen.",
+      "alternativen": ["Er sollte morgen zur Arbeit gehen.", "Er muss morgen zur Arbeit gehen.", "Morgen soll er zur Arbeit gehen."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0149",
+      "text": "Was gibt Frau Pınar Herrn Murat?",
+      "alternativen": ["Was gibt Frau Pınar Herrn Murat mit?", "Was bekommt Herr Murat von Frau Pınar?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0150",
+      "text": "Ein Rezept und eine Krankschreibung für zwei Tage.",
+      "alternativen": [
+        "Ein Rezept und ein Attest für zwei Tage.",
+        "Ein Rezept und eine zweitägige Krankschreibung.",
+        "Ein Rezept und eine Krankmeldung für zwei Tage."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0151",
+      "text": "Eine Impfung und eine Creme.",
+      "alternativen": ["Eine Impfung und eine Salbe."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0152",
+      "text": "Wann muss man den Sirup einnehmen?",
+      "alternativen": ["Wann muss er den Sirup nehmen?", "Wann soll man den Sirup trinken?", "Wann muss der Sirup eingenommen werden?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0153",
+      "text": "Dreimal am Tag, nach dem Essen.",
+      "alternativen": ["Dreimal täglich, nach dem Essen.", "Drei Mal am Tag nach dem Essen.", "3-mal am Tag, nach dem Essen."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0154",
+      "text": "Nur morgens, auf nüchternen Magen.",
+      "alternativen": ["Nur am Morgen, auf leeren Magen.", "Nur morgens auf leeren Magen.", "Nur morgens, vor dem Frühstück."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0155",
+      "text": "Was macht Elif für ihren Vater?",
+      "alternativen": ["Was tut Elif für ihren Vater?", "Was macht Elif für ihren Papa?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0156",
+      "text": "Sie macht Lindenblütentee mit Honig und Zitrone.",
+      "alternativen": [
+        "Sie kocht Lindenblütentee mit Honig und Zitrone.",
+        "Lindenblütentee mit Honig und Zitrone.",
+        "Sie bereitet Lindenblütentee mit Honig und Zitrone zu."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0157",
+      "text": "Sie kocht Hühnersuppe.",
+      "alternativen": ["Sie kocht eine Hühnersuppe.", "Sie macht Hühnersuppe."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0158",
+      "text": "Ich soll zwei Tage zu Hause bleiben und viel Wasser trinken.",
+      "alternativen": [
+        "Ich muss zwei Tage zu Hause bleiben und viel Wasser trinken.",
+        "Ich sollte zwei Tage zu Hause bleiben und viel Wasser trinken.",
+        "Zwei Tage soll ich zu Hause bleiben und viel Wasser trinken."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0159",
+      "text": "Seit gestern tut mir der Ellbogen weh.",
+      "alternativen": [
+        "Mein Ellbogen tut seit gestern weh.",
+        "Seit gestern tut mein Ellbogen weh.",
+        "Seit gestern habe ich Schmerzen im Ellbogen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0160",
+      "text": "Elifs Gesicht ist sehr rot, hat sie Fieber?",
+      "alternativen": [
+        "Elifs Gesicht ist ganz rot, hat sie Fieber?",
+        "Elif hat ein sehr rotes Gesicht, hat sie Fieber?",
+        "Das Gesicht von Elif ist sehr rot, hat sie Fieber?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0161",
+      "text": "Mir ist übel, was soll ich essen?",
+      "alternativen": ["Mir ist schlecht, was soll ich essen?", "Mir ist übel, was sollte ich essen?", "Mir ist übel. Was darf ich essen?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0162",
+      "text": "Iss ein bisschen Reis und trink Pfefferminztee.",
+      "alternativen": [
+        "Iss etwas Reis und trink Pfefferminztee.",
+        "Iss ein wenig Reis und trink Minztee.",
+        "Iss ein bisschen Reis und trinke Pfefferminztee."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0163",
+      "text": "Mein Opa ist mit seiner neuen Brille sehr glücklich.",
+      "alternativen": [
+        "Mein Großvater ist mit seiner neuen Brille sehr zufrieden.",
+        "Mein Opa freut sich sehr über seine neue Brille.",
+        "Mein Opa ist mit seiner neuen Brille sehr zufrieden."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0164",
+      "text": "War dein Fieber hoch?",
+      "alternativen": ["Hattest du hohes Fieber?", "War das Fieber hoch?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0165",
+      "text": "Ja, gestern waren es neununddreißig Grad.",
+      "alternativen": ["Ja, gestern waren es 39 Grad.", "Ja, gestern hatte ich neununddreißig Grad.", "Ja, gestern war es 39 Grad."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0166",
+      "text": "Ich habe mich gegen Grippe impfen lassen.",
+      "alternativen": ["Ich bin gegen Grippe geimpft worden.", "Ich habe eine Grippeimpfung bekommen.", "Ich wurde gegen Grippe geimpft."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0167",
+      "text": "Das Herz meines Vaters ist gesund, mach dir keine Sorgen.",
+      "alternativen": [
+        "Mein Vater hat ein gesundes Herz, keine Sorge.",
+        "Das Herz von meinem Vater ist gesund, keine Sorge.",
+        "Das Herz meines Vaters ist stark, mach dir keine Sorgen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0168",
+      "text": "Sehr fettiges und sehr salziges Essen ist nicht gesund.",
+      "alternativen": [
+        "Sehr fettige und sehr salzige Speisen sind nicht gesund.",
+        "Sehr fettige und sehr salzige Gerichte sind nicht gesund.",
+        "Zu fettiges und zu salziges Essen ist nicht gesund.",
+        "Sehr fettiges und sehr salziges Essen ist ungesund.",
+        "Sehr fettige und sehr salzige Gerichte sind ungesund.",
+        "Sehr salziges und sehr fettiges Essen ist nicht gesund."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0169",
+      "text": "Warum warst du letzte Woche nicht in der Schule?",
+      "alternativen": [
+        "Wieso warst du letzte Woche nicht in der Schule?",
+        "Warum warst du vorige Woche nicht in der Schule?",
+        "Letzte Woche warst du nicht in der Schule, warum?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0170",
+      "text": "Ich war krank, ich hatte Fieber und Husten.",
+      "alternativen": [
+        "Ich war krank und hatte Fieber und Husten.",
+        "Ich war krank, hatte Fieber und Husten.",
+        "Ich war krank: Fieber und Husten."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0171",
+      "text": "Der Apotheker, Herr Orhan, ist sehr hilfsbereit.",
+      "alternativen": [
+        "Apotheker Orhan ist sehr hilfsbereit.",
+        "Herr Orhan, der Apotheker, ist sehr hilfsbereit.",
+        "Der Apotheker Herr Orhan hilft sehr gern."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0172",
+      "text": "Wie trinkst du deinen Tee?",
+      "alternativen": ["Wie trinkst du den Tee?", "Wie möchtest du deinen Tee?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0173",
+      "text": "Wo ist meine Brille?",
+      "alternativen": ["Wo ist denn meine Brille?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0174",
+      "text": "Dieses Medikament schmeckt sehr bitter.",
+      "alternativen": [
+        "Der Geschmack dieses Medikaments ist sehr bitter.",
+        "Diese Arznei schmeckt sehr bitter.",
+        "Das Medikament schmeckt sehr bitter."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0175",
+      "text": "Wann soll ich diese Tablette nehmen?",
+      "alternativen": [
+        "Wann sollte ich diese Tablette nehmen?",
+        "Wann muss ich diese Tablette einnehmen?",
+        "Wann soll ich diese Tablette einnehmen?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0176",
+      "text": "Zweimal am Tag, nach dem Essen.",
+      "alternativen": ["Zweimal täglich, nach dem Essen.", "Zwei Mal am Tag nach dem Essen.", "2-mal am Tag, nach dem Essen."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0177",
+      "text": "Für dieses Medikament braucht man ein Rezept.",
+      "alternativen": [
+        "Für dieses Medikament ist ein Rezept nötig.",
+        "Dieses Medikament ist verschreibungspflichtig.",
+        "Für das Medikament braucht man ein Rezept."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0178",
+      "text": "Ich brauche keinen Arzt.",
+      "alternativen": ["Ich brauche keine Ärztin.", "Ich brauche keinen Doktor."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0179",
+      "text": "Du solltest dieses Medikament nicht auf nüchternen Magen nehmen.",
+      "alternativen": [
+        "Du darfst dieses Medikament nicht auf leeren Magen nehmen.",
+        "Dieses Medikament solltest du nicht auf nüchternen Magen einnehmen.",
+        "Du sollst dieses Medikament nicht auf leeren Magen nehmen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0180",
+      "text": "Du solltest viel Wasser trinken und früh ins Bett gehen.",
+      "alternativen": [
+        "Du musst viel Wasser trinken und früh schlafen gehen.",
+        "Du sollst reichlich Wasser trinken und früh ins Bett gehen.",
+        "Du solltest viel Wasser trinken und früh schlafen gehen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0181",
+      "text": "Hat die Impfung wehgetan?",
+      "alternativen": ["Tat die Impfung weh?", "Hat die Impfung weh getan?", "Hat die Spritze wehgetan?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0182",
+      "text": "Es hat ein bisschen wehgetan, aber es ging schnell vorbei.",
+      "alternativen": [
+        "Ein bisschen, aber es ging schnell vorbei.",
+        "Ein wenig, aber das ging schnell vorbei.",
+        "Sie hat etwas wehgetan, aber es war schnell vorbei."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0183",
+      "text": "Der Arzt hat mir eine Krankschreibung für zwei Tage gegeben.",
+      "alternativen": [
+        "Die Ärztin hat mir eine Krankschreibung für zwei Tage gegeben.",
+        "Der Arzt hat mich für zwei Tage krankgeschrieben.",
+        "Die Ärztin hat mich für zwei Tage krankgeschrieben.",
+        "Der Arzt gab mir eine Krankschreibung für zwei Tage.",
+        "Der Arzt hat mir für zwei Tage eine Krankschreibung gegeben.",
+        "Der Arzt hat mir ein Attest für zwei Tage gegeben."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0184",
+      "text": "Mein Vater hatte neununddreißig Grad Fieber.",
+      "alternativen": [
+        "Mein Vater hatte 39 Grad Fieber.",
+        "Das Fieber meines Vaters war neununddreißig Grad.",
+        "Mein Papa hatte neununddreißig Grad Fieber."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0185",
+      "text": "Ich habe eine kleine Wunde am Ellbogen.",
+      "alternativen": [
+        "An meinem Ellbogen ist eine kleine Wunde.",
+        "Am Ellbogen habe ich eine kleine Wunde.",
+        "Ich habe eine kleine Wunde an meinem Ellbogen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0186",
+      "text": "Was hat der Apotheker gesagt?",
+      "alternativen": ["Was hat die Apothekerin gesagt?", "Was sagte der Apotheker?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0187",
+      "text": "Ich soll die Tabletten nach dem Essen nehmen.",
+      "alternativen": [
+        "Ich muss die Tabletten mit vollem Magen nehmen.",
+        "Ich soll die Tabletten mit vollem Magen einnehmen.",
+        "Ich sollte die Tabletten nach dem Essen nehmen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0188",
+      "text": "Frau Pınar ist eine sehr gute Hausärztin.",
+      "alternativen": ["Frau Pınar ist eine sehr gute Familienärztin.", "Frau Pınar ist ein sehr guter Hausarzt."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0189",
+      "text": "Das Pflaster ist in meiner Tasche.",
+      "alternativen": [
+        "Die Pflaster sind in meiner Tasche.",
+        "Ich habe ein Pflaster in meiner Tasche.",
+        "Das Pflaster habe ich in der Tasche."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0190",
+      "text": "Unser Körper braucht Wasser.",
+      "alternativen": [
+        "Der Körper braucht Wasser.",
+        "Unser Körper benötigt Wasser.",
+        "Unser Körper hat Bedarf an Wasser.",
+        "Unsere Körper brauchen Wasser."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0191",
+      "text": "Elif ist heute geimpft worden.",
+      "alternativen": ["Elif wurde heute geimpft.", "Elif hat heute eine Impfung bekommen.", "Heute wurde Elif geimpft."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0192",
+      "text": "Elif bringt ihrem Vater Milch mit Honig.",
+      "alternativen": [
+        "Elif bringt ihrem Vater Honigmilch.",
+        "Elif bringt ihrem Papa Milch mit Honig.",
+        "Elif bringt ihrem Vater eine Milch mit Honig."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0193",
+      "text": "Wie ist mein Blutdruck, Frau Doktor?",
+      "alternativen": ["Frau Doktor, wie ist mein Blutdruck?", "Wie sieht mein Blutdruck aus, Frau Doktor?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0194",
+      "text": "Ihr Blutdruck ist normal, machen Sie sich keine Sorgen.",
+      "alternativen": [
+        "Ihr Blutdruck ist normal, keine Sorge.",
+        "Ihr Blutdruck ist in Ordnung, machen Sie sich keine Sorgen.",
+        "Keine Sorge, Ihr Blutdruck ist normal."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0195",
+      "text": "Nehmen Sie diese Tabletten nach dem Essen.",
+      "alternativen": [
+        "Nehmen Sie diese Tabletten nach dem Essen ein.",
+        "Nehmt diese Tabletten nach dem Essen.",
+        "Diese Tabletten nach dem Essen einnehmen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0196",
+      "text": "Der Krankenwagen kam schnell, unserem Nachbarn geht es jetzt gut.",
+      "alternativen": [
+        "Der Krankenwagen ist schnell gekommen, unserem Nachbarn geht es jetzt gut.",
+        "Der Krankenwagen kam schnell, unserer Nachbarin geht es jetzt gut.",
+        "Der Rettungswagen kam schnell, unserem Nachbarn geht es jetzt gut."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0197",
+      "text": "Der Blutdruck meiner Oma ist manchmal hoch.",
+      "alternativen": [
+        "Meine Oma hat manchmal hohen Blutdruck.",
+        "Der Blutdruck meiner Großmutter ist manchmal hoch.",
+        "Der Blutdruck von meiner Oma ist manchmal hoch."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0198",
+      "text": "Ich habe Grippe bekommen, was soll ich tun?",
+      "alternativen": [
+        "Ich habe die Grippe, was soll ich machen?",
+        "Ich habe Grippe, was sollte ich tun?",
+        "Ich habe eine Grippe bekommen, was soll ich tun?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0199",
+      "text": "Du solltest zu Hause bleiben und viel Wasser trinken.",
+      "alternativen": [
+        "Du musst zu Hause bleiben und viel Wasser trinken.",
+        "Du sollst zu Hause bleiben und reichlich Wasser trinken.",
+        "Du solltest daheim bleiben und viel Wasser trinken."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0200",
+      "text": "Zum Wandern in den Bergen braucht man feste Schuhe.",
+      "alternativen": [
+        "Für eine Wanderung in den Bergen braucht man feste Schuhe.",
+        "Fürs Wandern im Gebirge braucht man stabile Schuhe.",
+        "Für das Wandern in den Bergen braucht man feste Schuhe."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0201",
+      "text": "Bitte nies in deinen Arm!",
+      "alternativen": ["Nies bitte in den Arm!", "Bitte niese in deine Armbeuge!", "Bitte nies in die Armbeuge!"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0202",
+      "text": "Wasch dir oft die Hände, damit du nicht krank wirst!",
+      "alternativen": [
+        "Wasch deine Hände oft, werde nicht krank!",
+        "Wasch dir oft die Hände, sonst wirst du krank!",
+        "Wasch dir häufig die Hände, damit du nicht krank wirst!"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0203",
+      "text": "Diese Creme ist gut für die Wunde.",
+      "alternativen": ["Diese Salbe tut der Wunde gut.", "Diese Creme hilft bei der Wunde.", "Diese Creme tut der Wunde gut."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0204",
+      "text": "Sind die Nasentropfen auch für Kinder geeignet?",
+      "alternativen": [
+        "Sind Nasentropfen auch für Kinder geeignet?",
+        "Passen die Nasentropfen auch für Kinder?",
+        "Darf man die Nasentropfen auch Kindern geben?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0205",
+      "text": "Du musst keine Vitamintabletten nehmen, iss Obst!",
+      "alternativen": [
+        "Vitamintabletten musst du nicht nehmen, iss Obst!",
+        "Du brauchst keine Vitamintabletten zu nehmen, iss Obst!",
+        "Du musst nicht unbedingt Vitamintabletten nehmen, iss Obst!"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0206",
+      "text": "Du solltest jeden Tag mindestens acht Stunden schlafen.",
+      "alternativen": [
+        "Du musst jeden Tag mindestens acht Stunden schlafen.",
+        "Du solltest täglich mindestens acht Stunden schlafen.",
+        "Du solltest jeden Tag wenigstens 8 Stunden schlafen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0207",
+      "text": "Sport tut dem Herzen gut.",
+      "alternativen": ["Sport ist gut für das Herz.", "Sport ist gut fürs Herz."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0208",
+      "text": "Trinkst du den Lindenblütentee mit Honig oder mit Zucker?",
+      "alternativen": [
+        "Trinkst du deinen Lindenblütentee mit Honig oder mit Zucker?",
+        "Möchtest du den Lindenblütentee mit Honig oder mit Zucker?",
+        "Trinkst du Lindenblütentee mit Honig oder mit Zucker?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0209",
+      "text": "Mein Vater hat hohen Blutdruck, salziges Essen ist für ihn verboten.",
+      "alternativen": [
+        "Der Blutdruck meines Vaters ist hoch, salzige Speisen darf er nicht essen.",
+        "Mein Vater hat hohen Blutdruck, er darf nichts Salziges essen.",
+        "Mein Vater hat hohen Blutdruck, salzige Gerichte sind ihm verboten."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0210",
+      "text": "In Deutschland hat jeder eine Krankenversicherung.",
+      "alternativen": [
+        "In Deutschland haben alle eine Krankenversicherung.",
+        "Jeder in Deutschland hat eine Krankenversicherung.",
+        "In Deutschland ist jeder krankenversichert."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0211",
+      "text": "Wie lange dauert diese Behandlung?",
+      "alternativen": ["Wie lange dauert die Behandlung?", "Wie lange wird diese Behandlung dauern?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0212",
+      "text": "Ich konnte nachts nicht gut schlafen, ich habe viel gehustet.",
+      "alternativen": [
+        "In der Nacht konnte ich nicht gut schlafen, ich habe viel gehustet.",
+        "Ich habe nachts schlecht geschlafen, ich musste viel husten.",
+        "Ich konnte heute Nacht nicht gut schlafen, ich habe viel gehustet."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0213",
+      "text": "Kranke Kinder sollten nicht in die Schule kommen.",
+      "alternativen": [
+        "Kranke Kinder sollen nicht zur Schule kommen.",
+        "Kranke Kinder dürfen nicht in die Schule kommen.",
+        "Kranke Kinder sollten nicht zur Schule kommen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0214",
+      "text": "Im Winter brauchen wir mehr Vitamine.",
+      "alternativen": [
+        "Wir brauchen im Winter mehr Vitamine.",
+        "Im Winter haben wir einen höheren Bedarf an Vitaminen.",
+        "Im Winter brauchen wir mehr Vitamin."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0215",
+      "text": "Meine Oma macht bei Erkältung immer Lindenblütentee.",
+      "alternativen": [
+        "Bei Schnupfen macht meine Oma immer Lindenblütentee.",
+        "Meine Großmutter kocht bei Erkältung immer Lindenblütentee.",
+        "Gegen Erkältung macht meine Oma immer Lindenblütentee."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0216",
+      "text": "Ich bin müde!",
+      "alternativen": ["Ich bin schläfrig!"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0217",
+      "text": "Ist Milch gesund?",
+      "alternativen": ["Ist Milch denn gesund?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0218",
+      "text": "Musst du heute zu Hause bleiben?",
+      "alternativen": ["Musst du heute daheim bleiben?", "Ist es nötig, dass du heute zu Hause bleibst?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0219",
+      "text": "Was empfiehlst du mir?",
+      "alternativen": ["Was rätst du mir?", "Was würdest du mir empfehlen?", "Was würdest du mir raten?"],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0220",
+      "text": "Ich danke dir für den Rat.",
+      "alternativen": ["Danke für den Rat.", "Danke für deinen Rat.", "Ich danke dir für die Empfehlung."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0221",
+      "text": "Guter Schlaf ist für die Gesundheit sehr wichtig.",
+      "alternativen": [
+        "Ein guter Schlaf ist sehr wichtig für die Gesundheit.",
+        "Für die Gesundheit ist guter Schlaf sehr wichtig.",
+        "Guter Schlaf ist sehr wichtig für die Gesundheit."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0222",
+      "text": "Kinder brauchen mehr Schlaf.",
+      "alternativen": ["Kinder benötigen mehr Schlaf.", "Kinder haben mehr Bedarf an Schlaf."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0223",
+      "text": "Elifs Brille ist in ihrer Tasche.",
+      "alternativen": [
+        "Elifs Brille ist in der Tasche.",
+        "Die Brille von Elif ist in ihrer Tasche.",
+        "Elif hat ihre Brille in der Tasche."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0224",
+      "text": "Zitronen und Orangen haben viele Vitamine.",
+      "alternativen": [
+        "In Zitronen und Orangen sind viele Vitamine.",
+        "Zitronen und Orangen enthalten viele Vitamine.",
+        "In Zitrone und Orange gibt es viele Vitamine."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0225",
+      "text": "Honig tut dem Hals gut.",
+      "alternativen": ["Honig ist gut für den Hals.", "Honig hilft bei Halsschmerzen."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0226",
+      "text": "Lass uns etwas Honig in die warme Milch geben.",
+      "alternativen": [
+        "Geben wir etwas Honig in die warme Milch.",
+        "Lasst uns ein bisschen Honig in die heiße Milch tun.",
+        "Wir tun etwas Honig in die warme Milch."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0227",
+      "text": "Der Arzt wollte einen Bluttest.",
+      "alternativen": [
+        "Die Ärztin hat einen Bluttest verlangt.",
+        "Der Arzt hat eine Blutuntersuchung angeordnet.",
+        "Der Arzt wollte einen Bluttest machen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0228",
+      "text": "Für den Test sollten Sie morgens nüchtern kommen.",
+      "alternativen": [
+        "Für den Test müssen Sie morgens nüchtern kommen.",
+        "Zum Test sollten Sie morgens mit leerem Magen kommen.",
+        "Sie sollten für den Test morgens nüchtern kommen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0229",
+      "text": "Die Lehrerin wollte eine Krankschreibung.",
+      "alternativen": [
+        "Der Lehrer hat ein Attest verlangt.",
+        "Die Lehrerin hat eine Krankschreibung verlangt.",
+        "Der Lehrer wollte ein ärztliches Attest."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0230",
+      "text": "Herr Murat hat die ganze Nacht gehustet.",
+      "alternativen": ["Herr Murat hustete die ganze Nacht.", "Die ganze Nacht hat Herr Murat gehustet."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0231",
+      "text": "Ich bin den ganzen Tag müde, ist diese Müdigkeit normal?",
+      "alternativen": [
+        "Den ganzen Tag bin ich müde, ist diese Müdigkeit normal?",
+        "Ich bin den ganzen Tag müde. Ist das normal?",
+        "Ich bin den ganzen Tag müde, ist diese Müdigkeit noch normal?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0232",
+      "text": "Elifs Übelkeit ist vorbei.",
+      "alternativen": ["Elif ist nicht mehr übel.", "Die Übelkeit von Elif ist weg.", "Elifs Übelkeit ist weg."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0233",
+      "text": "Cans Schulter tut weh, seine Tasche ist sehr schwer.",
+      "alternativen": [
+        "Can tut die Schulter weh, seine Tasche ist sehr schwer.",
+        "Cans Schulter schmerzt, seine Schultasche ist sehr schwer.",
+        "Can hat Schmerzen in der Schulter, seine Tasche ist sehr schwer."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0234",
+      "text": "Trag deine Tasche nicht immer auf derselben Schulter!",
+      "alternativen": [
+        "Trag die Tasche nicht immer auf der gleichen Schulter!",
+        "Trage deine Tasche nicht immer auf derselben Schulter!",
+        "Trag deine Tasche nicht immer über derselben Schulter!"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0235",
+      "text": "Vergiss deine Krankenversicherungskarte nicht!",
+      "alternativen": [
+        "Vergiss die Versichertenkarte nicht!",
+        "Vergiss deine Krankenkassenkarte nicht!",
+        "Denk an deine Versichertenkarte!"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0236",
+      "text": "Dieses Essen ist sehr salzig, ich muss etwas Wasser trinken.",
+      "alternativen": [
+        "Das Essen ist sehr salzig, ich sollte etwas Wasser trinken.",
+        "Dieses Essen ist zu salzig, ich muss ein bisschen Wasser trinken.",
+        "Dieses Gericht ist sehr salzig, ich muss etwas Wasser trinken."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0237",
+      "text": "Schlafmangel macht müde.",
+      "alternativen": ["Zu wenig Schlaf macht müde.", "Schlaflosigkeit führt zu Müdigkeit.", "Schlafmangel führt zu Müdigkeit."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0238",
+      "text": "Ein Tee mit Minze und Zitrone tut deinem Hals gut.",
+      "alternativen": [
+        "Tee mit Minze und Zitrone ist gut für deinen Hals.",
+        "Ein Minztee mit Zitrone tut deinem Hals gut.",
+        "Ein Tee mit Minze und Zitrone ist gut für deinen Hals."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0239",
+      "text": "Meinem Opa tun manchmal die Knie weh.",
+      "alternativen": [
+        "Die Knie meines Opas tun manchmal weh.",
+        "Mein Großvater hat manchmal Knieschmerzen.",
+        "Manchmal tun meinem Opa die Knie weh."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0240",
+      "text": "Scharfe Paprika tut deinem Magen nicht gut.",
+      "alternativen": [
+        "Scharfe Paprika ist nicht gut für deinen Magen.",
+        "Chili tut deinem Magen nicht gut.",
+        "Scharfe Peperoni tun deinem Magen nicht gut."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0241",
+      "text": "Mein Herz schlägt sehr schnell, ich bin sehr aufgeregt.",
+      "alternativen": [
+        "Mein Herz klopft sehr schnell, ich bin ganz aufgeregt.",
+        "Mein Herz schlägt ganz schnell, ich bin sehr aufgeregt.",
+        "Mein Herz rast, ich bin sehr aufgeregt."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0242",
+      "text": "Medikamente sind kein Spielzeug für Kinder!",
+      "alternativen": [
+        "Medikamente sind kein Kinderspielzeug!",
+        "Arzneimittel sind kein Spielzeug für Kinder!",
+        "Medikamente sind für Kinder kein Spielzeug!"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0243",
+      "text": "Gegen welches Medikament bist du allergisch?",
+      "alternativen": [
+        "Auf welches Medikament bist du allergisch?",
+        "Gegen welches Medikament hast du eine Allergie?",
+        "Auf welches Medikament reagierst du allergisch?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0244",
+      "text": "Ich bin gegen Milch allergisch, ich trinke keine Milch.",
+      "alternativen": [
+        "Ich habe eine Milchallergie, ich trinke keine Milch.",
+        "Ich bin allergisch gegen Milch, ich trinke keine Milch.",
+        "Ich habe eine Allergie gegen Milch, deshalb trinke ich keine Milch."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0245",
+      "text": "Diese Krankheit geht schnell vorbei, mach dir keine Sorgen.",
+      "alternativen": [
+        "Diese Krankheit ist schnell vorbei, keine Sorge.",
+        "Die Krankheit geht schnell vorüber, mach dir keine Sorgen.",
+        "Keine Sorge, diese Krankheit geht schnell vorbei."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0246",
+      "text": "Hast du dein Fieber gemessen?",
+      "alternativen": [
+        "Hast du Fieber gemessen?",
+        "Hast du deine Temperatur gemessen?",
+        "Hast du sein Fieber gemessen?",
+        "Hast du ihr Fieber gemessen?"
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0247",
+      "text": "Meine Mutter nimmt jeden Morgen eine Vitamintablette.",
+      "alternativen": [
+        "Jeden Morgen nimmt meine Mutter eine Vitamintablette.",
+        "Meine Mama nimmt jeden Morgen eine Vitamintablette.",
+        "Meine Mutter nimmt jeden Morgen eine Vitamintablette ein."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0248",
+      "text": "Für den Blutdruck solltest du jeden Tag spazieren gehen.",
+      "alternativen": [
+        "Wegen des Blutdrucks solltest du jeden Tag spazieren gehen.",
+        "Für deinen Blutdruck solltest du täglich spazieren gehen.",
+        "Für den Blutdruck musst du jeden Tag einen Spaziergang machen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0249",
+      "text": "Du solltest keine Angst haben, zum Zahnarzt zu gehen.",
+      "alternativen": [
+        "Du musst keine Angst vor dem Zahnarzt haben.",
+        "Du brauchst keine Angst zu haben, zum Zahnarzt zu gehen.",
+        "Vor dem Zahnarztbesuch solltest du keine Angst haben."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0250",
+      "text": "Wasch dein Gesicht mit kaltem Wasser.",
+      "alternativen": [
+        "Wasch dir das Gesicht mit kaltem Wasser.",
+        "Wasche dein Gesicht mit kaltem Wasser.",
+        "Wasch dir mit kaltem Wasser das Gesicht."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0251",
+      "text": "Trag diese Creme gegen die Schmerzen im Handgelenk auf.",
+      "alternativen": [
+        "Nimm diese Creme gegen Schmerzen im Handgelenk.",
+        "Gegen Schmerzen im Handgelenk trag diese Creme auf.",
+        "Trag diese Salbe gegen die Handgelenkschmerzen auf."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0252",
+      "text": "Wegen Knieschmerzen bin ich zum Arzt gegangen.",
+      "alternativen": [
+        "Ich bin wegen Knieschmerzen zum Arzt gegangen.",
+        "Wegen meiner Knieschmerzen war ich beim Arzt.",
+        "Ich war wegen Knieschmerzen beim Arzt."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0253",
+      "text": "Gib diese Krankschreibung bitte der Lehrerin.",
+      "alternativen": [
+        "Gib bitte dieses Attest dem Lehrer.",
+        "Gib diese Krankschreibung bitte dem Lehrer.",
+        "Bitte gib dieses Attest der Lehrerin."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0254",
+      "text": "Es ist kein Notfall, machen Sie sich keine Sorgen.",
+      "alternativen": [
+        "Es gibt keinen Notfall, keine Sorge.",
+        "Es ist nichts Dringendes, machen Sie sich keine Sorgen.",
+        "Es ist kein Notfall, macht euch keine Sorgen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0255",
+      "text": "Tee ohne Zucker ist auch lecker.",
+      "alternativen": ["Auch Tee ohne Zucker ist lecker.", "Tee ohne Zucker schmeckt auch gut.", "Ungesüßter Tee ist auch lecker."],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.a2.e07.s0256",
+      "text": "Im Winter werden viele Menschen krank.",
+      "alternativen": [
+        "Im Winter werden viele Leute krank.",
+        "Viele Menschen werden im Winter krank.",
+        "Im Winter erkranken viele Menschen."
+      ],
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "tipps": [
+    {
+      "schluessel": "tr.a2.e07.de.t01",
+      "titel": "mide bulantısı: zusammengesetzte Nomen",
+      "inhalt": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Wie bei „Kopfschmerzen“ steht das Bestimmungswort vorn und der Kern hinten; der Kern bekommt die Endung (ek) -(s)i: baş ağrısı, diz ağrısı, öksürük şurubu."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Kommt eine Besitzendung (iyelik eki) dazu, ersetzt sie das -(s)i: mide bulantım = meine Übelkeit, nicht „bulantısım“."
+              }
+            ]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sabahtan beri mide bulantım var."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Diz ağrısı için doktora gittim."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Evet, bir öksürük şurubu verdi."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1"
+    },
+    {
+      "schluessel": "tr.a2.e07.de.t02",
+      "titel": "halsizdim: „war“ ist eine Endung",
+      "inhalt": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "„Ich war“ ist kein eigenes Wort, sondern die Endung -(y)dı, -(y)di, -(y)du, -(y)dü mit Person: halsiz-dim, hasta-ydım. Nach einem Vokal steht y, nach p, ç, t, k wird d zu t: yorgundum, aber toktum."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Mit der Frage verbindet sich die Endung mit mı/mi: Ateşin yüksek miydi?"
+              }
+            ]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dün çok halsizdim, bugün daha iyiyim."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Hastaydım, ateşim ve öksürüğüm vardı."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Evet, dün otuz dokuz dereceydi."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1"
+    },
+    {
+      "schluessel": "tr.a2.e07.de.t03",
+      "titel": "ateşim vardı: „ich hatte“",
+      "inhalt": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "„Haben“ heißt im Türkischen „es gibt“ mit Besitzendung: ateşim var = ich habe Fieber. In der Vergangenheit wird var zu vardı und yok zu yoktu."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Achtung: Grip oldum heißt „ich habe Grippe bekommen“; olmak bedeutet hier „werden“, nicht „sein“."
+              }
+            ]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dün ateşim vardı ama bugün normal."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Geçen hafta Elif'in mide bulantısı vardı."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dün akşam vardı, bugün yok."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1"
+    },
+    {
+      "schluessel": "tr.a2.e07.de.t04",
+      "titel": "içmelisin: „du solltest trinken“",
+      "inhalt": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Die Endung -meli oder -malı mit Person drückt einen Rat oder eine Pflicht aus, meist wie „sollte“: içmelisin = du solltest trinken. Verneint steht -me davor: içmemelisin."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Ohne Person klingt -meli wie „man soll“: Doktora gitmeli."
+              }
+            ]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Çok su içmelisin ve dinlenmelisin."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Soğuk su içmemelisin, sıcak ıhlamur iç."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Mutlaka doktora gitmelisin."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1"
+    },
+    {
+      "schluessel": "tr.a2.e07.de.t05",
+      "titel": "gitmem lazım: „ich muss gehen“",
+      "inhalt": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Für „ich muss“ sagt man oft: Infinitiv ohne -k mit Besitzendung und dann lazım oder gerekiyor, wörtlich „mein Gehen ist nötig“: gitmem lazım. Der Satz „Ben gitmek lazım“ ist falsch."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "zorundayım klingt strenger („ich bin gezwungen“), ihtiyacım var heißt „ich brauche“. Und Vorsicht: rapor ist beim Arzt die Krankschreibung, ambulans der Krankenwagen."
+              }
+            ]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Eczaneye gitmem lazım, reçetem burada."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Yarın okula gitmek zorunda mıyım?"
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bir doktora ihtiyacım var."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1"
+    },
+    {
+      "schluessel": "tr.a2.e07.de.t06",
+      "titel": "şekerli, şekersiz: „mit“ und „ohne“ als Endung",
+      "inhalt": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Wo das Deutsche „mit Zucker“ oder „ohne Zucker“ sagt, hängt das Türkische eine Endung an: -li (mit) und -siz (ohne), mit Vokalharmonie (ünlü uyumu): şekerli, tuzlu, şekersiz, gözlüksüz."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Ebenso bilden -lik Gegenstände (göz → gözlük, Brille) und -ci Berufe (diş → dişçi, ecza → eczacı)."
+              }
+            ]
+          },
+          {
+            "type": "blockquote",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Çayımı şekersiz içerim, teşekkürler."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dedem gözlüksüz gazete okuyamıyor."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Dişçi Aslı Hanım çok nazik."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1"
+    }
+  ]
+}
