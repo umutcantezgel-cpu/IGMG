@@ -83,7 +83,13 @@ const SZENARIEN = [
     pfad: '/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l03',
     bereit: (s) => s.locator('main input[type="radio"]').first().waitFor({ state: 'attached', timeout: 60_000 }),
     ablauf: async (s, schritt) => {
-      await schritt('antwortWaehlen', () => s.locator('main label').filter({ has: s.locator('input[type="radio"]') }).first().tap());
+      await schritt('antwortWaehlen', () =>
+        s
+          .locator('main label')
+          .filter({ has: s.locator('input[type="radio"]') })
+          .first()
+          .tap(),
+      );
       await pruefenWeiter(s, schritt);
       const feld = s.locator('main input[type="text"], main textarea').first();
       await feld.waitFor({ timeout: 30_000 });
@@ -98,7 +104,13 @@ const SZENARIEN = [
     pfad: '/lern-app/de/ar-aus-de/ueben?l=ar-aus-de.a1.e01.l03',
     bereit: (s) => s.locator('main input[type="radio"]').first().waitFor({ state: 'attached', timeout: 60_000 }),
     ablauf: async (s, schritt) => {
-      await schritt('antwortWaehlen', () => s.locator('main label').filter({ has: s.locator('input[type="radio"]') }).first().tap());
+      await schritt('antwortWaehlen', () =>
+        s
+          .locator('main label')
+          .filter({ has: s.locator('input[type="radio"]') })
+          .first()
+          .tap(),
+      );
       await pruefenWeiter(s, schritt);
       const schalter = s.locator('main button[aria-expanded][aria-controls]').filter({ hasText: de.tastatur.arabisch }).first();
       await schalter.waitFor({ timeout: 30_000 });
@@ -132,7 +144,12 @@ const ergebnis = { basis: BASIS, drossel: DROSSEL, laeufe: LAEUFE, schwelleMs: 2
 for (const sz of SZENARIEN) {
   const laeufe = [];
   for (let n = 1; n <= LAEUFE; n++) {
-    const kontext = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+    const kontext = await browser.newContext({
+      viewport: { width: 390, height: 844 },
+      deviceScaleFactor: 2,
+      isMobile: true,
+      hasTouch: true,
+    });
     const seite = await kontext.newPage();
     await seite.addInitScript(BEOBACHTER);
     const cdp = await kontext.newCDPSession(seite);
@@ -180,9 +197,19 @@ for (const sz of SZENARIEN) {
       inpMs: inp,
       jeSchrittMs: jeSchritt,
       ...mess,
-      laengste: liste.slice(0, 3).map((e) => ({ schritt: e.schritt, name: e.name, dauerMs: Math.round(e.dauer), verarbeitungMs: Math.round(e.verarbeitung), verzoegerungMs: Math.round(e.verzoegerung) })),
+      laengste: liste
+        .slice(0, 3)
+        .map((e) => ({
+          schritt: e.schritt,
+          name: e.name,
+          dauerMs: Math.round(e.dauer),
+          verarbeitungMs: Math.round(e.verarbeitung),
+          verzoegerungMs: Math.round(e.verzoegerung),
+        })),
     });
-    console.log(`${sz.name} Lauf ${n}: INP ${inp ?? '–'} ms · ${JSON.stringify(jeSchritt)}${mess.oeffnenMs ? ` · Öffnen ${mess.oeffnenMs} ms` : ''} · Last ${lastVorher.l1}${fehler ? ` · FEHLER ${fehler}` : ''}`);
+    console.log(
+      `${sz.name} Lauf ${n}: INP ${inp ?? '–'} ms · ${JSON.stringify(jeSchritt)}${mess.oeffnenMs ? ` · Öffnen ${mess.oeffnenMs} ms` : ''} · Last ${lastVorher.l1}${fehler ? ` · FEHLER ${fehler}` : ''}`,
+    );
   }
   const schritte = [...new Set(laeufe.flatMap((l) => Object.keys(l.jeSchrittMs)))];
   const jeSchrittMedian = Object.fromEntries(schritte.map((k) => [k, median(laeufe.map((l) => l.jeSchrittMs[k] ?? NaN))]));

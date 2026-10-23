@@ -94,13 +94,19 @@ export function fehlerTitel() {
   const titel = [];
   for (const ui of ['de', 'tr', 'ar']) {
     const t = lernTexte(ui);
-    titel.push({ titel: t.nichtGefunden.titel, art: 'nicht gefunden (Lern-App)' }, { titel: t.fehler.titel, art: 'Fehlergrenze (Lern-App)' });
+    titel.push(
+      { titel: t.nichtGefunden.titel, art: 'nicht gefunden (Lern-App)' },
+      { titel: t.fehler.titel, art: 'Fehlergrenze (Lern-App)' },
+    );
   }
   const lies = (datei) => JSON.parse(readFileSync(join(WEB, 'messages', 'bereiche', datei), 'utf8'));
   const nf = lies('fehlerseiten.json');
   const fg = lies('fehlergrenze.json');
   for (const l of ['de', 'tr', 'en'])
-    titel.push({ titel: nf[l].fehlerseiten.nichtGefunden.titel, art: 'nicht gefunden' }, { titel: fg[l].fehlergrenze.titel, art: 'Fehlergrenze' });
+    titel.push(
+      { titel: nf[l].fehlerseiten.nichtGefunden.titel, art: 'nicht gefunden' },
+      { titel: fg[l].fehlergrenze.titel, art: 'Fehlergrenze' },
+    );
   return titel;
 }
 

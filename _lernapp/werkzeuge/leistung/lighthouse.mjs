@@ -12,7 +12,19 @@
 import { readFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import lighthouse from 'lighthouse';
-import { BASIS, LAST_GRENZE, cookieKopf, dateiname, gzKb, last, median, runde, schreibe, starteBrowser, warteAufLast } from './gemeinsam.mjs';
+import {
+  BASIS,
+  LAST_GRENZE,
+  cookieKopf,
+  dateiname,
+  gzKb,
+  last,
+  median,
+  runde,
+  schreibe,
+  starteBrowser,
+  warteAufLast,
+} from './gemeinsam.mjs';
 import { JS_GRENZE } from './routen.mjs';
 
 const { values } = parseArgs({
@@ -36,7 +48,11 @@ async function messeEinmal(url, kopf, drosselung) {
   for (let versuch = 1; ; versuch++) {
     const e =
       drosselung === 'devtools'
-        ? await lighthouse(url, { ...optionen, onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'], throttlingMethod: 'devtools' })
+        ? await lighthouse(url, {
+            ...optionen,
+            onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'],
+            throttlingMethod: 'devtools',
+          })
         : await lighthouse(url, { ...optionen, onlyCategories: ['performance'], throttlingMethod: 'simulate' });
     if (!e?.lhr?.runtimeError?.code || versuch === 3) return e;
     console.log(`${url}: Laufzeitfehler ${e.lhr.runtimeError.code}, Wiederholung ${versuch}`);
@@ -77,7 +93,8 @@ async function lauf(route, n) {
     jsKbGz: runde(gz),
     jsKbUebertragen: runde(skripte.reduce((s, r) => s + (r.transferSize ?? 0), 0) / 1024),
     jsDateien: eigen.length,
-    drittanfragen: (a['network-requests']?.details?.items ?? []).filter((r) => !r.url.startsWith(BASIS) && !r.url.startsWith('data:')).length,
+    drittanfragen: (a['network-requests']?.details?.items ?? []).filter((r) => !r.url.startsWith(BASIS) && !r.url.startsWith('data:'))
+      .length,
     lcpElement: lcpKnoten ? lcpKnoten.selector.split(' > ').slice(-2).join(' > ') : '',
     offen,
     last: lastVorher,
@@ -138,7 +155,9 @@ try {
     const lastAbhaengig = b.verfehlt.filter((v) => ['Leistung', 'LCP', 'TBT', 'CLS'].includes(v));
     if (values.nachmessen && lastAbhaengig.length && b.lastMax > LAST_GRENZE) {
       const warten = await warteAufLast();
-      console.log(`${route.pfad}: verfehlt ${lastAbhaengig.join(', ')} bei Last ${b.lastMax} – Last jetzt ${warten.l1} (${warten.erreicht ? 'gesunken' : 'nicht gesunken'})`);
+      console.log(
+        `${route.pfad}: verfehlt ${lastAbhaengig.join(', ')} bei Last ${b.lastMax} – Last jetzt ${warten.l1} (${warten.erreicht ? 'gesunken' : 'nicht gesunken'})`,
+      );
       if (warten.erreicht) {
         const neu = [];
         for (let n = 1; n <= LAEUFE; n++) neu.push(await lauf(route, n));
@@ -148,7 +167,15 @@ try {
       }
     }
     const unterLast = b.verfehlt.some((v) => ['Leistung', 'LCP', 'TBT', 'CLS'].includes(v)) && b.lastMax > LAST_GRENZE;
-    auswertung.push({ ...route, laeufe, ...b, unterLast, nachgemessen: nachgemessen ? { median: nachgemessen.vorher.median, verfehlt: nachgemessen.vorher.verfehlt, lastMax: nachgemessen.vorher.lastMax } : null });
+    auswertung.push({
+      ...route,
+      laeufe,
+      ...b,
+      unterLast,
+      nachgemessen: nachgemessen
+        ? { median: nachgemessen.vorher.median, verfehlt: nachgemessen.vorher.verfehlt, lastMax: nachgemessen.vorher.lastMax }
+        : null,
+    });
   }
 } finally {
   await browser.close();

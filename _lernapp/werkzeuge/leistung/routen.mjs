@@ -23,8 +23,14 @@ export function lighthouseRouten(konto = {}) {
     { name: 'Lernpfad de · tr-aus-de', pfad: '/lern-app/de/tr-aus-de', art: 'lernpfad', seo: true },
     { name: 'Lernpfad tr · de-aus-tr', pfad: '/lern-app/tr/de-aus-tr', art: 'lernpfad', seo: true },
     { name: 'Lernpfad ar · de-aus-ar (RTL)', pfad: '/lern-app/ar/de-aus-ar', art: 'lernpfad', seo: true },
+    { name: 'Spieler de · tr-aus-de l01', pfad: `/lern-app/de/tr-aus-de/ueben?l=${lektion('tr-aus-de', 1)}`, art: 'spieler', seo: false },
     { name: 'Spieler tr · de-aus-tr l01', pfad: `/lern-app/tr/de-aus-tr/ueben?l=${lektion('de-aus-tr', 1)}`, art: 'spieler', seo: false },
-    { name: 'Spieler ar · de-aus-ar l01 (RTL)', pfad: `/lern-app/ar/de-aus-ar/ueben?l=${lektion('de-aus-ar', 1)}`, art: 'spieler', seo: false },
+    {
+      name: 'Spieler ar · de-aus-ar l01 (RTL)',
+      pfad: `/lern-app/ar/de-aus-ar/ueben?l=${lektion('de-aus-ar', 1)}`,
+      art: 'spieler',
+      seo: false,
+    },
     { name: 'Wiederholen de', pfad: '/lern-app/de/tr-aus-de/wiederholen', art: 'spieler', seo: false },
     { name: 'Einstufung de', pfad: '/lern-app/de/tr-aus-de/einstufung', art: 'spieler', seo: false },
     { name: 'Tipps de', pfad: `/lern-app/de/tr-aus-de/tipps?e=${einheit('tr-aus-de')}`, art: 'huelle', seo: false },
@@ -46,7 +52,8 @@ export function lighthouseRouten(konto = {}) {
       seo: false,
       zustand: konto.lehrkraft,
     });
-  if (konto.kind) r.push({ name: 'Mein Bereich · Schüler-Start (Kind)', pfad: '/mein-bereich', art: 'meinbereich', seo: false, zustand: konto.kind });
+  if (konto.kind)
+    r.push({ name: 'Mein Bereich · Schüler-Start (Kind)', pfad: '/mein-bereich', art: 'meinbereich', seo: false, zustand: konto.kind });
   if (konto.eltern && konto.kindId)
     r.push({
       name: 'Mein Bereich · Lernwoche des Kindes (Eltern)',
@@ -122,4 +129,19 @@ export function axeRouten(konto = {}) {
     ])
       r.push({ name: `Mein Bereich ${l} Lernwoche des Kindes (Eltern)`, pfad: p, warte: 'main h1', zustand: konto.eltern });
   return r;
+}
+
+// Aufruf als Skript: node routen.mjs <lighthouse|axe> [konten.json] [filter] → JSON auf stdout (für lighthouse.mjs/a11y.mjs
+// --routen); `filter` ist ein regulärer Ausdruck auf den Pfad (Nachmessung einzelner Routen nach einer Behebung).
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const { readFileSync } = await import('node:fs');
+  const [art, kontenDatei, filter] = process.argv.slice(2);
+  const konto = kontenDatei ? JSON.parse(readFileSync(kontenDatei, 'utf8')) : {};
+  const liste = art === 'axe' ? axeRouten(konto) : art === 'lighthouse' ? lighthouseRouten(konto) : null;
+  if (!liste) {
+    console.error('Aufruf: node routen.mjs <lighthouse|axe> [konten.json] [filter]');
+    process.exit(2);
+  }
+  const passt = filter ? new RegExp(filter) : null;
+  console.log(JSON.stringify(passt ? liste.filter((r) => passt.test(r.pfad)) : liste, null, 2));
 }

@@ -39,16 +39,23 @@ try {
       });
       const seite = await kontext.newPage();
       if (route.zustand)
-        await seite.route('**/*', (r) => (r.request().method() === 'POST' && !r.request().url().includes('/_next/') ? r.abort() : r.continue()));
+        await seite.route('**/*', (r) =>
+          r.request().method() === 'POST' && !r.request().url().includes('/_next/') ? r.abort() : r.continue(),
+        );
       let status = 0;
       let hinweis = '';
       try {
         const antwort = await seite.goto(`${BASIS}${route.pfad}`, { waitUntil: 'load', timeout: 60_000 });
         status = antwort?.status() ?? 0;
         await seite.evaluate(() => document.fonts.ready);
-        if (route.warte) await seite.waitForSelector(route.warte, { timeout: 30_000 }).catch(() => (hinweis = `Warten auf ${route.warte} ohne Erfolg`));
+        if (route.warte)
+          await seite.waitForSelector(route.warte, { timeout: 30_000 }).catch(() => (hinweis = `Warten auf ${route.warte} ohne Erfolg`));
         if (route.antworten) {
-          await seite.locator('main label').filter({ has: seite.locator('input[type="radio"]') }).first().click();
+          await seite
+            .locator('main label')
+            .filter({ has: seite.locator('input[type="radio"]') })
+            .first()
+            .click();
           await seite.locator('main form button[type="submit"]').last().click();
           await seite.waitForSelector('main p[role="status"].sr-only:not(:empty)', { timeout: 15_000 });
         }
@@ -83,7 +90,18 @@ try {
           beispiele: v.nodes.slice(0, 3).map((n) => n.target.join(' ')),
         };
       });
-      ergebnis.push({ name: route.name, pfad: route.pfad, breite, http: status, dir, ueberlauf, anzahl, unklar: erg.incomplete.length, regeln, hinweis });
+      ergebnis.push({
+        name: route.name,
+        pfad: route.pfad,
+        breite,
+        http: status,
+        dir,
+        ueberlauf,
+        anzahl,
+        unklar: erg.incomplete.length,
+        regeln,
+        hinweis,
+      });
       console.log(
         `${route.pfad} ${breite}px: kritisch ${anzahl.critical} · ernst ${anzahl.serious} · mittel ${anzahl.moderate} · gering ${anzahl.minor} · Überlauf ${ueberlauf}${hinweis ? ` · ${hinweis}` : ''}`,
       );
@@ -109,7 +127,12 @@ const md = [
   '',
   ...ergebnis
     .filter((e) => !e.fehler && e.regeln.length)
-    .flatMap((e) => [`## ${e.pfad} (${e.breite} px)`, '', ...e.regeln.map((r) => `- **${r.schwere}** \`${r.id}\` (${r.stellen}): ${r.beispiele.join(' ; ')}`), '']),
+    .flatMap((e) => [
+      `## ${e.pfad} (${e.breite} px)`,
+      '',
+      ...e.regeln.map((r) => `- **${r.schwere}** \`${r.id}\` (${r.stellen}): ${r.beispiele.join(' ; ')}`),
+      '',
+    ]),
 ].join('\n');
 schreibe(`${values.aus}.md`, md);
 schreibe(`${values.aus}.json`, { basis: BASIS, breiten, tags: TAGS, last: { beginn: lastBeginn, ende: lastEnde }, ergebnis });
