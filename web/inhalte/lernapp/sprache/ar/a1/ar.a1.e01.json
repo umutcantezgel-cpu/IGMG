@@ -1811,23 +1811,28 @@
         },
         {
           "schluessel": "ar.a1.e01.l01.a07",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "ar.a1.e01.l01.a08",
           "typ": "paare",
           "lemmata": ["ar.a1.e01.ahlan", "ar.a1.e01.shukran", "ar.a1.e01.afwan", "ar.a1.e01.sabah-al-khayr"]
         },
         {
-          "schluessel": "ar.a1.e01.l01.a08",
+          "schluessel": "ar.a1.e01.l01.a09",
           "typ": "grammatik_tipp",
           "tipp": "t01"
         },
         {
-          "schluessel": "ar.a1.e01.l01.a09",
+          "schluessel": "ar.a1.e01.l01.a10",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.ya",
           "ablenker": ["ar.a1.e01.wa", "ar.a1.e01.afwan"]
         },
         {
-          "schluessel": "ar.a1.e01.l01.a10",
+          "schluessel": "ar.a1.e01.l01.a11",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0005",
@@ -1836,21 +1841,21 @@
           "ablenker": ["مَسَاءُ"]
         },
         {
-          "schluessel": "ar.a1.e01.l01.a11",
+          "schluessel": "ar.a1.e01.l01.a12",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0009",
           "wort": 1,
           "ablenker": ["الْخَيْرِ", "مَرْحَبًا"]
         },
         {
-          "schluessel": "ar.a1.e01.l01.a12",
+          "schluessel": "ar.a1.e01.l01.a13",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "ar.a1.e01.s0007",
           "ablenker": ["ar.a1.e01.s0006", "ar.a1.e01.s0010"]
         },
         {
-          "schluessel": "ar.a1.e01.l01.a13",
+          "schluessel": "ar.a1.e01.l01.a14",
           "typ": "dialog",
           "zeilen": [
             {
@@ -1862,14 +1867,14 @@
           "ablenker": ["ar.a1.e01.s0011", "ar.a1.e01.s0015"]
         },
         {
-          "schluessel": "ar.a1.e01.l01.a14",
+          "schluessel": "ar.a1.e01.l01.a15",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0020",
           "nach": "ausgang"
         },
         {
-          "schluessel": "ar.a1.e01.l01.a15",
+          "schluessel": "ar.a1.e01.l01.a16",
           "typ": "dialog",
           "zeilen": [
             {
@@ -1881,7 +1886,7 @@
           "ablenker": ["ar.a1.e01.s0008", "ar.a1.e01.s0021"]
         },
         {
-          "schluessel": "ar.a1.e01.l01.a16",
+          "schluessel": "ar.a1.e01.l01.a17",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0012",
           "wort": 1,
@@ -2433,9 +2438,9 @@
       "schluessel": "ar.a1.e01.l06",
       "art": "geschichte",
       "ziel": {
-        "de": "Geschichte: Erstes Treffen der Arabisch-AG in der Stadtbibliothek Wetzlar",
-        "tr": "Hikâye: Wetzlar şehir kütüphanesinde Arapça çalışma grubunun ilk buluşması",
-        "ar": "قصة: اللقاء الأول لمجموعة اللغة العربية في مكتبة مدينة فيتسلار"
+        "de": "Ich kann eine Geschichte verstehen: das erste Treffen der Arabisch-AG in der Stadtbibliothek Wetzlar.",
+        "tr": "Bir hikâyeyi anlayabilirim: Wetzlar şehir kütüphanesinde Arapça çalışma grubunun ilk buluşması.",
+        "ar": "أستطيع أن أفهم قصة: اللقاء الأول لمجموعة اللغة العربية في مكتبة مدينة فيتسلار."
       },
       "aufgaben": [
         {
@@ -2626,43 +2631,48 @@
       "aufgaben": [
         {
           "schluessel": "ar.a1.e01.l07.a01",
-          "typ": "paare",
-          "lemmata": ["ar.a1.e01.marhaban", "ar.a1.e01.ism", "ar.a1.e01.min", "ar.a1.e01.kayfa"]
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
         },
         {
           "schluessel": "ar.a1.e01.l07.a02",
           "typ": "paare",
-          "lemmata": ["ar.a1.e01.sakana", "ar.a1.e01.almaniya", "ar.a1.e01.nahnu", "ar.a1.e01.shukran"]
+          "lemmata": ["ar.a1.e01.marhaban", "ar.a1.e01.ism", "ar.a1.e01.min", "ar.a1.e01.kayfa"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a03",
+          "typ": "paare",
+          "lemmata": ["ar.a1.e01.sakana", "ar.a1.e01.almaniya", "ar.a1.e01.nahnu", "ar.a1.e01.shukran"]
+        },
+        {
+          "schluessel": "ar.a1.e01.l07.a04",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "ar.a1.e01.tasharrafna",
           "ablenker": ["ar.a1.e01.maa-s-salama", "ar.a1.e01.afwan"]
         },
         {
-          "schluessel": "ar.a1.e01.l07.a04",
+          "schluessel": "ar.a1.e01.l07.a05",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.turki",
           "ablenker": ["ar.a1.e01.turkiya", "ar.a1.e01.arabi"]
         },
         {
-          "schluessel": "ar.a1.e01.l07.a05",
+          "schluessel": "ar.a1.e01.l07.a06",
           "typ": "minimalpaare",
           "ziel": "ar.a1.e01.huwa",
           "ablenker": ["ar.a1.e01.hiya", "ar.a1.e01.hum"]
         },
         {
-          "schluessel": "ar.a1.e01.l07.a06",
+          "schluessel": "ar.a1.e01.l07.a07",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.a1.e01.s0188",
           "ablenker": ["ar.a1.e01.s0085", "ar.a1.e01.s0202"]
         },
         {
-          "schluessel": "ar.a1.e01.l07.a07",
+          "schluessel": "ar.a1.e01.l07.a08",
           "typ": "dialog",
           "zeilen": [
             {
@@ -2674,7 +2684,7 @@
           "ablenker": ["ar.a1.e01.s0059", "ar.a1.e01.s0126"]
         },
         {
-          "schluessel": "ar.a1.e01.l07.a08",
+          "schluessel": "ar.a1.e01.l07.a09",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0191",
@@ -2682,28 +2692,28 @@
           "ablenker": ["أَلْمَانِيَا"]
         },
         {
-          "schluessel": "ar.a1.e01.l07.a09",
+          "schluessel": "ar.a1.e01.l07.a10",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0192",
           "wort": 1,
           "ablenker": ["عَرَبِيَّةٌ", "عَرَبٌ"]
         },
         {
-          "schluessel": "ar.a1.e01.l07.a10",
+          "schluessel": "ar.a1.e01.l07.a11",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0200",
           "nach": "ausgang"
         },
         {
-          "schluessel": "ar.a1.e01.l07.a11",
+          "schluessel": "ar.a1.e01.l07.a12",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "ar.a1.e01.s0148",
           "ablenker": ["ar.a1.e01.s0139", "ar.a1.e01.s0134"]
         },
         {
-          "schluessel": "ar.a1.e01.l07.a12",
+          "schluessel": "ar.a1.e01.l07.a13",
           "typ": "dialog",
           "zeilen": [
             {
@@ -2715,14 +2725,14 @@
           "ablenker": ["ar.a1.e01.s0157", "ar.a1.e01.s0046"]
         },
         {
-          "schluessel": "ar.a1.e01.l07.a13",
+          "schluessel": "ar.a1.e01.l07.a14",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0107",
           "wort": 0,
           "ablenker": ["أَنْتَ", "أَنَا"]
         },
         {
-          "schluessel": "ar.a1.e01.l07.a14",
+          "schluessel": "ar.a1.e01.l07.a15",
           "typ": "dialog",
           "zeilen": [
             {
@@ -2734,7 +2744,7 @@
           "ablenker": ["ar.a1.e01.s0017", "ar.a1.e01.s0112"]
         },
         {
-          "schluessel": "ar.a1.e01.l07.a15",
+          "schluessel": "ar.a1.e01.l07.a16",
           "typ": "sprechen",
           "satz": "ar.a1.e01.s0187"
         }
@@ -2745,8 +2755,8 @@
       "art": "pruefstein",
       "ziel": {
         "de": "Prüfstein: Ahlan! Ich bin Laylā",
-        "tr": "Değerlendirme: Ahlan! Ben Laylā",
-        "ar": "اختبار: أهلًا! أنا ليلى"
+        "tr": "Mihenk taşı: Ahlan! Ben Laylā",
+        "ar": "اختبار الوحدة: أهلًا! أنا ليلى"
       },
       "aufgaben": [
         {

@@ -2184,46 +2184,51 @@
         },
         {
           "schluessel": "ar.a1.e02.l02.a06",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "ar.a1.e02.l02.a07",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "ar.a1.e02.saff",
           "ablenker": ["ar.a1.e02.bab", "ar.a1.e02.sabbura"]
         },
         {
-          "schluessel": "ar.a1.e02.l02.a07",
+          "schluessel": "ar.a1.e02.l02.a08",
           "typ": "paare",
           "lemmata": ["ar.a1.e02.dhalika", "ar.a1.e02.maqad", "ar.a1.e02.maktab", "ar.a1.e02.lawha"]
         },
         {
-          "schluessel": "ar.a1.e02.l02.a08",
+          "schluessel": "ar.a1.e02.l02.a09",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.a1.e02.s0042",
           "ablenker": ["ar.a1.e02.s0044", "ar.a1.e02.s0043"]
         },
         {
-          "schluessel": "ar.a1.e02.l02.a09",
+          "schluessel": "ar.a1.e02.l02.a10",
           "typ": "luecke",
           "ziel": "ar.a1.e02.s0030",
           "wort": 0,
           "ablenker": ["ذٰلِكَ"]
         },
         {
-          "schluessel": "ar.a1.e02.l02.a10",
+          "schluessel": "ar.a1.e02.l02.a11",
           "typ": "luecke",
           "ziel": "ar.a1.e02.s0046",
           "wort": 0,
           "ablenker": ["تِلْكَ"]
         },
         {
-          "schluessel": "ar.a1.e02.l02.a11",
+          "schluessel": "ar.a1.e02.l02.a12",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.a1.e02.s0043",
           "nach": "ausgang"
         },
         {
-          "schluessel": "ar.a1.e02.l02.a12",
+          "schluessel": "ar.a1.e02.l02.a13",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.a1.e02.s0054",
@@ -2232,14 +2237,14 @@
           "ablenker": ["ذٰلِكَ", "طَاوِلَةٌ"]
         },
         {
-          "schluessel": "ar.a1.e02.l02.a13",
+          "schluessel": "ar.a1.e02.l02.a14",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "ar.a1.e02.tawila",
           "ablenker": ["ar.a1.e02.kursi", "ar.a1.e02.nafidha"]
         },
         {
-          "schluessel": "ar.a1.e02.l02.a14",
+          "schluessel": "ar.a1.e02.l02.a15",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.a1.e02.s0044",
@@ -2247,14 +2252,14 @@
           "ablenker": ["وَذٰلِكَ", "بَابٌ"]
         },
         {
-          "schluessel": "ar.a1.e02.l02.a15",
+          "schluessel": "ar.a1.e02.l02.a16",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e02.s0048",
           "ablenker": ["ar.a1.e02.s0030"]
         },
         {
-          "schluessel": "ar.a1.e02.l02.a16",
+          "schluessel": "ar.a1.e02.l02.a17",
           "typ": "dialog",
           "zeilen": [
             {
