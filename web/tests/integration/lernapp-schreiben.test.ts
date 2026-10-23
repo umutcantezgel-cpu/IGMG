@@ -480,15 +480,13 @@ describe('Lehrkraft: nur die eigene Gruppe, nur lesbare Abgaben', () => {
     // die eigenen Abgaben bleiben für die Person sichtbar (Art. 15)
     expect(((await (await liste()).json()) as ListeAntwort).abgaben.length).toBeGreaterThan(0);
     // Neues Erteilen: die Abgaben von vorher bleiben für die Lehrkraft unlesbar; neu Abgegebenes ist lesbar
-    await db
-      .insert(schema.kontoEinwilligung)
-      .values({
-        benutzerId: ids.erwachsen,
-        art: 'lernapp',
-        textVersion: 'v1',
-        erteiltVon: ids.erwachsen,
-        erteiltAm: new Date(Date.now() + 1000),
-      });
+    await db.insert(schema.kontoEinwilligung).values({
+      benutzerId: ids.erwachsen,
+      art: 'lernapp',
+      textVersion: 'v1',
+      erteiltVon: ids.erwachsen,
+      erteiltAm: new Date(Date.now() + 1000),
+    });
     expect((await dienst.abgabenDerGruppe(a, ids.gruppe1)).some((z) => z.name === '[Erwachsen] W')).toBe(false);
     const neu = abgabe(ids.gruppe1);
     await dienst.reicheEin({ benutzerId: ids.erwachsen, istKind: false }, await kontext(ids.erwachsen), neu, new Date(Date.now() + 2000));
