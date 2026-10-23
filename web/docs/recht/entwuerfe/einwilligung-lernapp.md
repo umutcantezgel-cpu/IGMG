@@ -153,3 +153,13 @@ Diese Texte sind **Informationen**, keine Einwilligungen. Sie stehen in den Eins
 5. Formulierung zu Art. 9 („ausdrücklich“) rechtlich prüfen; ergänzend Art. 9 Abs. 2 lit. d (D-L14).
 6. Englische Fassung für „Mein Bereich“ (D-L15).
 7. Übersetzungen tr und ar durch Menschen, Gegenlesen durch eine zweite Person; danach Hashes beim Einbau.
+
+## 10. Einbau als Entwurf (Stand 23.10.2026, S-L3 N-2, ADR 0042 Fortschreibung Nr. 23 und 24)
+
+Die Texte EL1 bis EL3 sind als **Entwurf gekennzeichnet** in „Mein Bereich“ eingebaut (de; tr und en als KI-Entwurf zur Prüfung, `web/messages/neu-uebersetzt.json`). Sie gelten erst nach Freigabe (LM-08); bis dahin bleiben `lernapp_sync` und `lernapp_gruppen` in der Produktion aus. Abweichungen vom Wortlaut oben, die die Prüfung bestätigen oder zurücknehmen soll:
+
+1. **Ort:** EL1 und EL3 unter „Mein Bereich › Konto › Lern-App“, EL2 unter „Meine Kinder“ bei den übrigen Einwilligungen des Kindes. Die Einstellungen der Lern-App verweisen dorthin (kein eigenes Kästchen in der App); der Widerrufssatz nennt deshalb „Mein Bereich“ statt „Einstellungen“.
+2. **Frist nach Widerruf:** gelöscht wird **sofort** (statt „binnen 30 Tagen“): Lernstand auf dem Server, Schreibabgaben, die keine geltende Einwilligung deckt, Zustimmung zur Bestenliste und Einstellung der Familien-Bestenliste. Der Widerrufssatz sagt das.
+3. **Version:** `lernapp/2026-10-entwurf`, `lernapp-ab16/2026-10-entwurf` bzw. `lernapp-kind/2026-10-entwurf` mit `+sha256:` des angezeigten Wortlauts (bei EL1 und EL3 mit dem Satz am Kästchen, bei EL2 mit dem Einvernehmen).
+4. **Wer:** EL3 bis zum 18. Geburtstag (bei bekanntem Datum), danach EL1. Unter 16 erteilen und widerrufen nur die Eltern; ab 16 entscheidet die Person selbst, ihr Widerruf beendet auch eine noch laufende Einwilligung der Eltern. Eltern erteilen nur mit bestätigtem Eltern-Kind-Bezug; mit dem Ende des Bezugs endet ihre Einwilligung.
+5. **Platzhalter** in eckigen Klammern (Name und Rechtsform, E-Mail-Adresse, Umfang nach D-L03, Sichtbarkeit für Eltern ab 16) stehen im angezeigten Text, bis sie entschieden sind.

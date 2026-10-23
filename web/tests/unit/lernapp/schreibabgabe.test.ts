@@ -86,8 +86,7 @@ describe('S-L2-Auflagen: Kommentar an Kinder (M-1, D-L16) und Deckung durch die 
     expect(bewerteDL16(true, { ...beschluss, kommentarAnKinder: false })).toMatchObject({ status: 'ok' });
     const ohne = bewerteDL16(true, { ...beschluss, kommentarAnKinder: true }, ['fassungen']);
     expect(ohne.status).toBe('warnung');
-    expect(ohne.meldung).toContain('Bremse');
-    expect(ohne.meldung).not.toContain('Fassungen statt Ersetzen');
+    expect(ohne).toMatchObject({ art: 'nichtUmgesetzt', fehlt: ['elternSehenOderMelden', 'bremse', 'zeitfenster'] });
     expect(bewerteDL16(true, { ...beschluss, kommentarAnKinder: true }, SCHUTZMASSNAHMEN).status).toBe('ok');
   });
 

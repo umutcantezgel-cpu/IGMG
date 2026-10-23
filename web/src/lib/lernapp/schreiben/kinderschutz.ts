@@ -67,38 +67,25 @@ export function kommentarErlaubt(
   return entscheidung?.kommentarAnKinder === true && fehlendeSchutzmassnahmen(umgesetzt).length === 0;
 }
 
-/** Bewertung für Startklar (nur aufgerufen, wenn `lernapp_gruppen` an ist). */
-export type DL16Befund = { status: 'ok' | 'warnung' | 'fehler'; meldung: string };
-
-const NAMEN: Record<Schutzmassnahme, string> = {
-  elternSehenOderMelden: 'Eltern sehen oder melden den Kommentar',
-  fassungen: 'Fassungen statt Ersetzen',
-  bremse: 'Bremse für Rückgaben',
-  zeitfenster: 'Zeitfenster',
-};
-
 /**
- * Startklar zu D-L16: ohne Entscheidung Rot in der Betriebsart Produktion, Warnung in Vorschau und Entwicklung. Lässt die
- * Entscheidung den Kommentar zu, fehlen aber Schutzmaßnahmen, bleibt der Kommentar gesperrt – Warnung mit der Liste.
+ * Bewertung für Startklar (nur aufgerufen, wenn `lernapp_gruppen` an ist): ohne Entscheidung Rot in der Betriebsart
+ * Produktion, Warnung in Vorschau und Entwicklung. Lässt die Entscheidung den Kommentar zu, fehlen aber Schutzmaßnahmen,
+ * bleibt der Kommentar gesperrt – Warnung mit der Liste. Die Texte des Cockpits stehen in `startklar/gemeinde.ts`.
  */
+export type DL16Befund =
+  | { art: 'offen'; status: 'fehler' | 'warnung' }
+  | { art: 'ausgeschlossen' | 'zugelassen'; status: 'ok'; entscheidung: EntscheidungDL16 }
+  | { art: 'nichtUmgesetzt'; status: 'warnung'; entscheidung: EntscheidungDL16; fehlt: Schutzmassnahme[] };
+
 export function bewerteDL16(
   produktion: boolean,
   entscheidung: EntscheidungDL16 | null = ENTSCHEIDUNG_D_L16,
   umgesetzt: readonly Schutzmassnahme[] = UMGESETZTE_SCHUTZMASSNAHMEN,
 ): DL16Befund {
-  if (!entscheidung)
-    return {
-      status: produktion ? 'fehler' : 'warnung',
-      meldung:
-        'Gruppen der Lern-App sind eingeschaltet, aber D-L16 (Kommentar der Lehrkraft zur Schreibabgabe eines Kindes) ist nicht entschieden. Bis dahin ist der Kommentar an Kinder gesperrt; Kinderschutz, Datenschutzbeauftragte und Bildung entscheiden, danach wird die Entscheidung eingetragen.',
-    };
-  const kopf = `D-L16 entschieden am ${entscheidung.am} (${entscheidung.fundstelle})`;
-  if (!entscheidung.kommentarAnKinder) return { status: 'ok', meldung: `${kopf}: Kommentar der Lehrkraft an Kinder ausgeschlossen.` };
+  if (!entscheidung) return { art: 'offen', status: produktion ? 'fehler' : 'warnung' };
+  if (!entscheidung.kommentarAnKinder) return { art: 'ausgeschlossen', status: 'ok', entscheidung };
   const fehlt = fehlendeSchutzmassnahmen(umgesetzt);
   return fehlt.length
-    ? {
-        status: 'warnung',
-        meldung: `${kopf}: Kommentar an Kinder zugelassen, aber noch nicht umgesetzt (${fehlt.map((m) => NAMEN[m]).join(', ')}). Bis dahin bleibt er gesperrt.`,
-      }
-    : { status: 'ok', meldung: `${kopf}: Kommentar der Lehrkraft an Kinder zugelassen, Schutzmaßnahmen umgesetzt.` };
+    ? { art: 'nichtUmgesetzt', status: 'warnung', entscheidung, fehlt }
+    : { art: 'zugelassen', status: 'ok', entscheidung };
 }

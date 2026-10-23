@@ -11,7 +11,7 @@ import {
   umgebungsSchalter,
 } from '@/lib/funktionen-regeln';
 import { pruefeKette } from '@/lib/chat/hashkette';
-import { bewerteDL16 } from '@/lib/lernapp/schreiben/kinderschutz';
+import { bewerteDL16, type DL16Befund, type Schutzmassnahme } from '@/lib/lernapp/schreiben/kinderschutz';
 import { funktionenEinstellung } from '@/lib/validierung/einstellungen';
 import type { Pruefung } from './pruefungen';
 
@@ -63,6 +63,25 @@ const VORAUSSETZUNG: Partial<Record<Funktion, string>> = {
   lernapp_statistik: 'Entscheidung der Datenschutzbeauftragten (KERN 4.0 §6)',
   push_lernapp: 'wie Web Push: Push-Themen und Drittland-Hinweis (MN-11, MN-17), neutraler Text ohne Serienbezug',
 };
+
+/** Namen der Schutzmaßnahmen zu D-L16 (`lernapp/schreiben/kinderschutz.ts`) für das Cockpit. */
+const SCHUTZ_NAMEN: Record<Schutzmassnahme, string> = {
+  elternSehenOderMelden: 'Eltern sehen oder melden den Kommentar',
+  fassungen: 'Fassungen statt Ersetzen',
+  bremse: 'Bremse für Rückgaben',
+  zeitfenster: 'Zeitfenster',
+};
+
+/** Meldung des Cockpits zu D-L16 (S-L2 M-1, ADR 0042 Nr. 18 und 20). */
+export function dl16Meldung(d: DL16Befund): string {
+  if (d.art === 'offen')
+    return 'Gruppen der Lern-App sind eingeschaltet, aber D-L16 (Kommentar der Lehrkraft zur Schreibabgabe eines Kindes) ist nicht entschieden. Bis dahin ist der Kommentar an Kinder gesperrt; Kinderschutz, Datenschutzbeauftragte und Bildung entscheiden, danach wird die Entscheidung eingetragen.';
+  const kopf = `D-L16 entschieden am ${d.entscheidung.am} (${d.entscheidung.fundstelle})`;
+  if (d.art === 'ausgeschlossen') return `${kopf}: Kommentar der Lehrkraft an Kinder ausgeschlossen.`;
+  if (d.art === 'nichtUmgesetzt')
+    return `${kopf}: Kommentar an Kinder zugelassen, aber noch nicht umgesetzt (${d.fehlt.map((m) => SCHUTZ_NAMEN[m]).join(', ')}). Bis dahin bleibt er gesperrt.`;
+  return `${kopf}: Kommentar der Lehrkraft an Kinder zugelassen, Schutzmaßnahmen umgesetzt.`;
+}
 
 /** Zustand eines gemeldeten Laufs: fehlt, fehlgeschlagen, zu alt oder in Ordnung. */
 export function bewerteLauf(e: LokalEintrag | undefined, jetzt: Date, maxStunden: number): 'fehlt' | 'fehlgeschlagen' | 'alt' | 'ok' {
@@ -296,7 +315,7 @@ export async function gemeindePruefen(
       bereich: 'gemeinde',
       titel: 'Lern-App: Kommentar an Kinder (D-L16)',
       status: d.status,
-      meldung: d.meldung,
+      meldung: dl16Meldung(d),
       ort: 'web/docs/recht/entwuerfe/dsfa-lernapp.md (D-L16); Einträge ENTSCHEIDUNG_D_L16 und UMGESETZTE_SCHUTZMASSNAHMEN in web/src/lib/lernapp/schreiben/kinderschutz.ts; MENSCHEN LM-08',
       aufwand: '1 h (Entscheidung), Umsetzung je nach Beschluss',
     });
