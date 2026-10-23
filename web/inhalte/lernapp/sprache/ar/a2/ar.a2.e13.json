@@ -934,7 +934,6 @@
       },
       "formen": {
         "feminin": "طَازَجَة",
-        "elativ": "أَطْزَج",
         "akkusativ_indef": "طَازَجًا"
       },
       "frequenzRang": 5886,
@@ -970,6 +969,7 @@
         "sammelwort": "ja"
       },
       "formen": {
+        "einzelwort": "بِطِّيخَة",
         "akkusativ_indef": "بِطِّيخًا"
       },
       "frequenzRang": 9701,
@@ -1275,10 +1275,11 @@
       "wortart": "nomen",
       "merkmale": {
         "umschrift": "ǧawz",
-        "genus": "m"
+        "genus": "m",
+        "sammelwort": "ja"
       },
       "formen": {
-        "plural": "أَجْوَاز",
+        "einzelwort": "جَوْزَة",
         "akkusativ_indef": "جَوْزًا"
       },
       "frequenzRang": 6208,
@@ -1904,7 +1905,7 @@
     },
     {
       "schluessel": "ar.a2.e13.s0076",
-      "text": "الْيَوْمَ يَوْمُ فَرْحَةٍ لِكُلِّ الْعَائِلَةِ.",
+      "text": "الْيَوْمُ يَوْمُ فَرْحَةٍ لِكُلِّ الْعَائِلَةِ.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3110,7 +3111,7 @@
       "schluessel": "ar.a2.e13.l01",
       "art": "lektion",
       "ziel": {
-        "de": "Ich kann zu einem Fest einladen, eine Einladung verstehen und zusagen oder absagen.",
+        "de": "Ich kann zu einem Fest einladen, eine Einladung verstehen und zusagen oder höflich absagen.",
         "tr": "Bir kutlamaya davet edebilir, bir davetiyeyi anlayabilir ve daveti kabul edebilir ya da nazikçe reddedebilirim.",
         "ar": "أستطيع أن أدعو إلى حفلة وأن أفهم بطاقة دعوة وأن أقبل الدعوة أو أعتذر بلطف."
       },
@@ -3210,7 +3211,7 @@
           "schluessel": "ar.a2.e13.l01.a12",
           "typ": "satzbau",
           "ziel": "ar.a2.e13.s0024",
-          "alternativen": ["فِي الْأَعْرَاسِ فَقَطْ نَلْتَقِي بِأَقَارِبِنَا."]
+          "alternativen": ["فِي الْأَعْرَاسِ فَقَطْ نَلْتَقِي بِأَقَارِبِنَا.", "بِأَقَارِبِنَا نَلْتَقِي فِي الْأَعْرَاسِ فَقَطْ."]
         },
         {
           "schluessel": "ar.a2.e13.l01.a13",
@@ -3376,7 +3377,7 @@
           "schluessel": "ar.a2.e13.l02.a12",
           "typ": "satzbau",
           "ziel": "ar.a2.e13.s0096",
-          "alternativen": ["كُلُّ ضَيْفٍ أَحْضَرَ هَدِيَّةً."]
+          "alternativen": ["كُلُّ ضَيْفٍ أَحْضَرَ هَدِيَّةً.", "أَحْضَرَ هَدِيَّةً كُلُّ ضَيْفٍ."]
         },
         {
           "schluessel": "ar.a2.e13.l02.a13",
@@ -3513,7 +3514,11 @@
           "schluessel": "ar.a2.e13.l03.a13",
           "typ": "satzbau",
           "ziel": "ar.a2.e13.s0139",
-          "alternativen": ["سَاعَدَتْ كُلُّ الْعَائِلَةِ فِي الزِّينَةِ."]
+          "alternativen": [
+            "سَاعَدَتْ كُلُّ الْعَائِلَةِ فِي الزِّينَةِ.",
+            "سَاعَدَتْ فِي الزِّينَةِ كُلُّ الْعَائِلَةِ.",
+            "فِي الزِّينَةِ سَاعَدَتْ كُلُّ الْعَائِلَةِ."
+          ]
         },
         {
           "schluessel": "ar.a2.e13.l03.a14",
@@ -3767,7 +3772,7 @@
           "schluessel": "ar.a2.e13.l05.a11",
           "typ": "satzbau",
           "ziel": "ar.a2.e13.s0206",
-          "alternativen": ["وَالِدُ الْعَرِيسِ سَيُلْقِي الْخِطَابَ."]
+          "alternativen": ["وَالِدُ الْعَرِيسِ سَيُلْقِي الْخِطَابَ.", "سَيُلْقِي الْخِطَابَ وَالِدُ الْعَرِيسِ."]
         },
         {
           "schluessel": "ar.a2.e13.l05.a12",
@@ -4126,7 +4131,11 @@
           "schluessel": "ar.a2.e13.l07.a19",
           "typ": "satzbau",
           "ziel": "ar.a2.e13.s0085",
-          "alternativen": ["الْيَوْمَ يَجِبُ أَنْ نُغَلِّفَ الْهَدَايَا.", "يَجِبُ الْيَوْمَ أَنْ نُغَلِّفَ الْهَدَايَا."]
+          "alternativen": [
+            "الْيَوْمَ يَجِبُ أَنْ نُغَلِّفَ الْهَدَايَا.",
+            "يَجِبُ الْيَوْمَ أَنْ نُغَلِّفَ الْهَدَايَا.",
+            "يَجِبُ أَنْ نُغَلِّفَ الْيَوْمَ الْهَدَايَا."
+          ]
         },
         {
           "schluessel": "ar.a2.e13.l07.a20",
@@ -4391,20 +4400,31 @@
           "anweisung": "uebersetze",
           "satz": "ar.a2.e13.s0021",
           "nach": "ziel",
-          "alternativen": ["عَائِلَةُ الْعَرِيسِ حَجَزَتِ الْقَاعَةَ لِيَوْمِ السَّبْتِ."],
+          "alternativen": [
+            "عَائِلَةُ الْعَرِيسِ حَجَزَتِ الْقَاعَةَ لِيَوْمِ السَّبْتِ.",
+            "لِيَوْمِ السَّبْتِ حَجَزَتْ عَائِلَةُ الْعَرِيسِ الْقَاعَةَ."
+          ],
           "ablenker": ["الْعَرُوسِ", "الْأَحَدِ"]
         },
         {
           "schluessel": "ar.a2.e13.l08.a12",
           "typ": "satzbau",
           "ziel": "ar.a2.e13.s0071",
-          "alternativen": ["أَتَمَنَّى دَائِمًا لَكُمُ السَّعَادَةَ.", "دَائِمًا أَتَمَنَّى لَكُمُ السَّعَادَةَ."]
+          "alternativen": [
+            "أَتَمَنَّى دَائِمًا لَكُمُ السَّعَادَةَ.",
+            "دَائِمًا أَتَمَنَّى لَكُمُ السَّعَادَةَ.",
+            "أَتَمَنَّى لَكُمْ دَائِمًا السَّعَادَةَ."
+          ]
         },
         {
           "schluessel": "ar.a2.e13.l08.a13",
           "typ": "satzbau",
           "ziel": "ar.a2.e13.s0124",
-          "alternativen": ["وَزَّعَتْ لَيْلَى عَلَى الْأَطْفَالِ الْحَلْوَى.", "لَيْلَى وَزَّعَتِ الْحَلْوَى عَلَى الْأَطْفَالِ."]
+          "alternativen": [
+            "وَزَّعَتْ لَيْلَى عَلَى الْأَطْفَالِ الْحَلْوَى.",
+            "لَيْلَى وَزَّعَتِ الْحَلْوَى عَلَى الْأَطْفَالِ.",
+            "لَيْلَى وَزَّعَتْ عَلَى الْأَطْفَالِ الْحَلْوَى."
+          ]
         },
         {
           "schluessel": "ar.a2.e13.l08.a14",
@@ -4484,7 +4504,7 @@
           "schluessel": "ar.a2.e13.l08.a21",
           "typ": "minimalpaare",
           "ziel": "ar.a2.e13.tamr",
-          "ablenker": ["ar.a2.e11.qamar"]
+          "ablenker": ["ar.a2.e10.amr"]
         },
         {
           "schluessel": "ar.a2.e13.l08.a22",
