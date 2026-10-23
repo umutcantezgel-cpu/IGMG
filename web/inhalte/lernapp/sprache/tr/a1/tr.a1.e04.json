@@ -2865,37 +2865,42 @@
         },
         {
           "schluessel": "tr.a1.e04.l05.a02",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "tr.a1.e04.l05.a03",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e04.aramak",
           "ablenker": ["tr.a1.e04.bulmak", "tr.a1.e04.gostermek"]
         },
         {
-          "schluessel": "tr.a1.e04.l05.a03",
+          "schluessel": "tr.a1.e04.l05.a04",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e04.bulmak",
           "ablenker": ["tr.a1.e04.aramak", "tr.a1.e04.gostermek"]
         },
         {
-          "schluessel": "tr.a1.e04.l05.a04",
+          "schluessel": "tr.a1.e04.l05.a05",
           "typ": "paare",
           "lemmata": ["tr.a1.e04.aramak", "tr.a1.e04.bulmak", "tr.a1.e04.gostermek", "tr.a1.e04.peki", "tr.a1.e04.oyle"]
         },
         {
-          "schluessel": "tr.a1.e04.l05.a05",
+          "schluessel": "tr.a1.e04.l05.a06",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e04.kimse",
           "ablenker": ["tr.a1.e04.herkes", "tr.a1.e04.sey"]
         },
         {
-          "schluessel": "tr.a1.e04.l05.a06",
+          "schluessel": "tr.a1.e04.l05.a07",
           "typ": "paare",
           "lemmata": ["tr.a1.e04.sey", "tr.a1.e04.hic", "tr.a1.e04.kimse", "tr.a1.e04.herkes", "tr.a1.e04.yer"]
         },
         {
-          "schluessel": "tr.a1.e04.l05.a07",
+          "schluessel": "tr.a1.e04.l05.a08",
           "typ": "dialog",
           "zeilen": [
             {
@@ -2911,7 +2916,7 @@
           "ablenker": ["tr.a1.e04.s0011", "tr.a1.e04.s0016"]
         },
         {
-          "schluessel": "tr.a1.e04.l05.a08",
+          "schluessel": "tr.a1.e04.l05.a09",
           "typ": "dialog",
           "zeilen": [
             {
@@ -2939,7 +2944,7 @@
           "ablenker": ["tr.a1.e04.s0036", "tr.a1.e04.s0013"]
         },
         {
-          "schluessel": "tr.a1.e04.l05.a09",
+          "schluessel": "tr.a1.e04.l05.a10",
           "typ": "dialog",
           "zeilen": [
             {
@@ -2951,21 +2956,21 @@
           "ablenker": ["tr.a1.e04.s0124", "tr.a1.e04.s0009"]
         },
         {
-          "schluessel": "tr.a1.e04.l05.a10",
+          "schluessel": "tr.a1.e04.l05.a11",
           "typ": "luecke",
           "ziel": "tr.a1.e04.s0141",
           "wort": 1,
           "ablenker": ["mi", "mu"]
         },
         {
-          "schluessel": "tr.a1.e04.l05.a11",
+          "schluessel": "tr.a1.e04.l05.a12",
           "typ": "luecke",
           "ziel": "tr.a1.e04.s0151",
           "wort": 3,
           "ablenker": ["bulduk", "arıyorsun"]
         },
         {
-          "schluessel": "tr.a1.e04.l05.a12",
+          "schluessel": "tr.a1.e04.l05.a13",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "tr.a1.e04.s0161",
@@ -2974,26 +2979,26 @@
           "ablenker": ["var", "herkes"]
         },
         {
-          "schluessel": "tr.a1.e04.l05.a13",
+          "schluessel": "tr.a1.e04.l05.a14",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "tr.a1.e04.s0145",
           "nach": "ausgang"
         },
         {
-          "schluessel": "tr.a1.e04.l05.a14",
+          "schluessel": "tr.a1.e04.l05.a15",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "tr.a1.e04.s0162",
           "ablenker": ["tr.a1.e04.s0058", "tr.a1.e04.s0161"]
         },
         {
-          "schluessel": "tr.a1.e04.l05.a15",
+          "schluessel": "tr.a1.e04.l05.a16",
           "typ": "hoeren_schreiben",
           "ziel": "tr.a1.e04.s0139"
         },
         {
-          "schluessel": "tr.a1.e04.l05.a16",
+          "schluessel": "tr.a1.e04.l05.a17",
           "typ": "sprechen",
           "satz": "tr.a1.e04.s0165"
         }

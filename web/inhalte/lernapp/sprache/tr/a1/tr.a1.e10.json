@@ -2998,6 +2998,13 @@
         },
         {
           "schluessel": "tr.a1.e10.l05.a16",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e10.yine",
+          "ablenker": ["tr.a1.e06.hemen", "tr.a1.e06.hep"]
+        },
+        {
+          "schluessel": "tr.a1.e10.l05.a17",
           "typ": "sprechen",
           "satz": "tr.a1.e10.s0096"
         }
@@ -3466,7 +3473,7 @@
       "art": "pruefstein",
       "ziel": {
         "de": "Prüfstein: Zu Gast bei Oma Sevim",
-        "tr": "Sınav: Sevim Babaanne'de misafiriz",
+        "tr": "Değerlendirme: Sevim Babaanne'de misafiriz",
         "ar": "محطة الاختبار: ضيوف عند الجدة سيفيم"
       },
       "aufgaben": [

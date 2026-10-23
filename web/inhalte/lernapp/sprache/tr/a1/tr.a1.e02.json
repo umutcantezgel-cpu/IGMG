@@ -2439,51 +2439,56 @@
       "aufgaben": [
         {
           "schluessel": "tr.a1.e02.l03.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "tr.a1.e02.l03.a02",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e02.kapi",
           "ablenker": ["tr.a1.e02.pencere", "tr.a1.e02.sandalye"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a02",
+          "schluessel": "tr.a1.e02.l03.a03",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e02.sinif",
           "ablenker": ["tr.a1.e02.okul", "tr.a1.e02.kapi"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a03",
+          "schluessel": "tr.a1.e02.l03.a04",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e02.tahta",
           "ablenker": ["tr.a1.e02.masa", "tr.a1.e02.pencere"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a04",
+          "schluessel": "tr.a1.e02.l03.a05",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e02.sandalye",
           "ablenker": ["tr.a1.e02.kapi", "tr.a1.e02.tahta"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a05",
+          "schluessel": "tr.a1.e02.l03.a06",
           "typ": "paare",
           "lemmata": ["tr.a1.e02.sinif", "tr.a1.e02.okul", "tr.a1.e02.tahta", "tr.a1.e02.pencere", "tr.a1.e02.kapi"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a06",
+          "schluessel": "tr.a1.e02.l03.a07",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e02.sira",
           "ablenker": ["tr.a1.e02.kapi", "tr.a1.e02.pencere"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a07",
+          "schluessel": "tr.a1.e02.l03.a08",
           "typ": "paare",
           "lemmata": ["tr.a1.e02.masa", "tr.a1.e02.sandalye", "tr.a1.e02.buyuk", "tr.a1.e02.kucuk"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a08",
+          "schluessel": "tr.a1.e02.l03.a09",
           "typ": "dialog",
           "zeilen": [
             {
@@ -2503,13 +2508,13 @@
           "ablenker": ["tr.a1.e02.s0049", "tr.a1.e02.s0069"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a09",
+          "schluessel": "tr.a1.e02.l03.a10",
           "typ": "minimalpaare",
           "ziel": "tr.a1.e02.sira",
           "ablenker": ["tr.a1.e02.sari"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a10",
+          "schluessel": "tr.a1.e02.l03.a11",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "tr.a1.e02.s0059",
@@ -2517,33 +2522,33 @@
           "ablenker": ["mi", "bir"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a11",
+          "schluessel": "tr.a1.e02.l03.a12",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "tr.a1.e02.s0047",
           "nach": "ausgang"
         },
         {
-          "schluessel": "tr.a1.e02.l03.a12",
+          "schluessel": "tr.a1.e02.l03.a13",
           "typ": "luecke",
           "ziel": "tr.a1.e02.s0060",
           "wort": 2,
           "ablenker": ["mi", "mu"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a13",
+          "schluessel": "tr.a1.e02.l03.a14",
           "typ": "hoeren_schreiben",
           "ziel": "tr.a1.e02.okul"
         },
         {
-          "schluessel": "tr.a1.e02.l03.a14",
+          "schluessel": "tr.a1.e02.l03.a15",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "tr.a1.e02.s0062",
           "ablenker": ["tr.a1.e02.s0053", "tr.a1.e02.s0068"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a15",
+          "schluessel": "tr.a1.e02.l03.a16",
           "typ": "dialog",
           "zeilen": [
             {
@@ -2555,7 +2560,7 @@
           "ablenker": ["tr.a1.e02.s0061", "tr.a1.e02.s0058"]
         },
         {
-          "schluessel": "tr.a1.e02.l03.a16",
+          "schluessel": "tr.a1.e02.l03.a17",
           "typ": "sprechen",
           "satz": "tr.a1.e02.s0055"
         }

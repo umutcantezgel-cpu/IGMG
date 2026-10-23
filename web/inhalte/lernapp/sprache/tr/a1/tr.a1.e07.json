@@ -3147,6 +3147,20 @@
         },
         {
           "schluessel": "tr.a1.e07.l05.a16",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e07.odemek",
+          "ablenker": ["tr.a1.e07.almak", "tr.a1.e07.satmak"]
+        },
+        {
+          "schluessel": "tr.a1.e07.l05.a17",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e07.s0114",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e07.l05.a18",
           "typ": "sprechen",
           "satz": "tr.a1.e07.s0200"
         }
@@ -3156,9 +3170,9 @@
       "schluessel": "tr.a1.e07.l06",
       "art": "geschichte",
       "ziel": {
-        "de": "Ich kann eine Geschichte vom Wochenmarkt verstehen.",
-        "tr": "Semt pazarında geçen bir hikâyeyi anlayabilirim.",
-        "ar": "أستطيع أن أفهم قصة في السوق الأسبوعي."
+        "de": "Geschichte: Rote Äpfel vom Markt",
+        "tr": "Hikâye: Pazardan kırmızı elmalar",
+        "ar": "قصة: تفاح أحمر من السوق"
       },
       "aufgaben": [
         {
@@ -3397,9 +3411,9 @@
       "schluessel": "tr.a1.e07.l07",
       "art": "wiederholung",
       "ziel": {
-        "de": "Ich kann Obst, Gemüse, Mengen und Preise wiederholen.",
-        "tr": "Meyve, sebze, miktar ve fiyatları tekrar edebilirim.",
-        "ar": "أستطيع أن أراجع الفواكه والخضروات والكميات والأسعار."
+        "de": "Wiederholung: Obst, Gemüse, Mengen und Preise",
+        "tr": "Tekrar: meyve, sebze, miktarlar ve fiyatlar",
+        "ar": "مراجعة: الفواكه والخضروات والكميات والأسعار"
       },
       "aufgaben": [
         {
@@ -3549,9 +3563,9 @@
       "schluessel": "tr.a1.e07.l08",
       "art": "pruefstein",
       "ziel": {
-        "de": "Ich kann auf dem Markt einkaufen: verlangen, nach dem Preis fragen, bezahlen.",
-        "tr": "Pazarda alışveriş yapabilirim: isteyebilir, fiyat sorabilir, ödeyebilirim.",
-        "ar": "أستطيع أن أتسوّق في السوق: أطلب وأسأل عن السعر وأدفع."
+        "de": "Prüfstein: Auf dem Markt einkaufen",
+        "tr": "Değerlendirme: Pazarda alışveriş",
+        "ar": "محطة الاختبار: التسوق في السوق"
       },
       "aufgaben": [
         {
