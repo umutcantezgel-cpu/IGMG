@@ -19,7 +19,7 @@
     },
     {
       "bezug": "ar.a1.e02.hal",
-      "text": "Fragewort (Ja-Nein-Frage, am Satzanfang)",
+      "text": "Fragepartikel (Ja-Nein-Frage, am Satzanfang)",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -260,7 +260,7 @@
     {
       "bezug": "ar.a1.e02.s0001",
       "text": "Das ist ein Stift.",
-      "alternativen": ["Dies ist ein Stift.", "Das hier ist ein Stift.", "Das ist ein Kugelschreiber.", "Das ist ein Bleistift."],
+      "alternativen": ["Dies ist ein Stift.", "Das hier ist ein Stift."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -596,8 +596,7 @@
         "Dies ist ein Stuhl, und das dort ist ein Schreibtisch.",
         "Das hier ist ein Stuhl, und das dort ist ein Schreibtisch.",
         "Das ist ein Stuhl, und das da ist ein Schreibtisch.",
-        "Das ist ein Stuhl, und das ist ein Schreibtisch.",
-        "Das ist ein Stuhl, und dort ist ein Schreibtisch."
+        "Das ist ein Stuhl, und das ist ein Schreibtisch."
       ],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -681,7 +680,7 @@
     {
       "bezug": "ar.a1.e02.s0052",
       "text": "Das dort ist ein Stift.",
-      "alternativen": ["Das da ist ein Stift.", "Das ist ein Stift.", "Jenes ist ein Stift.", "Das dort ist ein Kugelschreiber."],
+      "alternativen": ["Das da ist ein Stift.", "Das ist ein Stift.", "Jenes ist ein Stift."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -858,7 +857,7 @@
     {
       "bezug": "ar.a1.e02.s0074",
       "text": "Sie sind Lehrer.",
-      "alternativen": ["Das sind Lehrer.", "Sie sind Lehrkräfte."],
+      "alternativen": ["Sie sind Lehrkräfte."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -967,7 +966,8 @@
         "Das sind Schüler aus Deutschland.",
         "Jene sind Schüler aus Deutschland.",
         "Das dort sind Studenten aus Deutschland.",
-        "Das sind Studenten aus Deutschland."
+        "Das sind Studenten aus Deutschland.",
+        "Das sind dort Schüler aus Deutschland."
       ],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -975,7 +975,7 @@
     {
       "bezug": "ar.a1.e02.s0088",
       "text": "Sie sind Freunde aus der Türkei.",
-      "alternativen": ["Das sind Freunde aus der Türkei.", "Sie sind Freunde und kommen aus der Türkei."],
+      "alternativen": ["Sie sind Freunde und kommen aus der Türkei."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1010,7 +1010,7 @@
     {
       "bezug": "ar.a1.e02.s0093",
       "text": "Ist das ein Stift?",
-      "alternativen": ["Ist dies ein Stift?", "Ist das hier ein Stift?", "Ist das ein Kugelschreiber?"],
+      "alternativen": ["Ist dies ein Stift?", "Ist das hier ein Stift?"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1236,19 +1236,20 @@
       "bezug": "ar.a1.e02.s0124",
       "text": "Ja, wir sind Schüler.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
-      "lizenz": "CC-BY-SA-4.0"
+      "lizenz": "CC-BY-SA-4.0",
+      "alternativen": ["Ja, wir sind Schülerinnen und Schüler."]
     },
     {
       "bezug": "ar.a1.e02.s0125",
       "text": "Sind sie Schüler?",
-      "alternativen": ["Sind sie Studenten?", "Sind das Schüler?"],
+      "alternativen": ["Sind sie Studenten?"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "ar.a1.e02.s0126",
       "text": "Nein, sie sind Lehrer.",
-      "alternativen": ["Nein, das sind Lehrer.", "Nein, sie sind Lehrkräfte."],
+      "alternativen": ["Nein, sie sind Lehrkräfte."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1675,7 +1676,8 @@
         "Nādiya ist Lehrerin, und sie kommt aus Jordanien.",
         "Nādiya ist Lehrerin und kommt aus Jordanien.",
         "Nādiya ist eine Lehrerin, und sie ist aus Jordanien.",
-        "Nādiya ist Lehrerin und ist aus Jordanien."
+        "Nādiya ist Lehrerin und ist aus Jordanien.",
+        "Nādiya ist aus Jordanien, und sie ist Lehrerin."
       ],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1842,7 +1844,12 @@
     {
       "bezug": "ar.a1.e02.s0207",
       "text": "Elif, einen Stift, bitte!",
-      "alternativen": ["Elif, bitte einen Stift!", "Einen Stift, bitte, Elif!", "Elif, gib mir bitte einen Stift!"],
+      "alternativen": [
+        "Elif, bitte einen Stift!",
+        "Einen Stift, bitte, Elif!",
+        "Elif, gib mir bitte einen Stift!",
+        "Bitte einen Stift, Elif!"
+      ],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     }
@@ -1988,7 +1995,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "ustāḏ heißt Lehrer und Professor und ist auch die höfliche Anrede: yā ustāḏa!"
+                "text": "ustāḏ heißt Lehrer und Professor und ist auch die höfliche Anrede: yā ustāḏ! Zu einer Frau sagt man yā ustāḏa!"
               }
             ]
           },
