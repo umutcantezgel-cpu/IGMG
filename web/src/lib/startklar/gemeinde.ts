@@ -302,6 +302,35 @@ export async function gemeindePruefen(
     });
   }
 
+  // S-L2 N-1 (NIE_PER_ADMINISTRATION in beiden Richtungen): Altbestand aus der Zeit vor den Sperren – ein Konto mit
+  // Administration und Gruppenleitung oder Kontoart mit Gruppenzugang (≠ gemeinde). `ladeGruppenKontext` gibt ihm schon
+  // keinen Gruppenzugang; die Verbindung muss trotzdem aufgelöst werden. Rot in der Betriebsart Produktion.
+  const administration = db
+    .select({ id: schema.rolleZuweisung.benutzerId })
+    .from(schema.rolleZuweisung)
+    .where(eq(schema.rolleZuweisung.rolle, 'administration'));
+  const [{ beides }] = await db
+    .select({ beides: sql<number>`count(distinct ${schema.user.id})`.mapWith(Number) })
+    .from(schema.user)
+    .where(
+      and(
+        inArray(schema.user.id, administration),
+        sql`(exists (select 1 from ${schema.gemeindeRolle} where ${schema.gemeindeRolle.benutzerId} = ${schema.user.id} and ${schema.gemeindeRolle.rolle} <> 'gemeinde') or exists (select 1 from ${schema.gruppenLeitung} where ${schema.gruppenLeitung.benutzerId} = ${schema.user.id}))`,
+      ),
+    );
+  neu({
+    id: 'gemeinde.administration-gruppenzugang',
+    bereich: 'gemeinde',
+    titel: 'Administration ohne Gruppenzugang',
+    status: beides === 0 ? 'ok' : produktion ? 'fehler' : 'warnung',
+    meldung:
+      beides === 0
+        ? 'Kein Konto verbindet Administration mit einer Gruppenleitung oder einer Kontoart mit Gruppenzugang.'
+        : `${beides === 1 ? 'Ein Konto verbindet' : `${beides} Konten verbinden`} Administration mit einer Gruppenleitung oder einer Kontoart mit Gruppenzugang (Lehrkraft, Eltern, Schüler). Der Gruppenzugang ist gesperrt; Rolle oder Leitung entziehen bzw. Kontoart auf „Gemeinde“ setzen (S-L2 N-1).`,
+    ort: 'Verwaltung › Benutzer und Rollen; Verwaltung › Gruppen (Leitung); Gemeinde-Konten (Kontoart)',
+    aufwand: '10 min je Konto',
+  });
+
   // S-10: Moderationsprotokoll unverändert (Hash-Kette; nach dem Löschlauf beginnt sie beim gespeicherten Anker)
   const zeilen = await db.select().from(schema.moderationsprotokoll).orderBy(asc(schema.moderationsprotokoll.id));
   const anker = (await einstellungWert(db, 'moderationsprotokoll_anker')) as { hash?: string } | null;
