@@ -2068,7 +2068,7 @@
     },
     {
       "schluessel": "de.a2.e06.s0166",
-      "text": "Derya geht mit ihren Kindern Elif und Emre ins Kaufhaus.",
+      "text": "Derya geht mit ihren Kindern Elif und Can ins Kaufhaus.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2086,7 +2086,7 @@
     },
     {
       "schluessel": "de.a2.e06.s0169",
-      "text": "Emre gefällt sofort die schwarze Jacke.",
+      "text": "Can gefällt sofort die schwarze Jacke.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2104,7 +2104,7 @@
     },
     {
       "schluessel": "de.a2.e06.s0172",
-      "text": "Emre geht in die Umkleidekabine.",
+      "text": "Can geht in die Umkleidekabine.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2164,7 +2164,7 @@
     },
     {
       "schluessel": "de.a2.e06.s0182",
-      "text": "Emre, du brauchst auch noch eine Mütze und Handschuhe.",
+      "text": "Can, du brauchst auch noch eine Mütze und Handschuhe.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2200,7 +2200,7 @@
     },
     {
       "schluessel": "de.a2.e06.s0188",
-      "text": "Was gefällt Emre im Kaufhaus?",
+      "text": "Was gefällt Can im Kaufhaus?",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2236,7 +2236,7 @@
     },
     {
       "schluessel": "de.a2.e06.s0194",
-      "text": "Die schwarze Jacke von Emre.",
+      "text": "Die schwarze Jacke von Can.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3807,19 +3807,24 @@
         },
         {
           "schluessel": "de.a2.e06.l07.a10",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a2.e06.l07.a11",
           "typ": "minimalpaare",
           "ziel": "de.a2.e06.paar",
           "ablenker": ["de.a2.e06.bar"]
         },
         {
-          "schluessel": "de.a2.e06.l07.a11",
+          "schluessel": "de.a2.e06.l07.a12",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a2.e06.s0241",
           "ablenker": ["de.a2.e06.s0090", "de.a2.e06.s0088"]
         },
         {
-          "schluessel": "de.a2.e06.l07.a12",
+          "schluessel": "de.a2.e06.l07.a13",
           "typ": "satzbau",
           "ziel": "de.a2.e06.s0233",
           "alternativen": [
@@ -3831,40 +3836,40 @@
           ]
         },
         {
-          "schluessel": "de.a2.e06.l07.a13",
+          "schluessel": "de.a2.e06.l07.a14",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a2.e06.aussuchen",
           "ablenker": ["de.a2.e06.ueberlegen", "de.a2.e06.umtauschen"]
         },
         {
-          "schluessel": "de.a2.e06.l07.a14",
+          "schluessel": "de.a2.e06.l07.a15",
           "typ": "frei",
           "ziel": "de.a2.e06.s0247",
           "nach": "ziel",
           "alternativen": ["Die Socken in Grau sind aus Wolle.", "Die grauen Socken bestehen aus Wolle."]
         },
         {
-          "schluessel": "de.a2.e06.l07.a15",
+          "schluessel": "de.a2.e06.l07.a16",
           "typ": "luecke",
           "ziel": "de.a2.e06.s0230",
           "wort": 0,
           "ablenker": ["Welcher", "Welches"]
         },
         {
-          "schluessel": "de.a2.e06.l07.a16",
+          "schluessel": "de.a2.e06.l07.a17",
           "typ": "hoeren_schreiben",
           "ziel": "de.a2.e06.s0242"
         },
         {
-          "schluessel": "de.a2.e06.l07.a17",
+          "schluessel": "de.a2.e06.l07.a18",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a2.e06.brille",
           "ablenker": ["de.a2.e06.regenschirm", "de.a2.e06.guertel"]
         },
         {
-          "schluessel": "de.a2.e06.l07.a18",
+          "schluessel": "de.a2.e06.l07.a19",
           "typ": "dialog",
           "zeilen": [
             {
@@ -3876,12 +3881,12 @@
           "ablenker": ["de.a2.e06.s0060", "de.a2.e06.s0066", "de.a2.e06.s0113"]
         },
         {
-          "schluessel": "de.a2.e06.l07.a19",
+          "schluessel": "de.a2.e06.l07.a20",
           "typ": "sprechen",
           "satz": "de.a2.e06.s0239"
         },
         {
-          "schluessel": "de.a2.e06.l07.a20",
+          "schluessel": "de.a2.e06.l07.a21",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a2.e06.s0235",
