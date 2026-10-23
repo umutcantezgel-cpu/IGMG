@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { and, eq } from 'drizzle-orm';
+import { and, eq, inArray } from 'drizzle-orm';
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { db as appDb, schema } from '@/lib/db';
 import { verschluessele } from '@/lib/krypto';
@@ -347,6 +347,28 @@ describe('Lehrkraft: nur die eigene Gruppe, nur lesbare Abgaben', () => {
       dienst.KeinZugang,
     );
     expect(await dienst.abgabenDerGruppe(await kontext(ids.lehrkraftB), ids.gruppe2)).toEqual([]);
+  });
+
+  it('S-L2 N-1 (Altbestand): mit der Rolle Administration weder Leitung noch Kinder – Gruppenkontext ohne Bezug', async () => {
+    const [eine] = await dienst.abgabenDerGruppe(await kontext(ids.lehrkraftA), ids.gruppe1);
+    expect((await kontext(ids.eltern)).kinder.has(ids.kindL)).toBe(true);
+    // Verbindung, die die Vergabewege heute ablehnen – direkt in der Datenbank wie ein Altbestand
+    const R = schema.rolleZuweisung;
+    await db.insert(R).values([
+      { benutzerId: ids.lehrkraftA, rolle: 'administration' },
+      { benutzerId: ids.eltern, rolle: 'administration' },
+    ]);
+    const lehrkraft = await kontext(ids.lehrkraftA);
+    expect({ leitung: lehrkraft.leitung.size, eigene: lehrkraft.eigeneGruppen.size, kinder: lehrkraft.kinder.size }).toEqual({
+      leitung: 0,
+      eigene: 0,
+      kinder: 0,
+    });
+    await expect(dienst.abgabenDerGruppe(lehrkraft, ids.gruppe1)).rejects.toBeInstanceOf(dienst.KeinZugang);
+    await expect(dienst.abgabeFuerLehrkraft(lehrkraft, ids.gruppe1, eine!.id)).rejects.toBeInstanceOf(dienst.KeinZugang);
+    expect((await kontext(ids.eltern)).kinder.size).toBe(0);
+    await db.delete(R).where(and(eq(R.rolle, 'administration'), inArray(R.benutzerId, [ids.lehrkraftA, ids.eltern])));
+    expect((await kontext(ids.lehrkraftA)).leitung.get(ids.gruppe1)).toBe('lehrkraft');
   });
 
   it('Rückgabe: Kommentar verschlüsselt, Prüfliste und Einstufung; die lernende Person sieht die Rückmeldung', async () => {
