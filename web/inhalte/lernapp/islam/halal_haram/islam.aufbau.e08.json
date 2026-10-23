@@ -1486,7 +1486,7 @@
         },
         {
           "schluessel": "islam.aufbau.e08.l02.a11",
-          "text": "Nach Abū Yūsuf und Muḥammad ist auch eine längere Frist erlaubt, wenn sie bekannt ist (al-Qudūrī). Al-Hidāya nennt dafür einen Bericht von Ibn ʿUmar, der ein Rücktrittsrecht von zwei Monaten erlaubt haben soll, und den Grund, dass man zum Überlegen manchmal mehr Zeit braucht.",
+          "text": "Nach Abū Yūsuf und Muḥammad ist auch eine längere Frist erlaubt, wenn sie bekannt ist (al-Qudūrī, al-Ikhtiyār). Al-Hidāya nennt dafür einen Bericht von Ibn ʿUmar, der ein Rücktrittsrecht von zwei Monaten erlaubt haben soll, und den Grund, dass man zum Überlegen manchmal mehr Zeit braucht.",
           "meinung": "abu_yusuf",
           "strittig": true,
           "kinderGeeignet": true,
@@ -3017,7 +3017,7 @@
           "aussage": "islam.aufbau.e08.l03.a15",
           "behauptung": "Najsh bedeutet nach al-Hidāya, mehr zu bieten, ohne kaufen zu wollen, damit ein anderer mehr zahlt.",
           "richtig": true,
-          "begruendung": "So erklärt al-Hidāya das najsh; es ist nach al-Qudūrī verpönt.",
+          "begruendung": "So erklärt al-Hidāya das najsh.",
           "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
           "lizenz": "CC-BY-SA-4.0"
         },
@@ -3670,7 +3670,7 @@
               "rechts": "Überschuss erlaubt, kein Aufschub"
             },
             {
-              "links": "Stoff gegen Weizen",
+              "links": "verschiedene Art, kein gemeinsames Maß oder Gewicht",
               "rechts": "Überschuss und Aufschub erlaubt"
             }
           ],
@@ -3805,7 +3805,7 @@
         },
         {
           "schluessel": "islam.aufbau.e08.l05.a02",
-          "text": "Silber gegen Silber und Gold gegen Gold darf man nach al-Qudūrī nur Gleich gegen Gleich tauschen, auch wenn sie sich in Güte und Verarbeitung unterscheiden; geprägte Münzen, Schmuck und Barren zählen nach al-Ikhtiyār gleich (vgl. Verweis Bukhari 2177). Außerdem müssen beide Gegenleistungen übergeben sein, bevor sich die beiden trennen (al-Qudūrī).",
+          "text": "Silber gegen Silber und Gold gegen Gold darf man nach al-Qudūrī und al-Hidāya nur Gleich gegen Gleich tauschen, auch wenn sie sich in Güte und Verarbeitung unterscheiden; geprägte Münzen, Schmuck und Barren zählen nach al-Ikhtiyār gleich (vgl. Verweis Bukhari 2177). Außerdem müssen beide Gegenleistungen übergeben sein, bevor sich die beiden trennen (al-Qudūrī).",
           "strittig": false,
           "kinderGeeignet": true,
           "belege": [
@@ -4458,7 +4458,7 @@
         },
         {
           "schluessel": "islam.aufbau.e08.l05.a17",
-          "text": "Den Vorauskauf von Brot erlaubt Abū Ḥanīfa nach al-Ikhtiyār nicht, weil sich Brote in Dicke, Dünne und Backgrad stark unterscheiden. Abū Yūsuf und Muḥammad erlauben ihn, und al-Ikhtiyār nennt das wegen des Bedarfs der Menschen die gewählte Ansicht (al-mukhtār).",
+          "text": "Den Vorauskauf von Brot erlaubt der Grundtext von al-Ikhtiyār nicht, weil sich Brote in Dicke, Dünne und Backgrad stark unterscheiden. Nach „den beiden“ ist er erlaubt, und al-Ikhtiyār nennt das wegen des Bedarfs der Menschen die gewählte Ansicht (al-mukhtār). Mit „den beiden“ sind in der Schule gewöhnlich Abū Yūsuf und Muḥammad gemeint; diese Zuordnung ist unsicher, weil die Stelle keine Namen nennt.",
           "strittig": true,
           "kinderGeeignet": true,
           "belege": [
@@ -4504,7 +4504,7 @@
         },
         {
           "schluessel": "islam.aufbau.e08.l05.a19",
-          "text": "Erlaubt ist der Auftrag nach al-Ikhtiyār nur bei Dingen, bei denen er üblich ist, etwa Gefäße aus Messing, Kupfer oder Glas, Holzwaren, Schuhe, Lederbehälter, Gürtel und Waffen; bei Unüblichem wie dem Weben von Stoffen nicht. Wird eine Lieferfrist gesetzt, wird der Auftrag nach Abū Ḥanīfa zum Vorauskauf mit dessen Bedingungen; nach Abū Yūsuf und Muḥammad bleibt er ein Auftrag (al-Ikhtiyār).",
+          "text": "Erlaubt ist der Auftrag nach al-Ikhtiyār nur bei Dingen, bei denen er üblich ist, etwa Gefäße aus Messing, Kupfer oder Glas, Holzwaren, Schuhe, Lederbehälter, Gürtel und Waffen; bei Unüblichem wie dem Weben von Stoffen nicht. Wird bei Üblichem eine Lieferfrist gesetzt, wird der Auftrag nach Abū Ḥanīfa zum Vorauskauf mit dessen Bedingungen; nach Abū Yūsuf und Muḥammad bleibt er ein Auftrag (al-Ikhtiyār, al-Hidāya).",
           "strittig": true,
           "kinderGeeignet": true,
           "belege": [
@@ -4532,6 +4532,19 @@
               "passageSha256Text": "e9dddbbb49665f33db265e02fac8e9859c94d0e756d3ee39bea2fa0adaae4aae",
               "zitatVon": 416,
               "zitatBis": 575,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Buyūʿ › Bāb as-Salam",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 3,
+              "seite": 78,
+              "passage": "hidaya.ms0593",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms593",
+              "passageSha256Text": "e6ed1d1d9f9c5587d98d9427d608834780018f4f0ce93e1c92f569e044b7b34e",
+              "zitatVon": 94,
+              "zitatBis": 166,
               "art": "sinngemaess"
             }
           ],
@@ -4754,7 +4767,7 @@
         },
         {
           "schluessel": "islam.aufbau.e08.l06.a03",
-          "text": "Bekannt wird der Nutzen nach al-Qudūrī auf drei Arten: durch eine Frist, etwa wenn man eine Wohnung oder Ackerland für eine bestimmte Zeit mietet; durch die Arbeit und ihre Beschreibung, etwa wenn man jemanden einen Stoff färben oder nähen lässt oder ein Tier für eine bestimmte Last oder Strecke mietet; und durch Zeigen, etwa „Trag dieses Essen an jenen Ort“.",
+          "text": "Bekannt wird der Nutzen nach al-Qudūrī und al-Ikhtiyār auf drei Arten: durch eine Frist, etwa wenn man eine Wohnung oder Ackerland für eine bestimmte Zeit mietet; durch die Arbeit und ihre Beschreibung, etwa wenn man jemanden einen Stoff färben oder nähen lässt oder ein Tier für eine bestimmte Last oder Strecke mietet; und durch Zeigen, etwa „Trag dieses Essen an jenen Ort“.",
           "strittig": false,
           "kinderGeeignet": true,
           "belege": [
