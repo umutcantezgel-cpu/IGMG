@@ -1,5 +1,14 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 23.10.2026 05:00 UTC – SICHERHEITSUPDATE + Fortsetzung:** `next@16.4.0` war von zwei kritischen
+  (GHSA-2464-fhr4-w9xw, GHSA-673q-mjm6-r5xr) und einer hohen Lücke (GHSA-p3m5-59mp-jv5r) betroffen; deshalb brach der
+  Upgrade-Hinweis von Next Agenten-Bauten ab. Update auf 16.4.2 (93b9fe9d, Patch übernommen, ADR 0001 + ENTSCHEIDUNGEN L3-E14)
+  zusammen mit L5-03 (gemergt 8a01d44b; Runde 2 nur „E2E nicht gelaufen“) auf `main`. Nachprüfung `scratchpad/tor-sec.sh`
+  läuft (check, volle Integration, Sprachen, Religion, Wortlaut, Bau + Lern-App-E2E inkl. Korrekturweg). S-L2 `wf_65accf27-c57`
+  (nur Bericht). Inhalte neu: A1 `wf_af7506e9-a2e`, A2 tr `wf_d2839e45-5c2`, A2 de `wf_f9b3049c-752`, A2 ar `wf_413afa87-b89`,
+  Wissen `wf_c2ab81ac-bb7` (Belegprüfung grund.e09–e11, aufbau.e01–e05). Stand vor dem Limit (19:55): A1 Lektorat ar 12/12,
+  Übersetzung ar e01–e05; A2 tr/de Lektorat 14/14, Übersetzung tr e01–e02, de e01–e03; A2 ar Entwurf e01–e08; Wissen
+  Entwürfe grund e01–e11, aufbau e01–e05.
 - **Stand 22.10.2026 19:00 UTC – nach dem Limit (≈ 15:07, Reset 18:00) fortgesetzt.** Seit 14:07 fertig: A1 Übersetzung tr
   12/12, Rückübersetzung tr e01–e06; A2 tr Lektorat e01–e10, A2 de Lektorat e01–e13, A2 ar Entwurf e01–e04; Wissen Belegprüfung
   grund.e07/e08 (Taharah/Salah komplett), Entwürfe grund.e09–e11 (akaid) und aufbau.e01 (sawm). Neu gestartet: Code
