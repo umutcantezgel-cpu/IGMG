@@ -215,6 +215,14 @@
           "laeuft": "Daten werden zusammengestellt …",
           "fertig": "Die Datei ist heruntergeladen."
         },
+        "abgaben": {
+          "titel": "Schreibabgaben der Lern-App",
+          "text": "{anzahl, plural, =0 {Es sind keine Schreibabgaben mehr gespeichert.} one {Sie haben einen Text an eine Lehrkraft gesendet.} other {Sie haben # Texte an Lehrkräfte gesendet.}} Sie können Ihre Schreibabgaben hier jederzeit endgültig löschen – auch wenn die Gruppen der Lern-App gerade ausgeschaltet sind. Danach sieht sie auch keine Lehrkraft mehr.",
+          "bestaetigt": "Ja, alle meine Schreibabgaben mit den Rückmeldungen endgültig löschen.",
+          "knopf": "Schreibabgaben löschen",
+          "geloescht": "Ihre Schreibabgaben sind gelöscht.",
+          "bestaetigen": "Bitte bestätigen Sie, dass Sie Ihre Schreibabgaben löschen möchten."
+        },
         "loeschen": {
           "titel": "Konto löschen",
           "text": "Sie können die Löschung Ihres Kontos beantragen (Art. 17 DSGVO). Die Gemeinde prüft den Antrag und löscht Ihr Konto innerhalb von 30 Tagen.",
@@ -550,6 +558,14 @@
           "laeuft": "Veriler hazırlanıyor …",
           "fertig": "Dosya indirildi."
         },
+        "abgaben": {
+          "titel": "Öğrenme Uygulaması yazma gönderileri",
+          "text": "{anzahl, plural, =0 {Kayıtlı yazma gönderisi kalmadı.} one {Bir öğretmene bir metin gönderdiniz.} other {Öğretmenlere # metin gönderdiniz.}} Yazma gönderilerinizi burada istediğiniz zaman kalıcı olarak silebilirsiniz – Öğrenme Uygulaması grupları şu anda kapalı olsa bile. Sonrasında hiçbir öğretmen de onları göremez.",
+          "bestaetigt": "Evet, tüm yazma gönderilerimi geri bildirimleriyle birlikte kalıcı olarak sil.",
+          "knopf": "Yazma gönderilerini sil",
+          "geloescht": "Yazma gönderileriniz silindi.",
+          "bestaetigen": "Lütfen yazma gönderilerinizi silmek istediğinizi onaylayın."
+        },
         "loeschen": {
           "titel": "Hesabı sil",
           "text": "Hesabınızın silinmesini talep edebilirsiniz (GVKT/DSGVO madde 17). Cemaat talebi inceler ve hesabınızı 30 gün içinde siler.",
@@ -884,6 +900,14 @@
           "knopf": "Download data",
           "laeuft": "Collecting data …",
           "fertig": "The file has been downloaded."
+        },
+        "abgaben": {
+          "titel": "Learning app writing submissions",
+          "text": "{anzahl, plural, =0 {No writing submissions are stored any more.} one {You have sent one text to a teacher.} other {You have sent # texts to teachers.}} You can delete your writing submissions here permanently at any time – even while the learning app groups are switched off. After that, no teacher can see them either.",
+          "bestaetigt": "Yes, permanently delete all my writing submissions together with the feedback.",
+          "knopf": "Delete writing submissions",
+          "geloescht": "Your writing submissions have been deleted.",
+          "bestaetigen": "Please confirm that you want to delete your writing submissions."
         },
         "loeschen": {
           "titel": "Delete account",

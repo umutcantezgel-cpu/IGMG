@@ -10,6 +10,7 @@ import { funktionAn } from '@/lib/funktionen';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { KONTO_EINWILLIGUNG_VERSION, textVersion } from '@/lib/konto/einwilligung';
 import { einwilligungsLage } from '@/lib/konto/sechzehn';
+import { folgenDesWiderrufs } from '@/lib/lernapp/schreiben/folgen';
 import { verlangeKontenAktion } from '@/lib/konto/zugang';
 import { ladeGruppenKontext, verlangeKontoRecht } from '@/lib/rechte/gemeinde';
 import { KeinRecht } from '@/lib/rechte/pruefe';
@@ -41,7 +42,7 @@ export async function eigeneEinwilligungAendern(fd: FormData): Promise<void> {
   const [l] = await db.select({ sechzehnAm: schema.lernende.sechzehnAm }).from(schema.lernende).where(eq(schema.lernende.id, lernendeId));
   if (einwilligungsLage(l?.sechzehnAm ?? null, berlinerDatum(new Date())) === 'eltern') throw new KeinRecht();
 
-  await db.transaction(async (tx) => {
+  const widerrufen = await db.transaction(async (tx): Promise<boolean> => {
     if (aktion === 'erteilen') {
       const [eigen] = await tx
         .select({ id: schema.kontoEinwilligung.id })
@@ -54,7 +55,7 @@ export async function eigeneEinwilligungAendern(fd: FormData): Promise<void> {
             isNull(schema.kontoEinwilligung.widerrufenAm),
           ),
         );
-      if (eigen) return;
+      if (eigen) return false;
       await tx.insert(schema.kontoEinwilligung).values({
         benutzerId: konto.benutzerId,
         lernendeId,
@@ -73,9 +74,9 @@ export async function eigeneEinwilligungAendern(fd: FormData): Promise<void> {
         },
         tx,
       );
-      return;
+      return false;
     }
-    const widerrufen = await tx
+    const zeilen = await tx
       .update(schema.kontoEinwilligung)
       .set({ widerrufenAm: new Date() })
       .where(
@@ -86,7 +87,7 @@ export async function eigeneEinwilligungAendern(fd: FormData): Promise<void> {
         ),
       )
       .returning({ id: schema.kontoEinwilligung.id });
-    if (!widerrufen.length) return;
+    if (!zeilen.length) return false;
     if (art === 'push_kind') await tx.delete(schema.pushAbo).where(eq(schema.pushAbo.benutzerId, konto.benutzerId));
     await protokolliere(
       {
@@ -98,7 +99,10 @@ export async function eigeneEinwilligungAendern(fd: FormData): Promise<void> {
       },
       tx,
     );
+    return true;
   });
+  // Folgen nach dem gespeicherten Widerruf (S-L2 N-2): bei `lernapp` die nicht mehr gedeckten Schreibabgaben
+  if (widerrufen) await folgenDesWiderrufs(art, { benutzerId: konto.benutzerId }, konto.benutzerId);
   redirect(
     pfadFuer(
       { pathname: '/mein-bereich', query: { einwilligung: aktion === 'erteilen' ? 'erteilt' : 'widerrufen' }, hash: 'einwilligungen' },

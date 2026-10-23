@@ -10,6 +10,7 @@ import { db, schema, type Transaktion } from '@/lib/db';
 import { funktionAn } from '@/lib/funktionen';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { hatAdministration } from '@/lib/konto/einladung';
+import { loeseAbgabenVonGruppe } from '@/lib/lernapp/schreiben/folgen';
 import { erzeugeTermine } from '@/lib/lernen/dienst';
 import { planeHinweis, SCHUTZROLLEN_EMPFAENGER, versendeOffeneMails } from '@/lib/mail/ausgang';
 import { KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
@@ -113,7 +114,8 @@ export async function speichereGruppe(_vorher: GruppenZustand, fd: FormData): Pr
  * Folgen des Archivierens (S2/S3): Beide Kanäle der Gruppe werden archiviert und laufende Mitgliedschaften enden heute –
  * kein unbeaufsichtigter Kanal, nachdem die Leitung mit dem Archivieren ihren Zugang verliert. Wird die Gruppe wieder
  * aktiv, öffnen sich die Kanäle wieder (eine Pause der Rolle kinderschutz bleibt bestehen); Mitglieder ordnet die
- * Verwaltung neu zu.
+ * Verwaltung neu zu. Schreibabgaben der Lern-App an die Gruppe werden von ihr gelöst (S-L2 N-2) – auch eine wieder aktive
+ * Gruppe liest sie nie mehr.
  */
 async function archivFolgen(tx: Transaktion, gruppeId: string, status: 'aktiv' | 'archiviert'): Promise<void> {
   if (status === 'archiviert') {
@@ -122,6 +124,7 @@ async function archivFolgen(tx: Transaktion, gruppeId: string, status: 'aktiv' |
       .update(schema.gruppenMitglied)
       .set({ bis: berlinerDatum(new Date()) })
       .where(and(eq(schema.gruppenMitglied.gruppeId, gruppeId), isNull(schema.gruppenMitglied.bis)));
+    await loeseAbgabenVonGruppe(tx, { gruppeId });
     return;
   }
   await tx
@@ -240,7 +243,10 @@ export async function mitgliedHinzufuegen(fd: FormData): Promise<void> {
   redirect(mitgliedZiel(fd, p.data.gruppeId, p.data.lernendeId, 'mitglied'));
 }
 
-/** Mitgliedschaft beenden (heute); Anwesenheit und Fortschritt bleiben erhalten. */
+/**
+ * Mitgliedschaft beenden (heute); Anwesenheit und Fortschritt bleiben erhalten. Schreibabgaben der Lern-App an diese Gruppe
+ * werden von ihr gelöst (S-L2 N-2): Auch nach einem Wiedereintritt oder mit einer neuen Lehrkraft liest sie niemand mehr.
+ */
 export async function mitgliedEntfernen(fd: FormData): Promise<void> {
   const a = await verlange();
   const p = mitgliedSchema.safeParse({ gruppeId: fd.get('gruppeId'), lernendeId: fd.get('lernendeId') });
@@ -257,6 +263,7 @@ export async function mitgliedEntfernen(fd: FormData): Promise<void> {
         ),
       )
       .returning({ id: schema.gruppenMitglied.lernendeId });
+    if (z.length) await loeseAbgabenVonGruppe(tx, { gruppeId: p.data.gruppeId, lernendeId: p.data.lernendeId });
     if (z.length)
       await protokolliere(
         {

@@ -82,13 +82,14 @@ Lernende können ab B1 kurze Texte schreiben und sie **selbst** mit Musterantwor
 3. Gib eine Rückmeldung – alles freiwillig, aber mindestens eins davon:
    - die **Prüfliste** (Aufgabe, Zusammenhang, Wortschatz, Grammatik): „noch am Anfang“, „teilweise“, „überwiegend“ oder „sicher“,
    - eine **Einstufung ohne Note**: „Aufgabe gut gelöst“, „Auf einem guten Weg“ oder „Lohnt sich, noch einmal zu schreiben“,
-   - einen **Kommentar** (höchstens 4.000 Zeichen): freundlich und zur Sache, ohne Noten, ohne Vergleiche, nichts Privates.
+   - einen **Kommentar** (höchstens 4.000 Zeichen): freundlich und zur Sache, ohne Noten, ohne Vergleiche, nichts Privates. **Bei Kindern unter 16 gibt es kein Kommentarfeld**, bis der Kinderschutz über diesen Weg entschieden hat (DSFA D-L16) – gib dort die Rückmeldung mit Prüfliste und Einstufung; Fragen besprichst du im Unterricht.
 4. Tippe auf **„Rückmeldung zurückgeben“**. Die lernende Person sieht sie in der Lern-App unter „Gruppe“ → „Meine Schreibabgaben“. Ändern kannst du sie danach mit „Rückmeldung ändern“.
 
 Gut zu wissen:
 
 - Texte und Kommentare sind **verschlüsselt** gespeichert und werden **12 Monate** nach dem Senden gelöscht. Sie stehen nie in E-Mails, Push-Nachrichten oder im Protokoll.
-- Verlässt jemand die Gruppe oder widerruft die Einwilligung, verschwinden die Abgaben **sofort** aus deiner Liste („Diese Abgabe ist nicht mehr sichtbar.“).
+- Verlässt jemand die Gruppe oder widerruft die Einwilligung, verschwinden die Abgaben **sofort** aus deiner Liste („Diese Abgabe ist nicht mehr sichtbar.“) – und kommen auch bei einem Wiedereintritt nicht zurück: Beim Austritt werden sie von der Gruppe gelöst, nach einem Widerruf gelöscht. Neu gesendete Texte siehst du wieder.
+- Übernimmst du eine Gruppe von einer anderen Lehrkraft, siehst du die Abgaben der laufenden Mitglieder samt früherer Rückmeldungen.
 - Lernende können ihre Abgaben jederzeit selbst löschen. Je Aufgabe sind höchstens drei Fassungen möglich.
 
 ## 9. Datenschutz in fünf Regeln

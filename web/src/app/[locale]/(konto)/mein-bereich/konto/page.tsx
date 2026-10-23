@@ -1,4 +1,4 @@
-import { FileDown, Fingerprint, KeyRound, MonitorSmartphone, ShieldCheck, Trash2, UserRound, X } from 'lucide-react';
+import { FileDown, Fingerprint, KeyRound, MonitorSmartphone, PenLine, ShieldCheck, Trash2, UserRound, X } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { AbmeldenKnopf } from '@/components/konto/AbmeldenKnopf';
@@ -17,7 +17,8 @@ import { PasskeyHinzufuegen } from '@/components/mein-bereich/PasskeyHinzufuegen
 import { Meldung } from '@/components/verwaltung/Meldung';
 import type { Locale } from '@/i18n/routing';
 import { aktuelleSitzungsId, faktorPflicht, verlangeKontoSeite } from '@/lib/konto/zugang';
-import { andereSitzungenBeenden, passkeyEntfernen, sitzungBeenden } from '@/server/actions/mein-bereich';
+import { anzahlEigenerAbgaben } from '@/lib/lernapp/schreiben/folgen';
+import { andereSitzungenBeenden, passkeyEntfernen, schreibabgabenLoeschen, sitzungBeenden } from '@/server/actions/mein-bereich';
 import { ladeKontoDetails, ladeLoeschantrag } from '@/server/queries/konto';
 
 /** Je Anfrage gerendert, wartet auf die Sitzung (siehe Layout). */
@@ -29,11 +30,15 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const LOCALE: Record<Locale, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' };
+/** Rückmeldungen der Aktion „Schreibabgaben löschen“ (`?abgaben=…`); andere Werte zeigen nichts. */
+const ABGABEN_MELDUNG = { geloescht: 'erfolg', bestaetigen: 'fehler', zuViele: 'fehler' } as const;
 
 /**
  * Konto (AUFTRAG 3.5 „Alle“): Profil, Passwort, Zwei-Faktor (QR lokal als SVG), Passkeys, angemeldete Geräte,
  * Datenexport (Art. 15/20), Löschantrag (Art. 17). Lehrkräfte ohne zweiten Faktor sehen nur dessen Einrichtung
  * (`?faktor=pflicht`, Weiterleitung aus `verlangeKonto`). Kinderkonten: nur Profil-Sprache, Passwort, Geräte, Export.
+ * Wer Schreibabgaben der Lern-App gespeichert hat, kann sie hier endgültig löschen – auch Kinder und auch, wenn die
+ * Gruppen der Lern-App ausgeschaltet sind (S-L2 N-2).
  */
 export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/mein-bereich/konto'>) {
   const sprache = (await getLocale()) as Locale;
@@ -63,13 +68,18 @@ export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/
   }
 
   const aktuell = await aktuelleSitzungsId();
-  const [details, antrag] = await Promise.all([ladeKontoDetails(k.benutzerId, aktuell), ladeLoeschantrag(k.benutzerId)]);
+  const [details, antrag, abgaben] = await Promise.all([
+    ladeKontoDetails(k.benutzerId, aktuell),
+    ladeLoeschantrag(k.benutzerId),
+    anzahlEigenerAbgaben(k.benutzerId),
+  ]);
   if (!details) return null;
   const zeit = new Intl.DateTimeFormat(LOCALE[sprache], { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Europe/Berlin' });
   const datum = new Intl.DateTimeFormat(LOCALE[sprache], { dateStyle: 'long', timeZone: 'Europe/Berlin' });
   const pflicht = faktorPflicht(k);
   const passkeysErlaubt = !k.istKind && k.verwaltungsRollen.length === 0;
   const andere = details.sitzungen.filter((x) => !x.aktuell).length;
+  const abgabenMeldung = typeof s.abgaben === 'string' && s.abgaben in ABGABEN_MELDUNG ? (s.abgaben as keyof typeof ABGABEN_MELDUNG) : null;
 
   return (
     <MeinBereichRahmen
@@ -223,6 +233,34 @@ export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/
       <Abschnitt id="daten" Icon={FileDown} titel={t('konto.export.titel')} text={t('konto.export.text')}>
         <DatenExport />
       </Abschnitt>
+
+      {abgaben > 0 || abgabenMeldung ? (
+        <Abschnitt id="schreibabgaben" Icon={PenLine} titel={t('konto.abgaben.titel')} text={t('konto.abgaben.text', { anzahl: abgaben })}>
+          <div className="flex flex-col gap-4">
+            {abgabenMeldung ? (
+              <Meldung art={ABGABEN_MELDUNG[abgabenMeldung]} fokus>
+                {abgabenMeldung === 'zuViele' ? t('zuViele') : t(`konto.abgaben.${abgabenMeldung}`)}
+              </Meldung>
+            ) : null}
+            {abgaben > 0 ? (
+              <form action={schreibabgabenLoeschen} className="flex flex-col gap-4">
+                <input type="hidden" name="sprache" value={sprache} />
+                <label className="flex min-h-11 cursor-pointer items-start gap-3">
+                  <input type="checkbox" name="bestaetigt" value="ja" required className="mt-1 size-5 shrink-0 accent-gruen-700" />
+                  <span>{t('konto.abgaben.bestaetigt')}</span>
+                </label>
+                <button
+                  type="submit"
+                  className="inline-flex min-h-12 druck cursor-pointer items-center gap-2 self-start rounded-md border-2 border-fehler bg-weiss px-5 font-bold text-fehler transition duration-(--dauer-rueckmeldung) hover:bg-fehler-toenung"
+                >
+                  <Trash2 aria-hidden className="size-5" />
+                  {t('konto.abgaben.knopf')}
+                </button>
+              </form>
+            ) : null}
+          </div>
+        </Abschnitt>
+      ) : null}
 
       <Abschnitt id="loeschen" Icon={Trash2} titel={t('konto.loeschen.titel')} text={k.istKind ? undefined : t('konto.loeschen.text')}>
         {antrag ? (

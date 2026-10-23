@@ -18,6 +18,7 @@ import { meldeAnSorgeberechtigte } from '@/lib/konto/sicherheitsmail';
 import { einwilligungsLage } from '@/lib/konto/sechzehn';
 import { PASSWORT_MIN } from '@/lib/konto/passwort-staerke';
 import { verlangeKontenAktion } from '@/lib/konto/zugang';
+import { folgenDesWiderrufs } from '@/lib/lernapp/schreiben/folgen';
 import { KIND_EINWILLIGUNGEN, type KindEinwilligung } from '@/lib/lernen/ansicht';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { ladeGruppenKontext, verlangeKontoRecht } from '@/lib/rechte/gemeinde';
@@ -144,7 +145,7 @@ export async function einwilligungAendern(fd: FormData): Promise<void> {
 
   // Widerruf: Der Zugang des Kindes wird gelöscht – nur nach ausdrücklicher Bestätigung
   if (art === 'kinderkonto' && b.kindBenutzerId && !p.data.bestaetigt) zurueck({ fehler: 'bestaetigen', art });
-  const geloescht = await db.transaction(async (tx) => {
+  const ergebnis = await db.transaction(async (tx) => {
     const widerrufen = await tx
       .update(schema.kontoEinwilligung)
       .set({ widerrufenAm: new Date() })
@@ -185,8 +186,11 @@ export async function einwilligungAendern(fd: FormData): Promise<void> {
       },
       tx,
     );
-    return zugangLoeschen ? b.kindBenutzerId : null;
+    return { zugang: zugangLoeschen ? b.kindBenutzerId : null };
   });
+  const geloescht = ergebnis?.zugang ?? null;
+  // Folgen nach dem gespeicherten Widerruf (S-L2 N-2): bei `lernapp` die nicht mehr gedeckten Schreibabgaben des Kindes
+  if (ergebnis) await folgenDesWiderrufs(art, { lernendeId }, konto.benutzerId);
   // Kinderzugang löschen wie jedes Gemeinde-Konto (S2/S3): Chat-Texte als Platzhalter ohne Text, Sitzungen, Push-Abos,
   // Links – der Lerndatensatz bleibt (set null). Nie ein Konto mit Verwaltungsrolle.
   if (geloescht) {

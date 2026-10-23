@@ -144,7 +144,10 @@ const FAELLE: Fall[] = [
   ...f('mein-bereich', ['profilSpeichern', 'kontoPasswortAendern', 'kontoZweiFaktorAbschalten', 'loeschAntragStellen'], SOLL.meinBereich, [
     'konten',
   ]),
-  ...f('mein-bereich', ['passkeyEntfernen', 'sitzungBeenden', 'andereSitzungenBeenden'], SOLL.meinBereich, ['konten']),
+  // `schreibabgabenLoeschen` (S-L2 N-2): eigene Schreibabgaben der Lern-App löschen – bewusst ohne `lernapp_gruppen`
+  ...f('mein-bereich', ['passkeyEntfernen', 'sitzungBeenden', 'andereSitzungenBeenden', 'schreibabgabenLoeschen'], SOLL.meinBereich, [
+    'konten',
+  ]),
   ...f('mein-bereich', ['datenExportieren'], SOLL.meinBereich, ['konten'], { aufruf: (fn) => fn() }),
   ...f('mein-bereich', ['kontoZweiFaktorStarten', 'kontoZweiFaktorBestaetigen'], SOLL.einrichtung, ['konten']),
   ...f('mein-bereich', ['passkeyRegistrierOptionen'], SOLL.passkey, ['konten'], { aufruf: (fn) => fn() }),

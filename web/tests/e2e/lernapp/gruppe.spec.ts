@@ -5,6 +5,7 @@ import { expect, type Page, test } from '@playwright/test';
 import pg from 'pg';
 import fehlerTexte from '../../../messages/bereiche/fehlerseiten.json';
 import kinderTexte from '../../../messages/bereiche/kinder.json';
+import meinBereichTexte from '../../../messages/bereiche/mein-bereich.json';
 import unterrichtTexte from '../../../messages/bereiche/unterricht.json';
 import de from '../../../messages/lernapp/de.json';
 import { beispielkonten, kindAnmelden, leitungAnmelden } from '../hilfen/gemeinde';
@@ -24,8 +25,9 @@ import { ernsteBefunde, KURS, LEKTION_1, liveRegion, spieleLektion1 } from './hi
  * Danach der Korrekturweg (Tor L5 „Schreibabläufe in E2E“; L5-03; PLAN §4.3; ADR 0042 Nr. 11): Die Lehrkraft weist
  * Lektion 4 (mit der Schreibaufgabe) zu; das Kind schreibt den Text, prüft ihn und sendet ihn an die Lehrkraft – ohne
  * verbundenes Gerät über „Mit meinem Konto prüfen“ (die Abgabe braucht keinen Abgleich); die Lehrkraft gibt eine
- * Rückmeldung (Prüfliste, Einstufung ohne Note, Kommentar) zurück; die Aufsicht derselben Gruppe sieht weder Liste noch
- * Text (ADR 0042 „Folgen“); das Kind sieht die Rückmeldung unter „Gruppe“.
+ * Rückmeldung (Prüfliste, Einstufung ohne Note) zurück – einen Kommentar an Kinder gibt es nicht, solange D-L16 offen ist
+ * (S-L2 M-1: das Feld fehlt, ein Hinweis sagt warum); die Aufsicht derselben Gruppe sieht weder Liste noch Text (ADR 0042
+ * „Folgen“); das Kind sieht die Rückmeldung unter „Gruppe“ und löscht seine Abgaben unter „Mein Bereich › Konto“ (S-L2 N-2).
  * Beide Abläufe teilen Gruppe und Kind und laufen deshalb in dieser Datei nacheinander (nie parallel in zwei Dateien).
  */
 const u = unterrichtTexte.de.unterricht.lernapp;
@@ -214,8 +216,10 @@ test('Lehrkraft weist zu, Kind lernt ohne Bestenliste, Lehrkraft sieht „erledi
 // ——— Korrekturweg (L5-03) ———
 
 const sa = de.schreibabgabe;
+const kontoAbgaben = meinBereichTexte.de.meinBereich.konto.abgaben;
 const LEKTION_4 = `${KURS}.a1.e01.l04`;
 const TEXT = 'Ben su içiyorum. Kitap yeni.';
+/** Darf nirgends erscheinen: Das Kommentarfeld fehlt bei Kindern (S-L2 M-1). */
 const KOMMENTAR = '[Kommentar] Schöne Sätze. Schreibe beim nächsten Mal noch einen dritten Satz.';
 
 const ueberschrift = (page: Page, text: string) => expect(page.getByRole('heading', { level: 2, name: text, exact: true })).toBeVisible();
@@ -324,7 +328,8 @@ test('Kind sendet einen Text an die Lehrkraft, die Lehrkraft gibt ihn mit Rückm
     befunde.push(...(await ernsteBefunde(k, 'Übung nach dem Senden')));
     await k.getByRole('button', { name: de.schreiben.selbst.gut, exact: true }).click();
 
-    // 3. Lehrkraft: Abgabe in der eigenen Gruppe, Rückmeldung mit Prüfliste, Einstufung und Kommentar zurückgeben
+    // 3. Lehrkraft: Abgabe in der eigenen Gruppe, Rückmeldung mit Prüfliste und Einstufung zurückgeben – ohne Kommentarfeld,
+    //    weil die Abgabe von einem Kind kommt (S-L2 M-1, D-L16 offen)
     await l.goto(seite);
     const liste = l.locator('#abgaben');
     await expect(liste).toContainText(emre.name);
@@ -344,7 +349,8 @@ test('Kind sendet einen Text an die Lehrkraft, die Lehrkraft gibt ihn mit Rückm
       .getByRole('radio', { name: u.korrektur.stufe.s2, exact: true })
       .check();
     await korrektur.getByRole('radio', { name: u.korrektur.einstufungen.unterwegs, exact: true }).check();
-    await korrektur.getByLabel(u.korrektur.kommentar, { exact: true }).fill(KOMMENTAR);
+    await expect(korrektur.getByLabel(u.korrektur.kommentar, { exact: true })).toHaveCount(0);
+    await expect(korrektur.getByText(u.korrektur.kommentarKind, { exact: true })).toBeVisible();
     befunde.push(...(await ernsteBefunde(l, 'Korrektur')));
     await korrektur.getByRole('button', { name: u.korrektur.zurueckgeben, exact: true }).click();
     await expect(l.getByText(u.ok.zurueckgegeben, { exact: true })).toBeVisible();
@@ -373,11 +379,25 @@ test('Kind sendet einen Text an die Lehrkraft, die Lehrkraft gibt ihn mit Rückm
     await expect(meine.getByRole('heading', { level: 2, name: sa.liste.titel })).toBeVisible();
     await expect(meine).toContainText(sa.liste.zurueck);
     await expect(meine).toContainText(TEXT);
-    await expect(meine).toContainText(KOMMENTAR);
+    await expect(meine).not.toContainText(KOMMENTAR);
+    await expect(meine.getByText(sa.liste.kommentar, { exact: true })).toHaveCount(0);
     await expect(meine).toContainText(sa.einstufung.unterwegs);
     // Prüfliste der Lehrkraft: „Aufgabe – sicher“ (die eigene Einschätzung war überall „überwiegend“)
     await expect(meine.locator('dd').filter({ hasText: sa.stufe.s3 })).toHaveCount(1);
     befunde.push(...(await ernsteBefunde(k, 'Gruppe mit Rückmeldung')));
+
+    // 6. Kind: „Mein Bereich › Konto“ zeigt die gespeicherten Schreibabgaben und löscht sie nach Bestätigung (S-L2 N-2,
+    //    geht auch ohne den Schalter der Gruppen); danach ist die Liste in der Lern-App leer
+    await k.goto('/mein-bereich/konto');
+    const konto = k.locator('#schreibabgaben');
+    await expect(konto.getByRole('heading', { name: kontoAbgaben.titel })).toBeVisible();
+    befunde.push(...(await ernsteBefunde(k, 'Konto mit Schreibabgaben')));
+    await konto.getByLabel(kontoAbgaben.bestaetigt, { exact: true }).check();
+    await konto.getByRole('button', { name: kontoAbgaben.knopf, exact: true }).click();
+    await expect(k.getByText(kontoAbgaben.geloescht, { exact: true })).toBeVisible();
+    await k.goto('/lern-app/de/gruppe');
+    await k.getByRole('button', { name: de.gruppe.laden, exact: true }).click();
+    await expect(k.getByRole('region', { name: sa.liste.titel, exact: true })).toContainText(sa.liste.leer);
     expect(befunde).toEqual([]);
   } finally {
     await lehrkraft.close();

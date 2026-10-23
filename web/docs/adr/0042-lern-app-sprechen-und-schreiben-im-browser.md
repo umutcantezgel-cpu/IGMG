@@ -96,6 +96,30 @@ Gilt vor Nr. 1–12 und den Abschnitten oben, wo es abweicht.
     (`FOR NO KEY UPDATE`), damit gleichzeitige Abgaben sie nicht überschreiten. Eine Rückgabe, deren Abgabe inzwischen gelöscht
     ist, endet als „gibt es nicht“ ohne Audit-Eintrag.
 
+## Fortschreibung nach der Sicherheitsprüfung S-L2 (23.10.2026, Auflagen M-1, N-2, H-1)
+
+17. **Nr. 11, Austritt, Widerruf, Lehrkraftwechsel (S-L2 N-2):** Beim Austritt (Mitglied entfernt – in der Verwaltung oder
+    durch die Leitung im Chat, S-09 –, Lernende beendet, Gruppe archiviert) werden die Abgaben der Person von der Gruppe gelöst (`gruppe_id` und `korrigiert_von` leer,
+    `lib/lernapp/schreiben/folgen.ts`); kein Wiedereintritt und keine neue Lehrkraft macht sie wieder lesbar, die Person
+    sieht und löscht sie weiter. Die Lehrkraft liest nur Abgaben, die eine geltende Einwilligung schon zur Zeit der Abgabe
+    deckte (`lernappEinwilligungDetail.seit`); ein neues Erteilen deckt nie die Zeit davor. Nach einem Widerruf von
+    `lernapp` löscht `folgenDesWiderrufs` die nicht mehr gedeckten Abgaben (die Widerrufswege der Eltern und der
+    Jugendlichen rufen es auf; Erteilen und Widerrufen von `lernapp` in „Mein Bereich“ folgt mit S-L3 N-2). Entscheidung
+    zum Lehrkraftwechsel bei laufender Mitgliedschaft: Abgaben bleiben **gruppengebunden** (DSFA D-L17) – die neue Lehrkraft
+    übernimmt sie wie das Gruppenbuch. „Mein Bereich › Konto“ löscht alle eigenen Abgaben auch ohne `lernapp_gruppen`; der
+    Datenexport nennt die Kennung jeder Abgabe.
+18. **Nr. 11, Kommentar an Kinder (S-L2 M-1, DSFA D-L16):** Bis Kinderschutz, DSB und Bildung entschieden haben, bekommen
+    Abgaben in der Einwilligungslage „eltern“ nur Prüfliste und Einstufung (`schreiben/kinderschutz.ts`): Dienst
+    (`KommentarGesperrt`) und Action (`kommentarKind`) lehnen einen Kommentar ab, das Formular der Lehrkraft blendet das Feld
+    aus und nennt den Grund; eine Rückgabe ohne Kommentar entfernt dort auch einen früheren. Startklar meldet Rot, solange
+    `lernapp_gruppen` an ist und `ENTSCHEIDUNG_D_L16` fehlt. Der Eintrag `kommentarAnKinder: true` setzt die beschlossenen
+    Schutzmaßnahmen voraus (Eltern sehen den Kommentar oder können ihn melden, Fassungen statt Ersetzen, Bremse).
+19. **Route, Größe (S-L2 H-1):** `POST /api/lernapp/schreiben` liest den Körper als Strom und bricht nach 64 KB ab, auch
+    ohne oder mit falscher Content-Length (wie der Abgleich). Der Schalter `lernapp_gruppen` setzt zusätzlich `konten`
+    voraus (S-L2 H-2, `funktionen-regeln.ts`). Die Einwilligung der Eltern zählt nur mit bestätigtem Eltern-Kind-Bezug
+    (S-L2 H-3, wie Lernwoche und Familie). Ein Leseeintrag im Audit beim Öffnen einer Abgabe (S-L2 H-4) bleibt offen und
+    wird mit D-L16 entschieden.
+
 ## Alternativen
 
 - Web Speech API des Browsers: verworfen. Je nach Browser geht das Audio an Server des Herstellers; das widerspricht „nichts verlässt das Gerät“ und funktioniert nicht offline.

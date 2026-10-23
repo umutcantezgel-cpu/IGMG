@@ -45,11 +45,21 @@ export function loeschenAbFuer(eingereichtAm: Date, monate: number): Date {
 }
 
 /**
+ * Deckt die geltende Einwilligung `lernapp` eine Abgabe? Nur, wenn sie schon zur Zeit der Abgabe galt (`seit` =
+ * frühestes `erteiltAm` der jetzt zählenden Einwilligungen, `sync/server.ts` `lernappEinwilligungDetail`). Nach Widerruf
+ * und neuem Erteilen bleiben Abgaben aus der Zeit davor unlesbar (S-L2 N-2).
+ */
+export function einwilligungDeckt(seit: Date | null, eingereichtAm: Date): boolean {
+  return seit !== null && seit.getTime() <= eingereichtAm.getTime();
+}
+
+/**
  * Darf die Lehrkraft diese Abgabe lesen und korrigieren? Nur wenn alles zugleich gilt:
  * - sie ist Lehrkraft (nicht Aufsicht) dieser aktiven Gruppe (`aufgabe.bearbeiten`);
- * - die Abgabe ging an diese Gruppe;
+ * - die Abgabe ging an diese Gruppe (beim Austritt wird sie von der Gruppe gelöst, `schreiben/folgen.ts`);
  * - die lernende Person ist **laufendes** Mitglied der Gruppe (Austritt → sofort nicht mehr lesbar);
- * - deren Einwilligung `lernapp` gilt – bei Kindern die der Eltern (Widerruf → sofort nicht mehr lesbar);
+ * - deren Einwilligung `lernapp` gilt und deckt die Abgabe (`einwilligungDeckt`) – bei Kindern die der Eltern (Widerruf →
+ *   sofort nicht mehr lesbar, auch nach neuem Erteilen nicht);
  * - die Abgabe ist nicht abgelaufen.
  * Administration, Eltern, andere Lernende und fremde Lehrkräfte lesen nie (sie sind nie Lehrkraft dieser Gruppe).
  */

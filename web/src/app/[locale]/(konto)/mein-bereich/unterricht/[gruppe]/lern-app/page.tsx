@@ -52,8 +52,9 @@ const OK = [
   'zurueckgegeben',
   'abgabeLeer',
   'abgabeWeg',
+  'kommentarKind',
 ] as const;
-const FEHLER_OK: ReadonlySet<string> = new Set(['doppelt', 'grenze', 'ungueltig', 'abgabeLeer', 'abgabeWeg']);
+const FEHLER_OK: ReadonlySet<string> = new Set(['doppelt', 'grenze', 'ungueltig', 'abgabeLeer', 'abgabeWeg', 'kommentarKind']);
 
 /**
  * Lehrkraft › Lern-App der Gruppe (L7-02; PLAN §3.1 Konto-Seite; ADR 0043 Nr. 7/8; KERN 4.0 §5): Einheit oder Lektion
@@ -64,7 +65,8 @@ const FEHLER_OK: ReadonlySet<string> = new Set(['doppelt', 'grenze', 'ungueltig'
  *
  * Korrekturweg (L5-03, ADR 0042 Nr. 11): Liste der Schreibabgaben der Gruppe ohne Texte; mit `?abgabe=<id>` die eine Abgabe
  * mit Text, Selbsteinschätzung und dem Formular für die Rückmeldung (Kommentar, Prüfliste, Einstufung ohne Note). Sichtbar
- * nur, solange die lernende Person laufendes Mitglied ist und ihre Einwilligung gilt (`schreiben/dienst.ts`).
+ * nur, solange die lernende Person laufendes Mitglied ist und ihre Einwilligung gilt (`schreiben/dienst.ts`). Bei Abgaben von
+ * Kindern fehlt das Kommentarfeld mit kurzer Begründung, solange D-L16 offen ist (S-L2 M-1, `schreiben/kinderschutz.ts`).
  */
 export default async function LernAppGruppe({ params, searchParams }: PageProps<'/[locale]/mein-bereich/unterricht/[gruppe]/lern-app'>) {
   // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
@@ -409,23 +411,29 @@ export default async function LernAppGruppe({ params, searchParams }: PageProps<
                   </label>
                 ))}
               </fieldset>
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="lernapp-kommentar" className="font-bold">
-                  {tl('korrektur.kommentar')}
-                </label>
-                <textarea
-                  id="lernapp-kommentar"
-                  name="kommentar"
-                  rows={6}
-                  maxLength={KOMMENTAR_MAX_ZEICHEN}
-                  defaultValue={abgabe.kommentar ?? ''}
-                  aria-describedby="lernapp-kommentar-hilfe"
-                  className="w-full rounded-md border-2 border-rand bg-weiss p-3 text-18"
-                />
-                <p id="lernapp-kommentar-hilfe" className="text-16 text-tinte-2">
-                  {tl('korrektur.kommentarHilfe')}
+              {abgabe.kommentarErlaubt ? (
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="lernapp-kommentar" className="font-bold">
+                    {tl('korrektur.kommentar')}
+                  </label>
+                  <textarea
+                    id="lernapp-kommentar"
+                    name="kommentar"
+                    rows={6}
+                    maxLength={KOMMENTAR_MAX_ZEICHEN}
+                    defaultValue={abgabe.kommentar ?? ''}
+                    aria-describedby="lernapp-kommentar-hilfe"
+                    className="w-full rounded-md border-2 border-rand bg-weiss p-3 text-18"
+                  />
+                  <p id="lernapp-kommentar-hilfe" className="text-16 text-tinte-2">
+                    {tl('korrektur.kommentarHilfe')}
+                  </p>
+                </div>
+              ) : (
+                <p id="lernapp-kommentar-kind" className="text-16 text-tinte-2">
+                  {tl('korrektur.kommentarKind')}
                 </p>
-              </div>
+              )}
               <div className="flex flex-wrap gap-3">
                 <button type="submit" className={KNOPF_PRIMAER}>
                   {tl(abgabe.korrigiertAm ? 'korrektur.aendern' : 'korrektur.zurueckgeben')}

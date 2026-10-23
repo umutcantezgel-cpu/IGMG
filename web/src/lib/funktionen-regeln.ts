@@ -84,15 +84,16 @@ export const MIT_PERSONENDATEN = [
 
 /**
  * Sperren (KERN 4.0 §6, „Sperre im Cockpit“): Ein Schalter wirkt nur, wenn alle seine Voraussetzungen wirken. Jeder
- * Schalter der Lern-App braucht `lernapp`; der Abgleich braucht Konten, Gruppen die Lernplattform, die Bestenliste die
- * Gruppen, die Lern-Erinnerung den Web-Push. Das Cockpit meldet Schalter, die an sind, aber gesperrt bleiben.
+ * Schalter der Lern-App braucht `lernapp`; der Abgleich braucht Konten, Gruppen die Lernplattform und Konten (S-L2 H-2:
+ * Schreib- und Gruppenrouten nie ohne Konten), die Bestenliste die Gruppen, die Lern-Erinnerung den Web-Push. Das Cockpit
+ * meldet Schalter, die an sind, aber gesperrt bleiben.
  */
 export const VORAUSSETZUNGEN: Partial<Record<Funktion, readonly Funktion[]>> = {
   lernapp_ungeprueft: ['lernapp'],
   lernapp_sprechen: ['lernapp'],
   lernapp_meldungen: ['lernapp'],
   lernapp_sync: ['lernapp', 'konten'],
-  lernapp_gruppen: ['lernapp', 'lernplattform'],
+  lernapp_gruppen: ['lernapp', 'lernplattform', 'konten'],
   lernapp_rangliste: ['lernapp', 'lernapp_gruppen'],
   lernapp_statistik: ['lernapp'],
   push_lernapp: ['lernapp', 'push'],

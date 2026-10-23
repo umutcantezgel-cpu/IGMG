@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, eq, isNull } from 'drizzle-orm';
+import { and, eq, isNull, ne } from 'drizzle-orm';
 import { protokolliere } from '@/lib/audit';
 import { auth } from '@/lib/auth/server';
 import { db, schema, type Transaktion } from '@/lib/db';
@@ -69,6 +69,27 @@ export async function hatAdministration(benutzerId: string): Promise<boolean> {
     .where(and(eq(schema.rolleZuweisung.benutzerId, benutzerId), eq(schema.rolleZuweisung.rolle, 'administration')))
     .limit(1);
   return Boolean(z);
+}
+
+/**
+ * Hat das Konto Zugang zu Gruppen, Chats oder Kinderdaten – eine Kontoart außer `gemeinde` (Eltern, Lehrkraft, Schüler)
+ * oder eine Gruppenleitung? Dann bekommt es keine Administration (S-L2 N-1, Gegenrichtung zu NIE_PER_ADMINISTRATION):
+ * Sonst läse ein Konto mit Administration Schreibabgaben, Gruppen- und Elternkanal seiner Gruppen.
+ */
+export async function hatGruppenzugang(benutzerId: string): Promise<boolean> {
+  const [[rolle], [leitung]] = await Promise.all([
+    db
+      .select({ id: schema.gemeindeRolle.benutzerId })
+      .from(schema.gemeindeRolle)
+      .where(and(eq(schema.gemeindeRolle.benutzerId, benutzerId), ne(schema.gemeindeRolle.rolle, 'gemeinde')))
+      .limit(1),
+    db
+      .select({ id: schema.gruppenLeitung.benutzerId })
+      .from(schema.gruppenLeitung)
+      .where(eq(schema.gruppenLeitung.benutzerId, benutzerId))
+      .limit(1),
+  ]);
+  return Boolean(rolle ?? leitung);
 }
 
 async function beanspruche(id: string): Promise<boolean> {
@@ -153,6 +174,9 @@ export async function uebernimmEinladung(o: {
   // NIE_PER_ADMINISTRATION (S2/S3): Ein Konto mit der Rolle Administration wird nicht Elternteil, Lehrkraft oder Schüler –
   // sonst läse die Administration über die Gemeinde-Rolle Chats und Kinderdaten
   if (e.gemeindeRollen.some((r) => r !== 'gemeinde') && (await hatAdministration(o.benutzerId)))
+    return { ok: false, fehler: 'administration' };
+  // Gegenrichtung (S-L2 N-1): Ein Konto mit Kontoart mit Gruppenzugang oder Gruppenleitung wird nicht Administration
+  if (e.rollen.some((r) => r.rolle === 'administration') && (await hatGruppenzugang(o.benutzerId)))
     return { ok: false, fehler: 'administration' };
   const vertraut = await elternEinladungVertraut(e);
   if (!vertraut) {

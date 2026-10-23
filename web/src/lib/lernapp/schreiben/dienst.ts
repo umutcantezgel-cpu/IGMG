@@ -12,7 +12,7 @@ import type { Pruefliste } from '../aufgaben/auswertung/schreiben';
 import { meineZuweisungen } from '../gruppe/dienst';
 import type { RichtungId } from '../kurse';
 import { lektionAusPaket } from '../paket/bauen';
-import { lernappEinwilligung } from '../sync/server';
+import { lernappEinwilligung, lernappEinwilligungDetail } from '../sync/server';
 import type { AbgabeAnfrage, AufgabenText, EigeneAbgabe, KeineAbgabe, PruefAntwort, Stufen } from './abgabe';
 import {
   ABGABEN_JE_AUFGABE,
@@ -21,12 +21,14 @@ import {
   abgelaufen,
   aufgabenOrt,
   type AbgabeZustand,
+  einwilligungDeckt,
   type Einstufung,
   lehrkraftLiest,
   loeschenAbFuer,
   zerlegeAbgabeSchluessel,
   zustandVon,
 } from './regeln';
+import { kommentarErlaubt } from './kinderschutz';
 
 /**
  * Korrekturweg der Lehrkraft auf dem Server (L5-03; ADR 0042 Nr. 11; KERN 4.0 §5): Abgabe einer Schreibaufgabe an die
@@ -38,9 +40,11 @@ import {
  *   ausgelieferten Kurspaket, die einer eigenen, aktiven Gruppe (laufende Mitgliedschaft) zugewiesen ist – die ganze
  *   Einheit oder genau diese Lektion.
  * - **Lesen** nur die Lehrkraft der Gruppe (`aufgabe.bearbeiten`: nicht die Aufsicht, nicht Eltern, nicht die
- *   Administration), nur solange die lernende Person laufendes Mitglied ist und ihre Einwilligung gilt
- *   (`regeln.lehrkraftLiest`). Austritt oder Widerruf → sofort nicht mehr lesbar; fremde Abgaben verhalten sich wie „gibt
- *   es nicht“ (`KeinZugang`).
+ *   Administration), nur solange die lernende Person laufendes Mitglied ist und ihre Einwilligung gilt und die Abgabe
+ *   deckt (`regeln.lehrkraftLiest`). Austritt oder Widerruf → sofort nicht mehr lesbar, auch nach Wiedereintritt oder neuem
+ *   Erteilen nicht (S-L2 N-2, `schreiben/folgen.ts`); fremde Abgaben verhalten sich wie „gibt es nicht“ (`KeinZugang`).
+ * - **Kommentar an Kinder** (Einwilligungslage „eltern“) ist bis zur Entscheidung D-L16 gesperrt: nur Prüfliste und
+ *   Einstufung (`schreiben/kinderschutz.ts`, S-L2 M-1); ein Kommentar endet als `KommentarGesperrt`.
  * - **Text und Kommentar** nur verschlüsselt (`verschluessele`, wie `lernende`); nie in Audit, Logs, Push oder Mail. Das
  *   Audit nennt nur Kennungen.
  * - **Löschung:** `loeschenAb` = Abgabe + 12 Monate (Löschlauf `loeschen/gemeinde.ts`); abgelaufene Abgaben liest
@@ -50,6 +54,13 @@ import {
 export class KeinZugang extends Error {
   constructor() {
     super('Keine Abgabe sichtbar');
+  }
+}
+
+/** Kommentar zur Abgabe eines Kindes, solange D-L16 offen ist (S-L2 M-1): nichts gespeichert. */
+export class KommentarGesperrt extends Error {
+  constructor() {
+    super('Kommentar an Kinder gesperrt (D-L16)');
   }
 }
 
@@ -304,6 +315,8 @@ export type AbgabeDetail = AbgabeZeile & {
   kommentar: string | null;
   pruefliste: Stufen;
   einstufung: Einstufung | null;
+  /** Darf die Lehrkraft hier einen Kommentar schreiben? Nicht bei Kindern, solange D-L16 offen ist (S-L2 M-1). */
+  kommentarErlaubt: boolean;
 };
 
 /**
@@ -347,24 +360,23 @@ async function lesbare(kontext: GruppenKontext, gruppeId: string, jetzt: Date, i
     .orderBy(desc(A.eingereichtAm));
   const kandidaten = zeilen.filter((z) => z.mitglied !== null && !abgelaufen(z.loeschenAb, jetzt));
   const konten = [...new Map(kandidaten.map((z) => [z.benutzerId, z.istKind ?? true])).entries()];
-  const ein = new Set(
-    (
-      await Promise.all(
-        konten.map(async ([benutzerId, istKind]) =>
-          (await lernappEinwilligung(benutzerId, { istKind }, jetzt)) === 'erteilt' ? [benutzerId] : [],
-        ),
-      )
-    ).flat(),
+  // Je Konto: Lage (Kind: „eltern“) und seit wann die geltende Einwilligung besteht
+  const einwilligung = new Map(
+    await Promise.all(
+      konten.map(async ([benutzerId, istKind]) => [benutzerId, await lernappEinwilligungDetail(benutzerId, { istKind }, jetzt)] as const),
+    ),
   );
-  return zeilen.filter((z) =>
-    lehrkraftLiest({
+  return zeilen.flatMap((z) => {
+    const e = einwilligung.get(z.benutzerId);
+    const lesbar = lehrkraftLiest({
       lehrkraftDerGruppe: lehrkraft,
       abgabeInGruppe: z.gruppeId === gruppeId,
       laufendesMitglied: z.mitglied !== null,
-      einwilligung: ein.has(z.benutzerId),
+      einwilligung: e?.stand === 'erteilt' && einwilligungDeckt(e.seit, z.eingereichtAm),
       abgelaufen: abgelaufen(z.loeschenAb, jetzt),
-    }),
-  );
+    });
+    return lesbar && e ? [{ ...z, kommentarErlaubt: kommentarErlaubt(e.lage) }] : [];
+  });
 }
 
 /** Liste für die Lehrkraft – ohne Texte: Name, Aufgabe, Datum, Zustand; offene zuerst. */
@@ -414,12 +426,15 @@ export async function abgabeFuerLehrkraft(
     kommentar: entschluesseleText(z.kommentarVerschluesselt, z.kommentarSchluesselId),
     pruefliste: nurStufen(z.rubrik.lehrkraft),
     einstufung: z.rubrik.einstufung ?? null,
+    kommentarErlaubt: z.kommentarErlaubt,
   };
 }
 
 /**
  * Rückmeldung speichern und an die lernende Person zurückgeben (Kommentar verschlüsselt, Prüfliste und Einstufung ohne
  * Note). Erneut aufgerufen, ersetzt sie die bisherige Rückmeldung. Nur die Lehrkraft der Gruppe, nur lesbare Abgaben.
+ * Zur Abgabe eines Kindes kein Kommentar, solange D-L16 offen ist (`KommentarGesperrt`, nichts gespeichert); eine
+ * Rückgabe ohne Kommentar entfernt dort auch einen früheren.
  */
 export async function gibZurueck(
   kontext: GruppenKontext,
@@ -430,6 +445,7 @@ export async function gibZurueck(
 ): Promise<void> {
   const [z] = await lesbare(kontext, gruppeId, jetzt, id);
   if (!z) throw new KeinZugang();
+  if (r.kommentar?.trim() && !z.kommentarErlaubt) throw new KommentarGesperrt();
   const kommentar = r.kommentar?.trim() ? verschluessele({ text: r.kommentar.trim() }) : null;
   const rubrik: LernappRubrik = {
     pruefliste: z.rubrik.pruefliste ?? {},
@@ -463,7 +479,10 @@ export async function gibZurueck(
   });
 }
 
-/** Eigene Abgaben für den Datenexport (Art. 15/20): alles, auch abgelaufene, die der Löschlauf noch nicht entfernt hat. */
+/**
+ * Eigene Abgaben für den Datenexport (Art. 15/20): alles, auch abgelaufene, die der Löschlauf noch nicht entfernt hat. Mit
+ * Kennung (`id`), damit die Person eine Abgabe gezielt löschen lassen kann (S-L2 N-2); `gruppe` ist nach dem Austritt leer.
+ */
 export async function abgabenFuerExport(benutzerId: string): Promise<Record<string, unknown>[]> {
   const A = schema.lernappSchreibabgabe;
   const zeilen = await db.select().from(A).where(eq(A.benutzerId, benutzerId)).orderBy(desc(A.eingereichtAm));
@@ -477,6 +496,7 @@ export async function abgabenFuerExport(benutzerId: string): Promise<Record<stri
   return zeilen.map((z) => {
     const ort = zerlegeAbgabeSchluessel(z.aufgabeSchluessel);
     return {
+      id: z.id,
       kurs: ort?.kurs ?? null,
       aufgabe: ort?.aufgabe ?? z.aufgabeSchluessel,
       gruppe: z.gruppeId,

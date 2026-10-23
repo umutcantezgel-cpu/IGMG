@@ -4,6 +4,7 @@ import { db, schema, type Transaktion } from '@/lib/db';
 import { einwilligungGilt, einwilligungsLage } from '@/lib/konto/sechzehn';
 import { uhrzeitBerlin, berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { entschluessele, verschluessele } from '@/lib/krypto';
+import { loeseAbgabenVonGruppe } from '@/lib/lernapp/schreiben/folgen';
 import { darfInGruppe, type GruppenAktion, type GruppenKontext } from '@/lib/rechte/gruppen';
 import { KETTEN_ANFANG, kettenHash } from './hashkette';
 import {
@@ -414,7 +415,11 @@ export async function pausiereAlsKinderschutz(
   return r ? null : 'nichtGefunden';
 }
 
-/** S-09: Mitglied aus der Gruppe entfernen (Leitung, mit Grund); die Mitgliedschaft endet heute, der Zugang sofort. */
+/**
+ * S-09: Mitglied aus der Gruppe entfernen (Leitung, mit Grund); die Mitgliedschaft endet heute, der Zugang sofort.
+ * Schreibabgaben der Lern-App an diese Gruppe werden von ihr gelöst (S-L2 N-2, wie `mitgliedEntfernen`): Auch nach einem
+ * Wiedereintritt oder mit einer neuen Lehrkraft liest sie niemand mehr.
+ */
 export async function entferneMitglied(
   kontext: GruppenKontext,
   gruppeId: string,
@@ -437,6 +442,7 @@ export async function entferneMitglied(
         ),
       )
       .returning({ id: schema.gruppenMitglied.lernendeId });
+    if (z.length) await loeseAbgabenVonGruppe(tx, { gruppeId, lernendeId });
     if (z.length)
       await protokolliereModeration(tx, {
         kanalId: kanaele.gruppe,

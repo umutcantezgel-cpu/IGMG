@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import { AbgabeAnfrageSchema, PruefAnfrageSchema } from '@/lib/lernapp/schreiben/abgabe';
+import { ENTSCHEIDUNG_D_L16, kommentarErlaubt } from '@/lib/lernapp/schreiben/kinderschutz';
 import {
   abgabeSchluessel,
   abgelaufen,
   aufgabenOrt,
+  einwilligungDeckt,
   istEinstufung,
   lehrkraftLiest,
   lesePruefliste,
@@ -45,6 +47,28 @@ describe('Wer liest eine Abgabe (Wahrheitstafel)', () => {
       const soll = l.lehrkraftDerGruppe && l.abgabeInGruppe && l.laufendesMitglied && l.einwilligung && !l.abgelaufen;
       expect(lehrkraftLiest(l), JSON.stringify(l)).toBe(soll);
     }
+  });
+});
+
+describe('S-L2-Auflagen: Kommentar an Kinder (M-1, D-L16) und Deckung durch die Einwilligung (N-2)', () => {
+  it('kein Kommentar zur Abgabe eines Kindes (Lage „eltern“), solange D-L16 nicht eingetragen ist', () => {
+    // Die Entscheidung tragen Menschen ein (Kinderschutz, DSB, Bildung) – zusammen mit ihrer Umsetzung
+    expect(ENTSCHEIDUNG_D_L16).toBeNull();
+    expect(kommentarErlaubt('eltern')).toBe(false);
+    expect(kommentarErlaubt('uebergang')).toBe(true);
+    expect(kommentarErlaubt('eigene')).toBe(true);
+    const beschluss = { am: '2027-01-15', fundstelle: '[Beschluss]' };
+    expect(kommentarErlaubt('eltern', { ...beschluss, kommentarAnKinder: false })).toBe(false);
+    expect(kommentarErlaubt('eltern', { ...beschluss, kommentarAnKinder: true })).toBe(true);
+  });
+
+  it('die Einwilligung deckt nur Abgaben ab ihrem Beginn; ohne geltende Einwilligung keine', () => {
+    const abgabe = new Date('2026-10-22T10:00:00Z');
+    expect(einwilligungDeckt(new Date('2026-10-01T00:00:00Z'), abgabe)).toBe(true);
+    expect(einwilligungDeckt(abgabe, abgabe)).toBe(true);
+    // Nach Widerruf neu erteilt: die Zeit davor bleibt ungedeckt
+    expect(einwilligungDeckt(new Date('2026-10-23T00:00:00Z'), abgabe)).toBe(false);
+    expect(einwilligungDeckt(null, abgabe)).toBe(false);
   });
 });
 

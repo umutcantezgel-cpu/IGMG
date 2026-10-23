@@ -80,20 +80,23 @@ describe('Schalter der Lern-App (KERN 4.0 §6)', () => {
       expect(MIT_PERSONENDATEN).not.toContain(f);
   });
 
-  it('Sperren: Abgleich braucht Konten, Gruppen die Lernplattform, Bestenliste die Gruppen, Erinnerung Push', () => {
+  it('Sperren: Abgleich braucht Konten, Gruppen Lernplattform und Konten (S-L2 H-2), Bestenliste die Gruppen, Erinnerung Push', () => {
     expect(VORAUSSETZUNGEN.lernapp_sync).toEqual(['lernapp', 'konten']);
-    expect(VORAUSSETZUNGEN.lernapp_gruppen).toEqual(['lernapp', 'lernplattform']);
+    expect(VORAUSSETZUNGEN.lernapp_gruppen).toEqual(['lernapp', 'lernplattform', 'konten']);
     expect(VORAUSSETZUNGEN.lernapp_rangliste).toEqual(['lernapp', 'lernapp_gruppen']);
     expect(VORAUSSETZUNGEN.push_lernapp).toEqual(['lernapp', 'push']);
     for (const f of LERNAPP.filter((x) => x !== 'lernapp')) expect(VORAUSSETZUNGEN[f]).toContain('lernapp');
     const alle = { lernapp: true, lernapp_sync: true, lernapp_gruppen: true, lernapp_rangliste: true, push_lernapp: true };
     expect(entscheideWirksam('lernapp_sync', prod, { ...alle, konten: false })).toBe(false);
     expect(entscheideWirksam('lernapp_sync', prod, { ...alle, konten: true })).toBe(true);
-    expect(entscheideWirksam('lernapp_gruppen', prod, { ...alle, lernplattform: true })).toBe(true);
+    expect(entscheideWirksam('lernapp_gruppen', prod, { ...alle, lernplattform: true, konten: true })).toBe(true);
+    // Ohne Konten keine Schreib- und Gruppenrouten, auch mit bestehenden Sitzungen (S-L2 H-2)
+    expect(entscheideWirksam('lernapp_gruppen', prod, { ...alle, lernplattform: true, konten: false })).toBe(false);
+    expect(fehlendeVoraussetzungen('lernapp_gruppen', prod, { ...alle, lernplattform: true, konten: false })).toEqual(['konten']);
     // Bestenliste: rekursiv – ohne Lernplattform wirken weder Gruppen noch Bestenliste
     expect(entscheideWirksam('lernapp_rangliste', prod, { ...alle, lernplattform: false })).toBe(false);
     expect(fehlendeVoraussetzungen('lernapp_rangliste', prod, { ...alle, lernplattform: false })).toEqual(['lernapp_gruppen']);
-    expect(entscheideWirksam('lernapp_rangliste', prod, { ...alle, lernplattform: true })).toBe(true);
+    expect(entscheideWirksam('lernapp_rangliste', prod, { ...alle, lernplattform: true, konten: true })).toBe(true);
     expect(entscheideWirksam('push_lernapp', prod, { ...alle, push: false })).toBe(false);
     expect(fehlendeVoraussetzungen('lernapp_sync', prod, { lernapp_sync: false })).toEqual([]);
   });
