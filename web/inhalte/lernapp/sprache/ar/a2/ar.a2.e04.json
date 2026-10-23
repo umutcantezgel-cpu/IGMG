@@ -148,8 +148,8 @@
         "imperativ_2sg_m": "قَرِّرْ",
         "imperativ_2sg_f": "قَرِّرِي",
         "imperativ_2pl_m": "قَرِّرُوا",
-        "partizip_aktiv": "قَارِر",
-        "partizip_aktiv_f": "قَارِرَة"
+        "partizip_aktiv": "مُقَرِّر",
+        "partizip_aktiv_f": "مُقَرِّرَة"
       },
       "frequenzRang": 906,
       "quelle": "wiktionary:en:قرر",
@@ -187,8 +187,8 @@
         "imperativ_2sg_m": "خَطِّطْ",
         "imperativ_2sg_f": "خَطِّطِي",
         "imperativ_2pl_m": "خَطِّطُوا",
-        "partizip_aktiv": "خَاطِط",
-        "partizip_aktiv_f": "خَاطِطَة"
+        "partizip_aktiv": "مُخَطِّط",
+        "partizip_aktiv_f": "مُخَطِّطَة"
       },
       "frequenzRang": 1986,
       "quelle": "wiktionary:en:خطط",
@@ -517,8 +517,10 @@
         "imperativ_2sg_m": "جَهِّزْ",
         "imperativ_2sg_f": "جَهِّزِي",
         "imperativ_2pl_m": "جَهِّزُوا",
-        "partizip_aktiv": "جَاهِز",
-        "partizip_aktiv_f": "جَاهِزَة"
+        "partizip_aktiv": "مُجَهِّز",
+        "partizip_aktiv_f": "مُجَهِّزَة",
+        "adjektiv": "جَاهِز",
+        "adjektiv_f": "جَاهِزَة"
       },
       "frequenzRang": 4058,
       "quelle": "wiktionary:en:جهز",
@@ -673,7 +675,11 @@
       "frequenzRang": 2002,
       "quelle": "wiktionary:en:عال",
       "lizenz": "CC-BY-SA-4.0",
-      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚عال‘ (https://en.wiktionary.org/wiki/عال#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚عال‘ (https://en.wiktionary.org/wiki/عال#Arabic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0",
+      "formen": {
+        "feminin": "عَالِيَة",
+        "bestimmt": "الْعَالِي"
+      }
     },
     {
       "schluessel": "ar.a2.e04.amiq",
@@ -1359,7 +1365,7 @@
         "genus": "m"
       },
       "formen": {
-        "plural_2": "أَبْرَاج",
+        "plural": "أَبْرَاج",
         "akkusativ_indef": "بُرْجًا"
       },
       "frequenzRang": 1170,
@@ -1588,8 +1594,8 @@
     },
     {
       "schluessel": "ar.a2.e04.s0036",
-      "text": "نَعَمْ، سَنَطِيرُ مَعَ أُمِّي وَأَبِي وَأَخِي.",
-      "tokens": ["نَعَمْ", "سَ", "نَطِيرُ", "مَعَ", "أُمِّي", "وَأَبِي", "وَأَخِي"],
+      "text": "نَعَمْ يَا إِلِيفْ، سَنَطِيرُ مَعَ أُمِّي وَأَبِي وَأَخِي.",
+      "tokens": ["نَعَمْ", "يَا", "إِلِيفْ", "سَ", "نَطِيرُ", "مَعَ", "أُمِّي", "وَأَبِي", "وَأَخِي"],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1755,7 +1761,7 @@
     },
     {
       "schluessel": "ar.a2.e04.s0062",
-      "text": "اِسْتَأْجَرَ أَبِي سَيَّارَةً جَدِيدَةً لِرِحْلَتِنَا.",
+      "text": "اِسْتَأْجَرَتْ أُمِّي سَيَّارَةً جَدِيدَةً لِرِحْلَتِنَا.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1830,7 +1836,7 @@
     },
     {
       "schluessel": "ar.a2.e04.s0074",
-      "text": "جَهَّزَتْ أُمِّي الْحَقَائِبَ أَمْسِ.",
+      "text": "جَهَّزَ أَبِي الْحَقَائِبَ أَمْسِ.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2004,7 +2010,7 @@
     },
     {
       "schluessel": "ar.a2.e04.s0102",
-      "text": "اِكْتَشَفْنَا مَطْعَمًا صَغِيرًا فِي السُّوقِ الْقَدِيمِ.",
+      "text": "اِكْتَشَفْنَا مَطْعَمًا صَغِيرًا فِي السُّوقِ الْقَدِيمَةِ.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2202,7 +2208,7 @@
     },
     {
       "schluessel": "ar.a2.e04.s0135",
-      "text": "الْمَاءُ عَمِيقٌ هُنَا، فَلَا تَسْبَحْ وَحْدَكَ.",
+      "text": "الْمَاءُ عَمِيقٌ هُنَا، فَأَنَا لَا أَسْبَحُ وَحْدِي.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2394,7 +2400,7 @@
     },
     {
       "schluessel": "ar.a2.e04.s0166",
-      "text": "الشَّاطِئُ الْغَرْبِيُّ أَجْمَلُ مِنَ الشَّاطِئِ الشَّرْقِيِّ.",
+      "text": "أُحِبُّ الشَّاطِئَ الْغَرْبِيَّ أَكْثَرَ مِنَ الشَّاطِئِ الشَّرْقِيِّ.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2510,7 +2516,7 @@
     },
     {
       "schluessel": "ar.a2.e04.s0185",
-      "text": "نُقِيمُ مَعَ أُسْرَتِي فِي فُنْدُقٍ صَغِيرٍ بِجَانِبِ الشَّاطِئِ.",
+      "text": "أُقِيمُ مَعَ أُسْرَتِي فِي فُنْدُقٍ صَغِيرٍ بِجَانِبِ الشَّاطِئِ.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2655,7 +2661,7 @@
     },
     {
       "schluessel": "ar.a2.e04.s0205",
-      "text": "مَا رَأْيُكُمْ؟ نُسَافِرُ بِالْقِطَارِ أَوْ بِالسَّيَّارَةِ؟",
+      "text": "مَا رَأْيُكُمْ؟ هَلْ نُسَافِرُ بِالْقِطَارِ أَوْ بِالسَّيَّارَةِ؟",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2707,7 +2713,7 @@
     },
     {
       "schluessel": "ar.a2.e04.s0213",
-      "text": "أَوَدُّ أَنْ أَذْهَبَ مَعَ رِيمَ إِلَى وَادِي رَمٍّ.",
+      "text": "يَا أُمِّي، أَوَدُّ أَنْ أَذْهَبَ مَعَ رِيمَ إِلَى وَادِي رَمٍّ.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2990,7 +2996,7 @@
     },
     {
       "schluessel": "ar.a2.e04.s0250",
-      "text": "هٰذِهِ أَشْهَرُ قَلْعَةٍ فِي الْأُرْدُنِّ.",
+      "text": "هٰذِهِ قَلْعَةٌ قَدِيمَةٌ وَمَشْهُورَةٌ فِي الْأُرْدُنِّ.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3002,7 +3008,7 @@
     },
     {
       "schluessel": "ar.a2.e04.s0252",
-      "text": "رَأْيِي أَنَّ الْقِطَارَ أَرْخَصُ.",
+      "text": "فِي رَأْيِي، الْقِطَارُ أَفْضَلُ.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3155,7 +3161,7 @@
             }
           ],
           "antwort": "ar.a2.e04.s0008",
-          "ablenker": ["ar.a2.e04.s0030", "ar.a2.e04.s0019"]
+          "ablenker": ["ar.a2.e04.s0030", "ar.a2.e04.s0020"]
         },
         {
           "schluessel": "ar.a2.e04.l01.a13",
@@ -3319,7 +3325,7 @@
           "schluessel": "ar.a2.e04.l02.a14",
           "typ": "satzbau",
           "ziel": "ar.a2.e04.s0074",
-          "alternativen": ["أَمْسِ جَهَّزَتْ أُمِّي الْحَقَائِبَ.", "أُمِّي جَهَّزَتْ الْحَقَائِبَ أَمْسِ."]
+          "alternativen": ["أَمْسِ جَهَّزَ أَبِي الْحَقَائِبَ.", "أَبِي جَهَّزَ الْحَقَائِبَ أَمْسِ."]
         },
         {
           "schluessel": "ar.a2.e04.l02.a15",
@@ -3597,7 +3603,7 @@
           "schluessel": "ar.a2.e04.l04.a14",
           "typ": "satzbau",
           "ziel": "ar.a2.e04.s0125",
-          "alternativen": ["فِي الشِّتَاءِ قِمَّةُ الْجَبَلِ بَيْضَاءُ."]
+          "alternativen": ["فِي الشِّتَاءِ قِمَّةُ الْجَبَلِ بَيْضَاءُ.", "قِمَّةُ الْجَبَلِ فِي الشِّتَاءِ بَيْضَاءُ."]
         },
         {
           "schluessel": "ar.a2.e04.l04.a15",
@@ -3620,7 +3626,7 @@
       "ziel": {
         "de": "Ich kann einen Ausflug vorschlagen, Himmelsrichtungen nennen und von einer Reise erzählen.",
         "tr": "Bir gezi önerebilir, yönleri söyleyebilir ve bir yolculuğu anlatabilirim.",
-        "ar": "أستطيع أن أقترح رحلة وأن أذكر الجهات وأن أحكي عن سفر."
+        "ar": "أستطيع أن أقترح رحلة وأن أذكر الجهات وأن أحكي عن رحلة."
       },
       "aufgaben": [
         {
@@ -3767,7 +3773,11 @@
           "schluessel": "ar.a2.e04.l05.a14",
           "typ": "satzbau",
           "ziel": "ar.a2.e04.s0159",
-          "alternativen": ["إِلَى الْجَزِيرَةِ سَافَرْنَا بِالسَّفِينَةِ.", "سَافَرْنَا إِلَى الْجَزِيرَةِ بِالسَّفِينَةِ."]
+          "alternativen": [
+            "إِلَى الْجَزِيرَةِ سَافَرْنَا بِالسَّفِينَةِ.",
+            "سَافَرْنَا إِلَى الْجَزِيرَةِ بِالسَّفِينَةِ.",
+            "بِالسَّفِينَةِ سَافَرْنَا إِلَى الْجَزِيرَةِ."
+          ]
         },
         {
           "schluessel": "ar.a2.e04.l05.a15",
@@ -4029,14 +4039,14 @@
           "typ": "luecke",
           "ziel": "ar.a2.e04.s0135",
           "wort": 1,
-          "ablenker": ["عَالٍ", "مَشْهُورٌ"]
+          "ablenker": ["قَدِيمٌ", "مَشْهُورٌ"]
         },
         {
           "schluessel": "ar.a2.e04.l07.a08",
           "typ": "luecke",
           "ziel": "ar.a2.e04.s0109",
           "wort": 2,
-          "ablenker": ["نُجُومٌ", "سُفُنٌ"]
+          "ablenker": ["نُجُومٌ", "مَوْجَاتٌ"]
         },
         {
           "schluessel": "ar.a2.e04.l07.a09",
@@ -4058,7 +4068,7 @@
           "anweisung": "uebersetze",
           "satz": "ar.a2.e04.s0044",
           "nach": "ziel",
-          "alternativen": ["لَنْ نُسَافِرَ هٰذِهِ الْمَرَّةَ بِالسَّيَّارَةِ."],
+          "alternativen": ["لَنْ نُسَافِرَ هٰذِهِ الْمَرَّةَ بِالسَّيَّارَةِ.", "هٰذِهِ الْمَرَّةَ لَنْ نُسَافِرَ بِالسَّيَّارَةِ."],
           "ablenker": ["لَمْ", "بِالْقِطَارِ"]
         },
         {
@@ -4073,7 +4083,8 @@
         {
           "schluessel": "ar.a2.e04.l07.a13",
           "typ": "satzbau",
-          "ziel": "ar.a2.e04.s0160"
+          "ziel": "ar.a2.e04.s0160",
+          "alternativen": ["لَيْسَتِ السَّفِينَةُ سَرِيعَةً مِثْلَ الطَّائِرَةِ."]
         },
         {
           "schluessel": "ar.a2.e04.l07.a14",
