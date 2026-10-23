@@ -308,7 +308,7 @@
     {
       "bezug": "de.a1.e06.s0001",
       "text": "Pazara gidiyorum.",
-      "alternativen": ["Ben pazara gidiyorum.", "Pazara gideceğim.", "Pazar yerine gidiyorum."],
+      "alternativen": ["Ben pazara gidiyorum.", "Pazara gideceğim.", "Pazara gidiyorum ben."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -525,7 +525,7 @@
     {
       "bezug": "de.a1.e06.s0032",
       "text": "Bir parça peynir, lütfen.",
-      "alternativen": ["Lütfen bir parça peynir.", "Bir parça peynir istiyorum.", "Bir dilim peynir, lütfen."],
+      "alternativen": ["Lütfen bir parça peynir.", "Bir parça peynir istiyorum.", "Bir parça peynir verir misiniz?"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -573,8 +573,8 @@
     },
     {
       "bezug": "de.a1.e06.s0039",
-      "text": "Bazı domatesler daha küçük.",
-      "alternativen": ["Bazı domatesler henüz küçük.", "Domateslerin bazıları daha küçük.", "Bazı domatesler hâlâ küçük."],
+      "text": "Bazı domatesler henüz küçük.",
+      "alternativen": ["Bazı domatesler hâlâ küçük.", "Domateslerin bazıları henüz küçük.", "Domateslerin bazıları hâlâ küçük."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -636,15 +636,15 @@
     },
     {
       "bezug": "de.a1.e06.s0048",
-      "text": "Bu çok pahalı.",
-      "alternativen": ["Bu fazla pahalı.", "Bu aşırı pahalı.", "Bu fazlasıyla pahalı."],
+      "text": "Bu fazla pahalı.",
+      "alternativen": ["Bu çok pahalı.", "Bu aşırı pahalı.", "Bu fazlasıyla pahalı."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "de.a1.e06.s0049",
-      "text": "Bu bana çok pahalı.",
-      "alternativen": ["Bu benim için çok pahalı.", "Bu bana fazla pahalı.", "Bu benim için fazla pahalı."],
+      "text": "Bu bana fazla pahalı.",
+      "alternativen": ["Bu benim için çok pahalı.", "Bu bana çok pahalı.", "Bu benim için fazla pahalı."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -665,7 +665,7 @@
     {
       "bezug": "de.a1.e06.s0052",
       "text": "Param yok.",
-      "alternativen": ["Benim param yok.", "Hiç param yok.", "Bende para yok."],
+      "alternativen": ["Benim param yok.", "Yanımda para yok.", "Bende para yok."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -735,7 +735,7 @@
     {
       "bezug": "de.a1.e06.s0062",
       "text": "Domatesimiz kalmadı.",
-      "alternativen": ["Artık domatesimiz yok.", "Hiç domatesimiz kalmadı.", "Bizde domates kalmadı."],
+      "alternativen": ["Artık domatesimiz yok.", "Elimizde domates kalmadı.", "Bizde domates kalmadı."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -783,8 +783,8 @@
     },
     {
       "bezug": "de.a1.e06.s0069",
-      "text": "Bu çok pahalı değil mi?",
-      "alternativen": ["Bu fazla pahalı değil mi?", "Bu aşırı pahalı değil mi?"],
+      "text": "Bu fazla pahalı değil mi?",
+      "alternativen": ["Bu çok pahalı değil mi?", "Bu aşırı pahalı değil mi?"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -875,7 +875,7 @@
     {
       "bezug": "de.a1.e06.s0082",
       "text": "Kartla ödüyorum.",
-      "alternativen": ["Ben kartla ödüyorum.", "Kartla ödeyeceğim.", "Kredi kartıyla ödüyorum."],
+      "alternativen": ["Ben kartla ödüyorum.", "Kartla ödeyeceğim.", "Kart ile ödüyorum."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -944,8 +944,8 @@
     },
     {
       "bezug": "de.a1.e06.s0092",
-      "text": "Poşet ister misiniz?",
-      "alternativen": ["Bir poşet ister misiniz?", "Poşete ihtiyacınız var mı?", "Poşet lazım mı?"],
+      "text": "Poşete ihtiyacınız var mı?",
+      "alternativen": ["Bir poşet ister misiniz?", "Poşet ister misiniz?", "Poşet lazım mı?"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1032,8 +1032,13 @@
     },
     {
       "bezug": "de.a1.e06.s0104",
-      "text": "Aa, bu bana çok pahalı.",
-      "alternativen": ["Ah, bu benim için çok pahalı.", "Of, bu bana fazla pahalı.", "Aa, bu benim için fazla pahalı."],
+      "text": "Aa, bu bana fazla pahalı.",
+      "alternativen": [
+        "Aa, bu bana çok pahalı.",
+        "Ah, bu benim için çok pahalı.",
+        "Of, bu bana fazla pahalı.",
+        "Aa, bu benim için fazla pahalı."
+      ],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1214,14 +1219,14 @@
     {
       "bezug": "de.a1.e06.s0127",
       "text": "Maalesef domates kalmadı.",
-      "alternativen": ["Ne yazık ki domates kalmadı.", "Maalesef artık domates yok.", "Ne yazık ki hiç domates kalmadı."],
+      "alternativen": ["Ne yazık ki domates kalmadı.", "Maalesef artık domates yok.", "Ne yazık ki artık domates yok."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "de.a1.e06.s0128",
       "text": "Domates yok mu? Ne yazık!",
-      "alternativen": ["Domates kalmadı mı? Yazık!", "Domates yok mu? Çok yazık!", "Hiç domates yok mu? Ne yazık!"],
+      "alternativen": ["Domates kalmadı mı? Yazık!", "Domates yok mu? Çok yazık!", "Domates bitti mi? Ne yazık!"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1239,7 +1244,8 @@
         "Nineciğim, o zaman salatalık alalım!",
         "Nine, o halde salatalık alalım!",
         "O zaman salatalık alalım, nine!",
-        "Nine, o zaman salatalık alsak!"
+        "Nine, o zaman salatalık alsak!",
+        "Nine, o zaman bari salatalık alalım!"
       ],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1271,8 +1277,8 @@
     },
     {
       "bezug": "de.a1.e06.s0134",
-      "text": "Elif on avro veriyor.",
-      "alternativen": ["Elif on avroyla ödüyor.", "Elif on avro ile ödüyor.", "Elif on avroyla ödeme yapıyor."],
+      "text": "Elif on avroyla ödüyor.",
+      "alternativen": ["Elif on avro veriyor.", "Elif on avro ile ödüyor.", "Elif on avroyla ödeme yapıyor."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1328,7 +1334,7 @@
     {
       "bezug": "de.a1.e06.s0142",
       "text": "Hayır, domates kalmadı.",
-      "alternativen": ["Hayır, artık domates yok.", "Hayır, hiç domates kalmadı.", "Hayır, hiç domates yok."],
+      "alternativen": ["Hayır, artık domates yok.", "Hayır, domates tükendi.", "Hayır, domates bitti."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1443,8 +1449,9 @@
     },
     {
       "bezug": "de.a1.e06.s0158",
-      "text": "Bir avro. O zaman toplam 13,40 avro.",
+      "text": "Fiyatı bir avro. O zaman toplam 13,40 avro.",
       "alternativen": [
+        "Bir avro. O zaman toplam 13,40 avro.",
         "Fiyatı bir avro. Toplam 13,40 avro oluyor.",
         "Bir avro. Böylece 13,40 avro ediyor.",
         "Poşet bir avro. O zaman 13,40 avro tutuyor."
@@ -1606,7 +1613,7 @@
     {
       "bezug": "de.a1.e06.s0180",
       "text": "Aynen, iki kilo patates.",
-      "alternativen": ["Evet, tam iki kilo patates.", "Doğru, iki kilo patates.", "Tam olarak iki kilo patates."],
+      "alternativen": ["Aynen öyle, iki kilo patates.", "Doğru, iki kilo patates.", "Evet, doğru, iki kilo patates."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
