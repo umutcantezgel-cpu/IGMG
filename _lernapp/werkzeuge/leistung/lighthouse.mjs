@@ -129,21 +129,27 @@ function bewerte(route, laeufe) {
     jsKbUebertragen: runde(med('jsKbUebertragen')),
   };
   const grenze = JS_GRENZE[route.art] ?? 180;
+  // Schwellen der Abnahme (KERN 4.0 §9, Z-L07): Leistung, Zugänglichkeit, LCP, CLS, JS gesamt je Art
   const verfehlt = [
     m.performance < SCHWELLEN.performance && 'Leistung',
     m.accessibility < SCHWELLEN.accessibility && 'Zugänglichkeit',
-    m['best-practices'] < SCHWELLEN['best-practices'] && 'Best Practices',
-    route.seo && m.seo < SCHWELLEN.seo && 'SEO',
     m.lcpMs > SCHWELLEN.lcpMs && 'LCP',
     m.cls > SCHWELLEN.cls && 'CLS',
-    m.tbtMs > SCHWELLEN.tbtMs && 'TBT',
     m.jsKbGz > grenze && 'JS',
   ].filter(Boolean);
+  // Hinweise (Website-Schwellen K-12; TBT ist nur der Labor-Ersatz für INP, maßgeblich ist inp-spieler.mjs)
+  const hinweise = [
+    m['best-practices'] < SCHWELLEN['best-practices'] && 'Best Practices',
+    route.seo && m.seo < SCHWELLEN.seo && 'SEO',
+    m.tbtMs > SCHWELLEN.tbtMs && 'TBT',
+  ].filter(Boolean);
   const lastMax = Math.max(...laeufe.map((l) => l.last.l1));
-  return { median: m, jsGrenze: grenze, verfehlt, lastMax };
+  return { median: m, jsGrenze: grenze, verfehlt, hinweise, lastMax };
 }
 
 const auswertung = [];
+// Wartezeit auf sinkende Last je Route: 5 min; ist sie einmal nicht gesunken, für die übrigen Routen nur noch 2 min
+let wartenMs = 5 * 60_000;
 try {
   for (const route of routen) {
     let laeufe = [];
@@ -152,9 +158,10 @@ try {
     let nachgemessen = null;
     // Lastregel (Auftrag L8-02 Nr. 5): Last- und Zeitschwellen nur bei Last > 1,5 einmal nachmessen; JS und Zugänglichkeit
     // hängen nicht an der Last
-    const lastAbhaengig = b.verfehlt.filter((v) => ['Leistung', 'LCP', 'TBT', 'CLS'].includes(v));
+    const lastAbhaengig = b.verfehlt.filter((v) => ['Leistung', 'LCP', 'CLS'].includes(v));
     if (values.nachmessen && lastAbhaengig.length && b.lastMax > LAST_GRENZE) {
-      const warten = await warteAufLast();
+      const warten = await warteAufLast(LAST_GRENZE, wartenMs);
+      if (!warten.erreicht) wartenMs = 2 * 60_000;
       console.log(
         `${route.pfad}: verfehlt ${lastAbhaengig.join(', ')} bei Last ${b.lastMax} – Last jetzt ${warten.l1} (${warten.erreicht ? 'gesunken' : 'nicht gesunken'})`,
       );
@@ -166,7 +173,7 @@ try {
         b = bewerte(route, laeufe);
       }
     }
-    const unterLast = b.verfehlt.some((v) => ['Leistung', 'LCP', 'TBT', 'CLS'].includes(v)) && b.lastMax > LAST_GRENZE;
+    const unterLast = b.verfehlt.some((v) => ['Leistung', 'LCP', 'CLS'].includes(v)) && b.lastMax > LAST_GRENZE;
     auswertung.push({
       ...route,
       laeufe,
@@ -188,7 +195,7 @@ const md = [
   '|---|---|---|---|---|---|---|---|---|---|---|',
   ...auswertung.map(
     (z) =>
-      `| ${z.pfad} | ${z.median.performance} | ${z.median.accessibility} | ${z.median['best-practices']} | ${z.seo ? z.median.seo : `(${z.median.seo})`} | ${z.median.lcpMs} | ${z.median.cls} | ${z.median.tbtMs} | ${z.median.jsKbGz} (${z.jsGrenze}) | ${z.lastMax} | ${z.verfehlt.length ? `verfehlt: ${z.verfehlt.join(', ')}${z.unterLast ? ' (unter Last)' : ''}` : 'erfüllt'}${z.nachgemessen ? ' · nachgemessen' : ''} |`,
+      `| ${z.pfad} | ${z.median.performance} | ${z.median.accessibility} | ${z.median['best-practices']} | ${z.seo ? z.median.seo : `(${z.median.seo})`} | ${z.median.lcpMs} | ${z.median.cls} | ${z.median.tbtMs} | ${z.median.jsKbGz} (${z.jsGrenze}) | ${z.lastMax} | ${z.verfehlt.length ? `verfehlt: ${z.verfehlt.join(', ')}${z.unterLast ? ' (unter Last)' : ''}` : 'erfüllt'}${z.hinweise.length ? ` · Hinweis: ${z.hinweise.join(', ')}` : ''}${z.nachgemessen ? ' · nachgemessen' : ''} |`,
   ),
 ].join('\n');
 schreibe(`${values.aus}.md`, md);

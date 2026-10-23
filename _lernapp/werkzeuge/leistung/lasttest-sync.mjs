@@ -247,14 +247,12 @@ try {
   ergebnis.wellen.push(await welle(`Welle 3: ${N} Konten × ${P} Pakete gleichzeitig (Folgeereignisse)`, welle3));
   ergebnis.nachWelle3 = await stand();
   // Bremse: 5 Konten senden je 40 leere Abgleiche gleichzeitig (zusätzlich zu ihren 9 Anfragen der Wellen in dieser Minute)
-  const bremse = konten
-    .slice(0, 5)
-    .flatMap((k) =>
-      Array.from({ length: 40 }, () => ({
-        konto: k,
-        koerper: JSON.stringify({ konto: k.id, geraet: k.geraete[0], cursor: null, ereignisse: [] }),
-      })),
-    );
+  const bremse = konten.slice(0, 5).flatMap((k) =>
+    Array.from({ length: 40 }, () => ({
+      konto: k,
+      koerper: JSON.stringify({ konto: k.id, geraet: k.geraete[0], cursor: null, ereignisse: [] }),
+    })),
+  );
   ergebnis.wellen.push(await welle('Bremse: 5 Konten × 40 Anfragen gleichzeitig', bremse));
 } finally {
   await beobachter.end().catch(() => undefined);

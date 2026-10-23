@@ -8,7 +8,7 @@
 // (arabischer Freitext), Lernpfad öffnen (Antippen der Kurskarte bis die Lektionen sichtbar sind) und „Einheit offline speichern“.
 // Aufruf: node inp-spieler.mjs [--laeufe 3] [--drossel 6] [--aus name]
 import { parseArgs } from 'node:util';
-import { BASIS, last, lernTexte, median, schreibe, starteBrowser } from './gemeinsam.mjs';
+import { BASIS, LAST_GRENZE, last, lernTexte, median, schreibe, starteBrowser, warteAufLast } from './gemeinsam.mjs';
 
 const { values } = parseArgs({
   options: { laeufe: { type: 'string', default: '3' }, drossel: { type: 'string', default: '6' }, aus: { type: 'string', default: 'inp' } },
@@ -141,7 +141,8 @@ const SZENARIEN = [
 
 const browser = await starteBrowser();
 const ergebnis = { basis: BASIS, drossel: DROSSEL, laeufe: LAEUFE, schwelleMs: 200, szenarien: [] };
-for (const sz of SZENARIEN) {
+/** Drei (--laeufe) Läufe eines Szenarios. */
+async function messe(sz) {
   const laeufe = [];
   for (let n = 1; n <= LAEUFE; n++) {
     const kontext = await browser.newContext({
@@ -197,19 +198,38 @@ for (const sz of SZENARIEN) {
       inpMs: inp,
       jeSchrittMs: jeSchritt,
       ...mess,
-      laengste: liste
-        .slice(0, 3)
-        .map((e) => ({
-          schritt: e.schritt,
-          name: e.name,
-          dauerMs: Math.round(e.dauer),
-          verarbeitungMs: Math.round(e.verarbeitung),
-          verzoegerungMs: Math.round(e.verzoegerung),
-        })),
+      laengste: liste.slice(0, 3).map((e) => ({
+        schritt: e.schritt,
+        name: e.name,
+        dauerMs: Math.round(e.dauer),
+        verarbeitungMs: Math.round(e.verarbeitung),
+        verzoegerungMs: Math.round(e.verzoegerung),
+      })),
     });
     console.log(
       `${sz.name} Lauf ${n}: INP ${inp ?? '–'} ms · ${JSON.stringify(jeSchritt)}${mess.oeffnenMs ? ` · Öffnen ${mess.oeffnenMs} ms` : ''} · Last ${lastVorher.l1}${fehler ? ` · FEHLER ${fehler}` : ''}`,
     );
+  }
+  return laeufe;
+}
+
+const median2 = (laeufe) => median(laeufe.map((l) => l.inpMs ?? NaN));
+const lastMax = (laeufe) => Math.max(...laeufe.map((l) => l.last.l1));
+// Lastregel (Auftrag L8-02 Nr. 5): über 200 ms bei Last > 1,5 einmal nachmessen, sobald die Last sinkt (höchstens 5 min,
+// nach einem vergeblichen Warten 2 min); sonst „unter Last“
+let wartenMs = 5 * 60_000;
+for (const sz of SZENARIEN) {
+  let laeufe = await messe(sz);
+  let nachgemessen = null;
+  if (median2(laeufe) > 200 && lastMax(laeufe) > LAST_GRENZE) {
+    const warten = await warteAufLast(LAST_GRENZE, wartenMs);
+    console.log(
+      `${sz.name}: INP ${median2(laeufe)} ms bei Last ${lastMax(laeufe)} – Last jetzt ${warten.l1} (${warten.erreicht ? 'gesunken' : 'nicht gesunken'})`,
+    );
+    if (warten.erreicht) {
+      nachgemessen = { inpMedianMs: median2(laeufe), lastMax: lastMax(laeufe) };
+      laeufe = await messe(sz);
+    } else wartenMs = 2 * 60_000;
   }
   const schritte = [...new Set(laeufe.flatMap((l) => Object.keys(l.jeSchrittMs)))];
   const jeSchrittMedian = Object.fromEntries(schritte.map((k) => [k, median(laeufe.map((l) => l.jeSchrittMs[k] ?? NaN))]));
@@ -219,7 +239,9 @@ for (const sz of SZENARIEN) {
     inpMedianMs: median(laeufe.map((l) => l.inpMs ?? NaN)),
     jeSchrittMedianMs: jeSchrittMedian,
     oeffnenMedianMs: laeufe.some((l) => l.oeffnenMs) ? median(laeufe.map((l) => l.oeffnenMs ?? NaN)) : null,
-    lastMax: Math.max(...laeufe.map((l) => l.last.l1)),
+    lastMax: lastMax(laeufe),
+    unterLast: median2(laeufe) > 200 && lastMax(laeufe) > LAST_GRENZE,
+    nachgemessen,
     fehler: laeufe.filter((l) => l.fehler).map((l) => `Lauf ${l.lauf}: ${l.fehler}`),
     laeufe,
   });
@@ -229,13 +251,15 @@ await browser.close();
 const md = [
   `# INP (Labor) · CPU ×${DROSSEL} · ${LAEUFE} Läufe je Szenario · ${BASIS}`,
   '',
-  '| Szenario | INP Median (ms) | je Schritt (Median, ms) | Öffnen (ms) | Last (max) | Fehler |',
-  '|---|---|---|---|---|---|',
+  '| Szenario | INP Median (ms) | je Schritt (Median, ms) | Öffnen (ms) | Last (max) | Ergebnis | Fehler |',
+  '|---|---|---|---|---|---|---|',
   ...ergebnis.szenarien.map(
     (z) =>
       `| ${z.name} | ${z.inpMedianMs} | ${Object.entries(z.jeSchrittMedianMs)
         .map(([k, v]) => `${k} ${v}`)
-        .join(' · ')} | ${z.oeffnenMedianMs ?? '–'} | ${z.lastMax} | ${z.fehler.length ? z.fehler.join('; ') : '–'} |`,
+        .join(
+          ' · ',
+        )} | ${z.oeffnenMedianMs ?? '–'} | ${z.lastMax} | ${z.inpMedianMs <= 200 ? 'erfüllt' : `verfehlt${z.unterLast ? ' (unter Last)' : ''}`}${z.nachgemessen ? ` · nachgemessen (vorher ${z.nachgemessen.inpMedianMs} ms bei Last ${z.nachgemessen.lastMax})` : ''} | ${z.fehler.length ? z.fehler.join('; ') : '–'} |`,
   ),
 ].join('\n');
 schreibe(`${values.aus}.md`, md);
