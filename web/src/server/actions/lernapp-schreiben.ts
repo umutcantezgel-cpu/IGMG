@@ -6,7 +6,7 @@ import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { funktionAn } from '@/lib/funktionen';
 import { verlangeKontenAktion } from '@/lib/konto/zugang';
-import { gibZurueck, KeinZugang } from '@/lib/lernapp/schreiben/dienst';
+import { gibZurueck, KeinZugang, KommentarGesperrt } from '@/lib/lernapp/schreiben/dienst';
 import { istEinstufung, KOMMENTAR_MAX_ZEICHEN, lesePruefliste, rueckmeldungLeer } from '@/lib/lernapp/schreiben/regeln';
 import { KRITERIEN } from '@/lib/lernapp/aufgaben/auswertung/schreiben';
 import { verlangeGruppenRecht, verlangeKontoRecht } from '@/lib/rechte/gemeinde';
@@ -18,6 +18,9 @@ import { KeinRecht } from '@/lib/rechte/pruefe';
  * nutzbar. Reihenfolge wie MUSTER §5 und `lernapp-gruppe.ts`: Konten, Schalter (`lernplattform`, `lernapp_gruppen`), Konto
  * mit zweitem Faktor und Kontoart Lehrkraft, Eingabe (Zod), Gruppenrecht (`aufgabe.bearbeiten`); der Dienst prüft Recht,
  * Mitgliedschaft und Einwilligung erneut. Audit im Dienst, nur mit Kennungen. Danach zurück auf die Seite mit Rückmeldung.
+ * Kommentar an Kinder (S-L2 M-1, D-L16 offen): Das Formular blendet das Feld bei Abgaben von Kindern aus; kommt trotzdem
+ * ein Kommentar, lehnt der Dienst ihn ab (`KommentarGesperrt`) und die Action speichert nichts, sondern meldet
+ * `kommentarKind` – Prüfliste und Einstufung lassen sich ohne Kommentar zurückgeben.
  */
 const uuid = z.uuid();
 const spracheSchema = z.enum(['de', 'tr', 'en']).catch('de');
@@ -61,6 +64,7 @@ export async function lernappAbgabeZurueckgeben(fd: FormData): Promise<void> {
   } catch (e) {
     // Austritt, Widerruf oder Ablauf seit dem Öffnen: nicht mehr sichtbar (wie „gibt es nicht“)
     if (e instanceof KeinZugang) zurSeite(sprache, p.data.gruppe, 'abgabeWeg');
+    if (e instanceof KommentarGesperrt) zurSeite(sprache, p.data.gruppe, 'kommentarKind', { abgabe: p.data.abgabe }, 'korrektur');
     throw e;
   }
   zurSeite(sprache, p.data.gruppe, 'zurueckgegeben');

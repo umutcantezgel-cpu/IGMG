@@ -4,7 +4,7 @@ import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest
 import { db as appDb, schema } from '@/lib/db';
 import { verschluessele } from '@/lib/krypto';
 import type { ListeAntwort, PruefAntwort } from '@/lib/lernapp/schreiben/abgabe';
-import { kontoUmgebung } from './hilfen/konto';
+import { formular, kontoUmgebung, umleitung } from './hilfen/konto';
 
 /**
  * Korrekturweg der Lehrkraft (L5-03; PLAN §4.3; ADR 0042 Nr. 11; KERN 4.0 §5 und §6) gegen PGlite: Abgabe nur mit Konto,
@@ -15,25 +15,40 @@ import { kontoUmgebung } from './hilfen/konto';
  * Ursprung, Anmeldung, Größe, Idempotenz, Grenzen. Testdaten fiktiv, Namen Platzhalter, Texte neutrale Alltagssätze.
  * Gegenprüfung L5-03: Rückgabe einer gerade gelöschten Abgabe ohne Audit-Eintrag; gleichzeitige Abgaben überschreiten die
  * Grenzen nicht.
+ * S-L2-Auflagen: Kommentar an Kinder gesperrt bis D-L16 (Dienst und Action, M-1); Austritt über die Verwaltung löst die
+ * Abgaben von der Gruppe, Wiedereintritt macht sie nicht wieder lesbar; Widerruf löscht nicht mehr gedeckte Abgaben, neues
+ * Erteilen deckt nie die Zeit davor (N-2); „Mein Bereich › Konto“ löscht alle eigenen Abgaben auch ohne Schalter; Körper
+ * ohne Content-Length als Strom begrenzt (H-1).
  */
 // Einmaliger Eingriff vor der nächsten Einwilligungsprüfung – in `lesbare` liegt sie zwischen Lesen und Schreiben der
 // Rückgabe; so lässt sich „die Person löscht ihre Abgabe, während die Lehrkraft zurückgibt“ ohne Zufall nachstellen
 const zwischendurch = vi.hoisted(() => ({ einmal: null as null | (() => Promise<unknown>) }));
 vi.mock('@/lib/lernapp/sync/server', async (original) => {
   const echt = await original<typeof import('@/lib/lernapp/sync/server')>();
+  const eingreifen = async () => {
+    const eingriff = zwischendurch.einmal;
+    zwischendurch.einmal = null;
+    if (eingriff) await eingriff();
+  };
   return {
     ...echt,
     lernappEinwilligung: async (...a: Parameters<typeof echt.lernappEinwilligung>) => {
-      const eingriff = zwischendurch.einmal;
-      zwischendurch.einmal = null;
-      if (eingriff) await eingriff();
+      await eingreifen();
       return echt.lernappEinwilligung(...a);
+    },
+    lernappEinwilligungDetail: async (...a: Parameters<typeof echt.lernappEinwilligungDetail>) => {
+      await eingreifen();
+      return echt.lernappEinwilligungDetail(...a);
     },
   };
 });
 
 const { client, db } = await kontoUmgebung();
 const { auth } = await import('@/lib/auth/server');
+const folgen = await import('@/lib/lernapp/schreiben/folgen');
+const { lernappAbgabeZurueckgeben } = await import('@/server/actions/lernapp-schreiben');
+const gruppenActions = await import('@/server/actions/gruppen');
+const { schreibabgabenLoeschen } = await import('@/server/actions/mein-bereich');
 const route = await import('@/app/api/lernapp/schreiben/route');
 const dienst = await import('@/lib/lernapp/schreiben/dienst');
 const gruppenDienst = await import('@/lib/lernapp/gruppe/dienst');
@@ -47,11 +62,12 @@ afterEach(() => {
 });
 
 const api = auth.api as unknown as Record<string, unknown>;
-function als(id: string | null) {
+/** Sitzung dieses Kontos; `zweiFaktor` für Lehrkraft und Verwaltung (Actions verlangen ihn). */
+function als(id: string | null, zweiFaktor = false) {
   api.getSession = async () =>
     id
       ? {
-          user: { id, name: '[Name]', email: `${id.slice(0, 8)}@example.test`, twoFactorEnabled: false, gesperrtAm: null },
+          user: { id, name: '[Name]', email: `${id.slice(0, 8)}@example.test`, twoFactorEnabled: zweiFaktor, gesperrtAm: null },
           session: { id: `s-${id}`, createdAt: new Date(), userId: id },
         }
       : null;
@@ -267,6 +283,24 @@ describe('Abgabe: nur mit Konto, Einwilligung, Schalter und Zuweisung an die eig
     expect((await sende(abgabe(ids.gruppe1, { pruefliste: { aufgabe: 4 } }))).status).toBe(400);
     expect((await sende(abgabe(ids.gruppe1, { extra: 1 }))).status).toBe(400);
     expect((await sende({}, KOPF, JSON.stringify(abgabe(ids.gruppe1, { text: 'x'.repeat(70_000) })))).status).toBe(413);
+    // Strom ohne Content-Length (S-L2 H-1): Abbruch beim Lesen nach 64 KB statt den ganzen Körper zu laden
+    let gezogen = 0;
+    const strom = new ReadableStream<Uint8Array>({
+      pull(c) {
+        gezogen++;
+        if (gezogen > 1_000) return c.close();
+        c.enqueue(new TextEncoder().encode('x'.repeat(8_192)));
+      },
+    });
+    const ohneLaenge = new Request(ADRESSE, {
+      method: 'POST',
+      headers: { ...KOPF, 'content-type': 'application/json' },
+      body: strom,
+      duplex: 'half',
+    } as RequestInit);
+    expect(ohneLaenge.headers.get('content-length')).toBeNull();
+    expect((await route.POST(ohneLaenge)).status).toBe(413);
+    expect(gezogen).toBeLessThan(20);
     // Höchstens drei Fassungen je Aufgabe und Gruppe (eine liegt schon vor)
     expect((await sende(abgabe(ids.gruppe1))).status).toBe(201);
     expect((await sende(abgabe(ids.gruppe1))).status).toBe(201);
@@ -290,6 +324,10 @@ describe('Lehrkraft: nur die eigene Gruppe, nur lesbare Abgaben', () => {
     const kind = zeilen.find((z) => z.name === '[Kind] K')!;
     const d = await dienst.abgabeFuerLehrkraft(a, ids.gruppe1, kind.id);
     expect(d).toMatchObject({ text: KIND_TEXT, selbst: { aufgabe: 2, grammatik: 1 }, kommentar: null, einstufung: null });
+    // S-L2 M-1: zur Abgabe eines Kindes kein Kommentarfeld, solange D-L16 offen ist; bei Erwachsenen schon
+    expect(d.kommentarErlaubt).toBe(false);
+    const erwachsen = zeilen.find((z) => z.name === '[Erwachsen] W')!;
+    expect((await dienst.abgabeFuerLehrkraft(a, ids.gruppe1, erwachsen.id)).kommentarErlaubt).toBe(true);
   });
 
   it('fremde Lehrkraft, Aufsicht, Eltern, Kind, Lernende und Administration lesen nie', async () => {
@@ -349,6 +387,35 @@ describe('Lehrkraft: nur die eigene Gruppe, nur lesbare Abgaben', () => {
     expect(abgaben.every((x) => x.text !== KIND_TEXT)).toBe(true);
   });
 
+  it('Kind (S-L2 M-1, D-L16 offen): Dienst und Action lehnen den Kommentar ab; Prüfliste und Einstufung gehen zurück', async () => {
+    const a = await kontext(ids.lehrkraftA);
+    const kind = (await dienst.abgabenDerGruppe(a, ids.gruppe1)).find((z) => z.name === '[Kind] K')!;
+    const A = schema.lernappSchreibabgabe;
+    const vorher = await db.select().from(A).where(eq(A.id, kind.id));
+    await expect(
+      dienst.gibZurueck(a, ids.gruppe1, kind.id, { kommentar: KOMMENTAR, pruefliste: { aufgabe: 2 }, einstufung: 'erreicht' }),
+    ).rejects.toBeInstanceOf(dienst.KommentarGesperrt);
+    // Action mit einem von Hand ergänzten Kommentar (das Formular blendet das Feld aus): nichts gespeichert, Meldung
+    als(ids.lehrkraftA, true);
+    const felder = { sprache: 'de', gruppe: ids.gruppe1, abgabe: kind.id, einstufung: 'erreicht', 'pruefliste.aufgabe': '2' };
+    const ziel = await umleitung(lernappAbgabeZurueckgeben(formular({ ...felder, kommentar: KOMMENTAR })));
+    expect(ziel).toContain('ok=kommentarKind');
+    expect(ziel).toContain(`abgabe=${kind.id}`);
+    expect(await db.select().from(A).where(eq(A.id, kind.id))).toEqual(vorher);
+    // Ohne Kommentar: Prüfliste und Einstufung
+    expect(await umleitung(lernappAbgabeZurueckgeben(formular({ ...felder, kommentar: '' })))).toContain('ok=zurueckgegeben');
+    const [z] = await db.select().from(A).where(eq(A.id, kind.id));
+    expect(z!.kommentarVerschluesselt).toBeNull();
+    expect(z!.rubrik).toMatchObject({ lehrkraft: { aufgabe: 2 }, einstufung: 'erreicht' });
+    als(ids.kind);
+    const { abgaben } = (await (await liste()).json()) as ListeAntwort;
+    expect(abgaben.find((x) => x.id === kind.id)?.rueckmeldung).toMatchObject({
+      kommentar: null,
+      pruefliste: { aufgabe: 2 },
+      einstufung: 'erreicht',
+    });
+  });
+
   it('Rückgabe, während die Person ihre Abgabe löscht: KeinZugang und kein Audit-Eintrag „zurückgegeben“', async () => {
     const a = await kontext(ids.lehrkraftA);
     const offen = (await dienst.abgabenDerGruppe(a, ids.gruppe1)).find((z) => z.name === '[Erwachsen] W' && z.zustand === 'offen')!;
@@ -364,29 +431,45 @@ describe('Lehrkraft: nur die eigene Gruppe, nur lesbare Abgaben', () => {
     expect(audit.filter((e) => (e.details as { abgabe?: string } | null)?.abgabe === offen.id)).toEqual([]);
   });
 
-  it('Austritt aus der Gruppe: sofort nicht mehr lesbar (Liste, Abgabe, Rückgabe); die Person sieht sie weiter', async () => {
+  it('Austritt über die Verwaltung (S-L2 N-2): von der Gruppe gelöst und nicht mehr lesbar; die Person sieht sie weiter', async () => {
     const a = await kontext(ids.lehrkraftA);
     const kind = (await dienst.abgabenDerGruppe(a, ids.gruppe1)).find((z) => z.name === '[Kind] K')!;
-    const heute = new Date().toISOString().slice(0, 10);
-    await db
-      .update(schema.gruppenMitglied)
-      .set({ bis: heute })
-      .where(and(eq(schema.gruppenMitglied.lernendeId, ids.kindL), eq(schema.gruppenMitglied.gruppeId, ids.gruppe1)));
+    als(ids.admin, true);
+    const mitglied = { gruppeId: ids.gruppe1, lernendeId: ids.kindL };
+    expect(await umleitung(gruppenActions.mitgliedEntfernen(formular(mitglied)))).toContain('meldung=mitgliedEntfernt');
+    const A = schema.lernappSchreibabgabe;
+    expect(await db.select({ g: A.gruppeId, von: A.korrigiertVon }).from(A).where(eq(A.id, kind.id))).toEqual([{ g: null, von: null }]);
     expect((await dienst.abgabenDerGruppe(a, ids.gruppe1)).some((z) => z.name === '[Kind] K')).toBe(false);
     await expect(dienst.abgabeFuerLehrkraft(a, ids.gruppe1, kind.id)).rejects.toBeInstanceOf(dienst.KeinZugang);
-    await expect(dienst.gibZurueck(a, ids.gruppe1, kind.id, { kommentar: 'x', pruefliste: {}, einstufung: null })).rejects.toBeInstanceOf(
-      dienst.KeinZugang,
-    );
+    await expect(
+      dienst.gibZurueck(a, ids.gruppe1, kind.id, { kommentar: null, pruefliste: {}, einstufung: 'nochmal' }),
+    ).rejects.toBeInstanceOf(dienst.KeinZugang);
     als(ids.kind);
     const { abgaben } = (await (await liste()).json()) as ListeAntwort;
-    expect(abgaben.map((x) => x.id)).toContain(kind.id);
+    expect(abgaben.find((x) => x.id === kind.id)).toMatchObject({ gruppe: null, text: KIND_TEXT });
     // und kann nicht mehr neu abgeben (keine Gruppe mit dieser Zuweisung)
     expect(await (await pruefe()).json()).toEqual({ moeglich: false, grund: 'zuweisung' });
+
+    // Wiedereintritt (dieselbe Mitgliedszeile lebt auf) und eine zweite Lehrkraft: die alte Abgabe bleibt für beide unlesbar
+    als(ids.admin, true);
+    expect(await umleitung(gruppenActions.mitgliedHinzufuegen(formular(mitglied)))).toContain('meldung=mitglied');
+    expect(
+      await umleitung(gruppenActions.leitungZuweisen(formular({ gruppeId: ids.gruppe1, benutzerId: ids.lehrkraftB, rolle: 'lehrkraft' }))),
+    ).toContain('meldung=leitung');
+    for (const wer of [ids.lehrkraftA, ids.lehrkraftB]) {
+      const k = await kontext(wer);
+      expect((await dienst.abgabenDerGruppe(k, ids.gruppe1)).map((z) => z.id)).not.toContain(kind.id);
+      await expect(dienst.abgabeFuerLehrkraft(k, ids.gruppe1, kind.id)).rejects.toBeInstanceOf(dienst.KeinZugang);
+    }
+    await db
+      .delete(schema.gruppenLeitung)
+      .where(and(eq(schema.gruppenLeitung.gruppeId, ids.gruppe1), eq(schema.gruppenLeitung.benutzerId, ids.lehrkraftB)));
   });
 
-  it('Widerruf der Einwilligung: sofort nicht mehr lesbar; danach keine neue Abgabe', async () => {
+  it('Widerruf der Einwilligung: sofort nicht mehr lesbar; neues Erteilen deckt die Zeit davor nicht (S-L2 N-2)', async () => {
     const a = await kontext(ids.lehrkraftA);
     expect((await dienst.abgabenDerGruppe(a, ids.gruppe1)).some((z) => z.name === '[Erwachsen] W')).toBe(true);
+    // Widerruf auf einem Weg ohne die Folgen (hier direkt in der Datenbank): verborgen, aber noch gespeichert
     await db
       .update(schema.kontoEinwilligung)
       .set({ widerrufenAm: new Date() })
@@ -396,6 +479,20 @@ describe('Lehrkraft: nur die eigene Gruppe, nur lesbare Abgaben', () => {
     expect(await (await pruefe()).json()).toEqual({ moeglich: false, grund: 'einwilligung' });
     // die eigenen Abgaben bleiben für die Person sichtbar (Art. 15)
     expect(((await (await liste()).json()) as ListeAntwort).abgaben.length).toBeGreaterThan(0);
+    // Neues Erteilen: die Abgaben von vorher bleiben für die Lehrkraft unlesbar; neu Abgegebenes ist lesbar
+    await db
+      .insert(schema.kontoEinwilligung)
+      .values({
+        benutzerId: ids.erwachsen,
+        art: 'lernapp',
+        textVersion: 'v1',
+        erteiltVon: ids.erwachsen,
+        erteiltAm: new Date(Date.now() + 1000),
+      });
+    expect((await dienst.abgabenDerGruppe(a, ids.gruppe1)).some((z) => z.name === '[Erwachsen] W')).toBe(false);
+    const neu = abgabe(ids.gruppe1);
+    await dienst.reicheEin({ benutzerId: ids.erwachsen, istKind: false }, await kontext(ids.erwachsen), neu, new Date(Date.now() + 2000));
+    expect((await dienst.abgabenDerGruppe(a, ids.gruppe1, new Date(Date.now() + 3000))).map((z) => z.id)).toEqual([neu.id]);
   });
 });
 
@@ -426,6 +523,8 @@ describe('Schalter, Löschen, Datenexport, Löschlauf', () => {
     const liste = daten.lernapp.schreibabgaben;
     expect(liste.length).toBeGreaterThan(0);
     expect(liste.every((x) => x.text === TEXT)).toBe(true);
+    // Mit Kennung, damit die Person eine Abgabe gezielt löschen lassen kann (S-L2 N-2)
+    expect(liste.every((x) => typeof x.id === 'string' && x.id.length === 36)).toBe(true);
     expect(liste.some((x) => (x.rueckmeldung as { kommentar?: string } | null)?.kommentar === KOMMENTAR)).toBe(true);
     expect(JSON.stringify(liste)).not.toContain(KIND_TEXT);
     expect(JSON.stringify(liste)).not.toContain(ids.lehrkraftA);
@@ -435,13 +534,13 @@ describe('Schalter, Löschen, Datenexport, Löschlauf', () => {
 
   it('abgelaufen: für niemanden mehr lesbar; der Löschlauf entfernt Abgaben nach 12 Monaten', async () => {
     const A = schema.lernappSchreibabgabe;
-    const [kindAbgabe] = await db.select({ id: A.id }).from(A).where(eq(A.benutzerId, ids.kind));
-    // Kind wieder in der Gruppe: lesbar, bis die Frist abläuft
-    await db.update(schema.gruppenMitglied).set({ bis: null }).where(eq(schema.gruppenMitglied.lernendeId, ids.kindL));
+    // Kind nach dem Wiedereintritt mit einer neuen Abgabe: lesbar, bis die Frist abläuft
+    const kindAbgabe = abgabe(ids.gruppe1, { text: KIND_TEXT });
+    await dienst.reicheEin({ benutzerId: ids.kind, istKind: true }, await kontext(ids.kind), kindAbgabe);
     const a = await kontext(ids.lehrkraftA);
-    expect((await dienst.abgabenDerGruppe(a, ids.gruppe1)).map((z) => z.id)).toContain(kindAbgabe!.id);
+    expect((await dienst.abgabenDerGruppe(a, ids.gruppe1)).map((z) => z.id)).toContain(kindAbgabe.id);
     const spaeter = new Date(Date.now() + 366 * 86_400_000);
-    expect((await dienst.abgabenDerGruppe(a, ids.gruppe1, spaeter)).map((z) => z.id)).not.toContain(kindAbgabe!.id);
+    expect((await dienst.abgabenDerGruppe(a, ids.gruppe1, spaeter)).map((z) => z.id)).not.toContain(kindAbgabe.id);
     expect(await dienst.eigeneAbgaben(ids.kind, 'de', spaeter)).toEqual([]);
     const vorher = (await db.select({ id: A.id }).from(A)).length;
     expect(vorher).toBeGreaterThan(0);
@@ -465,5 +564,76 @@ describe('Gleichzeitige Abgaben (Gegenprüfung L5-03)', () => {
     expect(abgelehnt.map((e) => e.grund)).toEqual(['grenze', 'grenze']);
     const A = schema.lernappSchreibabgabe;
     expect(await db.select({ id: A.id }).from(A).where(eq(A.benutzerId, id))).toHaveLength(3);
+  });
+});
+
+describe('Folgen von Widerruf und Konto-Seite (S-L2 N-2)', () => {
+  const A = schema.lernappSchreibabgabe;
+  const widerrufe = (wo: ReturnType<typeof eq>) =>
+    db
+      .update(schema.kontoEinwilligung)
+      .set({ widerrufenAm: new Date() })
+      .where(and(wo, eq(schema.kontoEinwilligung.art, 'lernapp')));
+  const geloeschtAudit = async (zielId: string) =>
+    (
+      await db
+        .select({ details: schema.auditEintrag.details })
+        .from(schema.auditEintrag)
+        .where(and(eq(schema.auditEintrag.aktion, 'lernapp.schreibabgabe_geloescht'), eq(schema.auditEintrag.zielId, zielId)))
+    ).map((z) => z.details);
+
+  it('Widerruf: nicht mehr gedeckte Abgaben werden gelöscht – nach neuem Erteilen nur die aus der Zeit davor', async () => {
+    const id = await konto('[Erwachsen] Q', { rollen: ['schueler'], einwilligung: true });
+    const lernendeId = await lernende(id, '[Erwachsen] Q', '2010-01-01');
+    await db.insert(schema.gruppenMitglied).values({ gruppeId: ids.gruppe1, lernendeId });
+    const alt = abgabe(ids.gruppe1);
+    await dienst.reicheEin({ benutzerId: id, istKind: false }, await kontext(id), alt);
+    await widerrufe(eq(schema.kontoEinwilligung.benutzerId, id));
+    await db
+      .insert(schema.kontoEinwilligung)
+      .values({ benutzerId: id, art: 'lernapp', textVersion: 'v1', erteiltVon: id, erteiltAm: new Date(Date.now() + 1_000) });
+    const neu = abgabe(ids.gruppe1);
+    await dienst.reicheEin({ benutzerId: id, istKind: false }, await kontext(id), neu, new Date(Date.now() + 2_000));
+    expect(await folgen.loescheAbgabenNachWiderruf({ benutzerId: id }, id)).toBe(1);
+    expect((await db.select({ id: A.id }).from(A).where(eq(A.benutzerId, id))).map((z) => z.id)).toEqual([neu.id]);
+    // Widerruf ohne neues Erteilen: Die Folgen löschen alles; andere Arten berühren Schreibabgaben nicht
+    await widerrufe(eq(schema.kontoEinwilligung.benutzerId, id));
+    await folgen.folgenDesWiderrufs('gruppenchat', { benutzerId: id }, id);
+    expect(await db.select({ id: A.id }).from(A).where(eq(A.benutzerId, id))).toHaveLength(1);
+    await folgen.folgenDesWiderrufs('lernapp', { benutzerId: id }, id);
+    expect(await db.select({ id: A.id }).from(A).where(eq(A.benutzerId, id))).toEqual([]);
+    expect(await geloeschtAudit(id)).toEqual([
+      { anzahl: 1, anlass: 'widerruf' },
+      { anzahl: 1, anlass: 'widerruf' },
+    ]);
+  });
+
+  it('Kind: Widerruf der Eltern löscht die Abgaben des Kindes (über den Lerndatensatz)', async () => {
+    const eigene = abgabe(ids.gruppe1, { text: KIND_TEXT });
+    await dienst.reicheEin({ benutzerId: ids.kind, istKind: true }, await kontext(ids.kind), eigene);
+    expect(await db.select({ id: A.id }).from(A).where(eq(A.benutzerId, ids.kind))).toHaveLength(1);
+    await widerrufe(eq(schema.kontoEinwilligung.lernendeId, ids.kindL));
+    await folgen.folgenDesWiderrufs('lernapp', { lernendeId: ids.kindL }, ids.eltern);
+    expect(await db.select({ id: A.id }).from(A).where(eq(A.benutzerId, ids.kind))).toEqual([]);
+    expect(await geloeschtAudit(ids.kind)).toEqual([{ anzahl: 1, anlass: 'widerruf' }]);
+  });
+
+  it('„Mein Bereich › Konto“: alle eigenen Abgaben löschen – mit Bestätigung, auch ohne Schalter `lernapp_gruppen`', async () => {
+    const id = await konto('[Erwachsen] R', { rollen: ['schueler'], einwilligung: true });
+    const lernendeId = await lernende(id, '[Erwachsen] R', '2010-01-01');
+    await db.insert(schema.gruppenMitglied).values({ gruppeId: ids.gruppe1, lernendeId });
+    for (let i = 0; i < 2; i++) await dienst.reicheEin({ benutzerId: id, istKind: false }, await kontext(id), abgabe(ids.gruppe1));
+    expect(await folgen.anzahlEigenerAbgaben(id)).toBe(2);
+    process.env.FUNKTION_LERNAPP_GRUPPEN = 'aus';
+    als(id);
+    expect(await umleitung(schreibabgabenLoeschen(formular({ sprache: 'de' })))).toContain('abgaben=bestaetigen');
+    expect(await folgen.anzahlEigenerAbgaben(id)).toBe(2);
+    expect(await umleitung(schreibabgabenLoeschen(formular({ sprache: 'de', bestaetigt: 'ja' })))).toContain('abgaben=geloescht');
+    expect(await folgen.anzahlEigenerAbgaben(id)).toBe(0);
+    expect(await geloeschtAudit(id)).toEqual([{ anzahl: 2, anlass: 'konto' }]);
+    // nur die eigenen: die Abgaben anderer Konten bleiben
+    expect((await db.select({ id: A.id }).from(A)).length).toBeGreaterThan(0);
+    als(null);
+    await expect(schreibabgabenLoeschen(formular({ sprache: 'de', bestaetigt: 'ja' }))).rejects.toThrow();
   });
 });

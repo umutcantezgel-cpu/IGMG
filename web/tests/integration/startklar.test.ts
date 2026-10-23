@@ -475,6 +475,23 @@ describe('Gemeinde-Plattform (PLAN 2.8/2.9, Z-12, Z-20)', () => {
     expect(pg(vorschau).map((p) => p.id)).not.toContain('gemeinde.schalter-sperren');
   });
 
+  it('S-L2 M-1: Gruppen der Lern-App ohne Entscheidung D-L16 – Fehler in produktion, Warnung in vorschau', async () => {
+    const aus = await pruefe(produktionsUmgebung());
+    expect(pg(aus).map((p) => p.id)).not.toContain('gemeinde.lernapp-kommentar-kinder');
+    const an = await pruefe(produktionsUmgebung({ FUNKTION_LERNAPP_GRUPPEN: 'an', FUNKTION_LERNPLATTFORM: 'an', FUNKTION_KONTEN: 'an' }));
+    const sperre = befund(an, 'gemeinde.lernapp-kommentar-kinder');
+    expect(sperre.status).toBe('fehler');
+    expect(sperre.meldung).toContain('D-L16');
+    expect(sperre.ort).toContain('ENTSCHEIDUNG_D_L16');
+    expect(an.startklar).toBe(false);
+    expect(befund(an, 'gemeinde.schalter').meldung).toContain('D-L16');
+    // Ohne Konten wirkt der Schalter nicht (S-L2 H-2): gesperrt statt Fehler
+    const ohneKonten = await pruefe(produktionsUmgebung({ FUNKTION_LERNAPP_GRUPPEN: 'an', FUNKTION_LERNPLATTFORM: 'an' }));
+    expect(pg(ohneKonten).map((p) => p.id)).not.toContain('gemeinde.lernapp-kommentar-kinder');
+    expect(befund(ohneKonten, 'gemeinde.schalter-sperren').meldung).toContain('Konten');
+    expect(befund(await pruefe(vorschauUmgebung()), 'gemeinde.lernapp-kommentar-kinder').status).toBe('warnung');
+  });
+
   it('S-02: Gruppe mit Chat und nur einer Leitungsperson ergibt eine Warnung', async () => {
     await db
       .insert(schema.user)

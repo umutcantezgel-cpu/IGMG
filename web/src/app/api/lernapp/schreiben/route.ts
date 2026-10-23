@@ -32,7 +32,8 @@ import { pruefeRate } from '@/lib/validierung/ratenbegrenzung';
  * 2. Gleicher Ursprung – sonst 403 `ursprung`.
  * 3. Sitzung mit Kontoart und – wo Pflicht – zweitem Faktor – sonst 401 `anmeldung`.
  * 4. Bremse je Konto: Lesen 60 je Minute, Senden 20 je Stunde – sonst 429 `bremse`.
- * 5. `POST`: JSON (415), höchstens 64 KB (413 `groesse`), Zod (400 `anfrage`); dann im Dienst Einwilligung `lernapp` (bei
+ * 5. `POST`: JSON (415), höchstens 64 KB als Strom gelesen – auch ohne oder mit falscher Content-Length (413 `groesse`,
+ *    S-L2 H-1) –, Zod (400 `anfrage`); dann im Dienst Einwilligung `lernapp` (bei
  *    Kindern die der Eltern, 403 `einwilligung`/`eltern`), Schreibaufgabe im Kurspaket (404 `aufgabe`) und Zuweisung an eine
  *    eigene Gruppe (403 `zuweisung`), Grenzen (429 `grenze`), Kennung eines anderen Kontos (409 `konflikt`).
  * Der Text wird verschlüsselt gespeichert und erscheint nie in Logs, Audit, Push oder Mail. Nie zwischengespeichert.
@@ -61,6 +62,25 @@ async function pruefe(anfrage: Request, mitSchalter: boolean, bremse: 'lesen' | 
 }
 
 const gruppenSprache = (ui: string) => (ui === 'tr' ? 'tr' : 'de');
+
+/** Körper als Text, höchstens `grenze` Bytes – bricht beim Lesen ab, statt einen großen Strom ganz zu laden (S-L2 H-1). */
+async function leseBegrenzt(anfrage: Request, grenze: number): Promise<string | 'zuGross' | null> {
+  if (!anfrage.body) return null;
+  const teile: Uint8Array[] = [];
+  let gelesen = 0;
+  const leser = anfrage.body.getReader();
+  for (;;) {
+    const { done, value } = await leser.read();
+    if (done) break;
+    gelesen += value.length;
+    if (gelesen > grenze) {
+      await leser.cancel();
+      return 'zuGross';
+    }
+    teile.push(value);
+  }
+  return Buffer.concat(teile).toString('utf8');
+}
 
 export async function GET(anfrage: Request) {
   const p = await pruefe(anfrage, true, 'lesen');
@@ -97,8 +117,9 @@ export async function POST(anfrage: Request) {
   if (laenge > ABGABE_MAX_BYTES) return antwort(413, 'groesse');
   let roh: unknown;
   try {
-    const koerper = await anfrage.text();
-    if (new TextEncoder().encode(koerper).length > ABGABE_MAX_BYTES) return antwort(413, 'groesse');
+    const koerper = await leseBegrenzt(anfrage, ABGABE_MAX_BYTES);
+    if (koerper === 'zuGross') return antwort(413, 'groesse');
+    if (koerper === null) return antwort(400, 'anfrage');
     roh = JSON.parse(koerper);
   } catch {
     return antwort(400, 'anfrage');

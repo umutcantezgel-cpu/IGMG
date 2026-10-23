@@ -11,6 +11,7 @@ import { auth } from '@/lib/auth/server';
 import { db, schema } from '@/lib/db';
 import { PASSWORT_MIN } from '@/lib/konto/passwort-staerke';
 import { meldeSicherheitsaenderung } from '@/lib/konto/sicherheitsmail';
+import { loescheAlleEigenenAbgaben } from '@/lib/lernapp/schreiben/folgen';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { aktuelleSitzungsId, faktorPflicht, hatZugang, verlangeKontenAktion } from '@/lib/konto/zugang';
 import { ladeKonto, verlangeKontoRecht, type Konto } from '@/lib/rechte/gemeinde';
@@ -316,6 +317,22 @@ export async function datenExportieren(): Promise<{ datei?: string; fehler?: str
   const daten = await exportiereKontodaten(k.benutzerId);
   await protokolliere({ benutzerId: k.benutzerId, aktion: 'konto.daten_exportiert', zielTyp: 'benutzer', zielId: k.benutzerId });
   return { datei: JSON.stringify(daten, null, 2) };
+}
+
+/**
+ * Eigene Schreibabgaben der Lern-App endgültig löschen (Art. 17; S-L2 N-2): jederzeit, auch für Kinderkonten und auch, wenn
+ * der Schalter `lernapp_gruppen` aus ist – dann zeigt die Lern-App die eigene Liste nicht. Bestätigung per Häkchen (ohne
+ * JavaScript nutzbar); höchstens 10 Versuche je 15 Minuten. Audit nur mit Anzahl.
+ */
+export async function schreibabgabenLoeschen(daten: FormData): Promise<void> {
+  const k = await konto();
+  const sprache = sprachAus(daten);
+  const zurueck = (abgaben: string): never =>
+    redirect(pfadFuer({ pathname: '/mein-bereich/konto', query: { abgaben }, hash: 'schreibabgaben' }, sprache));
+  if (await begrenzt('abgaben', k.benutzerId)) zurueck('zuViele');
+  if (daten.get('bestaetigt') !== 'ja') zurueck('bestaetigen');
+  await loescheAlleEigenenAbgaben(k.benutzerId);
+  zurueck('geloescht');
 }
 
 /** Frist zwischen Antrag und Löschung (Bearbeitung, Widerspruchsmöglichkeit, Aufbewahrungspflichten prüfen). */

@@ -8,6 +8,7 @@ import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
 import { funktionAn } from '@/lib/funktionen';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
+import { loeseAbgabenVonGruppe } from '@/lib/lernapp/schreiben/folgen';
 import { nimmVoranmeldungAuf } from '@/lib/lernen/aufnahme';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { darf, KeinRecht, verlangeRecht } from '@/lib/rechte/pruefe';
@@ -55,7 +56,8 @@ const statusSchema = z.object({ id: z.uuid(), status: z.enum(['aktiv', 'pausiert
 
 /**
  * Status ändern. Austritt („beendet“) beendet alle Gruppenmitgliedschaften und setzt die Löschfrist (12 Monate,
- * DSFA D-10); Wiederaufnahme hebt die Frist auf.
+ * DSFA D-10); Wiederaufnahme hebt die Frist auf. Beim Austritt werden die Schreibabgaben der Lern-App von ihren Gruppen
+ * gelöst (S-L2 N-2) – nach einer Wiederaufnahme liest sie keine Lehrkraft mehr.
  */
 export async function setzeLernendeStatus(fd: FormData): Promise<void> {
   const a = await verlangeRecht('lernende.bearbeiten');
@@ -71,11 +73,13 @@ export async function setzeLernendeStatus(fd: FormData): Promise<void> {
       .where(eq(schema.lernende.id, p.data.id))
       .returning({ id: schema.lernende.id });
     if (!z0.length) return false;
-    if (beendet)
+    if (beendet) {
       await tx
         .update(schema.gruppenMitglied)
         .set({ bis: berlinerDatum(jetzt) })
         .where(and(eq(schema.gruppenMitglied.lernendeId, p.data.id), isNull(schema.gruppenMitglied.bis)));
+      await loeseAbgabenVonGruppe(tx, { lernendeId: p.data.id });
+    }
     await protokolliere(
       {
         benutzerId: a.benutzerId,

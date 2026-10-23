@@ -11,6 +11,7 @@ import {
   umgebungsSchalter,
 } from '@/lib/funktionen-regeln';
 import { pruefeKette } from '@/lib/chat/hashkette';
+import { ENTSCHEIDUNG_D_L16 } from '@/lib/lernapp/schreiben/kinderschutz';
 import { funktionenEinstellung } from '@/lib/validierung/einstellungen';
 import type { Pruefung } from './pruefungen';
 
@@ -57,7 +58,7 @@ const VORAUSSETZUNG: Partial<Record<Funktion, string>> = {
   newsletter: 'Datenschutz v2 und Double-Opt-in-Text (MN-11)',
   hadith_gesamt: 'Rechtsfreigabe der Hadith-Quelle (MN-06)',
   lernapp_sync: 'DSFA-Nachtrag Lern-App und Einwilligungstext „lernapp“ (LM-08)',
-  lernapp_gruppen: 'DSFA-Nachtrag Lern-App (LM-08)',
+  lernapp_gruppen: 'DSFA-Nachtrag Lern-App (LM-08) und Entscheidung D-L16 zum Kommentar der Lehrkraft an Kinder',
   lernapp_rangliste: 'Entscheidung zur Bestenliste ab 16 (LM-10) und DSFA-Nachtrag zu R-08 (LM-08)',
   lernapp_statistik: 'Entscheidung der Datenschutzbeauftragten (KERN 4.0 §6)',
   push_lernapp: 'wie Web Push: Push-Themen und Drittland-Hinweis (MN-11, MN-17), neutraler Text ohne Serienbezug',
@@ -282,6 +283,23 @@ export async function gemeindePruefen(
         : 'Jede Gruppe mit Chat hat mindestens zwei Erwachsene in der Leitung.',
       ort: 'Verwaltung › Gruppen',
       aufwand: '10 min',
+    });
+  }
+
+  // S-L2 M-1 / D-L16: Kommentar der Lehrkraft zur Schreibabgabe eines Kindes – harte Sperre, bis Menschen entschieden haben
+  // (`lernapp/schreiben/kinderschutz.ts`); bis dahin gibt die Lehrkraft Kindern nur Prüfliste und Einstufung zurück
+  if (ist('lernapp_gruppen')) {
+    const d = ENTSCHEIDUNG_D_L16;
+    neu({
+      id: 'gemeinde.lernapp-kommentar-kinder',
+      bereich: 'gemeinde',
+      titel: 'Lern-App: Kommentar an Kinder (D-L16)',
+      status: d ? 'ok' : produktion ? 'fehler' : 'warnung',
+      meldung: d
+        ? `D-L16 entschieden am ${d.am} (${d.fundstelle}): Kommentar der Lehrkraft an Kinder ${d.kommentarAnKinder ? 'zugelassen' : 'ausgeschlossen'}.`
+        : 'Gruppen der Lern-App sind eingeschaltet, aber D-L16 (Kommentar der Lehrkraft zur Schreibabgabe eines Kindes) ist nicht entschieden. Bis dahin ist der Kommentar an Kinder gesperrt; Kinderschutz, Datenschutzbeauftragte und Bildung entscheiden, danach wird die Entscheidung eingetragen.',
+      ort: 'web/docs/recht/entwuerfe/dsfa-lernapp.md (D-L16); Eintrag ENTSCHEIDUNG_D_L16 in web/src/lib/lernapp/schreiben/kinderschutz.ts; MENSCHEN LM-08',
+      aufwand: '1 h (Entscheidung), Umsetzung je nach Beschluss',
     });
   }
 

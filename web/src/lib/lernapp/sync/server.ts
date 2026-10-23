@@ -51,6 +51,18 @@ export function gleicherUrsprung(h: Headers): boolean {
 
 // ——— Einwilligung `lernapp` (Art. 9 DSGVO; Kinder unter 16 über die Eltern, KERN 4.0 §5) ———
 
+/** Stand der Einwilligung `lernapp` mit Lage (`konto/sechzehn.ts`) und Beginn der geltenden Einwilligung. */
+export type LernappEinwilligungDetail = {
+  stand: EinwilligungsStand;
+  lage: EinwilligungsLage;
+  /**
+   * Seit wann eine der jetzt zählenden Einwilligungen gilt (frühestes `erteiltAm`); `null` ohne geltende Einwilligung. Was
+   * vor diesem Zeitpunkt geschah, deckt sie nicht: Nach Widerruf und neuem Erteilen werden Schreibabgaben aus der Zeit
+   * davor nicht wieder lesbar (S-L2 N-2).
+   */
+  seit: Date | null;
+};
+
 /**
  * Lage der Einwilligung `lernapp` eines Kontos.
  * - Erwachsene: eigene, nicht widerrufene Einwilligung.
@@ -63,6 +75,15 @@ export async function lernappEinwilligung(
   { istKind }: { istKind: boolean },
   jetzt = new Date(),
 ): Promise<EinwilligungsStand> {
+  return (await lernappEinwilligungDetail(benutzerId, { istKind }, jetzt)).stand;
+}
+
+/** Wie `lernappEinwilligung`, dazu die Lage (Kind: „eltern“) und seit wann die geltende Einwilligung besteht. */
+export async function lernappEinwilligungDetail(
+  benutzerId: string,
+  { istKind }: { istKind: boolean },
+  jetzt = new Date(),
+): Promise<LernappEinwilligungDetail> {
   const [eigene] = await db
     .select({ id: schema.lernende.id, sechzehnAm: schema.lernende.sechzehnAm })
     .from(schema.lernende)
@@ -74,7 +95,11 @@ export async function lernappEinwilligung(
   else if (eigene?.sechzehnAm) lage = einwilligungsLage(eigene.sechzehnAm, heute);
 
   const zeilen = await db
-    .select({ erteiltVon: schema.kontoEinwilligung.erteiltVon, lernendeId: schema.kontoEinwilligung.lernendeId })
+    .select({
+      erteiltVon: schema.kontoEinwilligung.erteiltVon,
+      lernendeId: schema.kontoEinwilligung.lernendeId,
+      erteiltAm: schema.kontoEinwilligung.erteiltAm,
+    })
     .from(schema.kontoEinwilligung)
     .where(
       and(
@@ -85,8 +110,10 @@ export async function lernappEinwilligung(
           : eq(schema.kontoEinwilligung.benutzerId, benutzerId),
       ),
     );
-  const selbst = zeilen.some((z) => z.erteiltVon === benutzerId);
-  if (lage === 'eigene') return selbst ? 'erteilt' : 'fehlt';
+  const fruehestens = (z: readonly { erteiltAm: Date }[]): Date | null =>
+    z.length ? new Date(Math.min(...z.map((x) => x.erteiltAm.getTime()))) : null;
+  const selbst = zeilen.filter((z) => z.erteiltVon === benutzerId);
+  if (lage === 'eigene') return { stand: selbst.length ? 'erteilt' : 'fehlt', lage, seit: fruehestens(selbst) };
 
   const eltern = eigene
     ? new Set(
@@ -98,9 +125,10 @@ export async function lernappEinwilligung(
         ).map((e) => e.id),
       )
     : new Set<string>();
-  const vonEltern = zeilen.some((z) => z.lernendeId === eigene?.id && z.erteiltVon !== null && eltern.has(z.erteiltVon));
-  if (vonEltern || (lage === 'uebergang' && selbst)) return 'erteilt';
-  return lage === 'uebergang' ? 'fehlt' : 'eltern';
+  const vonEltern = zeilen.filter((z) => z.lernendeId === eigene?.id && z.erteiltVon !== null && eltern.has(z.erteiltVon));
+  const zaehlen = lage === 'uebergang' ? [...vonEltern, ...selbst] : vonEltern;
+  if (zaehlen.length) return { stand: 'erteilt', lage, seit: fruehestens(zaehlen) };
+  return { stand: lage === 'uebergang' ? 'fehlt' : 'eltern', lage, seit: null };
 }
 
 // ——— Prüfen und Klemmen ———
