@@ -1071,9 +1071,9 @@ L0-E01…L0-E19 und der Plan-Aufgaben ML-01…ML-06 steht dort.
 | L0 Grundlagen | fertig | grün 20.10.2026 (8 Belege, Gegenprüfung frei, Religion und Wortlaut rc=0) | d1a754e | ADR 0037–0045 angenommen mit Fortschreibungen; Stimmen tr/ar „Audio folgt“ (L3-E10a) |
 | L1 Kern | fertig | grün 20.10.2026: check (2.937 Unit), Import-Bau + Crawl 1.315 Adressen ohne 5xx, E2E Website 1.007 + Lern-App 53 grün, Vorschau-Bau; Gegenprüfung frei, S-L1 ohne hoch/kritisch | 06651b3 (Merge), Tor 46a5d31 | Budgets: Hülle 2,7 KB eigen, Spieler-Route 194 KB; 53 E2E grün |
 | L2 Übungstypen | fertig (inkl. L3-02 Schemas und Prüfer) | grün 21.10.2026: check (3.276 Unit + Prüfer-Datei 31/31 nach Zeitgrenze 30 s), Sprachen, Religion, Wortlaut rc=0, Import-Bau 2.048 Seiten + Sweep 0 × 5xx + Crawl 1.315 Adressen, Produktionsbau: Budgets eingehalten, Lern-App-E2E 73 grün; Vorschau `success` (igmg, igmg-wetzlar); Gegenprüfung Runde 2 frei | f5a9d04 (Merge), 15d0a36 | 26 Übungstypen je ≤ 8 KB, Spieler-Route 190,1 KB (+53,4); TBT nur unter Last gemessen (321/268/334 ms bei CPU-Index 1.680–1.960 statt ≈ 2.900; ruhige Nachmessung bis L8, LZ-06); Whisper-base q8 statisch im Repository (ADR 0042) |
-| L3 Pipeline + A1 | L3-01, L3-02, L3-04 fertig; L3-06 und L3-07 laufen | Lektorat de/tr/ar frei | 95d4d24 | Leitfaden, Rahmen 3 × 72 Einheiten, Kontrast 6 Richtungen; LM-02 offen; Restpunkte `lehrplan/LEKTORAT-OFFEN.md` |
-| L4 A2–B1 | | | | |
-| L5 B2–C1 | | | | |
-| L6 Wissen + Koran-Arabisch | | | | |
-| L7 Spielelemente, Gruppen | | | | |
-| L8 Härtung + Abnahme | | | | |
+| L3 Pipeline + A1 | L3-01…L3-06 fertig (L3-05 Sprachausgabe de 6cad278b, L3-06 Verwaltung 32a3e964, L3-06b 62af1517); L3-07 A1: Entwurf und Lektorat 3 × 12, Übersetzung de/tr 12/12, ar 11/12, Rückübersetzung läuft; L3-08 Audio wartet auf Blob-Token (LM-15) | offen (nach A1-Schlussprüfung und Audio) | 95d4d24 | Inhalte im Zweig `lernapp-inhalte-a1`, noch nicht gemergt; LM-02 offen |
+| L4 A2–B1 | L4-03 fertig (2691947c); L4-01 A2: Entwurf tr/de 14/14, ar 12/14, Lektorat tr/de 14/14, Übersetzung läuft; B1 offen; L4-02 Audio wartet auf LM-15 | offen | 2691947c | |
+| L5 B2–C1 | L5-03 Korrekturweg fertig (8a01d44b), L5-S S-L2 (16553944: 0 kritisch, 0 hoch), Auflagen umgesetzt (0569a47f); L5-01 Inhalte und L5-02 Audio offen | Schreibabläufe in E2E grün (102 Lern-App-E2E), S-L2 ohne hoch/kritisch; Whisper-Messung aus S2 | 0569a47f | D-L16 bei Menschen (Kommentar an Kinder gesperrt) |
+| L6 Wissen + Koran-Arabisch | L6-01 fertig; L6-02/03 Zwei-Prüfer (6bec2eb0); L6-05/06 Koran-Pfad + Wurzeltabelle (39479a4f); L6-04: 15 Einheiten entworfen und belegt, weitere laufen | offen (menschliche Prüfung ML-01) | 39479a4f | Koran-Pfad-Umfang und Prüfende bei Menschen |
+| L7 Spielelemente, Gruppen | L7-01 und L7-02 fertig (665f599d) | grün mit der Nachprüfung vom 21.10. (Gruppen-E2E, Regeltests) | 665f599d | Bestenliste nur ab 16 |
+| L8 Härtung + Abnahme | L8-01 S-L3 (1e55d44e: 0 kritisch, 0 hoch), L8-03/04 (ad61cd9c); L8-02 Leistung läuft; L8-05 offen | offen | ad61cd9c | |

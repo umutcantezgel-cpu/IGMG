@@ -1,5 +1,20 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 23.10.2026 14:45 UTC – nach dem Limit (≈ 10:05, Reset 14:00) fortgesetzt:**
+  - **S-L2-Auflagen:** frei, gemergt (0569a47f), auf `main`. Nachprüfung `tor-sl2` grün: check 3.533, Integration 3.815,
+    Sprachen, Religion, Wortlaut. L-03 deckt die Lern-App-Zeilen L-37…L-49 im Löschkonzept (2e44bd7b). PLAN §19 nachgeführt.
+  - **ZWISCHENSTÄNDE:**
+    - Wissen: `islam.aufbau.e08` (95cbeced).
+    - SL2-Rest: 7f2e22ab, ccbf72a0.
+    - L8-02: Messwerkzeuge d860551b.
+  - **Neu gestartet:**
+    - Code `wf_b9da0927-417`: L8-02 Leistung und SL2-Rest (Einwilligung `lernapp` erteilen/widerrufen, N-1 in der Tiefe), je mit Gegenprüfung.
+    - A1 `wf_3cf13d0f-0b6`: Rückübersetzung de e06–e12, tr e07–e12, ar e12, dann Schlussprüfungen.
+    - A2 tr `wf_bfb3b7c8-ff3`: Übersetzung ab e11.
+    - A2 de `wf_2805cc83-c2f`: Übersetzung ab e13.
+    - A2 ar `wf_d81814c3-758`: Lektorat ab e06, dann Übersetzung.
+    - Wissen `wf_e78497ec-5c4`: Belegprüfung aufbau.e05–e07, Entwurf + Belegprüfung e08, e09, vertiefung.e01–e03.
+
 - **Stand 23.10.2026 09:20 UTC – nach dem Limit (≈ 05:40, Reset 09:00) fortgesetzt:**
   - **Nachprüfung `tor-sec` (93b9fe9d):**
     - check (3.531), Integration (3.797), Sprachen, Religion, Bau und Lern-App-E2E (102, mit Korrekturweg) grün.
