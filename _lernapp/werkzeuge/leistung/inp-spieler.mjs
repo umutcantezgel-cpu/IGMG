@@ -19,15 +19,17 @@ const de = lernTexte('de');
 const f = (vorlage, werte) => vorlage.replace(/\{(\w+)\}/g, (_, k) => String(werte[k]));
 
 function BEOBACHTER() {
-  window.__ereignisse = [];
+  // Jede Interaktion sofort an Node melden (`__inpMelde`, exposeFunction): Die Kurskarte ist ein gewöhnlicher Link, „Lernpfad
+  // öffnen“ wechselt also das Dokument – Einträge des alten Dokuments wären danach verloren. Zeiten absolut (timeOrigin +
+  // startTime), Kennung je Dokument (interactionId zählt je Dokument neu).
   try {
     new PerformanceObserver((liste) => {
       for (const e of liste.getEntries())
         if (e.interactionId)
-          window.__ereignisse.push({
-            id: e.interactionId,
+          window.__inpMelde?.({
+            id: `${performance.timeOrigin}-${e.interactionId}`,
             name: e.name,
-            start: e.startTime,
+            start: performance.timeOrigin + e.startTime,
             dauer: e.duration,
             verarbeitung: e.processingEnd - e.processingStart,
             verzoegerung: e.processingStart - e.startTime,
@@ -126,13 +128,15 @@ const SZENARIEN = [
     pfad: '/lern-app/de',
     bereit: (s) => s.locator('main a[href="/lern-app/de/tr-aus-de"]').first().waitFor({ timeout: 60_000 }),
     ablauf: async (s, schritt, mess) => {
+      // Antippen der Kurskarte (gewöhnlicher Link, Dokumentwechsel) bis die Lektionen sichtbar sind; die Interaktion selbst
+      // meldet das alte Dokument, die Ladezeit bis zu den Lektionen steht getrennt als „Öffnen“
       const t0 = Date.now();
-      await s.locator('main a[href="/lern-app/de/tr-aus-de"]').first().tap();
-      await s.waitForURL(/\/lern-app\/de\/tr-aus-de$/);
-      await s.locator('main a[href*="/ueben?l="]').first().waitFor({ timeout: 60_000 });
+      await schritt('lernpfadOeffnen', async () => {
+        await s.locator('main a[href="/lern-app/de/tr-aus-de"]').first().tap();
+        await s.waitForURL(/\/lern-app\/de\/tr-aus-de$/);
+        await s.locator('main a[href*="/ueben?l="]').first().waitFor({ timeout: 60_000 });
+      });
       mess.oeffnenMs = Date.now() - t0;
-      // der Beobachter läuft im neuen Dokument neu an
-      await bilder(s);
       const speichern = knopf(s, de.lernpfad.offline);
       if (await speichern.count()) await schritt('offlineSpeichern', () => speichern.first().tap());
     },
@@ -152,6 +156,8 @@ async function messe(sz) {
       hasTouch: true,
     });
     const seite = await kontext.newPage();
+    const gesammelt = [];
+    await seite.exposeFunction('__inpMelde', (e) => void gesammelt.push(e));
     await seite.addInitScript(BEOBACHTER);
     const cdp = await kontext.newCDPSession(seite);
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: DROSSEL });
@@ -160,23 +166,21 @@ async function messe(sz) {
     const mess = {};
     let fehler = null;
     const schritt = async (name, fn) => {
-      marken.push({ name, ab: await seite.evaluate(() => performance.now()), url: seite.url() });
+      marken.push({ name, ab: await seite.evaluate(() => performance.timeOrigin + performance.now()), url: seite.url() });
       await fn();
       await bilder(seite);
     };
-    const gesammelt = [];
     try {
       await seite.goto(`${BASIS}${sz.pfad}`, { waitUntil: 'load', timeout: 90_000 });
       await sz.bereit(seite);
       await bilder(seite);
-      // Ereignisse des Dokuments vor einem Seitenwechsel sichern
-      seite.on('framenavigated', () => undefined);
       await sz.ablauf(seite, schritt, mess);
       await seite.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
     } catch (e) {
       fehler = String(e.message ?? e).split('\n')[0];
     }
-    gesammelt.push(...(await seite.evaluate(() => window.__ereignisse ?? []).catch(() => [])));
+    // gemeldete Einträge der letzten Bilder abwarten (Bindung ist asynchron)
+    await bilder(seite).catch(() => undefined);
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 }).catch(() => undefined);
     await kontext.close();
     const jeInteraktion = new Map();
@@ -184,7 +188,7 @@ async function messe(sz) {
       const alt = jeInteraktion.get(e.id);
       if (!alt || e.dauer > alt.dauer) jeInteraktion.set(e.id, e);
     }
-    // Marken nach dem letzten Seitenwechsel gelten für die Zeitachse des neuen Dokuments
+    // Marken und Einträge auf derselben absoluten Zeitachse (über Seitenwechsel hinweg)
     const zuordnen = (t) => [...marken].reverse().find((m) => m.ab <= t)?.name ?? 'vorher';
     const liste = [...jeInteraktion.values()].map((e) => ({ ...e, schritt: zuordnen(e.start) })).sort((a, b) => b.dauer - a.dauer);
     const jeSchritt = {};
