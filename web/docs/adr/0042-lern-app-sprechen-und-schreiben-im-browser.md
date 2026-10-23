@@ -116,7 +116,9 @@ Gilt vor Nr. 1–12 und den Abschnitten oben, wo es abweicht.
     Schutzmaßnahmen voraus (Eltern sehen den Kommentar oder können ihn melden, Fassungen statt Ersetzen, Bremse).
 19. **Route, Größe (S-L2 H-1):** `POST /api/lernapp/schreiben` liest den Körper als Strom und bricht nach 64 KB ab, auch
     ohne oder mit falscher Content-Length (wie der Abgleich). Der Schalter `lernapp_gruppen` setzt zusätzlich `konten`
-    voraus (S-L2 H-2, `funktionen-regeln.ts`).
+    voraus (S-L2 H-2, `funktionen-regeln.ts`). Die Einwilligung der Eltern zählt nur mit bestätigtem Eltern-Kind-Bezug
+    (S-L2 H-3, wie Lernwoche und Familie). Ein Leseeintrag im Audit beim Öffnen einer Abgabe (S-L2 H-4) bleibt offen und
+    wird mit D-L16 entschieden.
 
 ## Alternativen
 
