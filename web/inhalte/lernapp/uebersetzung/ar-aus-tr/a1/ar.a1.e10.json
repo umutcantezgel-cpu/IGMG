@@ -573,11 +573,7 @@
     {
       "bezug": "ar.a1.e10.s0030",
       "text": "Lütfen bana bir bardak su ver, baba.",
-      "alternativen": [
-        "Baba, bana bir bardak su ver lütfen.",
-        "Bana bir bardak su ver, lütfen baba.",
-        "Bana bir bardak su verir misin, baba?"
-      ],
+      "alternativen": ["Baba, bana bir bardak su ver lütfen.", "Bana bir bardak su ver, lütfen baba."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -688,7 +684,7 @@
     {
       "bezug": "ar.a1.e10.s0044",
       "text": "Bu çay çok acı!",
-      "alternativen": ["Bu çay çok acıymış!", "Çay çok acı!"],
+      "alternativen": ["Bu çay çok acıymış!"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -716,7 +712,7 @@
     {
       "bezug": "ar.a1.e10.s0048",
       "text": "Salmā spordan sonra susadı.",
-      "alternativen": ["Spordan sonra Salmā susadı.", "Salmā spordan sonra susamış."],
+      "alternativen": ["Spordan sonra Salmā susadı.", "Salmā spordan sonra susamış.", "Salmā spordan sonra susar."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -887,7 +883,7 @@
     {
       "bezug": "ar.a1.e10.s0071",
       "text": "Kız kardeşime tabağı veriyorum.",
-      "alternativen": ["Tabağı kız kardeşime veriyorum.", "Kız kardeşime tabağı veririm.", "Tabağı kardeşime veriyorum."],
+      "alternativen": ["Tabağı kız kardeşime veriyorum.", "Kız kardeşime tabağı veririm.", "Tabağı kız kardeşime veririm."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -919,7 +915,6 @@
     {
       "bezug": "ar.a1.e10.s0075",
       "text": "Bu tabak temiz mi?",
-      "alternativen": ["Tabak temiz mi?"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -958,14 +953,14 @@
     {
       "bezug": "ar.a1.e10.s0080",
       "text": "Buyur, Laylā.",
-      "alternativen": ["Buyurun, Laylā.", "Buyur Laylā, al."],
+      "alternativen": ["Buyur Laylā, al."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "ar.a1.e10.s0081",
       "text": "Ben de bir bardak meyve suyu istiyorum. Susadım.",
-      "alternativen": ["Ben de bir bardak meyve suyu istiyorum. Susamışım.", "Bir bardak meyve suyu da ben istiyorum. Susadım."],
+      "alternativen": ["Ben de bir bardak meyve suyu istiyorum. Susamışım."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1189,7 +1184,7 @@
     {
       "bezug": "ar.a1.e10.s0109",
       "text": "Buyur, buraya otur, Nādiya.",
-      "alternativen": ["Buyur Nādiya, buraya otur.", "Buyur, şuraya otur, Nādiya.", "Nādiya, buyur, buraya otur."],
+      "alternativen": ["Buyur Nādiya, buraya otur.", "Nādiya, buyur, buraya otur."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1411,7 +1406,7 @@
     {
       "bezug": "ar.a1.e10.s0136",
       "text": "Siparişin ne, Salmā?",
-      "alternativen": ["Ne sipariş ediyorsun, Salmā?", "Salmā, siparişin ne?", "Ne istiyorsun, Salmā?"],
+      "alternativen": ["Ne sipariş ediyorsun, Salmā?", "Salmā, siparişin ne?"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1511,8 +1506,13 @@
     },
     {
       "bezug": "ar.a1.e10.s0147",
-      "text": "Bugün yemekhanede çok sipariş var.",
-      "alternativen": ["Yemekhanede bugün çok sipariş var.", "Bugün restoranda çok sipariş var.", "Bugün lokantada çok sipariş var."],
+      "text": "Bugün restoranda çok sipariş var.",
+      "alternativen": [
+        "Restoranda bugün çok sipariş var.",
+        "Bugün lokantada çok sipariş var.",
+        "Bugün yemekhanede çok sipariş var.",
+        "Yemekhanede bugün çok sipariş var."
+      ],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1864,9 +1864,9 @@
     },
     {
       "bezug": "ar.a1.e10.s0190",
-      "text": "Büyükanne bir tavuk alıyor ve onu pilavla pişiriyor.",
+      "text": "Büyükanne bir tavuk alıyor ve onu pirinçle pişiriyor.",
       "alternativen": [
-        "Büyükanne bir tavuk alıp onu pilavla pişiriyor.",
+        "Büyükanne bir tavuk alıp onu pirinçle pişiriyor.",
         "Büyükanne bir tavuk alıyor ve pirinçle pişiriyor.",
         "Nine bir tavuk alıp pirinçle pişiriyor."
       ],
@@ -2205,7 +2205,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Tanıdık olan: Türkçede „eti“ eki aldığı gibi, Arapçada da ilk kelime işaret taşır ve artikel almaz. Sonu -a ile biterse -at olur: šūrbat al-ʿadas (mercimek çorbası)."
+                "text": "Tanıdık olan: Türkçede sahip olunan kelime ek alır (et → eti); Arapçada da sahip olunan kelime, yani ilk kelime, değişir ve artikel almaz. Sonu -a ile biterse -at olur: šūrbat al-ʿadas (mercimek çorbası)."
               }
             ]
           },
