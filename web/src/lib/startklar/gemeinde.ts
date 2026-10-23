@@ -11,7 +11,7 @@ import {
   umgebungsSchalter,
 } from '@/lib/funktionen-regeln';
 import { pruefeKette } from '@/lib/chat/hashkette';
-import { ENTSCHEIDUNG_D_L16 } from '@/lib/lernapp/schreiben/kinderschutz';
+import { bewerteDL16 } from '@/lib/lernapp/schreiben/kinderschutz';
 import { funktionenEinstellung } from '@/lib/validierung/einstellungen';
 import type { Pruefung } from './pruefungen';
 
@@ -287,18 +287,17 @@ export async function gemeindePruefen(
   }
 
   // S-L2 M-1 / D-L16: Kommentar der Lehrkraft zur Schreibabgabe eines Kindes – harte Sperre, bis Menschen entschieden haben
-  // (`lernapp/schreiben/kinderschutz.ts`); bis dahin gibt die Lehrkraft Kindern nur Prüfliste und Einstufung zurück
+  // und die Schutzmaßnahmen umgesetzt sind (`lernapp/schreiben/kinderschutz.ts`); bis dahin gibt die Lehrkraft Kindern nur
+  // Prüfliste und Einstufung zurück. Rot in der Betriebsart Produktion, Warnung in Vorschau und Entwicklung.
   if (ist('lernapp_gruppen')) {
-    const d = ENTSCHEIDUNG_D_L16;
+    const d = bewerteDL16(produktion);
     neu({
       id: 'gemeinde.lernapp-kommentar-kinder',
       bereich: 'gemeinde',
       titel: 'Lern-App: Kommentar an Kinder (D-L16)',
-      status: d ? 'ok' : produktion ? 'fehler' : 'warnung',
-      meldung: d
-        ? `D-L16 entschieden am ${d.am} (${d.fundstelle}): Kommentar der Lehrkraft an Kinder ${d.kommentarAnKinder ? 'zugelassen' : 'ausgeschlossen'}.`
-        : 'Gruppen der Lern-App sind eingeschaltet, aber D-L16 (Kommentar der Lehrkraft zur Schreibabgabe eines Kindes) ist nicht entschieden. Bis dahin ist der Kommentar an Kinder gesperrt; Kinderschutz, Datenschutzbeauftragte und Bildung entscheiden, danach wird die Entscheidung eingetragen.',
-      ort: 'web/docs/recht/entwuerfe/dsfa-lernapp.md (D-L16); Eintrag ENTSCHEIDUNG_D_L16 in web/src/lib/lernapp/schreiben/kinderschutz.ts; MENSCHEN LM-08',
+      status: d.status,
+      meldung: d.meldung,
+      ort: 'web/docs/recht/entwuerfe/dsfa-lernapp.md (D-L16); Einträge ENTSCHEIDUNG_D_L16 und UMGESETZTE_SCHUTZMASSNAHMEN in web/src/lib/lernapp/schreiben/kinderschutz.ts; MENSCHEN LM-08',
       aufwand: '1 h (Entscheidung), Umsetzung je nach Beschluss',
     });
   }

@@ -417,6 +417,31 @@ describe('Lehrkraft: nur die eigene Gruppe, nur lesbare Abgaben', () => {
     });
   });
 
+  it('Kind, Altkommentar (SL2-Rest): ein früher gespeicherter Kommentar erreicht das Kind nicht; der Export enthält ihn', async () => {
+    const a = await kontext(ids.lehrkraftA);
+    const kind = (await dienst.abgabenDerGruppe(a, ids.gruppe1)).find((z) => z.name === '[Kind] K')!;
+    const A = schema.lernappSchreibabgabe;
+    // Kommentar aus der Zeit vor der Sperre (direkt gespeichert, wie ihn die alte Rückgabe schrieb)
+    const alt = verschluessele({ text: KOMMENTAR });
+    await db
+      .update(A)
+      .set({ kommentarVerschluesselt: alt.daten, kommentarSchluesselId: alt.schluesselId, korrigiertAm: new Date() })
+      .where(eq(A.id, kind.id));
+    als(ids.kind);
+    const { abgaben } = (await (await liste()).json()) as ListeAntwort;
+    const meine = abgaben.find((x) => x.id === kind.id)!;
+    expect(meine.rueckmeldung).toMatchObject({ kommentar: null, einstufung: 'erreicht' });
+    expect(JSON.stringify(abgaben)).not.toContain('Endungen');
+    // Auskunft nach Art. 15/20 bleibt vollständig
+    const daten = (await exportiereKontodaten(ids.kind)) as { lernapp: { schreibabgaben: { id: string; rueckmeldung: unknown }[] } };
+    expect(daten.lernapp.schreibabgaben.find((x) => x.id === kind.id)?.rueckmeldung).toMatchObject({ kommentar: KOMMENTAR });
+    // Erwachsene sehen ihren Kommentar weiter
+    als(ids.erwachsen);
+    const eigene = ((await (await liste()).json()) as ListeAntwort).abgaben;
+    expect(eigene.some((x) => x.rueckmeldung?.kommentar === KOMMENTAR)).toBe(true);
+    await db.update(A).set({ kommentarVerschluesselt: null, kommentarSchluesselId: null }).where(eq(A.id, kind.id));
+  });
+
   it('Rückgabe, während die Person ihre Abgabe löscht: KeinZugang und kein Audit-Eintrag „zurückgegeben“', async () => {
     const a = await kontext(ids.lehrkraftA);
     const offen = (await dienst.abgabenDerGruppe(a, ids.gruppe1)).find((z) => z.name === '[Erwachsen] W' && z.zustand === 'offen')!;

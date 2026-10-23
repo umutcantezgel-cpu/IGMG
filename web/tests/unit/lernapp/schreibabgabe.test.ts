@@ -1,6 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { AbgabeAnfrageSchema, PruefAnfrageSchema } from '@/lib/lernapp/schreiben/abgabe';
-import { ENTSCHEIDUNG_D_L16, kommentarErlaubt } from '@/lib/lernapp/schreiben/kinderschutz';
+import {
+  bewerteDL16,
+  ENTSCHEIDUNG_D_L16,
+  fehlendeSchutzmassnahmen,
+  kommentarErlaubt,
+  SCHUTZMASSNAHMEN,
+  UMGESETZTE_SCHUTZMASSNAHMEN,
+} from '@/lib/lernapp/schreiben/kinderschutz';
 import {
   abgabeSchluessel,
   abgelaufen,
@@ -59,7 +66,29 @@ describe('S-L2-Auflagen: Kommentar an Kinder (M-1, D-L16) und Deckung durch die 
     expect(kommentarErlaubt('eigene')).toBe(true);
     const beschluss = { am: '2027-01-15', fundstelle: '[Beschluss]' };
     expect(kommentarErlaubt('eltern', { ...beschluss, kommentarAnKinder: false })).toBe(false);
-    expect(kommentarErlaubt('eltern', { ...beschluss, kommentarAnKinder: true })).toBe(true);
+    // Bindung (SL2-Rest): die Entscheidung allein öffnet nichts – erst mit allen Schutzmaßnahmen umgesetzt
+    expect(UMGESETZTE_SCHUTZMASSNAHMEN).toEqual([]);
+    expect(kommentarErlaubt('eltern', { ...beschluss, kommentarAnKinder: true })).toBe(false);
+    for (const fehlt of SCHUTZMASSNAHMEN) {
+      const teil = SCHUTZMASSNAHMEN.filter((m) => m !== fehlt);
+      expect(kommentarErlaubt('eltern', { ...beschluss, kommentarAnKinder: true }, teil), fehlt).toBe(false);
+      expect(fehlendeSchutzmassnahmen(teil)).toEqual([fehlt]);
+    }
+    expect(kommentarErlaubt('eltern', { ...beschluss, kommentarAnKinder: true }, SCHUTZMASSNAHMEN)).toBe(true);
+    expect(kommentarErlaubt('eltern', { ...beschluss, kommentarAnKinder: false }, SCHUTZMASSNAHMEN)).toBe(false);
+    expect(kommentarErlaubt('eltern', null, SCHUTZMASSNAHMEN)).toBe(false);
+  });
+
+  it('Startklar zu D-L16: ohne Entscheidung Rot nur in der Produktion; zugelassen ohne Umsetzung Warnung', () => {
+    expect(bewerteDL16(true).status).toBe('fehler');
+    expect(bewerteDL16(false).status).toBe('warnung');
+    const beschluss = { am: '2027-01-15', fundstelle: '[Beschluss]' };
+    expect(bewerteDL16(true, { ...beschluss, kommentarAnKinder: false })).toMatchObject({ status: 'ok' });
+    const ohne = bewerteDL16(true, { ...beschluss, kommentarAnKinder: true }, ['fassungen']);
+    expect(ohne.status).toBe('warnung');
+    expect(ohne.meldung).toContain('Bremse');
+    expect(ohne.meldung).not.toContain('Fassungen statt Ersetzen');
+    expect(bewerteDL16(true, { ...beschluss, kommentarAnKinder: true }, SCHUTZMASSNAHMEN).status).toBe('ok');
   });
 
   it('die Einwilligung deckt nur Abgaben ab ihrem Beginn; ohne geltende Einwilligung keine', () => {
