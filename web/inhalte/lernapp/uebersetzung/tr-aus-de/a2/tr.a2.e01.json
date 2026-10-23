@@ -283,7 +283,7 @@
     },
     {
       "bezug": "tr.a2.e01.gayet",
-      "text": "durchaus, ziemlich",
+      "text": "äußerst, durchaus",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -432,7 +432,8 @@
       "alternativen": [
         "Can ging mit Freunden in ein Café.",
         "Can ist mit ein paar Freunden in ein Café gegangen.",
-        "Can war mit Freunden in einem Café."
+        "Can war mit Freunden in einem Café.",
+        "Can ist mit seinen Freunden in ein Café gegangen."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -870,9 +871,9 @@
     },
     {
       "bezug": "tr.a2.e01.s0051",
-      "text": "Im Verein unseres Viertels gibt es einen Schachkurs.",
+      "text": "Im Stadtteilverein gibt es einen Schachkurs.",
       "alternativen": [
-        "Im Stadtteilverein gibt es einen Schachkurs.",
+        "Im Verein unseres Viertels gibt es einen Schachkurs.",
         "Der Verein in unserem Viertel hat einen Schachkurs.",
         "Im Verein im Viertel gibt es einen Schachkurs."
       ],
@@ -1486,8 +1487,8 @@
     },
     {
       "bezug": "tr.a2.e01.s0116",
-      "text": "Ganz gut, danke.",
-      "alternativen": ["Es war ziemlich gut, danke.", "Sehr gut, danke.", "Es ist ganz gut gelaufen, danke."],
+      "text": "Sehr gut, danke.",
+      "alternativen": ["Es ist sehr gut gelaufen, danke.", "Ganz gut, danke.", "Es ist ganz gut gelaufen, danke."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1726,7 +1727,7 @@
     {
       "bezug": "tr.a2.e01.s0145",
       "text": "Diese Ausstellung ist richtig schön.",
-      "alternativen": ["Diese Ausstellung ist ziemlich schön.", "Diese Ausstellung ist wirklich schön.", "Die Ausstellung ist sehr schön."],
+      "alternativen": ["Diese Ausstellung ist sehr schön.", "Diese Ausstellung ist wirklich schön.", "Die Ausstellung ist sehr schön."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1743,7 +1744,7 @@
       "alternativen": [
         "Lena mochte die Ausstellung nicht, sie fand sie sehr langweilig.",
         "Lena fand die Ausstellung nicht gut, sie fand sie sehr langweilig.",
-        "Die Ausstellung hat Lena nicht gefallen, sie fand sie zu langweilig."
+        "Lena hat die Ausstellung nicht gemocht, sie fand sie sehr langweilig."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1930,11 +1931,7 @@
     {
       "bezug": "tr.a2.e01.s0166",
       "text": "In meiner Freizeit lese ich Romane.",
-      "alternativen": [
-        "Ich lese in meiner Freizeit Romane.",
-        "In der Freizeit lese ich Romane.",
-        "In meiner Freizeit lese ich gern Romane."
-      ],
+      "alternativen": ["Ich lese in meiner Freizeit Romane.", "In der Freizeit lese ich Romane.", "Ich lese Romane in meiner Freizeit."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2052,7 +2049,11 @@
         "Wir hatten keine Zeit und gingen nach Hause.",
         "Wir hatten keine Zeit, wir sind heimgegangen.",
         "Wir hatten keine Zeit und sind heimgegangen.",
-        "Weil wir keine Zeit hatten, sind wir nach Hause gegangen."
+        "Weil wir keine Zeit hatten, sind wir nach Hause gegangen.",
+        "Wir hatten keine Zeit, wir sind wieder nach Hause gegangen.",
+        "Wir hatten keine Zeit und sind wieder nach Hause gegangen.",
+        "Wir hatten keine Zeit, darum sind wir nach Hause gegangen.",
+        "Wir hatten keine Zeit, wir sind nach Hause zurückgefahren."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2228,10 +2229,10 @@
     },
     {
       "bezug": "tr.a2.e01.s0196",
-      "text": "Ziemlich gut, aber ein bisschen anstrengend.",
+      "text": "Er war sehr gut, aber ein bisschen anstrengend.",
       "alternativen": [
-        "Er war ziemlich gut, aber etwas anstrengend.",
-        "Es war ganz gut, aber ein bisschen anstrengend.",
+        "Sehr gut, aber ein bisschen anstrengend.",
+        "Es war sehr gut, aber etwas anstrengend.",
         "Er war richtig gut, aber ein bisschen anstrengend."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
@@ -2469,11 +2470,11 @@
     },
     {
       "bezug": "tr.a2.e01.s0219",
-      "text": "Nein, es war ziemlich interessant! Und du, Can?",
+      "text": "Nein, es war richtig interessant! Und du, Can?",
       "alternativen": [
         "Nein, es war sehr interessant! Und du, Can?",
-        "Nein, es war richtig interessant! Und du, Can?",
-        "Nein, ganz im Gegenteil, es war interessant! Und du, Can?"
+        "Nein, es war wirklich interessant! Und du, Can?",
+        "Nein, es war äußerst interessant! Und du, Can?"
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2573,22 +2574,22 @@
     },
     {
       "bezug": "tr.a2.e01.s0231",
-      "text": "Mit ihrer Mutter.",
-      "alternativen": ["Sie ist mit ihrer Mutter gegangen.", "Sie ging mit ihrer Mutter.", "Mit ihrer Mama."],
+      "text": "Sie ist mit ihrer Mutter gegangen.",
+      "alternativen": ["Mit ihrer Mutter.", "Sie ging mit ihrer Mutter.", "Mit ihrer Mama."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.a2.e01.s0232",
-      "text": "Mit ihrem Vater.",
-      "alternativen": ["Sie ist mit ihrem Vater gegangen.", "Sie ging mit ihrem Vater.", "Mit ihrem Papa."],
+      "text": "Sie ist mit ihrem Vater gegangen.",
+      "alternativen": ["Mit ihrem Vater.", "Sie ging mit ihrem Vater.", "Mit ihrem Papa."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.a2.e01.s0233",
-      "text": "Mit Rim.",
-      "alternativen": ["Sie ist mit Rim gegangen.", "Sie ging mit Rim."],
+      "text": "Sie ist mit Rim gegangen.",
+      "alternativen": ["Mit Rim.", "Sie ging mit Rim."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2601,8 +2602,8 @@
     },
     {
       "bezug": "tr.a2.e01.s0235",
-      "text": "Ziemlich interessant.",
-      "alternativen": ["Es war ziemlich interessant.", "Sie war ziemlich interessant.", "Richtig interessant."],
+      "text": "Es war richtig interessant.",
+      "alternativen": ["Richtig interessant.", "Sie war richtig interessant.", "Es war sehr interessant."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2629,22 +2630,22 @@
     },
     {
       "bezug": "tr.a2.e01.s0239",
-      "text": "Mit seinem Opa.",
-      "alternativen": ["Er hat mit seinem Opa gespielt.", "Er spielte mit seinem Opa.", "Mit seinem Großvater."],
+      "text": "Er hat mit seinem Opa gespielt.",
+      "alternativen": ["Mit seinem Opa.", "Er spielte mit seinem Opa.", "Mit seinem Großvater."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.a2.e01.s0240",
-      "text": "Mit seinem Vater.",
-      "alternativen": ["Er hat mit seinem Vater gespielt.", "Er spielte mit seinem Vater.", "Mit seinem Papa."],
+      "text": "Er hat mit seinem Vater gespielt.",
+      "alternativen": ["Mit seinem Vater.", "Er spielte mit seinem Vater.", "Mit seinem Papa."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.a2.e01.s0241",
-      "text": "Mit Jan.",
-      "alternativen": ["Er hat mit Jan gespielt.", "Er spielte mit Jan."],
+      "text": "Er hat mit Jan gespielt.",
+      "alternativen": ["Mit Jan.", "Er spielte mit Jan."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3180,7 +3181,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Für „war“ gibt es kein eigenes Wort. Das Adjektiv oder Nomen bekommt -di nach der Vokalharmonie, nach einem Vokal mit y: güzeldi, sıkıcıydı, evdeydim (ich war zu Hause). Nach harten Lauten steht -ti: ilginçti, kalabalıktı."
+                "text": "Für „war“ braucht das Türkische kein eigenes Wort. Das Adjektiv oder Nomen bekommt -di nach der Vokalharmonie, nach einem Vokal mit y: güzeldi, sıkıcıydı, evdeydim (ich war zu Hause). Nach harten Lauten steht -ti: ilginçti, kalabalıktı."
               }
             ]
           },
