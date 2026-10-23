@@ -91,6 +91,8 @@ DATABASE_URL=$E2E_DATABASE_URL pnpm build > "$MESS_ZIEL/bau.log" 2>&1
 rc=$?
 protokoll "Bau rc=$rc"
 [ $rc -eq 0 ] || exit 1
+# Zwischenspeicher des Baus braucht der Server nicht (Platte knapp)
+rm -rf .next/cache
 
 # Server (standalone wie Docker, E2E und Betrieb) auf eigenem Port; PID gemerkt
 PORT=$E2E_PORT APP_URL=$MESS_BASIS BETTER_AUTH_URL=$MESS_BASIS DATABASE_URL=$E2E_DATABASE_URL PROXY_VERTRAUEN=1 \

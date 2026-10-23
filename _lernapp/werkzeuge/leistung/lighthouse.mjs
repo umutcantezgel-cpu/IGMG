@@ -107,7 +107,8 @@ async function lauf(route, n) {
         }
       : {}),
   };
-  schreibe(`lighthouse-berichte/${dateiname(route.pfad)}-lauf${n}.report.json`, dt.report);
+  // voller Bericht nur vom ersten Lauf je Route (Platte knapp; Fehlersuche: offene Prüfungen stehen in der Auswertung)
+  if (n === 1) schreibe(`lighthouse-berichte/${dateiname(route.pfad)}.report.json`, dt.report);
   console.log(
     `${route.pfad} Lauf ${n}: P ${w.performance} · A ${w.accessibility} · BP ${w['best-practices']} · SEO ${w.seo} · LCP ${w.lcpMs} ms · CLS ${w.cls} · TBT ${w.tbtMs} ms · JS ${w.jsKbGz} KB gz · Last ${lastVorher.l1}`,
   );
