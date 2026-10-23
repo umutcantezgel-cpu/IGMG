@@ -1,5 +1,23 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 23.10.2026 09:20 UTC – nach dem Limit (≈ 05:40, Reset 09:00) fortgesetzt:**
+  - **Nachprüfung `tor-sec` (93b9fe9d):**
+    - check (3.531), Integration (3.797), Sprachen, Religion, Bau und Lern-App-E2E (102, mit Korrekturweg) grün.
+    - Wortlaut war rot, nur wegen der Fortschreibung des Entwurfs `dsfa-lernapp.md`. Neue Ausnahme L-03 für die eigenen
+      Rechtsentwürfe der Lern-App (a154f9ee); seitdem rc=0, auf `main`.
+  - **Neu gestartet:**
+    - SL2-Auflagen `wf_24b447df-5a8`: Fortsetzung ab ccba9991 → Bau → Gegenprüfung.
+    - A1 `wf_84665c23-405`: ar-Übersetzung e12 und Rückübersetzungen.
+    - A2 tr `wf_1621e466-9c1`: Übersetzung ab e07.
+    - A2 de `wf_e2d4d3d4-b46`: Übersetzung ab e09.
+    - A2 ar `wf_4ab22015-647`: Entwurf ab e13; e13 als ZWISCHENSTAND fbdaf58f.
+    - Wissen `wf_cfbfeb2d-fd6`: Belegprüfung aufbau.e05, dann Entwurf und Belegprüfung von aufbau.e06–e09 und
+      vertiefung.e01–e03; vertiefung.e04 (siyar) bleibt zurückgestellt.
+  - **Stand vor dem Limit:**
+    - A1: ar übersetzt e01–e11.
+    - A2: tr übersetzt e01–e06, de übersetzt e01–e08, ar Entwurf e01–e12.
+    - Wissen: grund e01–e11 und aufbau e01–e04 belegt.
+
 - **Stand 23.10.2026 05:00 UTC – SICHERHEITSUPDATE + Fortsetzung:** `next@16.4.0` war von zwei kritischen
   (GHSA-2464-fhr4-w9xw, GHSA-673q-mjm6-r5xr) und einer hohen Lücke (GHSA-p3m5-59mp-jv5r) betroffen; deshalb brach der
   Upgrade-Hinweis von Next Agenten-Bauten ab. Update auf 16.4.2 (93b9fe9d, Patch übernommen, ADR 0001 + ENTSCHEIDUNGEN L3-E14)
