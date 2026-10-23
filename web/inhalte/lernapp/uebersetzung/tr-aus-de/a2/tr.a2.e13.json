@@ -534,7 +534,10 @@
         "Bitte teilen Sie uns Ihre Antwort bis Ende des Monats mit.",
         "Bitte geben Sie Ihre Antwort bis zum Monatsende bekannt.",
         "Bitte teilt eure Antwort bis zum Monatsende mit.",
-        "Bitte teilt uns eure Antwort bis Ende des Monats mit."
+        "Bitte teilt uns eure Antwort bis Ende des Monats mit.",
+        "Teilen Sie bitte Ihre Antwort bis zum Monatsende mit.",
+        "Bitte teilen Sie bis zum Monatsende Ihre Antwort mit.",
+        "Teilen Sie Ihre Antwort bitte bis zum Monatsende mit."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1100,7 +1103,8 @@
         "Herzlichen Glückwunsch zum Geburtstag, Elif! Auf viele Jahre!",
         "Alles Gute zum Geburtstag, Elif! Noch viele schöne Jahre!",
         "Schön, dass es dich gibt, Elif! Auf viele weitere Jahre!",
-        "Alles Gute zum Geburtstag, Elif! Auf noch viele Jahre!"
+        "Alles Gute zum Geburtstag, Elif! Auf noch viele Jahre!",
+        "Elif, alles Gute zum Geburtstag! Auf viele weitere Jahre!"
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1954,12 +1958,8 @@
     },
     {
       "bezug": "tr.a2.e13.s0160",
-      "text": "Meine Oma bewirtet Gäste immer sehr gut.",
-      "alternativen": [
-        "Meine Oma bewirtet ihre Gäste sehr schön.",
-        "Meine Oma ist eine sehr gute Gastgeberin.",
-        "Meine Oma bewirtet die Gäste sehr gut."
-      ],
+      "text": "Meine Oma bewirtet die Gäste sehr gut.",
+      "alternativen": ["Meine Oma bewirtet ihre Gäste sehr schön.", "Meine Oma ist eine sehr gute Gastgeberin."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2170,11 +2170,7 @@
     {
       "bezug": "tr.a2.e13.s0182",
       "text": "Cerens Brautkleid ist sehr schick.",
-      "alternativen": [
-        "Das Brautkleid von Ceren ist sehr schick.",
-        "Cerens Brautkleid ist sehr schön.",
-        "Cerens Hochzeitskleid ist sehr schick."
-      ],
+      "alternativen": ["Das Brautkleid von Ceren ist sehr schick.", "Cerens Hochzeitskleid ist sehr schick."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2389,9 +2385,9 @@
     },
     {
       "bezug": "tr.a2.e13.s0204",
-      "text": "Tante Gül bereitet sich seit zwei Monaten auf die Hochzeit vor.",
+      "text": "Tante Gül macht seit zwei Monaten Vorbereitungen für die Hochzeit.",
       "alternativen": [
-        "Tante Gül macht seit zwei Monaten Vorbereitungen für die Hochzeit.",
+        "Tante Gül bereitet sich seit zwei Monaten auf die Hochzeit vor.",
         "Seit zwei Monaten bereitet Tante Gül die Hochzeit vor.",
         "Tante Gül bereitet seit zwei Monaten die Hochzeit vor."
       ],
@@ -2400,13 +2396,13 @@
     },
     {
       "bezug": "tr.a2.e13.s0205",
-      "text": "Die Braut Ceren ist jetzt unsere Schwägerin.",
+      "text": "Die Braut Ceren ist jetzt die Frau unseres Cousins.",
       "alternativen": [
-        "Die Braut Ceren ist nun unsere Schwägerin.",
-        "Ceren, die Braut, ist jetzt unsere Schwägerin.",
-        "Jetzt ist die Braut Ceren unsere Schwägerin.",
-        "Die Braut Ceren gehört jetzt zu unserer Familie.",
+        "Die Braut Ceren ist nun die Frau unseres Cousins.",
+        "Jetzt ist die Braut Ceren die Frau unseres Cousins.",
+        "Ceren, die Braut, ist jetzt die Frau unseres Cousins.",
         "Die Braut Ceren ist jetzt unsere angeheiratete Cousine.",
+        "Die Braut Ceren gehört jetzt zu unserer Familie.",
         "Die Braut Ceren ist jetzt unsere Yenge."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
@@ -2634,11 +2630,11 @@
     },
     {
       "bezug": "tr.a2.e13.s0228",
-      "text": "Oma kaufte der Braut einen goldenen Armreif und Derya eine Halskette.",
+      "text": "Oma kaufte der Braut einen goldenen Armreif, und Derya kaufte eine Halskette.",
       "alternativen": [
-        "Oma hat der Braut einen goldenen Armreif gekauft und Derya eine Kette.",
+        "Oma hat der Braut einen goldenen Armreif gekauft, und Derya hat eine Kette gekauft.",
         "Oma kaufte der Braut ein goldenes Armband, und Derya kaufte eine Halskette.",
-        "Die Oma hat der Braut einen goldenen Armreif gekauft, Derya eine Halskette."
+        "Die Oma hat der Braut einen goldenen Armreif gekauft, und Derya hat eine Halskette gekauft."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2983,7 +2979,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Tebrikler oder Tebrik ederim heißt „Herzlichen Glückwunsch“. Viele feste Wünsche enden auf -sin (olsun = es möge sein), und zu etwas Neuem sagt man güle güle + Verb: güle güle oturun für die Wohnung, güle güle bin für das Fahrrad."
+                "text": "Tebrikler oder Tebrik ederim heißt „Herzlichen Glückwunsch“. Viele feste Wünsche enden auf -sin/-sun (olsun = es möge sein), und zu etwas Neuem sagt man güle güle + Verb: güle güle oturun für die Wohnung, güle güle bin für das Fahrrad."
               }
             ]
           },
