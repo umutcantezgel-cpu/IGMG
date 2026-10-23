@@ -74,3 +74,12 @@ Falsch wäre die Wahl, wenn (a) das Sicherheitsupdate vom 14.10.2026 eine neue M
 - `pg` statt `postgres` hält G-09 ein; Better Auth und Drizzle unterstützen beide.
 - Drizzle v1 ist absehbar; Migration erst nach stabilem Release (Pflegehinweis).
 - PGlite ist nur Entwicklungs-/Testdatenbank; Produktion und docker-compose nutzen PostgreSQL.
+
+## Fortschreibung 23.10.2026 – Sicherheitsupdate Next.js 16.4.2
+- `next`, `eslint-config-next` und `@next/bundle-analyzer` stehen auf **16.4.2** (veröffentlicht 15.10.2026). 16.4.0 ist von
+  GHSA-2464-fhr4-w9xw (kritisch, Remote-Code-Ausführung in der Image Optimization API mit SVG), GHSA-673q-mjm6-r5xr (kritisch,
+  Remote-Code-Ausführung in `use cache`-Funktionen mit Typed Arrays) und GHSA-p3m5-59mp-jv5r (hoch, Denial of Service bei Server
+  Actions) betroffen; behoben ab 16.4.1. Das ist das oben angekündigte Sofortpaket.
+- Die Mindestreife von 14 Tagen (L0-E10) gilt für Sicherheits-Fixes nicht (ENTSCHEIDUNGEN L3-E14).
+- Der Patch gegen doppelte Kopfzeilen beim Cache-MISS (`patches/next@16.4.2.patch`, BETRIEB.md) ließ sich unverändert anwenden;
+  der Fehler besteht in 16.4.2 fort.

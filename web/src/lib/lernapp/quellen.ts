@@ -22,7 +22,7 @@ export const BIBLIOTHEKEN: readonly LernQuelle[] = [
   {
     id: 'next',
     name: 'Next.js',
-    version: '16.4.0',
+    version: '16.4.2',
     urheber: 'Copyright (c) 2025 Vercel, Inc.',
     adresse: 'https://nextjs.org',
     lizenz: 'MIT',

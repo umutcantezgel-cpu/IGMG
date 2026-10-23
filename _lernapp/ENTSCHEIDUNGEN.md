@@ -288,3 +288,10 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
   Prüfungen laufen schlank danach (nur Betroffenes, keine Testschleifen); Rotes wird gezielt nachgezogen, bei Ausfall der
   Produktion Revert-Commit. Die Lern-App bleibt in Produktion hinter `FUNKTION_LERNAPP`, bis der Nutzer anders entscheidet.
 
+## L3-E14 – Sicherheits-Fixes ohne Mindestreife (23.10.2026)
+- **Anlass:** `next@16.4.0` (Produktion) ist von zwei kritischen und einer hohen Lücke betroffen (GHSA-2464-fhr4-w9xw,
+  GHSA-673q-mjm6-r5xr, GHSA-p3m5-59mp-jv5r); der Upgrade-Hinweis von Next brach dadurch Bauten unter Agenten mit
+  `SecurityFatalError` ab.
+- **Entscheidung:** Ein Sicherheits-Fix einer festgelegten Abhängigkeit (gleiche Haupt- und Nebenversion, Patch-Stufe) wird
+  sofort eingespielt; die Mindestreife von 14 Tagen (L0-E10) gilt dafür nicht. Next steht auf 16.4.2 (ADR 0001, Fortschreibung
+  23.10.2026).

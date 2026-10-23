@@ -122,7 +122,7 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON SEQUENCES TO igmg_sich
 - Next.js-Sicherheitsupdates zeitnah einspielen (`pnpm view next version`, Paket-Update, `pnpm build`, Tests, neues Image).
 - `pnpm audit --prod` vor jeder Aktualisierung des Images.
 - Nach einem Update von `altcha`: `pnpm altcha:kopieren` (Worker unter `public/altcha/`, sonst schlägt `pnpm check` fehl).
-- **Patch an Next.js 16.4.0** (`patches/next@16.4.0.patch`, eingetragen in `pnpm-workspace.yaml` › `patchedDependencies`,
+- **Patch an Next.js 16.4.2** (`patches/next@16.4.2.patch`, seit 16.4.0 unverändert, eingetragen in `pnpm-workspace.yaml` › `patchedDependencies`,
   Nacharbeit 2, P4): Beim frischen Rendern einer Seite (Cache-MISS unter `next start`/standalone/Docker) hängte Next
   Kopfzeilen wie `location` und `link` doppelt an; eine Weiterleitung der CMS-Fangroute führte so auf „/ziel, /ziel“
   (404). Der Patch überspringt nur Werte, die schon gleich gesetzt sind; Vercel ist nicht betroffen, schadet aber nicht.
