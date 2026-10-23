@@ -554,7 +554,7 @@
     {
       "bezug": "tr.a2.e04.s0019",
       "text": "Kennst du ihn?",
-      "alternativen": ["Kennst du sie?", "Kennst du ihn eigentlich?"],
+      "alternativen": ["Kennst du sie?"],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -611,7 +611,7 @@
       "alternativen": [
         "Das Wohnhaus hat einen gemeinsamen Garten.",
         "Zum Haus gehört ein gemeinsamer Garten.",
-        "Es gibt einen gemeinsamen Garten im Haus.",
+        "Beim Haus gibt es einen gemeinsamen Garten.",
         "Das Haus hat einen Gemeinschaftsgarten.",
         "Das Haus hat einen Garten für alle."
       ],
@@ -948,7 +948,7 @@
       "alternativen": [
         "Nein, Kaffee trinke ich nicht, ich trinke Tee.",
         "Nein, ich trinke keinen Kaffee, sondern Tee.",
-        "Nein, ich trinke nie Kaffee, ich trinke Tee."
+        "Nein, Kaffee trinke ich nicht, sondern Tee."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -970,7 +970,7 @@
     {
       "bezug": "tr.a2.e04.s0062",
       "text": "Ich lese oft Bücher.",
-      "alternativen": ["Ich lese häufig Bücher.", "Oft lese ich Bücher.", "Ich lese oft."],
+      "alternativen": ["Ich lese häufig Bücher.", "Oft lese ich Bücher.", "Häufig lese ich Bücher."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1632,7 +1632,7 @@
       "alternativen": [
         "Die Lampe in der Küche ist kaputt. In einer halben Stunde bringe ich die Leiter zurück.",
         "In der Küche ist die Lampe kaputt. Ich bringe die Leiter in einer halben Stunde zurück.",
-        "Die Küchenlampe ist kaputt. Nach einer halben Stunde bringe ich die Leiter zurück."
+        "Die Küchenlampe ist kaputt. In einer halben Stunde bringe ich die Leiter zurück."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1687,7 +1687,7 @@
     {
       "bezug": "tr.a2.e04.s0140",
       "text": "Das Paket ist sehr schwer.",
-      "alternativen": ["Das Paket ist wirklich sehr schwer."],
+      "alternativen": ["Das Paket wiegt sehr viel."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1839,7 +1839,7 @@
       "alternativen": [
         "Frau Becker macht sehr leckeren Kuchen.",
         "Frau Becker backt sehr guten Kuchen.",
-        "Frau Becker backt sehr schöne Kuchen."
+        "Frau Becker macht sehr guten Kuchen."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1869,7 +1869,11 @@
     {
       "bezug": "tr.a2.e04.s0160",
       "text": "Bitte schön, möchten Sie Kuchen?",
-      "alternativen": ["Bitte, nehmen Sie Kuchen?", "Bitte schön, nehmen Sie ein Stück Kuchen?", "Bitte, möchten Sie etwas Kuchen?"],
+      "alternativen": [
+        "Bitte, möchten Sie ein Stück Kuchen?",
+        "Bitte schön, nehmen Sie ein Stück Kuchen?",
+        "Bitte, möchten Sie etwas Kuchen?"
+      ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2685,7 +2689,7 @@
     {
       "bezug": "tr.a2.e04.s0246",
       "text": "Guten Tag, Frau Becker! Ist das Paket schwer?",
-      "alternativen": ["Hallo, Frau Becker! Ist das Paket schwer?", "Schönen Tag, Frau Becker! Ist das Paket schwer?"],
+      "alternativen": ["Hallo, Frau Becker! Ist das Paket schwer?", "Tag, Frau Becker! Ist das Paket schwer?"],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2763,9 +2767,9 @@
     },
     {
       "bezug": "tr.a2.e04.s0253",
-      "text": "Danke! Meine Oma ist auch bei uns, soll ich sie mitbringen?",
+      "text": "Danke! Meine Oma ist auch bei uns. Soll ich sie auch mitbringen?",
       "alternativen": [
-        "Danke! Meine Oma ist auch bei uns. Soll ich sie auch mitbringen?",
+        "Danke! Meine Oma ist auch bei uns, soll ich sie mitbringen?",
         "Danke schön! Meine Großmutter ist auch bei uns, soll ich sie mitbringen?",
         "Danke! Meine Oma ist gerade bei uns, darf ich sie auch mitbringen?"
       ],
@@ -2912,7 +2916,7 @@
     {
       "bezug": "tr.a2.e04.s0269",
       "text": "Sie lädt nur Can ein.",
-      "alternativen": ["Nur Can.", "Nur Can lädt sie ein."],
+      "alternativen": ["Nur Can.", "Sie lädt bloß Can ein."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3271,7 +3275,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Die Aufforderung an Sie oder an mehrere Personen endet auf -(y)in; verneint steht -me/-ma davor: koşmayın, yapmayın."
+                "text": "Die Aufforderung an Sie oder an mehrere Personen endet auf -(y)in (nach Vokalharmonie auch -(y)ın, -(y)un, -(y)ün); verneint steht -me/-ma davor: koşmayın, yapmayın."
               }
             ]
           },
