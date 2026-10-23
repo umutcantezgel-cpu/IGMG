@@ -549,6 +549,13 @@ const AUSNAHMEN = [
     passt: (e) => e.gruppe === 'M' && e.status === 'neu' && /messages\/verwaltung\/lernapp(-pruefung)?\.json$/.test(String(e.datei)),
   },
   {
+    id: 'L-03',
+    grund: 'Lauf Lern-App (L5-03, S-L2): Fortschreibung der eigenen Rechtsentwürfe der Lern-App in `web/docs/recht/entwuerfe/` (DSFA Lern-App mit den Entscheidungen D-L16/D-L17, Einwilligung `lernapp`, Sprecher-Vereinbarung). Als Entwurf markiert, nicht ausgeliefert; Prüfung durch DSB/Recht (MENSCHEN LM-08). Kein bestehender Rechts- oder Einwilligungstext der Website geändert.',
+    passt: (e) =>
+      (e.status === 'neu' || e.status === 'geaendert') &&
+      /^web\/docs\/recht\/entwuerfe\/(dsfa-lernapp|einwilligung-lernapp|vereinbarung-sprecher-lernapp)\.md$/.test(String(e.datei)),
+  },
+  {
     id: 'G-03',
     grund: 'Neue Schlüssel der Gemeinde-Plattform für neue Funktionen (Konten, Mein Bereich, Push-Einwilligung, Chat, Mein Ort, Koran, Hadith, Elifbe, Lernen, Quellen, Barrierefreiheit): Einwilligungs- und Datenschutzhinweise der neuen Funktionen, versioniert über den Text-Hash (src/lib/konto/einwilligung.ts). Kein bestehender Text geändert; die Funktionen sind in der Produktion aus, bis MN-11 freigibt.',
     passt: (e) =>
