@@ -234,11 +234,17 @@ describe('Schalter, Ursprung, Anmeldung, Einwilligung', () => {
       .values({ lernendeId, art: 'lernapp', textVersion: 'v1', erteiltVon: fremd, einvernehmenBestaetigt: true });
     expect((await sende(leer)).status).toBe(403);
 
+    // Sorgeberechtigt, aber der Bezug ist noch nicht bestätigt (N4): zählt nicht (S-L2 H-3)
     const eltern = await konto();
     await db.insert(schema.elternKind).values({ elternId: eltern, lernendeId, sorgeberechtigt: true });
     await db
       .insert(schema.kontoEinwilligung)
       .values({ lernendeId, art: 'lernapp', textVersion: 'v1', erteiltVon: eltern, einvernehmenBestaetigt: true });
+    expect((await sende(leer)).status).toBe(403);
+    await db
+      .update(schema.elternKind)
+      .set({ bestaetigtAm: new Date() })
+      .where(and(eq(schema.elternKind.elternId, eltern), eq(schema.elternKind.lernendeId, lernendeId)));
     expect((await sende(leer)).status).toBe(200);
   });
 
@@ -246,7 +252,7 @@ describe('Schalter, Ursprung, Anmeldung, Einwilligung', () => {
     const jugend = await konto({ kind: true, einwilligung: false });
     const lernendeId = await lernende(jugend, '2020-01-01');
     const eltern = await konto();
-    await db.insert(schema.elternKind).values({ elternId: eltern, lernendeId, sorgeberechtigt: true });
+    await db.insert(schema.elternKind).values({ elternId: eltern, lernendeId, sorgeberechtigt: true, bestaetigtAm: new Date() });
     await db.insert(schema.kontoEinwilligung).values({ lernendeId, art: 'lernapp', textVersion: 'v1', erteiltVon: eltern });
     als(jugend);
     const leer = { geraet: randomUUID(), cursor: null, ereignisse: [] };
@@ -462,7 +468,7 @@ describe('Schreiben und Lesen', () => {
     const id = await konto({ kind: true });
     const lernendeId = await lernende(id);
     const eltern = await konto();
-    await db.insert(schema.elternKind).values({ elternId: eltern, lernendeId, sorgeberechtigt: true });
+    await db.insert(schema.elternKind).values({ elternId: eltern, lernendeId, sorgeberechtigt: true, bestaetigtAm: new Date() });
     await db.insert(schema.kontoEinwilligung).values({ lernendeId, art: 'lernapp', textVersion: 'v1', erteiltVon: eltern });
     const [gr] = await db
       .insert(schema.gruppe)

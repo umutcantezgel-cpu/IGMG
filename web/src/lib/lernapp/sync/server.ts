@@ -67,8 +67,9 @@ export type LernappEinwilligungDetail = {
  * Lage der Einwilligung `lernapp` eines Kontos.
  * - Erwachsene: eigene, nicht widerrufene Einwilligung.
  * - Kinderkonten und Konten mit Lerndatensatz unter 16 (bzw. ohne bekanntes Datum bei Kinderkonten): nur die Einwilligung
- *   sorgeberechtigter Eltern dieses Kindes zählt; im Übergang nach dem 16. Geburtstag (30 Tage) auch die eigene; danach nur
- *   die eigene (DSFA D-11, `konto/sechzehn.ts`). Ein Kinderkonto ohne Lerndatensatz kann niemand freigeben.
+ *   sorgeberechtigter Eltern dieses Kindes mit bestätigtem Bezug zählt (N4; S-L2 H-3, wie Lernwoche und Familie); im
+ *   Übergang nach dem 16. Geburtstag (30 Tage) auch die eigene; danach nur die eigene (DSFA D-11, `konto/sechzehn.ts`). Ein
+ *   Kinderkonto ohne Lerndatensatz kann niemand freigeben.
  */
 export async function lernappEinwilligung(
   benutzerId: string,
@@ -121,7 +122,13 @@ export async function lernappEinwilligungDetail(
           await db
             .select({ id: schema.elternKind.elternId })
             .from(schema.elternKind)
-            .where(and(eq(schema.elternKind.lernendeId, eigene.id), eq(schema.elternKind.sorgeberechtigt, true)))
+            .where(
+              and(
+                eq(schema.elternKind.lernendeId, eigene.id),
+                eq(schema.elternKind.sorgeberechtigt, true),
+                isNotNull(schema.elternKind.bestaetigtAm),
+              ),
+            )
         ).map((e) => e.id),
       )
     : new Set<string>();
