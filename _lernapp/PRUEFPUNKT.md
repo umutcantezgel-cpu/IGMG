@@ -1,5 +1,22 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 23.10.2026 19:15 UTC – nach dem Limit (≈ 15:45, Reset 19:00) fortgesetzt:**
+  - **Seit 14:40 fertig:**
+    - A1: alle Rückübersetzungen; nur noch die Schlussprüfungen offen.
+    - A2: tr übersetzt 14/14; de übersetzt 14/14, Rückübersetzung e01–e06; ar Lektorat e01–e12.
+    - Wissen: Entwürfe aufbau.e08/e09 und vertiefung.e01/e02.
+    - SL2-Rest inhaltlich vollständig (bis bc19b357): Einwilligung `lernapp` in Mein Bereich mit Folgen und Export,
+      Ende des Eltern-Kind-Bezugs, N-1 in der Tiefe, Altkommentare, Unterlagen, E2E, Rechte-Matrix.
+    - L8-02: Messlauf gebaut (099246e6).
+  - **ZWISCHENSTAND:** bd7eb8c0 (Lektorat ar.a2.e13, Rückübersetzung tr.a2.e01).
+  - **Neu gestartet:**
+    - Code `wf_8ab7649c-4f4`: SL2-R direkt zur Gegenprüfung; L8-02 Messung, Behebungen, Bericht.
+    - A1 `wf_6ef18884-7cf`: nur Schlussprüfungen.
+    - A2 tr `wf_dde03572-87d`: Rückübersetzung.
+    - A2 de `wf_2024ffa1-d8b`: Rückübersetzung ab e07.
+    - A2 ar `wf_06bd2e7e-e2d`: Lektorat e13/e14, dann Übersetzung.
+    - Wissen `wf_35720fcc-b98`: Belegprüfung aufbau.e05–e09 und vertiefung.e01/e02; Entwurf und Belegprüfung vertiefung.e03.
+
 - **Stand 23.10.2026 14:45 UTC – nach dem Limit (≈ 10:05, Reset 14:00) fortgesetzt:**
   - **S-L2-Auflagen:** frei, gemergt (0569a47f), auf `main`. Nachprüfung `tor-sl2` grün: check 3.533, Integration 3.815,
     Sprachen, Religion, Wortlaut. L-03 deckt die Lern-App-Zeilen L-37…L-49 im Löschkonzept (2e44bd7b). PLAN §19 nachgeführt.
