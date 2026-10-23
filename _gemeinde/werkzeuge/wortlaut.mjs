@@ -550,10 +550,19 @@ const AUSNAHMEN = [
   },
   {
     id: 'L-03',
-    grund: 'Lauf Lern-App (L5-03, S-L2): Fortschreibung der eigenen Rechtsentwürfe der Lern-App in `web/docs/recht/entwuerfe/` (DSFA Lern-App mit den Entscheidungen D-L16/D-L17, Einwilligung `lernapp`, Sprecher-Vereinbarung). Als Entwurf markiert, nicht ausgeliefert; Prüfung durch DSB/Recht (MENSCHEN LM-08). Kein bestehender Rechts- oder Einwilligungstext der Website geändert.',
-    passt: (e) =>
-      (e.status === 'neu' || e.status === 'geaendert') &&
-      /^web\/docs\/recht\/entwuerfe\/(dsfa-lernapp|einwilligung-lernapp|vereinbarung-sprecher-lernapp)\.md$/.test(String(e.datei)),
+    grund: 'Lauf Lern-App (L5-03, S-L2): Fortschreibung der eigenen Rechtsentwürfe der Lern-App in `web/docs/recht/entwuerfe/` (DSFA Lern-App mit den Entscheidungen D-L16/D-L17, Einwilligung `lernapp`, Sprecher-Vereinbarung) und der Lern-App-Zeilen L-37…L-49 im Entwurf des Löschkonzepts (nur geänderte Tabellenzeilen dieser Nummern; jede andere Zeile bleibt gleich). Als Entwurf markiert, nicht ausgeliefert; Prüfung durch DSB/Recht (MENSCHEN LM-08). Kein bestehender Rechts- oder Einwilligungstext der Website geändert.',
+    passt: (e) => {
+      if (e.status !== 'neu' && e.status !== 'geaendert') return false
+      const datei = String(e.datei)
+      if (/^web\/docs\/recht\/entwuerfe\/(dsfa-lernapp|einwilligung-lernapp|vereinbarung-sprecher-lernapp)\.md$/.test(datei)) return true
+      if (e.status !== 'geaendert' || datei !== 'web/docs/recht/entwuerfe/loeschkonzept.md') return false
+      // Absätze sind normalisiert (eine Zeile); Tabellenzeilen beginnen mit „| L-nn |“
+      const zeilen = (t) => new Set(String(t ?? '').split(/(?=\| L-\d+ \|)/).map((z) => z.trim()))
+      const vorher = zeilen(e.text_vorher)
+      const jetzt = zeilen(e.text_jetzt)
+      const anders = [...[...vorher].filter((z) => !jetzt.has(z)), ...[...jetzt].filter((z) => !vorher.has(z))]
+      return anders.length > 0 && anders.every((z) => /^\| L-(3[7-9]|4\d) \|/.test(z))
+    },
   },
   {
     id: 'G-03',
