@@ -1,7 +1,7 @@
 import type { HinweisSchluessel } from '@/lib/lernapp/abgleich/normalisiere';
 import type { AntwortVon, AufgabenTyp, AufgabeVon, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
 import type { Ziffern } from '@/lib/lernapp/format';
-import type { Oberflaeche } from '@/lib/lernapp/kurse';
+import type { Oberflaeche, RichtungId } from '@/lib/lernapp/kurse';
 import type de from '../../../messages/lernapp/de.json';
 import type { AbschlussTexte } from './Abschluss';
 
@@ -17,6 +17,15 @@ export { richtung } from '@/lib/lernapp/kurse';
 
 /** Texte des Melde-Dialogs (Namensraum `melden`, L3-06b). */
 export type MeldenTexte = (typeof de)['melden'];
+
+/** Texte der Schreibabgabe an die Lehrkraft und der eigenen Abgaben (Namensraum `schreibabgabe`, L5-03). */
+export type SchreibabgabeTexte = (typeof de)['schreibabgabe'];
+
+/**
+ * Schreibabgabe an die Lehrkraft der eigenen Gruppe (L5-03; PLAN §4.3; ADR 0042 Nr. 11): nur in Sprachkursen und nur mit dem
+ * Schalter `lernapp_gruppen` (die Seite gibt sie sonst nicht mit). Ob die Person abgeben darf, entscheidet der Server.
+ */
+export type AbgabeOption = { kurs: RichtungId; texte: SchreibabgabeTexte };
 
 /**
  * Texte der Übungstypen aus L2-02 (Namensräume `aufgaben2`, `sprechen`, `schreiben`) und der Lese-Ansichten aus L4-03
@@ -194,4 +203,6 @@ export type AufgabenProps<T extends ImplementierterTyp> = {
   nurUeberspringen: (ja: boolean) => void;
   /** Einstellungen „Hörübungen aus“, „Sprechübungen aus“ und Schalter Spracherkennung */
   optionen: SpielerOptionen;
+  /** Schreibabgabe an die Lehrkraft (nur `schreiben`; ohne: kein Angebot) */
+  abgabe?: AbgabeOption;
 };

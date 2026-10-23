@@ -2,7 +2,7 @@
 
 Für Lehrkräfte, die mit ihrer Gruppe die Lern-App nutzen. Ergänzt das Handbuch für Lehrkräfte (`lehrkraefte.md`); Anmeldung, Zwei-Faktor und Datenschutz stehen dort. Die Bedienung der App selbst steht im Handbuch für Lernende (`lernapp-lernende.md`).
 
-**Stand:** 21.10.2026. Die Seite „Lern-App“ der Gruppe in „Mein Bereich“ → „Unterricht“ ist gebaut; dieses Handbuch beschreibt sie so, wie sie ist. Bildschirmfotos folgen (Marke **[Bildschirmfoto folgt]**). Schaltflächen stehen in „Anführungszeichen“.
+**Stand:** 22.10.2026. Die Seite „Lern-App“ der Gruppe in „Mein Bereich“ → „Unterricht“ ist gebaut, mit den Schreibabgaben (Abschnitt 8); dieses Handbuch beschreibt sie so, wie sie ist. Bildschirmfotos folgen (Marke **[Bildschirmfoto folgt]**). Schaltflächen stehen in „Anführungszeichen“.
 
 **Wichtig vorab:** Die Lern-App selbst ist an und geht für alle **ohne Konto**. Die Seite „Lern-App“ der Gruppe ist in der Produktion zuerst **aus** (Schalter `lernapp_gruppen`). Die Gemeinde schaltet sie ein, wenn die Lernplattform läuft, der Datenschutz geklärt ist (DSFA-Nachtrag, Einwilligung „Lern-App“) und die Auflagen der Sicherheitsprüfung erledigt sind (`_lernapp/GO-LIVE.md`). Bis dahin kannst du die App im Unterricht trotzdem nutzen – siehe Abschnitt 7.
 
@@ -10,7 +10,7 @@ Für Lehrkräfte, die mit ihrer Gruppe die Lern-App nutzen. Ergänzt das Handbuc
 
 1. Du **weist** deiner Gruppe Einheiten oder einzelne Lektionen aus den **Sprachkursen** zu.
 2. Du siehst Zahlen nur von Lernenden **deiner eigenen Gruppe**, deren **Einwilligung „Lern-App“** gilt.
-3. Du siehst **nie** einzelne Antworten, Fehler oder Sprachaufnahmen. Aufnahmen verlassen das Gerät nie.
+3. Du siehst **nie** einzelne Antworten, Fehler oder Sprachaufnahmen – nur Texte, die dir Lernende bewusst senden (Abschnitt 8). Aufnahmen verlassen das Gerät nie.
 4. Das **Gruppenziel** zeigt nur eine Summe, ohne Namen. Eine **Bestenliste** gibt es nur freiwillig, nur ab 16.
 5. Kein Druck: keine Noten, keine Vergleiche im Gespräch, keine Erinnerungen von dir an einzelne Kinder.
 
@@ -73,9 +73,23 @@ Die Tabelle **„Stand dieser Woche“** zeigt je Lernender/Lernendem: **Lerntag
 - **Fehler gefunden?** Lass die Lernenden in der Aufgabe auf **„Fehler melden“** tippen. Das geht anonym und ohne Konto.
 - **„Noch nicht von Muttersprachlern geprüft“** steht bei Einheiten, die automatisch, aber noch nicht von Menschen mit dieser Muttersprache geprüft sind. Sag es den Lernenden offen.
 
-## 8. Schreibabgaben
+## 8. Schreibabgaben korrigieren
 
-Lernende können ab B1 kurze Texte schreiben und sie **selbst** mit Musterantwort und Prüfliste vergleichen. Das **Abgeben an die Lehrkraft** ist noch nicht eingeschaltet. Wenn es kommt: nur an die Lehrkraft der eigenen Gruppe, verschlüsselt gespeichert, nach 12 Monaten gelöscht. **[Abschnitt folgt mit der Freischaltung]**
+Lernende können ab B1 kurze Texte schreiben und sie **selbst** mit Musterantwort und Prüfliste vergleichen. Hast du deiner Gruppe eine Lektion mit Schreibaufgabe **zugewiesen** (Abschnitt 3), können Lernende mit Konto und Einwilligung „Lern-App“ (bei Kindern die der Eltern) ihren Text nach „Text prüfen“ mit **„An die Lehrkraft senden“** an dich schicken. Nur du als Lehrkraft der Gruppe siehst ihn – nicht die Aufsicht, nicht die Eltern, nicht die Verwaltung.
+
+1. Unter **„Schreibabgaben“** stehen die gesendeten Texte deiner Gruppe: Name, Kurs, Aufgabe, Datum und „Rückmeldung offen“ bzw. „zurückgegeben“. Offene stehen oben. [Bildschirmfoto folgt]
+2. Tippe auf **„Ansehen“**. Unter **„Rückmeldung geben“** siehst du die Aufgabe, den Text und die Selbsteinschätzung.
+3. Gib eine Rückmeldung – alles freiwillig, aber mindestens eins davon:
+   - die **Prüfliste** (Aufgabe, Zusammenhang, Wortschatz, Grammatik): „noch am Anfang“, „teilweise“, „überwiegend“ oder „sicher“,
+   - eine **Einstufung ohne Note**: „Aufgabe gut gelöst“, „Auf einem guten Weg“ oder „Lohnt sich, noch einmal zu schreiben“,
+   - einen **Kommentar** (höchstens 4.000 Zeichen): freundlich und zur Sache, ohne Noten, ohne Vergleiche, nichts Privates.
+4. Tippe auf **„Rückmeldung zurückgeben“**. Die lernende Person sieht sie in der Lern-App unter „Gruppe“ → „Meine Schreibabgaben“. Ändern kannst du sie danach mit „Rückmeldung ändern“.
+
+Gut zu wissen:
+
+- Texte und Kommentare sind **verschlüsselt** gespeichert und werden **12 Monate** nach dem Senden gelöscht. Sie stehen nie in E-Mails, Push-Nachrichten oder im Protokoll.
+- Verlässt jemand die Gruppe oder widerruft die Einwilligung, verschwinden die Abgaben **sofort** aus deiner Liste („Diese Abgabe ist nicht mehr sichtbar.“).
+- Lernende können ihre Abgaben jederzeit selbst löschen. Je Aufgabe sind höchstens drei Fassungen möglich.
 
 ## 9. Datenschutz in fünf Regeln
 
@@ -87,13 +101,14 @@ Lernende können ab B1 kurze Texte schreiben und sie **selbst** mit Musterantwor
 
 ## 10. Wenn etwas nicht klappt
 
-| Problem                                   | Was du tust                                                                                                             |
-| ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| „Lern-App“ fehlt in der Gruppe            | Die Seite ist noch aus (Schalter `lernapp_gruppen`), oder du bist dort Aufsicht und nicht Lehrkraft; Bildung fragen     |
-| Keine Einheiten zur Wahl                  | Für diesen Kurs ist noch keine Einheit sichtbar                                                                         |
-| „erledigt“ bleibt bei 0                   | Lernende ohne Konto, ohne Einwilligung oder ohne Abgleich; die Lern-App zeigt „Konto und Abgleich“ in den Einstellungen |
-| Gruppenziel zeigt keine Summe             | Weniger als drei Lernende mit Einwilligung                                                                              |
-| Bestenliste lässt sich nicht einschalten  | Die Gemeinde hat sie nicht freigegeben (`lernapp_rangliste`)                                                            |
-| Ein Satz oder eine Übersetzung ist falsch | In der App „Fehler melden“; die Redaktion bearbeitet es                                                                 |
+| Problem                                        | Was du tust                                                                                                                                |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| „Lern-App“ fehlt in der Gruppe                 | Die Seite ist noch aus (Schalter `lernapp_gruppen`), oder du bist dort Aufsicht und nicht Lehrkraft; Bildung fragen                        |
+| Keine Einheiten zur Wahl                       | Für diesen Kurs ist noch keine Einheit sichtbar                                                                                            |
+| „erledigt“ bleibt bei 0                        | Lernende ohne Konto, ohne Einwilligung oder ohne Abgleich; die Lern-App zeigt „Konto und Abgleich“ in den Einstellungen                    |
+| Gruppenziel zeigt keine Summe                  | Weniger als drei Lernende mit Einwilligung                                                                                                 |
+| Keine Schreibabgaben, obwohl geschrieben wurde | Die Lektion mit der Schreibaufgabe ist nicht zugewiesen, oder es fehlen Konto, Einwilligung oder die Verbindung der Lern-App mit dem Konto |
+| Bestenliste lässt sich nicht einschalten       | Die Gemeinde hat sie nicht freigegeben (`lernapp_rangliste`)                                                                               |
+| Ein Satz oder eine Übersetzung ist falsch      | In der App „Fehler melden“; die Redaktion bearbeitet es                                                                                    |
 
 **Kontakte:** Bildung [Name, Telefon] · Technik [Name, Telefon] · Ansprechperson Kinderschutz [Name, Telefon].

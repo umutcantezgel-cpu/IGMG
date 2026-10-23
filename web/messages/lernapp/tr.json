@@ -868,6 +868,72 @@
       "gut": "İyi"
     }
   },
+  "schreibabgabe": {
+    "titel": "Öğretmenine gönder",
+    "text": "Bu görevi sana öğretmenin verdiyse metnini ona gönderebilirsin. Metni yalnızca o görür ve sana geri bildirim verir. Metin şifreli saklanır ve 12 ay sonra silinir.",
+    "ohneKonto": "Hesabınla metinlerini öğrenme grubunun öğretmenine gönderebilirsin. Öğrenme Uygulaması ancak „Hesabımla kontrol et“ seçeneğini seçtiğinde sorgu yapar.",
+    "kontoPruefen": "Hesabımla kontrol et",
+    "laedt": "Kontrol ediliyor …",
+    "an": "{gruppe} grubunun öğretmenine gider.",
+    "gruppeWahl": "Hangi gruba?",
+    "senden": "Öğretmene gönder",
+    "sendet": "Gönderiliyor …",
+    "gesendet": "Gönderildi. Öğretmeninin geri bildirimini „Grup“ altında bulursun.",
+    "anmelden": "Giriş yap (yeni bir pencere açılır)",
+    "erneut": "Tekrar dene",
+    "grund": {
+      "zuweisung": "Bu görevi sana öğretmenin vermedi. Metnin bu cihazda kalır.",
+      "aufgabe": "Bu görev gönderilemiyor. Metnin bu cihazda kalır.",
+      "einwilligung": "„Öğrenme Uygulaması“ onayın olmadan metin gönderemezsin. Metnin bu cihazda kalır.",
+      "eltern": "„Öğrenme Uygulaması“ onayını anne baban verebilir. O zamana kadar metnin bu cihazda kalır.",
+      "anmeldung": "Lütfen yeniden giriş yap. Bu sayfa açık kaldığı sürece metnin burada durur.",
+      "grenze": "Bu görev için zaten birkaç metin gönderdin.",
+      "bremse": "Az önce çok sık gönderildi. Daha sonra tekrar dene.",
+      "fehler": "Şu anda gönderme çalışmıyor. Daha sonra tekrar dene."
+    },
+    "liste": {
+      "titel": "Gönderdiğim yazılar",
+      "einleitung": "Öğretmenine gönderdiğin metinler ve geri bildirimleri. Gönderimden 12 ay sonra silinirler.",
+      "laedt": "Yükleniyor …",
+      "leer": "Henüz metin göndermedin.",
+      "fehler": "Gönderilerin şu anda yüklenemiyor. Daha sonra tekrar dene.",
+      "gesendetAm": "{datum} tarihinde gönderildi",
+      "gruppe": "Grup: {gruppe}",
+      "offen": "Geri bildirim gelecek",
+      "zurueck": "Geri bildirim geldi",
+      "aufgabe": "Görev",
+      "aufgabeFehlt": "Bu görev artık kursta yok.",
+      "meinText": "Metnim",
+      "selbst": "Kendi değerlendirmem",
+      "rueckmeldung": "Öğretmeninin geri bildirimi",
+      "kommentar": "Yorum",
+      "pruefliste": "Kontrol listesine göre değerlendirme",
+      "loeschen": "Gönderiyi sil",
+      "loeschenAria": "{datum} tarihli gönderiyi sil",
+      "geloescht": "Gönderi silindi.",
+      "loeschenFrage": "Bu gönderi kalıcı olarak silinsin mi? Sonra öğretmenin de onu göremez.",
+      "loeschenJa": "Kalıcı olarak sil",
+      "abbrechen": "İptal",
+      "loeschenFehler": "Gönderi şu anda silinemiyor. Daha sonra tekrar dene."
+    },
+    "stufe": {
+      "s0": "henüz başında",
+      "s1": "kısmen",
+      "s2": "büyük ölçüde",
+      "s3": "emin"
+    },
+    "einstufung": {
+      "erreicht": "Görev iyi çözülmüş",
+      "unterwegs": "İyi bir yoldasın",
+      "nochmal": "Metni bir kez daha yazmaya değer."
+    },
+    "kriterium": {
+      "aufgabe": "Görev",
+      "zusammenhang": "Bütünlük",
+      "wortschatz": "Kelime bilgisi",
+      "grammatik": "Dil bilgisi"
+    }
+  },
   "sprachausgabe": {
     "titel": "Ses sentezi (yapay ses)",
     "text": "Dinleme alıştırmaları yapay bir ses kullanır. Ses kayıtları önceden üretilmiş ve denetlenmiştir; bu cihazda ses sentezi çalışmaz. Bir dil için henüz onaylanmış bir ses yoksa alıştırmada „Ses kaydı gelecek“ yazar.",

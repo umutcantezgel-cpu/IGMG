@@ -37,7 +37,15 @@ import { AUFGABEN_LADER, bewerterFuer, ladeTyp } from './aufgaben/lader';
 import { Fortschrittsleiste } from './Fortschrittsleiste';
 import type { MeldenDialogProps } from './MeldenDialog';
 import { Rueckmeldung } from './Rueckmeldung';
-import { type AufgabenProps, type MeldenTexte, type SpielerOptionen, type SpielerTexte, STANDARD_OPTIONEN, type UiSprache } from './typen';
+import {
+  type AbgabeOption,
+  type AufgabenProps,
+  type MeldenTexte,
+  type SpielerOptionen,
+  type SpielerTexte,
+  STANDARD_OPTIONEN,
+  type UiSprache,
+} from './typen';
 
 /**
  * Lektionsspieler (PLAN §4, KERN §7–§9): spielt eine Lektion als reinen Zustandsautomaten (engine/sitzung.ts) und meldet
@@ -76,6 +84,8 @@ export type SpielerProps = {
   optionen?: SpielerOptionen;
   /** „Fehler melden“ mit Kurs (Richtung) und Texten; ohne (Schalter aus, Vorschau, Einstufung) kein Knopf */
   melden?: { kurs: KursSlug; texte: MeldenTexte };
+  /** Schreibabgabe an die Lehrkraft (L5-03, Schalter `lernapp_gruppen`, nur Sprachkurse); ohne kein Angebot */
+  abgabe?: AbgabeOption;
   /**
    * Stand nach der Lektion (Tagesziel, Serie, neue Abzeichen; `leiteAbNachLektion`) mit seiner Anzeige, sobald Ereignisse
    * und Ableitung gespeichert sind (`nachDerLektion`). Die Anzeige ist ein eigener Chunk (Spieler-Budget, KERN 4.0 §9);
@@ -142,6 +152,7 @@ export function Spieler({
   zurueckHref,
   optionen = STANDARD_OPTIONEN,
   melden,
+  abgabe,
   abschluss,
 }: SpielerProps) {
   const id = useId();
@@ -330,6 +341,7 @@ export function Spieler({
               ueberspringe={ueberspringeAufgabe}
               nurUeberspringen={nurUeberspringen}
               optionen={optionen}
+              abgabe={abgabe}
             />
           </Suspense>
         </Ladegrenze>

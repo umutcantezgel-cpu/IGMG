@@ -4,6 +4,7 @@ import { db, schema } from '@/lib/db';
 import { entschluessele } from '@/lib/krypto';
 import { geraetAus, type Geraet } from '@/lib/konto/geraet';
 import { istKinderAdresse } from '@/lib/konto/regeln';
+import { abgabenFuerExport } from '@/lib/lernapp/schreiben/dienst';
 
 /**
  * Daten für „Mein Bereich“ (ADR 0026). Ohne Cache (Seiten sind dynamisch, `no-store`). Aufrufer prüfen vorher das
@@ -97,7 +98,8 @@ function lesbar(daten: Buffer, schluesselId: number): unknown {
  * Datenexport (Art. 15 und 20 DSGVO): alle Daten, die zum Konto gespeichert sind, maschinenlesbar. Ohne
  * Passwort-Hash, ohne TOTP-Geheimnis, ohne Sitzungs-Token und ohne öffentliche Passkey-Schlüssel (Sicherheitsdaten,
  * die der Person nichts sagen und bei Verlust der Datei schaden würden). Weitere Bereiche (Lernplattform, Chat)
- * ergänzen ihre Daten hier, sobald sie gebaut sind.
+ * ergänzen ihre Daten hier, sobald sie gebaut sind. Lern-App (L5-03): eigene Schreibabgaben mit Text, Selbsteinschätzung
+ * und Rückmeldung der Lehrkraft (entschlüsselt; ohne Kennung der korrigierenden Lehrkraft).
  */
 export async function exportiereKontodaten(benutzerId: string): Promise<Record<string, unknown>> {
   const [u] = await db
@@ -115,81 +117,94 @@ export async function exportiereKontodaten(benutzerId: string): Promise<Record<s
     .where(eq(schema.user.id, benutzerId))
     .limit(1);
   if (!u) return {};
-  const [profil, gemeinde, verwaltung, einwilligungen, sitzungen, passkeys, eigeneLernende, kinder, protokoll, antraege, zusammenfassung] =
-    await Promise.all([
-      db.select().from(schema.kontoProfil).where(eq(schema.kontoProfil.benutzerId, benutzerId)),
-      db
-        .select({ rolle: schema.gemeindeRolle.rolle, seit: schema.gemeindeRolle.erstelltAm })
-        .from(schema.gemeindeRolle)
-        .where(eq(schema.gemeindeRolle.benutzerId, benutzerId)),
-      db
-        .select({
-          rolle: schema.rolleZuweisung.rolle,
-          organisation: schema.rolleZuweisung.organisation,
-          seit: schema.rolleZuweisung.erstelltAm,
-        })
-        .from(schema.rolleZuweisung)
-        .where(eq(schema.rolleZuweisung.benutzerId, benutzerId)),
-      db
-        .select({
-          art: schema.kontoEinwilligung.art,
-          textVersion: schema.kontoEinwilligung.textVersion,
-          sprache: schema.kontoEinwilligung.sprache,
-          erteiltAm: schema.kontoEinwilligung.erteiltAm,
-          widerrufenAm: schema.kontoEinwilligung.widerrufenAm,
-          fuerLernende: schema.kontoEinwilligung.lernendeId,
-        })
-        .from(schema.kontoEinwilligung)
-        .where(or(eq(schema.kontoEinwilligung.benutzerId, benutzerId), eq(schema.kontoEinwilligung.erteiltVon, benutzerId))),
-      db
-        .select({
-          seit: schema.session.createdAt,
-          zuletzt: schema.session.updatedAt,
-          ablauf: schema.session.expiresAt,
-          ua: schema.session.userAgent,
-        })
-        .from(schema.session)
-        .where(eq(schema.session.userId, benutzerId)),
-      db
-        .select({ name: schema.passkey.name, erstellt: schema.passkey.createdAt, geraetTyp: schema.passkey.deviceType })
-        .from(schema.passkey)
-        .where(eq(schema.passkey.userId, benutzerId)),
-      db.select().from(schema.lernende).where(eq(schema.lernende.benutzerId, benutzerId)),
-      db
-        .select({
-          lernende: schema.lernende,
-          sorgeberechtigt: schema.elternKind.sorgeberechtigt,
-          bestaetigtAm: schema.elternKind.bestaetigtAm,
-        })
-        .from(schema.elternKind)
-        .innerJoin(schema.lernende, eq(schema.lernende.id, schema.elternKind.lernendeId))
-        .where(eq(schema.elternKind.elternId, benutzerId)),
-      db
-        .select({ zeitpunkt: schema.auditEintrag.zeitpunkt, aktion: schema.auditEintrag.aktion })
-        .from(schema.auditEintrag)
-        .where(eq(schema.auditEintrag.benutzerId, benutzerId))
-        .orderBy(desc(schema.auditEintrag.zeitpunkt))
-        .limit(1000),
-      db
-        .select({
-          nummer: schema.ticket.nummer,
-          titel: schema.ticket.titel,
-          status: schema.ticket.status,
-          erstellt: schema.ticket.erstelltAm,
-        })
-        .from(schema.ticket)
-        .where(and(eq(schema.ticket.erstelltVon, benutzerId), inArray(schema.ticket.kategorie, ['loeschantrag']))),
-      // Mail-Zusammenfassung (F-38): gewählte Themen, Zählbeginn, letzter Versand
-      db
-        .select({
-          themen: schema.mailZusammenfassung.themen,
-          seit: schema.mailZusammenfassung.seit,
-          letzterVersand: schema.mailZusammenfassung.letzterVersand,
-          bestelltAm: schema.mailZusammenfassung.erstelltAm,
-        })
-        .from(schema.mailZusammenfassung)
-        .where(eq(schema.mailZusammenfassung.benutzerId, benutzerId)),
-    ]);
+  const [
+    profil,
+    gemeinde,
+    verwaltung,
+    einwilligungen,
+    sitzungen,
+    passkeys,
+    eigeneLernende,
+    kinder,
+    protokoll,
+    antraege,
+    zusammenfassung,
+    schreibabgaben,
+  ] = await Promise.all([
+    db.select().from(schema.kontoProfil).where(eq(schema.kontoProfil.benutzerId, benutzerId)),
+    db
+      .select({ rolle: schema.gemeindeRolle.rolle, seit: schema.gemeindeRolle.erstelltAm })
+      .from(schema.gemeindeRolle)
+      .where(eq(schema.gemeindeRolle.benutzerId, benutzerId)),
+    db
+      .select({
+        rolle: schema.rolleZuweisung.rolle,
+        organisation: schema.rolleZuweisung.organisation,
+        seit: schema.rolleZuweisung.erstelltAm,
+      })
+      .from(schema.rolleZuweisung)
+      .where(eq(schema.rolleZuweisung.benutzerId, benutzerId)),
+    db
+      .select({
+        art: schema.kontoEinwilligung.art,
+        textVersion: schema.kontoEinwilligung.textVersion,
+        sprache: schema.kontoEinwilligung.sprache,
+        erteiltAm: schema.kontoEinwilligung.erteiltAm,
+        widerrufenAm: schema.kontoEinwilligung.widerrufenAm,
+        fuerLernende: schema.kontoEinwilligung.lernendeId,
+      })
+      .from(schema.kontoEinwilligung)
+      .where(or(eq(schema.kontoEinwilligung.benutzerId, benutzerId), eq(schema.kontoEinwilligung.erteiltVon, benutzerId))),
+    db
+      .select({
+        seit: schema.session.createdAt,
+        zuletzt: schema.session.updatedAt,
+        ablauf: schema.session.expiresAt,
+        ua: schema.session.userAgent,
+      })
+      .from(schema.session)
+      .where(eq(schema.session.userId, benutzerId)),
+    db
+      .select({ name: schema.passkey.name, erstellt: schema.passkey.createdAt, geraetTyp: schema.passkey.deviceType })
+      .from(schema.passkey)
+      .where(eq(schema.passkey.userId, benutzerId)),
+    db.select().from(schema.lernende).where(eq(schema.lernende.benutzerId, benutzerId)),
+    db
+      .select({
+        lernende: schema.lernende,
+        sorgeberechtigt: schema.elternKind.sorgeberechtigt,
+        bestaetigtAm: schema.elternKind.bestaetigtAm,
+      })
+      .from(schema.elternKind)
+      .innerJoin(schema.lernende, eq(schema.lernende.id, schema.elternKind.lernendeId))
+      .where(eq(schema.elternKind.elternId, benutzerId)),
+    db
+      .select({ zeitpunkt: schema.auditEintrag.zeitpunkt, aktion: schema.auditEintrag.aktion })
+      .from(schema.auditEintrag)
+      .where(eq(schema.auditEintrag.benutzerId, benutzerId))
+      .orderBy(desc(schema.auditEintrag.zeitpunkt))
+      .limit(1000),
+    db
+      .select({
+        nummer: schema.ticket.nummer,
+        titel: schema.ticket.titel,
+        status: schema.ticket.status,
+        erstellt: schema.ticket.erstelltAm,
+      })
+      .from(schema.ticket)
+      .where(and(eq(schema.ticket.erstelltVon, benutzerId), inArray(schema.ticket.kategorie, ['loeschantrag']))),
+    // Mail-Zusammenfassung (F-38): gewählte Themen, Zählbeginn, letzter Versand
+    db
+      .select({
+        themen: schema.mailZusammenfassung.themen,
+        seit: schema.mailZusammenfassung.seit,
+        letzterVersand: schema.mailZusammenfassung.letzterVersand,
+        bestelltAm: schema.mailZusammenfassung.erstelltAm,
+      })
+      .from(schema.mailZusammenfassung)
+      .where(eq(schema.mailZusammenfassung.benutzerId, benutzerId)),
+    abgabenFuerExport(benutzerId),
+  ]);
   const lernendeExport = (l: typeof schema.lernende.$inferSelect) => ({
     anzeigename: l.anzeigename,
     status: l.status,
@@ -223,6 +238,7 @@ export async function exportiereKontodaten(benutzerId: string): Promise<Record<s
     protokoll,
     antraege,
     zusammenfassungPerMail: zusammenfassung[0] ?? null,
+    lernapp: { schreibabgaben },
   };
 }
 

@@ -2,7 +2,7 @@
 
 Für alle, die mit der Lern-App der Gemeinde lernen. Kurze Sätze, kurze Schritte. Du brauchst kein Konto.
 
-**Stand:** 21.10.2026. Die Lern-App ist gebaut; dieses Handbuch beschreibt sie so, wie sie ist. Bildschirmfotos folgen (Marke **[Bildschirmfoto folgt]**). Schaltflächen stehen in „Anführungszeichen“.
+**Stand:** 22.10.2026. Die Lern-App ist gebaut; dieses Handbuch beschreibt sie so, wie sie ist. Bildschirmfotos folgen (Marke **[Bildschirmfoto folgt]**). Schaltflächen stehen in „Anführungszeichen“.
 
 **Wichtig vorab:** Was in der Lern-App **noch nicht eingeschaltet** ist, steht in diesem Handbuch mit dem Zeichen **(noch aus)**. Das betrifft alles, wofür die Gemeinde Daten über dich speichern müsste: Abgleich mit dem Konto, Gruppe, Bestenliste. Die Gemeinde schaltet es erst ein, wenn Datenschutz und Einwilligung geklärt sind.
 
@@ -57,7 +57,7 @@ Deine Aufnahme **verlässt das Gerät nie**. Eine automatische Rückmeldung zur 
 
 ### Schreiben (ab B1)
 
-Schreibe einen kurzen Text zur Aufgabe. Die App zählt die Wörter und prüft, ob die Pflichtwörter vorkommen. Danach siehst du eine **Musterantwort** und eine **Prüfliste**. Du schätzt dich selbst ein. Dein Text bleibt auf dem Gerät.
+Schreibe einen kurzen Text zur Aufgabe. Die App zählt die Wörter und prüft, ob die Pflichtwörter vorkommen. Danach siehst du eine **Musterantwort** und eine **Prüfliste**. Du schätzt dich selbst ein. Dein Text bleibt auf dem Gerät – außer du schickst ihn bewusst an deine Lehrkraft (Abschnitt 10).
 
 ## 4. Offline lernen
 
@@ -120,6 +120,7 @@ Mit einem Konto der Gemeinde kannst du später:
 
 - den Lernstand auf **mehreren Geräten** abgleichen (Einstellungen → „Konto und Abgleich“),
 - unter **„Gruppe“** sehen, was deine Lehrkraft dir zugewiesen hat, und das **Gruppenziel** der Woche,
+- Texte aus Schreibübungen mit **„An die Lehrkraft senden“** an deine Lehrkraft schicken, wenn sie dir die Lektion zugewiesen hat. Ist die Lern-App nicht mit deinem Konto verbunden, wähle zuerst **„Mit meinem Konto prüfen“** (dafür genügt die Anmeldung auf der Website). Ihre Rückmeldung (Kommentar, Prüfliste, Einstufung ohne Note) findest du unter **„Gruppe“** → **„Meine Schreibabgaben“**; dort kannst du jede Abgabe löschen. Sonst wird sie 12 Monate nach dem Senden gelöscht,
 - ab 16 Jahren freiwillig in der **Bestenliste** deiner Gruppe oder Familie erscheinen (nur Vorname mit Initial, nur mit deiner Zustimmung; unter 16 nie).
 
 Dafür braucht es deine **Einwilligung „Lern-App“** im Konto (bei Kindern die der Eltern). Bis die Gemeinde das einschaltet, zeigt die App „Der Abgleich ist gerade nicht verfügbar“. Ohne Konto funktioniert alles andere genauso.

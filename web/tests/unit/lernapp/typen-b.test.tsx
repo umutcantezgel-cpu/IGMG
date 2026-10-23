@@ -29,7 +29,7 @@ import { ohneTonLoesbar } from '@/lib/lernapp/aufgaben/auswertung/schrift_wahl';
 import { pruefe, starte, ueberspringe, weiter, zusammenfassung } from '@/lib/lernapp/engine/sitzung';
 import { EreignisEntwurfSchema } from '@/lib/lernapp/ereignisse/typen';
 import { tippAbschnitte } from '@/lib/lernapp/paket/bauen';
-import { ABGABE_AKTIV, bereiteAbgabe } from '@/lib/lernapp/schreiben/abgabe';
+import { AbgabeAnfrageSchema } from '@/lib/lernapp/schreiben/abgabe';
 import de from '../../../messages/lernapp/de.json';
 import {
   DIALOG,
@@ -189,19 +189,21 @@ describe('Bewertung je Typ (rein)', () => {
     expect(r).toMatchObject({ urteil: 'richtig', selbst: 'schwer' });
   });
 
-  it('schreiben: Abgabe an die Lehrkraft vorbereitet, aber nicht aktiv (L7)', () => {
-    expect(ABGABE_AKTIV).toBe(false);
+  it('schreiben: Nutzlast der Abgabe an die Lehrkraft (L5-03) – Text getrimmt, Prüfliste nur 0–3, Kennungen als UUID', () => {
     const ok = {
+      id: '00000000-0000-4000-8000-000000000001',
       kurs: 'de-aus-tr',
       aufgabe: SCHREIBEN.schluessel,
-      text: 'Am Morgen trinke ich Wasser.',
-      woerter: 5,
-      pruefliste: { aufgabe: 2 as const },
-      selbst: 'gut' as const,
+      gruppe: '00000000-0000-4000-8000-000000000002',
+      text: '  Am Morgen trinke ich Wasser.  ',
+      pruefliste: { aufgabe: 2 },
     };
-    expect(bereiteAbgabe(ok)).toMatchObject({ kurs: 'de-aus-tr', woerter: 5 });
-    expect(bereiteAbgabe({ ...ok, text: '   ' })).toBeNull();
-    expect(bereiteAbgabe({ ...ok, pruefliste: { aufgabe: 4 as 3 } })).toBeNull();
+    expect(AbgabeAnfrageSchema.parse(ok)).toMatchObject({ kurs: 'de-aus-tr', text: 'Am Morgen trinke ich Wasser.' });
+    expect(AbgabeAnfrageSchema.safeParse({ ...ok, text: '   ' }).success).toBe(false);
+    expect(AbgabeAnfrageSchema.safeParse({ ...ok, pruefliste: { aufgabe: 4 } }).success).toBe(false);
+    expect(AbgabeAnfrageSchema.safeParse({ ...ok, kurs: 'islam' }).success).toBe(false);
+    expect(AbgabeAnfrageSchema.safeParse({ ...ok, id: 'x' }).success).toBe(false);
+    expect(AbgabeAnfrageSchema.safeParse({ ...ok, extra: 1 }).success).toBe(false);
   });
 
   it('sprechen: Selbstbewertung – „noch üben“ kommt wieder, sonst angenommen', () => {

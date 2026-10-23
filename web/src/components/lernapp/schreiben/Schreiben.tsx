@@ -1,12 +1,15 @@
 'use client';
 
-import { useEffect, useId, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useId, useRef, useState } from 'react';
 import { KRITERIEN, type Pruefliste, type Pruefung, pruefeText, wortzahl } from '@/lib/lernapp/aufgaben/auswertung/schreiben';
 import type { Note } from '@/lib/lernapp/bewertung';
 import { formatiere } from '@/lib/lernapp/format';
 import { InhaltText } from '../InhaltText';
 import { richtung } from '../typen';
 import type { AufgabenProps } from '../typen';
+
+/** „An deine Lehrkraft senden“ (L5-03) als eigener Chunk: erst nach „Text prüfen“ und nur mit dem Schalter `lernapp_gruppen`. */
+const Abgabe = lazy(() => import('./Abgabe'));
 
 /** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
 export { bewerteSchreiben as bewerte } from '@/lib/lernapp/aufgaben/auswertung/schreiben';
@@ -19,10 +22,11 @@ const STUFEN = [0, 1, 2, 3] as const;
  * Schreibübung (PLAN §4.3, ADR 0042 Nr. 11): Formular mit Zähler (Wörter im Bereich), Pflichtwörtern und der
  * Rechtschreibprüfung des Browsers (`spellcheck`, `lang` der Zielsprache). „Text prüfen“ prüft nur Länge und Pflichtwörter;
  * danach Musterantwort(en), die Prüfliste nach GER als Fieldsets (je 4 Stufen, eigene Formulierungen) und die
- * Selbsteinschätzung. Der Text bleibt im Arbeitsspeicher dieser Seite – kein Ereignis, kein Speicher, keine Anfrage; die
- * Abgabe an die Lehrkraft folgt in L7 (`lib/lernapp/schreiben/abgabe.ts`).
+ * Selbsteinschätzung. Der Text bleibt im Arbeitsspeicher dieser Seite – kein Ereignis, kein Speicher, keine Anfrage. Nur
+ * mit `abgabe` (Schalter `lernapp_gruppen`, Sprachkurs) bietet die Übung nach der Prüfliste „An deine Lehrkraft senden“ an
+ * (`./Abgabe.tsx`, L5-03): gesendet wird erst auf Knopfdruck, mit Konto und nur für eine zugewiesene Aufgabe.
  */
-export default function Schreiben({ aufgabe, weitere, sprache, ziffern, gesperrt, gibAb, melde }: AufgabenProps<'schreiben'>) {
+export default function Schreiben({ aufgabe, weitere, sprache, ziffern, gesperrt, gibAb, melde, abgabe }: AufgabenProps<'schreiben'>) {
   const t = weitere.schreiben;
   const id = useId();
   const ziel = aufgabe.aufgabe.sprache;
@@ -154,6 +158,19 @@ export default function Schreiben({ aufgabe, weitere, sprache, ziffern, gesperrt
               </fieldset>
             ))}
           </div>
+          {abgabe && !gesperrt ? (
+            <Suspense fallback={null}>
+              <Abgabe
+                ui={sprache}
+                kurs={abgabe.kurs}
+                aufgabe={aufgabe.schluessel}
+                text={text}
+                pruefliste={liste}
+                texte={abgabe.texte}
+                melde={melde}
+              />
+            </Suspense>
+          ) : null}
           <fieldset className="flex flex-col gap-3">
             <legend className="mb-2 text-18 font-bold">{t.selbstFrage}</legend>
             <div className="flex flex-wrap gap-3">

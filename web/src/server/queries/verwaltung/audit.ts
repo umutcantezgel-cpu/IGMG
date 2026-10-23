@@ -135,6 +135,9 @@ export const AKTION_SCHLUESSEL = {
   'lernapp.bestenliste_geaendert': 'lernappBestenlisteGeaendert',
   'lernapp.familie_bestenliste_geaendert': 'lernappFamilieBestenlisteGeaendert',
   'lernapp.bestenliste_zustimmung': 'lernappBestenlisteZustimmung',
+  'lernapp.schreibabgabe_eingereicht': 'lernappSchreibabgabeEingereicht',
+  'lernapp.schreibabgabe_zurueckgegeben': 'lernappSchreibabgabeZurueckgegeben',
+  'lernapp.schreibabgabe_geloescht': 'lernappSchreibabgabeGeloescht',
 } as const satisfies Record<AuditAktion, string>;
 
 /** Alle Aktionen in der Reihenfolge des Schlüsselverzeichnisses. */

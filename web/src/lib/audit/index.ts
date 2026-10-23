@@ -135,7 +135,11 @@ export type AuditAktion =
   | 'lernapp.gruppenziel_geaendert'
   | 'lernapp.bestenliste_geaendert'
   | 'lernapp.familie_bestenliste_geaendert'
-  | 'lernapp.bestenliste_zustimmung';
+  | 'lernapp.bestenliste_zustimmung'
+  // Korrekturweg der Lehrkraft (L5-03): nur Kennungen, nie Text oder Kommentar
+  | 'lernapp.schreibabgabe_eingereicht'
+  | 'lernapp.schreibabgabe_zurueckgegeben'
+  | 'lernapp.schreibabgabe_geloescht';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
 

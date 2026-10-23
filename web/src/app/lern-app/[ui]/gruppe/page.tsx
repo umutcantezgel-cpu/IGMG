@@ -17,7 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
 /**
  * Gruppe (PLAN §3.1, L7-02): statische Hülle ohne Cookies; die Insel holt Zuweisungen, Gruppenziel, Bestenlisten und die
  * eigene Zustimmung von `/api/lernapp/gruppe` (Sitzung, Schalter, Einwilligung und Rechte prüft der Server). Nur mit dem
- * Schalter `lernapp_gruppen` (Personendaten, Produktion aus) – sonst 404.
+ * Schalter `lernapp_gruppen` (Personendaten, Produktion aus) – sonst 404. Darunter die eigenen Schreibabgaben mit Rückmeldung
+ * der Lehrkraft (L5-03, `/api/lernapp/schreiben`).
  */
 export default async function Gruppe() {
   await verlangeLernApp();
@@ -27,7 +28,7 @@ export default async function Gruppe() {
   return (
     <Rahmen ui={ui} bereich={null} pfad="gruppe">
       <Seitenkopf titel={t('gruppe.titel')} einleitung={t('gruppe.einleitung')} />
-      <GruppeInsel ui={ui} texte={rohTexte(ui, 'gruppe')} />
+      <GruppeInsel ui={ui} texte={rohTexte(ui, 'gruppe')} abgaben={rohTexte(ui, 'schreibabgabe')} />
     </Rahmen>
   );
 }

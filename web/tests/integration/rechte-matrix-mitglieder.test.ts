@@ -12,7 +12,7 @@ import { ausgang, type Ausgang, formular, momentaufnahme } from './verwaltung/re
 /**
  * Generierte Rechte-Matrix der Server Actions des Mitgliederbereichs (Z-13, Endprüfung Stufe C: „die Actions des
  * Mitgliederbereichs sind nur handgeschrieben getestet“). Gegenstück zu `verwaltung/rechte-matrix.test.ts` und
- * `verwaltung/rechte-matrix-gemeinde.test.ts` (Verwaltung, `verlangeRecht`): 8 Action-Dateien × 9 Personengruppen ×
+ * `verwaltung/rechte-matrix-gemeinde.test.ts` (Verwaltung, `verlangeRecht`): 9 Action-Dateien × 9 Personengruppen ×
  * jede exportierte Action, dazu je Action jeder Funktionsschalter, der sie abschaltet (ADR 0035).
  *
  * Soll je Action (ADR 0026, nicht aus dem Code abgeleitet): welche Personengruppe die Konto-Prüfung bestehen muss –
@@ -51,7 +51,7 @@ const { auth } = await import('@/lib/auth/server');
 (auth.api as unknown as Record<string, unknown>).signOut = async () => ({ success: true });
 afterAll(() => client.close());
 afterEach(() => {
-  for (const f of ['KONTEN', 'LERNPLATTFORM', 'CHAT', 'PUSH']) delete process.env[`FUNKTION_${f}`];
+  for (const f of ['KONTEN', 'LERNPLATTFORM', 'CHAT', 'PUSH', 'LERNAPP_GRUPPEN']) delete process.env[`FUNKTION_${f}`];
 });
 
 /** Personengruppe aus Sicht des Mitgliederbereichs. Testdaten fiktiv (G-04). */
@@ -116,6 +116,7 @@ const MODULE = {
   kinder: () => import('@/server/actions/kinder'),
   konto: () => import('@/server/actions/konto'),
   lehrkraft: () => import('@/server/actions/lehrkraft'),
+  'lernapp-schreiben': () => import('@/server/actions/lernapp-schreiben'),
   'mein-bereich': () => import('@/server/actions/mein-bereich'),
   schueler: () => import('@/server/actions/schueler'),
   unterricht: () => import('@/server/actions/unterricht'),
@@ -169,6 +170,13 @@ const FAELLE: Fall[] = [
   ...f('lehrkraft', ['moderiereMeldung', 'kanalPauseSetzen'], SOLL.lehrkraft, ['konten', 'lernplattform', 'chat'], {
     spion: ['lehrkraft'],
     aufruf: (fn) => fn(formular({ gruppeId: UUID, meldungId: UUID, kanalId: UUID, pause: '1', grund: GRUND, massnahme: 'keine' })),
+  }),
+  // Lern-App, Korrekturweg (lernapp-schreiben.ts, L5-03): Schalter konten, lernplattform und lernapp_gruppen, dann
+  // verlangeKontoRecht(['lehrkraft']); danach Gruppenrecht `aufgabe.bearbeiten` in Action und Dienst (Isolation:
+  // lernapp-schreiben.test.ts – fremde Gruppe, Aufsicht, Eltern, Kind, Administration lesen nie)
+  ...f('lernapp-schreiben', ['lernappAbgabeZurueckgeben'], SOLL.lehrkraft, ['konten', 'lernplattform', 'lernapp_gruppen'], {
+    spion: ['lehrkraft'],
+    aufruf: (fn) => fn(formular({ sprache: 'de', gruppe: UUID, abgabe: UUID, kommentar: 'Testkommentar', einstufung: 'unterwegs' })),
   }),
   // Unterricht (unterricht.ts): Eingabe zuerst, dann verlangeKontoRecht(); das Gruppenrecht prüft der Dienst
   ...f('unterricht', ['speichereAnwesenheit'], SOLL.konto, ['konten', 'lernplattform'], {
@@ -255,6 +263,7 @@ const TABELLEN: PgTable[] = [
   schema.moderationsprotokoll,
   schema.pushAbo,
   schema.mailZusammenfassung,
+  schema.lernappSchreibabgabe,
 ];
 
 /**
@@ -381,7 +390,7 @@ const ZUORDNUNG: Record<string, string[]> = {
 };
 
 describe('Vollständigkeit', () => {
-  it('jede exportierte Action der acht Dateien ist erfasst', async () => {
+  it('jede exportierte Action der neun Dateien ist erfasst', async () => {
     const exportiert: string[] = [];
     for (const [datei, laden] of Object.entries(MODULE)) {
       const modul = (await laden()) as Record<string, unknown>;

@@ -82,6 +82,20 @@ Gilt vor Nr. 1–12 und den Abschnitten oben, wo es abweicht.
     Spieler spielen Lern-Audio-Scheiben. Die übrige Verwaltung behält ihre strikte CSP; `'wasm-unsafe-eval'`, `worker-src blob:`
     sowie COOP/COEP bleiben auf `/lern-app` beschränkt. Abgesichert durch einen Unit-Test der Kopfzeilen (L3-06, b975936).
 
+## Fortschreibung nach der Gegenprüfung L5-03 (22.10.2026)
+
+15. **Folgen, E2E Schreibabgabe:** `tests/e2e/lernapp/gruppe.spec.ts` geht den Korrekturweg (Abgabe, Rückgabe,
+    Rückmeldung) und prüft, dass die Aufsicht derselben Gruppe weder die Liste noch die Abgabe sieht („nicht gefunden“, ohne
+    Text und Kommentar). Fremde Lehrkraft, Eltern, Kind, andere Lernende und Administration sowie Austritt, Widerruf und der
+    Löschlauf nach 12 Monaten sind in der Integration belegt (`tests/integration/lernapp-schreiben.test.ts`); ein Löschlauf
+    im E2E bräuchte eine verstellte Uhr des Servers und unterbleibt.
+16. **Nr. 11, Abgabe ohne Abgleich:** Die Abgabe an die Lehrkraft braucht den Schalter `lernapp_gruppen`, nicht
+    `lernapp_sync`. Ohne verbundenes Gerät fragt die Übung den Server erst nach der ausdrücklichen Handlung „Mit meinem Konto
+    prüfen“ (es genügt die Anmeldung der Website, wie bei „Meine Gruppe anzeigen“); mit verbundenem Gerät fragt sie sofort.
+    Die Grenzen (3 je Aufgabe und Gruppe, 200 je Konto) zählt der Dienst unter einer Zeilensperre des Kontos
+    (`FOR NO KEY UPDATE`), damit gleichzeitige Abgaben sie nicht überschreiten. Eine Rückgabe, deren Abgabe inzwischen gelöscht
+    ist, endet als „gibt es nicht“ ohne Audit-Eintrag.
+
 ## Alternativen
 
 - Web Speech API des Browsers: verworfen. Je nach Browser geht das Audio an Server des Herstellers; das widerspricht „nichts verlässt das Gerät“ und funktioniert nicht offline.

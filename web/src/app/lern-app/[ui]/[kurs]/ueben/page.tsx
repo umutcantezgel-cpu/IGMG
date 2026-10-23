@@ -5,6 +5,7 @@ import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
 import { funktionAn } from '@/lib/funktionen';
 import { lernAdresse } from '@/lib/lernapp/adressen';
+import { istRichtung } from '@/lib/lernapp/kurse';
 import { kursTitel } from '@/lib/lernapp/kurstitel';
 import { kursOder404, lernMetadaten, oberflaeche, verlangeLernApp } from '@/lib/lernapp/seite';
 import { lernTexte, rohTexte } from '@/lib/lernapp/texte';
@@ -20,7 +21,9 @@ export async function generateMetadata({ params }: PageProps<'/lern-app/[ui]/[ku
 /**
  * Üben (PLAN §3.1): statische Hülle des Lektionsspielers, Lektion über `?l=<lektion>` (im Browser gelesen, unter
  * Suspense; der Service Worker liefert die Hülle mit `ignoreSearch`). Mikrofon ist hier erlaubt (PFAD_BERECHTIGUNGEN).
- * Die Insel lädt das Einheitenpaket und den Spieler (eigener Chunk) und schreibt die Ereignisse auf das Gerät.
+ * Die Insel lädt das Einheitenpaket und den Spieler (eigener Chunk) und schreibt die Ereignisse auf das Gerät. Mit dem
+ * Schalter `lernapp_gruppen` bietet die Schreibübung die Abgabe an die Lehrkraft an (L5-03; ohne Cookies: ob die Person
+ * abgeben darf, fragt die Übung erst im Browser beim Server nach).
  */
 export default async function Ueben({ params }: PageProps<'/lern-app/[ui]/[kurs]/ueben'>) {
   await verlangeLernApp();
@@ -55,6 +58,8 @@ export default async function Ueben({ params }: PageProps<'/lern-app/[ui]/[kurs]
             spracherkennung={await funktionAn('lernapp_sprechen')}
             // „Fehler melden“ braucht eine Aufgabe in `lernapp_aufgabe`; der Koran-Pfad hat seine Aufgaben nur im Paket (L6-05)
             melden={kurs !== 'koran' && (await funktionAn('lernapp_meldungen')) ? rohTexte(ui, 'melden') : undefined}
+            // Schreibabgabe an die Lehrkraft (L5-03): nur Sprachkurse, nur mit `lernapp_gruppen` (Personendaten); den Rest prüft der Server
+            schreibabgabe={istRichtung(kurs) && (await funktionAn('lernapp_gruppen')) ? rohTexte(ui, 'schreibabgabe') : undefined}
             lernpfad={lernpfad}
           />
         </Suspense>

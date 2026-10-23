@@ -207,7 +207,10 @@
           "bestenliste": "Bestenliste geändert.",
           "doppelt": "Das ist dieser Gruppe schon zugewiesen.",
           "grenze": "Diese Gruppe hat schon sehr viele Zuweisungen. Bitte entfernen Sie zuerst ältere.",
-          "ungueltig": "Diese Einheit oder Lektion gibt es nicht mehr."
+          "ungueltig": "Diese Einheit oder Lektion gibt es nicht mehr.",
+          "zurueckgegeben": "Rückmeldung zurückgegeben.",
+          "abgabeLeer": "Bitte schreiben Sie einen Kommentar oder wählen Sie eine Einschätzung.",
+          "abgabeWeg": "Diese Abgabe ist nicht mehr sichtbar."
         },
         "zuweisen": {
           "titel": "Zuweisen",
@@ -274,6 +277,51 @@
           "keinKonto": "kein eigenes Konto",
           "keineEinwilligung": "ohne Einwilligung",
           "leer": "In dieser Gruppe sind noch keine Lernenden."
+        },
+        "abgaben": {
+          "titel": "Schreibabgaben",
+          "text": "Texte, die Lernende Ihrer Gruppe zu zugewiesenen Schreibaufgaben gesendet haben. Sichtbar nur, solange sie in der Gruppe sind und ihre Einwilligung „Lern-App“ gilt. Gelöscht 12 Monate nach dem Senden.",
+          "leer": "Noch keine Abgaben.",
+          "offen": "Rückmeldung offen",
+          "zurueckgegeben": "zurückgegeben",
+          "gesendet": "gesendet am {datum}",
+          "oeffnen": "Ansehen",
+          "oeffnenAria": "Abgabe von {name} ansehen",
+          "aufgabeFehlt": "Aufgabe nicht mehr im Kurs"
+        },
+        "korrektur": {
+          "titel": "Rückmeldung geben",
+          "von": "Von {name}, gesendet am {datum}",
+          "aufgabe": "Aufgabe",
+          "text": "Text",
+          "selbst": "Selbsteinschätzung",
+          "selbstLeer": "Keine Selbsteinschätzung angegeben.",
+          "pruefliste": "Ihre Einschätzung nach der Prüfliste (freiwillig)",
+          "kriterium": {
+            "aufgabe": "Aufgabe",
+            "zusammenhang": "Zusammenhang",
+            "wortschatz": "Wortschatz",
+            "grammatik": "Grammatik"
+          },
+          "stufe": {
+            "s0": "noch am Anfang",
+            "s1": "teilweise",
+            "s2": "überwiegend",
+            "s3": "sicher"
+          },
+          "keineAngabe": "keine Angabe",
+          "einstufung": "Einstufung (freiwillig, ohne Note)",
+          "einstufungen": {
+            "erreicht": "Aufgabe gut gelöst",
+            "unterwegs": "Auf einem guten Weg",
+            "nochmal": "Lohnt sich, noch einmal zu schreiben"
+          },
+          "kommentar": "Kommentar",
+          "kommentarHilfe": "Nur die lernende Person sieht ihn. Höchstens 4.000 Zeichen.",
+          "zurueckgeben": "Rückmeldung zurückgeben",
+          "aendern": "Rückmeldung ändern",
+          "bisher": "Zurückgegeben am {datum}. Sie können die Rückmeldung ändern.",
+          "schliessen": "Zur Liste"
         }
       }
     }
@@ -486,7 +534,10 @@
           "bestenliste": "Başarı listesi değiştirildi.",
           "doppelt": "Bu, gruba zaten verilmiş.",
           "grenze": "Bu grubun çok fazla görevi var. Lütfen önce eskilerini kaldırın.",
-          "ungueltig": "Bu ünite veya ders artık mevcut değil."
+          "ungueltig": "Bu ünite veya ders artık mevcut değil.",
+          "zurueckgegeben": "Geri bildirim iletildi.",
+          "abgabeLeer": "Lütfen bir yorum yazın ya da bir değerlendirme seçin.",
+          "abgabeWeg": "Bu gönderi artık görünmüyor."
         },
         "zuweisen": {
           "titel": "Görev ver",
@@ -553,6 +604,51 @@
           "keinKonto": "kendi hesabı yok",
           "keineEinwilligung": "onay yok",
           "leer": "Bu grupta henüz öğrenci yok."
+        },
+        "abgaben": {
+          "titel": "Yazma gönderileri",
+          "text": "Grubunuzdaki öğrencilerin verilen yazma görevlerine gönderdikleri metinler. Yalnızca grupta oldukları ve „Öğrenme Uygulaması“ onayları geçerli olduğu sürece görünür. Gönderimden 12 ay sonra silinir.",
+          "leer": "Henüz gönderi yok.",
+          "offen": "Geri bildirim bekliyor",
+          "zurueckgegeben": "geri verildi",
+          "gesendet": "{datum} tarihinde gönderildi",
+          "oeffnen": "Görüntüle",
+          "oeffnenAria": "{name} adlı kişinin gönderisini görüntüle",
+          "aufgabeFehlt": "Görev artık kursta değil"
+        },
+        "korrektur": {
+          "titel": "Geri bildirim ver",
+          "von": "{name} tarafından, {datum} tarihinde gönderildi",
+          "aufgabe": "Görev",
+          "text": "Metin",
+          "selbst": "Öz değerlendirme",
+          "selbstLeer": "Öz değerlendirme yapılmamış.",
+          "pruefliste": "Kontrol listesine göre değerlendirmeniz (isteğe bağlı)",
+          "kriterium": {
+            "aufgabe": "Görev",
+            "zusammenhang": "Bağlantı",
+            "wortschatz": "Kelime bilgisi",
+            "grammatik": "Dil bilgisi"
+          },
+          "stufe": {
+            "s0": "henüz başında",
+            "s1": "kısmen",
+            "s2": "büyük ölçüde",
+            "s3": "emin"
+          },
+          "keineAngabe": "belirtilmemiş",
+          "einstufung": "Değerlendirme (isteğe bağlı, not yok)",
+          "einstufungen": {
+            "erreicht": "Görev iyi çözülmüş",
+            "unterwegs": "İyi bir yolda",
+            "nochmal": "Bir kez daha yazmaya değer"
+          },
+          "kommentar": "Yorum",
+          "kommentarHilfe": "Yalnızca öğrenci görür. En fazla 4.000 karakter.",
+          "zurueckgeben": "Geri bildirimi ilet",
+          "aendern": "Geri bildirimi değiştir",
+          "bisher": "{datum} tarihinde iletildi. Geri bildirimi değiştirebilirsiniz.",
+          "schliessen": "Listeye dön"
         }
       }
     }
@@ -765,7 +861,10 @@
           "bestenliste": "Leaderboard changed.",
           "doppelt": "This is already assigned to the group.",
           "grenze": "This group already has a great many assignments. Please remove older ones first.",
-          "ungueltig": "This unit or lesson no longer exists."
+          "ungueltig": "This unit or lesson no longer exists.",
+          "zurueckgegeben": "Feedback returned.",
+          "abgabeLeer": "Please write a comment or choose an assessment.",
+          "abgabeWeg": "This submission is no longer visible."
         },
         "zuweisen": {
           "titel": "Assign",
@@ -832,6 +931,51 @@
           "keinKonto": "no own account",
           "keineEinwilligung": "no consent",
           "leer": "There are no learners in this group yet."
+        },
+        "abgaben": {
+          "titel": "Writing submissions",
+          "text": "Texts that learners in your group have sent for assigned writing tasks. Visible only while they are in the group and their “Learning app” consent applies. Deleted 12 months after sending.",
+          "leer": "No submissions yet.",
+          "offen": "Feedback pending",
+          "zurueckgegeben": "returned",
+          "gesendet": "sent on {datum}",
+          "oeffnen": "View",
+          "oeffnenAria": "View submission from {name}",
+          "aufgabeFehlt": "Task no longer in the course"
+        },
+        "korrektur": {
+          "titel": "Give feedback",
+          "von": "From {name}, sent on {datum}",
+          "aufgabe": "Task",
+          "text": "Text",
+          "selbst": "Self-assessment",
+          "selbstLeer": "No self-assessment given.",
+          "pruefliste": "Your assessment using the checklist (optional)",
+          "kriterium": {
+            "aufgabe": "Task",
+            "zusammenhang": "Coherence",
+            "wortschatz": "Vocabulary",
+            "grammatik": "Grammar"
+          },
+          "stufe": {
+            "s0": "just starting",
+            "s1": "partly",
+            "s2": "mostly",
+            "s3": "confidently"
+          },
+          "keineAngabe": "not given",
+          "einstufung": "Overall (optional, no grade)",
+          "einstufungen": {
+            "erreicht": "Task well done",
+            "unterwegs": "On a good path",
+            "nochmal": "Worth writing once more"
+          },
+          "kommentar": "Comment",
+          "kommentarHilfe": "Only the learner sees it. At most 4,000 characters.",
+          "zurueckgeben": "Return feedback",
+          "aendern": "Change feedback",
+          "bisher": "Returned on {datum}. You can change the feedback.",
+          "schliessen": "Back to the list"
         }
       }
     }
