@@ -12,7 +12,7 @@ import { ausgang, type Ausgang, formular, momentaufnahme } from './verwaltung/re
 /**
  * Generierte Rechte-Matrix der Server Actions des Mitgliederbereichs (Z-13, Endprüfung Stufe C: „die Actions des
  * Mitgliederbereichs sind nur handgeschrieben getestet“). Gegenstück zu `verwaltung/rechte-matrix.test.ts` und
- * `verwaltung/rechte-matrix-gemeinde.test.ts` (Verwaltung, `verlangeRecht`): 9 Action-Dateien × 9 Personengruppen ×
+ * `verwaltung/rechte-matrix-gemeinde.test.ts` (Verwaltung, `verlangeRecht`): 10 Action-Dateien × 9 Personengruppen ×
  * jede exportierte Action, dazu je Action jeder Funktionsschalter, der sie abschaltet (ADR 0035).
  *
  * Soll je Action (ADR 0026, nicht aus dem Code abgeleitet): welche Personengruppe die Konto-Prüfung bestehen muss –
@@ -116,6 +116,7 @@ const MODULE = {
   kinder: () => import('@/server/actions/kinder'),
   konto: () => import('@/server/actions/konto'),
   lehrkraft: () => import('@/server/actions/lehrkraft'),
+  'lernapp-einwilligung': () => import('@/server/actions/lernapp-einwilligung'),
   'lernapp-schreiben': () => import('@/server/actions/lernapp-schreiben'),
   'mein-bereich': () => import('@/server/actions/mein-bereich'),
   schueler: () => import('@/server/actions/schueler'),
@@ -181,6 +182,13 @@ const FAELLE: Fall[] = [
     spion: ['lehrkraft'],
     aufruf: (fn) => fn(formular({ sprache: 'de', gruppe: UUID, abgabe: UUID, kommentar: 'Testkommentar', einstufung: 'unterwegs' })),
   }),
+  // Lern-App, Einwilligung (lernapp-einwilligung.ts, S-L3 N-2): wie „Mein Bereich“ (Schalter konten, verlangeKontoRecht(),
+  // Rolle vorhanden); das Erteilen verlangt danach zusätzlich `lernapp_sync` oder `lernapp_gruppen` und ab 16 (Lage), der
+  // Widerruf und die Rücknahme der Bestenlisten-Zustimmung gehen ohne diese Schalter (lernapp-einwilligung.test.ts)
+  ...f('lernapp-einwilligung', ['lernappEinwilligungAendern'], SOLL.meinBereich, ['konten'], {
+    aufruf: (fn) => fn(formular({ sprache: 'de', aktion: 'widerrufen' })),
+  }),
+  ...f('lernapp-einwilligung', ['lernappBestenlisteZuruecknehmen'], SOLL.meinBereich, ['konten']),
   // Unterricht (unterricht.ts): Eingabe zuerst, dann verlangeKontoRecht(); das Gruppenrecht prüft der Dienst
   ...f('unterricht', ['speichereAnwesenheit'], SOLL.konto, ['konten', 'lernplattform'], {
     spion: null,
@@ -393,7 +401,7 @@ const ZUORDNUNG: Record<string, string[]> = {
 };
 
 describe('Vollständigkeit', () => {
-  it('jede exportierte Action der neun Dateien ist erfasst', async () => {
+  it('jede exportierte Action der zehn Dateien ist erfasst', async () => {
     const exportiert: string[] = [];
     for (const [datei, laden] of Object.entries(MODULE)) {
       const modul = (await laden()) as Record<string, unknown>;
