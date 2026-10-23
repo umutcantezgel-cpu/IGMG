@@ -26,7 +26,7 @@
       {
         "de": "Ich kann sagen, wie etwas war.",
         "tr": "Bir şeyin nasıl olduğunu söyleyebilirim.",
-        "ar": "أستطيع أن أقول كيف كان الشيء."
+        "ar": "أستطيع أن أقول كيف كان شيء ما."
       }
     ],
     "symbol": "train-front",
@@ -154,8 +154,7 @@
         "genus": "f"
       },
       "formen": {
-        "plural": "تَذْكِرَات",
-        "plural_2": "تَذَاكِر",
+        "plural": "تَذَاكِر",
         "stamm_vor_suffix": "تَذْكِرَت"
       },
       "frequenzRang": 3808,
@@ -533,10 +532,7 @@
       },
       "formen": {
         "feminin": "ضَخْمَة",
-        "plural_m": "ضَخْمُون",
-        "plural_f": "ضَخْمَات",
         "plural": "ضِخَام",
-        "plural_m_obl": "ضَخْمِينَ",
         "akkusativ_indef": "ضَخْمًا"
       },
       "frequenzRang": 2068,
@@ -567,10 +563,11 @@
       "lemma": "مُزْدَحِم",
       "wortart": "adjektiv",
       "merkmale": {
-        "umschrift": "mazdaḥim",
+        "umschrift": "muzdaḥim",
         "wurzel": "z-ḥ-m"
       },
       "formen": {
+        "feminin": "مُزْدَحِمَة",
         "akkusativ_indef": "مُزْدَحِمًا"
       },
       "quelle": "ki:lernapp-inhalte/a2/v1",
@@ -602,12 +599,13 @@
         "umschrift": "baṭīʾ"
       },
       "formen": {
+        "feminin": "بَطِيئَة",
         "plural_m": "بَطِيئُون",
         "plural_f": "بَطِيئَات",
         "elativ": "أَبْطَأ",
         "plural": "بِطَاء",
         "plural_m_obl": "بَطِيئِينَ",
-        "akkusativ_indef": "بَطِيءًا"
+        "akkusativ_indef": "بَطِيئًا"
       },
       "frequenzRang": 5502,
       "quelle": "wiktionary:en:بطيء",
@@ -1157,8 +1155,8 @@
         "imperativ_2sg_m": "صَوِّرْ",
         "imperativ_2sg_f": "صَوِّرِي",
         "imperativ_2pl_m": "صَوِّرُوا",
-        "partizip_aktiv": "صَاوِر",
-        "partizip_aktiv_f": "صَاوِرَة"
+        "partizip_aktiv": "مُصَوِّر",
+        "partizip_aktiv_f": "مُصَوِّرَة"
       },
       "frequenzRang": 209,
       "quelle": "wiktionary:en:صور",
@@ -1378,7 +1376,7 @@
     },
     {
       "schluessel": "ar.a2.e01.s0009",
-      "text": "تَذْكِرَةُ الْأَطْفَالِ أَرْخَصُ مِنْ تَذْكِرَةِ الْكِبَارِ.",
+      "text": "تَذْكِرَةُ الْأَطْفَالِ رَخِيصَةٌ جِدًّا.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1396,7 +1394,7 @@
     },
     {
       "schluessel": "ar.a2.e01.s0012",
-      "text": "لَا، هٰذَا الرَّصِيفُ الرَّابِعُ.",
+      "text": "لَا، هٰذَا هُوَ الرَّصِيفُ الرَّابِعُ.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1744,7 +1742,7 @@
     },
     {
       "schluessel": "ar.a2.e01.s0070",
-      "text": "اِرْكَبْ بِسُرْعَةٍ يَا فَارِسُ! الْقِطَارُ يَتَحَرَّكُ.",
+      "text": "اِرْكَبْ بِسُرْعَةٍ يَا فَارِسُ! الْقِطَارُ يَتَحَرَّكُ بَعْدَ دَقِيقَةٍ.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2182,7 +2180,7 @@
     },
     {
       "schluessel": "ar.a2.e01.s0143",
-      "text": "حِينَ كُنْتُ طِفْلًا، كُنْتُ أُحِبُّ الْقِطَارَاتِ.",
+      "text": "حِينَ كُنْتُ طِفْلًا، كَانَتِ الْقِطَارَاتُ بَطِيئَةً.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2380,7 +2378,7 @@
     },
     {
       "schluessel": "ar.a2.e01.s0176",
-      "text": "التَّأْخِيرُ: عَشْرُ دَقَائِقَ.",
+      "text": "تَأْخِيرُ الْقِطَارِ إِلَى فْرَانْكْفُورْتْ: عَشْرُ دَقَائِقَ.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2404,7 +2402,7 @@
     },
     {
       "schluessel": "ar.a2.e01.s0180",
-      "text": "يَتَأَخَّرُ الْقِطَارُ إِلَى الْمَطَارِ عَشْرَ دَقَائِقَ.",
+      "text": "يَتَأَخَّرُ الْقِطَارُ إِلَى فْرَانْكْفُورْتْ رُبْعَ سَاعَةٍ.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2698,7 +2696,7 @@
     },
     {
       "schluessel": "ar.a2.e01.s0229",
-      "text": "سَأَلَتْهُ لَيْلَى: «وَهَلْ تَأَخَّرَ الْقِطَارُ؟»",
+      "text": "سَأَلَتْهُ أُخْتُهُ لَيْلَى: «وَهَلْ تَأَخَّرَ الْقِطَارُ؟»",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3045,7 +3043,7 @@
       "schluessel": "ar.a2.e01.l02",
       "art": "lektion",
       "ziel": {
-        "de": "Ich kann Abfahrtszeiten mit Drittel- und Viertelstunden verstehen und über Verspätungen sprechen.",
+        "de": "Ich kann Abfahrtszeiten wie „zwanzig nach“ und „Viertel vor“ verstehen und über Verspätungen sprechen.",
         "tr": "Yirmi geçe, yirmi var ve çeyrek gibi kalkış saatlerini anlayabilir, gecikmelerden söz edebilirim.",
         "ar": "أستطيع أن أفهم أوقات المغادرة مع الثلث والربع وأن أتكلم عن التأخير."
       },
@@ -3258,13 +3256,14 @@
           "anweisung": "uebersetze",
           "satz": "ar.a2.e01.s0090",
           "nach": "ziel",
-          "ablenker": ["الْمَتْحَفِ", "سَمِعْتُ"]
+          "ablenker": ["الْمَتْحَفِ", "سَمِعْتُ"],
+          "alternativen": ["فِي الْبَيْتِ نَسِيتُ التَّذْكِرَةَ!"]
         },
         {
           "schluessel": "ar.a2.e01.l03.a12",
           "typ": "satzbau",
           "ziel": "ar.a2.e01.s0095",
-          "alternativen": ["مِنَ الْجِسْرِ صَوَّرْتُ النَّهْرَ."]
+          "alternativen": ["مِنَ الْجِسْرِ صَوَّرْتُ النَّهْرَ.", "صَوَّرْتُ مِنَ الْجِسْرِ النَّهْرَ."]
         },
         {
           "schluessel": "ar.a2.e01.l03.a13",
@@ -3391,7 +3390,7 @@
           "anweisung": "uebersetze",
           "satz": "ar.a2.e01.s0127",
           "nach": "ziel",
-          "alternativen": ["بَعْدَ الرِّحْلَةِ الطَّوِيلَةِ كُنْتُ مُتْعَبًا."],
+          "alternativen": ["بَعْدَ الرِّحْلَةِ الطَّوِيلَةِ كُنْتُ مُتْعَبًا.", "كُنْتُ بَعْدَ الرِّحْلَةِ الطَّوِيلَةِ مُتْعَبًا."],
           "ablenker": ["سَعِيدٌ", "كَانَتْ"]
         },
         {
@@ -3452,7 +3451,7 @@
       "ziel": {
         "de": "Ich kann von einem Museumsbesuch erzählen, eine Anzeigetafel lesen und verwandte Wörter an ihrer Wurzel erkennen.",
         "tr": "Bir müze ziyaretini anlatabilir, kalkış tabelasını okuyabilir ve akraba kelimeleri köklerinden tanıyabilirim.",
-        "ar": "أستطيع أن أحكي عن زيارة المتحف وأن أقرأ لوحة المغادرة وأن أعرف الكلمات من جذرها."
+        "ar": "أستطيع أن أحكي عن زيارة المتحف وأن أقرأ لوحة المغادرة وأن أعرف كلمات من جذر واحد."
       },
       "aufgaben": [
         {
@@ -3617,7 +3616,7 @@
       "ziel": {
         "de": "Ich kann eine Geschichte verstehen: Yazan fährt mit Emre und Jan zum ersten Mal allein mit dem Zug nach Frankfurt ins Museum.",
         "tr": "Bir hikâyeyi anlayabilirim: Yazan, Emre ve Jan ile ilk kez kendi başına trenle Frankfurt’taki müzeye gidiyor.",
-        "ar": "أستطيع أن أفهم قصة: يزن يركب القطار مع إمره ويان لأول مرة وحدهم ويزورون متحفا في فرانكفورت."
+        "ar": "أستطيع أن أفهم قصة: يزن وإمره ويان يركبون القطار وحدهم لأول مرة ويزورون متحفا في فرانكفورت."
       },
       "aufgaben": [
         {
@@ -3801,7 +3800,8 @@
             "عَادَ يَزَنُ إِلَى الْبَيْتِ فِي الْمَسَاءِ.",
             "يَزَنُ عَادَ إِلَى الْبَيْتِ فِي الْمَسَاءِ.",
             "عَادَ يَزَنُ فِي الْمَسَاءِ إِلَى الْبَيْتِ.",
-            "فِي الْمَسَاءِ يَزَنُ عَادَ إِلَى الْبَيْتِ."
+            "فِي الْمَسَاءِ يَزَنُ عَادَ إِلَى الْبَيْتِ.",
+            "يَزَنُ عَادَ فِي الْمَسَاءِ إِلَى الْبَيْتِ."
           ]
         },
         {
@@ -3904,7 +3904,7 @@
           "typ": "luecke",
           "ziel": "ar.a2.e01.s0253",
           "wort": 5,
-          "ablenker": ["الْعَشْرَةَ", "عَشَرَةً"]
+          "ablenker": ["الْعَشَرَةَ", "عَشَرَةً"]
         },
         {
           "schluessel": "ar.a2.e01.l07.a09",
@@ -3944,7 +3944,7 @@
             }
           ],
           "antwort": "ar.a2.e01.s0256",
-          "ablenker": ["ar.a2.e01.s0089", "ar.a2.e01.s0008", "ar.a2.e01.s0063"]
+          "ablenker": ["ar.a2.e01.s0162", "ar.a2.e01.s0008", "ar.a2.e01.s0063"]
         },
         {
           "schluessel": "ar.a2.e01.l07.a13",
