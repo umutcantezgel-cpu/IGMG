@@ -855,7 +855,7 @@
     {
       "bezug": "ar.a1.e07.s0067",
       "text": "Ist der Preis in Dollar?",
-      "alternativen": ["Ist der Preis in Dollar angegeben?", "Ist der Preis in US-Dollar?"],
+      "alternativen": ["Ist der Preis in Dollar angegeben?"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -898,12 +898,8 @@
     },
     {
       "bezug": "ar.a1.e07.s0072",
-      "text": "Die Tomaten kosten drei Euro.",
-      "alternativen": [
-        "Der Preis der Tomaten ist drei Euro.",
-        "Die Tomaten kosten 3 Euro.",
-        "Der Preis für die Tomaten beträgt drei Euro."
-      ],
+      "text": "Der Preis der Tomaten ist drei Euro.",
+      "alternativen": ["Die Tomaten kosten drei Euro.", "Die Tomaten kosten 3 Euro.", "Der Preis für die Tomaten beträgt drei Euro."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -928,7 +924,7 @@
     {
       "bezug": "ar.a1.e07.s0075",
       "text": "Dieser Preis ist gut.",
-      "alternativen": ["Der Preis hier ist gut.", "Dieser Preis ist in Ordnung."],
+      "alternativen": ["Der Preis hier ist gut."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -948,8 +944,8 @@
     },
     {
       "bezug": "ar.a1.e07.s0078",
-      "text": "Das Buch kostet zwanzig Euro.",
-      "alternativen": ["Der Preis des Buches ist zwanzig Euro.", "Das Buch kostet 20 Euro.", "Der Preis des Buchs beträgt zwanzig Euro."],
+      "text": "Der Preis des Buches ist zwanzig Euro.",
+      "alternativen": ["Das Buch kostet zwanzig Euro.", "Das Buch kostet 20 Euro.", "Der Preis des Buchs beträgt zwanzig Euro."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1065,9 +1061,10 @@
     },
     {
       "bezug": "ar.a1.e07.s0093",
-      "text": "Ich möchte ein paar Zwiebeln.",
+      "text": "Ich möchte ein bisschen Zwiebeln.",
       "alternativen": [
-        "Ich möchte ein bisschen Zwiebeln.",
+        "Ich möchte ein paar Zwiebeln.",
+        "Ich möchte ein wenig Zwiebeln.",
         "Ich möchte wenige Zwiebeln.",
         "Ich hätte gern ein paar Zwiebeln.",
         "Ich möchte etwas Zwiebeln."
@@ -1344,8 +1341,8 @@
     },
     {
       "bezug": "ar.a1.e07.s0127",
-      "text": "Wie viel macht das?",
-      "alternativen": ["Wie viel macht die Rechnung?", "Wie hoch ist die Rechnung?", "Was macht das?"],
+      "text": "Wie hoch ist die Rechnung?",
+      "alternativen": ["Wie viel macht die Rechnung?", "Wie viel macht das?", "Was macht das?"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1440,7 +1437,7 @@
     {
       "bezug": "ar.a1.e07.s0138",
       "text": "Das ist ein guter Preis.",
-      "alternativen": ["Das ist ein günstiger Preis.", "Das ist ein fairer Preis.", "Dies ist ein guter Preis."],
+      "alternativen": ["Das ist ein fairer Preis.", "Dies ist ein guter Preis."],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1780,8 +1777,13 @@
     },
     {
       "bezug": "ar.a1.e07.s0178",
-      "text": "Wie viel macht das, Ġassān?",
-      "alternativen": ["Wie viel macht die Rechnung, Ġassān?", "Ġassān, wie viel macht das?", "Was macht das, Ġassān?"],
+      "text": "Wie hoch ist die Rechnung, Ġassān?",
+      "alternativen": [
+        "Wie viel macht die Rechnung, Ġassān?",
+        "Wie viel macht das, Ġassān?",
+        "Ġassān, wie viel macht das?",
+        "Was macht das, Ġassān?"
+      ],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1878,7 +1880,7 @@
     {
       "bezug": "ar.a1.e07.s0190",
       "text": "Was möchte Laylā?",
-      "alternativen": ["Was will Laylā?", "Was wünscht sich Laylā?"],
+      "alternativen": ["Was will Laylā?", "Was möchte Laylā haben?"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1947,12 +1949,8 @@
     },
     {
       "bezug": "ar.a1.e07.s0200",
-      "text": "Nein, danke. Wie viel macht das?",
-      "alternativen": [
-        "Nein, danke. Wie viel macht die Rechnung?",
-        "Nein, danke. Was macht das?",
-        "Nein, danke. Wie hoch ist die Rechnung?"
-      ],
+      "text": "Nein, danke. Wie hoch ist die Rechnung?",
+      "alternativen": ["Nein, danke. Wie viel macht die Rechnung?", "Nein, danke. Wie viel macht das?", "Nein, danke. Was macht das?"],
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2314,7 +2312,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "barqūq klingt wie „Aprikose“, heißt aber Pflaume; die Aprikose heißt mišmiš."
+                "text": "barqūq ist mit dem Wort „Aprikose“ verwandt, heißt aber Pflaume; die Aprikose heißt mišmiš."
               }
             ]
           },
