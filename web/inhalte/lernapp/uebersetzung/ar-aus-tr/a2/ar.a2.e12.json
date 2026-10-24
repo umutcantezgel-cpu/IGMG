@@ -682,8 +682,8 @@
     },
     {
       "bezug": "ar.a2.e12.s0029",
-      "text": "Ne yapıyorsun, Samīr?",
-      "alternativen": ["Samīr, ne yapıyorsun?", "Ne iş yapıyorsun, Samīr?", "Ne iş yapıyorsunuz, Samīr?"],
+      "text": "Ne iş yapıyorsun, Samīr?",
+      "alternativen": ["Samīr, ne iş yapıyorsun?", "Ne yapıyorsun, Samīr?", "Ne iş yapıyorsunuz, Samīr?"],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -774,7 +774,11 @@
     {
       "bezug": "ar.a2.e12.s0039",
       "text": "Dayımın oğlu üniversitede tıp okuyor.",
-      "alternativen": ["Dayımın oğlu üniversitede tıp eğitimi alıyor.", "Kuzenim üniversitede tıp okuyor.", "Dayımın oğlu tıp okuyor."],
+      "alternativen": [
+        "Dayımın oğlu üniversitede tıp eğitimi alıyor.",
+        "Kuzenim üniversitede tıp okuyor.",
+        "Dayımın oğlu üniversitede tıp tahsil ediyor."
+      ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -833,7 +837,7 @@
       "alternativen": [
         "Hastaların bakımından hemşire sorumlu.",
         "Erkek hemşire hastaların bakımından sorumlu.",
-        "Hasta bakıcı hastaların bakımından sorumlu.",
+        "Erkek hemşire, hastaların bakımından sorumludur.",
         "Hemşire hastaların bakımından sorumludur."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
@@ -878,7 +882,7 @@
       "alternativen": [
         "Babam arabayı Wetzlar'dan Berlin'e sürdü.",
         "Babam Wetzlar'dan Berlin'e araba kullandı.",
-        "Babam Wetzlar'dan Berlin'e kadar arabayı kendisi kullandı."
+        "Babam Wetzlar'dan Berlin'e kadar arabayı kullandı."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -998,7 +1002,7 @@
     {
       "bezug": "ar.a2.e12.s0062",
       "text": "Sadece biraz, çünkü benim işim el işi.",
-      "alternativen": ["Sadece biraz; işim el emeği.", "Biraz, çünkü işim el işi.", "Sadece biraz, çünkü elle çalışıyorum."],
+      "alternativen": ["Sadece biraz; işim el emeği.", "Yalnızca biraz, çünkü işim el işi.", "Sadece biraz, çünkü elle çalışıyorum."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1016,7 +1020,11 @@
     {
       "bezug": "ar.a2.e12.s0064",
       "text": "Evet, yapabilirim, çünkü bu benim işim.",
-      "alternativen": ["Evet, yapabilirim; bu benim işim.", "Evet, edebilirim, bu benim işim.", "Evet, bunu yapabilirim, çünkü işim bu."],
+      "alternativen": [
+        "Evet, yapabilirim; bu benim işim.",
+        "Evet, bunu yapabilirim, bu benim işim.",
+        "Evet, bunu yapabilirim, çünkü işim bu."
+      ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1539,7 +1547,7 @@
     {
       "bezug": "ar.a2.e12.s0117",
       "text": "Peki nerede okuyacaksın?",
-      "alternativen": ["Ve nerede okuyacaksın?", "Nerede okuyacaksın?", "Peki hangi üniversitede okuyacaksın?"],
+      "alternativen": ["Ve nerede okuyacaksın?", "Nerede okuyacaksın?", "Peki sen nerede okuyacaksın?"],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1842,7 +1850,7 @@
     {
       "bezug": "ar.a2.e12.s0152",
       "text": "Fırını temizliyor.",
-      "alternativen": ["Fırını temizler.", "O fırını temizliyor.", "Fırının içini temizliyor."],
+      "alternativen": ["Fırını temizler.", "O fırını temizliyor.", "O, fırını temizler."],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2392,7 +2400,7 @@
       "alternativen": [
         "Programcı olmak istiyorum çünkü bilgisayarları seviyorum.",
         "Bilgisayarı sevdiğim için programcı olmak istiyorum.",
-        "Programcı olmak istiyorum; bilgisayarı çok seviyorum."
+        "Programcı olmak istiyorum, zira bilgisayarı seviyorum."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2479,7 +2487,7 @@
       "text": "Terzinin işi el işi ve kendisi çok becerikli.",
       "alternativen": [
         "Kadın terzinin işi el emeği, o çok becerikli.",
-        "Terzinin işi elle yapılıyor ve çok becerikli.",
+        "Terzinin işi elle yapılıyor ve kendisi çok becerikli.",
         "Terzinin işi el işidir; kendisi çok usta."
       ],
       "quelle": "ki:lernapp-inhalte/a2/v1",
@@ -2729,7 +2737,7 @@
     {
       "bezug": "ar.a2.e12.s0247",
       "text": "Peki sen ne olmak istiyorsun?",
-      "alternativen": ["Ya sen ne olmak istiyorsun?", "Sen ne olmak istiyorsun?", "Peki sen ileride ne olmak istiyorsun?"],
+      "alternativen": ["Ya sen ne olmak istiyorsun?", "Sen ne olmak istiyorsun?", "Peki ya sen ne olmak istiyorsun?"],
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2995,7 +3003,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Bazılarını Türkçeden tanırsın: ziyaret ← ziyāra, tamir ← taʿmīr. Dikkat: rasm „resim yapma“ işidir; resim ya da fotoğraf ṣūra'dır."
+                "text": "Bazılarını Türkçeden tanırsın: ziyaret ← ziyāra, hareket ← ḥaraka. Dikkat: rasm „resim yapma“ işidir; resim ya da fotoğraf ṣūra'dır."
               }
             ]
           },
@@ -3166,7 +3174,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "-ecek Arapçada fiilin önüne gelir: sa- bitişik yazılır (sa-adrusu – „okuyacağım“), sawfa ayrı bir kelimedir. „-meyecek“ için sa- yerine لَنْ gelir ve fiil -a ile biter: لَنْ أَعْمَلَ – „çalışmayacağım“."
+                "text": "-ecek Arapçada fiilin önüne gelir: sa- bitişik yazılır (sa-adrusu – „okuyacağım“), sawfa ayrı bir kelimedir. „-meyecek“ için sa- yerine ayrı bir olumsuzluk kelimesi gelir ve fiil -a ile biter (ikinci örnek: „çalışmayacağım“)."
               }
             ]
           },
@@ -3235,7 +3243,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "dawām Türkçedeki devam değil, mesai ve iş saatidir: yabdaʾu d-dawām – „mesai başlıyor“. niṣf dawām „yarı zamanlı“ demektir."
+                "text": "dawām iş hayatında devam değil; mesai ve iş saatidir: yabdaʾu d-dawām – „mesai başlıyor“. niṣf dawām „yarı zamanlı“ demektir."
               }
             ]
           },
