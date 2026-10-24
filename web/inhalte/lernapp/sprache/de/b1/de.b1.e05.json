@@ -1,0 +1,5276 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e05",
+    "reihenfolge": 6,
+    "thema": {
+      "de": "Sicher im Netz",
+      "tr": "İnternette güvende",
+      "ar": "الأمان على الإنترنت"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann erklären, wie man persönliche Daten im Netz schützt.",
+        "tr": "İnternette kişisel verilerin nasıl korunacağını açıklayabilirim.",
+        "ar": "أستطيع أن أشرح كيف تُحمى البيانات الشخصية على الإنترنت."
+      },
+      {
+        "de": "Ich kann nachfragen, ob ich etwas richtig verstanden habe, und Unklarheiten klären.",
+        "tr": "Bir şeyi doğru anlayıp anlamadığımı sorabilir ve belirsizlikleri giderebilirim.",
+        "ar": "أستطيع أن أسأل هل فهمتُ شيئًا فهمًا صحيحًا، وأن أوضّح ما ليس واضحًا."
+      }
+    ],
+    "symbol": "shield-check",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e05.der-relativ",
+      "lemma": "der",
+      "wortart": "relativpronomen",
+      "merkmale": {
+        "art": "Relativpronomen (der, die, das; Plural die)"
+      },
+      "formen": {
+        "gen_m_n": "dessen",
+        "gen_f_pl": "deren",
+        "dat_pl": "denen"
+      },
+      "frequenzRang": 201,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.handeln",
+      "lemma": "handeln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "handeln",
+        "praes_ich": "handle",
+        "praes_du": "handelst",
+        "praes_er_sie_es": "handelt",
+        "praes_wir": "handeln",
+        "praes_ihr": "handelt",
+        "praes_sie_Sie": "handeln",
+        "praet_ich_er_sie_es": "handelte",
+        "praet_du": "handeltest",
+        "praet_wir_sie_Sie": "handelten",
+        "praet_ihr": "handeltet",
+        "partizip_2": "gehandelt"
+      },
+      "frequenzRang": 332,
+      "quelle": "wiktionary:de:handeln",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚handeln‘ (https://de.wiktionary.org/wiki/handeln), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.erscheinen",
+      "lemma": "erscheinen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "erscheinen",
+        "praes_ich": "erscheine",
+        "praes_du": "erscheinst",
+        "praes_er_sie_es": "erscheint",
+        "praes_wir": "erscheinen",
+        "praes_ihr": "erscheint",
+        "praes_sie_Sie": "erscheinen",
+        "praet_ich_er_sie_es": "erschien",
+        "praet_du": "erschienst",
+        "praet_wir_sie_Sie": "erschienen",
+        "praet_ihr": "erschient",
+        "partizip_2": "erschienen"
+      },
+      "frequenzRang": 438,
+      "quelle": "wiktionary:de:erscheinen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erscheinen‘ (https://de.wiktionary.org/wiki/erscheinen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.veroeffentlichen",
+      "lemma": "veröffentlichen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "veröffentlichen",
+        "praes_ich": "veröffentliche",
+        "praes_du": "veröffentlichst",
+        "praes_er_sie_es": "veröffentlicht",
+        "praes_wir": "veröffentlichen",
+        "praes_ihr": "veröffentlicht",
+        "praes_sie_Sie": "veröffentlichen",
+        "praet_ich_er_sie_es": "veröffentlichte",
+        "praet_du": "veröffentlichtest",
+        "praet_wir_sie_Sie": "veröffentlichten",
+        "praet_ihr": "veröffentlichtet",
+        "partizip_2": "veröffentlicht"
+      },
+      "frequenzRang": 732,
+      "quelle": "wiktionary:de:veröffentlichen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚veröffentlichen‘ (https://de.wiktionary.org/wiki/veröffentlichen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.erwaehnen",
+      "lemma": "erwähnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erwähnen",
+        "praes_ich": "erwähne",
+        "praes_du": "erwähnst",
+        "praes_er_sie_es": "erwähnt",
+        "praes_wir": "erwähnen",
+        "praes_ihr": "erwähnt",
+        "praes_sie_Sie": "erwähnen",
+        "praet_ich_er_sie_es": "erwähnte",
+        "praet_du": "erwähntest",
+        "praet_wir_sie_Sie": "erwähnten",
+        "praet_ihr": "erwähntet",
+        "partizip_2": "erwähnt"
+      },
+      "frequenzRang": 859,
+      "quelle": "wiktionary:de:erwähnen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erwähnen‘ (https://de.wiktionary.org/wiki/erwähnen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.verfolgen",
+      "lemma": "verfolgen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verfolgen",
+        "praes_ich": "verfolge",
+        "praes_du": "verfolgst",
+        "praes_er_sie_es": "verfolgt",
+        "praes_wir": "verfolgen",
+        "praes_ihr": "verfolgt",
+        "praes_sie_Sie": "verfolgen",
+        "praet_ich_er_sie_es": "verfolgte",
+        "praet_du": "verfolgtest",
+        "praet_wir_sie_Sie": "verfolgten",
+        "praet_ihr": "verfolgtet",
+        "partizip_2": "verfolgt"
+      },
+      "frequenzRang": 1022,
+      "quelle": "wiktionary:de:verfolgen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verfolgen‘ (https://de.wiktionary.org/wiki/verfolgen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.sichern",
+      "lemma": "sichern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "sichern",
+        "praes_ich": "sichere",
+        "praes_du": "sicherst",
+        "praes_er_sie_es": "sichert",
+        "praes_wir": "sichern",
+        "praes_ihr": "sichert",
+        "praes_sie_Sie": "sichern",
+        "praet_ich_er_sie_es": "sicherte",
+        "praet_du": "sichertest",
+        "praet_wir_sie_Sie": "sicherten",
+        "praet_ihr": "sichertet",
+        "partizip_2": "gesichert",
+        "imp_du": "sichere",
+        "imp_ihr": "sichert"
+      },
+      "frequenzRang": 1083,
+      "quelle": "wiktionary:de:sichern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚sichern‘ (https://de.wiktionary.org/wiki/sichern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.behaupten",
+      "lemma": "behaupten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "behaupten",
+        "praes_ich": "behaupte",
+        "praes_du": "behauptest",
+        "praes_er_sie_es": "behauptet",
+        "praes_wir": "behaupten",
+        "praes_ihr": "behauptet",
+        "praes_sie_Sie": "behaupten",
+        "praet_ich_er_sie_es": "behauptete",
+        "praet_du": "behauptetest",
+        "praet_wir_sie_Sie": "behaupteten",
+        "praet_ihr": "behauptetet",
+        "partizip_2": "behauptet"
+      },
+      "frequenzRang": 1086,
+      "quelle": "wiktionary:de:behaupten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚behaupten‘ (https://de.wiktionary.org/wiki/behaupten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.reagieren",
+      "lemma": "reagieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "reagieren",
+        "praes_ich": "reagiere",
+        "praes_du": "reagierst",
+        "praes_er_sie_es": "reagiert",
+        "praes_wir": "reagieren",
+        "praes_ihr": "reagiert",
+        "praes_sie_Sie": "reagieren",
+        "praet_ich_er_sie_es": "reagierte",
+        "praet_du": "reagiertest",
+        "praet_wir_sie_Sie": "reagierten",
+        "praet_ihr": "reagiertet",
+        "partizip_2": "reagiert",
+        "imp_du": "reagier",
+        "imp_ihr": "reagiert"
+      },
+      "frequenzRang": 1148,
+      "quelle": "wiktionary:de:reagieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚reagieren‘ (https://de.wiktionary.org/wiki/reagieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.verbreiten",
+      "lemma": "verbreiten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verbreiten",
+        "praes_ich": "verbreite",
+        "praes_du": "verbreitest",
+        "praes_er_sie_es": "verbreitet",
+        "praes_wir": "verbreiten",
+        "praes_ihr": "verbreitet",
+        "praes_sie_Sie": "verbreiten",
+        "praet_ich_er_sie_es": "verbreitete",
+        "praet_du": "verbreitetest",
+        "praet_wir_sie_Sie": "verbreiteten",
+        "praet_ihr": "verbreitetet",
+        "partizip_2": "verbreitet"
+      },
+      "frequenzRang": 1334,
+      "quelle": "wiktionary:de:verbreiten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verbreiten‘ (https://de.wiktionary.org/wiki/verbreiten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.stehlen",
+      "lemma": "stehlen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "stehlen",
+        "praes_ich": "stehle",
+        "praes_du": "stiehlst",
+        "praes_er_sie_es": "stiehlt",
+        "praes_wir": "stehlen",
+        "praes_ihr": "stehlt",
+        "praes_sie_Sie": "stehlen",
+        "praet_ich_er_sie_es": "stahl",
+        "praet_du": "stahlst",
+        "praet_wir_sie_Sie": "stahlen",
+        "praet_ihr": "stahlt",
+        "partizip_2": "gestohlen"
+      },
+      "frequenzRang": 1405,
+      "quelle": "wiktionary:de:stehlen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚stehlen‘ (https://de.wiktionary.org/wiki/stehlen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.ueberpruefen",
+      "lemma": "überprüfen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "überprüfen",
+        "praes_ich": "überprüfe",
+        "praes_du": "überprüfst",
+        "praes_er_sie_es": "überprüft",
+        "praes_wir": "überprüfen",
+        "praes_ihr": "überprüft",
+        "praes_sie_Sie": "überprüfen",
+        "praet_ich_er_sie_es": "überprüfte",
+        "praet_du": "überprüftest",
+        "praet_wir_sie_Sie": "überprüften",
+        "praet_ihr": "überprüftet",
+        "partizip_2": "überprüft",
+        "imp_du": "überprüf",
+        "imp_ihr": "überprüft"
+      },
+      "frequenzRang": 1648,
+      "quelle": "wiktionary:de:überprüfen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚überprüfen‘ (https://de.wiktionary.org/wiki/überprüfen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.beeinflussen",
+      "lemma": "beeinflussen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "beeinflussen",
+        "praes_ich": "beeinflusse",
+        "praes_du": "beeinflusst",
+        "praes_er_sie_es": "beeinflusst",
+        "praes_wir": "beeinflussen",
+        "praes_ihr": "beeinflusst",
+        "praes_sie_Sie": "beeinflussen",
+        "praet_ich_er_sie_es": "beeinflusste",
+        "praet_du": "beeinflusstest",
+        "praet_wir_sie_Sie": "beeinflussten",
+        "praet_ihr": "beeinflusstet",
+        "partizip_2": "beeinflusst"
+      },
+      "frequenzRang": 1764,
+      "quelle": "wiktionary:de:beeinflussen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚beeinflussen‘ (https://de.wiktionary.org/wiki/beeinflussen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.verraten",
+      "lemma": "verraten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "verraten",
+        "praes_ich": "verrate",
+        "praes_du": "verrätst",
+        "praes_er_sie_es": "verrät",
+        "praes_wir": "verraten",
+        "praes_ihr": "verratet",
+        "praes_sie_Sie": "verraten",
+        "praet_ich_er_sie_es": "verriet",
+        "praet_du": "verrietest",
+        "praet_wir_sie_Sie": "verrieten",
+        "praet_ihr": "verrietet",
+        "partizip_2": "verraten"
+      },
+      "frequenzRang": 1902,
+      "quelle": "wiktionary:de:verraten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verraten‘ (https://de.wiktionary.org/wiki/verraten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.bewerten",
+      "lemma": "bewerten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bewerten",
+        "praes_ich": "bewerte",
+        "praes_du": "bewertest",
+        "praes_er_sie_es": "bewertet",
+        "praes_wir": "bewerten",
+        "praes_ihr": "bewertet",
+        "praes_sie_Sie": "bewerten",
+        "praet_ich_er_sie_es": "bewertete",
+        "praet_du": "bewertetest",
+        "praet_wir_sie_Sie": "bewerteten",
+        "praet_ihr": "bewertetet",
+        "partizip_2": "bewertet",
+        "imp_du": "bewerte",
+        "imp_ihr": "bewertet"
+      },
+      "frequenzRang": 1864,
+      "quelle": "wiktionary:de:bewerten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bewerten‘ (https://de.wiktionary.org/wiki/bewerten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.umgehen",
+      "lemma": "umgehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "um",
+        "grundverb": "gehen (de.a1.e04.gehen)"
+      },
+      "formen": {
+        "infinitiv": "umgehen",
+        "verbzusatz": "um",
+        "partizip_2": "umgegangen",
+        "zu_infinitiv": "umzugehen",
+        "nebensatz_er_sie_es": "umgeht",
+        "nebensatz_praet": "umging",
+        "nebensatz_praet_pl": "umgingen"
+      },
+      "frequenzRang": 1936,
+      "quelle": "wiktionary:de:umgehen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚umgehen‘ (https://de.wiktionary.org/wiki/umgehen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.erstellen",
+      "lemma": "erstellen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erstellen",
+        "praes_ich": "erstelle",
+        "praes_du": "erstellst",
+        "praes_er_sie_es": "erstellt",
+        "praes_wir": "erstellen",
+        "praes_ihr": "erstellt",
+        "praes_sie_Sie": "erstellen",
+        "praet_ich_er_sie_es": "erstellte",
+        "praet_du": "erstelltest",
+        "praet_wir_sie_Sie": "erstellten",
+        "praet_ihr": "erstelltet",
+        "partizip_2": "erstellt",
+        "imp_du": "erstell",
+        "imp_ihr": "erstellt"
+      },
+      "frequenzRang": 1350,
+      "quelle": "wiktionary:de:erstellen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erstellen‘ (https://de.wiktionary.org/wiki/erstellen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.sperren",
+      "lemma": "sperren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "sperren",
+        "praes_ich": "sperre",
+        "praes_du": "sperrst",
+        "praes_er_sie_es": "sperrt",
+        "praes_wir": "sperren",
+        "praes_ihr": "sperrt",
+        "praes_sie_Sie": "sperren",
+        "praet_ich_er_sie_es": "sperrte",
+        "praet_du": "sperrtest",
+        "praet_wir_sie_Sie": "sperrten",
+        "praet_ihr": "sperrtet",
+        "partizip_2": "gesperrt",
+        "imp_du": "sperr",
+        "imp_ihr": "sperrt"
+      },
+      "frequenzRang": 1654,
+      "quelle": "wiktionary:de:sperren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚sperren‘ (https://de.wiktionary.org/wiki/sperren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.hochladen",
+      "lemma": "hochladen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "hoch",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "hochladen",
+        "verbzusatz": "hoch",
+        "praes_ich": "lade",
+        "praes_du": "lädst",
+        "praes_er_sie_es": "lädt",
+        "praes_wir": "laden",
+        "praes_ihr": "ladet",
+        "praes_sie_Sie": "laden",
+        "praet_ich_er_sie_es": "lud",
+        "praet_du": "ludest",
+        "praet_wir_sie_Sie": "luden",
+        "praet_ihr": "ludet",
+        "partizip_2": "hochgeladen",
+        "zu_infinitiv": "hochzuladen",
+        "nebensatz_er_sie_es": "hochlädt",
+        "nebensatz_praet": "hochlud",
+        "nebensatz_praet_pl": "hochluden",
+        "imp_du": "lade",
+        "imp_ihr": "ladet"
+      },
+      "frequenzRang": 4576,
+      "quelle": "wiktionary:de:hochladen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚hochladen‘ (https://de.wiktionary.org/wiki/hochladen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.herunterladen",
+      "lemma": "herunterladen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "herunter",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "herunterladen",
+        "verbzusatz": "herunter",
+        "praes_ich": "lade",
+        "praes_du": "lädst",
+        "praes_er_sie_es": "lädt",
+        "praes_wir": "laden",
+        "praes_ihr": "ladet",
+        "praes_sie_Sie": "laden",
+        "praet_ich_er_sie_es": "lud",
+        "praet_du": "ludest",
+        "praet_wir_sie_Sie": "luden",
+        "praet_ihr": "ludet",
+        "partizip_2": "heruntergeladen",
+        "zu_infinitiv": "herunterzuladen",
+        "nebensatz_er_sie_es": "herunterlädt",
+        "nebensatz_praet": "herunterlud",
+        "nebensatz_praet_pl": "herunterluden",
+        "imp_du": "lade",
+        "imp_ihr": "ladet"
+      },
+      "frequenzRang": 7725,
+      "quelle": "wiktionary:de:herunterladen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚herunterladen‘ (https://de.wiktionary.org/wiki/herunterladen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.faelschen",
+      "lemma": "fälschen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "fälschen",
+        "praes_ich": "fälsche",
+        "praes_du": "fälschst",
+        "praes_er_sie_es": "fälscht",
+        "praes_wir": "fälschen",
+        "praes_ihr": "fälscht",
+        "praes_sie_Sie": "fälschen",
+        "praet_ich_er_sie_es": "fälschte",
+        "praet_du": "fälschtest",
+        "praet_wir_sie_Sie": "fälschten",
+        "praet_ihr": "fälschtet",
+        "partizip_2": "gefälscht"
+      },
+      "frequenzRang": 8454,
+      "quelle": "wiktionary:de:fälschen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚fälschen‘ (https://de.wiktionary.org/wiki/fälschen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.betruegen",
+      "lemma": "betrügen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "betrügen",
+        "praes_ich": "betrüge",
+        "praes_du": "betrügst",
+        "praes_er_sie_es": "betrügt",
+        "praes_wir": "betrügen",
+        "praes_ihr": "betrügt",
+        "praes_sie_Sie": "betrügen",
+        "praet_ich_er_sie_es": "betrog",
+        "praet_du": "betrogst",
+        "praet_wir_sie_Sie": "betrogen",
+        "praet_ihr": "betrogt",
+        "partizip_2": "betrogen"
+      },
+      "frequenzRang": 4880,
+      "quelle": "wiktionary:de:betrügen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚betrügen‘ (https://de.wiktionary.org/wiki/betrügen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.beleidigen",
+      "lemma": "beleidigen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "beleidigen",
+        "praes_ich": "beleidige",
+        "praes_du": "beleidigst",
+        "praes_er_sie_es": "beleidigt",
+        "praes_wir": "beleidigen",
+        "praes_ihr": "beleidigt",
+        "praes_sie_Sie": "beleidigen",
+        "praet_ich_er_sie_es": "beleidigte",
+        "praet_du": "beleidigtest",
+        "praet_wir_sie_Sie": "beleidigten",
+        "praet_ihr": "beleidigtet",
+        "partizip_2": "beleidigt"
+      },
+      "frequenzRang": 4418,
+      "quelle": "wiktionary:de:beleidigen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚beleidigen‘ (https://de.wiktionary.org/wiki/beleidigen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.taeuschen",
+      "lemma": "täuschen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "täuschen",
+        "praes_ich": "täusche",
+        "praes_du": "täuschst",
+        "praes_er_sie_es": "täuscht",
+        "praes_wir": "täuschen",
+        "praes_ihr": "täuscht",
+        "praes_sie_Sie": "täuschen",
+        "praet_ich_er_sie_es": "täuschte",
+        "praet_du": "täuschtest",
+        "praet_wir_sie_Sie": "täuschten",
+        "praet_ihr": "täuschtet",
+        "partizip_2": "getäuscht"
+      },
+      "frequenzRang": 3983,
+      "quelle": "wiktionary:de:täuschen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚täuschen‘ (https://de.wiktionary.org/wiki/täuschen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.gucken",
+      "lemma": "gucken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "register": "umgangssprachlich"
+      },
+      "formen": {
+        "infinitiv": "gucken",
+        "praes_ich": "gucke",
+        "praes_du": "guckst",
+        "praes_er_sie_es": "guckt",
+        "praes_wir": "gucken",
+        "praes_ihr": "guckt",
+        "praes_sie_Sie": "gucken",
+        "praet_ich_er_sie_es": "guckte",
+        "praet_du": "gucktest",
+        "praet_wir_sie_Sie": "guckten",
+        "praet_ihr": "gucktet",
+        "partizip_2": "geguckt"
+      },
+      "frequenzRang": 1316,
+      "quelle": "wiktionary:de:gucken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gucken‘ (https://de.wiktionary.org/wiki/gucken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.titel",
+      "lemma": "Titel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Titel"
+      },
+      "formen": {
+        "dat_pl": "Titeln",
+        "gen_sg": "Titels"
+      },
+      "frequenzRang": 590,
+      "quelle": "wiktionary:de:Titel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Titel‘ (https://de.wiktionary.org/wiki/Titel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.quelle",
+      "lemma": "Quelle",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Quellen"
+      },
+      "formen": {
+        "pl": "Quellen"
+      },
+      "frequenzRang": 633,
+      "quelle": "wiktionary:de:Quelle",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Quelle‘ (https://de.wiktionary.org/wiki/Quelle), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.kommentar",
+      "lemma": "Kommentar",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kommentare"
+      },
+      "formen": {
+        "pl": "Kommentare",
+        "dat_pl": "Kommentaren",
+        "gen_sg": "Kommentars"
+      },
+      "frequenzRang": 794,
+      "quelle": "wiktionary:de:Kommentar",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kommentar‘ (https://de.wiktionary.org/wiki/Kommentar), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.reaktion",
+      "lemma": "Reaktion",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Reaktionen"
+      },
+      "formen": {
+        "pl": "Reaktionen"
+      },
+      "frequenzRang": 1094,
+      "quelle": "wiktionary:de:Reaktion",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Reaktion‘ (https://de.wiktionary.org/wiki/Reaktion), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.version",
+      "lemma": "Version",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Versionen"
+      },
+      "formen": {
+        "pl": "Versionen"
+      },
+      "frequenzRang": 946,
+      "quelle": "wiktionary:de:Version",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Version‘ (https://de.wiktionary.org/wiki/Version), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.medium",
+      "lemma": "Medium",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Medien"
+      },
+      "formen": {
+        "pl": "Medien",
+        "gen_sg": "Mediums"
+      },
+      "frequenzRang": 1319,
+      "quelle": "wiktionary:de:Medium",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Medium‘ (https://de.wiktionary.org/wiki/Medium), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.anwendung",
+      "lemma": "Anwendung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Anwendungen"
+      },
+      "formen": {
+        "pl": "Anwendungen"
+      },
+      "frequenzRang": 1327,
+      "quelle": "wiktionary:de:Anwendung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anwendung‘ (https://de.wiktionary.org/wiki/Anwendung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.presse",
+      "lemma": "Presse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 1444,
+      "quelle": "wiktionary:de:Presse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Presse‘ (https://de.wiktionary.org/wiki/Presse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.journalist",
+      "lemma": "Journalist",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Journalisten",
+        "deklination": "n-Deklination",
+        "weiblich": "Journalistin"
+      },
+      "formen": {
+        "pl": "Journalisten",
+        "akk_dat_sg": "Journalisten",
+        "gen_sg": "Journalisten",
+        "weiblich": "Journalistin",
+        "weiblich_pl": "Journalistinnen"
+      },
+      "frequenzRang": 1680,
+      "quelle": "wiktionary:de:Journalist",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Journalist‘ (https://de.wiktionary.org/wiki/Journalist), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.autor",
+      "lemma": "Autor",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Autoren",
+        "weiblich": "Autorin"
+      },
+      "formen": {
+        "pl": "Autoren",
+        "gen_sg": "Autors",
+        "weiblich": "Autorin",
+        "weiblich_pl": "Autorinnen"
+      },
+      "frequenzRang": 1178,
+      "quelle": "wiktionary:de:Autor",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Autor‘ (https://de.wiktionary.org/wiki/Autor), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.leser",
+      "lemma": "Leser",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Leser",
+        "weiblich": "Leserin"
+      },
+      "formen": {
+        "dat_pl": "Lesern",
+        "gen_sg": "Lesers",
+        "weiblich": "Leserin",
+        "weiblich_pl": "Leserinnen"
+      },
+      "frequenzRang": 1652,
+      "quelle": "wiktionary:de:Leser",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Leser‘ (https://de.wiktionary.org/wiki/Leser), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.nutzer",
+      "lemma": "Nutzer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Nutzer",
+        "weiblich": "Nutzerin"
+      },
+      "formen": {
+        "dat_pl": "Nutzern",
+        "gen_sg": "Nutzers",
+        "weiblich": "Nutzerin",
+        "weiblich_pl": "Nutzerinnen"
+      },
+      "frequenzRang": 1501,
+      "quelle": "wiktionary:de:Nutzer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nutzer‘ (https://de.wiktionary.org/wiki/Nutzer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.profil",
+      "lemma": "Profil",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Profile"
+      },
+      "formen": {
+        "pl": "Profile",
+        "dat_pl": "Profilen",
+        "gen_sg": "Profils",
+        "gen_sg_2": "Profiles"
+      },
+      "frequenzRang": 1773,
+      "quelle": "wiktionary:de:Profil",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Profil‘ (https://de.wiktionary.org/wiki/Profil), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.account",
+      "lemma": "Account",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Accounts"
+      },
+      "formen": {
+        "pl": "Accounts",
+        "gen_sg": "Accounts"
+      },
+      "frequenzRang": 2010,
+      "quelle": "wiktionary:de:Account",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Account‘ (https://de.wiktionary.org/wiki/Account), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.plattform",
+      "lemma": "Plattform",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Plattformen"
+      },
+      "formen": {
+        "pl": "Plattformen"
+      },
+      "frequenzRang": 1955,
+      "quelle": "wiktionary:de:Plattform",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Plattform‘ (https://de.wiktionary.org/wiki/Plattform), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.netzwerk",
+      "lemma": "Netzwerk",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Netzwerke"
+      },
+      "formen": {
+        "pl": "Netzwerke",
+        "dat_pl": "Netzwerken",
+        "gen_sg": "Netzwerks",
+        "gen_sg_2": "Netzwerkes"
+      },
+      "frequenzRang": 1752,
+      "quelle": "wiktionary:de:Netzwerk",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Netzwerk‘ (https://de.wiktionary.org/wiki/Netzwerk), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.webseite",
+      "lemma": "Webseite",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Webseiten"
+      },
+      "formen": {
+        "pl": "Webseiten"
+      },
+      "frequenzRang": 1672,
+      "quelle": "wiktionary:de:Webseite",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Webseite‘ (https://de.wiktionary.org/wiki/Webseite), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.datei",
+      "lemma": "Datei",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Dateien"
+      },
+      "formen": {
+        "pl": "Dateien"
+      },
+      "frequenzRang": 2967,
+      "quelle": "wiktionary:de:Datei",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Datei‘ (https://de.wiktionary.org/wiki/Datei), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.zugang",
+      "lemma": "Zugang",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zugänge"
+      },
+      "formen": {
+        "pl": "Zugänge",
+        "dat_pl": "Zugängen",
+        "gen_sg": "Zugangs",
+        "gen_sg_2": "Zuganges"
+      },
+      "frequenzRang": 1540,
+      "quelle": "wiktionary:de:Zugang",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zugang‘ (https://de.wiktionary.org/wiki/Zugang), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.zugriff",
+      "lemma": "Zugriff",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zugriffe"
+      },
+      "formen": {
+        "pl": "Zugriffe",
+        "dat_pl": "Zugriffen",
+        "gen_sg": "Zugriffs",
+        "gen_sg_2": "Zugriffes"
+      },
+      "frequenzRang": 3508,
+      "quelle": "wiktionary:de:Zugriff",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zugriff‘ (https://de.wiktionary.org/wiki/Zugriff), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.einstellung",
+      "lemma": "Einstellung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Einstellungen"
+      },
+      "formen": {
+        "pl": "Einstellungen"
+      },
+      "frequenzRang": 1494,
+      "quelle": "wiktionary:de:Einstellung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Einstellung‘ (https://de.wiktionary.org/wiki/Einstellung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.standort",
+      "lemma": "Standort",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Standorte"
+      },
+      "formen": {
+        "pl": "Standorte",
+        "dat_pl": "Standorten",
+        "gen_sg": "Standorts",
+        "gen_sg_2": "Standortes"
+      },
+      "frequenzRang": 1291,
+      "quelle": "wiktionary:de:Standort",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Standort‘ (https://de.wiktionary.org/wiki/Standort), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.verlauf",
+      "lemma": "Verlauf",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Verläufe"
+      },
+      "formen": {
+        "pl": "Verläufe",
+        "dat_pl": "Verläufen",
+        "gen_sg": "Verlaufs",
+        "gen_sg_2": "Verlaufes"
+      },
+      "frequenzRang": 1729,
+      "quelle": "wiktionary:de:Verlauf",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verlauf‘ (https://de.wiktionary.org/wiki/Verlauf), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.forum",
+      "lemma": "Forum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Foren"
+      },
+      "formen": {
+        "pl": "Foren",
+        "gen_sg": "Forums"
+      },
+      "frequenzRang": 1578,
+      "quelle": "wiktionary:de:Forum",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Forum‘ (https://de.wiktionary.org/wiki/Forum), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.meldung",
+      "lemma": "Meldung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Meldungen"
+      },
+      "formen": {
+        "pl": "Meldungen"
+      },
+      "frequenzRang": 2204,
+      "quelle": "wiktionary:de:Meldung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Meldung‘ (https://de.wiktionary.org/wiki/Meldung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.warnung",
+      "lemma": "Warnung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Warnungen"
+      },
+      "formen": {
+        "pl": "Warnungen"
+      },
+      "frequenzRang": 3333,
+      "quelle": "wiktionary:de:Warnung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Warnung‘ (https://de.wiktionary.org/wiki/Warnung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.geheimnis",
+      "lemma": "Geheimnis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Geheimnisse"
+      },
+      "formen": {
+        "pl": "Geheimnisse",
+        "dat_pl": "Geheimnissen",
+        "gen_sg": "Geheimnisses"
+      },
+      "frequenzRang": 2032,
+      "quelle": "wiktionary:de:Geheimnis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Geheimnis‘ (https://de.wiktionary.org/wiki/Geheimnis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.virus",
+      "lemma": "Virus",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Viren"
+      },
+      "formen": {
+        "pl": "Viren",
+        "gen_sg": "Virus"
+      },
+      "frequenzRang": 2472,
+      "quelle": "wiktionary:de:Virus",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Virus‘ (https://de.wiktionary.org/wiki/Virus), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.betrug",
+      "lemma": "Betrug",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Betrugs",
+        "gen_sg_2": "Betruges"
+      },
+      "frequenzRang": 11916,
+      "quelle": "wiktionary:de:Betrug",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Betrug‘ (https://de.wiktionary.org/wiki/Betrug), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.betrueger",
+      "lemma": "Betrüger",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Betrüger",
+        "weiblich": "Betrügerin"
+      },
+      "formen": {
+        "dat_pl": "Betrügern",
+        "gen_sg": "Betrügers",
+        "weiblich": "Betrügerin",
+        "weiblich_pl": "Betrügerinnen"
+      },
+      "frequenzRang": 6997,
+      "quelle": "wiktionary:de:Betrüger",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Betrüger‘ (https://de.wiktionary.org/wiki/Betrüger), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.geruecht",
+      "lemma": "Gerücht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gerüchte"
+      },
+      "formen": {
+        "pl": "Gerüchte",
+        "dat_pl": "Gerüchten",
+        "gen_sg": "Gerüchts",
+        "gen_sg_2": "Gerüchtes"
+      },
+      "frequenzRang": 2817,
+      "quelle": "wiktionary:de:Gerücht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gerücht‘ (https://de.wiktionary.org/wiki/Gerücht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.beleidigung",
+      "lemma": "Beleidigung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Beleidigungen"
+      },
+      "formen": {
+        "pl": "Beleidigungen"
+      },
+      "frequenzRang": 3739,
+      "quelle": "wiktionary:de:Beleidigung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Beleidigung‘ (https://de.wiktionary.org/wiki/Beleidigung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.datenschutz",
+      "lemma": "Datenschutz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Datenschutzes"
+      },
+      "frequenzRang": 4175,
+      "quelle": "wiktionary:de:Datenschutz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Datenschutz‘ (https://de.wiktionary.org/wiki/Datenschutz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.mobbing",
+      "lemma": "Mobbing",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Mobbings"
+      },
+      "frequenzRang": 7751,
+      "quelle": "wiktionary:de:Mobbing",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mobbing‘ (https://de.wiktionary.org/wiki/Mobbing), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.absender",
+      "lemma": "Absender",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Absender",
+        "weiblich": "Absenderin"
+      },
+      "formen": {
+        "dat_pl": "Absendern",
+        "gen_sg": "Absenders",
+        "weiblich": "Absenderin",
+        "weiblich_pl": "Absenderinnen"
+      },
+      "frequenzRang": 9695,
+      "quelle": "wiktionary:de:Absender",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Absender‘ (https://de.wiktionary.org/wiki/Absender), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.anhang",
+      "lemma": "Anhang",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Anhänge"
+      },
+      "formen": {
+        "pl": "Anhänge",
+        "dat_pl": "Anhängen",
+        "gen_sg": "Anhangs"
+      },
+      "frequenzRang": 5615,
+      "quelle": "wiktionary:de:Anhang",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anhang‘ (https://de.wiktionary.org/wiki/Anhang), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.format",
+      "lemma": "Format",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Formate"
+      },
+      "formen": {
+        "pl": "Formate",
+        "dat_pl": "Formaten",
+        "gen_sg": "Formats",
+        "gen_sg_2": "Formates"
+      },
+      "frequenzRang": 1954,
+      "quelle": "wiktionary:de:Format",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Format‘ (https://de.wiktionary.org/wiki/Format), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.benutzername",
+      "lemma": "Benutzername",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Benutzernamen"
+      },
+      "formen": {
+        "pl": "Benutzernamen",
+        "gen_sg": "Benutzernamens"
+      },
+      "frequenzRang": 35759,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.suchmaschine",
+      "lemma": "Suchmaschine",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Suchmaschinen"
+      },
+      "formen": {
+        "pl": "Suchmaschinen"
+      },
+      "frequenzRang": 8115,
+      "quelle": "wiktionary:de:Suchmaschine",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Suchmaschine‘ (https://de.wiktionary.org/wiki/Suchmaschine), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.falschmeldung",
+      "lemma": "Falschmeldung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Falschmeldungen"
+      },
+      "formen": {
+        "pl": "Falschmeldungen"
+      },
+      "frequenzRang": 48259,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.darstellen",
+      "lemma": "darstellen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "dar",
+        "grundverb": "stellen (de.a1.e03.stellen)"
+      },
+      "formen": {
+        "infinitiv": "darstellen",
+        "verbzusatz": "dar",
+        "partizip_2": "dargestellt",
+        "zu_infinitiv": "darzustellen",
+        "nebensatz_er_sie_es": "darstellt",
+        "nebensatz_praet": "darstellte",
+        "nebensatz_praet_pl": "darstellten"
+      },
+      "frequenzRang": 857,
+      "quelle": "wiktionary:de:darstellen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚darstellen‘ (https://de.wiktionary.org/wiki/darstellen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.digital",
+      "lemma": "digital",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "digitale",
+        "endung_en": "digitalen",
+        "endung_er": "digitaler",
+        "endung_es": "digitales",
+        "endung_em": "digitalem"
+      },
+      "frequenzRang": 1159,
+      "quelle": "wiktionary:de:digital",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚digital‘ (https://de.wiktionary.org/wiki/digital), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.kritisch",
+      "lemma": "kritisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "kritische",
+        "endung_en": "kritischen",
+        "endung_er": "kritischer",
+        "endung_es": "kritisches",
+        "endung_em": "kritischem",
+        "komparativ": "kritischer",
+        "superlativ": "kritischsten",
+        "superlativ_e": "kritischste"
+      },
+      "frequenzRang": 1117,
+      "quelle": "wiktionary:de:kritisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚kritisch‘ (https://de.wiktionary.org/wiki/kritisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.real",
+      "lemma": "real",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "reale",
+        "endung_en": "realen",
+        "endung_er": "realer",
+        "endung_es": "reales",
+        "endung_em": "realem"
+      },
+      "frequenzRang": 922,
+      "quelle": "wiktionary:de:real",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚real‘ (https://de.wiktionary.org/wiki/real), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.sogenannt",
+      "lemma": "sogenannt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "sogenannte",
+        "endung_en": "sogenannten",
+        "endung_er": "sogenannter",
+        "endung_es": "sogenanntes",
+        "endung_em": "sogenanntem"
+      },
+      "frequenzRang": 779,
+      "quelle": "wiktionary:de:sogenannt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚sogenannt‘ (https://de.wiktionary.org/wiki/sogenannt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.angeblich",
+      "lemma": "angeblich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "angebliche",
+        "endung_en": "angeblichen",
+        "endung_er": "angeblicher",
+        "endung_es": "angebliches",
+        "endung_em": "angeblichem"
+      },
+      "frequenzRang": 1186,
+      "quelle": "wiktionary:de:angeblich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚angeblich‘ (https://de.wiktionary.org/wiki/angeblich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.eindeutig",
+      "lemma": "eindeutig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "eindeutige",
+        "endung_en": "eindeutigen",
+        "endung_er": "eindeutiger",
+        "endung_es": "eindeutiges",
+        "endung_em": "eindeutigem",
+        "komparativ": "eindeutiger",
+        "superlativ": "eindeutigsten",
+        "superlativ_e": "eindeutigste"
+      },
+      "frequenzRang": 1331,
+      "quelle": "wiktionary:de:eindeutig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚eindeutig‘ (https://de.wiktionary.org/wiki/eindeutig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.seltsam",
+      "lemma": "seltsam",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "seltsame",
+        "endung_en": "seltsamen",
+        "endung_er": "seltsamer",
+        "endung_es": "seltsames",
+        "endung_em": "seltsamem",
+        "komparativ": "seltsamer",
+        "superlativ": "seltsamsten",
+        "superlativ_e": "seltsamste"
+      },
+      "frequenzRang": 1719,
+      "quelle": "wiktionary:de:seltsam",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚seltsam‘ (https://de.wiktionary.org/wiki/seltsam), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.illegal",
+      "lemma": "illegal",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "illegale",
+        "endung_en": "illegalen",
+        "endung_er": "illegaler",
+        "endung_es": "illegales",
+        "endung_em": "illegalem"
+      },
+      "frequenzRang": 1736,
+      "quelle": "wiktionary:de:illegal",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚illegal‘ (https://de.wiktionary.org/wiki/illegal), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.geheim",
+      "lemma": "geheim",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "geheime",
+        "endung_en": "geheimen",
+        "endung_er": "geheimer",
+        "endung_es": "geheimes",
+        "endung_em": "geheimem",
+        "komparativ": "geheimer",
+        "superlativ": "geheimsten",
+        "superlativ_e": "geheimste"
+      },
+      "frequenzRang": 1775,
+      "quelle": "wiktionary:de:geheim",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚geheim‘ (https://de.wiktionary.org/wiki/geheim), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.mobil",
+      "lemma": "mobil",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "mobile",
+        "endung_en": "mobilen",
+        "endung_er": "mobiler",
+        "endung_es": "mobiles",
+        "endung_em": "mobilem"
+      },
+      "frequenzRang": 1603,
+      "quelle": "wiktionary:de:mobil",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚mobil‘ (https://de.wiktionary.org/wiki/mobil), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.gefaelscht",
+      "lemma": "gefälscht",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "gefälschte",
+        "endung_en": "gefälschten",
+        "endung_er": "gefälschter",
+        "endung_es": "gefälschtes",
+        "endung_em": "gefälschtem"
+      },
+      "frequenzRang": 7502,
+      "quelle": "wiktionary:de:gefälscht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gefälscht‘ (https://de.wiktionary.org/wiki/gefälscht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.verdaechtig",
+      "lemma": "verdächtig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "verdächtige",
+        "endung_en": "verdächtigen",
+        "endung_er": "verdächtiger",
+        "endung_es": "verdächtiges",
+        "endung_em": "verdächtigem",
+        "komparativ": "verdächtiger",
+        "superlativ": "verdächtigsten",
+        "superlativ_e": "verdächtigste"
+      },
+      "frequenzRang": 3352,
+      "quelle": "wiktionary:de:verdächtig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verdächtig‘ (https://de.wiktionary.org/wiki/verdächtig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.serioes",
+      "lemma": "seriös",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "seriöse",
+        "endung_en": "seriösen",
+        "endung_er": "seriöser",
+        "endung_es": "seriöses",
+        "endung_em": "seriösem",
+        "komparativ": "seriöser",
+        "superlativ": "seriösesten",
+        "superlativ_e": "seriöseste"
+      },
+      "frequenzRang": 4310,
+      "quelle": "wiktionary:de:seriös",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚seriös‘ (https://de.wiktionary.org/wiki/seriös), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.suechtig",
+      "lemma": "süchtig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "süchtige",
+        "endung_en": "süchtigen",
+        "endung_er": "süchtiger",
+        "endung_es": "süchtiges",
+        "endung_em": "süchtigem"
+      },
+      "frequenzRang": 8880,
+      "quelle": "wiktionary:de:süchtig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚süchtig‘ (https://de.wiktionary.org/wiki/süchtig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e05.s0001",
+      "text": "Emre hat für die Schule einen neuen Account erstellt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0002",
+      "text": "Für den Account braucht man einen Benutzernamen und ein Passwort.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0003",
+      "text": "Nimm als Benutzernamen nicht deinen echten Namen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0004",
+      "text": "Ich habe meinen Benutzernamen vergessen und komme nicht mehr in meinen Account.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0005",
+      "text": "Mein Profil ist privat, nur meine Familie kann es sehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0006",
+      "text": "Lade für dein Profil lieber kein echtes Foto von dir hoch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0007",
+      "text": "In den Einstellungen kannst du dein Profil auf privat stellen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0008",
+      "text": "Teile deinen Standort nur mit deiner Familie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0009",
+      "text": "Ich habe den Standort auf meinem Handy ausgeschaltet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0010",
+      "text": "Warum will diese App immer meinen Standort wissen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0011",
+      "text": "Die Anwendung will Zugriff auf meine Kamera und meine Fotos.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0012",
+      "text": "Gib einer App nur den Zugriff, den sie wirklich braucht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0013",
+      "text": "Ohne dein Passwort hat niemand Zugang zu deinem Account.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0014",
+      "text": "Meine Eltern haben auch einen Zugang zu meinem Tablet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0015",
+      "text": "Dein Passwort ist geheim, nur deine Eltern dürfen es kennen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0016",
+      "text": "Ein gutes Passwort ist ein Geheimnis zwischen dir und deinen Eltern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0017",
+      "text": "Das ist kein Geheimnis.",
+      "quelle": "tatoeba:1918553",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1918553 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e05.s0018",
+      "text": "Verrate dein Passwort auch deinen besten Freunden nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0019",
+      "text": "Sichere deine Fotos und Dateien regelmäßig auf einem zweiten Gerät.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0020",
+      "text": "Sperr dein Handy immer mit einem Code.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0021",
+      "text": "Im Urlaub schalte ich die mobilen Daten aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0022",
+      "text": "Mit dem mobilen Internet bin ich auch im Bus online.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0023",
+      "text": "Digitale Geräte gehören heute zu unserem Alltag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0024",
+      "text": "Die Plattform hat sehr viele junge Nutzer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0025",
+      "text": "In einem Netzwerk teilen Menschen Fotos, Videos und Nachrichten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0026",
+      "text": "Eine sichere Webseite zeigt oben ein kleines Schloss.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0027",
+      "text": "Die Datei hat ein Format, das mein Handy nicht öffnen kann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0028",
+      "text": "Ich muss viele Dateien von meinem Computer löschen.",
+      "quelle": "tatoeba:817841",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #817841 von Zaghawa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e05.s0029",
+      "text": "Lade immer die neueste Version der App herunter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0030",
+      "text": "Alte Versionen haben oft Fehler, die gefährlich sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0031",
+      "text": "Ich lösche alle Anwendungen, die ich nicht mehr benutze.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0032",
+      "text": "Lade Apps nur aus sicheren Quellen herunter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0033",
+      "text": "Wenn Sie nicht über dieses Programm verfügen, können Sie es jetzt herunterladen.",
+      "quelle": "tatoeba:1010",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1010 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e05.s0034",
+      "text": "Bevor du ein Foto hochlädst, frag die Leute auf dem Bild.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0035",
+      "text": "Wir laden unsere Hausaufgaben auf die Plattform der Schule hoch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0036",
+      "text": "Am Computer in der Bibliothek lösche ich danach immer den Verlauf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0037",
+      "text": "Im Verlauf siehst du alle Seiten, die du heute besucht hast.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0038",
+      "text": "Datenschutz ist für Kinder und Erwachsene gleich wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0039",
+      "text": "Heute haben wir in der Schule über Datenschutz gesprochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0040",
+      "text": "Zuerst öffnest du die Einstellungen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0041",
+      "text": "Dann wählst du den Punkt Datenschutz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0042",
+      "text": "Danach stellst du dein Profil auf privat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0043",
+      "text": "Zum Schluss speicherst du alles und schließt die Einstellungen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0044",
+      "text": "Papa, kannst du mir helfen? Ich möchte einen Account erstellen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0045",
+      "text": "Klar. Hast du dir schon einen Benutzernamen überlegt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0046",
+      "text": "Ja, ich nehme einen Namen, der nichts über mich verrät.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0047",
+      "text": "Zuerst öffnest du die Einstellungen, dann stellst du dein Profil auf privat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0048",
+      "text": "Eine Nachricht, die nach deinem Passwort fragt, ist fast immer gefälscht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0049",
+      "text": "Ich habe eine Nachricht bekommen, die mir einen großen Gewinn verspricht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0050",
+      "text": "Der Absender ist mir völlig unbekannt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0051",
+      "text": "Prüf zuerst, wer der Absender ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0052",
+      "text": "Öffne keinen Anhang, wenn du den Absender nicht kennst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0053",
+      "text": "Im Anhang war ein Virus versteckt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0054",
+      "text": "Ein Virus kann deine Daten stehlen oder löschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0055",
+      "text": "Der Virus hat meinen Computer kaputt gemacht.",
+      "quelle": "tatoeba:12659622",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12659622 von Tatoeba-Mitwirkende (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e05.s0056",
+      "text": "Auf dem Computer meiner Tante habe ich jede Menge Viren gefunden.",
+      "quelle": "tatoeba:3705765",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3705765 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e05.s0057",
+      "text": "Betrüger wollen deine Daten stehlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0058",
+      "text": "Die Betrügerin behauptet, dass sie von deiner Bank kommt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0059",
+      "text": "Wie kann man einen Betrug im Netz erkennen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0060",
+      "text": "Einen Betrug sollte man immer bei der Polizei melden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0061",
+      "text": "Betrüger versuchen oft, ältere Menschen am Telefon zu betrügen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0062",
+      "text": "Die Seite sieht echt aus, aber sie will uns täuschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0063",
+      "text": "Betrüger fälschen oft das Logo einer bekannten Firma.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0064",
+      "text": "Woran erkennt man eine gefälschte Nachricht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0065",
+      "text": "Die gefälschte Seite sieht fast genauso aus wie die echte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0066",
+      "text": "Klick nie auf einen Link, der dir verdächtig erscheint.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0067",
+      "text": "Diese Nachricht ist verdächtig, denn sie hat sehr viele Fehler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0068",
+      "text": "Eine seriöse Bank fragt nie per Nachricht nach deinem Passwort.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0069",
+      "text": "Die Firma wirkt seriös, aber in Wirklichkeit gibt es sie gar nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0070",
+      "text": "Angeblich habe ich ein neues Handy gewonnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0071",
+      "text": "Das ist eindeutig eine Falle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0072",
+      "text": "Wenn du sofort bezahlen sollst, ist das ein eindeutiges Zeichen für Betrug.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0073",
+      "text": "Ich weiß, dass das illegal ist.",
+      "quelle": "tatoeba:8098045",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8098045 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e05.s0074",
+      "text": "Das Handy zeigt eine Warnung: Diese Seite ist nicht sicher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0075",
+      "text": "Nimm Warnungen auf deinem Bildschirm immer ernst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0076",
+      "text": "Ich habe ihn gewarnt, aber er hat diese Warnung ignoriert.",
+      "quelle": "tatoeba:398881",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #398881 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e05.s0077",
+      "text": "In der Meldung steht, dass mein Computer einen Virus hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0078",
+      "text": "Auf der Seite erscheinen ständig neue Fenster mit Werbung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0079",
+      "text": "Hier handelt es sich um eine Falle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0080",
+      "text": "Ein Passwort, das nur aus Zahlen besteht, ist nicht sicher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0081",
+      "text": "Leute, die dich nicht kennen, brauchen deine Adresse nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0082",
+      "text": "Ein Absender, der keinen Namen hat, ist verdächtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0083",
+      "text": "Guck mal, ich habe eine Nachricht von meiner Bank bekommen!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0084",
+      "text": "Zeig mal. Der Absender ist seltsam, und es gibt viele Fehler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0085",
+      "text": "Meinst du, die Nachricht ist gefälscht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0086",
+      "text": "Ja, eindeutig. Lösch sie einfach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0087",
+      "text": "Eine gefälschte Nachricht erkennst du an einem seltsamen Absender und an vielen Fehlern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0088",
+      "text": "Weißt du, ob diese Nachricht echt ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0089",
+      "text": "Ich bin nicht sicher, ob die Webseite seriös ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0090",
+      "text": "Ich möchte nachfragen, ob ich das richtig verstanden habe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0091",
+      "text": "Kannst du herausfinden, wer der Absender ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0092",
+      "text": "Könnten Sie mir erklären, was das Wort Datenschutz bedeutet?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0093",
+      "text": "Weißt du, wann die neue Version erscheint?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0094",
+      "text": "Ich frage mich, woher die Betrüger meine Nummer haben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0095",
+      "text": "Könnten Sie die Regel bitte noch einmal erklären?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0096",
+      "text": "Ich hätte noch eine Frage zum Datenschutz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0097",
+      "text": "Meinst du damit, dass ich den Link nicht öffnen soll?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0098",
+      "text": "Habe ich richtig verstanden, dass die Nachricht gefälscht ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0099",
+      "text": "Überprüf immer die Quelle, bevor du etwas teilst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0100",
+      "text": "Herr Neumann überprüft die Nummer im Internet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0101",
+      "text": "Wenn ein Text keine Quelle nennt, sei vorsichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0102",
+      "text": "Es gibt ein Gerücht, dass die Ferien dieses Jahr länger dauern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0103",
+      "text": "Glaub nicht jedes Gerücht, das du im Netz liest.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0104",
+      "text": "Das Gerücht ist immer größer als die Wahrheit.",
+      "quelle": "tatoeba:1972778",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1972778 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e05.s0105",
+      "text": "Falsche Nachrichten verbreiten sich im Netz sehr schnell.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0106",
+      "text": "Verbreite keine Nachrichten, die du nicht überprüft hast.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0107",
+      "text": "Jemand hat falsche Informationen über mich verbreitet.",
+      "quelle": "tatoeba:1194404",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1194404 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e05.s0108",
+      "text": "Eine Falschmeldung ist eine Nachricht, die nicht stimmt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0109",
+      "text": "Der Text behauptet, dass man mit dieser App schnell reich wird.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0110",
+      "text": "Der Artikel erwähnt keine einzige Quelle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0111",
+      "text": "Erwähne in Kommentaren nie deine Adresse oder deine Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0112",
+      "text": "Wie soll ich auf diese Nachricht reagieren?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0113",
+      "text": "Am besten reagierst du gar nicht und löschst die Nachricht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0114",
+      "text": "Ihre Reaktion war ruhig und klug.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0115",
+      "text": "Auf meine Frage kam leider keine Reaktion.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0116",
+      "text": "Lies Nachrichten im Netz immer kritisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0117",
+      "text": "Das Ziel von Bildung ist es, kritisch denken zu lernen.",
+      "quelle": "tatoeba:12893038",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12893038 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e05.s0118",
+      "text": "Im Netz wirken manche Menschen anders als im realen Leben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0119",
+      "text": "Schreib nur mit Leuten, die du im realen Leben kennst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0120",
+      "text": "Mit einer Suchmaschine kannst du einen Text schnell überprüfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0121",
+      "text": "Frau Schneider, könnten Sie mir sagen, ob wir die Fotos auch hochladen sollen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0122",
+      "text": "Nein, ihr ladet nur den Text hoch. Die Fotos bleiben privat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0123",
+      "text": "Habe ich das richtig verstanden: Wir laden nur den Text hoch?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0124",
+      "text": "Genau, nur den Text.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0125",
+      "text": "Weißt du, wer diese Nachricht geschrieben hat?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0126",
+      "text": "Entschuldigung, habe ich richtig verstanden, dass ich die Nachricht einfach löschen soll?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0127",
+      "text": "Die Presse berichtet heute über einen großen Betrug im Netz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0128",
+      "text": "Wir bekommen Nachrichten aus vielen verschiedenen Medien.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0129",
+      "text": "Welches Medium nutzt du am meisten: Zeitung, Radio oder Internet?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0130",
+      "text": "Eine Journalistin hat einen Artikel über gefälschte Nachrichten geschrieben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0131",
+      "text": "Der Journalist fragt Experten, bevor er etwas veröffentlicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0132",
+      "text": "Wer ist eigentlich der Autor von diesem Artikel?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0133",
+      "text": "Die Autorin nennt ihren Namen und ihre Quellen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0134",
+      "text": "Viele Leser haben auf den Artikel reagiert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0135",
+      "text": "Veröffentliche keine Fotos von anderen ohne ihre Erlaubnis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0136",
+      "text": "Sie möchte ihre Erlebnisse in einem Buch veröffentlichen.",
+      "quelle": "tatoeba:9787454",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #9787454 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e05.s0137",
+      "text": "Der Artikel ist gestern in der Zeitung erschienen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0138",
+      "text": "Der Titel klingt spannend, aber der Text ist langweilig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0139",
+      "text": "Unter dem Video stehen viele gemeine Kommentare.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0140",
+      "text": "Lest nicht die Kommentare!",
+      "quelle": "tatoeba:5950668",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5950668 von arved (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e05.s0141",
+      "text": "In einem Forum stellen Nutzer Fragen und helfen sich gegenseitig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0142",
+      "text": "Der Artikel stellt die Sache ganz falsch dar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0143",
+      "text": "Viele Nutzer bewerten die App sehr schlecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0144",
+      "text": "Im Unterricht lernen wir, Quellen richtig zu bewerten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0145",
+      "text": "Werbung will uns beeinflussen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0146",
+      "text": "Medien können unsere Meinung stark beeinflussen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0147",
+      "text": "Das sind sogenannte Falschmeldungen, also Nachrichten, die absichtlich falsch sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0148",
+      "text": "Der Artikel handelt von Betrügern, die falsche Nachrichten schicken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0149",
+      "text": "Der Artikel, den ich gelesen habe, war sehr interessant.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0150",
+      "text": "Die App, die du mir empfohlen hast, ist wirklich gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0151",
+      "text": "Das Video, das du gestern hochgeladen hast, hat schon viele Kommentare.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0152",
+      "text": "Vorsicht vor falschen Nachrichten von der Bank",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0153",
+      "text": "Im Moment bekommen viele Menschen in unserer Stadt gefälschte Nachrichten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0154",
+      "text": "Die Absender behaupten, dass sie von einer Bank sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0155",
+      "text": "Sie schreiben, dass das Konto angeblich gesperrt ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0156",
+      "text": "Man soll auf einen Link klicken und dort die Daten von seinem Konto eintragen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0157",
+      "text": "Die Polizei warnt: Eine seriöse Bank fragt nie per Nachricht nach solchen Daten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0158",
+      "text": "Wer eine solche Nachricht bekommt, sollte sie löschen und den Betrug melden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0159",
+      "text": "Wer schon Daten eingetragen hat, ruft am besten sofort seine Bank an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0160",
+      "text": "Die Bank hat die Nachrichten geschickt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0161",
+      "text": "Die Polizei warnt vor den Nachrichten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0162",
+      "text": "Schon hundert Menschen haben Geld verloren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0163",
+      "text": "Was soll man tun, wenn man so eine Nachricht bekommt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0164",
+      "text": "Man soll sie löschen und den Betrug melden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0165",
+      "text": "Man soll schnell auf den Link klicken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0166",
+      "text": "Man soll der Bank sein Passwort schicken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0167",
+      "text": "Hast du den Artikel über die gefälschten Nachrichten gelesen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0168",
+      "text": "Nein, noch nicht. In welcher Zeitung ist er erschienen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0169",
+      "text": "In der Zeitung, die wir jeden Morgen bekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0170",
+      "text": "Den Artikel, den ich gestern gelesen habe, finde ich sehr wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0171",
+      "text": "Beleidige niemanden im Chat, auch nicht aus Spaß.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0172",
+      "text": "Laylā fühlt sich durch den Kommentar beleidigt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0173",
+      "text": "Wenn dich jemand beleidigt, sag es sofort einem Erwachsenen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0174",
+      "text": "Beleidigungen im Netz tun genauso weh wie im realen Leben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0175",
+      "text": "Mobbing bedeutet, dass jemand immer wieder gemein zu einer Person ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0176",
+      "text": "Wenn du Mobbing bemerkst, hol dir Hilfe bei deinen Eltern oder Lehrern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0177",
+      "text": "Unsere Schule hat klare Regeln gegen Mobbing.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0178",
+      "text": "Manche Apps verfolgen genau, wo du gerade bist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0179",
+      "text": "In der Schule lernen wir, wie man mit digitalen Medien umgeht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0180",
+      "text": "Geh vorsichtig mit deinen persönlichen Daten um.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0181",
+      "text": "Manche Jugendliche sind fast süchtig nach ihrem Handy.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0182",
+      "text": "Am Abend guckt Jan oft zu lange Videos.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0183",
+      "text": "Wenn dir etwas seltsam erscheint, sprich mit einem Erwachsenen, bevor du handelst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0184",
+      "text": "Wenn du eine seltsame Nachricht bekommst, antworte nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0185",
+      "text": "Wenn ich unsicher bin, frage ich meine Eltern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0186",
+      "text": "Ich schalte das Handy aus, wenn ich Hausaufgaben mache.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0187",
+      "text": "Es ist illegal, fremde Fotos ohne Erlaubnis zu veröffentlichen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0188",
+      "text": "Zehn Regeln für sichere Passwörter und private Daten",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0189",
+      "text": "Nimm für jeden Account ein anderes Passwort.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0190",
+      "text": "Ein sicheres Passwort hat mindestens zwölf Zeichen: Buchstaben und Zahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0191",
+      "text": "Nimm keine Namen und kein Geburtsdatum als Passwort.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0192",
+      "text": "Verrate dein Passwort niemandem außer deinen Eltern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0193",
+      "text": "Sperr dein Handy mit einem Code, den nur du und deine Eltern kennen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0194",
+      "text": "Stell dein Profil in den Einstellungen auf privat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0195",
+      "text": "Teile deinen Standort nicht mit Leuten, die du nicht kennst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0196",
+      "text": "Lade keine Fotos von anderen Kindern hoch, wenn sie es nicht erlauben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0197",
+      "text": "Öffne keine Anhänge und Links von fremden Absendern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0198",
+      "text": "Wenn dir etwas seltsam erscheint, sprich mit einem Erwachsenen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0199",
+      "text": "Man darf für alle Accounts das gleiche Passwort nehmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0200",
+      "text": "Die Eltern dürfen das Passwort kennen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0201",
+      "text": "Man soll das Passwort jeden Monat ändern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0202",
+      "text": "Mit wem soll man sprechen, wenn etwas seltsam ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0203",
+      "text": "Mit einem Erwachsenen, zum Beispiel mit den Eltern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0204",
+      "text": "Mit dem Absender der Nachricht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0205",
+      "text": "Mit Leuten, die man nur aus dem Netz kennt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0206",
+      "text": "Wie wäre es, wenn wir nach 20 Uhr nichts mehr in den Chat schreiben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0207",
+      "text": "Gute Idee. Und was machen wir, wenn jemand trotzdem schreibt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0208",
+      "text": "Dann erinnern wir ihn freundlich an unsere Regel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0209",
+      "text": "Ich verfolge die Nachrichten lieber im Radio.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0210",
+      "text": "Schreib eine kurze Anleitung für jüngere Geschwister: So schützt du deine Daten. Schreib 80 bis 100 Wörter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0211",
+      "text": "So schützt du deine Daten! Zuerst brauchst du ein gutes Passwort. Nimm keinen Namen, sondern viele Buchstaben und Zahlen. Verrate dein Passwort niemandem, nur Mama und Papa dürfen es kennen. Dann stellst du dein Profil in den Einstellungen auf privat. Teile deinen Standort nicht und lade keine Fotos von anderen hoch. Lade Apps nur aus sicheren Quellen herunter. Wenn du eine seltsame Nachricht bekommst, öffne keine Links. Danach zeigst du die Nachricht deinen Eltern. Zum Schluss noch ein Tipp: Wenn dich jemand beleidigt, hol dir sofort Hilfe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0212",
+      "text": "Ich finde, im Chat der Klasse sollte nach 20 Uhr niemand mehr schreiben, denn wir brauchen Ruhe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0213",
+      "text": "Der angebliche Gewinn",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0214",
+      "text": "Am Samstag bekommt Yazan eine Nachricht auf sein Handy.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0215",
+      "text": "Darin steht: „Herzlichen Glückwunsch! Du hast ein neues Handy gewonnen!“",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0216",
+      "text": "„Klick schnell auf den Link und gib deine Adresse und die Daten deiner Eltern ein. Das Angebot gilt nur heute.“",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0217",
+      "text": "Yazan freut sich zuerst, aber dann wird er unsicher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0218",
+      "text": "Er hat doch an keinem Wettbewerb teilgenommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0219",
+      "text": "Im Treppenhaus trifft er Herrn Neumann, den Nachbarn aus dem ersten Stock.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0220",
+      "text": "Herr Neumann, darf ich Sie etwas fragen? Wissen Sie, ob so eine Nachricht echt sein kann?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0221",
+      "text": "Zeig mal her. Hm, der Absender ist eine Nummer, die ich nicht kenne.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0222",
+      "text": "Und die Adresse von der Webseite sieht auch seltsam aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0223",
+      "text": "Aber auf dem Bild ist doch das Logo von einer bekannten Firma.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0224",
+      "text": "Ein Logo kann man leicht fälschen. Lass uns die Nachricht mal überprüfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0225",
+      "text": "Herr Neumann gibt den Text der Nachricht in eine Suchmaschine ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0226",
+      "text": "Sofort erscheinen viele Warnungen von anderen Nutzern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0227",
+      "text": "Schau, hier steht es: Das ist ein bekannter Betrug. Es handelt sich um eine Falle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0228",
+      "text": "Die Betrüger wollen also unsere Daten stehlen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0229",
+      "text": "Genau. Mit den Daten deiner Eltern könnten sie Geld von ihrem Konto stehlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0230",
+      "text": "Gut, dass ich nicht auf den Link geklickt habe! Was soll ich jetzt tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0231",
+      "text": "Lösch die Nachricht und sperr die Nummer. Und erzähl deinen Eltern davon.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0232",
+      "text": "Am Abend erzählt Yazan seinen Eltern die ganze Geschichte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0233",
+      "text": "Sein Vater Ḫālid ist stolz auf ihn, weil er so klug reagiert hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0234",
+      "text": "Yazan weiß jetzt: Ein Gewinn, der zu schön klingt, ist meistens eine Falle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0235",
+      "text": "Was hat Yazan angeblich gewonnen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0236",
+      "text": "Ein neues Handy.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0237",
+      "text": "Ein neues Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0238",
+      "text": "Viel Geld von einer Bank.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0239",
+      "text": "Was findet Herr Neumann seltsam?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0240",
+      "text": "Die Nummer und die Adresse der Webseite.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0241",
+      "text": "Das Logo der bekannten Firma.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0242",
+      "text": "Das neue Handy von Yazan.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0243",
+      "text": "Wie findet Herr Neumann heraus, dass es ein Betrug ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0244",
+      "text": "Er sucht den Text mit einer Suchmaschine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0245",
+      "text": "Er ruft bei der Firma an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0246",
+      "text": "Er fragt die Polizei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0247",
+      "text": "Warum ist Ḫālid stolz auf Yazan?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0248",
+      "text": "Weil Yazan klug reagiert hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0249",
+      "text": "Weil Yazan ein Handy gewonnen hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0250",
+      "text": "Weil Yazan den Link geöffnet hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0251",
+      "text": "Wenn ich eine seltsame Nachricht bekomme, frage ich zuerst einen Erwachsenen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0252",
+      "text": "Regeln für den Chat der Klasse",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0253",
+      "text": "In dem Chat der Klasse gab es letzte Woche Ärger wegen einiger Kommentare.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0254",
+      "text": "Einige haben gemeine Kommentare geschrieben, und manche Nachrichten kamen spät in der Nacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0255",
+      "text": "Heute spricht Frau Schneider mit Elif, Laylā und den anderen über Regeln für den Chat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0256",
+      "text": "Welche Regeln sind euch wichtig? Was meint ihr?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0257",
+      "text": "Elif meldet sich zuerst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0258",
+      "text": "Ich finde, nach 20 Uhr sollte niemand mehr schreiben. Wir brauchen auch mal Ruhe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0259",
+      "text": "Laylā ist nicht ganz einverstanden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0260",
+      "text": "Und wenn jemand eine wichtige Frage zu den Hausaufgaben hat?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0261",
+      "text": "Dann kann er bis zum nächsten Morgen warten. Das ist doch nicht schlimm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0262",
+      "text": "Gut, das ist eine klare Regel. Und was machen wir mit Kommentaren, die jemanden beleidigen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0263",
+      "text": "Wer einen gemeinen Kommentar sieht, macht ein Foto vom Bildschirm und sagt es Ihnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0264",
+      "text": "Einverstanden. Und niemand verbreitet Fotos von anderen ohne Erlaubnis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0265",
+      "text": "Können wir die Regeln auf ein Plakat schreiben, damit alle sie kennen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0266",
+      "text": "Gute Idee! Elif, würdest du das Plakat schreiben? Dann hängen wir es in der Klasse auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0267",
+      "text": "Elif schreibt gern das Plakat, und am Ende hängt es an der Wand.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0268",
+      "text": "Was möchte Elif?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0269",
+      "text": "Nach 20 Uhr soll niemand mehr im Chat schreiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0270",
+      "text": "Der Chat der Klasse soll gelöscht werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0271",
+      "text": "Alle sollen abends mehr im Chat schreiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0272",
+      "text": "Was soll man tun, wenn man einen gemeinen Kommentar sieht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0273",
+      "text": "Ein Foto vom Bildschirm machen und es der Lehrerin sagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0274",
+      "text": "Selbst einen gemeinen Kommentar schreiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0275",
+      "text": "Den Chat für immer verlassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0276",
+      "text": "Wer schreibt das Plakat mit den Regeln?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0277",
+      "text": "Elif schreibt das Plakat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0278",
+      "text": "Laylā schreibt das Plakat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0279",
+      "text": "Frau Schneider schreibt das Plakat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0280",
+      "text": "Die Nachricht, die Yazan bekommen hat, war eine Falle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0281",
+      "text": "Weißt du, ob Herr Neumann heute zu Hause ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0282",
+      "text": "Wenn ein Angebot zu gut klingt, ist es oft ein Betrug.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0283",
+      "text": "Könnten Sie mir zeigen, wie ich den Verlauf lösche?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0284",
+      "text": "Zuerst prüfe ich den Absender, dann lese ich die Nachricht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0285",
+      "text": "Lösch Kommentare, die andere Menschen beleidigen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0286",
+      "text": "Den Journalisten, den wir im Radio gehört haben, finde ich sehr gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0287",
+      "text": "Ich frage mich, warum die App so viele Daten braucht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0288",
+      "text": "Kannst du mir sagen, wo ich die Einstellungen finde?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0289",
+      "text": "Ein Profil, das privat ist, sehen nur deine Freunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0290",
+      "text": "Die Polizei warnt vor einer neuen Nachricht, die angeblich von der Post kommt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0291",
+      "text": "Wenn ich eine Datei herunterlade, prüfe ich zuerst die Quelle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0292",
+      "text": "Manche Nutzer verbreiten Gerüchte, ohne sie zu überprüfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0293",
+      "text": "Ich weiß nicht, wer diesen Artikel veröffentlicht hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0294",
+      "text": "Mama, darf ich diese App herunterladen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0295",
+      "text": "Zeig mal. Was will die App denn alles wissen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0296",
+      "text": "Sie will Zugriff auf meine Kontakte und auf meinen Standort.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0297",
+      "text": "Das ist zu viel. Such lieber eine andere App.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0298",
+      "text": "Ein sicheres Passwort ist lang und geheim, und du nimmst es nur für einen Account.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0299",
+      "text": "Eine Webseite, die nach deinem Passwort fragt, ist oft gefälscht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0300",
+      "text": "Der Absender, den ich nicht kenne, schickt mir ständig Werbung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0301",
+      "text": "Weißt du, ob man diesen Anhang öffnen kann?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0302",
+      "text": "Könnten Sie mir bitte sagen, was ein Virus ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0303",
+      "text": "Wenn jemand dich im Netz beleidigt, antworte nicht und hol dir Hilfe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0304",
+      "text": "Zuerst sperrst du die Nummer, danach löschst du die Nachricht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0305",
+      "text": "Die Journalistin bewertet die Quellen sehr kritisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0306",
+      "text": "Dieser Kommentar ist eine Beleidigung, die ich melden möchte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0307",
+      "text": "Meinst du, dass der Artikel die Sache richtig darstellt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0308",
+      "text": "Mitteilung der Schule: Fotos von unserem Fest",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0309",
+      "text": "Liebe Eltern, bei unserem Fest am Freitag haben wir viele Fotos gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0310",
+      "text": "Wir möchten einige Fotos auf der Webseite der Schule veröffentlichen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0311",
+      "text": "Wir veröffentlichen aber nur Fotos, wenn die Eltern es erlauben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0312",
+      "text": "Bitte schreiben Sie uns bis Mittwoch, ob Ihr Kind auf den Fotos sein darf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0313",
+      "text": "Namen und Adressen der Kinder stehen natürlich nicht auf der Webseite.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0314",
+      "text": "Die Schule veröffentlicht alle Fotos ohne Erlaubnis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0315",
+      "text": "Die Eltern sollen bis Mittwoch antworten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0316",
+      "text": "Auf der Webseite stehen auch die Namen der Kinder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0317",
+      "text": "Die Fotos kosten zwei Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0318",
+      "text": "Frau Schneider, ich habe eine Frage zur Anleitung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0319",
+      "text": "Ja, bitte. Was ist dir nicht klar?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0320",
+      "text": "Wie viele Wörter sollen wir schreiben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0321",
+      "text": "Ungefähr 80 bis 100 Wörter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0322",
+      "text": "Was machst du, wenn eine seltsame Meldung erscheint?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0323",
+      "text": "Ich klicke nichts an und zeige sie meinen Eltern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0324",
+      "text": "Eine gefälschte Nachricht erkennst du am Absender, an Fehlern und an seltsamen Links.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e05.s0325",
+      "text": "Wie wäre diese Regel: Nach 20 Uhr schreiben wir nichts mehr in den Chat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e05.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann erklären, wie ich mein Profil und meine Daten schütze.",
+        "tr": "Profilimi ve verilerimi nasıl koruduğumu açıklayabilirim.",
+        "ar": "أستطيع أن أشرح كيف أحمي ملفي الشخصي وبياناتي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e05.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.account",
+          "ablenker": ["de.a2.e10.passwort", "de.a2.e10.chat"]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e05.profil",
+            "de.b1.e05.benutzername",
+            "de.b1.e05.einstellung",
+            "de.b1.e05.standort",
+            "de.b1.e05.datenschutz",
+            "de.b1.e05.webseite"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e05.zugriff",
+          "ablenker": ["de.b1.e05.version", "de.b1.e05.datei"]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.hochladen",
+          "ablenker": ["de.b1.e05.herunterladen", "de.a2.e10.speichern"]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e05.s0008",
+          "ablenker": ["de.b1.e05.s0009", "de.b1.e05.s0010"]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0042",
+          "wort": 0,
+          "ablenker": ["Wenn", "Weil"]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a08",
+          "typ": "formen",
+          "zeilen": ["erstellen", "sperren", "sichern", "hochladen"],
+          "spalten": ["du", "ihr", "Sie"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["erstell", "erstelle"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["erstellt"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["erstellen Sie"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["sperr", "sperre"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["sperrt"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["sperren Sie"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["sichere", "sichre"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["sichert"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["sichern Sie"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["lade hoch", "lad hoch"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["ladet hoch"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 2,
+              "loesungen": ["laden Sie hoch"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a09",
+          "typ": "paare",
+          "lemmata": ["de.b1.e05.plattform", "de.b1.e05.netzwerk", "de.b1.e05.anwendung", "de.b1.e05.verlauf", "de.b1.e05.format"]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0044"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0045"
+            }
+          ],
+          "antwort": "de.b1.e05.s0046",
+          "ablenker": ["de.b1.e05.s0043", "de.b1.e05.s0038", "de.b1.e05.s0030"]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e05.s0015",
+          "nach": "ziel",
+          "ablenker": ["offen", "darf"]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e05.s0013",
+          "ablenker": ["de.b1.e05.s0014", "de.b1.e05.s0011"]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0020",
+          "wort": 0,
+          "ablenker": ["Sperrst", "Sperrt"]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e05.s0037",
+          "alternativen": ["Alle Seiten, die du heute besucht hast, siehst du im Verlauf."]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e05.s0007",
+          "nach": "ziel",
+          "alternativen": [
+            "Du kannst dein Profil in den Einstellungen auf privat stellen.",
+            "Du kannst in den Einstellungen dein Profil auf privat stellen.",
+            "In den Einstellungen kannst du dein Profil privat machen.",
+            "In den Einstellungen kannst du dein Profil auf privat setzen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e05.s0047"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e05.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann gefälschte Nachrichten erkennen und davor warnen.",
+        "tr": "Sahte mesajları tanıyabilir ve onlara karşı uyarabilirim.",
+        "ar": "أستطيع أن أتعرّف على الرسائل المزيّفة وأن أحذّر منها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e05.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.betrueger",
+          "ablenker": ["de.b1.e05.absender", "de.b1.e05.nutzer"]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e05.anhang", "de.b1.e05.virus", "de.b1.e05.warnung", "de.b1.e05.meldung", "de.b1.e05.betrug"]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e05.gefaelscht",
+          "ablenker": ["de.b1.e05.serioes", "de.b1.e05.eindeutig"]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e05.s0052",
+          "ablenker": ["de.b1.e05.s0053", "de.b1.e05.s0051"]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.taeuschen",
+          "ablenker": ["de.b1.e05.stehlen", "de.a2.e10.warnen"]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0082",
+          "wort": 2,
+          "ablenker": ["den", "dem"]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a08",
+          "typ": "formen",
+          "lemma": "de.b1.e05.der-relativ",
+          "zeilen": ["Nominativ", "Akkusativ"],
+          "spalten": ["maskulin", "feminin", "neutral", "Plural"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["der"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["die"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["das"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 3,
+              "loesungen": ["die"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["den"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["die"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["das"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 3,
+              "loesungen": ["die"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0083"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0084"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0085"
+            }
+          ],
+          "antwort": "de.b1.e05.s0086",
+          "ablenker": ["de.b1.e05.s0059", "de.b1.e05.s0055"]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.verdaechtig",
+          "ablenker": ["de.a2.e10.praktisch", "de.a2.e10.aktuell"]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e05.s0080",
+          "nach": "ziel",
+          "ablenker": ["die", "bestehen"]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e05.s0068",
+          "ablenker": ["de.b1.e05.s0077", "de.b1.e05.s0074"]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0066",
+          "wort": 5,
+          "ablenker": ["die", "das"]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e05.s0048"
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e05.s0071",
+          "nach": "ziel",
+          "alternativen": [
+            "Das ist ganz klar eine Falle.",
+            "Das ist klar eine Falle.",
+            "Es ist eindeutig eine Falle.",
+            "Das ist offensichtlich eine Falle."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e05.s0087"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e05.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann höflich nachfragen und Unklarheiten klären.",
+        "tr": "Kibarca soru sorabilir ve belirsizlikleri giderebilirim.",
+        "ar": "أستطيع أن أستفسر بأدب وأن أوضّح الأمور غير الواضحة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e05.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.ueberpruefen",
+          "ablenker": ["de.a2.e10.erkennen", "de.a2.e10.waehlen"]
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e05.quelle", "de.b1.e05.geruecht", "de.b1.e05.falschmeldung", "de.b1.e05.suchmaschine", "de.b1.e05.reaktion"]
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e05.behaupten",
+          "ablenker": ["de.b1.e05.erwaehnen", "de.b1.e05.reagieren"]
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e05.s0088",
+          "ablenker": ["de.b1.e05.s0125", "de.b1.e05.s0093"]
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0089",
+          "wort": 4,
+          "ablenker": ["wenn", "was"]
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a07",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a08",
+          "typ": "formen",
+          "zeilen": ["stehlen", "verraten", "betrügen", "erscheinen"],
+          "spalten": ["er/sie/es – Präsens", "er/sie/es – Präteritum", "Partizip II"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["stiehlt"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["stahl"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["gestohlen"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["verrät"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["verriet"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["verraten"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["betrügt"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["betrog"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["betrogen"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["erscheint"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["erschien"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 2,
+              "loesungen": ["erschienen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0121"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0122"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0123"
+            }
+          ],
+          "antwort": "de.b1.e05.s0124",
+          "ablenker": ["de.b1.e05.s0115", "de.b1.e05.s0102"]
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.kritisch",
+          "ablenker": ["de.b1.e05.real", "de.a2.e10.aktuell"]
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e05.s0090",
+          "nach": "ziel",
+          "ablenker": ["wenn", "verstehe"]
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e05.s0113",
+          "ablenker": ["de.b1.e05.s0112", "de.b1.e05.s0114"]
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e05.s0094"
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e05.s0095",
+          "nach": "ziel",
+          "alternativen": [
+            "Könnten Sie bitte die Regel noch einmal erklären?",
+            "Könnten Sie mir die Regel bitte noch einmal erklären?",
+            "Könnten Sie die Regel bitte noch mal erklären?",
+            "Würden Sie die Regel bitte noch einmal erklären?",
+            "Können Sie die Regel bitte noch einmal erklären?"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a15",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0106",
+          "wort": 3,
+          "ablenker": ["der", "das"]
+        },
+        {
+          "schluessel": "de.b1.e05.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e05.s0126"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e05.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann einen kurzen Zeitungsartikel verstehen und über Medien sprechen.",
+        "tr": "Kısa bir gazete haberini anlayabilir ve medya hakkında konuşabilirim.",
+        "ar": "أستطيع أن أفهم مقالًا قصيرًا في جريدة وأن أتحدث عن وسائل الإعلام."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e05.l04.a01",
+          "typ": "paare",
+          "lemmata": ["de.b1.e05.presse", "de.b1.e05.journalist", "de.b1.e05.autor", "de.b1.e05.leser", "de.b1.e05.titel"]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.veroeffentlichen",
+          "ablenker": ["de.b1.e05.darstellen", "de.b1.e05.bewerten"]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e05.kommentar",
+          "ablenker": ["de.b1.e05.forum", "de.b1.e05.medium"]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e05.s0149",
+          "ablenker": ["de.b1.e05.s0150", "de.b1.e05.s0151"]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0149",
+          "wort": 2,
+          "ablenker": ["der", "dem"]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e05.s0152",
+          "absaetze": [
+            "de.b1.e05.s0153",
+            "de.b1.e05.s0154",
+            "de.b1.e05.s0155",
+            "de.b1.e05.s0156",
+            "de.b1.e05.s0157",
+            "de.b1.e05.s0158",
+            "de.b1.e05.s0159"
+          ],
+          "glossen": ["de.b1.e05.serioes", "de.b1.e05.angeblich", "de.b1.e05.sperren", "de.a2.e09.konto"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e05.s0160",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e05.s0161",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e05.s0162",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e05.s0163",
+              "antwort": "de.b1.e05.s0164",
+              "ablenker": ["de.b1.e05.s0165", "de.b1.e05.s0166"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.beeinflussen",
+          "ablenker": ["de.a2.e10.nutzen", "de.a2.e10.aendern"]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0167"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0168"
+            }
+          ],
+          "antwort": "de.b1.e05.s0169",
+          "ablenker": ["de.b1.e05.s0127", "de.b1.e05.s0138"]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e05.sogenannt",
+          "ablenker": ["de.a2.e10.folgend", "de.a2.e10.aktuell"]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e05.s0151",
+          "nach": "ziel",
+          "ablenker": ["der", "hochladen"]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e05.s0146",
+          "ablenker": ["de.b1.e05.s0145", "de.b1.e05.s0143"]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e05.s0131",
+          "alternativen": ["Bevor er etwas veröffentlicht, fragt der Journalist Experten."]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e05.s0137",
+          "nach": "ziel",
+          "alternativen": [
+            "Gestern ist der Artikel in der Zeitung erschienen.",
+            "Der Artikel erschien gestern in der Zeitung.",
+            "Gestern erschien der Artikel in der Zeitung.",
+            "Der Artikel wurde gestern in der Zeitung veröffentlicht."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e05.s0128"
+        },
+        {
+          "schluessel": "de.b1.e05.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e05.s0170"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e05.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Regeln für den Chat aushandeln und eine kurze Anleitung schreiben.",
+        "tr": "Sohbet için kuralları birlikte belirleyebilir ve kısa bir kılavuz yazabilirim.",
+        "ar": "أستطيع أن أتفق مع الآخرين على قواعد للدردشة وأن أكتب إرشادات قصيرة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e05.l05.a01",
+          "typ": "paare",
+          "lemmata": ["de.b1.e05.beleidigung", "de.b1.e05.mobbing", "de.b1.e05.geheimnis", "de.a2.e14.respekt", "de.a2.e07.regel"]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.beleidigen",
+          "ablenker": ["de.b1.e05.verfolgen", "de.b1.e05.verraten"]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e05.suechtig",
+          "ablenker": ["de.b1.e05.geheim", "de.b1.e05.illegal"]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e05.s0185",
+          "ablenker": ["de.b1.e05.s0184", "de.b1.e05.s0186"]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0186",
+          "wort": 5,
+          "ablenker": ["ob", "dass"]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e05.s0188",
+          "absaetze": [
+            "de.b1.e05.s0189",
+            "de.b1.e05.s0190",
+            "de.b1.e05.s0191",
+            "de.b1.e05.s0192",
+            "de.b1.e05.s0193",
+            "de.b1.e05.s0194",
+            "de.b1.e05.s0195",
+            "de.b1.e05.s0196",
+            "de.b1.e05.s0197",
+            "de.b1.e05.s0198"
+          ],
+          "glossen": ["de.b1.e05.standort", "de.b1.e05.einstellung", "de.b1.e05.anhang", "de.b1.e05.absender", "de.a2.e09.geburtsdatum"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e05.s0199",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e05.s0200",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e05.s0201",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e05.s0202",
+              "antwort": "de.b1.e05.s0203",
+              "ablenker": ["de.b1.e05.s0204", "de.b1.e05.s0205"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.umgehen",
+          "ablenker": ["de.a2.e10.verbinden", "de.a2.e10.druecken"]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0206"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0207"
+            }
+          ],
+          "antwort": "de.b1.e05.s0208",
+          "ablenker": ["de.b1.e05.s0209", "de.b1.e05.s0178"]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.gucken",
+          "ablenker": ["de.a2.e10.klicken", "de.a2.e10.telefonieren"]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e05.s0171",
+          "nach": "ziel",
+          "alternativen": ["Beleidige im Chat niemanden, auch nicht aus Spaß."],
+          "ablenker": ["beleidigt", "immer"]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e05.s0176",
+          "ablenker": ["de.b1.e05.s0177", "de.b1.e05.s0173"]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e05.s0184",
+          "alternativen": ["Antworte nicht, wenn du eine seltsame Nachricht bekommst."]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e05.s0180",
+          "nach": "ziel",
+          "alternativen": [
+            "Geh mit deinen persönlichen Daten vorsichtig um.",
+            "Geh vorsichtig mit deinen privaten Daten um.",
+            "Geh mit deinen privaten Daten vorsichtig um.",
+            "Sei vorsichtig mit deinen persönlichen Daten."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a14",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e05.s0210",
+          "woerter": {
+            "min": 80,
+            "max": 100
+          },
+          "pflichtwoerter": ["Passwort", "Profil", "Eltern"],
+          "muster": ["de.b1.e05.s0211"]
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e05.s0177"
+        },
+        {
+          "schluessel": "de.b1.e05.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e05.s0212"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e05.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte und ein Gespräch über Sicherheit im Netz verstehen.",
+        "tr": "İnternette güvenlik hakkında bir hikâyeyi ve bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة وحوارًا عن الأمان على الإنترنت."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e05.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e05.s0213",
+          "zeilen": [
+            {
+              "satz": "de.b1.e05.s0214"
+            },
+            {
+              "satz": "de.b1.e05.s0215"
+            },
+            {
+              "satz": "de.b1.e05.s0216"
+            },
+            {
+              "satz": "de.b1.e05.s0217"
+            },
+            {
+              "satz": "de.b1.e05.s0218"
+            },
+            {
+              "satz": "de.b1.e05.s0219"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0220"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0221"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0222"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0223"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0224"
+            },
+            {
+              "satz": "de.b1.e05.s0225"
+            },
+            {
+              "satz": "de.b1.e05.s0226"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0227"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0228"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0229"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0230"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0231"
+            },
+            {
+              "satz": "de.b1.e05.s0232"
+            },
+            {
+              "satz": "de.b1.e05.s0233"
+            },
+            {
+              "satz": "de.b1.e05.s0234"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.b1.e05.s0235",
+              "antwort": "de.b1.e05.s0236",
+              "ablenker": ["de.b1.e05.s0237", "de.b1.e05.s0238"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.b1.e05.s0239",
+              "antwort": "de.b1.e05.s0240",
+              "ablenker": ["de.b1.e05.s0241", "de.b1.e05.s0242"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.b1.e05.s0243",
+              "antwort": "de.b1.e05.s0244",
+              "ablenker": ["de.b1.e05.s0245", "de.b1.e05.s0246"]
+            },
+            {
+              "nach": 19,
+              "frage": "de.b1.e05.s0247",
+              "antwort": "de.b1.e05.s0248",
+              "ablenker": ["de.b1.e05.s0249", "de.b1.e05.s0250"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l06.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e05.s0222",
+          "ablenker": ["de.b1.e05.s0223", "de.b1.e05.s0226"]
+        },
+        {
+          "schluessel": "de.b1.e05.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0234",
+          "wort": 5,
+          "ablenker": ["den", "die"]
+        },
+        {
+          "schluessel": "de.b1.e05.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e05.s0231",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e05.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.b1.e05.s0252",
+          "zeilen": [
+            {
+              "satz": "de.b1.e05.s0253"
+            },
+            {
+              "satz": "de.b1.e05.s0254"
+            },
+            {
+              "satz": "de.b1.e05.s0255"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0256"
+            },
+            {
+              "satz": "de.b1.e05.s0257"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0258"
+            },
+            {
+              "satz": "de.b1.e05.s0259"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e05.s0260"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0261"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0262"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e05.s0263"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0264"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0265"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0266"
+            },
+            {
+              "satz": "de.b1.e05.s0267"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 5,
+              "frage": "de.b1.e05.s0268",
+              "antwort": "de.b1.e05.s0269",
+              "ablenker": ["de.b1.e05.s0270", "de.b1.e05.s0271"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.b1.e05.s0272",
+              "antwort": "de.b1.e05.s0273",
+              "ablenker": ["de.b1.e05.s0274", "de.b1.e05.s0275"]
+            },
+            {
+              "nach": 14,
+              "frage": "de.b1.e05.s0276",
+              "antwort": "de.b1.e05.s0277",
+              "ablenker": ["de.b1.e05.s0278", "de.b1.e05.s0279"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0262"
+            }
+          ],
+          "antwort": "de.b1.e05.s0263",
+          "ablenker": ["de.b1.e05.s0261", "de.b1.e05.s0265"]
+        },
+        {
+          "schluessel": "de.b1.e05.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0258",
+          "wort": 5,
+          "ablenker": ["solltet", "sollten"]
+        },
+        {
+          "schluessel": "de.b1.e05.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.b1.e05.s0233",
+          "alternativen": ["Weil er so klug reagiert hat, ist sein Vater Ḫālid stolz auf ihn."]
+        },
+        {
+          "schluessel": "de.b1.e05.l06.a09",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e05.s0226"
+        },
+        {
+          "schluessel": "de.b1.e05.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e05.s0264",
+          "ablenker": ["de.b1.e05.s0261", "de.b1.e05.s0255"]
+        },
+        {
+          "schluessel": "de.b1.e05.l06.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e05.s0217",
+          "nach": "ziel",
+          "alternativen": [
+            "Zuerst freut sich Yazan, aber dann wird er unsicher.",
+            "Yazan freut sich erst, aber dann wird er unsicher.",
+            "Yazan freut sich zuerst, doch dann wird er unsicher.",
+            "Zuerst freut sich Yazan, doch dann wird er unsicher."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e05.s0265",
+          "nach": "ziel",
+          "ablenker": ["ob", "kennt"]
+        },
+        {
+          "schluessel": "de.b1.e05.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.b1.e05.s0251"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e05.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum.",
+        "ar": "أراجع كلمات الوحدة وجملها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e05.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.geheimnis",
+          "ablenker": ["de.a2.e10.gefahr", "de.a2.e10.sicherheit"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e05.faelschen", "de.b1.e05.betruegen", "de.b1.e05.erscheinen", "de.b1.e05.verbreiten", "de.b1.e05.sichern"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e05.angeblich",
+          "ablenker": ["de.b1.e05.seltsam", "de.b1.e05.mobil"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a04",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e05.stehlen",
+          "ablenker": ["de.a1.e03.stellen"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e05.s0280",
+          "ablenker": ["de.b1.e05.s0289", "de.b1.e05.s0290"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0286",
+          "wort": 2,
+          "ablenker": ["der", "dem"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a07",
+          "typ": "formen",
+          "zeilen": ["ich", "du", "Sie"],
+          "spalten": ["haben (höflich)", "können (höflich)", "werden (höflich)"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["hätte"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["könnte"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["würde"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["hättest"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["könntest"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["würdest"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["hätten"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["könnten"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["würden"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.digital",
+          "ablenker": ["de.a2.e10.praktisch", "de.a2.e10.aktuell"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a09",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e05.datei",
+          "ablenker": ["de.a1.e07.dabei"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.erstellen",
+          "ablenker": ["de.a2.e10.verbinden", "de.a2.e10.auswaehlen"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0294"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0295"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0296"
+            }
+          ],
+          "antwort": "de.b1.e05.s0297",
+          "ablenker": ["de.b1.e05.s0284", "de.b1.e05.s0291"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e05.s0282",
+          "nach": "ziel",
+          "alternativen": ["Es ist oft ein Betrug, wenn ein Angebot zu gut klingt."],
+          "ablenker": ["ob", "gute"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e05.anhang",
+          "ablenker": ["de.a1.e12.anfang"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e05.s0292",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e05.s0284"
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a16",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e05.s0287",
+          "ablenker": ["de.b1.e05.s0288", "de.b1.e05.s0293"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a17",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0281",
+          "wort": 2,
+          "ablenker": ["wenn", "was"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a18",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e05.s0116"
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a19",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0285",
+          "wort": 2,
+          "ablenker": ["der", "das"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a20",
+          "typ": "satzbau",
+          "ziel": "de.b1.e05.s0291",
+          "alternativen": [
+            "Ich prüfe zuerst die Quelle, wenn ich eine Datei herunterlade.",
+            "Zuerst prüfe ich die Quelle, wenn ich eine Datei herunterlade.",
+            "Die Quelle prüfe ich zuerst, wenn ich eine Datei herunterlade."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a21",
+          "typ": "frei",
+          "ziel": "de.b1.e05.s0283",
+          "nach": "ziel",
+          "alternativen": [
+            "Können Sie mir zeigen, wie ich den Verlauf lösche?",
+            "Könnten Sie mir bitte zeigen, wie ich den Verlauf lösche?",
+            "Könnten Sie mir zeigen, wie man den Verlauf löscht?",
+            "Können Sie mir zeigen, wie man den Verlauf löscht?"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a22",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e05.s0023",
+          "ablenker": ["de.b1.e05.s0022", "de.b1.e05.s0024"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a23",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.handeln",
+          "ablenker": ["de.a2.e10.erfahren", "de.a2.e10.beantworten"]
+        },
+        {
+          "schluessel": "de.b1.e05.l07.a24",
+          "typ": "sprechen",
+          "satz": "de.b1.e05.s0298"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e05.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich meine Daten schützen und richtig nachfragen kann.",
+        "tr": "Verilerimi koruyabildiğimi ve doğru şekilde soru sorabildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع حماية بياناتي والاستفسار بشكل صحيح."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e05.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e05.betrug",
+          "ablenker": ["de.a2.e05.unfall", "de.a2.e14.streit"]
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e05.account",
+            "de.b1.e05.anhang",
+            "de.b1.e05.absender",
+            "de.b1.e05.kommentar",
+            "de.b1.e05.suchmaschine",
+            "de.b1.e05.journalist"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e05.s0299",
+          "ablenker": ["de.b1.e05.s0048", "de.b1.e05.s0290"]
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0300",
+          "wort": 2,
+          "ablenker": ["der", "dem"]
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e05.s0301",
+          "wort": 2,
+          "ablenker": ["wenn", "was"]
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e05.s0308",
+          "absaetze": ["de.b1.e05.s0309", "de.b1.e05.s0310", "de.b1.e05.s0311", "de.b1.e05.s0312", "de.b1.e05.s0313"],
+          "glossen": ["de.b1.e05.veroeffentlichen", "de.b1.e05.webseite"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e05.s0314",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e05.s0315",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e05.s0316",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e05.s0317",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0318"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e05.s0319"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0320"
+            }
+          ],
+          "antwort": "de.b1.e05.s0321",
+          "ablenker": ["de.b1.e05.s0304", "de.b1.e05.s0307"]
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e05.s0322"
+            }
+          ],
+          "antwort": "de.b1.e05.s0323",
+          "ablenker": ["de.b1.e05.s0162", "de.b1.e05.s0073"]
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e05.s0303",
+          "nach": "ziel",
+          "alternativen": [
+            "Wenn dich jemand im Netz beleidigt, antworte nicht und hol dir Hilfe.",
+            "Antworte nicht und hol dir Hilfe, wenn jemand dich im Netz beleidigt.",
+            "Antworte nicht und hol dir Hilfe, wenn dich jemand im Netz beleidigt."
+          ],
+          "ablenker": ["beleidigst", "ob"]
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a10",
+          "typ": "satzbau",
+          "ziel": "de.b1.e05.s0304",
+          "alternativen": [
+            "Du sperrst zuerst die Nummer, danach löschst du die Nachricht.",
+            "Zuerst sperrst du die Nummer, du löschst danach die Nachricht."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e05.s0305",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Journalistin bewertet die Quellen ganz kritisch.",
+            "Die Journalistin prüft die Quellen sehr kritisch.",
+            "Die Journalistin überprüft die Quellen sehr kritisch."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a12",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e05.s0302"
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e05.falschmeldung",
+          "ablenker": ["de.b1.e05.kommentar", "de.b1.e05.warnung"]
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e05.s0306",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.b1.e05.s0324"
+        },
+        {
+          "schluessel": "de.b1.e05.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e05.s0325"
+        }
+      ]
+    }
+  ]
+}
