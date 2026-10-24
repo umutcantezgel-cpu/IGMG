@@ -1,0 +1,5406 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e10",
+    "reihenfolge": 11,
+    "thema": {
+      "de": "Arbeiten im Team",
+      "tr": "Ekip hâlinde çalışmak",
+      "ar": "العمل ضمن فريق"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann in einer Teambesprechung Aufgaben verteilen, Vorschläge machen und auf Kritik reagieren.",
+        "tr": "Bir ekip toplantısında görev dağıtabilir, öneride bulunabilir ve eleştiriye karşılık verebilirim.",
+        "ar": "أستطيع أن أوزّع المهام في اجتماع الفريق وأن أقدّم اقتراحات وأن أردّ على النقد."
+      },
+      {
+        "de": "Ich kann E-Mails und Notizen im Arbeitsalltag verstehen und beantworten.",
+        "tr": "İş hayatındaki e-postaları ve notları anlayabilir ve yanıtlayabilirim.",
+        "ar": "أستطيع أن أفهم الرسائل الإلكترونية والملاحظات في العمل اليومي وأن أردّ عليها."
+      }
+    ],
+    "symbol": "handshake",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e10.wobei",
+      "lemma": "wobei",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Nebensatz, Verb am Ende (Einschränkung)"
+      },
+      "frequenzRang": 522,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.gleichzeitig",
+      "lemma": "gleichzeitig",
+      "wortart": "adverb",
+      "frequenzRang": 557,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.weiterhin",
+      "lemma": "weiterhin",
+      "wortart": "adverb",
+      "frequenzRang": 644,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.durchaus",
+      "lemma": "durchaus",
+      "wortart": "adverb",
+      "frequenzRang": 817,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.sicherlich",
+      "lemma": "sicherlich",
+      "wortart": "adverb",
+      "frequenzRang": 1445,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.momentan",
+      "lemma": "momentan",
+      "wortart": "adverb",
+      "frequenzRang": 1608,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.erstmal",
+      "lemma": "erstmal",
+      "wortart": "adverb",
+      "merkmale": {
+        "register": "umgangssprachlich"
+      },
+      "frequenzRang": 1013,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.derselbe",
+      "lemma": "derselbe",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Demonstrativpronomen (derselbe, dieselbe, dasselbe)"
+      },
+      "formen": {
+        "f": "dieselbe",
+        "n": "dasselbe",
+        "akk_m": "denselben",
+        "dat_m_n": "demselben",
+        "dat_gen_f": "derselben",
+        "pl": "dieselben",
+        "gen_m_n": "desselben"
+      },
+      "frequenzRang": 6513,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.fuehren",
+      "lemma": "führen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "führen",
+        "praes_ich": "führe",
+        "praes_du": "führst",
+        "praes_er_sie_es": "führt",
+        "praes_wir": "führen",
+        "praes_ihr": "führt",
+        "praes_sie_Sie": "führen",
+        "praet_ich_er_sie_es": "führte",
+        "praet_du": "führtest",
+        "praet_wir_sie_Sie": "führten",
+        "praet_ihr": "führtet",
+        "partizip_2": "geführt"
+      },
+      "frequenzRang": 261,
+      "quelle": "wiktionary:de:führen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚führen‘ (https://de.wiktionary.org/wiki/führen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.fordern",
+      "lemma": "fordern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "fordern",
+        "praes_ich": "fordere",
+        "praes_du": "forderst",
+        "praes_er_sie_es": "fordert",
+        "praes_wir": "fordern",
+        "praes_ihr": "fordert",
+        "praes_sie_Sie": "fordern",
+        "praet_ich_er_sie_es": "forderte",
+        "praet_du": "fordertest",
+        "praet_wir_sie_Sie": "forderten",
+        "praet_ihr": "fordertet",
+        "partizip_2": "gefordert"
+      },
+      "frequenzRang": 581,
+      "quelle": "wiktionary:de:fordern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚fordern‘ (https://de.wiktionary.org/wiki/fordern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.leisten",
+      "lemma": "leisten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "leisten",
+        "praes_ich": "leiste",
+        "praes_du": "leistest",
+        "praes_er_sie_es": "leistet",
+        "praes_wir": "leisten",
+        "praes_ihr": "leistet",
+        "praes_sie_Sie": "leisten",
+        "praet_ich_er_sie_es": "leistete",
+        "praet_du": "leistetest",
+        "praet_wir_sie_Sie": "leisteten",
+        "praet_ihr": "leistetet",
+        "partizip_2": "geleistet"
+      },
+      "frequenzRang": 752,
+      "quelle": "wiktionary:de:leisten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚leisten‘ (https://de.wiktionary.org/wiki/leisten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.ueberzeugen",
+      "lemma": "überzeugen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "überzeugen",
+        "praes_ich": "überzeuge",
+        "praes_du": "überzeugst",
+        "praes_er_sie_es": "überzeugt",
+        "praes_wir": "überzeugen",
+        "praes_ihr": "überzeugt",
+        "praes_sie_Sie": "überzeugen",
+        "praet_ich_er_sie_es": "überzeugte",
+        "praet_du": "überzeugtest",
+        "praet_wir_sie_Sie": "überzeugten",
+        "praet_ihr": "überzeugtet",
+        "partizip_2": "überzeugt"
+      },
+      "frequenzRang": 879,
+      "quelle": "wiktionary:de:überzeugen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚überzeugen‘ (https://de.wiktionary.org/wiki/überzeugen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.praesentieren",
+      "lemma": "präsentieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "präsentieren",
+        "praes_ich": "präsentiere",
+        "praes_du": "präsentierst",
+        "praes_er_sie_es": "präsentiert",
+        "praes_wir": "präsentieren",
+        "praes_ihr": "präsentiert",
+        "praes_sie_Sie": "präsentieren",
+        "praet_ich_er_sie_es": "präsentierte",
+        "praet_du": "präsentiertest",
+        "praet_wir_sie_Sie": "präsentierten",
+        "praet_ihr": "präsentiertet",
+        "partizip_2": "präsentiert"
+      },
+      "frequenzRang": 1061,
+      "quelle": "wiktionary:de:präsentieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚präsentieren‘ (https://de.wiktionary.org/wiki/präsentieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.beenden",
+      "lemma": "beenden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "beenden",
+        "praes_ich": "beende",
+        "praes_du": "beendest",
+        "praes_er_sie_es": "beendet",
+        "praes_wir": "beenden",
+        "praes_ihr": "beendet",
+        "praes_sie_Sie": "beenden",
+        "praet_ich_er_sie_es": "beendete",
+        "praet_du": "beendetest",
+        "praet_wir_sie_Sie": "beendeten",
+        "praet_ihr": "beendetet",
+        "partizip_2": "beendet"
+      },
+      "frequenzRang": 1113,
+      "quelle": "wiktionary:de:beenden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚beenden‘ (https://de.wiktionary.org/wiki/beenden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.leiten",
+      "lemma": "leiten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "leiten",
+        "praes_ich": "leite",
+        "praes_du": "leitest",
+        "praes_er_sie_es": "leitet",
+        "praes_wir": "leiten",
+        "praes_ihr": "leitet",
+        "praes_sie_Sie": "leiten",
+        "praet_ich_er_sie_es": "leitete",
+        "praet_du": "leitetest",
+        "praet_wir_sie_Sie": "leiteten",
+        "praet_ihr": "leitetet",
+        "partizip_2": "geleitet"
+      },
+      "frequenzRang": 1166,
+      "quelle": "wiktionary:de:leiten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚leiten‘ (https://de.wiktionary.org/wiki/leiten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.diskutieren",
+      "lemma": "diskutieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "diskutieren",
+        "praes_ich": "diskutiere",
+        "praes_du": "diskutierst",
+        "praes_er_sie_es": "diskutiert",
+        "praes_wir": "diskutieren",
+        "praes_ihr": "diskutiert",
+        "praes_sie_Sie": "diskutieren",
+        "praet_ich_er_sie_es": "diskutierte",
+        "praet_du": "diskutiertest",
+        "praet_wir_sie_Sie": "diskutierten",
+        "praet_ihr": "diskutiertet",
+        "partizip_2": "diskutiert"
+      },
+      "frequenzRang": 1181,
+      "quelle": "wiktionary:de:diskutieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚diskutieren‘ (https://de.wiktionary.org/wiki/diskutieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.kritisieren",
+      "lemma": "kritisieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "kritisieren",
+        "praes_ich": "kritisiere",
+        "praes_du": "kritisierst",
+        "praes_er_sie_es": "kritisiert",
+        "praes_wir": "kritisieren",
+        "praes_ihr": "kritisiert",
+        "praes_sie_Sie": "kritisieren",
+        "praet_ich_er_sie_es": "kritisierte",
+        "praet_du": "kritisiertest",
+        "praet_wir_sie_Sie": "kritisierten",
+        "praet_ihr": "kritisiertet",
+        "partizip_2": "kritisiert"
+      },
+      "frequenzRang": 1399,
+      "quelle": "wiktionary:de:kritisieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚kritisieren‘ (https://de.wiktionary.org/wiki/kritisieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.scheitern",
+      "lemma": "scheitern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "scheitern",
+        "praes_ich": "scheitere",
+        "praes_du": "scheiterst",
+        "praes_er_sie_es": "scheitert",
+        "praes_wir": "scheitern",
+        "praes_ihr": "scheitert",
+        "praes_sie_Sie": "scheitern",
+        "praet_ich_er_sie_es": "scheiterte",
+        "praet_du": "scheitertest",
+        "praet_wir_sie_Sie": "scheiterten",
+        "praet_ihr": "scheitertet",
+        "partizip_2": "gescheitert"
+      },
+      "frequenzRang": 1374,
+      "quelle": "wiktionary:de:scheitern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚scheitern‘ (https://de.wiktionary.org/wiki/scheitern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.verteilen",
+      "lemma": "verteilen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verteilen",
+        "praes_ich": "verteile",
+        "praes_du": "verteilst",
+        "praes_er_sie_es": "verteilt",
+        "praes_wir": "verteilen",
+        "praes_ihr": "verteilt",
+        "praes_sie_Sie": "verteilen",
+        "praet_ich_er_sie_es": "verteilte",
+        "praet_du": "verteiltest",
+        "praet_wir_sie_Sie": "verteilten",
+        "praet_ihr": "verteiltet",
+        "partizip_2": "verteilt"
+      },
+      "frequenzRang": 1369,
+      "quelle": "wiktionary:de:verteilen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verteilen‘ (https://de.wiktionary.org/wiki/verteilen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.schaetzen",
+      "lemma": "schätzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "schätzen",
+        "praes_ich": "schätze",
+        "praes_du": "schätzt",
+        "praes_er_sie_es": "schätzt",
+        "praes_wir": "schätzen",
+        "praes_ihr": "schätzt",
+        "praes_sie_Sie": "schätzen",
+        "praet_ich_er_sie_es": "schätzte",
+        "praet_du": "schätztest",
+        "praet_wir_sie_Sie": "schätzten",
+        "praet_ihr": "schätztet",
+        "partizip_2": "geschätzt"
+      },
+      "frequenzRang": 1462,
+      "quelle": "wiktionary:de:schätzen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚schätzen‘ (https://de.wiktionary.org/wiki/schätzen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.vermitteln",
+      "lemma": "vermitteln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "vermitteln",
+        "praes_ich": "vermittle",
+        "praes_du": "vermittelst",
+        "praes_er_sie_es": "vermittelt",
+        "praes_wir": "vermitteln",
+        "praes_ihr": "vermittelt",
+        "praes_sie_Sie": "vermitteln",
+        "praet_ich_er_sie_es": "vermittelte",
+        "praet_du": "vermitteltest",
+        "praet_wir_sie_Sie": "vermittelten",
+        "praet_ihr": "vermitteltet",
+        "partizip_2": "vermittelt"
+      },
+      "frequenzRang": 1614,
+      "quelle": "wiktionary:de:vermitteln",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vermitteln‘ (https://de.wiktionary.org/wiki/vermitteln), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.aeussern",
+      "lemma": "äußern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "äußern",
+        "praes_ich": "äußere",
+        "praes_du": "äußerst",
+        "praes_er_sie_es": "äußert",
+        "praes_wir": "äußern",
+        "praes_ihr": "äußert",
+        "praes_sie_Sie": "äußern",
+        "praet_ich_er_sie_es": "äußerte",
+        "praet_du": "äußertest",
+        "praet_wir_sie_Sie": "äußerten",
+        "praet_ihr": "äußertet",
+        "partizip_2": "geäußert",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 1363,
+      "quelle": "wiktionary:de:äußern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚äußern‘ (https://de.wiktionary.org/wiki/äußern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.fassen",
+      "lemma": "fassen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "fassen",
+        "praes_ich": "fasse",
+        "praes_du": "fasst",
+        "praes_er_sie_es": "fasst",
+        "praes_wir": "fassen",
+        "praes_ihr": "fasst",
+        "praes_sie_Sie": "fassen",
+        "praet_ich_er_sie_es": "fasste",
+        "praet_du": "fasstest",
+        "praet_wir_sie_Sie": "fassten",
+        "praet_ihr": "fasstet",
+        "partizip_2": "gefasst"
+      },
+      "frequenzRang": 1080,
+      "quelle": "wiktionary:de:fassen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚fassen‘ (https://de.wiktionary.org/wiki/fassen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.uebergeben",
+      "lemma": "übergeben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "übergeben",
+        "praes_ich": "übergebe",
+        "praes_du": "übergibst",
+        "praes_er_sie_es": "übergibt",
+        "praes_wir": "übergeben",
+        "praes_ihr": "übergebt",
+        "praes_sie_Sie": "übergeben",
+        "praet_ich_er_sie_es": "übergab",
+        "praet_du": "übergabst",
+        "praet_wir_sie_Sie": "übergaben",
+        "praet_ihr": "übergabt",
+        "partizip_2": "übergeben"
+      },
+      "frequenzRang": 2046,
+      "quelle": "wiktionary:de:übergeben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚übergeben‘ (https://de.wiktionary.org/wiki/übergeben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.vorschlagen",
+      "lemma": "vorschlagen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "vor",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "vorschlagen",
+        "verbzusatz": "vor",
+        "praes_ich": "schlage",
+        "praes_du": "schlägst",
+        "praes_er_sie_es": "schlägt",
+        "praes_wir": "schlagen",
+        "praes_ihr": "schlagt",
+        "praes_sie_Sie": "schlagen",
+        "praet_ich_er_sie_es": "schlug",
+        "praet_du": "schlugst",
+        "praet_wir_sie_Sie": "schlugen",
+        "praet_ihr": "schlugt",
+        "partizip_2": "vorgeschlagen",
+        "zu_infinitiv": "vorzuschlagen",
+        "nebensatz_er_sie_es": "vorschlägt",
+        "nebensatz_praet": "vorschlug",
+        "nebensatz_praet_pl": "vorschlugen"
+      },
+      "frequenzRang": 2917,
+      "quelle": "wiktionary:de:vorschlagen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vorschlagen‘ (https://de.wiktionary.org/wiki/vorschlagen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.zusammenarbeiten",
+      "lemma": "zusammenarbeiten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "zusammen",
+        "grundverb": "arbeiten (de.a1.e12.arbeiten)"
+      },
+      "formen": {
+        "infinitiv": "zusammenarbeiten",
+        "verbzusatz": "zusammen",
+        "partizip_2": "zusammengearbeitet",
+        "zu_infinitiv": "zusammenzuarbeiten",
+        "nebensatz_er_sie_es": "zusammenarbeitet",
+        "nebensatz_praet": "zusammenarbeitete",
+        "nebensatz_praet_pl": "zusammenarbeiteten"
+      },
+      "frequenzRang": 4492,
+      "quelle": "wiktionary:de:zusammenarbeiten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zusammenarbeiten‘ (https://de.wiktionary.org/wiki/zusammenarbeiten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.absprechen",
+      "lemma": "absprechen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ab",
+        "unregelmaessig_praesens": "ja",
+        "grundverb": "sprechen (de.a1.e01.sprechen)"
+      },
+      "formen": {
+        "infinitiv": "absprechen",
+        "verbzusatz": "ab",
+        "partizip_2": "abgesprochen",
+        "zu_infinitiv": "abzusprechen",
+        "nebensatz_er_sie_es": "abspricht",
+        "nebensatz_praet": "absprach",
+        "nebensatz_praet_pl": "absprachen"
+      },
+      "frequenzRang": 7287,
+      "quelle": "wiktionary:de:absprechen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚absprechen‘ (https://de.wiktionary.org/wiki/absprechen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.notieren",
+      "lemma": "notieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "notieren",
+        "praes_ich": "notiere",
+        "praes_du": "notierst",
+        "praes_er_sie_es": "notiert",
+        "praes_wir": "notieren",
+        "praes_ihr": "notiert",
+        "praes_sie_Sie": "notieren",
+        "praet_ich_er_sie_es": "notierte",
+        "praet_du": "notiertest",
+        "praet_wir_sie_Sie": "notierten",
+        "praet_ihr": "notiertet",
+        "partizip_2": "notiert"
+      },
+      "frequenzRang": 5812,
+      "quelle": "wiktionary:de:notieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚notieren‘ (https://de.wiktionary.org/wiki/notieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.bereich",
+      "lemma": "Bereich",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Bereiche"
+      },
+      "formen": {
+        "pl": "Bereiche",
+        "dat_pl": "Bereichen",
+        "gen_sg": "Bereichs",
+        "gen_sg_2": "Bereiches"
+      },
+      "frequenzRang": 319,
+      "quelle": "wiktionary:de:Bereich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bereich‘ (https://de.wiktionary.org/wiki/Bereich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.rolle",
+      "lemma": "Rolle",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Rollen"
+      },
+      "formen": {
+        "pl": "Rollen"
+      },
+      "frequenzRang": 489,
+      "quelle": "wiktionary:de:Rolle",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rolle‘ (https://de.wiktionary.org/wiki/Rolle), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.kritik",
+      "lemma": "Kritik",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kritiken"
+      },
+      "formen": {
+        "pl": "Kritiken"
+      },
+      "frequenzRang": 683,
+      "quelle": "wiktionary:de:Kritik",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kritik‘ (https://de.wiktionary.org/wiki/Kritik), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.wirtschaft",
+      "lemma": "Wirtschaft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 709,
+      "quelle": "wiktionary:de:Wirtschaft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wirtschaft‘ (https://de.wiktionary.org/wiki/Wirtschaft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.dienst",
+      "lemma": "Dienst",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Dienste"
+      },
+      "formen": {
+        "pl": "Dienste",
+        "dat_pl": "Diensten",
+        "gen_sg": "Dienstes",
+        "gen_sg_2": "Diensts"
+      },
+      "frequenzRang": 739,
+      "quelle": "wiktionary:de:Dienst",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Dienst‘ (https://de.wiktionary.org/wiki/Dienst), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.position",
+      "lemma": "Position",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Positionen"
+      },
+      "formen": {
+        "pl": "Positionen"
+      },
+      "frequenzRang": 789,
+      "quelle": "wiktionary:de:Position",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Position‘ (https://de.wiktionary.org/wiki/Position), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.diskussion",
+      "lemma": "Diskussion",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Diskussionen"
+      },
+      "formen": {
+        "pl": "Diskussionen"
+      },
+      "frequenzRang": 900,
+      "quelle": "wiktionary:de:Diskussion",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Diskussion‘ (https://de.wiktionary.org/wiki/Diskussion), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.verhaeltnis",
+      "lemma": "Verhältnis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Verhältnisse"
+      },
+      "formen": {
+        "pl": "Verhältnisse",
+        "dat_pl": "Verhältnissen",
+        "gen_sg": "Verhältnisses"
+      },
+      "frequenzRang": 972,
+      "quelle": "wiktionary:de:Verhältnis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verhältnis‘ (https://de.wiktionary.org/wiki/Verhältnis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.konzept",
+      "lemma": "Konzept",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Konzepte"
+      },
+      "formen": {
+        "pl": "Konzepte",
+        "dat_pl": "Konzepten",
+        "gen_sg": "Konzepts",
+        "gen_sg_2": "Konzeptes"
+      },
+      "frequenzRang": 980,
+      "quelle": "wiktionary:de:Konzept",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Konzept‘ (https://de.wiktionary.org/wiki/Konzept), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.auftrag",
+      "lemma": "Auftrag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Aufträge"
+      },
+      "formen": {
+        "pl": "Aufträge",
+        "dat_pl": "Aufträgen",
+        "gen_sg": "Auftrags",
+        "gen_sg_2": "Auftrages"
+      },
+      "frequenzRang": 1051,
+      "quelle": "wiktionary:de:Auftrag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Auftrag‘ (https://de.wiktionary.org/wiki/Auftrag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.vorschlag",
+      "lemma": "Vorschlag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Vorschläge"
+      },
+      "formen": {
+        "pl": "Vorschläge",
+        "dat_pl": "Vorschlägen",
+        "gen_sg": "Vorschlags",
+        "gen_sg_2": "Vorschlages"
+      },
+      "frequenzRang": 1115,
+      "quelle": "wiktionary:de:Vorschlag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vorschlag‘ (https://de.wiktionary.org/wiki/Vorschlag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.partner",
+      "lemma": "Partner",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Partner",
+        "weiblich": "Partnerin"
+      },
+      "formen": {
+        "dat_pl": "Partnern",
+        "gen_sg": "Partners",
+        "weiblich": "Partnerin",
+        "weiblich_pl": "Partnerinnen"
+      },
+      "frequenzRang": 1121,
+      "quelle": "wiktionary:de:Partner",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Partner‘ (https://de.wiktionary.org/wiki/Partner), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.leiter",
+      "lemma": "Leiter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Leiter",
+        "weiblich": "Leiterin"
+      },
+      "formen": {
+        "dat_pl": "Leitern",
+        "gen_sg": "Leiters",
+        "weiblich": "Leiterin",
+        "weiblich_pl": "Leiterinnen"
+      },
+      "frequenzRang": 1136,
+      "quelle": "wiktionary:de:Leiter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Leiter‘ (https://de.wiktionary.org/wiki/Leiter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.zusammenarbeit",
+      "lemma": "Zusammenarbeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 1171,
+      "quelle": "wiktionary:de:Zusammenarbeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zusammenarbeit‘ (https://de.wiktionary.org/wiki/Zusammenarbeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.fuehrung",
+      "lemma": "Führung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Führungen"
+      },
+      "formen": {
+        "pl": "Führungen"
+      },
+      "frequenzRang": 1214,
+      "quelle": "wiktionary:de:Führung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Führung‘ (https://de.wiktionary.org/wiki/Führung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.forderung",
+      "lemma": "Forderung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Forderungen"
+      },
+      "formen": {
+        "pl": "Forderungen"
+      },
+      "frequenzRang": 1292,
+      "quelle": "wiktionary:de:Forderung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Forderung‘ (https://de.wiktionary.org/wiki/Forderung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.lager",
+      "lemma": "Lager",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Lager"
+      },
+      "formen": {
+        "dat_pl": "Lagern",
+        "gen_sg": "Lagers"
+      },
+      "frequenzRang": 1453,
+      "quelle": "wiktionary:de:Lager",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lager‘ (https://de.wiktionary.org/wiki/Lager), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.personal",
+      "lemma": "Personal",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Personals"
+      },
+      "frequenzRang": 1803,
+      "quelle": "wiktionary:de:Personal",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Personal‘ (https://de.wiktionary.org/wiki/Personal), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.argument",
+      "lemma": "Argument",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Argumente"
+      },
+      "formen": {
+        "pl": "Argumente",
+        "dat_pl": "Argumenten",
+        "gen_sg": "Arguments",
+        "gen_sg_2": "Argumentes"
+      },
+      "frequenzRang": 1684,
+      "quelle": "wiktionary:de:Argument",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Argument‘ (https://de.wiktionary.org/wiki/Argument), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.kommunikation",
+      "lemma": "Kommunikation",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 1892,
+      "quelle": "wiktionary:de:Kommunikation",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kommunikation‘ (https://de.wiktionary.org/wiki/Kommunikation), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.herausforderung",
+      "lemma": "Herausforderung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Herausforderungen"
+      },
+      "formen": {
+        "pl": "Herausforderungen"
+      },
+      "frequenzRang": 1940,
+      "quelle": "wiktionary:de:Herausforderung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Herausforderung‘ (https://de.wiktionary.org/wiki/Herausforderung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.verbesserung",
+      "lemma": "Verbesserung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Verbesserungen"
+      },
+      "formen": {
+        "pl": "Verbesserungen"
+      },
+      "frequenzRang": 1985,
+      "quelle": "wiktionary:de:Verbesserung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verbesserung‘ (https://de.wiktionary.org/wiki/Verbesserung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.augenblick",
+      "lemma": "Augenblick",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Augenblicke"
+      },
+      "formen": {
+        "pl": "Augenblicke",
+        "dat_pl": "Augenblicken",
+        "gen_sg": "Augenblicks",
+        "gen_sg_2": "Augenblickes"
+      },
+      "frequenzRang": 1991,
+      "quelle": "wiktionary:de:Augenblick",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Augenblick‘ (https://de.wiktionary.org/wiki/Augenblick), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.besprechung",
+      "lemma": "Besprechung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Besprechungen"
+      },
+      "formen": {
+        "pl": "Besprechungen"
+      },
+      "frequenzRang": 6463,
+      "quelle": "wiktionary:de:Besprechung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Besprechung‘ (https://de.wiktionary.org/wiki/Besprechung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.uebergabe",
+      "lemma": "Übergabe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Übergaben"
+      },
+      "formen": {
+        "pl": "Übergaben"
+      },
+      "frequenzRang": 5798,
+      "quelle": "wiktionary:de:Übergabe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Übergabe‘ (https://de.wiktionary.org/wiki/Übergabe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.kompetenz",
+      "lemma": "Kompetenz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kompetenzen"
+      },
+      "formen": {
+        "pl": "Kompetenzen"
+      },
+      "frequenzRang": 2669,
+      "quelle": "wiktionary:de:Kompetenz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kompetenz‘ (https://de.wiktionary.org/wiki/Kompetenz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.organisation",
+      "lemma": "Organisation",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Organisationen"
+      },
+      "formen": {
+        "pl": "Organisationen"
+      },
+      "frequenzRang": 844,
+      "quelle": "wiktionary:de:Organisation",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Organisation‘ (https://de.wiktionary.org/wiki/Organisation), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.ablauf",
+      "lemma": "Ablauf",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Abläufe"
+      },
+      "formen": {
+        "pl": "Abläufe",
+        "dat_pl": "Abläufen",
+        "gen_sg": "Ablaufs",
+        "gen_sg_2": "Ablaufes"
+      },
+      "frequenzRang": 2644,
+      "quelle": "wiktionary:de:Ablauf",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ablauf‘ (https://de.wiktionary.org/wiki/Ablauf), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.prozess",
+      "lemma": "Prozess",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Prozesse"
+      },
+      "formen": {
+        "pl": "Prozesse",
+        "dat_pl": "Prozessen",
+        "gen_sg": "Prozesses"
+      },
+      "frequenzRang": 877,
+      "quelle": "wiktionary:de:Prozess",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Prozess‘ (https://de.wiktionary.org/wiki/Prozess), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.missverstaendnis",
+      "lemma": "Missverständnis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Missverständnisse"
+      },
+      "formen": {
+        "pl": "Missverständnisse",
+        "dat_pl": "Missverständnissen",
+        "gen_sg": "Missverständnisses"
+      },
+      "frequenzRang": 5346,
+      "quelle": "wiktionary:de:Missverständnis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Missverständnis‘ (https://de.wiktionary.org/wiki/Missverständnis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.absprache",
+      "lemma": "Absprache",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Absprachen"
+      },
+      "formen": {
+        "pl": "Absprachen"
+      },
+      "frequenzRang": 6467,
+      "quelle": "wiktionary:de:Absprache",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Absprache‘ (https://de.wiktionary.org/wiki/Absprache), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.ueberstunden",
+      "lemma": "Überstunden",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 12889,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.praktikant",
+      "lemma": "Praktikant",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Praktikanten",
+        "deklination": "n-Deklination",
+        "weiblich": "Praktikantin"
+      },
+      "formen": {
+        "pl": "Praktikanten",
+        "akk_dat_sg": "Praktikanten",
+        "gen_sg": "Praktikanten",
+        "weiblich": "Praktikantin",
+        "weiblich_pl": "Praktikantinnen"
+      },
+      "frequenzRang": 6749,
+      "quelle": "wiktionary:de:Praktikant",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Praktikant‘ (https://de.wiktionary.org/wiki/Praktikant), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.angestellte",
+      "lemma": "Angestellte",
+      "wortart": "nomen",
+      "merkmale": {
+        "artikel": "der/die (Plural die)",
+        "deklination": "wie ein Adjektiv",
+        "hinweis": "subst. Adjektiv (der/die Angestellte, ein Angestellter)"
+      },
+      "formen": {
+        "sg_m": "Angestellter",
+        "pl_n": "Angestellten"
+      },
+      "frequenzRang": 6529,
+      "quelle": "wiktionary:de:Angestellte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Angestellte‘ (https://de.wiktionary.org/wiki/Angestellte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.konferenz",
+      "lemma": "Konferenz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Konferenzen"
+      },
+      "formen": {
+        "pl": "Konferenzen"
+      },
+      "frequenzRang": 2642,
+      "quelle": "wiktionary:de:Konferenz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Konferenz‘ (https://de.wiktionary.org/wiki/Konferenz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.notiz",
+      "lemma": "Notiz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Notizen"
+      },
+      "formen": {
+        "pl": "Notizen"
+      },
+      "frequenzRang": 4428,
+      "quelle": "wiktionary:de:Notiz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Notiz‘ (https://de.wiktionary.org/wiki/Notiz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.anweisung",
+      "lemma": "Anweisung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Anweisungen"
+      },
+      "formen": {
+        "pl": "Anweisungen"
+      },
+      "frequenzRang": 3567,
+      "quelle": "wiktionary:de:Anweisung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anweisung‘ (https://de.wiktionary.org/wiki/Anweisung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.feedback",
+      "lemma": "Feedback",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Feedbacks"
+      },
+      "formen": {
+        "pl": "Feedbacks",
+        "gen_sg": "Feedbacks"
+      },
+      "frequenzRang": 4258,
+      "quelle": "wiktionary:de:Feedback",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Feedback‘ (https://de.wiktionary.org/wiki/Feedback), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.rueckmeldung",
+      "lemma": "Rückmeldung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Rückmeldungen"
+      },
+      "formen": {
+        "pl": "Rückmeldungen"
+      },
+      "frequenzRang": 7827,
+      "quelle": "wiktionary:de:Rückmeldung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rückmeldung‘ (https://de.wiktionary.org/wiki/Rückmeldung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.atmosphaere",
+      "lemma": "Atmosphäre",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Atmosphären"
+      },
+      "formen": {
+        "pl": "Atmosphären"
+      },
+      "frequenzRang": 2563,
+      "quelle": "wiktionary:de:Atmosphäre",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Atmosphäre‘ (https://de.wiktionary.org/wiki/Atmosphäre), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.zustaendigkeit",
+      "lemma": "Zuständigkeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Zuständigkeiten"
+      },
+      "formen": {
+        "pl": "Zuständigkeiten"
+      },
+      "frequenzRang": 6447,
+      "quelle": "wiktionary:de:Zuständigkeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zuständigkeit‘ (https://de.wiktionary.org/wiki/Zuständigkeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.teamarbeit",
+      "lemma": "Teamarbeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 31379,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.wirtschaftlich",
+      "lemma": "wirtschaftlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "wirtschaftliche",
+        "endung_en": "wirtschaftlichen",
+        "endung_er": "wirtschaftlicher",
+        "endung_es": "wirtschaftliches",
+        "endung_em": "wirtschaftlichem",
+        "komparativ": "wirtschaftlicher",
+        "superlativ": "wirtschaftlichsten",
+        "superlativ_e": "wirtschaftlichste"
+      },
+      "frequenzRang": 941,
+      "quelle": "wiktionary:de:wirtschaftlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wirtschaftlich‘ (https://de.wiktionary.org/wiki/wirtschaftlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.perfekt",
+      "lemma": "perfekt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "perfekte",
+        "endung_en": "perfekten",
+        "endung_er": "perfekter",
+        "endung_es": "perfektes",
+        "endung_em": "perfektem"
+      },
+      "frequenzRang": 635,
+      "quelle": "wiktionary:de:perfekt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚perfekt‘ (https://de.wiktionary.org/wiki/perfekt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.konkret",
+      "lemma": "konkret",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "konkrete",
+        "endung_en": "konkreten",
+        "endung_er": "konkreter",
+        "endung_es": "konkretes",
+        "endung_em": "konkretem",
+        "komparativ": "konkreter",
+        "superlativ": "konkretesten",
+        "superlativ_e": "konkreteste"
+      },
+      "frequenzRang": 1063,
+      "quelle": "wiktionary:de:konkret",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚konkret‘ (https://de.wiktionary.org/wiki/konkret), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.vollkommen",
+      "lemma": "vollkommen",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "vollkommene",
+        "endung_en": "vollkommenen",
+        "endung_er": "vollkommener",
+        "endung_es": "vollkommenes",
+        "endung_em": "vollkommenem"
+      },
+      "frequenzRang": 1343,
+      "quelle": "wiktionary:de:vollkommen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vollkommen‘ (https://de.wiktionary.org/wiki/vollkommen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.einig",
+      "lemma": "einig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "einige",
+        "endung_en": "einigen",
+        "endung_er": "einiger",
+        "endung_es": "einiges",
+        "endung_em": "einigem"
+      },
+      "frequenzRang": 1222,
+      "quelle": "wiktionary:de:einig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚einig‘ (https://de.wiktionary.org/wiki/einig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.kommend",
+      "lemma": "kommend",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "kommende",
+        "endung_en": "kommenden",
+        "endung_er": "kommender",
+        "endung_es": "kommendes",
+        "endung_em": "kommendem"
+      },
+      "frequenzRang": 2915,
+      "quelle": "wiktionary:de:kommend",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚kommend‘ (https://de.wiktionary.org/wiki/kommend), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.angestellt",
+      "lemma": "angestellt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "angestellte",
+        "endung_en": "angestellten",
+        "endung_er": "angestellter",
+        "endung_es": "angestelltes",
+        "endung_em": "angestelltem"
+      },
+      "frequenzRang": 2121,
+      "quelle": "wiktionary:de:angestellt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚angestellt‘ (https://de.wiktionary.org/wiki/angestellt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.standard",
+      "lemma": "Standard",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Standards"
+      },
+      "formen": {
+        "pl": "Standards",
+        "gen_sg": "Standards"
+      },
+      "frequenzRang": 1250,
+      "quelle": "wiktionary:de:Standard",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Standard‘ (https://de.wiktionary.org/wiki/Standard), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.weise",
+      "lemma": "Weise",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Weisen"
+      },
+      "formen": {
+        "pl": "Weisen"
+      },
+      "frequenzRang": 613,
+      "quelle": "wiktionary:de:Weise",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Weise‘ (https://de.wiktionary.org/wiki/Weise), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.strategie",
+      "lemma": "Strategie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Strategien"
+      },
+      "formen": {
+        "pl": "Strategien"
+      },
+      "frequenzRang": 1862,
+      "quelle": "wiktionary:de:Strategie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Strategie‘ (https://de.wiktionary.org/wiki/Strategie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e10.s0001",
+      "text": "Das Lager ist voll, wir brauchen dringend mehr Platz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0002",
+      "text": "Das Lager ist ganz hinten im Gebäude, gleich neben der Werkstatt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0003",
+      "text": "In welchem Bereich arbeiten Sie?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0004",
+      "text": "Ebru arbeitet im Bereich Verkauf und spricht jeden Tag mit Kunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0005",
+      "text": "Jeder im Team hat eine wichtige Rolle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0006",
+      "text": "Bei uns spielt das Alter keine Rolle, wichtig ist die Erfahrung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0007",
+      "text": "Sabine hat seit Januar eine neue Position in der Firma.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0008",
+      "text": "Welche Position hat Frau Krüger in eurem Team?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0009",
+      "text": "Frau Krüger ist die neue Leiterin unserer Abteilung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0010",
+      "text": "Wer leitet das neue Projekt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0011",
+      "text": "Sabine leitet das Team seit drei Jahren mit viel Geduld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0012",
+      "text": "Ḫālid führt seit zehn Jahren einen kleinen Betrieb.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0013",
+      "text": "Unter ihrer Führung arbeitet das Team ruhig und gut zusammen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0014",
+      "text": "Unsere Firma arbeitet eng mit einem Partner in der Türkei zusammen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0015",
+      "text": "Die Firma hat zwanzig Angestellte und drei Azubis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0016",
+      "text": "Tom ist ein geschätzter Angestellter.",
+      "quelle": "tatoeba:12171733",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12171733 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0017",
+      "text": "Petra ist bei einer Versicherung angestellt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0018",
+      "text": "Seit wann bist du bei dieser Firma angestellt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0019",
+      "text": "Im Krankenhaus fehlt oft Personal, besonders am Wochenende.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0020",
+      "text": "Finn ist seit Montag Praktikant bei Ḫālid.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0021",
+      "text": "Ich danke Ihnen für die gute Zusammenarbeit.",
+      "quelle": "tatoeba:3115574",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3115574 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0022",
+      "text": "Ich arbeite gern mit Menschen aus anderen Ländern zusammen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0023",
+      "text": "In unserem Beruf ist Teamarbeit sehr wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0024",
+      "text": "Das ist echte Teamarbeit.",
+      "quelle": "tatoeba:6175873",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6175873 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0025",
+      "text": "Ihre größte Kompetenz ist der Umgang mit Menschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0026",
+      "text": "Im Team muss die Zuständigkeit für jede Aufgabe klar sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0027",
+      "text": "Gute Organisation spart viel Zeit und Stress.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0028",
+      "text": "Ḫālid ruft den Kunden heute Nachmittag zurück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0029",
+      "text": "Ḫālid erklärt dem Praktikanten die Arbeit auf der Baustelle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0030",
+      "text": "Bitte schick die E-Mail an Herrn Kaya.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0031",
+      "text": "Wir sagen hier im Team alle du. Ich bin Sabine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0032",
+      "text": "Den Chef sprechen die meisten Angestellten mit Sie an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0033",
+      "text": "Hallo, du bist bestimmt der neue Praktikant, oder?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0034",
+      "text": "Ja, genau. Ich bin Finn und soll mich bei Ḫālid melden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0035",
+      "text": "Der ist gerade im Lager. Komm mit, ich bringe dich hin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0036",
+      "text": "Danke, das ist nett! Arbeitest du schon lange hier?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0037",
+      "text": "Nein danke, ich habe heute keine Zeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0038",
+      "text": "Das Lager ist am Wochenende geschlossen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0039",
+      "text": "Und wofür sind Sie in der Firma zuständig?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0040",
+      "text": "Ich leite den Bereich Lager und kümmere mich um das Personal.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0041",
+      "text": "Ich bin seit Montag hier.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0042",
+      "text": "Die Firma hat zwanzig Angestellte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0043",
+      "text": "Ich bin neu im Team und freue mich auf die Zusammenarbeit mit euch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0044",
+      "text": "In unserem Team hat jeder eine klare Rolle und einen eigenen Bereich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0045",
+      "text": "Jeden Montag um neun Uhr haben wir eine kurze Besprechung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0046",
+      "text": "Die Besprechung hat heute länger gedauert als geplant.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0047",
+      "text": "Die Besprechung findet heute im kleinen Raum neben der Küche statt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0048",
+      "text": "Ich habe einen Vorschlag.",
+      "quelle": "tatoeba:3835308",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3835308 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0049",
+      "text": "Das ist ein interessanter Vorschlag.",
+      "quelle": "tatoeba:3354022",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3354022 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0050",
+      "text": "Kann ich einen Vorschlag dazu machen?",
+      "quelle": "tatoeba:2243941",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2243941 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0051",
+      "text": "Was schlägst du vor?",
+      "quelle": "tatoeba:904931",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #904931 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0052",
+      "text": "Ich schlage vor, dass wir die Aufgaben neu verteilen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0053",
+      "text": "Cem schlägt vor, nach einer Stunde eine kurze Pause zu machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0054",
+      "text": "Am Montag verteilt Sabine die Aufgaben für die ganze Woche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0055",
+      "text": "Ich verteile mal die Getränke.",
+      "quelle": "tatoeba:4257688",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4257688 von civiricus (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0056",
+      "text": "Nach einer langen Diskussion haben wir eine Lösung gefunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0057",
+      "text": "Heute diskutieren wir darüber, wer im August Urlaub nehmen kann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0058",
+      "text": "Das ist ein gutes Argument, das überzeugt mich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0059",
+      "text": "Tom hat mich nicht überzeugt.",
+      "quelle": "tatoeba:8134600",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8134600 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0060",
+      "text": "Ich bin überzeugt, dass wir das zusammen schaffen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0061",
+      "text": "Am Ende waren sich alle einig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0062",
+      "text": "In diesem Punkt sind wir uns noch nicht einig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0063",
+      "text": "Ebru präsentiert ein neues Konzept für die Ausbildung der Azubis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0064",
+      "text": "Am Freitag präsentiert jede Gruppe ihre Ergebnisse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0065",
+      "text": "Wir brauchen eine ganz neue Strategie.",
+      "quelle": "tatoeba:13246168",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13246168 von Waldelfe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0066",
+      "text": "Die Konferenz dauerte zwei Stunden.",
+      "quelle": "tatoeba:1286082",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1286082 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0067",
+      "text": "Gute Absprachen sparen im Team viel Zeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0068",
+      "text": "Das haben wir doch letzte Woche so abgesprochen!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0069",
+      "text": "Sie kennen den Ablauf ja.",
+      "quelle": "tatoeba:1687812",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1687812 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0070",
+      "text": "Eine gute Lösung zu finden ist manchmal ein langer Prozess.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0071",
+      "text": "Kannst du uns ein konkretes Beispiel geben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0072",
+      "text": "Was heißt das konkret für unsere Arbeit?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0073",
+      "text": "Ich finde den Plan gut, wobei wir noch über die Kosten sprechen müssen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0074",
+      "text": "Wir schaffen das bis Freitag, wobei es ziemlich knapp wird.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0075",
+      "text": "Man kann nicht zwei Dinge gleichzeitig tun.",
+      "quelle": "tatoeba:696549",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #696549 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0076",
+      "text": "Schau doch mal in den Plan, da steht alles.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0077",
+      "text": "Mach doch einfach einen Vorschlag!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0078",
+      "text": "Das ist halt so, wir müssen bis Freitag fertig sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0079",
+      "text": "Wir haben eben nicht genug Personal für so viele Aufträge.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0080",
+      "text": "Das wisst ihr ja schon aus der letzten Besprechung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0081",
+      "text": "Wir schaffen die Aufträge nicht mehr pünktlich. Was schlagt ihr vor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0082",
+      "text": "Ich schlage vor, dass Jens mir am Mittwoch im Lager hilft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0083",
+      "text": "Gute Idee. Aber wer übernimmt dann seine Aufgaben im Büro?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0084",
+      "text": "Die kann Ebru übernehmen, sie hat diese Woche weniger zu tun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0085",
+      "text": "Am Mittwoch habe ich leider einen Termin beim Arzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0086",
+      "text": "Wie findet ihr meinen Vorschlag?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0087",
+      "text": "Ich finde ihn gut, wobei wir noch über den Ablauf sprechen sollten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0088",
+      "text": "Ich finde die Besprechung zu lang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0089",
+      "text": "Die Konferenz beginnt um zehn Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0090",
+      "text": "Ich schlage vor, dass wir uns jeden Morgen kurz absprechen, weil das viel Zeit spart.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0091",
+      "text": "Mein Vorschlag ist konkret: Jeder übernimmt eine Aufgabe, und am Freitag besprechen wir die Ergebnisse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0092",
+      "text": "Es ist nicht immer leicht, Kritik anzunehmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0093",
+      "text": "Kritik sollte immer sachlich und freundlich sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0094",
+      "text": "Kritisieren ist leichter als machen.",
+      "quelle": "tatoeba:5006972",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5006972 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0095",
+      "text": "Die Chefin kritisiert nie die Person, sondern nur das Verhalten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0096",
+      "text": "Murat äußert seine Kritik ruhig und ohne laut zu werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0097",
+      "text": "Kannst du mir ein kurzes Feedback zu meinem Bericht geben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0098",
+      "text": "Bitte gib mir bis Donnerstag eine Rückmeldung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0099",
+      "text": "Hast du einen Vorschlag zur Verbesserung?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0100",
+      "text": "Die Pflegekräfte fordern mehr Kolleginnen und Kollegen auf der Station.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0101",
+      "text": "Ich nehme die Herausforderung an!",
+      "quelle": "tatoeba:3522973",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3522973 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0102",
+      "text": "Die neue Stelle ist für Ebru eine große Herausforderung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0103",
+      "text": "Das war nur ein Missverständnis, das wir schnell klären konnten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0104",
+      "text": "Mit klaren Absprachen kann man viele Missverständnisse vermeiden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0105",
+      "text": "Ich habe ein gutes Verhältnis zu meinen Kollegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0106",
+      "text": "Seit dem Gespräch ist die Atmosphäre im Büro viel besser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0107",
+      "text": "Gute Kommunikation ist der Schlüssel zu guter Teamarbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0108",
+      "text": "Das Problem war nicht die Arbeit, sondern die Kommunikation.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0109",
+      "text": "Sag es ihm bitte auf freundliche Weise.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0110",
+      "text": "Wir schätzen deine Arbeit sehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0111",
+      "text": "Das ist durchaus möglich.",
+      "quelle": "tatoeba:1416616",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1416616 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0112",
+      "text": "Das wird sicherlich jedem gefallen.",
+      "quelle": "tatoeba:5060348",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5060348 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0113",
+      "text": "Wir finden sicherlich eine Lösung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0114",
+      "text": "Da hast du vollkommen recht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0115",
+      "text": "Keiner arbeitet immer perfekt, Fehler sind ganz normal.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0116",
+      "text": "Ohne gute Kommunikation kann ein Projekt scheitern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0117",
+      "text": "Murat, hast du kurz Zeit? Ich möchte dir gern etwas sagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0118",
+      "text": "Klar, worum geht es?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0119",
+      "text": "Du bist in letzter Zeit oft zu spät zur Besprechung gekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0120",
+      "text": "Stimmt, das tut mir leid. Ab morgen bin ich pünktlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0121",
+      "text": "Danke, das freut mich sehr!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0122",
+      "text": "Die Besprechung ist immer am Montag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0123",
+      "text": "Ehrlich gesagt gefällt mir dein Bericht noch nicht ganz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0124",
+      "text": "Danke für die Rückmeldung. Was genau soll ich verbessern?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0125",
+      "text": "Ich habe den Bericht schon gestern geschickt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0126",
+      "text": "Gern geschehen, das mache ich doch gern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0127",
+      "text": "Kritik im Beruf: So geht es freundlich",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0128",
+      "text": "Kritik gehört zur Arbeit dazu. Sie hilft, Fehler zu vermeiden und Abläufe zu verbessern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0129",
+      "text": "Sprechen Sie ein Problem direkt an, aber nicht vor dem ganzen Team, sondern unter vier Augen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0130",
+      "text": "Beginnen Sie mit etwas Positivem und kritisieren Sie das Verhalten, nicht die Person.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0131",
+      "text": "Sagen Sie konkret, was Sie stört, und machen Sie gleich einen Vorschlag zur Verbesserung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0132",
+      "text": "Sprechen Sie von sich und Ihren Gefühlen, zum Beispiel: Ich ärgere mich, wenn die Absprachen nicht klappen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0133",
+      "text": "Und wer Kritik bekommt, sollte zuerst zuhören und sich dann für das Feedback bedanken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0134",
+      "text": "Man soll Kritik am besten vor dem ganzen Team äußern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0135",
+      "text": "Gute Kritik sagt konkret, was nicht funktioniert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0136",
+      "text": "Was soll man kritisieren?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0137",
+      "text": "Das Verhalten, nicht die Person.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0138",
+      "text": "Nur die Person, die den Fehler gemacht hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0139",
+      "text": "Nur die Fehler der Chefin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0140",
+      "text": "Der Text nennt drei Regeln für gute E-Mails.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0141",
+      "text": "Ich finde deine Idee gut, aber ich habe noch einen Vorschlag zur Verbesserung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0142",
+      "text": "Auf deinem Tisch liegt eine Notiz von Sabine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0143",
+      "text": "Ich notiere mir den Termin gleich im Kalender.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0144",
+      "text": "Ḫālid hat einen neuen Auftrag für einen Neubau bekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0145",
+      "text": "Die Anweisungen in der E-Mail sind kurz und klar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0146",
+      "text": "Im Dezember machen viele Kollegen Überstunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0147",
+      "text": "Mit besserer Planung brauchen wir keine Überstunden mehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0148",
+      "text": "In der kommenden Woche ist Sabine im Urlaub.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0149",
+      "text": "Im kommenden Monat beginnen zwei neue Azubis bei uns.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0150",
+      "text": "Momentan haben wir im Lager sehr viel zu tun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0151",
+      "text": "Lass uns erstmal einen Tee trinken, dann reden wir weiter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0152",
+      "text": "Ich brauche noch zehn Minuten, um diese Arbeit zu beenden.",
+      "quelle": "tatoeba:4325266",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4325266 von abcd (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0153",
+      "text": "Sabine beendet die Besprechung pünktlich um zehn Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0154",
+      "text": "Bitte fass dich in der E-Mail kurz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0155",
+      "text": "Die Wirtschaft in unserer Region braucht dringend Fachkräfte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0156",
+      "text": "Wirtschaftlich geht es der Firma momentan gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0157",
+      "text": "In der Pflege gibt es hohe Standards für die Hygiene.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0158",
+      "text": "Ich denke, dass Sie hervorragende Arbeit leisten.",
+      "quelle": "tatoeba:7787392",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7787392 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0159",
+      "text": "Das Team hat in diesem Jahr sehr viel geleistet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0160",
+      "text": "Gute Arbeit, Finn! Das hast du perfekt gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0161",
+      "text": "Frischer Tee steht für alle in der Küche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0162",
+      "text": "Mit freundlichen Grüßen, Sabine Krüger, Leiterin Verkauf",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0163",
+      "text": "Aufgaben für die kommende Woche",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0164",
+      "text": "Liebe Kolleginnen und Kollegen, hier ist die Verteilung der Aufgaben für die kommende Woche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0165",
+      "text": "Murat kümmert sich am Montag und Dienstag um die neuen Aufträge im Lager.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0166",
+      "text": "Ebru übernimmt die Gespräche mit den Kunden, weil Jens im Urlaub ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0167",
+      "text": "Am Mittwoch beginnt unsere neue Praktikantin Nilay. Petra zeigt ihr den Ablauf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0168",
+      "text": "Unsere Besprechung ist diesmal am Donnerstag um 14 Uhr statt am Montag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0169",
+      "text": "Bitte notiert euch eure Fragen, dann besprechen wir sie gemeinsam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0170",
+      "text": "Viele Grüße und eine gute Woche, Sabine",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0171",
+      "text": "Murat ist in der kommenden Woche im Urlaub.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0172",
+      "text": "Wer zeigt der Praktikantin den Ablauf?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0173",
+      "text": "Petra zeigt ihr den Ablauf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0174",
+      "text": "Ebru zeigt ihr den Ablauf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0175",
+      "text": "Sabine zeigt ihr den Ablauf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0176",
+      "text": "Die Besprechung ist in der kommenden Woche am Donnerstag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0177",
+      "text": "Sabine leitet das Team schon seit zehn Jahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0178",
+      "text": "Hast du die E-Mail von Sabine schon gelesen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0179",
+      "text": "Nein, noch nicht. Steht etwas Wichtiges drin?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0180",
+      "text": "Ja, die Besprechung ist diesmal am Donnerstag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0181",
+      "text": "Ich habe sie gestern Abend gelesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0182",
+      "text": "Nein, ich schreibe nicht gern E-Mails.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0183",
+      "text": "Kannst du heute länger bleiben? Der Auftrag ist dringend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0184",
+      "text": "Heute leider nicht, aber morgen kann ich gern Überstunden machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0185",
+      "text": "Der Auftrag ist von Herrn Kaya.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0186",
+      "text": "Ja, ich habe den Auftrag gestern bekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0187",
+      "text": "Ich habe mir alle Anweisungen notiert und beende den Auftrag bis morgen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0188",
+      "text": "Bei der Übergabe muss man alle wichtigen Informationen weitergeben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0189",
+      "text": "Vor dem Urlaub übergibt Jens sein Projekt an Ebru.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0190",
+      "text": "Eine gute Leiterin vermittelt ihr Wissen an das ganze Team.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0191",
+      "text": "Derya hat diese Woche Dienst in der Nacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0192",
+      "text": "Mein Dienst beginnt um 14 Uhr und endet um 22 Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0193",
+      "text": "Ich helfe dir auch weiterhin gern bei deinen Aufgaben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0194",
+      "text": "Einen Augenblick bitte.",
+      "quelle": "tatoeba:1413556",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1413556 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e10.s0195",
+      "text": "Im Augenblick ist die Chefin in einer Besprechung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0196",
+      "text": "Wir arbeiten seit Jahren in derselben Abteilung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0197",
+      "text": "Wer kümmert sich heute um die Patientin in Zimmer 4?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0198",
+      "text": "Herr Koch wartet noch auf das Ergebnis aus dem Labor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0199",
+      "text": "Worauf wartest du noch? Fang einfach an!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0200",
+      "text": "Darauf musst du bei der Übergabe besonders achten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0201",
+      "text": "Wofür ist Murat im Team zuständig?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0202",
+      "text": "Für das Lager und die Organisation der Aufträge.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0203",
+      "text": "Erinnere mich bitte an den Termin mit dem Kunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0204",
+      "text": "Ich bedanke mich bei euch für die gute Zusammenarbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0205",
+      "text": "Worüber habt ihr in der Besprechung gesprochen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0206",
+      "text": "Finn interessiert sich sehr für die Arbeit eines Elektrikers.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0207",
+      "text": "Das ist der Kollege, dem ich meine Aufgaben übergeben habe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0208",
+      "text": "Finn ist der Praktikant, mit dem Ḫālid diese Woche arbeitet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0209",
+      "text": "Das ist die Station, in der Derya seit acht Jahren arbeitet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0210",
+      "text": "Die Kollegen, denen ich die E-Mail geschickt habe, haben schon geantwortet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0211",
+      "text": "Es gibt nichts, was wir im Team nicht gemeinsam schaffen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0212",
+      "text": "Das ist die Kritik, über die wir gestern gesprochen haben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0213",
+      "text": "Ich gehe jetzt nach Hause. Hast du noch Fragen zur Übergabe?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0214",
+      "text": "Ja, eine. Wer kümmert sich morgen um den Auftrag von Frau Kaya?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0215",
+      "text": "Darum kümmert sich Murat, ich habe es mit ihm abgesprochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0216",
+      "text": "Frau Kaya ist eine wichtige Partnerin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0217",
+      "text": "Ich gehe morgen früh zum Arzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0218",
+      "text": "Sie gehen morgen für zwei Wochen in Urlaub. Schreiben Sie Ihrer Kollegin Ebru eine E-Mail mit einer Übergabe. Was ist erledigt, was ist noch zu tun, und worauf soll sie achten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0219",
+      "text": "Liebe Ebru, ab morgen bin ich für zwei Wochen im Urlaub. Deshalb übergebe ich dir heute meine Aufgaben. Den Auftrag von Herrn Kaya habe ich schon beendet. Die Rechnung liegt im Büro. Noch offen ist der Auftrag von Frau Hartmann. Sie wartet auf unser Angebot für zwölf Lampen und möchte schnell eine Antwort. Bitte schick ihr das Angebot bis Mittwoch. Achte darauf, dass die Preise stimmen. Am Donnerstag ist die Besprechung mit dem neuen Partner. Meine Notizen dazu liegen auf meinem Tisch. Wenn du Fragen hast, frag Murat. Vielen Dank für deine Hilfe! Viele Grüße, Jens",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0220",
+      "text": "Bei der Übergabe sage ich klar, was erledigt ist und worauf man achten muss.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0221",
+      "text": "Herr Wagner hatte in der Nacht Fieber, bitte miss es um acht Uhr noch einmal.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0222",
+      "text": "Ein Missverständnis auf der Baustelle",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0223",
+      "text": "Ḫālid ist Elektriker und hat einen kleinen Betrieb mit drei Angestellten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0224",
+      "text": "Seit Montag arbeitet ein neuer Kollege mit: Finn, der Praktikant.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0225",
+      "text": "Diese Woche haben sie einen Auftrag in einem Neubau am Rand der Stadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0226",
+      "text": "Die Kundin, Frau Hartmann, möchte im Wohnzimmer neue Lampen und viele Steckdosen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0227",
+      "text": "Am Mittwoch gibt es eine kurze Besprechung mit ihr auf der Baustelle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0228",
+      "text": "Über dem Tisch hätte ich gern eine Lampe, und hier an der Wand zwei Steckdosen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0229",
+      "text": "Kein Problem. Finn, notierst du das bitte?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0230",
+      "text": "Klar, ich schreibe alles in meine Notizen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0231",
+      "text": "Am Freitag kommt Frau Hartmann wieder und schaut sich das Wohnzimmer an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0232",
+      "text": "Was ist das denn? Die Steckdosen sind ja an der falschen Wand!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0233",
+      "text": "Finn wird rot. Er schaut in seine Notizen und sagt nichts.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0234",
+      "text": "Einen Moment, Frau Hartmann. Wir klären das sofort.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0235",
+      "text": "Ḫālid liest die Notiz und versteht schnell, was passiert ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0236",
+      "text": "Sie haben auf die linke Wand gezeigt, aber Finn hat die rechte Wand notiert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0237",
+      "text": "Ach so, das war also ein Missverständnis! Ich habe auch nicht deutlich gesagt, welche Wand ich meine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0238",
+      "text": "Bis Montag sind die Steckdosen an der richtigen Stelle, ohne Kosten für Sie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0239",
+      "text": "Frau Hartmann ist einverstanden, und am Ende lachen alle drei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0240",
+      "text": "Nach der Arbeit spricht Ḫālid noch kurz mit dem Praktikanten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0241",
+      "text": "Fehler passieren. Frag beim nächsten Mal einfach nach, wenn etwas nicht klar ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0242",
+      "text": "Danke für das Feedback. Ab jetzt lese ich meine Notizen am Ende immer laut vor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0243",
+      "text": "Wo arbeiten Ḫālid und Finn diese Woche?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0244",
+      "text": "In einem Neubau am Rand der Stadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0245",
+      "text": "In der Werkstatt von Ḫālid.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0246",
+      "text": "In einem Krankenhaus in der Stadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0247",
+      "text": "Was soll Finn bei der Besprechung machen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0248",
+      "text": "Er soll alles notieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0249",
+      "text": "Er soll die Lampen kaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0250",
+      "text": "Er soll die Kundin anrufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0251",
+      "text": "Warum sind die Steckdosen an der falschen Wand?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0252",
+      "text": "Finn hat die falsche Wand notiert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0253",
+      "text": "Ḫālid hatte keine Zeit für die Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0254",
+      "text": "Frau Hartmann hat ihre Meinung geändert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0255",
+      "text": "Was rät Ḫālid dem Praktikanten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0256",
+      "text": "Er soll nachfragen, wenn etwas nicht klar ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0257",
+      "text": "Er soll weniger Notizen machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0258",
+      "text": "Er soll in Zukunft schneller arbeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0259",
+      "text": "Übergabe auf der Station",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0260",
+      "text": "Es ist sechs Uhr morgens im Krankenhaus. Derya hatte Dienst in der Nacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0261",
+      "text": "Jetzt übergibt sie die Station an ihre Kollegin Gül.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0262",
+      "text": "Guten Morgen, Derya! Wie war die Nacht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0263",
+      "text": "Ziemlich ruhig, zum Glück. Ich gehe kurz alle Zimmer mit dir durch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0264",
+      "text": "Herr Wagner in Zimmer 3 hatte in der Nacht Fieber, jetzt geht es ihm besser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0265",
+      "text": "Muss ich bei ihm auf etwas Besonderes achten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0266",
+      "text": "Ja, mach bitte um acht Uhr noch einmal eine Kontrolle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0267",
+      "text": "Frau Klein in Zimmer 5 darf heute nach Hause. Ihr Sohn holt sie um zehn ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0268",
+      "text": "Schön! Hat die Ärztin schon mit ihr gesprochen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0269",
+      "text": "Ja, gestern Abend. Sie kommt um neun noch einmal vorbei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0270",
+      "text": "Gibt es sonst noch etwas, worauf ich achten muss?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0271",
+      "text": "Im Augenblick nicht. Alles Wichtige steht auch in meinen Notizen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0272",
+      "text": "Danke, du denkst wie immer an alles. Jetzt schlaf gut!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0273",
+      "text": "Danke! Bis morgen, und einen ruhigen Dienst!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0274",
+      "text": "Wann ist die Übergabe auf der Station?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0275",
+      "text": "Um sechs Uhr morgens.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0276",
+      "text": "Um zehn Uhr abends.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0277",
+      "text": "Um zwei Uhr nachts.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0278",
+      "text": "Was soll Gül bei Herrn Wagner machen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0279",
+      "text": "Sie soll um acht Uhr eine Kontrolle machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0280",
+      "text": "Sie soll ihn nach Hause bringen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0281",
+      "text": "Sie soll seinen Sohn anrufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0282",
+      "text": "Wer holt Frau Klein ab?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0283",
+      "text": "Ihr Sohn holt sie ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0284",
+      "text": "Ihre Tochter holt sie ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0285",
+      "text": "Derya bringt sie nach Hause.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0286",
+      "text": "Wo findet Gül alle wichtigen Informationen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0287",
+      "text": "In den Notizen von Derya.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0288",
+      "text": "Im Büro der Ärztin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0289",
+      "text": "Im Zimmer von Herrn Wagner.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0290",
+      "text": "Fehler passieren, aber wir klären das Missverständnis gemeinsam und freundlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0291",
+      "text": "Ich übergebe dir jetzt die Station, alles Wichtige steht in meinen Notizen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0292",
+      "text": "Im Team spielt auch der Praktikant eine wichtige Rolle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0293",
+      "text": "Neben Kritik braucht jedes Team auch Lob.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0294",
+      "text": "Sabine hat den Vorschlag von Ebru sofort angenommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0295",
+      "text": "Für die Besprechung habe ich drei konkrete Vorschläge vorbereitet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0296",
+      "text": "Gestern hat Murat zwei Überstunden gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0297",
+      "text": "Wir haben den Auftrag pünktlich beendet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0298",
+      "text": "Bei zu viel Stress leidet die Atmosphäre im Team.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0299",
+      "text": "Sag doch einfach, wenn du Hilfe brauchst!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0300",
+      "text": "Manchmal dauert es eben länger, das ist ganz normal.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0301",
+      "text": "Wenn du es nicht weißt, musst du halt fragen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0302",
+      "text": "Hast du mit dem Kunden schon über den Preis gesprochen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0303",
+      "text": "Das ist die Firma, bei der Petra seit zehn Jahren angestellt ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0304",
+      "text": "Danke für dein ehrliches Feedback!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0305",
+      "text": "Notiz für Gül",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0306",
+      "text": "Liebe Gül, ich musste heute früher gehen, deshalb hier eine kurze Übergabe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0307",
+      "text": "Die Patientin in Zimmer 2 hat starke Schmerzen, die Ärztin kommt um elf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0308",
+      "text": "Herr Braun in Zimmer 6 wartet noch auf das Ergebnis aus dem Labor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0309",
+      "text": "Bitte ruf seine Tochter an, sobald das Ergebnis da ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0310",
+      "text": "Danke und einen ruhigen Dienst! Derya",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0311",
+      "text": "Derya ist heute länger im Krankenhaus geblieben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0312",
+      "text": "Worauf wartet Herr Braun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0313",
+      "text": "Auf das Ergebnis aus dem Labor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0314",
+      "text": "Auf seine Tochter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0315",
+      "text": "Auf die Ärztin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0316",
+      "text": "Gül soll die Tochter von Herrn Braun anrufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0317",
+      "text": "Ich habe noch einen Vorschlag zum Ablauf der Übergabe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0318",
+      "text": "Gern, was schlägst du konkret vor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0319",
+      "text": "Die Übergabe dauert bei uns fünfzehn Minuten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0320",
+      "text": "Kannst du mir bis Freitag eine Rückmeldung zu meinem Konzept geben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0321",
+      "text": "Ja, ich lese es mir morgen in Ruhe durch und schreibe dir dann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0322",
+      "text": "Das Konzept ist von Ebru und Murat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0323",
+      "text": "Finn ist ein Praktikant, auf den man sich verlassen kann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0324",
+      "text": "In der Besprechung verteilt Sabine die Aufgaben für die kommende Woche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e10.s0325",
+      "text": "Kannst du dem neuen Kollegen bitte den Ablauf erklären?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e10.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Rollen und Zuständigkeiten in einem Team beschreiben.",
+        "tr": "Bir ekipteki rolleri ve görev alanlarını anlatabilirim.",
+        "ar": "أستطيع أن أصف الأدوار والمسؤوليات في فريق العمل."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e10.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.zusammenarbeit",
+          "ablenker": ["de.a1.e12.arbeit", "de.b1.e07.vereinbarung"]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e10.bereich",
+            "de.b1.e10.rolle",
+            "de.b1.e10.position",
+            "de.b1.e10.praktikant",
+            "de.b1.e10.organisation",
+            "de.b1.e10.partner"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0029",
+          "wort": 3,
+          "ablenker": ["Praktikant", "Praktikantin"]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.leiter",
+          "ablenker": ["de.b1.e10.personal", "de.a2.e06.kunde"]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e10.angestellte",
+            "de.b1.e10.kompetenz",
+            "de.b1.e10.zustaendigkeit",
+            "de.b1.e10.fuehrung",
+            "de.b1.e10.teamarbeit",
+            "de.b1.e10.lager"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.fuehren",
+          "ablenker": ["de.b1.e10.zusammenarbeiten", "de.a2.e13.kuemmern"]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0033"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e10.s0034"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0035"
+            }
+          ],
+          "antwort": "de.b1.e10.s0036",
+          "ablenker": ["de.b1.e10.s0037", "de.b1.e10.s0038"]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a09",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.leiten",
+          "ablenker": ["de.b1.e10.angestellt", "de.b1.e07.loben"]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e10.s0022",
+          "nach": "ziel",
+          "alternativen": [
+            "Mit Menschen aus anderen Ländern arbeite ich gern zusammen.",
+            "Ich arbeite mit Menschen aus anderen Ländern gern zusammen.",
+            "Gern arbeite ich mit Menschen aus anderen Ländern zusammen."
+          ],
+          "ablenker": ["allein", "Land"]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a12",
+          "typ": "formen",
+          "lemma": "de.b1.e10.praktikant",
+          "zeilen": ["Nominativ (der)", "Akkusativ (den)", "Dativ (dem)"],
+          "spalten": ["Kollege", "Kunde", "Praktikant", "Herr"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["Kollege"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["Kunde"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["Praktikant"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 3,
+              "loesungen": ["Herr"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["Kollegen"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["Kunden"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["Praktikanten"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 3,
+              "loesungen": ["Herrn"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["Kollegen"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["Kunden"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["Praktikanten"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 3,
+              "loesungen": ["Herrn"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e10.s0013",
+          "alternativen": [
+            "Das Team arbeitet unter ihrer Führung ruhig und gut zusammen.",
+            "Unter ihrer Führung arbeitet das Team gut und ruhig zusammen.",
+            "Das Team arbeitet unter ihrer Führung gut und ruhig zusammen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0039"
+            }
+          ],
+          "antwort": "de.b1.e10.s0040",
+          "ablenker": ["de.b1.e10.s0041", "de.b1.e10.s0042"]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e10.s0023",
+          "nach": "ziel",
+          "alternativen": [
+            "Teamarbeit ist in unserem Beruf sehr wichtig.",
+            "In unserem Beruf ist die Teamarbeit sehr wichtig.",
+            "Die Teamarbeit ist in unserem Beruf sehr wichtig.",
+            "In unserem Beruf ist die Arbeit im Team sehr wichtig.",
+            "In unserem Job ist Teamarbeit sehr wichtig."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e10.s0043"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e10.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann in einer Besprechung Vorschläge machen und Aufgaben verteilen.",
+        "tr": "Bir toplantıda öneride bulunabilir ve görev dağıtabilirim.",
+        "ar": "أستطيع أن أقدّم اقتراحات وأن أوزّع المهام في اجتماع."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e10.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.besprechung",
+          "ablenker": ["de.a2.e07.gespraech", "de.b1.e06.veranstaltung"]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e10.vorschlag",
+            "de.b1.e10.argument",
+            "de.b1.e10.konzept",
+            "de.b1.e10.strategie",
+            "de.b1.e10.absprache",
+            "de.b1.e10.diskussion"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e10.vorschlagen",
+            "de.b1.e10.verteilen",
+            "de.b1.e10.diskutieren",
+            "de.b1.e10.ueberzeugen",
+            "de.b1.e10.praesentieren",
+            "de.b1.e10.absprechen"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0076",
+          "wort": 2,
+          "ablenker": ["ob", "denn"]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.konferenz",
+          "ablenker": ["de.b1.e10.ablauf", "de.a2.e13.projekt"]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.prozess",
+          "ablenker": ["de.b1.e10.einig", "de.b1.e10.konkret"]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0081"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e10.s0082"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0083"
+            }
+          ],
+          "antwort": "de.b1.e10.s0084",
+          "ablenker": ["de.b1.e10.s0085", "de.b1.e10.s0089"]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a09",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0052",
+          "wort": 8,
+          "ablenker": ["verteilt", "verteile"]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e10.s0056",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir haben nach einer langen Diskussion eine Lösung gefunden.",
+            "Eine Lösung haben wir nach einer langen Diskussion gefunden."
+          ],
+          "ablenker": ["Problem", "kurzen"]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.gleichzeitig",
+          "ablenker": ["de.b1.e10.wobei", "de.a1.e12.danach"]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e10.s0062",
+          "alternativen": ["Wir sind uns in diesem Punkt noch nicht einig."]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e10.s0045",
+          "ablenker": ["de.b1.e10.s0046", "de.b1.e10.s0047", "de.b1.e10.s0066"]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e10.s0053",
+          "nach": "ziel",
+          "alternativen": [
+            "Cem schlägt vor, nach einer Stunde kurz Pause zu machen.",
+            "Cem schlägt vor, nach einer Stunde eine kleine Pause zu machen.",
+            "Cem schlägt vor, dass wir nach einer Stunde eine kurze Pause machen.",
+            "Cem schlägt vor, nach einer Stunde eine kurze Pause einzulegen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0086"
+            }
+          ],
+          "antwort": "de.b1.e10.s0087",
+          "ablenker": ["de.b1.e10.s0088", "de.b1.e10.s0089"]
+        },
+        {
+          "schluessel": "de.b1.e10.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e10.s0090"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e10.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Kritik freundlich äußern und annehmen.",
+        "tr": "Eleştiriyi kibarca dile getirebilir ve kabul edebilirim.",
+        "ar": "أستطيع أن أعبّر عن النقد بلطف وأن أتقبّله."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e10.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.kritik",
+          "ablenker": ["de.b1.e07.lob", "de.a2.e07.meinung"]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e10.kritisieren",
+            "de.b1.e10.aeussern",
+            "de.b1.e10.fordern",
+            "de.b1.e10.schaetzen",
+            "de.b1.e10.scheitern",
+            "de.b1.e07.loben"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a04",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e10.feedback",
+            "de.b1.e10.verbesserung",
+            "de.b1.e10.forderung",
+            "de.b1.e10.herausforderung",
+            "de.b1.e10.missverstaendnis",
+            "de.b1.e10.kommunikation"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.verhaeltnis",
+          "ablenker": ["de.b1.e10.atmosphaere", "de.a2.e14.streit"]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e10.s0127",
+          "absaetze": ["de.b1.e10.s0128", "de.b1.e10.s0129", "de.b1.e10.s0130", "de.b1.e10.s0131", "de.b1.e10.s0132", "de.b1.e10.s0133"],
+          "glossen": ["de.b1.e07.verhalten", "de.b1.e10.feedback"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e10.s0134",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e10.s0135",
+              "richtig": "richtig"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e10.s0136",
+              "antwort": "de.b1.e10.s0137",
+              "ablenker": ["de.b1.e10.s0138", "de.b1.e10.s0139"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e10.s0140",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0117"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e10.s0118"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0119"
+            }
+          ],
+          "antwort": "de.b1.e10.s0120",
+          "ablenker": ["de.b1.e10.s0121", "de.b1.e10.s0122"]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.rueckmeldung",
+          "ablenker": ["de.b1.e10.weise", "de.b1.e07.ansicht"]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.sicherlich",
+          "ablenker": ["de.a1.e10.vielleicht", "de.b1.e07.niemals"]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.vollkommen",
+          "ablenker": ["de.b1.e07.komisch", "de.a2.e14.ehrlich"]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.perfekt",
+          "ablenker": ["de.b1.e10.durchaus", "de.b1.e07.witzig"]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a12",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0109",
+          "wort": 6,
+          "ablenker": ["Reise", "Weisen"]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a13",
+          "typ": "formen",
+          "zeilen": ["Nominativ", "Akkusativ", "Dativ"],
+          "spalten": ["der … Kollege", "ein … Kollege", "die … Kollegin", "eine … Kollegin"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["neue", "der neue Kollege"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["neuer", "ein neuer Kollege"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["neue", "die neue Kollegin"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 3,
+              "loesungen": ["neue", "eine neue Kollegin"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["neuen", "den neuen Kollegen"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["neuen", "einen neuen Kollegen"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["neue", "die neue Kollegin"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 3,
+              "loesungen": ["neue", "eine neue Kollegin"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["neuen", "dem neuen Kollegen"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["neuen", "einem neuen Kollegen"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["neuen", "der neuen Kollegin"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 2,
+              "spalte": 3,
+              "loesungen": ["neuen", "einer neuen Kollegin"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e10.s0105",
+          "nach": "ziel",
+          "alternativen": ["Zu meinen Kollegen habe ich ein gutes Verhältnis.", "Ich habe zu meinen Kollegen ein gutes Verhältnis."],
+          "ablenker": ["schlechtes", "Chef"]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a15",
+          "typ": "satzbau",
+          "ziel": "de.b1.e10.s0116",
+          "alternativen": ["Ein Projekt kann ohne gute Kommunikation scheitern."]
+        },
+        {
+          "schluessel": "de.b1.e10.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e10.s0141"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e10.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann E-Mails und Notizen bei der Arbeit verstehen und beantworten.",
+        "tr": "İşteki e-postaları ve notları anlayabilir ve yanıtlayabilirim.",
+        "ar": "أستطيع أن أفهم الرسائل الإلكترونية والملاحظات في العمل وأن أردّ عليها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e10.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.notiz",
+          "ablenker": ["de.a2.e09.e-mail", "de.a2.e07.brief"]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e10.auftrag",
+            "de.b1.e10.anweisung",
+            "de.b1.e10.ueberstunden",
+            "de.b1.e10.wirtschaft",
+            "de.b1.e10.standard",
+            "de.b1.e02.vertrag"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0161",
+          "wort": 0,
+          "ablenker": ["Frische", "Frisches"]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a05",
+          "typ": "paare",
+          "lemmata": ["de.b1.e10.notieren", "de.b1.e10.beenden", "de.b1.e10.fassen", "de.b1.e10.leisten", "de.a2.e05.vereinbaren"]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e10.s0163",
+          "absaetze": [
+            "de.b1.e10.s0164",
+            "de.b1.e10.s0165",
+            "de.b1.e10.s0166",
+            "de.b1.e10.s0167",
+            "de.b1.e10.s0168",
+            "de.b1.e10.s0169",
+            "de.b1.e10.s0170"
+          ],
+          "glossen": ["de.b1.e10.kommend", "de.a2.e13.uebernehmen"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e10.s0171",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e10.s0172",
+              "antwort": "de.b1.e10.s0173",
+              "ablenker": ["de.b1.e10.s0174", "de.b1.e10.s0175"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e10.s0176",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e10.s0177",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.momentan",
+          "ablenker": ["de.b1.e10.erstmal", "de.b1.e10.kommend"]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.wirtschaftlich",
+          "ablenker": ["de.b1.e06.sozial", "de.b1.e02.beruflich"]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0178"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e10.s0179"
+            }
+          ],
+          "antwort": "de.b1.e10.s0180",
+          "ablenker": ["de.b1.e10.s0181", "de.b1.e10.s0182"]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a10",
+          "typ": "formen",
+          "zeilen": ["gut … Arbeit (f)", "frisch … Tee (m)", "kalt … Wasser (n)", "freundlich … Grüße (Pl.)"],
+          "spalten": ["Nominativ", "Akkusativ", "Dativ (mit …)"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["gute", "gute Arbeit"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["gute", "gute Arbeit"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["guter", "guter Arbeit"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["frischer", "frischer Tee"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["frischen", "frischen Tee"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["frischem", "frischem Tee"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["kaltes", "kaltes Wasser"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["kaltes", "kaltes Wasser"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["kaltem", "kaltem Wasser"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["freundliche", "freundliche Grüße"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["freundliche", "freundliche Grüße"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 2,
+              "loesungen": ["freundlichen", "freundlichen Grüßen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a11",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0148",
+          "wort": 2,
+          "ablenker": ["kommende", "kommender"]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e10.s0147",
+          "nach": "ziel",
+          "alternativen": ["Wir brauchen mit besserer Planung keine Überstunden mehr."],
+          "ablenker": ["mehrere", "schlechter"]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e10.s0150",
+          "ablenker": ["de.b1.e10.s0151", "de.b1.e10.s0149"]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e10.s0144",
+          "nach": "ziel",
+          "alternativen": [
+            "Ḫālid hat einen neuen Auftrag für ein neues Haus bekommen.",
+            "Ḫālid hat für einen Neubau einen neuen Auftrag bekommen.",
+            "Ḫālid hat einen neuen Auftrag für einen Neubau erhalten.",
+            "Ḫālid bekam einen neuen Auftrag für einen Neubau."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0183"
+            }
+          ],
+          "antwort": "de.b1.e10.s0184",
+          "ablenker": ["de.b1.e10.s0185", "de.b1.e10.s0186"]
+        },
+        {
+          "schluessel": "de.b1.e10.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e10.s0187"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e10.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann eine Übergabe machen und wichtige Informationen klar weitergeben.",
+        "tr": "Devir teslim yapabilir ve önemli bilgileri açıkça aktarabilirim.",
+        "ar": "أستطيع أن أسلّم العمل لزميل وأن أنقل المعلومات المهمة بوضوح."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e10.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.uebergabe",
+          "ablenker": ["de.a2.e13.schicht", "de.a1.e11.termin"]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e10.uebergeben",
+            "de.b1.e10.vermitteln",
+            "de.b1.e10.dienst",
+            "de.b1.e10.weiterhin",
+            "de.b1.e10.augenblick",
+            "de.b1.e10.derselbe"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0197",
+          "wort": 4,
+          "ablenker": ["auf", "für"]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0198",
+          "wort": 4,
+          "ablenker": ["um", "für"]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0213"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e10.s0214"
+            }
+          ],
+          "antwort": "de.b1.e10.s0215",
+          "ablenker": ["de.b1.e10.s0216", "de.b1.e10.s0217"]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0208",
+          "wort": 5,
+          "ablenker": ["den", "der"]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a08",
+          "typ": "satzbau",
+          "ziel": "de.b1.e10.s0207"
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a09",
+          "typ": "formen",
+          "zeilen": ["Nominativ", "Akkusativ", "Dativ"],
+          "spalten": ["maskulin", "feminin", "neutral", "Plural"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["der"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["die"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["das"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 3,
+              "loesungen": ["die"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["den"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["die"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["das"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 3,
+              "loesungen": ["die"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["dem"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["der"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["dem"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 3,
+              "loesungen": ["denen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e10.s0189",
+          "nach": "ziel",
+          "alternativen": [
+            "Jens übergibt vor dem Urlaub sein Projekt an Ebru.",
+            "Jens übergibt sein Projekt vor dem Urlaub an Ebru.",
+            "Sein Projekt übergibt Jens vor dem Urlaub an Ebru."
+          ],
+          "ablenker": ["übernimmt", "Arbeit"]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e10.s0199",
+          "ablenker": ["de.b1.e10.s0205", "de.b1.e10.s0201", "de.b1.e10.s0200"]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a12",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e10.s0192",
+          "alternativen": ["Mein Dienst beginnt um vierzehn Uhr und endet um zweiundzwanzig Uhr."]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e10.s0196",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir arbeiten schon seit Jahren in derselben Abteilung.",
+            "Seit Jahren arbeiten wir in derselben Abteilung.",
+            "Wir arbeiten seit Jahren in der gleichen Abteilung.",
+            "Seit Jahren arbeiten wir in der gleichen Abteilung."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.augenblick",
+          "ablenker": ["de.b1.e07.aufmerksamkeit", "de.b1.e01.alltag"]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e10.s0218",
+          "woerter": {
+            "min": 90,
+            "max": 110
+          },
+          "pflichtwoerter": ["Urlaub", "Auftrag", "Notizen"],
+          "muster": ["de.b1.e10.s0219"]
+        },
+        {
+          "schluessel": "de.b1.e10.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e10.s0220"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e10.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte und ein Gespräch aus dem Arbeitsleben verstehen.",
+        "tr": "İş hayatından bir hikâyeyi ve bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة وحوارًا من الحياة المهنية."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e10.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e10.s0222",
+          "zeilen": [
+            {
+              "satz": "de.b1.e10.s0223"
+            },
+            {
+              "satz": "de.b1.e10.s0224"
+            },
+            {
+              "satz": "de.b1.e10.s0225"
+            },
+            {
+              "satz": "de.b1.e10.s0226"
+            },
+            {
+              "satz": "de.b1.e10.s0227"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e10.s0228"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0229"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e10.s0230"
+            },
+            {
+              "satz": "de.b1.e10.s0231"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e10.s0232"
+            },
+            {
+              "satz": "de.b1.e10.s0233"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0234"
+            },
+            {
+              "satz": "de.b1.e10.s0235"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0236"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e10.s0237"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0238"
+            },
+            {
+              "satz": "de.b1.e10.s0239"
+            },
+            {
+              "satz": "de.b1.e10.s0240"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0241"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e10.s0242"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.b1.e10.s0243",
+              "antwort": "de.b1.e10.s0244",
+              "ablenker": ["de.b1.e10.s0245", "de.b1.e10.s0246"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.b1.e10.s0247",
+              "antwort": "de.b1.e10.s0248",
+              "ablenker": ["de.b1.e10.s0249", "de.b1.e10.s0250"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.b1.e10.s0251",
+              "antwort": "de.b1.e10.s0252",
+              "ablenker": ["de.b1.e10.s0253", "de.b1.e10.s0254"]
+            },
+            {
+              "nach": 18,
+              "frage": "de.b1.e10.s0255",
+              "antwort": "de.b1.e10.s0256",
+              "ablenker": ["de.b1.e10.s0257", "de.b1.e10.s0258"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e10.s0232",
+          "ablenker": ["de.b1.e10.s0233", "de.b1.e10.s0234"]
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0224",
+          "wort": 9,
+          "ablenker": ["Praktikanten", "Praktikantin"]
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e10.s0233",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.b1.e10.s0259",
+          "zeilen": [
+            {
+              "satz": "de.b1.e10.s0260"
+            },
+            {
+              "satz": "de.b1.e10.s0261"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e10.s0262"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0263"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0264"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e10.s0265"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0266"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0267"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e10.s0268"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0269"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e10.s0270"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0271"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e10.s0272"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0273"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.b1.e10.s0274",
+              "antwort": "de.b1.e10.s0275",
+              "ablenker": ["de.b1.e10.s0276", "de.b1.e10.s0277"]
+            },
+            {
+              "nach": 6,
+              "frage": "de.b1.e10.s0278",
+              "antwort": "de.b1.e10.s0279",
+              "ablenker": ["de.b1.e10.s0280", "de.b1.e10.s0281"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.b1.e10.s0282",
+              "antwort": "de.b1.e10.s0283",
+              "ablenker": ["de.b1.e10.s0284", "de.b1.e10.s0285"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.b1.e10.s0286",
+              "antwort": "de.b1.e10.s0287",
+              "ablenker": ["de.b1.e10.s0288", "de.b1.e10.s0289"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0262"
+            }
+          ],
+          "antwort": "de.b1.e10.s0263",
+          "ablenker": ["de.b1.e10.s0265", "de.b1.e10.s0270"]
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0270",
+          "wort": 5,
+          "ablenker": ["wofür", "worüber"]
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.b1.e10.s0238",
+          "alternativen": ["Die Steckdosen sind bis Montag an der richtigen Stelle, ohne Kosten für Sie."]
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a09",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e10.s0261"
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e10.s0271",
+          "ablenker": ["de.b1.e10.s0269", "de.b1.e10.s0272"]
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e10.s0266",
+          "nach": "ziel",
+          "alternativen": [
+            "Ja, bitte mach um acht Uhr noch einmal eine Kontrolle.",
+            "Ja, mach um acht Uhr bitte noch einmal eine Kontrolle.",
+            "Ja, mach bitte um 8 Uhr noch einmal eine Kontrolle.",
+            "Ja, kontrollier ihn bitte um acht Uhr noch einmal.",
+            "Ja, mach bitte um acht noch einmal eine Kontrolle."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e10.s0241",
+          "nach": "ziel",
+          "alternativen": [
+            "Fehler passieren. Wenn etwas nicht klar ist, frag beim nächsten Mal einfach nach.",
+            "Fehler passieren. Frag einfach beim nächsten Mal nach, wenn etwas nicht klar ist."
+          ],
+          "ablenker": ["nie", "vor"]
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e10.s0264",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a14",
+          "typ": "sprechen",
+          "satz": "de.b1.e10.s0290"
+        },
+        {
+          "schluessel": "de.b1.e10.l06.a15",
+          "typ": "sprechen",
+          "satz": "de.b1.e10.s0291"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e10.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum.",
+        "ar": "أراجع كلمات الوحدة وجملها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e10.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e10.besprechung",
+            "de.b1.e10.vorschlag",
+            "de.b1.e10.kritik",
+            "de.b1.e10.rueckmeldung",
+            "de.b1.e10.auftrag",
+            "de.b1.e10.uebergabe"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.feedback",
+          "ablenker": ["de.b1.e07.lob", "de.a2.e07.meinung"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e10.s0296",
+          "ablenker": ["de.b1.e10.s0146", "de.b1.e10.s0297", "de.b1.e10.s0150"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0303",
+          "wort": 5,
+          "ablenker": ["dem", "die"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a05",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e10.fordern",
+          "ablenker": ["de.b1.e07.foerdern"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e10.s0294",
+          "nach": "ziel",
+          "alternativen": ["Den Vorschlag von Ebru hat Sabine sofort angenommen.", "Sabine hat sofort den Vorschlag von Ebru angenommen."],
+          "ablenker": ["abgelehnt", "Murat"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.teamarbeit",
+          "ablenker": ["de.a2.e13.projekt", "de.b1.e06.aktion"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0123"
+            }
+          ],
+          "antwort": "de.b1.e10.s0124",
+          "ablenker": ["de.b1.e10.s0125", "de.b1.e10.s0126"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a09",
+          "typ": "formen",
+          "zeilen": ["vorschlagen", "übergeben", "führen", "scheitern", "äußern", "absprechen"],
+          "spalten": ["er/sie/es – Präteritum", "Partizip II"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["schlug vor"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["vorgeschlagen"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["übergab"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["übergeben"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["führte"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["geführt"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["scheiterte"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["gescheitert"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["äußerte"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["geäußert"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["sprach ab"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["abgesprochen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e10.s0298",
+          "ablenker": ["de.b1.e10.s0106", "de.b1.e10.s0108", "de.b1.e10.s0293"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e10.leiten",
+          "ablenker": ["de.b1.e03.leiden"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e10.s0295",
+          "alternativen": [
+            "Ich habe für die Besprechung drei konkrete Vorschläge vorbereitet.",
+            "Drei konkrete Vorschläge habe ich für die Besprechung vorbereitet."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.zustaendigkeit",
+          "ablenker": ["de.b1.e10.kompetenz", "de.b1.e10.position"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a14",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0300",
+          "wort": 3,
+          "ablenker": ["ob", "wenn"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a15",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e10.fuehren",
+            "de.b1.e10.verteilen",
+            "de.b1.e10.notieren",
+            "de.b1.e10.ueberzeugen",
+            "de.b1.e10.kritisieren",
+            "de.b1.e10.vermitteln"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a16",
+          "typ": "frei",
+          "ziel": "de.b1.e10.s0297",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir haben den Auftrag rechtzeitig beendet.",
+            "Den Auftrag haben wir pünktlich beendet.",
+            "Wir haben den Auftrag pünktlich abgeschlossen.",
+            "Wir haben den Auftrag pünktlich fertig gemacht.",
+            "Wir haben den Auftrag pünktlich erledigt."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a17",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.missverstaendnis",
+          "ablenker": ["de.b1.e10.herausforderung", "de.a1.e07.fehler"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a18",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e10.s0301",
+          "ablenker": ["de.b1.e10.s0299", "de.b1.e10.s0300", "de.b1.e10.s0078"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a19",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e10.fassen",
+          "ablenker": ["de.a1.e10.passen"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a20",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0201"
+            }
+          ],
+          "antwort": "de.b1.e10.s0202",
+          "ablenker": ["de.b1.e10.s0041", "de.b1.e10.s0038"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a21",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e10.s0302",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a22",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0302",
+          "wort": 4,
+          "ablenker": ["Kunde", "Kundin"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a23",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.praktikant",
+          "ablenker": ["de.b1.e10.partner", "de.a2.e13.chef"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a24",
+          "typ": "satzbau",
+          "ziel": "de.b1.e10.s0209"
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a25",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e10.einig",
+            "de.b1.e10.konkret",
+            "de.b1.e10.wirtschaftlich",
+            "de.b1.e10.kommend",
+            "de.b1.e10.angestellt",
+            "de.b1.e10.perfekt"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a26",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e10.s0304"
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a27",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.organisation",
+          "ablenker": ["de.b1.e10.strategie", "de.b1.e06.aktion"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a28",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e10.s0001"
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a29",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e10.s0292",
+          "nach": "ziel",
+          "alternativen": [
+            "Auch der Praktikant spielt im Team eine wichtige Rolle.",
+            "Im Team spielt der Praktikant auch eine wichtige Rolle.",
+            "Der Praktikant spielt im Team auch eine wichtige Rolle."
+          ],
+          "ablenker": ["kleine", "Chef"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a30",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e10.weise",
+          "ablenker": ["de.a2.e11.reise"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a31",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e10.s0059",
+          "ablenker": ["de.b1.e10.s0048", "de.b1.e10.s0094"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a32",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0212",
+          "wort": 5,
+          "ablenker": ["der", "dem"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a33",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0008"
+            }
+          ],
+          "antwort": "de.b1.e10.s0009",
+          "ablenker": ["de.b1.e10.s0018", "de.b1.e10.s0001"]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a34",
+          "typ": "satzbau",
+          "ziel": "de.b1.e10.s0203",
+          "alternativen": ["Bitte erinnere mich an den Termin mit dem Kunden."]
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a35",
+          "typ": "sprechen",
+          "satz": "de.b1.e10.s0044"
+        },
+        {
+          "schluessel": "de.b1.e10.l07.a36",
+          "typ": "sprechen",
+          "satz": "de.b1.e10.s0091"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e10.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich im Team mitreden und Texte aus dem Arbeitsalltag verstehen kann.",
+        "tr": "Ekip içinde konuşmalara katılabildiğimi ve iş hayatındaki metinleri anlayabildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أشارك في نقاشات الفريق وأن أفهم نصوص العمل اليومي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e10.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e10.vorschlag",
+          "ablenker": ["de.b1.e10.kritik", "de.b1.e10.auftrag"]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e10.leiter",
+            "de.b1.e10.praktikant",
+            "de.b1.e10.lager",
+            "de.b1.e10.notiz",
+            "de.b1.e10.argument",
+            "de.b1.e10.prozess"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0325",
+          "wort": 3,
+          "ablenker": ["neue", "neuer"]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e10.s0324",
+          "ablenker": ["de.b1.e10.s0054", "de.b1.e10.s0148", "de.b1.e10.s0045"]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0317"
+            }
+          ],
+          "antwort": "de.b1.e10.s0318",
+          "ablenker": ["de.b1.e10.s0319", "de.b1.e10.s0122"]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e10.s0104",
+          "nach": "ziel",
+          "alternativen": [
+            "Viele Missverständnisse kann man mit klaren Absprachen vermeiden.",
+            "Man kann mit klaren Absprachen viele Missverständnisse vermeiden."
+          ],
+          "ablenker": ["Fehler", "Streit"]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e10.s0305",
+          "absaetze": ["de.b1.e10.s0306", "de.b1.e10.s0307", "de.b1.e10.s0308", "de.b1.e10.s0309", "de.b1.e10.s0310"],
+          "glossen": ["de.b1.e10.uebergabe", "de.b1.e02.labor"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e10.s0311",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e10.s0312",
+              "antwort": "de.b1.e10.s0313",
+              "ablenker": ["de.b1.e10.s0314", "de.b1.e10.s0315"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e10.s0316",
+              "richtig": "richtig"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a08",
+          "typ": "luecke",
+          "ziel": "de.b1.e10.s0204",
+          "wort": 3,
+          "ablenker": ["für", "an"]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.b1.e10.s0323"
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e10.herausforderung",
+          "ablenker": ["de.b1.e10.verbesserung", "de.b1.e10.missverstaendnis"]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e10.s0092",
+          "nach": "ziel",
+          "alternativen": [
+            "Kritik anzunehmen ist nicht immer leicht.",
+            "Es ist nicht immer einfach, Kritik anzunehmen.",
+            "Kritik anzunehmen ist nicht immer einfach.",
+            "Es ist nicht immer leicht, Kritik zu akzeptieren."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e10.s0074",
+          "ablenker": ["de.b1.e10.s0073", "de.b1.e10.s0078"]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e10.s0320"
+            }
+          ],
+          "antwort": "de.b1.e10.s0321",
+          "ablenker": ["de.b1.e10.s0322", "de.b1.e10.s0122"]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e10.s0067"
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e10.fuehren",
+          "ablenker": ["de.a1.e11.fuehlen"]
+        },
+        {
+          "schluessel": "de.b1.e10.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e10.s0221"
+        }
+      ]
+    }
+  ]
+}
