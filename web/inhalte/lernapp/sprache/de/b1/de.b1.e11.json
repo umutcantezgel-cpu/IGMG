@@ -1,0 +1,5236 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e11",
+    "reihenfolge": 12,
+    "thema": {
+      "de": "Kochen für Gäste",
+      "tr": "Misafirler için yemek pişirmek",
+      "ar": "الطبخ للضيوف"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann ein Rezept verstehen und erklären, wie ein Gericht zubereitet wird.",
+        "tr": "Bir yemek tarifini anlayabilir ve bir yemeğin nasıl hazırlandığını açıklayabilirim.",
+        "ar": "أستطيع أن أفهم وصفة طعام وأن أشرح كيف يُحضَّر طبق ما."
+      },
+      {
+        "de": "Ich kann Gäste empfangen, Essen anbieten und auf Fragen zu Zutaten eingehen.",
+        "tr": "Misafirleri karşılayabilir, yemek ikram edebilir ve malzemelerle ilgili sorulara cevap verebilirim.",
+        "ar": "أستطيع أن أستقبل الضيوف وأن أقدّم لهم الطعام وأن أجيب عن أسئلة حول المكوّنات."
+      }
+    ],
+    "symbol": "cooking-pot",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e11.zunaechst",
+      "lemma": "zunächst",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Textfolge: zunächst, anschließend, schließlich"
+      },
+      "frequenzRang": 410,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.anschliessend",
+      "lemma": "anschließend",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Textfolge: zunächst, anschließend, schließlich"
+      },
+      "frequenzRang": 850,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.hauptsaechlich",
+      "lemma": "hauptsächlich",
+      "wortart": "adverb",
+      "frequenzRang": 1411,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.daraus",
+      "lemma": "daraus",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Pronominaladverb (aus dem/der)"
+      },
+      "frequenzRang": 994,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.verwenden",
+      "lemma": "verwenden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verwenden",
+        "praes_ich": "verwende",
+        "praes_du": "verwendest",
+        "praes_er_sie_es": "verwendet",
+        "praes_wir": "verwenden",
+        "praes_ihr": "verwendet",
+        "praes_sie_Sie": "verwenden",
+        "praet_ich_er_sie_es": "verwendete",
+        "praet_du": "verwendetest",
+        "praet_wir_sie_Sie": "verwendeten",
+        "praet_ihr": "verwendetet",
+        "partizip_2": "verwendet",
+        "imp_du": "verwende",
+        "imp_ihr": "verwendet"
+      },
+      "frequenzRang": 421,
+      "quelle": "wiktionary:de:verwenden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verwenden‘ (https://de.wiktionary.org/wiki/verwenden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.schlagen",
+      "lemma": "schlagen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "schlagen",
+        "praes_ich": "schlage",
+        "praes_du": "schlägst",
+        "praes_er_sie_es": "schlägt",
+        "praes_wir": "schlagen",
+        "praes_ihr": "schlagt",
+        "praes_sie_Sie": "schlagen",
+        "praet_ich_er_sie_es": "schlug",
+        "praet_du": "schlugst",
+        "praet_wir_sie_Sie": "schlugen",
+        "praet_ihr": "schlugt",
+        "partizip_2": "geschlagen",
+        "imp_du": "schlag",
+        "imp_ihr": "schlagt"
+      },
+      "frequenzRang": 464,
+      "quelle": "wiktionary:de:schlagen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚schlagen‘ (https://de.wiktionary.org/wiki/schlagen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.gelingen",
+      "lemma": "gelingen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "gelingen",
+        "praes_ich": "gelinge",
+        "praes_du": "gelingst",
+        "praes_er_sie_es": "gelingt",
+        "praes_wir": "gelingen",
+        "praes_ihr": "gelingt",
+        "praes_sie_Sie": "gelingen",
+        "praet_ich_er_sie_es": "gelang",
+        "praet_du": "gelangst",
+        "praet_wir_sie_Sie": "gelangen",
+        "praet_ihr": "gelangt",
+        "partizip_2": "gelungen"
+      },
+      "frequenzRang": 704,
+      "quelle": "wiktionary:de:gelingen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gelingen‘ (https://de.wiktionary.org/wiki/gelingen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.braten",
+      "lemma": "braten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "braten",
+        "praes_ich": "brate",
+        "praes_du": "brätst",
+        "praes_er_sie_es": "brät",
+        "praes_wir": "braten",
+        "praes_ihr": "bratet",
+        "praes_sie_Sie": "braten",
+        "praet_ich_er_sie_es": "briet",
+        "praet_du": "brietest",
+        "praet_wir_sie_Sie": "brieten",
+        "praet_ihr": "brietet",
+        "partizip_2": "gebraten",
+        "imp_du": "brate",
+        "imp_ihr": "bratet"
+      },
+      "frequenzRang": 6673,
+      "quelle": "wiktionary:de:braten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚braten‘ (https://de.wiktionary.org/wiki/braten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.wuerzen",
+      "lemma": "würzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "würzen",
+        "praes_ich": "würze",
+        "praes_du": "würzt",
+        "praes_er_sie_es": "würzt",
+        "praes_wir": "würzen",
+        "praes_ihr": "würzt",
+        "praes_sie_Sie": "würzen",
+        "praet_ich_er_sie_es": "würzte",
+        "praet_du": "würztest",
+        "praet_wir_sie_Sie": "würzten",
+        "praet_ihr": "würztet",
+        "partizip_2": "gewürzt",
+        "imp_du": "würz",
+        "imp_ihr": "würzt"
+      },
+      "frequenzRang": 29959,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.schaelen",
+      "lemma": "schälen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "schälen",
+        "praes_ich": "schäle",
+        "praes_du": "schälst",
+        "praes_er_sie_es": "schält",
+        "praes_wir": "schälen",
+        "praes_ihr": "schält",
+        "praes_sie_Sie": "schälen",
+        "praet_ich_er_sie_es": "schälte",
+        "praet_du": "schältest",
+        "praet_wir_sie_Sie": "schälten",
+        "praet_ihr": "schältet",
+        "partizip_2": "geschält",
+        "imp_du": "schäl",
+        "imp_ihr": "schält"
+      },
+      "frequenzRang": 27561,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.ruehren",
+      "lemma": "rühren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "rühren",
+        "praes_ich": "rühre",
+        "praes_du": "rührst",
+        "praes_er_sie_es": "rührt",
+        "praes_wir": "rühren",
+        "praes_ihr": "rührt",
+        "praes_sie_Sie": "rühren",
+        "praet_ich_er_sie_es": "rührte",
+        "praet_du": "rührtest",
+        "praet_wir_sie_Sie": "rührten",
+        "praet_ihr": "rührtet",
+        "partizip_2": "gerührt",
+        "imp_du": "rühr",
+        "imp_ihr": "rührt"
+      },
+      "frequenzRang": 10588,
+      "quelle": "wiktionary:de:rühren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚rühren‘ (https://de.wiktionary.org/wiki/rühren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.mischen",
+      "lemma": "mischen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "mischen",
+        "praes_ich": "mische",
+        "praes_du": "mischst",
+        "praes_er_sie_es": "mischt",
+        "praes_wir": "mischen",
+        "praes_ihr": "mischt",
+        "praes_sie_Sie": "mischen",
+        "praet_ich_er_sie_es": "mischte",
+        "praet_du": "mischtest",
+        "praet_wir_sie_Sie": "mischten",
+        "praet_ihr": "mischtet",
+        "partizip_2": "gemischt",
+        "imp_du": "misch",
+        "imp_ihr": "mischt"
+      },
+      "frequenzRang": 2716,
+      "quelle": "wiktionary:de:mischen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚mischen‘ (https://de.wiktionary.org/wiki/mischen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.hinzufuegen",
+      "lemma": "hinzufügen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "hinzu"
+      },
+      "formen": {
+        "infinitiv": "hinzufügen",
+        "verbzusatz": "hinzu",
+        "praes_ich": "füge",
+        "praes_du": "fügst",
+        "praes_er_sie_es": "fügt",
+        "praes_wir": "fügen",
+        "praes_ihr": "fügt",
+        "praes_sie_Sie": "fügen",
+        "praet_ich_er_sie_es": "fügte",
+        "praet_du": "fügtest",
+        "praet_wir_sie_Sie": "fügten",
+        "praet_ihr": "fügtet",
+        "partizip_2": "hinzugefügt",
+        "zu_infinitiv": "hinzuzufügen",
+        "nebensatz_er_sie_es": "hinzufügt",
+        "nebensatz_praet": "hinzufügte",
+        "nebensatz_praet_pl": "hinzufügten",
+        "imp_du": "füg",
+        "imp_ihr": "fügt"
+      },
+      "frequenzRang": 3122,
+      "quelle": "wiktionary:de:hinzufügen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚hinzufügen‘ (https://de.wiktionary.org/wiki/hinzufügen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.hacken",
+      "lemma": "hacken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "hacken",
+        "praes_ich": "hacke",
+        "praes_du": "hackst",
+        "praes_er_sie_es": "hackt",
+        "praes_wir": "hacken",
+        "praes_ihr": "hackt",
+        "praes_sie_Sie": "hacken",
+        "praet_ich_er_sie_es": "hackte",
+        "praet_du": "hacktest",
+        "praet_wir_sie_Sie": "hackten",
+        "praet_ihr": "hacktet",
+        "partizip_2": "gehackt",
+        "imp_du": "hack",
+        "imp_ihr": "hackt"
+      },
+      "frequenzRang": 4723,
+      "quelle": "wiktionary:de:hacken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚hacken‘ (https://de.wiktionary.org/wiki/hacken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.erhitzen",
+      "lemma": "erhitzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erhitzen",
+        "praes_ich": "erhitze",
+        "praes_du": "erhitzt",
+        "praes_er_sie_es": "erhitzt",
+        "praes_wir": "erhitzen",
+        "praes_ihr": "erhitzt",
+        "praes_sie_Sie": "erhitzen",
+        "praet_ich_er_sie_es": "erhitzte",
+        "praet_du": "erhitztest",
+        "praet_wir_sie_Sie": "erhitzten",
+        "praet_ihr": "erhitztet",
+        "partizip_2": "erhitzt",
+        "imp_du": "erhitz",
+        "imp_ihr": "erhitzt"
+      },
+      "frequenzRang": 7592,
+      "quelle": "wiktionary:de:erhitzen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erhitzen‘ (https://de.wiktionary.org/wiki/erhitzen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.servieren",
+      "lemma": "servieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "servieren",
+        "praes_ich": "serviere",
+        "praes_du": "servierst",
+        "praes_er_sie_es": "serviert",
+        "praes_wir": "servieren",
+        "praes_ihr": "serviert",
+        "praes_sie_Sie": "servieren",
+        "praet_ich_er_sie_es": "servierte",
+        "praet_du": "serviertest",
+        "praet_wir_sie_Sie": "servierten",
+        "praet_ihr": "serviertet",
+        "partizip_2": "serviert",
+        "imp_du": "servier",
+        "imp_ihr": "serviert"
+      },
+      "frequenzRang": 4627,
+      "quelle": "wiktionary:de:servieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚servieren‘ (https://de.wiktionary.org/wiki/servieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.zubereiten",
+      "lemma": "zubereiten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "zu"
+      },
+      "formen": {
+        "infinitiv": "zubereiten",
+        "verbzusatz": "zu",
+        "praes_ich": "bereite",
+        "praes_du": "bereitest",
+        "praes_er_sie_es": "bereitet",
+        "praes_wir": "bereiten",
+        "praes_ihr": "bereitet",
+        "praes_sie_Sie": "bereiten",
+        "praet_ich_er_sie_es": "bereitete",
+        "praet_du": "bereitetest",
+        "praet_wir_sie_Sie": "bereiteten",
+        "praet_ihr": "bereitetet",
+        "partizip_2": "zubereitet",
+        "zu_infinitiv": "zuzubereiten",
+        "nebensatz_er_sie_es": "zubereitet",
+        "nebensatz_praet": "zubereitete",
+        "nebensatz_praet_pl": "zubereiteten",
+        "imp_du": "bereite",
+        "imp_ihr": "bereitet"
+      },
+      "frequenzRang": 7297,
+      "quelle": "wiktionary:de:zubereiten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zubereiten‘ (https://de.wiktionary.org/wiki/zubereiten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.empfangen",
+      "lemma": "empfangen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "empfangen",
+        "praes_ich": "empfange",
+        "praes_du": "empfängst",
+        "praes_er_sie_es": "empfängt",
+        "praes_wir": "empfangen",
+        "praes_ihr": "empfangt",
+        "praes_sie_Sie": "empfangen",
+        "praet_ich_er_sie_es": "empfing",
+        "praet_du": "empfingst",
+        "praet_wir_sie_Sie": "empfingen",
+        "praet_ihr": "empfingt",
+        "partizip_2": "empfangen"
+      },
+      "frequenzRang": 2058,
+      "quelle": "wiktionary:de:empfangen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚empfangen‘ (https://de.wiktionary.org/wiki/empfangen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.grillen",
+      "lemma": "grillen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "grillen",
+        "praes_ich": "grille",
+        "praes_du": "grillst",
+        "praes_er_sie_es": "grillt",
+        "praes_wir": "grillen",
+        "praes_ihr": "grillt",
+        "praes_sie_Sie": "grillen",
+        "praet_ich_er_sie_es": "grillte",
+        "praet_du": "grilltest",
+        "praet_wir_sie_Sie": "grillten",
+        "praet_ihr": "grilltet",
+        "partizip_2": "gegrillt",
+        "imp_du": "grill",
+        "imp_ihr": "grillt"
+      },
+      "frequenzRang": 5523,
+      "quelle": "wiktionary:de:grillen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚grillen‘ (https://de.wiktionary.org/wiki/grillen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.duensten",
+      "lemma": "dünsten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "dünsten",
+        "praes_ich": "dünste",
+        "praes_du": "dünstest",
+        "praes_er_sie_es": "dünstet",
+        "praes_wir": "dünsten",
+        "praes_ihr": "dünstet",
+        "praes_sie_Sie": "dünsten",
+        "praet_ich_er_sie_es": "dünstete",
+        "praet_du": "dünstetest",
+        "praet_wir_sie_Sie": "dünsteten",
+        "praet_ihr": "dünstetet",
+        "partizip_2": "gedünstet",
+        "imp_du": "dünste",
+        "imp_ihr": "dünstet"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.gericht",
+      "lemma": "Gericht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gerichte"
+      },
+      "formen": {
+        "pl": "Gerichte",
+        "dat_pl": "Gerichten",
+        "gen_sg": "Gerichts",
+        "gen_sg_2": "Gerichtes"
+      },
+      "frequenzRang": 737,
+      "quelle": "wiktionary:de:Gericht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gericht‘ (https://de.wiktionary.org/wiki/Gericht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.zutat",
+      "lemma": "Zutat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Zutaten"
+      },
+      "formen": {
+        "pl": "Zutaten"
+      },
+      "frequenzRang": 5481,
+      "quelle": "wiktionary:de:Zutat",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zutat‘ (https://de.wiktionary.org/wiki/Zutat), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.zubereitung",
+      "lemma": "Zubereitung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Zubereitungen"
+      },
+      "formen": {
+        "pl": "Zubereitungen"
+      },
+      "frequenzRang": 9991,
+      "quelle": "wiktionary:de:Zubereitung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zubereitung‘ (https://de.wiktionary.org/wiki/Zubereitung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.gewuerz",
+      "lemma": "Gewürz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gewürze"
+      },
+      "formen": {
+        "pl": "Gewürze",
+        "dat_pl": "Gewürzen",
+        "gen_sg": "Gewürzes"
+      },
+      "frequenzRang": 7823,
+      "quelle": "wiktionary:de:Gewürz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gewürz‘ (https://de.wiktionary.org/wiki/Gewürz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.pfeffer",
+      "lemma": "Pfeffer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Pfeffer"
+      },
+      "formen": {
+        "dat_pl": "Pfeffern",
+        "gen_sg": "Pfeffers"
+      },
+      "frequenzRang": 7018,
+      "quelle": "wiktionary:de:Pfeffer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Pfeffer‘ (https://de.wiktionary.org/wiki/Pfeffer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.mehl",
+      "lemma": "Mehl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Mehls",
+        "gen_sg_2": "Mehles"
+      },
+      "frequenzRang": 6814,
+      "quelle": "wiktionary:de:Mehl",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mehl‘ (https://de.wiktionary.org/wiki/Mehl), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.oel",
+      "lemma": "Öl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Öle"
+      },
+      "formen": {
+        "pl": "Öle",
+        "dat_pl": "Ölen",
+        "gen_sg": "Öls",
+        "gen_sg_2": "Öles"
+      },
+      "frequenzRang": 2183,
+      "quelle": "wiktionary:de:Öl",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Öl‘ (https://de.wiktionary.org/wiki/Öl), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.butter",
+      "lemma": "Butter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 3716,
+      "quelle": "wiktionary:de:Butter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Butter‘ (https://de.wiktionary.org/wiki/Butter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.teig",
+      "lemma": "Teig",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Teige"
+      },
+      "formen": {
+        "pl": "Teige",
+        "dat_pl": "Teigen",
+        "gen_sg": "Teigs",
+        "gen_sg_2": "Teiges"
+      },
+      "frequenzRang": 8417,
+      "quelle": "wiktionary:de:Teig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Teig‘ (https://de.wiktionary.org/wiki/Teig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.sosse",
+      "lemma": "Soße",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Soßen"
+      },
+      "formen": {
+        "pl": "Soßen"
+      },
+      "frequenzRang": 7766,
+      "quelle": "wiktionary:de:Soße",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Soße‘ (https://de.wiktionary.org/wiki/Soße), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.pfanne",
+      "lemma": "Pfanne",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Pfannen"
+      },
+      "formen": {
+        "pl": "Pfannen"
+      },
+      "frequenzRang": 6404,
+      "quelle": "wiktionary:de:Pfanne",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Pfanne‘ (https://de.wiktionary.org/wiki/Pfanne), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.topf",
+      "lemma": "Topf",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Töpfe"
+      },
+      "formen": {
+        "pl": "Töpfe",
+        "dat_pl": "Töpfen",
+        "gen_sg": "Topfs",
+        "gen_sg_2": "Topfes"
+      },
+      "frequenzRang": 3806,
+      "quelle": "wiktionary:de:Topf",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Topf‘ (https://de.wiktionary.org/wiki/Topf), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.schuessel",
+      "lemma": "Schüssel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schüsseln"
+      },
+      "formen": {
+        "pl": "Schüsseln"
+      },
+      "frequenzRang": 6448,
+      "quelle": "wiktionary:de:Schüssel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schüssel‘ (https://de.wiktionary.org/wiki/Schüssel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.messer",
+      "lemma": "Messer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Messer"
+      },
+      "formen": {
+        "dat_pl": "Messern",
+        "gen_sg": "Messers"
+      },
+      "frequenzRang": 2072,
+      "quelle": "wiktionary:de:Messer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Messer‘ (https://de.wiktionary.org/wiki/Messer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.essloeffel",
+      "lemma": "Esslöffel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Esslöffel"
+      },
+      "formen": {
+        "dat_pl": "Esslöffeln",
+        "gen_sg": "Esslöffels"
+      },
+      "frequenzRang": 12118,
+      "quelle": "wiktionary:de:Esslöffel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Esslöffel‘ (https://de.wiktionary.org/wiki/Esslöffel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.teeloeffel",
+      "lemma": "Teelöffel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Teelöffel"
+      },
+      "formen": {
+        "dat_pl": "Teelöffeln",
+        "gen_sg": "Teelöffels"
+      },
+      "frequenzRang": 39764,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.prise",
+      "lemma": "Prise",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Prisen"
+      },
+      "formen": {
+        "pl": "Prisen"
+      },
+      "frequenzRang": 11143,
+      "quelle": "wiktionary:de:Prise",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Prise‘ (https://de.wiktionary.org/wiki/Prise), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.packung",
+      "lemma": "Packung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Packungen"
+      },
+      "formen": {
+        "pl": "Packungen"
+      },
+      "frequenzRang": 5366,
+      "quelle": "wiktionary:de:Packung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Packung‘ (https://de.wiktionary.org/wiki/Packung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.mahlzeit",
+      "lemma": "Mahlzeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Mahlzeiten"
+      },
+      "formen": {
+        "pl": "Mahlzeiten"
+      },
+      "frequenzRang": 4353,
+      "quelle": "wiktionary:de:Mahlzeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mahlzeit‘ (https://de.wiktionary.org/wiki/Mahlzeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.vorspeise",
+      "lemma": "Vorspeise",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Vorspeisen"
+      },
+      "formen": {
+        "pl": "Vorspeisen"
+      },
+      "frequenzRang": 32440,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.hauptgericht",
+      "lemma": "Hauptgericht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Hauptgerichte"
+      },
+      "formen": {
+        "pl": "Hauptgerichte",
+        "dat_pl": "Hauptgerichten",
+        "gen_sg": "Hauptgerichts",
+        "gen_sg_2": "Hauptgerichtes"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.beilage",
+      "lemma": "Beilage",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Beilagen"
+      },
+      "formen": {
+        "pl": "Beilagen"
+      },
+      "frequenzRang": 7785,
+      "quelle": "wiktionary:de:Beilage",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Beilage‘ (https://de.wiktionary.org/wiki/Beilage), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.dessert",
+      "lemma": "Dessert",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Desserts"
+      },
+      "formen": {
+        "pl": "Desserts",
+        "gen_sg": "Desserts"
+      },
+      "frequenzRang": 10299,
+      "quelle": "wiktionary:de:Dessert",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Dessert‘ (https://de.wiktionary.org/wiki/Dessert), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.lebensmittel",
+      "lemma": "Lebensmittel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Lebensmittel"
+      },
+      "formen": {
+        "dat_pl": "Lebensmitteln",
+        "gen_sg": "Lebensmittels"
+      },
+      "frequenzRang": 2213,
+      "quelle": "wiktionary:de:Lebensmittel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lebensmittel‘ (https://de.wiktionary.org/wiki/Lebensmittel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.kraeuter",
+      "lemma": "Kräuter",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "formen": {
+        "dat_pl": "Kräutern"
+      },
+      "frequenzRang": 12367,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.petersilie",
+      "lemma": "Petersilie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 31296,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.minze",
+      "lemma": "Minze",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Minzen"
+      },
+      "formen": {
+        "pl": "Minzen"
+      },
+      "frequenzRang": 11905,
+      "quelle": "wiktionary:de:Minze",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Minze‘ (https://de.wiktionary.org/wiki/Minze), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.zwiebel",
+      "lemma": "Zwiebel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Zwiebeln"
+      },
+      "formen": {
+        "pl": "Zwiebeln"
+      },
+      "frequenzRang": 9992,
+      "quelle": "wiktionary:de:Zwiebel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zwiebel‘ (https://de.wiktionary.org/wiki/Zwiebel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.knoblauch",
+      "lemma": "Knoblauch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Knoblauchs",
+        "gen_sg_2": "Knoblauches"
+      },
+      "frequenzRang": 7550,
+      "quelle": "wiktionary:de:Knoblauch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Knoblauch‘ (https://de.wiktionary.org/wiki/Knoblauch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.paprika",
+      "lemma": "Paprika",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Paprika"
+      },
+      "formen": {
+        "dat_pl": "Paprikan"
+      },
+      "frequenzRang": 9083,
+      "quelle": "wiktionary:de:Paprika",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Paprika‘ (https://de.wiktionary.org/wiki/Paprika), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.zucchini",
+      "lemma": "Zucchini",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Zucchini"
+      },
+      "formen": {
+        "dat_pl": "Zucchinin"
+      },
+      "frequenzRang": 11435,
+      "quelle": "wiktionary:de:Zucchini",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zucchini‘ (https://de.wiktionary.org/wiki/Zucchini), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.spinat",
+      "lemma": "Spinat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Spinats"
+      },
+      "frequenzRang": 20480,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.bohne",
+      "lemma": "Bohne",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bohnen"
+      },
+      "formen": {
+        "pl": "Bohnen"
+      },
+      "frequenzRang": 11672,
+      "quelle": "wiktionary:de:Bohne",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bohne‘ (https://de.wiktionary.org/wiki/Bohne), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.kichererbse",
+      "lemma": "Kichererbse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kichererbsen"
+      },
+      "formen": {
+        "pl": "Kichererbsen"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.joghurt",
+      "lemma": "Joghurt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Joghurts"
+      },
+      "formen": {
+        "pl": "Joghurts",
+        "gen_sg": "Joghurts"
+      },
+      "frequenzRang": 8302,
+      "quelle": "wiktionary:de:Joghurt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Joghurt‘ (https://de.wiktionary.org/wiki/Joghurt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.sahne",
+      "lemma": "Sahne",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 6434,
+      "quelle": "wiktionary:de:Sahne",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sahne‘ (https://de.wiktionary.org/wiki/Sahne), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.nudeln",
+      "lemma": "Nudeln",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 5782,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.lammfleisch",
+      "lemma": "Lammfleisch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Lammfleisches",
+        "gen_sg_2": "Lammfleischs"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.rindfleisch",
+      "lemma": "Rindfleisch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Rindfleisches",
+        "gen_sg_2": "Rindfleischs"
+      },
+      "frequenzRang": 20783,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.olivenoel",
+      "lemma": "Olivenöl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Olivenöls",
+        "gen_sg_2": "Olivenöles"
+      },
+      "frequenzRang": 10427,
+      "quelle": "wiktionary:de:Olivenöl",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Olivenöl‘ (https://de.wiktionary.org/wiki/Olivenöl), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.zitrone",
+      "lemma": "Zitrone",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Zitronen"
+      },
+      "formen": {
+        "pl": "Zitronen"
+      },
+      "frequenzRang": 7609,
+      "quelle": "wiktionary:de:Zitrone",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zitrone‘ (https://de.wiktionary.org/wiki/Zitrone), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.honig",
+      "lemma": "Honig",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Honigs"
+      },
+      "frequenzRang": 4620,
+      "quelle": "wiktionary:de:Honig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Honig‘ (https://de.wiktionary.org/wiki/Honig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.nuss",
+      "lemma": "Nuss",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Nüsse"
+      },
+      "formen": {
+        "pl": "Nüsse",
+        "dat_pl": "Nüssen"
+      },
+      "frequenzRang": 4860,
+      "quelle": "wiktionary:de:Nuss",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nuss‘ (https://de.wiktionary.org/wiki/Nuss), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.zimt",
+      "lemma": "Zimt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Zimts"
+      },
+      "frequenzRang": 22648,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.deckel",
+      "lemma": "Deckel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Deckel"
+      },
+      "formen": {
+        "dat_pl": "Deckeln",
+        "gen_sg": "Deckels"
+      },
+      "frequenzRang": 5929,
+      "quelle": "wiktionary:de:Deckel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Deckel‘ (https://de.wiktionary.org/wiki/Deckel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.sieb",
+      "lemma": "Sieb",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Siebe"
+      },
+      "formen": {
+        "pl": "Siebe",
+        "dat_pl": "Sieben",
+        "gen_sg": "Siebs",
+        "gen_sg_2": "Siebes"
+      },
+      "frequenzRang": 11509,
+      "quelle": "wiktionary:de:Sieb",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sieb‘ (https://de.wiktionary.org/wiki/Sieb), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.brett",
+      "lemma": "Brett",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Bretter"
+      },
+      "formen": {
+        "pl": "Bretter",
+        "dat_pl": "Brettern",
+        "gen_sg": "Bretts",
+        "gen_sg_2": "Brettes"
+      },
+      "frequenzRang": 4134,
+      "quelle": "wiktionary:de:Brett",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Brett‘ (https://de.wiktionary.org/wiki/Brett), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.scheibe",
+      "lemma": "Scheibe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Scheiben"
+      },
+      "formen": {
+        "pl": "Scheiben"
+      },
+      "frequenzRang": 3859,
+      "quelle": "wiktionary:de:Scheibe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Scheibe‘ (https://de.wiktionary.org/wiki/Scheibe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.wuerfel",
+      "lemma": "Würfel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Würfel"
+      },
+      "formen": {
+        "dat_pl": "Würfeln",
+        "gen_sg": "Würfels"
+      },
+      "frequenzRang": 7997,
+      "quelle": "wiktionary:de:Würfel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Würfel‘ (https://de.wiktionary.org/wiki/Würfel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.italienisch",
+      "lemma": "italienisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "italienische",
+        "endung_en": "italienischen",
+        "endung_er": "italienischer",
+        "endung_es": "italienisches",
+        "endung_em": "italienischem"
+      },
+      "frequenzRang": 1276,
+      "quelle": "wiktionary:de:italienisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚italienisch‘ (https://de.wiktionary.org/wiki/italienisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.traditionell",
+      "lemma": "traditionell",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "traditionelle",
+        "endung_en": "traditionellen",
+        "endung_er": "traditioneller",
+        "endung_es": "traditionelles",
+        "endung_em": "traditionellem",
+        "komparativ": "traditioneller",
+        "superlativ": "traditionellsten",
+        "superlativ_e": "traditionellste"
+      },
+      "frequenzRang": 1294,
+      "quelle": "wiktionary:de:traditionell",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚traditionell‘ (https://de.wiktionary.org/wiki/traditionell), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.regional",
+      "lemma": "regional",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "regionale",
+        "endung_en": "regionalen",
+        "endung_er": "regionaler",
+        "endung_es": "regionales",
+        "endung_em": "regionalem"
+      },
+      "frequenzRang": 1356,
+      "quelle": "wiktionary:de:regional",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚regional‘ (https://de.wiktionary.org/wiki/regional), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.klassisch",
+      "lemma": "klassisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "klassische",
+        "endung_en": "klassischen",
+        "endung_er": "klassischer",
+        "endung_es": "klassisches",
+        "endung_em": "klassischem",
+        "komparativ": "klassischer",
+        "superlativ": "klassischsten",
+        "superlativ_e": "klassischste"
+      },
+      "frequenzRang": 952,
+      "quelle": "wiktionary:de:klassisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚klassisch‘ (https://de.wiktionary.org/wiki/klassisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.speziell",
+      "lemma": "speziell",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "spezielle",
+        "endung_en": "speziellen",
+        "endung_er": "spezieller",
+        "endung_es": "spezielles",
+        "endung_em": "speziellem",
+        "komparativ": "spezieller",
+        "superlativ": "speziellsten",
+        "superlativ_e": "speziellste"
+      },
+      "frequenzRang": 902,
+      "quelle": "wiktionary:de:speziell",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚speziell‘ (https://de.wiktionary.org/wiki/speziell), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.scharf",
+      "lemma": "scharf",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "scharfe",
+        "endung_en": "scharfen",
+        "endung_er": "scharfer",
+        "endung_es": "scharfes",
+        "endung_em": "scharfem",
+        "komparativ": "schärfer",
+        "superlativ": "schärfsten",
+        "superlativ_e": "schärfste"
+      },
+      "frequenzRang": 1341,
+      "quelle": "wiktionary:de:scharf",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚scharf‘ (https://de.wiktionary.org/wiki/scharf), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.fein",
+      "lemma": "fein",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "feine",
+        "endung_en": "feinen",
+        "endung_er": "feiner",
+        "endung_es": "feines",
+        "endung_em": "feinem",
+        "komparativ": "feiner",
+        "superlativ": "feinsten",
+        "superlativ_e": "feinste"
+      },
+      "frequenzRang": 1422,
+      "quelle": "wiktionary:de:fein",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚fein‘ (https://de.wiktionary.org/wiki/fein), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.ueblich",
+      "lemma": "üblich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "übliche",
+        "endung_en": "üblichen",
+        "endung_er": "üblicher",
+        "endung_es": "übliches",
+        "endung_em": "üblichem",
+        "komparativ": "üblicher",
+        "superlativ": "üblichsten",
+        "superlativ_e": "üblichste"
+      },
+      "frequenzRang": 1153,
+      "quelle": "wiktionary:de:üblich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚üblich‘ (https://de.wiktionary.org/wiki/üblich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.uebrig",
+      "lemma": "übrig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "übrige",
+        "endung_en": "übrigen",
+        "endung_er": "übriger",
+        "endung_es": "übriges",
+        "endung_em": "übrigem"
+      },
+      "frequenzRang": 864,
+      "quelle": "wiktionary:de:übrig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚übrig‘ (https://de.wiktionary.org/wiki/übrig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.extra",
+      "lemma": "extra",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "gebrauch": "unveränderlich (ein extra …)"
+      },
+      "frequenzRang": 1391,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.roh",
+      "lemma": "roh",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "rohe",
+        "endung_en": "rohen",
+        "endung_er": "roher",
+        "endung_es": "rohes",
+        "endung_em": "rohem"
+      },
+      "frequenzRang": 6130,
+      "quelle": "wiktionary:de:roh",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚roh‘ (https://de.wiktionary.org/wiki/roh), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e11.s0001",
+      "text": "Welches Gericht isst du am liebsten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0002",
+      "text": "Gefüllte Paprika sind das bekannteste Gericht von Oma Sevim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0003",
+      "text": "Das Gericht ist einfach und in zwanzig Minuten fertig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0004",
+      "text": "In Syrien isst man dieses Gericht oft mit Joghurt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0005",
+      "text": "Auf dem Tisch stehen Gerichte aus drei Küchen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0006",
+      "text": "Für viele Menschen ist das Frühstück die wichtigste Mahlzeit des Tages.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0007",
+      "text": "Bei uns gibt es einmal am Tag eine warme Mahlzeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0008",
+      "text": "Am Wochenende essen wir alle Mahlzeiten gemeinsam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0009",
+      "text": "Wie viele Mahlzeiten isst du am Tag?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0010",
+      "text": "Als Vorspeise gibt es eine Suppe aus roten Linsen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0011",
+      "text": "Möchtest du als Vorspeise einen Salat?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0012",
+      "text": "Als Hauptgericht gibt es Fisch mit Reis und Gemüse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0013",
+      "text": "Als Beilage nehmen wir Reis oder Kartoffeln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0014",
+      "text": "Welche Beilage möchten Sie zum Hähnchen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0015",
+      "text": "Nach dem Hauptgericht hat niemand mehr Platz für ein Dessert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0016",
+      "text": "Zum Dessert gibt es frisches Obst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0017",
+      "text": "Das ist ein traditionelles Rezept aus der Türkei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0018",
+      "text": "Ein klassisches Frühstück in der Türkei hat Käse, Eier, Tomaten und Gurken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0019",
+      "text": "Auf dem Markt kaufen wir gern regionales Gemüse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0020",
+      "text": "Am Freitag gehen wir in ein italienisches Restaurant.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0021",
+      "text": "Die italienische Küche ist bekannt für Nudeln und Pizza.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0022",
+      "text": "Für die Kinder kocht Thomas ein spezielles Gericht ohne Pfeffer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0023",
+      "text": "In Deutschland ist es üblich, schon um sechs Uhr zu Abend zu essen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0024",
+      "text": "In der Türkei ist ein großes Frühstück am Wochenende üblich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0025",
+      "text": "Die Kinder essen am liebsten Nudeln mit Tomaten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0026",
+      "text": "Die Soße ist mir zu scharf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0027",
+      "text": "Möchten Sie etwas mehr Soße?",
+      "quelle": "tatoeba:2202327",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2202327 von Espi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e11.s0028",
+      "text": "Zu den Bohnen passt eine Soße aus Joghurt und Knoblauch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0029",
+      "text": "Isst du gern scharf?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0030",
+      "text": "Für die Kinder machen wir das Essen nicht so scharf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0031",
+      "text": "Wir essen hauptsächlich Gemüse und nur selten Fleisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0032",
+      "text": "In vielen Ländern Asiens isst man hauptsächlich Reis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0033",
+      "text": "Frische Lebensmittel kaufen wir am liebsten auf dem Markt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0034",
+      "text": "Thomas isst lieber Rindfleisch als Hähnchen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0035",
+      "text": "Lammfleisch ist in Deutschland oft teurer als Rindfleisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0036",
+      "text": "Im Sommer grillen wir gern Lammfleisch mit Gemüse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0037",
+      "text": "Zum Frühstück gibt es frisches Brot mit Butter und Honig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0038",
+      "text": "Nach dem Essen trinken wir heißen Tee mit frischer Minze.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0039",
+      "text": "Im Sommer bieten wir den Gästen kaltes Wasser mit Zitrone und frischer Minze an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0040",
+      "text": "Welche Gerichte gibt es heute zum Mittagessen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0041",
+      "text": "Als Vorspeise gibt es eine Suppe und als Hauptgericht Hähnchen mit Reis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0042",
+      "text": "Und was gibt es als Dessert?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0043",
+      "text": "Joghurt mit Honig und Nüssen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0044",
+      "text": "Als Beilage gibt es Kartoffeln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0045",
+      "text": "Das Gericht ist nicht scharf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0046",
+      "text": "Am liebsten esse ich gefüllte Paprika mit Joghurt und frischer Minze.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0047",
+      "text": "In meiner Familie ist Suppe aus Linsen ein traditionelles Gericht für kalte Tage.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0048",
+      "text": "Welche Zutaten brauchen wir für die Suppe?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0049",
+      "text": "Für ein gutes Essen braucht man frische Zutaten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0050",
+      "text": "Für den Teig brauchen wir ein Kilo Mehl.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0051",
+      "text": "Geben Sie zwei Esslöffel Öl in die Pfanne.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0052",
+      "text": "Für den Salat nehme ich Olivenöl und Zitrone.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0053",
+      "text": "Statt Butter kannst du auch Öl verwenden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0054",
+      "text": "Für die Soße brauchen wir einen Becher Sahne.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0055",
+      "text": "Zu gefüllten Paprika essen wir Joghurt mit Knoblauch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0056",
+      "text": "Aus Joghurt, Wasser und Salz macht man Ayran.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0057",
+      "text": "Für die Suppe brauchen wir zwei große Zwiebeln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0058",
+      "text": "Wie viel Knoblauch kommt in die Soße?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0059",
+      "text": "Für das Gericht brauchen wir acht rote Paprika.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0060",
+      "text": "Oma Sevim füllt die Paprika mit Reis und Rindfleisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0061",
+      "text": "Im Sommer sind Zucchini auf dem Markt besonders günstig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0062",
+      "text": "Zucchini kann man braten, grillen oder auch roh essen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0063",
+      "text": "Spinat ist gesund und schnell gekocht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0064",
+      "text": "Weiße Bohnen mit Reis sind ein traditionelles Gericht in der Türkei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0065",
+      "text": "Aus Kichererbsen kann man eine leckere Creme machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0066",
+      "text": "Die Kichererbsen müssen über Nacht im Wasser liegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0067",
+      "text": "Frische Kräuter machen jeden Salat besser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0068",
+      "text": "Ich brauche noch einen Bund Petersilie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0069",
+      "text": "Tee mit frischer Minze trinkt man in vielen Ländern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0070",
+      "text": "Die Zitrone ist sauer.",
+      "quelle": "tatoeba:1085230",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1085230 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e11.s0071",
+      "text": "Am Ende kommt der Saft einer Zitrone dazu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0072",
+      "text": "Welche Gewürze verwendest du für die Suppe?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0073",
+      "text": "Mit schwarzem Pfeffer schmeckt die Soße noch besser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0074",
+      "text": "Für den Teig braucht man drei Esslöffel Zucker.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0075",
+      "text": "Geben Sie einen Teelöffel Salz ins Wasser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0076",
+      "text": "Zum Schluss kommt noch eine Prise Salz dazu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0077",
+      "text": "Eine Packung Nudeln reicht für vier Personen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0078",
+      "text": "Auf der Packung steht, wie lange die Nudeln kochen müssen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0079",
+      "text": "Wie viel Mehl brauchen wir genau?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0080",
+      "text": "Wie viele Zwiebeln brauchst du für die Suppe?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0081",
+      "text": "Ich brauche 500 Gramm Rindfleisch und 250 Gramm Reis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0082",
+      "text": "Für sechs Personen braucht man zwei Liter Wasser, 300 Gramm Linsen und zwei Zwiebeln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0083",
+      "text": "Ich esse gern Nudeln mit scharfer Soße.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0084",
+      "text": "Für den Salat braucht man gutes Öl und frische Kräuter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0085",
+      "text": "Was brauchen wir für die gefüllten Paprika?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0086",
+      "text": "Paprika, Reis, Rindfleisch, Zwiebeln und Tomaten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0087",
+      "text": "Haben wir noch Gewürze zu Hause?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0088",
+      "text": "Ja, Pfeffer und Minze haben wir noch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0089",
+      "text": "Ja, wir haben noch zwei Packungen Nudeln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0090",
+      "text": "Nein, die Paprika sind nicht scharf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0091",
+      "text": "Wie viel Joghurt brauchen wir für die Gäste?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0092",
+      "text": "Ein Kilo Joghurt reicht für alle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0093",
+      "text": "Der Joghurt steht schon im Kühlschrank.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0094",
+      "text": "Drei Zwiebeln und eine Zitrone, bitte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0095",
+      "text": "Für die Suppe brauchen wir einen großen Topf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0096",
+      "text": "Erhitzen Sie das Öl in einer Pfanne.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0097",
+      "text": "Gib den Salat bitte in eine große Schüssel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0098",
+      "text": "Jan schneidet die Gurken mit einem kleinen Messer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0099",
+      "text": "Die Zwiebeln werden auf einem Brett geschnitten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0100",
+      "text": "Leg bitte den Deckel auf den Topf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0101",
+      "text": "Nach dem Kochen kommen die Nudeln in ein Sieb.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0102",
+      "text": "Zuerst werden die Kartoffeln geschält.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0103",
+      "text": "Die Zwiebeln werden fein gehackt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0104",
+      "text": "Kannst du bitte die Petersilie hacken?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0105",
+      "text": "Die Zwiebeln werden in Öl gebraten, bis sie braun sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0106",
+      "text": "Thomas brät das Rindfleisch in einer großen Pfanne.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0107",
+      "text": "Das Gemüse wird nur kurz gedünstet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0108",
+      "text": "Die Soße muss man immer wieder rühren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0109",
+      "text": "Mischen Sie den Reis mit dem Fleisch und den Kräutern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0110",
+      "text": "Die Suppe wird mit Salz und Pfeffer gewürzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0111",
+      "text": "Erhitze bitte das Wasser!",
+      "quelle": "tatoeba:2357729",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2357729 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e11.s0112",
+      "text": "Die Milch wird langsam erhitzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0113",
+      "text": "Nach fünf Minuten werden die Tomaten hinzugefügt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0114",
+      "text": "Wie wird dieses Gericht zubereitet?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0115",
+      "text": "Oma Sevim bereitet die Paprika schon am Morgen zu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0116",
+      "text": "Die Zubereitung ist ganz einfach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0117",
+      "text": "Die Zubereitung dauert ungefähr eine Stunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0118",
+      "text": "Zunächst schneidet man die Zwiebeln in kleine Stücke.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0119",
+      "text": "Anschließend kommt alles für zwanzig Minuten in den Ofen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0120",
+      "text": "Zuerst werden die Linsen gewaschen, dann werden sie im Topf gekocht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0121",
+      "text": "Zum Schluss wird die Suppe mit Zitrone serviert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0122",
+      "text": "Der Salat wird heute von Jan zubereitet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0123",
+      "text": "Hier werden die Kartoffeln geschält und die Zwiebeln gehackt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0124",
+      "text": "Wie macht man die Soße?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0125",
+      "text": "Zunächst werden die Zwiebeln in einer Pfanne gebraten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0126",
+      "text": "Und was kommt danach in die Pfanne?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0127",
+      "text": "Anschließend werden die Tomaten und die Gewürze hinzugefügt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0128",
+      "text": "Die Soße ist für die Kinder zu scharf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0129",
+      "text": "Danach essen wir zusammen ein Dessert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0130",
+      "text": "Kannst du mir bitte helfen? Die Kartoffeln müssen noch geschält werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0131",
+      "text": "Klar, gib mir ein Messer!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0132",
+      "text": "Der Deckel liegt schon auf dem Topf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0133",
+      "text": "Ich esse lieber Nudeln mit Soße.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0134",
+      "text": "Zunächst werden die Zwiebeln gehackt, und anschließend wird alles in einem Topf gekocht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0135",
+      "text": "In diesem Rezept wird nur wenig Zucker verwendet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0136",
+      "text": "Oma Sevim verwendet für den Teig nur Butter, kein Öl.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0137",
+      "text": "Gutes Gelingen!",
+      "quelle": "tatoeba:7580921",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7580921 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e11.s0138",
+      "text": "Der Kuchen ist mir heute leider nicht gelungen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0139",
+      "text": "Mit diesem Rezept gelingt die Soße immer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0140",
+      "text": "Beim ersten Mal ist Jan der Teig nicht gelungen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0141",
+      "text": "Wir haben noch Kichererbsen. Was können wir daraus machen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0142",
+      "text": "Aus Mehl, Wasser und Salz macht man einen Teig, und daraus backt man Brot.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0143",
+      "text": "Rohes Fleisch muss immer im Kühlschrank liegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0144",
+      "text": "Kinder sollten keine rohen Eier essen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0145",
+      "text": "Die Petersilie muss fein gehackt werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0146",
+      "text": "Der Teig muss eine Stunde ruhen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0147",
+      "text": "Wenn der Teig zu weich ist, fügen Sie noch etwas Mehl hinzu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0148",
+      "text": "Schlagen Sie zwei Eier in eine Schüssel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0149",
+      "text": "Am Samstag wurde im Garten gegrillt: Hähnchen, Paprika und Zucchini.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0150",
+      "text": "Möchtest du noch eine Scheibe Brot?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0151",
+      "text": "Das Rindfleisch wird in kleine Würfel geschnitten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0152",
+      "text": "Die Bohnen müssen eine Stunde gekocht werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0153",
+      "text": "Der Fisch darf nicht zu lange gebraten werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0154",
+      "text": "Die Soße kann auch einen Tag vorher gemacht werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0155",
+      "text": "Früher wurde bei uns jeden Tag eine warme Mahlzeit gekocht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0156",
+      "text": "Gestern wurden für das Fest zwei Kilo Kartoffeln geschält.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0157",
+      "text": "Das geschnittene Gemüse kommt in den Topf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0158",
+      "text": "Die wartenden Gäste bekommen schon Tee mit Minze.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0159",
+      "text": "Die gebratenen Zwiebeln kommen über den Reis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0160",
+      "text": "Zum Schluss gibt man die gehackten Kräuter über die Suppe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0161",
+      "text": "Rezept: Suppe aus roten Linsen mit Zitrone (für sechs Personen)",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0162",
+      "text": "Zutaten: 300 Gramm rote Linsen, zwei Zwiebeln, eine Karotte und zwei Esslöffel Öl.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0163",
+      "text": "Dazu kommen ein Teelöffel Salz, etwas Pfeffer und eine Zitrone.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0164",
+      "text": "Zunächst werden die Linsen in einem Sieb gründlich gewaschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0165",
+      "text": "Dann werden die Zwiebeln und die Karotte geschält und fein geschnitten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0166",
+      "text": "Das Gemüse wird in einem großen Topf mit dem Öl fünf Minuten gebraten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0167",
+      "text": "Anschließend werden die Linsen und zwei Liter Wasser hinzugefügt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0168",
+      "text": "Die Suppe muss etwa 25 Minuten kochen und wird dabei immer wieder gerührt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0169",
+      "text": "Zum Schluss wird sie mit Salz und Pfeffer gewürzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0170",
+      "text": "Sie wird heiß serviert, mit einer Scheibe Zitrone auf jedem Teller.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0171",
+      "text": "Für die Suppe braucht man rote Linsen, eine Karotte und Zwiebeln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0172",
+      "text": "Die Linsen werden erst nach dem Kochen im Sieb gewaschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0173",
+      "text": "Die Suppe schmeckt auch kalt mit Joghurt sehr gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0174",
+      "text": "Wie lange muss die Suppe im Topf kochen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0175",
+      "text": "Sie muss etwa 25 Minuten im Topf kochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0176",
+      "text": "Sie muss nur fünf Minuten in der Pfanne kochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0177",
+      "text": "Sie muss eine Nacht lang mit Deckel im Ofen bleiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0178",
+      "text": "Was steht im Rezept? Was muss mit den Kartoffeln für die Beilage gemacht werden?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0179",
+      "text": "Sie müssen geschält und in Würfel geschnitten werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0180",
+      "text": "Sie wurden gestern zusammen mit dem Rindfleisch gekauft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0181",
+      "text": "Die Kartoffeln sind ein klassisches Gericht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0182",
+      "text": "Für dieses Gericht muss das Gemüse zunächst gewaschen und klein geschnitten werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0183",
+      "text": "Frau Becker empfängt die Gäste an der Tür.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0184",
+      "text": "Wir empfangen gern Gäste, auch wenn unsere Wohnung klein ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0185",
+      "text": "Nach dem Essen wird Tee serviert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0186",
+      "text": "Ich habe extra für dich ein Gericht ohne Fleisch gekocht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0187",
+      "text": "Von der Suppe ist noch viel übrig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0188",
+      "text": "Möchtet ihr die übrigen Paprika mitnehmen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0189",
+      "text": "Am Ende war vom Essen nichts mehr übrig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0190",
+      "text": "Möchten Sie Honig in den Tee?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0191",
+      "text": "Ich habe eine Allergie gegen Nüsse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0192",
+      "text": "Enthält das Dessert Nüsse?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0193",
+      "text": "Keine Sorge, in diesem Kuchen sind keine Nüsse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0194",
+      "text": "Zum Dessert gibt es Reis mit Milch und Zimt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0195",
+      "text": "Wascht euch bitte die Hände, gleich wird die Suppe serviert!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0196",
+      "text": "Nehmen Sie sich bitte noch etwas von der Beilage!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0197",
+      "text": "Nehmt euch, so viel ihr möchtet, es ist noch viel übrig!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0198",
+      "text": "Ich nehme mir noch ein bisschen Soße.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0199",
+      "text": "Darf ich Ihnen noch etwas Suppe oder ein Dessert anbieten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0200",
+      "text": "Möchten Sie etwas trinken? Wir haben Tee, Saft und Wasser mit Zitrone.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0201",
+      "text": "Danke, ich bin satt, aber das Dessert probiere ich gern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0202",
+      "text": "Was ist alles in der Soße?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0203",
+      "text": "Welches Fleisch ist in den gefüllten Paprika?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0204",
+      "text": "Rindfleisch, zusammen mit Reis und Kräutern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0205",
+      "text": "Ist die Soße vegetarisch?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0206",
+      "text": "Ja, sie wird nur mit Gemüse und Sahne gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0207",
+      "text": "Ist das Gericht sehr scharf?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0208",
+      "text": "Die Soße hat wirklich sehr gut geschmeckt!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0209",
+      "text": "Das Gericht ist großartig! Kannst du mir das Rezept geben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0210",
+      "text": "Danke, das freut mich! Die Soße wird mit frischen Kräutern gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0211",
+      "text": "Gefüllte Paprika mit Reis und Rindfleisch, fertig gekocht",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0212",
+      "text": "Zutaten: Paprika (40 %), Reis (25 %), Rindfleisch (20 %), Tomaten, Zwiebeln, Olivenöl, Salz, Pfeffer, Minze.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0213",
+      "text": "Enthält Milch und Weizen. Kann Spuren von Nüssen enthalten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0214",
+      "text": "Zubereitung im Topf: Die Paprika mit Deckel etwa zehn Minuten erhitzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0215",
+      "text": "Zubereitung im Backofen: bei 180 Grad etwa zwanzig Minuten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0216",
+      "text": "Nach dem Öffnen der Packung im Kühlschrank aufbewahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0217",
+      "text": "Eine Packung reicht für zwei Personen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0218",
+      "text": "In dem Gericht ist Rindfleisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0219",
+      "text": "Das Gericht ist ohne Milch zubereitet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0220",
+      "text": "Die Paprika sind sehr scharf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0221",
+      "text": "Wie lange muss man die Paprika im Topf erhitzen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0222",
+      "text": "Etwa zehn Minuten, mit Deckel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0223",
+      "text": "Etwa zwanzig Minuten, ohne Deckel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0224",
+      "text": "Man muss sie gar nicht erhitzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0225",
+      "text": "Herzlich willkommen! Schön, dass ihr da seid. Möchtet ihr Tee mit Minze?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0226",
+      "text": "Danke für die Einladung! Welche Gerichte gibt es denn heute?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0227",
+      "text": "Als Vorspeise gibt es Suppe, danach Hähnchen mit Reis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0228",
+      "text": "Das klingt lecker! Ist die Suppe scharf?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0229",
+      "text": "Nein, gar nicht. Die Soße für das Hähnchen ist ein bisschen scharf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0230",
+      "text": "Ja, ich habe extra einen großen Topf gekauft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0231",
+      "text": "Das Dessert bringen die Nachbarn mit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0232",
+      "text": "Nehmen Sie sich bitte! Die Suppe ist vegetarisch, und im Dessert sind keine Nüsse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0233",
+      "text": "Darf ich Ihnen noch etwas anbieten? Es ist noch viel Reis übrig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0234",
+      "text": "Schreiben Sie das Rezept für ein Gericht aus Ihrer Familie: Zutaten, Mengen und Zubereitung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0235",
+      "text": "Das Rezept für gefüllte Paprika habe ich von meiner Großmutter. Für vier Personen braucht man acht Paprika, 200 Gramm Reis und 300 Gramm Rindfleisch. Dazu kommen zwei Zwiebeln, zwei Tomaten, frische Minze, Salz und Pfeffer. Zunächst werden die Zwiebeln fein gehackt und in Öl gebraten. Dann wird der Reis gewaschen und mit dem Fleisch, den Zwiebeln und den Kräutern gemischt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0236",
+      "text": "Anschließend werden die Paprika gefüllt und in einen Topf gestellt. Man gibt etwas Wasser und die geschnittenen Tomaten dazu. Die Paprika müssen etwa 40 Minuten kochen. Am besten serviert man sie mit Joghurt. Bei uns ist das ein traditionelles Gericht für Gäste, und es gelingt immer!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0237",
+      "text": "Ein Abend mit Gerichten aus drei Küchen",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0238",
+      "text": "Familie Becker lädt am Samstag die Nachbarn zum Essen ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0239",
+      "text": "Jeder bringt ein Gericht aus seiner Küche mit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0240",
+      "text": "Schon am Morgen bereitet Oma Sevim gefüllte Paprika zu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0241",
+      "text": "Die Paprika werden mit Reis, Rindfleisch, Zwiebeln und frischer Minze gefüllt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0242",
+      "text": "Ranā kocht eine Suppe aus roten Linsen, ganz traditionell mit Zitrone.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0243",
+      "text": "Thomas Becker macht einen Auflauf aus Kartoffeln und Rindfleisch mit Sahne und Käse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0244",
+      "text": "Um sechs Uhr empfängt Frau Becker die Gäste an der Tür.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0245",
+      "text": "Herzlich willkommen! Kommt herein und nehmt euch etwas zu trinken!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0246",
+      "text": "Danke für die Einladung! Die Paprika sind noch warm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0247",
+      "text": "Jan hat ein Heft dabei, denn er will alle Rezepte und Zutaten notieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0248",
+      "text": "Oma Sevim, wie werden die gefüllten Paprika zubereitet?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0249",
+      "text": "Zunächst wird der Reis gewaschen und mit dem Fleisch und den Kräutern gemischt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0250",
+      "text": "Anschließend werden die Paprika gefüllt und eine Stunde im Topf gekocht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0251",
+      "text": "Laylā fragt Thomas, welches Fleisch er für den Auflauf verwendet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0252",
+      "text": "Nur Rindfleisch. Die Kartoffeln werden vorher in dünne Scheiben geschnitten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0253",
+      "text": "Yazan probiert die Suppe mit Zitrone und ist begeistert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0254",
+      "text": "Ranā, die Suppe ist dir wirklich gut gelungen!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0255",
+      "text": "Zum Dessert serviert Frau Becker Joghurt mit Honig und Nüssen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0256",
+      "text": "Aber Elif hat eine Allergie gegen Nüsse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0257",
+      "text": "Keine Sorge, Elif! Für dich gibt es eine extra Schüssel ohne Nüsse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0258",
+      "text": "Am Ende des Abends ist fast nichts mehr übrig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0259",
+      "text": "Ich habe alle Rezepte notiert. Daraus machen wir ein kleines Heft für alle!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0260",
+      "text": "Alle finden die Idee toll und wollen bald wieder zusammen Gerichte aus ihren Ländern kochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0261",
+      "text": "Was bringt jeder Nachbar mit?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0262",
+      "text": "Ein Gericht aus seiner eigenen Küche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0263",
+      "text": "Ein Dessert für die Kinder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0264",
+      "text": "Ein Rezept mit vielen Zutaten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0265",
+      "text": "Was macht Thomas Becker für das Essen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0266",
+      "text": "Einen Auflauf aus Kartoffeln und Rindfleisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0267",
+      "text": "Eine Suppe aus roten Linsen mit Zitrone.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0268",
+      "text": "Gefüllte Paprika mit Reis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0269",
+      "text": "Was passiert zuerst mit dem Reis?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0270",
+      "text": "Er wird gewaschen und mit dem Fleisch gemischt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0271",
+      "text": "Er wird in Öl gebraten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0272",
+      "text": "Er wird mit Zimt serviert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0273",
+      "text": "Warum bekommt Elif eine extra Schüssel?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0274",
+      "text": "Weil sie gegen Nüsse allergisch ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0275",
+      "text": "Weil sie keinen Honig mag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0276",
+      "text": "Weil sie kein Dessert möchte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0277",
+      "text": "Was macht Jan mit den Rezepten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0278",
+      "text": "Er macht daraus ein kleines Heft für alle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0279",
+      "text": "Er kocht alle Gerichte noch einmal.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0280",
+      "text": "Er schickt sie an ein italienisches Restaurant.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0281",
+      "text": "Einkauf an der Fleischtheke",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0282",
+      "text": "Ranā möchte gefüllte Zucchini machen und schickt Laylā zum Einkaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0283",
+      "text": "An der Theke ist es voll, und Laylā muss ein paar Minuten warten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0284",
+      "text": "Hallo! Was darf ich Ihnen geben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0285",
+      "text": "Hallo! Welches Fleisch ist in diesem Hackfleisch?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0286",
+      "text": "Das ist halb Rindfleisch und halb Lammfleisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0287",
+      "text": "Haben Sie auch Hackfleisch nur aus Rindfleisch?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0288",
+      "text": "Ja, das hier. Es wird jeden Morgen frisch gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0289",
+      "text": "Gut, dann nehme ich 500 Gramm davon.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0290",
+      "text": "Gern. Darf es sonst noch etwas sein?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0291",
+      "text": "Ja, noch ein Kilo Lammfleisch, bitte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0292",
+      "text": "Wird das Lammfleisch gegrillt oder im Topf gekocht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0293",
+      "text": "Es wird mit Gemüse und Bohnen im Topf gekocht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0294",
+      "text": "Dann schneide ich es Ihnen gleich in kleine Würfel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0295",
+      "text": "Zu Hause erzählt Laylā, dass das Hackfleisch nur aus Rindfleisch ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0296",
+      "text": "Welches Fleisch ist im ersten Hackfleisch?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0297",
+      "text": "Halb Rindfleisch und halb Lammfleisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0298",
+      "text": "Nur Lammfleisch aus der Region.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0299",
+      "text": "Nur Rindfleisch, jeden Morgen frisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0300",
+      "text": "Wie viel Hackfleisch kauft Laylā?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0301",
+      "text": "Sie kauft 500 Gramm Hackfleisch aus Rindfleisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0302",
+      "text": "Sie kauft ein Kilo Hackfleisch aus Lammfleisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0303",
+      "text": "Sie kauft gar kein Hackfleisch, nur Gemüse und Bohnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0304",
+      "text": "Wie wird das Lammfleisch zubereitet?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0305",
+      "text": "Im Topf, zusammen mit Gemüse und Bohnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0306",
+      "text": "Es wird im Garten gegrillt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0307",
+      "text": "Es wird roh mit Zitrone gegessen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0308",
+      "text": "Der Salat wird erst kurz vor dem Essen mit Öl und Zitrone gemischt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0309",
+      "text": "Die gefüllten Paprika werden mit Joghurt serviert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0310",
+      "text": "Für den Teig braucht man 500 Gramm Mehl, 200 Gramm Butter und zwei Eier.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0311",
+      "text": "Nimm dir einen Teller und probier die gefüllten Paprika!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0312",
+      "text": "Hier riecht es nach Knoblauch! Was kochst du?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0313",
+      "text": "Eine Suppe aus Bohnen mit viel Knoblauch und frischen Kräutern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0314",
+      "text": "Heute habe ich keine Zeit für eine warme Mahlzeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0315",
+      "text": "Die Bohnen wurden gestern auf dem Markt gekauft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0316",
+      "text": "Welche Zutat fehlt noch für die Soße?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0317",
+      "text": "Es fehlt noch Sahne, aber wir können auch Joghurt verwenden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0318",
+      "text": "Die Kartoffeln werden geschält und in Würfel geschnitten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0319",
+      "text": "Der Teig muss gut gemischt werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0320",
+      "text": "Den gekochten Reis mischt man mit den Kräutern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0321",
+      "text": "Ich bin allergisch gegen Nüsse. Ist im Dessert etwas davon?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0322",
+      "text": "Nein, das Dessert ist ohne Nüsse, nur mit Honig und Zimt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0323",
+      "text": "Das Hauptgericht ist gar nicht scharf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0324",
+      "text": "Gern, ich nehme noch etwas Suppe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0325",
+      "text": "Man kann das Gericht auch im Backofen zubereiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0326",
+      "text": "Eine Packung reicht für vier Personen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0327",
+      "text": "Kinder essen dieses Gericht besonders gern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e11.s0328",
+      "text": "Zunächst wird das Öl erhitzt, anschließend werden die Zwiebeln gebraten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e11.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Gerichte und Mahlzeiten beschreiben.",
+        "tr": "Yemekleri ve öğünleri anlatabilirim.",
+        "ar": "أستطيع أن أصف الأطباق والوجبات."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e11.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.gericht",
+          "ablenker": ["de.a1.e05.fruehstueck", "de.a2.e05.rezept"]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.vorspeise", "de.b1.e11.hauptgericht", "de.b1.e11.beilage", "de.b1.e11.dessert"]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0016",
+          "wort": 4,
+          "ablenker": ["frischer", "frischen"]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.mahlzeit",
+          "ablenker": ["de.b1.e07.vorbereitung", "de.a2.e03.feier"]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e11.traditionell",
+            "de.b1.e11.italienisch",
+            "de.b1.e11.regional",
+            "de.b1.e11.scharf",
+            "de.b1.e11.hauptsaechlich"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a07",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.rindfleisch", "de.b1.e11.lammfleisch", "de.b1.e11.nudeln", "de.a1.e05.reis", "de.a2.e12.fisch"]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0040"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0041"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0042"
+            }
+          ],
+          "antwort": "de.b1.e11.s0043",
+          "ablenker": ["de.b1.e11.s0044", "de.b1.e11.s0045"]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.sosse",
+          "ablenker": ["de.a2.e03.salat", "de.a1.e05.milch"]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.speziell",
+          "ablenker": ["de.b1.e11.ueblich", "de.a1.e07.leicht"]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e11.s0033",
+          "nach": "ziel",
+          "alternativen": [
+            "Am liebsten kaufen wir frische Lebensmittel auf dem Markt.",
+            "Wir kaufen frische Lebensmittel am liebsten auf dem Markt.",
+            "Auf dem Markt kaufen wir am liebsten frische Lebensmittel.",
+            "Wir kaufen am liebsten frische Lebensmittel auf dem Markt.",
+            "Frische Lebensmittel kaufen wir auf dem Markt am liebsten."
+          ],
+          "ablenker": ["frischer", "Küche"]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e11.s0030",
+          "ablenker": ["de.b1.e11.s0026", "de.b1.e11.s0029"]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.klassisch",
+          "ablenker": ["de.b1.e11.lebensmittel", "de.a1.e06.markt"]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e11.s0024",
+          "alternativen": [
+            "Ein großes Frühstück ist in der Türkei am Wochenende üblich.",
+            "Am Wochenende ist in der Türkei ein großes Frühstück üblich.",
+            "In der Türkei ist am Wochenende ein großes Frühstück üblich.",
+            "Am Wochenende ist ein großes Frühstück in der Türkei üblich.",
+            "Ein großes Frühstück ist am Wochenende in der Türkei üblich."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e11.s0020",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir gehen am Freitag in ein italienisches Restaurant.",
+            "Freitag gehen wir in ein italienisches Restaurant.",
+            "Am Freitag gehen wir zu einem italienischen Restaurant.",
+            "Wir gehen am Freitag in ein italienisches Restaurant essen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a16",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e11.gericht",
+          "ablenker": ["de.a1.e11.gesicht"]
+        },
+        {
+          "schluessel": "de.b1.e11.l01.a17",
+          "typ": "sprechen",
+          "satz": "de.b1.e11.s0046"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e11.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Zutaten und Mengen für ein Rezept nennen.",
+        "tr": "Bir tarif için malzemeleri ve miktarları söyleyebilirim.",
+        "ar": "أستطيع أن أذكر المكوّنات والكمّيّات لوصفة طعام."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e11.l02.a01",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.zwiebel", "de.b1.e11.knoblauch", "de.b1.e11.paprika", "de.b1.e11.zucchini", "de.b1.e11.spinat"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.mehl",
+          "ablenker": ["de.a2.e03.zucker", "de.b1.e03.salz"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a04",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.butter", "de.b1.e11.sahne", "de.b1.e11.joghurt", "de.b1.e11.oel"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.kichererbse",
+          "ablenker": ["de.b1.e11.bohne", "de.a1.e05.linse"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0076",
+          "wort": 5,
+          "ablenker": ["Packung", "Flasche"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a07",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.petersilie", "de.b1.e11.minze", "de.b1.e11.pfeffer", "de.b1.e11.zitrone"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.kraeuter",
+          "ablenker": ["de.b1.e11.olivenoel", "de.a1.e06.obst"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a09",
+          "typ": "formen",
+          "zeilen": ["Nominativ", "Akkusativ", "Dativ (mit …)"],
+          "spalten": ["der Pfeffer", "die Soße", "das Öl", "die Kräuter"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["guter"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["gute"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["gutes"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 3,
+              "loesungen": ["gute"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["guten"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["gute"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["gutes"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 3,
+              "loesungen": ["gute"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["gutem"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["guter"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["gutem"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 2,
+              "spalte": 3,
+              "loesungen": ["guten"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0085"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0086"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0087"
+            }
+          ],
+          "antwort": "de.b1.e11.s0088",
+          "ablenker": ["de.b1.e11.s0089", "de.b1.e11.s0090"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.essloeffel",
+          "ablenker": ["de.b1.e11.packung", "de.a1.e06.flasche"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e11.s0081",
+          "nach": "ziel",
+          "alternativen": ["Ich brauche 250 Gramm Reis und 500 Gramm Rindfleisch."],
+          "ablenker": ["Kilo", "Liter"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e11.s0079",
+          "ablenker": ["de.b1.e11.s0080", "de.b1.e11.s0058"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a14",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0083",
+          "wort": 5,
+          "ablenker": ["scharfe", "scharfes"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.zutat",
+          "ablenker": ["de.b1.e11.gewuerz", "de.a2.e05.rezept"]
+        },
+        {
+          "schluessel": "de.b1.e11.l02.a16",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.prise",
+          "ablenker": ["de.b1.e11.teeloeffel", "de.a2.e03.haelfte"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e11.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Schritt für Schritt erklären, wie ein Gericht zubereitet wird.",
+        "tr": "Bir yemeğin nasıl hazırlandığını adım adım açıklayabilirim.",
+        "ar": "أستطيع أن أشرح خطوة بخطوة كيف يُحضَّر طبق ما."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e11.l03.a01",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.topf", "de.b1.e11.pfanne", "de.b1.e11.schuessel", "de.b1.e11.messer", "de.b1.e11.brett"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.deckel",
+          "ablenker": ["de.b1.e11.sieb", "de.a2.e03.gabel"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a04",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.schaelen", "de.b1.e11.hacken", "de.b1.e11.braten", "de.b1.e11.wuerzen", "de.b1.e11.erhitzen"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.ruehren",
+          "ablenker": ["de.b1.e11.duensten", "de.a2.e03.probieren"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0102",
+          "wort": 4,
+          "ablenker": ["schält", "geschälte"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.mischen",
+          "ablenker": ["de.b1.e11.hinzufuegen", "de.a2.e03.schneiden"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a08",
+          "typ": "formen",
+          "zeilen": ["die Zwiebel", "das Fleisch", "die Kartoffeln", "der Spinat"],
+          "spalten": ["Infinitiv", "Passiv Präsens"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["schälen"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["wird geschält"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["braten"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["wird gebraten"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["kochen"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["werden gekocht"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["dünsten"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["wird gedünstet"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0124"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0125"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0126"
+            }
+          ],
+          "antwort": "de.b1.e11.s0127",
+          "ablenker": ["de.b1.e11.s0128", "de.b1.e11.s0129"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.zubereiten",
+          "ablenker": ["de.a1.e08.backen", "de.b1.e04.wischen"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a11",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.zunaechst", "de.b1.e11.zubereitung", "de.a2.e10.schritt", "de.a2.e10.anleitung"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.anschliessend",
+          "ablenker": ["de.a1.e05.besonders", "de.a2.e05.meistens"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e11.s0121",
+          "alternativen": [
+            "Die Suppe wird zum Schluss mit Zitrone serviert.",
+            "Mit Zitrone wird die Suppe zum Schluss serviert.",
+            "Die Suppe wird mit Zitrone zum Schluss serviert."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a14",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0127",
+          "wort": 7,
+          "ablenker": ["hinzufügen", "hinzugefügte"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e11.s0103",
+          "ablenker": ["de.b1.e11.s0099", "de.b1.e11.s0105"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a16",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e11.pfanne",
+          "ablenker": ["de.b1.e08.panne"]
+        },
+        {
+          "schluessel": "de.b1.e11.l03.a17",
+          "typ": "sprechen",
+          "satz": "de.b1.e11.s0134"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e11.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann ein Rezept lesen und verstehen, was gemacht werden muss.",
+        "tr": "Bir tarifi okuyabilir ve neyin yapılması gerektiğini anlayabilirim.",
+        "ar": "أستطيع أن أقرأ وصفة وأن أفهم ما يجب فعله."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e11.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.verwenden",
+          "ablenker": ["de.a2.e03.probieren", "de.a1.e05.bringen"]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.teig", "de.b1.e11.scheibe", "de.b1.e11.wuerfel", "de.a1.e06.stueck"]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a04",
+          "typ": "formen",
+          "zeilen": ["die Zwiebeln (schneiden)", "das Wasser (erhitzen)", "der Teig (mischen)"],
+          "spalten": ["Präsens", "Präteritum", "mit „müssen“"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["werden geschnitten"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["wurden geschnitten"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["müssen geschnitten werden"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["wird erhitzt"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["wurde erhitzt"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["muss erhitzt werden"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["wird gemischt"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["wurde gemischt"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["muss gemischt werden"],
+              "vorgabe": true
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.roh",
+          "ablenker": ["de.b1.e11.fein", "de.a2.e03.frisch"]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e11.s0161",
+          "absaetze": [
+            "de.b1.e11.s0162",
+            "de.b1.e11.s0163",
+            "de.b1.e11.s0164",
+            "de.b1.e11.s0165",
+            "de.b1.e11.s0166",
+            "de.b1.e11.s0167",
+            "de.b1.e11.s0168",
+            "de.b1.e11.s0169",
+            "de.b1.e11.s0170"
+          ],
+          "glossen": ["de.b1.e11.sieb", "de.a1.e05.linse", "de.a1.e06.karotte"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e11.s0171",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e11.s0172",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e11.s0174",
+              "antwort": "de.b1.e11.s0175",
+              "ablenker": ["de.b1.e11.s0176", "de.b1.e11.s0177"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e11.s0173",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0152",
+          "wort": 6,
+          "ablenker": ["wird", "worden"]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a08",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a09",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0157",
+          "wort": 1,
+          "ablenker": ["geschnitten", "geschnittenen"]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.gelingen",
+          "ablenker": ["de.b1.e11.grillen", "de.b1.e11.schlagen"]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0178"
+            }
+          ],
+          "antwort": "de.b1.e11.s0179",
+          "ablenker": ["de.b1.e11.s0180", "de.b1.e11.s0181"]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e11.s0154",
+          "alternativen": ["Einen Tag vorher kann die Soße auch gemacht werden.", "Die Soße kann einen Tag vorher auch gemacht werden."]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e11.s0139",
+          "ablenker": ["de.b1.e11.s0138", "de.b1.e11.s0135"]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e11.s0144",
+          "nach": "ziel",
+          "alternativen": [
+            "Kinder sollen keine rohen Eier essen.",
+            "Rohe Eier sollten Kinder nicht essen.",
+            "Kinder sollten rohe Eier nicht essen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.daraus",
+          "ablenker": ["de.b1.e04.darin", "de.a1.e07.dabei"]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a16",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e11.roh",
+          "ablenker": ["de.b1.e04.rohr"]
+        },
+        {
+          "schluessel": "de.b1.e11.l04.a17",
+          "typ": "sprechen",
+          "satz": "de.b1.e11.s0182"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e11.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Gäste empfangen, Essen anbieten und Fragen zu Zutaten beantworten.",
+        "tr": "Misafirleri karşılayabilir, yemek ikram edebilir ve malzemelerle ilgili soruları cevaplayabilirim.",
+        "ar": "أستطيع أن أستقبل الضيوف وأن أقدّم لهم الطعام وأن أجيب عن أسئلة حول المكوّنات."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e11.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.empfangen",
+          "ablenker": ["de.a2.e03.feiern", "de.a1.e08.einladen"]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.honig", "de.b1.e11.nuss", "de.b1.e11.zimt", "de.a2.e03.zucker"]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.servieren",
+          "ablenker": ["de.b1.e11.uebrig", "de.a2.e14.sauer"]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a05",
+          "typ": "formen",
+          "zeilen": ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"],
+          "spalten": ["sich waschen (Akkusativ)", "sich die Hände waschen (Dativ)"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["mich"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["mir"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["dich"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["dir"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["sich"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["sich"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["uns"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["uns"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["euch"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["euch"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["sich"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["sich"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0198",
+          "wort": 2,
+          "ablenker": ["mich", "mein"]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e11.s0211",
+          "absaetze": ["de.b1.e11.s0212", "de.b1.e11.s0213", "de.b1.e11.s0214", "de.b1.e11.s0215", "de.b1.e11.s0216", "de.b1.e11.s0217"],
+          "glossen": ["de.b1.e01.aufbewahren", "de.a2.e12.enthalten"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e11.s0218",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e11.s0219",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e11.s0221",
+              "antwort": "de.b1.e11.s0222",
+              "ablenker": ["de.b1.e11.s0223", "de.b1.e11.s0224"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e11.s0220",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0225"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0226"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0227"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0228"
+            }
+          ],
+          "antwort": "de.b1.e11.s0229",
+          "ablenker": ["de.b1.e11.s0230", "de.b1.e11.s0231"]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.extra",
+          "ablenker": ["de.a2.e03.satt", "de.a2.e03.herzlich"]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e11.s0195",
+          "nach": "ziel",
+          "alternativen": [
+            "Bitte wascht euch die Hände, gleich wird die Suppe serviert!",
+            "Wascht euch bitte die Hände, die Suppe wird gleich serviert!",
+            "Bitte wascht euch die Hände, die Suppe wird gleich serviert!"
+          ],
+          "ablenker": ["euer", "uns"]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e11.s0203",
+          "ablenker": ["de.b1.e11.s0202", "de.b1.e11.s0207"]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0208"
+            }
+          ],
+          "antwort": "de.b1.e11.s0210",
+          "ablenker": ["de.b1.e11.s0026", "de.b1.e11.s0137"]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0188",
+          "wort": 3,
+          "ablenker": ["übrig", "übriges"]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a14",
+          "typ": "sprechen",
+          "satz": "de.b1.e11.s0232"
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e11.s0234",
+          "woerter": {
+            "min": 90,
+            "max": 110
+          },
+          "pflichtwoerter": ["Zutaten", "zunächst", "anschließend"],
+          "muster": ["de.b1.e11.s0235", "de.b1.e11.s0236"]
+        },
+        {
+          "schluessel": "de.b1.e11.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e11.s0233"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e11.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über ein Essen mit Nachbarn und ein Gespräch beim Einkauf verstehen.",
+        "tr": "Komşularla bir yemek hakkındaki hikâyeyi ve alışverişteki bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن عشاء مع الجيران وحوارًا أثناء التسوّق."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e11.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e11.s0237",
+          "zeilen": [
+            {
+              "satz": "de.b1.e11.s0238"
+            },
+            {
+              "satz": "de.b1.e11.s0239"
+            },
+            {
+              "satz": "de.b1.e11.s0240"
+            },
+            {
+              "satz": "de.b1.e11.s0241"
+            },
+            {
+              "satz": "de.b1.e11.s0242"
+            },
+            {
+              "satz": "de.b1.e11.s0243"
+            },
+            {
+              "satz": "de.b1.e11.s0244"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0245"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0246"
+            },
+            {
+              "satz": "de.b1.e11.s0247"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e11.s0248"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0249"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0250"
+            },
+            {
+              "satz": "de.b1.e11.s0251"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0252"
+            },
+            {
+              "satz": "de.b1.e11.s0253"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0254"
+            },
+            {
+              "satz": "de.b1.e11.s0255"
+            },
+            {
+              "satz": "de.b1.e11.s0256"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0257"
+            },
+            {
+              "satz": "de.b1.e11.s0258"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e11.s0259"
+            },
+            {
+              "satz": "de.b1.e11.s0260"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.b1.e11.s0261",
+              "antwort": "de.b1.e11.s0262",
+              "ablenker": ["de.b1.e11.s0263", "de.b1.e11.s0264"]
+            },
+            {
+              "nach": 5,
+              "frage": "de.b1.e11.s0265",
+              "antwort": "de.b1.e11.s0266",
+              "ablenker": ["de.b1.e11.s0267", "de.b1.e11.s0268"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.b1.e11.s0269",
+              "antwort": "de.b1.e11.s0270",
+              "ablenker": ["de.b1.e11.s0271", "de.b1.e11.s0272"]
+            },
+            {
+              "nach": 19,
+              "frage": "de.b1.e11.s0273",
+              "antwort": "de.b1.e11.s0274",
+              "ablenker": ["de.b1.e11.s0275", "de.b1.e11.s0276"]
+            },
+            {
+              "nach": 22,
+              "frage": "de.b1.e11.s0277",
+              "antwort": "de.b1.e11.s0278",
+              "ablenker": ["de.b1.e11.s0279", "de.b1.e11.s0280"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l06.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e11.s0254",
+          "ablenker": ["de.b1.e11.s0253", "de.b1.e11.s0246"]
+        },
+        {
+          "schluessel": "de.b1.e11.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0241",
+          "wort": 10,
+          "ablenker": ["gefüllte", "füllen"]
+        },
+        {
+          "schluessel": "de.b1.e11.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e11.s0249",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e11.l06.a05",
+          "typ": "satzbau",
+          "ziel": "de.b1.e11.s0244",
+          "alternativen": [
+            "Frau Becker empfängt die Gäste um sechs Uhr an der Tür.",
+            "Frau Becker empfängt um sechs Uhr die Gäste an der Tür.",
+            "An der Tür empfängt Frau Becker um sechs Uhr die Gäste.",
+            "An der Tür empfängt Frau Becker die Gäste um sechs Uhr.",
+            "Um sechs Uhr empfängt Frau Becker an der Tür die Gäste.",
+            "Die Gäste empfängt Frau Becker um sechs Uhr an der Tür."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0248"
+            }
+          ],
+          "antwort": "de.b1.e11.s0249",
+          "ablenker": ["de.b1.e11.s0252", "de.b1.e11.s0257"]
+        },
+        {
+          "schluessel": "de.b1.e11.l06.a07",
+          "typ": "geschichte",
+          "titel": "de.b1.e11.s0281",
+          "zeilen": [
+            {
+              "satz": "de.b1.e11.s0282"
+            },
+            {
+              "satz": "de.b1.e11.s0283"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0284"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0285"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0286"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0287"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0288"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0289"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0290"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0291"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0292"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0293"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0294"
+            },
+            {
+              "satz": "de.b1.e11.s0295"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.b1.e11.s0296",
+              "antwort": "de.b1.e11.s0297",
+              "ablenker": ["de.b1.e11.s0298", "de.b1.e11.s0299"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.b1.e11.s0300",
+              "antwort": "de.b1.e11.s0301",
+              "ablenker": ["de.b1.e11.s0302", "de.b1.e11.s0303"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.b1.e11.s0304",
+              "antwort": "de.b1.e11.s0305",
+              "ablenker": ["de.b1.e11.s0306", "de.b1.e11.s0307"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l06.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0284"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e11.s0285"
+            }
+          ],
+          "antwort": "de.b1.e11.s0286",
+          "ablenker": ["de.b1.e11.s0293", "de.b1.e11.s0290"]
+        },
+        {
+          "schluessel": "de.b1.e11.l06.a09",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0292",
+          "wort": 3,
+          "ablenker": ["grillen", "gegrillte"]
+        },
+        {
+          "schluessel": "de.b1.e11.l06.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e11.s0289",
+          "alternativen": ["Gut, dann nehme ich fünfhundert Gramm davon."]
+        },
+        {
+          "schluessel": "de.b1.e11.l06.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e11.s0258",
+          "nach": "ziel",
+          "alternativen": [
+            "Am Ende des Abends ist fast nichts übrig.",
+            "Am Ende des Abends ist kaum noch etwas übrig.",
+            "Am Ende des Abends ist fast nichts mehr da."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e11.s0288",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e11.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.b1.e11.s0245"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e11.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum.",
+        "ar": "أراجع كلمات الوحدة وجملها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e11.l07.a01",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.hauptgericht", "de.b1.e11.zutat", "de.b1.e11.teig", "de.b1.e11.deckel", "de.b1.e11.honig"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.lebensmittel",
+          "ablenker": ["de.a1.e06.markt", "de.a1.e06.kasse"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0308",
+          "wort": 12,
+          "ablenker": ["mischt", "gemischte"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e11.s0309",
+          "ablenker": ["de.b1.e11.s0060", "de.b1.e11.s0059"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0312"
+            }
+          ],
+          "antwort": "de.b1.e11.s0313",
+          "ablenker": ["de.b1.e11.s0314", "de.b1.e11.s0315"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a06",
+          "typ": "formen",
+          "zeilen": ["schneiden: das … Gemüse", "braten: die … Zwiebeln", "kochen: der … Reis", "warten: die … Gäste"],
+          "spalten": ["Partizip als Adjektiv"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["geschnittene"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["gebratenen"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["gekochte"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["wartenden"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a07",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e11.hacken",
+          "ablenker": ["de.a1.e08.backen"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e11.s0310",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0130"
+            }
+          ],
+          "antwort": "de.b1.e11.s0131",
+          "ablenker": ["de.b1.e11.s0132", "de.b1.e11.s0133"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.scheibe",
+          "ablenker": ["de.b1.e11.wuerfel", "de.a2.e12.schale"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a11",
+          "typ": "satzbau",
+          "ziel": "de.b1.e11.s0160",
+          "alternativen": [
+            "Man gibt zum Schluss die gehackten Kräuter über die Suppe.",
+            "Die gehackten Kräuter gibt man zum Schluss über die Suppe.",
+            "Zum Schluss gibt man über die Suppe die gehackten Kräuter.",
+            "Über die Suppe gibt man zum Schluss die gehackten Kräuter.",
+            "Man gibt die gehackten Kräuter zum Schluss über die Suppe."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a12",
+          "typ": "frei",
+          "ziel": "de.b1.e11.s0049",
+          "nach": "ziel",
+          "alternativen": [
+            "Man braucht frische Zutaten für ein gutes Essen.",
+            "Für gutes Essen braucht man frische Zutaten.",
+            "Frische Zutaten braucht man für ein gutes Essen.",
+            "Für ein gutes Gericht braucht man frische Zutaten."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0091"
+            }
+          ],
+          "antwort": "de.b1.e11.s0092",
+          "ablenker": ["de.b1.e11.s0093", "de.b1.e11.s0094"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e11.s0151"
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a15",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0156",
+          "wort": 1,
+          "ablenker": ["wurde", "werden"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a16",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.schlagen", "de.b1.e11.grillen", "de.b1.e11.verwenden", "de.b1.e11.empfangen", "de.b1.e11.servieren"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a17",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.regional",
+          "ablenker": ["de.b1.e11.italienisch", "de.a2.e03.typisch"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a18",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e11.brett",
+          "ablenker": ["de.a1.e03.bett"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a19",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e11.s0031",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir essen hauptsächlich Gemüse und Fleisch nur selten.",
+            "Hauptsächlich essen wir Gemüse und nur selten Fleisch."
+          ],
+          "ablenker": ["Brot", "immer"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a20",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.nudeln",
+          "ablenker": ["de.a1.e05.reis", "de.a1.e05.brot"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a21",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0316"
+            }
+          ],
+          "antwort": "de.b1.e11.s0317",
+          "ablenker": ["de.b1.e11.s0090", "de.b1.e11.s0129"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a22",
+          "typ": "sprechen",
+          "satz": "de.b1.e11.s0311"
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a23",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0193",
+          "wort": 6,
+          "ablenker": ["kein", "keinen"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a24",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e11.s0194",
+          "ablenker": ["de.b1.e11.s0016", "de.b1.e11.s0192"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a25",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.kichererbse",
+          "ablenker": ["de.b1.e11.zucchini", "de.a1.e06.kartoffel"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a26",
+          "typ": "satzbau",
+          "ziel": "de.b1.e11.s0184",
+          "alternativen": [
+            "Auch wenn unsere Wohnung klein ist, empfangen wir gern Gäste.",
+            "Gern empfangen wir Gäste, auch wenn unsere Wohnung klein ist.",
+            "Wir empfangen Gäste gern, auch wenn unsere Wohnung klein ist."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a27",
+          "typ": "frei",
+          "ziel": "de.b1.e11.s0157",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a28",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.ueblich",
+          "ablenker": ["de.a1.e07.leicht", "de.a2.e14.sauer"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a29",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e11.s0007",
+          "ablenker": ["de.b1.e11.s0009", "de.b1.e11.s0008"]
+        },
+        {
+          "schluessel": "de.b1.e11.l07.a30",
+          "typ": "sprechen",
+          "satz": "de.b1.e11.s0047"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e11.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich Rezepte verstehe und Gäste bewirten kann.",
+        "tr": "Tarifleri anlayabildiğimi ve misafir ağırlayabildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أفهم الوصفات وأستطيع أن أستضيف الضيوف."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e11.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e11.zutat",
+          "ablenker": ["de.b1.e11.zubereitung", "de.a2.e05.rezept"]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e11.topf", "de.b1.e11.messer", "de.b1.e11.sieb", "de.b1.e11.pfanne", "de.b1.e11.schuessel"]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0318",
+          "wort": 2,
+          "ablenker": ["wird", "wurde"]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e11.s0328",
+          "ablenker": ["de.b1.e11.s0125", "de.b1.e11.s0123"]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0321"
+            }
+          ],
+          "antwort": "de.b1.e11.s0322",
+          "ablenker": ["de.b1.e11.s0323", "de.b1.e11.s0324"]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e11.s0319",
+          "nach": "ziel",
+          "ablenker": ["wird", "gemischte"]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e11.s0211",
+          "absaetze": ["de.b1.e11.s0212", "de.b1.e11.s0213", "de.b1.e11.s0214", "de.b1.e11.s0215", "de.b1.e11.s0216", "de.b1.e11.s0217"],
+          "glossen": ["de.b1.e01.aufbewahren"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e11.s0325",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e11.s0326",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e11.s0327",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a08",
+          "typ": "satzbau",
+          "ziel": "de.b1.e11.s0320",
+          "alternativen": ["Man mischt den gekochten Reis mit den Kräutern.", "Mit den Kräutern mischt man den gekochten Reis."]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e11.gewuerz",
+          "ablenker": ["de.a2.e03.menge", "de.a1.e05.teller"]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a10",
+          "typ": "frei",
+          "ziel": "de.b1.e11.s0328",
+          "nach": "ziel",
+          "alternativen": [
+            "Zuerst wird das Öl erhitzt, anschließend werden die Zwiebeln gebraten.",
+            "Zunächst wird das Öl erhitzt, dann werden die Zwiebeln gebraten.",
+            "Zuerst wird das Öl erhitzt, dann werden die Zwiebeln gebraten.",
+            "Zunächst wird das Öl erhitzt, danach werden die Zwiebeln gebraten.",
+            "Zuerst wird das Öl erhitzt, danach werden die Zwiebeln gebraten."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e11.s0205",
+          "ablenker": ["de.b1.e11.s0207", "de.b1.e11.s0192"]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e11.s0199"
+            }
+          ],
+          "antwort": "de.b1.e11.s0201",
+          "ablenker": ["de.b1.e11.s0189", "de.b1.e11.s0045"]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e11.s0197",
+          "wort": 1,
+          "ablenker": ["euer", "sich"]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e11.s0116"
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e11.topf",
+          "ablenker": ["de.a1.e11.kopf"]
+        },
+        {
+          "schluessel": "de.b1.e11.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e11.s0233"
+        }
+      ]
+    }
+  ]
+}
