@@ -217,9 +217,21 @@ Anfragen einer Welle gleichzeitig (Node `fetch` + `Promise.all`, keine neue Abh�
 
 | Nr. | Befund | Ursache | Behebung | Test | Vorher → nachher |
 |---|---|---|---|---|---|
-| – | (frühere Läufe) Sprechübung lud Modelldateien mehrfach | – | `a0795f7b` | Unit | im Netzprotokoll je Datei ein Abruf über das Netz (Seite und Service Worker zählen getrennt) |
+| B-1 | CLS 0,19 auf `/lern-app/tr/koran`, 0,151 auf `…/tipps?e=…` (Leistung 86 bzw. 87); kleiner auf den Sprach-Lernpfaden (0,029–0,067) | Insel lädt Verzeichnis bzw. Paket erst im Browser; der Fuß steht während „wird geladen“ im ersten Bildschirm und springt | `fc95e675`: Lernpfad-Abschnitt und Tipps reservieren eine Bildschirmhöhe (`min-h-svh`) – dieselbe Bauweise wie Üben, Einstufung und Wiederholen | `tests/unit/lernapp/platz-regeln.test.ts` (6 Fälle; ohne die Behebung 3 rot) | siehe Tabelle unten |
+| B-0 | (früherer Lauf dieses Pakets) Sprechübung lud Modelldateien mehrfach | – | `a0795f7b` | Unit `sprechen-einmal-laden` | im Netzprotokoll je Datei ein Abruf über das Netz (Seite und Service Worker zählen getrennt) |
 
-*weitere folgen nach Lighthouse und axe.*
+Nachmessung B-1 (zweiter Bau, Stand `fc95e675`, nur die betroffenen Routen, `MESS_FILTER`), Lighthouse mobil, Median aus 3:
+
+| Route | Leistung vorher → nachher | CLS vorher → nachher | LCP ms nachher | TBT ms nachher | Last max nachher |
+|---|---|---|---|---|---|
+| `/lern-app/tr/koran` | 86 → **92** | 0,19 → **0** | 1872 | 292 | 3,05 |
+| `/lern-app/de/tr-aus-de/tipps?e=tr.a1.e01` | 87 → **93** | 0,151 → **0** | 1798 | 276 | 3,36 |
+| `/lern-app/de/tr-aus-de` | 93 → 94 | 0,029 → **0** | 1826 | 231 | 3,80 |
+| `/lern-app/tr/de-aus-tr` | 94 → 94 | 0,031 → **0** | 1911 | 220 | 2,78 |
+| `/lern-app/ar/de-aus-ar` (RTL) | 92 → 93 | 0,067 → **0** | 1899 | 250 | 3,55 |
+| `/lern-app/de/islam` | 96 → 95 | 0 → 0 | 1861 | 210 | 2,94 |
+
+Zugänglichkeit, Best Practices und SEO unverändert 100 (Tipps `noindex`). JS unverändert (nur eine Klasse).
 
 ## 10. Offene Befunde und Vorschläge
 
