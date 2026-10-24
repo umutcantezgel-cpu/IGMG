@@ -1,0 +1,5355 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e13",
+    "reihenfolge": 14,
+    "thema": {
+      "de": "Anträge und Fristen",
+      "tr": "Başvurular ve son tarihler",
+      "ar": "الطلبات والمواعيد النهائية"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann einen einfachen Antrag stellen und verstehen, welche Unterlagen und Fristen nötig sind.",
+        "tr": "Basit bir başvuru yapabilir ve hangi belgelerin ve son tarihlerin gerekli olduğunu anlayabilirim.",
+        "ar": "أستطيع أن أقدّم طلبًا بسيطًا وأن أفهم ما هي الأوراق والمواعيد النهائية المطلوبة."
+      },
+      {
+        "de": "Ich kann bei einer Behörde telefonisch nachfragen, wie weit mein Antrag bearbeitet ist.",
+        "tr": "Bir resmî daireyi telefonla arayıp başvurumun ne kadar işlendiğini sorabilirim.",
+        "ar": "أستطيع أن أستفسر بالهاتف لدى دائرة رسمية عن مدى التقدّم في معالجة طلبي."
+      }
+    ],
+    "symbol": "file-text",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e13.jedoch",
+      "lemma": "jedoch",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Verbindungsadverb (Gegensatz, Schriftsprache)"
+      },
+      "frequenzRang": 206,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.insbesondere",
+      "lemma": "insbesondere",
+      "wortart": "adverb",
+      "frequenzRang": 562,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.lediglich",
+      "lemma": "lediglich",
+      "wortart": "adverb",
+      "frequenzRang": 800,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.soweit",
+      "lemma": "soweit",
+      "wortart": "adverb",
+      "frequenzRang": 802,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.derzeit",
+      "lemma": "derzeit",
+      "wortart": "adverb",
+      "frequenzRang": 976,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.stets",
+      "lemma": "stets",
+      "wortart": "adverb",
+      "frequenzRang": 1103,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.wiederum",
+      "lemma": "wiederum",
+      "wortart": "adverb",
+      "frequenzRang": 1219,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.ausschliesslich",
+      "lemma": "ausschließlich",
+      "wortart": "adverb",
+      "frequenzRang": 1131,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.mehrfach",
+      "lemma": "mehrfach",
+      "wortart": "adverb",
+      "frequenzRang": 1426,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.vorgehen",
+      "lemma": "Vorgehen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Vorgehens"
+      },
+      "frequenzRang": 1870,
+      "quelle": "wiktionary:de:Vorgehen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vorgehen‘ (https://de.wiktionary.org/wiki/Vorgehen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.innerhalb",
+      "lemma": "innerhalb",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Genitiv (innerhalb einer Woche)"
+      },
+      "frequenzRang": 487,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.ausserhalb",
+      "lemma": "außerhalb",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Genitiv (außerhalb der Öffnungszeiten)"
+      },
+      "frequenzRang": 1034,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.allgemein",
+      "lemma": "allgemein",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "allgemeine",
+        "endung_en": "allgemeinen",
+        "endung_er": "allgemeiner",
+        "endung_es": "allgemeines",
+        "endung_em": "allgemeinem",
+        "komparativ": "allgemeiner",
+        "superlativ": "allgemeinsten",
+        "superlativ_e": "allgemeinste"
+      },
+      "frequenzRang": 403,
+      "quelle": "wiktionary:de:allgemein",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚allgemein‘ (https://de.wiktionary.org/wiki/allgemein), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.entsprechend",
+      "lemma": "entsprechend",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "entsprechende",
+        "endung_en": "entsprechenden",
+        "endung_er": "entsprechender",
+        "endung_es": "entsprechendes",
+        "endung_em": "entsprechendem"
+      },
+      "frequenzRang": 404,
+      "quelle": "wiktionary:de:entsprechend",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚entsprechend‘ (https://de.wiktionary.org/wiki/entsprechend), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.offiziell",
+      "lemma": "offiziell",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "offizielle",
+        "endung_en": "offiziellen",
+        "endung_er": "offizieller",
+        "endung_es": "offizielles",
+        "endung_em": "offiziellem"
+      },
+      "frequenzRang": 662,
+      "quelle": "wiktionary:de:offiziell",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚offiziell‘ (https://de.wiktionary.org/wiki/offiziell), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.wesentlich",
+      "lemma": "wesentlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "wesentliche",
+        "endung_en": "wesentlichen",
+        "endung_er": "wesentlicher",
+        "endung_es": "wesentliches",
+        "endung_em": "wesentlichem",
+        "komparativ": "wesentlicher",
+        "superlativ": "wesentlichsten",
+        "superlativ_e": "wesentlichste"
+      },
+      "frequenzRang": 684,
+      "quelle": "wiktionary:de:wesentlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wesentlich‘ (https://de.wiktionary.org/wiki/wesentlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.vorhanden",
+      "lemma": "vorhanden",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "vorhandene",
+        "endung_en": "vorhandenen",
+        "endung_er": "vorhandener",
+        "endung_es": "vorhandenes",
+        "endung_em": "vorhandenem"
+      },
+      "frequenzRang": 788,
+      "quelle": "wiktionary:de:vorhanden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vorhanden‘ (https://de.wiktionary.org/wiki/vorhanden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.vollstaendig",
+      "lemma": "vollständig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "vollständige",
+        "endung_en": "vollständigen",
+        "endung_er": "vollständiger",
+        "endung_es": "vollständiges",
+        "endung_em": "vollständigem"
+      },
+      "frequenzRang": 961,
+      "quelle": "wiktionary:de:vollständig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vollständig‘ (https://de.wiktionary.org/wiki/vollständig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.erforderlich",
+      "lemma": "erforderlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "erforderliche",
+        "endung_en": "erforderlichen",
+        "endung_er": "erforderlicher",
+        "endung_es": "erforderliches",
+        "endung_em": "erforderlichem"
+      },
+      "frequenzRang": 1395,
+      "quelle": "wiktionary:de:erforderlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erforderlich‘ (https://de.wiktionary.org/wiki/erforderlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.endgueltig",
+      "lemma": "endgültig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "endgültige",
+        "endung_en": "endgültigen",
+        "endung_er": "endgültiger",
+        "endung_es": "endgültiges",
+        "endung_em": "endgültigem"
+      },
+      "frequenzRang": 1734,
+      "quelle": "wiktionary:de:endgültig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚endgültig‘ (https://de.wiktionary.org/wiki/endgültig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.ausfuehrlich",
+      "lemma": "ausführlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ausführliche",
+        "endung_en": "ausführlichen",
+        "endung_er": "ausführlicher",
+        "endung_es": "ausführliches",
+        "endung_em": "ausführlichem",
+        "komparativ": "ausführlicher",
+        "superlativ": "ausführlichsten",
+        "superlativ_e": "ausführlichste"
+      },
+      "frequenzRang": 1901,
+      "quelle": "wiktionary:de:ausführlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ausführlich‘ (https://de.wiktionary.org/wiki/ausführlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.korrekt",
+      "lemma": "korrekt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "korrekte",
+        "endung_en": "korrekten",
+        "endung_er": "korrekter",
+        "endung_es": "korrektes",
+        "endung_em": "korrektem",
+        "komparativ": "korrekter",
+        "superlativ": "korrektesten",
+        "superlativ_e": "korrekteste"
+      },
+      "frequenzRang": 1983,
+      "quelle": "wiktionary:de:korrekt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚korrekt‘ (https://de.wiktionary.org/wiki/korrekt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.sonstig",
+      "lemma": "sonstig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "sonstige",
+        "endung_en": "sonstigen",
+        "endung_er": "sonstiger",
+        "endung_es": "sonstiges",
+        "endung_em": "sonstigem"
+      },
+      "frequenzRang": 1615,
+      "quelle": "wiktionary:de:sonstig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚sonstig‘ (https://de.wiktionary.org/wiki/sonstig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.auslaendisch",
+      "lemma": "ausländisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ausländische",
+        "endung_en": "ausländischen",
+        "endung_er": "ausländischer",
+        "endung_es": "ausländisches",
+        "endung_em": "ausländischem"
+      },
+      "frequenzRang": 1945,
+      "quelle": "wiktionary:de:ausländisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ausländisch‘ (https://de.wiktionary.org/wiki/ausländisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.maennlich",
+      "lemma": "männlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "männliche",
+        "endung_en": "männlichen",
+        "endung_er": "männlicher",
+        "endung_es": "männliches",
+        "endung_em": "männlichem"
+      },
+      "frequenzRang": 1476,
+      "quelle": "wiktionary:de:männlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚männlich‘ (https://de.wiktionary.org/wiki/männlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.weiblich",
+      "lemma": "weiblich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "weibliche",
+        "endung_en": "weiblichen",
+        "endung_er": "weiblicher",
+        "endung_es": "weibliches",
+        "endung_em": "weiblichem"
+      },
+      "frequenzRang": 1430,
+      "quelle": "wiktionary:de:weiblich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚weiblich‘ (https://de.wiktionary.org/wiki/weiblich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.divers",
+      "lemma": "divers",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "gebrauch": "unveränderlich (Geschlecht: divers)"
+      },
+      "frequenzRang": 1502,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.ungueltig",
+      "lemma": "ungültig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ungültige",
+        "endung_en": "ungültigen",
+        "endung_er": "ungültiger",
+        "endung_es": "ungültiges",
+        "endung_em": "ungültigem"
+      },
+      "frequenzRang": 8527,
+      "quelle": "wiktionary:de:ungültig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ungültig‘ (https://de.wiktionary.org/wiki/ungültig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.aktenzeichen",
+      "lemma": "Aktenzeichen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Aktenzeichen"
+      },
+      "formen": {
+        "gen_sg": "Aktenzeichens"
+      },
+      "frequenzRang": 26371,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.reihe",
+      "lemma": "Reihe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Reihen"
+      },
+      "formen": {
+        "pl": "Reihen"
+      },
+      "frequenzRang": 690,
+      "quelle": "wiktionary:de:Reihe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Reihe‘ (https://de.wiktionary.org/wiki/Reihe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.verfuegung",
+      "lemma": "Verfügung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Verfügungen"
+      },
+      "formen": {
+        "pl": "Verfügungen"
+      },
+      "frequenzRang": 810,
+      "quelle": "wiktionary:de:Verfügung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verfügung‘ (https://de.wiktionary.org/wiki/Verfügung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.verfahren",
+      "lemma": "Verfahren",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Verfahren"
+      },
+      "formen": {
+        "gen_sg": "Verfahrens"
+      },
+      "frequenzRang": 838,
+      "quelle": "wiktionary:de:Verfahren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verfahren‘ (https://de.wiktionary.org/wiki/Verfahren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.anspruch",
+      "lemma": "Anspruch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Ansprüche"
+      },
+      "formen": {
+        "pl": "Ansprüche",
+        "dat_pl": "Ansprüchen",
+        "gen_sg": "Anspruchs",
+        "gen_sg_2": "Anspruches"
+      },
+      "frequenzRang": 915,
+      "quelle": "wiktionary:de:Anspruch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anspruch‘ (https://de.wiktionary.org/wiki/Anspruch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.zeitpunkt",
+      "lemma": "Zeitpunkt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zeitpunkte"
+      },
+      "formen": {
+        "pl": "Zeitpunkte",
+        "dat_pl": "Zeitpunkten",
+        "gen_sg": "Zeitpunkts",
+        "gen_sg_2": "Zeitpunktes"
+      },
+      "frequenzRang": 984,
+      "quelle": "wiktionary:de:Zeitpunkt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zeitpunkt‘ (https://de.wiktionary.org/wiki/Zeitpunkt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.aenderung",
+      "lemma": "Änderung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Änderungen"
+      },
+      "formen": {
+        "pl": "Änderungen"
+      },
+      "frequenzRang": 1253,
+      "quelle": "wiktionary:de:Änderung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Änderung‘ (https://de.wiktionary.org/wiki/Änderung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.anzahl",
+      "lemma": "Anzahl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 1012,
+      "quelle": "wiktionary:de:Anzahl",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anzahl‘ (https://de.wiktionary.org/wiki/Anzahl), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.ausnahme",
+      "lemma": "Ausnahme",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ausnahmen"
+      },
+      "formen": {
+        "pl": "Ausnahmen"
+      },
+      "frequenzRang": 1307,
+      "quelle": "wiktionary:de:Ausnahme",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ausnahme‘ (https://de.wiktionary.org/wiki/Ausnahme), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.detail",
+      "lemma": "Detail",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Details"
+      },
+      "formen": {
+        "pl": "Details",
+        "gen_sg": "Details"
+      },
+      "frequenzRang": 1349,
+      "quelle": "wiktionary:de:Detail",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Detail‘ (https://de.wiktionary.org/wiki/Detail), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.regelung",
+      "lemma": "Regelung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Regelungen"
+      },
+      "formen": {
+        "pl": "Regelungen"
+      },
+      "frequenzRang": 1755,
+      "quelle": "wiktionary:de:Regelung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Regelung‘ (https://de.wiktionary.org/wiki/Regelung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.abschnitt",
+      "lemma": "Abschnitt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Abschnitte"
+      },
+      "formen": {
+        "pl": "Abschnitte",
+        "dat_pl": "Abschnitten",
+        "gen_sg": "Abschnitts",
+        "gen_sg_2": "Abschnittes"
+      },
+      "frequenzRang": 1585,
+      "quelle": "wiktionary:de:Abschnitt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abschnitt‘ (https://de.wiktionary.org/wiki/Abschnitt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.zeitraum",
+      "lemma": "Zeitraum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zeiträume"
+      },
+      "formen": {
+        "pl": "Zeiträume",
+        "dat_pl": "Zeiträumen",
+        "gen_sg": "Zeitraums",
+        "gen_sg_2": "Zeitraumes"
+      },
+      "frequenzRang": 1890,
+      "quelle": "wiktionary:de:Zeitraum",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zeitraum‘ (https://de.wiktionary.org/wiki/Zeitraum), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.dauer",
+      "lemma": "Dauer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 1806,
+      "quelle": "wiktionary:de:Dauer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Dauer‘ (https://de.wiktionary.org/wiki/Dauer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.verwaltung",
+      "lemma": "Verwaltung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Verwaltungen"
+      },
+      "formen": {
+        "pl": "Verwaltungen"
+      },
+      "frequenzRang": 1299,
+      "quelle": "wiktionary:de:Verwaltung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verwaltung‘ (https://de.wiktionary.org/wiki/Verwaltung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.geschlecht",
+      "lemma": "Geschlecht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Geschlechter"
+      },
+      "formen": {
+        "pl": "Geschlechter",
+        "dat_pl": "Geschlechtern",
+        "gen_sg": "Geschlechts",
+        "gen_sg_2": "Geschlechtes"
+      },
+      "frequenzRang": 1580,
+      "quelle": "wiktionary:de:Geschlecht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Geschlecht‘ (https://de.wiktionary.org/wiki/Geschlecht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.frist",
+      "lemma": "Frist",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Fristen"
+      },
+      "formen": {
+        "pl": "Fristen"
+      },
+      "frequenzRang": 4260,
+      "quelle": "wiktionary:de:Frist",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Frist‘ (https://de.wiktionary.org/wiki/Frist), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.bescheinigung",
+      "lemma": "Bescheinigung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bescheinigungen"
+      },
+      "formen": {
+        "pl": "Bescheinigungen"
+      },
+      "frequenzRang": 11445,
+      "quelle": "wiktionary:de:Bescheinigung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bescheinigung‘ (https://de.wiktionary.org/wiki/Bescheinigung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.bescheid",
+      "lemma": "Bescheid",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Bescheide"
+      },
+      "formen": {
+        "pl": "Bescheide",
+        "dat_pl": "Bescheiden",
+        "gen_sg": "Bescheides"
+      },
+      "frequenzRang": 2234,
+      "quelle": "wiktionary:de:Bescheid",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bescheid‘ (https://de.wiktionary.org/wiki/Bescheid), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.genehmigung",
+      "lemma": "Genehmigung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Genehmigungen"
+      },
+      "formen": {
+        "pl": "Genehmigungen"
+      },
+      "frequenzRang": 3126,
+      "quelle": "wiktionary:de:Genehmigung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Genehmigung‘ (https://de.wiktionary.org/wiki/Genehmigung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.nachweis",
+      "lemma": "Nachweis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Nachweise"
+      },
+      "formen": {
+        "pl": "Nachweise",
+        "dat_pl": "Nachweisen",
+        "gen_sg": "Nachweises"
+      },
+      "frequenzRang": 3536,
+      "quelle": "wiktionary:de:Nachweis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nachweis‘ (https://de.wiktionary.org/wiki/Nachweis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.verlaengerung",
+      "lemma": "Verlängerung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Verlängerungen"
+      },
+      "formen": {
+        "pl": "Verlängerungen"
+      },
+      "frequenzRang": 3413,
+      "quelle": "wiktionary:de:Verlängerung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verlängerung‘ (https://de.wiktionary.org/wiki/Verlängerung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.anliegen",
+      "lemma": "Anliegen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Anliegen"
+      },
+      "formen": {
+        "gen_sg": "Anliegens"
+      },
+      "frequenzRang": 3455,
+      "quelle": "wiktionary:de:Anliegen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anliegen‘ (https://de.wiktionary.org/wiki/Anliegen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.widerspruch",
+      "lemma": "Widerspruch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Widersprüche"
+      },
+      "formen": {
+        "pl": "Widersprüche",
+        "dat_pl": "Widersprüchen",
+        "gen_sg": "Widerspruchs",
+        "gen_sg_2": "Widerspruches"
+      },
+      "frequenzRang": 2540,
+      "quelle": "wiktionary:de:Widerspruch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Widerspruch‘ (https://de.wiktionary.org/wiki/Widerspruch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.urkunde",
+      "lemma": "Urkunde",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Urkunden"
+      },
+      "formen": {
+        "pl": "Urkunden"
+      },
+      "frequenzRang": 4398,
+      "quelle": "wiktionary:de:Urkunde",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Urkunde‘ (https://de.wiktionary.org/wiki/Urkunde), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.akte",
+      "lemma": "Akte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Akten"
+      },
+      "formen": {
+        "pl": "Akten"
+      },
+      "frequenzRang": 8536,
+      "quelle": "wiktionary:de:Akte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Akte‘ (https://de.wiktionary.org/wiki/Akte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.wohnsitz",
+      "lemma": "Wohnsitz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Wohnsitze"
+      },
+      "formen": {
+        "pl": "Wohnsitze",
+        "dat_pl": "Wohnsitzen",
+        "gen_sg": "Wohnsitzes"
+      },
+      "frequenzRang": 6548,
+      "quelle": "wiktionary:de:Wohnsitz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wohnsitz‘ (https://de.wiktionary.org/wiki/Wohnsitz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.anschrift",
+      "lemma": "Anschrift",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Anschriften"
+      },
+      "formen": {
+        "pl": "Anschriften"
+      },
+      "frequenzRang": 10579,
+      "quelle": "wiktionary:de:Anschrift",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anschrift‘ (https://de.wiktionary.org/wiki/Anschrift), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.personalausweis",
+      "lemma": "Personalausweis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Personalausweise"
+      },
+      "formen": {
+        "pl": "Personalausweise",
+        "dat_pl": "Personalausweisen",
+        "gen_sg": "Personalausweises"
+      },
+      "frequenzRang": 21083,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.aufenthaltserlaubnis",
+      "lemma": "Aufenthaltserlaubnis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Aufenthaltserlaubnisse"
+      },
+      "formen": {
+        "pl": "Aufenthaltserlaubnisse",
+        "dat_pl": "Aufenthaltserlaubnissen"
+      },
+      "frequenzRang": 44567,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.mahnung",
+      "lemma": "Mahnung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Mahnungen"
+      },
+      "formen": {
+        "pl": "Mahnungen"
+      },
+      "frequenzRang": 9677,
+      "quelle": "wiktionary:de:Mahnung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mahnung‘ (https://de.wiktionary.org/wiki/Mahnung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.bearbeitung",
+      "lemma": "Bearbeitung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bearbeitungen"
+      },
+      "formen": {
+        "pl": "Bearbeitungen"
+      },
+      "frequenzRang": 3488,
+      "quelle": "wiktionary:de:Bearbeitung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bearbeitung‘ (https://de.wiktionary.org/wiki/Bearbeitung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.ablehnung",
+      "lemma": "Ablehnung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ablehnungen"
+      },
+      "formen": {
+        "pl": "Ablehnungen"
+      },
+      "frequenzRang": 3781,
+      "quelle": "wiktionary:de:Ablehnung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ablehnung‘ (https://de.wiktionary.org/wiki/Ablehnung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.zustimmung",
+      "lemma": "Zustimmung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Zustimmungen"
+      },
+      "formen": {
+        "pl": "Zustimmungen"
+      },
+      "frequenzRang": 2056,
+      "quelle": "wiktionary:de:Zustimmung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zustimmung‘ (https://de.wiktionary.org/wiki/Zustimmung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.vollmacht",
+      "lemma": "Vollmacht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Vollmächte"
+      },
+      "formen": {
+        "pl": "Vollmächte",
+        "dat_pl": "Vollmächten"
+      },
+      "frequenzRang": 21540,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.dolmetscher",
+      "lemma": "Dolmetscher",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Dolmetscher",
+        "weiblich": "Dolmetscherin"
+      },
+      "formen": {
+        "dat_pl": "Dolmetschern",
+        "gen_sg": "Dolmetschers",
+        "weiblich": "Dolmetscherin",
+        "weiblich_pl": "Dolmetscherinnen"
+      },
+      "frequenzRang": 10499,
+      "quelle": "wiktionary:de:Dolmetscher",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Dolmetscher‘ (https://de.wiktionary.org/wiki/Dolmetscher), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.saemtlich",
+      "lemma": "sämtlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "sämtliche",
+        "endung_en": "sämtlichen",
+        "endung_er": "sämtlicher",
+        "endung_es": "sämtliches",
+        "endung_em": "sämtlichem"
+      },
+      "frequenzRang": 1582,
+      "quelle": "wiktionary:de:sämtlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚sämtlich‘ (https://de.wiktionary.org/wiki/sämtlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.kindergeld",
+      "lemma": "Kindergeld",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Kindergelds",
+        "gen_sg_2": "Kindergeldes"
+      },
+      "frequenzRang": 9721,
+      "quelle": "wiktionary:de:Kindergeld",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kindergeld‘ (https://de.wiktionary.org/wiki/Kindergeld), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.finanzamt",
+      "lemma": "Finanzamt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Finanzämter"
+      },
+      "formen": {
+        "pl": "Finanzämter",
+        "dat_pl": "Finanzämtern",
+        "gen_sg": "Finanzamts",
+        "gen_sg_2": "Finanzamtes"
+      },
+      "frequenzRang": 6417,
+      "quelle": "wiktionary:de:Finanzamt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Finanzamt‘ (https://de.wiktionary.org/wiki/Finanzamt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.steuererklaerung",
+      "lemma": "Steuererklärung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Steuererklärungen"
+      },
+      "formen": {
+        "pl": "Steuererklärungen"
+      },
+      "frequenzRang": 9969,
+      "quelle": "wiktionary:de:Steuererklärung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Steuererklärung‘ (https://de.wiktionary.org/wiki/Steuererklärung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.jobcenter",
+      "lemma": "Jobcenter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Jobcenter"
+      },
+      "formen": {
+        "dat_pl": "Jobcentern",
+        "gen_sg": "Jobcenters"
+      },
+      "frequenzRang": 7253,
+      "quelle": "wiktionary:de:Jobcenter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Jobcenter‘ (https://de.wiktionary.org/wiki/Jobcenter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.auslaenderbehoerde",
+      "lemma": "Ausländerbehörde",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ausländerbehörden"
+      },
+      "formen": {
+        "pl": "Ausländerbehörden"
+      },
+      "frequenzRang": 38077,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.sprachkurs",
+      "lemma": "Sprachkurs",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Sprachkurse"
+      },
+      "formen": {
+        "pl": "Sprachkurse",
+        "dat_pl": "Sprachkursen",
+        "gen_sg": "Sprachkurses"
+      },
+      "frequenzRang": 31362,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.integrationskurs",
+      "lemma": "Integrationskurs",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Integrationskurse"
+      },
+      "formen": {
+        "pl": "Integrationskurse",
+        "dat_pl": "Integrationskursen",
+        "gen_sg": "Integrationskurses"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.betreffen",
+      "lemma": "betreffen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "betreffen",
+        "praes_ich": "betreffe",
+        "praes_du": "betriffst",
+        "praes_er_sie_es": "betrifft",
+        "praes_wir": "betreffen",
+        "praes_ihr": "betrefft",
+        "praes_sie_Sie": "betreffen",
+        "praet_ich_er_sie_es": "betraf",
+        "praet_du": "betrafst",
+        "praet_wir_sie_Sie": "betrafen",
+        "praet_ihr": "betraft",
+        "partizip_2": "betroffen"
+      },
+      "frequenzRang": 881,
+      "quelle": "wiktionary:de:betreffen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚betreffen‘ (https://de.wiktionary.org/wiki/betreffen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.entsprechen",
+      "lemma": "entsprechen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "entsprechen",
+        "praes_ich": "entspreche",
+        "praes_du": "entsprichst",
+        "praes_er_sie_es": "entspricht",
+        "praes_wir": "entsprechen",
+        "praes_ihr": "entsprecht",
+        "praes_sie_Sie": "entsprechen",
+        "praet_ich_er_sie_es": "entsprach",
+        "praet_du": "entsprachst",
+        "praet_wir_sie_Sie": "entsprachen",
+        "praet_ihr": "entspracht",
+        "partizip_2": "entsprochen"
+      },
+      "frequenzRang": 973,
+      "quelle": "wiktionary:de:entsprechen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚entsprechen‘ (https://de.wiktionary.org/wiki/entsprechen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.verpflichten",
+      "lemma": "verpflichten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verpflichten",
+        "praes_ich": "verpflichte",
+        "praes_du": "verpflichtest",
+        "praes_er_sie_es": "verpflichtet",
+        "praes_wir": "verpflichten",
+        "praes_ihr": "verpflichtet",
+        "praes_sie_Sie": "verpflichten",
+        "praet_ich_er_sie_es": "verpflichtete",
+        "praet_du": "verpflichtetest",
+        "praet_wir_sie_Sie": "verpflichteten",
+        "praet_ihr": "verpflichtetet",
+        "partizip_2": "verpflichtet"
+      },
+      "frequenzRang": 1455,
+      "quelle": "wiktionary:de:verpflichten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verpflichten‘ (https://de.wiktionary.org/wiki/verpflichten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.ergaenzen",
+      "lemma": "ergänzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "ergänzen",
+        "praes_ich": "ergänze",
+        "praes_du": "ergänzt",
+        "praes_er_sie_es": "ergänzt",
+        "praes_wir": "ergänzen",
+        "praes_ihr": "ergänzt",
+        "praes_sie_Sie": "ergänzen",
+        "praet_ich_er_sie_es": "ergänzte",
+        "praet_du": "ergänztest",
+        "praet_wir_sie_Sie": "ergänzten",
+        "praet_ihr": "ergänztet",
+        "partizip_2": "ergänzt",
+        "imp_du": "ergänz",
+        "imp_ihr": "ergänzt"
+      },
+      "frequenzRang": 1851,
+      "quelle": "wiktionary:de:ergänzen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ergänzen‘ (https://de.wiktionary.org/wiki/ergänzen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.angeben",
+      "lemma": "angeben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an",
+        "unregelmaessig_praesens": "ja",
+        "grundverb": "geben (de.a1.e06.geben)"
+      },
+      "formen": {
+        "infinitiv": "angeben",
+        "verbzusatz": "an",
+        "partizip_2": "angegeben",
+        "zu_infinitiv": "anzugeben",
+        "nebensatz_er_sie_es": "angibt",
+        "nebensatz_praet": "angab",
+        "nebensatz_praet_pl": "angaben"
+      },
+      "frequenzRang": 1743,
+      "quelle": "wiktionary:de:angeben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚angeben‘ (https://de.wiktionary.org/wiki/angeben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.wenden",
+      "lemma": "wenden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "wenden",
+        "praes_ich": "wende",
+        "praes_du": "wendest",
+        "praes_er_sie_es": "wendet",
+        "praes_wir": "wenden",
+        "praes_ihr": "wendet",
+        "praes_sie_Sie": "wenden",
+        "praet_ich_er_sie_es": "wandte",
+        "praet_du": "wandtest",
+        "praet_wir_sie_Sie": "wandten",
+        "praet_ihr": "wandtet",
+        "partizip_2": "gewandt",
+        "imp_du": "wende",
+        "imp_ihr": "wendet",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 1368,
+      "quelle": "wiktionary:de:wenden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wenden‘ (https://de.wiktionary.org/wiki/wenden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.einreichen",
+      "lemma": "einreichen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ein",
+        "grundverb": "reichen (de.a1.e06.reichen)"
+      },
+      "formen": {
+        "infinitiv": "einreichen",
+        "verbzusatz": "ein",
+        "partizip_2": "eingereicht",
+        "zu_infinitiv": "einzureichen",
+        "nebensatz_er_sie_es": "einreicht",
+        "nebensatz_praet": "einreichte",
+        "nebensatz_praet_pl": "einreichten"
+      },
+      "frequenzRang": 4240,
+      "quelle": "wiktionary:de:einreichen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚einreichen‘ (https://de.wiktionary.org/wiki/einreichen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.verlaengern",
+      "lemma": "verlängern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verlängern",
+        "praes_ich": "verlängere",
+        "praes_du": "verlängerst",
+        "praes_er_sie_es": "verlängert",
+        "praes_wir": "verlängern",
+        "praes_ihr": "verlängert",
+        "praes_sie_Sie": "verlängern",
+        "praet_ich_er_sie_es": "verlängerte",
+        "praet_du": "verlängertest",
+        "praet_wir_sie_Sie": "verlängerten",
+        "praet_ihr": "verlängertet",
+        "partizip_2": "verlängert"
+      },
+      "frequenzRang": 2168,
+      "quelle": "wiktionary:de:verlängern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verlängern‘ (https://de.wiktionary.org/wiki/verlängern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.genehmigen",
+      "lemma": "genehmigen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "genehmigen",
+        "praes_ich": "genehmige",
+        "praes_du": "genehmigst",
+        "praes_er_sie_es": "genehmigt",
+        "praes_wir": "genehmigen",
+        "praes_ihr": "genehmigt",
+        "praes_sie_Sie": "genehmigen",
+        "praet_ich_er_sie_es": "genehmigte",
+        "praet_du": "genehmigtest",
+        "praet_wir_sie_Sie": "genehmigten",
+        "praet_ihr": "genehmigtet",
+        "partizip_2": "genehmigt"
+      },
+      "frequenzRang": 3767,
+      "quelle": "wiktionary:de:genehmigen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚genehmigen‘ (https://de.wiktionary.org/wiki/genehmigen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.nachweisen",
+      "lemma": "nachweisen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "nach"
+      },
+      "formen": {
+        "infinitiv": "nachweisen",
+        "verbzusatz": "nach",
+        "praes_ich": "weise",
+        "praes_du": "weist",
+        "praes_er_sie_es": "weist",
+        "praes_wir": "weisen",
+        "praes_ihr": "weist",
+        "praes_sie_Sie": "weisen",
+        "praet_ich_er_sie_es": "wies",
+        "praet_du": "wiesest",
+        "praet_wir_sie_Sie": "wiesen",
+        "praet_ihr": "wiest",
+        "partizip_2": "nachgewiesen",
+        "zu_infinitiv": "nachzuweisen",
+        "nebensatz_er_sie_es": "nachweist",
+        "nebensatz_praet": "nachwies",
+        "nebensatz_praet_pl": "nachwiesen"
+      },
+      "frequenzRang": 2297,
+      "quelle": "wiktionary:de:nachweisen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚nachweisen‘ (https://de.wiktionary.org/wiki/nachweisen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.ablaufen",
+      "lemma": "ablaufen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "ab",
+        "unregelmaessig_praesens": "ja",
+        "grundverb": "laufen (de.a1.e08.laufen)"
+      },
+      "formen": {
+        "infinitiv": "ablaufen",
+        "verbzusatz": "ab",
+        "partizip_2": "abgelaufen",
+        "zu_infinitiv": "abzulaufen",
+        "nebensatz_er_sie_es": "abläuft",
+        "nebensatz_praet": "ablief",
+        "nebensatz_praet_pl": "abliefen"
+      },
+      "frequenzRang": 3489,
+      "quelle": "wiktionary:de:ablaufen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ablaufen‘ (https://de.wiktionary.org/wiki/ablaufen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.bearbeiten",
+      "lemma": "bearbeiten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bearbeiten",
+        "praes_ich": "bearbeite",
+        "praes_du": "bearbeitest",
+        "praes_er_sie_es": "bearbeitet",
+        "praes_wir": "bearbeiten",
+        "praes_ihr": "bearbeitet",
+        "praes_sie_Sie": "bearbeiten",
+        "praet_ich_er_sie_es": "bearbeitete",
+        "praet_du": "bearbeitetest",
+        "praet_wir_sie_Sie": "bearbeiteten",
+        "praet_ihr": "bearbeitetet",
+        "partizip_2": "bearbeitet"
+      },
+      "frequenzRang": 2303,
+      "quelle": "wiktionary:de:bearbeiten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bearbeiten‘ (https://de.wiktionary.org/wiki/bearbeiten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.ankreuzen",
+      "lemma": "ankreuzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an"
+      },
+      "formen": {
+        "infinitiv": "ankreuzen",
+        "verbzusatz": "an",
+        "praes_ich": "kreuze",
+        "praes_du": "kreuzt",
+        "praes_er_sie_es": "kreuzt",
+        "praes_wir": "kreuzen",
+        "praes_ihr": "kreuzt",
+        "praes_sie_Sie": "kreuzen",
+        "praet_ich_er_sie_es": "kreuzte",
+        "praet_du": "kreuztest",
+        "praet_wir_sie_Sie": "kreuzten",
+        "praet_ihr": "kreuztet",
+        "partizip_2": "angekreuzt",
+        "zu_infinitiv": "anzukreuzen",
+        "nebensatz_er_sie_es": "ankreuzt",
+        "nebensatz_praet": "ankreuzte",
+        "nebensatz_praet_pl": "ankreuzten",
+        "imp_du": "kreuz",
+        "imp_ihr": "kreuzt"
+      },
+      "frequenzRang": 36276,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e13.s0001",
+      "text": "Für den Antrag brauche ich eine Bescheinigung von der Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0002",
+      "text": "Die Bescheinigung vom Arbeitgeber ist schon unterschrieben, Sie können sie mitnehmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0003",
+      "text": "Die Bescheinigung wird gerade noch unterschrieben, warten Sie bitte einen Moment.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0004",
+      "text": "Als Nachweis über das Gehalt reicht eine Bescheinigung vom Arbeitgeber.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0005",
+      "text": "Für die Anmeldung braucht man einen Nachweis über die Wohnung, zum Beispiel den Mietvertrag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0006",
+      "text": "Nach der Geburt eines Kindes bekommen die Eltern eine Urkunde vom Amt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0007",
+      "text": "Bringen Sie bitte die Urkunde im Original und eine Kopie mit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0008",
+      "text": "Die Urkunde ist auf Arabisch, deshalb braucht das Amt eine Übersetzung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0009",
+      "text": "Ist Ihr Personalausweis noch gültig?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0010",
+      "text": "In Deutschland braucht man ab 16 Jahren einen Personalausweis oder einen Pass.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0011",
+      "text": "Bitte geben Sie im Formular Ihre neue Anschrift an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0012",
+      "text": "Die Anschrift des Amtes steht oben auf dem Brief.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0013",
+      "text": "Wenn sich Ihre Anschrift ändert, müssen Sie das dem Amt mitteilen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0014",
+      "text": "Einen neuen Wohnsitz muss man innerhalb von zwei Wochen beim Bürgeramt anmelden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0015",
+      "text": "Im Feld „Geschlecht“ kann man „männlich“, „weiblich“ oder „divers“ ankreuzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0016",
+      "text": "Die Angabe zum Geschlecht steht auch im Personalausweis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0017",
+      "text": "Beim Geschlecht gibt es im Formular drei Felder: männlich, weiblich und divers.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0018",
+      "text": "Für ihren Sohn kreuzt Frau Polat das Feld „männlich“ an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0019",
+      "text": "Viele Berufe haben eine männliche und eine weibliche Form, zum Beispiel Lehrer und Lehrerin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0020",
+      "text": "Das Wort „Antrag“ ist männlich, das Wort „Frist“ ist weiblich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0021",
+      "text": "Kreuzen Sie die richtige Antwort an.",
+      "quelle": "tatoeba:905529",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #905529 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e13.s0022",
+      "text": "Das Feld „ledig“ ist schon angekreuzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0023",
+      "text": "Dieses Problem ist vollständig gelöst.",
+      "quelle": "tatoeba:371798",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #371798 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e13.s0024",
+      "text": "Sind meine Unterlagen jetzt vollständig?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0025",
+      "text": "Bitte prüfen Sie, ob alle Angaben korrekt sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0026",
+      "text": "Bei ausländischen Urkunden verlangt das Amt meistens eine Übersetzung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0027",
+      "text": "Im Abschnitt 2 stehen die Angaben zu den Kindern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0028",
+      "text": "Unter „Sonstiges“ können Sie weitere Informationen angeben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0029",
+      "text": "Sonstige Unterlagen schicken Sie bitte mit der Post.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0030",
+      "text": "Das Formular ist vollständig ausgefüllt und unterschrieben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0031",
+      "text": "Das Bürgeramt ist derzeit am Mittwoch geschlossen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0032",
+      "text": "Haben Sie alle Unterlagen für den Antrag dabei?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0033",
+      "text": "Ja, hier sind mein Personalausweis und die Bescheinigung vom Arbeitgeber.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0034",
+      "text": "Danke. Im Formular fehlt aber noch Ihre Anschrift.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0035",
+      "text": "Oh, Entschuldigung! Die ergänze ich sofort.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0036",
+      "text": "Nein, ich habe heute keine Zeit für einen Sprachkurs.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0037",
+      "text": "Das Jobcenter ist im zweiten Stock.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0038",
+      "text": "Muss ich beim Geschlecht etwas ankreuzen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0039",
+      "text": "Ja, bitte kreuzen Sie eins von den drei Feldern an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0040",
+      "text": "Nein, die Urkunde ist auf Arabisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0041",
+      "text": "Mein Wohnsitz ist seit März in Bonn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0042",
+      "text": "Ich habe das Formular ausgefüllt, aber Abschnitt 3 ist noch nicht vollständig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0043",
+      "text": "Die Frist für den Antrag endet in zwei Wochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0044",
+      "text": "Herr Yılmaz hat die Frist verpasst und muss jetzt einen neuen Antrag stellen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0045",
+      "text": "Die Frist läuft bis zum 3. Mai.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0046",
+      "text": "Für welchen Zeitraum gilt die Genehmigung?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0047",
+      "text": "Zum Zeitpunkt des Antrags müssen alle Unterlagen vorhanden sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0048",
+      "text": "Die Dauer der Bearbeitung hängt von der Anzahl der Anträge ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0049",
+      "text": "Ich möchte Sie um eine Verlängerung der Frist bitten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0050",
+      "text": "Die Verlängerung des Reisepasses kostet eine Gebühr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0051",
+      "text": "Ist eine Verlängerung der Frist möglich?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0052",
+      "text": "Könnten Sie die Frist bitte um eine Woche verlängern?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0053",
+      "text": "Das Amt verlängerte die Frist bis Ende Juni.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0054",
+      "text": "Mein Personalausweis läuft im August ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0055",
+      "text": "Die Frist ist gestern abgelaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0056",
+      "text": "Wenn man eine Rechnung nicht rechtzeitig bezahlt, bekommt man eine Mahnung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0057",
+      "text": "Eine Mahnung ist zuerst nur eine freundliche Erinnerung an die Zahlung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0058",
+      "text": "Der Beschluss ist noch nicht endgültig.",
+      "quelle": "tatoeba:2178927",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2178927 von marcelostockle (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e13.s0059",
+      "text": "Das ist die endgültige Frist, eine weitere Verlängerung ist nicht möglich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0060",
+      "text": "Mit einem ungültigen Pass darf man nicht reisen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0061",
+      "text": "Ohne Unterschrift ist das Formular ungültig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0062",
+      "text": "Der alte Ausweis ist seit gestern ungültig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0063",
+      "text": "Derzeit dauert die Bearbeitung etwa acht Wochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0064",
+      "text": "Derzeit gibt es beim Bürgeramt leider keine freien Termine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0065",
+      "text": "Bewahren Sie stets eine Kopie Ihrer Unterlagen auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0066",
+      "text": "Ich habe schon mehrfach angerufen, aber niemand ist ans Telefon gegangen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0067",
+      "text": "Bitte schicken Sie die fehlenden Unterlagen innerhalb einer Woche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0068",
+      "text": "Innerhalb eines Monats bekommen Sie eine Antwort von uns.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0069",
+      "text": "Sie wohnen außerhalb der Stadt.",
+      "quelle": "tatoeba:5933757",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5933757 von pne (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e13.s0070",
+      "text": "Außerhalb der Öffnungszeiten können Sie Ihre Unterlagen in den Briefkasten werfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0071",
+      "text": "Herr Arslan muss seine Aufenthaltserlaubnis rechtzeitig verlängern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0072",
+      "text": "Für die Verlängerung der Aufenthaltserlaubnis braucht man einen Termin bei der Ausländerbehörde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0073",
+      "text": "Die Aufenthaltserlaubnis von Frau Aydın ist noch zwei Jahre gültig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0074",
+      "text": "Während der Bearbeitung können Sie den Stand Ihres Antrags online sehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0075",
+      "text": "Bitte reichen Sie die Unterlagen bis zum 15. Juni ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0076",
+      "text": "Verwaltung, Lange, guten Tag. Was kann ich für Sie tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0077",
+      "text": "Guten Tag, ich schaffe die Frist für meine Unterlagen leider nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0078",
+      "text": "Was fehlt denn noch?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0079",
+      "text": "Die Bescheinigung vom Arbeitgeber. Könnte ich bitte eine Verlängerung bekommen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0080",
+      "text": "Danke, das Formular ist jetzt korrekt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0081",
+      "text": "Ja, gern, ich warte im Flur auf Sie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0082",
+      "text": "Wie lange habe ich noch Zeit für die fehlenden Unterlagen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0083",
+      "text": "Die Frist läuft noch bis Ende nächster Woche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0084",
+      "text": "Die Unterlagen liegen im zweiten Abschnitt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0085",
+      "text": "Ich gehe stets zu Fuß zum Amt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0086",
+      "text": "Bis wann muss die Steuererklärung beim Finanzamt sein?",
+      "quelle": "tatoeba:1795711",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1795711 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e13.s0087",
+      "text": "Viele Leute machen ihre Steuererklärung heute online.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0088",
+      "text": "Bei der ersten Steuererklärung hilft Ebru eine Kollegin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0089",
+      "text": "Herr Polat hat morgen einen Termin beim Jobcenter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0090",
+      "text": "Das Jobcenter hilft bei der Suche nach einer Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0091",
+      "text": "Für die Aufenthaltserlaubnis ist die Ausländerbehörde zuständig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0092",
+      "text": "Viele Anträge kann man jetzt online bei der Verwaltung stellen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0093",
+      "text": "Herr Aksoy besucht abends einen Sprachkurs, weil er tagsüber arbeitet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0094",
+      "text": "Ein Integrationskurs besteht aus einem Sprachkurs und einem Kurs über das Leben in Deutschland.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0095",
+      "text": "Frau Çetin möchte sich für einen Integrationskurs anmelden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0096",
+      "text": "Bei Fragen wenden Sie sich bitte an Ihre Sachbearbeiterin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0097",
+      "text": "An wen kann ich mich wenden, wenn ich das Formular nicht verstehe?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0098",
+      "text": "Die neue Regelung betrifft nur Familien mit Kindern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0099",
+      "text": "Mein Anliegen kann ich leider nicht am Telefon klären.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0100",
+      "text": "Das Aktenzeichen steht oben rechts auf dem Bescheid.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0101",
+      "text": "Wie ist Ihr Aktenzeichen, bitte?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0102",
+      "text": "Frau Hoffmann sieht in der Akte nach, ob die Bescheinigung schon da ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0103",
+      "text": "Weil Herr Aksoy wenig Deutsch spricht, kommt seine Tochter als Dolmetscherin mit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0104",
+      "text": "Mit einer Vollmacht kann Ihr Sohn den Pass für Sie abholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0105",
+      "text": "Die Vollmacht muss von Ihnen selbst unterschrieben sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0106",
+      "text": "Für Fragen steht Ihnen Frau Hoffmann gern zur Verfügung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0107",
+      "text": "Können Sie mir sagen, ob mein Antrag vollständig ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0108",
+      "text": "Ich möchte gern wissen, wann ich den Bescheid bekomme.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0109",
+      "text": "Wissen Sie, wie lange die Bearbeitung derzeit dauert?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0110",
+      "text": "Können Sie mir erklären, welche Unterlagen noch fehlen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0111",
+      "text": "Ausländerbehörde, Schulz, guten Tag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0112",
+      "text": "Guten Tag, hier ist Ebru Çelik. Ich habe eine Frage zu meinem Antrag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0113",
+      "text": "Einen Moment bitte, ich suche den Brief mit dem Aktenzeichen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0114",
+      "text": "Mein Integrationskurs beginnt im Mai.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0115",
+      "text": "Nein, ich habe keine Vollmacht von meinem Bruder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0116",
+      "text": "Wer ist eigentlich für meine Steuererklärung zuständig?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0117",
+      "text": "Dafür ist das Finanzamt zuständig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0118",
+      "text": "Dafür ist die Ausländerbehörde zuständig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0119",
+      "text": "Dafür ist das Jobcenter zuständig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0120",
+      "text": "Guten Tag, ich möchte fragen, ob mein Antrag inzwischen vollständig ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0121",
+      "text": "Die Bearbeitung Ihres Antrags dauert etwa sechs Wochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0122",
+      "text": "Ihr Antrag ist derzeit noch in Bearbeitung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0123",
+      "text": "Der Antrag wurde schon letzte Woche bearbeitet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0124",
+      "text": "Die Anträge werden der Reihe nach bearbeitet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0125",
+      "text": "Den Bescheid bekommen Sie in zwei bis drei Wochen mit der Post.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0126",
+      "text": "Sie hat telefonisch Bescheid gesagt.",
+      "quelle": "tatoeba:7770011",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7770011 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e13.s0127",
+      "text": "Der Antrag auf Kindergeld wurde genehmigt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0128",
+      "text": "Im Brief steht auch der Grund für die Ablehnung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0129",
+      "text": "Für die Klassenfahrt brauchen wir die Zustimmung der Eltern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0130",
+      "text": "Gegen den Bescheid können Sie innerhalb eines Monats Widerspruch einlegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0131",
+      "text": "Der Widerspruch muss schriftlich eingereicht werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0132",
+      "text": "Seit Januar gibt es eine neue Regelung für das Kindergeld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0133",
+      "text": "Von dieser Regel gibt es keine Ausnahme.",
+      "quelle": "tatoeba:365588",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #365588 von Wolf (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e13.s0134",
+      "text": "Haben wir eigentlich Anspruch auf Kindergeld?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0135",
+      "text": "Eltern haben für jedes Kind einen Anspruch auf Kindergeld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0136",
+      "text": "Die Kopie entspricht dem Original.",
+      "quelle": "tatoeba:12574112",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12574112 von mhr (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e13.s0137",
+      "text": "Füllen Sie bitte das entsprechende Formular aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0138",
+      "text": "Sie sind verpflichtet, jede Änderung sofort zu melden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0139",
+      "text": "Mit dem Zertifikat kann Frau Aydın ihre Kenntnisse in Deutsch nachweisen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0140",
+      "text": "Die Unterlagen müssen bis Freitag eingereicht werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0141",
+      "text": "Bitte ergänzen Sie die fehlenden Angaben im Abschnitt 4.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0142",
+      "text": "Das Kindergeld wird jeden Monat auf das Konto der Eltern überwiesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0143",
+      "text": "Die Unterlagen wurden von Frau Hoffmann sorgfältig geprüft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0144",
+      "text": "Das Formular muss vollständig ausgefüllt werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0145",
+      "text": "Bescheid über Kindergeld",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0146",
+      "text": "Sehr geehrte Frau Becker, Ihr Antrag auf Kindergeld vom 4. März wurde bearbeitet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0147",
+      "text": "Wir haben Ihren Antrag genehmigt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0148",
+      "text": "Sie haben ab April einen Anspruch auf Kindergeld für Ihre Tochter Mia.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0149",
+      "text": "Das Kindergeld wird jeden Monat auf Ihr Konto überwiesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0150",
+      "text": "Bitte beachten Sie: Sie sind verpflichtet, uns jede Änderung sofort zu melden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0151",
+      "text": "Das betrifft insbesondere einen Umzug oder eine neue Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0152",
+      "text": "Sind Sie mit dem Bescheid nicht einverstanden? Dann können Sie Widerspruch einlegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0153",
+      "text": "Widerspruch einlegen heißt: Sie schreiben dem Amt, warum Sie nicht einverstanden sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0154",
+      "text": "Frau Becker hat eine Ablehnung bekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0155",
+      "text": "Ab wann bekommt Frau Becker Kindergeld für Mia?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0156",
+      "text": "Sie bekommt ab April Kindergeld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0157",
+      "text": "Sie bekommt ab März Kindergeld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0158",
+      "text": "Sie bekommt erst ab Juni Kindergeld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0159",
+      "text": "Frau Becker ist verpflichtet, einen Umzug zu melden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0160",
+      "text": "Frau Becker hat zwei Kinder, für die sie Kindergeld bekommt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0161",
+      "text": "Guten Tag, ich wollte fragen, ob mein Antrag schon bearbeitet wurde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0162",
+      "text": "Gern. Wie ist Ihr Name, bitte?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0163",
+      "text": "Serkan Yılmaz. Das Aktenzeichen habe ich leider nicht dabei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0164",
+      "text": "Kein Problem. Ihr Antrag wurde gestern genehmigt, der Bescheid kommt mit der Post.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0165",
+      "text": "Bitte kreuzen Sie männlich oder weiblich an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0166",
+      "text": "Die Ausnahme gilt nur für Kinder unter sechs Jahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0167",
+      "text": "Was kann ich nach einer Ablehnung tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0168",
+      "text": "Sie können schriftlich Widerspruch gegen den Bescheid einlegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0169",
+      "text": "Sie können das Kindergeld bei der Bank abholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0170",
+      "text": "Dann bekommen Sie doppelt so viel Kindergeld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0171",
+      "text": "Ich möchte gegen den Bescheid vom 12. Mai Widerspruch einlegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0172",
+      "text": "Der Antrag ist kostenlos, für die Kopien müssen Sie jedoch bezahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0173",
+      "text": "Achten Sie insbesondere auf die Fristen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0174",
+      "text": "Sie brauchen lediglich eine Kopie, nicht das Original.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0175",
+      "text": "Füllen Sie das Formular aus, soweit es Ihnen möglich ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0176",
+      "text": "Termine gibt es bei uns ausschließlich online.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0177",
+      "text": "Können Sie mir das Vorgehen Schritt für Schritt erklären?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0178",
+      "text": "Allgemeine Informationen finden Sie auf der Webseite der Stadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0179",
+      "text": "Für das Amt brauchen Sie eine offizielle Übersetzung der Urkunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0180",
+      "text": "Online geht es wesentlich schneller als mit der Post.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0181",
+      "text": "Sind alle Unterlagen vorhanden?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0182",
+      "text": "Welche Unterlagen sind für den Antrag erforderlich?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0183",
+      "text": "Die Sachbearbeiterin hat mir alles ausführlich erklärt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0184",
+      "text": "Bitte bringen Sie sämtliche Unterlagen im Original mit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0185",
+      "text": "Bitte geben Sie die Anzahl der Personen in Ihrem Haushalt an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0186",
+      "text": "Du bist an der Reihe.",
+      "quelle": "tatoeba:708648",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #708648 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e13.s0187",
+      "text": "Für den Antrag braucht man eine ganze Reihe von Unterlagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0188",
+      "text": "Das Ausfüllen des Formulars dauert lediglich zehn Minuten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0189",
+      "text": "Aus „bearbeiten“ wird „die Bearbeitung“, aus „ändern“ wird „die Änderung“.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0190",
+      "text": "Hinweise zum Antrag auf einen neuen Personalausweis",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0191",
+      "text": "Den Antrag können Sie ausschließlich persönlich im Bürgeramt stellen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0192",
+      "text": "Erforderlich sind Ihr alter Ausweis und ein aktuelles Foto.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0193",
+      "text": "Für Kinder unter 16 Jahren ist außerdem die Zustimmung der Eltern erforderlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0194",
+      "text": "Ab 24 Jahren beträgt die Gebühr 37 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0195",
+      "text": "Die Bearbeitung dauert derzeit drei bis vier Wochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0196",
+      "text": "Sobald der neue Ausweis fertig ist, bekommen Sie eine Nachricht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0197",
+      "text": "Bitte holen Sie ihn innerhalb von drei Monaten ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0198",
+      "text": "Man kann den Antrag auch mit der Post schicken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0199",
+      "text": "Was kostet der Personalausweis ab 24 Jahren?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0200",
+      "text": "Er kostet 37 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0201",
+      "text": "Er kostet 16 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0202",
+      "text": "Er ist für alle kostenlos.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0203",
+      "text": "Bei Kindern unter 16 Jahren müssen die Eltern zustimmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0204",
+      "text": "Das Bürgeramt hat auch am Samstag geöffnet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0205",
+      "text": "Ich muss meine Aufenthaltserlaubnis verlängern. Weißt du, wie das geht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0206",
+      "text": "Ja, das habe ich letztes Jahr gemacht. Zuerst brauchst du einen Termin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0207",
+      "text": "Und welche Unterlagen sind erforderlich?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0208",
+      "text": "Deinen Pass, ein Foto und einen Nachweis über deine Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0209",
+      "text": "Nein, ich habe keinen Anspruch auf Kindergeld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0210",
+      "text": "Doch, der Termin ist um neun Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0211",
+      "text": "Ist der Antrag auf Kindergeld kompliziert?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0212",
+      "text": "Nein, aber man muss sämtliche Angaben genau prüfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0213",
+      "text": "Ja, du bist jetzt an der Reihe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0214",
+      "text": "Nein, das Finanzamt ist heute geschlossen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0215",
+      "text": "Zuerst füllst du das Formular vollständig aus, dann reichst du es mit allen Unterlagen ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0216",
+      "text": "Danach wird dein Antrag bearbeitet, und du bekommst einen Bescheid.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0217",
+      "text": "Sie haben vor sechs Wochen einen Antrag gestellt, aber noch keinen Bescheid bekommen. Schreiben Sie eine E-Mail an das Amt. Fragen Sie nach dem Stand der Bearbeitung und ob noch Unterlagen fehlen. Nennen Sie auch Ihr Aktenzeichen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0218",
+      "text": "Sehr geehrte Frau Hoffmann, am 3. März habe ich einen Antrag auf Kindergeld für meinen Sohn gestellt. Mein Aktenzeichen ist 24118. Leider habe ich bis heute keinen Bescheid bekommen. Deshalb möchte ich fragen, wie weit die Bearbeitung ist. Sind meine Unterlagen vollständig, oder fehlt noch ein Nachweis? Falls etwas fehlt, kann ich es gern innerhalb einer Woche einreichen. Könnten Sie mir außerdem sagen, wann ich ungefähr mit einer Antwort rechnen kann? Für Fragen stehe ich Ihnen jederzeit zur Verfügung. Vielen Dank im Voraus! Mit freundlichen Grüßen Ebru Çelik",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0219",
+      "text": "Ein Antrag auf Kindergeld",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0220",
+      "text": "Ranā möchte für ihre Kinder Laylā und Yazan Kindergeld beantragen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0221",
+      "text": "Am Dienstag geht sie mit ihrer Tochter und allen Unterlagen zum Amt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0222",
+      "text": "Die Sachbearbeiterin, Frau Hoffmann, kennt die Familie schon von der Anmeldung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0223",
+      "text": "Guten Tag! Was ist heute Ihr Anliegen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0224",
+      "text": "Ich möchte einen Antrag auf Kindergeld stellen. Das Formular habe ich schon ausgefüllt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0225",
+      "text": "Danke. Einen Moment, ich prüfe, ob alles vollständig ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0226",
+      "text": "Leider ist das Formular noch nicht vollständig ausgefüllt. Im Abschnitt 3 fehlen die Angaben zu Ihrem Sohn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0227",
+      "text": "Oh, das habe ich übersehen. Kann ich das gleich hier ergänzen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0228",
+      "text": "Natürlich. Außerdem brauche ich einen Nachweis, dass Ihre Tochter noch zur Schule geht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0229",
+      "text": "Die Bescheinigung von meiner Schule habe ich dabei. Hier, bitte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0230",
+      "text": "Sehr gut. Und diese Bescheinigung hier ist auf Arabisch, oder?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0231",
+      "text": "Ja, das ist eine Bescheinigung über die Geburt von meinem Sohn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0232",
+      "text": "Ich kann sie Ihnen übersetzen, wenn Sie möchten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0233",
+      "text": "Gern. Für die Akte brauchen wir aber später eine offizielle Übersetzung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0234",
+      "text": "Laylā liest jeden Satz vor und übersetzt ihn langsam ins Deutsche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0235",
+      "text": "Danke, jetzt verstehe ich die Angaben. Die offizielle Übersetzung reichen Sie bitte innerhalb von vier Wochen ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0236",
+      "text": "Und wie lange dauert die Bearbeitung des Antrags?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0237",
+      "text": "Derzeit ungefähr sechs Wochen. Danach bekommen Sie einen Bescheid mit der Post.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0238",
+      "text": "Auf dem Weg nach Hause ist Ranā froh, dass ihre Tochter dabei war.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0239",
+      "text": "Mama, beim nächsten Antrag kreuzen wir die Felder zusammen an!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0240",
+      "text": "Was ist das Anliegen von Ranā beim Amt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0241",
+      "text": "Sie möchte Kindergeld für ihre Kinder beantragen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0242",
+      "text": "Sie möchte ihre Aufenthaltserlaubnis verlängern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0243",
+      "text": "Sie möchte sich für einen Sprachkurs anmelden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0244",
+      "text": "Warum ist das Formular noch nicht vollständig?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0245",
+      "text": "Im Abschnitt 3 fehlen die Angaben zum Sohn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0246",
+      "text": "Die Unterschrift von Ranā fehlt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0247",
+      "text": "Die Anschrift der Familie ist nicht korrekt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0248",
+      "text": "Wie hilft Laylā ihrer Mutter beim Amt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0249",
+      "text": "Sie übersetzt die Bescheinigung aus dem Arabischen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0250",
+      "text": "Sie füllt den Abschnitt 3 für ihre Mutter aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0251",
+      "text": "Sie ruft beim Jobcenter an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0252",
+      "text": "Wie lange dauert die Bearbeitung des Antrags derzeit?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0253",
+      "text": "Die Bearbeitung dauert etwa sechs Wochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0254",
+      "text": "Die Bearbeitung dauert etwa vier Wochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0255",
+      "text": "Die Bearbeitung dauert nur zwei Tage.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0256",
+      "text": "Im Abschnitt 3 fehlen noch die Angaben zu meinem Sohn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0257",
+      "text": "Ein ausländischer Führerschein",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0258",
+      "text": "Murat Kaya hat seinen Führerschein vor vielen Jahren in der Türkei gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0259",
+      "text": "Seit März hat er seinen Wohnsitz in Deutschland. Deshalb ruft er bei der Verwaltung an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0260",
+      "text": "Stadtverwaltung, Abteilung Führerscheine, Krüger. Was kann ich für Sie tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0261",
+      "text": "Guten Tag, mein Name ist Kaya. Ich habe eine Frage zu meinem türkischen Führerschein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0262",
+      "text": "Können Sie mir sagen, ob ich ihn in einen deutschen Führerschein umtauschen kann?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0263",
+      "text": "Ja, das ist möglich. Seit wann ist Ihr Wohnsitz in Deutschland?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0264",
+      "text": "Seit dem 1. März. Ich arbeite hier in einem Lager.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0265",
+      "text": "Ein ausländischer Führerschein gilt bei uns nur sechs Monate. Innerhalb dieser Frist sollten Sie den Antrag stellen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0266",
+      "text": "Welche Unterlagen muss ich denn einreichen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0267",
+      "text": "Ihren Personalausweis oder Pass, ein Foto, den Führerschein und eine offizielle Übersetzung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0268",
+      "text": "Muss ich auch eine Prüfung machen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0269",
+      "text": "In Ihrem Fall ist eine Prüfung erforderlich. Die Details finden Sie auf unserer Webseite.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0270",
+      "text": "Und wie lange dauert das Verfahren ungefähr?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0271",
+      "text": "Nach der Prüfung bekommen Sie den deutschen Führerschein meistens innerhalb von drei Wochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0272",
+      "text": "Vielen Dank für die ausführliche Auskunft!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0273",
+      "text": "Noch am selben Abend sucht Murat sämtliche Unterlagen zusammen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0274",
+      "text": "Warum ruft Murat bei der Verwaltung an?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0275",
+      "text": "Er möchte seinen ausländischen Führerschein umtauschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0276",
+      "text": "Er möchte einen Widerspruch einlegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0277",
+      "text": "Er möchte seine Steuererklärung abgeben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0278",
+      "text": "Wie lange gilt ein ausländischer Führerschein in Deutschland?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0279",
+      "text": "Er gilt nur sechs Monate.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0280",
+      "text": "Er gilt ein ganzes Jahr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0281",
+      "text": "Er gilt nur drei Wochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0282",
+      "text": "Was muss Murat unter anderem einreichen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0283",
+      "text": "Er muss eine offizielle Übersetzung einreichen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0284",
+      "text": "Er muss eine Bescheinigung vom Jobcenter einreichen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0285",
+      "text": "Er muss eine Vollmacht von seinem Chef einreichen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0286",
+      "text": "Was ist für Murat noch erforderlich?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0287",
+      "text": "In seinem Fall ist eine Prüfung erforderlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0288",
+      "text": "In seinem Fall ist kein Foto erforderlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0289",
+      "text": "In seinem Fall ist ein Sprachkurs erforderlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0290",
+      "text": "Können Sie mir sagen, welche Unterlagen ich einreichen muss?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0291",
+      "text": "Das Bürgeramt ist derzeit auch am Samstag von 9 bis 12 Uhr geöffnet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0292",
+      "text": "Innerhalb der nächsten zwei Wochen bekommen Sie eine Nachricht von uns.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0293",
+      "text": "Der erste Antrag wurde leider abgelehnt, weil ein Nachweis fehlte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0294",
+      "text": "Die fehlenden Angaben müssen bis Montag ergänzt werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0295",
+      "text": "Ich möchte wissen, ob die Frist verlängert werden kann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0296",
+      "text": "Nach der Mahnung hat Herr Klein die Rechnung sofort bezahlt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0297",
+      "text": "Mit der Vollmacht ihrer Mutter holt Elif den Bescheid ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0298",
+      "text": "Nur in Ausnahmen ist ein Termin am Wochenende möglich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0299",
+      "text": "Die Kosten für einen Dolmetscher übernimmt in manchen Fällen das Amt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0300",
+      "text": "Achten Sie stets auf die Frist im Brief.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0301",
+      "text": "Ein Antrag ohne Datum ist ungültig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0302",
+      "text": "Bei Anträgen ist jedes Detail wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0303",
+      "text": "In einem ausführlichen Brief erklärt das Amt die neue Regelung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0304",
+      "text": "Jetzt ist der richtige Zeitpunkt für den Antrag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0305",
+      "text": "Bitte geben Sie mir Bescheid, wenn der Bescheid fertig ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0306",
+      "text": "Entschuldigung, wissen Sie, wo ich diesen Antrag einreichen kann?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0307",
+      "text": "Was für ein Antrag ist das denn?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0308",
+      "text": "Ein Antrag auf Verlängerung meiner Aufenthaltserlaubnis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0309",
+      "text": "Dafür ist die Ausländerbehörde zuständig, im dritten Stock.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0310",
+      "text": "Dafür ist das Finanzamt zuständig, gleich gegenüber.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0311",
+      "text": "Nein, eine Verlängerung der Frist ist nicht möglich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0312",
+      "text": "Bis wann muss ich die fehlenden Unterlagen einreichen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0313",
+      "text": "Spätestens innerhalb von zwei Wochen, also bis zum 20. Mai.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0314",
+      "text": "Das Formular ist leider ungültig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0315",
+      "text": "Im Abschnitt 2, unten links.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0316",
+      "text": "Eine Nachricht über Ihren neuen Personalausweis",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0317",
+      "text": "Sehr geehrter Herr Aydın, Ihr neuer Personalausweis ist fertig und kann abgeholt werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0318",
+      "text": "Bitte bringen Sie Ihren alten Ausweis mit, denn er wird bei uns ungültig gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0319",
+      "text": "Sie können den Ausweis innerhalb von drei Monaten zu unseren Öffnungszeiten abholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0320",
+      "text": "Ein Termin ist dafür nicht erforderlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0321",
+      "text": "Wenn Sie selbst nicht kommen können, darf eine andere Person den Ausweis mit einer Vollmacht abholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0322",
+      "text": "Für das Abholen ist ein Termin erforderlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0323",
+      "text": "Was muss Herr Aydın zum Abholen mitbringen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0324",
+      "text": "Er muss seinen alten Ausweis mitbringen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0325",
+      "text": "Er muss ein neues Foto mitbringen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0326",
+      "text": "Er muss eine Bescheinigung vom Arbeitgeber mitbringen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0327",
+      "text": "Eine andere Person darf den Ausweis mit einer Vollmacht abholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0328",
+      "text": "Der Antrag ist jetzt unterschrieben und vollständig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0329",
+      "text": "Die Verlängerung wurde vom Amt ohne Probleme genehmigt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e13.s0330",
+      "text": "Können Sie mir bitte sagen, welche Unterlagen für den Antrag erforderlich sind?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e13.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann ein Formular ausfüllen und sagen, welche Unterlagen ich habe.",
+        "tr": "Bir formu doldurabilir ve hangi belgelerim olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أملأ استمارة وأن أقول ما هي الأوراق التي معي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e13.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.bescheinigung",
+          "ablenker": ["de.a2.e09.formular", "de.a2.e09.stempel"]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.personalausweis",
+            "de.b1.e13.anschrift",
+            "de.b1.e13.geschlecht",
+            "de.b1.e13.abschnitt",
+            "de.b1.e13.urkunde",
+            "de.a2.e09.unterschrift"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0002",
+          "wort": 4,
+          "ablenker": ["wird", "hat"]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e13.ankreuzen",
+          "ablenker": ["de.b1.e13.angeben", "de.a2.e09.unterschreiben"]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.maennlich",
+            "de.b1.e13.weiblich",
+            "de.b1.e13.divers",
+            "de.b1.e13.vollstaendig",
+            "de.b1.e13.korrekt",
+            "de.b1.e13.auslaendisch"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.nachweis",
+          "ablenker": ["de.b1.e13.wohnsitz", "de.a2.e09.kopie"]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0032"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0033"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0034"
+            }
+          ],
+          "antwort": "de.b1.e13.s0035",
+          "ablenker": ["de.b1.e13.s0036", "de.b1.e13.s0037"]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a09",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a10",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0003",
+          "wort": 2,
+          "ablenker": ["ist", "hat"]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e13.s0011",
+          "nach": "ziel",
+          "alternativen": [
+            "Bitte geben Sie Ihre neue Anschrift im Formular an.",
+            "Geben Sie bitte im Formular Ihre neue Anschrift an.",
+            "Geben Sie im Formular bitte Ihre neue Anschrift an.",
+            "Geben Sie bitte Ihre neue Anschrift im Formular an.",
+            "Im Formular geben Sie bitte Ihre neue Anschrift an.",
+            "Ihre neue Anschrift geben Sie bitte im Formular an."
+          ],
+          "ablenker": ["alte", "Nummer"]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e13.s0027",
+          "alternativen": ["Die Angaben zu den Kindern stehen im Abschnitt 2."]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e13.s0016",
+          "ablenker": ["de.b1.e13.s0012", "de.b1.e13.s0007"]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e13.s0010",
+          "nach": "ziel",
+          "alternativen": [
+            "Ab 16 Jahren braucht man in Deutschland einen Personalausweis oder einen Pass.",
+            "Man braucht in Deutschland ab 16 Jahren einen Personalausweis oder einen Pass.",
+            "In Deutschland braucht man ab 16 Jahren einen Personalausweis oder Pass.",
+            "In Deutschland braucht man ab sechzehn Jahren einen Personalausweis oder einen Pass.",
+            "In Deutschland braucht man ab 16 einen Personalausweis oder einen Pass.",
+            "Ab 16 braucht man in Deutschland einen Personalausweis oder einen Pass."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0038"
+            }
+          ],
+          "antwort": "de.b1.e13.s0039",
+          "ablenker": ["de.b1.e13.s0040", "de.b1.e13.s0041"]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a16",
+          "typ": "formen",
+          "zeilen": ["ausfüllen", "unterschreiben", "ankreuzen", "schließen", "öffnen"],
+          "spalten": ["Vorgang: es wird …", "Zustand: es ist …"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["wird ausgefüllt"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["ist ausgefüllt"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["wird unterschrieben"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["ist unterschrieben"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["wird angekreuzt"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["ist angekreuzt"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["wird geschlossen"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["ist geschlossen"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["wird geöffnet"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["ist geöffnet"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l01.a17",
+          "typ": "sprechen",
+          "satz": "de.b1.e13.s0042"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e13.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Fristen verstehen und um eine Verlängerung bitten.",
+        "tr": "Son tarihleri anlayabilir ve süre uzatımı rica edebilirim.",
+        "ar": "أستطيع أن أفهم المواعيد النهائية وأن أطلب تمديد المهلة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e13.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.frist",
+          "ablenker": ["de.a2.e09.gebuehr", "de.b1.e13.mahnung"]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.zeitpunkt",
+            "de.b1.e13.verlaengerung",
+            "de.b1.e13.aufenthaltserlaubnis",
+            "de.b1.e13.mahnung",
+            "de.a2.e09.antrag"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0067",
+          "wort": 7,
+          "ablenker": ["eine", "einem"]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e13.verlaengern",
+          "ablenker": ["de.b1.e13.ablaufen", "de.a2.e09.beantragen"]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.endgueltig",
+            "de.b1.e13.ungueltig",
+            "de.b1.e13.derzeit",
+            "de.b1.e13.stets",
+            "de.b1.e13.mehrfach",
+            "de.b1.e13.innerhalb"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.ausserhalb",
+          "ablenker": ["de.b1.e13.innerhalb", "de.a1.e09.zwischen"]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0076"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0077"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0078"
+            }
+          ],
+          "antwort": "de.b1.e13.s0079",
+          "ablenker": ["de.b1.e13.s0080", "de.b1.e13.s0081"]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a09",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0070",
+          "wort": 1,
+          "ablenker": ["die", "den"]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e13.s0049",
+          "nach": "ziel",
+          "alternativen": ["Um eine Verlängerung der Frist möchte ich Sie bitten."],
+          "ablenker": ["die", "Mahnung"]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e13.mahnung",
+          "ablenker": ["de.a2.e07.meinung"]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e13.s0054",
+          "ablenker": ["de.b1.e13.s0055", "de.b1.e13.s0062"]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e13.s0071",
+          "alternativen": [
+            "Seine Aufenthaltserlaubnis muss Herr Arslan rechtzeitig verlängern.",
+            "Rechtzeitig muss Herr Arslan seine Aufenthaltserlaubnis verlängern.",
+            "Herr Arslan muss rechtzeitig seine Aufenthaltserlaubnis verlängern."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e13.s0063",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Bearbeitung dauert derzeit etwa acht Wochen.",
+            "Derzeit dauert die Bearbeitung ungefähr acht Wochen.",
+            "Die Bearbeitung dauert derzeit ungefähr acht Wochen.",
+            "Zurzeit dauert die Bearbeitung etwa acht Wochen.",
+            "Die Bearbeitung dauert zurzeit etwa acht Wochen.",
+            "Im Moment dauert die Bearbeitung etwa acht Wochen.",
+            "Derzeit dauert die Bearbeitung etwa 8 Wochen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a15",
+          "typ": "formen",
+          "lemma": "de.b1.e13.verlaengern",
+          "zeilen": ["verlängern", "ablaufen", "erinnern"],
+          "spalten": ["er/sie/es – Präsens", "Präteritum", "Partizip II"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["verlängert"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["verlängerte"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["verlängert"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["läuft ab"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["lief ab"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["abgelaufen"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["erinnert"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["erinnerte"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["erinnert"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0082"
+            }
+          ],
+          "antwort": "de.b1.e13.s0083",
+          "ablenker": ["de.b1.e13.s0084", "de.b1.e13.s0085"]
+        },
+        {
+          "schluessel": "de.b1.e13.l02.a17",
+          "typ": "sprechen",
+          "satz": "de.b1.e13.s0052"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e13.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann das richtige Amt finden und am Telefon nachfragen, wie weit mein Antrag ist.",
+        "tr": "Doğru daireyi bulabilir ve başvurumun ne durumda olduğunu telefonla sorabilirim.",
+        "ar": "أستطيع أن أجد الدائرة المختصة وأن أستفسر بالهاتف عن وضع طلبي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e13.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.finanzamt",
+          "ablenker": ["de.b1.e13.jobcenter", "de.b1.e13.auslaenderbehoerde"]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.steuererklaerung",
+            "de.b1.e13.sprachkurs",
+            "de.b1.e13.aktenzeichen",
+            "de.b1.e13.dolmetscher",
+            "de.b1.e13.vollmacht",
+            "de.b1.e13.verwaltung"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0107",
+          "wort": 4,
+          "ablenker": ["was", "weil"]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e13.wenden",
+          "ablenker": ["de.b1.e13.betreffen", "de.a2.e09.informieren"]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0109",
+          "wort": 7,
+          "ablenker": ["dauern", "gedauert"]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0111"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0112"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0101"
+            }
+          ],
+          "antwort": "de.b1.e13.s0113",
+          "ablenker": ["de.b1.e13.s0114", "de.b1.e13.s0115"]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a07",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.anliegen",
+            "de.b1.e13.akte",
+            "de.b1.e13.integrationskurs",
+            "de.b1.e13.verfuegung",
+            "de.a2.e09.sachbearbeiter",
+            "de.a2.e09.formular"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.betreffen",
+          "ablenker": ["de.a2.e09.pruefen", "de.a2.e09.erledigen"]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e13.s0096",
+          "nach": "ziel",
+          "alternativen": [
+            "Wenden Sie sich bei Fragen bitte an Ihre Sachbearbeiterin.",
+            "Bitte wenden Sie sich bei Fragen an Ihre Sachbearbeiterin.",
+            "Wenden Sie sich bitte bei Fragen an Ihre Sachbearbeiterin.",
+            "Bei Fragen wenden Sie sich an Ihre Sachbearbeiterin, bitte."
+          ],
+          "ablenker": ["mich", "für"]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e13.akte",
+          "ablenker": ["de.a2.e09.achte"]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e13.s0091",
+          "ablenker": ["de.b1.e13.s0095", "de.b1.e13.s0090"]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e13.s0110"
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e13.s0099",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich kann mein Anliegen leider nicht am Telefon klären.",
+            "Mein Anliegen kann ich am Telefon leider nicht klären.",
+            "Leider kann ich mein Anliegen nicht am Telefon klären.",
+            "Ich kann mein Anliegen am Telefon leider nicht klären.",
+            "Leider kann ich mein Anliegen nicht telefonisch klären.",
+            "Mein Anliegen kann ich leider nicht telefonisch klären."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e13.s0104"
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0116"
+            }
+          ],
+          "antwort": "de.b1.e13.s0117",
+          "ablenker": ["de.b1.e13.s0118", "de.b1.e13.s0119"]
+        },
+        {
+          "schluessel": "de.b1.e13.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e13.s0120"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e13.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann einen einfachen Bescheid verstehen und weiß, was ich danach tun kann.",
+        "tr": "Basit bir resmî kararı anlayabilir ve sonrasında ne yapabileceğimi bilirim.",
+        "ar": "أستطيع أن أفهم قرارًا رسميًا بسيطًا وأعرف ما يمكنني فعله بعد ذلك."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e13.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.bescheid",
+          "ablenker": ["de.b1.e13.mahnung", "de.a2.e09.formular"]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.genehmigung",
+            "de.b1.e13.ablehnung",
+            "de.b1.e13.widerspruch",
+            "de.b1.e13.ausnahme",
+            "de.b1.e13.anspruch",
+            "de.b1.e13.kindergeld"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0127",
+          "wort": 5,
+          "ablenker": ["genehmigen", "genehmigte"]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e13.einreichen",
+          "ablenker": ["de.b1.e13.ergaenzen", "de.b1.e13.nachweisen"]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.bearbeiten",
+            "de.b1.e13.genehmigen",
+            "de.b1.e13.entsprechen",
+            "de.b1.e13.verpflichten",
+            "de.a2.e09.pruefen",
+            "de.a2.e07.ablehnen"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.regelung",
+          "ablenker": ["de.b1.e13.verfahren", "de.b1.e13.aenderung"]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0161"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0162"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0163"
+            }
+          ],
+          "antwort": "de.b1.e13.s0164",
+          "ablenker": ["de.b1.e13.s0165", "de.b1.e13.s0166"]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a09",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e13.s0145",
+          "absaetze": [
+            "de.b1.e13.s0146",
+            "de.b1.e13.s0147",
+            "de.b1.e13.s0148",
+            "de.b1.e13.s0149",
+            "de.b1.e13.s0150",
+            "de.b1.e13.s0151",
+            "de.b1.e13.s0152",
+            "de.b1.e13.s0153"
+          ],
+          "glossen": ["de.b1.e13.bescheid", "de.b1.e13.widerspruch", "de.b1.e13.anspruch"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e13.s0154",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e13.s0155",
+              "antwort": "de.b1.e13.s0156",
+              "ablenker": ["de.b1.e13.s0157", "de.b1.e13.s0158"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e13.s0159",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e13.s0160",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a10",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0140",
+          "wort": 6,
+          "ablenker": ["wurden", "worden"]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e13.s0142",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e13.s0124",
+          "alternativen": ["Der Reihe nach werden die Anträge bearbeitet."]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e13.s0123",
+          "ablenker": ["de.b1.e13.s0122", "de.b1.e13.s0121"]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e13.s0135",
+          "nach": "ziel",
+          "alternativen": [
+            "Eltern haben für jedes Kind Anspruch auf Kindergeld.",
+            "Für jedes Kind haben Eltern einen Anspruch auf Kindergeld.",
+            "Für jedes Kind haben Eltern Anspruch auf Kindergeld.",
+            "Die Eltern haben für jedes Kind einen Anspruch auf Kindergeld.",
+            "Die Eltern haben für jedes Kind Anspruch auf Kindergeld.",
+            "Für jedes Kind haben die Eltern einen Anspruch auf Kindergeld."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a15",
+          "typ": "formen",
+          "zeilen": ["bearbeiten", "genehmigen", "einreichen", "ergänzen"],
+          "spalten": ["Passiv Präteritum: es …", "mit Modalverb: es muss …"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["wurde bearbeitet"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["bearbeitet werden"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["wurde genehmigt"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["genehmigt werden"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["wurde eingereicht"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["eingereicht werden"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["wurde ergänzt"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["ergänzt werden"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0167"
+            }
+          ],
+          "antwort": "de.b1.e13.s0168",
+          "ablenker": ["de.b1.e13.s0169", "de.b1.e13.s0170"]
+        },
+        {
+          "schluessel": "de.b1.e13.l04.a17",
+          "typ": "sprechen",
+          "satz": "de.b1.e13.s0171"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e13.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Hinweise zu einem Antrag lesen, die Schritte erklären und eine E-Mail an ein Amt schreiben.",
+        "tr": "Bir başvuruyla ilgili açıklamaları okuyabilir, adımları anlatabilir ve bir resmî daireye e-posta yazabilirim.",
+        "ar": "أستطيع أن أقرأ إرشادات عن طلب وأن أشرح الخطوات وأن أكتب بريدًا إلكترونيًا إلى دائرة رسمية."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e13.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.erforderlich",
+          "ablenker": ["de.b1.e13.vorhanden", "de.b1.e13.offiziell"]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.jedoch",
+            "de.b1.e13.insbesondere",
+            "de.b1.e13.lediglich",
+            "de.b1.e13.soweit",
+            "de.b1.e13.wiederum",
+            "de.b1.e13.allgemein"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a04",
+          "typ": "formen",
+          "zeilen": ["bearbeiten", "verlängern", "ändern", "ablehnen", "zustimmen", "ausfüllen"],
+          "spalten": ["Nomen mit Artikel"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["die Bearbeitung"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["die Verlängerung"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["die Änderung"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["die Ablehnung"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["die Zustimmung"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["das Ausfüllen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e13.ausschliesslich",
+          "ablenker": ["de.b1.e13.wesentlich", "de.b1.e13.ausfuehrlich"]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.vorgehen",
+            "de.b1.e13.anzahl",
+            "de.b1.e13.reihe",
+            "de.b1.e13.detail",
+            "de.b1.e13.saemtlich",
+            "de.b1.e13.wesentlich"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e13.s0190",
+          "absaetze": [
+            "de.b1.e13.s0191",
+            "de.b1.e13.s0192",
+            "de.b1.e13.s0193",
+            "de.b1.e13.s0194",
+            "de.b1.e13.s0195",
+            "de.b1.e13.s0196",
+            "de.b1.e13.s0197"
+          ],
+          "glossen": ["de.b1.e13.erforderlich", "de.a2.e09.gebuehr"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e13.s0198",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e13.s0199",
+              "antwort": "de.b1.e13.s0200",
+              "ablenker": ["de.b1.e13.s0201", "de.b1.e13.s0202"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e13.s0203",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e13.s0204",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a08",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0205"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0206"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0207"
+            }
+          ],
+          "antwort": "de.b1.e13.s0208",
+          "ablenker": ["de.b1.e13.s0209", "de.b1.e13.s0210"]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a10",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0172",
+          "wort": 9,
+          "ablenker": ["deshalb", "nämlich"]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e13.s0174",
+          "nach": "ziel",
+          "alternativen": ["Lediglich eine Kopie brauchen Sie, nicht das Original."],
+          "ablenker": ["sämtliche", "Akte"]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e13.s0184",
+          "alternativen": [
+            "Bringen Sie bitte sämtliche Unterlagen im Original mit.",
+            "Bringen Sie sämtliche Unterlagen bitte im Original mit.",
+            "Sämtliche Unterlagen bringen Sie bitte im Original mit.",
+            "Bitte bringen Sie im Original sämtliche Unterlagen mit."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e13.s0182"
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a14",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e13.s0217",
+          "woerter": {
+            "min": 90,
+            "max": 110
+          },
+          "pflichtwoerter": ["Antrag", "Aktenzeichen", "Bearbeitung"],
+          "muster": ["de.b1.e13.s0218"]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e13.s0183",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Sachbearbeiterin erklärte mir alles ausführlich.",
+            "Alles hat mir die Sachbearbeiterin ausführlich erklärt.",
+            "Die Sachbearbeiterin hat mir alles im Detail erklärt.",
+            "Die Mitarbeiterin hat mir alles ausführlich erklärt.",
+            "Die Sachbearbeiterin hat alles ausführlich für mich erklärt."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0211"
+            }
+          ],
+          "antwort": "de.b1.e13.s0212",
+          "ablenker": ["de.b1.e13.s0213", "de.b1.e13.s0214"]
+        },
+        {
+          "schluessel": "de.b1.e13.l05.a17",
+          "typ": "sprechen",
+          "satz": "de.b1.e13.s0215"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e13.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte und ein Gespräch über Anträge beim Amt verstehen.",
+        "tr": "Resmî dairelerdeki başvurular hakkında bir hikâyeyi ve bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة وحوارًا عن الطلبات في الدوائر الرسمية."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e13.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e13.s0219",
+          "zeilen": [
+            {
+              "satz": "de.b1.e13.s0220"
+            },
+            {
+              "satz": "de.b1.e13.s0221"
+            },
+            {
+              "satz": "de.b1.e13.s0222"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0223"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0224"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0225"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0226"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0227"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0228"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e13.s0229"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0230"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0231"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e13.s0232"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0233"
+            },
+            {
+              "satz": "de.b1.e13.s0234"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0235"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0236"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0237"
+            },
+            {
+              "satz": "de.b1.e13.s0238"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e13.s0239"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.b1.e13.s0240",
+              "antwort": "de.b1.e13.s0241",
+              "ablenker": ["de.b1.e13.s0242", "de.b1.e13.s0243"]
+            },
+            {
+              "nach": 6,
+              "frage": "de.b1.e13.s0244",
+              "antwort": "de.b1.e13.s0245",
+              "ablenker": ["de.b1.e13.s0246", "de.b1.e13.s0247"]
+            },
+            {
+              "nach": 14,
+              "frage": "de.b1.e13.s0248",
+              "antwort": "de.b1.e13.s0249",
+              "ablenker": ["de.b1.e13.s0250", "de.b1.e13.s0251"]
+            },
+            {
+              "nach": 17,
+              "frage": "de.b1.e13.s0252",
+              "antwort": "de.b1.e13.s0253",
+              "ablenker": ["de.b1.e13.s0254", "de.b1.e13.s0255"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e13.s0227",
+          "ablenker": ["de.b1.e13.s0232", "de.b1.e13.s0225"]
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0235",
+          "wort": 9,
+          "ablenker": ["füllen", "kreuzen"]
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e13.s0237",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.b1.e13.s0257",
+          "zeilen": [
+            {
+              "satz": "de.b1.e13.s0258"
+            },
+            {
+              "satz": "de.b1.e13.s0259"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0260"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0261"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0262"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0263"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0264"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0265"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0266"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0267"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0268"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0269"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0270"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0271"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0272"
+            },
+            {
+              "satz": "de.b1.e13.s0273"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.b1.e13.s0274",
+              "antwort": "de.b1.e13.s0275",
+              "ablenker": ["de.b1.e13.s0276", "de.b1.e13.s0277"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.b1.e13.s0278",
+              "antwort": "de.b1.e13.s0279",
+              "ablenker": ["de.b1.e13.s0280", "de.b1.e13.s0281"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.b1.e13.s0282",
+              "antwort": "de.b1.e13.s0283",
+              "ablenker": ["de.b1.e13.s0284", "de.b1.e13.s0285"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.b1.e13.s0286",
+              "antwort": "de.b1.e13.s0287",
+              "ablenker": ["de.b1.e13.s0288", "de.b1.e13.s0289"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0266"
+            }
+          ],
+          "antwort": "de.b1.e13.s0267",
+          "ablenker": ["de.b1.e13.s0269", "de.b1.e13.s0271"]
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0265",
+          "wort": 9,
+          "ablenker": ["Außerhalb", "Statt"]
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.b1.e13.s0262"
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a09",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e13.s0270"
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e13.s0237",
+          "ablenker": ["de.b1.e13.s0236", "de.b1.e13.s0225"]
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e13.s0272",
+          "nach": "ziel",
+          "alternativen": [
+            "Vielen Dank für die ausführliche Information!",
+            "Danke für die ausführliche Auskunft!",
+            "Herzlichen Dank für die ausführliche Auskunft!",
+            "Vielen Dank für die ausführlichen Informationen!",
+            "Danke schön für die ausführliche Auskunft!"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e13.s0224",
+          "nach": "ziel",
+          "alternativen": ["Ich möchte einen Antrag auf Kindergeld stellen. Ich habe das Formular schon ausgefüllt."],
+          "ablenker": ["Formulare", "nehmen"]
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e13.s0263",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a14",
+          "typ": "sprechen",
+          "satz": "de.b1.e13.s0256"
+        },
+        {
+          "schluessel": "de.b1.e13.l06.a15",
+          "typ": "sprechen",
+          "satz": "de.b1.e13.s0290"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e13.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum.",
+        "ar": "أراجع كلمات الوحدة وجملها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e13.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.bescheinigung",
+            "de.b1.e13.frist",
+            "de.b1.e13.finanzamt",
+            "de.b1.e13.bescheid",
+            "de.b1.e13.vollmacht",
+            "de.b1.e13.detail"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e13.zeitraum",
+          "ablenker": ["de.b1.e13.abschnitt", "de.b1.e13.anzahl"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e13.s0293",
+          "ablenker": ["de.b1.e13.s0294", "de.b1.e13.s0292"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0295",
+          "wort": 8,
+          "ablenker": ["können", "kannst"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a05",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e13.reihe",
+          "ablenker": ["de.a2.e11.reise"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e13.s0296",
+          "nach": "ziel",
+          "alternativen": [
+            "Herr Klein hat die Rechnung nach der Mahnung sofort bezahlt.",
+            "Die Rechnung hat Herr Klein nach der Mahnung sofort bezahlt.",
+            "Herr Klein hat nach der Mahnung die Rechnung sofort bezahlt.",
+            "Nach der Mahnung hat Herr Klein sofort die Rechnung bezahlt.",
+            "Herr Klein hat nach der Mahnung sofort die Rechnung bezahlt.",
+            "Sofort nach der Mahnung hat Herr Klein die Rechnung bezahlt."
+          ],
+          "ablenker": ["Meinung", "bezahlen"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.zustimmung",
+          "ablenker": ["de.b1.e13.ablehnung", "de.b1.e13.ausnahme"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0108"
+            }
+          ],
+          "antwort": "de.b1.e13.s0125",
+          "ablenker": ["de.b1.e13.s0186", "de.b1.e13.s0060"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a09",
+          "typ": "formen",
+          "zeilen": ["eine Woche", "ein Monat", "die Frist", "die Öffnungszeiten"],
+          "spalten": ["innerhalb …"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["innerhalb einer Woche"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["innerhalb eines Monats", "innerhalb eines Monates"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["innerhalb der Frist"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["innerhalb der Öffnungszeiten"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e13.s0031",
+          "ablenker": ["de.b1.e13.s0291", "de.b1.e13.s0064"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a11",
+          "typ": "satzbau",
+          "ziel": "de.b1.e13.s0299",
+          "alternativen": [
+            "Das Amt übernimmt in manchen Fällen die Kosten für einen Dolmetscher.",
+            "In manchen Fällen übernimmt das Amt die Kosten für einen Dolmetscher.",
+            "Das Amt übernimmt die Kosten für einen Dolmetscher in manchen Fällen.",
+            "Die Kosten für einen Dolmetscher übernimmt das Amt in manchen Fällen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.entsprechend",
+          "ablenker": ["de.b1.e13.allgemein", "de.b1.e13.vollstaendig"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0065",
+          "wort": 7,
+          "ablenker": ["an", "ab"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a14",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.dauer",
+            "de.b1.e13.bearbeitung",
+            "de.b1.e13.sonstig",
+            "de.b1.e13.ungueltig",
+            "de.b1.e13.angeben",
+            "de.b1.e13.wenden"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e13.s0298",
+          "nach": "ziel",
+          "alternativen": [
+            "Ein Termin am Wochenende ist nur in Ausnahmen möglich.",
+            "Nur in Ausnahmefällen ist ein Termin am Wochenende möglich.",
+            "Ein Termin am Wochenende ist nur in Ausnahmefällen möglich.",
+            "Am Wochenende ist ein Termin nur in Ausnahmen möglich.",
+            "Am Wochenende ist ein Termin nur in Ausnahmefällen möglich."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a16",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e13.aenderung",
+          "ablenker": ["de.a2.e09.angabe", "de.b1.e13.regelung"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a17",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e13.s0301"
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a18",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0134"
+            }
+          ],
+          "antwort": "de.b1.e13.s0135",
+          "ablenker": ["de.b1.e13.s0073", "de.b1.e13.s0087"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a19",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e13.s0297",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a20",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.personalausweis",
+          "ablenker": ["de.b1.e13.aktenzeichen", "de.a2.e09.reisepass"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a21",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0293",
+          "wort": 9,
+          "ablenker": ["gefehlt", "fehlen"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a22",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.zeitpunkt",
+            "de.b1.e13.mehrfach",
+            "de.b1.e13.insbesondere",
+            "de.b1.e13.ausschliesslich",
+            "de.b1.e13.auslaendisch",
+            "de.b1.e13.urkunde"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a23",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e13.s0300",
+          "ablenker": ["de.b1.e13.s0065", "de.b1.e13.s0173"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a24",
+          "typ": "satzbau",
+          "ziel": "de.b1.e13.s0303",
+          "alternativen": [
+            "Das Amt erklärt die neue Regelung in einem ausführlichen Brief.",
+            "Die neue Regelung erklärt das Amt in einem ausführlichen Brief.",
+            "Das Amt erklärt in einem ausführlichen Brief die neue Regelung."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a25",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e13.nachweisen",
+          "ablenker": ["de.b1.e13.angeben", "de.b1.e13.verpflichten"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a26",
+          "typ": "frei",
+          "ziel": "de.b1.e13.s0302",
+          "nach": "ziel",
+          "alternativen": [
+            "Jedes Detail ist bei Anträgen wichtig.",
+            "Bei einem Antrag ist jedes Detail wichtig.",
+            "Bei Anträgen ist jede Einzelheit wichtig.",
+            "Bei Anträgen ist jedes Detail sehr wichtig."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a27",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e13.s0304",
+          "nach": "ziel",
+          "alternativen": ["Der richtige Zeitpunkt für den Antrag ist jetzt.", "Für den Antrag ist jetzt der richtige Zeitpunkt."],
+          "ablenker": ["falsche", "ob"]
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a28",
+          "typ": "sprechen",
+          "satz": "de.b1.e13.s0216"
+        },
+        {
+          "schluessel": "de.b1.e13.l07.a29",
+          "typ": "sprechen",
+          "satz": "de.b1.e13.s0305"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e13.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich einen Antrag stellen, Fristen verstehen und beim Amt nachfragen kann.",
+        "tr": "Başvuru yapabildiğimi, son tarihleri anlayabildiğimi ve resmî dairede bilgi isteyebildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أقدّم طلبًا وأن أفهم المواعيد النهائية وأن أستفسر في الدائرة الرسمية."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e13.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.vollmacht",
+          "ablenker": ["de.b1.e13.akte", "de.b1.e13.aktenzeichen"]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e13.einreichen",
+            "de.b1.e13.verlaengern",
+            "de.b1.e13.ankreuzen",
+            "de.b1.e13.genehmigen",
+            "de.b1.e13.ergaenzen",
+            "de.b1.e13.bearbeiten"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0328",
+          "wort": 4,
+          "ablenker": ["unterschreiben", "unterschrieb"]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e13.s0329",
+          "ablenker": ["de.b1.e13.s0050", "de.b1.e13.s0053"]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0306"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e13.s0307"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0308"
+            }
+          ],
+          "antwort": "de.b1.e13.s0309",
+          "ablenker": ["de.b1.e13.s0310", "de.b1.e13.s0311"]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e13.s0100",
+          "nach": "ziel",
+          "alternativen": [
+            "Oben rechts auf dem Bescheid steht das Aktenzeichen.",
+            "Auf dem Bescheid steht das Aktenzeichen oben rechts.",
+            "Das Aktenzeichen steht auf dem Bescheid oben rechts.",
+            "Auf dem Bescheid steht oben rechts das Aktenzeichen.",
+            "Oben rechts steht das Aktenzeichen auf dem Bescheid."
+          ],
+          "ablenker": ["links", "Akte"]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e13.s0316",
+          "absaetze": ["de.b1.e13.s0317", "de.b1.e13.s0318", "de.b1.e13.s0319", "de.b1.e13.s0320", "de.b1.e13.s0321"],
+          "glossen": ["de.b1.e13.vollmacht"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e13.s0322",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e13.s0323",
+              "antwort": "de.b1.e13.s0324",
+              "ablenker": ["de.b1.e13.s0325", "de.b1.e13.s0326"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e13.s0327",
+              "richtig": "richtig"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e13.widerspruch",
+          "ablenker": ["de.b1.e13.zustimmung", "de.b1.e13.anspruch"]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.b1.e13.s0131",
+          "alternativen": ["Schriftlich muss der Widerspruch eingereicht werden."]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a10",
+          "typ": "frei",
+          "ziel": "de.b1.e13.s0051",
+          "nach": "ziel",
+          "alternativen": [
+            "Ist es möglich, die Frist zu verlängern?",
+            "Kann die Frist verlängert werden?",
+            "Ist eine Fristverlängerung möglich?",
+            "Kann man die Frist verlängern?",
+            "Ist es möglich, die Frist zu verlängern, bitte?"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e13.s0055",
+          "ablenker": ["de.b1.e13.s0043", "de.b1.e13.s0059"]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e13.s0312"
+            }
+          ],
+          "antwort": "de.b1.e13.s0313",
+          "ablenker": ["de.b1.e13.s0314", "de.b1.e13.s0315"]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e13.s0024"
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e13.derzeit",
+          "ablenker": ["de.b1.e13.stets", "de.b1.e13.mehrfach"]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a15",
+          "typ": "luecke",
+          "ziel": "de.b1.e13.s0108",
+          "wort": 8,
+          "ablenker": ["bekommt", "bekommen"]
+        },
+        {
+          "schluessel": "de.b1.e13.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e13.s0330"
+        }
+      ]
+    }
+  ]
+}
