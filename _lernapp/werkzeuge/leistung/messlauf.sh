@@ -9,7 +9,7 @@
 #   MESS_FILTER=<regulärer Ausdruck>: nur Routen, deren Pfad passt (Lighthouse und axe; Nachmessung nach einer Behebung)
 #   MESS_ZIEL=<ordner>: Ausgabe (Standard $TMPDIR/leistung); dort lauf.log mit `uptime` je Schritt
 #   MESS_HALTEN=<sekunden>: Server nach den Messungen weiterlaufen lassen (Ende mit `touch <ziel>/stopp`)
-#   MESS_PLATTE_WARTEN=<sekunden>: höchstens so lange auf 4 GB freien Platz warten (Standard 1800)
+#   MESS_PLATTE_WARTEN=<sekunden>: höchstens so lange auf 4 GB freien Platz warten (Standard 1800); MESS_PLATTE_MB=<MiB>
 # Voraussetzungen: PostgreSQL (127.0.0.1:5432, Rolle igmg) und Mailpit laufen; .env-Vorlage eines Arbeitsbaums (MESS_ENV).
 # Ergebnisse: <ziel>/{budget,messen,lighthouse,inp,a11y,whisper-netz,lasttest}.{md,json}; Rohdaten bleiben außerhalb des Repos.
 set -u
@@ -20,19 +20,22 @@ export PATH=$S/node24/bin:$HOME/.local/bin:$PATH NEXT_TELEMETRY_DISABLED=1
 export E2E_PORT=${E2E_PORT:-3224}
 export E2E_DATABASE_URL=${E2E_DATABASE_URL:-postgres://igmg:igmg-lokal@127.0.0.1:5432/igmg_lernapp_d_e2e}
 export TMPDIR=${TMPDIR:-$S/tmp-l8d}
-export PLAYWRIGHT_BROWSERS_PATH=${PLAYWRIGHT_BROWSERS_PATH:-$S/e2e-echt/pw-browsers}
+# Browser der Playwright-Version aus web/ (die Umgebung setzt PLAYWRIGHT_BROWSERS_PATH auf ältere Builds); MESS_BROWSER setzt ihn anders
+export PLAYWRIGHT_BROWSERS_PATH=${MESS_BROWSER:-$S/e2e-echt/pw-browsers}
 export MESS_ZIEL=${MESS_ZIEL:-$TMPDIR/leistung}
 export MESS_BASIS=http://localhost:$E2E_PORT
 MESS_ENV=${MESS_ENV:-/home/user/IGMG/.claude/worktrees/agent-a360d92e270ea9f2f/web/.env}
 mkdir -p "$TMPDIR" "$MESS_ZIEL"
 
 # Vor dem Schloss: mindestens 4 GB frei abwarten (andere Läufe räumen ihr .next auf), höchstens MESS_PLATTE_WARTEN Sekunden
+# Mindestplatz vor dem Bau: 4 GB (dezimal, Auftrag: „mindestens 4 GB frei“) = 3815 MiB; MESS_PLATTE_MB setzt ihn anders
+PLATTE_MIN=${MESS_PLATTE_MB:-3815}
 platte_mb() { df --output=avail -BM / | tail -1 | tr -dc 0-9; }
 if [ -z "${MESS_IM_SCHLOSS:-}" ]; then
   ende=$((SECONDS + ${MESS_PLATTE_WARTEN:-1800}))
-  until [ "$(platte_mb)" -ge 4096 ]; do
+  until [ "$(platte_mb)" -ge "$PLATTE_MIN" ]; do
     if [ $SECONDS -ge $ende ]; then
-      echo "[$(date -u +%H:%M:%S)] ABBRUCH vor dem Schloss: nur $(platte_mb) MB frei (mindestens 4096 MB)" | tee -a "$MESS_ZIEL/lauf.log"
+      echo "[$(date -u +%H:%M:%S)] ABBRUCH vor dem Schloss: nur $(platte_mb) MB frei (mindestens $PLATTE_MIN MiB)" | tee -a "$MESS_ZIEL/lauf.log"
       exit 3
     fi
     timeout 20 tail -f /dev/null
@@ -46,8 +49,8 @@ TEILE=${*:-budget messen lighthouse inp axe whisper last}
 protokoll() { echo "[$(date -u +%H:%M:%S)] $* · $(uptime | sed 's/.*load average/load average/')" | tee -a "$L"; }
 
 frei_mb=$(platte_mb)
-if [ "$frei_mb" -lt 4096 ]; then
-  protokoll "ABBRUCH: nur ${frei_mb} MB frei (mindestens 4096 MB vor dem Bau)"
+if [ "$frei_mb" -lt "$PLATTE_MIN" ]; then
+  protokoll "ABBRUCH: nur ${frei_mb} MB frei (mindestens $PLATTE_MIN MiB vor dem Bau)"
   exit 3
 fi
 
@@ -91,8 +94,8 @@ DATABASE_URL=$E2E_DATABASE_URL pnpm build > "$MESS_ZIEL/bau.log" 2>&1
 rc=$?
 protokoll "Bau rc=$rc"
 [ $rc -eq 0 ] || exit 1
-# Zwischenspeicher des Baus braucht der Server nicht (Platte knapp)
-rm -rf .next/cache
+# Zwischenspeicher des Baus und .next/server (Kopie liegt in .next/standalone, ≈ 1,4 GB) braucht der Server nicht (Platte knapp)
+rm -rf .next/cache .next/server
 
 # Server (standalone wie Docker, E2E und Betrieb) auf eigenem Port; PID gemerkt
 PORT=$E2E_PORT APP_URL=$MESS_BASIS BETTER_AUTH_URL=$MESS_BASIS DATABASE_URL=$E2E_DATABASE_URL PROXY_VERTRAUEN=1 \
