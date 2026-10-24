@@ -42,7 +42,7 @@
     - Es läuft nur noch B1 de (2 Plätze).
     - **Warteschlange** in dieser Reihenfolge, jeweils erst wenn die Auslastung unter der Taktlinie liegt:
       1. Prüfer-Mängelrunde (1 Agent): `scratchpad/lernapp-pruefer-maengel.workflow.js`, Args `{scratchpad}`.
-      2. B1 ar (`entworfen` e01–e03, `lektoriert` e01; e04 als Teildatei).
+      2. B1 ar (`entworfen` e01–e03, `lektoriert` e01; e04 ist ZWISCHENSTAND f6faaa73 – im Hinweis: Teilentwurf fortsetzen, nicht neu).
       3. B1 tr (Args wie `wf_29e1505e-683`).
       4. B2 de (Args wie `wf_efd14149-f78`).
   - **Prüfer-Gegenprüfung (`wf_7cde5edd-950`): keine Freigabe**, 1 Mangel „mittel“ (Urteil in `scratchpad/pruefer-fa/urteil1.json`):
