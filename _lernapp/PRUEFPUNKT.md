@@ -1,5 +1,23 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 24.10.2026 16:20 UTC – nach dem Limit (≈ 12:30, Reset 15:00; Neustart verspätet) fortgesetzt:**
+  - **Fertig seit 10:35:**
+    - L8-02: Gegenprüfung Runde 2 frei, gemergt (29518e3b). ABNAHME Z-L07 an KERN §9 angeglichen und erfüllt (28ef4aec).
+      Nachprüfung grün: check 3.550, Sprachen, Religion, Wortlaut.
+    - Wissen: alle 26 nicht zurückgestellten Einheiten belegt. Prüfübersicht `_lernapp/berichte/wissen-pruefuebersicht.md`
+      im Inhaltszweig (aec9b868, nachgezählt a5057899): 2.124 Aussagen, 4.603 Belege, 1.041 Quizfragen.
+    - A2 ar: Übersetzung 14/14, Rückübersetzung e01–e04.
+    - B1 de: Entwurf e01–e10.
+    - B1 tr: Entwurf e01–e07.
+    - B1 ar: Plan.
+  - **Neu gestartet:**
+    - A2 ar `wf_862e1c91-ba6`: Rückübersetzung e05–e14, Schlussprüfung.
+    - B1 de `wf_7c8c3db2-799`.
+    - B1 tr `wf_aa554cf8-939`.
+    - B1 ar `wf_64a40a30-ea4`.
+    - Prüfer-Fehlalarme `wf_9ea7a6d0-99a`: Klitika, Teilwörter und Register in tabu/religionsbezug, mit Gegenprobe und Gegenprüfung; Religionswächter unverändert.
+  - **A1-Freigabe:** wartet weiter auf die Erlaubnis des Nutzers (120 gestagte Dateien).
+
 - **Stand 24.10.2026 10:35 UTC – nach dem Limit (≈ 07:00, Reset 10:00) fortgesetzt:**
   - **Fertig:**
     - A2 tr Schlussprüfung (da8c5eb6): A2 de und tr sind komplett.
