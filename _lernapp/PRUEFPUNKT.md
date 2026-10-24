@@ -16,6 +16,12 @@
     - B1 ar `wf_f769aa01-ec0`.
     - B2 de `wf_efd14149-f78`.
     - Prüfer, nur Gegenprüfung: `wf_7cde5edd-950`.
+  - **20:12 – Taktregel (Nutzer: nicht mehr Agenten, als das Limit trägt):**
+    - Auslastung 0,05 nach 9 Minuten bei ≈ 8 Agenten; das Fenster wäre damit gegen 22:50 leer gewesen.
+    - Gestoppt: B1 tr `wf_29e1505e-683` (Entwürfe e09/e10 erst angefangen) und B2 de `wf_efd14149-f78` (Plan erst angefangen).
+    - Beide warten; wieder starten mit denselben Args, sobald die Auslastung unter der Taktlinie liegt.
+    - Es laufen B1 de, B1 ar und die Prüfer-Gegenprüfung.
+    - Die Regel steht in CLAUDE.md und im stündlichen Trigger.
   - **A1-Freigabe:** wartet weiter auf die Erlaubnis des Nutzers (120 gestagte Dateien).
 
 - **Stand 24.10.2026 16:50 UTC – Plan-Modus der Umgebung (≈ 16:20–16:40) beendet:**
