@@ -1,0 +1,5304 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e03",
+    "reihenfolge": 4,
+    "thema": {
+      "de": "Gesund durch den Alltag",
+      "tr": "Günlük hayatta sağlıklı yaşam",
+      "ar": "الصحة في الحياة اليومية"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann Ratschläge zu Ernährung, Bewegung und Schlaf geben und annehmen.",
+        "tr": "Beslenme, hareket ve uyku konusunda tavsiye verebilir ve tavsiyeleri dikkate alabilirim.",
+        "ar": "أستطيع أن أقدّم نصائح عن التغذية والحركة والنوم وأن أتقبّلها."
+      },
+      {
+        "de": "Ich kann Gesundheitsinformationen auf einem Merkblatt verstehen.",
+        "tr": "Bir bilgilendirme broşüründeki sağlık bilgilerini anlayabilirim.",
+        "ar": "أستطيع أن أفهم معلومات صحية في نشرة إرشادية."
+      }
+    ],
+    "symbol": "activity",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e03.zumindest",
+      "lemma": "zumindest",
+      "wortart": "adverb",
+      "frequenzRang": 614,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.unbedingt",
+      "lemma": "unbedingt",
+      "wortart": "adverb",
+      "frequenzRang": 755,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.bewusst",
+      "lemma": "bewusst",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "bewusste",
+        "endung_en": "bewussten",
+        "endung_er": "bewusster",
+        "endung_es": "bewusstes",
+        "endung_em": "bewusstem",
+        "komparativ": "bewusster",
+        "superlativ": "bewusstesten",
+        "superlativ_e": "bewussteste"
+      },
+      "frequenzRang": 1028,
+      "quelle": "wiktionary:de:bewusst",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bewusst‘ (https://de.wiktionary.org/wiki/bewusst), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.koerperlich",
+      "lemma": "körperlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "körperliche",
+        "endung_en": "körperlichen",
+        "endung_er": "körperlicher",
+        "endung_es": "körperliches",
+        "endung_em": "körperlichem"
+      },
+      "frequenzRang": 1802,
+      "quelle": "wiktionary:de:körperlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚körperlich‘ (https://de.wiktionary.org/wiki/körperlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.medizinisch",
+      "lemma": "medizinisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "medizinische",
+        "endung_en": "medizinischen",
+        "endung_er": "medizinischer",
+        "endung_es": "medizinisches",
+        "endung_em": "medizinischem"
+      },
+      "frequenzRang": 1433,
+      "quelle": "wiktionary:de:medizinisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚medizinisch‘ (https://de.wiktionary.org/wiki/medizinisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.individuell",
+      "lemma": "individuell",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "individuelle",
+        "endung_en": "individuellen",
+        "endung_er": "individueller",
+        "endung_es": "individuelles",
+        "endung_em": "individuellem",
+        "komparativ": "individueller",
+        "superlativ": "individuellsten",
+        "superlativ_e": "individuellste"
+      },
+      "frequenzRang": 1439,
+      "quelle": "wiktionary:de:individuell",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚individuell‘ (https://de.wiktionary.org/wiki/individuell), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.intensiv",
+      "lemma": "intensiv",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "intensive",
+        "endung_en": "intensiven",
+        "endung_er": "intensiver",
+        "endung_es": "intensives",
+        "endung_em": "intensivem",
+        "komparativ": "intensiver",
+        "superlativ": "intensivsten",
+        "superlativ_e": "intensivste"
+      },
+      "frequenzRang": 1492,
+      "quelle": "wiktionary:de:intensiv",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚intensiv‘ (https://de.wiktionary.org/wiki/intensiv), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.ausreichend",
+      "lemma": "ausreichend",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ausreichende",
+        "endung_en": "ausreichenden",
+        "endung_er": "ausreichender",
+        "endung_es": "ausreichendes",
+        "endung_em": "ausreichendem"
+      },
+      "frequenzRang": 1509,
+      "quelle": "wiktionary:de:ausreichend",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ausreichend‘ (https://de.wiktionary.org/wiki/ausreichend), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.wach",
+      "lemma": "wach",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "wache",
+        "endung_en": "wachen",
+        "endung_er": "wacher",
+        "endung_es": "waches",
+        "endung_em": "wachem",
+        "komparativ": "wacher",
+        "superlativ": "wachsten",
+        "superlativ_e": "wachste"
+      },
+      "frequenzRang": 1824,
+      "quelle": "wiktionary:de:wach",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wach‘ (https://de.wiktionary.org/wiki/wach), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.mittel",
+      "lemma": "Mittel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Mittel"
+      },
+      "formen": {
+        "dat_pl": "Mitteln",
+        "gen_sg": "Mittels"
+      },
+      "frequenzRang": 1011,
+      "quelle": "wiktionary:de:Mittel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mittel‘ (https://de.wiktionary.org/wiki/Mittel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.wirkung",
+      "lemma": "Wirkung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Wirkungen"
+      },
+      "formen": {
+        "pl": "Wirkungen"
+      },
+      "frequenzRang": 1210,
+      "quelle": "wiktionary:de:Wirkung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wirkung‘ (https://de.wiktionary.org/wiki/Wirkung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.studie",
+      "lemma": "Studie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Studien"
+      },
+      "formen": {
+        "pl": "Studien"
+      },
+      "frequenzRang": 1058,
+      "quelle": "wiktionary:de:Studie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Studie‘ (https://de.wiktionary.org/wiki/Studie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.risiko",
+      "lemma": "Risiko",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Risiken"
+      },
+      "formen": {
+        "pl": "Risiken",
+        "gen_sg": "Risikos"
+      },
+      "frequenzRang": 1129,
+      "quelle": "wiktionary:de:Risiko",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Risiko‘ (https://de.wiktionary.org/wiki/Risiko), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.zweifel",
+      "lemma": "Zweifel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zweifel"
+      },
+      "formen": {
+        "dat_pl": "Zweifeln",
+        "gen_sg": "Zweifels"
+      },
+      "frequenzRang": 1500,
+      "quelle": "wiktionary:de:Zweifel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zweifel‘ (https://de.wiktionary.org/wiki/Zweifel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.operation",
+      "lemma": "Operation",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Operationen"
+      },
+      "formen": {
+        "pl": "Operationen"
+      },
+      "frequenzRang": 1686,
+      "quelle": "wiktionary:de:Operation",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Operation‘ (https://de.wiktionary.org/wiki/Operation), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.klinik",
+      "lemma": "Klinik",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kliniken"
+      },
+      "formen": {
+        "pl": "Kliniken"
+      },
+      "frequenzRang": 1934,
+      "quelle": "wiktionary:de:Klinik",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Klinik‘ (https://de.wiktionary.org/wiki/Klinik), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.ernaehrung",
+      "lemma": "Ernährung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 2564,
+      "quelle": "wiktionary:de:Ernährung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ernährung‘ (https://de.wiktionary.org/wiki/Ernährung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.vorsorge",
+      "lemma": "Vorsorge",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 8804,
+      "quelle": "wiktionary:de:Vorsorge",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vorsorge‘ (https://de.wiktionary.org/wiki/Vorsorge), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.gewohnheit",
+      "lemma": "Gewohnheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Gewohnheiten"
+      },
+      "formen": {
+        "pl": "Gewohnheiten"
+      },
+      "frequenzRang": 6077,
+      "quelle": "wiktionary:de:Gewohnheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gewohnheit‘ (https://de.wiktionary.org/wiki/Gewohnheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.vorsatz",
+      "lemma": "Vorsatz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Vorsätze"
+      },
+      "formen": {
+        "pl": "Vorsätze",
+        "dat_pl": "Vorsätzen",
+        "gen_sg": "Vorsatzes"
+      },
+      "frequenzRang": 7159,
+      "quelle": "wiktionary:de:Vorsatz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vorsatz‘ (https://de.wiktionary.org/wiki/Vorsatz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.ratschlag",
+      "lemma": "Ratschlag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Ratschläge"
+      },
+      "formen": {
+        "pl": "Ratschläge",
+        "dat_pl": "Ratschlägen",
+        "gen_sg": "Ratschlags",
+        "gen_sg_2": "Ratschlages"
+      },
+      "frequenzRang": 5336,
+      "quelle": "wiktionary:de:Ratschlag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ratschlag‘ (https://de.wiktionary.org/wiki/Ratschlag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.erkrankung",
+      "lemma": "Erkrankung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Erkrankungen"
+      },
+      "formen": {
+        "pl": "Erkrankungen"
+      },
+      "frequenzRang": 2134,
+      "quelle": "wiktionary:de:Erkrankung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erkrankung‘ (https://de.wiktionary.org/wiki/Erkrankung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.symptom",
+      "lemma": "Symptom",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Symptome"
+      },
+      "formen": {
+        "pl": "Symptome",
+        "dat_pl": "Symptomen",
+        "gen_sg": "Symptoms"
+      },
+      "frequenzRang": 2791,
+      "quelle": "wiktionary:de:Symptom",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Symptom‘ (https://de.wiktionary.org/wiki/Symptom), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.diagnose",
+      "lemma": "Diagnose",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Diagnosen"
+      },
+      "formen": {
+        "pl": "Diagnosen"
+      },
+      "frequenzRang": 3614,
+      "quelle": "wiktionary:de:Diagnose",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Diagnose‘ (https://de.wiktionary.org/wiki/Diagnose), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.therapie",
+      "lemma": "Therapie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Therapien"
+      },
+      "formen": {
+        "pl": "Therapien"
+      },
+      "frequenzRang": 2132,
+      "quelle": "wiktionary:de:Therapie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Therapie‘ (https://de.wiktionary.org/wiki/Therapie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.impfung",
+      "lemma": "Impfung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Impfungen"
+      },
+      "formen": {
+        "pl": "Impfungen"
+      },
+      "frequenzRang": 5475,
+      "quelle": "wiktionary:de:Impfung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Impfung‘ (https://de.wiktionary.org/wiki/Impfung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.gehirn",
+      "lemma": "Gehirn",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gehirne"
+      },
+      "formen": {
+        "pl": "Gehirne",
+        "dat_pl": "Gehirnen",
+        "gen_sg": "Gehirns",
+        "gen_sg_2": "Gehirnes"
+      },
+      "frequenzRang": 2068,
+      "quelle": "wiktionary:de:Gehirn",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gehirn‘ (https://de.wiktionary.org/wiki/Gehirn), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.haut",
+      "lemma": "Haut",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 1407,
+      "quelle": "wiktionary:de:Haut",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Haut‘ (https://de.wiktionary.org/wiki/Haut), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.knochen",
+      "lemma": "Knochen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Knochen"
+      },
+      "formen": {
+        "gen_sg": "Knochens"
+      },
+      "frequenzRang": 3142,
+      "quelle": "wiktionary:de:Knochen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Knochen‘ (https://de.wiktionary.org/wiki/Knochen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.muskel",
+      "lemma": "Muskel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Muskeln"
+      },
+      "formen": {
+        "pl": "Muskeln",
+        "gen_sg": "Muskels"
+      },
+      "frequenzRang": 3471,
+      "quelle": "wiktionary:de:Muskel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Muskel‘ (https://de.wiktionary.org/wiki/Muskel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.magen",
+      "lemma": "Magen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Mägen"
+      },
+      "formen": {
+        "pl": "Mägen",
+        "gen_sg": "Magens"
+      },
+      "frequenzRang": 3402,
+      "quelle": "wiktionary:de:Magen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Magen‘ (https://de.wiktionary.org/wiki/Magen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.lunge",
+      "lemma": "Lunge",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Lungen"
+      },
+      "formen": {
+        "pl": "Lungen"
+      },
+      "frequenzRang": 4835,
+      "quelle": "wiktionary:de:Lunge",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lunge‘ (https://de.wiktionary.org/wiki/Lunge), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.salz",
+      "lemma": "Salz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Salzes"
+      },
+      "frequenzRang": 2739,
+      "quelle": "wiktionary:de:Salz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Salz‘ (https://de.wiktionary.org/wiki/Salz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.fett",
+      "lemma": "Fett",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Fette"
+      },
+      "formen": {
+        "pl": "Fette",
+        "dat_pl": "Fetten",
+        "gen_sg": "Fetts",
+        "gen_sg_2": "Fettes"
+      },
+      "frequenzRang": 1510,
+      "quelle": "wiktionary:de:Fett",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fett‘ (https://de.wiktionary.org/wiki/Fett), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.vitamin",
+      "lemma": "Vitamin",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Vitamine"
+      },
+      "formen": {
+        "pl": "Vitamine",
+        "dat_pl": "Vitaminen",
+        "gen_sg": "Vitamins"
+      },
+      "frequenzRang": 4904,
+      "quelle": "wiktionary:de:Vitamin",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vitamin‘ (https://de.wiktionary.org/wiki/Vitamin), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.entspannung",
+      "lemma": "Entspannung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 6039,
+      "quelle": "wiktionary:de:Entspannung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Entspannung‘ (https://de.wiktionary.org/wiki/Entspannung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.fitness",
+      "lemma": "Fitness",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 3959,
+      "quelle": "wiktionary:de:Fitness",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fitness‘ (https://de.wiktionary.org/wiki/Fitness), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.spaziergang",
+      "lemma": "Spaziergang",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Spaziergänge"
+      },
+      "formen": {
+        "pl": "Spaziergänge",
+        "dat_pl": "Spaziergängen",
+        "gen_sg": "Spaziergangs",
+        "gen_sg_2": "Spazierganges"
+      },
+      "frequenzRang": 4609,
+      "quelle": "wiktionary:de:Spaziergang",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Spaziergang‘ (https://de.wiktionary.org/wiki/Spaziergang), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.erholung",
+      "lemma": "Erholung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 5493,
+      "quelle": "wiktionary:de:Erholung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erholung‘ (https://de.wiktionary.org/wiki/Erholung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.rueckenschmerzen",
+      "lemma": "Rückenschmerzen",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 18103,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.schlafstoerung",
+      "lemma": "Schlafstörung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schlafstörungen"
+      },
+      "formen": {
+        "pl": "Schlafstörungen"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.krankenversicherung",
+      "lemma": "Krankenversicherung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Krankenversicherungen"
+      },
+      "formen": {
+        "pl": "Krankenversicherungen"
+      },
+      "frequenzRang": 5642,
+      "quelle": "wiktionary:de:Krankenversicherung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Krankenversicherung‘ (https://de.wiktionary.org/wiki/Krankenversicherung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.bewegungsmangel",
+      "lemma": "Bewegungsmangel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Bewegungsmangels"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.wirken",
+      "lemma": "wirken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "wirken",
+        "praes_ich": "wirke",
+        "praes_du": "wirkst",
+        "praes_er_sie_es": "wirkt",
+        "praes_wir": "wirken",
+        "praes_ihr": "wirkt",
+        "praes_sie_Sie": "wirken",
+        "praet_ich_er_sie_es": "wirkte",
+        "praet_du": "wirktest",
+        "praet_wir_sie_Sie": "wirkten",
+        "praet_ihr": "wirktet",
+        "partizip_2": "gewirkt"
+      },
+      "frequenzRang": 485,
+      "quelle": "wiktionary:de:wirken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wirken‘ (https://de.wiktionary.org/wiki/wirken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.behandeln",
+      "lemma": "behandeln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "behandeln",
+        "praes_ich": "behandle",
+        "praes_du": "behandelst",
+        "praes_er_sie_es": "behandelt",
+        "praes_wir": "behandeln",
+        "praes_ihr": "behandelt",
+        "praes_sie_Sie": "behandeln",
+        "praet_ich_er_sie_es": "behandelte",
+        "praet_du": "behandeltest",
+        "praet_wir_sie_Sie": "behandelten",
+        "praet_ihr": "behandeltet",
+        "partizip_2": "behandelt"
+      },
+      "frequenzRang": 892,
+      "quelle": "wiktionary:de:behandeln",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚behandeln‘ (https://de.wiktionary.org/wiki/behandeln), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.verzichten",
+      "lemma": "verzichten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verzichten",
+        "praes_ich": "verzichte",
+        "praes_du": "verzichtest",
+        "praes_er_sie_es": "verzichtet",
+        "praes_wir": "verzichten",
+        "praes_ihr": "verzichtet",
+        "praes_sie_Sie": "verzichten",
+        "praet_ich_er_sie_es": "verzichtete",
+        "praet_du": "verzichtetest",
+        "praet_wir_sie_Sie": "verzichteten",
+        "praet_ihr": "verzichtetet",
+        "partizip_2": "verzichtet",
+        "imp_du": "verzichte",
+        "imp_ihr": "verzichtet"
+      },
+      "frequenzRang": 1310,
+      "quelle": "wiktionary:de:verzichten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verzichten‘ (https://de.wiktionary.org/wiki/verzichten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.vermeiden",
+      "lemma": "vermeiden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "vermeiden",
+        "praes_ich": "vermeide",
+        "praes_du": "vermeidest",
+        "praes_er_sie_es": "vermeidet",
+        "praes_wir": "vermeiden",
+        "praes_ihr": "vermeidet",
+        "praes_sie_Sie": "vermeiden",
+        "praet_ich_er_sie_es": "vermied",
+        "praet_du": "vermiedest",
+        "praet_wir_sie_Sie": "vermieden",
+        "praet_ihr": "vermiedet",
+        "partizip_2": "vermieden",
+        "imp_du": "vermeide",
+        "imp_ihr": "vermeidet"
+      },
+      "frequenzRang": 1404,
+      "quelle": "wiktionary:de:vermeiden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vermeiden‘ (https://de.wiktionary.org/wiki/vermeiden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.erhoehen",
+      "lemma": "erhöhen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erhöhen",
+        "praes_ich": "erhöhe",
+        "praes_du": "erhöhst",
+        "praes_er_sie_es": "erhöht",
+        "praes_wir": "erhöhen",
+        "praes_ihr": "erhöht",
+        "praes_sie_Sie": "erhöhen",
+        "praet_ich_er_sie_es": "erhöhte",
+        "praet_du": "erhöhtest",
+        "praet_wir_sie_Sie": "erhöhten",
+        "praet_ihr": "erhöhtet",
+        "partizip_2": "erhöht"
+      },
+      "frequenzRang": 1050,
+      "quelle": "wiktionary:de:erhöhen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erhöhen‘ (https://de.wiktionary.org/wiki/erhöhen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.senken",
+      "lemma": "senken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "senken",
+        "praes_ich": "senke",
+        "praes_du": "senkst",
+        "praes_er_sie_es": "senkt",
+        "praes_wir": "senken",
+        "praes_ihr": "senkt",
+        "praes_sie_Sie": "senken",
+        "praet_ich_er_sie_es": "senkte",
+        "praet_du": "senktest",
+        "praet_wir_sie_Sie": "senkten",
+        "praet_ihr": "senktet",
+        "partizip_2": "gesenkt"
+      },
+      "frequenzRang": 2551,
+      "quelle": "wiktionary:de:senken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚senken‘ (https://de.wiktionary.org/wiki/senken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.treiben",
+      "lemma": "treiben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "treiben",
+        "praes_ich": "treibe",
+        "praes_du": "treibst",
+        "praes_er_sie_es": "treibt",
+        "praes_wir": "treiben",
+        "praes_ihr": "treibt",
+        "praes_sie_Sie": "treiben",
+        "praet_ich_er_sie_es": "trieb",
+        "praet_du": "triebst",
+        "praet_wir_sie_Sie": "trieben",
+        "praet_ihr": "triebt",
+        "partizip_2": "getrieben"
+      },
+      "frequenzRang": 960,
+      "quelle": "wiktionary:de:treiben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚treiben‘ (https://de.wiktionary.org/wiki/treiben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.bewegen",
+      "lemma": "bewegen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "bewegen",
+        "praes_ich": "bewege",
+        "praes_du": "bewegst",
+        "praes_er_sie_es": "bewegt",
+        "praes_wir": "bewegen",
+        "praes_ihr": "bewegt",
+        "praes_sie_Sie": "bewegen",
+        "praet_ich_er_sie_es": "bewegte",
+        "praet_du": "bewegtest",
+        "praet_wir_sie_Sie": "bewegten",
+        "praet_ihr": "bewegtet",
+        "partizip_2": "bewegt",
+        "imp_du": "beweg",
+        "imp_ihr": "bewegt",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 824,
+      "quelle": "wiktionary:de:bewegen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bewegen‘ (https://de.wiktionary.org/wiki/bewegen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.ernaehren",
+      "lemma": "ernähren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "ernähren",
+        "praes_ich": "ernähre",
+        "praes_du": "ernährst",
+        "praes_er_sie_es": "ernährt",
+        "praes_wir": "ernähren",
+        "praes_ihr": "ernährt",
+        "praes_sie_Sie": "ernähren",
+        "praet_ich_er_sie_es": "ernährte",
+        "praet_du": "ernährtest",
+        "praet_wir_sie_Sie": "ernährten",
+        "praet_ihr": "ernährtet",
+        "partizip_2": "ernährt",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 3992,
+      "quelle": "wiktionary:de:ernähren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ernähren‘ (https://de.wiktionary.org/wiki/ernähren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.entspannen",
+      "lemma": "entspannen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "entspannen",
+        "praes_ich": "entspanne",
+        "praes_du": "entspannst",
+        "praes_er_sie_es": "entspannt",
+        "praes_wir": "entspannen",
+        "praes_ihr": "entspannt",
+        "praes_sie_Sie": "entspannen",
+        "praet_ich_er_sie_es": "entspannte",
+        "praet_du": "entspanntest",
+        "praet_wir_sie_Sie": "entspannten",
+        "praet_ihr": "entspanntet",
+        "partizip_2": "entspannt",
+        "imp_du": "entspann",
+        "imp_ihr": "entspannt",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 2106,
+      "quelle": "wiktionary:de:entspannen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚entspannen‘ (https://de.wiktionary.org/wiki/entspannen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.gewoehnen",
+      "lemma": "gewöhnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "gewöhnen",
+        "praes_ich": "gewöhne",
+        "praes_du": "gewöhnst",
+        "praes_er_sie_es": "gewöhnt",
+        "praes_wir": "gewöhnen",
+        "praes_ihr": "gewöhnt",
+        "praes_sie_Sie": "gewöhnen",
+        "praet_ich_er_sie_es": "gewöhnte",
+        "praet_du": "gewöhntest",
+        "praet_wir_sie_Sie": "gewöhnten",
+        "praet_ihr": "gewöhntet",
+        "partizip_2": "gewöhnt",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 2738,
+      "quelle": "wiktionary:de:gewöhnen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gewöhnen‘ (https://de.wiktionary.org/wiki/gewöhnen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.leiden",
+      "lemma": "leiden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "leiden",
+        "praes_ich": "leide",
+        "praes_du": "leidest",
+        "praes_er_sie_es": "leidet",
+        "praes_wir": "leiden",
+        "praes_ihr": "leidet",
+        "praes_sie_Sie": "leiden",
+        "praet_ich_er_sie_es": "litt",
+        "praet_du": "littest",
+        "praet_wir_sie_Sie": "litten",
+        "praet_ihr": "littet",
+        "partizip_2": "gelitten"
+      },
+      "frequenzRang": 993,
+      "quelle": "wiktionary:de:leiden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚leiden‘ (https://de.wiktionary.org/wiki/leiden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.auftreten",
+      "lemma": "auftreten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "auf",
+        "unregelmaessig_praesens": "ja",
+        "grundverb": "treten (de.a2.e08.treten)"
+      },
+      "formen": {
+        "infinitiv": "auftreten",
+        "verbzusatz": "auf",
+        "partizip_2": "aufgetreten",
+        "zu_infinitiv": "aufzutreten",
+        "nebensatz_er_sie_es": "auftritt",
+        "nebensatz_praet": "auftrat",
+        "nebensatz_praet_pl": "auftraten"
+      },
+      "frequenzRang": 851,
+      "quelle": "wiktionary:de:auftreten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚auftreten‘ (https://de.wiktionary.org/wiki/auftreten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.impfen",
+      "lemma": "impfen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "impfen",
+        "praes_ich": "impfe",
+        "praes_du": "impfst",
+        "praes_er_sie_es": "impft",
+        "praes_wir": "impfen",
+        "praes_ihr": "impft",
+        "praes_sie_Sie": "impfen",
+        "praet_ich_er_sie_es": "impfte",
+        "praet_du": "impftest",
+        "praet_wir_sie_Sie": "impften",
+        "praet_ihr": "impftet",
+        "partizip_2": "geimpft"
+      },
+      "frequenzRang": 7185,
+      "quelle": "wiktionary:de:impfen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚impfen‘ (https://de.wiktionary.org/wiki/impfen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.ausschlafen",
+      "lemma": "ausschlafen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "aus",
+        "unregelmaessig_praesens": "ja",
+        "grundverb": "schlafen (de.a1.e12.schlafen)"
+      },
+      "formen": {
+        "infinitiv": "ausschlafen",
+        "verbzusatz": "aus",
+        "partizip_2": "ausgeschlafen",
+        "zu_infinitiv": "auszuschlafen",
+        "nebensatz_er_sie_es": "ausschläft",
+        "nebensatz_praet": "ausschlief",
+        "nebensatz_praet_pl": "ausschliefen"
+      },
+      "frequenzRang": 29096,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.dehnen",
+      "lemma": "dehnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "dehnen",
+        "praes_ich": "dehne",
+        "praes_du": "dehnst",
+        "praes_er_sie_es": "dehnt",
+        "praes_wir": "dehnen",
+        "praes_ihr": "dehnt",
+        "praes_sie_Sie": "dehnen",
+        "praet_ich_er_sie_es": "dehnte",
+        "praet_du": "dehntest",
+        "praet_wir_sie_Sie": "dehnten",
+        "praet_ihr": "dehntet",
+        "partizip_2": "gedehnt"
+      },
+      "frequenzRang": 26893,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.gesundheitlich",
+      "lemma": "gesundheitlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "gesundheitliche",
+        "endung_en": "gesundheitlichen",
+        "endung_er": "gesundheitlicher",
+        "endung_es": "gesundheitliches",
+        "endung_em": "gesundheitlichem"
+      },
+      "frequenzRang": 3886,
+      "quelle": "wiktionary:de:gesundheitlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gesundheitlich‘ (https://de.wiktionary.org/wiki/gesundheitlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.vegetarisch",
+      "lemma": "vegetarisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "vegetarische",
+        "endung_en": "vegetarischen",
+        "endung_er": "vegetarischer",
+        "endung_es": "vegetarisches",
+        "endung_em": "vegetarischem"
+      },
+      "frequenzRang": 6842,
+      "quelle": "wiktionary:de:vegetarisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vegetarisch‘ (https://de.wiktionary.org/wiki/vegetarisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.ausgewogen",
+      "lemma": "ausgewogen",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ausgewogene",
+        "endung_en": "ausgewogenen",
+        "endung_er": "ausgewogener",
+        "endung_es": "ausgewogenes",
+        "endung_em": "ausgewogenem",
+        "komparativ": "ausgewogener",
+        "superlativ": "ausgewogensten",
+        "superlativ_e": "ausgewogenste"
+      },
+      "frequenzRang": 26385,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.allergisch",
+      "lemma": "allergisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "allergische",
+        "endung_en": "allergischen",
+        "endung_er": "allergischer",
+        "endung_es": "allergisches",
+        "endung_em": "allergischem"
+      },
+      "frequenzRang": 20551,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.salzig",
+      "lemma": "salzig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "salzige",
+        "endung_en": "salzigen",
+        "endung_er": "salziger",
+        "endung_es": "salziges",
+        "endung_em": "salzigem",
+        "komparativ": "salziger",
+        "superlativ": "salzigsten",
+        "superlativ_e": "salzigste"
+      },
+      "frequenzRang": 11907,
+      "quelle": "wiktionary:de:salzig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚salzig‘ (https://de.wiktionary.org/wiki/salzig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.einheit",
+      "lemma": "Einheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Einheiten"
+      },
+      "formen": {
+        "pl": "Einheiten"
+      },
+      "frequenzRang": 1231,
+      "quelle": "wiktionary:de:Einheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Einheit‘ (https://de.wiktionary.org/wiki/Einheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.typ",
+      "lemma": "Typ",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Typen"
+      },
+      "formen": {
+        "pl": "Typen",
+        "gen_sg": "Typs",
+        "gen_sg_2": "Typen"
+      },
+      "frequenzRang": 699,
+      "quelle": "wiktionary:de:Typ",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Typ‘ (https://de.wiktionary.org/wiki/Typ), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.experte",
+      "lemma": "Experte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Experten",
+        "deklination": "n-Deklination",
+        "weiblich": "Expertin"
+      },
+      "formen": {
+        "pl": "Experten",
+        "akk_dat_sg": "Experten",
+        "gen_sg": "Experten",
+        "weiblich": "Expertin",
+        "weiblich_pl": "Expertinnen"
+      },
+      "frequenzRang": 1604,
+      "quelle": "wiktionary:de:Experte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Experte‘ (https://de.wiktionary.org/wiki/Experte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.effekt",
+      "lemma": "Effekt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Effekte"
+      },
+      "formen": {
+        "pl": "Effekte",
+        "dat_pl": "Effekten",
+        "gen_sg": "Effekts",
+        "gen_sg_2": "Effektes"
+      },
+      "frequenzRang": 1679,
+      "quelle": "wiktionary:de:Effekt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Effekt‘ (https://de.wiktionary.org/wiki/Effekt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.faktor",
+      "lemma": "Faktor",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Faktoren"
+      },
+      "formen": {
+        "pl": "Faktoren",
+        "gen_sg": "Faktors"
+      },
+      "frequenzRang": 1715,
+      "quelle": "wiktionary:de:Faktor",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Faktor‘ (https://de.wiktionary.org/wiki/Faktor), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.heben",
+      "lemma": "heben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "heben",
+        "praes_ich": "hebe",
+        "praes_du": "hebst",
+        "praes_er_sie_es": "hebt",
+        "praes_wir": "heben",
+        "praes_ihr": "hebt",
+        "praes_sie_Sie": "heben",
+        "praet_ich_er_sie_es": "hob",
+        "praet_du": "hobst",
+        "praet_wir_sie_Sie": "hoben",
+        "praet_ihr": "hobt",
+        "partizip_2": "gehoben"
+      },
+      "frequenzRang": 1657,
+      "quelle": "wiktionary:de:heben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚heben‘ (https://de.wiktionary.org/wiki/heben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.empfinden",
+      "lemma": "empfinden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "empfinden",
+        "praes_ich": "empfinde",
+        "praes_du": "empfindest",
+        "praes_er_sie_es": "empfindet",
+        "praes_wir": "empfinden",
+        "praes_ihr": "empfindet",
+        "praes_sie_Sie": "empfinden",
+        "praet_ich_er_sie_es": "empfand",
+        "praet_du": "empfandest",
+        "praet_wir_sie_Sie": "empfanden",
+        "praet_ihr": "empfandet",
+        "partizip_2": "empfunden"
+      },
+      "frequenzRang": 1829,
+      "quelle": "wiktionary:de:empfinden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚empfinden‘ (https://de.wiktionary.org/wiki/empfinden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.geistig",
+      "lemma": "geistig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "geistige",
+        "endung_en": "geistigen",
+        "endung_er": "geistiger",
+        "endung_es": "geistiges",
+        "endung_em": "geistigem"
+      },
+      "frequenzRang": 1830,
+      "quelle": "wiktionary:de:geistig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚geistig‘ (https://de.wiktionary.org/wiki/geistig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.verstaerken",
+      "lemma": "verstärken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verstärken",
+        "praes_ich": "verstärke",
+        "praes_du": "verstärkst",
+        "praes_er_sie_es": "verstärkt",
+        "praes_wir": "verstärken",
+        "praes_ihr": "verstärkt",
+        "praes_sie_Sie": "verstärken",
+        "praet_ich_er_sie_es": "verstärkte",
+        "praet_du": "verstärktest",
+        "praet_wir_sie_Sie": "verstärkten",
+        "praet_ihr": "verstärktet",
+        "partizip_2": "verstärkt"
+      },
+      "frequenzRang": 1682,
+      "quelle": "wiktionary:de:verstärken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verstärken‘ (https://de.wiktionary.org/wiki/verstärken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.haltung",
+      "lemma": "Haltung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Haltungen"
+      },
+      "formen": {
+        "pl": "Haltungen"
+      },
+      "frequenzRang": 1982,
+      "quelle": "wiktionary:de:Haltung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Haltung‘ (https://de.wiktionary.org/wiki/Haltung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.kombination",
+      "lemma": "Kombination",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kombinationen"
+      },
+      "formen": {
+        "pl": "Kombinationen"
+      },
+      "frequenzRang": 1965,
+      "quelle": "wiktionary:de:Kombination",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kombination‘ (https://de.wiktionary.org/wiki/Kombination), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.blutdruck",
+      "lemma": "Blutdruck",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Blutdrucks",
+        "gen_sg_2": "Blutdruckes"
+      },
+      "frequenzRang": 7433,
+      "quelle": "wiktionary:de:Blutdruck",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Blutdruck‘ (https://de.wiktionary.org/wiki/Blutdruck), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.facharzt",
+      "lemma": "Facharzt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Fachärzte",
+        "weiblich": "Fachärztin"
+      },
+      "formen": {
+        "pl": "Fachärzte",
+        "dat_pl": "Fachärzten",
+        "gen_sg": "Facharztes",
+        "weiblich": "Fachärztin",
+        "weiblich_pl": "Fachärztinnen"
+      },
+      "frequenzRang": 11996,
+      "quelle": "wiktionary:de:Facharzt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Facharzt‘ (https://de.wiktionary.org/wiki/Facharzt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.nebenwirkung",
+      "lemma": "Nebenwirkung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Nebenwirkungen"
+      },
+      "formen": {
+        "pl": "Nebenwirkungen"
+      },
+      "frequenzRang": 5751,
+      "quelle": "wiktionary:de:Nebenwirkung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nebenwirkung‘ (https://de.wiktionary.org/wiki/Nebenwirkung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.heilen",
+      "lemma": "heilen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben/sein"
+      },
+      "formen": {
+        "infinitiv": "heilen",
+        "praes_ich": "heile",
+        "praes_du": "heilst",
+        "praes_er_sie_es": "heilt",
+        "praes_wir": "heilen",
+        "praes_ihr": "heilt",
+        "praes_sie_Sie": "heilen",
+        "praet_ich_er_sie_es": "heilte",
+        "praet_du": "heiltest",
+        "praet_wir_sie_Sie": "heilten",
+        "praet_ihr": "heiltet",
+        "partizip_2": "geheilt"
+      },
+      "frequenzRang": 3447,
+      "quelle": "wiktionary:de:heilen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚heilen‘ (https://de.wiktionary.org/wiki/heilen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.wunde",
+      "lemma": "Wunde",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Wunden"
+      },
+      "formen": {
+        "pl": "Wunden"
+      },
+      "frequenzRang": 4998,
+      "quelle": "wiktionary:de:Wunde",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wunde‘ (https://de.wiktionary.org/wiki/Wunde), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e03.s0001",
+      "text": "Ich sitze den ganzen Tag und bewege mich viel zu wenig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0002",
+      "text": "Man sollte sich jeden Tag mindestens dreißig Minuten bewegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0003",
+      "text": "Bewegungsmangel ist bei Kindern und Erwachsenen ein großes Problem.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0004",
+      "text": "Viele Menschen haben Rückenschmerzen, weil sie zu viel sitzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0005",
+      "text": "Achte beim Sitzen auf eine gerade Haltung!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0006",
+      "text": "Wenn wir auf das Handy schauen, ist unsere Haltung oft schlecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0007",
+      "text": "Nach dem Training tun mir die Muskeln weh.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0008",
+      "text": "Durch regelmäßigen Sport werden die Muskeln stärker.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0009",
+      "text": "Milch und Käse sind gut für die Knochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0010",
+      "text": "Frische Luft ist gut für die Lunge.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0011",
+      "text": "Auch das Gehirn braucht Bewegung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0012",
+      "text": "Die Arbeit im Krankenhaus ist körperlich sehr anstrengend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0013",
+      "text": "Sport hält körperlich und geistig fit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0014",
+      "text": "Nimm lieber die Treppe und nicht den Aufzug. Das ist gut für deine Fitness.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0015",
+      "text": "Ich treibe jeden Tag eine Stunde Sport.",
+      "quelle": "tatoeba:1408560",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1408560 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0016",
+      "text": "Oma Sevim ist über siebzig und treibt noch jede Woche Sport.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0017",
+      "text": "Nach dem Essen machen wir oft einen kurzen Spaziergang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0018",
+      "text": "Wie war dein Spaziergang?",
+      "quelle": "tatoeba:477402",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #477402 von Ullalia (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0019",
+      "text": "Nach jeder Einheit dehnen wir die Muskeln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0020",
+      "text": "Vergiss nicht, dich nach dem Laufen zu dehnen!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0021",
+      "text": "Kannst du die schwere Kiste allein heben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0022",
+      "text": "Heben Sie schwere Sachen immer mit geradem Rücken!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0023",
+      "text": "Derya muss bei der Arbeit oft Patienten heben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0024",
+      "text": "Nach dem Sport fühle ich mich viel besser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0025",
+      "text": "Beim Fußball hat sich Jan am Knie verletzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0026",
+      "text": "Du siehst müde aus, Emre. Was ist los?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0027",
+      "text": "Ich sitze jeden Tag stundenlang am Computer und habe Rückenschmerzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0028",
+      "text": "Du bewegst dich zu wenig. Wie wäre es mit Fußball am Abend?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0029",
+      "text": "Gute Idee! Ich muss mich wirklich mehr bewegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0030",
+      "text": "Ich bewege mich zu wenig. Ab jetzt treibe ich mehr Sport oder mache jeden Tag einen Spaziergang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0031",
+      "text": "Eine gesunde Ernährung ist für Kinder besonders wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0032",
+      "text": "Was gehört zu einer ausgewogenen Ernährung?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0033",
+      "text": "Wie ernährst du dich?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0034",
+      "text": "Immer mehr Menschen ernähren sich vegetarisch.",
+      "quelle": "tatoeba:817061",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #817061 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0035",
+      "text": "Seit dem Sommer ernähre ich mich gesünder als früher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0036",
+      "text": "Ein ausgewogenes Frühstück gibt Kraft für den ganzen Vormittag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0037",
+      "text": "Gibt es in der Kantine heute auch ein vegetarisches Essen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0038",
+      "text": "Ebru isst seit einem Jahr vegetarisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0039",
+      "text": "Zu viel Salz ist schlecht für das Herz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0040",
+      "text": "Die Suppe ist zu salzig.",
+      "quelle": "tatoeba:433370",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #433370 von Espi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0041",
+      "text": "Chips sind sehr salzig und haben viel Fett.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0042",
+      "text": "Der Körper braucht auch Fett, aber nicht zu viel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0043",
+      "text": "Obst und Gemüse haben viele Vitamine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0044",
+      "text": "Ich habe zu schnell gegessen, jetzt tut mir der Magen weh.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0045",
+      "text": "Alte Gewohnheiten kann man nur schwer ändern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0046",
+      "text": "Welche Gewohnheiten möchtest du ändern?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0047",
+      "text": "Abends verzichte ich auf Süßigkeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0048",
+      "text": "Kannst du eine Woche auf Zucker verzichten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0049",
+      "text": "Versuch, zu viel Zucker zu vermeiden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0050",
+      "text": "Bist du gegen etwas allergisch?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0051",
+      "text": "Reis mit Gemüse ist eine gute Kombination.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0052",
+      "text": "Die Kombination aus Bewegung und gesunder Ernährung hilft am meisten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0053",
+      "text": "Ich esse jetzt bewusster und langsamer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0054",
+      "text": "Trink jeden Tag ausreichend Wasser!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0055",
+      "text": "Wasser ist gesünder als Saft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0056",
+      "text": "Ein Apfel ist genauso gesund wie eine Banane.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0057",
+      "text": "Am gesündesten ist frisches Gemüse vom Markt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0058",
+      "text": "Wenn ich Stress habe, esse ich oft zu viel Schokolade.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0059",
+      "text": "Was nimmst du heute, Ḫālid?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0060",
+      "text": "Ich nehme den Salat. Ich möchte mich gesünder ernähren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0061",
+      "text": "Und warum nicht die Pommes? Die sind doch lecker!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0062",
+      "text": "Lecker schon, aber sie haben viel Fett und Salz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0063",
+      "text": "Ich esse oft zu schnell. Diese Gewohnheit möchte ich ändern und ab jetzt bewusster essen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0064",
+      "text": "Danke für deinen Ratschlag, das probiere ich aus!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0065",
+      "text": "Oma Sevim gibt mir oft gute Ratschläge.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0066",
+      "text": "Kannst du mir einen Ratschlag geben? Ich schlafe so schlecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0067",
+      "text": "Du solltest früher ins Bett gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0068",
+      "text": "Du solltest abends nicht so lange auf das Handy schauen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0069",
+      "text": "An deiner Stelle würde ich heute früher schlafen gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0070",
+      "text": "Wie wäre es mit einem Spaziergang nach dem Abendessen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0071",
+      "text": "Könntest du mir einen Tipp gegen Stress geben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0072",
+      "text": "Ich hätte gern mehr Zeit für mich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0073",
+      "text": "Ich würde gern einmal richtig ausschlafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0074",
+      "text": "Ich wünschte, ich könnte nachts besser schlafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0075",
+      "text": "Zur Entspannung lese ich abends ein Buch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0076",
+      "text": "Am Wochenende möchte ich mich einfach nur entspannen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0077",
+      "text": "Entspann dich! Du hast gut gelernt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0078",
+      "text": "Nach der Arbeit brauche ich ein bisschen Erholung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0079",
+      "text": "Am Sonntag kann ich endlich ausschlafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0080",
+      "text": "Hast du gut ausgeschlafen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0081",
+      "text": "Ich liege nachts oft lange wach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0082",
+      "text": "Kaffee macht wach, aber nicht für lange.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0083",
+      "text": "Derya hat seit einigen Wochen Schlafstörungen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0084",
+      "text": "Der Körper gewöhnt sich langsam an die neue Zeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0085",
+      "text": "Ich habe mich etwas daran gewöhnt.",
+      "quelle": "tatoeba:5213612",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5213612 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0086",
+      "text": "Mein Vorsatz für das neue Jahr: jeden Tag eine halbe Stunde laufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0087",
+      "text": "Hast du gute Vorsätze für die Ferien?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0088",
+      "text": "Viele Leute vergessen ihre Vorsätze schon nach zwei Wochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0089",
+      "text": "Es muss sich unbedingt etwas ändern.",
+      "quelle": "tatoeba:6966393",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6966393 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0090",
+      "text": "Wenn du keine Zeit für Sport hast, geh zumindest zu Fuß zur Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0091",
+      "text": "Intensiver Sport am späten Abend ist schlecht für den Schlaf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0092",
+      "text": "Schlaf ist individuell: Manche brauchen sieben Stunden, andere neun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0093",
+      "text": "Frau Fischer gibt jedem Patienten individuelle Tipps.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0094",
+      "text": "Es gibt zwei Typen: Manche Menschen sind morgens fit, andere erst am Abend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0095",
+      "text": "Welcher Typ bist du? Stehst du gern früh auf?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0096",
+      "text": "Mein Bruder ist ein ruhiger Typ und liest gern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0097",
+      "text": "Jeder Mensch empfindet Stress anders.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0098",
+      "text": "Ich bin so müde. Ich schlafe seit Tagen schlecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0099",
+      "text": "Trinkst du abends noch Kaffee?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0100",
+      "text": "Nein, aber ich schaue im Bett oft lange auf das Handy.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0101",
+      "text": "Dann solltest du das Handy unbedingt vor dem Schlafen ausschalten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0102",
+      "text": "Du solltest heute früher ins Bett gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0103",
+      "text": "Du musst heute früher ins Bett gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0104",
+      "text": "Du darfst heute später ins Bett gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0105",
+      "text": "Gut schlafen, gesund bleiben: Tipps von Ihrer Krankenkasse",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0106",
+      "text": "Guter Schlaf ist ein wichtiger Faktor für die Gesundheit. Im Schlaf erholt sich der ganze Körper.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0107",
+      "text": "Erwachsene brauchen sieben bis neun Stunden Schlaf, Kinder sogar mehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0108",
+      "text": "Gehen Sie am besten jeden Tag zur gleichen Zeit ins Bett, auch am Wochenende.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0109",
+      "text": "Vermeiden Sie am Abend schweres Essen, Kaffee und intensiven Sport.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0110",
+      "text": "Das Licht von Handy und Bildschirm macht wach. Schalten Sie das Handy eine Stunde vor dem Schlafen aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0111",
+      "text": "Das Schlafzimmer sollte ruhig, dunkel und nicht zu warm sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0112",
+      "text": "Leiden Sie länger als vier Wochen unter Schlafstörungen? Dann sprechen Sie mit Ihrer Hausärztin oder Ihrem Hausarzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0113",
+      "text": "Kinder brauchen weniger Schlaf als Erwachsene.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0114",
+      "text": "Auch am Wochenende sollte man zur gleichen Zeit ins Bett gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0115",
+      "text": "Ein Spaziergang am Abend hilft beim Schlafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0116",
+      "text": "Das Licht vom Handy macht müde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0117",
+      "text": "Wann sollte man das Handy ausschalten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0118",
+      "text": "Eine Stunde vor dem Schlafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0119",
+      "text": "Direkt nach dem Frühstück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0120",
+      "text": "Erst im Bett.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0121",
+      "text": "Was sollte man bei langen Schlafstörungen tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0122",
+      "text": "Mit der Hausärztin oder dem Hausarzt sprechen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0123",
+      "text": "Am Abend mehr Sport treiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0124",
+      "text": "Jeden Tag später ins Bett gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0125",
+      "text": "Im Schlafzimmer sollte es ruhig und dunkel sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0126",
+      "text": "Du solltest abends das Handy ausschalten. An deiner Stelle würde ich früher ins Bett gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0127",
+      "text": "Zum Glück ist die Diagnose nicht schlimm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0128",
+      "text": "Die Therapie dauert sechs Wochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0129",
+      "text": "Nach der Operation macht Opa eine Therapie für sein Knie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0130",
+      "text": "Frau Fischer behandelt ihre Patienten immer freundlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0131",
+      "text": "Welche Symptome haben Sie?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0132",
+      "text": "Fieber und Husten sind typische Symptome bei einer Erkältung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0133",
+      "text": "Diese Erkrankung ist bei Kindern sehr selten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0134",
+      "text": "Die Hausärztin schickt mich zu einem Facharzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0135",
+      "text": "Opa liegt für drei Tage in der Klinik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0136",
+      "text": "Die Operation ist gut gelaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0137",
+      "text": "Die Operation war erfolgreich.",
+      "quelle": "tatoeba:12510495",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12510495 von Waldelfe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0138",
+      "text": "Vor der Operation dürfen Sie nichts essen und nichts trinken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0139",
+      "text": "Die Wunde muss sauber und trocken bleiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0140",
+      "text": "Wasch dir die Hände, dann mach ein Pflaster auf die Wunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0141",
+      "text": "Die Wunde heilt gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0142",
+      "text": "Im Sommer müssen wir unsere Haut vor der Sonne schützen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0143",
+      "text": "Welche Nebenwirkungen hat dieses Medikament?",
+      "quelle": "tatoeba:9846843",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #9846843 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0144",
+      "text": "Haben Sie ein Mittel gegen Husten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0145",
+      "text": "Wirkt dieses Medikament schnell?",
+      "quelle": "tatoeba:738102",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #738102 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0146",
+      "text": "Das Mittel wirkt schon nach einer halben Stunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0147",
+      "text": "Viele Erwachsene leiden an Rückenschmerzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0148",
+      "text": "Diese Nebenwirkungen treten nur selten auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0149",
+      "text": "Ich wasche mir vor dem Essen die Hände.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0150",
+      "text": "Hast du dir die Hände gewaschen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0151",
+      "text": "Ich habe mir beim Fußball das Knie verletzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0152",
+      "text": "Mach dir keine Sorgen, die Wunde heilt schnell.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0153",
+      "text": "Die Ärztin sieht sich die Wunde genau an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0154",
+      "text": "Putz dir abends gründlich die Zähne!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0155",
+      "text": "Sie sollen das Mittel dreimal am Tag nach dem Essen nehmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0156",
+      "text": "Darf ich nach der Operation wieder Sport machen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0157",
+      "text": "Nein, zwei Wochen dürfen Sie noch keinen Sport machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0158",
+      "text": "Soll ich morgen noch einmal in die Praxis kommen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0159",
+      "text": "Guten Tag! Welche Symptome haben Sie denn?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0160",
+      "text": "Ich habe seit drei Tagen Fieber und Husten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0161",
+      "text": "Ich gebe Ihnen ein Rezept für ein Mittel. Nehmen Sie es dreimal am Tag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0162",
+      "text": "Vielen Dank. Hat das Mittel Nebenwirkungen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0163",
+      "text": "An deiner Stelle würde ich mit der Wunde zum Arzt gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0164",
+      "text": "Vorsorge ist besser als Behandlung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0165",
+      "text": "Zur Vorsorge gehe ich zweimal im Jahr zum Zahnarzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0166",
+      "text": "Die Krankenkasse bezahlt viele Untersuchungen zur Vorsorge.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0167",
+      "text": "Eine Impfung schützt vor gefährlichen Krankheiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0168",
+      "text": "Hast du alle wichtigen Impfungen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0169",
+      "text": "Nach der Impfung tut der Arm ein bisschen weh.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0170",
+      "text": "Ich lasse mich jedes Jahr gegen Grippe impfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0171",
+      "text": "In Deutschland braucht jeder Mensch eine Krankenversicherung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0172",
+      "text": "Bei einem Unfall braucht man schnell medizinische Hilfe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0173",
+      "text": "Ich habe gesundheitliche Probleme.",
+      "quelle": "tatoeba:7747862",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7747862 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0174",
+      "text": "Wie geht es Ihnen gesundheitlich?",
+      "quelle": "tatoeba:6489145",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6489145 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0175",
+      "text": "Die Ärztin misst meinen Blutdruck.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0176",
+      "text": "Wenn man sich zu sehr aufregt, steigt der Blutdruck.",
+      "quelle": "tatoeba:4914626",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4914626 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0177",
+      "text": "Regelmäßige Bewegung senkt den Blutdruck.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0178",
+      "text": "Bewegung hat eine starke Wirkung auf das Gehirn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0179",
+      "text": "Eine neue Studie zeigt: Viele Kinder schlafen zu wenig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0180",
+      "text": "Für die Studie hat man tausend Familien befragt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0181",
+      "text": "Experten empfehlen für Kinder mindestens eine Stunde Bewegung am Tag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0182",
+      "text": "Bewegungsmangel erhöht das Risiko für viele Krankheiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0183",
+      "text": "Gibt es kein Risiko?",
+      "quelle": "tatoeba:2405151",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2405151 von misshii (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0184",
+      "text": "Schon ein kurzer Spaziergang hat einen positiven Effekt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0185",
+      "text": "Schlaf ist ein wichtiger Faktor für gutes Lernen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0186",
+      "text": "Zu viel Zucker erhöht das Risiko für Krankheiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0187",
+      "text": "Das Mittel senkt das Fieber.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0188",
+      "text": "Kaffee am Abend verstärkt die Schlafstörungen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0189",
+      "text": "Daran besteht kein Zweifel.",
+      "quelle": "tatoeba:1289910",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1289910 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e03.s0190",
+      "text": "Da hast du völlig recht, das empfehlen auch die Experten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0191",
+      "text": "Da bin ich mir nicht so sicher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0192",
+      "text": "Das glaube ich nicht. Eine Tasse Kaffee macht doch nicht krank.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0193",
+      "text": "Das stimmt, das habe ich auch in einer Studie gelesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0194",
+      "text": "Wenn das Fieber über 39 Grad steigt, gehen Sie bitte zum Arzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0195",
+      "text": "Wenn ich müde bin, mache ich einen kurzen Spaziergang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0196",
+      "text": "Ich habe gelesen, dass Kaffee gut für das Gehirn ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0197",
+      "text": "Wirklich? Da habe ich meine Zweifel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0198",
+      "text": "Doch, eine neue Studie zeigt das.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0199",
+      "text": "Kann sein. Aber zu viel Kaffee verstärkt Schlafstörungen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0200",
+      "text": "Bewegung im Alltag: ein Interview mit Monika Klein",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0201",
+      "text": "Frau Klein, Sie sind seit zwanzig Jahren Lehrerin für Sport. Bewegen sich Kinder heute weniger als früher?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0202",
+      "text": "Ja, leider. Viele Kinder sitzen jeden Tag stundenlang vor dem Bildschirm. Bewegungsmangel ist ein großes Problem.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0203",
+      "text": "Was empfehlen Experten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0204",
+      "text": "Kinder sollten sich jeden Tag mindestens eine Stunde bewegen, Erwachsene zumindest eine halbe Stunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0205",
+      "text": "Das klingt nach viel. Wie schafft man das im Alltag?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0206",
+      "text": "Es muss nicht immer intensives Training sein. Nehmen Sie die Treppe und fahren Sie mit dem Fahrrad zur Schule oder zur Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0207",
+      "text": "Und welche Wirkung hat Bewegung auf das Lernen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0208",
+      "text": "Eine große! Nach einer Pause mit Bewegung arbeitet das Gehirn besser, und man lernt leichter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0209",
+      "text": "Frau Klein ist seit zehn Jahren Lehrerin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0210",
+      "text": "Erwachsene sollten sich zumindest eine halbe Stunde am Tag bewegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0211",
+      "text": "Frau Klein fährt jeden Tag mit dem Fahrrad zur Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0212",
+      "text": "Für Bewegung braucht man immer ein intensives Training.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0213",
+      "text": "Was ist heute bei vielen Kindern ein großes Problem?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0214",
+      "text": "Sie bewegen sich zu wenig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0215",
+      "text": "Sie schlafen zu lange.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0216",
+      "text": "Sie treiben zu viel Sport.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0217",
+      "text": "Welche Wirkung hat Bewegung auf das Lernen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0218",
+      "text": "Das Gehirn arbeitet danach besser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0219",
+      "text": "Man wird danach schneller müde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0220",
+      "text": "Man braucht danach mehr Pausen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0221",
+      "text": "Ihre Freundin oder Ihr Freund hat bald eine wichtige Prüfung. Sie oder er ist sehr nervös und schläft schlecht. Schreiben Sie eine Nachricht mit Tipps gegen den Stress.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0222",
+      "text": "Liebe Laylā, danke für deine Nachricht! Ich verstehe gut, dass du nervös bist. Hier sind ein paar Tipps für dich: Lern jeden Tag ein bisschen und nicht alles an einem Abend. An deiner Stelle würde ich nicht bis Mitternacht lernen. Mach nach jeder Stunde eine kurze Pause und beweg dich, zum Beispiel bei einem Spaziergang. Abends solltest du das Handy ausschalten und früh ins Bett gehen. Dein Gehirn braucht ausreichend Schlaf! Und vergiss das Frühstück nicht. Du schaffst das bestimmt! Liebe Grüße, Elif",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0223",
+      "text": "Das stimmt nicht ganz. Eine Studie zeigt, dass Bewegung den Blutdruck senkt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0224",
+      "text": "Derya schläft schlecht",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0225",
+      "text": "Derya arbeitet als Krankenpflegerin im Krankenhaus, oft auch in der Nacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0226",
+      "text": "Seit einigen Wochen leidet sie unter Schlafstörungen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0227",
+      "text": "Nach einer Schicht in der Nacht liegt sie am Tag lange wach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0228",
+      "text": "In der Pause setzt sich ihre Kollegin Karin zu ihr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0229",
+      "text": "Du siehst müde aus, Derya. Schläfst du nicht gut?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0230",
+      "text": "Nein. Ich kann mich einfach nicht an die Arbeit in der Nacht gewöhnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0231",
+      "text": "An deiner Stelle würde ich nach der Schicht keinen Kaffee mehr trinken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0232",
+      "text": "Das ist ein guter Ratschlag. Was machst du noch?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0233",
+      "text": "Ich mache das Zimmer ganz dunkel und lege das Handy weg.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0234",
+      "text": "Und zur Entspannung mache ich vor dem Schlafen einen kurzen Spaziergang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0235",
+      "text": "Eine Woche später geht Derya zu ihrer Hausärztin, Frau Fischer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0236",
+      "text": "Ihr Körper braucht Zeit, Frau Kaya. Gehen Sie immer zur gleichen Zeit ins Bett.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0237",
+      "text": "Sollte ich vielleicht ein Mittel zum Schlafen nehmen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0238",
+      "text": "Lieber nicht. Bewegung an der frischen Luft wirkt oft besser als Tabletten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0239",
+      "text": "Am Abend erzählt Derya ihrer Familie von dem Gespräch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0240",
+      "text": "Murat hat sofort eine Idee: Am Sonntag fahren alle zusammen mit dem Fahrrad an den Fluss.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0241",
+      "text": "Elif und Can wollen danach mit Papa einen gesunden Salat machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0242",
+      "text": "Nach dem Ausflug ist Derya müde, aber glücklich. In dieser Nacht schläft sie endlich wieder gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0243",
+      "text": "Welches Problem hat Derya?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0244",
+      "text": "Sie schläft seit Wochen schlecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0245",
+      "text": "Sie hat Schmerzen im Rücken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0246",
+      "text": "Sie hat keine Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0247",
+      "text": "Welchen Tipp gibt Karin?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0248",
+      "text": "Nach der Schicht keinen Kaffee mehr trinken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0249",
+      "text": "Ein Mittel zum Schlafen nehmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0250",
+      "text": "Mehr in der Nacht arbeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0251",
+      "text": "Bewegung an der frischen Luft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0252",
+      "text": "Tabletten zum Schlafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0253",
+      "text": "Mehr Kaffee am Abend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0254",
+      "text": "Was macht die Familie am Sonntag?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0255",
+      "text": "Sie fahren zusammen mit dem Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0256",
+      "text": "Sie bleiben den ganzen Tag zu Hause.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0257",
+      "text": "Sie besuchen Frau Fischer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0258",
+      "text": "Wie schläft Derya nach dem Ausflug?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0259",
+      "text": "Sie schläft endlich wieder gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0260",
+      "text": "Sie liegt die ganze Nacht wach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0261",
+      "text": "Wie wäre es am Sonntag mit einem Ausflug an die frische Luft?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0262",
+      "text": "Vor der Arbeit in Mathe",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0263",
+      "text": "Am Freitag schreibt die Klasse von Elif und Laylā eine Arbeit in Mathe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0264",
+      "text": "Ich bin so nervös, Elif! Gestern habe ich bis Mitternacht gelernt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0265",
+      "text": "Bis Mitternacht? Dein Gehirn braucht aber ausreichend Schlaf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0266",
+      "text": "Du hast recht. Heute Morgen war ich total müde und hatte keinen Hunger.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0267",
+      "text": "Du solltest aber unbedingt frühstücken, zumindest ein Brot und ein bisschen Obst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0268",
+      "text": "Und was machst du gegen den Stress vor einer Arbeit?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0269",
+      "text": "Ich lerne jeden Tag eine halbe Stunde und nicht alles an einem Abend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0270",
+      "text": "Nach dem Lernen gehe ich kurz raus und bewege mich. Das hilft mir sehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0271",
+      "text": "Gute Idee! Wollen wir morgen zusammen lernen und danach in den Park gehen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0272",
+      "text": "Gern! Und wir nehmen Äpfel statt Schokolade mit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0273",
+      "text": "Einverstanden! Ab heute gehe ich vor zehn Uhr ins Bett.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0274",
+      "text": "Bis wann hat Laylā gestern gelernt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0275",
+      "text": "Bis Mitternacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0276",
+      "text": "Bis zehn Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0277",
+      "text": "Bis zum Frühstück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0278",
+      "text": "Was soll Laylā am Morgen tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0279",
+      "text": "Sie soll unbedingt frühstücken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0280",
+      "text": "Sie soll länger schlafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0281",
+      "text": "Sie soll noch mehr lernen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0282",
+      "text": "Was macht Elif gegen den Stress?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0283",
+      "text": "Sie lernt jeden Tag ein bisschen und bewegt sich danach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0284",
+      "text": "Sie lernt alles an einem Abend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0285",
+      "text": "Sie isst viel Schokolade.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0286",
+      "text": "Was nehmen die beiden in den Park mit?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0287",
+      "text": "Sie nehmen Äpfel mit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0288",
+      "text": "Sie nehmen Schokolade mit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0289",
+      "text": "Früher habe ich oft Chips gegessen, aber jetzt esse ich lieber Obst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0290",
+      "text": "Ein Spaziergang ist gesünder als ein Nachmittag vor dem Fernseher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0291",
+      "text": "Wenn ich Rückenschmerzen habe, dehne ich vorsichtig meinen Rücken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0292",
+      "text": "Jetzt ernähre ich mich bewusster und fühle mich viel besser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0293",
+      "text": "Mein Vorsatz: weniger Zeit am Handy und mehr Zeit an der frischen Luft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0294",
+      "text": "Könnten Sie mir bitte ein Mittel gegen Kopfschmerzen geben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0295",
+      "text": "Ich kann abends oft nicht einschlafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0296",
+      "text": "Machst du vor dem Schlafen noch Sport?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0297",
+      "text": "Ja, ich trainiere meistens ziemlich intensiv bis zehn Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0298",
+      "text": "Das ist zu spät. Mach dein Training lieber am Nachmittag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0299",
+      "text": "Die Haut ist sehr trocken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0300",
+      "text": "Die Haut ist sehr rot.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0301",
+      "text": "Die Haut ist sehr warm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0302",
+      "text": "Ich habe ständig Kopfschmerzen und bin oft müde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0303",
+      "text": "Trinkst du genug Wasser?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0304",
+      "text": "Nein, eigentlich trinke ich fast nur Saft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0305",
+      "text": "Dann solltest du unbedingt mehr Wasser trinken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0306",
+      "text": "Ich möchte mich gesünder ernähren, aber ich esse so gern Süßigkeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0307",
+      "text": "Du musst nicht ganz verzichten. Iss zumindest am Abend keine Süßigkeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0308",
+      "text": "Gesund durch den Winter: Tipps aus der Praxis Fischer",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0309",
+      "text": "Im Winter erkälten sich viele Menschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0310",
+      "text": "Waschen Sie sich mehrmals am Tag gründlich die Hände, besonders vor dem Essen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0311",
+      "text": "Gehen Sie jeden Tag an die frische Luft und bewegen Sie sich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0312",
+      "text": "Essen Sie viel Obst und Gemüse, denn Vitamine sind jetzt besonders wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0313",
+      "text": "Für Menschen über sechzig empfehlen Experten eine Impfung gegen Grippe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0314",
+      "text": "Haben Sie Fieber über 39 Grad? Dann bleiben Sie zu Hause und rufen Sie in der Praxis an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0315",
+      "text": "Im Winter sollte man sich oft die Hände waschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0316",
+      "text": "Die Impfung gegen Grippe ist nur für Kinder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0317",
+      "text": "Die Praxis ist am Samstag geöffnet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0318",
+      "text": "Was sollte man bei hohem Fieber tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0319",
+      "text": "Zu Hause bleiben und in der Praxis anrufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0320",
+      "text": "Sofort zum Sport gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0321",
+      "text": "Viel Saft trinken und weiter arbeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0322",
+      "text": "Vitamine sind im Winter nicht so wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0323",
+      "text": "Wenn ich Stress habe, mache ich einen Spaziergang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0324",
+      "text": "Ich verzichte am Abend auf Kaffee.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0325",
+      "text": "An deiner Stelle würde ich mehr Wasser trinken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0326",
+      "text": "Ich schlafe jetzt besser als früher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0327",
+      "text": "Ich schlafe jetzt schlechter als früher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0328",
+      "text": "Ich schlafe jetzt länger als früher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0329",
+      "text": "Bewegung senkt das Risiko für Rückenschmerzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0330",
+      "text": "Du hast Rückenschmerzen? Du solltest öfter aufstehen und auf deine Haltung achten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e03.s0331",
+      "text": "Meine schlechte Gewohnheit: Ich trinke zu wenig Wasser. Das möchte ich ändern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e03.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Körper und Bewegung im Alltag sprechen.",
+        "tr": "Vücut ve günlük hayattaki hareket hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدث عن الجسم وعن الحركة في الحياة اليومية."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e03.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.muskel",
+          "ablenker": ["de.b1.e03.knochen", "de.a2.e05.herz"]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e03.muskel", "de.b1.e03.knochen", "de.b1.e03.lunge", "de.b1.e03.gehirn", "de.a2.e05.blut"]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e03.bewegen",
+          "ablenker": ["de.b1.e03.dehnen", "de.b1.e03.heben"]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0019",
+          "wort": 1,
+          "ablenker": ["jedem", "jedes"]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a06",
+          "typ": "formen",
+          "lemma": "de.b1.e03.bewegen",
+          "zeilen": ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"],
+          "spalten": ["Präsens mit Reflexivpronomen"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["bewege mich"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["bewegst dich"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["bewegt sich"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["bewegen uns"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["bewegt euch"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["bewegen sich"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.rueckenschmerzen",
+          "ablenker": ["de.b1.e03.bewegungsmangel", "de.b1.e03.haltung"]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a08",
+          "typ": "paare",
+          "lemmata": ["de.b1.e03.koerperlich", "de.b1.e03.geistig", "de.b1.e03.fitness", "de.b1.e03.spaziergang", "de.b1.e03.einheit"]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0026"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0027"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0028"
+            }
+          ],
+          "antwort": "de.b1.e03.s0029",
+          "ablenker": ["de.b1.e03.s0062", "de.b1.e03.s0065"]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e03.treiben",
+          "ablenker": ["de.b1.e03.heben", "de.a1.e08.laufen"]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e03.s0014",
+          "nach": "ziel",
+          "alternativen": ["Nimm lieber die Treppe und nicht den Aufzug. Das ist für deine Fitness gut."],
+          "ablenker": ["Nehm", "meine"]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e03.s0010",
+          "ablenker": ["de.b1.e03.s0009", "de.b1.e03.s0011"]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0023",
+          "wort": 7,
+          "ablenker": ["hebt", "gehoben"]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e03.heben",
+          "ablenker": ["de.a1.e09.leben"]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e03.s0013",
+          "nach": "ziel",
+          "alternativen": [
+            "Sport hält geistig und körperlich fit.",
+            "Sport hält uns körperlich und geistig fit.",
+            "Sport hält uns geistig und körperlich fit."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e03.s0030"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e03.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Ernährung und Essgewohnheiten sprechen und Lebensmittel vergleichen.",
+        "tr": "Beslenme ve yeme alışkanlıkları hakkında konuşabilir, yiyecekleri karşılaştırabilirim.",
+        "ar": "أستطيع أن أتحدث عن التغذية وعادات الأكل وأن أقارن بين الأطعمة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e03.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.ernaehrung",
+          "ablenker": ["de.a2.e05.gesundheit", "de.a2.e05.bewegung"]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e03.salz", "de.b1.e03.fett", "de.b1.e03.vitamin", "de.b1.e03.magen", "de.a2.e03.zucker"]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e03.vegetarisch",
+          "ablenker": ["de.b1.e03.allergisch", "de.b1.e03.salzig"]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0033",
+          "wort": 3,
+          "ablenker": ["dir", "sich"]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.gewohnheit",
+          "ablenker": ["de.b1.e03.kombination", "de.b1.e01.alltag"]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a06",
+          "typ": "formen",
+          "zeilen": ["gesund", "gut", "viel", "gern"],
+          "spalten": ["Komparativ", "Superlativ"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["gesünder"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["am gesündesten"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["besser"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["am besten"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["mehr"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["am meisten"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["lieber"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["am liebsten"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a07",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e03.s0058",
+          "nach": "ziel",
+          "alternativen": ["Ich esse oft zu viel Schokolade, wenn ich Stress habe."],
+          "ablenker": ["hatte", "isst"]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a09",
+          "typ": "paare",
+          "lemmata": ["de.b1.e03.ernaehren", "de.b1.e03.verzichten", "de.b1.e03.ausgewogen", "de.b1.e03.ausreichend", "de.b1.e03.bewusst"]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0059"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0060"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0061"
+            }
+          ],
+          "antwort": "de.b1.e03.s0062",
+          "ablenker": ["de.b1.e03.s0029", "de.b1.e03.s0096"]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e03.vermeiden",
+          "ablenker": ["de.a1.e08.versuchen", "de.a2.e10.aendern"]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a12",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0055",
+          "wort": 3,
+          "ablenker": ["von", "so"]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e03.s0044",
+          "ablenker": ["de.b1.e03.s0036", "de.b1.e03.s0050"]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.allergisch",
+          "ablenker": ["de.b1.e03.salzig", "de.a2.e03.suess"]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e03.s0037",
+          "nach": "ziel",
+          "alternativen": [
+            "Gibt es heute in der Kantine auch ein vegetarisches Essen?",
+            "Gibt es in der Kantine heute auch vegetarisches Essen?",
+            "Gibt es heute in der Kantine auch vegetarisches Essen?",
+            "Gibt es heute auch ein vegetarisches Essen in der Kantine?"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e03.s0063"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e03.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Ratschläge für besseren Schlaf geben und annehmen.",
+        "tr": "Daha iyi uyku için tavsiye verebilir ve tavsiyeleri dikkate alabilirim.",
+        "ar": "أستطيع أن أقدّم نصائح لنوم أفضل وأن أتقبّل النصائح."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e03.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.ratschlag",
+          "ablenker": ["de.b1.e03.vorsatz", "de.b1.e03.erholung"]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a02",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a03",
+          "typ": "paare",
+          "lemmata": ["de.b1.e03.wach", "de.b1.e03.ausschlafen", "de.b1.e03.schlafstoerung", "de.b1.e03.entspannung", "de.b1.e03.typ"]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0088",
+          "wort": 4,
+          "ablenker": ["Vorsatz", "Vorsätzen"]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e03.entspannen",
+          "ablenker": ["de.b1.e03.gewoehnen", "de.b1.e03.empfinden"]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a06",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a07",
+          "typ": "formen",
+          "zeilen": ["ich", "du", "wir"],
+          "spalten": ["sollen", "können", "sein", "haben"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["sollte"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["könnte"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["wäre"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 3,
+              "loesungen": ["hätte"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["solltest"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["könntest"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["wärst", "wärest"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 3,
+              "loesungen": ["hättest"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["sollten"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["könnten"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["wären"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 3,
+              "loesungen": ["hätten"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a08",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e03.s0105",
+          "absaetze": [
+            "de.b1.e03.s0106",
+            "de.b1.e03.s0107",
+            "de.b1.e03.s0108",
+            "de.b1.e03.s0109",
+            "de.b1.e03.s0110",
+            "de.b1.e03.s0111",
+            "de.b1.e03.s0112"
+          ],
+          "glossen": [
+            "de.b1.e03.faktor",
+            "de.b1.e03.vermeiden",
+            "de.b1.e03.intensiv",
+            "de.b1.e03.wach",
+            "de.b1.e03.leiden",
+            "de.b1.e03.schlafstoerung"
+          ],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0113",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0114",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0115",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0116",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e03.s0117",
+              "antwort": "de.b1.e03.s0118",
+              "ablenker": ["de.b1.e03.s0119", "de.b1.e03.s0120"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e03.s0121",
+              "antwort": "de.b1.e03.s0122",
+              "ablenker": ["de.b1.e03.s0123", "de.b1.e03.s0124"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0125",
+              "richtig": "richtig"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0098"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0099"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0100"
+            }
+          ],
+          "antwort": "de.b1.e03.s0101",
+          "ablenker": ["de.b1.e03.s0087", "de.b1.e03.s0093"]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.unbedingt",
+          "ablenker": ["de.b1.e03.zumindest", "de.b1.e02.bereits"]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e03.s0069",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich würde an deiner Stelle heute früher schlafen gehen.",
+            "Ich würde heute an deiner Stelle früher schlafen gehen.",
+            "Heute würde ich an deiner Stelle früher schlafen gehen."
+          ],
+          "ablenker": ["werde", "deinem"]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e03.intensiv",
+          "ablenker": ["de.b1.e03.individuell", "de.a2.e07.ruhig"]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e03.s0078",
+          "ablenker": ["de.b1.e03.s0097", "de.b1.e03.s0092"]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a14",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0084",
+          "wort": 5,
+          "ablenker": ["auf", "mit"]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e03.s0073",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich würde gerne einmal richtig ausschlafen.",
+            "Ich würde gern mal richtig ausschlafen.",
+            "Ich möchte gern einmal richtig ausschlafen.",
+            "Ich möchte einmal richtig ausschlafen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e03.s0126"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e03.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann beim Arzt über Beschwerden und Behandlungen sprechen.",
+        "tr": "Doktorda şikâyetler ve tedaviler hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدث عند الطبيب عن الأعراض والعلاج."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e03.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.diagnose",
+          "ablenker": ["de.b1.e03.therapie", "de.a2.e05.rezept"]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e03.wunde", "de.b1.e03.haut", "de.b1.e03.klinik", "de.b1.e03.operation", "de.b1.e03.facharzt"]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0149",
+          "wort": 2,
+          "ablenker": ["mich", "mein"]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e03.symptom",
+          "ablenker": ["de.b1.e03.nebenwirkung", "de.b1.e03.erkrankung"]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a06",
+          "typ": "formen",
+          "zeilen": ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"],
+          "spalten": ["Akkusativ: sich waschen", "Dativ: sich die Hände waschen"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["mich"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["mir"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["dich"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["dir"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["sich"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["sich"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["uns"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["uns"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["euch"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["euch"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["sich"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["sich"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.heilen",
+          "ablenker": ["de.b1.e03.behandeln", "de.b1.e03.wirken"]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0159"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0160"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0161"
+            }
+          ],
+          "antwort": "de.b1.e03.s0162",
+          "ablenker": ["de.b1.e03.s0130", "de.b1.e03.s0061"]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a09",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0138",
+          "wort": 3,
+          "ablenker": ["darf", "dürft"]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a10",
+          "typ": "paare",
+          "lemmata": ["de.b1.e03.mittel", "de.b1.e03.leiden", "de.b1.e03.auftreten", "de.b1.e03.therapie"]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e03.s0155",
+          "nach": "ziel",
+          "alternativen": [
+            "Sie sollen das Mittel nach dem Essen dreimal am Tag nehmen.",
+            "Das Mittel sollen Sie dreimal am Tag nach dem Essen nehmen.",
+            "Dreimal am Tag sollen Sie das Mittel nach dem Essen nehmen.",
+            "Nach dem Essen sollen Sie das Mittel dreimal am Tag nehmen."
+          ],
+          "ablenker": ["dürfen", "vor"]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e03.s0127",
+          "ablenker": ["de.b1.e03.s0135", "de.b1.e03.s0133"]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e03.s0134",
+          "nach": "ziel",
+          "alternativen": [
+            "Meine Hausärztin schickt mich zu einem Facharzt.",
+            "Die Hausärztin schickt mich zu einer Fachärztin.",
+            "Meine Hausärztin schickt mich zu einer Fachärztin."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e03.s0153",
+          "alternativen": ["Die Wunde sieht sich die Ärztin genau an."]
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e03.s0129"
+        },
+        {
+          "schluessel": "de.b1.e03.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e03.s0163"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e03.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Informationen zur Vorsorge verstehen und Zustimmung oder Zweifel ausdrücken.",
+        "tr": "Koruyucu sağlıkla ilgili bilgileri anlayabilir, katıldığımı ya da şüphemi ifade edebilirim.",
+        "ar": "أستطيع أن أفهم معلومات عن الوقاية وأن أعبّر عن موافقتي أو شكّي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e03.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.vorsorge",
+          "ablenker": ["de.a2.e05.behandlung", "de.b1.e03.impfung"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e03.blutdruck", "de.b1.e03.krankenversicherung", "de.b1.e03.impfung", "de.b1.e03.studie", "de.b1.e03.risiko"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e03.erhoehen",
+          "ablenker": ["de.b1.e03.senken", "de.a2.e10.aendern"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.impfen",
+          "ablenker": ["de.a2.e05.untersuchen", "de.a2.e05.messen"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0177",
+          "wort": 2,
+          "ablenker": ["senken", "gesenkt"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.zweifel",
+          "ablenker": ["de.a2.e14.sorge", "de.b1.e03.risiko"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e03.s0200",
+          "absaetze": [
+            "de.b1.e03.s0201",
+            "de.b1.e03.s0202",
+            "de.b1.e03.s0203",
+            "de.b1.e03.s0204",
+            "de.b1.e03.s0205",
+            "de.b1.e03.s0206",
+            "de.b1.e03.s0207",
+            "de.b1.e03.s0208"
+          ],
+          "glossen": [
+            "de.b1.e03.experte",
+            "de.b1.e03.bewegungsmangel",
+            "de.b1.e03.intensiv",
+            "de.b1.e03.wirkung",
+            "de.b1.e03.zumindest",
+            "de.b1.e03.gehirn"
+          ],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0209",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0210",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0211",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e03.s0213",
+              "antwort": "de.b1.e03.s0214",
+              "ablenker": ["de.b1.e03.s0215", "de.b1.e03.s0216"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0212",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e03.s0217",
+              "antwort": "de.b1.e03.s0218",
+              "ablenker": ["de.b1.e03.s0219", "de.b1.e03.s0220"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a08",
+          "typ": "paare",
+          "lemmata": ["de.b1.e03.experte", "de.b1.e03.effekt", "de.b1.e03.faktor", "de.b1.e03.verstaerken", "de.b1.e03.gesundheitlich"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0196"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0197"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0198"
+            }
+          ],
+          "antwort": "de.b1.e03.s0199",
+          "ablenker": ["de.b1.e03.s0174", "de.b1.e03.s0184"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e03.medizinisch",
+          "ablenker": ["de.b1.e03.koerperlich", "de.b1.e02.beruflich"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e03.s0182",
+          "nach": "ziel",
+          "alternativen": ["Das Risiko für viele Krankheiten erhöht Bewegungsmangel."],
+          "ablenker": ["senkt", "wenige"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e03.s0166",
+          "ablenker": ["de.b1.e03.s0172", "de.b1.e03.s0171"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.wirkung",
+          "ablenker": ["de.b1.e03.studie", "de.b1.e03.vorsorge"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e03.s0170",
+          "nach": "ziel",
+          "alternativen": [
+            "Jedes Jahr lasse ich mich gegen Grippe impfen.",
+            "Ich lasse mich jedes Jahr gegen die Grippe impfen.",
+            "Jedes Jahr lasse ich mich gegen die Grippe impfen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e03.s0221",
+          "woerter": {
+            "min": 80,
+            "max": 100
+          },
+          "pflichtwoerter": ["solltest", "Schlaf"],
+          "muster": ["de.b1.e03.s0222"]
+        },
+        {
+          "schluessel": "de.b1.e03.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e03.s0223"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e03.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann Geschichten über Schlaf, Stress und gesunde Gewohnheiten verstehen.",
+        "tr": "Uyku, stres ve sağlıklı alışkanlıklar hakkındaki hikâyeleri anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصصًا عن النوم والتوتر والعادات الصحية."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e03.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e03.s0224",
+          "zeilen": [
+            {
+              "satz": "de.b1.e03.s0225"
+            },
+            {
+              "satz": "de.b1.e03.s0226"
+            },
+            {
+              "satz": "de.b1.e03.s0227"
+            },
+            {
+              "satz": "de.b1.e03.s0228"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0229"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0230"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0231"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0232"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0233"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0234"
+            },
+            {
+              "satz": "de.b1.e03.s0235"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e03.s0236"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0237"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e03.s0238"
+            },
+            {
+              "satz": "de.b1.e03.s0239"
+            },
+            {
+              "satz": "de.b1.e03.s0240"
+            },
+            {
+              "satz": "de.b1.e03.s0241"
+            },
+            {
+              "satz": "de.b1.e03.s0242"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.b1.e03.s0243",
+              "antwort": "de.b1.e03.s0244",
+              "ablenker": ["de.b1.e03.s0245", "de.b1.e03.s0246"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.b1.e03.s0247",
+              "antwort": "de.b1.e03.s0248",
+              "ablenker": ["de.b1.e03.s0249", "de.b1.e03.s0250"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.a2.e05.s0208",
+              "antwort": "de.b1.e03.s0251",
+              "ablenker": ["de.b1.e03.s0252", "de.b1.e03.s0253"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.b1.e03.s0254",
+              "antwort": "de.b1.e03.s0255",
+              "ablenker": ["de.b1.e03.s0256", "de.b1.e03.s0257"]
+            },
+            {
+              "nach": 17,
+              "frage": "de.b1.e03.s0258",
+              "antwort": "de.b1.e03.s0259",
+              "ablenker": ["de.b1.e03.s0260"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0231",
+          "wort": 3,
+          "ablenker": ["werde", "wurde"]
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e03.s0233",
+          "ablenker": ["de.b1.e03.s0232", "de.b1.e03.s0237"]
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e03.s0227",
+          "nach": "ziel",
+          "alternativen": [
+            "Am Tag liegt sie nach einer Schicht in der Nacht lange wach.",
+            "Sie liegt nach einer Schicht in der Nacht am Tag lange wach."
+          ],
+          "ablenker": ["legt", "früh"]
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0229"
+            }
+          ],
+          "antwort": "de.b1.e03.s0230",
+          "ablenker": ["de.b1.e03.s0238", "de.b1.e03.s0029"]
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.b1.e03.s0262",
+          "zeilen": [
+            {
+              "satz": "de.b1.e03.s0263"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0264"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0265"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0266"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0267"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0268"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0269"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0270"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0271"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0272"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0273"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.b1.e03.s0274",
+              "antwort": "de.b1.e03.s0275",
+              "ablenker": ["de.b1.e03.s0276", "de.b1.e03.s0277"]
+            },
+            {
+              "nach": 4,
+              "frage": "de.b1.e03.s0278",
+              "antwort": "de.b1.e03.s0279",
+              "ablenker": ["de.b1.e03.s0280", "de.b1.e03.s0281"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.b1.e03.s0282",
+              "antwort": "de.b1.e03.s0283",
+              "ablenker": ["de.b1.e03.s0284", "de.b1.e03.s0285"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.b1.e03.s0286",
+              "antwort": "de.b1.e03.s0287",
+              "ablenker": ["de.b1.e03.s0288"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0267",
+          "wort": 4,
+          "ablenker": ["frühstückst", "gefrühstückt"]
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a08",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e03.s0269",
+          "ablenker": ["de.b1.e03.s0266", "de.b1.e03.s0272"]
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a09",
+          "typ": "satzbau",
+          "ziel": "de.b1.e03.s0283",
+          "alternativen": ["Jeden Tag lernt sie ein bisschen und bewegt sich danach."]
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0268"
+            }
+          ],
+          "antwort": "de.b1.e03.s0269",
+          "ablenker": ["de.b1.e03.s0265", "de.b1.e03.s0280"]
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e03.s0226"
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e03.s0271",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0238",
+          "wort": 7,
+          "ablenker": ["wirken", "gewirkt"]
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e03.s0237",
+          "nach": "ziel",
+          "alternativen": [
+            "Soll ich vielleicht ein Mittel zum Schlafen nehmen?",
+            "Sollte ich vielleicht ein Schlafmittel nehmen?",
+            "Soll ich vielleicht ein Schlafmittel nehmen?",
+            "Sollte ich ein Mittel zum Schlafen nehmen?",
+            "Soll ich ein Mittel zum Schlafen nehmen?"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e03.s0242",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e03.l06.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e03.s0261"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e03.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann die Wörter zu Gesundheit, Ernährung und Bewegung wiederholen.",
+        "tr": "Sağlık, beslenme ve hareketle ilgili kelimeleri tekrar edebilirim.",
+        "ar": "أستطيع أن أراجع كلمات الصحة والتغذية والحركة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e03.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.gehirn",
+          "ablenker": ["de.b1.e03.lunge", "de.b1.e03.magen"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e03.rueckenschmerzen",
+            "de.b1.e03.schlafstoerung",
+            "de.b1.e03.nebenwirkung",
+            "de.b1.e03.diagnose",
+            "de.b1.e03.vitamin"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0291",
+          "wort": 4,
+          "ablenker": ["dehnt", "gedehnt"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e03.s0102",
+          "ablenker": ["de.b1.e03.s0103", "de.b1.e03.s0104"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0295"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0296"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0297"
+            }
+          ],
+          "antwort": "de.b1.e03.s0298",
+          "ablenker": ["de.b1.e03.s0198", "de.b1.e03.s0041"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a06",
+          "typ": "satzbau",
+          "ziel": "de.b1.e03.s0052",
+          "alternativen": ["Am meisten hilft die Kombination aus Bewegung und gesunder Ernährung."]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e03.verzichten",
+          "ablenker": ["de.a1.e08.versuchen", "de.a2.e10.aendern"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a08",
+          "typ": "formen",
+          "lemma": "de.b1.e03.intensiv",
+          "zeilen": ["stark", "intensiv", "wach", "oft"],
+          "spalten": ["Komparativ", "Superlativ"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["stärker"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["am stärksten"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["intensiver"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["am intensivsten"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["wacher"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["am wachsten"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["öfter"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["am häufigsten", "am öftesten"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e03.s0195",
+          "nach": "ziel",
+          "alternativen": ["Ich mache einen kurzen Spaziergang, wenn ich müde bin."],
+          "ablenker": ["war", "langen"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.vorsatz",
+          "ablenker": ["de.b1.e03.gewohnheit", "de.b1.e03.ratschlag"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a11",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0151",
+          "wort": 2,
+          "ablenker": ["mich", "mein"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e03.s0299",
+          "ablenker": ["de.b1.e03.s0300", "de.b1.e03.s0301"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e03.s0292",
+          "nach": "ziel",
+          "alternativen": [
+            "Jetzt ernähre ich mich bewusster und ich fühle mich viel besser.",
+            "Ich ernähre mich jetzt bewusster und fühle mich viel besser.",
+            "Ich ernähre mich jetzt bewusster und ich fühle mich viel besser."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a14",
+          "typ": "paare",
+          "lemmata": ["de.b1.e03.wach", "de.b1.e03.entspannen", "de.b1.e03.heilen", "de.b1.e03.wirken", "de.b1.e03.bewegen"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a15",
+          "typ": "satzbau",
+          "ziel": "de.b1.e03.s0002",
+          "alternativen": ["Jeden Tag sollte man sich mindestens dreißig Minuten bewegen."]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a16",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0290",
+          "wort": 3,
+          "ablenker": ["gesund", "gesündesten"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a17",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e03.s0007"
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a18",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e03.effekt",
+          "ablenker": ["de.b1.e03.faktor", "de.b1.e03.risiko"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a19",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0066"
+            }
+          ],
+          "antwort": "de.b1.e03.s0067",
+          "ablenker": ["de.b1.e03.s0040", "de.b1.e03.s0141"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a20",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e03.s0294",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a21",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.klinik",
+          "ablenker": ["de.a1.e09.apotheke", "de.a1.e11.praxis"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a22",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0048",
+          "wort": 4,
+          "ablenker": ["für", "an"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a23",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e03.s0190",
+          "ablenker": ["de.b1.e03.s0191", "de.b1.e03.s0192"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a24",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e03.s0179",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a25",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0152",
+          "wort": 1,
+          "ablenker": ["dich", "sich"]
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a26",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e03.s0081"
+        },
+        {
+          "schluessel": "de.b1.e03.l07.a27",
+          "typ": "sprechen",
+          "satz": "de.b1.e03.s0289"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e03.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann Ratschläge zu Ernährung, Bewegung und Schlaf geben und ein Merkblatt zur Gesundheit verstehen.",
+        "tr": "Beslenme, hareket ve uyku konusunda tavsiye verebilir ve sağlıkla ilgili bir bilgilendirme broşürünü anlayabilirim.",
+        "ar": "أستطيع أن أقدّم نصائح عن التغذية والحركة والنوم وأن أفهم نشرة إرشادية عن الصحة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e03.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.ratschlag",
+          "ablenker": ["de.b1.e03.zweifel", "de.b1.e03.vorsatz"]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e03.salz", "de.b1.e03.vitamin", "de.b1.e03.muskel", "de.b1.e03.haut", "de.b1.e03.impfung"]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0068",
+          "wort": 1,
+          "ablenker": ["sollte", "solltet"]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0302"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e03.s0303"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0304"
+            }
+          ],
+          "antwort": "de.b1.e03.s0305",
+          "ablenker": ["de.b1.e03.s0136", "de.b1.e03.s0095"]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e03.s0323",
+          "nach": "ziel",
+          "alternativen": ["Ich mache einen Spaziergang, wenn ich Stress habe."],
+          "ablenker": ["macht", "hatte"]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e03.s0308",
+          "absaetze": ["de.b1.e03.s0309", "de.b1.e03.s0310", "de.b1.e03.s0311", "de.b1.e03.s0312", "de.b1.e03.s0313", "de.b1.e03.s0314"],
+          "glossen": ["de.b1.e03.vitamin", "de.b1.e03.impfung", "de.b1.e03.experte"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0315",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0316",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0317",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e03.s0318",
+              "antwort": "de.b1.e03.s0319",
+              "ablenker": ["de.b1.e03.s0320", "de.b1.e03.s0321"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e03.s0322",
+              "richtig": "falsch"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a07",
+          "typ": "frei",
+          "ziel": "de.b1.e03.s0324",
+          "nach": "ziel",
+          "alternativen": ["Am Abend verzichte ich auf Kaffee.", "Abends verzichte ich auf Kaffee.", "Ich verzichte abends auf Kaffee."]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a08",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e03.s0326",
+          "ablenker": ["de.b1.e03.s0327", "de.b1.e03.s0328"]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.b1.e03.s0325",
+          "alternativen": ["Ich würde an deiner Stelle mehr Wasser trinken."]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e03.gewoehnen",
+          "ablenker": ["de.b1.e03.empfinden", "de.b1.e03.verzichten"]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a11",
+          "typ": "luecke",
+          "ziel": "de.b1.e03.s0154",
+          "wort": 1,
+          "ablenker": ["dich", "sich"]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e03.s0306"
+            }
+          ],
+          "antwort": "de.b1.e03.s0307",
+          "ablenker": ["de.b1.e03.s0249", "de.b1.e03.s0215"]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e03.s0329"
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e03.diagnose",
+          "ablenker": ["de.b1.e03.therapie", "de.b1.e03.operation"]
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.b1.e03.s0330"
+        },
+        {
+          "schluessel": "de.b1.e03.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e03.s0331"
+        }
+      ]
+    }
+  ]
+}
