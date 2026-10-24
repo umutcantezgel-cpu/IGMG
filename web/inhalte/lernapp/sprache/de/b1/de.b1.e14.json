@@ -1,0 +1,5285 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e14",
+    "reihenfolge": 15,
+    "thema": {
+      "de": "Erfindungen im Alltag",
+      "tr": "Günlük hayattaki icatlar",
+      "ar": "اختراعات في الحياة اليومية"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann beschreiben, wie ein Gerät funktioniert und wofür man es benutzt.",
+        "tr": "Bir cihazın nasıl çalıştığını ve ne için kullanıldığını anlatabilirim.",
+        "ar": "أستطيع أن أصف كيف يعمل جهاز وفيمَ يُستخدم."
+      },
+      {
+        "de": "Ich kann einen Sachtext über eine Erfindung verstehen und die wichtigsten Punkte wiedergeben.",
+        "tr": "Bir icat hakkındaki bilgilendirici bir metni anlayabilir ve en önemli noktalarını aktarabilirim.",
+        "ar": "أستطيع أن أفهم نصًّا معلوماتيًّا عن اختراع وأن أعيد صياغة أهمّ نقاطه."
+      }
+    ],
+    "symbol": "lightbulb",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e14.desto",
+      "lemma": "desto",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "je + Komparativ …, desto + Komparativ …"
+      },
+      "frequenzRang": 1695,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.beispielsweise",
+      "lemma": "beispielsweise",
+      "wortart": "adverb",
+      "frequenzRang": 741,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.erstmals",
+      "lemma": "erstmals",
+      "wortart": "adverb",
+      "frequenzRang": 995,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.zugleich",
+      "lemma": "zugleich",
+      "wortart": "adverb",
+      "frequenzRang": 1220,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.international",
+      "lemma": "international",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "internationale",
+        "endung_en": "internationalen",
+        "endung_er": "internationaler",
+        "endung_es": "internationales",
+        "endung_em": "internationalem"
+      },
+      "frequenzRang": 370,
+      "quelle": "wiktionary:de:international",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚international‘ (https://de.wiktionary.org/wiki/international), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.technisch",
+      "lemma": "technisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "technische",
+        "endung_en": "technischen",
+        "endung_er": "technischer",
+        "endung_es": "technisches",
+        "endung_em": "technischem"
+      },
+      "frequenzRang": 568,
+      "quelle": "wiktionary:de:technisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚technisch‘ (https://de.wiktionary.org/wiki/technisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.wissenschaftlich",
+      "lemma": "wissenschaftlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "wissenschaftliche",
+        "endung_en": "wissenschaftlichen",
+        "endung_er": "wissenschaftlicher",
+        "endung_es": "wissenschaftliches",
+        "endung_em": "wissenschaftlichem"
+      },
+      "frequenzRang": 876,
+      "quelle": "wiktionary:de:wissenschaftlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wissenschaftlich‘ (https://de.wiktionary.org/wiki/wissenschaftlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.urspruenglich",
+      "lemma": "ursprünglich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ursprüngliche",
+        "endung_en": "ursprünglichen",
+        "endung_er": "ursprünglicher",
+        "endung_es": "ursprüngliches",
+        "endung_em": "ursprünglichem"
+      },
+      "frequenzRang": 909,
+      "quelle": "wiktionary:de:ursprünglich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ursprünglich‘ (https://de.wiktionary.org/wiki/ursprünglich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.weltweit",
+      "lemma": "weltweit",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "weltweite",
+        "endung_en": "weltweiten",
+        "endung_er": "weltweiter",
+        "endung_es": "weltweites",
+        "endung_em": "weltweitem"
+      },
+      "frequenzRang": 918,
+      "quelle": "wiktionary:de:weltweit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚weltweit‘ (https://de.wiktionary.org/wiki/weltweit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.unabhaengig",
+      "lemma": "unabhängig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "unabhängige",
+        "endung_en": "unabhängigen",
+        "endung_er": "unabhängiger",
+        "endung_es": "unabhängiges",
+        "endung_em": "unabhängigem",
+        "komparativ": "unabhängiger",
+        "superlativ": "unabhängigsten",
+        "superlativ_e": "unabhängigste"
+      },
+      "frequenzRang": 945,
+      "quelle": "wiktionary:de:unabhängig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚unabhängig‘ (https://de.wiktionary.org/wiki/unabhängig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.menschlich",
+      "lemma": "menschlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "menschliche",
+        "endung_en": "menschlichen",
+        "endung_er": "menschlicher",
+        "endung_es": "menschliches",
+        "endung_em": "menschlichem",
+        "komparativ": "menschlicher",
+        "superlativ": "menschlichsten",
+        "superlativ_e": "menschlichste"
+      },
+      "frequenzRang": 1068,
+      "quelle": "wiktionary:de:menschlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚menschlich‘ (https://de.wiktionary.org/wiki/menschlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.automatisch",
+      "lemma": "automatisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "automatische",
+        "endung_en": "automatischen",
+        "endung_er": "automatischer",
+        "endung_es": "automatisches",
+        "endung_em": "automatischem"
+      },
+      "frequenzRang": 1370,
+      "quelle": "wiktionary:de:automatisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚automatisch‘ (https://de.wiktionary.org/wiki/automatisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.riesig",
+      "lemma": "riesig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "riesige",
+        "endung_en": "riesigen",
+        "endung_er": "riesiger",
+        "endung_es": "riesiges",
+        "endung_em": "riesigem",
+        "komparativ": "riesiger",
+        "superlativ": "riesigsten",
+        "superlativ_e": "riesigste"
+      },
+      "frequenzRang": 1158,
+      "quelle": "wiktionary:de:riesig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚riesig‘ (https://de.wiktionary.org/wiki/riesig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.beruehmt",
+      "lemma": "berühmt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "berühmte",
+        "endung_en": "berühmten",
+        "endung_er": "berühmter",
+        "endung_es": "berühmtes",
+        "endung_em": "berühmtem",
+        "komparativ": "berühmter",
+        "superlativ": "berühmtesten",
+        "superlativ_e": "berühmteste"
+      },
+      "frequenzRang": 1993,
+      "quelle": "wiktionary:de:berühmt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚berühmt‘ (https://de.wiktionary.org/wiki/berühmt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.ungewoehnlich",
+      "lemma": "ungewöhnlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ungewöhnliche",
+        "endung_en": "ungewöhnlichen",
+        "endung_er": "ungewöhnlicher",
+        "endung_es": "ungewöhnliches",
+        "endung_em": "ungewöhnlichem",
+        "komparativ": "ungewöhnlicher",
+        "superlativ": "ungewöhnlichsten",
+        "superlativ_e": "ungewöhnlichste"
+      },
+      "frequenzRang": 1994,
+      "quelle": "wiktionary:de:ungewöhnlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ungewöhnlich‘ (https://de.wiktionary.org/wiki/ungewöhnlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.elektrisch",
+      "lemma": "elektrisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "elektrische",
+        "endung_en": "elektrischen",
+        "endung_er": "elektrischer",
+        "endung_es": "elektrisches",
+        "endung_em": "elektrischem"
+      },
+      "frequenzRang": 2979,
+      "quelle": "wiktionary:de:elektrisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚elektrisch‘ (https://de.wiktionary.org/wiki/elektrisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.elektronisch",
+      "lemma": "elektronisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "elektronische",
+        "endung_en": "elektronischen",
+        "endung_er": "elektronischer",
+        "endung_es": "elektronisches",
+        "endung_em": "elektronischem"
+      },
+      "frequenzRang": 2500,
+      "quelle": "wiktionary:de:elektronisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚elektronisch‘ (https://de.wiktionary.org/wiki/elektronisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.kuenstlich",
+      "lemma": "künstlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "künstliche",
+        "endung_en": "künstlichen",
+        "endung_er": "künstlicher",
+        "endung_es": "künstliches",
+        "endung_em": "künstlichem"
+      },
+      "frequenzRang": 2255,
+      "quelle": "wiktionary:de:künstlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚künstlich‘ (https://de.wiktionary.org/wiki/künstlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.nuetzlich",
+      "lemma": "nützlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "nützliche",
+        "endung_en": "nützlichen",
+        "endung_er": "nützlicher",
+        "endung_es": "nützliches",
+        "endung_em": "nützlichem",
+        "komparativ": "nützlicher",
+        "superlativ": "nützlichsten",
+        "superlativ_e": "nützlichste"
+      },
+      "frequenzRang": 2732,
+      "quelle": "wiktionary:de:nützlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚nützlich‘ (https://de.wiktionary.org/wiki/nützlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.system",
+      "lemma": "System",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Systeme"
+      },
+      "formen": {
+        "pl": "Systeme",
+        "dat_pl": "Systemen",
+        "gen_sg": "Systems",
+        "gen_sg_2": "Systemes"
+      },
+      "frequenzRang": 379,
+      "quelle": "wiktionary:de:System",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚System‘ (https://de.wiktionary.org/wiki/System), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.entwicklung",
+      "lemma": "Entwicklung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Entwicklungen"
+      },
+      "formen": {
+        "pl": "Entwicklungen"
+      },
+      "frequenzRang": 422,
+      "quelle": "wiktionary:de:Entwicklung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Entwicklung‘ (https://de.wiktionary.org/wiki/Entwicklung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.werk",
+      "lemma": "Werk",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Werke"
+      },
+      "formen": {
+        "pl": "Werke",
+        "dat_pl": "Werken",
+        "gen_sg": "Werks",
+        "gen_sg_2": "Werkes"
+      },
+      "frequenzRang": 496,
+      "quelle": "wiktionary:de:Werk",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Werk‘ (https://de.wiktionary.org/wiki/Werk), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.produkt",
+      "lemma": "Produkt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Produkte"
+      },
+      "formen": {
+        "pl": "Produkte",
+        "dat_pl": "Produkten",
+        "gen_sg": "Produkts",
+        "gen_sg_2": "Produktes"
+      },
+      "frequenzRang": 703,
+      "quelle": "wiktionary:de:Produkt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Produkt‘ (https://de.wiktionary.org/wiki/Produkt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.bedeutung",
+      "lemma": "Bedeutung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bedeutungen"
+      },
+      "formen": {
+        "pl": "Bedeutungen"
+      },
+      "frequenzRang": 731,
+      "quelle": "wiktionary:de:Bedeutung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bedeutung‘ (https://de.wiktionary.org/wiki/Bedeutung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.funktion",
+      "lemma": "Funktion",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Funktionen"
+      },
+      "formen": {
+        "pl": "Funktionen"
+      },
+      "frequenzRang": 834,
+      "quelle": "wiktionary:de:Funktion",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Funktion‘ (https://de.wiktionary.org/wiki/Funktion), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.zusammenhang",
+      "lemma": "Zusammenhang",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zusammenhänge"
+      },
+      "formen": {
+        "pl": "Zusammenhänge",
+        "dat_pl": "Zusammenhängen",
+        "gen_sg": "Zusammenhangs",
+        "gen_sg_2": "Zusammenhanges"
+      },
+      "frequenzRang": 837,
+      "quelle": "wiktionary:de:Zusammenhang",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zusammenhang‘ (https://de.wiktionary.org/wiki/Zusammenhang), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.modell",
+      "lemma": "Modell",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Modelle"
+      },
+      "formen": {
+        "pl": "Modelle",
+        "dat_pl": "Modellen",
+        "gen_sg": "Modells"
+      },
+      "frequenzRang": 839,
+      "quelle": "wiktionary:de:Modell",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Modell‘ (https://de.wiktionary.org/wiki/Modell), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.material",
+      "lemma": "Material",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Materialien"
+      },
+      "formen": {
+        "pl": "Materialien",
+        "gen_sg": "Materials"
+      },
+      "frequenzRang": 1007,
+      "quelle": "wiktionary:de:Material",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Material‘ (https://de.wiktionary.org/wiki/Material), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.qualitaet",
+      "lemma": "Qualität",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Qualitäten"
+      },
+      "formen": {
+        "pl": "Qualitäten"
+      },
+      "frequenzRang": 1029,
+      "quelle": "wiktionary:de:Qualität",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Qualität‘ (https://de.wiktionary.org/wiki/Qualität), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.basis",
+      "lemma": "Basis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Basen"
+      },
+      "formen": {
+        "pl": "Basen"
+      },
+      "frequenzRang": 1092,
+      "quelle": "wiktionary:de:Basis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Basis‘ (https://de.wiktionary.org/wiki/Basis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.methode",
+      "lemma": "Methode",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Methoden"
+      },
+      "formen": {
+        "pl": "Methoden"
+      },
+      "frequenzRang": 1116,
+      "quelle": "wiktionary:de:Methode",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Methode‘ (https://de.wiktionary.org/wiki/Methode), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.wissenschaft",
+      "lemma": "Wissenschaft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Wissenschaften"
+      },
+      "formen": {
+        "pl": "Wissenschaften"
+      },
+      "frequenzRang": 1135,
+      "quelle": "wiktionary:de:Wissenschaft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wissenschaft‘ (https://de.wiktionary.org/wiki/Wissenschaft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.forschung",
+      "lemma": "Forschung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Forschungen"
+      },
+      "formen": {
+        "pl": "Forschungen"
+      },
+      "frequenzRang": 1174,
+      "quelle": "wiktionary:de:Forschung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Forschung‘ (https://de.wiktionary.org/wiki/Forschung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.erklaerung",
+      "lemma": "Erklärung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Erklärungen"
+      },
+      "formen": {
+        "pl": "Erklärungen"
+      },
+      "frequenzRang": 1211,
+      "quelle": "wiktionary:de:Erklärung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erklärung‘ (https://de.wiktionary.org/wiki/Erklärung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.industrie",
+      "lemma": "Industrie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Industrien"
+      },
+      "formen": {
+        "pl": "Industrien"
+      },
+      "frequenzRang": 1256,
+      "quelle": "wiktionary:de:Industrie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Industrie‘ (https://de.wiktionary.org/wiki/Industrie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.produktion",
+      "lemma": "Produktion",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Produktionen"
+      },
+      "formen": {
+        "pl": "Produktionen"
+      },
+      "frequenzRang": 1301,
+      "quelle": "wiktionary:de:Produktion",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Produktion‘ (https://de.wiktionary.org/wiki/Produktion), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.professor",
+      "lemma": "Professor",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Professoren",
+        "weiblich": "Professorin"
+      },
+      "formen": {
+        "pl": "Professoren",
+        "gen_sg": "Professors",
+        "weiblich": "Professorin",
+        "weiblich_pl": "Professorinnen"
+      },
+      "frequenzRang": 4301,
+      "quelle": "wiktionary:de:Professor",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Professor‘ (https://de.wiktionary.org/wiki/Professor), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.eigenschaft",
+      "lemma": "Eigenschaft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Eigenschaften"
+      },
+      "formen": {
+        "pl": "Eigenschaften"
+      },
+      "frequenzRang": 1597,
+      "quelle": "wiktionary:de:Eigenschaft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Eigenschaft‘ (https://de.wiktionary.org/wiki/Eigenschaft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.software",
+      "lemma": "Software",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 1812,
+      "quelle": "wiktionary:de:Software",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Software‘ (https://de.wiktionary.org/wiki/Software), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.hersteller",
+      "lemma": "Hersteller",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Hersteller",
+        "weiblich": "Herstellerin"
+      },
+      "formen": {
+        "dat_pl": "Herstellern",
+        "gen_sg": "Herstellers",
+        "weiblich": "Herstellerin",
+        "weiblich_pl": "Herstellerinnen"
+      },
+      "frequenzRang": 1651,
+      "quelle": "wiktionary:de:Hersteller",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hersteller‘ (https://de.wiktionary.org/wiki/Hersteller), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.erfindung",
+      "lemma": "Erfindung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Erfindungen"
+      },
+      "formen": {
+        "pl": "Erfindungen"
+      },
+      "frequenzRang": 3911,
+      "quelle": "wiktionary:de:Erfindung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erfindung‘ (https://de.wiktionary.org/wiki/Erfindung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.erfinder",
+      "lemma": "Erfinder",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Erfinder",
+        "weiblich": "Erfinderin"
+      },
+      "formen": {
+        "dat_pl": "Erfindern",
+        "gen_sg": "Erfinders",
+        "weiblich": "Erfinderin",
+        "weiblich_pl": "Erfinderinnen"
+      },
+      "frequenzRang": 9927,
+      "quelle": "wiktionary:de:Erfinder",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erfinder‘ (https://de.wiktionary.org/wiki/Erfinder), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.technologie",
+      "lemma": "Technologie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Technologien"
+      },
+      "formen": {
+        "pl": "Technologien"
+      },
+      "frequenzRang": 2251,
+      "quelle": "wiktionary:de:Technologie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Technologie‘ (https://de.wiktionary.org/wiki/Technologie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.wissenschaftler",
+      "lemma": "Wissenschaftler",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Wissenschaftler",
+        "weiblich": "Wissenschaftlerin"
+      },
+      "formen": {
+        "dat_pl": "Wissenschaftlern",
+        "gen_sg": "Wissenschaftlers",
+        "weiblich": "Wissenschaftlerin",
+        "weiblich_pl": "Wissenschaftlerinnen"
+      },
+      "frequenzRang": 7523,
+      "quelle": "wiktionary:de:Wissenschaftler",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wissenschaftler‘ (https://de.wiktionary.org/wiki/Wissenschaftler), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.experiment",
+      "lemma": "Experiment",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Experimente"
+      },
+      "formen": {
+        "pl": "Experimente",
+        "dat_pl": "Experimenten",
+        "gen_sg": "Experiments",
+        "gen_sg_2": "Experimentes"
+      },
+      "frequenzRang": 2528,
+      "quelle": "wiktionary:de:Experiment",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Experiment‘ (https://de.wiktionary.org/wiki/Experiment), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.entdeckung",
+      "lemma": "Entdeckung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Entdeckungen"
+      },
+      "formen": {
+        "pl": "Entdeckungen"
+      },
+      "frequenzRang": 3698,
+      "quelle": "wiktionary:de:Entdeckung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Entdeckung‘ (https://de.wiktionary.org/wiki/Entdeckung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.fortschritt",
+      "lemma": "Fortschritt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Fortschritte"
+      },
+      "formen": {
+        "pl": "Fortschritte",
+        "dat_pl": "Fortschritten",
+        "gen_sg": "Fortschritts",
+        "gen_sg_2": "Fortschrittes"
+      },
+      "frequenzRang": 2120,
+      "quelle": "wiktionary:de:Fortschritt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fortschritt‘ (https://de.wiktionary.org/wiki/Fortschritt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.intelligenz",
+      "lemma": "Intelligenz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 3401,
+      "quelle": "wiktionary:de:Intelligenz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Intelligenz‘ (https://de.wiktionary.org/wiki/Intelligenz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.roboter",
+      "lemma": "Roboter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Roboter"
+      },
+      "formen": {
+        "dat_pl": "Robotern",
+        "gen_sg": "Roboters"
+      },
+      "frequenzRang": 3319,
+      "quelle": "wiktionary:de:Roboter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Roboter‘ (https://de.wiktionary.org/wiki/Roboter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.batterie",
+      "lemma": "Batterie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Batterien"
+      },
+      "formen": {
+        "pl": "Batterien"
+      },
+      "frequenzRang": 3613,
+      "quelle": "wiktionary:de:Batterie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Batterie‘ (https://de.wiktionary.org/wiki/Batterie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.metall",
+      "lemma": "Metall",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Metalle"
+      },
+      "formen": {
+        "pl": "Metalle",
+        "dat_pl": "Metallen",
+        "gen_sg": "Metalls",
+        "gen_sg_2": "Metalles"
+      },
+      "frequenzRang": 2926,
+      "quelle": "wiktionary:de:Metall",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Metall‘ (https://de.wiktionary.org/wiki/Metall), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.kunststoff",
+      "lemma": "Kunststoff",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kunststoffe"
+      },
+      "formen": {
+        "pl": "Kunststoffe",
+        "dat_pl": "Kunststoffen",
+        "gen_sg": "Kunststoffs",
+        "gen_sg_2": "Kunststoffes"
+      },
+      "frequenzRang": 5835,
+      "quelle": "wiktionary:de:Kunststoff",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kunststoff‘ (https://de.wiktionary.org/wiki/Kunststoff), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.entwurf",
+      "lemma": "Entwurf",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Entwürfe"
+      },
+      "formen": {
+        "pl": "Entwürfe",
+        "dat_pl": "Entwürfen",
+        "gen_sg": "Entwurfs",
+        "gen_sg_2": "Entwurfes"
+      },
+      "frequenzRang": 1987,
+      "quelle": "wiktionary:de:Entwurf",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Entwurf‘ (https://de.wiktionary.org/wiki/Entwurf), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.mikroskop",
+      "lemma": "Mikroskop",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Mikroskope"
+      },
+      "formen": {
+        "pl": "Mikroskope",
+        "dat_pl": "Mikroskopen",
+        "gen_sg": "Mikroskops"
+      },
+      "frequenzRang": 26602,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.analyse",
+      "lemma": "Analyse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Analysen"
+      },
+      "formen": {
+        "pl": "Analysen"
+      },
+      "frequenzRang": 1383,
+      "quelle": "wiktionary:de:Analyse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Analyse‘ (https://de.wiktionary.org/wiki/Analyse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.mikrowelle",
+      "lemma": "Mikrowelle",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Mikrowellen"
+      },
+      "formen": {
+        "pl": "Mikrowellen"
+      },
+      "frequenzRang": 8910,
+      "quelle": "wiktionary:de:Mikrowelle",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mikrowelle‘ (https://de.wiktionary.org/wiki/Mikrowelle), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.struktur",
+      "lemma": "Struktur",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Strukturen"
+      },
+      "formen": {
+        "pl": "Strukturen"
+      },
+      "frequenzRang": 1317,
+      "quelle": "wiktionary:de:Struktur",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Struktur‘ (https://de.wiktionary.org/wiki/Struktur), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.ladegeraet",
+      "lemma": "Ladegerät",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Ladegeräte"
+      },
+      "formen": {
+        "pl": "Ladegeräte",
+        "dat_pl": "Ladegeräten",
+        "gen_sg": "Ladegeräts",
+        "gen_sg_2": "Ladegerätes"
+      },
+      "frequenzRang": 29753,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.entstehen",
+      "lemma": "entstehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "entstehen",
+        "praes_ich": "entstehe",
+        "praes_du": "entstehst",
+        "praes_er_sie_es": "entsteht",
+        "praes_wir": "entstehen",
+        "praes_ihr": "entsteht",
+        "praes_sie_Sie": "entstehen",
+        "praet_ich_er_sie_es": "entstand",
+        "praet_du": "entstandest",
+        "praet_wir_sie_Sie": "entstanden",
+        "praet_ihr": "entstandet",
+        "partizip_2": "entstanden"
+      },
+      "frequenzRang": 381,
+      "quelle": "wiktionary:de:entstehen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚entstehen‘ (https://de.wiktionary.org/wiki/entstehen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.bezeichnen",
+      "lemma": "bezeichnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bezeichnen",
+        "praes_ich": "bezeichne",
+        "praes_du": "bezeichnest",
+        "praes_er_sie_es": "bezeichnet",
+        "praes_wir": "bezeichnen",
+        "praes_ihr": "bezeichnet",
+        "praes_sie_Sie": "bezeichnen",
+        "praet_ich_er_sie_es": "bezeichnete",
+        "praet_du": "bezeichnetest",
+        "praet_wir_sie_Sie": "bezeichneten",
+        "praet_ihr": "bezeichnetet",
+        "partizip_2": "bezeichnet"
+      },
+      "frequenzRang": 636,
+      "quelle": "wiktionary:de:bezeichnen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bezeichnen‘ (https://de.wiktionary.org/wiki/bezeichnen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.dienen",
+      "lemma": "dienen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "dienen",
+        "praes_ich": "diene",
+        "praes_du": "dienst",
+        "praes_er_sie_es": "dient",
+        "praes_wir": "dienen",
+        "praes_ihr": "dient",
+        "praes_sie_Sie": "dienen",
+        "praet_ich_er_sie_es": "diente",
+        "praet_du": "dientest",
+        "praet_wir_sie_Sie": "dienten",
+        "praet_ihr": "dientet",
+        "partizip_2": "gedient"
+      },
+      "frequenzRang": 710,
+      "quelle": "wiktionary:de:dienen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚dienen‘ (https://de.wiktionary.org/wiki/dienen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.ergeben",
+      "lemma": "ergeben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "ergeben",
+        "praes_ich": "ergebe",
+        "praes_du": "ergibst",
+        "praes_er_sie_es": "ergibt",
+        "praes_wir": "ergeben",
+        "praes_ihr": "ergebt",
+        "praes_sie_Sie": "ergeben",
+        "praet_ich_er_sie_es": "ergab",
+        "praet_du": "ergabst",
+        "praet_wir_sie_Sie": "ergaben",
+        "praet_ihr": "ergabt",
+        "partizip_2": "ergeben"
+      },
+      "frequenzRang": 774,
+      "quelle": "wiktionary:de:ergeben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ergeben‘ (https://de.wiktionary.org/wiki/ergeben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.betrachten",
+      "lemma": "betrachten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "betrachten",
+        "praes_ich": "betrachte",
+        "praes_du": "betrachtest",
+        "praes_er_sie_es": "betrachtet",
+        "praes_wir": "betrachten",
+        "praes_ihr": "betrachtet",
+        "praes_sie_Sie": "betrachten",
+        "praet_ich_er_sie_es": "betrachtete",
+        "praet_du": "betrachtetest",
+        "praet_wir_sie_Sie": "betrachteten",
+        "praet_ihr": "betrachtetet",
+        "partizip_2": "betrachtet"
+      },
+      "frequenzRang": 1026,
+      "quelle": "wiktionary:de:betrachten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚betrachten‘ (https://de.wiktionary.org/wiki/betrachten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.beweisen",
+      "lemma": "beweisen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "beweisen",
+        "praes_ich": "beweise",
+        "praes_du": "beweist",
+        "praes_er_sie_es": "beweist",
+        "praes_wir": "beweisen",
+        "praes_ihr": "beweist",
+        "praes_sie_Sie": "beweisen",
+        "praet_ich_er_sie_es": "bewies",
+        "praet_du": "bewiesest",
+        "praet_wir_sie_Sie": "bewiesen",
+        "praet_ihr": "bewiest",
+        "partizip_2": "bewiesen"
+      },
+      "frequenzRang": 1045,
+      "quelle": "wiktionary:de:beweisen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚beweisen‘ (https://de.wiktionary.org/wiki/beweisen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.ermoeglichen",
+      "lemma": "ermöglichen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "ermöglichen",
+        "praes_ich": "ermögliche",
+        "praes_du": "ermöglichst",
+        "praes_er_sie_es": "ermöglicht",
+        "praes_wir": "ermöglichen",
+        "praes_ihr": "ermöglicht",
+        "praes_sie_Sie": "ermöglichen",
+        "praet_ich_er_sie_es": "ermöglichte",
+        "praet_du": "ermöglichtest",
+        "praet_wir_sie_Sie": "ermöglichten",
+        "praet_ihr": "ermöglichtet",
+        "partizip_2": "ermöglicht"
+      },
+      "frequenzRang": 1106,
+      "quelle": "wiktionary:de:ermöglichen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ermöglichen‘ (https://de.wiktionary.org/wiki/ermöglichen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.ersetzen",
+      "lemma": "ersetzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "ersetzen",
+        "praes_ich": "ersetze",
+        "praes_du": "ersetzt",
+        "praes_er_sie_es": "ersetzt",
+        "praes_wir": "ersetzen",
+        "praes_ihr": "ersetzt",
+        "praes_sie_Sie": "ersetzen",
+        "praet_ich_er_sie_es": "ersetzte",
+        "praet_du": "ersetztest",
+        "praet_wir_sie_Sie": "ersetzten",
+        "praet_ihr": "ersetztet",
+        "partizip_2": "ersetzt"
+      },
+      "frequenzRang": 1138,
+      "quelle": "wiktionary:de:ersetzen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ersetzen‘ (https://de.wiktionary.org/wiki/ersetzen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.existieren",
+      "lemma": "existieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "existieren",
+        "praes_ich": "existiere",
+        "praes_du": "existierst",
+        "praes_er_sie_es": "existiert",
+        "praes_wir": "existieren",
+        "praes_ihr": "existiert",
+        "praes_sie_Sie": "existieren",
+        "praet_ich_er_sie_es": "existierte",
+        "praet_du": "existiertest",
+        "praet_wir_sie_Sie": "existierten",
+        "praet_ihr": "existiertet",
+        "partizip_2": "existiert"
+      },
+      "frequenzRang": 1255,
+      "quelle": "wiktionary:de:existieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚existieren‘ (https://de.wiktionary.org/wiki/existieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.durchfuehren",
+      "lemma": "durchführen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "durch"
+      },
+      "formen": {
+        "infinitiv": "durchführen",
+        "verbzusatz": "durch",
+        "praes_ich": "führe",
+        "praes_du": "führst",
+        "praes_er_sie_es": "führt",
+        "praes_wir": "führen",
+        "praes_ihr": "führt",
+        "praes_sie_Sie": "führen",
+        "praet_ich_er_sie_es": "führte",
+        "praet_du": "führtest",
+        "praet_wir_sie_Sie": "führten",
+        "praet_ihr": "führtet",
+        "partizip_2": "durchgeführt",
+        "zu_infinitiv": "durchzuführen",
+        "nebensatz_er_sie_es": "durchführt",
+        "nebensatz_praet": "durchführte",
+        "nebensatz_praet_pl": "durchführten"
+      },
+      "frequenzRang": 1177,
+      "quelle": "wiktionary:de:durchführen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚durchführen‘ (https://de.wiktionary.org/wiki/durchführen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.herstellen",
+      "lemma": "herstellen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "her",
+        "grundverb": "stellen (de.a1.e03.stellen)"
+      },
+      "formen": {
+        "infinitiv": "herstellen",
+        "verbzusatz": "her",
+        "partizip_2": "hergestellt",
+        "zu_infinitiv": "herzustellen",
+        "nebensatz_er_sie_es": "herstellt",
+        "nebensatz_praet": "herstellte",
+        "nebensatz_praet_pl": "herstellten"
+      },
+      "frequenzRang": 1435,
+      "quelle": "wiktionary:de:herstellen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚herstellen‘ (https://de.wiktionary.org/wiki/herstellen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.produzieren",
+      "lemma": "produzieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "produzieren",
+        "praes_ich": "produziere",
+        "praes_du": "produzierst",
+        "praes_er_sie_es": "produziert",
+        "praes_wir": "produzieren",
+        "praes_ihr": "produziert",
+        "praes_sie_Sie": "produzieren",
+        "praet_ich_er_sie_es": "produzierte",
+        "praet_du": "produziertest",
+        "praet_wir_sie_Sie": "produzierten",
+        "praet_ihr": "produziertet",
+        "partizip_2": "produziert"
+      },
+      "frequenzRang": 1465,
+      "quelle": "wiktionary:de:produzieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚produzieren‘ (https://de.wiktionary.org/wiki/produzieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.testen",
+      "lemma": "testen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "testen",
+        "praes_ich": "teste",
+        "praes_du": "testest",
+        "praes_er_sie_es": "testet",
+        "praes_wir": "testen",
+        "praes_ihr": "testet",
+        "praes_sie_Sie": "testen",
+        "praet_ich_er_sie_es": "testete",
+        "praet_du": "testetest",
+        "praet_wir_sie_Sie": "testeten",
+        "praet_ihr": "testetet",
+        "partizip_2": "getestet"
+      },
+      "frequenzRang": 1568,
+      "quelle": "wiktionary:de:testen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚testen‘ (https://de.wiktionary.org/wiki/testen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.einfuehren",
+      "lemma": "einführen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ein"
+      },
+      "formen": {
+        "infinitiv": "einführen",
+        "verbzusatz": "ein",
+        "praes_ich": "führe",
+        "praes_du": "führst",
+        "praes_er_sie_es": "führt",
+        "praes_wir": "führen",
+        "praes_ihr": "führt",
+        "praes_sie_Sie": "führen",
+        "praet_ich_er_sie_es": "führte",
+        "praet_du": "führtest",
+        "praet_wir_sie_Sie": "führten",
+        "praet_ihr": "führtet",
+        "partizip_2": "eingeführt",
+        "zu_infinitiv": "einzuführen",
+        "nebensatz_er_sie_es": "einführt",
+        "nebensatz_praet": "einführte",
+        "nebensatz_praet_pl": "einführten"
+      },
+      "frequenzRang": 1843,
+      "quelle": "wiktionary:de:einführen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚einführen‘ (https://de.wiktionary.org/wiki/einführen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.bedienen",
+      "lemma": "bedienen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bedienen",
+        "praes_ich": "bediene",
+        "praes_du": "bedienst",
+        "praes_er_sie_es": "bedient",
+        "praes_wir": "bedienen",
+        "praes_ihr": "bedient",
+        "praes_sie_Sie": "bedienen",
+        "praet_ich_er_sie_es": "bediente",
+        "praet_du": "bedientest",
+        "praet_wir_sie_Sie": "bedienten",
+        "praet_ihr": "bedientet",
+        "partizip_2": "bedient"
+      },
+      "frequenzRang": 1849,
+      "quelle": "wiktionary:de:bedienen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bedienen‘ (https://de.wiktionary.org/wiki/bedienen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.steuern",
+      "lemma": "steuern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "steuern",
+        "praes_ich": "steuere",
+        "praes_du": "steuerst",
+        "praes_er_sie_es": "steuert",
+        "praes_wir": "steuern",
+        "praes_ihr": "steuert",
+        "praes_sie_Sie": "steuern",
+        "praet_ich_er_sie_es": "steuerte",
+        "praet_du": "steuertest",
+        "praet_wir_sie_Sie": "steuerten",
+        "praet_ihr": "steuertet",
+        "partizip_2": "gesteuert"
+      },
+      "frequenzRang": 1252,
+      "quelle": "wiktionary:de:steuern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚steuern‘ (https://de.wiktionary.org/wiki/steuern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.erfinden",
+      "lemma": "erfinden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erfinden",
+        "praes_ich": "erfinde",
+        "praes_du": "erfindest",
+        "praes_er_sie_es": "erfindet",
+        "praes_wir": "erfinden",
+        "praes_ihr": "erfindet",
+        "praes_sie_Sie": "erfinden",
+        "praet_ich_er_sie_es": "erfand",
+        "praet_du": "erfandest",
+        "praet_wir_sie_Sie": "erfanden",
+        "praet_ihr": "erfandet",
+        "partizip_2": "erfunden"
+      },
+      "frequenzRang": 2243,
+      "quelle": "wiktionary:de:erfinden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erfinden‘ (https://de.wiktionary.org/wiki/erfinden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.programmieren",
+      "lemma": "programmieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "programmieren",
+        "praes_ich": "programmiere",
+        "praes_du": "programmierst",
+        "praes_er_sie_es": "programmiert",
+        "praes_wir": "programmieren",
+        "praes_ihr": "programmiert",
+        "praes_sie_Sie": "programmieren",
+        "praet_ich_er_sie_es": "programmierte",
+        "praet_du": "programmiertest",
+        "praet_wir_sie_Sie": "programmierten",
+        "praet_ihr": "programmiertet",
+        "partizip_2": "programmiert"
+      },
+      "frequenzRang": 5454,
+      "quelle": "wiktionary:de:programmieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚programmieren‘ (https://de.wiktionary.org/wiki/programmieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.drucken",
+      "lemma": "drucken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "drucken",
+        "praes_ich": "drucke",
+        "praes_du": "druckst",
+        "praes_er_sie_es": "druckt",
+        "praes_wir": "drucken",
+        "praes_ihr": "druckt",
+        "praes_sie_Sie": "drucken",
+        "praet_ich_er_sie_es": "druckte",
+        "praet_du": "drucktest",
+        "praet_wir_sie_Sie": "druckten",
+        "praet_ihr": "drucktet",
+        "partizip_2": "gedruckt"
+      },
+      "frequenzRang": 2981,
+      "quelle": "wiktionary:de:drucken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚drucken‘ (https://de.wiktionary.org/wiki/drucken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.aufladen",
+      "lemma": "aufladen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "auf",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "aufladen",
+        "verbzusatz": "auf",
+        "praes_ich": "lade",
+        "praes_du": "lädst",
+        "praes_er_sie_es": "lädt",
+        "praes_wir": "laden",
+        "praes_ihr": "ladet",
+        "praes_sie_Sie": "laden",
+        "praet_ich_er_sie_es": "lud",
+        "praet_du": "ludest",
+        "praet_wir_sie_Sie": "luden",
+        "praet_ihr": "ludet",
+        "partizip_2": "aufgeladen",
+        "zu_infinitiv": "aufzuladen",
+        "nebensatz_er_sie_es": "auflädt",
+        "nebensatz_praet": "auflud",
+        "nebensatz_praet_pl": "aufluden"
+      },
+      "frequenzRang": 7707,
+      "quelle": "wiktionary:de:aufladen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚aufladen‘ (https://de.wiktionary.org/wiki/aufladen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.forschen",
+      "lemma": "forschen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "forschen",
+        "praes_ich": "forsche",
+        "praes_du": "forschst",
+        "praes_er_sie_es": "forscht",
+        "praes_wir": "forschen",
+        "praes_ihr": "forscht",
+        "praes_sie_Sie": "forschen",
+        "praet_ich_er_sie_es": "forschte",
+        "praet_du": "forschtest",
+        "praet_wir_sie_Sie": "forschten",
+        "praet_ihr": "forschtet",
+        "partizip_2": "geforscht"
+      },
+      "frequenzRang": 5903,
+      "quelle": "wiktionary:de:forschen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚forschen‘ (https://de.wiktionary.org/wiki/forschen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.mikrofon",
+      "lemma": "Mikrofon",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Mikrofone"
+      },
+      "formen": {
+        "pl": "Mikrofone",
+        "dat_pl": "Mikrofonen",
+        "gen_sg": "Mikrofons"
+      },
+      "frequenzRang": 7163,
+      "quelle": "wiktionary:de:Mikrofon",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mikrofon‘ (https://de.wiktionary.org/wiki/Mikrofon), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e14.s0001",
+      "text": "Für mich ist die Waschmaschine eine der wichtigsten Erfindungen im Haushalt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0002",
+      "text": "Viele Erfindungen benutzen wir jeden Tag, ohne darüber nachzudenken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0003",
+      "text": "Wer hat das Telefon erfunden?",
+      "quelle": "tatoeba:357125",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #357125 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e14.s0004",
+      "text": "Auch junge Leute können Erfinder sein, wenn sie neugierig sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0005",
+      "text": "Mit der Mikrowelle kann man das Essen in wenigen Minuten warm machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0006",
+      "text": "Ich habe das Ladegerät für mein Telefon verloren.",
+      "quelle": "tatoeba:13449028",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13449028 von mhr (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e14.s0007",
+      "text": "Kann ich mein Handy hier aufladen?",
+      "quelle": "tatoeba:12755624",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12755624 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e14.s0008",
+      "text": "Wir brauchen neue Batterien.",
+      "quelle": "tatoeba:724871",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #724871 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e14.s0009",
+      "text": "Bitte sprich direkt ins Mikrofon, sonst hört man dich hinten nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0010",
+      "text": "Das neue Gerät ist ganz einfach zu bedienen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0011",
+      "text": "Oma Sevim kann ihr Smartphone inzwischen sehr gut bedienen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0012",
+      "text": "Moderne Handys haben so viele Funktionen, dass man nicht alle kennt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0013",
+      "text": "Wozu dient dieses kleine Gerät?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0014",
+      "text": "Das kurze Kabel dient dazu, den Akku aufzuladen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0015",
+      "text": "Diese App ist sehr nützlich, wenn man eine Fremdsprache lernt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0016",
+      "text": "Viele ältere Menschen fahren heute mit einem elektrischen Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0017",
+      "text": "Alte elektronische Geräte gehören nicht in den normalen Müll.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0018",
+      "text": "Die Tür im Supermarkt öffnet sich automatisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0019",
+      "text": "Das Licht im Flur geht automatisch an, wenn jemand nach Hause kommt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0020",
+      "text": "Die Firma stellt nächste Woche ein neues Produkt vor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0021",
+      "text": "Der Hersteller gibt zwei Jahre Garantie auf das Gerät.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0022",
+      "text": "Das neue Modell ist leichter und hat einen größeren Bildschirm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0023",
+      "text": "Die Lampe hat eine ungewöhnliche Form, sie sieht aus wie ein Ei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0024",
+      "text": "Im Winter wachsen die Tomaten im Haus mit künstlichem Licht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0025",
+      "text": "Meine neuen Kopfhörer sind kabellos, das ist beim Sport sehr praktisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0026",
+      "text": "Das kleine Radio ist tragbar und funktioniert mit Batterien.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0027",
+      "text": "Ist das Wasser aus diesem Brunnen trinkbar?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0028",
+      "text": "Entschuldigung, wie funktioniert dieser Drucker?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0029",
+      "text": "Sie legen zuerst Papier ein und drücken dann auf den grünen Knopf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0030",
+      "text": "Und wie viele Seiten darf ich drucken?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0031",
+      "text": "So viele Sie brauchen, das Drucken ist hier kostenlos.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0032",
+      "text": "Der Drucker ist erst zwei Wochen alt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0033",
+      "text": "Ich habe das Papier im Laden an der Ecke gekauft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0034",
+      "text": "Ist der Akku schon voll aufgeladen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0035",
+      "text": "Noch nicht, das Ladegerät braucht noch eine halbe Stunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0036",
+      "text": "Ja, das Mikrofon ist eingeschaltet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0037",
+      "text": "Das Handy habe ich von meinem Bruder bekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0038",
+      "text": "Das ist mein Ladegerät. Es ist klein und leicht und lädt das Handy sehr schnell auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0039",
+      "text": "Ich stelle euch meine Lampe vor: Sie ist tragbar und funktioniert ohne Kabel mit einer Batterie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0040",
+      "text": "Die Heizung kann man mit einer App steuern, auch wenn man nicht zu Hause ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0041",
+      "text": "Im Kurs für Technik lernen die Kinder, einen kleinen Roboter zu programmieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0042",
+      "text": "Für das neue Gerät braucht man auch eine neue Software.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0043",
+      "text": "Bei Familie Demir saugt ein kleiner Roboter jeden Tag den Boden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0044",
+      "text": "Ein Roboter ist eine Maschine, die eine Arbeit automatisch erledigt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0045",
+      "text": "Künstliche Intelligenz kann Texte übersetzen, aber sie macht auch Fehler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0046",
+      "text": "Das Haus hat ein modernes System, das die Wärme in jedem Raum misst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0047",
+      "text": "Neue Technologien helfen Ärzten, Krankheiten früher zu erkennen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0048",
+      "text": "Metall fühlt sich kälter an als Holz, auch wenn beide gleich warm sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0049",
+      "text": "Flaschen aus Kunststoff sind viel leichter als Flaschen aus Glas.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0050",
+      "text": "Eine wichtige Eigenschaft von Metall ist, dass es Strom gut leitet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0051",
+      "text": "Unter dem Mikroskop sieht man die feine Struktur eines Blattes.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0052",
+      "text": "Den alten Akku kann man leicht durch einen neuen ersetzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0053",
+      "text": "Maschinen ersetzen heute viele Arbeiten, die früher Menschen gemacht haben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0054",
+      "text": "Das Internet ermöglicht es uns, mit Freunden auf der ganzen Welt zu sprechen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0055",
+      "text": "Die App ermöglicht blinden Menschen, sich Texte vorlesen zu lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0056",
+      "text": "Das ist das Ladegerät, das ich gestern im Zug vergessen habe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0057",
+      "text": "Kennst du die Ingenieurin, die den neuen Zug entwickelt hat?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0058",
+      "text": "Der Roboter, den wir programmiert haben, kann schon allein fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0059",
+      "text": "Bitte öffne die Tür der laufenden Waschmaschine nicht!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0060",
+      "text": "Die gedruckte Anleitung liegt unten im Karton.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0061",
+      "text": "Nimm bitte die aufgeladenen Batterien mit, die alten sind leer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0062",
+      "text": "Die wartenden Kunden testen am Eingang schon das neue Handy.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0063",
+      "text": "Anleitung: So benutzen Sie Ihre Mikrowelle richtig",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0064",
+      "text": "Stellen Sie das Gerät auf einen festen, trockenen Tisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0065",
+      "text": "Hinter dem Gerät müssen mindestens zehn Zentimeter frei bleiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0066",
+      "text": "Benutzen Sie nur Teller und Schüsseln aus Glas oder aus Kunststoff, der für die Mikrowelle geeignet ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0067",
+      "text": "Teller mit Metall gehören nie in die Mikrowelle, denn das kann gefährlich sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0068",
+      "text": "Wählen Sie mit dem Knopf die Zeit und drücken Sie dann auf Start.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0069",
+      "text": "Am Ende hören Sie ein kurzes Signal, und das Licht geht automatisch aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0070",
+      "text": "Vorsicht: Das Essen kann sehr heiß sein. Kinder sollten das Gerät nur mit Erwachsenen bedienen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0071",
+      "text": "Man darf Teller mit Metall in die Mikrowelle stellen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0072",
+      "text": "Woran merkt man, dass das Essen fertig ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0073",
+      "text": "Man hört ein kurzes Signal.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0074",
+      "text": "Die Tür öffnet sich von allein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0075",
+      "text": "Das Licht wird plötzlich rot.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0076",
+      "text": "Kinder sollen die Mikrowelle nicht allein benutzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0077",
+      "text": "Die Mikrowelle braucht jedes Jahr eine neue Batterie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0078",
+      "text": "Was ist denn das für ein Gerät?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0079",
+      "text": "Das ist ein Roboter, der den Boden saugt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0080",
+      "text": "Und woher weiß er, wohin er fahren muss?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0081",
+      "text": "Er hat eine kleine Kamera und eine Software, die die Wohnung kennt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0082",
+      "text": "Er saugt jeden Montag und jeden Donnerstag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0083",
+      "text": "Wir haben ihn im Internet bestellt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0084",
+      "text": "Mein Gerät ist ein kleiner Roboter, der den Boden saugt, wenn niemand zu Hause ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0085",
+      "text": "Im Jahr 1969 standen erstmals Menschen auf dem Mond.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0086",
+      "text": "Ursprünglich wurde das Internet vor allem von Wissenschaftlern an Universitäten genutzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0087",
+      "text": "Viele gute Ideen entstehen ganz zufällig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0088",
+      "text": "Im Jahr 2002 wurde in Deutschland der Euro als Bargeld eingeführt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0089",
+      "text": "Früher wurden Bücher mit der Hand geschrieben, später wurden sie gedruckt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0090",
+      "text": "Viele berühmte Erfinder hatten am Anfang überhaupt keinen Erfolg.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0091",
+      "text": "Heute benutzen Menschen weltweit ein Handy, auch in sehr kleinen Dörfern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0092",
+      "text": "In dem internationalen Team arbeiten Forscher aus zwölf Ländern zusammen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0093",
+      "text": "Die Entwicklung eines neuen Medikaments dauert oft viele Jahre.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0094",
+      "text": "Die Medizin hat in den letzten hundert Jahren große Fortschritte gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0095",
+      "text": "Gedruckte Bücher hatten eine riesige Bedeutung für die Bildung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0096",
+      "text": "Wegen eines Fehlers musste die Produktion für zwei Tage gestoppt werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0097",
+      "text": "Die Fabrik in unserer Stadt produziert Teile für Fahrräder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0098",
+      "text": "Dieses Produkt wurde in Italien hergestellt.",
+      "quelle": "tatoeba:415204",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #415204 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e14.s0099",
+      "text": "Früher wurden Schuhe mit der Hand hergestellt, heute macht das meistens eine Maschine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0100",
+      "text": "Mein Onkel arbeitet in einem Werk, in dem Busse gebaut werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0101",
+      "text": "Als meine Oma ein Kind war, existierten noch keine Handys.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0102",
+      "text": "Die Firma existiert schon seit über hundert Jahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0103",
+      "text": "Das Telefon wurde vor etwa 150 Jahren erfunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0104",
+      "text": "Das erste Fahrrad wurde 1817 gebaut und war fast ganz aus Holz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0105",
+      "text": "Die erste Batterie wurde um das Jahr 1800 in Italien gebaut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0106",
+      "text": "Die ersten Mikrowellen waren riesig und wurden vor allem in Restaurants benutzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0107",
+      "text": "Unsere Ziffern und die Null kamen über die arabische Welt nach Europa.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0108",
+      "text": "Im Jahr 1945 arbeitete ein Ingenieur an einem Gerät, das mit Mikrowellen funktionierte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0109",
+      "text": "Plötzlich bemerkte er, dass die Schokolade in seiner Tasche ganz weich geworden war.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0110",
+      "text": "So entstand die Idee, Essen mit Mikrowellen warm zu machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0111",
+      "text": "Wie die Brille das Lesen leichter machte",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0112",
+      "text": "Wer schlecht sieht, trägt heute einfach eine Brille.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0113",
+      "text": "Doch die ersten Brillen entstanden erst um das Jahr 1300 in Italien.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0114",
+      "text": "Wer sie erfunden hat, weiß man bis heute nicht genau.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0115",
+      "text": "Vorher legten manche Menschen ein Stück Glas auf den Text, damit die Buchstaben größer aussahen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0116",
+      "text": "Die ersten Brillen hatten noch keine Bügel, man musste sie auf der Nase festhalten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0117",
+      "text": "Als um 1450 in Mainz der Buchdruck erfunden wurde, gab es plötzlich viel mehr Bücher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0118",
+      "text": "Deshalb brauchten auch viel mehr Menschen eine Brille, und Brillen wurden billiger.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0119",
+      "text": "Heute braucht in Deutschland mehr als die Hälfte der Erwachsenen eine Brille.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0120",
+      "text": "Ohne diese Erfindung wäre das Lesen für viele Menschen im Alter sehr schwer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0121",
+      "text": "Die erste Brille wurde in Deutschland erfunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0122",
+      "text": "Warum brauchten nach 1450 mehr Menschen eine Brille?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0123",
+      "text": "Weil es viel mehr Bücher gab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0124",
+      "text": "Weil die Brillen teurer wurden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0125",
+      "text": "Weil die Menschen schlechter sahen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0126",
+      "text": "Man kennt den Namen der Person nicht, die die Brille erfunden hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0127",
+      "text": "In Italien gab es damals besonders viele Schulen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0128",
+      "text": "Weißt du, wann das Fahrrad erfunden wurde?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0129",
+      "text": "Ich glaube, vor ungefähr 200 Jahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0130",
+      "text": "Und wie sah das erste Fahrrad aus?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0131",
+      "text": "Es war aus Holz und hatte keine Pedale, man lief einfach mit den Füßen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0132",
+      "text": "Ich fahre jeden Tag mit dem Fahrrad zur Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0133",
+      "text": "Es wurde in einem Werk in Italien hergestellt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0134",
+      "text": "Die Brille wurde um 1300 in Italien erfunden, aber niemand kennt den Erfinder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0135",
+      "text": "Bevor ein neues Produkt verkauft wird, muss es gründlich getestet werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0136",
+      "text": "Eine Gruppe von Schülern hat die neue App eine Woche lang getestet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0137",
+      "text": "Die Universität führt eine Studie mit 500 Kindern durch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0138",
+      "text": "Der Test muss zweimal durchgeführt werden, damit das Ergebnis sicher ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0139",
+      "text": "Die Ärzte testen eine neue Methode gegen Rückenschmerzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0140",
+      "text": "Heute arbeiten viel mehr Frauen in der Wissenschaft als früher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0141",
+      "text": "Als Wissenschaftlerin untersucht Frau Doğan, wie Pflanzen mit wenig Wasser wachsen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0142",
+      "text": "Eine wissenschaftliche Studie zeigt, dass Kinder mit genug Schlaf besser lernen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0143",
+      "text": "Seit zehn Jahren forscht Professorin Hartmann an kleinen Robotern für die Medizin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0144",
+      "text": "Kinder forschen gern: Sie stellen viele Fragen und probieren alles aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0145",
+      "text": "Mit einem einfachen Experiment konnte die Klasse beweisen, dass warme Luft nach oben steigt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0146",
+      "text": "Manche wichtige Entdeckung wurde ganz zufällig gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0147",
+      "text": "Im Jahr 1928 wurde ein wichtiges Medikament gegen Bakterien zufällig entdeckt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0148",
+      "text": "Mit einem Mikroskop kann man Dinge sehen, die für das Auge zu klein sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0149",
+      "text": "Unsere Schule hat für den Unterricht in Biologie zehn neue Mikroskope gekauft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0150",
+      "text": "Der Test hat ergeben, dass das Wasser sauber ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0151",
+      "text": "Forscher sehen einen Zusammenhang zwischen Schlaf und guten Noten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0152",
+      "text": "Gute Forschung ist die Basis für neue Medikamente.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0153",
+      "text": "Laylā zeigt der Klasse den Entwurf für ihr Modell.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0154",
+      "text": "Einen Menschen, der etwas Neues erfindet, bezeichnet man als Erfinder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0155",
+      "text": "Mit dem Wort Software bezeichnet man die Programme eines Computers.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0156",
+      "text": "Die Forscher arbeiten unabhängig von der Firma, die das Produkt herstellt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0157",
+      "text": "Jedes neue Auto muss vor dem Verkauf getestet werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0158",
+      "text": "Dieses Gerät darf nicht mit Wasser gereinigt werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0159",
+      "text": "Die Ergebnisse der Studie sollen nächste Woche veröffentlicht werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0160",
+      "text": "Das Experiment wurde dreimal wiederholt, und das Ergebnis war immer gleich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0161",
+      "text": "Was macht ihr heute in Biologie?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0162",
+      "text": "Wir betrachten Blätter unter dem Mikroskop.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0163",
+      "text": "Und was kann man da sehen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0164",
+      "text": "Ganz viele kleine Zellen, die wie Steine in einer Wand aussehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0165",
+      "text": "Das Mikroskop hat ungefähr 200 Euro gekostet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0166",
+      "text": "Danach haben wir noch zwei Stunden Mathe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0167",
+      "text": "Wie lange muss die Studie noch durchgeführt werden?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0168",
+      "text": "Noch ein halbes Jahr, dann werden die Ergebnisse analysiert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0169",
+      "text": "Die Studie wird von der Universität bezahlt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0170",
+      "text": "Wir haben 500 Kinder gefragt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0171",
+      "text": "Für das Experiment brauchen wir Wasser, Salz und zwei Gläser. Zuerst wird das Salz gewogen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0172",
+      "text": "Je heller der Bildschirm ist, desto schneller ist der Akku leer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0173",
+      "text": "Je öfter man programmiert, desto leichter wird es.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0174",
+      "text": "Je älter das Handy ist, desto langsamer funktioniert es.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0175",
+      "text": "Je mehr Funktionen ein Gerät hat, desto teurer ist es meistens.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0176",
+      "text": "Je länger ich darüber nachdenke, desto besser gefällt mir die Idee.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0177",
+      "text": "Je besser die Qualität ist, desto länger kann man ein Gerät benutzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0178",
+      "text": "Viele Geräte, beispielsweise Handys und Kameras, haben heute einen Akku.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0179",
+      "text": "Mit Apps kann man beispielsweise neue Wörter üben oder Texte übersetzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0180",
+      "text": "Bei Experimenten lernen die Kinder viel und haben zugleich Spaß.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0181",
+      "text": "Welche Erfindung ist für dich die wichtigste?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0182",
+      "text": "Ich finde, die Waschmaschine ist die wichtigste Erfindung, weil sie viel Zeit spart.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0183",
+      "text": "Für mich ist der Kühlschrank wichtiger, denn ohne ihn wird das Essen schnell schlecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0184",
+      "text": "Ich glaube, das Internet hat unseren Alltag am stärksten geprägt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0185",
+      "text": "Da bin ich anderer Meinung: Das Fahrrad ist nützlicher als das Auto.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0186",
+      "text": "Der neue Drucker ist praktischer als der alte, weil er kabellos funktioniert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0187",
+      "text": "Können Roboter irgendwann Lehrerinnen und Lehrer ersetzen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0188",
+      "text": "Ich glaube nicht, denn ein Roboter versteht nicht, wie sich ein Kind fühlt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0189",
+      "text": "Künstliche Intelligenz ist nützlich, aber man sollte die Ergebnisse immer kritisch prüfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0190",
+      "text": "Was ist für dich die wichtigste Erfindung im Alltag?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0191",
+      "text": "Ganz klar das Handy. Damit kann ich telefonieren, Fotos machen und lernen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0192",
+      "text": "Aber ohne Strom funktioniert das Handy nicht. Was sagst du dazu?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0193",
+      "text": "Das stimmt. Ohne Strom wäre mein Handy wirklich nutzlos.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0194",
+      "text": "Mein Handy hat ungefähr 300 Euro gekostet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0195",
+      "text": "Ich telefoniere am liebsten abends mit Oma.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0196",
+      "text": "Ist das neue Modell besser als das alte?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0197",
+      "text": "Ja, es ist leichter, und der Akku hält viel länger.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0198",
+      "text": "Ja, ich habe es letzte Woche gekauft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0199",
+      "text": "Nein, der Hersteller ist ein anderer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0200",
+      "text": "Für mich ist das Telefon die wichtigste Erfindung, weil man damit schnell Hilfe rufen kann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0201",
+      "text": "Ich finde das Fahrrad wichtiger als das Auto, denn es ist billiger und gesünder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0202",
+      "text": "Beschreiben Sie eine eigene Idee für eine Erfindung. Was ist das Gerät, wie funktioniert es, und für wen ist es nützlich?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0203",
+      "text": "Meine Idee ist eine Lampe für den Schreibtisch, die man nicht einschalten muss. Sie geht automatisch an, wenn sich jemand an den Tisch setzt. Wenn man aufsteht, geht das Licht nach zwei Minuten von allein wieder aus. So spart man Strom und muss nicht an den Schalter denken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0204",
+      "text": "Die Lampe funktioniert mit einem Akku, den man mit einem normalen Ladegerät auflädt. Sie ist aus Kunststoff und Metall und deshalb leicht und stabil. Ich glaube, diese Erfindung ist besonders für Schüler und ältere Menschen nützlich. Je weniger man an solche Dinge denken muss, desto besser kann man sich konzentrieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0205",
+      "text": "Wasser für den Garten von Oma Sevim",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0206",
+      "text": "Elif, Laylā und Mia gehen in dieselbe Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0207",
+      "text": "Ihre Schule veranstaltet in diesem Jahr einen Wettbewerb für Technik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0208",
+      "text": "Jedes Team soll eine Erfindung bauen, die im Alltag nützlich ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0209",
+      "text": "Da hat Elif eine Idee.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0210",
+      "text": "Meine Oma hat einen großen Garten, aber sie kann nicht mehr jeden Tag gießen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0211",
+      "text": "Die drei wollen ein System bauen, das die Pflanzen automatisch mit Wasser versorgt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0212",
+      "text": "Aber Laylā fragt: Woher soll das System wissen, wann die Erde zu trocken ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0213",
+      "text": "Die drei bitten Ranā, die Mutter von Laylā, um Hilfe, denn sie ist Ingenieurin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0214",
+      "text": "Ihr braucht einen kleinen Sensor, der misst, wie feucht die Erde ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0215",
+      "text": "Wenn die Erde zu trocken ist, schaltet ein kleiner Computer automatisch die Pumpe ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0216",
+      "text": "Zuerst zeichnen die Mädchen einen Entwurf auf Papier.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0217",
+      "text": "Dann kaufen sie die Teile: einen Sensor, eine kleine Pumpe, einen Schlauch und eine Batterie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0218",
+      "text": "Wichtig ist: Wir arbeiten nur mit einer Batterie und nie mit Strom aus der Steckdose.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0219",
+      "text": "Am Wochenende programmieren sie den kleinen Computer zusammen mit Ranā.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0220",
+      "text": "Das ist schwieriger, als sie gedacht hatten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0221",
+      "text": "Beim ersten Test passiert gar nichts, weil in der Software ein kleiner Fehler ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0222",
+      "text": "Keine Sorge, Fehler gehören dazu. Wir finden ihn bestimmt!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0223",
+      "text": "Nach einer Stunde haben sie den Fehler gefunden, und die Pumpe läuft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0224",
+      "text": "Am Samstag wird das System im Garten von Oma Sevim aufgebaut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0225",
+      "text": "Wie funktioniert das denn? Muss ich jetzt gar nicht mehr gießen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0226",
+      "text": "Nein, Oma. Je trockener die Erde ist, desto mehr Wasser bekommen die Pflanzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0227",
+      "text": "Das Wasser kommt aus einem großen Eimer, in dem sie Regen sammeln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0228",
+      "text": "Zwei Wochen später findet der Wettbewerb in der Schule statt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0229",
+      "text": "Die drei präsentieren ihr Modell und erklären, wie es funktioniert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0230",
+      "text": "Die Lehrerinnen und Lehrer sind begeistert, besonders von der Idee mit dem Regen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0231",
+      "text": "Das Team gewinnt den zweiten Platz und einen Preis für die beste Idee.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0232",
+      "text": "Ich bin so stolz auf euch! Meine Tomaten waren noch nie so schön.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0233",
+      "text": "Für wen bauen die Mädchen ihre Erfindung?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0234",
+      "text": "Für die Oma von Elif.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0235",
+      "text": "Für die Mutter von Laylā.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0236",
+      "text": "Für ihre Lehrerin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0237",
+      "text": "Wer hilft den Mädchen beim Programmieren?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0238",
+      "text": "Ranā, die Mutter von Laylā.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0239",
+      "text": "Oma Sevim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0240",
+      "text": "Die Lehrerin von Mia.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0241",
+      "text": "Warum funktioniert das System beim ersten Test nicht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0242",
+      "text": "Weil in der Software ein Fehler ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0243",
+      "text": "Weil die Batterie leer ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0244",
+      "text": "Weil die Pumpe kaputt ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0245",
+      "text": "Wann bekommen die Pflanzen mehr Wasser?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0246",
+      "text": "Wenn die Erde sehr trocken ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0247",
+      "text": "Wenn es viel regnet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0248",
+      "text": "Jeden Morgen um acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0249",
+      "text": "Welchen Preis gewinnt das Team?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0250",
+      "text": "Den zweiten Platz und einen Preis für die beste Idee.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0251",
+      "text": "Den ersten Platz für das schönste Modell.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0252",
+      "text": "Einen Preis für das beste Programm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0253",
+      "text": "Unser System misst, wie feucht die Erde ist, und gießt die Pflanzen automatisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0254",
+      "text": "Ein Blick durch das Mikroskop",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0255",
+      "text": "Jan hat von seiner Tante ein Mikroskop geschenkt bekommen und zeigt es Opa Kamāl.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0256",
+      "text": "So ein Gerät habe ich noch nie aus der Nähe gesehen. Wie funktioniert es?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0257",
+      "text": "Ganz einfach: Unten ist eine kleine Lampe, die Licht nach oben schickt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0258",
+      "text": "Auf das Glas in der Mitte legt man das, was man betrachten möchte, zum Beispiel ein Blatt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0259",
+      "text": "Und warum sieht man es dann so groß?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0260",
+      "text": "Oben sind besondere Gläser. Sie machen das Bild bis zu 400-mal größer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0261",
+      "text": "Darf ich auch mal schauen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0262",
+      "text": "Klar! Mit dieser Schraube stellst du das Bild scharf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0263",
+      "text": "Unglaublich! Das Blatt sieht aus wie eine Stadt aus kleinen Steinen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0264",
+      "text": "Das sind Zellen. Jede Pflanze und jeder Mensch besteht aus vielen Zellen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0265",
+      "text": "Als ich ein Kind war, gab es in unserer Schule kein einziges Mikroskop.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0266",
+      "text": "Dann entdecken wir jetzt zusammen die kleine Welt, Opa!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0267",
+      "text": "Was hat Jan von seiner Tante bekommen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0268",
+      "text": "Ein Mikroskop.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0269",
+      "text": "Eine Kamera.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0270",
+      "text": "Eine neue Brille.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0271",
+      "text": "Wozu dienen die Gläser oben im Mikroskop?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0272",
+      "text": "Sie machen das Bild größer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0273",
+      "text": "Sie machen das Licht heller.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0274",
+      "text": "Sie schützen die Augen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0275",
+      "text": "Was sieht Opa Kamāl in dem Blatt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0276",
+      "text": "Viele kleine Zellen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0277",
+      "text": "Viele kleine Steine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0278",
+      "text": "Viele kleine Tiere.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0279",
+      "text": "Unten ist eine Lampe, und oben sind Gläser, die das Bild größer machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0280",
+      "text": "Nicht jede Erfindung war geplant, manche entstanden durch Zufall.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0281",
+      "text": "Die Erfinderin, die wir im Museum kennengelernt haben, war sehr freundlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0282",
+      "text": "Wir bringen das kaputte Ladegerät zurück in den Laden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0283",
+      "text": "Je mehr Bücher es gab, desto mehr Menschen lernten lesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0284",
+      "text": "Das Handy muss jeden Abend aufgeladen werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0285",
+      "text": "Das erste Mikroskop wurde vor über 400 Jahren gebaut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0286",
+      "text": "Dieser Hersteller ist für die gute Qualität seiner Geräte bekannt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0287",
+      "text": "Die Kamera hat eine Funktion, mit der man auch nachts gute Fotos machen kann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0288",
+      "text": "Kunststoff ist leicht, aber er hält nicht so lange wie Metall.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0289",
+      "text": "Ohne Forschung gäbe es keine neuen Medikamente.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0290",
+      "text": "Das kleine Gerät dient dazu, die Feuchtigkeit in der Erde zu messen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0291",
+      "text": "Die Brille gehört weltweit zu den wichtigsten Erfindungen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0292",
+      "text": "Als meine Eltern Kinder waren, existierte das Internet noch nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0293",
+      "text": "Die Brille ermöglicht vielen Menschen, auch im Alter gut zu lesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0294",
+      "text": "Der kleine Roboter wird mit einer App gesteuert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0295",
+      "text": "Kühl ohne Strom? Eine kurze Geschichte des Kühlschranks",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0296",
+      "text": "Früher gab es keinen Kühlschrank, und das Essen wurde schnell schlecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0297",
+      "text": "Viele Familien bewahrten Milch und Fleisch deshalb in einem kühlen Keller auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0298",
+      "text": "Im Winter wurde Eis aus Seen geholt und für den Sommer gesammelt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0299",
+      "text": "Im 19. Jahrhundert entwickelten Ingenieure die ersten Maschinen, die ohne Eis kühlen konnten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0300",
+      "text": "Diese Maschinen waren riesig und wurden zuerst nur in der Industrie benutzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0301",
+      "text": "Erst um 1960 hatte etwa die Hälfte der Familien in Deutschland einen eigenen Kühlschrank.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0302",
+      "text": "Heute steht in fast jeder Küche ein Kühlschrank, oft mit vielen elektronischen Funktionen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0303",
+      "text": "Früher holte man im Winter Eis aus Seen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0304",
+      "text": "Wo wurden die ersten Maschinen zum Kühlen benutzt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0305",
+      "text": "In der Industrie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0306",
+      "text": "In fast jeder Küche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0307",
+      "text": "In den Schulen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0308",
+      "text": "Der erste Kühlschrank wurde in Italien gebaut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0309",
+      "text": "Um 1960 hatten alle Familien in Deutschland einen Kühlschrank.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0310",
+      "text": "Guten Tag, ich habe ein Problem mit meinem neuen Ladegerät.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0311",
+      "text": "Was genau funktioniert denn nicht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0312",
+      "text": "Das Handy wird einfach nicht aufgeladen, obwohl der Stecker richtig in der Steckdose steckt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0313",
+      "text": "Darf ich mal sehen? Vielleicht ist das Kabel defekt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0314",
+      "text": "Das Ladegerät kostet 19 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0315",
+      "text": "Wir haben heute bis 20 Uhr geöffnet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0316",
+      "text": "Wozu dient eigentlich dieser kleine Knopf an der Seite?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0317",
+      "text": "Damit schaltest du das Mikrofon ein und aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0318",
+      "text": "Der Knopf ist aus Kunststoff.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0319",
+      "text": "Das Gerät wurde in einem Werk in Polen hergestellt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0320",
+      "text": "Das Experiment wurde von einer internationalen Gruppe durchgeführt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0321",
+      "text": "Bevor das Gerät verkauft wird, muss die Software noch getestet werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0322",
+      "text": "Das Mikrofon, das du mir geliehen hast, funktioniert sehr gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0323",
+      "text": "Je länger man das Handy benutzt, desto schneller muss man es aufladen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0324",
+      "text": "Mit einer Batterie ist die Lampe unabhängig von der Steckdose.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e14.s0325",
+      "text": "Ich stelle euch meinen Rucksack vor: Er hat ein kleines Ladegerät, das mit Licht funktioniert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e14.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Geräte im Alltag benennen und sagen, wozu sie dienen.",
+        "tr": "Günlük hayattaki cihazların adlarını söyleyebilir ve ne işe yaradıklarını anlatabilirim.",
+        "ar": "أستطيع أن أسمّي الأجهزة في الحياة اليومية وأن أقول لأيّ شيء تُستخدم."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e14.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.erfindung",
+          "ablenker": ["de.a2.e13.erfolg", "de.a2.e10.anleitung"]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e14.mikrowelle",
+            "de.b1.e14.ladegeraet",
+            "de.b1.e14.mikrofon",
+            "de.b1.e14.batterie",
+            "de.a2.e10.kamera",
+            "de.a2.e10.bildschirm"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0025",
+          "wort": 4,
+          "ablenker": ["kabelbar", "kabellich"]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e14.nuetzlich",
+          "ablenker": ["de.b1.e14.kuenstlich", "de.b1.e14.ungewoehnlich"]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a06",
+          "typ": "paare",
+          "lemmata": ["de.b1.e14.erfinden", "de.b1.e14.aufladen", "de.b1.e14.bedienen", "de.b1.e14.dienen", "de.a2.e10.druecken"]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.hersteller",
+          "ablenker": ["de.b1.e14.erfinder", "de.a2.e13.kollege"]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0028"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0029"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0030"
+            }
+          ],
+          "antwort": "de.b1.e14.s0031",
+          "ablenker": ["de.b1.e14.s0032", "de.b1.e14.s0033"]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e14.s0011",
+          "nach": "ziel",
+          "alternativen": [
+            "Inzwischen kann Oma Sevim ihr Smartphone sehr gut bedienen.",
+            "Ihr Smartphone kann Oma Sevim inzwischen sehr gut bedienen."
+          ],
+          "ablenker": ["bedient", "Computer"]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e14.s0018",
+          "ablenker": ["de.b1.e14.s0019", "de.b1.e14.s0017"]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a11",
+          "typ": "satzbau",
+          "ziel": "de.b1.e14.s0014"
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e14.funktion",
+          "ablenker": ["de.b1.e14.qualitaet", "de.b1.e14.modell"]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e14.s0021",
+          "nach": "ziel",
+          "alternativen": [
+            "Auf das Gerät gibt der Hersteller zwei Jahre Garantie.",
+            "Der Hersteller gibt auf das Gerät zwei Jahre Garantie.",
+            "Zwei Jahre Garantie gibt der Hersteller auf das Gerät.",
+            "Der Hersteller gibt 2 Jahre Garantie auf das Gerät.",
+            "Der Hersteller gibt zwei Jahre Garantie für das Gerät.",
+            "Für das Gerät gibt der Hersteller zwei Jahre Garantie."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.elektrisch",
+          "ablenker": ["de.b1.e14.automatisch", "de.b1.e14.produkt"]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0034"
+            }
+          ],
+          "antwort": "de.b1.e14.s0035",
+          "ablenker": ["de.b1.e14.s0036", "de.b1.e14.s0037"]
+        },
+        {
+          "schluessel": "de.b1.e14.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e14.s0038"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e14.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann erklären, wie ein Gerät funktioniert, und eine einfache Anleitung verstehen.",
+        "tr": "Bir cihazın nasıl çalıştığını açıklayabilir ve basit bir kullanım kılavuzunu anlayabilirim.",
+        "ar": "أستطيع أن أشرح كيف يعمل جهاز وأن أفهم دليل استخدام بسيطًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e14.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.roboter",
+          "ablenker": ["de.a2.e13.maschine", "de.a2.e10.computer"]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e14.software",
+            "de.b1.e14.system",
+            "de.b1.e14.material",
+            "de.b1.e14.metall",
+            "de.b1.e14.kunststoff",
+            "de.b1.e14.eigenschaft"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0059",
+          "wort": 5,
+          "ablenker": ["gelaufenen", "laufende"]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e14.steuern",
+          "ablenker": ["de.b1.e14.programmieren", "de.b1.e14.ersetzen"]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e14.ermoeglichen",
+            "de.b1.e14.ersetzen",
+            "de.b1.e14.steuern",
+            "de.b1.e14.programmieren",
+            "de.b1.e05.herunterladen"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0078"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0079"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0080"
+            }
+          ],
+          "antwort": "de.b1.e14.s0081",
+          "ablenker": ["de.b1.e14.s0082", "de.b1.e14.s0083"]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a08",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e14.s0063",
+          "absaetze": [
+            "de.b1.e14.s0064",
+            "de.b1.e14.s0065",
+            "de.b1.e14.s0066",
+            "de.b1.e14.s0067",
+            "de.b1.e14.s0068",
+            "de.b1.e14.s0069",
+            "de.b1.e14.s0070"
+          ],
+          "glossen": ["de.b1.e14.mikrowelle", "de.b1.e02.eignen"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e14.s0071",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e14.s0072",
+              "antwort": "de.b1.e14.s0073",
+              "ablenker": ["de.b1.e14.s0074", "de.b1.e14.s0075"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e14.s0076",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e14.s0077",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e14.s0056",
+          "nach": "ziel",
+          "alternativen": ["Das ist das Ladegerät, das ich im Zug gestern vergessen habe."],
+          "ablenker": ["den", "hat"]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a10",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0058",
+          "wort": 2,
+          "ablenker": ["der", "das"]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e14.s0045",
+          "ablenker": ["de.b1.e14.s0047", "de.b1.e14.s0054"]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e14.s0052",
+          "alternativen": [
+            "Man kann den alten Akku leicht durch einen neuen ersetzen.",
+            "Leicht kann man den alten Akku durch einen neuen ersetzen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e14.s0049",
+          "nach": "ziel",
+          "alternativen": [
+            "Flaschen aus Kunststoff sind viel leichter als die aus Glas.",
+            "Flaschen aus Plastik sind viel leichter als Flaschen aus Glas.",
+            "Kunststoffflaschen sind viel leichter als Glasflaschen.",
+            "Flaschen aus Kunststoff sind deutlich leichter als Flaschen aus Glas.",
+            "Flaschen aus Kunststoff sind viel leichter als solche aus Glas."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.intelligenz",
+          "ablenker": ["de.b1.e14.technologie", "de.b1.e14.struktur"]
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e14.s0060"
+        },
+        {
+          "schluessel": "de.b1.e14.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e14.s0084"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e14.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann einen Sachtext über die Geschichte einer Erfindung verstehen und wiedergeben.",
+        "tr": "Bir icadın tarihi hakkındaki bilgilendirici bir metni anlayabilir ve özetleyebilirim.",
+        "ar": "أستطيع أن أفهم نصًّا معلوماتيًّا عن تاريخ اختراع وأن أعيد أهمّ ما فيه."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e14.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.erstmals",
+          "ablenker": ["de.b1.e14.urspruenglich", "de.b1.e01.einst"]
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e14.entstehen",
+            "de.b1.e14.einfuehren",
+            "de.b1.e14.drucken",
+            "de.b1.e14.produzieren",
+            "de.b1.e14.existieren",
+            "de.b1.e14.erfinden"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0105",
+          "wort": 3,
+          "ablenker": ["hat", "wurden"]
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e14.beruehmt",
+          "ablenker": ["de.b1.e14.riesig", "de.b1.e14.technisch"]
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a06",
+          "typ": "paare",
+          "lemmata": ["de.b1.e14.industrie", "de.b1.e14.bedeutung", "de.b1.e14.werk", "de.b1.e14.fortschritt", "de.b1.e14.qualitaet"]
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e14.s0111",
+          "absaetze": [
+            "de.b1.e14.s0112",
+            "de.b1.e14.s0113",
+            "de.b1.e14.s0114",
+            "de.b1.e14.s0115",
+            "de.b1.e14.s0116",
+            "de.b1.e14.s0117",
+            "de.b1.e14.s0118",
+            "de.b1.e14.s0119",
+            "de.b1.e14.s0120"
+          ],
+          "glossen": ["de.a2.e06.brille", "de.b1.e14.entstehen"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e14.s0121",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e14.s0122",
+              "antwort": "de.b1.e14.s0123",
+              "ablenker": ["de.b1.e14.s0124", "de.b1.e14.s0125"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e14.s0126",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e14.s0127",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0128"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0129"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0130"
+            }
+          ],
+          "antwort": "de.b1.e14.s0131",
+          "ablenker": ["de.b1.e14.s0132", "de.b1.e14.s0133"]
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e14.s0088",
+          "nach": "ziel",
+          "alternativen": [
+            "Der Euro wurde im Jahr 2002 in Deutschland als Bargeld eingeführt.",
+            "Der Euro wurde in Deutschland im Jahr 2002 als Bargeld eingeführt.",
+            "In Deutschland wurde der Euro im Jahr 2002 als Bargeld eingeführt.",
+            "In Deutschland wurde im Jahr 2002 der Euro als Bargeld eingeführt.",
+            "Im Jahr 2002 wurde der Euro in Deutschland als Bargeld eingeführt.",
+            "Als Bargeld wurde der Euro im Jahr 2002 in Deutschland eingeführt.",
+            "Im Jahr 2002 wurde der Euro als Bargeld in Deutschland eingeführt."
+          ],
+          "ablenker": ["hat", "Geld"]
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e14.drucken",
+          "ablenker": ["de.a2.e10.druecken"]
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e14.s0109",
+          "ablenker": ["de.b1.e14.s0108", "de.b1.e14.s0110"]
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a12",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e14.s0107",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e14.s0101",
+          "nach": "ziel",
+          "alternativen": [
+            "Als meine Oma ein Kind war, gab es noch keine Handys.",
+            "Als meine Großmutter ein Kind war, existierten noch keine Handys.",
+            "Es existierten noch keine Handys, als meine Oma ein Kind war.",
+            "Als meine Oma klein war, existierten noch keine Handys.",
+            "Als meine Oma ein Kind war, existierten noch keine Smartphones.",
+            "Noch keine Handys existierten, als meine Oma ein Kind war."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a15",
+          "typ": "formen",
+          "zeilen": ["das Telefon (erfinden)", "die Bücher (drucken)", "das Gerät (herstellen)", "der Euro (einführen)"],
+          "spalten": ["Passiv Präsens", "Passiv Präteritum"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["wird erfunden"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["wurde erfunden"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["werden gedruckt"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["wurden gedruckt"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["wird hergestellt"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["wurde hergestellt"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["wurde eingeführt"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e14.s0134"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e14.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Forschung und Experimente sprechen und sagen, was gemacht werden muss.",
+        "tr": "Araştırma ve deneyler hakkında konuşabilir ve neyin yapılması gerektiğini söyleyebilirim.",
+        "ar": "أستطيع أن أتحدّث عن البحث العلمي والتجارب وأن أقول ما يجب فعله."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e14.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.experiment",
+          "ablenker": ["de.b1.e14.analyse", "de.b1.e14.methode"]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e14.wissenschaft",
+            "de.b1.e14.wissenschaftler",
+            "de.b1.e14.professor",
+            "de.b1.e14.entdeckung",
+            "de.b1.e14.mikroskop",
+            "de.b1.e14.zusammenhang"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0157",
+          "wort": 8,
+          "ablenker": ["wurden", "worden"]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e14.beweisen",
+          "ablenker": ["de.b1.e14.betrachten", "de.b1.e14.testen"]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a05",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e14.testen",
+            "de.b1.e14.durchfuehren",
+            "de.b1.e14.betrachten",
+            "de.b1.e14.ergeben",
+            "de.b1.e14.bezeichnen",
+            "de.b1.e14.forschen"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0161"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0162"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0163"
+            }
+          ],
+          "antwort": "de.b1.e14.s0164",
+          "ablenker": ["de.b1.e14.s0165", "de.b1.e14.s0166"]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e14.s0136",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a08",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e14.testen",
+          "ablenker": ["de.a2.e11.westen"]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a09",
+          "typ": "satzbau",
+          "ziel": "de.b1.e14.s0138",
+          "alternativen": ["Damit das Ergebnis sicher ist, muss der Test zweimal durchgeführt werden."]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.erklaerung",
+          "ablenker": ["de.b1.e14.bedeutung", "de.b1.e14.entwurf"]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e14.s0147",
+          "ablenker": ["de.b1.e14.s0093", "de.b1.e14.s0152"]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a12",
+          "typ": "frei",
+          "ziel": "de.b1.e14.s0148",
+          "nach": "ziel",
+          "alternativen": [
+            "Mit einem Mikroskop sieht man Dinge, die für das Auge zu klein sind.",
+            "Mit einem Mikroskop kann man Dinge sehen, die für die Augen zu klein sind.",
+            "Mit einem Mikroskop kann man Sachen sehen, die für das Auge zu klein sind.",
+            "Man kann mit einem Mikroskop Dinge sehen, die für das Auge zu klein sind.",
+            "Mit dem Mikroskop kann man Dinge sehen, die für das Auge zu klein sind.",
+            "Mit einem Mikroskop kann man Dinge sehen, die zu klein für das Auge sind."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a13",
+          "typ": "formen",
+          "zeilen": ["testen", "aufladen", "reinigen", "veröffentlichen"],
+          "spalten": ["Partizip II", "Passiv mit „muss“"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["getestet"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["muss getestet werden"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["aufgeladen"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["muss aufgeladen werden"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["gereinigt"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["muss gereinigt werden"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["veröffentlicht"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["muss veröffentlicht werden"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0167"
+            }
+          ],
+          "antwort": "de.b1.e14.s0168",
+          "ablenker": ["de.b1.e14.s0169", "de.b1.e14.s0170"]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a15",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0154",
+          "wort": 6,
+          "ablenker": ["ergibt", "beweist"]
+        },
+        {
+          "schluessel": "de.b1.e14.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e14.s0171"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e14.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Erfindungen vergleichen, bewerten und meine Meinung begründen.",
+        "tr": "İcatları karşılaştırabilir, değerlendirebilir ve fikrimi gerekçelendirebilirim.",
+        "ar": "أستطيع أن أقارن بين الاختراعات وأن أقيّمها وأن أعلّل رأيي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e14.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.desto",
+          "ablenker": ["de.b1.e09.sodass", "de.b1.e07.obwohl"]
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0174",
+          "wort": 5,
+          "ablenker": ["dann", "als"]
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a04",
+          "typ": "paare",
+          "lemmata": ["de.b1.e14.beispielsweise", "de.b1.e14.zugleich", "de.b1.e14.erstmals", "de.b1.e14.urspruenglich"]
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0190"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0191"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0192"
+            }
+          ],
+          "antwort": "de.b1.e14.s0193",
+          "ablenker": ["de.b1.e14.s0194", "de.b1.e14.s0195"]
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e14.s0173",
+          "nach": "ziel",
+          "ablenker": ["dann", "schwerer"]
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a07",
+          "typ": "satzbau",
+          "ziel": "de.b1.e14.s0175"
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a08",
+          "typ": "formen",
+          "zeilen": ["nützlich", "riesig", "berühmt", "ungewöhnlich"],
+          "spalten": ["Komparativ", "Superlativ"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["nützlicher"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["am nützlichsten"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["riesiger"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["am riesigsten"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["berühmter"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["am berühmtesten"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["ungewöhnlicher"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["am ungewöhnlichsten"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e14.menschlich",
+          "ablenker": ["de.b1.e14.technisch", "de.b1.e14.wissenschaftlich"]
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e14.s0182",
+          "ablenker": ["de.b1.e14.s0183", "de.b1.e14.s0184"]
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e14.s0187",
+          "nach": "ziel",
+          "alternativen": [
+            "Können Roboter eines Tages Lehrerinnen und Lehrer ersetzen?",
+            "Können Roboter irgendwann Lehrer ersetzen?",
+            "Können Roboter irgendwann Lehrer und Lehrerinnen ersetzen?",
+            "Können Roboter irgendwann die Lehrerinnen und Lehrer ersetzen?",
+            "Werden Roboter irgendwann Lehrerinnen und Lehrer ersetzen können?"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0196"
+            }
+          ],
+          "antwort": "de.b1.e14.s0197",
+          "ablenker": ["de.b1.e14.s0198", "de.b1.e14.s0199"]
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0178",
+          "wort": 2,
+          "ablenker": ["zugleich", "erstmals"]
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e14.s0172"
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e14.s0202",
+          "woerter": {
+            "min": 90,
+            "max": 110
+          },
+          "pflichtwoerter": ["Erfindung", "funktioniert", "nützlich"],
+          "muster": ["de.b1.e14.s0203", "de.b1.e14.s0204"]
+        },
+        {
+          "schluessel": "de.b1.e14.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e14.s0200"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e14.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über ein Projekt in der Schule und ein Gespräch über ein Gerät verstehen.",
+        "tr": "Okuldaki bir proje hakkındaki bir hikâyeyi ve bir cihaz hakkındaki bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن مشروع في المدرسة وحوارًا عن جهاز."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e14.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e14.s0205",
+          "zeilen": [
+            {
+              "satz": "de.b1.e14.s0206"
+            },
+            {
+              "satz": "de.b1.e14.s0207"
+            },
+            {
+              "satz": "de.b1.e14.s0208"
+            },
+            {
+              "satz": "de.b1.e14.s0209"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0210"
+            },
+            {
+              "satz": "de.b1.e14.s0211"
+            },
+            {
+              "satz": "de.b1.e14.s0212"
+            },
+            {
+              "satz": "de.b1.e14.s0213"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0214"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0215"
+            },
+            {
+              "satz": "de.b1.e14.s0216"
+            },
+            {
+              "satz": "de.b1.e14.s0217"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0218"
+            },
+            {
+              "satz": "de.b1.e14.s0219"
+            },
+            {
+              "satz": "de.b1.e14.s0220"
+            },
+            {
+              "satz": "de.b1.e14.s0221"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0222"
+            },
+            {
+              "satz": "de.b1.e14.s0223"
+            },
+            {
+              "satz": "de.b1.e14.s0224"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e14.s0225"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0226"
+            },
+            {
+              "satz": "de.b1.e14.s0227"
+            },
+            {
+              "satz": "de.b1.e14.s0228"
+            },
+            {
+              "satz": "de.b1.e14.s0229"
+            },
+            {
+              "satz": "de.b1.e14.s0230"
+            },
+            {
+              "satz": "de.b1.e14.s0231"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e14.s0232"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.b1.e14.s0233",
+              "antwort": "de.b1.e14.s0234",
+              "ablenker": ["de.b1.e14.s0235", "de.b1.e14.s0236"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.b1.e14.s0237",
+              "antwort": "de.b1.e14.s0238",
+              "ablenker": ["de.b1.e14.s0239", "de.b1.e14.s0240"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.b1.e14.s0241",
+              "antwort": "de.b1.e14.s0242",
+              "ablenker": ["de.b1.e14.s0243", "de.b1.e14.s0244"]
+            },
+            {
+              "nach": 20,
+              "frage": "de.b1.e14.s0245",
+              "antwort": "de.b1.e14.s0246",
+              "ablenker": ["de.b1.e14.s0247", "de.b1.e14.s0248"]
+            },
+            {
+              "nach": 26,
+              "frage": "de.b1.e14.s0249",
+              "antwort": "de.b1.e14.s0250",
+              "ablenker": ["de.b1.e14.s0251", "de.b1.e14.s0252"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l06.a02",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e14.s0216",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Mädchen zeichnen zuerst einen Entwurf auf Papier.",
+            "Zuerst zeichnen die Mädchen auf Papier einen Entwurf.",
+            "Auf Papier zeichnen die Mädchen zuerst einen Entwurf.",
+            "Die Mädchen zeichnen auf Papier zuerst einen Entwurf.",
+            "Die Mädchen zeichnen zuerst auf Papier einen Entwurf."
+          ],
+          "ablenker": ["Modell", "zeichnet"]
+        },
+        {
+          "schluessel": "de.b1.e14.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0224",
+          "wort": 2,
+          "ablenker": ["hat", "werden"]
+        },
+        {
+          "schluessel": "de.b1.e14.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e14.s0214",
+          "ablenker": ["de.b1.e14.s0215", "de.b1.e14.s0227"]
+        },
+        {
+          "schluessel": "de.b1.e14.l06.a05",
+          "typ": "satzbau",
+          "ziel": "de.b1.e14.s0219",
+          "alternativen": [
+            "Zusammen mit Ranā programmieren sie am Wochenende den kleinen Computer.",
+            "Sie programmieren am Wochenende zusammen mit Ranā den kleinen Computer.",
+            "Am Wochenende programmieren sie zusammen mit Ranā den kleinen Computer.",
+            "Den kleinen Computer programmieren sie am Wochenende zusammen mit Ranā."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l06.a06",
+          "typ": "frei",
+          "ziel": "de.b1.e14.s0208",
+          "nach": "ziel",
+          "alternativen": [
+            "Jede Gruppe soll eine Erfindung bauen, die im Alltag nützlich ist.",
+            "Jedes Team soll eine im Alltag nützliche Erfindung bauen.",
+            "Jedes Team muss eine Erfindung bauen, die im Alltag nützlich ist.",
+            "Jedes Team soll eine Erfindung bauen, die im Alltag hilfreich ist.",
+            "Jedes Team soll eine Erfindung machen, die im Alltag nützlich ist."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l06.a07",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e14.s0229"
+        },
+        {
+          "schluessel": "de.b1.e14.l06.a08",
+          "typ": "geschichte",
+          "titel": "de.b1.e14.s0254",
+          "zeilen": [
+            {
+              "satz": "de.b1.e14.s0255"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0256"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0257"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0258"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0259"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0260"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0261"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0262"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0263"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0264"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0265"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0266"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 0,
+              "frage": "de.b1.e14.s0267",
+              "antwort": "de.b1.e14.s0268",
+              "ablenker": ["de.b1.e14.s0269", "de.b1.e14.s0270"]
+            },
+            {
+              "nach": 5,
+              "frage": "de.b1.e14.s0271",
+              "antwort": "de.b1.e14.s0272",
+              "ablenker": ["de.b1.e14.s0273", "de.b1.e14.s0274"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.b1.e14.s0275",
+              "antwort": "de.b1.e14.s0276",
+              "ablenker": ["de.b1.e14.s0277", "de.b1.e14.s0278"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l06.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0259"
+            }
+          ],
+          "antwort": "de.b1.e14.s0260",
+          "ablenker": ["de.b1.e14.s0262", "de.b1.e14.s0265"]
+        },
+        {
+          "schluessel": "de.b1.e14.l06.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e14.s0255",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e14.l06.a11",
+          "typ": "sprechen",
+          "satz": "de.b1.e14.s0253"
+        },
+        {
+          "schluessel": "de.b1.e14.l06.a12",
+          "typ": "sprechen",
+          "satz": "de.b1.e14.s0279"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e14.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum.",
+        "ar": "أراجع كلمات الوحدة وجملها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e14.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e14.mikrowelle",
+            "de.b1.e14.mikroskop",
+            "de.b1.e14.mikrofon",
+            "de.b1.e14.ladegeraet",
+            "de.b1.e14.roboter",
+            "de.b1.e14.batterie"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e14.produktion",
+          "ablenker": ["de.b1.e14.industrie", "de.b1.e14.qualitaet"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e14.s0285",
+          "ablenker": ["de.b1.e14.s0283", "de.b1.e14.s0284"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0284",
+          "wort": 6,
+          "ablenker": ["wurde", "worden"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e14.s0281",
+          "nach": "ziel",
+          "ablenker": ["den", "hat"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.herstellen",
+          "ablenker": ["de.b1.e14.erfinden", "de.a2.e12.entdecken"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0078"
+            }
+          ],
+          "antwort": "de.b1.e14.s0079",
+          "ablenker": ["de.b1.e14.s0083", "de.b1.e14.s0166"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a08",
+          "typ": "formen",
+          "zeilen": ["erfinden", "entstehen", "produzieren", "aufladen"],
+          "spalten": ["Präteritum (er/sie/es)", "Partizip II"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["erfand"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["erfunden"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["entstand"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["entstanden"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["produzierte"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["produziert"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["lud auf"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["aufgeladen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e14.s0288",
+          "ablenker": ["de.b1.e14.s0048", "de.b1.e14.s0050"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e14.drucken",
+          "ablenker": ["de.a2.e10.druecken"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a11",
+          "typ": "satzbau",
+          "ziel": "de.b1.e14.s0089",
+          "alternativen": [
+            "Bücher wurden früher mit der Hand geschrieben, später wurden sie gedruckt.",
+            "Früher wurden Bücher mit der Hand geschrieben, sie wurden später gedruckt.",
+            "Bücher wurden früher mit der Hand geschrieben, sie wurden später gedruckt."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.technologie",
+          "ablenker": ["de.b1.e14.system", "de.b1.e14.software"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0282",
+          "wort": 3,
+          "ablenker": ["kaputten", "kaputter"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a14",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e14.wissenschaftlich",
+            "de.b1.e14.technisch",
+            "de.b1.e14.menschlich",
+            "de.b1.e14.unabhaengig",
+            "de.b1.e14.riesig",
+            "de.b1.e14.beruehmt"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e14.s0289",
+          "nach": "ziel",
+          "alternativen": [
+            "Ohne Forschung würde es keine neuen Medikamente geben.",
+            "Es gäbe keine neuen Medikamente ohne Forschung.",
+            "Ohne die Forschung gäbe es keine neuen Medikamente.",
+            "Ohne Forschung gäbe es keine neuen Arzneimittel."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a16",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e14.struktur",
+          "ablenker": ["de.b1.e14.basis", "de.b1.e14.methode"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a17",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e14.s0104",
+          "alternativen": ["Das erste Fahrrad wurde achtzehnhundertsiebzehn gebaut und war fast ganz aus Holz."]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a18",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0128"
+            }
+          ],
+          "antwort": "de.b1.e14.s0129",
+          "ablenker": ["de.b1.e14.s0132", "de.b1.e14.s0133"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a19",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e14.s0283",
+          "nach": "ziel",
+          "ablenker": ["dann", "weniger"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a20",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.entwurf",
+          "ablenker": ["de.b1.e14.modell", "de.a2.e13.projekt"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a21",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e14.material",
+            "de.b1.e14.metall",
+            "de.b1.e14.kunststoff",
+            "de.a2.e12.holz",
+            "de.a2.e03.glas",
+            "de.a2.e12.papier"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a22",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0294",
+          "wort": 7,
+          "ablenker": ["steuert", "steuern"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a23",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e14.s0293",
+          "ablenker": ["de.b1.e14.s0291", "de.b1.e14.s0112"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a24",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e14.weltweit",
+          "ablenker": ["de.b1.e14.beruehmt", "de.b1.e14.ungewoehnlich"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a25",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e14.international",
+          "ablenker": ["de.b1.e14.elektronisch", "de.b1.e14.kuenstlich"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a26",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.existieren",
+          "ablenker": ["de.b1.e14.entstehen", "de.b1.e14.dienen"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a27",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.forschung",
+          "ablenker": ["de.b1.e14.experiment", "de.a2.e13.universitaet"]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a28",
+          "typ": "satzbau",
+          "ziel": "de.b1.e14.s0286",
+          "alternativen": ["Für die gute Qualität seiner Geräte ist dieser Hersteller bekannt."]
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a29",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e14.s0287",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a30",
+          "typ": "sprechen",
+          "satz": "de.b1.e14.s0039"
+        },
+        {
+          "schluessel": "de.b1.e14.l07.a31",
+          "typ": "sprechen",
+          "satz": "de.b1.e14.s0201"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e14.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich Geräte beschreiben und einen Sachtext über eine Erfindung verstehen kann.",
+        "tr": "Cihazları tarif edebildiğimi ve bir icat hakkındaki bilgilendirici bir metni anlayabildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أصف الأجهزة وأن أفهم نصًّا معلوماتيًّا عن اختراع."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e14.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.erfinder",
+          "ablenker": ["de.b1.e14.hersteller", "de.b1.e14.wissenschaftler"]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e14.aufladen",
+            "de.b1.e14.bedienen",
+            "de.b1.e14.testen",
+            "de.b1.e14.produzieren",
+            "de.b1.e14.beweisen",
+            "de.b1.e14.drucken"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0320",
+          "wort": 2,
+          "ablenker": ["hat", "wurden"]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e14.s0323",
+          "ablenker": ["de.b1.e14.s0172", "de.b1.e14.s0284"]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0310"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e14.s0311"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0312"
+            }
+          ],
+          "antwort": "de.b1.e14.s0313",
+          "ablenker": ["de.b1.e14.s0314", "de.b1.e14.s0315"]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e14.s0321",
+          "nach": "ziel",
+          "alternativen": ["Die Software muss noch getestet werden, bevor das Gerät verkauft wird."],
+          "ablenker": ["wurde", "hat"]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e14.s0295",
+          "absaetze": [
+            "de.b1.e14.s0296",
+            "de.b1.e14.s0297",
+            "de.b1.e14.s0298",
+            "de.b1.e14.s0299",
+            "de.b1.e14.s0300",
+            "de.b1.e14.s0301",
+            "de.b1.e14.s0302"
+          ],
+          "glossen": ["de.b1.e14.industrie", "de.b1.e01.aufbewahren"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e14.s0303",
+              "richtig": "richtig"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e14.s0304",
+              "antwort": "de.b1.e14.s0305",
+              "ablenker": ["de.b1.e14.s0306", "de.b1.e14.s0307"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e14.s0308",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e14.s0309",
+              "richtig": "falsch"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e14.eigenschaft",
+          "ablenker": ["de.b1.e14.erklaerung", "de.b1.e14.entwicklung"]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.b1.e14.s0322"
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a10",
+          "typ": "frei",
+          "ziel": "de.b1.e14.s0324",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Lampe ist mit einer Batterie unabhängig von der Steckdose.",
+            "Mit Batterie ist die Lampe unabhängig von der Steckdose.",
+            "Mit einer Batterie ist die Lampe nicht auf die Steckdose angewiesen.",
+            "Mit einer Batterie braucht die Lampe keine Steckdose."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e14.s0099",
+          "ablenker": ["de.b1.e14.s0097", "de.b1.e14.s0100"]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e14.s0316"
+            }
+          ],
+          "antwort": "de.b1.e14.s0317",
+          "ablenker": ["de.b1.e14.s0318", "de.b1.e14.s0319"]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e14.s0158"
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e14.zusammenhang",
+          "ablenker": ["de.b1.e14.bedeutung", "de.b1.e14.basis"]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a15",
+          "typ": "luecke",
+          "ziel": "de.b1.e14.s0177",
+          "wort": 5,
+          "ablenker": ["dann", "als"]
+        },
+        {
+          "schluessel": "de.b1.e14.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e14.s0325"
+        }
+      ]
+    }
+  ]
+}
