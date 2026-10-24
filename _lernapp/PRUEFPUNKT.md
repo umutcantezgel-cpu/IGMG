@@ -1,5 +1,23 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 24.10.2026 20:10 UTC – nach dem Limit (≈ 17:20, Reset 20:00) und einem zweiten Plan-Modus fortgesetzt:**
+  - **Fertig seit 17:15:**
+    - Prüfer-Fehlalarme umgesetzt (2362830f im Inhaltszweig).
+      - menschlich_klaeren sinkt von 94 auf 0, Warnungen von 697 auf 286.
+      - Echte Treffer bleiben Treffer: Gegenproben mit Bier/Wein samt Klitika, imām ohne Hamza, bombardıman.
+      - Religionswächter unverändert.
+    - B1-Lektorate: de e03–e08, tr e03–e08, ar e01.
+  - **Durch den Plan-Modus (≈ 16:13–16:39) nur als Plan erhalten:**
+    - Lektorat de/tr e01–e02 sowie die Entwürfe de e11–e16, tr e09–e16 und ar e02–e16.
+    - Zuordnung in `scratchpad/l3/b1/planmodus-plaene.md`.
+  - **Neu gestartet:**
+    - B1 de `wf_617404b6-0c6`.
+    - B1 tr `wf_29e1505e-683`.
+    - B1 ar `wf_f769aa01-ec0`.
+    - B2 de `wf_efd14149-f78`.
+    - Prüfer, nur Gegenprüfung: `wf_7cde5edd-950`.
+  - **A1-Freigabe:** wartet weiter auf die Erlaubnis des Nutzers (120 gestagte Dateien).
+
 - **Stand 24.10.2026 16:50 UTC – Plan-Modus der Umgebung (≈ 16:20–16:40) beendet:**
   - Die vier Inhaltsläufe haben den Plan-Modus überstanden und schreiben wieder (z. B. Lektorat de.b1.e03, 3d87f6a6); kein Neustart nötig.
   - Prüfer-Fehlalarme: Der erste Lauf (`wf_9ea7a6d0-99a`) war blockiert und hat nichts geändert, aber die Ursachen analysiert:
