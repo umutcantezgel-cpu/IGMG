@@ -1,0 +1,5347 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e01",
+    "reihenfolge": 2,
+    "thema": {
+      "de": "Als Oma jung war",
+      "tr": "Büyükannem gençken",
+      "ar": "عندما كانت الجدة شابة"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann von Erlebnissen aus meiner Kindheit oder aus der Geschichte meiner Familie zusammenhängend erzählen.",
+        "tr": "Çocukluğumdaki yaşantıları ya da ailemin geçmişini bağlantılı bir şekilde anlatabilirim.",
+        "ar": "أستطيع أن أحكي بشكل مترابط عن تجارب من طفولتي أو من تاريخ عائلتي."
+      },
+      {
+        "de": "Ich kann in einer Erzählung verstehen, in welcher Reihenfolge etwas passiert ist.",
+        "tr": "Bir anlatıda olayların hangi sırayla gerçekleştiğini anlayabilirim.",
+        "ar": "أستطيع أن أفهم ترتيب الأحداث في حكاية."
+      }
+    ],
+    "symbol": "history",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e01.waehrend",
+      "lemma": "während",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Nebensatz, Verb am Ende (Zeit, Gegensatz); auch Präposition mit Genitiv"
+      },
+      "frequenzRang": 151,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.sobald",
+      "lemma": "sobald",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Nebensatz, Verb am Ende (Zeit)"
+      },
+      "frequenzRang": 1017,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.solange",
+      "lemma": "solange",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Nebensatz, Verb am Ende (Zeit)"
+      },
+      "frequenzRang": 1018,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.bislang",
+      "lemma": "bislang",
+      "wortart": "adverb",
+      "frequenzRang": 1625,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.laengst",
+      "lemma": "längst",
+      "wortart": "adverb",
+      "frequenzRang": 1242,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.mittlerweile",
+      "lemma": "mittlerweile",
+      "wortart": "adverb",
+      "frequenzRang": 743,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.anfangs",
+      "lemma": "anfangs",
+      "wortart": "adverb",
+      "frequenzRang": 2088,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.jahrelang",
+      "lemma": "jahrelang",
+      "wortart": "adverb",
+      "frequenzRang": 2620,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.zuvor",
+      "lemma": "zuvor",
+      "wortart": "adverb",
+      "frequenzRang": 765,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.heutzutage",
+      "lemma": "heutzutage",
+      "wortart": "adverb",
+      "frequenzRang": 2700,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.damalig",
+      "lemma": "damalig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "damalige",
+        "endung_en": "damaligen",
+        "endung_er": "damaliger",
+        "endung_es": "damaliges",
+        "endung_em": "damaligem"
+      },
+      "frequenzRang": 1653,
+      "quelle": "wiktionary:de:damalig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚damalig‘ (https://de.wiktionary.org/wiki/damalig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.ehemalig",
+      "lemma": "ehemalig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ehemalige",
+        "endung_en": "ehemaligen",
+        "endung_er": "ehemaliger",
+        "endung_es": "ehemaliges",
+        "endung_em": "ehemaligem"
+      },
+      "frequenzRang": 648,
+      "quelle": "wiktionary:de:ehemalig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ehemalig‘ (https://de.wiktionary.org/wiki/ehemalig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.heutig",
+      "lemma": "heutig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "heutige",
+        "endung_en": "heutigen",
+        "endung_er": "heutiger",
+        "endung_es": "heutiges",
+        "endung_em": "heutigem"
+      },
+      "frequenzRang": 678,
+      "quelle": "wiktionary:de:heutig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚heutig‘ (https://de.wiktionary.org/wiki/heutig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.vergangen",
+      "lemma": "vergangen",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "vergangene",
+        "endung_en": "vergangenen",
+        "endung_er": "vergangener",
+        "endung_es": "vergangenes",
+        "endung_em": "vergangenem"
+      },
+      "frequenzRang": 1216,
+      "quelle": "wiktionary:de:vergangen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vergangen‘ (https://de.wiktionary.org/wiki/vergangen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.historisch",
+      "lemma": "historisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "historische",
+        "endung_en": "historischen",
+        "endung_er": "historischer",
+        "endung_es": "historisches",
+        "endung_em": "historischem"
+      },
+      "frequenzRang": 640,
+      "quelle": "wiktionary:de:historisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚historisch‘ (https://de.wiktionary.org/wiki/historisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.tot",
+      "lemma": "tot",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "tote",
+        "endung_en": "toten",
+        "endung_er": "toter",
+        "endung_es": "totes",
+        "endung_em": "totem"
+      },
+      "frequenzRang": 544,
+      "quelle": "wiktionary:de:tot",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚tot‘ (https://de.wiktionary.org/wiki/tot), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.bescheiden",
+      "lemma": "bescheiden",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "bescheidene",
+        "endung_en": "bescheidenen",
+        "endung_er": "bescheidener",
+        "endung_es": "bescheidenes",
+        "endung_em": "bescheidenem",
+        "komparativ": "bescheidener",
+        "superlativ": "bescheidensten",
+        "superlativ_e": "bescheidenste"
+      },
+      "frequenzRang": 3838,
+      "quelle": "wiktionary:de:bescheiden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bescheiden‘ (https://de.wiktionary.org/wiki/bescheiden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.fleissig",
+      "lemma": "fleißig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "fleißige",
+        "endung_en": "fleißigen",
+        "endung_er": "fleißiger",
+        "endung_es": "fleißiges",
+        "endung_em": "fleißigem",
+        "komparativ": "fleißiger",
+        "superlativ": "fleißigsten",
+        "superlativ_e": "fleißigste"
+      },
+      "frequenzRang": 3230,
+      "quelle": "wiktionary:de:fleißig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚fleißig‘ (https://de.wiktionary.org/wiki/fleißig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.streng",
+      "lemma": "streng",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "strenge",
+        "endung_en": "strengen",
+        "endung_er": "strenger",
+        "endung_es": "strenges",
+        "endung_em": "strengem",
+        "komparativ": "strenger",
+        "superlativ": "strengsten",
+        "superlativ_e": "strengste"
+      },
+      "frequenzRang": 1710,
+      "quelle": "wiktionary:de:streng",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚streng‘ (https://de.wiktionary.org/wiki/streng), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.tod",
+      "lemma": "Tod",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Tode"
+      },
+      "formen": {
+        "pl": "Tode",
+        "dat_pl": "Toden",
+        "gen_sg": "Tods",
+        "gen_sg_2": "Todes"
+      },
+      "frequenzRang": 389,
+      "quelle": "wiktionary:de:Tod",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tod‘ (https://de.wiktionary.org/wiki/Tod), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.jahrhundert",
+      "lemma": "Jahrhundert",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Jahrhunderte"
+      },
+      "formen": {
+        "pl": "Jahrhunderte",
+        "dat_pl": "Jahrhunderten",
+        "gen_sg": "Jahrhunderts"
+      },
+      "frequenzRang": 516,
+      "quelle": "wiktionary:de:Jahrhundert",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Jahrhundert‘ (https://de.wiktionary.org/wiki/Jahrhundert), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.generation",
+      "lemma": "Generation",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Generationen"
+      },
+      "formen": {
+        "pl": "Generationen"
+      },
+      "frequenzRang": 1071,
+      "quelle": "wiktionary:de:Generation",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Generation‘ (https://de.wiktionary.org/wiki/Generation), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.jugend",
+      "lemma": "Jugend",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 1075,
+      "quelle": "wiktionary:de:Jugend",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Jugend‘ (https://de.wiktionary.org/wiki/Jugend), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.vergangenheit",
+      "lemma": "Vergangenheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 1142,
+      "quelle": "wiktionary:de:Vergangenheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vergangenheit‘ (https://de.wiktionary.org/wiki/Vergangenheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.gegenwart",
+      "lemma": "Gegenwart",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 2414,
+      "quelle": "wiktionary:de:Gegenwart",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gegenwart‘ (https://de.wiktionary.org/wiki/Gegenwart), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.jahrzehnt",
+      "lemma": "Jahrzehnt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Jahrzehnte"
+      },
+      "formen": {
+        "pl": "Jahrzehnte",
+        "dat_pl": "Jahrzehnten",
+        "gen_sg": "Jahrzehnts",
+        "gen_sg_2": "Jahrzehntes"
+      },
+      "frequenzRang": 1236,
+      "quelle": "wiktionary:de:Jahrzehnt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Jahrzehnt‘ (https://de.wiktionary.org/wiki/Jahrzehnt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.kindheit",
+      "lemma": "Kindheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 2802,
+      "quelle": "wiktionary:de:Kindheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kindheit‘ (https://de.wiktionary.org/wiki/Kindheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.fotoalbum",
+      "lemma": "Fotoalbum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Fotoalben"
+      },
+      "formen": {
+        "pl": "Fotoalben",
+        "gen_sg": "Fotoalbums"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.grossvater",
+      "lemma": "Großvater",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Großväter"
+      },
+      "formen": {
+        "pl": "Großväter",
+        "dat_pl": "Großvätern",
+        "gen_sg": "Großvaters"
+      },
+      "frequenzRang": 3921,
+      "quelle": "wiktionary:de:Großvater",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Großvater‘ (https://de.wiktionary.org/wiki/Großvater), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.grossmutter",
+      "lemma": "Großmutter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Großmütter"
+      },
+      "formen": {
+        "pl": "Großmütter",
+        "dat_pl": "Großmüttern"
+      },
+      "frequenzRang": 5402,
+      "quelle": "wiktionary:de:Großmutter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Großmutter‘ (https://de.wiktionary.org/wiki/Großmutter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.urgrossvater",
+      "lemma": "Urgroßvater",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Urgroßväter"
+      },
+      "formen": {
+        "pl": "Urgroßväter",
+        "dat_pl": "Urgroßvätern",
+        "gen_sg": "Urgroßvaters"
+      },
+      "frequenzRang": 30432,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.urgrossmutter",
+      "lemma": "Urgroßmutter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Urgroßmütter"
+      },
+      "formen": {
+        "pl": "Urgroßmütter",
+        "dat_pl": "Urgroßmüttern"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.schwiegermutter",
+      "lemma": "Schwiegermutter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schwiegermütter"
+      },
+      "formen": {
+        "pl": "Schwiegermütter",
+        "dat_pl": "Schwiegermüttern"
+      },
+      "frequenzRang": 10339,
+      "quelle": "wiktionary:de:Schwiegermutter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schwiegermutter‘ (https://de.wiktionary.org/wiki/Schwiegermutter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.schwiegervater",
+      "lemma": "Schwiegervater",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Schwiegerväter"
+      },
+      "formen": {
+        "pl": "Schwiegerväter",
+        "dat_pl": "Schwiegervätern",
+        "gen_sg": "Schwiegervaters"
+      },
+      "frequenzRang": 11181,
+      "quelle": "wiktionary:de:Schwiegervater",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schwiegervater‘ (https://de.wiktionary.org/wiki/Schwiegervater), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.stammbaum",
+      "lemma": "Stammbaum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Stammbäume"
+      },
+      "formen": {
+        "pl": "Stammbäume",
+        "dat_pl": "Stammbäumen",
+        "gen_sg": "Stammbaums",
+        "gen_sg_2": "Stammbaumes"
+      },
+      "frequenzRang": 25850,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.ehemann",
+      "lemma": "Ehemann",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Ehemänner"
+      },
+      "formen": {
+        "pl": "Ehemänner",
+        "dat_pl": "Ehemännern",
+        "gen_sg": "Ehemanns",
+        "gen_sg_2": "Ehemannes"
+      },
+      "frequenzRang": 2664,
+      "quelle": "wiktionary:de:Ehemann",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ehemann‘ (https://de.wiktionary.org/wiki/Ehemann), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.ehefrau",
+      "lemma": "Ehefrau",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ehefrauen"
+      },
+      "formen": {
+        "pl": "Ehefrauen"
+      },
+      "frequenzRang": 3001,
+      "quelle": "wiktionary:de:Ehefrau",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ehefrau‘ (https://de.wiktionary.org/wiki/Ehefrau), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.herkunft",
+      "lemma": "Herkunft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 2189,
+      "quelle": "wiktionary:de:Herkunft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Herkunft‘ (https://de.wiktionary.org/wiki/Herkunft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.tagebuch",
+      "lemma": "Tagebuch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Tagebücher"
+      },
+      "formen": {
+        "pl": "Tagebücher",
+        "dat_pl": "Tagebüchern",
+        "gen_sg": "Tagebuchs",
+        "gen_sg_2": "Tagebuches"
+      },
+      "frequenzRang": 3550,
+      "quelle": "wiktionary:de:Tagebuch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tagebuch‘ (https://de.wiktionary.org/wiki/Tagebuch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.erzaehlung",
+      "lemma": "Erzählung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Erzählungen"
+      },
+      "formen": {
+        "pl": "Erzählungen"
+      },
+      "frequenzRang": 2903,
+      "quelle": "wiktionary:de:Erzählung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erzählung‘ (https://de.wiktionary.org/wiki/Erzählung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.vorfahren",
+      "lemma": "Vorfahren",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 4057,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.abschied",
+      "lemma": "Abschied",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Abschiede"
+      },
+      "formen": {
+        "pl": "Abschiede",
+        "dat_pl": "Abschieden",
+        "gen_sg": "Abschieds",
+        "gen_sg_2": "Abschiedes"
+      },
+      "frequenzRang": 4038,
+      "quelle": "wiktionary:de:Abschied",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abschied‘ (https://de.wiktionary.org/wiki/Abschied), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.ereignis",
+      "lemma": "Ereignis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Ereignisse"
+      },
+      "formen": {
+        "pl": "Ereignisse",
+        "dat_pl": "Ereignissen",
+        "gen_sg": "Ereignisses"
+      },
+      "frequenzRang": 1308,
+      "quelle": "wiktionary:de:Ereignis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ereignis‘ (https://de.wiktionary.org/wiki/Ereignis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.rente",
+      "lemma": "Rente",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Renten"
+      },
+      "formen": {
+        "pl": "Renten"
+      },
+      "frequenzRang": 2653,
+      "quelle": "wiktionary:de:Rente",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rente‘ (https://de.wiktionary.org/wiki/Rente), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.rentner",
+      "lemma": "Rentner",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Rentner",
+        "weiblich": "Rentnerin"
+      },
+      "formen": {
+        "dat_pl": "Rentnern",
+        "gen_sg": "Rentners",
+        "weiblich": "Rentnerin",
+        "weiblich_pl": "Rentnerinnen"
+      },
+      "frequenzRang": 10910,
+      "quelle": "wiktionary:de:Rentner",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rentner‘ (https://de.wiktionary.org/wiki/Rentner), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.ruhestand",
+      "lemma": "Ruhestand",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Ruhestands",
+        "gen_sg_2": "Ruhestandes"
+      },
+      "frequenzRang": 4469,
+      "quelle": "wiktionary:de:Ruhestand",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ruhestand‘ (https://de.wiktionary.org/wiki/Ruhestand), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.gedaechtnis",
+      "lemma": "Gedächtnis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gedächtnisse"
+      },
+      "formen": {
+        "pl": "Gedächtnisse",
+        "dat_pl": "Gedächtnissen",
+        "gen_sg": "Gedächtnisses"
+      },
+      "frequenzRang": 4034,
+      "quelle": "wiktionary:de:Gedächtnis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gedächtnis‘ (https://de.wiktionary.org/wiki/Gedächtnis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.alltag",
+      "lemma": "Alltag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Alltags",
+        "gen_sg_2": "Alltages"
+      },
+      "frequenzRang": 2087,
+      "quelle": "wiktionary:de:Alltag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Alltag‘ (https://de.wiktionary.org/wiki/Alltag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.schicksal",
+      "lemma": "Schicksal",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Schicksale"
+      },
+      "formen": {
+        "pl": "Schicksale",
+        "dat_pl": "Schicksalen",
+        "gen_sg": "Schicksals",
+        "gen_sg_2": "Schicksales"
+      },
+      "frequenzRang": 1844,
+      "quelle": "wiktionary:de:Schicksal",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schicksal‘ (https://de.wiktionary.org/wiki/Schicksal), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.sehnsucht",
+      "lemma": "Sehnsucht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Sehnsüchte"
+      },
+      "formen": {
+        "pl": "Sehnsüchte",
+        "dat_pl": "Sehnsüchten"
+      },
+      "frequenzRang": 3995,
+      "quelle": "wiktionary:de:Sehnsucht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sehnsucht‘ (https://de.wiktionary.org/wiki/Sehnsucht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.fernseher",
+      "lemma": "Fernseher",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Fernseher"
+      },
+      "formen": {
+        "dat_pl": "Fernsehern",
+        "gen_sg": "Fernsehers"
+      },
+      "frequenzRang": 2842,
+      "quelle": "wiktionary:de:Fernseher",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fernseher‘ (https://de.wiktionary.org/wiki/Fernseher), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.schreibmaschine",
+      "lemma": "Schreibmaschine",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schreibmaschinen"
+      },
+      "formen": {
+        "pl": "Schreibmaschinen"
+      },
+      "frequenzRang": 30359,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.brunnen",
+      "lemma": "Brunnen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Brunnen"
+      },
+      "formen": {
+        "gen_sg": "Brunnens"
+      },
+      "frequenzRang": 3996,
+      "quelle": "wiktionary:de:Brunnen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Brunnen‘ (https://de.wiktionary.org/wiki/Brunnen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.ernte",
+      "lemma": "Ernte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ernten"
+      },
+      "formen": {
+        "pl": "Ernten"
+      },
+      "frequenzRang": 5395,
+      "quelle": "wiktionary:de:Ernte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ernte‘ (https://de.wiktionary.org/wiki/Ernte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.ofen",
+      "lemma": "Ofen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Öfen"
+      },
+      "formen": {
+        "pl": "Öfen",
+        "gen_sg": "Ofens"
+      },
+      "frequenzRang": 3778,
+      "quelle": "wiktionary:de:Ofen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ofen‘ (https://de.wiktionary.org/wiki/Ofen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.stall",
+      "lemma": "Stall",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Ställe"
+      },
+      "formen": {
+        "pl": "Ställe",
+        "dat_pl": "Ställen",
+        "gen_sg": "Stalls",
+        "gen_sg_2": "Stalles"
+      },
+      "frequenzRang": 4890,
+      "quelle": "wiktionary:de:Stall",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stall‘ (https://de.wiktionary.org/wiki/Stall), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.ziege",
+      "lemma": "Ziege",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ziegen"
+      },
+      "formen": {
+        "pl": "Ziegen"
+      },
+      "frequenzRang": 6183,
+      "quelle": "wiktionary:de:Ziege",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ziege‘ (https://de.wiktionary.org/wiki/Ziege), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.andenken",
+      "lemma": "Andenken",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Andenken"
+      },
+      "formen": {
+        "gen_sg": "Andenkens"
+      },
+      "frequenzRang": 6880,
+      "quelle": "wiktionary:de:Andenken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Andenken‘ (https://de.wiktionary.org/wiki/Andenken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.jubilaeum",
+      "lemma": "Jubiläum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Jubiläen"
+      },
+      "formen": {
+        "pl": "Jubiläen",
+        "gen_sg": "Jubiläums"
+      },
+      "frequenzRang": 3684,
+      "quelle": "wiktionary:de:Jubiläum",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Jubiläum‘ (https://de.wiktionary.org/wiki/Jubiläum), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.jahrestag",
+      "lemma": "Jahrestag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Jahrestage"
+      },
+      "formen": {
+        "pl": "Jahrestage",
+        "dat_pl": "Jahrestagen",
+        "gen_sg": "Jahrestags",
+        "gen_sg_2": "Jahrestages"
+      },
+      "frequenzRang": 6291,
+      "quelle": "wiktionary:de:Jahrestag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Jahrestag‘ (https://de.wiktionary.org/wiki/Jahrestag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.neuanfang",
+      "lemma": "Neuanfang",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Neuanfänge"
+      },
+      "formen": {
+        "pl": "Neuanfänge",
+        "dat_pl": "Neuanfängen",
+        "gen_sg": "Neuanfangs",
+        "gen_sg_2": "Neuanfanges"
+      },
+      "frequenzRang": 9081,
+      "quelle": "wiktionary:de:Neuanfang",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Neuanfang‘ (https://de.wiktionary.org/wiki/Neuanfang), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.einwanderer",
+      "lemma": "Einwanderer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Einwanderer",
+        "weiblich": "Einwanderin"
+      },
+      "formen": {
+        "dat_pl": "Einwanderern",
+        "gen_sg": "Einwanderers",
+        "weiblich": "Einwanderin",
+        "weiblich_pl": "Einwanderinnen"
+      },
+      "frequenzRang": 5899,
+      "quelle": "wiktionary:de:Einwanderer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Einwanderer‘ (https://de.wiktionary.org/wiki/Einwanderer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.grossstadt",
+      "lemma": "Großstadt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Großstädte"
+      },
+      "formen": {
+        "pl": "Großstädte",
+        "dat_pl": "Großstädten"
+      },
+      "frequenzRang": 3731,
+      "quelle": "wiktionary:de:Großstadt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Großstadt‘ (https://de.wiktionary.org/wiki/Großstadt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.kleinstadt",
+      "lemma": "Kleinstadt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kleinstädte"
+      },
+      "formen": {
+        "pl": "Kleinstädte",
+        "dat_pl": "Kleinstädten"
+      },
+      "frequenzRang": 6807,
+      "quelle": "wiktionary:de:Kleinstadt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kleinstadt‘ (https://de.wiktionary.org/wiki/Kleinstadt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.trauer",
+      "lemma": "Trauer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 4049,
+      "quelle": "wiktionary:de:Trauer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Trauer‘ (https://de.wiktionary.org/wiki/Trauer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.sterben",
+      "lemma": "sterben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "sterben",
+        "praes_ich": "sterbe",
+        "praes_du": "stirbst",
+        "praes_er_sie_es": "stirbt",
+        "praes_wir": "sterben",
+        "praes_ihr": "sterbt",
+        "praes_sie_Sie": "sterben",
+        "praet_ich_er_sie_es": "starb",
+        "praet_du": "starbst",
+        "praet_wir_sie_Sie": "starben",
+        "praet_ihr": "starbt",
+        "partizip_2": "gestorben"
+      },
+      "frequenzRang": 493,
+      "quelle": "wiktionary:de:sterben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚sterben‘ (https://de.wiktionary.org/wiki/sterben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.geschehen",
+      "lemma": "geschehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "geschehen",
+        "praes_er_sie_es": "geschieht",
+        "praes_sie_Sie": "geschehen",
+        "praet_ich_er_sie_es": "geschah",
+        "praet_du": "geschahst",
+        "praet_wir_sie_Sie": "geschahen",
+        "praet_ihr": "geschaht",
+        "partizip_2": "geschehen"
+      },
+      "frequenzRang": 669,
+      "quelle": "wiktionary:de:geschehen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚geschehen‘ (https://de.wiktionary.org/wiki/geschehen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.stammen",
+      "lemma": "stammen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "stammen",
+        "praes_ich": "stamme",
+        "praes_du": "stammst",
+        "praes_er_sie_es": "stammt",
+        "praes_wir": "stammen",
+        "praes_ihr": "stammt",
+        "praes_sie_Sie": "stammen",
+        "praet_ich_er_sie_es": "stammte",
+        "praet_du": "stammtest",
+        "praet_wir_sie_Sie": "stammten",
+        "praet_ihr": "stammtet",
+        "partizip_2": "gestammt"
+      },
+      "frequenzRang": 1000,
+      "quelle": "wiktionary:de:stammen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚stammen‘ (https://de.wiktionary.org/wiki/stammen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.aufwachsen",
+      "lemma": "aufwachsen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "auf",
+        "unregelmaessig_praesens": "ja",
+        "grundverb": "wachsen (de.a2.e12.wachsen)"
+      },
+      "formen": {
+        "infinitiv": "aufwachsen",
+        "verbzusatz": "auf",
+        "partizip_2": "aufgewachsen",
+        "zu_infinitiv": "aufzuwachsen",
+        "nebensatz_er_sie_es": "aufwächst",
+        "nebensatz_praet": "aufwuchs",
+        "nebensatz_praet_pl": "aufwuchsen"
+      },
+      "frequenzRang": 3134,
+      "quelle": "wiktionary:de:aufwachsen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚aufwachsen‘ (https://de.wiktionary.org/wiki/aufwachsen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.auswandern",
+      "lemma": "auswandern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "aus",
+        "grundverb": "wandern (de.a2.e01.wandern)"
+      },
+      "formen": {
+        "infinitiv": "auswandern",
+        "verbzusatz": "aus",
+        "partizip_2": "ausgewandert",
+        "zu_infinitiv": "auszuwandern",
+        "nebensatz_er_sie_es": "auswandert",
+        "nebensatz_praet": "auswanderte",
+        "nebensatz_praet_pl": "auswanderten"
+      },
+      "frequenzRang": 11130,
+      "quelle": "wiktionary:de:auswandern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚auswandern‘ (https://de.wiktionary.org/wiki/auswandern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.einwandern",
+      "lemma": "einwandern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "ein",
+        "grundverb": "wandern (de.a2.e01.wandern)"
+      },
+      "formen": {
+        "infinitiv": "einwandern",
+        "verbzusatz": "ein",
+        "partizip_2": "eingewandert",
+        "zu_infinitiv": "einzuwandern",
+        "nebensatz_er_sie_es": "einwandert",
+        "nebensatz_praet": "einwanderte",
+        "nebensatz_praet_pl": "einwanderten"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.verabschieden",
+      "lemma": "verabschieden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "verabschieden",
+        "praes_ich": "verabschiede",
+        "praes_du": "verabschiedest",
+        "praes_er_sie_es": "verabschiedet",
+        "praes_wir": "verabschieden",
+        "praes_ihr": "verabschiedet",
+        "praes_sie_Sie": "verabschieden",
+        "praet_ich_er_sie_es": "verabschiedete",
+        "praet_du": "verabschiedetest",
+        "praet_wir_sie_Sie": "verabschiedeten",
+        "praet_ihr": "verabschiedetet",
+        "partizip_2": "verabschiedet",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 2676,
+      "quelle": "wiktionary:de:verabschieden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verabschieden‘ (https://de.wiktionary.org/wiki/verabschieden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.zurueckkehren",
+      "lemma": "zurückkehren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "zurück"
+      },
+      "formen": {
+        "infinitiv": "zurückkehren",
+        "verbzusatz": "zurück",
+        "praes_ich": "kehre",
+        "praes_du": "kehrst",
+        "praes_er_sie_es": "kehrt",
+        "praes_wir": "kehren",
+        "praes_ihr": "kehrt",
+        "praes_sie_Sie": "kehren",
+        "praet_ich_er_sie_es": "kehrte",
+        "praet_du": "kehrtest",
+        "praet_wir_sie_Sie": "kehrten",
+        "praet_ihr": "kehrtet",
+        "partizip_2": "zurückgekehrt",
+        "zu_infinitiv": "zurückzukehren",
+        "nebensatz_er_sie_es": "zurückkehrt",
+        "nebensatz_praet": "zurückkehrte",
+        "nebensatz_praet_pl": "zurückkehrten"
+      },
+      "frequenzRang": 2589,
+      "quelle": "wiktionary:de:zurückkehren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zurückkehren‘ (https://de.wiktionary.org/wiki/zurückkehren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.aufbewahren",
+      "lemma": "aufbewahren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "auf"
+      },
+      "formen": {
+        "infinitiv": "aufbewahren",
+        "verbzusatz": "auf",
+        "praes_ich": "bewahre",
+        "praes_du": "bewahrst",
+        "praes_er_sie_es": "bewahrt",
+        "praes_wir": "bewahren",
+        "praes_ihr": "bewahrt",
+        "praes_sie_Sie": "bewahren",
+        "praet_ich_er_sie_es": "bewahrte",
+        "praet_du": "bewahrtest",
+        "praet_wir_sie_Sie": "bewahrten",
+        "praet_ihr": "bewahrtet",
+        "partizip_2": "aufbewahrt",
+        "zu_infinitiv": "aufzubewahren",
+        "nebensatz_er_sie_es": "aufbewahrt",
+        "nebensatz_praet": "aufbewahrte",
+        "nebensatz_praet_pl": "aufbewahrten",
+        "imp_du": "bewahr",
+        "imp_ihr": "bewahrt"
+      },
+      "frequenzRang": 5377,
+      "quelle": "wiktionary:de:aufbewahren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚aufbewahren‘ (https://de.wiktionary.org/wiki/aufbewahren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.weitergeben",
+      "lemma": "weitergeben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "weiter",
+        "unregelmaessig_praesens": "ja",
+        "grundverb": "geben (de.a1.e06.geben)"
+      },
+      "formen": {
+        "infinitiv": "weitergeben",
+        "verbzusatz": "weiter",
+        "partizip_2": "weitergegeben",
+        "zu_infinitiv": "weiterzugeben",
+        "nebensatz_er_sie_es": "weitergibt",
+        "nebensatz_praet": "weitergab",
+        "nebensatz_praet_pl": "weitergaben"
+      },
+      "frequenzRang": 4876,
+      "quelle": "wiktionary:de:weitergeben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚weitergeben‘ (https://de.wiktionary.org/wiki/weitergeben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.erben",
+      "lemma": "erben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "erben",
+        "praes_ich": "erbe",
+        "praes_du": "erbst",
+        "praes_er_sie_es": "erbt",
+        "praes_wir": "erben",
+        "praes_ihr": "erbt",
+        "praes_sie_Sie": "erben",
+        "praet_ich_er_sie_es": "erbte",
+        "praet_du": "erbtest",
+        "praet_wir_sie_Sie": "erbten",
+        "praet_ihr": "erbtet",
+        "partizip_2": "geerbt"
+      },
+      "frequenzRang": 3612,
+      "quelle": "wiktionary:de:erben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erben‘ (https://de.wiktionary.org/wiki/erben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.naehen",
+      "lemma": "nähen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "nähen",
+        "praes_ich": "nähe",
+        "praes_du": "nähst",
+        "praes_er_sie_es": "näht",
+        "praes_wir": "nähen",
+        "praes_ihr": "näht",
+        "praes_sie_Sie": "nähen",
+        "praet_ich_er_sie_es": "nähte",
+        "praet_du": "nähtest",
+        "praet_wir_sie_Sie": "nähten",
+        "praet_ihr": "nähtet",
+        "partizip_2": "genäht"
+      },
+      "frequenzRang": 6356,
+      "quelle": "wiktionary:de:nähen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚nähen‘ (https://de.wiktionary.org/wiki/nähen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.melken",
+      "lemma": "melken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "melken",
+        "praes_ich": "melke",
+        "praes_du": "melkst",
+        "praes_er_sie_es": "melkt",
+        "praes_wir": "melken",
+        "praes_ihr": "melkt",
+        "praes_sie_Sie": "melken",
+        "praet_ich_er_sie_es": "melkte",
+        "praet_du": "melktest",
+        "praet_wir_sie_Sie": "melkten",
+        "praet_ihr": "melktet",
+        "partizip_2": "gemelkt"
+      },
+      "frequenzRang": 11635,
+      "quelle": "wiktionary:de:melken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚melken‘ (https://de.wiktionary.org/wiki/melken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.hintergrund",
+      "lemma": "Hintergrund",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Hintergründe"
+      },
+      "formen": {
+        "pl": "Hintergründe",
+        "dat_pl": "Hintergründen",
+        "gen_sg": "Hintergrunds",
+        "gen_sg_2": "Hintergrundes"
+      },
+      "frequenzRang": 880,
+      "quelle": "wiktionary:de:Hintergrund",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hintergrund‘ (https://de.wiktionary.org/wiki/Hintergrund), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.gold",
+      "lemma": "Gold",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Golds",
+        "gen_sg_2": "Goldes"
+      },
+      "frequenzRang": 897,
+      "quelle": "wiktionary:de:Gold",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gold‘ (https://de.wiktionary.org/wiki/Gold), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.einst",
+      "lemma": "einst",
+      "wortart": "adverb",
+      "frequenzRang": 1925,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.praegen",
+      "lemma": "prägen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "prägen",
+        "praes_ich": "präge",
+        "praes_du": "prägst",
+        "praes_er_sie_es": "prägt",
+        "praes_wir": "prägen",
+        "praes_ihr": "prägt",
+        "praes_sie_Sie": "prägen",
+        "praet_ich_er_sie_es": "prägte",
+        "praet_du": "prägtest",
+        "praet_wir_sie_Sie": "prägten",
+        "praet_ihr": "prägtet",
+        "partizip_2": "geprägt"
+      },
+      "frequenzRang": 1791,
+      "quelle": "wiktionary:de:prägen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚prägen‘ (https://de.wiktionary.org/wiki/prägen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.familiengeschichte",
+      "lemma": "Familiengeschichte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Familiengeschichten"
+      },
+      "formen": {
+        "pl": "Familiengeschichten"
+      },
+      "frequenzRang": 26075,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.heimatland",
+      "lemma": "Heimatland",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Heimatländer"
+      },
+      "formen": {
+        "pl": "Heimatländer",
+        "dat_pl": "Heimatländern",
+        "gen_sg": "Heimatlands",
+        "gen_sg_2": "Heimatlandes"
+      },
+      "frequenzRang": 7746,
+      "quelle": "wiktionary:de:Heimatland",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Heimatland‘ (https://de.wiktionary.org/wiki/Heimatland), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.spielzeug",
+      "lemma": "Spielzeug",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Spielzeuge"
+      },
+      "formen": {
+        "pl": "Spielzeuge",
+        "dat_pl": "Spielzeugen",
+        "gen_sg": "Spielzeugs",
+        "gen_sg_2": "Spielzeuges"
+      },
+      "frequenzRang": 3772,
+      "quelle": "wiktionary:de:Spielzeug",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Spielzeug‘ (https://de.wiktionary.org/wiki/Spielzeug), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e01.s0001",
+      "text": "Heutzutage hat fast jede Familie einen Fernseher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0002",
+      "text": "Früher hatten nur wenige Familien einen Fernseher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0003",
+      "text": "Ich habe keinen Fernseher.",
+      "quelle": "tatoeba:2138835",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2138835 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e01.s0004",
+      "text": "Reisen ist heutzutage leicht.",
+      "quelle": "tatoeba:3040284",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3040284 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e01.s0005",
+      "text": "Mein Opa schrieb früher alle Briefe mit der Schreibmaschine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0006",
+      "text": "Kannst du mit der Schreibmaschine schreiben?",
+      "quelle": "tatoeba:396591",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #396591 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e01.s0007",
+      "text": "Früher nähten viele Frauen die Kleider für die ganze Familie selbst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0008",
+      "text": "Oma Sevim nähte für ihre Kinder Hosen und Jacken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0009",
+      "text": "Papa näht einen Knopf an seine Jacke.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0010",
+      "text": "Der Alltag war früher ganz anders als heute.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0011",
+      "text": "Opa Orhan erzählt gern von der Vergangenheit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0012",
+      "text": "Die Vergangenheit ist vorbei, wir leben in der Gegenwart.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0013",
+      "text": "Das Haus ist über ein Jahrhundert alt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0014",
+      "text": "Im letzten Jahrhundert gab es noch keine Handys.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0015",
+      "text": "Oma Sevim lebt seit fünf Jahrzehnten in Wetzlar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0016",
+      "text": "In unserem Haus wohnen drei Generationen zusammen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0017",
+      "text": "Die damalige Wohnung hatte nur zwei Zimmer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0018",
+      "text": "Unsere heutige Wohnung ist viel größer als die damalige.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0019",
+      "text": "Hast du die heutige Zeitung gelesen?",
+      "quelle": "tatoeba:698207",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #698207 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e01.s0020",
+      "text": "In der ehemaligen Fabrik ist heute ein Museum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0021",
+      "text": "Hier stand einst eine große Fabrik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0022",
+      "text": "In der Altstadt von Wetzlar gibt es viele historische Häuser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0023",
+      "text": "In der vergangenen Woche war ich krank.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0024",
+      "text": "Mittlerweile spricht Oma sehr gut Deutsch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0025",
+      "text": "Damals wohnte die Familie in einer kleinen Wohnung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0026",
+      "text": "Oma arbeitete früher in einer Fabrik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0027",
+      "text": "Die Kinder spielten früher den ganzen Tag draußen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0028",
+      "text": "Am Abend hörte die ganze Familie Radio.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0029",
+      "text": "Von seinem ersten Lohn kaufte Opa einen Fernseher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0030",
+      "text": "Früher war der Alltag ganz anders, heutzutage geht vieles schneller.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0031",
+      "text": "Opa, hattet ihr früher einen Fernseher?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0032",
+      "text": "Nein, damals hatten nur wenige Familien einen Fernseher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0033",
+      "text": "Und was habt ihr am Abend gemacht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0034",
+      "text": "Wir hörten Radio oder besuchten die Nachbarn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0035",
+      "text": "Opa Kamāl wuchs in einem kleinen Dorf in Syrien auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0036",
+      "text": "Mama ist in einer Großstadt aufgewachsen, Papa in einer Kleinstadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0037",
+      "text": "In einer Kleinstadt kennen sich viele Leute.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0038",
+      "text": "Opa erzählt gern von seiner Kindheit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0039",
+      "text": "Ich erinnere mich oft an meine glückliche Kindheit.",
+      "quelle": "tatoeba:357450",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #357450 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e01.s0040",
+      "text": "In seiner Jugend spielte Opa Orhan viel Fußball.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0041",
+      "text": "Die Lehrer waren damals sehr streng.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0042",
+      "text": "Yazan ist sehr fleißig und macht immer seine Hausaufgaben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0043",
+      "text": "Heute Morgen habe ich fleißig Türkisch gelernt.",
+      "quelle": "tatoeba:4506332",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4506332 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e01.s0044",
+      "text": "Das Leben im Dorf war einfach und bescheiden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0045",
+      "text": "Opa Kamāl ist ein bescheidener Mensch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0046",
+      "text": "Jeden Morgen holten die Kinder Wasser am Brunnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0047",
+      "text": "Die Mutter von Opa Kamāl backte das Brot in einem großen Ofen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0048",
+      "text": "Im Stall standen zwei Kühe und viele Ziegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0049",
+      "text": "Im Winter blieben die Ziegen im Stall.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0050",
+      "text": "Als Kind musste ich jeden Morgen die Ziegen melken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0051",
+      "text": "Im Herbst halfen alle Kinder bei der Ernte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0052",
+      "text": "Wir hatten nur wenig Spielzeug, aber wir waren glücklich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0053",
+      "text": "Opa baute das Spielzeug für seine Kinder aus Holz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0054",
+      "text": "Oma hat ein sehr gutes Gedächtnis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0055",
+      "text": "Die Kindheit im Dorf hat Opa Kamāl sehr geprägt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0056",
+      "text": "Opa ging jeden Tag zu Fuß zur Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0057",
+      "text": "Im Sommer schliefen wir oft auf dem Dach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0058",
+      "text": "Im Dorf gab es damals keinen Strom.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0059",
+      "text": "Opa sah zum ersten Mal einen Fernseher, als er zwölf war.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0060",
+      "text": "Als Kind half ich bei der Ernte und spielte mit den Ziegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0061",
+      "text": "Opa, wo hast du als Kind gewohnt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0062",
+      "text": "In einem kleinen Dorf im Norden von Syrien.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0063",
+      "text": "Und hattet ihr dort auch Tiere?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0064",
+      "text": "Ja, wir hatten Ziegen, Schafe und zwei Kühe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0065",
+      "text": "Nein, ich bin in einer Großstadt aufgewachsen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0066",
+      "text": "Für die Schule zeichnet Elif einen Stammbaum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0067",
+      "text": "Mein Großvater arbeitete auf einem Bauernhof.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0068",
+      "text": "Meine Großmutter konnte sehr gut nähen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0069",
+      "text": "Mein Urgroßvater stammte aus einem Dorf am Meer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0070",
+      "text": "Meine Urgroßmutter wurde fast hundert Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0071",
+      "text": "Sabine Hoffmann besucht jeden Sonntag ihre Schwiegermutter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0072",
+      "text": "Ihr Schwiegervater erzählt gern von seiner Jugend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0073",
+      "text": "Opa Orhan ist der Ehemann von Oma Sevim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0074",
+      "text": "Darf ich vorstellen? Das ist meine Ehefrau Karin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0075",
+      "text": "Meine Vorfahren stammen aus der Türkei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0076",
+      "text": "Viele Menschen interessieren sich für ihre Herkunft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0077",
+      "text": "Die Familie von Laylā stammt aus Syrien.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0078",
+      "text": "Oma Sevim kennt die ganze Familiengeschichte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0079",
+      "text": "Oma holt das alte Fotoalbum aus dem Schrank.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0080",
+      "text": "Meine Urgroßmutter schrieb jeden Abend in ihr Tagebuch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0081",
+      "text": "Die Erzählungen von Opa sind immer spannend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0082",
+      "text": "Mama hat von ihrer Großmutter einen Ring aus Gold geerbt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0083",
+      "text": "Gold ist schwerer als Silber.",
+      "quelle": "tatoeba:572951",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #572951 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e01.s0084",
+      "text": "Das alte Foto ist ein schönes Andenken an meinen Urgroßvater.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0085",
+      "text": "Oma bewahrt die alten Briefe in einer Kiste auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0086",
+      "text": "Oma gibt ihre Rezepte an die Enkel weiter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0087",
+      "text": "Als ich klein war, wohnten wir bei meiner Großmutter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0088",
+      "text": "Als Oma nach Deutschland kam, war sie 19 Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0089",
+      "text": "Immer wenn wir unseren Großvater besuchten, erzählte er eine Geschichte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0090",
+      "text": "Wenn im Winter Schnee lag, spielten wir den ganzen Tag draußen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0091",
+      "text": "Als meine Schwester zur Welt kam, war ich sechs Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0092",
+      "text": "Meine Familie stammt aus der Türkei, aber ich bin in Deutschland aufgewachsen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0093",
+      "text": "Oma, was ist in der alten Kiste?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0094",
+      "text": "In der Kiste bewahre ich Briefe und Fotos von früher auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0095",
+      "text": "Darf ich mir das Fotoalbum ansehen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0096",
+      "text": "Natürlich! Komm, wir sehen es zusammen an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0097",
+      "text": "Ja, ich habe den Ring von meiner Mutter geerbt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0098",
+      "text": "Viele junge Leute wanderten damals nach Deutschland aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0099",
+      "text": "Opa Orhan wanderte 1970 nach Deutschland ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0100",
+      "text": "In unserer Stadt leben viele Einwanderer aus der Türkei und aus Syrien.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0101",
+      "text": "Opa Kamāl vermisst manchmal sein Heimatland.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0102",
+      "text": "Der Abschied von der Familie war sehr schwer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0103",
+      "text": "Am Bahnhof verabschiedete sich Oma von ihrer Mutter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0104",
+      "text": "Wir müssen uns jetzt leider verabschieden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0105",
+      "text": "Nach zwei Jahren wollte Opa Orhan eigentlich in die Türkei zurückkehren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0106",
+      "text": "Ein Neuanfang in einem fremden Land ist nicht leicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0107",
+      "text": "Opa Kamāl hat oft Sehnsucht nach seinem Dorf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0108",
+      "text": "Der Film zeigt das Schicksal von drei Einwanderern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0109",
+      "text": "Auf dem Foto steht Oma vorne, im Hintergrund sieht man die Fabrik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0110",
+      "text": "Während Oma in der Fabrik arbeitete, passte eine Nachbarin auf die Kinder auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0111",
+      "text": "Während die Erwachsenen erzählten, spielten die Kinder im Garten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0112",
+      "text": "Sobald Oma einen Brief bekam, las sie ihn sofort.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0113",
+      "text": "Sobald ich zu Hause bin, schreibe ich dir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0114",
+      "text": "Solange die Kinder klein waren, arbeitete Oma nur am Vormittag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0115",
+      "text": "Du darfst draußen spielen, solange es hell ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0116",
+      "text": "Anfangs verstand Oma kein Wort Deutsch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0117",
+      "text": "Opa Orhan arbeitete jahrelang in einer Fabrik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0118",
+      "text": "Bevor Oma nach Deutschland kam, lebte sie in einem Dorf in der Türkei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0119",
+      "text": "Oma arbeitete in der Fabrik, bis sie in Rente ging.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0120",
+      "text": "Seit Oma in Rente ist, hat sie mehr Zeit für die Enkel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0121",
+      "text": "Bevor wir nach Deutschland kamen, haben wir uns von allen verabschiedet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0122",
+      "text": "Oma, warum bist du nicht in die Türkei zurückgekehrt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0123",
+      "text": "Anfangs wollten wir zurückkehren, aber dann kamen die Kinder in die Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0124",
+      "text": "Und hast du heute noch Sehnsucht nach deinem Dorf?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0125",
+      "text": "Manchmal schon, aber meine Heimat ist jetzt auch hier.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0126",
+      "text": "Mein erster Winter in Deutschland",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0127",
+      "text": "Ich kam im Oktober 1989 nach Deutschland, da war ich zwanzig Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0128",
+      "text": "Mein Ehemann arbeitete schon seit zwei Jahren in einer Fabrik in Gießen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0129",
+      "text": "Anfangs fand ich alles fremd: die Sprache, das Essen und vor allem das Wetter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0130",
+      "text": "Im Dezember lag plötzlich Schnee auf den Straßen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0131",
+      "text": "Schnee sah ich an diesem Tag zum ersten Mal in meinem Leben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0132",
+      "text": "Ich hatte keine warmen Schuhe und keinen dicken Mantel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0133",
+      "text": "Unsere Nachbarin, Frau Zimmermann, brachte mir einen Mantel und Handschuhe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0134",
+      "text": "Sie sprach langsam mit mir und zeigte mir die Stadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0135",
+      "text": "An den langen Abenden hatte ich große Sehnsucht nach meiner Familie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0136",
+      "text": "Jede Woche schrieb ich einen Brief an meine Mutter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0137",
+      "text": "Heute lebe ich seit 37 Jahren hier, und der Winter macht mir keine Angst mehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0138",
+      "text": "Frau Zimmermann wohnt längst nicht mehr in Gießen, aber wir schreiben uns noch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0139",
+      "text": "Die Frau kam im Herbst nach Deutschland.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0140",
+      "text": "Die Frau sah in ihrem Heimatland oft Schnee.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0141",
+      "text": "Frau Zimmermann hatte selbst drei Kinder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0142",
+      "text": "Was brachte Frau Zimmermann der jungen Frau?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0143",
+      "text": "Einen Mantel und Handschuhe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0144",
+      "text": "Einen Brief von ihrer Mutter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0145",
+      "text": "Warme Schuhe und Brot.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0146",
+      "text": "Die Geburt von Defne war ein großes Ereignis für die ganze Familie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0147",
+      "text": "Was ist damals genau geschehen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0148",
+      "text": "Die Fabrik feiert in diesem Jahr ihr Jubiläum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0149",
+      "text": "Jedes Jahr im Oktober feiert Oma einen wichtigen Jahrestag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0150",
+      "text": "Seit vielen Jahren bekommt Oma eine kleine Rente.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0151",
+      "text": "Opa Orhan ging mit 65 Jahren in Rente.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0152",
+      "text": "Opa Kamāl ist Rentner und arbeitet gern im Garten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0153",
+      "text": "Herr Braun ist seit einem Jahr im Ruhestand.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0154",
+      "text": "Nach dem Tod von ihrem Mann zog meine Urgroßmutter zu uns.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0155",
+      "text": "Mein Urgroßvater ist vor vielen Jahren gestorben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0156",
+      "text": "Die Pflanze ist nicht tot, sie braucht nur Wasser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0157",
+      "text": "Die Trauer war groß, aber alle in der Familie halfen einander.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0158",
+      "text": "Bislang wusste ich wenig über unsere Familiengeschichte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0159",
+      "text": "Bislang war ich noch nie in Syrien.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0160",
+      "text": "Diese Zeiten sind längst vorbei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0161",
+      "text": "Die alte Fabrik gibt es längst nicht mehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0162",
+      "text": "Seit 2015 wohnt die Familie in Wetzlar, zuvor lebte sie in Syrien.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0163",
+      "text": "Ich war noch nie zuvor in einer so großen Stadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0164",
+      "text": "Zuerst lernte Oma die Wörter, danach las sie die Zeitung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0165",
+      "text": "Oma sprach anfangs kein Deutsch, deshalb besuchte sie einen Kurs.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0166",
+      "text": "Die Arbeit in der Fabrik war schwer, trotzdem war Oma zufrieden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0167",
+      "text": "Schreib die Geschichte auf, sonst vergisst du sie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0168",
+      "text": "Der Bus kam nicht, also gingen wir zu Fuß.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0169",
+      "text": "Zuerst haben wir das Fotoalbum angesehen, danach hat Oma von früher erzählt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0170",
+      "text": "Mama, wer ist der Mann auf dem Foto?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0171",
+      "text": "Das ist Opa Orhan an seinem letzten Tag vor dem Ruhestand.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0172",
+      "text": "Wann ist er in Rente gegangen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0173",
+      "text": "Das war vor fünfzehn Jahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0174",
+      "text": "Im Ruhestand arbeitet er gern im Garten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0175",
+      "text": "Jung und Alt erzählen in der Bibliothek",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0176",
+      "text": "Seit März treffen sich jeden Donnerstag Jung und Alt in der Bibliothek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0177",
+      "text": "Bei Tee und Kuchen erzählen ältere Menschen von früher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0178",
+      "text": "Die Kinder hören zu und stellen Fragen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0179",
+      "text": "Letzte Woche erzählte die Rentnerin Ursula Klein von ihrer Kindheit auf einem Bauernhof.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0180",
+      "text": "Damals gab es auf dem Hof noch keinen Strom und keinen Fernseher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0181",
+      "text": "Ein Junge fragte: „Was haben Sie denn am Abend gemacht?“",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0182",
+      "text": "Frau Klein lachte: „Wir haben gelesen, Brettspiele gespielt und Geschichten erzählt.“",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0183",
+      "text": "Auch Opa Kamāl war schon zweimal dabei und hat von seinem Dorf in Syrien erzählt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0184",
+      "text": "Frau Lange von der Bibliothek ist sehr zufrieden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0185",
+      "text": "„So lernen die Generationen voneinander“, sagt sie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0186",
+      "text": "Bislang kamen jede Woche über dreißig Gäste.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0187",
+      "text": "Das nächste Treffen ist am Donnerstag um 16 Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0188",
+      "text": "Das Treffen ist jede Woche am Donnerstag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0189",
+      "text": "Frau Klein wuchs in einer Großstadt auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0190",
+      "text": "Die Gäste bezahlen für den Kuchen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0191",
+      "text": "Was gab es früher auf dem Hof von Frau Klein nicht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0192",
+      "text": "Strom und Fernseher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0193",
+      "text": "Tiere und frische Milch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0194",
+      "text": "Bücher und Brettspiele.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0195",
+      "text": "Schreib über einen schönen Tag aus deiner Kindheit. Was ist passiert? Wer war dabei? Warum erinnerst du dich gern daran?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0196",
+      "text": "Als ich acht Jahre alt war, fuhren wir im Sommer zu meinen Großeltern ins Dorf. Opa weckte mich früh am Morgen, und wir gingen zusammen in den Stall. Dort melkte ich zum ersten Mal eine Ziege. Zuerst hatte ich ein bisschen Angst, aber Opa half mir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0197",
+      "text": "Danach backte Oma Brot im Ofen, und wir aßen es mit frischer Milch. Am Abend saßen alle zusammen im Garten und erzählten Geschichten. Damals war ich richtig glücklich, deshalb erinnere ich mich noch heute gern an diesen Tag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0198",
+      "text": "Oma Sevim erzählt",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0199",
+      "text": "Am Sonntag besuchen Elif und Laylā Oma Sevim in ihrer neuen Wohnung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0200",
+      "text": "Auf dem Tisch liegt ein altes Fotoalbum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0201",
+      "text": "Wer ist die junge Frau auf diesem Foto?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0202",
+      "text": "Das bin ich mit 19 Jahren, kurz bevor ich nach Deutschland kam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0203",
+      "text": "Warum bist du damals nach Deutschland gekommen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0204",
+      "text": "Opa Orhan arbeitete schon in Wetzlar, in einer Fabrik für Kameras.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0205",
+      "text": "Im Oktober 1975 kam ich mit einem kleinen Koffer zu ihm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0206",
+      "text": "War der Abschied von deiner Familie schwer?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0207",
+      "text": "Sehr schwer. Meine Mutter weinte am Bahnhof, und ich weinte auch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0208",
+      "text": "Anfangs verstand ich kein Wort und hatte große Sehnsucht nach meinem Dorf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0209",
+      "text": "Bald fand Oma Sevim auch Arbeit in der Fabrik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0210",
+      "text": "Ich arbeitete jahrelang in der Fabrik, meistens schon ab sechs Uhr morgens.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0211",
+      "text": "Und wann hast du richtig Deutsch gelernt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0212",
+      "text": "Erst als meine Kinder in die Schule kamen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0213",
+      "text": "Abends machten wir zusammen Hausaufgaben, und ich lernte jeden Tag ein paar neue Wörter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0214",
+      "text": "Die Lehrerin von meinem Sohn schenkte mir sogar ein Wörterbuch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0215",
+      "text": "Bei uns war es ähnlich. Als wir nach Deutschland kamen, war alles fremd.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0216",
+      "text": "Ja, ein Neuanfang ist nie leicht. Aber man ist nicht allein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0217",
+      "text": "Oma Sevim nimmt einen alten Brief aus dem Fotoalbum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0218",
+      "text": "Diesen Brief schrieb mir meine Mutter im ersten Winter. Ich bewahre ihn bis heute auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0219",
+      "text": "Darf ich ihn später lesen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0220",
+      "text": "Natürlich. Diese Geschichten gebe ich gern an euch weiter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0221",
+      "text": "Wie alt war Oma Sevim, als sie nach Deutschland kam?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0222",
+      "text": "Sie war 19 Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0223",
+      "text": "Sie war zwölf Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0224",
+      "text": "Sie war 40 Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0225",
+      "text": "Warum kam Oma Sevim nach Wetzlar?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0226",
+      "text": "Weil Opa Orhan dort schon arbeitete.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0227",
+      "text": "Weil ihre Mutter dort wohnte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0228",
+      "text": "Weil sie dort studieren wollte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0229",
+      "text": "Wann lernte Oma Sevim richtig Deutsch?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0230",
+      "text": "Als ihre Kinder in die Schule kamen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0231",
+      "text": "Als sie in Rente ging.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0232",
+      "text": "Bevor sie nach Deutschland kam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0233",
+      "text": "Was bewahrt Oma Sevim bis heute auf?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0234",
+      "text": "Ihren ersten Koffer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0235",
+      "text": "Einen Ring aus Gold.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0236",
+      "text": "Yazan fragt Opa Kamāl",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0237",
+      "text": "Yazan macht ein Schulprojekt über die Kindheit von früher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0238",
+      "text": "Deshalb besucht er seinen Opa Kamāl im Garten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0239",
+      "text": "Opa, darf ich dir ein paar Fragen über deine Kindheit stellen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0240",
+      "text": "Gern, frag mich alles!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0241",
+      "text": "Wo bist du aufgewachsen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0242",
+      "text": "In einem kleinen Dorf in Syrien. Wir waren sieben Kinder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0243",
+      "text": "Hattet ihr damals Strom?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0244",
+      "text": "Nein. Abends war es im ganzen Dorf dunkel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0245",
+      "text": "Und woher kam das Wasser?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0246",
+      "text": "Aus dem Brunnen in der Mitte vom Dorf. Wir Kinder holten es jeden Morgen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0247",
+      "text": "Musstest du auch auf dem Feld arbeiten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0248",
+      "text": "Ja, im Sommer halfen alle bei der Ernte, auch die Kleinen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0249",
+      "text": "Ich musste außerdem die Ziegen melken, bevor ich zur Schule ging.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0250",
+      "text": "Wie war die Schule?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0251",
+      "text": "Wir hatten nur einen Lehrer für alle Klassen, und er war sehr streng.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0252",
+      "text": "Hattest du auch Spielzeug?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0253",
+      "text": "Nicht viel. Mein Vater baute mir ein kleines Auto aus Holz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0254",
+      "text": "Was vermisst du heute am meisten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0255",
+      "text": "Das Brot von meiner Mutter. Sie backte es jeden Morgen im Ofen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0256",
+      "text": "Yazan schreibt alles auf und dankt seinem Opa.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0257",
+      "text": "Am Montag stellt er sein Projekt in der Klasse vor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0258",
+      "text": "Wo wuchs Opa Kamāl auf?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0259",
+      "text": "In einem kleinen Dorf in Syrien.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0260",
+      "text": "In einer Großstadt in Syrien.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0261",
+      "text": "In einer Kleinstadt in Deutschland.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0262",
+      "text": "Woher kam das Wasser im Dorf?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0263",
+      "text": "Aus dem Brunnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0264",
+      "text": "Aus dem Fluss.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0265",
+      "text": "Aus dem Stall.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0266",
+      "text": "Was musste Opa Kamāl vor der Schule machen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0267",
+      "text": "Er musste die Ziegen melken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0268",
+      "text": "Er musste Brot backen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0269",
+      "text": "Er musste den Lehrer abholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0270",
+      "text": "Was vermisst Opa Kamāl heute am meisten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0271",
+      "text": "Das Brot von seiner Mutter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0272",
+      "text": "Sein Auto aus Holz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0273",
+      "text": "Den strengen Lehrer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0274",
+      "text": "Oma, hast du in der Fabrik viele Freundinnen gefunden?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0275",
+      "text": "Ja, viele Frauen kamen damals aus der Türkei, aus Italien und aus Griechenland.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0276",
+      "text": "Habt ihr nach der Arbeit etwas zusammen gemacht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0277",
+      "text": "Ja, am Wochenende kochten wir oft zusammen und lernten neue Rezepte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0278",
+      "text": "Oma Sevim kam im Oktober 1975 nach Wetzlar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0279",
+      "text": "Als Kind melkte Opa Kamāl jeden Morgen die Ziegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0280",
+      "text": "Opa Kamāl erzählt Yazan von seiner Kindheit im Dorf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0281",
+      "text": "Abends lernte Oma mit ihren Kindern Deutsch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0282",
+      "text": "Oma bewahrt den Brief von ihrer Mutter bis heute auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0283",
+      "text": "Opa Kamāl wuchs ohne Strom und ohne Fernseher auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0284",
+      "text": "Opa, wie war deine Kindheit im Dorf?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0285",
+      "text": "Der damalige Chef von Opa Orhan war sehr freundlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0286",
+      "text": "Die heutigen Kinder spielen oft am Computer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0287",
+      "text": "Mein Vater wuchs in einer Großstadt auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0288",
+      "text": "Als Opa ein Kind war, gab es im Dorf keine Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0289",
+      "text": "Immer wenn es regnete, spielten wir im Stall mit den Ziegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0290",
+      "text": "Sobald die Ferien begannen, fuhren wir zu Oma ins Dorf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0291",
+      "text": "Solange Opa im Dorf wohnte, besuchten wir ihn jeden Sommer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0292",
+      "text": "Während Papa kochte, erzählte Oma von früher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0293",
+      "text": "Bevor mein Großvater nach Deutschland kam, arbeitete er auf dem Feld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0294",
+      "text": "Ich habe das Tagebuch von meiner Urgroßmutter geerbt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0295",
+      "text": "Den Ring trage ich als Andenken an meine Großmutter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0296",
+      "text": "Die Hochzeit von meinen Eltern war ein großes Ereignis im Dorf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0297",
+      "text": "Am Jahrestag erinnert sich die Familie an die Ankunft in Deutschland.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0298",
+      "text": "Viele Einwanderer kehrten nie in ihr Heimatland zurück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0299",
+      "text": "Der Abschied von zu Hause hat Oma sehr geprägt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0300",
+      "text": "Erinnerst du dich noch an deinen ersten Tag in der Schule?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0301",
+      "text": "Ja, sehr gut. Ich war sehr aufgeregt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0302",
+      "text": "Wer hat dich damals zur Schule gebracht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0303",
+      "text": "Meine Großmutter, denn meine Eltern mussten arbeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0304",
+      "text": "Als ich sechs Jahre alt war, kam ich in die Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0305",
+      "text": "Als meine Großeltern jung waren, gab es noch kein Internet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0306",
+      "text": "Opa Orhan kam 1970 nach Deutschland und arbeitete in einer Fabrik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0307",
+      "text": "Zuerst wanderte Opa Orhan aus, fünf Jahre später kam Oma nach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0308",
+      "text": "Erst nach dem Abschied von ihrer Familie stieg Oma in den Zug.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0309",
+      "text": "Während Oma Sevim erzählte, sahen die Mädchen das Fotoalbum an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0310",
+      "text": "Opa Kamāl hatte eine bescheidene, aber glückliche Kindheit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0311",
+      "text": "Für die Schule fragt Yazan seine Großeltern nach den Vorfahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0312",
+      "text": "Opa, wie lange hast du in der Fabrik gearbeitet?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0313",
+      "text": "Über vierzig Jahre. Dann bin ich in Rente gegangen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0314",
+      "text": "Und was machst du jetzt den ganzen Tag?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0315",
+      "text": "Ich lese Zeitung, gehe spazieren und besuche meine Enkel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0316",
+      "text": "Hast du deine Urgroßmutter noch gekannt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0317",
+      "text": "Ja, sie starb, als ich zehn Jahre alt war.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0318",
+      "text": "Was weißt du noch von ihr?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0319",
+      "text": "Sie hat mir das Nähen beigebracht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0320",
+      "text": "Ein Tag im Leben von Opa Kamāl als Kind",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0321",
+      "text": "Zuerst holte Kamāl Wasser am Brunnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0322",
+      "text": "Danach melkte er die Ziegen im Stall.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0323",
+      "text": "Dann aß er Brot mit Käse und ging zu Fuß zur Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0324",
+      "text": "Am Nachmittag half er seinem Vater auf dem Feld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0325",
+      "text": "Zum Schluss saß die ganze Familie am Ofen und erzählte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0326",
+      "text": "Was machte Kamāl, bevor er die Ziegen melkte?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0327",
+      "text": "Er holte Wasser am Brunnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0328",
+      "text": "Er ging zur Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0329",
+      "text": "Er half seinem Vater.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0330",
+      "text": "Kamāl ging nach dem Frühstück zur Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0331",
+      "text": "Kamāl ging mit dem Bus zur Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0332",
+      "text": "Als ich klein war, habe ich jeden Sommer bei meiner Oma im Dorf verbracht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e01.s0333",
+      "text": "Oma, erzähl mal: Wie war dein Leben, als du so alt warst wie ich?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e01.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wie der Alltag früher war und wie er heute ist.",
+        "tr": "Günlük hayatın eskiden nasıl olduğunu ve bugün nasıl olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أقول كيف كانت الحياة اليومية في الماضي وكيف هي اليوم."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e01.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.fernseher",
+          "ablenker": ["de.b1.e01.schreibmaschine", "de.a2.e10.radio"]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e01.vergangenheit",
+            "de.b1.e01.gegenwart",
+            "de.b1.e01.jahrhundert",
+            "de.b1.e01.jahrzehnt",
+            "de.b1.e01.generation",
+            "de.b1.e01.alltag"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.heutzutage",
+          "ablenker": ["de.b1.e01.einst", "de.b1.e01.mittlerweile"]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e01.s0017",
+          "ablenker": ["de.b1.e01.s0018", "de.b1.e01.s0025", "de.b1.e01.s0015"]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.damalig",
+          "ablenker": ["de.b1.e01.heutig", "de.b1.e01.ehemalig"]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0026",
+          "wort": 1,
+          "ablenker": ["arbeitet", "arbeiten"]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.naehen",
+          "ablenker": ["de.a1.e05.kochen", "de.a1.e08.backen"]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0031"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0032"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0033"
+            }
+          ],
+          "antwort": "de.b1.e01.s0034",
+          "ablenker": ["de.b1.e01.s0014", "de.b1.e01.s0020"]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a10",
+          "typ": "formen",
+          "lemma": "de.b1.e01.naehen",
+          "zeilen": ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"],
+          "spalten": ["Präsens", "Präteritum"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["nähe"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["nähst"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["näht"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["nähen"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["näht"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["nähen"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["nähte"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["nähtest"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["nähte"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["nähten"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["nähtet"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["nähten"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.historisch",
+          "ablenker": ["de.b1.e01.vergangen", "de.a1.e03.modern"]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e01.s0001",
+          "nach": "ziel",
+          "alternativen": ["Fast jede Familie hat heutzutage einen Fernseher."],
+          "ablenker": ["damals", "hatte"]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e01.s0024",
+          "ablenker": ["de.b1.e01.s0021", "de.b1.e01.s0022", "de.b1.e01.s0005"]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e01.s0023",
+          "alternativen": ["Ich war in der vergangenen Woche krank."]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e01.s0012",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Vergangenheit ist vorbei, und wir leben in der Gegenwart.",
+            "Die Vergangenheit ist vorüber, wir leben in der Gegenwart.",
+            "Wir leben in der Gegenwart, die Vergangenheit ist vorbei."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e01.s0030"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e01.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann von meiner Kindheit erzählen.",
+        "tr": "Çocukluğumu anlatabilirim.",
+        "ar": "أستطيع أن أحكي عن طفولتي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e01.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.kindheit",
+          "ablenker": ["de.b1.e01.jugend", "de.a2.e01.erinnerung"]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e01.brunnen", "de.b1.e01.ofen", "de.b1.e01.stall", "de.b1.e01.ziege", "de.b1.e01.ernte", "de.b1.e01.spielzeug"]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.aufwachsen",
+          "ablenker": ["de.a2.e04.umziehen", "de.a2.e11.reisen"]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0056",
+          "wort": 1,
+          "ablenker": ["gehte", "gingen"]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.streng",
+          "ablenker": ["de.b1.e01.fleissig", "de.b1.e01.bescheiden"]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0061"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0062"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0063"
+            }
+          ],
+          "antwort": "de.b1.e01.s0064",
+          "ablenker": ["de.b1.e01.s0065", "de.b1.e01.s0041"]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a08",
+          "typ": "formen",
+          "zeilen": ["kommen", "gehen", "sehen", "finden", "trinken", "helfen"],
+          "spalten": ["er/sie/es – Präsens", "er/sie/es – Präteritum", "wir – Präteritum"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["kommt"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["geht"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["sieht"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["findet"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["trinkt"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["hilft"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["kam"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["ging"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["sah"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["fand"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["trank"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["half"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["kamen"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["gingen"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["sahen"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 2,
+              "loesungen": ["fanden"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 2,
+              "loesungen": ["tranken"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 2,
+              "loesungen": ["halfen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.melken",
+          "ablenker": ["de.b1.e01.naehen", "de.a1.e08.backen"]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.grossstadt",
+          "ablenker": ["de.b1.e01.kleinstadt", "de.a2.e12.dorf"]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e01.s0038",
+          "nach": "ziel",
+          "alternativen": ["Von seiner Kindheit erzählt Opa gern."],
+          "ablenker": ["Jugend", "erzählte"]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a12",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e01.gedaechtnis",
+            "de.b1.e01.praegen",
+            "de.b1.e01.jugend",
+            "de.b1.e01.fleissig",
+            "de.b1.e01.kleinstadt",
+            "de.b1.e01.streng"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e01.s0042",
+          "ablenker": ["de.b1.e01.s0054", "de.b1.e01.s0040", "de.b1.e01.s0044"]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e01.s0049",
+          "alternativen": ["Die Ziegen blieben im Winter im Stall.", "Im Stall blieben die Ziegen im Winter."]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e01.s0052",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir hatten wenig Spielzeug, aber wir waren glücklich.",
+            "Wir hatten nur wenige Spielsachen, aber wir waren glücklich.",
+            "Wir hatten nur wenig Spielzeug, aber wir waren froh.",
+            "Wir hatten nicht viel Spielzeug, aber wir waren glücklich."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e01.s0060"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e01.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über meine Familie und ihre Geschichte sprechen.",
+        "tr": "Ailem ve ailemin geçmişi hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدث عن عائلتي وتاريخها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e01.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.grossvater",
+          "ablenker": ["de.b1.e01.urgrossvater", "de.b1.e01.schwiegervater"]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e01.stammbaum",
+            "de.b1.e01.vorfahren",
+            "de.b1.e01.herkunft",
+            "de.b1.e01.fotoalbum",
+            "de.b1.e01.tagebuch",
+            "de.b1.e01.gold"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.grossmutter",
+          "ablenker": ["de.b1.e01.urgrossmutter", "de.b1.e01.schwiegermutter"]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.ehemann",
+          "ablenker": ["de.a1.e02.sohn", "de.a1.e02.bruder"]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0087",
+          "wort": 0,
+          "ablenker": ["Wenn", "Wann"]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.ehefrau",
+          "ablenker": ["de.a1.e02.tochter", "de.a1.e02.schwester"]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0093"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0094"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0095"
+            }
+          ],
+          "antwort": "de.b1.e01.s0096",
+          "ablenker": ["de.b1.e01.s0097", "de.b1.e01.s0074"]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.stammen",
+          "ablenker": ["de.b1.e01.erben", "de.b1.e01.weitergeben", "de.b1.e01.aufbewahren"]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a10",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0089",
+          "wort": 1,
+          "ablenker": ["als", "wann"]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.andenken",
+          "ablenker": ["de.b1.e01.familiengeschichte", "de.b1.e01.erzaehlung"]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e01.s0085",
+          "nach": "ziel",
+          "alternativen": ["Die alten Briefe bewahrt Oma in einer Kiste auf.", "In einer Kiste bewahrt Oma die alten Briefe auf."],
+          "ablenker": ["bewahrte", "Fotos"]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e01.s0077",
+          "ablenker": ["de.b1.e01.s0075", "de.b1.e01.s0066", "de.b1.e01.s0078"]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e01.s0088",
+          "alternativen": ["Oma war 19 Jahre alt, als sie nach Deutschland kam."]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e01.s0082",
+          "nach": "ziel",
+          "alternativen": [
+            "Mama hat einen Ring aus Gold von ihrer Großmutter geerbt.",
+            "Mama hat von ihrer Oma einen Ring aus Gold geerbt.",
+            "Mama hat von ihrer Großmutter einen goldenen Ring geerbt.",
+            "Mama hat einen goldenen Ring von ihrer Großmutter geerbt.",
+            "Von ihrer Großmutter hat Mama einen Ring aus Gold geerbt."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e01.s0092"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e01.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann erzählen, wie jemand in ein neues Land gekommen ist.",
+        "tr": "Birinin yeni bir ülkeye nasıl geldiğini anlatabilirim.",
+        "ar": "أستطيع أن أحكي كيف جاء شخص إلى بلد جديد."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e01.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.auswandern",
+          "ablenker": ["de.b1.e01.zurueckkehren", "de.b1.e01.verabschieden"]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e01.abschied",
+            "de.b1.e01.neuanfang",
+            "de.b1.e01.sehnsucht",
+            "de.b1.e01.schicksal",
+            "de.b1.e01.hintergrund",
+            "de.b1.e01.heimatland"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.einwanderer",
+          "ablenker": ["de.a2.e07.nachbar", "de.a2.e13.kollege"]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0113",
+          "wort": 0,
+          "ablenker": ["Sofort", "Bald"]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.waehrend",
+          "ablenker": ["de.b1.e01.sobald", "de.b1.e01.solange"]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.anfangs",
+          "ablenker": ["de.b1.e01.jahrelang", "de.a1.e12.danach"]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0122"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0123"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0124"
+            }
+          ],
+          "antwort": "de.b1.e01.s0125",
+          "ablenker": ["de.b1.e01.s0109", "de.b1.e01.s0104"]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a09",
+          "typ": "formen",
+          "lemma": "de.b1.e01.zurueckkehren",
+          "zeilen": ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"],
+          "spalten": ["Präteritum", "Perfekt"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["kehrte zurück"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["kehrtest zurück"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["kehrte zurück"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["kehrten zurück"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["kehrtet zurück"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["kehrten zurück"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["bin zurückgekehrt"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["bist zurückgekehrt"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["ist zurückgekehrt"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["sind zurückgekehrt"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["seid zurückgekehrt"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["sind zurückgekehrt"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.einwandern",
+          "ablenker": ["de.b1.e01.zurueckkehren", "de.a2.e04.umziehen"]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a11",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e01.s0126",
+          "absaetze": [
+            "de.b1.e01.s0127",
+            "de.b1.e01.s0128",
+            "de.b1.e01.s0129",
+            "de.b1.e01.s0130",
+            "de.b1.e01.s0131",
+            "de.b1.e01.s0132",
+            "de.b1.e01.s0133",
+            "de.b1.e01.s0134",
+            "de.b1.e01.s0135",
+            "de.b1.e01.s0136",
+            "de.b1.e01.s0137",
+            "de.b1.e01.s0138"
+          ],
+          "glossen": ["de.b1.e01.anfangs", "de.b1.e01.sehnsucht", "de.b1.e01.ehemann", "de.a2.e10.fremd", "de.b1.e01.laengst"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e01.s0139",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e01.s0140",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e01.s0141",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e01.s0142",
+              "antwort": "de.b1.e01.s0143",
+              "ablenker": ["de.b1.e01.s0144", "de.b1.e01.s0145"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e01.s0116",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e01.s0115",
+          "ablenker": ["de.b1.e01.s0114", "de.b1.e01.s0110"]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e01.s0117",
+          "alternativen": ["Jahrelang arbeitete Opa Orhan in einer Fabrik.", "In einer Fabrik arbeitete Opa Orhan jahrelang."]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e01.s0106",
+          "nach": "ziel",
+          "alternativen": [
+            "Ein Neuanfang in einem fremden Land ist nicht einfach.",
+            "Ein neuer Anfang in einem fremden Land ist nicht leicht.",
+            "Ein Neuanfang in einem fremden Land ist schwer.",
+            "In einem fremden Land ist ein Neuanfang nicht leicht.",
+            "In einem fremden Land ist ein Neuanfang nicht einfach."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e01.s0121"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e01.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann von wichtigen Ereignissen in der richtigen Reihenfolge erzählen.",
+        "tr": "Önemli olayları doğru sırayla anlatabilirim.",
+        "ar": "أستطيع أن أحكي عن أحداث مهمة بالترتيب الصحيح."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e01.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.ereignis",
+          "ablenker": ["de.b1.e01.jubilaeum", "de.b1.e01.trauer"]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e01.rente",
+            "de.b1.e01.rentner",
+            "de.b1.e01.jahrestag",
+            "de.b1.e01.tod",
+            "de.a2.e03.hochzeit",
+            "de.a2.e03.geburt"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.ruhestand",
+          "ablenker": ["de.a1.e12.arbeit", "de.a2.e11.urlaub"]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0165",
+          "wort": 5,
+          "ablenker": ["weil", "denn"]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.bislang",
+          "ablenker": ["de.b1.e01.laengst", "de.b1.e01.zuvor"]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e01.s0151",
+          "ablenker": ["de.b1.e01.s0150", "de.b1.e01.s0153"]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.sterben",
+          "ablenker": ["de.b1.e01.tot", "de.b1.e01.geschehen"]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0170"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0171"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0172"
+            }
+          ],
+          "antwort": "de.b1.e01.s0173",
+          "ablenker": ["de.b1.e01.s0174", "de.b1.e01.s0148"]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e01.s0155",
+          "ablenker": ["de.b1.e01.s0156", "de.b1.e01.s0157", "de.b1.e01.s0146"]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a10",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e01.s0175",
+          "absaetze": [
+            "de.b1.e01.s0176",
+            "de.b1.e01.s0177",
+            "de.b1.e01.s0178",
+            "de.b1.e01.s0179",
+            "de.b1.e01.s0180",
+            "de.b1.e01.s0181",
+            "de.b1.e01.s0182",
+            "de.b1.e01.s0183",
+            "de.b1.e01.s0184",
+            "de.b1.e01.s0185",
+            "de.b1.e01.s0186",
+            "de.b1.e01.s0187"
+          ],
+          "glossen": ["de.b1.e01.rentner", "de.a2.e01.brettspiel", "de.b1.e01.bislang", "de.b1.e01.generation"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e01.s0188",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e01.s0189",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e01.s0190",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e01.s0191",
+              "antwort": "de.b1.e01.s0192",
+              "ablenker": ["de.b1.e01.s0193", "de.b1.e01.s0194"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e01.s0166",
+          "nach": "ziel",
+          "alternativen": ["Die Arbeit in der Fabrik war schwer, Oma war trotzdem zufrieden."],
+          "ablenker": ["deshalb", "leicht"]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a12",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0164",
+          "wort": 5,
+          "ablenker": ["bevor", "während"]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a13",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e01.s0195",
+          "woerter": {
+            "min": 80,
+            "max": 100
+          },
+          "pflichtwoerter": ["als", "damals", "zuerst", "danach"],
+          "muster": ["de.b1.e01.s0196", "de.b1.e01.s0197"]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e01.s0161",
+          "alternativen": ["Längst gibt es die alte Fabrik nicht mehr."]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e01.s0163",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich war noch nie in einer so großen Stadt.",
+            "Ich war zuvor noch nie in einer so großen Stadt.",
+            "Ich war vorher noch nie in einer so großen Stadt.",
+            "Ich war noch nie vorher in einer so großen Stadt.",
+            "Ich bin noch nie zuvor in einer so großen Stadt gewesen.",
+            "Ich bin noch nie in einer so großen Stadt gewesen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e01.s0169"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e01.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann längere Erzählungen über früher verstehen.",
+        "tr": "Eskiye dair daha uzun anlatıları anlayabilirim.",
+        "ar": "أستطيع أن أفهم حكايات أطول عن الماضي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e01.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e01.s0198",
+          "zeilen": [
+            {
+              "satz": "de.b1.e01.s0199"
+            },
+            {
+              "satz": "de.b1.e01.s0200"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0201"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0202"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e01.s0203"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0204"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0205"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0206"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0207"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0208"
+            },
+            {
+              "satz": "de.b1.e01.s0209"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0210"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e01.s0211"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0212"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0213"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0214"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0215"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0216"
+            },
+            {
+              "satz": "de.b1.e01.s0217"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0218"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e01.s0219"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0220"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 3,
+              "frage": "de.b1.e01.s0221",
+              "antwort": "de.b1.e01.s0222",
+              "ablenker": ["de.b1.e01.s0223", "de.b1.e01.s0224"]
+            },
+            {
+              "nach": 6,
+              "frage": "de.b1.e01.s0225",
+              "antwort": "de.b1.e01.s0226",
+              "ablenker": ["de.b1.e01.s0227", "de.b1.e01.s0228"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.b1.e01.s0229",
+              "antwort": "de.b1.e01.s0230",
+              "ablenker": ["de.b1.e01.s0231", "de.b1.e01.s0232"]
+            },
+            {
+              "nach": 19,
+              "frage": "de.b1.e01.s0233",
+              "antwort": "de.b1.e01.s0144",
+              "ablenker": ["de.b1.e01.s0234", "de.b1.e01.s0235"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0278",
+          "wort": 2,
+          "ablenker": ["kommte", "kamen"]
+        },
+        {
+          "schluessel": "de.b1.e01.l06.a03",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e01.s0208",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e01.l06.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0274"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0275"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0276"
+            }
+          ],
+          "antwort": "de.b1.e01.s0277",
+          "ablenker": ["de.b1.e01.s0159", "de.b1.e01.s0009"]
+        },
+        {
+          "schluessel": "de.b1.e01.l06.a05",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e01.s0283"
+        },
+        {
+          "schluessel": "de.b1.e01.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.b1.e01.s0236",
+          "zeilen": [
+            {
+              "satz": "de.b1.e01.s0237"
+            },
+            {
+              "satz": "de.b1.e01.s0238"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0239"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0240"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0241"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0242"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0243"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0244"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0245"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0246"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0247"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0248"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0249"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0250"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0251"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0252"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0253"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0254"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0255"
+            },
+            {
+              "satz": "de.b1.e01.s0256"
+            },
+            {
+              "satz": "de.b1.e01.s0257"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 5,
+              "frage": "de.b1.e01.s0258",
+              "antwort": "de.b1.e01.s0259",
+              "ablenker": ["de.b1.e01.s0260", "de.b1.e01.s0261"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.b1.e01.s0262",
+              "antwort": "de.b1.e01.s0263",
+              "ablenker": ["de.b1.e01.s0264", "de.b1.e01.s0265"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.b1.e01.s0266",
+              "antwort": "de.b1.e01.s0267",
+              "ablenker": ["de.b1.e01.s0268", "de.b1.e01.s0269"]
+            },
+            {
+              "nach": 18,
+              "frage": "de.b1.e01.s0270",
+              "antwort": "de.b1.e01.s0271",
+              "ablenker": ["de.b1.e01.s0272", "de.b1.e01.s0273"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l06.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e01.s0253",
+          "ablenker": ["de.b1.e01.s0255", "de.b1.e01.s0251"]
+        },
+        {
+          "schluessel": "de.b1.e01.l06.a08",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0279",
+          "wort": 2,
+          "ablenker": ["melkt", "melkten"]
+        },
+        {
+          "schluessel": "de.b1.e01.l06.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e01.s0280",
+          "nach": "ziel",
+          "alternativen": ["Von seiner Kindheit im Dorf erzählt Opa Kamāl Yazan."],
+          "ablenker": ["erzählte", "Jugend"]
+        },
+        {
+          "schluessel": "de.b1.e01.l06.a10",
+          "typ": "satzbau",
+          "ziel": "de.b1.e01.s0281",
+          "alternativen": [
+            "Oma lernte abends mit ihren Kindern Deutsch.",
+            "Oma lernte mit ihren Kindern abends Deutsch.",
+            "Mit ihren Kindern lernte Oma abends Deutsch.",
+            "Deutsch lernte Oma abends mit ihren Kindern."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l06.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e01.s0207",
+          "ablenker": ["de.b1.e01.s0210", "de.b1.e01.s0251"]
+        },
+        {
+          "schluessel": "de.b1.e01.l06.a12",
+          "typ": "frei",
+          "ziel": "de.b1.e01.s0282",
+          "nach": "ziel",
+          "alternativen": [
+            "Oma bewahrt den Brief ihrer Mutter bis heute auf.",
+            "Bis heute bewahrt Oma den Brief von ihrer Mutter auf.",
+            "Oma hat den Brief von ihrer Mutter bis heute aufbewahrt.",
+            "Oma bewahrt den Brief von ihrer Mutter noch heute auf."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.b1.e01.s0284"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e01.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann die Wörter zu Kindheit, Familie und früher wiederholen.",
+        "tr": "Çocukluk, aile ve eski zamanlarla ilgili kelimeleri tekrar edebilirim.",
+        "ar": "أستطيع أن أراجع كلمات الطفولة والعائلة والماضي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e01.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.vorfahren",
+          "ablenker": ["de.b1.e01.einwanderer", "de.b1.e01.generation"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e01.brunnen",
+            "de.b1.e01.fernseher",
+            "de.b1.e01.tagebuch",
+            "de.b1.e01.abschied",
+            "de.b1.e01.jubilaeum",
+            "de.b1.e01.gedaechtnis"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0289",
+          "wort": 1,
+          "ablenker": ["als", "wann"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a04",
+          "typ": "formen",
+          "zeilen": ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"],
+          "spalten": ["sein – Präteritum", "haben – Präteritum"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["war"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["warst"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["war"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["waren"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["wart"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["waren"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["hatte"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["hattest"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["hatte"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["hatten"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["hattet"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["hatten"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.heimatland",
+          "ablenker": ["de.b1.e01.grossstadt", "de.b1.e01.kleinstadt"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e01.s0290",
+          "ablenker": ["de.b1.e01.s0291", "de.b1.e01.s0292"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a07",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e01.ofen",
+          "ablenker": ["de.a1.e09.offen"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e01.s0287",
+          "nach": "ziel",
+          "alternativen": ["In einer Großstadt wuchs mein Vater auf."],
+          "ablenker": ["wächst", "Kleinstadt"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.praegen",
+          "ablenker": ["de.b1.e01.erben", "de.b1.e01.stammen"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a10",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0293",
+          "wort": 0,
+          "ablenker": ["Vorher", "Vor"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0300"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0301"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0302"
+            }
+          ],
+          "antwort": "de.b1.e01.s0303",
+          "ablenker": ["de.b1.e01.s0150", "de.b1.e01.s0049"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e01.gold",
+          "ablenker": ["de.a1.e06.geld"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e01.s0285",
+          "alternativen": ["Sehr freundlich war der damalige Chef von Opa Orhan."]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e01.s0298",
+          "nach": "ziel",
+          "alternativen": [
+            "Viele Einwanderer sind nie in ihr Heimatland zurückgekehrt.",
+            "Viele Einwanderer kehrten nie in ihre Heimat zurück.",
+            "Viele Einwanderer sind nie in ihre Heimat zurückgekehrt.",
+            "Viele Einwanderer gingen nie in ihr Heimatland zurück."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e01.s0295"
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a16",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0154",
+          "wort": 2,
+          "ablenker": ["tot", "Tag"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a17",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e01.tot",
+          "ablenker": ["de.a1.e10.rot"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a18",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.sehnsucht",
+          "ablenker": ["de.b1.e01.trauer", "de.b1.e01.neuanfang"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a19",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e01.s0109",
+          "ablenker": ["de.b1.e01.s0108", "de.b1.e01.s0081", "de.b1.e01.s0147"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a20",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e01.s0076",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a21",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e01.s0069",
+          "ablenker": ["de.b1.e01.s0067", "de.b1.e01.s0071", "de.b1.e01.s0080"]
+        },
+        {
+          "schluessel": "de.b1.e01.l07.a22",
+          "typ": "sprechen",
+          "satz": "de.b1.e01.s0304"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e01.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann von früher erzählen und die Reihenfolge von Ereignissen verstehen.",
+        "tr": "Eskiden olanları anlatabilir ve olayların sırasını anlayabilirim.",
+        "ar": "أستطيع أن أحكي عن الماضي وأن أفهم ترتيب الأحداث."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e01.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e01.aufwachsen",
+          "ablenker": ["de.b1.e01.auswandern", "de.b1.e01.stammen"]
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e01.kindheit",
+            "de.b1.e01.vergangenheit",
+            "de.b1.e01.herkunft",
+            "de.b1.e01.sehnsucht",
+            "de.b1.e01.ereignis",
+            "de.b1.e01.alltag"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0309",
+          "wort": 0,
+          "ablenker": ["Wann", "Damals"]
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0312"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0313"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0314"
+            }
+          ],
+          "antwort": "de.b1.e01.s0315",
+          "ablenker": ["de.b1.e01.s0072", "de.b1.e01.s0301"]
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e01.s0306",
+          "nach": "ziel",
+          "alternativen": ["1970 kam Opa Orhan nach Deutschland und arbeitete in einer Fabrik."],
+          "ablenker": ["kommt", "Schule"]
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e01.s0307",
+          "ablenker": ["de.b1.e01.s0308", "de.b1.e01.s0305"]
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e01.s0320",
+          "absaetze": ["de.b1.e01.s0321", "de.b1.e01.s0322", "de.b1.e01.s0323", "de.b1.e01.s0324", "de.b1.e01.s0325"],
+          "glossen": ["de.b1.e01.brunnen", "de.b1.e01.melken", "de.b1.e01.stall", "de.b1.e01.ofen"],
+          "fragen": [
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e01.s0326",
+              "antwort": "de.b1.e01.s0327",
+              "ablenker": ["de.b1.e01.s0328", "de.b1.e01.s0329"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e01.s0330",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e01.s0331",
+              "richtig": "falsch"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a08",
+          "typ": "satzbau",
+          "ziel": "de.b1.e01.s0310"
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a09",
+          "typ": "frei",
+          "ziel": "de.b1.e01.s0311",
+          "nach": "ziel",
+          "alternativen": [
+            "Yazan fragt seine Großeltern für die Schule nach den Vorfahren.",
+            "Für die Schule fragt Yazan seine Großeltern nach ihren Vorfahren.",
+            "Yazan fragt für die Schule seine Großeltern nach den Vorfahren.",
+            "Yazan fragt seine Großeltern für die Schule nach ihren Vorfahren."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e01.s0305"
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0316"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e01.s0317"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e01.s0318"
+            }
+          ],
+          "antwort": "de.b1.e01.s0319",
+          "ablenker": ["de.b1.e01.s0009", "de.b1.e01.s0113"]
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e01.jahrelang",
+          "ablenker": ["de.b1.e01.heutzutage", "de.b1.e01.mittlerweile"]
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e01.s0299",
+          "wort": 8,
+          "ablenker": ["geprägen", "prägte"]
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e01.s0297",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.b1.e01.s0332"
+        },
+        {
+          "schluessel": "de.b1.e01.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e01.s0333"
+        }
+      ]
+    }
+  ]
+}
