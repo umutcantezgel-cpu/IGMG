@@ -1356,8 +1356,7 @@
       "lemma": "heben",
       "wortart": "verb",
       "merkmale": {
-        "hilfsverb": "haben",
-        "unregelmaessig_praesens": "ja"
+        "hilfsverb": "haben"
       },
       "formen": {
         "infinitiv": "heben",
@@ -1383,8 +1382,7 @@
       "lemma": "empfinden",
       "wortart": "verb",
       "merkmale": {
-        "hilfsverb": "haben",
-        "unregelmaessig_praesens": "ja"
+        "hilfsverb": "haben"
       },
       "formen": {
         "infinitiv": "empfinden",
@@ -1695,7 +1693,7 @@
     },
     {
       "schluessel": "de.b1.e03.s0019",
-      "text": "Nach jeder Einheit dehnen wir die Muskeln.",
+      "text": "Im Training dehnen wir nach jeder Einheit die Muskeln.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2087,7 +2085,7 @@
     },
     {
       "schluessel": "de.b1.e03.s0084",
-      "text": "Der Körper gewöhnt sich langsam an die neue Zeit.",
+      "text": "Der Körper gewöhnt sich langsam an die Arbeit in der Nacht.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2395,7 +2393,7 @@
     },
     {
       "schluessel": "de.b1.e03.s0135",
-      "text": "Opa liegt für drei Tage in der Klinik.",
+      "text": "Opa muss für drei Tage in die Klinik.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2530,7 +2528,7 @@
     },
     {
       "schluessel": "de.b1.e03.s0157",
-      "text": "Nein, zwei Wochen dürfen Sie noch keinen Sport machen.",
+      "text": "Nein, zwei Wochen lang dürfen Sie noch keinen Sport machen.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2608,7 +2606,7 @@
     },
     {
       "schluessel": "de.b1.e03.s0170",
-      "text": "Ich lasse mich jedes Jahr gegen Grippe impfen.",
+      "text": "Die Hausärztin impft mich jedes Jahr gegen Grippe.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2919,7 +2917,7 @@
     },
     {
       "schluessel": "de.b1.e03.s0221",
-      "text": "Ihre Freundin oder Ihr Freund hat bald eine wichtige Prüfung. Sie oder er ist sehr nervös und schläft schlecht. Schreiben Sie eine Nachricht mit Tipps gegen den Stress.",
+      "text": "Eine Freundin oder ein Freund von Ihnen hat bald eine wichtige Prüfung. Sie oder er ist sehr nervös und schläft schlecht. Schreiben Sie eine Nachricht mit Tipps gegen den Stress.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3033,7 +3031,7 @@
     },
     {
       "schluessel": "de.b1.e03.s0240",
-      "text": "Murat hat sofort eine Idee: Am Sonntag fahren alle zusammen mit dem Fahrrad an den Fluss.",
+      "text": "Ihr Mann Murat hat sofort eine Idee: Am Sonntag fahren alle mit dem Fahrrad an den Fluss.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3123,7 +3121,7 @@
     },
     {
       "schluessel": "de.b1.e03.s0255",
-      "text": "Sie fahren zusammen mit dem Fahrrad.",
+      "text": "Sie fahren zusammen mit dem Fahrrad an den Fluss.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3159,7 +3157,7 @@
     },
     {
       "schluessel": "de.b1.e03.s0261",
-      "text": "Wie wäre es am Sonntag mit einem Ausflug an die frische Luft?",
+      "text": "Wie wäre es am Sonntag mit einem Ausflug an den Fluss?",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3273,7 +3271,7 @@
     },
     {
       "schluessel": "de.b1.e03.s0280",
-      "text": "Sie soll länger schlafen.",
+      "text": "Sie soll ohne Frühstück zur Schule gehen.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3622,7 +3620,7 @@
           "schluessel": "de.b1.e03.l01.a05",
           "typ": "luecke",
           "ziel": "de.b1.e03.s0019",
-          "wort": 1,
+          "wort": 5,
           "ablenker": ["jedem", "jedes"]
         },
         {
@@ -3741,7 +3739,9 @@
           "alternativen": [
             "Sport hält geistig und körperlich fit.",
             "Sport hält uns körperlich und geistig fit.",
-            "Sport hält uns geistig und körperlich fit."
+            "Sport hält uns geistig und körperlich fit.",
+            "Sport hält einen körperlich und geistig fit.",
+            "Sport hält einen geistig und körperlich fit."
           ]
         },
         {
@@ -3854,7 +3854,11 @@
           "anweisung": "uebersetze",
           "satz": "de.b1.e03.s0058",
           "nach": "ziel",
-          "alternativen": ["Ich esse oft zu viel Schokolade, wenn ich Stress habe."],
+          "alternativen": [
+            "Ich esse oft zu viel Schokolade, wenn ich Stress habe.",
+            "Oft esse ich zu viel Schokolade, wenn ich Stress habe.",
+            "Ich esse, wenn ich Stress habe, oft zu viel Schokolade."
+          ],
           "ablenker": ["hatte", "isst"]
         },
         {
@@ -3919,7 +3923,8 @@
             "Gibt es heute in der Kantine auch ein vegetarisches Essen?",
             "Gibt es in der Kantine heute auch vegetarisches Essen?",
             "Gibt es heute in der Kantine auch vegetarisches Essen?",
-            "Gibt es heute auch ein vegetarisches Essen in der Kantine?"
+            "Gibt es heute auch ein vegetarisches Essen in der Kantine?",
+            "Gibt es heute auch vegetarisches Essen in der Kantine?"
           ]
         },
         {
@@ -4343,7 +4348,9 @@
             "Sie sollen das Mittel nach dem Essen dreimal am Tag nehmen.",
             "Das Mittel sollen Sie dreimal am Tag nach dem Essen nehmen.",
             "Dreimal am Tag sollen Sie das Mittel nach dem Essen nehmen.",
-            "Nach dem Essen sollen Sie das Mittel dreimal am Tag nehmen."
+            "Nach dem Essen sollen Sie das Mittel dreimal am Tag nehmen.",
+            "Das Mittel sollen Sie nach dem Essen dreimal am Tag nehmen.",
+            "Sie sollen dreimal am Tag nach dem Essen das Mittel nehmen."
           ],
           "ablenker": ["dürfen", "vor"]
         },
@@ -4362,7 +4369,9 @@
           "alternativen": [
             "Meine Hausärztin schickt mich zu einem Facharzt.",
             "Die Hausärztin schickt mich zu einer Fachärztin.",
-            "Meine Hausärztin schickt mich zu einer Fachärztin."
+            "Meine Hausärztin schickt mich zu einer Fachärztin.",
+            "Die Hausärztin schickt mich zum Facharzt.",
+            "Meine Hausärztin schickt mich zum Facharzt."
           ]
         },
         {
@@ -4550,9 +4559,11 @@
           "ziel": "de.b1.e03.s0170",
           "nach": "ziel",
           "alternativen": [
-            "Jedes Jahr lasse ich mich gegen Grippe impfen.",
-            "Ich lasse mich jedes Jahr gegen die Grippe impfen.",
-            "Jedes Jahr lasse ich mich gegen die Grippe impfen."
+            "Jedes Jahr impft mich die Hausärztin gegen Grippe.",
+            "Meine Hausärztin impft mich jedes Jahr gegen Grippe.",
+            "Jedes Jahr impft mich meine Hausärztin gegen Grippe.",
+            "Die Hausärztin impft mich jedes Jahr gegen die Grippe.",
+            "Meine Hausärztin impft mich jedes Jahr gegen die Grippe."
           ]
         },
         {
@@ -4706,7 +4717,8 @@
           "nach": "ziel",
           "alternativen": [
             "Am Tag liegt sie nach einer Schicht in der Nacht lange wach.",
-            "Sie liegt nach einer Schicht in der Nacht am Tag lange wach."
+            "Sie liegt nach einer Schicht in der Nacht am Tag lange wach.",
+            "Sie liegt am Tag nach einer Schicht in der Nacht lange wach."
           ],
           "ablenker": ["legt", "früh"]
         },
@@ -4941,7 +4953,11 @@
           "schluessel": "de.b1.e03.l07.a06",
           "typ": "satzbau",
           "ziel": "de.b1.e03.s0052",
-          "alternativen": ["Am meisten hilft die Kombination aus Bewegung und gesunder Ernährung."]
+          "alternativen": [
+            "Am meisten hilft die Kombination aus Bewegung und gesunder Ernährung.",
+            "Die Kombination aus gesunder Ernährung und Bewegung hilft am meisten.",
+            "Am meisten hilft die Kombination aus gesunder Ernährung und Bewegung."
+          ]
         },
         {
           "schluessel": "de.b1.e03.l07.a07",
@@ -4954,7 +4970,7 @@
           "schluessel": "de.b1.e03.l07.a08",
           "typ": "formen",
           "lemma": "de.b1.e03.intensiv",
-          "zeilen": ["stark", "intensiv", "wach", "oft"],
+          "zeilen": ["stark", "intensiv", "schlecht", "oft"],
           "spalten": ["Komparativ", "Superlativ"],
           "zellen": [
             {
@@ -4982,12 +4998,12 @@
             {
               "zeile": 2,
               "spalte": 0,
-              "loesungen": ["wacher"]
+              "loesungen": ["schlechter"]
             },
             {
               "zeile": 2,
               "spalte": 1,
-              "loesungen": ["am wachsten"]
+              "loesungen": ["am schlechtesten"]
             },
             {
               "zeile": 3,
@@ -5007,7 +5023,10 @@
           "anweisung": "uebersetze",
           "satz": "de.b1.e03.s0195",
           "nach": "ziel",
-          "alternativen": ["Ich mache einen kurzen Spaziergang, wenn ich müde bin."],
+          "alternativen": [
+            "Ich mache einen kurzen Spaziergang, wenn ich müde bin.",
+            "Ich mache, wenn ich müde bin, einen kurzen Spaziergang."
+          ],
           "ablenker": ["war", "langen"]
         },
         {
@@ -5051,7 +5070,10 @@
           "schluessel": "de.b1.e03.l07.a15",
           "typ": "satzbau",
           "ziel": "de.b1.e03.s0002",
-          "alternativen": ["Jeden Tag sollte man sich mindestens dreißig Minuten bewegen."]
+          "alternativen": [
+            "Jeden Tag sollte man sich mindestens dreißig Minuten bewegen.",
+            "Mindestens dreißig Minuten sollte man sich jeden Tag bewegen."
+          ]
         },
         {
           "schluessel": "de.b1.e03.l07.a16",
@@ -5192,7 +5214,7 @@
           "anweisung": "uebersetze",
           "satz": "de.b1.e03.s0323",
           "nach": "ziel",
-          "alternativen": ["Ich mache einen Spaziergang, wenn ich Stress habe."],
+          "alternativen": ["Ich mache einen Spaziergang, wenn ich Stress habe.", "Ich mache, wenn ich Stress habe, einen Spaziergang."],
           "ablenker": ["macht", "hatte"]
         },
         {
@@ -5248,7 +5270,7 @@
           "schluessel": "de.b1.e03.l08.a09",
           "typ": "satzbau",
           "ziel": "de.b1.e03.s0325",
-          "alternativen": ["Ich würde an deiner Stelle mehr Wasser trinken."]
+          "alternativen": ["Ich würde an deiner Stelle mehr Wasser trinken.", "Mehr Wasser würde ich an deiner Stelle trinken."]
         },
         {
           "schluessel": "de.b1.e03.l08.a10",
