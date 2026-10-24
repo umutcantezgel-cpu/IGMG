@@ -1,0 +1,1900 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "siyar",
+  "stufe": "vertiefung",
+  "einheit": {
+    "schluessel": "islam.vertiefung.e06",
+    "reihenfolge": 26,
+    "thema": {
+      "de": "Nach hanefitischer Lehre – Geschichte III: Abū Ḥanīfa, seine Schüler und die hanefitische Schule"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Nach hanefitischer Lehre: Ich kann Abū Ḥanīfa, Abū Yūsuf und Muḥammad einordnen und Berichte über sie aus den Werken der Schule wiedergeben."
+      },
+      {
+        "de": "Ich kenne wichtige Bücher der Schule und weiß, wie Grundtexte, Kommentare und Fatwa-Sammlungen zueinander stehen; Meinungsunterschiede innerhalb der Schule sind mit Quelle gekennzeichnet."
+      },
+      {
+        "de": "Ich kann beschreiben, in welchen Gegenden die Werke Gelehrte der Schule nennen und wie spätere Gelehrte mit veränderten Zeiten umgingen."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.vertiefung.e06.l01",
+      "titel": "Abū Ḥanīfa",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e06.l01.a01",
+          "text": "In den Werken der Schule trägt Abū Ḥanīfa den Ehrentitel „der größte Imam“ (al-imām al-aʿẓam). Al-Ikhtiyār nennt ihn mit Namen Abū Ḥanīfa an-Nuʿmān. Der Verfasser berichtet dort, man habe ihn gebeten, ein kurzes Fiqh-Buch nach der Lehre (madhhab) Abū Ḥanīfas zu schreiben, das sich auf dessen Fatwa stützt. Auch Radd al-Muḥtār spricht vom „größten Imam“.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Muqaddimat al-muʾallif",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 5,
+              "passage": "ikhtiyar.ms0001",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms1",
+              "passageSha256Text": "d74e12135e5eb6604cd2a4ae326e6ae154f17e00b76002543f1e051155ff66b2",
+              "zitatVon": 402,
+              "zitatBis": 573,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 358,
+              "passage": "radd_al_muhtar.ms6062",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6062",
+              "passageSha256Text": "b0c721b07f403eaea3e77d99cc1ab1e923d1e462d61c51bf029d11adb60fb5da",
+              "zitatVon": 654,
+              "zitatBis": 688,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l01.a02",
+          "text": "Radd al-Muḥtār nennt das Richteramt eine große Gefahr und führt dazu einen Bericht an: Abū Ḥanīfa wurde dreimal zum Richteramt gerufen und lehnte jedes Mal ab, obwohl er dafür jedes Mal mit Schlägen bestraft wurde. Beim dritten Mal wollte er sich zuerst mit seinen Schülern beraten. Abū Yūsuf meinte, als Richter würde Abū Ḥanīfa den Menschen nützen. Abū Ḥanīfa sah ihn zornig an: Das Amt sei für ihn so wenig zu schaffen, wie ein Meer zu durchschwimmen – und er sehe Abū Yūsuf schon als Richter vor sich.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: Abū Ḥanīfa duʿiya ilā l-qaḍāʾ thalāth marrāt fa-abā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 368,
+              "passage": "radd_al_muhtar.ms5003",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5003",
+              "passageSha256Text": "876bac700b01efe8da99bc2a26b00f2f962769e325bd541a8c174e1375f6b9da",
+              "zitatVon": 215,
+              "zitatBis": 677,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l01.a03",
+          "text": "Überliefererketten, die Radd al-Muḥtār anführt, zeigen, von wem Abū Ḥanīfa Wissen übernahm und an wen er es weitergab: Abū Ḥanīfa berichtet von Ḥammād, und Ḥammād befragte seinerseits Ibrāhīm an-Nakhaʿī. Von Abū Ḥanīfa berichten wiederum seine Schüler Muḥammad und Abū Yūsuf.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Maṭlab: Yushtaraṭu l-ʿilm bi-dukhūl al-waqt",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 376,
+              "passage": "radd_al_muhtar.ms0492",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms492",
+              "passageSha256Text": "c90ca306e3c24fc7e7e50fadd03afa747eafab4f18d6b5e87c7fdbe886447045",
+              "zitatVon": 468,
+              "zitatBis": 542,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Buyūʿ › Bāb al-Bayʿ al-Fāsid",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 61,
+              "passage": "radd_al_muhtar.ms4496",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4496",
+              "passageSha256Text": "2dd0fd58dfed508a6c6972088fbdfff71ef4faab51d22313c4979f6651ab76e7",
+              "zitatVon": 748,
+              "zitatBis": 808,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l01.a04",
+          "text": "Lehrmeinungen konnten an die Verhältnisse einer Gegend anknüpfen. Radd al-Muḥtār erklärt das an der Reinigung von Brunnen: Was vom Imam (Abū Ḥanīfa) überliefert ist – dass man hundert Eimer schöpft –, betrifft Brunnen wie die in Kufa, die wenig Wasser haben. Muḥammad gab seine Fatwa nach dem, was er an den wasserreichen Brunnen Bagdads sah. Beides sind Schätzungen von Kennern dieser Gegenden und keine feste Regel für Brunnen überall.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Miyāh › Faṣl fī l-Biʾr",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 215,
+              "passage": "radd_al_muhtar.ms0223",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms223",
+              "passageSha256Text": "8287641b4197bc8b0f73c179aca83c09215133a79f6093d256955df03df9fb12",
+              "zitatVon": 614,
+              "zitatBis": 839,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l01.a05",
+          "text": "Ibn ʿĀbidīn hält fest, dass mehr Erfahrung mehr Wissen bringt, und stützt das mit einem Bericht über Abū Ḥanīfa, den er nach al-Ḥamawī wiedergibt: Abū Ḥanīfa sagte zunächst, eine Spende (ṣadaqa) sei besser als eine freiwillige Pilgerfahrt. Als er selbst pilgerte und ihre Mühen kennenlernte, nahm er das zurück und sagte, die Pilgerfahrt sei besser.",
+          "meinung": "abu_hanifa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī ḥukm al-hadiyya li-l-muftī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 376,
+              "passage": "radd_al_muhtar.ms5016",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5016",
+              "passageSha256Text": "5d203efab282edb10410884cb01e0f9e33669c0876913f1afc82b450ef088051",
+              "zitatVon": 604,
+              "zitatBis": 785,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l01.a06",
+          "text": "Der Verfasser von al-Ikhtiyār schrieb in seiner Jugend für Anfänger einen kurzen Grundtext, al-Mukhtār. Darin wählte er die Meinung Abū Ḥanīfas, weil dieser „der Erste und der Würdigste“ sei.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Muqaddimat al-muʾallif",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 6,
+              "passage": "ikhtiyar.ms0002",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms2",
+              "passageSha256Text": "d65f3e28a91808c61ed70cdbe7cc78a301f8cebc0f19d871068bc0d05405da0b",
+              "zitatVon": 24,
+              "zitatBis": 198,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e06.l01.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e06.l01.a02",
+          "behauptung": "Abū Ḥanīfa nahm das Richteramt an, als man es ihm zum ersten Mal anbot.",
+          "richtig": false,
+          "begruendung": "Nach dem Bericht in Radd al-Muḥtār lehnte Abū Ḥanīfa das Richteramt dreimal ab, obwohl er dafür bestraft wurde. Das Werk führt den Bericht an, um zu zeigen, wie groß die Gefahr dieses Amtes ist.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l01.q02",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e06.l01.a03",
+          "anweisung": "Bringe die Gelehrten in die Reihenfolge der Überliefererkette aus Radd al-Muḥtār – vom früheren zum späteren.",
+          "schritte": [
+            "Ibrāhīm an-Nakhaʿī",
+            "Ḥammād",
+            "Abū Ḥanīfa",
+            "Muḥammad"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l01.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e06.l01.a04",
+          "anweisung": "Ordne nach Radd al-Muḥtār jedem Gelehrten die Brunnen zu, von denen er ausging.",
+          "paare": [
+            {
+              "links": "Abū Ḥanīfa",
+              "rechts": "Brunnen wie in Kufa, mit wenig Wasser"
+            },
+            {
+              "links": "Muḥammad",
+              "rechts": "Brunnen in Bagdad, mit viel Wasser"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l01.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e06.l01.a05",
+          "fall": "Ein Schüler liest, dass Abū Ḥanīfa zuerst die Spende für besser hielt als eine freiwillige Pilgerfahrt und später die Pilgerfahrt für besser. Er fragt sich, wie das zusammenpasst.",
+          "frage": "Wie erklärt Radd al-Muḥtār diesen Bericht?",
+          "optionen": [
+            "Abū Ḥanīfa änderte seine Meinung, nachdem er selbst gepilgert war; Erfahrung bringt mehr Wissen.",
+            "Der erste Bericht ist falsch, Abū Ḥanīfa hat seine Meinung nie geändert.",
+            "Abū Ḥanīfa ist nie gepilgert."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l01.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e06.l01.a01",
+          "behauptung": "Al-Ikhtiyār nennt Abū Ḥanīfa „den größten Imam“ (al-imām al-aʿẓam).",
+          "richtig": true,
+          "begruendung": "Al-Ikhtiyār spricht vom „größten Imam Abū Ḥanīfa an-Nuʿmān“; auch Radd al-Muḥtār verwendet diesen Ehrentitel.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e06.l02",
+      "titel": "Abū Yūsuf und Muḥammad ash-Shaybānī",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e06.l02.a01",
+          "text": "Neben Abū Ḥanīfa stehen in den Werken vor allem seine beiden Schüler Abū Yūsuf und Muḥammad (ibn al-Ḥasan). Al-Hidāya nennt die drei „unsere drei Gefährten“ (aṣḥābunā ath-thalātha), Radd al-Muḥtār „unsere drei Imame“ (aʾimmatunā ath-thalātha). Nennt Radd al-Muḥtār neben Abū Yūsuf und Muḥammad einfach „den Imam“, ist Abū Ḥanīfa gemeint.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 33,
+              "passage": "hidaya.ms0027",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms27",
+              "passageSha256Text": "a05f27885aad0f1ca38b2eb32865e1af6e6600cca73dd9dd7f22c85e3030072b",
+              "zitatVon": 45,
+              "zitatBis": 128,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab fī iṭālat ar-rukūʿ li-l-jāʾī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 508,
+              "passage": "radd_al_muhtar.ms0714",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms714",
+              "passageSha256Text": "7e67da38ed8c2686d3a567b17d96c44863af3896349a5cb9e514f831a28cace4",
+              "zitatVon": 542,
+              "zitatBis": 642,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Waqf › Maṭlab fī iṭlāq al-qāḍī bayʿ al-waqf",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 395,
+              "passage": "radd_al_muhtar.ms4076",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4076",
+              "passageSha256Text": "5c9c61220d6b401056f59e8b6cd55bb1757e6edc393f7a12784a51eeeb226bc1",
+              "zitatVon": 137,
+              "zitatBis": 230,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.a02",
+          "text": "Muḥammad ibn al-Ḥasan saß schon als junger Mann im Unterricht Abū Ḥanīfas. Nach einem Bericht aus aẓ-Ẓahīriyya, den Radd al-Muḥtār wiedergibt, kam er zu ihm, als er gerade religiös volljährig geworden war, und fragte: Muss ein Junge, der in der Nacht nach dem Nachtgebet volljährig wird, dieses Gebet wiederholen? Abū Ḥanīfa bejahte das. Muḥammad stand auf und wiederholte sein Gebet in einer Ecke der Moschee. Es war die erste Frage, die er bei Abū Ḥanīfa lernte. Als Abū Ḥanīfa sah, dass er nach seinem Wissen handelte, sagte er ihm eine gute Zukunft voraus – und so kam es.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Qaḍāʾ al-Fawāʾit",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 76,
+              "passage": "radd_al_muhtar.ms1095",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1095",
+              "passageSha256Text": "63841a176b1d750e2d313152abb169e82ebbe55fc8f696d014538d8a2092878b",
+              "zitatVon": 1397,
+              "zitatBis": 1547,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Qaḍāʾ al-Fawāʾit",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 76,
+              "passage": "radd_al_muhtar.ms1096",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1096",
+              "passageSha256Text": "ac7dbc6622631f95ba7904765adf85acf302aab547167bf4794189e1357e7e17",
+              "zitatVon": 0,
+              "zitatBis": 112,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 365,
+              "passage": "radd_al_muhtar.ms6074",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6074",
+              "passageSha256Text": "066696792869e29c3ff772d3db5e3c87611e3c81dece62cc0f19f767182f3683",
+              "zitatVon": 415,
+              "zitatBis": 468,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.a03",
+          "text": "Abū Yūsuf war oberster Richter, „Richter des Ostens und des Westens“. Darum hatte er nach Radd al-Muḥtār mehr Erfahrung im Richteramt als Muḥammad, und mehr Erfahrung bringt mehr Wissen. Deshalb gilt: In Fragen des Richteramts wird die Fatwa nach der Meinung Abū Yūsufs gegeben. Ibn ʿĀbidīn betont an anderer Stelle Abū Yūsufs Rang als Imam und Mujtahid.",
+          "meinung": "fatwa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: Yuftā bi-qawl al-Imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms4990",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4990",
+              "passageSha256Text": "53129933f39196f377f026261abdba59f85cf04186129121b3e5b9e41c352d1e",
+              "zitatVon": 418,
+              "zitatBis": 498,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī ḥukm al-hadiyya li-l-muftī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 375,
+              "passage": "radd_al_muhtar.ms5016",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5016",
+              "passageSha256Text": "5d203efab282edb10410884cb01e0f9e33669c0876913f1afc82b450ef088051",
+              "zitatVon": 535,
+              "zitatBis": 633,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Jumuʿa › Maṭlab fī jawāz istinābat al-khaṭīb",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 143,
+              "passage": "radd_al_muhtar.ms1208",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1208",
+              "passageSha256Text": "29f3fd725314411021354dd4a83db714a71183e61e9c157388a7589d8518f30e",
+              "zitatVon": 1145,
+              "zitatBis": 1199,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb aṣ-Ṣarīḥ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 263,
+              "passage": "radd_al_muhtar.ms2473",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms2473",
+              "passageSha256Text": "b326d7daaf1d4556af2d0791a096c8f3cb0af5fbbf47dadb05ccf00d7880c97a",
+              "zitatVon": 101,
+              "zitatBis": 178,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.a04",
+          "text": "Auch Muḥammad war Richter. Nach den Ṭabaqāt von ʿAbd al-Qādir, die Radd al-Muḥtār anführt, setzte ihn der Kalif ar-Rashīd als Richter von ar-Raqqa ein, entließ ihn und machte ihn später zum Richter von ar-Rayy. Nach einem anderen Bericht nahm er das Amt erst an, als man ihn fesselte, einsperrte und dazu zwang. Ibn ʿĀbidīn vermutet, dass seine Amtszeit kurz war; deshalb wurde er als Richter nicht so bekannt wie Abū Yūsuf, der Richter des Ostens und des Westens war.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī ḥukm al-hadiyya li-l-muftī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 375,
+              "passage": "radd_al_muhtar.ms5016",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5016",
+              "passageSha256Text": "5d203efab282edb10410884cb01e0f9e33669c0876913f1afc82b450ef088051",
+              "zitatVon": 348,
+              "zitatBis": 603,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: Abū Ḥanīfa duʿiya ilā l-qaḍāʾ thalāth marrāt fa-abā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 368,
+              "passage": "radd_al_muhtar.ms5003",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5003",
+              "passageSha256Text": "876bac700b01efe8da99bc2a26b00f2f962769e325bd541a8c174e1375f6b9da",
+              "zitatVon": 678,
+              "zitatBis": 742,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.a05",
+          "text": "Radd al-Muḥtār erwähnt ein Streitgespräch des Grammatikers al-Kisāʾī mit „ash-Shaybānī“ in der Versammlung des Kalifen ar-Rashīd. An anderer Stelle hält Ibn ʿĀbidīn fest, dass al-Kisāʾī eine sprachliche Frage an Muḥammad ibn al-Ḥasan schickte. Gemeint ist wohl beide Male Muḥammad; dass ash-Shaybānī und Muḥammad ibn al-Ḥasan dieselbe Person sind, sagen diese Stellen aber nicht ausdrücklich. Diese Zuordnung ist unsicher.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb at-Taʿlīq › Maṭlab fī alfāẓ ash-sharṭ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 350,
+              "passage": "radd_al_muhtar.ms2617",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms2617",
+              "passageSha256Text": "3cc741ac1529d03477f0eba4a5acc2ac0e41c93d52d9e637f1b51a2fd2663048",
+              "zitatVon": 557,
+              "zitatBis": 600,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb aṣ-Ṣarīḥ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 263,
+              "passage": "radd_al_muhtar.ms2473",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms2473",
+              "passageSha256Text": "b326d7daaf1d4556af2d0791a096c8f3cb0af5fbbf47dadb05ccf00d7880c97a",
+              "zitatVon": 30,
+              "zitatBis": 100,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.a06",
+          "text": "Für die Fatwa gibt es eine Rangfolge. Nach as-Sirājiyya, die Radd al-Muḥtār anführt, gibt der Muftī die Fatwa nach der Meinung des Imams (Abū Ḥanīfa), dann nach Abū Yūsuf, dann nach Muḥammad, dann nach Zufar und al-Ḥasan ibn Ziyād; nach der verbreiteten Fassung stehen Zufar und al-Ḥasan auf einer Stufe. Wer selbst kein Mujtahid ist, darf diese Reihenfolge nicht nach eigener Wahl verlassen. Das gilt dort, wo die Gelehrten der Schule nicht ausdrücklich eine andere Meinung bevorzugt haben; deren Bevorzugung folgt man.",
+          "meinung": "fatwa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Waqf › Maṭlab fī iṭlāq al-qāḍī bayʿ al-waqf",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 395,
+              "passage": "radd_al_muhtar.ms4076",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4076",
+              "passageSha256Text": "5c9c61220d6b401056f59e8b6cd55bb1757e6edc393f7a12784a51eeeb226bc1",
+              "zitatVon": 137,
+              "zitatBis": 285,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Waqf › Maṭlab fī iṭlāq al-qāḍī bayʿ al-waqf",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 395,
+              "passage": "radd_al_muhtar.ms4076",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4076",
+              "passageSha256Text": "5c9c61220d6b401056f59e8b6cd55bb1757e6edc393f7a12784a51eeeb226bc1",
+              "zitatVon": 733,
+              "zitatBis": 936,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: Yuftā bi-qawl al-Imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms4990",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4990",
+              "passageSha256Text": "53129933f39196f377f026261abdba59f85cf04186129121b3e5b9e41c352d1e",
+              "zitatVon": 749,
+              "zitatBis": 901,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.a07",
+          "text": "Wie streng die Rangfolge gilt, sehen die Gelehrten der Schule verschieden. Nach al-Ḥāwī al-Qudsī kommt es auf die Stärke des Beweises an, wenn die beiden Schüler Abū Ḥanīfa widersprechen. Ibn ʿĀbidīn erklärt, das betreffe nur jemanden, der die Beweise selbst prüfen kann (Mujtahid). Wer das nicht kann, folgt dem, was die Gelehrten der Schule bevorzugt haben; urteilt ein solcher Richter dagegen, ist sein Urteil nicht wirksam.",
+          "meinung": "fatwa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: Yuftā bi-qawl al-Imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms4990",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4990",
+              "passageSha256Text": "53129933f39196f377f026261abdba59f85cf04186129121b3e5b9e41c352d1e",
+              "zitatVon": 902,
+              "zitatBis": 1473,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: Yuftā bi-qawl al-Imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms4991",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4991",
+              "passageSha256Text": "2bf1376a2ab8a6bd589333b37528616627c6cef6988ae16101d646e23fc1e8dd",
+              "zitatVon": 0,
+              "zitatBis": 289,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.a08",
+          "text": "Lehrer und Schüler lernten voneinander: In manchen Fragen gab Abū Ḥanīfa seine Meinung auf und übernahm die seiner beiden Schüler. Al-Hidāya nennt das Bestreichen dicker Strümpfe (jawrab) bei der Gebetswaschung; nach dieser späteren Meinung wird die Fatwa gegeben. Radd al-Muḥtār nennt die Rezitation im Gebet: Abū Ḥanīfa schloss sich seinen Schülern an, dass das Gebet mit einer Rezitation auf Persisch nicht gültig ist, außer wenn jemand kein Arabisch kann.",
+          "meinung": "fatwa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 30,
+              "passage": "hidaya.ms0023",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms23",
+              "passageSha256Text": "0bbacf32bb51738effdc2d1a97a8c663858cc632b4ea1e332d00ed904ea961b7",
+              "zitatVon": 926,
+              "zitatBis": 1302,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab fī d-duʿāʾ bi-ghayr al-ʿarabiyya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 521,
+              "passage": "radd_al_muhtar.ms0735",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms735",
+              "passageSha256Text": "819fc0bc155d4b49a149f36777c74b18ad0a3055f05bcfc94bce68ba2ea40e1e",
+              "zitatVon": 415,
+              "zitatBis": 500,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab al-Fārisiyya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 484,
+              "passage": "radd_al_muhtar.ms0675",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms675",
+              "passageSha256Text": "9f65109e79fb141be735584233541aa569a48ff79a9ca9d33b9e7704a2ec9794",
+              "zitatVon": 145,
+              "zitatBis": 197,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.a09",
+          "text": "Die Schüler gaben die Lehre Abū Ḥanīfas nicht immer gleich wieder. Al-Hidāya berichtet von einer Frage zum freiwilligen Gebet: Abū Yūsuf bestritt eine Überlieferung, die Muḥammad von Abū Ḥanīfa weitergab, und berief sich auf seine eigene Überlieferung. Muḥammad blieb bei seiner Überlieferung.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb an-Nawāfil",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 69,
+              "passage": "hidaya.ms0070",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms70",
+              "passageSha256Text": "b7385fcdcc86a5f7a0c80bafe4fc1bd2d5ece8c34bda07aa340f94b7b02a4aa8",
+              "zitatVon": 1084,
+              "zitatBis": 1223,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.a10",
+          "text": "Abū Ḥanīfa hatte noch weitere Schüler. Radd al-Muḥtār nennt ʿAbdallāh ibn al-Mubārak einen der Gefährten Abū Ḥanīfas, der mit ihm Wissen, Verzicht auf weltlichen Überfluss (zuhd) und Gottesfurcht (waraʿ) teilte. Auch al-Qāsim ibn Maʿn zählt das Werk zu den Gefährten Abū Ḥanīfas; nach den Ṭabaqāt von ʿAbd al-Qādir lernte Muḥammad bei ihm.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Witr wa-n-Nawāfil › Maṭlab fī rakʿatay al-istikhāra",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 27,
+              "passage": "radd_al_muhtar.ms1013",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1013",
+              "passageSha256Text": "96ee12201121f50e3e76c9952958c424a73146822515af26c501236cee50ba2e",
+              "zitatVon": 1049,
+              "zitatBis": 1125,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Waqf › Faṣl fīmā yataʿallaqu bi-waqf al-awlād",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 498,
+              "passage": "radd_al_muhtar.ms4228",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4228",
+              "passageSha256Text": "e861a7d12267871e4283c81b661d381ab432e596d2aef8837817ebccd53b79d8",
+              "zitatVon": 1477,
+              "zitatBis": 1552,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Waqf › Faṣl fīmā yataʿallaqu bi-waqf al-awlād",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 498,
+              "passage": "radd_al_muhtar.ms4229",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4229",
+              "passageSha256Text": "785fbe464792baf59f89462269d24a7801a9e83ff24ced56514c23ed3584065c",
+              "zitatVon": 0,
+              "zitatBis": 67,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e06.l02.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e06.l02.a06",
+          "anweisung": "Bringe die Gelehrten in die Rangfolge, nach der der Muftī nach as-Sirājiyya die Fatwa gibt.",
+          "schritte": [
+            "Abū Ḥanīfa (der Imam)",
+            "Abū Yūsuf",
+            "Muḥammad",
+            "Zufar und al-Ḥasan ibn Ziyād"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e06.l02.a04",
+          "anweisung": "Ordne die Angaben aus Radd al-Muḥtār dem richtigen Schüler zu.",
+          "paare": [
+            {
+              "links": "Abū Yūsuf",
+              "rechts": "Richter des Ostens und des Westens"
+            },
+            {
+              "links": "Muḥammad",
+              "rechts": "Richter von ar-Raqqa, später von ar-Rayy"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e06.l02.a08",
+          "behauptung": "Abū Ḥanīfa blieb immer bei seiner ersten Meinung, auch wenn seine Schüler anders urteilten.",
+          "richtig": false,
+          "begruendung": "In manchen Fragen übernahm Abū Ḥanīfa die Meinung seiner beiden Schüler, etwa beim Bestreichen dicker Strümpfe (al-Hidāya) und bei der Rezitation im Gebet (Radd al-Muḥtār).",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e06.l02.a06",
+          "fall": "Ein Muftī ist selbst kein Mujtahid. Zu einer Frage findet er verschiedene Meinungen von Abū Ḥanīfa, Abū Yūsuf und Muḥammad. Die Gelehrten der Schule haben keine davon ausdrücklich bevorzugt.",
+          "frage": "Nach welcher Meinung gibt er nach as-Sirājiyya die Fatwa?",
+          "optionen": [
+            "Nach der Meinung Abū Ḥanīfas",
+            "Nach der Meinung, die ihm selbst am besten gefällt",
+            "Immer nach der Meinung Muḥammads"
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e06.l02.a02",
+          "behauptung": "Die erste Frage, die Muḥammad bei Abū Ḥanīfa lernte, setzte er sofort in die Tat um.",
+          "richtig": true,
+          "begruendung": "Nach dem Bericht aus aẓ-Ẓahīriyya wiederholte Muḥammad sein Gebet sofort in einer Ecke der Moschee. Abū Ḥanīfa sah darin ein gutes Zeichen für ihn.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l02.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e06.l02.a03",
+          "behauptung": "In Fragen des Richteramts wird die Fatwa nach Radd al-Muḥtār nach der Meinung Abū Yūsufs gegeben.",
+          "richtig": true,
+          "begruendung": "Abū Yūsuf war Richter des Ostens und des Westens und hatte darum mehr Erfahrung im Richteramt; deshalb folgt man ihm in diesen Fragen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e06.l03",
+      "titel": "Die großen Werke der Schule",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e06.l03.a01",
+          "text": "Von Muḥammad stammen mehrere Bücher, die die späteren Werke immer wieder anführen. Radd al-Muḥtār nennt unter anderem al-Aṣl, al-Jāmiʿ aṣ-Ṣaghīr, al-Jāmiʿ al-Kabīr, az-Ziyādāt, as-Siyar aṣ-Ṣaghīr und as-Siyar al-Kabīr. Die Bücher Muḥammads gelten dort als bekannte, weit verbreitete Werke, über die man die Worte eines Mujtahid zuverlässig weitergeben kann.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 535,
+              "passage": "radd_al_muhtar.ms0759",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms759",
+              "passageSha256Text": "f75a757d5a40e4457ca908d6ff89cdddb90d7460d560565e0ba08d7bdd78088c",
+              "zitatVon": 636,
+              "zitatBis": 754,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb an-Nikāḥ › Bāb Nikāḥ al-Kāfir",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 197,
+              "passage": "radd_al_muhtar.ms2360",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms2360",
+              "passageSha256Text": "1f412487293bbaafc23b4098d648e71e9a1d5a8aa1dc00b208b6018fc005b5db",
+              "zitatVon": 1332,
+              "zitatBis": 1386,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Qaḍāʾ al-Fawāʾit › Maṭlab fī isqāṭ aṣ-ṣalāh ʿan al-mayyit",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 72,
+              "passage": "radd_al_muhtar.ms1089",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1089",
+              "passageSha256Text": "0d8b6ca03106439a29d1bdd14efe13566bb9931948a1fef0963ce534b95d483f",
+              "zitatVon": 245,
+              "zitatBis": 279,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb as-Sariqa › Bāb Qaṭʿ aṭ-Ṭarīq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 119,
+              "passage": "radd_al_muhtar.ms3633",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms3633",
+              "passageSha256Text": "cb0ebd32858932d977a66e6a947f669d2ae15e89606e9e98f9ab34d5577b4b60",
+              "zitatVon": 1255,
+              "zitatBis": 1314,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī l-Ijtihād wa-shurūṭihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 366,
+              "passage": "radd_al_muhtar.ms4999",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4999",
+              "passageSha256Text": "d9f3f2640aad5b06f1690516eb78dca48d648edae55692d9bd0c4576adbe4ec5",
+              "zitatVon": 512,
+              "zitatBis": 608,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.a02",
+          "text": "Was in bestimmten Büchern Muḥammads überliefert ist, heißt ẓāhir ar-riwāya („offenkundige Überlieferung“). Al-Ḥākim ash-Shahīd fasste diese Bücher in seinem Werk al-Kāfī zusammen; Radd al-Muḥtār nennt al-Kāfī eine Sammlung der Worte Muḥammads aus seinen Büchern, die ẓāhir ar-riwāya sind. Zu diesen Büchern zählt Radd al-Muḥtār ausdrücklich al-Aṣl.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Mabḥath fī ṣawm yawm ash-shakk",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 385,
+              "passage": "radd_al_muhtar.ms1609",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1609",
+              "passageSha256Text": "72f61944d62263cdf3108115a65fc59dd97b4af46c259b07a8fc6070125c4f8f",
+              "zitatVon": 95,
+              "zitatBis": 177,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Bāb al-Iʿtikāf",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 448,
+              "passage": "radd_al_muhtar.ms1717",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1717",
+              "passageSha256Text": "f08851c280af509b4bf53ab1b027fa6f450c56c2d18875e8f881c73cbcd345af",
+              "zitatVon": 122,
+              "zitatBis": 167,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 532,
+              "passage": "radd_al_muhtar.ms0754",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms754",
+              "passageSha256Text": "f826f2d8be8831367773a2643dee164fd6396b85460bdb9771ba680de23992b7",
+              "zitatVon": 775,
+              "zitatBis": 801,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.a03",
+          "text": "Daneben gibt es Überlieferungen, die die Werke an-nawādir („seltene Überlieferungen“) nennen. Sie können von ẓāhir ar-riwāya abweichen. In einem Beispiel hält Radd al-Muḥtār fest: Was in as-Sirāj steht, ist eine Überlieferung der nawādir; was in den meisten Büchern steht, ist ẓāhir ar-riwāya. Bei einer Frage zur Niederwerfung beim Hören eines Niederwerfungsverses heißt es: Auf ẓāhir ar-riwāya ist Verlass.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab fī iṭālat ar-rukūʿ li-l-jāʾī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 501,
+              "passage": "radd_al_muhtar.ms0704",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms704",
+              "passageSha256Text": "e6a43d79407ddf3bae9c28fe5bb7d44dd1f25a16854406e7b07776ed961b349f",
+              "zitatVon": 563,
+              "zitatBis": 627,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Sujūd at-Tilāwa",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 117,
+              "passage": "radd_al_muhtar.ms1166",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1166",
+              "passageSha256Text": "b385f7b77a979f6c15aa4534b16bbc92ef47fc71687f636c83cc2f6314ffd169",
+              "zitatVon": 164,
+              "zitatBis": 218,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.a04",
+          "text": "Von Abū Yūsuf zitiert Radd al-Muḥtār das Kitāb al-Kharāj. Es behandelt unter anderem Land, das die Muslime eroberten, die Abgabe darauf (kharāj) und die Befugnis des Herrschers, herrenloses Land so zu vergeben, wie es den Muslimen am meisten nützt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Jihād › Bāb al-ʿUshr wa-l-Kharāj wa-l-Jizya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 178,
+              "passage": "radd_al_muhtar.ms3729",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms3729",
+              "passageSha256Text": "861f96e675b3f0eb882b7fe26747b5b145eca1cd9930285e0601bfbd9e20e794",
+              "zitatVon": 105,
+              "zitatBis": 345,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Jihād › Bāb al-ʿUshr wa-l-Kharāj wa-l-Jizya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 193,
+              "passage": "radd_al_muhtar.ms3754",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms3754",
+              "passageSha256Text": "06f07d847cf0b46dcdba73a98e646a25654d38f18df88fb1959aa825d2a7b013",
+              "zitatVon": 820,
+              "zitatBis": 952,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.a05",
+          "text": "In seinem Buch al-Āthār überliefert Muḥammad Berichte, die er von Abū Ḥanīfa gehört hat. Nach dem Buch al-Manāqib, das Radd al-Muḥtār anführt, hat Muḥammad 200.000 Fragen zu Erlaubtem und Verbotenem ausgearbeitet, die die Menschen kennen müssen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣalāt al-Janāʾiz › Maṭlab fī dafn al-mayyit",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 237,
+              "passage": "radd_al_muhtar.ms1360",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1360",
+              "passageSha256Text": "496b21e57f315b396ba0c1d18b1cb7cd7fc0573f24e07e0a59e6fab5d43b3884",
+              "zitatVon": 847,
+              "zitatBis": 898,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayrih › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 408,
+              "passage": "radd_al_muhtar.ms6141",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6141",
+              "passageSha256Text": "b2e8b884bd0a3d07f5c2552c71aa53454002ef7ba2a934310f2abb58932ee1dc",
+              "zitatVon": 421,
+              "zitatBis": 508,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.a06",
+          "text": "Die Bücher der Schule haben unterschiedliches Gewicht: kurze Grundtexte (mutūn), Kommentare (shurūḥ) und Fatwa-Sammlungen (fatāwā). Widersprechen sie sich, gilt nach Radd al-Muḥtār der Grundtext vor dem Kommentar und der Kommentar vor der Fatwa-Sammlung. Der Grund: Grundtexte und Kommentare geben die Fragen wieder, die von den drei Imamen überliefert sind. Die Fatwa-Sammlungen enthalten dagegen Antworten späterer Gelehrter auf neue Fälle, die diese aus den Regeln der Schule herleiteten; darum gibt es dort mehr Meinungsverschiedenheiten. Die Grundtexte nennen zuerst die Meinung Abū Ḥanīfas, weil sie dafür verfasst sind, seine Lehre weiterzugeben.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Faṣl fī l-Ḥabs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 382,
+              "passage": "radd_al_muhtar.ms5026",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5026",
+              "passageSha256Text": "f05491cc2290a1195cac15a6808f4578941a5f3b116ab1047dedcf24d938f237",
+              "zitatVon": 574,
+              "zitatBis": 717,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb an-Nikāḥ › Bāb al-Walī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 59,
+              "passage": "radd_al_muhtar.ms2124",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms2124",
+              "passageSha256Text": "e4eb1d15987a5f3ad09d2d6773b08947d2eb43407da88d20e88d4706d56a5842",
+              "zitatVon": 520,
+              "zitatBis": 600,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb ash-Shufʿa › Bāb mā yubṭiluhā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 245,
+              "passage": "radd_al_muhtar.ms5887",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5887",
+              "passageSha256Text": "a0939ac6c4b210c4bbb6bb3134783017e13325331fb8647669dd03fb475fa1b9",
+              "zitatVon": 1152,
+              "zitatBis": 1474,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Waqf › Maṭlab fī iṭlāq al-qāḍī bayʿ al-waqf",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 395,
+              "passage": "radd_al_muhtar.ms4076",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4076",
+              "passageSha256Text": "5c9c61220d6b401056f59e8b6cd55bb1757e6edc393f7a12784a51eeeb226bc1",
+              "zitatVon": 605,
+              "zitatBis": 720,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.a07",
+          "text": "Zu den Grundtexten zählt Radd al-Muḥtār etwa den Mukhtaṣar al-Qudūrī, al-Kanz, al-Majmaʿ, al-Wiqāya, an-Nuqāya und al-Multaqā. Zu solchen Grundtexten schrieben spätere Gelehrte Kommentare; zum Mukhtaṣar al-Qudūrī nennt Radd al-Muḥtār etwa as-Sirāj von al-Ḥaddādī und al-Mujtabā von az-Zāhidī.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Maṭlab as-sunna takūnu sunnat ʿayn wa-sunnat kifāya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 540,
+              "passage": "radd_al_muhtar.ms0768",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms768",
+              "passageSha256Text": "9d737ef4cd47c0f2f57653c4505fdf04fdcc5ebf7e4933012e5bb9c7236feee4",
+              "zitatVon": 519,
+              "zitatBis": 581,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb ash-Shufʿa › Bāb mā yubṭiluhā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 245,
+              "passage": "radd_al_muhtar.ms5888",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5888",
+              "passageSha256Text": "7c896e108a437c3da58c2745d348be860c37a79adfce3322f0479ec736e699db",
+              "zitatVon": 0,
+              "zitatBis": 90,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī iʿtibārāt al-murakkab at-tāmm",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 86,
+              "passage": "radd_al_muhtar.ms0012",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms12",
+              "passageSha256Text": "7cf9c565f8f4db950b28bd67dc0ead3cfe6a4e41bfe7d42c18d4da72ff21a651",
+              "zitatVon": 929,
+              "zitatBis": 970,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb al-Ḥaḍāna › Maṭlab shurūṭ al-ḥāḍina",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 558,
+              "passage": "radd_al_muhtar.ms2957",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms2957",
+              "passageSha256Text": "c9884a976981716b117670e54207333968b01bf1cb97a7bd8e0b57dbc1db4e1a",
+              "zitatVon": 1415,
+              "zitatBis": 1447,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.a08",
+          "text": "Der Verfasser von al-Hidāya schrieb zuerst einen kurzen Grundtext, Bidāyat al-Mubtadī. Er hatte versprochen, ihn in einem großen Kommentar namens Kifāyat al-Muntahī zu erklären, und begann damit. Als er merkte, dass dieser Kommentar zu ausführlich wurde und man das Buch deshalb meiden könnte, schrieb er stattdessen einen kürzeren Kommentar: al-Hidāya. Darin wollte er das Wesentliche der Überlieferung und der Begründung zusammenbringen und Überflüssiges weglassen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Muqaddimat al-muʾallif (vor Kitāb aṭ-Ṭahārāt)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 11,
+              "passage": "hidaya.ms0001",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms1",
+              "passageSha256Text": "ba4640acfc688c5d16875943ca205b4286052fce775c5828d64818e5e387d0ae",
+              "zitatVon": 548,
+              "zitatBis": 892,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.a09",
+          "text": "Al-Ikhtiyār ist ein Kommentar seines Verfassers zu seinem eigenen Grundtext al-Mukhtār. Den Grundtext nannte er „das für die Fatwa Ausgewählte“ (al-Mukhtār li-l-fatwā), weil die meisten Rechtsgelehrten diese Meinungen gewählt und gebilligt hätten. Als Gelehrte mit dem Buch arbeiteten, baten sie ihn um einen Kommentar. Darin erklärte er die Gründe der Fragen, nannte die Meinungsunterschiede „unserer Gefährten“ und fügte Fragen hinzu, die viele Menschen betreffen und für die Fatwa gebraucht werden.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Muqaddimat al-muʾallif",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 6,
+              "passage": "ikhtiyar.ms0001",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms1",
+              "passageSha256Text": "d74e12135e5eb6604cd2a4ae326e6ae154f17e00b76002543f1e051155ff66b2",
+              "zitatVon": 1074,
+              "zitatBis": 1122,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Muqaddimat al-muʾallif",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 6,
+              "passage": "ikhtiyar.ms0002",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms2",
+              "passageSha256Text": "d65f3e28a91808c61ed70cdbe7cc78a301f8cebc0f19d871068bc0d05405da0b",
+              "zitatVon": 200,
+              "zitatBis": 419,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Muqaddimat al-muʾallif",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 6,
+              "passage": "ikhtiyar.ms0002",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms2",
+              "passageSha256Text": "d65f3e28a91808c61ed70cdbe7cc78a301f8cebc0f19d871068bc0d05405da0b",
+              "zitatVon": 559,
+              "zitatBis": 679,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.a10",
+          "text": "Weil viele den Grundtext al-Mukhtār auswendig lernten, bat man den Verfasser, auch die Meinungen anderer Rechtsgelehrter zu kennzeichnen. Er gab jedem ein Zeichen aus Buchstaben: s (sīn) für Abū Yūsuf, m (mīm) für Muḥammad, sm für beide, z (zāy) für Zufar und f (fāʾ) für ash-Shāfiʿī.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Muqaddimat al-muʾallif",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 6,
+              "passage": "ikhtiyar.ms0001",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms1",
+              "passageSha256Text": "d74e12135e5eb6604cd2a4ae326e6ae154f17e00b76002543f1e051155ff66b2",
+              "zitatVon": 1123,
+              "zitatBis": 1508,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.a11",
+          "text": "Radd al-Muḥtār von Ibn ʿĀbidīn ist eine Randerläuterung (ḥāshiya) zu dem Werk ad-Durr al-Mukhtār: Es greift Stellen daraus auf („seine Worte: …“) und erklärt sie. Ibn ʿĀbidīn verweist darin auch auf eigene Schriften, etwa eine Lehrdichtung über die Regeln des Muftī (Rasm al-Muftī) mit Kommentar sowie Tanqīḥ al-Ḥāmidiyya und Tanbīh al-Wulāt wa-l-Ḥukkām.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Titelzeile vor Kitāb aṭ-Ṭahāra",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 1,
+              "passage": "radd_al_muhtar.ms0001",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1",
+              "passageSha256Text": "df22a5c27e4df1f00b6c63d528c9c47067dea53b5fe8fa14e142a55416326bd4",
+              "zitatVon": 0,
+              "zitatBis": 82,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: Yuftā bi-qawl al-Imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms4991",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4991",
+              "passageSha256Text": "2bf1376a2ab8a6bd589333b37528616627c6cef6988ae16101d646e23fc1e8dd",
+              "zitatVon": 679,
+              "zitatBis": 721,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Faṣl fī l-Ḥabs › Maṭlab: al-qaḍāʾ yaqbalu t-taqyīd wa-t-taʿlīq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 420,
+              "passage": "radd_al_muhtar.ms5092",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5092",
+              "passageSha256Text": "53c29792e97e1328790c7c40f4fcd49974a9e70394e3dd1d1a9ce7c49bd96ced",
+              "zitatVon": 1359,
+              "zitatBis": 1445,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e06.l03.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e06.l03.a10",
+          "anweisung": "Ordne jedem Zeichen aus al-Mukhtār den Gelehrten zu, dessen Meinung es kennzeichnet.",
+          "paare": [
+            {
+              "links": "s (sīn)",
+              "rechts": "Abū Yūsuf"
+            },
+            {
+              "links": "m (mīm)",
+              "rechts": "Muḥammad"
+            },
+            {
+              "links": "sm",
+              "rechts": "Abū Yūsuf und Muḥammad"
+            },
+            {
+              "links": "z (zāy)",
+              "rechts": "Zufar"
+            },
+            {
+              "links": "f (fāʾ)",
+              "rechts": "ash-Shāfiʿī"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.q02",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e06.l03.a06",
+          "anweisung": "Widersprechen sich die Bücher, welches hat nach Radd al-Muḥtār Vorrang? Ordne vom stärksten zum schwächsten.",
+          "schritte": [
+            "Grundtext (matn)",
+            "Kommentar (sharḥ)",
+            "Fatwa-Sammlung (fatāwā)"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.q03",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e06.l03.a08",
+          "anweisung": "Bringe die Schritte, die der Verfasser von al-Hidāya beschreibt, in die richtige Reihenfolge.",
+          "schritte": [
+            "Er schreibt den kurzen Grundtext Bidāyat al-Mubtadī.",
+            "Er beginnt den großen Kommentar Kifāyat al-Muntahī.",
+            "Er merkt, dass der Kommentar zu ausführlich wird.",
+            "Er schreibt den kürzeren Kommentar al-Hidāya."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e06.l03.a02",
+          "behauptung": "Al-Kāfī von al-Ḥākim ash-Shahīd fasst die Bücher Muḥammads zusammen, die als ẓāhir ar-riwāya gelten.",
+          "richtig": true,
+          "begruendung": "Radd al-Muḥtār nennt al-Kāfī eine Sammlung der Worte Muḥammads aus seinen Büchern, die ẓāhir ar-riwāya sind, und eine Zusammenfassung dieser Bücher.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e06.l03.a06",
+          "fall": "Ein Schüler findet zu einer Frage im Grundtext (matn) eine Aussage und in einer Fatwa-Sammlung eine andere.",
+          "frage": "Welcher Aussage folgt man nach Radd al-Muḥtār in der Regel?",
+          "optionen": [
+            "Der Aussage im Grundtext",
+            "Der Aussage in der Fatwa-Sammlung, weil sie jünger ist",
+            "Keiner von beiden"
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.q06",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e06.l03.a09",
+          "anweisung": "Ordne die beiden Bücher des Verfassers von al-Ikhtiyār ihrer Beschreibung zu.",
+          "paare": [
+            {
+              "links": "al-Mukhtār",
+              "rechts": "kurzer Grundtext, „das für die Fatwa Ausgewählte“"
+            },
+            {
+              "links": "al-Ikhtiyār",
+              "rechts": "Kommentar mit den Gründen der Fragen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l03.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e06.l03.a04",
+          "behauptung": "Das Kitāb al-Kharāj stammt nach Radd al-Muḥtār von Muḥammad.",
+          "richtig": false,
+          "begruendung": "Radd al-Muḥtār zitiert das Kitāb al-Kharāj als Werk Abū Yūsufs.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e06.l04",
+      "titel": "Die Ausbreitung der Schule",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e06.l04.a01",
+          "text": "Die Werke nennen Gelehrte der Schule aus verschiedenen Gegenden. Sie unterscheiden etwa die Iraker (al-ʿIrāqiyyūn) und die Gelehrten Bucharas (al-Bukhāriyyūn), die in manchen Fragen verschieden urteilen. Zu den großen Gelehrten des Irak zählt Radd al-Muḥtār Abū l-Ḥasan al-Karkhī und Abū Bakr al-Jaṣṣāṣ.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī iʿtibārāt al-murakkab at-tāmm",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 86,
+              "passage": "radd_al_muhtar.ms0012",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms12",
+              "passageSha256Text": "7cf9c565f8f4db950b28bd67dc0ead3cfe6a4e41bfe7d42c18d4da72ff21a651",
+              "zitatVon": 1025,
+              "zitatBis": 1079,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb an-Nikāḥ › Bāb al-Kafāʾa",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 86,
+              "passage": "radd_al_muhtar.ms2171",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms2171",
+              "passageSha256Text": "94e86bb5c6263df8e4557bcc02dea9fb89542c71a77d6ada3109aff2a7c6a97f",
+              "zitatVon": 594,
+              "zitatBis": 669,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l04.a02",
+          "text": "Weitere Gruppen sind die Gelehrten Chorasans (al-Khurāsāniyyūn), Balchs, Samarkands und Transoxaniens (mā warāʾa n-nahr, das Land jenseits des Flusses). Ihre Urteile können auseinandergehen: So erlaubten nach Radd al-Muḥtār die Gelehrten Samarkands in einer Frage zum Bestreichen der Fußbekleidung etwas, das die Gelehrten Bucharas nicht erlaubten. Der Verfasser von al-Hidāya stellt „unsere Gelehrten“ den Gelehrten Balchs gegenüber.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Imāma › Maṭlab fī takrār al-jamāʿa fī l-masjid",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 554,
+              "passage": "radd_al_muhtar.ms0791",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms791",
+              "passageSha256Text": "2719bfdf88e351f07e75a3fecd48a08aab8592b209691ccc31750998e6584cc5",
+              "zitatVon": 531,
+              "zitatBis": 566,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 262,
+              "passage": "radd_al_muhtar.ms0300",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms300",
+              "passageSha256Text": "8cec29a13653a4bfa4706f9c2f365dc149818a10d0f6613e904940579f9b93bb",
+              "zitatVon": 815,
+              "zitatBis": 854,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Aymān › Maṭlab fī l-farq bayna s-sahw wa-n-nisyān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 711,
+              "passage": "radd_al_muhtar.ms3215",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms3215",
+              "passageSha256Text": "9787d245606be7dccf12f70331786f3d8eeabf44de954e489705d387949c62f3",
+              "zitatVon": 295,
+              "zitatBis": 347,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Imāma",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 56,
+              "passage": "hidaya.ms0055",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms55",
+              "passageSha256Text": "d5d24fc47b0095d317028a460e0a0943104a3c8537ce93d65676dd0ca2e0efe7",
+              "zitatVon": 718,
+              "zitatBis": 761,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l04.a03",
+          "text": "Zur Zeit Ibn ʿĀbidīns urteilten die Richter im Osmanischen Reich nach dieser Schule: Nach Radd al-Muḥtār waren die Richter seiner Zeit beauftragt, nach den richtigsten Meinungen Abū Ḥanīfas zu urteilen. Ernannte ein Sultan einen Richter, schrieb er ihm in der Ernennungsurkunde vor, nach den richtigsten Meinungen der Schule zu urteilen – so, wie es schon seine Vorgänger getan hatten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb al-Liʿān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 489,
+              "passage": "radd_al_muhtar.ms2846",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms2846",
+              "passageSha256Text": "17dc52702f834fff41265a4e4a598c8082b4121a8b4d45abd7bd41573c70cf39",
+              "zitatVon": 1279,
+              "zitatBis": 1337,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Faṣl fī l-Ḥabs › Maṭlab: al-qaḍāʾ yaqbalu t-taqyīd wa-t-taʿlīq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 420,
+              "passage": "radd_al_muhtar.ms5092",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5092",
+              "passageSha256Text": "53c29792e97e1328790c7c40f4fcd49974a9e70394e3dd1d1a9ce7c49bd96ced",
+              "zitatVon": 899,
+              "zitatBis": 1337,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l04.a04",
+          "text": "Auch Muftīs des Osmanischen Reiches führt Radd al-Muḥtār an: Gelehrte des osmanischen Staates gaben Fatwas zu Regeln, die auf Anordnungen des Sultans beruhten, und ʿAlī Efendi, der Muftī der osmanischen Länder, wird mit einer Fatwa zitiert.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Buyūʿ › Maṭlab fī l-kadak",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 524,
+              "passage": "radd_al_muhtar.ms4269",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4269",
+              "passageSha256Text": "3ec7b9195c87cf055d213553593412786055e15c4050cc37fc7fcd374b9089ce",
+              "zitatVon": 864,
+              "zitatBis": 930,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Muḍāraba › Bāb al-Muḍārib yuḍāribu › Faṣl fī l-Mutafarriqāt",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 660,
+              "passage": "radd_al_muhtar.ms5446",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5446",
+              "passageSha256Text": "5078935cd61112da7531716f36b98f459e3af25a35bae8e4eeaca54708267b56",
+              "zitatVon": 1225,
+              "zitatBis": 1269,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l04.a05",
+          "text": "Radd al-Muḥtār nennt auch Gelehrte der Schule in Damaskus, etwa den Muftī von Damaskus ʿAbd ar-Raḥmān al-ʿImādī, und spricht – nach dem Werk al-Baḥr – vom obersten Richter in Ägypten (qāḍī al-quḍāt bi-Miṣr).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Miyāh › Tanbīh muhimm fī ṭarḥ az-zibl fī l-qasāṭil",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 189,
+              "passage": "radd_al_muhtar.ms0180",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms180",
+              "passageSha256Text": "45f5d7546ca87994aa32eec535d6384580da452739a5c897b9a06cdd4b008e4d",
+              "zitatVon": 238,
+              "zitatBis": 280,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Jumuʿa › Maṭlab fī jawāz istinābat al-khaṭīb",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 143,
+              "passage": "radd_al_muhtar.ms1208",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1208",
+              "passageSha256Text": "29f3fd725314411021354dd4a83db714a71183e61e9c157388a7589d8518f30e",
+              "zitatVon": 1252,
+              "zitatBis": 1308,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e06.l04.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e06.l04.a01",
+          "behauptung": "Radd al-Muḥtār zählt al-Karkhī und al-Jaṣṣāṣ zu den großen Gelehrten des Irak.",
+          "richtig": true,
+          "begruendung": "Radd al-Muḥtār nennt Abū l-Ḥasan al-Karkhī und Abū Bakr al-Jaṣṣāṣ ausdrücklich „große Gelehrte des Irak“.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l04.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e06.l04.a02",
+          "behauptung": "Die Gelehrten der Schule urteilten in allen Gegenden immer gleich.",
+          "richtig": false,
+          "begruendung": "Die Werke nennen Unterschiede, etwa zwischen den Gelehrten Samarkands und Bucharas oder zwischen „unseren Gelehrten“ (al-Hidāya) und den Gelehrten Balchs.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l04.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e06.l04.a03",
+          "fall": "Zur Zeit Ibn ʿĀbidīns ernennt ein osmanischer Sultan einen Richter. In der Ernennungsurkunde steht, nach welchen Meinungen er urteilen soll.",
+          "frage": "Was steht dort nach Radd al-Muḥtār?",
+          "optionen": [
+            "Er soll nach den richtigsten Meinungen der Schule urteilen.",
+            "Er darf frei wählen, nach welcher Meinung er urteilt.",
+            "Er soll nur nach eigenem Ermessen urteilen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l04.q04",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e06.l04.a05",
+          "anweisung": "Ordne dem Ort das Amt zu, das Radd al-Muḥtār dort nennt.",
+          "paare": [
+            {
+              "links": "Damaskus",
+              "rechts": "Muftī ʿAbd ar-Raḥmān al-ʿImādī"
+            },
+            {
+              "links": "Ägypten",
+              "rechts": "oberster Richter (qāḍī al-quḍāt)"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l04.q05",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e06.l04.a01",
+          "anweisung": "Ordne die Gruppen von Gelehrten ihrer Gegend zu.",
+          "paare": [
+            {
+              "links": "al-ʿIrāqiyyūn",
+              "rechts": "Irak"
+            },
+            {
+              "links": "al-Bukhāriyyūn",
+              "rechts": "Buchara"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e06.l05",
+      "titel": "Frühere und spätere Gelehrte: die Schule im Wandel der Zeit",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e06.l05.a01",
+          "text": "Die Werke unterscheiden frühere Gelehrte der Schule (al-mutaqaddimūn) und spätere (al-mutaʾakhkhirūn). Radd al-Muḥtār spricht etwa von „unseren früheren Gefährten“. Der Verfasser von al-Hidāya schrieb ein eigenes Buch, at-Tajnīs, über Fragen, die die Späteren hergeleitet hatten und zu denen die Früheren nichts ausdrücklich festgelegt hatten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās › Maṭlab fī taṭhīr ad-duhn wa-l-ʿasal",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 334,
+              "passage": "radd_al_muhtar.ms0422",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms422",
+              "passageSha256Text": "f8d7f1ee6355c76894f186bd7dd613c3aea8e507471dad1f1e2ce93cca2aa5f0",
+              "zitatVon": 134,
+              "zitatBis": 231,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Miyāh › Maṭlab law udkhila l-māʾ min aʿlā l-ḥawḍ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 192,
+              "passage": "radd_al_muhtar.ms0185",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms185",
+              "passageSha256Text": "250c678cc4a38b801dce56836875148522d96668440158d82394959dcd4330e2",
+              "zitatVon": 485,
+              "zitatBis": 519,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l05.a02",
+          "text": "Al-Hidāya zeigt an einem Beispiel, dass veränderte Verhältnisse eine Rolle spielen: Eine zweite Aufforderung zum Morgengebet zwischen Gebetsruf und Iqāma (tathwīb) führten die Gelehrten von Kufa nach der Zeit der Gefährten ein, weil sich die Lage der Menschen geändert hatte. Die Späteren hielten sie bei allen Gebeten für gut, weil die Menschen in religiösen Dingen nachlässiger geworden waren.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 41,
+              "passage": "hidaya.ms0037",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms37",
+              "passageSha256Text": "068f9af6d8b9b3789ac17f29cdb2ff78a8676896853efe092dc3b5c15aeabb63",
+              "zitatVon": 828,
+              "zitatBis": 1059,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l05.a03",
+          "text": "Ein weiteres Beispiel nennt Radd al-Muḥtār: Nach den Grundtexten, Kommentaren und Fatwa-Sammlungen ist es nicht gültig, sich für eine gottesdienstliche Handlung bezahlen zu lassen. Die Späteren machten eine Ausnahme und erlaubten Lohn für den Unterricht, den Gebetsruf und das Vorbeten. Sie begründeten das mit einer Notlage: Die Zahlungen aus der Staatskasse waren ausgeblieben, und ohne Lohn drohte das religiöse Wissen verloren zu gehen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥajj › Bāb al-Ḥajj ʿan al-Ghayr › Maṭlab fī ihdāʾ thawāb al-aʿmāl li-l-ghayr",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 595,
+              "passage": "radd_al_muhtar.ms1969",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1969",
+              "passageSha256Text": "a5f92676dc59b4a1dbe64e4e003ef6b73e5988671c749c24337d4dc2b461efa5",
+              "zitatVon": 349,
+              "zitatBis": 573,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l05.a04",
+          "text": "Für die Fatwa folgt daraus eine Regel: Wo die Meinungen wegen veränderter Zeiten auseinandergehen – etwa ob man sich bei Zeugen mit der äußerlich erkennbaren Rechtschaffenheit begnügt – oder wo sich die späteren Gelehrten geeinigt haben, wie bei der Pacht von Ackerland (muzāraʿa), wählt man die Meinung der beiden Schüler. Ein späterer Gelehrter, al-Maqdisī, sagte in einer Frage sogar, man solle die Fatwa nach ihrer Meinung geben, zumal sich die Urteile mit den Zeiten ändern.",
+          "meinung": "fatwa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: Yuftā bi-qawl al-Imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms4990",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4990",
+              "passageSha256Text": "53129933f39196f377f026261abdba59f85cf04186129121b3e5b9e41c352d1e",
+              "zitatVon": 629,
+              "zitatBis": 748,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb ad-Diyāt › Bāb al-Qasāma",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 636,
+              "passage": "radd_al_muhtar.ms6492",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6492",
+              "passageSha256Text": "61ea077e3a20e338069955ad8c1e85e93ef853b1e976404cdb280863ac55e5b4",
+              "zitatVon": 418,
+              "zitatBis": 697,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e06.l05.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e06.l05.a01",
+          "anweisung": "Ordne die Begriffe ihrer Bedeutung zu.",
+          "paare": [
+            {
+              "links": "al-mutaqaddimūn",
+              "rechts": "frühere Gelehrte der Schule"
+            },
+            {
+              "links": "al-mutaʾakhkhirūn",
+              "rechts": "spätere Gelehrte der Schule"
+            },
+            {
+              "links": "at-Tajnīs",
+              "rechts": "Buch über Herleitungen der Späteren"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l05.q02",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e06.l05.a02",
+          "anweisung": "Ordne die Entwicklung des tathwīb nach al-Hidāya zeitlich.",
+          "schritte": [
+            "Zeit der Gefährten",
+            "Die Gelehrten von Kufa führen den tathwīb beim Morgengebet ein.",
+            "Die Späteren halten ihn bei allen Gebeten für gut."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l05.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e06.l05.a03",
+          "behauptung": "Nach den Grundtexten der Schule darf man sich für jede gottesdienstliche Handlung bezahlen lassen.",
+          "richtig": false,
+          "begruendung": "Grundtexte, Kommentare und Fatwa-Sammlungen halten das für nicht gültig. Erst die Späteren erlaubten wegen einer Notlage Lohn für Unterricht, Gebetsruf und Vorbeten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l05.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e06.l05.a03",
+          "fall": "Lehrfall: In einer Gegend bekommen Lehrer und Vorbeter keine Zahlungen mehr aus der Staatskasse. Es wird befürchtet, dass deshalb niemand mehr unterrichtet.",
+          "frage": "Wie gingen die späteren Gelehrten nach Radd al-Muḥtār mit einer solchen Lage um?",
+          "optionen": [
+            "Sie erlaubten wegen der Notlage Lohn für Unterricht, Gebetsruf und Vorbeten.",
+            "Sie blieben dabei, dass jeder Lohn ungültig ist, ohne Ausnahme.",
+            "Sie erlaubten Lohn nur für den Gebetsruf."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e06.l05.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e06.l05.a04",
+          "behauptung": "Wo eine Meinungsverschiedenheit auf veränderte Zeiten zurückgeht, wählt man nach Radd al-Muḥtār die Meinung der beiden Schüler.",
+          "richtig": true,
+          "begruendung": "Radd al-Muḥtār nennt als Ausnahme von der Rangfolge Fragen, in denen sich die Meinungen wegen veränderter Zeiten unterscheiden, und Fragen, in denen sich die Späteren geeinigt haben.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}
