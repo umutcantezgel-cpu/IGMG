@@ -1,0 +1,2341 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "grundwissen",
+  "stufe": "vertiefung",
+  "einheit": {
+    "schluessel": "islam.vertiefung.e08",
+    "reihenfolge": 28,
+    "thema": {
+      "de": "Nach hanefitischer Lehre – Grundwissen II: Umgang mit Koran und Hadith"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Nach hanefitischer Lehre: Ich kenne die Reinheitsregeln für das Berühren und Rezitieren des Korans und weiß, wo die Werke der Schule verschieden urteilen."
+      },
+      {
+        "de": "Ich kann beschreiben, welche Rolle die Rezitation im Gebet nach den Werken spielt; Verse erscheinen dabei nur als Verweis."
+      },
+      {
+        "de": "Ich kenne Begriffe, mit denen die Werke der Schule Überlieferungen einordnen, und weiß, wie sie mit schwachen Hadithen umgehen."
+      },
+      {
+        "de": "Ich weiß, was die Werke über den Wortlaut des Korans, die Basmala, die Suren und die Achtung vor dem Muṣḥaf sagen."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.vertiefung.e08.l01",
+      "titel": "Den Koran berühren und rezitieren: Reinheitsregeln",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a01",
+          "text": "Wer keine Gebetswaschung hat (muḥdith), darf nach Nūr al-Īḍāḥ drei Dinge nicht tun: beten, die Kaaba umrunden (ṭawāf) und den Muṣḥaf – das geschriebene Exemplar des Korans – ohne Hülle berühren. Auch al-Ikhtiyār nennt es für ihn nicht erlaubt, den Muṣḥaf ohne Hülle zu berühren.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Mā yaḥrumu ʿalā l-Muḥdith",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 32,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 705,
+              "zitatBis": 769,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mā yaḥrumu ʿalā l-Muḥdith wa-l-Junub wa-l-Ḥāʾiḍ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 13,
+              "passage": "ikhtiyar.ms0009",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms9",
+              "passageSha256Text": "79928a2dc85f18ee4ab811669c0f22dbc99b868f9344e44e4f959c72367d3bd0",
+              "zitatVon": 388,
+              "zitatBis": 466,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a02",
+          "text": "Wer im Zustand der großen rituellen Unreinheit (janāba) ist, dem verbietet Nūr al-Īḍāḥ fünf Dinge: das Gebet, das Rezitieren eines Koranverses, das Berühren des Muṣḥaf ohne Hülle, das Betreten einer Moschee und den ṭawāf. Al-Ikhtiyār sagt ebenso, dass er den Koran nicht rezitieren und eine Moschee nur aus Not betreten darf.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Mā yaḥrumu bi-l-Janāba",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 32,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 597,
+              "zitatBis": 685,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mā yaḥrumu ʿalā l-Muḥdith wa-l-Junub wa-l-Ḥāʾiḍ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 13,
+              "passage": "ikhtiyar.ms0009",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms9",
+              "passageSha256Text": "79928a2dc85f18ee4ab811669c0f22dbc99b868f9344e44e4f959c72367d3bd0",
+              "zitatVon": 438,
+              "zitatBis": 527,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a03",
+          "text": "Auch Monatsblutung und Wochenbett verbieten nach Nūr al-Īḍāḥ unter anderem, einen Koranvers zu rezitieren und den Muṣḥaf ohne Hülle zu berühren. Nach al-Ikhtiyār gilt für Frauen in Monatsblutung oder Wochenbett in all dem dasselbe wie für jemanden im Zustand der janāba.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Mā yaḥrumu bi-l-Ḥayḍ wa-n-Nifās",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 32,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 98,
+              "zitatBis": 176,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mā yaḥrumu ʿalā l-Muḥdith wa-l-Junub wa-l-Ḥāʾiḍ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 13,
+              "passage": "ikhtiyar.ms0010",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms10",
+              "passageSha256Text": "3a373c749d83071c35843ca9d70de4ac03a25d1c72d230280f4ab85f806fe82c",
+              "zitatVon": 402,
+              "zitatBis": 440,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a04",
+          "text": "Al-Hidāya erklärt, warum Berühren und Rezitieren verschieden geregelt sind: Die kleine und die große Unreinheit betreffen beide die Hand; deshalb gilt für das Berühren in beiden Fällen dasselbe. Die große Unreinheit betrifft auch den Mund, die kleine nicht; deshalb unterscheiden sie sich beim Rezitieren. Wer nur keine Gebetswaschung hat, darf den Koran also auswendig rezitieren, den Muṣḥaf aber nicht ohne Hülle berühren.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 31,
+              "passage": "hidaya.ms0025",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms25",
+              "passageSha256Text": "99757156d4ddda2882572c7e3cf8cd01734c157c1cbb8622006f441b83c47cf2",
+              "zitatVon": 558,
+              "zitatBis": 743,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Mā yaḥrumu ʿalā l-Muḥdith",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 32,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 705,
+              "zitatBis": 769,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a05",
+          "text": "Dass man den Muṣḥaf nur in Reinheit berührt, stützen al-Ikhtiyār und Radd al-Muḥtār auf einen Koranvers (siehe Verweis). Radd al-Muḥtār berichtet, dass manche die Waschung zum Berühren nur für notwendig (wājib) und nicht für Pflicht (farḍ) halten, weil der Vers verschieden ausgelegt wird: nach einer Auslegung meint er die bei Gott verwahrte Schrift und die Engel, nach der anderen den Muṣḥaf und die Menschen, die rein sind. Der zweiten Auslegung folgen nach Radd al-Muḥtār die meisten Ausleger.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mā yaḥrumu ʿalā l-Muḥdith wa-l-Junub wa-l-Ḥāʾiḍ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 13,
+              "passage": "ikhtiyar.ms0009",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms9",
+              "passageSha256Text": "79928a2dc85f18ee4ab811669c0f22dbc99b868f9344e44e4f959c72367d3bd0",
+              "zitatVon": 1431,
+              "zitatBis": 1535,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī iʿtibārāt al-murakkab at-tāmm",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 89,
+              "passage": "radd_al_muhtar.ms0016",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms16",
+              "passageSha256Text": "bd18a699cec197a091352a7947c3929b56e8d51fbe5ea9061548e690c69fcdc3",
+              "zitatVon": 1028,
+              "zitatBis": 1491,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "56:79"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a06",
+          "text": "Mit „Hülle“ (ghilāf) ist nach al-Hidāya etwas gemeint, das vom Muṣḥaf getrennt ist, nicht der fest angenähte Einband; das sei die richtige Ansicht. Auch al-Ikhtiyār spricht von einer Hülle, die nicht angenäht ist. Radd al-Muḥtār nennt als Beispiel einen Beutel oder eine Tasche, denn der feste Einband gehört zum Muṣḥaf. Nach as-Sirāj wird nach dieser Ansicht Fatwa gegeben. Andere Werke (al-Muḥīṭ, al-Kāfī) hielten den angenähten Einband für ausreichend.",
+          "meinung": "fatwa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 31,
+              "passage": "hidaya.ms0025",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms25",
+              "passageSha256Text": "99757156d4ddda2882572c7e3cf8cd01734c157c1cbb8622006f441b83c47cf2",
+              "zitatVon": 744,
+              "zitatBis": 813,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mā yaḥrumu ʿalā l-Muḥdith wa-l-Junub wa-l-Ḥāʾiḍ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 13,
+              "passage": "ikhtiyar.ms0009",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms9",
+              "passageSha256Text": "79928a2dc85f18ee4ab811669c0f22dbc99b868f9344e44e4f959c72367d3bd0",
+              "zitatVon": 1465,
+              "zitatBis": 1487,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 174,
+              "passage": "radd_al_muhtar.ms0156",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms156",
+              "passageSha256Text": "0f2ac10e1dc560e96b236dafa383c08bd260ce9780ec747bebeef0b30812a6ac",
+              "zitatVon": 631,
+              "zitatBis": 853,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a07",
+          "text": "Ob man den Muṣḥaf mit dem Ärmel anfassen darf, beantworten die Werke verschieden. Nach al-Ikhtiyār ist es unbedenklich, ihn mit dem Ärmel zu halten; manche hielten es für verpönt. Al-Hidāya nennt es verpönt (makrūh) und hält das für richtig, weil der Ärmel zur Person gehört. Radd al-Muḥtār berichtet beide Ansichten und sieht die Verpöntheit als offenkundige Überlieferung (ẓāhir ar-riwāya); mit anderen Teilen der Kleidung als dem Ärmel darf man ihn nicht berühren.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mā yaḥrumu ʿalā l-Muḥdith wa-l-Junub wa-l-Ḥāʾiḍ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 13,
+              "passage": "ikhtiyar.ms0009",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms9",
+              "passageSha256Text": "79928a2dc85f18ee4ab811669c0f22dbc99b868f9344e44e4f959c72367d3bd0",
+              "zitatVon": 1536,
+              "zitatBis": 1571,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 31,
+              "passage": "hidaya.ms0025",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms25",
+              "passageSha256Text": "99757156d4ddda2882572c7e3cf8cd01734c157c1cbb8622006f441b83c47cf2",
+              "zitatVon": 814,
+              "zitatBis": 852,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 174,
+              "passage": "radd_al_muhtar.ms0156",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms156",
+              "passageSha256Text": "0f2ac10e1dc560e96b236dafa383c08bd260ce9780ec747bebeef0b30812a6ac",
+              "zitatVon": 889,
+              "zitatBis": 1255,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a08",
+          "text": "Bücher der Scharia, etwa Fiqh-Bücher, dürfen die Gelehrten, die mit ihnen arbeiten, nach al-Hidāya mit dem Ärmel anfassen, weil sie darauf angewiesen sind.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 31,
+              "passage": "hidaya.ms0025",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms25",
+              "passageSha256Text": "99757156d4ddda2882572c7e3cf8cd01734c157c1cbb8622006f441b83c47cf2",
+              "zitatVon": 853,
+              "zitatBis": 914,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a09",
+          "text": "Ob man Tafsir-Bücher ohne Gebetswaschung berühren darf, ist in der Schule umstritten. Radd al-Muḥtār nennt drei Ansichten: Sie sind wie der Muṣḥaf; sie sind wie andere religiöse Bücher, deren Berühren nicht verpönt ist; oder das Berühren ist nur bei Tafsir-Büchern verpönt. Ibn ʿĀbidīn hält die dritte für die offenkundigste und vorsichtigste, weil in einem Tafsir mehr Koran steht und der Korantext dort eigens gemeint ist. Nach as-Sirāj (aus al-Īḍāḥ) berührt man in Tafsir- und Fiqh-Büchern nicht die Stelle, an der Koran steht, den Rest aber schon.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 176,
+              "passage": "radd_al_muhtar.ms0160",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms160",
+              "passageSha256Text": "e3613cfa299a3bac068d11094ba6f1ea0d7eb5800511a101f6a5024c0d59ac52",
+              "zitatVon": 533,
+              "zitatBis": 1020,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 176,
+              "passage": "radd_al_muhtar.ms0160",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms160",
+              "passageSha256Text": "e3613cfa299a3bac068d11094ba6f1ea0d7eb5800511a101f6a5024c0d59ac52",
+              "zitatVon": 1215,
+              "zitatBis": 1373,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 177,
+              "passage": "radd_al_muhtar.ms0161",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms161",
+              "passageSha256Text": "a3b729439c25fdc6cd57a7d016a51634aa1712a10868ba4288ddc2bafef47f78",
+              "zitatVon": 264,
+              "zitatBis": 516,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a10",
+          "text": "Die Seiten des Muṣḥaf mit einem Stäbchen oder Ähnlichem umzublättern, ist nach Radd al-Muḥtār erlaubt, denn das gilt nicht als Berühren.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 174,
+              "passage": "radd_al_muhtar.ms0157",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms157",
+              "passageSha256Text": "7dd60463f10fc5ede0c770f07f23526023a7da46bfdd7e573730a8389e76f145",
+              "zitatVon": 24,
+              "zitatBis": 98,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a11",
+          "text": "Kindern darf man den Muṣḥaf zum Lernen geben, auch wenn sie keine Gebetswaschung haben. Al-Hidāya begründet das so: Ein Verbot würde das Auswendiglernen des Korans gefährden, und die Kinder ständig zur Reinigung anzuhalten, wäre eine Härte für sie. Nach Radd al-Muḥtār muss der Vormund das Kind nicht daran hindern, und ein gereinigter Erwachsener darf ihm den Muṣḥaf reichen; das Lernen bis zur Reife aufzuschieben, würde dem Auswendiglernen schaden.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 31,
+              "passage": "hidaya.ms0025",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms25",
+              "passageSha256Text": "99757156d4ddda2882572c7e3cf8cd01734c157c1cbb8622006f441b83c47cf2",
+              "zitatVon": 915,
+              "zitatBis": 1019,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 174,
+              "passage": "radd_al_muhtar.ms0157",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms157",
+              "passageSha256Text": "7dd60463f10fc5ede0c770f07f23526023a7da46bfdd7e573730a8389e76f145",
+              "zitatVon": 1000,
+              "zitatBis": 1367,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a12",
+          "text": "Ob jemand im Zustand der janāba weniger als einen Vers rezitieren darf, ist in der Schule umstritten. Radd al-Muḥtār nennt zwei Ansichten, die beide als richtig bezeichnet wurden: Nach al-Karkhī ist auch weniger als ein Vers verboten, nach aṭ-Ṭaḥāwī ist es erlaubt. Ibn al-Humām zog die Erlaubnis vor; al-Baḥr widersprach, weil die Überlieferungen nicht zwischen wenig und viel unterscheiden. Auch al-Hidāya hält gegen aṭ-Ṭaḥāwī, dass das Verbot allgemein gilt und weniger als einen Vers umfasst.",
+          "strittig": true,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yawm ʿArafa afḍal min yawm al-jumuʿa (Erläuterung zu dem, was dem Junub verboten ist)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 172,
+              "passage": "radd_al_muhtar.ms0153",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms153",
+              "passageSha256Text": "a2e7661d8199703edf0978947502b390b6bbd942df17175290f29414af9ec13d",
+              "zitatVon": 1153,
+              "zitatBis": 1440,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 31,
+              "passage": "hidaya.ms0025",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms25",
+              "passageSha256Text": "99757156d4ddda2882572c7e3cf8cd01734c157c1cbb8622006f441b83c47cf2",
+              "zitatVon": 422,
+              "zitatBis": 485,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mā yaḥrumu ʿalā l-Muḥdith wa-l-Junub wa-l-Ḥāʾiḍ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 13,
+              "passage": "ikhtiyar.ms0010",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms10",
+              "passageSha256Text": "3a373c749d83071c35843ca9d70de4ac03a25d1c72d230280f4ab85f806fe82c",
+              "zitatVon": 10,
+              "zitatBis": 58,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a13",
+          "text": "Eine Lehrerin in der Monatsblutung darf nach Radd al-Muḥtār Koran lehren, indem sie Wort für Wort vorspricht und zwischen den Wörtern absetzt; so nach der Ansicht al-Karkhīs, nach aṭ-Ṭaḥāwī lehrt sie einen halben Vers. Manche unterschieden dabei zwischen der Frau in der Monatsblutung, die ihren Zustand nicht beenden kann, und jemandem im Zustand der janāba; nach der gewählten Ansicht (al-mukhtār) gibt es keinen Unterschied.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yawm ʿArafa afḍal min yawm al-jumuʿa (Erläuterung zu dem, was dem Junub verboten ist)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 172,
+              "passage": "radd_al_muhtar.ms0153",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms153",
+              "passageSha256Text": "a2e7661d8199703edf0978947502b390b6bbd942df17175290f29414af9ec13d",
+              "zitatVon": 1054,
+              "zitatBis": 1141,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 172,
+              "passage": "radd_al_muhtar.ms0154",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms154",
+              "passageSha256Text": "f8d18ba4d5027d41e33d8bc6a846406acb45c6a5ec250c4b9af42c5b7452484c",
+              "zitatVon": 880,
+              "zitatBis": 1166,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a14",
+          "text": "Gottesgedenken (dhikr), Lobpreis (tasbīḥ) und Bittgebete sind nach al-Ikhtiyār auch im Zustand der janāba erlaubt, weil sich das Verbot nur auf den Koran bezieht. Spricht man etwas aus dem Koran, ohne Koran rezitieren zu wollen, etwa die Basmala oder die Hamdala, ist das unbedenklich. Radd al-Muḥtār nennt als Beispiel, die Basmala zum Segen zu Beginn einer Arbeit zu sprechen.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mā yaḥrumu ʿalā l-Muḥdith wa-l-Junub wa-l-Ḥāʾiḍ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 13,
+              "passage": "ikhtiyar.ms0010",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms10",
+              "passageSha256Text": "3a373c749d83071c35843ca9d70de4ac03a25d1c72d230280f4ab85f806fe82c",
+              "zitatVon": 60,
+              "zitatBis": 186,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yawm ʿArafa afḍal min yawm al-jumuʿa (Erläuterung zu dem, was dem Junub verboten ist)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 172,
+              "passage": "radd_al_muhtar.ms0154",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms154",
+              "passageSha256Text": "f8d18ba4d5027d41e33d8bc6a846406acb45c6a5ec250c4b9af42c5b7452484c",
+              "zitatVon": 816,
+              "zitatBis": 873,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a15",
+          "text": "Ob man im Zustand der janāba die Fātiḥa oder Verse mit der Bedeutung eines Bittgebets sprechen darf, wenn man ein Bittgebet und keine Rezitation beabsichtigt, ist umstritten. Nach al-ʿUyūn des Abū l-Layth ist es unbedenklich; al-Ghāya nennt es die gewählte Ansicht, und al-Ḥalwānī wählte sie. Al-Hinduwānī sagte jedoch, er gebe danach keine Fatwa, auch wenn es vom Imam überliefert sei. Al-Baḥr hält bei der Fātiḥa diese Zurückhaltung für offenkundiger, weil sie dem Wortlaut und der Bedeutung nach Koran bleibt.",
+          "strittig": true,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yawm ʿArafa afḍal min yawm al-jumuʿa (Erläuterung zu dem, was dem Junub verboten ist)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 172,
+              "passage": "radd_al_muhtar.ms0154",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms154",
+              "passageSha256Text": "f8d18ba4d5027d41e33d8bc6a846406acb45c6a5ec250c4b9af42c5b7452484c",
+              "zitatVon": 57,
+              "zitatBis": 410,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a16",
+          "text": "Aufgeschriebene Koranverse bleiben nach Radd al-Muḥtār Koran, auch wenn sie als Bittgebet oder Lobpreis aufgeschrieben wurden: Die Absicht verändert nur das Gesprochene, nicht das Geschriebene. Deshalb gelten für Schriftstücke mit Koranversen, die man bei sich trägt, die Regeln des Berührens. Steckt ein solches Schriftstück in einer abnehmbaren Hülle, etwa aus gewachstem Tuch, darf man es auch ohne rituelle Reinheit berühren und tragen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 178,
+              "passage": "radd_al_muhtar.ms0163",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms163",
+              "passageSha256Text": "a335052bbe723249642d88fc04593f2ff377a9e9e73e741fdcf6034caa6a0a9b",
+              "zitatVon": 0,
+              "zitatBis": 288,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.a17",
+          "text": "Einem Nichtmuslim wird nach Radd al-Muḥtār nicht ermöglicht, den Muṣḥaf zu berühren; die Handschriften nennen hier den Christen bzw. allgemein den Nichtmuslim. Muḥammad erlaubte es, wenn er sich vorher ganz gewaschen hat (ghusl); al-Khāniyya nennt das, ohne eine Gegenmeinung zu erwähnen. Nach al-Baḥr verwehren es Abū Ḥanīfa und Abū Yūsuf ohne Einschränkung.",
+          "meinung": "muhammad",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 177,
+              "passage": "radd_al_muhtar.ms0162",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms162",
+              "passageSha256Text": "6df82842ad6a7c78fe175bf73acbadbd318e865c05ce13b6616433348d659d02",
+              "zitatVon": 129,
+              "zitatBis": 337,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e08.l01.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l01.a04",
+          "behauptung": "Wer nur keine Gebetswaschung hat, darf den Koran nach al-Hidāya auswendig rezitieren.",
+          "richtig": true,
+          "begruendung": "Die kleine Unreinheit betrifft die Hand, nicht den Mund. Verboten ist deshalb nur, den Muṣḥaf ohne Hülle zu berühren, nicht das Rezitieren.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e08.l01.a06",
+          "fall": "Lehrfall: Ein Schüler ohne Gebetswaschung will einen Muṣḥaf aus dem Regal nehmen. Der Muṣḥaf hat einen fest angenähten Ledereinband. Daneben liegt eine Stofftasche, in die er hineinpasst.",
+          "frage": "Was gilt nach der Ansicht, nach der laut Radd al-Muḥtār Fatwa gegeben wird?",
+          "optionen": [
+            "Er fasst ihn nur in der abnehmbaren Tasche an, denn der angenähte Einband gehört zum Muṣḥaf.",
+            "Er darf ihn am angenähten Einband anfassen, weil der Einband als Hülle gilt.",
+            "Er darf ihn überhaupt nicht bewegen, auch nicht in der Tasche."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e08.l01.a07",
+          "anweisung": "Den Muṣḥaf mit dem Ärmel anfassen: Ordne jedem Werk seine Aussage zu.",
+          "paare": [
+            {
+              "links": "al-Ikhtiyār",
+              "rechts": "unbedenklich; manche hielten es für verpönt"
+            },
+            {
+              "links": "al-Hidāya",
+              "rechts": "verpönt; das sei die richtige Ansicht"
+            },
+            {
+              "links": "Radd al-Muḥtār",
+              "rechts": "Verpöntheit als offenkundige Überlieferung"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l01.a11",
+          "behauptung": "Nach al-Hidāya darf man Kindern ohne Gebetswaschung keinen Muṣḥaf zum Lernen geben.",
+          "richtig": false,
+          "begruendung": "Al-Hidāya erlaubt es: Ein Verbot würde das Auswendiglernen des Korans gefährden, und ständige Reinigung wäre für Kinder eine Härte.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l01.a10",
+          "behauptung": "Die Seiten des Muṣḥaf mit einem Stäbchen umzublättern, gilt nach Radd al-Muḥtār als Berühren.",
+          "richtig": false,
+          "begruendung": "Radd al-Muḥtār erlaubt das Umblättern mit einem Stäbchen, weil es nicht als Berühren gilt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e08.l01.a09",
+          "fall": "Lehrfall: Eine Schülerin ohne Gebetswaschung will in einem Tafsir-Buch lesen, in dem der Korantext ausgeschrieben ist.",
+          "frage": "Welche Ansicht hält Ibn ʿĀbidīn nach Radd al-Muḥtār für die vorsichtigste?",
+          "optionen": [
+            "Das Berühren ist bei Tafsir-Büchern verpönt, bei anderen religiösen Büchern nicht.",
+            "Tafsir-Bücher darf man ohne jede Einschränkung wie jedes andere Buch berühren.",
+            "Alle religiösen Bücher sind in jeder Hinsicht wie der Muṣḥaf zu behandeln."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l01.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l01.a16",
+          "behauptung": "Ein aufgeschriebener Koranvers ist nach Radd al-Muḥtār kein Koran mehr, wenn er als Bittgebet aufgeschrieben wurde.",
+          "richtig": false,
+          "begruendung": "Nach Radd al-Muḥtār verändert die Absicht nur das Gesprochene, nicht das Geschriebene; der aufgeschriebene Vers bleibt Koran.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e08.l02",
+      "titel": "Rezitation im Gebet",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e08.l02.a01",
+          "text": "Die Rezitation (qirāʾa) ist nach Nūr al-Īḍāḥ einer der vier Grundpfeiler (arkān) des Gebets, neben dem Stehen, der Verbeugung und der Niederwerfung. Erforderlich ist sie in zwei Einheiten (rakʿa) des Pflichtgebets und in jeder Einheit des freiwilligen Gebets und des Witr, und sei es nur ein Vers. Ein bestimmter Teil des Korans ist für die Gültigkeit nicht vorgeschrieben.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Shurūṭ aṣ-Ṣalāh wa-Arkānihā › Arkān aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 42,
+              "passage": "nur_al_idah.ms0014",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms14",
+              "passageSha256Text": "57599cbab649456c5ecc32c212078306b9fb01e7a8ad054d196d04d2086c6060",
+              "zitatVon": 905,
+              "zitatBis": 964,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Shurūṭ aṣ-Ṣalāh wa-Arkānihā › Mā lā budda minhu li-Ṣiḥḥat aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 41,
+              "passage": "nur_al_idah.ms0014",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms14",
+              "passageSha256Text": "57599cbab649456c5ecc32c212078306b9fb01e7a8ad054d196d04d2086c6060",
+              "zitatVon": 92,
+              "zitatBis": 179,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.a02",
+          "text": "Nach al-Ikhtiyār ist die Rezitation in zwei Einheiten Pflicht und in den letzten beiden Einheiten Sunna. Spricht man in den letzten beiden stattdessen den Lobpreis (tasbīḥ), genügt das.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Qirāʾa fī ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 56,
+              "passage": "ikhtiyar.ms0060",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms60",
+              "passageSha256Text": "9fc28d2ac93a3c734a627bc76a3c104e5868e2479a110056c0b1aa16ec3f0d5a",
+              "zitatVon": 978,
+              "zitatBis": 1040,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Qirāʾa fī ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 56,
+              "passage": "ikhtiyar.ms0061",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms61",
+              "passageSha256Text": "1097b083803a960d1340f4182f07f524237a1c819d626abf1567aa594c19399f",
+              "zitatVon": 91,
+              "zitatBis": 129,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.a03",
+          "text": "Über das Mindestmaß der Pflicht-Rezitation gibt es in der Schule zwei Ansichten. Nach Abū Ḥanīfa genügt ein Vers in jeder Einheit, weil der Koranvers (siehe Verweis) ohne Einschränkung sagt, man solle rezitieren, was leicht fällt; nur weniger als ein Vers ist ausgenommen. Nach Abū Yūsuf und Muḥammad braucht es drei kurze Verse oder einen langen Vers, der ihnen entspricht: Nach al-Ikhtiyār ist „Koran“ der Name des Unnachahmlichen, und weniger ist nicht unnachahmlich; nach al-Hidāya nennt man jemanden mit weniger nicht einen Rezitierenden.",
+          "meinung": "abu_hanifa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Qirāʾa fī ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 56,
+              "passage": "ikhtiyar.ms0061",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms61",
+              "passageSha256Text": "1097b083803a960d1340f4182f07f524237a1c819d626abf1567aa594c19399f",
+              "zitatVon": 146,
+              "zitatBis": 354,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 54,
+              "passage": "hidaya.ms0052",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms52",
+              "passageSha256Text": "0cc7de65be2af48d9d464c16553c5b77172278cedeb6ec89e9cae6d0d3363849",
+              "zitatVon": 899,
+              "zitatBis": 1104,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "73:20"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.a04",
+          "text": "Die Fātiḥa ist nach der Schule im Gebet nicht Pflicht (farḍ), sondern notwendig (wājib). Al-Ikhtiyār begründet das so: Der Koranvers zur Rezitation (siehe Verweis) ist uneingeschränkt. Die Hadithe, die die Fātiḥa nennen, sind Einzelüberlieferungen (akhbār āḥād), und mit ihnen darf man die Uneingeschränktheit des Korantextes nicht aufheben. Darum versteht man sie als Notwendigkeit, nicht als Pflicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Qirāʾa fī ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 56,
+              "passage": "ikhtiyar.ms0061",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms61",
+              "passageSha256Text": "1097b083803a960d1340f4182f07f524237a1c819d626abf1567aa594c19399f",
+              "zitatVon": 356,
+              "zitatBis": 566,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "73:20"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.a05",
+          "text": "Notwendig (wājib) ist, die Fātiḥa zu rezitieren und ihr eine Sure oder drei Verse hinzuzufügen, und zwar die Fātiḥa vor der Sure. Al-Ikhtiyār begründet die Notwendigkeit damit, dass der Prophet dies beständig getan und nie unterlassen hat. Deshalb wird beim versehentlichen Auslassen die Niederwerfung des Versehens (sajdat as-sahw) notwendig.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Qirāʾa fī ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 56,
+              "passage": "ikhtiyar.ms0061",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms61",
+              "passageSha256Text": "1097b083803a960d1340f4182f07f524237a1c819d626abf1567aa594c19399f",
+              "zitatVon": 567,
+              "zitatBis": 697,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Shurūṭ aṣ-Ṣalāh wa-Arkānihā › Faṣl fī Wājib aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 45,
+              "passage": "nur_al_idah.ms0015",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms15",
+              "passageSha256Text": "85ba4d0374abeacbebac7cd813c2893aa34ea869faabf383a0b3375b3ac8fa5b",
+              "zitatVon": 918,
+              "zitatBis": 1066,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.a06",
+          "text": "Für die Länge der Rezitation ist Sunna: im Morgen- und im Mittagsgebet Suren aus den langen Suren des Mufaṣṣal, im Nachmittags- und im Nachtgebet aus den mittleren und im Abendgebet aus den kurzen. Al-Ikhtiyār und al-Hidāya führen das auf einen Brief ʿUmars an Abū Mūsā al-Ashʿarī zurück. Für das Morgengebet nennt al-Ikhtiyār verschiedene Angaben, etwa vierzig oder fünfzig Verse, nach einer anderen Angabe vierzig bis sechzig. Grundsatz ist, dass der Imam nicht so rezitiert, dass die Gemeinschaft kleiner wird; wer allein betet, rezitiert besser mehr. In Not und auf Reisen rezitiert man, so viel die Lage erlaubt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Qirāʾa fī ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 56,
+              "passage": "ikhtiyar.ms0061",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms61",
+              "passageSha256Text": "1097b083803a960d1340f4182f07f524237a1c819d626abf1567aa594c19399f",
+              "zitatVon": 698,
+              "zitatBis": 1277,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 54,
+              "passage": "hidaya.ms0053",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms53",
+              "passageSha256Text": "7f7dc2f0d01bcfba34a228b83b1de1cd1325b36614f97fb14313e86c71ec3f2b",
+              "zitatVon": 343,
+              "zitatBis": 502,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.a07",
+          "text": "Sunna ist, in jeder Einheit mit der Fātiḥa eine ganze Sure zu rezitieren. Empfohlen ist nach al-Ikhtiyār, in einer Einheit nicht zwei Suren zu verbinden, weil das nicht überliefert ist; tut man es doch, ist es unbedenklich. Ebenso unbedenklich ist es, eine Sure auf zwei Einheiten zu verteilen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Qirāʾa fī ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 56,
+              "passage": "ikhtiyar.ms0061",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms61",
+              "passageSha256Text": "1097b083803a960d1340f4182f07f524237a1c819d626abf1567aa594c19399f",
+              "zitatVon": 1278,
+              "zitatBis": 1414,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.a08",
+          "text": "Rezitiert man in der zweiten Einheit eine Sure, die im Muṣḥaf vor der Sure der ersten Einheit steht (in umgekehrter Folge, mankūsan), ist das nach Radd al-Muḥtār verpönt, denn die Reihenfolge der Suren gehört beim Rezitieren zu den notwendigen Dingen. Verpönt ist es aber nur, wenn man es absichtlich tut, nicht aus Versehen. Kindern ist es zur Erleichterung beim Lernen erlaubt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Maṭlab: al-Istimāʿ li-l-Qurʾān farḍ kifāya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 546,
+              "passage": "radd_al_muhtar.ms0778",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms778",
+              "passageSha256Text": "ae7a8f6a53a3f7aa9c14fa25c713c1330a8b33af38256ad720f8906a77742a73",
+              "zitatVon": 782,
+              "zitatBis": 940,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Maṭlab: al-Istimāʿ li-l-Qurʾān farḍ kifāya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 547,
+              "passage": "radd_al_muhtar.ms0778",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms778",
+              "passageSha256Text": "ae7a8f6a53a3f7aa9c14fa25c713c1330a8b33af38256ad720f8906a77742a73",
+              "zitatVon": 1290,
+              "zitatBis": 1399,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.a09",
+          "text": "Die Basmala spricht man im Gebet leise (al-Hidāya). Nach Abū Yūsuf spricht man sie zu Beginn jeder Einheit; nach al-Muṣaffā wird nach dieser Ansicht Fatwa gegeben. Nach al-Muḥīṭ ist die Ansicht Muḥammads gewählt, sie vor der Fātiḥa und vor jeder Sure in jeder Einheit zu sprechen. Spricht man sie zwischen Fātiḥa und Sure, ist das nach Radd al-Muḥtār nach übereinstimmender Ansicht nicht verpönt; nach Abū Ḥanīfa ist es dann gut, ob leise oder laut, weil umstritten ist, ob sie ein Vers jeder Sure ist.",
+          "meinung": "fatwa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 48,
+              "passage": "hidaya.ms0045",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms45",
+              "passageSha256Text": "c1a52610a805bf96d27b6483dd969d649c94e6c433f58e7265fbaab86db7f6bc",
+              "zitatVon": 271,
+              "zitatBis": 330,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab fī ḥukm al-qirāʾa bi-sh-shādhdh (Abschnitt zur Basmala im Gebet)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 490,
+              "passage": "radd_al_muhtar.ms0685",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms685",
+              "passageSha256Text": "a6ed9eab2160a3bb8131a8a69c9cb45361b9bcfbabbf85de2bf79334f5e59953",
+              "zitatVon": 13,
+              "zitatBis": 166,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab: Qirāʾat al-basmala bayna l-Fātiḥa wa-s-sūra ḥasan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 490,
+              "passage": "radd_al_muhtar.ms0685",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms685",
+              "passageSha256Text": "a6ed9eab2160a3bb8131a8a69c9cb45361b9bcfbabbf85de2bf79334f5e59953",
+              "zitatVon": 535,
+              "zitatBis": 743,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e08.l02.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e08.l02.a06",
+          "anweisung": "Ordne jedem Gebet die Länge der Suren zu, die nach den Werken Sunna ist.",
+          "paare": [
+            {
+              "links": "Morgengebet",
+              "rechts": "lange Suren des Mufaṣṣal"
+            },
+            {
+              "links": "Nachmittagsgebet",
+              "rechts": "mittlere Suren des Mufaṣṣal"
+            },
+            {
+              "links": "Abendgebet",
+              "rechts": "kurze Suren des Mufaṣṣal"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l02.a04",
+          "behauptung": "Die Fātiḥa ist nach der hanefitischen Schule im Gebet Pflicht (farḍ).",
+          "richtig": false,
+          "begruendung": "Sie ist notwendig (wājib): Die Hadithe zur Fātiḥa sind Einzelüberlieferungen und heben die Uneingeschränktheit des Korantextes nicht auf.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e08.l02.a05",
+          "fall": "Lehrfall: Ein Betender lässt in einem Pflichtgebet versehentlich die Sure nach der Fātiḥa aus, die zur notwendigen Rezitation gehört.",
+          "frage": "Was folgt nach al-Ikhtiyār daraus, dass Fātiḥa und Sure notwendig (wājib) sind?",
+          "optionen": [
+            "Die Niederwerfung des Versehens (sajdat as-sahw) wird notwendig.",
+            "Es geschieht nichts, weil die Sure nur empfohlen ist.",
+            "Das Gebet ist in jedem Fall ungültig und muss sofort neu begonnen werden."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l02.a03",
+          "behauptung": "Nach Abū Ḥanīfa genügt als Pflicht-Rezitation ein Vers in jeder Einheit.",
+          "richtig": true,
+          "begruendung": "Abū Ḥanīfa stützt sich auf den uneingeschränkten Koranvers; Abū Yūsuf und Muḥammad verlangen drei kurze Verse oder einen entsprechend langen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e08.l02.a08",
+          "fall": "Lehrfall: Ein Erwachsener rezitiert im Pflichtgebet in der ersten Einheit eine Sure vom Ende des Korans und in der zweiten absichtlich eine Sure, die im Muṣḥaf davor steht.",
+          "frage": "Wie bewertet Radd al-Muḥtār das?",
+          "optionen": [
+            "Verpönt, weil die Reihenfolge der Suren beim Rezitieren notwendig ist.",
+            "Empfohlen, weil man so mehr Abwechslung hat.",
+            "Erlaubt, weil die Reihenfolge der Suren keine Rolle spielt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l02.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l02.a07",
+          "behauptung": "Verbindet man in einer Einheit zwei Suren, ist das nach al-Ikhtiyār unbedenklich, auch wenn es besser ist, es nicht zu tun.",
+          "richtig": true,
+          "begruendung": "Empfohlen ist, nicht zwei Suren in einer Einheit zu verbinden, weil das nicht überliefert ist; tut man es doch, ist es unbedenklich.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e08.l03",
+      "titel": "Hadith in den Werken der Schule: Arten und Gewicht der Überlieferung",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e08.l03.a01",
+          "text": "Das Wort Sunna bedeutet nach Radd al-Muḥtār sprachlich „Weg“ und „Gewohnheit“. Im Gottesdienst meint es freiwillige Handlungen. Als Beleg (dalīl) meint Sunna das, was vom Propheten überliefert ist: ein Wort, eine Handlung oder eine stillschweigende Billigung (taqrīr) dessen, was er gesehen hat.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 265,
+              "passage": "radd_al_muhtar.ms0306",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms306",
+              "passageSha256Text": "2c7edf1114be5497d28679f9696521b6a4b5a5e05cc93f192bc509fcf7ba0f1e",
+              "zitatVon": 0,
+              "zitatBis": 123,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.a02",
+          "text": "Radd al-Muḥtār unterscheidet Überlieferungen nach der Zahl ihrer Überlieferer. In der Hadithwissenschaft heißt mashhūr („bekannt“), was in jeder Generation mehr als zwei überliefern, ohne dass es die Stufe des tawātur erreicht; dort ist es eine Art der Einzelüberlieferung. In der Rechtsmethodik (uṣūl al-fiqh) ist mashhūr, was in der ersten Generation, der Zeit der Gefährten, nur von Einzelnen überliefert wurde und danach von so vielen, dass man nicht annehmen kann, sie hätten sich auf eine Lüge geeinigt. War das schon in der ersten Generation so, ist die Überlieferung mutawātir; war es auch später nicht so, ist sie eine Einzelüberlieferung (āḥād). Dort ist mashhūr also eine eigene, dritte Art.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn › Maṭlab: Taʿrīf al-ḥadīth al-mashhūr",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 265,
+              "passage": "radd_al_muhtar.ms0306",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms306",
+              "passageSha256Text": "2c7edf1114be5497d28679f9696521b6a4b5a5e05cc93f192bc509fcf7ba0f1e",
+              "zitatVon": 172,
+              "zitatBis": 624,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.a03",
+          "text": "Eine Einzelüberlieferung (khabar al-wāḥid) darf nach al-Hidāya den Korantext nicht ergänzen, verpflichtet aber zum Handeln. Al-Ikhtiyār sagt ebenso, dass Einzelüberlieferungen die Uneingeschränktheit des Korantextes nicht aufheben. Was nur durch sie feststeht, macht die Schule deshalb nicht zur Pflicht (farḍ), sondern zu etwas Notwendigem (wājib) – so die Fātiḥa im Gebet.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 48,
+              "passage": "hidaya.ms0045",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms45",
+              "passageSha256Text": "c1a52610a805bf96d27b6483dd969d649c94e6c433f58e7265fbaab86db7f6bc",
+              "zitatVon": 1189,
+              "zitatBis": 1253,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Qirāʾa fī ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 56,
+              "passage": "ikhtiyar.ms0061",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms61",
+              "passageSha256Text": "1097b083803a960d1340f4182f07f524237a1c819d626abf1567aa594c19399f",
+              "zitatVon": 466,
+              "zitatBis": 566,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.a04",
+          "text": "Nennt ein Gefährte oder ein früher Gelehrter ein Maß, das man nicht durch eigenes Nachdenken wissen kann, gehen die Werke davon aus, dass es auf eine Unterweisung durch den Propheten zurückgeht (tawqīf). Al-Ikhtiyār sagt das von den Längen der Rezitation, die ʿUmar an Abū Mūsā al-Ashʿarī schrieb; al-Hidāya sagt es von der kürzesten Reinheitszeit der Frau von fünfzehn Tagen, die von Ibrāhīm an-Nakhaʿī überliefert ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Qirāʾa fī ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 56,
+              "passage": "ikhtiyar.ms0061",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms61",
+              "passageSha256Text": "1097b083803a960d1340f4182f07f524237a1c819d626abf1567aa594c19399f",
+              "zitatVon": 787,
+              "zitatBis": 850,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 32,
+              "passage": "hidaya.ms0026",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms26",
+              "passageSha256Text": "7af54cf9d37a25ce3debd4e2f82a2563834146d268835657a7ae2ff30d31b3a7",
+              "zitatVon": 420,
+              "zitatBis": 495,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.a05",
+          "text": "Mit einem schwachen (ḍaʿīf) Hadith darf man nach Radd al-Muḥtār bei den Vorzügen guter Taten (faḍāʾil al-aʿmāl) handeln, um den Lohn zu erlangen, der mit diesen Taten verbunden ist. Bedingung ist, dass die Schwäche nicht schwer ist – schwer ist sie, wenn in jedem Überlieferungsweg ein Lügner oder ein der Lüge Verdächtigter steht. Wer danach handelt, glaubt nicht, dass der Hadith sicher feststeht, sondern handelt aus Vorsicht. Andere Gelehrte lehnten das Handeln danach ganz ab oder erlaubten es uneingeschränkt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī mabāḥith al-istiʿāna fī l-wuḍūʾ bi-l-ghayr",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 128,
+              "passage": "radd_al_muhtar.ms0080",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms80",
+              "passageSha256Text": "237bdad60ff59f762ac5307142ee8f203a1e166f710e045a4fb037cdb895005f",
+              "zitatVon": 1435,
+              "zitatBis": 1503,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī mabāḥith al-istiʿāna fī l-wuḍūʾ bi-l-ghayr",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 128,
+              "passage": "radd_al_muhtar.ms0081",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms81",
+              "passageSha256Text": "95ac9a3f8ed524269a65cdc7108c47cdce1c41b7c98bf7013fd9d58323b1e77c",
+              "zitatVon": 429,
+              "zitatBis": 513,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī bayān irtiqāʾ al-ḥadīth aḍ-ḍaʿīf ilā martabat al-ḥasan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 128,
+              "passage": "radd_al_muhtar.ms0081",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms81",
+              "passageSha256Text": "95ac9a3f8ed524269a65cdc7108c47cdce1c41b7c98bf7013fd9d58323b1e77c",
+              "zitatVon": 648,
+              "zitatBis": 836,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.a06",
+          "text": "Eine erfundene Überlieferung (mawḍūʿ), also eine Lüge über den Propheten, darf man nach Radd al-Muḥtār nach übereinstimmender Ansicht nicht befolgen, auch nicht bei den Vorzügen guter Taten; weitergeben darf man sie nur, wenn man sagt, dass sie erfunden ist. Eine schwache Überlieferung darf man auch ohne Hinweis auf ihre Schwäche weitergeben. Nennt man dabei keine Überliefererkette, sagt man aber nicht „Der Gesandte Gottes hat gesagt“, sondern zum Beispiel „Es wird überliefert“.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī bayān irtiqāʾ al-ḥadīth aḍ-ḍaʿīf ilā martabat al-ḥasan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 128,
+              "passage": "radd_al_muhtar.ms0081",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms81",
+              "passageSha256Text": "95ac9a3f8ed524269a65cdc7108c47cdce1c41b7c98bf7013fd9d58323b1e77c",
+              "zitatVon": 837,
+              "zitatBis": 899,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī bayān irtiqāʾ al-ḥadīth aḍ-ḍaʿīf ilā martabat al-ḥasan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 128,
+              "passage": "radd_al_muhtar.ms0081",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms81",
+              "passageSha256Text": "95ac9a3f8ed524269a65cdc7108c47cdce1c41b7c98bf7013fd9d58323b1e77c",
+              "zitatVon": 990,
+              "zitatBis": 1027,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī bayān irtiqāʾ al-ḥadīth aḍ-ḍaʿīf ilā martabat al-ḥasan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 128,
+              "passage": "radd_al_muhtar.ms0081",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms81",
+              "passageSha256Text": "95ac9a3f8ed524269a65cdc7108c47cdce1c41b7c98bf7013fd9d58323b1e77c",
+              "zitatVon": 1159,
+              "zitatBis": 1453,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.a07",
+          "text": "Ein schwacher Hadith kann nach Radd al-Muḥtār durch mehrere Überlieferungswege, die sich gegenseitig stärken, zur Stufe „gut“ (ḥasan) aufsteigen. Das gilt, wenn die Schwäche vom schlechten Gedächtnis eines wahrhaftigen, vertrauenswürdigen Überlieferers kommt, von einer Lücke in der Kette (irsāl), von Verschleierung (tadlīs) oder davon, dass ein Überlieferer unbekannt ist. Beruht die Schwäche darauf, dass ein Überlieferer ein Sünder oder ein Lügner ist, hilft eine Bestätigung durch einen ähnlichen Weg nicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī mabāḥith al-istiʿāna fī l-wuḍūʾ bi-l-ghayr",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 127,
+              "passage": "radd_al_muhtar.ms0080",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms80",
+              "passageSha256Text": "237bdad60ff59f762ac5307142ee8f203a1e166f710e045a4fb037cdb895005f",
+              "zitatVon": 986,
+              "zitatBis": 1242,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.a08",
+          "text": "Stützt sich ein Mujtahid auf einen Hadith, gilt das nach Radd al-Muḥtār als Bestätigung seiner Echtheit (taṣḥīḥ). Ibn ʿĀbidīn antwortet so auf den Einwand, ein Hadith, auf den sich Imam Muḥammad in einer Frage des Kaufrechts stützte, sei gharīb.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Buyūʿ › Faṣl fī-mā yadkhulu fī l-bayʿ tabaʿan › Maṭlab: al-Mujtahid idhā istadalla bi-ḥadīth kāna taṣḥīḥan lahu",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 553,
+              "passage": "radd_al_muhtar.ms4318",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4318",
+              "passageSha256Text": "596d86a3ff90804b7615db1b30a28416a2042a1e4539860359b68f9ee9be646f",
+              "zitatVon": 1453,
+              "zitatBis": 1500,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Buyūʿ › Faṣl fī-mā yadkhulu fī l-bayʿ tabaʿan › Maṭlab: al-Mujtahid idhā istadalla bi-ḥadīth kāna taṣḥīḥan lahu",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 553,
+              "passage": "radd_al_muhtar.ms4319",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4319",
+              "passageSha256Text": "fdf366d219f5b7f23e839627b6a1f316e4fe1e5dc07ae2514fba38c60faae040",
+              "zitatVon": 230,
+              "zitatBis": 328,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.a09",
+          "text": "Widersprechen sich Überlieferungen, prüfen die Werke, ob eine von ihnen aufgehoben (mansūkh) ist. Al-Ikhtiyār führt zum Qunūt im Morgengebet Berichte an, nach denen der Prophet ihn nur eine Zeit lang sprach und dann unterließ, und schließt daraus, dass er aufgehoben ist. Betet man hinter einem Imam, der im Morgengebet den Qunūt spricht, folgt man ihm darin nach Abū Yūsuf, um ihm nicht zu widersprechen; nach Abū Ḥanīfa und Muḥammad folgt man ihm nicht, weil es eine aufgehobene Regel ist.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣalāt al-Witr",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 55,
+              "passage": "ikhtiyar.ms0060",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms60",
+              "passageSha256Text": "9fc28d2ac93a3c734a627bc76a3c104e5868e2479a110056c0b1aa16ec3f0d5a",
+              "zitatVon": 442,
+              "zitatBis": 973,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e08.l03.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e08.l03.a02",
+          "anweisung": "Ordne die Arten der Überlieferung nach der Rechtsmethodik in Radd al-Muḥtār: von der geringsten zur größten Verbreitung in der ersten Generation und danach.",
+          "schritte": [
+            "Einzelüberlieferung (āḥād)",
+            "bekannte Überlieferung (mashhūr)",
+            "vielfach überlieferte Überlieferung (mutawātir)"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e08.l03.a01",
+          "anweisung": "Ordne die Bedeutungen des Wortes Sunna nach Radd al-Muḥtār zu.",
+          "paare": [
+            {
+              "links": "sprachlich",
+              "rechts": "Weg und Gewohnheit"
+            },
+            {
+              "links": "im Gottesdienst",
+              "rechts": "freiwillige Handlungen"
+            },
+            {
+              "links": "als Beleg",
+              "rechts": "Wort, Handlung oder Billigung des Propheten"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l03.a06",
+          "behauptung": "Eine erfundene Überlieferung darf man nach Radd al-Muḥtār bei den Vorzügen guter Taten befolgen.",
+          "richtig": false,
+          "begruendung": "Nach übereinstimmender Ansicht darf man eine erfundene Überlieferung nicht befolgen, auch nicht bei den Vorzügen guter Taten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e08.l03.a05",
+          "fall": "Lehrfall: In einem Vortrag wird ein Hadith über den Lohn einer freiwilligen guten Tat erwähnt. Er gilt als schwach, aber nicht als schwer schwach.",
+          "frage": "Was gilt nach Radd al-Muḥtār?",
+          "optionen": [
+            "Man darf danach handeln, um den Lohn zu erlangen, ohne zu glauben, dass er sicher feststeht.",
+            "Man muss ihn wie eine sicher feststehende Sunna behandeln.",
+            "Man darf nach ihm in keinem Fall handeln."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l03.a03",
+          "behauptung": "Eine Einzelüberlieferung kann nach al-Hidāya den Korantext ergänzen und so etwas zur Pflicht (farḍ) machen.",
+          "richtig": false,
+          "begruendung": "Nach al-Hidāya ergänzt eine Einzelüberlieferung den Korantext nicht, verpflichtet aber zum Handeln; daraus folgt eine Notwendigkeit (wājib), keine Pflicht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l03.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l03.a07",
+          "behauptung": "Beruht die Schwäche eines Hadith darauf, dass ein Überlieferer lügt, kann er nach Radd al-Muḥtār durch weitere Wege zur Stufe ḥasan aufsteigen.",
+          "richtig": false,
+          "begruendung": "Bei Sündhaftigkeit oder Lüge eines Überlieferers hilft eine Bestätigung nicht; aufsteigen kann ein Hadith etwa bei schlechtem Gedächtnis eines vertrauenswürdigen Überlieferers.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e08.l04",
+      "titel": "Der Koran nach den Werken der Schule: Wortlaut, Lesarten und Suren",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e08.l04.a01",
+          "text": "Was ist „Koran“? Nach Abū Yūsuf und Muḥammad ist es der Name eines geordneten arabischen Wortlauts; nur wer Arabisch nicht kann, darf sich im Gebet mit der Bedeutung begnügen. Abū Ḥanīfa ließ die Rezitation auf Persisch zunächst auch für den zu, der Arabisch kann, und stützte sich auf einen Koranvers (siehe Verweis). Nach al-Hidāya ist überliefert, dass er zu ihrer Ansicht zurückkehrte, und darauf stützt man sich. Radd al-Muḥtār sagt: Eine persische Wiedergabe ist gar kein Koran, weil „Koran“ im Sprachgebrauch der Scharia den arabischen Wortlaut meint.",
+          "meinung": "abu_yusuf",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 47,
+              "passage": "hidaya.ms0043",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms43",
+              "passageSha256Text": "8ee291a075f81d939cef13447524b8e208e091320449b25f71b8a946e10391b0",
+              "zitatVon": 1423,
+              "zitatBis": 1529,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 47,
+              "passage": "hidaya.ms0044",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms44",
+              "passageSha256Text": "20a874da6d5e771a556b65fc151f0b0e7aed3d457f5fcec8939d55277fdd3c6c",
+              "zitatVon": 9,
+              "zitatBis": 338,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab fī ḥukm al-qirāʾa bi-sh-shādhdh",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 485,
+              "passage": "radd_al_muhtar.ms0676",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms676",
+              "passageSha256Text": "63516fb5676b085a7a2e344c064dc6c012fb014a569ba3154ce545e54ec8b753",
+              "zitatVon": 1107,
+              "zitatBis": 1186,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "26:196"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l04.a02",
+          "text": "Der Koran, mit dem das Gebet nach übereinstimmender Ansicht gültig ist, ist nach Radd al-Muḥtār das, was in den Muṣḥafen festgehalten ist, die ʿUthmān in die Städte schickte, und worin die zehn Imame der Lesarten übereinstimmen. Das ist mutawātir, also vielfach überliefert, im Ganzen und im Einzelnen. Was über die sieben Lesarten hinaus bis zu den zehn reicht, ist nicht abweichend (shādhdh); abweichend ist nach der richtigen Ansicht nur, was jenseits der zehn liegt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab fī ḥukm al-qirāʾa bi-sh-shādhdh › Maṭlab: Bayān al-mutawātir wa-sh-shādhdh",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 486,
+              "passage": "radd_al_muhtar.ms0677",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms677",
+              "passageSha256Text": "204dffd3c10f5c220fd8125f20880905a4df32829923026b51ec66f17a377fb1",
+              "zitatVon": 419,
+              "zitatBis": 660,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l04.a03",
+          "text": "Die Basmala ist nach der Schule ein Vers des Korans. Sie wurde herabgesandt, um die Suren voneinander zu trennen, und steht am Anfang der Fātiḥa zum Segen. Sie ist weder ein Teil der Fātiḥa noch ein Teil jeder Sure; Letzteres ist die Ansicht ash-Shāfiʿīs. In Sure an-Naml ist sie Teil eines Verses (siehe Verweis). Die Ansicht, sie gehöre gar nicht zum Koran, ist nach Radd al-Muḥtār bei den Hanafiten schwach.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab: Qirāʾat al-basmala bayna l-Fātiḥa wa-s-sūra ḥasan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 491,
+              "passage": "radd_al_muhtar.ms0685",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms685",
+              "passageSha256Text": "a6ed9eab2160a3bb8131a8a69c9cb45361b9bcfbabbf85de2bf79334f5e59953",
+              "zitatVon": 1401,
+              "zitatBis": 1474,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab: Qirāʾat al-basmala bayna l-Fātiḥa wa-s-sūra ḥasan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 491,
+              "passage": "radd_al_muhtar.ms0686",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms686",
+              "passageSha256Text": "0d740de16a11a0d773eb96aa144b26e4451b98216076483267132528b29d6571",
+              "zitatVon": 22,
+              "zitatBis": 45,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab: Qirāʾat al-basmala bayna l-Fātiḥa wa-s-sūra ḥasan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 491,
+              "passage": "radd_al_muhtar.ms0686",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms686",
+              "passageSha256Text": "0d740de16a11a0d773eb96aa144b26e4451b98216076483267132528b29d6571",
+              "zitatVon": 46,
+              "zitatBis": 527,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "27:30"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l04.a04",
+          "text": "Die meisten Gelehrten halten die Basmala für Koran, weil sie an ihrer Stelle vielfach überliefert ist; Mālik widerspricht. Deshalb gilt nach Radd al-Muḥtār aus Vorsicht zweierlei: Wer im Zustand der janāba ist, spricht sie nicht in der Absicht, Koran zu rezitieren. Und im Gebet genügt sie allein nicht als Pflicht-Rezitation, denn diese Pflicht steht sicher fest und wird nicht durch etwas erfüllt, bei dem ein Zweifel besteht.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab: Qirāʾat al-basmala bayna l-Fātiḥa wa-s-sūra ḥasan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 491,
+              "passage": "radd_al_muhtar.ms0686",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms686",
+              "passageSha256Text": "0d740de16a11a0d773eb96aa144b26e4451b98216076483267132528b29d6571",
+              "zitatVon": 826,
+              "zitatBis": 1168,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l04.a05",
+          "text": "Der Mufaṣṣal ist nach Radd al-Muḥtār das letzte Siebtel des Korans. Er heißt so, weil seine Suren oft durch die Basmala getrennt sind, oder weil darin wenig aufgehoben ist; deshalb heißt er auch al-muḥkam. Wo er beginnt, ist umstritten; nach al-Baḥr beginnt er nach Ansicht der hanefitischen Gelehrten mit Sure al-Ḥujurāt (49). Die langen Suren des Mufaṣṣal reichen bis zum Ende von Sure al-Burūj (85); ob al-Burūj selbst zu den langen oder zu den mittleren gehört, ist umstritten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Maṭlab: as-Sunna takūnu sunnat ʿayn wa-sunnat kifāya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 540,
+              "passage": "radd_al_muhtar.ms0767",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms767",
+              "passageSha256Text": "f44639dbefd89aae7f408bdf090abf3a46284df9f534a7feacda5ba81b8979ba",
+              "zitatVon": 449,
+              "zitatBis": 639,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Maṭlab: as-Sunna takūnu sunnat ʿayn wa-sunnat kifāya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 540,
+              "passage": "radd_al_muhtar.ms0767",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms767",
+              "passageSha256Text": "f44639dbefd89aae7f408bdf090abf3a46284df9f534a7feacda5ba81b8979ba",
+              "zitatVon": 851,
+              "zitatBis": 1095,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l04.a06",
+          "text": "Die Reihenfolge der Suren einzuhalten, gehört nach Radd al-Muḥtār zu den notwendigen Dingen der Rezitation. Deshalb ist es auch außerhalb des Gebets verpönt, sie umzukehren. Kindern ist es erlaubt, um ihnen das Lernen zu erleichtern.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Maṭlab: al-Istimāʿ li-l-Qurʾān farḍ kifāya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 547,
+              "passage": "radd_al_muhtar.ms0778",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms778",
+              "passageSha256Text": "ae7a8f6a53a3f7aa9c14fa25c713c1330a8b33af38256ad720f8906a77742a73",
+              "zitatVon": 855,
+              "zitatBis": 940,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Maṭlab: al-Istimāʿ li-l-Qurʾān farḍ kifāya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 547,
+              "passage": "radd_al_muhtar.ms0779",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms779",
+              "passageSha256Text": "ff140ecdfd8db3f1abc254c75687d948c9a9e4e35bbd0de0b12f38a4c0e54baa",
+              "zitatVon": 357,
+              "zitatBis": 429,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e08.l04.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l04.a03",
+          "behauptung": "Die Basmala ist nach der hanefitischen Schule ein Teil jeder Sure.",
+          "richtig": false,
+          "begruendung": "Sie ist ein Vers des Korans, der zur Trennung der Suren herabgesandt wurde. Dass sie Teil jeder Sure sei, ist die Ansicht ash-Shāfiʿīs.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l04.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e08.l04.a05",
+          "anweisung": "Ordne die Angaben zum Mufaṣṣal nach Radd al-Muḥtār zu.",
+          "paare": [
+            {
+              "links": "Mufaṣṣal",
+              "rechts": "das letzte Siebtel des Korans"
+            },
+            {
+              "links": "Beginn nach al-Baḥr",
+              "rechts": "Sure al-Ḥujurāt (49)"
+            },
+            {
+              "links": "Ende der langen Suren",
+              "rechts": "Ende von Sure al-Burūj (85)"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l04.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e08.l04.a02",
+          "fall": "Lehrfall: In einem Kurs wird besprochen, welche Lesarten des Korans im Gebet als Koran gelten.",
+          "frage": "Was gilt nach Radd al-Muḥtār?",
+          "optionen": [
+            "Was in den Muṣḥafen ʿUthmāns steht und worin die zehn Imame der Lesarten übereinstimmen; abweichend ist erst, was jenseits der zehn liegt.",
+            "Nur die Lesarten der sieben Imame; alles darüber hinaus ist abweichend.",
+            "Jede überlieferte Lesart, auch eine, die jenseits der zehn liegt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l04.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l04.a01",
+          "behauptung": "Nach Radd al-Muḥtār ist eine persische Wiedergabe im Sprachgebrauch der Scharia kein Koran.",
+          "richtig": true,
+          "begruendung": "„Koran“ meint im Sprachgebrauch der Scharia den arabischen Wortlaut; deshalb ist eine persische Wiedergabe kein Koran.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l04.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e08.l04.a06",
+          "fall": "Lehrfall: Ein Lehrer übt mit kleinen Kindern die kurzen Suren vom Ende des Korans aus rückwärts: zuerst die letzte Sure, dann die vorletzte und so weiter.",
+          "frage": "Wie beurteilt Radd al-Muḥtār das?",
+          "optionen": [
+            "Es ist erlaubt, um den Kindern das Lernen zu erleichtern.",
+            "Es ist verpönt wie bei Erwachsenen, ohne Ausnahme.",
+            "Es ist Pflicht, weil Kinder nur so lernen dürfen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e08.l05",
+      "titel": "Achtung vor dem Koran: Zuhören, Muṣḥaf und Aufbewahrung",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e08.l05.a01",
+          "text": "Wer hört, wie der Koran rezitiert wird, soll nach Radd al-Muḥtār zuhören, im Gebet und auch außerhalb davon; maßgeblich ist der allgemeine Wortlaut der Koranstelle, nicht nur ihr Anlass im Gebet. Nach Sharḥ al-Munya ist das Zuhören eine Gemeinschaftspflicht (farḍ kifāya): Es genügt, wenn einige zuhören. Ein späterer Gelehrter vertrat in einer eigenen Schrift, es sei eine Pflicht jedes Einzelnen (farḍ ʿayn).",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Furūʿ fī l-qirāʾa khārij aṣ-ṣalāh",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 546,
+              "passage": "radd_al_muhtar.ms0776",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms776",
+              "passageSha256Text": "2a543fd34dd0ca9ef2f4420ff9ce698c13a7b4336023f10d40428e6ffa7ef1f6",
+              "zitatVon": 1205,
+              "zitatBis": 1341,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Maṭlab: al-Istimāʿ li-l-Qurʾān farḍ kifāya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 546,
+              "passage": "radd_al_muhtar.ms0777",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms777",
+              "passageSha256Text": "d6edf1a736a012b04cafbac0b13ede854c6bd304c08fe6764920681048bbb3e4",
+              "zitatVon": 215,
+              "zitatBis": 383,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Maṭlab: al-Istimāʿ li-l-Qurʾān farḍ kifāya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 546,
+              "passage": "radd_al_muhtar.ms0777",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms777",
+              "passageSha256Text": "d6edf1a736a012b04cafbac0b13ede854c6bd304c08fe6764920681048bbb3e4",
+              "zitatVon": 549,
+              "zitatBis": 653,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.a02",
+          "text": "Wer rezitiert, muss den Koran achten: Er rezitiert ihn nicht auf Märkten und an Orten, an denen die Menschen mit ihrer Arbeit beschäftigt sind. Tut er es doch, missachtet er selbst die Würde des Korans, und die Sünde trifft ihn, nicht die Beschäftigten. Ebenso sündigt nach Radd al-Muḥtār, wer neben jemandem rezitiert, der Fiqh schreibt und deshalb nicht zuhören kann, oder wer laut auf dem Dach rezitiert, während die Menschen schlafen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Maṭlab: al-Istimāʿ li-l-Qurʾān farḍ kifāya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 546,
+              "passage": "radd_al_muhtar.ms0777",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms777",
+              "passageSha256Text": "d6edf1a736a012b04cafbac0b13ede854c6bd304c08fe6764920681048bbb3e4",
+              "zitatVon": 384,
+              "zitatBis": 536,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Furūʿ fī l-qirāʾa khārij aṣ-ṣalāh",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 546,
+              "passage": "radd_al_muhtar.ms0776",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms776",
+              "passageSha256Text": "2a543fd34dd0ca9ef2f4420ff9ce698c13a7b4336023f10d40428e6ffa7ef1f6",
+              "zitatVon": 1509,
+              "zitatBis": 1555,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Furūʿ fī l-qirāʾa khārij aṣ-ṣalāh",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 546,
+              "passage": "radd_al_muhtar.ms0777",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms777",
+              "passageSha256Text": "d6edf1a736a012b04cafbac0b13ede854c6bd304c08fe6764920681048bbb3e4",
+              "zitatVon": 0,
+              "zitatBis": 163,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.a03",
+          "text": "Wer nicht zuhören kann, ist entschuldigt, wenn er einen Grund hat. Radd al-Muḥtār nennt nach al-Qunya ein Beispiel: Liest ein Kind zu Hause Koran, während die Familie arbeitet, sind die Angehörigen entschuldigt, wenn sie mit der Arbeit vor dem Rezitieren begonnen haben; sonst nicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl fī l-Qirāʾa › Furūʿ fī l-qirāʾa khārij aṣ-ṣalāh",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 546,
+              "passage": "radd_al_muhtar.ms0776",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms776",
+              "passageSha256Text": "2a543fd34dd0ca9ef2f4420ff9ce698c13a7b4336023f10d40428e6ffa7ef1f6",
+              "zitatVon": 1342,
+              "zitatBis": 1474,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.a04",
+          "text": "Zeichen nach jeweils zehn Versen (taʿshīr) und Zeichen, die die Vokale und Endungen zeigen (naqṭ), nennen al-Ikhtiyār und al-Hidāya im Muṣḥaf verpönt; sie stützen sich auf eine Aussage Ibn Masʿūds und anderer Gefährten. Al-Ikhtiyār begründet: Diese Zeichen gehören nicht zum Koran. Al-Hidāya fügt hinzu, die Gelehrten hätten gesagt, in ihrer Zeit bräuchten Nichtaraber solche Hilfen; sie wegzulassen, schade dem Bewahren des Korans, darum sei es gut. Radd al-Muḥtār sagt, dass so das Lesen erleichtert wird und dass sich vieles mit Zeit und Ort ändert; dazu zählt es auch Zeichen der Niederwerfung und Tajwīd-Zeichen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 166,
+              "passage": "ikhtiyar.ms0883",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms883",
+              "passageSha256Text": "b12e312dd19035038174196b22d20f1ca23d581a29dcbf53b1e53c4fb84ca16e",
+              "zitatVon": 736,
+              "zitatBis": 901,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Masāʾil Mutafarriqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 95,
+              "passage": "hidaya.ms0944",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms944",
+              "passageSha256Text": "2871c3203537796636670aae79653892fe6b93720108aa05879c806c042db5b3",
+              "zitatVon": 967,
+              "zitatBis": 1241,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayrihi › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 386,
+              "passage": "radd_al_muhtar.ms6107",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6107",
+              "passageSha256Text": "db6d1e0bf24305649bef29c64a57b985b47dff5a2d68176c98f89ca34749c506",
+              "zitatVon": 1107,
+              "zitatBis": 1469,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayrihi › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 386,
+              "passage": "radd_al_muhtar.ms6108",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6108",
+              "passageSha256Text": "d560cec049f35f1f7897586092f21c3a116c1a029df472bcac1f538f0f9d168c",
+              "zitatVon": 0,
+              "zitatBis": 37,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.a05",
+          "text": "Den Muṣḥaf zu schmücken (taḥliya), ist nach al-Hidāya und al-Ikhtiyār unbedenklich, weil es ihn ehrt. Al-Hidāya vergleicht es mit dem Schmuck einer Moschee.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Masāʾil Mutafarriqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 95,
+              "passage": "hidaya.ms0944",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms944",
+              "passageSha256Text": "2871c3203537796636670aae79653892fe6b93720108aa05879c806c042db5b3",
+              "zitatVon": 1242,
+              "zitatBis": 1301,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 166,
+              "passage": "ikhtiyar.ms0883",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms883",
+              "passageSha256Text": "b12e312dd19035038174196b22d20f1ca23d581a29dcbf53b1e53c4fb84ca16e",
+              "zitatVon": 902,
+              "zitatBis": 939,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.a06",
+          "text": "Ob man den Muṣḥaf mit Gold oder Silber verzieren darf, ist umstritten. Radd al-Muḥtār nennt es erlaubt, im Gegensatz zu Abū Yūsuf. Al-Hidāya ordnet den mit Gold oder Silber verzierten Muṣḥaf derselben Meinungsverschiedenheit zu wie Gefäße mit Silberbeschlag: Abū Ḥanīfa erlaubt sie, wenn man die Stelle des Silbers meidet, Abū Yūsuf hält sie für verpönt, und von Muḥammad ist beides überliefert.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayrihi › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 386,
+              "passage": "radd_al_muhtar.ms6107",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6107",
+              "passageSha256Text": "db6d1e0bf24305649bef29c64a57b985b47dff5a2d68176c98f89ca34749c506",
+              "zitatVon": 738,
+              "zitatBis": 797,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 78,
+              "passage": "hidaya.ms0925",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms925",
+              "passageSha256Text": "5293d3e3faf928af55a54a8b272f617e359ff0e51b38d770e157be36e3986692",
+              "zitatVon": 130,
+              "zitatBis": 565,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.a07",
+          "text": "Den Koran zu schreiben und dabei jedes Wort zu erklären und zu übersetzen, ist nach al-Fatḥ (aus al-Kāfī) erlaubt. Wer aber gewohnheitsmäßig auf Persisch rezitieren oder einen Muṣḥaf auf Persisch schreiben will, wird daran gehindert; bei einem oder zwei Versen nicht. Nach al-Mujtabā ist es verpönt, einen Tafsir auf Persisch in den Muṣḥaf zu schreiben, wie manche es tun; al-Hinduwānī erlaubte es. Ibn ʿĀbidīn meint, „Persisch“ sei dabei keine Einschränkung.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab fī ḥukm al-qirāʾa bi-sh-shādhdh",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 486,
+              "passage": "radd_al_muhtar.ms0677",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms677",
+              "passageSha256Text": "204dffd3c10f5c220fd8125f20880905a4df32829923026b51ec66f17a377fb1",
+              "zitatVon": 1388,
+              "zitatBis": 1474,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Ṣifat aṣ-Ṣalāh › Faṣl › Maṭlab fī ḥukm al-qirāʾa bi-sh-shādhdh",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 486,
+              "passage": "radd_al_muhtar.ms0678",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms678",
+              "passageSha256Text": "8def1d145c6631ea7def43f91a68d444e68c14d656f94a358e9bba0a5e1114bf",
+              "zitatVon": 0,
+              "zitatBis": 283,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.a08",
+          "text": "Aus Ehrerbietung legt man Bücher nach Radd al-Muḥtār in einer Rangfolge übereinander, unter anderem so: unten Bücher der Grammatik und der Sprache, darüber Traumdeutung, dann Fiqh, dann Überlieferungen und Ermahnungen, dann Tafsir. Der Muṣḥaf liegt über allen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 177,
+              "passage": "radd_al_muhtar.ms0162",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms162",
+              "passageSha256Text": "6df82842ad6a7c78fe175bf73acbadbd318e865c05ce13b6616433348d659d02",
+              "zitatVon": 878,
+              "zitatBis": 1526,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.a09",
+          "text": "Ist ein Muṣḥaf so abgenutzt, dass man nicht mehr daraus lesen kann, wird er nach Radd al-Muḥtār nicht verbrannt; darauf wies Muḥammad hin, und danach richtet man sich. Man wickelt ihn in ein reines Tuch und begräbt ihn an einer Stelle, über die niemand geht, am besten in einer Seitennische oder unter einer Abdeckung, damit keine Erde direkt auf ihn geschüttet wird. Das Begraben ist keine Herabsetzung, sondern eine Ehrung, wie beim Begräbnis eines Muslims. Man kann ihn auch mit Wasser abwaschen oder an einem reinen Ort aufbewahren, den weder eine unreine Hand noch Staub oder Schmutz erreicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayrihi › Faṣl fī l-Bayʿ › Farʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 422,
+              "passage": "radd_al_muhtar.ms6164",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6164",
+              "passageSha256Text": "4dfad7be9331bf33461b71dd7aaceb2cc1318f08f020328a2a74d8718e0f7dd4",
+              "zitatVon": 849,
+              "zitatBis": 1175,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 177,
+              "passage": "radd_al_muhtar.ms0161",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms161",
+              "passageSha256Text": "a3b729439c25fdc6cd57a7d016a51634aa1712a10868ba4288ddc2bafef47f78",
+              "zitatVon": 1146,
+              "zitatBis": 1367,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 177,
+              "passage": "radd_al_muhtar.ms0162",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms162",
+              "passageSha256Text": "6df82842ad6a7c78fe175bf73acbadbd318e865c05ce13b6616433348d659d02",
+              "zitatVon": 13,
+              "zitatBis": 128,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.a10",
+          "text": "Andere abgenutzte Bücher behandelt man nach Radd al-Muḥtār so: Man löscht darin die Namen Gottes, der Engel und der Gesandten und verbrennt den Rest. Man darf sie auch so, wie sie sind, in fließendes Wasser legen oder begraben; das Begraben ist besser.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 177,
+              "passage": "radd_al_muhtar.ms0161",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms161",
+              "passageSha256Text": "a3b729439c25fdc6cd57a7d016a51634aa1712a10868ba4288ddc2bafef47f78",
+              "zitatVon": 1368,
+              "zitatBis": 1512,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: Yuṭlaqu d-duʿāʾ ʿalā mā yashmal ath-thanāʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 177,
+              "passage": "radd_al_muhtar.ms0162",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms162",
+              "passageSha256Text": "6df82842ad6a7c78fe175bf73acbadbd318e865c05ce13b6616433348d659d02",
+              "zitatVon": 0,
+              "zitatBis": 12,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e08.l05.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e08.l05.a08",
+          "anweisung": "Ordne die Bücher nach der Rangfolge in Radd al-Muḥtār von unten nach oben.",
+          "schritte": [
+            "Grammatik und Sprache",
+            "Traumdeutung",
+            "Fiqh",
+            "Überlieferungen und Ermahnungen",
+            "Tafsir",
+            "Muṣḥaf"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e08.l05.a09",
+          "fall": "Lehrfall: In einer Moschee liegen alte Muṣḥafe, deren Seiten zerfallen und aus denen man nicht mehr lesen kann.",
+          "frage": "Welchen Weg nennt Radd al-Muḥtār?",
+          "optionen": [
+            "Sie in ein reines Tuch wickeln und an einer Stelle begraben, über die niemand geht.",
+            "Sie mit dem Altpapier entsorgen.",
+            "Sie verbrennen, weil das am schnellsten geht."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l05.a01",
+          "behauptung": "Nach Sharḥ al-Munya, das Radd al-Muḥtār anführt, ist das Zuhören beim Rezitieren eine Gemeinschaftspflicht: Es genügt, wenn einige zuhören.",
+          "richtig": true,
+          "begruendung": "So steht es in Sharḥ al-Munya; ein späterer Gelehrter hielt es dagegen für eine Pflicht jedes Einzelnen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l05.a02",
+          "behauptung": "Rezitiert jemand laut auf dem Markt und die Händler hören nicht zu, trifft die Sünde nach Radd al-Muḥtār die Händler.",
+          "richtig": false,
+          "begruendung": "Wer an Orten rezitiert, an denen die Menschen beschäftigt sind, missachtet selbst die Würde des Korans; die Sünde trifft ihn.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.q05",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e08.l05.a04",
+          "anweisung": "Ordne die Begriffe ihrer Bedeutung zu.",
+          "paare": [
+            {
+              "links": "taʿshīr",
+              "rechts": "Zeichen nach jeweils zehn Versen"
+            },
+            {
+              "links": "naqṭ",
+              "rechts": "Zeichen für Vokale und Endungen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e08.l05.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e08.l05.a04",
+          "behauptung": "Nach al-Hidāya sagten die Gelehrten, solche Zeichen im Muṣḥaf seien in ihrer Zeit gut, weil Nichtaraber diese Hilfen brauchen.",
+          "richtig": true,
+          "begruendung": "Ursprünglich galten die Zeichen als verpönt; weil Nichtaraber sie brauchen und das Weglassen dem Bewahren des Korans schadet, nannten die Gelehrten sie gut.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}
