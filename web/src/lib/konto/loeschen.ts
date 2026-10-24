@@ -4,6 +4,7 @@ import { protokolliere } from '@/lib/audit';
 import { protokolliereModeration } from '@/lib/chat/dienst';
 import { db, schema } from '@/lib/db';
 import { verschluessele } from '@/lib/krypto';
+import { beendeLernappDerEltern, folgenNachBezugsende } from '@/lib/lernapp/schreiben/folgen';
 import { UNBESTAETIGT_TAGE } from '@/lib/lernen/verwaltung';
 import { KINDER_DOMAIN } from './regeln';
 
@@ -25,7 +26,9 @@ export async function loescheGemeindeKonto(
   benutzerId: string,
   o: { akteurId: string | null; anlass: LoeschAnlass },
 ): Promise<LoeschErgebnis> {
-  return db.transaction(async (tx) => {
+  // Eltern-Kind-Bezüge enden mit dem Elternkonto: Folgen für die Lern-App der Kinder nach dem Speichern (SL2-Rest)
+  let lernapp: string[] = [];
+  const ergebnis = await db.transaction(async (tx): Promise<LoeschErgebnis> => {
     const [u] = await tx.select({ id: schema.user.id, email: schema.user.email }).from(schema.user).where(eq(schema.user.id, benutzerId));
     if (!u) return { ok: false, fehler: 'nichtGefunden' } as const;
     const [verwaltung] = await tx
@@ -69,6 +72,8 @@ export async function loescheGemeindeKonto(
     await tx.delete(schema.kontoEinwilligung).where(eq(schema.kontoEinwilligung.benutzerId, benutzerId));
     // Einladungen an die Adresse (Name, E-Mail) und Links (Bestätigung, Passwort) des Kontos
     await tx.delete(schema.einladung).where(sql`lower(${schema.einladung.email}) = ${u.email.toLowerCase()}`);
+    // Einwilligung `lernapp`, die dieses Konto als Elternteil für Kinder gegeben hat: endet mit dem Bezug
+    lernapp = await beendeLernappDerEltern(tx, benutzerId);
     await tx.delete(schema.verification).where(eq(schema.verification.value, benutzerId));
     // Konto (Kaskade: account, two_factor, passkey, gemeinde_rolle, konto_profil, eltern_kind, gruppen_leitung, chat_*)
     await tx.delete(schema.user).where(eq(schema.user.id, benutzerId));
@@ -84,6 +89,8 @@ export async function loescheGemeindeKonto(
     );
     return { ok: true, nachrichten: entfernt.length } as const;
   });
+  if (ergebnis.ok && lernapp.length) await folgenNachBezugsende(lernapp, o.akteurId);
+  return ergebnis;
 }
 
 /** Ohne Verwaltungsrollen (Bedingung für die automatischen Löschungen). */

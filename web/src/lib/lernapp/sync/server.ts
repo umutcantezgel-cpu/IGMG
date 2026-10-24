@@ -79,12 +79,12 @@ export async function lernappEinwilligung(
   return (await lernappEinwilligungDetail(benutzerId, { istKind }, jetzt)).stand;
 }
 
-/** Wie `lernappEinwilligung`, dazu die Lage (Kind: „eltern“) und seit wann die geltende Einwilligung besteht. */
-export async function lernappEinwilligungDetail(
+/** Eigener Lerndatensatz (falls vorhanden) und Einwilligungslage eines Kontos (`konto/sechzehn.ts`). */
+async function lageUndLernende(
   benutzerId: string,
-  { istKind }: { istKind: boolean },
-  jetzt = new Date(),
-): Promise<LernappEinwilligungDetail> {
+  istKind: boolean,
+  jetzt: Date,
+): Promise<{ lage: EinwilligungsLage; eigene: { id: string; sechzehnAm: string | null } | undefined }> {
   const [eigene] = await db
     .select({ id: schema.lernende.id, sechzehnAm: schema.lernende.sechzehnAm })
     .from(schema.lernende)
@@ -94,6 +94,24 @@ export async function lernappEinwilligungDetail(
   let lage: EinwilligungsLage = 'eigene';
   if (istKind) lage = eigene ? einwilligungsLage(eigene.sechzehnAm, heute) : 'eltern';
   else if (eigene?.sechzehnAm) lage = einwilligungsLage(eigene.sechzehnAm, heute);
+  return { lage, eigene };
+}
+
+/**
+ * Einwilligungslage eines Kontos für die Lern-App: „eltern“ (unter 16 bzw. Kinderkonto ohne Lerndatensatz – die Eltern
+ * entscheiden), „uebergang“ (30 Tage ab dem 16. Geburtstag) oder „eigene“. Ohne Einwilligungen zu lesen.
+ */
+export async function lernappLage(benutzerId: string, { istKind }: { istKind: boolean }, jetzt = new Date()): Promise<EinwilligungsLage> {
+  return (await lageUndLernende(benutzerId, istKind, jetzt)).lage;
+}
+
+/** Wie `lernappEinwilligung`, dazu die Lage (Kind: „eltern“) und seit wann die geltende Einwilligung besteht. */
+export async function lernappEinwilligungDetail(
+  benutzerId: string,
+  { istKind }: { istKind: boolean },
+  jetzt = new Date(),
+): Promise<LernappEinwilligungDetail> {
+  const { lage, eigene } = await lageUndLernende(benutzerId, istKind, jetzt);
 
   const zeilen = await db
     .select({

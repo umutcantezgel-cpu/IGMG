@@ -138,6 +138,7 @@ export const AKTION_SCHLUESSEL = {
   'lernapp.schreibabgabe_eingereicht': 'lernappSchreibabgabeEingereicht',
   'lernapp.schreibabgabe_zurueckgegeben': 'lernappSchreibabgabeZurueckgegeben',
   'lernapp.schreibabgabe_geloescht': 'lernappSchreibabgabeGeloescht',
+  'lernapp.lernstand_geloescht': 'lernappLernstandGeloescht',
 } as const satisfies Record<AuditAktion, string>;
 
 /** Alle Aktionen in der Reihenfolge des Schlüsselverzeichnisses. */

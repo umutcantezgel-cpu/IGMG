@@ -1,7 +1,19 @@
-import { FileDown, Fingerprint, KeyRound, MonitorSmartphone, PenLine, ShieldCheck, Trash2, UserRound, X } from 'lucide-react';
+import {
+  FileDown,
+  Fingerprint,
+  GraduationCap,
+  KeyRound,
+  MonitorSmartphone,
+  PenLine,
+  ShieldCheck,
+  Trash2,
+  UserRound,
+  X,
+} from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { AbmeldenKnopf } from '@/components/konto/AbmeldenKnopf';
+import { Haken } from '@/components/konto/Haken';
 import { KontoEinstieg } from '@/components/konto/KontoEinstieg';
 import { Abschnitt, Status } from '@/components/mein-bereich/Abschnitt';
 import {
@@ -12,12 +24,16 @@ import {
   ZweiFaktorAbschalten,
   ZweiFaktorEinrichten,
 } from '@/components/mein-bereich/KontoFormulare';
+import { KNOPF_PRIMAER, KNOPF_SEKUNDAER } from '@/components/mein-bereich/Bausteine';
 import { MeinBereichRahmen } from '@/components/mein-bereich/MeinBereichRahmen';
 import { PasskeyHinzufuegen } from '@/components/mein-bereich/PasskeyHinzufuegen';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import type { Locale } from '@/i18n/routing';
 import { aktuelleSitzungsId, faktorPflicht, verlangeKontoSeite } from '@/lib/konto/zugang';
+import { absaetze, eigeneLernappEinwilligung, lernappMitKontoAn } from '@/lib/lernapp/einwilligung';
 import { anzahlEigenerAbgaben } from '@/lib/lernapp/schreiben/folgen';
+import { cn } from '@/lib/utils';
+import { lernappBestenlisteZuruecknehmen, lernappEinwilligungAendern } from '@/server/actions/lernapp-einwilligung';
 import { andereSitzungenBeenden, passkeyEntfernen, schreibabgabenLoeschen, sitzungBeenden } from '@/server/actions/mein-bereich';
 import { ladeKontoDetails, ladeLoeschantrag } from '@/server/queries/konto';
 
@@ -32,13 +48,23 @@ export async function generateMetadata(): Promise<Metadata> {
 const LOCALE: Record<Locale, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' };
 /** Rückmeldungen der Aktion „Schreibabgaben löschen“ (`?abgaben=…`); andere Werte zeigen nichts. */
 const ABGABEN_MELDUNG = { geloescht: 'erfolg', bestaetigen: 'fehler', zuViele: 'fehler' } as const;
+/** Rückmeldungen der Einwilligung „Lern-App“ (`?lernapp=…`, S-L3 N-2); andere Werte zeigen nichts. */
+const LERNAPP_MELDUNG = {
+  erteilt: 'erfolg',
+  widerrufen: 'erfolg',
+  ausgeblendet: 'erfolg',
+  haken: 'fehler',
+  eltern: 'info',
+  zuViele: 'fehler',
+} as const;
 
 /**
  * Konto (AUFTRAG 3.5 „Alle“): Profil, Passwort, Zwei-Faktor (QR lokal als SVG), Passkeys, angemeldete Geräte,
  * Datenexport (Art. 15/20), Löschantrag (Art. 17). Lehrkräfte ohne zweiten Faktor sehen nur dessen Einrichtung
  * (`?faktor=pflicht`, Weiterleitung aus `verlangeKonto`). Kinderkonten: nur Profil-Sprache, Passwort, Geräte, Export.
  * Wer Schreibabgaben der Lern-App gespeichert hat, kann sie hier endgültig löschen – auch Kinder und auch, wenn die
- * Gruppen der Lern-App ausgeschaltet sind (S-L2 N-2).
+ * Gruppen der Lern-App ausgeschaltet sind (S-L2 N-2). Einwilligung „Lern-App“ (S-L3 N-2): ab 16 selbst erteilen, solange
+ * ein Schalter mit Personendaten der Lern-App an ist; widerrufen und die Zustimmung zur Bestenliste zurücknehmen immer.
  */
 export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/mein-bereich/konto'>) {
   const sprache = (await getLocale()) as Locale;
@@ -68,10 +94,12 @@ export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/
   }
 
   const aktuell = await aktuelleSitzungsId();
-  const [details, antrag, abgaben] = await Promise.all([
+  const [details, antrag, abgaben, lernapp, lernappAn] = await Promise.all([
     ladeKontoDetails(k.benutzerId, aktuell),
     ladeLoeschantrag(k.benutzerId),
     anzahlEigenerAbgaben(k.benutzerId),
+    eigeneLernappEinwilligung(k.benutzerId, k.istKind),
+    lernappMitKontoAn(),
   ]);
   if (!details) return null;
   const zeit = new Intl.DateTimeFormat(LOCALE[sprache], { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Europe/Berlin' });
@@ -80,6 +108,18 @@ export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/
   const passkeysErlaubt = !k.istKind && k.verwaltungsRollen.length === 0;
   const andere = details.sitzungen.filter((x) => !x.aktuell).length;
   const abgabenMeldung = typeof s.abgaben === 'string' && s.abgaben in ABGABEN_MELDUNG ? (s.abgaben as keyof typeof ABGABEN_MELDUNG) : null;
+  const lernappMeldung = typeof s.lernapp === 'string' && s.lernapp in LERNAPP_MELDUNG ? (s.lernapp as keyof typeof LERNAPP_MELDUNG) : null;
+  const lernappSichtbar = lernappAn || lernapp.eigene !== null || lernapp.bestenliste !== null || lernappMeldung !== null;
+  const lernappText =
+    lernappMeldung === 'zuViele'
+      ? t('zuViele')
+      : lernappMeldung === 'eltern'
+        ? t('konto.lernapp.eltern')
+        : lernappMeldung === 'haken'
+          ? t('konto.lernapp.fehler.haken')
+          : lernappMeldung
+            ? t(`konto.lernapp.ok.${lernappMeldung}`)
+            : null;
 
   return (
     <MeinBereichRahmen
@@ -233,6 +273,87 @@ export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/
       <Abschnitt id="daten" Icon={FileDown} titel={t('konto.export.titel')} text={t('konto.export.text')}>
         <DatenExport />
       </Abschnitt>
+
+      {lernappSichtbar ? (
+        <Abschnitt id="lern-app" Icon={GraduationCap} titel={t('konto.lernapp.titel')} text={t('konto.lernapp.text')}>
+          <div className="flex flex-col gap-4">
+            {lernappMeldung && lernappText ? (
+              <Meldung art={LERNAPP_MELDUNG[lernappMeldung]} fokus>
+                {lernappText}
+              </Meldung>
+            ) : null}
+            {lernapp.lage === 'eltern' ? (
+              <p className="max-w-text text-16">{t(lernapp.gilt ? 'konto.lernapp.elternGilt' : 'konto.lernapp.eltern')}</p>
+            ) : (
+              <article
+                aria-labelledby="lern-app-einwilligung"
+                className={cn(
+                  'flex flex-col gap-3 rounded-lg border p-4 md:px-5',
+                  lernapp.eigene ? 'border-gruen-700 bg-gruen-50' : 'border-linie bg-papier',
+                )}
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <h3 id="lern-app-einwilligung" className="text-20">
+                    {t('konto.lernapp.einwilligungTitel')}
+                  </h3>
+                  <Status an={lernapp.eigene !== null} text={t(lernapp.eigene ? 'konto.lernapp.aktiv' : 'konto.lernapp.inaktiv')} />
+                </div>
+                {lernapp.eigene ? (
+                  <p className="text-16 text-tinte-2">{t('konto.lernapp.erteiltAm', { datum: datum.format(lernapp.eigene.erteiltAm) })}</p>
+                ) : lernapp.gilt ? (
+                  <p className="text-16 text-tinte-2">{t('konto.lernapp.durchEltern')}</p>
+                ) : lernapp.widerrufenAm ? (
+                  <p className="text-16 text-tinte-2">{t('konto.lernapp.widerrufenAm', { datum: datum.format(lernapp.widerrufenAm) })}</p>
+                ) : null}
+                {lernapp.eigene || lernapp.gilt || lernappAn ? (
+                  <>
+                    <p className="max-w-text text-16 font-bold text-tinte-2">{t('konto.lernapp.entwurf')}</p>
+                    {absaetze(t(`konto.lernapp.einwilligung.${lernapp.textArt}`)).map((a) => (
+                      <p key={a} className="max-w-text text-16 text-pretty">
+                        {a}
+                      </p>
+                    ))}
+                  </>
+                ) : null}
+                {lernapp.eigene || lernapp.gilt ? (
+                  <form action={lernappEinwilligungAendern} className="flex max-w-text flex-col gap-3">
+                    <input type="hidden" name="sprache" value={sprache} />
+                    <input type="hidden" name="aktion" value="widerrufen" />
+                    <p className="text-16 font-bold text-warnung">{t('konto.lernapp.widerrufHinweis')}</p>
+                    <button type="submit" className={cn(KNOPF_SEKUNDAER, 'self-start')}>
+                      {t('konto.lernapp.widerrufen')}
+                    </button>
+                  </form>
+                ) : lernappAn ? (
+                  <form action={lernappEinwilligungAendern} className="flex max-w-text flex-col gap-3">
+                    <input type="hidden" name="sprache" value={sprache} />
+                    <input type="hidden" name="aktion" value="erteilen" />
+                    <Haken
+                      id="lern-app-haken"
+                      name="haken"
+                      label={t('konto.lernapp.haken')}
+                      fehler={lernappMeldung === 'haken' ? t('konto.lernapp.fehler.haken') : undefined}
+                    />
+                    <button type="submit" className={cn(KNOPF_PRIMAER, 'self-start')}>
+                      {t('konto.lernapp.erteilen')}
+                    </button>
+                  </form>
+                ) : null}
+              </article>
+            )}
+            {lernapp.bestenliste ? (
+              <form action={lernappBestenlisteZuruecknehmen} className="flex max-w-text flex-col gap-3 border-t border-linie pt-4">
+                <input type="hidden" name="sprache" value={sprache} />
+                <h3 className="text-20">{t('konto.lernapp.bestenliste.titel')}</h3>
+                <p className="text-16">{t('konto.lernapp.bestenliste.text', { datum: datum.format(lernapp.bestenliste) })}</p>
+                <button type="submit" className={cn(KNOPF_SEKUNDAER, 'self-start')}>
+                  {t('konto.lernapp.bestenliste.knopf')}
+                </button>
+              </form>
+            ) : null}
+          </div>
+        </Abschnitt>
+      ) : null}
 
       {abgaben > 0 || abgabenMeldung ? (
         <Abschnitt id="schreibabgaben" Icon={PenLine} titel={t('konto.abgaben.titel')} text={t('konto.abgaben.text', { anzahl: abgaben })}>

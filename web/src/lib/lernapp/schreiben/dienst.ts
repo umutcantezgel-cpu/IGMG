@@ -12,7 +12,7 @@ import type { Pruefliste } from '../aufgaben/auswertung/schreiben';
 import { meineZuweisungen } from '../gruppe/dienst';
 import type { RichtungId } from '../kurse';
 import { lektionAusPaket } from '../paket/bauen';
-import { lernappEinwilligung, lernappEinwilligungDetail } from '../sync/server';
+import { lernappEinwilligung, lernappEinwilligungDetail, lernappLage } from '../sync/server';
 import type { AbgabeAnfrage, AufgabenText, EigeneAbgabe, KeineAbgabe, PruefAntwort, Stufen } from './abgabe';
 import {
   ABGABEN_JE_AUFGABE,
@@ -233,9 +233,25 @@ async function aufgabenTexte(schluessel: readonly string[]): Promise<Map<string,
 
 const nurStufen = (p: Partial<Record<string, number>> | undefined): Stufen => ({ ...(p ?? {}) }) as Stufen;
 
-/** Eigene Abgaben (Art. 15: die eigenen Daten) mit Text und Rückmeldung, neueste zuerst; abgelaufene nicht mehr. */
+/**
+ * Eigene Abgaben (Art. 15: die eigenen Daten) mit Text und Rückmeldung, neueste zuerst; abgelaufene nicht mehr.
+ *
+ * **Altkommentare** (Gegenprüfung der S-L2-Auflagen, DSFA D-L16): In der Einwilligungslage „eltern“ liefert die Liste
+ * keinen gespeicherten Kommentar der Lehrkraft aus, solange `kommentarErlaubt` falsch ist – auch keinen aus der Zeit vor
+ * der Sperre. Der Kanal Erwachsene/r → einzelnes Kind bleibt so auch für Bestandsdaten zu; Prüfliste und Einstufung
+ * bleiben sichtbar. Der Datenexport nach Art. 15/20 (`abgabenFuerExport`) enthält den Kommentar weiter vollständig: Er
+ * geht an das Konto bzw. die Eltern als Auskunft über gespeicherte Daten, nicht als Nachricht der Lehrkraft, und das
+ * Auskunftsrecht lässt sich nicht beschränken, nur weil der Anzeigeweg gesperrt ist.
+ */
 export async function eigeneAbgaben(benutzerId: string, sprache: 'de' | 'tr', jetzt = new Date()): Promise<EigeneAbgabe[]> {
   const A = schema.lernappSchreibabgabe;
+  const [profil] = await db
+    .select({ istKind: schema.kontoProfil.istKind })
+    .from(schema.kontoProfil)
+    .where(eq(schema.kontoProfil.benutzerId, benutzerId))
+    .limit(1);
+  // Unbekannt gilt als Kind (wie beim Lesen durch die Lehrkraft)
+  const kommentarSichtbar = kommentarErlaubt(await lernappLage(benutzerId, { istKind: profil?.istKind ?? true }, jetzt));
   const zeilen = await db
     .select({
       id: A.id,
@@ -271,7 +287,7 @@ export async function eigeneAbgaben(benutzerId: string, sprache: 'de' | 'tr', je
         rueckmeldung: z.korrigiertAm
           ? {
               am: z.korrigiertAm.toISOString(),
-              kommentar: entschluesseleText(z.kommentarVerschluesselt, z.kommentarSchluesselId),
+              kommentar: kommentarSichtbar ? entschluesseleText(z.kommentarVerschluesselt, z.kommentarSchluesselId) : null,
               pruefliste: nurStufen(z.rubrik.lehrkraft),
               einstufung: z.rubrik.einstufung ?? null,
             }

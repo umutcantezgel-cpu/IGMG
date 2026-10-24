@@ -111,14 +111,49 @@ Gilt vor Nr. 1–12 und den Abschnitten oben, wo es abweicht.
 18. **Nr. 11, Kommentar an Kinder (S-L2 M-1, DSFA D-L16):** Bis Kinderschutz, DSB und Bildung entschieden haben, bekommen
     Abgaben in der Einwilligungslage „eltern“ nur Prüfliste und Einstufung (`schreiben/kinderschutz.ts`): Dienst
     (`KommentarGesperrt`) und Action (`kommentarKind`) lehnen einen Kommentar ab, das Formular der Lehrkraft blendet das Feld
-    aus und nennt den Grund; eine Rückgabe ohne Kommentar entfernt dort auch einen früheren. Startklar meldet Rot, solange
-    `lernapp_gruppen` an ist und `ENTSCHEIDUNG_D_L16` fehlt. Der Eintrag `kommentarAnKinder: true` setzt die beschlossenen
-    Schutzmaßnahmen voraus (Eltern sehen den Kommentar oder können ihn melden, Fassungen statt Ersetzen, Bremse).
+    aus und nennt den Grund; eine Rückgabe ohne Kommentar entfernt dort auch einen früheren. Startklar
+    (`gemeinde.lernapp-kommentar-kinder`, `bewerteDL16`) meldet Rot in der Betriebsart Produktion und eine Warnung in
+    Vorschau und Entwicklung, solange `lernapp_gruppen` wirksam an ist und `ENTSCHEIDUNG_D_L16` fehlt. Der Eintrag
+    `kommentarAnKinder: true` allein öffnet nichts: Erst wenn zusätzlich alle beschlossenen Schutzmaßnahmen umgesetzt sind
+    (Eltern sehen den Kommentar oder können ihn melden, Fassungen statt Ersetzen, Bremse, Zeitfenster), wird der Kommentar
+    möglich (Nr. 20).
 19. **Route, Größe (S-L2 H-1):** `POST /api/lernapp/schreiben` liest den Körper als Strom und bricht nach 64 KB ab, auch
     ohne oder mit falscher Content-Length (wie der Abgleich). Der Schalter `lernapp_gruppen` setzt zusätzlich `konten`
     voraus (S-L2 H-2, `funktionen-regeln.ts`). Die Einwilligung der Eltern zählt nur mit bestätigtem Eltern-Kind-Bezug
     (S-L2 H-3, wie Lernwoche und Familie). Ein Leseeintrag im Audit beim Öffnen einer Abgabe (S-L2 H-4) bleibt offen und
     wird mit D-L16 entschieden.
+
+## Fortschreibung nach der Gegenprüfung der S-L2-Auflagen und S-L3 N-2 (23.10.2026, Paket SL2-Rest)
+
+20. **Nr. 18, Bindung der Entscheidung D-L16:** `kommentarErlaubt` (`schreiben/kinderschutz.ts`) wird in der
+    Einwilligungslage „eltern“ erst wahr, wenn `ENTSCHEIDUNG_D_L16` mit `kommentarAnKinder: true` eingetragen ist **und**
+    jede Maßnahme aus `SCHUTZMASSNAHMEN` (`elternSehenOderMelden`, `fassungen`, `bremse`, `zeitfenster`) in
+    `UMGESETZTE_SCHUTZMASSNAHMEN` steht. Eintragen erst, wenn die Maßnahme gebaut und mit Integrationstest belegt ist.
+    Zugelassen, aber nicht umgesetzt: Startklar warnt mit der Liste der fehlenden Maßnahmen, der Kommentar bleibt gesperrt.
+21. **Nr. 18, Altkommentare:** Ein Kommentar, der vor der Sperre gespeichert wurde, erreicht ein Kind nicht mehr:
+    `eigeneAbgaben` (Liste der eigenen Abgaben in der Lern-App) lässt ihn in der Lage „eltern“ weg, solange
+    `kommentarErlaubt` falsch ist. Der Datenexport nach Art. 15/20 (`abgabenFuerExport`) bleibt vollständig – er gibt
+    gespeicherte Daten heraus (Auskunft an die Eltern bzw. die Person), er ist kein Kanal der Lehrkraft zum Kind.
+22. **Verteidigung in der Tiefe (S-L2 N-1):** `ladeGruppenKontext` gibt Konten mit der Rolle Administration keinen
+    Gruppenzugang (keine Leitung, keine eigenen Gruppen, keine Kinder) – auch einem Altbestand, der Administration mit einer
+    Gruppenleitung oder einer Kontoart ≠ „gemeinde“ verbindet. Startklar `gemeinde.administration-gruppenzugang` zählt solche
+    Konten: Rot in der Betriebsart Produktion, Warnung in Vorschau und Entwicklung.
+23. **Lebenszyklus der Einwilligung `lernapp` (S-L3 N-2, schreibt Nr. 17 fort):** Erteilen und Widerrufen in „Mein
+    Bereich“ – Personen ab 16 selbst unter „Konto › Lern-App“ (EL1 bzw. EL3 bis zum 18. Geburtstag), Eltern für Kinder
+    unter „Meine Kinder“ über `KIND_EINWILLIGUNGEN` (EL2, mit Einvernehmen und bestätigtem Bezug; ab 16 entscheidet das
+    Kind, wie bei Chat und Push). Version `lernapp…/2026-10-entwurf+sha256:<Hash des angezeigten Wortlauts>`
+    (`lib/lernapp/einwilligung.ts`); der Wortlaut steht als Entwurf gekennzeichnet in den Bereichsdateien. Erteilen nur, wenn
+    `lernapp_sync` oder `lernapp_gruppen` wirksam an ist; Widerrufen immer. Der Widerruf (ab 16 einschließlich einer noch
+    laufenden Einwilligung der Eltern) ruft `folgenDesWiderrufs`: nicht mehr gedeckte Schreibabgaben und – ohne geltende
+    Einwilligung – Lernstand auf dem Server (`lernapp_profil` mit Ereignissen, Kartenstand, Lerntagen je Tag und Kurs),
+    Zustimmung zur Bestenliste und Familien-Bestenliste gehen sofort, in einer Transaktion unter der Sperre des Abgleichs;
+    Audit `lernapp.lernstand_geloescht` nur mit Anlass. Der nächste Abgleich antwortet 403; der Stand auf dem Gerät bleibt.
+    Die Zustimmung zur Bestenliste lässt sich auch in „Mein Bereich › Konto“ zurücknehmen. Der Datenexport nach Art. 15/20
+    enthält die Lern-App-Daten (`lib/lernapp/export.ts`). Die Einstellungen der Lern-App verweisen auf „Mein Bereich“.
+24. **Ende des Eltern-Kind-Bezugs:** Bestätigt eine zweite Person das Beenden (`entscheideBezugEnde`) oder wird das
+    Elternkonto gelöscht (`loescheGemeindeKonto`), endet in derselben Transaktion die Einwilligung `lernapp`, die dieses
+    Elternteil für das Kind gegeben hat (`beendeLernappDerEltern`); danach gehen Schreibabgaben und Lernstand des Kindes, die
+    nur sie deckte (Anlass „bezug“). Deckt die Einwilligung des anderen Elternteils sie, bleiben sie.
 
 ## Alternativen
 

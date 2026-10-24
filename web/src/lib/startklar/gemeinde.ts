@@ -11,7 +11,7 @@ import {
   umgebungsSchalter,
 } from '@/lib/funktionen-regeln';
 import { pruefeKette } from '@/lib/chat/hashkette';
-import { ENTSCHEIDUNG_D_L16 } from '@/lib/lernapp/schreiben/kinderschutz';
+import { bewerteDL16, type DL16Befund, type Schutzmassnahme } from '@/lib/lernapp/schreiben/kinderschutz';
 import { funktionenEinstellung } from '@/lib/validierung/einstellungen';
 import type { Pruefung } from './pruefungen';
 
@@ -63,6 +63,25 @@ const VORAUSSETZUNG: Partial<Record<Funktion, string>> = {
   lernapp_statistik: 'Entscheidung der Datenschutzbeauftragten (KERN 4.0 §6)',
   push_lernapp: 'wie Web Push: Push-Themen und Drittland-Hinweis (MN-11, MN-17), neutraler Text ohne Serienbezug',
 };
+
+/** Namen der Schutzmaßnahmen zu D-L16 (`lernapp/schreiben/kinderschutz.ts`) für das Cockpit. */
+const SCHUTZ_NAMEN: Record<Schutzmassnahme, string> = {
+  elternSehenOderMelden: 'Eltern sehen oder melden den Kommentar',
+  fassungen: 'Fassungen statt Ersetzen',
+  bremse: 'Bremse für Rückgaben',
+  zeitfenster: 'Zeitfenster',
+};
+
+/** Meldung des Cockpits zu D-L16 (S-L2 M-1, ADR 0042 Nr. 18 und 20). */
+export function dl16Meldung(d: DL16Befund): string {
+  if (d.art === 'offen')
+    return 'Gruppen der Lern-App sind eingeschaltet, aber D-L16 (Kommentar der Lehrkraft zur Schreibabgabe eines Kindes) ist nicht entschieden. Bis dahin ist der Kommentar an Kinder gesperrt; Kinderschutz, Datenschutzbeauftragte und Bildung entscheiden, danach wird die Entscheidung eingetragen.';
+  const kopf = `D-L16 entschieden am ${d.entscheidung.am} (${d.entscheidung.fundstelle})`;
+  if (d.art === 'ausgeschlossen') return `${kopf}: Kommentar der Lehrkraft an Kinder ausgeschlossen.`;
+  if (d.art === 'nichtUmgesetzt')
+    return `${kopf}: Kommentar an Kinder zugelassen, aber noch nicht umgesetzt (${d.fehlt.map((m) => SCHUTZ_NAMEN[m]).join(', ')}). Bis dahin bleibt er gesperrt.`;
+  return `${kopf}: Kommentar der Lehrkraft an Kinder zugelassen, Schutzmaßnahmen umgesetzt.`;
+}
 
 /** Zustand eines gemeldeten Laufs: fehlt, fehlgeschlagen, zu alt oder in Ordnung. */
 export function bewerteLauf(e: LokalEintrag | undefined, jetzt: Date, maxStunden: number): 'fehlt' | 'fehlgeschlagen' | 'alt' | 'ok' {
@@ -287,21 +306,49 @@ export async function gemeindePruefen(
   }
 
   // S-L2 M-1 / D-L16: Kommentar der Lehrkraft zur Schreibabgabe eines Kindes – harte Sperre, bis Menschen entschieden haben
-  // (`lernapp/schreiben/kinderschutz.ts`); bis dahin gibt die Lehrkraft Kindern nur Prüfliste und Einstufung zurück
+  // und die Schutzmaßnahmen umgesetzt sind (`lernapp/schreiben/kinderschutz.ts`); bis dahin gibt die Lehrkraft Kindern nur
+  // Prüfliste und Einstufung zurück. Rot in der Betriebsart Produktion, Warnung in Vorschau und Entwicklung.
   if (ist('lernapp_gruppen')) {
-    const d = ENTSCHEIDUNG_D_L16;
+    const d = bewerteDL16(produktion);
     neu({
       id: 'gemeinde.lernapp-kommentar-kinder',
       bereich: 'gemeinde',
       titel: 'Lern-App: Kommentar an Kinder (D-L16)',
-      status: d ? 'ok' : produktion ? 'fehler' : 'warnung',
-      meldung: d
-        ? `D-L16 entschieden am ${d.am} (${d.fundstelle}): Kommentar der Lehrkraft an Kinder ${d.kommentarAnKinder ? 'zugelassen' : 'ausgeschlossen'}.`
-        : 'Gruppen der Lern-App sind eingeschaltet, aber D-L16 (Kommentar der Lehrkraft zur Schreibabgabe eines Kindes) ist nicht entschieden. Bis dahin ist der Kommentar an Kinder gesperrt; Kinderschutz, Datenschutzbeauftragte und Bildung entscheiden, danach wird die Entscheidung eingetragen.',
-      ort: 'web/docs/recht/entwuerfe/dsfa-lernapp.md (D-L16); Eintrag ENTSCHEIDUNG_D_L16 in web/src/lib/lernapp/schreiben/kinderschutz.ts; MENSCHEN LM-08',
+      status: d.status,
+      meldung: dl16Meldung(d),
+      ort: 'web/docs/recht/entwuerfe/dsfa-lernapp.md (D-L16); Einträge ENTSCHEIDUNG_D_L16 und UMGESETZTE_SCHUTZMASSNAHMEN in web/src/lib/lernapp/schreiben/kinderschutz.ts; MENSCHEN LM-08',
       aufwand: '1 h (Entscheidung), Umsetzung je nach Beschluss',
     });
   }
+
+  // S-L2 N-1 (NIE_PER_ADMINISTRATION in beiden Richtungen): Altbestand aus der Zeit vor den Sperren – ein Konto mit
+  // Administration und Gruppenleitung oder Kontoart mit Gruppenzugang (≠ gemeinde). `ladeGruppenKontext` gibt ihm schon
+  // keinen Gruppenzugang; die Verbindung muss trotzdem aufgelöst werden. Rot in der Betriebsart Produktion.
+  const administration = db
+    .select({ id: schema.rolleZuweisung.benutzerId })
+    .from(schema.rolleZuweisung)
+    .where(eq(schema.rolleZuweisung.rolle, 'administration'));
+  const [{ beides }] = await db
+    .select({ beides: sql<number>`count(distinct ${schema.user.id})`.mapWith(Number) })
+    .from(schema.user)
+    .where(
+      and(
+        inArray(schema.user.id, administration),
+        sql`(exists (select 1 from ${schema.gemeindeRolle} where ${schema.gemeindeRolle.benutzerId} = ${schema.user.id} and ${schema.gemeindeRolle.rolle} <> 'gemeinde') or exists (select 1 from ${schema.gruppenLeitung} where ${schema.gruppenLeitung.benutzerId} = ${schema.user.id}))`,
+      ),
+    );
+  neu({
+    id: 'gemeinde.administration-gruppenzugang',
+    bereich: 'gemeinde',
+    titel: 'Administration ohne Gruppenzugang',
+    status: beides === 0 ? 'ok' : produktion ? 'fehler' : 'warnung',
+    meldung:
+      beides === 0
+        ? 'Kein Konto verbindet Administration mit einer Gruppenleitung oder einer Kontoart mit Gruppenzugang.'
+        : `${beides === 1 ? 'Ein Konto verbindet' : `${beides} Konten verbinden`} Administration mit einer Gruppenleitung oder einer Kontoart mit Gruppenzugang (Lehrkraft, Eltern, Schüler). Der Gruppenzugang ist gesperrt; Rolle oder Leitung entziehen bzw. Kontoart auf „Gemeinde“ setzen (S-L2 N-1).`,
+    ort: 'Verwaltung › Benutzer und Rollen; Verwaltung › Gruppen (Leitung); Gemeinde-Konten (Kontoart)',
+    aufwand: '10 min je Konto',
+  });
 
   // S-10: Moderationsprotokoll unverändert (Hash-Kette; nach dem Löschlauf beginnt sie beim gespeicherten Anker)
   const zeilen = await db.select().from(schema.moderationsprotokoll).orderBy(asc(schema.moderationsprotokoll.id));

@@ -26,6 +26,7 @@ export type KontoTexte = {
   nein: string;
   anderesKonto: string;
   neuesProfil: string;
+  einwilligungVerwalten: string;
   grund: Record<
     'aus' | 'netz' | 'antwort' | 'anmeldung' | 'einwilligung' | 'eltern' | 'bremse' | 'nichtGebunden' | 'konto' | 'grenze',
     string
@@ -73,9 +74,19 @@ const RUECKKEHR = 'verbinden';
  * Konto und Abgleich in den Einstellungen (ADR 0038 Nr. 5–7, KERN 4.0 §6): nur sichtbar, wenn der Schalter `lernapp_sync`
  * an ist. Ohne Konto entsteht keine Anfrage: Erst „Mit meinem Konto verbinden“ fragt `/api/lernapp/sitzung`. Danach je nach
  * Lage: anmelden (im Scope der Lern-App, mit Rückkehr hierher), Einwilligung fehlt, Übernahme-Frage beim ersten Verbinden
- * mit lokalem Fortschritt, oder sofort abgleichen. Ergebnisse stehen in einer Live-Region.
+ * mit lokalem Fortschritt, oder sofort abgleichen. Ergebnisse stehen in einer Live-Region. Erteilen und Widerrufen der
+ * Einwilligung „Lern-App“ geschehen in „Mein Bereich › Konto“ (Verweis unten, S-L3 N-2).
  */
-export function KontoInsel({ ui, texte }: { ui: Oberflaeche; texte: KontoTexte }) {
+export function KontoInsel({
+  ui,
+  texte,
+  einwilligung,
+}: {
+  ui: Oberflaeche;
+  texte: KontoTexte;
+  /** Einwilligung „Lern-App“ in „Mein Bereich › Konto“ (S-L3 N-2): Adresse und Sprache der Website-Seite. */
+  einwilligung: { adresse: string; sprache: 'de' | 'tr' };
+}) {
   const [lage, setLage] = useState<Lage>({ art: 'frei' });
   const [meldung, setMeldung] = useState('');
   const [laeuft, setLaeuft] = useState(false);
@@ -231,6 +242,13 @@ export function KontoInsel({ ui, texte }: { ui: Oberflaeche; texte: KontoTexte }
       <p role="status" className="min-h-6 text-16 font-bold text-gruen-800">
         {meldung}
       </p>
+      <a
+        href={einwilligung.adresse}
+        hrefLang={einwilligung.sprache}
+        className="inline-flex min-h-11 items-center self-start text-16 font-bold text-gruen-800 underline underline-offset-4"
+      >
+        {texte.einwilligungVerwalten}
+      </a>
     </section>
   );
 }

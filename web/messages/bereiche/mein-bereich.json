@@ -237,6 +237,40 @@
             "passwort": "Das Passwort stimmt nicht.",
             "bestaetigt": "Bitte bestätigen Sie, dass Sie die Löschung möchten."
           }
+        },
+        "lernapp": {
+          "titel": "Lern-App",
+          "text": "Mit Ihrer Einwilligung gleicht die Lern-App Ihren Lernstand mit diesem Konto ab. Ohne Einwilligung bleibt alles auf Ihrem Gerät.",
+          "einwilligungTitel": "Einwilligung „Lern-App“",
+          "haken": "Ich habe den Text gelesen und willige ein.",
+          "erteilen": "Einwilligen",
+          "widerrufen": "Widerrufen",
+          "widerrufHinweis": "Mit dem Widerruf werden Ihr Lernstand auf dem Server, Ihre Schreibabgaben und Ihre Zustimmung zur Bestenliste sofort gelöscht. Der Lernstand auf Ihren Geräten bleibt.",
+          "aktiv": "erteilt",
+          "inaktiv": "nicht erteilt",
+          "erteiltAm": "Erteilt am {datum}.",
+          "widerrufenAm": "Widerrufen am {datum}.",
+          "durchEltern": "Ihre Eltern haben eingewilligt. Seit Ihrem 16. Geburtstag entscheiden Sie selbst; die Einwilligung Ihrer Eltern gilt nur noch bis zum Ende der Übergangszeit von 30 Tagen.",
+          "eltern": "Bis zum 16. Geburtstag entscheiden Ihre Eltern über die Lern-App mit Konto – in „Mein Bereich“ unter „Meine Kinder“.",
+          "elternGilt": "Ihre Eltern haben eingewilligt.",
+          "bestenliste": {
+            "titel": "Bestenliste",
+            "text": "Sie haben am {datum} zugestimmt, in den Bestenlisten Ihrer Lerngruppe oder Familie zu erscheinen. Sie können die Zustimmung hier jederzeit zurücknehmen; dann verschwinden Sie sofort aus der Liste.",
+            "knopf": "Zustimmung zurücknehmen"
+          },
+          "ok": {
+            "erteilt": "Ihre Einwilligung ist gespeichert.",
+            "widerrufen": "Ihre Einwilligung ist widerrufen. Ihr Lernstand auf dem Server ist gelöscht.",
+            "ausgeblendet": "Sie erscheinen in keiner Bestenliste mehr."
+          },
+          "fehler": {
+            "haken": "Bitte setzen Sie den Haken, wenn Sie einwilligen möchten."
+          },
+          "entwurf": "Entwurf: Dieser Einwilligungstext wird noch von Datenschutz und Recht geprüft.",
+          "einwilligung": {
+            "erwachsen": "Ich willige ein, dass die IGMG Wetzlar ([Name und Rechtsform – Vorstand]) meinen Lernstand aus der Lern-App mit meinem Konto speichert und zwischen meinen Geräten abgleicht.\n\nGespeichert wird: welche Lektionen und Wiederholungen ich gemacht habe, wie ich bei den Aufgaben abgeschnitten habe (richtig, mit Hilfe oder falsch), mein Wiederholungsplan, meine XP, mein Tagesziel, meine Lerntage und meine Einstellungen in der Lern-App. Nicht gespeichert wird der Wortlaut meiner Antworten. Sprachaufnahmen verlassen mein Gerät nie.\n\nWenn ich in einer Lerngruppe der Gemeinde bin, kann mir die Lehrkraft dieser Gruppe Einheiten zuweisen. Sie sieht, welche zugewiesenen Einheiten ich erledigt habe [und mit welchem Ergebnis – Umfang nach Entscheidung D-L03]. Schreibaufgaben schicke ich nur an diese Lehrkraft, wenn ich es will. Sie werden verschlüsselt gespeichert und 12 Monate nach der Abgabe gelöscht.\n\nMein Lernstand im Kurs „Islamisches Wissen“ und im Pfad „Koran-Arabisch“ kann Rückschlüsse auf meine religiöse Überzeugung zulassen. Ich willige ausdrücklich auch in die Verarbeitung dieser Angaben ein.\n\nEs gibt keine Werbung, keine Weitergabe an Dritte und keine Auswertung über mich als Person. In einer Bestenliste erscheine ich nur, wenn ich dem eigens zustimme. Mein Lernstand wird 12 Monate nach meiner letzten Aktivität in der Lern-App gelöscht, außerdem, wenn ich mein Konto lösche.\n\nDie Einwilligung ist freiwillig. Ich kann die Lern-App auch ohne Konto voll nutzen; mein Lernstand bleibt dann nur auf meinem Gerät.\n\nWiderruf: Ich kann diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen: in „Mein Bereich“ unter „Konto“ oder per E-Mail an [E-Mail-Adresse]. Dann endet der Abgleich sofort, und mein Lernstand auf dem Server wird gelöscht – mit meinen Schreibabgaben und meiner Zustimmung zur Bestenliste. Der Lernstand auf meinem Gerät bleibt. Bis zum Widerruf bleibt die Verarbeitung rechtmäßig.",
+            "ab16": "Ich willige ein, dass die IGMG Wetzlar ([Name und Rechtsform – Vorstand]) meinen Lernstand aus der Lern-App mit meinem Konto speichert und zwischen meinen Geräten abgleicht: Lektionen und Wiederholungen, wie ich abgeschnitten habe (richtig, mit Hilfe oder falsch), Wiederholungsplan, XP, Tagesziel, Lerntage und Einstellungen. Nicht gespeichert wird der Wortlaut meiner Antworten; Sprachaufnahmen verlassen mein Gerät nie.\n\nDie Lehrkraft meiner Lerngruppe sieht, welche zugewiesenen Einheiten ich erledigt habe [Umfang nach D-L03]. Meine Eltern sehen meine Lernwoche [nur wenn ich es erlaube – Entscheidung Bildung/DSB]. Schreibaufgaben schicke ich nur an meine Lehrkraft, wenn ich es will; sie werden verschlüsselt gespeichert und nach 12 Monaten gelöscht.\n\nMein Lernstand im Kurs „Islamisches Wissen“ und im Pfad „Koran-Arabisch“ kann Rückschlüsse auf meine religiöse Überzeugung zulassen. Ich willige ausdrücklich auch hierin ein.\n\nIn einer Bestenliste erscheine ich nur, wenn ich dem eigens zustimme. Mein Lernstand wird 12 Monate nach meiner letzten Aktivität gelöscht, außerdem mit meinem Konto. Die Einwilligung ist freiwillig; ohne sie lerne ich auf meinem Gerät weiter.\n\nWiderruf: jederzeit mit Wirkung für die Zukunft, in „Mein Bereich“ unter „Konto“ oder per E-Mail an [E-Mail-Adresse]. Dann endet der Abgleich sofort, und mein Lernstand auf dem Server wird gelöscht – mit meinen Schreibabgaben und meiner Zustimmung zur Bestenliste."
+          }
         }
       },
       "benachrichtigungen": {
@@ -580,6 +614,40 @@
             "passwort": "Şifre doğru değil.",
             "bestaetigt": "Lütfen silinmesini istediğinizi onaylayın."
           }
+        },
+        "lernapp": {
+          "titel": "Öğrenme uygulaması",
+          "text": "Onayınızla öğrenme uygulaması öğrenme durumunuzu bu hesapla eşitler. Onay olmadan her şey cihazınızda kalır.",
+          "einwilligungTitel": "„Öğrenme uygulaması“ onayı",
+          "haken": "Metni okudum ve onay veriyorum.",
+          "erteilen": "Onay ver",
+          "widerrufen": "Geri al",
+          "widerrufHinweis": "Geri alma ile sunucudaki öğrenme durumunuz, yazma ödevleriniz ve sıralama listesi onayınız hemen silinir. Cihazlarınızdaki öğrenme durumu kalır.",
+          "aktiv": "verildi",
+          "inaktiv": "verilmedi",
+          "erteiltAm": "{datum} tarihinde verildi.",
+          "widerrufenAm": "{datum} tarihinde geri alındı.",
+          "durchEltern": "Aileniz onay verdi. 16. doğum gününüzden itibaren kendiniz karar verirsiniz; ailenizin onayı yalnızca 30 günlük geçiş süresinin sonuna kadar geçerlidir.",
+          "eltern": "16. doğum gününe kadar hesapla öğrenme uygulaması hakkında aileniz karar verir – „Hesabım“ bölümünde „Çocuklarım“ altında.",
+          "elternGilt": "Aileniz onay verdi.",
+          "bestenliste": {
+            "titel": "Sıralama listesi",
+            "text": "{datum} tarihinde öğrenme grubunuzun veya ailenizin sıralama listelerinde görünmeyi kabul ettiniz. Bu onayı burada her zaman geri alabilirsiniz; o zaman listeden hemen çıkarsınız.",
+            "knopf": "Onayı geri al"
+          },
+          "ok": {
+            "erteilt": "Onayınız kaydedildi.",
+            "widerrufen": "Onayınız geri alındı. Sunucudaki öğrenme durumunuz silindi.",
+            "ausgeblendet": "Artık hiçbir sıralama listesinde görünmüyorsunuz."
+          },
+          "fehler": {
+            "haken": "Onay vermek istiyorsanız lütfen kutucuğu işaretleyin."
+          },
+          "entwurf": "Taslak: Bu onay metni henüz veri koruma ve hukuk açısından inceleniyor.",
+          "einwilligung": {
+            "erwachsen": "IGMG Wetzlar’ın ([adı ve hukuki şekli – yönetim kurulu]) öğrenme uygulamasındaki öğrenme durumumu hesabımla birlikte kaydetmesine ve cihazlarım arasında eşitlemesine onay veriyorum.\n\nKaydedilenler: hangi dersleri ve tekrarları yaptığım, alıştırmalarda nasıl sonuç aldığım (doğru, yardımla veya yanlış), tekrar planım, XP’lerim, günlük hedefim, öğrenme günlerim ve öğrenme uygulamasındaki ayarlarım. Cevaplarımın metni kaydedilmez. Ses kayıtları cihazımdan hiçbir zaman çıkmaz.\n\nCemaatin bir öğrenme grubundaysam, bu grubun öğretmeni bana üniteler verebilir. Öğretmen, verilen ünitelerden hangilerini tamamladığımı görür [ve hangi sonuçla – kapsam D-L03 kararına göre]. Yazma ödevlerini yalnızca istersem bu öğretmene gönderirim. Bunlar şifreli olarak saklanır ve teslimden 12 ay sonra silinir.\n\n„İslami bilgi“ kursundaki ve „Kur’an Arapçası“ yolundaki öğrenme durumum dinî inancım hakkında sonuç çıkarılmasına imkân verebilir. Bu bilgilerin işlenmesine de açıkça onay veriyorum.\n\nReklam yoktur, üçüncü kişilere aktarım yoktur ve kişi olarak hakkımda değerlendirme yapılmaz. Bir sıralama listesinde yalnızca buna ayrıca onay verirsem görünürüm. Öğrenme durumum, öğrenme uygulamasındaki son etkinliğimden 12 ay sonra ve hesabımı sildiğimde silinir.\n\nOnay isteğe bağlıdır. Öğrenme uygulamasını hesap olmadan da tam olarak kullanabilirim; öğrenme durumum o zaman yalnızca cihazımda kalır.\n\nGeri alma: Bu onayı gelecekte geçerli olmak üzere her zaman geri alabilirim: „Hesabım“ bölümünde „Hesap“ altında veya [e-posta adresi] adresine e-posta ile. O zaman eşitleme hemen sona erer ve sunucudaki öğrenme durumum silinir – yazma ödevlerim ve sıralama listesi onayımla birlikte. Cihazımdaki öğrenme durumu kalır. Geri almaya kadar yapılan işleme hukuka uygun kalır.",
+            "ab16": "IGMG Wetzlar’ın ([adı ve hukuki şekli – yönetim kurulu]) öğrenme uygulamasındaki öğrenme durumumu hesabımla birlikte kaydetmesine ve cihazlarım arasında eşitlemesine onay veriyorum: dersler ve tekrarlar, nasıl sonuç aldığım (doğru, yardımla veya yanlış), tekrar planı, XP, günlük hedef, öğrenme günleri ve ayarlar. Cevaplarımın metni kaydedilmez; ses kayıtları cihazımdan hiçbir zaman çıkmaz.\n\nÖğrenme grubumun öğretmeni, verilen ünitelerden hangilerini tamamladığımı görür [kapsam D-L03’e göre]. Ailem öğrenme haftamı görür [yalnızca izin verirsem – eğitim birimi/veri koruma görevlisi kararı]. Yazma ödevlerini yalnızca istersem öğretmenime gönderirim; bunlar şifreli olarak saklanır ve 12 ay sonra silinir.\n\n„İslami bilgi“ kursundaki ve „Kur’an Arapçası“ yolundaki öğrenme durumum dinî inancım hakkında sonuç çıkarılmasına imkân verebilir. Buna da açıkça onay veriyorum.\n\nBir sıralama listesinde yalnızca buna ayrıca onay verirsem görünürüm. Öğrenme durumum son etkinliğimden 12 ay sonra ve hesabımla birlikte silinir. Onay isteğe bağlıdır; onay olmadan cihazımda öğrenmeye devam ederim.\n\nGeri alma: her zaman, gelecekte geçerli olmak üzere, „Hesabım“ bölümünde „Hesap“ altında veya [e-posta adresi] adresine e-posta ile. O zaman eşitleme hemen sona erer ve sunucudaki öğrenme durumum silinir – yazma ödevlerim ve sıralama listesi onayımla birlikte."
+          }
         }
       },
       "benachrichtigungen": {
@@ -922,6 +990,40 @@
           "fehler": {
             "passwort": "The password is not correct.",
             "bestaetigt": "Please confirm that you want the deletion."
+          }
+        },
+        "lernapp": {
+          "titel": "Learning app",
+          "text": "With your consent, the learning app synchronises your learning progress with this account. Without consent, everything stays on your device.",
+          "einwilligungTitel": "Consent “learning app”",
+          "haken": "I have read the text and give my consent.",
+          "erteilen": "Give consent",
+          "widerrufen": "Withdraw",
+          "widerrufHinweis": "Withdrawing immediately deletes your learning progress on the server, your writing submissions and your leaderboard consent. The progress on your devices remains.",
+          "aktiv": "given",
+          "inaktiv": "not given",
+          "erteiltAm": "Given on {datum}.",
+          "widerrufenAm": "Withdrawn on {datum}.",
+          "durchEltern": "Your parents have given consent. Since your 16th birthday you decide for yourself; your parents’ consent only applies until the end of the 30-day transition period.",
+          "eltern": "Until your 16th birthday, your parents decide about the learning app with account – in “My account” under “My children”.",
+          "elternGilt": "Your parents have given consent.",
+          "bestenliste": {
+            "titel": "Leaderboard",
+            "text": "On {datum} you agreed to appear in the leaderboards of your learning group or family. You can take back this consent here at any time; you will then disappear from the list immediately.",
+            "knopf": "Take back consent"
+          },
+          "ok": {
+            "erteilt": "Your consent has been saved.",
+            "widerrufen": "Your consent has been withdrawn. Your learning progress on the server has been deleted.",
+            "ausgeblendet": "You no longer appear in any leaderboard."
+          },
+          "fehler": {
+            "haken": "Please tick the box if you want to give consent."
+          },
+          "entwurf": "Draft: This consent text is still being reviewed for data protection and legal matters.",
+          "einwilligung": {
+            "erwachsen": "I consent to IGMG Wetzlar ([name and legal form – board]) storing my learning progress from the learning app with my account and synchronising it between my devices.\n\nWhat is stored: which lessons and reviews I have done, how I did in the exercises (correct, with help or wrong), my review schedule, my XP, my daily goal, my learning days and my settings in the learning app. The wording of my answers is not stored. Voice recordings never leave my device.\n\nIf I am in a learning group of the community, the teacher of this group can assign units to me. The teacher sees which assigned units I have completed [and with what result – scope according to decision D-L03]. I only send writing tasks to this teacher if I want to. They are stored encrypted and deleted 12 months after submission.\n\nMy progress in the course “Islamic knowledge” and in the path “Quranic Arabic” may allow conclusions about my religious beliefs. I also explicitly consent to the processing of this information.\n\nThere is no advertising, no disclosure to third parties and no profiling of me as a person. I only appear in a leaderboard if I separately agree to it. My learning progress is deleted 12 months after my last activity in the learning app, and also when I delete my account.\n\nConsent is voluntary. I can use the learning app fully without an account; my progress then stays on my device only.\n\nWithdrawal: I can withdraw this consent at any time with effect for the future: in “My account” under “Account” or by email to [email address]. Synchronisation then ends immediately, and my learning progress on the server is deleted – together with my writing submissions and my leaderboard consent. The progress on my device remains. Processing remains lawful until withdrawal.",
+            "ab16": "I consent to IGMG Wetzlar ([name and legal form – board]) storing my learning progress from the learning app with my account and synchronising it between my devices: lessons and reviews, how I did (correct, with help or wrong), review schedule, XP, daily goal, learning days and settings. The wording of my answers is not stored; voice recordings never leave my device.\n\nThe teacher of my learning group sees which assigned units I have completed [scope according to D-L03]. My parents see my learning week [only if I allow it – decision by the education department/data protection officer]. I only send writing tasks to my teacher if I want to; they are stored encrypted and deleted after 12 months.\n\nMy progress in the course “Islamic knowledge” and in the path “Quranic Arabic” may allow conclusions about my religious beliefs. I explicitly consent to this as well.\n\nI only appear in a leaderboard if I separately agree to it. My learning progress is deleted 12 months after my last activity, and also with my account. Consent is voluntary; without it I keep learning on my device.\n\nWithdrawal: at any time with effect for the future, in “My account” under “Account” or by email to [email address]. Synchronisation then ends immediately, and my learning progress on the server is deleted – together with my writing submissions and my leaderboard consent."
           }
         }
       },
