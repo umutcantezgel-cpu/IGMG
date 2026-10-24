@@ -1,0 +1,3432 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "akhlaq",
+  "stufe": "vertiefung",
+  "einheit": {
+    "schluessel": "islam.vertiefung.e02",
+    "reihenfolge": 22,
+    "thema": {
+      "de": "Nach hanefitischer Lehre – Anstand II: Blick, Rede und Anstand im Gottesdienst"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Nach hanefitischer Lehre: Ich kenne die Regeln der Werke zu Blick und Berührung und zur ʿawra."
+      },
+      {
+        "de": "Ich kann Regeln der Werke zur Rede und zum Anstand des Gläubigen wiedergeben; Meinungsunterschiede innerhalb der Schule sind mit Quelle gekennzeichnet."
+      },
+      {
+        "de": "Ich kann den Anstand bei Reinigung, Gebet und in der Moschee beschreiben; das sind allgemeine Lehrfälle, keine Auskunft zu eigenen Fällen."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.vertiefung.e02.l01",
+      "titel": "Blick und Berührung; die ʿawra",
+      "kinderGeeignet": false,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a01",
+          "text": "Den Bereich eines anderen Menschen anzusehen, der bedeckt sein muss (ʿawra), ist nach al-Ikhtiyār verboten (ḥarām), außer in einer Notlage (ḍarūra), etwa für einen Arzt, einen Beschneider oder eine Hebamme. Al-Ikhtiyār stützt das Verbot auf den Koran (Verweis 24:30 und 24:31) und auf einen Hadith.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 154,
+              "passage": "ikhtiyar.ms0866",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms866",
+              "passageSha256Text": "1dab039420b4d6ba3643a460dd78f91b64000dcea32dbc44e9a64ae4633ec243",
+              "zitatVon": 1586,
+              "zitatBis": 1638,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 154,
+              "passage": "ikhtiyar.ms0867",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms867",
+              "passageSha256Text": "68c328b369d316207c15aa2d5324e90d11bc053655c73212560d6e01e2d26c27",
+              "zitatVon": 0,
+              "zitatBis": 313,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "24:30"
+            },
+            {
+              "art": "koran",
+              "stelle": "24:31"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a02",
+          "text": "Al-Ikhtiyār begründet die Ausnahme mit dem Grundsatz, dass Notlagen Verbotenes erlaubt machen, und verweist auf den Koran (Verweis 22:78 und 2:233): Im Notfall auf dem Verbot zu bestehen, wäre eine Härte und verlangte mehr, als man vermag. Heilen, Beschneiden und Geburtshilfe sind geboten – nach einigen Gelehrten Pflicht (wājib), nach anderen betonte Sunna – und lassen sich nur ausführen, wenn man die betreffende Stelle ansieht; deshalb ist der Blick dann erlaubt.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 154,
+              "passage": "ikhtiyar.ms0867",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms867",
+              "passageSha256Text": "68c328b369d316207c15aa2d5324e90d11bc053655c73212560d6e01e2d26c27",
+              "zitatVon": 316,
+              "zitatBis": 806,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "22:78"
+            },
+            {
+              "art": "koran",
+              "stelle": "2:233"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a03",
+          "text": "Ein Arzt soll nach al-Ikhtiyār einer Frau beibringen, eine Patientin zu behandeln, weil der Blick einer Frau auf eine Frau leichter wiegt; geht es nicht anders, senkt er den Blick, so weit er kann. Radd al-Muḥtār (aus al-Jawhara) unterscheidet: Ist die Krankheit nicht an der Scham, darf der Arzt die Stelle bei der Behandlung ansehen. Ist sie an der Scham, soll eine Frau angeleitet werden; gibt es keine und fürchtet man um das Leben der Kranken oder um unerträgliche Schmerzen, wird alles außer der kranken Stelle bedeckt, und der Mann behandelt sie und senkt den Blick, außer von der Wunde.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 154,
+              "passage": "ikhtiyar.ms0867",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms867",
+              "passageSha256Text": "68c328b369d316207c15aa2d5324e90d11bc053655c73212560d6e01e2d26c27",
+              "zitatVon": 807,
+              "zitatBis": 983,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 371,
+              "passage": "radd_al_muhtar.ms6083",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6083",
+              "passageSha256Text": "a1c73928f09a1fac68552a0cb86f5111aac82a72fc2246ba872ec9c0c490b9f1",
+              "zitatVon": 793,
+              "zitatBis": 1089,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a04",
+          "text": "Beim Mann ist nach al-Hidāya und Radd al-Muḥtār der Bereich zwischen Nabel und Knie ʿawra. Der Nabel gehört nicht dazu, das Knie und der Oberschenkel gehören dazu; al-Hidāya stützt das auf Hadithe, Radd al-Muḥtār verweist für das Knie auf eine Überlieferung bei ad-Dāraquṭnī. Anders sehen es nach al-Hidāya beim Nabel Abū ʿIṣma und ash-Shāfiʿī, beim Knie ash-Shāfiʿī.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Waṭʾ wa-n-Naẓar wa-l-Lams",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 84,
+              "passage": "hidaya.ms0931",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms931",
+              "passageSha256Text": "6f2d7dbd113f69d43a470f166a1b279e5bb7510e55b04906652868f7690ffc7d",
+              "zitatVon": 1027,
+              "zitatBis": 1328,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 366,
+              "passage": "radd_al_muhtar.ms6075",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6075",
+              "passageSha256Text": "89ccaab428ee3c9e938a6bffb2c6c4b2793d360e90c4a48c74c6e35eeba0a6e7",
+              "zitatVon": 433,
+              "zitatBis": 550,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 366,
+              "passage": "radd_al_muhtar.ms6075",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6075",
+              "passageSha256Text": "89ccaab428ee3c9e938a6bffb2c6c4b2793d360e90c4a48c74c6e35eeba0a6e7",
+              "zitatVon": 773,
+              "zitatBis": 993,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a05",
+          "text": "Die ʿawra hat Abstufungen: Am Knie wiegt sie leichter als am Oberschenkel, am Oberschenkel leichter als an der Scham. Wer das Knie entblößt, wird sanft ermahnt; wer den Oberschenkel entblößt, wird streng getadelt; wer die Scham entblößt, erhält eine Erziehungsstrafe (taʾdīb) (al-Ikhtiyār). Radd al-Muḥtār nennt die Erziehungsstrafe für den, der darauf beharrt.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 154,
+              "passage": "ikhtiyar.ms0867",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms867",
+              "passageSha256Text": "68c328b369d316207c15aa2d5324e90d11bc053655c73212560d6e01e2d26c27",
+              "zitatVon": 1123,
+              "zitatBis": 1222,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 366,
+              "passage": "radd_al_muhtar.ms6075",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6075",
+              "passageSha256Text": "89ccaab428ee3c9e938a6bffb2c6c4b2793d360e90c4a48c74c6e35eeba0a6e7",
+              "zitatVon": 994,
+              "zitatBis": 1154,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a06",
+          "text": "Ein Mann darf nach al-Ikhtiyār den ganzen Körper eines anderen Mannes ansehen, außer dessen ʿawra; verboten ist nur der Blick auf die ʿawra, darüber besteht Einigkeit (ijmāʿ). Al-Ikhtiyār verweist auch darauf, dass Männer zu allen Zeiten mit einem Hüfttuch (izār) über die Wege gingen, ohne dass jemand es beanstandete.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 154,
+              "passage": "ikhtiyar.ms0867",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms867",
+              "passageSha256Text": "68c328b369d316207c15aa2d5324e90d11bc053655c73212560d6e01e2d26c27",
+              "zitatVon": 1223,
+              "zitatBis": 1534,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a07",
+          "text": "Eine Frau darf nach al-Ikhtiyār bei einer anderen Frau und bei einem Mann dasselbe ansehen, was ein Mann bei einem Mann ansehen darf. Begründung: Unter Frauen fehlt die Begierde, und etwa im Badehaus besteht Bedarf; beim Mann gilt für beide gleichermaßen, dass erlaubt ist, was nicht ʿawra ist. Fürchtet sie beim Blick auf einen Mann Begierde oder hält sie sie für wahrscheinlich, sieht sie nicht hin, um sich vor Versuchung zu schützen.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 154,
+              "passage": "ikhtiyar.ms0867",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms867",
+              "passageSha256Text": "68c328b369d316207c15aa2d5324e90d11bc053655c73212560d6e01e2d26c27",
+              "zitatVon": 1535,
+              "zitatBis": 1707,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 154,
+              "passage": "ikhtiyar.ms0868",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms868",
+              "passageSha256Text": "66428c7f4e9a5699ceec9bd6c394dae6bc0b15fe5be31cbc7b2e518e4359fdf9",
+              "zitatVon": 0,
+              "zitatBis": 122,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a08",
+          "text": "Radd al-Muḥtār nennt dazu eine zweite Überlieferung: Nach dem Kapitel über den Zwitter (khunthā) im al-Aṣl gleicht der Blick einer Frau auf einen fremden Mann dem Blick eines Mannes auf seine nahen Verwandten (maḥram), weil der Blick auf das andere Geschlecht schwerer wiegt. Die Grundtexte (mutūn) folgen jedoch der ersten Ansicht, und auf sie ist nach Radd al-Muḥtār zu bauen.",
+          "strittig": true,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 371,
+              "passage": "radd_al_muhtar.ms6083",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6083",
+              "passageSha256Text": "a1c73928f09a1fac68552a0cb86f5111aac82a72fc2246ba872ec9c0c490b9f1",
+              "zitatVon": 1155,
+              "zitatBis": 1336,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a09",
+          "text": "Ein Ehemann darf nach al-Ikhtiyār seine Ehefrau am ganzen Körper ansehen und berühren. Radd al-Muḥtār fügt hinzu, dass das auch umgekehrt gilt und auch mit Begierde, weil der Blick weniger ist als der erlaubte eheliche Verkehr.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 155,
+              "passage": "ikhtiyar.ms0868",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms868",
+              "passageSha256Text": "66428c7f4e9a5699ceec9bd6c394dae6bc0b15fe5be31cbc7b2e518e4359fdf9",
+              "zitatVon": 401,
+              "zitatBis": 505,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 366,
+              "passage": "radd_al_muhtar.ms6075",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6075",
+              "passageSha256Text": "89ccaab428ee3c9e938a6bffb2c6c4b2793d360e90c4a48c74c6e35eeba0a6e7",
+              "zitatVon": 1155,
+              "zitatBis": 1276,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a10",
+          "text": "Bei Frauen, die er nie heiraten darf (maḥram), darf ein Mann nach al-Ikhtiyār Gesicht, Kopf, Brust, Unterschenkel, Oberarme und Haar ansehen. Al-Ikhtiyār begründet das mit dem Koran (Verweis 24:31): Gemeint seien die Stellen, an denen Schmuck getragen wird. Den Bereich zwischen Nabel und Knie sowie Rücken und Bauch darf er bei ihnen nicht ansehen. Dabei gilt die Verwandtschaft durch Abstammung, durch Stillen und durch Heirat gleich.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 155,
+              "passage": "ikhtiyar.ms0868",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms868",
+              "passageSha256Text": "66428c7f4e9a5699ceec9bd6c394dae6bc0b15fe5be31cbc7b2e518e4359fdf9",
+              "zitatVon": 1074,
+              "zitatBis": 1400,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 155,
+              "passage": "ikhtiyar.ms0869",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms869",
+              "passageSha256Text": "f74f65fdbb0804f20b83e187f269043e86e61931919a31b94aa5d588bfd0d34c",
+              "zitatVon": 593,
+              "zitatBis": 682,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 155,
+              "passage": "ikhtiyar.ms0868",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms868",
+              "passageSha256Text": "66428c7f4e9a5699ceec9bd6c394dae6bc0b15fe5be31cbc7b2e518e4359fdf9",
+              "zitatVon": 1676,
+              "zitatBis": 1713,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 155,
+              "passage": "ikhtiyar.ms0869",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms869",
+              "passageSha256Text": "f74f65fdbb0804f20b83e187f269043e86e61931919a31b94aa5d588bfd0d34c",
+              "zitatVon": 0,
+              "zitatBis": 64,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "24:31"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a11",
+          "text": "Was ein Mann bei diesen nahen Verwandten ansehen darf, darf er nach al-Ikhtiyār auch berühren, wenn er vor Begierde sicher ist, etwa wenn er ihnen auf einer Reise beim Auf- und Absteigen hilft; das Werk stützt sich dafür auf Überlieferungen. Fürchtet er Begierde oder hält er sie für wahrscheinlich, tut er nichts davon und senkt den Blick.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 155,
+              "passage": "ikhtiyar.ms0869",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms869",
+              "passageSha256Text": "f74f65fdbb0804f20b83e187f269043e86e61931919a31b94aa5d588bfd0d34c",
+              "zitatVon": 65,
+              "zitatBis": 354,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 155,
+              "passage": "ikhtiyar.ms0869",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms869",
+              "passageSha256Text": "f74f65fdbb0804f20b83e187f269043e86e61931919a31b94aa5d588bfd0d34c",
+              "zitatVon": 410,
+              "zitatBis": 492,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a12",
+          "text": "Bei einer fremden Frau darf ein Mann nach al-Ikhtiyār nur Gesicht und Hände ansehen, und auch das nur, wenn er keine Begierde fürchtet. Al-Ikhtiyār stützt das auf den Koran (Verweis 24:31) und auf die Erklärung der meisten Prophetengefährten, gemeint seien die Stellen von Augenschminke und Ring, also Gesicht und Hand. Als Grund nennt das Werk auch den Bedarf im Alltag: Beim Geben und Nehmen muss man das Gesicht des Gegenübers erkennen.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 156,
+              "passage": "ikhtiyar.ms0869",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms869",
+              "passageSha256Text": "f74f65fdbb0804f20b83e187f269043e86e61931919a31b94aa5d588bfd0d34c",
+              "zitatVon": 809,
+              "zitatBis": 918,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 156,
+              "passage": "ikhtiyar.ms0870",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms870",
+              "passageSha256Text": "30e08796c1f3981ee57ebed25ab1a3837b90ba2a1fd8c430d1f87ef2b113d197",
+              "zitatVon": 631,
+              "zitatBis": 1004,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "24:31"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a13",
+          "text": "Ob auch die Füße angesehen werden dürfen, ist strittig. Von Abū Ḥanīfa ist überliefert, dass er den Fuß hinzunahm. Nach einer Überlieferung, die al-Ikhtiyār nennt, ist der Fuß überhaupt nicht ʿawra, weil eine Frau gehen muss und er dabei sichtbar wird; nach einer anderen ist er beim Ansehen ʿawra, im Gebet aber nicht. Im Kapitel über das Gebet hält al-Ikhtiyār diese zweite Ansicht für richtig. Radd al-Muḥtār hält fest, dass Überlieferungen und Bewertungen hier auseinandergehen: Im Kapitel über die Gebetsbedingungen gelten die Füße nach der maßgeblichen Ansicht nicht als ʿawra; Sharḥ al-Munya gibt, gestützt auf Hadithe, der Ansicht den Vorzug, dass sie überhaupt ʿawra sind.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 156,
+              "passage": "ikhtiyar.ms0870",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms870",
+              "passageSha256Text": "30e08796c1f3981ee57ebed25ab1a3837b90ba2a1fd8c430d1f87ef2b113d197",
+              "zitatVon": 707,
+              "zitatBis": 734,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 156,
+              "passage": "ikhtiyar.ms0870",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms870",
+              "passageSha256Text": "30e08796c1f3981ee57ebed25ab1a3837b90ba2a1fd8c430d1f87ef2b113d197",
+              "zitatVon": 1006,
+              "zitatBis": 1183,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb mā yufʿalu qabla ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 46,
+              "passage": "ikhtiyar.ms0048",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms48",
+              "passageSha256Text": "00dba4a0bb7d8d3460b5ae81e8524ef90411b300fd8eac88f80bb0f051e50a35",
+              "zitatVon": 0,
+              "zitatBis": 71,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 369,
+              "passage": "radd_al_muhtar.ms6081",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6081",
+              "passageSha256Text": "03f2ee280cf663a2e074db30ef5e67dc35a465e6f7af2177c8df341082c16b69",
+              "zitatVon": 472,
+              "zitatBis": 683,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a14",
+          "text": "Fürchtet ein Mann Begierde, darf er nach al-Ikhtiyār auch das Gesicht einer fremden Frau nicht ansehen. Ausgenommen sind Richter und Zeuge: Sie dürfen hinsehen, weil sie die Frau erkennen müssen, um über sie zu urteilen oder ein Zeugnis über sie zu übernehmen. Radd al-Muḥtār fügt hinzu, dass sie dabei das Urteil oder das Zeugnis beabsichtigen müssen, nicht die Befriedigung der Begierde.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 156,
+              "passage": "ikhtiyar.ms0870",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms870",
+              "passageSha256Text": "30e08796c1f3981ee57ebed25ab1a3837b90ba2a1fd8c430d1f87ef2b113d197",
+              "zitatVon": 1184,
+              "zitatBis": 1347,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 370,
+              "passage": "radd_al_muhtar.ms6082",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6082",
+              "passageSha256Text": "eff4149c90a31004e0c6280d6b01c8a6bc6f18236c742a167665e6dc6f996bec",
+              "zitatVon": 431,
+              "zitatBis": 508,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a15",
+          "text": "Gesicht und Hände einer fremden Frau zu berühren, ist einem Mann nach al-Ikhtiyār nicht erlaubt, auch wenn er vor Begierde sicher ist, weil Berührung schwerer wiegt als der Blick. Ist sie aber eine alte Frau, die nicht mehr begehrt wird, oder ist er ein alter Mann ohne Begierde, ist der Handschlag unbedenklich; das Werk beruft sich auf Abū Bakr. Radd al-Muḥtār (aus adh-Dhakhīra) verlangt beim alten Mann, dass er für sich und für sie sicher ist; sonst soll er es meiden.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 156,
+              "passage": "ikhtiyar.ms0870",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms870",
+              "passageSha256Text": "30e08796c1f3981ee57ebed25ab1a3837b90ba2a1fd8c430d1f87ef2b113d197",
+              "zitatVon": 1348,
+              "zitatBis": 1559,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 368,
+              "passage": "radd_al_muhtar.ms6078",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6078",
+              "passageSha256Text": "ec98bc1ea6084df62fca1edb0a7d00ba4405aa7d6a285666c39e1ef693ae5e99",
+              "zitatVon": 171,
+              "zitatBis": 339,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a16",
+          "text": "Das Gesicht einer fremden Frau ohne Begierde anzusehen, ist nach Radd al-Muḥtār (aus at-Tātarkhāniyya, nach Sharḥ al-Karkhī) nicht verboten, aber ohne Bedarf verpönt; mit Begierde ist es verboten. Für die eigene Zeit hält der Grundtext, den Radd al-Muḥtār erläutert, fest, dass dies bei einer jungen Frau untersagt ist; Radd al-Muḥtār erklärt: nicht weil das Gesicht ʿawra wäre, sondern aus Furcht vor Versuchung (fitna). Im Kapitel über die Gebetsbedingungen heißt es entsprechend, dass einer jungen Frau untersagt wird, ihr Gesicht vor Männern zu zeigen, weil sie es sonst mit Begierde ansehen könnten.",
+          "strittig": true,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 370,
+              "passage": "radd_al_muhtar.ms6081",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6081",
+              "passageSha256Text": "03f2ee280cf663a2e074db30ef5e67dc35a465e6f7af2177c8df341082c16b69",
+              "zitatVon": 1384,
+              "zitatBis": 1574,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 370,
+              "passage": "radd_al_muhtar.ms6081",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6081",
+              "passageSha256Text": "03f2ee280cf663a2e074db30ef5e67dc35a465e6f7af2177c8df341082c16b69",
+              "zitatVon": 1575,
+              "zitatBis": 1611,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 370,
+              "passage": "radd_al_muhtar.ms6082",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6082",
+              "passageSha256Text": "eff4149c90a31004e0c6280d6b01c8a6bc6f18236c742a167665e6dc6f996bec",
+              "zitatVon": 0,
+              "zitatBis": 53,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Shurūṭ aṣ-Ṣalāh › Maṭlab fī Satr al-ʿAwra",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 406,
+              "passage": "radd_al_muhtar.ms0542",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms542",
+              "passageSha256Text": "4cc4accfb37e6aa195f3891b5c9b3ada03991a519ecf61bbd8eb6fec9e21aebb",
+              "zitatVon": 629,
+              "zitatBis": 947,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a17",
+          "text": "Dass ein Mann mit einer fremden Frau allein ist (khalwa), nennt der Grundtext, den Radd al-Muḥtār erläutert, verboten (ḥarām); al-Qunya nennt es stark verpönt (karāhat taḥrīm), und von Abū Yūsuf ist überliefert, es sei nicht verboten (kein taḥrīm). Nach Radd al-Muḥtār entfällt das verbotene Alleinsein durch eine Trennwand oder wenn ein maḥram oder eine vertrauenswürdige Frau dabei ist, die eingreifen kann; nach Munyat al-Muftī bleibt es dagegen stark verpönt, auch wenn eine weitere Frau dabei ist.",
+          "strittig": true,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 368,
+              "passage": "radd_al_muhtar.ms6078",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6078",
+              "passageSha256Text": "ec98bc1ea6084df62fca1edb0a7d00ba4405aa7d6a285666c39e1ef693ae5e99",
+              "zitatVon": 820,
+              "zitatBis": 953,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 368,
+              "passage": "radd_al_muhtar.ms6079",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6079",
+              "passageSha256Text": "0a8d646aa77fab1248f6b3f6a5eccda7d9be752c849e31906502df489f9f07e4",
+              "zitatVon": 545,
+              "zitatBis": 683,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 368,
+              "passage": "radd_al_muhtar.ms6079",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6079",
+              "passageSha256Text": "0a8d646aa77fab1248f6b3f6a5eccda7d9be752c849e31906502df489f9f07e4",
+              "zitatVon": 1072,
+              "zitatBis": 1159,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a18",
+          "text": "Wer eine Frau heiraten möchte, darf sie nach al-Ikhtiyār ansehen, auch wenn er fürchtet, dabei Begierde zu empfinden; das Werk stützt sich auf einen Hadith. Nach dem Grundtext, den Radd al-Muḥtār erläutert, soll er dabei die Sunna beabsichtigen, nicht die Befriedigung der Begierde. Berühren darf er sie zu diesem Zweck nicht, auch wenn er vor Begierde sicher ist.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 157,
+              "passage": "ikhtiyar.ms0871",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms871",
+              "passageSha256Text": "8630835e4e0ed4ce44848cd82f207ce961cd9b7a2cdbde8ee136bea9266c9eb2",
+              "zitatVon": 308,
+              "zitatBis": 468,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 370,
+              "passage": "radd_al_muhtar.ms6082",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6082",
+              "passageSha256Text": "eff4149c90a31004e0c6280d6b01c8a6bc6f18236c742a167665e6dc6f996bec",
+              "zitatVon": 311,
+              "zitatBis": 739,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 370,
+              "passage": "radd_al_muhtar.ms6082",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6082",
+              "passageSha256Text": "eff4149c90a31004e0c6280d6b01c8a6bc6f18236c742a167665e6dc6f996bec",
+              "zitatVon": 825,
+              "zitatBis": 984,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a19",
+          "text": "Kann er sie nicht ansehen, darf er nach Radd al-Muḥtār, wie es aus den Aussagen der Gelehrten hervorgeht, eine Frau schicken, die sie ihm beschreibt. Ob umgekehrt die Frau den Mann ansehen darf, der um sie wirbt, auch wenn sie Begierde fürchtet, hat Radd al-Muḥtār nicht ausdrücklich gefunden. Es hält das aber für naheliegend, weil derselbe Grund gilt, und sogar für vorrangig, weil sich der Mann von einer Frau, die ihm nicht gefällt, trennen kann, sie aber nicht.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 370,
+              "passage": "radd_al_muhtar.ms6082",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6082",
+              "passageSha256Text": "eff4149c90a31004e0c6280d6b01c8a6bc6f18236c742a167665e6dc6f996bec",
+              "zitatVon": 1571,
+              "zitatBis": 1624,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 370,
+              "passage": "radd_al_muhtar.ms6083",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6083",
+              "passageSha256Text": "a1c73928f09a1fac68552a0cb86f5111aac82a72fc2246ba872ec9c0c490b9f1",
+              "zitatVon": 0,
+              "zitatBis": 218,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.a20",
+          "text": "Begegnen sich ein Mann und eine fremde Frau, grüßt nach Radd al-Muḥtār (aus al-Khāniyya) der Mann zuerst. Grüßt eine fremde Frau einen Mann, erwidert er hörbar, wenn sie eine alte Frau ist; ist sie jung, erwidert er nur im Stillen. Grüßt der Mann, gilt dasselbe umgekehrt. Ein erlaubtes Gespräch mit einer fremden Frau ist nach al-Qunya zulässig (Radd al-Muḥtār).",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 369,
+              "passage": "radd_al_muhtar.ms6080",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6080",
+              "passageSha256Text": "36bf26d6567e4525a7347509d23544390715a451c232bd364e371bc900b0c3f9",
+              "zitatVon": 329,
+              "zitatBis": 572,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī n-Naẓar wa-l-Mass",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 369,
+              "passage": "radd_al_muhtar.ms6080",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6080",
+              "passageSha256Text": "36bf26d6567e4525a7347509d23544390715a451c232bd364e371bc900b0c3f9",
+              "zitatVon": 721,
+              "zitatBis": 801,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e02.l01.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l01.a01",
+          "behauptung": "Nach al-Ikhtiyār darf ein Arzt in einer Notlage die ʿawra eines Kranken ansehen.",
+          "richtig": true,
+          "begruendung": "Al-Ikhtiyār verbietet den Blick auf die ʿawra, nimmt aber die Notlage aus und nennt als Beispiele Arzt, Beschneider und Hebamme.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.q02",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e02.l01.a05",
+          "anweisung": "Ordne die Körperstellen danach, wie schwer die ʿawra dort nach al-Ikhtiyār wiegt – von leichter zu schwerer.",
+          "schritte": [
+            "Knie",
+            "Oberschenkel",
+            "Scham"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l01.a04",
+          "behauptung": "Nach Radd al-Muḥtār gehört beim Mann der Nabel zur ʿawra.",
+          "richtig": false,
+          "begruendung": "Radd al-Muḥtār hält fest, dass der Nabel nicht zur ʿawra gehört, das Knie und der Oberschenkel dagegen schon.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.q04",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e02.l01.a13",
+          "anweisung": "Ordne jeder Ansicht zu, was sie über die Füße einer Frau sagt (al-Ikhtiyār, Radd al-Muḥtār).",
+          "paare": [
+            {
+              "links": "Überlieferung von Abū Ḥanīfa",
+              "rechts": "Der Fuß darf angesehen werden."
+            },
+            {
+              "links": "al-Ikhtiyār",
+              "rechts": "ʿawra außerhalb des Gebets, nicht im Gebet"
+            },
+            {
+              "links": "Sharḥ al-Munya",
+              "rechts": "ʿawra überhaupt"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e02.l01.a15",
+          "fall": "Ein alter Mann, der keine Begierde mehr empfindet, begegnet einer alten Frau, die nicht mehr begehrt wird. Sie möchte ihm die Hand geben.",
+          "frage": "Was gilt nach al-Ikhtiyār?",
+          "optionen": [
+            "Der Handschlag ist unbedenklich.",
+            "Der Handschlag ist verboten, weil Berührung immer verboten ist.",
+            "Der Handschlag ist nur erlaubt, wenn ein Richter anwesend ist."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e02.l01.a18",
+          "fall": "Ein Mann möchte eine Frau heiraten und will sie vorher kennenlernen.",
+          "frage": "Was ist ihm nach al-Ikhtiyār und Radd al-Muḥtār erlaubt?",
+          "optionen": [
+            "Er darf sie ansehen, aber nicht berühren.",
+            "Er darf sie weder ansehen noch berühren.",
+            "Er darf sie ansehen und ihr die Hand geben, wenn er vor Begierde sicher ist."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l01.a17",
+          "behauptung": "Nach Radd al-Muḥtār entfällt das verbotene Alleinsein mit einer fremden Frau, wenn ein maḥram dabei ist.",
+          "richtig": true,
+          "begruendung": "Radd al-Muḥtār nennt als Gründe, die das verbotene Alleinsein aufheben, eine Trennwand, einen maḥram oder eine vertrauenswürdige Frau, die eingreifen kann.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l01.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l01.a14",
+          "behauptung": "Nach al-Ikhtiyār darf ein Richter das Gesicht einer Frau auch dann ansehen, wenn er Begierde fürchtet, weil er sie für sein Urteil erkennen muss.",
+          "richtig": true,
+          "begruendung": "Al-Ikhtiyār nimmt Richter und Zeuge aus; Radd al-Muḥtār fügt hinzu, dass sie dabei das Urteil oder das Zeugnis beabsichtigen müssen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e02.l02",
+      "titel": "Die Rede: Erlaubtes und Verbotenes",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a01",
+          "text": "Al-Ikhtiyār teilt die Rede in drei Arten: Rede, die Lohn bringt; Rede, die weder Lohn noch Sünde bringt; und Rede, die Sünde bringt. Lohn bringen etwa das Lobpreisen Gottes (tasbīḥ, taḥmīd), das Lesen des Korans, die Hadithe des Propheten und das Wissen um den Fiqh; das Werk verweist dazu auf den Koran (Verweis 33:35).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 178,
+              "passage": "ikhtiyar.ms0899",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms899",
+              "passageSha256Text": "4a9b943c5a3672b6fc2e4f7ce046ba8da6dbbc48ebd7e3e23814da8ecab49fe5",
+              "zitatVon": 286,
+              "zitatBis": 466,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 180,
+              "passage": "ikhtiyar.ms0900",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms900",
+              "passageSha256Text": "293ed9608f3a0aed46b566a319ca0385f9b9e40a79dbe68bf60c7fc73fdc7252",
+              "zitatVon": 885,
+              "zitatBis": 999,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "33:35"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a02",
+          "text": "Gottesgedenken kann nach al-Ikhtiyār auch Sünde sein: etwa wenn jemand in einer Runde, in der gesündigt wird, lobpreist und dabei selbst mitmacht, weil darin Spott liegt. Lobpreist er dort aber, um nachzudenken, um Widerspruch zu zeigen und um die Anwesenden von ihrer Sünde abzulenken, ist es gut. Ebenso ist es nach al-Ikhtiyār besser, auf dem Markt Gottes zu gedenken, während die Menschen mit weltlichen Dingen beschäftigt sind, als allein an einem anderen Ort.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 179,
+              "passage": "ikhtiyar.ms0899",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms899",
+              "passageSha256Text": "4a9b943c5a3672b6fc2e4f7ce046ba8da6dbbc48ebd7e3e23814da8ecab49fe5",
+              "zitatVon": 711,
+              "zitatBis": 984,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a03",
+          "text": "Verpönt ist es nach al-Ikhtiyār, dass ein Händler beim Öffnen seiner Ware Gottesgedenken spricht, ebenso ein Getränkeverkäufer beim Öffnen seines Kruges; das Werk begründet: Er macht sich damit schuldig, weil er dafür einen Preis nimmt. Anders ist es beim Kämpfer, der im Zweikampf den Takbīr ruft, und beim Gelehrten, der es in einer Lehrversammlung tut: Sie wollen damit ehren und die Zeichen der Religion zeigen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 179,
+              "passage": "ikhtiyar.ms0899",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms899",
+              "passageSha256Text": "4a9b943c5a3672b6fc2e4f7ce046ba8da6dbbc48ebd7e3e23814da8ecab49fe5",
+              "zitatVon": 1063,
+              "zitatBis": 1315,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a04",
+          "text": "Den Koran mit Tonschwankungen wie beim Gesang vorzutragen (tarjīʿ) und zuzuhören, ist nach al-Ikhtiyār verpönt, weil es dem Singen der Sünder gleicht; einige Gelehrte halten es für unbedenklich und stützen sich auf einen Hadith.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 179,
+              "passage": "ikhtiyar.ms0899",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms899",
+              "passageSha256Text": "4a9b943c5a3672b6fc2e4f7ce046ba8da6dbbc48ebd7e3e23814da8ecab49fe5",
+              "zitatVon": 1316,
+              "zitatBis": 1631,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a05",
+          "text": "Den Koran an Gräbern zu lesen, hielt Abū Ḥanīfa für verpönt, weil ihm dazu nach seiner Kenntnis nichts Gesichertes vom Propheten vorlag. Muḥammad hielt es nicht für verpönt, und al-Ikhtiyār folgt ihm, weil es dem Verstorbenen nützt und Überlieferungen dazu vorliegen.",
+          "meinung": "muhammad",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 179,
+              "passage": "ikhtiyar.ms0899",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms899",
+              "passageSha256Text": "4a9b943c5a3672b6fc2e4f7ce046ba8da6dbbc48ebd7e3e23814da8ecab49fe5",
+              "zitatVon": 1689,
+              "zitatBis": 1709,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 179,
+              "passage": "ikhtiyar.ms0900",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms900",
+              "passageSha256Text": "293ed9608f3a0aed46b566a319ca0385f9b9e40a79dbe68bf60c7fc73fdc7252",
+              "zitatVon": 0,
+              "zitatBis": 201,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a06",
+          "text": "Nach der Lehre der Ahl as-Sunna wa-l-Jamāʿa kann ein Mensch den Lohn seines Werkes einem anderen zuwenden, und der Lohn erreicht ihn; al-Ikhtiyār stützt das auf Hadithe und weitere Überlieferungen. Einige lehnen das mit dem Koran (Verweis 53:39) und einem Hadith ab; al-Ikhtiyār antwortet darauf auf mehrere Weisen, unter anderem mit einem weiteren Vers (Verweis 52:21).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 179,
+              "passage": "ikhtiyar.ms0900",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms900",
+              "passageSha256Text": "293ed9608f3a0aed46b566a319ca0385f9b9e40a79dbe68bf60c7fc73fdc7252",
+              "zitatVon": 203,
+              "zitatBis": 761,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 179,
+              "passage": "ikhtiyar.ms0900",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms900",
+              "passageSha256Text": "293ed9608f3a0aed46b566a319ca0385f9b9e40a79dbe68bf60c7fc73fdc7252",
+              "zitatVon": 762,
+              "zitatBis": 1407,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "53:39"
+            },
+            {
+              "art": "koran",
+              "stelle": "52:21"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a07",
+          "text": "Rede, die weder Lohn noch Sünde bringt, ist nach al-Ikhtiyār etwa: „Steh auf“, „Setz dich“, „Ich habe gegessen und getrunken“; sie ist weder Gottesdienst noch Ungehorsam. Ob die Engel sie aufschreiben, ist umstritten: Nach einer Ansicht schreiben sie nur auf, was Lohn oder Sünde bringt; nach einer anderen schreiben sie alles auf (Verweis 36:12) und löschen später, was nicht vergolten wird.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 180,
+              "passage": "ikhtiyar.ms0901",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms901",
+              "passageSha256Text": "c44863a9c36dd7f10392a4ba22257e424e9554fd49020f310fd0d67a8eccc237",
+              "zitatVon": 598,
+              "zitatBis": 1041,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "36:12"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a08",
+          "text": "Sünde bringen nach al-Ikhtiyār Lüge (kadhib), Zuträgerei (namīma), üble Nachrede (ghība) und Beschimpfung; all das ist verboten (ḥarām), nach Überlieferung und Vernunft.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 180,
+              "passage": "ikhtiyar.ms0901",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms901",
+              "passageSha256Text": "c44863a9c36dd7f10392a4ba22257e424e9554fd49020f310fd0d67a8eccc237",
+              "zitatVon": 1042,
+              "zitatBis": 1137,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a09",
+          "text": "Lügen ist nach al-Ikhtiyār verboten, außer in vier Fällen: im Krieg, um den Feind zu täuschen; um zwei Menschen zu versöhnen; um die eigene Familie (ahl) zufriedenzustellen; und um einen Unterdrücker von seinem Unrecht abzuhalten. Das Werk stützt sich auf einen Hadith und erklärt, dass der vierte Fall zum Versöhnen gehört.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 180,
+              "passage": "ikhtiyar.ms0901",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms901",
+              "passageSha256Text": "c44863a9c36dd7f10392a4ba22257e424e9554fd49020f310fd0d67a8eccc237",
+              "zitatVon": 1138,
+              "zitatBis": 1392,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a10",
+          "text": "Ob in diesen Fällen eine echte Lüge erlaubt ist, ist strittig. Radd al-Muḥtār gibt aus Tabyīn al-Maḥārim (nach al-Iḥyāʾ) einen Maßstab wieder: Lässt sich ein gutes Ziel mit Wahrheit und mit Lüge erreichen, ist die Lüge verboten; lässt es sich nur mit der Lüge erreichen, ist sie erlaubt, wenn das Ziel erlaubt ist, und Pflicht, wenn das Ziel Pflicht ist – etwa um einen Unschuldigen zu verbergen, den ein Unterdrücker töten oder schädigen will. Nach aṭ-Ṭaḥāwī und anderen ist dagegen nur doppeldeutige Rede (maʿārīḍ) gemeint, weil die Lüge selbst verboten ist; der Verfasser von al-Mujtabā hält das für richtig, und Radd al-Muḥtār führt eine weitere Überlieferung dafür an. Auch al-Bazzāziyya versteht es so.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 427,
+              "passage": "radd_al_muhtar.ms6172",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6172",
+              "passageSha256Text": "51364c7dd5e4881cff6972df4869ec1d08ad3f26231348d52c27061f04548a69",
+              "zitatVon": 217,
+              "zitatBis": 521,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 427,
+              "passage": "radd_al_muhtar.ms6172",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6172",
+              "passageSha256Text": "51364c7dd5e4881cff6972df4869ec1d08ad3f26231348d52c27061f04548a69",
+              "zitatVon": 1478,
+              "zitatBis": 1506,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 427,
+              "passage": "radd_al_muhtar.ms6173",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6173",
+              "passageSha256Text": "7c2db31f7bd0f3ed3dff3383c546b5a743c1058a60f61735f243c1444404796b",
+              "zitatVon": 91,
+              "zitatBis": 376,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 428,
+              "passage": "radd_al_muhtar.ms6173",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6173",
+              "passageSha256Text": "7c2db31f7bd0f3ed3dff3383c546b5a743c1058a60f61735f243c1444404796b",
+              "zitatVon": 844,
+              "zitatBis": 918,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a11",
+          "text": "Doppeldeutige Rede (taʿrīḍ), die wie eine Lüge wirkt, ist nach al-Ikhtiyār verpönt, außer bei Bedarf. Ein Beispiel: Jemand sagt zu einem Mann „Iss!“, und er antwortet „Ich habe gegessen“ und meint damit gestern. Das ist unbedenklich, weil er in seiner Absicht die Wahrheit sagt; nach einer anderen Ansicht ist es verpönt, weil es äußerlich eine Lüge ist.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 180,
+              "passage": "ikhtiyar.ms0901",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms901",
+              "passageSha256Text": "c44863a9c36dd7f10392a4ba22257e424e9554fd49020f310fd0d67a8eccc237",
+              "zitatVon": 1393,
+              "zitatBis": 1430,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 181,
+              "passage": "ikhtiyar.ms0902",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms902",
+              "passageSha256Text": "baca7b57eba1819b89866c5dca36a9ebf8b0149a58fa1c80ee7b65428ee3e550",
+              "zitatVon": 157,
+              "zitatBis": 252,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a12",
+          "text": "Übertreibungen, wie man sie gewohnt ist – etwa „Ich bin tausendmal zu dir gekommen“ –, sind nach Radd al-Muḥtār keine Lüge, weil damit das Viele gemeint ist und nicht die genaue Zahl. Wer aber nur ein einziges Mal gekommen ist, lügt damit.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 427,
+              "passage": "radd_al_muhtar.ms6172",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6172",
+              "passageSha256Text": "51364c7dd5e4881cff6972df4869ec1d08ad3f26231348d52c27061f04548a69",
+              "zitatVon": 980,
+              "zitatBis": 1105,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a13",
+          "text": "Üble Nachrede (ghība) heißt nach Radd al-Muḥtār, über einen abwesenden Bruder im Glauben etwas zu sagen, das er nicht mag – auch über einen Verstorbenen und auch über einen Nichtmuslim, der unter muslimischem Schutz lebt (dhimmī). Gemeint ist alles, was ihm unangenehm ist: an seinem Körper, seiner Herkunft, seinem Charakter, seinem Tun, seinen Worten, seiner Religion, selbst an seiner Kleidung, seinem Haus oder seinem Reittier. Ist das Gesagte nicht wahr, ist es Verleumdung (buhtān).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 410,
+              "passage": "radd_al_muhtar.ms6144",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6144",
+              "passageSha256Text": "e2bfe422e4315da40c6cf738ab9af22b6e21f8f7febd15a3566e81e552c8216a",
+              "zitatVon": 1448,
+              "zitatBis": 1505,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 410,
+              "passage": "radd_al_muhtar.ms6145",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6145",
+              "passageSha256Text": "b53f58471cc71a5a41a219e306b29e1760c89a50e5fc206023ddc93ddacbaab4",
+              "zitatVon": 0,
+              "zitatBis": 55,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 410,
+              "passage": "radd_al_muhtar.ms6145",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6145",
+              "passageSha256Text": "b53f58471cc71a5a41a219e306b29e1760c89a50e5fc206023ddc93ddacbaab4",
+              "zitatVon": 411,
+              "zitatBis": 540,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 410,
+              "passage": "radd_al_muhtar.ms6145",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6145",
+              "passageSha256Text": "b53f58471cc71a5a41a219e306b29e1760c89a50e5fc206023ddc93ddacbaab4",
+              "zitatVon": 683,
+              "zitatBis": 781,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a14",
+          "text": "Üble Nachrede ist nach Radd al-Muḥtār verboten, gestützt auf den Koran (Verweis 49:12), und nur bei Notwendigkeit erlaubt, und dann nur so weit wie nötig. Radd al-Muḥtār nennt solche Fälle: sich bei einem Richter über erlittenes Unrecht beschweren; jemanden um Hilfe bitten, der ein Unrecht abstellen kann; eine religiöse Auskunft erfragen; bei einer Heirat, einer Reise oder einer Partnerschaft auf Nachfrage ehrlich beraten; vor einem Fehler warnen, etwa einen Käufer; jemanden an einem bekannten Beinamen erkennbar machen; und Mängel von Überlieferern und Zeugen benennen; das ist erlaubt, ja Pflicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 408,
+              "passage": "radd_al_muhtar.ms6142",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6142",
+              "passageSha256Text": "4f8fa07e74e4f29cd3218d025e5faa957c78f01d408272c65b769f45f3e00ff9",
+              "zitatVon": 1487,
+              "zitatBis": 1601,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 409,
+              "passage": "radd_al_muhtar.ms6143",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6143",
+              "passageSha256Text": "82c1cfb87836f2fe7363ba6025b83d2c47943719b1d52aa4a9abbd926d968e32",
+              "zitatVon": 104,
+              "zitatBis": 134,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 409,
+              "passage": "radd_al_muhtar.ms6143",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6143",
+              "passageSha256Text": "82c1cfb87836f2fe7363ba6025b83d2c47943719b1d52aa4a9abbd926d968e32",
+              "zitatVon": 989,
+              "zitatBis": 1538,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 409,
+              "passage": "radd_al_muhtar.ms6144",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6144",
+              "passageSha256Text": "e2bfe422e4315da40c6cf738ab9af22b6e21f8f7febd15a3566e81e552c8216a",
+              "zitatVon": 440,
+              "zitatBis": 724,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "49:12"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a15",
+          "text": "Keine verbotene Nachrede ist es nach al-Ikhtiyār, über einen Unterdrücker zu sprechen, der Menschen mit Worten und Taten schadet, damit sie sich vor ihm hüten; das Werk stützt sich auf einen Hadith. Es ist auch keine Sünde, ihn beim Herrscher anzuzeigen, damit dieser ihn zurückhält, denn das gehört dazu, Unrecht zu verwehren. Nachrede gibt es nur über bestimmte, bekannte Personen: Wer über die Bewohner eines Dorfes allgemein spricht, begeht keine Nachrede. Radd al-Muḥtār hält entsprechend fest, dass es keine Nachrede ist, einen Sünder mit dem zu nennen, was an ihm ist, damit sich die Menschen vor ihm hüten und sich nicht von seinem Fasten und Beten täuschen lassen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 181,
+              "passage": "ikhtiyar.ms0902",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms902",
+              "passageSha256Text": "baca7b57eba1819b89866c5dca36a9ebf8b0149a58fa1c80ee7b65428ee3e550",
+              "zitatVon": 253,
+              "zitatBis": 538,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 408,
+              "passage": "radd_al_muhtar.ms6142",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6142",
+              "passageSha256Text": "4f8fa07e74e4f29cd3218d025e5faa957c78f01d408272c65b769f45f3e00ff9",
+              "zitatVon": 353,
+              "zitatBis": 424,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a16",
+          "text": "Wer üble Nachrede hört, ist nach Radd al-Muḥtār (aus Sharḥ ash-Shirʿa, nach al-Iḥyāʾ) nicht frei von Sünde, solange er nicht mit Worten widerspricht; fürchtet er sich, widerspricht er im Herzen. Kann er aufstehen oder das Gespräch auf etwas anderes lenken und tut es nicht, bleibt die Sünde an ihm.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 410,
+              "passage": "radd_al_muhtar.ms6145",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6145",
+              "passageSha256Text": "b53f58471cc71a5a41a219e306b29e1760c89a50e5fc206023ddc93ddacbaab4",
+              "zitatVon": 800,
+              "zitatBis": 936,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.a17",
+          "text": "Wie man von übler Nachrede umkehrt, ist strittig. Nach einigen Gelehrten genügt die Reue ohne Bitte um Verzeihung beim Betroffenen, wenn sie erfolgt, bevor ihn die Nachrede erreicht. Erreicht sie ihn danach, bleibt die Reue nach einer Ansicht gültig; nach einer anderen muss man ihn dann um Verzeihung bitten und Gott um Vergebung. Nach den Fatwas von aṭ-Ṭaḥāwī genügen Reue und Bitte um Vergebung auch dann, wenn die Nachrede ihn erreicht hat (Radd al-Muḥtār).",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 410,
+              "passage": "radd_al_muhtar.ms6145",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6145",
+              "passageSha256Text": "b53f58471cc71a5a41a219e306b29e1760c89a50e5fc206023ddc93ddacbaab4",
+              "zitatVon": 1150,
+              "zitatBis": 1449,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 411,
+              "passage": "radd_al_muhtar.ms6146",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6146",
+              "passageSha256Text": "cfc1c5a870d1e8b35fc3d87acb864bbe60ba3da0914153f2ed6ac8e4d4644ab8",
+              "zitatVon": 944,
+              "zitatBis": 1044,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e02.l02.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e02.l02.a01",
+          "anweisung": "Ordne jedem Beispiel die Art der Rede zu, die al-Ikhtiyār nennt.",
+          "paare": [
+            {
+              "links": "Lobpreis Gottes (tasbīḥ)",
+              "rechts": "Rede, die Lohn bringt"
+            },
+            {
+              "links": "„Steh auf“, „Setz dich“",
+              "rechts": "Rede ohne Lohn und ohne Sünde"
+            },
+            {
+              "links": "üble Nachrede (ghība)",
+              "rechts": "Rede, die Sünde bringt"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l02.a08",
+          "behauptung": "Zuträgerei (namīma) ist nach al-Ikhtiyār nur verpönt, aber nicht verboten.",
+          "richtig": false,
+          "begruendung": "Al-Ikhtiyār zählt Lüge, Zuträgerei, üble Nachrede und Beschimpfung zur Rede, die Sünde bringt, und nennt sie verboten (ḥarām).",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e02.l02.a12",
+          "fall": "Ein Kind sagt zu seiner Großmutter: „Ich habe dich tausendmal angerufen!“ Es hat sie an diesem Tag oft angerufen, aber nicht genau tausendmal.",
+          "frage": "Ist das nach Radd al-Muḥtār eine Lüge?",
+          "optionen": [
+            "Nein, eine übliche Übertreibung meint „sehr oft“ und ist keine Lüge.",
+            "Ja, jede Zahl, die nicht genau stimmt, ist eine Lüge.",
+            "Nein, Kinder können grundsätzlich nicht lügen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l02.a13",
+          "behauptung": "Nach Radd al-Muḥtār ist es keine üble Nachrede, wenn man über die Kleidung oder das Haus eines Abwesenden etwas sagt, das er nicht mag.",
+          "richtig": false,
+          "begruendung": "Radd al-Muḥtār zählt alles dazu, was dem Betroffenen unangenehm ist, selbst an seiner Kleidung, seinem Haus oder seinem Reittier.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e02.l02.a16",
+          "fall": "In einer Runde redet jemand schlecht über einen abwesenden Bekannten. Ein Zuhörer könnte das Gespräch leicht auf ein anderes Thema lenken, schweigt aber.",
+          "frage": "Was gilt nach Radd al-Muḥtār für den Zuhörer?",
+          "optionen": [
+            "Er bleibt nicht frei von Sünde, weil er widersprechen oder das Gespräch hätte lenken können.",
+            "Er hat keine Sünde, weil er selbst nichts gesagt hat.",
+            "Er hat nur dann Sünde, wenn er dem Betroffenen davon erzählt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.q06",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e02.l02.a05",
+          "anweisung": "Ordne jeder Person ihre Ansicht zum Koranlesen an Gräbern zu (al-Ikhtiyār).",
+          "paare": [
+            {
+              "links": "Abū Ḥanīfa",
+              "rechts": "verpönt"
+            },
+            {
+              "links": "Muḥammad",
+              "rechts": "nicht verpönt"
+            },
+            {
+              "links": "al-Ikhtiyār",
+              "rechts": "folgt Muḥammad"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l02.a15",
+          "behauptung": "Wer allgemein über die Bewohner eines Dorfes spricht, begeht nach al-Ikhtiyār keine üble Nachrede.",
+          "richtig": true,
+          "begruendung": "Nachrede gibt es nach al-Ikhtiyār nur über bestimmte, bekannte Personen; bei einer unbestimmten Gruppe ist der Gemeinte unbekannt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l02.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l02.a09",
+          "behauptung": "Nach al-Ikhtiyār ist es erlaubt, zu lügen, um zwei zerstrittene Menschen zu versöhnen.",
+          "richtig": true,
+          "begruendung": "Al-Ikhtiyār nennt das Versöhnen als einen der Fälle, in denen Lügen nicht verboten ist; ob dabei nur doppeldeutige Rede gemeint ist, ist strittig (Radd al-Muḥtār).",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e02.l03",
+      "titel": "Anstand des Gläubigen",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a01",
+          "text": "Das Buch, in dem al-Ikhtiyār diese Regeln behandelt, heißt „Kitāb al-Karāhiya“. Es erklärt, welche Handlungen verpönt sind und welche nicht; benannt ist es nach dem Verpönten, weil dessen Erklärung wichtiger ist, da man es meiden muss. Al-Qudūrī überschreibt es mit „Verbot und Erlaubnis“ (al-Ḥaẓr wa-l-Ibāḥa); andere nennen es „Kitāb al-Istiḥsān“, weil es zeigt, was die Scharia gut und was sie schlecht nennt, oder „Buch der Weltentsagung und Gewissenhaftigkeit“ (Kitāb az-Zuhd wa-l-Waraʿ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 153,
+              "passage": "ikhtiyar.ms0866",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms866",
+              "passageSha256Text": "1dab039420b4d6ba3643a460dd78f91b64000dcea32dbc44e9a64ae4633ec243",
+              "zitatVon": 627,
+              "zitatBis": 1072,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 136,
+              "zitatBis": 155,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a02",
+          "text": "Was „verpönt“ (makrūh) heißt, ist nach Muḥammad verboten (ḥarām); er nannte es nur deshalb nicht so, weil er dafür keinen eindeutigen Text fand. Nach Abū Ḥanīfa und Abū Yūsuf steht es dem Verbotenen näher, weil sich die Belege widersprechen und die Seite des Verbots überwiegt (al-Ikhtiyār, al-Hidāya).",
+          "meinung": "muhammad",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 153,
+              "passage": "ikhtiyar.ms0866",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms866",
+              "passageSha256Text": "1dab039420b4d6ba3643a460dd78f91b64000dcea32dbc44e9a64ae4633ec243",
+              "zitatVon": 1073,
+              "zitatBis": 1214,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 78,
+              "passage": "hidaya.ms0924",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms924",
+              "passageSha256Text": "de00941e82f6bae9d66928597989f5b1bbc1d84521fe271978d3d6a307f5375e",
+              "zitatVon": 471,
+              "zitatBis": 653,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a03",
+          "text": "Sunna sind nach al-Ikhtiyār: die Nägel schneiden, die Achselhaare auszupfen sowie Schamhaare und Schnurrbart entfernen. Sie gehören zu den Sunnas des Propheten Ibrāhīm; der Prophet Muḥammad tat es und ordnete es an.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 167,
+              "passage": "ikhtiyar.ms0884",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms884",
+              "passageSha256Text": "0320709148884ac32587825ed8cfa1ae47c0e57ba3a64b850e2cda70b86b3ff0",
+              "zitatVon": 472,
+              "zitatBis": 624,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a04",
+          "text": "Beim Schnurrbart nennt der Grundtext von al-Ikhtiyār das Stutzen besser. Aṭ-Ṭaḥāwī schreibt dagegen: Stutzen ist gut, und zwar so weit, dass der Rand der Oberlippe frei wird; Abrasieren aber ist Sunna und besser als Stutzen, und das ist die Ansicht der hanefitischen Gelehrten (al-Ikhtiyār).",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 167,
+              "passage": "ikhtiyar.ms0884",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms884",
+              "passageSha256Text": "0320709148884ac32587825ed8cfa1ae47c0e57ba3a64b850e2cda70b86b3ff0",
+              "zitatVon": 477,
+              "zitatBis": 542,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 167,
+              "passage": "ikhtiyar.ms0884",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms884",
+              "passageSha256Text": "0320709148884ac32587825ed8cfa1ae47c0e57ba3a64b850e2cda70b86b3ff0",
+              "zitatVon": 704,
+              "zitatBis": 861,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a05",
+          "text": "Den Bart lässt man nach al-Ikhtiyār wachsen; das Werk stützt sich auf einen Hadith (Verweis Bukhari 5892). Muḥammad überliefert von Abū Ḥanīfa: Man lässt ihn, bis er dicht und voll wird, und ihn zu kürzen ist Sunna – man fasst den Bart mit der Hand und schneidet ab, was über die Faust hinausgeht. Begründung: Der Bart ist ein Schmuck, seine Fülle vollendet den Schmuck, und übermäßige Länge widerspricht der Sunna.",
+          "meinung": "abu_hanifa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 167,
+              "passage": "ikhtiyar.ms0884",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms884",
+              "passageSha256Text": "0320709148884ac32587825ed8cfa1ae47c0e57ba3a64b850e2cda70b86b3ff0",
+              "zitatVon": 921,
+              "zitatBis": 1128,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 5892
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a06",
+          "text": "Bei den Achselhaaren ist Auszupfen Sunna, Rasieren unbedenklich; beim Entfernen der Schamhaare beginnt man unterhalb des Nabels. Abgeschnittene Nägel und Haare soll man nach al-Ikhtiyār vergraben (Verweis 77:25–26); sie wegzuwerfen, ist unbedenklich. Verpönt ist, sie in die Toilette oder in den Waschraum zu werfen; die Gelehrten begründen das damit, dass es Krankheit bringe.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 167,
+              "passage": "ikhtiyar.ms0884",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms884",
+              "passageSha256Text": "0320709148884ac32587825ed8cfa1ae47c0e57ba3a64b850e2cda70b86b3ff0",
+              "zitatVon": 1129,
+              "zitatBis": 1398,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "77:25-26"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a07",
+          "text": "Die Beschneidung ist für Männer nach al-Ikhtiyār Sunna und gehört zur natürlichen Veranlagung (fiṭra); sie zählt zu den Kennzeichen des Islam. Über den Zeitpunkt gehen die Ansichten auseinander: bis zur Reife, mit neun oder mit zehn Jahren, oder sobald das Kind den Schmerz ertragen kann.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 167,
+              "passage": "ikhtiyar.ms0884",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms884",
+              "passageSha256Text": "0320709148884ac32587825ed8cfa1ae47c0e57ba3a64b850e2cda70b86b3ff0",
+              "zitatVon": 1502,
+              "zitatBis": 1668,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 167,
+              "passage": "ikhtiyar.ms0885",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms885",
+              "passageSha256Text": "9f92afc701d08aa1e8114629a746e41c24b150b23d3a537ae9ac5fe0189ff690",
+              "zitatVon": 0,
+              "zitatBis": 70,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a08",
+          "text": "Mädchen die Ohrläppchen für Ohrringe zu durchstechen, ist nach al-Ikhtiyār unbedenklich, weil es eine Verletzung zu einem nützlichen Zweck ist, dem Schmuck. Allgemein ist es erlaubt, einem Lebewesen Schmerz zuzufügen, wenn es seinem eigenen Wohl dient, wie bei der Beschneidung, beim Schröpfen oder beim Öffnen eines Geschwürs; das geschah zur Zeit des Propheten, ohne dass es beanstandet wurde.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 167,
+              "passage": "ikhtiyar.ms0885",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms885",
+              "passageSha256Text": "9f92afc701d08aa1e8114629a746e41c24b150b23d3a537ae9ac5fe0189ff690",
+              "zitatVon": 139,
+              "zitatBis": 340,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a09",
+          "text": "Ein öffentliches Bad (ḥammām) zu besuchen, ist nach al-Ikhtiyār für Männer und Frauen unbedenklich, wenn man ein Hüfttuch trägt und den Blick senkt; es dient der Sauberkeit und der Pflege, und die Menschen haben es ohne Widerspruch weitergegeben. Sich dort die Glieder massieren zu lassen, ist verpönt, weil es die Gewohnheit der Verwöhnten und Hochmütigen ist – außer bei Schmerz oder Erschöpfung.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 168,
+              "passage": "ikhtiyar.ms0885",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms885",
+              "passageSha256Text": "9f92afc701d08aa1e8114629a746e41c24b150b23d3a537ae9ac5fe0189ff690",
+              "zitatVon": 1215,
+              "zitatBis": 1431,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a10",
+          "text": "Auf Gräbern zu sitzen, ist nach al-Ikhtiyār verpönt, weil es untersagt worden ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 168,
+              "passage": "ikhtiyar.ms0885",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms885",
+              "passageSha256Text": "9f92afc701d08aa1e8114629a746e41c24b150b23d3a537ae9ac5fe0189ff690",
+              "zitatVon": 1432,
+              "zitatBis": 1472,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a11",
+          "text": "Beim Sichten der neuen Mondsichel auf sie zu zeigen, ist nach al-Ikhtiyār verpönt, weil man das in vorislamischer Zeit tat, um sie zu verehren. Zeigt man auf sie, damit ein Begleiter sie sieht, ist es unbedenklich.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 168,
+              "passage": "ikhtiyar.ms0885",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms885",
+              "passageSha256Text": "9f92afc701d08aa1e8114629a746e41c24b150b23d3a537ae9ac5fe0189ff690",
+              "zitatVon": 1473,
+              "zitatBis": 1572,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 168,
+              "passage": "ikhtiyar.ms0886",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms886",
+              "passageSha256Text": "5644637f8554decafed6215bfd1ccc214c8780d7554c79cc207d7afc6306f2dd",
+              "zitatVon": 0,
+              "zitatBis": 23,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a12",
+          "text": "Ein Muslim führt nach al-Ikhtiyār seinen christlichen Vater nicht zur Kirche, wohl aber von der Kirche nach Hause.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 168,
+              "passage": "ikhtiyar.ms0886",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms886",
+              "passageSha256Text": "5644637f8554decafed6215bfd1ccc214c8780d7554c79cc207d7afc6306f2dd",
+              "zitatVon": 178,
+              "zitatBis": 239,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a13",
+          "text": "Ein Mittagsschlaf (qaylūla) ist nach al-Ikhtiyār empfohlen; das Werk stützt sich auf einen Hadith.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 168,
+              "passage": "ikhtiyar.ms0886",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms886",
+              "passageSha256Text": "5644637f8554decafed6215bfd1ccc214c8780d7554c79cc207d7afc6306f2dd",
+              "zitatVon": 240,
+              "zitatBis": 333,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a14",
+          "text": "Wer bei Unterdrückern und Übeltätern verkehrt, um ihr Unrecht und ihr Übel von sich abzuwenden, handelt nach al-Ikhtiyār verpönt, wenn er bekannt ist und andere sich nach ihm richten: Die Menschen könnten meinen, er sei mit ihrem Tun einverstanden, und das brächte den Anhängern der Wahrheit Schande. Ist er nicht bekannt, ist es unbedenklich.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 168,
+              "passage": "ikhtiyar.ms0886",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms886",
+              "passageSha256Text": "5644637f8554decafed6215bfd1ccc214c8780d7554c79cc207d7afc6306f2dd",
+              "zitatVon": 334,
+              "zitatBis": 504,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a15",
+          "text": "Der Handschlag (muṣāfaḥa) ist nach al-Ikhtiyār unbedenklich; er ist eine alte Sunna, die die Muslime seit der ersten Generation bis heute weitergeben.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 157,
+              "passage": "ikhtiyar.ms0871",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms871",
+              "passageSha256Text": "8630835e4e0ed4ce44848cd82f207ce961cd9b7a2cdbde8ee136bea9266c9eb2",
+              "zitatVon": 1279,
+              "zitatBis": 1374,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a16",
+          "text": "Dass ein Mann einen anderen Mann auf den Mund oder an eine andere Stelle küsst oder ihn umarmt, ist nach dem Grundtext von al-Ikhtiyār verpönt. Von Abū Yūsuf ist überliefert, es sei unbedenklich; nach einigen Gelehrten ist es unbedenklich, wenn es aus Ehrerbietung und Güte geschieht und keine Begierde zu befürchten ist; sie stützen sich auf eine Überlieferung. Al-Ikhtiyār begründet die erste Ansicht mit einem Verbot des Propheten und versteht die Überlieferung als Praxis vor diesem Verbot.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 157,
+              "passage": "ikhtiyar.ms0871",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms871",
+              "passageSha256Text": "8630835e4e0ed4ce44848cd82f207ce961cd9b7a2cdbde8ee136bea9266c9eb2",
+              "zitatVon": 822,
+              "zitatBis": 1278,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a17",
+          "text": "Die Hand eines Gelehrten oder eines gerechten Herrschers zu küssen, ist nach al-Ikhtiyār unbedenklich: Die Prophetengefährten küssten dem Propheten Hände und Füße, und Sufyān ibn ʿUyayna nannte es Sunna.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl an-Naẓar ilā l-ʿAwra",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 157,
+              "passage": "ikhtiyar.ms0871",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms871",
+              "passageSha256Text": "8630835e4e0ed4ce44848cd82f207ce961cd9b7a2cdbde8ee136bea9266c9eb2",
+              "zitatVon": 1375,
+              "zitatBis": 1606,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a18",
+          "text": "Muḥammad hielt es nach al-Ikhtiyār für verpönt, Vorhänge über die Wände des Hauses herabzulassen, weil es eine Art Hochmut und bloßer Schmuck ist. Die Wände mit Filz oder Ähnlichem gegen Kälte zu verkleiden, ist unbedenklich, weil es nützt; nur zum Schmuck ist es verpönt.",
+          "meinung": "muhammad",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 181,
+              "passage": "ikhtiyar.ms0902",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms902",
+              "passageSha256Text": "baca7b57eba1819b89866c5dca36a9ebf8b0149a58fa1c80ee7b65428ee3e550",
+              "zitatVon": 540,
+              "zitatBis": 682,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a19",
+          "text": "Wer seine Pflichten erfüllt hat und sich an Schönem erfreuen möchte – al-Ikhtiyār nennt einen schönen Anblick und schöne Sklavinnen –, darf das nach al-Ikhtiyār; das Werk verweist auf Beispiele des Propheten und ʿAlīs und auf den Koran (Verweis 7:32). Wer sich aber mit dem Nötigsten begnügt und den Rest für das Jenseits ausgibt, handelt besser: Sich auf das Nötigste zu beschränken, ist das Strengere (ʿazīma), mehr Genuss ist eine Erleichterung (rukhṣa).",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 181,
+              "passage": "ikhtiyar.ms0902",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms902",
+              "passageSha256Text": "baca7b57eba1819b89866c5dca36a9ebf8b0149a58fa1c80ee7b65428ee3e550",
+              "zitatVon": 683,
+              "zitatBis": 993,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 181,
+              "passage": "ikhtiyar.ms0902",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms902",
+              "passageSha256Text": "baca7b57eba1819b89866c5dca36a9ebf8b0149a58fa1c80ee7b65428ee3e550",
+              "zitatVon": 994,
+              "zitatBis": 1176,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "7:32"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.a20",
+          "text": "Wozu ein Muslim verpflichtet ist, fasst al-Ikhtiyār so zusammen: sich vor offenen und verborgenen Schandtaten hüten; die Pflichten zu ihren Zeiten vollständig erfüllen; sich vor unrechtem Gut und unerlaubtem Erwerb hüten; und keinem Muslim und keinem, mit dem ein Schutzvertrag besteht (muʿāhad), Unrecht tun. Darüber hinaus hat Gott die Dinge weit gemacht; man soll sie weder sich selbst noch anderen Muslimen eng machen. Das Werk stützt das auf eine Überlieferung und auf den Koran (Verweis 5:87).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 181,
+              "passage": "ikhtiyar.ms0902",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms902",
+              "passageSha256Text": "baca7b57eba1819b89866c5dca36a9ebf8b0149a58fa1c80ee7b65428ee3e550",
+              "zitatVon": 1502,
+              "zitatBis": 1608,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 181,
+              "passage": "ikhtiyar.ms0903",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms903",
+              "passageSha256Text": "b54249f3c3a1253f70dd9ba14e18fe27166cdc88a25354c548ddec18074768ae",
+              "zitatVon": 0,
+              "zitatBis": 226,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kalām",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 182,
+              "passage": "ikhtiyar.ms0903",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms903",
+              "passageSha256Text": "b54249f3c3a1253f70dd9ba14e18fe27166cdc88a25354c548ddec18074768ae",
+              "zitatVon": 1460,
+              "zitatBis": 1542,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "5:87"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e02.l03.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l03.a02",
+          "behauptung": "Nach Muḥammad ist das Verpönte (makrūh) eigentlich verboten (ḥarām).",
+          "richtig": true,
+          "begruendung": "So überliefert es al-Ikhtiyār; Muḥammad nannte es nur deshalb nicht ḥarām, weil er dafür keinen eindeutigen Text fand. Nach Abū Ḥanīfa und Abū Yūsuf steht es dem Verbotenen näher.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e02.l03.a04",
+          "anweisung": "Ordne zu, was al-Ikhtiyār zum Schnurrbart überliefert.",
+          "paare": [
+            {
+              "links": "Grundtext von al-Ikhtiyār",
+              "rechts": "Stutzen ist besser."
+            },
+            {
+              "links": "aṭ-Ṭaḥāwī",
+              "rechts": "Abrasieren ist Sunna und besser als Stutzen."
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e02.l03.a05",
+          "fall": "Ein Mann fasst seinen Bart mit der Hand. Ein Teil des Bartes ragt über die Faust hinaus.",
+          "frage": "Was überliefert Muḥammad von Abū Ḥanīfa dazu (al-Ikhtiyār)?",
+          "optionen": [
+            "Es ist Sunna, den Teil abzuschneiden, der über die Faust hinausgeht.",
+            "Der Bart darf überhaupt nicht gekürzt werden.",
+            "Der Bart soll ganz abrasiert werden."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l03.a06",
+          "behauptung": "Abgeschnittene Nägel in die Toilette zu werfen, ist nach al-Ikhtiyār verpönt.",
+          "richtig": true,
+          "begruendung": "Al-Ikhtiyār empfiehlt, Nägel und Haare zu vergraben; wegwerfen ist unbedenklich, in Toilette oder Waschraum werfen aber verpönt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e02.l03.a11",
+          "fall": "Ein Junge sieht am Abend als Erster die neue Mondsichel. Sein Freund findet sie nicht.",
+          "frage": "Darf der Junge auf die Mondsichel zeigen, damit sein Freund sie sieht (al-Ikhtiyār)?",
+          "optionen": [
+            "Ja, wenn er zeigt, damit sein Begleiter sie sieht, ist es unbedenklich.",
+            "Nein, auf die Mondsichel zu zeigen, ist immer verpönt.",
+            "Nur, wenn er dabei den Arm nicht hebt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l03.a15",
+          "behauptung": "Der Handschlag ist nach al-Ikhtiyār eine alte Sunna unter Muslimen.",
+          "richtig": true,
+          "begruendung": "Al-Ikhtiyār nennt den Handschlag eine alte Sunna, die die Muslime seit der ersten Generation weitergeben.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.q07",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e02.l03.a16",
+          "anweisung": "Ordne zu, wie al-Ikhtiyār das Küssen und Umarmen unter Männern bewertet.",
+          "paare": [
+            {
+              "links": "Grundtext von al-Ikhtiyār",
+              "rechts": "verpönt"
+            },
+            {
+              "links": "Abū Yūsuf",
+              "rechts": "unbedenklich"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.q08",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e02.l03.a14",
+          "fall": "Ein bekannter Gelehrter, nach dem sich viele Menschen richten, besucht oft einen ungerechten Machthaber, um sich vor dessen Übergriffen zu schützen.",
+          "frage": "Wie bewertet al-Ikhtiyār das?",
+          "optionen": [
+            "Verpönt, weil die Menschen meinen könnten, er sei mit dem Unrecht einverstanden.",
+            "Unbedenklich, weil er sich nur selbst schützen will.",
+            "Pflicht, weil er den Machthaber beraten muss."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l03.q09",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l03.a10",
+          "behauptung": "Auf Gräbern zu sitzen, ist nach al-Ikhtiyār unbedenklich.",
+          "richtig": false,
+          "begruendung": "Al-Ikhtiyār nennt das Sitzen auf Gräbern verpönt, weil es untersagt worden ist.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e02.l04",
+      "titel": "Anstand bei Reinigung und Gebet",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a01",
+          "text": "Für die Reinigung nach der Notdurft (istinjāʾ) darf man nach Nūr al-Īḍāḥ seine ʿawra nicht vor anderen entblößen. Ist die Unreinheit über die Austrittsstelle hinausgegangen und übersteigt dieser Teil die Fläche eines Dirhams, ist das Gebet damit nicht gültig, wenn man etwas hat, um sie zu entfernen; dann sucht man einen Weg, sie zu entfernen, ohne sich vor jemandem zu entblößen, der zusehen könnte.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ › Faṣl (Kashf al-ʿAwra)",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 16,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 859,
+              "zitatBis": 1022,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a02",
+          "text": "Verpönt ist es nach Nūr al-Īḍāḥ, sich nach der Notdurft mit Knochen, mit Speise für Mensch oder Tier, mit Ziegeln, Tonscherben, Kohle, Glas oder Gips zu reinigen, ebenso mit etwas, das Achtung verdient, etwa einem Stück Seide oder Baumwollstoff, und mit der rechten Hand, außer man ist daran gehindert.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ › Mā yukrahu bihi l-Istinjāʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 16,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 1044,
+              "zitatBis": 1163,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a03",
+          "text": "Zum Anstand bei der Notdurft gehört nach Nūr al-Īḍāḥ: vor dem Eintreten die Zufluchtsformel (istiʿādha) sprechen, den Abort mit dem linken Fuß betreten, sich beim Sitzen auf die linke Seite stützen und nur bei Notwendigkeit sprechen. Hinaus geht man mit dem rechten Fuß und spricht dann ein Lobgebet, das das Werk anführt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ › Ādāb Qaḍāʾ al-Ḥāja",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 16,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 1181,
+              "zitatBis": 1292,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ › Ādāb Qaḍāʾ al-Ḥāja",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 16,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 1478,
+              "zitatBis": 1514,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a04",
+          "text": "Stark verpönt (karāhat taḥrīm) ist es nach Nūr al-Īḍāḥ, sich bei der Notdurft der Qibla zuzuwenden oder ihr den Rücken zuzukehren, auch in einem Gebäude; in derselben Aufzählung nennt das Werk, sich der Sonne, dem Mond oder der Windrichtung zuzuwenden. Radd al-Muḥtār stützt das Verbot auf einen Hadith (Verweis Bukhari 394): Nach der richtigeren von zwei Überlieferungen ist das Abwenden des Rückens ebenso verpönt wie das Zuwenden. Bei Sonne und Mond hält Radd al-Muḥtār die Verpöntheit dem Anschein nach für leicht (tanzīh), solange kein besonderes Verbot überliefert ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ › Ādāb Qaḍāʾ al-Ḥāja",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 16,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 1293,
+              "zitatBis": 1383,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb mā yufsidu ṣ-Ṣalāh wa-mā yukrahu fīhā › Maṭlab fī Aḥkām al-Masjid",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 655,
+              "passage": "radd_al_muhtar.ms0961",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms961",
+              "passageSha256Text": "c84082a467a13d56f21dd02471020249bd221d549d6ff29d92dea8a1b9d93157",
+              "zitatVon": 167,
+              "zitatBis": 329,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb mā yufsidu ṣ-Ṣalāh wa-mā yukrahu fīhā › Maṭlab fī Aḥkām al-Masjid",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 655,
+              "passage": "radd_al_muhtar.ms0961",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms961",
+              "passageSha256Text": "c84082a467a13d56f21dd02471020249bd221d549d6ff29d92dea8a1b9d93157",
+              "zitatVon": 893,
+              "zitatBis": 1106,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 394
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a05",
+          "text": "Verpönt ist es nach Nūr al-Īḍāḥ, die Notdurft ins Wasser, in den Schatten, in ein Erdloch, auf den Weg oder unter einen fruchttragenden Baum zu verrichten, ebenso im Stehen zu urinieren, außer man ist daran gehindert.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ › Ādāb Qaḍāʾ al-Ḥāja",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 16,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 1384,
+              "zitatBis": 1477,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a06",
+          "text": "Zum Anstand der Gebetswaschung zählt Nūr al-Īḍāḥ vierzehn Dinge, darunter: an einem erhöhten Platz sitzen, sich der Qibla zuwenden, sich nicht von einem anderen helfen lassen und dabei nicht über weltliche Dinge sprechen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Ādāb al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 1512,
+              "zitatBis": 1623,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a07",
+          "text": "Weiter nennt Nūr al-Īḍāḥ: die Absicht im Herzen mit der Zunge verbinden; die überlieferten Bittgebete sprechen; bei jedem Glied den Namen Gottes nennen (tasmiya); den kleinen Finger in die Ohröffnungen führen; einen weiten Ring bewegen; Mund und Nase mit der rechten Hand ausspülen und mit der linken schnäuzen; die Waschung schon vor Beginn der Gebetszeit vornehmen, wenn man keine Entschuldigung (ʿudhr) hat; nach der Waschung das Glaubensbekenntnis sprechen, vom übrigen Wasser im Stehen trinken und ein Bittgebet sprechen, das das Werk anführt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Ādāb al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 1624,
+              "zitatBis": 1664,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Ādāb al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 0,
+              "zitatBis": 225,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a08",
+          "text": "Bei der Gebetswaschung sind nach Nūr al-Īḍāḥ sechs Dinge verpönt: Wasser verschwenden, zu sparsam damit sein, sich das Wasser ins Gesicht schlagen, über weltliche Dinge sprechen, sich ohne Entschuldigung helfen lassen und das Bestreichen (masḥ) dreimal mit neuem Wasser wiederholen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Makrūhāt al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 20,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 295,
+              "zitatBis": 435,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a09",
+          "text": "Empfohlen (mandūb) ist eine Gebetswaschung nach Nūr al-Īḍāḥ unter anderem: vor dem Schlafen und nach dem Aufwachen; um stets in Reinheit zu bleiben; nach übler Nachrede, Lüge, Zuträgerei und jeder anderen Sünde; nach dem Vortragen von Gedichten und nach lautem Lachen außerhalb des Gebets; nach dem Waschen und Tragen eines Verstorbenen; vor dem Lesen des Korans und der Hadithe, vor dem Studium von Wissen, vor Gebetsruf, Iqāma und Predigt; und um aus einem Meinungsunterschied der Gelehrten herauszukommen, etwa nachdem man eine Frau berührt hat.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Aqsām al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 20,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 598,
+              "zitatBis": 1001,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a10",
+          "text": "Der Anstand bei der Ganzkörperwaschung (ghusl) ist nach Nūr al-Īḍāḥ derselbe wie bei der Gebetswaschung; nur wendet man sich dabei nicht der Qibla zu, weil man meist entblößt ist. Verpönt ist dabei, was auch bei der Gebetswaschung verpönt ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Ādāb al-Ightisāl wa-Makrūhātihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 24,
+              "passage": "nur_al_idah.ms0007",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms7",
+              "passageSha256Text": "9fdece821c84451a165dc6681ebb850dc1bc20eb0d43577c0aa6ba825ed0c986",
+              "zitatVon": 48,
+              "zitatBis": 158,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a11",
+          "text": "Sunna ist die Ganzkörperwaschung nach Nūr al-Īḍāḥ für vier Dinge: das Freitagsgebet, die beiden Festgebete, den Eintritt in den Weihezustand (iḥrām) und für den Pilger am Tag von ʿArafa nach dem Mittag.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Ādāb al-Ightisāl wa-Makrūhātihi › al-Ashyāʾ allatī yusannu lahā l-Ightisāl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 24,
+              "passage": "nur_al_idah.ms0007",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms7",
+              "passageSha256Text": "9fdece821c84451a165dc6681ebb850dc1bc20eb0d43577c0aa6ba825ed0c986",
+              "zitatVon": 189,
+              "zitatBis": 275,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a12",
+          "text": "Empfohlen sind nach Nūr al-Īḍāḥ zwei Gebetseinheiten nach der Gebetswaschung, bevor das Wasser getrocknet ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Witr › Faṣl fī Taḥiyyat al-Masjid wa-Ṣalāt aḍ-Ḍuḥā wa-Iḥyāʾ al-Layālī › Taḥiyyat al-Masjid",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 63,
+              "passage": "nur_al_idah.ms0025",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms25",
+              "passageSha256Text": "87550154ca1156a581304eb78b67407ce875a3fbab8f0b49280a94a69808c423",
+              "zitatVon": 327,
+              "zitatBis": 359,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a13",
+          "text": "Zum Anstand des Gebets gehört nach Nūr al-Īḍāḥ, dass ein Mann beim Eröffnungs-Takbīr die Hände aus den Ärmeln nimmt. Der Blick des Betenden ruht im Stehen auf dem Ort der Niederwerfung, bei der Verbeugung auf dem Fußrücken, bei der Niederwerfung auf der Nasenspitze, im Sitzen auf dem Schoß und beim Friedensgruß auf den Schultern.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Shurūṭ aṣ-Ṣalāh wa-Arkānihā › Faṣl fī Ādāb aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 47,
+              "passage": "nur_al_idah.ms0016",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms16",
+              "passageSha256Text": "a754d1a379958df311fb846cecfc37a35a0ed4bd926f23de64129567099238f9",
+              "zitatVon": 1755,
+              "zitatBis": 1784,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Shurūṭ aṣ-Ṣalāh wa-Arkānihā › Faṣl fī Ādāb aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 47,
+              "passage": "nur_al_idah.ms0017",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms17",
+              "passageSha256Text": "618d44ccf198810ff06c2a21222bac804748df7ab23e1d85ed7dc66fc5cc1ffa",
+              "zitatVon": 0,
+              "zitatBis": 129,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a14",
+          "text": "Ebenso gehört zum Anstand des Gebets, Husten zurückzuhalten, so gut man kann, und beim Gähnen den Mund geschlossen zu halten (Nūr al-Īḍāḥ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Shurūṭ aṣ-Ṣalāh wa-Arkānihā › Faṣl fī Ādāb aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 47,
+              "passage": "nur_al_idah.ms0017",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms17",
+              "passageSha256Text": "618d44ccf198810ff06c2a21222bac804748df7ab23e1d85ed7dc66fc5cc1ffa",
+              "zitatVon": 130,
+              "zitatBis": 172,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.a15",
+          "text": "Zum Anstand gehört nach Nūr al-Īḍāḥ auch, an der dafür bestimmten Stelle der Iqāma zum Gebet aufzustehen, und dass der Imam mit dem Gebet beginnt, wenn die Iqāma die dafür bestimmte Stelle erreicht hat.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Shurūṭ aṣ-Ṣalāh wa-Arkānihā › Faṣl fī Ādāb aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 47,
+              "passage": "nur_al_idah.ms0017",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms17",
+              "passageSha256Text": "618d44ccf198810ff06c2a21222bac804748df7ab23e1d85ed7dc66fc5cc1ffa",
+              "zitatVon": 173,
+              "zitatBis": 237,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e02.l04.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e02.l04.a03",
+          "anweisung": "Bringe den Anstand bei der Notdurft nach Nūr al-Īḍāḥ in die richtige Reihenfolge.",
+          "schritte": [
+            "vor dem Eintreten die Zufluchtsformel sprechen",
+            "mit dem linken Fuß eintreten",
+            "beim Sitzen auf die linke Seite gestützt sein",
+            "mit dem rechten Fuß hinausgehen",
+            "das Lobgebet sprechen, das das Werk anführt"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l04.a04",
+          "behauptung": "Nach Nūr al-Īḍāḥ ist es auch in einem Gebäude stark verpönt, sich bei der Notdurft der Qibla zuzuwenden.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ nennt es stark verpönt (karāhat taḥrīm), sich der Qibla zuzuwenden oder ihr den Rücken zuzukehren, ausdrücklich auch in Gebäuden.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e02.l04.a13",
+          "anweisung": "Ordne jeder Haltung im Gebet zu, wohin der Blick nach Nūr al-Īḍāḥ gerichtet ist.",
+          "paare": [
+            {
+              "links": "Stehen",
+              "rechts": "Ort der Niederwerfung"
+            },
+            {
+              "links": "Verbeugung",
+              "rechts": "Fußrücken"
+            },
+            {
+              "links": "Niederwerfung",
+              "rechts": "Nasenspitze"
+            },
+            {
+              "links": "Sitzen",
+              "rechts": "Schoß"
+            },
+            {
+              "links": "Friedensgruß",
+              "rechts": "Schultern"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l04.a08",
+          "behauptung": "Nach Nūr al-Īḍāḥ ist es bei der Gebetswaschung empfohlen, sich das Wasser kräftig ins Gesicht zu schlagen.",
+          "richtig": false,
+          "begruendung": "Nūr al-Īḍāḥ zählt das Schlagen des Wassers ins Gesicht zu den sechs verpönten Dingen der Gebetswaschung.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e02.l04.a09",
+          "fall": "Ein Junge hat über einen Mitschüler schlecht geredet und bereut es. Seine Gebetswaschung ist noch gültig.",
+          "frage": "Was empfiehlt Nūr al-Īḍāḥ?",
+          "optionen": [
+            "Eine neue Gebetswaschung ist empfohlen.",
+            "Eine Ganzkörperwaschung ist Pflicht.",
+            "Es ist nichts zu tun, weil die Gebetswaschung gültig bleibt und nichts weiter empfohlen ist."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l04.a10",
+          "behauptung": "Bei der Ganzkörperwaschung wendet man sich nach Nūr al-Īḍāḥ wie bei der Gebetswaschung der Qibla zu.",
+          "richtig": false,
+          "begruendung": "Nūr al-Īḍāḥ nimmt das aus: Bei der Ganzkörperwaschung wendet man sich nicht der Qibla zu, weil man meist entblößt ist.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.q07",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e02.l04.a02",
+          "fall": "Jemand will sich nach der Notdurft reinigen und hat ein Stück Brot und einen sauberen Stein zur Hand.",
+          "frage": "Womit soll er sich nach Nūr al-Īḍāḥ nicht reinigen?",
+          "optionen": [
+            "mit dem Brot",
+            "mit dem Stein",
+            "mit Wasser"
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l04.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l04.a12",
+          "behauptung": "Nach Nūr al-Īḍāḥ sind zwei Gebetseinheiten nach der Gebetswaschung empfohlen, bevor das Wasser getrocknet ist.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ nennt diese zwei Gebetseinheiten empfohlen (mandūb).",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e02.l05",
+      "titel": "Moschee und Gemeinschaft",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e02.l05.a01",
+          "text": "Wer eine Moschee betritt, betet nach Nūr al-Īḍāḥ als Sunna zwei Gebetseinheiten zur Begrüßung der Moschee (taḥiyyat al-masjid), bevor er sich setzt. Betet er beim Eintreten ein Pflichtgebet oder ein anderes Gebet, tritt es an ihre Stelle, auch ohne dass er die Begrüßung beabsichtigt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Witr › Faṣl fī Taḥiyyat al-Masjid wa-Ṣalāt aḍ-Ḍuḥā wa-Iḥyāʾ al-Layālī › Taḥiyyat al-Masjid",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 63,
+              "passage": "nur_al_idah.ms0025",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms25",
+              "passageSha256Text": "87550154ca1156a581304eb78b67407ce875a3fbab8f0b49280a94a69808c423",
+              "zitatVon": 230,
+              "zitatBis": 326,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.a02",
+          "text": "Empfohlen ist es nach Nūr al-Īḍāḥ, die Nächte der letzten zehn Tage des Ramadan, die Nächte der beiden Feste, die Nächte der ersten zehn Tage des Dhū l-Ḥijja und die Nacht zur Mitte des Shaʿbān mit Gottesdienst zu beleben. Verpönt ist nach dem Werk aber, sich dafür in den Moscheen zu versammeln. Radd al-Muḥtār verweist auf diese Stelle und darauf, dass auch al-Ḥāwī al-Qudsī die Versammlung ausdrücklich verpönt nennt: Gebete, die für diese Zeiten überliefert sind, betet man einzeln, außer den Tarāwīḥ.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Witr › Faṣl fī Taḥiyyat al-Masjid wa-Ṣalāt aḍ-Ḍuḥā wa-Iḥyāʾ al-Layālī › Iḥyāʾ al-Layālī",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 63,
+              "passage": "nur_al_idah.ms0025",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms25",
+              "passageSha256Text": "87550154ca1156a581304eb78b67407ce875a3fbab8f0b49280a94a69808c423",
+              "zitatVon": 441,
+              "zitatBis": 597,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Witr wa-n-Nawāfil › Maṭlab fī Iḥyāʾ Layālī al-ʿĪdayn wa-n-Niṣf wa-ʿAshr al-Ḥijja wa-Ramaḍān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 26,
+              "passage": "radd_al_muhtar.ms1011",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1011",
+              "passageSha256Text": "5ce4f64c1ede4229461394fa9006740867d58e5aa52b38263d18bd82db3fd886",
+              "zitatVon": 1185,
+              "zitatBis": 1404,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.a03",
+          "text": "Wer in die Moschee kommt, während der Imam schon das Pflichtgebet leitet, schließt sich ihm nach Nūr al-Īḍāḥ an und beschäftigt sich nicht erst mit dem Sunna-Gebet. Ausgenommen ist das Morgengebet: Ist er sicher, das Pflichtgebet mit dem Imam nicht zu verpassen, betet er dessen Sunna vorher; sonst lässt er sie.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Idrāk al-Farīḍa",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 75,
+              "passage": "nur_al_idah.ms0030",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms30",
+              "passageSha256Text": "0942f133273caefb2735feff3bcc2b7f8c0503a867baffc4275012a4a61098e4",
+              "zitatVon": 20,
+              "zitatBis": 122,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.a04",
+          "text": "Wer vom Mittagsgebet nur eine Gebetseinheit mit dem Imam erreicht, hat es nach Nūr al-Īḍāḥ nicht in Gemeinschaft gebetet, erhält aber deren Vorzug. Ob das bei drei erreichten Einheiten anders ist, ist umstritten.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Idrāk al-Farīḍa › al-Jamāʿa wa-Faḍluhā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 76,
+              "passage": "nur_al_idah.ms0030",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms30",
+              "passageSha256Text": "0942f133273caefb2735feff3bcc2b7f8c0503a867baffc4275012a4a61098e4",
+              "zitatVon": 230,
+              "zitatBis": 297,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.a05",
+          "text": "Wer den Imam in der Verbeugung antrifft, den Takbīr spricht, aber stehen bleibt, bis der Imam den Kopf hebt, hat diese Gebetseinheit nach Nūr al-Īḍāḥ nicht erreicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Idrāk al-Farīḍa › Mutafarriqāt",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 76,
+              "passage": "nur_al_idah.ms0030",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms30",
+              "passageSha256Text": "0942f133273caefb2735feff3bcc2b7f8c0503a867baffc4275012a4a61098e4",
+              "zitatVon": 352,
+              "zitatBis": 413,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.a06",
+          "text": "Eine Moschee, in der zum Gebet gerufen wurde, vor dem Gebet zu verlassen, ist nach Nūr al-Īḍāḥ verpönt; Radd al-Muḥtār nennt es stark verpönt (karāhat taḥrīm) und stützt das auf ein Verbot in einem Hadith. Ausgenommen ist, wer eine andere Gemeinschaft leitet, etwa als Imam oder Gebetsrufer, sodass sie sich ohne ihn zerstreuen würde (Radd al-Muḥtār). Hat er schon allein gebetet, darf er gehen; wird aber beim Mittags- oder Nachtgebet die Iqāma gerufen, bevor er hinausgeht, schließt er sich mit einem freiwilligen Gebet an (Nūr al-Īḍāḥ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Idrāk al-Farīḍa › Mutafarriqāt",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 76,
+              "passage": "nur_al_idah.ms0030",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms30",
+              "passageSha256Text": "0942f133273caefb2735feff3bcc2b7f8c0503a867baffc4275012a4a61098e4",
+              "zitatVon": 495,
+              "zitatBis": 659,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Idrāk al-Farīḍa › Maṭlab fī Karāhat al-Khurūj min al-Masjid baʿd al-Adhān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 54,
+              "passage": "radd_al_muhtar.ms1058",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1058",
+              "passageSha256Text": "bb185e6850fa2ad58279dbcc5a383f31be269d33a8b85d10fa7b351143162a9f",
+              "zitatVon": 479,
+              "zitatBis": 625,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb Idrāk al-Farīḍa › Maṭlab fī Karāhat al-Khurūj min al-Masjid baʿd al-Adhān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 54,
+              "passage": "radd_al_muhtar.ms1058",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1058",
+              "passageSha256Text": "bb185e6850fa2ad58279dbcc5a383f31be269d33a8b85d10fa7b351143162a9f",
+              "zitatVon": 1257,
+              "zitatBis": 1379,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.a07",
+          "text": "Die Moschee ohne Grund als Durchgang zu benutzen, zählt der Grundtext, den Radd al-Muḥtār erläutert, zu dem, was außerhalb des Gebets in der Moschee verpönt ist. Radd al-Muḥtār erklärt, dass gemeint ist, es sich zur Gewohnheit zu machen. Wer einen Grund hat, darf hindurchgehen und betet dann einmal am Tag die Begrüßung der Moschee.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb mā yufsidu ṣ-Ṣalāh wa-mā yukrahu fīhā › Maṭlab fī Aḥkām al-Masjid",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 655,
+              "passage": "radd_al_muhtar.ms0961",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms961",
+              "passageSha256Text": "c84082a467a13d56f21dd02471020249bd221d549d6ff29d92dea8a1b9d93157",
+              "zitatVon": 71,
+              "zitatBis": 162,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb mā yufsidu ṣ-Ṣalāh wa-mā yukrahu fīhā › Maṭlab fī Aḥkām al-Masjid",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 656,
+              "passage": "radd_al_muhtar.ms0963",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms963",
+              "passageSha256Text": "04d6b238ca71547a00a5016e181589ea2e8851a934836155450d0e6ec297784e",
+              "zitatVon": 82,
+              "zitatBis": 189,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb mā yufsidu ṣ-Ṣalāh wa-mā yukrahu fīhā › Maṭlab fī Aḥkām al-Masjid",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 656,
+              "passage": "radd_al_muhtar.ms0963",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms963",
+              "passageSha256Text": "04d6b238ca71547a00a5016e181589ea2e8851a934836155450d0e6ec297784e",
+              "zitatVon": 343,
+              "zitatBis": 452,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.a08",
+          "text": "In sauberen Schuhen (naʿl) oder Ledersocken (khuff) zu beten, ist nach Radd al-Muḥtār (aus at-Tātarkhāniyya) besser; das Werk nennt dazu einen Hadith. Fürchtet man aber, den Boden der Moschee damit zu beschmutzen, soll man es nicht tun, auch wenn die Schuhe sauber sind. Radd al-Muḥtār erklärt: Die Moschee des Propheten war zu seiner Zeit mit Kies ausgelegt, anders als heute; darauf beruht wohl, dass nach ʿUmdat al-Muftī das Betreten der Moschee mit Schuhen schlechter Anstand ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb mā yufsidu ṣ-Ṣalāh wa-mā yukrahu fīhā › Maṭlab fī Aḥkām al-Masjid",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 657,
+              "passage": "radd_al_muhtar.ms0964",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms964",
+              "passageSha256Text": "a7341eb26f340423a97d67f8439461fce48aceca50b3e8fa4e4fd1e69a15c2a8",
+              "zitatVon": 271,
+              "zitatBis": 764,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.a09",
+          "text": "Unreines (najāsa) in die Moschee zu bringen, ist nach Radd al-Muḥtār nicht erlaubt. Al-Ashbāh spricht dabei von Unreinem, bei dem zu befürchten ist, dass es die Moschee beschmutzt; daraus folgt nach Radd al-Muḥtār, dass es erlaubt wäre, wenn es trocken ist. Nach al-Fatāwā al-Hindiyya betritt aber niemand die Moschee, an dessen Körper Unreinheit ist (Radd al-Muḥtār).",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb mā yufsidu ṣ-Ṣalāh wa-mā yukrahu fīhā › Maṭlab fī Aḥkām al-Masjid",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 656,
+              "passage": "radd_al_muhtar.ms0963",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms963",
+              "passageSha256Text": "04d6b238ca71547a00a5016e181589ea2e8851a934836155450d0e6ec297784e",
+              "zitatVon": 519,
+              "zitatBis": 857,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.a10",
+          "text": "Die Lampe der Moschee nimmt man nach al-Ikhtiyār nicht mit nach Hause; eine Lampe von zu Hause in die Moschee zu bringen, ist dagegen unbedenklich.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Ādāb li-l-Muʾmin",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 168,
+              "passage": "ikhtiyar.ms0886",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms886",
+              "passageSha256Text": "5644637f8554decafed6215bfd1ccc214c8780d7554c79cc207d7afc6306f2dd",
+              "zitatVon": 111,
+              "zitatBis": 177,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.a11",
+          "text": "Bettlern in der Moschee etwas zu geben, ist nach al-Ikhtiyār verpönt. Geht der Bettler aber nicht vor Betenden vorbei und steigt nicht über die Menschen hinweg, ist es nicht verpönt; das ist die gewählte Ansicht (al-mukhtār). Radd al-Muḥtār (aus an-Nahr) fügt hinzu, dass er nicht aufdringlich, sondern nur um etwas Notwendiges bitten soll; erfüllt er diese Bedingungen nicht, darf man ihm nach al-Bazzāziyya nichts geben.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 176,
+              "passage": "ikhtiyar.ms0896",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms896",
+              "passageSha256Text": "827b0292d5fde0bb75c0cf2f4d7eb16f0651f0768435fdc1693d2791f452072c",
+              "zitatVon": 585,
+              "zitatBis": 1064,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Jumuʿa › Maṭlab fī ṣ-Ṣadaqa ʿalā Suʾʾāl al-Masjid",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 164,
+              "passage": "radd_al_muhtar.ms1242",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1242",
+              "passageSha256Text": "fd69da721282a73442195ff38dcfe777c245695a6e2f4ab2046b67f3e36c5ea5",
+              "zitatVon": 1261,
+              "zitatBis": 1504,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.a12",
+          "text": "Freiwillig zu beten, ist nach Nūr al-Īḍāḥ verpönt, sobald der Prediger am Freitag zur Predigt hinausgeht, bis das Gebet beendet ist; ebenso, während die Iqāma gerufen wird, außer der Sunna des Morgengebets.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl fī l-Awqāt allatī lā taṣiḥḥu fīhā ṣ-Ṣalāh wa-llatī tukrahu fīhā › Matā yukrahu t-Tanaffulu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 38,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 1208,
+              "zitatBis": 1270,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e02.l05.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l05.a01",
+          "behauptung": "Betet man beim Betreten der Moschee gleich das Pflichtgebet, tritt es nach Nūr al-Īḍāḥ an die Stelle der Begrüßung der Moschee.",
+          "richtig": true,
+          "begruendung": "Nach Nūr al-Īḍāḥ tritt das Pflichtgebet und jedes Gebet, das man beim Eintreten betet, an die Stelle der Begrüßung, auch ohne eigene Absicht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e02.l05.a03",
+          "fall": "Jemand kommt zum Mittagsgebet in die Moschee. Der Imam hat das Pflichtgebet schon begonnen.",
+          "frage": "Was tut er nach Nūr al-Īḍāḥ?",
+          "optionen": [
+            "Er schließt sich dem Imam an und betet die Sunna nicht vorher.",
+            "Er betet zuerst die Sunna und schließt sich dann an.",
+            "Er wartet, bis der Imam fertig ist, und betet dann allein."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e02.l05.a05",
+          "fall": "Ein Betender kommt hinzu, als der Imam in der Verbeugung ist. Er spricht den Takbīr, bleibt aber stehen, bis der Imam sich wieder aufrichtet.",
+          "frage": "Hat er diese Gebetseinheit nach Nūr al-Īḍāḥ erreicht?",
+          "optionen": [
+            "Nein, er hat die Gebetseinheit nicht erreicht.",
+            "Ja, der Takbīr genügt.",
+            "Ja, wenn er danach schneller betet."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l05.a06",
+          "behauptung": "Ein Imam, ohne den sich eine andere Gemeinschaft zerstreuen würde, darf nach Radd al-Muḥtār eine Moschee verlassen, in der schon zum Gebet gerufen wurde.",
+          "richtig": true,
+          "begruendung": "Radd al-Muḥtār nimmt ausdrücklich den aus, der eine andere Gemeinschaft leitet, etwa als Imam oder Gebetsrufer.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l05.a10",
+          "behauptung": "Nach al-Ikhtiyār darf man die Lampe der Moschee mit nach Hause nehmen.",
+          "richtig": false,
+          "begruendung": "Al-Ikhtiyār untersagt das; nur umgekehrt, von zu Hause in die Moschee, ist es unbedenklich.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e02.l05.a11",
+          "fall": "Ein Bedürftiger bittet nach dem Gebet am Eingang der Moschee leise um Hilfe. Er geht nicht vor Betenden vorbei und steigt über niemanden hinweg.",
+          "frage": "Ist es verpönt, ihm etwas zu geben (al-Ikhtiyār)?",
+          "optionen": [
+            "Nein, nach der gewählten Ansicht ist es dann nicht verpönt.",
+            "Ja, Bettlern in der Moschee etwas zu geben, ist immer verpönt.",
+            "Ja, man darf nur außerhalb der Gebetszeiten geben."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l05.a02",
+          "behauptung": "Nach Nūr al-Īḍāḥ ist es verpönt, sich für die Nachtwachen der genannten Nächte in den Moscheen zu versammeln.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ empfiehlt, diese Nächte zu beleben, nennt es aber verpönt, sich dafür in den Moscheen zu versammeln. Das Thema ist als strittig gekennzeichnet.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e02.l05.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e02.l05.a12",
+          "behauptung": "Wenn der Prediger am Freitag zur Predigt hinausgeht, darf man nach Nūr al-Īḍāḥ noch freiwillig beten.",
+          "richtig": false,
+          "begruendung": "Nūr al-Īḍāḥ nennt freiwilliges Gebet ab diesem Zeitpunkt verpönt, bis das Gebet beendet ist.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}

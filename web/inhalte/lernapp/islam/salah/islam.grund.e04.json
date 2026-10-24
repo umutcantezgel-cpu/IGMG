@@ -1,0 +1,3749 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "salah",
+  "stufe": "grund",
+  "einheit": {
+    "schluessel": "islam.grund.e04",
+    "reihenfolge": 4,
+    "thema": {
+      "de": "Nach hanefitischer Lehre – Gebet I: Pflicht, Gebetszeiten und Gebetsruf"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Nach hanefitischer Lehre: Ich kann nennen, für wen das Gebet Pflicht ist und welche Zeiten die Werke für die fünf Gebete bestimmen."
+      },
+      {
+        "de": "Ich kenne die Zeiten, in denen das Gebet ungültig oder verpönt ist."
+      },
+      {
+        "de": "Ich kann Urteil und Form von Gebetsruf (adhān) und iqāma beschreiben, ohne ihren Wortlaut wiederzugeben."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.grund.e04.l01",
+      "titel": "Wer zum Gebet verpflichtet ist und was die Pflicht begründet",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e04.l01.a01",
+          "text": "Das Wort ṣalāh bedeutet sprachlich „Bittgebet“ (duʿāʾ). Im religiösen Recht bezeichnet es bestimmte Grundpfeiler (arkān) und bekannte Gedenkworte (adhkār), die unter festgelegten Bedingungen zu bestimmten Zeiten verrichtet werden (al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Taʿrīf aṣ-Ṣalāh, Sabab al-Wujūb)",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 37,
+              "passage": "ikhtiyar.ms0038",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms38",
+              "passageSha256Text": "5ae844f188b256316a9602350ddf1eab35f524d32f324ce353040e2e59e5cbbf",
+              "zitatVon": 330,
+              "zitatBis": 590,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Anfang: Begriff und Pflicht)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms0449",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms449",
+              "passageSha256Text": "7e43d7dd6bc757ea9b16ab42ae88b7a412ed1275e38782a20c44b7bdfbf3e5f2",
+              "zitatVon": 1235,
+              "zitatBis": 1315,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l01.a02",
+          "text": "Die fünf täglichen Gebete sind für jeden, der verpflichtet ist, eine persönliche Pflicht (farḍ ʿayn). Sie sind eine fest begründete Pflicht (farīḍa muḥkama), belegt durch den Koran, die Sunna und den Konsens (ijmāʿ) der Gemeinschaft; man darf sie nicht unterlassen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Taʿrīf aṣ-Ṣalāh, Sabab al-Wujūb)",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 37,
+              "passage": "ikhtiyar.ms0038",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms38",
+              "passageSha256Text": "5ae844f188b256316a9602350ddf1eab35f524d32f324ce353040e2e59e5cbbf",
+              "zitatVon": 591,
+              "zitatBis": 675,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Anfang: Begriff und Pflicht)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms0450",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms450",
+              "passageSha256Text": "f3ed98d6c19aca98f2dcf2a5982c86f10fb0a619ef3300736a02813e5b9af34d",
+              "zitatVon": 571,
+              "zitatBis": 862,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "4:103"
+            },
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 8
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l01.a03",
+          "text": "Wer leugnet, dass das Gebet Pflicht ist, wird nach al-Ikhtiyār zum Ungläubigen (kāfir).",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Taʿrīf aṣ-Ṣalāh, Sabab al-Wujūb)",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 37,
+              "passage": "ikhtiyar.ms0038",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms38",
+              "passageSha256Text": "5ae844f188b256316a9602350ddf1eab35f524d32f324ce353040e2e59e5cbbf",
+              "zitatVon": 591,
+              "zitatBis": 632,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l01.a04",
+          "text": "Das Gebet ist Pflicht für jeden, der drei Bedingungen erfüllt: Er ist Muslim, geschlechtsreif (bāligh) und bei Verstand (ʿāqil). Das gilt für Frauen wie für Männer (Radd al-Muḥtār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Shurūṭ Wujūbihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 36,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 1220,
+              "zitatBis": 1269,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Anfang: Begriff und Pflicht)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 352,
+              "passage": "radd_al_muhtar.ms0450",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms450",
+              "passageSha256Text": "f3ed98d6c19aca98f2dcf2a5982c86f10fb0a619ef3300736a02813e5b9af34d",
+              "zitatVon": 775,
+              "zitatBis": 825,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l01.a05",
+          "text": "Kinder werden ab sieben Jahren zum Gebet angehalten (Nūr al-Īḍāḥ). Für sie ist es noch keine Pflicht, denn Pflicht ist es nur für den Verpflichteten (mukallaf); man hält sie dazu an, damit sie sich an das Gebet gewöhnen (Radd al-Muḥtār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Shurūṭ Wujūbihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 36,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 1270,
+              "zitatBis": 1297,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Anfang: Begriff und Pflicht)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 352,
+              "passage": "radd_al_muhtar.ms0450",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms450",
+              "passageSha256Text": "f3ed98d6c19aca98f2dcf2a5982c86f10fb0a619ef3300736a02813e5b9af34d",
+              "zitatVon": 1454,
+              "zitatBis": 1542,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Anfang: Begriff und Pflicht)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 352,
+              "passage": "radd_al_muhtar.ms0451",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms451",
+              "passageSha256Text": "c46ff64a6837f95e630cba8c7b16d5ba4ac7d8c62cf108da74a78a9875b0b036",
+              "zitatVon": 18,
+              "zitatBis": 56,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l01.a06",
+          "text": "Der Grund (sabab), aus dem das Gebet Pflicht wird, ist seine Zeit (Nūr al-Īḍāḥ). Darauf weist nach al-Ikhtiyār hin, dass das Gebet seiner Zeit zugeordnet wird (iḍāfa), etwa „das Gebet des Mittags“; eine solche Zuordnung zeigt einen Grund an.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Sababuhā wa-matā tajib",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 36,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 1343,
+              "zitatBis": 1359,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Taʿrīf aṣ-Ṣalāh, Sabab al-Wujūb)",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 38,
+              "passage": "ikhtiyar.ms0038",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms38",
+              "passageSha256Text": "5ae844f188b256316a9602350ddf1eab35f524d32f324ce353040e2e59e5cbbf",
+              "zitatVon": 1104,
+              "zitatBis": 1159,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l01.a07",
+          "text": "Mit dem Beginn der Zeit wird das Gebet Pflicht, aber mit weitem Spielraum (wujūb muwassaʿ): Man darf es zu jedem Zeitpunkt innerhalb seiner Zeit verrichten. Wer es aufschiebt, bis die Zeit knapp wird, für den ist dieser letzte Teil der Zeit verbindlich; schiebt er es darüber hinaus, lädt er Schuld auf sich (al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Sababuhā wa-matā tajib",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 36,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 1360,
+              "zitatBis": 1387,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Taʿrīf aṣ-Ṣalāh, Sabab al-Wujūb)",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 38,
+              "passage": "ikhtiyar.ms0038",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms38",
+              "passageSha256Text": "5ae844f188b256316a9602350ddf1eab35f524d32f324ce353040e2e59e5cbbf",
+              "zitatVon": 1187,
+              "zitatBis": 1371,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e04.l01.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e04.l01.a04",
+          "anweisung": "Ordne die drei Bedingungen der Gebetspflicht ihren Fachbegriffen zu.",
+          "paare": [
+            {
+              "links": "Muslim sein",
+              "rechts": "Islam"
+            },
+            {
+              "links": "geschlechtsreif sein",
+              "rechts": "bulūgh"
+            },
+            {
+              "links": "bei Verstand sein",
+              "rechts": "ʿaql"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l01.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l01.a05",
+          "behauptung": "Kinder werden ab sieben Jahren zum Gebet angehalten, weil es für sie dann schon Pflicht ist.",
+          "richtig": false,
+          "begruendung": "Sie sollen sich an das Gebet gewöhnen. Pflicht wird es erst mit der Geschlechtsreife.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l01.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l01.a06",
+          "behauptung": "Der Grund, aus dem ein Gebet Pflicht wird, ist seine Zeit.",
+          "richtig": true,
+          "begruendung": "Die Werke nennen die Zeit als Grund (sabab) der Pflicht; ein Hinweis darauf ist, dass das Gebet seiner Zeit zugeordnet wird.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l01.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e04.l01.a07",
+          "fall": "Jemand kann das Mittagsgebet nicht gleich zu Beginn seiner Zeit verrichten. Er betet es eine Stunde später, aber noch innerhalb der Mittagszeit.",
+          "frage": "Was gilt in diesem allgemeinen Lehrfall?",
+          "optionen": [
+            "Er hat das Gebet rechtzeitig verrichtet; die Pflicht hat innerhalb der Zeit einen weiten Spielraum.",
+            "Er hat Schuld auf sich geladen, weil das Gebet sofort zu Beginn der Zeit verrichtet werden muss.",
+            "Er muss das Gebet später noch einmal nachholen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l01.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l01.a02",
+          "behauptung": "Die Pflicht der fünf Gebete ist durch den Koran, die Sunna und den Konsens der Gemeinschaft belegt.",
+          "richtig": true,
+          "begruendung": "So nennen es al-Ikhtiyār und Radd al-Muḥtār.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e04.l02",
+      "titel": "Die Zeiten der fünf Gebete",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e04.l02.a01",
+          "text": "Es gibt fünf Gebetszeiten: die Zeit des Morgengebets (ṣubḥ, auch fajr), des Mittagsgebets (ẓuhr), des Nachmittagsgebets (ʿaṣr), des Abendgebets (maghrib) und des Nachtgebets (ʿishāʾ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 36,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 1401,
+              "zitatBis": 1465,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a02",
+          "text": "Es gibt zwei Morgendämmerungen. Die „falsche“ Dämmerung (al-fajr al-kādhib) ist ein Lichtstreifen, der senkrecht aufsteigt; danach wird es wieder dunkel. Sie zählt nicht. Die „wahre“ Dämmerung (al-fajr aṣ-ṣādiq) ist die Helligkeit, die sich waagerecht am Horizont ausbreitet. Mit ihr beginnt die Zeit des Morgengebets, und für Fastende endet die Zeit des Essens (al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalawāt al-Khams",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 38,
+              "passage": "ikhtiyar.ms0038",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms38",
+              "passageSha256Text": "5ae844f188b256316a9602350ddf1eab35f524d32f324ce353040e2e59e5cbbf",
+              "zitatVon": 1453,
+              "zitatBis": 1629,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 38,
+              "passage": "hidaya.ms0033",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms33",
+              "passageSha256Text": "ac7f2d4451443dbc72c87a8e94ea43964e5dd9b12ae5586f3f70a65ffa39bedb",
+              "zitatVon": 516,
+              "zitatBis": 691,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a03",
+          "text": "Die Zeit des Morgengebets reicht vom Anbruch der wahren Morgendämmerung bis kurz vor Sonnenaufgang.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 36,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 1415,
+              "zitatBis": 1465,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 23,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 1283,
+              "zitatBis": 1374,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a04",
+          "text": "Die Zeit des Mittagsgebets beginnt, wenn die Sonne ihren höchsten Stand überschritten hat (zawāl). Nach Abū Ḥanīfa endet sie, wenn der Schatten jedes Gegenstands doppelt so lang ist wie der Gegenstand selbst, ohne den Schatten, den er schon zur Mittagszeit hatte. Radd al-Muḥtār führt an, dass dies die offenkundige Überlieferung (ẓāhir ar-riwāya) von Abū Ḥanīfa ist, dass mehrere Werke sie als richtig (ṣaḥīḥ) und gewählt (mukhtār) bezeichnen und dass die Verfasser der Grundtexte (mutūn) sie gewählt haben.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 23,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 1375,
+              "zitatBis": 1468,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 38,
+              "passage": "hidaya.ms0033",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms33",
+              "passageSha256Text": "ac7f2d4451443dbc72c87a8e94ea43964e5dd9b12ae5586f3f70a65ffa39bedb",
+              "zitatVon": 777,
+              "zitatBis": 850,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalawāt al-Khams",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 38,
+              "passage": "ikhtiyar.ms0039",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms39",
+              "passageSha256Text": "c08b857a263a54113ed03388498b52f4ff80936ec3f0afe971cf7379eb7594b5",
+              "zitatVon": 234,
+              "zitatBis": 298,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: Ende der Mittagszeit)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 359,
+              "passage": "radd_al_muhtar.ms0463",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms463",
+              "passageSha256Text": "2660b360cb14c7085ad7960a6d33290c77f3c33e9bf68d39bab98b4a0b9eb467",
+              "zitatVon": 88,
+              "zitatBis": 302,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a05",
+          "text": "Abū Yūsuf und Muḥammad sagen: Die Zeit des Mittagsgebets endet, wenn der Schatten so lang ist wie der Gegenstand (ohne den Mittagsschatten). Diese Ansicht wird auch von Abū Ḥanīfa überliefert; aṭ-Ṭaḥāwī hat sie gewählt (Nūr al-Īḍāḥ).",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 23,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 1469,
+              "zitatBis": 1512,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 38,
+              "passage": "hidaya.ms0033",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms33",
+              "passageSha256Text": "ac7f2d4451443dbc72c87a8e94ea43964e5dd9b12ae5586f3f70a65ffa39bedb",
+              "zitatVon": 851,
+              "zitatBis": 907,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalawāt al-Khams",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 38,
+              "passage": "ikhtiyar.ms0039",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms39",
+              "passageSha256Text": "c08b857a263a54113ed03388498b52f4ff80936ec3f0afe971cf7379eb7594b5",
+              "zitatVon": 299,
+              "zitatBis": 368,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 36,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 1466,
+              "zitatBis": 1582,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a06",
+          "text": "Der Schatten, den Gegenstände zur Zeit des Sonnenhöchststands haben, heißt fayʾ az-zawāl (al-Hidāya). Er wird beim Messen nicht mitgezählt (Nūr al-Īḍāḥ). Nach Radd al-Muḥtār ist er je nach Zeit und Ort verschieden: länger, kürzer oder er fehlt ganz.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 38,
+              "passage": "hidaya.ms0033",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms33",
+              "passageSha256Text": "ac7f2d4451443dbc72c87a8e94ea43964e5dd9b12ae5586f3f70a65ffa39bedb",
+              "zitatVon": 908,
+              "zitatBis": 957,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 36,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 1466,
+              "zitatBis": 1542,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: Ende der Mittagszeit)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms0464",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms464",
+              "passageSha256Text": "9dc580b184e71e4ced6bff83eb308bbf634b82dfbeaea7aa4062b55e88cb40c0",
+              "zitatVon": 697,
+              "zitatBis": 766,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a07",
+          "text": "Radd al-Muḥtār berichtet: Gelehrte der Schule (al-mashāyikh) haben erklärt, dass für das Ende der Mittagszeit die Fatwa nach Abū Yūsuf und Muḥammad gegeben wird, und in vielen Ländern richten sich die Menschen heute danach. Es wendet aber ein, dass die Belege beider Seiten gleich stark sind und Abū Ḥanīfas Beleg nicht schwach ist; nach al-Baḥr weicht man von Abū Ḥanīfas Ansicht nur aus zwingendem Grund ab. Als das Beste nennt Radd al-Muḥtār die Vorsicht, die as-Sirāj von Shaykh al-Islām anführt: das Mittagsgebet nicht bis zur einfachen Schattenlänge aufschieben und das Nachmittagsgebet erst nach der doppelten Schattenlänge beten. Dann liegt jedes Gebet nach übereinstimmender Ansicht in seiner Zeit.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: Ende der Mittagszeit)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 359,
+              "passage": "radd_al_muhtar.ms0463",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms463",
+              "passageSha256Text": "2660b360cb14c7085ad7960a6d33290c77f3c33e9bf68d39bab98b4a0b9eb467",
+              "zitatVon": 687,
+              "zitatBis": 1178,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a08",
+          "text": "Die Zeit des Nachmittagsgebets beginnt, wenn die Zeit des Mittagsgebets geendet hat – je nach Ansicht nach der einfachen oder der doppelten Schattenlänge – und reicht bis zum Sonnenuntergang.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 23,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 0,
+              "zitatBis": 57,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 36,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 0,
+              "zitatBis": 59,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 38,
+              "passage": "hidaya.ms0033",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms33",
+              "passageSha256Text": "ac7f2d4451443dbc72c87a8e94ea43964e5dd9b12ae5586f3f70a65ffa39bedb",
+              "zitatVon": 1174,
+              "zitatBis": 1321,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 579
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a09",
+          "text": "Die Zeit des Abendgebets beginnt mit dem Sonnenuntergang und endet, wenn die Abenddämmerung (shafaq) verschwunden ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 23,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 58,
+              "zitatBis": 115,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalawāt al-Khams",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 39,
+              "passage": "ikhtiyar.ms0040",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms40",
+              "passageSha256Text": "670563b2db5fc128c7773854615205db72bb5260e46224c3947e84155897f820",
+              "zitatVon": 70,
+              "zitatBis": 204,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a10",
+          "text": "Was mit der Abenddämmerung gemeint ist, ist in der Schule umstritten. Nach Abū Ḥanīfa ist es die weiße Helle, die nach dem Abendrot am Horizont bleibt. Radd al-Muḥtār berichtet, dass der Gelehrte Qāsim diese Ansicht für die richtigere (al-aṣaḥḥ) hielt; nach as-Sirāj ist sie die vorsichtigere.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 23,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 116,
+              "zitatBis": 164,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 39,
+              "passage": "hidaya.ms0034",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms34",
+              "passageSha256Text": "50c7757a0281ca523bbeee0447bb49d54d7dcd93deb925e98770bc5a57f74fec",
+              "zitatVon": 42,
+              "zitatBis": 115,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalawāt al-Khams",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 39,
+              "passage": "ikhtiyar.ms0040",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms40",
+              "passageSha256Text": "670563b2db5fc128c7773854615205db72bb5260e46224c3947e84155897f820",
+              "zitatVon": 291,
+              "zitatBis": 327,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: Abenddämmerung)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms0466",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms466",
+              "passageSha256Text": "ca6610f23af26c1cb1722078b2c88b169ee6939f4799cf56bc744dfd2f26997d",
+              "zitatVon": 1429,
+              "zitatBis": 1473,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: Abenddämmerung)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms0467",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms467",
+              "passageSha256Text": "568bdbec422d29a07b0341579a6ab38610e294d2bb7bcc1f9740ef578add822d",
+              "zitatVon": 209,
+              "zitatBis": 242,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a11",
+          "text": "Nach Abū Yūsuf und Muḥammad ist mit der Abenddämmerung das Abendrot gemeint; das wird auch von Abū Ḥanīfa überliefert. Nūr al-Īḍāḥ nennt das Abendrot als die Ansicht, nach der Fatwa gegeben wird. Radd al-Muḥtār berichtet, dass viele Werke die Fatwa danach geben und sich die Menschen heute in den meisten Ländern danach richten; zugleich berichtet es, dass der Verfasser von al-Fatḥ diese Fatwa zurückwies.",
+          "meinung": "fatwa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 36,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 60,
+              "zitatBis": 107,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 23,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 165,
+              "zitatBis": 195,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 39,
+              "passage": "hidaya.ms0034",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms34",
+              "passageSha256Text": "50c7757a0281ca523bbeee0447bb49d54d7dcd93deb925e98770bc5a57f74fec",
+              "zitatVon": 116,
+              "zitatBis": 156,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: Abenddämmerung)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms0467",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms467",
+              "passageSha256Text": "568bdbec422d29a07b0341579a6ab38610e294d2bb7bcc1f9740ef578add822d",
+              "zitatVon": 31,
+              "zitatBis": 208,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: Abenddämmerung)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms0466",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms466",
+              "passageSha256Text": "ca6610f23af26c1cb1722078b2c88b169ee6939f4799cf56bc744dfd2f26997d",
+              "zitatVon": 905,
+              "zitatBis": 988,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a12",
+          "text": "Die Zeit des Nachtgebets beginnt, wenn die Abenddämmerung verschwunden ist, und reicht bis zum Anbruch der wahren Morgendämmerung.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 23,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 196,
+              "zitatBis": 253,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 39,
+              "passage": "hidaya.ms0034",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms34",
+              "passageSha256Text": "50c7757a0281ca523bbeee0447bb49d54d7dcd93deb925e98770bc5a57f74fec",
+              "zitatVon": 388,
+              "zitatBis": 451,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a13",
+          "text": "Nach Nūr al-Īḍāḥ reicht die Zeit des Nachtgebets und des Witr-Gebets bis zur Morgendämmerung; das Witr wird aber nicht vor dem Nachtgebet verrichtet, weil die Reihenfolge zwischen beiden einzuhalten ist. Al-Ikhtiyār nennt dies die Ansicht Abū Ḥanīfas; nach Abū Yūsuf und Muḥammad beginnt die Zeit des Witr erst nach dem Nachtgebet. Nach beiden Ansichten betet man das Witr nach dem Nachtgebet. Einen Unterschied nennt Radd al-Muḥtār, wenn jemand das Witr aus Vergessen vor dem Nachtgebet betet: Nach Abū Ḥanīfa wiederholt er es nicht, nach Abū Yūsuf und Muḥammad wiederholt er es.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 37,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 108,
+              "zitatBis": 177,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalawāt al-Khams",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 39,
+              "passage": "ikhtiyar.ms0040",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms40",
+              "passageSha256Text": "670563b2db5fc128c7773854615205db72bb5260e46224c3947e84155897f820",
+              "zitatVon": 680,
+              "zitatBis": 846,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: Witr und Reihenfolge)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms0467",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms467",
+              "passageSha256Text": "568bdbec422d29a07b0341579a6ab38610e294d2bb7bcc1f9740ef578add822d",
+              "zitatVon": 377,
+              "zitatBis": 654,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.a14",
+          "text": "An Orten, an denen die Morgendämmerung anbricht, bevor die Abenddämmerung verschwunden ist, fehlt die Zeit des Nachtgebets und des Witr. Nūr al-Īḍāḥ sagt: Wer ihre Zeit nicht findet, für den sind beide nicht Pflicht. Radd al-Muḥtār berichtet, dass die Gelehrten der Schule darüber uneins waren: al-Baqqālī gab die Fatwa, dass sie nicht Pflicht sind; al-Ḥalwānī, der zuerst das Nachholen für Pflicht erklärt hatte, schloss sich ihm später an; al-Burhān al-Kabīr hielt sie für Pflicht. Radd al-Muḥtār fasst zusammen: Beide Ansichten wurden als richtig bezeichnet; die Ansicht der Pflicht wird dadurch gestärkt, dass auch ash-Shāfiʿī sie vertrat.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Awqāt aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 37,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 178,
+              "zitatBis": 208,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Maṭlab fī Fāqid Waqt al-ʿIshāʾ ka-Ahl Bulghār",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 362,
+              "passage": "radd_al_muhtar.ms0467",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms467",
+              "passageSha256Text": "568bdbec422d29a07b0341579a6ab38610e294d2bb7bcc1f9740ef578add822d",
+              "zitatVon": 1235,
+              "zitatBis": 1278,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Maṭlab fī Fāqid Waqt al-ʿIshāʾ ka-Ahl Bulghār",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 362,
+              "passage": "radd_al_muhtar.ms0467",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms467",
+              "passageSha256Text": "568bdbec422d29a07b0341579a6ab38610e294d2bb7bcc1f9740ef578add822d",
+              "zitatVon": 1441,
+              "zitatBis": 1511,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Maṭlab fī Fāqid Waqt al-ʿIshāʾ ka-Ahl Bulghār",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 362,
+              "passage": "radd_al_muhtar.ms0468",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms468",
+              "passageSha256Text": "3a418bfe1b364307dae6cb309ed126408fe01f9a63ef58a51e501413654b64b0",
+              "zitatVon": 1078,
+              "zitatBis": 1481,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Maṭlab fī Fāqid Waqt al-ʿIshāʾ ka-Ahl Bulghār",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 365,
+              "passage": "radd_al_muhtar.ms0473",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms473",
+              "passageSha256Text": "abd70fc092f4a69e0fc2aae6bffe4ee4e460a8e5611ce17066c62c41addf49de",
+              "zitatVon": 408,
+              "zitatBis": 497,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e04.l02.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.grund.e04.l02.a01",
+          "anweisung": "Bringe die fünf Gebete in die Reihenfolge ihrer Zeiten, beginnend mit der Morgendämmerung.",
+          "schritte": [
+            "Morgengebet (ṣubḥ)",
+            "Mittagsgebet (ẓuhr)",
+            "Nachmittagsgebet (ʿaṣr)",
+            "Abendgebet (maghrib)",
+            "Nachtgebet (ʿishāʾ)"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l02.a02",
+          "behauptung": "Mit der „falschen“ Morgendämmerung, einem senkrecht aufsteigenden Lichtstreifen, beginnt die Zeit des Morgengebets.",
+          "richtig": false,
+          "begruendung": "Erst die wahre Dämmerung, die sich waagerecht am Horizont ausbreitet, eröffnet die Zeit des Morgengebets.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e04.l02.a04",
+          "anweisung": "Ordne zu: Was gilt für die Zeit des Mittagsgebets nach Abū Ḥanīfa?",
+          "paare": [
+            {
+              "links": "Beginn der Zeit",
+              "rechts": "die Sonne hat ihren höchsten Stand überschritten"
+            },
+            {
+              "links": "Ende der Zeit",
+              "rechts": "Schatten doppelt so lang wie der Gegenstand"
+            },
+            {
+              "links": "nicht mitgezählt",
+              "rechts": "der Schatten zur Mittagszeit"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l02.a11",
+          "behauptung": "Nach Nūr al-Īḍāḥ wird die Fatwa nach der Ansicht gegeben, dass mit der Abenddämmerung das Abendrot gemeint ist.",
+          "richtig": true,
+          "begruendung": "So nennt es Nūr al-Īḍāḥ; es ist die Ansicht von Abū Yūsuf und Muḥammad. Radd al-Muḥtār berichtet auch von Widerspruch gegen diese Fatwa.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e04.l02.a07",
+          "fall": "Eine Familie möchte beim Mittags- und Nachmittagsgebet dem Weg der Vorsicht folgen, den Radd al-Muḥtār als den besten nennt.",
+          "frage": "Wie gehen sie in diesem allgemeinen Lehrfall vor?",
+          "optionen": [
+            "Sie beten das Mittagsgebet, bevor der Schatten so lang ist wie der Gegenstand, und das Nachmittagsgebet erst, wenn er doppelt so lang ist.",
+            "Sie beten das Mittagsgebet erst, wenn der Schatten doppelt so lang ist wie der Gegenstand.",
+            "Sie beten beide Gebete direkt nacheinander zur Mittagszeit."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l02.a13",
+          "behauptung": "Das Witr-Gebet darf man vor dem Nachtgebet verrichten, weil beide dieselbe Zeit haben.",
+          "richtig": false,
+          "begruendung": "Nach beiden Ansichten der Schule wird das Witr nach dem Nachtgebet verrichtet; zwischen beiden ist die Reihenfolge einzuhalten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l02.a14",
+          "behauptung": "Ob das Nachtgebet an Orten Pflicht ist, an denen seine Zeit fehlt, war unter den Gelehrten der Schule umstritten.",
+          "richtig": true,
+          "begruendung": "Radd al-Muḥtār berichtet von beiden Ansichten und nennt beide als richtig bezeichnet.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l02.a08",
+          "behauptung": "Die Zeit des Nachmittagsgebets reicht bis zum Sonnenuntergang.",
+          "richtig": true,
+          "begruendung": "So nennen es Qudūrī, Nūr al-Īḍāḥ und al-Hidāya.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l02.q09",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l02.a10",
+          "behauptung": "Nach Abū Ḥanīfa ist mit der Abenddämmerung (shafaq) die weiße Helle gemeint, die nach dem Abendrot bleibt.",
+          "richtig": true,
+          "begruendung": "So überliefern es Qudūrī, al-Hidāya und al-Ikhtiyār von Abū Ḥanīfa.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e04.l03",
+      "titel": "Zwei Gebete in einer Zeit; empfohlene Zeiten",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e04.l03.a01",
+          "text": "Zwei Pflichtgebete werden nicht in der Zeit eines einzigen Gebets zusammengelegt – weder wegen einer Entschuldigung noch auf Reisen oder zu Hause. Denn jedes Gebet hat seine festgelegte Zeit (al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › al-Jamʿ bayna Farḍayn fī Waqt",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 37,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 232,
+              "zitatBis": 280,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl al-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh (al-Jamʿ bayna ṣ-Ṣalātayn)",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 41,
+              "passage": "ikhtiyar.ms0042",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms42",
+              "passageSha256Text": "00c1f4770524650c8f077dd71892e69fae11a15f26d209f4582a8e6fe087f703",
+              "zitatVon": 1533,
+              "zitatBis": 1573,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl al-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh (al-Jamʿ bayna ṣ-Ṣalātayn)",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 41,
+              "passage": "ikhtiyar.ms0043",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms43",
+              "passageSha256Text": "f54d8344bbe23ec90ecb981e7bf2eba02b78e8d595a423214fb33c5a6d149c75",
+              "zitatVon": 0,
+              "zitatBis": 112,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "4:103"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.a02",
+          "text": "Überlieferungen, nach denen zwei Gebete zusammengelegt wurden, versteht al-Ikhtiyār als Zusammenlegen in der Ausführung, nicht in der Zeit: Das Mittagsgebet wird am Ende seiner Zeit gebetet und das Nachmittagsgebet gleich zu Beginn seiner Zeit.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl al-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh (al-Jamʿ bayna ṣ-Ṣalātayn)",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 41,
+              "passage": "ikhtiyar.ms0043",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms43",
+              "passageSha256Text": "f54d8344bbe23ec90ecb981e7bf2eba02b78e8d595a423214fb33c5a6d149c75",
+              "zitatVon": 114,
+              "zitatBis": 386,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.a03",
+          "text": "Ausnahme sind zwei Orte der Pilgerfahrt: In ʿArafa betet der Pilger das Mittags- und das Nachmittagsgebet zusammen in der Zeit des Mittagsgebets, in Muzdalifa das Abend- und das Nachtgebet zusammen. Für ʿArafa nennt Nūr al-Īḍāḥ als Bedingungen den Weihezustand (iḥrām) und das Gebet mit dem obersten Imam (al-imām al-aʿẓam). Das Abendgebet, das der Pilger auf dem Weg nach Muzdalifa betet, ist nach Nūr al-Īḍāḥ nicht gültig. Einzelheiten gehören zum Kapitel über die Pilgerfahrt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › al-Jamʿ bayna Farḍayn fī Waqt",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 37,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 263,
+              "zitatBis": 404,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl al-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh (al-Jamʿ bayna ṣ-Ṣalātayn)",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 42,
+              "passage": "ikhtiyar.ms0043",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms43",
+              "passageSha256Text": "f54d8344bbe23ec90ecb981e7bf2eba02b78e8d595a423214fb33c5a6d149c75",
+              "zitatVon": 387,
+              "zitatBis": 472,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.a04",
+          "text": "Empfohlen (mustaḥabb) ist, das Morgengebet für Männer zu verrichten, wenn es schon hell geworden ist (isfār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › al-Mustaḥabb min Awqāt aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 37,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 429,
+              "zitatBis": 457,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: empfohlene Zeiten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 23,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 308,
+              "zitatBis": 329,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt › Faṣl (al-Awqāt al-mustaḥabba)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 39,
+              "passage": "hidaya.ms0034",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms34",
+              "passageSha256Text": "50c7757a0281ca523bbeee0447bb49d54d7dcd93deb925e98770bc5a57f74fec",
+              "zitatVon": 811,
+              "zitatBis": 888,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.a05",
+          "text": "Das Mittagsgebet wird im Sommer aufgeschoben, bis die größte Hitze nachlässt (ibrād); im Winter wird es früh verrichtet.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › al-Mustaḥabb min Awqāt aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 37,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 458,
+              "zitatBis": 500,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: empfohlene Zeiten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 23,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 330,
+              "zitatBis": 373,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt › Faṣl (al-Awqāt al-mustaḥabba)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 39,
+              "passage": "hidaya.ms0034",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms34",
+              "passageSha256Text": "50c7757a0281ca523bbeee0447bb49d54d7dcd93deb925e98770bc5a57f74fec",
+              "zitatVon": 969,
+              "zitatBis": 1143,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › al-Awqāt al-Mustaḥabba li-ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 40,
+              "passage": "ikhtiyar.ms0041",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms41",
+              "passageSha256Text": "18c40b68bdaa0428f80693e3a920ab5dbd2c8885344b5f7975f3ecb7483d2c3f",
+              "zitatVon": 7,
+              "zitatBis": 124,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 538
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.a06",
+          "text": "Das Nachmittagsgebet wird im Sommer wie im Winter aufgeschoben, solange sich die Sonne nicht verändert hat; so bleibt vorher mehr Zeit für freiwillige Gebete, die nach dem Nachmittagsgebet verpönt sind. Maßgeblich ist die Sonnenscheibe selbst, nicht das Licht an den Wänden: Sie hat sich verändert, wenn man in sie blicken kann, ohne geblendet zu werden. Es aufzuschieben, bis sich die Sonne verändert hat, ist verpönt (al-Hidāya, al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: empfohlene Zeiten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 23,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 374,
+              "zitatBis": 404,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt › Faṣl (al-Awqāt al-mustaḥabba)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 39,
+              "passage": "hidaya.ms0034",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms34",
+              "passageSha256Text": "50c7757a0281ca523bbeee0447bb49d54d7dcd93deb925e98770bc5a57f74fec",
+              "zitatVon": 1144,
+              "zitatBis": 1315,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › al-Awqāt al-Mustaḥabba li-ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 40,
+              "passage": "ikhtiyar.ms0041",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms41",
+              "passageSha256Text": "18c40b68bdaa0428f80693e3a920ab5dbd2c8885344b5f7975f3ecb7483d2c3f",
+              "zitatVon": 399,
+              "zitatBis": 445,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.a07",
+          "text": "Das Abendgebet wird zu jeder Jahreszeit früh verrichtet; es aufzuschieben ist verpönt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: empfohlene Zeiten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 23,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 405,
+              "zitatBis": 418,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt › Faṣl (al-Awqāt al-mustaḥabba)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 39,
+              "passage": "hidaya.ms0034",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms34",
+              "passageSha256Text": "50c7757a0281ca523bbeee0447bb49d54d7dcd93deb925e98770bc5a57f74fec",
+              "zitatVon": 1316,
+              "zitatBis": 1353,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › al-Awqāt al-Mustaḥabba li-ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 40,
+              "passage": "ikhtiyar.ms0041",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms41",
+              "passageSha256Text": "18c40b68bdaa0428f80693e3a920ab5dbd2c8885344b5f7975f3ecb7483d2c3f",
+              "zitatVon": 446,
+              "zitatBis": 481,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.a08",
+          "text": "Das Nachtgebet wird am besten bis kurz vor Ablauf des ersten Drittels der Nacht aufgeschoben. Bis zur Mitte der Nacht ist der Aufschub erlaubt (mubāḥ); darüber hinaus ist er verpönt, weil er ohne Entschuldigung die Zahl der Menschen im Gemeinschaftsgebet verringert (al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: empfohlene Zeiten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 24,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 419,
+              "zitatBis": 453,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › al-Awqāt al-Mustaḥabba li-ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 40,
+              "passage": "ikhtiyar.ms0041",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms41",
+              "passageSha256Text": "18c40b68bdaa0428f80693e3a920ab5dbd2c8885344b5f7975f3ecb7483d2c3f",
+              "zitatVon": 718,
+              "zitatBis": 813,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.a09",
+          "text": "Wer gewohnt ist, nachts zu beten, und sicher ist, dass er aufwacht, verrichtet das Witr am besten am Ende der Nacht. Wer nicht sicher ist, dass er aufwacht, betet es vor dem Schlafen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh (Mawāqīt: empfohlene Zeiten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 24,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 454,
+              "zitatBis": 553,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › al-Mustaḥabb min Awqāt aṣ-Ṣalāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 37,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 662,
+              "zitatBis": 707,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › al-Awqāt al-Mustaḥabba li-ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 40,
+              "passage": "ikhtiyar.ms0041",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms41",
+              "passageSha256Text": "18c40b68bdaa0428f80693e3a920ab5dbd2c8885344b5f7975f3ecb7483d2c3f",
+              "zitatVon": 814,
+              "zitatBis": 1058,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.a10",
+          "text": "An einem bewölkten Tag werden Morgen-, Mittags- und Abendgebet aufgeschoben, damit man Mittags- und Abendgebet nicht vor ihrer Zeit betet. Nachmittags- und Nachtgebet werden dagegen früher verrichtet: das Nachmittagsgebet, damit es nicht in die verpönte Zeit fällt, das Nachtgebet, damit wegen Regen und Schnee nicht weniger Menschen zum Gemeinschaftsgebet kommen (al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › al-Awqāt al-Mustaḥabba li-ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 40,
+              "passage": "ikhtiyar.ms0041",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms41",
+              "passageSha256Text": "18c40b68bdaa0428f80693e3a920ab5dbd2c8885344b5f7975f3ecb7483d2c3f",
+              "zitatVon": 1059,
+              "zitatBis": 1326,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt › Faṣl (al-Awqāt al-mustaḥabba)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 40,
+              "passage": "hidaya.ms0035",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms35",
+              "passageSha256Text": "ed1d04e3ac97ff00414fdbc7fdd9cacbf489a9be3ff304e59715b319985ffa0e",
+              "zitatVon": 417,
+              "zitatBis": 501,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e04.l03.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l03.a01",
+          "behauptung": "Nach hanefitischer Lehre darf man auf einer Reise das Mittags- und das Nachmittagsgebet in der Zeit des Mittagsgebets zusammen beten.",
+          "richtig": false,
+          "begruendung": "Zusammengelegt wird nur in ʿArafa und Muzdalifa während der Pilgerfahrt; sonst hat jedes Gebet seine eigene Zeit.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e04.l03.a10",
+          "anweisung": "Ordne zu: Was gilt für das jeweilige Gebet an einem bewölkten Tag?",
+          "paare": [
+            {
+              "links": "Morgengebet",
+              "rechts": "aufschieben"
+            },
+            {
+              "links": "Mittagsgebet",
+              "rechts": "aufschieben"
+            },
+            {
+              "links": "Nachmittagsgebet",
+              "rechts": "früher verrichten"
+            },
+            {
+              "links": "Abendgebet",
+              "rechts": "aufschieben"
+            },
+            {
+              "links": "Nachtgebet",
+              "rechts": "früher verrichten"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e04.l03.a09",
+          "fall": "Jemand ist abends sehr müde und wacht nachts erfahrungsgemäß nicht auf.",
+          "frage": "Wann verrichtet er das Witr-Gebet in diesem allgemeinen Lehrfall am besten?",
+          "optionen": [
+            "vor dem Schlafen",
+            "am Ende der Nacht, auch wenn er wahrscheinlich nicht aufwacht",
+            "erst am nächsten Morgen nach Sonnenaufgang"
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l03.a06",
+          "behauptung": "Für das Nachmittagsgebet ist maßgeblich, ob sich die Sonnenscheibe selbst verändert hat, nicht das Licht an den Wänden.",
+          "richtig": true,
+          "begruendung": "So erklärt es al-Ikhtiyār; al-Hidāya nennt als Zeichen, dass man in die Scheibe blicken kann, ohne geblendet zu werden.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l03.a08",
+          "behauptung": "Das Nachtgebet bis nach Mitternacht aufzuschieben ist besser, als es früher zu beten.",
+          "richtig": false,
+          "begruendung": "Am besten ist es vor Ablauf des ersten Nachtdrittels; nach der Mitte der Nacht ist der Aufschub verpönt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l03.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l03.a03",
+          "behauptung": "In Muzdalifa betet der Pilger das Abend- und das Nachtgebet zusammen.",
+          "richtig": true,
+          "begruendung": "Muzdalifa ist neben ʿArafa der zweite Ort, an dem zwei Gebete zusammengelegt werden.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e04.l04",
+      "titel": "Zeiten, in denen das Gebet ungültig oder verpönt ist",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e04.l04.a01",
+          "text": "Es gibt drei Zeiten, in denen kein Pflichtgebet und kein notwendiges Gebet (wājib) gültig ist, das schon vorher fällig war: beim Sonnenaufgang, bis die Sonne höher gestiegen ist; wenn die Sonne im Mittag steht, bis sie sich neigt; und wenn sie gelb wird, bis sie untergegangen ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl fī l-Awqāt allatī lā taṣiḥḥu fīhā ṣ-Ṣalāh wa-llatī tukrahu fīhā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 38,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 763,
+              "zitatBis": 921,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 32,
+              "passage": "quduri.ms0011",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms11",
+              "passageSha256Text": "ab255a7c9f45d909a469e77a43351bb8fb6af5ed20690a39d6bac68cab77f212",
+              "zitatVon": 506,
+              "zitatBis": 576,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt › Faṣl fī l-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 40,
+              "passage": "hidaya.ms0035",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms35",
+              "passageSha256Text": "ed1d04e3ac97ff00414fdbc7fdd9cacbf489a9be3ff304e59715b319985ffa0e",
+              "zitatVon": 772,
+              "zitatBis": 842,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl al-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 40,
+              "passage": "ikhtiyar.ms0041",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms41",
+              "passageSha256Text": "18c40b68bdaa0428f80693e3a920ab5dbd2c8885344b5f7975f3ecb7483d2c3f",
+              "zitatVon": 1361,
+              "zitatBis": 1442,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.a02",
+          "text": "Ausnahme ist das Nachmittagsgebet desselben Tages: Wer es noch nicht gebetet hat, kann es auch während des Sonnenuntergangs gültig verrichten, denn Grund der Pflicht ist der Teil der Zeit, in dem man gerade steht (al-Hidāya). Es so spät zu beten ist aber verpönt; Radd al-Muḥtār nennt diese Verpöntheit streng (karāha taḥrīmiyya).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl fī l-Awqāt allatī lā taṣiḥḥu fīhā ṣ-Ṣalāh wa-llatī tukrahu fīhā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 38,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 982,
+              "zitatBis": 1019,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 32,
+              "passage": "quduri.ms0011",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms11",
+              "passageSha256Text": "ab255a7c9f45d909a469e77a43351bb8fb6af5ed20690a39d6bac68cab77f212",
+              "zitatVon": 613,
+              "zitatBis": 640,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt › Faṣl fī l-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 40,
+              "passage": "hidaya.ms0035",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms35",
+              "passageSha256Text": "ed1d04e3ac97ff00414fdbc7fdd9cacbf489a9be3ff304e59715b319985ffa0e",
+              "zitatVon": 1310,
+              "zitatBis": 1542,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl al-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 41,
+              "passage": "ikhtiyar.ms0042",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms42",
+              "passageSha256Text": "00c1f4770524650c8f077dd71892e69fae11a15f26d209f4582a8e6fe087f703",
+              "zitatVon": 710,
+              "zitatBis": 885,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (al-Awqāt al-makrūha), unter Maṭlab yushtaraṭu l-ʿIlm bi-Dukhūl al-Waqt",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 373,
+              "passage": "radd_al_muhtar.ms0487",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms487",
+              "passageSha256Text": "c1b4ea53218c4a872cfa0d2904f307c82c6a28d37b2ea4fe73b406e5a364682f",
+              "zitatVon": 832,
+              "zitatBis": 1316,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 579
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.a03",
+          "text": "Gültig ist in diesen Zeiten auch, was erst in ihnen fällig wird: das Totengebet für einen Verstorbenen, der in dieser Zeit gebracht wird, und die Niederwerfung für einen Vers der Niederwerfung, der in dieser Zeit rezitiert wird. Nūr al-Īḍāḥ und al-Hidāya nennen beides gültig, aber verpönt. Radd al-Muḥtār berichtet dagegen nach at-Tuḥfa, dass das Totengebet in diesem Fall gar nicht verpönt ist, weil man es nicht aufschieben soll; die Niederwerfung ist nur leicht verpönt (karāha tanzīhiyya).",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl fī l-Awqāt allatī lā taṣiḥḥu fīhā ṣ-Ṣalāh wa-llatī tukrahu fīhā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 38,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 922,
+              "zitatBis": 981,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt › Faṣl fī l-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 40,
+              "passage": "hidaya.ms0036",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms36",
+              "passageSha256Text": "a4b00c94eecdbed32af655ab0466c9debef1132918c89431dbbe281a6a33afa4",
+              "zitatVon": 0,
+              "zitatBis": 143,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (al-Awqāt al-makrūha), unter Maṭlab yushtaraṭu l-ʿIlm bi-Dukhūl al-Waqt",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 373,
+              "passage": "radd_al_muhtar.ms0487",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms487",
+              "passageSha256Text": "c1b4ea53218c4a872cfa0d2904f307c82c6a28d37b2ea4fe73b406e5a364682f",
+              "zitatVon": 1044,
+              "zitatBis": 1235,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (al-Awqāt al-makrūha), unter Maṭlab yushtaraṭu l-ʿIlm bi-Dukhūl al-Waqt",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 374,
+              "passage": "radd_al_muhtar.ms0488",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms488",
+              "passageSha256Text": "7e254724b8d72e21e44e02b54ccba86a97feeaa7c603acf62bed6b3007bace6f",
+              "zitatVon": 1080,
+              "zitatBis": 1293,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.a04",
+          "text": "In diesen drei Zeiten ist auch ein freiwilliges Gebet streng verpönt (karāha taḥrīmiyya), selbst wenn es einen Anlass hat, etwa ein gelobtes Gebet oder die zwei Gebetseinheiten nach dem Umlauf um die Kaaba (ṭawāf). Wer trotzdem ein freiwilliges Gebet beginnt, muss es nach Radd al-Muḥtār abbrechen und zu einer nicht verpönten Zeit nachholen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl fī l-Awqāt allatī lā taṣiḥḥu fīhā ṣ-Ṣalāh wa-llatī tukrahu fīhā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 38,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 1020,
+              "zitatBis": 1105,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (al-Awqāt al-makrūha), unter Maṭlab yushtaraṭu l-ʿIlm bi-Dukhūl al-Waqt",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 373,
+              "passage": "radd_al_muhtar.ms0487",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms487",
+              "passageSha256Text": "c1b4ea53218c4a872cfa0d2904f307c82c6a28d37b2ea4fe73b406e5a364682f",
+              "zitatVon": 1258,
+              "zitatBis": 1316,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.a05",
+          "text": "Nach dem Morgengebet bis zum Sonnenaufgang und nach dem Nachmittagsgebet bis zum Sonnenuntergang ist es verpönt, freiwillige Gebete zu verrichten. Erlaubt sind in diesen Zeiten aber das Nachholen versäumter Pflichtgebete, die Niederwerfung bei der Rezitation und das Totengebet, nicht aber die zwei Gebetseinheiten nach dem Umlauf um die Kaaba. Der Grund: Diese Zeit gilt gleichsam als dem Pflichtgebet vorbehalten; deshalb betrifft das Verbot die Pflichtgebete selbst nicht (al-Hidāya).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 32,
+              "passage": "quduri.ms0011",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms11",
+              "passageSha256Text": "ab255a7c9f45d909a469e77a43351bb8fb6af5ed20690a39d6bac68cab77f212",
+              "zitatVon": 641,
+              "zitatBis": 811,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt › Faṣl fī l-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 40,
+              "passage": "hidaya.ms0036",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms36",
+              "passageSha256Text": "a4b00c94eecdbed32af655ab0466c9debef1132918c89431dbbe281a6a33afa4",
+              "zitatVon": 144,
+              "zitatBis": 510,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl al-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 41,
+              "passage": "ikhtiyar.ms0042",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms42",
+              "passageSha256Text": "00c1f4770524650c8f077dd71892e69fae11a15f26d209f4582a8e6fe087f703",
+              "zitatVon": 889,
+              "zitatBis": 1118,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh (al-Awqāt al-makrūha), unter Maṭlab yushtaraṭu l-ʿIlm bi-Dukhūl al-Waqt",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 373,
+              "passage": "radd_al_muhtar.ms0487",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms487",
+              "passageSha256Text": "c1b4ea53218c4a872cfa0d2904f307c82c6a28d37b2ea4fe73b406e5a364682f",
+              "zitatVon": 1317,
+              "zitatBis": 1464,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.a06",
+          "text": "Verpönt ist auch, nach Anbruch der Morgendämmerung mehr als die zwei Sunna-Gebetseinheiten des Morgengebets zu beten, und nach Sonnenuntergang vor dem Abendgebet freiwillig zu beten, weil das Abendgebet dadurch verzögert wird.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 32,
+              "passage": "quduri.ms0011",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms11",
+              "passageSha256Text": "ab255a7c9f45d909a469e77a43351bb8fb6af5ed20690a39d6bac68cab77f212",
+              "zitatVon": 812,
+              "zitatBis": 883,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl fī l-Awqāt … › Matā yukrahu t-Tanaffl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 38,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 1122,
+              "zitatBis": 1207,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt › Faṣl fī l-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 40,
+              "passage": "hidaya.ms0036",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms36",
+              "passageSha256Text": "a4b00c94eecdbed32af655ab0466c9debef1132918c89431dbbe281a6a33afa4",
+              "zitatVon": 594,
+              "zitatBis": 757,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.a07",
+          "text": "Ebenfalls verpönt sind freiwillige Gebete: wenn der Prediger am Freitag zur Predigt hinaustritt, bis das Gebet beendet ist (al-Hidāya nennt als Ende den Schluss der Predigt); während die iqāma gesprochen wird, außer der Sunna des Morgengebets; vor dem Festgebet, auch zu Hause, und danach in der Moschee; und zwischen den zusammengelegten Gebeten in ʿArafa und Muzdalifa (Nūr al-Īḍāḥ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl fī l-Awqāt … › Matā yukrahu t-Tanaffl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 38,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 1208,
+              "zitatBis": 1340,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Mawāqīt › Faṣl fī l-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 41,
+              "passage": "hidaya.ms0036",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms36",
+              "passageSha256Text": "a4b00c94eecdbed32af655ab0466c9debef1132918c89431dbbe281a6a33afa4",
+              "zitatVon": 758,
+              "zitatBis": 852,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl al-Awqāt allatī tukrahu fīhā ṣ-Ṣalāh",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 41,
+              "passage": "ikhtiyar.ms0042",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms42",
+              "passageSha256Text": "00c1f4770524650c8f077dd71892e69fae11a15f26d209f4582a8e6fe087f703",
+              "zitatVon": 1433,
+              "zitatBis": 1529,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.a08",
+          "text": "Nach Nūr al-Īḍāḥ ist ein freiwilliges Gebet außerdem verpönt, wenn die Zeit des Pflichtgebets knapp wird, wenn man Harn oder Stuhl zurückhalten muss, wenn Essen bereitsteht, nach dem man verlangt, und überhaupt bei allem, was die Gedanken beschäftigt und die Andacht (khushūʿ) stört.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Faṣl fī l-Awqāt … › Matā yukrahu t-Tanaffl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 38,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 1341,
+              "zitatBis": 1429,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e04.l04.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e04.l04.a01",
+          "anweisung": "Ordne zu: Wie lange dauert die jeweilige Zeit, in der kein Pflichtgebet gültig ist?",
+          "paare": [
+            {
+              "links": "Sonnenaufgang",
+              "rechts": "bis die Sonne höher gestiegen ist"
+            },
+            {
+              "links": "Sonne steht im Mittag",
+              "rechts": "bis sie sich neigt"
+            },
+            {
+              "links": "Sonne wird gelb",
+              "rechts": "bis sie untergegangen ist"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e04.l04.a02",
+          "fall": "Jemand hat das Nachmittagsgebet aufgeschoben und betet es erst, als die Sonne gerade untergeht.",
+          "frage": "Was gilt nach den Werken in diesem allgemeinen Lehrfall?",
+          "optionen": [
+            "Er kann das Nachmittagsgebet dieses Tages noch gültig verrichten; es so spät zu beten ist aber verpönt.",
+            "Er darf in dieser Zeit gar nicht beten und betet es erst am nächsten Tag.",
+            "Das Gebet ist gültig und ohne jede Verpöntheit."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l04.a05",
+          "behauptung": "Nach dem Morgengebet bis zum Sonnenaufgang darf man ein versäumtes Pflichtgebet nachholen.",
+          "richtig": true,
+          "begruendung": "In dieser Zeit sind nur freiwillige Gebete verpönt; versäumte Pflichtgebete dürfen nachgeholt werden.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l04.a04",
+          "behauptung": "Ein gelobtes Gebet ist beim Sonnenaufgang ohne Verpöntheit erlaubt, weil es einen Anlass hat.",
+          "richtig": false,
+          "begruendung": "In den drei Zeiten ist ein solches Gebet streng verpönt, auch wenn es einen Anlass hat.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l04.a06",
+          "behauptung": "Nach Anbruch der Morgendämmerung soll man außer den zwei Sunna-Gebetseinheiten des Morgengebets keine freiwilligen Gebete verrichten.",
+          "richtig": true,
+          "begruendung": "Mehr als die zwei Sunna-Einheiten zu beten ist in dieser Zeit verpönt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e04.l04.a07",
+          "fall": "Am Freitag tritt der Prediger zur Predigt hinaus. Ein Besucher der Moschee möchte jetzt noch zwei freiwillige Gebetseinheiten beten.",
+          "frage": "Was gilt nach den Werken in diesem allgemeinen Lehrfall?",
+          "optionen": [
+            "Das ist verpönt, sobald der Prediger zur Predigt hinausgetreten ist.",
+            "Das ist empfohlen, solange der Prediger noch nicht spricht.",
+            "Das ist nur verpönt, wenn man in der ersten Reihe sitzt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l04.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l04.a03",
+          "behauptung": "Ob ein Totengebet beim Sonnenaufgang verpönt ist, wenn der Verstorbene gerade dann gebracht wird, beurteilen die Werke unterschiedlich.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ nennt es gültig, aber verpönt; Radd al-Muḥtār berichtet nach at-Tuḥfa, dass es gar nicht verpönt ist.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e04.l05",
+      "titel": "Gebetsruf und iqāma: Urteil und Form",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e04.l05.a01",
+          "text": "Das Wort adhān bedeutet sprachlich „Bekanntmachung“. Im religiösen Recht ist es die Bekanntgabe der Gebetszeit mit bestimmten, überlieferten Worten in einer festgelegten Form (al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 42,
+              "passage": "ikhtiyar.ms0043",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms43",
+              "passageSha256Text": "f54d8344bbe23ec90ecb981e7bf2eba02b78e8d595a423214fb33c5a6d149c75",
+              "zitatVon": 523,
+              "zitatBis": 679,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 383,
+              "passage": "radd_al_muhtar.ms0503",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms503",
+              "passageSha256Text": "81ce811f68bde767d8ea9ea78ee352c4cf0635e6f82695caf32b3631d6484174",
+              "zitatVon": 638,
+              "zitatBis": 722,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "9:3"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.a02",
+          "text": "Gebetsruf und iqāma sind betonte Sunna (sunna muʾakkada) für die Pflichtgebete: für den, der allein betet, und für die Gemeinschaft, für das rechtzeitige und das nachgeholte Gebet, auf Reisen und zu Hause. Sie gelten für Männer.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Ḥukm al-Adhān wa-l-Iqāma",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 39,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 1463,
+              "zitatBis": 1542,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 43,
+              "passage": "ikhtiyar.ms0044",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms44",
+              "passageSha256Text": "270d50583e98fdb8375560a044ed8db2dd9d7df6b54934aec893744bf7ad3d33",
+              "zitatVon": 741,
+              "zitatBis": 906,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.a03",
+          "text": "Gebetsruf und iqāma gibt es für die fünf Pflichtgebete und das Freitagsgebet, nicht aber für andere Gebete.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 25,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 565,
+              "zitatBis": 610,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 41,
+              "passage": "hidaya.ms0036",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms36",
+              "passageSha256Text": "a4b00c94eecdbed32af655ab0466c9debef1132918c89431dbbe281a6a33afa4",
+              "zitatVon": 866,
+              "zitatBis": 926,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 43,
+              "passage": "ikhtiyar.ms0044",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms44",
+              "passageSha256Text": "270d50583e98fdb8375560a044ed8db2dd9d7df6b54934aec893744bf7ad3d33",
+              "zitatVon": 741,
+              "zitatBis": 780,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.a04",
+          "text": "Beten Menschen in einer Stadt gemeinsam ohne Gebetsruf und iqāma, so haben sie nach Abū Ḥanīfa gegen die Sunna gehandelt und Schuld auf sich geladen (al-Ikhtiyār). Einige Gelehrte nannten den Gebetsruf Pflicht (wājib) und stützten sich dabei auf eine Aussage Muḥammads; die meisten Gelehrten der Schule halten ihn nach Radd al-Muḥtār für Sunna. Al-Ikhtiyār und Radd al-Muḥtār bringen beides zusammen: Wer eine betonte Sunna unterlässt, lädt ähnlich Schuld auf sich wie bei einer Pflicht; der Gebetsruf ist zudem ein Kennzeichen (shiʿār) des Islam.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 42,
+              "passage": "ikhtiyar.ms0043",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms43",
+              "passageSha256Text": "f54d8344bbe23ec90ecb981e7bf2eba02b78e8d595a423214fb33c5a6d149c75",
+              "zitatVon": 680,
+              "zitatBis": 967,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 384,
+              "passage": "radd_al_muhtar.ms0505",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms505",
+              "passageSha256Text": "ac8ec1c2b9a6978a2b2274bd62a7aaf7cd6fcda5c965d66da6a829b3e8f45cc0",
+              "zitatVon": 720,
+              "zitatBis": 1016,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.a05",
+          "text": "Für Frauen sind Gebetsruf und iqāma verpönt (makrūh).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Ḥukm al-Adhān wa-l-Iqāma",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 39,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 1536,
+              "zitatBis": 1555,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 384,
+              "passage": "radd_al_muhtar.ms0505",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms505",
+              "passageSha256Text": "ac8ec1c2b9a6978a2b2274bd62a7aaf7cd6fcda5c965d66da6a829b3e8f45cc0",
+              "zitatVon": 88,
+              "zitatBis": 144,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.a06",
+          "text": "Zu Beginn des Gebetsrufs wird der takbīr viermal gesprochen. Die übrigen Sätze werden je zweimal gesprochen, auch der takbīr am Ende; nur der abschließende tahlīl wird einmal gesprochen. So hat der Gebetsruf fünfzehn Sätze und die iqāma siebzehn (al-Ikhtiyār nach der Überlieferung von Abū Maḥdhūra).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Kayfiyyatuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 39,
+              "passage": "nur_al_idah.ms0012",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms12",
+              "passageSha256Text": "007eb345fbf105421b35509a3d5f714ee2ed4e43c5a0f552c186b862931a5f9a",
+              "zitatVon": 1563,
+              "zitatBis": 1605,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Kayfiyyatuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 39,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 0,
+              "zitatBis": 6,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 42,
+              "passage": "ikhtiyar.ms0043",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms43",
+              "passageSha256Text": "f54d8344bbe23ec90ecb981e7bf2eba02b78e8d595a423214fb33c5a6d149c75",
+              "zitatVon": 968,
+              "zitatBis": 1222,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 43,
+              "passage": "ikhtiyar.ms0044",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms44",
+              "passageSha256Text": "270d50583e98fdb8375560a044ed8db2dd9d7df6b54934aec893744bf7ad3d33",
+              "zitatVon": 643,
+              "zitatBis": 687,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.a07",
+          "text": "Im Gebetsruf gibt es keinen tarjīʿ, also kein Wiederholen der beiden Glaubensbezeugungen, bei dem man sie erst leise und dann laut spricht. Die Überlieferung, nach der Abū Maḥdhūra den tarjīʿ aufgetragen bekam, erklären al-Hidāya und al-Ikhtiyār mit dem Unterricht: Beim Lehren wiederholt man, damit sich der Lernende die Worte einprägt, und Abū Maḥdhūra hielt die Wiederholung für einen Teil des Gebetsrufs.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Kayfiyyatuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 39,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 7,
+              "zitatBis": 29,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 25,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 664,
+              "zitatBis": 677,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 41,
+              "passage": "hidaya.ms0036",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms36",
+              "passageSha256Text": "a4b00c94eecdbed32af655ab0466c9debef1132918c89431dbbe281a6a33afa4",
+              "zitatVon": 981,
+              "zitatBis": 1216,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 42,
+              "passage": "ikhtiyar.ms0044",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms44",
+              "passageSha256Text": "270d50583e98fdb8375560a044ed8db2dd9d7df6b54934aec893744bf7ad3d33",
+              "zitatVon": 37,
+              "zitatBis": 195,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.a08",
+          "text": "Im Gebetsruf zum Morgengebet kommt nach der zweiten ḥayʿala ein Zusatz hinzu, der zweimal gesprochen wird. Er gehört nur zum Morgengebet, weil man zu dieser Zeit schläft und unaufmerksam ist (al-Hidāya, al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Kayfiyyatuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 39,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 44,
+              "zitatBis": 90,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 25,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 678,
+              "zitatBis": 735,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 41,
+              "passage": "hidaya.ms0036",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms36",
+              "passageSha256Text": "a4b00c94eecdbed32af655ab0466c9debef1132918c89431dbbe281a6a33afa4",
+              "zitatVon": 1217,
+              "zitatBis": 1460,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 43,
+              "passage": "ikhtiyar.ms0044",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms44",
+              "passageSha256Text": "270d50583e98fdb8375560a044ed8db2dd9d7df6b54934aec893744bf7ad3d33",
+              "zitatVon": 1485,
+              "zitatBis": 1646,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.a09",
+          "text": "Die iqāma gleicht dem Gebetsruf. Nach der zweiten ḥayʿala kommt ein eigener Zusatz der iqāma hinzu, der zweimal gesprochen wird.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Kayfiyyatuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 39,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 30,
+              "zitatBis": 129,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 25,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 736,
+              "zitatBis": 806,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 41,
+              "passage": "hidaya.ms0036",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms36",
+              "passageSha256Text": "a4b00c94eecdbed32af655ab0466c9debef1132918c89431dbbe281a6a33afa4",
+              "zitatVon": 1461,
+              "zitatBis": 1562,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.a10",
+          "text": "Den Gebetsruf spricht man langsam und mit Pausen (tarassul), die iqāma zügig (ḥadr). Das ist empfohlen (al-Hidāya).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Kayfiyyatuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 39,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 130,
+              "zitatBis": 163,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 25,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 807,
+              "zitatBis": 840,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 41,
+              "passage": "hidaya.ms0037",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms37",
+              "passageSha256Text": "068f9af6d8b9b3789ac17f29cdb2ff78a8676896853efe092dc3b5c15aeabb63",
+              "zitatVon": 105,
+              "zitatBis": 221,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.a11",
+          "text": "Ein Gebetsruf in einer anderen Sprache als Arabisch, etwa auf Persisch, genügt nach der offenkundigeren Ansicht (al-aẓhar) nicht, auch dann nicht, wenn man erkennt, dass es ein Gebetsruf ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › al-Adhān bi-ghayr al-ʿArabiyya",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 39,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 184,
+              "zitatBis": 230,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 383,
+              "passage": "radd_al_muhtar.ms0504",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms504",
+              "passageSha256Text": "6fa2708d36a90f15d564a4227fdfe5a30e8caa9782305166600806a61648553d",
+              "zitatVon": 0,
+              "zitatBis": 99,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.a12",
+          "text": "Für ein Gebet wird der Gebetsruf nicht vor Beginn seiner Zeit gerufen, denn er soll die Zeit bekannt machen. Geschieht es doch, wird er in der Zeit wiederholt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 25,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 1127,
+              "zitatBis": 1156,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 43,
+              "passage": "hidaya.ms0038",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms38",
+              "passageSha256Text": "cc4144b7e5a06f4d842880c54eb4332c2ed7dc9119a60b8f4e3d0c9bbe68d499",
+              "zitatVon": 1542,
+              "zitatBis": 1622,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 44,
+              "passage": "ikhtiyar.ms0046",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms46",
+              "passageSha256Text": "0e253be32bd82e0ef1d4060ddcfbbfb1cb7738f1728f1e54df75ad62d73ab65c",
+              "zitatVon": 0,
+              "zitatBis": 84,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.a13",
+          "text": "Abū Yūsuf erlaubte den Gebetsruf zum Morgengebet schon in der zweiten Hälfte der Nacht; dann wird er für das Morgengebet nicht wiederholt. Al-Hidāya und al-Ikhtiyār vertreten dagegen, dass auch für das Morgengebet erst in seiner Zeit gerufen wird.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 43,
+              "passage": "hidaya.ms0039",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms39",
+              "passageSha256Text": "fd3786e28c4ce6fedfaf92d31d922d0bf2f17173ba6866581e49645e1eaab43e",
+              "zitatVon": 0,
+              "zitatBis": 200,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 44,
+              "passage": "ikhtiyar.ms0046",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms46",
+              "passageSha256Text": "0e253be32bd82e0ef1d4060ddcfbbfb1cb7738f1728f1e54df75ad62d73ab65c",
+              "zitatVon": 85,
+              "zitatBis": 387,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e04.l05.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l05.a02",
+          "behauptung": "Gebetsruf und iqāma sind betonte Sunna auch für jemanden, der ein versäumtes Pflichtgebet allein nachholt.",
+          "richtig": true,
+          "begruendung": "Sie gelten für das Pflichtgebet allein oder in Gemeinschaft, rechtzeitig oder nachgeholt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e04.l05.a06",
+          "anweisung": "Ordne zu: Wie oft wird gesprochen?",
+          "paare": [
+            {
+              "links": "der takbīr am Anfang",
+              "rechts": "viermal"
+            },
+            {
+              "links": "die übrigen Sätze",
+              "rechts": "je zweimal"
+            },
+            {
+              "links": "der abschließende tahlīl",
+              "rechts": "einmal"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l05.a11",
+          "behauptung": "Nach der offenkundigeren Ansicht (al-aẓhar) genügt ein Gebetsruf auf Persisch, wenn alle wissen, dass es ein Gebetsruf ist.",
+          "richtig": false,
+          "begruendung": "Nach der offenkundigeren Ansicht genügt er nicht, auch wenn man ihn als Gebetsruf erkennt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e04.l05.a12",
+          "fall": "In einer Gemeinde wird der Gebetsruf zum Mittagsgebet versehentlich einige Minuten vor Beginn der Mittagszeit gerufen.",
+          "frage": "Was gilt nach den Werken in diesem allgemeinen Lehrfall?",
+          "optionen": [
+            "Der Gebetsruf wird wiederholt, wenn die Zeit begonnen hat.",
+            "Der Gebetsruf gilt, weil er nur kurz vor der Zeit war.",
+            "Statt des Gebetsrufs genügt dann die iqāma allein."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l05.a07",
+          "behauptung": "Im Gebetsruf nach hanefitischer Lehre werden die beiden Glaubensbezeugungen zuerst leise und dann laut gesprochen.",
+          "richtig": false,
+          "begruendung": "Einen solchen tarjīʿ gibt es im Gebetsruf nach hanefitischer Lehre nicht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.q06",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e04.l05.a10",
+          "anweisung": "Ordne zu: Wie wird gesprochen?",
+          "paare": [
+            {
+              "links": "Gebetsruf",
+              "rechts": "langsam, mit Pausen (tarassul)"
+            },
+            {
+              "links": "iqāma",
+              "rechts": "zügig (ḥadr)"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l05.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l05.a03",
+          "behauptung": "Gebetsruf und iqāma gibt es für die fünf Pflichtgebete und das Freitagsgebet.",
+          "richtig": true,
+          "begruendung": "Für andere Gebete gibt es nach Qudūrī und al-Hidāya keinen Gebetsruf.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e04.l06",
+      "titel": "Gebetsruf: Empfohlenes, Verpöntes, Ruf für Nachzuholendes; Verhalten beim Hören",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e04.l06.a01",
+          "text": "Empfohlen ist, dass der Gebetsrufer (muʾadhdhin) rechtschaffen und gottesfürchtig ist, die Sunna und die Gebetszeiten kennt und regelmäßig ruft. Er ruft mit Gebetswaschung und zur Qibla gewandt, außer wenn er reitet.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Mā yustaḥabbu li-l-Muʾadhdhin wa-fī l-Adhān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 39,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 258,
+              "zitatBis": 354,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 44,
+              "passage": "ikhtiyar.ms0046",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms46",
+              "passageSha256Text": "0e253be32bd82e0ef1d4060ddcfbbfb1cb7738f1728f1e54df75ad62d73ab65c",
+              "zitatVon": 944,
+              "zitatBis": 1020,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a02",
+          "text": "Abū Ḥanīfa missbilligte, dass ein offenkundig sündiger Mensch (fājir) den Gebetsruf übernimmt oder dass der Gebetsrufer dafür Lohn nimmt (al-Ikhtiyār). Radd al-Muḥtār berichtet: Dass Lohn für Gebetsruf und Vorbeten nicht erlaubt ist, war die Ansicht der früheren Gelehrten; die späteren Gelehrten erlauben ihn. Es fügt hinzu: Diese Erlaubnis beruht auf einer Notwendigkeit (ḍarūra); daraus folgt nicht, dass der Gebetsrufer dafür jenseitigen Lohn (thawāb) erhält.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 44,
+              "passage": "ikhtiyar.ms0046",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms46",
+              "passageSha256Text": "0e253be32bd82e0ef1d4060ddcfbbfb1cb7738f1728f1e54df75ad62d73ab65c",
+              "zitatVon": 882,
+              "zitatBis": 942,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Maṭlab fī l-Muʾadhdhin idhā kāna ghayr muḥtasib fī Adhānihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 392,
+              "passage": "radd_al_muhtar.ms0518",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms518",
+              "passageSha256Text": "ee55e05b69e58c3f005e29bf746edbf3fe6ec6ccd2a6e0b71788996d70958470",
+              "zitatVon": 1198,
+              "zitatBis": 1361,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a03",
+          "text": "Der Gebetsrufer legt zwei Finger in die Ohren; das ist besser, aber keine ursprüngliche Sunna (al-Hidāya). Bei der ersten ḥayʿala wendet er das Gesicht nach rechts, bei der zweiten nach links, ohne die Füße zu bewegen. In einem weiten Minarett darf er sich im Kreis drehen, wenn er sonst das Gesicht nicht nach rechts und links wenden kann.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Mā yustaḥabbu li-l-Muʾadhdhin wa-fī l-Adhān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 39,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 355,
+              "zitatBis": 440,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 41,
+              "passage": "hidaya.ms0037",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms37",
+              "passageSha256Text": "068f9af6d8b9b3789ac17f29cdb2ff78a8676896853efe092dc3b5c15aeabb63",
+              "zitatVon": 344,
+              "zitatBis": 711,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 43,
+              "passage": "ikhtiyar.ms0045",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms45",
+              "passageSha256Text": "a0cef00cc7ec181b5d37cb403b0932b375d2da6d186b9e3739d26ac39f004ff9",
+              "zitatVon": 432,
+              "zitatBis": 640,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a04",
+          "text": "Zwischen Gebetsruf und iqāma lässt man so viel Zeit, dass die Menschen, die regelmäßig zum Gebet kommen, sich einfinden können; dabei achtet man auf die empfohlene Zeit des Gebets.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Mā yustaḥabbu li-l-Muʾadhdhin wa-fī l-Adhān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 39,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 441,
+              "zitatBis": 520,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a05",
+          "text": "Beim Abendgebet trennt man Gebetsruf und iqāma nach Abū Ḥanīfa nur durch eine kurze Pause, etwa so lang wie drei kurze Verse oder drei Schritte, ohne sich zu setzen, weil ein Aufschub des Abendgebets verpönt ist.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Mā yustaḥabbu li-l-Muʾadhdhin wa-fī l-Adhān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 40,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 521,
+              "zitatBis": 576,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 42,
+              "passage": "hidaya.ms0037",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms37",
+              "passageSha256Text": "068f9af6d8b9b3789ac17f29cdb2ff78a8676896853efe092dc3b5c15aeabb63",
+              "zitatVon": 1384,
+              "zitatBis": 1654,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 44,
+              "passage": "ikhtiyar.ms0045",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms45",
+              "passageSha256Text": "a0cef00cc7ec181b5d37cb403b0932b375d2da6d186b9e3739d26ac39f004ff9",
+              "zitatVon": 1099,
+              "zitatBis": 1193,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a06",
+          "text": "Abū Yūsuf und Muḥammad sagen: Auch beim Abendgebet setzt sich der Gebetsrufer zwischen Gebetsruf und iqāma kurz hin, so kurz wie zwischen den beiden Freitagspredigten.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 42,
+              "passage": "hidaya.ms0037",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms37",
+              "passageSha256Text": "068f9af6d8b9b3789ac17f29cdb2ff78a8676896853efe092dc3b5c15aeabb63",
+              "zitatVon": 1453,
+              "zitatBis": 1602,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 44,
+              "passage": "ikhtiyar.ms0045",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms45",
+              "passageSha256Text": "a0cef00cc7ec181b5d37cb403b0932b375d2da6d186b9e3739d26ac39f004ff9",
+              "zitatVon": 969,
+              "zitatBis": 1098,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a07",
+          "text": "Empfohlen ist, dass der Gebetsrufer die Menschen nach dem Gebetsruf noch einmal an das Gebet erinnert (tathwīb; Nūr al-Īḍāḥ). Nach al-Hidāya ist das beim Morgengebet gut und bei den übrigen Gebeten verpönt; eingeführt haben es Gelehrte in Kufa nach der Zeit der Prophetengefährten, und zwar nur für das Morgengebet, weil man dann schläft und unaufmerksam ist. Die späteren Gelehrten hielten es bei allen Gebeten für gut, weil die Menschen in religiösen Dingen nachlässiger wurden. Die Form richtet sich nach dem Brauch des jeweiligen Ortes (al-Ikhtiyār).",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Mā yustaḥabbu li-l-Muʾadhdhin wa-fī l-Adhān",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 40,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 577,
+              "zitatBis": 599,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 41,
+              "passage": "hidaya.ms0037",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms37",
+              "passageSha256Text": "068f9af6d8b9b3789ac17f29cdb2ff78a8676896853efe092dc3b5c15aeabb63",
+              "zitatVon": 712,
+              "zitatBis": 1059,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 43,
+              "passage": "ikhtiyar.ms0045",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms45",
+              "passageSha256Text": "a0cef00cc7ec181b5d37cb403b0932b375d2da6d186b9e3739d26ac39f004ff9",
+              "zitatVon": 140,
+              "zitatBis": 278,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a08",
+          "text": "Verpönt ist das talḥīn im Gebetsruf, also das melodische Ausschmücken; al-Ikhtiyār nennt es eine Neuerung (bidʿa). Verpönt ist auch, während Gebetsruf oder iqāma zu sprechen; der Gebetsrufer erwidert dabei nicht einmal einen Gruß.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Mā yukrahu fīhimā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 40,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 637,
+              "zitatBis": 650,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Mā yukrahu fīhimā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 40,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 730,
+              "zitatBis": 764,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 44,
+              "passage": "ikhtiyar.ms0045",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms45",
+              "passageSha256Text": "a0cef00cc7ec181b5d37cb403b0932b375d2da6d186b9e3739d26ac39f004ff9",
+              "zitatVon": 1251,
+              "zitatBis": 1287,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 44,
+              "passage": "ikhtiyar.ms0046",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms46",
+              "passageSha256Text": "0e253be32bd82e0ef1d4060ddcfbbfb1cb7738f1728f1e54df75ad62d73ab65c",
+              "zitatVon": 388,
+              "zitatBis": 470,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a09",
+          "text": "Ruft jemand den Gebetsruf ohne Gebetswaschung, ist er gültig. Nach Nūr al-Īḍāḥ und al-Ikhtiyār ist das verpönt, nach einer anderen Ansicht nicht; al-Hidāya nennt die Gebetswaschung dafür nur empfohlen, weil der Gebetsruf ein Gedenken (dhikr) und kein Gebet ist. Die iqāma ohne Gebetswaschung ist nach der richtigen Ansicht verpönt, weil sonst zwischen iqāma und Gebet eine Unterbrechung entsteht. Wurden Gebetsruf und iqāma ohne Gebetswaschung gesprochen, werden sie nicht wiederholt (al-Ikhtiyār).",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Mā yukrahu fīhimā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 40,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 651,
+              "zitatBis": 671,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 25,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 1030,
+              "zitatBis": 1126,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 42,
+              "passage": "hidaya.ms0038",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms38",
+              "passageSha256Text": "cc4144b7e5a06f4d842880c54eb4332c2ed7dc9119a60b8f4e3d0c9bbe68d499",
+              "zitatVon": 748,
+              "zitatBis": 925,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 44,
+              "passage": "ikhtiyar.ms0046",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms46",
+              "passageSha256Text": "0e253be32bd82e0ef1d4060ddcfbbfb1cb7738f1728f1e54df75ad62d73ab65c",
+              "zitatVon": 471,
+              "zitatBis": 707,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a10",
+          "text": "Verpönt ist der Gebetsruf von jemandem im Zustand der großen Unreinheit (junub), von einem Kind, das noch nicht verständig ist, von einem geistig Verwirrten, einem Betrunkenen, einer Frau, einem offenkundig Sündigen (fāsiq) und im Sitzen. Bei den ersten fünf wird empfohlen, den Gebetsruf zu wiederholen, damit er nach der Sunna geschieht; die iqāma wird nicht wiederholt, weil ihre Wiederholung nicht vorgesehen ist (al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Mā yukrahu fīhimā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 40,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 672,
+              "zitatBis": 729,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 44,
+              "passage": "ikhtiyar.ms0046",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms46",
+              "passageSha256Text": "0e253be32bd82e0ef1d4060ddcfbbfb1cb7738f1728f1e54df75ad62d73ab65c",
+              "zitatVon": 709,
+              "zitatBis": 841,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 43,
+              "passage": "hidaya.ms0038",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms38",
+              "passageSha256Text": "cc4144b7e5a06f4d842880c54eb4332c2ed7dc9119a60b8f4e3d0c9bbe68d499",
+              "zitatVon": 1344,
+              "zitatBis": 1413,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a11",
+          "text": "Für das Mittagsgebet am Freitag in einer Stadt (miṣr) sind Gebetsruf und iqāma verpönt. Nach Radd al-Muḥtār gilt das auch für den, der aus einem entschuldigten Grund nicht am Freitagsgebet teilnimmt; in Dörfern ist es nicht verpönt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Mā yukrahu fīhimā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 40,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 791,
+              "zitatBis": 823,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 391,
+              "passage": "radd_al_muhtar.ms0517",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms517",
+              "passageSha256Text": "9f530fe17b2b3e7fbb533b375f4d3972f0397f785b993dd4e290b0be43130b3f",
+              "zitatVon": 294,
+              "zitatBis": 359,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a12",
+          "text": "Für ein versäumtes Gebet, das man nachholt, ruft man Gebetsruf und iqāma. Hat man mehrere Gebete versäumt, ruft man für das erste beides; für die übrigen hat man die Wahl zwischen Gebetsruf mit iqāma und der iqāma allein. Holt man sie in einer Sitzung nach, ist es verpönt, die iqāma wegzulassen, nicht aber den Gebetsruf.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › al-Adhān li-l-Fawāʾit",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 40,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 839,
+              "zitatBis": 935,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 25,
+              "passage": "quduri.ms0007",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms7",
+              "passageSha256Text": "0b9fcaaf8bbca2802199cf1540d0780dac2e98363d5439a038883b8938749289",
+              "zitatVon": 911,
+              "zitatBis": 1029,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 42,
+              "passage": "hidaya.ms0038",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms38",
+              "passageSha256Text": "cc4144b7e5a06f4d842880c54eb4332c2ed7dc9119a60b8f4e3d0c9bbe68d499",
+              "zitatVon": 348,
+              "zitatBis": 648,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a13",
+          "text": "Wer auf Reisen ist, ruft Gebetsruf und iqāma; beides wegzulassen ist verpönt, die iqāma allein genügt. Wer in einer Stadt zu Hause betet, betet am besten mit Gebetsruf und iqāma; lässt er beides weg, ist das erlaubt, denn der Gebetsruf des Viertels genügt ihm.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 43,
+              "passage": "hidaya.ms0039",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms39",
+              "passageSha256Text": "fd3786e28c4ce6fedfaf92d31d922d0bf2f17173ba6866581e49645e1eaab43e",
+              "zitatVon": 201,
+              "zitatBis": 566,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān wa-l-Iqāma",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 43,
+              "passage": "ikhtiyar.ms0044",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms44",
+              "passageSha256Text": "270d50583e98fdb8375560a044ed8db2dd9d7df6b54934aec893744bf7ad3d33",
+              "zitatVon": 907,
+              "zitatBis": 1148,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 384,
+              "passage": "radd_al_muhtar.ms0506",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms506",
+              "passageSha256Text": "784ec6aaf416c3cf5b53951bb7e20e63e477115277238045d77ae41f2c77f540",
+              "zitatVon": 202,
+              "zitatBis": 261,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a14",
+          "text": "Wer einen Gebetsruf hört, der nach der Sunna gerufen wird, hält inne und spricht die Sätze des Gebetsrufers nach. Bei den beiden ḥayʿalas spricht er stattdessen die ḥawqala, beim Zusatz des Morgengebets eine eigene Erwiderung. Danach spricht er das Bittgebet um die wasīla (duʿāʾ al-wasīla). Nach Radd al-Muḥtār ist ein Gebetsruf gemeint, der ganz der Sunna entspricht, nicht etwa einer vor der Zeit.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān › Mā yuqālu ʿinda Samāʿ al-Muʾadhdhin",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 40,
+              "passage": "nur_al_idah.ms0013",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms13",
+              "passageSha256Text": "a6ee31e3f1479f9fe2f982d403d391356f12718ad4b0f05c2b5e822f6d9ec429",
+              "zitatVon": 960,
+              "zitatBis": 1208,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān (Erwiderung des Gebetsrufs)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 397,
+              "passage": "radd_al_muhtar.ms0526",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms526",
+              "passageSha256Text": "4420682ec3246b6f46b26aad4d8123e494e336fdd269f57b015a2f4995893f56",
+              "zitatVon": 1192,
+              "zitatBis": 1436,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 614
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.a15",
+          "text": "Ob man den Gebetsruf mit Worten erwidern muss, ist in der Schule umstritten. Radd al-Muḥtār kommt zu dem Ergebnis: Die Erwiderung mit Worten ist empfohlen (mustaḥabb). Pflicht ist, dem Ruf zu folgen und hinzugehen, wenn man sonst das Gemeinschaftsgebet versäumen würde; kann man es in einer zweiten Gemeinschaft in der Moschee oder zu Hause verrichten, ist auch das nur empfohlen.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān (Erwiderung des Gebetsrufs)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 396,
+              "passage": "radd_al_muhtar.ms0525",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms525",
+              "passageSha256Text": "37d7a15d9f5075835d05a92ee580377a090eeec236dca619fd004a043b5b266b",
+              "zitatVon": 180,
+              "zitatBis": 280,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān (Erwiderung des Gebetsrufs)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 399,
+              "passage": "radd_al_muhtar.ms0530",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms530",
+              "passageSha256Text": "f7cdbf6135e6b9d405f5c70d2a8be87c9e8224fdb370c5af8f9282a8483d177e",
+              "zitatVon": 1129,
+              "zitatBis": 1558,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣalāh › Bāb al-Adhān (Erwiderung des Gebetsrufs)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 399,
+              "passage": "radd_al_muhtar.ms0531",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms531",
+              "passageSha256Text": "bfab702419cfb55522239b7042bfc980f0f6274024aecad8651d50b4c70c9c9f",
+              "zitatVon": 0,
+              "zitatBis": 414,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e04.l06.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.grund.e04.l06.a14",
+          "anweisung": "Bringe in die richtige Reihenfolge, was jemand tut, der den Gebetsruf hört.",
+          "schritte": [
+            "innehalten",
+            "die Sätze des Gebetsrufers nachsprechen, bei den ḥayʿalas die ḥawqala",
+            "nach dem Gebetsruf das Bittgebet um die wasīla sprechen"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l06.a05",
+          "behauptung": "Nach Abū Ḥanīfa setzt sich der Gebetsrufer beim Abendgebet zwischen Gebetsruf und iqāma kurz hin.",
+          "richtig": false,
+          "begruendung": "Nach Abū Ḥanīfa genügt eine kurze Pause ohne Sitzen; die kurze Sitzpause ist die Ansicht von Abū Yūsuf und Muḥammad.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e04.l06.a10",
+          "anweisung": "Ordne zu: Was gilt, wenn jemand im Zustand der großen Unreinheit Gebetsruf und iqāma gesprochen hat?",
+          "paare": [
+            {
+              "links": "Gebetsruf",
+              "rechts": "Wiederholung empfohlen"
+            },
+            {
+              "links": "iqāma",
+              "rechts": "wird nicht wiederholt"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e04.l06.a12",
+          "fall": "Jemand hat drei Gebete versäumt und holt sie zu Hause in einer Sitzung nach.",
+          "frage": "Was gilt in diesem allgemeinen Lehrfall?",
+          "optionen": [
+            "Für das erste Gebet ruft er Gebetsruf und iqāma; für die übrigen kann er beides sprechen oder nur die iqāma.",
+            "Für keines der Gebete sind Gebetsruf oder iqāma vorgesehen.",
+            "Für jedes Gebet spricht er nur den Gebetsruf, nie die iqāma."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l06.a13",
+          "behauptung": "Wer in der Stadt zu Hause betet und Gebetsruf und iqāma weglässt, handelt erlaubt, weil ihm der Gebetsruf des Viertels genügt.",
+          "richtig": true,
+          "begruendung": "Das Weglassen ist erlaubt; besser ist es aber, mit Gebetsruf und iqāma zu beten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l06.a08",
+          "behauptung": "Während des Gebetsrufs erwidert der Gebetsrufer einen Gruß.",
+          "richtig": false,
+          "begruendung": "Während Gebetsruf und iqāma spricht er nicht und erwidert auch keinen Gruß.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l06.a02",
+          "behauptung": "Ob der Gebetsrufer für den Gebetsruf Lohn nehmen darf, beurteilten frühere und spätere Gelehrte der Schule unterschiedlich.",
+          "richtig": true,
+          "begruendung": "Nach Radd al-Muḥtār lehnten die früheren Gelehrten es ab; die späteren erlauben es.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e04.l06.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e04.l06.a15",
+          "behauptung": "Nach Radd al-Muḥtār ist die Erwiderung des Gebetsrufs mit Worten empfohlen.",
+          "richtig": true,
+          "begruendung": "Radd al-Muḥtār hält die Erwiderung mit Worten für empfohlen; die Frage ist in der Schule umstritten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}

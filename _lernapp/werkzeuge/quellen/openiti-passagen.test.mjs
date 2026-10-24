@@ -243,6 +243,13 @@ describe('Sonderfälle', () => {
     assert.throws(() => erzeugeIndex('x', { werk: 'q', standardThema: 'fatwa' }));
   });
 
+  test('Werk-Kennung mit Unterstrich wie im Quellenregister (nur_al_idah)', () => {
+    const i = erzeugeIndex(probeText(), { werk: 'nur_al_idah' });
+    assert.equal(i.werk, 'nur_al_idah');
+    assert.ok(i.passagen.every((p) => /^nur_al_idah\.ms\d{4,5}$/.test(p.kennung)));
+    assert.throws(() => erzeugeIndex('x', { werk: '_quduri' }));
+  });
+
   test('Seitenbereich: Marke direkt vor dem Meilenstein zählt nicht zur Folgeseite', () => {
     const index = erzeugeIndex('#META#Header#End#\n# a b PageV01P001 c ms1 d e PageV01P002 ms2 f PageV02P003\n', { werk: 's' });
     assert.deepEqual(index.passagen.map((p) => [p.kennung, p.seiteVon, p.seiteBis]), [

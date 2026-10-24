@@ -1,0 +1,3334 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "automatisch_geprueft",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e02",
+    "reihenfolge": 3,
+    "thema": {
+      "de": "Das ist meine Familie – Familie und Zahlen",
+      "tr": "Bu benim ailem – Aile ve sayılar",
+      "ar": "هذه عائلتي – العائلة والأعداد"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann meine Familie auf einem Foto zeigen und die Personen mit Namen, Alter und Verwandtschaft nennen.",
+        "tr": "Ailemi bir fotoğrafta gösterebilir, kişileri adları, yaşları ve akrabalık ilişkileriyle tanıtabilirim.",
+        "ar": "أستطيع أن أعرض عائلتي في صورة وأن أذكر أفرادها بأسمائهم وأعمارهم وصلة القرابة."
+      },
+      {
+        "de": "Ich kann Zahlen bis 100 verstehen und sagen, wie alt jemand ist.",
+        "tr": "100’e kadar sayıları anlayabilir ve birinin kaç yaşında olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أفهم الأعداد حتى 100 وأن أقول كم عمر شخص ما."
+      },
+      {
+        "de": "Ich kann fragen, ob jemand Geschwister hat, und darauf antworten.",
+        "tr": "Birinin kardeşi olup olmadığını sorabilir ve bu soruya cevap verebilirim.",
+        "ar": "أستطيع أن أسأل هل لدى شخص ما إخوة أو أخوات، وأن أجيب عن هذا السؤال."
+      }
+    ],
+    "symbol": "users",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a1.e02.der",
+      "lemma": "der",
+      "wortart": "artikel",
+      "merkmale": {
+        "art": "bestimmter Artikel",
+        "genus_formen": "der (m), die (f), das (n), die (Pl.)"
+      },
+      "formen": {
+        "feminin_plural": "die",
+        "neutrum": "das",
+        "mask_akk": "den",
+        "dativ": "dem"
+      },
+      "frequenzRang": 1,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.mein",
+      "lemma": "mein",
+      "wortart": "artikel",
+      "merkmale": {
+        "art": "Possessivartikel",
+        "person": "1. Person Singular"
+      },
+      "formen": {
+        "endung_e": "meine",
+        "endung_en": "meinen",
+        "endung_em": "meinem",
+        "endung_er": "meiner"
+      },
+      "frequenzRang": 44,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.dein",
+      "lemma": "dein",
+      "wortart": "artikel",
+      "merkmale": {
+        "art": "Possessivartikel",
+        "person": "2. Person Singular"
+      },
+      "formen": {
+        "endung_e": "deine",
+        "endung_en": "deinen",
+        "endung_em": "deinem",
+        "endung_er": "deiner"
+      },
+      "frequenzRang": 83,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.sein-poss",
+      "lemma": "sein",
+      "wortart": "artikel",
+      "merkmale": {
+        "art": "Possessivartikel",
+        "person": "3. Person Singular maskulin und neutral"
+      },
+      "formen": {
+        "endung_e": "seine",
+        "endung_en": "seinen",
+        "endung_em": "seinem",
+        "endung_er": "seiner"
+      },
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.ihr-poss",
+      "lemma": "ihr",
+      "wortart": "artikel",
+      "merkmale": {
+        "art": "Possessivartikel",
+        "person": "3. Person Singular feminin, 3. Person Plural; Ihr (Höflichkeitsform)"
+      },
+      "formen": {
+        "endung_e": "ihre",
+        "endung_en": "ihren",
+        "endung_em": "ihrem",
+        "endung_er": "ihrer",
+        "hoeflich": "Ihr",
+        "hoeflich_e": "Ihre"
+      },
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.unser",
+      "lemma": "unser",
+      "wortart": "artikel",
+      "merkmale": {
+        "art": "Possessivartikel",
+        "person": "1. Person Plural"
+      },
+      "formen": {
+        "endung_e": "unsere",
+        "endung_en": "unseren",
+        "endung_em": "unserem",
+        "endung_er": "unserer"
+      },
+      "frequenzRang": 74,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.euer",
+      "lemma": "euer",
+      "wortart": "artikel",
+      "merkmale": {
+        "art": "Possessivartikel",
+        "person": "2. Person Plural"
+      },
+      "formen": {
+        "endung_e": "eure",
+        "endung_en": "euren",
+        "endung_em": "eurem",
+        "endung_er": "eurer"
+      },
+      "frequenzRang": 326,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.haben",
+      "lemma": "haben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "haben",
+        "praes_ich": "habe",
+        "praes_du": "hast",
+        "praes_er_sie_es": "hat",
+        "praes_wir": "haben",
+        "praes_ihr": "habt",
+        "praes_sie_Sie": "haben",
+        "imp_du": "hab",
+        "imp_ihr": "habt",
+        "imp_du_2": "habe"
+      },
+      "frequenzRang": 7,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.zaehlen",
+      "lemma": "zählen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "zählen",
+        "praes_ich": "zähle",
+        "praes_du": "zählst",
+        "praes_er_sie_es": "zählt",
+        "praes_wir": "zählen",
+        "praes_ihr": "zählt",
+        "praes_sie_Sie": "zählen",
+        "imp_du": "zähl",
+        "imp_ihr": "zählt"
+      },
+      "frequenzRang": 571,
+      "quelle": "wiktionary:de:zählen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zählen‘ (https://de.wiktionary.org/wiki/zählen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.von",
+      "lemma": "von",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Dativ"
+      },
+      "formen": {
+        "mit_dem": "vom"
+      },
+      "frequenzRang": 11,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.auch",
+      "lemma": "auch",
+      "wortart": "adverb",
+      "frequenzRang": 19,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.alle",
+      "lemma": "alle",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinitpronomen"
+      },
+      "formen": {
+        "neutral": "alles",
+        "dat_pl": "allen",
+        "gen_pl": "aller"
+      },
+      "frequenzRang": 36,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.viel",
+      "lemma": "viel",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "wendung": "wie viel, wie viele"
+      },
+      "formen": {
+        "endung_e": "viele",
+        "endung_en": "vielen",
+        "endung_es": "vieles",
+        "komparativ": "mehr",
+        "superlativ": "meisten",
+        "superlativ_stamm": "meist"
+      },
+      "frequenzRang": 32,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.artikel",
+      "lemma": "Artikel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Artikel"
+      },
+      "formen": {
+        "dat_pl": "Artikeln"
+      },
+      "frequenzRang": 372,
+      "quelle": "wiktionary:de:Artikel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Artikel‘ (https://de.wiktionary.org/wiki/Artikel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.familie",
+      "lemma": "Familie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Familien"
+      },
+      "formen": {
+        "pl": "Familien"
+      },
+      "frequenzRang": 230,
+      "quelle": "wiktionary:de:Familie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Familie‘ (https://de.wiktionary.org/wiki/Familie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.mutter",
+      "lemma": "Mutter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Mütter"
+      },
+      "formen": {
+        "pl": "Mütter",
+        "dat_pl": "Müttern"
+      },
+      "frequenzRang": 352,
+      "quelle": "wiktionary:de:Mutter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mutter‘ (https://de.wiktionary.org/wiki/Mutter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.vater",
+      "lemma": "Vater",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Väter"
+      },
+      "formen": {
+        "pl": "Väter",
+        "dat_pl": "Vätern"
+      },
+      "frequenzRang": 338,
+      "quelle": "wiktionary:de:Vater",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vater‘ (https://de.wiktionary.org/wiki/Vater), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.eltern",
+      "lemma": "Eltern",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 392,
+      "quelle": "wiktionary:de:Eltern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Eltern‘ (https://de.wiktionary.org/wiki/Eltern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.bruder",
+      "lemma": "Bruder",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Brüder"
+      },
+      "formen": {
+        "pl": "Brüder",
+        "dat_pl": "Brüdern"
+      },
+      "frequenzRang": 497,
+      "quelle": "wiktionary:de:Bruder",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bruder‘ (https://de.wiktionary.org/wiki/Bruder), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.schwester",
+      "lemma": "Schwester",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schwestern"
+      },
+      "formen": {
+        "pl": "Schwestern"
+      },
+      "frequenzRang": 948,
+      "quelle": "wiktionary:de:Schwester",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schwester‘ (https://de.wiktionary.org/wiki/Schwester), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.geschwister",
+      "lemma": "Geschwister",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "formen": {
+        "dat_pl": "Geschwistern"
+      },
+      "frequenzRang": 9393,
+      "quelle": "wiktionary:de:Geschwister",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Geschwister‘ (https://de.wiktionary.org/wiki/Geschwister), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.kind",
+      "lemma": "Kind",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Kinder"
+      },
+      "formen": {
+        "pl": "Kinder",
+        "dat_pl": "Kindern"
+      },
+      "frequenzRang": 108,
+      "quelle": "wiktionary:de:Kind",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kind‘ (https://de.wiktionary.org/wiki/Kind), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.sohn",
+      "lemma": "Sohn",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Söhne"
+      },
+      "formen": {
+        "pl": "Söhne",
+        "dat_pl": "Söhnen"
+      },
+      "frequenzRang": 358,
+      "quelle": "wiktionary:de:Sohn",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sohn‘ (https://de.wiktionary.org/wiki/Sohn), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.tochter",
+      "lemma": "Tochter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Töchter"
+      },
+      "formen": {
+        "pl": "Töchter",
+        "dat_pl": "Töchtern"
+      },
+      "frequenzRang": 531,
+      "quelle": "wiktionary:de:Tochter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tochter‘ (https://de.wiktionary.org/wiki/Tochter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.oma",
+      "lemma": "Oma",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Omas"
+      },
+      "formen": {
+        "pl": "Omas"
+      },
+      "frequenzRang": 1939,
+      "quelle": "wiktionary:de:Oma",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Oma‘ (https://de.wiktionary.org/wiki/Oma), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.opa",
+      "lemma": "Opa",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Opas"
+      },
+      "formen": {
+        "pl": "Opas"
+      },
+      "frequenzRang": 3277,
+      "quelle": "wiktionary:de:Opa",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Opa‘ (https://de.wiktionary.org/wiki/Opa), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.mann",
+      "lemma": "Mann",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Männer"
+      },
+      "formen": {
+        "pl": "Männer",
+        "dat_pl": "Männern"
+      },
+      "frequenzRang": 131,
+      "quelle": "wiktionary:de:Mann",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mann‘ (https://de.wiktionary.org/wiki/Mann), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.frau",
+      "lemma": "Frau",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Frauen"
+      },
+      "formen": {
+        "pl": "Frauen"
+      },
+      "frequenzRang": 98,
+      "quelle": "wiktionary:de:Frau",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Frau‘ (https://de.wiktionary.org/wiki/Frau), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.foto",
+      "lemma": "Foto",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Fotos"
+      },
+      "formen": {
+        "pl": "Fotos"
+      },
+      "frequenzRang": 377,
+      "quelle": "wiktionary:de:Foto",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Foto‘ (https://de.wiktionary.org/wiki/Foto), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.jahr",
+      "lemma": "Jahr",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Jahre"
+      },
+      "formen": {
+        "pl": "Jahre",
+        "dat_pl": "Jahren"
+      },
+      "frequenzRang": 53,
+      "quelle": "wiktionary:de:Jahr",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Jahr‘ (https://de.wiktionary.org/wiki/Jahr), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.alt",
+      "lemma": "alt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "alte",
+        "endung_en": "alten",
+        "endung_er": "alter",
+        "endung_es": "altes",
+        "endung_em": "altem"
+      },
+      "frequenzRang": 128,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.zahl",
+      "lemma": "Zahl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Zahlen"
+      },
+      "formen": {
+        "pl": "Zahlen"
+      },
+      "frequenzRang": 605,
+      "quelle": "wiktionary:de:Zahl",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zahl‘ (https://de.wiktionary.org/wiki/Zahl), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.eins",
+      "lemma": "eins",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "1",
+        "hinweis": "beim Zählen und in Uhrzeiten; vor Nomen: ein, eine"
+      },
+      "frequenzRang": 783,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.zwei",
+      "lemma": "zwei",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "2"
+      },
+      "frequenzRang": 94,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.drei",
+      "lemma": "drei",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "3"
+      },
+      "frequenzRang": 134,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.vier",
+      "lemma": "vier",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "4"
+      },
+      "frequenzRang": 258,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.fuenf",
+      "lemma": "fünf",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "5"
+      },
+      "frequenzRang": 363,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.sechs",
+      "lemma": "sechs",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "6"
+      },
+      "frequenzRang": 533,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.sieben",
+      "lemma": "sieben",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "7"
+      },
+      "frequenzRang": 762,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.acht",
+      "lemma": "acht",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "8"
+      },
+      "frequenzRang": 760,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.neun",
+      "lemma": "neun",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "9"
+      },
+      "frequenzRang": 1309,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.zehn",
+      "lemma": "zehn",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "10"
+      },
+      "frequenzRang": 606,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.elf",
+      "lemma": "elf",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "11"
+      },
+      "frequenzRang": 1953,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.zwoelf",
+      "lemma": "zwölf",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "12"
+      },
+      "frequenzRang": 1630,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.zwanzig",
+      "lemma": "zwanzig",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "20"
+      },
+      "frequenzRang": 3796,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.dreissig",
+      "lemma": "dreißig",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "30"
+      },
+      "frequenzRang": 6617,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.vierzig",
+      "lemma": "vierzig",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "40"
+      },
+      "frequenzRang": 8627,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.fuenfzig",
+      "lemma": "fünfzig",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "50"
+      },
+      "frequenzRang": 8185,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.sechzig",
+      "lemma": "sechzig",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "60"
+      },
+      "frequenzRang": 11322,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.siebzig",
+      "lemma": "siebzig",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "70"
+      },
+      "frequenzRang": 11873,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.achtzig",
+      "lemma": "achtzig",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "80"
+      },
+      "frequenzRang": 11951,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.neunzig",
+      "lemma": "neunzig",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "90"
+      },
+      "frequenzRang": 12211,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.hundert",
+      "lemma": "hundert",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "100"
+      },
+      "frequenzRang": 1200,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.na",
+      "lemma": "na",
+      "wortart": "interjektion",
+      "frequenzRang": 506,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.ach",
+      "lemma": "ach",
+      "wortart": "interjektion",
+      "frequenzRang": 501,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e02.s0001",
+      "text": "Das ist meine Familie.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0002",
+      "text": "Das ist meine Mutter.",
+      "quelle": "tatoeba:703769",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #703769 von Esperantostern"
+    },
+    {
+      "schluessel": "de.a1.e02.s0003",
+      "text": "Das ist mein Vater.",
+      "quelle": "tatoeba:442192",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #442192 von MUIRIEL"
+    },
+    {
+      "schluessel": "de.a1.e02.s0004",
+      "text": "Das sind meine Eltern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0005",
+      "text": "der Vater, die Mutter, das Kind",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0006",
+      "text": "Familie: Der Artikel ist „die“.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0007",
+      "text": "Kind: Der Artikel ist „das“.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0008",
+      "text": "Vater: Der Artikel ist „der“.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0009",
+      "text": "Mein Vater heißt Murat.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0010",
+      "text": "Meine Mutter heißt Derya.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0011",
+      "text": "Meine Eltern kommen aus der Türkei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0012",
+      "text": "Meine Eltern wohnen in der Türkei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0013",
+      "text": "Meine Eltern sprechen Türkisch und Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0014",
+      "text": "Elif ist das Kind von Murat und Derya.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0015",
+      "text": "Mein Vater und meine Mutter sind meine Eltern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0016",
+      "text": "Meine Mutter lernt Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0017",
+      "text": "Mein Vater kommt aus Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0018",
+      "text": "Meine Familie spricht Arabisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0019",
+      "text": "Die Eltern von Jan heißen Anna und Paul.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0020",
+      "text": "Väter",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0021",
+      "text": "Das ist mein Bruder.",
+      "quelle": "tatoeba:341506",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #341506 von MUIRIEL"
+    },
+    {
+      "schluessel": "de.a1.e02.s0022",
+      "text": "Das ist meine Schwester. Sie heißt Julia.",
+      "quelle": "tatoeba:465554",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #465554 von Espi"
+    },
+    {
+      "schluessel": "de.a1.e02.s0023",
+      "text": "Das ist meine Frau.",
+      "quelle": "tatoeba:1384628",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1384628 von enteka"
+    },
+    {
+      "schluessel": "de.a1.e02.s0024",
+      "text": "Das ist meine Tochter.",
+      "quelle": "tatoeba:851596",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #851596 von Esperantostern"
+    },
+    {
+      "schluessel": "de.a1.e02.s0025",
+      "text": "Mein Opa und meine Oma kommen aus Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0026",
+      "text": "Elif und ihr Bruder sprechen Türkisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0027",
+      "text": "Jan und sein Bruder lernen Arabisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0028",
+      "text": "Ist das deine Oma?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0029",
+      "text": "Nein, das ist meine Mutter.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0030",
+      "text": "Wie heißt dein Bruder?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0031",
+      "text": "Mein Bruder heißt Kerem.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0032",
+      "text": "Wie heißt deine Schwester?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0033",
+      "text": "Das ist mein Opa. Seine Schwester heißt Gül.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0034",
+      "text": "Das ist meine Oma. Ihr Bruder heißt Metin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0035",
+      "text": "Ihre Tochter heißt Defne.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0036",
+      "text": "Wer ist der Mann?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0037",
+      "text": "Das ist mein Opa.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0038",
+      "text": "Die Frau ist meine Oma.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0039",
+      "text": "Meine Geschwister heißen Can und Defne.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0040",
+      "text": "Tom und ich sind Geschwister.",
+      "quelle": "tatoeba:5984160",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5984160 von Pfirsichbaeumchen"
+    },
+    {
+      "schluessel": "de.a1.e02.s0041",
+      "text": "Ihr Mann heißt Murat.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0042",
+      "text": "Das ist sein Foto.",
+      "quelle": "tatoeba:3513918",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3513918 von wortmosaik"
+    },
+    {
+      "schluessel": "de.a1.e02.s0043",
+      "text": "Das ist ihr Foto.",
+      "quelle": "tatoeba:3513919",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3513919 von wortmosaik"
+    },
+    {
+      "schluessel": "de.a1.e02.s0044",
+      "text": "Mein Opa heißt Orhan.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0045",
+      "text": "Wie heißt deine Oma?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0046",
+      "text": "Meine Oma heißt Sevim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0047",
+      "text": "Na, wer ist das?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0048",
+      "text": "Meine Oma lernt Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0049",
+      "text": "Mein Opa spricht Türkisch und Arabisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0050",
+      "text": "Mütter",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0051",
+      "text": "Töchter",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0052",
+      "text": "Wie alt bist du?",
+      "quelle": "tatoeba:480",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #480 von ludoviko"
+    },
+    {
+      "schluessel": "de.a1.e02.s0053",
+      "text": "Ich bin acht Jahre alt.",
+      "quelle": "tatoeba:10798097",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #10798097 von Pfirsichbaeumchen"
+    },
+    {
+      "schluessel": "de.a1.e02.s0054",
+      "text": "Sie ist elf Jahre alt.",
+      "quelle": "tatoeba:3887753",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3887753 von Pfirsichbaeumchen"
+    },
+    {
+      "schluessel": "de.a1.e02.s0055",
+      "text": "Wie alt ist sie?",
+      "quelle": "tatoeba:8752647",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8752647 von skanne"
+    },
+    {
+      "schluessel": "de.a1.e02.s0056",
+      "text": "Mein Sohn ist acht Jahre alt.",
+      "quelle": "tatoeba:10072464",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #10072464 von wolfgangth"
+    },
+    {
+      "schluessel": "de.a1.e02.s0057",
+      "text": "Zwei und zwei ist vier.",
+      "quelle": "tatoeba:4325236",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4325236 von abcd"
+    },
+    {
+      "schluessel": "de.a1.e02.s0058",
+      "text": "Can zählt: eins, zwei, drei, vier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0059",
+      "text": "Zähl bitte, Can!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0060",
+      "text": "Die Zahl ist sieben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0061",
+      "text": "Na, wie alt bist du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0062",
+      "text": "Mein Bruder ist sieben Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0063",
+      "text": "Wie alt ist dein Opa?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0064",
+      "text": "Das Kind ist zwei Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0065",
+      "text": "Wie alt sind Sie?",
+      "quelle": "tatoeba:1169",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1169 von MUIRIEL"
+    },
+    {
+      "schluessel": "de.a1.e02.s0066",
+      "text": "Ich bin neun und mein Bruder ist sechs.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0067",
+      "text": "Can zählt die Fotos.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0068",
+      "text": "Sechs, sieben, acht, neun, zehn.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0069",
+      "text": "Hast du Geschwister?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0070",
+      "text": "Ich habe zwei Brüder.",
+      "quelle": "tatoeba:412197",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #412197 von MUIRIEL"
+    },
+    {
+      "schluessel": "de.a1.e02.s0071",
+      "text": "Ich habe zwei Brüder und drei Schwestern.",
+      "quelle": "tatoeba:781854",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #781854 von Chris"
+    },
+    {
+      "schluessel": "de.a1.e02.s0072",
+      "text": "Haben Sie Kinder?",
+      "quelle": "tatoeba:370331",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #370331 von MUIRIEL"
+    },
+    {
+      "schluessel": "de.a1.e02.s0073",
+      "text": "Wir haben drei Kinder.",
+      "quelle": "tatoeba:3817859",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3817859 von Tamy"
+    },
+    {
+      "schluessel": "de.a1.e02.s0074",
+      "text": "Wie viele Kinder habt ihr?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0075",
+      "text": "Wie viele Geschwister hast du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0076",
+      "text": "Er hat drei Brüder.",
+      "quelle": "tatoeba:344477",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #344477 von MUIRIEL"
+    },
+    {
+      "schluessel": "de.a1.e02.s0077",
+      "text": "Wir haben zwei Töchter und zwei Söhne.",
+      "quelle": "tatoeba:1337740",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1337740 von torishima"
+    },
+    {
+      "schluessel": "de.a1.e02.s0078",
+      "text": "Unsere Oma hat viele Fotos.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0079",
+      "text": "Das ist unser Opa.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0080",
+      "text": "Ist das euer Vater?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0081",
+      "text": "Wie heißt euer Vater?",
+      "quelle": "tatoeba:12929727",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12929727 von kbylr"
+    },
+    {
+      "schluessel": "de.a1.e02.s0082",
+      "text": "Wie heißt eure Mutter?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0083",
+      "text": "Meine Eltern haben vier Kinder.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0084",
+      "text": "Habt ihr viele Fotos?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0085",
+      "text": "Wie viele seid ihr?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0086",
+      "text": "Wir sind sechs.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0087",
+      "text": "Sie hat zehn Kinder.",
+      "quelle": "tatoeba:355047",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #355047 von human600"
+    },
+    {
+      "schluessel": "de.a1.e02.s0088",
+      "text": "Ich habe zwei Töchter.",
+      "quelle": "tatoeba:380742",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #380742 von MUIRIEL"
+    },
+    {
+      "schluessel": "de.a1.e02.s0089",
+      "text": "Ich habe zwei Söhne.",
+      "quelle": "tatoeba:3092115",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3092115 von freddy1"
+    },
+    {
+      "schluessel": "de.a1.e02.s0090",
+      "text": "Er hat zwei Töchter.",
+      "quelle": "tatoeba:396454",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #396454 von MUIRIEL"
+    },
+    {
+      "schluessel": "de.a1.e02.s0091",
+      "text": "Ich habe drei Kinder.",
+      "quelle": "tatoeba:7451744",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7451744 von Yorwba"
+    },
+    {
+      "schluessel": "de.a1.e02.s0092",
+      "text": "Meine Kinder heißen Emma und Ben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0093",
+      "text": "Wir sind alle elf Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0094",
+      "text": "Wie alt sind deine Geschwister?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0095",
+      "text": "Wer hat mehr Geschwister?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0096",
+      "text": "Hat Elif Geschwister?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0097",
+      "text": "Ja, sie hat zwei Geschwister.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0098",
+      "text": "Mein Vater hat vier Brüder.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0099",
+      "text": "Meine Mutter hat zwei Schwestern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0100",
+      "text": "Wir sind drei Geschwister.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0101",
+      "text": "Sind das Ihre Kinder?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0102",
+      "text": "Ja, das sind meine Kinder.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0103",
+      "text": "Wie alt sind Ihre Kinder?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0104",
+      "text": "Emma ist zehn und Ben ist acht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0105",
+      "text": "Unsere Eltern kommen aus Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0106",
+      "text": "Mein Bruder und ich sprechen Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0107",
+      "text": "Yazan, hast du Geschwister?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0108",
+      "text": "Ja, ich habe drei Schwestern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0109",
+      "text": "Drei Schwestern? Wie alt sind sie?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0110",
+      "text": "Sie sind zwölf, neun und zwei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0111",
+      "text": "Und du, Jan? Hast du auch Geschwister?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0112",
+      "text": "Ja, ich habe zwei Brüder, Max und Tom.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0113",
+      "text": "Wie alt sind deine Brüder?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0114",
+      "text": "Max ist sechs und Tom ist zehn.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0115",
+      "text": "In meiner Familie sind wir sechs.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0116",
+      "text": "Und wir sind fünf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0117",
+      "text": "Wo wohnt deine Oma?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0118",
+      "text": "Meine Oma wohnt in Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0119",
+      "text": "Ach, und dein Opa?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0120",
+      "text": "Mein Opa wohnt auch in Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0121",
+      "text": "Wie viele Schwestern hat Yazan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0122",
+      "text": "Wie alt ist Tom?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0123",
+      "text": "Wo wohnt die Oma von Yazan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0124",
+      "text": "Sie wohnt in Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0125",
+      "text": "Sie wohnt in der Türkei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0126",
+      "text": "Sie wohnt in Deutschland.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0127",
+      "text": "Yazan hat mehr Geschwister.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0128",
+      "text": "Jan hat mehr Geschwister.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0129",
+      "text": "Mein Vater ist vierzig Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0130",
+      "text": "Meine Oma ist siebzig.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0131",
+      "text": "Mein Opa ist achtzig Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0132",
+      "text": "Ich bin dreißig Jahre alt.",
+      "quelle": "tatoeba:3386124",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3386124 von Pfirsichbaeumchen"
+    },
+    {
+      "schluessel": "de.a1.e02.s0133",
+      "text": "Zwanzig und zwanzig ist vierzig.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0134",
+      "text": "Fünfzig und fünfzig ist hundert.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0135",
+      "text": "Wie alt ist deine Oma?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0136",
+      "text": "Meine Mutter ist 38 Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0137",
+      "text": "Sechzig, siebzig, achtzig, neunzig, hundert!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0138",
+      "text": "Ich bin 24 Jahre alt.",
+      "quelle": "tatoeba:801648",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #801648 von Esperantostern"
+    },
+    {
+      "schluessel": "de.a1.e02.s0139",
+      "text": "Ich bin 27 Jahre alt.",
+      "quelle": "tatoeba:688308",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #688308 von MUIRIEL"
+    },
+    {
+      "schluessel": "de.a1.e02.s0140",
+      "text": "Ich bin 18 Jahre alt.",
+      "quelle": "tatoeba:362219",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #362219 von MUIRIEL"
+    },
+    {
+      "schluessel": "de.a1.e02.s0141",
+      "text": "Wie alt ist Ihr Vater?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0142",
+      "text": "Mein Vater ist neunzig.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0143",
+      "text": "Meine Tochter ist zwanzig.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0144",
+      "text": "Ich bin Elif. Ich bin elf Jahre alt. Ich spreche Türkisch und Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0145",
+      "text": "Murat ist mein Vater. Er ist vierzig Jahre alt. Er lernt Arabisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0146",
+      "text": "Derya ist meine Mutter. Sie ist 38 Jahre alt. Sie spricht drei Sprachen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0147",
+      "text": "Can ist mein Bruder. Er ist sieben. Er zählt alles!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0148",
+      "text": "Defne ist meine Schwester. Sie ist zwei Jahre alt. Sie lernt sprechen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0149",
+      "text": "Sevim ist meine Oma, Orhan ist mein Opa. Sie sind siebzig und achtzig.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0150",
+      "text": "Elif spricht zwei Sprachen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0151",
+      "text": "Murat ist dreißig Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0152",
+      "text": "Elif hat drei Brüder.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0153",
+      "text": "Wie alt ist Defne?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0154",
+      "text": "Wer ist Orhan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0155",
+      "text": "Er ist der Opa von Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0156",
+      "text": "Er ist der Vater von Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0157",
+      "text": "Er ist der Bruder von Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0158",
+      "text": "Defne lernt sprechen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0159",
+      "text": "Sevim lernt Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0160",
+      "text": "Die Fotos von Elif",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0161",
+      "text": "Elif hat viele Fotos von ihrer Familie.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0162",
+      "text": "Laylā, das ist meine Familie.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0163",
+      "text": "Das ist mein Vater. Er heißt Murat.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0164",
+      "text": "Und wer ist die Frau?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0165",
+      "text": "Das ist meine Mutter Derya.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0166",
+      "text": "Hast du auch Geschwister?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0167",
+      "text": "Ja, Can und Defne.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0168",
+      "text": "Can ist sieben und Defne ist zwei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0169",
+      "text": "Oma Sevim kommt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0170",
+      "text": "Hallo, Kinder!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0171",
+      "text": "Oma, das ist Laylā aus Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0172",
+      "text": "Hallo, Laylā! Wie alt bist du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0173",
+      "text": "Ich bin elf, wie Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0174",
+      "text": "Und wie alt sind Sie?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0175",
+      "text": "Ich bin siebzig.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0176",
+      "text": "Haben Sie viele Kinder?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0177",
+      "text": "Ja, ich habe vier Kinder.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0178",
+      "text": "Und meine Kinder haben neun Kinder!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0179",
+      "text": "Neun? Das sind viele!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0180",
+      "text": "Ja, und Oma zählt alle Kinder.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0181",
+      "text": "Eins, zwei, drei, vier … neun!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0182",
+      "text": "Wie heißt der Vater von Elif?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0183",
+      "text": "Er heißt Murat.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0184",
+      "text": "Er heißt Orhan.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0185",
+      "text": "Er heißt Can.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0186",
+      "text": "Wie alt ist Can?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0187",
+      "text": "Wie alt ist Oma Sevim?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0188",
+      "text": "Wie viele Kinder hat Oma Sevim?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0189",
+      "text": "Das ist mein Opa. Er ist achtzig Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0190",
+      "text": "Das sind meine Eltern. Sie heißen Murat und Derya.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0191",
+      "text": "Hast du Geschwister? Wie alt sind sie?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e02.s0192",
+      "text": "Wo ist dein Vater?",
+      "quelle": "tatoeba:349907",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #349907 von contour"
+    },
+    {
+      "schluessel": "de.a1.e02.s0193",
+      "text": "Er ist Vater von zwei Kindern.",
+      "quelle": "tatoeba:1090220",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1090220 von Esperantostern"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e02.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann meine Eltern vorstellen und Nomen mit der, die oder das lernen.",
+        "tr": "Anne ve babamı tanıtabilir, isimleri der, die veya das ile birlikte öğrenebilirim.",
+        "ar": "أستطيع أن أقدّم والديّ وأن أتعلّم الأسماء مع der أو die أو das."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e02.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e02.familie",
+          "ablenker": ["de.a1.e02.vater", "de.a1.e02.kind"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e02.mutter",
+          "ablenker": ["de.a1.e02.vater", "de.a1.e02.foto"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e02.vater",
+          "ablenker": ["de.a1.e02.mutter", "de.a1.e02.kind"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a05",
+          "typ": "paare",
+          "lemmata": ["de.a1.e02.mutter", "de.a1.e02.vater", "de.a1.e02.kind", "de.a1.e02.familie", "de.a1.e02.foto", "de.a1.e02.eltern"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e02.artikel",
+          "ablenker": ["de.a1.e02.foto", "de.a1.e02.familie"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0007",
+          "wort": 4,
+          "ablenker": ["der", "die"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0047"
+            }
+          ],
+          "antwort": "de.a1.e02.s0003",
+          "ablenker": ["de.a1.e02.s0016", "de.a1.e02.s0017"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a09",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0010",
+          "wort": 0,
+          "ablenker": ["Mein", "Der"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0004",
+          "nach": "ziel",
+          "ablenker": ["ist", "mein"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0005",
+          "wort": 2,
+          "ablenker": ["der", "das"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e02.vater",
+          "ablenker": ["de.a1.e02.s0020"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e02.s0011",
+          "ablenker": ["de.a1.e02.s0012", "de.a1.e02.s0013"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e02.s0009",
+          "ablenker": ["de.a1.e02.s0010", "de.a1.e02.s0019"]
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0015",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e02.l01.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e02.s0018"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e02.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Geschwister und Großeltern nennen und mein, dein, sein und ihr richtig verwenden.",
+        "tr": "Kardeşlerimi, büyükannemi ve büyükbabamı tanıtabilir; mein, dein, sein ve ihr kelimelerini doğru kullanabilirim.",
+        "ar": "أستطيع أن أذكر الإخوة والأجداد وأن أستعمل mein و dein و sein و ihr استعمالًا صحيحًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e02.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e02.bruder",
+          "ablenker": ["de.a1.e02.vater", "de.a1.e02.opa"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e02.schwester",
+          "ablenker": ["de.a1.e02.oma", "de.a1.e02.sohn"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e02.oma", "de.a1.e02.opa", "de.a1.e02.sohn", "de.a1.e02.tochter", "de.a1.e02.geschwister"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e02.mann",
+          "ablenker": ["de.a1.e02.sohn", "de.a1.e02.opa"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e02.frau",
+          "ablenker": ["de.a1.e02.tochter", "de.a1.e02.oma"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0034",
+          "wort": 4,
+          "ablenker": ["Sein", "Ihre"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0033",
+          "wort": 4,
+          "ablenker": ["Ihre", "Sein"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0030"
+            }
+          ],
+          "antwort": "de.a1.e02.s0031",
+          "ablenker": ["de.a1.e02.s0038", "de.a1.e02.s0035"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0032",
+          "nach": "ziel",
+          "ablenker": ["dein", "ist"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e02.s0042",
+          "ablenker": ["de.a1.e02.s0043", "de.a1.e02.s0021"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0028"
+            }
+          ],
+          "antwort": "de.a1.e02.s0029",
+          "ablenker": ["de.a1.e02.s0025", "de.a1.e02.s0048"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e02.ihr-poss",
+          "ablenker": ["de.a1.e01.er"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e02.s0022",
+          "ablenker": ["de.a1.e02.s0040", "de.a1.e02.s0049"]
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0027",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e02.l02.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e02.s0026"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e02.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann von 1 bis 12 zählen und sagen, wie alt jemand ist.",
+        "tr": "1’den 12’ye kadar sayabilir ve birinin kaç yaşında olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أعدّ من 1 إلى 12 وأن أقول كم عمر شخص ما."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e02.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e02.drei",
+          "ablenker": ["de.a1.e02.zwei", "de.a1.e02.acht"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e02.eins", "de.a1.e02.zwei", "de.a1.e02.drei", "de.a1.e02.vier", "de.a1.e02.fuenf"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e02.sechs", "de.a1.e02.sieben", "de.a1.e02.acht", "de.a1.e02.neun", "de.a1.e02.zehn"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e02.alt",
+          "ablenker": ["de.a1.e02.viel", "de.a1.e02.auch"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e02.elf",
+          "ablenker": ["de.a1.e02.zwoelf", "de.a1.e02.zehn"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e02.sieben",
+          "ablenker": ["de.a1.e02.sechs", "de.a1.e02.elf"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a07",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e02.neun",
+          "ablenker": ["de.a1.e01.nein"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e02.zaehlen",
+          "ablenker": ["de.a1.e01.heissen", "de.a1.e01.wohnen"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a09",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0062",
+          "wort": 4,
+          "ablenker": ["Jahr", "Zahl"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0052",
+          "nach": "ziel",
+          "ablenker": ["ist", "Jahre"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0058",
+          "wort": 4,
+          "ablenker": ["acht", "zehn"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e02.s0062",
+          "ablenker": ["de.a1.e02.s0056", "de.a1.e02.s0064"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0052"
+            }
+          ],
+          "antwort": "de.a1.e02.s0053",
+          "ablenker": ["de.a1.e02.s0067", "de.a1.e02.s0057"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0055"
+            }
+          ],
+          "antwort": "de.a1.e02.s0054",
+          "ablenker": ["de.a1.e02.s0059", "de.a1.e02.s0060"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e02.s0061",
+          "ablenker": ["de.a1.e02.s0063", "de.a1.e02.s0065"]
+        },
+        {
+          "schluessel": "de.a1.e02.l03.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0066",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e02.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann fragen, ob jemand Geschwister hat, und mit „haben“ antworten.",
+        "tr": "Birinin kardeşi olup olmadığını sorabilir ve “haben” fiiliyle cevap verebilirim.",
+        "ar": "أستطيع أن أسأل هل لدى شخص ما إخوة، وأن أجيب باستعمال الفعل «haben»."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e02.l04.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e02.haben",
+          "ablenker": ["de.a1.e01.sein", "de.a1.e01.heissen"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e02.unser", "de.a1.e02.euer", "de.a1.e02.mein", "de.a1.e02.dein"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0069",
+          "wort": 0,
+          "ablenker": ["Hat", "Habt"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0096"
+            }
+          ],
+          "antwort": "de.a1.e02.s0097",
+          "ablenker": ["de.a1.e02.s0099", "de.a1.e02.s0087"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0083",
+          "wort": 2,
+          "ablenker": ["hat", "habt"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e02.auch",
+          "ablenker": ["de.a1.e02.alle", "de.a1.e02.viel"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0071",
+          "nach": "ziel",
+          "alternativen": ["Ich habe drei Schwestern und zwei Brüder."],
+          "ablenker": ["hat", "Schwester"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0107"
+            }
+          ],
+          "antwort": "de.a1.e02.s0108",
+          "ablenker": ["de.a1.e02.s0120", "de.a1.e02.s0113"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0107"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0108"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0109"
+            }
+          ],
+          "antwort": "de.a1.e02.s0110",
+          "ablenker": ["de.a1.e02.s0118", "de.a1.e02.s0116"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e02.ach",
+          "ablenker": ["de.a1.e02.acht", "de.a1.e02.auch"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e02.s0074",
+          "ablenker": ["de.a1.e02.s0075", "de.a1.e02.s0084"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a13",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0080",
+          "wort": 2,
+          "ablenker": ["eure", "unsere"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0085"
+            }
+          ],
+          "antwort": "de.a1.e02.s0086",
+          "ablenker": ["de.a1.e02.s0093", "de.a1.e02.s0079"]
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e02.s0094"
+        },
+        {
+          "schluessel": "de.a1.e02.l04.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0075",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e02.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Zahlen bis 100 verstehen und kurze Steckbriefe einer Familie lesen.",
+        "tr": "100’e kadar sayıları anlayabilir ve bir ailenin kısa tanıtım kartlarını okuyabilirim.",
+        "ar": "أستطيع أن أفهم الأعداد حتى 100 وأن أقرأ بطاقات تعريف قصيرة لأفراد عائلة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e02.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e02.zwanzig", "de.a1.e02.dreissig", "de.a1.e02.vierzig", "de.a1.e02.fuenfzig", "de.a1.e02.hundert"]
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e02.sechzig",
+          "ablenker": ["de.a1.e02.siebzig", "de.a1.e02.sechs"]
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e02.achtzig",
+          "ablenker": ["de.a1.e02.acht", "de.a1.e02.neunzig"]
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e02.siebzig",
+          "ablenker": ["de.a1.e02.sieben", "de.a1.e02.sechzig"]
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0134",
+          "wort": 4,
+          "ablenker": ["achtzig", "neunzig"]
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e02.s0138",
+          "ablenker": ["de.a1.e02.s0139", "de.a1.e02.s0140"]
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0129",
+          "nach": "ziel",
+          "alternativen": ["Mein Vater ist vierzig."],
+          "ablenker": ["vier", "hat"]
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e02.neunzig",
+          "ablenker": ["de.a1.e02.neun", "de.a1.e02.fuenfzig"]
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0141"
+            }
+          ],
+          "antwort": "de.a1.e02.s0142",
+          "ablenker": ["de.a1.e02.s0143", "de.a1.e02.s0130"]
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a11",
+          "typ": "lesen_fragen",
+          "titel": "de.a1.e02.s0001",
+          "absaetze": ["de.a1.e02.s0144", "de.a1.e02.s0145", "de.a1.e02.s0146", "de.a1.e02.s0147", "de.a1.e02.s0148", "de.a1.e02.s0149"],
+          "glossen": [
+            "de.a1.e02.familie",
+            "de.a1.e02.vater",
+            "de.a1.e02.mutter",
+            "de.a1.e02.bruder",
+            "de.a1.e02.schwester",
+            "de.a1.e02.oma",
+            "de.a1.e02.opa",
+            "de.a1.e01.sprache"
+          ],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e02.s0150",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e02.s0151",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a1.e02.s0153",
+              "antwort": "de.a1.e02.zwei",
+              "ablenker": ["de.a1.e02.sieben", "de.a1.e02.elf"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a1.e02.s0154",
+              "antwort": "de.a1.e02.s0155",
+              "ablenker": ["de.a1.e02.s0156", "de.a1.e02.s0157"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e02.s0152",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e02.s0158",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e02.s0159",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a12",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e02.s0131",
+          "alternativen": ["Mein Opa ist 80 Jahre alt."]
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e02.s0137",
+          "alternativen": ["60, 70, 80, 90, 100!"]
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a14",
+          "typ": "sprechen",
+          "satz": "de.a1.e02.s0189"
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0136",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e02.l05.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e02.hundert",
+          "alternativen": ["100"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e02.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine kurze Geschichte über Familienfotos und ein Gespräch über Geschwister verstehen.",
+        "tr": "Aile fotoğrafları hakkında kısa bir hikâyeyi ve kardeşler hakkında bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة قصيرة عن صور العائلة وحوارًا عن الإخوة والأخوات."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e02.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a1.e02.s0160",
+          "zeilen": [
+            {
+              "satz": "de.a1.e02.s0161"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0162"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0036"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0163"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0164"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0165"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0166"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0167"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0168"
+            },
+            {
+              "satz": "de.a1.e02.s0169"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e02.s0170"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0171"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e02.s0172"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0173"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0174"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e02.s0175"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0176"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e02.s0177"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e02.s0178"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0179"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0180"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e02.s0181"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 3,
+              "frage": "de.a1.e02.s0182",
+              "antwort": "de.a1.e02.s0183",
+              "ablenker": ["de.a1.e02.s0184", "de.a1.e02.s0185"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.a1.e02.s0186",
+              "antwort": "de.a1.e02.sieben",
+              "ablenker": ["de.a1.e02.zwei", "de.a1.e02.elf"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.a1.e02.s0187",
+              "antwort": "de.a1.e02.siebzig",
+              "ablenker": ["de.a1.e02.sechzig", "de.a1.e02.achtzig"]
+            },
+            {
+              "nach": 18,
+              "frage": "de.a1.e02.s0188",
+              "antwort": "de.a1.e02.vier",
+              "ablenker": ["de.a1.e02.neun", "de.a1.e02.zwei"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e02.l06.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0172"
+            }
+          ],
+          "antwort": "de.a1.e02.s0173",
+          "ablenker": ["de.a1.e02.s0177", "de.a1.e02.s0179"]
+        },
+        {
+          "schluessel": "de.a1.e02.l06.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0176"
+            }
+          ],
+          "antwort": "de.a1.e02.s0177",
+          "ablenker": ["de.a1.e02.s0175", "de.a1.e02.s0170"]
+        },
+        {
+          "schluessel": "de.a1.e02.l06.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0168",
+          "wort": 1,
+          "ablenker": ["bist", "sind"]
+        },
+        {
+          "schluessel": "de.a1.e02.l06.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e02.s0178",
+          "ablenker": ["de.a1.e02.s0177", "de.a1.e02.s0175"]
+        },
+        {
+          "schluessel": "de.a1.e02.l06.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0180",
+          "wort": 3,
+          "ablenker": ["zählst", "zähle"]
+        },
+        {
+          "schluessel": "de.a1.e02.l06.a07",
+          "typ": "geschichte",
+          "titel": "de.a1.e02.s0069",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0107"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0108"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0109"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0110"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0111"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0112"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0113"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0114"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0115"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0116"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0117"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0118"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0119"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0120"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 3,
+              "frage": "de.a1.e02.s0121",
+              "antwort": "de.a1.e02.drei",
+              "ablenker": ["de.a1.e02.zwei", "de.a1.e02.sechs"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a1.e02.s0122",
+              "antwort": "de.a1.e02.zehn",
+              "ablenker": ["de.a1.e02.sechs", "de.a1.e02.zwoelf"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.a1.e02.s0095",
+              "antwort": "de.a1.e02.s0127",
+              "ablenker": ["de.a1.e02.s0128"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.a1.e02.s0123",
+              "antwort": "de.a1.e02.s0124",
+              "ablenker": ["de.a1.e02.s0125", "de.a1.e02.s0126"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e02.l06.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e02.s0113"
+            }
+          ],
+          "antwort": "de.a1.e02.s0114",
+          "ablenker": ["de.a1.e02.s0031", "de.a1.e02.s0078"]
+        },
+        {
+          "schluessel": "de.a1.e02.l06.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0117"
+            }
+          ],
+          "antwort": "de.a1.e02.s0118",
+          "ablenker": ["de.a1.e02.s0116", "de.a1.e02.s0114"]
+        },
+        {
+          "schluessel": "de.a1.e02.l06.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0115",
+          "nach": "ziel",
+          "alternativen": ["Wir sind sechs in meiner Familie.", "Wir sind in meiner Familie sechs."],
+          "ablenker": ["ist", "seid"]
+        },
+        {
+          "schluessel": "de.a1.e02.l06.a11",
+          "typ": "sprechen",
+          "satz": "de.a1.e02.s0111"
+        },
+        {
+          "schluessel": "de.a1.e02.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0171",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e02.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit: Familie, Zahlen und Alter.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum: aile, sayılar ve yaş.",
+        "ar": "أراجع كلمات الوحدة وجملها: العائلة والأعداد والعمر."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e02.l07.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e02.mutter", "de.a1.e02.bruder", "de.a1.e02.oma", "de.a1.e02.kind"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e02.tochter", "de.a1.e02.opa", "de.a1.e02.zahl", "de.a1.e02.jahr"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a03",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e02.s0068",
+          "alternativen": ["6, 7, 8, 9, 10."]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e02.zwoelf",
+          "ablenker": ["de.a1.e02.zwei", "de.a1.e02.zwanzig"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a05",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e02.mutter",
+          "ablenker": ["de.a1.e02.s0050"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0082",
+          "wort": 2,
+          "ablenker": ["euer", "unser"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0039",
+          "nach": "ziel",
+          "alternativen": ["Meine Geschwister heißen Defne und Can."],
+          "ablenker": ["heißt", "hat"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0036"
+            }
+          ],
+          "antwort": "de.a1.e02.s0037",
+          "ablenker": ["de.a1.e02.s0024", "de.a1.e02.s0038"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e02.sein-poss",
+          "ablenker": ["de.a1.e02.mein", "de.a1.e02.dein"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e02.s0100",
+          "alternativen": ["Wir sind 3 Geschwister."]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0072"
+            }
+          ],
+          "antwort": "de.a1.e02.s0077",
+          "ablenker": ["de.a1.e02.s0132", "de.a1.e02.s0023"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0014",
+          "wort": 3,
+          "ablenker": ["Vater", "Mutter"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e02.s0080",
+          "ablenker": ["de.a1.e02.s0081", "de.a1.e02.s0192"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0045"
+            }
+          ],
+          "antwort": "de.a1.e02.s0046",
+          "ablenker": ["de.a1.e02.s0044", "de.a1.e02.s0130"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e02.ihr-poss",
+          "ablenker": ["de.a1.e02.mein", "de.a1.e02.unser"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0101"
+            }
+          ],
+          "antwort": "de.a1.e02.s0102",
+          "ablenker": ["de.a1.e02.s0099", "de.a1.e02.s0130"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a17",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0103"
+            }
+          ],
+          "antwort": "de.a1.e02.s0104",
+          "ablenker": ["de.a1.e02.s0092", "de.a1.e02.s0073"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a18",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0006",
+          "wort": 4,
+          "ablenker": ["der", "das"]
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a19",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0105",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e02.l07.a20",
+          "typ": "sprechen",
+          "satz": "de.a1.e02.s0190"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e02.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, was ich kann: meine Familie vorstellen, das Alter nennen und nach Geschwistern fragen.",
+        "tr": "Neler yapabildiğimi gösteriyorum: ailemi tanıtmak, yaşı söylemek ve kardeşleri sormak.",
+        "ar": "أُظهر ما أستطيع: أن أقدّم عائلتي وأذكر العمر وأسأل عن الإخوة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e02.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e02.eltern",
+          "ablenker": ["de.a1.e02.geschwister", "de.a1.e02.kind"]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e02.dreissig",
+          "ablenker": ["de.a1.e02.drei", "de.a1.e02.vierzig"]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0008",
+          "wort": 4,
+          "ablenker": ["die", "das"]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0075"
+            }
+          ],
+          "antwort": "de.a1.e02.s0070",
+          "ablenker": ["de.a1.e02.s0053", "de.a1.e02.s0024"]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0135",
+          "nach": "ziel",
+          "ablenker": ["dein", "bist"]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a06",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e02.s0076",
+          "alternativen": ["Er hat 3 Brüder."]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0133",
+          "wort": 4,
+          "ablenker": ["dreißig", "fünfzig"]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e02.s0041",
+          "wort": 0,
+          "ablenker": ["Ihre", "Seine"]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e02.s0088",
+          "ablenker": ["de.a1.e02.s0089", "de.a1.e02.s0090"]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e02.s0065"
+            }
+          ],
+          "antwort": "de.a1.e02.s0132",
+          "ablenker": ["de.a1.e02.s0091", "de.a1.e02.s0023"]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e02.hundert",
+          "ablenker": ["de.a1.e02.achtzig", "de.a1.e02.zehn"]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e02.tochter",
+          "ablenker": ["de.a1.e02.s0051"]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e02.s0098",
+          "ablenker": ["de.a1.e02.s0099", "de.a1.e02.s0193"]
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e02.s0013",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e02.s0106"
+        },
+        {
+          "schluessel": "de.a1.e02.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e02.s0191"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3232 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "taharah",
+  "stufe": "grund",
+  "einheit": {
+    "schluessel": "islam.grund.e03",
+    "reihenfolge": 3,
+    "thema": {
+      "de": "Reinheit III: Ganzkörperwaschung, Tayammum, Masḥ und Monatsblutung – nach hanefitischer Lehre"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kenne Anlässe, Pflichtteile und Sunna der Ganzkörperwaschung (ghusl)."
+      },
+      {
+        "de": "Ich kann Bedingungen, Ablauf und Ungültigkeit der Trockenreinigung (tayammum) und des Bestreichens der Khuffs (masḥ) erklären."
+      },
+      {
+        "de": "Ich kenne die Grundbegriffe zu Monatsblutung, Wochenbett und Dauerblutung und ihre Folgen für Gebet und Fasten."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.grund.e03.l01",
+      "titel": "Ganzkörperwaschung: Anlässe, Pflichtteile, Sunna, Anstand",
+      "kinderGeeignet": false,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e03.l01.a01",
+          "text": "Bei der Ganzkörperwaschung (ghusl) sind drei Dinge Pflicht (farḍ): den Mund ausspülen, die Nase ausspülen und den ganzen übrigen Körper waschen. So nennen es Qudūrī und al-Ikhtiyār.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Ganzkörperwaschung: Pflicht, Sunna, Anlässe)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 12,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 944,
+              "zitatBis": 990,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 11,
+              "passage": "ikhtiyar.ms0007",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms7",
+              "passageSha256Text": "83a4f831d4c05257add0f153626e4e2ca2ceeb5a0ede5d1683570ced9deaf431",
+              "zitatVon": 868,
+              "zitatBis": 905,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a02",
+          "text": "Al-Ikhtiyār begründet, warum Mund- und Nasenspülung hier Pflicht sind, bei der Gebetswaschung aber nicht: Bei der Gebetswaschung ist das Gesicht zu waschen, und das Innere von Mund und Nase gehört nicht zum Gesicht. Bei der Ganzkörperwaschung ist der ganze Körper zu reinigen, also alles, was sich ohne Schaden waschen lässt; ausgenommen ist nur das Innere der Augen. Das Wasser muss auch an die Haarwurzeln und zwischen die Haare von Bart und Kopf gelangen; für geflochtenes Haar nennt al-Ikhtiyār nach einer Überlieferung eine Ausnahme, um Erschwernis zu vermeiden. Al-Ikhtiyār stützt das auf einen Koranvers (siehe Verweis).",
+          "kinderGeeignet": false,
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "5:6"
+            }
+          ],
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 11,
+              "passage": "ikhtiyar.ms0007",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms7",
+              "passageSha256Text": "83a4f831d4c05257add0f153626e4e2ca2ceeb5a0ede5d1683570ced9deaf431",
+              "zitatVon": 853,
+              "zitatBis": 1403,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a03",
+          "text": "Nūr al-Īḍāḥ zählt elf Pflichtteile der Ganzkörperwaschung auf: Mund, Nase und den ganzen Körper einmal waschen; dazu das Innere der Vorhaut, wenn sie sich ohne Mühe zurückschieben lässt; den Bauchnabel; eine Öffnung im Körper, die sich nicht geschlossen hat; beim Mann das Innere geflochtener Haare; die Haut unter Bart, Schnurrbart und Augenbrauen und den äußeren Teil der Scham.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Bayān al-Ghusl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 23,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 894,
+              "zitatBis": 1143,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a04",
+          "text": "Ein Mann muss geflochtenes Haar bei der Ganzkörperwaschung in jedem Fall bis ins Innere durchnässen. Eine Frau muss ihre Zöpfe nicht lösen, wenn das Wasser die Haarwurzeln erreicht.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Bayān al-Ghusl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 23,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 912,
+              "zitatBis": 1143,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Ganzkörperwaschung: Pflicht, Sunna, Anlässe)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 12,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 1169,
+              "zitatBis": 1234,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a05",
+          "text": "Nach Qudūrī wird die Ganzkörperwaschung durch vier Dinge zur Pflicht: durch einen Samenerguss, der mit Ausstoß und Lust geschieht, beim Mann wie bei der Frau; durch Geschlechtsverkehr, auch ohne Samenerguss; durch die Monatsblutung und durch das Wochenbett. Al-Ikhtiyār nennt als Anlass ausdrücklich das Ende der Monatsblutung und des Wochenbetts.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Ganzkörperwaschung: Pflicht, Sunna, Anlässe)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 12,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 1235,
+              "zitatBis": 1354,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 12,
+              "passage": "ikhtiyar.ms0007",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms7",
+              "passageSha256Text": "83a4f831d4c05257add0f153626e4e2ca2ceeb5a0ede5d1683570ced9deaf431",
+              "zitatVon": 1506,
+              "zitatBis": 1618,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 12,
+              "passage": "ikhtiyar.ms0008",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms8",
+              "passageSha256Text": "c6326e51120682cb118eb4a9ad0d6c1acfb21d6a3ad66c9c9f9e4f3bde62bc29",
+              "zitatVon": 0,
+              "zitatBis": 8,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a06",
+          "text": "Al-Ikhtiyār begründet die Pflicht der Ganzkörperwaschung nach der Monatsblutung mit einem Koranvers (siehe Verweis), nach dem Wochenbett mit dem Konsens der Gelehrten (ijmāʿ). Auch eine Frau mit Dauerblutung muss die Ganzkörperwaschung vornehmen, wenn die Tage ihrer Monatsblutung vollendet sind.",
+          "kinderGeeignet": false,
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "2:222"
+            }
+          ],
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mūjibāt al-Ghusl",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 12,
+              "passage": "ikhtiyar.ms0008",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms8",
+              "passageSha256Text": "c6326e51120682cb118eb4a9ad0d6c1acfb21d6a3ad66c9c9f9e4f3bde62bc29",
+              "zitatVon": 1552,
+              "zitatBis": 1624,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mūjibāt al-Ghusl",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 12,
+              "passage": "ikhtiyar.ms0009",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms9",
+              "passageSha256Text": "79928a2dc85f18ee4ab811669c0f22dbc99b868f9344e44e4f959c72367d3bd0",
+              "zitatVon": 0,
+              "zitatBis": 161,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a07",
+          "text": "Nūr al-Īḍāḥ nennt sieben Anlässe. Dazu gehört auch: Wer nach dem Schlaf dünne Flüssigkeit findet, muss sich waschen, wenn das Glied vor dem Schlaf nicht erregt war; ebenso, wer nach einem Rausch oder einer Ohnmacht Feuchtigkeit findet, die er für Samenflüssigkeit hält. Nach der richtigeren Ansicht gilt die Pflicht auch, wenn diese Dinge vor der Annahme des Islam geschehen sind.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī mā yūjibu l-Ightisāl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 22,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 246,
+              "zitatBis": 607,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a08",
+          "text": "Vorflüssigkeit (madhy) und Nachflüssigkeit (wady) verlangen nach Qudūrī keine Ganzkörperwaschung, sondern nur die Gebetswaschung. Nūr al-Īḍāḥ zählt zehn Dinge auf, die keine Ganzkörperwaschung verlangen, darunter auch einen Traum, nach dem keine Feuchtigkeit gefunden wird, und einen Einlauf.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Ganzkörperwaschung: Pflicht, Sunna, Anlässe)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 12,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 1419,
+              "zitatBis": 1457,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī mā lā yajibu l-Ightisāl minhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 22,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 633,
+              "zitatBis": 893,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a09",
+          "text": "Zur Sunna der Ganzkörperwaschung gehört nach Nūr al-Īḍāḥ: mit dem Namen Gottes beginnen (tasmiya), die Absicht fassen, die Hände bis zu den Handgelenken waschen, Unreinheit am Körper abwaschen, die Scham waschen, dann die Gebetswaschung wie für das Gebet vollziehen und danach dreimal Wasser über den ganzen Körper gießen, beginnend mit dem Kopf, dann über die rechte und dann über die linke Schulter; dabei reibt man den Körper und wäscht ohne Unterbrechung. Qudūrī und al-Ikhtiyār beschreiben den Kern dieser Abfolge ebenso: Hände und Scham waschen, Unreinheit entfernen, die Gebetswaschung vollziehen und dann dreimal Wasser über den Körper gießen.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Sunan al-Ghusl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 23,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 1144,
+              "zitatBis": 1540,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Sunan al-Ghusl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 23,
+              "passage": "nur_al_idah.ms0007",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms7",
+              "passageSha256Text": "9fdece821c84451a165dc6681ebb850dc1bc20eb0d43577c0aa6ba825ed0c986",
+              "zitatVon": 0,
+              "zitatBis": 16,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Ganzkörperwaschung: Pflicht, Sunna, Anlässe)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 12,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 991,
+              "zitatBis": 1168,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 12,
+              "passage": "ikhtiyar.ms0007",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms7",
+              "passageSha256Text": "83a4f831d4c05257add0f153626e4e2ca2ceeb5a0ede5d1683570ced9deaf431",
+              "zitatVon": 1404,
+              "zitatBis": 1505,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a10",
+          "text": "Wer an einer Stelle steht, an der sich das Wasser sammelt, verschiebt das Waschen der Füße ans Ende: Er tritt nach dem Übergießen zur Seite und wäscht dann die Füße. Al-Ikhtiyār nennt diesen Aufschub empfohlen und begründet ihn mit einer Überlieferung und mit dem Schutz vor gebrauchtem Wasser. Wer in fließendes Wasser oder Gleichwertiges eintaucht und darin eine Weile bleibt, hat die Sunna vollständig erfüllt.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Sunan al-Ghusl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 23,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 1192,
+              "zitatBis": 1540,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Ganzkörperwaschung: Pflicht, Sunna, Anlässe)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 12,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 1003,
+              "zitatBis": 1168,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 12,
+              "passage": "ikhtiyar.ms0008",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms8",
+              "passageSha256Text": "c6326e51120682cb118eb4a9ad0d6c1acfb21d6a3ad66c9c9f9e4f3bde62bc29",
+              "zitatVon": 531,
+              "zitatBis": 614,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a11",
+          "text": "Der Anstand bei der Ganzkörperwaschung ist derselbe wie bei der Gebetswaschung, nur wendet man sich dabei nicht zur Gebetsrichtung, weil die Blöße meist unbedeckt ist. Verpönt ist dabei, was auch bei der Gebetswaschung verpönt ist.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Ādāb al-Ightisāl wa-Makrūhātihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 24,
+              "passage": "nur_al_idah.ms0007",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms7",
+              "passageSha256Text": "9fdece821c84451a165dc6681ebb850dc1bc20eb0d43577c0aa6ba825ed0c986",
+              "zitatVon": 17,
+              "zitatBis": 158,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a12",
+          "text": "Sunna ist die Ganzkörperwaschung nach Nūr al-Īḍāḥ für vier Anlässe: das Freitagsgebet, das Gebet an den beiden Festtagen, den Eintritt in den Weihezustand (iḥrām) und für den Pilger am Tag von ʿArafa, nachdem die Sonne den Zenit überschritten hat (zawāl). Qudūrī nennt Freitag, die beiden Festtage und den Iḥrām. Al-Ikhtiyār berichtet daneben die Ansicht, sie sei nur empfohlen (mustaḥabb); am Freitag empfehle sie sich, weil viele Menschen zusammenkommen und niemand den anderen durch Geruch belästigen soll.",
+          "kinderGeeignet": false,
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › al-Ashyāʾ allatī yusannu lahā l-Ightisāl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 24,
+              "passage": "nur_al_idah.ms0007",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms7",
+              "passageSha256Text": "9fdece821c84451a165dc6681ebb850dc1bc20eb0d43577c0aa6ba825ed0c986",
+              "zitatVon": 159,
+              "zitatBis": 306,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Ganzkörperwaschung: Pflicht, Sunna, Anlässe)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 12,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 1355,
+              "zitatBis": 1418,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mūjibāt al-Ghusl",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 13,
+              "passage": "ikhtiyar.ms0009",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms9",
+              "passageSha256Text": "79928a2dc85f18ee4ab811669c0f22dbc99b868f9344e44e4f959c72367d3bd0",
+              "zitatVon": 975,
+              "zitatBis": 1082,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a13",
+          "text": "Empfohlen (mandūb) ist die Ganzkörperwaschung nach Nūr al-Īḍāḥ in sechzehn Fällen, unter anderem: wenn jemand in reinem Zustand den Islam annimmt, wenn jemand durch sein Alter mündig wird, wenn jemand aus geistiger Umnachtung zu sich kommt, nach dem Schröpfen, nach dem Waschen eines Toten, für das Gebet bei einer Finsternis und das Gebet um Regen sowie bei Angst, Dunkelheit und heftigem Sturm.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › al-Ashyāʾ allatī yusannu lahā l-Ightisāl",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 24,
+              "passage": "nur_al_idah.ms0007",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms7",
+              "passageSha256Text": "9fdece821c84451a165dc6681ebb850dc1bc20eb0d43577c0aa6ba825ed0c986",
+              "zitatVon": 215,
+              "zitatBis": 555,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.a14",
+          "text": "Als geringste Wassermenge nennt al-Ikhtiyār für die Ganzkörperwaschung ein Ṣāʿ und für die Gebetswaschung ein Mudd; ein Ṣāʿ sind acht Raṭl, ein Mudd zwei Raṭl. Das ist kein bindendes Maß: Wer die Waschung mit weniger vollständig vollzieht, dessen Waschung ist gültig, mit mehr ebenso, solange es keine Verschwendung ist; Verschwendung ist verpönt.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mūjibāt al-Ghusl",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 13,
+              "passage": "ikhtiyar.ms0009",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms9",
+              "passageSha256Text": "79928a2dc85f18ee4ab811669c0f22dbc99b868f9344e44e4f959c72367d3bd0",
+              "zitatVon": 1083,
+              "zitatBis": 1391,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e03.l01.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.grund.e03.l01.a09",
+          "anweisung": "Bringe die Schritte der Ganzkörperwaschung in die Reihenfolge, die Nūr al-Īḍāḥ als Sunna beschreibt.",
+          "schritte": [
+            "Die Hände bis zu den Handgelenken waschen",
+            "Unreinheit am Körper abwaschen und die Scham waschen",
+            "Die Gebetswaschung wie für das Gebet vollziehen",
+            "Dreimal Wasser über den ganzen Körper gießen, beginnend mit dem Kopf"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l01.a01",
+          "behauptung": "Bei der Ganzkörperwaschung ist das Ausspülen von Mund und Nase nur Sunna.",
+          "richtig": false,
+          "begruendung": "Bei der Ganzkörperwaschung sind Mund- und Nasenspülung nach Qudūrī und al-Ikhtiyār Pflicht (farḍ), zusammen mit dem Waschen des ganzen Körpers.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l01.a04",
+          "behauptung": "Eine Frau muss ihre Zöpfe für die Ganzkörperwaschung in jedem Fall lösen.",
+          "richtig": false,
+          "begruendung": "Sie muss die Zöpfe nicht lösen, wenn das Wasser die Haarwurzeln erreicht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.q04",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e03.l01.a12",
+          "anweisung": "Ordne zu: Was sagt welches Werk über die Ganzkörperwaschung als Sunna?",
+          "paare": [
+            {
+              "links": "Nūr al-Īḍāḥ",
+              "rechts": "vier Anlässe, darunter der Tag von ʿArafa"
+            },
+            {
+              "links": "Qudūrī",
+              "rechts": "nur Freitag, die beiden Festtage und der Iḥrām, ohne ʿArafa"
+            },
+            {
+              "links": "al-Ikhtiyār",
+              "rechts": "berichtet auch die Ansicht: nur empfohlen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l01.a08",
+          "fall": "Ein Mann wacht auf und erinnert sich an einen Traum. Er findet aber keinerlei Feuchtigkeit.",
+          "frage": "Was gilt nach Nūr al-Īḍāḥ?",
+          "optionen": [
+            "Er muss die Ganzkörperwaschung vornehmen.",
+            "Er muss keine Ganzkörperwaschung vornehmen.",
+            "Er muss nur die Füße waschen."
+          ],
+          "richtig": 1,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l01.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l01.a10",
+          "fall": "Jemand steht bei der Ganzkörperwaschung an einer Stelle, an der sich das Wasser sammelt. Er hat Hände und Scham gewaschen und beginnt die Gebetswaschung.",
+          "frage": "Wann wäscht er nach Nūr al-Īḍāḥ und Qudūrī die Füße?",
+          "optionen": [
+            "Gleich bei der Gebetswaschung, wie sonst auch",
+            "Am Ende, nachdem er zur Seite getreten ist",
+            "Gar nicht, das Übergießen genügt"
+          ],
+          "richtig": 1,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e03.l02",
+      "titel": "Tayammum: Bedingungen, Grundpfeiler, Sunna",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e03.l02.a01",
+          "text": "Wer kein Wasser findet, weil er auf Reisen ist oder sich außerhalb der Stadt aufhält und zwischen ihm und der Stadt etwa eine Meile oder mehr liegt, nimmt die Trockenreinigung (tayammum) mit dem Erdboden (ṣaʿīd) vor. Ebenso, wer Wasser hat, aber krank ist und fürchtet, dass sich seine Krankheit durch das Wasser verschlimmert, und wer nach großer Unreinheit fürchtet, dass ihn die Kälte beim Waschen tötet oder krank macht. Al-Hidāya stützt das auf einen Koranvers (siehe Verweise) und nennt die Meile als gewähltes Maß.",
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "4:43"
+            },
+            {
+              "art": "koran",
+              "stelle": "5:6"
+            }
+          ],
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 15,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 652,
+              "zitatBis": 868,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb at-Tayammum",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 25,
+              "passage": "hidaya.ms0017",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms17",
+              "passageSha256Text": "930d77a6823ce6aa3fe5fa736909ddc1008c5f4cf1ba68e10660dffeeeffd1b5",
+              "zitatVon": 781,
+              "zitatBis": 1198,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.a02",
+          "text": "Nach Nūr al-Īḍāḥ ist die Trockenreinigung unter acht Bedingungen gültig: (1) die Absicht; (2) ein Entschuldigungsgrund, der sie erlaubt; (3) etwas Reines von der Art der Erde; (4) die Stellen werden vollständig bestrichen; (5) man streicht mit der ganzen Hand oder ihrem größten Teil; (6) es geschieht mit zwei Schlägen der Handinnenflächen; (7) beendet ist, was ihr widerspricht, wie Monatsblutung, Wochenbett oder eine Unreinheit (ḥadath); (8) entfernt ist, was das Bestreichen verhindert, wie Wachs oder Fett.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Shurūṭ Ṣiḥḥatihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 25,
+              "passage": "nur_al_idah.ms0007",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms7",
+              "passageSha256Text": "9fdece821c84451a165dc6681ebb850dc1bc20eb0d43577c0aa6ba825ed0c986",
+              "zitatVon": 569,
+              "zitatBis": 1550,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.a03",
+          "text": "Die Absicht ist bei der Trockenreinigung Pflicht, bei der Gebetswaschung nach Qudūrī nur empfohlen. Nach Nūr al-Īḍāḥ ist sie der feste Entschluss des Herzens zur Handlung; ihr Zeitpunkt ist, wenn man die Hände auf das schlägt, womit man die Trockenreinigung vornimmt. Gültig ist sie bei einem Muslim, der unterscheiden kann und weiß, was er beabsichtigt.",
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 15,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 1128,
+              "zitatBis": 1165,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Shurūṭ Ṣiḥḥatihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 25,
+              "passage": "nur_al_idah.ms0007",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms7",
+              "passageSha256Text": "9fdece821c84451a165dc6681ebb850dc1bc20eb0d43577c0aa6ba825ed0c986",
+              "zitatVon": 603,
+              "zitatBis": 734,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.a04",
+          "text": "Um mit der Trockenreinigung beten zu dürfen, muss man nach Nūr al-Īḍāḥ eines von drei Dingen beabsichtigen: die Reinheit, das Erlaubtwerden des Gebets oder eine eigenständig beabsichtigte gottesdienstliche Handlung (ʿibāda maqṣūda), die ohne Reinheit nicht gültig ist. Wer nur „Trockenreinigung“ beabsichtigt, kann damit nicht beten; ebenso wenig, wer sie für das Lesen des Korans beabsichtigt, ohne im Zustand der großen Unreinheit (janāba) zu sein.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Shurūṭ Ṣiḥḥatihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 25,
+              "passage": "nur_al_idah.ms0007",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms7",
+              "passageSha256Text": "9fdece821c84451a165dc6681ebb850dc1bc20eb0d43577c0aa6ba825ed0c986",
+              "zitatVon": 735,
+              "zitatBis": 921,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.a05",
+          "text": "Nach al-Hidāya ist die Absicht bei der Trockenreinigung Pflicht. Zufar hielt sie nicht für Pflicht, weil die Trockenreinigung Ersatz der Gebetswaschung sei und sich in ihrer Beschaffenheit nicht von ihr unterscheide. Al-Hidāya hält dagegen, dass das Wort Tayammum selbst ein Vorhaben (qaṣd) anzeigt und ohne Absicht nicht zustande kommt.",
+          "meinung": "zufar",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb at-Tayammum",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 26,
+              "passage": "hidaya.ms0018",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms18",
+              "passageSha256Text": "621c5de7170c997b40e64467878c05307175ab29ef615e7731cb3e0e2d9302d2",
+              "zitatVon": 1238,
+              "zitatBis": 1369,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.a06",
+          "text": "Als Entschuldigungsgründe nennt Nūr al-Īḍāḥ unter anderem: eine Entfernung von einer Meile zum Wasser, auch in der Stadt; Krankheit; Kälte, durch die man Tod oder Krankheit fürchtet; Furcht vor einem Feind; Durst; den Bedarf an Wasser zum Teigkneten, nicht aber zum Kochen einer Brühe; das Fehlen eines Schöpfgeräts; die Furcht, das Totengebet oder das Festgebet zu verpassen. Kein Grund ist dagegen die Furcht, das Freitagsgebet oder die Gebetszeit zu verpassen.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Shurūṭ Ṣiḥḥatihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 25,
+              "passage": "nur_al_idah.ms0007",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms7",
+              "passageSha256Text": "9fdece821c84451a165dc6681ebb850dc1bc20eb0d43577c0aa6ba825ed0c986",
+              "zitatVon": 922,
+              "zitatBis": 1143,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.a07",
+          "text": "Die Trockenreinigung geschieht nach Nūr al-Īḍāḥ mit etwas Reinem von der Art der Erde, etwa Erde, Stein oder Sand, nicht aber mit Holz, Silber oder Gold.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Shurūṭ Ṣiḥḥatihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 25,
+              "passage": "nur_al_idah.ms0007",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms7",
+              "passageSha256Text": "9fdece821c84451a165dc6681ebb850dc1bc20eb0d43577c0aa6ba825ed0c986",
+              "zitatVon": 1144,
+              "zitatBis": 1229,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.a08",
+          "text": "Nach Abū Ḥanīfa und Muḥammad ist die Trockenreinigung mit allem erlaubt, was zur Art der Erde gehört, etwa Erde, Sand, Stein, Gips, Kalk, Kuḥl und Arsenstein (zirnīkh). Nach al-Hidāya muss sich darauf nach Abū Ḥanīfa nicht einmal Staub befinden.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 15,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 962,
+              "zitatBis": 1070,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb at-Tayammum",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 25,
+              "passage": "hidaya.ms0018",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms18",
+              "passageSha256Text": "621c5de7170c997b40e64467878c05307175ab29ef615e7731cb3e0e2d9302d2",
+              "zitatVon": 595,
+              "zitatBis": 1151,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.a09",
+          "text": "Nach Abū Yūsuf ist die Trockenreinigung nur mit Erde und Sand erlaubt.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 15,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 1071,
+              "zitatBis": 1127,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb at-Tayammum",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 25,
+              "passage": "hidaya.ms0018",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms18",
+              "passageSha256Text": "621c5de7170c997b40e64467878c05307175ab29ef615e7731cb3e0e2d9302d2",
+              "zitatVon": 716,
+              "zitatBis": 756,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.a10",
+          "text": "Grundpfeiler (rukn) der Trockenreinigung sind zwei: das Bestreichen des Gesichts und das der Hände. Sie besteht aus zwei Schlägen: Mit dem einen bestreicht man das Gesicht, mit dem anderen die Hände bis zu den Ellbogen. Für die große und die kleine Unreinheit ist sie gleich, nach al-Hidāya auch nach Monatsblutung und Wochenbett.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Arkānuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 26,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 18,
+              "zitatBis": 49,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 15,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 869,
+              "zitatBis": 961,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb at-Tayammum",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 25,
+              "passage": "hidaya.ms0018",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms18",
+              "passageSha256Text": "621c5de7170c997b40e64467878c05307175ab29ef615e7731cb3e0e2d9302d2",
+              "zitatVon": 92,
+              "zitatBis": 413,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.a11",
+          "text": "Die Stellen müssen vollständig bestrichen werden, nach al-Hidāya gemäß der offenkundigen Überlieferung (ẓāhir ar-riwāya); al-Hidāya folgert daraus, dass man die Finger durchstreicht und den Ring abnimmt. Nach Nūr al-Īḍāḥ streicht man mit der ganzen Hand oder ihrem größten Teil; mit nur zwei Fingern ist es nicht gültig, selbst wenn man so oft wiederholt, bis alles bedeckt ist – anders als beim Bestreichen des Kopfes.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Shurūṭ Ṣiḥḥatihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 26,
+              "passage": "nur_al_idah.ms0007",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms7",
+              "passageSha256Text": "9fdece821c84451a165dc6681ebb850dc1bc20eb0d43577c0aa6ba825ed0c986",
+              "zitatVon": 1230,
+              "zitatBis": 1355,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb at-Tayammum",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 25,
+              "passage": "hidaya.ms0018",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms18",
+              "passageSha256Text": "621c5de7170c997b40e64467878c05307175ab29ef615e7731cb3e0e2d9302d2",
+              "zitatVon": 265,
+              "zitatBis": 368,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.a12",
+          "text": "Sunna sind bei der Trockenreinigung nach Nūr al-Īḍāḥ sieben Dinge: am Anfang den Namen Gottes nennen (tasmiya), die Reihenfolge einhalten, ohne Unterbrechung vorgehen, die Hände nach dem Auflegen auf die Erde nach vorn und dann nach hinten bewegen, sie abschütteln und die Finger spreizen.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Sunanuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 26,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 50,
+              "zitatBis": 174,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e03.l02.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.grund.e03.l02.a10",
+          "anweisung": "Bringe die Schritte der Trockenreinigung in die richtige Reihenfolge.",
+          "schritte": [
+            "Die Hände auf reine Erde schlagen",
+            "Das Gesicht bestreichen",
+            "Die Hände ein zweites Mal auf die Erde schlagen",
+            "Die Hände bis zu den Ellbogen bestreichen"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e03.l02.a06",
+          "anweisung": "Ordne zu: Ist das nach Nūr al-Īḍāḥ ein Entschuldigungsgrund für die Trockenreinigung?",
+          "paare": [
+            {
+              "links": "Das Wasser ist eine Meile entfernt.",
+              "rechts": "Entschuldigungsgrund"
+            },
+            {
+              "links": "Das Wasser wird zum Trinken gebraucht, weil man Durst hat.",
+              "rechts": "Entschuldigungsgrund"
+            },
+            {
+              "links": "Das Wasser wird nur zum Kochen einer Brühe gebraucht.",
+              "rechts": "kein Entschuldigungsgrund"
+            },
+            {
+              "links": "Man fürchtet, das Freitagsgebet zu verpassen.",
+              "rechts": "kein Entschuldigungsgrund"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l02.a03",
+          "behauptung": "Die Absicht ist bei der Trockenreinigung nur empfohlen, wie bei der Gebetswaschung.",
+          "richtig": false,
+          "begruendung": "Nach Qudūrī ist die Absicht bei der Trockenreinigung Pflicht; nur bei der Gebetswaschung ist sie empfohlen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l02.a09",
+          "fall": "Auf einer Reise ist kein Wasser zu finden. In der Nähe gibt es nur Kalk und Gips, keine Erde und keinen Sand.",
+          "frage": "Darf man damit nach der Ansicht, die Qudūrī Abū Yūsuf zuschreibt, die Trockenreinigung vornehmen?",
+          "optionen": [
+            "Ja, mit allem, was zur Art der Erde gehört.",
+            "Nein, nach Abū Yūsuf nur mit Erde und Sand.",
+            "Ja, aber nur, wenn Staub darauf liegt."
+          ],
+          "richtig": 1,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l02.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l02.a11",
+          "behauptung": "Bestreicht man das Gesicht nur mit zwei Fingern, ist die Trockenreinigung gültig, wenn man so oft wiederholt, bis alles bedeckt ist.",
+          "richtig": false,
+          "begruendung": "Nach Nūr al-Īḍāḥ ist sie so nicht gültig; man streicht mit der ganzen Hand oder ihrem größten Teil.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e03.l03",
+      "titel": "Tayammum: Aufschub, Wassersuche, Gebet, Verletzte, Ungültigkeit",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e03.l03.a01",
+          "text": "Wer hofft, vor dem Ende der Gebetszeit Wasser zu finden, dem wird empfohlen, die Trockenreinigung und das Gebet bis zum Ende der Zeit aufzuschieben. Findet er dann Wasser, vollzieht er die Gebetswaschung und betet, sonst nimmt er die Trockenreinigung vor. Al-Hidāya begründet das damit, dass das Gebet so mit der vollkommeneren der beiden Reinigungen verrichtet wird. Es nennt auch eine Überlieferung von Abū Ḥanīfa und Abū Yūsuf außerhalb der Überlieferung der Grundwerke (al-uṣūl), nach der der Aufschub Pflicht ist, folgt aber der offenkundigen Überlieferung (ẓāhir ar-riwāya).",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Taʾkhīr at-Tayammum",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 26,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 175,
+              "zitatBis": 235,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 16,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 1273,
+              "zitatBis": 1392,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb at-Tayammum",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 26,
+              "passage": "hidaya.ms0019",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms19",
+              "passageSha256Text": "a2b378640e12c54f7a7cde7ce072f9ab0326b5ab5f45d27228cdc61fdf62e4b0",
+              "zitatVon": 1132,
+              "zitatBis": 1275,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb at-Tayammum",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 26,
+              "passage": "hidaya.ms0019",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms19",
+              "passageSha256Text": "a2b378640e12c54f7a7cde7ce072f9ab0326b5ab5f45d27228cdc61fdf62e4b0",
+              "zitatVon": 1276,
+              "zitatBis": 1436,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.a02",
+          "text": "Nach Nūr al-Īḍāḥ ist der Aufschub Pflicht, wenn jemandem Wasser versprochen wurde, selbst wenn er fürchtet, dass die Gebetszeit verstreicht. Wurde ihm ein Gewand oder ein Schöpfgerät versprochen, ist der Aufschub Pflicht, solange er nicht fürchtet, dass die Zeit verstreicht.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Taʾkhīr at-Tayammum",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 26,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 236,
+              "zitatBis": 331,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.a03",
+          "text": "Wer annimmt, dass Wasser in der Nähe ist, muss es nach Nūr al-Īḍāḥ bis zu einer Entfernung von vierhundert Schritten suchen, wenn er dabei sicher ist; sonst nicht. Nach Qudūrī muss er nicht suchen, wenn er nicht überwiegend annimmt, dass Wasser in der Nähe ist; nimmt er es überwiegend an, darf er die Trockenreinigung erst nach der Suche vornehmen.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Ṭalab al-Māʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 27,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 332,
+              "zitatBis": 409,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 16,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 387,
+              "zitatBis": 573,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.a04",
+          "text": "Hat ein Begleiter Wasser, bittet man ihn vor der Trockenreinigung darum; verweigert er es, nimmt man die Trockenreinigung vor und betet. Nach Nūr al-Īḍāḥ gilt die Pflicht zu fragen an Orten, an denen man mit Wasser nicht geizt. Gibt der andere das Wasser nur gegen den üblichen Preis, muss man es kaufen, wenn man über seinen Unterhalt hinaus genug Geld hat.",
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 16,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 387,
+              "zitatBis": 573,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Ṭalab al-Māʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 27,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 410,
+              "zitatBis": 527,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.a05",
+          "text": "Mit einer Trockenreinigung darf man so viele Pflicht- und freiwillige Gebete verrichten, wie man möchte, und man darf sie schon vor Beginn der Gebetszeit vornehmen. Al-Hidāya begründet das damit, dass sie reinigt, solange kein Wasser da ist, und ihre Wirkung anhält, solange ihre Bedingung besteht.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › aṣ-Ṣalāh bi-t-Tayammum",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 27,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 528,
+              "zitatBis": 610,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 16,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 1393,
+              "zitatBis": 1432,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb at-Tayammum",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 27,
+              "passage": "hidaya.ms0019",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms19",
+              "passageSha256Text": "a2b378640e12c54f7a7cde7ce072f9ab0326b5ab5f45d27228cdc61fdf62e4b0",
+              "zitatVon": 1437,
+              "zitatBis": 1588,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.a06",
+          "text": "Nach Qudūrī darf auch ein Gesunder in der Stadt die Trockenreinigung vornehmen, wenn ein Totengebet ansteht, ein anderer der Vorrangige (walī) ist und er fürchtet, das Gebet zu verpassen, wenn er sich mit der Waschung aufhält; ebenso beim Gebet der Festtage. Beim Freitagsgebet dagegen nicht: Er vollzieht die Gebetswaschung; erreicht er das Freitagsgebet, betet er es, sonst das Mittagsgebet mit vier Gebetseinheiten. Auch wenn die Gebetszeit knapp wird, nimmt er keine Trockenreinigung vor, sondern vollzieht die Gebetswaschung und betet das Gebet als verpasstes nach.",
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 16,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 1433,
+              "zitatBis": 1571,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 16,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 0,
+              "zitatBis": 254,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.a07",
+          "text": "Ist der größere Teil des Körpers oder die Hälfte verwundet, nimmt man die Trockenreinigung vor. Ist der größere Teil gesund, wäscht man ihn und bestreicht die Wunde. Waschen und Trockenreinigung werden nicht miteinander verbunden.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Mā yaṣnaʿu l-Jarīḥ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 27,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 611,
+              "zitatBis": 727,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.a08",
+          "text": "Die Trockenreinigung wird ungültig durch alles, was die Gebetswaschung ungültig macht, und dadurch, dass man Wasser findet und es benutzen kann. Gemeint ist nach al-Hidāya Wasser, das für die Gebetswaschung ausreicht; weniger zählt nicht.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Nawāqiḍ at-Tayammum",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 27,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 728,
+              "zitatBis": 792,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 15,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 1166,
+              "zitatBis": 1272,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb at-Tayammum",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 26,
+              "passage": "hidaya.ms0019",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms19",
+              "passageSha256Text": "a2b378640e12c54f7a7cde7ce072f9ab0326b5ab5f45d27228cdc61fdf62e4b0",
+              "zitatVon": 672,
+              "zitatBis": 1023,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.a09",
+          "text": "Wem Hände und Füße abgetrennt sind und wer zudem eine Wunde im Gesicht hat, betet nach Nūr al-Īḍāḥ ohne Reinigung und muss das Gebet nicht wiederholen.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum › Maqṭūʿ al-Yadayn wa-r-Rijlayn",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 27,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 793,
+              "zitatBis": 882,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.a10",
+          "text": "Vergisst ein Reisender das Wasser in seinem Gepäck, nimmt die Trockenreinigung vor, betet und erinnert sich noch innerhalb der Gebetszeit an das Wasser, muss er das Gebet nach Abū Ḥanīfa und Muḥammad nicht wiederholen.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 16,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 255,
+              "zitatBis": 364,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.a11",
+          "text": "Im selben Fall muss der Reisende das Gebet nach Abū Yūsuf wiederholen.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb at-Tayammum",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 16,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 365,
+              "zitatBis": 386,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e03.l03.q01",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l03.a10",
+          "fall": "Ein Reisender hat Wasser im Gepäck, vergisst es aber. Er nimmt die Trockenreinigung vor und betet. Noch in derselben Gebetszeit fällt ihm das Wasser wieder ein.",
+          "frage": "Was gilt nach Abū Ḥanīfa und Muḥammad?",
+          "optionen": [
+            "Er muss das Gebet wiederholen.",
+            "Er muss das Gebet nicht wiederholen.",
+            "Er muss nur die Trockenreinigung wiederholen."
+          ],
+          "richtig": 1,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l03.a05",
+          "behauptung": "Mit einer einzigen Trockenreinigung darf man nur ein Pflichtgebet verrichten.",
+          "richtig": false,
+          "begruendung": "Nach Nūr al-Īḍāḥ und Qudūrī darf man damit so viele Pflicht- und freiwillige Gebete verrichten, wie man möchte.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e03.l03.a06",
+          "anweisung": "Ordne zu: Darf ein Gesunder in der Stadt nach Qudūrī die Trockenreinigung vornehmen?",
+          "paare": [
+            {
+              "links": "Ein Totengebet steht an, ein anderer ist der Vorrangige, und man fürchtet, es zu verpassen.",
+              "rechts": "Trockenreinigung erlaubt"
+            },
+            {
+              "links": "Man fürchtet, das Gebet der Festtage zu verpassen.",
+              "rechts": "Trockenreinigung erlaubt"
+            },
+            {
+              "links": "Man fürchtet, das Freitagsgebet zu verpassen.",
+              "rechts": "keine Trockenreinigung, sondern Gebetswaschung"
+            },
+            {
+              "links": "Die Gebetszeit wird knapp.",
+              "rechts": "keine Trockenreinigung, sondern Gebetswaschung"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l03.a07",
+          "fall": "Bei einer Person ist mehr als die Hälfte des Körpers verwundet.",
+          "frage": "Wie reinigt sie sich nach Nūr al-Īḍāḥ?",
+          "optionen": [
+            "Sie wäscht die gesunden Stellen und bestreicht die Wunden.",
+            "Sie nimmt die Trockenreinigung vor.",
+            "Sie wäscht die gesunden Stellen und nimmt zusätzlich die Trockenreinigung vor."
+          ],
+          "richtig": 1,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l03.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l03.a08",
+          "behauptung": "Findet jemand nach der Trockenreinigung nur so wenig Wasser, dass es für die Gebetswaschung nicht reicht, wird seine Trockenreinigung ungültig.",
+          "richtig": false,
+          "begruendung": "Nach al-Hidāya zählt nur Wasser, das für die Gebetswaschung ausreicht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e03.l04",
+      "titel": "Bestreichen der Khuffs (masḥ ʿalā l-khuffayn)",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e03.l04.a01",
+          "text": "Das Bestreichen der Ledersocken (masḥ ʿalā l-khuffayn) ist nach Qudūrī durch die Sunna erlaubt, bei jeder Unreinheit, die die Gebetswaschung verlangt, wenn man die Khuffs nach einer vollständigen Reinigung angezogen hat und die Unreinheit erst danach eingetreten ist. Nach Nūr al-Īḍāḥ gilt das für Männer und Frauen, auch wenn die Khuffs nicht aus Leder, sondern aus einem anderen dicken Stoff sind, mit oder ohne Ledersohle.",
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 17,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 595,
+              "zitatBis": 684,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn › Ḥukmuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 28,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 906,
+              "zitatBis": 1023,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a02",
+          "text": "Das Bestreichen gilt nur bei der kleinen Unreinheit. Wer die Ganzkörperwaschung braucht, darf die Khuffs nicht bestreichen.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn › Ḥukmuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 28,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 911,
+              "zitatBis": 1023,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 17,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 998,
+              "zitatBis": 1042,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a03",
+          "text": "Nach Nūr al-Īḍāḥ hat das Bestreichen sieben Bedingungen: (1) Man zieht die Khuffs an, nachdem man die Füße gewaschen hat, auch vor Abschluss der Gebetswaschung, wenn man sie vollendet, bevor etwas sie ungültig macht. (2) Sie bedecken die Knöchel. (3) Man kann darin ununterbrochen gehen; Khuffs aus Glas, Holz oder Eisen gehen daher nicht. (4) Keiner hat einen Riss in der Größe von drei der kleinsten Zehen. (5) Sie halten ohne Festbinden an den Füßen. (6) Sie lassen kein Wasser an den Fuß. (7) Vom vorderen Teil des Fußes ist so viel vorhanden wie drei der kleinsten Finger.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn › Shurūṭ Jawāzihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 28,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 1024,
+              "zitatBis": 1517,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a04",
+          "text": "Hat ein Khuff einen großen Riss, durch den die Größe von drei Zehen sichtbar ist, darf man ihn nach Qudūrī nicht bestreichen; ist der Riss kleiner, ist es erlaubt.",
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 17,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 899,
+              "zitatBis": 997,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a05",
+          "text": "Wer sesshaft ist, bestreicht einen Tag und eine Nacht, ein Reisender drei Tage mit ihren Nächten. Die Frist beginnt mit dem Zeitpunkt, an dem nach dem Anziehen der Khuffs die Unreinheit eintritt.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn › Muddat al-Masḥ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 29,
+              "passage": "nur_al_idah.ms0008",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms8",
+              "passageSha256Text": "74ffbf3ad5f31e7a3073cf132400b004d0d14e4f730dcb8aac7e7283f55ea271",
+              "zitatVon": 1518,
+              "zitatBis": 1585,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn › Muddat al-Masḥ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 29,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 0,
+              "zitatBis": 33,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 17,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 685,
+              "zitatBis": 773,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a06",
+          "text": "Beginnt ein Sesshafter mit dem Bestreichen und reist ab, bevor ein Tag und eine Nacht vorbei sind, vollendet er die Frist des Reisenden von drei Tagen. Wird ein Reisender sesshaft, nachdem er schon einen Tag und eine Nacht oder länger bestrichen hat, zieht er die Khuffs aus und wäscht die Füße; sonst vollendet er einen Tag und eine Nacht.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn › Muddat al-Masḥ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 29,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 34,
+              "zitatBis": 147,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 17,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 1168,
+              "zitatBis": 1378,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a07",
+          "text": "Pflicht ist, auf der Oberseite des vorderen Fußteils jedes Fußes eine Fläche von drei der kleinsten Finger der Hand zu bestreichen. Sunna ist, mit gespreizten Fingern von den Zehenspitzen bis zum Unterschenkel zu streichen; Qudūrī beschreibt, dass dabei Linien auf der Oberseite entstehen.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn › Miqdār al-Farḍ fīhi; Sunnatuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 29,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 148,
+              "zitatBis": 282,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 17,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 774,
+              "zitatBis": 898,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a08",
+          "text": "Das Bestreichen wird nach Nūr al-Īḍāḥ durch vier Dinge ungültig: durch alles, was die Gebetswaschung ungültig macht; durch das Ausziehen eines Khuffs, auch wenn nur der größere Teil des Fußes in den Schaft rutscht; nach der als richtig geltenden Ansicht, wenn Wasser den größeren Teil eines Fußes im Khuff erreicht; und durch den Ablauf der Frist, wenn man nicht fürchtet, wegen der Kälte den Fuß zu verlieren. Nach den letzten drei wäscht man nur die Füße. Für den Ablauf der Frist sagt auch Qudūrī, dass man die Khuffs auszieht, die Füße wäscht und den Rest der Gebetswaschung nicht wiederholt.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn › Nawāqiḍuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 29,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 283,
+              "zitatBis": 502,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 17,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 1043,
+              "zitatBis": 1167,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a09",
+          "text": "Nicht erlaubt ist das Bestreichen von Turban, Kappe (qalansuwa), Gesichtsschleier (burquʿ) und Handschuhen.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn › Mā lā yajūzu l-Masḥ ʿalayhi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 29,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 503,
+              "zitatBis": 571,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 18,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 95,
+              "zitatBis": 149,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a10",
+          "text": "Wer Überschuhe (jurmūq) über den Khuffs trägt, darf nach Qudūrī die Überschuhe bestreichen. Al-Hidāya schränkt ein: nicht, wenn man sie erst angezogen hat, nachdem die Unreinheit eingetreten ist.",
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 17,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 1379,
+              "zitatBis": 1412,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 29,
+              "passage": "hidaya.ms0023",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms23",
+              "passageSha256Text": "0bbacf32bb51738effdc2d1a97a8c663858cc632b4ea1e332d00ed904ea961b7",
+              "zitatVon": 676,
+              "zitatBis": 827,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a11",
+          "text": "Socken (jawrab) darf man nach Abū Ḥanīfa nicht bestreichen, es sei denn, sie sind mit Leder überzogen (mujallad) oder haben eine Ledersohle (munʿal). Al-Hidāya begründet das damit, dass man in anderen Socken nicht dauerhaft gehen kann.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 17,
+              "passage": "quduri.ms0004",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms4",
+              "passageSha256Text": "11e50805c20bfd2531c526b81c667dc1cd7db48943b41c83675ccfc1a3a25edb",
+              "zitatVon": 1413,
+              "zitatBis": 1487,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 18,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 0,
+              "zitatBis": 6,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 30,
+              "passage": "hidaya.ms0023",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms23",
+              "passageSha256Text": "0bbacf32bb51738effdc2d1a97a8c663858cc632b4ea1e332d00ed904ea961b7",
+              "zitatVon": 926,
+              "zitatBis": 1265,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a12",
+          "text": "Nach Abū Yūsuf und Muḥammad darf man Socken bestreichen, wenn sie dick sind und kein Wasser durchlassen. Al-Hidāya begründet das damit, dass man in dicken Socken, die ohne Festbinden am Unterschenkel halten, gehen kann; so ähneln sie dem Khuff.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 18,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 7,
+              "zitatBis": 94,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 30,
+              "passage": "hidaya.ms0023",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms23",
+              "passageSha256Text": "0bbacf32bb51738effdc2d1a97a8c663858cc632b4ea1e332d00ed904ea961b7",
+              "zitatVon": 998,
+              "zitatBis": 1176,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a13",
+          "text": "Von Abū Ḥanīfa wird berichtet, dass er sich später der Ansicht seiner beiden Schüler angeschlossen hat. Al-Hidāya und al-Ikhtiyār sagen, dass nach dieser Ansicht Fatwa gegeben wird: Dicke Socken darf man bestreichen.",
+          "meinung": "fatwa",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 30,
+              "passage": "hidaya.ms0023",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms23",
+              "passageSha256Text": "0bbacf32bb51738effdc2d1a97a8c663858cc632b4ea1e332d00ed904ea961b7",
+              "zitatVon": 1266,
+              "zitatBis": 1302,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 25,
+              "passage": "ikhtiyar.ms0025",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms25",
+              "passageSha256Text": "6e42fdc720a8a670ebd5c360e3d5c5cb1724830e5f8e79c633c7bb4bbc817c55",
+              "zitatVon": 110,
+              "zitatBis": 418,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.a14",
+          "text": "Radd al-Muḥtār erläutert, was „dick“ bei Socken bedeutet, die weder mit Leder überzogen sind noch eine Ledersohle haben: Man kann in ihnen eine Wegstrecke von einem Farsakh oder mehr gehen, und sie halten von selbst, ohne dass man sie festbindet. Für das weitere Merkmal nennt es zwei Lesarten mit unterschiedlicher Deutung: Die Socke ist nicht so dünn, dass man hindurchsieht, oder sie saugt kein Wasser auf bzw. lässt es nicht bis zum Fuß durch.",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn (Erläuterung zu dicken Socken, jawrab)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 269,
+              "passage": "radd_al_muhtar.ms0312",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms312",
+              "passageSha256Text": "cb03a8ef3ff8daf0de9bda41e3fa36b34d4afd2f96bb1fffeb40ea101d57dee8",
+              "zitatVon": 1464,
+              "zitatBis": 1518,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn (Erläuterung zu dicken Socken, jawrab)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 269,
+              "passage": "radd_al_muhtar.ms0313",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms313",
+              "passageSha256Text": "bfda980fc1dbc01e09270d5f937f36511226107dcb66df408ce359182086d843",
+              "zitatVon": 251,
+              "zitatBis": 841,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e03.l04.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l04.a02",
+          "behauptung": "Wer die Ganzkörperwaschung braucht, darf seine Khuffs bestreichen, statt die Füße zu waschen.",
+          "richtig": false,
+          "begruendung": "Das Bestreichen gilt nur bei der kleinen Unreinheit; bei der Ganzkörperwaschung ist es nach Qudūrī nicht erlaubt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e03.l04.a06",
+          "anweisung": "Ordne zu: Wie lange darf die Person nach Nūr al-Īḍāḥ und Qudūrī bestreichen?",
+          "paare": [
+            {
+              "links": "Ein Sesshafter",
+              "rechts": "ein Tag und eine Nacht"
+            },
+            {
+              "links": "Ein Reisender",
+              "rechts": "drei Tage mit ihren Nächten"
+            },
+            {
+              "links": "Ein Sesshafter, der vor Ablauf seiner Frist abreist",
+              "rechts": "drei Tage mit ihren Nächten"
+            },
+            {
+              "links": "Ein Reisender, der sesshaft wird, bevor er einen Tag und eine Nacht bestrichen hat",
+              "rechts": "ein Tag und eine Nacht"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l04.a13",
+          "fall": "Jemand trägt dicke Socken aus Stoff ohne Leder. Sie halten ohne Festbinden am Unterschenkel und lassen kein Wasser durch. Er hat sie nach einer vollständigen Gebetswaschung angezogen.",
+          "frage": "Was gilt nach der Ansicht, nach der laut al-Hidāya und al-Ikhtiyār Fatwa gegeben wird?",
+          "optionen": [
+            "Er darf sie bestreichen.",
+            "Er darf sie nur bestreichen, wenn sie eine Ledersohle haben.",
+            "Er muss sie immer ausziehen und die Füße waschen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l04.a07",
+          "behauptung": "Pflicht beim Bestreichen ist, den ganzen Khuff einschließlich der Sohle zu bestreichen.",
+          "richtig": false,
+          "begruendung": "Pflicht ist eine Fläche von drei der kleinsten Finger der Hand auf der Oberseite des vorderen Fußteils.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l04.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l04.a08",
+          "fall": "Eine Reisende hat ihre Khuffs bestrichen. Nach zwei Tagen zieht sie einen Khuff aus. Sonst ist nichts geschehen, was ihre Gebetswaschung ungültig macht.",
+          "frage": "Was muss sie nach Nūr al-Īḍāḥ tun?",
+          "optionen": [
+            "Die ganze Gebetswaschung neu vollziehen.",
+            "Nur die Füße waschen.",
+            "Nichts, das Bestreichen bleibt gültig."
+          ],
+          "richtig": 1,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e03.l05",
+      "titel": "Verbände und Schienen (jabīra)",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e03.l05.a01",
+          "text": "Hat jemand einen Aderlass, eine Wunde oder einen Knochenbruch und das Glied mit einem Tuch oder einer Schiene (jabīra) verbunden, und kann er das Glied weder waschen noch bestreichen, muss er den größeren Teil des Verbandes bestreichen. Für die Haut, die zwischen den Binden eines Aderlasses sichtbar bleibt, genügt ebenfalls das Bestreichen. Al-Hidāya nennt, nach al-Ḥasan, dass das Bestreichen des größeren Teils genügt.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Jabīra wa-naḥwihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 30,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 572,
+              "zitatBis": 766,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 30,
+              "passage": "hidaya.ms0024",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms24",
+              "passageSha256Text": "1a0b0f759b4aaa899ffa76c6bc946389123bd47edb2e1c277a1af3dbddc6ac7e",
+              "zitatVon": 53,
+              "zitatBis": 104,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l05.a02",
+          "text": "Das Bestreichen des Verbandes gilt wie das Waschen; es hat deshalb keine Frist, anders als bei den Khuffs.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Jabīra wa-naḥwihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 30,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 767,
+              "zitatBis": 795,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 30,
+              "passage": "hidaya.ms0024",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms24",
+              "passageSha256Text": "1a0b0f759b4aaa899ffa76c6bc946389123bd47edb2e1c277a1af3dbddc6ac7e",
+              "zitatVon": 105,
+              "zitatBis": 136,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l05.a03",
+          "text": "Man muss den Verband nicht im Zustand der Reinheit angelegt haben. Man darf den Verband an einem Fuß bestreichen und den anderen Fuß waschen.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Jabīra wa-naḥwihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 30,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 796,
+              "zitatBis": 962,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 18,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 150,
+              "zitatBis": 255,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l05.a04",
+          "text": "Fällt der Verband ab, bevor die Wunde verheilt ist, bleibt das Bestreichen gültig; fällt er nach der Heilung ab, wird es ungültig. Geschieht das während des Gebets, beginnt man es nach al-Hidāya neu. Man darf den Verband durch einen anderen ersetzen; das Bestreichen muss man dann nicht wiederholen, besser ist es aber.",
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 18,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 150,
+              "zitatBis": 255,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Jabīra wa-naḥwihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 30,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 796,
+              "zitatBis": 962,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Masḥ ʿalā l-Khuffayn",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 30,
+              "passage": "hidaya.ms0024",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms24",
+              "passageSha256Text": "1a0b0f759b4aaa899ffa76c6bc946389123bd47edb2e1c277a1af3dbddc6ac7e",
+              "zitatVon": 137,
+              "zitatBis": 342,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l05.a05",
+          "text": "Hat jemand eine Augenentzündung und wurde ihm gesagt, das Auge nicht zu waschen, oder ist ihm ein Nagel abgebrochen und er hat Arznei, Harz oder eine Hautauflage daraufgelegt, deren Abnahme ihm schadet, darf er darüber streichen. Schadet ihm auch das Bestreichen, lässt er es.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Jabīra wa-naḥwihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 30,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 963,
+              "zitatBis": 1085,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l05.a06",
+          "text": "Für das Bestreichen der Khuffs, des Verbandes und des Kopfes braucht man nach Nūr al-Īḍāḥ keine Absicht.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Jabīra › an-Niyya fī l-Masḥ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 30,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 1086,
+              "zitatBis": 1148,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e03.l05.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l05.a02",
+          "behauptung": "Das Bestreichen eines Verbandes ist wie bei den Khuffs auf einen Tag und eine Nacht begrenzt.",
+          "richtig": false,
+          "begruendung": "Das Bestreichen des Verbandes gilt wie das Waschen und hat keine Frist.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l05.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l05.a04",
+          "fall": "Ein Mann hat einen gebrochenen Arm geschient und bei der Gebetswaschung die Schiene bestrichen. Am nächsten Tag fällt die Schiene ab; der Bruch ist noch nicht verheilt.",
+          "frage": "Was gilt nach Qudūrī und Nūr al-Īḍāḥ für sein Bestreichen?",
+          "optionen": [
+            "Es bleibt gültig.",
+            "Es wird ungültig; er muss den Arm waschen.",
+            "Er muss die ganze Gebetswaschung wiederholen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l05.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e03.l05.a04",
+          "anweisung": "Ordne zu: Was geschieht mit dem Bestreichen des Verbandes?",
+          "paare": [
+            {
+              "links": "Der Verband fällt vor der Heilung ab.",
+              "rechts": "bleibt gültig"
+            },
+            {
+              "links": "Der Verband fällt nach der Heilung ab.",
+              "rechts": "wird ungültig"
+            },
+            {
+              "links": "Der Verband wird durch einen neuen ersetzt.",
+              "rechts": "bleibt gültig"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l05.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l05.a03",
+          "behauptung": "Einen Verband darf man nur bestreichen, wenn man ihn im Zustand der Reinheit angelegt hat.",
+          "richtig": false,
+          "begruendung": "Nach Nūr al-Īḍāḥ und Qudūrī muss der Verband nicht im Zustand der Reinheit angelegt sein.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l05.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l05.a05",
+          "fall": "Einer Frau wurde wegen einer Augenentzündung gesagt, das Auge nicht zu waschen. Auf dem Auge liegt eine Arznei, deren Abnahme ihr schadet.",
+          "frage": "Was gilt nach Nūr al-Īḍāḥ?",
+          "optionen": [
+            "Sie darf über die Arznei streichen.",
+            "Sie muss das Auge trotzdem waschen.",
+            "Sie muss für den ganzen Körper die Trockenreinigung vornehmen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e03.l06",
+      "titel": "Monatsblutung, Wochenbett und Dauerblutung",
+      "kinderGeeignet": false,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e03.l06.a01",
+          "text": "Aus der Scham der Frau kann nach Nūr al-Īḍāḥ dreierlei Blut austreten. Monatsblutung (ḥayḍ) ist Blut, das die Gebärmutter einer geschlechtsreifen Frau ausstößt, die nicht krank und nicht schwanger ist und das Alter, in dem die Blutungen enden, noch nicht erreicht hat. Wochenbettblutung (nifās) ist das Blut, das nach der Geburt austritt. Dauerblutung (istiḥāḍa) ist Blut, das bei der Monatsblutung kürzer als drei oder länger als zehn Tage dauert und beim Wochenbett länger als vierzig Tage.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › al-Ḥayḍ; an-Nifās; al-Istiḥāḍa",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 31,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 1149,
+              "zitatBis": 1501,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.a02",
+          "text": "Die Monatsblutung dauert nach Nūr al-Īḍāḥ mindestens drei Tage, im Mittel fünf und höchstens zehn Tage. Qudūrī und al-Hidāya zählen drei Tage mit ihren Nächten und zehn Tage mit ihren Nächten; was kürzer oder länger ist, ist Dauerblutung.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Muddat al-Ḥayḍ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 31,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 1283,
+              "zitatBis": 1333,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 19,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 256,
+              "zitatBis": 391,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 30,
+              "passage": "hidaya.ms0024",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms24",
+              "passageSha256Text": "1a0b0f759b4aaa899ffa76c6bc946389123bd47edb2e1c277a1af3dbddc6ac7e",
+              "zitatVon": 377,
+              "zitatBis": 433,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 30,
+              "passage": "hidaya.ms0024",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms24",
+              "passageSha256Text": "1a0b0f759b4aaa899ffa76c6bc946389123bd47edb2e1c277a1af3dbddc6ac7e",
+              "zitatVon": 699,
+              "zitatBis": 740,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.a03",
+          "text": "Von Abū Yūsuf berichtet al-Hidāya, das Mindestmaß seien zwei Tage und der größere Teil des dritten Tages; al-Hidāya selbst folgt dem Maß von drei Tagen.",
+          "kinderGeeignet": false,
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 30,
+              "passage": "hidaya.ms0024",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms24",
+              "passageSha256Text": "1a0b0f759b4aaa899ffa76c6bc946389123bd47edb2e1c277a1af3dbddc6ac7e",
+              "zitatVon": 585,
+              "zitatBis": 698,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.a04",
+          "text": "Was eine Frau in den Tagen der Monatsblutung an roter, gelber oder trüber Färbung sieht, gilt als Monatsblutung, bis sie reines Weiß sieht.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 19,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 392,
+              "zitatBis": 477,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 30,
+              "passage": "hidaya.ms0024",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms24",
+              "passageSha256Text": "1a0b0f759b4aaa899ffa76c6bc946389123bd47edb2e1c277a1af3dbddc6ac7e",
+              "zitatVon": 874,
+              "zitatBis": 954,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.a05",
+          "text": "Abū Yūsuf rechnet die trübe Färbung nach al-Hidāya nur dann zur Monatsblutung, wenn sie nach Blut auftritt.",
+          "kinderGeeignet": false,
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 30,
+              "passage": "hidaya.ms0024",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms24",
+              "passageSha256Text": "1a0b0f759b4aaa899ffa76c6bc946389123bd47edb2e1c277a1af3dbddc6ac7e",
+              "zitatVon": 955,
+              "zitatBis": 1011,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.a06",
+          "text": "Grüne Färbung ist nach der Ansicht, die al-Hidāya die richtige nennt, Monatsblutung, wenn die Frau im Alter der Monatsblutungen ist. Bei einer älteren Frau, die nur Grün sieht, gilt sie nicht als Monatsblutung.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 31,
+              "passage": "hidaya.ms0024",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms24",
+              "passageSha256Text": "1a0b0f759b4aaa899ffa76c6bc946389123bd47edb2e1c277a1af3dbddc6ac7e",
+              "zitatVon": 1205,
+              "zitatBis": 1359,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.a07",
+          "text": "Die Wochenbettblutung dauert höchstens vierzig Tage; ein Mindestmaß gibt es nicht. Blut, das eine Schwangere sieht oder das bei der Geburt vor dem Austritt des Kindes kommt, ist nach Qudūrī Dauerblutung.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › an-Nifās › Muddatuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 31,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 1376,
+              "zitatBis": 1412,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 20,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 1419,
+              "zitatBis": 1579,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.a08",
+          "text": "Die Reinheit zwischen zwei Monatsblutungen dauert mindestens fünfzehn Tage; ein Höchstmaß gibt es nicht, außer bei einer Frau, die schon mit Dauerblutung geschlechtsreif geworden ist.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Muddat aṭ-Ṭuhr",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 31,
+              "passage": "nur_al_idah.ms0009",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms9",
+              "passageSha256Text": "a6ee67b7205f5e161d956b55f7e98a4eb7606b29464e6d436b0757871443822d",
+              "zitatVon": 1502,
+              "zitatBis": 1522,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Muddat aṭ-Ṭuhr",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 31,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 0,
+              "zitatBis": 68,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 19,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 874,
+              "zitatBis": 914,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.a09",
+          "text": "Eine Reinheit, die innerhalb der Frist der Monatsblutung zwischen zwei Blutungen liegt, gilt nach Qudūrī wie fließendes Blut.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 19,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 817,
+              "zitatBis": 873,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.a10",
+          "text": "Dauert das Blut länger als zehn Tage und hat die Frau eine bekannte Gewohnheit, richtet sie sich nach den Tagen ihrer Gewohnheit; was darüber hinausgeht, ist Dauerblutung. Beginnt die Geschlechtsreife gleich mit Dauerblutung, gelten für sie jeden Monat zehn Tage als Monatsblutung und der Rest als Dauerblutung.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 19,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 1046,
+              "zitatBis": 1213,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.a11",
+          "text": "Dauert das Blut nach der Geburt länger als vierzig Tage und hat die Frau aus einer früheren Geburt eine Gewohnheit, richtet sie sich nach dieser; hat sie keine, gilt ihr Wochenbett vierzig Tage.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 20,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 20,
+              "zitatBis": 159,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.a12",
+          "text": "Bringt eine Frau Zwillinge zur Welt, beginnt ihr Wochenbett nach Abū Ḥanīfa und Abū Yūsuf mit dem Blut nach dem ersten Kind.",
+          "kinderGeeignet": false,
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 20,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 160,
+              "zitatBis": 250,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.a13",
+          "text": "Nach Muḥammad und Zufar beginnt es bei Zwillingen mit dem Blut nach dem zweiten Kind.",
+          "kinderGeeignet": false,
+          "meinung": "muhammad",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 20,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 251,
+              "zitatBis": 306,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e03.l06.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e03.l06.a01",
+          "anweisung": "Ordne zu: Um welche Art von Blut handelt es sich nach Nūr al-Īḍāḥ?",
+          "paare": [
+            {
+              "links": "Blut, das nach der Geburt austritt",
+              "rechts": "Wochenbettblutung"
+            },
+            {
+              "links": "Sechs Tage Blut einer gesunden, nicht schwangeren, geschlechtsreifen Frau vor dem Alter, in dem die Blutungen enden",
+              "rechts": "Monatsblutung"
+            },
+            {
+              "links": "Blut, das nur zwei Tage dauert",
+              "rechts": "Dauerblutung"
+            },
+            {
+              "links": "Blut nach der Geburt über vierzig Tage hinaus",
+              "rechts": "Dauerblutung"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l06.a02",
+          "behauptung": "Die Monatsblutung dauert nach Nūr al-Īḍāḥ höchstens fünfzehn Tage.",
+          "richtig": false,
+          "begruendung": "Sie dauert höchstens zehn Tage. Fünfzehn Tage sind die Mindestdauer der Reinheit zwischen zwei Monatsblutungen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l06.a10",
+          "fall": "Eine Frau hat seit Jahren eine Monatsblutung von sechs Tagen. Diesmal dauert das Blut zwölf Tage.",
+          "frage": "Was gilt nach Qudūrī?",
+          "optionen": [
+            "Alle zwölf Tage sind Monatsblutung.",
+            "Sechs Tage sind Monatsblutung, der Rest ist Dauerblutung.",
+            "Zehn Tage sind Monatsblutung, zwei Tage Dauerblutung."
+          ],
+          "richtig": 1,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l06.a07",
+          "behauptung": "Für die Wochenbettblutung gibt es kein Mindestmaß.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ und Qudūrī nennen kein Mindestmaß; das Höchstmaß sind vierzig Tage.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l06.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l06.a12",
+          "fall": "Eine Frau bringt Zwillinge zur Welt. Zwischen den beiden Geburten vergeht einige Zeit, und nach dem ersten Kind tritt Blut aus.",
+          "frage": "Wann beginnt ihr Wochenbett nach Abū Ḥanīfa und Abū Yūsuf?",
+          "optionen": [
+            "Mit dem Blut nach dem ersten Kind.",
+            "Mit dem Blut nach dem zweiten Kind.",
+            "Erst vierzig Tage nach dem ersten Kind."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e03.l07",
+      "titel": "Was in diesen Zuständen und ohne Waschung verboten ist; Entschuldigte (maʿdhūr)",
+      "kinderGeeignet": false,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e03.l07.a01",
+          "text": "Monatsblutung und Wochenbett verbieten nach Nūr al-Īḍāḥ acht Dinge: das Gebet, das Fasten, das Rezitieren auch nur eines Koranverses, das Berühren des Korans ohne Hülle, das Betreten einer Moschee, den Umlauf (ṭawāf), den Geschlechtsverkehr und das Genießen des Körpers zwischen Nabel und Knie.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Mā yaḥrumu bi-l-Ḥayḍ wa-n-Nifās",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 32,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 69,
+              "zitatBis": 243,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 19,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 478,
+              "zitatBis": 636,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l07.a02",
+          "text": "Frauen nach Monatsblutung und Wochenbett holen das Fasten nach, nicht aber das Gebet. Al-Hidāya begründet das unter anderem damit, dass das Nachholen der Gebete eine Erschwernis wäre.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Qaḍāʾ al-Farāʾiḍ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 32,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 528,
+              "zitatBis": 579,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 19,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 478,
+              "zitatBis": 600,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 31,
+              "passage": "hidaya.ms0024",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms24",
+              "passageSha256Text": "1a0b0f759b4aaa899ffa76c6bc946389123bd47edb2e1c277a1af3dbddc6ac7e",
+              "zitatVon": 1360,
+              "zitatBis": 1580,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l07.a03",
+          "text": "Endet das Blut nach der Höchstdauer der Monatsblutung oder des Wochenbetts, ist der eheliche Verkehr auch ohne Ganzkörperwaschung erlaubt. Endet es vorher, mit dem Ende ihrer gewohnten Tage, ist er nach Nūr al-Īḍāḥ erst erlaubt, wenn sie die Ganzkörperwaschung vornimmt, wenn sie die Trockenreinigung vornimmt und betet oder wenn das Gebet für sie zur Schuld geworden ist: Nach dem Ende der Blutung blieb ihr in dieser Gebetszeit genug Zeit für die Ganzkörperwaschung und den Eröffnungs-Takbīr, und die Zeit verstrich, ohne dass sie die Ganzkörperwaschung oder die Trockenreinigung vorgenommen hat. Qudūrī sagt für eine Blutung unter zehn Tagen: erst nach der Ganzkörperwaschung oder wenn eine volle Gebetszeit über sie vergangen ist.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Bi-mā yatimmu ṭ-Ṭuhr",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 32,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 244,
+              "zitatBis": 527,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 19,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 682,
+              "zitatBis": 816,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l07.a04",
+          "text": "Die große Unreinheit (janāba) verbietet nach Nūr al-Īḍāḥ fünf Dinge: das Gebet, das Rezitieren eines Koranverses, das Berühren des Korans ohne Hülle, das Betreten einer Moschee und den Umlauf (ṭawāf). Erlaubt sind nach al-Ikhtiyār das Gedenken Gottes (dhikr), der Lobpreis und das Bittgebet; eine Moschee betritt man nur, wenn es notwendig ist. Für Frauen in Monatsblutung und Wochenbett gilt dasselbe.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Mā yaḥrumu bi-l-Janāba",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 32,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 580,
+              "zitatBis": 685,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mā yaḥrumu ʿalā l-Muḥdith wa-l-Junub wa-l-Ḥāʾiḍ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 13,
+              "passage": "ikhtiyar.ms0009",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms9",
+              "passageSha256Text": "79928a2dc85f18ee4ab811669c0f22dbc99b868f9344e44e4f959c72367d3bd0",
+              "zitatVon": 388,
+              "zitatBis": 552,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l07.a05",
+          "text": "Wer ohne Gebetswaschung ist, dem sind drei Dinge verboten: das Gebet, der Umlauf (ṭawāf) und das Berühren des Korans ohne Hülle. Nach al-Ikhtiyār ist eine Hülle gemeint, die nicht fest angenäht ist; den Koran mit dem Ärmel zu halten, ist unbedenklich, manche halten es aber für verpönt. Al-Ikhtiyār stützt das Verbot auf einen Koranvers (siehe Verweis).",
+          "kinderGeeignet": false,
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "56:79"
+            }
+          ],
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Mā yaḥrumu ʿalā l-Muḥdith",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 32,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 686,
+              "zitatBis": 769,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 19,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 637,
+              "zitatBis": 681,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Farḍ al-Ghusl wa-Sunanihi › Mā yaḥrumu ʿalā l-Muḥdith wa-l-Junub wa-l-Ḥāʾiḍ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 13,
+              "passage": "ikhtiyar.ms0009",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms9",
+              "passageSha256Text": "79928a2dc85f18ee4ab811669c0f22dbc99b868f9344e44e4f959c72367d3bd0",
+              "zitatVon": 1426,
+              "zitatBis": 1571,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l07.a06",
+          "text": "Dauerblutung gilt wie ein ständiges Nasenbluten: Sie hindert weder Gebet noch Fasten noch den ehelichen Verkehr.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Ḥukm al-Istiḥāḍa wa-mā yushbihuhā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 32,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 770,
+              "zitatBis": 850,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 19,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 915,
+              "zitatBis": 1045,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l07.a07",
+          "text": "Eine Frau mit Dauerblutung und jeder, der eine vergleichbare Entschuldigung (ʿudhr) hat, etwa ständigen Harnfluss, Durchfall, ständiges Nasenbluten oder eine Wunde, die nicht aufhört zu bluten, vollzieht für die Zeit jedes Pflichtgebets die Gebetswaschung und betet damit in dieser Zeit so viele Pflicht- und freiwillige Gebete, wie er möchte. Qudūrī sagt, dass diese Gebetswaschung mit dem Ende der Zeit ungültig wird und für ein weiteres Gebet neu vollzogen werden muss; nach Nūr al-Īḍāḥ wird sie nur durch das Ende der Zeit ungültig. Al-Hidāya fasst die Ansichten zusammen: Nach Abū Ḥanīfa und Muḥammad hebt das Ende der Zeit die Reinheit auf, wobei die vorher eingetretene Unreinheit wirksam wird; nach Zufar geschieht das mit dem Beginn der Zeit, nach Abū Yūsuf mit beidem.",
+          "kinderGeeignet": false,
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Ḥukm al-Istiḥāḍa wa-mā yushbihuhā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 33,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 851,
+              "zitatBis": 988,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 20,
+              "passage": "quduri.ms0005",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms5",
+              "passageSha256Text": "1bd23f7dff46f355eddc499f821740dce09549561f7b1d14531180b1097c36ae",
+              "zitatVon": 1214,
+              "zitatBis": 1418,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Bāb al-Ḥayḍ wa-l-Istiḥāḍa › Faṣl (al-Mustaḥāḍa wa-man bihi salas al-bawl)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 33,
+              "passage": "hidaya.ms0027",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms27",
+              "passageSha256Text": "a05f27885aad0f1ca38b2eb32865e1af6e6600cca73dd9dd7f22c85e3030072b",
+              "zitatVon": 288,
+              "zitatBis": 434,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l07.a08",
+          "text": "Als entschuldigt gilt jemand erst, wenn die Entschuldigung eine volle Gebetszeit lang anhält, ohne so lange auszusetzen, wie man für Gebetswaschung und Gebet braucht. Die Entschuldigung besteht fort, wenn sie danach in jeder Gebetszeit wenigstens einmal auftritt. Sie endet, und man gilt nicht mehr als entschuldigt, wenn eine volle Gebetszeit ganz ohne sie vergeht.",
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Ḥayḍ wa-n-Nifās wa-l-Istiḥāḍa › Matā yathbutu l-ʿUdhr; Sharṭ Dawāmihi wa-Inqiṭāʿihi",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 33,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 989,
+              "zitatBis": 1198,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e03.l07.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e03.l07.a04",
+          "anweisung": "Ordne zu: Was ist für eine Person in großer Unreinheit (janāba) nach Nūr al-Īḍāḥ und al-Ikhtiyār verboten, was erlaubt?",
+          "paare": [
+            {
+              "links": "Das Gebet",
+              "rechts": "verboten"
+            },
+            {
+              "links": "Das Rezitieren eines Koranverses",
+              "rechts": "verboten"
+            },
+            {
+              "links": "Das Gedenken Gottes (dhikr)",
+              "rechts": "erlaubt"
+            },
+            {
+              "links": "Das Bittgebet",
+              "rechts": "erlaubt"
+            },
+            {
+              "links": "Der Umlauf (ṭawāf)",
+              "rechts": "verboten"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l07.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l07.a02",
+          "behauptung": "Eine Frau holt nach der Monatsblutung die versäumten Gebete nach.",
+          "richtig": false,
+          "begruendung": "Sie holt das Fasten nach, nicht aber das Gebet.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l07.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e03.l07.a06",
+          "behauptung": "Eine Frau mit Dauerblutung darf nicht fasten.",
+          "richtig": false,
+          "begruendung": "Dauerblutung gilt wie ständiges Nasenbluten und hindert weder Gebet noch Fasten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l07.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l07.a07",
+          "fall": "Ein Mann hat ständigen Harnfluss, der eine volle Gebetszeit lang anhält. Er vollzieht zu Beginn der Mittagszeit die Gebetswaschung.",
+          "frage": "Was gilt nach Nūr al-Īḍāḥ und Qudūrī?",
+          "optionen": [
+            "Er darf damit in dieser Zeit so viele Pflicht- und freiwillige Gebete verrichten, wie er möchte.",
+            "Er muss für jedes Gebet, auch in derselben Zeit, die Waschung erneuern.",
+            "Er darf nicht beten, bis der Harnfluss aufhört."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l07.q05",
+          "typ": "reihenfolge",
+          "aussage": "islam.grund.e03.l07.a08",
+          "anweisung": "Ordne die Stufen der Entschuldigung (ʿudhr) nach Nūr al-Īḍāḥ vom Beginn bis zum Ende.",
+          "schritte": [
+            "Die Entschuldigung hält eine volle Gebetszeit lang an: Sie ist eingetreten.",
+            "Sie tritt danach in jeder Gebetszeit wenigstens einmal auf: Sie besteht fort.",
+            "Eine volle Gebetszeit vergeht ganz ohne sie: Sie ist beendet."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e03.l07.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e03.l07.a05",
+          "fall": "Jemand ohne Gebetswaschung möchte einen Koran in die Hand nehmen. Der Koran steckt in einer losen, nicht angenähten Hülle.",
+          "frage": "Was gilt nach Qudūrī und al-Ikhtiyār?",
+          "optionen": [
+            "Er darf ihn mit der Hülle nehmen.",
+            "Er darf ihn auch mit der Hülle nicht nehmen.",
+            "Er muss zuerst die Ganzkörperwaschung vornehmen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}

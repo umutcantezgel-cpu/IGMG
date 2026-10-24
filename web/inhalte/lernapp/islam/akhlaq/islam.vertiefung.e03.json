@@ -1,0 +1,3354 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "akhlaq",
+  "stufe": "vertiefung",
+  "einheit": {
+    "schluessel": "islam.vertiefung.e03",
+    "reihenfolge": 23,
+    "thema": {
+      "de": "Nach hanefitischer Lehre – Anstand III: Erwerb, Fürsorge und Wettkampf"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Nach hanefitischer Lehre: Ich kann die Haltung der Werke zu Erwerb und Arbeit wiedergeben."
+      },
+      {
+        "de": "Ich kenne das Verbot des Hortens und Grundsätze fairen Handels; Meinungsunterschiede innerhalb der Schule sind mit Quelle gekennzeichnet."
+      },
+      {
+        "de": "Ich kenne die Regeln der Werke zu Unterhalt und Fürsorge für Eltern und Verwandte sowie zu Wettkampf und Sport; das sind allgemeine Lehrfälle, keine Auskunft zu eigenen Fällen."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.vertiefung.e03.l01",
+      "titel": "Erwerb und Arbeit",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a01",
+          "text": "Den Lebensunterhalt zu erwerben (ṭalab al-kasb), ist nach Muḥammad ibn al-Ḥasan eine Pflicht, so wie es Pflicht ist, Wissen zu suchen; überliefert hat das Muḥammad ibn Samāʿa. Al-Ikhtiyār nennt das richtig und begründet es: Die Pflichten lassen sich nur mit der Kraft des Körpers erfüllen, und diese kommt gewöhnlich aus der Nahrung (Verweis 21:8). Für die Reinigung braucht man Gefäße, um Wasser zu schöpfen, für das Gebet Kleidung, die die ʿawra bedeckt – und all das erlangt man gewöhnlich durch Erwerb.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 170,
+              "passage": "ikhtiyar.ms0888",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms888",
+              "passageSha256Text": "76af91c5993024fd512a2cdf7b228745208bd0080302e784c46a8e4a86a70d77",
+              "zitatVon": 390,
+              "zitatBis": 483,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 170,
+              "passage": "ikhtiyar.ms0888",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms888",
+              "passageSha256Text": "76af91c5993024fd512a2cdf7b228745208bd0080302e784c46a8e4a86a70d77",
+              "zitatVon": 658,
+              "zitatBis": 970,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "21:8"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a02",
+          "text": "Auch die Gesandten verdienten nach al-Ikhtiyār ihren Unterhalt und aßen von ihrem Erwerb: Adam baute Weizen an, Nūḥ war Zimmermann, Ibrāhīm Tuchhändler, Dāwūd fertigte Panzerhemden, Sulaymān Körbe aus Palmblättern, Zakariyyā war Zimmermann, und unser Prophet hütete Schafe. Von den Gefährten war Abū Bakr Tuchhändler, ʿUmar arbeitete mit Leder, ʿUthmān brachte als Händler Lebensmittel und verkaufte sie, und ʿAlī verdingte sich gegen Lohn.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 170,
+              "passage": "ikhtiyar.ms0888",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms888",
+              "passageSha256Text": "76af91c5993024fd512a2cdf7b228745208bd0080302e784c46a8e4a86a70d77",
+              "zitatVon": 971,
+              "zitatBis": 1373,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a03",
+          "text": "Gott ist der Versorger; trotzdem soll man sich nach al-Ikhtiyār um die Mittel bemühen. Das Werk verweist auf die Geschichte Maryams (Verweis 19:25): Gott hätte sie auch ohne ihr Zutun versorgen können, gab ihr aber eine Handlung auf, damit die Menschen lernen, die Mittel nicht aufzugeben. Wer durch die Ehe ein Kind sucht, leugnet nicht, dass Gott der Schöpfer ist; ebenso leugnet nicht, dass Gott der Versorger ist, wer seinen Unterhalt über die Mittel sucht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 171,
+              "passage": "ikhtiyar.ms0889",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms889",
+              "passageSha256Text": "b00896c63876204a990dff8067c4d027f95786502d0db85b9f66f07d17ba619e",
+              "zitatVon": 303,
+              "zitatBis": 794,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "19:25"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a04",
+          "text": "Al-Ikhtiyār warnt vor Leuten, die den Erwerb ablehnen, in den Moscheen sitzen und darauf warten, was andere ihnen geben, und sich dabei „die auf Gott Vertrauenden“ (al-mutawakkila) nennen. Das sind sie nach dem Werk nicht: Sie berufen sich auf einen Vers (Verweis 51:22), dessen Sinn und Deutung sie nicht kennen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 170,
+              "passage": "ikhtiyar.ms0888",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms888",
+              "passageSha256Text": "76af91c5993024fd512a2cdf7b228745208bd0080302e784c46a8e4a86a70d77",
+              "zitatVon": 1374,
+              "zitatBis": 1601,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "51:22"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a05",
+          "text": "Als beste Arten des Erwerbs nennt al-Ikhtiyār der Reihe nach: den Kampf (jihād), dann den Handel, dann die Landwirtschaft, dann das Handwerk. Die Begründung des Werks: Im jihād verbinden sich Erwerb und Stärkung der Religion; zum Handel hat der Prophet ermutigt, das Werk nennt dazu Hadithe über den ehrlichen Händler; die Landwirtschaft hat als Erster Adam betrieben; auch zum Handwerk hat der Prophet ermutigt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 171,
+              "passage": "ikhtiyar.ms0889",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms889",
+              "passageSha256Text": "b00896c63876204a990dff8067c4d027f95786502d0db85b9f66f07d17ba619e",
+              "zitatVon": 139,
+              "zitatBis": 197,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 171,
+              "passage": "ikhtiyar.ms0890",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms890",
+              "passageSha256Text": "d4557cececc39462e401cc5b548f90fb07221f08048d3f7c47793166910ba068",
+              "zitatVon": 342,
+              "zitatBis": 761,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a06",
+          "text": "Die Rangfolge der Erwerbsarten ist nicht einhellig: Manche Gelehrte stellen nach al-Ikhtiyār die Landwirtschaft über den Handel, weil ihr Nutzen allgemeiner ist; das Werk nennt dazu einen Hadith.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 172,
+              "passage": "ikhtiyar.ms0890",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms890",
+              "passageSha256Text": "d4557cececc39462e401cc5b548f90fb07221f08048d3f7c47793166910ba068",
+              "zitatVon": 1149,
+              "zitatBis": 1301,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a07",
+          "text": "Al-Ikhtiyār teilt den Erwerb in vier Stufen: Pflicht (farḍ) ist, so viel zu verdienen, wie man für sich und die Seinen braucht und um seine Schulden zu begleichen. Empfohlen (mustaḥabb) ist, darüber hinaus zu verdienen, um einem Armen zu helfen oder einem Verwandten Gutes zu tun. Erlaubt (mubāḥ) ist ein Mehr für ein schönes und angenehmes Leben. Verpönt (makrūh) ist es, Vermögen anzuhäufen, um damit zu prahlen, sich mit anderen zu messen und überheblich zu sein – auch wenn es auf erlaubtem Weg erworben ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 172,
+              "passage": "ikhtiyar.ms0890",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms890",
+              "passageSha256Text": "d4557cececc39462e401cc5b548f90fb07221f08048d3f7c47793166910ba068",
+              "zitatVon": 775,
+              "zitatBis": 993,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 172,
+              "passage": "ikhtiyar.ms0891",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms891",
+              "passageSha256Text": "c66bd0b49bde40a2fd89219a36a8dd905f40af587d90687fabe99e0e290a7111",
+              "zitatVon": 624,
+              "zitatBis": 688,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a08",
+          "text": "Wer mehr verdient, um Armen zu helfen und Verwandten Gutes zu tun, tut nach al-Ikhtiyār Besseres, als sich ganz dem freiwilligen Gottesdienst zu widmen: Der Nutzen des freiwilligen Gottesdienstes betrifft nur ihn selbst, der Nutzen des Erwerbs ihn und andere. Das Werk führt dazu Hadithe an.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 172,
+              "passage": "ikhtiyar.ms0891",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms891",
+              "passageSha256Text": "c66bd0b49bde40a2fd89219a36a8dd905f40af587d90687fabe99e0e290a7111",
+              "zitatVon": 65,
+              "zitatBis": 422,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a09",
+          "text": "Hat man das Pflichtmaß verdient, darf man nach al-Ikhtiyār aufhören, weiter zu erwerben. Man darf auch Vorräte für sich und seine Familie zurücklegen; das Werk stützt sich dabei auf einen Bericht über den Propheten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 172,
+              "passage": "ikhtiyar.ms0890",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms890",
+              "passageSha256Text": "d4557cececc39462e401cc5b548f90fb07221f08048d3f7c47793166910ba068",
+              "zitatVon": 1458,
+              "zitatBis": 1639,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 172,
+              "passage": "ikhtiyar.ms0891",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms891",
+              "passageSha256Text": "c66bd0b49bde40a2fd89219a36a8dd905f40af587d90687fabe99e0e290a7111",
+              "zitatVon": 0,
+              "zitatBis": 64,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a10",
+          "text": "Für sich und seine Familie gibt man nach al-Ikhtiyār weder verschwenderisch noch geizig aus: Man muss nicht jeden Wunsch erfüllen, verweigert aber auch nicht alle, sondern hält die Mitte (Verweis 25:67). Verboten ist es, das Erworbene zu verderben, es zu verschwenden und damit zu prunken; das Werk stützt sich dabei auf mehrere Verse (Verweise 28:77, 2:205, 6:141, 17:26–27).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 175,
+              "passage": "ikhtiyar.ms0895",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms895",
+              "passageSha256Text": "bf5e234c7e59b0d008f9d575fdc4d03f3f5ad61701a0cc29d27e353aecb9afd9",
+              "zitatVon": 106,
+              "zitatBis": 208,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 175,
+              "passage": "ikhtiyar.ms0895",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms895",
+              "passageSha256Text": "bf5e234c7e59b0d008f9d575fdc4d03f3f5ad61701a0cc29d27e353aecb9afd9",
+              "zitatVon": 371,
+              "zitatBis": 666,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "25:67"
+            },
+            {
+              "art": "koran",
+              "stelle": "28:77"
+            },
+            {
+              "art": "koran",
+              "stelle": "2:205"
+            },
+            {
+              "art": "koran",
+              "stelle": "6:141"
+            },
+            {
+              "art": "koran",
+              "stelle": "17:26-27"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a11",
+          "text": "Ist jemand so hungrig, dass er nicht mehr selbst nach Nahrung suchen kann, muss nach al-Ikhtiyār jeder, der davon weiß, ihm zu essen geben oder ihn zu jemandem führen, der ihm zu essen gibt, um ihn vor dem Tod zu bewahren. Weigern sich alle, bis er stirbt, tragen sie gemeinsam die Sünde; gibt ihm einer zu essen, sind die übrigen frei. Ebenso gilt es nach dem Werk, wenn man ein Findelkind in Lebensgefahr sieht oder einen Blinden, der in einen Brunnen zu fallen droht; das ist wie die Rettung eines Ertrinkenden.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 175,
+              "passage": "ikhtiyar.ms0895",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms895",
+              "passageSha256Text": "bf5e234c7e59b0d008f9d575fdc4d03f3f5ad61701a0cc29d27e353aecb9afd9",
+              "zitatVon": 681,
+              "zitatBis": 1138,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a12",
+          "text": "Wer arbeiten kann, muss nach al-Ikhtiyār arbeiten. Kann er es nicht, muss er andere um Hilfe bitten; das Bitten ist dann eine Art Erwerb, die aber nur bei Unvermögen erlaubt ist, und in dieser Lage ist es keine Schande. Unterlässt er es, bis er stirbt, hat er gesündigt, weil er sich selbst ins Verderben gestürzt hat. Das Werk verweist dazu auf die Geschichte von Mūsā und seinem Begleiter (Verweis 18:77).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 175,
+              "passage": "ikhtiyar.ms0895",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms895",
+              "passageSha256Text": "bf5e234c7e59b0d008f9d575fdc4d03f3f5ad61701a0cc29d27e353aecb9afd9",
+              "zitatVon": 1139,
+              "zitatBis": 1366,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 176,
+              "passage": "ikhtiyar.ms0896",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms896",
+              "passageSha256Text": "827b0292d5fde0bb75c0cf2f4d7eb16f0651f0768435fdc1693d2791f452072c",
+              "zitatVon": 133,
+              "zitatBis": 256,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "18:77"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a13",
+          "text": "Wer Nahrung für den Tag hat, dem ist es nach al-Ikhtiyār nicht erlaubt, andere um Gaben zu bitten: Er würde sich ohne Not erniedrigen, und das ist verboten. Das Werk stützt sich auf Hadithe.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 176,
+              "passage": "ikhtiyar.ms0896",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms896",
+              "passageSha256Text": "827b0292d5fde0bb75c0cf2f4d7eb16f0651f0768435fdc1693d2791f452072c",
+              "zitatVon": 327,
+              "zitatBis": 525,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a14",
+          "text": "Bettlern in der Moschee etwas zu geben, nennt al-Ikhtiyār verpönt und stützt sich dabei auf einen Bericht. Steigt der Bittende aber nicht über die Leute hinweg und geht nicht vor den Betenden vorbei, ist es nicht verpönt; das nennt das Werk die gewählte Ansicht (al-mukhtār). Geht er vor Betenden vorbei oder steigt über die Leute, ist es verpönt, weil man damit hilft, die Leute zu belästigen.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 176,
+              "passage": "ikhtiyar.ms0896",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms896",
+              "passageSha256Text": "827b0292d5fde0bb75c0cf2f4d7eb16f0651f0768435fdc1693d2791f452072c",
+              "zitatVon": 585,
+              "zitatBis": 1029,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a15",
+          "text": "Geschenke ungerechter Herrscher (umarāʾ al-jawr) darf man nach al-Ikhtiyār nicht annehmen, weil ihr Vermögen überwiegend auf verbotene Weise erworben ist – es sei denn, man weiß, dass der größte Teil ihres Vermögens erlaubt ist, etwa aus Handel oder Landwirtschaft. Das Vermögen der Menschen ist selten ganz frei von etwas Verbotenem; maßgeblich ist, was überwiegt. Dasselbe gilt dafür, von ihrem Essen zu essen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 176,
+              "passage": "ikhtiyar.ms0896",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms896",
+              "passageSha256Text": "827b0292d5fde0bb75c0cf2f4d7eb16f0651f0768435fdc1693d2791f452072c",
+              "zitatVon": 1065,
+              "zitatBis": 1277,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a16",
+          "text": "Neben dem Erwerb nennt al-Ikhtiyār das Suchen von Wissen eine Pflicht und teilt es ebenfalls ein: Pflicht ist das Wissen, das man braucht, um die Pflichten zu erfüllen und Wahres von Falschem, Erlaubtes von Verbotenem zu unterscheiden. Empfohlen ist etwa, Regeln zu lernen, die man selbst nicht braucht, um sie anderen zu lehren, oder Vorzüge und Sunna-Handlungen wie Gebetsruf und Gemeinschaftsgebet zu lernen. Erlaubt ist ein Mehr zur Zierde und Vervollkommnung. Verpönt ist es, zu lernen, um vor Gelehrten zu prahlen oder mit Toren zu streiten; deshalb hielt Abū Ḥanīfa es für verpönt, Theologie (kalām) und das Streitgespräch darin über den Bedarf hinaus zu lernen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 171,
+              "passage": "ikhtiyar.ms0889",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms889",
+              "passageSha256Text": "b00896c63876204a990dff8067c4d027f95786502d0db85b9f66f07d17ba619e",
+              "zitatVon": 901,
+              "zitatBis": 1556,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.a17",
+          "text": "Auch das Lehren ist nach al-Ikhtiyār Pflicht, soweit es nötig ist, damit die Pflichten erfüllt werden; die Gelehrten müssen so lehren, dass der Lernende versteht, behält und es sicher beherrscht. Ein Rechtsgelehrter muss aber nicht jede Frage beantworten, wenn jemand anderes da ist, der antworten kann: Rechtsauskunft (fatwā) und Unterricht sind eine Gemeinschaftspflicht (farḍ kifāya).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 171,
+              "passage": "ikhtiyar.ms0889",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms889",
+              "passageSha256Text": "b00896c63876204a990dff8067c4d027f95786502d0db85b9f66f07d17ba619e",
+              "zitatVon": 1557,
+              "zitatBis": 1606,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 171,
+              "passage": "ikhtiyar.ms0890",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms890",
+              "passageSha256Text": "d4557cececc39462e401cc5b548f90fb07221f08048d3f7c47793166910ba068",
+              "zitatVon": 118,
+              "zitatBis": 341,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e03.l01.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e03.l01.a05",
+          "anweisung": "Bringe die Arten des Erwerbs in die Rangfolge, die al-Ikhtiyār nennt – die beste zuerst.",
+          "schritte": [
+            "Kampf (jihād)",
+            "Handel",
+            "Landwirtschaft",
+            "Handwerk"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e03.l01.a07",
+          "anweisung": "Ordne jeder Stufe des Erwerbs nach al-Ikhtiyār die passende Beschreibung zu.",
+          "paare": [
+            {
+              "links": "Pflicht (farḍ)",
+              "rechts": "so viel, wie man für sich, die Familie und die Schulden braucht"
+            },
+            {
+              "links": "Empfohlen (mustaḥabb)",
+              "rechts": "mehr, um Armen und Verwandten zu helfen"
+            },
+            {
+              "links": "Erlaubt (mubāḥ)",
+              "rechts": "mehr für ein schönes und angenehmes Leben"
+            },
+            {
+              "links": "Verpönt (makrūh)",
+              "rechts": "Vermögen anhäufen, um damit zu prahlen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l01.a01",
+          "behauptung": "Nach Muḥammad ibn al-Ḥasan ist es eine Pflicht, den Lebensunterhalt zu erwerben.",
+          "richtig": true,
+          "begruendung": "Muḥammad ibn al-Ḥasan nennt den Erwerb eine Pflicht wie das Suchen von Wissen; al-Ikhtiyār nennt das richtig, weil man ohne Nahrung, Gefäße und Kleidung die Pflichten nicht erfüllen kann.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l01.a04",
+          "behauptung": "Wer in der Moschee sitzt und auf Gaben wartet, statt zu arbeiten, handelt nach al-Ikhtiyār aus echtem Gottvertrauen.",
+          "richtig": false,
+          "begruendung": "Al-Ikhtiyār warnt vor solchen Leuten: Sie nennen sich zwar „die auf Gott Vertrauenden“, sind es aber nicht und verstehen den Vers, auf den sie sich berufen, nicht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.q05",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e03.l01.a02",
+          "anweisung": "Ordne jedem Gesandten den Erwerb zu, den al-Ikhtiyār für ihn nennt.",
+          "paare": [
+            {
+              "links": "Adam",
+              "rechts": "baute Weizen an"
+            },
+            {
+              "links": "Nūḥ",
+              "rechts": "Zimmermann"
+            },
+            {
+              "links": "Ibrāhīm",
+              "rechts": "Tuchhändler"
+            },
+            {
+              "links": "Dāwūd",
+              "rechts": "fertigte Panzerhemden"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l01.a11",
+          "fall": "In einem Viertel wissen mehrere Nachbarn, dass ein Mann so hungrig ist, dass er nicht mehr selbst nach Nahrung suchen kann.",
+          "frage": "Was gilt nach al-Ikhtiyār?",
+          "optionen": [
+            "Jeder, der davon weiß, muss ihm zu essen geben oder ihn zu jemandem führen, der es tut; gibt einer ihm zu essen, sind die anderen frei.",
+            "Nur seine Verwandten sind verpflichtet, den anderen geht es nichts an.",
+            "Niemand ist verpflichtet; er muss selbst zurechtkommen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.q07",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l01.a13",
+          "fall": "Jemand hat genug zu essen für den heutigen Tag, möchte aber trotzdem fremde Leute um Geld bitten.",
+          "frage": "Wie beurteilt al-Ikhtiyār das?",
+          "optionen": [
+            "Es ist ihm nicht erlaubt, weil er sich ohne Not erniedrigt.",
+            "Es ist empfohlen, weil das Bitten eine Art Erwerb ist.",
+            "Es ist erlaubt, solange er nicht mehr als einmal am Tag bittet."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l01.a08",
+          "behauptung": "Wer mehr verdient, um Armen und Verwandten zu helfen, tut nach al-Ikhtiyār Besseres, als sich ganz dem freiwilligen Gottesdienst zu widmen.",
+          "richtig": true,
+          "begruendung": "Der Nutzen des freiwilligen Gottesdienstes betrifft nur den Betenden selbst, der Nutzen eines solchen Erwerbs ihn und andere.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.q09",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l01.a15",
+          "fall": "Ein Herrscher, der als ungerecht bekannt ist, möchte jemandem ein Geschenk machen. Man weiß sicher, dass der größte Teil seines Vermögens aus Handel und Landwirtschaft stammt.",
+          "frage": "Darf man das Geschenk nach al-Ikhtiyār annehmen?",
+          "optionen": [
+            "Ja, denn maßgeblich ist, was in seinem Vermögen überwiegt.",
+            "Nein, Geschenke von Herrschern sind immer verboten.",
+            "Nur, wenn man es sofort weiterverschenkt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.q10",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l01.a14",
+          "behauptung": "Bettlern in der Moschee etwas zu geben, ist nach al-Ikhtiyār in jedem Fall verpönt.",
+          "richtig": false,
+          "begruendung": "Nach der gewählten Ansicht (al-mukhtār) ist es nicht verpönt, wenn der Bittende nicht über die Leute steigt und nicht vor Betenden vorbeigeht; sonst ist es verpönt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l01.q11",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e03.l01.a16",
+          "anweisung": "Ordne die Arten des Lernens nach al-Ikhtiyār ihrer Stufe zu.",
+          "paare": [
+            {
+              "links": "Pflicht",
+              "rechts": "Wissen, das man für die eigenen Pflichten braucht"
+            },
+            {
+              "links": "Empfohlen",
+              "rechts": "Regeln lernen, um sie anderen zu lehren"
+            },
+            {
+              "links": "Verpönt",
+              "rechts": "lernen, um vor Gelehrten zu prahlen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e03.l02",
+      "titel": "Horten und fairer Handel",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a01",
+          "text": "Horten (iḥtikār) heißt nach al-Ikhtiyār: Nahrungsmittel in der Stadt oder an einem Ort kaufen, von dem aus sie in die Stadt gebracht werden, und sie zurückhalten, bis sie teuer sind. Verpönt ist das bei Nahrung für Menschen und Tiere an einem Ort, an dem es den Bewohnern schadet, weil das Recht der Allgemeinheit betroffen ist. Manche verlangen zusätzlich, dass man in einer Teuerung kauft und auf weitere Teuerung wartet; nach al-Ikhtiyār ist alles davon verpönt. Das Werk stützt sich auf einen Vers (Verweis 22:25), ein Wort ʿUmars und Hadithe; Radd al-Muḥtār bestimmt das Horten im rechtlichen Sinn als Kauf von Nahrung oder Ähnlichem, die man vierzig Tage lang bis zur Teuerung zurückhält.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0876",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms876",
+              "passageSha256Text": "adba59fd634cb5b39ab0c67f02366395e54db417c787b1ee3e8557525d6adb86",
+              "zitatVon": 86,
+              "zitatBis": 298,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 160,
+              "passage": "ikhtiyar.ms0875",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms875",
+              "passageSha256Text": "d08622b7b93412e9ac418f132cd687093399c656afba540bc9fbe011569c1744",
+              "zitatVon": 863,
+              "zitatBis": 1061,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 398,
+              "passage": "radd_al_muhtar.ms6126",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6126",
+              "passageSha256Text": "67c7b61a3f68a819658f69758f8cb5cca057f28b83bdfd6ace14b0bf0733eb28",
+              "zitatVon": 973,
+              "zitatBis": 1140,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "22:25"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a02",
+          "text": "Entscheidend ist nach al-Ikhtiyār der Schaden: Schadet das Zurückhalten den Bewohnern nicht, etwa in einer großen Stadt, ist man kein Hortender, denn man hält nur sein Eigentum zurück, ohne anderen zu schaden. Dieselbe Unterscheidung gilt nach dem Werk für das Abfangen der Händler vor der Stadt (talaqqī al-jalab), das der Prophet verboten hat.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0876",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms876",
+              "passageSha256Text": "adba59fd634cb5b39ab0c67f02366395e54db417c787b1ee3e8557525d6adb86",
+              "zitatVon": 299,
+              "zitatBis": 482,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a03",
+          "text": "Radd al-Muḥtār beschreibt das Abfangen so: Jemand geht aus der Stadt der Karawane entgegen, die Nahrung bringt, kauft sie draußen, um sie zurückzuhalten, und lässt sie nicht in die Stadt gelangen. Verpönt ist das, wenn es den Bewohnern schadet. Täuscht er die Händler über den Preis in der Stadt, ist es in jedem Fall verpönt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 399,
+              "passage": "radd_al_muhtar.ms6127",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6127",
+              "passageSha256Text": "93b4b38e2e8018c03ebd2e9f032fce242f73ca0cd6578a6d11504b5f3e7a2b2a",
+              "zitatVon": 723,
+              "zitatBis": 1032,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a04",
+          "text": "Dass das Horten auf Nahrungsmittel beschränkt ist, ist nach Radd al-Muḥtār die Ansicht Abū Ḥanīfas und Muḥammads, und nach ihr wird Fatwa gegeben (nach al-Kāfī). Zur Nahrung zählen nach Muḥammad (al-Ikhtiyār) Grundnahrungsmittel der Menschen wie Datteln, Weizen und Gerste und Futter der Tiere wie Luzerne (qatt). Radd al-Muḥtār erläutert die Beispiele Feigen, Trauben und Mandeln: Gemeint ist, was den Körper erhält, auch Hirse – nicht aber Honig und Butterschmalz. Von Muḥammad ist außerdem überliefert, dass es Horten auch bei Kleidung gibt.",
+          "meinung": "fatwa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 398,
+              "passage": "radd_al_muhtar.ms6126",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6126",
+              "passageSha256Text": "67c7b61a3f68a819658f69758f8cb5cca057f28b83bdfd6ace14b0bf0733eb28",
+              "zitatVon": 1627,
+              "zitatBis": 1660,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 398,
+              "passage": "radd_al_muhtar.ms6127",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6127",
+              "passageSha256Text": "93b4b38e2e8018c03ebd2e9f032fce242f73ca0cd6578a6d11504b5f3e7a2b2a",
+              "zitatVon": 0,
+              "zitatBis": 107,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 162,
+              "passage": "ikhtiyar.ms0877",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms877",
+              "passageSha256Text": "1466a5c7b9850c9beb04f8b4b63a127ad6c7b59ed3e906b7a60ccfe5f1db5a0e",
+              "zitatVon": 794,
+              "zitatBis": 900,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 398,
+              "passage": "radd_al_muhtar.ms6127",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6127",
+              "passageSha256Text": "93b4b38e2e8018c03ebd2e9f032fce242f73ca0cd6578a6d11504b5f3e7a2b2a",
+              "zitatVon": 117,
+              "zitatBis": 193,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a05",
+          "text": "Nach Abū Yūsuf ist alles Horten, dessen Zurückhalten der Allgemeinheit schadet; er blickt auf den Schaden als solchen (al-Ikhtiyār, Radd al-Muḥtār). Nach dieser Ansicht kann es nach Radd al-Muḥtār auch Gold, Silber oder Kleidung betreffen. Abū Ḥanīfa und Muḥammad beschränken es dagegen auf Nahrungsmittel (siehe vorige Aussage).",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 162,
+              "passage": "ikhtiyar.ms0877",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms877",
+              "passageSha256Text": "1466a5c7b9850c9beb04f8b4b63a127ad6c7b59ed3e906b7a60ccfe5f1db5a0e",
+              "zitatVon": 729,
+              "zitatBis": 793,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 398,
+              "passage": "radd_al_muhtar.ms6127",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6127",
+              "passageSha256Text": "93b4b38e2e8018c03ebd2e9f032fce242f73ca0cd6578a6d11504b5f3e7a2b2a",
+              "zitatVon": 33,
+              "zitatBis": 79,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 400,
+              "passage": "radd_al_muhtar.ms6130",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6130",
+              "passageSha256Text": "1cfc27bfb679c879ca72c4692a355587d10ef9d46be5ae4a46eddc09eaaeba65",
+              "zitatVon": 917,
+              "zitatBis": 1017,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 398,
+              "passage": "radd_al_muhtar.ms6126",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6126",
+              "passageSha256Text": "67c7b61a3f68a819658f69758f8cb5cca057f28b83bdfd6ace14b0bf0733eb28",
+              "zitatVon": 1627,
+              "zitatBis": 1660,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 398,
+              "passage": "radd_al_muhtar.ms6127",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6127",
+              "passageSha256Text": "93b4b38e2e8018c03ebd2e9f032fce242f73ca0cd6578a6d11504b5f3e7a2b2a",
+              "zitatVon": 0,
+              "zitatBis": 18,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a06",
+          "text": "Wer die Ernte seines eigenen Landes zurückhält oder Ware, die er selbst von weit her gebracht hat, ist nach al-Ikhtiyār kein Hortender: Er hätte nichts anbauen oder herbringen müssen, also muss er auch nicht verkaufen. Radd al-Muḥtār ergänzt nach aṭ-Ṭaḥṭāwī: Er trägt dann zwar nicht die Sünde des Hortenden, sündigt aber, wenn er in böser Absicht gegen die Muslime auf Teuerung oder Hungersnot wartet. Ob er zum Verkauf gezwungen wird, wenn die Menschen in Not darauf angewiesen sind, bejaht Radd al-Muḥtār dem Anschein nach, aber mit Vorbehalt. Für Ware aus einer anderen Stadt nennt das Werk nach al-Quhistānī es empfohlen, sie zu verkaufen, weil das Zurückhalten nicht ganz frei von Verpöntheit ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0876",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms876",
+              "passageSha256Text": "adba59fd634cb5b39ab0c67f02366395e54db417c787b1ee3e8557525d6adb86",
+              "zitatVon": 483,
+              "zitatBis": 602,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 399,
+              "passage": "radd_al_muhtar.ms6128",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6128",
+              "passageSha256Text": "0aae7ba712c9d77188249553f8dd98782a8328b6f628fca13d4698747b351ffe",
+              "zitatVon": 311,
+              "zitatBis": 576,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 399,
+              "passage": "radd_al_muhtar.ms6128",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6128",
+              "passageSha256Text": "0aae7ba712c9d77188249553f8dd98782a8328b6f628fca13d4698747b351ffe",
+              "zitatVon": 674,
+              "zitatBis": 743,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a07",
+          "text": "Abū Yūsuf hält das Zurückhalten nach al-Ikhtiyār auch bei herbeigebrachter Ware für verpönt, weil das Verbot allgemein ist. Radd al-Muḥtār gibt aber wieder, dass al-Itqānī dem widersprach: Nach Angaben al-Qudūrīs und al-Karkhīs ist auch nach Abū Yūsuf Ware aus einer anderen Stadt kein Horten.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0876",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms876",
+              "passageSha256Text": "adba59fd634cb5b39ab0c67f02366395e54db417c787b1ee3e8557525d6adb86",
+              "zitatVon": 603,
+              "zitatBis": 650,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 399,
+              "passage": "radd_al_muhtar.ms6128",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6128",
+              "passageSha256Text": "0aae7ba712c9d77188249553f8dd98782a8328b6f628fca13d4698747b351ffe",
+              "zitatVon": 744,
+              "zitatBis": 1116,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a08",
+          "text": "Nach Muḥammad ist es verpönt, wenn man die Ware an einem Ort gekauft hat, von dem sie gewöhnlich in die Stadt gebracht wird, weil dann das Recht der Allgemeinheit daran hängt; sonst nicht (al-Ikhtiyār). Liegt der Ort so weit, dass man von dort gewöhnlich nichts in die Stadt bringt, gilt es nicht (al-Hidāya, Radd al-Muḥtār). Al-Hidāya nennt zuerst Abū Ḥanīfa, dann Abū Yūsuf und zuletzt Muḥammad mit seiner Begründung. Radd al-Muḥtār gibt das aus dem Kommentar zum Multaqā wieder und erklärt: Der Verfasser der Hidāya stellt gewöhnlich die Begründung der Ansicht ans Ende, die er wählt.",
+          "meinung": "muhammad",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0876",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms876",
+              "passageSha256Text": "adba59fd634cb5b39ab0c67f02366395e54db417c787b1ee3e8557525d6adb86",
+              "zitatVon": 651,
+              "zitatBis": 746,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Bayʿ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 93,
+              "passage": "hidaya.ms0942",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms942",
+              "passageSha256Text": "2b39d3d7f4f35376b18cd7bffcfe7a15e086d44cafbbde4437daf7de04adebdf",
+              "zitatVon": 519,
+              "zitatBis": 871,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 399,
+              "passage": "radd_al_muhtar.ms6128",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6128",
+              "passageSha256Text": "0aae7ba712c9d77188249553f8dd98782a8328b6f628fca13d4698747b351ffe",
+              "zitatVon": 1117,
+              "zitatBis": 1254,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 399,
+              "passage": "radd_al_muhtar.ms6128",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6128",
+              "passageSha256Text": "0aae7ba712c9d77188249553f8dd98782a8328b6f628fca13d4698747b351ffe",
+              "zitatVon": 1255,
+              "zitatBis": 1370,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a09",
+          "text": "Über die Dauer gibt es nach al-Ikhtiyār verschiedene Ansichten: mindestens vierzig Tage, wie es in einem Hadith heißt, oder mindestens ein Monat. Gesündigt hat man aber nach einer Ansicht schon durch das Horten selbst, auch wenn es kurz war; die Dauer betrifft die Folgen im Diesseits. Ebenso Radd al-Muḥtār: Die Dauer bestimmt die Strafe im Diesseits, etwa den Zwangsverkauf und die Strafe (taʿzīr), nicht die Sünde.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 162,
+              "passage": "ikhtiyar.ms0877",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms877",
+              "passageSha256Text": "1466a5c7b9850c9beb04f8b4b63a127ad6c7b59ed3e906b7a60ccfe5f1db5a0e",
+              "zitatVon": 901,
+              "zitatBis": 1128,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 398,
+              "passage": "radd_al_muhtar.ms6126",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6126",
+              "passageSha256Text": "67c7b61a3f68a819658f69758f8cb5cca057f28b83bdfd6ace14b0bf0733eb28",
+              "zitatVon": 1457,
+              "zitatBis": 1558,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a10",
+          "text": "Wird der Fall eines Hortenden dem Richter vorgelegt, befiehlt er ihm nach al-Ikhtiyār, zu verkaufen, was er über den Bedarf für sich und seine Familie hinaus hat; weigert er sich, verkauft der Richter für ihn. Nach einer Ansicht verbietet er ihm das Horten beim ersten Mal und lässt ihn beim zweiten Mal einsperren und bestrafen. Radd al-Muḥtār nennt nach az-Zaylaʿī drei Stufen: beim ersten Mal verbieten, ermahnen und abschrecken; beim zweiten Mal ebenso und mit Strafe drohen; beim dritten Mal einsperren und bestrafen.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0876",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms876",
+              "passageSha256Text": "adba59fd634cb5b39ab0c67f02366395e54db417c787b1ee3e8557525d6adb86",
+              "zitatVon": 747,
+              "zitatBis": 1017,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 399,
+              "passage": "radd_al_muhtar.ms6127",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6127",
+              "passageSha256Text": "93b4b38e2e8018c03ebd2e9f032fce242f73ca0cd6578a6d11504b5f3e7a2b2a",
+              "zitatVon": 1039,
+              "zitatBis": 1341,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a11",
+          "text": "Nach Muḥammad zwingt man die Hortenden, das Gehortete zu verkaufen, setzt ihnen aber keinen Preis fest: Sie sollen verkaufen wie die anderen Leute, mit einem Aufschlag, wie er unter Händlern üblich ist, aber nicht teurer (al-Ikhtiyār).",
+          "meinung": "muhammad",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0876",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms876",
+              "passageSha256Text": "adba59fd634cb5b39ab0c67f02366395e54db417c787b1ee3e8557525d6adb86",
+              "zitatVon": 1018,
+              "zitatBis": 1145,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a12",
+          "text": "Der Herrscher soll nach al-Ikhtiyār keine Preise festsetzen (tasʿīr): Das Werk stützt sich auf einen Bericht aus der Zeit des Propheten, und eine Preisfestsetzung ist eine Art Beschränkung (ḥajr) des Eigentümers. Überschreiten die Nahrungsmittelhändler den Wert aber grob, ist es nach Beratung mit Sachkundigen erlaubt, um die Rechte der Muslime vor Verlust zu schützen. Als grobe Überschreitung nennt Radd al-Muḥtār nach az-Zaylaʿī den Verkauf zum doppelten Wert.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0876",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms876",
+              "passageSha256Text": "adba59fd634cb5b39ab0c67f02366395e54db417c787b1ee3e8557525d6adb86",
+              "zitatVon": 1146,
+              "zitatBis": 1286,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0876",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms876",
+              "passageSha256Text": "adba59fd634cb5b39ab0c67f02366395e54db417c787b1ee3e8557525d6adb86",
+              "zitatVon": 1391,
+              "zitatBis": 1532,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0877",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms877",
+              "passageSha256Text": "1466a5c7b9850c9beb04f8b4b63a127ad6c7b59ed3e906b7a60ccfe5f1db5a0e",
+              "zitatVon": 0,
+              "zitatBis": 38,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 400,
+              "passage": "radd_al_muhtar.ms6129",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6129",
+              "passageSha256Text": "9f71d5052a103331a4a317a7611d68ecf0e3c985d87dd63de108a8449f159279",
+              "zitatVon": 410,
+              "zitatBis": 529,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a13",
+          "text": "Fürchtet das Staatsoberhaupt (imām), dass die Bewohner einer Stadt zugrunde gehen, nimmt es nach den hanefitischen Gelehrten (aṣḥābunā) den Hortenden die Nahrung ab und verteilt sie; haben die Empfänger wieder etwas, geben sie das Gleiche zurück. Das ist nach al-Ikhtiyār keine Beschränkung (ḥajr), sondern eine Notwendigkeit, wie in einer Hungersnot. Radd al-Muḥtār ergänzt: Den Hortenden bleibt dabei, was sie und ihre Familien selbst brauchen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0877",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms877",
+              "passageSha256Text": "1466a5c7b9850c9beb04f8b4b63a127ad6c7b59ed3e906b7a60ccfe5f1db5a0e",
+              "zitatVon": 39,
+              "zitatBis": 202,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 399,
+              "passage": "radd_al_muhtar.ms6128",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6128",
+              "passageSha256Text": "0aae7ba712c9d77188249553f8dd98782a8328b6f628fca13d4698747b351ffe",
+              "zitatVon": 208,
+              "zitatBis": 310,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a14",
+          "text": "Hat der Herrscher den Brotpreis festgesetzt und fürchtet der Bäcker, geschlagen zu werden, wenn er weniger gibt, darf der Käufer nach al-Ikhtiyār das zu diesem Preis gekaufte Brot nicht essen, weil der Bäcker gleichsam gezwungen ist; der Käufer soll ihn bitten, so zu verkaufen, wie er möchte, damit der Kauf gültig ist. Radd al-Muḥtār gibt das nach az-Zaylaʿī wieder, hat aber Bedenken: Nach al-Hidāya ist ein Verkauf zum festgesetzten Preis gültig, weil der Verkäufer nicht gezwungen ist, überhaupt zu verkaufen.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0877",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms877",
+              "passageSha256Text": "1466a5c7b9850c9beb04f8b4b63a127ad6c7b59ed3e906b7a60ccfe5f1db5a0e",
+              "zitatVon": 203,
+              "zitatBis": 375,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 400,
+              "passage": "radd_al_muhtar.ms6129",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6129",
+              "passageSha256Text": "9f71d5052a103331a4a317a7611d68ecf0e3c985d87dd63de108a8449f159279",
+              "zitatVon": 787,
+              "zitatBis": 1219,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a15",
+          "text": "Haben sich die Leute einer Stadt auf einen Preis für Brot und Fleisch geeinigt und ist er allgemein bekannt, und bekommt ein Käufer für sein Geld unbemerkt weniger, so kann er nach al-Ikhtiyār den Fehlbetrag vom Preis zurückverlangen, denn er war nur mit dem Preis der Stadt einverstanden. Radd al-Muḥtār unterscheidet: Ein Einwohner kann das bei Brot und Fleisch; ein Fremder nur beim Brot, weil der Fleischpreis gewöhnlich nicht so bekannt ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 161,
+              "passage": "ikhtiyar.ms0877",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms877",
+              "passageSha256Text": "1466a5c7b9850c9beb04f8b4b63a127ad6c7b59ed3e906b7a60ccfe5f1db5a0e",
+              "zitatVon": 376,
+              "zitatBis": 550,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 400,
+              "passage": "radd_al_muhtar.ms6130",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6130",
+              "passageSha256Text": "1cfc27bfb679c879ca72c4692a355587d10ef9d46be5ae4a46eddc09eaaeba65",
+              "zitatVon": 0,
+              "zitatBis": 220,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a16",
+          "text": "Im Handel und in alltäglichen Geschäften (muʿāmalāt) nimmt man nach al-Ikhtiyār die Angabe einer einzelnen Person an, ob sie rechtschaffen ist oder nicht, Mann oder Frau, Muslim oder nicht: Solche Geschäfte sind häufig, und Rechtschaffenheit zu verlangen, brächte die Menschen in Bedrängnis. In religiösen Fragen (diyānāt), etwa ob Wasser rein ist, gilt dagegen nur die Angabe eines Rechtschaffenen (ʿadl).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 163,
+              "passage": "ikhtiyar.ms0879",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms879",
+              "passageSha256Text": "3f4936fe6f4943725073df24e5ae0bc80f60ae8173885f7aedeaab3e106a9733",
+              "zitatVon": 22,
+              "zitatBis": 237,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 163,
+              "passage": "ikhtiyar.ms0879",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms879",
+              "passageSha256Text": "3f4936fe6f4943725073df24e5ae0bc80f60ae8173885f7aedeaab3e106a9733",
+              "zitatVon": 238,
+              "zitatBis": 781,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.a17",
+          "text": "Ein Reittier mit Gewalt rennen zu lassen, um es einem Kaufinteressenten vorzuführen, ist nach al-Ikhtiyār verpönt, weil es den Käufer täuscht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 169,
+              "passage": "ikhtiyar.ms0887",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms887",
+              "passageSha256Text": "e517dc4623d10e8a3c3c3905ff8c3888511aab312976cce8ce82cbcebbb48202",
+              "zitatVon": 1444,
+              "zitatBis": 1542,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e03.l02.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l02.a01",
+          "behauptung": "Nahrungsmittel zu horten, ist nach al-Ikhtiyār verpönt, wenn es den Bewohnern des Ortes schadet.",
+          "richtig": true,
+          "begruendung": "Al-Ikhtiyār nennt das Horten von Nahrung für Menschen und Tiere verpönt, wenn es den Bewohnern schadet, weil das Recht der Allgemeinheit betroffen ist.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l02.a02",
+          "fall": "Ein Händler in einer sehr großen Stadt lagert Weizen ein, um ihn später teurer zu verkaufen. In der Stadt gibt es genug Weizen; den Bewohnern entsteht kein Schaden.",
+          "frage": "Wie beurteilt al-Ikhtiyār das?",
+          "optionen": [
+            "Er gilt nicht als Hortender, weil er niemandem schadet.",
+            "Er gilt immer als Hortender, auch ohne Schaden.",
+            "Er muss den Weizen sofort verschenken."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l02.a06",
+          "fall": "Eine Bäuerin lagert die Ernte ihres eigenen Feldes ein und verkauft sie noch nicht. Es herrscht keine Not in der Stadt.",
+          "frage": "Was gilt nach al-Ikhtiyār?",
+          "optionen": [
+            "Das ist kein Horten, denn sie hätte auch nichts anbauen müssen.",
+            "Das ist verbotenes Horten, auch ohne Not in der Stadt.",
+            "Sie muss die Ernte dem Richter übergeben."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.q04",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e03.l02.a05",
+          "anweisung": "Ordne zu, worauf sich das Horten nach den Ansichten in der Schule bezieht.",
+          "paare": [
+            {
+              "links": "Abū Yūsuf",
+              "rechts": "alles, dessen Zurückhalten der Allgemeinheit schadet"
+            },
+            {
+              "links": "Abū Ḥanīfa und Muḥammad",
+              "rechts": "nur Nahrungsmittel"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.q05",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e03.l02.a10",
+          "anweisung": "Bringe die Schritte des Richters gegen einen Hortenden in die Reihenfolge, die Radd al-Muḥtār nach az-Zaylaʿī nennt.",
+          "schritte": [
+            "verbieten, ermahnen und abschrecken",
+            "erneut verbieten und mit Strafe drohen",
+            "einsperren und bestrafen"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l02.a12",
+          "behauptung": "Der Herrscher soll nach al-Ikhtiyār grundsätzlich die Preise für Nahrungsmittel festsetzen.",
+          "richtig": false,
+          "begruendung": "Grundsätzlich soll er keine Preise festsetzen, weil das eine Art Beschränkung des Eigentümers ist. Nur bei grober Überschreitung des Werts ist es nach Beratung mit Sachkundigen erlaubt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.q07",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l02.a12",
+          "fall": "Die Nahrungsmittelhändler einer Stadt verlangen plötzlich für Getreide das Doppelte seines Werts.",
+          "frage": "Was darf der Herrscher nach al-Ikhtiyār und Radd al-Muḥtār tun?",
+          "optionen": [
+            "Er darf nach Beratung mit Sachkundigen Preise festsetzen.",
+            "Er darf nichts tun, weil Preise nie festgesetzt werden dürfen.",
+            "Er muss das Getreide ohne Bezahlung beschlagnahmen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.q08",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l02.a15",
+          "fall": "In einer Stadt ist allgemein bekannt, wie viel Brot man für einen bestimmten Betrag bekommt. Eine Einwohnerin bezahlt diesen Betrag beim Bäcker und merkt später, dass sie weniger Brot bekommen hat.",
+          "frage": "Was gilt nach al-Ikhtiyār?",
+          "optionen": [
+            "Sie kann den Teil des Preises für die fehlende Menge zurückverlangen.",
+            "Sie hat keinen Anspruch, weil sie nicht nachgewogen hat.",
+            "Der ganze Kauf ist ungültig."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.q09",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l02.a16",
+          "behauptung": "Im Handel darf man nach al-Ikhtiyār nur der Auskunft eines besonders rechtschaffenen Menschen glauben.",
+          "richtig": false,
+          "begruendung": "Im Handel nimmt man die Angabe jeder einzelnen Person an, um die Menschen nicht in Bedrängnis zu bringen; nur in religiösen Fragen gilt allein die Angabe eines Rechtschaffenen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.q10",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l02.a17",
+          "behauptung": "Ein Reittier mit Gewalt rennen zu lassen, um es einem Käufer vorzuführen, ist nach al-Ikhtiyār verpönt.",
+          "richtig": true,
+          "begruendung": "Al-Ikhtiyār nennt es verpönt, weil es den Käufer täuscht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l02.q11",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l02.a09",
+          "behauptung": "Über die Mindestdauer des Hortens sind sich die Gelehrten nach al-Ikhtiyār einig.",
+          "richtig": false,
+          "begruendung": "Al-Ikhtiyār nennt verschiedene Ansichten: mindestens vierzig Tage oder mindestens ein Monat; nach einer Ansicht sündigt man schon durch das Horten selbst.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e03.l03",
+      "titel": "Unterhalt und Fürsorge für Eltern und Verwandte",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a01",
+          "text": "Den Unterhalt kleiner Kinder trägt nach al-Qudūrī der Vater allein; niemand teilt ihn mit ihm, so wie niemand mit ihm den Unterhalt der Ehefrau teilt. Das gilt auch, wenn das Kind einer anderen Religion angehört als er. Al-Hidāya begründet es mit einem Vers (Verweis 2:233) und ergänzt: Hat das Kind eigenes Vermögen, wird sein Unterhalt daraus bestritten, denn grundsätzlich lebt jeder, ob klein oder groß, von seinem eigenen Vermögen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb an-Nafaqāt",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 173,
+              "passage": "quduri.ms0093",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms93",
+              "passageSha256Text": "5b8102012cbdb7a70b039702977aea233b8a0b7aa421af824f17b8d83b19f9f7",
+              "zitatVon": 1192,
+              "zitatBis": 1273,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb an-Nafaqāt",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 173,
+              "passage": "quduri.ms0094",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms94",
+              "passageSha256Text": "88f8e56d7b67f6af2112a09030519198c873ececb3189e86fd77d4cc58cc7ec1",
+              "zitatVon": 49,
+              "zitatBis": 143,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 45,
+              "passage": "hidaya.ms0340",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms340",
+              "passageSha256Text": "fda6efd44491fe08497cbd6b5265ffcb91e174bd299960dbd58f944bc3333c1f",
+              "zitatVon": 401,
+              "zitatBis": 532,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 46,
+              "passage": "hidaya.ms0341",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms341",
+              "passageSha256Text": "4406b1256a4a9238f3db9c6085eca068ebeb68ace6b24c267e760545abf023f3",
+              "zitatVon": 528,
+              "zitatBis": 658,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "2:233"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a02",
+          "text": "Jeder muss nach al-Qudūrī für seine Eltern und Großeltern sorgen, wenn sie arm sind – auch wenn sie einer anderen Religion angehören. Al-Hidāya begründet es für die Eltern mit einem Vers, der nach dem Werk nichtmuslimische Eltern betrifft (Verweis 31:15): Es ist nicht recht, selbst von Gottes Gaben zu leben und die Eltern hungern zu lassen. Die Großeltern zählen zu den Vätern und Müttern; sie sind die Ursache dafür, dass man lebt, deshalb haben sie wie die Eltern Anspruch darauf, dass man sie am Leben erhält.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaḍāna (in der Druckvorlage nach Kitāb an-Nafaqāt; Unterhalt der Verwandten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 174,
+              "passage": "quduri.ms0094",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms94",
+              "passageSha256Text": "88f8e56d7b67f6af2112a09030519198c873ececb3189e86fd77d4cc58cc7ec1",
+              "zitatVon": 992,
+              "zitatBis": 1070,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 46,
+              "passage": "hidaya.ms0341",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms341",
+              "passageSha256Text": "4406b1256a4a9238f3db9c6085eca068ebeb68ace6b24c267e760545abf023f3",
+              "zitatVon": 665,
+              "zitatBis": 1028,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "31:15"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a03",
+          "text": "Bedingung ist, dass Eltern und Großeltern arm sind: Haben sie selbst Vermögen, wird ihr Unterhalt nach al-Hidāya besser aus ihrem eigenen Vermögen bestritten als aus dem eines anderen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 46,
+              "passage": "hidaya.ms0341",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms341",
+              "passageSha256Text": "4406b1256a4a9238f3db9c6085eca068ebeb68ace6b24c267e760545abf023f3",
+              "zitatVon": 1029,
+              "zitatBis": 1107,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a04",
+          "text": "Bei anderen Verwandten gilt nach al-Hidāya: Wer arbeiten kann, ist durch seinen Erwerb versorgt. Anders bei den Eltern: Ihnen muss das Kind Unterhalt geben, auch wenn sie selbst arbeiten könnten, denn die Mühe des Erwerbs würde sie belasten, und das Kind ist angewiesen, Schaden von ihnen abzuwenden.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 47,
+              "passage": "hidaya.ms0342",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms342",
+              "passageSha256Text": "01f861265cad1670e4abbc2e2d4b6ac37dc154d5e8b38b55c82d6277dc8db31f",
+              "zitatVon": 849,
+              "zitatBis": 980,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a05",
+          "text": "Den Unterhalt der Eltern teilt nach al-Qudūrī niemand mit dem Kind. Al-Hidāya begründet: Die Eltern haben nach einem Text einen Anspruch auf das Vermögen ihres Kindes, nicht auf das anderer, und das Kind steht ihnen am nächsten. Söhne und Töchter tragen ihn nach der offenkundigen Überlieferung (ẓāhir ar-riwāya) zu gleichen Teilen; das nennt al-Hidāya richtig.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaḍāna (in der Druckvorlage nach Kitāb an-Nafaqāt; Unterhalt der Verwandten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 174,
+              "passage": "quduri.ms0094",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms94",
+              "passageSha256Text": "88f8e56d7b67f6af2112a09030519198c873ececb3189e86fd77d4cc58cc7ec1",
+              "zitatVon": 1157,
+              "zitatBis": 1190,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 47,
+              "passage": "hidaya.ms0342",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms342",
+              "passageSha256Text": "01f861265cad1670e4abbc2e2d4b6ac37dc154d5e8b38b55c82d6277dc8db31f",
+              "zitatVon": 246,
+              "zitatBis": 474,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a06",
+          "text": "Bei unterschiedlicher Religion besteht die Unterhaltspflicht nach al-Qudūrī nur gegenüber Ehefrau, Eltern, Großeltern, Kindern und Enkeln, gegenüber anderen Verwandten nicht. Al-Hidāya erklärt: Kinder und Eltern sind gleichsam Teile voneinander; wie niemandem der eigene Unterhalt wegen seines Glaubens versagt wird, so auch nicht der Unterhalt dessen, der ein Teil von ihm ist. Bei den übrigen Verwandten hängt der Unterhalt am Erbrecht, und das entfällt bei unterschiedlicher Religion. Ausgenommen sind nach al-Hidāya Angehörige, die zu einem Land im Krieg mit den Muslimen gehören (ḥarbī), auch wenn sie sich mit Schutzzusage (mustaʾmin) im Land aufhalten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaḍāna (in der Druckvorlage nach Kitāb an-Nafaqāt; Unterhalt der Verwandten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 174,
+              "passage": "quduri.ms0094",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms94",
+              "passageSha256Text": "88f8e56d7b67f6af2112a09030519198c873ececb3189e86fd77d4cc58cc7ec1",
+              "zitatVon": 1071,
+              "zitatBis": 1156,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaḍāna (in der Druckvorlage nach Kitāb an-Nafaqāt; Unterhalt der Verwandten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 174,
+              "passage": "quduri.ms0094",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms94",
+              "passageSha256Text": "88f8e56d7b67f6af2112a09030519198c873ececb3189e86fd77d4cc58cc7ec1",
+              "zitatVon": 1408,
+              "zitatBis": 1438,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 46,
+              "passage": "hidaya.ms0341",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms341",
+              "passageSha256Text": "4406b1256a4a9238f3db9c6085eca068ebeb68ace6b24c267e760545abf023f3",
+              "zitatVon": 1108,
+              "zitatBis": 1527,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 48,
+              "passage": "hidaya.ms0343",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms343",
+              "passageSha256Text": "492ac639f8ab53c6e1aad831e4322e8fd8a83d7923ab611600a6687c9905f64c",
+              "zitatVon": 139,
+              "zitatBis": 206,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a07",
+          "text": "Unterhalt erhält nach al-Qudūrī auch jeder Verwandte, den man wegen der Verwandtschaft nicht heiraten dürfte (dhū raḥim maḥram), wenn er bedürftig ist: ein armes Kind, eine arme erwachsene Frau, ein armer erwachsener Mann, der dauerhaft krank (zamin) oder blind ist. Al-Hidāya begründet: Die Pflege naher Verwandtschaft (ṣila) ist Pflicht, die ferner Verwandtschaft nicht, und die Grenze bildet diese Verwandtschaft; das Werk verweist dazu auf einen Vers (Verweis 2:233) und auf dessen Lesart bei ʿAbdallāh ibn Masʿūd. Kindheit, Frausein, dauerhafte Krankheit und Blindheit nennt das Werk als Zeichen der Bedürftigkeit.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaḍāna (in der Druckvorlage nach Kitāb an-Nafaqāt; Unterhalt der Verwandten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 174,
+              "passage": "quduri.ms0094",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms94",
+              "passageSha256Text": "88f8e56d7b67f6af2112a09030519198c873ececb3189e86fd77d4cc58cc7ec1",
+              "zitatVon": 1191,
+              "zitatBis": 1291,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 47,
+              "passage": "hidaya.ms0342",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms342",
+              "passageSha256Text": "01f861265cad1670e4abbc2e2d4b6ac37dc154d5e8b38b55c82d6277dc8db31f",
+              "zitatVon": 582,
+              "zitatBis": 848,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "2:233"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a08",
+          "text": "Diesen Unterhalt tragen die Verwandten nach al-Qudūrī im Verhältnis ihrer Erbanteile; al-Hidāya ergänzt, dass man dazu gezwungen wird, denn wer den Vorteil (das Erbe) hat, trägt auch die Last. Maßgeblich ist nach al-Hidāya, dass jemand grundsätzlich erbberechtigt sein kann, nicht dass er tatsächlich erbt: Hat ein Bedürftiger einen Onkel mütterlicherseits und einen Cousin väterlicherseits, trägt der Onkel den Unterhalt, obwohl der Cousin das Erbe erhält.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaḍāna (in der Druckvorlage nach Kitāb an-Nafaqāt; Unterhalt der Verwandten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 174,
+              "passage": "quduri.ms0094",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms94",
+              "passageSha256Text": "88f8e56d7b67f6af2112a09030519198c873ececb3189e86fd77d4cc58cc7ec1",
+              "zitatVon": 1292,
+              "zitatBis": 1318,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 47,
+              "passage": "hidaya.ms0342",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms342",
+              "passageSha256Text": "01f861265cad1670e4abbc2e2d4b6ac37dc154d5e8b38b55c82d6277dc8db31f",
+              "zitatVon": 981,
+              "zitatBis": 1111,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 48,
+              "passage": "hidaya.ms0343",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms343",
+              "passageSha256Text": "492ac639f8ab53c6e1aad831e4322e8fd8a83d7923ab611600a6687c9905f64c",
+              "zitatVon": 16,
+              "zitatBis": 138,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a09",
+          "text": "Den Unterhalt einer erwachsenen Tochter und eines dauerhaft kranken erwachsenen Sohnes tragen nach al-Qudūrī beide Eltern: der Vater zwei Drittel, die Mutter ein Drittel, entsprechend ihren Erbanteilen. Al-Hidāya merkt an, dass dies die Überlieferung von al-Khaṣṣāf und al-Ḥasan ist; nach der offenkundigen Überlieferung (ẓāhir ar-riwāya) trägt der Vater den ganzen Unterhalt, wie beim kleinen Kind (Verweis 2:233).",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaḍāna (in der Druckvorlage nach Kitāb an-Nafaqāt; Unterhalt der Verwandten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 174,
+              "passage": "quduri.ms0094",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms94",
+              "passageSha256Text": "88f8e56d7b67f6af2112a09030519198c873ececb3189e86fd77d4cc58cc7ec1",
+              "zitatVon": 1319,
+              "zitatBis": 1407,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 47,
+              "passage": "hidaya.ms0342",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms342",
+              "passageSha256Text": "01f861265cad1670e4abbc2e2d4b6ac37dc154d5e8b38b55c82d6277dc8db31f",
+              "zitatVon": 1237,
+              "zitatBis": 1394,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "2:233"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a10",
+          "text": "Ein Armer muss nach al-Qudūrī keinem Verwandten Unterhalt geben; al-Hidāya begründet: Dieser Unterhalt ist Verwandtenpflege (ṣila), und der Arme hat selbst Anspruch darauf – anders als beim Unterhalt der Ehefrau und des kleinen Kindes. Ob jemand wohlhabend genug ist, misst Abū Yūsuf nach al-Hidāya am Mindestvermögen (niṣāb); danach wird Fatwa gegeben, wobei der niṣāb gemeint ist, ab dem man keine Almosen (ṣadaqa) mehr annehmen darf.",
+          "meinung": "fatwa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaḍāna (in der Druckvorlage nach Kitāb an-Nafaqāt; Unterhalt der Verwandten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 174,
+              "passage": "quduri.ms0094",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms94",
+              "passageSha256Text": "88f8e56d7b67f6af2112a09030519198c873ececb3189e86fd77d4cc58cc7ec1",
+              "zitatVon": 1408,
+              "zitatBis": 1457,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 48,
+              "passage": "hidaya.ms0343",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms343",
+              "passageSha256Text": "492ac639f8ab53c6e1aad831e4322e8fd8a83d7923ab611600a6687c9905f64c",
+              "zitatVon": 207,
+              "zitatBis": 654,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a11",
+          "text": "Nach Muḥammad ist wohlhabend genug, wer über den Unterhalt für sich und seine Familie für einen Monat hinaus etwas übrig hat; wer täglich verdient, wenn ihm von seinem Verdienst etwas übrig bleibt. Denn bei den Rechten der Menschen kommt es auf die Fähigkeit an, nicht auf einen niṣāb (al-Hidāya).",
+          "meinung": "muhammad",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 48,
+              "passage": "hidaya.ms0343",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms343",
+              "passageSha256Text": "492ac639f8ab53c6e1aad831e4322e8fd8a83d7923ab611600a6687c9905f64c",
+              "zitatVon": 437,
+              "zitatBis": 607,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a12",
+          "text": "Hat ein abwesender Sohn Vermögen, spricht der Richter den Eltern daraus Unterhalt zu (al-Qudūrī). Verkauft der Vater bewegliche Habe des Sohnes für seinen Unterhalt, ist das nach Abū Ḥanīfa erlaubt, Grundbesitz aber nicht. Al-Hidāya nennt das eine Billigkeitsentscheidung (istiḥsān): Der Vater darf das Vermögen des Abwesenden bewahren, und der Verkauf beweglicher Habe gehört zum Bewahren; Grundbesitz ist dagegen durch sich selbst gesichert.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaḍāna (in der Druckvorlage nach Kitāb an-Nafaqāt; Unterhalt der Verwandten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 174,
+              "passage": "quduri.ms0094",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms94",
+              "passageSha256Text": "88f8e56d7b67f6af2112a09030519198c873ececb3189e86fd77d4cc58cc7ec1",
+              "zitatVon": 1458,
+              "zitatBis": 1544,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaḍāna (in der Druckvorlage nach Kitāb an-Nafaqāt; Unterhalt der Verwandten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 174,
+              "passage": "quduri.ms0095",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms95",
+              "passageSha256Text": "3f06017da04e17753738060036371915d0141771d08a20d1a60b562887678607",
+              "zitatVon": 0,
+              "zitatBis": 27,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 48,
+              "passage": "hidaya.ms0343",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms343",
+              "passageSha256Text": "492ac639f8ab53c6e1aad831e4322e8fd8a83d7923ab611600a6687c9905f64c",
+              "zitatVon": 720,
+              "zitatBis": 1140,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a13",
+          "text": "Nach Abū Yūsuf und Muḥammad darf der Vater gar nichts davon verkaufen; das entspricht dem Analogieschluss (qiyās), denn seine Vormundschaft endet mit der Volljährigkeit des Sohnes, und auch die Mutter darf nicht verkaufen (al-Hidāya).",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 48,
+              "passage": "hidaya.ms0343",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms343",
+              "passageSha256Text": "492ac639f8ab53c6e1aad831e4322e8fd8a83d7923ab611600a6687c9905f64c",
+              "zitatVon": 812,
+              "zitatBis": 978,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a14",
+          "text": "Geben die Eltern sich selbst Unterhalt aus dem Vermögen des abwesenden Sohnes, das sie verwahren, haften sie nicht (al-Qudūrī); sie haben nur erhalten, was ihnen zusteht (al-Hidāya). Gibt dagegen ein Fremder, der das Vermögen verwahrt, ihnen davon ohne Erlaubnis des Richters, haftet er, denn er war nur zum Verwahren beauftragt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaḍāna (in der Druckvorlage nach Kitāb an-Nafaqāt; Unterhalt der Verwandten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 174,
+              "passage": "quduri.ms0095",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms95",
+              "passageSha256Text": "3f06017da04e17753738060036371915d0141771d08a20d1a60b562887678607",
+              "zitatVon": 28,
+              "zitatBis": 144,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 48,
+              "passage": "hidaya.ms0343",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms343",
+              "passageSha256Text": "492ac639f8ab53c6e1aad831e4322e8fd8a83d7923ab611600a6687c9905f64c",
+              "zitatVon": 1397,
+              "zitatBis": 1474,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 48,
+              "passage": "hidaya.ms0344",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms344",
+              "passageSha256Text": "ebebc9e951d0e92bdc724fb4795a8d8c821f1b6554bf54dc5897e0acf9e65044",
+              "zitatVon": 21,
+              "zitatBis": 140,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a15",
+          "text": "Hat der Richter Kindern, Eltern oder Verwandten Unterhalt zugesprochen und vergeht eine Zeit, ohne dass er gezahlt wird, entfällt er nach al-Qudūrī – es sei denn, der Richter hat erlaubt, ihn als Schuld aufzunehmen. Al-Hidāya begründet: Dieser Unterhalt dient nur dazu, den Bedarf zu decken, und der Bedarf der vergangenen Zeit ist vorbei; der zugesprochene Unterhalt der Ehefrau entfällt dagegen nicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaḍāna (in der Druckvorlage nach Kitāb an-Nafaqāt; Unterhalt der Verwandten)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 174,
+              "passage": "quduri.ms0095",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms95",
+              "passageSha256Text": "3f06017da04e17753738060036371915d0141771d08a20d1a60b562887678607",
+              "zitatVon": 145,
+              "zitatBis": 248,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb an-Nafaqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 2,
+              "seite": 49,
+              "passage": "hidaya.ms0344",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms344",
+              "passageSha256Text": "ebebc9e951d0e92bdc724fb4795a8d8c821f1b6554bf54dc5897e0acf9e65044",
+              "zitatVon": 262,
+              "zitatBis": 492,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a16",
+          "text": "Die Pflege der Verwandtschaftsbande (ṣilat ar-raḥim) ist nach Radd al-Muḥtār Pflicht (wājib); nach al-Qurṭubī ist sich die Gemeinschaft einig, dass sie Pflicht und ihr Abbruch verboten ist. Welche Verwandten gemeint sind, ist umstritten: nach den einen jeder, den man wegen der Verwandtschaft nicht heiraten dürfte, nach anderen jeder Verwandte; das Zweite entspricht dem Grundtext und ist nach an-Nawawī richtig. Die Stufen sind verschieden: Bei den Eltern wiegt die Pflicht schwerer als bei den übrigen nahen Verwandten, bei diesen schwerer als bei den ferneren.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 411,
+              "passage": "radd_al_muhtar.ms6146",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6146",
+              "passageSha256Text": "cfc1c5a870d1e8b35fc3d87acb864bbe60ba3da0914153f2ed6ac8e4d4644ab8",
+              "zitatVon": 1045,
+              "zitatBis": 1449,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a17",
+          "text": "Die Verwandtschaft pflegt man nach Radd al-Muḥtār schon mit einem Gruß. Ist man fern, pflegt man sie nach Tabyīn al-Maḥārim durch Briefe; kann man zu den Verwandten reisen, ist das besser. Bei den Eltern genügt ein Brief nicht, wenn sie wünschen, dass man kommt, oder wenn sie die Hilfe ihres Kindes brauchen. Bei der Pflege steht der ältere Bruder nach dem Vater an dessen Stelle, ebenso der Großvater; die ältere Schwester und die Tante mütterlicherseits stehen der Mutter gleich. Bei den übrigen Verwandten genügen ein Brief oder ein Geschenk.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 411,
+              "passage": "radd_al_muhtar.ms6146",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6146",
+              "passageSha256Text": "cfc1c5a870d1e8b35fc3d87acb864bbe60ba3da0914153f2ed6ac8e4d4644ab8",
+              "zitatVon": 1503,
+              "zitatBis": 1555,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 411,
+              "passage": "radd_al_muhtar.ms6147",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6147",
+              "passageSha256Text": "d53b7da4cd9235f5a72666159503b9f7fe580aba9a5c32e913204230d16b9893",
+              "zitatVon": 0,
+              "zitatBis": 284,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.a18",
+          "text": "Die Pflicht ist nach Radd al-Muḥtār nicht erfüllt, wenn man nur Besuche und Gaben erwidert; man soll die Verwandten auch dann besuchen und unterstützen, wenn sie selbst den Kontakt abbrechen. Das Werk stützt sich dabei auf einen Hadith (Verweis Bukhari 5991). Besuchen soll man sie in Abständen (ghibban); als leichten Maßstab nennt das Werk einen Besuch jede Woche oder jeden Monat.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 411,
+              "passage": "radd_al_muhtar.ms6147",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6147",
+              "passageSha256Text": "d53b7da4cd9235f5a72666159503b9f7fe580aba9a5c32e913204230d16b9893",
+              "zitatVon": 296,
+              "zitatBis": 461,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 411,
+              "passage": "radd_al_muhtar.ms6147",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6147",
+              "passageSha256Text": "d53b7da4cd9235f5a72666159503b9f7fe580aba9a5c32e913204230d16b9893",
+              "zitatVon": 462,
+              "zitatBis": 739,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 5991
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e03.l03.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l03.a02",
+          "behauptung": "Arme Eltern, die einer anderen Religion angehören, haben nach al-Qudūrī keinen Anspruch auf Unterhalt von ihrem Kind.",
+          "richtig": false,
+          "begruendung": "Nach al-Qudūrī muss man für arme Eltern und Großeltern sorgen, auch wenn sie einer anderen Religion angehören.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l03.a04",
+          "fall": "Ein Vater ist arm, könnte aber noch arbeiten. Sein erwachsener Sohn verdient gut.",
+          "frage": "Muss der Sohn dem Vater nach al-Hidāya Unterhalt geben?",
+          "optionen": [
+            "Ja; bei den Eltern besteht die Pflicht auch, wenn sie selbst arbeiten könnten.",
+            "Nein; wer arbeiten kann, bekommt nie Unterhalt.",
+            "Nur, wenn der Vater zuvor vor Gericht klagt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e03.l03.a09",
+          "anweisung": "Ordne zu, welchen Anteil am Unterhalt einer erwachsenen Tochter nach al-Qudūrī jeder Elternteil trägt.",
+          "paare": [
+            {
+              "links": "Vater",
+              "rechts": "zwei Drittel"
+            },
+            {
+              "links": "Mutter",
+              "rechts": "ein Drittel"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l03.a08",
+          "fall": "Ein bedürftiger Mann hat als Verwandte nur einen Onkel mütterlicherseits und einen Cousin väterlicherseits. Erben würde der Cousin.",
+          "frage": "Wer trägt nach al-Hidāya seinen Unterhalt?",
+          "optionen": [
+            "Der Onkel mütterlicherseits.",
+            "Der Cousin väterlicherseits, weil er erbt.",
+            "Beide je zur Hälfte."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l03.a01",
+          "behauptung": "Den Unterhalt kleiner Kinder teilen sich nach al-Qudūrī Vater und Mutter.",
+          "richtig": false,
+          "begruendung": "Nach al-Qudūrī trägt ihn der Vater allein; niemand teilt ihn mit ihm. Hat das Kind eigenes Vermögen, wird der Unterhalt nach al-Hidāya daraus bestritten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l03.a09",
+          "behauptung": "Ob die Mutter einen Teil des Unterhalts einer erwachsenen Tochter trägt, wird in der Schule unterschiedlich überliefert.",
+          "richtig": true,
+          "begruendung": "Nach al-Qudūrī (Überlieferung von al-Khaṣṣāf und al-Ḥasan) trägt sie ein Drittel; nach der offenkundigen Überlieferung trägt der Vater alles (al-Hidāya).",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l03.a10",
+          "behauptung": "Ein Armer muss nach al-Qudūrī seinem armen Bruder Unterhalt geben.",
+          "richtig": false,
+          "begruendung": "Der Unterhalt für Verwandte ist nach al-Hidāya Verwandtenpflege; der Arme hat selbst Anspruch darauf und muss ihn deshalb nicht geben.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.q08",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l03.a14",
+          "fall": "Ein Sohn ist verreist und hat sein Geld einem Bekannten zur Aufbewahrung gegeben. Der Bekannte gibt den bedürftigen Eltern davon Unterhalt, ohne den Richter zu fragen.",
+          "frage": "Was gilt nach al-Qudūrī und al-Hidāya?",
+          "optionen": [
+            "Der Bekannte haftet, weil er nur zum Verwahren beauftragt war.",
+            "Der Bekannte haftet nicht, weil es den Eltern zusteht.",
+            "Die Eltern müssen das Geld in jedem Fall zurückzahlen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.q09",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l03.a16",
+          "behauptung": "Die Pflege der Verwandtschaftsbande ist nach Radd al-Muḥtār nur empfohlen.",
+          "richtig": false,
+          "begruendung": "Radd al-Muḥtār nennt sie Pflicht (wājib); nach al-Qurṭubī ist sich die Gemeinschaft einig, dass ihr Abbruch verboten ist.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.q10",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l03.a17",
+          "fall": "Ein Student lebt weit weg von seinen Eltern. Die Eltern wünschen sich, dass er zu Besuch kommt; die Reise wäre ihm möglich.",
+          "frage": "Was gilt nach Radd al-Muḥtār?",
+          "optionen": [
+            "Ein Brief genügt dann nicht; er soll zu den Eltern reisen.",
+            "Ein Brief genügt immer, auch bei den Eltern.",
+            "Er muss nichts tun, weil er weit weg wohnt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l03.q11",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e03.l03.a16",
+          "anweisung": "Ordne nach Radd al-Muḥtār, bei wem die Pflicht zur Verwandtschaftspflege am schwersten wiegt – das Schwerste zuerst.",
+          "schritte": [
+            "die Eltern",
+            "Verwandte, die man nicht heiraten dürfte",
+            "die übrigen Verwandten"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e03.l04",
+      "titel": "Wettkampf, Sport und Bogenschießen",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a01",
+          "text": "Wettrennen (musābaqa) sind nach al-Ikhtiyār erlaubt: zu Fuß, mit Pferden, Maultieren, Eseln und Kamelen sowie im Bogenschießen. Das Werk stützt sich auf Hadithe (Verweis Bukhari 2872) und auf einen Bericht von az-Zuhrī über die Gefährten. Außerdem braucht man diese Fertigkeiten im Kampf (jihād) für Angriff und Rückzug, und alles zu lernen, was zu den Mitteln des jihād gehört, ist nach dem Werk empfohlen (mandūb).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 168,
+              "passage": "ikhtiyar.ms0886",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms886",
+              "passageSha256Text": "5644637f8554decafed6215bfd1ccc214c8780d7554c79cc207d7afc6306f2dd",
+              "zitatVon": 544,
+              "zitatBis": 969,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 169,
+              "passage": "ikhtiyar.ms0886",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms886",
+              "passageSha256Text": "5644637f8554decafed6215bfd1ccc214c8780d7554c79cc207d7afc6306f2dd",
+              "zitatVon": 1308,
+              "zitatBis": 1476,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 2872
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a02",
+          "text": "Ob ein Rennen um einen Preis auch auf Maultieren und Eseln erlaubt ist, ist umstritten. Al-Ikhtiyār zählt sie auf; nach Radd al-Muḥtār stehen sie ebenso im Multaqā und im Majmaʿ. Der Kanz und az-Zaylaʿī nennen dagegen nur vier Arten: Pferde, Kamele, Laufen zu Fuß und Bogenschießen; außerhalb dieser vier, etwa mit Maultieren, ist ein Rennen dort mit Preis nicht erlaubt, ohne Preis aber bei allem. Nach al-ʿAllāma Qāsim hat niemand Rennen auf Eseln vertreten, weil die Erlaubnis mit dem Ansporn zum jihād begründet ist und man im Islam nicht auf Eseln kämpfte. Radd al-Muḥtār erklärt den Unterschied: Wer auf den allgemeinen Wortlaut des Hadith blickt, schließt Maultier und Esel ein; wer auf den Grund blickt, schließt sie aus, weil sie keine Mittel des jihād sind.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 168,
+              "passage": "ikhtiyar.ms0886",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms886",
+              "passageSha256Text": "5644637f8554decafed6215bfd1ccc214c8780d7554c79cc207d7afc6306f2dd",
+              "zitatVon": 544,
+              "zitatBis": 613,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 402,
+              "passage": "radd_al_muhtar.ms6132",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6132",
+              "passageSha256Text": "a5e68bb7e367b9978221588199d51cf18e117b648909f12878cca8c4eaa308c7",
+              "zitatVon": 992,
+              "zitatBis": 1063,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 402,
+              "passage": "radd_al_muhtar.ms6132",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6132",
+              "passageSha256Text": "a5e68bb7e367b9978221588199d51cf18e117b648909f12878cca8c4eaa308c7",
+              "zitatVon": 1064,
+              "zitatBis": 1294,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 402,
+              "passage": "radd_al_muhtar.ms6132",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6132",
+              "passageSha256Text": "a5e68bb7e367b9978221588199d51cf18e117b648909f12878cca8c4eaa308c7",
+              "zitatVon": 1355,
+              "zitatBis": 1517,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 402,
+              "passage": "radd_al_muhtar.ms6133",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6133",
+              "passageSha256Text": "f87b5e61d7e0a5f2f3808dd4df4473b0053dd1200538339795124d0b4c56a861",
+              "zitatVon": 168,
+              "zitatBis": 296,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a03",
+          "text": "Setzt nur eine Seite einen Preis aus oder ein Dritter, ist das nach al-Ikhtiyār erlaubt. Beispiele des Werks: Einer sagt zum anderen: „Gewinnst du gegen mich, gebe ich dir so viel; gewinne ich, nehme ich dir nichts ab.“ Oder der Befehlshaber sagt zu Reitern: „Wer von euch gewinnt, bekommt so viel“, oder zu Schützen: „Wer das Ziel trifft, bekommt so viel.“ Erlaubt ist das, weil es dazu anspornt, die Mittel des Kampfes zu lernen; das Werk stützt sich auch auf einen Hadith. Nach dem Analogieschluss (qiyās) wäre es nicht erlaubt, weil Eigentum an ein Wagnis geknüpft wird; erlaubt ist es nach Radd al-Muḥtār als Billigkeitsentscheidung (istiḥsān).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 169,
+              "passage": "ikhtiyar.ms0887",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms887",
+              "passageSha256Text": "e517dc4623d10e8a3c3c3905ff8c3888511aab312976cce8ce82cbcebbb48202",
+              "zitatVon": 82,
+              "zitatBis": 514,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 402,
+              "passage": "radd_al_muhtar.ms6133",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6133",
+              "passageSha256Text": "f87b5e61d7e0a5f2f3808dd4df4473b0053dd1200538339795124d0b4c56a861",
+              "zitatVon": 1102,
+              "zitatBis": 1280,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a04",
+          "text": "Ein solcher Preis wird nach Radd al-Muḥtār aber kein einklagbarer Anspruch: Weigert sich der Verlierer zu zahlen, zwingt ihn der Richter nicht und spricht auch nicht gegen ihn. Al-Mujtabā gibt zwar wieder, in einigen Abschriften heiße es, er werde gezwungen; Radd al-Muḥtār hält dem die bekannten Werke entgegen, etwa az-Zaylaʿī, adh-Dhakhīra, al-Khulāṣa und at-Tatarkhāniyya.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 402,
+              "passage": "radd_al_muhtar.ms6133",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6133",
+              "passageSha256Text": "f87b5e61d7e0a5f2f3808dd4df4473b0053dd1200538339795124d0b4c56a861",
+              "zitatVon": 905,
+              "zitatBis": 994,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 403,
+              "passage": "radd_al_muhtar.ms6133",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6133",
+              "passageSha256Text": "f87b5e61d7e0a5f2f3808dd4df4473b0053dd1200538339795124d0b4c56a861",
+              "zitatVon": 1345,
+              "zitatBis": 1541,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a05",
+          "text": "Setzen beide Seiten einen Preis aus, ist das nach al-Ikhtiyār Glücksspiel (qimār) und verboten. Radd al-Muḥtār nennt als Beispiel: „Gewinnt dein Pferd, bekommst du so viel von mir; gewinnt meines, bekomme ich so viel von dir.“ Beim Glücksspiel kann jeder sein Geld an den anderen verlieren oder das Geld des anderen gewinnen, und das ist nach dem Wortlaut der Offenbarung verboten. Setzt nur eine Seite einen Preis aus, ist das anders: Dann kann nur die eine Seite gewinnen und nur die andere verlieren.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 169,
+              "passage": "ikhtiyar.ms0887",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms887",
+              "passageSha256Text": "e517dc4623d10e8a3c3c3905ff8c3888511aab312976cce8ce82cbcebbb48202",
+              "zitatVon": 515,
+              "zitatBis": 560,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 403,
+              "passage": "radd_al_muhtar.ms6134",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6134",
+              "passageSha256Text": "c0ce673871ccec261293b91cb279a6075368aee453ed21a77557e1df04b9c3bf",
+              "zitatVon": 160,
+              "zitatBis": 626,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a06",
+          "text": "Setzen beide einen Preis aus, ist es nach al-Ikhtiyār doch erlaubt, wenn ein Dritter mit einem ebenbürtigen Pferd mitläuft, der „Erlaubtmacher“ (muḥallil): Gewinnt er gegen beide, bekommt er von beiden; gewinnen sie gegen ihn, gibt er ihnen nichts; und zwischen den beiden bekommt der Sieger vom anderen. Durch ihn ist es kein Glücksspiel mehr. Az-Zaylaʿī begründet nach Radd al-Muḥtār: Der Dritte verliert nicht in jedem Fall, er kann bekommen oder nicht; Glücksspiel ist nur, wo beide Seiten gleichermaßen verlieren können. Nach einer anderen Ansicht, die al-Ikhtiyār nennt, kann es auch umgekehrt sein: Gewinnen die beiden, gibt er ihnen; gewinnt er, nimmt er nichts. Auch das ist erlaubt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 169,
+              "passage": "ikhtiyar.ms0887",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms887",
+              "passageSha256Text": "e517dc4623d10e8a3c3c3905ff8c3888511aab312976cce8ce82cbcebbb48202",
+              "zitatVon": 561,
+              "zitatBis": 766,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 169,
+              "passage": "ikhtiyar.ms0887",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms887",
+              "passageSha256Text": "e517dc4623d10e8a3c3c3905ff8c3888511aab312976cce8ce82cbcebbb48202",
+              "zitatVon": 767,
+              "zitatBis": 857,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 403,
+              "passage": "radd_al_muhtar.ms6134",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6134",
+              "passageSha256Text": "c0ce673871ccec261293b91cb279a6075368aee453ed21a77557e1df04b9c3bf",
+              "zitatVon": 1389,
+              "zitatBis": 1469,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 403,
+              "passage": "radd_al_muhtar.ms6135",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6135",
+              "passageSha256Text": "dd9cc8ccc063c294c58ba8765ea69f545e926d21068f4227ff49ccabf1a66e39",
+              "zitatVon": 0,
+              "zitatBis": 152,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a07",
+          "text": "Das Pferd des Dritten muss den beiden anderen ebenbürtig sein: Ist es nicht wie ihre Pferde, ist es nach al-Ikhtiyār nicht erlaubt, denn ihn hinzuzunehmen nützt nichts, und es bleibt Glücksspiel. Radd al-Muḥtār erklärt: Er muss gewinnen oder verlieren können; gewinnt oder verliert er sicher, ist es nicht erlaubt; das Werk stützt sich dabei auf einen Hadith. Außerdem muss nach az-Zaylaʿī die Strecke so sein, dass die Pferde sie bewältigen können, und jedes Pferd muss gewinnen können; dasselbe sollte nach Radd al-Muḥtār für Pfeile und Wettläufe zu Fuß gelten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 169,
+              "passage": "ikhtiyar.ms0887",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms887",
+              "passageSha256Text": "e517dc4623d10e8a3c3c3905ff8c3888511aab312976cce8ce82cbcebbb48202",
+              "zitatVon": 858,
+              "zitatBis": 952,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 403,
+              "passage": "radd_al_muhtar.ms6134",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6134",
+              "passageSha256Text": "c0ce673871ccec261293b91cb279a6075368aee453ed21a77557e1df04b9c3bf",
+              "zitatVon": 633,
+              "zitatBis": 767,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 403,
+              "passage": "radd_al_muhtar.ms6135",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6135",
+              "passageSha256Text": "dd9cc8ccc063c294c58ba8765ea69f545e926d21068f4227ff49ccabf1a66e39",
+              "zitatVon": 153,
+              "zitatBis": 282,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a08",
+          "text": "Dieselbe Unterscheidung gilt nach al-Ikhtiyār, wenn zwei Rechtsgelehrte über eine Frage streiten, sich an einen Lehrer (shaykh) wenden wollen und dafür einen Preis aussetzen. Denn wenn ein Preis bei Pferden wegen des jihād erlaubt ist, dann auch hier, um zum Eifer beim Suchen von Wissen anzuspornen: Die Religion besteht durch das Wissen, wie sie durch den jihād besteht. Radd al-Muḥtār erklärt: Erlaubt ist, wenn der Preis nur für einen von beiden gilt, etwa „Stellt sich heraus, dass du recht hast, bekommst du so viel; habe ich recht, bekomme ich nichts“. Sagen sie dagegen „Wer von uns recht hat, bekommt vom anderen so viel“, ist es von beiden Seiten und damit Glücksspiel, außer sie nehmen einen Dritten hinzu.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 169,
+              "passage": "ikhtiyar.ms0887",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms887",
+              "passageSha256Text": "e517dc4623d10e8a3c3c3905ff8c3888511aab312976cce8ce82cbcebbb48202",
+              "zitatVon": 953,
+              "zitatBis": 1167,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 403,
+              "passage": "radd_al_muhtar.ms6135",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6135",
+              "passageSha256Text": "dd9cc8ccc063c294c58ba8765ea69f545e926d21068f4227ff49ccabf1a66e39",
+              "zitatVon": 493,
+              "zitatBis": 697,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 403,
+              "passage": "radd_al_muhtar.ms6135",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6135",
+              "passageSha256Text": "dd9cc8ccc063c294c58ba8765ea69f545e926d21068f4227ff49ccabf1a66e39",
+              "zitatVon": 698,
+              "zitatBis": 1007,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a09",
+          "text": "Ringen (muṣāraʿa) ist nach Radd al-Muḥtār keine Neuerung (bidʿa); das Werk führt dazu Berichte über den Propheten an. Nach al-Jawāhir ist Ringen – gestützt auf einen Bericht – erlaubt, um die Kraft für den Kampf zu erwerben; zum bloßen Zeitvertreib ist es verpönt. Auch für einen Preis beim Ringen gilt nach Radd al-Muḥtār dieselbe Unterscheidung wie beim Wettrennen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 404,
+              "passage": "radd_al_muhtar.ms6135",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6135",
+              "passageSha256Text": "dd9cc8ccc063c294c58ba8765ea69f545e926d21068f4227ff49ccabf1a66e39",
+              "zitatVon": 1123,
+              "zitatBis": 1208,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 402,
+              "passage": "radd_al_muhtar.ms6133",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6133",
+              "passageSha256Text": "f87b5e61d7e0a5f2f3808dd4df4473b0053dd1200538339795124d0b4c56a861",
+              "zitatVon": 814,
+              "zitatBis": 904,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 403,
+              "passage": "radd_al_muhtar.ms6135",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6135",
+              "passageSha256Text": "dd9cc8ccc063c294c58ba8765ea69f545e926d21068f4227ff49ccabf1a66e39",
+              "zitatVon": 544,
+              "zitatBis": 618,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a10",
+          "text": "Ohne Preis sind nach Radd al-Muḥtār alle Spiele erlaubt, die Reitkunst (furūsiyya) lehren und für den jihād nützen, wenn man damit nicht nur Zeitvertreib sucht. Denn der Preis ist nur durch einen Hadith gegen den Analogieschluss erlaubt; was darüber hinausgeht, ist ohne Preis erlaubt. Als Beispiel nennt das Werk nach al-Quhustānī das Polospiel (ṣawlajān), wenn man damit Reitkunst lernen will.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 402,
+              "passage": "radd_al_muhtar.ms6133",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6133",
+              "passageSha256Text": "f87b5e61d7e0a5f2f3808dd4df4473b0053dd1200538339795124d0b4c56a861",
+              "zitatVon": 605,
+              "zitatBis": 813,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 404,
+              "passage": "radd_al_muhtar.ms6135",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6135",
+              "passageSha256Text": "dd9cc8ccc063c294c58ba8765ea69f545e926d21068f4227ff49ccabf1a66e39",
+              "zitatVon": 1359,
+              "zitatBis": 1461,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a11",
+          "text": "Zu weiteren Wettkämpfen sagt Radd al-Muḥtār: Rennen mit Rindern, mit Booten und im Schwimmen sind nach dem Anschein der Aussagen der Gelehrten erlaubt. Schießen mit Kugeln (bunduq) oder Steinen gilt wie Bogenschießen. Steine mit der Hand zu heben, ist dem Anschein nach nicht zu beanstanden, wenn man damit üben und sich für Tapferkeit stärken will. Bei Rennen mit Vögeln hat das Werk Bedenken. Aṭ-Ṭaḥṭāwī meinte dagegen, nach den Regeln der Schule sei das meiste davon verbotener Zeitvertreib, etwa Polo; Radd al-Muḥtār hält dem die Erlaubnis des Polospiels zum Erlernen der Reitkunst entgegen.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 404,
+              "passage": "radd_al_muhtar.ms6136",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6136",
+              "passageSha256Text": "eab058a40c656b12bfcf1cd4dfe9079b1c53121543089a22d8a91d77aefafa9f",
+              "zitatVon": 340,
+              "zitatBis": 678,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 404,
+              "passage": "radd_al_muhtar.ms6136",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6136",
+              "passageSha256Text": "eab058a40c656b12bfcf1cd4dfe9079b1c53121543089a22d8a91d77aefafa9f",
+              "zitatVon": 183,
+              "zitatBis": 339,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a12",
+          "text": "Wettrennen mit Pferden zur Übung (riyāḍa) sind nach al-Ikhtiyār empfohlen, solange man die Pferde nicht erschöpft; ebenso Wettläufe zu Fuß und das Bogenschießen. Das Werk führt dazu einen Hadith an, den ʿUqba ibn ʿĀmir al-Juhanī überliefert. Ein Reittier anzutreiben und galoppieren zu lassen, ist für den jihād oder einen anderen berechtigten Zweck nicht zu beanstanden; nur zum Zeitvertreib ist es verpönt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 169,
+              "passage": "ikhtiyar.ms0887",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms887",
+              "passageSha256Text": "e517dc4623d10e8a3c3c3905ff8c3888511aab312976cce8ce82cbcebbb48202",
+              "zitatVon": 1168,
+              "zitatBis": 1442,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a13",
+          "text": "Empfohlen ist ein solcher Wettkampf nach Radd al-Muḥtār nur mit der richtigen Absicht. Wer dabei nur Zeitvertreib oder Ruhm sucht oder seine Tapferkeit zur Schau stellen will, für den ist er dem Anschein nach verpönt: Wie Erlaubtes durch eine gute Absicht zum Gottesdienst wird, wird Gottesdienst durch eine schlechte Absicht zur Sünde. Das Werk stützt sich dabei auf einen Hadith (Verweis Bukhari 1).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 402,
+              "passage": "radd_al_muhtar.ms6133",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6133",
+              "passageSha256Text": "f87b5e61d7e0a5f2f3808dd4df4473b0053dd1200538339795124d0b4c56a861",
+              "zitatVon": 302,
+              "zitatBis": 477,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 1
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a14",
+          "text": "Ein Reittier belädt man nach Radd al-Muḥtār nicht über seine Kraft, und man schlägt es nach einhelliger Ansicht weder ins Gesicht noch auf den Kopf. Stolpert ein Reittier, liegt das nach al-Ikhtiyār daran, dass der Reiter den Zügel schlecht hält – dafür wird das Tier nicht bestraft. Scheut es, liegt es an seinem schlechten Wesen, und es wird dafür erzogen. Beide Werke stützen sich dabei auf einen Hadith. Radd al-Muḥtār nennt außerdem die Ansicht Abū Ḥanīfas, dass man es überhaupt nicht schlägt. (Unsicher: Worauf sich diese Ansicht bezieht und ob der folgende Satz „wenn es sein Eigentum ist“ sie einschränkt oder fortführt, ist im benutzten Text nicht eindeutig; am Druck prüfen.)",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 401,
+              "passage": "radd_al_muhtar.ms6132",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6132",
+              "passageSha256Text": "a5e68bb7e367b9978221588199d51cf18e117b648909f12878cca8c4eaa308c7",
+              "zitatVon": 74,
+              "zitatBis": 151,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 402,
+              "passage": "radd_al_muhtar.ms6132",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6132",
+              "passageSha256Text": "a5e68bb7e367b9978221588199d51cf18e117b648909f12878cca8c4eaa308c7",
+              "zitatVon": 152,
+              "zitatBis": 189,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 170,
+              "passage": "ikhtiyar.ms0888",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms888",
+              "passageSha256Text": "76af91c5993024fd512a2cdf7b228745208bd0080302e784c46a8e4a86a70d77",
+              "zitatVon": 0,
+              "zitatBis": 68,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 402,
+              "passage": "radd_al_muhtar.ms6132",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6132",
+              "passageSha256Text": "a5e68bb7e367b9978221588199d51cf18e117b648909f12878cca8c4eaa308c7",
+              "zitatVon": 247,
+              "zitatBis": 324,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a15",
+          "text": "Pferde zu verschneiden, ist nach al-Ikhtiyār nicht verboten: Man kennt es seit der Zeit des Propheten bis heute, ohne dass es abgelehnt wurde, und verschnittene Pferde zu kaufen und zu reiten, ist nach einhelliger Ansicht erlaubt. Ein Wort ʿUmars, das davon abrät, erklärt das Werk damit, dass das Wiehern des Hengstes den Feind erschreckt. Ebenso soll man nach dem Werk ein Pferd nicht über das hinaus laufen lassen, was es tragen kann.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī s-Sabq wa-r-Ramy",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 170,
+              "passage": "ikhtiyar.ms0888",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms888",
+              "passageSha256Text": "76af91c5993024fd512a2cdf7b228745208bd0080302e784c46a8e4a86a70d77",
+              "zitatVon": 69,
+              "zitatBis": 376,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a16",
+          "text": "Auf ein Ziel in Richtung der Qibla zu schießen, ist nach Radd al-Muḥtār verpönt; das Werk gibt es nach at-Tatarkhāniyya und as-Sirājiyya wieder.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 403,
+              "passage": "radd_al_muhtar.ms6135",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6135",
+              "passageSha256Text": "dd9cc8ccc063c294c58ba8765ea69f545e926d21068f4227ff49ccabf1a66e39",
+              "zitatVon": 428,
+              "zitatBis": 492,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a17",
+          "text": "Wer ein Rennen gewonnen hat, bestimmt man nach Radd al-Muḥtār bei Kamelen an der Schulter und bei Pferden am Hals; nach einer anderen Ansicht kommt es auf die Füße (al-aqdām) an. Das Werk gibt es nach Ghurar al-Afkār und al-Muḥarrir wieder. (Unsicher: Das Wort für „Hals“ ist im benutzten Text verschrieben und hier sinngemäß gelesen; am Druck prüfen.)",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 403,
+              "passage": "radd_al_muhtar.ms6135",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6135",
+              "passageSha256Text": "dd9cc8ccc063c294c58ba8765ea69f545e926d21068f4227ff49ccabf1a66e39",
+              "zitatVon": 288,
+              "zitatBis": 423,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.a18",
+          "text": "Schach ist nach Radd al-Muḥtār bei den Hanefiten verboten, auch wenn es Kenntnisse der Reitkunst vermitteln mag. Das Werk begründet es mit einem Hadith und damit, dass sein Schaden größer ist als sein Nutzen, weil der Spieler sich darin verliert.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Bāb al-Istibrāʾ wa-ghayruhu › Faṣl fī l-Bayʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 404,
+              "passage": "radd_al_muhtar.ms6136",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6136",
+              "passageSha256Text": "eab058a40c656b12bfcf1cd4dfe9079b1c53121543089a22d8a91d77aefafa9f",
+              "zitatVon": 1128,
+              "zitatBis": 1241,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l04.a01",
+          "behauptung": "Wettläufe zu Fuß und Wettkämpfe im Bogenschießen sind nach al-Ikhtiyār erlaubt.",
+          "richtig": true,
+          "begruendung": "Al-Ikhtiyār nennt Rennen zu Fuß, mit Pferden, Maultieren, Eseln und Kamelen sowie das Bogenschießen erlaubt; was zu den Mitteln des jihād gehört, zu lernen, ist empfohlen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l04.a03",
+          "fall": "Eine Trainerin sagt zu zwei Läuferinnen: „Wer von euch gewinnt, bekommt von mir ein Buch.“ Die Läuferinnen selbst setzen nichts ein.",
+          "frage": "Was gilt nach al-Ikhtiyār?",
+          "optionen": [
+            "Das ist erlaubt, weil der Preis von einer dritten Person kommt.",
+            "Das ist Glücksspiel und verboten.",
+            "Das ist nur erlaubt, wenn ein Richter zustimmt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l04.a05",
+          "fall": "Zwei Freunde vereinbaren vor einem Wettlauf: Wer verliert, zahlt dem anderen zehn Euro. Ein Dritter läuft nicht mit.",
+          "frage": "Wie beurteilen al-Ikhtiyār und Radd al-Muḥtār das?",
+          "optionen": [
+            "Es ist Glücksspiel (qimār) und verboten, weil beide Seiten einen Preis aussetzen.",
+            "Es ist erlaubt, weil es ein Wettlauf zu Fuß ist.",
+            "Es ist empfohlen, weil es zum Üben anspornt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l04.a07",
+          "fall": "Zwei Reiter setzen beide einen Preis aus und nehmen einen Dritten hinzu. Dessen Pferd ist aber so langsam, dass es sicher verliert.",
+          "frage": "Ist das nach al-Ikhtiyār erlaubt?",
+          "optionen": [
+            "Nein; das Pferd des Dritten muss ebenbürtig sein, sonst bleibt es Glücksspiel.",
+            "Ja; es genügt, dass irgendein Dritter mitläuft.",
+            "Ja, wenn der Dritte selbst nichts einsetzt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q05",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e03.l04.a06",
+          "anweisung": "Ordne zu, was beim Rennen mit einem Dritten (muḥallil) nach al-Ikhtiyār gilt.",
+          "paare": [
+            {
+              "links": "Der Dritte gewinnt gegen beide",
+              "rechts": "er bekommt von beiden"
+            },
+            {
+              "links": "Die beiden gewinnen gegen den Dritten",
+              "rechts": "er gibt ihnen nichts"
+            },
+            {
+              "links": "Einer der beiden gewinnt gegen den anderen",
+              "rechts": "er bekommt vom anderen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l04.a04",
+          "behauptung": "Weigert sich der Verlierer, den versprochenen Preis zu zahlen, zwingt ihn der Richter nach den bekannten Werken zur Zahlung.",
+          "richtig": false,
+          "begruendung": "Nach Radd al-Muḥtār wird der Preis kein einklagbarer Anspruch; der Richter zwingt ihn nicht. Die abweichende Angabe, die al-Mujtabā aus einigen Abschriften wiedergibt, widerspricht den bekannten Werken.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q07",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e03.l04.a08",
+          "fall": "Zwei Studenten streiten über eine Frage des Fiqh und wollen ihren Lehrer fragen. Der eine sagt: „Wenn du recht hast, schenke ich dir mein Buch; wenn ich recht habe, bekomme ich nichts.“",
+          "frage": "Was gilt nach al-Ikhtiyār und Radd al-Muḥtār?",
+          "optionen": [
+            "Das ist erlaubt, weil der Preis nur von einer Seite kommt und zum Suchen von Wissen anspornt.",
+            "Das ist verboten, weil Preise nur bei Pferderennen erlaubt sind.",
+            "Das ist nur erlaubt, wenn beide einen Preis aussetzen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l04.a13",
+          "behauptung": "Ein Wettkampf ist nach Radd al-Muḥtār auch dann empfohlen, wenn man damit nur Ruhm sucht.",
+          "richtig": false,
+          "begruendung": "Empfohlen ist er nur mit der richtigen Absicht; wer Zeitvertreib oder Ruhm sucht, für den ist er dem Anschein nach verpönt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q09",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l04.a17",
+          "behauptung": "Woran man den Sieger eines Rennens erkennt, gibt Radd al-Muḥtār mit mehr als einer Ansicht wieder.",
+          "richtig": true,
+          "begruendung": "Nach Ghurar al-Afkār und al-Muḥarrir zählt bei Kamelen die Schulter; nach einer anderen Ansicht kommt es auf die Füße an.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q10",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l04.a14",
+          "behauptung": "Ein Reittier darf man nach Radd al-Muḥtār ins Gesicht schlagen, wenn es nicht gehorcht.",
+          "richtig": false,
+          "begruendung": "Nach einhelliger Ansicht schlägt man ein Reittier weder ins Gesicht noch auf den Kopf, und man belädt es nicht über seine Kraft.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q11",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l04.a09",
+          "behauptung": "Ringen ist nach Radd al-Muḥtār eine Neuerung (bidʿa).",
+          "richtig": false,
+          "begruendung": "Radd al-Muḥtār sagt ausdrücklich, dass Ringen keine Neuerung ist; zum bloßen Zeitvertreib ist es nach al-Jawāhir aber verpönt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q12",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e03.l04.a02",
+          "anweisung": "Ordne zu, welche Rennen um einen Preis die Werke erlauben.",
+          "paare": [
+            {
+              "links": "al-Ikhtiyār, Multaqā und Majmaʿ",
+              "rechts": "auch auf Maultieren und Eseln"
+            },
+            {
+              "links": "Kanz und az-Zaylaʿī",
+              "rechts": "nur Pferde, Kamele, Laufen zu Fuß und Bogenschießen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e03.l04.q13",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e03.l04.a16",
+          "behauptung": "Auf ein Ziel in Richtung der Qibla zu schießen, ist nach Radd al-Muḥtār verpönt.",
+          "richtig": true,
+          "begruendung": "Radd al-Muḥtār gibt das nach at-Tatarkhāniyya und as-Sirājiyya wieder.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}

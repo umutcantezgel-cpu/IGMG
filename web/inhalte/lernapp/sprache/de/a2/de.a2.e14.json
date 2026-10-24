@@ -1,0 +1,4182 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "automatisch_geprueft",
+  "kurs": "de",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "de.a2.e14",
+    "reihenfolge": 15,
+    "thema": {
+      "de": "Freunde und Gefühle",
+      "tr": "Arkadaşlar ve duygular",
+      "ar": "الأصدقاء والمشاعر"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann über Gefühle sprechen und sagen, warum ich froh oder traurig bin.",
+        "tr": "Duygularım hakkında konuşabilir, neden mutlu ya da üzgün olduğumu söyleyebilirim.",
+        "ar": "أستطيع أن أتحدث عن مشاعري وأن أقول لماذا أنا مسرور أو حزين."
+      },
+      {
+        "de": "Ich kann mich entschuldigen, jemanden trösten und eine Entschuldigung annehmen.",
+        "tr": "Özür dileyebilir, birini teselli edebilir ve bir özrü kabul edebilirim.",
+        "ar": "أستطيع أن أعتذر وأن أواسي شخصًا وأن أقبل اعتذارًا."
+      }
+    ],
+    "symbol": "handshake",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a2.e14.deshalb",
+      "lemma": "deshalb",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Verbindungsadverb, Verb auf Platz 2"
+      },
+      "frequenzRang": 284,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.trotzdem",
+      "lemma": "trotzdem",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Verbindungsadverb, Verb auf Platz 2"
+      },
+      "frequenzRang": 398,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.daher",
+      "lemma": "daher",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Verbindungsadverb, Verb auf Platz 2"
+      },
+      "frequenzRang": 303,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.deswegen",
+      "lemma": "deswegen",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Verbindungsadverb, Verb auf Platz 2"
+      },
+      "frequenzRang": 742,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.darueber",
+      "lemma": "darüber",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Pronominaladverb (darüber reden)"
+      },
+      "frequenzRang": 259,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.darauf",
+      "lemma": "darauf",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Pronominaladverb (sich darauf freuen)"
+      },
+      "frequenzRang": 218,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.daran",
+      "lemma": "daran",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Pronominaladverb (denk daran)"
+      },
+      "frequenzRang": 306,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.darum",
+      "lemma": "darum",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Pronominaladverb und Verbindungsadverb"
+      },
+      "frequenzRang": 443,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.dagegen",
+      "lemma": "dagegen",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Pronominaladverb (Ich habe nichts dagegen.)"
+      },
+      "frequenzRang": 520,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.voellig",
+      "lemma": "völlig",
+      "wortart": "adverb",
+      "frequenzRang": 459,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.irgendwie",
+      "lemma": "irgendwie",
+      "wortart": "adverb",
+      "frequenzRang": 504,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.absolut",
+      "lemma": "absolut",
+      "wortart": "adverb",
+      "frequenzRang": 559,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.wenigstens",
+      "lemma": "wenigstens",
+      "wortart": "adverb",
+      "frequenzRang": 764,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.allerdings",
+      "lemma": "allerdings",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Verbindungsadverb, Verb auf Platz 2"
+      },
+      "frequenzRang": 225,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.aergern",
+      "lemma": "ärgern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "ärgern",
+        "praes_ich": "ärgere",
+        "praes_du": "ärgerst",
+        "praes_er_sie_es": "ärgert",
+        "praes_wir": "ärgern",
+        "praes_ihr": "ärgert",
+        "praes_sie_Sie": "ärgern",
+        "partizip_2": "geärgert",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 2920,
+      "quelle": "wiktionary:de:ärgern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ärgern‘ (https://de.wiktionary.org/wiki/ärgern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.streiten",
+      "lemma": "streiten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "streiten",
+        "praes_ich": "streite",
+        "praes_du": "streitest",
+        "praes_er_sie_es": "streitet",
+        "praes_wir": "streiten",
+        "praes_ihr": "streitet",
+        "praes_sie_Sie": "streiten",
+        "partizip_2": "gestritten",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 2491,
+      "quelle": "wiktionary:de:streiten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚streiten‘ (https://de.wiktionary.org/wiki/streiten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.entschuldigen",
+      "lemma": "entschuldigen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "entschuldigen",
+        "praes_ich": "entschuldige",
+        "praes_du": "entschuldigst",
+        "praes_er_sie_es": "entschuldigt",
+        "praes_wir": "entschuldigen",
+        "praes_ihr": "entschuldigt",
+        "praes_sie_Sie": "entschuldigen",
+        "imp_du": "entschuldige",
+        "imp_ihr": "entschuldigt",
+        "partizip_2": "entschuldigt",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 2031,
+      "quelle": "wiktionary:de:entschuldigen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚entschuldigen‘ (https://de.wiktionary.org/wiki/entschuldigen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.vertragen",
+      "lemma": "vertragen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "vertragen",
+        "praes_ich": "vertrage",
+        "praes_du": "verträgst",
+        "praes_er_sie_es": "verträgt",
+        "praes_wir": "vertragen",
+        "praes_ihr": "vertragt",
+        "praes_sie_Sie": "vertragen",
+        "partizip_2": "vertragen",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 4424,
+      "quelle": "wiktionary:de:vertragen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vertragen‘ (https://de.wiktionary.org/wiki/vertragen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.troesten",
+      "lemma": "trösten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "trösten",
+        "praes_ich": "tröste",
+        "praes_du": "tröstest",
+        "praes_er_sie_es": "tröstet",
+        "praes_wir": "trösten",
+        "praes_ihr": "tröstet",
+        "praes_sie_Sie": "trösten",
+        "imp_du": "tröste",
+        "imp_ihr": "tröstet",
+        "partizip_2": "getröstet"
+      },
+      "frequenzRang": 7407,
+      "quelle": "wiktionary:de:trösten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚trösten‘ (https://de.wiktionary.org/wiki/trösten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.vertrauen",
+      "lemma": "vertrauen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "vertrauen",
+        "praes_ich": "vertraue",
+        "praes_du": "vertraust",
+        "praes_er_sie_es": "vertraut",
+        "praes_wir": "vertrauen",
+        "praes_ihr": "vertraut",
+        "praes_sie_Sie": "vertrauen",
+        "imp_du": "vertrau",
+        "imp_ihr": "vertraut",
+        "partizip_2": "vertraut"
+      },
+      "frequenzRang": 803,
+      "quelle": "wiktionary:de:vertrauen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vertrauen‘ (https://de.wiktionary.org/wiki/vertrauen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.verzeihen",
+      "lemma": "verzeihen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verzeihen",
+        "praes_ich": "verzeihe",
+        "praes_du": "verzeihst",
+        "praes_er_sie_es": "verzeiht",
+        "praes_wir": "verzeihen",
+        "praes_ihr": "verzeiht",
+        "praes_sie_Sie": "verzeihen",
+        "imp_du": "verzeih",
+        "imp_ihr": "verzeiht",
+        "partizip_2": "verziehen"
+      },
+      "frequenzRang": 4583,
+      "quelle": "wiktionary:de:verzeihen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verzeihen‘ (https://de.wiktionary.org/wiki/verzeihen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.weinen",
+      "lemma": "weinen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "weinen",
+        "praes_du": "weinst",
+        "praes_er_sie_es": "weint",
+        "praes_wir": "weinen",
+        "praes_ihr": "weint",
+        "praes_sie_Sie": "weinen",
+        "partizip_2": "geweint"
+      },
+      "frequenzRang": 1714,
+      "quelle": "wiktionary:de:weinen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚weinen‘ (https://de.wiktionary.org/wiki/weinen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.laecheln",
+      "lemma": "lächeln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "lächeln",
+        "praes_ich": "lächle",
+        "praes_du": "lächelst",
+        "praes_er_sie_es": "lächelt",
+        "praes_wir": "lächeln",
+        "praes_ihr": "lächelt",
+        "praes_sie_Sie": "lächeln",
+        "imp_du": "lächle",
+        "imp_ihr": "lächelt",
+        "partizip_2": "gelächelt"
+      },
+      "frequenzRang": 1683,
+      "quelle": "wiktionary:de:lächeln",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚lächeln‘ (https://de.wiktionary.org/wiki/lächeln), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.loesen",
+      "lemma": "lösen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "lösen",
+        "praes_ich": "löse",
+        "praes_du": "löst",
+        "praes_er_sie_es": "löst",
+        "praes_wir": "lösen",
+        "praes_ihr": "löst",
+        "praes_sie_Sie": "lösen",
+        "partizip_2": "gelöst"
+      },
+      "frequenzRang": 700,
+      "quelle": "wiktionary:de:lösen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚lösen‘ (https://de.wiktionary.org/wiki/lösen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.aufhoeren",
+      "lemma": "aufhören",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "auf"
+      },
+      "formen": {
+        "infinitiv": "aufhören",
+        "verbzusatz": "auf",
+        "praes_ich": "höre",
+        "praes_du": "hörst",
+        "praes_er_sie_es": "hört",
+        "praes_wir": "hören",
+        "praes_ihr": "hört",
+        "praes_sie_Sie": "hören",
+        "imp_du": "hör",
+        "imp_ihr": "hört",
+        "partizip_2": "aufgehört"
+      },
+      "frequenzRang": 1346,
+      "quelle": "wiktionary:de:aufhören",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚aufhören‘ (https://de.wiktionary.org/wiki/aufhören), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.nachdenken",
+      "lemma": "nachdenken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "nach"
+      },
+      "formen": {
+        "infinitiv": "nachdenken",
+        "verbzusatz": "nach",
+        "praes_ich": "denke",
+        "praes_du": "denkst",
+        "praes_er_sie_es": "denkt",
+        "praes_wir": "denken",
+        "praes_ihr": "denkt",
+        "praes_sie_Sie": "denken",
+        "imp_du": "denk",
+        "imp_ihr": "denkt",
+        "partizip_2": "nachgedacht"
+      },
+      "frequenzRang": 1600,
+      "quelle": "wiktionary:de:nachdenken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚nachdenken‘ (https://de.wiktionary.org/wiki/nachdenken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.versprechen",
+      "lemma": "versprechen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "versprechen",
+        "praes_ich": "verspreche",
+        "praes_du": "versprichst",
+        "praes_er_sie_es": "verspricht",
+        "praes_wir": "versprechen",
+        "praes_ihr": "versprecht",
+        "praes_sie_Sie": "versprechen",
+        "imp_du": "versprich",
+        "imp_ihr": "versprecht",
+        "partizip_2": "versprochen"
+      },
+      "frequenzRang": 1037,
+      "quelle": "wiktionary:de:versprechen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚versprechen‘ (https://de.wiktionary.org/wiki/versprechen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.luegen",
+      "lemma": "lügen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "lügen",
+        "praes_ich": "lüge",
+        "praes_du": "lügst",
+        "praes_er_sie_es": "lügt",
+        "praes_wir": "lügen",
+        "praes_ihr": "lügt",
+        "praes_sie_Sie": "lügen",
+        "partizip_2": "gelogen"
+      },
+      "frequenzRang": 1437,
+      "quelle": "wiktionary:de:lügen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚lügen‘ (https://de.wiktionary.org/wiki/lügen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.gefuehl",
+      "lemma": "Gefühl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gefühle"
+      },
+      "formen": {
+        "pl": "Gefühle",
+        "dat_pl": "Gefühlen"
+      },
+      "frequenzRang": 450,
+      "quelle": "wiktionary:de:Gefühl",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gefühl‘ (https://de.wiktionary.org/wiki/Gefühl), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.gedanke",
+      "lemma": "Gedanke",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Gedanken"
+      },
+      "formen": {
+        "pl": "Gedanken",
+        "akk_dat_sg": "Gedanken",
+        "gen_sg": "Gedankens"
+      },
+      "frequenzRang": 541,
+      "quelle": "wiktionary:de:Gedanke",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gedanke‘ (https://de.wiktionary.org/wiki/Gedanke), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.sorge",
+      "lemma": "Sorge",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Sorgen"
+      },
+      "formen": {
+        "pl": "Sorgen"
+      },
+      "frequenzRang": 1562,
+      "quelle": "wiktionary:de:Sorge",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sorge‘ (https://de.wiktionary.org/wiki/Sorge), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.sorgen",
+      "lemma": "sorgen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "sorgen",
+        "praes_ich": "sorge",
+        "praes_du": "sorgst",
+        "praes_er_sie_es": "sorgt",
+        "praes_wir": "sorgen",
+        "praes_ihr": "sorgt",
+        "praes_sie_Sie": "sorgen",
+        "partizip_2": "gesorgt"
+      },
+      "frequenzRang": 394,
+      "quelle": "wiktionary:de:sorgen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚sorgen‘ (https://de.wiktionary.org/wiki/sorgen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.freude",
+      "lemma": "Freude",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 936,
+      "quelle": "wiktionary:de:Freude",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Freude‘ (https://de.wiktionary.org/wiki/Freude), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.freundschaft",
+      "lemma": "Freundschaft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Freundschaften"
+      },
+      "formen": {
+        "pl": "Freundschaften"
+      },
+      "frequenzRang": 2038,
+      "quelle": "wiktionary:de:Freundschaft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Freundschaft‘ (https://de.wiktionary.org/wiki/Freundschaft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.streit",
+      "lemma": "Streit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1553,
+      "quelle": "wiktionary:de:Streit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Streit‘ (https://de.wiktionary.org/wiki/Streit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.aerger",
+      "lemma": "Ärger",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 3519,
+      "quelle": "wiktionary:de:Ärger",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ärger‘ (https://de.wiktionary.org/wiki/Ärger), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.mut",
+      "lemma": "Mut",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1900,
+      "quelle": "wiktionary:de:Mut",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mut‘ (https://de.wiktionary.org/wiki/Mut), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.wahrheit",
+      "lemma": "Wahrheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 806,
+      "quelle": "wiktionary:de:Wahrheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wahrheit‘ (https://de.wiktionary.org/wiki/Wahrheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.stimmung",
+      "lemma": "Stimmung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Stimmungen"
+      },
+      "formen": {
+        "pl": "Stimmungen"
+      },
+      "frequenzRang": 1491,
+      "quelle": "wiktionary:de:Stimmung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stimmung‘ (https://de.wiktionary.org/wiki/Stimmung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.laune",
+      "lemma": "Laune",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Launen"
+      },
+      "formen": {
+        "pl": "Launen"
+      },
+      "frequenzRang": 3026,
+      "quelle": "wiktionary:de:Laune",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Laune‘ (https://de.wiktionary.org/wiki/Laune), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.respekt",
+      "lemma": "Respekt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1628,
+      "quelle": "wiktionary:de:Respekt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Respekt‘ (https://de.wiktionary.org/wiki/Respekt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.rat",
+      "lemma": "Rat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1052,
+      "quelle": "wiktionary:de:Rat",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rat‘ (https://de.wiktionary.org/wiki/Rat), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.tipp",
+      "lemma": "Tipp",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Tipps"
+      },
+      "formen": {
+        "pl": "Tipps"
+      },
+      "frequenzRang": 1001,
+      "quelle": "wiktionary:de:Tipp",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tipp‘ (https://de.wiktionary.org/wiki/Tipp), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.situation",
+      "lemma": "Situation",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Situationen"
+      },
+      "formen": {
+        "pl": "Situationen"
+      },
+      "frequenzRang": 587,
+      "quelle": "wiktionary:de:Situation",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Situation‘ (https://de.wiktionary.org/wiki/Situation), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.sinn",
+      "lemma": "Sinn",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Sinne"
+      },
+      "formen": {
+        "pl": "Sinne",
+        "dat_pl": "Sinnen"
+      },
+      "frequenzRang": 385,
+      "quelle": "wiktionary:de:Sinn",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sinn‘ (https://de.wiktionary.org/wiki/Sinn), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.froh",
+      "lemma": "froh",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "frohe",
+        "endung_en": "frohen",
+        "endung_er": "froher",
+        "endung_es": "frohes",
+        "endung_em": "frohem",
+        "komparativ": "froher",
+        "superlativ": "frohesten",
+        "superlativ_e": "froheste"
+      },
+      "frequenzRang": 967,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.traurig",
+      "lemma": "traurig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "traurige",
+        "endung_en": "traurigen",
+        "endung_er": "trauriger",
+        "endung_es": "trauriges",
+        "endung_em": "traurigem",
+        "komparativ": "trauriger",
+        "superlativ": "traurigsten",
+        "superlativ_e": "traurigste"
+      },
+      "frequenzRang": 1105,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.wuetend",
+      "lemma": "wütend",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "wütende",
+        "endung_en": "wütenden",
+        "endung_er": "wütender",
+        "endung_es": "wütendes",
+        "endung_em": "wütendem"
+      },
+      "frequenzRang": 3049,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.stolz",
+      "lemma": "stolz",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "stolze",
+        "endung_en": "stolzen",
+        "endung_er": "stolzer",
+        "endung_es": "stolzes",
+        "endung_em": "stolzem",
+        "komparativ": "stolzer",
+        "superlativ": "stolzesten",
+        "superlativ_e": "stolzeste"
+      },
+      "frequenzRang": 845,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.enttaeuscht",
+      "lemma": "enttäuscht",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "enttäuschte",
+        "endung_en": "enttäuschten",
+        "endung_er": "enttäuschter",
+        "endung_es": "enttäuschtes",
+        "endung_em": "enttäuschtem"
+      },
+      "frequenzRang": 11523,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.gluecklich",
+      "lemma": "glücklich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "glückliche",
+        "endung_en": "glücklichen",
+        "endung_er": "glücklicher",
+        "endung_es": "glückliches",
+        "endung_em": "glücklichem",
+        "komparativ": "glücklicher",
+        "superlativ": "glücklichsten",
+        "superlativ_e": "glücklichste"
+      },
+      "frequenzRang": 686,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.ungluecklich",
+      "lemma": "unglücklich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "unglückliche",
+        "endung_en": "unglücklichen",
+        "endung_er": "unglücklicher",
+        "endung_es": "unglückliches",
+        "endung_em": "unglücklichem"
+      },
+      "frequenzRang": 3306,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.zufrieden",
+      "lemma": "zufrieden",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "zufriedene",
+        "endung_en": "zufriedenen",
+        "endung_er": "zufriedener",
+        "endung_es": "zufriedenes",
+        "endung_em": "zufriedenem",
+        "komparativ": "zufriedener",
+        "superlativ": "zufriedensten",
+        "superlativ_e": "zufriedenste"
+      },
+      "frequenzRang": 1110,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.sauer",
+      "lemma": "sauer",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "saure",
+        "endung_en": "sauren",
+        "endung_er": "saurer",
+        "endung_es": "saures",
+        "endung_em": "saurem"
+      },
+      "frequenzRang": 2808,
+      "merkmale": {
+        "gebrauch": "umgangssprachlich: verärgert, wütend (nicht der Geschmack)"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.nervoes",
+      "lemma": "nervös",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "nervöse",
+        "endung_en": "nervösen",
+        "endung_er": "nervöser",
+        "endung_es": "nervöses",
+        "endung_em": "nervösem",
+        "komparativ": "nervöser",
+        "superlativ": "nervösesten",
+        "superlativ_e": "nervöseste"
+      },
+      "frequenzRang": 4342,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.ueberrascht",
+      "lemma": "überrascht",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "überraschte",
+        "endung_en": "überraschten",
+        "endung_er": "überraschter",
+        "endung_es": "überraschtes",
+        "endung_em": "überraschtem"
+      },
+      "frequenzRang": 1461,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.einsam",
+      "lemma": "einsam",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "einsame",
+        "endung_en": "einsamen",
+        "endung_er": "einsamer",
+        "endung_es": "einsames",
+        "endung_em": "einsamem",
+        "komparativ": "einsamer",
+        "superlativ": "einsamsten",
+        "superlativ_e": "einsamste"
+      },
+      "frequenzRang": 3096,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.mutig",
+      "lemma": "mutig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "mutige",
+        "endung_en": "mutigen",
+        "endung_er": "mutiger",
+        "endung_es": "mutiges",
+        "endung_em": "mutigem",
+        "komparativ": "mutiger",
+        "superlativ": "mutigsten",
+        "superlativ_e": "mutigste"
+      },
+      "frequenzRang": 3212,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.ehrlich",
+      "lemma": "ehrlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ehrliche",
+        "endung_en": "ehrlichen",
+        "endung_er": "ehrlicher",
+        "endung_es": "ehrliches",
+        "endung_em": "ehrlichem",
+        "komparativ": "ehrlicher",
+        "superlativ": "ehrlichsten",
+        "superlativ_e": "ehrlichste"
+      },
+      "frequenzRang": 772,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.boese",
+      "lemma": "böse",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "böse",
+        "endung_en": "bösen",
+        "endung_er": "böser",
+        "endung_es": "böses",
+        "endung_em": "bösem",
+        "komparativ": "böser",
+        "superlativ": "bösesten",
+        "superlativ_e": "böseste"
+      },
+      "frequenzRang": 867,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.positiv",
+      "lemma": "positiv",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "positive",
+        "endung_en": "positiven",
+        "endung_er": "positiver",
+        "endung_es": "positives",
+        "endung_em": "positivem",
+        "komparativ": "positiver",
+        "superlativ": "positivsten",
+        "superlativ_e": "positivste"
+      },
+      "frequenzRang": 519,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.negativ",
+      "lemma": "negativ",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "negative",
+        "endung_en": "negativen",
+        "endung_er": "negativer",
+        "endung_es": "negatives",
+        "endung_em": "negativem",
+        "komparativ": "negativer",
+        "superlativ": "negativsten",
+        "superlativ_e": "negativste"
+      },
+      "frequenzRang": 1040,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.peinlich",
+      "lemma": "peinlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "peinliche",
+        "endung_en": "peinlichen",
+        "endung_er": "peinlicher",
+        "endung_es": "peinliches",
+        "endung_em": "peinlichem",
+        "komparativ": "peinlicher",
+        "superlativ": "peinlichsten",
+        "superlativ_e": "peinlichste"
+      },
+      "frequenzRang": 2236,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.miteinander",
+      "lemma": "miteinander",
+      "wortart": "adverb",
+      "frequenzRang": 1169,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.witz",
+      "lemma": "Witz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Witze"
+      },
+      "formen": {
+        "pl": "Witze",
+        "dat_pl": "Witzen"
+      },
+      "frequenzRang": 1202,
+      "quelle": "wiktionary:de:Witz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Witz‘ (https://de.wiktionary.org/wiki/Witz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.fair",
+      "lemma": "fair",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "faire",
+        "endung_en": "fairen",
+        "endung_er": "fairer",
+        "endung_es": "faires",
+        "endung_em": "fairem"
+      },
+      "frequenzRang": 1639,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.aufregen",
+      "lemma": "aufregen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "auf",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "aufregen",
+        "verbzusatz": "auf",
+        "praes_ich": "rege",
+        "praes_du": "regst",
+        "praes_er_sie_es": "regt",
+        "praes_wir": "regen",
+        "praes_ihr": "regt",
+        "praes_sie_Sie": "regen",
+        "partizip_2": "aufgeregt",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 2486,
+      "quelle": "wiktionary:de:aufregen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚aufregen‘ (https://de.wiktionary.org/wiki/aufregen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.gemein",
+      "lemma": "gemein",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "gemeine",
+        "endung_en": "gemeinen",
+        "endung_er": "gemeiner",
+        "endung_es": "gemeines",
+        "endung_em": "gemeinem"
+      },
+      "frequenzRang": 2645,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.schaemen",
+      "lemma": "schämen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "schämen",
+        "praes_ich": "schäme",
+        "praes_du": "schämst",
+        "praes_er_sie_es": "schämt",
+        "praes_wir": "schämen",
+        "praes_ihr": "schämt",
+        "praes_sie_Sie": "schämen",
+        "partizip_2": "geschämt",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 3496,
+      "quelle": "wiktionary:de:schämen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚schämen‘ (https://de.wiktionary.org/wiki/schämen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.zusammenhalten",
+      "lemma": "zusammenhalten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "zusammen",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "zusammenhalten",
+        "verbzusatz": "zusammen",
+        "praes_ich": "halte",
+        "praes_du": "hältst",
+        "praes_er_sie_es": "hält",
+        "praes_wir": "halten",
+        "praes_ihr": "haltet",
+        "praes_sie_Sie": "halten",
+        "partizip_2": "zusammengehalten"
+      },
+      "frequenzRang": 25079,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a2.e14.s0001",
+      "text": "Ich bin froh.",
+      "quelle": "tatoeba:1657039",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1657039 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0002",
+      "text": "Ich bin glücklich.",
+      "quelle": "tatoeba:626253",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #626253 von kolonjano (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0003",
+      "text": "Ich bin sehr unglücklich.",
+      "quelle": "tatoeba:3670470",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3670470 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0004",
+      "text": "Wieso siehst du heute so traurig aus?",
+      "quelle": "tatoeba:3997721",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3997721 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0005",
+      "text": "Ich erinnere mich an dieses Gefühl.",
+      "quelle": "tatoeba:3562752",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3562752 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0006",
+      "text": "Sie ist stolz auf dich.",
+      "quelle": "tatoeba:4038265",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4038265 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0007",
+      "text": "Ich denke, jeder fühlt sich manchmal einsam.",
+      "quelle": "tatoeba:1837194",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1837194 von Zaghawa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0008",
+      "text": "Soll ich weinen oder lachen?",
+      "quelle": "tatoeba:5664754",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5664754 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0009",
+      "text": "Warum weinst du?",
+      "quelle": "tatoeba:700323",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #700323 von kolonjano (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0010",
+      "text": "Wir sind mit dem Ergebnis zufrieden.",
+      "quelle": "tatoeba:6970744",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6970744 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0011",
+      "text": "Elif ist froh, weil heute die Sonne scheint.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0012",
+      "text": "Jan ist traurig, weil sein Fahrrad kaputt ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0013",
+      "text": "Ich bin glücklich, weil wir morgen in den Zoo gehen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0014",
+      "text": "Frau Becker ist mit unserer Klasse sehr zufrieden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0015",
+      "text": "Vor dem Test bin ich immer ein bisschen nervös.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0016",
+      "text": "Mama ist überrascht, weil wir die Küche aufgeräumt haben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0017",
+      "text": "Ich bin überrascht! Ist das Geschenk für mich?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0018",
+      "text": "In der neuen Schule fühlt sich Can noch einsam.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0019",
+      "text": "Paula springt vor Freude in die Luft.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0020",
+      "text": "Opa hat heute gute Laune.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0021",
+      "text": "Oma hat heute schlechte Laune.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0022",
+      "text": "Opa ist heute sehr stolz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0023",
+      "text": "Die Stimmung in der Klasse ist super.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0024",
+      "text": "Auf dem Foto lächeln alle.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0025",
+      "text": "Das Baby weint, weil es Hunger hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0026",
+      "text": "Ich habe ein gutes Gefühl.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0027",
+      "text": "Es ist normal, wenn man Gefühle zeigt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0028",
+      "text": "Mir ist langweilig, aber ich bin nicht traurig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0029",
+      "text": "Du siehst so froh aus, Ayla!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0030",
+      "text": "Ich bin glücklich, weil meine Tante zu Besuch kommt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0031",
+      "text": "Wie schön! Freust du dich schon darauf?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0032",
+      "text": "Ja, ich freue mich sehr darauf!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0033",
+      "text": "Ich bin froh, weil ich heute mit meinen Freunden spiele.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0034",
+      "text": "Es regnet, deshalb bleiben wir heute zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0035",
+      "text": "Es regnet, trotzdem spielen die Kinder draußen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0036",
+      "text": "Es regnet, aber wenigstens ist es warm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0037",
+      "text": "Mach dir deswegen keine Sorgen.",
+      "quelle": "tatoeba:2008832",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2008832 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0038",
+      "text": "Der Bus hatte Verspätung, deswegen komme ich zu spät.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0039",
+      "text": "Paula ist krank, daher kann sie nicht kommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0040",
+      "text": "Ich bin satt, daher möchte ich nichts mehr essen.",
+      "quelle": "tatoeba:5653924",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5653924 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0041",
+      "text": "Ich verstehe die Aufgabe nicht, darum frage ich die Lehrerin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0042",
+      "text": "Ich kümmere mich darum.",
+      "quelle": "tatoeba:2068510",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2068510 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0043",
+      "text": "Trotzdem habe ich das Spiel gewonnen.",
+      "quelle": "tatoeba:5782704",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5782704 von landano (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0044",
+      "text": "Allerdings habe ich kein Geld.",
+      "quelle": "tatoeba:942415",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #942415 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0045",
+      "text": "Der Film ist spannend, allerdings ist er sehr lang.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0046",
+      "text": "Was für ein schöner Gedanke!",
+      "quelle": "tatoeba:3683425",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3683425 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0047",
+      "text": "Mach dir darüber keine Gedanken!",
+      "quelle": "tatoeba:2008831",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2008831 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0048",
+      "text": "Ich habe lange über deine Frage nachgedacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0049",
+      "text": "Die Situation ist auch nicht so schlimm.",
+      "quelle": "tatoeba:3327375",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3327375 von Serafettin (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0050",
+      "text": "Das ist eine schwierige Situation für alle.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0051",
+      "text": "Streit hat keinen Sinn.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0052",
+      "text": "Mein Bruder sieht immer alles negativ.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0053",
+      "text": "Meine Schwester sieht alles positiv.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0054",
+      "text": "Irgendwie bin ich heute traurig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0055",
+      "text": "Wir schaffen das schon irgendwie.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0056",
+      "text": "Ich habe den Termin völlig vergessen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0057",
+      "text": "Ich bin absolut sicher.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0058",
+      "text": "Danke, dass du es wenigstens versucht hast.",
+      "quelle": "tatoeba:3608653",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3608653 von Jan_Schreiber (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0059",
+      "text": "Warum bist du so nervös, Emre?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0060",
+      "text": "Morgen schreiben wir einen Test, deshalb bin ich nervös.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0061",
+      "text": "Du hast doch viel gelernt. Denk positiv!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0062",
+      "text": "Du hast recht. Trotzdem bin ich ein bisschen nervös.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0063",
+      "text": "Ich bin müde, trotzdem lerne ich noch eine Stunde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0064",
+      "text": "Warum haben sie sich gestritten?",
+      "quelle": "tatoeba:2054190",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2054190 von Sirio60 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0065",
+      "text": "Mein Bruder und ich streiten uns manchmal um das Tablet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0066",
+      "text": "Ein Streit ist nicht schlimm, wenn man darüber redet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0067",
+      "text": "Ärgere dich nicht! Es ist nur ein Spiel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0068",
+      "text": "Ich verstehe deinen Ärger.",
+      "quelle": "tatoeba:3846135",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3846135 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0069",
+      "text": "Jan hat Ärger mit seinem Bruder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0070",
+      "text": "Papa regt sich über den Stau auf.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0071",
+      "text": "Ich weiß, dass du mir böse bist.",
+      "quelle": "tatoeba:12331173",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12331173 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0072",
+      "text": "Bist du noch böse auf mich?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0073",
+      "text": "Das war gemein von dir.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0074",
+      "text": "Bist du sauer?",
+      "quelle": "tatoeba:474880",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #474880 von landano (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0075",
+      "text": "Ich weiß nicht, warum er so wütend ist.",
+      "quelle": "tatoeba:12174901",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12174901 von xallace (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0076",
+      "text": "Beim Spielen müssen alle fair sein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0077",
+      "text": "Warum hast du gelogen?",
+      "quelle": "tatoeba:559919",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #559919 von ysmalan (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0078",
+      "text": "Ich sage dir die Wahrheit.",
+      "quelle": "tatoeba:601025",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #601025 von samueldora (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0079",
+      "text": "Ich versuche immer, ehrlich zu sein.",
+      "quelle": "tatoeba:2292533",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2292533 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0080",
+      "text": "Sei bitte ehrlich zu mir.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0081",
+      "text": "Mein Fehler war mir sehr peinlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0082",
+      "text": "Ich schäme mich.",
+      "quelle": "tatoeba:1841970",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1841970 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0083",
+      "text": "Konrad schämt sich, weil er gelogen hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0084",
+      "text": "Hört bitte auf mit dem Streit!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0085",
+      "text": "Endlich hat der Regen aufgehört.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0086",
+      "text": "Das ist kein Witz.",
+      "quelle": "tatoeba:381650",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #381650 von Ole (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0087",
+      "text": "Ich habe nichts dagegen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0088",
+      "text": "Was können wir dagegen tun?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0089",
+      "text": "Warum bist du so sauer, Mia?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0090",
+      "text": "Tim hat über mein Bild gelacht. Das war gemein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0091",
+      "text": "Hast du mit ihm darüber geredet?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0092",
+      "text": "Nein, aber ich rede morgen mit ihm darüber.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0093",
+      "text": "Entschuldige, ich wollte dich nicht ärgern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0094",
+      "text": "Ich verzeihe dir.",
+      "quelle": "tatoeba:809973",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #809973 von yunyo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0095",
+      "text": "Ich möchte mich bei dir entschuldigen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0096",
+      "text": "Es tut mir leid, dass ich so gemein war.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0097",
+      "text": "Schon gut, ich verzeihe dir.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0098",
+      "text": "Ich nehme deine Entschuldigung an und verzeihe dir.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0099",
+      "text": "Nach dem Streit haben wir uns schnell wieder vertragen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0100",
+      "text": "Wollen wir uns wieder vertragen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0101",
+      "text": "Ich verspreche dir, dass ich nicht mehr lüge.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0102",
+      "text": "Vertrau mir!",
+      "quelle": "tatoeba:374232",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #374232 von Liface (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0103",
+      "text": "Sie vertrauen einander.",
+      "quelle": "tatoeba:1684163",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1684163 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0104",
+      "text": "Elif vertraut ihrer besten Freundin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0105",
+      "text": "Wir sprechen mit Respekt miteinander.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0106",
+      "text": "Unsere Freundschaft ist mir sehr wichtig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0107",
+      "text": "Wir sollten mal in Ruhe miteinander sprechen!",
+      "quelle": "tatoeba:1928490",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1928490 von Tamy2 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0108",
+      "text": "Niemand fällt, wenn wir zusammenhalten.",
+      "quelle": "tatoeba:7751843",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7751843 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0109",
+      "text": "Gute Freunde halten immer zusammen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0110",
+      "text": "Könntest du mir bitte verzeihen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0111",
+      "text": "Würdest du bitte mit mir darüber reden?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0112",
+      "text": "Ich hätte gern deinen Rat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0113",
+      "text": "Schreib eine Nachricht an eine Freundin oder einen Freund und entschuldige dich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0114",
+      "text": "Hallo Selin, es tut mir leid. Ich war gestern gemein zu dir. Das war nicht fair. Ich habe mich sehr geärgert, deshalb habe ich so laut geredet. Kannst du mir verzeihen? Ich verspreche dir, das passiert nicht wieder. Deine Ayla",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0115",
+      "text": "Emre, es tut mir leid. Ich war gestern gemein zu dir.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0116",
+      "text": "Ja, das hat mich wirklich geärgert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0117",
+      "text": "Kannst du mir verzeihen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0118",
+      "text": "Es tut mir leid. Kannst du mir verzeihen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0119",
+      "text": "Oma tröstet mich, wenn ich traurig bin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0120",
+      "text": "Ich möchte meine Schwester trösten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0121",
+      "text": "Mama hat mich lange getröstet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0122",
+      "text": "Du solltest ihn um Rat fragen.",
+      "quelle": "tatoeba:413981",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #413981 von Robroy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0123",
+      "text": "Ich brauche deinen Rat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0124",
+      "text": "Hast du einen guten Tipp für mich?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0125",
+      "text": "Gemeinsam können wir jedes Problem lösen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0126",
+      "text": "Habt ihr euer Problem schon gelöst?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0127",
+      "text": "Man darf ruhig enttäuscht sein.",
+      "quelle": "tatoeba:12478768",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12478768 von Waldelfe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0128",
+      "text": "Jan ist enttäuscht, weil seine Mannschaft verloren hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0129",
+      "text": "Wenn dich jemand ärgert, sag es einer Lehrerin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0130",
+      "text": "Niemand ist perfekt, sei nicht traurig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0131",
+      "text": "Das ist nichts Schlimmes, mach dir keine Sorgen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0132",
+      "text": "Alle machen manchmal Fehler, deshalb ist das nicht schlimm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0133",
+      "text": "Viele Kinder fühlen sich am Anfang einsam.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0134",
+      "text": "Opa macht mir Mut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0135",
+      "text": "Du bist mutiger als ich.",
+      "quelle": "tatoeba:3349010",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3349010 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0136",
+      "text": "Ela ist mutig und sagt die Wahrheit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0137",
+      "text": "Mach dir keine Sorgen.",
+      "quelle": "tatoeba:109",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #109 von Dorenda (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0138",
+      "text": "Ich habe mir Sorgen gemacht.",
+      "quelle": "tatoeba:1888527",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1888527 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0139",
+      "text": "Mama sorgt sich, weil ich so spät komme.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0140",
+      "text": "Kopf hoch! Du warst trotzdem super.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0141",
+      "text": "Darauf freue ich mich schon.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0142",
+      "text": "Denk nicht mehr daran!",
+      "quelle": "tatoeba:3855327",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3855327 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e14.s0143",
+      "text": "Was ist los, Paula? Bist du traurig?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0144",
+      "text": "Ich bin traurig, weil ich meinen Schlüssel verloren habe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0145",
+      "text": "Keine Sorge, wir suchen ihn zusammen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0146",
+      "text": "Danke, jetzt geht es mir schon etwas besser.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0147",
+      "text": "Keine Sorge, ich helfe dir. Zusammen lösen wir das.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0148",
+      "text": "Rat und Tipps: Was tun nach einem Streit?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0149",
+      "text": "Greta aus der fünften Klasse hat Streit mit einer Freundin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0150",
+      "text": "Sie ist traurig und fragt: Was soll ich jetzt tun?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0151",
+      "text": "Hier sind unsere drei Tipps.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0152",
+      "text": "Erstens: Bist du noch wütend? Dann warte erst ein bisschen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0153",
+      "text": "Zweitens: Sprich in Ruhe und ehrlich mit deiner Freundin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0154",
+      "text": "Erzähl ihr von deinen Gefühlen und hör gut zu.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0155",
+      "text": "Drittens: Entschuldige dich, wenn du etwas falsch gemacht hast.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0156",
+      "text": "Oft ist der Streit dann schnell vorbei.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0157",
+      "text": "Gute Freundinnen vertragen sich wieder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0158",
+      "text": "Greta hat Streit mit einer Freundin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0159",
+      "text": "Man soll sofort reden, wenn man noch wütend ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0160",
+      "text": "Greta hat sich mit einer Freundin über einen Witz gestritten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0161",
+      "text": "Was ist der dritte Tipp?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0162",
+      "text": "Man soll sich entschuldigen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0163",
+      "text": "Man soll nicht mehr miteinander sprechen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0164",
+      "text": "Man soll der Freundin einen Witz erzählen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0165",
+      "text": "Laylā ist traurig",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0166",
+      "text": "Seit einer Woche ist Laylā in der Pause traurig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0167",
+      "text": "Elif spielt nur noch mit Mia, deshalb ist Laylā allein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0168",
+      "text": "Nach der Schule holt Oma Sevim die Mädchen ab. Laylā lächelt nicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0169",
+      "text": "Laylā, du siehst traurig aus. Was ist los?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0170",
+      "text": "Ich bin traurig, weil Elif nur noch mit Mia spielt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0171",
+      "text": "Das ist nicht fair, Laylā! Du bist doch meine Freundin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0172",
+      "text": "Trotzdem spielst du jeden Tag mit ihr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0173",
+      "text": "Die beiden Mädchen sind wütend und reden nicht mehr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0174",
+      "text": "Ihr seid doch Freundinnen. Kommt, wir reden in Ruhe darüber.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0175",
+      "text": "Elif, sag mal ehrlich: Warum spielst du mit Mia?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0176",
+      "text": "Mia ist neu in der Klasse und fühlt sich einsam.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0177",
+      "text": "Deshalb spiele ich in der Pause mit ihr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0178",
+      "text": "Ach so! Daran habe ich nicht gedacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0179",
+      "text": "Entschuldige, Elif. Ich war nur traurig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0180",
+      "text": "Schon gut. Ich habe auch nicht an deine Gefühle gedacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0181",
+      "text": "Spielt doch morgen alle drei miteinander!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0182",
+      "text": "Am nächsten Tag sind Laylā und Elif wieder froh.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0183",
+      "text": "Die Freundinnen haben sich wieder vertragen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0184",
+      "text": "Wie fühlt sich Laylā in der Pause?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0185",
+      "text": "Sie ist traurig und allein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0186",
+      "text": "Sie ist froh und lacht viel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0187",
+      "text": "Warum spielt Elif mit Mia?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0188",
+      "text": "Weil Mia sich einsam fühlt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0189",
+      "text": "Weil Mia gute Witze erzählt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0190",
+      "text": "Welchen Rat gibt Oma den Mädchen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0191",
+      "text": "Sie sollen alle drei miteinander spielen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0192",
+      "text": "Sie sollen nicht mehr miteinander reden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0193",
+      "text": "Wie endet der Streit?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0194",
+      "text": "Die Mädchen vertragen sich wieder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0195",
+      "text": "Laylā und Elif sind immer noch böse.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0196",
+      "text": "Jan ist enttäuscht",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0197",
+      "text": "Sein Freund Yazan möchte ihn trösten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0198",
+      "text": "Jan, warum siehst du so traurig aus?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0199",
+      "text": "Wir haben das Spiel verloren. Ich bin so enttäuscht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0200",
+      "text": "Das verstehe ich. Ich bin auch traurig, wenn meine Mannschaft verliert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0201",
+      "text": "Und ich habe kein Tor geschossen. Das ist mir peinlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0202",
+      "text": "Das muss dir nicht peinlich sein. Du hast gut gespielt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0203",
+      "text": "Meinst du? Der Trainer ist bestimmt sauer auf mich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0204",
+      "text": "Nein, er ist bestimmt nicht böse. Ihr wart trotzdem ein gutes Team.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0205",
+      "text": "Danke, Yazan. Du kannst gut trösten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0206",
+      "text": "Kopf hoch! Ich bin stolz auf dich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0207",
+      "text": "Und wenigstens hat das Spiel Spaß gemacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0208",
+      "text": "Jan lächelt wieder. Yazan ist ein guter Freund.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0209",
+      "text": "Wie fühlt sich Jan nach dem Spiel?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0210",
+      "text": "Er ist enttäuscht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0211",
+      "text": "Er ist stolz und froh.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0212",
+      "text": "Was ist Jan peinlich?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0213",
+      "text": "Ihm ist peinlich, dass er kein Tor geschossen hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0214",
+      "text": "Ihm ist peinlich, dass er gelogen hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0215",
+      "text": "Ist der Trainer böse auf Jan?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0216",
+      "text": "Yazan glaubt, dass der Trainer nicht böse ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0217",
+      "text": "Ja, der Trainer ist sehr wütend.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0218",
+      "text": "Was macht Jan am Ende?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0219",
+      "text": "Er lächelt wieder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0220",
+      "text": "Er weint immer noch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0221",
+      "text": "Es ist schon spät, trotzdem ist Emre noch wach.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0222",
+      "text": "Meine Brüder streiten sich oft, aber sie vertragen sich schnell wieder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0223",
+      "text": "Hast du dich schon bei Selin entschuldigt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0224",
+      "text": "Konrad hat nicht gelogen, er hat die Wahrheit gesagt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0225",
+      "text": "Es ärgert mich, wenn jemand nicht fair spielt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0226",
+      "text": "Weil Elif sich einsam fühlt, ruft sie Oma Sevim an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0227",
+      "text": "Ela ist sauer, weil Can gelogen hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0228",
+      "text": "Ela ist traurig, weil Can gelogen hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0229",
+      "text": "Ela ist sauer, weil Can gelacht hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0230",
+      "text": "Warum bist du so glücklich, Can?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0231",
+      "text": "Ich habe mich mit Emre wieder vertragen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0232",
+      "text": "Super! Warum habt ihr euch gestritten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0233",
+      "text": "Wir haben uns über einen Witz gestritten. Jetzt ist alles wieder gut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0234",
+      "text": "Ich bin so nervös. Hast du einen Tipp für mich?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0235",
+      "text": "Denk positiv und atme ruhig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0236",
+      "text": "Und wenn ich trotzdem nervös bin?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0237",
+      "text": "Das ist normal. Alle sind am Anfang ein bisschen nervös.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0238",
+      "text": "Ich bin traurig, weil Felix heute nicht kommt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0239",
+      "text": "Du warst gestern so still. Bist du noch sauer?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0240",
+      "text": "Ein bisschen. Dein Witz war wirklich gemein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0241",
+      "text": "Das wollte ich nicht. Entschuldige bitte!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0242",
+      "text": "Okay, ich verzeihe dir. Wir sind wieder Freunde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0243",
+      "text": "Warum lächelst du so, Selin?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0244",
+      "text": "Ich bin glücklich, weil ich beim Turnier gewonnen habe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0245",
+      "text": "Toll! Deine Eltern sind bestimmt stolz auf dich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0246",
+      "text": "Ja, sie haben sich sehr darüber gefreut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0247",
+      "text": "Emre ist krank, deshalb besuche ich ihn heute.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0248",
+      "text": "Ich bin müde, trotzdem helfe ich dir gern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0249",
+      "text": "Ich habe mich entschuldigt und meine Freundin hat mir verziehen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0250",
+      "text": "Opa tröstet Emre, weil er traurig ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0251",
+      "text": "Oma tröstet Emre, weil er traurig ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0252",
+      "text": "Opa tröstet Emre, weil er müde ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0253",
+      "text": "Wir haben uns wieder vertragen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0254",
+      "text": "Weil Can die Wahrheit gesagt hat, ist Papa nicht böse.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0255",
+      "text": "Ich bin glücklich, weil wir uns wieder vertragen haben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0256",
+      "text": "Entschuldige bitte! – Schon gut, ich verzeihe dir.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e14.s0257",
+      "text": "Sag die Wahrheit, sonst vertraut dir niemand mehr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a2.e14.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wie ich mich fühle und warum.",
+        "tr": "Nasıl hissettiğimi ve nedenini söyleyebilirim.",
+        "ar": "أستطيع أن أقول كيف أشعر ولماذا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e14.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.froh",
+          "ablenker": ["de.a2.e14.traurig", "de.a2.e14.nervoes"]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e14.traurig",
+            "de.a2.e14.stolz",
+            "de.a2.e14.einsam",
+            "de.a2.e14.ueberrascht",
+            "de.a2.e14.stimmung",
+            "de.a2.e14.zufrieden"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.gluecklich",
+          "ablenker": ["de.a2.e14.ungluecklich", "de.a2.e01.langweilig"]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e14.s0020",
+          "ablenker": ["de.a2.e14.s0021", "de.a2.e14.s0022"]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0011",
+          "wort": 7,
+          "ablenker": ["scheinen", "scheinst"]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.gefuehl",
+          "ablenker": ["de.a2.e14.freude", "de.a2.e14.laune"]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0029"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0030"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0031"
+            }
+          ],
+          "antwort": "de.a2.e14.s0032",
+          "ablenker": ["de.a2.e14.s0009", "de.a2.e14.s0020"]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a09",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a10",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0028",
+          "wort": 0,
+          "ablenker": ["Ich", "Mich"]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.laecheln",
+          "ablenker": ["de.a2.e14.weinen", "de.a2.e01.lachen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e14.s0012",
+          "nach": "ziel",
+          "alternativen": ["Weil sein Fahrrad kaputt ist, ist Jan traurig."],
+          "ablenker": ["froh", "seine"]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e14.s0018",
+          "ablenker": ["de.a2.e14.s0015", "de.a2.e14.s0019", "de.a2.e14.s0016"]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a14",
+          "typ": "satzbau",
+          "ziel": "de.a2.e14.s0013",
+          "alternativen": ["Weil wir morgen in den Zoo gehen, bin ich glücklich."]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a15",
+          "typ": "frei",
+          "ziel": "de.a2.e14.s0027",
+          "nach": "ziel",
+          "alternativen": [
+            "Es ist normal, wenn man seine Gefühle zeigt.",
+            "Gefühle zeigen ist normal.",
+            "Es ist normal, Gefühle zu zeigen.",
+            "Es ist normal, seine Gefühle zu zeigen.",
+            "Gefühle zu zeigen ist normal."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e14.s0033"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e14.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Gründe und Folgen nennen.",
+        "tr": "Sebepleri ve sonuçları söyleyebilirim.",
+        "ar": "أستطيع أن أذكر الأسباب والنتائج."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e14.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.deshalb",
+          "ablenker": ["de.a2.e14.trotzdem", "de.a1.e04.dann"]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a02",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0035",
+          "wort": 2,
+          "ablenker": ["weil", "denn"]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.trotzdem",
+          "ablenker": ["de.a2.e14.deswegen", "de.a1.e06.sonst"]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a05",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a17",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0257",
+          "wort": 3,
+          "ablenker": ["deshalb", "weil"]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e14.gedanke",
+            "de.a2.e14.situation",
+            "de.a2.e14.sinn",
+            "de.a2.e14.positiv",
+            "de.a2.e14.negativ",
+            "de.a2.e14.absolut"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e14.s0034",
+          "ablenker": ["de.a2.e14.s0035", "de.a2.e14.s0036"]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.nachdenken",
+          "ablenker": ["de.a2.e01.erinnern", "de.a1.e07.verstehen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0059"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0060"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0061"
+            }
+          ],
+          "antwort": "de.a2.e14.s0062",
+          "ablenker": ["de.a2.e14.s0025", "de.a2.e14.s0044"]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.voellig",
+          "ablenker": ["de.a2.e14.irgendwie", "de.a2.e14.wenigstens"]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.daher",
+          "ablenker": ["de.a2.e14.allerdings", "de.a1.e05.eigentlich"]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e14.s0039",
+          "nach": "ziel",
+          "alternativen": ["Paula ist krank, sie kann daher nicht kommen."],
+          "ablenker": ["weil", "trotzdem"]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.darum",
+          "ablenker": ["de.a2.e01.sondern", "de.a1.e05.wieso"]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a14",
+          "typ": "satzbau",
+          "ziel": "de.a2.e14.s0041",
+          "alternativen": ["Ich verstehe die Aufgabe nicht, ich frage darum die Lehrerin."]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a15",
+          "typ": "frei",
+          "ziel": "de.a2.e14.s0055",
+          "nach": "ziel",
+          "alternativen": [
+            "Irgendwie schaffen wir das schon.",
+            "Wir schaffen das irgendwie.",
+            "Irgendwie schaffen wir das.",
+            "Das schaffen wir schon irgendwie.",
+            "Wir schaffen es schon irgendwie.",
+            "Irgendwie schaffen wir es schon."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e14.s0063"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e14.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Streit und Ärger sprechen.",
+        "tr": "Kavga ve öfke hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدث عن الخلاف والغضب."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e14.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.streiten",
+          "ablenker": ["de.a2.e14.luegen", "de.a2.e14.aufhoeren"]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a02",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e14.streit",
+            "de.a2.e14.wahrheit",
+            "de.a2.e14.witz",
+            "de.a2.e14.ehrlich",
+            "de.a2.e14.peinlich",
+            "de.a2.e14.aerger"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.wuetend",
+          "ablenker": ["de.a2.e14.gemein", "de.a2.e14.fair"]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0070",
+          "wort": 1,
+          "ablenker": ["regst", "rege"]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.aergern",
+          "ablenker": ["de.a2.e14.schaemen", "de.a1.e08.freuen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e14.s0072",
+          "ablenker": ["de.a2.e14.s0074", "de.a2.e14.s0071"]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.sauer",
+          "ablenker": ["de.a2.e03.suess", "de.a1.e11.muede"]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0089"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0090"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0091"
+            }
+          ],
+          "antwort": "de.a2.e14.s0092",
+          "ablenker": ["de.a2.e14.s0085", "de.a2.e14.s0069"]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.boese",
+          "ablenker": ["de.a1.e03.laut", "de.a1.e10.egal"]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.aufregen",
+          "ablenker": ["de.a1.e08.freuen", "de.a2.e05.ausruhen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.dagegen",
+          "ablenker": ["de.a1.e05.dazu", "de.a1.e05.ohne"]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e14.s0065",
+          "nach": "ziel",
+          "alternativen": [
+            "Manchmal streiten mein Bruder und ich uns um das Tablet.",
+            "Um das Tablet streiten mein Bruder und ich uns manchmal.",
+            "Ich und mein Bruder streiten uns manchmal um das Tablet."
+          ],
+          "ablenker": ["streitet", "mich"]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a14",
+          "typ": "satzbau",
+          "ziel": "de.a2.e14.s0083",
+          "alternativen": ["Weil er gelogen hat, schämt sich Konrad.", "Weil er gelogen hat, schämt Konrad sich."]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a15",
+          "typ": "frei",
+          "ziel": "de.a2.e14.s0080",
+          "nach": "ziel",
+          "alternativen": [
+            "Bitte sei ehrlich zu mir.",
+            "Sei ehrlich zu mir, bitte.",
+            "Sei bitte ehrlich mit mir.",
+            "Bitte sei ehrlich mit mir."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e14.s0093"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e14.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann mich entschuldigen und eine Entschuldigung annehmen.",
+        "tr": "Özür dileyebilir ve bir özrü kabul edebilirim.",
+        "ar": "أستطيع أن أعتذر وأن أقبل اعتذارًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e14.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.entschuldigen",
+          "ablenker": ["de.a2.e14.versprechen", "de.a1.e07.erklaeren"]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a02",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.verzeihen",
+          "ablenker": ["de.a2.e14.vertrauen", "de.a1.e10.vergessen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a04",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e14.freundschaft",
+            "de.a2.e14.respekt",
+            "de.a2.e14.vertragen",
+            "de.a2.e14.zusammenhalten",
+            "de.a2.e14.versprechen"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0115"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0116"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0117"
+            }
+          ],
+          "antwort": "de.a2.e14.s0097",
+          "ablenker": ["de.a2.e14.s0040", "de.a2.e14.s0123"]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.darueber",
+          "ablenker": ["de.a2.e06.davon", "de.a1.e05.dazu"]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0178",
+          "wort": 2,
+          "ablenker": ["Darauf", "Darüber"]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.miteinander",
+          "ablenker": ["de.a1.e10.beide", "de.a1.e08.immer"]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.darauf",
+          "ablenker": ["de.a1.e04.dann", "de.a1.e03.dort"]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a10",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0032",
+          "wort": 5,
+          "ablenker": ["daran", "dagegen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e14.s0099",
+          "ablenker": ["de.a2.e14.s0105", "de.a2.e14.s0104", "de.a2.e14.s0106"]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a12",
+          "typ": "schreiben",
+          "aufgabe": "de.a2.e14.s0113",
+          "woerter": {
+            "min": 35,
+            "max": 45
+          },
+          "pflichtwoerter": ["leid", "verzeihen"],
+          "muster": ["de.a2.e14.s0114"]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e14.s0111",
+          "nach": "ziel",
+          "alternativen": ["Würdest du mit mir bitte darüber reden?", "Würdest du bitte darüber mit mir reden?"],
+          "ablenker": ["würde", "darauf"]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a14",
+          "typ": "satzbau",
+          "ziel": "de.a2.e14.s0099",
+          "alternativen": ["Wir haben uns nach dem Streit schnell wieder vertragen."]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a15",
+          "typ": "frei",
+          "ziel": "de.a2.e14.s0110",
+          "nach": "ziel",
+          "alternativen": ["Kannst du mir bitte verzeihen?", "Könntest du mir verzeihen?", "Kannst du mir verzeihen?"]
+        },
+        {
+          "schluessel": "de.a2.e14.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e14.s0118"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e14.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann jemanden trösten und einen Rat geben.",
+        "tr": "Birini teselli edebilir ve tavsiye verebilirim.",
+        "ar": "أستطيع أن أواسي شخصًا وأن أقدّم نصيحة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e14.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.troesten",
+          "ablenker": ["de.a2.e14.sorgen", "de.a1.e07.helfen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e14.rat", "de.a2.e14.sorge", "de.a2.e14.mut", "de.a2.e14.enttaeuscht", "de.a1.e06.problem"]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.tipp",
+          "ablenker": ["de.a1.e07.frage", "de.a1.e07.aufgabe"]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0139",
+          "wort": 1,
+          "ablenker": ["sorge", "sorgen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.loesen",
+          "ablenker": ["de.a2.e04.aufraeumen", "de.a1.e07.erklaeren"]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e14.s0119",
+          "ablenker": ["de.a2.e14.s0121", "de.a2.e14.s0120"]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.a2.e14.s0148",
+          "absaetze": [
+            "de.a2.e14.s0149",
+            "de.a2.e14.s0150",
+            "de.a2.e14.s0151",
+            "de.a2.e14.s0152",
+            "de.a2.e14.s0153",
+            "de.a2.e14.s0154",
+            "de.a2.e14.s0155",
+            "de.a2.e14.s0156",
+            "de.a2.e14.s0157"
+          ],
+          "glossen": ["de.a2.e14.tipp", "de.a2.e14.streit", "de.a2.e14.vertragen"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e14.s0158",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e14.s0159",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e14.s0160",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e14.s0161",
+              "antwort": "de.a2.e14.s0162",
+              "ablenker": ["de.a2.e14.s0163", "de.a2.e14.s0164"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.mutig",
+          "ablenker": ["de.a1.e09.langsam", "de.a2.e05.schwach"]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0143"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0144"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0145"
+            }
+          ],
+          "antwort": "de.a2.e14.s0146",
+          "ablenker": ["de.a2.e14.s0057", "de.a2.e14.s0086"]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a10",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0129",
+          "wort": 2,
+          "ablenker": ["niemand", "nichts"]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e14.s0132",
+          "ablenker": ["de.a2.e14.s0133", "de.a2.e14.s0130", "de.a2.e14.s0131"]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e14.s0136",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e14.s0125",
+          "alternativen": [
+            "Wir können jedes Problem gemeinsam lösen.",
+            "Jedes Problem können wir gemeinsam lösen.",
+            "Wir können gemeinsam jedes Problem lösen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e14.s0123",
+          "nach": "ziel",
+          "alternativen": ["Ich brauche einen Rat von dir.", "Deinen Rat brauche ich."]
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e14.s0124"
+        },
+        {
+          "schluessel": "de.a2.e14.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e14.s0147"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e14.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann Geschichten über Freunde und Gefühle verstehen.",
+        "tr": "Arkadaşlar ve duygular hakkındaki hikâyeleri anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصصًا عن الأصدقاء والمشاعر."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e14.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a2.e14.s0165",
+          "zeilen": [
+            {
+              "satz": "de.a2.e14.s0166"
+            },
+            {
+              "satz": "de.a2.e14.s0167"
+            },
+            {
+              "satz": "de.a2.e14.s0168"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e14.s0169"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0170"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0171"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0172"
+            },
+            {
+              "satz": "de.a2.e14.s0173"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e14.s0174"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e14.s0175"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0176"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0177"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0178"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0179"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0180"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e14.s0181"
+            },
+            {
+              "satz": "de.a2.e14.s0182"
+            },
+            {
+              "satz": "de.a2.e14.s0183"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.a2.e14.s0184",
+              "antwort": "de.a2.e14.s0185",
+              "ablenker": ["de.a2.e14.s0186"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.a2.e14.s0187",
+              "antwort": "de.a2.e14.s0188",
+              "ablenker": ["de.a2.e14.s0189"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.a2.e14.s0190",
+              "antwort": "de.a2.e14.s0191",
+              "ablenker": ["de.a2.e14.s0192"]
+            },
+            {
+              "nach": 17,
+              "frage": "de.a2.e14.s0193",
+              "antwort": "de.a2.e14.s0194",
+              "ablenker": ["de.a2.e14.s0195"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0177",
+          "wort": 1,
+          "ablenker": ["spielt", "spielen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l06.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e14.s0176",
+          "ablenker": ["de.a2.e14.s0018", "de.a2.e14.s0133"]
+        },
+        {
+          "schluessel": "de.a2.e14.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e14.s0182",
+          "nach": "ziel",
+          "alternativen": [
+            "Laylā und Elif sind am nächsten Tag wieder froh.",
+            "Am nächsten Tag sind Elif und Laylā wieder froh.",
+            "Elif und Laylā sind am nächsten Tag wieder froh."
+          ],
+          "ablenker": ["ist", "traurig"]
+        },
+        {
+          "schluessel": "de.a2.e14.l06.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0175"
+            }
+          ],
+          "antwort": "de.a2.e14.s0176",
+          "ablenker": ["de.a2.e14.s0172", "de.a2.e14.s0201"]
+        },
+        {
+          "schluessel": "de.a2.e14.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.a2.e14.s0196",
+          "zeilen": [
+            {
+              "satz": "de.a2.e14.s0128"
+            },
+            {
+              "satz": "de.a2.e14.s0197"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0198"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0199"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0200"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0201"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0202"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0203"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0204"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0205"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0206"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0207"
+            },
+            {
+              "satz": "de.a2.e14.s0208"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 3,
+              "frage": "de.a2.e14.s0209",
+              "antwort": "de.a2.e14.s0210",
+              "ablenker": ["de.a2.e14.s0211"]
+            },
+            {
+              "nach": 5,
+              "frage": "de.a2.e14.s0212",
+              "antwort": "de.a2.e14.s0213",
+              "ablenker": ["de.a2.e14.s0214"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.a2.e14.s0215",
+              "antwort": "de.a2.e14.s0216",
+              "ablenker": ["de.a2.e14.s0217"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a2.e14.s0218",
+              "antwort": "de.a2.e14.s0219",
+              "ablenker": ["de.a2.e14.s0220"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l06.a07",
+          "typ": "satzbau",
+          "ziel": "de.a2.e14.s0207",
+          "alternativen": ["Und das Spiel hat wenigstens Spaß gemacht.", "Und Spaß hat das Spiel wenigstens gemacht."]
+        },
+        {
+          "schluessel": "de.a2.e14.l06.a08",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0203",
+          "wort": 7,
+          "ablenker": ["über", "für"]
+        },
+        {
+          "schluessel": "de.a2.e14.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e14.s0206",
+          "ablenker": ["de.a2.e14.s0205", "de.a2.e14.s0208"]
+        },
+        {
+          "schluessel": "de.a2.e14.l06.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0202"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0203"
+            }
+          ],
+          "antwort": "de.a2.e14.s0204",
+          "ablenker": ["de.a2.e14.s0179", "de.a2.e14.s0171"]
+        },
+        {
+          "schluessel": "de.a2.e14.l06.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e14.s0183"
+        },
+        {
+          "schluessel": "de.a2.e14.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e14.s0170",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e14.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.a2.e14.s0179"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e14.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann die Wörter zu Gefühlen und Freundschaft wiederholen.",
+        "tr": "Duygular ve arkadaşlıkla ilgili kelimeleri tekrar edebilirim.",
+        "ar": "أستطيع أن أراجع كلمات المشاعر والصداقة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e14.l07.a01",
+          "typ": "paare",
+          "lemmata": ["de.a2.e14.froh", "de.a2.e14.wuetend", "de.a2.e14.einsam", "de.a2.e14.stolz", "de.a2.e14.nervoes"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.deswegen",
+          "ablenker": ["de.a2.e14.trotzdem", "de.a1.e05.wieso"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0052",
+          "wort": 5,
+          "ablenker": ["negative", "negativen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e14.s0227",
+          "ablenker": ["de.a2.e14.s0228", "de.a2.e14.s0229"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0230"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0231"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0232"
+            }
+          ],
+          "antwort": "de.a2.e14.s0233",
+          "ablenker": ["de.a2.e14.s0087", "de.a2.e14.s0003"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.verzeihen",
+          "ablenker": ["de.a2.e14.versprechen", "de.a2.e14.troesten"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0223",
+          "wort": 6,
+          "ablenker": ["entschuldigen", "entschuldige"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e14.s0221",
+          "nach": "ziel",
+          "alternativen": ["Es ist schon spät, Emre ist trotzdem noch wach."],
+          "ablenker": ["deshalb", "bin"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e14.s0038",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e14.mut",
+          "ablenker": ["de.a1.e01.gut"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e14.s0225",
+          "ablenker": ["de.a2.e14.s0076", "de.a2.e14.s0046", "de.a2.e14.s0066"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e14.s0226",
+          "alternativen": [
+            "Elif ruft Oma Sevim an, weil sie sich einsam fühlt.",
+            "Weil sie sich einsam fühlt, ruft Elif Oma Sevim an.",
+            "Weil sich Elif einsam fühlt, ruft sie Oma Sevim an."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.peinlich",
+          "ablenker": ["de.a2.e14.ehrlich", "de.a2.e01.lustig"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e14.s0056",
+          "nach": "ziel",
+          "alternativen": [
+            "Den Termin habe ich völlig vergessen.",
+            "Ich habe den Termin ganz vergessen.",
+            "Ich habe den Termin komplett vergessen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a15",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0222",
+          "wort": 7,
+          "ablenker": ["verträgt", "vertragt"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e14.s0050"
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a17",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.daran",
+          "ablenker": ["de.a2.e06.davon", "de.a1.e05.dazu"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a18",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0234"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0235"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0236"
+            }
+          ],
+          "antwort": "de.a2.e14.s0237",
+          "ablenker": ["de.a2.e14.s0094", "de.a2.e14.s0086"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a19",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0101",
+          "wort": 7,
+          "ablenker": ["lügt", "lügen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a20",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e14.luegen",
+          "ablenker": ["de.a1.e03.liegen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a21",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e14.weinen",
+          "ablenker": ["de.a1.e10.meinen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l07.a22",
+          "typ": "sprechen",
+          "satz": "de.a2.e14.s0238"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e14.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann über Gefühle sprechen, mich entschuldigen und jemanden trösten.",
+        "tr": "Duygular hakkında konuşabilir, özür dileyebilir ve birini teselli edebilirim.",
+        "ar": "أستطيع أن أتحدث عن المشاعر وأن أعتذر وأن أواسي شخصًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e14.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e14.traurig",
+          "ablenker": ["de.a2.e14.gluecklich", "de.a2.e14.ueberrascht"]
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e14.entschuldigen", "de.a2.e14.troesten", "de.a2.e14.streiten", "de.a2.e14.luegen", "de.a2.e14.vertrauen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0247",
+          "wort": 4,
+          "ablenker": ["besucht", "besuchen"]
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0239"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0240"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0241"
+            }
+          ],
+          "antwort": "de.a2.e14.s0242",
+          "ablenker": ["de.a2.e14.s0057", "de.a2.e14.s0085"]
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e14.s0248",
+          "nach": "ziel",
+          "alternativen": ["Ich bin müde, ich helfe dir trotzdem gern."],
+          "ablenker": ["deshalb", "hilfst"]
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a06",
+          "typ": "frei",
+          "ziel": "de.a2.e14.s0253",
+          "nach": "ziel",
+          "alternativen": ["Wir haben uns wieder versöhnt.", "Wir vertragen uns wieder."]
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e14.s0250",
+          "ablenker": ["de.a2.e14.s0251", "de.a2.e14.s0252"]
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a08",
+          "typ": "satzbau",
+          "ziel": "de.a2.e14.s0254",
+          "alternativen": ["Papa ist nicht böse, weil Can die Wahrheit gesagt hat."]
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e14.s0083",
+          "wort": 2,
+          "ablenker": ["ihn", "mich"]
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e14.freundschaft",
+          "ablenker": ["de.a1.e08.mannschaft", "de.a2.e07.nachbarschaft"]
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e14.s0249"
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0243"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e14.s0244"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e14.s0245"
+            }
+          ],
+          "antwort": "de.a2.e14.s0246",
+          "ablenker": ["de.a2.e14.s0082", "de.a2.e14.s0137"]
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e14.rat",
+          "ablenker": ["de.a1.e10.rot"]
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e14.s0014",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a2.e14.s0255"
+        },
+        {
+          "schluessel": "de.a2.e14.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e14.s0256"
+        }
+      ]
+    }
+  ]
+}

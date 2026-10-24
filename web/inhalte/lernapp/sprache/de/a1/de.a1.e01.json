@@ -1,0 +1,3126 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "automatisch_geprueft",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e01",
+    "reihenfolge": 2,
+    "thema": {
+      "de": "Hallo, wer bist du? – Begrüßung und Vorstellung",
+      "tr": "Merhaba, sen kimsin? – Selamlaşma ve tanışma",
+      "ar": "مرحبًا، من أنت؟ – التحية والتعارف"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann Menschen zu verschiedenen Tageszeiten begrüßen und mich verabschieden.",
+        "tr": "İnsanları günün farklı saatlerinde selamlayabilir ve onlarla vedalaşabilirim.",
+        "ar": "أستطيع أن أحيّي الناس في أوقات مختلفة من اليوم وأن أودّعهم."
+      },
+      {
+        "de": "Ich kann sagen, wie ich heiße, woher ich komme, wo ich wohne und welche Sprachen ich spreche.",
+        "tr": "Adımı, nereli olduğumu, nerede oturduğumu ve hangi dilleri konuştuğumu söyleyebilirim.",
+        "ar": "أستطيع أن أقول ما اسمي، ومن أين أنا، وأين أسكن، وما اللغات التي أتكلّمها."
+      },
+      {
+        "de": "Ich kann meinen Namen buchstabieren und andere nach ihrem Namen fragen.",
+        "tr": "Adımı harf harf söyleyebilir ve başkalarına adlarını sorabilirim.",
+        "ar": "أستطيع أن أتهجّى اسمي وأن أسأل الآخرين عن أسمائهم."
+      }
+    ],
+    "symbol": "message-circle",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a1.e01.ich",
+      "lemma": "ich",
+      "wortart": "pronomen",
+      "merkmale": {
+        "person": "1. Person Singular"
+      },
+      "formen": {
+        "akk": "mich",
+        "dat": "mir"
+      },
+      "frequenzRang": 6,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.du",
+      "lemma": "du",
+      "wortart": "pronomen",
+      "merkmale": {
+        "person": "2. Person Singular"
+      },
+      "formen": {
+        "akk": "dich",
+        "dat": "dir"
+      },
+      "frequenzRang": 22,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.er",
+      "lemma": "er",
+      "wortart": "pronomen",
+      "merkmale": {
+        "person": "3. Person Singular maskulin"
+      },
+      "formen": {
+        "akk": "ihn"
+      },
+      "frequenzRang": 17,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.sie",
+      "lemma": "sie",
+      "wortart": "pronomen",
+      "merkmale": {
+        "person": "3. Person Singular feminin und 3. Person Plural"
+      },
+      "frequenzRang": 16,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.es",
+      "lemma": "es",
+      "wortart": "pronomen",
+      "merkmale": {
+        "person": "3. Person Singular neutral",
+        "auch": "es gibt, es regnet"
+      },
+      "frequenzRang": 13,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.wir",
+      "lemma": "wir",
+      "wortart": "pronomen",
+      "merkmale": {
+        "person": "1. Person Plural"
+      },
+      "formen": {
+        "akk_dat": "uns"
+      },
+      "frequenzRang": 27,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.ihr",
+      "lemma": "ihr",
+      "wortart": "pronomen",
+      "merkmale": {
+        "person": "2. Person Plural"
+      },
+      "formen": {
+        "akk_dat": "euch"
+      },
+      "frequenzRang": 23,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.sie-hoeflich",
+      "lemma": "Sie",
+      "wortart": "anredepronomen",
+      "merkmale": {
+        "person": "Höflichkeitsform (Singular und Plural)",
+        "schreibung": "immer groß"
+      },
+      "formen": {
+        "dat": "Ihnen"
+      },
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.sein",
+      "lemma": "sein",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "sein",
+        "praes_ich": "bin",
+        "praes_du": "bist",
+        "praes_er_sie_es": "ist",
+        "praes_wir": "sind",
+        "praes_ihr": "seid",
+        "praes_sie_Sie": "sind",
+        "imp_du": "sei",
+        "imp_ihr": "seid"
+      },
+      "frequenzRang": 2,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.heissen",
+      "lemma": "heißen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "heißen",
+        "praes_ich": "heiße",
+        "praes_du": "heißt",
+        "praes_er_sie_es": "heißt",
+        "praes_wir": "heißen",
+        "praes_ihr": "heißt",
+        "praes_sie_Sie": "heißen"
+      },
+      "frequenzRang": 180,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.kommen",
+      "lemma": "kommen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "kommen",
+        "praes_ich": "komme",
+        "praes_du": "kommst",
+        "praes_er_sie_es": "kommt",
+        "praes_wir": "kommen",
+        "praes_ihr": "kommt",
+        "praes_sie_Sie": "kommen",
+        "imp_du": "komm",
+        "imp_ihr": "kommt"
+      },
+      "frequenzRang": 58,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.wohnen",
+      "lemma": "wohnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "wohnen",
+        "praes_ich": "wohne",
+        "praes_du": "wohnst",
+        "praes_er_sie_es": "wohnt",
+        "praes_wir": "wohnen",
+        "praes_ihr": "wohnt",
+        "praes_sie_Sie": "wohnen",
+        "imp_du": "wohn",
+        "imp_ihr": "wohnt"
+      },
+      "frequenzRang": 536,
+      "quelle": "wiktionary:de:wohnen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wohnen‘ (https://de.wiktionary.org/wiki/wohnen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.sprechen",
+      "lemma": "sprechen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "sprechen",
+        "praes_ich": "spreche",
+        "praes_du": "sprichst",
+        "praes_er_sie_es": "spricht",
+        "praes_wir": "sprechen",
+        "praes_ihr": "sprecht",
+        "praes_sie_Sie": "sprechen",
+        "imp_du": "sprich",
+        "imp_ihr": "sprecht"
+      },
+      "frequenzRang": 192,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.lernen",
+      "lemma": "lernen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "lernen",
+        "praes_ich": "lerne",
+        "praes_du": "lernst",
+        "praes_er_sie_es": "lernt",
+        "praes_wir": "lernen",
+        "praes_ihr": "lernt",
+        "praes_sie_Sie": "lernen",
+        "imp_du": "lern",
+        "imp_ihr": "lernt"
+      },
+      "frequenzRang": 294,
+      "quelle": "wiktionary:de:lernen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚lernen‘ (https://de.wiktionary.org/wiki/lernen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.buchstabieren",
+      "lemma": "buchstabieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "buchstabieren",
+        "praes_ich": "buchstabiere",
+        "praes_du": "buchstabierst",
+        "praes_er_sie_es": "buchstabiert",
+        "praes_wir": "buchstabieren",
+        "praes_ihr": "buchstabiert",
+        "praes_sie_Sie": "buchstabieren",
+        "imp_du": "buchstabier",
+        "imp_ihr": "buchstabiert"
+      },
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.wie",
+      "lemma": "wie",
+      "wortart": "fragewort",
+      "frequenzRang": 30,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.wer",
+      "lemma": "wer",
+      "wortart": "fragewort",
+      "formen": {
+        "akk": "wen"
+      },
+      "frequenzRang": 106,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.was",
+      "lemma": "was",
+      "wortart": "fragewort",
+      "frequenzRang": 46,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.wo",
+      "lemma": "wo",
+      "wortart": "fragewort",
+      "frequenzRang": 101,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.woher",
+      "lemma": "woher",
+      "wortart": "fragewort",
+      "frequenzRang": 1564,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.und",
+      "lemma": "und",
+      "wortart": "konjunktion",
+      "frequenzRang": 3,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.ja",
+      "lemma": "ja",
+      "wortart": "partikel",
+      "frequenzRang": 51,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.nein",
+      "lemma": "nein",
+      "wortart": "partikel",
+      "frequenzRang": 219,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.hallo",
+      "lemma": "hallo",
+      "wortart": "interjektion",
+      "frequenzRang": 626,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.tschuess",
+      "lemma": "tschüss",
+      "wortart": "interjektion",
+      "frequenzRang": 5589,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.gut",
+      "lemma": "gut",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "wendungen": "Guten Morgen, Guten Tag, Guten Appetit"
+      },
+      "formen": {
+        "endung_e": "gute",
+        "endung_en": "guten",
+        "endung_er": "guter",
+        "endung_es": "gutes",
+        "endung_em": "gutem"
+      },
+      "frequenzRang": 40,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.tag",
+      "lemma": "Tag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Tage"
+      },
+      "formen": {
+        "pl": "Tage",
+        "dat_pl": "Tagen"
+      },
+      "frequenzRang": 97,
+      "quelle": "wiktionary:de:Tag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tag‘ (https://de.wiktionary.org/wiki/Tag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.morgen",
+      "lemma": "Morgen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Morgen",
+        "auch_adverb": "morgen (am nächsten Tag)"
+      },
+      "frequenzRang": 265,
+      "quelle": "wiktionary:de:Morgen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Morgen‘ (https://de.wiktionary.org/wiki/Morgen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.auf-wiedersehen",
+      "lemma": "auf Wiedersehen",
+      "wortart": "wendung",
+      "merkmale": {
+        "art": "Grußformel (weltlich)"
+      },
+      "formen": {
+        "teil": "Wiedersehen"
+      },
+      "frequenzRang": 5812,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.danke",
+      "lemma": "danke",
+      "wortart": "partikel",
+      "frequenzRang": 167,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.bitte",
+      "lemma": "bitte",
+      "wortart": "partikel",
+      "frequenzRang": 144,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.entschuldigung",
+      "lemma": "Entschuldigung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Entschuldigungen"
+      },
+      "formen": {
+        "pl": "Entschuldigungen"
+      },
+      "frequenzRang": 3031,
+      "quelle": "wiktionary:de:Entschuldigung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Entschuldigung‘ (https://de.wiktionary.org/wiki/Entschuldigung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.aus",
+      "lemma": "aus",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Dativ"
+      },
+      "frequenzRang": 33,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.in",
+      "lemma": "in",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ (wohin?) oder Dativ (wo?)",
+        "a1_wendungen": "im Mai"
+      },
+      "formen": {
+        "mit_dem": "im",
+        "mit_das": "ins"
+      },
+      "frequenzRang": 5,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.name",
+      "lemma": "Name",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Namen"
+      },
+      "formen": {
+        "pl": "Namen",
+        "akk_dat_sg": "Namen",
+        "gen_sg": "Namens"
+      },
+      "frequenzRang": 199,
+      "quelle": "wiktionary:de:Name",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Name‘ (https://de.wiktionary.org/wiki/Name), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.land",
+      "lemma": "Land",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Länder"
+      },
+      "formen": {
+        "pl": "Länder",
+        "dat_pl": "Ländern"
+      },
+      "frequenzRang": 209,
+      "quelle": "wiktionary:de:Land",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Land‘ (https://de.wiktionary.org/wiki/Land), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.sprache",
+      "lemma": "Sprache",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Sprachen"
+      },
+      "formen": {
+        "pl": "Sprachen"
+      },
+      "frequenzRang": 437,
+      "quelle": "wiktionary:de:Sprache",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sprache‘ (https://de.wiktionary.org/wiki/Sprache), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.deutsch",
+      "lemma": "Deutsch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)",
+        "auch_adjektiv": "deutsch"
+      },
+      "formen": {
+        "adj": "deutsch",
+        "adj_e": "deutsche",
+        "adj_en": "deutschen",
+        "adj_er": "deutscher",
+        "adj_es": "deutsches",
+        "adj_em": "deutschem"
+      },
+      "frequenzRang": 88,
+      "quelle": "wiktionary:de:Deutsch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Deutsch‘ (https://de.wiktionary.org/wiki/Deutsch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.tuerkisch",
+      "lemma": "Türkisch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)",
+        "auch_adjektiv": "türkisch"
+      },
+      "formen": {
+        "adj": "türkisch",
+        "adj_e": "türkische",
+        "adj_en": "türkischen",
+        "adj_er": "türkischer",
+        "adj_es": "türkisches",
+        "adj_em": "türkischem"
+      },
+      "frequenzRang": 1101,
+      "quelle": "wiktionary:de:Türkisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Türkisch‘ (https://de.wiktionary.org/wiki/Türkisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.arabisch",
+      "lemma": "Arabisch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)",
+        "auch_adjektiv": "arabisch"
+      },
+      "formen": {
+        "adj": "arabisch",
+        "adj_e": "arabische",
+        "adj_en": "arabischen",
+        "adj_er": "arabischer",
+        "adj_es": "arabisches",
+        "adj_em": "arabischem"
+      },
+      "frequenzRang": 1952,
+      "quelle": "wiktionary:de:Arabisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Arabisch‘ (https://de.wiktionary.org/wiki/Arabisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e01.s0001",
+      "text": "Hallo!",
+      "quelle": "tatoeba:380701",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #380701 von cburgmer (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0002",
+      "text": "Guten Morgen!",
+      "quelle": "tatoeba:382123",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #382123 von Dorenda (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0003",
+      "text": "Guten Tag!",
+      "quelle": "tatoeba:676082",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #676082 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0004",
+      "text": "Tschüss!",
+      "quelle": "tatoeba:647453",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #647453 von Hans07 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0005",
+      "text": "Auf Wiedersehen!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0",
+      "tokens": ["Auf Wiedersehen"]
+    },
+    {
+      "schluessel": "de.a1.e01.s0006",
+      "text": "Danke!",
+      "quelle": "tatoeba:397489",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #397489 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0007",
+      "text": "Bitte!",
+      "quelle": "tatoeba:943518",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #943518 von Miyako (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0008",
+      "text": "Ja, bitte.",
+      "quelle": "tatoeba:779214",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #779214 von BraveSentry (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0009",
+      "text": "Nein, danke.",
+      "quelle": "tatoeba:358356",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #358356 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0010",
+      "text": "Hallo, Elif!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0011",
+      "text": "Hallo, Jan!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0012",
+      "text": "Guten Morgen, Lena!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0013",
+      "text": "Guten Morgen, Emre!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0014",
+      "text": "Guten Tag, Konrad!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0015",
+      "text": "Guten Tag, Ayla!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0016",
+      "text": "Guten Morgen, Paula!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0017",
+      "text": "Tschüss, Elif!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0018",
+      "text": "Tschüss, Can!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0019",
+      "text": "Auf Wiedersehen, Konrad!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0",
+      "tokens": ["Auf Wiedersehen", "Konrad"]
+    },
+    {
+      "schluessel": "de.a1.e01.s0020",
+      "text": "Danke, Jan!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0021",
+      "text": "Bitte, Elif!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0022",
+      "text": "Danke! Auf Wiedersehen!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0",
+      "tokens": ["Danke", "Auf Wiedersehen"]
+    },
+    {
+      "schluessel": "de.a1.e01.s0023",
+      "text": "Ich bin Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0024",
+      "text": "Ich bin Jan.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0025",
+      "text": "Ja, ich bin Emre.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0026",
+      "text": "Wer bist du?",
+      "quelle": "tatoeba:509168",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #509168 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0027",
+      "text": "Wer ist er?",
+      "quelle": "tatoeba:362092",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #362092 von Wolf (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0028",
+      "text": "Wer ist sie?",
+      "quelle": "tatoeba:357121",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #357121 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0029",
+      "text": "Wer seid ihr?",
+      "quelle": "tatoeba:952787",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #952787 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0030",
+      "text": "Wer sind Sie?",
+      "quelle": "tatoeba:567324",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #567324 von Disconnect (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0031",
+      "text": "Er ist Jan.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0032",
+      "text": "Sie ist Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0033",
+      "text": "Wir sind Elif und Jan.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0034",
+      "text": "Wir sind Paula und Tim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0035",
+      "text": "Seid ihr Lena und Finn?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0036",
+      "text": "Ja, wir sind Lena und Finn.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0037",
+      "text": "Ich bin Konrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0038",
+      "text": "Und du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0039",
+      "text": "Und Sie?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0040",
+      "text": "Und ihr?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0041",
+      "text": "Hallo, ich bin Lena. Und du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0042",
+      "text": "Ich bin Selin, und er ist Can.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0043",
+      "text": "Ihr seid gut!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0044",
+      "text": "Du bist gut.",
+      "quelle": "tatoeba:1649677",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1649677 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0045",
+      "text": "Es ist gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0046",
+      "text": "Hallo! Ich bin Ayla.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0047",
+      "text": "Wie heißt du?",
+      "quelle": "tatoeba:451378",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #451378 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0048",
+      "text": "Wie heißen Sie?",
+      "quelle": "tatoeba:439763",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #439763 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0049",
+      "text": "Ich heiße Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0050",
+      "text": "Ich heiße Konrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0051",
+      "text": "Wie heißt er?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0052",
+      "text": "Er heißt Emre.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0053",
+      "text": "Er heißt Konrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0054",
+      "text": "Er heißt Jan.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0055",
+      "text": "Wie heißt sie?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0056",
+      "text": "Sie heißt Laylā.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0057",
+      "text": "Sie heißt Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0058",
+      "text": "Wie heißt ihr?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0059",
+      "text": "Wir heißen Lea und Tim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0060",
+      "text": "Entschuldigung, wie heißen Sie?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0061",
+      "text": "Entschuldigung, wie heißt du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0062",
+      "text": "Wie bitte?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0063",
+      "text": "Buchstabieren Sie bitte!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0064",
+      "text": "Ich buchstabiere: E – L – I – F.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0065",
+      "text": "Jan. J – A – N.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0066",
+      "text": "Konrad. K – O – N – R – A – D.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0067",
+      "text": "Buchstabier bitte, Can!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0068",
+      "text": "Can: C – A – N.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0069",
+      "text": "Selin? Buchstabier bitte!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0070",
+      "text": "S – E – L – I – N.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0071",
+      "text": "Heißt du Elif?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0072",
+      "text": "Nein, ich heiße Ela.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0073",
+      "text": "Er heißt Can, und sie heißt Selin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0074",
+      "text": "Guten Morgen! Wie heißt du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0075",
+      "text": "Ich heiße Max. Und du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0076",
+      "text": "Entschuldigung, sind Sie Konrad?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0077",
+      "text": "Ja, ich bin Konrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0078",
+      "text": "Woher kommst du?",
+      "quelle": "tatoeba:378034",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #378034 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0079",
+      "text": "Woher kommen Sie?",
+      "quelle": "tatoeba:414182",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #414182 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0080",
+      "text": "Woher kommt er?",
+      "quelle": "tatoeba:7364565",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7364565 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0081",
+      "text": "Woher kommt sie?",
+      "quelle": "tatoeba:4395171",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4395171 von pullnosemans (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0082",
+      "text": "Woher kommt ihr?",
+      "quelle": "tatoeba:3383785",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3383785 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0083",
+      "text": "Wo wohnst du?",
+      "quelle": "tatoeba:392883",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #392883 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0084",
+      "text": "Wo wohnen Sie?",
+      "quelle": "tatoeba:703779",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #703779 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0085",
+      "text": "Wo wohnt sie?",
+      "quelle": "tatoeba:11863918",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11863918 von mhr (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0086",
+      "text": "Wo wohnt ihr?",
+      "quelle": "tatoeba:2638564",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2638564 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0087",
+      "text": "Wo bist du?",
+      "quelle": "tatoeba:964",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #964 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0088",
+      "text": "Ich wohne in Deutschland.",
+      "quelle": "tatoeba:8081011",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8081011 von Luiaard (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0089",
+      "text": "Er kommt morgen.",
+      "quelle": "tatoeba:4177363",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4177363 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0090",
+      "text": "Ich komme aus Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0091",
+      "text": "Ich komme aus Hamburg.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0092",
+      "text": "Er kommt aus Berlin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0093",
+      "text": "Sie kommt aus Köln.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0094",
+      "text": "Wir kommen aus Österreich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0095",
+      "text": "Ich wohne in Wetzlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0096",
+      "text": "Sie wohnt in Stuttgart.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0097",
+      "text": "Wir wohnen in Mainz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0098",
+      "text": "Kommst du aus Syrien?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0099",
+      "text": "Nein, ich komme aus Stuttgart.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0100",
+      "text": "Wohnst du in Wetzlar?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0101",
+      "text": "Ja, ich wohne in Wetzlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0102",
+      "text": "Kommen Sie aus Wetzlar?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0103",
+      "text": "Ja, ich komme aus Wetzlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0104",
+      "text": "Mert und Selin kommen aus Köln.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0105",
+      "text": "Paula und Tim wohnen in Bonn.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0106",
+      "text": "Wo ist Köln?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0107",
+      "text": "In Deutschland.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0108",
+      "text": "Wo ist Wetzlar?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0109",
+      "text": "In Hessen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0110",
+      "text": "Ich bin in Hamburg.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0111",
+      "text": "Wir sind aus Wetzlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0112",
+      "text": "Deutschland und Syrien sind Länder.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0113",
+      "text": "Kommt ihr aus Bonn?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0114",
+      "text": "Nein, aus Mainz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0115",
+      "text": "Wir kommen morgen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0116",
+      "text": "Entschuldigung, wo wohnt Konrad?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0117",
+      "text": "Sprichst du Deutsch?",
+      "quelle": "tatoeba:426311",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #426311 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0118",
+      "text": "Sprecht ihr Deutsch?",
+      "quelle": "tatoeba:426313",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #426313 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0119",
+      "text": "Sprechen Sie Deutsch?",
+      "quelle": "tatoeba:426314",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #426314 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0120",
+      "text": "Sprechen Sie Arabisch?",
+      "quelle": "tatoeba:586302",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #586302 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0121",
+      "text": "Sprichst du Arabisch?",
+      "quelle": "tatoeba:863837",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #863837 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0122",
+      "text": "Sprichst du Türkisch?",
+      "quelle": "tatoeba:2066550",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2066550 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0123",
+      "text": "Ich spreche Deutsch.",
+      "quelle": "tatoeba:2678069",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2678069 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0124",
+      "text": "Ich spreche Arabisch.",
+      "quelle": "tatoeba:3083684",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3083684 von freddy1 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0125",
+      "text": "Er spricht Arabisch.",
+      "quelle": "tatoeba:1851160",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1851160 von kolonjano (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0126",
+      "text": "Ich lerne Deutsch.",
+      "quelle": "tatoeba:3685927",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3685927 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0127",
+      "text": "Ich lerne Türkisch.",
+      "quelle": "tatoeba:884528",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #884528 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0128",
+      "text": "Wir lernen Arabisch.",
+      "quelle": "tatoeba:511908",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #511908 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0129",
+      "text": "Wir lernen Türkisch.",
+      "quelle": "tatoeba:13556083",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13556083 von mhr (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0130",
+      "text": "Sie lernt Deutsch.",
+      "quelle": "tatoeba:9996707",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #9996707 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0131",
+      "text": "Er lernt Deutsch.",
+      "quelle": "tatoeba:9996711",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #9996711 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0132",
+      "text": "Ich spreche gut Deutsch.",
+      "quelle": "tatoeba:9483950",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #9483950 von Adelpa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e01.s0133",
+      "text": "Ja, ich spreche Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0134",
+      "text": "Nein, ich spreche Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0135",
+      "text": "Wer spricht Arabisch?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0136",
+      "text": "Was lernt ihr?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0137",
+      "text": "Wir lernen Deutsch und Arabisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0138",
+      "text": "Ich spreche Türkisch und Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0139",
+      "text": "Ich spreche Arabisch und Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0140",
+      "text": "Elif spricht Türkisch und Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0141",
+      "text": "Sie sprechen gut Deutsch!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0142",
+      "text": "Wer spricht Türkisch?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0143",
+      "text": "Ich lerne Arabisch, und du lernst Türkisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0144",
+      "text": "Er spricht gut Arabisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0145",
+      "text": "Sprecht ihr Arabisch?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0146",
+      "text": "Ja, wir sprechen Arabisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0147",
+      "text": "Deutsch und Türkisch sind Sprachen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0148",
+      "text": "Morgen lernen wir Türkisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0149",
+      "text": "Sprichst du gut Türkisch?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0150",
+      "text": "Name: Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0151",
+      "text": "Land: Deutschland.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0152",
+      "text": "Sprachen: Türkisch und Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0153",
+      "text": "Name: Tim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0154",
+      "text": "Land: Österreich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0155",
+      "text": "Sprachen: Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0156",
+      "text": "Aus Österreich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0157",
+      "text": "Aus Deutschland.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0158",
+      "text": "Woher kommt Tim?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0159",
+      "text": "Hallo! Ich heiße Elif. Ich wohne in Wetzlar. Ich spreche Türkisch und Deutsch. Und du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0160",
+      "text": "Hallo, wer bist du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0161",
+      "text": "Es ist Morgen in Wetzlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0162",
+      "text": "Guten Morgen, Elif!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0163",
+      "text": "Guten Morgen, Jan! Wer ist sie?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0164",
+      "text": "Komm, Elif!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0165",
+      "text": "Hallo! Ich bin Elif, und er ist Jan.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0166",
+      "text": "Hallo! Ich heiße Laylā.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0167",
+      "text": "Woher kommst du, Laylā?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0168",
+      "text": "Ich komme aus Wetzlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0169",
+      "text": "Und ich komme aus Hamburg.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0170",
+      "text": "Und wo wohnt ihr?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0171",
+      "text": "Jan und ich wohnen in Wetzlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0172",
+      "text": "Sprichst du Deutsch, Laylā?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0173",
+      "text": "Ja, ich lerne Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0174",
+      "text": "Bitte, Laylā!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0175",
+      "text": "Komm, Laylā! Wir lernen Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0176",
+      "text": "Woher kommt Laylā?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0177",
+      "text": "Aus Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0178",
+      "text": "Aus Hamburg.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0179",
+      "text": "Aus Wetzlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0180",
+      "text": "Wo wohnen Elif und Jan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0181",
+      "text": "In Wetzlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0182",
+      "text": "In Hamburg.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0183",
+      "text": "In Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0184",
+      "text": "Was lernt Laylā?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0185",
+      "text": "Wer kommt aus Hamburg?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0186",
+      "text": "Jan kommt aus Hamburg.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0187",
+      "text": "Elif kommt aus Hamburg.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0188",
+      "text": "Laylā kommt aus Hamburg.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0189",
+      "text": "Guten Tag! Ich heiße Konrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0190",
+      "text": "Danke! Ich heiße Ranā.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0191",
+      "text": "Danke! Ich lerne Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0192",
+      "text": "Woher kommt Ranā?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0193",
+      "text": "Was lernt Ranā?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0194",
+      "text": "Guten Tag! Ich heiße Ayla. Ich wohne in Bonn. Und Sie?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e01.s0195",
+      "text": "Ich bin Emre, und ich wohne in Wetzlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e01.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Begrüßen und sich verabschieden",
+        "tr": "Selamlaşmak ve vedalaşmak",
+        "ar": "التحية والوداع"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e01.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e01.hallo",
+          "ablenker": ["de.a1.e01.danke", "de.a1.e01.ja"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e01.danke",
+          "ablenker": ["de.a1.e01.hallo", "de.a1.e01.nein"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e01.hallo", "de.a1.e01.danke", "de.a1.e01.ja", "de.a1.e01.nein"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e01.tschuess",
+          "ablenker": ["de.a1.e01.hallo", "de.a1.e01.bitte"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e01.tag",
+          "ablenker": ["de.a1.e01.morgen", "de.a1.e01.gut"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e01.s0002",
+          "ablenker": ["de.a1.e01.s0003", "de.a1.e01.s0001"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a07",
+          "typ": "paare",
+          "lemmata": ["de.a1.e01.gut", "de.a1.e01.tag", "de.a1.e01.morgen", "de.a1.e01.bitte", "de.a1.e01.auf-wiedersehen"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0010"
+            }
+          ],
+          "antwort": "de.a1.e01.s0011",
+          "ablenker": ["de.a1.e01.s0018", "de.a1.e01.s0009"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a09",
+          "typ": "luecke",
+          "ziel": "de.a1.e01.s0012",
+          "wort": 0,
+          "ablenker": ["Gute", "Guter"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0020"
+            }
+          ],
+          "antwort": "de.a1.e01.s0021",
+          "ablenker": ["de.a1.e01.s0009", "de.a1.e01.s0015"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e01.s0013",
+          "nach": "ziel",
+          "alternativen": ["Emre, guten Morgen!"],
+          "ablenker": ["Tag"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e01.s0017",
+          "ablenker": ["de.a1.e01.s0018", "de.a1.e01.s0010"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e01.s0014",
+          "ablenker": ["de.a1.e01.s0015", "de.a1.e01.s0019"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e01.s0006"
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0019"
+            }
+          ],
+          "antwort": "de.a1.e01.s0005",
+          "ablenker": ["de.a1.e01.s0002", "de.a1.e01.s0008"]
+        },
+        {
+          "schluessel": "de.a1.e01.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e01.s0002"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e01.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich bin …, du bist …: Personalpronomen und „sein“",
+        "tr": "Ben …, sen …: şahıs zamirleri ve “sein” fiili",
+        "ar": "الضمائر الشخصية والفعل «sein»"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e01.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e01.ich",
+          "ablenker": ["de.a1.e01.du", "de.a1.e01.wir"]
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e01.du",
+          "ablenker": ["de.a1.e01.ich", "de.a1.e01.ihr"]
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e01.ich", "de.a1.e01.du", "de.a1.e01.wir", "de.a1.e01.er"]
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e01.s0024",
+          "wort": 1,
+          "ablenker": ["bist", "ist"]
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e01.s0027",
+          "ablenker": ["de.a1.e01.s0028", "de.a1.e01.s0026"]
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0046"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0038"
+            }
+          ],
+          "antwort": "de.a1.e01.s0023",
+          "ablenker": ["de.a1.e01.s0032", "de.a1.e01.s0044"]
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e01.s0033",
+          "nach": "ziel",
+          "alternativen": ["Wir sind Jan und Elif.", "Elif und Jan sind wir.", "Jan und Elif sind wir."],
+          "ablenker": ["seid"]
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a09",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e01.s0024"
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0041"
+            }
+          ],
+          "antwort": "de.a1.e01.s0024",
+          "ablenker": ["de.a1.e01.s0031", "de.a1.e01.s0043"]
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a12",
+          "typ": "paare",
+          "lemmata": ["de.a1.e01.sie-hoeflich", "de.a1.e01.und", "de.a1.e01.sein", "de.a1.e01.es"]
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a13",
+          "typ": "luecke",
+          "ziel": "de.a1.e01.s0045",
+          "wort": 1,
+          "ablenker": ["bist", "sind"]
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e01.er",
+          "ablenker": ["de.a1.e01.ihr"]
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0035"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0036"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0040"
+            }
+          ],
+          "antwort": "de.a1.e01.s0042",
+          "ablenker": ["de.a1.e01.s0043", "de.a1.e01.s0009"]
+        },
+        {
+          "schluessel": "de.a1.e01.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e01.s0041"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e01.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Nach dem Namen fragen und buchstabieren",
+        "tr": "İsim sormak ve harf harf söylemek",
+        "ar": "السؤال عن الاسم وتهجئته"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e01.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e01.heissen",
+          "ablenker": ["de.a1.e01.sein", "de.a1.e01.gut"]
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e01.wie",
+          "ablenker": ["de.a1.e01.wer", "de.a1.e01.ja"]
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e01.wie", "de.a1.e01.wer", "de.a1.e01.heissen", "de.a1.e01.entschuldigung"]
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e01.s0047",
+          "ablenker": ["de.a1.e01.s0051", "de.a1.e01.s0058"]
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e01.s0049",
+          "wort": 1,
+          "ablenker": ["heißt", "heißen"]
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a06",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0060"
+            }
+          ],
+          "antwort": "de.a1.e01.s0050",
+          "ablenker": ["de.a1.e01.s0052", "de.a1.e01.s0004"]
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e01.buchstabieren",
+          "ablenker": ["de.a1.e01.heissen", "de.a1.e01.sein"]
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a09",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0048"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0050"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0063"
+            }
+          ],
+          "antwort": "de.a1.e01.s0066",
+          "ablenker": ["de.a1.e01.s0065", "de.a1.e01.s0037"]
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e01.s0073",
+          "nach": "ziel",
+          "alternativen": ["Sie heißt Selin, und er heißt Can."],
+          "ablenker": ["heiße"]
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e01.wie",
+          "ablenker": ["de.a1.e01.wir"]
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0071"
+            }
+          ],
+          "antwort": "de.a1.e01.s0072",
+          "ablenker": ["de.a1.e01.s0057", "de.a1.e01.s0054"]
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e01.s0048"
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0069"
+            }
+          ],
+          "antwort": "de.a1.e01.s0070",
+          "ablenker": ["de.a1.e01.s0068", "de.a1.e01.s0049"]
+        },
+        {
+          "schluessel": "de.a1.e01.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e01.s0064"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e01.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Sagen, woher man kommt und wo man wohnt",
+        "tr": "Nereli olduğunu ve nerede oturduğunu söylemek",
+        "ar": "الحديث عن الأصل ومكان السكن"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e01.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e01.woher",
+          "ablenker": ["de.a1.e01.wo", "de.a1.e01.wie"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e01.kommen",
+          "ablenker": ["de.a1.e01.wohnen", "de.a1.e01.heissen"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e01.woher", "de.a1.e01.wo", "de.a1.e01.kommen", "de.a1.e01.wohnen"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e01.s0083",
+          "ablenker": ["de.a1.e01.s0078", "de.a1.e01.s0087"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e01.s0092",
+          "wort": 1,
+          "ablenker": ["kommst", "komme"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e01.s0090",
+          "nach": "ziel",
+          "alternativen": ["Aus Syrien komme ich."],
+          "ablenker": ["in", "wohne"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0079"
+            }
+          ],
+          "antwort": "de.a1.e01.s0091",
+          "ablenker": ["de.a1.e01.s0088", "de.a1.e01.s0050"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a09",
+          "typ": "luecke",
+          "ziel": "de.a1.e01.s0095",
+          "wort": 2,
+          "ablenker": ["aus", "woher"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0098"
+            }
+          ],
+          "antwort": "de.a1.e01.s0099",
+          "ablenker": ["de.a1.e01.s0096", "de.a1.e01.s0093", "de.a1.e01.s0089"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a11",
+          "typ": "paare",
+          "lemmata": ["de.a1.e01.aus", "de.a1.e01.in", "de.a1.e01.land", "de.a1.e01.ja"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0106"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0107"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0108"
+            }
+          ],
+          "antwort": "de.a1.e01.s0109",
+          "ablenker": ["de.a1.e01.s0177", "de.a1.e01.s0110"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e01.wo",
+          "ablenker": ["de.a1.e01.wie"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e01.s0105",
+          "nach": "ziel",
+          "alternativen": ["Tim und Paula wohnen in Bonn.", "In Bonn wohnen Paula und Tim.", "In Bonn wohnen Tim und Paula."],
+          "ablenker": ["aus", "wohnt"]
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e01.s0083"
+        },
+        {
+          "schluessel": "de.a1.e01.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e01.s0088"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e01.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Sagen, welche Sprachen man spricht und lernt",
+        "tr": "Hangi dilleri konuştuğunu ve öğrendiğini söylemek",
+        "ar": "الحديث عن اللغات التي تتكلّمها وتتعلّمها"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e01.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e01.sprechen",
+          "ablenker": ["de.a1.e01.lernen", "de.a1.e01.wohnen"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e01.deutsch", "de.a1.e01.tuerkisch", "de.a1.e01.arabisch", "de.a1.e01.sprache"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e01.lernen",
+          "ablenker": ["de.a1.e01.sprechen", "de.a1.e01.kommen"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e01.s0122",
+          "ablenker": ["de.a1.e01.s0121", "de.a1.e01.s0118"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e01.s0140",
+          "wort": 1,
+          "ablenker": ["sprecht", "spreche"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a06",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e01.s0138",
+          "nach": "ziel",
+          "alternativen": ["Ich spreche Deutsch und Türkisch.", "Türkisch und Deutsch spreche ich.", "Deutsch und Türkisch spreche ich."],
+          "ablenker": ["sprichst"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0117"
+            }
+          ],
+          "antwort": "de.a1.e01.s0133",
+          "ablenker": ["de.a1.e01.s0125", "de.a1.e01.s0128"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e01.was",
+          "ablenker": ["de.a1.e01.wer", "de.a1.e01.wo"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0145"
+            }
+          ],
+          "antwort": "de.a1.e01.s0146",
+          "ablenker": ["de.a1.e01.s0094", "de.a1.e01.s0009", "de.a1.e01.s0050"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e01.s0147",
+          "wort": 4,
+          "ablenker": ["Sprache", "Länder"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0136"
+            }
+          ],
+          "antwort": "de.a1.e01.s0137",
+          "ablenker": ["de.a1.e01.s0131", "de.a1.e01.s0086"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e01.s0137",
+          "nach": "ziel",
+          "alternativen": ["Wir lernen Arabisch und Deutsch.", "Deutsch und Arabisch lernen wir.", "Arabisch und Deutsch lernen wir."],
+          "ablenker": ["lernt"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e01.s0131",
+          "ablenker": ["de.a1.e01.s0130", "de.a1.e01.s0129", "de.a1.e01.s0127"]
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e01.s0126"
+        },
+        {
+          "schluessel": "de.a1.e01.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e01.s0159"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e01.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Geschichte: Der erste Schultag und eine Begegnung im Treppenhaus",
+        "tr": "Hikâye: Okulun ilk günü ve apartmanda bir tanışma",
+        "ar": "قصة: اليوم الأول في المدرسة ولقاء على درج العمارة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e01.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a1.e01.s0160",
+          "zeilen": [
+            {
+              "satz": "de.a1.e01.s0161"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0162"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0163"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0164"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0165"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e01.s0166"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0167"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e01.s0090"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e01.s0040"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0168"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0169"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e01.s0170"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0171"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0172"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e01.s0173"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e01.s0124"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0138"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e01.s0061"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0065"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e01.s0020"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0174"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0175"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 5,
+              "frage": "de.a1.e01.s0055",
+              "antwort": "de.a1.e01.s0056",
+              "ablenker": ["de.a1.e01.s0057", "de.a1.e01.s0054"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.a1.e01.s0176",
+              "antwort": "de.a1.e01.s0177",
+              "ablenker": ["de.a1.e01.s0178", "de.a1.e01.s0179"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.a1.e01.s0185",
+              "antwort": "de.a1.e01.s0186",
+              "ablenker": ["de.a1.e01.s0187", "de.a1.e01.s0188"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a1.e01.s0180",
+              "antwort": "de.a1.e01.s0181",
+              "ablenker": ["de.a1.e01.s0182", "de.a1.e01.s0183"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.a1.e01.s0184",
+              "antwort": "de.a1.e01.deutsch",
+              "ablenker": ["de.a1.e01.tuerkisch", "de.a1.e01.arabisch"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e01.l06.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0167"
+            }
+          ],
+          "antwort": "de.a1.e01.s0090",
+          "ablenker": ["de.a1.e01.s0095", "de.a1.e01.s0126"]
+        },
+        {
+          "schluessel": "de.a1.e01.l06.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e01.s0167",
+          "ablenker": ["de.a1.e01.s0180", "de.a1.e01.s0172"]
+        },
+        {
+          "schluessel": "de.a1.e01.l06.a04",
+          "typ": "geschichte",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0189"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0062"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0066"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0190"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0079"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0090"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0039"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0102"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0103"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0141"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0191"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0120"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0134"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0019"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0005"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.a1.e01.s0051",
+              "antwort": "de.a1.e01.s0053",
+              "ablenker": ["de.a1.e01.s0054", "de.a1.e01.s0052"]
+            },
+            {
+              "nach": 5,
+              "frage": "de.a1.e01.s0192",
+              "antwort": "de.a1.e01.s0177",
+              "ablenker": ["de.a1.e01.s0179", "de.a1.e01.s0178"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.a1.e01.s0193",
+              "antwort": "de.a1.e01.deutsch",
+              "ablenker": ["de.a1.e01.arabisch", "de.a1.e01.tuerkisch"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e01.l06.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0189"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e01.s0062"
+            }
+          ],
+          "antwort": "de.a1.e01.s0066",
+          "ablenker": ["de.a1.e01.s0190", "de.a1.e01.s0005"]
+        },
+        {
+          "schluessel": "de.a1.e01.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0141"
+            }
+          ],
+          "antwort": "de.a1.e01.s0191",
+          "ablenker": ["de.a1.e01.s0007", "de.a1.e01.s0009"]
+        },
+        {
+          "schluessel": "de.a1.e01.l06.a07",
+          "typ": "sprechen",
+          "satz": "de.a1.e01.s0191"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e01.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Wiederholung: Grüße, Namen, Herkunft und Sprachen",
+        "tr": "Tekrar: selamlaşma, isimler, memleket ve diller",
+        "ar": "مراجعة: التحية والأسماء والأصل واللغات"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e01.l07.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e01.hallo", "de.a1.e01.tschuess", "de.a1.e01.woher", "de.a1.e01.sprache", "de.a1.e01.name"]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e01.sie",
+          "ablenker": ["de.a1.e01.du", "de.a1.e01.wir"]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e01.s0048",
+          "ablenker": ["de.a1.e01.s0055", "de.a1.e01.s0084"]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0016"
+            }
+          ],
+          "antwort": "de.a1.e01.s0002",
+          "ablenker": ["de.a1.e01.s0005", "de.a1.e01.s0006"]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0100"
+            }
+          ],
+          "antwort": "de.a1.e01.s0101",
+          "ablenker": ["de.a1.e01.s0114", "de.a1.e01.s0037"]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0113"
+            }
+          ],
+          "antwort": "de.a1.e01.s0114",
+          "ablenker": ["de.a1.e01.s0115", "de.a1.e01.s0104"]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e01.s0116",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0029"
+            }
+          ],
+          "antwort": "de.a1.e01.s0034",
+          "ablenker": ["de.a1.e01.s0031", "de.a1.e01.s0030"]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a09",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e01.wer",
+          "ablenker": ["de.a1.e01.wir"]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a10",
+          "typ": "geschichte",
+          "zeilen": [
+            {
+              "satz": "de.a1.e01.s0150"
+            },
+            {
+              "satz": "de.a1.e01.s0151"
+            },
+            {
+              "satz": "de.a1.e01.s0152"
+            },
+            {
+              "satz": "de.a1.e01.s0153"
+            },
+            {
+              "satz": "de.a1.e01.s0154"
+            },
+            {
+              "satz": "de.a1.e01.s0155"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.a1.e01.s0142",
+              "antwort": "de.a1.e01.s0140",
+              "ablenker": ["de.a1.e01.s0125", "de.a1.e01.s0128"]
+            },
+            {
+              "nach": 5,
+              "frage": "de.a1.e01.s0158",
+              "antwort": "de.a1.e01.s0156",
+              "ablenker": ["de.a1.e01.s0157", "de.a1.e01.s0177"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0058"
+            }
+          ],
+          "antwort": "de.a1.e01.s0059",
+          "ablenker": ["de.a1.e01.s0052", "de.a1.e01.s0057"]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e01.s0112",
+          "wort": 4,
+          "ablenker": ["Land", "Sprachen"]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e01.s0143",
+          "nach": "ziel",
+          "alternativen": ["Du lernst Türkisch, und ich lerne Arabisch."],
+          "ablenker": ["lernt"]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0067"
+            }
+          ],
+          "antwort": "de.a1.e01.s0068",
+          "ablenker": ["de.a1.e01.s0070", "de.a1.e01.s0006"]
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e01.s0097"
+        },
+        {
+          "schluessel": "de.a1.e01.l07.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e01.s0079"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e01.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Prüfstein: Kannst du dich vorstellen und andere fragen?",
+        "tr": "Sınama: Kendini tanıtıp başkalarına soru sorabilir misin?",
+        "ar": "اختبار: هل تستطيع أن تعرّف بنفسك وتسأل الآخرين؟"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e01.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e01.woher",
+          "ablenker": ["de.a1.e01.wo", "de.a1.e01.wie"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e01.ich", "de.a1.e01.wir", "de.a1.e01.du", "de.a1.e01.ihr"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e01.s0081",
+          "ablenker": ["de.a1.e01.s0080", "de.a1.e01.s0085"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e01.s0195",
+          "wort": 1,
+          "ablenker": ["bist", "ist"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e01.s0135",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0074"
+            }
+          ],
+          "antwort": "de.a1.e01.s0075",
+          "ablenker": ["de.a1.e01.s0054", "de.a1.e01.s0095"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a07",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e01.s0092"
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e01.sprache",
+          "ablenker": ["de.a1.e01.land", "de.a1.e01.tag"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0082"
+            }
+          ],
+          "antwort": "de.a1.e01.s0094",
+          "ablenker": ["de.a1.e01.s0092", "de.a1.e01.s0115"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e01.s0079",
+          "ablenker": ["de.a1.e01.s0084", "de.a1.e01.s0048", "de.a1.e01.s0119"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e01.s0149",
+          "wort": 0,
+          "ablenker": ["Sprecht", "Spreche"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e01.ihr",
+          "ablenker": ["de.a1.e01.er"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e01.s0139",
+          "nach": "ziel",
+          "alternativen": ["Ich spreche Deutsch und Arabisch.", "Arabisch und Deutsch spreche ich.", "Deutsch und Arabisch spreche ich."],
+          "ablenker": ["spricht"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e01.s0076"
+            }
+          ],
+          "antwort": "de.a1.e01.s0077",
+          "ablenker": ["de.a1.e01.s0036", "de.a1.e01.s0004"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e01.buchstabieren",
+          "ablenker": ["de.a1.e01.wohnen", "de.a1.e01.lernen"]
+        },
+        {
+          "schluessel": "de.a1.e01.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e01.s0194"
+        }
+      ]
+    }
+  ]
+}

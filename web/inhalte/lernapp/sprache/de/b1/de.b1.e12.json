@@ -1,0 +1,5259 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e12",
+    "reihenfolge": 13,
+    "thema": {
+      "de": "Konto, Brief und Paket",
+      "tr": "Hesap, mektup ve paket",
+      "ar": "الحساب والرسالة والطرد"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann ein Konto eröffnen, eine Überweisung ausfüllen und bei Problemen nachfragen.",
+        "tr": "Bir banka hesabı açabilir, havale formu doldurabilir ve sorun olduğunda bilgi isteyebilirim.",
+        "ar": "أستطيع أن أفتح حسابًا مصرفيًا وأن أملأ نموذج تحويل وأن أستفسر عند وجود مشكلة."
+      },
+      {
+        "de": "Ich kann Benachrichtigungen der Post verstehen und eine Sendung abholen oder zurückschicken.",
+        "tr": "Postanenin bildirimlerini anlayabilir ve bir gönderiyi teslim alabilir ya da geri gönderebilirim.",
+        "ar": "أستطيع أن أفهم إشعارات البريد وأن أستلم شحنة أو أعيدها."
+      }
+    ],
+    "symbol": "package",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e12.sowie",
+      "lemma": "sowie",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "und (Aufzählung, Schriftsprache)"
+      },
+      "frequenzRang": 147,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.insgesamt",
+      "lemma": "insgesamt",
+      "wortart": "adverb",
+      "frequenzRang": 488,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.jeweils",
+      "lemma": "jeweils",
+      "wortart": "adverb",
+      "frequenzRang": 675,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.ansonsten",
+      "lemma": "ansonsten",
+      "wortart": "adverb",
+      "frequenzRang": 1624,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.eventuell",
+      "lemma": "eventuell",
+      "wortart": "adverb",
+      "frequenzRang": 1748,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.gesamt",
+      "lemma": "gesamt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "gesamte",
+        "endung_en": "gesamten",
+        "endung_er": "gesamter",
+        "endung_es": "gesamtes",
+        "endung_em": "gesamtem"
+      },
+      "frequenzRang": 492,
+      "quelle": "wiktionary:de:gesamt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gesamt‘ (https://de.wiktionary.org/wiki/gesamt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.zusaetzlich",
+      "lemma": "zusätzlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "zusätzliche",
+        "endung_en": "zusätzlichen",
+        "endung_er": "zusätzlicher",
+        "endung_es": "zusätzliches",
+        "endung_em": "zusätzlichem"
+      },
+      "frequenzRang": 569,
+      "quelle": "wiktionary:de:zusätzlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zusätzlich‘ (https://de.wiktionary.org/wiki/zusätzlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.finanziell",
+      "lemma": "finanziell",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "finanzielle",
+        "endung_en": "finanziellen",
+        "endung_er": "finanzieller",
+        "endung_es": "finanzielles",
+        "endung_em": "finanziellem"
+      },
+      "frequenzRang": 1124,
+      "quelle": "wiktionary:de:finanziell",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚finanziell‘ (https://de.wiktionary.org/wiki/finanziell), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.jaehrlich",
+      "lemma": "jährlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "jährliche",
+        "endung_en": "jährlichen",
+        "endung_er": "jährlicher",
+        "endung_es": "jährliches",
+        "endung_em": "jährlichem"
+      },
+      "frequenzRang": 1182,
+      "quelle": "wiktionary:de:jährlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚jährlich‘ (https://de.wiktionary.org/wiki/jährlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.durchschnittlich",
+      "lemma": "durchschnittlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "durchschnittliche",
+        "endung_en": "durchschnittlichen",
+        "endung_er": "durchschnittlicher",
+        "endung_es": "durchschnittliches",
+        "endung_em": "durchschnittlichem",
+        "komparativ": "durchschnittlicher",
+        "superlativ": "durchschnittlichsten",
+        "superlativ_e": "durchschnittlichste"
+      },
+      "frequenzRang": 1565,
+      "quelle": "wiktionary:de:durchschnittlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚durchschnittlich‘ (https://de.wiktionary.org/wiki/durchschnittlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.passend",
+      "lemma": "passend",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "passende",
+        "endung_en": "passenden",
+        "endung_er": "passender",
+        "endung_es": "passendes",
+        "endung_em": "passendem",
+        "komparativ": "passender",
+        "superlativ": "passendsten",
+        "superlativ_e": "passendste"
+      },
+      "frequenzRang": 1360,
+      "quelle": "wiktionary:de:passend",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚passend‘ (https://de.wiktionary.org/wiki/passend), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.verfuegbar",
+      "lemma": "verfügbar",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "verfügbare",
+        "endung_en": "verfügbaren",
+        "endung_er": "verfügbarer",
+        "endung_es": "verfügbares",
+        "endung_em": "verfügbarem"
+      },
+      "frequenzRang": 1933,
+      "quelle": "wiktionary:de:verfügbar",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verfügbar‘ (https://de.wiktionary.org/wiki/verfügbar), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.einzeln",
+      "lemma": "einzeln",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "einzelne",
+        "endung_en": "einzelnen",
+        "endung_er": "einzelner",
+        "endung_es": "einzelnes",
+        "endung_em": "einzelnem"
+      },
+      "frequenzRang": 847,
+      "quelle": "wiktionary:de:einzeln",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚einzeln‘ (https://de.wiktionary.org/wiki/einzeln), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.hoehe",
+      "lemma": "Höhe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Höhen"
+      },
+      "formen": {
+        "pl": "Höhen"
+      },
+      "frequenzRang": 603,
+      "quelle": "wiktionary:de:Höhe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Höhe‘ (https://de.wiktionary.org/wiki/Höhe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.schulden",
+      "lemma": "Schulden",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 610,
+      "quelle": "wiktionary:de:Schulden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schulden‘ (https://de.wiktionary.org/wiki/Schulden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.inhalt",
+      "lemma": "Inhalt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Inhalte"
+      },
+      "formen": {
+        "pl": "Inhalte",
+        "dat_pl": "Inhalten",
+        "gen_sg": "Inhalts",
+        "gen_sg_2": "Inhaltes"
+      },
+      "frequenzRang": 721,
+      "quelle": "wiktionary:de:Inhalt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Inhalt‘ (https://de.wiktionary.org/wiki/Inhalt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.auswahl",
+      "lemma": "Auswahl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 975,
+      "quelle": "wiktionary:de:Auswahl",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Auswahl‘ (https://de.wiktionary.org/wiki/Auswahl), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.verlust",
+      "lemma": "Verlust",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Verluste"
+      },
+      "formen": {
+        "pl": "Verluste",
+        "dat_pl": "Verlusten",
+        "gen_sg": "Verlustes",
+        "gen_sg_2": "Verlusts"
+      },
+      "frequenzRang": 1332,
+      "quelle": "wiktionary:de:Verlust",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verlust‘ (https://de.wiktionary.org/wiki/Verlust), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.service",
+      "lemma": "Service",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Services"
+      },
+      "formen": {
+        "pl": "Services",
+        "gen_sg": "Services"
+      },
+      "frequenzRang": 1429,
+      "quelle": "wiktionary:de:Service",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Service‘ (https://de.wiktionary.org/wiki/Service), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.gewicht",
+      "lemma": "Gewicht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gewichte"
+      },
+      "formen": {
+        "pl": "Gewichte",
+        "dat_pl": "Gewichten",
+        "gen_sg": "Gewichts",
+        "gen_sg_2": "Gewichtes"
+      },
+      "frequenzRang": 1645,
+      "quelle": "wiktionary:de:Gewicht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gewicht‘ (https://de.wiktionary.org/wiki/Gewicht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.option",
+      "lemma": "Option",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Optionen"
+      },
+      "formen": {
+        "pl": "Optionen"
+      },
+      "frequenzRang": 1944,
+      "quelle": "wiktionary:de:Option",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Option‘ (https://de.wiktionary.org/wiki/Option), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.betrag",
+      "lemma": "Betrag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Beträge"
+      },
+      "formen": {
+        "pl": "Beträge",
+        "dat_pl": "Beträgen",
+        "gen_sg": "Betrags",
+        "gen_sg_2": "Betrages"
+      },
+      "frequenzRang": 2296,
+      "quelle": "wiktionary:de:Betrag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Betrag‘ (https://de.wiktionary.org/wiki/Betrag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.summe",
+      "lemma": "Summe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Summen"
+      },
+      "formen": {
+        "pl": "Summen"
+      },
+      "frequenzRang": 2317,
+      "quelle": "wiktionary:de:Summe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Summe‘ (https://de.wiktionary.org/wiki/Summe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.zahlung",
+      "lemma": "Zahlung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Zahlungen"
+      },
+      "formen": {
+        "pl": "Zahlungen"
+      },
+      "frequenzRang": 2969,
+      "quelle": "wiktionary:de:Zahlung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zahlung‘ (https://de.wiktionary.org/wiki/Zahlung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.beleg",
+      "lemma": "Beleg",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Belege"
+      },
+      "formen": {
+        "pl": "Belege",
+        "dat_pl": "Belegen",
+        "gen_sg": "Belegs",
+        "gen_sg_2": "Beleges"
+      },
+      "frequenzRang": 3275,
+      "quelle": "wiktionary:de:Beleg",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Beleg‘ (https://de.wiktionary.org/wiki/Beleg), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.filiale",
+      "lemma": "Filiale",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Filialen"
+      },
+      "formen": {
+        "pl": "Filialen"
+      },
+      "frequenzRang": 3552,
+      "quelle": "wiktionary:de:Filiale",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Filiale‘ (https://de.wiktionary.org/wiki/Filiale), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.empfaenger",
+      "lemma": "Empfänger",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Empfänger",
+        "weiblich": "Empfängerin"
+      },
+      "formen": {
+        "dat_pl": "Empfängern",
+        "gen_sg": "Empfängers",
+        "weiblich": "Empfängerin",
+        "weiblich_pl": "Empfängerinnen"
+      },
+      "frequenzRang": 3568,
+      "quelle": "wiktionary:de:Empfänger",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Empfänger‘ (https://de.wiktionary.org/wiki/Empfänger), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.lieferung",
+      "lemma": "Lieferung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Lieferungen"
+      },
+      "formen": {
+        "pl": "Lieferungen"
+      },
+      "frequenzRang": 3280,
+      "quelle": "wiktionary:de:Lieferung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lieferung‘ (https://de.wiktionary.org/wiki/Lieferung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.bestellung",
+      "lemma": "Bestellung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bestellungen"
+      },
+      "formen": {
+        "pl": "Bestellungen"
+      },
+      "frequenzRang": 3429,
+      "quelle": "wiktionary:de:Bestellung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bestellung‘ (https://de.wiktionary.org/wiki/Bestellung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.garantie",
+      "lemma": "Garantie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Garantien"
+      },
+      "formen": {
+        "pl": "Garantien"
+      },
+      "frequenzRang": 4103,
+      "quelle": "wiktionary:de:Garantie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Garantie‘ (https://de.wiktionary.org/wiki/Garantie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.ersatz",
+      "lemma": "Ersatz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Ersatzes"
+      },
+      "frequenzRang": 2798,
+      "quelle": "wiktionary:de:Ersatz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ersatz‘ (https://de.wiktionary.org/wiki/Ersatz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.gutschein",
+      "lemma": "Gutschein",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Gutscheine"
+      },
+      "formen": {
+        "pl": "Gutscheine",
+        "dat_pl": "Gutscheinen",
+        "gen_sg": "Gutscheins",
+        "gen_sg_2": "Gutscheines"
+      },
+      "frequenzRang": 3020,
+      "quelle": "wiktionary:de:Gutschein",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gutschein‘ (https://de.wiktionary.org/wiki/Gutschein), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.schein",
+      "lemma": "Schein",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Scheine"
+      },
+      "formen": {
+        "pl": "Scheine",
+        "dat_pl": "Scheinen",
+        "gen_sg": "Scheins",
+        "gen_sg_2": "Scheines"
+      },
+      "frequenzRang": 3227,
+      "quelle": "wiktionary:de:Schein",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schein‘ (https://de.wiktionary.org/wiki/Schein), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.muenze",
+      "lemma": "Münze",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Münzen"
+      },
+      "formen": {
+        "pl": "Münzen"
+      },
+      "frequenzRang": 8943,
+      "quelle": "wiktionary:de:Münze",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Münze‘ (https://de.wiktionary.org/wiki/Münze), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.ueberweisung",
+      "lemma": "Überweisung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Überweisungen"
+      },
+      "formen": {
+        "pl": "Überweisungen"
+      },
+      "frequenzRang": 7723,
+      "quelle": "wiktionary:de:Überweisung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Überweisung‘ (https://de.wiktionary.org/wiki/Überweisung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.girokonto",
+      "lemma": "Girokonto",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Girokonten"
+      },
+      "formen": {
+        "pl": "Girokonten",
+        "gen_sg": "Girokontos"
+      },
+      "frequenzRang": 22061,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.bankkarte",
+      "lemma": "Bankkarte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bankkarten"
+      },
+      "formen": {
+        "pl": "Bankkarten"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.kontoauszug",
+      "lemma": "Kontoauszug",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kontoauszüge"
+      },
+      "formen": {
+        "pl": "Kontoauszüge",
+        "dat_pl": "Kontoauszügen",
+        "gen_sg": "Kontoauszugs",
+        "gen_sg_2": "Kontoauszuges"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.geheimzahl",
+      "lemma": "Geheimzahl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Geheimzahlen"
+      },
+      "formen": {
+        "pl": "Geheimzahlen"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.geldautomat",
+      "lemma": "Geldautomat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Geldautomaten",
+        "deklination": "n-Deklination"
+      },
+      "formen": {
+        "pl": "Geldautomaten",
+        "akk_dat_sg": "Geldautomaten",
+        "gen_sg": "Geldautomaten"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.kontonummer",
+      "lemma": "Kontonummer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kontonummern"
+      },
+      "formen": {
+        "pl": "Kontonummern"
+      },
+      "frequenzRang": 37131,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.quittung",
+      "lemma": "Quittung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Quittungen"
+      },
+      "formen": {
+        "pl": "Quittungen"
+      },
+      "frequenzRang": 10989,
+      "quelle": "wiktionary:de:Quittung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Quittung‘ (https://de.wiktionary.org/wiki/Quittung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.paeckchen",
+      "lemma": "Päckchen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Päckchen"
+      },
+      "formen": {
+        "gen_sg": "Päckchens"
+      },
+      "frequenzRang": 7870,
+      "quelle": "wiktionary:de:Päckchen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Päckchen‘ (https://de.wiktionary.org/wiki/Päckchen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.umschlag",
+      "lemma": "Umschlag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Umschläge"
+      },
+      "formen": {
+        "pl": "Umschläge",
+        "dat_pl": "Umschlägen",
+        "gen_sg": "Umschlags",
+        "gen_sg_2": "Umschlages"
+      },
+      "frequenzRang": 7390,
+      "quelle": "wiktionary:de:Umschlag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Umschlag‘ (https://de.wiktionary.org/wiki/Umschlag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.einschreiben",
+      "lemma": "Einschreiben",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Einschreiben"
+      },
+      "formen": {
+        "gen_sg": "Einschreibens"
+      },
+      "frequenzRang": 27342,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.porto",
+      "lemma": "Porto",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Portos"
+      },
+      "formen": {
+        "pl": "Portos",
+        "gen_sg": "Portos"
+      },
+      "frequenzRang": 5683,
+      "quelle": "wiktionary:de:Porto",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Porto‘ (https://de.wiktionary.org/wiki/Porto), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.versand",
+      "lemma": "Versand",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Versands",
+        "gen_sg_2": "Versandes"
+      },
+      "frequenzRang": 4997,
+      "quelle": "wiktionary:de:Versand",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Versand‘ (https://de.wiktionary.org/wiki/Versand), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.reklamation",
+      "lemma": "Reklamation",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Reklamationen"
+      },
+      "formen": {
+        "pl": "Reklamationen"
+      },
+      "quelle": "wiktionary:de:Reklamation",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Reklamation‘ (https://de.wiktionary.org/wiki/Reklamation), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.ruecksendung",
+      "lemma": "Rücksendung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Rücksendungen"
+      },
+      "formen": {
+        "pl": "Rücksendungen"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.kundenservice",
+      "lemma": "Kundenservice",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Kundenservices"
+      },
+      "frequenzRang": 9838,
+      "quelle": "wiktionary:de:Kundenservice",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kundenservice‘ (https://de.wiktionary.org/wiki/Kundenservice), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.hotline",
+      "lemma": "Hotline",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Hotlines"
+      },
+      "formen": {
+        "pl": "Hotlines"
+      },
+      "frequenzRang": 8495,
+      "quelle": "wiktionary:de:Hotline",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hotline‘ (https://de.wiktionary.org/wiki/Hotline), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.benachrichtigung",
+      "lemma": "Benachrichtigung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Benachrichtigungen"
+      },
+      "formen": {
+        "pl": "Benachrichtigungen"
+      },
+      "frequenzRang": 8577,
+      "quelle": "wiktionary:de:Benachrichtigung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Benachrichtigung‘ (https://de.wiktionary.org/wiki/Benachrichtigung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.zustellung",
+      "lemma": "Zustellung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Zustellungen"
+      },
+      "formen": {
+        "pl": "Zustellungen"
+      },
+      "frequenzRang": 10359,
+      "quelle": "wiktionary:de:Zustellung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zustellung‘ (https://de.wiktionary.org/wiki/Zustellung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.postbote",
+      "lemma": "Postbote",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Postboten",
+        "deklination": "n-Deklination",
+        "weiblich": "Postbotin"
+      },
+      "formen": {
+        "pl": "Postboten",
+        "akk_dat_sg": "Postboten",
+        "gen_sg": "Postboten",
+        "weiblich": "Postbotin",
+        "weiblich_pl": "Postbotinnen"
+      },
+      "frequenzRang": 31304,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.gratis",
+      "lemma": "gratis",
+      "wortart": "adverb",
+      "frequenzRang": 1971,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.erstattung",
+      "lemma": "Erstattung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Erstattungen"
+      },
+      "formen": {
+        "pl": "Erstattungen"
+      },
+      "frequenzRang": 23576,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.lastschrift",
+      "lemma": "Lastschrift",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Lastschriften"
+      },
+      "formen": {
+        "pl": "Lastschriften"
+      },
+      "frequenzRang": 43433,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.dauerauftrag",
+      "lemma": "Dauerauftrag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Daueraufträge"
+      },
+      "formen": {
+        "pl": "Daueraufträge",
+        "dat_pl": "Daueraufträgen",
+        "gen_sg": "Dauerauftrags",
+        "gen_sg_2": "Dauerauftrages"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.eroeffnen",
+      "lemma": "eröffnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "eröffnen",
+        "praes_ich": "eröffne",
+        "praes_du": "eröffnest",
+        "praes_er_sie_es": "eröffnet",
+        "praes_wir": "eröffnen",
+        "praes_ihr": "eröffnet",
+        "praes_sie_Sie": "eröffnen",
+        "praet_ich_er_sie_es": "eröffnete",
+        "praet_du": "eröffnetest",
+        "praet_wir_sie_Sie": "eröffneten",
+        "praet_ihr": "eröffnetet",
+        "partizip_2": "eröffnet"
+      },
+      "frequenzRang": 1006,
+      "quelle": "wiktionary:de:eröffnen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚eröffnen‘ (https://de.wiktionary.org/wiki/eröffnen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.bestellen",
+      "lemma": "bestellen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bestellen",
+        "praes_ich": "bestelle",
+        "praes_du": "bestellst",
+        "praes_er_sie_es": "bestellt",
+        "praes_wir": "bestellen",
+        "praes_ihr": "bestellt",
+        "praes_sie_Sie": "bestellen",
+        "praet_ich_er_sie_es": "bestellte",
+        "praet_du": "bestelltest",
+        "praet_wir_sie_Sie": "bestellten",
+        "praet_ihr": "bestelltet",
+        "partizip_2": "bestellt"
+      },
+      "frequenzRang": 1031,
+      "quelle": "wiktionary:de:bestellen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bestellen‘ (https://de.wiktionary.org/wiki/bestellen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.bestaetigen",
+      "lemma": "bestätigen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bestätigen",
+        "praes_ich": "bestätige",
+        "praes_du": "bestätigst",
+        "praes_er_sie_es": "bestätigt",
+        "praes_wir": "bestätigen",
+        "praes_ihr": "bestätigt",
+        "praes_sie_Sie": "bestätigen",
+        "praet_ich_er_sie_es": "bestätigte",
+        "praet_du": "bestätigtest",
+        "praet_wir_sie_Sie": "bestätigten",
+        "praet_ihr": "bestätigtet",
+        "partizip_2": "bestätigt"
+      },
+      "frequenzRang": 756,
+      "quelle": "wiktionary:de:bestätigen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bestätigen‘ (https://de.wiktionary.org/wiki/bestätigen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.betragen",
+      "lemma": "betragen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "betragen",
+        "praes_ich": "betrage",
+        "praes_du": "beträgst",
+        "praes_er_sie_es": "beträgt",
+        "praes_wir": "betragen",
+        "praes_ihr": "betragt",
+        "praes_sie_Sie": "betragen",
+        "praet_ich_er_sie_es": "betrug",
+        "praet_du": "betrugst",
+        "praet_wir_sie_Sie": "betrugen",
+        "praet_ihr": "betrugt",
+        "partizip_2": "betragen"
+      },
+      "frequenzRang": 805,
+      "quelle": "wiktionary:de:betragen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚betragen‘ (https://de.wiktionary.org/wiki/betragen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.liefern",
+      "lemma": "liefern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "liefern",
+        "praes_ich": "liefere",
+        "praes_du": "lieferst",
+        "praes_er_sie_es": "liefert",
+        "praes_wir": "liefern",
+        "praes_ihr": "liefert",
+        "praes_sie_Sie": "liefern",
+        "praet_ich_er_sie_es": "lieferte",
+        "praet_du": "liefertest",
+        "praet_wir_sie_Sie": "lieferten",
+        "praet_ihr": "liefertet",
+        "partizip_2": "geliefert"
+      },
+      "frequenzRang": 807,
+      "quelle": "wiktionary:de:liefern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚liefern‘ (https://de.wiktionary.org/wiki/liefern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.stecken",
+      "lemma": "stecken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "stecken",
+        "praes_ich": "stecke",
+        "praes_du": "steckst",
+        "praes_er_sie_es": "steckt",
+        "praes_wir": "stecken",
+        "praes_ihr": "steckt",
+        "praes_sie_Sie": "stecken",
+        "praet_ich_er_sie_es": "steckte",
+        "praet_du": "stecktest",
+        "praet_wir_sie_Sie": "steckten",
+        "praet_ihr": "stecktet",
+        "partizip_2": "gesteckt"
+      },
+      "frequenzRang": 682,
+      "quelle": "wiktionary:de:stecken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚stecken‘ (https://de.wiktionary.org/wiki/stecken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.verlangen",
+      "lemma": "verlangen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verlangen",
+        "praes_ich": "verlange",
+        "praes_du": "verlangst",
+        "praes_er_sie_es": "verlangt",
+        "praes_wir": "verlangen",
+        "praes_ihr": "verlangt",
+        "praes_sie_Sie": "verlangen",
+        "praet_ich_er_sie_es": "verlangte",
+        "praet_du": "verlangtest",
+        "praet_wir_sie_Sie": "verlangten",
+        "praet_ihr": "verlangtet",
+        "partizip_2": "verlangt"
+      },
+      "frequenzRang": 868,
+      "quelle": "wiktionary:de:verlangen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verlangen‘ (https://de.wiktionary.org/wiki/verlangen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.behalten",
+      "lemma": "behalten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "behalten",
+        "praes_ich": "behalte",
+        "praes_du": "behältst",
+        "praes_er_sie_es": "behält",
+        "praes_wir": "behalten",
+        "praes_ihr": "behaltet",
+        "praes_sie_Sie": "behalten",
+        "praet_ich_er_sie_es": "behielt",
+        "praet_du": "behieltest",
+        "praet_wir_sie_Sie": "behielten",
+        "praet_ihr": "behieltet",
+        "partizip_2": "behalten"
+      },
+      "frequenzRang": 1173,
+      "quelle": "wiktionary:de:behalten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚behalten‘ (https://de.wiktionary.org/wiki/behalten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.lohnen",
+      "lemma": "lohnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "lohnen",
+        "praes_ich": "lohne",
+        "praes_du": "lohnst",
+        "praes_er_sie_es": "lohnt",
+        "praes_wir": "lohnen",
+        "praes_ihr": "lohnt",
+        "praes_sie_Sie": "lohnen",
+        "praet_ich_er_sie_es": "lohnte",
+        "praet_du": "lohntest",
+        "praet_wir_sie_Sie": "lohnten",
+        "praet_ihr": "lohntet",
+        "partizip_2": "gelohnt",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 1328,
+      "quelle": "wiktionary:de:lohnen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚lohnen‘ (https://de.wiktionary.org/wiki/lohnen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.kuendigen",
+      "lemma": "kündigen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "kündigen",
+        "praes_ich": "kündige",
+        "praes_du": "kündigst",
+        "praes_er_sie_es": "kündigt",
+        "praes_wir": "kündigen",
+        "praes_ihr": "kündigt",
+        "praes_sie_Sie": "kündigen",
+        "praet_ich_er_sie_es": "kündigte",
+        "praet_du": "kündigtest",
+        "praet_wir_sie_Sie": "kündigten",
+        "praet_ihr": "kündigtet",
+        "partizip_2": "gekündigt",
+        "imp_du": "kündige",
+        "imp_ihr": "kündigt"
+      },
+      "frequenzRang": 1788,
+      "quelle": "wiktionary:de:kündigen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚kündigen‘ (https://de.wiktionary.org/wiki/kündigen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.aufgeben",
+      "lemma": "aufgeben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "auf",
+        "unregelmaessig_praesens": "ja",
+        "grundverb": "geben (de.a1.e06.geben)"
+      },
+      "formen": {
+        "infinitiv": "aufgeben",
+        "verbzusatz": "auf",
+        "partizip_2": "aufgegeben",
+        "zu_infinitiv": "aufzugeben",
+        "nebensatz_er_sie_es": "aufgibt",
+        "nebensatz_praet": "aufgab",
+        "nebensatz_praet_pl": "aufgaben"
+      },
+      "frequenzRang": 1804,
+      "quelle": "wiktionary:de:aufgeben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚aufgeben‘ (https://de.wiktionary.org/wiki/aufgeben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.ueberweisen",
+      "lemma": "überweisen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "überweisen",
+        "praes_ich": "überweise",
+        "praes_du": "überweist",
+        "praes_er_sie_es": "überweist",
+        "praes_wir": "überweisen",
+        "praes_ihr": "überweist",
+        "praes_sie_Sie": "überweisen",
+        "praet_ich_er_sie_es": "überwies",
+        "praet_du": "überwiesest",
+        "praet_wir_sie_Sie": "überwiesen",
+        "praet_ihr": "überwiest",
+        "partizip_2": "überwiesen",
+        "imp_du": "überweis",
+        "imp_ihr": "überweist"
+      },
+      "frequenzRang": 4900,
+      "quelle": "wiktionary:de:überweisen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚überweisen‘ (https://de.wiktionary.org/wiki/überweisen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.abheben",
+      "lemma": "abheben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ab",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "abheben",
+        "verbzusatz": "ab",
+        "praes_ich": "hebe",
+        "praes_du": "hebst",
+        "praes_er_sie_es": "hebt",
+        "praes_wir": "heben",
+        "praes_ihr": "hebt",
+        "praes_sie_Sie": "heben",
+        "praet_ich_er_sie_es": "hob",
+        "praet_du": "hobst",
+        "praet_wir_sie_Sie": "hoben",
+        "praet_ihr": "hobt",
+        "partizip_2": "abgehoben",
+        "zu_infinitiv": "abzuheben",
+        "nebensatz_er_sie_es": "abhebt",
+        "nebensatz_praet": "abhob",
+        "nebensatz_praet_pl": "abhoben",
+        "imp_du": "heb",
+        "imp_ihr": "hebt"
+      },
+      "frequenzRang": 5550,
+      "quelle": "wiktionary:de:abheben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚abheben‘ (https://de.wiktionary.org/wiki/abheben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.einzahlen",
+      "lemma": "einzahlen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ein",
+        "grundverb": "zahlen (de.a1.e06.zahlen)"
+      },
+      "formen": {
+        "infinitiv": "einzahlen",
+        "verbzusatz": "ein",
+        "partizip_2": "eingezahlt",
+        "zu_infinitiv": "einzuzahlen",
+        "nebensatz_er_sie_es": "einzahlt",
+        "nebensatz_praet": "einzahlte",
+        "nebensatz_praet_pl": "einzahlten"
+      },
+      "frequenzRang": 26051,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.versenden",
+      "lemma": "versenden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "versenden",
+        "praes_ich": "versende",
+        "praes_du": "versendest",
+        "praes_er_sie_es": "versendet",
+        "praes_wir": "versenden",
+        "praes_ihr": "versendet",
+        "praes_sie_Sie": "versenden",
+        "praet_ich_er_sie_es": "versandte",
+        "praet_du": "versandtest",
+        "praet_wir_sie_Sie": "versandten",
+        "praet_ihr": "versandtet",
+        "partizip_2": "versandt"
+      },
+      "frequenzRang": 6603,
+      "quelle": "wiktionary:de:versenden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚versenden‘ (https://de.wiktionary.org/wiki/versenden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.zurueckschicken",
+      "lemma": "zurückschicken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "zurück",
+        "grundverb": "schicken (de.a2.e10.schicken)"
+      },
+      "formen": {
+        "infinitiv": "zurückschicken",
+        "verbzusatz": "zurück",
+        "partizip_2": "zurückgeschickt",
+        "zu_infinitiv": "zurückzuschicken",
+        "nebensatz_er_sie_es": "zurückschickt",
+        "nebensatz_praet": "zurückschickte",
+        "nebensatz_praet_pl": "zurückschickten"
+      },
+      "frequenzRang": 26788,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.reklamieren",
+      "lemma": "reklamieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "reklamieren",
+        "praes_ich": "reklamiere",
+        "praes_du": "reklamierst",
+        "praes_er_sie_es": "reklamiert",
+        "praes_wir": "reklamieren",
+        "praes_ihr": "reklamiert",
+        "praes_sie_Sie": "reklamieren",
+        "praet_ich_er_sie_es": "reklamierte",
+        "praet_du": "reklamiertest",
+        "praet_wir_sie_Sie": "reklamierten",
+        "praet_ihr": "reklamiertet",
+        "partizip_2": "reklamiert",
+        "imp_du": "reklamier",
+        "imp_ihr": "reklamiert"
+      },
+      "frequenzRang": 42869,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.wiegen",
+      "lemma": "wiegen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "wiegen",
+        "praes_ich": "wiege",
+        "praes_du": "wiegst",
+        "praes_er_sie_es": "wiegt",
+        "praes_wir": "wiegen",
+        "praes_ihr": "wiegt",
+        "praes_sie_Sie": "wiegen",
+        "praet_ich_er_sie_es": "wog",
+        "praet_du": "wogst",
+        "praet_wir_sie_Sie": "wogen",
+        "praet_ihr": "wogt",
+        "partizip_2": "gewogen"
+      },
+      "frequenzRang": 3515,
+      "quelle": "wiktionary:de:wiegen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wiegen‘ (https://de.wiktionary.org/wiki/wiegen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.versichern",
+      "lemma": "versichern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "versichern",
+        "praes_ich": "versichere",
+        "praes_du": "versicherst",
+        "praes_er_sie_es": "versichert",
+        "praes_wir": "versichern",
+        "praes_ihr": "versichert",
+        "praes_sie_Sie": "versichern",
+        "praet_ich_er_sie_es": "versicherte",
+        "praet_du": "versichertest",
+        "praet_wir_sie_Sie": "versicherten",
+        "praet_ihr": "versichertet",
+        "partizip_2": "versichert"
+      },
+      "frequenzRang": 2943,
+      "quelle": "wiktionary:de:versichern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚versichern‘ (https://de.wiktionary.org/wiki/versichern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.erstatten",
+      "lemma": "erstatten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erstatten",
+        "praes_ich": "erstatte",
+        "praes_du": "erstattest",
+        "praes_er_sie_es": "erstattet",
+        "praes_wir": "erstatten",
+        "praes_ihr": "erstattet",
+        "praes_sie_Sie": "erstatten",
+        "praet_ich_er_sie_es": "erstattete",
+        "praet_du": "erstattetest",
+        "praet_wir_sie_Sie": "erstatteten",
+        "praet_ihr": "erstattetet",
+        "partizip_2": "erstattet"
+      },
+      "frequenzRang": 4350,
+      "quelle": "wiktionary:de:erstatten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erstatten‘ (https://de.wiktionary.org/wiki/erstatten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.zustellen",
+      "lemma": "zustellen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "zu",
+        "grundverb": "stellen (de.a1.e03.stellen)"
+      },
+      "formen": {
+        "infinitiv": "zustellen",
+        "verbzusatz": "zu",
+        "partizip_2": "zugestellt",
+        "zu_infinitiv": "zuzustellen",
+        "nebensatz_er_sie_es": "zustellt",
+        "nebensatz_praet": "zustellte",
+        "nebensatz_praet_pl": "zustellten"
+      },
+      "frequenzRang": 8756,
+      "quelle": "wiktionary:de:zustellen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zustellen‘ (https://de.wiktionary.org/wiki/zustellen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.beschaedigt",
+      "lemma": "beschädigt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "beschädigte",
+        "endung_en": "beschädigten",
+        "endung_er": "beschädigter",
+        "endung_es": "beschädigtes",
+        "endung_em": "beschädigtem"
+      },
+      "frequenzRang": 8361,
+      "quelle": "wiktionary:de:beschädigt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚beschädigt‘ (https://de.wiktionary.org/wiki/beschädigt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e12.s0001",
+      "text": "Für den Lohn, die Miete und viele Rechnungen braucht man ein Girokonto.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0002",
+      "text": "Für Schüler und Azubis ist das Girokonto bei vielen Banken gratis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0003",
+      "text": "Mit 17 Jahren hat Emre jetzt sein erstes eigenes Girokonto.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0004",
+      "text": "Ich möchte gern ein Konto eröffnen. Was muss ich dafür mitbringen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0005",
+      "text": "Jana hat vor, bei einer anderen Bank ein Konto zu eröffnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0006",
+      "text": "Sie eröffnete ein neues Geschäft.",
+      "quelle": "tatoeba:9045663",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #9045663 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0007",
+      "text": "Gibt es hier in der Nähe eine Filiale Ihrer Bank?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0008",
+      "text": "Die Bankkarte bekommt man nach ein paar Tagen mit der Post.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0009",
+      "text": "Mit der Bankkarte kann man im Supermarkt an der Kasse bezahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0010",
+      "text": "Wenn die Bankkarte weg ist, muss man sie sofort sperren lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0011",
+      "text": "Die Geheimzahl sollte man nie auf die Karte schreiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0012",
+      "text": "Wenn man die Geheimzahl dreimal falsch eingibt, wird die Karte gesperrt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0013",
+      "text": "Die Geheimzahl kann man am Automaten ändern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0014",
+      "text": "Den Kontoauszug kann man am Automaten in der Filiale ausdrucken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0015",
+      "text": "Prüfen Sie Ihre Kontoauszüge regelmäßig!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0016",
+      "text": "Mein Chef braucht meine Kontonummer, damit er den Lohn überweisen kann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0017",
+      "text": "Sie haben zwei Optionen: ein Konto mit Filiale oder ein Konto nur online.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0018",
+      "text": "Am Ende des Monats haben manche Familien finanzielle Sorgen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0019",
+      "text": "Frau Becker kündigt ihr altes Konto, weil es zu teuer ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0020",
+      "text": "Ich überlege, meinen Job zu kündigen.",
+      "quelle": "tatoeba:12050134",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12050134 von mayabe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0021",
+      "text": "Emre gibt nur so viel Geld aus, wie er hat. Er will keine Schulden machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0022",
+      "text": "In der App sieht man, wie viel Geld auf dem Konto verfügbar ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0023",
+      "text": "Es tut mir leid, aber es ist nicht mehr verfügbar.",
+      "quelle": "tatoeba:1875950",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1875950 von Asma (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0024",
+      "text": "Eventuell komme ich etwas später, weil ich noch zur Bank muss.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0025",
+      "text": "Bei der Auswahl der Bank sollte man die Kosten vergleichen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0026",
+      "text": "Frau Wagner hilft Emre, das passende Konto zu finden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0027",
+      "text": "Haben Sie es vielleicht passend? Ich kann den großen Schein nicht wechseln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0028",
+      "text": "Vergessen Sie nicht, Ihren Ausweis mitzubringen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0029",
+      "text": "Es ist wichtig, die Geheimzahl niemandem zu sagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0030",
+      "text": "Ich hätte gern ein paar Informationen zum Girokonto.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0031",
+      "text": "Könnten Sie mir bitte erklären, was das Konto im Monat kostet?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0032",
+      "text": "Guten Morgen, was kann ich heute für Sie tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0033",
+      "text": "Ich möchte ein Girokonto eröffnen. Ich heiße Selin Arslan und studiere hier in Gießen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0034",
+      "text": "Gern, Frau Arslan. Haben Sie Ihren Ausweis dabei?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0035",
+      "text": "Ja, hier, bitte. Brauchen Sie sonst noch etwas von mir?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0036",
+      "text": "Nein danke, ich trinke lieber einen Tee.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0037",
+      "text": "Die Filiale ist am Samstag geschlossen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0038",
+      "text": "Und was kostet das Konto im Monat?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0039",
+      "text": "Für Studenten ist es gratis, ansonsten kostet es fünf Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0040",
+      "text": "Ich wohne seit zwei Jahren in Gießen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0041",
+      "text": "Die Bankkarte kommt mit der Post.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0042",
+      "text": "Guten Tag, ich hätte gern einen Termin, weil ich ein Girokonto eröffnen möchte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0043",
+      "text": "Könnten Sie mir bitte sagen, welche Unterlagen ich für die Eröffnung brauche?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0044",
+      "text": "Ihr Girokonto bei uns: Was brauchen Sie?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0045",
+      "text": "Ein Girokonto können Sie in jeder Filiale oder online eröffnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0046",
+      "text": "Bitte bringen Sie einen gültigen Ausweis oder Pass sowie Ihre Adresse in Deutschland mit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0047",
+      "text": "Schüler, Studenten und Azubis brauchen zusätzlich eine Bestätigung der Schule oder des Betriebs.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0048",
+      "text": "Bei Personen unter 18 Jahren müssen beide Eltern den Vertrag unterschreiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0049",
+      "text": "Die Bankkarte und die Geheimzahl schicken wir Ihnen in zwei getrennten Briefen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0050",
+      "text": "Für junge Leute bis 25 Jahre ist das Konto gratis, ansonsten kostet es 4,90 Euro im Monat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0051",
+      "text": "Haben Sie noch Fragen? Unser Service berät Sie gern, auch am Telefon.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0052",
+      "text": "Ein Konto kann man nur in einer Filiale eröffnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0053",
+      "text": "Was brauchen Azubis zusätzlich?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0054",
+      "text": "Eine Bestätigung von ihrem Betrieb.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0055",
+      "text": "Einen Brief von der Post.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0056",
+      "text": "Eine Rechnung für das Handy.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0057",
+      "text": "Für einen Azubi mit 19 Jahren kostet das Konto nichts.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0058",
+      "text": "Die Geheimzahl bekommt man per E-Mail.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0059",
+      "text": "Auf der Überweisung stehen der Name des Empfängers, die Kontonummer und der Betrag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0060",
+      "text": "Wie lange dauert eine Überweisung ins Ausland?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0061",
+      "text": "Herr Demir überweist die Miete immer am Anfang des Monats.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0062",
+      "text": "Der Lohn wird am Ende des Monats überwiesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0063",
+      "text": "Ich habe aus Versehen hundert Euro an die falsche Person überwiesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0064",
+      "text": "Für die Miete hat Familie Şahin einen Dauerauftrag eingerichtet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0065",
+      "text": "Einen Dauerauftrag kann man jederzeit in der App ändern oder löschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0066",
+      "text": "Der Beitrag für den Sportverein wird per Lastschrift bezahlt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0067",
+      "text": "Wir zahlen immer den gleichen Betrag.",
+      "quelle": "tatoeba:3846126",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3846126 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0068",
+      "text": "Für Emre sind 800 Euro im Monat eine große Summe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0069",
+      "text": "Die Zahlung ist heute auf meinem Konto angekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0070",
+      "text": "Prüfen Sie vor dem Senden immer den Namen des Empfängers.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0071",
+      "text": "Am Bahnhof gibt es einen Geldautomaten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0072",
+      "text": "Der Geldautomat ist kaputt, ich muss zu einer anderen Filiale gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0073",
+      "text": "Am Geldautomaten hebe ich fünfzig Euro ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0074",
+      "text": "Bei der eigenen Bank ist das Abheben gratis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0075",
+      "text": "Meine Oma zahlt ihre Münzen am Schalter auf ihr Konto ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0076",
+      "text": "Der Automat gibt nur Scheine, keine Münzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0077",
+      "text": "Wie viele Münzen hast du gefunden?",
+      "quelle": "tatoeba:12088355",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12088355 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0078",
+      "text": "Die Miete beträgt 650 Euro im Monat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0079",
+      "text": "Die Kosten für das Konto betragen jährlich 30 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0080",
+      "text": "Der jährliche Beitrag für den Verein beträgt 60 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0081",
+      "text": "Stecken Sie die Karte in den Automaten und geben Sie die Geheimzahl ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0082",
+      "text": "Die neue Bankkarte wird Ihnen in einer Woche geschickt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0083",
+      "text": "Würden Sie mir bitte zeigen, wie der Automat funktioniert?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0084",
+      "text": "Guten Tag, ich habe ein Problem. Der Automat hat meine Karte nicht zurückgegeben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0085",
+      "text": "Haben Sie vielleicht die Geheimzahl dreimal falsch eingegeben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0086",
+      "text": "Ja, leider. Was kann ich jetzt machen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0087",
+      "text": "Keine Sorge. Wir lassen Ihnen eine neue Karte schicken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0088",
+      "text": "Wir haben heute leider keine Briefmarken mehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0089",
+      "text": "Ja, ich habe ein Konto bei Ihnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0090",
+      "text": "Wie viel Geld möchten Sie abheben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0091",
+      "text": "Zweihundert Euro, bitte, in kleinen Scheinen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0092",
+      "text": "Am Montag um zehn Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0093",
+      "text": "Ich wohne in der Nähe vom Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0094",
+      "text": "Guten Tag, meine Bankkarte ist weg. Könnten Sie die Karte bitte sofort sperren?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0095",
+      "text": "Ich habe eine Überweisung an den falschen Empfänger geschickt. Was kann ich jetzt tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0096",
+      "text": "Elif schickt ihrer Cousine in Izmir ein kleines Päckchen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0097",
+      "text": "Ein Päckchen ist billiger als ein Paket, aber es ist nicht versichert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0098",
+      "text": "Für die Unterlagen brauche ich einen großen Umschlag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0099",
+      "text": "Hast du eine Briefmarke auf den Umschlag geklebt?",
+      "quelle": "tatoeba:562377",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #562377 von cost (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0100",
+      "text": "Die Kündigung schicke ich als Einschreiben, dann habe ich einen Beleg.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0101",
+      "text": "Ein Einschreiben bekommt man nur gegen Unterschrift.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0102",
+      "text": "Wie viel Porto brauche ich für einen Brief in die Türkei?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0103",
+      "text": "Das Porto ist schon wieder teurer geworden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0104",
+      "text": "Ab 30 Euro ist der Versand kostenlos.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0105",
+      "text": "Der Versand dauert normalerweise zwei bis drei Tage.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0106",
+      "text": "Für den Versand ins Ausland zahlt man zusätzlich acht Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0107",
+      "text": "Ihre Nachricht wurde versandt.",
+      "quelle": "tatoeba:7936516",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7936516 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0108",
+      "text": "Wichtige Dokumente sollte man nicht als normalen Brief versenden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0109",
+      "text": "Wo kann ich hier ein Päckchen aufgeben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0110",
+      "text": "Ein Päckchen darf höchstens zwei Kilo Gewicht haben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0111",
+      "text": "Der Preis hängt vom Gewicht und von der Größe des Pakets ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0112",
+      "text": "Das Paket ist bis 500 Euro versichert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0113",
+      "text": "Den Karton bekommen Sie bei uns gratis dazu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0114",
+      "text": "Wird das zusätzlich kosten?",
+      "quelle": "tatoeba:2234256",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2234256 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0115",
+      "text": "Das macht insgesamt zwölf Euro und vierzig Cent.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0116",
+      "text": "Die beiden Pakete wiegen jeweils drei Kilo.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0117",
+      "text": "Messen Sie bitte die Länge, die Breite und die Höhe des Pakets.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0118",
+      "text": "Durchschnittlich bekommt unsere Familie zwei Pakete pro Woche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0119",
+      "text": "Wegen des Feiertags bleibt die Filiale am Montag geschlossen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0120",
+      "text": "Während der Mittagspause ist die Schlange in der Post oft lang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0121",
+      "text": "Das Gewicht des Päckchens beträgt eineinhalb Kilo.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0122",
+      "text": "Trotz des Regens bringt der Postbote die Briefe pünktlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0123",
+      "text": "Mit Express ist das Paket schon am nächsten Tag da, aber es kostet mehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0124",
+      "text": "Ich möchte dieses Paket nach Ankara schicken. Welche Möglichkeiten gibt es?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0125",
+      "text": "Sie können es als normales Paket oder mit Express schicken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0126",
+      "text": "Und was ist der Unterschied?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0127",
+      "text": "Mit Express ist es in zwei Tagen da, aber es kostet zusätzlich 15 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0128",
+      "text": "Ihren Kontoauszug bekommen Sie am Automaten in der Filiale.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0129",
+      "text": "Ja, ich habe eine Bankkarte dabei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0130",
+      "text": "Wie viel wiegt denn Ihr Päckchen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0131",
+      "text": "Ich glaube, ungefähr ein Kilo.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0132",
+      "text": "Morgen um halb neun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0133",
+      "text": "Ich habe leider kein Konto.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0134",
+      "text": "Was kostet ein Päckchen in die Türkei, und wie lange dauert der Versand?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0135",
+      "text": "Ich möchte diesen Brief als Einschreiben schicken. Was kostet das?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0136",
+      "text": "In meinem Briefkasten lag eine Benachrichtigung von der Post.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0137",
+      "text": "Die Zustellung ist für morgen zwischen zehn und vierzehn Uhr geplant.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0138",
+      "text": "Briefe werden bei uns von Montag bis Samstag zugestellt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0139",
+      "text": "Das Paket wurde gestern zugestellt.",
+      "quelle": "tatoeba:2195684",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2195684 von freddy1 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0140",
+      "text": "Ihre Sendung konnte heute leider nicht zugestellt werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0141",
+      "text": "Der Postbote hat zweimal geklingelt, aber ich habe nichts gehört.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0142",
+      "text": "Ohne Beleg kann man ein Paket nicht suchen lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0143",
+      "text": "Könnte ich bitte eine Quittung bekommen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0144",
+      "text": "Für den Zoll muss man den Inhalt des Pakets genau beschreiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0145",
+      "text": "Der Karton war nass, aber der Inhalt war zum Glück in Ordnung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0146",
+      "text": "Den Verlust der Karte sollte man der Bank sofort melden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0147",
+      "text": "Sollen wir die Bücher einzeln schicken oder alle in einem Paket?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0148",
+      "text": "Die gesamte Familie hilft beim Packen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0149",
+      "text": "Die Filiale hat montags sowie donnerstags bis 18 Uhr geöffnet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0150",
+      "text": "Der Karton ist ein bisschen kaputt, aber ansonsten ist alles gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0151",
+      "text": "Holen Sie das Paket bis Freitag ab, ansonsten geht es zurück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0152",
+      "text": "Mit Ihrer Unterschrift bestätigen Sie, dass Sie das Paket bekommen haben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0153",
+      "text": "Das ist ein bisschen viel verlangt.",
+      "quelle": "tatoeba:4532565",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4532565 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0154",
+      "text": "Es lohnt sich, Spanisch zu lernen.",
+      "quelle": "tatoeba:10081842",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #10081842 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0155",
+      "text": "Wie lange kann ich das behalten?",
+      "quelle": "tatoeba:3661968",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3661968 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0156",
+      "text": "Ich lasse das Paket zu meiner Nachbarin liefern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0157",
+      "text": "Herr Klein lässt seinen Sohn das Päckchen bei der Post abholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0158",
+      "text": "Lassen Sie Ihre Karte bei Verlust sofort sperren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0159",
+      "text": "Lass dir an der Kasse eine Quittung geben!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0160",
+      "text": "Guten Tag, ich habe ein Paket für Familie Kaya. Nehmen Sie es an?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0161",
+      "text": "Ja, gern. Die Kayas sind gerade im Urlaub.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0162",
+      "text": "Danke. Ich werfe bei den Kayas eine Benachrichtigung ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0163",
+      "text": "Gut, dann wissen sie gleich, wo ihr Paket ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0164",
+      "text": "Nein, mein Konto ist bei einer anderen Bank.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0165",
+      "text": "Das Porto beträgt vier Euro und fünfzig Cent.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0166",
+      "text": "Kann ich das Paket auch am Samstag abholen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0167",
+      "text": "Ja, samstags haben wir bis 13 Uhr geöffnet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0168",
+      "text": "Ja, das Paket wiegt drei Kilo.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0169",
+      "text": "Nein, ich habe keine Quittung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0170",
+      "text": "Ich habe eine Benachrichtigung bekommen und möchte mein Paket abholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0171",
+      "text": "Benachrichtigung: Wir waren bei Ihnen!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0172",
+      "text": "Leider waren Sie heute nicht zu Hause, als wir Ihre Sendung zustellen wollten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0173",
+      "text": "Ihr Paket liegt ab morgen, 10 Uhr, in unserer Filiale am Markt für Sie bereit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0174",
+      "text": "Bitte holen Sie das Paket in den nächsten sieben Tagen ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0175",
+      "text": "Ansonsten schicken wir es an den Absender zurück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0176",
+      "text": "Bringen Sie diese Karte sowie Ihren Ausweis mit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0177",
+      "text": "Sie können auch eine andere Person schicken. Sie braucht diese Karte mit Ihrer Unterschrift sowie ihren eigenen Ausweis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0178",
+      "text": "Sie möchten einen neuen Termin für die Zustellung? Dann rufen Sie unseren Kundenservice an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0179",
+      "text": "Man kann das Paket schon heute abholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0180",
+      "text": "Was muss man in die Filiale mitbringen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0181",
+      "text": "Die Karte und den Ausweis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0182",
+      "text": "Die Rechnung und das Geld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0183",
+      "text": "Eine Quittung von der Bank.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0184",
+      "text": "Eine andere Person darf das Paket abholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0185",
+      "text": "Eine neue Zustellung kostet fünf Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0186",
+      "text": "Vielen Dank für Ihre Bestellung! Wir schicken die Ware in zwei Tagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0187",
+      "text": "Bitte nennen Sie mir die Nummer Ihrer Bestellung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0188",
+      "text": "Ich erwarte eine Lieferung.",
+      "quelle": "tatoeba:383397",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #383397 von Ole (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0189",
+      "text": "Die Lieferung kommt zwei Tage später als geplant.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0190",
+      "text": "Die Lieferung ist erst ab 50 Euro kostenlos.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0191",
+      "text": "Das neue Sofa wird am Dienstag geliefert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0192",
+      "text": "Ich möchte diese Kopfhörer reklamieren, sie funktionieren nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0193",
+      "text": "Die Rücksendung ist bei diesem Shop kostenlos.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0194",
+      "text": "Sie können die Ware in 14 Tagen zurückschicken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0195",
+      "text": "Die Schuhe passen nicht, deshalb schicke ich sie zurück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0196",
+      "text": "Der Karton war beschädigt, und das Glas war kaputt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0197",
+      "text": "Ist er beschädigt?",
+      "quelle": "tatoeba:7003219",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7003219 von raggione (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e12.s0198",
+      "text": "Die Firma schickt mir kostenlos einen Ersatz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0199",
+      "text": "Auf das Handy gibt es zwei Jahre Garantie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0200",
+      "text": "Statt Geld bekomme ich einen Gutschein über 20 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0201",
+      "text": "Wir erstatten Ihnen den Betrag in fünf Tagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0202",
+      "text": "Werden mir die Kosten für die Rücksendung erstattet?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0203",
+      "text": "Ich rufe den Kundenservice an und frage nach meinem Paket.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0204",
+      "text": "Bei der Hotline musste ich zwanzig Minuten warten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0205",
+      "text": "Die Nummer der Hotline steht auf der Rechnung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0206",
+      "text": "Beim Ausfüllen des Formulars hilft mir meine Schwester.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0207",
+      "text": "Das Zurückschicken ist bei diesem Shop leider nicht gratis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0208",
+      "text": "Könnten Sie mir bitte sagen, wann mein Geld zurückkommt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0209",
+      "text": "Kundenservice, Sie sprechen mit Frau Neumann. Was kann ich für Sie tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0210",
+      "text": "Guten Tag, mein Name ist Gül Öztürk. Ich habe letzte Woche eine Lampe bestellt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0211",
+      "text": "Ja, und gibt es ein Problem mit der Lieferung?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0212",
+      "text": "Leider ja. Die Lampe ist beschädigt angekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0213",
+      "text": "Nein, ich habe kein Girokonto.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0214",
+      "text": "Ich möchte gern zwei Briefmarken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0215",
+      "text": "Möchten Sie einen Ersatz oder Ihr Geld zurück?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0216",
+      "text": "Bitte erstatten Sie mir den Betrag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0217",
+      "text": "Ich habe die Lampe am Montag bestellt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0218",
+      "text": "Das Paket wiegt zwei Kilo.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0219",
+      "text": "Guten Tag, ich möchte eine Reklamation machen. Meine Bestellung ist beschädigt angekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0220",
+      "text": "Sie haben online eine Lampe bestellt. Das Paket ist beschädigt angekommen, und die Lampe ist kaputt. Schreiben Sie dem Kundenservice eine Reklamation: Was haben Sie bestellt, was ist passiert, und was möchten Sie jetzt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0221",
+      "text": "Sehr geehrte Damen und Herren, am 3. Mai habe ich bei Ihnen eine Lampe für 49 Euro bestellt. Die Nummer meiner Bestellung ist 4711. Gestern wurde das Paket geliefert, aber der Karton war beschädigt. Leider ist auch die Lampe kaputt. Ich habe Fotos gemacht und schicke sie Ihnen mit. Ich möchte die Lampe gern zurückschicken. Bitte erstatten Sie mir den gesamten Betrag oder schicken Sie mir einen Ersatz. Meine Kontonummer finden Sie unten. Könnten Sie mir bitte bald antworten? Mit freundlichen Grüßen Gül Öztürk",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0222",
+      "text": "Emres erstes Girokonto",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0223",
+      "text": "Ab September macht Emre eine Ausbildung in einer Werkstatt in Gießen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0224",
+      "text": "Sein Chef braucht dafür eine Kontonummer, denn der Lohn wird jeden Monat überwiesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0225",
+      "text": "Deshalb geht Emre mit seiner Mutter in die Filiale einer Bank in der Nähe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0226",
+      "text": "Guten Tag, ich bin Frau Wagner. Was kann ich für Sie tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0227",
+      "text": "Ich möchte gern ein Girokonto eröffnen. Im September fange ich eine Ausbildung an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0228",
+      "text": "Schön! Für Azubis ist das Konto bei uns gratis. Haben Sie Ihren Ausweis dabei?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0229",
+      "text": "Ja, hier, bitte. Meine Mutter ist auch mitgekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0230",
+      "text": "Sehr gut, denn unter 18 Jahren müssen die Eltern mit unterschreiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0231",
+      "text": "Frau Wagner erklärt alles in Ruhe, und Emre stellt viele Fragen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0232",
+      "text": "Mit der Bankkarte können Sie am Geldautomaten Geld abheben und im Geschäft bezahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0233",
+      "text": "Und wie bezahle ich jeden Monat meinen Vertrag für das Handy?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0234",
+      "text": "Dafür gibt es die Lastschrift. Die Firma holt den Betrag dann selbst von Ihrem Konto.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0235",
+      "text": "Und wenn ich jeden Monat ein bisschen Geld sparen möchte?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0236",
+      "text": "Dann richten Sie einen Dauerauftrag ein, zum Beispiel über 50 Euro am Monatsanfang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0237",
+      "text": "Zum Schluss zeigt Frau Wagner ihm noch die App der Bank.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0238",
+      "text": "Hier sehen Sie Ihren Kontoauszug: alle Zahlungen sowie das Geld, das verfügbar ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0239",
+      "text": "Eine Woche später kommt ein Brief mit der Geheimzahl.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0240",
+      "text": "Merk dir die Zahl gut und schreib sie nie auf die Karte!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0241",
+      "text": "Keine Sorge, Mama. Die Zahl behalte ich im Kopf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0242",
+      "text": "Am Ende des Monats sieht Emre auf dem Kontoauszug seinen ersten Lohn. Er ist sehr stolz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0243",
+      "text": "Warum braucht Emre ein Girokonto?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0244",
+      "text": "Sein Lohn wird auf ein Konto überwiesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0245",
+      "text": "Er möchte ein Auto kaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0246",
+      "text": "Seine Mutter hat keine Bankkarte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0247",
+      "text": "Warum kommt die Mutter von Emre mit?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0248",
+      "text": "Weil Emre noch nicht 18 Jahre alt ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0249",
+      "text": "Weil sie selbst ein Konto braucht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0250",
+      "text": "Weil Emre seinen Ausweis vergessen hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0251",
+      "text": "Wofür ist ein Dauerauftrag gut?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0252",
+      "text": "Das Geld wird jeden Monat zum gleichen Termin überwiesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0253",
+      "text": "Man bekommt jeden Monat eine neue Bankkarte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0254",
+      "text": "Man kann am Automaten mehr Geld abheben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0255",
+      "text": "Was soll Emre mit der Geheimzahl machen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0256",
+      "text": "Er soll sie im Kopf behalten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0257",
+      "text": "Er soll sie auf die Karte schreiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0258",
+      "text": "Er soll sie seinem Chef sagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0259",
+      "text": "Ich möchte jeden Monat 50 Euro sparen. Können Sie mir dafür einen Dauerauftrag einrichten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0260",
+      "text": "Opa Kamāl bei der Post",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0261",
+      "text": "Gestern war Opa Kamāl nicht zu Hause, als der Postbote kam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0262",
+      "text": "Im Briefkasten lag eine Benachrichtigung: Das Paket liegt ab heute in der Filiale.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0263",
+      "text": "Guten Tag! Der Nächste, bitte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0264",
+      "text": "Guten Tag. Ich möchte ein Paket abholen. Hier ist die Benachrichtigung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0265",
+      "text": "Danke. Kann ich bitte auch noch Ihren Ausweis sehen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0266",
+      "text": "Natürlich, hier. Ich möchte außerdem ein Päckchen zu meiner Schwester nach Amman schicken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0267",
+      "text": "Gern. Legen Sie es bitte auf die Waage. Es wiegt 1,8 Kilo.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0268",
+      "text": "Was ist denn der Unterschied zwischen einem Päckchen und einem Paket?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0269",
+      "text": "Ein Paket ist versichert, und man kann die Sendung online verfolgen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0270",
+      "text": "Ein Päckchen kostet 17 Euro, ein Paket insgesamt 24 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0271",
+      "text": "Für den Zoll notieren Sie bitte noch den Inhalt auf diesem Formular.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0272",
+      "text": "Darin sind Bücher für die Enkel und Kaffee. Ich nehme das Paket, sicher ist sicher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0273",
+      "text": "Hier ist Ihr Beleg. Heben Sie ihn bitte gut auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0274",
+      "text": "Zu Hause öffnet Opa Kamāl das Paket aus der Filiale.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0275",
+      "text": "Es ist von seiner Schwester. Darin sind Süßigkeiten und ein langer Brief.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0276",
+      "text": "Warum muss Opa Kamāl zur Post gehen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0277",
+      "text": "Sein Paket liegt jetzt in der Filiale.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0278",
+      "text": "Er möchte Briefmarken kaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0279",
+      "text": "Sein Briefkasten ist kaputt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0280",
+      "text": "Was zeigt Opa Kamāl am Schalter?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0281",
+      "text": "Die Benachrichtigung und seinen Ausweis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0282",
+      "text": "Eine Quittung vom Supermarkt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0283",
+      "text": "Seine Bankkarte und die Geheimzahl.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0284",
+      "text": "Warum nimmt Opa Kamāl am Ende ein Paket?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0285",
+      "text": "Weil ein Paket versichert ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0286",
+      "text": "Weil ein Paket billiger ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0287",
+      "text": "Weil das Päckchen zu schwer ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0288",
+      "text": "Was ist in dem Paket von seiner Schwester?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0289",
+      "text": "Süßigkeiten und ein Brief.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0290",
+      "text": "Bücher und Kaffee.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0291",
+      "text": "Ein Gutschein und Fotos.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0292",
+      "text": "Ich möchte ein Päckchen ins Ausland schicken. Was ist günstiger, ein Päckchen oder ein Paket?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0293",
+      "text": "Wenn ich mein altes Konto kündige, brauche ich eine neue Kontonummer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0294",
+      "text": "Der Geldautomat hat meine Bankkarte behalten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0295",
+      "text": "Vor jeder Überweisung prüfe ich den Namen des Empfängers zweimal.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0296",
+      "text": "Das Gewicht des Päckchens ist zu hoch, ich muss ein Paket nehmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0297",
+      "text": "Nach meiner Reklamation hat mir die Firma sofort einen Ersatz geschickt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0298",
+      "text": "Bei einer Lastschrift holt die Firma das Geld, bei einem Dauerauftrag schickt man es selbst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0299",
+      "text": "Für diesen großen Umschlag reicht das Porto nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0300",
+      "text": "Den Drucker lasse ich in der Werkstatt reparieren, er hat noch Garantie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0301",
+      "text": "Das Paket wird morgen von einer Kollegin zugestellt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0302",
+      "text": "Ich habe vor, das Geld für den Führerschein zu sparen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0303",
+      "text": "Am Ende des Jahres bekommt man von der Bank eine Übersicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0304",
+      "text": "Das Einzahlen von Münzen kostet bei manchen Banken eine Gebühr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0305",
+      "text": "Die Hotline ist rund um die Uhr erreichbar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0306",
+      "text": "Statt einer Erstattung bekommt man bei manchen Shops nur einen Gutschein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0307",
+      "text": "Selin hat online ein Konto eröffnet und am nächsten Tag ihre Karte bekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0308",
+      "text": "Eine Kündigung schickt man am besten als Einschreiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0309",
+      "text": "Lassen Sie das Paket bei Ihrer Nachbarin abgeben, wenn Sie nicht zu Hause sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0310",
+      "text": "Kann ich Ihnen helfen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0311",
+      "text": "Ja, bitte. Ich möchte diese Jacke zurückschicken. Sie ist zu klein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0312",
+      "text": "Das tut mir leid. Haben Sie noch die Rechnung?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0313",
+      "text": "Ja, die Rechnung liegt im Paket.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0314",
+      "text": "Nein, ich möchte lieber bar bezahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0315",
+      "text": "Die Jacke ist blau und warm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0316",
+      "text": "Wie viel Porto brauche ich für diese Postkarte?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0317",
+      "text": "Für eine Postkarte in Deutschland reicht eine Briefmarke für 95 Cent.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0318",
+      "text": "Die Postkarte ist von meiner Tante aus Izmir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0319",
+      "text": "Am Geldautomaten neben dem Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0320",
+      "text": "Antwort vom Kundenservice",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0321",
+      "text": "Sehr geehrte Frau Öztürk, vielen Dank für Ihre Nachricht und die Fotos.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0322",
+      "text": "Es tut uns leid, dass Ihre Lampe beschädigt angekommen ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0323",
+      "text": "Bitte schicken Sie die Lampe in den nächsten 14 Tagen an uns zurück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0324",
+      "text": "Den Schein für die Rücksendung finden Sie im Anhang. Die Rücksendung ist für Sie gratis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0325",
+      "text": "Sobald die Lampe bei uns ist, erstatten wir Ihnen den gesamten Betrag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0326",
+      "text": "Mit freundlichen Grüßen, Ihr Team vom Kundenservice",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0327",
+      "text": "Frau Öztürk muss für die Rücksendung bezahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0328",
+      "text": "Was bekommt Frau Öztürk am Ende?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0329",
+      "text": "Ihr ganzes Geld zurück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0330",
+      "text": "Eine neue Lampe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0331",
+      "text": "Einen Gutschein über 20 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0332",
+      "text": "Frau Öztürk hat Fotos von der Lampe geschickt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e12.s0333",
+      "text": "Mein Paket ist beschädigt angekommen. Ich möchte es zurückschicken und mein Geld zurückbekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e12.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann ein Girokonto eröffnen und nach den Kosten fragen.",
+        "tr": "Vadesiz bir hesap açabilir ve masrafları sorabilirim.",
+        "ar": "أستطيع أن أفتح حسابًا جاريًا وأن أسأل عن التكاليف."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e12.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.girokonto",
+          "ablenker": ["de.a2.e09.bank", "de.b1.e12.kontoauszug"]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.girokonto",
+            "de.b1.e12.bankkarte",
+            "de.b1.e12.geheimzahl",
+            "de.b1.e12.kontonummer",
+            "de.b1.e12.filiale",
+            "de.b1.e12.kontoauszug"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0028",
+          "wort": 5,
+          "ablenker": ["mitbringen", "zu mitbringen"]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e12.eroeffnen",
+          "ablenker": ["de.b1.e12.kuendigen", "de.a2.e09.beantragen"]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.service",
+            "de.b1.e12.option",
+            "de.b1.e12.schulden",
+            "de.b1.e12.finanziell",
+            "de.b1.e12.verfuegbar",
+            "de.b1.e12.eventuell"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.kuendigen",
+          "ablenker": ["de.b1.e12.eroeffnen", "de.a2.e09.unterschreiben"]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0032"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0033"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0034"
+            }
+          ],
+          "antwort": "de.b1.e12.s0035",
+          "ablenker": ["de.b1.e12.s0036", "de.b1.e12.s0037"]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a09",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e12.s0044",
+          "absaetze": [
+            "de.b1.e12.s0045",
+            "de.b1.e12.s0046",
+            "de.b1.e12.s0047",
+            "de.b1.e12.s0048",
+            "de.b1.e12.s0049",
+            "de.b1.e12.s0050",
+            "de.b1.e12.s0051"
+          ],
+          "glossen": ["de.b1.e12.girokonto", "de.a2.e09.gueltig"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e12.s0052",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e12.s0053",
+              "antwort": "de.b1.e12.s0054",
+              "ablenker": ["de.b1.e12.s0055", "de.b1.e12.s0056"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e12.s0057",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e12.s0058",
+              "richtig": "falsch"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e12.passend",
+          "ablenker": ["de.b1.e12.verfuegbar", "de.a2.e02.guenstig"]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e12.s0005",
+          "nach": "ziel",
+          "alternativen": ["Jana hat vor, ein Konto bei einer anderen Bank zu eröffnen."],
+          "ablenker": ["Bus", "eröffnet"]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e12.s0025",
+          "alternativen": [
+            "Man sollte bei der Auswahl der Bank die Kosten vergleichen.",
+            "Die Kosten sollte man bei der Auswahl der Bank vergleichen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e12.s0014",
+          "ablenker": ["de.b1.e12.s0013", "de.b1.e12.s0009"]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e12.s0002",
+          "nach": "ziel",
+          "alternativen": [
+            "Bei vielen Banken ist das Girokonto für Schüler und Azubis gratis.",
+            "Für Schüler und Azubis ist das Girokonto bei vielen Banken kostenlos.",
+            "Bei vielen Banken ist das Girokonto für Schüler und Azubis kostenlos.",
+            "Das Girokonto ist bei vielen Banken für Schüler und Azubis gratis.",
+            "Das Girokonto ist für Schüler und Azubis bei vielen Banken kostenlos."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0038"
+            }
+          ],
+          "antwort": "de.b1.e12.s0039",
+          "ablenker": ["de.b1.e12.s0040", "de.b1.e12.s0041"]
+        },
+        {
+          "schluessel": "de.b1.e12.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e12.s0042"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e12.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Geld überweisen und abheben und am Bankschalter ein Problem erklären.",
+        "tr": "Para havale edip çekebilir ve banka gişesinde bir sorunu açıklayabilirim.",
+        "ar": "أستطيع أن أحوّل المال وأن أسحبه وأن أشرح مشكلة عند شبّاك البنك."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e12.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.ueberweisung",
+          "ablenker": ["de.b1.e12.lastschrift", "de.a2.e06.rechnung"]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.ueberweisung",
+            "de.b1.e12.dauerauftrag",
+            "de.b1.e12.geldautomat",
+            "de.b1.e12.empfaenger",
+            "de.b1.e12.muenze",
+            "de.b1.e12.zahlung"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0062",
+          "wort": 2,
+          "ablenker": ["hat", "werden"]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a05",
+          "typ": "paare",
+          "lemmata": ["de.b1.e12.abheben", "de.b1.e12.einzahlen", "de.b1.e12.ueberweisen", "de.b1.e12.stecken", "de.b1.e12.betragen"]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e12.geldautomat",
+          "ablenker": ["de.a2.e02.schalter", "de.b1.e12.filiale"]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.summe",
+          "ablenker": ["de.b1.e12.schein", "de.b1.e12.muenze"]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0084"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0085"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0086"
+            }
+          ],
+          "antwort": "de.b1.e12.s0087",
+          "ablenker": ["de.b1.e12.s0088", "de.b1.e12.s0089"]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a09",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a10",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0081",
+          "wort": 0,
+          "ablenker": ["Stellen", "Setzen"]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e12.s0061",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Miete überweist Herr Demir immer am Anfang des Monats.",
+            "Herr Demir überweist immer am Anfang des Monats die Miete.",
+            "Am Anfang des Monats überweist Herr Demir immer die Miete.",
+            "Herr Demir überweist die Miete am Anfang des Monats immer."
+          ],
+          "ablenker": ["Ende", "Woche"]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e12.s0078",
+          "ablenker": ["de.b1.e12.s0079", "de.b1.e12.s0080"]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e12.s0064",
+          "alternativen": [
+            "Familie Şahin hat für die Miete einen Dauerauftrag eingerichtet.",
+            "Einen Dauerauftrag hat Familie Şahin für die Miete eingerichtet."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e12.s0074",
+          "nach": "ziel",
+          "alternativen": [
+            "Das Abheben ist bei der eigenen Bank gratis.",
+            "Bei der eigenen Bank ist das Abheben kostenlos.",
+            "Das Abheben ist bei der eigenen Bank kostenlos.",
+            "Bei der eigenen Bank kostet das Abheben nichts.",
+            "Das Geldabheben ist bei der eigenen Bank gratis."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a15",
+          "typ": "formen",
+          "zeilen": ["überweisen", "abheben", "einzahlen", "schicken", "bestätigen"],
+          "spalten": ["er/sie/es – Präsens", "Passiv: es wird …"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["überweist"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["wird überwiesen"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["hebt ab"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["wird abgehoben"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["zahlt ein"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["wird eingezahlt"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["schickt"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["wird geschickt"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["bestätigt"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["wird bestätigt"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e12.s0094"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e12.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Briefe und Päckchen versenden und Versandarten vergleichen.",
+        "tr": "Mektup ve küçük paket gönderebilir, gönderim seçeneklerini karşılaştırabilirim.",
+        "ar": "أستطيع أن أرسل الرسائل والطرود الصغيرة وأن أقارن بين طرق الشحن."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e12.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.paeckchen",
+          "ablenker": ["de.b1.e12.umschlag", "de.a2.e07.brief"]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.umschlag",
+            "de.b1.e12.einschreiben",
+            "de.b1.e12.porto",
+            "de.b1.e12.versand",
+            "de.b1.e12.gewicht",
+            "de.b1.e12.hoehe"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0119",
+          "wort": 1,
+          "ablenker": ["dem", "den"]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e12.wiegen",
+          "ablenker": ["de.b1.e12.versichern", "de.b1.e12.aufgeben"]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.versichern",
+            "de.b1.e12.wiegen",
+            "de.b1.e12.aufgeben",
+            "de.b1.e12.zusaetzlich",
+            "de.b1.e12.durchschnittlich",
+            "de.b1.e12.jeweils"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.insgesamt",
+          "ablenker": ["de.b1.e12.jeweils", "de.b1.e12.durchschnittlich"]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0124"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0125"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0126"
+            }
+          ],
+          "antwort": "de.b1.e12.s0127",
+          "ablenker": ["de.b1.e12.s0128", "de.b1.e12.s0129"]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e12.s0097",
+          "nach": "ziel",
+          "alternativen": ["Ein Päckchen ist billiger als ein Paket, es ist aber nicht versichert."],
+          "ablenker": ["teurer", "Brief"]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e12.wiegen",
+          "ablenker": ["de.a1.e03.liegen"]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e12.s0105",
+          "ablenker": ["de.b1.e12.s0104", "de.b1.e12.s0106"]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e12.s0111",
+          "alternativen": [
+            "Der Preis hängt von der Größe des Pakets und vom Gewicht ab.",
+            "Vom Gewicht und von der Größe des Pakets hängt der Preis ab."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e12.s0102",
+          "nach": "ziel",
+          "alternativen": [
+            "Wie viel Porto braucht man für einen Brief in die Türkei?",
+            "Wie viel kostet das Porto für einen Brief in die Türkei?",
+            "Was kostet das Porto für einen Brief in die Türkei?",
+            "Wie viel Porto muss ich für einen Brief in die Türkei bezahlen?",
+            "Wie hoch ist das Porto für einen Brief in die Türkei?"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e12.s0101"
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0130"
+            }
+          ],
+          "antwort": "de.b1.e12.s0131",
+          "ablenker": ["de.b1.e12.s0132", "de.b1.e12.s0133"]
+        },
+        {
+          "schluessel": "de.b1.e12.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e12.s0134"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e12.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann eine Benachrichtigung der Post verstehen und ein Paket abholen.",
+        "tr": "Postanenin bildirim kartını anlayabilir ve bir paketi teslim alabilirim.",
+        "ar": "أستطيع أن أفهم إشعار البريد وأن أستلم طردًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e12.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.benachrichtigung",
+          "ablenker": ["de.a2.e09.bestaetigung", "de.a2.e02.hinweis"]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.zustellung",
+            "de.b1.e12.postbote",
+            "de.b1.e12.quittung",
+            "de.b1.e12.inhalt",
+            "de.b1.e12.verlust",
+            "de.b1.e12.einzeln"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0158",
+          "wort": 0,
+          "ablenker": ["Werden", "Machen"]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e12.zustellen",
+          "ablenker": ["de.b1.e12.bestaetigen", "de.b1.e12.verlangen"]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a06",
+          "typ": "paare",
+          "lemmata": ["de.b1.e12.bestaetigen", "de.b1.e12.verlangen", "de.b1.e12.lohnen", "de.b1.e12.behalten", "de.b1.e12.zustellen"]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.ansonsten",
+          "ablenker": ["de.b1.e12.sowie", "de.b1.e12.eventuell"]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0160"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0161"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0162"
+            }
+          ],
+          "antwort": "de.b1.e12.s0163",
+          "ablenker": ["de.b1.e12.s0164", "de.b1.e12.s0165"]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a09",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e12.s0171",
+          "absaetze": [
+            "de.b1.e12.s0172",
+            "de.b1.e12.s0173",
+            "de.b1.e12.s0174",
+            "de.b1.e12.s0175",
+            "de.b1.e12.s0176",
+            "de.b1.e12.s0177",
+            "de.b1.e12.s0178"
+          ],
+          "glossen": ["de.b1.e12.benachrichtigung", "de.b1.e05.absender"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e12.s0179",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e12.s0180",
+              "antwort": "de.b1.e12.s0181",
+              "ablenker": ["de.b1.e12.s0182", "de.b1.e12.s0183"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e12.s0184",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e12.s0185",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a10",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0151",
+          "wort": 7,
+          "ablenker": ["deshalb", "trotzdem"]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e12.s0144",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e12.s0157",
+          "alternativen": [
+            "Bei der Post lässt Herr Klein seinen Sohn das Päckchen abholen.",
+            "Das Päckchen lässt Herr Klein seinen Sohn bei der Post abholen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e12.s0138",
+          "ablenker": ["de.b1.e12.s0137", "de.b1.e12.s0141"]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e12.s0143",
+          "nach": "ziel",
+          "alternativen": [
+            "Könnte ich bitte eine Quittung haben?",
+            "Kann ich bitte eine Quittung bekommen?",
+            "Könnten Sie mir bitte eine Quittung geben?",
+            "Kann ich bitte eine Quittung haben?",
+            "Könnte ich eine Quittung bekommen, bitte?"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0166"
+            }
+          ],
+          "antwort": "de.b1.e12.s0167",
+          "ablenker": ["de.b1.e12.s0168", "de.b1.e12.s0169"]
+        },
+        {
+          "schluessel": "de.b1.e12.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e12.s0170"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e12.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann etwas bestellen, reklamieren und zurückschicken.",
+        "tr": "Bir şey sipariş edebilir, şikâyette bulunabilir ve geri gönderebilirim.",
+        "ar": "أستطيع أن أطلب شيئًا وأن أقدّم شكوى بشأنه وأن أعيده."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e12.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.reklamation",
+          "ablenker": ["de.b1.e12.bestellung", "de.b1.e12.lieferung"]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.bestellung",
+            "de.b1.e12.lieferung",
+            "de.b1.e12.ruecksendung",
+            "de.b1.e12.garantie",
+            "de.b1.e12.gutschein",
+            "de.b1.e12.hotline"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a04",
+          "typ": "formen",
+          "zeilen": ["bestellen", "liefern", "zustellen", "erstatten", "überweisen", "zahlen"],
+          "spalten": ["Nomen mit Artikel"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["die Bestellung"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["die Lieferung"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["die Zustellung"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["die Erstattung"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["die Überweisung"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["die Zahlung"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e12.reklamieren",
+          "ablenker": ["de.b1.e12.bestellen", "de.b1.e12.liefern"]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.reklamieren",
+            "de.b1.e12.erstatten",
+            "de.b1.e12.zurueckschicken",
+            "de.b1.e12.bestellen",
+            "de.b1.e12.beschaedigt"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.ersatz",
+          "ablenker": ["de.b1.e12.gutschein", "de.b1.e12.garantie"]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0209"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0210"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0211"
+            }
+          ],
+          "antwort": "de.b1.e12.s0212",
+          "ablenker": ["de.b1.e12.s0213", "de.b1.e12.s0214"]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a09",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0202",
+          "wort": 7,
+          "ablenker": ["erstatten", "erstattest"]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e12.s0195",
+          "nach": "ziel",
+          "alternativen": ["Die Schuhe passen nicht, ich schicke sie deshalb zurück."],
+          "ablenker": ["bestelle", "gut"]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e12.ersatz",
+          "ablenker": ["de.b1.e06.einsatz"]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a12",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e12.s0199",
+          "alternativen": ["Auf das Handy gibt es 2 Jahre Garantie."]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e12.s0203"
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a14",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e12.s0220",
+          "woerter": {
+            "min": 80,
+            "max": 100
+          },
+          "pflichtwoerter": ["Lampe", "beschädigt", "Betrag"],
+          "muster": ["de.b1.e12.s0221"]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e12.s0198",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Firma schickt mir einen Ersatz kostenlos.",
+            "Die Firma schickt mir gratis einen Ersatz.",
+            "Die Firma schickt mir einen kostenlosen Ersatz.",
+            "Kostenlos schickt mir die Firma einen Ersatz."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e12.s0219"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e12.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte und ein Gespräch über Bank und Post verstehen.",
+        "tr": "Banka ve postane hakkında bir hikâyeyi ve bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة وحوارًا عن البنك والبريد."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e12.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e12.s0222",
+          "zeilen": [
+            {
+              "satz": "de.b1.e12.s0223"
+            },
+            {
+              "satz": "de.b1.e12.s0224"
+            },
+            {
+              "satz": "de.b1.e12.s0225"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0226"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0227"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0228"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0229"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0230"
+            },
+            {
+              "satz": "de.b1.e12.s0231"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0232"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0233"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0234"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0235"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0236"
+            },
+            {
+              "satz": "de.b1.e12.s0237"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0238"
+            },
+            {
+              "satz": "de.b1.e12.s0239"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e12.s0240"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0241"
+            },
+            {
+              "satz": "de.b1.e12.s0242"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.b1.e12.s0243",
+              "antwort": "de.b1.e12.s0244",
+              "ablenker": ["de.b1.e12.s0245", "de.b1.e12.s0246"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.b1.e12.s0247",
+              "antwort": "de.b1.e12.s0248",
+              "ablenker": ["de.b1.e12.s0249", "de.b1.e12.s0250"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.b1.e12.s0251",
+              "antwort": "de.b1.e12.s0252",
+              "ablenker": ["de.b1.e12.s0253", "de.b1.e12.s0254"]
+            },
+            {
+              "nach": 18,
+              "frage": "de.b1.e12.s0255",
+              "antwort": "de.b1.e12.s0256",
+              "ablenker": ["de.b1.e12.s0257", "de.b1.e12.s0258"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e12.s0232",
+          "ablenker": ["de.b1.e12.s0234", "de.b1.e12.s0238"]
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0230",
+          "wort": 3,
+          "ablenker": ["über", "seit"]
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e12.s0234",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.b1.e12.s0260",
+          "zeilen": [
+            {
+              "satz": "de.b1.e12.s0261"
+            },
+            {
+              "satz": "de.b1.e12.s0262"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0263"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0264"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0265"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0266"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0267"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0268"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0269"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0270"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0271"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0272"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0273"
+            },
+            {
+              "satz": "de.b1.e12.s0274"
+            },
+            {
+              "satz": "de.b1.e12.s0275"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.b1.e12.s0276",
+              "antwort": "de.b1.e12.s0277",
+              "ablenker": ["de.b1.e12.s0278", "de.b1.e12.s0279"]
+            },
+            {
+              "nach": 4,
+              "frage": "de.b1.e12.s0280",
+              "antwort": "de.b1.e12.s0281",
+              "ablenker": ["de.b1.e12.s0282", "de.b1.e12.s0283"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.b1.e12.s0284",
+              "antwort": "de.b1.e12.s0285",
+              "ablenker": ["de.b1.e12.s0286", "de.b1.e12.s0287"]
+            },
+            {
+              "nach": 14,
+              "frage": "de.b1.e12.s0288",
+              "antwort": "de.b1.e12.s0289",
+              "ablenker": ["de.b1.e12.s0290", "de.b1.e12.s0291"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0268"
+            }
+          ],
+          "antwort": "de.b1.e12.s0269",
+          "ablenker": ["de.b1.e12.s0267", "de.b1.e12.s0273"]
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0269",
+          "wort": 3,
+          "ablenker": ["verkauft", "bestellt"]
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.b1.e12.s0239",
+          "alternativen": ["Ein Brief mit der Geheimzahl kommt eine Woche später."]
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a09",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e12.s0273"
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e12.s0270",
+          "ablenker": ["de.b1.e12.s0267", "de.b1.e12.s0271"]
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e12.s0265",
+          "nach": "ziel",
+          "alternativen": [
+            "Danke. Kann ich bitte noch Ihren Ausweis sehen?",
+            "Danke. Könnte ich bitte auch noch Ihren Ausweis sehen?",
+            "Danke. Darf ich bitte auch noch Ihren Ausweis sehen?",
+            "Danke. Kann ich auch noch Ihren Ausweis sehen, bitte?",
+            "Danke. Darf ich bitte noch Ihren Ausweis sehen?"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e12.s0240",
+          "nach": "ziel",
+          "ablenker": ["immer", "Tür"]
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e12.s0266",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a14",
+          "typ": "sprechen",
+          "satz": "de.b1.e12.s0259"
+        },
+        {
+          "schluessel": "de.b1.e12.l06.a15",
+          "typ": "sprechen",
+          "satz": "de.b1.e12.s0292"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e12.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum.",
+        "ar": "أراجع كلمات الوحدة وجملها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e12.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.girokonto",
+            "de.b1.e12.ueberweisung",
+            "de.b1.e12.paeckchen",
+            "de.b1.e12.benachrichtigung",
+            "de.b1.e12.reklamation",
+            "de.b1.e12.geldautomat"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e12.kontoauszug",
+          "ablenker": ["de.b1.e12.kontonummer", "de.b1.e12.geheimzahl"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e12.s0294",
+          "ablenker": ["de.b1.e12.s0072", "de.b1.e12.s0071"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0301",
+          "wort": 2,
+          "ablenker": ["hat", "werden"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a05",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e12.muenze",
+          "ablenker": ["de.a2.e06.muetze"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e12.s0295",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich prüfe vor jeder Überweisung den Namen des Empfängers zweimal.",
+            "Den Namen des Empfängers prüfe ich vor jeder Überweisung zweimal."
+          ],
+          "ablenker": ["einmal", "Absender"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.dauerauftrag",
+          "ablenker": ["de.b1.e12.kontoauszug", "de.b1.e12.quittung"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0090"
+            }
+          ],
+          "antwort": "de.b1.e12.s0091",
+          "ablenker": ["de.b1.e12.s0092", "de.b1.e12.s0093"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a09",
+          "typ": "formen",
+          "zeilen": ["der Betrag", "das Paket", "die Filiale", "die Rechnungen"],
+          "spalten": ["Genitiv"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["des Betrags", "des Betrages"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["des Pakets", "des Paketes"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["der Filiale"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["der Rechnungen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e12.s0296",
+          "ablenker": ["de.b1.e12.s0110", "de.b1.e12.s0116"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e12.gewicht",
+          "ablenker": ["de.a1.e11.gesicht"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e12.s0297",
+          "alternativen": [
+            "Die Firma hat mir nach meiner Reklamation sofort einen Ersatz geschickt.",
+            "Nach meiner Reklamation hat die Firma mir sofort einen Ersatz geschickt."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.porto",
+          "ablenker": ["de.b1.e12.versand", "de.b1.e12.einschreiben"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a14",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0302",
+          "wort": 8,
+          "ablenker": ["um", "für"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a15",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.abheben",
+            "de.b1.e12.einzahlen",
+            "de.b1.e12.kuendigen",
+            "de.b1.e12.eroeffnen",
+            "de.b1.e12.reklamieren",
+            "de.b1.e12.versichern"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a16",
+          "typ": "frei",
+          "ziel": "de.b1.e12.s0293",
+          "nach": "ziel",
+          "alternativen": [
+            "Wenn ich mein altes Konto kündige, brauche ich eine andere Kontonummer.",
+            "Wenn ich mein altes Konto kündige, dann brauche ich eine neue Kontonummer.",
+            "Ich brauche eine neue Kontonummer, wenn ich mein altes Konto kündige.",
+            "Kündige ich mein altes Konto, brauche ich eine neue Kontonummer."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a17",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e12.zustellung",
+          "ablenker": ["de.b1.e12.benachrichtigung", "de.b1.e05.absender"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a18",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e12.s0305",
+          "ablenker": ["de.b1.e12.s0204", "de.b1.e12.s0205"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a19",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e12.betrag",
+          "ablenker": ["de.b1.e02.vertrag"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a20",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0215"
+            }
+          ],
+          "antwort": "de.b1.e12.s0216",
+          "ablenker": ["de.b1.e12.s0217", "de.b1.e12.s0218"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a21",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e12.s0303",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a22",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0300",
+          "wort": 2,
+          "ablenker": ["mache", "werde"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a23",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.erstattung",
+          "ablenker": ["de.a2.e06.rabatt", "de.b1.e12.gutschein"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a24",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.summe",
+            "de.b1.e12.schein",
+            "de.b1.e12.muenze",
+            "de.b1.e12.hoehe",
+            "de.b1.e12.gewicht",
+            "de.b1.e12.auswahl"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a25",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.beleg",
+          "ablenker": ["de.b1.e12.inhalt", "de.b1.e12.verlust"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a26",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e12.s0103"
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a27",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.gesamt",
+            "de.b1.e12.jaehrlich",
+            "de.b1.e12.gratis",
+            "de.b1.e12.einzeln",
+            "de.b1.e12.beschaedigt",
+            "de.b1.e12.passend"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a28",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e12.postbote",
+          "ablenker": ["de.a2.e06.kunde", "de.b1.e12.empfaenger"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a29",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e12.schein",
+          "ablenker": ["de.a2.e12.stein"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a30",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e12.kundenservice",
+          "ablenker": ["de.a2.e06.abteilung", "de.b1.e12.filiale"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a31",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.versenden",
+          "ablenker": ["de.b1.e12.bestellen", "de.b1.e12.wiegen"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a32",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e12.s0304",
+          "nach": "ziel",
+          "alternativen": ["Bei manchen Banken kostet das Einzahlen von Münzen eine Gebühr."],
+          "ablenker": ["Abheben", "immer"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a33",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e12.s0299",
+          "ablenker": ["de.b1.e12.s0098", "de.b1.e12.s0108"]
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a34",
+          "typ": "sprechen",
+          "satz": "de.b1.e12.s0095"
+        },
+        {
+          "schluessel": "de.b1.e12.l07.a35",
+          "typ": "sprechen",
+          "satz": "de.b1.e12.s0135"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e12.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich Geldsachen bei der Bank und Sendungen bei der Post erledigen kann.",
+        "tr": "Bankada para işlerimi ve postanede gönderilerimi halledebildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أنجز معاملاتي المالية في البنك وشحناتي في البريد."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e12.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.kontonummer",
+          "ablenker": ["de.b1.e12.geheimzahl", "de.b1.e12.girokonto"]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e12.ueberweisen",
+            "de.b1.e12.zurueckschicken",
+            "de.b1.e12.wiegen",
+            "de.b1.e12.bestellen",
+            "de.b1.e12.behalten",
+            "de.b1.e12.lohnen"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0308",
+          "wort": 6,
+          "ablenker": ["wie", "wenn"]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e12.s0307",
+          "ablenker": ["de.b1.e12.s0005", "de.b1.e12.s0003"]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0310"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e12.s0311"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0312"
+            }
+          ],
+          "antwort": "de.b1.e12.s0313",
+          "ablenker": ["de.b1.e12.s0314", "de.b1.e12.s0315"]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e12.s0309",
+          "nach": "ziel",
+          "alternativen": ["Wenn Sie nicht zu Hause sind, lassen Sie das Paket bei Ihrer Nachbarin abgeben."],
+          "ablenker": ["Nachbarn", "ist"]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e12.s0320",
+          "absaetze": ["de.b1.e12.s0321", "de.b1.e12.s0322", "de.b1.e12.s0323", "de.b1.e12.s0324", "de.b1.e12.s0325", "de.b1.e12.s0326"],
+          "glossen": ["de.b1.e12.ruecksendung", "de.b1.e05.anhang"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e12.s0327",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e12.s0328",
+              "antwort": "de.b1.e12.s0329",
+              "ablenker": ["de.b1.e12.s0330", "de.b1.e12.s0331"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e12.s0332",
+              "richtig": "richtig"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e12.lieferung",
+          "ablenker": ["de.b1.e12.bestellung", "de.b1.e12.reklamation"]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.b1.e12.s0191",
+          "alternativen": ["Am Dienstag wird das neue Sofa geliefert."]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a10",
+          "typ": "frei",
+          "ziel": "de.b1.e12.s0010",
+          "nach": "ziel",
+          "alternativen": [
+            "Wenn die Bankkarte verloren ist, muss man sie sofort sperren lassen.",
+            "Wenn man die Bankkarte verloren hat, muss man sie sofort sperren lassen.",
+            "Ist die Bankkarte weg, muss man sie sofort sperren lassen.",
+            "Wenn die Bankkarte weg ist, muss sie sofort gesperrt werden.",
+            "Wenn die Bankkarte weg ist, muss man sie gleich sperren lassen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e12.s0189",
+          "ablenker": ["de.b1.e12.s0186", "de.b1.e12.s0190"]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e12.s0316"
+            }
+          ],
+          "antwort": "de.b1.e12.s0317",
+          "ablenker": ["de.b1.e12.s0318", "de.b1.e12.s0319"]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e12.s0078",
+          "alternativen": ["Die Miete beträgt sechshundertfünfzig Euro im Monat."]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e12.beschaedigt",
+          "ablenker": ["de.b1.e12.verfuegbar", "de.b1.e12.passend"]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a15",
+          "typ": "luecke",
+          "ziel": "de.b1.e12.s0152",
+          "wort": 3,
+          "ablenker": ["bestellen", "verlangen"]
+        },
+        {
+          "schluessel": "de.b1.e12.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e12.s0333"
+        }
+      ]
+    }
+  ]
+}

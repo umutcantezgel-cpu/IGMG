@@ -1,0 +1,3860 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "automatisch_geprueft",
+  "kurs": "de",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "de.a2.e01",
+    "reihenfolge": 2,
+    "thema": {
+      "de": "Wie war dein Wochenende?",
+      "tr": "Hafta sonun nasıl geçti?",
+      "ar": "كيف كانت عطلة نهاية الأسبوع؟"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann erzählen, was ich am Wochenende gemacht habe.",
+        "tr": "Hafta sonu ne yaptığımı anlatabilirim.",
+        "ar": "أستطيع أن أحكي ما فعلته في عطلة نهاية الأسبوع."
+      },
+      {
+        "de": "Ich kann nachfragen, wie das Wochenende von anderen war.",
+        "tr": "Başkalarına hafta sonlarının nasıl geçtiğini sorabilirim.",
+        "ar": "أستطيع أن أسأل الآخرين كيف كانت عطلة نهاية الأسبوع عندهم."
+      }
+    ],
+    "symbol": "puzzle",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a2.e01.sondern",
+      "lemma": "sondern",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Hauptsatz-Konnektor nach Verneinung (nicht …, sondern …)"
+      },
+      "frequenzRang": 121,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.nun",
+      "lemma": "nun",
+      "wortart": "adverb",
+      "frequenzRang": 104,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.eben",
+      "lemma": "eben",
+      "wortart": "partikel",
+      "frequenzRang": 235,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.ziemlich",
+      "lemma": "ziemlich",
+      "wortart": "adverb",
+      "frequenzRang": 442,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.tatsaechlich",
+      "lemma": "tatsächlich",
+      "wortart": "adverb",
+      "frequenzRang": 467,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.damals",
+      "lemma": "damals",
+      "wortart": "adverb",
+      "frequenzRang": 361,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.vorgestern",
+      "lemma": "vorgestern",
+      "wortart": "adverb",
+      "frequenzRang": 8803,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.neulich",
+      "lemma": "neulich",
+      "wortart": "adverb",
+      "frequenzRang": 3529,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.ploetzlich",
+      "lemma": "plötzlich",
+      "wortart": "adverb",
+      "frequenzRang": 659,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.uebrigens",
+      "lemma": "übrigens",
+      "wortart": "adverb",
+      "frequenzRang": 615,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.nochmal",
+      "lemma": "nochmal",
+      "wortart": "adverb",
+      "frequenzRang": 707,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.inzwischen",
+      "lemma": "inzwischen",
+      "wortart": "adverb",
+      "frequenzRang": 818,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.bisher",
+      "lemma": "bisher",
+      "wortart": "adverb",
+      "frequenzRang": 391,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.zuletzt",
+      "lemma": "zuletzt",
+      "wortart": "adverb",
+      "frequenzRang": 953,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.nachher",
+      "lemma": "nachher",
+      "wortart": "adverb",
+      "frequenzRang": 2565,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.sowieso",
+      "lemma": "sowieso",
+      "wortart": "adverb",
+      "frequenzRang": 1471,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.draussen",
+      "lemma": "draußen",
+      "wortart": "adverb",
+      "frequenzRang": 1074,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.okay",
+      "lemma": "okay",
+      "wortart": "interjektion",
+      "frequenzRang": 785,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.besuchen",
+      "lemma": "besuchen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "besuchen",
+        "praes_ich": "besuche",
+        "praes_du": "besuchst",
+        "praes_er_sie_es": "besucht",
+        "praes_wir": "besuchen",
+        "praes_ihr": "besucht",
+        "praes_sie_Sie": "besuchen",
+        "imp_du": "besuch",
+        "imp_ihr": "besucht",
+        "partizip_2": "besucht"
+      },
+      "frequenzRang": 769,
+      "quelle": "wiktionary:de:besuchen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚besuchen‘ (https://de.wiktionary.org/wiki/besuchen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.erleben",
+      "lemma": "erleben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erleben",
+        "praes_ich": "erlebe",
+        "praes_du": "erlebst",
+        "praes_er_sie_es": "erlebt",
+        "praes_wir": "erleben",
+        "praes_ihr": "erlebt",
+        "praes_sie_Sie": "erleben",
+        "partizip_2": "erlebt"
+      },
+      "frequenzRang": 687,
+      "quelle": "wiktionary:de:erleben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erleben‘ (https://de.wiktionary.org/wiki/erleben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.verbringen",
+      "lemma": "verbringen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verbringen",
+        "praes_ich": "verbringe",
+        "praes_du": "verbringst",
+        "praes_er_sie_es": "verbringt",
+        "praes_wir": "verbringen",
+        "praes_ihr": "verbringt",
+        "praes_sie_Sie": "verbringen",
+        "partizip_2": "verbracht"
+      },
+      "frequenzRang": 1190,
+      "quelle": "wiktionary:de:verbringen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verbringen‘ (https://de.wiktionary.org/wiki/verbringen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.erinnern",
+      "lemma": "erinnern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "erinnern",
+        "praes_ich": "erinnere",
+        "praes_du": "erinnerst",
+        "praes_er_sie_es": "erinnert",
+        "praes_wir": "erinnern",
+        "praes_ihr": "erinnert",
+        "praes_sie_Sie": "erinnern",
+        "imp_du": "erinnere",
+        "imp_ihr": "erinnert",
+        "partizip_2": "erinnert",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 447,
+      "quelle": "wiktionary:de:erinnern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erinnern‘ (https://de.wiktionary.org/wiki/erinnern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.interessieren",
+      "lemma": "interessieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "interessieren",
+        "praes_ich": "interessiere",
+        "praes_du": "interessierst",
+        "praes_er_sie_es": "interessiert",
+        "praes_wir": "interessieren",
+        "praes_ihr": "interessiert",
+        "praes_sie_Sie": "interessieren",
+        "partizip_2": "interessiert",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 680,
+      "quelle": "wiktionary:de:interessieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚interessieren‘ (https://de.wiktionary.org/wiki/interessieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.lachen",
+      "lemma": "lachen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "lachen",
+        "praes_ich": "lache",
+        "praes_du": "lachst",
+        "praes_er_sie_es": "lacht",
+        "praes_wir": "lachen",
+        "praes_ihr": "lacht",
+        "praes_sie_Sie": "lachen",
+        "partizip_2": "gelacht"
+      },
+      "frequenzRang": 729,
+      "quelle": "wiktionary:de:lachen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚lachen‘ (https://de.wiktionary.org/wiki/lachen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.geniessen",
+      "lemma": "genießen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "genießen",
+        "praes_ich": "genieße",
+        "praes_du": "genießt",
+        "praes_er_sie_es": "genießt",
+        "praes_wir": "genießen",
+        "praes_ihr": "genießt",
+        "praes_sie_Sie": "genießen",
+        "imp_du": "genieß",
+        "imp_ihr": "genießt",
+        "partizip_2": "genossen"
+      },
+      "frequenzRang": 861,
+      "quelle": "wiktionary:de:genießen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚genießen‘ (https://de.wiktionary.org/wiki/genießen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.wandern",
+      "lemma": "wandern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "wandern",
+        "praes_ich": "wandere",
+        "praes_du": "wanderst",
+        "praes_er_sie_es": "wandert",
+        "praes_wir": "wandern",
+        "praes_ihr": "wandert",
+        "praes_sie_Sie": "wandern",
+        "partizip_2": "gewandert"
+      },
+      "frequenzRang": 2541,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.trainieren",
+      "lemma": "trainieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "trainieren",
+        "praes_ich": "trainiere",
+        "praes_du": "trainierst",
+        "praes_er_sie_es": "trainiert",
+        "praes_wir": "trainieren",
+        "praes_ihr": "trainiert",
+        "praes_sie_Sie": "trainieren",
+        "partizip_2": "trainiert"
+      },
+      "frequenzRang": 2045,
+      "quelle": "wiktionary:de:trainieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚trainieren‘ (https://de.wiktionary.org/wiki/trainieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.fotografieren",
+      "lemma": "fotografieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "fotografieren",
+        "praes_ich": "fotografiere",
+        "praes_du": "fotografierst",
+        "praes_er_sie_es": "fotografiert",
+        "praes_wir": "fotografieren",
+        "praes_ihr": "fotografiert",
+        "praes_sie_Sie": "fotografieren",
+        "imp_du": "fotografier",
+        "imp_ihr": "fotografiert",
+        "partizip_2": "fotografiert"
+      },
+      "frequenzRang": 3264,
+      "quelle": "wiktionary:de:fotografieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚fotografieren‘ (https://de.wiktionary.org/wiki/fotografieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.zeichnen",
+      "lemma": "zeichnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "zeichnen",
+        "praes_ich": "zeichne",
+        "praes_du": "zeichnest",
+        "praes_er_sie_es": "zeichnet",
+        "praes_wir": "zeichnen",
+        "praes_ihr": "zeichnet",
+        "praes_sie_Sie": "zeichnen",
+        "partizip_2": "gezeichnet"
+      },
+      "frequenzRang": 3012,
+      "quelle": "wiktionary:de:zeichnen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zeichnen‘ (https://de.wiktionary.org/wiki/zeichnen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.sammeln",
+      "lemma": "sammeln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "sammeln",
+        "praes_ich": "sammle",
+        "praes_du": "sammelst",
+        "praes_er_sie_es": "sammelt",
+        "praes_wir": "sammeln",
+        "praes_ihr": "sammelt",
+        "praes_sie_Sie": "sammeln",
+        "imp_du": "sammle",
+        "imp_ihr": "sammelt",
+        "partizip_2": "gesammelt"
+      },
+      "frequenzRang": 1004,
+      "quelle": "wiktionary:de:sammeln",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚sammeln‘ (https://de.wiktionary.org/wiki/sammeln), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.mitmachen",
+      "lemma": "mitmachen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "mit"
+      },
+      "formen": {
+        "infinitiv": "mitmachen",
+        "verbzusatz": "mit",
+        "praes_ich": "mache",
+        "praes_du": "machst",
+        "praes_er_sie_es": "macht",
+        "praes_wir": "machen",
+        "praes_ihr": "macht",
+        "praes_sie_Sie": "machen",
+        "imp_du": "mach",
+        "imp_ihr": "macht",
+        "partizip_2": "mitgemacht"
+      },
+      "frequenzRang": 2467,
+      "quelle": "wiktionary:de:mitmachen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚mitmachen‘ (https://de.wiktionary.org/wiki/mitmachen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.anschauen",
+      "lemma": "anschauen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an"
+      },
+      "formen": {
+        "infinitiv": "anschauen",
+        "verbzusatz": "an",
+        "praes_ich": "schaue",
+        "praes_du": "schaust",
+        "praes_er_sie_es": "schaut",
+        "praes_wir": "schauen",
+        "praes_ihr": "schaut",
+        "praes_sie_Sie": "schauen",
+        "imp_du": "schau",
+        "imp_ihr": "schaut",
+        "partizip_2": "angeschaut"
+      },
+      "frequenzRang": 1495,
+      "quelle": "wiktionary:de:anschauen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚anschauen‘ (https://de.wiktionary.org/wiki/anschauen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.spazieren",
+      "lemma": "spazieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "spazieren",
+        "praes_ich": "spaziere",
+        "praes_du": "spazierst",
+        "praes_er_sie_es": "spaziert",
+        "praes_wir": "spazieren",
+        "praes_ihr": "spaziert",
+        "praes_sie_Sie": "spazieren",
+        "imp_du": "spazier",
+        "imp_ihr": "spaziert",
+        "partizip_2": "spaziert"
+      },
+      "frequenzRang": 4724,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.hobby",
+      "lemma": "Hobby",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Hobbys"
+      },
+      "formen": {
+        "pl": "Hobbys"
+      },
+      "frequenzRang": 2690,
+      "quelle": "wiktionary:de:Hobby",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hobby‘ (https://de.wiktionary.org/wiki/Hobby), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.freizeit",
+      "lemma": "Freizeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 2650,
+      "quelle": "wiktionary:de:Freizeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Freizeit‘ (https://de.wiktionary.org/wiki/Freizeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.ausflug",
+      "lemma": "Ausflug",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Ausflüge"
+      },
+      "formen": {
+        "pl": "Ausflüge",
+        "dat_pl": "Ausflügen"
+      },
+      "frequenzRang": 3483,
+      "quelle": "wiktionary:de:Ausflug",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ausflug‘ (https://de.wiktionary.org/wiki/Ausflug), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.besuch",
+      "lemma": "Besuch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Besuche"
+      },
+      "formen": {
+        "pl": "Besuche",
+        "dat_pl": "Besuchen"
+      },
+      "frequenzRang": 791,
+      "quelle": "wiktionary:de:Besuch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Besuch‘ (https://de.wiktionary.org/wiki/Besuch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.erlebnis",
+      "lemma": "Erlebnis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Erlebnisse"
+      },
+      "formen": {
+        "pl": "Erlebnisse",
+        "dat_pl": "Erlebnissen"
+      },
+      "frequenzRang": 2388,
+      "quelle": "wiktionary:de:Erlebnis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erlebnis‘ (https://de.wiktionary.org/wiki/Erlebnis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.museum",
+      "lemma": "Museum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Museen"
+      },
+      "formen": {
+        "pl": "Museen"
+      },
+      "frequenzRang": 987,
+      "quelle": "wiktionary:de:Museum",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Museum‘ (https://de.wiktionary.org/wiki/Museum), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.zoo",
+      "lemma": "Zoo",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zoos"
+      },
+      "formen": {
+        "pl": "Zoos"
+      },
+      "frequenzRang": 3574,
+      "quelle": "wiktionary:de:Zoo",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zoo‘ (https://de.wiktionary.org/wiki/Zoo), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.kino",
+      "lemma": "Kino",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Kinos"
+      },
+      "formen": {
+        "pl": "Kinos"
+      },
+      "frequenzRang": 1378,
+      "quelle": "wiktionary:de:Kino",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kino‘ (https://de.wiktionary.org/wiki/Kino), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.theater",
+      "lemma": "Theater",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Theater"
+      },
+      "formen": {
+        "dat_pl": "Theatern"
+      },
+      "frequenzRang": 1188,
+      "quelle": "wiktionary:de:Theater",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Theater‘ (https://de.wiktionary.org/wiki/Theater), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.ausstellung",
+      "lemma": "Ausstellung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ausstellungen"
+      },
+      "formen": {
+        "pl": "Ausstellungen"
+      },
+      "frequenzRang": 1185,
+      "quelle": "wiktionary:de:Ausstellung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ausstellung‘ (https://de.wiktionary.org/wiki/Ausstellung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.garten",
+      "lemma": "Garten",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Gärten"
+      },
+      "formen": {
+        "pl": "Gärten"
+      },
+      "frequenzRang": 1062,
+      "quelle": "wiktionary:de:Garten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Garten‘ (https://de.wiktionary.org/wiki/Garten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.interesse",
+      "lemma": "Interesse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Interessen"
+      },
+      "formen": {
+        "pl": "Interessen"
+      },
+      "frequenzRang": 463,
+      "quelle": "wiktionary:de:Interesse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Interesse‘ (https://de.wiktionary.org/wiki/Interesse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.lust",
+      "lemma": "Lust",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1016,
+      "quelle": "wiktionary:de:Lust",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lust‘ (https://de.wiktionary.org/wiki/Lust), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.abenteuer",
+      "lemma": "Abenteuer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Abenteuer"
+      },
+      "formen": {
+        "dat_pl": "Abenteuern"
+      },
+      "frequenzRang": 2453,
+      "quelle": "wiktionary:de:Abenteuer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abenteuer‘ (https://de.wiktionary.org/wiki/Abenteuer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.zeitschrift",
+      "lemma": "Zeitschrift",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Zeitschriften"
+      },
+      "formen": {
+        "pl": "Zeitschriften"
+      },
+      "frequenzRang": 1667,
+      "quelle": "wiktionary:de:Zeitschrift",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zeitschrift‘ (https://de.wiktionary.org/wiki/Zeitschrift), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.kultur",
+      "lemma": "Kultur",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kulturen"
+      },
+      "formen": {
+        "pl": "Kulturen"
+      },
+      "frequenzRang": 601,
+      "quelle": "wiktionary:de:Kultur",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kultur‘ (https://de.wiktionary.org/wiki/Kultur), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.bericht",
+      "lemma": "Bericht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Berichte"
+      },
+      "formen": {
+        "pl": "Berichte",
+        "dat_pl": "Berichten"
+      },
+      "frequenzRang": 695,
+      "quelle": "wiktionary:de:Bericht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bericht‘ (https://de.wiktionary.org/wiki/Bericht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.puzzle",
+      "lemma": "Puzzle",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Puzzles"
+      },
+      "formen": {
+        "pl": "Puzzles"
+      },
+      "frequenzRang": 10433,
+      "quelle": "wiktionary:de:Puzzle",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Puzzle‘ (https://de.wiktionary.org/wiki/Puzzle), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.spielplatz",
+      "lemma": "Spielplatz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Spielplätze"
+      },
+      "formen": {
+        "pl": "Spielplätze",
+        "dat_pl": "Spielplätzen"
+      },
+      "frequenzRang": 5887,
+      "quelle": "wiktionary:de:Spielplatz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Spielplatz‘ (https://de.wiktionary.org/wiki/Spielplatz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.brettspiel",
+      "lemma": "Brettspiel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Brettspiele"
+      },
+      "formen": {
+        "pl": "Brettspiele",
+        "dat_pl": "Brettspielen"
+      },
+      "frequenzRang": 32542,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.comic",
+      "lemma": "Comic",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Comics"
+      },
+      "formen": {
+        "pl": "Comics"
+      },
+      "frequenzRang": 2882,
+      "quelle": "wiktionary:de:Comic",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Comic‘ (https://de.wiktionary.org/wiki/Comic), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.langweilig",
+      "lemma": "langweilig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "langweilige",
+        "endung_en": "langweiligen",
+        "endung_er": "langweiliger",
+        "endung_es": "langweiliges",
+        "endung_em": "langweiligem",
+        "komparativ": "langweiliger",
+        "superlativ": "langweiligsten",
+        "superlativ_e": "langweiligste"
+      },
+      "frequenzRang": 1988,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.spannend",
+      "lemma": "spannend",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "spannende",
+        "endung_en": "spannenden",
+        "endung_er": "spannender",
+        "endung_es": "spannendes",
+        "endung_em": "spannendem",
+        "komparativ": "spannender",
+        "superlativ": "spannendsten",
+        "superlativ_e": "spannendste"
+      },
+      "frequenzRang": 1097,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.lustig",
+      "lemma": "lustig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "lustige",
+        "endung_en": "lustigen",
+        "endung_er": "lustiger",
+        "endung_es": "lustiges",
+        "endung_em": "lustigem",
+        "komparativ": "lustiger",
+        "superlativ": "lustigsten",
+        "superlativ_e": "lustigste"
+      },
+      "frequenzRang": 734,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.wunderbar",
+      "lemma": "wunderbar",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "wunderbare",
+        "endung_en": "wunderbaren",
+        "endung_er": "wunderbarer",
+        "endung_es": "wunderbares",
+        "endung_em": "wunderbarem"
+      },
+      "frequenzRang": 1206,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.schrecklich",
+      "lemma": "schrecklich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "schreckliche",
+        "endung_en": "schrecklichen",
+        "endung_er": "schrecklicher",
+        "endung_es": "schreckliches",
+        "endung_em": "schrecklichem",
+        "komparativ": "schrecklicher",
+        "superlativ": "schrecklichsten",
+        "superlativ_e": "schrecklichste"
+      },
+      "frequenzRang": 2181,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.erinnerung",
+      "lemma": "Erinnerung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Erinnerungen"
+      },
+      "formen": {
+        "pl": "Erinnerungen"
+      },
+      "frequenzRang": 965,
+      "quelle": "wiktionary:de:Erinnerung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erinnerung‘ (https://de.wiktionary.org/wiki/Erinnerung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a2.e01.s0001",
+      "text": "Was hast du am Wochenende gemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0002",
+      "text": "Ich habe am Samstag meine Oma besucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0003",
+      "text": "Wir haben am Sonntag Oma und Opa besucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0004",
+      "text": "Am Sonntag haben wir einen Ausflug gemacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0005",
+      "text": "Am Samstag haben wir im Garten gearbeitet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0006",
+      "text": "Mein Hobby ist Schach.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0007",
+      "text": "Okay, dann bis morgen!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0008",
+      "text": "Hast du am Samstag Zeit für einen Ausflug?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0009",
+      "text": "Leider nicht. Am Samstag bekommen wir Besuch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0010",
+      "text": "Der Ausflug war toll.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0011",
+      "text": "Opa hat einen großen Garten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0012",
+      "text": "In meiner Freizeit lese ich gern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0013",
+      "text": "Wir haben den ganzen Tag draußen gespielt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0014",
+      "text": "Wir haben das Wochenende bei Oma verbracht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0015",
+      "text": "Die Kinder haben auf dem Spielplatz gespielt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0016",
+      "text": "Vorgestern habe ich einen Kuchen gebacken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0017",
+      "text": "Ich erzähle dir nachher alles.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0018",
+      "text": "Der Besuch bei Oma war sehr schön.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0019",
+      "text": "Hast du ein Hobby?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0020",
+      "text": "Was machst du gern in deiner Freizeit?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0021",
+      "text": "Wie hast du dein Wochenende verbracht?",
+      "quelle": "tatoeba:1297577",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1297577 von Vortarulo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0022",
+      "text": "Ich habe gestern meinen Opa besucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0023",
+      "text": "Wir haben den Kuchen draußen im Garten gegessen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0024",
+      "text": "Wo hast du das Wochenende verbracht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0025",
+      "text": "Bei Opa. Er hat einen schönen Garten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0026",
+      "text": "Nachher gehen wir auf den Spielplatz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0027",
+      "text": "Was machst du nachher?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0028",
+      "text": "Ich habe viele Hobbys.",
+      "quelle": "tatoeba:12877083",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12877083 von Waldelfe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0029",
+      "text": "Vorgestern hatten wir Besuch aus der Türkei.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0030",
+      "text": "Ich zeichne gern.",
+      "quelle": "tatoeba:594897",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #594897 von juwu (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0031",
+      "text": "Was sammelst du?",
+      "quelle": "tatoeba:12181167",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12181167 von xallace (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0032",
+      "text": "Ich sammle alte Comics.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0033",
+      "text": "Papa hat am Sonntag Tiere im Park fotografiert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0034",
+      "text": "Ich trainiere am Dienstag und am Freitag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0035",
+      "text": "Wie oft trainierst du?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0036",
+      "text": "Wanderst du gern?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0037",
+      "text": "Wollen wir am Sonntag wandern?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0038",
+      "text": "Gute Idee! Ich wandere sehr gern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0039",
+      "text": "Oma geht jeden Abend spazieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0040",
+      "text": "Gehen wir ein bisschen spazieren?",
+      "quelle": "tatoeba:3693233",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3693233 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0041",
+      "text": "Am Abend waren wir im Park spazieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0042",
+      "text": "Ich interessiere mich sehr für Kunst.",
+      "quelle": "tatoeba:12286725",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12286725 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0043",
+      "text": "Ich interessiere mich sehr für Fußball.",
+      "quelle": "tatoeba:661648",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #661648 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0044",
+      "text": "Interessierst du dich für Sport?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0045",
+      "text": "Mein Bruder hat viele Interessen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0046",
+      "text": "Laylā hat großes Interesse an Kunst.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0047",
+      "text": "Hast du Lust auf ein Brettspiel?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0048",
+      "text": "Ja, gern! Welches Brettspiel spielen wir?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0049",
+      "text": "Ich habe heute keine Lust dazu.",
+      "quelle": "tatoeba:1972066",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1972066 von Eldad (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0050",
+      "text": "Ich lese gern Zeitschriften über Tiere.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0051",
+      "text": "Opa liest eine Zeitschrift über Schach.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0052",
+      "text": "Mein Bruder liest gern Comics.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0053",
+      "text": "Ich lese keine Comics mehr.",
+      "quelle": "tatoeba:3855003",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3855003 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0054",
+      "text": "Jan und Opa haben ein Puzzle gelegt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0055",
+      "text": "Das Puzzle hat 500 Teile.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0056",
+      "text": "Am Abend haben wir ein Brettspiel gespielt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0057",
+      "text": "Elif hat den Garten gezeichnet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0058",
+      "text": "Was sind deine Hobbys?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0059",
+      "text": "Ich zeichne gern und sammle Comics.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0060",
+      "text": "Fotografierst du gern?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0061",
+      "text": "Am Samstag haben wir im Kino einen Film gesehen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0062",
+      "text": "Der Film war sehr spannend.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0063",
+      "text": "Der Film war sehr lustig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0064",
+      "text": "Der Film ist langweilig.",
+      "quelle": "tatoeba:2441424",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2441424 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0065",
+      "text": "Das war ein lustiger Tag heute.",
+      "quelle": "tatoeba:1288056",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1288056 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0066",
+      "text": "Am Freitag hat die Klasse das Museum besucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0067",
+      "text": "Der Lehrer und die Schüler sind im Museum.",
+      "quelle": "tatoeba:764158",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #764158 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0068",
+      "text": "Im Museum haben wir eine Ausstellung über Tiere angeschaut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0069",
+      "text": "Am Sonntag waren wir im Zoo.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0070",
+      "text": "Gehen Sie heute Abend ins Theater?",
+      "quelle": "tatoeba:839275",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #839275 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0071",
+      "text": "Wir waren nicht im Kino, sondern im Theater.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0072",
+      "text": "Das Theater war nicht langweilig, sondern sehr lustig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0073",
+      "text": "Meine Mutter interessiert sich sehr für Kultur.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0074",
+      "text": "In der Stadt gibt es viel Kultur.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0075",
+      "text": "Wir haben den schönen Tag genossen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0076",
+      "text": "Genießen wir diesen schönen Tag!",
+      "quelle": "tatoeba:13819152",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13819152 von Waldelfe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0077",
+      "text": "Wir spielen Fangen. Willst du mitmachen?",
+      "quelle": "tatoeba:2051094",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2051094 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0078",
+      "text": "Elif hat beim Malen mitgemacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0079",
+      "text": "Im Zoo haben wir die Tiere angeschaut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0080",
+      "text": "Willst du die Fotos anschauen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0081",
+      "text": "Wie war der Film?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0082",
+      "text": "Er war nicht spannend, sondern langweilig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0083",
+      "text": "Wie war die Ausstellung?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0084",
+      "text": "Sie war ziemlich interessant. Ich habe viel gelernt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0085",
+      "text": "Was für ein spannendes Spiel!",
+      "quelle": "tatoeba:1609125",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1609125 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0086",
+      "text": "Kommst du mit ins Kino?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0087",
+      "text": "Nein, danke. Ich war gestern schon im Kino.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0088",
+      "text": "Darf ich mitmachen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0089",
+      "text": "Klar, mach mit!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0090",
+      "text": "Das Theater für Kinder ist am Sonntag um elf Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0091",
+      "text": "Plötzlich hat es geregnet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0092",
+      "text": "Plötzlich war der Ball weg.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0093",
+      "text": "Das Wetter war schrecklich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0094",
+      "text": "Schreckliches Wetter!",
+      "quelle": "tatoeba:811337",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #811337 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0095",
+      "text": "Das ist einfach wunderbar!",
+      "quelle": "tatoeba:4532558",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4532558 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0096",
+      "text": "Der Tag am Wasser war wunderbar.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0097",
+      "text": "Wir haben viel gelacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0098",
+      "text": "Warum lachst du?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0099",
+      "text": "Das war ein tolles Erlebnis!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0100",
+      "text": "Der Ausflug war ein echtes Abenteuer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0101",
+      "text": "Was hast du am Wochenende erlebt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0102",
+      "text": "Im Zoo haben wir viel erlebt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0103",
+      "text": "Nach dem Ausflug war ich ziemlich müde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0104",
+      "text": "Jan hat tatsächlich gewonnen!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0105",
+      "text": "Tatsächlich? Das ist ja toll!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0106",
+      "text": "Übrigens, hast du deine Hausaufgaben gemacht?",
+      "quelle": "tatoeba:1494903",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1494903 von Zaghawa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0107",
+      "text": "Wie alt bist du übrigens?",
+      "quelle": "tatoeba:3925780",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3925780 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0108",
+      "text": "Und was machen wir nun?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0109",
+      "text": "Manchmal ist es eben so.",
+      "quelle": "tatoeba:6910386",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6910386 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e01.s0110",
+      "text": "Ich war eben sehr müde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0111",
+      "text": "Hattest du Spaß im Zoo?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0112",
+      "text": "Wo warst du am Samstag?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0113",
+      "text": "Am Samstag war ich bei Oma und Opa im Garten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0114",
+      "text": "Beim Ausflug hatten wir Glück mit dem Wetter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0115",
+      "text": "Am Anfang hatte ich im Zoo ein bisschen Angst.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0116",
+      "text": "Wart ihr am Sonntag im Museum?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0117",
+      "text": "Ja, und danach waren wir im Kino.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0118",
+      "text": "Hattet ihr beim Ausflug gutes Wetter?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0119",
+      "text": "Alle haben laut gelacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0120",
+      "text": "Ich erinnere mich gern an den Ausflug.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0121",
+      "text": "Erinnerst du dich an den Zoo?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0122",
+      "text": "Das Foto ist eine schöne Erinnerung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0123",
+      "text": "Wir haben viele schöne Erinnerungen an den Sommer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0124",
+      "text": "Damals hatten wir viel Spaß zusammen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0125",
+      "text": "Damals war ich sechs Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0126",
+      "text": "Ich erinnere mich noch gut an diese Zeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0127",
+      "text": "Neulich habe ich ein spannendes Buch gelesen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0128",
+      "text": "Neulich war ich mit Papa im Museum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0129",
+      "text": "Kannst du das bitte nochmal sagen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0130",
+      "text": "Ich möchte nochmal in den Zoo.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0131",
+      "text": "Inzwischen ist es draußen dunkel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0132",
+      "text": "Inzwischen spielt Jan sehr gut Schach.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0133",
+      "text": "Bisher war das Wochenende sehr schön.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0134",
+      "text": "Ich war bisher noch nie im Theater.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0135",
+      "text": "Wann warst du zuletzt im Kino?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0136",
+      "text": "Ich war zuletzt im Sommer im Kino.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0137",
+      "text": "Ich hatte sowieso keine Zeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0138",
+      "text": "Das Museum ist am Montag sowieso zu.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0139",
+      "text": "Unsere Klasse schreibt einen Bericht über den Ausflug.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0140",
+      "text": "Hast du den Bericht schon gelesen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0141",
+      "text": "Unser Ausflug in den Wildpark: ein Bericht von Paula und Mert",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0142",
+      "text": "Am Samstag hat unsere Klasse einen Ausflug gemacht. Wir waren den ganzen Tag im Wildpark. Am Morgen war es ziemlich kalt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0143",
+      "text": "Im Park leben viele große und kleine Tiere. Ein Mann hat viel über die Tiere erzählt. Clara hat die Tiere fotografiert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0144",
+      "text": "Am Mittag haben wir draußen gegessen. Plötzlich hat es geregnet. Aber das war egal. Wir haben viel gelacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0145",
+      "text": "Es war ein wunderbarer Tag. Wir erinnern uns gern an dieses Erlebnis. Nächstes Jahr wollen wir nochmal in den Wildpark.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0146",
+      "text": "Die Klasse war den ganzen Tag im Wildpark.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0147",
+      "text": "Am Morgen war es ziemlich warm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0148",
+      "text": "Die Kinder haben draußen Eis gegessen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0149",
+      "text": "Was hat Clara im Wildpark gemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0150",
+      "text": "Sie hat die Tiere fotografiert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0151",
+      "text": "Sie hat den Park gezeichnet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0152",
+      "text": "Sie hat einen Bericht geschrieben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0153",
+      "text": "Wie war euer Wochenende?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0154",
+      "text": "Es ist Montag, acht Uhr. Frau Krüger kommt in die Klasse.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0155",
+      "text": "Sie fragt die Kinder: Was habt ihr am Wochenende gemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0156",
+      "text": "Elif erzählt als Erste.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0157",
+      "text": "Ich habe am Samstag mit Papa einen Kuchen gebacken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0158",
+      "text": "Er war wunderbar. Ich habe drei Stück gegessen!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0159",
+      "text": "Nun erzählt Laylā.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0160",
+      "text": "Ich habe am Sonntag meine Oma besucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0161",
+      "text": "Wir haben im Garten gesessen und viel gelacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0162",
+      "text": "Zuletzt erzählt Jan.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0163",
+      "text": "Ich habe mit Opa ein großes Puzzle gelegt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0164",
+      "text": "Es hatte 1000 Teile! Wir haben zwei Tage gebraucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0165",
+      "text": "Tatsächlich? Das war ja ein Abenteuer!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0166",
+      "text": "Alle lachen. Frau Krüger sagt: Das waren tolle Erlebnisse!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0167",
+      "text": "Was hat Elif am Samstag gemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0168",
+      "text": "Sie hat einen Kuchen gebacken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0169",
+      "text": "Sie hat ein Puzzle gelegt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0170",
+      "text": "Sie hat ihre Oma besucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0171",
+      "text": "Wo waren Laylā und ihre Oma?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0172",
+      "text": "Sie waren im Garten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0173",
+      "text": "Sie waren im Kino.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0174",
+      "text": "Sie waren im Museum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0175",
+      "text": "Wie viele Teile hatte das Puzzle?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0176",
+      "text": "Es hatte 1000 Teile.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0177",
+      "text": "Es hatte 100 Teile.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0178",
+      "text": "Es hatte 50 Teile.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0179",
+      "text": "Wie lange haben Jan und Opa gebraucht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0180",
+      "text": "Sie haben zwei Tage gebraucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0181",
+      "text": "Sie haben zwei Stunden gebraucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0182",
+      "text": "Sie haben eine Woche gebraucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0183",
+      "text": "Warum warst du so müde, Emre?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0184",
+      "text": "Am Sonntag sitzen Elif und Emre im Garten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0185",
+      "text": "Emre, warum warst du gestern so müde?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0186",
+      "text": "Ich habe am Morgen lange Fußball trainiert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0187",
+      "text": "Wie lange habt ihr trainiert?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0188",
+      "text": "Drei Stunden! Und plötzlich hat es geregnet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0189",
+      "text": "Oh nein! Habt ihr im Regen trainiert?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0190",
+      "text": "Ja, aber das war lustig. Wir haben viel gelacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0191",
+      "text": "Und nachher? Was hast du dann gemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0192",
+      "text": "Ich habe gegessen und dann zwölf Stunden geschlafen!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0193",
+      "text": "Kein Wunder! Trainierst du nächsten Samstag wieder?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0194",
+      "text": "Klar. Fußball ist eben mein Hobby.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0195",
+      "text": "Wie lange hat Emre trainiert?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0196",
+      "text": "Er hat drei Stunden trainiert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0197",
+      "text": "Er hat eine Stunde trainiert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0198",
+      "text": "Er hat zehn Minuten trainiert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0199",
+      "text": "Wie war es für Emre im Regen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0200",
+      "text": "Es war lustig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0201",
+      "text": "Es war langweilig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0202",
+      "text": "Es war schrecklich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0203",
+      "text": "Was hat Emre nachher gemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0204",
+      "text": "Er hat gegessen und lange geschlafen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0205",
+      "text": "Er hat ein Brettspiel gespielt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0206",
+      "text": "Er hat seine Oma besucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0207",
+      "text": "Was ist das Hobby von Emre?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0208",
+      "text": "Sein Hobby ist Fußball.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0209",
+      "text": "Sein Hobby ist Schach.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0210",
+      "text": "Sein Hobby ist Zeichnen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0211",
+      "text": "Am Samstag habe ich Oma besucht. Am Sonntag haben wir einen Ausflug gemacht. Es war toll!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0212",
+      "text": "Warst du am Samstag im Kino oder im Theater?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0213",
+      "text": "Der Besuch im Zoo war sehr lustig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0214",
+      "text": "Die Ausstellung über moderne Kunst war ziemlich langweilig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0215",
+      "text": "Ich habe beim Ausflug viel fotografiert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0216",
+      "text": "Ich habe eine Zeitschrift über Fußball gekauft.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0217",
+      "text": "Früher habe ich Comics gesammelt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0218",
+      "text": "Auf dem Spielplatz haben die Kinder viel gelacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0219",
+      "text": "Wir haben die Sonne im Garten genossen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0220",
+      "text": "Am Sonntag waren wir wandern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0221",
+      "text": "Hast du schon mal ein Puzzle gelegt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0222",
+      "text": "Ja, neulich mit Opa. Es hatte 500 Teile.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0223",
+      "text": "Ich habe keine Lust auf Kino.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0224",
+      "text": "Hast du beim Fußball mitgemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0225",
+      "text": "Interessiert ihr euch für Kultur?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0226",
+      "text": "Erinnerst du dich an damals?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0227",
+      "text": "Der Bericht über den Ausflug ist sehr lustig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0228",
+      "text": "Elif hat das Brettspiel gewonnen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0229",
+      "text": "Gehen wir nachher ins Kino?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0230",
+      "text": "Okay, bis nachher!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0231",
+      "text": "Draußen regnet es. Wir spielen ein Brettspiel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0232",
+      "text": "Was zeichnest du da?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0233",
+      "text": "Ich zeichne unseren Garten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0234",
+      "text": "Wann besuchst du deine Oma?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0235",
+      "text": "Ich besuche sie jedes Wochenende.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0236",
+      "text": "Ich habe leider wenig Freizeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0237",
+      "text": "Das Theater hat mir gut gefallen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0238",
+      "text": "Schreib eine kurze Nachricht an eine Freundin oder einen Freund. Erzähl: Was hast du am Wochenende gemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0239",
+      "text": "Hallo Laylā! Am Samstag habe ich meine Oma besucht. Wir haben zusammen einen Kuchen gebacken. Am Sonntag war ich mit Papa im Zoo. Das war ein tolles Erlebnis! Was hast du am Wochenende gemacht? Bis bald! Elif",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0240",
+      "text": "Wie war dein Samstag?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0241",
+      "text": "Ziemlich gut! Ich war mit Papa im Museum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0242",
+      "text": "Was habt ihr im Museum gesehen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0243",
+      "text": "Wir haben eine Ausstellung über alte Spiele gesehen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0244",
+      "text": "Das klingt spannend! Wie lange wart ihr dort?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0245",
+      "text": "Wir waren zwei Stunden dort.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0246",
+      "text": "Hattest du Lust auf den Ausflug?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0247",
+      "text": "Am Anfang nicht, aber dann war es toll.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0248",
+      "text": "Ich habe das ganze Wochenende im Garten verbracht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0249",
+      "text": "Am Sonntag haben wir für den Besuch einen Kuchen gebacken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0250",
+      "text": "Am Abend habe ich im Bett Comics gelesen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0251",
+      "text": "Wir waren nicht im Museum, sondern im Zoo.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0252",
+      "text": "Mit wem warst du im Zoo?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0253",
+      "text": "Mit Oma und Opa. Wir haben viel gelacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0254",
+      "text": "Hat der Ausflug Spaß gemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0255",
+      "text": "Ja, sehr! Es war ein echtes Abenteuer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0256",
+      "text": "Wo warst du am Wochenende? Wie war es? Was hast du gemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e01.s0257",
+      "text": "Am Samstag habe ich trainiert. Danach habe ich ein Brettspiel gespielt. Es war lustig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a2.e01.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, was ich am Wochenende gemacht habe.",
+        "tr": "Hafta sonu ne yaptığımı söyleyebilirim.",
+        "ar": "أستطيع أن أقول ماذا فعلت في عطلة نهاية الأسبوع."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e01.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e01.besuchen",
+          "ablenker": ["de.a1.e12.arbeiten", "de.a1.e08.spielen"]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e01.garten", "de.a2.e01.ausflug", "de.a2.e01.hobby", "de.a2.e01.spielplatz", "de.a2.e01.freizeit"]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e01.s0002",
+          "ablenker": ["de.a2.e01.s0004", "de.a2.e01.s0005", "de.a2.e01.s0022"]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0003",
+          "wort": 7,
+          "ablenker": ["besuchen", "besuche"]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0001"
+            }
+          ],
+          "antwort": "de.a2.e01.s0004",
+          "ablenker": ["de.a2.e01.s0006", "de.a2.e01.s0007", "de.a2.e01.s0027"]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e01.besuch",
+          "ablenker": ["de.a2.e01.ausflug", "de.a1.e04.geburtstag"]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e01.s0005",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir haben am Samstag im Garten gearbeitet.",
+            "Im Garten haben wir am Samstag gearbeitet.",
+            "Wir haben im Garten am Samstag gearbeitet."
+          ],
+          "ablenker": ["arbeiten", "Sonntag"]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a09",
+          "typ": "paare",
+          "lemmata": ["de.a2.e01.vorgestern", "de.a2.e01.draussen", "de.a2.e01.nachher", "de.a2.e01.okay", "de.a2.e01.verbringen"]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0008"
+            }
+          ],
+          "antwort": "de.a2.e01.s0009",
+          "ablenker": ["de.a2.e01.s0010", "de.a2.e01.s0011", "de.a2.e01.s0029"]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e01.s0012",
+          "ablenker": ["de.a2.e01.s0006", "de.a2.e01.s0013", "de.a2.e01.s0023"]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e01.s0013",
+          "alternativen": [
+            "Den ganzen Tag haben wir draußen gespielt.",
+            "Draußen haben wir den ganzen Tag gespielt.",
+            "Wir haben draußen den ganzen Tag gespielt."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a13",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0014",
+          "wort": 6,
+          "ablenker": ["verbringen", "verbringt"]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e01.s0018",
+          "nach": "ziel",
+          "alternativen": ["Der Besuch bei der Oma war sehr schön.", "Der Besuch bei meiner Oma war sehr schön."]
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a15",
+          "typ": "sprechen",
+          "satz": "de.a2.e01.s0016"
+        },
+        {
+          "schluessel": "de.a2.e01.l01.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e01.s0019"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e01.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über meine Hobbys und Interessen sprechen.",
+        "tr": "Hobilerim ve ilgi alanlarım hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدث عن هواياتي واهتماماتي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e01.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e01.zeichnen",
+          "ablenker": ["de.a1.e08.basteln", "de.a1.e07.schreiben"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e01.puzzle", "de.a2.e01.brettspiel", "de.a2.e01.comic", "de.a2.e01.zeitschrift", "de.a1.e07.buch"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e01.s0033",
+          "ablenker": ["de.a2.e01.s0056", "de.a2.e01.s0054", "de.a2.e01.s0057", "de.a2.e01.s0030"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e01.sammeln",
+          "ablenker": ["de.a1.e06.kaufen", "de.a1.e01.lernen"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0058"
+            }
+          ],
+          "antwort": "de.a2.e01.s0059",
+          "ablenker": ["de.a2.e01.s0049", "de.a2.e01.s0055", "de.a2.e01.s0031"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0054",
+          "wort": 6,
+          "ablenker": ["legen", "gelegen"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a08",
+          "typ": "paare",
+          "lemmata": ["de.a2.e01.trainieren", "de.a2.e01.wandern", "de.a2.e01.fotografieren", "de.a2.e01.interessieren"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e01.s0056",
+          "nach": "ziel",
+          "alternativen": ["Wir haben am Abend ein Brettspiel gespielt.", "Ein Brettspiel haben wir am Abend gespielt."],
+          "ablenker": ["spielen", "Puzzle"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e01.lust",
+          "ablenker": ["de.a1.e08.idee", "de.a1.e05.hunger"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0047"
+            }
+          ],
+          "antwort": "de.a2.e01.s0048",
+          "ablenker": ["de.a2.e01.s0052", "de.a2.e01.s0050", "de.a2.e01.s0051"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e01.spazieren",
+          "ablenker": ["de.a1.e09.warten", "de.a1.e11.bleiben"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a13",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0044",
+          "wort": 2,
+          "ablenker": ["mich", "sich"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a14",
+          "typ": "satzbau",
+          "ziel": "de.a2.e01.s0041",
+          "alternativen": ["Wir waren am Abend im Park spazieren.", "Im Park waren wir am Abend spazieren."]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e01.s0042",
+          "ablenker": ["de.a2.e01.s0045", "de.a2.e01.s0053", "de.a2.e01.s0043"]
+        },
+        {
+          "schluessel": "de.a2.e01.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e01.s0059"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e01.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann erzählen, was ich im Kino, im Museum oder im Zoo erlebt habe, und sagen, wie es war.",
+        "tr": "Sinemada, müzede ya da hayvanat bahçesinde neler yaşadığımı anlatabilir ve nasıl geçtiğini söyleyebilirim.",
+        "ar": "أستطيع أن أحكي ما عشته في السينما أو المتحف أو حديقة الحيوان وأن أقول كيف كان."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e01.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e01.kino",
+          "ablenker": ["de.a1.e08.film", "de.a1.e09.bahnhof"]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e01.museum", "de.a2.e01.zoo", "de.a2.e01.theater", "de.a2.e01.ausstellung", "de.a2.e01.kultur"]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e01.s0061",
+          "ablenker": ["de.a2.e01.s0069", "de.a2.e01.s0066", "de.a2.e01.s0067"]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a05",
+          "typ": "paare",
+          "lemmata": ["de.a2.e01.langweilig", "de.a2.e01.spannend", "de.a2.e01.lustig", "de.a1.e11.muede"]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0081"
+            }
+          ],
+          "antwort": "de.a2.e01.s0082",
+          "ablenker": ["de.a2.e01.s0086", "de.a2.e01.s0069", "de.a2.e01.s0090"]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0071",
+          "wort": 5,
+          "ablenker": ["denn", "und"]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e01.geniessen",
+          "ablenker": ["de.a1.e10.vergessen", "de.a1.e07.verstehen"]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e01.s0079",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir haben im Zoo die Tiere angeschaut.",
+            "Die Tiere haben wir im Zoo angeschaut.",
+            "Wir haben die Tiere im Zoo angeschaut."
+          ],
+          "ablenker": ["anschauen", "Museum"]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0088"
+            }
+          ],
+          "antwort": "de.a2.e01.s0089",
+          "ablenker": ["de.a2.e01.s0064", "de.a2.e01.s0083", "de.a2.e01.s0085"]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e01.anschauen",
+          "ablenker": ["de.a2.e01.mitmachen", "de.a1.e09.warten"]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a12",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0078",
+          "wort": 4,
+          "ablenker": ["gemitmacht", "mitmacht"]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e01.s0072",
+          "ablenker": ["de.a2.e01.s0062", "de.a2.e01.s0065", "de.a2.e01.s0063"]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a14",
+          "typ": "satzbau",
+          "ziel": "de.a2.e01.s0073",
+          "alternativen": ["Für Kultur interessiert sich meine Mutter sehr."]
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a15",
+          "typ": "frei",
+          "ziel": "de.a2.e01.s0068",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e01.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e01.s0075"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e01.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann von Erlebnissen erzählen und dabei „war“ und „hatte“ benutzen.",
+        "tr": "Yaşadıklarımı anlatabilir ve bunu yaparken „war“ ve „hatte“ kullanabilirim.",
+        "ar": "أستطيع أن أحكي عن تجاربي وأن أستخدم فيها „war“ و„hatte“."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e01.l04.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e01.erleben",
+          "ablenker": ["de.a1.e12.erzaehlen", "de.a1.e08.gewinnen"]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a03",
+          "typ": "paare",
+          "lemmata": ["de.a2.e01.erlebnis", "de.a2.e01.abenteuer", "de.a2.e01.ausflug", "de.a1.e04.geburtstag"]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e01.s0091",
+          "ablenker": ["de.a2.e01.s0097", "de.a2.e01.s0093", "de.a2.e01.s0092"]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a05",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e01.nun",
+            "de.a2.e01.uebrigens",
+            "de.a2.e01.tatsaechlich",
+            "de.a2.e01.ploetzlich",
+            "de.a2.e01.ziemlich",
+            "de.a2.e01.eben"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0112"
+            }
+          ],
+          "antwort": "de.a2.e01.s0113",
+          "ablenker": ["de.a2.e01.s0118", "de.a2.e01.s0098", "de.a2.e01.s0108"]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0113",
+          "wort": 2,
+          "ablenker": ["hatte", "warst"]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e01.lachen",
+          "ablenker": ["de.a1.e08.laufen", "de.a1.e07.lesen"]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0111",
+          "wort": 0,
+          "ablenker": ["Hatte", "Hattet"]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e01.s0114",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir hatten beim Ausflug Glück mit dem Wetter.",
+            "Wir hatten beim Ausflug mit dem Wetter Glück.",
+            "Mit dem Wetter hatten wir beim Ausflug Glück.",
+            "Beim Ausflug hatten wir mit dem Wetter Glück."
+          ],
+          "ablenker": ["haben", "Angst"]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0104"
+            }
+          ],
+          "antwort": "de.a2.e01.s0105",
+          "ablenker": ["de.a2.e01.s0115", "de.a2.e01.s0107", "de.a2.e01.s0116"]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e01.wunderbar",
+          "ablenker": ["de.a2.e01.schrecklich", "de.a1.e10.kalt"]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e01.s0099",
+          "ablenker": ["de.a2.e01.s0100", "de.a2.e01.s0095", "de.a2.e01.s0096"]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a14",
+          "typ": "satzbau",
+          "ziel": "de.a2.e01.s0103",
+          "alternativen": ["Ich war nach dem Ausflug ziemlich müde."]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a15",
+          "typ": "frei",
+          "ziel": "de.a2.e01.s0093",
+          "nach": "ziel",
+          "alternativen": ["Das Wetter war furchtbar."]
+        },
+        {
+          "schluessel": "de.a2.e01.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e01.s0112"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e01.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann mich an Erlebnisse erinnern und einen kurzen Bericht lesen.",
+        "tr": "Yaşadıklarımı hatırlayabilir ve kısa bir yazı okuyabilirim.",
+        "ar": "أستطيع أن أتذكر ما عشته وأن أقرأ تقريرًا قصيرًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e01.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e01.damals",
+          "ablenker": ["de.a1.e03.jetzt", "de.a1.e11.bald"]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a03",
+          "typ": "paare",
+          "lemmata": ["de.a2.e01.neulich", "de.a2.e01.zuletzt", "de.a2.e01.bisher", "de.a2.e01.sowieso", "de.a2.e01.nochmal"]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e01.s0120",
+          "ablenker": ["de.a2.e01.s0121", "de.a2.e01.s0139", "de.a2.e01.s0140"]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e01.bericht",
+          "ablenker": ["de.a1.e02.foto", "de.a2.e01.erinnerung"]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0135"
+            }
+          ],
+          "antwort": "de.a2.e01.s0136",
+          "ablenker": ["de.a2.e01.s0130", "de.a2.e01.s0137", "de.a2.e01.s0124"]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0121",
+          "wort": 3,
+          "ablenker": ["für", "mit"]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a08",
+          "typ": "lesen_fragen",
+          "titel": "de.a2.e01.s0141",
+          "absaetze": ["de.a2.e01.s0142", "de.a2.e01.s0143", "de.a2.e01.s0144", "de.a2.e01.s0145"],
+          "glossen": [
+            "de.a2.e01.ausflug",
+            "de.a2.e01.bericht",
+            "de.a2.e01.ziemlich",
+            "de.a2.e01.ploetzlich",
+            "de.a2.e01.erlebnis",
+            "de.a2.e01.wunderbar",
+            "de.a2.e01.erinnern",
+            "de.a2.e01.nochmal"
+          ],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e01.s0146",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e01.s0147",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e01.s0148",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e01.s0149",
+              "antwort": "de.a2.e01.s0150",
+              "ablenker": ["de.a2.e01.s0151", "de.a2.e01.s0152"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e01.inzwischen",
+          "ablenker": ["de.a1.e06.leider", "de.a1.e04.spaet"]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e01.s0127",
+          "nach": "ziel",
+          "alternativen": ["Ich habe neulich ein spannendes Buch gelesen.", "Ein spannendes Buch habe ich neulich gelesen."],
+          "ablenker": ["lese", "Film"]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0125",
+          "wort": 1,
+          "ablenker": ["bin", "habe"]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e01.s0131",
+          "ablenker": ["de.a2.e01.s0133", "de.a2.e01.s0138", "de.a2.e01.s0132"]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e01.s0139",
+          "alternativen": [
+            "Über den Ausflug schreibt unsere Klasse einen Bericht.",
+            "Einen Bericht über den Ausflug schreibt unsere Klasse."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e01.s0122",
+          "nach": "ziel",
+          "alternativen": ["Das Bild ist eine schöne Erinnerung."]
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a15",
+          "typ": "sprechen",
+          "satz": "de.a2.e01.s0128"
+        },
+        {
+          "schluessel": "de.a2.e01.l05.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e01.s0129",
+          "alternativen": ["Kannst du das bitte noch mal sagen?"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e01.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann Geschichten über das Wochenende verstehen.",
+        "tr": "Hafta sonuyla ilgili hikâyeleri anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصصًا عن عطلة نهاية الأسبوع."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e01.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a2.e01.s0153",
+          "zeilen": [
+            {
+              "satz": "de.a2.e01.s0154"
+            },
+            {
+              "satz": "de.a2.e01.s0155"
+            },
+            {
+              "satz": "de.a2.e01.s0156"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0157"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0158"
+            },
+            {
+              "satz": "de.a2.e01.s0159"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e01.s0160"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e01.s0161"
+            },
+            {
+              "satz": "de.a2.e01.s0162"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e01.s0163"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e01.s0164"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0165"
+            },
+            {
+              "satz": "de.a2.e01.s0166"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.a2.e01.s0167",
+              "antwort": "de.a2.e01.s0168",
+              "ablenker": ["de.a2.e01.s0169", "de.a2.e01.s0170"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a2.e01.s0171",
+              "antwort": "de.a2.e01.s0172",
+              "ablenker": ["de.a2.e01.s0173", "de.a2.e01.s0174"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.a2.e01.s0175",
+              "antwort": "de.a2.e01.s0176",
+              "ablenker": ["de.a2.e01.s0177", "de.a2.e01.s0178"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a2.e01.s0179",
+              "antwort": "de.a2.e01.s0180",
+              "ablenker": ["de.a2.e01.s0181", "de.a2.e01.s0182"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e01.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0163",
+          "wort": 7,
+          "ablenker": ["gelegen", "legt"]
+        },
+        {
+          "schluessel": "de.a2.e01.l06.a03",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e01.s0160",
+          "nach": "ziel",
+          "alternativen": [
+            "Am Sonntag habe ich meine Oma besucht.",
+            "Meine Oma habe ich am Sonntag besucht.",
+            "Ich habe meine Oma am Sonntag besucht."
+          ],
+          "ablenker": ["besuchen", "Opa"]
+        },
+        {
+          "schluessel": "de.a2.e01.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e01.s0161",
+          "ablenker": ["de.a2.e01.s0163", "de.a2.e01.s0157"]
+        },
+        {
+          "schluessel": "de.a2.e01.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.a2.e01.s0183",
+          "zeilen": [
+            {
+              "satz": "de.a2.e01.s0184"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0185"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e01.s0186"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0187"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e01.s0188"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0189"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e01.s0190"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0191"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e01.s0192"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0193"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e01.s0194"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.a2.e01.s0195",
+              "antwort": "de.a2.e01.s0196",
+              "ablenker": ["de.a2.e01.s0197", "de.a2.e01.s0198"]
+            },
+            {
+              "nach": 6,
+              "frage": "de.a2.e01.s0199",
+              "antwort": "de.a2.e01.s0200",
+              "ablenker": ["de.a2.e01.s0201", "de.a2.e01.s0202"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.a2.e01.s0203",
+              "antwort": "de.a2.e01.s0204",
+              "ablenker": ["de.a2.e01.s0205", "de.a2.e01.s0206"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.a2.e01.s0207",
+              "antwort": "de.a2.e01.s0208",
+              "ablenker": ["de.a2.e01.s0209", "de.a2.e01.s0210"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e01.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0185"
+            }
+          ],
+          "antwort": "de.a2.e01.s0186",
+          "ablenker": ["de.a2.e01.s0086", "de.a2.e01.s0052"]
+        },
+        {
+          "schluessel": "de.a2.e01.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0187",
+          "wort": 4,
+          "ablenker": ["getrainiert", "trainiere"]
+        },
+        {
+          "schluessel": "de.a2.e01.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.a2.e01.s0192"
+        },
+        {
+          "schluessel": "de.a2.e01.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e01.s0190",
+          "ablenker": ["de.a2.e01.s0188", "de.a2.e01.s0194"]
+        },
+        {
+          "schluessel": "de.a2.e01.l06.a10",
+          "typ": "sprechen",
+          "satz": "de.a2.e01.s0211"
+        },
+        {
+          "schluessel": "de.a2.e01.l06.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e01.s0194"
+        },
+        {
+          "schluessel": "de.a2.e01.l06.a12",
+          "typ": "frei",
+          "ziel": "de.a2.e01.s0164",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e01.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann den Wortschatz der Einheit wiederholen und eine kurze Nachricht über mein Wochenende schreiben.",
+        "tr": "Ünitenin kelimelerini tekrar edebilir ve hafta sonum hakkında kısa bir mesaj yazabilirim.",
+        "ar": "أستطيع أن أراجع مفردات الوحدة وأن أكتب رسالة قصيرة عن عطلة نهاية الأسبوع."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e01.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e01.erinnerung",
+          "ablenker": ["de.a2.e01.abenteuer", "de.a2.e01.interesse"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a02",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e01.lachen",
+          "ablenker": ["de.a1.e04.machen"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a03",
+          "typ": "paare",
+          "lemmata": ["de.a2.e01.kino", "de.a2.e01.museum", "de.a2.e01.zoo", "de.a2.e01.theater", "de.a2.e01.spielplatz"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e01.s0215",
+          "ablenker": ["de.a2.e01.s0217", "de.a2.e01.s0216", "de.a2.e01.s0032"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0212"
+            }
+          ],
+          "antwort": "de.a2.e01.s0071",
+          "ablenker": ["de.a2.e01.s0233", "de.a2.e01.s0223"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0219",
+          "wort": 6,
+          "ablenker": ["genießen", "genießt"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0037"
+            }
+          ],
+          "antwort": "de.a2.e01.s0038",
+          "ablenker": ["de.a2.e01.s0228", "de.a2.e01.s0125"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e01.s0225",
+          "nach": "ziel",
+          "ablenker": ["dich", "Kunst"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a09",
+          "typ": "satzbau",
+          "ziel": "de.a2.e01.s0217",
+          "alternativen": ["Ich habe früher Comics gesammelt.", "Comics habe ich früher gesammelt."]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e01.s0214",
+          "ablenker": ["de.a2.e01.s0213", "de.a2.e01.s0227", "de.a2.e01.s0074"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0218",
+          "wort": 7,
+          "ablenker": ["gelachen", "lachen"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0116"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e01.s0117"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0081"
+            }
+          ],
+          "antwort": "de.a2.e01.s0063",
+          "ablenker": ["de.a2.e01.s0134", "de.a2.e01.s0027"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0101"
+            }
+          ],
+          "antwort": "de.a2.e01.s0102",
+          "ablenker": ["de.a2.e01.s0031", "de.a2.e01.s0060"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0086"
+            }
+          ],
+          "antwort": "de.a2.e01.s0087",
+          "ablenker": ["de.a2.e01.s0080", "de.a2.e01.s0106"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0221"
+            }
+          ],
+          "antwort": "de.a2.e01.s0222",
+          "ablenker": ["de.a2.e01.s0230", "de.a2.e01.s0069"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e01.s0231",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a17",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0229"
+            }
+          ],
+          "antwort": "de.a2.e01.s0230",
+          "ablenker": ["de.a2.e01.s0028", "de.a2.e01.s0228"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a18",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0234"
+            }
+          ],
+          "antwort": "de.a2.e01.s0235",
+          "ablenker": ["de.a2.e01.s0094", "de.a2.e01.s0237"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a19",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e01.garten",
+          "ablenker": ["de.a1.e09.warten"]
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a20",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e01.s0232"
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a21",
+          "typ": "sprechen",
+          "satz": "de.a2.e01.s0226"
+        },
+        {
+          "schluessel": "de.a2.e01.l07.a22",
+          "typ": "schreiben",
+          "aufgabe": "de.a2.e01.s0238",
+          "woerter": {
+            "min": 30,
+            "max": 40
+          },
+          "pflichtwoerter": ["Wochenende"],
+          "muster": ["de.a2.e01.s0239"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e01.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann von meinem Wochenende erzählen und andere nach ihrem Wochenende fragen.",
+        "tr": "Hafta sonumu anlatabilir ve başkalarına hafta sonlarını sorabilirim.",
+        "ar": "أستطيع أن أحكي عن عطلة نهاية الأسبوع وأن أسأل الآخرين عن عطلتهم."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e01.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e01.verbringen",
+          "ablenker": ["de.a1.e12.verdienen", "de.a1.e08.versuchen"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e01.lustig", "de.a2.e01.langweilig", "de.a2.e01.wunderbar", "de.a2.e01.schrecklich", "de.a2.e01.spannend"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e01.s0021",
+          "ablenker": ["de.a2.e01.s0024", "de.a2.e01.s0240"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0024"
+            }
+          ],
+          "antwort": "de.a2.e01.s0025",
+          "ablenker": ["de.a2.e01.s0035", "de.a2.e01.s0070"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0248",
+          "wort": 1,
+          "ablenker": ["bin", "war"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e01.s0251",
+          "nach": "ziel",
+          "ablenker": ["denn", "Kino"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0240"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e01.s0241"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0242"
+            }
+          ],
+          "antwort": "de.a2.e01.s0243",
+          "ablenker": ["de.a2.e01.s0245", "de.a2.e01.s0007"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a08",
+          "typ": "luecke",
+          "ziel": "de.a2.e01.s0249",
+          "wort": 9,
+          "ablenker": ["gebackt", "backen"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e01.s0250",
+          "ablenker": ["de.a2.e01.s0248", "de.a2.e01.s0052"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0252"
+            }
+          ],
+          "antwort": "de.a2.e01.s0253",
+          "ablenker": ["de.a2.e01.s0255", "de.a2.e01.s0235"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a11",
+          "typ": "satzbau",
+          "ziel": "de.a2.e01.s0250",
+          "alternativen": [
+            "Ich habe am Abend im Bett Comics gelesen.",
+            "Im Bett habe ich am Abend Comics gelesen.",
+            "Comics habe ich am Abend im Bett gelesen.",
+            "Am Abend habe ich Comics im Bett gelesen.",
+            "Ich habe am Abend Comics im Bett gelesen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0242"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e01.s0243"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0244"
+            }
+          ],
+          "antwort": "de.a2.e01.s0245",
+          "ablenker": ["de.a2.e01.s0247", "de.a2.e01.s0232"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0246"
+            }
+          ],
+          "antwort": "de.a2.e01.s0247",
+          "ablenker": ["de.a2.e01.s0245", "de.a2.e01.s0107"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e01.s0254"
+            }
+          ],
+          "antwort": "de.a2.e01.s0255",
+          "ablenker": ["de.a2.e01.s0252", "de.a2.e01.s0134"]
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a2.e01.s0257"
+        },
+        {
+          "schluessel": "de.a2.e01.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e01.s0256"
+        }
+      ]
+    }
+  ]
+}

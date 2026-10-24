@@ -1,0 +1,3884 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "akhlaq",
+  "stufe": "vertiefung",
+  "einheit": {
+    "schluessel": "islam.vertiefung.e01",
+    "reihenfolge": 21,
+    "thema": {
+      "de": "Nach hanefitischer Lehre – Anstand I: Kleidung, Schmuck und Gebrauchsgegenstände"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Nach hanefitischer Lehre: Ich kann die Grundregeln der Werke zu Kleidung und Seide für Männer und Frauen wiedergeben."
+      },
+      {
+        "de": "Ich kenne die Regeln der Werke zu Gold, Silber, Schmuck und Gefäßen; Meinungsunterschiede innerhalb der Schule sind mit Quelle gekennzeichnet."
+      },
+      {
+        "de": "Ich kenne Regeln der Werke zu Gruß, Spiel, Auskünften und Moschee; das sind allgemeine Lehrfälle, keine Auskunft zu eigenen Fällen."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.vertiefung.e01.l01",
+      "titel": "Kleidung: Erlaubtes und Verpöntes",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a01",
+          "text": "Al-Ikhtiyār unterscheidet bei der Kleidung vier Stufen: Pflicht (farḍ), Empfohlenes (mustaḥabb), Erlaubtes (mubāḥ) und Verpöntes (makrūh). Pflicht ist Kleidung, die die Blöße (ʿawra) bedeckt und vor Hitze und Kälte schützt. Das Werk begründet das so: Ohne Bedeckung der ʿawra kann man nicht beten (Verweis 7:31), und der Körper hält Hitze und Kälte nicht aus; Kleidung ist darin wie Essen und Trinken. Radd al-Muḥtār nennt dieselbe Pflicht. Erlaubt ist nach al-Ikhtiyār ein schönes Gewand, mit dem man sich am Freitag, an Festtagen und bei Versammlungen schmückt; verpönt ist Kleidung, die man aus Hochmut und Eitelkeit trägt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 177,
+              "passage": "ikhtiyar.ms0897",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms897",
+              "passageSha256Text": "692bef1040a3486347afbd524bffeb9d517342f9fb08b0dde0af33ddb8b97577",
+              "zitatVon": 495,
+              "zitatBis": 644,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 178,
+              "passage": "ikhtiyar.ms0898",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms898",
+              "passageSha256Text": "315997fef8d04c1a05f283b2ee18a3d66e3afd30aa256cd5cd4283ec65235537",
+              "zitatVon": 473,
+              "zitatBis": 571,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 177,
+              "passage": "ikhtiyar.ms0897",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms897",
+              "passageSha256Text": "692bef1040a3486347afbd524bffeb9d517342f9fb08b0dde0af33ddb8b97577",
+              "zitatVon": 1189,
+              "zitatBis": 1468,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms6050",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6050",
+              "passageSha256Text": "e24d86af01d1974f5e2c7f431e29a687fc44d56e52ea3507d3fd607528981661",
+              "zitatVon": 508,
+              "zitatBis": 568,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "7:31"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a02",
+          "text": "Die Kleidung soll nach al-Ikhtiyār aus Baumwolle oder Leinen sein: So ist es überliefert, und es liegt der Eitelkeit am fernsten; Radd al-Muḥtār nennt zusätzlich Wolle. Sie soll zwischen kostbar und gering liegen, damit man im Geringen nicht verachtet wird und einen im Kostbaren nicht die Eitelkeit (khuyalāʾ) ergreift. Al-Ikhtiyār nennt dazu ein Verbot des Propheten, das beide Extreme betrifft, und den Grundsatz: Das Beste der Dinge ist ihre Mitte.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 177,
+              "passage": "ikhtiyar.ms0897",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms897",
+              "passageSha256Text": "692bef1040a3486347afbd524bffeb9d517342f9fb08b0dde0af33ddb8b97577",
+              "zitatVon": 1469,
+              "zitatBis": 1524,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 177,
+              "passage": "ikhtiyar.ms0898",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms898",
+              "passageSha256Text": "315997fef8d04c1a05f283b2ee18a3d66e3afd30aa256cd5cd4283ec65235537",
+              "zitatVon": 0,
+              "zitatBis": 227,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms6050",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6050",
+              "passageSha256Text": "e24d86af01d1974f5e2c7f431e29a687fc44d56e52ea3507d3fd607528981661",
+              "zitatVon": 569,
+              "zitatBis": 733,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a03",
+          "text": "Nach Radd al-Muḥtār entspricht es der Sunna, dass das Gewand bis zur Mitte des Unterschenkels reicht, der Ärmel bis zu den Fingerspitzen und seine Öffnung etwa eine Spanne weit ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms6050",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6050",
+              "passageSha256Text": "e24d86af01d1974f5e2c7f431e29a687fc44d56e52ea3507d3fd607528981661",
+              "zitatVon": 610,
+              "zitatBis": 679,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a04",
+          "text": "Man soll nach al-Ikhtiyār meist schon gewaschene Kleidung tragen und sich nicht um immer neue bemühen. Das Werk stützt das auf eine Überlieferung und erklärt, gemeint seien Bescheidenheit in der Kleidung und der Verzicht darauf, mit ihr zu prahlen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 177,
+              "passage": "ikhtiyar.ms0898",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms898",
+              "passageSha256Text": "315997fef8d04c1a05f283b2ee18a3d66e3afd30aa256cd5cd4283ec65235537",
+              "zitatVon": 229,
+              "zitatBis": 393,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a05",
+          "text": "Empfohlen (mustaḥabb) ist nach Radd al-Muḥtār, was über das Pflichtmaß hinaus getragen wird, um sich zu schmücken und die Gnade Gottes sichtbar zu machen. Al-Ikhtiyār nennt hier das Sich-Schmücken (akhdh az-zīna) und begründet es mit einem Hadith.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms6050",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6050",
+              "passageSha256Text": "e24d86af01d1974f5e2c7f431e29a687fc44d56e52ea3507d3fd607528981661",
+              "zitatVon": 792,
+              "zitatBis": 844,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 177,
+              "passage": "ikhtiyar.ms0898",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms898",
+              "passageSha256Text": "315997fef8d04c1a05f283b2ee18a3d66e3afd30aa256cd5cd4283ec65235537",
+              "zitatVon": 394,
+              "zitatBis": 472,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a06",
+          "text": "Erlaubt (mubāḥ) ist nach al-Ikhtiyār ein schönes Gewand, mit dem man sich am Freitag, an den Festtagen und bei Versammlungen schmückt; das Werk stützt sich auf Berichte über die Kleidung des Propheten an solchen Tagen. Sich aber zu jeder Zeit so zu kleiden, ist nach al-Ikhtiyār Überheblichkeit und Mühe und kann die Bedürftigen verärgern; deshalb ist es besser, das zu meiden. Ebenso Radd al-Muḥtār.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 178,
+              "passage": "ikhtiyar.ms0898",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms898",
+              "passageSha256Text": "315997fef8d04c1a05f283b2ee18a3d66e3afd30aa256cd5cd4283ec65235537",
+              "zitatVon": 839,
+              "zitatBis": 1136,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms6050",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6050",
+              "passageSha256Text": "e24d86af01d1974f5e2c7f431e29a687fc44d56e52ea3507d3fd607528981661",
+              "zitatVon": 907,
+              "zitatBis": 1040,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a07",
+          "text": "Verpönt (makrūh) ist nach al-Ikhtiyār, sich aus Hochmut (takabbur) und Eitelkeit (khuyalāʾ) zu kleiden; Radd al-Muḥtār nennt den Hochmut. Schöne Kleidung ist nach Radd al-Muḥtār (aus al-Fatāwā al-Hindiyya) erlaubt, solange man dabei nicht hochmütig wird, das heißt: solange man sich mit ihr so verhält wie vorher ohne sie.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 178,
+              "passage": "ikhtiyar.ms0898",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms898",
+              "passageSha256Text": "315997fef8d04c1a05f283b2ee18a3d66e3afd30aa256cd5cd4283ec65235537",
+              "zitatVon": 1137,
+              "zitatBis": 1181,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms6050",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6050",
+              "passageSha256Text": "e24d86af01d1974f5e2c7f431e29a687fc44d56e52ea3507d3fd607528981661",
+              "zitatVon": 1041,
+              "zitatBis": 1064,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms6050",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6050",
+              "passageSha256Text": "e24d86af01d1974f5e2c7f431e29a687fc44d56e52ea3507d3fd607528981661",
+              "zitatVon": 1238,
+              "zitatBis": 1309,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a08",
+          "text": "Weiße Kleidung ist nach al-Ikhtiyār empfohlen; das Werk begründet es mit Hadithen. Radd al-Muḥtār nennt auch Schwarz empfohlen und das Tragen von Grün Sunna.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 178,
+              "passage": "ikhtiyar.ms0898",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms898",
+              "passageSha256Text": "315997fef8d04c1a05f283b2ee18a3d66e3afd30aa256cd5cd4283ec65235537",
+              "zitatVon": 1266,
+              "zitatBis": 1426,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms6050",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6050",
+              "passageSha256Text": "e24d86af01d1974f5e2c7f431e29a687fc44d56e52ea3507d3fd607528981661",
+              "zitatVon": 1065,
+              "zitatBis": 1178,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a09",
+          "text": "Rote und mit Färberdistel (ʿuṣfur) gefärbte Kleidung nennt al-Ikhtiyār verpönt. Radd al-Muḥtār hält fest, dass die meisten Werke rote Kleidung verpönt nennen, darunter al-Ikhtiyār, al-Muḥīṭ und adh-Dhakhīra, und dass al-ʿAllāma Qāsim danach Fatwa gab. Die Frage ist in der Schule umstritten (siehe die folgende Aussage).",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 178,
+              "passage": "ikhtiyar.ms0898",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms898",
+              "passageSha256Text": "315997fef8d04c1a05f283b2ee18a3d66e3afd30aa256cd5cd4283ec65235537",
+              "zitatVon": 1429,
+              "zitatBis": 1452,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 358,
+              "passage": "radd_al_muhtar.ms6062",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6062",
+              "passageSha256Text": "b0c721b07f403eaea3e77d99cc1ab1e923d1e462d61c51bf029d11adb60fb5da",
+              "zitatVon": 862,
+              "zitatBis": 969,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a10",
+          "text": "Die Frage ist in der Schule umstritten: Die meisten Werke, darunter al-Ikhtiyār, nennen rote Kleidung verpönt (siehe die vorige Aussage). Von Abū Ḥanīfa ist nach Radd al-Muḥtār aber überliefert, dass sie unbedenklich ist; nach Jāmiʿ al-Fatāwā erlaubten Abū Ḥanīfa, ash-Shāfiʿī und Mālik auch mit Färberdistel gefärbte Kleidung. Ash-Shurunbulālī schrieb nach Radd al-Muḥtār eine eigene Abhandlung darüber, dass rote Kleidung erlaubt ist.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 358,
+              "passage": "radd_al_muhtar.ms6062",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6062",
+              "passageSha256Text": "b0c721b07f403eaea3e77d99cc1ab1e923d1e462d61c51bf029d11adb60fb5da",
+              "zitatVon": 862,
+              "zitatBis": 969,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 358,
+              "passage": "radd_al_muhtar.ms6061",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6061",
+              "passageSha256Text": "67aa336e7090bc94e05f11b075642d2c84f41225e97829c7762b418477525815",
+              "zitatVon": 929,
+              "zitatBis": 999,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 358,
+              "passage": "radd_al_muhtar.ms6061",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6061",
+              "passageSha256Text": "67aa336e7090bc94e05f11b075642d2c84f41225e97829c7762b418477525815",
+              "zitatVon": 1196,
+              "zitatBis": 1258,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 358,
+              "passage": "radd_al_muhtar.ms6062",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6062",
+              "passageSha256Text": "b0c721b07f403eaea3e77d99cc1ab1e923d1e462d61c51bf029d11adb60fb5da",
+              "zitatVon": 309,
+              "zitatBis": 394,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a11",
+          "text": "Im Winter soll man nach al-Ikhtiyār nicht zwei oder mehr Obergewänder (jubba) übereinander tragen, wenn weniger genügt, weil das die Bedürftigen verärgert und Überheblichkeit darin liegt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 178,
+              "passage": "ikhtiyar.ms0898",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms898",
+              "passageSha256Text": "315997fef8d04c1a05f283b2ee18a3d66e3afd30aa256cd5cd4283ec65235537",
+              "zitatVon": 1453,
+              "zitatBis": 1548,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a12",
+          "text": "Grobe Kleidung ist nach al-Ikhtiyār im Winter die bessere Wahl, weil sie besser vor Kälte schützt, weiche im Sommer, weil sie den Schweiß besser trocknet. Wer zu beiden Zeiten weiche Kleidung trägt, für den ist das unbedenklich (Verweis 7:32).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 178,
+              "passage": "ikhtiyar.ms0898",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms898",
+              "passageSha256Text": "315997fef8d04c1a05f283b2ee18a3d66e3afd30aa256cd5cd4283ec65235537",
+              "zitatVon": 1594,
+              "zitatBis": 1708,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "7:32"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a13",
+          "text": "Beim Turban ist es nach al-Ikhtiyār Sunna, das Ende zwischen den Schultern herabhängen zu lassen; so habe es der Prophet getan. Zur Länge nennt das Werk mehrere Angaben: eine Spanne, bis zur Mitte des Rückens oder bis zur Sitzfläche. Will man ihn neu binden, wickelt man ihn so ab, wie man ihn gewickelt hat, und wirft ihn nicht auf einmal zu Boden.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kiswa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 178,
+              "passage": "ikhtiyar.ms0899",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms899",
+              "passageSha256Text": "4a9b943c5a3672b6fc2e4f7ce046ba8da6dbbc48ebd7e3e23814da8ecab49fe5",
+              "zitatVon": 27,
+              "zitatBis": 247,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a14",
+          "text": "Verpönt ist es nach Radd al-Muḥtār für Männer, Hosen (sarāwīl) zu tragen, die bis auf den Fußrücken fallen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms6050",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6050",
+              "passageSha256Text": "e24d86af01d1974f5e2c7f431e29a687fc44d56e52ea3507d3fd607528981661",
+              "zitatVon": 1505,
+              "zitatBis": 1551,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a15",
+          "text": "Pelz (farw) zu tragen, ist nach Radd al-Muḥtār unbedenklich, auch aus den Fellen von Raubtieren. Das gilt für gegerbte Felle verendeter Tiere und für Felle geschlachteter Tiere, denn das Gerben gilt hier wie das Schlachten. Aus gegerbten Fellen von Leoparden und anderen Raubtieren darf man auch einen Gebetsteppich oder einen Sattel machen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms6050",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6050",
+              "passageSha256Text": "e24d86af01d1974f5e2c7f431e29a687fc44d56e52ea3507d3fd607528981661",
+              "zitatVon": 1313,
+              "zitatBis": 1498,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.a16",
+          "text": "Ein Tuch mitzutragen, um den Schweiß abzuwischen, nennt al-Hidāya verpönt, weil es eine Art Überheblichkeit ist; ebenso ein Tuch für die Gebetswaschung oder zum Naseputzen. Al-Hidāya fügt hinzu: Nach der richtigen Ansicht ist es nicht verpönt, wenn es aus Bedarf geschieht, sondern nur aus Hochmut. Al-Ikhtiyār nennt das Tuch für die Gebetswaschung unbedenklich, weil die Muslime es so übernommen haben; Radd al-Muḥtār nennt das die Ansicht, die die späteren Gelehrten für richtig erklärten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 83,
+              "passage": "hidaya.ms0929",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms929",
+              "passageSha256Text": "555320a38327a830b45cc2c71698b40034cfa04fde1c0b29409350cfa4957a9d",
+              "zitatVon": 1208,
+              "zitatBis": 1409,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 158,
+              "passage": "ikhtiyar.ms0873",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms873",
+              "passageSha256Text": "7814a8b6c16d5a03b40ed1a8adc15fa0e8551d1deb822658c4f70f3d69032aa2",
+              "zitatVon": 621,
+              "zitatBis": 772,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 363,
+              "passage": "radd_al_muhtar.ms6069",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6069",
+              "passageSha256Text": "3c2419c851d2f5b7d206f2f9787ab3757d17874b3042cc1d68c51e8b2fef1694",
+              "zitatVon": 1143,
+              "zitatBis": 1209,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e01.l01.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e01.l01.a01",
+          "anweisung": "Bringe die Stufen der Kleidung in die Reihenfolge, in der al-Ikhtiyār sie nennt.",
+          "schritte": [
+            "Pflicht (farḍ)",
+            "Empfohlenes (mustaḥabb)",
+            "Erlaubtes (mubāḥ)",
+            "Verpöntes (makrūh)"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e01.l01.a01",
+          "anweisung": "Ordne jeder Stufe der Kleidung nach al-Ikhtiyār ein Beispiel zu.",
+          "paare": [
+            {
+              "links": "Pflicht (farḍ)",
+              "rechts": "Kleidung, die die ʿawra bedeckt und vor Kälte schützt"
+            },
+            {
+              "links": "Erlaubtes (mubāḥ)",
+              "rechts": "ein schönes Gewand für Freitag und Festtage"
+            },
+            {
+              "links": "Verpöntes (makrūh)",
+              "rechts": "Kleidung, die man aus Hochmut trägt"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l01.a02",
+          "behauptung": "Nach al-Ikhtiyār soll Kleidung möglichst kostbar sein.",
+          "richtig": false,
+          "begruendung": "Al-Ikhtiyār empfiehlt Kleidung zwischen kostbar und gering: Im Geringen wird man verachtet, im Kostbaren ergreift einen die Eitelkeit. Das Beste der Dinge ist ihre Mitte.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e01.l01.a06",
+          "fall": "Ein Mann besitzt ein besonders schönes Gewand. Er überlegt, es nicht nur am Freitag und an Festtagen, sondern jeden Tag zu tragen.",
+          "frage": "Was sagt al-Ikhtiyār dazu?",
+          "optionen": [
+            "Für Freitag, Festtage und Versammlungen ist es erlaubt; es jeden Tag zu tragen, meidet man besser.",
+            "Es ist Pflicht, das schönste Gewand jeden Tag zu tragen.",
+            "Schöne Kleidung ist grundsätzlich verpönt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l01.a08",
+          "behauptung": "Weiße Kleidung ist nach al-Ikhtiyār empfohlen.",
+          "richtig": true,
+          "begruendung": "Al-Ikhtiyār nennt weiße Kleidung empfohlen und begründet das mit Hadithen; Radd al-Muḥtār nennt auch Schwarz empfohlen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.q06",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e01.l01.a12",
+          "anweisung": "Ordne zu, welche Kleidung al-Ikhtiyār für welche Jahreszeit für die bessere Wahl hält.",
+          "paare": [
+            {
+              "links": "Winter",
+              "rechts": "grobe Kleidung, weil sie besser vor Kälte schützt"
+            },
+            {
+              "links": "Sommer",
+              "rechts": "weiche Kleidung, weil sie den Schweiß besser trocknet"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l01.a13",
+          "behauptung": "Will man den Turban neu binden, wirft man ihn nach al-Ikhtiyār am besten auf einmal ab.",
+          "richtig": false,
+          "begruendung": "Nach al-Ikhtiyār wickelt man ihn so ab, wie man ihn gewickelt hat, und wirft ihn nicht auf einmal zu Boden.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.q08",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e01.l01.a16",
+          "fall": "Jemand trägt immer ein kleines Tuch bei sich, um sich nach der Gebetswaschung abzutrocknen. Er tut es nicht aus Hochmut, sondern weil er es braucht.",
+          "frage": "Was gilt nach der Ansicht, die al-Hidāya die richtige nennt?",
+          "optionen": [
+            "Es ist nicht verpönt, weil es aus Bedarf geschieht.",
+            "Es ist immer verpönt.",
+            "Es ist Pflicht, ein solches Tuch zu tragen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l01.q09",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l01.a10",
+          "behauptung": "Ob rote Kleidung verpönt ist, ist in der hanefitischen Schule umstritten.",
+          "richtig": true,
+          "begruendung": "Die meisten Werke, darunter al-Ikhtiyār, nennen rote Kleidung verpönt; von Abū Ḥanīfa ist nach Radd al-Muḥtār aber überliefert, dass sie unbedenklich ist, und ash-Shurunbulālī schrieb eine Abhandlung für ihre Erlaubnis.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e01.l02",
+      "titel": "Seide und Gold für Männer und Frauen",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a01",
+          "text": "Männern ist es nicht erlaubt, Seide (ḥarīr) zu tragen; Frauen ist es erlaubt (al-Qudūrī, al-Hidāya, al-Ikhtiyār). Al-Hidāya begründet das Verbot mit einem Hadith (vgl. Verweis Bukhari 5835) und die Erlaubnis für Frauen mit einem anderen Hadith, den mehrere Prophetengefährten überliefern.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 156,
+              "zitatBis": 192,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 81,
+              "passage": "hidaya.ms0927",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms927",
+              "passageSha256Text": "60444aecd8044c628bbf2175ef99b084515ac641f778826b51a09631ac6371ee",
+              "zitatVon": 729,
+              "zitatBis": 1078,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 157,
+              "passage": "ikhtiyar.ms0872",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms872",
+              "passageSha256Text": "2c5a2f5ea4eeeea92dfb91ddf6ded82fe34503cf178a36b3701f9b6aa0f840c3",
+              "zitatVon": 144,
+              "zitatBis": 216,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 5835
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a02",
+          "text": "Dass Frauen auch reine Seide tragen dürfen, ist nach Radd al-Muḥtār (aus at-Tātarkhāniyya) die Ansicht der Mehrheit der Gelehrten (ʿāmmat al-ʿulamāʾ); einige sagten, es sei ihnen nicht erlaubt. Beim Essen, Trinken und Salben aus Gold und Silber gilt für Frauen nach Radd al-Muḥtār (aus al-Khāniyya) dasselbe wie für Männer; Brokat, Seide, Gold, Silber und Perlen zu tragen, ist ihnen dagegen unbedenklich.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 353,
+              "passage": "radd_al_muhtar.ms6054",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6054",
+              "passageSha256Text": "a7f51178562d65e03a64e1f86de58003b7b0bf0996bb4c35ae5624a43454d9a5",
+              "zitatVon": 559,
+              "zitatBis": 621,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 352,
+              "passage": "radd_al_muhtar.ms6052",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6052",
+              "passageSha256Text": "6561d6cd61c7097e228a93d7dce613b1d1f742120785ade8a3184b9cdbb62938",
+              "zitatVon": 1444,
+              "zitatBis": 1535,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 352,
+              "passage": "radd_al_muhtar.ms6053",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6053",
+              "passageSha256Text": "3e5e219be4484f115dce010f417f8424ae105c3c55b93a0078193d2b42088cd9",
+              "zitatVon": 0,
+              "zitatBis": 68,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a03",
+          "text": "Auch Männern ist ein wenig Seide erlaubt: bis zur Breite von drei oder vier Fingern, etwa als Borte (ʿalam) oder Saum am Gewand (al-Hidāya, al-Ikhtiyār). Al-Hidāya stützt das auf ein Verbot mit genau dieser Ausnahme (vgl. Verweise Bukhari 5828, 5829). Al-Ikhtiyār erklärt: Die Borte folgt dem Gewand und hat kein eigenes Urteil.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 81,
+              "passage": "hidaya.ms0927",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms927",
+              "passageSha256Text": "60444aecd8044c628bbf2175ef99b084515ac641f778826b51a09631ac6371ee",
+              "zitatVon": 1079,
+              "zitatBis": 1311,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 158,
+              "passage": "ikhtiyar.ms0872",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms872",
+              "passageSha256Text": "2c5a2f5ea4eeeea92dfb91ddf6ded82fe34503cf178a36b3701f9b6aa0f840c3",
+              "zitatVon": 886,
+              "zitatBis": 923,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 5828
+            },
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 5829
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a04",
+          "text": "Bei den vier Fingern kommt es nach Radd al-Muḥtār, wie es die Worte der Gelehrten nahelegen, auf die Breite an, nicht auf die Länge. Zur Borte (ʿalam) zählen nach Radd al-Muḥtār auch Säume und Einfassungen an den Ärmeln. Mehrere kleine Seidenstücke, etwa Stickereien auf einer Kappe, werden nach der offenkundigen Lehre der Schule (ẓāhir al-madhhab) nicht zusammengezählt, solange keines breiter als vier Finger ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 351,
+              "passage": "radd_al_muhtar.ms6051",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6051",
+              "passageSha256Text": "2aabec80cc5b21dc87ed79f10a3bdab4423716b374681859bb3927b6e348286e",
+              "zitatVon": 947,
+              "zitatBis": 1090,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 352,
+              "passage": "radd_al_muhtar.ms6051",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6051",
+              "passageSha256Text": "2aabec80cc5b21dc87ed79f10a3bdab4423716b374681859bb3927b6e348286e",
+              "zitatVon": 1440,
+              "zitatBis": 1515,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 354,
+              "passage": "radd_al_muhtar.ms6055",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6055",
+              "passageSha256Text": "1cb9318c8f3b1561e573795802a0633b8bf8e5ef059988633f524177052db9a5",
+              "zitatVon": 106,
+              "zitatBis": 310,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a05",
+          "text": "Seide als Kissen zu benutzen, darauf zu schlafen oder sie als Unterlage auszubreiten, ist nach Abū Ḥanīfa unbedenklich (al-Qudūrī, al-Hidāya, al-Ikhtiyār). Al-Ikhtiyār erklärt seine Ansicht: Das Verbot betrifft das Tragen, und dies ist weniger als Tragen. Wie beim Tragen ein wenig erlaubt ist, nämlich die Borte, so auch ein wenig Benutzung; Seide als Überwurf (dithār) zu nehmen, ist aber nach einhelliger Ansicht nicht erlaubt. Ibn ʿAbbās hatte ein Seidenkissen auf seinem Teppich, und Seide als Unterlage zu nehmen heißt, sie gering zu achten – wie bei Bildern auf einem Teppich, auf dem man sitzen darf, während man Bilder nicht tragen darf.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 193,
+              "zitatBis": 221,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 81,
+              "passage": "hidaya.ms0927",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms927",
+              "passageSha256Text": "60444aecd8044c628bbf2175ef99b084515ac641f778826b51a09631ac6371ee",
+              "zitatVon": 1312,
+              "zitatBis": 1377,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 158,
+              "passage": "ikhtiyar.ms0872",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms872",
+              "passageSha256Text": "2c5a2f5ea4eeeea92dfb91ddf6ded82fe34503cf178a36b3701f9b6aa0f840c3",
+              "zitatVon": 1047,
+              "zitatBis": 1330,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a06",
+          "text": "Abū Yūsuf und Muḥammad halten das – anders als Abū Ḥanīfa – für verpönt (al-Qudūrī): wegen der allgemeinen Verbote und weil es nach al-Hidāya zur Tracht der persischen Könige und der Gewaltherrscher gehört, die nachzuahmen verboten ist; al-Ikhtiyār nennt die Tracht der Nichtaraber (aʿājim). Al-Hidāya merkt an, dass al-Jāmiʿ aṣ-Ṣaghīr nur die Ansicht Muḥammads nennt und al-Qudūrī und andere die Abū Yūsufs; nach Radd al-Muḥtār wird Abū Yūsuf teils Abū Ḥanīfa, teils Muḥammad zugeordnet. Dieselbe Meinungsverschiedenheit gilt für Seidenvorhänge und Seide, die man an Türen aufhängt.",
+          "meinung": "muhammad",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 193,
+              "zitatBis": 253,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 81,
+              "passage": "hidaya.ms0927",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms927",
+              "passageSha256Text": "60444aecd8044c628bbf2175ef99b084515ac641f778826b51a09631ac6371ee",
+              "zitatVon": 1378,
+              "zitatBis": 1533,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 81,
+              "passage": "hidaya.ms0928",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms928",
+              "passageSha256Text": "3af8061afcac328f8f8be9dcf4a04f45d1a2314a1790d22ba464612662b08ced",
+              "zitatVon": 0,
+              "zitatBis": 41,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 158,
+              "passage": "ikhtiyar.ms0872",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms872",
+              "passageSha256Text": "2c5a2f5ea4eeeea92dfb91ddf6ded82fe34503cf178a36b3701f9b6aa0f840c3",
+              "zitatVon": 955,
+              "zitatBis": 1046,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 355,
+              "passage": "radd_al_muhtar.ms6057",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6057",
+              "passageSha256Text": "c555e18e129ed8108ea65b8fb58ac83a8df0c7de8d441759c738e9901520ae7c",
+              "zitatVon": 1006,
+              "zitatBis": 1062,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a07",
+          "text": "Reine Seide oder Brokat (dībāj) im Krieg zu tragen, ist nach Abū Ḥanīfa verpönt (al-Qudūrī, al-Hidāya). Die Begründung: Das Verbot unterscheidet nicht, und Verbotenes wird nur aus Notwendigkeit erlaubt; die Notwendigkeit, sich gegen Waffen zu schützen, ist schon mit Mischgewebe erfüllt, dessen Schuss (luḥma) aus Seide ist (al-Hidāya, al-Ikhtiyār).",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 254,
+              "zitatBis": 310,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 81,
+              "passage": "hidaya.ms0928",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms928",
+              "passageSha256Text": "3af8061afcac328f8f8be9dcf4a04f45d1a2314a1790d22ba464612662b08ced",
+              "zitatVon": 504,
+              "zitatBis": 677,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 158,
+              "passage": "ikhtiyar.ms0873",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms873",
+              "passageSha256Text": "7814a8b6c16d5a03b40ed1a8adc15fa0e8551d1deb822658c4f70f3d69032aa2",
+              "zitatVon": 182,
+              "zitatBis": 353,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a08",
+          "text": "Nach Abū Yūsuf und Muḥammad ist Seide im Krieg unbedenklich, weil reine Seide Waffenhiebe besser abhält und den Feind durch ihren Glanz mehr beeindruckt (al-Hidāya, al-Ikhtiyār); al-Hidāya nennt dazu einen Bericht. Ist der Stoff aber so dünn, dass er den Feind nicht einschüchtert, ist er nach al-Ikhtiyār nach einhelliger Ansicht nicht erlaubt.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 81,
+              "passage": "hidaya.ms0928",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms928",
+              "passageSha256Text": "3af8061afcac328f8f8be9dcf4a04f45d1a2314a1790d22ba464612662b08ced",
+              "zitatVon": 296,
+              "zitatBis": 503,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 158,
+              "passage": "ikhtiyar.ms0873",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms873",
+              "passageSha256Text": "7814a8b6c16d5a03b40ed1a8adc15fa0e8551d1deb822658c4f70f3d69032aa2",
+              "zitatVon": 0,
+              "zitatBis": 181,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 158,
+              "passage": "ikhtiyar.ms0873",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms873",
+              "passageSha256Text": "7814a8b6c16d5a03b40ed1a8adc15fa0e8551d1deb822658c4f70f3d69032aa2",
+              "zitatVon": 354,
+              "zitatBis": 411,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a09",
+          "text": "Ein Gewebe, dessen Kette (sadā) aus Seide und dessen Schuss (luḥma) aus Baumwolle oder khazz ist, darf man im Krieg und sonst tragen (al-Qudūrī, al-Hidāya). Al-Hidāya erklärt: Ein Stoff wird erst durch das Weben zum Stoff, und gewebt wird mit dem Schuss; deshalb zählt der Schuss, nicht die Kette. Ist umgekehrt der Schuss aus Seide und die Kette nicht, ist das Tragen nur im Krieg erlaubt. Al-Ikhtiyār nennt beides einhellige Ansicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 311,
+              "zitatBis": 369,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 81,
+              "passage": "hidaya.ms0928",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms928",
+              "passageSha256Text": "3af8061afcac328f8f8be9dcf4a04f45d1a2314a1790d22ba464612662b08ced",
+              "zitatVon": 678,
+              "zitatBis": 890,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 82,
+              "passage": "hidaya.ms0928",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms928",
+              "passageSha256Text": "3af8061afcac328f8f8be9dcf4a04f45d1a2314a1790d22ba464612662b08ced",
+              "zitatVon": 1009,
+              "zitatBis": 1130,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 158,
+              "passage": "ikhtiyar.ms0872",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms872",
+              "passageSha256Text": "2c5a2f5ea4eeeea92dfb91ddf6ded82fe34503cf178a36b3701f9b6aa0f840c3",
+              "zitatVon": 1383,
+              "zitatBis": 1593,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a10",
+          "text": "Ist bei einem solchen Gewebe die Seide außen sichtbar (etwa beim ʿattābī), nennt al-Ikhtiyār zwei Ansichten: verpönt, weil man aussieht, als trage man Seide, oder nicht verpönt, weil es auf den Schuss ankommt. Radd al-Muḥtār erklärt, dass die Grundtexte (mutūn) das Tragen ohne Einschränkung erlauben. Es zitiert al-Mujtabā mit der Ansicht, es sei verpönt, und im selben Zitat den Hinweis, dass die meisten Gelehrten entgegen dieser Ansicht Fatwa gaben.",
+          "meinung": "fatwa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 158,
+              "passage": "ikhtiyar.ms0873",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms873",
+              "passageSha256Text": "7814a8b6c16d5a03b40ed1a8adc15fa0e8551d1deb822658c4f70f3d69032aa2",
+              "zitatVon": 502,
+              "zitatBis": 620,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 356,
+              "passage": "radd_al_muhtar.ms6059",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6059",
+              "passageSha256Text": "e3c9790610af56523c3e594cd39319cc5f0c37ce0510f8de735350e0ba47fdd7",
+              "zitatVon": 61,
+              "zitatBis": 145,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 356,
+              "passage": "radd_al_muhtar.ms6059",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6059",
+              "passageSha256Text": "e3c9790610af56523c3e594cd39319cc5f0c37ce0510f8de735350e0ba47fdd7",
+              "zitatVon": 689,
+              "zitatBis": 921,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a11",
+          "text": "Aus Bedarf, etwa bei starker Krätze (jarab), ist Seide nach Radd al-Muḥtār (aus at-Tātarkhāniyya) unbedenklich; es verweist auf die Erlaubnis für ʿAbd ar-Raḥmān ibn ʿAwf und az-Zubayr (vgl. Verweise Bukhari 2919, 5839). Az-Zaylaʿī sah darin nach Radd al-Muḥtār aber eine Sonderregel nur für diese beiden.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 355,
+              "passage": "radd_al_muhtar.ms6056",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6056",
+              "passageSha256Text": "f6f577126c147a0ec37988aff29acff0c2a204c3bbc57d8a3e04d6e9d980ff17",
+              "zitatVon": 1348,
+              "zitatBis": 1539,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 355,
+              "passage": "radd_al_muhtar.ms6057",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6057",
+              "passageSha256Text": "c555e18e129ed8108ea65b8fb58ac83a8df0c7de8d441759c738e9901520ae7c",
+              "zitatVon": 0,
+              "zitatBis": 55,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 2919
+            },
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 5839
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a12",
+          "text": "Verboten ist nach Radd al-Muḥtār das Tragen von Seide, nicht jeder andere Nutzen: Auf einem Gebetsteppich aus Seide zu beten, ist nicht verpönt, ebenso wenig ein Seidentuch über der Wiege eines Kindes. Eine Steppdecke (liḥāf) aus Seide ist dagegen verpönt, weil sie eine Art Tragen ist; ein Beutel, den man sich umhängt, ist nach Radd al-Muḥtār verboten, weil das Umhängen dem Tragen ähnelt. Al-Ḥamawī überliefert, das Beten auf einem Seidenstoff sei für Männer verpönt; Radd al-Muḥtār hält die erste Ansicht für überzeugender.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 354,
+              "passage": "radd_al_muhtar.ms6055",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6055",
+              "passageSha256Text": "1cb9318c8f3b1561e573795802a0633b8bf8e5ef059988633f524177052db9a5",
+              "zitatVon": 657,
+              "zitatBis": 768,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 356,
+              "passage": "radd_al_muhtar.ms6058",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6058",
+              "passageSha256Text": "31f4b5e1a84ea26549f4d2f2ad75bff208974c3480ee1525cad727348727a193",
+              "zitatVon": 415,
+              "zitatBis": 574,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 356,
+              "passage": "radd_al_muhtar.ms6058",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6058",
+              "passageSha256Text": "31f4b5e1a84ea26549f4d2f2ad75bff208974c3480ee1525cad727348727a193",
+              "zitatVon": 693,
+              "zitatBis": 790,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 354,
+              "passage": "radd_al_muhtar.ms6055",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6055",
+              "passageSha256Text": "1cb9318c8f3b1561e573795802a0633b8bf8e5ef059988633f524177052db9a5",
+              "zitatVon": 311,
+              "zitatBis": 466,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a13",
+          "text": "Frauen dürfen sich mit Gold und Silber schmücken. Männern ist Schmuck aus Gold und Silber nicht erlaubt – ausgenommen ein Ring, ein Gürtel (minṭaqa) und der Schmuck eines Schwertes, jeweils aus Silber (al-Qudūrī, al-Ikhtiyār). Al-Hidāya erklärt: Silber hat hier dieselbe Bedeutung wie Gold; die Ausnahmen sind durch Überlieferungen belegt. Dass alle drei aus Silber sind, betont Radd al-Muḥtār (aus Ghurar al-Afkār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 370,
+              "zitatBis": 481,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0873",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms873",
+              "passageSha256Text": "7814a8b6c16d5a03b40ed1a8adc15fa0e8551d1deb822658c4f70f3d69032aa2",
+              "zitatVon": 1108,
+              "zitatBis": 1315,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 82,
+              "passage": "hidaya.ms0928",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms928",
+              "passageSha256Text": "3af8061afcac328f8f8be9dcf4a04f45d1a2314a1790d22ba464612662b08ced",
+              "zitatVon": 1131,
+              "zitatBis": 1341,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 359,
+              "passage": "radd_al_muhtar.ms6063",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6063",
+              "passageSha256Text": "889cf7b44ff4ce306f0cdd1c9365546ba8b97a696c05190109dc3b1c021c44d9",
+              "zitatVon": 59,
+              "zitatBis": 179,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a14",
+          "text": "Ein Goldring ist Männern verboten (ḥarām), weil der Prophet ihn untersagt hat (al-Hidāya, al-Ikhtiyār; vgl. Verweis Bukhari 5864). Er selbst hatte nach al-Ikhtiyār einen Ring aus Silber (Verweis Bukhari 5877).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 82,
+              "passage": "hidaya.ms0929",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms929",
+              "passageSha256Text": "555320a38327a830b45cc2c71698b40034cfa04fde1c0b29409350cfa4957a9d",
+              "zitatVon": 113,
+              "zitatBis": 228,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0873",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms873",
+              "passageSha256Text": "7814a8b6c16d5a03b40ed1a8adc15fa0e8551d1deb822658c4f70f3d69032aa2",
+              "zitatVon": 1347,
+              "zitatBis": 1438,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 5864
+            },
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 5877
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a15",
+          "text": "Schrift aus Gold oder Silber auf einem Gewand ist nach al-Ikhtiyār erlaubt, wie die Seidenborte. Abū Yūsuf hielt sie für verpönt; das folgt nach al-Ikhtiyār aus der Meinungsverschiedenheit über Gefäße mit Silberbeschlag (siehe Lektion 3).",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0873",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms873",
+              "passageSha256Text": "7814a8b6c16d5a03b40ed1a8adc15fa0e8551d1deb822658c4f70f3d69032aa2",
+              "zitatVon": 939,
+              "zitatBis": 965,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0874",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms874",
+              "passageSha256Text": "9a17dc0addb6ad0ff6af50b72df090110e7b83ed1de08e48130d85bb61c4c4b3",
+              "zitatVon": 288,
+              "zitatBis": 381,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a16",
+          "text": "Lockere Zähne mit Silber zu befestigen, ist erlaubt; mit Gold ist es nach Abū Ḥanīfa nicht erlaubt (al-Hidāya, al-Ikhtiyār). Seine Begründung: Verbotenes wird nur aus Notwendigkeit erlaubt, und bei den Zähnen genügt das Geringere, das Silber. Den Bericht über ʿArfaja, der eine Nase aus Gold nehmen durfte, weil seine silberne Nase übel roch, deutet er so: Bei der Nase genügte Silber nicht.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 82,
+              "passage": "hidaya.ms0929",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms929",
+              "passageSha256Text": "555320a38327a830b45cc2c71698b40034cfa04fde1c0b29409350cfa4957a9d",
+              "zitatVon": 634,
+              "zitatBis": 1070,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0874",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms874",
+              "passageSha256Text": "9a17dc0addb6ad0ff6af50b72df090110e7b83ed1de08e48130d85bb61c4c4b3",
+              "zitatVon": 382,
+              "zitatBis": 665,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a17",
+          "text": "Nach Muḥammad darf man Zähne – anders als nach Abū Ḥanīfa, der nur Silber erlaubt – auch mit Gold befestigen (al-Hidāya). Al-Ikhtiyār nennt das die Ansicht Abū Yūsufs und Muḥammads und begründet sie mit der Analogie zur Nase; al-Hidāya überliefert von Abū Yūsuf beide Ansichten. Nach Radd al-Muḥtār (aus at-Tātarkhāniyya) gilt dieselbe Meinungsverschiedenheit, wenn jemand Nase, Ohr oder einen Zahn verloren hat und Ersatz nehmen will: nach Abū Ḥanīfa nur aus Silber, nach Muḥammad auch aus Gold.",
+          "meinung": "muhammad",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 82,
+              "passage": "hidaya.ms0929",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms929",
+              "passageSha256Text": "555320a38327a830b45cc2c71698b40034cfa04fde1c0b29409350cfa4957a9d",
+              "zitatVon": 634,
+              "zitatBis": 780,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0874",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms874",
+              "passageSha256Text": "9a17dc0addb6ad0ff6af50b72df090110e7b83ed1de08e48130d85bb61c4c4b3",
+              "zitatVon": 415,
+              "zitatBis": 454,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 362,
+              "passage": "radd_al_muhtar.ms6069",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6069",
+              "passageSha256Text": "3c2419c851d2f5b7d206f2f9787ab3757d17874b3042cc1d68c51e8b2fef1694",
+              "zitatVon": 243,
+              "zitatBis": 388,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.a18",
+          "text": "Jungen in Gold und Seide zu kleiden, ist verpönt (al-Qudūrī). Al-Hidāya erklärt: Das Verbot gilt für das männliche Geschlecht, und ist das Tragen verboten, so auch das Ankleiden – wie beim Wein: Ist das Trinken verboten, so auch das Zu-trinken-Geben. Al-Ikhtiyār fügt hinzu: damit der Junge sich nicht daran gewöhnt, so wie man ihn zum Fasten und Beten anhält und vom Wein fernhält, damit er sich an das Gute und an das Meiden des Verbotenen gewöhnt; die Sünde trägt, wer ihn so kleidet.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 482,
+              "zitatBis": 515,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 83,
+              "passage": "hidaya.ms0929",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms929",
+              "passageSha256Text": "555320a38327a830b45cc2c71698b40034cfa04fde1c0b29409350cfa4957a9d",
+              "zitatVon": 1071,
+              "zitatBis": 1207,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0874",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms874",
+              "passageSha256Text": "9a17dc0addb6ad0ff6af50b72df090110e7b83ed1de08e48130d85bb61c4c4b3",
+              "zitatVon": 666,
+              "zitatBis": 855,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e01.l02.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l02.a01",
+          "behauptung": "Nach al-Qudūrī dürfen Frauen Seide tragen, Männer nicht.",
+          "richtig": true,
+          "begruendung": "Al-Qudūrī, al-Hidāya und al-Ikhtiyār nennen Seide für Männer nicht erlaubt und für Frauen erlaubt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e01.l02.a03",
+          "fall": "Ein Männerhemd hat am Ärmel einen Seidensaum, der drei Finger breit ist.",
+          "frage": "Was gilt nach al-Hidāya?",
+          "optionen": [
+            "Es ist erlaubt, weil wenig Seide bis drei oder vier Finger Breite nachgesehen wird.",
+            "Es ist verboten, weil Männern jede Seide verboten ist.",
+            "Es ist nur im Krieg erlaubt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e01.l02.a06",
+          "anweisung": "Ordne zu, wer nach al-Qudūrī welche Ansicht zum Seidenkissen vertritt.",
+          "paare": [
+            {
+              "links": "Abū Ḥanīfa",
+              "rechts": "unbedenklich"
+            },
+            {
+              "links": "Abū Yūsuf und Muḥammad",
+              "rechts": "verpönt"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e01.l02.a09",
+          "fall": "Ein Stoff ist so gewebt, dass die Kette aus Seide und der Schuss aus Baumwolle besteht.",
+          "frage": "Darf ein Mann ihn nach al-Qudūrī und al-Hidāya im Alltag tragen?",
+          "optionen": [
+            "Ja, weil es auf den Schuss ankommt und der Schuss keine Seide ist.",
+            "Nein, nur im Krieg.",
+            "Nein, solche Stoffe sind Männern nie erlaubt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l02.a07",
+          "behauptung": "Nach Abū Ḥanīfa ist reine Seide im Krieg unbedenklich.",
+          "richtig": false,
+          "begruendung": "Nach Abū Ḥanīfa ist reine Seide im Krieg verpönt, weil der Schutz schon mit Mischgewebe erreicht wird, dessen Schuss aus Seide ist.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.q06",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e01.l02.a17",
+          "anweisung": "Ordne zu, womit man Zähne nach den Ansichten in al-Hidāya befestigen darf.",
+          "paare": [
+            {
+              "links": "Abū Ḥanīfa",
+              "rechts": "nur mit Silber"
+            },
+            {
+              "links": "Muḥammad",
+              "rechts": "auch mit Gold"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l02.a18",
+          "behauptung": "Einen Jungen in Seide zu kleiden, ist nach al-Qudūrī unbedenklich, weil er noch ein Kind ist.",
+          "richtig": false,
+          "begruendung": "Al-Qudūrī nennt es verpönt; nach al-Ikhtiyār soll sich der Junge nicht daran gewöhnen, und die Sünde trägt, wer ihn so kleidet.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.q08",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e01.l02.a12",
+          "fall": "In einer Moschee liegt ein Gebetsteppich aus Seide. Ein Mann überlegt, darauf zu beten.",
+          "frage": "Was gilt nach der Ansicht, die Radd al-Muḥtār für überzeugender hält?",
+          "optionen": [
+            "Es ist nicht verpönt, denn verboten ist das Tragen von Seide.",
+            "Das Gebet ist ungültig.",
+            "Es ist verboten wie das Tragen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l02.q09",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l02.a14",
+          "behauptung": "Ein Goldring ist Männern nach al-Hidāya verboten.",
+          "richtig": true,
+          "begruendung": "Al-Hidāya nennt den Goldring für Männer verboten (ḥarām), weil der Prophet ihn untersagt hat.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e01.l03",
+      "titel": "Silber, Schmuck und Gefäße",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a01",
+          "text": "Männer tragen nach al-Hidāya nur einen Ring aus Silber; so steht es im al-Jāmiʿ aṣ-Ṣaghīr, und al-Hidāya folgert daraus, dass Ringe aus Stein, Eisen und Messing (ṣufr) verboten sind. Al-Ikhtiyār nennt Ringe aus Eisen und Messing für Männer und Frauen verpönt, weil sie als Schmuck der Leute des Feuers gelten und untersagt wurden; Radd al-Muḥtār (aus al-Jawhara) nennt dazu auch Kupfer und Blei.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 82,
+              "passage": "hidaya.ms0928",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms928",
+              "passageSha256Text": "3af8061afcac328f8f8be9dcf4a04f45d1a2314a1790d22ba464612662b08ced",
+              "zitatVon": 1342,
+              "zitatBis": 1569,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0874",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms874",
+              "passageSha256Text": "9a17dc0addb6ad0ff6af50b72df090110e7b83ed1de08e48130d85bb61c4c4b3",
+              "zitatVon": 157,
+              "zitatBis": 232,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 359,
+              "passage": "radd_al_muhtar.ms6064",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6064",
+              "passageSha256Text": "38079912e77d0ccf8da5d3c004cd2d9ea35ed8d4ab6c2ee32526f91371c120e5",
+              "zitatVon": 699,
+              "zitatBis": 770,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a02",
+          "text": "Ob ein Ring aus Stein erlaubt ist, ist umstritten: Nach Radd al-Muḥtār (aus Munlā Khusraw) halten Shams al-Aʾimma und Qāḍīkhān ihn für erlaubt, die Verfasser von al-Hidāya und al-Kāfī für verboten. Für den Karneol (ʿaqīq) ist es nach Radd al-Muḥtār (aus Ghurar al-Afkār) richtiger, dass er unbedenklich ist; ebenso für den Jaspis (yashb), weil er nach einer Ansicht, die al-Quhistānī (nach al-Khulāṣa) die richtigere nennt, kein Stein ist.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms6064",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6064",
+              "passageSha256Text": "38079912e77d0ccf8da5d3c004cd2d9ea35ed8d4ab6c2ee32526f91371c120e5",
+              "zitatVon": 1203,
+              "zitatBis": 1496,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms6064",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6064",
+              "passageSha256Text": "38079912e77d0ccf8da5d3c004cd2d9ea35ed8d4ab6c2ee32526f91371c120e5",
+              "zitatVon": 952,
+              "zitatBis": 991,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms6064",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6064",
+              "passageSha256Text": "38079912e77d0ccf8da5d3c004cd2d9ea35ed8d4ab6c2ee32526f91371c120e5",
+              "zitatVon": 864,
+              "zitatBis": 916,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a03",
+          "text": "Beim Ring kommt es nach al-Hidāya auf den Reif (ḥalqa) an, nicht auf den Ringstein (faṣṣ); der Ringstein darf deshalb aus Stein sein, nach al-Ikhtiyār etwa aus Karneol, Türkis oder Rubin. Ein Goldstift, mit dem man das Loch des Ringsteins verschließt, ist unbedenklich, weil er wenig ist und dem Ring folgt wie die Borte dem Gewand (al-Hidāya, al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 82,
+              "passage": "hidaya.ms0929",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms929",
+              "passageSha256Text": "555320a38327a830b45cc2c71698b40034cfa04fde1c0b29409350cfa4957a9d",
+              "zitatVon": 313,
+              "zitatBis": 392,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0873",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms873",
+              "passageSha256Text": "7814a8b6c16d5a03b40ed1a8adc15fa0e8551d1deb822658c4f70f3d69032aa2",
+              "zitatVon": 1637,
+              "zitatBis": 1671,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0874",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms874",
+              "passageSha256Text": "9a17dc0addb6ad0ff6af50b72df090110e7b83ed1de08e48130d85bb61c4c4b3",
+              "zitatVon": 0,
+              "zitatBis": 17,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 82,
+              "passage": "hidaya.ms0929",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms929",
+              "passageSha256Text": "555320a38327a830b45cc2c71698b40034cfa04fde1c0b29409350cfa4957a9d",
+              "zitatVon": 538,
+              "zitatBis": 633,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0874",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms874",
+              "passageSha256Text": "9a17dc0addb6ad0ff6af50b72df090110e7b83ed1de08e48130d85bb61c4c4b3",
+              "zitatVon": 100,
+              "zitatBis": 155,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a04",
+          "text": "Sunna ist nach al-Ikhtiyār, dass der Ring eines Mannes ein Mithqāl oder weniger wiegt; Radd al-Muḥtār nennt auch die Ansicht, er solle ein Mithqāl nicht erreichen. Den Ringstein trägt der Mann zur Innenseite der Hand, anders als Frauen, für die der Ring Schmuck ist (al-Ikhtiyār, al-Hidāya).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0873",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms873",
+              "passageSha256Text": "7814a8b6c16d5a03b40ed1a8adc15fa0e8551d1deb822658c4f70f3d69032aa2",
+              "zitatVon": 1534,
+              "zitatBis": 1636,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms6067",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6067",
+              "passageSha256Text": "e9489a33af8dba55f59109b970d1ce9d7e9dd11a6ef658f10015169ebaac8c87",
+              "zitatVon": 555,
+              "zitatBis": 607,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 82,
+              "passage": "hidaya.ms0929",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms929",
+              "passageSha256Text": "555320a38327a830b45cc2c71698b40034cfa04fde1c0b29409350cfa4957a9d",
+              "zitatVon": 393,
+              "zitatBis": 448,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a05",
+          "text": "Einen Ring zu tragen, ist nach al-Ikhtiyār Sunna für den, der ihn braucht, etwa den Herrscher, den Richter und Personen in ähnlicher Stellung; wer ihn nicht braucht, für den ist es besser, ihn zu lassen (ebenso al-Hidāya). Nach Radd al-Muḥtār (aus at-Tātarkhāniyya) erlaubt ihn die Mehrheit der Gelehrten auch anderen, und danach werde verfahren; besser bleibt es nach Radd al-Muḥtār trotzdem, ihn ohne Bedarf zu lassen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0873",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms873",
+              "passageSha256Text": "7814a8b6c16d5a03b40ed1a8adc15fa0e8551d1deb822658c4f70f3d69032aa2",
+              "zitatVon": 1441,
+              "zitatBis": 1533,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 82,
+              "passage": "hidaya.ms0929",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms929",
+              "passageSha256Text": "555320a38327a830b45cc2c71698b40034cfa04fde1c0b29409350cfa4957a9d",
+              "zitatVon": 449,
+              "zitatBis": 537,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms6067",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6067",
+              "passageSha256Text": "e9489a33af8dba55f59109b970d1ce9d7e9dd11a6ef658f10015169ebaac8c87",
+              "zitatVon": 1045,
+              "zitatBis": 1347,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms6067",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6067",
+              "passageSha256Text": "e9489a33af8dba55f59109b970d1ce9d7e9dd11a6ef658f10015169ebaac8c87",
+              "zitatVon": 1351,
+              "zitatBis": 1422,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a06",
+          "text": "In den Ring darf man nach al-Ikhtiyār seinen Namen oder einen der Namen Gottes eingravieren, weil die Menschen das ohne Widerspruch tun. Ist der Name Gottes oder Seines Propheten eingraviert, ist es nach Radd al-Muḥtār empfohlen, den Ringstein beim Betreten der Toilette in den Ärmel zu nehmen, also zu verdecken, und den Ring bei der Reinigung nach der Notdurft an der rechten Hand zu tragen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0874",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms874",
+              "passageSha256Text": "9a17dc0addb6ad0ff6af50b72df090110e7b83ed1de08e48130d85bb61c4c4b3",
+              "zitatVon": 19,
+              "zitatBis": 99,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms6066",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6066",
+              "passageSha256Text": "90755138ccddf4a7a32719637b5996891aaeed43bf5f8df39208a438cb2d76aa",
+              "zitatVon": 1110,
+              "zitatBis": 1211,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a07",
+          "text": "Nach adh-Dhakhīra (in Radd al-Muḥtār) trägt man den Ring am kleinen Finger der linken Hand. Nach al-Muḥīṭ ist er auch an der rechten Hand erlaubt, doch galt das als Kennzeichen einer bestimmten Gruppe, weshalb man es meiden sollte; nach Radd al-Muḥtār galt das wohl nur früher und ist heute entfallen, sodass es nicht untersagt wird. Radd al-Muḥtār zitiert Ghāyat al-Bayān: Abū l-Layth stellte rechts und links gleich, und das sei richtig, weil die Überlieferungen vom Propheten verschieden sind.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms6066",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6066",
+              "passageSha256Text": "90755138ccddf4a7a32719637b5996891aaeed43bf5f8df39208a438cb2d76aa",
+              "zitatVon": 526,
+              "zitatBis": 601,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms6066",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6066",
+              "passageSha256Text": "90755138ccddf4a7a32719637b5996891aaeed43bf5f8df39208a438cb2d76aa",
+              "zitatVon": 633,
+              "zitatBis": 702,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms6066",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6066",
+              "passageSha256Text": "90755138ccddf4a7a32719637b5996891aaeed43bf5f8df39208a438cb2d76aa",
+              "zitatVon": 728,
+              "zitatBis": 842,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms6066",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6066",
+              "passageSha256Text": "90755138ccddf4a7a32719637b5996891aaeed43bf5f8df39208a438cb2d76aa",
+              "zitatVon": 843,
+              "zitatBis": 1068,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a08",
+          "text": "Ein Silberring ist nach Radd al-Muḥtār (aus al-Quhistānī) nur in der Form eines Männerrings erlaubt; hat er mehr als einen Ringstein, ist er verboten. Ein Eisenring, der so mit Silber umwickelt ist, dass man das Eisen nicht sieht, ist nach Radd al-Muḥtār (aus at-Tātarkhāniyya) unbedenklich.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 362,
+              "passage": "radd_al_muhtar.ms6068",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6068",
+              "passageSha256Text": "2ed7e22e55dab053da623003405c245a71e6f34ef461ec09cbe14c31d2f4f0f2",
+              "zitatVon": 405,
+              "zitatBis": 481,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms6065",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6065",
+              "passageSha256Text": "f91797ce167a99bce01f4efcf5855686fc4da83175ece070504cb2acc1604120",
+              "zitatVon": 1371,
+              "zitatBis": 1429,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a09",
+          "text": "Aus Gefäßen aus Gold und Silber zu essen, zu trinken, sich zu salben oder zu parfümieren, ist Männern und Frauen nicht erlaubt (al-Qudūrī, al-Hidāya; Verweis Bukhari 5634). Dazu gehören nach al-Hidāya und al-Ikhtiyār auch Löffel, Kajalstift, Kajaldose, Spiegel, Räuchergefäß und Ähnliches. Al-Ikhtiyār begründet: Die Hadithe nennen zwar das Trinken, das Übrige hat aber dieselbe Bedeutung; es gehört zur Aufmachung der Hochmütigen und zum Genuss der im Überfluss Lebenden.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 516,
+              "zitatBis": 590,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 78,
+              "passage": "hidaya.ms0924",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms924",
+              "passageSha256Text": "de00941e82f6bae9d66928597989f5b1bbc1d84521fe271978d3d6a307f5375e",
+              "zitatVon": 955,
+              "zitatBis": 1514,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 159,
+              "passage": "ikhtiyar.ms0874",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms874",
+              "passageSha256Text": "9a17dc0addb6ad0ff6af50b72df090110e7b83ed1de08e48130d85bb61c4c4b3",
+              "zitatVon": 987,
+              "zitatBis": 1187,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 5634
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a10",
+          "text": "Ein Gegenstand, der ganz aus Silber ist, darf nach Radd al-Muḥtār auf keine Weise benutzt werden, auch wenn er den Körper nicht berührt; deshalb ist es verboten, Räucherholz in einem silbernen Räuchergefäß zu verbrennen. Ebenso verboten sind nach Radd al-Muḥtār Halter für Kaffeetassen und Uhrgehäuse aus Gold oder Silber.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 343,
+              "passage": "radd_al_muhtar.ms6038",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6038",
+              "passageSha256Text": "0f7cd94e2a4c5e7365ef24241cc5a632a6305820d8eff3f5c351215eec623ee1",
+              "zitatVon": 1243,
+              "zitatBis": 1442,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 342,
+              "passage": "radd_al_muhtar.ms6036",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6036",
+              "passageSha256Text": "9f35d05ac30f9fb3c2fa315f84f48f36547d27d084dc27fda9773cc702bcd700",
+              "zitatVon": 1256,
+              "zitatBis": 1320,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a11",
+          "text": "Gefäße aus Glas, Bergkristall, Karneol und Blei zu benutzen, ist unbedenklich (al-Qudūrī, al-Hidāya, al-Ikhtiyār); al-Ikhtiyār begründet: Mit ihnen prahlt man nicht. Ash-Shāfiʿī hielt solche Gefäße für verpönt, weil man mit ihnen wie mit Gold und Silber prahle; al-Hidāya widerspricht: Man pflegte nur mit Gold und Silber zu prahlen. Radd al-Muḥtār (aus al-Jawhara) nennt auch Gefäße aus Eisen, Messing, Kupfer, Holz und Ton unbedenklich. Ad-Durr al-Mukhtār, das Radd al-Muḥtār erläutert, nennt es dagegen verpönt, aus Gefäßen aus Kupfer oder Messing zu essen; nach einer Einschränkung gilt das für Kupfer, das nicht verzinnt ist, weil sein Rost der Speise schadet.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 591,
+              "zitatBis": 635,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 78,
+              "passage": "hidaya.ms0924",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms924",
+              "passageSha256Text": "de00941e82f6bae9d66928597989f5b1bbc1d84521fe271978d3d6a307f5375e",
+              "zitatVon": 1515,
+              "zitatBis": 1571,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 78,
+              "passage": "hidaya.ms0925",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms925",
+              "passageSha256Text": "5293d3e3faf928af55a54a8b272f617e359ff0e51b38d770e157be36e3986692",
+              "zitatVon": 0,
+              "zitatBis": 129,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 160,
+              "passage": "ikhtiyar.ms0874",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms874",
+              "passageSha256Text": "9a17dc0addb6ad0ff6af50b72df090110e7b83ed1de08e48130d85bb61c4c4b3",
+              "zitatVon": 1466,
+              "zitatBis": 1556,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 343,
+              "passage": "radd_al_muhtar.ms6038",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6038",
+              "passageSha256Text": "0f7cd94e2a4c5e7365ef24241cc5a632a6305820d8eff3f5c351215eec623ee1",
+              "zitatVon": 0,
+              "zitatBis": 112,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 343,
+              "passage": "radd_al_muhtar.ms6037",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6037",
+              "passageSha256Text": "2e1af5d6db0759281395748d060a551a7de9ede6d5a7f0a8257f6a69f5d823e9",
+              "zitatVon": 1078,
+              "zitatBis": 1417,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a12",
+          "text": "Gefäße, in denen man Wasser ins Haus bringt, aus Ton (khazaf) zu nehmen, ist nach al-Ikhtiyār besser, weil darin weder Verschwendung noch Eitelkeit liegt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 175,
+              "passage": "ikhtiyar.ms0894",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms894",
+              "passageSha256Text": "28e804ba5171b0fd471529cf20de5acc9f716b2a87144bf6ca123a994a485cfb",
+              "zitatVon": 1401,
+              "zitatBis": 1445,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 175,
+              "passage": "ikhtiyar.ms0894",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms894",
+              "passageSha256Text": "28e804ba5171b0fd471529cf20de5acc9f716b2a87144bf6ca123a994a485cfb",
+              "zitatVon": 1575,
+              "zitatBis": 1629,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a13",
+          "text": "Aus einem Gefäß mit Silberbeschlag (mufaḍḍaḍ) zu trinken, ist nach Abū Ḥanīfa erlaubt, ebenso auf einem silberbeschlagenen Sattel zu reiten und auf einem solchen Stuhl oder Bett zu sitzen – wenn man die Stelle des Silbers meidet: beim Trinken mit dem Mund, nach einer Ansicht auch mit der Hand, beim Sitzen mit dem Körper (al-Qudūrī, al-Hidāya). Die Begründung nach al-Hidāya und al-Ikhtiyār: Das Silber folgt hier nur dem Gegenstand, und es kommt auf die Hauptsache an – wie bei der Seidenborte am Gewand. Radd al-Muḥtār führt für Abū Ḥanīfa einen Bericht über den Trinkbecher des Propheten an (Verweis Bukhari 3109). Abū Yūsuf hält es dagegen für verpönt (siehe die folgende Aussage).",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 636,
+              "zitatBis": 729,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 78,
+              "passage": "hidaya.ms0925",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms925",
+              "passageSha256Text": "5293d3e3faf928af55a54a8b272f617e359ff0e51b38d770e157be36e3986692",
+              "zitatVon": 130,
+              "zitatBis": 357,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 79,
+              "passage": "hidaya.ms0925",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms925",
+              "passageSha256Text": "5293d3e3faf928af55a54a8b272f617e359ff0e51b38d770e157be36e3986692",
+              "zitatVon": 817,
+              "zitatBis": 939,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 160,
+              "passage": "ikhtiyar.ms0875",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms875",
+              "passageSha256Text": "d08622b7b93412e9ac418f132cd687093399c656afba540bc9fbe011569c1744",
+              "zitatVon": 212,
+              "zitatBis": 327,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 344,
+              "passage": "radd_al_muhtar.ms6040",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6040",
+              "passageSha256Text": "8092bdf7da00f952b7a2861fac42e69694cd603db94d36ffe47476403802f2b9",
+              "zitatVon": 189,
+              "zitatBis": 293,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 79,
+              "passage": "hidaya.ms0925",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms925",
+              "passageSha256Text": "5293d3e3faf928af55a54a8b272f617e359ff0e51b38d770e157be36e3986692",
+              "zitatVon": 358,
+              "zitatBis": 380,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 3109
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a14",
+          "text": "Abū Yūsuf hält das für verpönt: Wer einen Teil des Gefäßes benutzt, benutzt das ganze Gefäß und damit auch das Silber (al-Hidāya, al-Ikhtiyār). Muḥammads Ansicht wird nach al-Hidāya mit beiden überliefert, nach al-Ikhtiyār ist sie uneinheitlich. Dieselbe Meinungsverschiedenheit gilt für Gefäße und Stühle mit Gold- oder Silberbeschlag (muḍabbab) sowie für silberbeschlagenes Zaumzeug und Steigbügel. Ein Zaum oder Steigbügel ganz aus Silber ist nach al-Ikhtiyār verboten, weil man dabei das Silber selbst benutzt.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 79,
+              "passage": "hidaya.ms0925",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms925",
+              "passageSha256Text": "5293d3e3faf928af55a54a8b272f617e359ff0e51b38d770e157be36e3986692",
+              "zitatVon": 358,
+              "zitatBis": 617,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 160,
+              "passage": "ikhtiyar.ms0875",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms875",
+              "passageSha256Text": "d08622b7b93412e9ac418f132cd687093399c656afba540bc9fbe011569c1744",
+              "zitatVon": 12,
+              "zitatBis": 211,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 160,
+              "passage": "ikhtiyar.ms0875",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms875",
+              "passageSha256Text": "d08622b7b93412e9ac418f132cd687093399c656afba540bc9fbe011569c1744",
+              "zitatVon": 367,
+              "zitatBis": 435,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a15",
+          "text": "Gefäße, die nur mit Gold oder Silber überzogen (mumawwah) sind, darf man nach einhelliger Ansicht benutzen, weil sich das Edelmetall nicht ablösen lässt und gleichsam verbraucht ist (al-Ikhtiyār, al-Hidāya).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 160,
+              "passage": "ikhtiyar.ms0875",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms875",
+              "passageSha256Text": "d08622b7b93412e9ac418f132cd687093399c656afba540bc9fbe011569c1744",
+              "zitatVon": 436,
+              "zitatBis": 543,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 79,
+              "passage": "hidaya.ms0925",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms925",
+              "passageSha256Text": "5293d3e3faf928af55a54a8b272f617e359ff0e51b38d770e157be36e3986692",
+              "zitatVon": 683,
+              "zitatBis": 728,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a16",
+          "text": "Gießt jemand Öl oder Waschkraut (ushnān) aus einem Silber- oder Goldgefäß auf die Hand, ist das nach Muḥammad verpönt, weil er das Gefäß durch das Ausgießen benutzt. Duftsalbe (ghāliya), die man mit dem Finger oder einem Stäbchen herausnimmt und dann von der Hand aus verwendet, hält er nicht für verpönt, weil man dabei das Gefäß nicht benutzt (al-Ikhtiyār).",
+          "meinung": "muhammad",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl Istiʿmāl al-Ḥarīr wa-dh-Dhahab",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 160,
+              "passage": "ikhtiyar.ms0875",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms875",
+              "passageSha256Text": "d08622b7b93412e9ac418f132cd687093399c656afba540bc9fbe011569c1744",
+              "zitatVon": 544,
+              "zitatBis": 781,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.a17",
+          "text": "Hände und Füße zu färben (khiḍāb), ist nach Radd al-Muḥtār (aus al-Baḥr az-Zākhir) für einen Mann verpönt, ebenso bei einem Jungen, außer bei echtem Bedarf; für Frauen ist es unbedenklich. Ibn ʿĀbidīn folgert: Auch einer Frau ist es verpönt, das bei einem Jungen zu tun, obwohl sie es bei sich selbst tun darf.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa › Faṣl fī l-Lubs",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 362,
+              "passage": "radd_al_muhtar.ms6069",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6069",
+              "passageSha256Text": "3c2419c851d2f5b7d206f2f9787ab3757d17874b3042cc1d68c51e8b2fef1694",
+              "zitatVon": 949,
+              "zitatBis": 1142,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e01.l03.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l03.a01",
+          "behauptung": "Ein Eisenring ist nach al-Ikhtiyār für Frauen unbedenklich.",
+          "richtig": false,
+          "begruendung": "Al-Ikhtiyār nennt Ringe aus Eisen und Messing für Männer und Frauen verpönt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e01.l03.a02",
+          "anweisung": "Ordne zu, wer nach Radd al-Muḥtār welche Ansicht zum Ring aus Stein vertritt.",
+          "paare": [
+            {
+              "links": "Shams al-Aʾimma und Qāḍīkhān",
+              "rechts": "erlaubt"
+            },
+            {
+              "links": "Verfasser von al-Hidāya und al-Kāfī",
+              "rechts": "verboten"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e01.l03.a04",
+          "fall": "Ein Mann lässt sich einen Silberring anfertigen und fragt, wie er ihn nach der Sunna tragen soll.",
+          "frage": "Was nennt al-Ikhtiyār als Sunna?",
+          "optionen": [
+            "Ein Mithqāl oder weniger, der Ringstein zur Innenseite der Hand.",
+            "Möglichst schwer, der Ringstein nach außen.",
+            "Mit zwei Ringsteinen, damit er besser hält."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l03.a05",
+          "behauptung": "Nach al-Ikhtiyār ist es für jemanden, der keinen Ring braucht, besser, keinen zu tragen.",
+          "richtig": true,
+          "begruendung": "Sunna ist der Ring nach al-Ikhtiyār für den, der ihn braucht, etwa den Richter; wer ihn nicht braucht, lässt ihn besser.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e01.l03.a09",
+          "fall": "Bei einer Feier wird Tee in Bechern aus Silber gereicht.",
+          "frage": "Was gilt nach al-Qudūrī?",
+          "optionen": [
+            "Daraus zu trinken, ist Männern und Frauen nicht erlaubt.",
+            "Es ist nur Männern nicht erlaubt.",
+            "Es ist unbedenklich, wenn man nur wenig trinkt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.q06",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e01.l03.a13",
+          "anweisung": "Ordne zu, wer welche Ansicht zum Trinken aus einem Gefäß mit Silberbeschlag vertritt.",
+          "paare": [
+            {
+              "links": "Abū Ḥanīfa",
+              "rechts": "erlaubt, wenn man die Stelle des Silbers meidet"
+            },
+            {
+              "links": "Abū Yūsuf",
+              "rechts": "verpönt"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l03.a15",
+          "behauptung": "Gefäße, die nur mit Gold überzogen sind, darf man nach einhelliger Ansicht benutzen.",
+          "richtig": true,
+          "begruendung": "Nach al-Ikhtiyār und al-Hidāya lässt sich der Überzug nicht ablösen und gilt als verbraucht; deshalb ist die Benutzung nach einhelliger Ansicht unbedenklich.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l03.a10",
+          "behauptung": "Ein Uhrgehäuse aus Gold ist nach Radd al-Muḥtār unbedenklich, weil man es nicht zum Essen oder Trinken benutzt.",
+          "richtig": false,
+          "begruendung": "Nach Radd al-Muḥtār darf ein Gegenstand ganz aus Silber auf keine Weise benutzt werden, auch ohne Berührung mit dem Körper; Uhrgehäuse aus Gold oder Silber nennt es ausdrücklich verboten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l03.q09",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e01.l03.a06",
+          "fall": "In einen Ring ist ein Name Gottes eingraviert. Der Träger muss zur Toilette.",
+          "frage": "Was empfiehlt Radd al-Muḥtār?",
+          "optionen": [
+            "Den Ringstein verdecken, etwa im Ärmel.",
+            "Den Ring vorher zerbrechen.",
+            "Nichts Besonderes; es gibt dazu keine Empfehlung."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e01.l04",
+      "titel": "Verschiedene Fragen des Alltags",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a01",
+          "text": "Den Gruß (salām) zu entbieten, ist nach al-Ikhtiyār Sunna, und der Lohn dessen, der grüßt, ist größer. Ihn zu erwidern, ist Pflicht (farīḍa) für jeden, der ihn hört; erwidern ihn einige aus der Gruppe, entfällt die Pflicht für die übrigen. Al-Ikhtiyār begründet die Pflicht: Die Erwiderung zu verweigern, ist eine Herabsetzung und Geringschätzung des Muslims, und das ist verboten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 164,
+              "passage": "ikhtiyar.ms0880",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms880",
+              "passageSha256Text": "d9b20babef9583574ce8e82063cfd1e311e6785a7bfb6c49a39730d474033f95",
+              "zitatVon": 116,
+              "zitatBis": 222,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 164,
+              "passage": "ikhtiyar.ms0881",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms881",
+              "passageSha256Text": "1051a07179bf00171beadfa453c21f488b0b0c9b07e58d7d72f43064ca671776",
+              "zitatVon": 350,
+              "zitatBis": 419,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a02",
+          "text": "Die Erwiderung gilt nach al-Ikhtiyār erst, wenn der Grüßende sie hört, denn sie ist eine Antwort. Ist er taub, zeigt man sie ihm durch die Bewegung der Lippen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 164,
+              "passage": "ikhtiyar.ms0881",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms881",
+              "passageSha256Text": "1051a07179bf00171beadfa453c21f488b0b0c9b07e58d7d72f43064ca671776",
+              "zitatVon": 508,
+              "zitatBis": 624,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a03",
+          "text": "Den Gruß eines Bettlers muss man nach al-Ikhtiyār nicht erwidern, weil er kein Gruß ist, sondern das Zeichen seiner Bitte. Wer einem anderen den Gruß eines Abwesenden ausrichtet, dem soll man so antworten, dass die Erwiderung beiden gilt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 165,
+              "passage": "ikhtiyar.ms0881",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms881",
+              "passageSha256Text": "1051a07179bf00171beadfa453c21f488b0b0c9b07e58d7d72f43064ca671776",
+              "zitatVon": 1084,
+              "zitatBis": 1182,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a04",
+          "text": "Wer den Koran liest, den soll man nach al-Ikhtiyār nicht grüßen, weil es ihn vom Lesen ablenkt. Grüßt man ihn doch, muss er erwidern: Die Erwiderung ist Pflicht, das Lesen nicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 165,
+              "passage": "ikhtiyar.ms0881",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms881",
+              "passageSha256Text": "1051a07179bf00171beadfa453c21f488b0b0c9b07e58d7d72f43064ca671776",
+              "zitatVon": 1294,
+              "zitatBis": 1401,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a05",
+          "text": "Nard (Backgammon), Schach und jedes andere Spiel, das nur der Zerstreuung dient (lahw), nennen al-Ikhtiyār und al-Hidāya verpönt. Al-Hidāya erklärt: Wird um einen Einsatz gespielt, ist es Glücksspiel (maysir), das nach dem Text der Offenbarung (naṣṣ) verboten ist; sonst ist es nutzloser Zeitvertreib, der vom Gedenken Gottes, vom Freitagsgebet und vom Gemeinschaftsgebet abhält, und deshalb verboten. Al-Hidāya erwähnt, dass manche – überliefert von ash-Shāfiʿī – Schach erlauben, weil es den Verstand schärft.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 163,
+              "passage": "ikhtiyar.ms0879",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms879",
+              "passageSha256Text": "3f4936fe6f4943725073df24e5ae0bc80f60ae8173885f7aedeaab3e106a9733",
+              "zitatVon": 1511,
+              "zitatBis": 1553,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Masāʾil Mutafarriqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 96,
+              "passage": "hidaya.ms0945",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms945",
+              "passageSha256Text": "94225d5b57cc3ceb04996464bc6d90709b66b0ed54d297f7c3cb3f6d992e764c",
+              "zitatVon": 1299,
+              "zitatBis": 1608,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Masāʾil Mutafarriqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 96,
+              "passage": "hidaya.ms0946",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms946",
+              "passageSha256Text": "d2e21356c8efa54daaab4a460cd2462374bf662d0eef47dc135de7baabca9d6f",
+              "zitatVon": 0,
+              "zitatBis": 171,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 164,
+              "passage": "ikhtiyar.ms0880",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms880",
+              "passageSha256Text": "d9b20babef9583574ce8e82063cfd1e311e6785a7bfb6c49a39730d474033f95",
+              "zitatVon": 427,
+              "zitatBis": 478,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a06",
+          "text": "Wer Schach um einen Einsatz spielt, verliert nach al-Hidāya seine Rechtschaffenheit (ʿadāla); spielt er ohne Einsatz, verliert er sie nicht, weil es darin eine vertretbare abweichende Auslegung gibt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Masāʾil Mutafarriqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 96,
+              "passage": "hidaya.ms0946",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms946",
+              "passageSha256Text": "d2e21356c8efa54daaab4a460cd2462374bf662d0eef47dc135de7baabca9d6f",
+              "zitatVon": 228,
+              "zitatBis": 289,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a07",
+          "text": "Abū Ḥanīfa sah keinen Schaden darin, Schachspieler zu grüßen, um sie vom Spiel abzulenken. Abū Yūsuf und Muḥammad hielten das für verpönt, um sie zu warnen und ihnen Geringschätzung zu zeigen (al-Hidāya, al-Ikhtiyār).",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Masāʾil Mutafarriqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 96,
+              "passage": "hidaya.ms0946",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms946",
+              "passageSha256Text": "d2e21356c8efa54daaab4a460cd2462374bf662d0eef47dc135de7baabca9d6f",
+              "zitatVon": 290,
+              "zitatBis": 387,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 164,
+              "passage": "ikhtiyar.ms0880",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms880",
+              "passageSha256Text": "d9b20babef9583574ce8e82063cfd1e311e6785a7bfb6c49a39730d474033f95",
+              "zitatVon": 614,
+              "zitatBis": 702,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a08",
+          "text": "Nüsse, mit denen Kinder am Festtag spielen, dürfen nach al-Ikhtiyār gegessen werden, wenn nicht um sie gespielt wird wie beim Glücksspiel; Ibn ʿUmar kaufte seinen Kindern am Fest des Fastenbrechens Nüsse zum Spielen und aß davon. Spielen sie um die Nüsse als Einsatz, ist es verboten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 164,
+              "passage": "ikhtiyar.ms0880",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms880",
+              "passageSha256Text": "d9b20babef9583574ce8e82063cfd1e311e6785a7bfb6c49a39730d474033f95",
+              "zitatVon": 703,
+              "zitatBis": 871,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a09",
+          "text": "Haare mit Menschenhaar zu verlängern, ist nach al-Ikhtiyār verboten (ḥarām), gleich ob es das eigene oder fremdes Haar ist. Das Werk stützt sich auf einen Hadith (vgl. Verweise Bukhari 5933, 5937), der nach seiner Erklärung auch das Tätowieren, das Spitzfeilen der Zähne und das Auszupfen von Gesichtshaaren betrifft.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 164,
+              "passage": "ikhtiyar.ms0880",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms880",
+              "passageSha256Text": "d9b20babef9583574ce8e82063cfd1e311e6785a7bfb6c49a39730d474033f95",
+              "zitatVon": 872,
+              "zitatBis": 1459,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 5933
+            },
+            {
+              "art": "hadith",
+              "sammlung": "bukhari",
+              "nummer": 5937
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a10",
+          "text": "Unterhaltungsmusik mit Instrumenten (malāhī) zu hören, etwa Stockschlagen, Rahmentrommel (daff) oder Flöte, nennt al-Ikhtiyār verboten; wer sie unvermittelt hört, ist entschuldigt, muss sich aber bemühen, sie nicht zu hören. Auch al-Hidāya folgert, dass alle malāhī verboten sind. Zu den Ausnahmen, die die Werke nennen, siehe die folgende Aussage.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 165,
+              "passage": "ikhtiyar.ms0882",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms882",
+              "passageSha256Text": "a137388c4a4ed247a27037b924e1b494705b8a832d272176268b4d75f83fd144",
+              "zitatVon": 1217,
+              "zitatBis": 1274,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 166,
+              "passage": "ikhtiyar.ms0882",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms882",
+              "passageSha256Text": "a137388c4a4ed247a27037b924e1b494705b8a832d272176268b4d75f83fd144",
+              "zitatVon": 1562,
+              "zitatBis": 1614,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 80,
+              "passage": "hidaya.ms0927",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms927",
+              "passageSha256Text": "60444aecd8044c628bbf2175ef99b084515ac641f778826b51a09631ac6371ee",
+              "zitatVon": 591,
+              "zitatBis": 651,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a11",
+          "text": "Al-Ikhtiyār nennt Ausnahmen: Nach al-Ḥasan ibn Ziyād ist die Rahmentrommel (daff) bei einer Hochzeit unbedenklich, um die Ehe bekannt zu machen; Radd al-Muḥtār gibt das ebenfalls von al-Ḥasan wieder und nennt nach as-Sirājiyya die Bedingung, dass die Trommel keine Schellen hat und nicht in der Art der Unterhaltungsmusik (ṭarab) geschlagen wird. Abū Yūsuf hielt es nicht für verpönt, wenn eine Frau außerhalb einer Hochzeit für ein Kind die Rahmentrommel schlägt, ohne dass Sündhaftes dabei ist; was zum unanständigen Gesang gehört, hielt er für verpönt.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 166,
+              "passage": "ikhtiyar.ms0883",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms883",
+              "passageSha256Text": "b12e312dd19035038174196b22d20f1ca23d581a29dcbf53b1e53c4fb84ca16e",
+              "zitatVon": 56,
+              "zitatBis": 240,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 350,
+              "passage": "radd_al_muhtar.ms6050",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms6050",
+              "passageSha256Text": "e24d86af01d1974f5e2c7f431e29a687fc44d56e52ea3507d3fd607528981661",
+              "zitatVon": 311,
+              "zitatBis": 411,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a12",
+          "text": "Wer zu einem Festessen eingeladen ist, bei dem es Unterhaltung (lahw) gibt, geht nach al-Ikhtiyār nicht hin, wenn er es vorher weiß. Erfährt er es erst dort, unterbindet er es, wenn er kann. Kann er es nicht und findet es am Tisch statt, setzt er sich nicht dazu; findet es nicht am Tisch statt, darf er bleiben, wenn er kein Vorbild (muqtadā bihi) für andere ist. Ein Vorbild bleibt nicht, weil es sonst der Religion schaden und anderen die Tür zur Sünde öffnen würde (al-Ikhtiyār, al-Hidāya). Dass man sich am Tisch nicht dazusetzt, begründet al-Hidāya mit einem Vers (Verweis 6:68).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 176,
+              "passage": "ikhtiyar.ms0897",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms897",
+              "passageSha256Text": "692bef1040a3486347afbd524bffeb9d517342f9fb08b0dde0af33ddb8b97577",
+              "zitatVon": 235,
+              "zitatBis": 960,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 80,
+              "passage": "hidaya.ms0927",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms927",
+              "passageSha256Text": "60444aecd8044c628bbf2175ef99b084515ac641f778826b51a09631ac6371ee",
+              "zitatVon": 213,
+              "zitatBis": 531,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "6:68"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a13",
+          "text": "Wer bei einer Einladung Spiel oder Gesang vorfindet, darf sich nach al-Hidāya setzen und essen, weil es Sunna ist, eine Einladung anzunehmen – mit den Einschränkungen der vorigen Aussage. Al-Hidāya berichtet dazu von Abū Ḥanīfa, er sei einmal in eine solche Lage geraten und habe es ertragen; al-Ikhtiyār und al-Hidāya erklären, das sei gewesen, bevor er ein Vorbild für andere wurde.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 80,
+              "passage": "hidaya.ms0926",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms926",
+              "passageSha256Text": "df2e839c358b03fb8af129e1e18ed030a3bf1169a2ff69d5f341b9d77b27e82e",
+              "zitatVon": 1432,
+              "zitatBis": 1578,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 80,
+              "passage": "hidaya.ms0927",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms927",
+              "passageSha256Text": "60444aecd8044c628bbf2175ef99b084515ac641f778826b51a09631ac6371ee",
+              "zitatVon": 311,
+              "zitatBis": 376,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Kasb",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 177,
+              "passage": "ikhtiyar.ms0897",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms897",
+              "passageSha256Text": "692bef1040a3486347afbd524bffeb9d517342f9fb08b0dde0af33ddb8b97577",
+              "zitatVon": 961,
+              "zitatBis": 1037,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a14",
+          "text": "Im Geschäftsleben (muʿāmalāt) nimmt man nach al-Qudūrī auch die Auskunft eines Sünders (fāsiq) an, in Fragen der Religion (diyānāt) nur die eines Rechtschaffenen (ʿadl). Al-Hidāya und al-Ikhtiyār erklären: Geschäfte sind sehr häufig, und würde man dort Rechtschaffenheit verlangen, entstünde Härte; deshalb gilt die Auskunft eines Einzelnen, ob rechtschaffen oder nicht, Mann oder Frau, Muslim oder nicht. Religiöse Fragen sind seltener; dort zählt nur die Auskunft eines rechtschaffenen Muslims, ob Mann oder Frau, frei oder unfrei.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 931,
+              "zitatBis": 1001,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 79,
+              "passage": "hidaya.ms0926",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms926",
+              "passageSha256Text": "df2e839c358b03fb8af129e1e18ed030a3bf1169a2ff69d5f341b9d77b27e82e",
+              "zitatVon": 59,
+              "zitatBis": 434,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 80,
+              "passage": "hidaya.ms0926",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms926",
+              "passageSha256Text": "df2e839c358b03fb8af129e1e18ed030a3bf1169a2ff69d5f341b9d77b27e82e",
+              "zitatVon": 811,
+              "zitatBis": 860,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 163,
+              "passage": "ikhtiyar.ms0879",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms879",
+              "passageSha256Text": "3f4936fe6f4943725073df24e5ae0bc80f60ae8173885f7aedeaab3e106a9733",
+              "zitatVon": 22,
+              "zitatBis": 237,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 163,
+              "passage": "ikhtiyar.ms0879",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms879",
+              "passageSha256Text": "3f4936fe6f4943725073df24e5ae0bc80f60ae8173885f7aedeaab3e106a9733",
+              "zitatVon": 243,
+              "zitatBis": 309,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a15",
+          "text": "Als Beispiele nennt al-Ikhtiyār: Zum Geschäftsleben gehören Auskünfte über eine Schlachtung, eine Vollmacht, ein Geschenk oder eine Erlaubnis, zu den religiösen Fragen Auskünfte über die Gebetsrichtung (qibla) und darüber, ob Wasser rein ist. Al-Hidāya nennt die Vollmacht und die Auskunft, das Wasser sei unrein.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 163,
+              "passage": "ikhtiyar.ms0879",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms879",
+              "passageSha256Text": "3f4936fe6f4943725073df24e5ae0bc80f60ae8173885f7aedeaab3e106a9733",
+              "zitatVon": 667,
+              "zitatBis": 781,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 80,
+              "passage": "hidaya.ms0926",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms926",
+              "passageSha256Text": "df2e839c358b03fb8af129e1e18ed030a3bf1169a2ff69d5f341b9d77b27e82e",
+              "zitatVon": 904,
+              "zitatBis": 975,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a16",
+          "text": "Sagt ein rechtschaffener Muslim, das Wasser sei unrein, nimmt man damit nach al-Hidāya keine Gebetswaschung vor, sondern die Trockenreinigung (tayammum). Ist der Berichtende ein Sünder oder unbekannt, wägt man ab (taḥarrī): Hält man ihn eher für wahrhaftig, nimmt man die Trockenreinigung, und vorsichtiger ist es, das Wasser zuvor wegzugießen; hält man ihn eher für einen Lügner, nimmt man die Waschung mit dem Wasser vor und vorsichtshalber danach die Trockenreinigung. Al-Ikhtiyār sagt zum Sünder und zum Unbekannten dasselbe.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 80,
+              "passage": "hidaya.ms0926",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms926",
+              "passageSha256Text": "df2e839c358b03fb8af129e1e18ed030a3bf1169a2ff69d5f341b9d77b27e82e",
+              "zitatVon": 942,
+              "zitatBis": 1330,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 163,
+              "passage": "ikhtiyar.ms0879",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms879",
+              "passageSha256Text": "3f4936fe6f4943725073df24e5ae0bc80f60ae8173885f7aedeaab3e106a9733",
+              "zitatVon": 945,
+              "zitatBis": 1051,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a17",
+          "text": "Bei Geschenken und Erlaubnissen nimmt man nach al-Qudūrī auch die Auskunft eines Kindes oder eines Unfreien an. Al-Hidāya erklärt: Geschenke werden üblicherweise durch sie überbracht, und sie können nicht jedes Mal Zeugen für ihre Erlaubnis mitbringen, etwa auf Reisen oder beim Handel auf dem Markt; sonst entstünde Härte. Al-Ikhtiyār fügt hinzu: So halten es die Menschen seit der ersten Generation bis heute.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 883,
+              "zitatBis": 930,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Akl wa-sh-Shurb",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 79,
+              "passage": "hidaya.ms0925",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms925",
+              "passageSha256Text": "5293d3e3faf928af55a54a8b272f617e359ff0e51b38d770e157be36e3986692",
+              "zitatVon": 1301,
+              "zitatBis": 1509,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Iḥtikār",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 163,
+              "passage": "ikhtiyar.ms0879",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms879",
+              "passageSha256Text": "3f4936fe6f4943725073df24e5ae0bc80f60ae8173885f7aedeaab3e106a9733",
+              "zitatVon": 1052,
+              "zitatBis": 1163,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a18",
+          "text": "Zehnerzeichen (taʿshīr) und Punkte (naqṭ) im Koranexemplar nennen al-Qudūrī, al-Hidāya und al-Ikhtiyār verpönt; al-Hidāya und al-Ikhtiyār stützen sich auf ein Wort Ibn Masʿūds, man solle den Koran frei von Zusätzen halten. Al-Hidāya ergänzt aber: Die Gelehrten sagten, in ihrer Zeit bräuchten Nichtaraber diese Hilfe; sie wegzulassen, schade der Bewahrung des Korans und führe dazu, dass man ihn vernachlässigt, deshalb sei es gut.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 730,
+              "zitatBis": 760,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Masāʾil Mutafarriqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 95,
+              "passage": "hidaya.ms0944",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms944",
+              "passageSha256Text": "2871c3203537796636670aae79653892fe6b93720108aa05879c806c042db5b3",
+              "zitatVon": 967,
+              "zitatBis": 1241,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 166,
+              "passage": "ikhtiyar.ms0883",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms883",
+              "passageSha256Text": "b12e312dd19035038174196b22d20f1ca23d581a29dcbf53b1e53c4fb84ca16e",
+              "zitatVon": 736,
+              "zitatBis": 901,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a19",
+          "text": "Das Koranexemplar zu verzieren (taḥliya), ist unbedenklich, weil es den Koran ehrt (al-Qudūrī, al-Hidāya, al-Ikhtiyār). Ebenso ist es nach al-Qudūrī unbedenklich, die Moschee mit Ornamenten zu versehen und mit Goldwasser zu verzieren.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb al-Ḥaẓr wa-l-Ibāḥa",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 240,
+              "passage": "quduri.ms0136",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms136",
+              "passageSha256Text": "cb0a958cf539349f470918d2d9841afe8988a0d2844e98b33e07f61c0babaef9",
+              "zitatVon": 761,
+              "zitatBis": 813,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Masāʾil Mutafarriqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 95,
+              "passage": "hidaya.ms0944",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms944",
+              "passageSha256Text": "2871c3203537796636670aae79653892fe6b93720108aa05879c806c042db5b3",
+              "zitatVon": 1242,
+              "zitatBis": 1320,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 166,
+              "passage": "ikhtiyar.ms0883",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms883",
+              "passageSha256Text": "b12e312dd19035038174196b22d20f1ca23d581a29dcbf53b1e53c4fb84ca16e",
+              "zitatVon": 902,
+              "zitatBis": 939,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a20",
+          "text": "Zur Verzierung der Moschee nennt al-Ikhtiyār zwei Ansichten – eine gute Tat oder verpönt – und hält die erste für richtiger, weil sie die Moschee ehrt; das Verputzen ist gut, weil es den Bau festigt. Verpönt ist es aber, die Gebetsnische (miḥrāb) zu schmücken, weil der Blick darauf den Betenden ablenkt. Wer die Moschee aus eigenem Vermögen verziert, für den ist es unbedenklich; aus Stiftungsvermögen (waqf) gilt es nicht als gut, weil es Verschwendung ist.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 166,
+              "passage": "ikhtiyar.ms0883",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms883",
+              "passageSha256Text": "b12e312dd19035038174196b22d20f1ca23d581a29dcbf53b1e53c4fb84ca16e",
+              "zitatVon": 940,
+              "zitatBis": 1228,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a21",
+          "text": "Nähen und jede weltliche Arbeit in der Moschee sind nach al-Ikhtiyār verpönt, weil die Moschee dafür weder gebaut noch gestiftet ist (Verweis 24:36). In der Moschee zu lehren oder als Abschreiber zu schreiben, ist unbedenklich, wenn es unentgeltlich geschieht; gegen Lohn ist es verpönt, außer aus Notwendigkeit, wenn man keinen anderen Ort findet. Auch drei Tage in der Moschee zu sitzen, um Beileid entgegenzunehmen, ist verpönt; außerhalb der Moschee ist es erlaubt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 166,
+              "passage": "ikhtiyar.ms0883",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms883",
+              "passageSha256Text": "b12e312dd19035038174196b22d20f1ca23d581a29dcbf53b1e53c4fb84ca16e",
+              "zitatVon": 1229,
+              "zitatBis": 1548,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "24:36"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a22",
+          "text": "Früher hielt man es für verpönt, die Tür der Moschee zu schließen. Nach al-Ikhtiyār ist es in seiner Zeit außerhalb der Gebetszeiten unbedenklich, weil die Leute seiner Zeit verdorben seien und die Einrichtung der Moschee sonst nicht sicher sei.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 166,
+              "passage": "ikhtiyar.ms0883",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms883",
+              "passageSha256Text": "b12e312dd19035038174196b22d20f1ca23d581a29dcbf53b1e53c4fb84ca16e",
+              "zitatVon": 1549,
+              "zitatBis": 1562,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 166,
+              "passage": "ikhtiyar.ms0884",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms884",
+              "passageSha256Text": "0320709148884ac32587825ed8cfa1ae47c0e57ba3a64b850e2cda70b86b3ff0",
+              "zitatVon": 0,
+              "zitatBis": 102,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a23",
+          "text": "Nichtmuslime unter muslimischem Schutz (ahl adh-dhimma) dürfen nach al-Hidāya und al-Ikhtiyār die Heilige Moschee in Mekka und andere Moscheen betreten. Al-Hidāya nennt die Gegenansichten: Ash-Shāfiʿī hält es bei der Heiligen Moschee für verpönt, Mālik bei jeder Moschee. Für die eigene Ansicht führt al-Hidāya an, dass der Prophet eine Abordnung der Thaqīf, die keine Muslime waren, in seiner Moschee unterbrachte, und deutet den Vers (Verweis 9:28) so, dass er ein Eindringen als Herrschende oder den Umlauf unbekleidet nach vorislamischer Sitte meint.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Masāʾil Mutafarriqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 95,
+              "passage": "hidaya.ms0944",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms944",
+              "passageSha256Text": "2871c3203537796636670aae79653892fe6b93720108aa05879c806c042db5b3",
+              "zitatVon": 1339,
+              "zitatBis": 1451,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Masāʾil Mutafarriqa",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 95,
+              "passage": "hidaya.ms0945",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms945",
+              "passageSha256Text": "94225d5b57cc3ceb04996464bc6d90709b66b0ed54d297f7c3cb3f6d992e764c",
+              "zitatVon": 110,
+              "zitatBis": 316,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī Masāʾil Mukhtalifa",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 4,
+              "seite": 166,
+              "passage": "ikhtiyar.ms0884",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms884",
+              "passageSha256Text": "0320709148884ac32587825ed8cfa1ae47c0e57ba3a64b850e2cda70b86b3ff0",
+              "zitatVon": 103,
+              "zitatBis": 341,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "9:28"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.a24",
+          "text": "Einen Faden zur Erinnerung an den Finger oder den Ring zu binden (ratam), ist nach al-Hidāya unbedenklich. Es ist kein sinnloses Tun, weil es einem berechtigten Zweck dient: sich an etwas zu erinnern, das man vergessen könnte.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 83,
+              "passage": "hidaya.ms0929",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms929",
+              "passageSha256Text": "555320a38327a830b45cc2c71698b40034cfa04fde1c0b29409350cfa4957a9d",
+              "zitatVon": 1410,
+              "zitatBis": 1515,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb al-Karāhiya › Faṣl fī l-Lubs",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 4,
+              "seite": 83,
+              "passage": "hidaya.ms0930",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms930",
+              "passageSha256Text": "3c8be8e112676c316dd832800a2b009191e12e57aa4673a5bfdf19e2dcc3569d",
+              "zitatVon": 99,
+              "zitatBis": 160,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e01.l04.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l04.a01",
+          "behauptung": "Einen Gruß zu erwidern, ist nach al-Ikhtiyār nur Sunna.",
+          "richtig": false,
+          "begruendung": "Nach al-Ikhtiyār ist das Grüßen Sunna, das Erwidern aber Pflicht für jeden, der den Gruß hört; erwidern einige aus der Gruppe, entfällt die Pflicht für die übrigen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e01.l04.a01",
+          "fall": "Ein Mann grüßt eine Gruppe von fünf Personen. Einer von ihnen erwidert den Gruß hörbar.",
+          "frage": "Müssen die anderen vier nach al-Ikhtiyār auch erwidern?",
+          "optionen": [
+            "Nein, die Pflicht ist für sie entfallen.",
+            "Ja, jeder Einzelne muss erwidern.",
+            "Nur der Älteste muss zusätzlich erwidern."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e01.l04.a04",
+          "fall": "Jemand liest den Koran. Ein Bekannter kommt herein und grüßt ihn trotzdem.",
+          "frage": "Was gilt nach al-Ikhtiyār?",
+          "optionen": [
+            "Er erwidert den Gruß, denn die Erwiderung ist Pflicht, das Lesen nicht.",
+            "Er darf das Lesen nicht unterbrechen und erwidert nicht.",
+            "Er erwidert erst am nächsten Tag."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.q04",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e01.l04.a14",
+          "anweisung": "Ordne zu, wessen Auskunft man nach al-Qudūrī annimmt.",
+          "paare": [
+            {
+              "links": "im Geschäftsleben",
+              "rechts": "auch die Auskunft eines Sünders (fāsiq)"
+            },
+            {
+              "links": "in Fragen der Religion",
+              "rechts": "nur die Auskunft eines Rechtschaffenen (ʿadl)"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.q05",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e01.l04.a16",
+          "anweisung": "Ein unbekannter Mann sagt, das Wasser sei unrein, und man hält ihn eher für wahrhaftig. Bringe die Schritte in die Reihenfolge, die al-Hidāya als die vorsichtigere nennt.",
+          "schritte": [
+            "Abwägen, ob er wohl die Wahrheit sagt (taḥarrī).",
+            "Das Wasser weggießen.",
+            "Die Trockenreinigung (tayammum) vornehmen."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e01.l04.a12",
+          "fall": "Jemand kommt zu einem Hochzeitsessen und bemerkt erst dort Unterhaltung, die er nicht unterbinden kann. Sie findet nicht am Tisch statt, und er ist kein Vorbild für andere.",
+          "frage": "Was gilt nach al-Ikhtiyār?",
+          "optionen": [
+            "Er darf bleiben.",
+            "Er muss das Haus sofort verlassen.",
+            "Er darf bleiben, muss aber selbst mitmachen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l04.a08",
+          "behauptung": "Nüsse, mit denen Kinder am Festtag spielen, dürfen nach al-Ikhtiyār gegessen werden, solange nicht um sie gespielt wird wie beim Glücksspiel.",
+          "richtig": true,
+          "begruendung": "Al-Ikhtiyār erlaubt es und nennt das Beispiel Ibn ʿUmars; spielen die Kinder um die Nüsse als Einsatz, ist es verboten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l04.a18",
+          "behauptung": "Nach al-Hidāya sagten Gelehrte, in ihrer Zeit sei es gut, Punkte im Koranexemplar zu setzen, weil Nichtaraber sie brauchen.",
+          "richtig": true,
+          "begruendung": "Al-Hidāya nennt Zehnerzeichen und Punkte zunächst verpönt, gibt dann aber die Ansicht wieder, dass sie in ihrer Zeit für Nichtaraber nötig und deshalb gut sind.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.q09",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e01.l04.a21",
+          "anweisung": "Ordne zu, wie al-Ikhtiyār diese Tätigkeiten in der Moschee beurteilt.",
+          "paare": [
+            {
+              "links": "Nähen",
+              "rechts": "verpönt"
+            },
+            {
+              "links": "unentgeltlich lehren",
+              "rechts": "unbedenklich"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e01.l04.q10",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e01.l04.a24",
+          "behauptung": "Einen Faden zur Erinnerung an den Finger zu binden, ist nach al-Hidāya unbedenklich.",
+          "richtig": true,
+          "begruendung": "Al-Hidāya nennt es unbedenklich, weil es einem berechtigten Zweck dient: sich zu erinnern.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}

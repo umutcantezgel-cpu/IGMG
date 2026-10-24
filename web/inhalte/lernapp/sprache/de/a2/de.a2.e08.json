@@ -1,0 +1,4136 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "automatisch_geprueft",
+  "kurs": "de",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "de.a2.e08",
+    "reihenfolge": 9,
+    "thema": {
+      "de": "Sport im Verein",
+      "tr": "Kulüpte spor",
+      "ar": "الرياضة في النادي"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann zwei Sportarten vergleichen und sagen, was ich am liebsten mache.",
+        "tr": "İki spor dalını karşılaştırabilir ve en çok neyi yapmayı sevdiğimi söyleyebilirim.",
+        "ar": "أستطيع أن أقارن بين نوعين من الرياضة وأن أقول ما أحبّ أن أمارسه أكثر من غيره."
+      },
+      {
+        "de": "Ich kann mich für einen Kurs anmelden und nach Zeiten und Kosten fragen.",
+        "tr": "Bir kursa kaydolabilir, saatleri ve ücretleri sorabilirim.",
+        "ar": "أستطيع أن أسجّل في دورة وأن أسأل عن المواعيد والتكاليف."
+      }
+    ],
+    "symbol": "volleyball",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a2.e08.aehnlich",
+      "lemma": "ähnlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ähnliche",
+        "endung_en": "ähnlichen",
+        "endung_er": "ähnlicher",
+        "endung_es": "ähnliches",
+        "endung_em": "ähnlichem",
+        "komparativ": "ähnlicher",
+        "superlativ": "ähnlichsten",
+        "superlativ_e": "ähnlichste"
+      },
+      "frequenzRang": 419,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.genauso",
+      "lemma": "genauso",
+      "wortart": "adverb",
+      "frequenzRang": 799,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.ebenso",
+      "lemma": "ebenso",
+      "wortart": "adverb",
+      "frequenzRang": 521,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.eher",
+      "lemma": "eher",
+      "wortart": "adverb",
+      "frequenzRang": 337,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.je",
+      "lemma": "je",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "pro (zwei Euro je Stunde)"
+      },
+      "frequenzRang": 281,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.per",
+      "lemma": "per",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "ohne Artikel (per E-Mail, per Post)"
+      },
+      "frequenzRang": 563,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.zweimal",
+      "lemma": "zweimal",
+      "wortart": "adverb",
+      "frequenzRang": 1700,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.anmelden",
+      "lemma": "anmelden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "anmelden",
+        "verbzusatz": "an",
+        "praes_ich": "melde",
+        "praes_du": "meldest",
+        "praes_er_sie_es": "meldet",
+        "praes_wir": "melden",
+        "praes_ihr": "meldet",
+        "praes_sie_Sie": "melden",
+        "imp_du": "melde",
+        "imp_ihr": "meldet",
+        "partizip_2": "angemeldet",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 2119,
+      "quelle": "wiktionary:de:anmelden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚anmelden‘ (https://de.wiktionary.org/wiki/anmelden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.teilnehmen",
+      "lemma": "teilnehmen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "teil",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "teilnehmen",
+        "verbzusatz": "teil",
+        "praes_ich": "nehme",
+        "praes_du": "nimmst",
+        "praes_er_sie_es": "nimmt",
+        "praes_wir": "nehmen",
+        "praes_ihr": "nehmt",
+        "praes_sie_Sie": "nehmen",
+        "partizip_2": "teilgenommen"
+      },
+      "frequenzRang": 2206,
+      "quelle": "wiktionary:de:teilnehmen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚teilnehmen‘ (https://de.wiktionary.org/wiki/teilnehmen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.schwimmen",
+      "lemma": "schwimmen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein/haben"
+      },
+      "formen": {
+        "infinitiv": "schwimmen",
+        "praes_ich": "schwimme",
+        "praes_du": "schwimmst",
+        "praes_er_sie_es": "schwimmt",
+        "praes_wir": "schwimmen",
+        "praes_ihr": "schwimmt",
+        "praes_sie_Sie": "schwimmen",
+        "partizip_2": "geschwommen"
+      },
+      "frequenzRang": 2037,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.springen",
+      "lemma": "springen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "springen",
+        "praes_ich": "springe",
+        "praes_du": "springst",
+        "praes_er_sie_es": "springt",
+        "praes_wir": "springen",
+        "praes_ihr": "springt",
+        "praes_sie_Sie": "springen",
+        "partizip_2": "gesprungen"
+      },
+      "frequenzRang": 1474,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.werfen",
+      "lemma": "werfen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "werfen",
+        "praes_ich": "werfe",
+        "praes_du": "wirfst",
+        "praes_er_sie_es": "wirft",
+        "praes_wir": "werfen",
+        "praes_ihr": "werft",
+        "praes_sie_Sie": "werfen",
+        "imp_du": "wirf",
+        "imp_ihr": "werft",
+        "partizip_2": "geworfen"
+      },
+      "frequenzRang": 646,
+      "quelle": "wiktionary:de:werfen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚werfen‘ (https://de.wiktionary.org/wiki/werfen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.rennen",
+      "lemma": "rennen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "rennen",
+        "praes_ich": "renne",
+        "praes_du": "rennst",
+        "praes_er_sie_es": "rennt",
+        "praes_wir": "rennen",
+        "praes_ihr": "rennt",
+        "praes_sie_Sie": "rennen",
+        "partizip_2": "gerannt"
+      },
+      "frequenzRang": 912,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.treten",
+      "lemma": "treten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben/sein",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "treten",
+        "praes_ich": "trete",
+        "praes_du": "trittst",
+        "praes_er_sie_es": "tritt",
+        "praes_wir": "treten",
+        "praes_ihr": "tretet",
+        "praes_sie_Sie": "treten",
+        "partizip_2": "getreten"
+      },
+      "frequenzRang": 390,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.vergleichen",
+      "lemma": "vergleichen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "vergleichen",
+        "praes_ich": "vergleiche",
+        "praes_du": "vergleichst",
+        "praes_er_sie_es": "vergleicht",
+        "praes_wir": "vergleichen",
+        "praes_ihr": "vergleicht",
+        "praes_sie_Sie": "vergleichen",
+        "imp_du": "vergleich",
+        "imp_ihr": "vergleicht",
+        "partizip_2": "verglichen"
+      },
+      "frequenzRang": 1261,
+      "quelle": "wiktionary:de:vergleichen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vergleichen‘ (https://de.wiktionary.org/wiki/vergleichen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.ueben",
+      "lemma": "üben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "üben",
+        "praes_ich": "übe",
+        "praes_du": "übst",
+        "praes_er_sie_es": "übt",
+        "praes_wir": "üben",
+        "praes_ihr": "übt",
+        "praes_sie_Sie": "üben",
+        "imp_du": "üb",
+        "imp_ihr": "übt",
+        "partizip_2": "geübt"
+      },
+      "frequenzRang": 1704,
+      "quelle": "wiktionary:de:üben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚üben‘ (https://de.wiktionary.org/wiki/üben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.verein",
+      "lemma": "Verein",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Vereine"
+      },
+      "formen": {
+        "pl": "Vereine",
+        "dat_pl": "Vereinen"
+      },
+      "frequenzRang": 445,
+      "quelle": "wiktionary:de:Verein",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verein‘ (https://de.wiktionary.org/wiki/Verein), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.mitglied",
+      "lemma": "Mitglied",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Mitglieder"
+      },
+      "formen": {
+        "pl": "Mitglieder",
+        "dat_pl": "Mitgliedern"
+      },
+      "frequenzRang": 356,
+      "quelle": "wiktionary:de:Mitglied",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mitglied‘ (https://de.wiktionary.org/wiki/Mitglied), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.beitrag",
+      "lemma": "Beitrag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Beiträge"
+      },
+      "formen": {
+        "pl": "Beiträge",
+        "dat_pl": "Beiträgen"
+      },
+      "frequenzRang": 477,
+      "quelle": "wiktionary:de:Beitrag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Beitrag‘ (https://de.wiktionary.org/wiki/Beitrag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.training",
+      "lemma": "Training",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Trainings"
+      },
+      "formen": {
+        "pl": "Trainings"
+      },
+      "frequenzRang": 1472,
+      "quelle": "wiktionary:de:Training",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Training‘ (https://de.wiktionary.org/wiki/Training), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.trainer",
+      "lemma": "Trainer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Trainer",
+        "weiblich": "Trainerin"
+      },
+      "formen": {
+        "dat_pl": "Trainern",
+        "weiblich": "Trainerin",
+        "weiblich_pl": "Trainerinnen"
+      },
+      "frequenzRang": 7674,
+      "quelle": "wiktionary:de:Trainer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Trainer‘ (https://de.wiktionary.org/wiki/Trainer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.turnier",
+      "lemma": "Turnier",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Turniere"
+      },
+      "formen": {
+        "pl": "Turniere",
+        "dat_pl": "Turnieren"
+      },
+      "frequenzRang": 1740,
+      "quelle": "wiktionary:de:Turnier",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Turnier‘ (https://de.wiktionary.org/wiki/Turnier), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.anmeldung",
+      "lemma": "Anmeldung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Anmeldungen"
+      },
+      "formen": {
+        "pl": "Anmeldungen"
+      },
+      "frequenzRang": 3104,
+      "quelle": "wiktionary:de:Anmeldung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anmeldung‘ (https://de.wiktionary.org/wiki/Anmeldung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.tor",
+      "lemma": "Tor",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Tore"
+      },
+      "formen": {
+        "pl": "Tore",
+        "dat_pl": "Toren"
+      },
+      "frequenzRang": 661,
+      "quelle": "wiktionary:de:Tor",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tor‘ (https://de.wiktionary.org/wiki/Tor), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.spieler",
+      "lemma": "Spieler",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Spieler",
+        "weiblich": "Spielerin"
+      },
+      "formen": {
+        "dat_pl": "Spielern",
+        "weiblich": "Spielerin",
+        "weiblich_pl": "Spielerinnen"
+      },
+      "frequenzRang": 3909,
+      "quelle": "wiktionary:de:Spieler",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Spieler‘ (https://de.wiktionary.org/wiki/Spieler), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.teilnehmer",
+      "lemma": "Teilnehmer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Teilnehmer",
+        "weiblich": "Teilnehmerin"
+      },
+      "formen": {
+        "dat_pl": "Teilnehmern",
+        "weiblich": "Teilnehmerin",
+        "weiblich_pl": "Teilnehmerinnen"
+      },
+      "frequenzRang": 938,
+      "quelle": "wiktionary:de:Teilnehmer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Teilnehmer‘ (https://de.wiktionary.org/wiki/Teilnehmer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.schwimmbad",
+      "lemma": "Schwimmbad",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Schwimmbäder"
+      },
+      "formen": {
+        "pl": "Schwimmbäder",
+        "dat_pl": "Schwimmbädern"
+      },
+      "frequenzRang": 6301,
+      "quelle": "wiktionary:de:Schwimmbad",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schwimmbad‘ (https://de.wiktionary.org/wiki/Schwimmbad), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.halle",
+      "lemma": "Halle",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Hallen"
+      },
+      "formen": {
+        "pl": "Hallen"
+      },
+      "frequenzRang": 1217,
+      "quelle": "wiktionary:de:Halle",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Halle‘ (https://de.wiktionary.org/wiki/Halle), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.kurs",
+      "lemma": "Kurs",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kurse"
+      },
+      "formen": {
+        "pl": "Kurse",
+        "dat_pl": "Kursen"
+      },
+      "frequenzRang": 1095,
+      "quelle": "wiktionary:de:Kurs",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kurs‘ (https://de.wiktionary.org/wiki/Kurs), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.erfahrung",
+      "lemma": "Erfahrung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Erfahrungen"
+      },
+      "formen": {
+        "pl": "Erfahrungen"
+      },
+      "frequenzRang": 441,
+      "quelle": "wiktionary:de:Erfahrung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erfahrung‘ (https://de.wiktionary.org/wiki/Erfahrung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.alter",
+      "lemma": "Alter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 131,
+      "quelle": "wiktionary:de:Alter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Alter‘ (https://de.wiktionary.org/wiki/Alter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.art",
+      "lemma": "Art",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Arten"
+      },
+      "formen": {
+        "pl": "Arten"
+      },
+      "frequenzRang": 189,
+      "quelle": "wiktionary:de:Art",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Art‘ (https://de.wiktionary.org/wiki/Art), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.sportart",
+      "lemma": "Sportart",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Sportarten"
+      },
+      "formen": {
+        "pl": "Sportarten"
+      },
+      "frequenzRang": 4738,
+      "quelle": "wiktionary:de:Sportart",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sportart‘ (https://de.wiktionary.org/wiki/Sportart), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.basketball",
+      "lemma": "Basketball",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 3899,
+      "quelle": "wiktionary:de:Basketball",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Basketball‘ (https://de.wiktionary.org/wiki/Basketball), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.volleyball",
+      "lemma": "Volleyball",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 6830,
+      "quelle": "wiktionary:de:Volleyball",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Volleyball‘ (https://de.wiktionary.org/wiki/Volleyball), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.tennis",
+      "lemma": "Tennis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 3794,
+      "quelle": "wiktionary:de:Tennis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tennis‘ (https://de.wiktionary.org/wiki/Tennis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.tischtennis",
+      "lemma": "Tischtennis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 8214,
+      "quelle": "wiktionary:de:Tischtennis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tischtennis‘ (https://de.wiktionary.org/wiki/Tischtennis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.handball",
+      "lemma": "Handball",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 4547,
+      "quelle": "wiktionary:de:Handball",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Handball‘ (https://de.wiktionary.org/wiki/Handball), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.vergleich",
+      "lemma": "Vergleich",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Vergleiche"
+      },
+      "formen": {
+        "pl": "Vergleiche",
+        "dat_pl": "Vergleichen"
+      },
+      "frequenzRang": 598,
+      "quelle": "wiktionary:de:Vergleich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vergleich‘ (https://de.wiktionary.org/wiki/Vergleich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.unterschied",
+      "lemma": "Unterschied",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Unterschiede"
+      },
+      "formen": {
+        "pl": "Unterschiede",
+        "dat_pl": "Unterschieden"
+      },
+      "frequenzRang": 1647,
+      "quelle": "wiktionary:de:Unterschied",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Unterschied‘ (https://de.wiktionary.org/wiki/Unterschied), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.kraft",
+      "lemma": "Kraft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kräfte"
+      },
+      "formen": {
+        "pl": "Kräfte",
+        "dat_pl": "Kräften"
+      },
+      "frequenzRang": 583,
+      "quelle": "wiktionary:de:Kraft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kraft‘ (https://de.wiktionary.org/wiki/Kraft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.sieg",
+      "lemma": "Sieg",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Siege"
+      },
+      "formen": {
+        "pl": "Siege",
+        "dat_pl": "Siegen"
+      },
+      "frequenzRang": 758,
+      "quelle": "wiktionary:de:Sieg",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sieg‘ (https://de.wiktionary.org/wiki/Sieg), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.ergebnis",
+      "lemma": "Ergebnis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Ergebnisse"
+      },
+      "formen": {
+        "pl": "Ergebnisse",
+        "dat_pl": "Ergebnissen"
+      },
+      "frequenzRang": 375,
+      "quelle": "wiktionary:de:Ergebnis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ergebnis‘ (https://de.wiktionary.org/wiki/Ergebnis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.gegner",
+      "lemma": "Gegner",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Gegner",
+        "weiblich": "Gegnerin"
+      },
+      "formen": {
+        "dat_pl": "Gegnern",
+        "weiblich": "Gegnerin",
+        "weiblich_pl": "Gegnerinnen"
+      },
+      "frequenzRang": 4517,
+      "quelle": "wiktionary:de:Gegner",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gegner‘ (https://de.wiktionary.org/wiki/Gegner), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.wettbewerb",
+      "lemma": "Wettbewerb",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Wettbewerbe"
+      },
+      "formen": {
+        "pl": "Wettbewerbe",
+        "dat_pl": "Wettbewerben"
+      },
+      "frequenzRang": 1448,
+      "quelle": "wiktionary:de:Wettbewerb",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wettbewerb‘ (https://de.wiktionary.org/wiki/Wettbewerb), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.beginn",
+      "lemma": "Beginn",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 701,
+      "quelle": "wiktionary:de:Beginn",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Beginn‘ (https://de.wiktionary.org/wiki/Beginn), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.mal",
+      "lemma": "Mal",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Male"
+      },
+      "formen": {
+        "pl": "Male",
+        "dat_pl": "Malen"
+      },
+      "frequenzRang": 56,
+      "quelle": "wiktionary:de:Mal",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mal‘ (https://de.wiktionary.org/wiki/Mal), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.fit",
+      "lemma": "fit",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "fitte",
+        "endung_en": "fitten",
+        "endung_er": "fitter",
+        "endung_es": "fittes",
+        "endung_em": "fittem"
+      },
+      "frequenzRang": 2762,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.sportlich",
+      "lemma": "sportlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "sportliche",
+        "endung_en": "sportlichen",
+        "endung_er": "sportlicher",
+        "endung_es": "sportliches",
+        "endung_em": "sportlichem",
+        "komparativ": "sportlicher",
+        "superlativ": "sportlichsten",
+        "superlativ_e": "sportlichste"
+      },
+      "frequenzRang": 1967,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.zwar",
+      "lemma": "zwar",
+      "wortart": "adverb",
+      "frequenzRang": 221,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.stadion",
+      "lemma": "Stadion",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Stadien"
+      },
+      "formen": {
+        "pl": "Stadien"
+      },
+      "frequenzRang": 1814,
+      "quelle": "wiktionary:de:Stadion",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stadion‘ (https://de.wiktionary.org/wiki/Stadion), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.schiedsrichter",
+      "lemma": "Schiedsrichter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Schiedsrichter",
+        "weiblich": "Schiedsrichterin"
+      },
+      "formen": {
+        "dat_pl": "Schiedsrichtern",
+        "weiblich": "Schiedsrichterin",
+        "weiblich_pl": "Schiedsrichterinnen"
+      },
+      "frequenzRang": 5688,
+      "quelle": "wiktionary:de:Schiedsrichter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schiedsrichter‘ (https://de.wiktionary.org/wiki/Schiedsrichter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.fan",
+      "lemma": "Fan",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Fans"
+      },
+      "formen": {
+        "pl": "Fans"
+      },
+      "frequenzRang": 631,
+      "quelle": "wiktionary:de:Fan",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fan‘ (https://de.wiktionary.org/wiki/Fan), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.zuschauer",
+      "lemma": "Zuschauer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zuschauer",
+        "weiblich": "Zuschauerin"
+      },
+      "formen": {
+        "dat_pl": "Zuschauern",
+        "weiblich": "Zuschauerin",
+        "weiblich_pl": "Zuschauerinnen"
+      },
+      "frequenzRang": 1260,
+      "quelle": "wiktionary:de:Zuschauer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zuschauer‘ (https://de.wiktionary.org/wiki/Zuschauer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.niederlage",
+      "lemma": "Niederlage",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Niederlagen"
+      },
+      "formen": {
+        "pl": "Niederlagen"
+      },
+      "frequenzRang": 1762,
+      "quelle": "wiktionary:de:Niederlage",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Niederlage‘ (https://de.wiktionary.org/wiki/Niederlage), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.unentschieden",
+      "lemma": "unentschieden",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "gebrauch": "nur prädikativ und adverbial (Das Spiel endet unentschieden.)"
+      },
+      "frequenzRang": 4928,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.saison",
+      "lemma": "Saison",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Saisons"
+      },
+      "formen": {
+        "pl": "Saisons"
+      },
+      "frequenzRang": 643,
+      "quelle": "wiktionary:de:Saison",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Saison‘ (https://de.wiktionary.org/wiki/Saison), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.meister",
+      "lemma": "Meister",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Meister",
+        "weiblich": "Meisterin"
+      },
+      "formen": {
+        "dat_pl": "Meistern",
+        "weiblich": "Meisterin",
+        "weiblich_pl": "Meisterinnen"
+      },
+      "frequenzRang": 7192,
+      "quelle": "wiktionary:de:Meister",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Meister‘ (https://de.wiktionary.org/wiki/Meister), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.klettern",
+      "lemma": "klettern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "klettern",
+        "praes_ich": "klettere",
+        "praes_du": "kletterst",
+        "praes_er_sie_es": "klettert",
+        "praes_wir": "klettern",
+        "praes_ihr": "klettert",
+        "praes_sie_Sie": "klettern",
+        "partizip_2": "geklettert"
+      },
+      "frequenzRang": 4075,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.kosten",
+      "lemma": "Kosten",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 309,
+      "quelle": "wiktionary:de:Kosten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kosten‘ (https://de.wiktionary.org/wiki/Kosten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.ausprobieren",
+      "lemma": "ausprobieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "aus"
+      },
+      "formen": {
+        "infinitiv": "ausprobieren",
+        "verbzusatz": "aus",
+        "praes_ich": "probiere",
+        "praes_du": "probierst",
+        "praes_er_sie_es": "probiert",
+        "praes_wir": "probieren",
+        "praes_ihr": "probiert",
+        "praes_sie_Sie": "probieren",
+        "partizip_2": "ausprobiert"
+      },
+      "frequenzRang": 2668,
+      "quelle": "wiktionary:de:ausprobieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ausprobieren‘ (https://de.wiktionary.org/wiki/ausprobieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.anfaenger",
+      "lemma": "Anfänger",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Anfänger",
+        "weiblich": "Anfängerin"
+      },
+      "formen": {
+        "dat_pl": "Anfängern",
+        "weiblich": "Anfängerin",
+        "weiblich_pl": "Anfängerinnen"
+      },
+      "frequenzRang": 4770,
+      "quelle": "wiktionary:de:Anfänger",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anfänger‘ (https://de.wiktionary.org/wiki/Anfänger), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.duschen",
+      "lemma": "duschen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "duschen",
+        "praes_ich": "dusche",
+        "praes_du": "duschst",
+        "praes_er_sie_es": "duscht",
+        "praes_wir": "duschen",
+        "praes_ihr": "duscht",
+        "praes_sie_Sie": "duschen",
+        "partizip_2": "geduscht"
+      },
+      "frequenzRang": 4271,
+      "quelle": "wiktionary:de:duschen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚duschen‘ (https://de.wiktionary.org/wiki/duschen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.sportplatz",
+      "lemma": "Sportplatz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Sportplätze"
+      },
+      "formen": {
+        "pl": "Sportplätze",
+        "dat_pl": "Sportplätzen"
+      },
+      "frequenzRang": 10162,
+      "quelle": "wiktionary:de:Sportplatz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sportplatz‘ (https://de.wiktionary.org/wiki/Sportplatz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.torwart",
+      "lemma": "Torwart",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Torwarte",
+        "weiblich": "Torwartin"
+      },
+      "formen": {
+        "pl": "Torwarte",
+        "dat_pl": "Torwarten",
+        "weiblich": "Torwartin",
+        "weiblich_pl": "Torwartinnen"
+      },
+      "frequenzRang": 7882,
+      "quelle": "wiktionary:de:Torwart",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Torwart‘ (https://de.wiktionary.org/wiki/Torwart), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a2.e08.s0001",
+      "text": "Welche Sportart machst du gern?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0002",
+      "text": "Ich möchte eine neue Sportart lernen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0003",
+      "text": "Tischtennis ist eine Art Tennis am Tisch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0004",
+      "text": "Mia spielt jeden Dienstag Basketball.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0005",
+      "text": "Spielst du gerne Volleyball?",
+      "quelle": "tatoeba:370499",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #370499 von Wolf (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0006",
+      "text": "Opa Dieter spielt seit vierzig Jahren Tennis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0007",
+      "text": "Can spielt am liebsten Tischtennis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0008",
+      "text": "Handball ist ein bisschen wie Fußball, aber mit der Hand.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0009",
+      "text": "Kannst du schwimmen?",
+      "quelle": "tatoeba:358381",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #358381 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0010",
+      "text": "Schwimmen ist gesund.",
+      "quelle": "tatoeba:992669",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #992669 von Dirk80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0011",
+      "text": "Im Sommer gehe ich jeden Tag ins Schwimmbad.",
+      "quelle": "tatoeba:424739",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #424739 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0012",
+      "text": "Am Montag ist das Schwimmbad geschlossen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0013",
+      "text": "Im Winter trainieren wir in der Halle.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0014",
+      "text": "Im Winter trainieren wir im Schwimmbad.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0015",
+      "text": "Im Sommer trainieren wir draußen auf dem Sportplatz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0016",
+      "text": "Unsere Familie ist sehr sportlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0017",
+      "text": "Ich bin nicht sehr sportlich, aber ich schwimme gern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0018",
+      "text": "Tennis ist teurer als Tischtennis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0019",
+      "text": "Mein Bruder ist sportlicher als ich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0020",
+      "text": "Ich spiele lieber Basketball als Handball.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0021",
+      "text": "Er kann besser schwimmen als ich.",
+      "quelle": "tatoeba:2586927",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2586927 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0022",
+      "text": "Tischtennis ist nicht so teuer wie Tennis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0023",
+      "text": "Machst du Sport in einem Verein?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0024",
+      "text": "Ja, ich spiele Volleyball. Und du?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0025",
+      "text": "Ich schwimme. Wo trainiert ihr denn?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0026",
+      "text": "Wir trainieren in der Halle neben der Schule.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0027",
+      "text": "Mein Bruder spielt lieber Tennis als Fußball.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0028",
+      "text": "Basketball ist schneller als Volleyball, aber ich spiele lieber Volleyball.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0029",
+      "text": "Wir vergleichen Fußball und Handball.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0030",
+      "text": "Vergleich dich nicht immer mit deinem Bruder!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0031",
+      "text": "Es gibt einen großen Unterschied.",
+      "quelle": "tatoeba:2213176",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2213176 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0032",
+      "text": "Was ist der Unterschied zwischen Handball und Basketball?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0033",
+      "text": "Das macht keinen Unterschied.",
+      "quelle": "tatoeba:450041",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #450041 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0034",
+      "text": "Handball und Basketball sind ähnlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0035",
+      "text": "Das klingt ähnlich.",
+      "quelle": "tatoeba:1107138",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1107138 von Haehnchenpaella (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0036",
+      "text": "Paula ist genauso schnell wie Ida.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0037",
+      "text": "Mir geht es ganz genauso.",
+      "quelle": "tatoeba:6799924",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6799924 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0038",
+      "text": "Elif schwimmt gut, und ihre Schwester ebenso.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0039",
+      "text": "Pausen sind ebenso wichtig wie das Training.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0040",
+      "text": "Ich bin eher langsam, aber ich habe viel Kraft.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0041",
+      "text": "Mia ist eher ruhig, aber im Spiel ist sie laut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0042",
+      "text": "Im Schwimmbad darf man nicht rennen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0043",
+      "text": "Wer springt am höchsten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0044",
+      "text": "Ida springt am höchsten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0045",
+      "text": "Ida ist ins Wasser gesprungen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0046",
+      "text": "Wirf den Ball zu mir!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0047",
+      "text": "Can kann den Ball sehr weit werfen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0048",
+      "text": "Man darf andere Spieler nicht treten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0049",
+      "text": "Nach dem Spiel habe ich keine Kraft mehr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0050",
+      "text": "Am liebsten spiele ich Handball.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0051",
+      "text": "Wer spielt am besten Tennis?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0052",
+      "text": "Was ist gesünder, Schwimmen oder Laufen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0053",
+      "text": "Bist du genauso schnell wie dein Bruder?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0054",
+      "text": "Nein, er ist schneller als ich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0055",
+      "text": "Und wer springt höher?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0056",
+      "text": "Ich springe höher als er.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0057",
+      "text": "Meine Schwester ist sportlicher als ich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0058",
+      "text": "Ich finde Schwimmen gesünder als Laufen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0059",
+      "text": "Der Verein hat dreißig Mitglieder.",
+      "quelle": "tatoeba:341494",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #341494 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0060",
+      "text": "Ich möchte Mitglied werden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0061",
+      "text": "Der Beitrag für Kinder ist acht Euro im Monat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0062",
+      "text": "Kann ich den Beitrag bar bezahlen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0063",
+      "text": "Die Kosten für den Ball zahlt der Verein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0064",
+      "text": "Der Kurs kostet fünf Euro je Stunde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0065",
+      "text": "Ich schicke die Anmeldung per Post.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0066",
+      "text": "Wir trainieren zweimal in der Woche.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0067",
+      "text": "Wann ist das Training?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0068",
+      "text": "Das Training ist montags und donnerstags.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0069",
+      "text": "Kommst du morgen zum Training?",
+      "quelle": "tatoeba:5952569",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5952569 von felvideki (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0070",
+      "text": "Die Trainerin erklärt die Übung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0071",
+      "text": "Ja, du musst jeden Tag üben.",
+      "quelle": "tatoeba:766613",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #766613 von dima555 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0072",
+      "text": "Für den Kurs brauchst du einen Ball.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0073",
+      "text": "Am Sonntag spielen wir gegen den Meister.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0074",
+      "text": "Wir laufen zweimal um den Sportplatz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0075",
+      "text": "Unser Weg zur Halle geht durch den Park.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0076",
+      "text": "Guten Tag, ich interessiere mich für einen Kurs.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0077",
+      "text": "Schön! Für welchen Kurs denn?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0078",
+      "text": "Für Tischtennis. Was kostet der Kurs?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0079",
+      "text": "Er kostet fünf Euro je Stunde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0080",
+      "text": "Ich möchte Mitglied im Verein werden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0081",
+      "text": "Wie viel kostet der Kurs im Monat?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0082",
+      "text": "Selin hat zwei Tore gemacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0083",
+      "text": "Unser Torwart ist sehr gut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0084",
+      "text": "Eine Mannschaft im Fußball hat elf Spieler.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0085",
+      "text": "Der Gegner ist heute sehr stark.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0086",
+      "text": "Die Schiedsrichterin kennt alle Regeln.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0087",
+      "text": "Das war ein toller Sieg!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0088",
+      "text": "Eine Niederlage ist nicht so schlimm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0089",
+      "text": "Aus einer Niederlage kann man viel lernen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0090",
+      "text": "Das Spiel endet unentschieden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0091",
+      "text": "Das Ergebnis ist drei zu eins für uns.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0092",
+      "text": "Im Juni gibt es einen Wettbewerb im Schwimmen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0093",
+      "text": "Unsere Mannschaft ist Meister geworden!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0094",
+      "text": "Wer wird dieses Jahr Meister?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0095",
+      "text": "Die neue Saison beginnt im September.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0096",
+      "text": "In dieser Saison haben wir oft gewonnen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0097",
+      "text": "Mein Opa ist ein großer Fan von Handball.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0098",
+      "text": "Viele Zuschauer sind gekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0099",
+      "text": "Viele Fans sind ins Stadion gekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0100",
+      "text": "Die Zuschauer freuen sich über das Tor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0101",
+      "text": "Yazan ist schnell zum Tor gerannt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0102",
+      "text": "Der Torwart ist hoch gesprungen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0103",
+      "text": "Wir sind mit dem Bus zum Turnier gefahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0104",
+      "text": "Elif ist 500 Meter geschwommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0105",
+      "text": "Am Wochenende sind wir ins Stadion gegangen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0106",
+      "text": "Wie war das Spiel gestern?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0107",
+      "text": "Super! Wir haben drei zu eins gewonnen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0108",
+      "text": "Toll! Wer hat die Tore gemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0109",
+      "text": "Jan hat zwei Tore gemacht und Emre eins.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0110",
+      "text": "Unsere Spielerinnen haben das Spiel gewonnen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0111",
+      "text": "Hast du dich schon angemeldet?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0112",
+      "text": "Nimmst du am Turnier teil?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0113",
+      "text": "Der Kurs hat zwölf Teilnehmer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0114",
+      "text": "Der Kurs ist auch für Anfänger.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0115",
+      "text": "Ich bin Anfängerin, aber ich lerne schnell.",
+      "quelle": "tatoeba:2328015",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2328015 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0116",
+      "text": "Hast du Erfahrung?",
+      "quelle": "tatoeba:3173441",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3173441 von dinkel_girl (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0117",
+      "text": "Ab welchem Alter kann man mitmachen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0118",
+      "text": "Der Beginn ist um 17 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0119",
+      "text": "Ich bin zum ersten Mal im Stadion.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0120",
+      "text": "Das nächste Mal gewinnen wir!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0121",
+      "text": "Das nächste Spiel gewinnen wir!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0122",
+      "text": "Nach dem Sport dusche ich immer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0123",
+      "text": "Sie duscht jeden Abend.",
+      "quelle": "tatoeba:13726394",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13726394 von Waldelfe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e08.s0124",
+      "text": "Tennis ist zwar teuer, aber es macht viel Spaß.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0125",
+      "text": "Wir trainieren in der Halle, weil es draußen regnet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0126",
+      "text": "Ich freue mich auf das Training.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0127",
+      "text": "Interessierst du dich für Basketball?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0128",
+      "text": "Beeil dich, das Training beginnt gleich!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0129",
+      "text": "Möchtest du nicht auch Basketball spielen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0130",
+      "text": "Nein, ich gehe lieber schwimmen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0131",
+      "text": "Warum gehst du lieber schwimmen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0132",
+      "text": "Weil Schwimmen gesund ist und mir viel Spaß macht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0133",
+      "text": "Ich möchte Klettern einmal ausprobieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0134",
+      "text": "Ich möchte mich anmelden. Wann ist der Beginn?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0135",
+      "text": "Neue Kurse in unserem Verein!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0136",
+      "text": "Ab September gibt es bei uns neue Kurse für Kinder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0137",
+      "text": "Basketball: dienstags und freitags von 16 bis 17 Uhr in der Halle.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0138",
+      "text": "Schwimmen: mittwochs um 15 Uhr im Schwimmbad am Markt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0139",
+      "text": "Klettern: freitags von 17 bis 18 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0140",
+      "text": "Alle Kurse sind auch für Anfänger geeignet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0141",
+      "text": "Das erste Training ist für alle kostenlos.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0142",
+      "text": "Danach kostet ein Kurs zwölf Euro im Monat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0143",
+      "text": "Mitglieder zahlen nur acht Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0144",
+      "text": "Bitte bringt Wasser und Schuhe für die Halle mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0145",
+      "text": "Anmeldung bis Ende August per E-Mail oder im Büro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0146",
+      "text": "Wir freuen uns auf euch!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0147",
+      "text": "Die Kinder klettern am Freitag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0148",
+      "text": "Das erste Training kostet zwölf Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0149",
+      "text": "Beim Klettern machen zehn Kinder mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0150",
+      "text": "Wie viel zahlen Mitglieder für einen Kurs?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0151",
+      "text": "Sie zahlen acht Euro im Monat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0152",
+      "text": "Sie zahlen zwölf Euro im Monat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0153",
+      "text": "Für Mitglieder ist der Kurs immer kostenlos.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0154",
+      "text": "Wie kann man sich anmelden?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0155",
+      "text": "Per E-Mail oder im Büro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0156",
+      "text": "Nur per Post.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0157",
+      "text": "Melde dich per E-Mail für einen Kurs an. Schreib deinen Namen, dein Alter und den Kurs.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0158",
+      "text": "Liebe Frau Hartmann, ich heiße Selin Aydın und bin elf Jahre alt. Ich möchte mich zum Klettern anmelden. Ich habe noch keine Erfahrung, aber ich möchte es gern ausprobieren. Ist der Kurs auch für Anfänger? Wann ist der Beginn? Viele Grüße, Selin Aydın",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0159",
+      "text": "Training für das Turnier",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0160",
+      "text": "Am Samstag hat unser Verein ein Turnier.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0161",
+      "text": "Yazan und Jan trainieren dafür mit Trainerin Helene.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0162",
+      "text": "Erst lauft ihr zweimal um den Sportplatz!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0163",
+      "text": "Yazan rennt sofort los. Er ist schneller als Jan.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0164",
+      "text": "Warte, Yazan! Du bist zu schnell für mich!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0165",
+      "text": "Komm, Jan, du schaffst das!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0166",
+      "text": "Danach üben die Jungen vor dem Tor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0167",
+      "text": "Jan macht die meisten Tore.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0168",
+      "text": "Du bist zwar langsamer als ich, aber du triffst besser!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0169",
+      "text": "Und du rennst am schnellsten. Wir sind ein gutes Team!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0170",
+      "text": "Jetzt erkläre ich euch die Regeln für das Turnier.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0171",
+      "text": "Jedes Spiel dauert zehn Minuten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0172",
+      "text": "Nur der Torwart darf den Ball mit der Hand spielen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0173",
+      "text": "Und man darf keinen Gegner treten!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0174",
+      "text": "Was passiert bei einem Unentschieden?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0175",
+      "text": "Dann spielen wir noch fünf Minuten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0176",
+      "text": "Nach dem Training duschen die Jungen und ruhen sich aus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0177",
+      "text": "Ich freue mich so auf Samstag!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0178",
+      "text": "Wer läuft schneller, Yazan oder Jan?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0179",
+      "text": "Yazan läuft schneller.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0180",
+      "text": "Jan läuft schneller.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0181",
+      "text": "Wer macht die meisten Tore?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0182",
+      "text": "Yazan macht die meisten Tore.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0183",
+      "text": "Wie lange dauert ein Spiel?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0184",
+      "text": "Ein Spiel dauert zehn Minuten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0185",
+      "text": "Ein Spiel dauert fünf Minuten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0186",
+      "text": "Worauf freut sich Jan?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0187",
+      "text": "Er freut sich auf das Turnier am Samstag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0188",
+      "text": "Er freut sich auf das Training am Montag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0189",
+      "text": "Wie war das Training heute?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0190",
+      "text": "Gut, aber wir sind sehr viel gerannt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0191",
+      "text": "Und wann ist das Turnier?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0192",
+      "text": "Das Turnier ist schon am Samstag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0193",
+      "text": "Laylā und Mia melden sich an",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0194",
+      "text": "Laylā und Mia wollen Basketball spielen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0195",
+      "text": "In der Halle treffen sie die Trainerin, Frau Schulz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0196",
+      "text": "Guten Tag! Wir möchten uns für Basketball anmelden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0197",
+      "text": "Schön! Wie heißt ihr, und wie alt seid ihr?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0198",
+      "text": "Ich heiße Mia und bin zwölf.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0199",
+      "text": "Und ich bin Laylā, ich bin elf.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0200",
+      "text": "Gut, der Kurs ist für Kinder von 10 bis 13 Jahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0201",
+      "text": "Habt ihr schon Erfahrung?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0202",
+      "text": "Ich habe zwei Jahre in der Schule gespielt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0203",
+      "text": "Ich bin Anfängerin. Ist das ein Problem?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0204",
+      "text": "Nein, gar kein Problem! Viele Teilnehmer sind Anfänger.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0205",
+      "text": "Und was kostet der Kurs?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0206",
+      "text": "Für Mitglieder kostet er acht Euro, sonst zwölf Euro im Monat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0207",
+      "text": "Und wann ist das Training genau?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0208",
+      "text": "Zweimal in der Woche, dienstags und freitags um 16 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0209",
+      "text": "Super! Dann melden wir uns gleich an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0210",
+      "text": "Gern. Bringt das nächste Mal bitte Schuhe für die Halle mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0211",
+      "text": "Wie alt ist Laylā?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0212",
+      "text": "Laylā ist elf Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0213",
+      "text": "Laylā ist zwölf Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0214",
+      "text": "Wer hat schon Erfahrung?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0215",
+      "text": "Mia hat schon Erfahrung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0216",
+      "text": "Laylā hat schon Erfahrung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0217",
+      "text": "Was kostet der Kurs für Mitglieder?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0218",
+      "text": "Für Mitglieder kostet der Kurs acht Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0219",
+      "text": "Für Mitglieder ist der Kurs kostenlos.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0220",
+      "text": "Wie oft ist das Training?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0221",
+      "text": "Das Training ist zweimal in der Woche.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0222",
+      "text": "Das Training ist einmal in der Woche.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0223",
+      "text": "Volleyball spiele ich lieber als Tischtennis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0224",
+      "text": "Emre ist ein Jahr älter als Jan.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0225",
+      "text": "Der Beitrag ist für Erwachsene höher als für Kinder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0226",
+      "text": "Mein Vater ist schon lange Mitglied im Verein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0227",
+      "text": "Heute ist kein Training, die Halle ist geschlossen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0228",
+      "text": "Nehmt ihr am Turnier im Juni teil?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0229",
+      "text": "Kopf hoch! Nach einer Niederlage kommt auch wieder ein Sieg.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0230",
+      "text": "Das Ergebnis war zwei zu zwei, also unentschieden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0231",
+      "text": "Wir haben heute Tischtennis ausprobiert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0232",
+      "text": "Das Spiel beginnt später, weil es so stark regnet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0233",
+      "text": "Hallo Elif! Kommst du heute mit ins Schwimmbad?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0234",
+      "text": "Heute nicht, ich habe Training im Verein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0235",
+      "text": "Schade! Welchen Sport machst du denn im Verein?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0236",
+      "text": "Ich spiele Handball, zweimal in der Woche.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0237",
+      "text": "Hast du dich schon für das Turnier angemeldet?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0238",
+      "text": "Nein, noch nicht. Bis wann geht die Anmeldung?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0239",
+      "text": "Bis Freitag, aber du kannst dich auch online anmelden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0240",
+      "text": "Gut, dann melde ich mich heute Abend online an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0241",
+      "text": "Handball ist schneller als Basketball.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0242",
+      "text": "Am liebsten schwimme ich, weil es gesund ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0243",
+      "text": "Tischtennis ist billiger als Tennis, aber genauso schön.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0244",
+      "text": "Was machst du am liebsten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0245",
+      "text": "Am liebsten klettere ich mit meinem Vater.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0246",
+      "text": "Ida spielt besser Basketball als ihre Schwester.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0247",
+      "text": "Volleyball und Basketball sind nicht sehr ähnlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0248",
+      "text": "Ich möchte mich für den Kurs im Schwimmbad anmelden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0249",
+      "text": "Wann und wie oft ist der Kurs?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0250",
+      "text": "Welche Kosten gibt es für Kinder?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0251",
+      "text": "Der Beitrag ist sechs Euro im Monat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0252",
+      "text": "Ich melde mich für den Kurs an, weil ich fitter werden will.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0253",
+      "text": "Guten Tag, ich möchte meine Tochter für den Kurs anmelden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0254",
+      "text": "Gern. Wie alt ist Ihre Tochter?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0255",
+      "text": "Sie ist neun. Wann ist das Training?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0256",
+      "text": "Jeden Mittwoch von 15 bis 16 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0257",
+      "text": "Wie war das Turnier am Samstag?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0258",
+      "text": "Wir haben zwar nicht gewonnen, aber es war toll.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0259",
+      "text": "Und wie war das Ergebnis im letzten Spiel?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0260",
+      "text": "Es war unentschieden, eins zu eins.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0261",
+      "text": "Selin spielt lieber Handball als Volleyball.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0262",
+      "text": "Schwimmen ist gesünder als Fußball, und es macht mir mehr Spaß.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0263",
+      "text": "Wie viel kostet der Kurs, und wann beginnt er?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e08.s0264",
+      "text": "Heute spielen wir ohne unseren Torwart.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a2.e08.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Sportarten benennen und zwei Sportarten vergleichen.",
+        "tr": "Spor dallarının adlarını söyleyebilir ve iki spor dalını karşılaştırabilirim.",
+        "ar": "أستطيع أن أسمّي أنواع الرياضة وأن أقارن بين نوعين منها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e08.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.sportart",
+          "ablenker": ["de.a2.e01.hobby", "de.a2.e01.freizeit"]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e08.basketball", "de.a2.e08.volleyball", "de.a2.e08.tennis", "de.a2.e08.tischtennis", "de.a2.e08.handball"]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e08.schwimmbad",
+          "ablenker": ["de.a2.e08.halle", "de.a2.e08.sportplatz"]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e08.s0013",
+          "ablenker": ["de.a2.e08.s0014", "de.a2.e08.s0015"]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0018",
+          "wort": 3,
+          "ablenker": ["wie", "von"]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0023"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0024"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0025"
+            }
+          ],
+          "antwort": "de.a2.e08.s0026",
+          "ablenker": ["de.a2.e08.s0018", "de.a2.e08.s0012", "de.a2.e08.s0002"]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.klettern",
+          "ablenker": ["de.a2.e08.schwimmen", "de.a1.e08.laufen"]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e08.s0004",
+          "nach": "ziel",
+          "alternativen": ["Jeden Dienstag spielt Mia Basketball.", "Basketball spielt Mia jeden Dienstag."],
+          "ablenker": ["Montag", "Handball"]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e08.s0019",
+          "ablenker": ["de.a2.e08.s0016", "de.a2.e08.s0017"]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0007",
+          "wort": 3,
+          "ablenker": ["lieber", "gern"]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e08.s0020",
+          "alternativen": [
+            "Lieber spiele ich Basketball als Handball.",
+            "Basketball spiele ich lieber als Handball.",
+            "Ich spiele Basketball lieber als Handball.",
+            "Lieber als Handball spiele ich Basketball."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e08.s0027",
+          "nach": "ziel",
+          "alternativen": [
+            "Mein Bruder spielt Tennis lieber als Fußball.",
+            "Mein Bruder mag Tennis lieber als Fußball.",
+            "Lieber spielt mein Bruder Tennis als Fußball.",
+            "Tennis spielt mein Bruder lieber als Fußball."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e08.halle",
+          "ablenker": ["de.a1.e01.hallo"]
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e08.s0003"
+        },
+        {
+          "schluessel": "de.a2.e08.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e08.s0028"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e08.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Unterschiede beschreiben und sagen, wer am schnellsten ist.",
+        "tr": "Farkları anlatabilir ve en hızlının kim olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أصف الفروق وأن أقول مَن هو الأسرع."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e08.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.unterschied",
+          "ablenker": ["de.a2.e08.kraft", "de.a1.e08.idee"]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e08.rennen", "de.a2.e08.springen", "de.a2.e08.werfen", "de.a2.e08.treten", "de.a2.e08.klettern"]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e08.aehnlich",
+          "ablenker": ["de.a2.e08.sportlich", "de.a2.e08.fit"]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e08.s0044",
+          "ablenker": ["de.a2.e08.s0043", "de.a2.e08.s0045"]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0036",
+          "wort": 4,
+          "ablenker": ["als", "von"]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0053"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0054"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0055"
+            }
+          ],
+          "antwort": "de.a2.e08.s0056",
+          "ablenker": ["de.a2.e08.s0047", "de.a2.e08.s0049", "de.a2.e08.s0038"]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.vergleichen",
+          "ablenker": ["de.a1.e07.erklaeren", "de.a1.e08.versuchen"]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0040",
+          "wort": 7,
+          "ablenker": ["viele", "vielen"]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e08.s0039",
+          "nach": "ziel",
+          "alternativen": ["Ebenso wichtig wie das Training sind Pausen."],
+          "ablenker": ["als", "Spiel"]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e08.s0033",
+          "ablenker": ["de.a2.e08.s0031", "de.a2.e08.s0035"]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e08.s0051",
+          "alternativen": ["Wer spielt Tennis am besten?"]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e08.s0057",
+          "nach": "ziel",
+          "alternativen": ["Meine Schwester ist sportlicher als ich bin."]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e08.rennen",
+          "ablenker": ["de.a1.e12.nennen"]
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e08.s0029"
+        },
+        {
+          "schluessel": "de.a2.e08.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e08.s0058"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e08.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann im Verein nach Training, Beitrag und Kosten fragen.",
+        "tr": "Kulüpte antrenmanı, aidatı ve masrafları sorabilirim.",
+        "ar": "أستطيع أن أسأل في النادي عن التدريب والاشتراك والتكاليف."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e08.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.verein",
+          "ablenker": ["de.a1.e08.mannschaft", "de.a1.e08.gruppe"]
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e08.mitglied", "de.a2.e08.beitrag", "de.a2.e08.training", "de.a2.e08.trainer", "de.a2.e08.kurs"]
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0072",
+          "wort": 1,
+          "ablenker": ["dem", "der"]
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0076"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0077"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0078"
+            }
+          ],
+          "antwort": "de.a2.e08.s0079",
+          "ablenker": ["de.a2.e08.s0068", "de.a2.e08.s0063", "de.a2.e08.s0020"]
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.ueben",
+          "ablenker": ["de.a1.e08.spielen", "de.a1.e08.gewinnen"]
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e08.s0061",
+          "nach": "ziel",
+          "alternativen": [
+            "Für Kinder ist der Beitrag acht Euro im Monat.",
+            "Im Monat ist der Beitrag für Kinder acht Euro.",
+            "Der Beitrag ist für Kinder acht Euro im Monat.",
+            "Der Beitrag für Kinder ist im Monat acht Euro.",
+            "Der Beitrag ist im Monat für Kinder acht Euro.",
+            "Für Kinder ist der Beitrag im Monat acht Euro."
+          ],
+          "ablenker": ["dem", "Jahr"]
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a08",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e08.s0068",
+          "ablenker": ["de.a2.e08.s0067", "de.a2.e08.s0066"]
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a09",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a10",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0064",
+          "wort": 5,
+          "ablenker": ["für", "um"]
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0065",
+          "wort": 4,
+          "ablenker": ["pro", "von"]
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e08.s0070",
+          "alternativen": ["Die Übung erklärt die Trainerin."]
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e08.s0080",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich will Mitglied im Verein werden.",
+            "Ich möchte im Verein Mitglied werden.",
+            "Ich möchte Mitglied in dem Verein werden.",
+            "Ich möchte ein Mitglied im Verein werden.",
+            "Ich will im Verein Mitglied werden.",
+            "Ich möchte Vereinsmitglied werden.",
+            "Ich möchte Mitglied des Vereins werden."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.kosten",
+          "ablenker": ["de.a1.e06.preis", "de.a1.e06.geld"]
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e08.s0062"
+        },
+        {
+          "schluessel": "de.a2.e08.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e08.s0081"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e08.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über ein Spiel und ein Turnier berichten.",
+        "tr": "Bir maçı ve bir turnuvayı anlatabilirim.",
+        "ar": "أستطيع أن أتحدّث عن مباراة وعن بطولة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e08.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.turnier",
+          "ablenker": ["de.a1.e08.spiel", "de.a2.e08.saison"]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e08.tor", "de.a2.e08.torwart", "de.a2.e08.spieler", "de.a2.e08.schiedsrichter", "de.a2.e08.zuschauer"]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e08.sieg",
+          "ablenker": ["de.a2.e08.niederlage", "de.a2.e08.ergebnis"]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e08.s0098",
+          "ablenker": ["de.a2.e08.s0099", "de.a2.e08.s0100"]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0103",
+          "wort": 1,
+          "ablenker": ["haben", "hat"]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0106"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0107"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0108"
+            }
+          ],
+          "antwort": "de.a2.e08.s0109",
+          "ablenker": ["de.a2.e08.s0095", "de.a2.e08.s0083", "de.a2.e08.s0097"]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a08",
+          "typ": "paare",
+          "lemmata": ["de.a2.e08.gegner", "de.a2.e08.stadion", "de.a2.e08.fan", "de.a2.e08.meister", "de.a2.e08.wettbewerb"]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0101",
+          "wort": 5,
+          "ablenker": ["gerennt", "rannte"]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e08.s0093",
+          "nach": "ziel",
+          "alternativen": ["Meister ist unsere Mannschaft geworden!"],
+          "ablenker": ["hat", "worden"]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e08.s0088",
+          "ablenker": ["de.a2.e08.s0087", "de.a2.e08.s0090"]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e08.s0073",
+          "alternativen": [
+            "Wir spielen am Sonntag gegen den Meister.",
+            "Gegen den Meister spielen wir am Sonntag.",
+            "Wir spielen gegen den Meister am Sonntag."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e08.s0110",
+          "nach": "ziel",
+          "alternativen": [
+            "Unsere Spieler haben das Spiel gewonnen.",
+            "Das Spiel haben unsere Spielerinnen gewonnen.",
+            "Unsere Spielerinnen haben das Match gewonnen.",
+            "Unsere Spielerinnen gewannen das Spiel."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e08.tor",
+          "ablenker": ["de.a2.e04.tuer"]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e08.s0104",
+          "alternativen": ["Elif ist fünfhundert Meter geschwommen."]
+        },
+        {
+          "schluessel": "de.a2.e08.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e08.s0105"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e08.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann mich für einen Kurs anmelden und Gründe nennen.",
+        "tr": "Bir kursa kaydolabilir ve nedenlerini söyleyebilirim.",
+        "ar": "أستطيع أن أسجّل في دورة وأن أذكر الأسباب."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e08.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.anmelden",
+          "ablenker": ["de.a2.e08.teilnehmen", "de.a2.e08.ausprobieren"]
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e08.anfaenger", "de.a2.e08.erfahrung", "de.a2.e08.alter", "de.a2.e08.beginn", "de.a2.e08.teilnehmer"]
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0126",
+          "wort": 2,
+          "ablenker": ["mir", "sich"]
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0129"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0130"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0131"
+            }
+          ],
+          "antwort": "de.a2.e08.s0132",
+          "ablenker": ["de.a2.e08.s0114", "de.a2.e08.s0118", "de.a2.e08.s0112"]
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e08.duschen",
+          "ablenker": ["de.a2.e04.waschen", "de.a1.e12.schlafen"]
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e08.s0120",
+          "ablenker": ["de.a2.e08.s0121", "de.a2.e08.s0119"]
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e08.s0125",
+          "nach": "ziel",
+          "alternativen": ["Weil es draußen regnet, trainieren wir in der Halle."],
+          "ablenker": ["Sommer", "dem"]
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a09",
+          "typ": "lesen_fragen",
+          "titel": "de.a2.e08.s0135",
+          "absaetze": [
+            "de.a2.e08.s0136",
+            "de.a2.e08.s0137",
+            "de.a2.e08.s0138",
+            "de.a2.e08.s0139",
+            "de.a2.e08.s0140",
+            "de.a2.e08.s0141",
+            "de.a2.e08.s0142",
+            "de.a2.e08.s0143",
+            "de.a2.e08.s0144",
+            "de.a2.e08.s0145",
+            "de.a2.e08.s0146"
+          ],
+          "glossen": ["de.a2.e08.anfaenger", "de.a2.e08.mitglied", "de.a2.e08.anmeldung"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e08.s0147",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e08.s0148",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e08.s0149",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e08.s0150",
+              "antwort": "de.a2.e08.s0151",
+              "ablenker": ["de.a2.e08.s0152", "de.a2.e08.s0153"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e08.s0154",
+              "antwort": "de.a2.e08.s0155",
+              "ablenker": ["de.a2.e08.s0156"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.zwar",
+          "ablenker": ["de.a1.e03.aber", "de.a1.e08.denn"]
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a11",
+          "typ": "satzbau",
+          "ziel": "de.a2.e08.s0111"
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a12",
+          "typ": "frei",
+          "ziel": "de.a2.e08.s0133",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich möchte einmal Klettern ausprobieren.",
+            "Ich will Klettern einmal ausprobieren.",
+            "Ich möchte mal Klettern ausprobieren.",
+            "Ich möchte Klettern mal ausprobieren.",
+            "Ich möchte das Klettern einmal ausprobieren.",
+            "Ich möchte einmal das Klettern ausprobieren."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e08.s0117",
+          "ablenker": ["de.a2.e08.s0118", "de.a2.e08.s0114"]
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e08.s0122"
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.a2.e08.s0157",
+          "woerter": {
+            "min": 35,
+            "max": 45
+          },
+          "pflichtwoerter": ["Kurs", "anmelden"],
+          "muster": ["de.a2.e08.s0158"]
+        },
+        {
+          "schluessel": "de.a2.e08.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e08.s0134"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e08.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über Training und Anmeldung verstehen.",
+        "tr": "Antrenman ve kayıt hakkında bir hikâyeyi anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن التدريب والتسجيل."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e08.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a2.e08.s0159",
+          "zeilen": [
+            {
+              "satz": "de.a2.e08.s0160"
+            },
+            {
+              "satz": "de.a2.e08.s0161"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0162"
+            },
+            {
+              "satz": "de.a2.e08.s0163"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e08.s0164"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0165"
+            },
+            {
+              "satz": "de.a2.e08.s0166"
+            },
+            {
+              "satz": "de.a2.e08.s0167"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0168"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e08.s0169"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0170"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0171"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0172"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0173"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0174"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0175"
+            },
+            {
+              "satz": "de.a2.e08.s0176"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e08.s0177"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 3,
+              "frage": "de.a2.e08.s0178",
+              "antwort": "de.a2.e08.s0179",
+              "ablenker": ["de.a2.e08.s0180"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a2.e08.s0181",
+              "antwort": "de.a2.e08.s0167",
+              "ablenker": ["de.a2.e08.s0182"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.a2.e08.s0183",
+              "antwort": "de.a2.e08.s0184",
+              "ablenker": ["de.a2.e08.s0185"]
+            },
+            {
+              "nach": 17,
+              "frage": "de.a2.e08.s0186",
+              "antwort": "de.a2.e08.s0187",
+              "ablenker": ["de.a2.e08.s0188"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e08.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0168",
+          "wort": 3,
+          "ablenker": ["langsam", "langsamste"]
+        },
+        {
+          "schluessel": "de.a2.e08.l06.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0189"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0190"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0191"
+            }
+          ],
+          "antwort": "de.a2.e08.s0192",
+          "ablenker": ["de.a2.e08.s0171", "de.a2.e08.s0167"]
+        },
+        {
+          "schluessel": "de.a2.e08.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e08.s0167",
+          "ablenker": ["de.a2.e08.s0182", "de.a2.e08.s0082"]
+        },
+        {
+          "schluessel": "de.a2.e08.l06.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e08.s0171",
+          "nach": "ziel",
+          "alternativen": ["Zehn Minuten dauert jedes Spiel."],
+          "ablenker": ["Stunden", "Jeder"]
+        },
+        {
+          "schluessel": "de.a2.e08.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.a2.e08.s0193",
+          "zeilen": [
+            {
+              "satz": "de.a2.e08.s0194"
+            },
+            {
+              "satz": "de.a2.e08.s0195"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0196"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e08.s0197"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0198"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0199"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e08.s0200"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e08.s0201"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0202"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0203"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e08.s0204"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0205"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e08.s0206"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0207"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e08.s0208"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0209"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e08.s0210"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 5,
+              "frage": "de.a2.e08.s0211",
+              "antwort": "de.a2.e08.s0212",
+              "ablenker": ["de.a2.e08.s0213"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.a2.e08.s0214",
+              "antwort": "de.a2.e08.s0215",
+              "ablenker": ["de.a2.e08.s0216"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a2.e08.s0217",
+              "antwort": "de.a2.e08.s0218",
+              "ablenker": ["de.a2.e08.s0219"]
+            },
+            {
+              "nach": 14,
+              "frage": "de.a2.e08.s0220",
+              "antwort": "de.a2.e08.s0221",
+              "ablenker": ["de.a2.e08.s0222"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e08.l06.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0197"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0198"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0201"
+            }
+          ],
+          "antwort": "de.a2.e08.s0202",
+          "ablenker": ["de.a2.e08.s0205", "de.a2.e08.s0208"]
+        },
+        {
+          "schluessel": "de.a2.e08.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.a2.e08.s0176",
+          "alternativen": [
+            "Die Jungen duschen nach dem Training und ruhen sich aus.",
+            "Die Jungen duschen und ruhen sich nach dem Training aus."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e08.l06.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0200",
+          "wort": 8,
+          "ablenker": ["um", "an"]
+        },
+        {
+          "schluessel": "de.a2.e08.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e08.s0204",
+          "ablenker": ["de.a2.e08.s0203", "de.a2.e08.s0209"]
+        },
+        {
+          "schluessel": "de.a2.e08.l06.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e08.s0209"
+        },
+        {
+          "schluessel": "de.a2.e08.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e08.s0203",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e08.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.a2.e08.s0196"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e08.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann den Wortschatz zu Sport und Verein wiederholen.",
+        "tr": "Spor ve kulüp kelimelerini tekrar edebilirim.",
+        "ar": "أستطيع أن أراجع كلمات الرياضة والنادي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e08.l07.a01",
+          "typ": "paare",
+          "lemmata": ["de.a2.e08.sportart", "de.a2.e08.verein", "de.a2.e08.turnier", "de.a2.e08.erfahrung", "de.a2.e08.kraft"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.art",
+          "ablenker": ["de.a1.e12.ziel", "de.a1.e03.platz"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0224",
+          "wort": 4,
+          "ablenker": ["alt", "ältesten"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e08.s0223",
+          "ablenker": ["de.a2.e08.s0020", "de.a2.e08.s0261"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0233"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0234"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0235"
+            }
+          ],
+          "antwort": "de.a2.e08.s0236",
+          "ablenker": ["de.a2.e08.s0060", "de.a2.e08.s0094", "de.a2.e08.s0123"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.zweimal",
+          "ablenker": ["de.a1.e11.einmal", "de.a1.e08.oft"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0225",
+          "wort": 5,
+          "ablenker": ["hoch", "höchsten"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e08.s0226",
+          "nach": "ziel",
+          "alternativen": [
+            "Mein Vater ist im Verein schon lange Mitglied.",
+            "Schon lange ist mein Vater Mitglied im Verein.",
+            "Mein Vater ist schon lange im Verein Mitglied.",
+            "Im Verein ist mein Vater schon lange Mitglied.",
+            "Schon lange ist mein Vater im Verein Mitglied."
+          ],
+          "ablenker": ["kurz", "Mitglieder"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e08.s0229",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e08.kurs",
+          "ablenker": ["de.a1.e10.kurz"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e08.s0230",
+          "ablenker": ["de.a2.e08.s0091", "de.a2.e08.s0087"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e08.s0228",
+          "alternativen": ["Nehmt ihr im Juni am Turnier teil?"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.unentschieden",
+          "ablenker": ["de.a1.e08.gewinnen", "de.a1.e08.verlieren"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e08.s0241",
+          "nach": "ziel",
+          "alternativen": ["Handball ist ein schnellerer Sport als Basketball."]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a15",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0232",
+          "wort": 8,
+          "ablenker": ["regnen", "Regen"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e08.s0264"
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a17",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e08.vergleich",
+          "ablenker": ["de.a1.e06.problem", "de.a1.e12.thema"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a18",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0237"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0238"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0239"
+            }
+          ],
+          "antwort": "de.a2.e08.s0240",
+          "ablenker": ["de.a2.e08.s0231", "de.a2.e08.s0227"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a19",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e08.s0086",
+          "ablenker": ["de.a2.e08.s0084", "de.a2.e08.s0048"]
+        },
+        {
+          "schluessel": "de.a2.e08.l07.a20",
+          "typ": "sprechen",
+          "satz": "de.a2.e08.s0242"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e08.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann Sportarten vergleichen und mich für einen Kurs anmelden.",
+        "tr": "Spor dallarını karşılaştırabilir ve bir kursa kaydolabilirim.",
+        "ar": "أستطيع أن أقارن بين أنواع الرياضة وأن أسجّل في دورة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e08.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e08.mitglied",
+          "ablenker": ["de.a2.e08.teilnehmer", "de.a2.e08.zuschauer"]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e08.beitrag", "de.a2.e08.anmeldung", "de.a2.e08.training", "de.a2.e08.saison", "de.a2.e08.gegner"]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0246",
+          "wort": 2,
+          "ablenker": ["gut", "beste"]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0253"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0254"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0255"
+            }
+          ],
+          "antwort": "de.a2.e08.s0256",
+          "ablenker": ["de.a2.e08.s0251", "de.a2.e08.s0113"]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e08.s0243",
+          "nach": "ziel",
+          "ablenker": ["wie", "billig"]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a06",
+          "typ": "frei",
+          "ziel": "de.a2.e08.s0261",
+          "nach": "ziel",
+          "alternativen": [
+            "Selin spielt Handball lieber als Volleyball.",
+            "Selin mag Handball lieber als Volleyball.",
+            "Lieber spielt Selin Handball als Volleyball.",
+            "Handball spielt Selin lieber als Volleyball."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e08.s0249",
+          "ablenker": ["de.a2.e08.s0250", "de.a2.e08.s0244"]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a08",
+          "typ": "satzbau",
+          "ziel": "de.a2.e08.s0245",
+          "alternativen": [
+            "Mit meinem Vater klettere ich am liebsten.",
+            "Ich klettere am liebsten mit meinem Vater.",
+            "Ich klettere mit meinem Vater am liebsten."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e08.s0252",
+          "wort": 2,
+          "ablenker": ["mir", "sich"]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e08.ergebnis",
+          "ablenker": ["de.a2.e08.stadion", "de.a2.e08.trainer"]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e08.s0251",
+          "alternativen": ["Der Beitrag ist 6 Euro im Monat."]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0257"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e08.s0258"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e08.s0259"
+            }
+          ],
+          "antwort": "de.a2.e08.s0260",
+          "ablenker": ["de.a2.e08.s0096", "de.a2.e08.s0243"]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e08.s0248",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e08.s0247",
+          "ablenker": ["de.a2.e08.s0034", "de.a2.e08.s0223"]
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a2.e08.s0262"
+        },
+        {
+          "schluessel": "de.a2.e08.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e08.s0263"
+        }
+      ]
+    }
+  ]
+}

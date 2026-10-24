@@ -1,0 +1,3426 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "automatisch_geprueft",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e07",
+    "reihenfolge": 8,
+    "thema": {
+      "de": "In der Schule",
+      "tr": "Okulda",
+      "ar": "في المدرسة"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann sagen, welche Fächer ich habe und was ich gut kann.",
+        "tr": "Hangi derslerim olduğunu ve neyi iyi yapabildiğimi söyleyebilirim.",
+        "ar": "أستطيع أن أقول ما هي موادي الدراسية وما الذي أجيده."
+      },
+      {
+        "de": "Ich kann im Unterricht um Hilfe bitten und einfache Anweisungen verstehen.",
+        "tr": "Derste yardım isteyebilir ve basit yönergeleri anlayabilirim.",
+        "ar": "أستطيع أن أطلب المساعدة في الدرس وأن أفهم تعليمات بسيطة."
+      }
+    ],
+    "symbol": "school",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a1.e07.koennen",
+      "lemma": "können",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "modalverb": "ja",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "können",
+        "praes_ich": "kann",
+        "praes_du": "kannst",
+        "praes_er_sie_es": "kann",
+        "praes_wir": "können",
+        "praes_ihr": "könnt",
+        "praes_sie_Sie": "können"
+      },
+      "frequenzRang": 20,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.muessen",
+      "lemma": "müssen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "modalverb": "ja",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "müssen",
+        "praes_ich": "muss",
+        "praes_du": "musst",
+        "praes_er_sie_es": "muss",
+        "praes_wir": "müssen",
+        "praes_ihr": "müsst",
+        "praes_sie_Sie": "müssen"
+      },
+      "frequenzRang": 45,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.wollen",
+      "lemma": "wollen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "modalverb": "ja",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "wollen",
+        "praes_ich": "will",
+        "praes_du": "willst",
+        "praes_er_sie_es": "will",
+        "praes_wir": "wollen",
+        "praes_ihr": "wollt",
+        "praes_sie_Sie": "wollen"
+      },
+      "frequenzRang": 54,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.sagen",
+      "lemma": "sagen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "sagen",
+        "praes_ich": "sage",
+        "praes_du": "sagst",
+        "praes_er_sie_es": "sagt",
+        "praes_wir": "sagen",
+        "praes_ihr": "sagt",
+        "praes_sie_Sie": "sagen",
+        "imp_du": "sag",
+        "imp_ihr": "sagt"
+      },
+      "frequenzRang": 68,
+      "quelle": "wiktionary:de:sagen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚sagen‘ (https://de.wiktionary.org/wiki/sagen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.fragen",
+      "lemma": "fragen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "fragen",
+        "praes_ich": "frage",
+        "praes_du": "fragst",
+        "praes_er_sie_es": "fragt",
+        "praes_wir": "fragen",
+        "praes_ihr": "fragt",
+        "praes_sie_Sie": "fragen",
+        "imp_du": "frag",
+        "imp_ihr": "fragt"
+      },
+      "frequenzRang": 161,
+      "quelle": "wiktionary:de:fragen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚fragen‘ (https://de.wiktionary.org/wiki/fragen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.hoeren",
+      "lemma": "hören",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "hören",
+        "praes_ich": "höre",
+        "praes_du": "hörst",
+        "praes_er_sie_es": "hört",
+        "praes_wir": "hören",
+        "praes_ihr": "hört",
+        "praes_sie_Sie": "hören",
+        "imp_du": "hör",
+        "imp_ihr": "hört"
+      },
+      "frequenzRang": 126,
+      "quelle": "wiktionary:de:hören",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚hören‘ (https://de.wiktionary.org/wiki/hören), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.zuhoeren",
+      "lemma": "zuhören",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "zu"
+      },
+      "formen": {
+        "infinitiv": "zuhören",
+        "verbzusatz": "zu",
+        "praes_ich": "höre",
+        "praes_du": "hörst",
+        "praes_er_sie_es": "hört",
+        "praes_wir": "hören",
+        "praes_ihr": "hört",
+        "praes_sie_Sie": "hören",
+        "imp_du": "hör",
+        "imp_ihr": "hört"
+      },
+      "frequenzRang": 3644,
+      "quelle": "wiktionary:de:zuhören",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zuhören‘ (https://de.wiktionary.org/wiki/zuhören), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.lesen",
+      "lemma": "lesen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "lesen",
+        "praes_ich": "lese",
+        "praes_du": "liest",
+        "praes_er_sie_es": "liest",
+        "praes_wir": "lesen",
+        "praes_ihr": "lest",
+        "praes_sie_Sie": "lesen",
+        "imp_du": "lies",
+        "imp_ihr": "lest"
+      },
+      "frequenzRang": 237,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.schreiben",
+      "lemma": "schreiben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "schreiben",
+        "praes_ich": "schreibe",
+        "praes_du": "schreibst",
+        "praes_er_sie_es": "schreibt",
+        "praes_wir": "schreiben",
+        "praes_ihr": "schreibt",
+        "praes_sie_Sie": "schreiben",
+        "imp_du": "schreib",
+        "imp_ihr": "schreibt"
+      },
+      "frequenzRang": 175,
+      "quelle": "wiktionary:de:schreiben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚schreiben‘ (https://de.wiktionary.org/wiki/schreiben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.verstehen",
+      "lemma": "verstehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verstehen",
+        "praes_ich": "verstehe",
+        "praes_du": "verstehst",
+        "praes_er_sie_es": "versteht",
+        "praes_wir": "verstehen",
+        "praes_ihr": "versteht",
+        "praes_sie_Sie": "verstehen",
+        "imp_du": "versteh",
+        "imp_ihr": "versteht"
+      },
+      "frequenzRang": 223,
+      "quelle": "wiktionary:de:verstehen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verstehen‘ (https://de.wiktionary.org/wiki/verstehen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.erklaeren",
+      "lemma": "erklären",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erklären",
+        "praes_ich": "erkläre",
+        "praes_du": "erklärst",
+        "praes_er_sie_es": "erklärt",
+        "praes_wir": "erklären",
+        "praes_ihr": "erklärt",
+        "praes_sie_Sie": "erklären",
+        "imp_du": "erklär",
+        "imp_ihr": "erklärt"
+      },
+      "frequenzRang": 322,
+      "quelle": "wiktionary:de:erklären",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erklären‘ (https://de.wiktionary.org/wiki/erklären), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.wiederholen",
+      "lemma": "wiederholen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "wiederholen",
+        "praes_ich": "wiederhole",
+        "praes_du": "wiederholst",
+        "praes_er_sie_es": "wiederholt",
+        "praes_wir": "wiederholen",
+        "praes_ihr": "wiederholt",
+        "praes_sie_Sie": "wiederholen",
+        "imp_du": "wiederhol",
+        "imp_ihr": "wiederholt"
+      },
+      "frequenzRang": 2443,
+      "quelle": "wiktionary:de:wiederholen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wiederholen‘ (https://de.wiktionary.org/wiki/wiederholen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.bekommen",
+      "lemma": "bekommen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bekommen",
+        "praes_ich": "bekomme",
+        "praes_du": "bekommst",
+        "praes_er_sie_es": "bekommt",
+        "praes_wir": "bekommen",
+        "praes_ihr": "bekommt",
+        "praes_sie_Sie": "bekommen"
+      },
+      "frequenzRang": 138,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.schaffen",
+      "lemma": "schaffen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "schaffen",
+        "praes_ich": "schaffe",
+        "praes_du": "schaffst",
+        "praes_er_sie_es": "schafft",
+        "praes_wir": "schaffen",
+        "praes_ihr": "schafft",
+        "praes_sie_Sie": "schaffen",
+        "imp_du": "schaff",
+        "imp_ihr": "schafft"
+      },
+      "frequenzRang": 229,
+      "quelle": "wiktionary:de:schaffen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚schaffen‘ (https://de.wiktionary.org/wiki/schaffen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.helfen",
+      "lemma": "helfen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "helfen",
+        "praes_ich": "helfe",
+        "praes_du": "hilfst",
+        "praes_er_sie_es": "hilft",
+        "praes_wir": "helfen",
+        "praes_ihr": "helft",
+        "praes_sie_Sie": "helfen",
+        "imp_du": "hilf",
+        "imp_ihr": "helft"
+      },
+      "frequenzRang": 240,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.mal",
+      "lemma": "mal",
+      "wortart": "partikel",
+      "frequenzRang": 56,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.dabei",
+      "lemma": "dabei",
+      "wortart": "adverb",
+      "frequenzRang": 115,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.vorbei",
+      "lemma": "vorbei",
+      "wortart": "adverb",
+      "frequenzRang": 508,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.einfach",
+      "lemma": "einfach",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "einfache",
+        "endung_en": "einfachen",
+        "endung_er": "einfacher",
+        "endung_es": "einfaches",
+        "endung_em": "einfachem"
+      },
+      "frequenzRang": 84,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.richtig",
+      "lemma": "richtig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "richtige",
+        "endung_en": "richtigen",
+        "endung_er": "richtiger",
+        "endung_es": "richtiges",
+        "endung_em": "richtigem"
+      },
+      "frequenzRang": 124,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.falsch",
+      "lemma": "falsch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "falsche",
+        "endung_en": "falschen",
+        "endung_er": "falscher",
+        "endung_es": "falsches",
+        "endung_em": "falschem"
+      },
+      "frequenzRang": 340,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.leicht",
+      "lemma": "leicht",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "leichte",
+        "endung_en": "leichten",
+        "endung_er": "leichter",
+        "endung_es": "leichtes",
+        "endung_em": "leichtem"
+      },
+      "frequenzRang": 263,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.schwer",
+      "lemma": "schwer",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "schwere",
+        "endung_en": "schweren",
+        "endung_er": "schwerer",
+        "endung_es": "schweres",
+        "endung_em": "schwerem"
+      },
+      "frequenzRang": 257,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.recht",
+      "lemma": "recht",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "wendung": "recht haben (Du hast recht.)"
+      },
+      "frequenzRang": 139,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.dritte",
+      "lemma": "dritte",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "3.",
+        "art": "Ordinalzahl"
+      },
+      "formen": {
+        "endung_en": "dritten",
+        "endung_er": "dritter",
+        "endung_es": "drittes",
+        "endung_em": "drittem"
+      },
+      "frequenzRang": 376,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.schule",
+      "lemma": "Schule",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schulen"
+      },
+      "formen": {
+        "pl": "Schulen"
+      },
+      "frequenzRang": 253,
+      "quelle": "wiktionary:de:Schule",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schule‘ (https://de.wiktionary.org/wiki/Schule), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.klasse",
+      "lemma": "Klasse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Klassen"
+      },
+      "formen": {
+        "pl": "Klassen"
+      },
+      "frequenzRang": 2613,
+      "quelle": "wiktionary:de:Klasse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Klasse‘ (https://de.wiktionary.org/wiki/Klasse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.lehrer",
+      "lemma": "Lehrer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Lehrer",
+        "weiblich": "Lehrerin"
+      },
+      "formen": {
+        "dat_pl": "Lehrern",
+        "weiblich": "Lehrerin",
+        "weiblich_pl": "Lehrerinnen"
+      },
+      "frequenzRang": 720,
+      "quelle": "wiktionary:de:Lehrer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lehrer‘ (https://de.wiktionary.org/wiki/Lehrer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.schueler",
+      "lemma": "Schüler",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Schüler",
+        "weiblich": "Schülerin"
+      },
+      "formen": {
+        "dat_pl": "Schülern",
+        "weiblich": "Schülerin",
+        "weiblich_pl": "Schülerinnen"
+      },
+      "frequenzRang": 2299,
+      "quelle": "wiktionary:de:Schüler",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schüler‘ (https://de.wiktionary.org/wiki/Schüler), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.pause",
+      "lemma": "Pause",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Pausen"
+      },
+      "formen": {
+        "pl": "Pausen"
+      },
+      "frequenzRang": 1592,
+      "quelle": "wiktionary:de:Pause",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Pause‘ (https://de.wiktionary.org/wiki/Pause), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.plan",
+      "lemma": "Plan",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Pläne"
+      },
+      "formen": {
+        "pl": "Pläne",
+        "dat_pl": "Plänen"
+      },
+      "frequenzRang": 552,
+      "quelle": "wiktionary:de:Plan",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Plan‘ (https://de.wiktionary.org/wiki/Plan), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.buch",
+      "lemma": "Buch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Bücher"
+      },
+      "formen": {
+        "pl": "Bücher",
+        "dat_pl": "Büchern"
+      },
+      "frequenzRang": 271,
+      "quelle": "wiktionary:de:Buch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Buch‘ (https://de.wiktionary.org/wiki/Buch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.heft",
+      "lemma": "Heft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Hefte"
+      },
+      "formen": {
+        "pl": "Hefte",
+        "dat_pl": "Heften"
+      },
+      "frequenzRang": 2554,
+      "quelle": "wiktionary:de:Heft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Heft‘ (https://de.wiktionary.org/wiki/Heft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.stift",
+      "lemma": "Stift",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Stifte"
+      },
+      "formen": {
+        "pl": "Stifte",
+        "dat_pl": "Stiften"
+      },
+      "frequenzRang": 3013,
+      "quelle": "wiktionary:de:Stift",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stift‘ (https://de.wiktionary.org/wiki/Stift), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.seite",
+      "lemma": "Seite",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Seiten"
+      },
+      "formen": {
+        "pl": "Seiten"
+      },
+      "frequenzRang": 165,
+      "quelle": "wiktionary:de:Seite",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Seite‘ (https://de.wiktionary.org/wiki/Seite), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.hausaufgabe",
+      "lemma": "Hausaufgabe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Hausaufgaben"
+      },
+      "formen": {
+        "pl": "Hausaufgaben"
+      },
+      "frequenzRang": 4868,
+      "quelle": "wiktionary:de:Hausaufgabe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hausaufgabe‘ (https://de.wiktionary.org/wiki/Hausaufgabe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.aufgabe",
+      "lemma": "Aufgabe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Aufgaben"
+      },
+      "formen": {
+        "pl": "Aufgaben"
+      },
+      "frequenzRang": 484,
+      "quelle": "wiktionary:de:Aufgabe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Aufgabe‘ (https://de.wiktionary.org/wiki/Aufgabe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.text",
+      "lemma": "Text",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Texte"
+      },
+      "formen": {
+        "pl": "Texte",
+        "dat_pl": "Texten"
+      },
+      "frequenzRang": 510,
+      "quelle": "wiktionary:de:Text",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Text‘ (https://de.wiktionary.org/wiki/Text), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.wort",
+      "lemma": "Wort",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Wörter"
+      },
+      "formen": {
+        "pl": "Wörter",
+        "dat_pl": "Wörtern",
+        "plural_2": "Worte"
+      },
+      "frequenzRang": 222,
+      "quelle": "wiktionary:de:Wort",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wort‘ (https://de.wiktionary.org/wiki/Wort), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.frage",
+      "lemma": "Frage",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Fragen"
+      },
+      "formen": {
+        "pl": "Fragen"
+      },
+      "frequenzRang": 202,
+      "quelle": "wiktionary:de:Frage",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Frage‘ (https://de.wiktionary.org/wiki/Frage), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.fehler",
+      "lemma": "Fehler",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Fehler"
+      },
+      "formen": {
+        "dat_pl": "Fehlern"
+      },
+      "frequenzRang": 586,
+      "quelle": "wiktionary:de:Fehler",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fehler‘ (https://de.wiktionary.org/wiki/Fehler), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.loesung",
+      "lemma": "Lösung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Lösungen"
+      },
+      "formen": {
+        "pl": "Lösungen"
+      },
+      "frequenzRang": 530,
+      "quelle": "wiktionary:de:Lösung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lösung‘ (https://de.wiktionary.org/wiki/Lösung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.beispiel",
+      "lemma": "Beispiel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Beispiele"
+      },
+      "formen": {
+        "pl": "Beispiele",
+        "dat_pl": "Beispielen"
+      },
+      "frequenzRang": 268,
+      "quelle": "wiktionary:de:Beispiel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Beispiel‘ (https://de.wiktionary.org/wiki/Beispiel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.form",
+      "lemma": "Form",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Formen"
+      },
+      "formen": {
+        "pl": "Formen"
+      },
+      "frequenzRang": 444,
+      "quelle": "wiktionary:de:Form",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Form‘ (https://de.wiktionary.org/wiki/Form), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.mathe",
+      "lemma": "Mathe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 4122,
+      "quelle": "wiktionary:de:Mathe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mathe‘ (https://de.wiktionary.org/wiki/Mathe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.englisch",
+      "lemma": "Englisch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)",
+        "auch_adjektiv": "englisch"
+      },
+      "formen": {
+        "adj": "englisch",
+        "adj_e": "englische",
+        "adj_en": "englischen",
+        "adj_er": "englischer",
+        "adj_es": "englisches",
+        "adj_em": "englischem"
+      },
+      "frequenzRang": 468,
+      "quelle": "wiktionary:de:Englisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Englisch‘ (https://de.wiktionary.org/wiki/Englisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.sport",
+      "lemma": "Sport",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 713,
+      "quelle": "wiktionary:de:Sport",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sport‘ (https://de.wiktionary.org/wiki/Sport), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.kunst",
+      "lemma": "Kunst",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 570,
+      "quelle": "wiktionary:de:Kunst",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kunst‘ (https://de.wiktionary.org/wiki/Kunst), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.bekannt",
+      "lemma": "bekannt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "bekannte",
+        "endung_en": "bekannten",
+        "endung_er": "bekannter",
+        "endung_es": "bekanntes",
+        "endung_em": "bekanntem"
+      },
+      "frequenzRang": 369,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.wissen",
+      "lemma": "wissen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "wissen",
+        "praes_ich": "weiß",
+        "praes_du": "weißt",
+        "praes_er_sie_es": "weiß",
+        "praes_wir": "wissen",
+        "praes_ihr": "wisst",
+        "praes_sie_Sie": "wissen"
+      },
+      "frequenzRang": 75,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e07.s0001",
+      "text": "Unsere Schule ist sehr groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0002",
+      "text": "Wo ist deine Schule?",
+      "quelle": "tatoeba:363298",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #363298 von Wolf (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0003",
+      "text": "Ich gehe gern in die Schule.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0004",
+      "text": "Ich bin neu in der Klasse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0005",
+      "text": "In der Klasse sind 22 Kinder.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0006",
+      "text": "Sie ist unsere Lehrerin.",
+      "quelle": "tatoeba:850070",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #850070 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0007",
+      "text": "Wie heißt deine Lehrerin?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0008",
+      "text": "Unsere Lehrer sind sehr nett.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0009",
+      "text": "Die Lehrerin kommt aus Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0010",
+      "text": "Der Lehrer spricht Türkisch und Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0011",
+      "text": "Ich bin Schülerin.",
+      "quelle": "tatoeba:1538197",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1538197 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0012",
+      "text": "Unsere Klasse hat 24 Schüler.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0013",
+      "text": "Mein Buch ist neu.",
+      "quelle": "tatoeba:12404331",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12404331 von Adelpa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0014",
+      "text": "Wo ist das Buch?",
+      "quelle": "tatoeba:340921",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #340921 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0015",
+      "text": "Wie viele Bücher hast du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0016",
+      "text": "Hier ist dein Heft, Emre.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0017",
+      "text": "Mein Heft ist voll.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0018",
+      "text": "Ich brauche ein neues Heft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0019",
+      "text": "Das Heft ist klein, das Buch ist groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0020",
+      "text": "Hast du einen Stift für mich?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0021",
+      "text": "Ja, hier ist ein Stift.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0022",
+      "text": "Wo ist mein Stift?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0023",
+      "text": "Dein Stift liegt da, Kerem.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0024",
+      "text": "Wir lesen Seite zehn.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0025",
+      "text": "Ich lese ein Buch.",
+      "quelle": "tatoeba:3098226",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3098226 von Valodnieks (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0026",
+      "text": "Ihr lest ein Buch.",
+      "quelle": "tatoeba:2278323",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2278323 von Vortarulo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0027",
+      "text": "Elif liest den Text.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0028",
+      "text": "Der Lehrer liest einen Text.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0029",
+      "text": "Der Text ist lang.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0030",
+      "text": "Ich schreibe das Wort ins Heft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0031",
+      "text": "Selin schreibt viele Wörter ins Heft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0032",
+      "text": "Die Schüler schreiben einen Text.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0033",
+      "text": "Das Wort ist neu für mich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0034",
+      "text": "Was heißt das Wort?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0035",
+      "text": "Ich kann sehr gut rechnen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0036",
+      "text": "Kannst du gut rechnen, Kerem?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0037",
+      "text": "Nein, Mathe ist schwer für mich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0038",
+      "text": "Mathe ist leicht für mich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0039",
+      "text": "Er ist sehr gut in Mathe.",
+      "quelle": "tatoeba:5785044",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5785044 von landano (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0040",
+      "text": "Ich kann Englisch sprechen.",
+      "quelle": "tatoeba:362681",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #362681 von Wolf (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0041",
+      "text": "Englisch ist nicht einfach für mich.",
+      "quelle": "tatoeba:397847",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #397847 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0042",
+      "text": "Emre kann sehr gut Englisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0043",
+      "text": "Arabisch ist keine schwere Sprache.",
+      "quelle": "tatoeba:2849699",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2849699 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0044",
+      "text": "Am Freitag haben wir Sport.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0045",
+      "text": "Ich mache jeden Tag Sport.",
+      "quelle": "tatoeba:2213077",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2213077 von youren (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0046",
+      "text": "Kunst mag ich sehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0047",
+      "text": "Selin ist sehr gut in Kunst.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0048",
+      "text": "Kunst ist nicht leicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0049",
+      "text": "Heute haben wir Mathe und Kunst.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0050",
+      "text": "Was habt ihr heute in der Schule?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0051",
+      "text": "Was kannst du gut?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0052",
+      "text": "Das ist ganz einfach!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0053",
+      "text": "Das ist schwer, oder?",
+      "quelle": "tatoeba:8160693",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8160693 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0054",
+      "text": "Sag mal, magst du Mathe?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0055",
+      "text": "Was sagt die Lehrerin?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0056",
+      "text": "Ich habe Mathe und Kunst. Ich kann gut rechnen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0057",
+      "text": "Hier ist der Plan für die Woche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0058",
+      "text": "Ist das der neue Plan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0059",
+      "text": "In der ersten Stunde haben wir Englisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0060",
+      "text": "Was haben wir in der dritten Stunde?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0061",
+      "text": "Am Donnerstag haben wir zwei Stunden Sport.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0062",
+      "text": "Am Mittwoch haben wir kein Englisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0063",
+      "text": "Was steht am Montag im Plan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0064",
+      "text": "Wann haben wir Pause?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0065",
+      "text": "Die große Pause ist um Viertel nach zehn.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0066",
+      "text": "Die Pause ist vorbei.",
+      "quelle": "tatoeba:2036919",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2036919 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0067",
+      "text": "In der Pause esse ich Brot mit Käse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0068",
+      "text": "Wollt ihr jetzt eine Pause machen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0069",
+      "text": "Kerem will eine Pause machen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0070",
+      "text": "Die Stunde ist gleich vorbei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0071",
+      "text": "Um halb zwei ist die Schule vorbei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0072",
+      "text": "Ich muss meine Hausaufgaben machen.",
+      "quelle": "tatoeba:344522",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #344522 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0073",
+      "text": "Heute habe ich viele Hausaufgaben.",
+      "quelle": "tatoeba:604822",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #604822 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0074",
+      "text": "Heute haben wir keine Hausaufgaben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0075",
+      "text": "Wann machst du deine Hausaufgaben?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0076",
+      "text": "Nach der Schule mache ich Hausaufgaben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0077",
+      "text": "Müsst ihr heute Hausaufgaben machen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0078",
+      "text": "Musst du heute noch lernen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0079",
+      "text": "Bis Freitag müssen wir den Text lesen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0080",
+      "text": "Ich will Englisch lernen.",
+      "quelle": "tatoeba:423318",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #423318 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0081",
+      "text": "Was wollt ihr lernen?",
+      "quelle": "tatoeba:2223284",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2223284 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0082",
+      "text": "Wir wollen Englisch lernen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0083",
+      "text": "Die dritte Aufgabe ist schwer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0084",
+      "text": "Die erste Aufgabe ist ganz einfach.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0085",
+      "text": "Jeder Schüler bekommt ein Buch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0086",
+      "text": "Bekommst du auch ein Heft?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0087",
+      "text": "Hast du dein Heft dabei?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0088",
+      "text": "Ich habe mein Buch nicht dabei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0089",
+      "text": "Ja, hier ist mein Heft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0090",
+      "text": "Hört bitte gut zu!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0091",
+      "text": "Hör mal zu, Can!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0092",
+      "text": "Bitte hören Sie gut zu.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0093",
+      "text": "Er hört nicht zu.",
+      "quelle": "tatoeba:3744132",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3744132 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0094",
+      "text": "Lauter bitte, ich höre nicht gut.",
+      "quelle": "tatoeba:1547248",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1547248 von Zaghawa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0095",
+      "text": "Hört ihr mich gut?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0096",
+      "text": "Lest bitte Seite elf!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0097",
+      "text": "Schreibt die Wörter ins Heft!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0098",
+      "text": "Schreibt bitte einen Satz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0099",
+      "text": "Nehmt bitte eure Hefte heraus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0100",
+      "text": "Sprich bitte lauter! Wir hören nichts.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0101",
+      "text": "Zeig mal dein Heft!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0102",
+      "text": "Macht bitte die dritte Aufgabe!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0103",
+      "text": "Frag doch die Lehrerin!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0104",
+      "text": "Ich habe eine Frage.",
+      "quelle": "tatoeba:338692",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #338692 von Sprachprofi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0105",
+      "text": "Die Lehrerin fragt und Jan sagt die Lösung.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0106",
+      "text": "Wiederholt bitte die Wörter von gestern!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0107",
+      "text": "Wiederholen Sie das bitte!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0108",
+      "text": "Sag das bitte noch mal!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0109",
+      "text": "Erklär mal die Aufgabe, Mert!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0110",
+      "text": "Erklären Sie das bitte noch mal!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0111",
+      "text": "Die Lehrerin erklärt die Aufgabe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0112",
+      "text": "Kannst du ein Beispiel geben?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0113",
+      "text": "Zum Beispiel: der Stift, das Heft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0114",
+      "text": "Hier ist ein Beispiel: Ich lese, du liest.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0115",
+      "text": "Schreib die richtige Form!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0116",
+      "text": "Was ist die du-Form von „lesen“?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0117",
+      "text": "Die du-Form ist „du liest“.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0118",
+      "text": "Die du-Form von „helfen“ ist „du hilfst“.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0119",
+      "text": "Ich verstehe das nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0120",
+      "text": "Versteht ihr die Aufgabe?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0121",
+      "text": "Jetzt verstehe ich die Aufgabe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0122",
+      "text": "Können Sie das bitte wiederholen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0123",
+      "text": "Kannst du mir helfen?",
+      "quelle": "tatoeba:348433",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #348433 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0124",
+      "text": "Können Sie mir helfen?",
+      "quelle": "tatoeba:1784779",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1784779 von Amastan (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0125",
+      "text": "Ich helfe dir gern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0126",
+      "text": "Elif hilft Emre in Mathe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0127",
+      "text": "Mein Vater hilft mir gern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0128",
+      "text": "Kannst du mir das Wort erklären?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0129",
+      "text": "Das ist ganz einfach. Ich erkläre es dir.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0130",
+      "text": "Weißt du die Lösung?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0131",
+      "text": "Wer weiß die Lösung?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0132",
+      "text": "Ich weiß es! Die Lösung ist zwölf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0133",
+      "text": "Woher weißt du das?",
+      "quelle": "tatoeba:455132",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #455132 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0134",
+      "text": "Die Lösung ist richtig.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0135",
+      "text": "Was ist die richtige Lösung?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0136",
+      "text": "Ist das richtig?",
+      "quelle": "tatoeba:3701555",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3701555 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0137",
+      "text": "Nein, das ist falsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0138",
+      "text": "Das ist die falsche Seite.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0139",
+      "text": "Nein, das stimmt nicht. Das ist falsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0140",
+      "text": "Jeder macht Fehler.",
+      "quelle": "tatoeba:429065",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #429065 von Bernardo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0141",
+      "text": "Das ist nur ein kleiner Fehler.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0142",
+      "text": "Hier ist ein Fehler.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0143",
+      "text": "Du hast recht.",
+      "quelle": "tatoeba:435284",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #435284 von MikeDee (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0144",
+      "text": "Der Lehrer hat recht.",
+      "quelle": "tatoeba:7016147",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7016147 von driini (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0145",
+      "text": "Ja, Kerem hat recht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0146",
+      "text": "Das ist sehr schwer. Schaffst du das?",
+      "quelle": "tatoeba:5955720",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5955720 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e07.s0147",
+      "text": "Du schaffst das, Laylā!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0148",
+      "text": "Schaffst du die Aufgabe?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0149",
+      "text": "Das Buch ist sehr bekannt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0150",
+      "text": "Viele Wörter sind mir schon bekannt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0151",
+      "text": "Entschuldigung, können Sie das bitte wiederholen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0152",
+      "text": "Der neue Plan",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0153",
+      "text": "Heute ist Laylā neu in der Klasse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0154",
+      "text": "Sie bekommt einen Plan für die Woche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0155",
+      "text": "Jan, kannst du mir den Plan erklären?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0156",
+      "text": "Ja, natürlich. Am Montag haben wir zuerst Mathe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0157",
+      "text": "Dann ist Mathe leicht für dich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0158",
+      "text": "In der dritten Stunde haben wir Kunst.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0159",
+      "text": "Und was steht am Dienstag im Plan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0160",
+      "text": "Am Dienstag haben wir Englisch und Sport.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0161",
+      "text": "Oh, Englisch ist schwer für mich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0162",
+      "text": "Kein Problem. Ich helfe dir.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0163",
+      "text": "Laylā muss noch viele deutsche Wörter lernen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0164",
+      "text": "Aber sie lernt jeden Tag zehn Wörter.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0165",
+      "text": "Danke, Jan! Jetzt verstehe ich den Plan.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0166",
+      "text": "Was kann Laylā sehr gut?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0167",
+      "text": "Sie kann sehr gut rechnen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0168",
+      "text": "Sie kann sehr gut kochen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0169",
+      "text": "Sie kann sehr gut Englisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0170",
+      "text": "Was haben sie in der dritten Stunde?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0171",
+      "text": "Was haben sie am Dienstag in der Schule?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0172",
+      "text": "Am Dienstag haben sie Englisch und Sport.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0173",
+      "text": "Am Dienstag haben sie Mathe und Kunst.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0174",
+      "text": "Am Dienstag haben sie Deutsch und Kunst.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0175",
+      "text": "Was muss Laylā noch lernen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0176",
+      "text": "Sie muss noch viele Wörter lernen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0177",
+      "text": "Sie muss noch rechnen lernen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0178",
+      "text": "Sie muss noch kochen lernen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0179",
+      "text": "Ein Morgen in der Klasse",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0180",
+      "text": "Acht Uhr: Die Lehrerin kommt in die Klasse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0181",
+      "text": "Guten Morgen! Öffnet bitte eure Bücher.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0182",
+      "text": "Wir lesen heute Seite zwölf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0183",
+      "text": "Entschuldigung, ich habe mein Heft nicht dabei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0184",
+      "text": "Kann ich bitte ein Blatt bekommen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0185",
+      "text": "Hier, bitte. Hat jemand einen Stift für Yazan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0186",
+      "text": "Ja, ich! Hier ist mein Stift, Yazan.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0187",
+      "text": "Danke, Elif! Jetzt kann ich schreiben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0188",
+      "text": "Gut. Yazan, lies bitte den Text.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0189",
+      "text": "Yazan liest den Text laut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0190",
+      "text": "Ich verstehe ein Wort nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0191",
+      "text": "Hört alle gut zu. Ich erkläre das Wort.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0192",
+      "text": "Jetzt verstehen alle Schüler das Wort.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0193",
+      "text": "Sehr gut, Yazan! Du kannst schon gut lesen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0194",
+      "text": "Was hat Yazan nicht dabei?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0195",
+      "text": "Was liest Yazan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0196",
+      "text": "Wer erklärt das Wort?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0197",
+      "text": "Die Lehrerin erklärt das Wort.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0198",
+      "text": "Elif erklärt das Wort.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0199",
+      "text": "Yazan erklärt das Wort.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0200",
+      "text": "Was kann Jan gut?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0201",
+      "text": "Jan ist sehr gut in Sport.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0202",
+      "text": "Was brauchst du für die Schule?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0203",
+      "text": "Ich brauche einen Stift und ein Heft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0204",
+      "text": "Die Lehrerin sagt: Lest bitte den Text!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0205",
+      "text": "Die Hausaufgabe ist heute schwer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0206",
+      "text": "Was macht ihr heute in Englisch?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0207",
+      "text": "Wir schreiben einen Text.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0208",
+      "text": "Ich habe auch keinen Stift.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e07.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Schulsachen benennen und sagen, was ich lese und schreibe.",
+        "tr": "Okul eşyalarını adlandırabilir, ne okuduğumu ve ne yazdığımı söyleyebilirim.",
+        "ar": "أستطيع أن أسمّي الأدوات المدرسية وأن أقول ماذا أقرأ وماذا أكتب."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e07.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.buch",
+          "ablenker": ["de.a1.e07.heft", "de.a1.e07.stift"]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e07.lehrer",
+          "ablenker": ["de.a1.e07.schueler", "de.a1.e02.vater"]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e07.schule", "de.a1.e07.klasse", "de.a1.e07.lehrer", "de.a1.e07.buch", "de.a1.e07.heft", "de.a1.e07.stift"]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.wort",
+          "ablenker": ["de.a1.e07.text", "de.a1.e07.seite"]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0020",
+          "wort": 2,
+          "ablenker": ["ein", "eine"]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e07.s0022",
+          "ablenker": ["de.a1.e07.s0014", "de.a1.e07.s0002", "de.a1.e07.s0034"]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e07.lesen",
+          "ablenker": ["de.a1.e07.schreiben", "de.a1.e01.lernen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0027",
+          "nach": "ziel",
+          "alternativen": ["Den Text liest Elif."],
+          "ablenker": ["lest", "Buch"]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a10",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0020"
+            }
+          ],
+          "antwort": "de.a1.e07.s0021",
+          "ablenker": ["de.a1.e07.s0029", "de.a1.e07.s0024", "de.a1.e07.s0033"]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0031",
+          "wort": 1,
+          "ablenker": ["schreibe", "schreiben"]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e07.s0028",
+          "ablenker": ["de.a1.e07.s0027", "de.a1.e07.s0032"]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e07.lesen",
+          "ablenker": ["de.a1.e03.legen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e07.s0005",
+          "alternativen": ["In der Klasse sind zweiundzwanzig Kinder."]
+        },
+        {
+          "schluessel": "de.a1.e07.l01.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0019",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e07.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann meine Fächer nennen und sagen, was ich gut kann.",
+        "tr": "Derslerimi sayabilir ve neyi iyi yapabildiğimi söyleyebilirim.",
+        "ar": "أستطيع أن أذكر موادي الدراسية وأن أقول ما الذي أجيده."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e07.l02.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e07.mathe", "de.a1.e07.englisch", "de.a1.e07.sport", "de.a1.e07.kunst", "de.a1.e01.deutsch"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.koennen",
+          "ablenker": ["de.a1.e01.lernen", "de.a1.e02.haben"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e07.leicht",
+          "ablenker": ["de.a1.e07.schwer", "de.a1.e03.klein"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0035",
+          "wort": 1,
+          "ablenker": ["kannst", "können"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e07.s0038",
+          "ablenker": ["de.a1.e07.s0037", "de.a1.e07.s0048"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.einfach",
+          "ablenker": ["de.a1.e07.schwer", "de.a1.e03.neu"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0049",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir haben heute Mathe und Kunst.",
+            "Heute haben wir Kunst und Mathe.",
+            "Wir haben heute Kunst und Mathe.",
+            "Mathe und Kunst haben wir heute.",
+            "Kunst und Mathe haben wir heute."
+          ],
+          "ablenker": ["habt", "Sport"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0051"
+            }
+          ],
+          "antwort": "de.a1.e07.s0035",
+          "ablenker": ["de.a1.e07.s0044", "de.a1.e07.s0049"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0042",
+          "wort": 1,
+          "ablenker": ["kannst", "könnt"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e07.sagen",
+          "ablenker": ["de.a1.e01.heissen", "de.a1.e01.kommen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e07.s0041",
+          "ablenker": ["de.a1.e07.s0043", "de.a1.e07.s0045", "de.a1.e07.s0039"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0050"
+            }
+          ],
+          "antwort": "de.a1.e07.s0049",
+          "ablenker": ["de.a1.e07.s0046", "de.a1.e07.s0035"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a14",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0036",
+          "wort": 0,
+          "ablenker": ["Kann", "Könnt"]
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e07.s0056"
+        },
+        {
+          "schluessel": "de.a1.e07.l02.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0054",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e07.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann meinen Stundenplan beschreiben und sagen, was ich machen muss oder will.",
+        "tr": "Ders programımı anlatabilir, ne yapmam gerektiğini veya ne yapmak istediğimi söyleyebilirim.",
+        "ar": "أستطيع أن أصف جدول حصصي وأن أقول ما يجب أن أفعله أو ما أريد أن أفعله."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e07.l03.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e07.plan", "de.a1.e07.pause", "de.a1.e07.aufgabe", "de.a1.e04.woche", "de.a1.e04.stunde"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e07.muessen",
+          "ablenker": ["de.a1.e07.wollen", "de.a1.e07.koennen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a03",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0078",
+          "wort": 0,
+          "ablenker": ["Muss", "Müsst"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e07.s0065",
+          "ablenker": ["de.a1.e07.s0071", "de.a1.e07.s0070"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.dritte",
+          "ablenker": ["de.a1.e04.erste", "de.a1.e04.zweite"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0059",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir haben in der ersten Stunde Englisch.",
+            "Englisch haben wir in der ersten Stunde.",
+            "Wir haben Englisch in der ersten Stunde."
+          ],
+          "ablenker": ["dritten", "habt"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0064"
+            }
+          ],
+          "antwort": "de.a1.e07.s0065",
+          "ablenker": ["de.a1.e07.s0074", "de.a1.e07.s0057", "de.a1.e07.s0067"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e07.vorbei",
+          "ablenker": ["de.a1.e07.dabei", "de.a1.e03.hier"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a09",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0069",
+          "wort": 1,
+          "ablenker": ["willst", "wollen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.hausaufgabe",
+          "ablenker": ["de.a1.e07.pause", "de.a1.e07.plan"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e07.s0077",
+          "ablenker": ["de.a1.e07.s0078", "de.a1.e07.s0075"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e07.bekommen",
+          "ablenker": ["de.a1.e03.brauchen", "de.a1.e03.suchen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0087"
+            }
+          ],
+          "antwort": "de.a1.e07.s0089",
+          "ablenker": ["de.a1.e07.s0083", "de.a1.e07.s0066"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a14",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0085",
+          "wort": 2,
+          "ablenker": ["bekommen", "bekommst"]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e07.s0071",
+          "alternativen": ["Um halb 2 ist die Schule vorbei."]
+        },
+        {
+          "schluessel": "de.a1.e07.l03.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0076",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e07.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Anweisungen im Unterricht verstehen und geben.",
+        "tr": "Dersteki yönergeleri anlayabilir ve kendim de verebilirim.",
+        "ar": "أستطيع أن أفهم التعليمات في الدرس وأن أعطيها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e07.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.fragen",
+          "ablenker": ["de.a1.e07.erklaeren", "de.a1.e07.wiederholen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e07.hoeren", "de.a1.e07.fragen", "de.a1.e07.wiederholen", "de.a1.e07.erklaeren", "de.a1.e03.zeigen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e07.beispiel",
+          "ablenker": ["de.a1.e07.form", "de.a1.e02.zahl"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0096",
+          "wort": 0,
+          "ablenker": ["Liest", "Lesen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e07.s0090",
+          "ablenker": ["de.a1.e07.s0091", "de.a1.e07.s0092", "de.a1.e07.s0095"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.zuhoeren",
+          "ablenker": ["de.a1.e07.lesen", "de.a1.e07.schreiben"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0097",
+          "nach": "ziel",
+          "ablenker": ["Schreib", "Wort"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0112"
+            }
+          ],
+          "antwort": "de.a1.e07.s0113",
+          "ablenker": ["de.a1.e07.s0093", "de.a1.e07.s0025"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0102",
+          "wort": 3,
+          "ablenker": ["dritten", "dritter"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.frage",
+          "ablenker": ["de.a1.e07.beispiel", "de.a1.e02.foto"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e07.s0117",
+          "ablenker": ["de.a1.e07.s0114", "de.a1.e07.s0118"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0116"
+            }
+          ],
+          "antwort": "de.a1.e07.s0117",
+          "ablenker": ["de.a1.e07.s0026", "de.a1.e07.s0090"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a14",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0108",
+          "wort": 4,
+          "ablenker": ["nach", "mit"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e07.s0110",
+          "alternativen": ["Erklären Sie das bitte nochmal!"]
+        },
+        {
+          "schluessel": "de.a1.e07.l04.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0105",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e07.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann um Hilfe bitten, nachfragen und sagen, ob etwas richtig oder falsch ist.",
+        "tr": "Yardım isteyebilir, bir şeyi tekrar sorabilir ve bir şeyin doğru mu yanlış mı olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أطلب المساعدة وأن أستفسر وأن أقول إن كان شيء ما صحيحًا أو خاطئًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e07.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.verstehen",
+          "ablenker": ["de.a1.e07.helfen", "de.a1.e07.wissen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e07.verstehen", "de.a1.e07.helfen", "de.a1.e07.wissen", "de.a1.e07.schaffen", "de.a1.e03.finden"]
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e07.richtig",
+          "ablenker": ["de.a1.e07.falsch", "de.a1.e03.neu"]
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0125",
+          "wort": 1,
+          "ablenker": ["hilfst", "hilft"]
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e07.s0122",
+          "ablenker": ["de.a1.e07.s0124", "de.a1.e07.s0123", "de.a1.e07.s0107"]
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.fehler",
+          "ablenker": ["de.a1.e07.loesung", "de.a1.e02.zahl"]
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0123"
+            }
+          ],
+          "antwort": "de.a1.e07.s0125",
+          "ablenker": ["de.a1.e07.s0140", "de.a1.e07.s0134", "de.a1.e07.s0133"]
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a09",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0126",
+          "wort": 1,
+          "ablenker": ["helft", "hilfst"]
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.recht",
+          "ablenker": ["de.a1.e07.bekannt", "de.a1.e03.ganz"]
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0130",
+          "nach": "ziel",
+          "ablenker": ["weiß", "Frage"]
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0136"
+            }
+          ],
+          "antwort": "de.a1.e07.s0137",
+          "ablenker": ["de.a1.e07.s0150", "de.a1.e07.s0125"]
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a14",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0148",
+          "wort": 0,
+          "ablenker": ["Schafft", "Schaffen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e07.s0151"
+        },
+        {
+          "schluessel": "de.a1.e07.l05.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0141",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e07.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über einen neuen Stundenplan und ein Gespräch im Unterricht verstehen.",
+        "tr": "Yeni bir ders programı hakkındaki hikâyeyi ve derste geçen bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن جدول حصص جديد وحوارًا في الدرس."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e07.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a1.e07.s0152",
+          "zeilen": [
+            {
+              "satz": "de.a1.e07.s0153"
+            },
+            {
+              "satz": "de.a1.e07.s0154"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0155"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e07.s0156"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0035"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e07.s0157"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e07.s0158"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0159"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e07.s0160"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0161"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e07.s0162"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0165"
+            },
+            {
+              "satz": "de.a1.e07.s0163"
+            },
+            {
+              "satz": "de.a1.e07.s0164"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 6,
+              "frage": "de.a1.e07.s0170",
+              "antwort": "de.a1.e07.kunst",
+              "ablenker": ["de.a1.e07.mathe", "de.a1.e07.sport"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.a1.e07.s0171",
+              "antwort": "de.a1.e07.s0172",
+              "ablenker": ["de.a1.e07.s0173", "de.a1.e07.s0174"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.a1.e07.s0166",
+              "antwort": "de.a1.e07.s0167",
+              "ablenker": ["de.a1.e07.s0168", "de.a1.e07.s0169"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a1.e07.s0175",
+              "antwort": "de.a1.e07.s0176",
+              "ablenker": ["de.a1.e07.s0177", "de.a1.e07.s0178"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e07.l06.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0155"
+            }
+          ],
+          "antwort": "de.a1.e07.s0156",
+          "ablenker": ["de.a1.e07.s0161", "de.a1.e07.s0164"]
+        },
+        {
+          "schluessel": "de.a1.e07.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0163",
+          "wort": 1,
+          "ablenker": ["musst", "müssen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e07.s0160",
+          "ablenker": ["de.a1.e07.s0158", "de.a1.e07.s0180"]
+        },
+        {
+          "schluessel": "de.a1.e07.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.a1.e07.s0179",
+          "zeilen": [
+            {
+              "satz": "de.a1.e07.s0180"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0181"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0182"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e07.s0183"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e07.s0208"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e07.s0184"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0185"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e07.s0186"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e07.s0187"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0188"
+            },
+            {
+              "satz": "de.a1.e07.s0189"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e07.s0190"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0191"
+            },
+            {
+              "satz": "de.a1.e07.s0192"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0193"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 6,
+              "frage": "de.a1.e07.s0194",
+              "antwort": "de.a1.e07.heft",
+              "ablenker": ["de.a1.e07.buch", "de.a1.e02.foto"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.a1.e07.s0195",
+              "antwort": "de.a1.e07.text",
+              "ablenker": ["de.a1.e07.plan", "de.a1.e03.bild"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a1.e07.s0196",
+              "antwort": "de.a1.e07.s0197",
+              "ablenker": ["de.a1.e07.s0198", "de.a1.e07.s0199"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e07.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0183"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0208"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0184"
+            }
+          ],
+          "antwort": "de.a1.e07.s0185",
+          "ablenker": ["de.a1.e07.s0192", "de.a1.e07.s0182"]
+        },
+        {
+          "schluessel": "de.a1.e07.l06.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0183",
+          "nach": "ziel",
+          "alternativen": ["Entschuldigung, mein Heft habe ich nicht dabei."],
+          "ablenker": ["Buch", "habt"]
+        },
+        {
+          "schluessel": "de.a1.e07.l06.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0187",
+          "wort": 3,
+          "ablenker": ["kannst", "könnt"]
+        },
+        {
+          "schluessel": "de.a1.e07.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e07.s0191",
+          "ablenker": ["de.a1.e07.s0090", "de.a1.e07.s0192"]
+        },
+        {
+          "schluessel": "de.a1.e07.l06.a10",
+          "typ": "sprechen",
+          "satz": "de.a1.e07.s0184"
+        },
+        {
+          "schluessel": "de.a1.e07.l06.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e07.s0154"
+        },
+        {
+          "schluessel": "de.a1.e07.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0193",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e07.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit: Schule, Fächer und Unterricht.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum: okul, dersler ve sınıf.",
+        "ar": "أراجع كلمات الوحدة وجملها: المدرسة والمواد الدراسية والدرس."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e07.l07.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e07.buch", "de.a1.e07.heft", "de.a1.e07.stift", "de.a1.e07.seite", "de.a1.e07.wort", "de.a1.e07.text"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e07.mathe", "de.a1.e07.englisch", "de.a1.e07.sport", "de.a1.e07.kunst", "de.a1.e07.pause"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e07.lehrer",
+          "ablenker": ["de.a1.e07.schueler", "de.a1.e07.klasse"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.wissen",
+          "ablenker": ["de.a1.e07.verstehen", "de.a1.e03.finden"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0079",
+          "wort": 2,
+          "ablenker": ["muss", "müsst"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0042",
+          "nach": "ziel",
+          "alternativen": ["Emre kann Englisch sehr gut.", "Englisch kann Emre sehr gut."],
+          "ablenker": ["kannst", "Mathe"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e07.s0007",
+          "ablenker": ["de.a1.e07.s0008", "de.a1.e07.s0009"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a08",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e07.klasse",
+          "ablenker": ["de.a1.e06.kasse"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0200"
+            }
+          ],
+          "antwort": "de.a1.e07.s0201",
+          "ablenker": ["de.a1.e07.s0088", "de.a1.e07.s0073"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e07.s0018"
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0010",
+          "wort": 2,
+          "ablenker": ["sprecht", "sprichst"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0202"
+            }
+          ],
+          "antwort": "de.a1.e07.s0203",
+          "ablenker": ["de.a1.e07.s0046", "de.a1.e07.s0066"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e07.s0204",
+          "ablenker": ["de.a1.e07.s0092", "de.a1.e07.s0098"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.erklaeren",
+          "ablenker": ["de.a1.e07.wiederholen", "de.a1.e03.zeigen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a15",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0138",
+          "wort": 3,
+          "ablenker": ["falsch", "falschen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0206"
+            }
+          ],
+          "antwort": "de.a1.e07.s0207",
+          "ablenker": ["de.a1.e07.s0023", "de.a1.e07.s0001"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a17",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e07.dabei",
+          "ablenker": ["de.a1.e07.vorbei", "de.a1.e03.dort"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a18",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e07.s0145",
+          "ablenker": ["de.a1.e07.s0144", "de.a1.e07.s0147"]
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a19",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0150",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e07.l07.a20",
+          "typ": "sprechen",
+          "satz": "de.a1.e07.s0049"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e07.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, was ich kann: über die Schule sprechen und im Unterricht um Hilfe bitten.",
+        "tr": "Neler yapabildiğimi gösteriyorum: okul hakkında konuşmak ve derste yardım istemek.",
+        "ar": "أُظهر ما أستطيع: أن أتحدث عن المدرسة وأن أطلب المساعدة في الدرس."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e07.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.stift",
+          "ablenker": ["de.a1.e07.heft", "de.a1.e07.seite"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e07.loesung",
+          "ablenker": ["de.a1.e07.fehler", "de.a1.e07.frage"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e07.s0083",
+          "ablenker": ["de.a1.e07.s0084", "de.a1.e07.s0205"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0087",
+          "wort": 4,
+          "ablenker": ["vorbei", "beim"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0062",
+          "wort": 2,
+          "ablenker": ["habt", "hat"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0065",
+          "nach": "ziel",
+          "alternativen": ["Um Viertel nach zehn ist die große Pause."],
+          "ablenker": ["halb", "vor"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0081"
+            }
+          ],
+          "antwort": "de.a1.e07.s0082",
+          "ablenker": ["de.a1.e07.s0048", "de.a1.e07.s0022"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a08",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e07.s0012",
+          "alternativen": ["Unsere Klasse hat vierundzwanzig Schüler."]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e07.helfen",
+          "ablenker": ["de.a1.e07.fragen", "de.a1.e07.sagen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e07.s0120",
+          "ablenker": ["de.a1.e07.s0121", "de.a1.e07.s0148"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e07.s0127",
+          "wort": 2,
+          "ablenker": ["helft", "helfen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a12",
+          "typ": "paare",
+          "lemmata": ["de.a1.e07.koennen", "de.a1.e07.muessen", "de.a1.e07.wollen", "de.a1.e01.lernen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0131"
+            }
+          ],
+          "antwort": "de.a1.e07.s0132",
+          "ablenker": ["de.a1.e07.s0142", "de.a1.e07.s0111"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0122",
+          "nach": "ziel",
+          "alternativen": ["Können Sie bitte das wiederholen?", "Bitte, können Sie das wiederholen?", "Können Sie das wiederholen, bitte?"],
+          "ablenker": ["kannst", "sagen"]
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e07.s0035"
+        },
+        {
+          "schluessel": "de.a1.e07.l08.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e07.s0058",
+          "nach": "ausgang"
+        }
+      ]
+    }
+  ]
+}

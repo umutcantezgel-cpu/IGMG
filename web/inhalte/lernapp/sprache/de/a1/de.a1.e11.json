@@ -1,0 +1,3302 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "automatisch_geprueft",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e11",
+    "reihenfolge": 12,
+    "thema": {
+      "de": "Ich bin krank",
+      "tr": "Hastayım",
+      "ar": "أنا مريض"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann sagen, wie es mir geht und was mir wehtut.",
+        "tr": "Nasıl olduğumu ve neremin ağrıdığını söyleyebilirim.",
+        "ar": "أستطيع أن أقول كيف حالي وما الذي يؤلمني."
+      },
+      {
+        "de": "Ich kann einfache Ratschläge in der Praxis oder Apotheke verstehen.",
+        "tr": "Muayenehanede veya eczanede basit tavsiyeleri anlayabilirim.",
+        "ar": "أستطيع أن أفهم نصائح بسيطة في العيادة أو الصيدلية."
+      }
+    ],
+    "symbol": "stethoscope",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a1.e11.sollen",
+      "lemma": "sollen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "modalverb": "ja",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "sollen",
+        "praes_ich": "soll",
+        "praes_du": "sollst",
+        "praes_er_sie_es": "soll",
+        "praes_wir": "sollen",
+        "praes_ihr": "sollt",
+        "praes_sie_Sie": "sollen"
+      },
+      "frequenzRang": 55,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.duerfen",
+      "lemma": "dürfen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "modalverb": "ja",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "dürfen",
+        "praes_ich": "darf",
+        "praes_du": "darfst",
+        "praes_er_sie_es": "darf",
+        "praes_wir": "dürfen",
+        "praes_ihr": "dürft",
+        "praes_sie_Sie": "dürfen"
+      },
+      "frequenzRang": 114,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.tun",
+      "lemma": "tun",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "tun",
+        "praes_ich": "tue",
+        "praes_du": "tust",
+        "praes_er_sie_es": "tut",
+        "praes_wir": "tun",
+        "praes_ihr": "tut",
+        "praes_sie_Sie": "tun",
+        "imp_du": "tu",
+        "imp_ihr": "tut"
+      },
+      "frequenzRang": 107,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.wehtun",
+      "lemma": "wehtun",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "weh"
+      },
+      "formen": {
+        "infinitiv": "wehtun",
+        "verbzusatz": "weh",
+        "praes_ich": "tue",
+        "praes_du": "tust",
+        "praes_er_sie_es": "tut",
+        "praes_wir": "tun",
+        "praes_ihr": "tut",
+        "praes_sie_Sie": "tun"
+      },
+      "frequenzRang": 28096,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.setzen",
+      "lemma": "setzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "setzen",
+        "praes_ich": "setze",
+        "praes_du": "setzt",
+        "praes_er_sie_es": "setzt",
+        "praes_wir": "setzen",
+        "praes_ihr": "setzt",
+        "praes_sie_Sie": "setzen",
+        "imp_du": "setz",
+        "imp_ihr": "setzt"
+      },
+      "frequenzRang": 205,
+      "quelle": "wiktionary:de:setzen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚setzen‘ (https://de.wiktionary.org/wiki/setzen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.bleiben",
+      "lemma": "bleiben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "bleiben",
+        "praes_ich": "bleibe",
+        "praes_du": "bleibst",
+        "praes_er_sie_es": "bleibt",
+        "praes_wir": "bleiben",
+        "praes_ihr": "bleibt",
+        "praes_sie_Sie": "bleiben",
+        "imp_du": "bleib",
+        "imp_ihr": "bleibt"
+      },
+      "frequenzRang": 116,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.anrufen",
+      "lemma": "anrufen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an"
+      },
+      "formen": {
+        "infinitiv": "anrufen",
+        "verbzusatz": "an",
+        "praes_ich": "rufe",
+        "praes_du": "rufst",
+        "praes_er_sie_es": "ruft",
+        "praes_wir": "rufen",
+        "praes_ihr": "ruft",
+        "praes_sie_Sie": "rufen",
+        "imp_du": "ruf",
+        "imp_ihr": "ruft"
+      },
+      "frequenzRang": 1922,
+      "quelle": "wiktionary:de:anrufen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚anrufen‘ (https://de.wiktionary.org/wiki/anrufen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.passieren",
+      "lemma": "passieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "passieren",
+        "praes_ich": "passiere",
+        "praes_du": "passierst",
+        "praes_er_sie_es": "passiert",
+        "praes_wir": "passieren",
+        "praes_ihr": "passiert",
+        "praes_sie_Sie": "passieren"
+      },
+      "frequenzRang": 424,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.fuehlen",
+      "lemma": "fühlen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich fühlen (in A1 als feste Wendung: Wie fühlst du dich?)"
+      },
+      "formen": {
+        "infinitiv": "fühlen",
+        "praes_ich": "fühle",
+        "praes_du": "fühlst",
+        "praes_er_sie_es": "fühlt",
+        "praes_wir": "fühlen",
+        "praes_ihr": "fühlt",
+        "praes_sie_Sie": "fühlen"
+      },
+      "frequenzRang": 364,
+      "quelle": "wiktionary:de:fühlen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚fühlen‘ (https://de.wiktionary.org/wiki/fühlen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.hoffen",
+      "lemma": "hoffen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "hoffen",
+        "praes_ich": "hoffe",
+        "praes_du": "hoffst",
+        "praes_er_sie_es": "hofft",
+        "praes_wir": "hoffen",
+        "praes_ihr": "hofft",
+        "praes_sie_Sie": "hoffen"
+      },
+      "frequenzRang": 368,
+      "quelle": "wiktionary:de:hoffen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚hoffen‘ (https://de.wiktionary.org/wiki/hoffen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.gegen",
+      "lemma": "gegen",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ"
+      },
+      "frequenzRang": 80,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.seit",
+      "lemma": "seit",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Dativ"
+      },
+      "frequenzRang": 96,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.wieder",
+      "lemma": "wieder",
+      "wortart": "adverb",
+      "frequenzRang": 66,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.lange",
+      "lemma": "lange",
+      "wortart": "adverb",
+      "frequenzRang": 186,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.bald",
+      "lemma": "bald",
+      "wortart": "adverb",
+      "frequenzRang": 343,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.sofort",
+      "lemma": "sofort",
+      "wortart": "adverb",
+      "frequenzRang": 345,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.einmal",
+      "lemma": "einmal",
+      "wortart": "adverb",
+      "frequenzRang": 163,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.kaum",
+      "lemma": "kaum",
+      "wortart": "adverb",
+      "frequenzRang": 304,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.sogar",
+      "lemma": "sogar",
+      "wortart": "adverb",
+      "frequenzRang": 220,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.los",
+      "lemma": "los",
+      "wortart": "adverb",
+      "frequenzRang": 360,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.kopf",
+      "lemma": "Kopf",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Köpfe"
+      },
+      "formen": {
+        "pl": "Köpfe",
+        "dat_pl": "Köpfen"
+      },
+      "frequenzRang": 307,
+      "quelle": "wiktionary:de:Kopf",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kopf‘ (https://de.wiktionary.org/wiki/Kopf), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.gesicht",
+      "lemma": "Gesicht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gesichter"
+      },
+      "formen": {
+        "pl": "Gesichter",
+        "dat_pl": "Gesichtern"
+      },
+      "frequenzRang": 555,
+      "quelle": "wiktionary:de:Gesicht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gesicht‘ (https://de.wiktionary.org/wiki/Gesicht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.auge",
+      "lemma": "Auge",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Augen"
+      },
+      "formen": {
+        "pl": "Augen"
+      },
+      "frequenzRang": 283,
+      "quelle": "wiktionary:de:Auge",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Auge‘ (https://de.wiktionary.org/wiki/Auge), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.hals",
+      "lemma": "Hals",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Hälse"
+      },
+      "formen": {
+        "pl": "Hälse",
+        "dat_pl": "Hälsen"
+      },
+      "frequenzRang": 2266,
+      "quelle": "wiktionary:de:Hals",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hals‘ (https://de.wiktionary.org/wiki/Hals), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.zahn",
+      "lemma": "Zahn",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zähne"
+      },
+      "formen": {
+        "pl": "Zähne",
+        "dat_pl": "Zähnen"
+      },
+      "frequenzRang": 2173,
+      "quelle": "wiktionary:de:Zahn",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zahn‘ (https://de.wiktionary.org/wiki/Zahn), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.arm",
+      "lemma": "Arm",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Arme"
+      },
+      "formen": {
+        "pl": "Arme",
+        "dat_pl": "Armen"
+      },
+      "frequenzRang": 430,
+      "quelle": "wiktionary:de:Arm",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Arm‘ (https://de.wiktionary.org/wiki/Arm), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.hand",
+      "lemma": "Hand",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Hände"
+      },
+      "formen": {
+        "pl": "Hände",
+        "dat_pl": "Händen"
+      },
+      "frequenzRang": 241,
+      "quelle": "wiktionary:de:Hand",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hand‘ (https://de.wiktionary.org/wiki/Hand), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.bauch",
+      "lemma": "Bauch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Bäuche"
+      },
+      "formen": {
+        "pl": "Bäuche",
+        "dat_pl": "Bäuchen"
+      },
+      "frequenzRang": 2694,
+      "quelle": "wiktionary:de:Bauch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bauch‘ (https://de.wiktionary.org/wiki/Bauch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.bein",
+      "lemma": "Bein",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Beine"
+      },
+      "formen": {
+        "pl": "Beine",
+        "dat_pl": "Beinen"
+      },
+      "frequenzRang": 983,
+      "quelle": "wiktionary:de:Bein",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bein‘ (https://de.wiktionary.org/wiki/Bein), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.arzt",
+      "lemma": "Arzt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Ärzte",
+        "weiblich": "Ärztin"
+      },
+      "formen": {
+        "pl": "Ärzte",
+        "dat_pl": "Ärzten",
+        "weiblich": "Ärztin",
+        "weiblich_pl": "Ärztinnen"
+      },
+      "frequenzRang": 1229,
+      "quelle": "wiktionary:de:Arzt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Arzt‘ (https://de.wiktionary.org/wiki/Arzt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.praxis",
+      "lemma": "Praxis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Praxen"
+      },
+      "formen": {
+        "pl": "Praxen"
+      },
+      "frequenzRang": 1098,
+      "quelle": "wiktionary:de:Praxis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Praxis‘ (https://de.wiktionary.org/wiki/Praxis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.termin",
+      "lemma": "Termin",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Termine"
+      },
+      "formen": {
+        "pl": "Termine",
+        "dat_pl": "Terminen"
+      },
+      "frequenzRang": 1162,
+      "quelle": "wiktionary:de:Termin",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Termin‘ (https://de.wiktionary.org/wiki/Termin), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.fieber",
+      "lemma": "Fieber",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 4259,
+      "quelle": "wiktionary:de:Fieber",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fieber‘ (https://de.wiktionary.org/wiki/Fieber), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.husten",
+      "lemma": "Husten",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 7007,
+      "quelle": "wiktionary:de:Husten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Husten‘ (https://de.wiktionary.org/wiki/Husten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.tablette",
+      "lemma": "Tablette",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Tabletten"
+      },
+      "formen": {
+        "pl": "Tabletten"
+      },
+      "frequenzRang": 26260,
+      "quelle": "wiktionary:de:Tablette",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tablette‘ (https://de.wiktionary.org/wiki/Tablette), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.hilfe",
+      "lemma": "Hilfe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 396,
+      "quelle": "wiktionary:de:Hilfe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hilfe‘ (https://de.wiktionary.org/wiki/Hilfe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.angst",
+      "lemma": "Angst",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ängste"
+      },
+      "formen": {
+        "pl": "Ängste",
+        "dat_pl": "Ängsten"
+      },
+      "frequenzRang": 440,
+      "quelle": "wiktionary:de:Angst",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Angst‘ (https://de.wiktionary.org/wiki/Angst), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.fall",
+      "lemma": "Fall",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Fälle",
+        "wendung": "auf jeden Fall"
+      },
+      "formen": {
+        "pl": "Fälle",
+        "dat_pl": "Fällen"
+      },
+      "frequenzRang": 185,
+      "quelle": "wiktionary:de:Fall",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fall‘ (https://de.wiktionary.org/wiki/Fall), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.krank",
+      "lemma": "krank",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "kranke",
+        "endung_en": "kranken",
+        "endung_er": "kranker",
+        "endung_es": "krankes",
+        "endung_em": "krankem"
+      },
+      "frequenzRang": 1132,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.gesund",
+      "lemma": "gesund",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "gesunde",
+        "endung_en": "gesunden",
+        "endung_er": "gesunder",
+        "endung_es": "gesundes",
+        "endung_em": "gesundem"
+      },
+      "frequenzRang": 2230,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.muede",
+      "lemma": "müde",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "müde",
+        "endung_en": "müden",
+        "endung_er": "müder",
+        "endung_es": "müdes",
+        "endung_em": "müdem"
+      },
+      "frequenzRang": 2092,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.schlecht",
+      "lemma": "schlecht",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "schlechte",
+        "endung_en": "schlechten",
+        "endung_er": "schlechter",
+        "endung_es": "schlechtes",
+        "endung_em": "schlechtem"
+      },
+      "frequenzRang": 301,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.stark",
+      "lemma": "stark",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "starke",
+        "endung_en": "starken",
+        "endung_er": "starker",
+        "endung_es": "starkes",
+        "endung_em": "starkem"
+      },
+      "frequenzRang": 188,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.hoch",
+      "lemma": "hoch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "hohe",
+        "endung_en": "hohen",
+        "endung_er": "hoher",
+        "endung_es": "hohes",
+        "endung_em": "hohem"
+      },
+      "frequenzRang": 256,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.moeglich",
+      "lemma": "möglich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "mögliche",
+        "endung_en": "möglichen",
+        "endung_er": "möglicher",
+        "endung_es": "mögliches",
+        "endung_em": "möglichem"
+      },
+      "frequenzRang": 216,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.normal",
+      "lemma": "normal",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "normale",
+        "endung_en": "normalen",
+        "endung_er": "normaler",
+        "endung_es": "normales",
+        "endung_em": "normalem"
+      },
+      "frequenzRang": 479,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.deutlich",
+      "lemma": "deutlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "deutliche",
+        "endung_en": "deutlichen",
+        "endung_er": "deutlicher",
+        "endung_es": "deutliches",
+        "endung_em": "deutlichem"
+      },
+      "frequenzRang": 295,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.tief",
+      "lemma": "tief",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "tiefe",
+        "endung_en": "tiefen",
+        "endung_er": "tiefer",
+        "endung_es": "tiefes",
+        "endung_em": "tiefem"
+      },
+      "frequenzRang": 498,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.ernst",
+      "lemma": "ernst",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ernste",
+        "endung_en": "ernsten",
+        "endung_er": "ernster",
+        "endung_es": "ernstes",
+        "endung_em": "ernstem"
+      },
+      "frequenzRang": 395,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.glueck",
+      "lemma": "Glück",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)",
+        "wendungen": "Viel Glück! Zum Glück"
+      },
+      "frequenzRang": 399,
+      "quelle": "wiktionary:de:Glück",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Glück‘ (https://de.wiktionary.org/wiki/Glück), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e11.s0001",
+      "text": "Mein Kopf tut weh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0002",
+      "text": "Mir tut der Kopf weh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0003",
+      "text": "Mein Bauch tut sehr weh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0004",
+      "text": "Mir tut ein Zahn weh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0005",
+      "text": "Sein Bein tut weh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0006",
+      "text": "Meine Hand tut ein bisschen weh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0007",
+      "text": "Meine Augen tun weh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0008",
+      "text": "Wo tut es weh?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0009",
+      "text": "Was tut dir weh?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0010",
+      "text": "Meine Füße tun weh.",
+      "quelle": "tatoeba:408555",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #408555 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0011",
+      "text": "Hier, am Arm.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0012",
+      "text": "Mein Gesicht ist ganz kalt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0013",
+      "text": "Zeig mir deine Hände.",
+      "quelle": "tatoeba:2518313",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2518313 von Gulo_Luscus (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0014",
+      "text": "Das Kind hat schon zwanzig Zähne.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0015",
+      "text": "Was kann ich für Sie tun?",
+      "quelle": "tatoeba:1465619",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1465619 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0016",
+      "text": "Ich habe viel zu tun.",
+      "quelle": "tatoeba:343655",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #343655 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0017",
+      "text": "Das tut mir leid.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0018",
+      "text": "Mir geht es nicht gut. Mein Kopf tut weh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0019",
+      "text": "Was ist los mit dir?",
+      "quelle": "tatoeba:664531",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #664531 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0020",
+      "text": "Bist du krank?",
+      "quelle": "tatoeba:1180049",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1180049 von samueldora (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0021",
+      "text": "Meine Schwester ist krank.",
+      "quelle": "tatoeba:1527193",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1527193 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0022",
+      "text": "Sie liegt krank im Bett.",
+      "quelle": "tatoeba:1407291",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1407291 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0023",
+      "text": "Ich bin ein bisschen müde.",
+      "quelle": "tatoeba:352792",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #352792 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0024",
+      "text": "Am Abend bin ich immer müde.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0025",
+      "text": "Ich fühle mich schlecht.",
+      "quelle": "tatoeba:1995315",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1995315 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0026",
+      "text": "Ich fühle mich gut.",
+      "quelle": "tatoeba:465923",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #465923 von mamat (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0027",
+      "text": "Ich fühle mich nicht so gut.",
+      "quelle": "tatoeba:1192600",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1192600 von samueldora (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0028",
+      "text": "Ich fühle mich gesund.",
+      "quelle": "tatoeba:12936178",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12936178 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0029",
+      "text": "Ich fühle mich krank.",
+      "quelle": "tatoeba:494273",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #494273 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0030",
+      "text": "Hat er noch Fieber?",
+      "quelle": "tatoeba:2037481",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2037481 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0031",
+      "text": "Das Kind hat hohes Fieber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0032",
+      "text": "Seit gestern habe ich Fieber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0033",
+      "text": "Wie hoch ist das Fieber?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0034",
+      "text": "Das Fieber ist hoch, fast 39 Grad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0035",
+      "text": "Ich habe Husten und Fieber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0036",
+      "text": "Seit wann hast du Husten?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0037",
+      "text": "Seit einer Woche habe ich Husten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0038",
+      "text": "Wie lange sind Sie schon krank?",
+      "quelle": "tatoeba:5394595",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5394595 von landano (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0039",
+      "text": "Seit Montag bin ich krank.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0040",
+      "text": "Seit drei Tagen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0041",
+      "text": "Obst und Gemüse sind gesund.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0042",
+      "text": "Sport ist gesund.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0043",
+      "text": "Mir geht es schlecht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0044",
+      "text": "Mir ist so heiß!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0045",
+      "text": "Mir ist schlecht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0046",
+      "text": "Nicht so gut. Ich habe Fieber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0047",
+      "text": "Opa ist stark und gesund.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0048",
+      "text": "Wir warten schon lange.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0049",
+      "text": "Ich bin krank. Ich habe Fieber und Husten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0050",
+      "text": "Mein Vater ist Arzt.",
+      "quelle": "tatoeba:352546",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #352546 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0051",
+      "text": "Meine Mutter ist Ärztin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0052",
+      "text": "Er ist ein guter Arzt.",
+      "quelle": "tatoeba:1072808",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1072808 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0053",
+      "text": "Wo ist der Arzt?",
+      "quelle": "tatoeba:3949547",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3949547 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0054",
+      "text": "Ich rufe in der Praxis an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0055",
+      "text": "Die Praxis ist bis 18 Uhr offen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0056",
+      "text": "Die Praxis ist neben der Apotheke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0057",
+      "text": "Ich möchte einen Termin, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0058",
+      "text": "Kann ich heute einen Termin bekommen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0059",
+      "text": "Wann ist mein Termin?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0060",
+      "text": "Ihr Termin ist morgen um neun Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0061",
+      "text": "Ist ein Termin am Freitag möglich?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0062",
+      "text": "Heute ist leider kein Termin möglich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0063",
+      "text": "Ja, am Freitag um zehn Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0064",
+      "text": "Was fehlt Ihnen denn?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0065",
+      "text": "Kommen Sie bitte sofort!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0066",
+      "text": "Ich komme sofort.",
+      "quelle": "tatoeba:369801",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #369801 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0067",
+      "text": "Bald geht es dir besser.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0068",
+      "text": "Sie ruft mich oft an.",
+      "quelle": "tatoeba:3262752",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3262752 von freddy1 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0069",
+      "text": "Wen rufst du an?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0070",
+      "text": "Was ist passiert?",
+      "quelle": "tatoeba:375825",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #375825 von megamanenm (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0071",
+      "text": "Bitte setz dich.",
+      "quelle": "tatoeba:4525998",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4525998 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0072",
+      "text": "Bitte setzen Sie sich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0073",
+      "text": "Ich gehe einmal im Jahr zum Arzt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0074",
+      "text": "Guten Tag! Kann ich bitte einen Termin bekommen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0075",
+      "text": "Du sollst im Bett bleiben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0076",
+      "text": "Sie sollen viel Wasser trinken.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0077",
+      "text": "Was soll ich tun?",
+      "quelle": "tatoeba:452739",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #452739 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0078",
+      "text": "Darf ich das essen?",
+      "quelle": "tatoeba:638441",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #638441 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0079",
+      "text": "Du darfst heute keinen Sport machen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0080",
+      "text": "Darf ich heute in den Park?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0081",
+      "text": "Morgen darfst du wieder zur Schule gehen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0082",
+      "text": "Darf ich heute Fußball spielen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0083",
+      "text": "Nein, heute nicht. Du hast noch Fieber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0084",
+      "text": "Heute bleibst du zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0085",
+      "text": "Bleib heute im Bett!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0086",
+      "text": "Nehmen Sie zwei Tabletten am Tag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0087",
+      "text": "Die Tablette hilft gegen Fieber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0088",
+      "text": "Nehmen Sie die Tablette nach dem Essen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0089",
+      "text": "Warmer Tee ist gut gegen Husten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0090",
+      "text": "Haben Sie ein Mittel gegen Fieber?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0091",
+      "text": "Kommen Sie in einer Woche wieder.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0092",
+      "text": "Ich bin wieder gesund!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0093",
+      "text": "Ich kann kaum essen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0094",
+      "text": "Ich höre dich kaum.",
+      "quelle": "tatoeba:1288078",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1288078 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0095",
+      "text": "Atmen Sie bitte tief!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0096",
+      "text": "37 Grad ist normal.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0097",
+      "text": "Das ist ganz normal.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0098",
+      "text": "Bleib im Bett und trink viel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0099",
+      "text": "Du musst heute nicht kommen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0100",
+      "text": "Du darfst heute nicht kommen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0101",
+      "text": "Du sollst viel trinken und im Bett bleiben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0102",
+      "text": "Ich brauche deine Hilfe.",
+      "quelle": "tatoeba:353031",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #353031 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0103",
+      "text": "Danke für deine Hilfe, Paula!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0104",
+      "text": "Ruf schnell die 112 an!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0105",
+      "text": "Die Nummer 110 ist für die Polizei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0106",
+      "text": "Die Hilfe kommt sofort.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0107",
+      "text": "Keine Angst!",
+      "quelle": "tatoeba:1871642",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1871642 von Asma (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0108",
+      "text": "Hast du Angst vor dem Arzt?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0109",
+      "text": "Ja, ich habe ein bisschen Angst.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0110",
+      "text": "Geh auf jeden Fall zum Arzt!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0111",
+      "text": "Viel Glück!",
+      "quelle": "tatoeba:430426",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #430426 von jerom (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0112",
+      "text": "Zum Glück ist es nichts Ernstes.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0113",
+      "text": "Ich hoffe, du kommst bald zurück.",
+      "quelle": "tatoeba:6587634",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6587634 von Micsmithel (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0114",
+      "text": "Ich hoffe, es geht dir bald besser.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0115",
+      "text": "Ist es ernst?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0116",
+      "text": "Nein, es ist nichts Ernstes.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0117",
+      "text": "Emre hat Husten und sogar Fieber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0118",
+      "text": "Die Apotheke ist sogar am Sonntag offen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0119",
+      "text": "Gute Besserung!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0120",
+      "text": "Kopf hoch!",
+      "quelle": "tatoeba:342091",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #342091 von lilygilder (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e11.s0121",
+      "text": "Gute Besserung! Ich hoffe, es geht dir bald besser.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0122",
+      "text": "Yazan ist krank.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0123",
+      "text": "Am Montag fühlt sich Yazan nicht gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0124",
+      "text": "Sein Kopf tut weh, und er ist müde.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0125",
+      "text": "Auch sein Hals tut sehr weh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0126",
+      "text": "Was ist los, Yazan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0127",
+      "text": "Ich fühle mich so schlecht, Mama.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0128",
+      "text": "Oh, du hast ja Fieber!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0129",
+      "text": "Heute bleibst du im Bett.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0130",
+      "text": "Ranā ruft sofort bei der Ärztin an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0131",
+      "text": "Mein Sohn ist krank. Er hat hohes Fieber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0132",
+      "text": "Seit wann hat er Fieber?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0133",
+      "text": "Seit gestern Abend.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0134",
+      "text": "Kommen Sie bitte sofort in die Praxis.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0135",
+      "text": "Die Ärztin sieht in seinen Hals.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0136",
+      "text": "Dein Hals ist ganz rot.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0137",
+      "text": "Das ist nichts Ernstes.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0138",
+      "text": "Du sollst drei Tage im Bett bleiben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0139",
+      "text": "Und du sollst viel Wasser und Tee trinken.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0140",
+      "text": "Darf ich am Freitag wieder zur Schule?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0141",
+      "text": "Ja, aber nur ohne Fieber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0142",
+      "text": "Vielen Dank für Ihre Hilfe!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0143",
+      "text": "Gute Besserung, Yazan!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0144",
+      "text": "Yazan bleibt im Bett und trinkt viel Tee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0145",
+      "text": "Am Mittwoch fühlt er sich schon besser.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0146",
+      "text": "Was tut Yazan weh?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0147",
+      "text": "Sein Kopf und sein Hals.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0148",
+      "text": "Sein Bauch und sein Bein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0149",
+      "text": "Seine Augen und seine Hand.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0150",
+      "text": "Seit wann hat Yazan Fieber?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0151",
+      "text": "Seit einer Woche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0152",
+      "text": "Seit Freitag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0153",
+      "text": "Was soll Yazan tun?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0154",
+      "text": "Im Bett bleiben und viel trinken.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0155",
+      "text": "Zur Schule gehen und Fußball spielen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0156",
+      "text": "Sofort Tabletten nehmen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0157",
+      "text": "Wie geht es Yazan am Mittwoch?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0158",
+      "text": "Er fühlt sich schon besser.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0159",
+      "text": "Er hat noch hohes Fieber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0160",
+      "text": "Ein Mittel gegen Husten",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0161",
+      "text": "Ḫālid hat seit Tagen Husten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0162",
+      "text": "Heute geht er in die Apotheke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0163",
+      "text": "Die Apothekerin heißt Nisrīn.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0164",
+      "text": "Ich brauche ein Mittel gegen Husten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0165",
+      "text": "Haben Sie auch Fieber?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0166",
+      "text": "Nein, aber der Husten ist sehr stark.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0167",
+      "text": "Dieser Saft hilft gegen Husten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0168",
+      "text": "Wie oft darf ich ihn nehmen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0169",
+      "text": "Man darf ihn drei Mal am Tag nehmen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0170",
+      "text": "Mehr darf man nicht nehmen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0171",
+      "text": "Darf ich dazu Tee trinken?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0172",
+      "text": "Ja, Tee ist sogar sehr gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0173",
+      "text": "Danke! Ich hoffe, er hilft schnell.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0174",
+      "text": "Was braucht Ḫālid?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0175",
+      "text": "Ein Mittel gegen Fieber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0176",
+      "text": "Einen Termin beim Arzt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0177",
+      "text": "Wie oft darf Ḫālid den Saft nehmen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0178",
+      "text": "Drei Mal am Tag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0179",
+      "text": "Einmal in der Woche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0180",
+      "text": "Nur am Abend.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0181",
+      "text": "Darf Ḫālid Tee trinken?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0182",
+      "text": "Ja, er darf Tee trinken.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0183",
+      "text": "Nein, er darf keinen Tee trinken.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0184",
+      "text": "Mein Auge ist rot und tut weh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0185",
+      "text": "Gib mir deine Hand!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0186",
+      "text": "Ich bin müde und gehe ins Bett.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0187",
+      "text": "Ich brauche bald einen Termin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0188",
+      "text": "Was ist mit deinem Arm passiert?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0189",
+      "text": "Soll ich eine Tablette nehmen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0190",
+      "text": "Kinder dürfen diese Tabletten nicht nehmen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0191",
+      "text": "Hast du wieder Fieber?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0192",
+      "text": "Wie lange muss ich im Bett bleiben?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0193",
+      "text": "Oma braucht Hilfe in der Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0194",
+      "text": "Viel Glück bei der Prüfung, Selin!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0195",
+      "text": "Das Fieber ist nicht mehr so hoch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0196",
+      "text": "Tief atmen und ruhig bleiben!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0197",
+      "text": "Sogar Opa spielt mit Jan Fußball.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0198",
+      "text": "Bitte schreib deutlich!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0199",
+      "text": "Seit einem Jahr wohne ich in Deutschland.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0200",
+      "text": "Heute tut mir der Kopf nicht mehr weh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0201",
+      "text": "Nichts Ernstes. Er tut nur ein bisschen weh.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0202",
+      "text": "Zwei Tage. Dann bist du wieder gesund.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0203",
+      "text": "Ranā und Yazan gehen in die Praxis.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e11.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Körperteile nennen und sagen, was mir wehtut.",
+        "tr": "Vücudun bölümlerini sayabilir ve neremin ağrıdığını söyleyebilirim.",
+        "ar": "أستطيع أن أسمّي أجزاء الجسم وأن أقول ما الذي يؤلمني."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e11.l01.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e11.kopf", "de.a1.e11.auge", "de.a1.e11.zahn", "de.a1.e11.hand", "de.a1.e11.bauch"]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.hals",
+          "ablenker": ["de.a1.e11.gesicht", "de.a1.e11.bein"]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e11.arm",
+          "ablenker": ["de.a1.e11.kopf", "de.a1.e09.fuss"]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.wehtun",
+          "ablenker": ["de.a1.e07.helfen", "de.a1.e03.fehlen"]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e11.s0001",
+          "ablenker": ["de.a1.e11.s0003", "de.a1.e11.s0005", "de.a1.e11.s0010"]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0002",
+          "wort": 1,
+          "ablenker": ["tun", "ist"]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0008"
+            }
+          ],
+          "antwort": "de.a1.e11.s0003",
+          "ablenker": ["de.a1.e11.s0016", "de.a1.e11.s0013", "de.a1.e11.s0014"]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0006",
+          "nach": "ziel",
+          "ablenker": ["Kopf", "tun"],
+          "alternativen": ["Ein bisschen tut meine Hand weh."]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e11.gesicht",
+          "ablenker": ["de.a1.e11.auge", "de.a1.e03.bild"]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e11.zahn",
+          "ablenker": ["de.a1.e02.zehn"]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a12",
+          "typ": "paare",
+          "lemmata": ["de.a1.e11.arm", "de.a1.e11.bein", "de.a1.e11.hals", "de.a1.e11.gesicht", "de.a1.e11.tun"]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a13",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0007",
+          "wort": 2,
+          "ablenker": ["tut", "tust"]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e11.s0009",
+          "ablenker": ["de.a1.e11.s0001", "de.a1.e11.s0016", "de.a1.e11.s0017"]
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e11.s0018"
+        },
+        {
+          "schluessel": "de.a1.e11.l01.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0004",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e11.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wie es mir geht und seit wann ich krank bin.",
+        "tr": "Nasıl olduğumu ve ne zamandan beri hasta olduğumu söyleyebilirim.",
+        "ar": "أستطيع أن أقول كيف حالي ومنذ متى أنا مريض."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e11.l02.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e11.krank", "de.a1.e11.gesund", "de.a1.e11.muede", "de.a1.e11.schlecht", "de.a1.e11.lange"]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.fieber",
+          "ablenker": ["de.a1.e11.husten", "de.a1.e05.hunger"]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e11.fuehlen",
+          "ablenker": ["de.a1.e07.hoeren", "de.a1.e05.sehen"]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e11.s0025",
+          "ablenker": ["de.a1.e11.s0026", "de.a1.e11.s0028", "de.a1.e11.s0029"]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0032",
+          "wort": 0,
+          "ablenker": ["Um", "Am"]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0050"
+            }
+          ],
+          "antwort": "de.a1.e11.s0046",
+          "ablenker": ["de.a1.e11.s0040", "de.a1.e11.s0011", "de.a1.e11.s0051"]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0035",
+          "nach": "ziel",
+          "alternativen": ["Ich habe Fieber und Husten."],
+          "ablenker": ["Hunger", "bin"]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.stark",
+          "ablenker": ["de.a1.e11.hoch", "de.a1.e05.hart"]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0044",
+          "wort": 0,
+          "ablenker": ["Ich", "Mich"]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e11.s0038",
+          "ablenker": ["de.a1.e11.s0036", "de.a1.e11.s0033", "de.a1.e11.s0021"]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e11.seit",
+          "ablenker": ["de.a1.e04.vor", "de.a1.e04.bis"]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0019"
+            }
+          ],
+          "antwort": "de.a1.e11.s0045",
+          "ablenker": ["de.a1.e11.s0041", "de.a1.e11.s0048", "de.a1.e11.s0047"]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e11.s0034",
+          "alternativen": ["Das Fieber ist hoch, fast neununddreißig Grad."]
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e11.s0049"
+        },
+        {
+          "schluessel": "de.a1.e11.l02.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0043",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e11.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann in der Praxis anrufen und nach einem Termin fragen.",
+        "tr": "Muayenehaneyi arayıp randevu isteyebilirim.",
+        "ar": "أستطيع أن أتصل بالعيادة وأن أطلب موعدًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e11.l03.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e11.arzt", "de.a1.e11.praxis", "de.a1.e11.termin", "de.a1.e11.moeglich", "de.a1.e09.apotheke"]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.anrufen",
+          "ablenker": ["de.a1.e07.fragen", "de.a1.e06.kaufen"]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e11.sofort",
+          "ablenker": ["de.a1.e11.bald", "de.a1.e08.selten"]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e11.s0061",
+          "ablenker": ["de.a1.e11.s0060", "de.a1.e11.s0059", "de.a1.e11.s0062"]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0054",
+          "wort": 5,
+          "ablenker": ["auf", "aus"]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0015"
+            }
+          ],
+          "antwort": "de.a1.e11.s0057",
+          "ablenker": ["de.a1.e11.s0050", "de.a1.e11.s0056", "de.a1.e11.s0068"]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0058",
+          "nach": "ziel",
+          "ablenker": ["morgen", "Arzt"]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.einmal",
+          "ablenker": ["de.a1.e08.oft", "de.a1.e08.nie"]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0072",
+          "wort": 1,
+          "ablenker": ["sitzen", "setzt"]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e11.s0070",
+          "ablenker": ["de.a1.e11.s0053", "de.a1.e11.s0059", "de.a1.e11.s0066"]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e11.deutlich",
+          "ablenker": ["de.a1.e05.schnell", "de.a1.e09.langsam"]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0064"
+            }
+          ],
+          "antwort": "de.a1.e11.s0035",
+          "ablenker": ["de.a1.e11.s0059", "de.a1.e11.s0072", "de.a1.e11.s0052"]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e11.s0060",
+          "alternativen": ["Ihr Termin ist morgen um 9 Uhr."]
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e11.s0074"
+        },
+        {
+          "schluessel": "de.a1.e11.l03.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0073",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e11.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann einfache Ratschläge verstehen: Was soll ich tun, was darf ich?",
+        "tr": "Basit tavsiyeleri anlayabilirim: Ne yapmalıyım, neye izin var?",
+        "ar": "أستطيع أن أفهم نصائح بسيطة: ماذا يجب أن أفعل وماذا يُسمح لي؟"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e11.l04.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e11.sollen", "de.a1.e11.duerfen", "de.a1.e11.bleiben", "de.a1.e11.tablette"]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.gegen",
+          "ablenker": ["de.a1.e05.mit", "de.a1.e05.ohne"]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e11.bleiben",
+          "ablenker": ["de.a1.e01.wohnen", "de.a1.e09.warten"]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e11.s0075",
+          "ablenker": ["de.a1.e11.s0079", "de.a1.e11.s0085", "de.a1.e11.s0084"]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0081",
+          "wort": 1,
+          "ablenker": ["darf", "dürft"]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0077"
+            }
+          ],
+          "antwort": "de.a1.e11.s0098",
+          "ablenker": ["de.a1.e11.s0005", "de.a1.e11.s0055", "de.a1.e11.s0078"]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0086",
+          "nach": "ziel",
+          "alternativen": ["Nehmen Sie am Tag zwei Tabletten."],
+          "ablenker": ["Tablette", "Woche"]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.wieder",
+          "ablenker": ["de.a1.e03.noch", "de.a1.e08.immer"]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0088",
+          "wort": 4,
+          "ablenker": ["bis", "um"]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e11.s0099",
+          "ablenker": ["de.a1.e11.s0100", "de.a1.e11.s0091"]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a12",
+          "typ": "paare",
+          "lemmata": ["de.a1.e11.kaum", "de.a1.e11.tief", "de.a1.e11.normal", "de.a1.e01.gut"]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e11.s0096",
+          "alternativen": ["Siebenunddreißig Grad ist normal."]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0082"
+            }
+          ],
+          "antwort": "de.a1.e11.s0083",
+          "ablenker": ["de.a1.e11.s0060", "de.a1.e11.s0041", "de.a1.e11.s0094"]
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e11.s0101"
+        },
+        {
+          "schluessel": "de.a1.e11.l04.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0093",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e11.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann um Hilfe bitten, trösten und gute Besserung wünschen.",
+        "tr": "Yardım isteyebilir, teselli edebilir ve geçmiş olsun diyebilirim.",
+        "ar": "أستطيع أن أطلب المساعدة وأن أواسي وأن أتمنى الشفاء."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e11.l05.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e11.hilfe", "de.a1.e11.angst", "de.a1.e11.glueck", "de.a1.e11.hoffen", "de.a1.e11.fall"]
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.ernst",
+          "ablenker": ["de.a1.e11.normal", "de.a1.e03.klein"]
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e11.sogar",
+          "ablenker": ["de.a1.e02.auch", "de.a1.e03.nur"]
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e11.s0104",
+          "ablenker": ["de.a1.e11.s0105", "de.a1.e11.s0106", "de.a1.e11.s0102"]
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0112",
+          "wort": 0,
+          "ablenker": ["Zur", "Im"]
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0108"
+            }
+          ],
+          "antwort": "de.a1.e11.s0109",
+          "ablenker": ["de.a1.e11.s0090", "de.a1.e11.s0042", "de.a1.e11.s0113"]
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0114",
+          "nach": "ziel",
+          "alternativen": ["Ich hoffe, dir geht es bald besser.", "Ich hoffe, bald geht es dir besser."],
+          "ablenker": ["hoffst", "Fieber"]
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a09",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.hoffen",
+          "ablenker": ["de.a1.e07.wissen", "de.a1.e07.verstehen"]
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0110",
+          "wort": 2,
+          "ablenker": ["jede", "jedes"]
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e11.s0119",
+          "ablenker": ["de.a1.e11.s0111", "de.a1.e11.s0107", "de.a1.e11.s0120"]
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0115"
+            }
+          ],
+          "antwort": "de.a1.e11.s0116",
+          "ablenker": ["de.a1.e11.s0118", "de.a1.e11.s0105", "de.a1.e11.s0103"]
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e11.s0105",
+          "alternativen": ["Die Nummer hundertzehn ist für die Polizei.", "Die Nummer einhundertzehn ist für die Polizei."]
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e11.s0121"
+        },
+        {
+          "schluessel": "de.a1.e11.l05.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0117",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e11.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über einen Arztbesuch und ein Gespräch in der Apotheke verstehen.",
+        "tr": "Doktora gitmeyle ilgili bir öyküyü ve eczanede geçen bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن زيارة الطبيب وحوارًا في الصيدلية."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e11.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a1.e11.s0122",
+          "zeilen": [
+            {
+              "satz": "de.a1.e11.s0123"
+            },
+            {
+              "satz": "de.a1.e11.s0124"
+            },
+            {
+              "satz": "de.a1.e11.s0125"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0126"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e11.s0127"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0128"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0129"
+            },
+            {
+              "satz": "de.a1.e11.s0130"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e11.s0015"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0131"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e11.s0132"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0133"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e11.s0134"
+            },
+            {
+              "satz": "de.a1.e11.s0203"
+            },
+            {
+              "satz": "de.a1.e11.s0135"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e11.s0136"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e11.s0137"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e11.s0138"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e11.s0139"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e11.s0140"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e11.s0141"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0142"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e11.s0143"
+            },
+            {
+              "satz": "de.a1.e11.s0144"
+            },
+            {
+              "satz": "de.a1.e11.s0145"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.a1.e11.s0146",
+              "antwort": "de.a1.e11.s0147",
+              "ablenker": ["de.a1.e11.s0148", "de.a1.e11.s0149"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.a1.e11.s0150",
+              "antwort": "de.a1.e11.s0133",
+              "ablenker": ["de.a1.e11.s0151", "de.a1.e11.s0152"]
+            },
+            {
+              "nach": 18,
+              "frage": "de.a1.e11.s0153",
+              "antwort": "de.a1.e11.s0154",
+              "ablenker": ["de.a1.e11.s0155", "de.a1.e11.s0156"]
+            },
+            {
+              "nach": 24,
+              "frage": "de.a1.e11.s0157",
+              "antwort": "de.a1.e11.s0158",
+              "ablenker": ["de.a1.e11.s0159"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e11.l06.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0126"
+            }
+          ],
+          "antwort": "de.a1.e11.s0127",
+          "ablenker": ["de.a1.e11.s0063", "de.a1.e11.s0056", "de.a1.e11.s0199"]
+        },
+        {
+          "schluessel": "de.a1.e11.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0138",
+          "wort": 1,
+          "ablenker": ["soll", "sollt"]
+        },
+        {
+          "schluessel": "de.a1.e11.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e11.s0132",
+          "ablenker": ["de.a1.e11.s0036", "de.a1.e11.s0038", "de.a1.e11.s0039"]
+        },
+        {
+          "schluessel": "de.a1.e11.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.a1.e11.s0160",
+          "zeilen": [
+            {
+              "satz": "de.a1.e11.s0161"
+            },
+            {
+              "satz": "de.a1.e11.s0162"
+            },
+            {
+              "satz": "de.a1.e11.s0163"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0015"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e11.s0164"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0165"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e11.s0166"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0167"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e11.s0168"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0169"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0170"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e11.s0171"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0172"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e11.s0173"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0119"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.a1.e11.s0174",
+              "antwort": "de.a1.e11.s0160",
+              "ablenker": ["de.a1.e11.s0175", "de.a1.e11.s0176"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.a1.e11.s0177",
+              "antwort": "de.a1.e11.s0178",
+              "ablenker": ["de.a1.e11.s0179", "de.a1.e11.s0180"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a1.e11.s0181",
+              "antwort": "de.a1.e11.s0182",
+              "ablenker": ["de.a1.e11.s0183"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e11.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e11.s0168"
+            }
+          ],
+          "antwort": "de.a1.e11.s0169",
+          "ablenker": ["de.a1.e11.s0133", "de.a1.e11.s0172"]
+        },
+        {
+          "schluessel": "de.a1.e11.l06.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0164",
+          "nach": "ziel",
+          "alternativen": ["Gegen Husten brauche ich ein Mittel."],
+          "ablenker": ["Fieber", "mit"]
+        },
+        {
+          "schluessel": "de.a1.e11.l06.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0168",
+          "wort": 2,
+          "ablenker": ["darfst", "dürfen"]
+        },
+        {
+          "schluessel": "de.a1.e11.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e11.s0167",
+          "ablenker": ["de.a1.e11.s0089", "de.a1.e11.s0087", "de.a1.e11.s0076"]
+        },
+        {
+          "schluessel": "de.a1.e11.l06.a10",
+          "typ": "sprechen",
+          "satz": "de.a1.e11.s0131"
+        },
+        {
+          "schluessel": "de.a1.e11.l06.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e11.s0169",
+          "alternativen": ["Man darf ihn dreimal am Tag nehmen.", "Man darf ihn 3 Mal am Tag nehmen."]
+        },
+        {
+          "schluessel": "de.a1.e11.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0144",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e11.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole: Körper, Befinden, Termin und Ratschläge.",
+        "tr": "Tekrar ediyorum: vücut, nasıl olduğum, randevu ve tavsiyeler.",
+        "ar": "أراجع: الجسم والحال والموعد والنصائح."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e11.l07.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e11.kopf", "de.a1.e11.hals", "de.a1.e11.bauch", "de.a1.e11.auge", "de.a1.e11.hand"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.termin",
+          "ablenker": ["de.a1.e11.praxis", "de.a1.e04.zeit"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a03",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e11.bauch",
+          "ablenker": ["de.a1.e07.buch"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e11.s0186",
+          "ablenker": ["de.a1.e11.s0024", "de.a1.e11.s0022", "de.a1.e11.s0023"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0192",
+          "wort": 2,
+          "ablenker": ["musst", "müssen"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0188"
+            }
+          ],
+          "antwort": "de.a1.e11.s0201",
+          "ablenker": ["de.a1.e11.s0086", "de.a1.e11.s0059", "de.a1.e11.s0067"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e11.krank",
+          "ablenker": ["de.a1.e11.muede", "de.a1.e05.voll"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0189",
+          "nach": "ziel",
+          "ablenker": ["sollst", "Tabletten"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e11.s0191",
+          "ablenker": ["de.a1.e11.s0030", "de.a1.e11.s0031", "de.a1.e11.s0092"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.duerfen",
+          "ablenker": ["de.a1.e11.sollen", "de.a1.e07.wollen"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0200",
+          "wort": 2,
+          "ablenker": ["mich", "ich"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e11.tief",
+          "ablenker": ["de.a1.e08.tier"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0036"
+            }
+          ],
+          "antwort": "de.a1.e11.s0037",
+          "ablenker": ["de.a1.e11.s0063", "de.a1.e11.s0042", "de.a1.e11.s0080"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a14",
+          "typ": "paare",
+          "lemmata": ["de.a1.e11.anrufen", "de.a1.e11.setzen", "de.a1.e11.passieren", "de.a1.e11.fuehlen"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e11.s0086",
+          "alternativen": ["Nehmen Sie 2 Tabletten am Tag."]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a16",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e11.glueck",
+          "ablenker": ["de.a1.e11.angst", "de.a1.e11.hilfe"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a17",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0190",
+          "wort": 1,
+          "ablenker": ["darf", "darfst"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a18",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0061"
+            }
+          ],
+          "antwort": "de.a1.e11.s0063",
+          "ablenker": ["de.a1.e11.s0012", "de.a1.e11.s0041", "de.a1.e11.s0071"]
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a19",
+          "typ": "sprechen",
+          "satz": "de.a1.e11.s0058"
+        },
+        {
+          "schluessel": "de.a1.e11.l07.a20",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0197",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e11.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich über Krankheit und Gesundheit sprechen kann.",
+        "tr": "Hastalık ve sağlık hakkında konuşabildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أتحدث عن المرض والصحة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e11.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.arzt",
+          "ablenker": ["de.a1.e07.lehrer", "de.a1.e09.polizei"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e11.fieber", "de.a1.e11.husten", "de.a1.e11.tablette", "de.a1.e11.hilfe"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e11.s0095",
+          "ablenker": ["de.a1.e11.s0072", "de.a1.e11.s0065", "de.a1.e11.s0196"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0101",
+          "wort": 1,
+          "ablenker": ["soll", "sollt"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0020"
+            }
+          ],
+          "antwort": "de.a1.e11.s0027",
+          "ablenker": ["de.a1.e11.s0063", "de.a1.e11.s0194", "de.a1.e11.s0069"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e11.gesund",
+          "ablenker": ["de.a1.e11.krank", "de.a1.e03.neu"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0187",
+          "nach": "ziel",
+          "alternativen": ["Bald brauche ich einen Termin.", "Einen Termin brauche ich bald."],
+          "ablenker": ["sofort", "Praxis"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a08",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e11.hand",
+          "ablenker": ["de.a1.e01.land"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e11.s0195",
+          "ablenker": ["de.a1.e11.s0031", "de.a1.e11.s0191", "de.a1.e11.s0097"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e11.s0193",
+          "wort": 1,
+          "ablenker": ["brauchst", "brauche"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e11.bald",
+          "ablenker": ["de.a1.e04.gestern", "de.a1.e04.spaet"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0192"
+            }
+          ],
+          "antwort": "de.a1.e11.s0202",
+          "ablenker": ["de.a1.e11.s0198", "de.a1.e11.s0090", "de.a1.e11.s0185"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0184",
+          "nach": "ziel",
+          "ablenker": ["Zahn", "sind"]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e11.s0055",
+          "alternativen": ["Die Praxis ist bis achtzehn Uhr offen."]
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e11.s0057"
+        },
+        {
+          "schluessel": "de.a1.e11.l08.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e11.s0112",
+          "nach": "ausgang"
+        }
+      ]
+    }
+  ]
+}

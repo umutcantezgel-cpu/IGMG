@@ -182,6 +182,8 @@ export type KaikkiEintrag = {
   pl?: string[];
   kf?: [string, string][];
   gl?: [string, string][];
+  /** Übersetzungen: Sprache, Wort, Bedeutung */
+  ue?: [string, string, string][];
   mk?: string[];
 };
 

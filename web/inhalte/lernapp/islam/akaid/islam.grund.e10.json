@@ -1,0 +1,1564 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "akaid",
+  "stufe": "grund",
+  "einheit": {
+    "schluessel": "islam.grund.e10",
+    "reihenfolge": 10,
+    "thema": {
+      "de": "Nach hanefitischer Lehre – Glaube II: Engel, Bücher und Propheten"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Nach hanefitischer Lehre: Ich kann die Glaubensinhalte zu Engeln, Offenbarungsschriften und Gesandten nennen."
+      },
+      {
+        "de": "Ich kann erklären, wie al-Fiqh al-Akbar und die Ṭaḥāwiyya den Koran als Rede Gottes beschreiben; Verse nennt die Einheit nur als Verweis."
+      },
+      {
+        "de": "Ich kenne die Lehre von der Prophetenschaft, von der Sündlosigkeit der Propheten und vom Siegel der Propheten."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.grund.e10.l01",
+      "titel": "Glaubensartikel: Engel, Bücher, Gesandte",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e10.l01.a01",
+          "text": "Al-Fiqh al-Akbar nennt als Grundlage der Lehre von der Einheit Gottes (tawḥīd) und des richtigen Glaubens, dass man den Glauben an Gott, an Seine Engel, Seine Bücher und Seine Gesandten bekennen muss. Dazu gehören die Auferstehung nach dem Tod, die Bestimmung (al-qadar), deren Gutes und Schlechtes von Gott kommt, die Abrechnung, die Waage, das Paradies und die Hölle. Das Werk hält fest: All das ist wahr (ḥaqq).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Bayān Uṣūl al-Īmān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 5,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 41,
+              "zitatBis": 210,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l01.a02",
+          "text": "Die Ṭaḥāwiyya bestimmt den Glauben (al-īmān) als Glauben an Gott, Seine Engel, Seine Bücher, Seine Gesandten, den Jüngsten Tag und die Bestimmung (al-qadar). Zur Bestimmung sagt sie: Ihr Gutes und ihr Schlechtes, ihr Süßes und ihr Bitteres kommen von Gott.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 66",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 44,
+              "passage": "tahawiyya.ms0005",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms5",
+              "passageSha256Text": "5863390b42be9fd38773aa4eaa072c2665f80dd4b5c765e30fbfb0c7fcd67d8a",
+              "zitatVon": 575,
+              "zitatBis": 679,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "4:136"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l01.a03",
+          "text": "Die Ṭaḥāwiyya bekennt den Glauben an die Engel, an die Propheten und an die Bücher, die auf die Gesandten herabgesandt wurden, und bezeugt, dass diese auf der offenkundigen Wahrheit standen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 53",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 38,
+              "passage": "tahawiyya.ms0004",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms4",
+              "passageSha256Text": "416529dbce77c26410f592a0556e3baa4b702cca4d9d9719ecb5b3ab1a395e3f",
+              "zitatVon": 1007,
+              "zitatBis": 1095,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l01.a04",
+          "text": "Nach der Ṭaḥāwiyya glaubt man an all diese Inhalte. Unter den Gesandten Gottes nimmt man dabei keinen aus und hält sie alle für wahrhaftig in dem, was sie gebracht haben.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 67",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 44,
+              "passage": "tahawiyya.ms0005",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms5",
+              "passageSha256Text": "5863390b42be9fd38773aa4eaa072c2665f80dd4b5c765e30fbfb0c7fcd67d8a",
+              "zitatVon": 680,
+              "zitatBis": 756,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "2:285"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e10.l01.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.grund.e10.l01.a02",
+          "anweisung": "Bringe die Inhalte des Glaubens in die Reihenfolge, in der die Ṭaḥāwiyya sie nennt.",
+          "schritte": [
+            "Gott",
+            "die Engel",
+            "die Bücher",
+            "die Gesandten",
+            "der Jüngste Tag",
+            "die Bestimmung"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l01.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l01.a04",
+          "behauptung": "Nach der Ṭaḥāwiyya genügt es, an einige der Gesandten zu glauben.",
+          "richtig": false,
+          "begruendung": "Unter den Gesandten Gottes nimmt man keinen aus und hält sie alle für wahrhaftig in dem, was sie gebracht haben.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l01.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l01.a01",
+          "behauptung": "Nach al-Fiqh al-Akbar gehören die Abrechnung und die Waage zu den Inhalten, an die man glaubt.",
+          "richtig": true,
+          "begruendung": "Al-Fiqh al-Akbar nennt neben Gott, den Engeln, den Büchern und den Gesandten auch Auferstehung, Bestimmung, Abrechnung, Waage, Paradies und Hölle und sagt: All das ist wahr.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l01.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e10.l01.a02",
+          "fall": "In einer Unterrichtsstunde sagt ein Schüler: „Das Gute kommt von Gott. Das Schlechte gehört aber nicht zu Seiner Bestimmung.“",
+          "frage": "Was lehrt die Ṭaḥāwiyya dazu?",
+          "optionen": [
+            "Das Gute und das Schlechte der Bestimmung kommen beide von Gott.",
+            "Nur das Gute gehört zur Bestimmung.",
+            "Die Bestimmung gehört nicht zu den Inhalten des Glaubens."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e10.l02",
+      "titel": "Der Koran als Rede Gottes",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e10.l02.a01",
+          "text": "Der Koran ist nach al-Fiqh al-Akbar die Rede Gottes (kalām Allāh): in den Koranexemplaren (maṣāḥif) geschrieben, in den Herzen bewahrt, auf den Zungen rezitiert und auf den Propheten herabgesandt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī l-Qurʾān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 20,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 1058,
+              "zitatBis": 1170,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.a02",
+          "text": "Al-Fiqh al-Akbar unterscheidet: Wenn wir den Koran aussprechen, aufschreiben oder rezitieren, dann sind unser Aussprechen, unser Schreiben und unser Rezitieren erschaffen. Der Koran selbst ist nicht erschaffen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī l-Qurʾān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 20,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 1171,
+              "zitatBis": 1248,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.a03",
+          "text": "Auch was der Koran über Mose und andere Propheten, über Pharao und Iblīs erzählt, ist nach al-Fiqh al-Akbar Gottes Rede, mit der Er über sie berichtet. Gottes Rede ist nicht erschaffen. Der Koran ist Gottes Rede und daher ewig (qadīm) – nicht die Rede Moses und der anderen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī l-Qurʾān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 22,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 1249,
+              "zitatBis": 1480,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.a04",
+          "text": "Al-Fiqh al-Akbar zählt die Rede (al-kalām) zu den wesenhaften Eigenschaften Gottes, zusammen mit Leben, Macht, Wissen, Hören, Sehen und Wollen. Gott ist von Ewigkeit her sprechend durch Seine Rede, und diese Rede ist eine Eigenschaft von Ewigkeit her.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "aṣ-Ṣifāt adh-Dhātiyya wa-l-Fiʿliyya",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 16,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 455,
+              "zitatBis": 520,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Ṣifāt Allāh azaliyya",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 18,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 671,
+              "zitatBis": 780,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.a05",
+          "text": "Mose hat nach al-Fiqh al-Akbar die Rede Gottes gehört. Gott war aber schon sprechend, bevor Er mit Mose sprach – so wie Er von Ewigkeit her Schöpfer war, bevor Er die Schöpfung erschuf. Als Er mit Mose sprach, tat Er es mit Seiner Rede, die Seine ewige Eigenschaft ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī l-Qurʾān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 22,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 1481,
+              "zitatBis": 1640,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī l-Qurʾān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 24,
+              "passage": "fiqh_akbar.ms0002",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms2",
+              "passageSha256Text": "d81b92585c64f3763d9c69a5d0d9f29f7b7b5bffba4e4af77ea5349c541cb5a3",
+              "zitatVon": 0,
+              "zitatBis": 78,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "4:164"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.a06",
+          "text": "Gottes Rede gleicht nicht unserer Rede: Wir sprechen mit Sprechwerkzeugen und Buchstaben, Gott spricht ohne Werkzeug und ohne Buchstaben. Die Buchstaben sind erschaffen, Gottes Rede ist es nicht (al-Fiqh al-Akbar).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī l-Qurʾān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 26,
+              "passage": "fiqh_akbar.ms0002",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms2",
+              "passageSha256Text": "d81b92585c64f3763d9c69a5d0d9f29f7b7b5bffba4e4af77ea5349c541cb5a3",
+              "zitatVon": 161,
+              "zitatBis": 299,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.a07",
+          "text": "Die Ṭaḥāwiyya lehrt: Der Koran ist Gottes Rede. Er ging von Ihm als Rede aus, ohne ein Wie (bi-lā kayfiyya). Gott sandte ihn als Offenbarung auf Seinen Gesandten herab. Die Gläubigen bestätigten ihn darin als Wahrheit und waren gewiss, dass er wirklich Gottes Rede ist – nicht erschaffen wie die Rede der Geschöpfe.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 33",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 24,
+              "passage": "tahawiyya.ms0002",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms2",
+              "passageSha256Text": "372f10c2bd82611e0a886baafd26d5511e648a9c30a36474c828c6ff71a7a5ab",
+              "zitatVon": 393,
+              "zitatBis": 549,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.a08",
+          "text": "Wer den Koran hört und behauptet, er sei Menschenwort, begeht nach der Ṭaḥāwiyya Unglauben (kufr). Sie stützt sich dabei auf die Drohung im Koran gegen den, der dies sagt, und folgert: Der Koran ist das Wort des Schöpfers der Menschen und gleicht nicht dem Wort der Menschen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 33",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 24,
+              "passage": "tahawiyya.ms0002",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms2",
+              "passageSha256Text": "372f10c2bd82611e0a886baafd26d5511e648a9c30a36474c828c6ff71a7a5ab",
+              "zitatVon": 550,
+              "zitatBis": 742,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "74:25"
+            },
+            {
+              "art": "koran",
+              "stelle": "74:26"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.a09",
+          "text": "Über den Koran streitet man nach der Ṭaḥāwiyya nicht. Man bezeugt, dass er die Rede des Herrn der Welten ist, die ar-rūḥ al-amīn herabbrachte und Muḥammad, den Herrn der Gesandten, lehrte. Nichts von der Rede der Geschöpfe kommt ihr gleich. Man nennt den Koran nicht erschaffen und stellt sich nicht gegen die Gemeinschaft der Muslime.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 56",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 38,
+              "passage": "tahawiyya.ms0004",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms4",
+              "passageSha256Text": "416529dbce77c26410f592a0556e3baa4b702cca4d9d9719ecb5b3ab1a395e3f",
+              "zitatVon": 1254,
+              "zitatBis": 1459,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "26:193"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.a10",
+          "text": "Al-Fiqh al-Akbar sagt: Der Koran wurde auf den Gesandten Gottes herabgesandt und steht in den Koranexemplaren geschrieben. Als Gottes Rede sind alle seine Verse gleich an Vorzug und Größe. Manche Verse haben aber einen zusätzlichen Vorzug.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī Tafāḍul Āyāt al-Qurʾān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 68,
+              "passage": "fiqh_akbar.ms0005",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms5",
+              "passageSha256Text": "6361a33a42e77b4b4b79ffbdd90b36353a3d6229c764a37bcc9607b18f63613a",
+              "zitatVon": 1511,
+              "zitatBis": 1656,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.a11",
+          "text": "Als Beispiel nennt al-Fiqh al-Akbar den Thronvers (āyat al-kursī): In ihm kommen der Vorzug der Erwähnung (faḍīlat adh-dhikr) und der Vorzug des Erwähnten (faḍīlat al-madhkūr) zusammen, denn er nennt Gottes Majestät, Größe und Eigenschaften. Die Erzählungen über die Ungläubigen haben nur den Vorzug der Erwähnung; die dort Erwähnten, die Ungläubigen, haben keinen Vorzug.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī Tafāḍul Āyāt al-Qurʾān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 68,
+              "passage": "fiqh_akbar.ms0006",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms6",
+              "passageSha256Text": "827ec6536d6fae9866017075f8e7c76eb794c87cb9460e84615efd3a915d5673",
+              "zitatVon": 0,
+              "zitatBis": 203,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "2:255"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.a12",
+          "text": "Ebenso sind nach al-Fiqh al-Akbar alle Namen und Eigenschaften Gottes gleich an Größe und Vorzug; zwischen ihnen gibt es keinen Unterschied.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī Tafāḍul Āyāt al-Qurʾān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 68,
+              "passage": "fiqh_akbar.ms0006",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms6",
+              "passageSha256Text": "827ec6536d6fae9866017075f8e7c76eb794c87cb9460e84615efd3a915d5673",
+              "zitatVon": 204,
+              "zitatBis": 270,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e10.l02.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e10.l02.a01",
+          "anweisung": "Ordne zu, wie al-Fiqh al-Akbar den Koran beschreibt.",
+          "paare": [
+            {
+              "links": "in den Koranexemplaren",
+              "rechts": "geschrieben"
+            },
+            {
+              "links": "in den Herzen",
+              "rechts": "bewahrt"
+            },
+            {
+              "links": "auf den Zungen",
+              "rechts": "rezitiert"
+            },
+            {
+              "links": "auf den Propheten",
+              "rechts": "herabgesandt"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e10.l02.a02",
+          "fall": "Eine Schülerin schreibt einen Abschnitt des Korans in ihr Heft und liest ihn danach laut vor.",
+          "frage": "Was ist dabei nach al-Fiqh al-Akbar erschaffen?",
+          "optionen": [
+            "Ihr Schreiben und ihr Lesen; der Koran selbst ist nicht erschaffen.",
+            "Der Koran selbst, weil er im Heft steht.",
+            "Nichts davon, auch nicht ihr Schreiben."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l02.a06",
+          "behauptung": "Nach al-Fiqh al-Akbar spricht Gott wie die Menschen mit Sprechwerkzeugen und Buchstaben.",
+          "richtig": false,
+          "begruendung": "Gottes Rede gleicht nicht unserer: Wir sprechen mit Werkzeugen und Buchstaben, Gott ohne Werkzeug und ohne Buchstaben. Die Buchstaben sind erschaffen, Gottes Rede nicht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l02.a11",
+          "behauptung": "Nach al-Fiqh al-Akbar haben alle Verse des Korans in jeder Hinsicht genau denselben Vorzug.",
+          "richtig": false,
+          "begruendung": "Als Gottes Rede sind alle Verse gleich an Vorzug und Größe. Manche haben aber zusätzlich den Vorzug dessen, was sie erwähnen – etwa der Thronvers, der Gottes Majestät, Größe und Eigenschaften nennt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l02.a09",
+          "behauptung": "Nach der Ṭaḥāwiyya streitet man nicht über den Koran, sondern bezeugt, dass er die Rede des Herrn der Welten ist.",
+          "richtig": true,
+          "begruendung": "So lehrt es die Ṭaḥāwiyya. Sie fügt hinzu: Nichts von der Rede der Geschöpfe kommt ihr gleich, und man nennt den Koran nicht erschaffen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l02.a04",
+          "behauptung": "Al-Fiqh al-Akbar zählt die Rede (al-kalām) zu den wesenhaften Eigenschaften Gottes.",
+          "richtig": true,
+          "begruendung": "Neben Leben, Macht, Wissen, Hören, Sehen und Wollen nennt das Werk die Rede als wesenhafte Eigenschaft. Gott ist von Ewigkeit her sprechend durch Seine Rede.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l02.q07",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e10.l02.a05",
+          "fall": "Im Unterricht fragt jemand: „Hat Gott erst zu sprechen begonnen, als Er mit Mose sprach?“",
+          "frage": "Welche Antwort entspricht al-Fiqh al-Akbar?",
+          "optionen": [
+            "Nein. Gott war schon vorher sprechend; Seine Rede ist eine Eigenschaft von Ewigkeit her.",
+            "Ja. Vorher hatte Gott keine Rede.",
+            "Das Werk lässt diese Frage ausdrücklich offen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e10.l03",
+      "titel": "Propheten: Sündlosigkeit, Rang und Wunder",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e10.l03.a01",
+          "text": "Alle Propheten sind nach al-Fiqh al-Akbar frei von kleinen und großen Sünden, von Unglauben und von schändlichen Taten. Dennoch kamen bei ihnen Fehltritte (zallāt) und Fehler (khaṭāyā) vor.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī ʿIṣmat al-Anbiyāʾ",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 37,
+              "passage": "fiqh_akbar.ms0003",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms3",
+              "passageSha256Text": "3fae453c7efaca9ef532dae9dd117e7ab953190c359ace8bb9d72e3a85cf3362",
+              "zitatVon": 717,
+              "zitatBis": 822,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l03.a02",
+          "text": "Die Ṭaḥāwiyya bekennt aus Glauben, Bestätigung und Hingabe zwei Aussagen des Korans über Abraham und Mose: Abraham als vertrauten Freund Gottes (khalīl) und Gottes Sprechen mit Mose.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 52",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 38,
+              "passage": "tahawiyya.ms0004",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms4",
+              "passageSha256Text": "416529dbce77c26410f592a0556e3baa4b702cca4d9d9719ecb5b3ab1a395e3f",
+              "zitatVon": 926,
+              "zitatBis": 1006,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "4:125"
+            },
+            {
+              "art": "koran",
+              "stelle": "4:164"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l03.a03",
+          "text": "Al-Fiqh al-Akbar unterscheidet drei Bezeichnungen: Die Zeichen (āyāt) der Propheten stehen fest, und die Gnadenwunder (karāmāt) der Gottesfreunde (awliyāʾ) sind wahr. Was dagegen den Feinden Gottes wie Iblīs, Pharao oder dem Dajjāl nach den Berichten geschah oder geschehen wird, nennt das Werk weder Zeichen noch Gnadenwunder, sondern „Erfüllung ihrer Bedürfnisse“ (qaḍāʾ ḥājātihim).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Āyāt al-Anbiyāʾ wa-Karāmāt al-Awliyāʾ ḥaqq",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 51,
+              "passage": "fiqh_akbar.ms0004",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms4",
+              "passageSha256Text": "61e37bf1694b17db1f3403374df616268343558a04a8ebd88a4aed5185687924",
+              "zitatVon": 552,
+              "zitatBis": 730,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l03.a04",
+          "text": "Diese Erfüllung gewährt Gott Seinen Feinden nach al-Fiqh al-Akbar als allmähliches Verleiten (istidrāj) und als Strafe: Sie lassen sich davon täuschen und nehmen an Übertretung und Unglauben zu. Das Werk sagt: All das ist möglich.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Āyāt al-Anbiyāʾ wa-Karāmāt al-Awliyāʾ ḥaqq",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 51,
+              "passage": "fiqh_akbar.ms0004",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms4",
+              "passageSha256Text": "61e37bf1694b17db1f3403374df616268343558a04a8ebd88a4aed5185687924",
+              "zitatVon": 731,
+              "zitatBis": 841,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l03.a05",
+          "text": "Die Ṭaḥāwiyya stellt keinen Gottesfreund (walī) über einen Propheten. Sie lehrt: Ein einziger Prophet ist besser als alle Gottesfreunde zusammen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 98",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 58,
+              "passage": "tahawiyya.ms0008",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms8",
+              "passageSha256Text": "c61348134aa8c2d300f0362024d81970ffbd028cee302d445f6acdba7cdbcdf1",
+              "zitatVon": 0,
+              "zitatBis": 95,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l03.a06",
+          "text": "An die Gnadenwunder der Gottesfreunde, die überliefert sind und von vertrauenswürdigen Überlieferern verlässlich berichtet werden, glaubt man nach der Ṭaḥāwiyya.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 99",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 59,
+              "passage": "tahawiyya.ms0008",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms8",
+              "passageSha256Text": "c61348134aa8c2d300f0362024d81970ffbd028cee302d445f6acdba7cdbcdf1",
+              "zitatVon": 96,
+              "zitatBis": 150,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e10.l03.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e10.l03.a03",
+          "anweisung": "Ordne zu, welche Bezeichnung al-Fiqh al-Akbar jeweils verwendet.",
+          "paare": [
+            {
+              "links": "bei den Propheten",
+              "rechts": "Zeichen (āyāt)"
+            },
+            {
+              "links": "bei den Gottesfreunden (awliyāʾ)",
+              "rechts": "Gnadenwunder (karāmāt)"
+            },
+            {
+              "links": "bei Feinden Gottes wie Iblīs oder Pharao",
+              "rechts": "Erfüllung ihrer Bedürfnisse (qaḍāʾ ḥājātihim)"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l03.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e10.l03.a04",
+          "fall": "In einer Erzählung gelingt einem Feind Gottes etwas, das wie ein Wunder aussieht. Ein Zuhörer meint, das zeige, dass Gott mit ihm zufrieden sei.",
+          "frage": "Wie ordnet al-Fiqh al-Akbar so etwas ein?",
+          "optionen": [
+            "Gott gewährt es als allmähliches Verleiten (istidrāj) und als Strafe.",
+            "Es ist ein Gnadenwunder (karāma) und zeigt Gottes Zufriedenheit.",
+            "Es ist ein Zeichen (āya) wie bei den Propheten."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l03.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l03.a05",
+          "behauptung": "Nach der Ṭaḥāwiyya kann ein sehr frommer Gottesfreund über einem Propheten stehen.",
+          "richtig": false,
+          "begruendung": "Die Ṭaḥāwiyya stellt keinen Gottesfreund über einen Propheten; ein einziger Prophet ist besser als alle Gottesfreunde zusammen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l03.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l03.a01",
+          "behauptung": "Nach al-Fiqh al-Akbar sind die Propheten frei von kleinen und großen Sünden; Fehltritte und Fehler kamen bei ihnen dennoch vor.",
+          "richtig": true,
+          "begruendung": "So steht es in al-Fiqh al-Akbar: Die Propheten sind frei von kleinen und großen Sünden, von Unglauben und schändlichen Taten; Fehltritte (zallāt) und Fehler (khaṭāyā) kamen vor.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l03.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l03.a06",
+          "behauptung": "Die Ṭaḥāwiyya lehnt jeden Glauben an Gnadenwunder der Gottesfreunde ab.",
+          "richtig": false,
+          "begruendung": "Die Ṭaḥāwiyya glaubt an die überlieferten Gnadenwunder der Gottesfreunde, die von vertrauenswürdigen Überlieferern verlässlich berichtet werden.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e10.l04",
+      "titel": "Muḥammad als Gesandter und Siegel der Propheten; seine Kinder",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e10.l04.a01",
+          "text": "Al-Fiqh al-Akbar nennt Muḥammad Gottes Geliebten (ḥabīb), Seinen Diener, Gesandten und Propheten, Seinen Erwählten (ṣafī) und Seinen Reinen (naqī).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī r-Rasūl",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 39,
+              "passage": "fiqh_akbar.ms0003",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms3",
+              "passageSha256Text": "3fae453c7efaca9ef532dae9dd117e7ab953190c359ace8bb9d72e3a85cf3362",
+              "zitatVon": 858,
+              "zitatBis": 920,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l04.a02",
+          "text": "Muḥammad hat nach al-Fiqh al-Akbar nie ein Götzenbild angebetet und Gott nie etwas beigesellt, auch nicht für einen Augenblick. Er hat nie eine kleine oder große Sünde begangen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "al-Qawl fī r-Rasūl",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 39,
+              "passage": "fiqh_akbar.ms0003",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms3",
+              "passageSha256Text": "3fae453c7efaca9ef532dae9dd117e7ab953190c359ace8bb9d72e3a85cf3362",
+              "zitatVon": 921,
+              "zitatBis": 998,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l04.a03",
+          "text": "Die Ṭaḥāwiyya beschreibt Muḥammad mit drei Ehrennamen: Als Diener Gottes ist er der Auserwählte (al-muṣṭafā), als Prophet der Erwählte (al-mujtabā) und als Gesandter der, an dem Gott Wohlgefallen hat (al-murtaḍā).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 29",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 22,
+              "passage": "tahawiyya.ms0002",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms2",
+              "passageSha256Text": "372f10c2bd82611e0a886baafd26d5511e648a9c30a36474c828c6ff71a7a5ab",
+              "zitatVon": 166,
+              "zitatBis": 220,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l04.a04",
+          "text": "Nach der Ṭaḥāwiyya ist Muḥammad das Siegel der Propheten (khātam al-anbiyāʾ). Sie nennt ihn außerdem den Imam der Gottesfürchtigen, den Herrn der Gesandten (sayyid al-mursalīn) und den Geliebten des Herrn der Welten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 30",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 22,
+              "passage": "tahawiyya.ms0002",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms2",
+              "passageSha256Text": "372f10c2bd82611e0a886baafd26d5511e648a9c30a36474c828c6ff71a7a5ab",
+              "zitatVon": 221,
+              "zitatBis": 289,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l04.a05",
+          "text": "Jeder Anspruch auf Prophetentum nach Muḥammad ist nach der Ṭaḥāwiyya Irrweg und eigene Neigung (ghayy wa-hawā).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 31",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 23,
+              "passage": "tahawiyya.ms0002",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms2",
+              "passageSha256Text": "372f10c2bd82611e0a886baafd26d5511e648a9c30a36474c828c6ff71a7a5ab",
+              "zitatVon": 290,
+              "zitatBis": 322,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l04.a06",
+          "text": "Gesandt ist Muḥammad nach der Ṭaḥāwiyya zu allen Dschinn und zur Gesamtheit der Geschöpfe (kāffat al-warā) – mit der Wahrheit und der Rechtleitung, mit dem Licht und der Helligkeit.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 32",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 24,
+              "passage": "tahawiyya.ms0002",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms2",
+              "passageSha256Text": "372f10c2bd82611e0a886baafd26d5511e648a9c30a36474c828c6ff71a7a5ab",
+              "zitatVon": 323,
+              "zitatBis": 392,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l04.a07",
+          "text": "Nach al-Fiqh al-Akbar waren Qāsim, Ṭāhir und Ibrāhīm Söhne des Gesandten Gottes. Fāṭima, Ruqayya, Zaynab und Umm Kulthūm waren alle seine Töchter.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Abnāʾ Rasūl Allāh wa-Banātuhu",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 70,
+              "passage": "fiqh_akbar.ms0006",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms6",
+              "passageSha256Text": "827ec6536d6fae9866017075f8e7c76eb794c87cb9460e84615efd3a915d5673",
+              "zitatVon": 294,
+              "zitatBis": 406,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e10.l04.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e10.l04.a03",
+          "anweisung": "Ordne zu, mit welchem Ehrennamen die Ṭaḥāwiyya Muḥammad jeweils beschreibt.",
+          "paare": [
+            {
+              "links": "als Diener Gottes",
+              "rechts": "al-muṣṭafā (der Auserwählte)"
+            },
+            {
+              "links": "als Prophet",
+              "rechts": "al-mujtabā (der Erwählte)"
+            },
+            {
+              "links": "als Gesandter",
+              "rechts": "al-murtaḍā (an dem Gott Wohlgefallen hat)"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l04.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e10.l04.a05",
+          "fall": "Jemand tritt auf und erklärt, er sei nach Muḥammad als neuer Prophet gesandt worden.",
+          "frage": "Wie beurteilt die Ṭaḥāwiyya einen solchen Anspruch?",
+          "optionen": [
+            "Als Irrweg und eigene Neigung (ghayy wa-hawā)",
+            "Als wahr, wenn er fromm lebt",
+            "Als offene Frage, die jeder für sich entscheidet"
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l04.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l04.a06",
+          "behauptung": "Nach der Ṭaḥāwiyya ist Muḥammad nur zu den Menschen seines eigenen Volkes gesandt.",
+          "richtig": false,
+          "begruendung": "Er ist zu allen Dschinn und zur Gesamtheit der Geschöpfe (kāffat al-warā) gesandt – mit der Wahrheit und der Rechtleitung, mit dem Licht und der Helligkeit.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l04.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l04.a07",
+          "behauptung": "Nach al-Fiqh al-Akbar hatte der Gesandte Gottes nur Töchter.",
+          "richtig": false,
+          "begruendung": "Das Werk nennt die Söhne Qāsim, Ṭāhir und Ibrāhīm und die Töchter Fāṭima, Ruqayya, Zaynab und Umm Kulthūm.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l04.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l04.a02",
+          "behauptung": "Nach al-Fiqh al-Akbar hat Muḥammad Gott auch nicht für einen Augenblick etwas beigesellt.",
+          "richtig": true,
+          "begruendung": "So steht es in al-Fiqh al-Akbar. Das Werk sagt auch, dass er nie ein Götzenbild angebetet und nie eine kleine oder große Sünde begangen hat.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e10.l05",
+      "titel": "Himmelsreise, Becken, Fürsprache und Bund (mīthāq)",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e10.l05.a01",
+          "text": "Die Ṭaḥāwiyya nennt mehrere Glaubensinhalte ausdrücklich wahr (ḥaqq): die Himmelsreise (al-miʿrāj), das Becken (al-ḥawḍ), die Fürsprache (ash-shafāʿa) und den Bund (al-mīthāq). Al-Fiqh al-Akbar nennt die Fürsprache, die Waage (al-mīzān) und das Becken wahr.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 39–42",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 29,
+              "passage": "tahawiyya.ms0003",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms3",
+              "passageSha256Text": "5d7ff00c0b06a06e26193afd0df953cef9391a357e84704d3afbb38b23be46d6",
+              "zitatVon": 370,
+              "zitatBis": 729,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Shafāʿat al-Anbiyāʾ wa-l-Mīzān wa-l-Ḥawḍ",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 61,
+              "passage": "fiqh_akbar.ms0005",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms5",
+              "passageSha256Text": "6361a33a42e77b4b4b79ffbdd90b36353a3d6229c764a37bcc9607b18f63613a",
+              "zitatVon": 275,
+              "zitatBis": 473,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l05.a02",
+          "text": "Die Himmelsreise ist nach der Ṭaḥāwiyya wahr: Der Prophet wurde bei Nacht auf die Reise geführt und in eigener Person und im Wachzustand in den Himmel emporgehoben, dann weiter in die Höhen, wohin Gott wollte. Gott ehrte ihn dabei, womit Er wollte, und gab ihm Offenbarung.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 39",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 29,
+              "passage": "tahawiyya.ms0003",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms3",
+              "passageSha256Text": "5d7ff00c0b06a06e26193afd0df953cef9391a357e84704d3afbb38b23be46d6",
+              "zitatVon": 370,
+              "zitatBis": 579,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "53:11"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l05.a03",
+          "text": "Auch al-Fiqh al-Akbar nennt den Bericht über die Himmelsreise (khabar al-miʿrāj) wahr. Wer ihn zurückweist, ist nach dem Werk ein Neuerer (mubtadiʿ), der in die Irre geht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Abnāʾ Rasūl Allāh wa-Banātuhu",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 70,
+              "passage": "fiqh_akbar.ms0006",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms6",
+              "passageSha256Text": "827ec6536d6fae9866017075f8e7c76eb794c87cb9460e84615efd3a915d5673",
+              "zitatVon": 612,
+              "zitatBis": 649,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l05.a04",
+          "text": "Das Becken (al-ḥawḍ), mit dem Gott den Propheten geehrt hat – als Hilfe für seine Gemeinschaft –, ist nach der Ṭaḥāwiyya wahr. Auch al-Fiqh al-Akbar nennt das Becken des Propheten wahr.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 40",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 30,
+              "passage": "tahawiyya.ms0003",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms3",
+              "passageSha256Text": "5d7ff00c0b06a06e26193afd0df953cef9391a357e84704d3afbb38b23be46d6",
+              "zitatVon": 580,
+              "zitatBis": 629,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Shafāʿat al-Anbiyāʾ wa-l-Mīzān wa-l-Ḥawḍ",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 61,
+              "passage": "fiqh_akbar.ms0005",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms5",
+              "passageSha256Text": "6361a33a42e77b4b4b79ffbdd90b36353a3d6229c764a37bcc9607b18f63613a",
+              "zitatVon": 439,
+              "zitatBis": 473,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l05.a05",
+          "text": "Die Fürsprache (ash-shafāʿa) ist wahr. Die Ṭaḥāwiyya spricht von der Fürsprache, die für die Gemeinschaft des Propheten aufbewahrt ist, wie es in den Überlieferungen berichtet wird. Al-Fiqh al-Akbar nennt die Fürsprache der Propheten wahr und ausdrücklich die Fürsprache des Propheten für gläubige Sünder – auch für jene unter ihnen, die große Sünden begangen und Strafe verdient haben.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 41",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 30,
+              "passage": "tahawiyya.ms0003",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms3",
+              "passageSha256Text": "5d7ff00c0b06a06e26193afd0df953cef9391a357e84704d3afbb38b23be46d6",
+              "zitatVon": 630,
+              "zitatBis": 679,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Shafāʿat al-Anbiyāʾ wa-l-Mīzān wa-l-Ḥawḍ",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 61,
+              "passage": "fiqh_akbar.ms0005",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms5",
+              "passageSha256Text": "6361a33a42e77b4b4b79ffbdd90b36353a3d6229c764a37bcc9607b18f63613a",
+              "zitatVon": 275,
+              "zitatBis": 401,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l05.a06",
+          "text": "Gott handelt nach al-Fiqh al-Akbar an Seinen Dienern mit Güte und Gerechtigkeit: Aus Güte kann Er ein Vielfaches des Lohns geben, den jemand verdient; aus Gerechtigkeit kann Er für eine Sünde bestrafen; und aus Güte kann Er vergeben.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Shafāʿat al-Anbiyāʾ wa-l-Mīzān wa-l-Ḥawḍ",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 61,
+              "passage": "fiqh_akbar.ms0005",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms5",
+              "passageSha256Text": "6361a33a42e77b4b4b79ffbdd90b36353a3d6229c764a37bcc9607b18f63613a",
+              "zitatVon": 144,
+              "zitatBis": 274,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l05.a07",
+          "text": "Das Wiegen der Taten auf der Waage (al-mīzān) am Tag der Auferstehung ist nach al-Fiqh al-Akbar wahr.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Shafāʿat al-Anbiyāʾ wa-l-Mīzān wa-l-Ḥawḍ",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 61,
+              "passage": "fiqh_akbar.ms0005",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms5",
+              "passageSha256Text": "6361a33a42e77b4b4b79ffbdd90b36353a3d6229c764a37bcc9607b18f63613a",
+              "zitatVon": 402,
+              "zitatBis": 438,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l05.a08",
+          "text": "Der Bund (al-mīthāq), den Gott von Adam und seinen Nachkommen genommen hat, ist nach der Ṭaḥāwiyya wahr.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 42",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 30,
+              "passage": "tahawiyya.ms0003",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms3",
+              "passageSha256Text": "5d7ff00c0b06a06e26193afd0df953cef9391a357e84704d3afbb38b23be46d6",
+              "zitatVon": 680,
+              "zitatBis": 729,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e10.l05.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e10.l05.a01",
+          "anweisung": "Ordne die Begriffe ihrer deutschen Bedeutung zu.",
+          "paare": [
+            {
+              "links": "al-miʿrāj",
+              "rechts": "Himmelsreise"
+            },
+            {
+              "links": "al-ḥawḍ",
+              "rechts": "Becken"
+            },
+            {
+              "links": "ash-shafāʿa",
+              "rechts": "Fürsprache"
+            },
+            {
+              "links": "al-mīthāq",
+              "rechts": "Bund"
+            },
+            {
+              "links": "al-mīzān",
+              "rechts": "Waage"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l05.q02",
+          "typ": "reihenfolge",
+          "aussage": "islam.grund.e10.l05.a02",
+          "anweisung": "Bringe die Stationen der Himmelsreise in die Reihenfolge, in der die Ṭaḥāwiyya sie nennt.",
+          "schritte": [
+            "Der Prophet wird bei Nacht auf die Reise geführt.",
+            "Er wird in eigener Person und im Wachzustand in den Himmel emporgehoben.",
+            "Er gelangt weiter in die Höhen, wohin Gott will.",
+            "Gott ehrt ihn und gibt ihm Offenbarung."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l05.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l05.a02",
+          "behauptung": "Nach der Ṭaḥāwiyya geschah die Himmelsreise nur im Traum.",
+          "richtig": false,
+          "begruendung": "Die Ṭaḥāwiyya sagt, der Prophet wurde in eigener Person und im Wachzustand in den Himmel emporgehoben.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l05.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e10.l05.a05",
+          "fall": "In einem Gesprächskreis wird gefragt, ob die Fürsprache des Propheten auch gläubigen Menschen gelten kann, die große Sünden begangen haben.",
+          "frage": "Was sagt al-Fiqh al-Akbar dazu?",
+          "optionen": [
+            "Seine Fürsprache für gläubige Sünder ist wahr, auch für jene mit großen Sünden.",
+            "Fürsprache gibt es nur für Menschen ohne jede Sünde.",
+            "Das Werk kennt keine Fürsprache."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l05.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l05.a06",
+          "behauptung": "Nach al-Fiqh al-Akbar kann Gott aus Güte mehr Lohn geben, als jemand verdient.",
+          "richtig": true,
+          "begruendung": "Gott ist nach al-Fiqh al-Akbar gütig und gerecht: Aus Güte kann Er ein Vielfaches des verdienten Lohns geben, aus Gerechtigkeit für eine Sünde bestrafen und aus Güte vergeben.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e10.l06",
+      "titel": "Engel im Leben des Menschen: die Schreibenden und der Todesengel",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e10.l06.a01",
+          "text": "Der Glaube an die Engel gehört nach al-Fiqh al-Akbar und nach der Ṭaḥāwiyya zu den Inhalten des Glaubens.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "fiqh_akbar",
+              "kapitel": "Bayān Uṣūl al-Īmān",
+              "ausgabe": "Maktabat al-Furqān, 1419/1999",
+              "band": 1,
+              "seite": 5,
+              "passage": "fiqh_akbar.ms0001",
+              "fundstelle": "0150AbuHanifa.FiqhAkbar.JK001085-ara1#ms1",
+              "passageSha256Text": "eecc36d863774def6457bf5daacabd25388161c7eab1cff39a3147b8d82ffc54",
+              "zitatVon": 41,
+              "zitatBis": 210,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 66",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 44,
+              "passage": "tahawiyya.ms0005",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms5",
+              "passageSha256Text": "5863390b42be9fd38773aa4eaa072c2665f80dd4b5c765e30fbfb0c7fcd67d8a",
+              "zitatVon": 575,
+              "zitatBis": 679,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l06.a02",
+          "text": "Die Ṭaḥāwiyya bekennt den Glauben an die edlen Schreibenden (al-kirām al-kātibūn). Gott hat sie über uns als Hüter (ḥāfiẓūn) eingesetzt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 78",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 50,
+              "passage": "tahawiyya.ms0006",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms6",
+              "passageSha256Text": "a4e89d4140cf9c8393fad140eb6bae713e01ce70fa8d5bb43e4124e3772429a2",
+              "zitatVon": 489,
+              "zitatBis": 545,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l06.a03",
+          "text": "Ebenso glaubt man nach der Ṭaḥāwiyya an den Engel des Todes (malak al-mawt), der damit betraut ist, die Seelen aller Geschöpfe (al-ʿālamīn) zu nehmen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 79",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 50,
+              "passage": "tahawiyya.ms0006",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms6",
+              "passageSha256Text": "a4e89d4140cf9c8393fad140eb6bae713e01ce70fa8d5bb43e4124e3772429a2",
+              "zitatVon": 546,
+              "zitatBis": 592,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l06.a04",
+          "text": "Nach der Ṭaḥāwiyya ist der Grund der Bestimmung (aṣl al-qadar) Gottes Geheimnis in Seiner Schöpfung. Davon hat weder ein Gott nahestehender Engel noch ein gesandter Prophet Kenntnis erhalten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "tahawiyya",
+              "kapitel": "Matn, Nr. 45",
+              "ausgabe": "al-Maktab al-Islāmī, 1398/1978 (nur der Matn)",
+              "band": 1,
+              "seite": 32,
+              "passage": "tahawiyya.ms0003",
+              "fundstelle": "0321Tahawi.MatnCaqida.JK000126-ara1#ms3",
+              "passageSha256Text": "5d7ff00c0b06a06e26193afd0df953cef9391a357e84704d3afbb38b23be46d6",
+              "zitatVon": 978,
+              "zitatBis": 1051,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e10.l06.q01",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e10.l06.a02",
+          "fall": "Ein Kind fragt im Unterricht, ob Gott Engel als Hüter über die Menschen eingesetzt hat.",
+          "frage": "Welche Antwort entspricht der Ṭaḥāwiyya?",
+          "optionen": [
+            "Ja: die edlen Schreibenden (al-kirām al-kātibūn), die Gott als Hüter über uns eingesetzt hat.",
+            "Nein: Engel haben mit den Menschen nichts zu tun.",
+            "Nur der Engel des Todes ist bei den Menschen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l06.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l06.a03",
+          "behauptung": "Nach der Ṭaḥāwiyya ist der Engel des Todes damit betraut, die Seelen zu nehmen.",
+          "richtig": true,
+          "begruendung": "Die Ṭaḥāwiyya bekennt den Glauben an den Engel des Todes, der damit betraut ist, die Seelen aller Geschöpfe zu nehmen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l06.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l06.a04",
+          "behauptung": "Nach der Ṭaḥāwiyya kennen die Gott nahestehenden Engel das Geheimnis der Bestimmung.",
+          "richtig": false,
+          "begruendung": "Der Grund der Bestimmung ist Gottes Geheimnis in Seiner Schöpfung; davon hat weder ein Gott nahestehender Engel noch ein gesandter Prophet Kenntnis erhalten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e10.l06.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e10.l06.a01",
+          "behauptung": "Der Glaube an die Engel gehört nach al-Fiqh al-Akbar und der Ṭaḥāwiyya zu den Inhalten des Glaubens.",
+          "richtig": true,
+          "begruendung": "Beide Werke nennen die Engel unter den Inhalten des Glaubens, gleich nach Gott und vor den Büchern und Gesandten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}

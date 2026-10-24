@@ -7,9 +7,13 @@ import { INHALT_WURZEL, inhaltsdateien } from '../../../scripts/lernapp/inhaltsd
 import type { ImportQuelle } from '@/lib/lernapp/inhalt/import';
 import { befundZeile, blockierende, menschlich, pruefeInhalte, type PruefOptionen, warnungen } from '@/lib/lernapp/inhalt/pruefer';
 import { pruefeAusschluesse } from '@/lib/lernapp/inhalt/pruefer/ausschluss';
-import { auszugsTabelle, pruefeAuszuege, pruefeKaikkiOhneBeispiele } from '@/lib/lernapp/inhalt/pruefer/daten';
+import { leereInhalte } from '@/lib/lernapp/inhalt/pruefer/dateien';
+import { auszugsTabelle, ladeHaeufigkeit, pruefeAuszuege, pruefeKaikkiOhneBeispiele } from '@/lib/lernapp/inhalt/pruefer/daten';
 import { nahePaare } from '@/lib/lernapp/inhalt/pruefer/dubletten';
-import { baueTabuLexikon, tabuTreffer } from '@/lib/lernapp/inhalt/pruefer/tabu';
+import { pruefeReligionsbezug } from '@/lib/lernapp/inhalt/pruefer/religionsbezug';
+import { arabischeKandidaten, arabischNormal } from '@/lib/lernapp/inhalt/pruefer/sprache';
+import { baueTabuLexikon, tabuTreffer, tabuWoerter } from '@/lib/lernapp/inhalt/pruefer/tabu';
+import type { TextEintrag } from '@/lib/lernapp/inhalt/pruefer/texte';
 import { vokalLuecken } from '@/lib/lernapp/inhalt/pruefer/vokalisierung';
 import { ladeWaechter } from '@/lib/lernapp/inhalt/religion';
 import { LeitfadenSchema } from '@/lib/lernapp/inhalt/schema';
@@ -393,6 +397,206 @@ describe('Inhaltsleitfaden (Tabu-Lexikon) → menschlich_klaeren, Ausgabe nur mi
     expect(tabuTreffer(`\u0648${muster}`, 'ar', lexikon).map((t) => t.kategorie)).toContain('gluecksspiel');
     expect(tabuTreffer('\u0630\u0647\u0628\u062A \u0625\u0644\u0649 \u0627\u0644\u0633\u0648\u0642', 'ar', lexikon)).toEqual([]);
   });
+
+  // Register aus kaikki: Urteil je Wortform über alle Einträge (erfundene Wörter in einem eigenen Kernauszug)
+  const REGISTER = ['fluchen_schimpfwoerter', 'sexualitaet'];
+  const registerVon = (text: string, lexikon: ReturnType<typeof baueTabuLexikon>) =>
+    tabuTreffer(text, 'de', lexikon)
+      .filter((t) => REGISTER.includes(t.kategorie))
+      .map((t) => `${t.kategorie}${t.hinweis ? ' (Hinweis)' : ''}`);
+  const eigenerAuszug = (eintraege: Record<string, unknown>[]) => {
+    const d = tempOrdner();
+    mkdirSync(join(d, 'kaikki'));
+    writeFileSync(join(d, 'kaikki/kaikki-kern-de-top20000.jsonl'), eintraege.map((e) => JSON.stringify({ l: 'de', ...e })).join('\n'));
+    return baueTabuLexikon(LEITFADEN, d);
+  };
+
+  it('Register: echtes Register-Wort bleibt Treffer, auch neben unmarkierten Einträgen anderer Ausgaben', () => {
+    const lexikon = eigenerAuszug([
+      {
+        w: 'Zorpel',
+        q: 'en',
+        pos: 'noun',
+        gl: [
+          ['x', 'vulgar'],
+          ['y', 'derogatory'],
+        ],
+        mk: ['vulgar', 'derogatory'],
+      },
+      { w: 'Zorpel', q: 'de', pos: 'noun', gl: [['x', '']] },
+      { w: 'Plinse', q: 'de', pos: 'noun', gl: [['x', '']], mk: ['thema:sex'] },
+      { w: 'Plinse', q: 'de', pos: 'noun', gl: [['y', 'obsolete']] },
+      { w: 'Fnord', q: 'en', pos: 'noun', pl: ['Fnorde'], gl: [['x', 'vulgar']], mk: ['vulgar'] },
+    ]);
+    expect(registerVon('Das ist ein Zorpel.', lexikon)).toEqual(['fluchen_schimpfwoerter']);
+    // eine Bedeutung mit Gebrauchsangabe (hier: obsolete) ist keine unmarkierte Bedeutung
+    expect(registerVon('Das ist eine Plinse.', lexikon)).toEqual(['sexualitaet']);
+    expect(registerVon('Das sind Fnorde.', lexikon)).toEqual(['fluchen_schimpfwoerter']);
+  });
+
+  it('Register: Alltagswort mit ganz markiertem Nebeneintrag meldet nichts (auch keinen Hinweis), teils markiert ebenso', () => {
+    const lexikon = eigenerAuszug([
+      // Adjektiv-Eintrag ganz markiert, Nomen derselben Ausgabe unmarkiert
+      { w: 'quarpe', q: 'en', pos: 'adj', gl: [['x', 'vulgar']], mk: ['vulgar'] },
+      {
+        w: 'Quarpe',
+        q: 'en',
+        pos: 'noun',
+        gl: [
+          ['y', ''],
+          ['z', 'colloquial'],
+        ],
+      },
+      // Nomen ganz markiert, dieselbe Form ist Präteritum eines Verbs ohne Register
+      { w: 'Klumm', q: 'de', pos: 'noun', gl: [['x', 'derogatory']], mk: ['derogatory'] },
+      { w: 'klimmen', q: 'en', pos: 'verb', kf: [['klumm', 'past']], gl: [['y', '']] },
+      // über den Plural: der Plural ist zugleich ein unmarkiertes Wort derselben Ausgabe
+      { w: 'Glumpf', q: 'en', pos: 'noun', pl: ['Glumpfe'], gl: [['x', 'offensive']], mk: ['offensive'] },
+      { w: 'Glumpfe', q: 'en', pos: 'noun', gl: [['y', '']] },
+      // nur teils markiert
+      {
+        w: 'Wobbel',
+        q: 'en',
+        pos: 'noun',
+        gl: [
+          ['x', 'vulgar'],
+          ['y', ''],
+        ],
+        mk: ['vulgar'],
+      },
+    ]);
+    expect(registerVon('Die Quarpe ist rot.', lexikon)).toEqual([]);
+    expect(registerVon('Er klumm hoch.', lexikon)).toEqual([]);
+    expect(registerVon('Ein Glumpf.', lexikon)).toEqual(['fluchen_schimpfwoerter']);
+    expect(registerVon('Zwei Glumpfe.', lexikon)).toEqual([]);
+    expect(registerVon('Der Wobbel.', lexikon)).toEqual([]);
+  });
+
+  it('Register am gepinnten Auszug: Grundwortschatz (Rang ≤ 500) ist kein Treffer, echte Register-Wörter bleiben es', () => {
+    const lexikon = baueTabuLexikon(LEITFADEN, DATEN);
+    for (const sprache of ['de', 'tr', 'ar'] as const) {
+      const voll = (grenze: number) =>
+        [...ladeHaeufigkeit(sprache, DATEN)].filter(([w, rang]) => {
+          const form = sprache === 'ar' ? arabischNormal(w) : tabuWoerter(w, sprache).join(' ');
+          return rang <= grenze && (lexikon.register[sprache].get(form) ?? []).length > 0;
+        }).length;
+      expect(voll(500), sprache).toBe(0);
+      if (sprache !== 'ar') expect(voll(2000), sprache).toBeGreaterThan(0);
+    }
+  });
+
+  // Wiederkehrende Fehlalarme (L3-07): Teilwörter nur an Morphemgrenzen, bekannte arabische Wörter nicht zerlegen, Register
+  // ohne Nebeneinträge. Je Fall ein Fehlalarm ohne Befund und eine Gegenprobe; Tabu-Formen nur aus dem Leitfaden zur Laufzeit.
+  describe('Fehlalarme: Morphemgrenzen, bekannte Wörter, Register', () => {
+    const lexikon = baueTabuLexikon(LEITFADEN, DATEN);
+    const formen = (id: string) => LEITFADEN.tabu.kategorien.find((k) => k.id === id)!.formen;
+    const kategorien = (text: string, sprache: 'de' | 'tr' | 'ar') =>
+      tabuTreffer(text, sprache, lexikon).map((t) => `${t.kategorie}${t.hinweis ? ' (Hinweis)' : ''}`);
+    // Arabisch nur als Codepunkte: Artikel, wa-, bi-l-, wa-l-, ka-l-, Pronomen-Suffix -hu
+    const AL = '\u0627\u0644';
+    const KLITIKA = ['\u0648', `\u0628${AL}`, AL, `\u0648${AL}`, `\u0643${AL}`];
+    const HU = '\u0647';
+
+    it('de: Teilwort mitten in einem anderen Wort trifft nicht (Verb fürs Buchstabieren), im Kompositum weiter', () => {
+      const teil = formen('alkohol_rauschmittel').de.teil!.find((x) => 'buchstabieren'.includes(x))!;
+      expect(teil).toBeDefined();
+      for (const satz of ['Kannst du deinen Namen buchstabieren?', 'Er buchstabiert langsam.', 'Buchstabiere bitte!'])
+        expect(kategorien(satz, 'de'), satz).not.toContain('alkohol_rauschmittel');
+      for (const wort of [teil, `Weizen${teil}`, `Frei${teil}`, `${teil}krug`, `Malz${teil}`])
+        expect(kategorien(`Das ist ${wort}.`, 'de'), wort).toContain('alkohol_rauschmittel');
+    });
+
+    it('tr: Zahlwort 80 trifft die Form an seinem Anfang nicht, Endungen und Ableitungen der Form treffen weiter', () => {
+      const anfang = formen('sexualitaet').tr.anfang!.find((a) => 'seksen'.startsWith(a))!;
+      expect(anfang).toBeDefined();
+      for (const satz of ['Dedem seksen yaşında.', 'Seksende emekli oldu.', 'Sekseni geçti.'])
+        expect(kategorien(satz, 'tr'), satz).not.toContain('sexualitaet');
+      for (const wort of [anfang, `${anfang}i`, `${anfang}ten`, `${anfang}üel`])
+        expect(kategorien(`Bu ${wort}.`, 'tr'), wort).toContain('sexualitaet');
+      // ein längeres Wort, dessen eigene Definition die Kategorie trifft (Bombardierung), bleibt ein Treffer
+      const bombe = formen('gewalt_waffen').tr.anfang!.find((a) => a.length === 5 && a.startsWith('bomb'))!;
+      for (const wort of [`${bombe}rdıman`, `${bombe}rdımanı`, `${bombe}ladı`])
+        expect(kategorien(`Bu ${wort}.`, 'tr'), wort).toContain('gewalt_waffen');
+    });
+
+    it('ar: die weibliche Form von „groß“ wird nicht in ka- und Rest zerlegt; der Rest mit anderen Klitika trifft weiter', () => {
+      const KABIRA = '\u0643\u0628\u064A\u0631\u0629';
+      for (const text of [KABIRA, `${AL}${KABIRA}`, `\u0627\u0644\u063A\u0631\u0641\u0629 ${KABIRA}`, `\u0648${KABIRA}`])
+        expect(kategorien(text, 'ar')).not.toContain('alkohol_rauschmittel');
+      const rest = KABIRA.slice(1);
+      for (const k of KLITIKA) expect(kategorien(`${k}${rest}`, 'ar')).toContain('alkohol_rauschmittel');
+      // alle arabischen Muster der Kategorie (aus kaikki zur Laufzeit) treffen mit Klitika und Pronomen-Suffix
+      const muster = [...lexikon.kategorien.find((k) => k.id === 'alkohol_rauschmittel')!.ar.muster.ganz];
+      expect(muster.length).toBeGreaterThan(3);
+      for (const m of muster) {
+        for (const k of KLITIKA) expect(kategorien(`${k}${m}`, 'ar')).toContain('alkohol_rauschmittel');
+        expect(kategorien(`${m}${HU}`, 'ar')).toContain('alkohol_rauschmittel');
+      }
+      // andere Prüfer rufen die Zerlegung ohne bekannte Wörter auf: unverändert
+      expect(arabischeKandidaten(arabischNormal(KABIRA))).toContain(arabischNormal(rest));
+    });
+
+    it('ar: die Staatsangehörigkeit ist nicht das Adjektiv, dessen Nisba sie ist; das Adjektiv trifft weiter', () => {
+      const STAATSANGEHOERIGKEIT = '\u062C\u0646\u0633\u064A\u0629';
+      for (const text of [STAATSANGEHOERIGKEIT, `${AL}${STAATSANGEHOERIGKEIT}`, `\u0648${AL}${STAATSANGEHOERIGKEIT}`])
+        expect(kategorien(text, 'ar').filter((k) => k.startsWith('sexualitaet'))).toEqual([]);
+      const adjektiv = STAATSANGEHOERIGKEIT.slice(0, -1);
+      for (const k of ['', ...KLITIKA]) expect(kategorien(`${k}${adjektiv}`, 'ar')).toContain('sexualitaet');
+    });
+
+    it('Register: Alltagswörter mit unmarkierter Hauptlesart melden nichts, auch keinen Hinweis', () => {
+      expect(kategorien('Benim bir kız kardeşim var.', 'tr')).toEqual([]);
+      expect(kategorien('Kızım okula gidiyor.', 'tr')).toEqual([]);
+      expect(kategorien('Hiç param yok.', 'tr')).toEqual([]);
+      expect(kategorien('Der Koffer ist schwer.', 'de')).toEqual([]);
+      expect(kategorien('Sie schrieb einen Brief.', 'de')).toEqual([]);
+      // Gegenprobe: ganz markierte Register-Wörter des Auszugs bleiben Treffer
+      for (const sprache of ['de', 'tr'] as const) {
+        const treffer = [...lexikon.register[sprache]].filter(([, k]) => k.includes('fluchen_schimpfwoerter')).map(([f]) => f);
+        expect(treffer.length, sprache).toBeGreaterThan(10);
+        expect(kategorien(treffer[0]!, sprache), sprache).toContain('fluchen_schimpfwoerter');
+      }
+    });
+  });
+
+  describe('Tipps: Fließtext in der Tipp-Sprache, Zitatblock in der Zielsprache', () => {
+    const lexikon = baueTabuLexikon(LEITFADEN, DATEN);
+    // Register-Treffer der Zielsprache tr, die im Deutschen sonst nichts treffen: einmal ein bekanntes deutsches Wort, einmal nicht
+    const kandidaten = [...lexikon.register.tr.keys()]
+      .filter((f) => /^\p{Ll}+$/u.test(f) && tabuTreffer(f, 'de', lexikon).length === 0)
+      .filter((f) => JSON.stringify(tabuTreffer(f, 'tr', lexikon)) === '[{"kategorie":"fluchen_schimpfwoerter","hinweis":false}]')
+      .sort();
+    const auchDeutsch = kandidaten.find((f) => lexikon.bekannt.de.has(f))!;
+    const nurTuerkisch = kandidaten.find((f) => !lexikon.bekannt.de.has(f))!;
+    const tipp = (absatz: string, beispiel: string) =>
+      testkursQuellen().map((q) => {
+        if (!q.pfad.includes('uebersetzung/tr-aus-de/')) return q;
+        const d = JSON.parse(q.text) as { tipps: { inhalt: { content: unknown[] } }[] };
+        d.tipps[0]!.inhalt.content = [
+          { type: 'paragraph', content: [{ type: 'text', text: absatz }] },
+          { type: 'blockquote', content: [{ type: 'paragraph', content: [{ type: 'text', text: beispiel }] }] },
+        ];
+        return { pfad: q.pfad, text: JSON.stringify(d) };
+      });
+    const tippBefunde = (quellen: ImportQuelle[]) =>
+      pruefe(quellen)
+        .befunde.filter((x) => x.pruefer === 'tabu' && x.ort === 'tr.a1.e01.de.t01')
+        .map((x) => `${x.schwere} ${x.kategorie}`);
+
+    it('ein deutsches Wort im Fließtext trifft keine gleich geschriebene türkische Form', () => {
+      expect(auchDeutsch).toBeDefined();
+      expect(tippBefunde(tipp(`Wir treffen uns ${auchDeutsch} Montag.`, 'Merhaba.'))).toEqual([]);
+    });
+
+    it('dieselbe Form im Zitatblock (Beispiel in der Zielsprache) trifft', () => {
+      expect(tippBefunde(tipp('Wir treffen uns morgen.', `${auchDeutsch}.`))).toEqual(['mensch fluchen_schimpfwoerter']);
+    });
+
+    it('ein eingestreutes Wort der Zielsprache im Fließtext trifft weiter', () => {
+      expect(nurTuerkisch).toBeDefined();
+      expect(tippBefunde(tipp(`Das Wort „${nurTuerkisch}“ sagt man nicht.`, 'Merhaba.'))).toEqual(['mensch fluchen_schimpfwoerter']);
+    });
+  });
 });
 
 describe('Religionsbezug', () => {
@@ -409,6 +613,52 @@ describe('Religionsbezug', () => {
     expect(von(mit, 'religionsbezug', 'mensch').map(befundZeile)).toEqual([
       expect.stringMatching(/Religionsbezug vor Stufe A2 – menschlich_klaeren \[R-09\]/),
     ]);
+  });
+
+  // Arabisch: bekannte Wörter nicht zerlegen, Hamza vergleichen (Codepunkte; Begriffe aus dem Leitfaden über kaikki)
+  const religionsbezugAr = (...saetze: string[]) => {
+    const texte: TextEintrag[] = saetze.map((text, i) => ({
+      datei: 'sprache/ar/a1/ar.a1.e01.json',
+      ort: `s${i}`,
+      sprache: 'ar',
+      text,
+      kurs: 'ar',
+      stufe: 'a1',
+      einheit: 'ar.a1.e01',
+      art: 'satz',
+      religionsbezug: false,
+      kinder: true,
+    }));
+    const inhalte = { ...leereInhalte(), leitfaden: { pfad: 'rahmen/leitfaden.json', daten: LEITFADEN } };
+    const befunde = pruefeReligionsbezug(inhalte, texte, DATEN).liste;
+    return saetze.map((_, i) => befunde.filter((b) => b.ort === `s${i}`).map((b) => b.kategorie));
+  };
+
+  it('Arabisch: „weit“ ist nicht bi- + Fest; das Fest mit Artikel bzw. ohne Klitikum trifft weiter', () => {
+    const WEIT = '\u0628\u0639\u064A\u062F';
+    const [weit, weitArtikel, weitWeiblich, fest, festArtikel] = religionsbezugAr(
+      `\u0627\u0644\u0628\u064A\u062A ${WEIT}`,
+      `\u0627\u0644${WEIT}`,
+      `${WEIT}\u0629`,
+      WEIT.slice(1),
+      `\u0627\u0644${WEIT.slice(1)}`,
+    );
+    expect([weit, weitArtikel, weitWeiblich]).toEqual([[], [], []]);
+    expect(fest).toEqual(expect.arrayContaining(['R-06', 'R-08']));
+    expect(festArtikel).toEqual(expect.arrayContaining(['R-06', 'R-08']));
+  });
+
+  it('Arabisch: „vor/vorn“ (Alif mit Hamza oben) trifft R-10 nicht; Hamza unten oder Alif ohne Zeichen trifft weiter', () => {
+    const MAM = '\u0645\u0627\u0645';
+    const [vorn, vornVokalisiert, unten, ohne, artikel] = religionsbezugAr(
+      `\u0623${MAM}`,
+      `\u0623\u064E\u0645\u064E\u0627\u0645\u064E \u0627\u0644\u0628\u064E\u064A\u0652\u062A\u0650`,
+      `\u0625${MAM}`,
+      `\u0627${MAM}`,
+      `\u0627\u0644\u0625${MAM}`,
+    );
+    expect([vorn, vornVokalisiert]).toEqual([[], []]);
+    for (const x of [unten, ohne, artikel]) expect(x).toEqual(['R-10']);
   });
 
   it('Prüfstein mit gekennzeichnetem Eintrag und Clip für gekennzeichneten Text sind blockierend', () => {

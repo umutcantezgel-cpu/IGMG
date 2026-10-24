@@ -1,0 +1,3381 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "automatisch_geprueft",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e04",
+    "reihenfolge": 5,
+    "thema": {
+      "de": "Wie spät ist es? – Uhrzeit, Tage und Monate",
+      "tr": "Saat kaç? – Saatler, günler ve aylar",
+      "ar": "كم الساعة؟ – الوقت والأيام والشهور"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann nach der Uhrzeit fragen und sie sagen.",
+        "tr": "Saati sorabilir ve söyleyebilirim.",
+        "ar": "أستطيع أن أسأل كم الساعة وأن أقول الوقت."
+      },
+      {
+        "de": "Ich kann Termine mit Wochentag und Uhrzeit verstehen und nennen.",
+        "tr": "Gün ve saat bilgisi olan randevuları anlayabilir ve söyleyebilirim.",
+        "ar": "أستطيع أن أفهم المواعيد مع يوم الأسبوع والساعة وأن أذكرها."
+      },
+      {
+        "de": "Ich kann sagen, in welchem Monat ich Geburtstag habe.",
+        "tr": "Doğum günümün hangi ayda olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أقول في أي شهر وُلدتُ."
+      }
+    ],
+    "symbol": "clock",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a1.e04.um",
+      "lemma": "um",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ",
+        "a1_wendungen": "um acht Uhr"
+      },
+      "frequenzRang": 42,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.an",
+      "lemma": "an",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ (wohin?) oder Dativ (wo?)",
+        "a1_wendungen": "am Montag"
+      },
+      "formen": {
+        "mit_dem": "am",
+        "mit_das": "ans"
+      },
+      "frequenzRang": 24,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.nach",
+      "lemma": "nach",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Dativ",
+        "a1_wendungen": "nach Hause; Viertel nach"
+      },
+      "frequenzRang": 34,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.vor",
+      "lemma": "vor",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ (wohin?) oder Dativ (wo?)",
+        "a1_wendungen": "Viertel vor"
+      },
+      "frequenzRang": 67,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.bis",
+      "lemma": "bis",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ"
+      },
+      "frequenzRang": 61,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.wann",
+      "lemma": "wann",
+      "wortart": "fragewort",
+      "frequenzRang": 474,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.dann",
+      "lemma": "dann",
+      "wortart": "adverb",
+      "frequenzRang": 49,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.schon",
+      "lemma": "schon",
+      "wortart": "adverb",
+      "frequenzRang": 50,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.heute",
+      "lemma": "heute",
+      "wortart": "adverb",
+      "frequenzRang": 102,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.gestern",
+      "lemma": "gestern",
+      "wortart": "adverb",
+      "frequenzRang": 503,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.gehen",
+      "lemma": "gehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "gehen",
+        "praes_ich": "gehe",
+        "praes_du": "gehst",
+        "praes_er_sie_es": "geht",
+        "praes_wir": "gehen",
+        "praes_ihr": "geht",
+        "praes_sie_Sie": "gehen",
+        "imp_du": "geh",
+        "imp_ihr": "geht"
+      },
+      "frequenzRang": 57,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.machen",
+      "lemma": "machen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "machen",
+        "praes_ich": "mache",
+        "praes_du": "machst",
+        "praes_er_sie_es": "macht",
+        "praes_wir": "machen",
+        "praes_ihr": "macht",
+        "praes_sie_Sie": "machen",
+        "imp_du": "mach",
+        "imp_ihr": "macht"
+      },
+      "frequenzRang": 48,
+      "quelle": "wiktionary:de:machen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚machen‘ (https://de.wiktionary.org/wiki/machen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.erste",
+      "lemma": "erste",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "1.",
+        "art": "Ordinalzahl"
+      },
+      "formen": {
+        "endung_en": "ersten",
+        "endung_er": "erster",
+        "endung_es": "erstes",
+        "endung_em": "erstem"
+      },
+      "frequenzRang": 82,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.zweite",
+      "lemma": "zweite",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "2.",
+        "art": "Ordinalzahl"
+      },
+      "formen": {
+        "endung_en": "zweiten",
+        "endung_er": "zweiter",
+        "endung_es": "zweites",
+        "endung_em": "zweitem"
+      },
+      "frequenzRang": 196,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.zeit",
+      "lemma": "Zeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 79,
+      "quelle": "wiktionary:de:Zeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zeit‘ (https://de.wiktionary.org/wiki/Zeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.uhr",
+      "lemma": "Uhr",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Uhren"
+      },
+      "formen": {
+        "pl": "Uhren"
+      },
+      "frequenzRang": 152,
+      "quelle": "wiktionary:de:Uhr",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Uhr‘ (https://de.wiktionary.org/wiki/Uhr), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.stunde",
+      "lemma": "Stunde",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Stunden"
+      },
+      "formen": {
+        "pl": "Stunden"
+      },
+      "frequenzRang": 211,
+      "quelle": "wiktionary:de:Stunde",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stunde‘ (https://de.wiktionary.org/wiki/Stunde), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.minute",
+      "lemma": "Minute",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Minuten"
+      },
+      "formen": {
+        "pl": "Minuten"
+      },
+      "frequenzRang": 233,
+      "quelle": "wiktionary:de:Minute",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Minute‘ (https://de.wiktionary.org/wiki/Minute), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.halb",
+      "lemma": "halb",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "halbe",
+        "endung_en": "halben",
+        "endung_er": "halber",
+        "endung_es": "halbes",
+        "endung_em": "halbem"
+      },
+      "frequenzRang": 712,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.viertel",
+      "lemma": "Viertel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Viertel"
+      },
+      "formen": {
+        "dat_pl": "Vierteln"
+      },
+      "frequenzRang": 2182,
+      "quelle": "wiktionary:de:Viertel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Viertel‘ (https://de.wiktionary.org/wiki/Viertel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.spaet",
+      "lemma": "spät",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "späte",
+        "endung_en": "späten",
+        "endung_er": "später",
+        "endung_es": "spätes",
+        "endung_em": "spätem",
+        "komparativ": "später"
+      },
+      "frequenzRang": 207,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.frueh",
+      "lemma": "früh",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "frühe",
+        "endung_en": "frühen",
+        "endung_er": "früher",
+        "endung_es": "frühes",
+        "endung_em": "frühem",
+        "komparativ": "früher"
+      },
+      "frequenzRang": 523,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.abend",
+      "lemma": "Abend",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Abende"
+      },
+      "formen": {
+        "pl": "Abende",
+        "dat_pl": "Abenden"
+      },
+      "frequenzRang": 321,
+      "quelle": "wiktionary:de:Abend",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abend‘ (https://de.wiktionary.org/wiki/Abend), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.nacht",
+      "lemma": "Nacht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Nächte"
+      },
+      "formen": {
+        "pl": "Nächte",
+        "dat_pl": "Nächten"
+      },
+      "frequenzRang": 288,
+      "quelle": "wiktionary:de:Nacht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nacht‘ (https://de.wiktionary.org/wiki/Nacht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.woche",
+      "lemma": "Woche",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Wochen"
+      },
+      "formen": {
+        "pl": "Wochen"
+      },
+      "frequenzRang": 174,
+      "quelle": "wiktionary:de:Woche",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Woche‘ (https://de.wiktionary.org/wiki/Woche), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.monat",
+      "lemma": "Monat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Monate"
+      },
+      "formen": {
+        "pl": "Monate",
+        "dat_pl": "Monaten"
+      },
+      "frequenzRang": 228,
+      "quelle": "wiktionary:de:Monat",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Monat‘ (https://de.wiktionary.org/wiki/Monat), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.jeder",
+      "lemma": "jeder",
+      "wortart": "artikel",
+      "merkmale": {
+        "art": "Artikelwort (Endungen wie der, die, das)"
+      },
+      "formen": {
+        "endung_e": "jede",
+        "endung_es": "jedes",
+        "endung_en": "jeden",
+        "endung_em": "jedem"
+      },
+      "frequenzRang": 73,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.ende",
+      "lemma": "Ende",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Enden"
+      },
+      "formen": {
+        "pl": "Enden"
+      },
+      "frequenzRang": 154,
+      "quelle": "wiktionary:de:Ende",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ende‘ (https://de.wiktionary.org/wiki/Ende), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.letzte",
+      "lemma": "letzte",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "gebrauch": "nur attributiv (letzte Woche, am letzten Sonntag)"
+      },
+      "formen": {
+        "endung_e": "letzte",
+        "endung_en": "letzten",
+        "endung_er": "letzter",
+        "endung_es": "letztes",
+        "endung_em": "letztem"
+      },
+      "frequenzRang": 190,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.naechste",
+      "lemma": "nächste",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "gebrauch": "nur attributiv (nächste Woche, nächsten Montag)"
+      },
+      "formen": {
+        "endung_e": "nächste",
+        "endung_en": "nächsten",
+        "endung_er": "nächster",
+        "endung_es": "nächstes",
+        "endung_em": "nächstem"
+      },
+      "frequenzRang": 191,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.geburtstag",
+      "lemma": "Geburtstag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Geburtstage"
+      },
+      "formen": {
+        "pl": "Geburtstage",
+        "dat_pl": "Geburtstagen"
+      },
+      "frequenzRang": 1081,
+      "quelle": "wiktionary:de:Geburtstag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Geburtstag‘ (https://de.wiktionary.org/wiki/Geburtstag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.montag",
+      "lemma": "Montag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Montage"
+      },
+      "formen": {
+        "pl": "Montage",
+        "dat_pl": "Montagen"
+      },
+      "frequenzRang": 896,
+      "quelle": "wiktionary:de:Montag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Montag‘ (https://de.wiktionary.org/wiki/Montag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.dienstag",
+      "lemma": "Dienstag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Dienstage"
+      },
+      "formen": {
+        "pl": "Dienstage",
+        "dat_pl": "Dienstagen"
+      },
+      "frequenzRang": 1485,
+      "quelle": "wiktionary:de:Dienstag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Dienstag‘ (https://de.wiktionary.org/wiki/Dienstag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.mittwoch",
+      "lemma": "Mittwoch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Mittwoche"
+      },
+      "formen": {
+        "pl": "Mittwoche",
+        "dat_pl": "Mittwochen"
+      },
+      "frequenzRang": 1413,
+      "quelle": "wiktionary:de:Mittwoch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mittwoch‘ (https://de.wiktionary.org/wiki/Mittwoch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.donnerstag",
+      "lemma": "Donnerstag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Donnerstage"
+      },
+      "formen": {
+        "pl": "Donnerstage",
+        "dat_pl": "Donnerstagen"
+      },
+      "frequenzRang": 1531,
+      "quelle": "wiktionary:de:Donnerstag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Donnerstag‘ (https://de.wiktionary.org/wiki/Donnerstag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.freitag",
+      "lemma": "Freitag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Freitage"
+      },
+      "formen": {
+        "pl": "Freitage",
+        "dat_pl": "Freitagen"
+      },
+      "frequenzRang": 887,
+      "quelle": "wiktionary:de:Freitag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Freitag‘ (https://de.wiktionary.org/wiki/Freitag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.samstag",
+      "lemma": "Samstag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Samstage"
+      },
+      "formen": {
+        "pl": "Samstage",
+        "dat_pl": "Samstagen"
+      },
+      "frequenzRang": 855,
+      "quelle": "wiktionary:de:Samstag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Samstag‘ (https://de.wiktionary.org/wiki/Samstag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.sonntag",
+      "lemma": "Sonntag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Sonntage"
+      },
+      "formen": {
+        "pl": "Sonntage",
+        "dat_pl": "Sonntagen"
+      },
+      "frequenzRang": 685,
+      "quelle": "wiktionary:de:Sonntag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sonntag‘ (https://de.wiktionary.org/wiki/Sonntag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.januar",
+      "lemma": "Januar",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 674,
+      "quelle": "wiktionary:de:Januar",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Januar‘ (https://de.wiktionary.org/wiki/Januar), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.februar",
+      "lemma": "Februar",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 705,
+      "quelle": "wiktionary:de:Februar",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Februar‘ (https://de.wiktionary.org/wiki/Februar), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.maerz",
+      "lemma": "März",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 505,
+      "quelle": "wiktionary:de:März",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚März‘ (https://de.wiktionary.org/wiki/März), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.april",
+      "lemma": "April",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 561,
+      "quelle": "wiktionary:de:April",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚April‘ (https://de.wiktionary.org/wiki/April), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.mai",
+      "lemma": "Mai",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 453,
+      "quelle": "wiktionary:de:Mai",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mai‘ (https://de.wiktionary.org/wiki/Mai), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.juni",
+      "lemma": "Juni",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 574,
+      "quelle": "wiktionary:de:Juni",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Juni‘ (https://de.wiktionary.org/wiki/Juni), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.juli",
+      "lemma": "Juli",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 573,
+      "quelle": "wiktionary:de:Juli",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Juli‘ (https://de.wiktionary.org/wiki/Juli), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.august",
+      "lemma": "August",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 540,
+      "quelle": "wiktionary:de:August",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚August‘ (https://de.wiktionary.org/wiki/August), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.september",
+      "lemma": "September",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 473,
+      "quelle": "wiktionary:de:September",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚September‘ (https://de.wiktionary.org/wiki/September), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.oktober",
+      "lemma": "Oktober",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 576,
+      "quelle": "wiktionary:de:Oktober",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Oktober‘ (https://de.wiktionary.org/wiki/Oktober), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.november",
+      "lemma": "November",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 548,
+      "quelle": "wiktionary:de:November",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚November‘ (https://de.wiktionary.org/wiki/November), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.dezember",
+      "lemma": "Dezember",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 657,
+      "quelle": "wiktionary:de:Dezember",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Dezember‘ (https://de.wiktionary.org/wiki/Dezember), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e04.s0001",
+      "text": "Wie spät ist es?",
+      "quelle": "tatoeba:478461",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #478461 von Espi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0002",
+      "text": "Entschuldigung, wie viel Uhr ist es?",
+      "quelle": "tatoeba:1673890",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1673890 von Grim_fandango (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0003",
+      "text": "Es ist zehn Uhr.",
+      "quelle": "tatoeba:8472866",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8472866 von Luiaard (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0004",
+      "text": "Es ist schon elf Uhr.",
+      "quelle": "tatoeba:1772672",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1772672 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0005",
+      "text": "Es ist acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0006",
+      "text": "Es ist zwölf Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0007",
+      "text": "Es ist halb drei.",
+      "quelle": "tatoeba:1391526",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1391526 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0008",
+      "text": "Es ist halb neun.",
+      "quelle": "tatoeba:5707176",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5707176 von halfdan (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0009",
+      "text": "Es ist halb acht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0010",
+      "text": "Halb acht ist sieben Uhr dreißig.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0011",
+      "text": "Es ist spät.",
+      "quelle": "tatoeba:338438",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #338438 von Sprachprofi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0012",
+      "text": "Es ist noch früh.",
+      "quelle": "tatoeba:10190690",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #10190690 von wolfgangth (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0013",
+      "text": "Es ist schon spät.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0014",
+      "text": "Das ist meine Uhr.",
+      "quelle": "tatoeba:2051002",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2051002 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0015",
+      "text": "Die Uhr funktioniert nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0016",
+      "text": "Eine Stunde hat sechzig Minuten.",
+      "quelle": "tatoeba:812210",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #812210 von Zaphod (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0017",
+      "text": "Ein Tag hat 24 Stunden.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0018",
+      "text": "Eine halbe Stunde hat dreißig Minuten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0019",
+      "text": "Ich habe keine Zeit.",
+      "quelle": "tatoeba:458024",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #458024 von qcomplex5 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0020",
+      "text": "Wir haben viel Zeit.",
+      "quelle": "tatoeba:947026",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #947026 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0021",
+      "text": "Ich brauche noch zehn Minuten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0022",
+      "text": "Ich komme um acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0023",
+      "text": "Oma kommt um vier Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0024",
+      "text": "Wann lernst du Deutsch?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0025",
+      "text": "Um fünf Uhr lerne ich Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0026",
+      "text": "Um sieben Uhr ist Murat zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0027",
+      "text": "Es ist Viertel nach neun.",
+      "quelle": "tatoeba:344350",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #344350 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0028",
+      "text": "Es ist Viertel vor drei.",
+      "quelle": "tatoeba:1310567",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1310567 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0029",
+      "text": "Es ist Viertel nach acht.",
+      "quelle": "tatoeba:3338141",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3338141 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0030",
+      "text": "Es ist Viertel vor fünf.",
+      "quelle": "tatoeba:12845869",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12845869 von Adelpa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0031",
+      "text": "Es ist fünf nach sieben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0032",
+      "text": "Es ist zwanzig nach vier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0033",
+      "text": "Es ist zehn vor zwölf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0034",
+      "text": "Um halb acht gehe ich aus dem Haus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0035",
+      "text": "Am Abend bin ich zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0036",
+      "text": "Guten Abend!",
+      "quelle": "tatoeba:438751",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #438751 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0037",
+      "text": "Gute Nacht!",
+      "quelle": "tatoeba:438752",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #438752 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0038",
+      "text": "In der Nacht ist es dunkel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0039",
+      "text": "Um zehn Uhr gehe ich ins Bett.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0040",
+      "text": "Wann gehst du ins Bett?",
+      "quelle": "tatoeba:2097615",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2097615 von Vortarulo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0041",
+      "text": "Was machst du heute Abend?",
+      "quelle": "tatoeba:370186",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #370186 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0042",
+      "text": "Ich lerne Deutsch, dann gehe ich ins Bett.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0043",
+      "text": "Dann gehe ich ins Bad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0044",
+      "text": "Wann kommst du nach Hause?",
+      "quelle": "tatoeba:1277232",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1277232 von Espi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0045",
+      "text": "Mein Vater kommt um sechs nach Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0046",
+      "text": "Von vier bis fünf lerne ich Arabisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0047",
+      "text": "Vor sieben Uhr ist es noch dunkel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0048",
+      "text": "Nach zehn Uhr sind alle im Bett.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0049",
+      "text": "Am Abend sind wir alle zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0050",
+      "text": "Wie geht es dir?",
+      "quelle": "tatoeba:358124",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #358124 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0051",
+      "text": "Es geht mir gut, danke.",
+      "quelle": "tatoeba:341460",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #341460 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0052",
+      "text": "Am Abend komme ich spät nach Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0053",
+      "text": "Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag, Sonntag.",
+      "quelle": "tatoeba:13659616",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13659616 von mhr (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0054",
+      "text": "Eine Woche hat sieben Tage.",
+      "quelle": "tatoeba:642937",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #642937 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0055",
+      "text": "Wie viele Tage hat die Woche?",
+      "quelle": "tatoeba:1288890",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1288890 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0056",
+      "text": "Heute ist Montag.",
+      "quelle": "tatoeba:344643",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #344643 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0057",
+      "text": "Heute ist Dienstag.",
+      "quelle": "tatoeba:3321290",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3321290 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0058",
+      "text": "Heute ist Mittwoch.",
+      "quelle": "tatoeba:2199005",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2199005 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0059",
+      "text": "Heute ist Donnerstag.",
+      "quelle": "tatoeba:3346158",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3346158 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0060",
+      "text": "Heute ist Freitag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0061",
+      "text": "Heute ist Samstag und morgen ist Sonntag.",
+      "quelle": "tatoeba:913900",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #913900 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0062",
+      "text": "Morgen ist Sonntag.",
+      "quelle": "tatoeba:444549",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #444549 von Alba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0063",
+      "text": "Ist morgen Donnerstag?",
+      "quelle": "tatoeba:13380579",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13380579 von Waldelfe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0064",
+      "text": "Gestern war Sonntag, heute ist Montag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0065",
+      "text": "Montag ist der erste Tag in der Woche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0066",
+      "text": "Sonntag ist der letzte Tag in der Woche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0067",
+      "text": "Was machst du am Sonntag?",
+      "quelle": "tatoeba:1348063",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1348063 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0068",
+      "text": "Am Montag lerne ich Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0069",
+      "text": "Am Dienstag kommt Oma.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0070",
+      "text": "Am Mittwoch hat Jan Zeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0071",
+      "text": "Am Donnerstag gehe ich zu Opa.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0072",
+      "text": "Am Samstag sind wir zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0073",
+      "text": "Am Sonntag machen wir Fotos.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0074",
+      "text": "Jeden Montag lernt Elif Arabisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0075",
+      "text": "Ich lerne jeden Tag zehn Minuten Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0076",
+      "text": "Ist heute Dienstag oder Mittwoch?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0077",
+      "text": "Nein, heute ist Donnerstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0078",
+      "text": "Nächste Woche hat Laylā Geburtstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0079",
+      "text": "Nächsten Montag kommt Opa.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0080",
+      "text": "Am letzten Sonntag im Monat kommt Oma.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0081",
+      "text": "Bis Montag!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0082",
+      "text": "Bis nächste Woche, Tom!",
+      "quelle": "tatoeba:5782805",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5782805 von landano (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0083",
+      "text": "Ein Jahr hat zwölf Monate.",
+      "quelle": "tatoeba:449003",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #449003 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0084",
+      "text": "Januar ist der erste Monat im Jahr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0085",
+      "text": "Dezember ist der letzte Monat im Jahr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0086",
+      "text": "Mai kommt nach April.",
+      "quelle": "tatoeba:901897",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #901897 von Espi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0087",
+      "text": "Juni kommt vor Juli.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0088",
+      "text": "Nach März kommt April.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0089",
+      "text": "Wann hast du Geburtstag?",
+      "quelle": "tatoeba:619973",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #619973 von Tenshi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0090",
+      "text": "Mein Geburtstag ist im Februar.",
+      "quelle": "tatoeba:12443487",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12443487 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0091",
+      "text": "Ich habe im Mai Geburtstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0092",
+      "text": "Laylā hat im Januar Geburtstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0093",
+      "text": "Nein, ich habe im August Geburtstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0094",
+      "text": "Mein Bruder hat am ersten März Geburtstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0095",
+      "text": "Meine Schwester hat am zweiten Oktober Geburtstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0096",
+      "text": "Im Dezember ist es früh dunkel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0097",
+      "text": "Im Juni ist es am Abend noch hell.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0098",
+      "text": "Heute ist mein Geburtstag.",
+      "quelle": "tatoeba:985120",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #985120 von Andoromeda (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0099",
+      "text": "Alles Gute zum Geburtstag!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0100",
+      "text": "Heute bin ich zehn Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0101",
+      "text": "Es ist schon Oktober.",
+      "quelle": "tatoeba:10053266",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #10053266 von wolfgangth (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0102",
+      "text": "Der September hat dreißig Tage.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0103",
+      "text": "Nächsten Monat hat Opa Geburtstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0104",
+      "text": "Im April kommt Oma aus Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0105",
+      "text": "Im August sind wir in der Türkei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0106",
+      "text": "Ende Juni kommt Opa.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0107",
+      "text": "Heute ist der erste Mai.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0108",
+      "text": "Wann ist dein Geburtstag?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0109",
+      "text": "Im März.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0110",
+      "text": "Mein Geburtstag ist Ende März.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0111",
+      "text": "Meine Mutter hat im November Geburtstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0112",
+      "text": "Hast du am Mittwoch Zeit?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0113",
+      "text": "Am Mittwoch habe ich keine Zeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0114",
+      "text": "Und am Donnerstag?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0115",
+      "text": "Am Donnerstag habe ich Zeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0116",
+      "text": "Gut, dann am Donnerstag um vier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0117",
+      "text": "Hast du am Nachmittag Zeit?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0118",
+      "text": "Ja, nach drei Uhr habe ich Zeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0119",
+      "text": "Heute geht es nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0120",
+      "text": "Geht es am Freitag?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0121",
+      "text": "Ja, am Freitag geht es.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0122",
+      "text": "Ich habe heute keine Zeit. Komm morgen!",
+      "quelle": "tatoeba:6603158",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6603158 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0123",
+      "text": "Kommst du am Samstag zu mir?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0124",
+      "text": "Ja! Um wie viel Uhr?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0125",
+      "text": "Kommst du heute Abend?",
+      "quelle": "tatoeba:7680428",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7680428 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0126",
+      "text": "Bis dann!",
+      "quelle": "tatoeba:698033",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #698033 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0127",
+      "text": "Bis Freitag!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0128",
+      "text": "Du bist zu spät.",
+      "quelle": "tatoeba:1325384",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1325384 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0129",
+      "text": "Komm nicht zu spät!",
+      "quelle": "tatoeba:1733041",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1733041 von mfw (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e04.s0130",
+      "text": "Entschuldigung, ich bin zu spät.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0131",
+      "text": "Ich komme zehn Minuten zu spät.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0132",
+      "text": "Wir sind zu früh da.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0133",
+      "text": "Es ist Viertel nach drei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0134",
+      "text": "Es ist halb fünf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0135",
+      "text": "Es ist fünf vor acht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0136",
+      "text": "Hast du am Freitag um drei Uhr Zeit?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0137",
+      "text": "Am Nachmittag habe ich Zeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0138",
+      "text": "Die Woche von Jan",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0139",
+      "text": "Am Montag lernt Jan um 16 Uhr Arabisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0140",
+      "text": "Am Dienstag macht Jan das Bad sauber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0141",
+      "text": "Am Mittwoch kommt Oma um 15 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0142",
+      "text": "Am Donnerstag ist Jan bei Kerem.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0143",
+      "text": "Am Freitag macht Jan die Küche sauber.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0144",
+      "text": "Am Samstag geht Jan um 10 zu Opa.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0145",
+      "text": "Am Sonntag ist die Familie zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0146",
+      "text": "Am Montag lernt Jan Türkisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0147",
+      "text": "Oma kommt am Mittwoch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0148",
+      "text": "Jan hat am Freitag Geburtstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0149",
+      "text": "Wann geht Jan zu Opa?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0150",
+      "text": "Am Samstag um 10 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0151",
+      "text": "Am Sonntag um 10 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0152",
+      "text": "Am Mittwoch um 15 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0153",
+      "text": "Ein Montag bei Elif",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0154",
+      "text": "Es ist Montag, halb sieben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0155",
+      "text": "Murat ist schon in der Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0156",
+      "text": "Kinder, es ist schon halb sieben!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0157",
+      "text": "Ach, es ist noch so früh!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0158",
+      "text": "Elif, Can, kommt bitte in die Küche!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0159",
+      "text": "Can sitzt schon am Tisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0160",
+      "text": "Aber Elif sucht ihre Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0161",
+      "text": "Papa, wo ist meine Uhr?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0162",
+      "text": "Ist sie im Bad?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0163",
+      "text": "Nein, im Bad ist sie nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0164",
+      "text": "Hier ist deine Uhr! Sie liegt bei der Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0165",
+      "text": "Danke, Can!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0166",
+      "text": "Jetzt ist es schon Viertel nach sieben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0167",
+      "text": "Um halb acht gehen wir!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0168",
+      "text": "Die Kinder gehen um halb acht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0169",
+      "text": "Tschüss, Papa! Bis heute Nachmittag!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0170",
+      "text": "Wo ist Murat?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0171",
+      "text": "Murat ist in der Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0172",
+      "text": "Murat ist im Bad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0173",
+      "text": "Murat ist noch im Bett.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0174",
+      "text": "Was sucht Elif?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0175",
+      "text": "Sie sucht ihre Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0176",
+      "text": "Sie sucht ihr Foto.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0177",
+      "text": "Sie sucht ihre Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0178",
+      "text": "Wo liegt die Uhr?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0179",
+      "text": "Sie liegt bei der Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0180",
+      "text": "Sie liegt im Bad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0181",
+      "text": "Sie liegt im Bett.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0182",
+      "text": "Wann gehen die Kinder?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0183",
+      "text": "Um halb acht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0184",
+      "text": "Um halb sieben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0185",
+      "text": "Um Viertel nach sieben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0186",
+      "text": "Am Mittwoch um vier",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0187",
+      "text": "Hallo Elif! Hast du am Mittwoch Zeit?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0188",
+      "text": "Am Mittwoch? Ja. Um wie viel Uhr?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0189",
+      "text": "Um vier Uhr. Kommst du zu mir?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0190",
+      "text": "Ja, gut. Ich lerne bis halb vier Arabisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0191",
+      "text": "Gut, dann bis Mittwoch um vier!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0192",
+      "text": "Bis Mittwoch, Laylā!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0193",
+      "text": "Wann kommt Elif zu Laylā?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0194",
+      "text": "Am Mittwoch um vier Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0195",
+      "text": "Am Montag um vier Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0196",
+      "text": "Am Mittwoch um halb vier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0197",
+      "text": "Was lernt Elif bis halb vier?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0198",
+      "text": "Sie lernt Arabisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0199",
+      "text": "Sie lernt Türkisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0200",
+      "text": "Am Freitag um halb fünf kommt Opa.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0201",
+      "text": "Im Oktober hat mein Opa Geburtstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0202",
+      "text": "Ich lerne jeden Abend eine Stunde Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0203",
+      "text": "Heute ist der zweite Juni.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0204",
+      "text": "Es ist Viertel vor zwölf.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0205",
+      "text": "Um wie viel Uhr gehst du ins Bett?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0206",
+      "text": "Um neun Uhr. Und du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0207",
+      "text": "Die Kinder sind um drei Uhr zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0208",
+      "text": "Am Dienstag hat Laylā keine Zeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0209",
+      "text": "Mein Geburtstag ist am ersten April.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0210",
+      "text": "Jede Woche kommt Oma am Freitag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0211",
+      "text": "Heute gehen wir zu Oma und Opa.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e04.s0212",
+      "text": "Bis später!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e04.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann nach der Uhrzeit fragen und volle und halbe Stunden sagen.",
+        "tr": "Saati sorabilir, tam ve buçuklu saatleri söyleyebilirim.",
+        "ar": "أستطيع أن أسأل عن الساعة وأن أقول الساعات الكاملة وأنصاف الساعات."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e04.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e04.uhr",
+          "ablenker": ["de.a1.e04.zeit", "de.a1.e04.minute"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e04.spaet",
+          "ablenker": ["de.a1.e04.frueh", "de.a1.e04.halb"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0001"
+            }
+          ],
+          "antwort": "de.a1.e04.s0003",
+          "ablenker": ["de.a1.e04.s0019", "de.a1.e04.s0014"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a05",
+          "typ": "paare",
+          "lemmata": ["de.a1.e04.zeit", "de.a1.e04.minute", "de.a1.e04.spaet", "de.a1.e04.frueh", "de.a1.e04.wann", "de.a1.e04.schon"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e04.s0007",
+          "ablenker": ["de.a1.e04.s0009", "de.a1.e04.s0006", "de.a1.e04.s0011"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e04.um",
+          "ablenker": ["de.a1.e04.wann", "de.a1.e04.schon"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0022",
+          "wort": 2,
+          "ablenker": ["am", "im"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0009",
+          "nach": "ziel",
+          "ablenker": ["sieben", "Minuten"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a10",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e04.stunde",
+          "ablenker": ["de.a1.e04.minute", "de.a1.e04.halb"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e04.s0016",
+          "ablenker": ["de.a1.e04.s0017", "de.a1.e04.s0010", "de.a1.e04.s0018"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0024"
+            }
+          ],
+          "antwort": "de.a1.e04.s0025",
+          "ablenker": ["de.a1.e04.s0020", "de.a1.e04.s0015"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a14",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0021",
+          "wort": 4,
+          "ablenker": ["Minute", "Uhr"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e04.zeit",
+          "ablenker": ["de.a1.e00-tr.s0002"]
+        },
+        {
+          "schluessel": "de.a1.e04.l01.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e04.s0005",
+          "alternativen": ["Es ist 8 Uhr."]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e04.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Uhrzeiten mit Viertel nennen und meinen Tag kurz beschreiben.",
+        "tr": "Çeyrekli saatleri söyleyebilir ve günümü kısaca anlatabilirim.",
+        "ar": "أستطيع أن أذكر الأوقات بالربع وأن أصف يومي باختصار."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e04.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e04.viertel",
+          "ablenker": ["de.a1.e04.halb", "de.a1.e04.stunde"]
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e04.abend",
+          "ablenker": ["de.a1.e04.nacht", "de.a1.e01.morgen"]
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e04.abend", "de.a1.e04.nacht", "de.a1.e04.gehen", "de.a1.e04.machen", "de.a1.e04.vor", "de.a1.e04.bis"]
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e04.s0027",
+          "ablenker": ["de.a1.e04.s0030", "de.a1.e04.s0029"]
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a05",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0031",
+          "wort": 3,
+          "ablenker": ["bis", "um"]
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0040"
+            }
+          ],
+          "antwort": "de.a1.e04.s0039",
+          "ablenker": ["de.a1.e04.s0037", "de.a1.e04.s0032"]
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0041"
+            }
+          ],
+          "antwort": "de.a1.e04.s0042",
+          "ablenker": ["de.a1.e04.s0036", "de.a1.e04.s0045"]
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0025",
+          "nach": "ziel",
+          "alternativen": ["Ich lerne um fünf Uhr Deutsch.", "Deutsch lerne ich um fünf Uhr.", "Ich lerne Deutsch um fünf Uhr."],
+          "ablenker": ["lernst", "am"]
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0043",
+          "wort": 1,
+          "ablenker": ["gehst", "geht"]
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e04.s0038",
+          "ablenker": ["de.a1.e04.s0035", "de.a1.e04.s0047", "de.a1.e04.s0048", "de.a1.e04.s0049"]
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e04.nacht",
+          "ablenker": ["de.a1.e04.nach"]
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a13",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0046",
+          "wort": 2,
+          "ablenker": ["nach", "um"]
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0045",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e04.s0031"
+        },
+        {
+          "schluessel": "de.a1.e04.l02.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e04.s0035"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e04.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann die Wochentage nennen und sagen, was ich wann mache.",
+        "tr": "Haftanın günlerini sayabilir ve ne zaman ne yaptığımı söyleyebilirim.",
+        "ar": "أستطيع أن أذكر أيام الأسبوع وأن أقول ماذا أفعل ومتى."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e04.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e04.montag",
+          "ablenker": ["de.a1.e04.mittwoch", "de.a1.e04.sonntag"]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e04.montag",
+            "de.a1.e04.dienstag",
+            "de.a1.e04.mittwoch",
+            "de.a1.e04.donnerstag",
+            "de.a1.e04.freitag",
+            "de.a1.e04.samstag"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e04.heute",
+          "ablenker": ["de.a1.e04.gestern", "de.a1.e04.woche"]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e04.s0058",
+          "ablenker": ["de.a1.e04.s0059", "de.a1.e04.s0057"]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0068",
+          "wort": 0,
+          "ablenker": ["Um", "Im"]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0076"
+            }
+          ],
+          "antwort": "de.a1.e04.s0058",
+          "ablenker": ["de.a1.e04.s0068", "de.a1.e04.s0070"]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a08",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e04.sonntag",
+            "de.a1.e04.woche",
+            "de.a1.e04.heute",
+            "de.a1.e04.gestern",
+            "de.a1.e04.naechste",
+            "de.a1.e04.jeder"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0069",
+          "nach": "ziel",
+          "alternativen": ["Oma kommt am Dienstag."],
+          "ablenker": ["kommst", "um"]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0074",
+          "wort": 2,
+          "ablenker": ["lerne", "lernst"]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e04.an",
+          "ablenker": ["de.a1.e04.bis", "de.a1.e04.vor"]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e04.s0064",
+          "ablenker": ["de.a1.e04.s0061", "de.a1.e04.s0062", "de.a1.e04.s0066"]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0055"
+            }
+          ],
+          "antwort": "de.a1.e04.s0054",
+          "ablenker": ["de.a1.e04.s0083", "de.a1.e04.s0060", "de.a1.e04.s0065"]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e04.montag",
+          "ablenker": ["de.a1.e04.monat"]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0063"
+            }
+          ],
+          "antwort": "de.a1.e04.s0077",
+          "ablenker": ["de.a1.e04.s0071", "de.a1.e04.s0079"]
+        },
+        {
+          "schluessel": "de.a1.e04.l03.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e04.s0053"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e04.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann die Monate nennen und sagen, wann ich Geburtstag habe.",
+        "tr": "Ayları sayabilir ve doğum günümün ne zaman olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أذكر الشهور وأن أقول في أي شهر وُلدتُ."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e04.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e04.monat",
+          "ablenker": ["de.a1.e04.woche", "de.a1.e02.jahr"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e04.januar", "de.a1.e04.februar", "de.a1.e04.maerz", "de.a1.e04.april", "de.a1.e04.mai", "de.a1.e04.juni"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a04",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e04.juli",
+            "de.a1.e04.august",
+            "de.a1.e04.september",
+            "de.a1.e04.oktober",
+            "de.a1.e04.november",
+            "de.a1.e04.dezember"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e04.geburtstag",
+          "ablenker": ["de.a1.e04.monat", "de.a1.e04.ende"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e04.s0091",
+          "ablenker": ["de.a1.e04.s0092", "de.a1.e04.s0093", "de.a1.e04.s0111"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0091",
+          "wort": 2,
+          "ablenker": ["am", "um"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e04.erste",
+          "ablenker": ["de.a1.e04.zweite", "de.a1.e04.letzte"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0089"
+            }
+          ],
+          "antwort": "de.a1.e04.s0090",
+          "ablenker": ["de.a1.e04.s0099", "de.a1.e04.s0101"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0094",
+          "nach": "ziel",
+          "alternativen": ["Am ersten März hat mein Bruder Geburtstag."],
+          "ablenker": ["im", "erste"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e04.juni",
+          "ablenker": ["de.a1.e04.juli"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0095",
+          "wort": 4,
+          "ablenker": ["zweite", "zwei"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e04.s0096",
+          "ablenker": ["de.a1.e04.s0097", "de.a1.e04.s0105", "de.a1.e04.s0104"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0098"
+            }
+          ],
+          "antwort": "de.a1.e04.s0099",
+          "ablenker": ["de.a1.e04.s0109", "de.a1.e04.s0106"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a15",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0085",
+          "wort": 3,
+          "ablenker": ["erste", "zweite"]
+        },
+        {
+          "schluessel": "de.a1.e04.l04.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e04.s0102",
+          "alternativen": ["Der September hat 30 Tage."]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e04.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann einen Termin vereinbaren und einen Wochenplan lesen.",
+        "tr": "Randevu ayarlayabilir ve haftalık bir planı okuyabilirim.",
+        "ar": "أستطيع أن أتفق على موعد وأن أقرأ جدولًا أسبوعيًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e04.l05.a01",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0112"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e04.s0113"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0114"
+            }
+          ],
+          "antwort": "de.a1.e04.s0115",
+          "ablenker": ["de.a1.e04.s0090", "de.a1.e04.s0101"]
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a02",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0117",
+          "wort": 2,
+          "ablenker": ["um", "im"]
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a03",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0121",
+          "nach": "ziel",
+          "alternativen": ["Ja, es geht am Freitag."],
+          "ablenker": ["gehst", "um"]
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e04.s0127",
+          "ablenker": ["de.a1.e04.s0081", "de.a1.e04.s0126"]
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a05",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.a1.e04.s0138",
+          "absaetze": [
+            "de.a1.e04.s0139",
+            "de.a1.e04.s0140",
+            "de.a1.e04.s0141",
+            "de.a1.e04.s0142",
+            "de.a1.e04.s0143",
+            "de.a1.e04.s0144",
+            "de.a1.e04.s0145"
+          ],
+          "glossen": [
+            "de.a1.e04.montag",
+            "de.a1.e04.dienstag",
+            "de.a1.e04.mittwoch",
+            "de.a1.e04.donnerstag",
+            "de.a1.e04.freitag",
+            "de.a1.e04.samstag",
+            "de.a1.e04.sonntag",
+            "de.a1.e04.woche"
+          ],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e04.s0146",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e04.s0147",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e04.s0148",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a1.e04.s0149",
+              "antwort": "de.a1.e04.s0150",
+              "ablenker": ["de.a1.e04.s0151", "de.a1.e04.s0152"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0123"
+            }
+          ],
+          "antwort": "de.a1.e04.s0124",
+          "ablenker": ["de.a1.e04.s0008", "de.a1.e04.s0058", "de.a1.e04.s0002"]
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0131",
+          "wort": 4,
+          "ablenker": ["so", "sehr"]
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e04.wann",
+          "ablenker": ["de.a1.e04.dann", "de.a1.e04.bis"]
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e04.s0128",
+          "ablenker": ["de.a1.e04.s0129", "de.a1.e04.s0130", "de.a1.e04.s0132"]
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a11",
+          "typ": "sprechen",
+          "satz": "de.a1.e04.s0133"
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0117"
+            }
+          ],
+          "antwort": "de.a1.e04.s0118",
+          "ablenker": ["de.a1.e04.s0132", "de.a1.e04.s0044"]
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a13",
+          "typ": "sprechen",
+          "satz": "de.a1.e04.s0136"
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0122",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0125"
+            }
+          ],
+          "antwort": "de.a1.e04.s0119",
+          "ablenker": ["de.a1.e04.s0037", "de.a1.e04.s0003"]
+        },
+        {
+          "schluessel": "de.a1.e04.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e04.s0137"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e04.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine kurze Geschichte und ein Gespräch über Uhrzeiten und Termine verstehen.",
+        "tr": "Saatler ve randevular hakkında kısa bir hikâyeyi ve bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة قصيرة وحوارًا عن الأوقات والمواعيد."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e04.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a1.e04.s0153",
+          "zeilen": [
+            {
+              "satz": "de.a1.e04.s0154"
+            },
+            {
+              "satz": "de.a1.e04.s0155"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0156"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e04.s0157"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0158"
+            },
+            {
+              "satz": "de.a1.e04.s0159"
+            },
+            {
+              "satz": "de.a1.e04.s0160"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e04.s0161"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0162"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e04.s0163"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e04.s0164"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e04.s0165"
+            },
+            {
+              "satz": "de.a1.e04.s0166"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e04.s0167"
+            },
+            {
+              "satz": "de.a1.e04.s0168"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e04.s0169"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.a1.e04.s0170",
+              "antwort": "de.a1.e04.s0171",
+              "ablenker": ["de.a1.e04.s0172", "de.a1.e04.s0173"]
+            },
+            {
+              "nach": 6,
+              "frage": "de.a1.e04.s0174",
+              "antwort": "de.a1.e04.s0175",
+              "ablenker": ["de.a1.e04.s0176", "de.a1.e04.s0177"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.a1.e04.s0178",
+              "antwort": "de.a1.e04.s0179",
+              "ablenker": ["de.a1.e04.s0180", "de.a1.e04.s0181"]
+            },
+            {
+              "nach": 14,
+              "frage": "de.a1.e04.s0182",
+              "antwort": "de.a1.e04.s0183",
+              "ablenker": ["de.a1.e04.s0184", "de.a1.e04.s0185"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e04.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0159",
+          "wort": 1,
+          "ablenker": ["sitze", "sitzen"]
+        },
+        {
+          "schluessel": "de.a1.e04.l06.a03",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0166",
+          "nach": "ziel",
+          "alternativen": ["Es ist jetzt schon Viertel nach sieben."],
+          "ablenker": ["halb", "vor"]
+        },
+        {
+          "schluessel": "de.a1.e04.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e04.s0183",
+          "ablenker": ["de.a1.e04.s0184", "de.a1.e04.s0185"]
+        },
+        {
+          "schluessel": "de.a1.e04.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.a1.e04.s0186",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0187"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e04.s0188"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0189"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e04.s0190"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0191"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e04.s0192"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.a1.e04.s0193",
+              "antwort": "de.a1.e04.s0194",
+              "ablenker": ["de.a1.e04.s0195", "de.a1.e04.s0196"]
+            },
+            {
+              "nach": 3,
+              "frage": "de.a1.e04.s0197",
+              "antwort": "de.a1.e04.s0198",
+              "ablenker": ["de.a1.e04.s0199", "de.a1.e01.s0130"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e04.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0187"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e04.s0188"
+            }
+          ],
+          "antwort": "de.a1.e04.s0189",
+          "ablenker": ["de.a1.e04.s0091", "de.a1.e04.s0027"]
+        },
+        {
+          "schluessel": "de.a1.e04.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0167",
+          "wort": 3,
+          "ablenker": ["gehe", "geht"]
+        },
+        {
+          "schluessel": "de.a1.e04.l06.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0164",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e04.l06.a09",
+          "typ": "sprechen",
+          "satz": "de.a1.e04.s0187"
+        },
+        {
+          "schluessel": "de.a1.e04.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e04.s0191",
+          "ablenker": ["de.a1.e04.s0192", "de.a1.e04.s0116"]
+        },
+        {
+          "schluessel": "de.a1.e04.l06.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0190",
+          "nach": "ziel",
+          "alternativen": [
+            "Ja, gut. Bis halb vier lerne ich Arabisch.",
+            "Ja, gut. Arabisch lerne ich bis halb vier.",
+            "Ja, gut. Ich lerne Arabisch bis halb vier."
+          ],
+          "ablenker": ["Viertel", "nach"]
+        },
+        {
+          "schluessel": "de.a1.e04.l06.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0161"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e04.s0162"
+            }
+          ],
+          "antwort": "de.a1.e04.s0163",
+          "ablenker": ["de.a1.e04.s0165", "de.a1.e04.s0167"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e04.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann Uhrzeiten, Wochentage und Monate sicher verwenden.",
+        "tr": "Saatleri, haftanın günlerini ve ayları rahatça kullanabilirim.",
+        "ar": "أستطيع أن أستخدم الأوقات وأيام الأسبوع والشهور بثقة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e04.l07.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e04.uhr", "de.a1.e04.abend", "de.a1.e04.woche", "de.a1.e04.monat", "de.a1.e04.heute", "de.a1.e04.spaet"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e04.s0088",
+          "ablenker": ["de.a1.e04.s0086", "de.a1.e04.s0087"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e04.s0204",
+          "ablenker": ["de.a1.e04.s0033", "de.a1.e04.s0028", "de.a1.e04.s0004"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0200",
+          "wort": 3,
+          "ablenker": ["Uhr", "nach"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0202",
+          "nach": "ziel",
+          "alternativen": [
+            "Jeden Abend lerne ich eine Stunde Deutsch.",
+            "Deutsch lerne ich jeden Abend eine Stunde.",
+            "Eine Stunde lerne ich jeden Abend Deutsch."
+          ],
+          "ablenker": ["jede", "Stunden"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0205"
+            }
+          ],
+          "antwort": "de.a1.e04.s0206",
+          "ablenker": ["de.a1.e04.s0203", "de.a1.e04.s0072"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a07",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e04.schon",
+          "ablenker": ["de.a1.e00-ar.s0017"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e04.gestern",
+          "ablenker": ["de.a1.e04.heute", "de.a1.e01.morgen"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a09",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0201",
+          "wort": 0,
+          "ablenker": ["Am", "Um"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e04.s0207",
+          "ablenker": ["de.a1.e04.s0026", "de.a1.e04.s0023", "de.a1.e04.s0078", "de.a1.e04.s0210"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0050"
+            }
+          ],
+          "antwort": "de.a1.e04.s0051",
+          "ablenker": ["de.a1.e04.s0036", "de.a1.e04.s0056", "de.a1.e04.s0100"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a12",
+          "typ": "paare",
+          "lemmata": ["de.a1.e04.erste", "de.a1.e04.zweite", "de.a1.e04.letzte", "de.a1.e04.naechste", "de.a1.e04.jeder", "de.a1.e04.halb"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a13",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0080",
+          "wort": 1,
+          "ablenker": ["letzte", "erste"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0067"
+            }
+          ],
+          "antwort": "de.a1.e04.s0073",
+          "ablenker": ["de.a1.e04.s0081", "de.a1.e04.s0082"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e04.dann",
+          "ablenker": ["de.a1.e00-ar.s0038"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0211",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir gehen heute zu Oma und Opa.",
+            "Zu Oma und Opa gehen wir heute.",
+            "Heute gehen wir zu Opa und Oma.",
+            "Wir gehen heute zu Opa und Oma."
+          ],
+          "ablenker": ["geht", "am"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a17",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e04.s0012",
+          "ablenker": ["de.a1.e04.s0004", "de.a1.e04.s0013"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a18",
+          "typ": "sprechen",
+          "satz": "de.a1.e04.s0205"
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a19",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e04.ende",
+          "ablenker": ["de.a1.e02.jahr", "de.a1.e04.nacht"]
+        },
+        {
+          "schluessel": "de.a1.e04.l07.a20",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e04.s0075",
+          "alternativen": ["Ich lerne jeden Tag 10 Minuten Deutsch."]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e04.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich Uhrzeiten, Termine und Monate verstehen und nennen kann.",
+        "tr": "Saatleri, randevuları ve ayları anlayıp söyleyebildiğimi gösteririm.",
+        "ar": "أُظهر أنني أفهم الأوقات والمواعيد والشهور وأستطيع أن أذكرها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e04.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e04.viertel",
+          "ablenker": ["de.a1.e04.minute", "de.a1.e04.woche"]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e04.geburtstag",
+          "ablenker": ["de.a1.e04.monat", "de.a1.e04.nacht"]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e04.januar", "de.a1.e04.april", "de.a1.e04.juli", "de.a1.e04.oktober", "de.a1.e04.montag", "de.a1.e04.freitag"]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e04.s0134",
+          "ablenker": ["de.a1.e04.s0008", "de.a1.e04.s0030"]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0208",
+          "wort": 4,
+          "ablenker": ["kein", "nicht"]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0034",
+          "wort": 1,
+          "ablenker": ["halbe", "nach"]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0209",
+          "nach": "ziel",
+          "alternativen": ["Am ersten April ist mein Geburtstag."],
+          "ablenker": ["im", "erste"]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0108"
+            }
+          ],
+          "antwort": "de.a1.e04.s0110",
+          "ablenker": ["de.a1.e04.s0003", "de.a1.e04.s0113"]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e04.s0079",
+          "ablenker": ["de.a1.e04.s0106", "de.a1.e04.s0071", "de.a1.e04.s0103"]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e04.vor",
+          "ablenker": ["de.a1.e02.vier"]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e04.s0084",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e04.s0120"
+            }
+          ],
+          "antwort": "de.a1.e04.s0121",
+          "ablenker": ["de.a1.e04.s0212", "de.a1.e04.s0107"]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a13",
+          "typ": "luecke",
+          "ziel": "de.a1.e04.s0052",
+          "wort": 4,
+          "ablenker": ["Nacht", "Uhr"]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e04.s0135",
+          "alternativen": ["Es ist 5 vor 8."]
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e04.s0135"
+        },
+        {
+          "schluessel": "de.a1.e04.l08.a16",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e04.wann",
+          "ablenker": ["de.a1.e04.bis", "de.a1.e04.heute"]
+        }
+      ]
+    }
+  ]
+}

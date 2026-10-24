@@ -1,0 +1,2321 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "grundwissen",
+  "stufe": "vertiefung",
+  "einheit": {
+    "schluessel": "islam.vertiefung.e07",
+    "reihenfolge": 27,
+    "thema": {
+      "de": "Nach hanefitischer Lehre – Grundwissen I: Fiqh – Urteilsarten, Meinungen der Schule und Fatwa"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Nach hanefitischer Lehre: Ich kann die Urteilsarten (farḍ, wājib, sunna, mandūb, mubāḥ, makrūh, ḥarām) mit den Begriffserklärungen der Werke unterscheiden."
+      },
+      {
+        "de": "Ich kann erklären, wie die Werke Meinungen innerhalb der Schule ordnen und welche Ansicht für die Fatwa maßgeblich ist; strittige Punkte sind mit Quelle gekennzeichnet."
+      },
+      {
+        "de": "Ich kenne die Bedingungen des Ijtihād und die Aufgabe des Muftī. Die App gibt keine Fatwa; die Fälle sind allgemeine Lehrfälle, keine Auskunft zu eigenen Fällen."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.vertiefung.e07.l01",
+      "titel": "Urteilsarten: Pflicht, notwendig, Sunna, empfohlen, verpönt",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a01",
+          "text": "Radd al-Muḥtār unterscheidet vier Arten dessen, was die Scharia vorsieht (al-mashrūʿāt): farḍ, wājib, sunna und nafl. Ist es besser, eine Handlung zu tun, als sie zu lassen, und ist das Lassen verwehrt, dann ist sie farḍ, wenn sie mit einem entschiedenen (qaṭʿī) Beleg feststeht, und wājib, wenn mit einem nicht entschiedenen (ẓannī). Ist das Lassen nicht verwehrt, dann ist sie sunna, wenn der Prophet oder die rechtgeleiteten Kalifen nach ihm sie beständig taten, sonst mandūb und nafl.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī maʿnā l-ishtiqāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 102,
+              "passage": "radd_al_muhtar.ms0039",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms39",
+              "passageSha256Text": "da2726b979a2c274854793f34028aa3652251fae830e487b2228133cfb5750af",
+              "zitatVon": 141,
+              "zitatBis": 378,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a02",
+          "text": "Farḍ ist nach Radd al-Muḥtār, was entschieden als verbindlich feststeht. Es heißt „farḍ in Wissen und Tun“, weil man an seine Verbindlichkeit glauben und danach handeln muss. Wer ein solches farḍ leugnet – mit Worten oder in seiner Überzeugung –, wird nach dem Grundtext dem Unglauben zugerechnet.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: qad yuṭlaq al-farḍ ʿalā mā laysa bi-rukn wa-lā sharṭ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 94,
+              "passage": "radd_al_muhtar.ms0025",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms25",
+              "passageSha256Text": "fd923fbcf853c6b50b918c4a6223fa723df36c91658c139517fff53e0d840df8",
+              "zitatVon": 174,
+              "zitatBis": 474,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a03",
+          "text": "Radd al-Muḥtār nennt vier Arten überlieferter Belege: (1) sicher überliefert und in der Bedeutung eindeutig, etwa klar gefasste Stellen des Korans und die vielfach überlieferte (mutawātir) Sunna mit eindeutiger Bedeutung; (2) sicher überliefert, aber in der Bedeutung auslegbar, etwa auslegbare Verse; (3) umgekehrt: Einzelüberlieferungen (akhbār al-āḥād) mit eindeutiger Bedeutung; (4) beides nicht sicher: Einzelüberlieferungen mit auslegbarer Bedeutung. Mit der ersten Art stehen farḍ und ḥarām fest, mit der zweiten und dritten wājib und das stark Verpönte (karāhat at-taḥrīm), mit der vierten sunna und mustaḥabb.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī l-farḍ al-qaṭʿī wa-ẓ-ẓannī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 95,
+              "passage": "radd_al_muhtar.ms0025",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms25",
+              "passageSha256Text": "fd923fbcf853c6b50b918c4a6223fa723df36c91658c139517fff53e0d840df8",
+              "zitatVon": 900,
+              "zitatBis": 1257,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a04",
+          "text": "Ein nicht entschiedener Beleg kann für den Mujtahid so stark werden, dass er einem entschiedenen nahekommt. Was damit feststeht, nennt er nach Radd al-Muḥtār „farḍ im Tun“, weil es beim Handeln wie ein farḍ behandelt wird, und mit Blick auf seinen Beleg wājib. Es ist die stärkere Art des wājib und die schwächere Art des farḍ.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī l-farḍ al-qaṭʿī wa-ẓ-ẓannī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 95,
+              "passage": "radd_al_muhtar.ms0025",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms25",
+              "passageSha256Text": "fd923fbcf853c6b50b918c4a6223fa723df36c91658c139517fff53e0d840df8",
+              "zitatVon": 1258,
+              "zitatBis": 1463,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a05",
+          "text": "Das Wort wājib wird nach at-Talwīḥ, das Radd al-Muḥtār wiedergibt, auf drei Stufen angewandt: auf das, was farḍ in Wissen und Tun ist, wie das Morgengebet; auf das nicht entschieden Belegte, das beim Tun die Stärke eines farḍ hat, wie das Witr-Gebet – die Erinnerung daran verhindert nach dem Werk die Gültigkeit des Morgengebets, wie die Erinnerung an das Nachtgebet; und auf das, was beim Tun unter dem farḍ und über der sunna steht, wie die Bestimmung der Fātiḥa im Gebet: Lässt man sie aus, wird das Gebet nicht ungültig, aber die Niederwerfung des Versehens wird notwendig.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī l-farḍ al-qaṭʿī wa-ẓ-ẓannī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 95,
+              "passage": "radd_al_muhtar.ms0025",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms25",
+              "passageSha256Text": "fd923fbcf853c6b50b918c4a6223fa723df36c91658c139517fff53e0d840df8",
+              "zitatVon": 1604,
+              "zitatBis": 1659,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī l-farḍ al-qaṭʿī wa-ẓ-ẓannī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 95,
+              "passage": "radd_al_muhtar.ms0026",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms26",
+              "passageSha256Text": "0f7446896ad222d0a54fb31cefa0890beda797c30e72489835f769cd68b21a5e",
+              "zitatVon": 0,
+              "zitatBis": 259,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a06",
+          "text": "Wer ein wājib leugnet, wird nach dem Grundtext nicht dem Unglauben zugerechnet. Radd al-Muḥtār begründet das mit at-Talwīḥ: Das wājib steht mit einem nicht entschiedenen Beleg fest; deshalb muss man nicht fest von seiner Wirklichkeit überzeugt sein, denn die Glaubensüberzeugung (iʿtiqād) gründet auf Gewissheit. Danach zu handeln ist aber verbindlich. Wer es nicht tut, ist weder ein Frevler (fāsiq) noch vom Weg abgewichen, wenn er sich auf eine Auslegung stützt – an Stellen, die Auslegung zulassen, war das die Weise der Altvorderen; tut er es aus Geringschätzung, weicht er vom rechten Weg ab, denn Einzelüberlieferung und Analogieschluss zu verwerfen ist eine Neuerung; ohne Auslegung und ohne Geringschätzung ist er ein Frevler, weil er den Gehorsam verlässt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī l-farḍ al-qaṭʿī wa-ẓ-ẓannī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 95,
+              "passage": "radd_al_muhtar.ms0026",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms26",
+              "passageSha256Text": "0f7446896ad222d0a54fb31cefa0890beda797c30e72489835f769cd68b21a5e",
+              "zitatVon": 355,
+              "zitatBis": 751,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a07",
+          "text": "Die sunna hat nach Radd al-Muḥtār zwei Arten: die bestätigte Sunna (sunna muʾakkada), auch „Sunna der Rechtleitung“ (sunnat al-hudā) genannt, die dem wājib nahesteht, und die nicht bestätigte, die „zusätzliche Sunna“ (sunnat az-zawāʾid). Als Beispiele der ersten Art nennt das Werk das Gemeinschaftsgebet, den Gebetsruf (adhān) und die iqāma – sie zu lassen ist verpönt; als Beispiele der zweiten die Gewohnheiten des Propheten bei Kleidung, Stehen und Sitzen – sie zu lassen ist nicht verpönt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī s-sunna wa-taʿrīfihā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 104,
+              "passage": "radd_al_muhtar.ms0042",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms42",
+              "passageSha256Text": "829e3c4667ebf5414b285a41007eb9ceff89d7bdd93df00199e6fcd0045c437b",
+              "zitatVon": 451,
+              "zitatBis": 528,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī s-sunna wa-taʿrīfihā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 103,
+              "passage": "radd_al_muhtar.ms0039",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms39",
+              "passageSha256Text": "da2726b979a2c274854793f34028aa3652251fae830e487b2228133cfb5750af",
+              "zitatVon": 402,
+              "zitatBis": 528,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī s-sunna wa-taʿrīfihā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 103,
+              "passage": "radd_al_muhtar.ms0039",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms39",
+              "passageSha256Text": "da2726b979a2c274854793f34028aa3652251fae830e487b2228133cfb5750af",
+              "zitatVon": 1302,
+              "zitatBis": 1448,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a08",
+          "text": "Für die bestätigte Sunna gilt nach Radd al-Muḥtār: Wer sie tut, wird belohnt; wer sie lässt, wird getadelt – nach al-Baḥr und an-Nahr ist das ein Vorwurf (ʿitāb), keine Strafe. Nach at-Talwīḥ steht das Lassen der bestätigten Sunna dem Verbotenen nahe; nach at-Taḥrīr verdient, wer sie lässt, Tadel und den Vorwurf, vom Weg abzuweichen. Gemeint ist, sie ohne Entschuldigung beharrlich zu lassen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī s-sunna wa-taʿrīfihā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 104,
+              "passage": "radd_al_muhtar.ms0041",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms41",
+              "passageSha256Text": "d6f655ef27908c7c4d5a453d6b378435218fd6fba81ee60ae299da09502724fc",
+              "zitatVon": 233,
+              "zitatBis": 350,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī s-sunna wa-taʿrīfihā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 104,
+              "passage": "radd_al_muhtar.ms0041",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms41",
+              "passageSha256Text": "d6f655ef27908c7c4d5a453d6b378435218fd6fba81ee60ae299da09502724fc",
+              "zitatVon": 520,
+              "zitatBis": 633,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī s-sunna wa-taʿrīfihā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 104,
+              "passage": "radd_al_muhtar.ms0041",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms41",
+              "passageSha256Text": "d6f655ef27908c7c4d5a453d6b378435218fd6fba81ee60ae299da09502724fc",
+              "zitatVon": 710,
+              "zitatBis": 796,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a09",
+          "text": "Nach al-Baḥr, das Radd al-Muḥtār wiedergibt, ergibt sich aus den Worten der Gelehrten der Schule: Nach der richtigen Ansicht macht sich schuldig, wer ein wājib oder eine bestätigte Sunna lässt. Denn sie sagen ausdrücklich: Wer die Sunnas der fünf Gebete lässt, macht sich nach einer Ansicht nicht schuldig, nach der richtigen aber doch; ebenso nennen sie schuldig, wer das Gemeinschaftsgebet lässt, das nach der richtigen Ansicht eine bestätigte Sunna ist. Die Schuld beim Lassen der bestätigten Sunna ist aber leichter als beim Lassen eines wājib.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī s-sunna wa-taʿrīfihā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 104,
+              "passage": "radd_al_muhtar.ms0041",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms41",
+              "passageSha256Text": "d6f655ef27908c7c4d5a453d6b378435218fd6fba81ee60ae299da09502724fc",
+              "zitatVon": 908,
+              "zitatBis": 1299,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a10",
+          "text": "Woran man die Arten erkennt, fasst al-Baḥr (in Radd al-Muḥtār) so zusammen, um abweichende Aussagen der Werke – etwa in al-Hidāya – zu vereinen: Tat der Prophet etwas beständig und ließ es nie aus, ist das ein Zeichen der bestätigten Sunna; ließ er es manchmal aus, ein Zeichen der nicht bestätigten; tadelte er zudem, wer es nicht tat, ist das ein Zeichen für wājib. An-Nahr schränkt das ein: Es gilt nicht für Handlungen, die nur für den Propheten selbst Pflicht waren.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī s-sunna wa-taʿrīfihā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 104,
+              "passage": "radd_al_muhtar.ms0042",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms42",
+              "passageSha256Text": "829e3c4667ebf5414b285a41007eb9ceff89d7bdd93df00199e6fcd0045c437b",
+              "zitatVon": 1107,
+              "zitatBis": 1481,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī s-sunna wa-taʿrīfihā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 105,
+              "passage": "radd_al_muhtar.ms0042",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms42",
+              "passageSha256Text": "829e3c4667ebf5414b285a41007eb9ceff89d7bdd93df00199e6fcd0045c437b",
+              "zitatVon": 1482,
+              "zitatBis": 1569,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a11",
+          "text": "Mandūb, mustaḥabb, nafl, taṭawwuʿ und adab meinen nach der gewählten Ansicht der Gelehrten der Rechtsgrundlagen dasselbe; die Namen beleuchten nur verschiedene Seiten: mustaḥabb, weil der Gesetzgeber es liebt und vorzieht; mandūb, weil er seinen Lohn und Vorzug dargelegt hat; nafl, weil es zu farḍ und wājib hinzukommt und den Lohn vermehrt; taṭawwuʿ, weil man es freiwillig tut, ohne dass es verbindlich befohlen ist. Die Regel nach al-Imdād: Lohn für das Tun, kein Tadel für das Lassen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: lā farq bayna l-mandūb wa-l-mustaḥabb wa-n-nafl wa-t-taṭawwuʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 123,
+              "passage": "radd_al_muhtar.ms0073",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms73",
+              "passageSha256Text": "0e824c7ff2c68b257111dd67810d6e12d4b792fad69c605ebefa5ed88cab76e2",
+              "zitatVon": 1243,
+              "zitatBis": 1631,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: lā farq bayna l-mandūb wa-l-mustaḥabb wa-n-nafl wa-t-taṭawwuʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 123,
+              "passage": "radd_al_muhtar.ms0074",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms74",
+              "passageSha256Text": "20e0dc52509c0f00ffc0ff670f8bf7e96621ccfb05853c9e55b845227f2de41d",
+              "zitatVon": 98,
+              "zitatBis": 160,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a12",
+          "text": "Nafl ist nach Radd al-Muḥtār, wofür ein Beleg der Empfehlung vorliegt, allgemein oder für den besonderen Fall, ohne dass der Prophet es beständig tat. Deshalb steht es nach at-Tanqīḥ unter der zusätzlichen Sunna (sunnat az-zawāʾid).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī s-sunna wa-taʿrīfihā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 103,
+              "passage": "radd_al_muhtar.ms0040",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms40",
+              "passageSha256Text": "9787c97647a917043435e25358a8bffee76580c17901df2071cb26341aaaba7a",
+              "zitatVon": 0,
+              "zitatBis": 108,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a13",
+          "text": "Ob es leicht verpönt (makrūh tanzīhan) ist, das Empfohlene zu lassen, ist umstritten. Nach al-Baḥr nicht. An-Nahr widerspricht mit al-Fatḥ: Das leicht Verpönte laufe auf „das weniger Gute“ (khilāf al-awlā) hinaus, und das Empfohlene zu lassen sei ohne Zweifel weniger gut. At-Taḥrīr deutet einen Unterschied an: Beim weniger Guten fehlt eine Verbotsform, etwa wenn man das Vormittagsgebet (ḍuḥā) lässt; beim leicht Verpönten liegt sie vor. Nach al-Ḥilya ist das aber nur eine Frage der Fachsprache; offenbar sind beide gleich. Radd al-Muḥtār hält für offensichtlich, was al-Baḥr sagt: Verpöntheit braucht einen eigenen Beleg; freiwillige Gottesdienste zu tun ist zwar ohne Hinderungsgrund besser, als sie zu lassen, man sagt aber nicht, sie zu lassen sei leicht verpönt.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: tark al-mandūb hal yukrah tanzīhan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 123,
+              "passage": "radd_al_muhtar.ms0074",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms74",
+              "passageSha256Text": "20e0dc52509c0f00ffc0ff670f8bf7e96621ccfb05853c9e55b845227f2de41d",
+              "zitatVon": 227,
+              "zitatBis": 609,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: tark al-mandūb hal yukrah tanzīhan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 124,
+              "passage": "radd_al_muhtar.ms0074",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms74",
+              "passageSha256Text": "20e0dc52509c0f00ffc0ff670f8bf7e96621ccfb05853c9e55b845227f2de41d",
+              "zitatVon": 702,
+              "zitatBis": 922,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a14",
+          "text": "Makrūh (verpönt) ist nach Radd al-Muḥtār das Gegenteil dessen, was geliebt wird. Das Wort kann dreierlei meinen: das Verbotene (ḥarām), wie an einer Stelle im Mukhtaṣar al-Qudūrī; das stark Verpönte (makrūh taḥrīman), das dem Verbotenen näher ist und das Muḥammad „nicht entschieden verboten“ (ḥarām ẓannī) nennt; und das leicht Verpönte (makrūh tanzīhan), das man besser lässt als tut. Das leicht Verpönte ist gleichbedeutend mit „dem weniger Guten“ (khilāf al-awlā).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī taʿrīf al-makrūh",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 131,
+              "passage": "radd_al_muhtar.ms0086",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms86",
+              "passageSha256Text": "6b7723da745fc69bd5991bdd3ac4748d9f87184f8273c5383f2a4ec7faa4525c",
+              "zitatVon": 1315,
+              "zitatBis": 1578,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī taʿrīf al-makrūh",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 131,
+              "passage": "radd_al_muhtar.ms0087",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms87",
+              "passageSha256Text": "e09e41754b8a91428d6793793845005e3e7f823f8ba41cc2ebff21aa9ea7452a",
+              "zitatVon": 0,
+              "zitatBis": 29,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a15",
+          "text": "Sprechen die Gelehrten ohne Zusatz von Verpöntheit, meinen sie nach al-Baḥr (in Radd al-Muḥtār) das stark Verpönte. Es steht auf der Stufe des wājib und steht nur mit dem fest, womit ein wājib feststeht, also mit einem Beleg, dessen Überlieferung nicht entschieden ist. Wird etwas makrūh genannt, prüft man den Beleg: Ist er ein nicht entschiedenes Verbot, gilt das stark Verpönte, außer etwas lenkt das Verbot zur bloßen Empfehlung um; verlangt der Beleg nur ein nicht verbindliches Lassen, gilt das leicht Verpönte.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī taʿrīf al-makrūh",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 132,
+              "passage": "radd_al_muhtar.ms0087",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms87",
+              "passageSha256Text": "e09e41754b8a91428d6793793845005e3e7f823f8ba41cc2ebff21aa9ea7452a",
+              "zitatVon": 30,
+              "zitatBis": 507,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a16",
+          "text": "Das Verpönte zu lassen, ist nach Radd al-Muḥtār besser, als das Empfohlene zu tun (nach Sharḥ al-Munya). Deshalb zählt das Werk zwei Gebetseinheiten nach der Waschung zum Empfohlenen, aber nicht in den Zeiten, in denen das Gebet verpönt ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: at-tamassuḥ bi-mindīl",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 131,
+              "passage": "radd_al_muhtar.ms0086",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms86",
+              "passageSha256Text": "6b7723da745fc69bd5991bdd3ac4748d9f87184f8273c5383f2a4ec7faa4525c",
+              "zitatVon": 798,
+              "zitatBis": 960,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a17",
+          "text": "Mubāḥ (erlaubt) ist nach Radd al-Muḥtār etwas, dessen Tun nicht gefordert ist; man hat darin die Wahl. Ob bei den Dingen grundsätzlich die Erlaubnis gilt, ist umstritten: Das Werk erwähnt auch die Ansichten, der Grundsatz sei das Innehalten (tawaqquf) oder das Verbot (ḥaẓr). Nach at-Taḥrīr ist die gewählte Ansicht, dass grundsätzlich die Erlaubnis gilt (al-aṣl fī l-ashyāʾ al-ibāḥa), so die Mehrheit der Hanafiten und der Schafiiten. Sharḥ at-Taḥrīr nennt es die Ansicht der meisten Hanafiten, besonders der irakischen, und sagt, Muḥammad habe darauf hingewiesen: Erlaubnis ist der Grundsatz, verboten wird etwas erst durch ein Verbot.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: al-mukhtār anna l-aṣl fī l-ashyāʾ al-ibāḥa",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 105,
+              "passage": "radd_al_muhtar.ms0044",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms44",
+              "passageSha256Text": "0cda486c5a34546ff200074a106b2dae93cc4c8f9d92a297f88334f5994b55bc",
+              "zitatVon": 80,
+              "zitatBis": 203,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: al-mukhtār anna l-aṣl fī l-ashyāʾ al-ibāḥa",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 105,
+              "passage": "radd_al_muhtar.ms0043",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms43",
+              "passageSha256Text": "602b3109a4c72fb12e5c3396c624d89db0226812023a171a368f81ba1d000be9",
+              "zitatVon": 719,
+              "zitatBis": 1194,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī s-sunna wa-taʿrīfihā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 105,
+              "passage": "radd_al_muhtar.ms0043",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms43",
+              "passageSha256Text": "602b3109a4c72fb12e5c3396c624d89db0226812023a171a368f81ba1d000be9",
+              "zitatVon": 283,
+              "zitatBis": 525,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a18",
+          "text": "Zwei Fachwörter: „Es ist nicht schlimm“ (lā baʾs) steht meist für etwas, das man besser lässt, nach al-Baḥr aber manchmal auch für das Empfohlene. „Zulässig“ (jāʾiz) kann nach al-Ḥilya, die Radd al-Muḥtār anführt, alles meinen, was die Scharia nicht verwehrt – das Erlaubte, das Verpönte, das Empfohlene und das wājib. Mit dem Verpönten, das darin eingeschlossen ist, ist nach Radd al-Muḥtār offenbar das leicht Verpönte gemeint, denn das stark Verpönte ist verbindlich verwehrt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: kalimat lā baʾs qad tustaʿmal fī l-mandūb",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 119,
+              "passage": "radd_al_muhtar.ms0067",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms67",
+              "passageSha256Text": "1b8c12e51ef1b4a86d132e671d238189d6daffe847a391dd067cba0aa26540ce",
+              "zitatVon": 526,
+              "zitatBis": 644,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: qad yuṭlaq al-jāʾiz ʿalā mā lā yamtaniʿ sharʿan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 120,
+              "passage": "radd_al_muhtar.ms0068",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms68",
+              "passageSha256Text": "8169d0fea9e7585073cf2c3bd8414326a7e2d8cdd0f1a048545b886156a87135",
+              "zitatVon": 1394,
+              "zitatBis": 1489,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: qad yuṭlaq al-jāʾiz ʿalā mā lā yamtaniʿ sharʿan",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 120,
+              "passage": "radd_al_muhtar.ms0069",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms69",
+              "passageSha256Text": "5d08779b37abf20d91f2b6d666dc604ec673594531af8b84d2acbd79e7e43ea2",
+              "zitatVon": 0,
+              "zitatBis": 139,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.a19",
+          "text": "Grundsätzlich ist das Pflichtgemäße vorzüglicher als das Freiwillige. Eine echte Ausnahme gibt es nach Radd al-Muḥtār nicht: Bei den bekannten Ausnahmen kommt der Vorzug von einer anderen Seite. Die Waschung vor Beginn der Gebetszeit erfüllt das Gebot wie die Waschung danach, hat aber den Vorzug des Früheren. Einem zahlungsunfähigen Schuldner Aufschub zu geben, ist Pflicht; ihm die Schuld ganz zu erlassen, enthält den Aufschub und mehr. Den Friedensgruß zu beginnen, ist sunna, ihn zu erwidern Pflicht; wer beginnt, zeigt zuerst seine Zuneigung.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: al-farḍ afḍal min an-nafl illā fī masāʾil",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 125,
+              "passage": "radd_al_muhtar.ms0077",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms77",
+              "passageSha256Text": "1231cf46a0d51fe2b55f355807d11dd2dffd4e3a9f04d6061193e4499c3e2d28",
+              "zitatVon": 33,
+              "zitatBis": 470,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: al-farḍ afḍal min an-nafl illā fī masāʾil",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 125,
+              "passage": "radd_al_muhtar.ms0077",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms77",
+              "passageSha256Text": "1231cf46a0d51fe2b55f355807d11dd2dffd4e3a9f04d6061193e4499c3e2d28",
+              "zitatVon": 471,
+              "zitatBis": 893,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: al-farḍ afḍal min an-nafl illā fī masāʾil",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 125,
+              "passage": "radd_al_muhtar.ms0077",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms77",
+              "passageSha256Text": "1231cf46a0d51fe2b55f355807d11dd2dffd4e3a9f04d6061193e4499c3e2d28",
+              "zitatVon": 894,
+              "zitatBis": 970,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e07.l01.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e07.l01.a01",
+          "anweisung": "Ordne nach Radd al-Muḥtār zu: Welche Urteilsart liegt vor?",
+          "paare": [
+            {
+              "links": "Lassen verwehrt, entschiedener Beleg",
+              "rechts": "farḍ"
+            },
+            {
+              "links": "Lassen verwehrt, nicht entschiedener Beleg",
+              "rechts": "wājib"
+            },
+            {
+              "links": "Lassen nicht verwehrt, vom Propheten beständig getan",
+              "rechts": "sunna"
+            },
+            {
+              "links": "Lassen nicht verwehrt, nicht beständig getan",
+              "rechts": "mandūb und nafl"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l01.a06",
+          "behauptung": "Wer ein wājib leugnet, wird nach Radd al-Muḥtār wie beim farḍ dem Unglauben zugerechnet.",
+          "richtig": false,
+          "begruendung": "Das wājib steht mit einem nicht entschiedenen Beleg fest, und die Glaubensüberzeugung gründet auf Gewissheit; deshalb wird der Leugner nicht dem Unglauben zugerechnet. Danach zu handeln ist aber verbindlich.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e07.l01.a03",
+          "anweisung": "Ordne nach Radd al-Muḥtār zu: Was steht mit welcher Art von Beleg fest?",
+          "paare": [
+            {
+              "links": "sicher überliefert, Bedeutung eindeutig",
+              "rechts": "farḍ und ḥarām"
+            },
+            {
+              "links": "Einzelüberlieferung mit eindeutiger Bedeutung",
+              "rechts": "wājib und das stark Verpönte"
+            },
+            {
+              "links": "Einzelüberlieferung mit auslegbarer Bedeutung",
+              "rechts": "sunna und mustaḥabb"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e07.l01.a05",
+          "fall": "Im Lehrbeispiel lässt ein Betender im Pflichtgebet die Fātiḥa aus Versehen weg und liest nur eine andere Sure.",
+          "frage": "Was gilt nach at-Talwīḥ, das Radd al-Muḥtār wiedergibt?",
+          "optionen": [
+            "Das Gebet wird nicht ungültig, aber die Niederwerfung des Versehens wird notwendig.",
+            "Das Gebet ist ungültig, weil die Fātiḥa farḍ ist.",
+            "Es geschieht nichts, weil die Fātiḥa nur empfohlen ist."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.q05",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e07.l01.a14",
+          "anweisung": "Ordne nach Radd al-Muḥtār vom Schwersten zum Leichtesten.",
+          "schritte": [
+            "ḥarām (verboten)",
+            "makrūh taḥrīman (stark verpönt)",
+            "makrūh tanzīhan (leicht verpönt)"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l01.a11",
+          "behauptung": "Mandūb, mustaḥabb, nafl und taṭawwuʿ sind nach der gewählten Ansicht vier verschiedene Urteilsarten mit verschiedenen Regeln.",
+          "richtig": false,
+          "begruendung": "Nach der gewählten Ansicht meinen sie dasselbe; die Namen beleuchten nur verschiedene Seiten. Die Regel: Lohn für das Tun, kein Tadel für das Lassen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.q07",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e07.l01.a16",
+          "fall": "Im Lehrbeispiel hat jemand die Waschung vollzogen und möchte die empfohlenen zwei Gebetseinheiten beten. Es ist aber gerade eine Zeit, in der das Gebet verpönt ist.",
+          "frage": "Was gilt nach Radd al-Muḥtār?",
+          "optionen": [
+            "Er betet sie jetzt nicht, denn das Verpönte zu lassen ist besser, als das Empfohlene zu tun.",
+            "Er betet sie trotzdem, denn das Empfohlene geht vor.",
+            "Er muss die Waschung wiederholen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l01.a15",
+          "behauptung": "Sprechen die Gelehrten ohne Zusatz von „verpönt“, meinen sie nach al-Baḥr meist das leicht Verpönte.",
+          "richtig": false,
+          "begruendung": "Ohne Zusatz meinen sie das stark Verpönte; es steht auf der Stufe des wājib.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l01.q09",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e07.l01.a19",
+          "anweisung": "Ordne nach Radd al-Muḥtār zu: Welche freiwillige Handlung ist hier vorzüglicher als die Pflicht?",
+          "paare": [
+            {
+              "links": "die Waschung nach Beginn der Gebetszeit (Pflicht)",
+              "rechts": "die Waschung schon vor Beginn der Gebetszeit"
+            },
+            {
+              "links": "dem zahlungsunfähigen Schuldner Aufschub geben (Pflicht)",
+              "rechts": "ihm die Schuld ganz erlassen"
+            },
+            {
+              "links": "den Friedensgruß erwidern (Pflicht)",
+              "rechts": "den Friedensgruß beginnen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e07.l02",
+      "titel": "Meinungen innerhalb der Schule und Rücksicht auf Meinungsverschiedenheit",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a01",
+          "text": "Es ist nach Radd al-Muḥtār empfohlen, auf die Meinungsverschiedenheit mit anderen Rechtsschulen Rücksicht zu nehmen (murāʿāt al-khilāf), wenn man dabei nichts tut, was in der eigenen Schule verpönt ist. Wie stark die Empfehlung ist, hängt nach an-Nahr davon ab, wie stark oder schwach der Beleg der Gegenseite ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī nadb murāʿāt al-khilāf",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 147,
+              "passage": "radd_al_muhtar.ms0112",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms112",
+              "passageSha256Text": "736b464b1beeb01ccedad0ed40d037d1f402edb5b3e188ec4bfdb0c556f2cc84",
+              "zitatVon": 1174,
+              "zitatBis": 1312,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a02",
+          "text": "„Verpönt“ meint dabei nach Radd al-Muḥtār offenbar auch das leicht Verpönte; aṭ-Ṭaḥṭāwī ließ die Frage offen. Beispiele: Das Morgengebet in der Dunkelheit (taghlīs) ist bei ash-Shāfiʿī Sunna, bei den Hanafiten ist es vorzüglicher, bei aufkommender Helligkeit (isfār) zu beten; Rücksicht ist hier nicht empfohlen. Ebenso sind das Abstützen beim Aufstehen und das kurze Sitzen zur Erholung (jalsat al-istirāḥa) bei ash-Shāfiʿī Sunna; bei den Hanafiten ist es Sunna, sie zu lassen; tut man sie doch, ist das nicht schlimm (lā baʾs), aber leicht verpönt.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī nadb murāʿāt al-khilāf",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 147,
+              "passage": "radd_al_muhtar.ms0113",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms113",
+              "passageSha256Text": "eb04b4a18822e0a88e99be0e1a31a3e2399e1e9d4abc0c308c7c419b79384208",
+              "zitatVon": 0,
+              "zitatBis": 154,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab fī nadb murāʿāt al-khilāf",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 147,
+              "passage": "radd_al_muhtar.ms0113",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms113",
+              "passageSha256Text": "eb04b4a18822e0a88e99be0e1a31a3e2399e1e9d4abc0c308c7c419b79384208",
+              "zitatVon": 248,
+              "zitatBis": 376,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a03",
+          "text": "Ein Beispiel für empfohlene Rücksicht: Radd al-Muḥtār fügt den empfohlenen Handlungen der Waschung hinzu, sich nicht mit Wasser oder Erde aus einem Land zu reinigen, auf dem der Zorn Gottes lag, etwa aus den Brunnen der Thamūd. Die Schafiiten halten das für verpönt, die Hanbaliten verbieten es; und Rücksicht auf die Meinungsverschiedenheit ist bei den Hanafiten erwünscht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab: at-tamassuḥ bi-mindīl",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 131,
+              "passage": "radd_al_muhtar.ms0086",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms86",
+              "passageSha256Text": "6b7723da745fc69bd5991bdd3ac4748d9f87184f8273c5383f2a4ec7faa4525c",
+              "zitatVon": 961,
+              "zitatBis": 1169,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a04",
+          "text": "Nach as-Sirājiyya, die Radd al-Muḥtār wiedergibt, gibt der Muftī die Fatwa grundsätzlich nach der Ansicht des Imams Abū Ḥanīfa, dann nach Abū Yūsuf, dann nach Muḥammad, dann nach Zufar und al-Ḥasan ibn Ziyād. Wer kein Mujtahid ist, darf zwischen ihnen nicht frei wählen. Der Grundtext nennt diese Reihenfolge die richtigere Ansicht (al-aṣaḥḥ); Radd al-Muḥtār führt auch abweichende Ansichten an, etwa aus al-Ḥāwī al-Qudsī und Jāmiʿ al-Fuṣūlayn.",
+          "meinung": "fatwa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Waqf › Maṭlab fī iṭlāq al-qāḍī bayʿ al-waqf",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 395,
+              "passage": "radd_al_muhtar.ms4076",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4076",
+              "passageSha256Text": "5c9c61220d6b401056f59e8b6cd55bb1757e6edc393f7a12784a51eeeb226bc1",
+              "zitatVon": 127,
+              "zitatBis": 285,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms4990",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4990",
+              "passageSha256Text": "53129933f39196f377f026261abdba59f85cf04186129121b3e5b9e41c352d1e",
+              "zitatVon": 499,
+              "zitatBis": 748,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a05",
+          "text": "„Grundsätzlich“ heißt hier nach Radd al-Muḥtār: gleich, ob einer seiner Gefährten mit Abū Ḥanīfa übereinstimmt oder ob er allein steht. In Fragen des Richteramts (qaḍāʾ) wird die Fatwa aber nach der Ansicht Abū Yūsufs gegeben, weil er darin mehr Erfahrung hatte.",
+          "meinung": "abu_yusuf",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms4990",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4990",
+              "passageSha256Text": "53129933f39196f377f026261abdba59f85cf04186129121b3e5b9e41c352d1e",
+              "zitatVon": 361,
+              "zitatBis": 498,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a06",
+          "text": "Dazu gibt es in der Schule eine andere Ansicht: Nach al-Ḥāwī al-Qudsī zählt, wenn die beiden Gefährten (aṣ-ṣāḥibān) dem Imam widersprechen, die Stärke des Belegs. Nach dem Grundtext ist die erste Ansicht genauer. Radd al-Muḥtār erklärt: Was al-Ḥāwī sagt, gilt nur für den, der Koran und Sunna überblickt und die Fähigkeit hat, Belege zu prüfen und Urteile daraus abzuleiten – also für einen Mujtahid, ob unbeschränkt oder an die Schule gebunden. Wer das nicht kann, darf von der genannten Reihenfolge nicht abweichen. So läuft nach dem Werk die erste Ansicht auf die von al-Ḥāwī hinaus: Für den Muftī, der Mujtahid ist, zählt die Stärke des Belegs.",
+          "meinung": "fatwa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms4990",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4990",
+              "passageSha256Text": "53129933f39196f377f026261abdba59f85cf04186129121b3e5b9e41c352d1e",
+              "zitatVon": 902,
+              "zitatBis": 1473,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a07",
+          "text": "Die Mujtahids innerhalb der Schule – die Gelehrten, die zwischen Ansichten abwägen (aṣḥāb at-tarjīḥ) – sind nach Radd al-Muḥtār nicht verpflichtet, in jedem Fall der Ansicht des Imams zu folgen. Sie prüfen den Beleg und geben der Ansicht den Vorzug, deren Beleg ihnen stärker scheint. Wir folgen dem, was sie bevorzugt haben und worauf sie sich stützen, als hätten sie uns zu Lebzeiten eine Fatwa gegeben.",
+          "meinung": "fatwa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms4990",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4990",
+              "passageSha256Text": "53129933f39196f377f026261abdba59f85cf04186129121b3e5b9e41c352d1e",
+              "zitatVon": 1509,
+              "zitatBis": 1596,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms4991",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4991",
+              "passageSha256Text": "2bf1376a2ab8a6bd589333b37528616627c6cef6988ae16101d646e23fc1e8dd",
+              "zitatVon": 0,
+              "zitatBis": 138,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a08",
+          "text": "Nach den Fatāwā Ibn ash-Shilbīs weicht man von der Ansicht des Imams nur ab, wenn einer der Gelehrten der Schule ausdrücklich sagt, dass die Fatwa nach einer anderen Ansicht gegeben wird. Damit ist nach Radd al-Muḥtār hinfällig, was al-Baḥr erwogen hat: man müsse nach der Ansicht des Imams Fatwa geben, auch wenn die Gelehrten anders entschieden haben. Al-Khayr ar-Ramlī hat al-Baḥr darin widersprochen: Muftī im eigentlichen Sinn ist der Mujtahid; die anderen geben nur die Fatwa der Mujtahids weiter.",
+          "meinung": "fatwa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms4991",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4991",
+              "passageSha256Text": "2bf1376a2ab8a6bd589333b37528616627c6cef6988ae16101d646e23fc1e8dd",
+              "zitatVon": 290,
+              "zitatBis": 654,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a09",
+          "text": "Die Reihenfolge der Sirājiyya gilt nach Radd al-Muḥtār nur, wo die Gelehrten der Schule nicht ausdrücklich etwas anderes bevorzugt haben. In manchen Fragen haben die Mujtahids der Schule die Ansicht der beiden Gefährten (aṣ-ṣāḥibān) bevorzugt, etwa beim Teilpachtvertrag (muzāraʿa) und bei der Entmündigung (ḥajr); dann folgt man ihnen, und die Ansicht des Imams ist dort die schwächere (marjūḥ); nach der schwächeren Ansicht zu urteilen, ist nicht gültig.",
+          "meinung": "fatwa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Waqf › Maṭlab fī iṭlāq al-qāḍī bayʿ al-waqf",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 395,
+              "passage": "radd_al_muhtar.ms4076",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4076",
+              "passageSha256Text": "5c9c61220d6b401056f59e8b6cd55bb1757e6edc393f7a12784a51eeeb226bc1",
+              "zitatVon": 733,
+              "zitatBis": 1031,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms4990",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4990",
+              "passageSha256Text": "53129933f39196f377f026261abdba59f85cf04186129121b3e5b9e41c352d1e",
+              "zitatVon": 689,
+              "zitatBis": 748,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a10",
+          "text": "Gibt es in einer Frage zwei Ansichten, die beide als richtig bezeichnet werden (qawlān muṣaḥḥaḥān), darf man nach Radd al-Muḥtār nach jeder der beiden urteilen und Fatwa geben – wenn beide mit gleich starken Worten bestätigt sind und keine einen Vorzug hat. Ist eine stärker bestätigt, nimmt man besser diese: „Darauf beruht die Fatwa“ (ʿalayhi l-fatwā) wiegt schwerer als „das Richtige“ (aṣ-ṣaḥīḥ). Einen Vorzug hat auch die Ansicht, die in den Grundtexten steht, die offenkundige Überlieferung (ẓāhir ar-riwāya) ist, die die meisten vertreten oder die milder ist. Der Muftī soll dabei auf das schauen, was milder und heilsamer ist – gemeint ist das religiöse, nicht das weltliche Wohl.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Waqf › Maṭlab fī-mā idhā kāna fī l-masʾala qawlān muṣaḥḥaḥān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 363,
+              "passage": "radd_al_muhtar.ms4026",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4026",
+              "passageSha256Text": "cecada7e8a05042418ef8e594453d9aed33b77730da227a3f6c6caac010cbc8f",
+              "zitatVon": 88,
+              "zitatBis": 402,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Waqf › Maṭlab fī-mā idhā kāna fī l-masʾala qawlān muṣaḥḥaḥān",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 4,
+              "seite": 363,
+              "passage": "radd_al_muhtar.ms4026",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4026",
+              "passageSha256Text": "cecada7e8a05042418ef8e594453d9aed33b77730da227a3f6c6caac010cbc8f",
+              "zitatVon": 403,
+              "zitatBis": 685,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb az-Zakāh › Bāb Ṣadaqat al-Fiṭr",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 367,
+              "passage": "radd_al_muhtar.ms1579",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1579",
+              "passageSha256Text": "38b1f225f81039440fe4b7773a74f3c0f8aed7bf48b8bbdf4c11f948353c7161",
+              "zitatVon": 91,
+              "zitatBis": 267,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a11",
+          "text": "Widersprechen sich die Grundtexte (mutūn) und die Fatwa-Sammlungen (fatāwā), stützt man sich nach Radd al-Muḥtār (nach Anfaʿ al-Wasāʾil) auf die Grundtexte; ebenso gehen die Kommentare (shurūḥ) den Fatwa-Sammlungen vor. An anderer Stelle sagt das Werk: Was in den Grundtexten steht, geht dem vor, was in den Kommentaren steht, und erst recht dem, was in den Fatwa-Sammlungen steht. Denn die Fragen der Grundtexte und der Kommentare sind von den drei Imamen der Schule oder einigen von ihnen überliefert; die Fatwa-Sammlungen beruhen dagegen auf neuen Fällen, die spätere Gelehrte nach den Regeln der Schule beantwortet haben, wenn sie keinen Text fanden.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Faṣl fī l-Ḥabs › Maṭlab: idhā taʿāraḍa mā fī l-mutūn wa-l-fatāwā fa-l-muʿtamad mā fī l-mutūn",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 382,
+              "passage": "radd_al_muhtar.ms5026",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5026",
+              "passageSha256Text": "f05491cc2290a1195cac15a6808f4578941a5f3b116ab1047dedcf24d938f237",
+              "zitatVon": 603,
+              "zitatBis": 721,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb ash-Shahādāt › Bāb ar-Rujūʿ ʿan ash-Shahāda",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 505,
+              "passage": "radd_al_muhtar.ms5224",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5224",
+              "passageSha256Text": "ccecbf99cfa2ff38252702700ff3c35151e7fe1b30b20ea03d04973500f4e637",
+              "zitatVon": 450,
+              "zitatBis": 517,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb ash-Shufʿa › Bāb mā yubṭiluhā",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 6,
+              "seite": 245,
+              "passage": "radd_al_muhtar.ms5887",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5887",
+              "passageSha256Text": "a0939ac6c4b210c4bbb6bb3134783017e13325331fb8647669dd03fb475fa1b9",
+              "zitatVon": 1065,
+              "zitatBis": 1374,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a12",
+          "text": "Urteilt ein hanafitischer Richter nach der Lehre Abū Yūsufs, Muḥammads oder eines anderen Gefährten des Imams, urteilt er nach Radd al-Muḥtār nicht gegen seine Schule. Denn die Gefährten des Imams haben keine Ansicht vertreten, die nicht auch der Imam vertreten hat: Von Abū Ḥanīfa sind zu einer Frage oft mehrere Überlieferungen gekommen, und aus ihnen haben die Gefährten gewählt. Deshalb gab es nach dem Werk keine Antwort, die nicht auf ihn zurückgeht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Faṣl fī l-Ḥabs › Maṭlab: ḥukm al-Ḥanafī bi-madhhab Abī Yūsuf aw Muḥammad ḥukm bi-madhhabihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 407,
+              "passage": "radd_al_muhtar.ms5071",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5071",
+              "passageSha256Text": "86690b7dc239bf198d843e9f5adee2166327a06d9be060a6c7675d930a5cd5ca",
+              "zitatVon": 1131,
+              "zitatBis": 1468,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a13",
+          "text": "Die „offenkundige Überlieferung“ (ẓāhir ar-riwāya) bilden nach Radd al-Muḥtār die sechs Bücher Muḥammads; zu ihnen zählt sein Werk al-Aṣl. Al-Kāfī des al-Ḥākim fasst die Lehre Muḥammads aus diesen sechs Büchern zusammen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Ḥajj › Bāb al-Iḥṣār › Maṭlab: Kāfī al-Ḥākim huwa jamʿ kalām Muḥammad fī kutubihi as-sitta",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 593,
+              "passage": "radd_al_muhtar.ms1966",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1966",
+              "passageSha256Text": "c8af0f9efabe0a229e01ec5793075ebf518de7be846e37f8cf02410c9f661ab8",
+              "zitatVon": 123,
+              "zitatBis": 209,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Buyūʿ › Bāb Khiyār al-ʿAyb › Maṭlab: al-Aṣl li-l-Imām Muḥammad min kutub ẓāhir ar-riwāya",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 40,
+              "passage": "radd_al_muhtar.ms4464",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4464",
+              "passageSha256Text": "99d58430f01f8e28f82b58c47cc6b16079b7dfb982a5db327ea15d63bb013dcb",
+              "zitatVon": 856,
+              "zitatBis": 972,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a14",
+          "text": "Zwischen den abweichenden Antworten zweier Muftīs zu wählen, ist nach Radd al-Muḥtār nur möglich, wenn beide Mujtahids sind; bei Nachahmenden (muqallid) nur dort, wo die Werke keiner Ansicht ausdrücklich den Vorzug gegeben haben oder darüber uneins sind. Sonst muss man heute dem folgen, was die Gelehrten übereinstimmend bevorzugt haben, was die offenkundige Überlieferung (ẓāhir ar-riwāya) ist, was die Ansicht des Imams ist, oder was sonst einen Vorzug begründet.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 362,
+              "passage": "radd_al_muhtar.ms4992",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4992",
+              "passageSha256Text": "aef2aa05a8148fc909f6ff9a386924e5b79496189f69656edf2b2d167b252af6",
+              "zitatVon": 1130,
+              "zitatBis": 1383,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.a15",
+          "text": "Wie gibt man die Lehre eines Mujtahid weiter? Nach al-Fatḥ, das sich auf ar-Rāzī stützt und das Radd al-Muḥtār wiedergibt, entweder mit einer eigenen Überlieferungskette oder aus einem bekannten, verbreiteten Buch, etwa den Büchern Muḥammad ibn al-Ḥasans. Findet man heute Abschriften der Nawādir, darf man ihren Inhalt deshalb nicht Muḥammad oder Abū Yūsuf zuschreiben, weil sie nicht verbreitet sind; steht eine Angabe aus den Nawādir aber in einem bekannten Buch wie al-Hidāya oder al-Mabsūṭ, stützt man sich auf dieses Buch. Ibn ʿĀbidīn meint, dass es genügt, wenn man mit überwiegender Wahrscheinlichkeit weiß, dass ein Buch das genannte Werk ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: ṭarīq at-tanaqqul ʿan al-mujtahid",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 366,
+              "passage": "radd_al_muhtar.ms4999",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4999",
+              "passageSha256Text": "d9f3f2640aad5b06f1690516eb78dca48d648edae55692d9bd0c4576adbe4ec5",
+              "zitatVon": 428,
+              "zitatBis": 893,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: ṭarīq at-tanaqqul ʿan al-mujtahid",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 366,
+              "passage": "radd_al_muhtar.ms4999",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4999",
+              "passageSha256Text": "d9f3f2640aad5b06f1690516eb78dca48d648edae55692d9bd0c4576adbe4ec5",
+              "zitatVon": 1167,
+              "zitatBis": 1366,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e07.l02.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e07.l02.a04",
+          "anweisung": "Ordne nach as-Sirājiyya: In welcher Reihenfolge richtet sich der Muftī nach den Ansichten der Schule?",
+          "schritte": [
+            "Abū Ḥanīfa",
+            "Abū Yūsuf",
+            "Muḥammad",
+            "Zufar und al-Ḥasan ibn Ziyād"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l02.a05",
+          "behauptung": "In Fragen des Richteramts wird die Fatwa nach Radd al-Muḥtār nach der Ansicht Abū Yūsufs gegeben.",
+          "richtig": true,
+          "begruendung": "Abū Yūsuf hatte im Richteramt mehr Erfahrung; deshalb wird in diesen Fragen nach seiner Ansicht Fatwa gegeben.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e07.l02.a02",
+          "fall": "Im Lehrbeispiel betet ein Hanafit das Morgengebet. Er überlegt, es aus Rücksicht auf die schafiitische Sunna schon in der Dunkelheit zu beten, obwohl bei den Hanafiten das Beten bei aufkommender Helligkeit vorzüglicher ist.",
+          "frage": "Ist hier Rücksicht auf die Meinungsverschiedenheit nach Radd al-Muḥtār empfohlen?",
+          "optionen": [
+            "Nein, denn dafür müsste er das Vorzüglichere der eigenen Schule aufgeben.",
+            "Ja, Rücksicht ist immer empfohlen.",
+            "Ja, aber nur beim Gemeinschaftsgebet."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l02.a11",
+          "behauptung": "Widersprechen sich Grundtexte (mutūn) und Fatwa-Sammlungen, stützt man sich nach Radd al-Muḥtār auf die Fatwa-Sammlungen.",
+          "richtig": false,
+          "begruendung": "Man stützt sich auf die Grundtexte; auch die Kommentare gehen den Fatwa-Sammlungen vor.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.q05",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e07.l02.a11",
+          "anweisung": "Ordne nach Radd al-Muḥtār: Worauf stützt man sich bei einem Widerspruch zuerst?",
+          "schritte": [
+            "Grundtexte (mutūn)",
+            "Kommentare (shurūḥ)",
+            "Fatwa-Sammlungen (fatāwā)"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e07.l02.a10",
+          "fall": "Im Lehrbeispiel nennen die Werke zu einer Frage zwei Ansichten, die beide mit gleich starken Worten als richtig bezeichnet werden. Eine von beiden ist aber die offenkundige Überlieferung (ẓāhir ar-riwāya).",
+          "frage": "Welcher Ansicht gibt der Muftī nach Radd al-Muḥtār den Vorzug?",
+          "optionen": [
+            "Der Ansicht, die die offenkundige Überlieferung ist.",
+            "Der Ansicht, die ihm persönlich besser gefällt.",
+            "Keiner von beiden; zu dieser Frage darf er keine Fatwa geben."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l02.a12",
+          "behauptung": "Wer als hanafitischer Richter nach der Lehre Muḥammads urteilt, urteilt nach Radd al-Muḥtār gegen seine Schule.",
+          "richtig": false,
+          "begruendung": "Die Gefährten des Imams vertraten keine Ansicht, die nicht auch der Imam vertreten hat; wer ihnen folgt, urteilt nicht gegen seine Schule.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.q08",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e07.l02.a08",
+          "anweisung": "Ordne die Ansichten nach Radd al-Muḥtār zu.",
+          "paare": [
+            {
+              "links": "Ibn ash-Shilbī",
+              "rechts": "abweichen nur, wenn ein Gelehrter ausdrücklich eine andere Fatwa-Ansicht nennt"
+            },
+            {
+              "links": "al-Baḥr",
+              "rechts": "Fatwa nach dem Imam, auch gegen die Gelehrten"
+            },
+            {
+              "links": "al-Khayr ar-Ramlī",
+              "rechts": "Muftī ist eigentlich der Mujtahid, die anderen geben weiter"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l02.q09",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l02.a03",
+          "behauptung": "Radd al-Muḥtār empfiehlt, sich nicht mit Wasser aus den Brunnen der Thamūd zu reinigen, auch aus Rücksicht auf die Schafiiten und Hanbaliten.",
+          "richtig": true,
+          "begruendung": "Die Schafiiten halten es für verpönt, die Hanbaliten verbieten es; Rücksicht auf die Meinungsverschiedenheit ist bei den Hanafiten erwünscht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e07.l03",
+      "titel": "Ijtihād und seine Bedingungen",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e07.l03.a01",
+          "text": "Ijtihād heißt sprachlich, sich anzustrengen, um etwas Mühsames zu erreichen; als Fachbegriff, dass der Rechtsgelehrte (faqīh) sich anstrengt, um ein Urteil der Scharia zu gewinnen. Sich anzustrengen heißt dabei nach at-Talwīḥ, das Radd al-Muḥtār wiedergibt: so weit, dass er spürt, nicht mehr leisten zu können.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī l-ijtihād wa-shurūṭihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 365,
+              "passage": "radd_al_muhtar.ms4997",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4997",
+              "passageSha256Text": "d27cf41a9cd7bb04134542f87012e52ca3412a3e67a46d023bbaf7ba6611f976",
+              "zitatVon": 1047,
+              "zitatBis": 1220,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.a02",
+          "text": "Bedingungen des Ijtihād nach at-Talwīḥ (in Radd al-Muḥtār): Islam, Verstand und Volljährigkeit; ein von Natur aus tiefes Verständnis (faqīh an-nafs); Kenntnis der arabischen Sprache; dass er das Buch Gottes in allem überblickt, was die Urteile betrifft; dass er den Hadith in Wortlaut und Überlieferungskette kennt, ebenso das Aufhebende und das Aufgehobene (an-nāsikh wa-l-mansūkh); und dass er den Analogieschluss (qiyās) beherrscht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī l-ijtihād wa-shurūṭihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 365,
+              "passage": "radd_al_muhtar.ms4997",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4997",
+              "passageSha256Text": "d27cf41a9cd7bb04134542f87012e52ca3412a3e67a46d023bbaf7ba6611f976",
+              "zitatVon": 1221,
+              "zitatBis": 1407,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.a03",
+          "text": "Diese Bedingungen gelten nach Radd al-Muḥtār für den unbeschränkten Mujtahid (al-mujtahid al-muṭlaq), der in allen Urteilen Fatwa gibt. Wer nur in einer bestimmten Frage Ijtihād übt, muss kennen, was zu dieser Frage gehört: Wer etwa über eine Frage des Gebets urteilt, muss nicht alles kennen, was die Ehe betrifft.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī l-ijtihād wa-shurūṭihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 365,
+              "passage": "radd_al_muhtar.ms4997",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4997",
+              "passageSha256Text": "d27cf41a9cd7bb04134542f87012e52ca3412a3e67a46d023bbaf7ba6611f976",
+              "zitatVon": 1408,
+              "zitatBis": 1605,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.a04",
+          "text": "Für einen Richter ist Ijtihād nach dem Grundtext eine Bedingung des Vorrangs (sharṭ al-awlawiyya): Findet sich ein Mujtahid, ist er für das Amt der Geeignetere. Radd al-Muḥtār begründet das damit, dass man nicht zu jeder Zeit und an jedem Ort einen Mujtahid findet; nach der Mehrheit kann eine Zeit ohne Mujtahid sein, nach einer anderen Ansicht ist keine Zeit ohne ihn.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī l-ijtihād wa-shurūṭihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 365,
+              "passage": "radd_al_muhtar.ms4998",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4998",
+              "passageSha256Text": "17fea2f7d903b90ab314d9c3c19e05ab0c7b776604949cdd6e05494a78ae29f9",
+              "zitatVon": 4,
+              "zitatBis": 273,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.a05",
+          "text": "Deshalb ist es nach dem Grundtext gültig, einen Laien (ʿāmmī) zum Richter zu bestellen. Radd al-Muḥtār hält „Nachahmender“ (muqallid) für das treffendere Wort, weil es dem Mujtahid gegenübersteht; ein Nachahmender kann ein Laie sein oder jemand mit einiger Kenntnis. Ibn al-Ghars meinte den Kundigen: Er soll mindestens einige Fälle und feine Fragen beherrschen und wissen, wie man die Urteile aus den Büchern der Schule und von den Gelehrten gewinnt. An-Nahr widersprach: Gemeint sei der Unkundige, denn das Recht erreicht den Berechtigten auch, wenn der Richter nach der Fatwa eines anderen handelt.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī l-ijtihād wa-shurūṭihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 365,
+              "passage": "radd_al_muhtar.ms4998",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4998",
+              "passageSha256Text": "17fea2f7d903b90ab314d9c3c19e05ab0c7b776604949cdd6e05494a78ae29f9",
+              "zitatVon": 274,
+              "zitatBis": 701,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.a06",
+          "text": "Muftī ist nach den Gelehrten der Rechtsgrundlagen eigentlich der Mujtahid. Radd al-Muḥtār folgert daraus: Der Richter muss kein Mujtahid sein, weil ihm genügt, nach dem Ijtihād eines anderen zu handeln; daraus folgt aber nicht, dass er ein Laie sein darf. Man könnte allerdings sagen, dass Ijtihād heute bei Muftīs ebenso wenig zu finden ist wie bei Richtern.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī l-ijtihād wa-shurūṭihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 365,
+              "passage": "radd_al_muhtar.ms4998",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4998",
+              "passageSha256Text": "17fea2f7d903b90ab314d9c3c19e05ab0c7b776604949cdd6e05494a78ae29f9",
+              "zitatVon": 865,
+              "zitatBis": 1103,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.a07",
+          "text": "Raum für Ijtihād (mā yasūghu fīhi l-ijtihād) gibt es nach al-Fatḥ, das Radd al-Muḥtār wiedergibt, nicht, wo ein Konsens (ijmāʿ) besteht oder ein Text, der keine Auslegung zulässt, ohne dass ihm nach Sicht des Mujtahid ein anderer Text widerspricht – selbst wenn ein solcher Widerspruch tatsächlich besteht. Deshalb gehen die Ansichten darüber auseinander, ob eine Frage Raum für Ijtihād lässt und ob das Urteil eines Richters dagegen vollzogen wird.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb aẓ-Ẓihār › Maṭlab mā yasūghu fīhi l-ijtihād",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 466,
+              "passage": "radd_al_muhtar.ms2809",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms2809",
+              "passageSha256Text": "0d0eee9d89853427634ca9898d1f083b8fae48427d34f5a121b6c0607adcec0d",
+              "zitatVon": 1408,
+              "zitatBis": 1553,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb aẓ-Ẓihār › Maṭlab mā yasūghu fīhi l-ijtihād",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 466,
+              "passage": "radd_al_muhtar.ms2810",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms2810",
+              "passageSha256Text": "3002a12a84d80db62abbbe5ea856081a28e65b2e4a842365ddcaad153cffa442",
+              "zitatVon": 0,
+              "zitatBis": 193,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.a08",
+          "text": "Welche Meinungsverschiedenheit zählt? Nach al-Hidāya die der ersten Zeit (aṣ-ṣadr al-awwal), also der Gefährten und ihrer Nachfolger; eine spätere, etwa die Mālik oder ash-Shāfiʿī, würde danach nicht zählen. Radd al-Muḥtār nennt diese Ansicht gegen die richtigere. Nach al-Fatḥ (nach al-Muntaqā) kommt es darauf an, dass der Beleg unklar ist, nicht darauf, dass tatsächlich eine Meinungsverschiedenheit besteht; jede Frage, in der die Hanafiten und ash-Shāfiʿī oder andere uneins sind, ist so eine Stelle; ein Urteil darin darf nicht aufgehoben werden, auch wenn der Streit nicht schon in der ersten Zeit bestand.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Faṣl fī l-Ḥabs › Maṭlab: al-mūjab ʿalā thalāthat aqsām",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 400,
+              "passage": "radd_al_muhtar.ms5058",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5058",
+              "passageSha256Text": "55b68f7a830fb43ae075816bfeebf679fa162b59a60b360a23f8cada72e6b41c",
+              "zitatVon": 137,
+              "zitatBis": 336,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Faṣl fī l-Ḥabs › Maṭlab fī l-ḥukm bi-mā khālafa l-Kitāb aw as-Sunna aw al-Ijmāʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 401,
+              "passage": "radd_al_muhtar.ms5059",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5059",
+              "passageSha256Text": "e8df32dadfb441f0d590c8204e7db71f8b5030f19e51bb81bf512206e5bf4461",
+              "zitatVon": 544,
+              "zitatBis": 764,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.a09",
+          "text": "Bleibt ein Fall für einen Richter unklar und umstritten, weil sich kein Ijtihād auf ein Ergebnis festgelegt hat, schreibt er nach al-Hindiyya (in Radd al-Muḥtār) an die Rechtsgelehrten einer anderen Stadt; sich bei Rechtsfällen schriftlich zu beraten, ist eine alte Praxis. Stimmen sie überein und teilt er als Mann des Ijtihād ihre Ansicht, urteilt er danach. Sind sie uneins, wählt er die Ansicht, die ihm der Wahrheit am nächsten scheint, wenn er zum Ijtihād fähig ist; sonst die Ansicht dessen, der ihm als der Kundigste und Gottesfürchtigste gilt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms4992",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4992",
+              "passageSha256Text": "aef2aa05a8148fc909f6ff9a386924e5b79496189f69656edf2b2d167b252af6",
+              "zitatVon": 13,
+              "zitatBis": 363,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.a10",
+          "text": "Nach al-Hindiyya, die sich auf al-Muḥīṭ stützt (in Radd al-Muḥtār): Berät sich der Richter mit einem Mann, der ihm als vorzüglicher und kundiger gilt, und ist dieser anderer Ansicht, dann hofft man, dass es ihm freisteht, nach dessen Ansicht zu urteilen. Zweifelt er aber nicht an seiner eigenen Ansicht, soll er sie nicht aufgeben, um nach der Ansicht eines anderen zu urteilen; denn ein Mujtahid ahmt nach Radd al-Muḥtār keinen anderen nach.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms4992",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4992",
+              "passageSha256Text": "aef2aa05a8148fc909f6ff9a386924e5b79496189f69656edf2b2d167b252af6",
+              "zitatVon": 614,
+              "zitatBis": 896,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.a11",
+          "text": "Wer kein Mujtahid ist und von Gelehrten abweichende Antworten bekommt, darf nach al-Fatḥ (in Radd al-Muḥtār) auch der Ansicht folgen, zu der sein Herz nicht neigt; ob das Herz neigt oder nicht, ist gleich. Seine Pflicht ist, einem Mujtahid zu folgen, und das hat er getan – ob dieser Mujtahid recht hatte oder irrte. Radd al-Muḥtār bezieht das auf den Fall, dass die Muftīs Mujtahids sind.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 362,
+              "passage": "radd_al_muhtar.ms4992",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4992",
+              "passageSha256Text": "aef2aa05a8148fc909f6ff9a386924e5b79496189f69656edf2b2d167b252af6",
+              "zitatVon": 981,
+              "zitatBis": 1129,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 362,
+              "passage": "radd_al_muhtar.ms4992",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4992",
+              "passageSha256Text": "aef2aa05a8148fc909f6ff9a386924e5b79496189f69656edf2b2d167b252af6",
+              "zitatVon": 1130,
+              "zitatBis": 1189,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e07.l03.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l03.a02",
+          "behauptung": "Zu den Bedingungen des Ijtihād gehört nach at-Talwīḥ die Kenntnis der arabischen Sprache.",
+          "richtig": true,
+          "begruendung": "At-Talwīḥ nennt unter anderem Islam, Verstand, Volljährigkeit, tiefes Verständnis, Kenntnis der arabischen Sprache, des Korans, des Hadith und des Analogieschlusses.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e07.l03.a03",
+          "fall": "Im Lehrbeispiel will ein Gelehrter nur zu einer bestimmten Frage des Gebets Ijtihād üben.",
+          "frage": "Was muss er nach Radd al-Muḥtār dafür kennen?",
+          "optionen": [
+            "Was zu dieser Frage gehört; alles über die Ehe muss er nicht kennen.",
+            "Alle Urteile der Scharia, sonst darf er keinen Ijtihād üben.",
+            "Nur die arabische Sprache."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e07.l03.a03",
+          "anweisung": "Ordne nach Radd al-Muḥtār zu.",
+          "paare": [
+            {
+              "links": "unbeschränkter Mujtahid (al-mujtahid al-muṭlaq)",
+              "rechts": "gibt Fatwa in allen Urteilen und braucht alle Bedingungen"
+            },
+            {
+              "links": "Mujtahid in einer bestimmten Frage",
+              "rechts": "muss kennen, was zu dieser Frage gehört"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l03.a07",
+          "behauptung": "Wo ein Konsens (ijmāʿ) besteht, gibt es nach al-Fatḥ Raum für Ijtihād.",
+          "richtig": false,
+          "begruendung": "Kein Raum für Ijtihād ist dort, wo ein Konsens besteht oder ein Text, der keine Auslegung zulässt und dem nach Sicht des Mujtahid kein anderer Text widerspricht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.q05",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e07.l03.a09",
+          "anweisung": "Ordne nach al-Hindiyya (in Radd al-Muḥtār): Wie geht ein Richter bei einer unklaren neuen Frage vor?",
+          "schritte": [
+            "Der Fall bleibt für ihn unklar und umstritten.",
+            "Er schreibt an die Rechtsgelehrten einer anderen Stadt.",
+            "Sind sie uneins, wählt er die Ansicht, die der Wahrheit am nächsten scheint, oder als Nicht-Mujtahid die des Kundigsten und Gottesfürchtigsten."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e07.l03.a11",
+          "fall": "Im Lehrbeispiel bekommt jemand, der kein Mujtahid ist, von zwei Mujtahids verschiedene Antworten. Er folgt der Antwort, zu der sein Herz weniger neigt.",
+          "frage": "Ist das nach al-Fatḥ zulässig?",
+          "optionen": [
+            "Ja; seine Pflicht ist, einem Mujtahid zu folgen, und das hat er getan.",
+            "Nein; er muss immer der Antwort folgen, zu der sein Herz neigt.",
+            "Nein; er muss selbst Ijtihād üben."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.q07",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l03.a08",
+          "behauptung": "Nach al-Fatḥ kommt es dafür, ob eine Frage Raum für Ijtihād lässt, darauf an, dass der Beleg unklar ist.",
+          "richtig": true,
+          "begruendung": "Nach al-Fatḥ (nach al-Muntaqā) zählt die Unklarheit des Belegs, nicht, ob tatsächlich eine Meinungsverschiedenheit besteht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l03.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l03.a05",
+          "behauptung": "Nach dem Grundtext ist es ungültig, jemanden zum Richter zu bestellen, der kein Mujtahid ist.",
+          "richtig": false,
+          "begruendung": "Ijtihād ist für den Richter eine Bedingung des Vorrangs, nicht der Gültigkeit: Findet sich ein Mujtahid, ist er der Geeignetere; die Bestellung eines Laien ist aber gültig.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.vertiefung.e07.l04",
+      "titel": "Der Muftī und die Meinung, nach der Fatwa gegeben wird",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.vertiefung.e07.l04.a01",
+          "text": "Der Muftī braucht bei tatsächlichen Fällen nach al-Fatḥ, das Radd al-Muḥtār wiedergibt, eine Art eigener Abwägung (ḍarb ijtihād) und Kenntnis der Lage der Menschen. Ein Beispiel aus dem Fasten: Isst jemand Fleisch von der Größe einer Kichererbse, das zwischen seinen Zähnen hing, ist nach Zufar die Sühne (kaffāra) fällig, nach Abū Yūsuf nicht, weil man so etwas naturgemäß verabscheut. Al-Fatḥ: Die Sühne setzt ein vollständiges Vergehen voraus; der Muftī schaut also auf den Betroffenen – verabscheut dessen Natur so etwas, nimmt er die Ansicht Abū Yūsufs, sonst die Zufars.",
+          "meinung": "fatwa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṣ-Ṣawm › Bāb mā yufsid aṣ-ṣawm wa-mā lā yufsiduhu › Maṭlab: al-muftī fī l-waqāʾiʿ lā budda lahu min ḍarb ijtihād",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 2,
+              "seite": 398,
+              "passage": "radd_al_muhtar.ms1631",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms1631",
+              "passageSha256Text": "ef7178bc8e0b85bbb9f4bbc5a00276ecde84ccd26a040cf0a70b8b0fac1045fb",
+              "zitatVon": 478,
+              "zitatBis": 813,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.a02",
+          "text": "Nach al-Fatḥ muss der Muftī auf die Besonderheiten des einzelnen Falls schauen; an-Nahr und ash-Shurunbulāliyya stimmen dem nach Radd al-Muḥtār zu. Al-Fatḥ zeigt es an einem Fall aus den Regeln der Wartezeit (ʿidda): Ob eine Frau, die sich durch Loskauf (khulʿ) getrennt und dabei auf ihr eigenes Recht verzichtet hat, in der Wartezeit hinausgehen darf, ist umstritten – nach der richtigeren Ansicht nicht, nach einer anderen tagsüber. Der Muftī beantwortet es danach, ob sie ohne hinauszugehen ihren Lebensunterhalt bestreiten kann.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb al-ʿIdda › Faṣl fī l-Ḥidād",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 535,
+              "passage": "radd_al_muhtar.ms2921",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms2921",
+              "passageSha256Text": "62dbe8f6cddbf777cfbe7442b7aa13ec06b7c8a0cca858cbbd1e7cd109986db4",
+              "zitatVon": 706,
+              "zitatBis": 851,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭalāq › Bāb al-ʿIdda › Faṣl fī l-Ḥidād › Maṭlab: ʿalā l-muftī an yanẓura fī khuṣūṣ al-waqāʾiʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 3,
+              "seite": 535,
+              "passage": "radd_al_muhtar.ms2921",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms2921",
+              "passageSha256Text": "62dbe8f6cddbf777cfbe7442b7aa13ec06b7c8a0cca858cbbd1e7cd109986db4",
+              "zitatVon": 900,
+              "zitatBis": 1086,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.a03",
+          "text": "Manche Gelehrte verlangen vom Muftī Wachsamkeit (tayaqquẓ), damit er nicht unachtsam ist. Radd al-Muḥtār hält das in seiner Zeit für notwendig: Wer eine Fatwa in der Hand hat, sucht damit oft seinen Gegner zu bezwingen. Deshalb lässt der Muftī den Fragenden die Sache selbst darlegen und sagt nicht: „Ist es so, bist du im Recht; ist es anders, dein Gegner.“ Am besten lässt er beide Seiten kommen und schreibt die Fatwa für den, auf dessen Seite das Recht ist. Er darf niemandem helfen, Unrecht durchzusetzen; die Unachtsamkeit eines Muftī richtet großen Schaden an.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī qaḍāʾ al-ʿaduww ʿalā ʿaduwwihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 359,
+              "passage": "radd_al_muhtar.ms4988",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4988",
+              "passageSha256Text": "80d9cf05200ba68c4eefcbf73f4496dd8b01c46e5d7d3c27c2f42ff8dbfcc73b",
+              "zitatVon": 714,
+              "zitatBis": 1453,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī qaḍāʾ al-ʿaduww ʿalā ʿaduwwihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 359,
+              "passage": "radd_al_muhtar.ms4989",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4989",
+              "passageSha256Text": "ebc809bc1f4ec653b277377eb9aba66418ddee98d72d3747861cb7bd180495c1",
+              "zitatVon": 57,
+              "zitatBis": 133,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.a04",
+          "text": "Der Muftī gleicht nach Radd al-Muḥtār dem Überlieferer (rāwī), nicht dem Zeugen und nicht dem Richter. Deshalb ist seine Fatwa auch für jemanden gültig, für den sein Zeugnis nicht angenommen würde.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī qaḍāʾ al-ʿaduww ʿalā ʿaduwwihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 359,
+              "passage": "radd_al_muhtar.ms4989",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4989",
+              "passageSha256Text": "ebc809bc1f4ec653b277377eb9aba66418ddee98d72d3747861cb7bd180495c1",
+              "zitatVon": 134,
+              "zitatBis": 226,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.a05",
+          "text": "Die Fatwa eines Stummen ist nach dem Grundtext gültig, wenn man seine Zeichen versteht. Bekommt ein schwerhöriger Muftī die Frage schriftlich und antwortet schriftlich, darf man nach Radd al-Muḥtār nach seiner Fatwa handeln. Wer aber als Muftī für die Allgemeinheit eingesetzt ist, den Frauen, Beduinen und andere mündlich fragen, muss gut hören können; sonst antwortet er auf halb Gehörtes, und das Recht eines anderen geht verloren.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī qaḍāʾ al-ʿaduww ʿalā ʿaduwwihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 359,
+              "passage": "radd_al_muhtar.ms4989",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4989",
+              "passageSha256Text": "ebc809bc1f4ec653b277377eb9aba66418ddee98d72d3747861cb7bd180495c1",
+              "zitatVon": 227,
+              "zitatBis": 302,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī qaḍāʾ al-ʿaduww ʿalā ʿaduwwihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms4989",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4989",
+              "passageSha256Text": "ebc809bc1f4ec653b277377eb9aba66418ddee98d72d3747861cb7bd180495c1",
+              "zitatVon": 882,
+              "zitatBis": 1278,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.a06",
+          "text": "Ein Richter darf nach al-Ẓahīriyya (in Radd al-Muḥtār) Fatwa geben, aber nicht einer Partei in einem Streit, der vor ihm verhandelt wird. Al-Kāfī des al-Ḥākim begründet: Der Gegner soll nicht vorher die Ansicht des Richters erfahren und sich mit Falschem dagegen wappnen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms4989",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4989",
+              "passageSha256Text": "ebc809bc1f4ec653b277377eb9aba66418ddee98d72d3747861cb7bd180495c1",
+              "zitatVon": 1388,
+              "zitatBis": 1505,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 360,
+              "passage": "radd_al_muhtar.ms4990",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4990",
+              "passageSha256Text": "53129933f39196f377f026261abdba59f85cf04186129121b3e5b9e41c352d1e",
+              "zitatVon": 212,
+              "zitatBis": 312,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.a07",
+          "text": "Die maßgebliche Ansicht einer Schule (muʿtamad al-madhhab) ist nach Radd al-Muḥtār die, auf die sich die Gelehrten der Schule gestützt haben – ob sie mit der Ansicht des Imams übereinstimmt oder nicht. Ein Richter, der kein Mujtahid ist, muss nach ihr handeln, ob er von einer abweichenden Ansicht weiß oder nicht.",
+          "meinung": "fatwa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms4991",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4991",
+              "passageSha256Text": "2bf1376a2ab8a6bd589333b37528616627c6cef6988ae16101d646e23fc1e8dd",
+              "zitatVon": 778,
+              "zitatBis": 872,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab: yuftā bi-qawl al-imām ʿalā l-iṭlāq",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 361,
+              "passage": "radd_al_muhtar.ms4991",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms4991",
+              "passageSha256Text": "2bf1376a2ab8a6bd589333b37528616627c6cef6988ae16101d646e23fc1e8dd",
+              "zitatVon": 1425,
+              "zitatBis": 1502,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.a08",
+          "text": "Nach der schwächeren Ansicht (marjūḥ) zu urteilen oder Fatwa zu geben, widerspricht nach al-ʿAllāma Qāsim dem Konsens. Ein Richter, der nur nachahmt (muqallid), darf nicht nach der schwachen Ansicht urteilen, weil er nicht zu denen gehört, die zwischen Ansichten abwägen; tut er es, wird sein Urteil nicht vollzogen. Ebenso sagen nach Radd al-Muḥtār Ibn al-Ghars und der Verfasser von al-Baḥr: Er urteilt nur nach dem, worauf Praxis und Fatwa beruhen, nach der richtigen Ansicht, nach der in seiner Schule Fatwa gegeben wird.",
+          "meinung": "fatwa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Faṣl fī l-Ḥabs › al-Ḥukm wa-l-fatwā bi-mā huwa marjūḥ khilāf al-ijmāʿ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 408,
+              "passage": "radd_al_muhtar.ms5073",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5073",
+              "passageSha256Text": "30a47a7ace2660eff66086352f7be4e4c9ea374df5d1de81a90bc089f263a3f2",
+              "zitatVon": 35,
+              "zitatBis": 584,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.a09",
+          "text": "Der Imam und der Muftī dürfen nach al-Khāniyya, die al-Baḥr anführt, Geschenke und besondere Einladungen annehmen; mit dem Imam ist nach al-Baḥr der Imam der Freitagsmoschee gemeint, nicht der Statthalter. Den Unterschied zum Richter erklärt Radd al-Muḥtār so: Der Richter verpflichtet verbindlich und vertritt den Gesandten Gottes beim Vollzug der Urteile; nimmt er ein Geschenk, ist es Bestechung für das Urteil, das der Schenkende erhofft, und sein Urteil wird ungültig. Beim Muftī ist das nicht so. Das Werk erwägt aber: Gemeint ist wohl ein Geschenk wegen seines Wissens; soll es ihn dazu bringen, dem Schenkenden zu helfen, trifft auf das Geschenk die Bestimmung der Bestechung zu.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī ḥukm al-hadiyya li-l-muftī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 373,
+              "passage": "radd_al_muhtar.ms5011",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5011",
+              "passageSha256Text": "efebb38e870eeead52d7a729a7133fbcbd74ccdf2d8aa1b3afaa170e3accd4da",
+              "zitatVon": 284,
+              "zitatBis": 489,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī ḥukm al-hadiyya li-l-muftī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 373,
+              "passage": "radd_al_muhtar.ms5011",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5011",
+              "passageSha256Text": "efebb38e870eeead52d7a729a7133fbcbd74ccdf2d8aa1b3afaa170e3accd4da",
+              "zitatVon": 1155,
+              "zitatBis": 1296,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī ḥukm al-hadiyya li-l-muftī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 373,
+              "passage": "radd_al_muhtar.ms5011",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5011",
+              "passageSha256Text": "efebb38e870eeead52d7a729a7133fbcbd74ccdf2d8aa1b3afaa170e3accd4da",
+              "zitatVon": 1297,
+              "zitatBis": 1432,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.a10",
+          "text": "Radd al-Muḥtār gibt dazu eine Ausführung aus einem schafiitischen Werk wieder und hält fest, dass die Regeln der Hanafiten dem nicht entgegenstehen: Muftī, Prediger, Koranlehrer und Lehrer gleichen nicht dem Richter, denn sie können niemanden verpflichten. Wird ihnen etwas wegen ihrer Fatwa, Predigt oder ihres Unterrichts geschenkt, ist es besser, es nicht anzunehmen, damit ihr Wissen allein um Gottes willen bleibt; schenkt man ihnen aus Zuneigung zu ihrem Wissen und ihrer Rechtschaffenheit, ist es besser, es anzunehmen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī ḥukm al-hadiyya li-l-muftī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 373,
+              "passage": "radd_al_muhtar.ms5012",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5012",
+              "passageSha256Text": "282fa107a5ae8b3f1d14aee8913d71636ca3956a33d631063009f28833aeabe2",
+              "zitatVon": 587,
+              "zitatBis": 864,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī ḥukm al-hadiyya li-l-muftī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 373,
+              "passage": "radd_al_muhtar.ms5012",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5012",
+              "passageSha256Text": "282fa107a5ae8b3f1d14aee8913d71636ca3956a33d631063009f28833aeabe2",
+              "zitatVon": 1023,
+              "zitatBis": 1056,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.a11",
+          "text": "Nimmt ein Muftī ein Geschenk, um in der Fatwa eine Erleichterung zu gewähren, gilt nach derselben Ausführung: Geschieht das auf unhaltbare Weise, ist er ein Frevler (fājir), der die Urteile Gottes gegen Entgelt verfälscht; geschieht es auf haltbare Weise, ist es in hohem Maß verpönt (karāha shadīda).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī ḥukm al-hadiyya li-l-muftī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 373,
+              "passage": "radd_al_muhtar.ms5012",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5012",
+              "passageSha256Text": "282fa107a5ae8b3f1d14aee8913d71636ca3956a33d631063009f28833aeabe2",
+              "zitatVon": 865,
+              "zitatBis": 1022,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.a12",
+          "text": "Nimmt der Muftī etwas nicht für eine Erleichterung, sondern nur dafür, das Urteil der Scharia zu erklären, gilt nach Radd al-Muḥtār das Vorige, solange es ein Geschenk ist und kein Lohn. Lohn dafür zu nehmen, das Urteil der Scharia zu erklären, ist bei den Hanafiten nicht erlaubt; erlaubt ist er nur für das Schreiben, weil das Schreiben nicht seine Pflicht ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb al-Qaḍāʾ › Maṭlab fī ḥukm al-hadiyya li-l-muftī",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 5,
+              "seite": 373,
+              "passage": "radd_al_muhtar.ms5012",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms5012",
+              "passageSha256Text": "282fa107a5ae8b3f1d14aee8913d71636ca3956a33d631063009f28833aeabe2",
+              "zitatVon": 1083,
+              "zitatBis": 1282,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.vertiefung.e07.l04.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l04.a04",
+          "behauptung": "Der Muftī gleicht nach Radd al-Muḥtār dem Überlieferer (rāwī), nicht dem Zeugen oder dem Richter.",
+          "richtig": true,
+          "begruendung": "Deshalb ist seine Fatwa auch für jemanden gültig, für den sein Zeugnis nicht angenommen würde.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.q02",
+          "typ": "reihenfolge",
+          "aussage": "islam.vertiefung.e07.l04.a03",
+          "anweisung": "Ordne nach Radd al-Muḥtār: Wie geht ein wachsamer Muftī bei einer Streitfrage vor?",
+          "schritte": [
+            "Er lässt den Fragenden die Sache selbst darlegen.",
+            "Er lässt am besten beide Seiten kommen.",
+            "Er schreibt die Fatwa für den, auf dessen Seite das Recht ist."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e07.l04.a03",
+          "fall": "Im Lehrbeispiel schildert jemand einem Muftī einen Streit nur aus seiner Sicht und will die Fatwa danach gegen seinen Gegner verwenden.",
+          "frage": "Was soll der Muftī nach Radd al-Muḥtār nicht tun?",
+          "optionen": [
+            "Antworten: „Ist es so, bist du im Recht; ist es anders, dein Gegner.“",
+            "Den Fragenden die Sache selbst darlegen lassen.",
+            "Beide Seiten zu sich kommen lassen."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.q04",
+          "typ": "zuordnen",
+          "aussage": "islam.vertiefung.e07.l04.a09",
+          "anweisung": "Ordne nach Radd al-Muḥtār zu: Wie steht es mit Geschenken?",
+          "paare": [
+            {
+              "links": "Richter",
+              "rechts": "verpflichtet verbindlich; ein Geschenk wäre Bestechung"
+            },
+            {
+              "links": "Muftī",
+              "rechts": "verpflichtet nicht; darf nach al-Khāniyya Geschenke annehmen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l04.a12",
+          "behauptung": "Für das Erklären des Urteils der Scharia darf der Muftī nach Radd al-Muḥtār bei den Hanafiten Lohn nehmen.",
+          "richtig": false,
+          "begruendung": "Lohn für das Erklären ist bei den Hanafiten nicht erlaubt; erlaubt ist er nur für das Schreiben, weil das Schreiben nicht seine Pflicht ist.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.q06",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e07.l04.a07",
+          "fall": "Im Lehrbeispiel kennt ein Richter, der kein Mujtahid ist, eine schwächere Ansicht, die ihm besser gefällt als die maßgebliche Ansicht seiner Schule.",
+          "frage": "Wonach muss er nach Radd al-Muḥtār urteilen?",
+          "optionen": [
+            "Nach der maßgeblichen Ansicht seiner Schule, ob er von der anderen weiß oder nicht.",
+            "Nach der Ansicht, die ihm besser gefällt.",
+            "Nach der Ansicht, die die meisten Menschen in seiner Stadt vertreten."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.q07",
+          "typ": "fallfrage",
+          "aussage": "islam.vertiefung.e07.l04.a01",
+          "fall": "Im Lehrfall aus al-Fatḥ hat jemand beim Fasten Fleisch von der Größe einer Kichererbse gegessen, das zwischen seinen Zähnen hing. Zufar und Abū Yūsuf sind über die Sühne uneins.",
+          "frage": "Wie entscheidet der Muftī nach al-Fatḥ?",
+          "optionen": [
+            "Er schaut auf den Betroffenen: Verabscheut dessen Natur so etwas, folgt er Abū Yūsuf, sonst Zufar.",
+            "Er folgt immer Zufar.",
+            "Er folgt immer Abū Yūsuf."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.vertiefung.e07.l04.q08",
+          "typ": "wahr_falsch",
+          "aussage": "islam.vertiefung.e07.l04.a06",
+          "behauptung": "Ein Richter darf nach al-Ẓahīriyya einer Partei in einem Streit, der vor ihm verhandelt wird, eine Fatwa geben.",
+          "richtig": false,
+          "begruendung": "Er darf Fatwa geben, aber nicht einer Partei in seinem eigenen Verfahren; der Gegner soll sich nicht mit Falschem gegen seine Ansicht wappnen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}

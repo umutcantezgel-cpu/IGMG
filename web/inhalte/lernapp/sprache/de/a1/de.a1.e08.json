@@ -1,0 +1,3369 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "automatisch_geprueft",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e08",
+    "reihenfolge": 9,
+    "thema": {
+      "de": "Was machst du gern?",
+      "tr": "Ne yapmayı seversin?",
+      "ar": "ماذا تحب أن تفعل؟"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann sagen, was ich in meiner Freizeit gern mache und was nicht.",
+        "tr": "Boş zamanımda neyi yapmayı sevdiğimi ve neyi sevmediğimi söyleyebilirim.",
+        "ar": "أستطيع أن أقول ماذا أحب أن أفعل في وقت فراغي وماذا لا أحب."
+      },
+      {
+        "de": "Ich kann jemanden zu einer Aktivität einladen und zusagen oder absagen.",
+        "tr": "Birini bir etkinliğe davet edebilir, bir daveti kabul edebilir ya da reddedebilirim.",
+        "ar": "أستطيع أن أدعو شخصًا إلى نشاط وأن أقبل دعوة أو أعتذر عنها."
+      }
+    ],
+    "symbol": "bike",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a1.e08.denn",
+      "lemma": "denn",
+      "wortart": "konjunktion",
+      "frequenzRang": 90,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.warum",
+      "lemma": "warum",
+      "wortart": "fragewort",
+      "frequenzRang": 127,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.sich",
+      "lemma": "sich",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Reflexivpronomen 3. Person",
+        "gebrauch_a1": "nur in festen Wendungen (sich freuen, sich fühlen)"
+      },
+      "frequenzRang": 18,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.freuen",
+      "lemma": "freuen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich freuen (in A1 als feste Wendung: Ich freue mich.)"
+      },
+      "formen": {
+        "infinitiv": "freuen",
+        "praes_ich": "freue",
+        "praes_du": "freust",
+        "praes_er_sie_es": "freut",
+        "praes_wir": "freuen",
+        "praes_ihr": "freut",
+        "praes_sie_Sie": "freuen",
+        "imp_du": "freu",
+        "imp_ihr": "freut"
+      },
+      "frequenzRang": 349,
+      "quelle": "wiktionary:de:freuen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚freuen‘ (https://de.wiktionary.org/wiki/freuen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.spielen",
+      "lemma": "spielen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "spielen",
+        "praes_ich": "spiele",
+        "praes_du": "spielst",
+        "praes_er_sie_es": "spielt",
+        "praes_wir": "spielen",
+        "praes_ihr": "spielt",
+        "praes_sie_Sie": "spielen",
+        "imp_du": "spiel",
+        "imp_ihr": "spielt"
+      },
+      "frequenzRang": 136,
+      "quelle": "wiktionary:de:spielen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚spielen‘ (https://de.wiktionary.org/wiki/spielen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.fahren",
+      "lemma": "fahren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein/haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "fahren",
+        "praes_ich": "fahre",
+        "praes_du": "fährst",
+        "praes_er_sie_es": "fährt",
+        "praes_wir": "fahren",
+        "praes_ihr": "fahrt",
+        "praes_sie_Sie": "fahren",
+        "imp_du": "fahr",
+        "imp_ihr": "fahrt"
+      },
+      "frequenzRang": 120,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.laufen",
+      "lemma": "laufen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "laufen",
+        "praes_ich": "laufe",
+        "praes_du": "läufst",
+        "praes_er_sie_es": "läuft",
+        "praes_wir": "laufen",
+        "praes_ihr": "lauft",
+        "praes_sie_Sie": "laufen",
+        "imp_du": "lauf",
+        "imp_ihr": "lauft"
+      },
+      "frequenzRang": 166,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.treffen",
+      "lemma": "treffen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "treffen",
+        "praes_ich": "treffe",
+        "praes_du": "triffst",
+        "praes_er_sie_es": "trifft",
+        "praes_wir": "treffen",
+        "praes_ihr": "trefft",
+        "praes_sie_Sie": "treffen",
+        "imp_du": "triff",
+        "imp_ihr": "trefft"
+      },
+      "frequenzRang": 208,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.einladen",
+      "lemma": "einladen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ein",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "einladen",
+        "verbzusatz": "ein",
+        "praes_ich": "lade",
+        "praes_du": "lädst",
+        "praes_er_sie_es": "lädt",
+        "praes_wir": "laden",
+        "praes_ihr": "ladet",
+        "praes_sie_Sie": "laden",
+        "imp_du": "lade",
+        "imp_ihr": "ladet"
+      },
+      "frequenzRang": 1528,
+      "quelle": "wiktionary:de:einladen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚einladen‘ (https://de.wiktionary.org/wiki/einladen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.gewinnen",
+      "lemma": "gewinnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "gewinnen",
+        "praes_ich": "gewinne",
+        "praes_du": "gewinnst",
+        "praes_er_sie_es": "gewinnt",
+        "praes_wir": "gewinnen",
+        "praes_ihr": "gewinnt",
+        "praes_sie_Sie": "gewinnen"
+      },
+      "frequenzRang": 286,
+      "quelle": "wiktionary:de:gewinnen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gewinnen‘ (https://de.wiktionary.org/wiki/gewinnen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.verlieren",
+      "lemma": "verlieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verlieren",
+        "praes_ich": "verliere",
+        "praes_du": "verlierst",
+        "praes_er_sie_es": "verliert",
+        "praes_wir": "verlieren",
+        "praes_ihr": "verliert",
+        "praes_sie_Sie": "verlieren"
+      },
+      "frequenzRang": 517,
+      "quelle": "wiktionary:de:verlieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verlieren‘ (https://de.wiktionary.org/wiki/verlieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.versuchen",
+      "lemma": "versuchen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "versuchen",
+        "praes_ich": "versuche",
+        "praes_du": "versuchst",
+        "praes_er_sie_es": "versucht",
+        "praes_wir": "versuchen",
+        "praes_ihr": "versucht",
+        "praes_sie_Sie": "versuchen",
+        "imp_du": "versuch",
+        "imp_ihr": "versucht"
+      },
+      "frequenzRang": 255,
+      "quelle": "wiktionary:de:versuchen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚versuchen‘ (https://de.wiktionary.org/wiki/versuchen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.bauen",
+      "lemma": "bauen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bauen",
+        "praes_ich": "baue",
+        "praes_du": "baust",
+        "praes_er_sie_es": "baut",
+        "praes_wir": "bauen",
+        "praes_ihr": "baut",
+        "praes_sie_Sie": "bauen",
+        "imp_du": "bau",
+        "imp_ihr": "baut"
+      },
+      "frequenzRang": 452,
+      "quelle": "wiktionary:de:bauen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bauen‘ (https://de.wiktionary.org/wiki/bauen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.malen",
+      "lemma": "malen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "malen",
+        "praes_ich": "male",
+        "praes_du": "malst",
+        "praes_er_sie_es": "malt",
+        "praes_wir": "malen",
+        "praes_ihr": "malt",
+        "praes_sie_Sie": "malen",
+        "imp_du": "mal",
+        "imp_ihr": "malt"
+      },
+      "frequenzRang": 2852,
+      "quelle": "wiktionary:de:malen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚malen‘ (https://de.wiktionary.org/wiki/malen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.backen",
+      "lemma": "backen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "backen",
+        "praes_ich": "backe",
+        "praes_du": "bäckst",
+        "praes_er_sie_es": "bäckt",
+        "praes_wir": "backen",
+        "praes_ihr": "backt",
+        "praes_sie_Sie": "backen",
+        "imp_du": "back",
+        "imp_ihr": "backt",
+        "praes_du_2": "backst",
+        "praes_er_2": "backt"
+      },
+      "frequenzRang": 2742,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.basteln",
+      "lemma": "basteln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "basteln",
+        "praes_ich": "bastle",
+        "praes_du": "bastelst",
+        "praes_er_sie_es": "bastelt",
+        "praes_wir": "basteln",
+        "praes_ihr": "bastelt",
+        "praes_sie_Sie": "basteln",
+        "imp_du": "bastle",
+        "imp_ihr": "bastelt",
+        "praes_ich_2": "bastele"
+      },
+      "frequenzRang": 4407,
+      "quelle": "wiktionary:de:basteln",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚basteln‘ (https://de.wiktionary.org/wiki/basteln), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.klingen",
+      "lemma": "klingen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "klingen",
+        "praes_ich": "klinge",
+        "praes_du": "klingst",
+        "praes_er_sie_es": "klingt",
+        "praes_wir": "klingen",
+        "praes_ihr": "klingt",
+        "praes_sie_Sie": "klingen"
+      },
+      "frequenzRang": 589,
+      "quelle": "wiktionary:de:klingen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚klingen‘ (https://de.wiktionary.org/wiki/klingen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.immer",
+      "lemma": "immer",
+      "wortart": "adverb",
+      "frequenzRang": 63,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.oft",
+      "lemma": "oft",
+      "wortart": "adverb",
+      "frequenzRang": 238,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.manchmal",
+      "lemma": "manchmal",
+      "wortart": "adverb",
+      "frequenzRang": 456,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.selten",
+      "lemma": "selten",
+      "wortart": "adverb",
+      "frequenzRang": 558,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.nie",
+      "lemma": "nie",
+      "wortart": "adverb",
+      "frequenzRang": 158,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.zusammen",
+      "lemma": "zusammen",
+      "wortart": "adverb",
+      "frequenzRang": 210,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.gemeinsam",
+      "lemma": "gemeinsam",
+      "wortart": "adverb",
+      "frequenzRang": 308,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.frei",
+      "lemma": "frei",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "freie",
+        "endung_en": "freien",
+        "endung_er": "freier",
+        "endung_es": "freies",
+        "endung_em": "freiem"
+      },
+      "frequenzRang": 272,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.toll",
+      "lemma": "toll",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "tolle",
+        "endung_en": "tollen",
+        "endung_er": "toller",
+        "endung_es": "tolles",
+        "endung_em": "tollem"
+      },
+      "frequenzRang": 318,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.super",
+      "lemma": "super",
+      "wortart": "adjektiv",
+      "frequenzRang": 458,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.interessant",
+      "lemma": "interessant",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "interessante",
+        "endung_en": "interessanten",
+        "endung_er": "interessanter",
+        "endung_es": "interessantes",
+        "endung_em": "interessantem"
+      },
+      "frequenzRang": 546,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.wenig",
+      "lemma": "wenig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "wenige",
+        "endung_en": "wenigen",
+        "endung_er": "weniger",
+        "endung_es": "weniges",
+        "endung_em": "wenigem"
+      },
+      "frequenzRang": 153,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.aktiv",
+      "lemma": "aktiv",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "aktive",
+        "endung_en": "aktiven",
+        "endung_er": "aktiver",
+        "endung_es": "aktives",
+        "endung_em": "aktivem"
+      },
+      "frequenzRang": 537,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.wochenende",
+      "lemma": "Wochenende",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Wochenenden"
+      },
+      "formen": {
+        "pl": "Wochenenden"
+      },
+      "frequenzRang": 740,
+      "quelle": "wiktionary:de:Wochenende",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wochenende‘ (https://de.wiktionary.org/wiki/Wochenende), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.spiel",
+      "lemma": "Spiel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Spiele"
+      },
+      "formen": {
+        "pl": "Spiele",
+        "dat_pl": "Spielen"
+      },
+      "frequenzRang": 162,
+      "quelle": "wiktionary:de:Spiel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Spiel‘ (https://de.wiktionary.org/wiki/Spiel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.spass",
+      "lemma": "Spaß",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 426,
+      "quelle": "wiktionary:de:Spaß",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Spaß‘ (https://de.wiktionary.org/wiki/Spaß), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.idee",
+      "lemma": "Idee",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ideen"
+      },
+      "formen": {
+        "pl": "Ideen"
+      },
+      "frequenzRang": 317,
+      "quelle": "wiktionary:de:Idee",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Idee‘ (https://de.wiktionary.org/wiki/Idee), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.freund",
+      "lemma": "Freund",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Freunde",
+        "weiblich": "Freundin"
+      },
+      "formen": {
+        "pl": "Freunde",
+        "dat_pl": "Freunden",
+        "weiblich": "Freundin",
+        "weiblich_pl": "Freundinnen"
+      },
+      "frequenzRang": 232,
+      "quelle": "wiktionary:de:Freund",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Freund‘ (https://de.wiktionary.org/wiki/Freund), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.maedchen",
+      "lemma": "Mädchen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Mädchen"
+      },
+      "frequenzRang": 423,
+      "quelle": "wiktionary:de:Mädchen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mädchen‘ (https://de.wiktionary.org/wiki/Mädchen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.gruppe",
+      "lemma": "Gruppe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Gruppen"
+      },
+      "formen": {
+        "pl": "Gruppen"
+      },
+      "frequenzRang": 278,
+      "quelle": "wiktionary:de:Gruppe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gruppe‘ (https://de.wiktionary.org/wiki/Gruppe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.team",
+      "lemma": "Team",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Teams"
+      },
+      "formen": {
+        "pl": "Teams"
+      },
+      "frequenzRang": 330,
+      "quelle": "wiktionary:de:Team",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Team‘ (https://de.wiktionary.org/wiki/Team), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.film",
+      "lemma": "Film",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Filme"
+      },
+      "formen": {
+        "pl": "Filme",
+        "dat_pl": "Filmen"
+      },
+      "frequenzRang": 302,
+      "quelle": "wiktionary:de:Film",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Film‘ (https://de.wiktionary.org/wiki/Film), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.geschichte",
+      "lemma": "Geschichte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Geschichten"
+      },
+      "formen": {
+        "pl": "Geschichten"
+      },
+      "frequenzRang": 224,
+      "quelle": "wiktionary:de:Geschichte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Geschichte‘ (https://de.wiktionary.org/wiki/Geschichte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.ball",
+      "lemma": "Ball",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Bälle"
+      },
+      "formen": {
+        "pl": "Bälle",
+        "dat_pl": "Bällen"
+      },
+      "frequenzRang": 1344,
+      "quelle": "wiktionary:de:Ball",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ball‘ (https://de.wiktionary.org/wiki/Ball), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.fussball",
+      "lemma": "Fußball",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Fußbälle"
+      },
+      "formen": {
+        "pl": "Fußbälle",
+        "dat_pl": "Fußbällen"
+      },
+      "frequenzRang": 688,
+      "quelle": "wiktionary:de:Fußball",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fußball‘ (https://de.wiktionary.org/wiki/Fußball), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.mannschaft",
+      "lemma": "Mannschaft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Mannschaften"
+      },
+      "formen": {
+        "pl": "Mannschaften"
+      },
+      "frequenzRang": 649,
+      "quelle": "wiktionary:de:Mannschaft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mannschaft‘ (https://de.wiktionary.org/wiki/Mannschaft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.schach",
+      "lemma": "Schach",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 5506,
+      "quelle": "wiktionary:de:Schach",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schach‘ (https://de.wiktionary.org/wiki/Schach), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.koenig",
+      "lemma": "König",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Könige"
+      },
+      "formen": {
+        "pl": "Könige",
+        "dat_pl": "Königen"
+      },
+      "frequenzRang": 524,
+      "quelle": "wiktionary:de:König",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚König‘ (https://de.wiktionary.org/wiki/König), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.fahrrad",
+      "lemma": "Fahrrad",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Fahrräder"
+      },
+      "formen": {
+        "pl": "Fahrräder",
+        "dat_pl": "Fahrrädern"
+      },
+      "frequenzRang": 1738,
+      "quelle": "wiktionary:de:Fahrrad",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fahrrad‘ (https://de.wiktionary.org/wiki/Fahrrad), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.klar",
+      "lemma": "klar",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "klare",
+        "endung_en": "klaren",
+        "endung_er": "klarer",
+        "endung_es": "klares",
+        "endung_em": "klarem"
+      },
+      "frequenzRang": 169,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.wuenschen",
+      "lemma": "wünschen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "wünschen",
+        "praes_ich": "wünsche",
+        "praes_du": "wünschst",
+        "praes_er_sie_es": "wünscht",
+        "praes_wir": "wünschen",
+        "praes_ihr": "wünscht",
+        "praes_sie_Sie": "wünschen",
+        "imp_du": "wünsch",
+        "imp_ihr": "wünscht"
+      },
+      "frequenzRang": 594,
+      "quelle": "wiktionary:de:wünschen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wünschen‘ (https://de.wiktionary.org/wiki/wünschen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.tier",
+      "lemma": "Tier",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Tiere"
+      },
+      "formen": {
+        "pl": "Tiere",
+        "dat_pl": "Tieren"
+      },
+      "frequenzRang": 525,
+      "quelle": "wiktionary:de:Tier",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tier‘ (https://de.wiktionary.org/wiki/Tier), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.video",
+      "lemma": "Video",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Videos"
+      },
+      "formen": {
+        "pl": "Videos"
+      },
+      "frequenzRang": 346,
+      "quelle": "wiktionary:de:Video",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Video‘ (https://de.wiktionary.org/wiki/Video), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e08.s0001",
+      "text": "Was machst du gern am Wochenende?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0002",
+      "text": "Ich spiele gern Fußball.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0003",
+      "text": "Spielst du Fußball?",
+      "quelle": "tatoeba:1341982",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1341982 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0004",
+      "text": "Er mag Fußball.",
+      "quelle": "tatoeba:1900266",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1900266 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0005",
+      "text": "Mein Vater mag Fußball nicht.",
+      "quelle": "tatoeba:410067",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #410067 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0006",
+      "text": "Elif fährt gern Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0007",
+      "text": "Laylā malt gern Tiere.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0008",
+      "text": "Ich male ein Bild für Oma.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0009",
+      "text": "Selin bastelt einen Stern aus Papier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0010",
+      "text": "Mein Vater backt am Sonntag Brot.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0011",
+      "text": "Wir backen zusammen einen Kuchen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0012",
+      "text": "Die Kinder bauen ein Haus aus Papier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0013",
+      "text": "Ich laufe gern am Morgen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0014",
+      "text": "Ich laufe nicht gern.",
+      "quelle": "tatoeba:3320554",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3320554 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0015",
+      "text": "Spielst du gern Schach?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0016",
+      "text": "Magst du Schach?",
+      "quelle": "tatoeba:10844382",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #10844382 von carlosalberto (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0017",
+      "text": "Ja, Schach spiele ich sehr gern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0018",
+      "text": "Was spielt ihr da?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0019",
+      "text": "Wir spielen Schach.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0020",
+      "text": "Hast du einen Ball?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0021",
+      "text": "Nein, ich habe keinen Ball.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0022",
+      "text": "Was ist das für ein Tier?",
+      "quelle": "tatoeba:969058",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #969058 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0023",
+      "text": "Elif mag Tiere sehr gern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0024",
+      "text": "Die Mädchen spielen auch Fußball.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0025",
+      "text": "Emre malt nicht gern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0026",
+      "text": "Bastelst du gern?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0027",
+      "text": "Nein, aber ich male sehr gern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0028",
+      "text": "Wie oft spielst du Fußball?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0029",
+      "text": "Ich spiele immer am Samstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0030",
+      "text": "Wir fahren oft Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0031",
+      "text": "Manchmal male ich am Abend.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0032",
+      "text": "Ich backe selten, aber ich koche gern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0033",
+      "text": "Ich laufe nie am Abend.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0034",
+      "text": "Am Wochenende habe ich frei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0035",
+      "text": "Was hast du am Wochenende vor?",
+      "quelle": "tatoeba:633574",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #633574 von Dejo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0036",
+      "text": "Hast du am Montag frei?",
+      "quelle": "tatoeba:10053218",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #10053218 von wolfgangth (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0037",
+      "text": "Nein, am Montag habe ich nicht frei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0038",
+      "text": "Ich habe heute wenig Zeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0039",
+      "text": "Die Kinder lesen sehr wenig.",
+      "quelle": "tatoeba:6776914",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6776914 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0040",
+      "text": "Opa Kamāl ist sehr aktiv.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0041",
+      "text": "Meine Oma ist auch sehr aktiv.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0042",
+      "text": "Am Wochenende sind wir immer zusammen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0043",
+      "text": "Ich laufe jeden Tag eine Stunde.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0044",
+      "text": "Hast du heute frei?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0045",
+      "text": "Mein Bruder spielt nie Schach.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0046",
+      "text": "Wie oft malst du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0047",
+      "text": "Backst du oft?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0048",
+      "text": "Nein, nur selten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0049",
+      "text": "Bist du am Wochenende aktiv?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0050",
+      "text": "Heute hat unsere Mannschaft ein Spiel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0051",
+      "text": "Unsere Mannschaft ist sehr gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0052",
+      "text": "Die Mädchen sind ein tolles Team.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0053",
+      "text": "Wer gewinnt das Spiel?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0054",
+      "text": "Wir gewinnen heute!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0055",
+      "text": "Er verliert immer.",
+      "quelle": "tatoeba:8478809",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8478809 von Luiaard (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0056",
+      "text": "Wir verlieren, aber das macht nichts.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0057",
+      "text": "Fußball macht Spaß!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0058",
+      "text": "Das Spiel macht viel Spaß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0059",
+      "text": "Viel Spaß!",
+      "quelle": "tatoeba:521359",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #521359 von Espi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0060",
+      "text": "Versuch es noch mal!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0061",
+      "text": "Wo ist mein König?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0062",
+      "text": "Dein König steht hier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0063",
+      "text": "Im Schach hat jeder einen König.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0064",
+      "text": "Wie viele Leute sind in deiner Gruppe?",
+      "quelle": "tatoeba:2460366",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2460366 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0065",
+      "text": "In unserer Gruppe sind zehn Kinder.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0066",
+      "text": "Die Mädchen haben auch eine Mannschaft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0067",
+      "text": "Ich liebe Spiele.",
+      "quelle": "tatoeba:1842021",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1842021 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0068",
+      "text": "Das Spiel ist toll!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0069",
+      "text": "Ich verliere nicht gern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0070",
+      "text": "Warum gewinnst du immer?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0071",
+      "text": "Ich spiele jeden Tag Schach.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0072",
+      "text": "Selin macht ein Tor!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0073",
+      "text": "Wer ist in deiner Mannschaft?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0074",
+      "text": "Can und Mert sind in meiner Mannschaft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0075",
+      "text": "Das macht keinen Spaß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0076",
+      "text": "Ich lade dich zum Essen ein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0077",
+      "text": "Elif lädt Laylā zum Basteln ein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0078",
+      "text": "Ich lade meine Freunde ein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0079",
+      "text": "Wen lädst du ein?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0080",
+      "text": "Wir spielen Fußball. Kommst du mit?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0081",
+      "text": "Klar, ich komme gern mit!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0082",
+      "text": "Das ist eine super Idee!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0083",
+      "text": "Gute Idee!",
+      "quelle": "tatoeba:4909192",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4909192 von raggione (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0084",
+      "text": "Das klingt gut!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0085",
+      "text": "Wann können wir uns treffen?",
+      "quelle": "tatoeba:8445442",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8445442 von maaster (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0086",
+      "text": "Wir treffen uns um drei Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0087",
+      "text": "Wo treffen wir uns?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0088",
+      "text": "Wir treffen uns hier am Fluss.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0089",
+      "text": "Elif trifft ihre Freundin Laylā.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0090",
+      "text": "Jan trifft seinen Freund Yazan.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0091",
+      "text": "Wollen wir zusammen spielen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0092",
+      "text": "Gemeinsam macht es mehr Spaß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0093",
+      "text": "Ich freue mich sehr!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0094",
+      "text": "Opa freut sich sehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0095",
+      "text": "Wir freuen uns sehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0096",
+      "text": "Ich wünsche dir viel Spaß!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0097",
+      "text": "Ich wünsche dir alles Gute!",
+      "quelle": "tatoeba:8634529",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8634529 von Melang (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0098",
+      "text": "Ich wünsche dir einen schönen Abend!",
+      "quelle": "tatoeba:3179622",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3179622 von eschfirm (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0099",
+      "text": "Klar, das machen wir!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0100",
+      "text": "Am Samstag kommen meine Freunde.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0101",
+      "text": "Jeder braucht Freunde.",
+      "quelle": "tatoeba:1898674",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1898674 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0102",
+      "text": "Toll, ich freue mich!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0103",
+      "text": "Hast du Lust? Wir malen zusammen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0104",
+      "text": "Super! Ich habe Lust.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0105",
+      "text": "Sehen wir zusammen einen Film?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0106",
+      "text": "Ich kann leider nicht, denn ich muss lernen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0107",
+      "text": "Warum kannst du nicht kommen?",
+      "quelle": "tatoeba:392876",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #392876 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0108",
+      "text": "Ich kann nicht, denn Oma kommt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0109",
+      "text": "Ich komme nicht, denn ich habe keine Zeit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0110",
+      "text": "Leider nicht, denn ich habe Schule.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0111",
+      "text": "Wir sehen heute einen Film.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0112",
+      "text": "Der Film ist sehr interessant.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0113",
+      "text": "Emre macht ein Video vom Spiel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0114",
+      "text": "Wir sehen ein Video mit Tieren.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0115",
+      "text": "Ich mache ein Video für Opa.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0116",
+      "text": "Oma liest eine Geschichte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0117",
+      "text": "Die Geschichte ist sehr interessant.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0118",
+      "text": "Ich mag Schach, denn es ist interessant.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0119",
+      "text": "Ich laufe, denn mein Fahrrad ist kaputt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0120",
+      "text": "Ich sehe nicht gern Filme.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0121",
+      "text": "Ich lese lieber Geschichten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0122",
+      "text": "Schade! Hast du am Sonntag frei?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0123",
+      "text": "Am Sonntag habe ich Zeit. Gute Idee!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0124",
+      "text": "Warum lernst du Türkisch?",
+      "quelle": "tatoeba:7769917",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7769917 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e08.s0125",
+      "text": "Ich lerne Türkisch, denn meine Freunde sprechen Türkisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0126",
+      "text": "Heute nicht, aber morgen habe ich frei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0127",
+      "text": "Für Kinder: Spiel und Spaß am Nachmittag",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0128",
+      "text": "Jede Woche gibt es drei tolle Angebote.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0129",
+      "text": "Am Montag lesen wir zusammen Geschichten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0130",
+      "text": "Am Mittwoch spielen wir Schach. Das ist nicht schwer!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0131",
+      "text": "Am Freitag basteln und malen wir.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0132",
+      "text": "Alle Gruppen starten um 15 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0133",
+      "text": "Ihr bezahlt nichts. Kommt gern mit Freunden!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0134",
+      "text": "Am Montag spielen die Kinder Schach.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0135",
+      "text": "Am Freitag malen die Kinder.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0136",
+      "text": "Die Gruppen sind sehr groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0137",
+      "text": "Wann starten die Gruppen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0138",
+      "text": "Die Gruppen starten um 15 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0139",
+      "text": "Die Gruppen starten am Abend.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0140",
+      "text": "Die Gruppen starten am Samstag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0141",
+      "text": "Ein freier Nachmittag an der Lahn",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0142",
+      "text": "Es ist Samstag, und alle haben frei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0143",
+      "text": "Am Nachmittag sind alle zusammen an der Lahn.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0144",
+      "text": "Jan und Yazan spielen mit Freunden Fußball.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0145",
+      "text": "Yazan, der Ball! Schnell!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0146",
+      "text": "Tor! Unser Team gewinnt!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0147",
+      "text": "Elif und Laylā fahren Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0148",
+      "text": "Laylā, fahren wir noch eine Runde?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0149",
+      "text": "Klar! Fahrrad fahren macht Spaß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0150",
+      "text": "Opa Kamāl spielt mit dem Nachbarn Konrad Schach.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0151",
+      "text": "Sie spielen an einem Tisch am Wasser.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0152",
+      "text": "Kamāl, heute gewinne ich!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0153",
+      "text": "Versuch es, Konrad!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0154",
+      "text": "Opa Kamāl gewinnt das Spiel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0155",
+      "text": "Du spielst sehr gut, Kamāl!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0156",
+      "text": "Danke! Morgen spielen wir noch mal.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0157",
+      "text": "Am Abend gehen alle zusammen nach Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0158",
+      "text": "Was für ein toller Tag!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0159",
+      "text": "Was spielen Jan und Yazan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0160",
+      "text": "Sie spielen Fußball.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0161",
+      "text": "Sie spielen Schach.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0162",
+      "text": "Sie fahren Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0163",
+      "text": "Was machen die Mädchen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0164",
+      "text": "Sie backen einen Kuchen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0165",
+      "text": "Sie malen ein Bild.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0166",
+      "text": "Opa Kamāl gewinnt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0167",
+      "text": "Konrad gewinnt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0168",
+      "text": "Elif gewinnt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0169",
+      "text": "Wann spielen Kamāl und Konrad noch mal?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0170",
+      "text": "Sie spielen morgen noch mal.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0171",
+      "text": "Sie spielen nie mehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0172",
+      "text": "Kommst du mit zum Basteln?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0173",
+      "text": "Laylā, hast du am Montag frei?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0174",
+      "text": "Leider nicht, denn ich lerne mit Oma.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0175",
+      "text": "Schade! Bist du am Freitag frei?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0176",
+      "text": "Ja, am Freitag habe ich Zeit. Warum?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0177",
+      "text": "Wir basteln in einer Gruppe. Kommst du mit?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0178",
+      "text": "Was macht ihr in der Gruppe?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0179",
+      "text": "Wir malen und basteln zusammen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0180",
+      "text": "Das klingt toll! Ich komme gern mit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0181",
+      "text": "Super! Ich freue mich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0182",
+      "text": "Warum kann Laylā am Montag nicht?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0183",
+      "text": "Sie lernt mit Oma.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0184",
+      "text": "Sie spielt Fußball.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0185",
+      "text": "Sie hat kein Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0186",
+      "text": "Was machen die Kinder in der Gruppe?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0187",
+      "text": "Sie malen und basteln zusammen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0188",
+      "text": "Sie spielen zusammen Schach.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0189",
+      "text": "Sie sehen einen Film.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0190",
+      "text": "Kommt Laylā mit zum Basteln?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0191",
+      "text": "Ja, klar! Sie kommt gern mit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0192",
+      "text": "Nein, sie spielt lieber Fußball.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0193",
+      "text": "Ich male gern, aber ich backe nicht gern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0194",
+      "text": "Ich spiele gern Schach, aber nicht Fußball.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0195",
+      "text": "Kommst du mit? Wir spielen Schach.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0196",
+      "text": "Ja, gern! Das klingt toll.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0197",
+      "text": "Am Samstag kann ich nicht, denn ich lerne.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e08.s0198",
+      "text": "Am Wochenende fahre ich oft Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e08.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, was ich in meiner Freizeit gern mache.",
+        "tr": "Boş zamanımda neyi severek yaptığımı söyleyebilirim.",
+        "ar": "أستطيع أن أقول ماذا أحب أن أفعل في وقت فراغي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e08.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.spielen",
+          "ablenker": ["de.a1.e05.essen", "de.a1.e04.gehen"]
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.fussball",
+          "ablenker": ["de.a1.e08.schach", "de.a1.e08.fahrrad"]
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e08.malen", "de.a1.e08.basteln", "de.a1.e08.backen", "de.a1.e08.bauen", "de.a1.e08.laufen", "de.a1.e08.fahren"]
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e08.ball",
+          "ablenker": ["de.a1.e08.tier", "de.a1.e03.tisch"]
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e08.s0002",
+          "ablenker": ["de.a1.e08.s0006", "de.a1.e08.s0014"]
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0001"
+            }
+          ],
+          "antwort": "de.a1.e08.s0002",
+          "ablenker": ["de.a1.e08.s0020", "de.a1.e08.s0022"]
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0006",
+          "wort": 1,
+          "ablenker": ["fahre", "fahren"]
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0007",
+          "nach": "ziel",
+          "alternativen": ["Gern malt Laylā Tiere.", "Tiere malt Laylā gern."],
+          "ablenker": ["male", "Bilder"]
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0020"
+            }
+          ],
+          "antwort": "de.a1.e08.s0021",
+          "ablenker": ["de.a1.e08.s0023", "de.a1.e08.s0017"]
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e08.laufen",
+          "ablenker": ["de.a1.e06.kaufen"]
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0025",
+          "wort": 2,
+          "ablenker": ["kein", "keine"]
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e08.s0010",
+          "ablenker": ["de.a1.e08.s0008", "de.a1.e08.s0023"]
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0009",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e08.s0193"
+        },
+        {
+          "schluessel": "de.a1.e08.l01.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e08.s0012"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e08.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wie oft ich etwas mache und wann ich frei habe.",
+        "tr": "Bir şeyi ne sıklıkla yaptığımı ve ne zaman boş olduğumu söyleyebilirim.",
+        "ar": "أستطيع أن أقول كم مرة أفعل شيئًا ومتى أكون غير مشغول."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e08.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.oft",
+          "ablenker": ["de.a1.e08.selten", "de.a1.e08.nie"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.immer",
+          "ablenker": ["de.a1.e08.manchmal", "de.a1.e04.heute"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e08.immer", "de.a1.e08.oft", "de.a1.e08.manchmal", "de.a1.e08.selten", "de.a1.e08.nie", "de.a1.e08.aktiv"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e08.s0028",
+          "ablenker": ["de.a1.e08.s0046", "de.a1.e08.s0047"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0028"
+            }
+          ],
+          "antwort": "de.a1.e08.s0029",
+          "ablenker": ["de.a1.e08.s0039", "de.a1.e08.s0040"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0031",
+          "wort": 1,
+          "ablenker": ["malst", "malt"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.wochenende",
+          "ablenker": ["de.a1.e04.woche", "de.a1.e04.abend"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0034",
+          "nach": "ziel",
+          "alternativen": ["Ich habe am Wochenende frei."],
+          "ablenker": ["hast", "Woche"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0036"
+            }
+          ],
+          "antwort": "de.a1.e08.s0037",
+          "ablenker": ["de.a1.e08.s0030", "de.a1.e08.s0045"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e08.frei",
+          "ablenker": ["de.a1.e04.spaet", "de.a1.e03.klein"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0032",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.wenig",
+          "ablenker": ["de.a1.e02.viel", "de.a1.e05.schnell"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0047"
+            }
+          ],
+          "antwort": "de.a1.e08.s0048",
+          "ablenker": ["de.a1.e08.s0049", "de.a1.e08.s0041"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e08.nie",
+          "ablenker": ["de.a1.e01.wie"]
+        },
+        {
+          "schluessel": "de.a1.e08.l02.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e08.s0043"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e08.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Sport und Spiele sprechen: gewinnen, verlieren, Spaß haben.",
+        "tr": "Spor ve oyunlar hakkında konuşabilirim: kazanmak, kaybetmek, eğlenmek.",
+        "ar": "أستطيع أن أتحدث عن الرياضة والألعاب: الفوز والخسارة والمتعة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e08.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.gewinnen",
+          "ablenker": ["de.a1.e08.verlieren", "de.a1.e08.versuchen"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.mannschaft",
+          "ablenker": ["de.a1.e08.gruppe", "de.a1.e02.familie"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e08.spiel", "de.a1.e08.spass", "de.a1.e08.maedchen", "de.a1.e08.koenig", "de.a1.e08.team", "de.a1.e08.gruppe"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e08.s0053",
+          "ablenker": ["de.a1.e08.s0054", "de.a1.e08.s0069"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0073"
+            }
+          ],
+          "antwort": "de.a1.e08.s0074",
+          "ablenker": ["de.a1.e08.s0068", "de.a1.e08.s0060"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0056",
+          "wort": 2,
+          "ablenker": ["oder", "wie"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0057",
+          "nach": "ziel",
+          "ablenker": ["mache", "Spiel"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0061"
+            }
+          ],
+          "antwort": "de.a1.e08.s0062",
+          "ablenker": ["de.a1.e08.s0072", "de.a1.e08.s0059"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0070"
+            }
+          ],
+          "antwort": "de.a1.e08.s0071",
+          "ablenker": ["de.a1.e08.s0066", "de.a1.e08.s0065"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0075",
+          "wort": 2,
+          "ablenker": ["kein", "keine"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e08.spiel",
+          "ablenker": ["de.a1.e02.viel"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.koenig",
+          "ablenker": ["de.a1.e06.herr", "de.a1.e02.mann"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0050"
+            }
+          ],
+          "antwort": "de.a1.e08.s0059",
+          "ablenker": ["de.a1.e08.s0045", "de.a1.e08.s0062"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e08.s0052",
+          "ablenker": ["de.a1.e08.s0051", "de.a1.e08.s0072"]
+        },
+        {
+          "schluessel": "de.a1.e08.l03.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e08.s0069"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e08.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann jemanden einladen und eine Einladung annehmen.",
+        "tr": "Birini davet edebilir ve bir daveti kabul edebilirim.",
+        "ar": "أستطيع أن أدعو شخصًا وأن أقبل دعوة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e08.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.einladen",
+          "ablenker": ["de.a1.e08.treffen", "de.a1.e06.bezahlen"]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.idee",
+          "ablenker": ["de.a1.e06.problem", "de.a1.e06.preis"]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e08.toll",
+            "de.a1.e08.klar",
+            "de.a1.e08.zusammen",
+            "de.a1.e08.freund",
+            "de.a1.e08.wuenschen",
+            "de.a1.e08.klingen"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e08.s0080",
+          "ablenker": ["de.a1.e08.s0091", "de.a1.e08.s0105"]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0080"
+            }
+          ],
+          "antwort": "de.a1.e08.s0081",
+          "ablenker": ["de.a1.e08.s0089", "de.a1.e08.s0078"]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0077",
+          "wort": 1,
+          "ablenker": ["lade", "ladet"]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0086",
+          "nach": "ziel",
+          "alternativen": ["Um drei Uhr treffen wir uns."],
+          "ablenker": ["trefft", "Tag"]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0079"
+            }
+          ],
+          "antwort": "de.a1.e08.s0078",
+          "ablenker": ["de.a1.e08.s0083", "de.a1.e08.s0084"]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0091"
+            }
+          ],
+          "antwort": "de.a1.e08.s0082",
+          "ablenker": ["de.a1.e08.s0101", "de.a1.e08.s0094"]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0093",
+          "wort": 2,
+          "ablenker": ["dich", "sich"]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.freuen",
+          "ablenker": ["de.a1.e05.schmecken", "de.a1.e03.suchen"]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.gemeinsam",
+          "ablenker": ["de.a1.e05.ohne", "de.a1.e06.sonst"]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e08.s0096",
+          "ablenker": ["de.a1.e08.s0097", "de.a1.e08.s0098"]
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e08.s0195"
+        },
+        {
+          "schluessel": "de.a1.e08.l04.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e08.s0092"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e08.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann absagen und mit „denn“ einen Grund nennen.",
+        "tr": "Bir daveti reddedebilir ve „denn“ ile bir sebep söyleyebilirim.",
+        "ar": "أستطيع أن أعتذر عن دعوة وأن أذكر السبب باستخدام „denn“."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e08.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.denn",
+          "ablenker": ["de.a1.e03.aber", "de.a1.e03.oder"]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.warum",
+          "ablenker": ["de.a1.e01.wo", "de.a1.e04.wann"]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e08.film", "de.a1.e08.video", "de.a1.e08.geschichte", "de.a1.e08.interessant", "de.a1.e08.tier"]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e08.s0106",
+          "ablenker": ["de.a1.e08.s0108", "de.a1.e08.s0110"]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0107"
+            }
+          ],
+          "antwort": "de.a1.e08.s0108",
+          "ablenker": ["de.a1.e08.s0112", "de.a1.e08.s0114"]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0106",
+          "wort": 4,
+          "ablenker": ["warum", "wann"]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0111",
+          "nach": "ziel",
+          "alternativen": ["Heute sehen wir einen Film.", "Einen Film sehen wir heute."],
+          "ablenker": ["sieht", "Video"]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a09",
+          "typ": "lesen_fragen",
+          "titel": "de.a1.e08.s0127",
+          "absaetze": ["de.a1.e08.s0128", "de.a1.e08.s0129", "de.a1.e08.s0130", "de.a1.e08.s0131", "de.a1.e08.s0132", "de.a1.e08.s0133"],
+          "glossen": ["de.a1.e08.geschichte", "de.a1.e08.schach", "de.a1.e08.basteln", "de.a1.e08.gruppe"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e08.s0134",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e08.s0135",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e08.s0136",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a1.e08.s0137",
+              "antwort": "de.a1.e08.s0138",
+              "ablenker": ["de.a1.e08.s0139", "de.a1.e08.s0140"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0080"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0110"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0122"
+            }
+          ],
+          "antwort": "de.a1.e08.s0123",
+          "ablenker": ["de.a1.e08.s0117", "de.a1.e08.s0113"]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0120",
+          "wort": 4,
+          "ablenker": ["Film", "Filmen"]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0124"
+            }
+          ],
+          "antwort": "de.a1.e08.s0125",
+          "ablenker": ["de.a1.e08.s0115", "de.a1.e08.s0121"]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e08.s0118",
+          "ablenker": ["de.a1.e08.s0119", "de.a1.e08.s0125"]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e08.denn",
+          "ablenker": ["de.a1.e04.dann"]
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e08.s0197"
+        },
+        {
+          "schluessel": "de.a1.e08.l05.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e08.s0108"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e08.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über einen freien Nachmittag und ein Gespräch über eine Einladung verstehen.",
+        "tr": "Boş bir öğleden sonra hakkındaki bir hikâyeyi ve bir davetle ilgili bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن فترة بعد الظهر في يوم عطلة وحوارًا عن دعوة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e08.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a1.e08.s0141",
+          "zeilen": [
+            {
+              "satz": "de.a1.e08.s0142"
+            },
+            {
+              "satz": "de.a1.e08.s0143"
+            },
+            {
+              "satz": "de.a1.e08.s0144"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0145"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0146"
+            },
+            {
+              "satz": "de.a1.e08.s0147"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0148"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0149"
+            },
+            {
+              "satz": "de.a1.e08.s0150"
+            },
+            {
+              "satz": "de.a1.e08.s0151"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0152"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0153"
+            },
+            {
+              "satz": "de.a1.e08.s0154"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0155"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0156"
+            },
+            {
+              "satz": "de.a1.e08.s0157"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e08.s0158"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.a1.e08.s0159",
+              "antwort": "de.a1.e08.s0160",
+              "ablenker": ["de.a1.e08.s0161", "de.a1.e08.s0162"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a1.e08.s0163",
+              "antwort": "de.a1.e08.s0162",
+              "ablenker": ["de.a1.e08.s0164", "de.a1.e08.s0165"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a1.e08.s0053",
+              "antwort": "de.a1.e08.s0166",
+              "ablenker": ["de.a1.e08.s0167", "de.a1.e08.s0168"]
+            },
+            {
+              "nach": 14,
+              "frage": "de.a1.e08.s0169",
+              "antwort": "de.a1.e08.s0170",
+              "ablenker": ["de.a1.e08.s0171"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e08.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0150",
+          "wort": 2,
+          "ablenker": ["spielen", "spielst"]
+        },
+        {
+          "schluessel": "de.a1.e08.l06.a03",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0147",
+          "nach": "ziel",
+          "alternativen": ["Laylā und Elif fahren Fahrrad.", "Fahrrad fahren Elif und Laylā.", "Fahrrad fahren Laylā und Elif."],
+          "ablenker": ["fährt", "Ball"]
+        },
+        {
+          "schluessel": "de.a1.e08.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e08.s0154",
+          "ablenker": ["de.a1.e08.s0157", "de.a1.e08.s0151"]
+        },
+        {
+          "schluessel": "de.a1.e08.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.a1.e08.s0172",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0173"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0174"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0175"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0176"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0177"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0178"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0179"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0180"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0181"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.a1.e08.s0182",
+              "antwort": "de.a1.e08.s0183",
+              "ablenker": ["de.a1.e08.s0184", "de.a1.e08.s0185"]
+            },
+            {
+              "nach": 6,
+              "frage": "de.a1.e08.s0186",
+              "antwort": "de.a1.e08.s0187",
+              "ablenker": ["de.a1.e08.s0188", "de.a1.e08.s0189"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a1.e08.s0190",
+              "antwort": "de.a1.e08.s0191",
+              "ablenker": ["de.a1.e08.s0192"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e08.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0173"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0174"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0175"
+            }
+          ],
+          "antwort": "de.a1.e08.s0176",
+          "ablenker": ["de.a1.e08.s0179", "de.a1.e08.s0158"]
+        },
+        {
+          "schluessel": "de.a1.e08.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0174",
+          "wort": 4,
+          "ablenker": ["lernst", "lernt"]
+        },
+        {
+          "schluessel": "de.a1.e08.l06.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0156",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e08.l06.a09",
+          "typ": "sprechen",
+          "satz": "de.a1.e08.s0196"
+        },
+        {
+          "schluessel": "de.a1.e08.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e08.s0177",
+          "ablenker": ["de.a1.e08.s0178", "de.a1.e08.s0173"]
+        },
+        {
+          "schluessel": "de.a1.e08.l06.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0152"
+            }
+          ],
+          "antwort": "de.a1.e08.s0153",
+          "ablenker": ["de.a1.e08.s0149", "de.a1.e08.s0164"]
+        },
+        {
+          "schluessel": "de.a1.e08.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0144",
+          "nach": "ziel",
+          "alternativen": [
+            "Yazan und Jan spielen mit Freunden Fußball.",
+            "Jan und Yazan spielen Fußball mit Freunden.",
+            "Yazan und Jan spielen Fußball mit Freunden.",
+            "Mit Freunden spielen Jan und Yazan Fußball.",
+            "Mit Freunden spielen Yazan und Jan Fußball.",
+            "Fußball spielen Jan und Yazan mit Freunden.",
+            "Fußball spielen Yazan und Jan mit Freunden."
+          ],
+          "ablenker": ["spielt", "Schach"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e08.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann über Hobbys sprechen, einladen und absagen.",
+        "tr": "Hobiler hakkında konuşabilir, davet edebilir ve bir daveti reddedebilirim.",
+        "ar": "أستطيع أن أتحدث عن الهوايات وأن أدعو وأن أعتذر."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e08.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.fahrrad",
+          "ablenker": ["de.a1.e08.fussball", "de.a1.e08.ball"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.selten",
+          "ablenker": ["de.a1.e08.oft", "de.a1.e08.immer"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e08.spielen",
+            "de.a1.e08.gewinnen",
+            "de.a1.e08.verlieren",
+            "de.a1.e08.treffen",
+            "de.a1.e08.einladen",
+            "de.a1.e08.versuchen"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e08.s0034",
+          "ablenker": ["de.a1.e08.s0044", "de.a1.e08.s0038"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0035"
+            }
+          ],
+          "antwort": "de.a1.e08.s0011",
+          "ablenker": ["de.a1.e08.s0064", "de.a1.e08.s0003"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0024",
+          "wort": 2,
+          "ablenker": ["spielt", "spielst"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0076",
+          "nach": "ziel",
+          "alternativen": ["Zum Essen lade ich dich ein.", "Dich lade ich zum Essen ein."],
+          "ablenker": ["lädt", "Tee"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e08.klar",
+          "ablenker": ["de.a1.e03.neu", "de.a1.e06.teuer"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0103"
+            }
+          ],
+          "antwort": "de.a1.e08.s0104",
+          "ablenker": ["de.a1.e08.s0055", "de.a1.e08.s0065"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0058",
+          "wort": 1,
+          "ablenker": ["Spiele", "Ball"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e08.s0094",
+          "ablenker": ["de.a1.e08.s0095", "de.a1.e08.s0102"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e08.frei",
+          "ablenker": ["de.a1.e02.drei"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0090",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.maedchen",
+          "ablenker": ["de.a1.e02.kind", "de.a1.e02.frau"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0085"
+            }
+          ],
+          "antwort": "de.a1.e08.s0086",
+          "ablenker": ["de.a1.e08.s0099", "de.a1.e08.s0083"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a16",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0063",
+          "wort": 4,
+          "ablenker": ["ein", "eine"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a17",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0087"
+            }
+          ],
+          "antwort": "de.a1.e08.s0088",
+          "ablenker": ["de.a1.e08.s0067", "de.a1.e08.s0004"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a18",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e08.immer",
+          "ablenker": ["de.a1.e03.zimmer"]
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a19",
+          "typ": "sprechen",
+          "satz": "de.a1.e08.s0198"
+        },
+        {
+          "schluessel": "de.a1.e08.l07.a20",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e08.s0042"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e08.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich über meine Hobbys sprechen und jemanden einladen oder absagen kann.",
+        "tr": "Hobilerim hakkında konuşabildiğimi, birini davet edebildiğimi ya da bir daveti reddedebildiğimi gösteririm.",
+        "ar": "أُظهر أنني أستطيع أن أتحدث عن هواياتي وأن أدعو شخصًا أو أعتذر عن دعوة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e08.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.manchmal",
+          "ablenker": ["de.a1.e08.nie", "de.a1.e08.immer"]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e08.einladen",
+          "ablenker": ["de.a1.e06.kaufen", "de.a1.e05.holen"]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e08.fussball",
+            "de.a1.e08.schach",
+            "de.a1.e08.fahrrad",
+            "de.a1.e08.film",
+            "de.a1.e08.geschichte",
+            "de.a1.e08.gruppe"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0018"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0019"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0091"
+            }
+          ],
+          "antwort": "de.a1.e08.s0099",
+          "ablenker": ["de.a1.e08.s0061", "de.a1.e08.s0117"]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0016"
+            }
+          ],
+          "antwort": "de.a1.e08.s0017",
+          "ablenker": ["de.a1.e08.s0013", "de.a1.e08.s0033"]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0010",
+          "wort": 2,
+          "ablenker": ["backe", "backen"],
+          "alternativen": ["bäckt"]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0116",
+          "nach": "ziel",
+          "alternativen": ["Eine Geschichte liest Oma."],
+          "ablenker": ["lese", "Film"]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e08.super",
+          "ablenker": ["de.a1.e03.klein", "de.a1.e04.spaet"]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0044"
+            }
+          ],
+          "antwort": "de.a1.e08.s0126",
+          "ablenker": ["de.a1.e08.s0068", "de.a1.e08.s0051"]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e08.s0108",
+          "wort": 3,
+          "ablenker": ["warum", "wie"]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e08.s0112",
+          "ablenker": ["de.a1.e08.s0117", "de.a1.e08.s0005"]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e08.tier",
+          "ablenker": ["de.a1.e02.vier"]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e08.s0109",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0026"
+            }
+          ],
+          "antwort": "de.a1.e08.s0027",
+          "ablenker": ["de.a1.e08.s0015", "de.a1.e08.s0088"]
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e08.s0194"
+        },
+        {
+          "schluessel": "de.a1.e08.l08.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e08.s0100"
+        }
+      ]
+    }
+  ]
+}

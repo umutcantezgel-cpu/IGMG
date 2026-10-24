@@ -1,0 +1,4200 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "automatisch_geprueft",
+  "kurs": "de",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "de.a2.e13",
+    "reihenfolge": 14,
+    "thema": {
+      "de": "Was willst du werden?",
+      "tr": "Ne olmak istiyorsun?",
+      "ar": "ماذا تريد أن تصبح في المستقبل؟"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann sagen, welchen Beruf ich lernen möchte und warum.",
+        "tr": "Hangi mesleği öğrenmek istediğimi ve nedenini söyleyebilirim.",
+        "ar": "أستطيع أن أقول أيّ مهنة أريد أن أتعلّمها ولماذا."
+      },
+      {
+        "de": "Ich kann einen Beruf mit seinen Aufgaben und Arbeitszeiten beschreiben.",
+        "tr": "Bir mesleği görevleri ve çalışma saatleriyle anlatabilirim.",
+        "ar": "أستطيع أن أصف مهنة مع مهامّها وأوقات العمل فيها."
+      }
+    ],
+    "symbol": "briefcase",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a2.e13.solcher",
+      "lemma": "solcher",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Demonstrativartikel und -pronomen"
+      },
+      "formen": {
+        "endung_e": "solche",
+        "endung_en": "solchen",
+        "endung_es": "solches",
+        "endung_em": "solchem"
+      },
+      "frequenzRang": 198,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.erfolgreich",
+      "lemma": "erfolgreich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "erfolgreiche",
+        "endung_en": "erfolgreichen",
+        "endung_er": "erfolgreicher",
+        "endung_es": "erfolgreiches",
+        "endung_em": "erfolgreichem",
+        "komparativ": "erfolgreicher",
+        "superlativ": "erfolgreichsten",
+        "superlativ_e": "erfolgreichste"
+      },
+      "frequenzRang": 542,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.reich",
+      "lemma": "reich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "reiche",
+        "endung_en": "reichen",
+        "endung_er": "reicher",
+        "endung_es": "reiches",
+        "endung_em": "reichem",
+        "komparativ": "reicher",
+        "superlativ": "reichsten",
+        "superlativ_e": "reichste"
+      },
+      "frequenzRang": 538,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.schwierig",
+      "lemma": "schwierig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "schwierige",
+        "endung_en": "schwierigen",
+        "endung_er": "schwieriger",
+        "endung_es": "schwieriges",
+        "endung_em": "schwierigem",
+        "komparativ": "schwieriger",
+        "superlativ": "schwierigsten",
+        "superlativ_e": "schwierigste"
+      },
+      "frequenzRang": 809,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.anstrengend",
+      "lemma": "anstrengend",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "anstrengende",
+        "endung_en": "anstrengenden",
+        "endung_er": "anstrengender",
+        "endung_es": "anstrengendes",
+        "endung_em": "anstrengendem",
+        "komparativ": "anstrengender",
+        "superlativ": "anstrengendsten",
+        "superlativ_e": "anstrengendste"
+      },
+      "frequenzRang": 3374,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.verantwortlich",
+      "lemma": "verantwortlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "verantwortliche",
+        "endung_en": "verantwortlichen",
+        "endung_er": "verantwortlicher",
+        "endung_es": "verantwortliches",
+        "endung_em": "verantwortlichem"
+      },
+      "frequenzRang": 831,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.selbststaendig",
+      "lemma": "selbstständig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "selbstständige",
+        "endung_en": "selbstständigen",
+        "endung_er": "selbstständiger",
+        "endung_es": "selbstständiges",
+        "endung_em": "selbstständigem"
+      },
+      "frequenzRang": 2862,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.entwickeln",
+      "lemma": "entwickeln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "entwickeln",
+        "praes_ich": "entwickle",
+        "praes_du": "entwickelst",
+        "praes_er_sie_es": "entwickelt",
+        "praes_wir": "entwickeln",
+        "praes_ihr": "entwickelt",
+        "praes_sie_Sie": "entwickeln",
+        "partizip_2": "entwickelt"
+      },
+      "frequenzRang": 578,
+      "quelle": "wiktionary:de:entwickeln",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚entwickeln‘ (https://de.wiktionary.org/wiki/entwickeln), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.bestehen",
+      "lemma": "bestehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bestehen",
+        "praes_ich": "bestehe",
+        "praes_du": "bestehst",
+        "praes_er_sie_es": "besteht",
+        "praes_wir": "bestehen",
+        "praes_ihr": "besteht",
+        "praes_sie_Sie": "bestehen",
+        "partizip_2": "bestanden"
+      },
+      "frequenzRang": 274,
+      "quelle": "wiktionary:de:bestehen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bestehen‘ (https://de.wiktionary.org/wiki/bestehen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.unterstuetzen",
+      "lemma": "unterstützen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "unterstützen",
+        "praes_ich": "unterstütze",
+        "praes_du": "unterstützt",
+        "praes_er_sie_es": "unterstützt",
+        "praes_wir": "unterstützen",
+        "praes_ihr": "unterstützt",
+        "praes_sie_Sie": "unterstützen",
+        "partizip_2": "unterstützt"
+      },
+      "frequenzRang": 500,
+      "quelle": "wiktionary:de:unterstützen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚unterstützen‘ (https://de.wiktionary.org/wiki/unterstützen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.uebernehmen",
+      "lemma": "übernehmen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "übernehmen",
+        "praes_ich": "übernehme",
+        "praes_du": "übernimmst",
+        "praes_er_sie_es": "übernimmt",
+        "praes_wir": "übernehmen",
+        "praes_ihr": "übernehmt",
+        "praes_sie_Sie": "übernehmen",
+        "partizip_2": "übernommen"
+      },
+      "frequenzRang": 499,
+      "quelle": "wiktionary:de:übernehmen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚übernehmen‘ (https://de.wiktionary.org/wiki/übernehmen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.bieten",
+      "lemma": "bieten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bieten",
+        "praes_ich": "biete",
+        "praes_du": "bietest",
+        "praes_er_sie_es": "bietet",
+        "praes_wir": "bieten",
+        "praes_ihr": "bietet",
+        "praes_sie_Sie": "bieten",
+        "partizip_2": "geboten"
+      },
+      "frequenzRang": 329,
+      "quelle": "wiktionary:de:bieten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bieten‘ (https://de.wiktionary.org/wiki/bieten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.kuemmern",
+      "lemma": "kümmern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "kümmern",
+        "praes_ich": "kümmere",
+        "praes_du": "kümmerst",
+        "praes_er_sie_es": "kümmert",
+        "praes_wir": "kümmern",
+        "praes_ihr": "kümmert",
+        "praes_sie_Sie": "kümmern",
+        "imp_du": "kümmere",
+        "imp_ihr": "kümmert",
+        "partizip_2": "gekümmert",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 1107,
+      "quelle": "wiktionary:de:kümmern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚kümmern‘ (https://de.wiktionary.org/wiki/kümmern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.pflegen",
+      "lemma": "pflegen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "pflegen",
+        "praes_ich": "pflege",
+        "praes_du": "pflegst",
+        "praes_er_sie_es": "pflegt",
+        "praes_wir": "pflegen",
+        "praes_ihr": "pflegt",
+        "praes_sie_Sie": "pflegen",
+        "partizip_2": "gepflegt"
+      },
+      "frequenzRang": 2113,
+      "quelle": "wiktionary:de:pflegen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚pflegen‘ (https://de.wiktionary.org/wiki/pflegen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.reparieren",
+      "lemma": "reparieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "reparieren",
+        "praes_ich": "repariere",
+        "praes_du": "reparierst",
+        "praes_er_sie_es": "repariert",
+        "praes_wir": "reparieren",
+        "praes_ihr": "repariert",
+        "praes_sie_Sie": "reparieren",
+        "partizip_2": "repariert"
+      },
+      "frequenzRang": 3776,
+      "quelle": "wiktionary:de:reparieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚reparieren‘ (https://de.wiktionary.org/wiki/reparieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.organisieren",
+      "lemma": "organisieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "organisieren",
+        "praes_ich": "organisiere",
+        "praes_du": "organisierst",
+        "praes_er_sie_es": "organisiert",
+        "praes_wir": "organisieren",
+        "praes_ihr": "organisiert",
+        "praes_sie_Sie": "organisieren",
+        "partizip_2": "organisiert"
+      },
+      "frequenzRang": 1635,
+      "quelle": "wiktionary:de:organisieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚organisieren‘ (https://de.wiktionary.org/wiki/organisieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.studieren",
+      "lemma": "studieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "studieren",
+        "praes_ich": "studiere",
+        "praes_du": "studierst",
+        "praes_er_sie_es": "studiert",
+        "praes_wir": "studieren",
+        "praes_ihr": "studiert",
+        "praes_sie_Sie": "studieren",
+        "partizip_2": "studiert"
+      },
+      "frequenzRang": 1421,
+      "quelle": "wiktionary:de:studieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚studieren‘ (https://de.wiktionary.org/wiki/studieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.bewerben",
+      "lemma": "bewerben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "bewerben",
+        "praes_ich": "bewerbe",
+        "praes_du": "bewirbst",
+        "praes_er_sie_es": "bewirbt",
+        "praes_wir": "bewerben",
+        "praes_ihr": "bewerbt",
+        "praes_sie_Sie": "bewerben",
+        "partizip_2": "beworben",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 2471,
+      "quelle": "wiktionary:de:bewerben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bewerben‘ (https://de.wiktionary.org/wiki/bewerben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.traeumen",
+      "lemma": "träumen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "träumen",
+        "praes_ich": "träume",
+        "praes_du": "träumst",
+        "praes_er_sie_es": "träumt",
+        "praes_wir": "träumen",
+        "praes_ihr": "träumt",
+        "praes_sie_Sie": "träumen",
+        "partizip_2": "geträumt"
+      },
+      "frequenzRang": 1910,
+      "quelle": "wiktionary:de:träumen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚träumen‘ (https://de.wiktionary.org/wiki/träumen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.rechnen",
+      "lemma": "rechnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "rechnen",
+        "praes_ich": "rechne",
+        "praes_du": "rechnest",
+        "praes_er_sie_es": "rechnet",
+        "praes_wir": "rechnen",
+        "praes_ihr": "rechnet",
+        "praes_sie_Sie": "rechnen",
+        "partizip_2": "gerechnet"
+      },
+      "frequenzRang": 935,
+      "quelle": "wiktionary:de:rechnen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚rechnen‘ (https://de.wiktionary.org/wiki/rechnen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.beschreiben",
+      "lemma": "beschreiben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "beschreiben",
+        "praes_ich": "beschreibe",
+        "praes_du": "beschreibst",
+        "praes_er_sie_es": "beschreibt",
+        "praes_wir": "beschreiben",
+        "praes_ihr": "beschreibt",
+        "praes_sie_Sie": "beschreiben",
+        "partizip_2": "beschrieben"
+      },
+      "frequenzRang": 727,
+      "quelle": "wiktionary:de:beschreiben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚beschreiben‘ (https://de.wiktionary.org/wiki/beschreiben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.kollege",
+      "lemma": "Kollege",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kollegen",
+        "weiblich": "Kollegin"
+      },
+      "formen": {
+        "pl": "Kollegen",
+        "akk_dat_sg": "Kollegen",
+        "weiblich": "Kollegin",
+        "weiblich_pl": "Kolleginnen"
+      },
+      "frequenzRang": 749,
+      "quelle": "wiktionary:de:Kollege",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kollege‘ (https://de.wiktionary.org/wiki/Kollege), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.chef",
+      "lemma": "Chef",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Chefs",
+        "weiblich": "Chefin"
+      },
+      "formen": {
+        "pl": "Chefs",
+        "weiblich": "Chefin",
+        "weiblich_pl": "Chefinnen"
+      },
+      "frequenzRang": 3438,
+      "quelle": "wiktionary:de:Chef",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Chef‘ (https://de.wiktionary.org/wiki/Chef), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.firma",
+      "lemma": "Firma",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Firmen"
+      },
+      "formen": {
+        "pl": "Firmen"
+      },
+      "frequenzRang": 724,
+      "quelle": "wiktionary:de:Firma",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Firma‘ (https://de.wiktionary.org/wiki/Firma), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.betrieb",
+      "lemma": "Betrieb",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Betriebe"
+      },
+      "formen": {
+        "pl": "Betriebe",
+        "dat_pl": "Betrieben"
+      },
+      "frequenzRang": 2322,
+      "quelle": "wiktionary:de:Betrieb",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Betrieb‘ (https://de.wiktionary.org/wiki/Betrieb), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.fabrik",
+      "lemma": "Fabrik",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Fabriken"
+      },
+      "formen": {
+        "pl": "Fabriken"
+      },
+      "frequenzRang": 3019,
+      "quelle": "wiktionary:de:Fabrik",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fabrik‘ (https://de.wiktionary.org/wiki/Fabrik), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.job",
+      "lemma": "Job",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Jobs"
+      },
+      "formen": {
+        "pl": "Jobs"
+      },
+      "frequenzRang": 731,
+      "quelle": "wiktionary:de:Job",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Job‘ (https://de.wiktionary.org/wiki/Job), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.stelle",
+      "lemma": "Stelle",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Stellen"
+      },
+      "formen": {
+        "pl": "Stellen"
+      },
+      "frequenzRang": 427,
+      "quelle": "wiktionary:de:Stelle",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stelle‘ (https://de.wiktionary.org/wiki/Stelle), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.arbeitszeit",
+      "lemma": "Arbeitszeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Arbeitszeiten"
+      },
+      "formen": {
+        "pl": "Arbeitszeiten"
+      },
+      "frequenzRang": 4219,
+      "quelle": "wiktionary:de:Arbeitszeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Arbeitszeit‘ (https://de.wiktionary.org/wiki/Arbeitszeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.schicht",
+      "lemma": "Schicht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schichten"
+      },
+      "formen": {
+        "pl": "Schichten"
+      },
+      "frequenzRang": 3791,
+      "quelle": "wiktionary:de:Schicht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schicht‘ (https://de.wiktionary.org/wiki/Schicht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.feierabend",
+      "lemma": "Feierabend",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Feierabende"
+      },
+      "formen": {
+        "pl": "Feierabende",
+        "dat_pl": "Feierabenden"
+      },
+      "frequenzRang": 6043,
+      "quelle": "wiktionary:de:Feierabend",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Feierabend‘ (https://de.wiktionary.org/wiki/Feierabend), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.elektriker",
+      "lemma": "Elektriker",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Elektriker",
+        "weiblich": "Elektrikerin"
+      },
+      "formen": {
+        "dat_pl": "Elektrikern",
+        "weiblich": "Elektrikerin",
+        "weiblich_pl": "Elektrikerinnen"
+      },
+      "frequenzRang": 10944,
+      "quelle": "wiktionary:de:Elektriker",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Elektriker‘ (https://de.wiktionary.org/wiki/Elektriker), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.erzieher",
+      "lemma": "Erzieher",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Erzieher",
+        "weiblich": "Erzieherin"
+      },
+      "formen": {
+        "dat_pl": "Erziehern",
+        "weiblich": "Erzieherin",
+        "weiblich_pl": "Erzieherinnen"
+      },
+      "frequenzRang": 7103,
+      "quelle": "wiktionary:de:Erzieher",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erzieher‘ (https://de.wiktionary.org/wiki/Erzieher), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.tierarzt",
+      "lemma": "Tierarzt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Tierärzte",
+        "weiblich": "Tierärztin"
+      },
+      "formen": {
+        "pl": "Tierärzte",
+        "dat_pl": "Tierärzten",
+        "weiblich": "Tierärztin",
+        "weiblich_pl": "Tierärztinnen"
+      },
+      "frequenzRang": 6883,
+      "quelle": "wiktionary:de:Tierarzt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tierarzt‘ (https://de.wiktionary.org/wiki/Tierarzt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.friseur",
+      "lemma": "Friseur",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Friseure",
+        "weiblich": "Friseurin"
+      },
+      "formen": {
+        "pl": "Friseure",
+        "dat_pl": "Friseuren",
+        "weiblich": "Friseurin",
+        "weiblich_pl": "Friseurinnen"
+      },
+      "frequenzRang": 11569,
+      "quelle": "wiktionary:de:Friseur",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Friseur‘ (https://de.wiktionary.org/wiki/Friseur), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.mechaniker",
+      "lemma": "Mechaniker",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Mechaniker",
+        "weiblich": "Mechanikerin"
+      },
+      "formen": {
+        "dat_pl": "Mechanikern",
+        "weiblich": "Mechanikerin",
+        "weiblich_pl": "Mechanikerinnen"
+      },
+      "frequenzRang": 17125,
+      "quelle": "wiktionary:de:Mechaniker",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mechaniker‘ (https://de.wiktionary.org/wiki/Mechaniker), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.baecker",
+      "lemma": "Bäcker",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Bäcker",
+        "weiblich": "Bäckerin"
+      },
+      "formen": {
+        "dat_pl": "Bäckern",
+        "weiblich": "Bäckerin",
+        "weiblich_pl": "Bäckerinnen"
+      },
+      "frequenzRang": 8216,
+      "quelle": "wiktionary:de:Bäcker",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bäcker‘ (https://de.wiktionary.org/wiki/Bäcker), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.handwerker",
+      "lemma": "Handwerker",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Handwerker",
+        "weiblich": "Handwerkerin"
+      },
+      "formen": {
+        "dat_pl": "Handwerkern",
+        "weiblich": "Handwerkerin",
+        "weiblich_pl": "Handwerkerinnen"
+      },
+      "frequenzRang": 3730,
+      "quelle": "wiktionary:de:Handwerker",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Handwerker‘ (https://de.wiktionary.org/wiki/Handwerker), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.polizist",
+      "lemma": "Polizist",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Polizisten",
+        "weiblich": "Polizistin"
+      },
+      "formen": {
+        "pl": "Polizisten",
+        "akk_dat_sg": "Polizisten",
+        "weiblich": "Polizistin",
+        "weiblich_pl": "Polizistinnen"
+      },
+      "frequenzRang": 979,
+      "quelle": "wiktionary:de:Polizist",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Polizist‘ (https://de.wiktionary.org/wiki/Polizist), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.pilot",
+      "lemma": "Pilot",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Piloten",
+        "weiblich": "Pilotin"
+      },
+      "formen": {
+        "pl": "Piloten",
+        "akk_dat_sg": "Piloten",
+        "weiblich": "Pilotin",
+        "weiblich_pl": "Pilotinnen"
+      },
+      "frequenzRang": 3764,
+      "quelle": "wiktionary:de:Pilot",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Pilot‘ (https://de.wiktionary.org/wiki/Pilot), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.ausbildung",
+      "lemma": "Ausbildung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ausbildungen"
+      },
+      "formen": {
+        "pl": "Ausbildungen"
+      },
+      "frequenzRang": 722,
+      "quelle": "wiktionary:de:Ausbildung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ausbildung‘ (https://de.wiktionary.org/wiki/Ausbildung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.praktikum",
+      "lemma": "Praktikum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Praktika"
+      },
+      "formen": {
+        "pl": "Praktika"
+      },
+      "frequenzRang": 3982,
+      "quelle": "wiktionary:de:Praktikum",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Praktikum‘ (https://de.wiktionary.org/wiki/Praktikum), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.universitaet",
+      "lemma": "Universität",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Universitäten"
+      },
+      "formen": {
+        "pl": "Universitäten"
+      },
+      "frequenzRang": 775,
+      "quelle": "wiktionary:de:Universität",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Universität‘ (https://de.wiktionary.org/wiki/Universität), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.pruefung",
+      "lemma": "Prüfung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Prüfungen"
+      },
+      "formen": {
+        "pl": "Prüfungen"
+      },
+      "frequenzRang": 1290,
+      "quelle": "wiktionary:de:Prüfung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Prüfung‘ (https://de.wiktionary.org/wiki/Prüfung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.unterricht",
+      "lemma": "Unterricht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1633,
+      "quelle": "wiktionary:de:Unterricht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Unterricht‘ (https://de.wiktionary.org/wiki/Unterricht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.fach",
+      "lemma": "Fach",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Fächer"
+      },
+      "formen": {
+        "pl": "Fächer",
+        "dat_pl": "Fächern"
+      },
+      "frequenzRang": 1957,
+      "quelle": "wiktionary:de:Fach",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fach‘ (https://de.wiktionary.org/wiki/Fach), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.lohn",
+      "lemma": "Lohn",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Löhne"
+      },
+      "formen": {
+        "pl": "Löhne",
+        "dat_pl": "Löhnen"
+      },
+      "frequenzRang": 2462,
+      "quelle": "wiktionary:de:Lohn",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lohn‘ (https://de.wiktionary.org/wiki/Lohn), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.projekt",
+      "lemma": "Projekt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Projekte"
+      },
+      "formen": {
+        "pl": "Projekte",
+        "dat_pl": "Projekten"
+      },
+      "frequenzRang": 448,
+      "quelle": "wiktionary:de:Projekt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Projekt‘ (https://de.wiktionary.org/wiki/Projekt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.maschine",
+      "lemma": "Maschine",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Maschinen"
+      },
+      "formen": {
+        "pl": "Maschinen"
+      },
+      "frequenzRang": 1084,
+      "quelle": "wiktionary:de:Maschine",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Maschine‘ (https://de.wiktionary.org/wiki/Maschine), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.verantwortung",
+      "lemma": "Verantwortung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1269,
+      "quelle": "wiktionary:de:Verantwortung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verantwortung‘ (https://de.wiktionary.org/wiki/Verantwortung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.erfolg",
+      "lemma": "Erfolg",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Erfolge"
+      },
+      "formen": {
+        "pl": "Erfolge",
+        "dat_pl": "Erfolgen"
+      },
+      "frequenzRang": 393,
+      "quelle": "wiktionary:de:Erfolg",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erfolg‘ (https://de.wiktionary.org/wiki/Erfolg), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.chance",
+      "lemma": "Chance",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Chancen"
+      },
+      "formen": {
+        "pl": "Chancen"
+      },
+      "frequenzRang": 462,
+      "quelle": "wiktionary:de:Chance",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Chance‘ (https://de.wiktionary.org/wiki/Chance), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.traum",
+      "lemma": "Traum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Träume"
+      },
+      "formen": {
+        "pl": "Träume",
+        "dat_pl": "Träumen"
+      },
+      "frequenzRang": 958,
+      "quelle": "wiktionary:de:Traum",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Traum‘ (https://de.wiktionary.org/wiki/Traum), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.jugendliche",
+      "lemma": "Jugendliche",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die",
+        "hinweis": "subst. Adjektiv: der/die Jugendliche, ein Jugendlicher, die Jugendlichen"
+      },
+      "formen": {
+        "sg_m": "Jugendlicher",
+        "pl_n": "Jugendlichen"
+      },
+      "frequenzRang": 2051,
+      "quelle": "wiktionary:de:Jugendliche",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Jugendliche‘ (https://de.wiktionary.org/wiki/Jugendliche), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.arbeitsplatz",
+      "lemma": "Arbeitsplatz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Arbeitsplätze"
+      },
+      "formen": {
+        "pl": "Arbeitsplätze",
+        "dat_pl": "Arbeitsplätzen"
+      },
+      "frequenzRang": 2002,
+      "quelle": "wiktionary:de:Arbeitsplatz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Arbeitsplatz‘ (https://de.wiktionary.org/wiki/Arbeitsplatz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.gehalt",
+      "lemma": "Gehalt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gehälter"
+      },
+      "formen": {
+        "pl": "Gehälter",
+        "dat_pl": "Gehältern"
+      },
+      "frequenzRang": 2131,
+      "quelle": "wiktionary:de:Gehalt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gehalt‘ (https://de.wiktionary.org/wiki/Gehalt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.bewerbung",
+      "lemma": "Bewerbung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bewerbungen"
+      },
+      "formen": {
+        "pl": "Bewerbungen"
+      },
+      "frequenzRang": 2925,
+      "quelle": "wiktionary:de:Bewerbung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bewerbung‘ (https://de.wiktionary.org/wiki/Bewerbung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.lebenslauf",
+      "lemma": "Lebenslauf",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Lebensläufe"
+      },
+      "formen": {
+        "pl": "Lebensläufe",
+        "dat_pl": "Lebensläufen"
+      },
+      "frequenzRang": 4717,
+      "quelle": "wiktionary:de:Lebenslauf",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lebenslauf‘ (https://de.wiktionary.org/wiki/Lebenslauf), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.zeugnis",
+      "lemma": "Zeugnis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Zeugnisse"
+      },
+      "formen": {
+        "pl": "Zeugnisse",
+        "dat_pl": "Zeugnissen"
+      },
+      "frequenzRang": 3980,
+      "quelle": "wiktionary:de:Zeugnis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zeugnis‘ (https://de.wiktionary.org/wiki/Zeugnis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.abschluss",
+      "lemma": "Abschluss",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Abschlüsse"
+      },
+      "formen": {
+        "pl": "Abschlüsse",
+        "dat_pl": "Abschlüssen"
+      },
+      "frequenzRang": 1067,
+      "quelle": "wiktionary:de:Abschluss",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abschluss‘ (https://de.wiktionary.org/wiki/Abschluss), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.kindergarten",
+      "lemma": "Kindergarten",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kindergärten"
+      },
+      "formen": {
+        "pl": "Kindergärten"
+      },
+      "frequenzRang": 2526,
+      "quelle": "wiktionary:de:Kindergarten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kindergarten‘ (https://de.wiktionary.org/wiki/Kindergarten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.talent",
+      "lemma": "Talent",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Talente"
+      },
+      "formen": {
+        "pl": "Talente",
+        "dat_pl": "Talenten"
+      },
+      "frequenzRang": 2279,
+      "quelle": "wiktionary:de:Talent",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Talent‘ (https://de.wiktionary.org/wiki/Talent), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.kreativ",
+      "lemma": "kreativ",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "kreative",
+        "endung_en": "kreativen",
+        "endung_er": "kreativer",
+        "endung_es": "kreatives",
+        "endung_em": "kreativem"
+      },
+      "frequenzRang": 2292,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.staerke",
+      "lemma": "Stärke",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Stärken"
+      },
+      "formen": {
+        "pl": "Stärken"
+      },
+      "frequenzRang": 2377,
+      "quelle": "wiktionary:de:Stärke",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stärke‘ (https://de.wiktionary.org/wiki/Stärke), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.faehigkeit",
+      "lemma": "Fähigkeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Fähigkeiten"
+      },
+      "formen": {
+        "pl": "Fähigkeiten"
+      },
+      "frequenzRang": 1535,
+      "quelle": "wiktionary:de:Fähigkeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fähigkeit‘ (https://de.wiktionary.org/wiki/Fähigkeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a2.e13.s0001",
+      "text": "Was willst du später werden?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0002",
+      "text": "Ich will Tierärztin werden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0003",
+      "text": "Eine Tierärztin hilft kranken Tieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0004",
+      "text": "Unsere Katze ist krank. Wir gehen heute zum Tierarzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0005",
+      "text": "Der Tierarzt kommt auch zu den Pferden auf dem Bauernhof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0006",
+      "text": "Tom ist Pilot.",
+      "quelle": "tatoeba:2383252",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2383252 von BraveSentry (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0007",
+      "text": "Defne möchte Pilotin werden und viel reisen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0008",
+      "text": "Ein Pilot fliegt oft in andere Länder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0009",
+      "text": "Sein Vater ist Polizist.",
+      "quelle": "tatoeba:344859",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #344859 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0010",
+      "text": "Die Polizistin hilft den Menschen auf der Straße.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0011",
+      "text": "Kerem will Polizist werden, weil er Menschen helfen möchte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0012",
+      "text": "Ich bin Friseur.",
+      "quelle": "tatoeba:11783178",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11783178 von Cabo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0013",
+      "text": "Der Friseur schneidet mir die Haare.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0014",
+      "text": "Ein Erzieher arbeitet mit kleinen Kindern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0015",
+      "text": "Yazan möchte Erzieher werden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0016",
+      "text": "Mein kleiner Bruder geht in den Kindergarten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0017",
+      "text": "Im Kindergarten arbeiten zwei Erzieherinnen und ein Erzieher.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0018",
+      "text": "Erzieher kümmern sich um die Kinder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0019",
+      "text": "Am Nachmittag kümmere ich mich um meine kleine Schwester.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0020",
+      "text": "Wer kümmert sich am Wochenende um die Tiere?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0021",
+      "text": "Mein Traum ist ein Beruf mit Tieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0022",
+      "text": "Hast du einen großen Traum?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0023",
+      "text": "Als Kind habe ich vom Fliegen geträumt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0024",
+      "text": "Gute Nacht. Träum was Schönes.",
+      "quelle": "tatoeba:1002",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1002 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0025",
+      "text": "Ich will nicht reich werden. Ich will Menschen helfen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0026",
+      "text": "Viele Jugendliche hoffen, dass sie später einen guten Beruf finden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0027",
+      "text": "Die Jugendlichen fragen ihre Eltern nach ihren Berufen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0028",
+      "text": "Kannst du deinen Beruf beschreiben?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0029",
+      "text": "Im Winter wird es schon früh dunkel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0030",
+      "text": "Meine Tante ist Lehrerin geworden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0031",
+      "text": "Elif, was möchtest du später werden?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0032",
+      "text": "Das weiß ich noch nicht genau.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0033",
+      "text": "Was machst du denn gern?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0034",
+      "text": "Ich liebe Tiere. Vielleicht werde ich Tierärztin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0035",
+      "text": "Ich möchte Erzieherin werden, weil ich gern mit Kindern arbeite.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0036",
+      "text": "Die Elektrikerin repariert die Lampe im Flur.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0037",
+      "text": "Ein Elektriker arbeitet mit Strom und muss vorsichtig sein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0038",
+      "text": "Der Mechaniker repariert Autos in einer Werkstatt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0039",
+      "text": "Meine Tante ist Mechanikerin. Sie kennt jedes Auto.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0040",
+      "text": "Der Mechaniker sagt, dass das Motorrad morgen fertig ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0041",
+      "text": "Tom ist Bäcker.",
+      "quelle": "tatoeba:7218008",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7218008 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0042",
+      "text": "Ich kaufe mein Brot immer beim Bäcker.",
+      "quelle": "tatoeba:11220518",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11220518 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0043",
+      "text": "Die Bäckerin backt jeden Morgen frisches Brot.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0044",
+      "text": "Handwerker arbeiten viel mit den Händen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0045",
+      "text": "Heute kommt ein Handwerker in unsere Wohnung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0046",
+      "text": "Kannst du mein Fahrrad reparieren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0047",
+      "text": "Wer repariert die Heizung im Keller?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0048",
+      "text": "Ein Krankenpfleger pflegt kranke Menschen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0049",
+      "text": "Meine Mutter pflegt meine Oma zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0050",
+      "text": "Opa pflegt jeden Tag seinen Garten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0051",
+      "text": "In der Fabrik arbeiten Menschen und Maschinen zusammen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0052",
+      "text": "Die neue Maschine ist sehr laut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0053",
+      "text": "Mein Vater und mein großer Bruder arbeiten in dieser Fabrik.",
+      "quelle": "tatoeba:1005390",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1005390 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0054",
+      "text": "In dieser Fabrik baut man Autos.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0055",
+      "text": "Ranā arbeitet in einer großen Firma.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0056",
+      "text": "Die Firma hat nur zehn Mitarbeiter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0057",
+      "text": "Ḫālid hat einen kleinen Betrieb mit drei Mitarbeitern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0058",
+      "text": "Die Ingenieurin entwickelt neue Maschinen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0059",
+      "text": "Unsere Firma entwickelt eine App für Schüler.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0060",
+      "text": "Der Beruf bietet viele Möglichkeiten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0061",
+      "text": "Unsere Klasse macht ein Projekt über Handwerker.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0062",
+      "text": "Stefan arbeitet an einem großen Projekt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0063",
+      "text": "Frau Demir ist Ingenieurin, ihr Mann ist Bäcker.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0064",
+      "text": "Was ist dein Vater von Beruf?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0065",
+      "text": "Er ist Elektriker und hat einen eigenen Betrieb.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0066",
+      "text": "Und was macht er genau?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0067",
+      "text": "Er bringt Strom und Licht in neue Häuser.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0068",
+      "text": "Ein Mechaniker arbeitet in einer Werkstatt und repariert Autos.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0069",
+      "text": "Ich habe einen netten Kollegen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0070",
+      "text": "In der Pause essen die Kollegen zusammen in der Kantine.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0071",
+      "text": "Wo ist dein Chef?",
+      "quelle": "tatoeba:8319740",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8319740 von Luiaard (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0072",
+      "text": "Offen gesagt, finde ich, dass er ein guter Chef ist.",
+      "quelle": "tatoeba:3713552",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3713552 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0073",
+      "text": "Unsere Chefin ist sehr freundlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0074",
+      "text": "Ein netter Chef hört seinen Mitarbeitern zu.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0075",
+      "text": "In den Ferien hat Emre einen Job in einer Bäckerei.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0076",
+      "text": "Mein Onkel sucht eine neue Stelle.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0077",
+      "text": "Sie hat eine Stelle als Krankenpflegerin gefunden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0078",
+      "text": "Für die Arbeit am Wochenende gibt es mehr Lohn.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0079",
+      "text": "Ich habe gestern mein Gehalt bekommen.",
+      "quelle": "tatoeba:351070",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #351070 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0080",
+      "text": "Ein Ingenieur verdient ein gutes Gehalt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0081",
+      "text": "Mein Arbeitsplatz ist hell und ordentlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0082",
+      "text": "Meine Arbeitszeit beginnt um acht und endet um vier.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0083",
+      "text": "Welche Arbeitszeiten hat eine Bäckerin?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0084",
+      "text": "Die erste Schicht beginnt schon um sechs Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0085",
+      "text": "Krankenpfleger arbeiten oft in Schichten, auch in der Nacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0086",
+      "text": "Wann hast du heute Feierabend?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0087",
+      "text": "Endlich Feierabend! Jetzt gehe ich nach Hause.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0088",
+      "text": "Die Nachtschicht ist sehr anstrengend.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0089",
+      "text": "Heute hatte ich eine schwierige Aufgabe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0090",
+      "text": "Eine Pilotin hat viel Verantwortung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0091",
+      "text": "Frau Schulz ist für die neuen Kollegen verantwortlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0092",
+      "text": "Mein Vater hat einen interessanten Job.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0093",
+      "text": "Meine neue Stelle gefällt mir sehr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0094",
+      "text": "Wie ist deine neue Stelle?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0095",
+      "text": "Gut! Ich habe nette Kollegen und eine freundliche Chefin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0096",
+      "text": "Und wie sind die Arbeitszeiten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0097",
+      "text": "Ich arbeite in Schichten. Das ist manchmal anstrengend.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0098",
+      "text": "Meine Arbeit beginnt um sieben, und um vier habe ich Feierabend.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0099",
+      "text": "Die Ausbildung zum Friseur dauert drei Jahre.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0100",
+      "text": "Wo machst du dein Praktikum?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0101",
+      "text": "Ich mache mein Praktikum in einem Kindergarten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0102",
+      "text": "Dilek möchte Medizin studieren und Ärztin werden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0103",
+      "text": "Morgen habe ich eine Prüfung.",
+      "quelle": "tatoeba:484554",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #484554 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0104",
+      "text": "Die Prüfung war zu schwer für mich.",
+      "quelle": "tatoeba:910400",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #910400 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0105",
+      "text": "Ich hoffe, dass ich die Prüfung bestehe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0106",
+      "text": "Super, ich habe die Prüfung bestanden!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0107",
+      "text": "Wir haben heute keinen Unterricht.",
+      "quelle": "tatoeba:431388",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #431388 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0108",
+      "text": "Der Unterricht beginnt um Viertel nach acht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0109",
+      "text": "Welches Fach magst du am liebsten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0110",
+      "text": "Ich rechne gern. Mathe ist leicht für mich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0111",
+      "text": "Kannst du das im Kopf rechnen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0112",
+      "text": "Nach dem Abschluss möchte ich eine Ausbildung machen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0113",
+      "text": "Elif hat ein sehr gutes Zeugnis bekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0114",
+      "text": "Emre schreibt eine Bewerbung für ein Praktikum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0115",
+      "text": "Zu einer Bewerbung gehören ein Lebenslauf und ein Zeugnis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0116",
+      "text": "Ich bewerbe mich bei einer Firma in der Stadt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0117",
+      "text": "Er bewirbt sich um eine Stelle als Mechaniker.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0118",
+      "text": "Mein Lebenslauf ist noch kurz, denn ich bin erst 15.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0119",
+      "text": "Meine Eltern finden, dass eine Ausbildung wichtig ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0120",
+      "text": "Was machst du nach dem Abschluss?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0121",
+      "text": "Ich möchte an der Universität studieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0122",
+      "text": "Und welches Fach?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0123",
+      "text": "Mathe, weil ich sehr gern rechne.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0124",
+      "text": "Nach der Schule möchte ich eine Ausbildung als Elektrikerin machen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0125",
+      "text": "Was sind deine Stärken?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0126",
+      "text": "Für diesen Beruf braucht man viele Fähigkeiten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0127",
+      "text": "In der Schule kann man seine Talente entwickeln.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0128",
+      "text": "Eine Friseurin muss kreativ sein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0129",
+      "text": "Das Projekt war ein großer Erfolg.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0130",
+      "text": "Wir haben nur eine Chance.",
+      "quelle": "tatoeba:3118204",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3118204 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e13.s0131",
+      "text": "Ein Praktikum ist eine gute Chance.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0132",
+      "text": "Meine Tante ist selbstständig. Sie hat einen eigenen Laden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0133",
+      "text": "Wer übernimmt diese Aufgabe?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0134",
+      "text": "Später übernimmt Mert vielleicht den Betrieb von seinem Vater.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0135",
+      "text": "Wer organisiert das Projekt in der Klasse?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0136",
+      "text": "Meine Eltern unterstützen mich bei meinen Plänen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0137",
+      "text": "Für solche Berufe braucht man viel Geduld.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0138",
+      "text": "Welcher Beruf passt zu mir?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0139",
+      "text": "Dieser Beruf ist interessant, aber auch anstrengend.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0140",
+      "text": "Welchen Job findest du am besten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0141",
+      "text": "Die nette Chefin hilft allen Mitarbeitern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0142",
+      "text": "Ich arbeite gern mit dem neuen Kollegen zusammen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0143",
+      "text": "Das große Projekt beginnt nächste Woche.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0144",
+      "text": "Welcher Beruf passt zu dir, Laylā?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0145",
+      "text": "Ich weiß es noch nicht. Ich bin kreativ und zeichne gern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0146",
+      "text": "Und was sind deine Stärken?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0147",
+      "text": "Ich kann gut organisieren und arbeite gern im Team.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0148",
+      "text": "Eine Erzieherin kümmert sich im Kindergarten um kleine Kinder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0149",
+      "text": "Unsere Träume: vier Jugendliche, vier Berufe",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0150",
+      "text": "Für unsere Zeitung haben wir vier Jugendliche nach ihren Träumen gefragt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0151",
+      "text": "Selin, 15: Ich möchte Polizistin werden. Ich will Menschen helfen, und Sport mache ich auch gern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0152",
+      "text": "Tim, 14: Mein Traum ist eine Ausbildung als Mechaniker. Ich repariere gern Motorräder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0153",
+      "text": "Dilek, 16: Ich will an der Universität Medizin studieren. Das ist schwierig, aber ich lerne viel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0154",
+      "text": "Arda, 15: Ich möchte Bäcker werden. Schon jetzt backe ich oft Brot mit meinem Opa.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0155",
+      "text": "Alle vier sagen, dass ein Praktikum sehr hilft.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0156",
+      "text": "Selin möchte Polizistin werden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0157",
+      "text": "Tim möchte an der Universität studieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0158",
+      "text": "Arda hat schon ein Praktikum in einer Bäckerei gemacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0159",
+      "text": "Wer möchte Medizin studieren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0160",
+      "text": "Dilek möchte Medizin studieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0161",
+      "text": "Selin möchte Medizin studieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0162",
+      "text": "Arda möchte Medizin studieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0163",
+      "text": "Schreib einen kurzen Text: Welchen Beruf möchtest du lernen und warum?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0164",
+      "text": "Ich möchte später Erzieherin werden. Ich spiele gern mit kleinen Kindern und bin kreativ. Meine Stärke ist Geduld. Nach der Schule mache ich eine Ausbildung. Im Sommer mache ich ein Praktikum in einem Kindergarten. Meine Eltern finden, dass das ein schöner Beruf ist. Ich hoffe, dass mein Traum wahr wird.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0165",
+      "text": "Ein Projekt in der Schule: unsere Eltern und ihre Berufe",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0166",
+      "text": "Heute macht die Klasse von Frau Krüger ein besonderes Projekt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0167",
+      "text": "Eltern kommen in die Schule und stellen ihre Berufe vor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0168",
+      "text": "Zuerst erzählt Ranā, die Mutter von Laylā.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0169",
+      "text": "Ich bin Ingenieurin und arbeite in einer großen Firma.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0170",
+      "text": "Wir entwickeln neue Maschinen für Fabriken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0171",
+      "text": "Die Arbeit ist manchmal schwierig, aber sehr interessant.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0172",
+      "text": "Dann kommt Ḫālid. Er ist Elektriker und hat einen eigenen Betrieb.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0173",
+      "text": "Ich arbeite oft auf Baustellen. Manchmal repariere ich auch alte Lampen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0174",
+      "text": "Mein Tag beginnt sehr früh, aber um vier habe ich Feierabend.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0175",
+      "text": "Paul, der Vater von Jan, arbeitet in einem Büro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0176",
+      "text": "Ich organisiere Projekte und rechne viel am Computer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0177",
+      "text": "Abends koche ich für die ganze Familie. Das macht mir Spaß!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0178",
+      "text": "Danach fragt Frau Krüger die Kinder: Was wollt ihr werden?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0179",
+      "text": "Elif sagt: Ich möchte Tierärztin werden, weil ich Tiere liebe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0180",
+      "text": "Yazan will Erzieher werden. Er spielt gern mit kleinen Kindern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0181",
+      "text": "Am Ende sagt Frau Krüger: Jeder Beruf ist wichtig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0182",
+      "text": "Was ist Ranā von Beruf?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0183",
+      "text": "Sie ist Ingenieurin in einer großen Firma.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0184",
+      "text": "Sie ist Elektrikerin in einem kleinen Betrieb.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0185",
+      "text": "Wann hat Ḫālid Feierabend?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0186",
+      "text": "Er hat um vier Uhr Feierabend.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0187",
+      "text": "Er hat um sieben Uhr Feierabend.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0188",
+      "text": "Was macht Paul abends?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0189",
+      "text": "Er kocht für die Familie.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0190",
+      "text": "Er repariert alte Lampen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0191",
+      "text": "Warum will Yazan Erzieher werden?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0192",
+      "text": "Weil er gern mit kleinen Kindern spielt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0193",
+      "text": "Weil er gern Tiere pflegt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0194",
+      "text": "Herr Neumann erzählt von seinem Beruf",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0195",
+      "text": "Emre trifft Herrn Neumann im Treppenhaus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0196",
+      "text": "Guten Tag, Herr Neumann! Darf ich Sie etwas fragen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0197",
+      "text": "Natürlich, Emre. Was möchtest du wissen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0198",
+      "text": "Wir machen in der Schule ein Projekt über Berufe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0199",
+      "text": "Sie waren doch früher Elektriker, oder?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0200",
+      "text": "Ja, genau. Ich habe über vierzig Jahre als Elektriker gearbeitet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0201",
+      "text": "Wie sind Sie Elektriker geworden?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0202",
+      "text": "Nach der Schule habe ich eine Ausbildung in einem kleinen Betrieb gemacht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0203",
+      "text": "Mein Chef hat mir sehr viel erklärt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0204",
+      "text": "War die Ausbildung schwierig?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0205",
+      "text": "Manchmal schon. Am Ende musste ich eine Prüfung bestehen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0206",
+      "text": "Und hat Ihnen die Arbeit Spaß gemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0207",
+      "text": "Ja, sehr! Jeder Tag war anders.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0208",
+      "text": "Und du, Emre? Möchtest du auch Elektriker werden?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0209",
+      "text": "Vielleicht! Ich repariere gern Sachen und mag Technik.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0210",
+      "text": "Dann mach doch ein Praktikum! Das hilft dir bestimmt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0211",
+      "text": "Wie lange hat Herr Neumann als Elektriker gearbeitet?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0212",
+      "text": "Über vierzig Jahre.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0213",
+      "text": "Über zwanzig Jahre.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0214",
+      "text": "Wo hat Herr Neumann seine Ausbildung gemacht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0215",
+      "text": "In einem kleinen Betrieb.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0216",
+      "text": "In einer großen Fabrik.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0217",
+      "text": "Was musste Herr Neumann am Ende machen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0218",
+      "text": "Er musste eine Prüfung bestehen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0219",
+      "text": "Er musste eine Bewerbung schreiben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0220",
+      "text": "Was soll Emre machen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0221",
+      "text": "Er soll ein Praktikum machen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0222",
+      "text": "Er soll an der Universität studieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0223",
+      "text": "Meine Schwester ist Polizistin geworden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0224",
+      "text": "Tim wird Mechaniker. Im August beginnt seine Ausbildung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0225",
+      "text": "Emre bewirbt sich bei einem Betrieb in der Nähe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0226",
+      "text": "Mein Onkel arbeitet diese Woche in der ersten Schicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0227",
+      "text": "Der Chef ist für den ganzen Betrieb verantwortlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0228",
+      "text": "Der Lohn ist nicht hoch, aber die Arbeit macht Spaß.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0229",
+      "text": "Die Tierärztin untersucht unsere Katze.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0230",
+      "text": "Eine Pilotin muss sehr gut Englisch sprechen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0231",
+      "text": "Mein Friseur hat einen kleinen Laden in der Altstadt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0232",
+      "text": "Ich glaube, dass dieser Beruf gut zu dir passt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0233",
+      "text": "Welches Projekt übernimmst du?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0234",
+      "text": "Diese Aufgabe ist schwierig, aber ich schaffe das.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0235",
+      "text": "Herr Neumann war ein erfolgreicher Elektriker.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0236",
+      "text": "Mein Traum ist eine eigene Werkstatt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0237",
+      "text": "Viele Jugendliche haben in den Ferien einen Job.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0238",
+      "text": "Diese Maschine kann man nicht mehr reparieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0239",
+      "text": "Wie hoch ist das Gehalt für diese Stelle?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0240",
+      "text": "Nach Feierabend kocht Paul für die ganze Familie.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0241",
+      "text": "Die Arbeitszeit ist von acht bis vier Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0242",
+      "text": "Hast du schon einen Platz für dein Praktikum?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0243",
+      "text": "Ja, ich gehe zwei Wochen in eine Werkstatt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0244",
+      "text": "Toll! Und was machst du dort?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0245",
+      "text": "Ich helfe den Mechanikern und lerne viel über Autos.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0246",
+      "text": "Ich möchte Polizist werden, weil ich anderen Menschen helfen will.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0247",
+      "text": "Was möchtest du nach der Schule machen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0248",
+      "text": "Ich möchte eine Ausbildung als Bäckerin machen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0249",
+      "text": "Warum gerade Bäckerin?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0250",
+      "text": "Weil ich gern backe und früh aufstehen kann.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0251",
+      "text": "Was sind Sie von Beruf, Frau Aydın?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0252",
+      "text": "Ich bin Mechanikerin. Ich arbeite in einer großen Werkstatt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0253",
+      "text": "Ist die Arbeit nicht sehr anstrengend?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0254",
+      "text": "Manchmal schon, aber ich habe sehr nette Kollegen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0255",
+      "text": "Elif will Tierärztin werden, weil sie Tiere liebt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0256",
+      "text": "Mein Bruder hat einen neuen Job in einer großen Firma.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0257",
+      "text": "Ich finde, dass Erzieher einen wichtigen Beruf haben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0258",
+      "text": "Dieser Beruf gefällt mir. Welcher gefällt dir?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0259",
+      "text": "Ein Bäcker beginnt um drei Uhr und hat mittags Feierabend.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0260",
+      "text": "Die Ausbildung zur Bäckerin dauert drei Jahre.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0261",
+      "text": "Der Mechaniker repariert das Auto.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0262",
+      "text": "Die Mechanikerin repariert das Auto.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0263",
+      "text": "Der Mechaniker repariert das Fahrrad.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0264",
+      "text": "Mein Vater arbeitet in einer großen Fabrik.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0265",
+      "text": "Ich möchte Pilotin werden, weil ich gern reise.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e13.s0266",
+      "text": "Eine Bäckerin backt Brot und beginnt sehr früh am Morgen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a2.e13.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, was ich werden möchte.",
+        "tr": "Ne olmak istediğimi söyleyebilirim.",
+        "ar": "أستطيع أن أقول ماذا أريد أن أصبح في المستقبل."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e13.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.tierarzt",
+          "ablenker": ["de.a2.e13.pilot", "de.a2.e13.friseur"]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e13.polizist", "de.a2.e13.pilot", "de.a2.e13.friseur", "de.a2.e13.erzieher", "de.a2.e13.kindergarten"]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.traum",
+          "ablenker": ["de.a1.e12.ziel", "de.a2.e01.hobby"]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e13.s0006",
+          "ablenker": ["de.a2.e13.s0041", "de.a2.e13.s0012", "de.a2.e13.s0009"]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0030",
+          "wort": 4,
+          "ablenker": ["werden", "wird"]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.beschreiben",
+          "ablenker": ["de.a1.e07.wiederholen", "de.a2.e01.zeichnen"]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0031"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0032"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0033"
+            }
+          ],
+          "antwort": "de.a2.e13.s0034",
+          "ablenker": ["de.a2.e13.s0016", "de.a2.e13.s0013"]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0018",
+          "wort": 1,
+          "ablenker": ["kümmert", "kümmerst"]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.reich",
+          "ablenker": ["de.a1.e11.krank", "de.a1.e12.jung"]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e13.s0023",
+          "ablenker": ["de.a2.e13.s0022", "de.a2.e13.s0008", "de.a2.e13.s0004", "de.a2.e13.s0021", "de.a2.e13.s0028"]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e13.s0011",
+          "nach": "ziel",
+          "alternativen": ["Weil er Menschen helfen möchte, will Kerem Polizist werden."],
+          "ablenker": ["Polizei", "wird"]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e13.s0026",
+          "alternativen": ["Dass sie später einen guten Beruf finden, hoffen viele Jugendliche."]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e13.s0025",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich möchte nicht reich werden. Ich möchte Menschen helfen.",
+            "Ich will nicht reich werden. Ich möchte Menschen helfen.",
+            "Ich möchte nicht reich werden. Ich will Menschen helfen.",
+            "Ich will nicht reich werden. Ich will den Menschen helfen.",
+            "Ich möchte nicht reich werden. Ich möchte den Menschen helfen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e13.traum",
+          "ablenker": ["de.a1.e03.raum"]
+        },
+        {
+          "schluessel": "de.a2.e13.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e13.s0035"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e13.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Berufe und ihre Aufgaben nennen.",
+        "tr": "Meslekleri ve görevlerini söyleyebilirim.",
+        "ar": "أستطيع أن أذكر المهن ومهامّها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e13.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.elektriker",
+          "ablenker": ["de.a2.e13.mechaniker", "de.a2.e13.baecker"]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e13.handwerker", "de.a2.e13.fabrik", "de.a2.e13.maschine", "de.a2.e13.firma", "de.a1.e12.werkstatt"]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.reparieren",
+          "ablenker": ["de.a2.e13.entwickeln", "de.a1.e07.erklaeren"]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0036",
+          "wort": 1,
+          "ablenker": ["Elektriker", "Elektrikern"]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e13.s0061",
+          "ablenker": ["de.a2.e13.s0062", "de.a2.e13.s0056", "de.a2.e13.s0045"]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.pflegen",
+          "ablenker": ["de.a2.e13.bieten", "de.a1.e09.warten"]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0064"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0065"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0066"
+            }
+          ],
+          "antwort": "de.a2.e13.s0067",
+          "ablenker": ["de.a2.e13.s0042", "de.a2.e13.s0050"]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0063",
+          "wort": 3,
+          "ablenker": ["Ingenieurinnen", "Ingenieure"]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.betrieb",
+          "ablenker": ["de.a1.e12.baustelle", "de.a2.e06.laden"]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e13.s0038",
+          "nach": "ziel",
+          "alternativen": [
+            "In einer Werkstatt repariert der Mechaniker Autos.",
+            "Autos repariert der Mechaniker in einer Werkstatt.",
+            "Der Mechaniker repariert in einer Werkstatt Autos."
+          ],
+          "ablenker": ["Mechanikerin", "Fabrik"]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e13.s0058",
+          "ablenker": ["de.a2.e13.s0052", "de.a2.e13.s0047", "de.a2.e13.s0060", "de.a2.e13.s0049"]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e13.s0057",
+          "alternativen": [
+            "Mit drei Mitarbeitern hat Ḫālid einen kleinen Betrieb.",
+            "Einen kleinen Betrieb mit drei Mitarbeitern hat Ḫālid."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e13.s0044",
+          "nach": "ziel",
+          "alternativen": [
+            "Handwerker arbeiten viel mit ihren Händen.",
+            "Handwerker arbeiten sehr viel mit den Händen.",
+            "Handwerker arbeiten oft mit den Händen.",
+            "Handwerker arbeiten oft mit ihren Händen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e13.s0054",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e13.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e13.s0068"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e13.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Arbeitszeiten, Kollegen und Lohn sprechen.",
+        "tr": "Çalışma saatleri, iş arkadaşları ve ücret hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدّث عن أوقات العمل والزملاء والأجر."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e13.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.kollege",
+          "ablenker": ["de.a2.e13.chef", "de.a1.e07.schueler"]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e13.lohn", "de.a2.e13.arbeitszeit", "de.a2.e13.schicht", "de.a2.e13.feierabend", "de.a2.e13.arbeitsplatz"]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0069",
+          "wort": 3,
+          "ablenker": ["nette", "netter"]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.gehalt",
+          "ablenker": ["de.a1.e06.preis", "de.a2.e04.miete"]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e13.s0086",
+          "ablenker": ["de.a2.e13.s0071", "de.a2.e13.s0084", "de.a2.e13.s0083", "de.a2.e13.s0081"]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.anstrengend",
+          "ablenker": ["de.a2.e01.langweilig", "de.a1.e07.leicht"]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0094"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0095"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0096"
+            }
+          ],
+          "antwort": "de.a2.e13.s0097",
+          "ablenker": ["de.a2.e13.s0079", "de.a2.e13.s0073"]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0093",
+          "wort": 1,
+          "ablenker": ["neuen", "neuer"]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.verantwortung",
+          "ablenker": ["de.a1.e11.hilfe", "de.a2.e08.erfahrung"]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e13.s0074",
+          "nach": "ziel",
+          "alternativen": ["Seinen Mitarbeitern hört ein netter Chef zu."],
+          "ablenker": ["nette", "hilft"]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e13.s0085",
+          "ablenker": ["de.a2.e13.s0088", "de.a2.e13.s0078", "de.a2.e13.s0084", "de.a2.e13.s0082"]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e13.s0077",
+          "alternativen": ["Eine Stelle als Krankenpflegerin hat sie gefunden."]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e13.s0090",
+          "nach": "ziel",
+          "alternativen": [
+            "Eine Pilotin trägt viel Verantwortung.",
+            "Eine Pilotin hat eine große Verantwortung.",
+            "Eine Pilotin trägt eine große Verantwortung.",
+            "Eine Pilotin hat sehr viel Verantwortung.",
+            "Ein Pilot hat viel Verantwortung.",
+            "Ein Pilot trägt viel Verantwortung.",
+            "Ein Pilot hat eine große Verantwortung.",
+            "Ein Pilot trägt eine große Verantwortung.",
+            "Ein Pilot hat sehr viel Verantwortung."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e13.lohn",
+          "ablenker": ["de.a1.e02.sohn"]
+        },
+        {
+          "schluessel": "de.a2.e13.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e13.s0098"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e13.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Schule, Ausbildung und Studium sprechen.",
+        "tr": "Okul, meslek eğitimi ve üniversite hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدّث عن المدرسة والتدريب المهنيّ والدراسة الجامعيّة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e13.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.ausbildung",
+          "ablenker": ["de.a2.e13.pruefung", "de.a1.e07.hausaufgabe"]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e13.universitaet", "de.a2.e13.praktikum", "de.a2.e13.zeugnis", "de.a2.e13.fach", "de.a2.e13.lebenslauf"]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.studieren",
+          "ablenker": ["de.a2.e13.rechnen", "de.a2.e11.reisen"]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0105",
+          "wort": 6,
+          "ablenker": ["bestehen", "bestehst"]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e13.s0108",
+          "ablenker": ["de.a2.e13.s0107", "de.a2.e13.s0103", "de.a2.e13.s0104"]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.abschluss",
+          "ablenker": ["de.a2.e13.bewerbung", "de.a2.e09.formular"]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0120"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0121"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0122"
+            }
+          ],
+          "antwort": "de.a2.e13.s0123",
+          "ablenker": ["de.a2.e13.s0116", "de.a2.e13.s0107", "de.a2.e13.s0100"]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0117",
+          "wort": 1,
+          "ablenker": ["bewerbt", "bewerben"]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.unterricht",
+          "ablenker": ["de.a1.e07.pause", "de.a2.e08.training"]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e13.s0112",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich möchte nach dem Abschluss eine Ausbildung machen.",
+            "Eine Ausbildung möchte ich nach dem Abschluss machen."
+          ],
+          "ablenker": ["den", "Prüfung"]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e13.s0113",
+          "ablenker": ["de.a2.e13.s0106", "de.a2.e13.s0103", "de.a2.e13.s0110", "de.a2.e13.s0109"]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e13.s0115",
+          "alternativen": [
+            "Ein Lebenslauf und ein Zeugnis gehören zu einer Bewerbung.",
+            "Zu einer Bewerbung gehören ein Zeugnis und ein Lebenslauf.",
+            "Ein Zeugnis und ein Lebenslauf gehören zu einer Bewerbung."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e13.s0119",
+          "nach": "ziel",
+          "alternativen": [
+            "Meine Eltern denken, dass eine Ausbildung wichtig ist.",
+            "Meine Eltern meinen, dass eine Ausbildung wichtig ist.",
+            "Meine Eltern glauben, dass eine Ausbildung wichtig ist.",
+            "Meine Eltern finden eine Ausbildung wichtig.",
+            "Meine Eltern finden, eine Ausbildung ist wichtig."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e13.s0118",
+          "alternativen": ["Mein Lebenslauf ist noch kurz, denn ich bin erst fünfzehn."]
+        },
+        {
+          "schluessel": "de.a2.e13.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e13.s0124"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e13.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann meine Stärken nennen und über meinen Wunschberuf schreiben.",
+        "tr": "Güçlü yönlerimi söyleyebilir ve istediğim meslek hakkında yazabilirim.",
+        "ar": "أستطيع أن أذكر نقاط قوّتي وأن أكتب عن المهنة التي أريدها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e13.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.staerke",
+          "ablenker": ["de.a2.e13.erfolg", "de.a2.e13.chance"]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e13.talent", "de.a2.e13.kreativ", "de.a2.e13.organisieren", "de.a2.e13.unterstuetzen", "de.a2.e13.solcher"]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.erfolgreich",
+          "ablenker": ["de.a2.e13.selbststaendig", "de.a1.e08.interessant"]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0142",
+          "wort": 5,
+          "ablenker": ["neue", "neuem"]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.a2.e13.s0149",
+          "absaetze": ["de.a2.e13.s0150", "de.a2.e13.s0151", "de.a2.e13.s0152", "de.a2.e13.s0153", "de.a2.e13.s0154", "de.a2.e13.s0155"],
+          "glossen": ["de.a2.e13.jugendliche", "de.a2.e13.polizist", "de.a2.e13.mechaniker", "de.a2.e13.universitaet"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e13.s0156",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e13.s0157",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e13.s0158",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e13.s0159",
+              "antwort": "de.a2.e13.s0160",
+              "ablenker": ["de.a2.e13.s0161", "de.a2.e13.s0162"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.faehigkeit",
+          "ablenker": ["de.a1.e12.ziel", "de.a2.e03.wunsch"]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0144"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0145"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0146"
+            }
+          ],
+          "antwort": "de.a2.e13.s0147",
+          "ablenker": ["de.a2.e13.s0143", "de.a2.e13.s0130", "de.a2.e13.s0141"]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0139",
+          "wort": 0,
+          "ablenker": ["Diese", "Dieses"]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.uebernehmen",
+          "ablenker": ["de.a1.e10.vergessen", "de.a2.e11.planen"]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e13.s0136",
+          "nach": "ziel",
+          "alternativen": ["Bei meinen Plänen unterstützen mich meine Eltern.", "Mich unterstützen meine Eltern bei meinen Plänen."],
+          "ablenker": ["mir", "deinen"]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e13.s0140",
+          "ablenker": ["de.a2.e13.s0138", "de.a2.e13.s0125", "de.a2.e13.s0133", "de.a2.e13.s0129"]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e13.s0127",
+          "alternativen": ["Man kann in der Schule seine Talente entwickeln.", "Seine Talente kann man in der Schule entwickeln."]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e13.s0131",
+          "nach": "ziel",
+          "alternativen": [
+            "Ein Praktikum ist eine gute Möglichkeit.",
+            "Ein Praktikum ist eine große Chance.",
+            "Das Praktikum ist eine gute Chance."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.a2.e13.s0163",
+          "woerter": {
+            "min": 40,
+            "max": 50
+          },
+          "pflichtwoerter": ["werden", "Beruf"],
+          "muster": ["de.a2.e13.s0164"]
+        },
+        {
+          "schluessel": "de.a2.e13.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e13.s0148"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e13.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann Geschichten über Berufe und Ausbildung verstehen.",
+        "tr": "Meslekler ve meslek eğitimi hakkındaki hikâyeleri anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصصًا عن المهن والتدريب المهنيّ."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e13.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a2.e13.s0165",
+          "zeilen": [
+            {
+              "satz": "de.a2.e13.s0166"
+            },
+            {
+              "satz": "de.a2.e13.s0167"
+            },
+            {
+              "satz": "de.a2.e13.s0168"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0169"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0170"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0171"
+            },
+            {
+              "satz": "de.a2.e13.s0172"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0173"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0174"
+            },
+            {
+              "satz": "de.a2.e13.s0175"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e13.s0176"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e13.s0177"
+            },
+            {
+              "satz": "de.a2.e13.s0178"
+            },
+            {
+              "satz": "de.a2.e13.s0179"
+            },
+            {
+              "satz": "de.a2.e13.s0180"
+            },
+            {
+              "satz": "de.a2.e13.s0181"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 5,
+              "frage": "de.a2.e13.s0182",
+              "antwort": "de.a2.e13.s0183",
+              "ablenker": ["de.a2.e13.s0184"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.a2.e13.s0185",
+              "antwort": "de.a2.e13.s0186",
+              "ablenker": ["de.a2.e13.s0187"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.a2.e13.s0188",
+              "antwort": "de.a2.e13.s0189",
+              "ablenker": ["de.a2.e13.s0190"]
+            },
+            {
+              "nach": 14,
+              "frage": "de.a2.e13.s0191",
+              "antwort": "de.a2.e13.s0192",
+              "ablenker": ["de.a2.e13.s0193"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e13.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0173",
+          "wort": 6,
+          "ablenker": ["reparierst", "repariert"]
+        },
+        {
+          "schluessel": "de.a2.e13.l06.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0204"
+            }
+          ],
+          "antwort": "de.a2.e13.s0205",
+          "ablenker": ["de.a2.e13.s0197", "de.a2.e13.s0216"]
+        },
+        {
+          "schluessel": "de.a2.e13.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e13.s0170",
+          "ablenker": ["de.a2.e13.s0058", "de.a2.e13.s0051"]
+        },
+        {
+          "schluessel": "de.a2.e13.l06.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e13.s0169",
+          "nach": "ziel",
+          "ablenker": ["kleinen", "Fabrik"]
+        },
+        {
+          "schluessel": "de.a2.e13.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.a2.e13.s0194",
+          "zeilen": [
+            {
+              "satz": "de.a2.e13.s0195"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0196"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0197"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0198"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0199"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0200"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0201"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0202"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0203"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0204"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0205"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0206"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0207"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0208"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0209"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0210"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 5,
+              "frage": "de.a2.e13.s0211",
+              "antwort": "de.a2.e13.s0212",
+              "ablenker": ["de.a2.e13.s0213"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a2.e13.s0214",
+              "antwort": "de.a2.e13.s0215",
+              "ablenker": ["de.a2.e13.s0216"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.a2.e13.s0217",
+              "antwort": "de.a2.e13.s0218",
+              "ablenker": ["de.a2.e13.s0219"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.a2.e13.s0220",
+              "antwort": "de.a2.e13.s0221",
+              "ablenker": ["de.a2.e13.s0222"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e13.l06.a07",
+          "typ": "satzbau",
+          "ziel": "de.a2.e13.s0202",
+          "alternativen": [
+            "Ich habe nach der Schule eine Ausbildung in einem kleinen Betrieb gemacht.",
+            "Ich habe nach der Schule in einem kleinen Betrieb eine Ausbildung gemacht.",
+            "Nach der Schule habe ich in einem kleinen Betrieb eine Ausbildung gemacht."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e13.l06.a08",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0201",
+          "wort": 4,
+          "ablenker": ["werden", "wurden"]
+        },
+        {
+          "schluessel": "de.a2.e13.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e13.s0210",
+          "ablenker": ["de.a2.e13.s0209", "de.a2.e13.s0208"]
+        },
+        {
+          "schluessel": "de.a2.e13.l06.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0208"
+            }
+          ],
+          "antwort": "de.a2.e13.s0209",
+          "ablenker": ["de.a2.e13.s0200", "de.a2.e13.s0218"]
+        },
+        {
+          "schluessel": "de.a2.e13.l06.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e13.s0167"
+        },
+        {
+          "schluessel": "de.a2.e13.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e13.s0180",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e13.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.a2.e13.s0209"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e13.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann den Wortschatz zu Berufen, Arbeit und Ausbildung wiederholen.",
+        "tr": "Meslekler, iş ve meslek eğitimi ile ilgili kelimeleri tekrar edebilirim.",
+        "ar": "أستطيع أن أراجع كلمات المهن والعمل والتدريب المهنيّ."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e13.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.jugendliche",
+          "ablenker": ["de.a1.e02.kind", "de.a2.e02.erwachsene"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e13.kollege",
+            "de.a2.e13.zeugnis",
+            "de.a2.e13.pilot",
+            "de.a2.e13.maschine",
+            "de.a2.e13.traum",
+            "de.a2.e13.fach"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0223",
+          "wort": 3,
+          "ablenker": ["Polizei", "Polizisten"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.job",
+          "ablenker": ["de.a2.e01.hobby", "de.a2.e11.urlaub"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e13.s0229",
+          "ablenker": ["de.a2.e13.s0003", "de.a2.e13.s0004", "de.a2.e13.s0005"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0226",
+          "wort": 7,
+          "ablenker": ["erste", "erster"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a07",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e13.fach",
+          "ablenker": ["de.a2.e04.dach"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.schwierig",
+          "ablenker": ["de.a2.e13.kreativ", "de.a1.e12.wichtig"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0242"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0243"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0244"
+            }
+          ],
+          "antwort": "de.a2.e13.s0245",
+          "ablenker": ["de.a2.e13.s0240", "de.a2.e13.s0079", "de.a2.e13.s0230"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e13.s0225",
+          "nach": "ziel",
+          "alternativen": ["Bei einem Betrieb in der Nähe bewirbt sich Emre.", "In der Nähe bewirbt sich Emre bei einem Betrieb."],
+          "ablenker": ["bewerbt", "Firma"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e13.s0239",
+          "ablenker": ["de.a2.e13.s0228", "de.a2.e13.s0241", "de.a2.e13.s0224", "de.a2.e13.s0227"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.kuemmern",
+          "ablenker": ["de.a2.e13.rechnen", "de.a2.e13.bieten"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e13.s0232",
+          "alternativen": ["Ich glaube, dass dieser Beruf zu dir gut passt.", "Dass dieser Beruf gut zu dir passt, glaube ich."]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e13.s0235",
+          "nach": "ziel",
+          "alternativen": ["Herr Neumann ist ein erfolgreicher Elektriker gewesen."]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a15",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0233",
+          "wort": 0,
+          "ablenker": ["Welcher", "Welchen"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a16",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0137",
+          "wort": 1,
+          "ablenker": ["solcher", "solches"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a17",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e13.s0241",
+          "alternativen": ["Die Arbeitszeit ist von 8 bis 4 Uhr."]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a18",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.verantwortlich",
+          "ablenker": ["de.a2.e13.selbststaendig", "de.a2.e07.freundlich"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a19",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e13.reich",
+          "ablenker": ["de.a1.e05.reis"]
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a20",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e13.s0132",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a21",
+          "typ": "frei",
+          "ziel": "de.a2.e13.s0126",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e13.l07.a22",
+          "typ": "sprechen",
+          "satz": "de.a2.e13.s0246"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e13.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann sagen, welchen Beruf ich lernen möchte, und einen Beruf beschreiben.",
+        "tr": "Hangi mesleği öğrenmek istediğimi söyleyebilir ve bir mesleği anlatabilirim.",
+        "ar": "أستطيع أن أقول أيّ مهنة أريد أن أتعلّمها وأن أصف مهنة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e13.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e13.arbeitszeit",
+          "ablenker": ["de.a2.e13.ausbildung", "de.a1.e07.pause"]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e13.elektriker", "de.a2.e13.friseur", "de.a2.e13.baecker", "de.a2.e13.erzieher", "de.a2.e13.tierarzt"]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0247"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0248"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0249"
+            }
+          ],
+          "antwort": "de.a2.e13.s0250",
+          "ablenker": ["de.a2.e13.s0079", "de.a2.e13.s0108"]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0256",
+          "wort": 4,
+          "ablenker": ["neue", "neuer"]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e13.s0262",
+          "ablenker": ["de.a2.e13.s0261", "de.a2.e13.s0263"]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0251"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e13.s0252"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e13.s0253"
+            }
+          ],
+          "antwort": "de.a2.e13.s0254",
+          "ablenker": ["de.a2.e13.s0212", "de.a2.e13.s0111"]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e13.s0255",
+          "wort": 7,
+          "ablenker": ["lieben", "liebst"]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e13.praktikum",
+          "ablenker": ["de.a1.e12.studium", "de.a2.e08.kurs"]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.a2.e13.s0257",
+          "alternativen": ["Dass Erzieher einen wichtigen Beruf haben, finde ich."]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e13.s0259",
+          "nach": "ziel",
+          "alternativen": ["Um drei Uhr beginnt ein Bäcker und hat mittags Feierabend."],
+          "ablenker": ["abends", "vier"]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e13.s0260",
+          "alternativen": ["Die Ausbildung zur Bäckerin dauert 3 Jahre."]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a12",
+          "typ": "frei",
+          "ziel": "de.a2.e13.s0264",
+          "nach": "ziel",
+          "alternativen": ["Mein Papa arbeitet in einer großen Fabrik."]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e13.s0258",
+          "ablenker": ["de.a2.e13.s0138", "de.a2.e13.s0139"]
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e13.s0252",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a2.e13.s0265"
+        },
+        {
+          "schluessel": "de.a2.e13.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e13.s0266"
+        }
+      ]
+    }
+  ]
+}

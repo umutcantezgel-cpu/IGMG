@@ -1,0 +1,5392 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "tr",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "tr.b1.e02",
+    "reihenfolge": 3,
+    "thema": {
+      "de": "Neue Kolleginnen und Kollegen",
+      "tr": "Yeni iş arkadaşları",
+      "ar": "زملاء وزميلات جدد"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann Personen genauer beschreiben, ohne einen Relativsatz zu brauchen.",
+        "tr": "Kişileri -en ekiyle, yan cümle kurmadan daha ayrıntılı tarif edebilirim.",
+        "ar": "أستطيع أن أصف الأشخاص بدقة أكبر دون أن أحتاج إلى جملة صلة."
+      },
+      {
+        "de": "Ich kann über Aufgaben, Schichten und Urlaub am Arbeitsplatz sprechen.",
+        "tr": "İş yerinde görevler, vardiyalar ve izin hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدث عن المهام والمناوبات والإجازة في مكان العمل."
+      },
+      {
+        "de": "Ich kann neue Kolleginnen und Kollegen begrüßen und einweisen.",
+        "tr": "Yeni iş arkadaşlarını karşılayabilir ve onlara işi anlatabilirim.",
+        "ar": "أستطيع أن أرحب بالزملاء الجدد وأن أشرح لهم العمل."
+      }
+    ],
+    "symbol": "briefcase",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "tr.b1.e02.vardiya",
+      "lemma": "vardiya",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "vardiyalar",
+        "akk": "vardiyayı",
+        "dat": "vardiyaya",
+        "gen": "vardiyanın",
+        "ins": "vardiyayla",
+        "poss.1sg": "vardiyam",
+        "poss.2sg": "vardiyan",
+        "poss.3sg": "vardiyası",
+        "poss.1pl": "vardiyamız",
+        "poss.2pl": "vardiyanız",
+        "lok": "vardiyada",
+        "abl": "vardiyadan",
+        "poss.3pl": "vardiyaları"
+      },
+      "frequenzRang": 30919,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.nobet",
+      "lemma": "nöbet",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "nöbetler",
+        "akk/poss.3sg": "nöbeti",
+        "dat": "nöbete",
+        "gen/poss.2sg": "nöbetin",
+        "ins": "nöbetle",
+        "poss.1sg": "nöbetim",
+        "poss.1pl": "nöbetimiz",
+        "poss.2pl": "nöbetiniz",
+        "lok": "nöbette",
+        "abl": "nöbetten",
+        "poss.3pl": "nöbetleri"
+      },
+      "frequenzRang": 6035,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.sef",
+      "lemma": "şef",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "şefler",
+        "akk/poss.3sg": "şefi",
+        "dat": "şefe",
+        "gen/poss.2sg": "şefin",
+        "ins": "şefle",
+        "poss.1sg/kop.1sg": "şefim",
+        "poss.1pl": "şefimiz",
+        "poss.2pl": "şefiniz",
+        "lok": "şefte",
+        "abl": "şeften",
+        "poss.3pl": "şefleri",
+        "kop.1pl": "şefiz",
+        "kop.2sg": "şefsin",
+        "kop.2pl": "şefsiniz"
+      },
+      "frequenzRang": 7055,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.amir",
+      "lemma": "amir",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "amirler",
+        "akk/poss.3sg": "amiri",
+        "dat": "amire",
+        "gen/poss.2sg": "amirin",
+        "ins": "amirle",
+        "poss.1sg/kop.1sg": "amirim",
+        "poss.1pl": "amirimiz",
+        "poss.2pl": "amiriniz",
+        "lok": "amirde",
+        "abl": "amirden",
+        "poss.3pl": "amirleri",
+        "kop.1pl": "amiriz",
+        "kop.2sg": "amirsin",
+        "kop.2pl": "amirsiniz"
+      },
+      "frequenzRang": 14079,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.isveren",
+      "lemma": "işveren",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "işverenler",
+        "akk/poss.3sg": "işvereni",
+        "dat": "işverene",
+        "gen/poss.2sg": "işverenin",
+        "ins": "işverenle",
+        "poss.1sg/kop.1sg": "işverenim",
+        "poss.1pl": "işverenimiz",
+        "poss.2pl": "işvereniniz",
+        "lok": "işverende",
+        "abl": "işverenden",
+        "poss.3pl": "işverenleri",
+        "kop.1pl": "işvereniz",
+        "kop.2sg": "işverensin",
+        "kop.2pl": "işverensiniz"
+      },
+      "frequenzRang": 28031,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.meslektas",
+      "lemma": "meslektaş",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "meslektaşlar",
+        "akk/poss.3sg": "meslektaşı",
+        "dat": "meslektaşa",
+        "gen/poss.2sg": "meslektaşın",
+        "ins": "meslektaşla",
+        "poss.1sg/kop.1sg": "meslektaşım",
+        "poss.1pl": "meslektaşımız",
+        "poss.2pl": "meslektaşınız",
+        "lok": "meslektaşta",
+        "abl": "meslektaştan",
+        "poss.3pl": "meslektaşları",
+        "kop.1pl": "meslektaşız",
+        "kop.2sg": "meslektaşsın",
+        "kop.2pl": "meslektaşsınız"
+      },
+      "frequenzRang": 38615,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.asistan",
+      "lemma": "asistan",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "asistanlar",
+        "akk/poss.3sg": "asistanı",
+        "dat": "asistana",
+        "gen/poss.2sg": "asistanın",
+        "ins": "asistanla",
+        "poss.1sg/kop.1sg": "asistanım",
+        "poss.1pl": "asistanımız",
+        "poss.2pl": "asistanınız",
+        "lok": "asistanda",
+        "abl": "asistandan",
+        "poss.3pl": "asistanları",
+        "kop.1pl": "asistanız",
+        "kop.2sg": "asistansın",
+        "kop.2pl": "asistansınız"
+      },
+      "frequenzRang": 12254,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.eleman",
+      "lemma": "eleman",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "elemanlar",
+        "akk/poss.3sg": "elemanı",
+        "dat": "elemana",
+        "gen/poss.2sg": "elemanın",
+        "ins": "elemanla",
+        "poss.1sg/kop.1sg": "elemanım",
+        "poss.1pl": "elemanımız",
+        "poss.2pl": "elemanınız",
+        "lok": "elemanda",
+        "abl": "elemandan",
+        "poss.3pl": "elemanları",
+        "kop.1pl": "elemanız",
+        "kop.2sg": "elemansın",
+        "kop.2pl": "elemansınız"
+      },
+      "frequenzRang": 5601,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.muhasebe",
+      "lemma": "muhasebe",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk": "muhasebeyi",
+        "dat": "muhasebeye",
+        "gen": "muhasebenin",
+        "ins": "muhasebeyle",
+        "poss.1sg": "muhasebem",
+        "poss.2sg": "muhaseben",
+        "poss.3sg": "muhasebesi",
+        "poss.1pl": "muhasebemiz",
+        "poss.2pl": "muhasebeniz",
+        "lok": "muhasebede",
+        "abl": "muhasebeden"
+      },
+      "frequenzRang": 9545,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.personel",
+      "lemma": "personel",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "personeller",
+        "akk/poss.3sg": "personeli",
+        "dat": "personele",
+        "gen/poss.2sg": "personelin",
+        "ins": "personelle",
+        "poss.1sg": "personelim",
+        "poss.1pl": "personelimiz",
+        "poss.2pl": "personeliniz",
+        "lok": "personelde",
+        "abl": "personelden",
+        "poss.3pl": "personelleri"
+      },
+      "frequenzRang": 2711,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.kadro",
+      "lemma": "kadro",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "kadrolar",
+        "akk": "kadroyu",
+        "dat": "kadroya",
+        "gen": "kadronun",
+        "ins": "kadroyla",
+        "poss.1sg": "kadrom",
+        "poss.2sg": "kadron",
+        "poss.3sg": "kadrosu",
+        "poss.1pl": "kadromuz",
+        "poss.2pl": "kadronuz",
+        "lok": "kadroda",
+        "abl": "kadrodan",
+        "poss.3pl": "kadroları"
+      },
+      "frequenzRang": 1606,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.departman",
+      "lemma": "departman",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "departmanlar",
+        "akk/poss.3sg": "departmanı",
+        "dat": "departmana",
+        "gen/poss.2sg": "departmanın",
+        "ins": "departmanla",
+        "poss.1sg": "departmanım",
+        "poss.1pl": "departmanımız",
+        "poss.2pl": "departmanınız",
+        "lok": "departmanda",
+        "abl": "departmandan",
+        "poss.3pl": "departmanları"
+      },
+      "frequenzRang": 32223,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.firma",
+      "lemma": "firma",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "firmalar",
+        "akk": "firmayı",
+        "dat": "firmaya",
+        "gen": "firmanın",
+        "ins": "firmayla",
+        "poss.1sg": "firmam",
+        "poss.2sg": "firman",
+        "poss.3sg": "firması",
+        "poss.1pl": "firmamız",
+        "poss.2pl": "firmanız",
+        "lok": "firmada",
+        "abl": "firmadan",
+        "poss.3pl": "firmaları"
+      },
+      "frequenzRang": 5608,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.sektor",
+      "lemma": "sektör",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "pl": "sektörler",
+        "akk/poss.3sg": "sektörü",
+        "dat": "sektöre",
+        "gen/poss.2sg": "sektörün",
+        "ins": "sektörle",
+        "poss.1sg": "sektörüm",
+        "poss.1pl": "sektörümüz",
+        "poss.2pl": "sektörünüz",
+        "lok": "sektörde",
+        "abl": "sektörden",
+        "poss.3pl": "sektörleri"
+      },
+      "frequenzRang": 9381,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.depo",
+      "lemma": "depo",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "depolar",
+        "akk": "depoyu",
+        "dat": "depoya",
+        "gen": "deponun",
+        "ins": "depoyla",
+        "poss.1sg": "depom",
+        "poss.2sg": "depon",
+        "poss.3sg": "deposu",
+        "poss.1pl": "depomuz",
+        "poss.2pl": "deponuz",
+        "lok": "depoda",
+        "abl": "depodan",
+        "poss.3pl": "depoları"
+      },
+      "frequenzRang": 7585,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.yemekhane",
+      "lemma": "yemekhane",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "yemekhaneler",
+        "akk": "yemekhaneyi",
+        "dat": "yemekhaneye",
+        "gen": "yemekhanenin",
+        "ins": "yemekhaneyle",
+        "poss.1sg": "yemekhanem",
+        "poss.2sg": "yemekhanen",
+        "poss.3sg": "yemekhanesi",
+        "poss.1pl": "yemekhanemiz",
+        "poss.2pl": "yemekhaneniz",
+        "lok": "yemekhanede",
+        "abl": "yemekhaneden",
+        "poss.3pl": "yemekhaneleri"
+      },
+      "frequenzRang": 36891,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.satis",
+      "lemma": "satış",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "satışlar",
+        "akk/poss.3sg": "satışı",
+        "dat": "satışa",
+        "gen/poss.2sg": "satışın",
+        "ins": "satışla",
+        "poss.1sg": "satışım",
+        "poss.1pl": "satışımız",
+        "poss.2pl": "satışınız",
+        "lok": "satışta",
+        "abl": "satıştan",
+        "poss.3pl": "satışları"
+      },
+      "frequenzRang": 1989,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.ticaret",
+      "lemma": "ticaret",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk/poss.3sg": "ticareti",
+        "dat": "ticarete",
+        "gen/poss.2sg": "ticaretin",
+        "ins": "ticaretle",
+        "poss.1sg": "ticaretim",
+        "poss.1pl": "ticaretimiz",
+        "poss.2pl": "ticaretiniz",
+        "lok": "ticarette",
+        "abl": "ticaretten"
+      },
+      "frequenzRang": 940,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.isletme",
+      "lemma": "işletme",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "işletmeler",
+        "akk": "işletmeyi",
+        "dat": "işletmeye",
+        "gen": "işletmenin",
+        "ins": "işletmeyle",
+        "poss.1sg": "işletmem",
+        "poss.2sg": "işletmen",
+        "poss.3sg": "işletmesi",
+        "poss.1pl": "işletmemiz",
+        "poss.2pl": "işletmeniz",
+        "lok": "işletmede",
+        "abl": "işletmeden",
+        "poss.3pl": "işletmeleri"
+      },
+      "frequenzRang": 3108,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.emek",
+      "lemma": "emek",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "emek → emeğ-"
+      },
+      "formen": {
+        "akk/poss.3sg": "emeği",
+        "dat": "emeğe",
+        "gen/poss.2sg": "emeğin",
+        "ins": "emekle",
+        "poss.1sg": "emeğim",
+        "poss.1pl": "emeğimiz",
+        "poss.2pl": "emeğiniz",
+        "lok": "emekte",
+        "abl": "emekten"
+      },
+      "frequenzRang": 2327,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.yuk",
+      "lemma": "yük",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "akk/poss.3sg": "yükü",
+        "dat": "yüke",
+        "gen/poss.2sg": "yükün",
+        "poss.1sg": "yüküm",
+        "poss.1pl": "yükümüz",
+        "poss.2pl": "yükünüz",
+        "lok": "yükte",
+        "abl": "yükten",
+        "poss.3pl": "yükleri"
+      },
+      "frequenzRang": 2546,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.is-yeri",
+      "lemma": "iş yeri",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "kompositum": "iş + yer + -i; Endungen mit n (iş yerinde)"
+      },
+      "formen": {
+        "pl": "iş yerleri",
+        "akk": "iş yerini",
+        "dat": "iş yerine",
+        "lok": "iş yerinde",
+        "abl": "iş yerinden",
+        "poss.1sg": "iş yerim",
+        "poss.1pl": "iş yerimiz"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.terfi",
+      "lemma": "terfi",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "terfiler",
+        "akk": "terfiyi",
+        "dat": "terfiye",
+        "gen": "terfinin",
+        "ins": "terfiyle",
+        "poss.1sg": "terfim",
+        "poss.2sg": "terfin",
+        "poss.3sg": "terfisi",
+        "poss.1pl": "terfimiz",
+        "poss.2pl": "terfiniz",
+        "lok": "terfide",
+        "abl": "terfiden",
+        "poss.3pl": "terfileri"
+      },
+      "frequenzRang": 5429,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.prim",
+      "lemma": "prim",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "primler",
+        "akk/poss.3sg": "primi",
+        "dat": "prime",
+        "gen/poss.2sg": "primin",
+        "ins": "primle",
+        "poss.1sg": "primim",
+        "poss.1pl": "primimiz",
+        "poss.2pl": "priminiz",
+        "lok": "primde",
+        "abl": "primden",
+        "poss.3pl": "primleri"
+      },
+      "frequenzRang": 6591,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.talimat",
+      "lemma": "talimat",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "talimatlar",
+        "akk/poss.3sg": "talimatı",
+        "dat": "talimata",
+        "gen/poss.2sg": "talimatın",
+        "ins": "talimatla",
+        "poss.1sg": "talimatım",
+        "poss.1pl": "talimatımız",
+        "poss.2pl": "talimatınız",
+        "lok": "talimatta",
+        "abl": "talimattan",
+        "poss.3pl": "talimatları"
+      },
+      "frequenzRang": 9028,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.seminer",
+      "lemma": "seminer",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "seminerler",
+        "akk/poss.3sg": "semineri",
+        "dat": "seminere",
+        "gen/poss.2sg": "seminerin",
+        "ins": "seminerle",
+        "poss.1sg": "seminerim",
+        "poss.1pl": "seminerimiz",
+        "poss.2pl": "semineriniz",
+        "lok": "seminerde",
+        "abl": "seminerden",
+        "poss.3pl": "seminerleri"
+      },
+      "frequenzRang": 18342,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.uretim",
+      "lemma": "üretim",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "üretimler",
+        "akk/poss.3sg": "üretimi",
+        "dat": "üretime",
+        "gen/poss.2sg": "üretimin",
+        "ins": "üretimle",
+        "poss.1sg": "üretimim",
+        "poss.1pl": "üretimimiz",
+        "poss.2pl": "üretiminiz",
+        "lok": "üretimde",
+        "abl": "üretimden",
+        "poss.3pl": "üretimleri"
+      },
+      "frequenzRang": 1408,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.kalite",
+      "lemma": "kalite",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "kaliteler",
+        "akk": "kaliteyi",
+        "dat": "kaliteye",
+        "gen": "kalitenin",
+        "ins": "kaliteyle",
+        "poss.1sg": "kalitem",
+        "poss.2sg": "kaliten",
+        "poss.3sg": "kalitesi",
+        "poss.1pl": "kalitemiz",
+        "poss.2pl": "kaliteniz",
+        "lok": "kalitede",
+        "abl": "kaliteden",
+        "poss.3pl": "kaliteleri"
+      },
+      "frequenzRang": 3691,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.yetki",
+      "lemma": "yetki",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "yetkiler",
+        "akk": "yetkiyi",
+        "dat": "yetkiye",
+        "gen": "yetkinin",
+        "ins": "yetkiyle",
+        "poss.1sg": "yetkim",
+        "poss.2sg": "yetkin",
+        "poss.3sg": "yetkisi",
+        "poss.1pl": "yetkimiz",
+        "poss.2pl": "yetkiniz",
+        "lok": "yetkide",
+        "abl": "yetkiden",
+        "poss.3pl": "yetkileri"
+      },
+      "frequenzRang": 5926,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.isbirligi",
+      "lemma": "işbirliği",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "kompositum": "iş + birlik + -i; Endungen mit n (işbirliğini)"
+      },
+      "formen": {
+        "pl": "işbirlikleri",
+        "akk": "işbirliğini",
+        "dat": "işbirliğine",
+        "lok": "işbirliğinde",
+        "ins": "işbirliğiyle"
+      },
+      "frequenzRang": 1979,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.yogunluk",
+      "lemma": "yoğunluk",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u",
+        "erweichung": "yoğunluk → yoğunluğ-"
+      },
+      "formen": {
+        "pl": "yoğunluklar",
+        "akk/poss.3sg": "yoğunluğu",
+        "dat": "yoğunluğa",
+        "gen/poss.2sg": "yoğunluğun",
+        "ins": "yoğunlukla",
+        "poss.1sg": "yoğunluğum",
+        "poss.1pl": "yoğunluğumuz",
+        "poss.2pl": "yoğunluğunuz",
+        "lok": "yoğunlukta",
+        "abl": "yoğunluktan",
+        "poss.3pl": "yoğunlukları"
+      },
+      "frequenzRang": 10419,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.alet",
+      "lemma": "alet",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "aletler",
+        "dat": "alete",
+        "gen/poss.2sg": "aletin",
+        "ins": "aletle",
+        "poss.1pl": "aletimiz",
+        "poss.2pl": "aletiniz",
+        "lok": "alette",
+        "abl": "aletten",
+        "poss.3pl": "aletleri"
+      },
+      "frequenzRang": 4046,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.cekic",
+      "lemma": "çekiç",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "çekiç → çekic-"
+      },
+      "formen": {
+        "pl": "çekiçler",
+        "akk/poss.3sg": "çekici",
+        "dat": "çekice",
+        "gen/poss.2sg": "çekicin",
+        "ins": "çekiçle",
+        "poss.1sg": "çekicim",
+        "poss.1pl": "çekicimiz",
+        "poss.2pl": "çekiciniz",
+        "lok": "çekiçte",
+        "abl": "çekiçten",
+        "poss.3pl": "çekiçleri"
+      },
+      "frequenzRang": 14920,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.sakal",
+      "lemma": "sakal",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "sakallar",
+        "akk/poss.3sg": "sakalı",
+        "dat": "sakala",
+        "gen/poss.2sg": "sakalın",
+        "ins": "sakalla",
+        "poss.1sg": "sakalım",
+        "poss.1pl": "sakalımız",
+        "poss.2pl": "sakalınız",
+        "lok": "sakalda",
+        "abl": "sakaldan",
+        "poss.3pl": "sakalları"
+      },
+      "frequenzRang": 11925,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.biyik",
+      "lemma": "bıyık",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "bıyık → bıyığ-"
+      },
+      "formen": {
+        "pl": "bıyıklar",
+        "akk/poss.3sg": "bıyığı",
+        "dat": "bıyığa",
+        "gen/poss.2sg": "bıyığın",
+        "ins": "bıyıkla",
+        "poss.1sg": "bıyığım",
+        "poss.1pl": "bıyığımız",
+        "poss.2pl": "bıyığınız",
+        "lok": "bıyıkta",
+        "abl": "bıyıktan",
+        "poss.3pl": "bıyıkları"
+      },
+      "frequenzRang": 18178,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.kivircik",
+      "lemma": "kıvırcık",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "kıvırcık → kıvırcığ- vor Vokal"
+      },
+      "frequenzRang": 16946,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.kumral",
+      "lemma": "kumral",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "kop.1sg": "kumralım",
+        "kop.1pl": "kumralız",
+        "kop.2sg": "kumralsın",
+        "kop.2pl": "kumralsınız"
+      },
+      "frequenzRang": 20080,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.kizil",
+      "lemma": "kızıl",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 2646,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.gozluklu",
+      "lemma": "gözlüklü",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "kop.1sg": "gözlüklüyüm",
+        "kop.1pl": "gözlüklüyüz",
+        "kop.2sg": "gözlüklüsün",
+        "kop.2pl": "gözlüklüsünüz"
+      },
+      "frequenzRang": 24102,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.boylu",
+      "lemma": "boylu",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "frequenzRang": 7234,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.sakalli",
+      "lemma": "sakallı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "kop.1sg": "sakallıyım",
+        "kop.1pl": "sakallıyız",
+        "kop.2sg": "sakallısın",
+        "kop.2pl": "sakallısınız"
+      },
+      "frequenzRang": 15458,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.biyikli",
+      "lemma": "bıyıklı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "kop.1sg": "bıyıklıyım",
+        "kop.1pl": "bıyıklıyız",
+        "kop.2sg": "bıyıklısın",
+        "kop.2pl": "bıyıklısınız"
+      },
+      "frequenzRang": 20310,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.dalgali",
+      "lemma": "dalgalı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 19200,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.guler-yuzlu",
+      "lemma": "güler yüzlü",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "kop.1sg": "güler yüzlüyüm",
+        "kop.1pl": "güler yüzlüyüz",
+        "kop.2sg": "güler yüzlüsün",
+        "kop.2pl": "güler yüzlüsünüz"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.esnek",
+      "lemma": "esnek",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 8762,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.samimi",
+      "lemma": "samimi",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "kop.1sg": "samimiyim",
+        "kop.1pl": "samimiyiz",
+        "kop.2sg": "samimisin",
+        "kop.2pl": "samimisiniz"
+      },
+      "frequenzRang": 2921,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.kibar",
+      "lemma": "kibar",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "kop.1sg": "kibarım",
+        "kop.1pl": "kibarız",
+        "kop.2sg": "kibarsın",
+        "kop.2pl": "kibarsınız"
+      },
+      "frequenzRang": 7129,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.kidemli",
+      "lemma": "kıdemli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "kop.1sg": "kıdemliyim",
+        "kop.1pl": "kıdemliyiz",
+        "kop.2sg": "kıdemlisin",
+        "kop.2pl": "kıdemlisiniz"
+      },
+      "frequenzRang": 8478,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.sabit",
+      "lemma": "sabit",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 1621,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.yari-zamanli",
+      "lemma": "yarı zamanlı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.teknik",
+      "lemma": "teknik",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 335,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.belli",
+      "lemma": "belli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 356,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.net",
+      "lemma": "net",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 981,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.asgari",
+      "lemma": "asgari",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 3883,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.saatlik",
+      "lemma": "saatlik",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 4322,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.ucretli",
+      "lemma": "ücretli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 4646,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.issiz",
+      "lemma": "işsiz",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "kop.1sg": "işsizim",
+        "kop.1pl": "işsiziz",
+        "kop.2sg": "işsizsin",
+        "kop.2pl": "işsizsiniz"
+      },
+      "frequenzRang": 6432,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.nobetci",
+      "lemma": "nöbetçi",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 10357,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.izinli",
+      "lemma": "izinli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "kop.1sg": "izinliyim",
+        "kop.1pl": "izinliyiz",
+        "kop.2sg": "izinlisin",
+        "kop.2pl": "izinlisiniz"
+      },
+      "frequenzRang": 20053,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.raporlu",
+      "lemma": "raporlu",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "kop.1sg": "raporluyum",
+        "kop.1pl": "raporluyuz",
+        "kop.2sg": "raporlusun",
+        "kop.2pl": "raporlusunuz"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.uretken",
+      "lemma": "üretken",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "kop.1sg": "üretkenim",
+        "kop.1pl": "üretkeniz",
+        "kop.2sg": "üretkensin",
+        "kop.2pl": "üretkensiniz"
+      },
+      "frequenzRang": 18440,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.mesleki",
+      "lemma": "mesleki",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 5399,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.donusumlu",
+      "lemma": "dönüşümlü",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "frequenzRang": 24536,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.yonetmek",
+      "lemma": "yönetmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "yönet",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "yönet",
+        "iyor.3sg": "yönetiyor",
+        "imp.2pl": "yönetin",
+        "aor.3sg": "yönetir",
+        "iyor.neg.3sg": "yönetmiyor",
+        "aor.1sg": "yönetirim",
+        "aor.neg.3sg": "yönetmez",
+        "aor.neg.1sg": "yönetmem",
+        "di.1sg": "yönettim",
+        "di.2sg": "yönettin",
+        "di.3sg": "yönetti",
+        "di.1pl": "yönettik",
+        "di.2pl": "yönettiniz",
+        "di.neg.3sg": "yönetmedi",
+        "mis.3sg": "yönetmiş",
+        "ecek.3sg": "yönetecek",
+        "ecek.1sg": "yöneteceğim",
+        "ecek.1pl": "yöneteceğiz",
+        "ebil.3sg": "yönetebilir",
+        "eme.3sg": "yönetemez",
+        "meli.3sg": "yönetmeli",
+        "opt.1sg": "yöneteyim",
+        "opt.1pl": "yönetelim",
+        "imp3.3sg": "yönetsin",
+        "iyordu.3sg": "yönetiyordu",
+        "mek.akk": "yönetmeyi",
+        "part.en": "yöneten",
+        "part.dik.3": "yönettiği",
+        "part.dik.1sg": "yönettiğim",
+        "part.ecek.3": "yöneteceği",
+        "konv.ip": "yönetip",
+        "konv.ince": "yönetince",
+        "konv.erek": "yöneterek",
+        "konv.meden": "yönetmeden",
+        "kond.3sg": "yönetse",
+        "nom.mesi": "yönetmesi",
+        "mis.ti": "yönetmişti"
+      },
+      "frequenzRang": 10630,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.halletmek",
+      "lemma": "halletmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "hallet",
+        "harmonie": "e/i",
+        "stammwechsel": "hallet → halled- vor Vokal"
+      },
+      "formen": {
+        "stamm": "hallet",
+        "iyor.3sg": "hallediyor",
+        "imp.2pl": "halledin",
+        "aor.3sg": "halleder",
+        "iyor.neg.3sg": "halletmiyor",
+        "aor.1sg": "hallederim",
+        "aor.neg.3sg": "halletmez",
+        "aor.neg.1sg": "halletmem",
+        "di.1sg": "hallettim",
+        "di.2sg": "hallettin",
+        "di.3sg": "halletti",
+        "di.1pl": "hallettik",
+        "di.2pl": "hallettiniz",
+        "di.neg.3sg": "halletmedi",
+        "mis.3sg": "halletmiş",
+        "ecek.3sg": "halledecek",
+        "ecek.1sg": "halledeceğim",
+        "ecek.1pl": "halledeceğiz",
+        "ebil.3sg": "halledebilir",
+        "eme.3sg": "halledemez",
+        "meli.3sg": "halletmeli",
+        "opt.1sg": "halledeyim",
+        "opt.1pl": "halledelim",
+        "imp3.3sg": "halletsin",
+        "iyordu.3sg": "hallediyordu",
+        "mek.akk": "halletmeyi",
+        "part.en": "halleden",
+        "part.dik.3": "hallettiği",
+        "part.dik.1sg": "hallettiğim",
+        "part.ecek.3": "halledeceği",
+        "konv.ip": "halledip",
+        "konv.ince": "halledince",
+        "konv.erek": "hallederek",
+        "konv.meden": "halletmeden",
+        "kond.3sg": "halletse",
+        "nom.mesi": "halletmesi",
+        "mis.ti": "halletmişti"
+      },
+      "frequenzRang": 44756,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.tanitmak",
+      "lemma": "tanıtmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "tanıt",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "tanıt",
+        "iyor.3sg": "tanıtıyor",
+        "imp.2pl": "tanıtın",
+        "aor.3sg": "tanıtır",
+        "iyor.neg.3sg": "tanıtmıyor",
+        "aor.1sg": "tanıtırım",
+        "aor.neg.3sg": "tanıtmaz",
+        "aor.neg.1sg": "tanıtmam",
+        "di.1sg": "tanıttım",
+        "di.2sg": "tanıttın",
+        "di.3sg": "tanıttı",
+        "di.1pl": "tanıttık",
+        "di.2pl": "tanıttınız",
+        "di.neg.3sg": "tanıtmadı",
+        "mis.3sg": "tanıtmış",
+        "ecek.3sg": "tanıtacak",
+        "ecek.1sg": "tanıtacağım",
+        "ecek.1pl": "tanıtacağız",
+        "ebil.3sg": "tanıtabilir",
+        "eme.3sg": "tanıtamaz",
+        "meli.3sg": "tanıtmalı",
+        "opt.1sg": "tanıtayım",
+        "opt.1pl": "tanıtalım",
+        "imp3.3sg": "tanıtsın",
+        "iyordu.3sg": "tanıtıyordu",
+        "mek.akk": "tanıtmayı",
+        "part.en": "tanıtan",
+        "part.dik.3": "tanıttığı",
+        "part.dik.1sg": "tanıttığım",
+        "part.ecek.3": "tanıtacağı",
+        "konv.ip": "tanıtıp",
+        "konv.ince": "tanıtınca",
+        "konv.erek": "tanıtarak",
+        "konv.meden": "tanıtmadan",
+        "kond.3sg": "tanıtsa",
+        "nom.mesi": "tanıtması",
+        "mis.ti": "tanıtmıştı"
+      },
+      "frequenzRang": 13490,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.ustlenmek",
+      "lemma": "üstlenmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "üstlen",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "üstlen",
+        "iyor.3sg": "üstleniyor",
+        "imp.2pl": "üstlenin",
+        "aor.3sg": "üstlenir",
+        "iyor.neg.3sg": "üstlenmiyor",
+        "aor.1sg": "üstlenirim",
+        "aor.neg.3sg": "üstlenmez",
+        "aor.neg.1sg": "üstlenmem",
+        "di.1sg": "üstlendim",
+        "di.2sg": "üstlendin",
+        "di.3sg": "üstlendi",
+        "di.1pl": "üstlendik",
+        "di.2pl": "üstlendiniz",
+        "di.neg.3sg": "üstlenmedi",
+        "mis.3sg": "üstlenmiş",
+        "ecek.3sg": "üstlenecek",
+        "ecek.1sg": "üstleneceğim",
+        "ecek.1pl": "üstleneceğiz",
+        "ebil.3sg": "üstlenebilir",
+        "eme.3sg": "üstlenemez",
+        "meli.3sg": "üstlenmeli",
+        "opt.1sg": "üstleneyim",
+        "opt.1pl": "üstlenelim",
+        "imp3.3sg": "üstlensin",
+        "iyordu.3sg": "üstleniyordu",
+        "mek.akk": "üstlenmeyi",
+        "part.en": "üstlenen",
+        "part.dik.3": "üstlendiği",
+        "part.dik.1sg": "üstlendiğim",
+        "part.ecek.3": "üstleneceği",
+        "konv.ip": "üstlenip",
+        "konv.ince": "üstlenince",
+        "konv.erek": "üstlenerek",
+        "konv.meden": "üstlenmeden",
+        "kond.3sg": "üstlense",
+        "nom.mesi": "üstlenmesi",
+        "mis.ti": "üstlenmişti"
+      },
+      "frequenzRang": 40200,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.denetlemek",
+      "lemma": "denetlemek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "denetle",
+        "harmonie": "e/i",
+        "stammwechsel": "denetle → denetli- vor -yor"
+      },
+      "formen": {
+        "stamm": "denetle",
+        "iyor.3sg": "denetliyor",
+        "imp.2pl": "denetleyin",
+        "aor.3sg": "denetler",
+        "iyor.neg.3sg": "denetlemiyor",
+        "aor.1sg": "denetlerim",
+        "aor.neg.3sg": "denetlemez",
+        "aor.neg.1sg": "denetlemem",
+        "di.1sg": "denetledim",
+        "di.2sg": "denetledin",
+        "di.3sg": "denetledi",
+        "di.1pl": "denetledik",
+        "di.2pl": "denetlediniz",
+        "di.neg.3sg": "denetlemedi",
+        "mis.3sg": "denetlemiş",
+        "ecek.3sg": "denetleyecek",
+        "ecek.1sg": "denetleyeceğim",
+        "ecek.1pl": "denetleyeceğiz",
+        "ebil.3sg": "denetleyebilir",
+        "eme.3sg": "denetleyemez",
+        "meli.3sg": "denetlemeli",
+        "opt.1sg": "denetleyeyim",
+        "opt.1pl": "denetleyelim",
+        "imp3.3sg": "denetlesin",
+        "iyordu.3sg": "denetliyordu",
+        "mek.akk": "denetlemeyi",
+        "part.en": "denetleyen",
+        "part.dik.3": "denetlediği",
+        "part.dik.1sg": "denetlediğim",
+        "part.ecek.3": "denetleyeceği",
+        "konv.ip": "denetleyip",
+        "konv.ince": "denetleyince",
+        "konv.erek": "denetleyerek",
+        "konv.meden": "denetlemeden",
+        "kond.3sg": "denetlese",
+        "nom.mesi": "denetlemesi",
+        "mis.ti": "denetlemişti"
+      },
+      "frequenzRang": 31662,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.yazdirmak",
+      "lemma": "yazdırmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "yazdır",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "yazdır",
+        "iyor.3sg": "yazdırıyor",
+        "imp.2pl": "yazdırın",
+        "aor.3sg": "yazdırır",
+        "iyor.neg.3sg": "yazdırmıyor",
+        "aor.1sg": "yazdırırım",
+        "aor.neg.3sg": "yazdırmaz",
+        "aor.neg.1sg": "yazdırmam",
+        "di.1sg": "yazdırdım",
+        "di.2sg": "yazdırdın",
+        "di.3sg": "yazdırdı",
+        "di.1pl": "yazdırdık",
+        "di.2pl": "yazdırdınız",
+        "di.neg.3sg": "yazdırmadı",
+        "mis.3sg": "yazdırmış",
+        "ecek.3sg": "yazdıracak",
+        "ecek.1sg": "yazdıracağım",
+        "ecek.1pl": "yazdıracağız",
+        "ebil.3sg": "yazdırabilir",
+        "eme.3sg": "yazdıramaz",
+        "meli.3sg": "yazdırmalı",
+        "opt.1sg": "yazdırayım",
+        "opt.1pl": "yazdıralım",
+        "imp3.3sg": "yazdırsın",
+        "iyordu.3sg": "yazdırıyordu",
+        "mek.akk": "yazdırmayı",
+        "part.en": "yazdıran",
+        "part.dik.3": "yazdırdığı",
+        "part.dik.1sg": "yazdırdığım",
+        "part.ecek.3": "yazdıracağı",
+        "konv.ip": "yazdırıp",
+        "konv.ince": "yazdırınca",
+        "konv.erek": "yazdırarak",
+        "konv.meden": "yazdırmadan",
+        "kond.3sg": "yazdırsa",
+        "nom.mesi": "yazdırması",
+        "mis.ti": "yazdırmıştı"
+      },
+      "frequenzRang": 48188,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.calistirmak",
+      "lemma": "çalıştırmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "çalıştır",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "çalıştır",
+        "iyor.3sg": "çalıştırıyor",
+        "imp.2pl": "çalıştırın",
+        "aor.3sg": "çalıştırır",
+        "iyor.neg.3sg": "çalıştırmıyor",
+        "aor.1sg": "çalıştırırım",
+        "aor.neg.3sg": "çalıştırmaz",
+        "aor.neg.1sg": "çalıştırmam",
+        "di.1sg": "çalıştırdım",
+        "di.2sg": "çalıştırdın",
+        "di.3sg": "çalıştırdı",
+        "di.1pl": "çalıştırdık",
+        "di.2pl": "çalıştırdınız",
+        "di.neg.3sg": "çalıştırmadı",
+        "mis.3sg": "çalıştırmış",
+        "ecek.3sg": "çalıştıracak",
+        "ecek.1sg": "çalıştıracağım",
+        "ecek.1pl": "çalıştıracağız",
+        "ebil.3sg": "çalıştırabilir",
+        "eme.3sg": "çalıştıramaz",
+        "meli.3sg": "çalıştırmalı",
+        "opt.1sg": "çalıştırayım",
+        "opt.1pl": "çalıştıralım",
+        "imp3.3sg": "çalıştırsın",
+        "iyordu.3sg": "çalıştırıyordu",
+        "mek.akk": "çalıştırmayı",
+        "part.en": "çalıştıran",
+        "part.dik.3": "çalıştırdığı",
+        "part.dik.1sg": "çalıştırdığım",
+        "part.ecek.3": "çalıştıracağı",
+        "konv.ip": "çalıştırıp",
+        "konv.ince": "çalıştırınca",
+        "konv.erek": "çalıştırarak",
+        "konv.meden": "çalıştırmadan",
+        "kond.3sg": "çalıştırsa",
+        "nom.mesi": "çalıştırması",
+        "mis.ti": "çalıştırmıştı"
+      },
+      "frequenzRang": 16462,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.devralmak",
+      "lemma": "devralmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "devral",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "devral",
+        "iyor.3sg": "devralıyor",
+        "imp.2pl": "devralın",
+        "aor.3sg": "devralır",
+        "iyor.neg.3sg": "devralmıyor",
+        "aor.1sg": "devralırım",
+        "aor.neg.3sg": "devralmaz",
+        "aor.neg.1sg": "devralmam",
+        "di.1sg": "devraldım",
+        "di.2sg": "devraldın",
+        "di.3sg": "devraldı",
+        "di.1pl": "devraldık",
+        "di.2pl": "devraldınız",
+        "di.neg.3sg": "devralmadı",
+        "mis.3sg": "devralmış",
+        "ecek.3sg": "devralacak",
+        "ecek.1sg": "devralacağım",
+        "ecek.1pl": "devralacağız",
+        "ebil.3sg": "devralabilir",
+        "eme.3sg": "devralamaz",
+        "meli.3sg": "devralmalı",
+        "opt.1sg": "devralayım",
+        "opt.1pl": "devralalım",
+        "imp3.3sg": "devralsın",
+        "iyordu.3sg": "devralıyordu",
+        "mek.akk": "devralmayı",
+        "part.en": "devralan",
+        "part.dik.3": "devraldığı",
+        "part.dik.1sg": "devraldığım",
+        "part.ecek.3": "devralacağı",
+        "konv.ip": "devralıp",
+        "konv.ince": "devralınca",
+        "konv.erek": "devralarak",
+        "konv.meden": "devralmadan",
+        "kond.3sg": "devralsa",
+        "nom.mesi": "devralması",
+        "mis.ti": "devralmıştı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.egitmek",
+      "lemma": "eğitmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "eğit",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "eğit",
+        "iyor.3sg": "eğitiyor",
+        "imp.2pl": "eğitin",
+        "aor.3sg": "eğitir",
+        "iyor.neg.3sg": "eğitmiyor",
+        "aor.1sg": "eğitirim",
+        "aor.neg.3sg": "eğitmez",
+        "aor.neg.1sg": "eğitmem",
+        "di.1sg": "eğittim",
+        "di.2sg": "eğittin",
+        "di.3sg": "eğitti",
+        "di.1pl": "eğittik",
+        "di.2pl": "eğittiniz",
+        "di.neg.3sg": "eğitmedi",
+        "mis.3sg": "eğitmiş",
+        "ecek.3sg": "eğitecek",
+        "ecek.1sg": "eğiteceğim",
+        "ecek.1pl": "eğiteceğiz",
+        "ebil.3sg": "eğitebilir",
+        "eme.3sg": "eğitemez",
+        "meli.3sg": "eğitmeli",
+        "opt.1sg": "eğiteyim",
+        "opt.1pl": "eğitelim",
+        "imp3.3sg": "eğitsin",
+        "iyordu.3sg": "eğitiyordu",
+        "mek.akk": "eğitmeyi",
+        "part.en": "eğiten",
+        "part.dik.3": "eğittiği",
+        "part.dik.1sg": "eğittiğim",
+        "part.ecek.3": "eğiteceği",
+        "konv.ip": "eğitip",
+        "konv.ince": "eğitince",
+        "konv.erek": "eğiterek",
+        "konv.meden": "eğitmeden",
+        "kond.3sg": "eğitse",
+        "nom.mesi": "eğitmesi",
+        "mis.ti": "eğitmişti"
+      },
+      "frequenzRang": 25037,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.uzaktan",
+      "lemma": "uzaktan",
+      "wortart": "adverb",
+      "frequenzRang": 2303,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.zamaninda",
+      "lemma": "zamanında",
+      "wortart": "adverb",
+      "frequenzRang": 1305,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.sirayla",
+      "lemma": "sırayla",
+      "wortart": "adverb",
+      "frequenzRang": 7348,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.unvan",
+      "lemma": "unvan",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "unvanlar",
+        "akk/poss.3sg": "unvanı",
+        "dat": "unvana",
+        "gen/poss.2sg": "unvanın",
+        "ins": "unvanla",
+        "poss.1sg": "unvanım",
+        "poss.1pl": "unvanımız",
+        "poss.2pl": "unvanınız",
+        "lok": "unvanda",
+        "abl": "unvandan",
+        "poss.3pl": "unvanları"
+      },
+      "frequenzRang": 11491,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.ticari",
+      "lemma": "ticari",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 1501,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "tr.b1.e02.s0001",
+      "text": "Bugün iş yerimde yeni bir meslektaş işe başladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0002",
+      "text": "İş yerimiz şehrin merkezinde, büyük bir binada.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0003",
+      "text": "Firmamızın Almanya'da ve Türkiye'de ofisleri var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0004",
+      "text": "Şefimiz bugün yeni elemanları ekibe tanıtıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0005",
+      "text": "Size kendimi tanıtabilir miyim?",
+      "quelle": "tatoeba:1529899",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1529899 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0006",
+      "text": "Kendimi odadaki herkese tanıttım.",
+      "quelle": "tatoeba:5925835",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5925835 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0007",
+      "text": "Merhaba, ben Emre Arslan; servisinizin yeni elemanıyım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0008",
+      "text": "Sinan Bey departmanımızın şefi; toplantıları o yönetir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0009",
+      "text": "O, satış departmanından sorumlu.",
+      "quelle": "tatoeba:1547491",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1547491 von ozzie"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0010",
+      "text": "Hangi departmanda çalışıyorsunuz?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0011",
+      "text": "Muhasebe departmanında çalışıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0012",
+      "text": "Senin amirin kim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0013",
+      "text": "Amirim Büşra Hanım, servisin kıdemli hemşiresi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0014",
+      "text": "İşveren her yeni çalışanla bir sözleşme imzalar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0015",
+      "text": "İşverenimiz bu yıl yeni elemanlar arıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0016",
+      "text": "Doktor Hoffmann ve Samīr Bey aynı serviste çalışan iki meslektaş.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0017",
+      "text": "Biz meslektaşız, ama aynı vardiyada çalışmıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0018",
+      "text": "Şefin asistanı bütün randevuları takvime yazar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0019",
+      "text": "Personel toplantısı saat onda başlıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0020",
+      "text": "Personel odası ikinci katta, mutfağın yanında.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0021",
+      "text": "Bu yıl kadroya üç yeni hemşire girdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0022",
+      "text": "Emre Bey artık bu hastanede kadrolu bir hemşire.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0023",
+      "text": "Unvanınız ne?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0024",
+      "text": "Unvanım kıdemli mühendis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0025",
+      "text": "Kapıdaki kartta Doktor Hoffmann'ın adı ve unvanı yazıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0026",
+      "text": "Kıdemli hemşireler yeni elemanları eğitir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0027",
+      "text": "Bu ay iki yeni asistanı ben eğiteceğim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0028",
+      "text": "Servisi kim yönetiyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0029",
+      "text": "Servisi Doktor Hoffmann yönetiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0030",
+      "text": "Projeyi yöneten mühendis Derya Hanım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0031",
+      "text": "Telefonda konuşan kadın kim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0032",
+      "text": "O, servisin şefi Doktor Hoffmann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0033",
+      "text": "Pencerenin yanında oturan adam kim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0034",
+      "text": "Pencerenin yanında oturan adam, teknik işlere bakan Jens Bey.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0035",
+      "text": "Kahve içen kadın bizim yeni meslektaşımız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0036",
+      "text": "Gelen kim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0037",
+      "text": "Gelen yeni asistan, adı Samīr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0038",
+      "text": "Firma her yıl staj yapan öğrencileri eğitir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0039",
+      "text": "Şefime 'siz' diyorum, meslektaşlarıma 'sen'.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0040",
+      "text": "Sizi ekibimize tanıtayım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0041",
+      "text": "Bu Salmā; bir ay boyunca bizim departmanda staj yapacak.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0042",
+      "text": "Elif, annesinin ofisindeki yeni meslektaşları merak ediyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0043",
+      "text": "Anne, senin ofisinde kaç eleman çalışıyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0044",
+      "text": "Bizim departmanda on iki eleman çalışıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0045",
+      "text": "Fotoğraftaki adam kim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0046",
+      "text": "Fotoğraftaki adam bizim yeni şefimiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0047",
+      "text": "Kapıdaki gözlüklü kadın, staj yapan öğrenci Salmā.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0048",
+      "text": "Uzun boylu, sakallı adam Cem Bey.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0049",
+      "text": "Sinan Bey orta boylu, bıyıklı bir adam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0050",
+      "text": "Jens Bey'in kızıl saçları ve kısa bir sakalı var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0051",
+      "text": "Kıvırcık saçlı kadın Büşra Hanım, yanındaki de Sude Hanım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0052",
+      "text": "Salmā uzun saçlı, gözlüklü bir genç kadın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0053",
+      "text": "Ebru Hanım'ın saçı kumral ve dalgalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0054",
+      "text": "Kızıl saçlı adam teknik işlere bakıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0055",
+      "text": "Doktor Hoffmann kısa saçlı ve gözlüklü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0056",
+      "text": "Samīr Bey orta boylu, gözlüklü ve bıyıklı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0057",
+      "text": "Uzun boylu musun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0058",
+      "text": "Hayır, orta boyluyum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0059",
+      "text": "Can artık babası kadar uzun boylu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0060",
+      "text": "Güler yüzlü bir hemşire bizi kapıda karşıladı.",
+      "tokens": ["Güler yüzlü", "bir", "hemşire", "bizi", "kapıda", "karşıladı"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0061",
+      "text": "Yeni şefimiz çok güler yüzlü.",
+      "tokens": ["Yeni", "şefimiz", "çok", "güler yüzlü"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0062",
+      "text": "Büşra Hanım güler yüzlü ve samimi bir insan.",
+      "tokens": ["Büşra", "Hanım", "güler yüzlü", "ve", "samimi", "bir", "insan"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0063",
+      "text": "İlk günden beri herkes bana çok samimi davranıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0064",
+      "text": "Samimi bir ortamda çalışmak çok güzel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0065",
+      "text": "Cem Bey herkese karşı çok kibar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0066",
+      "text": "Lütfen müşterilere karşı her zaman kibar olun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0067",
+      "text": "Çok kibarsın!",
+      "quelle": "tatoeba:4770261",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4770261 von ruth_tatoeba"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0068",
+      "text": "Buradaki insanlar kibardır.",
+      "quelle": "tatoeba:13755338",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13755338 von deyta"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0069",
+      "text": "O çok uzun boylu değil.",
+      "quelle": "tatoeba:13281427",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13281427 von deyta"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0070",
+      "text": "Resimde kahve içen sakallı bir adam, kitap okuyan bir kadın ve telefonla konuşan bir genç var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0071",
+      "text": "Masada oturan sakallı adam bir şey yazıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0072",
+      "text": "Kapının önünde bekleyen kumral adam yeni müşterimiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0073",
+      "text": "Sakallı mı, yoksa sadece bıyıklı mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0074",
+      "text": "Sadece bıyıklı, sakalı yok.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0075",
+      "text": "Senin saçın dalgalı, benimki kıvırcık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0076",
+      "text": "Bu alet seninki mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0077",
+      "text": "Hayır, benimki mavi olan çekiç.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0078",
+      "text": "Yeni meslektaşın dolabı hangisi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0079",
+      "text": "Onunki kapının yanındaki dolap.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0080",
+      "text": "Yeni elemanı tarif eder misin?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0081",
+      "text": "Uzun boylu, kumral ve çok güler yüzlü bir genç adam.",
+      "tokens": ["Uzun", "boylu", "kumral", "ve", "çok", "güler yüzlü", "bir", "genç", "adam"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0082",
+      "text": "Kapıda gözlüklü bir adam bekliyor; seni soruyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0083",
+      "text": "Bıyığı olan adam şefimiz, sakalı olan adam da Jens Bey.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0084",
+      "text": "Fotoğrafta çay içen gözlüklü kadın benim amirim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0085",
+      "text": "Gözlüklerini her sabah masada unutan meslektaşım Sabine Hanım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0086",
+      "text": "Hastanede üç vardiya var: sabah, akşam ve gece.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0087",
+      "text": "Sabah vardiyası saat altıda başlar, öğleden sonra ikide biter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0088",
+      "text": "Gece vardiyası saat onda başlar ve sabah altıda biter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0089",
+      "text": "Babam otobüs şoförü, o da vardiyalı çalışır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0090",
+      "text": "Bu hafta babam akşam vardiyasında, eve geç geliyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0091",
+      "text": "Vardiya planını kim hazırlar?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0092",
+      "text": "Vardiya planını her ay Cem Bey hazırlar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0093",
+      "text": "Duvardaki vardiya planına baktın mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0094",
+      "text": "Yarınki vardiyada kimler var?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0095",
+      "text": "Yarınki vardiyada Büşra Hanım, Emre Bey ve ben varız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0096",
+      "text": "Bu haftaki gece nöbetini ben devralıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0097",
+      "text": "Hemşireler gece nöbetini sırayla tutar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0098",
+      "text": "Bu hafta sonu nöbetçi hemşire benim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0099",
+      "text": "Bu gece nöbetçi eczane nerede?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0100",
+      "text": "Nöbetçi eczane istasyonun hemen yanında.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0101",
+      "text": "Bu gece nöbetçi doktor kim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0102",
+      "text": "Gece nöbetinden sonra çok yorgunum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0103",
+      "text": "Cem Bey bugün izinli, yarın gelecek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0104",
+      "text": "Büşra Hanım bu hafta izinli; onun işlerini ben devraldım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0105",
+      "text": "Hangi hafta izinlisiniz?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0106",
+      "text": "İzin istemek için amirine bir e-posta yazmalısın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0107",
+      "text": "Sude Hanım üç gündür raporlu, çünkü ateşi var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0108",
+      "text": "Raporlu olan meslektaşın yerine kim çalışacak?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0109",
+      "text": "Hasta olan çalışan raporlu olur ve evde dinlenir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0110",
+      "text": "Biz dönüşümlü çalışırız: bir hafta sabah, bir hafta akşam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0111",
+      "text": "Benim sabit bir çalışma saatim yok.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0112",
+      "text": "Babamın çalışma saatleri sabit değil, çünkü vardiyalı çalışıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0113",
+      "text": "Ofiste çalışma saatleri esnek; sekizle on arasında başlayabilirsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0114",
+      "text": "Esnek çalışma saatleri ailem için çok iyi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0115",
+      "text": "Pazartesi ve cuma günleri uzaktan çalışırım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0116",
+      "text": "Bugün evden, uzaktan çalışıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0117",
+      "text": "Uzaktan çalışmak için iyi bir internet bağlantısı lazım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0118",
+      "text": "Ben yarı zamanlı çalışıyorum, sadece sabahları.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0119",
+      "text": "Yarı zamanlı bir iş arıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0120",
+      "text": "Bu işte saatlik ücret ne kadar?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0121",
+      "text": "Saatlik ücret on beş euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0122",
+      "text": "Toplantı tam zamanında başladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0123",
+      "text": "Lütfen vardiyaya zamanında gelin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0124",
+      "text": "Tam zamanında geldin.",
+      "quelle": "tatoeba:1167111",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1167111 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0125",
+      "text": "Kışın serviste yoğunluk çok fazla.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0126",
+      "text": "Yoğunluk yüzünden bugün mola veremedik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0127",
+      "text": "Bu hafta büyük bir yoğunluk var, herkes fazla mesai yapıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0128",
+      "text": "Kimse bu vardiyayı istemiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0129",
+      "text": "Bu cumartesi benim vardiyamı biri devralabilir mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0130",
+      "text": "Ben cumartesi çalışırım, sen de pazar günü benim nöbetimi tutarsın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0131",
+      "text": "Hafta sonları çalışmam; çalışma saatlerim sabit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0132",
+      "text": "Servisin vardiya planı: 3–9 Mart",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0133",
+      "text": "Sabah vardiyası 6.00–14.00, akşam vardiyası 14.00–22.00, gece vardiyası 22.00–6.00.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0134",
+      "text": "Bu hafta Emre Bey ve Büşra Hanım sabah vardiyasında.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0135",
+      "text": "Cem Bey pazartesi ve salı izinli, çarşambadan itibaren akşam vardiyasında.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0136",
+      "text": "Sude Hanım bu hafta raporlu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0137",
+      "text": "Onun yerine cumartesi gece nöbetini Büşra Hanım devralıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0138",
+      "text": "Gece nöbetini hemşireler dönüşümlü tutar; kimse ayda beş geceden fazla çalışmaz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0139",
+      "text": "Vardiya değiştirmek isteyen kişi, önce bir meslektaşla konuşur ve Cem Bey'e haber verir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0140",
+      "text": "Her vardiyanın başında kısa bir toplantı var; lütfen zamanında gelin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0141",
+      "text": "Emre Bey bu hafta gece vardiyasında.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0142",
+      "text": "Sude Hanım bu hafta vardiyaya gelmiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0143",
+      "text": "Cem Bey gelecek hafta da izinli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0144",
+      "text": "Gece vardiyası ne zaman başlar?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0145",
+      "text": "Gece vardiyası saat onda başlar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0146",
+      "text": "Gece vardiyası sabah altıda başlar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0147",
+      "text": "Vardiya değiştirmek isteyen kişi ne yapar?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0148",
+      "text": "Önce bir meslektaşla konuşur ve Cem Bey'e haber verir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0149",
+      "text": "Hemen servisin şefi ile konuşur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0150",
+      "text": "Günaydın Salmā, hoş geldin! Bugün sana ofisimizi ve işlerimizi tanıtacağım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0151",
+      "text": "Günaydın Derya Hanım, teşekkür ederim. Biraz heyecanlıyım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0152",
+      "text": "Heyecan normal, ilk gün herkes biraz heyecanlı olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0153",
+      "text": "Departmanda her sabah dokuzda kısa bir toplantı yaparız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0154",
+      "text": "Toplantıya herkes katılır mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0155",
+      "text": "Evet, herkes katılır. Toplantıda günün görevlerini konuşuruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0156",
+      "text": "Peki, ben bu hafta ne yapacağım?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0157",
+      "text": "Bu hafta Ebru Hanım'la çalışacaksın; o sana çizim programını öğretecek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0158",
+      "text": "Planları nereden yazdırabilirim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0159",
+      "text": "Mutfağın yanındaki büyük yazıcıdan yazdırabilirsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0160",
+      "text": "Peki, teknik sorunlar için kimi arayayım?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0161",
+      "text": "Teknik işleri Jens Bey halleder; odası ikinci katta.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0162",
+      "text": "Depodaki özel aletleri kullanabilir miyim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0163",
+      "text": "Şu an hayır. Bu aletler için yetki gerekiyor; onları sadece kıdemli mühendisler kullanır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0164",
+      "text": "Anladım. Öğle yemeğini nerede yiyoruz?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0165",
+      "text": "Alt kattaki yemekhanede. Saat on ikide birlikte gideriz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0166",
+      "text": "Çok teşekkür ederim, Derya Hanım. Her şey çok net.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0167",
+      "text": "Rica ederim. Soruların için kapım her zaman açık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0168",
+      "text": "Bir şey mi oldu?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0169",
+      "text": "Hayır, bir şey olmadı; her şey yolunda.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0170",
+      "text": "Seminere kimse gelmedi mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0171",
+      "text": "Hayır, herkes geldi; seminer başlayabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0172",
+      "text": "Biri seni arıyor; muhasebeden biri.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0173",
+      "text": "Her şey hazır mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0174",
+      "text": "Evet, her şey hazır; depoda hiçbir şey eksik değil.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0175",
+      "text": "Bu ekipte herkes kendi görevini bilir ve zamanında yapar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0176",
+      "text": "Makineyi yeşil düğmeyle çalıştırırsın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0177",
+      "text": "Bu makineyi sadece eğitimi olan personel çalıştırabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0178",
+      "text": "Lütfen talimatları dikkatle okuyun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0179",
+      "text": "Onu talimatlarınıza göre yapacağım.",
+      "quelle": "tatoeba:1801291",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1801291 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0180",
+      "text": "Talimat çok açık ve net.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0181",
+      "text": "Şefin talimatı belli: Her rapor cumaya kadar hazır olmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0182",
+      "text": "Toplantının saati henüz belli değil.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0183",
+      "text": "Bu aletleri kim kullanabilir?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0184",
+      "text": "Sadece yetkisi olan personel kullanabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0185",
+      "text": "Depoya girmek için yetki gerekiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0186",
+      "text": "Bu konuda yetkim yok, şefe sormalısın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0187",
+      "text": "Depodaki aletler kutularda; her kutunun üstünde bir isim var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0188",
+      "text": "İşçi aletlerini temizliyor.",
+      "quelle": "tatoeba:9983205",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #9983205 von quagliarella"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0189",
+      "text": "Onu yapmak için özel bir alete ihtiyacın olacak.",
+      "quelle": "tatoeba:1690986",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1690986 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0190",
+      "text": "Çekiç nerede?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0191",
+      "text": "Çekiç alet çantasında.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0192",
+      "text": "Bana çekici uzatır mısın?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0193",
+      "text": "İşin bitti mi? Çekici masaya geri koy, lütfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0194",
+      "text": "Kutuları depoya taşıyan genç kim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0195",
+      "text": "Depo binanın arkasında.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0196",
+      "text": "Bu belgeyi yazdırabilir misin?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0197",
+      "text": "Tabii, hemen yazdırıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0198",
+      "text": "Yazıcı çalışmıyor, planları yazdıramıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0199",
+      "text": "Mühendisler şantiyedeki işi her hafta denetler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0200",
+      "text": "Bugün şantiyeyi denetleyen mühendis benim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0201",
+      "text": "Bu ürünlerin kalitesi çok yüksek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0202",
+      "text": "Kalite bizim için çok önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0203",
+      "text": "Bu görevi kim üstlenecek?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0204",
+      "text": "Ben üstlenirim, sorun değil.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0205",
+      "text": "Yeni projede Derya Hanım büyük bir görev üstlendi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0206",
+      "text": "Merak etme, ben hallederim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0207",
+      "text": "Bundan sonrasını biz hallederiz.",
+      "quelle": "tatoeba:4034138",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4034138 von vvv123"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0208",
+      "text": "Teknik bir sorun var; bilgisayar açılmıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0209",
+      "text": "Ekipler arasında çok iyi bir işbirliği var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0210",
+      "text": "Firmamız bir üniversiteyle işbirliği yapıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0211",
+      "text": "Bu ay iş yükü çok fazla.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0212",
+      "text": "Bu yük çok ağır, birlikte taşıyalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0213",
+      "text": "Yemekhane saat on ikide açılır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0214",
+      "text": "Öğle yemeğini yemekhanede meslektaşlarımla yerim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0215",
+      "text": "Yemekhanedeki yemekler ucuz ve lezzetli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0216",
+      "text": "Benim masam pencerenin yanında; yemekhane alt katta, toplantı odası da ikinci katta.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0217",
+      "text": "Muhasebe departmanı maaşları her ayın sonunda öder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0218",
+      "text": "Sabine Hanım muhasebede çalışıyor; faturalar ona gider.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0219",
+      "text": "Satış departmanı bu ay çok başarılı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0220",
+      "text": "Satışlarımız bu yıl geçen yıldan yüzde on fazla.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0221",
+      "text": "Satış elemanı müşterilere yeni ürünleri tanıtıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0222",
+      "text": "Almanya ile Türkiye arasındaki ticaret çok eski.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0223",
+      "text": "Firmanın iki ticari arabası var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0224",
+      "text": "Bu ticari bir bina; burada kimse oturmaz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0225",
+      "text": "Aras Bey'in küçük bir işletmesi var: bir fırın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0226",
+      "text": "Fabrikada üretim gece de devam ediyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0227",
+      "text": "Üretim bölümündeki işçiler vardiyalı çalışır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0228",
+      "text": "Sabahları daha üretkenim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0229",
+      "text": "Bu hafta çok üretken bir hafta geçirdik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0230",
+      "text": "Hangi sektörde çalışıyorsunuz?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0231",
+      "text": "Sağlık sektöründe çalışıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0232",
+      "text": "Sağlık sektöründe her zaman iş var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0233",
+      "text": "Cem Bey bu yıl terfi aldı; artık vardiya planlarını o yapıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0234",
+      "text": "Terfi için mesleki bir seminere katılmalısın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0235",
+      "text": "Yılın sonunda herkes prim alacak.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0236",
+      "text": "Satış elemanları her ay prim alır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0237",
+      "text": "Yarınki seminer saat onda başlıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0238",
+      "text": "Bu ay iki mesleki seminere katıldım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0239",
+      "text": "Mesleki eğitim Almanya'da genellikle üç yıl sürer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0240",
+      "text": "Asgari ücret her yıl biraz daha yüksek oluyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0241",
+      "text": "Bu işte maaş asgari ücretin üstünde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0242",
+      "text": "Her çalışanın yılda otuz gün ücretli izni var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0243",
+      "text": "Bu staj ücretli mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0244",
+      "text": "Evet, staj ücretli; ayda beş yüz euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0245",
+      "text": "Lars Bey iki aydır işsiz; her gün iş ilanlarına bakıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0246",
+      "text": "İşsiz olan insanlar iş bulmak için kursa gidebilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0247",
+      "text": "Lars Bey sonunda yarı zamanlı bir iş buldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0248",
+      "text": "Bu projede herkesin emeği var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0249",
+      "text": "Emeğine sağlık.",
+      "quelle": "tatoeba:4631801",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4631801 von tornado"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0250",
+      "text": "Emeğiniz için hepinize teşekkür ederiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0251",
+      "text": "Net maaşım ayda iki bin iki yüz euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0252",
+      "text": "Kolay gelsin! Bugün depoda iş nasıl gidiyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0253",
+      "text": "Konu: Aramıza hoş geldiniz!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0254",
+      "text": "Değerli yeni çalışma arkadaşlarımız,",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0255",
+      "text": "Firmamıza hoş geldiniz! Sizinle çalışmaktan çok mutluyuz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0256",
+      "text": "İlk gününüz 1 Nisan Pazartesi; saat dokuzda giriş katındaki toplantı odasında buluşuyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0257",
+      "text": "Personel kartınızı ve bilgisayarınızı ilk gün alacaksınız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0258",
+      "text": "İlk hafta kıdemli bir meslektaş sizi eğitecek ve size iş yerini tanıtacak.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0259",
+      "text": "Yemekhane her gün saat on ikiden ikiye kadar açık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0260",
+      "text": "Çalışma saatlerimiz esnek; sabah yedi ile on arasında başlayabilirsiniz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0261",
+      "text": "Sorularınız için personel departmanına yazabilirsiniz: personel@example.org",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0262",
+      "text": "Hepinize iyi bir başlangıç diliyoruz! Sinan Demir, departman şefi",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0263",
+      "text": "İlk gün saat dokuzda toplantı odasında buluşuyorlar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0264",
+      "text": "Yemekhane akşamları da açık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0265",
+      "text": "Firmada iki yüz kişi çalışıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0266",
+      "text": "Sorular için kime yazabilirsiniz?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0267",
+      "text": "Personel departmanına yazabilirsiniz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0268",
+      "text": "Yemekhaneye yazabilirsiniz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0269",
+      "text": "İlk hafta yeni elemanları kim eğitecek?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0270",
+      "text": "Kıdemli bir meslektaş eğitecek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0271",
+      "text": "Departman şefi Sinan Demir eğitecek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0272",
+      "text": "Cumartesi vardiyanızı değiştirmek istiyorsunuz. Cem Bey'e kısa bir e-posta yazın ve nedenini açıklayın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0273",
+      "text": "Merhaba Cem Bey, bu cumartesi sabah vardiyasındayım. Ama o gün kardeşim başka bir şehre taşınıyor ve ona yardım etmek istiyorum. Bu yüzden cumartesi çalışamıyorum. Meslektaşım Sude Hanım ile konuştum; o cumartesi vardiyamı devralabilir. Sude Hanım da bu değişikliği kabul ediyor. Ben de onun yerine pazar günü akşam vardiyasında çalışırım; pazar akşamı benim için uygun. Planı bu şekilde değiştirebilir misiniz? Yardımınız için şimdiden çok teşekkür ederim. Saygılarımla, Emre Arslan",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0274",
+      "text": "Yeni serviste ilk gün",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0275",
+      "text": "Bugün Emre Bey'in yeni iş yerinde ilk günü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0276",
+      "text": "Emre Bey eskiden çocuk bölümünde çalışıyordu; artık başka bir serviste.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0277",
+      "text": "Sabah yedide servise geliyor. Kapıda güler yüzlü bir kadın onu bekliyor.",
+      "tokens": ["Sabah", "yedide", "servise", "geliyor", "Kapıda", "güler yüzlü", "bir", "kadın", "onu", "bekliyor"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0278",
+      "text": "Günaydın! Siz yeni meslektaşımız Emre Bey misiniz?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0279",
+      "text": "Evet, benim. Günaydın!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0280",
+      "text": "Hoş geldiniz! Ben Büşra, on yıldır bu serviste hemşireyim. Bugün size herkesi tanıtacağım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0281",
+      "text": "Çok teşekkür ederim. Burada kaç kişi çalışıyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0282",
+      "text": "Serviste on iki hemşire ve dört doktor var. Herkes vardiyalı çalışır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0283",
+      "text": "Büşra Hanım yeni meslektaşıyla hemşire odasına gidiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0284",
+      "text": "Bakın, telefonda konuşan kadın Doktor Hoffmann; servisin şefi o.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0285",
+      "text": "Kısa saçlı, gözlüklü kadın mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0286",
+      "text": "Evet, o. Çok kibar ve samimi bir insandır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0287",
+      "text": "Bilgisayarın başında oturan adam da Cem Bey. Vardiya planlarını o yapar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0288",
+      "text": "Uzun boylu, sakallı olan mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0289",
+      "text": "Evet. Cem Bey kıdemli bir hemşire. İzin için ona yazın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0290",
+      "text": "Cem Bey ayağa kalkıyor ve yeni meslektaşının elini sıkıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0291",
+      "text": "Hoş geldiniz! Bu ayın planı hazır. İlk hafta sabah vardiyasındasınız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0292",
+      "text": "Gece nöbetleri ne zaman başlıyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0293",
+      "text": "Gece nöbetini herkes sırayla tutar. Sizin ilk nöbetiniz gelecek ay.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0294",
+      "text": "Sonra Büşra Hanım ona servisi gösteriyor: hasta odalarını, ilaç dolabını ve depoyu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0295",
+      "text": "Depoya giren herkes listeye adını yazar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0296",
+      "text": "Peki, ilaç dolabını kim denetliyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0297",
+      "text": "Her vardiyada nöbetçi hemşire denetler. Bugün nöbetçi hemşire benim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0298",
+      "text": "Öğlen Doktor Hoffmann telefonu kapatıyor ve Emre Bey ile tanışıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0299",
+      "text": "Merhaba Emre Bey, hoş geldiniz! Daha önce çocuk bölümünde çalıştınız, değil mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0300",
+      "text": "Evet, beş yıl çocuk bölümündeydim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0301",
+      "text": "Harika! Bir sorunuz var mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0302",
+      "text": "Şu an yok, teşekkür ederim. Her şey çok net.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0303",
+      "text": "Akşam Emre Bey eve dönüyor. Yorgun, ama çok mutlu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0304",
+      "text": "Yeni meslektaşlarım çok samimi. Herkes bana yardım etti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0305",
+      "text": "Servisin şefi kim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0306",
+      "text": "Servisin şefi Doktor Hoffmann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0307",
+      "text": "Servisin şefi Cem Bey.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0308",
+      "text": "Vardiya planlarını kim yapar?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0309",
+      "text": "Cem Bey yapar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0310",
+      "text": "Büşra Hanım yapar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0311",
+      "text": "Gece nöbetini kim tutar?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0312",
+      "text": "Herkes sırayla tutar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0313",
+      "text": "Sadece Cem Bey tutar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0314",
+      "text": "Bugün nöbetçi hemşire kim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0315",
+      "text": "Büşra Hanım nöbetçi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0316",
+      "text": "Emre Bey nöbetçi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0317",
+      "text": "Emre Bey daha önce nerede çalıştı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0318",
+      "text": "Çocuk bölümünde çalıştı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0319",
+      "text": "Bir firmanın deposunda çalıştı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0320",
+      "text": "Emre Bey akşam nasıl?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0321",
+      "text": "Yorgun, ama çok mutlu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0322",
+      "text": "Çok üzgün, çünkü kimse ona yardım etmedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0323",
+      "text": "Kim bu toplantıyı yönetecek?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0324",
+      "text": "Toplantıyı Sinan Bey yönetecek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0325",
+      "text": "Yeni asistan çok kibar ve güler yüzlü biri.",
+      "tokens": ["Yeni", "asistan", "çok", "kibar", "ve", "güler yüzlü", "biri"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0326",
+      "text": "Masadaki aletler kimin?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0327",
+      "text": "Masadaki aletler benim değil, Jens Bey'in.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0328",
+      "text": "Bu sabahki toplantı yok; yarınki seminer saat onda.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0329",
+      "text": "Herkes izinli mi? Serviste hiç kimse yok!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0330",
+      "text": "Gözlüklü, bıyıklı adam asistan doktor Samīr Bey.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0331",
+      "text": "Bugün kim nöbetçi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0332",
+      "text": "Bu hafta kimin vardiyasını devralıyorsun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0333",
+      "text": "Sude Hanım'ın vardiyasını devralıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0334",
+      "text": "Kimse yetkisi olmadan depoya girmez.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0335",
+      "text": "Bu iş yerinde herkes birbirine yardım eder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0336",
+      "text": "Ofisteki ekip",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0337",
+      "text": "Sinan Bey toplantıları yönetir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0338",
+      "text": "Jens Bey muhasebede çalışıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e02.s0339",
+      "text": "Sabine Hanım'ın iki çocuğu var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "tr.b1.e02.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wer wer ist: Rollen und Titel am Arbeitsplatz.",
+        "tr": "İş yerinde kim kimdir: görevler ve unvanlar",
+        "ar": "من هو من في مكان العمل: الأدوار والمسميات الوظيفية"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e02.l01.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e02.sef", "tr.b1.e02.asistan", "tr.b1.e02.isveren", "tr.b1.e02.meslektas"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.amir",
+          "ablenker": ["tr.a1.e03.doktor", "tr.a2.e12.mimar"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e02.tanitmak",
+          "ablenker": ["tr.a1.e04.gostermek", "tr.a2.e04.tasimak"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a05",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0031",
+          "wort": 1,
+          "ablenker": ["konuşen", "konuşun"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a06",
+          "typ": "formen",
+          "zeilen": ["konuşmak", "çalışmak", "yönetmek", "eğitmek", "tanıtmak", "beklemek"],
+          "spalten": ["-(y)en"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["konuşan"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["çalışan"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["yöneten"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["eğiten"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["tanıtan"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["bekleyen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0031"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0032",
+          "ablenker": ["tr.b1.e02.s0021", "tr.b1.e02.s0017", "tr.b1.e02.s0018"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0030",
+          "nach": "ziel",
+          "alternativen": ["Derya Hanım projeyi yöneten mühendis."],
+          "ablenker": ["yönetir", "mühendise"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e02.kadro",
+          "ablenker": ["tr.a2.e12.mola", "tr.a1.e09.tatil"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0033"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0034",
+          "ablenker": ["tr.b1.e02.s0020", "tr.b1.e02.s0011", "tr.b1.e02.s0003"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a11",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e02.s0026",
+          "alternativen": ["Yeni elemanları kıdemli hemşireler eğitir."]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a12",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e02.eleman", "tr.b1.e02.unvan", "tr.b1.e02.firma", "tr.b1.e02.is-yeri"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a13",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0027",
+          "wort": 4,
+          "ablenker": ["asistana", "asistanda"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.s0039",
+          "ablenker": ["tr.b1.e02.s0040", "tr.b1.e02.s0006", "tr.b1.e02.s0005"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a15",
+          "typ": "frei",
+          "ziel": "tr.b1.e02.s0028",
+          "nach": "ziel",
+          "alternativen": ["Servisi kim yönetir?", "Kim servisi yönetiyor?"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l01.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e02.s0007"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e02.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Personen nach Aussehen und Wesen beschreiben.",
+        "tr": "Kişileri dış görünüşleri ve kişilikleriyle tarif etmek",
+        "ar": "وصف الأشخاص حسب المظهر والشخصية"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e02.l02.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e02.sakal", "tr.b1.e02.biyik", "tr.a1.e12.sac", "tr.a2.e07.gozluk"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.kivircik",
+          "ablenker": ["tr.b1.e02.kizil", "tr.a1.e05.kisa"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e02.gozluklu",
+          "ablenker": ["tr.b1.e02.sakalli", "tr.b1.e02.biyikli"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a05",
+          "typ": "formen",
+          "zeilen": ["masa", "depo", "kapı", "yarın", "ben", "sen"],
+          "spalten": ["-ki"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["masadaki"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["depodaki"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["kapıdaki"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["yarınki"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["benimki"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["seninki"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a06",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0046",
+          "wort": 0,
+          "ablenker": ["Fotoğrafdaki", "Fotoğraftakı"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0048",
+          "nach": "ziel",
+          "ablenker": ["sakal", "boyu"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0080"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0081",
+          "ablenker": ["tr.b1.e02.s0082", "tr.b1.e02.s0064", "tr.b1.e02.s0066"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.kibar",
+          "ablenker": ["tr.a1.e09.zor", "tr.a1.e01.yorgun"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a10",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e02.s0062",
+          "alternativen": ["Büşra Hanım samimi ve güler yüzlü bir insan."]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a11",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0056",
+          "wort": 6,
+          "ablenker": ["bıyıklu", "bıyıkli"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0076"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0077",
+          "ablenker": ["tr.b1.e02.s0054", "tr.b1.e02.s0065", "tr.b1.e02.s0084"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.s0053",
+          "ablenker": ["tr.b1.e02.s0055", "tr.b1.e02.s0050", "tr.b1.e02.s0075"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a14",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e02.kumral", "tr.b1.e02.kizil", "tr.a1.e02.siyah", "tr.a1.e02.sari"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a15",
+          "typ": "frei",
+          "ziel": "tr.b1.e02.s0059",
+          "nach": "ziel",
+          "alternativen": ["Artık Can babası kadar uzun boylu."]
+        },
+        {
+          "schluessel": "tr.b1.e02.l02.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e02.s0070"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e02.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Schichten, Dienstpläne und Urlaub sprechen.",
+        "tr": "Vardiya, nöbet ve izin hakkında konuşmak",
+        "ar": "التحدث عن المناوبات وجداول العمل والإجازات"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e02.l03.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e02.vardiya", "tr.b1.e02.izinli", "tr.b1.e02.raporlu", "tr.b1.e02.nobetci"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.nobet",
+          "ablenker": ["tr.a2.e12.mola", "tr.a1.e09.tatil"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a04",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0097",
+          "wort": 4,
+          "ablenker": ["tutuyorum", "tuttun"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a05",
+          "typ": "formen",
+          "lemma": "tr.b1.e02.yonetmek",
+          "zeilen": ["ben", "sen", "o", "biz", "siz", "onlar"],
+          "spalten": ["olumlu", "olumsuz"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["yönetirim"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["yönetmem"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["yönetirsin"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["yönetmezsin"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["yönetir"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["yönetmez"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["yönetiriz"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["yönetmeyiz"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["yönetirsiniz"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["yönetmezsiniz"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["yönetirler", "yönetir"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["yönetmezler", "yönetmez"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e02.esnek",
+          "ablenker": ["tr.b1.e02.sabit", "tr.a1.e08.hizli"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0115",
+          "nach": "ziel",
+          "alternativen": ["Cuma ve pazartesi günleri uzaktan çalışırım."],
+          "ablenker": ["uzağa", "çalışırsın"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0091"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0092",
+          "ablenker": ["tr.b1.e02.s0086", "tr.b1.e02.s0110", "tr.b1.e02.s0089"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.donusumlu",
+          "ablenker": ["tr.a1.e09.erken", "tr.a1.e08.yavas"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a10",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0107",
+          "wort": 4,
+          "ablenker": ["raporlü", "raporla"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a11",
+          "typ": "lesen_fragen",
+          "titel": "tr.b1.e02.s0132",
+          "absaetze": [
+            "tr.b1.e02.s0133",
+            "tr.b1.e02.s0134",
+            "tr.b1.e02.s0135",
+            "tr.b1.e02.s0136",
+            "tr.b1.e02.s0137",
+            "tr.b1.e02.s0138",
+            "tr.b1.e02.s0139",
+            "tr.b1.e02.s0140"
+          ],
+          "glossen": [
+            "tr.b1.e02.vardiya",
+            "tr.b1.e02.nobet",
+            "tr.b1.e02.raporlu",
+            "tr.b1.e02.izinli",
+            "tr.b1.e02.donusumlu",
+            "tr.b1.e02.devralmak"
+          ],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e02.s0141",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e02.s0142",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e02.s0143",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e02.s0144",
+              "antwort": "tr.b1.e02.s0145",
+              "ablenker": ["tr.b1.e02.s0146", "tr.b1.e02.s0087"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e02.s0147",
+              "antwort": "tr.b1.e02.s0148",
+              "ablenker": ["tr.b1.e02.s0149", "tr.b1.e02.s0106"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a12",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e02.s0123",
+          "alternativen": ["Lütfen zamanında vardiyaya gelin.", "Vardiyaya zamanında gelin, lütfen.", "Zamanında vardiyaya gelin, lütfen."]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a13",
+          "typ": "frei",
+          "ziel": "tr.b1.e02.s0118",
+          "nach": "ziel",
+          "alternativen": [
+            "Yarı zamanlı çalışıyorum, sadece sabahları.",
+            "Ben sadece sabahları yarı zamanlı çalışıyorum.",
+            "Sadece sabahları yarı zamanlı çalışıyorum."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a14",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0096",
+          "wort": 5,
+          "ablenker": ["devralıyorsun", "devralıyor"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0120"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0121",
+          "ablenker": ["tr.b1.e02.s0125", "tr.b1.e02.s0126", "tr.b1.e02.s0119"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l03.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e02.s0130"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e02.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Aufgaben erklären und eine neue Kollegin einweisen.",
+        "tr": "Görevleri açıklamak ve yeni bir meslektaşa işi anlatmak",
+        "ar": "شرح المهام وتعريف زميلة جديدة بالعمل"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e02.l04.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0150"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e02.s0151"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0152"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0153"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e02.s0154"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0155",
+          "ablenker": ["tr.b1.e02.s0211", "tr.b1.e02.s0159", "tr.b1.e02.s0191"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a03",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e02.alet", "tr.b1.e02.cekic", "tr.b1.e02.depo", "tr.b1.e02.yemekhane"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.talimat",
+          "ablenker": ["tr.a2.e07.rapor", "tr.a2.e14.fatura"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e02.s0156"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0157"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e02.s0158"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0159",
+          "ablenker": ["tr.b1.e02.s0161", "tr.b1.e02.s0154", "tr.b1.e02.s0178"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e02.yetki",
+          "ablenker": ["tr.a2.e12.maas", "tr.a1.e09.egitim"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0203"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0204",
+          "ablenker": ["tr.b1.e02.s0185", "tr.b1.e02.s0188", "tr.b1.e02.s0192"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0206",
+          "nach": "ziel",
+          "alternativen": ["Ben hallederim, merak etme."],
+          "ablenker": ["halledersin", "meraklı"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e02.s0162"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0163",
+          "ablenker": ["tr.b1.e02.s0228", "tr.b1.e02.s0201", "tr.b1.e02.s0194"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.denetlemek",
+          "ablenker": ["tr.a1.e06.temizlemek", "tr.a2.e04.tasimak"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a11",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0172",
+          "wort": 0,
+          "ablenker": ["Kimse", "Hiçbir"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a12",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e02.s0201"
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a13",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0180",
+          "wort": 4,
+          "ablenker": ["nat", "not"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.belli",
+          "ablenker": ["tr.a1.e09.kolay", "tr.a1.e09.zor"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0177",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e02.l04.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e02.s0216"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e02.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Firma, Lohn und Weiterbildung sprechen und eine kurze E-Mail schreiben.",
+        "tr": "Firma, ücret ve mesleki eğitim hakkında konuşmak, kısa bir e-posta yazmak",
+        "ar": "التحدث عن الشركة والأجر والتدريب المهني وكتابة بريد إلكتروني قصير"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e02.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e02.muhasebe", "tr.b1.e02.satis", "tr.b1.e02.uretim", "tr.b1.e02.sektor"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.terfi",
+          "ablenker": ["tr.a2.e05.indirim", "tr.a2.e01.kurs"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a04",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0242",
+          "wort": 5,
+          "ablenker": ["ücretlu", "ücreti"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a05",
+          "typ": "lesen_fragen",
+          "titel": "tr.b1.e02.s0253",
+          "absaetze": [
+            "tr.b1.e02.s0254",
+            "tr.b1.e02.s0255",
+            "tr.b1.e02.s0256",
+            "tr.b1.e02.s0257",
+            "tr.b1.e02.s0258",
+            "tr.b1.e02.s0259",
+            "tr.b1.e02.s0260",
+            "tr.b1.e02.s0261",
+            "tr.b1.e02.s0262"
+          ],
+          "glossen": ["tr.b1.e02.kidemli", "tr.b1.e02.meslektas", "tr.b1.e02.yemekhane", "tr.b1.e02.esnek", "tr.b1.e02.departman"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e02.s0263",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e02.s0264",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e02.s0265",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e02.s0266",
+              "antwort": "tr.b1.e02.s0267",
+              "ablenker": ["tr.b1.e02.s0268"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e02.s0269",
+              "antwort": "tr.b1.e02.s0270",
+              "ablenker": ["tr.b1.e02.s0271"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0234",
+          "nach": "ziel",
+          "ablenker": ["seminerde", "katılmalıyım"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0230"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0231",
+          "ablenker": ["tr.b1.e02.s0217", "tr.b1.e02.s0236", "tr.b1.e02.s0222"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.issiz",
+          "ablenker": ["tr.b1.e02.izinli", "tr.b1.e02.raporlu"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a09",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e02.s0248",
+          "alternativen": ["Herkesin bu projede emeği var."]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a10",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e02.ticaret", "tr.b1.e02.isletme", "tr.b1.e02.isbirligi", "tr.b1.e02.prim"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a11",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0228",
+          "wort": 2,
+          "ablenker": ["üretkenım", "üretkenum"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0243"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0244",
+          "ablenker": ["tr.b1.e02.s0224", "tr.b1.e02.s0225", "tr.b1.e02.s0226"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a13",
+          "typ": "schreiben",
+          "aufgabe": "tr.b1.e02.s0272",
+          "woerter": {
+            "min": 60,
+            "max": 100
+          },
+          "muster": ["tr.b1.e02.s0273"],
+          "pflichtwoerter": ["vardiya", "yerine"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0240",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0237",
+          "nach": "ziel",
+          "ablenker": ["yarınkı", "başlıyorum"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l05.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e02.s0250"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e02.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Geschichte: Der erste Tag auf der Station",
+        "tr": "Hikâye: Yeni serviste ilk gün",
+        "ar": "قصة: اليوم الأول في القسم"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e02.l06.a01",
+          "typ": "geschichte",
+          "titel": "tr.b1.e02.s0274",
+          "zeilen": [
+            {
+              "satz": "tr.b1.e02.s0275"
+            },
+            {
+              "satz": "tr.b1.e02.s0276"
+            },
+            {
+              "satz": "tr.b1.e02.s0277"
+            },
+            {
+              "satz": "tr.b1.e02.s0278",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e02.s0279",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e02.s0280",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e02.s0281",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e02.s0282",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e02.s0283"
+            },
+            {
+              "satz": "tr.b1.e02.s0284",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e02.s0285",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e02.s0286",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e02.s0287",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e02.s0288",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e02.s0289",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e02.s0290"
+            },
+            {
+              "satz": "tr.b1.e02.s0291",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.b1.e02.s0292",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e02.s0293",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.b1.e02.s0294"
+            },
+            {
+              "satz": "tr.b1.e02.s0295",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e02.s0296",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e02.s0297",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e02.s0298"
+            },
+            {
+              "satz": "tr.b1.e02.s0299",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.b1.e02.s0300",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e02.s0301",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.b1.e02.s0302",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e02.s0303"
+            },
+            {
+              "satz": "tr.b1.e02.s0304",
+              "sprecher": "a"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 9,
+              "frage": "tr.b1.e02.s0305",
+              "antwort": "tr.b1.e02.s0306",
+              "ablenker": ["tr.b1.e02.s0307"]
+            },
+            {
+              "nach": 12,
+              "frage": "tr.b1.e02.s0308",
+              "antwort": "tr.b1.e02.s0309",
+              "ablenker": ["tr.b1.e02.s0310"]
+            },
+            {
+              "nach": 18,
+              "frage": "tr.b1.e02.s0311",
+              "antwort": "tr.b1.e02.s0312",
+              "ablenker": ["tr.b1.e02.s0313"]
+            },
+            {
+              "nach": 22,
+              "frage": "tr.b1.e02.s0314",
+              "antwort": "tr.b1.e02.s0315",
+              "ablenker": ["tr.b1.e02.s0316"]
+            },
+            {
+              "nach": 25,
+              "frage": "tr.b1.e02.s0317",
+              "antwort": "tr.b1.e02.s0318",
+              "ablenker": ["tr.b1.e02.s0319"]
+            },
+            {
+              "nach": 29,
+              "frage": "tr.b1.e02.s0320",
+              "antwort": "tr.b1.e02.s0321",
+              "ablenker": ["tr.b1.e02.s0322"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e02.l06.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0281"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0282",
+          "ablenker": ["tr.b1.e02.s0301", "tr.b1.e02.s0292", "tr.b1.e02.s0111"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l06.a03",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0287",
+          "wort": 2,
+          "ablenker": ["oturen", "oturdu"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0293",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e02.l06.a05",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e02.s0295",
+          "alternativen": ["Depoya giren herkes adını listeye yazar."]
+        },
+        {
+          "schluessel": "tr.b1.e02.l06.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0289",
+          "nach": "ziel",
+          "ablenker": ["onu", "yazıyorum"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l06.a07",
+          "typ": "frei",
+          "ziel": "tr.b1.e02.s0300",
+          "nach": "ziel",
+          "alternativen": ["Evet, beş yıl boyunca çocuk bölümündeydim.", "Evet, çocuk bölümünde beş yıl çalıştım."]
+        },
+        {
+          "schluessel": "tr.b1.e02.l06.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.s0297",
+          "ablenker": ["tr.b1.e02.s0293", "tr.b1.e02.s0291", "tr.b1.e02.s0098"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.b1.e02.s0288",
+          "ablenker": ["tr.b1.e02.s0285", "tr.b1.e02.s0292"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l06.a10",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0295",
+          "wort": 1,
+          "ablenker": ["girer", "girdi"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l06.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e02.s0284"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0285"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0286",
+          "ablenker": ["tr.b1.e02.s0292", "tr.b1.e02.s0303", "tr.b1.e02.s0085"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l06.a12",
+          "typ": "sprechen",
+          "satz": "tr.b1.e02.s0280"
+        },
+        {
+          "schluessel": "tr.b1.e02.l06.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.b1.e02.s0282",
+          "alternativen": [
+            "Serviste 12 hemşire ve 4 doktor var. Herkes vardiyalı çalışır.",
+            "Serviste on iki hemşire ve 4 doktor var. Herkes vardiyalı çalışır.",
+            "Serviste 12 hemşire ve dört doktor var. Herkes vardiyalı çalışır."
+          ]
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e02.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Wiederholung: Neue Kolleginnen und Kollegen",
+        "tr": "Tekrar: Yeni iş arkadaşları",
+        "ar": "مراجعة: زملاء وزميلات جدد"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e02.l07.a01",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e02.sef", "tr.b1.e02.kidemli", "tr.b1.e02.yazdirmak", "tr.b1.e02.cekic"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.meslektas",
+          "ablenker": ["tr.a1.e02.ogretmen", "tr.a2.e05.musteri"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a03",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0047",
+          "wort": 4,
+          "ablenker": ["yapen", "yaptı"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a04",
+          "typ": "formen",
+          "lemma": "tr.b1.e02.halletmek",
+          "zeilen": ["ben", "sen", "o", "biz", "siz", "onlar"],
+          "spalten": ["olumlu", "olumsuz"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["hallederim"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["halletmem"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["halledersin"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["halletmezsin"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["halleder"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["halletmez"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["hallederiz"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["halletmeyiz"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["halledersiniz"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["halletmezsiniz"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["hallederler", "halleder"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["halletmezler", "halletmez"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0332"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0333",
+          "ablenker": ["tr.b1.e02.s0102", "tr.b1.e02.s0105", "tr.b1.e02.s0331"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a06",
+          "typ": "minimalpaare",
+          "ziel": "tr.b1.e02.biyik",
+          "ablenker": ["tr.a1.e02.buyuk"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0212",
+          "nach": "ziel",
+          "alternativen": ["Bu yük çok ağır, taşıyalım birlikte."],
+          "ablenker": ["yükü", "taşıyorum"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e02.zamaninda",
+          "ablenker": ["tr.a1.e09.erken", "tr.a1.e09.gec"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a09",
+          "typ": "lesen_fragen",
+          "titel": "tr.b1.e02.s0336",
+          "absaetze": [
+            "tr.b1.e02.s0008",
+            "tr.b1.e02.s0049",
+            "tr.b1.e02.s0018",
+            "tr.b1.e02.s0050",
+            "tr.b1.e02.s0161",
+            "tr.b1.e02.s0218",
+            "tr.b1.e02.s0113",
+            "tr.b1.e02.s0175"
+          ],
+          "glossen": ["tr.b1.e02.departman", "tr.b1.e02.asistan", "tr.b1.e02.muhasebe", "tr.b1.e02.teknik", "tr.b1.e02.esnek"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e02.s0337",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e02.s0338",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e02.s0339",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e02.s0160",
+              "antwort": "tr.b1.e02.s0161",
+              "ablenker": ["tr.b1.e02.s0218"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a10",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0071",
+          "wort": 4,
+          "ablenker": ["hiç", "kimse"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a11",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e02.nobetci", "tr.b1.e02.izinli", "tr.b1.e02.issiz", "tr.b1.e02.esnek"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.b1.e02.s0094",
+          "ablenker": ["tr.b1.e02.s0101", "tr.b1.e02.s0012", "tr.b1.e02.s0108"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0323"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0324",
+          "ablenker": ["tr.b1.e02.s0252", "tr.b1.e02.s0019", "tr.b1.e02.s0327"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a14",
+          "typ": "frei",
+          "ziel": "tr.b1.e02.s0202",
+          "nach": "ziel",
+          "alternativen": ["Bizim için kalite çok önemli."]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.s0129",
+          "ablenker": ["tr.b1.e02.s0130", "tr.b1.e02.s0096", "tr.b1.e02.s0329"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a16",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0335",
+          "wort": 3,
+          "ablenker": ["kimse", "hiçbir"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a17",
+          "typ": "minimalpaare",
+          "ziel": "tr.b1.e02.net",
+          "ablenker": ["tr.a2.e08.not"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a18",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0168"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0169",
+          "ablenker": ["tr.b1.e02.s0326", "tr.b1.e02.s0334", "tr.b1.e02.s0330"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a19",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.b1.e02.s0121",
+          "alternativen": ["Saatlik ücret 15 euro."]
+        },
+        {
+          "schluessel": "tr.b1.e02.l07.a20",
+          "typ": "sprechen",
+          "satz": "tr.b1.e02.s0083"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e02.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Prüfstein: Neue Kolleginnen und Kollegen",
+        "tr": "Değerlendirme: Yeni iş arkadaşları",
+        "ar": "اختبار: زملاء وزميلات جدد"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e02.l08.a01",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e02.amir", "tr.b1.e02.asistan", "tr.b1.e02.personel", "tr.b1.e02.unvan"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.vardiya",
+          "ablenker": ["tr.a2.e12.mola", "tr.a2.e04.toplanti"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a03",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0048",
+          "wort": 2,
+          "ablenker": ["sakallu", "sakalı"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0035",
+          "nach": "ziel",
+          "alternativen": ["Bizim yeni meslektaşımız kahve içen kadın."],
+          "ablenker": ["içiyor", "meslektaşım"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e02.s0183"
+            }
+          ],
+          "antwort": "tr.b1.e02.s0184",
+          "ablenker": ["tr.b1.e02.s0211", "tr.b1.e02.s0213", "tr.b1.e02.s0195"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e02.raporlu",
+          "ablenker": ["tr.b1.e02.izinli", "tr.b1.e02.nobetci"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a07",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0037",
+          "wort": 0,
+          "ablenker": ["Gelan", "Gelmek"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a08",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e02.s0182",
+          "alternativen": ["Henüz toplantının saati belli değil."]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.egitmek",
+          "ablenker": ["tr.a1.e09.unutmak", "tr.a1.e07.satmak"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0038",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a11",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0128",
+          "wort": 0,
+          "ablenker": ["Hiçbir", "Her"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a12",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e02.sabit", "tr.b1.e02.uzaktan", "tr.b1.e02.sirayla", "tr.b1.e02.ucretli"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a13",
+          "typ": "frei",
+          "ziel": "tr.b1.e02.s0214",
+          "nach": "ziel",
+          "alternativen": [
+            "Öğle yemeğini meslektaşlarımla yemekhanede yerim.",
+            "Meslektaşlarımla öğle yemeğini yemekhanede yerim.",
+            "Öğle yemeğimi yemekhanede meslektaşlarımla yerim."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a14",
+          "typ": "luecke",
+          "ziel": "tr.b1.e02.s0238",
+          "wort": 4,
+          "ablenker": ["seminerde", "semineri"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e02.ustlenmek",
+          "ablenker": ["tr.a1.e09.unutmak", "tr.a1.e09.bakmak"]
+        },
+        {
+          "schluessel": "tr.b1.e02.l08.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e02.s0236",
+          "nach": "ziel",
+          "alternativen": ["Her ay satış elemanları prim alır."],
+          "ablenker": ["alıyorum", "prime"]
+        }
+      ]
+    }
+  ]
+}

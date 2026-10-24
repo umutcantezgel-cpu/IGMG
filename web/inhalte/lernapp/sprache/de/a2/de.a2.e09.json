@@ -1,0 +1,4243 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "automatisch_geprueft",
+  "kurs": "de",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "de.a2.e09",
+    "reihenfolge": 10,
+    "thema": {
+      "de": "Beim Bürgeramt",
+      "tr": "Vatandaş bürosunda",
+      "ar": "في مكتب خدمات المواطنين"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann am Schalter meine persönlichen Angaben machen und ein Formular ausfüllen.",
+        "tr": "Gişede kişisel bilgilerimi verebilir ve bir form doldurabilirim.",
+        "ar": "أستطيع أن أقدّم بياناتي الشخصية عند الشبّاك وأن أملأ استمارة."
+      },
+      {
+        "de": "Ich kann fragen, was ich tun muss, wenn ich umziehe oder einen neuen Ausweis brauche.",
+        "tr": "Taşındığımda ya da yeni bir kimlik kartına ihtiyacım olduğunda ne yapmam gerektiğini sorabilirim.",
+        "ar": "أستطيع أن أسأل ماذا يجب أن أفعل عندما أنتقل إلى سكن جديد أو أحتاج إلى بطاقة هوية جديدة."
+      }
+    ],
+    "symbol": "file-text",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a2.e09.wenn",
+      "lemma": "wenn",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Nebensatz, Verb am Ende (Bedingung, Zeit)"
+      },
+      "frequenzRang": 38,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.ob",
+      "lemma": "ob",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "indirekte Ja/Nein-Frage, Verb am Ende"
+      },
+      "frequenzRang": 110,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.falls",
+      "lemma": "falls",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Nebensatz, Verb am Ende (Bedingung)"
+      },
+      "frequenzRang": 591,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.vierte",
+      "lemma": "vierte",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "4.",
+        "art": "Ordinalzahl"
+      },
+      "formen": {
+        "endung_en": "vierten",
+        "endung_er": "vierter",
+        "endung_es": "viertes",
+        "endung_em": "viertem"
+      },
+      "frequenzRang": 2347,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.fuenfte",
+      "lemma": "fünfte",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "5.",
+        "art": "Ordinalzahl"
+      },
+      "formen": {
+        "endung_en": "fünften",
+        "endung_er": "fünfter",
+        "endung_es": "fünftes",
+        "endung_em": "fünftem"
+      },
+      "frequenzRang": 3634,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.sechste",
+      "lemma": "sechste",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "6.",
+        "art": "Ordinalzahl"
+      },
+      "formen": {
+        "endung_en": "sechsten",
+        "endung_er": "sechster",
+        "endung_es": "sechstes",
+        "endung_em": "sechstem"
+      },
+      "frequenzRang": 5864,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.siebte",
+      "lemma": "siebte",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "7.",
+        "art": "Ordinalzahl"
+      },
+      "formen": {
+        "endung_en": "siebten",
+        "endung_er": "siebter",
+        "endung_es": "siebtes",
+        "endung_em": "siebtem"
+      },
+      "frequenzRang": 8160,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.achte",
+      "lemma": "achte",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "8.",
+        "art": "Ordinalzahl"
+      },
+      "formen": {
+        "endung_en": "achten",
+        "endung_er": "achter",
+        "endung_es": "achtes",
+        "endung_em": "achtem"
+      },
+      "frequenzRang": 4062,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.neunte",
+      "lemma": "neunte",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "9.",
+        "art": "Ordinalzahl"
+      },
+      "formen": {
+        "endung_en": "neunten",
+        "endung_er": "neunter",
+        "endung_es": "neuntes",
+        "endung_em": "neuntem"
+      },
+      "frequenzRang": 9215,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.zehnte",
+      "lemma": "zehnte",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "10.",
+        "art": "Ordinalzahl"
+      },
+      "formen": {
+        "endung_en": "zehnten",
+        "endung_er": "zehnter",
+        "endung_es": "zehntes",
+        "endung_em": "zehntem"
+      },
+      "frequenzRang": 4807,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.tausend",
+      "lemma": "tausend",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "1000"
+      },
+      "formen": {
+        "zusammen": "zweitausend"
+      },
+      "frequenzRang": 1078,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.persoenlich",
+      "lemma": "persönlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "persönliche",
+        "endung_en": "persönlichen",
+        "endung_er": "persönlicher",
+        "endung_es": "persönliches",
+        "endung_em": "persönlichem"
+      },
+      "frequenzRang": 415,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.notwendig",
+      "lemma": "notwendig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "notwendige",
+        "endung_en": "notwendigen",
+        "endung_er": "notwendiger",
+        "endung_es": "notwendiges",
+        "endung_em": "notwendigem"
+      },
+      "frequenzRang": 814,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.noetig",
+      "lemma": "nötig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "nötige",
+        "endung_en": "nötigen",
+        "endung_er": "nötiger",
+        "endung_es": "nötiges",
+        "endung_em": "nötigem"
+      },
+      "frequenzRang": 970,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.gueltig",
+      "lemma": "gültig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "gültige",
+        "endung_en": "gültigen",
+        "endung_er": "gültiger",
+        "endung_es": "gültiges",
+        "endung_em": "gültigem"
+      },
+      "frequenzRang": 2499,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.verheiratet",
+      "lemma": "verheiratet",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "verheiratete",
+        "endung_en": "verheirateten",
+        "endung_er": "verheirateter",
+        "endung_es": "verheiratetes",
+        "endung_em": "verheiratetem"
+      },
+      "frequenzRang": 1780,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.ledig",
+      "lemma": "ledig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ledige",
+        "endung_en": "ledigen",
+        "endung_er": "lediger",
+        "endung_es": "lediges",
+        "endung_em": "ledigem"
+      },
+      "frequenzRang": 27469,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.geboren",
+      "lemma": "geboren",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "gebrauch": "Partizip als Adjektiv: geboren am …, geboren in …"
+      },
+      "formen": {
+        "endung_e": "geborene",
+        "endung_en": "geborenen",
+        "endung_er": "geborener",
+        "endung_es": "geborenes",
+        "endung_em": "geborenem"
+      },
+      "frequenzRang": 3929,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.besitzen",
+      "lemma": "besitzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "besitzen",
+        "praes_ich": "besitze",
+        "praes_du": "besitzt",
+        "praes_er_sie_es": "besitzt",
+        "praes_wir": "besitzen",
+        "praes_ihr": "besitzt",
+        "praes_sie_Sie": "besitzen",
+        "partizip_2": "besessen"
+      },
+      "frequenzRang": 532,
+      "quelle": "wiktionary:de:besitzen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚besitzen‘ (https://de.wiktionary.org/wiki/besitzen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.befinden",
+      "lemma": "befinden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "befinden",
+        "praes_ich": "befinde",
+        "praes_du": "befindest",
+        "praes_er_sie_es": "befindet",
+        "praes_wir": "befinden",
+        "praes_ihr": "befindet",
+        "praes_sie_Sie": "befinden",
+        "partizip_2": "befunden",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 465,
+      "quelle": "wiktionary:de:befinden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚befinden‘ (https://de.wiktionary.org/wiki/befinden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.erhalten",
+      "lemma": "erhalten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "erhalten",
+        "praes_ich": "erhalte",
+        "praes_du": "erhältst",
+        "praes_er_sie_es": "erhält",
+        "praes_wir": "erhalten",
+        "praes_ihr": "erhaltet",
+        "praes_sie_Sie": "erhalten",
+        "partizip_2": "erhalten"
+      },
+      "frequenzRang": 226,
+      "quelle": "wiktionary:de:erhalten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erhalten‘ (https://de.wiktionary.org/wiki/erhalten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.gelten",
+      "lemma": "gelten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "gelten",
+        "praes_ich": "gelte",
+        "praes_du": "giltst",
+        "praes_er_sie_es": "gilt",
+        "praes_wir": "gelten",
+        "praes_ihr": "geltet",
+        "praes_sie_Sie": "gelten",
+        "partizip_2": "gegolten"
+      },
+      "frequenzRang": 244,
+      "quelle": "wiktionary:de:gelten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gelten‘ (https://de.wiktionary.org/wiki/gelten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.ausfuellen",
+      "lemma": "ausfüllen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "aus"
+      },
+      "formen": {
+        "infinitiv": "ausfüllen",
+        "verbzusatz": "aus",
+        "praes_ich": "fülle",
+        "praes_du": "füllst",
+        "praes_er_sie_es": "füllt",
+        "praes_wir": "füllen",
+        "praes_ihr": "füllt",
+        "praes_sie_Sie": "füllen",
+        "imp_du": "füll",
+        "imp_ihr": "füllt",
+        "partizip_2": "ausgefüllt"
+      },
+      "frequenzRang": 4742,
+      "quelle": "wiktionary:de:ausfüllen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ausfüllen‘ (https://de.wiktionary.org/wiki/ausfüllen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.unterschreiben",
+      "lemma": "unterschreiben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "unterschreiben",
+        "praes_ich": "unterschreibe",
+        "praes_du": "unterschreibst",
+        "praes_er_sie_es": "unterschreibt",
+        "praes_wir": "unterschreiben",
+        "praes_ihr": "unterschreibt",
+        "praes_sie_Sie": "unterschreiben",
+        "imp_du": "unterschreib",
+        "imp_ihr": "unterschreibt",
+        "partizip_2": "unterschrieben"
+      },
+      "frequenzRang": 2154,
+      "quelle": "wiktionary:de:unterschreiben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚unterschreiben‘ (https://de.wiktionary.org/wiki/unterschreiben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.beantragen",
+      "lemma": "beantragen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "beantragen",
+        "praes_ich": "beantrage",
+        "praes_du": "beantragst",
+        "praes_er_sie_es": "beantragt",
+        "praes_wir": "beantragen",
+        "praes_ihr": "beantragt",
+        "praes_sie_Sie": "beantragen",
+        "partizip_2": "beantragt"
+      },
+      "frequenzRang": 2812,
+      "quelle": "wiktionary:de:beantragen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚beantragen‘ (https://de.wiktionary.org/wiki/beantragen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.informieren",
+      "lemma": "informieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "informieren",
+        "praes_ich": "informiere",
+        "praes_du": "informierst",
+        "praes_er_sie_es": "informiert",
+        "praes_wir": "informieren",
+        "praes_ihr": "informiert",
+        "praes_sie_Sie": "informieren",
+        "imp_du": "informier",
+        "imp_ihr": "informiert",
+        "partizip_2": "informiert",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 1021,
+      "quelle": "wiktionary:de:informieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚informieren‘ (https://de.wiktionary.org/wiki/informieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.pruefen",
+      "lemma": "prüfen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "prüfen",
+        "praes_ich": "prüfe",
+        "praes_du": "prüfst",
+        "praes_er_sie_es": "prüft",
+        "praes_wir": "prüfen",
+        "praes_ihr": "prüft",
+        "praes_sie_Sie": "prüfen",
+        "imp_du": "prüf",
+        "imp_ihr": "prüft",
+        "partizip_2": "geprüft"
+      },
+      "frequenzRang": 1147,
+      "quelle": "wiktionary:de:prüfen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚prüfen‘ (https://de.wiktionary.org/wiki/prüfen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.erledigen",
+      "lemma": "erledigen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erledigen",
+        "praes_ich": "erledige",
+        "praes_du": "erledigst",
+        "praes_er_sie_es": "erledigt",
+        "praes_wir": "erledigen",
+        "praes_ihr": "erledigt",
+        "praes_sie_Sie": "erledigen",
+        "partizip_2": "erledigt"
+      },
+      "frequenzRang": 1618,
+      "quelle": "wiktionary:de:erledigen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erledigen‘ (https://de.wiktionary.org/wiki/erledigen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.benoetigen",
+      "lemma": "benötigen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "benötigen",
+        "praes_ich": "benötige",
+        "praes_du": "benötigst",
+        "praes_er_sie_es": "benötigt",
+        "praes_wir": "benötigen",
+        "praes_ihr": "benötigt",
+        "praes_sie_Sie": "benötigen",
+        "partizip_2": "benötigt"
+      },
+      "frequenzRang": 1380,
+      "quelle": "wiktionary:de:benötigen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚benötigen‘ (https://de.wiktionary.org/wiki/benötigen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.merken",
+      "lemma": "merken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Dativ)"
+      },
+      "formen": {
+        "infinitiv": "merken",
+        "praes_ich": "merke",
+        "praes_du": "merkst",
+        "praes_er_sie_es": "merkt",
+        "praes_wir": "merken",
+        "praes_ihr": "merkt",
+        "praes_sie_Sie": "merken",
+        "imp_du": "merk",
+        "imp_ihr": "merkt",
+        "partizip_2": "gemerkt",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 866,
+      "quelle": "wiktionary:de:merken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚merken‘ (https://de.wiktionary.org/wiki/merken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.amt",
+      "lemma": "Amt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Ämter"
+      },
+      "formen": {
+        "pl": "Ämter",
+        "dat_pl": "Ämtern"
+      },
+      "frequenzRang": 825,
+      "quelle": "wiktionary:de:Amt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Amt‘ (https://de.wiktionary.org/wiki/Amt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.buergeramt",
+      "lemma": "Bürgeramt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Bürgerämter"
+      },
+      "formen": {
+        "pl": "Bürgerämter",
+        "dat_pl": "Bürgerämtern"
+      },
+      "frequenzRang": 49669,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.formular",
+      "lemma": "Formular",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Formulare"
+      },
+      "formen": {
+        "pl": "Formulare",
+        "dat_pl": "Formularen"
+      },
+      "frequenzRang": 5986,
+      "quelle": "wiktionary:de:Formular",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Formular‘ (https://de.wiktionary.org/wiki/Formular), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.vorname",
+      "lemma": "Vorname",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Vornamen"
+      },
+      "formen": {
+        "pl": "Vornamen"
+      },
+      "frequenzRang": 4346,
+      "quelle": "wiktionary:de:Vorname",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vorname‘ (https://de.wiktionary.org/wiki/Vorname), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.nachname",
+      "lemma": "Nachname",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Nachnamen"
+      },
+      "formen": {
+        "pl": "Nachnamen"
+      },
+      "frequenzRang": 5964,
+      "quelle": "wiktionary:de:Nachname",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nachname‘ (https://de.wiktionary.org/wiki/Nachname), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.familienname",
+      "lemma": "Familienname",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Familiennamen"
+      },
+      "formen": {
+        "pl": "Familiennamen"
+      },
+      "frequenzRang": 11250,
+      "quelle": "wiktionary:de:Familienname",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Familienname‘ (https://de.wiktionary.org/wiki/Familienname), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.adresse",
+      "lemma": "Adresse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Adressen"
+      },
+      "formen": {
+        "pl": "Adressen"
+      },
+      "frequenzRang": 1555,
+      "quelle": "wiktionary:de:Adresse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Adresse‘ (https://de.wiktionary.org/wiki/Adresse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.telefonnummer",
+      "lemma": "Telefonnummer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Telefonnummern"
+      },
+      "formen": {
+        "pl": "Telefonnummern"
+      },
+      "frequenzRang": 3973,
+      "quelle": "wiktionary:de:Telefonnummer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Telefonnummer‘ (https://de.wiktionary.org/wiki/Telefonnummer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.nummer",
+      "lemma": "Nummer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Nummern"
+      },
+      "formen": {
+        "pl": "Nummern"
+      },
+      "frequenzRang": 908,
+      "quelle": "wiktionary:de:Nummer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nummer‘ (https://de.wiktionary.org/wiki/Nummer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.e-mail",
+      "lemma": "E-Mail",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "E-Mails"
+      },
+      "formen": {
+        "pl": "E-Mails",
+        "teil": "Mail",
+        "teil_pl": "Mails"
+      },
+      "quelle": "wiktionary:de:E-Mail",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚E-Mail‘ (https://de.wiktionary.org/wiki/E-Mail), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.geburtsdatum",
+      "lemma": "Geburtsdatum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Geburtsdaten"
+      },
+      "formen": {
+        "pl": "Geburtsdaten"
+      },
+      "frequenzRang": 22412,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.unterschrift",
+      "lemma": "Unterschrift",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Unterschriften"
+      },
+      "formen": {
+        "pl": "Unterschriften"
+      },
+      "frequenzRang": 3617,
+      "quelle": "wiktionary:de:Unterschrift",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Unterschrift‘ (https://de.wiktionary.org/wiki/Unterschrift), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.staatsangehoerigkeit",
+      "lemma": "Staatsangehörigkeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Staatsangehörigkeiten"
+      },
+      "formen": {
+        "pl": "Staatsangehörigkeiten"
+      },
+      "frequenzRang": 8620,
+      "quelle": "wiktionary:de:Staatsangehörigkeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Staatsangehörigkeit‘ (https://de.wiktionary.org/wiki/Staatsangehörigkeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.ausweis",
+      "lemma": "Ausweis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Ausweise"
+      },
+      "formen": {
+        "pl": "Ausweise",
+        "dat_pl": "Ausweisen"
+      },
+      "frequenzRang": 4716,
+      "quelle": "wiktionary:de:Ausweis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ausweis‘ (https://de.wiktionary.org/wiki/Ausweis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.reisepass",
+      "lemma": "Reisepass",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Reisepässe"
+      },
+      "formen": {
+        "pl": "Reisepässe",
+        "dat_pl": "Reisepässen"
+      },
+      "frequenzRang": 10991,
+      "quelle": "wiktionary:de:Reisepass",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Reisepass‘ (https://de.wiktionary.org/wiki/Reisepass), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.pass",
+      "lemma": "Pass",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Pässe"
+      },
+      "formen": {
+        "pl": "Pässe",
+        "dat_pl": "Pässen"
+      },
+      "frequenzRang": 1566,
+      "quelle": "wiktionary:de:Pass",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Pass‘ (https://de.wiktionary.org/wiki/Pass), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.sachbearbeiter",
+      "lemma": "Sachbearbeiter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Sachbearbeiter",
+        "weiblich": "Sachbearbeiterin"
+      },
+      "formen": {
+        "dat_pl": "Sachbearbeitern",
+        "weiblich": "Sachbearbeiterin",
+        "weiblich_pl": "Sachbearbeiterinnen"
+      },
+      "frequenzRang": 9245,
+      "quelle": "wiktionary:de:Sachbearbeiter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sachbearbeiter‘ (https://de.wiktionary.org/wiki/Sachbearbeiter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.unterlagen",
+      "lemma": "Unterlagen",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 3877,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.dokument",
+      "lemma": "Dokument",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Dokumente"
+      },
+      "formen": {
+        "pl": "Dokumente",
+        "dat_pl": "Dokumenten"
+      },
+      "frequenzRang": 1656,
+      "quelle": "wiktionary:de:Dokument",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Dokument‘ (https://de.wiktionary.org/wiki/Dokument), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.kopie",
+      "lemma": "Kopie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kopien"
+      },
+      "formen": {
+        "pl": "Kopien"
+      },
+      "frequenzRang": 3381,
+      "quelle": "wiktionary:de:Kopie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kopie‘ (https://de.wiktionary.org/wiki/Kopie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.antrag",
+      "lemma": "Antrag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Anträge"
+      },
+      "formen": {
+        "pl": "Anträge",
+        "dat_pl": "Anträgen"
+      },
+      "frequenzRang": 1273,
+      "quelle": "wiktionary:de:Antrag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Antrag‘ (https://de.wiktionary.org/wiki/Antrag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.angabe",
+      "lemma": "Angabe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Angaben"
+      },
+      "formen": {
+        "pl": "Angaben"
+      },
+      "frequenzRang": 815,
+      "quelle": "wiktionary:de:Angabe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Angabe‘ (https://de.wiktionary.org/wiki/Angabe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.moeglichkeit",
+      "lemma": "Möglichkeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Möglichkeiten"
+      },
+      "formen": {
+        "pl": "Möglichkeiten"
+      },
+      "frequenzRang": 383,
+      "quelle": "wiktionary:de:Möglichkeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Möglichkeit‘ (https://de.wiktionary.org/wiki/Möglichkeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.gebaeude",
+      "lemma": "Gebäude",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gebäude"
+      },
+      "formen": {
+        "dat_pl": "Gebäuden"
+      },
+      "frequenzRang": 694,
+      "quelle": "wiktionary:de:Gebäude",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gebäude‘ (https://de.wiktionary.org/wiki/Gebäude), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.bank",
+      "lemma": "Bank",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Banken"
+      },
+      "formen": {
+        "pl": "Banken"
+      },
+      "frequenzRang": 617,
+      "quelle": "wiktionary:de:Bank",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bank‘ (https://de.wiktionary.org/wiki/Bank), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.konto",
+      "lemma": "Konto",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Konten"
+      },
+      "formen": {
+        "pl": "Konten"
+      },
+      "frequenzRang": 1906,
+      "quelle": "wiktionary:de:Konto",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Konto‘ (https://de.wiktionary.org/wiki/Konto), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.beratung",
+      "lemma": "Beratung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Beratungen"
+      },
+      "formen": {
+        "pl": "Beratungen"
+      },
+      "frequenzRang": 2349,
+      "quelle": "wiktionary:de:Beratung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Beratung‘ (https://de.wiktionary.org/wiki/Beratung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.gebuehr",
+      "lemma": "Gebühr",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Gebühren"
+      },
+      "formen": {
+        "pl": "Gebühren"
+      },
+      "frequenzRang": 6234,
+      "quelle": "wiktionary:de:Gebühr",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gebühr‘ (https://de.wiktionary.org/wiki/Gebühr), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.wohnort",
+      "lemma": "Wohnort",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Wohnorte"
+      },
+      "formen": {
+        "pl": "Wohnorte",
+        "dat_pl": "Wohnorten"
+      },
+      "frequenzRang": 6832,
+      "quelle": "wiktionary:de:Wohnort",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wohnort‘ (https://de.wiktionary.org/wiki/Wohnort), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.postleitzahl",
+      "lemma": "Postleitzahl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Postleitzahlen"
+      },
+      "formen": {
+        "pl": "Postleitzahlen"
+      },
+      "frequenzRang": 11855,
+      "quelle": "wiktionary:de:Postleitzahl",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Postleitzahl‘ (https://de.wiktionary.org/wiki/Postleitzahl), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.hausnummer",
+      "lemma": "Hausnummer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Hausnummern"
+      },
+      "formen": {
+        "pl": "Hausnummern"
+      },
+      "frequenzRang": 10729,
+      "quelle": "wiktionary:de:Hausnummer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hausnummer‘ (https://de.wiktionary.org/wiki/Hausnummer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.geburtsort",
+      "lemma": "Geburtsort",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Geburtsorte"
+      },
+      "formen": {
+        "pl": "Geburtsorte",
+        "dat_pl": "Geburtsorten"
+      },
+      "frequenzRang": 22413,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.familienstand",
+      "lemma": "Familienstand",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.wartenummer",
+      "lemma": "Wartenummer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Wartenummern"
+      },
+      "formen": {
+        "pl": "Wartenummern"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.oeffnungszeiten",
+      "lemma": "Öffnungszeiten",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 9344,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.behoerde",
+      "lemma": "Behörde",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Behörden"
+      },
+      "formen": {
+        "pl": "Behörden"
+      },
+      "frequenzRang": 1143,
+      "quelle": "wiktionary:de:Behörde",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Behörde‘ (https://de.wiktionary.org/wiki/Behörde), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.original",
+      "lemma": "Original",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Originale"
+      },
+      "formen": {
+        "pl": "Originale",
+        "dat_pl": "Originalen"
+      },
+      "frequenzRang": 1271,
+      "quelle": "wiktionary:de:Original",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Original‘ (https://de.wiktionary.org/wiki/Original), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.zustaendig",
+      "lemma": "zuständig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "zuständige",
+        "endung_en": "zuständigen",
+        "endung_er": "zuständiger",
+        "endung_es": "zuständiges",
+        "endung_em": "zuständigem"
+      },
+      "frequenzRang": 1329,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.bestaetigung",
+      "lemma": "Bestätigung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bestätigungen"
+      },
+      "formen": {
+        "pl": "Bestätigungen"
+      },
+      "frequenzRang": 3843,
+      "quelle": "wiktionary:de:Bestätigung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bestätigung‘ (https://de.wiktionary.org/wiki/Bestätigung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.stempel",
+      "lemma": "Stempel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Stempel"
+      },
+      "formen": {
+        "dat_pl": "Stempeln"
+      },
+      "frequenzRang": 7234,
+      "quelle": "wiktionary:de:Stempel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stempel‘ (https://de.wiktionary.org/wiki/Stempel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a2.e09.s0001",
+      "text": "Mein Vorname ist Elif, mein Familienname ist Kaya.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0002",
+      "text": "Wie ist Ihr Nachname, bitte?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0003",
+      "text": "Wie heißt du mit Nachnamen?",
+      "quelle": "tatoeba:2074813",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2074813 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e09.s0004",
+      "text": "In unserer Familie haben nicht alle den gleichen Familiennamen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0005",
+      "text": "Die Kinder haben den Familiennamen von ihrem Vater.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0006",
+      "text": "Wie schreibt man Ihren Vornamen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0007",
+      "text": "Wie ist Ihre neue Adresse?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0008",
+      "text": "Unser neuer Wohnort ist Berlin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0009",
+      "text": "Die Postleitzahl hat fünf Ziffern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0010",
+      "text": "Die Hausnummer hat zwei Ziffern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0011",
+      "text": "Die Telefonnummer hat elf Ziffern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0012",
+      "text": "Bei der Adresse fehlt noch die Postleitzahl.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0013",
+      "text": "Wie ist Ihre Hausnummer?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0014",
+      "text": "Haben Sie auch eine Telefonnummer?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0015",
+      "text": "Hier ist meine Telefonnummer.",
+      "quelle": "tatoeba:398611",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #398611 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e09.s0016",
+      "text": "Meine Telefonnummer ist neu, die alte gilt nicht mehr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0017",
+      "text": "Sie können uns auch eine E-Mail schreiben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0018",
+      "text": "Bitte machen Sie alle Angaben auf Deutsch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0019",
+      "text": "Sind alle Angaben richtig?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0020",
+      "text": "Darf ich Ihnen eine persönliche Frage stellen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0021",
+      "text": "Ich kann mir die Nummer nicht merken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0022",
+      "text": "Mein Nachname ist Demir.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0023",
+      "text": "Und wie ist Ihr Vorname?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0024",
+      "text": "Mein Vorname ist Can.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0025",
+      "text": "Mein Familienname ist Yılmaz, mein Vorname ist Serkan.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0026",
+      "text": "Wann sind Sie geboren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0027",
+      "text": "Wann bist du geboren?",
+      "quelle": "tatoeba:1402255",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1402255 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e09.s0028",
+      "text": "Am siebten Oktober 1985.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0029",
+      "text": "Und wo sind Sie geboren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0030",
+      "text": "Mein Geburtsort ist Istanbul, in der Türkei.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0031",
+      "text": "Am achten Oktober.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0032",
+      "text": "Ich bin am vierten Mai geboren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0033",
+      "text": "Ich bin am fünften Mai geboren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0034",
+      "text": "Ich bin am vierten März geboren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0035",
+      "text": "Heute ist der neunte Juni.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0036",
+      "text": "Wir wohnen im sechsten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0037",
+      "text": "Mein Bruder ist am zehnten Juli geboren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0038",
+      "text": "Meine Tochter ist am 8. März geboren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0039",
+      "text": "Ich bin am siebten Juli geboren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0040",
+      "text": "Mein Geburtsdatum ist der 5. Juni 1990.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0041",
+      "text": "Mein Geburtsort ist eine kleine Stadt in Syrien.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0042",
+      "text": "Welche Staatsangehörigkeit haben Sie?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0043",
+      "text": "Ich habe die deutsche Staatsangehörigkeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0044",
+      "text": "Wie ist Ihr Familienstand?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0045",
+      "text": "Wo sind Sie geboren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0046",
+      "text": "Ich bin verheiratet und habe zwei Söhne.",
+      "quelle": "tatoeba:601055",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #601055 von jxan (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e09.s0047",
+      "text": "Mein Bruder ist ledig und wohnt allein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0048",
+      "text": "Das Bürgeramt hat jeden Tag fast tausend Besucher.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0049",
+      "text": "Die Schule beginnt am zehnten April.",
+      "quelle": "tatoeba:342265",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #342265 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e09.s0050",
+      "text": "Der Juni ist der sechste Monat im Jahr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0051",
+      "text": "Welches Amt ist für meinen Ausweis zuständig?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0052",
+      "text": "Das Bürgeramt befindet sich im Rathaus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0053",
+      "text": "Das Bürgeramt befindet sich im zweiten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0054",
+      "text": "Das Bürgeramt befindet sich im dritten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0055",
+      "text": "Die Beratung befindet sich im zweiten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0056",
+      "text": "In Deutschland gibt es viele Behörden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0057",
+      "text": "Von der Behörde bekommen wir oft Briefe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0058",
+      "text": "Der Sachbearbeiter erklärt mir das Formular.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0059",
+      "text": "Am Eingang nehmen Sie eine Wartenummer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0060",
+      "text": "Wenn Ihre Nummer kommt, gehen Sie zum Schalter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0061",
+      "text": "Die Öffnungszeiten stehen an der Tür.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0062",
+      "text": "Entschuldigung, wo finde ich das Bürgeramt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0063",
+      "text": "Im Gebäude gegenüber vom Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0064",
+      "text": "Und wie sind die Öffnungszeiten heute?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0065",
+      "text": "Heute ist das Bürgeramt bis 18 Uhr geöffnet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0066",
+      "text": "Wer ist für die Anmeldung zuständig?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0067",
+      "text": "Die Beratung ist kostenlos.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0068",
+      "text": "Die Sachbearbeiterin informiert uns über die Gebühren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0069",
+      "text": "Wissen Sie, ob das Amt heute geöffnet ist?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0070",
+      "text": "Wissen Sie, wann das Amt heute geöffnet ist?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0071",
+      "text": "Wissen Sie, wo das Amt ist?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0072",
+      "text": "Können Sie mir sagen, ob Frau Hoffmann heute da ist?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0073",
+      "text": "Ich weiß nicht, ob heute Dienstag oder Mittwoch ist.",
+      "quelle": "tatoeba:1274170",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1274170 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e09.s0074",
+      "text": "Gibt es noch eine andere Möglichkeit?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0075",
+      "text": "Ich muss heute noch etwas beim Amt erledigen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0076",
+      "text": "Ich warte seit einer Stunde auf meine Nummer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0077",
+      "text": "Guten Tag, Herr Yılmaz. Haben Sie Ihre Wartenummer?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0078",
+      "text": "Frau Kaya, bitte kommen Sie mit Ihren Unterlagen zum Schalter drei.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0079",
+      "text": "Können Sie die Postleitzahl bitte langsamer wiederholen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0080",
+      "text": "Bitte füllen Sie das Formular aus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0081",
+      "text": "Kannst du mir beim Formular helfen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0082",
+      "text": "Ich verstehe das Formular nicht ganz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0083",
+      "text": "Wichtige Dokumente lege ich immer in den Schrank.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0084",
+      "text": "Bitte bringen Sie eine Kopie vom Pass mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0085",
+      "text": "Ist eine Kopie nötig?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0086",
+      "text": "Ist das Original nötig?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0087",
+      "text": "Ist eine Unterschrift nötig?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0088",
+      "text": "Haben Sie eine Kopie?",
+      "quelle": "tatoeba:2226407",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2226407 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e09.s0089",
+      "text": "Sie brauchen auch eine Bestätigung vom Vermieter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0090",
+      "text": "Auf der Bestätigung ist ein Stempel vom Amt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0091",
+      "text": "Der Sachbearbeiter prüft die Unterlagen sehr genau.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0092",
+      "text": "Welche Unterlagen sind notwendig?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0093",
+      "text": "Wenn Sie umziehen, müssen Sie sich anmelden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0094",
+      "text": "Wenn Sie umziehen, müssen Sie ein Formular ausfüllen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0095",
+      "text": "Wenn Sie einziehen, müssen Sie ein Formular ausfüllen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0096",
+      "text": "Weil Sie umziehen, müssen Sie ein Formular ausfüllen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0097",
+      "text": "Wenn das Formular fertig ist, unterschreiben Sie bitte hier.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0098",
+      "text": "Wenn Sie Fragen haben, helfe ich Ihnen gern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0099",
+      "text": "Was muss ich tun, wenn ich umziehe?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0100",
+      "text": "Wenn ich Zeit habe, gehe ich morgen zum Amt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0101",
+      "text": "Ich möchte mich anmelden. Welche Unterlagen brauche ich?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0102",
+      "text": "Sie brauchen Ihren Ausweis und das Formular.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0103",
+      "text": "Muss ich das Formular selbst ausfüllen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0104",
+      "text": "Ja, und vergessen Sie die Unterschrift nicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0105",
+      "text": "Nein, ein Termin ist nicht nötig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0106",
+      "text": "Darf ich Ihren Ausweis sehen?",
+      "quelle": "tatoeba:433937",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #433937 von jerom (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e09.s0107",
+      "text": "Wie lange gilt der neue Reisepass?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0108",
+      "text": "Mein Pass ist noch zwei Jahre gültig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0109",
+      "text": "Mein Pass ist noch drei Jahre gültig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0110",
+      "text": "Mein Ausweis ist noch zwei Jahre gültig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0111",
+      "text": "Mein Ausweis ist nicht mehr gültig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0112",
+      "text": "Der Pass gilt zehn Jahre.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0113",
+      "text": "Den Antrag können Sie auch online stellen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0114",
+      "text": "Ich möchte einen neuen Pass beantragen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0115",
+      "text": "Haben Sie ein Foto für den Pass dabei?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0116",
+      "text": "Ja, hier ist es. Was kostet der Pass?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0117",
+      "text": "Die Gebühr beträgt 70 Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0118",
+      "text": "Sie erhalten den neuen Pass in vier Wochen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0119",
+      "text": "Die Gebühr können Sie bar oder mit Karte bezahlen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0120",
+      "text": "Für den Pass benötigen Sie ein neues Foto.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0121",
+      "text": "Besitzen Sie schon ein Konto bei einer Bank?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0122",
+      "text": "Falls Sie Fragen haben, rufen Sie uns an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0123",
+      "text": "Falls ich meinen Zug verpasse, nehme ich den Bus.",
+      "quelle": "tatoeba:1048964",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1048964 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e09.s0124",
+      "text": "Falls der Pass nicht mehr gültig ist, brauchen Sie einen neuen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0125",
+      "text": "Ich weiß nicht, ob mein Pass noch gültig ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0126",
+      "text": "Für ein Konto bei der Bank brauchen Sie einen Ausweis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0127",
+      "text": "Wo ist die Bank?",
+      "quelle": "tatoeba:505581",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #505581 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e09.s0128",
+      "text": "Ich möchte einen neuen Ausweis beantragen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0129",
+      "text": "So füllen Sie das Formular für die Anmeldung aus",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0130",
+      "text": "Bitte füllen Sie das Formular nur mit einem blauen Stift aus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0131",
+      "text": "Punkt 1: Schreiben Sie Ihren Familiennamen und alle Vornamen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0132",
+      "text": "Punkt 2: Schreiben Sie hier Ihr Geburtsdatum und Ihren Geburtsort.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0133",
+      "text": "Schreiben Sie das Geburtsdatum so: Tag, Monat, Jahr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0134",
+      "text": "Punkt 3: Geben Sie Ihre Staatsangehörigkeit und Ihren Familienstand an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0135",
+      "text": "Punkt 4: Schreiben Sie Ihre neue Adresse mit Postleitzahl und Wohnort.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0136",
+      "text": "Telefonnummer und E-Mail-Adresse sind nicht nötig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0137",
+      "text": "Wenn Kinder mit Ihnen umziehen, schreiben Sie auch ihre Namen auf.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0138",
+      "text": "Am Ende unterschreiben Sie das Formular mit Datum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0139",
+      "text": "Bringen Sie das Formular, Ihren Ausweis und die Bestätigung vom Vermieter mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0140",
+      "text": "Für die Anmeldung gibt es keine Gebühr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0141",
+      "text": "Danach bekommen Sie eine Bestätigung mit Stempel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0142",
+      "text": "Man soll das Formular mit einem roten Stift ausfüllen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0143",
+      "text": "Man muss keine Telefonnummer schreiben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0144",
+      "text": "Das Bürgeramt ist auch am Samstag geöffnet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0145",
+      "text": "Was muss man zum Amt mitbringen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0146",
+      "text": "Das Formular, den Ausweis und die Bestätigung vom Vermieter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0147",
+      "text": "Nur eine Kopie vom Ausweis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0148",
+      "text": "Ein Foto und den Reisepass.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0149",
+      "text": "Wie hoch ist die Gebühr für die Anmeldung?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0150",
+      "text": "Es gibt keine Gebühr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0151",
+      "text": "Die Gebühr beträgt zehn Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0152",
+      "text": "Du hast das Formular für die Anmeldung ausgefüllt. Schreib dem Bürgeramt eine E-Mail mit einer Frage.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0153",
+      "text": "Sehr geehrte Frau Hoffmann, ich habe das Formular für die Anmeldung ausgefüllt. Ich habe aber noch eine Frage. Brauche ich auch eine Kopie von meinem Pass? Und muss mein Sohn persönlich kommen? Vielen Dank! Mit freundlichen Grüßen Serkan Yılmaz",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0154",
+      "text": "Die Anmeldung beim Bürgeramt",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0155",
+      "text": "Familie Manṣūr hat seit zwei Wochen eine neue Adresse.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0156",
+      "text": "Nach dem Umzug muss Ranā die Familie beim Bürgeramt anmelden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0157",
+      "text": "Am Montag geht sie mit ihrer Tochter Laylā zum Amt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0158",
+      "text": "Am Eingang nimmt Laylā eine Wartenummer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0159",
+      "text": "Nach zwanzig Minuten ist ihre Nummer an der Reihe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0160",
+      "text": "Nach zehn Minuten ist ihre Nummer an der Reihe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0161",
+      "text": "Nach zwanzig Minuten ist seine Nummer an der Reihe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0162",
+      "text": "Guten Tag, ich bin Frau Hoffmann, Ihre Sachbearbeiterin. Was kann ich für Sie tun?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0163",
+      "text": "Guten Tag. Wir haben eine neue Adresse und möchten uns anmelden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0164",
+      "text": "Gern. Haben Sie das Formular schon ausgefüllt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0165",
+      "text": "Ja, hier ist es. Ich habe es auch unterschrieben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0166",
+      "text": "Danke. Ich brauche noch Ihre Ausweise und die Bestätigung vom Vermieter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0167",
+      "text": "Hier sind die Ausweise. Aber die Bestätigung fehlt leider.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0168",
+      "text": "Ohne die Bestätigung kann ich Sie leider nicht anmelden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0169",
+      "text": "Sie können die Bestätigung aber morgen bringen. Dann geht es schnell.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0170",
+      "text": "Frau Hoffmann prüft die Angaben im Formular.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0171",
+      "text": "Wie schreibt man Ihren Familiennamen? Ich kann ihn nicht gut lesen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0172",
+      "text": "Da hilft Laylā beim Familiennamen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0173",
+      "text": "Ich buchstabiere Ihnen unseren Familiennamen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0174",
+      "text": "Danke, jetzt sind alle Angaben richtig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0175",
+      "text": "Am nächsten Tag bringt Ranā die Bestätigung vom Vermieter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0176",
+      "text": "Jetzt ist die Familie angemeldet und hat eine Bestätigung mit Stempel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0177",
+      "text": "Zu welchem Amt gehen Ranā und Laylā am Montag?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0178",
+      "text": "Sie gehen zum Bürgeramt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0179",
+      "text": "Sie gehen zur Bank.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0180",
+      "text": "Welches Dokument fehlt noch?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0181",
+      "text": "Die Bestätigung vom Vermieter fehlt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0182",
+      "text": "Das Formular fehlt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0183",
+      "text": "Wer hilft beim Familiennamen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0184",
+      "text": "Laylā hilft beim Familiennamen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0185",
+      "text": "Frau Hoffmann hilft beim Familiennamen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0186",
+      "text": "Wann bringt Ranā die Bestätigung?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0187",
+      "text": "Am Dienstag bringt sie die Bestätigung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0188",
+      "text": "Am Montag bringt sie die Bestätigung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0189",
+      "text": "Ein neuer Ausweis",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0190",
+      "text": "Serkan Yılmaz sieht seinen Ausweis an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0191",
+      "text": "Der Ausweis ist nur noch bis zum 6. Juni gültig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0192",
+      "text": "Serkan ruft beim Bürgeramt an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0193",
+      "text": "Guten Tag, hier ist das Bürgeramt. Mein Name ist Schulz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0194",
+      "text": "Guten Tag, Herr Schulz. Hier ist Serkan Yılmaz, ich brauche einen neuen Ausweis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0195",
+      "text": "Was muss ich für den Ausweis tun?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0196",
+      "text": "Wenn Sie einen neuen Ausweis brauchen, müssen Sie einen Termin machen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0197",
+      "text": "Kann ich den Antrag online stellen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0198",
+      "text": "Nein, für den Ausweis müssen Sie persönlich kommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0199",
+      "text": "Welche Unterlagen benötige ich?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0200",
+      "text": "Bringen Sie bitte ein Foto und den alten Ausweis mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0201",
+      "text": "Gern: ein Foto und den alten Ausweis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0202",
+      "text": "Und wie hoch ist die Gebühr?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0203",
+      "text": "Die Gebühren finden Sie im Internet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0204",
+      "text": "Vielen Dank, Herr Schulz. Dann mache ich gleich einen Termin für den Ausweis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0205",
+      "text": "Bis wann ist der Ausweis von Serkan gültig?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0206",
+      "text": "Der Ausweis ist bis zum 6. Juni gültig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0207",
+      "text": "Der Ausweis ist bis zum 9. Juni gültig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0208",
+      "text": "Kann Serkan den Antrag online stellen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0209",
+      "text": "Nein, er muss persönlich kommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0210",
+      "text": "Ja, er kann den Antrag online stellen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0211",
+      "text": "Welche Unterlagen muss Serkan mitbringen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0212",
+      "text": "Ein Foto und den alten Ausweis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0213",
+      "text": "Eine Kopie vom Pass und ein Formular.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0214",
+      "text": "Was macht Serkan nach dem Gespräch mit dem Bürgeramt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0215",
+      "text": "Er macht einen Termin beim Bürgeramt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0216",
+      "text": "Er geht sofort zum Amt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0217",
+      "text": "Guten Tag, ich möchte meinen Pass abholen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0218",
+      "text": "Gern. Haben Sie die Bestätigung dabei?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0219",
+      "text": "Ja, hier ist sie. Brauchen Sie auch meinen Ausweis?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0220",
+      "text": "Ja, bitte. Ich muss Ihre Angaben prüfen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0221",
+      "text": "Mama, wann ist dein Termin beim Bürgeramt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0222",
+      "text": "Am Donnerstag um zehn Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0223",
+      "text": "Welches Datum ist das? Ich möchte es mir merken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0224",
+      "text": "Das ist der siebte November.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0225",
+      "text": "Wenn Sie krank sind, können Sie den Termin verschieben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0226",
+      "text": "Wenn Sie krank sind, müssen Sie den Termin verschieben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0227",
+      "text": "Falls Sie krank sind, können Sie den Termin verschieben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0228",
+      "text": "Frau Hoffmann fragt, ob Laylā in Deutschland geboren ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0229",
+      "text": "Meine Frau und ich haben verschiedene Familiennamen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0230",
+      "text": "Die Beratung ist im fünften Stock, Zimmer 512.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0231",
+      "text": "Die neue Adresse schreibe ich ins Formular.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0232",
+      "text": "Merken Sie sich bitte Ihre Wartenummer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0233",
+      "text": "Die Sachbearbeiterin prüft, ob alle Unterlagen da sind.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0234",
+      "text": "Die Kopie ist gut, aber wir brauchen auch das Original.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0235",
+      "text": "Wenn der Stempel fehlt, gilt das Dokument nicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0236",
+      "text": "Ich bin am vierten April geboren und wohne in Berlin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0237",
+      "text": "Mein Vater möchte bei der Bank ein Konto eröffnen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0238",
+      "text": "Ich bin umgezogen und habe eine neue Adresse.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0239",
+      "text": "Haben Sie das Formular schon ausgefüllt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0240",
+      "text": "Ja, und ich habe es auch unterschrieben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0241",
+      "text": "Ja, ich wohne im sechsten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0242",
+      "text": "Mein Ausweis ist nicht mehr lange gültig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0243",
+      "text": "Dann brauchen Sie bald einen neuen Ausweis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0244",
+      "text": "Was muss ich tun, wenn ich einen neuen Ausweis brauche?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0245",
+      "text": "Machen Sie einen Termin und bringen Sie den alten Ausweis mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0246",
+      "text": "Bitte schreiben Sie Ihren Familiennamen und Ihren Vornamen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0247",
+      "text": "Wenn Sie umgezogen sind, müssen Sie zum Bürgeramt gehen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0248",
+      "text": "Mein Sohn ist am achten Februar geboren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0249",
+      "text": "Können Sie mir sagen, ob das Formular richtig ist?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0250",
+      "text": "Wo muss ich unterschreiben?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0251",
+      "text": "Ihr Pass ist nur noch bis März gültig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0252",
+      "text": "Wenn Ihr Ausweis nicht mehr gültig ist, brauchen Sie einen neuen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0253",
+      "text": "Ihr Pass ist nur noch bis Mai gültig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0254",
+      "text": "Ihr Ausweis ist nur noch bis März gültig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0255",
+      "text": "Ich heiße Selin Aydın und bin am fünften Mai geboren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0256",
+      "text": "Was muss ich tun, wenn ich in eine andere Stadt umziehe?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0257",
+      "text": "Können Sie die Hausnummer bitte wiederholen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0258",
+      "text": "Das Fahrrad kostet fast tausend Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0259",
+      "text": "Das Original bekommen Sie sofort zurück.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e09.s0260",
+      "text": "Sind Sie verheiratet oder ledig?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a2.e09.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann meinen Namen, meine Adresse und meine Telefonnummer angeben.",
+        "tr": "Adımı, adresimi ve telefon numaramı söyleyebilirim.",
+        "ar": "أستطيع أن أذكر اسمي وعنواني ورقم هاتفي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e09.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.nachname",
+          "ablenker": ["de.a2.e09.vorname", "de.a2.e09.adresse"]
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e09.vorname", "de.a2.e09.adresse", "de.a2.e09.telefonnummer", "de.a2.e09.postleitzahl", "de.a2.e09.hausnummer"]
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e09.nummer",
+          "ablenker": ["de.a1.e01.name", "de.a1.e04.uhr"]
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e09.s0009",
+          "ablenker": ["de.a2.e09.s0010", "de.a2.e09.s0011"]
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0007",
+          "wort": 2,
+          "ablenker": ["Ihr", "Ihren"]
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0002"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0022"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0023"
+            }
+          ],
+          "antwort": "de.a2.e09.s0024",
+          "ablenker": ["de.a2.e09.s0008", "de.a2.e09.s0016"]
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a08",
+          "typ": "paare",
+          "lemmata": ["de.a2.e09.familienname", "de.a2.e09.wohnort", "de.a2.e09.e-mail", "de.a2.e09.angabe"]
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e09.s0012",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Postleitzahl fehlt noch bei der Adresse.",
+            "Noch fehlt bei der Adresse die Postleitzahl.",
+            "Bei der Adresse fehlt die Postleitzahl noch.",
+            "Die Postleitzahl fehlt bei der Adresse noch."
+          ],
+          "ablenker": ["dem", "Nummer"]
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.persoenlich",
+          "ablenker": ["de.a1.e12.wichtig", "de.a2.e02.puenktlich"]
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e09.s0019",
+          "ablenker": ["de.a2.e09.s0014", "de.a2.e09.s0007"]
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a12",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0021",
+          "wort": 2,
+          "ablenker": ["mich", "dich"]
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e09.s0006"
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e09.s0018",
+          "nach": "ziel",
+          "alternativen": [
+            "Machen Sie bitte alle Angaben auf Deutsch.",
+            "Machen Sie alle Angaben bitte auf Deutsch.",
+            "Bitte machen Sie alle Angaben in Deutsch.",
+            "Machen Sie bitte alle Angaben in Deutsch."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e09.s0001"
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e09.s0025"
+        },
+        {
+          "schluessel": "de.a2.e09.l01.a17",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0020",
+          "wort": 0,
+          "ablenker": ["Dürfen", "Darfst"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e09.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann mein Geburtsdatum sagen und Ordinalzahlen verstehen.",
+        "tr": "Doğum tarihimi söyleyebilir ve sıra sayılarını anlayabilirim.",
+        "ar": "أستطيع أن أقول تاريخ ولادتي وأن أفهم الأعداد الترتيبية."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e09.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.geburtsdatum",
+          "ablenker": ["de.a2.e09.geburtsort", "de.a2.e09.familienstand"]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e09.vierte", "de.a2.e09.fuenfte", "de.a2.e09.sechste", "de.a2.e09.siebte", "de.a2.e09.achte"]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e09.staatsangehoerigkeit",
+          "ablenker": ["de.a2.e09.familienstand", "de.a2.e09.geburtsort"]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e09.s0032",
+          "ablenker": ["de.a2.e09.s0033", "de.a2.e09.s0034"]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0035",
+          "wort": 3,
+          "ablenker": ["neunten", "neun"]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0026"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0028"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0029"
+            }
+          ],
+          "antwort": "de.a2.e09.s0030",
+          "ablenker": ["de.a2.e09.s0031", "de.a2.e09.s0047"]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a08",
+          "typ": "paare",
+          "lemmata": ["de.a2.e09.neunte", "de.a2.e09.zehnte", "de.a2.e09.tausend", "de.a1.e04.erste", "de.a1.e07.dritte"]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e09.s0041",
+          "nach": "ziel",
+          "alternativen": ["Eine kleine Stadt in Syrien ist mein Geburtsort."],
+          "ablenker": ["großen", "im"]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.verheiratet",
+          "ablenker": ["de.a2.e09.ledig", "de.a2.e07.freundlich"]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e09.s0042",
+          "ablenker": ["de.a2.e09.s0044", "de.a2.e09.s0045"]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a12",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0036",
+          "wort": 3,
+          "ablenker": ["sechste", "sechs"]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e09.s0037",
+          "alternativen": ["Am zehnten Juli ist mein Bruder geboren."]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e09.s0038",
+          "nach": "ziel",
+          "alternativen": [
+            "Meine Tochter ist am achten März geboren.",
+            "Meine Tochter wurde am 8. März geboren.",
+            "Meine Tochter wurde am achten März geboren.",
+            "Am 8. März ist meine Tochter geboren.",
+            "Am achten März ist meine Tochter geboren."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e09.s0039",
+          "alternativen": ["Ich bin am 7. Juli geboren."]
+        },
+        {
+          "schluessel": "de.a2.e09.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e09.s0040"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e09.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann mich im Bürgeramt zurechtfinden und höflich nachfragen.",
+        "tr": "Vatandaş bürosunda yolumu bulabilir ve kibarca soru sorabilirim.",
+        "ar": "أستطيع أن أجد طريقي في مكتب خدمات المواطنين وأن أسأل بأدب."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e09.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.buergeramt",
+          "ablenker": ["de.a1.e09.bibliothek", "de.a1.e09.apotheke"]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e09.sachbearbeiter",
+            "de.a2.e09.wartenummer",
+            "de.a2.e09.oeffnungszeiten",
+            "de.a2.e09.gebaeude",
+            "de.a2.e09.beratung"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e09.zustaendig",
+          "ablenker": ["de.a2.e09.persoenlich", "de.a2.e02.puenktlich"]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e09.s0053",
+          "ablenker": ["de.a2.e09.s0054", "de.a2.e09.s0055"]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0076",
+          "wort": 3,
+          "ablenker": ["einem", "eine"]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0062"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0063"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0064"
+            }
+          ],
+          "antwort": "de.a2.e09.s0065",
+          "ablenker": ["de.a2.e09.s0053", "de.a2.e09.s0059"]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a08",
+          "typ": "paare",
+          "lemmata": ["de.a2.e09.amt", "de.a2.e09.moeglichkeit", "de.a2.e09.befinden", "de.a2.e09.informieren", "de.a2.e09.erledigen"]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e09.s0052",
+          "nach": "ziel",
+          "alternativen": ["Im Rathaus befindet sich das Bürgeramt."],
+          "ablenker": ["Stock", "der"]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a10",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e09.s0069",
+          "ablenker": ["de.a2.e09.s0070", "de.a2.e09.s0071"]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a12",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0072",
+          "wort": 4,
+          "ablenker": ["weil", "dass"]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e09.s0066",
+          "alternativen": ["Wer ist zuständig für die Anmeldung?"]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e09.s0061",
+          "nach": "ziel",
+          "alternativen": [
+            "An der Tür stehen die Öffnungszeiten.",
+            "Die Öffnungszeiten stehen auf der Tür.",
+            "Auf der Tür stehen die Öffnungszeiten."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e09.ob",
+          "ablenker": ["de.a1.e12.ab"]
+        },
+        {
+          "schluessel": "de.a2.e09.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e09.s0079"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e09.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann ein Formular ausfüllen und sagen, welche Unterlagen nötig sind.",
+        "tr": "Bir form doldurabilir ve hangi belgelerin gerekli olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أملأ استمارة وأن أقول ما هي الوثائق اللازمة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e09.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.formular",
+          "ablenker": ["de.a1.e07.heft", "de.a1.e07.text"]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e09.kopie", "de.a2.e09.original", "de.a2.e09.stempel", "de.a2.e09.bestaetigung", "de.a2.e09.unterschrift"]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e09.ausfuellen",
+          "ablenker": ["de.a2.e09.unterschreiben", "de.a2.e09.pruefen"]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e09.s0094",
+          "ablenker": ["de.a2.e09.s0096", "de.a2.e09.s0095"]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0100",
+          "wort": 0,
+          "ablenker": ["Ob", "Dass"]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0101"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0102"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0103"
+            }
+          ],
+          "antwort": "de.a2.e09.s0104",
+          "ablenker": ["de.a2.e09.s0105", "de.a2.e09.s0074"]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.unterlagen",
+          "ablenker": ["de.a1.e07.buch", "de.a2.e07.post"]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e09.s0084",
+          "nach": "ziel",
+          "alternativen": [
+            "Bringen Sie bitte eine Kopie vom Pass mit.",
+            "Bringen Sie eine Kopie vom Pass bitte mit.",
+            "Eine Kopie vom Pass bringen Sie bitte mit."
+          ],
+          "ablenker": ["Original", "den"]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e09.s0085",
+          "ablenker": ["de.a2.e09.s0086", "de.a2.e09.s0087"]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0091",
+          "wort": 2,
+          "ablenker": ["prüfen", "prüfst"]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a12",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e09.s0097",
+          "alternativen": [
+            "Wenn das Formular fertig ist, unterschreiben Sie hier bitte.",
+            "Unterschreiben Sie bitte hier, wenn das Formular fertig ist.",
+            "Bitte unterschreiben Sie hier, wenn das Formular fertig ist.",
+            "Unterschreiben Sie hier bitte, wenn das Formular fertig ist."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e09.s0098",
+          "nach": "ziel",
+          "alternativen": [
+            "Wenn Sie Fragen haben, helfe ich gern.",
+            "Ich helfe Ihnen gern, wenn Sie Fragen haben.",
+            "Wenn Sie eine Frage haben, helfe ich Ihnen gern.",
+            "Ich helfe Ihnen gern, wenn Sie eine Frage haben.",
+            "Wenn Sie Fragen haben, helfe ich Ihnen gerne.",
+            "Ich helfe Ihnen gerne, wenn Sie Fragen haben."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e09.wenn",
+          "ablenker": ["de.a1.e08.denn"]
+        },
+        {
+          "schluessel": "de.a2.e09.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e09.s0099"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e09.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann einen Ausweis beantragen und einfache Bedingungen verstehen.",
+        "tr": "Kimlik kartı için başvurabilir ve basit koşulları anlayabilirim.",
+        "ar": "أستطيع أن أطلب بطاقة هوية وأن أفهم شروطًا بسيطة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e09.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.ausweis",
+          "ablenker": ["de.a2.e02.fuehrerschein", "de.a2.e02.fahrkarte"]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e09.reisepass", "de.a2.e09.antrag", "de.a2.e09.gebuehr", "de.a2.e09.bank", "de.a2.e09.konto"]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a03",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e09.s0113"
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e09.gueltig",
+          "ablenker": ["de.a2.e02.puenktlich", "de.a2.e02.kostenlos"]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0122",
+          "wort": 4,
+          "ablenker": ["ruft", "rufst"]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0114"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0115"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0116"
+            }
+          ],
+          "antwort": "de.a2.e09.s0117",
+          "ablenker": ["de.a2.e09.s0112", "de.a2.e09.s0118"]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.beantragen",
+          "ablenker": ["de.a2.e08.anmelden", "de.a1.e06.bezahlen"]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a08",
+          "typ": "lesen_fragen",
+          "titel": "de.a2.e09.s0129",
+          "absaetze": [
+            "de.a2.e09.s0130",
+            "de.a2.e09.s0131",
+            "de.a2.e09.s0132",
+            "de.a2.e09.s0133",
+            "de.a2.e09.s0134",
+            "de.a2.e09.s0135",
+            "de.a2.e09.s0136",
+            "de.a2.e09.s0137",
+            "de.a2.e09.s0138",
+            "de.a2.e09.s0139",
+            "de.a2.e09.s0140",
+            "de.a2.e09.s0141"
+          ],
+          "glossen": ["de.a2.e09.familienstand", "de.a2.e09.staatsangehoerigkeit", "de.a2.e09.bestaetigung"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e09.s0142",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e09.s0143",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e09.s0144",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e09.s0145",
+              "antwort": "de.a2.e09.s0146",
+              "ablenker": ["de.a2.e09.s0147", "de.a2.e09.s0148"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e09.s0149",
+              "antwort": "de.a2.e09.s0150",
+              "ablenker": ["de.a2.e09.s0151"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e09.s0108",
+          "ablenker": ["de.a2.e09.s0109", "de.a2.e09.s0110"]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e09.s0126",
+          "nach": "ziel",
+          "alternativen": [
+            "Sie brauchen einen Ausweis für ein Konto bei der Bank.",
+            "Einen Ausweis brauchen Sie für ein Konto bei der Bank.",
+            "Sie brauchen für ein Konto bei der Bank einen Ausweis."
+          ],
+          "ablenker": ["Kasse", "eine"]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e09.s0124",
+          "ablenker": ["de.a2.e09.s0125", "de.a2.e09.s0121"]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e09.s0107"
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e09.s0111",
+          "nach": "ziel",
+          "alternativen": ["Mein Ausweis gilt nicht mehr."]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e09.falls",
+          "ablenker": ["de.a1.e11.hals"]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.a2.e09.s0152",
+          "woerter": {
+            "min": 30,
+            "max": 40
+          },
+          "pflichtwoerter": ["Formular", "Frage"],
+          "muster": ["de.a2.e09.s0153"]
+        },
+        {
+          "schluessel": "de.a2.e09.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e09.s0128"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e09.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte und ein Telefongespräch beim Amt verstehen.",
+        "tr": "Resmi dairede geçen bir hikâyeyi ve bir telefon görüşmesini anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة ومكالمة هاتفية مع مكتب رسمي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e09.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a2.e09.s0154",
+          "zeilen": [
+            {
+              "satz": "de.a2.e09.s0155"
+            },
+            {
+              "satz": "de.a2.e09.s0156"
+            },
+            {
+              "satz": "de.a2.e09.s0157"
+            },
+            {
+              "satz": "de.a2.e09.s0158"
+            },
+            {
+              "satz": "de.a2.e09.s0159"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0162"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0163"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0164"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0165"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0166"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0167"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0168"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0169"
+            },
+            {
+              "satz": "de.a2.e09.s0170"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0171"
+            },
+            {
+              "satz": "de.a2.e09.s0172"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e09.s0173"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0174"
+            },
+            {
+              "satz": "de.a2.e09.s0175"
+            },
+            {
+              "satz": "de.a2.e09.s0176"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 3,
+              "frage": "de.a2.e09.s0177",
+              "antwort": "de.a2.e09.s0178",
+              "ablenker": ["de.a2.e09.s0179"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.a2.e09.s0180",
+              "antwort": "de.a2.e09.s0181",
+              "ablenker": ["de.a2.e09.s0182"]
+            },
+            {
+              "nach": 16,
+              "frage": "de.a2.e09.s0183",
+              "antwort": "de.a2.e09.s0184",
+              "ablenker": ["de.a2.e09.s0185"]
+            },
+            {
+              "nach": 19,
+              "frage": "de.a2.e09.s0186",
+              "antwort": "de.a2.e09.s0187",
+              "ablenker": ["de.a2.e09.s0188"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e09.l06.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e09.s0159",
+          "ablenker": ["de.a2.e09.s0160", "de.a2.e09.s0161"]
+        },
+        {
+          "schluessel": "de.a2.e09.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0168",
+          "wort": 3,
+          "ablenker": ["können", "kannst"]
+        },
+        {
+          "schluessel": "de.a2.e09.l06.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0239"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0165"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0166"
+            }
+          ],
+          "antwort": "de.a2.e09.s0167",
+          "ablenker": ["de.a2.e09.s0174", "de.a2.e09.s0127"]
+        },
+        {
+          "schluessel": "de.a2.e09.l06.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e09.s0170",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Angaben im Formular prüft Frau Hoffmann.",
+            "Im Formular prüft Frau Hoffmann die Angaben.",
+            "Frau Hoffmann prüft im Formular die Angaben."
+          ],
+          "ablenker": ["prüfen", "Stempel"]
+        },
+        {
+          "schluessel": "de.a2.e09.l06.a06",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e09.s0176"
+        },
+        {
+          "schluessel": "de.a2.e09.l06.a07",
+          "typ": "geschichte",
+          "titel": "de.a2.e09.s0189",
+          "zeilen": [
+            {
+              "satz": "de.a2.e09.s0190"
+            },
+            {
+              "satz": "de.a2.e09.s0191"
+            },
+            {
+              "satz": "de.a2.e09.s0192"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0193"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0194"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0195"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0196"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0197"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0198"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0199"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0200"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e07.s0151"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0201"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0202"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0203"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0204"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.a2.e09.s0205",
+              "antwort": "de.a2.e09.s0206",
+              "ablenker": ["de.a2.e09.s0207"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.a2.e09.s0208",
+              "antwort": "de.a2.e09.s0209",
+              "ablenker": ["de.a2.e09.s0210"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a2.e09.s0211",
+              "antwort": "de.a2.e09.s0212",
+              "ablenker": ["de.a2.e09.s0213"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.a2.e09.s0214",
+              "antwort": "de.a2.e09.s0215",
+              "ablenker": ["de.a2.e09.s0216"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e09.l06.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0197"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0198"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0199"
+            }
+          ],
+          "antwort": "de.a2.e09.s0200",
+          "ablenker": ["de.a2.e09.s0203", "de.a2.e09.s0196"]
+        },
+        {
+          "schluessel": "de.a2.e09.l06.a09",
+          "typ": "satzbau",
+          "ziel": "de.a2.e09.s0196",
+          "alternativen": ["Sie müssen einen Termin machen, wenn Sie einen neuen Ausweis brauchen."]
+        },
+        {
+          "schluessel": "de.a2.e09.l06.a10",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0191",
+          "wort": 6,
+          "ablenker": ["zur", "zu"]
+        },
+        {
+          "schluessel": "de.a2.e09.l06.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e09.s0202",
+          "ablenker": ["de.a2.e09.s0199", "de.a2.e09.s0197"]
+        },
+        {
+          "schluessel": "de.a2.e09.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e09.s0169",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e09.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.a2.e09.s0195"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e09.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann den Wortschatz zu Ämtern und Formularen wiederholen.",
+        "tr": "Resmi daireler ve formlarla ilgili kelimeleri tekrar edebilirim.",
+        "ar": "أستطيع أن أراجع كلمات المكاتب الرسمية والاستمارات."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e09.l07.a01",
+          "typ": "paare",
+          "lemmata": ["de.a2.e09.dokument", "de.a2.e09.gebuehr", "de.a2.e09.wohnort", "de.a2.e09.geburtsdatum", "de.a2.e09.gelten"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.behoerde",
+          "ablenker": ["de.a1.e09.polizei", "de.a2.e02.verkehr"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0228",
+          "wort": 3,
+          "ablenker": ["wenn", "dass"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e09.s0225",
+          "ablenker": ["de.a2.e09.s0226", "de.a2.e09.s0227"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0217"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0218"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0219"
+            }
+          ],
+          "antwort": "de.a2.e09.s0220",
+          "ablenker": ["de.a2.e09.s0046", "de.a2.e09.s0067"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.pass",
+          "ablenker": ["de.a2.e09.ausweis", "de.a2.e09.konto"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0235",
+          "wort": 4,
+          "ablenker": ["gelten", "giltst"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e09.s0231",
+          "nach": "ziel",
+          "alternativen": ["Ins Formular schreibe ich die neue Adresse.", "Ich schreibe die neue Adresse ins Formular."],
+          "ablenker": ["im", "Nummer"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e09.s0092",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e09.bank",
+          "ablenker": ["de.a1.e06.dank"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e09.s0234",
+          "ablenker": ["de.a2.e09.s0057", "de.a2.e09.s0090"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e09.s0233",
+          "alternativen": ["Ob alle Unterlagen da sind, prüft die Sachbearbeiterin."]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e09.erhalten",
+          "ablenker": ["de.a2.e09.besitzen", "de.a1.e06.verkaufen"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e09.s0237",
+          "nach": "ziel",
+          "alternativen": [
+            "Mein Vater will bei der Bank ein Konto eröffnen.",
+            "Mein Vater möchte ein Konto bei der Bank eröffnen.",
+            "Mein Vater will ein Konto bei der Bank eröffnen.",
+            "Mein Vater möchte ein Bankkonto eröffnen.",
+            "Mein Vater will ein Bankkonto eröffnen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a15",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0232",
+          "wort": 2,
+          "ablenker": ["mich", "dich"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e09.s0230",
+          "alternativen": ["Die Beratung ist im 5. Stock, Zimmer 512."]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a17",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.geboren",
+          "ablenker": ["de.a2.e09.verheiratet", "de.a2.e09.zustaendig"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a18",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0221"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0222"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0223"
+            }
+          ],
+          "antwort": "de.a2.e09.s0224",
+          "ablenker": ["de.a2.e09.s0053", "de.a2.e09.s0009"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a19",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e09.benoetigen",
+          "ablenker": ["de.a2.e09.informieren", "de.a2.e09.merken"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a20",
+          "typ": "satzbau",
+          "ziel": "de.a2.e09.s0048",
+          "alternativen": ["Jeden Tag hat das Bürgeramt fast tausend Besucher.", "Fast tausend Besucher hat das Bürgeramt jeden Tag."]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a21",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.noetig",
+          "ablenker": ["de.a2.e02.puenktlich", "de.a1.e12.wichtig"]
+        },
+        {
+          "schluessel": "de.a2.e09.l07.a22",
+          "typ": "sprechen",
+          "satz": "de.a2.e09.s0236"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e09.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann am Schalter Angaben machen und fragen, was ich tun muss.",
+        "tr": "Gişede bilgilerimi verebilir ve ne yapmam gerektiğini sorabilirim.",
+        "ar": "أستطيع أن أقدّم بياناتي عند الشبّاك وأن أسأل ماذا يجب أن أفعل."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e09.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e09.formular",
+          "ablenker": ["de.a2.e09.bestaetigung", "de.a2.e09.unterschrift"]
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e09.vorname",
+            "de.a2.e09.familienname",
+            "de.a2.e09.geburtsort",
+            "de.a2.e09.staatsangehoerigkeit",
+            "de.a2.e09.adresse"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0252",
+          "wort": 5,
+          "ablenker": ["nötig", "zuständig"]
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0024"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0238"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0239"
+            }
+          ],
+          "antwort": "de.a2.e09.s0240",
+          "ablenker": ["de.a2.e09.s0241", "de.a2.e09.s0031"]
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e09.s0246",
+          "nach": "ziel",
+          "alternativen": [
+            "Schreiben Sie bitte Ihren Familiennamen und Ihren Vornamen.",
+            "Bitte schreiben Sie Ihren Vornamen und Ihren Familiennamen.",
+            "Schreiben Sie bitte Ihren Vornamen und Ihren Familiennamen."
+          ],
+          "ablenker": ["Ihr", "Adresse"]
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a06",
+          "typ": "frei",
+          "ziel": "de.a2.e09.s0248",
+          "nach": "ziel",
+          "alternativen": [
+            "Mein Sohn ist am 8. Februar geboren.",
+            "Mein Sohn wurde am achten Februar geboren.",
+            "Mein Sohn wurde am 8. Februar geboren.",
+            "Am achten Februar ist mein Sohn geboren.",
+            "Am 8. Februar ist mein Sohn geboren."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e09.s0249",
+          "ablenker": ["de.a2.e09.s0250", "de.a2.e09.s0081"]
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a08",
+          "typ": "satzbau",
+          "ziel": "de.a2.e09.s0247",
+          "alternativen": ["Sie müssen zum Bürgeramt gehen, wenn Sie umgezogen sind."]
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e09.s0251",
+          "wort": 5,
+          "ablenker": ["seit", "um"]
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e09.unterschreiben",
+          "ablenker": ["de.a2.e09.ausfuellen", "de.a2.e09.beantragen"]
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e09.s0075"
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0242"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e09.s0243"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e09.s0244"
+            }
+          ],
+          "antwort": "de.a2.e09.s0245",
+          "ablenker": ["de.a2.e09.s0009", "de.a2.e09.s0067"]
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e09.s0257",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e09.s0251",
+          "ablenker": ["de.a2.e09.s0253", "de.a2.e09.s0254"]
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a2.e09.s0255"
+        },
+        {
+          "schluessel": "de.a2.e09.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e09.s0256"
+        }
+      ]
+    }
+  ]
+}

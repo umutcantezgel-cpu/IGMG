@@ -53,16 +53,143 @@ const AR_NACHSILBEN = [
   '\u064A',
 ];
 
-/** Arabisch: Vergleichsform mit und ohne Klitika (Wortreste mit mindestens 2 Buchstaben). */
-export function arabischeKandidaten(form: string): string[] {
+/**
+ * Bekannte arabische Wörter des kaikki-Kernauszugs in Vergleichsform: alle Formen (Stichwort, Plural, Beugungsformen) und
+ * die Wortarten der Stichwörter (Stichwort, Plural).
+ */
+export type ArabischBekannt = { formen: ReadonlySet<string>; wortarten: ReadonlyMap<string, ReadonlySet<string>> };
+
+/** Nisba bzw. Pronomen der 1. Person (-ī): wird immer abgetrennt (Adjektiv zum Nomen, z. B. „magisch“ zu „Zauber“) */
+const AR_NISBA = '\u064A';
+
+/**
+ * Arabisch: Vergleichsform mit und ohne Klitika (Wortreste mit mindestens 2 Buchstaben). Mit `bekannt` wird ein bekanntes
+ * Wort nicht falsch zerlegt: Ist die ganze Form bekannt, wird kein Klitikum abgetrennt (sonst ergäben die weibliche Form
+ * von „groß“ nach ka- oder „weit“ nach bi- Wörter, mit denen sie nichts zu tun haben). Ist die Form bzw. der Rest nach
+ * Klitikum oder Artikel ein Stichwort und wäre der Rest ohne Pronomen-Suffix (Tāʾ marbūṭa = Hāʾ) ein Stichwort nur anderer
+ * Wortart, wird das Suffix nicht abgetrennt: Die Staatsangehörigkeit (Nomen) ist nicht die weibliche Form des Adjektivs,
+ * dessen Nisba sie ist; ein Tanz (Nomen) bleibt eine Form des Nomens Tanz. Ohne `bekannt` wie bisher.
+ */
+export function arabischeKandidaten(form: string, bekannt?: ArabischBekannt): string[] {
   const ergebnis = new Set([form]);
   const ohneVor = [form];
-  for (const v of AR_VORSILBEN) if (form.startsWith(v) && form.length - v.length >= 2) ohneVor.push(form.slice(v.length));
+  if (!bekannt?.formen.has(form))
+    for (const v of AR_VORSILBEN) if (form.startsWith(v) && form.length - v.length >= 2) ohneVor.push(form.slice(v.length));
   for (const f of ohneVor) {
     ergebnis.add(f);
-    for (const n of AR_NACHSILBEN) if (f.endsWith(n) && f.length - n.length >= 2) ergebnis.add(f.slice(0, -n.length));
+    const arten = bekannt?.wortarten.get(f);
+    for (const n of AR_NACHSILBEN) {
+      if (!f.endsWith(n) || f.length - n.length < 2) continue;
+      const rest = f.slice(0, -n.length);
+      const restArten = arten && n !== AR_NISBA ? bekannt!.wortarten.get(rest) : undefined;
+      if (!restArten || [...restArten].some((a) => arten!.has(a))) ergebnis.add(rest);
+    }
   }
   return [...ergebnis];
+}
+
+// ——— Teilwörter an Morphemgrenzen (Tabu-Prüfer) ———
+
+/** Deutsche Vorsilben (auch fremde) und Fugenelemente für die Zerlegung des Vorderteils eines Kompositums. */
+const DE_VORSILBEN = new Set(
+  (
+    'ab an auf aus be bei bi dar durch ein ent er ex fort ge gegen her hin hinter homo hetero miss mit nach nicht ober ' +
+    'um un unter ur ver vor weg wider zer zu über anti pro extra hyper super ultra mega semi pseudo'
+  ).split(' '),
+);
+const DE_FUGEN = new Set(['s', 'es', 'n', 'en', 'e', 'er', 'ens', 'nen']);
+/** Deutsche Ableitungs- und Flexionsendungen (nur für die Zerlegung des ganzen Worts, nach einem Wort oder Stamm) */
+const DE_NACHSILBEN = new Set(
+  (
+    'e en n er ern es em s st t et est te ten tet ung ungen ier ieren iert ierte ierten ierst ierung ierungen lich isch ig ' +
+    'heit keit bar sam los schaft chen lein in innen nen ei erei ist ismus ität ion ation end ende'
+  ).split(' '),
+);
+
+/**
+ * Zerlegung in Morpheme: bekannte Wörter (ab 3 Buchstaben), Stämme (Stamm + -en/-n/-e/-te bekannt), Vorsilben; nach einem
+ * Wort Fugen und – nur mit `endungen` – Nachsilben.
+ */
+function deutschZerlegbar(wort: string, bekannt: ReadonlySet<string>, endungen: boolean): boolean {
+  const stueck = (s: string) =>
+    DE_VORSILBEN.has(s) || (s.length >= 3 && (bekannt.has(s) || ['en', 'n', 'e', 'te'].some((e) => bekannt.has(s + e))));
+  // erreichbar[i]: wort.slice(0, i) ist zerlegbar; nachWort[i]: das letzte Stück davor war ein Wort oder Stamm
+  const erreichbar = new Array<boolean>(wort.length + 1).fill(false);
+  const nachWort = new Array<boolean>(wort.length + 1).fill(false);
+  erreichbar[0] = true;
+  for (let i = 0; i < wort.length; i++) {
+    if (!erreichbar[i]) continue;
+    for (let j = i + 1; j <= wort.length; j++) {
+      const s = wort.slice(i, j);
+      if (stueck(s)) erreichbar[j] = nachWort[j] = true;
+      else if (nachWort[i] && (DE_FUGEN.has(s) || (endungen && DE_NACHSILBEN.has(s)))) erreichbar[j] = true;
+    }
+  }
+  return erreichbar[wort.length]!;
+}
+
+/**
+ * Deutsch: Steht eine Teilwort-Form an Stelle `i` des Worts an einer Morphemgrenze? Am Wortanfang immer; sonst, wenn der
+ * Teil davor ein möglicher Vorderteil eines Kompositums ist (bekannte Wörter, Stämme, Vorsilben, Fugen: „Rot|wein“,
+ * „Glüh|wein“, „un|partei|isch“). Ist er das nicht, liegt die Form nur dann sicher in einem anderen Morphem, wenn das ganze
+ * Wort anders zerlegbar ist (bekanntes Wort, Stamm + Endungen: „Buchstab|ieren“); ein unbekanntes Wort zählt als Grenze.
+ */
+export function deutscheMorphemgrenze(wort: string, i: number, bekannt: ReadonlySet<string>): boolean {
+  if (i === 0 || deutschZerlegbar(wort.slice(0, i), bekannt, false)) return true;
+  return !(bekannt.has(wort) || deutschZerlegbar(wort, bekannt, true));
+}
+
+const H = '[ıiuü]';
+const A = '[ae]';
+/** Ableitungen am Nomen, türkisch und entlehnt (alkol-ik, terör-ist, kumar-hane, müzik-al, domuz-cuk, eroin-man …) */
+const TR_ABLEITUNG = [
+  `l${H}[kğ]?`,
+  `s${H}z`,
+  `[cç]${H}`,
+  `[cç]${H}[kğ]`,
+  `${H}st`,
+  `${H}zm`,
+  `${H}k`,
+  `[sş]?[ae]l`,
+  `üel`,
+  `o(?:loji|log|graf|grafi|grafik)`,
+  `(?:graf|grafi|grafik)`,
+  `baz`,
+  `hane`,
+  `ane`,
+  `man`,
+  `kar`,
+  `t?ör`,
+  `öz`,
+  `tek`,
+  `zan`,
+].join('|');
+const TR_MEHRZAHL = `l${A}r`;
+const TR_BESITZ = `${H}m|${H}n|${H}|s${H}|${H}?m${H}z|${H}?n${H}z|l${A}r${H}|m|n`;
+const TR_FALL = `[yn]?${H}|[yn]?${A}|n?[dt]${A}n?|n?${H}n|y?l${A}|n?[cç]${A}`;
+const TR_KOPULA = `y?${H}m|s${H}n|y?${H}z|s${H}n${H}z|[dt]${H}r|l${A}r|y?[dt]${H}[mnkz]?|y?m${H}ş|y?s${A}|m${H}`;
+/**
+ * Türkisch: Ist `rest` eine Endungskette am Nomen (Ableitungen, Mehrzahl, Besitz, Fall, -ki, Kopula; ohne Prüfung der
+ * Vokalharmonie) oder beginnt er mit -la/-le (Verb aus dem Nomen, Mehrzahl, Instrumental)? Großzügig gefasst: Was hier
+ * passt, bleibt ein Treffer.
+ */
+const TR_ENDUNGEN = new RegExp(
+  `^(?:(?:${TR_ABLEITUNG})*l${A}.*|(?:${TR_ABLEITUNG})*(?:${TR_MEHRZAHL})?(?:${TR_BESITZ})?(?:${TR_FALL})?(?:k${H})?(?:${TR_KOPULA})*)$`,
+  'u',
+);
+const tuerkischeEndungen = (rest: string): boolean => TR_ENDUNGEN.test(rest);
+
+/**
+ * Türkisch: Das längere bekannte Wort, als das `wort` (beginnt mit der Form `form`) mit Endungen lesbar ist – nur, wenn
+ * `form` selbst ein bekanntes Nomen ist (kein Verbstamm, kein Wortstumpf wie „siyas“) und der Rest hinter `form` keine
+ * Endungskette ist (Zahlwort 80 gegen das Nomen, dessen Anfang es teilt); sonst null.
+ */
+export function tuerkischesLaengeresWort(wort: string, form: string, bekannt: ReadonlySet<string>): string | null {
+  if (wort === form || !bekannt.has(form) || bekannt.has(`${form}mek`) || bekannt.has(`${form}mak`)) return null;
+  if (tuerkischeEndungen(wort.slice(form.length))) return null;
+  for (let i = wort.length; i > form.length; i--)
+    if (bekannt.has(wort.slice(0, i)) && tuerkischeEndungen(wort.slice(i))) return wort.slice(0, i);
+  return null;
 }
 
 /** Deutsche Endungen der Flexion (Verb, Nomen, Adjektiv); Kandidaten mit Infinitiv-Endung dazu. */

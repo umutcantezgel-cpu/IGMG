@@ -1,0 +1,4088 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "automatisch_geprueft",
+  "kurs": "de",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "de.a2.e05",
+    "reihenfolge": 6,
+    "thema": {
+      "de": "Beim Arzt",
+      "tr": "Doktorda",
+      "ar": "عند الطبيب"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann in der Praxis sagen, was ich habe und seit wann.",
+        "tr": "Muayenehanede neyim olduğunu ve ne zamandan beri olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أقول في العيادة ما أشكو منه ومنذ متى."
+      },
+      {
+        "de": "Ich kann am Telefon einen Termin vereinbaren oder absagen.",
+        "tr": "Telefonda randevu alabilir veya randevumu iptal edebilirim.",
+        "ar": "أستطيع أن أحدد موعدًا أو ألغيه عبر الهاتف."
+      }
+    ],
+    "symbol": "heart-pulse",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a2.e05.weil",
+      "lemma": "weil",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Nebensatz, Verb am Ende (Grund)"
+      },
+      "frequenzRang": 93,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.naemlich",
+      "lemma": "nämlich",
+      "wortart": "adverb",
+      "frequenzRang": 575,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.wohl",
+      "lemma": "wohl",
+      "wortart": "adverb",
+      "frequenzRang": 132,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.haeufig",
+      "lemma": "häufig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "häufige",
+        "endung_en": "häufigen",
+        "endung_er": "häufiger",
+        "endung_es": "häufiges",
+        "endung_em": "häufigem",
+        "komparativ": "häufiger",
+        "superlativ": "häufigsten",
+        "superlativ_e": "häufigste"
+      },
+      "frequenzRang": 509,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.regelmaessig",
+      "lemma": "regelmäßig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "regelmäßige",
+        "endung_en": "regelmäßigen",
+        "endung_er": "regelmäßiger",
+        "endung_es": "regelmäßiges",
+        "endung_em": "regelmäßigem",
+        "komparativ": "regelmäßiger",
+        "superlativ": "regelmäßigsten",
+        "superlativ_e": "regelmäßigste"
+      },
+      "frequenzRang": 715,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.taeglich",
+      "lemma": "täglich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "tägliche",
+        "endung_en": "täglichen",
+        "endung_er": "täglicher",
+        "endung_es": "tägliches",
+        "endung_em": "täglichem"
+      },
+      "frequenzRang": 812,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.meistens",
+      "lemma": "meistens",
+      "wortart": "adverb",
+      "frequenzRang": 1560,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.morgens",
+      "lemma": "morgens",
+      "wortart": "adverb",
+      "frequenzRang": 1726,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.abends",
+      "lemma": "abends",
+      "wortart": "adverb",
+      "frequenzRang": 1408,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.nachts",
+      "lemma": "nachts",
+      "wortart": "adverb",
+      "frequenzRang": 1727,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.schlimm",
+      "lemma": "schlimm",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "schlimme",
+        "endung_en": "schlimmen",
+        "endung_er": "schlimmer",
+        "endung_es": "schlimmes",
+        "endung_em": "schlimmem",
+        "komparativ": "schlimmer",
+        "superlativ": "schlimmsten",
+        "superlativ_e": "schlimmste"
+      },
+      "frequenzRang": 886,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.schwach",
+      "lemma": "schwach",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "schwache",
+        "endung_en": "schwachen",
+        "endung_er": "schwacher",
+        "endung_es": "schwaches",
+        "endung_em": "schwachem",
+        "komparativ": "schwächer",
+        "superlativ": "schwächsten",
+        "superlativ_e": "schwächste"
+      },
+      "frequenzRang": 1134,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.untersuchen",
+      "lemma": "untersuchen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "untersuchen",
+        "praes_ich": "untersuche",
+        "praes_du": "untersuchst",
+        "praes_er_sie_es": "untersucht",
+        "praes_wir": "untersuchen",
+        "praes_ihr": "untersucht",
+        "praes_sie_Sie": "untersuchen",
+        "partizip_2": "untersucht"
+      },
+      "frequenzRang": 1511,
+      "quelle": "wiktionary:de:untersuchen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚untersuchen‘ (https://de.wiktionary.org/wiki/untersuchen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.verletzen",
+      "lemma": "verletzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verletzen",
+        "praes_ich": "verletze",
+        "praes_du": "verletzt",
+        "praes_er_sie_es": "verletzt",
+        "praes_wir": "verletzen",
+        "praes_ihr": "verletzt",
+        "praes_sie_Sie": "verletzen",
+        "partizip_2": "verletzt"
+      },
+      "frequenzRang": 895,
+      "quelle": "wiktionary:de:verletzen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verletzen‘ (https://de.wiktionary.org/wiki/verletzen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.empfehlen",
+      "lemma": "empfehlen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "empfehlen",
+        "praes_ich": "empfehle",
+        "praes_du": "empfiehlst",
+        "praes_er_sie_es": "empfiehlt",
+        "praes_wir": "empfehlen",
+        "praes_ihr": "empfehlt",
+        "praes_sie_Sie": "empfehlen",
+        "imp_du": "empfiehl",
+        "imp_ihr": "empfehlt",
+        "partizip_2": "empfohlen"
+      },
+      "frequenzRang": 750,
+      "quelle": "wiktionary:de:empfehlen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚empfehlen‘ (https://de.wiktionary.org/wiki/empfehlen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.vereinbaren",
+      "lemma": "vereinbaren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "vereinbaren",
+        "praes_ich": "vereinbare",
+        "praes_du": "vereinbarst",
+        "praes_er_sie_es": "vereinbart",
+        "praes_wir": "vereinbaren",
+        "praes_ihr": "vereinbart",
+        "praes_sie_Sie": "vereinbaren",
+        "partizip_2": "vereinbart"
+      },
+      "frequenzRang": 2871,
+      "quelle": "wiktionary:de:vereinbaren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vereinbaren‘ (https://de.wiktionary.org/wiki/vereinbaren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.verschieben",
+      "lemma": "verschieben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verschieben",
+        "praes_ich": "verschiebe",
+        "praes_du": "verschiebst",
+        "praes_er_sie_es": "verschiebt",
+        "praes_wir": "verschieben",
+        "praes_ihr": "verschiebt",
+        "praes_sie_Sie": "verschieben",
+        "partizip_2": "verschoben"
+      },
+      "frequenzRang": 2184,
+      "quelle": "wiktionary:de:verschieben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verschieben‘ (https://de.wiktionary.org/wiki/verschieben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.mitbringen",
+      "lemma": "mitbringen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "mit"
+      },
+      "formen": {
+        "infinitiv": "mitbringen",
+        "verbzusatz": "mit",
+        "praes_ich": "bringe",
+        "praes_du": "bringst",
+        "praes_er_sie_es": "bringt",
+        "praes_wir": "bringen",
+        "praes_ihr": "bringt",
+        "praes_sie_Sie": "bringen",
+        "imp_du": "bring",
+        "imp_ihr": "bringt",
+        "partizip_2": "mitgebracht"
+      },
+      "frequenzRang": 2662,
+      "quelle": "wiktionary:de:mitbringen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚mitbringen‘ (https://de.wiktionary.org/wiki/mitbringen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.begleiten",
+      "lemma": "begleiten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "begleiten",
+        "praes_ich": "begleite",
+        "praes_du": "begleitest",
+        "praes_er_sie_es": "begleitet",
+        "praes_wir": "begleiten",
+        "praes_ihr": "begleitet",
+        "praes_sie_Sie": "begleiten",
+        "imp_du": "begleite",
+        "imp_ihr": "begleitet",
+        "partizip_2": "begleitet"
+      },
+      "frequenzRang": 1197,
+      "quelle": "wiktionary:de:begleiten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚begleiten‘ (https://de.wiktionary.org/wiki/begleiten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.ausruhen",
+      "lemma": "ausruhen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "aus",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "ausruhen",
+        "verbzusatz": "aus",
+        "praes_ich": "ruhe",
+        "praes_du": "ruhst",
+        "praes_er_sie_es": "ruht",
+        "praes_wir": "ruhen",
+        "praes_ihr": "ruht",
+        "praes_sie_Sie": "ruhen",
+        "imp_du": "ruh",
+        "imp_ihr": "ruht",
+        "partizip_2": "ausgeruht",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 8002,
+      "quelle": "wiktionary:de:ausruhen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ausruhen‘ (https://de.wiktionary.org/wiki/ausruhen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.erkaelten",
+      "lemma": "erkälten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "erkälten",
+        "praes_ich": "erkälte",
+        "praes_du": "erkältest",
+        "praes_er_sie_es": "erkältet",
+        "praes_wir": "erkälten",
+        "praes_ihr": "erkältet",
+        "praes_sie_Sie": "erkälten",
+        "partizip_2": "erkältet",
+        "reflexiv": "sich"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.hinlegen",
+      "lemma": "hinlegen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "hin",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "hinlegen",
+        "verbzusatz": "hin",
+        "praes_ich": "lege",
+        "praes_du": "legst",
+        "praes_er_sie_es": "legt",
+        "praes_wir": "legen",
+        "praes_ihr": "legt",
+        "praes_sie_Sie": "legen",
+        "imp_du": "leg",
+        "imp_ihr": "legt",
+        "partizip_2": "hingelegt",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 6961,
+      "quelle": "wiktionary:de:hinlegen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚hinlegen‘ (https://de.wiktionary.org/wiki/hinlegen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.messen",
+      "lemma": "messen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "messen",
+        "praes_ich": "messe",
+        "praes_du": "misst",
+        "praes_er_sie_es": "misst",
+        "praes_wir": "messen",
+        "praes_ihr": "messt",
+        "praes_sie_Sie": "messen",
+        "partizip_2": "gemessen"
+      },
+      "frequenzRang": 947,
+      "quelle": "wiktionary:de:messen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚messen‘ (https://de.wiktionary.org/wiki/messen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.spueren",
+      "lemma": "spüren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "spüren",
+        "praes_ich": "spüre",
+        "praes_du": "spürst",
+        "praes_er_sie_es": "spürt",
+        "praes_wir": "spüren",
+        "praes_ihr": "spürt",
+        "praes_sie_Sie": "spüren",
+        "partizip_2": "gespürt"
+      },
+      "frequenzRang": 1488,
+      "quelle": "wiktionary:de:spüren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚spüren‘ (https://de.wiktionary.org/wiki/spüren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.atmen",
+      "lemma": "atmen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "atmen",
+        "praes_ich": "atme",
+        "praes_du": "atmest",
+        "praes_er_sie_es": "atmet",
+        "praes_wir": "atmen",
+        "praes_ihr": "atmet",
+        "praes_sie_Sie": "atmen",
+        "partizip_2": "geatmet"
+      },
+      "frequenzRang": 3443,
+      "quelle": "wiktionary:de:atmen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚atmen‘ (https://de.wiktionary.org/wiki/atmen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.grund",
+      "lemma": "Grund",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Gründe"
+      },
+      "formen": {
+        "pl": "Gründe",
+        "dat_pl": "Gründen"
+      },
+      "frequenzRang": 249,
+      "quelle": "wiktionary:de:Grund",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Grund‘ (https://de.wiktionary.org/wiki/Grund), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.koerper",
+      "lemma": "Körper",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Körper"
+      },
+      "formen": {
+        "dat_pl": "Körpern"
+      },
+      "frequenzRang": 639,
+      "quelle": "wiktionary:de:Körper",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Körper‘ (https://de.wiktionary.org/wiki/Körper), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.ruecken",
+      "lemma": "Rücken",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Rücken"
+      },
+      "frequenzRang": 822,
+      "quelle": "wiktionary:de:Rücken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rücken‘ (https://de.wiktionary.org/wiki/Rücken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.schulter",
+      "lemma": "Schulter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schultern"
+      },
+      "formen": {
+        "pl": "Schultern"
+      },
+      "frequenzRang": 3148,
+      "quelle": "wiktionary:de:Schulter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schulter‘ (https://de.wiktionary.org/wiki/Schulter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.schmerz",
+      "lemma": "Schmerz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Schmerzen"
+      },
+      "formen": {
+        "pl": "Schmerzen"
+      },
+      "frequenzRang": 2709,
+      "quelle": "wiktionary:de:Schmerz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schmerz‘ (https://de.wiktionary.org/wiki/Schmerz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.nase",
+      "lemma": "Nase",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Nasen"
+      },
+      "formen": {
+        "pl": "Nasen"
+      },
+      "frequenzRang": 1481,
+      "quelle": "wiktionary:de:Nase",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nase‘ (https://de.wiktionary.org/wiki/Nase), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.mund",
+      "lemma": "Mund",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Münder"
+      },
+      "formen": {
+        "pl": "Münder",
+        "dat_pl": "Mündern"
+      },
+      "frequenzRang": 1230,
+      "quelle": "wiktionary:de:Mund",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mund‘ (https://de.wiktionary.org/wiki/Mund), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.ohr",
+      "lemma": "Ohr",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Ohren"
+      },
+      "frequenzRang": 1340,
+      "quelle": "wiktionary:de:Ohr",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ohr‘ (https://de.wiktionary.org/wiki/Ohr), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.herz",
+      "lemma": "Herz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Herzen"
+      },
+      "formen": {
+        "pl": "Herzen"
+      },
+      "frequenzRang": 673,
+      "quelle": "wiktionary:de:Herz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Herz‘ (https://de.wiktionary.org/wiki/Herz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.haar",
+      "lemma": "Haar",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Haare"
+      },
+      "formen": {
+        "pl": "Haare",
+        "dat_pl": "Haaren"
+      },
+      "frequenzRang": 911,
+      "quelle": "wiktionary:de:Haar",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Haar‘ (https://de.wiktionary.org/wiki/Haar), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.finger",
+      "lemma": "Finger",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Finger"
+      },
+      "formen": {
+        "dat_pl": "Fingern"
+      },
+      "frequenzRang": 1464,
+      "quelle": "wiktionary:de:Finger",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Finger‘ (https://de.wiktionary.org/wiki/Finger), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.blut",
+      "lemma": "Blut",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1228,
+      "quelle": "wiktionary:de:Blut",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Blut‘ (https://de.wiktionary.org/wiki/Blut), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.gesundheit",
+      "lemma": "Gesundheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1442,
+      "quelle": "wiktionary:de:Gesundheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gesundheit‘ (https://de.wiktionary.org/wiki/Gesundheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.krankheit",
+      "lemma": "Krankheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Krankheiten"
+      },
+      "formen": {
+        "pl": "Krankheiten"
+      },
+      "frequenzRang": 1203,
+      "quelle": "wiktionary:de:Krankheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Krankheit‘ (https://de.wiktionary.org/wiki/Krankheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.erkaeltung",
+      "lemma": "Erkältung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Erkältungen"
+      },
+      "formen": {
+        "pl": "Erkältungen"
+      },
+      "frequenzRang": 7705,
+      "quelle": "wiktionary:de:Erkältung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erkältung‘ (https://de.wiktionary.org/wiki/Erkältung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.behandlung",
+      "lemma": "Behandlung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Behandlungen"
+      },
+      "formen": {
+        "pl": "Behandlungen"
+      },
+      "frequenzRang": 1205,
+      "quelle": "wiktionary:de:Behandlung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Behandlung‘ (https://de.wiktionary.org/wiki/Behandlung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.untersuchung",
+      "lemma": "Untersuchung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Untersuchungen"
+      },
+      "formen": {
+        "pl": "Untersuchungen"
+      },
+      "frequenzRang": 1073,
+      "quelle": "wiktionary:de:Untersuchung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Untersuchung‘ (https://de.wiktionary.org/wiki/Untersuchung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.verletzung",
+      "lemma": "Verletzung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Verletzungen"
+      },
+      "formen": {
+        "pl": "Verletzungen"
+      },
+      "frequenzRang": 1789,
+      "quelle": "wiktionary:de:Verletzung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verletzung‘ (https://de.wiktionary.org/wiki/Verletzung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.unfall",
+      "lemma": "Unfall",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Unfälle"
+      },
+      "formen": {
+        "pl": "Unfälle",
+        "dat_pl": "Unfällen"
+      },
+      "frequenzRang": 1085,
+      "quelle": "wiktionary:de:Unfall",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Unfall‘ (https://de.wiktionary.org/wiki/Unfall), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.notfall",
+      "lemma": "Notfall",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Notfälle"
+      },
+      "formen": {
+        "pl": "Notfälle",
+        "dat_pl": "Notfällen"
+      },
+      "frequenzRang": 3624,
+      "quelle": "wiktionary:de:Notfall",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Notfall‘ (https://de.wiktionary.org/wiki/Notfall), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.medikament",
+      "lemma": "Medikament",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Medikamente"
+      },
+      "formen": {
+        "pl": "Medikamente",
+        "dat_pl": "Medikamenten"
+      },
+      "frequenzRang": 2237,
+      "quelle": "wiktionary:de:Medikament",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Medikament‘ (https://de.wiktionary.org/wiki/Medikament), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.rezept",
+      "lemma": "Rezept",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Rezepte"
+      },
+      "formen": {
+        "pl": "Rezepte",
+        "dat_pl": "Rezepten"
+      },
+      "frequenzRang": 2042,
+      "quelle": "wiktionary:de:Rezept",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rezept‘ (https://de.wiktionary.org/wiki/Rezept), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.tropfen",
+      "lemma": "Tropfen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Tropfen"
+      },
+      "frequenzRang": 3426,
+      "quelle": "wiktionary:de:Tropfen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tropfen‘ (https://de.wiktionary.org/wiki/Tropfen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.pflaster",
+      "lemma": "Pflaster",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Pflaster"
+      },
+      "formen": {
+        "dat_pl": "Pflastern"
+      },
+      "frequenzRang": 7758,
+      "quelle": "wiktionary:de:Pflaster",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Pflaster‘ (https://de.wiktionary.org/wiki/Pflaster), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.versicherung",
+      "lemma": "Versicherung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Versicherungen"
+      },
+      "formen": {
+        "pl": "Versicherungen"
+      },
+      "frequenzRang": 1997,
+      "quelle": "wiktionary:de:Versicherung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Versicherung‘ (https://de.wiktionary.org/wiki/Versicherung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.patient",
+      "lemma": "Patient",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Patienten",
+        "weiblich": "Patientin"
+      },
+      "formen": {
+        "pl": "Patienten",
+        "akk_dat_sg": "Patienten",
+        "weiblich": "Patientin",
+        "weiblich_pl": "Patientinnen"
+      },
+      "frequenzRang": 999,
+      "quelle": "wiktionary:de:Patient",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Patient‘ (https://de.wiktionary.org/wiki/Patient), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.hausarzt",
+      "lemma": "Hausarzt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Hausärzte",
+        "weiblich": "Hausärztin"
+      },
+      "formen": {
+        "pl": "Hausärzte",
+        "dat_pl": "Hausärzten",
+        "weiblich": "Hausärztin",
+        "weiblich_pl": "Hausärztinnen"
+      },
+      "frequenzRang": 12314,
+      "quelle": "wiktionary:de:Hausarzt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hausarzt‘ (https://de.wiktionary.org/wiki/Hausarzt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.zahnarzt",
+      "lemma": "Zahnarzt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zahnärzte",
+        "weiblich": "Zahnärztin"
+      },
+      "formen": {
+        "pl": "Zahnärzte",
+        "dat_pl": "Zahnärzten",
+        "weiblich": "Zahnärztin",
+        "weiblich_pl": "Zahnärztinnen"
+      },
+      "frequenzRang": 11493,
+      "quelle": "wiktionary:de:Zahnarzt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zahnarzt‘ (https://de.wiktionary.org/wiki/Zahnarzt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.wartezimmer",
+      "lemma": "Wartezimmer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Wartezimmer"
+      },
+      "formen": {
+        "dat_pl": "Wartezimmern"
+      },
+      "frequenzRang": 25908,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.bewegung",
+      "lemma": "Bewegung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bewegungen"
+      },
+      "formen": {
+        "pl": "Bewegungen"
+      },
+      "frequenzRang": 767,
+      "quelle": "wiktionary:de:Bewegung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bewegung‘ (https://de.wiktionary.org/wiki/Bewegung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.waerme",
+      "lemma": "Wärme",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 3249,
+      "quelle": "wiktionary:de:Wärme",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wärme‘ (https://de.wiktionary.org/wiki/Wärme), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.ruhe",
+      "lemma": "Ruhe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 933,
+      "quelle": "wiktionary:de:Ruhe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ruhe‘ (https://de.wiktionary.org/wiki/Ruhe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.stress",
+      "lemma": "Stress",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 2152,
+      "quelle": "wiktionary:de:Stress",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stress‘ (https://de.wiktionary.org/wiki/Stress), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.sprechzeit",
+      "lemma": "Sprechzeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Sprechzeiten"
+      },
+      "formen": {
+        "pl": "Sprechzeiten"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.versichertenkarte",
+      "lemma": "Versichertenkarte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Versichertenkarten"
+      },
+      "formen": {
+        "pl": "Versichertenkarten"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.krankmeldung",
+      "lemma": "Krankmeldung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Krankmeldungen"
+      },
+      "formen": {
+        "pl": "Krankmeldungen"
+      },
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.krankenkasse",
+      "lemma": "Krankenkasse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Krankenkassen"
+      },
+      "formen": {
+        "pl": "Krankenkassen"
+      },
+      "frequenzRang": 9086,
+      "quelle": "wiktionary:de:Krankenkasse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Krankenkasse‘ (https://de.wiktionary.org/wiki/Krankenkasse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.allergie",
+      "lemma": "Allergie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Allergien"
+      },
+      "formen": {
+        "pl": "Allergien"
+      },
+      "frequenzRang": 8227,
+      "quelle": "wiktionary:de:Allergie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Allergie‘ (https://de.wiktionary.org/wiki/Allergie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.dringend",
+      "lemma": "dringend",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "dringende",
+        "endung_en": "dringenden",
+        "endung_er": "dringender",
+        "endung_es": "dringendes",
+        "endung_em": "dringendem"
+      },
+      "frequenzRang": 1436,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.feuerwehr",
+      "lemma": "Feuerwehr",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Feuerwehren"
+      },
+      "formen": {
+        "pl": "Feuerwehren"
+      },
+      "frequenzRang": 1950,
+      "quelle": "wiktionary:de:Feuerwehr",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Feuerwehr‘ (https://de.wiktionary.org/wiki/Feuerwehr), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a2.e05.s0001",
+      "text": "Der Körper hat viele Teile: Kopf, Rücken, Arme und Beine.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0002",
+      "text": "Mein ganzer Körper schmerzt.",
+      "quelle": "tatoeba:1557904",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1557904 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0003",
+      "text": "Mir tut der Rücken weh.",
+      "quelle": "tatoeba:929939",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #929939 von Fingerhut (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0004",
+      "text": "Mein Rücken tut immer noch weh.",
+      "quelle": "tatoeba:766402",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #766402 von dima555 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0005",
+      "text": "Tut ihm der Rücken weh?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0006",
+      "text": "Ja, ihm tut der Rücken sehr weh.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0007",
+      "text": "Mama hat seit gestern Schmerzen im Rücken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0008",
+      "text": "Ihr tut die linke Schulter weh.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0009",
+      "text": "Mir tun die Schultern weh, weil ich viel getragen habe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0010",
+      "text": "Der Schmerz ist sehr stark.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0011",
+      "text": "Wo haben Sie Schmerzen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0012",
+      "text": "Heute spüre ich den Schmerz kaum noch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0013",
+      "text": "Deine Nase ist ganz rot.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0014",
+      "text": "Mach den Mund auf!",
+      "quelle": "tatoeba:2201136",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2201136 von freddy1 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0015",
+      "text": "Auf dem linken Ohr höre ich schlecht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0016",
+      "text": "Nach dem Sport schlägt mein Herz schnell.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0017",
+      "text": "Die Ärztin hört das Herz ab.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0018",
+      "text": "Abends wasche ich mir die Haare.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0019",
+      "text": "Mein Finger tut weh.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0020",
+      "text": "Wir haben zehn Finger.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0021",
+      "text": "Tut dir der Finger noch weh?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0022",
+      "text": "Ich spüre den Schmerz im Rücken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0023",
+      "text": "Spüren Sie hier einen Schmerz?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0024",
+      "text": "Spürst du nichts?",
+      "quelle": "tatoeba:3924193",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3924193 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0025",
+      "text": "Das ist nicht so schlimm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0026",
+      "text": "Ist es schlimm, Frau Doktor?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0027",
+      "text": "Opa ist noch ein bisschen schwach.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0028",
+      "text": "Was ist los, Selin?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0029",
+      "text": "Mir tut die Schulter weh.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0030",
+      "text": "Mir tut seit gestern die Schulter weh.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0031",
+      "text": "Ich bin erkältet.",
+      "quelle": "tatoeba:396520",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #396520 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0032",
+      "text": "Er hat sich erkältet.",
+      "quelle": "tatoeba:1514451",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1514451 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0033",
+      "text": "Ich habe mich im Regen erkältet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0034",
+      "text": "Im Winter erkälte ich mich oft.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0035",
+      "text": "Hast du dich erkältet?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0036",
+      "text": "Eine Erkältung dauert meistens eine Woche.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0037",
+      "text": "Ich komme heute nicht, weil ich krank bin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0038",
+      "text": "Jan bleibt zu Hause, weil er Fieber hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0039",
+      "text": "Selin geht nicht zur Schule, weil sie sich erkältet hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0040",
+      "text": "Warum gehst du zum Arzt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0041",
+      "text": "Weil ich Schmerzen im Ohr habe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0042",
+      "text": "Warum bist du heute so müde?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0043",
+      "text": "Weil ich nachts kaum geschlafen habe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0044",
+      "text": "Ich bleibe im Bett, weil ich mich schwach fühle.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0045",
+      "text": "Ich kann heute nicht kommen. Ich bin nämlich krank.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0046",
+      "text": "Ich trinke keine Milch. Ich habe nämlich eine Allergie.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0047",
+      "text": "Tom kennt den Grund nicht.",
+      "quelle": "tatoeba:2599795",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2599795 von raggione (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0048",
+      "text": "Der Grund ist wohl der Stress bei der Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0049",
+      "text": "Du hast dich wohl erkältet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0050",
+      "text": "Das ist wohl eine Allergie.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0051",
+      "text": "Im Winter gibt es viele Krankheiten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0052",
+      "text": "Gesundheit ist sehr wichtig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0053",
+      "text": "Gesundheit! Hast du dich erkältet?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0054",
+      "text": "Haben Sie eine Allergie?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0055",
+      "text": "Im Frühling ist meine Nase oft rot, denn ich habe eine Allergie.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0056",
+      "text": "Stress ist nicht gut für die Gesundheit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0057",
+      "text": "Ich habe seit zwei Tagen Fieber, weil ich mich erkältet habe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0058",
+      "text": "Guten Tag, ich möchte einen Termin vereinbaren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0059",
+      "text": "Ich habe einen Termin beim Zahnarzt vereinbart.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0060",
+      "text": "Kann ich meinen Termin verschieben?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0061",
+      "text": "Wir können den Termin auf Freitag verschieben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0062",
+      "text": "Die Praxis hat meinen Termin auf Montag verschoben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0063",
+      "text": "Ich muss meinen Termin leider absagen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0064",
+      "text": "Ich muss den Termin absagen, weil mein Kind krank ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0065",
+      "text": "Wann sind die Sprechzeiten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0066",
+      "text": "Die Sprechzeit ist morgens von 8 bis 12 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0067",
+      "text": "Am Dienstag gibt es auch abends eine Sprechzeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0068",
+      "text": "Ist es dringend?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0069",
+      "text": "Ich brauche dringend einen Termin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0070",
+      "text": "Es ist dringend. Mein Sohn hat hohes Fieber.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0071",
+      "text": "Es war dringend.",
+      "quelle": "tatoeba:1220792",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1220792 von Vortarulo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0072",
+      "text": "Wer ist Ihr Hausarzt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0073",
+      "text": "Frau Fischer ist unsere Hausärztin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0074",
+      "text": "Bei Schmerzen gehe ich immer erst zum Hausarzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0075",
+      "text": "Kennst du einen guten Zahnarzt?",
+      "quelle": "tatoeba:608728",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #608728 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0076",
+      "text": "Mein Bruder hat Angst vor dem Zahnarzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0077",
+      "text": "Ich gehe regelmäßig zum Zahnarzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0078",
+      "text": "Sind Sie schon Patientin bei uns?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0079",
+      "text": "Heute kommen sehr viele Patienten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0080",
+      "text": "Bitte nehmen Sie im Wartezimmer Platz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0081",
+      "text": "Das Wartezimmer ist heute ganz voll.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0082",
+      "text": "Bringen Sie bitte Ihre Versichertenkarte mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0083",
+      "text": "Oh nein, ich habe meine Versichertenkarte vergessen!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0084",
+      "text": "Was soll ich zum Termin mitbringen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0085",
+      "text": "Bei welcher Krankenkasse sind Sie?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0086",
+      "text": "Für das Auto brauchen wir eine Versicherung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0087",
+      "text": "Bekomme ich eine Krankmeldung?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0088",
+      "text": "Die Ärztin schreibt ihm eine Krankmeldung für drei Tage.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0089",
+      "text": "Es ist acht Uhr morgens.",
+      "quelle": "tatoeba:345384",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #345384 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0090",
+      "text": "Abends ist die Praxis zu.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0091",
+      "text": "Praxis Fischer, guten Tag!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0092",
+      "text": "Können Sie am Donnerstag um zehn Uhr kommen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0093",
+      "text": "Das geht leider nicht. Geht es auch am Freitag?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0094",
+      "text": "Ja, am Freitag um neun ist noch ein Termin frei.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0095",
+      "text": "Ich brauche einen Termin. Geht es morgen früh?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0096",
+      "text": "Die Ärztin untersucht das Kind genau.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0097",
+      "text": "Für die Untersuchung braucht die Ärztin ein bisschen Blut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0098",
+      "text": "Heute nimmt die Ärztin Blut ab.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0099",
+      "text": "Die Ärztin misst Fieber.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0100",
+      "text": "Atmen Sie bitte langsam.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0101",
+      "text": "Die Behandlung dauert zwei Wochen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0102",
+      "text": "Mit dem Rezept gehen Sie in die Apotheke.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0103",
+      "text": "Ich schreibe Ihnen ein Rezept für Tropfen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0104",
+      "text": "Wirkt das Medikament schnell?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0105",
+      "text": "Das Medikament ist nicht für Kinder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0106",
+      "text": "Nehmen Sie regelmäßig Medikamente?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0107",
+      "text": "Die Tropfen sind für die Nase.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0108",
+      "text": "Die Ärztin empfiehlt ihm viel Bewegung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0109",
+      "text": "Ich empfehle Ihnen ein paar Tage Ruhe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0110",
+      "text": "Wärme hilft gegen Schmerzen im Rücken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0111",
+      "text": "Sie brauchen jetzt viel Ruhe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0112",
+      "text": "Sie sollen sich ein paar Tage ausruhen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0113",
+      "text": "Ich muss mich ein bisschen hinlegen.",
+      "quelle": "tatoeba:3035489",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3035489 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0114",
+      "text": "Leg dich doch ein bisschen hin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0115",
+      "text": "Wie häufig haben Sie die Schmerzen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0116",
+      "text": "Ich habe häufig Schmerzen im Kopf.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0117",
+      "text": "Die Schmerzen kommen meistens abends.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0118",
+      "text": "Ich arbeite nachts.",
+      "quelle": "tatoeba:1341582",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1341582 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e05.s0119",
+      "text": "Nachts muss ich oft husten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0120",
+      "text": "Darf ich wieder Sport machen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0121",
+      "text": "Nein, ruhen Sie sich noch eine Woche aus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0122",
+      "text": "Was soll ich tun? Soll ich mich hinlegen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0123",
+      "text": "Jan ist gestern vom Fahrrad gefallen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0124",
+      "text": "Es war nur ein kleiner Unfall.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0125",
+      "text": "Ich habe mich am Finger verletzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0126",
+      "text": "Hast du dich verletzt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0127",
+      "text": "Die Verletzung ist zum Glück nicht schlimm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0128",
+      "text": "Ich brauche ein Pflaster.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0129",
+      "text": "Hast du ein Pflaster für mich?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0130",
+      "text": "Mama gibt ihm ein Pflaster.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0131",
+      "text": "Das ist ein Notfall!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0132",
+      "text": "Bei einem Notfall fährt man ins Krankenhaus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0133",
+      "text": "Die Feuerwehr kommt sehr schnell.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0134",
+      "text": "Die Feuerwehr hilft auch bei einem Unfall.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0135",
+      "text": "Kannst du mich zum Arzt begleiten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0136",
+      "text": "Ja, gern. Um wie viel Uhr ist dein Termin?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0137",
+      "text": "Laylā begleitet ihren Opa zum Arzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0138",
+      "text": "Bist du gestern zum Arzt gegangen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0139",
+      "text": "Ich bin zwei Tage im Bett geblieben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0140",
+      "text": "Wir sind mit Jan zum Arzt gefahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0141",
+      "text": "Die Feuerwehr ist nach fünf Minuten gekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0142",
+      "text": "Oma ist in der Küche gefallen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0143",
+      "text": "Zum Glück hat sie sich nicht verletzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0144",
+      "text": "Er ist zu schnell gelaufen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0145",
+      "text": "Ich bin gefallen und habe mich am Arm verletzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0146",
+      "text": "Praxis Fischer: Informationen für unsere Patienten",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0147",
+      "text": "Herzlich willkommen in unserer Praxis!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0148",
+      "text": "Unsere Sprechzeiten: Montag bis Freitag von 8 bis 12 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0149",
+      "text": "Am Dienstag sind wir auch von 15 bis 18 Uhr da.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0150",
+      "text": "An den anderen Tagen ist die Praxis nur morgens offen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0151",
+      "text": "Bitte vereinbaren Sie immer einen Termin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0152",
+      "text": "Sie können uns anrufen oder in die Praxis kommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0153",
+      "text": "Bringen Sie bitte zu jedem Termin Ihre Versichertenkarte mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0154",
+      "text": "Haben Sie eine Allergie? Dann sagen Sie es uns bitte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0155",
+      "text": "Nehmen Sie regelmäßig Medikamente? Dann bringen Sie sie bitte mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0156",
+      "text": "Sie können nicht kommen? Bitte sagen Sie den Termin rechtzeitig ab.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0157",
+      "text": "Im Notfall rufen Sie bitte sofort die 112 an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0158",
+      "text": "Wir wünschen Ihnen gute Gesundheit!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0159",
+      "text": "Am Montag um zehn Uhr ist die Praxis offen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0160",
+      "text": "Am Mittwoch ist die Praxis bis 18 Uhr offen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0161",
+      "text": "In der Praxis arbeiten drei Ärztinnen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0162",
+      "text": "Was sollen die Patienten zu jedem Termin mitbringen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0163",
+      "text": "Ihre Versichertenkarte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0164",
+      "text": "Ein Rezept vom Zahnarzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0165",
+      "text": "Ein Pflaster und Tropfen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0166",
+      "text": "Sie können nicht zum Termin kommen. Was sollen Sie tun?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0167",
+      "text": "Den Termin rechtzeitig absagen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0168",
+      "text": "Im Wartezimmer warten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0169",
+      "text": "Die Feuerwehr anrufen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0170",
+      "text": "Ihr Sohn ist krank. Schreiben Sie der Lehrerin eine Entschuldigung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0171",
+      "text": "Liebe Frau Becker, mein Sohn Can ist krank. Er kann heute nicht kommen, weil er Fieber hat. Die Ärztin sagt, er soll sich zwei Tage ausruhen. Am Donnerstag kommt er wieder in die Schule. Viele Grüße, Murat Kaya",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0172",
+      "text": "Opa Kamāl in der Praxis",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0173",
+      "text": "Opa Kamāl hat seit Tagen Schmerzen im Rücken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0174",
+      "text": "Er kann nachts kaum schlafen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0175",
+      "text": "Opa, ich begleite dich morgen zum Arzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0176",
+      "text": "Danke, Laylā! Mit dir habe ich keine Angst.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0177",
+      "text": "Am nächsten Morgen fahren die beiden mit dem Bus in die Praxis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0178",
+      "text": "Am Empfang fragt Frau Wagner nach der Versichertenkarte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0179",
+      "text": "Hier ist sie. Wir haben einen Termin um neun Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0180",
+      "text": "Laylā hilft Opa auch bei den Fragen zu Allergien und Medikamenten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0181",
+      "text": "Im Wartezimmer sitzen schon viele Patienten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0182",
+      "text": "Nach zwanzig Minuten kommt die Hausärztin, Frau Fischer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0183",
+      "text": "Guten Morgen! Was kann ich für Sie tun?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0184",
+      "text": "Mein Rücken tut seit einer Woche weh.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0185",
+      "text": "Besonders morgens ist es schlimm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0186",
+      "text": "Hatten Sie einen Unfall?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0187",
+      "text": "Nein, aber ich habe viel im Garten gearbeitet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0188",
+      "text": "Frau Fischer untersucht seinen Rücken genau.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0189",
+      "text": "Es ist nichts Schlimmes. Ihr Rücken braucht Bewegung und Wärme.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0190",
+      "text": "Gehen Sie jeden Tag eine halbe Stunde spazieren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0191",
+      "text": "Und abends hilft ein warmes Bad.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0192",
+      "text": "Brauche ich keine Tabletten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0193",
+      "text": "Nur bei starken Schmerzen. Ich schreibe Ihnen ein Rezept.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0194",
+      "text": "Auf dem Weg nach Hause holt Laylā die Tabletten aus der Apotheke.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0195",
+      "text": "Ab morgen gehen wir jeden Tag zusammen spazieren, Laylā!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0196",
+      "text": "Was hat Opa Kamāl?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0197",
+      "text": "Er hat Schmerzen im Rücken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0198",
+      "text": "Er hat eine Erkältung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0199",
+      "text": "Er hat sich am Finger verletzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0200",
+      "text": "Wer begleitet Opa Kamāl in die Praxis?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0201",
+      "text": "Seine Enkelin Laylā.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0202",
+      "text": "Sein Sohn.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0203",
+      "text": "Frau Wagner.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0204",
+      "text": "Warum tut Opa Kamāl der Rücken weh?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0205",
+      "text": "Weil er viel im Garten gearbeitet hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0206",
+      "text": "Weil er einen Unfall hatte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0207",
+      "text": "Weil er zu viel Sport gemacht hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0208",
+      "text": "Was empfiehlt Frau Fischer?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0209",
+      "text": "Bewegung und Wärme.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0210",
+      "text": "Ruhe und viel Schlaf.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0211",
+      "text": "Eine Woche im Bett bleiben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0212",
+      "text": "Serkan ruft in der Praxis an",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0213",
+      "text": "Serkan hat sich am Wochenende erkältet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0214",
+      "text": "Am Montag ruft er früh in der Praxis an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0215",
+      "text": "Praxis Fischer, guten Morgen!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0216",
+      "text": "Guten Morgen, hier ist Serkan Yılmaz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0217",
+      "text": "Ich habe mich erkältet und brauche einen Termin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0218",
+      "text": "Ja, seit gestern Abend. Und mein Hals tut weh.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0219",
+      "text": "Ich brauche nämlich eine Krankmeldung für die Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0220",
+      "text": "Heute ist nur noch um halb zwölf ein Termin frei.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0221",
+      "text": "Halb zwölf passt gut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0222",
+      "text": "Waren Sie schon einmal bei uns?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0223",
+      "text": "Ja, Frau Fischer ist meine Hausärztin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0224",
+      "text": "Gut. Bringen Sie bitte Ihre Versichertenkarte mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0225",
+      "text": "Gute Besserung, Herr Yılmaz! Bis später.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0226",
+      "text": "Danke, bis später!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0227",
+      "text": "Warum ruft Serkan in der Praxis an?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0228",
+      "text": "Weil er sich erkältet hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0229",
+      "text": "Weil sein Opa krank ist.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0230",
+      "text": "Weil er einen Termin verschieben muss.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0231",
+      "text": "Wofür braucht Serkan eine Krankmeldung?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0232",
+      "text": "Für die Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0233",
+      "text": "Für die Schule.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0234",
+      "text": "Für die Versicherung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0235",
+      "text": "Wann hat Serkan seinen Termin?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0236",
+      "text": "Heute um halb zwölf.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0237",
+      "text": "Morgen um acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0238",
+      "text": "Heute Abend um sechs Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0239",
+      "text": "Paula kommt nicht zum Sport, weil sie sich verletzt hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0240",
+      "text": "Ich habe den Termin beim Zahnarzt verschoben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0241",
+      "text": "Samīr schläft nachts schlecht, weil er viel Stress hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0242",
+      "text": "Haben Sie Ihre Versichertenkarte dabei?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0243",
+      "text": "Ela hat ein Pflaster am Finger.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0244",
+      "text": "Täglich ein bisschen Bewegung ist gesund.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0245",
+      "text": "Seine Gesundheit ist ihm sehr wichtig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0246",
+      "text": "Meine Schwester hat kurze Haare.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0247",
+      "text": "Einmal im Jahr gehe ich zum Hausarzt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0248",
+      "text": "Guten Tag! Was haben Sie denn?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0249",
+      "text": "Mein Hals tut seit Montag weh, und ich habe Fieber.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0250",
+      "text": "Warum kommt Ela heute nicht zum Sport?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0251",
+      "text": "Weil sie erkältet ist und Fieber hat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0252",
+      "text": "Ich kann morgen nicht kommen. Kann ich den Termin verschieben?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0253",
+      "text": "Natürlich. Geht es am Dienstag um zehn Uhr?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0254",
+      "text": "Sie sollen sich ausruhen und viel trinken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0255",
+      "text": "Mit der Erkältung darfst du heute keinen Sport machen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0256",
+      "text": "Ihm tut nach dem Unfall die Schulter weh.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0257",
+      "text": "Wir sind mit Opa zur Hausärztin gegangen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0258",
+      "text": "Die Hausärztin empfiehlt ihr Wärme und Ruhe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0259",
+      "text": "Seit wann haben Sie die Schmerzen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0260",
+      "text": "Seit drei Tagen. Besonders nachts ist es schlimm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e05.s0261",
+      "text": "Guten Tag, ich habe mich erkältet und möchte einen Termin vereinbaren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a2.e05.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Körperteile benennen und sagen, wo es wehtut.",
+        "tr": "Vücudun bölümlerini söyleyebilir ve nerenin ağrıdığını anlatabilirim.",
+        "ar": "أستطيع أن أسمي أجزاء الجسم وأن أقول أين أشعر بالألم."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e05.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.ruecken",
+          "ablenker": ["de.a2.e05.schulter", "de.a1.e11.bauch"]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e05.nase", "de.a2.e05.mund", "de.a2.e05.ohr", "de.a2.e05.haar", "de.a2.e05.finger", "de.a2.e05.herz"]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e05.koerper",
+          "ablenker": ["de.a1.e11.gesicht", "de.a2.e05.herz"]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e05.s0003",
+          "ablenker": ["de.a2.e05.s0005", "de.a2.e05.s0004", "de.a2.e05.s0019"]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0006",
+          "wort": 1,
+          "ablenker": ["er", "ihn"]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.schmerz",
+          "ablenker": ["de.a1.e11.fieber", "de.a1.e11.husten"]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0028"
+            }
+          ],
+          "antwort": "de.a2.e05.s0029",
+          "ablenker": ["de.a2.e05.s0020", "de.a2.e05.s0014", "de.a2.e05.s0001"]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a09",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e05.ohr",
+          "ablenker": ["de.a1.e04.uhr"]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e05.s0007",
+          "nach": "ziel",
+          "alternativen": [
+            "Seit gestern hat Mama Schmerzen im Rücken.",
+            "Im Rücken hat Mama seit gestern Schmerzen.",
+            "Mama hat seit gestern im Rücken Schmerzen.",
+            "Seit gestern hat Mama im Rücken Schmerzen.",
+            "Schmerzen im Rücken hat Mama seit gestern.",
+            "Mama hat im Rücken seit gestern Schmerzen.",
+            "Schmerzen hat Mama seit gestern im Rücken."
+          ],
+          "ablenker": ["Schulter", "ist"]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.spueren",
+          "ablenker": ["de.a2.e05.atmen", "de.a1.e07.hoeren"]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e05.s0011",
+          "ablenker": ["de.a2.e05.s0023", "de.a2.e05.s0010", "de.a2.e05.s0024"]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e05.s0016",
+          "alternativen": [
+            "Mein Herz schlägt nach dem Sport schnell.",
+            "Mein Herz schlägt schnell nach dem Sport.",
+            "Schnell schlägt mein Herz nach dem Sport."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e05.s0021",
+          "nach": "ziel",
+          "alternativen": ["Tut der Finger dir noch weh?", "Tut dein Finger noch weh?", "Tut dir dein Finger noch weh?"]
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e05.s0013"
+        },
+        {
+          "schluessel": "de.a2.e05.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e05.s0030"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e05.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, dass ich erkältet bin, und Gründe mit „weil“ nennen.",
+        "tr": "Soğuk algınlığına yakalandığımı söyleyebilir ve „weil“ ile sebep belirtebilirim.",
+        "ar": "أستطيع أن أقول إنني مصاب بالزكام وأن أذكر الأسباب باستخدام „weil“."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e05.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.erkaeltung",
+          "ablenker": ["de.a2.e05.allergie", "de.a1.e11.fieber"]
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e05.grund",
+            "de.a2.e05.gesundheit",
+            "de.a2.e05.allergie",
+            "de.a2.e05.stress",
+            "de.a2.e05.krankheit",
+            "de.a1.e11.husten"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0038",
+          "wort": 4,
+          "ablenker": ["denn", "aber"]
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e05.grund",
+          "ablenker": ["de.a1.e11.hilfe", "de.a1.e11.glueck"]
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0040"
+            }
+          ],
+          "antwort": "de.a2.e05.s0041",
+          "ablenker": ["de.a2.e05.s0089", "de.a2.e05.s0020", "de.a2.e05.s0047"]
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e05.s0037",
+          "nach": "ziel",
+          "alternativen": ["Heute komme ich nicht, weil ich krank bin.", "Weil ich krank bin, komme ich heute nicht."],
+          "ablenker": ["dann", "ist"]
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a08",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e05.s0031",
+          "ablenker": ["de.a2.e05.s0032", "de.a2.e05.s0035", "de.a2.e05.s0034"]
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a10",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0033",
+          "wort": 2,
+          "ablenker": ["mir", "sich"]
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.naemlich",
+          "ablenker": ["de.a1.e11.sofort", "de.a1.e11.kaum"]
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e05.s0044",
+          "alternativen": ["Weil ich mich schwach fühle, bleibe ich im Bett.", "Im Bett bleibe ich, weil ich mich schwach fühle."]
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e05.s0045",
+          "ablenker": ["de.a2.e05.s0036", "de.a2.e05.s0056", "de.a2.e05.s0051"]
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e05.s0049",
+          "nach": "ziel",
+          "alternativen": [
+            "Du hast dich wahrscheinlich erkältet.",
+            "Wahrscheinlich hast du dich erkältet.",
+            "Du bist wohl erkältet.",
+            "Du bist wahrscheinlich erkältet.",
+            "Wahrscheinlich bist du erkältet."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e05.s0054"
+        },
+        {
+          "schluessel": "de.a2.e05.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e05.s0057"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e05.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann am Telefon einen Termin vereinbaren, verschieben oder absagen.",
+        "tr": "Telefonda randevu alabilir, randevuyu erteleyebilir veya iptal edebilirim.",
+        "ar": "أستطيع أن أحدد موعدًا عبر الهاتف أو أن أؤجله أو ألغيه."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e05.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.vereinbaren",
+          "ablenker": ["de.a2.e05.verschieben", "de.a2.e03.absagen"]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e05.hausarzt",
+            "de.a2.e05.zahnarzt",
+            "de.a2.e05.patient",
+            "de.a2.e05.wartezimmer",
+            "de.a2.e05.sprechzeit",
+            "de.a2.e05.krankmeldung"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e05.versichertenkarte",
+          "ablenker": ["de.a2.e05.krankmeldung", "de.a1.e11.termin"]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0091"
+            }
+          ],
+          "antwort": "de.a2.e05.s0058",
+          "ablenker": ["de.a2.e05.s0081", "de.a2.e05.s0110", "de.a2.e05.s0077"]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0061",
+          "wort": 6,
+          "ablenker": ["verschoben", "verschiebt"]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e05.s0069",
+          "ablenker": ["de.a2.e05.s0068", "de.a2.e05.s0070", "de.a2.e05.s0071"]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e05.s0082",
+          "nach": "ziel",
+          "alternativen": ["Bitte bringen Sie Ihre Versichertenkarte mit.", "Bringen Sie Ihre Versichertenkarte bitte mit."],
+          "ablenker": ["Krankmeldung", "bringt"]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.dringend",
+          "ablenker": ["de.a1.e12.wichtig", "de.a1.e11.sofort"]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0092"
+            }
+          ],
+          "antwort": "de.a2.e05.s0093",
+          "ablenker": ["de.a2.e05.s0076", "de.a2.e05.s0098", "de.a2.e05.s0079"]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e05.abends",
+          "ablenker": ["de.a2.e05.morgens", "de.a2.e05.nachts"]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e05.s0059",
+          "alternativen": [
+            "Beim Zahnarzt habe ich einen Termin vereinbart.",
+            "Ich habe beim Zahnarzt einen Termin vereinbart.",
+            "Einen Termin beim Zahnarzt habe ich vereinbart.",
+            "Einen Termin habe ich beim Zahnarzt vereinbart."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e05.s0085",
+          "ablenker": ["de.a2.e05.s0072", "de.a2.e05.s0065", "de.a2.e05.s0078"]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e05.s0060",
+          "nach": "ziel",
+          "alternativen": ["Kann ich den Termin verschieben?"]
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e05.s0090"
+        },
+        {
+          "schluessel": "de.a2.e05.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e05.s0095"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e05.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Fragen bei der Untersuchung und Ratschläge der Ärztin verstehen.",
+        "tr": "Muayene sırasındaki soruları ve doktorun tavsiyelerini anlayabilirim.",
+        "ar": "أستطيع أن أفهم الأسئلة أثناء الفحص ونصائح الطبيبة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e05.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.untersuchen",
+          "ablenker": ["de.a2.e05.messen", "de.a2.e05.empfehlen"]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e05.rezept",
+            "de.a2.e05.medikament",
+            "de.a2.e05.tropfen",
+            "de.a2.e05.blut",
+            "de.a2.e05.bewegung",
+            "de.a2.e05.ruhe"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0099",
+          "wort": 2,
+          "ablenker": ["messt", "messen"]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e05.waerme",
+          "ablenker": ["de.a2.e05.ruhe", "de.a1.e11.hilfe"]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0120"
+            }
+          ],
+          "antwort": "de.a2.e05.s0121",
+          "ablenker": ["de.a2.e05.s0107", "de.a2.e05.s0118", "de.a2.e05.s0018"]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e05.s0112",
+          "ablenker": ["de.a2.e05.s0109", "de.a2.e05.s0111", "de.a2.e05.s0100"]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e05.s0108",
+          "nach": "ziel",
+          "alternativen": ["Viel Bewegung empfiehlt ihm die Ärztin.", "Ihm empfiehlt die Ärztin viel Bewegung."],
+          "ablenker": ["ihn", "empfehlen"]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.regelmaessig",
+          "ablenker": ["de.a2.e05.taeglich", "de.a2.e05.meistens"]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e05.messen",
+          "ablenker": ["de.a1.e05.essen", "de.a1.e07.muessen"]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0114",
+          "wort": 1,
+          "ablenker": ["dir", "sich"]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e05.s0097",
+          "alternativen": [
+            "Die Ärztin braucht für die Untersuchung ein bisschen Blut.",
+            "Die Ärztin braucht ein bisschen Blut für die Untersuchung.",
+            "Ein bisschen Blut braucht die Ärztin für die Untersuchung."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e05.s0117",
+          "ablenker": ["de.a2.e05.s0119", "de.a2.e05.s0115", "de.a2.e05.s0116"]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e05.s0106",
+          "nach": "ziel",
+          "alternativen": ["Nehmen Sie Medikamente regelmäßig?", "Nehmt ihr regelmäßig Medikamente?"]
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e05.s0102"
+        },
+        {
+          "schluessel": "de.a2.e05.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e05.s0122"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e05.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann von einem kleinen Unfall erzählen und ein Merkblatt der Praxis lesen.",
+        "tr": "Küçük bir kazayı anlatabilir ve muayenehanenin bilgi notunu okuyabilirim.",
+        "ar": "أستطيع أن أحكي عن حادث صغير وأن أقرأ نشرة معلومات العيادة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e05.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.unfall",
+          "ablenker": ["de.a2.e05.notfall", "de.a2.e05.verletzung"]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e05.pflaster",
+            "de.a2.e05.feuerwehr",
+            "de.a2.e05.begleiten",
+            "de.a2.e05.verletzen",
+            "de.a1.e12.krankenhaus",
+            "de.a1.e09.apotheke"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0123",
+          "wort": 1,
+          "ablenker": ["hat", "habe"]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e05.verletzung",
+          "ablenker": ["de.a1.e11.fieber", "de.a2.e05.erkaeltung"]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e05.s0126",
+          "ablenker": ["de.a2.e05.s0125", "de.a2.e05.s0035", "de.a2.e05.s0129"]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0126"
+            }
+          ],
+          "antwort": "de.a2.e05.s0125",
+          "ablenker": ["de.a2.e05.s0133", "de.a2.e05.s0090", "de.a2.e05.s0083"]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a08",
+          "typ": "lesen_fragen",
+          "titel": "de.a2.e05.s0146",
+          "absaetze": [
+            "de.a2.e05.s0147",
+            "de.a2.e05.s0148",
+            "de.a2.e05.s0149",
+            "de.a2.e05.s0150",
+            "de.a2.e05.s0151",
+            "de.a2.e05.s0152",
+            "de.a2.e05.s0153",
+            "de.a2.e05.s0154",
+            "de.a2.e05.s0155",
+            "de.a2.e05.s0156",
+            "de.a2.e05.s0157",
+            "de.a2.e05.s0158"
+          ],
+          "glossen": ["de.a2.e05.sprechzeit", "de.a2.e05.versichertenkarte", "de.a2.e05.notfall"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e05.s0159",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e05.s0160",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e05.s0161",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e05.s0162",
+              "antwort": "de.a2.e05.s0163",
+              "ablenker": ["de.a2.e05.s0164", "de.a2.e05.s0165"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e05.s0166",
+              "antwort": "de.a2.e05.s0167",
+              "ablenker": ["de.a2.e05.s0168", "de.a2.e05.s0169"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e05.s0137",
+          "nach": "ziel",
+          "alternativen": ["Zum Arzt begleitet Laylā ihren Opa.", "Ihren Opa begleitet Laylā zum Arzt."],
+          "ablenker": ["seinen", "begleiten"]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a10",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0139",
+          "wort": 6,
+          "ablenker": ["bleiben", "bleibt"]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a11",
+          "typ": "satzbau",
+          "ziel": "de.a2.e05.s0140",
+          "alternativen": [
+            "Mit Jan sind wir zum Arzt gefahren.",
+            "Zum Arzt sind wir mit Jan gefahren.",
+            "Wir sind zum Arzt mit Jan gefahren."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e05.s0131",
+          "ablenker": ["de.a2.e05.s0124", "de.a2.e05.s0127", "de.a2.e05.s0132"]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e05.s0128",
+          "nach": "ziel"
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0135"
+            }
+          ],
+          "antwort": "de.a2.e05.s0136",
+          "ablenker": ["de.a2.e05.s0144", "de.a2.e05.s0130", "de.a2.e05.s0081"]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.a2.e05.s0170",
+          "woerter": {
+            "min": 30,
+            "max": 40
+          },
+          "pflichtwoerter": ["weil", "krank"],
+          "muster": ["de.a2.e05.s0171"]
+        },
+        {
+          "schluessel": "de.a2.e05.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e05.s0145"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e05.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte in der Praxis und ein Telefongespräch verstehen.",
+        "tr": "Muayenehanede geçen bir hikâyeyi ve bir telefon konuşmasını anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة في العيادة ومكالمة هاتفية."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e05.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a2.e05.s0172",
+          "zeilen": [
+            {
+              "satz": "de.a2.e05.s0173"
+            },
+            {
+              "satz": "de.a2.e05.s0174"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0175"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0176"
+            },
+            {
+              "satz": "de.a2.e05.s0177"
+            },
+            {
+              "satz": "de.a2.e05.s0178"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0179"
+            },
+            {
+              "satz": "de.a2.e05.s0180"
+            },
+            {
+              "satz": "de.a2.e05.s0181"
+            },
+            {
+              "satz": "de.a2.e05.s0182"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e05.s0183"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0184"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0185"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e05.s0186"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0187"
+            },
+            {
+              "satz": "de.a2.e05.s0188"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e05.s0189"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e05.s0190"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e05.s0191"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0192"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e05.s0193"
+            },
+            {
+              "satz": "de.a2.e05.s0194"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0195"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.a2.e05.s0196",
+              "antwort": "de.a2.e05.s0197",
+              "ablenker": ["de.a2.e05.s0198", "de.a2.e05.s0199"]
+            },
+            {
+              "nach": 3,
+              "frage": "de.a2.e05.s0200",
+              "antwort": "de.a2.e05.s0201",
+              "ablenker": ["de.a2.e05.s0202", "de.a2.e05.s0203"]
+            },
+            {
+              "nach": 14,
+              "frage": "de.a2.e05.s0204",
+              "antwort": "de.a2.e05.s0205",
+              "ablenker": ["de.a2.e05.s0206", "de.a2.e05.s0207"]
+            },
+            {
+              "nach": 18,
+              "frage": "de.a2.e05.s0208",
+              "antwort": "de.a2.e05.s0209",
+              "ablenker": ["de.a2.e05.s0210", "de.a2.e05.s0211"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l06.a02",
+          "typ": "sprechen",
+          "satz": "de.a2.e05.s0184"
+        },
+        {
+          "schluessel": "de.a2.e05.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0188",
+          "wort": 2,
+          "ablenker": ["untersuchen", "untersuchst"]
+        },
+        {
+          "schluessel": "de.a2.e05.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e05.s0175",
+          "nach": "ziel",
+          "alternativen": [
+            "Opa, morgen begleite ich dich zum Arzt.",
+            "Ich begleite dich morgen zum Arzt, Opa.",
+            "Morgen begleite ich dich zum Arzt, Opa."
+          ],
+          "ablenker": ["dir", "begleitet"]
+        },
+        {
+          "schluessel": "de.a2.e05.l06.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e05.s0185",
+          "ablenker": ["de.a2.e05.s0191", "de.a2.e05.s0174", "de.a2.e05.s0027"]
+        },
+        {
+          "schluessel": "de.a2.e05.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.a2.e05.s0212",
+          "zeilen": [
+            {
+              "satz": "de.a2.e05.s0213"
+            },
+            {
+              "satz": "de.a2.e05.s0214"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0215"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0216"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0217"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e11.s0165"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0218"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0219"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0220"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0221"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0222"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0223"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0224"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0225"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e05.s0226"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.a2.e05.s0227",
+              "antwort": "de.a2.e05.s0228",
+              "ablenker": ["de.a2.e05.s0229", "de.a2.e05.s0230"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a2.e05.s0231",
+              "antwort": "de.a2.e05.s0232",
+              "ablenker": ["de.a2.e05.s0233", "de.a2.e05.s0234"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.a2.e05.s0235",
+              "antwort": "de.a2.e05.s0236",
+              "ablenker": ["de.a2.e05.s0237", "de.a2.e05.s0238"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l06.a07",
+          "typ": "satzbau",
+          "ziel": "de.a2.e05.s0219",
+          "alternativen": [
+            "Für die Arbeit brauche ich nämlich eine Krankmeldung.",
+            "Ich brauche nämlich für die Arbeit eine Krankmeldung.",
+            "Eine Krankmeldung brauche ich nämlich für die Arbeit.",
+            "Ich brauche für die Arbeit nämlich eine Krankmeldung."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l06.a08",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e05.s0224"
+        },
+        {
+          "schluessel": "de.a2.e05.l06.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0223",
+          "wort": 4,
+          "ablenker": ["mein", "meinen"]
+        },
+        {
+          "schluessel": "de.a2.e05.l06.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0220"
+            }
+          ],
+          "antwort": "de.a2.e05.s0221",
+          "ablenker": ["de.a2.e05.s0086", "de.a2.e05.s0209", "de.a2.e05.s0001"]
+        },
+        {
+          "schluessel": "de.a2.e05.l06.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e05.s0222",
+          "ablenker": ["de.a2.e05.s0224", "de.a2.e05.s0220"]
+        },
+        {
+          "schluessel": "de.a2.e05.l06.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e05.s0189",
+          "ablenker": ["de.a2.e05.s0186", "de.a2.e05.s0192"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e05.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole Körper, Beschwerden, Termine und Ratschläge.",
+        "tr": "Vücudu, şikâyetleri, randevuları ve tavsiyeleri tekrar ediyorum.",
+        "ar": "أراجع الجسم والشكاوى والمواعيد والنصائح."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e05.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.schlimm",
+          "ablenker": ["de.a2.e05.schwach", "de.a1.e11.muede"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e05.schulter",
+            "de.a2.e05.nase",
+            "de.a2.e05.blut",
+            "de.a2.e05.tropfen",
+            "de.a2.e05.krankenkasse",
+            "de.a2.e05.allergie"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0042"
+            }
+          ],
+          "antwort": "de.a2.e05.s0043",
+          "ablenker": ["de.a2.e05.s0086", "de.a2.e05.s0075", "de.a2.e05.s0105"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0239",
+          "wort": 5,
+          "ablenker": ["denn", "und"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e05.s0240",
+          "ablenker": ["de.a2.e05.s0059", "de.a2.e05.s0062"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e05.s0241",
+          "nach": "ziel",
+          "alternativen": [
+            "Nachts schläft Samīr schlecht, weil er viel Stress hat.",
+            "Weil er viel Stress hat, schläft Samīr nachts schlecht."
+          ],
+          "ablenker": ["Ruhe", "schlafen"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e05.hinlegen",
+          "ablenker": ["de.a2.e05.mitbringen", "de.a2.e05.begleiten"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a08",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e05.haar",
+          "ablenker": ["de.a1.e02.jahr"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a09",
+          "typ": "satzbau",
+          "ziel": "de.a2.e05.s0243",
+          "alternativen": ["Am Finger hat Ela ein Pflaster.", "Ein Pflaster hat Ela am Finger.", "Ela hat am Finger ein Pflaster."]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a10",
+          "typ": "frei",
+          "ziel": "de.a2.e05.s0245",
+          "nach": "ziel",
+          "alternativen": [
+            "Ihm ist seine Gesundheit sehr wichtig.",
+            "Seine Gesundheit ist für ihn sehr wichtig.",
+            "Ihre Gesundheit ist ihr sehr wichtig.",
+            "Ihr ist ihre Gesundheit sehr wichtig."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e05.s0101",
+          "alternativen": ["Die Behandlung dauert 2 Wochen."]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a12",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0112",
+          "wort": 2,
+          "ablenker": ["dich", "mich"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.haeufig",
+          "ablenker": ["de.a1.e11.wieder", "de.a1.e04.spaet"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e05.s0244",
+          "ablenker": ["de.a2.e05.s0111", "de.a2.e05.s0056"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e05.s0088",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0084"
+            }
+          ],
+          "antwort": "de.a2.e05.s0082",
+          "ablenker": ["de.a2.e05.s0080", "de.a2.e05.s0079", "de.a2.e05.s0133"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a17",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e05.untersuchung",
+            "de.a2.e05.behandlung",
+            "de.a2.e05.versicherung",
+            "de.a2.e05.wartezimmer",
+            "de.a2.e05.atmen",
+            "de.a2.e05.hausarzt"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a18",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0143",
+          "wort": 4,
+          "ablenker": ["mich", "ihr"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a19",
+          "typ": "satzbau",
+          "ziel": "de.a2.e05.s0247",
+          "alternativen": ["Ich gehe einmal im Jahr zum Hausarzt.", "Zum Hausarzt gehe ich einmal im Jahr."]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a20",
+          "typ": "frei",
+          "ziel": "de.a2.e05.s0053",
+          "nach": "ziel",
+          "alternativen": ["Gesundheit! Bist du erkältet?"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a21",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0026"
+            }
+          ],
+          "antwort": "de.a2.e05.s0025",
+          "ablenker": ["de.a2.e05.s0104", "de.a2.e05.s0246", "de.a2.e05.s0067"]
+        },
+        {
+          "schluessel": "de.a2.e05.l07.a22",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e05.s0142",
+          "ablenker": ["de.a2.e05.s0144", "de.a2.e05.s0141", "de.a2.e05.s0138"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e05.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich beim Arzt sagen kann, was ich habe, und einen Termin vereinbaren kann.",
+        "tr": "Doktorda neyim olduğunu söyleyebildiğimi ve randevu alabildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أقول عند الطبيب ما أشكو منه وأن أحدد موعدًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e05.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.erkaelten",
+          "ablenker": ["de.a2.e05.verletzen", "de.a2.e05.ausruhen"]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e05.ruecken",
+            "de.a2.e05.ohr",
+            "de.a2.e05.rezept",
+            "de.a2.e05.unfall",
+            "de.a2.e05.patient",
+            "de.a2.e05.dringend"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0248"
+            }
+          ],
+          "antwort": "de.a2.e05.s0249",
+          "ablenker": ["de.a2.e05.s0073", "de.a2.e05.s0253", "de.a2.e05.s0161"]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0256",
+          "wort": 0,
+          "ablenker": ["Er", "Ihn"]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e05.s0251",
+          "ablenker": ["de.a2.e05.s0039", "de.a2.e05.s0228", "de.a2.e05.s0032"]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e05.s0254",
+          "nach": "ziel",
+          "alternativen": ["Sie sollen viel trinken und sich ausruhen."],
+          "ablenker": ["dich", "trinkt"]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0259"
+            }
+          ],
+          "antwort": "de.a2.e05.s0260",
+          "ablenker": ["de.a2.e05.s0094", "de.a2.e05.s0052", "de.a2.e05.s0105"]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e05.gesundheit",
+          "ablenker": ["de.a2.e05.stress", "de.a1.e11.glueck"]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e05.s0257",
+          "wort": 1,
+          "ablenker": ["haben", "werden"]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a10",
+          "typ": "satzbau",
+          "ziel": "de.a2.e05.s0252",
+          "alternativen": ["Morgen kann ich nicht kommen. Kann ich den Termin verschieben?"]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e05.s0252"
+            }
+          ],
+          "antwort": "de.a2.e05.s0253",
+          "ablenker": ["de.a2.e05.s0249", "de.a2.e05.s0074", "de.a2.e05.s0243"]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a12",
+          "typ": "frei",
+          "ziel": "de.a2.e05.s0255",
+          "nach": "ziel",
+          "alternativen": [
+            "Du darfst heute mit der Erkältung keinen Sport machen.",
+            "Du darfst mit der Erkältung heute keinen Sport machen.",
+            "Heute darfst du mit der Erkältung keinen Sport machen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e05.s0063"
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e05.empfehlen",
+          "ablenker": ["de.a2.e05.vereinbaren", "de.a2.e05.untersuchen"]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e05.s0250",
+          "ablenker": ["de.a2.e05.s0248", "de.a2.e05.s0259", "de.a2.e05.s0258"]
+        },
+        {
+          "schluessel": "de.a2.e05.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e05.s0261"
+        }
+      ]
+    }
+  ]
+}
