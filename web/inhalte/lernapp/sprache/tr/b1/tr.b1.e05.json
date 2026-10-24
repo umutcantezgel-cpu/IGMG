@@ -1,0 +1,5626 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "tr",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "tr.b1.e05",
+    "reihenfolge": 6,
+    "thema": {
+      "de": "Gesund bleiben",
+      "tr": "Sağlıklı kalmak",
+      "ar": "الحفاظ على الصحة"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann sagen, wie man etwas tut (zu Fuß, ohne nachzudenken).",
+        "tr": "Bir işi nasıl yaptığımı söyleyebilirim (yürüyerek, düşünmeden).",
+        "ar": "أستطيع أن أقول كيف أقوم بعمل ما (مشيًا على الأقدام، دون تفكير)."
+      },
+      {
+        "de": "Ich kann über Ernährung, Bewegung und Schlaf sprechen.",
+        "tr": "Beslenme, hareket ve uyku hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدث عن التغذية والحركة والنوم."
+      },
+      {
+        "de": "Ich kann Tipps zur Gesundheit geben und begründen.",
+        "tr": "Sağlıkla ilgili tavsiyeler verebilir ve nedenlerini söyleyebilirim.",
+        "ar": "أستطيع أن أقدم نصائح صحية وأن أذكر أسبابها."
+      }
+    ],
+    "symbol": "heart-pulse",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "tr.b1.e05.egzersiz",
+      "lemma": "egzersiz",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "egzersizler",
+        "akk/poss.3sg": "egzersizi",
+        "dat": "egzersize",
+        "gen/poss.2sg": "egzersizin",
+        "ins": "egzersizle",
+        "poss.1sg": "egzersizim",
+        "poss.1pl": "egzersizimiz",
+        "poss.2pl": "egzersiziniz",
+        "lok": "egzersizde",
+        "abl": "egzersizden",
+        "poss.3pl": "egzersizleri"
+      },
+      "frequenzRang": 9109,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.beslenme",
+      "lemma": "beslenme",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk": "beslenmeyi",
+        "dat": "beslenmeye",
+        "gen": "beslenmenin",
+        "ins": "beslenmeyle",
+        "poss.1sg": "beslenmem",
+        "poss.2sg": "beslenmen",
+        "poss.3sg": "beslenmesi",
+        "poss.1pl": "beslenmemiz",
+        "poss.2pl": "beslenmeniz",
+        "lok": "beslenmede",
+        "abl": "beslenmeden"
+      },
+      "frequenzRang": 5467,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.stres",
+      "lemma": "stres",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk/poss.3sg": "stresi",
+        "dat": "strese",
+        "gen/poss.2sg": "stresin",
+        "ins": "stresle",
+        "poss.1sg": "stresim",
+        "poss.1pl": "stresimiz",
+        "poss.2pl": "stresiniz",
+        "lok": "streste",
+        "abl": "stresten"
+      },
+      "frequenzRang": 4838,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.lif",
+      "lemma": "lif",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk/poss.3sg": "lifi",
+        "dat": "life",
+        "gen/poss.2sg": "lifin",
+        "ins": "lifle",
+        "poss.1sg": "lifim",
+        "poss.1pl": "lifimiz",
+        "poss.2pl": "lifiniz",
+        "lok": "lifte",
+        "abl": "liften"
+      },
+      "frequenzRang": 20464,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.protein",
+      "lemma": "protein",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk/poss.3sg": "proteini",
+        "dat": "proteine",
+        "gen/poss.2sg": "proteinin",
+        "ins": "proteinle",
+        "poss.1sg": "proteinim",
+        "poss.1pl": "proteinimiz",
+        "poss.2pl": "proteininiz",
+        "lok": "proteinde",
+        "abl": "proteinden"
+      },
+      "frequenzRang": 4115,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.mineral",
+      "lemma": "mineral",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "harmonie_ausnahme": "helle Endungen trotz a (minerali, mineraller)"
+      },
+      "formen": {
+        "pl": "mineraller",
+        "akk/poss.3sg": "minerali",
+        "dat": "minerale",
+        "gen/poss.2sg": "mineralin",
+        "ins": "mineralle",
+        "poss.1sg": "mineralim",
+        "poss.1pl": "mineralimiz",
+        "poss.2pl": "mineraliniz",
+        "lok": "mineralde",
+        "abl": "mineralden",
+        "poss.3pl": "mineralleri"
+      },
+      "frequenzRang": 9744,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.demir",
+      "lemma": "demir",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "demirler",
+        "akk/poss.3sg": "demiri",
+        "dat": "demire",
+        "gen/poss.2sg": "demirin",
+        "ins": "demirle",
+        "poss.1sg": "demirim",
+        "poss.1pl": "demirimiz",
+        "poss.2pl": "demiriniz",
+        "lok": "demirde",
+        "abl": "demirden",
+        "poss.3pl": "demirleri"
+      },
+      "frequenzRang": 1171,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.gida",
+      "lemma": "gıda",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "gıdalar",
+        "akk": "gıdayı",
+        "dat": "gıdaya",
+        "gen": "gıdanın",
+        "ins": "gıdayla",
+        "poss.1sg": "gıdam",
+        "poss.2sg": "gıdan",
+        "poss.3sg": "gıdası",
+        "poss.1pl": "gıdamız",
+        "poss.2pl": "gıdanız",
+        "lok": "gıdada",
+        "abl": "gıdadan",
+        "poss.3pl": "gıdaları"
+      },
+      "frequenzRang": 1686,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.besin",
+      "lemma": "besin",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "besinler",
+        "akk/poss.3sg": "besini",
+        "dat": "besine",
+        "gen/poss.2sg": "besinin",
+        "ins": "besinle",
+        "poss.1sg": "besinim",
+        "poss.1pl": "besinimiz",
+        "poss.2pl": "besininiz",
+        "lok": "besinde",
+        "abl": "besinden",
+        "poss.3pl": "besinleri"
+      },
+      "frequenzRang": 4872,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.yiyecek",
+      "lemma": "yiyecek",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "yiyecek → yiyeceğ-"
+      },
+      "formen": {
+        "akk/poss.3sg": "yiyeceği",
+        "dat": "yiyeceğe",
+        "gen/poss.2sg": "yiyeceğin",
+        "ins": "yiyecekle",
+        "poss.1sg": "yiyeceğim",
+        "poss.1pl": "yiyeceğimiz",
+        "poss.2pl": "yiyeceğiniz",
+        "lok": "yiyecekte",
+        "abl": "yiyecekten",
+        "poss.3pl": "yiyecekleri"
+      },
+      "frequenzRang": 2791,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.icecek",
+      "lemma": "içecek",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "içecek → içeceğ-"
+      },
+      "formen": {
+        "pl": "içecekler",
+        "akk/poss.3sg": "içeceği",
+        "dat": "içeceğe",
+        "gen/poss.2sg": "içeceğin",
+        "ins": "içecekle",
+        "poss.1sg": "içeceğim",
+        "poss.1pl": "içeceğimiz",
+        "poss.2pl": "içeceğiniz",
+        "lok": "içecekte",
+        "abl": "içecekten"
+      },
+      "frequenzRang": 4087,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.kas",
+      "lemma": "kas",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "kaslar",
+        "akk/poss.3sg": "kası",
+        "gen/poss.2sg": "kasın",
+        "ins": "kasla",
+        "poss.1pl": "kasımız",
+        "poss.2pl": "kasınız",
+        "lok": "kasta",
+        "abl": "kastan",
+        "poss.3pl": "kasları"
+      },
+      "frequenzRang": 4912,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.bagisiklik",
+      "lemma": "bağışıklık",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "bağışıklık → bağışıklığ-"
+      },
+      "formen": {
+        "akk/poss.3sg": "bağışıklığı",
+        "dat": "bağışıklığa",
+        "gen/poss.2sg": "bağışıklığın",
+        "ins": "bağışıklıkla",
+        "poss.1sg": "bağışıklığım",
+        "poss.1pl": "bağışıklığımız",
+        "poss.2pl": "bağışıklığınız",
+        "lok": "bağışıklıkta",
+        "abl": "bağışıklıktan"
+      },
+      "frequenzRang": 7225,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.fayda",
+      "lemma": "fayda",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "faydalar",
+        "akk": "faydayı",
+        "dat": "faydaya",
+        "gen": "faydanın",
+        "ins": "faydayla",
+        "poss.1sg": "faydam",
+        "poss.2sg": "faydan",
+        "poss.3sg": "faydası",
+        "poss.1pl": "faydamız",
+        "poss.2pl": "faydanız",
+        "lok": "faydada",
+        "abl": "faydadan",
+        "poss.3pl": "faydaları"
+      },
+      "frequenzRang": 4284,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.yarar",
+      "lemma": "yarar",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "yararlar",
+        "akk/poss.3sg": "yararı",
+        "dat": "yarara",
+        "gen/poss.2sg": "yararın",
+        "ins": "yararla",
+        "poss.1sg": "yararım",
+        "poss.1pl": "yararımız",
+        "poss.2pl": "yararınız",
+        "lok": "yararda",
+        "abl": "yarardan",
+        "poss.3pl": "yararları"
+      },
+      "frequenzRang": 2306,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.kan",
+      "lemma": "kan",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "kanlar",
+        "akk/poss.3sg": "kanı",
+        "dat": "kana",
+        "gen/poss.2sg": "kanın",
+        "ins": "kanla",
+        "poss.1sg": "kanım",
+        "poss.1pl": "kanımız",
+        "poss.2pl": "kanınız",
+        "lok": "kanda",
+        "abl": "kandan",
+        "poss.3pl": "kanları"
+      },
+      "frequenzRang": 379,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.tahlil",
+      "lemma": "tahlil",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "tahliller",
+        "akk/poss.3sg": "tahlili",
+        "dat": "tahlile",
+        "gen/poss.2sg": "tahlilin",
+        "ins": "tahlille",
+        "poss.1sg": "tahlilim",
+        "poss.1pl": "tahlilimiz",
+        "poss.2pl": "tahliliniz",
+        "lok": "tahlilde",
+        "abl": "tahlilden",
+        "poss.3pl": "tahlilleri"
+      },
+      "frequenzRang": 25729,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.mikrop",
+      "lemma": "mikrop",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u",
+        "erweichung": "mikrop → mikrob-"
+      },
+      "formen": {
+        "pl": "mikroplar",
+        "akk/poss.3sg": "mikrobu",
+        "dat": "mikroba",
+        "gen/poss.2sg": "mikrobun",
+        "ins": "mikropla",
+        "poss.1sg": "mikrobum",
+        "poss.1pl": "mikrobumuz",
+        "poss.2pl": "mikrobunuz",
+        "lok": "mikropta",
+        "abl": "mikroptan",
+        "poss.3pl": "mikropları"
+      },
+      "frequenzRang": 16337,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.virus",
+      "lemma": "virüs",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "pl": "virüsler",
+        "akk/poss.3sg": "virüsü",
+        "dat": "virüse",
+        "gen/poss.2sg": "virüsün",
+        "ins": "virüsle",
+        "poss.1sg": "virüsüm",
+        "poss.1pl": "virüsümüz",
+        "poss.2pl": "virüsünüz",
+        "lok": "virüste",
+        "abl": "virüsten",
+        "poss.3pl": "virüsleri"
+      },
+      "frequenzRang": 4130,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.hijyen",
+      "lemma": "hijyen",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk/poss.3sg": "hijyeni",
+        "dat": "hijyene",
+        "gen/poss.2sg": "hijyenin",
+        "ins": "hijyenle",
+        "poss.1sg": "hijyenim",
+        "poss.1pl": "hijyenimiz",
+        "poss.2pl": "hijyeniniz",
+        "lok": "hijyende",
+        "abl": "hijyenden"
+      },
+      "frequenzRang": 19284,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.porsiyon",
+      "lemma": "porsiyon",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "porsiyonlar",
+        "akk/poss.3sg": "porsiyonu",
+        "dat": "porsiyona",
+        "gen/poss.2sg": "porsiyonun",
+        "ins": "porsiyonla",
+        "poss.1sg": "porsiyonum",
+        "poss.1pl": "porsiyonumuz",
+        "poss.2pl": "porsiyonunuz",
+        "lok": "porsiyonda",
+        "abl": "porsiyondan",
+        "poss.3pl": "porsiyonları"
+      },
+      "frequenzRang": 29718,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.miktar",
+      "lemma": "miktar",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "miktarlar",
+        "akk/poss.3sg": "miktarı",
+        "dat": "miktara",
+        "gen/poss.2sg": "miktarın",
+        "ins": "miktarla",
+        "poss.1sg": "miktarım",
+        "poss.1pl": "miktarımız",
+        "poss.2pl": "miktarınız",
+        "lok": "miktarda",
+        "abl": "miktardan",
+        "poss.3pl": "miktarları"
+      },
+      "frequenzRang": 4205,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.kalori",
+      "lemma": "kalori",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "kaloriler",
+        "akk": "kaloriyi",
+        "dat": "kaloriye",
+        "gen": "kalorinin",
+        "ins": "kaloriyle",
+        "poss.1sg": "kalorim",
+        "poss.2sg": "kalorin",
+        "poss.3sg": "kalorisi",
+        "poss.1pl": "kalorimiz",
+        "poss.2pl": "kaloriniz",
+        "lok": "kaloride",
+        "abl": "kaloriden",
+        "poss.3pl": "kalorileri"
+      },
+      "frequenzRang": 20415,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.madde",
+      "lemma": "madde",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "maddeler",
+        "akk": "maddeyi",
+        "dat": "maddeye",
+        "gen": "maddenin",
+        "ins": "maddeyle",
+        "poss.1sg": "maddem",
+        "poss.2sg": "madden",
+        "poss.3sg": "maddesi",
+        "poss.1pl": "maddemiz",
+        "poss.2pl": "maddeniz",
+        "lok": "maddede",
+        "abl": "maddeden",
+        "poss.3pl": "maddeleri"
+      },
+      "frequenzRang": 1360,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.risk",
+      "lemma": "risk",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "riskler",
+        "akk/poss.3sg": "riski",
+        "dat": "riske",
+        "gen/poss.2sg": "riskin",
+        "ins": "riskle",
+        "poss.1sg": "riskim",
+        "poss.1pl": "riskimiz",
+        "poss.2pl": "riskiniz",
+        "lok": "riskte",
+        "abl": "riskten",
+        "poss.3pl": "riskleri"
+      },
+      "frequenzRang": 2991,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.abur-cubur",
+      "lemma": "abur cubur",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u",
+        "register": "umgangssprachlich (Knabberzeug, ungesundes Essen)"
+      },
+      "formen": {
+        "akk": "abur cuburu",
+        "lok": "abur cuburda",
+        "abl": "abur cuburdan"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.kolesterol",
+      "lemma": "kolesterol",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü",
+        "harmonie_ausnahme": "helle Endungen trotz o (kolesterolü, kolesteroller)"
+      },
+      "formen": {
+        "akk/poss.3sg": "kolesterolü",
+        "dat": "kolesterole",
+        "gen/poss.2sg": "kolesterolün",
+        "ins": "kolesterolle",
+        "poss.1sg": "kolesterolüm",
+        "poss.1pl": "kolesterolümüz",
+        "poss.2pl": "kolesterolünüz",
+        "lok": "kolesterolde",
+        "abl": "kolesterolden"
+      },
+      "frequenzRang": 23270,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.karbonhidrat",
+      "lemma": "karbonhidrat",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "karbonhidratlar",
+        "akk/poss.3sg": "karbonhidratı",
+        "dat": "karbonhidrata",
+        "gen/poss.2sg": "karbonhidratın",
+        "ins": "karbonhidratla",
+        "poss.1sg": "karbonhidratım",
+        "poss.1pl": "karbonhidratımız",
+        "poss.2pl": "karbonhidratınız",
+        "lok": "karbonhidratta",
+        "abl": "karbonhidrattan",
+        "poss.3pl": "karbonhidratları"
+      },
+      "frequenzRang": 27540,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.uykusuzluk",
+      "lemma": "uykusuzluk",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u",
+        "erweichung": "uykusuzluk → uykusuzluğ-"
+      },
+      "formen": {
+        "akk/poss.3sg": "uykusuzluğu",
+        "dat": "uykusuzluğa",
+        "gen/poss.2sg": "uykusuzluğun",
+        "ins": "uykusuzlukla",
+        "poss.1sg": "uykusuzluğum",
+        "poss.1pl": "uykusuzluğumuz",
+        "poss.2pl": "uykusuzluğunuz",
+        "lok": "uykusuzlukta",
+        "abl": "uykusuzluktan"
+      },
+      "frequenzRang": 15793,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.zihin",
+      "lemma": "zihin",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "vokalausfall": "zihin → zihn-"
+      },
+      "formen": {
+        "pl": "zihinler",
+        "akk/poss.3sg": "zihni",
+        "dat": "zihne",
+        "gen/poss.2sg": "zihnin",
+        "ins": "zihinle",
+        "poss.1sg": "zihnim",
+        "poss.1pl": "zihnimiz",
+        "poss.2pl": "zihniniz",
+        "lok": "zihinde",
+        "abl": "zihinden",
+        "poss.3pl": "zihinleri"
+      },
+      "frequenzRang": 8377,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.hafiza",
+      "lemma": "hafıza",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "hafızalar",
+        "akk": "hafızayı",
+        "dat": "hafızaya",
+        "gen": "hafızanın",
+        "ins": "hafızayla",
+        "poss.1sg": "hafızam",
+        "poss.2sg": "hafızan",
+        "poss.3sg": "hafızası",
+        "poss.1pl": "hafızamız",
+        "poss.2pl": "hafızanız",
+        "lok": "hafızada",
+        "abl": "hafızadan",
+        "poss.3pl": "hafızaları"
+      },
+      "frequenzRang": 5258,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.beslenmek",
+      "lemma": "beslenmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "beslen",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "beslen",
+        "iyor.3sg": "besleniyor",
+        "imp.2pl": "beslenin",
+        "aor.3sg": "beslenir",
+        "iyor.neg.3sg": "beslenmiyor",
+        "aor.1sg": "beslenirim",
+        "aor.neg.3sg": "beslenmez",
+        "aor.neg.1sg": "beslenmem",
+        "di.1sg": "beslendim",
+        "di.2sg": "beslendin",
+        "di.3sg": "beslendi",
+        "di.1pl": "beslendik",
+        "di.2pl": "beslendiniz",
+        "di.neg.3sg": "beslenmedi",
+        "mis.3sg": "beslenmiş",
+        "ecek.3sg": "beslenecek",
+        "ecek.1sg": "besleneceğim",
+        "ecek.1pl": "besleneceğiz",
+        "ebil.3sg": "beslenebilir",
+        "eme.3sg": "beslenemez",
+        "meli.3sg": "beslenmeli",
+        "opt.1sg": "besleneyim",
+        "opt.1pl": "beslenelim",
+        "imp3.3sg": "beslensin",
+        "iyordu.3sg": "besleniyordu",
+        "mek.akk": "beslenmeyi",
+        "part.en": "beslenen",
+        "part.dik.3": "beslendiği",
+        "part.dik.1sg": "beslendiğim",
+        "part.ecek.3": "besleneceği",
+        "konv.ip": "beslenip",
+        "konv.ince": "beslenince",
+        "konv.erek": "beslenerek",
+        "konv.meden": "beslenmeden",
+        "kond.3sg": "beslense",
+        "nom.mesi": "beslenmesi",
+        "mis.ti": "beslenmişti"
+      },
+      "frequenzRang": 29416,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.onlemek",
+      "lemma": "önlemek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "önle",
+        "harmonie": "e/i",
+        "stammwechsel": "önle → önlü- vor -yor"
+      },
+      "formen": {
+        "stamm": "önle",
+        "iyor.3sg": "önlüyor",
+        "imp.2pl": "önleyin",
+        "aor.3sg": "önler",
+        "iyor.neg.3sg": "önlemiyor",
+        "aor.1sg": "önlerim",
+        "aor.neg.3sg": "önlemez",
+        "aor.neg.1sg": "önlemem",
+        "di.1sg": "önledim",
+        "di.2sg": "önledin",
+        "di.3sg": "önledi",
+        "di.1pl": "önledik",
+        "di.2pl": "önlediniz",
+        "di.neg.3sg": "önlemedi",
+        "mis.3sg": "önlemiş",
+        "ecek.3sg": "önleyecek",
+        "ecek.1sg": "önleyeceğim",
+        "ecek.1pl": "önleyeceğiz",
+        "ebil.3sg": "önleyebilir",
+        "eme.3sg": "önleyemez",
+        "meli.3sg": "önlemeli",
+        "opt.1sg": "önleyeyim",
+        "opt.1pl": "önleyelim",
+        "imp3.3sg": "önlesin",
+        "iyordu.3sg": "önlüyordu",
+        "mek.akk": "önlemeyi",
+        "part.en": "önleyen",
+        "part.dik.3": "önlediği",
+        "part.dik.1sg": "önlediğim",
+        "part.ecek.3": "önleyeceği",
+        "konv.ip": "önleyip",
+        "konv.ince": "önleyince",
+        "konv.erek": "önleyerek",
+        "konv.meden": "önlemeden",
+        "kond.3sg": "önlese",
+        "nom.mesi": "önlemesi",
+        "mis.ti": "önlemişti"
+      },
+      "frequenzRang": 4248,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.korunmak",
+      "lemma": "korunmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "korun",
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "stamm": "korun",
+        "iyor.3sg": "korunuyor",
+        "imp.2pl": "korunun",
+        "aor.3sg": "korunur",
+        "iyor.neg.3sg": "korunmuyor",
+        "aor.1sg": "korunurum",
+        "aor.neg.3sg": "korunmaz",
+        "aor.neg.1sg": "korunmam",
+        "di.1sg": "korundum",
+        "di.2sg": "korundun",
+        "di.3sg": "korundu",
+        "di.1pl": "korunduk",
+        "di.2pl": "korundunuz",
+        "di.neg.3sg": "korunmadı",
+        "mis.3sg": "korunmuş",
+        "ecek.3sg": "korunacak",
+        "ecek.1sg": "korunacağım",
+        "ecek.1pl": "korunacağız",
+        "ebil.3sg": "korunabilir",
+        "eme.3sg": "korunamaz",
+        "meli.3sg": "korunmalı",
+        "opt.1sg": "korunayım",
+        "opt.1pl": "korunalım",
+        "imp3.3sg": "korunsun",
+        "iyordu.3sg": "korunuyordu",
+        "mek.akk": "korunmayı",
+        "part.en": "korunan",
+        "part.dik.3": "korunduğu",
+        "part.dik.1sg": "korunduğum",
+        "part.ecek.3": "korunacağı",
+        "konv.ip": "korunup",
+        "konv.ince": "korununca",
+        "konv.erek": "korunarak",
+        "konv.meden": "korunmadan",
+        "kond.3sg": "korunsa",
+        "nom.mesi": "korunması",
+        "mis.ti": "korunmuştu"
+      },
+      "frequenzRang": 15110,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.kacinmak",
+      "lemma": "kaçınmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kaçın",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "kaçın",
+        "iyor.3sg": "kaçınıyor",
+        "imp.2pl": "kaçının",
+        "aor.3sg": "kaçınır",
+        "iyor.neg.3sg": "kaçınmıyor",
+        "aor.1sg": "kaçınırım",
+        "aor.neg.3sg": "kaçınmaz",
+        "aor.neg.1sg": "kaçınmam",
+        "di.1sg": "kaçındım",
+        "di.2sg": "kaçındın",
+        "di.3sg": "kaçındı",
+        "di.1pl": "kaçındık",
+        "di.2pl": "kaçındınız",
+        "di.neg.3sg": "kaçınmadı",
+        "mis.3sg": "kaçınmış",
+        "ecek.3sg": "kaçınacak",
+        "ecek.1sg": "kaçınacağım",
+        "ecek.1pl": "kaçınacağız",
+        "ebil.3sg": "kaçınabilir",
+        "eme.3sg": "kaçınamaz",
+        "meli.3sg": "kaçınmalı",
+        "opt.1sg": "kaçınayım",
+        "opt.1pl": "kaçınalım",
+        "imp3.3sg": "kaçınsın",
+        "iyordu.3sg": "kaçınıyordu",
+        "mek.akk": "kaçınmayı",
+        "part.en": "kaçınan",
+        "part.dik.3": "kaçındığı",
+        "part.dik.1sg": "kaçındığım",
+        "part.ecek.3": "kaçınacağı",
+        "konv.ip": "kaçınıp",
+        "konv.ince": "kaçınınca",
+        "konv.erek": "kaçınarak",
+        "konv.meden": "kaçınmadan",
+        "kond.3sg": "kaçınsa",
+        "nom.mesi": "kaçınması",
+        "mis.ti": "kaçınmıştı"
+      },
+      "frequenzRang": 16629,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.azaltmak",
+      "lemma": "azaltmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "azalt",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "azalt",
+        "iyor.3sg": "azaltıyor",
+        "imp.2pl": "azaltın",
+        "aor.3sg": "azaltır",
+        "iyor.neg.3sg": "azaltmıyor",
+        "aor.1sg": "azaltırım",
+        "aor.neg.3sg": "azaltmaz",
+        "aor.neg.1sg": "azaltmam",
+        "di.1sg": "azalttım",
+        "di.2sg": "azalttın",
+        "di.3sg": "azalttı",
+        "di.1pl": "azalttık",
+        "di.2pl": "azalttınız",
+        "di.neg.3sg": "azaltmadı",
+        "mis.3sg": "azaltmış",
+        "ecek.3sg": "azaltacak",
+        "ecek.1sg": "azaltacağım",
+        "ecek.1pl": "azaltacağız",
+        "ebil.3sg": "azaltabilir",
+        "eme.3sg": "azaltamaz",
+        "meli.3sg": "azaltmalı",
+        "opt.1sg": "azaltayım",
+        "opt.1pl": "azaltalım",
+        "imp3.3sg": "azaltsın",
+        "iyordu.3sg": "azaltıyordu",
+        "mek.akk": "azaltmayı",
+        "part.en": "azaltan",
+        "part.dik.3": "azalttığı",
+        "part.dik.1sg": "azalttığım",
+        "part.ecek.3": "azaltacağı",
+        "konv.ip": "azaltıp",
+        "konv.ince": "azaltınca",
+        "konv.erek": "azaltarak",
+        "konv.meden": "azaltmadan",
+        "kond.3sg": "azaltsa",
+        "nom.mesi": "azaltması",
+        "mis.ti": "azaltmıştı"
+      },
+      "frequenzRang": 8406,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.artirmak",
+      "lemma": "artırmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "artır",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "artır",
+        "iyor.3sg": "artırıyor",
+        "imp.2pl": "artırın",
+        "aor.3sg": "artırır",
+        "iyor.neg.3sg": "artırmıyor",
+        "aor.1sg": "artırırım",
+        "aor.neg.3sg": "artırmaz",
+        "aor.neg.1sg": "artırmam",
+        "di.1sg": "artırdım",
+        "di.2sg": "artırdın",
+        "di.3sg": "artırdı",
+        "di.1pl": "artırdık",
+        "di.2pl": "artırdınız",
+        "di.neg.3sg": "artırmadı",
+        "mis.3sg": "artırmış",
+        "ecek.3sg": "artıracak",
+        "ecek.1sg": "artıracağım",
+        "ecek.1pl": "artıracağız",
+        "ebil.3sg": "artırabilir",
+        "eme.3sg": "artıramaz",
+        "meli.3sg": "artırmalı",
+        "opt.1sg": "artırayım",
+        "opt.1pl": "artıralım",
+        "imp3.3sg": "artırsın",
+        "iyordu.3sg": "artırıyordu",
+        "mek.akk": "artırmayı",
+        "part.en": "artıran",
+        "part.dik.3": "artırdığı",
+        "part.dik.1sg": "artırdığım",
+        "part.ecek.3": "artıracağı",
+        "konv.ip": "artırıp",
+        "konv.ince": "artırınca",
+        "konv.erek": "artırarak",
+        "konv.meden": "artırmadan",
+        "kond.3sg": "artırsa",
+        "nom.mesi": "artırması",
+        "mis.ti": "artırmıştı"
+      },
+      "frequenzRang": 8732,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.artmak",
+      "lemma": "artmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "art",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "art",
+        "iyor.3sg": "artıyor",
+        "imp.2pl": "artın",
+        "aor.3sg": "artar",
+        "iyor.neg.3sg": "artmıyor",
+        "aor.1sg": "artarım",
+        "aor.neg.3sg": "artmaz",
+        "aor.neg.1sg": "artmam",
+        "di.1sg": "arttım",
+        "di.2sg": "arttın",
+        "di.3sg": "arttı",
+        "di.1pl": "arttık",
+        "di.2pl": "arttınız",
+        "di.neg.3sg": "artmadı",
+        "mis.3sg": "artmış",
+        "ecek.3sg": "artacak",
+        "ecek.1sg": "artacağım",
+        "ecek.1pl": "artacağız",
+        "ebil.3sg": "artabilir",
+        "eme.3sg": "artamaz",
+        "meli.3sg": "artmalı",
+        "opt.1sg": "artayım",
+        "opt.1pl": "artalım",
+        "imp3.3sg": "artsın",
+        "iyordu.3sg": "artıyordu",
+        "mek.akk": "artmayı",
+        "part.en": "artan",
+        "part.dik.3": "arttığı",
+        "part.dik.1sg": "arttığım",
+        "part.ecek.3": "artacağı",
+        "konv.ip": "artıp",
+        "konv.ince": "artınca",
+        "konv.erek": "artarak",
+        "konv.meden": "artmadan",
+        "kond.3sg": "artsa",
+        "nom.mesi": "artması",
+        "mis.ti": "artmıştı"
+      },
+      "frequenzRang": 4357,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.azalmak",
+      "lemma": "azalmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "azal",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "azal",
+        "iyor.3sg": "azalıyor",
+        "imp.2pl": "azalın",
+        "aor.3sg": "azalır",
+        "iyor.neg.3sg": "azalmıyor",
+        "aor.1sg": "azalırım",
+        "aor.neg.3sg": "azalmaz",
+        "aor.neg.1sg": "azalmam",
+        "di.1sg": "azaldım",
+        "di.2sg": "azaldın",
+        "di.3sg": "azaldı",
+        "di.1pl": "azaldık",
+        "di.2pl": "azaldınız",
+        "di.neg.3sg": "azalmadı",
+        "mis.3sg": "azalmış",
+        "ecek.3sg": "azalacak",
+        "ecek.1sg": "azalacağım",
+        "ecek.1pl": "azalacağız",
+        "ebil.3sg": "azalabilir",
+        "eme.3sg": "azalamaz",
+        "meli.3sg": "azalmalı",
+        "opt.1sg": "azalayım",
+        "opt.1pl": "azalalım",
+        "imp3.3sg": "azalsın",
+        "iyordu.3sg": "azalıyordu",
+        "mek.akk": "azalmayı",
+        "part.en": "azalan",
+        "part.dik.3": "azaldığı",
+        "part.dik.1sg": "azaldığım",
+        "part.ecek.3": "azalacağı",
+        "konv.ip": "azalıp",
+        "konv.ince": "azalınca",
+        "konv.erek": "azalarak",
+        "konv.meden": "azalmadan",
+        "kond.3sg": "azalsa",
+        "nom.mesi": "azalması",
+        "mis.ti": "azalmıştı"
+      },
+      "frequenzRang": 12014,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.alismak",
+      "lemma": "alışmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "alış",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "alış",
+        "iyor.3sg": "alışıyor",
+        "imp.2pl": "alışın",
+        "aor.3sg": "alışır",
+        "iyor.neg.3sg": "alışmıyor",
+        "aor.1sg": "alışırım",
+        "aor.neg.3sg": "alışmaz",
+        "aor.neg.1sg": "alışmam",
+        "di.1sg": "alıştım",
+        "di.2sg": "alıştın",
+        "di.3sg": "alıştı",
+        "di.1pl": "alıştık",
+        "di.2pl": "alıştınız",
+        "di.neg.3sg": "alışmadı",
+        "mis.3sg": "alışmış",
+        "ecek.3sg": "alışacak",
+        "ecek.1sg": "alışacağım",
+        "ecek.1pl": "alışacağız",
+        "ebil.3sg": "alışabilir",
+        "eme.3sg": "alışamaz",
+        "meli.3sg": "alışmalı",
+        "opt.1sg": "alışayım",
+        "opt.1pl": "alışalım",
+        "imp3.3sg": "alışsın",
+        "iyordu.3sg": "alışıyordu",
+        "mek.akk": "alışmayı",
+        "part.en": "alışan",
+        "part.dik.3": "alıştığı",
+        "part.dik.1sg": "alıştığım",
+        "part.ecek.3": "alışacağı",
+        "konv.ip": "alışıp",
+        "konv.ince": "alışınca",
+        "konv.erek": "alışarak",
+        "konv.meden": "alışmadan",
+        "kond.3sg": "alışsa",
+        "nom.mesi": "alışması",
+        "mis.ti": "alışmıştı"
+      },
+      "frequenzRang": 25364,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.tuketmek",
+      "lemma": "tüketmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "tüket",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "tüket",
+        "iyor.3sg": "tüketiyor",
+        "imp.2pl": "tüketin",
+        "aor.3sg": "tüketir",
+        "iyor.neg.3sg": "tüketmiyor",
+        "aor.1sg": "tüketirim",
+        "aor.neg.3sg": "tüketmez",
+        "aor.neg.1sg": "tüketmem",
+        "di.1sg": "tükettim",
+        "di.2sg": "tükettin",
+        "di.3sg": "tüketti",
+        "di.1pl": "tükettik",
+        "di.2pl": "tükettiniz",
+        "di.neg.3sg": "tüketmedi",
+        "mis.3sg": "tüketmiş",
+        "ecek.3sg": "tüketecek",
+        "ecek.1sg": "tüketeceğim",
+        "ecek.1pl": "tüketeceğiz",
+        "ebil.3sg": "tüketebilir",
+        "eme.3sg": "tüketemez",
+        "meli.3sg": "tüketmeli",
+        "opt.1sg": "tüketeyim",
+        "opt.1pl": "tüketelim",
+        "imp3.3sg": "tüketsin",
+        "iyordu.3sg": "tüketiyordu",
+        "mek.akk": "tüketmeyi",
+        "part.en": "tüketen",
+        "part.dik.3": "tükettiği",
+        "part.dik.1sg": "tükettiğim",
+        "part.ecek.3": "tüketeceği",
+        "konv.ip": "tüketip",
+        "konv.ince": "tüketince",
+        "konv.erek": "tüketerek",
+        "konv.meden": "tüketmeden",
+        "kond.3sg": "tüketse",
+        "nom.mesi": "tüketmesi",
+        "mis.ti": "tüketmişti"
+      },
+      "frequenzRang": 41442,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.guclendirmek",
+      "lemma": "güçlendirmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "güçlendir",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "güçlendir",
+        "iyor.3sg": "güçlendiriyor",
+        "imp.2pl": "güçlendirin",
+        "aor.3sg": "güçlendirir",
+        "iyor.neg.3sg": "güçlendirmiyor",
+        "aor.1sg": "güçlendiririm",
+        "aor.neg.3sg": "güçlendirmez",
+        "aor.neg.1sg": "güçlendirmem",
+        "di.1sg": "güçlendirdim",
+        "di.2sg": "güçlendirdin",
+        "di.3sg": "güçlendirdi",
+        "di.1pl": "güçlendirdik",
+        "di.2pl": "güçlendirdiniz",
+        "di.neg.3sg": "güçlendirmedi",
+        "mis.3sg": "güçlendirmiş",
+        "ecek.3sg": "güçlendirecek",
+        "ecek.1sg": "güçlendireceğim",
+        "ecek.1pl": "güçlendireceğiz",
+        "ebil.3sg": "güçlendirebilir",
+        "eme.3sg": "güçlendiremez",
+        "meli.3sg": "güçlendirmeli",
+        "opt.1sg": "güçlendireyim",
+        "opt.1pl": "güçlendirelim",
+        "imp3.3sg": "güçlendirsin",
+        "iyordu.3sg": "güçlendiriyordu",
+        "mek.akk": "güçlendirmeyi",
+        "part.en": "güçlendiren",
+        "part.dik.3": "güçlendirdiği",
+        "part.dik.1sg": "güçlendirdiğim",
+        "part.ecek.3": "güçlendireceği",
+        "konv.ip": "güçlendirip",
+        "konv.ince": "güçlendirince",
+        "konv.erek": "güçlendirerek",
+        "konv.meden": "güçlendirmeden",
+        "kond.3sg": "güçlendirse",
+        "nom.mesi": "güçlendirmesi",
+        "mis.ti": "güçlendirmişti"
+      },
+      "frequenzRang": 14733,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.cignemek",
+      "lemma": "çiğnemek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "çiğne",
+        "harmonie": "e/i",
+        "stammwechsel": "çiğne → çiğni- vor -yor"
+      },
+      "formen": {
+        "stamm": "çiğne",
+        "iyor.3sg": "çiğniyor",
+        "imp.2pl": "çiğneyin",
+        "aor.3sg": "çiğner",
+        "iyor.neg.3sg": "çiğnemiyor",
+        "aor.1sg": "çiğnerim",
+        "aor.neg.3sg": "çiğnemez",
+        "aor.neg.1sg": "çiğnemem",
+        "di.1sg": "çiğnedim",
+        "di.2sg": "çiğnedin",
+        "di.3sg": "çiğnedi",
+        "di.1pl": "çiğnedik",
+        "di.2pl": "çiğnediniz",
+        "di.neg.3sg": "çiğnemedi",
+        "mis.3sg": "çiğnemiş",
+        "ecek.3sg": "çiğneyecek",
+        "ecek.1sg": "çiğneyeceğim",
+        "ecek.1pl": "çiğneyeceğiz",
+        "ebil.3sg": "çiğneyebilir",
+        "eme.3sg": "çiğneyemez",
+        "meli.3sg": "çiğnemeli",
+        "opt.1sg": "çiğneyeyim",
+        "opt.1pl": "çiğneyelim",
+        "imp3.3sg": "çiğnesin",
+        "iyordu.3sg": "çiğniyordu",
+        "mek.akk": "çiğnemeyi",
+        "part.en": "çiğneyen",
+        "part.dik.3": "çiğnediği",
+        "part.dik.1sg": "çiğnediğim",
+        "part.ecek.3": "çiğneyeceği",
+        "konv.ip": "çiğneyip",
+        "konv.ince": "çiğneyince",
+        "konv.erek": "çiğneyerek",
+        "konv.meden": "çiğnemeden",
+        "kond.3sg": "çiğnese",
+        "nom.mesi": "çiğnemesi",
+        "mis.ti": "çiğnemişti"
+      },
+      "frequenzRang": 48236,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.terlemek",
+      "lemma": "terlemek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "terle",
+        "harmonie": "e/i",
+        "stammwechsel": "terle → terli- vor -yor"
+      },
+      "formen": {
+        "stamm": "terle",
+        "iyor.3sg": "terliyor",
+        "imp.2pl": "terleyin",
+        "aor.3sg": "terler",
+        "iyor.neg.3sg": "terlemiyor",
+        "aor.1sg": "terlerim",
+        "aor.neg.3sg": "terlemez",
+        "aor.neg.1sg": "terlemem",
+        "di.1sg": "terledim",
+        "di.2sg": "terledin",
+        "di.3sg": "terledi",
+        "di.1pl": "terledik",
+        "di.2pl": "terlediniz",
+        "di.neg.3sg": "terlemedi",
+        "mis.3sg": "terlemiş",
+        "ecek.3sg": "terleyecek",
+        "ecek.1sg": "terleyeceğim",
+        "ecek.1pl": "terleyeceğiz",
+        "ebil.3sg": "terleyebilir",
+        "eme.3sg": "terleyemez",
+        "meli.3sg": "terlemeli",
+        "opt.1sg": "terleyeyim",
+        "opt.1pl": "terleyelim",
+        "imp3.3sg": "terlesin",
+        "iyordu.3sg": "terliyordu",
+        "mek.akk": "terlemeyi",
+        "part.en": "terleyen",
+        "part.dik.3": "terlediği",
+        "part.dik.1sg": "terlediğim",
+        "part.ecek.3": "terleyeceği",
+        "konv.ip": "terleyip",
+        "konv.ince": "terleyince",
+        "konv.erek": "terleyerek",
+        "konv.meden": "terlemeden",
+        "kond.3sg": "terlese",
+        "nom.mesi": "terlemesi",
+        "mis.ti": "terlemişti"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.abartmak",
+      "lemma": "abartmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "abart",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "abart",
+        "iyor.3sg": "abartıyor",
+        "imp.2pl": "abartın",
+        "aor.3sg": "abartır",
+        "iyor.neg.3sg": "abartmıyor",
+        "aor.1sg": "abartırım",
+        "aor.neg.3sg": "abartmaz",
+        "aor.neg.1sg": "abartmam",
+        "di.1sg": "abarttım",
+        "di.2sg": "abarttın",
+        "di.3sg": "abarttı",
+        "di.1pl": "abarttık",
+        "di.2pl": "abarttınız",
+        "di.neg.3sg": "abartmadı",
+        "mis.3sg": "abartmış",
+        "ecek.3sg": "abartacak",
+        "ecek.1sg": "abartacağım",
+        "ecek.1pl": "abartacağız",
+        "ebil.3sg": "abartabilir",
+        "eme.3sg": "abartamaz",
+        "meli.3sg": "abartmalı",
+        "opt.1sg": "abartayım",
+        "opt.1pl": "abartalım",
+        "imp3.3sg": "abartsın",
+        "iyordu.3sg": "abartıyordu",
+        "mek.akk": "abartmayı",
+        "part.en": "abartan",
+        "part.dik.3": "abarttığı",
+        "part.dik.1sg": "abarttığım",
+        "part.ecek.3": "abartacağı",
+        "konv.ip": "abartıp",
+        "konv.ince": "abartınca",
+        "konv.erek": "abartarak",
+        "konv.meden": "abartmadan",
+        "kond.3sg": "abartsa",
+        "nom.mesi": "abartması",
+        "mis.ti": "abartmıştı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.bulasmak",
+      "lemma": "bulaşmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "bulaş",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "bulaş",
+        "iyor.3sg": "bulaşıyor",
+        "imp.2pl": "bulaşın",
+        "aor.3sg": "bulaşır",
+        "iyor.neg.3sg": "bulaşmıyor",
+        "aor.1sg": "bulaşırım",
+        "aor.neg.3sg": "bulaşmaz",
+        "aor.neg.1sg": "bulaşmam",
+        "di.1sg": "bulaştım",
+        "di.2sg": "bulaştın",
+        "di.3sg": "bulaştı",
+        "di.1pl": "bulaştık",
+        "di.2pl": "bulaştınız",
+        "di.neg.3sg": "bulaşmadı",
+        "mis.3sg": "bulaşmış",
+        "ecek.3sg": "bulaşacak",
+        "ecek.1sg": "bulaşacağım",
+        "ecek.1pl": "bulaşacağız",
+        "ebil.3sg": "bulaşabilir",
+        "eme.3sg": "bulaşamaz",
+        "meli.3sg": "bulaşmalı",
+        "opt.1sg": "bulaşayım",
+        "opt.1pl": "bulaşalım",
+        "imp3.3sg": "bulaşsın",
+        "iyordu.3sg": "bulaşıyordu",
+        "mek.akk": "bulaşmayı",
+        "part.en": "bulaşan",
+        "part.dik.3": "bulaştığı",
+        "part.dik.1sg": "bulaştığım",
+        "part.ecek.3": "bulaşacağı",
+        "konv.ip": "bulaşıp",
+        "konv.ince": "bulaşınca",
+        "konv.erek": "bulaşarak",
+        "konv.meden": "bulaşmadan",
+        "kond.3sg": "bulaşsa",
+        "nom.mesi": "bulaşması",
+        "mis.ti": "bulaşmıştı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.etkili",
+      "lemma": "etkili",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 1312,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.fiziksel",
+      "lemma": "fiziksel",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 1381,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.psikolojik",
+      "lemma": "psikolojik",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 2471,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.yaygin",
+      "lemma": "yaygın",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 1956,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.dengeli",
+      "lemma": "dengeli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 14119,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.asiri",
+      "lemma": "aşırı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 947,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.taze",
+      "lemma": "taze",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 2852,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.organik",
+      "lemma": "organik",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 3561,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.hareketsiz",
+      "lemma": "hareketsiz",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 11397,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.hareketli",
+      "lemma": "hareketli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 4898,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.yagsiz",
+      "lemma": "yağsız",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 35044,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.tuzsuz",
+      "lemma": "tuzsuz",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "frequenzRang": 48926,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.zararli",
+      "lemma": "zararlı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 5808,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.yararli",
+      "lemma": "yararlı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 6224,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.lifli",
+      "lemma": "lifli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 46415,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.tibbi",
+      "lemma": "tıbbi",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 2084,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.bulasici",
+      "lemma": "bulaşıcı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 11340,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.sagliksiz",
+      "lemma": "sağlıksız",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 29748,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.doyurucu",
+      "lemma": "doyurucu",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.besleyici",
+      "lemma": "besleyici",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 30535,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.islenmis",
+      "lemma": "işlenmiş",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 10104,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.farkinda",
+      "lemma": "farkında",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 1442,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.hele",
+      "lemma": "hele",
+      "wortart": "adverb",
+      "frequenzRang": 1929,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.yeterince",
+      "lemma": "yeterince",
+      "wortart": "adverb",
+      "frequenzRang": 2206,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.fazlasiyla",
+      "lemma": "fazlasıyla",
+      "wortart": "adverb",
+      "frequenzRang": 2823,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.siklikla",
+      "lemma": "sıklıkla",
+      "wortart": "adverb",
+      "frequenzRang": 3859,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.cogunlukla",
+      "lemma": "çoğunlukla",
+      "wortart": "adverb",
+      "frequenzRang": 2935,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.normalde",
+      "lemma": "normalde",
+      "wortart": "adverb",
+      "frequenzRang": 3345,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.bakimindan",
+      "lemma": "bakımından",
+      "wortart": "postposition",
+      "merkmale": {
+        "kasus": "nach Nomen (vitamin bakımından, sağlık bakımından)"
+      },
+      "frequenzRang": 2558,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.hal",
+      "lemma": "hâl",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "harmonie_ausnahme": "helle Endungen (hâli, hâlde, hâline)",
+        "gebrauch": "Zustand; bu hâlde, ne hâlde"
+      },
+      "formen": {
+        "pl": "hâller",
+        "akk/poss.3sg": "hâli",
+        "dat": "hâle",
+        "lok": "hâlde",
+        "abl": "hâlden",
+        "poss.3sg.dat": "hâline",
+        "poss.3sg.lok": "hâlinde",
+        "poss.2pl": "hâliniz"
+      },
+      "frequenzRang": 2690,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.duzen",
+      "lemma": "düzen",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk/poss.3sg": "düzeni",
+        "dat": "düzene",
+        "gen/poss.2sg": "düzenin",
+        "poss.1sg": "düzenim",
+        "poss.1pl": "düzenimiz",
+        "poss.2pl": "düzeniniz",
+        "lok": "düzende",
+        "abl": "düzenden",
+        "poss.3pl": "düzenleri"
+      },
+      "frequenzRang": 3602,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.zorunluluk",
+      "lemma": "zorunluluk",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u",
+        "erweichung": "zorunluluk → zorunluluğ-"
+      },
+      "formen": {
+        "pl": "zorunluluklar",
+        "akk/poss.3sg": "zorunluluğu",
+        "dat": "zorunluluğa",
+        "gen/poss.2sg": "zorunluluğun",
+        "ins": "zorunlulukla",
+        "poss.1sg": "zorunluluğum",
+        "poss.1pl": "zorunluluğumuz",
+        "poss.2pl": "zorunluluğunuz",
+        "lok": "zorunlulukta",
+        "abl": "zorunluluktan",
+        "poss.3pl": "zorunlulukları"
+      },
+      "frequenzRang": 28811,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.ogun",
+      "lemma": "öğün",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "pl": "öğünler",
+        "akk/poss.3sg": "öğünü",
+        "dat": "öğüne",
+        "gen/poss.2sg": "öğünün",
+        "ins": "öğünle",
+        "poss.1sg": "öğünüm",
+        "poss.1pl": "öğünümüz",
+        "poss.2pl": "öğününüz",
+        "lok": "öğünde",
+        "abl": "öğünden",
+        "poss.3pl": "öğünleri"
+      },
+      "frequenzRang": 18111,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "tr.b1.e05.s0001",
+      "text": "Dengeli beslenme sağlık için çok önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0002",
+      "text": "Dengeli beslenmek için her gün sebze ve meyve yemeliyiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0003",
+      "text": "Günde üç ana öğün yiyoruz: kahvaltı, öğle yemeği ve akşam yemeği.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0004",
+      "text": "Kahvaltı, günün en önemli öğünü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0005",
+      "text": "Ara öğünde bir elma ve birkaç ceviz yiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0006",
+      "text": "Elif okulda ara öğün olarak bir muz yiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0007",
+      "text": "Öğünler arasında çok uzun süre aç kalmamalısın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0008",
+      "text": "Sağlıklı yiyecekler ve içecekler seçmeliyiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0009",
+      "text": "En sağlıklı içecek su.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0010",
+      "text": "Şekerli içecekler sağlıksız; onların yerine su iç.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0011",
+      "text": "Taze sebzeler hem daha lezzetli hem de daha besleyici.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0012",
+      "text": "Pazardan taze ve organik sebze alıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0013",
+      "text": "Organik ürünler genellikle biraz daha pahalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0014",
+      "text": "İşlenmiş gıdalarda çoğunlukla çok tuz ve şeker var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0015",
+      "text": "Hazır çorbalar da işlenmiş gıda.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0016",
+      "text": "Market alışverişinde gıdaların etiketlerini okumalısın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0017",
+      "text": "Bu besinlerde bol vitamin var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0018",
+      "text": "Her besin grubundan biraz yemeliyiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0019",
+      "text": "Süt, yoğurt ve peynir önemli besinler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0020",
+      "text": "Porsiyonlar çok büyük olmamalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0021",
+      "text": "Küçük bir porsiyon pilav, lütfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0022",
+      "text": "Bir porsiyon makarna bana yeter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0023",
+      "text": "Akşam yemeğinde tatlıdan sadece küçük bir porsiyon yiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0024",
+      "text": "Şeker miktarına dikkat etmeliyiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0025",
+      "text": "Bu tarifte tuz miktarı çok az.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0026",
+      "text": "Bu çorba tuzsuz, ama çok lezzetli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0027",
+      "text": "Dedem doktorun tavsiyesiyle tuzsuz peynir yiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0028",
+      "text": "Yağsız yoğurt mu, tam yağlı yoğurt mu istiyorsun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0029",
+      "text": "Ben kahvaltıda yağsız süt içiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0030",
+      "text": "Yağsız olsun, lütfen; tam yağlı yoğurt bana ağır geliyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0031",
+      "text": "Teşekkürler, sadece su içiyorum; şekerli içecek istemiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0032",
+      "text": "Aşırı yağlı yemeklerden sonra midem ağrıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0033",
+      "text": "Çikolata, kurabiye ve gazlı içecekler gibi şeylere “abur cubur” diyoruz.",
+      "tokens": ["Çikolata", "kurabiye", "ve", "gazlı", "içecekler", "gibi", "şeylere", "abur cubur", "diyoruz"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0034",
+      "text": "Abur cubur yerine bir meyve ye!",
+      "tokens": ["Abur cubur", "yerine", "bir", "meyve", "ye"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0035",
+      "text": "Elif'e göre abur cubur çok lezzetli, ama sağlıksız.",
+      "tokens": ["Elif'e", "göre", "abur cubur", "çok", "lezzetli", "ama", "sağlıksız"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0036",
+      "text": "Evde abur cubur yok, çünkü annem hiç almıyor.",
+      "tokens": ["Evde", "abur cubur", "yok", "çünkü", "annem", "hiç", "almıyor"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0037",
+      "text": "Mercimek çorbası hem besleyici hem de doyurucu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0038",
+      "text": "Doyurucu bir kahvaltı öğlene kadar yeter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0039",
+      "text": "Sebze ve meyvede bol lif var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0040",
+      "text": "Lifli yiyecekler bizi uzun süre tok tutar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0041",
+      "text": "Esmer ekmek beyaz ekmekten daha lifli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0042",
+      "text": "Balıkçıdan taze balık aldık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0043",
+      "text": "Manavdaki domatesler bugün çok taze.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0044",
+      "text": "Bu yoğurt çok yağlı; yağsız olanı var mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0045",
+      "text": "Tuzluğu masadan kaldırdık, yemekler artık daha az tuzlu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0046",
+      "text": "Sağlıksız beslenme yorgunluk yapar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0047",
+      "text": "Beslenme çantamda peynirli ekmek, salatalık ve bir elma var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0048",
+      "text": "Gıda maddelerini buzdolabında saklıyoruz.",
+      "quelle": "tatoeba:2411114",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2411114 von brauchinet"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0049",
+      "text": "Taze ekmek aldım.",
+      "quelle": "tatoeba:2080557",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2080557 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0050",
+      "text": "İçecek bir şey ister misiniz?",
+      "quelle": "tatoeba:1212026",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1212026 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0051",
+      "text": "Tuzluğu verir misin? Patatesler biraz tuzsuz.",
+      "quelle": "tatoeba:5750484",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5750484 von ruth_tatoeba"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0052",
+      "text": "Normalde okula yürüyerek gidiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0053",
+      "text": "Annem çoğunlukla işe bisiklete binerek gidiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0054",
+      "text": "Merdivenleri kullanarak bacak kaslarımızı güçlendiriyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0055",
+      "text": "Nasıl geldin? – Koşarak! Biraz terledim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0056",
+      "text": "Düzenli egzersiz yapmalıyız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0057",
+      "text": "Her sabah on dakika egzersiz yapıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0058",
+      "text": "Bu egzersiz sırt kaslarını güçlendirir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0059",
+      "text": "Egzersiz yaparak kaslarımızı güçlendiriyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0060",
+      "text": "Yüzmek bütün kasları çalıştırır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0061",
+      "text": "Kaslarım ağrıyor, çünkü dün çok egzersiz yaptım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0062",
+      "text": "Hızlı yürüyüşte biraz terliyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0063",
+      "text": "Yazın bisiklet sürerek çok terliyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0064",
+      "text": "Çok terledim, hemen duş almalıyım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0065",
+      "text": "Fiziksel aktivite her yaşta önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0066",
+      "text": "Çocuklar her gün en az bir saat fiziksel olarak aktif olmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0067",
+      "text": "Hareketsiz bir hayat sağlığa zararlı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0068",
+      "text": "Bütün gün oturmak, yani hareketsiz kalmak, sırtımızı ağrıtır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0069",
+      "text": "Can çok hareketli bir çocuk, hiç yerinde durmuyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0070",
+      "text": "Hareketli oyunlar çocuklar için çok faydalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0071",
+      "text": "Sporun sağlığa birçok faydası var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0072",
+      "text": "Yürüyüşün en büyük faydası ne?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0073",
+      "text": "En etkili egzersiz hangisi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0074",
+      "text": "Merdiven çıkmak çok etkili bir egzersiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0075",
+      "text": "Erken kalkmaya alıştım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0076",
+      "text": "İlk günler zor, ama zamanla alışıyorsun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0077",
+      "text": "Çoğunlukla akşamları yürüyüş yapıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0078",
+      "text": "Yeterince hareket ediyor musun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0079",
+      "text": "Sporu abartmamalısın; vücudun dinlenmeye de ihtiyacı var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0080",
+      "text": "İlk gün sporu abarttım, ertesi gün her yerim ağrıyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0081",
+      "text": "Dedem her sabah parkta yürüyerek kaslarını çalıştırıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0082",
+      "text": "Babaannem bahçede çalışarak fiziksel olarak aktif kalıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0083",
+      "text": "Arabayla değil, yürüyerek alışverişe gidiyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0084",
+      "text": "Spor salonuna gitmek şart değil; evde de egzersiz yapabilirsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0085",
+      "text": "Haftada üç kez yüzerek formda kalıyorum; bu, sırtıma çok faydalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0086",
+      "text": "Jan çoğunlukla futbol oynayarak hareket ediyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0087",
+      "text": "Ölçülü egzersiz sağlığınız için iyidir.",
+      "quelle": "tatoeba:1805034",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1805034 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0088",
+      "text": "Daha fazla egzersiz yapmaya çalışmalısınız.",
+      "quelle": "tatoeba:11779674",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11779674 von enebi"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0089",
+      "text": "Buna alıştım.",
+      "quelle": "tatoeba:6176622",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6176622 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0090",
+      "text": "Günlük hayatta daha çok hareket: beş alışkanlık",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0091",
+      "text": "Çoğumuz günde saatlerce oturuyoruz: okulda, işte ve evde. Hareketsiz bir hayat kaslarımızı zayıflatır. Ama küçük alışkanlıklarla çok şey değişebilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0092",
+      "text": "Birinci alışkanlık: Kısa yolları yürüyerek ya da bisiklete binerek gidin. Arabayı evde bırakın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0093",
+      "text": "İkinci alışkanlık: Asansör yerine merdivenleri kullanın. Merdiven çıkmak bacak kaslarını güçlendirir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0094",
+      "text": "Üçüncü alışkanlık: Uzun süre oturmayın. Her saat ayağa kalkın ve biraz yürüyün.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0095",
+      "text": "Dördüncü alışkanlık: Telefonla ayakta konuşun. Bu şekilde gün içinde daha çok hareket edersiniz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0096",
+      "text": "Beşinci alışkanlık: Akşam yemeğinden sonra ailenizle kısa bir yürüyüş yapın. Bu hem mideye hem de uykuya iyi gelir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0097",
+      "text": "Sporu abartmayın: Başlangıç için günde otuz dakika yeterli. Önemli olan, hareketi bir alışkanlık hâline getirmek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0098",
+      "text": "Metne göre merdiven çıkmak bacak kaslarını güçlendirir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0099",
+      "text": "Metne göre her gün iki saat spor yapmak gerekli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0100",
+      "text": "Metne göre spor salonları çok pahalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0101",
+      "text": "Kısa yollara nasıl gitmeliyiz?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0102",
+      "text": "Yürüyerek ya da bisiklete binerek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0103",
+      "text": "Arabayla ya da otobüsle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0104",
+      "text": "Akşam yemeğinden sonra ne yapmalıyız?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0105",
+      "text": "Ailemizle kısa bir yürüyüş yapmalıyız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0106",
+      "text": "Hemen yatağa gitmeliyiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0107",
+      "text": "Normalde saat dokuzda yatıp yedide kalkıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0108",
+      "text": "Akşam düzenim hep aynı: dişlerimi fırçalayıp yatağa gidiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0109",
+      "text": "Can çoğunlukla eve gelip hemen ödevini yapıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0110",
+      "text": "Elif sıklıkla biraz kitap okuyup ışığı kapatıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0111",
+      "text": "Sabah kalkıp önce taze bir portakal suyu içiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0112",
+      "text": "Uykusuzlukta dikkat ve hafıza zayıflar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0113",
+      "text": "Uykusuz bir geceden sonra zihnim yorgun, dikkatimi toplayamıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0114",
+      "text": "Yeterince uyumak hafıza için çok önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0115",
+      "text": "Uykuda beynimiz gün içindeki bilgileri düzenliyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0116",
+      "text": "Hafızam çok iyi değil, her şeyi bir deftere yazıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0117",
+      "text": "Stres uyku düzenini bozuyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0118",
+      "text": "Sınav haftasında stres artıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0119",
+      "text": "Yürüyüşten sonra stresim azalıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0120",
+      "text": "Derin bir nefes alıp yavaşça veriyoruz; bu şekilde stres azalıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0121",
+      "text": "Stres psikolojik bir yük, ama vücuda da zarar verir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0122",
+      "text": "Psikolojik sağlık da fiziksel sağlık kadar önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0123",
+      "text": "Zihnimiz de dinlenmeye ihtiyaç duyar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0124",
+      "text": "Akşamları ekrana çok bakmak zihni uyanık tutar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0125",
+      "text": "Kitap okumak zihni sakinleştirir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0126",
+      "text": "Her gün aynı saatte yatmak, iyi bir uyku düzeni için önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0127",
+      "text": "Okul yeniden başlıyor; yeni düzene alışmalıyız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0128",
+      "text": "Sıklıkla gece uyanıyor musun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0129",
+      "text": "Babam sıklıkla geç saatte yatıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0130",
+      "text": "Normalde sekiz saat uyuyorum, ama bu hafta sadece altı saat uyudum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0131",
+      "text": "Bu hâlde ders çalışamazsın; önce biraz dinlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0132",
+      "text": "Can yorgun bir hâlde eve geldi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0133",
+      "text": "Uykusuzluğunun farkında mısın?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0134",
+      "text": "Birçok insan stresinin farkında değil.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0135",
+      "text": "Sınavdan önce stres normal, ama çok artmamalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0136",
+      "text": "Hafta sonu geç yatıp geç kalkıyoruz; bu, düzenimizi bozuyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0137",
+      "text": "Mükemmel bir hafızan var.",
+      "quelle": "tatoeba:4042028",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4042028 von vvv123"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0138",
+      "text": "Rim, sen normalde kaç saat uyuyorsun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0139",
+      "text": "Çoğunlukla dokuz saat. Ya sen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0140",
+      "text": "Ben yeterince uyumuyorum, sadece yedi saat; sabahları çok yorgunum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0141",
+      "text": "Neden bu kadar az uyuyorsun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0142",
+      "text": "Sıklıkla telefonuma bakıp geç yatıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0143",
+      "text": "Ben telefonumu saat sekizde kapatıp mutfakta bırakıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0144",
+      "text": "Gerçekten mi? Peki, uykuya nasıl dalıyorsun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0145",
+      "text": "Biraz kitap okuyarak. Bazen de annem bana ıhlamur yapıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0146",
+      "text": "Benim zihnim akşamları hiç durmuyor; hep okulu düşünüyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0147",
+      "text": "Ben stresli akşamlarda düşüncelerimi bir deftere yazıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0148",
+      "text": "İyi fikir! Bu akşam ben de deneyeceğim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0149",
+      "text": "Bir de odanı serin ve karanlık tut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0150",
+      "text": "Tamam, yarın sana anlatırım!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0151",
+      "text": "Sağlık sigortanızdan bilgi: Sağlıklı bir uyku için",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0152",
+      "text": "Çocuklar ve gençler her gece dokuz ila on bir saat uyumalı. Büyükler için yedi ila dokuz saat yeterli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0153",
+      "text": "Uykusuzluk dikkati ve hafızayı zayıflatır. Uykusuzlukta bağışıklık sistemi de zayıflar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0154",
+      "text": "Her gün aynı saatte yatıp aynı saatte kalkın. Hafta sonu da bu düzeni çok değiştirmeyin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0155",
+      "text": "Yatak odanız serin, sessiz ve karanlık olmalı. Akşamları ağır ve yağlı yemeklerden kaçının.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0156",
+      "text": "Akşam saat sekizden sonra telefonu, tableti ve televizyonu kapatın. Ekran ışığı zihni uyanık tutar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0157",
+      "text": "Stresli günlerde kısa bir akşam yürüyüşü ya da sıcak bir duş iyi gelir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0158",
+      "text": "Uykusuzluk uzun sürüyor mu? O zaman doktorunuzla konuşun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0159",
+      "text": "Bilgi notuna göre gençler her gece dokuz ila on bir saat uyumalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0160",
+      "text": "Bilgi notuna göre hafta sonu çok geç yatmak sorun değil.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0161",
+      "text": "Sigorta, uyku sorunları için ücretsiz bir kurs veriyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0162",
+      "text": "Yatak odası nasıl olmalı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0163",
+      "text": "Serin, sessiz ve karanlık olmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0164",
+      "text": "Sıcak ve aydınlık olmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0165",
+      "text": "Uyku sorunları uzun süren biri ne yapmalı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0166",
+      "text": "Doktoruyla konuşmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0167",
+      "text": "Akşamları daha çok kahve içmeli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0168",
+      "text": "Hijyen için ellerimizi yıkamadan yemek yemiyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0169",
+      "text": "Dışarıdan gelip hemen ellerimizi yıkıyoruz, çünkü ellerde çok mikrop var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0170",
+      "text": "Ellerimizde gözle görmediğimiz birçok mikrop var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0171",
+      "text": "Mikroplar çoğunlukla ellerle bulaşır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0172",
+      "text": "Grip bir virüs hastalığı ve çok kolay bulaşır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0173",
+      "text": "Grip bulaşıcı bir hastalık; hasta çocuklar evde kalmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0174",
+      "text": "Hijyen için mendile ya da kolumuzun içine hapşırmalıyız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0175",
+      "text": "El hijyeni, hastalıkları önlemenin en kolay yolu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0176",
+      "text": "Mutfakta hijyen çok önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0177",
+      "text": "Bağışıklık sistemimiz bizi mikroplardan korur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0178",
+      "text": "Bağışıklığı güçlendirmek için iyi uyumalı ve dengeli beslenmeliyiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0179",
+      "text": "Aşılar bizi bazı bulaşıcı hastalıklardan korur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0180",
+      "text": "Gripten korunmak için ellerimizi sık sık yıkıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0181",
+      "text": "Yazın güneşten korunmak için şapka giymeli ve bol su içmeliyiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0182",
+      "text": "Kışın soğuktan korunmak için kalın giyiniyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0183",
+      "text": "Hastalıkları önlemek, tedavi etmekten daha kolay.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0184",
+      "text": "Düzenli el yıkamak birçok hastalığı önler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0185",
+      "text": "Şekerli yiyeceklerden kaçınmalıyız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0186",
+      "text": "Hasta biriyle aynı bardağı kullanmaktan kaçın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0187",
+      "text": "Hareketsizlik birçok hastalığın riskini artırır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0188",
+      "text": "Kışın grip riski artıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0189",
+      "text": "Grip kışın çok yaygın bir hastalık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0190",
+      "text": "Uykusuzluk gençler arasında oldukça yaygın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0191",
+      "text": "Babam her yıl kan tahlili yaptırıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0192",
+      "text": "Tahlilden önce kahvaltı yapabilir miyim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0193",
+      "text": "Kan tahlili için sabah aç gitmelisin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0194",
+      "text": "Tahlil sonuçları yarın çıkacak.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0195",
+      "text": "Murat'ın kolesterolü biraz yüksek çıktı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0196",
+      "text": "Çok yağlı yiyecekler kolesterolü artırabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0197",
+      "text": "Hemşire kolumdan biraz kan aldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0198",
+      "text": "Hasta biri okulda tıbbi maske kullanmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0199",
+      "text": "Bu tıbbi bir sorun değil, sadece yorgunluk.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0200",
+      "text": "Aşırı güneş cilt için zararlı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0201",
+      "text": "Hijyen için havlunu kimseyle paylaşma.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0202",
+      "text": "Doktora sormadan ilaç almak risk taşır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0203",
+      "text": "Antibiyotik virüslere karşı işe yaramaz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0204",
+      "text": "Doyurucu bir kahvaltı yapmadan okula gitme!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0205",
+      "text": "Hiç dinlenmeden çalışmak sağlıksız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0206",
+      "text": "Ellerini yıkamadan yemeğe oturma, mikrop bulaşır!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0207",
+      "text": "Enfeksiyon riski düşük.",
+      "quelle": "tatoeba:13411767",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13411767 von balaca"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0208",
+      "text": "Kan tahliline ihtiyacım var.",
+      "quelle": "tatoeba:11772334",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11772334 von dryaco"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0209",
+      "text": "Yeterince su içmelisin, çünkü vücudumuzun suya ihtiyacı var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0210",
+      "text": "Şekeri azaltman lazım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0211",
+      "text": "Tuzu azaltmak kalp için yararlı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0212",
+      "text": "Yemeklerde sebze miktarını artırmalıyız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0213",
+      "text": "Ailemiz haftada iki kez balık tüketiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0214",
+      "text": "Çok fazla şeker tüketmek dişlere ve kalbe zararlı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0215",
+      "text": "Gençler çok fazla şekerli içecek tüketiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0216",
+      "text": "Aşırı tuz tansiyonu artırır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0217",
+      "text": "Aşırı yemek mideye iyi gelmez.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0218",
+      "text": "Bugün fazlasıyla yedim, midem ağrıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0219",
+      "text": "Bu yemek benim için fazlasıyla tuzlu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0220",
+      "text": "Su içmek önemli, hele yazın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0221",
+      "text": "Hele sınav haftasında iyi uyumalısın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0222",
+      "text": "Mercimek protein bakımından zengin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0223",
+      "text": "Bu ekmek lif bakımından çok zengin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0224",
+      "text": "Yemeği iyi çiğnemek mide için önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0225",
+      "text": "Yemeği yavaşça çiğneyerek yemelisin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0226",
+      "text": "Acele etme, yemeğini iyice çiğne!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0227",
+      "text": "Yumurta, balık ve mercimekte bol protein var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0228",
+      "text": "Kaslarımızın proteine ihtiyacı var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0229",
+      "text": "Vitamin ve mineraller vücudumuz için çok önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0230",
+      "text": "Maden suyunda bol mineral var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0231",
+      "text": "Mercimek ve dana eti demir bakımından zengin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0232",
+      "text": "Derya'nın kan tahlilinde demir biraz düşük çıktı; doktor ona mercimek ve yeşil sebze öneriyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0233",
+      "text": "Ekmek, pilav ve makarnada çok karbonhidrat var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0234",
+      "text": "Karbonhidratlar vücuda enerji verir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0235",
+      "text": "Çocukların büyümek için yeterince kaloriye ihtiyacı var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0236",
+      "text": "Bir bardak meyve suyunda çok kalori ve şeker var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0237",
+      "text": "Bu kurabiye çok kalorili, ama hiç besleyici değil.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0238",
+      "text": "Besleyici bir kahvaltı güne iyi başlamak için şart.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0239",
+      "text": "Vücudumuzun her gün farklı besin maddelerine ihtiyacı var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0240",
+      "text": "Şekerli içeceklerde neredeyse hiç besleyici madde yok.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0241",
+      "text": "Spor bir zorunluluk değil, bir alışkanlık olmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0242",
+      "text": "Okulda beden eğitimi dersi bir zorunluluk.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0243",
+      "text": "Yürüyüşün birçok yararı var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0244",
+      "text": "Uykunun yararları neler?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0245",
+      "text": "Uyku hafızayı ve bağışıklığı güçlendirir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0246",
+      "text": "Her gün meyve yemek çok yararlı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0247",
+      "text": "Bence daha erken yatmalısın, çünkü uykusuzluk dikkatini azaltıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0248",
+      "text": "Neden daha çok sebze yemeliyim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0249",
+      "text": "Çünkü sebzelerde vitamin ve lif var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0250",
+      "text": "Sana bir tavsiye: Her gün en az yarım saat dışarıda hareket et, stresin azalır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0251",
+      "text": "Kahveyi azaltman gerek, çünkü uykunu bozuyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0252",
+      "text": "Gece geç saatte ağır bir öğün yememelisin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0253",
+      "text": "Beslenme konusunda Özge Hanım bize iyi tavsiyeler verdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0254",
+      "text": "Yeterince su içmiyorsun.",
+      "quelle": "tatoeba:4891300",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4891300 von tulin"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0255",
+      "text": "Balık protein içerir.",
+      "quelle": "tatoeba:11771346",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11771346 von dryaco"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0256",
+      "text": "Küçük çocuklar için kısa bir rehber yaz: Gün boyu sağlıklı kalmak için neler yapmalılar? Beslenme, hareket ve uyku hakkında tavsiyeler ver ve nedenlerini yaz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0257",
+      "text": "Merhaba çocuklar! İşte gün boyu sağlıklı kalmak için birkaç tavsiye. Sabahları kahvaltı yapmadan evden çıkmayın. Okula yürüyerek ya da bisiklete binerek gidin. Beslenme çantanıza meyve, peynirli ekmek ve bir şişe su koyun. Abur cubur ve şekerli içeceklerden kaçının, çünkü onlarda neredeyse hiç besleyici madde yok.",
+      "tokens": [
+        "Merhaba",
+        "çocuklar",
+        "İşte",
+        "gün",
+        "boyu",
+        "sağlıklı",
+        "kalmak",
+        "için",
+        "birkaç",
+        "tavsiye",
+        "Sabahları",
+        "kahvaltı",
+        "yapmadan",
+        "evden",
+        "çıkmayın",
+        "Okula",
+        "yürüyerek",
+        "ya",
+        "da",
+        "bisiklete",
+        "binerek",
+        "gidin",
+        "Beslenme",
+        "çantanıza",
+        "meyve",
+        "peynirli",
+        "ekmek",
+        "ve",
+        "bir",
+        "şişe",
+        "su",
+        "koyun",
+        "Abur cubur",
+        "ve",
+        "şekerli",
+        "içeceklerden",
+        "kaçının",
+        "çünkü",
+        "onlarda",
+        "neredeyse",
+        "hiç",
+        "besleyici",
+        "madde",
+        "yok"
+      ],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0258",
+      "text": "Teneffüste oturmayın, arkadaşlarınızla hareketli oyunlar oynayın. Yemekten önce ellerinizi sabunla yıkayın, çünkü mikroplar çoğunlukla ellerle bulaşır. Akşamları ekranları erken kapatıp en az dokuz saat uyuyun. Bu şekilde hem bedeniniz hem de zihniniz güçlü kalır!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0259",
+      "text": "Murat'ın yeni alışkanlıkları",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0260",
+      "text": "Murat birkaç aydır kendini yorgun ve halsiz hissediyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0261",
+      "text": "Doktor Pınar Hanım ondan bir kan tahlili istiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0262",
+      "text": "Tahlilde kolesterol biraz yüksek çıkıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0263",
+      "text": "Pınar Hanım, “Daha çok hareket etmeli ve daha dengeli beslenmelisiniz.” diyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0264",
+      "text": "Bütün gün otobüs kullanıyorum; çok hareketsiz bir işim var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0265",
+      "text": "Baba, sabahları benimle yürüyerek gel!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0266",
+      "text": "İyi fikir! Otobüs garajı senin okulunun yolunda.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0267",
+      "text": "Ertesi sabah Murat ile Can erkenden kalkıp evden birlikte çıkıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0268",
+      "text": "Otuz dakika hızlı yürüyerek garaja ve okula gidiyorlar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0269",
+      "text": "Baba, terledin mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0270",
+      "text": "Biraz terledim, ama kendimi çok iyi hissediyorum!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0271",
+      "text": "İlk hafta Murat'ın bacak kasları biraz ağrıyor, ama yeni düzene çabuk alışıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0272",
+      "text": "Cumartesi günü aile merkezinde beslenme uzmanı Özge Hanım'ın bir semineri var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0273",
+      "text": "Murat ile Derya da seminere katılıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0274",
+      "text": "Dengeli beslenmek için her öğünde sebze, protein ve karbonhidrat olmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0275",
+      "text": "Tabağınızın yarısı sebze, dörtte biri protein, dörtte biri de karbonhidrat olsun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0276",
+      "text": "Ben akşamları çok büyük porsiyonlar yiyorum. Bu sağlıksız mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0277",
+      "text": "Porsiyonlarınız biraz daha küçük olmalı. Yemeği yavaş yiyip iyice çiğneyin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0278",
+      "text": "Bir de işlenmiş gıdalardan kaçının; onlarda çok tuz ve yağ var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0279",
+      "text": "Derya not alıyor: daha çok sebze, daha az tuz, yağsız yoğurt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0280",
+      "text": "Akşam Murat, sebzeli ve doyurucu bir mercimek çorbası pişiriyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0281",
+      "text": "Baba, hiç abur cubur yok mu?",
+      "tokens": ["Baba", "hiç", "abur cubur", "yok", "mu"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0282",
+      "text": "Abur cubur yok, ama taze meyve var!",
+      "tokens": ["Abur cubur", "yok", "ama", "taze", "meyve", "var"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0283",
+      "text": "Üç ay sonra Murat yeni bir kan tahlili yaptırıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0284",
+      "text": "Kolesterol artık normal; Murat da kendini çok daha enerjik hissediyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0285",
+      "text": "Bu yürüyüşler bana çok iyi geldi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0286",
+      "text": "Bana da! Artık derslerde daha dikkatliyim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0287",
+      "text": "Artık her sabah baba ile oğul birlikte yürüyerek yola çıkıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0288",
+      "text": "Kan tahlilinde ne çıkıyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0289",
+      "text": "Kolesterol biraz yüksek çıkıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0290",
+      "text": "Her şey normal çıkıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0291",
+      "text": "Murat neden çok hareketsiz?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0292",
+      "text": "Çünkü bütün gün otobüs kullanıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0293",
+      "text": "Çünkü bütün gün bilgisayar başında oturuyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0294",
+      "text": "Özge Hanım'a göre tabağın yarısı ne olmalı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0295",
+      "text": "Tabağın yarısı sebze olmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0296",
+      "text": "Tabağın yarısı protein olmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0297",
+      "text": "Özge Hanım hangi gıdalardan kaçınmayı söylüyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0298",
+      "text": "İşlenmiş gıdalardan kaçınmayı söylüyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0299",
+      "text": "Taze sebzelerden kaçınmayı söylüyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0300",
+      "text": "Üç ay sonra Murat nasıl?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0301",
+      "text": "Kolesterolü normal, kendini enerjik hissediyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0302",
+      "text": "Hâlâ çok yorgun ve halsiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0303",
+      "text": "Okula yürüyerek gitmek hem ucuz hem de etkili bir egzersiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0304",
+      "text": "Uykusuzluk ve stres bağışıklığı zayıflatır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0305",
+      "text": "Düzenli egzersiz kalbi ve kasları güçlendirir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0306",
+      "text": "Mikroplardan korunmak için hijyene dikkat etmeliyiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0307",
+      "text": "Akşam yemeği hafif, ama doyurucu olmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0308",
+      "text": "Kahvaltıda ne yiyorsun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0309",
+      "text": "Çoğunlukla peynir, zeytin, domates ve esmer ekmek; bazen de yumurta.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0310",
+      "text": "Yürüyüş hem kalbi hem de kasları güçlendirir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0311",
+      "text": "Gripten korunmak için ne yapmalıyız?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0312",
+      "text": "Ellerimizi sık sık yıkamalı ve bağışıklığımızı güçlendirmeliyiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0313",
+      "text": "Gençlerde uykusuzluk riski giderek artıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0314",
+      "text": "Fiziksel aktivite stresi azaltır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0315",
+      "text": "Can terlemeden bir saat yürüyebiliyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0316",
+      "text": "Sevim Babaanne her sabah bahçeye çıkıp çiçekleri suluyor; çok hareketli bir kadın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0317",
+      "text": "Okul duyurusu: Grip mevsiminde sağlıklı kalalım",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0318",
+      "text": "Değerli veliler ve öğrenciler, kış aylarında grip ve soğuk algınlığı çok yaygın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0319",
+      "text": "Grip bir virüs hastalığı ve okulda çok hızlı bulaşabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0320",
+      "text": "Grip çok bulaşıcı; ateşi olan çocuklar evde kalmalı ve dinlenmeli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0321",
+      "text": "Öğrenciler teneffüsten sonra ve yemekten önce ellerini sabunla yıkamalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0322",
+      "text": "Sınıflarımızı her teneffüste havalandırıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0323",
+      "text": "Kantinimizde artık şekerli içecek yok; onların yerine su, ayran ve taze meyve var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0324",
+      "text": "Hepinize sağlıklı bir kış diliyoruz!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0325",
+      "text": "Ateşi olan çocuklar okula gelmemeli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0326",
+      "text": "Kantinde hâlâ şekerli içecek var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0327",
+      "text": "Okul bütün öğrencilere ücretsiz aşı yapıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0328",
+      "text": "Öğrenciler ellerini ne zaman yıkamalı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0329",
+      "text": "Teneffüsten sonra ve yemekten önce.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0330",
+      "text": "Sadece sabahları, evde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0331",
+      "text": "Yazın bol su içmelisin, çünkü çok terliyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0332",
+      "text": "Akşamları ekranları erken kapatmalısın, çünkü ekran ışığı zihni uyanık tutar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0333",
+      "text": "Abur cubur yerine meyve yemelisin, çünkü meyvede vitamin ve lif var.",
+      "tokens": ["Abur cubur", "yerine", "meyve", "yemelisin", "çünkü", "meyvede", "vitamin", "ve", "lif", "var"],
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e05.s0334",
+      "text": "Ben okula çoğunlukla yürüyerek gidiyorum ve yolda parktan geçiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "tr.b1.e05.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über ausgewogene Ernährung und Lebensmittel sprechen.",
+        "tr": "Dengeli beslenme ve gıdalar hakkında konuşmak",
+        "ar": "التحدث عن التغذية المتوازنة والأطعمة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e05.l01.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.dengeli", "tr.b1.e05.taze", "tr.b1.e05.organik", "tr.b1.e05.islenmis", "tr.b1.e05.doyurucu"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a03",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.beslenme", "tr.b1.e05.gida", "tr.b1.e05.ogun", "tr.b1.e05.porsiyon"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e05.icecek",
+          "ablenker": ["tr.b1.e05.yiyecek", "tr.a1.e10.bardak"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a05",
+          "typ": "formen",
+          "zeilen": ["tuz", "yağ", "şeker", "hareket", "sağlık"],
+          "spalten": ["-li", "-siz"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["tuzlu"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["tuzsuz"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["yağlı"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["yağsız"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["şekerli"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["şekersiz"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["hareketli"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["hareketsiz"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["sağlıklı"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["sağlıksız"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a06",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0026",
+          "wort": 2,
+          "ablenker": ["tuzsız", "tuzsuzu"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a07",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.yagsiz", "tr.b1.e05.tuzsuz", "tr.a2.e07.sekersiz", "tr.b1.e05.sagliksiz"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0001",
+          "nach": "ziel",
+          "alternativen": ["Sağlık için dengeli beslenme çok önemli."],
+          "ablenker": ["beslenmeyi", "sağlıkta"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.besin",
+          "ablenker": ["tr.b1.e05.lif", "tr.a1.e07.meyve"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0028"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0030",
+          "ablenker": ["tr.b1.e05.s0042", "tr.b1.e05.s0039", "tr.b1.e05.s0015"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a11",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0002",
+          "wort": 1,
+          "ablenker": ["beslenmak", "beslenmeği"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.s0038",
+          "ablenker": ["tr.b1.e05.s0004", "tr.b1.e05.s0005"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.abur-cubur",
+          "ablenker": ["tr.a1.e07.meyve", "tr.b1.e05.miktar"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a14",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0040",
+          "wort": 0,
+          "ablenker": ["Liflu", "Lifle"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0050"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0031",
+          "ablenker": ["tr.b1.e05.s0043", "tr.b1.e05.s0025", "tr.b1.e05.s0018"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l01.a16",
+          "typ": "frei",
+          "ziel": "tr.b1.e05.s0010",
+          "nach": "ziel",
+          "alternativen": [
+            "Şekerli içecekler sağlıksız; bunların yerine su iç.",
+            "Şekerli içecekler sağlıklı değil; onların yerine su iç.",
+            "Şekerli içecekler sağlıksız; onun yerine su iç.",
+            "Şekerli içecekler sağlıksız; yerine su iç."
+          ]
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e05.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann beschreiben, wie ich mich im Alltag bewege.",
+        "tr": "Günlük hayatta nasıl hareket ettiğini anlatmak",
+        "ar": "وصف الحركة في الحياة اليومية"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e05.l02.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.egzersiz", "tr.b1.e05.kas", "tr.a2.e07.kemik", "tr.a2.e07.kalp"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.terlemek",
+          "ablenker": ["tr.a2.e06.yorulmak", "tr.a1.e12.dinlenmek"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a04",
+          "typ": "formen",
+          "zeilen": ["yürümek", "koşmak", "okumak", "çiğnemek", "terlemek", "beslenmek"],
+          "spalten": ["-(y)erek"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["yürüyerek"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["koşarak"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["okuyarak"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["çiğneyerek"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["terleyerek"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["beslenerek"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a05",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0052",
+          "wort": 2,
+          "ablenker": ["yürüyarak", "yürüyerak"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a06",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.hareketli", "tr.b1.e05.hareketsiz", "tr.b1.e05.fiziksel", "tr.b1.e05.etkili"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0059",
+          "nach": "ziel",
+          "alternativen": ["Kaslarımızı egzersiz yaparak güçlendiriyoruz."],
+          "ablenker": ["yapıyor", "kaslarımız"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a08",
+          "typ": "lesen_fragen",
+          "titel": "tr.b1.e05.s0090",
+          "absaetze": [
+            "tr.b1.e05.s0091",
+            "tr.b1.e05.s0092",
+            "tr.b1.e05.s0093",
+            "tr.b1.e05.s0094",
+            "tr.b1.e05.s0095",
+            "tr.b1.e05.s0096",
+            "tr.b1.e05.s0097"
+          ],
+          "glossen": ["tr.b1.e05.hareketsiz", "tr.b1.e05.kas", "tr.b1.e05.guclendirmek", "tr.b1.e05.abartmak", "tr.a2.e04.aliskanlik"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e05.s0098",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e05.s0099",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e05.s0100",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e05.s0101",
+              "antwort": "tr.b1.e05.s0102",
+              "ablenker": ["tr.b1.e05.s0103"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e05.s0104",
+              "antwort": "tr.b1.e05.s0105",
+              "ablenker": ["tr.b1.e05.s0106"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0078"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0052",
+          "ablenker": ["tr.b1.e05.s0044", "tr.b1.e05.s0045", "tr.b1.e05.s0043"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e05.alismak",
+          "ablenker": ["tr.b1.e05.abartmak", "tr.a2.e04.uyanmak"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a11",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0079",
+          "wort": 1,
+          "ablenker": ["abartmamalisin", "abartmamelısın"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.yeterince",
+          "ablenker": ["tr.a1.e07.fazla", "tr.a1.e07.az"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a13",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e05.s0054",
+          "alternativen": ["Bacak kaslarımızı merdivenleri kullanarak güçlendiriyoruz."]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a14",
+          "typ": "frei",
+          "ziel": "tr.b1.e05.s0071",
+          "nach": "ziel",
+          "alternativen": [
+            "Sporun sağlık için birçok faydası var.",
+            "Sporun sağlığa çok faydası var.",
+            "Sporun sağlığa birçok yararı var.",
+            "Spor sağlığa çok faydalı."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0073"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0074",
+          "ablenker": ["tr.b1.e05.s0061", "tr.b1.e05.s0064", "tr.b1.e05.s0080"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l02.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e05.s0334"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e05.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Schlaf und Stress sprechen und Gewohnheiten vergleichen.",
+        "tr": "Uyku ve stres hakkında konuşmak, alışkanlıkları karşılaştırmak",
+        "ar": "التحدث عن النوم والتوتر ومقارنة العادات"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e05.l03.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.stres", "tr.b1.e05.uykusuzluk", "tr.a2.e07.yorgunluk", "tr.b1.e05.hafiza"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.zihin",
+          "ablenker": ["tr.b1.e05.hafiza", "tr.a2.e07.kalp"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a04",
+          "typ": "formen",
+          "zeilen": ["kalkmak", "yatmak", "gelmek", "okumak", "yıkamak", "kapatmak"],
+          "spalten": ["-(y)ip"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["kalkıp"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["yatıp"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["gelip"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["okuyup"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["yıkayıp"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["kapatıp"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a05",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0107",
+          "wort": 3,
+          "ablenker": ["yatip", "yatup"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0138"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0139",
+          "ablenker": ["tr.b1.e05.s0137", "tr.b1.e05.s0149", "tr.b1.e05.s0115"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a07",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.artmak", "tr.b1.e05.azalmak", "tr.b1.e05.duzen", "tr.b1.e05.siklikla"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0143",
+          "nach": "ziel",
+          "alternativen": ["Ben saat sekizde telefonumu kapatıp mutfakta bırakıyorum."],
+          "ablenker": ["kapattı", "telefonum"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0138"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e05.s0139"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0140"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e05.s0141"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0142",
+          "ablenker": ["tr.b1.e05.s0137", "tr.b1.e05.s0149", "tr.b1.e05.s0116"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a10",
+          "typ": "lesen_fragen",
+          "titel": "tr.b1.e05.s0151",
+          "absaetze": [
+            "tr.b1.e05.s0152",
+            "tr.b1.e05.s0153",
+            "tr.b1.e05.s0154",
+            "tr.b1.e05.s0155",
+            "tr.b1.e05.s0156",
+            "tr.b1.e05.s0157",
+            "tr.b1.e05.s0158"
+          ],
+          "glossen": [
+            "tr.b1.e05.uykusuzluk",
+            "tr.b1.e05.hafiza",
+            "tr.b1.e05.bagisiklik",
+            "tr.b1.e05.duzen",
+            "tr.b1.e05.kacinmak",
+            "tr.b1.e05.stres"
+          ],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e05.s0159",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e05.s0160",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e05.s0161",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e05.s0162",
+              "antwort": "tr.b1.e05.s0163",
+              "ablenker": ["tr.b1.e05.s0164"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e05.s0165",
+              "antwort": "tr.b1.e05.s0166",
+              "ablenker": ["tr.b1.e05.s0167"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e05.farkinda",
+          "ablenker": ["tr.b1.e05.psikolojik", "tr.a2.e07.halsiz"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a12",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0131",
+          "wort": 1,
+          "ablenker": ["hâlda", "hâlden"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e05.s0143"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0144"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0145",
+          "ablenker": ["tr.b1.e05.s0139", "tr.b1.e05.s0134", "tr.b1.e05.s0118"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a14",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e05.s0122"
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a15",
+          "typ": "frei",
+          "ziel": "tr.b1.e05.s0114",
+          "nach": "ziel",
+          "alternativen": [
+            "Hafıza için yeterince uyumak çok önemli.",
+            "Yeterince uyumak hafızamız için çok önemli.",
+            "Yeterli uyku hafıza için çok önemli.",
+            "İyi uyumak hafıza için çok önemli."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l03.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e05.s0147"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e05.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wie man sich vor Krankheiten schützt.",
+        "tr": "Hastalıklardan nasıl korunduğumuzu anlatmak",
+        "ar": "شرح كيف نحمي أنفسنا من الأمراض"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e05.l04.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.mikrop", "tr.b1.e05.virus", "tr.b1.e05.hijyen", "tr.b1.e05.bagisiklik"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.bulasici",
+          "ablenker": ["tr.b1.e05.yaygin", "tr.b1.e05.tibbi"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a04",
+          "typ": "formen",
+          "zeilen": ["yıkamak", "düşünmek", "dinlenmek", "çiğnemek", "sormak"],
+          "spalten": ["-meden"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["yıkamadan"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["düşünmeden"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["dinlenmeden"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["çiğnemeden"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["sormadan"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a05",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0168",
+          "wort": 3,
+          "ablenker": ["yıkamedan", "yıkamadın"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a06",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.korunmak", "tr.b1.e05.onlemek", "tr.b1.e05.kacinmak", "tr.b1.e05.bulasmak"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0172",
+          "nach": "ziel",
+          "ablenker": ["bulaşıyorum", "virüse"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0311"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0312",
+          "ablenker": ["tr.b1.e05.s0188", "tr.b1.e05.s0191", "tr.b1.e05.s0195"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e05.tahlil",
+          "ablenker": ["tr.b1.e05.kolesterol", "tr.a2.e07.recete"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a10",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0202",
+          "wort": 1,
+          "ablenker": ["sormedan", "sormadın"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.kacinmak",
+          "ablenker": ["tr.a2.e07.hastalanmak", "tr.a1.e12.iyilesmek"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0192"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0193",
+          "ablenker": ["tr.b1.e05.s0197", "tr.b1.e05.s0198", "tr.b1.e05.s0203"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a13",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e05.s0187",
+          "alternativen": ["Birçok hastalığın riskini hareketsizlik artırır."]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e05.zararli",
+          "ablenker": ["tr.a2.e07.saglikli", "tr.b1.e05.yaygin"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a15",
+          "typ": "frei",
+          "ziel": "tr.b1.e05.s0184",
+          "nach": "ziel",
+          "alternativen": [
+            "Düzenli olarak el yıkamak birçok hastalığı önler.",
+            "Elleri düzenli yıkamak birçok hastalığı önler.",
+            "Düzenli el yıkamak pek çok hastalığı önler.",
+            "Ellerimizi düzenli yıkamak birçok hastalığı önler."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l04.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e05.s0206"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e05.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Ratschläge geben und begründen.",
+        "tr": "Tavsiye vermek ve nedenlerini söylemek",
+        "ar": "تقديم النصائح وذكر أسبابها"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e05.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.protein", "tr.b1.e05.mineral", "tr.b1.e05.demir", "tr.b1.e05.karbonhidrat"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.azaltmak",
+          "ablenker": ["tr.b1.e05.artirmak", "tr.b1.e05.tuketmek"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a04",
+          "typ": "formen",
+          "lemma": "tr.b1.e05.azaltmak",
+          "zeilen": ["ben", "sen", "o", "biz", "siz", "onlar"],
+          "spalten": ["-meli", "… lazım"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["azaltmalıyım"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["azaltmam lazım"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["azaltmalısın"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["azaltman lazım"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["azaltmalı"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["azaltması lazım"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["azaltmalıyız"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["azaltmamız lazım"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["azaltmalısınız"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["azaltmanız lazım"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["azaltmalılar", "azaltmalı"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["azaltmaları lazım", "azaltması lazım"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a05",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0210",
+          "wort": 1,
+          "ablenker": ["azaltmen", "azaltmın"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e05.kalori",
+          "ablenker": ["tr.b1.e05.besleyici", "tr.b1.e05.madde"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0222",
+          "nach": "ziel",
+          "ablenker": ["proteini", "bakımında"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0248"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0249",
+          "ablenker": ["tr.b1.e05.s0218", "tr.b1.e05.s0230", "tr.b1.e05.s0233"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a09",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.asiri", "tr.b1.e05.hele", "tr.b1.e05.zorunluluk", "tr.b1.e05.yararli"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a10",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0225",
+          "wort": 2,
+          "ablenker": ["çiğneyarak", "çiğnerek"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.tuketmek",
+          "ablenker": ["tr.b1.e05.cignemek", "tr.a1.e06.pisirmek"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a12",
+          "typ": "schreiben",
+          "aufgabe": "tr.b1.e05.s0256",
+          "woerter": {
+            "min": 80,
+            "max": 100
+          },
+          "muster": ["tr.b1.e05.s0257", "tr.b1.e05.s0258"],
+          "pflichtwoerter": ["sağlıklı", "yürüyerek", "kaçının"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0216",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a14",
+          "typ": "frei",
+          "ziel": "tr.b1.e05.s0251",
+          "nach": "ziel",
+          "alternativen": [
+            "Kahveyi azaltman lazım, çünkü uykunu bozuyor.",
+            "Kahveyi azaltmalısın, çünkü uykunu bozuyor.",
+            "Daha az kahve içmelisin, çünkü uykunu bozuyor.",
+            "Kahveyi azaltman gerekiyor, çünkü uykunu bozuyor."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0244"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0245",
+          "ablenker": ["tr.b1.e05.s0220", "tr.b1.e05.s0227", "tr.b1.e05.s0236"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l05.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e05.s0332"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e05.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Geschichte: Murats neue Gewohnheiten",
+        "tr": "Hikâye: Murat'ın yeni alışkanlıkları",
+        "ar": "قصة: عادات مراد الجديدة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e05.l06.a01",
+          "typ": "geschichte",
+          "titel": "tr.b1.e05.s0259",
+          "zeilen": [
+            {
+              "satz": "tr.b1.e05.s0260"
+            },
+            {
+              "satz": "tr.b1.e05.s0261"
+            },
+            {
+              "satz": "tr.b1.e05.s0262"
+            },
+            {
+              "satz": "tr.b1.e05.s0263"
+            },
+            {
+              "satz": "tr.b1.e05.s0264",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e05.s0265",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e05.s0266",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e05.s0267"
+            },
+            {
+              "satz": "tr.b1.e05.s0268"
+            },
+            {
+              "satz": "tr.b1.e05.s0269",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e05.s0270",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e05.s0271"
+            },
+            {
+              "satz": "tr.b1.e05.s0272"
+            },
+            {
+              "satz": "tr.b1.e05.s0273"
+            },
+            {
+              "satz": "tr.b1.e05.s0274",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.b1.e05.s0275",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.b1.e05.s0276",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e05.s0277",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.b1.e05.s0278",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.b1.e05.s0279"
+            },
+            {
+              "satz": "tr.b1.e05.s0280"
+            },
+            {
+              "satz": "tr.b1.e05.s0281",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e05.s0282",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e05.s0283"
+            },
+            {
+              "satz": "tr.b1.e05.s0284"
+            },
+            {
+              "satz": "tr.b1.e05.s0285",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e05.s0286",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e05.s0287"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "tr.b1.e05.s0288",
+              "antwort": "tr.b1.e05.s0289",
+              "ablenker": ["tr.b1.e05.s0290"]
+            },
+            {
+              "nach": 4,
+              "frage": "tr.b1.e05.s0291",
+              "antwort": "tr.b1.e05.s0292",
+              "ablenker": ["tr.b1.e05.s0293"]
+            },
+            {
+              "nach": 15,
+              "frage": "tr.b1.e05.s0294",
+              "antwort": "tr.b1.e05.s0295",
+              "ablenker": ["tr.b1.e05.s0296"]
+            },
+            {
+              "nach": 18,
+              "frage": "tr.b1.e05.s0297",
+              "antwort": "tr.b1.e05.s0298",
+              "ablenker": ["tr.b1.e05.s0299"]
+            },
+            {
+              "nach": 24,
+              "frage": "tr.b1.e05.s0300",
+              "antwort": "tr.b1.e05.s0301",
+              "ablenker": ["tr.b1.e05.s0302"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l06.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0276"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0277",
+          "ablenker": ["tr.b1.e05.s0281", "tr.b1.e05.s0285", "tr.b1.e05.s0150"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l06.a03",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0268",
+          "wort": 3,
+          "ablenker": ["yürüyarak", "yürüyorak"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0278",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e05.l06.a05",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e05.s0280",
+          "alternativen": ["Murat akşam, sebzeli ve doyurucu bir mercimek çorbası pişiriyor."]
+        },
+        {
+          "schluessel": "tr.b1.e05.l06.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0265",
+          "nach": "ziel",
+          "alternativen": ["Baba, benimle sabahları yürüyerek gel!"],
+          "ablenker": ["yürüyerak", "geldi"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l06.a07",
+          "typ": "frei",
+          "ziel": "tr.b1.e05.s0270",
+          "nach": "ziel",
+          "alternativen": [
+            "Biraz terledim, fakat kendimi çok iyi hissediyorum!",
+            "Biraz terledim, ama çok iyi hissediyorum!",
+            "Biraz terledim, ancak kendimi çok iyi hissediyorum!"
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l06.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.s0262",
+          "ablenker": ["tr.b1.e05.s0283", "tr.b1.e05.s0290"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.b1.e05.s0285",
+          "ablenker": ["tr.b1.e05.s0270", "tr.b1.e05.s0269"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l06.a10",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0277",
+          "wort": 9,
+          "ablenker": ["çiğneyun", "çiğneyın"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l06.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0281"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0282",
+          "ablenker": ["tr.b1.e05.s0269", "tr.b1.e05.s0279", "tr.b1.e05.s0285"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l06.a12",
+          "typ": "sprechen",
+          "satz": "tr.b1.e05.s0274"
+        },
+        {
+          "schluessel": "tr.b1.e05.l06.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.b1.e05.s0268",
+          "alternativen": ["30 dakika hızlı yürüyerek garaja ve okula gidiyorlar."]
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e05.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Wiederholung: Gesund bleiben",
+        "tr": "Tekrar: Sağlıklı kalmak",
+        "ar": "مراجعة: الحفاظ على الصحة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e05.l07.a01",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.egzersiz", "tr.b1.e05.uykusuzluk", "tr.b1.e05.hijyen", "tr.b1.e05.besin"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.s0303",
+          "ablenker": ["tr.b1.e05.s0077", "tr.b1.e05.s0083"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a03",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0313",
+          "wort": 4,
+          "ablenker": ["artiyor", "artıyür"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a04",
+          "typ": "formen",
+          "zeilen": ["yürümek", "düşünmek", "beslenmek"],
+          "spalten": ["-(y)erek", "-meden"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["yürüyerek"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["yürümeden"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["düşünerek"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["düşünmeden"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["beslenerek"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["beslenmeden"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0146"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0147",
+          "ablenker": ["tr.b1.e05.s0139", "tr.b1.e05.s0150", "tr.b1.e05.s0041"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a06",
+          "typ": "lesen_fragen",
+          "titel": "tr.b1.e05.s0317",
+          "absaetze": [
+            "tr.b1.e05.s0318",
+            "tr.b1.e05.s0319",
+            "tr.b1.e05.s0320",
+            "tr.b1.e05.s0321",
+            "tr.b1.e05.s0322",
+            "tr.b1.e05.s0323",
+            "tr.b1.e05.s0324"
+          ],
+          "glossen": ["tr.b1.e05.yaygin", "tr.b1.e05.virus", "tr.b1.e05.bulasici"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e05.s0325",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e05.s0326",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e05.s0327",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e05.s0328",
+              "antwort": "tr.b1.e05.s0329",
+              "ablenker": ["tr.b1.e05.s0330"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a07",
+          "typ": "minimalpaare",
+          "ziel": "tr.b1.e05.kan",
+          "ablenker": ["tr.a1.e11.kar"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0305",
+          "nach": "ziel",
+          "alternativen": ["Düzenli egzersiz kasları ve kalbi güçlendirir."],
+          "ablenker": ["güçlendiririm", "kalbe"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e05.s0304",
+          "ablenker": ["tr.b1.e05.s0119", "tr.b1.e05.s0117"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a10",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0307",
+          "wort": 4,
+          "ablenker": ["doyurucı", "doyurücu"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a11",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.kalori", "tr.b1.e05.protein", "tr.b1.e05.taze", "tr.b1.e05.organik"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.b1.e05.s0171",
+          "ablenker": ["tr.b1.e05.s0173", "tr.b1.e05.s0176"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0308"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0309",
+          "ablenker": ["tr.b1.e05.s0182", "tr.b1.e05.s0241", "tr.b1.e05.s0201"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a14",
+          "typ": "frei",
+          "ziel": "tr.b1.e05.s0314",
+          "nach": "ziel",
+          "alternativen": ["Fiziksel aktivite stresi azaltıyor.", "Fiziksel hareket stresi azaltır.", "Fiziksel aktivite stres azaltır."]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0177",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a16",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e05.s0315",
+          "alternativen": ["Can bir saat terlemeden yürüyebiliyor."]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a17",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0306",
+          "wort": 1,
+          "ablenker": ["korunmek", "korunmık"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a18",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.b1.e05.s0254"
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a19",
+          "typ": "sprechen",
+          "satz": "tr.b1.e05.s0331"
+        },
+        {
+          "schluessel": "tr.b1.e05.l07.a20",
+          "typ": "sprechen",
+          "satz": "tr.b1.e05.s0333"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e05.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Prüfstein: Gesund bleiben",
+        "tr": "Değerlendirme: Sağlıklı kalmak",
+        "ar": "اختبار: الحفاظ على الصحة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e05.l08.a01",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.kas", "tr.b1.e05.kan", "tr.b1.e05.virus", "tr.b1.e05.kalori"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.dengeli",
+          "ablenker": ["tr.a2.e11.duzenli", "tr.b1.e05.hareketli"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a03",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0027",
+          "wort": 3,
+          "ablenker": ["tuzsız", "tuzsüz"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0111",
+          "nach": "ziel",
+          "ablenker": ["içiyoruz", "portakalı"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e05.s0072"
+            }
+          ],
+          "antwort": "tr.b1.e05.s0310",
+          "ablenker": ["tr.b1.e05.s0075", "tr.b1.e05.s0064", "tr.b1.e05.s0201"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a06",
+          "typ": "formen",
+          "lemma": "tr.b1.e05.tuketmek",
+          "zeilen": ["ben", "sen", "o", "biz", "siz", "onlar"],
+          "spalten": ["-meli", "-memeli"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["tüketmeliyim"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["tüketmemeliyim"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["tüketmelisin"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["tüketmemelisin"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["tüketmeli"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["tüketmemeli"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["tüketmeliyiz"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["tüketmemeliyiz"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["tüketmelisiniz"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["tüketmemelisiniz"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["tüketmeliler", "tüketmeli"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["tüketmemeliler", "tüketmemeli"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e05.kacinmak",
+          "ablenker": ["tr.a1.e12.korkmak", "tr.b1.e05.abartmak"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a08",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0110",
+          "wort": 4,
+          "ablenker": ["okuyip", "okuyüp"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a09",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e05.s0200",
+          "alternativen": ["Cilt için aşırı güneş zararlı."]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0178",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e05.hafiza",
+          "ablenker": ["tr.a2.e07.vucut", "tr.b1.e05.stres"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a12",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0173",
+          "wort": 1,
+          "ablenker": ["bulaşıcu", "bulaşıcıyı"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a13",
+          "typ": "frei",
+          "ziel": "tr.b1.e05.s0246",
+          "nach": "ziel",
+          "alternativen": [
+            "Her gün meyve yemek çok faydalı.",
+            "Her gün meyve yemek çok yararlıdır.",
+            "Her gün meyve yemenin çok faydası var.",
+            "Her gün meyve yemenin çok yararı var."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a14",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e05.fiziksel", "tr.b1.e05.psikolojik", "tr.b1.e05.tibbi", "tr.b1.e05.organik"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a15",
+          "typ": "luecke",
+          "ziel": "tr.b1.e05.s0215",
+          "wort": 5,
+          "ablenker": ["tüketiyür", "tüketıyor"]
+        },
+        {
+          "schluessel": "tr.b1.e05.l08.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e05.s0034",
+          "nach": "ziel",
+          "ablenker": ["meyveyi", "yerinde"]
+        }
+      ]
+    }
+  ]
+}
