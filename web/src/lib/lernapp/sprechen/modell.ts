@@ -55,19 +55,46 @@ export const ORT = {
 } as const;
 
 /**
- * Modellordner als absolute Adresse für transformers.js (`env.localModelPath`, L8-02): Bei einem relativen Pfad holt
- * transformers.js 4.3 für die Fortschrittsanzeige vorab jede Modelldatei vollständig (`get_file_metadata` → GET ohne Lesen
- * des Körpers); der Service Worker lud Encoder und Decoder dadurch zweimal. Eine absolute Adresse überspringt diese Vorabfrage.
+ * Einstellungen von transformers.js im Worker (`Object.assign(env, …)`; dieselben im Unit-Test am Browser-Bau):
+ * - `localModelPath` RELATIV: Nur bei einem Pfad ohne Schema prüft `get_file_metadata` (transformers.js 4.3) den eigenen
+ *   Ursprung. Mit absoluter Adresse überspringt es diesen Zweig und meldet bei `allowRemoteModels = false` jede Datei als
+ *   fehlend, solange sie nicht im Vorrat liegt – die Pipeline entstand dann ohne Tokenizer und Prozessor, der Probelauf
+ *   scheiterte, jedes Gerät mit leerem Vorrat fiel dauerhaft auf die eigene Aufnahme zurück (Gegenprüfung L8-02 zu `a0795f7b`).
+ * - Vorrat `igmg-lernapp-modelle` über die Cache Storage (`useBrowserCache`, `cacheKey`): Der Worker füllt ihn vor dem Aufbau
+ *   der Pipeline selbst (`fuelleVorrat`, je Datei genau ein Abruf); transformers.js liest danach alles aus dem Vorrat.
+ * - `useWasmCache = false`: sonst importiert transformers.js die ORT-`.mjs` über eine `blob:`-Adresse, die die CSP verbietet.
  */
-export const modellBasisAbsolut = (ursprung: string): string => new URL(MODELLE_BASIS, ursprung).href;
+export const TRANSFORMERS_UMGEBUNG = {
+  allowRemoteModels: false,
+  allowLocalModels: true,
+  localModelPath: MODELLE_BASIS,
+  useWasmCache: false,
+  useBrowserCache: true,
+  cacheKey: VORRAT_MODELLE,
+} as const;
 
 /** Adresse einer ORT-Datei. */
 export const ortAdresse = (datei: string): string => `${MODELLE_BASIS}${ORT.ordner}/${datei}`;
 /** Adresse einer Modelldatei. */
 export const modellAdresse = (pfad: string): string => `${MODELLE_BASIS}${MODELL.name}/${pfad}`;
+/** Pfad des Workers ohne Bau-Kennung (Netzprotokoll). */
+export const ARBEITER_PFAD = `${MODELLE_BASIS}sprechen/whisper.worker.mjs`;
+
 /** Adresse des Workers (mit Bau-Kennung). */
 export const arbeiterAdresse = (bau: string): string =>
-  `${MODELLE_BASIS}sprechen/whisper.worker.mjs?v=${encodeURIComponent(bau.replace(/[^a-z0-9]/g, '').slice(0, 12) || 'lokal')}`;
+  `${ARBEITER_PFAD}?v=${encodeURIComponent(bau.replace(/[^a-z0-9]/g, '').slice(0, 12) || 'lokal')}`;
+
+/**
+ * Die 10 Download-Dateien der Sprechübung (KERN 4.0 §9, ≈ 95 MB): 7 Modell- und Konfigurationsdateien, ORT `.mjs` und
+ * `.wasm`, der Worker. Das Netzprotokoll (`_lernapp/werkzeuge/leistung/whisper-netz.mjs`) erwartet nach dem Klick jede genau
+ * einmal über das Netz.
+ */
+export const DOWNLOAD_PFADE: readonly string[] = [
+  ...MODELL_DATEIEN.map((d) => modellAdresse(d.pfad)),
+  ortAdresse(ORT.mjs),
+  ortAdresse(ORT.wasm),
+  ARBEITER_PFAD,
+];
 
 /**
  * Dateien, die im Vorrat liegen müssen, damit die Übung den Worker ohne Knopf startet (ADR 0042 Fortschreibung Nr. 13):

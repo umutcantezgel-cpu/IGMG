@@ -5,7 +5,8 @@
 //   B = derselbe Worker mit useBrowserCache = false (Vorrat nur über den Service Worker der Lern-App)
 // Ohne Next-Bau: ein kleiner Server liefert web/public/lern-app/** mit den Kopfzeilen der Lern-App (COOP/COEP, CSP wie
 // cspLernApp() in der Produktion) und den echten Service Worker. Protokolliert werden Anfragen (auch aus Workern und dem SW),
-// fremde Hosts, CSP-Verstöße, Konsolenfehler, der Vorrat und die Zeiten.
+// fremde Hosts, CSP-Verstöße, Konsolenfehler, der Vorrat und die Zeiten. Seit L8-02 zusätzlich: Online erreicht jede der 10
+// Download-Dateien (`DOWNLOAD_PFADE`) den Server genau einmal – keine fehlt (Tokenizer, Prozessor), keine kommt doppelt.
 // Voraussetzung: `pnpm lernapp:modelle` ohne E2E_ATTRAPPEN (echter Worker). Aufruf:
 //   node scripts/lernapp/sprechen-rauchtest.mjs [--aus <datei.json>]   (Exit 1, wenn eine Variante nicht besteht)
 // Für den Versionswechsel (Nr. 8) zusätzlich je Sprache 3 Sätze mit menschlicher Aufnahme – das geht nur lokal mit
@@ -17,6 +18,8 @@ import { join, normalize } from 'node:path';
 import { parseArgs } from 'node:util';
 import { chromium } from '@playwright/test';
 import { build } from 'vite';
+// Node ≥ 23.6 entfernt die Typen selbst; modell.ts hat nur Typ-Importe
+import { DOWNLOAD_PFADE } from '../../src/lib/lernapp/sprechen/modell.ts';
 
 const { values } = parseArgs({ options: { aus: { type: 'string' } } });
 const web = join(import.meta.dirname, '..', '..');
@@ -145,13 +148,22 @@ try {
     ctx.on('request', (r) => anfragen.push(r.url()));
     const page = ctx.pages()[0] ?? (await ctx.newPage());
     page.on('console', (m) => m.type() === 'error' && konsole.push(m.text().slice(0, 300)));
-    page.on('worker', (w) => w.on('console', (m) => m.type() === 'error' && konsole.push(`Worker: ${m.text().slice(0, 300)}`)));
+    page.on('worker', (w) =>
+      w.on('console', (m) => ['error', 'warning'].includes(m.type()) && konsole.push(`Worker: ${m.text().slice(0, 300)}`)),
+    );
     await page.goto(`${basis}/lern-app/probe/`);
     await page.evaluate(() => window.swBereit());
     await page.reload();
+    const vorOnline = serverAnfragen.length;
     const online = await page.evaluate((x) => window.lauf(x, true), v);
     const vorrat = await page.evaluate(() => window.vorrat());
     const vorOffline = serverAnfragen.length;
+    // je Download-Datei die Abrufe am Server während der Online-Phase (Pfad ohne Suchteil)
+    const abrufe = Object.fromEntries(
+      DOWNLOAD_PFADE.map((d) => [d, serverAnfragen.slice(vorOnline, vorOffline).filter((p) => p.split('?')[0] === d).length]),
+    );
+    const fehlend = DOWNLOAD_PFADE.filter((d) => abrufe[d] === 0);
+    const mehrfach = DOWNLOAD_PFADE.filter((d) => abrufe[d] > 1);
     await ctx.route('**/*', (r) => r.abort('internetdisconnected'));
     await ctx.setOffline(true);
     const offline = await page.evaluate((x) => window.lauf(x, false), v);
@@ -168,10 +180,12 @@ try {
       offline.ladenMs !== null &&
       offline.probeMs !== null &&
       modelle.length === 10 &&
+      !fehlend.length &&
+      !mehrfach.length &&
       !fremd.length &&
       !verstoesse.length &&
       !offlineAmServer.length;
-    ergebnis[name] = { ok, online, offline, modelle, fremd, verstoesse, konsole, offlineAmServer };
+    ergebnis[name] = { ok, online, offline, modelle, abrufe, fehlend, mehrfach, fremd, verstoesse, konsole, offlineAmServer };
     await ctx.close();
   }
 } finally {
@@ -182,6 +196,7 @@ for (const [name, e] of Object.entries(ergebnis))
   console.log(
     `${name}: ${e.ok ? 'bestanden' : 'NICHT bestanden'} – online Laden ${e.online.ladenMs} ms, Probelauf ${e.online.probeMs} ms; ` +
       `ohne Netz Laden ${e.offline.ladenMs} ms, Probelauf ${e.offline.probeMs} ms; Vorrat ${e.modelle.length} Dateien; ` +
+      `Download-Dateien am Server: fehlend ${e.fehlend.length}, mehrfach ${e.mehrfach.length}${e.mehrfach.length ? ` (${e.mehrfach.join(', ')})` : ''}; ` +
       `fremde Hosts ${e.fremd.length}, CSP-Verstöße ${e.verstoesse.length}, Konsolenfehler ${e.konsole.length}`,
   );
 if (values.aus) writeFileSync(values.aus, JSON.stringify(ergebnis, null, 2));

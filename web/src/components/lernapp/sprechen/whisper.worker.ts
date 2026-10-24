@@ -3,22 +3,26 @@ import { maxNeueTokens, werteAus } from '@/lib/lernapp/sprechen/auswertung';
 import {
   type AnArbeiter,
   MODELL,
-  modellBasisAbsolut,
   ORT,
   ortAdresse,
   probeClip,
+  TRANSFORMERS_UMGEBUNG,
   VORRAT_MODELLE,
   type VomArbeiter,
   WHISPER_SPRACHE,
 } from '@/lib/lernapp/sprechen/modell';
+import { fuelleVorrat } from '@/lib/lernapp/sprechen/vorrat';
 
 /**
  * Spracherkennung im Worker (ADR 0042 Nr. 2 mit Fortschreibung S2 Nr. 4, KERN 4.0 §6, KI-Regel 2):
  * - nur vom eigenen Ursprung: `allowRemoteModels = false`, Modelle unter `/lern-app/modelle/`, ORT-Dateien aus
  *   `/lern-app/modelle/ort-<version>/` (`wasmPaths`); keine Anfrage an huggingface.co oder jsDelivr;
- * - `useWasmCache = false` (sonst importiert transformers.js die ORT-`.mjs` über eine `blob:`-Adresse, die die CSP
- *   verbietet); Vorrat über den offline belegten Weg: `cacheKey = 'igmg-lernapp-modelle'` (derselbe Vorrat wie im
- *   Lern-App-SW), die ORT-`.wasm` als `wasmBinary` aus diesem Vorrat;
+ * - Einstellungen `TRANSFORMERS_UMGEBUNG` (modell.ts): Modellordner relativ, `useWasmCache = false` (sonst importiert
+ *   transformers.js die ORT-`.mjs` über eine `blob:`-Adresse, die die CSP verbietet); Vorrat über den offline belegten Weg:
+ *   `cacheKey = 'igmg-lernapp-modelle'` (derselbe Vorrat wie im Lern-App-SW), die ORT-`.wasm` als `wasmBinary` aus diesem Vorrat;
+ * - jede Datei genau einmal (L8-02): `fuelleVorrat` legt Modell und ORT-`.wasm` vor dem Aufbau der Pipeline in den Vorrat und
+ *   meldet den Fortschritt; die Pipeline bekommt keine Fortschrittsmeldung (sonst fragt transformers.js jede Datei vorab per
+ *   vollständigem GET ab) und liest alles aus dem Vorrat;
  * - `dtype: 'q8'`, `device: 'wasm'`, Threads nach ORT-Standard (mit `crossOriginIsolated`); Sprache fest,
  *   `task: 'transcribe'`, kein Prompt, keine Zeitstempel; Längenkappe `max_new_tokens` aus der Länge des Ziels;
  * - die freie Abschrift verlässt den Worker nie: Er meldet nur Status und Markierung der Zielwörter.
@@ -32,16 +36,7 @@ const bereich = self as unknown as {
   onmessage: ((e: MessageEvent<AnArbeiter>) => void) | null;
 };
 
-env.allowRemoteModels = false;
-env.allowLocalModels = true;
-// Absolute Adresse (L8-02): Mit Fortschrittsmeldung fragt transformers.js vorab die Größe jeder Modelldatei ab und holt sie
-// bei einem relativen Modellpfad dafür vollständig per GET, ohne den Körper zu lesen – der Service Worker lud Encoder,
-// Decoder und Tokenizer so zweimal (≈ 77 MB doppelt). Bei einer absoluten Adresse entfällt diese Vorabfrage; geladen wird
-// jede Datei genau einmal (Größe aus `Content-Length` der eigentlichen Antwort).
-env.localModelPath = modellBasisAbsolut(bereich.location.origin);
-env.useWasmCache = false;
-env.useBrowserCache = true;
-env.cacheKey = VORRAT_MODELLE;
+Object.assign(env, TRANSFORMERS_UMGEBUNG);
 const onnx = env.backends.onnx;
 const absolut = (datei: string) => new URL(ortAdresse(datei), bereich.location.origin).href;
 if (onnx.wasm) onnx.wasm.wasmPaths = { mjs: absolut(ORT.mjs), wasm: absolut(ORT.wasm) };
@@ -49,29 +44,30 @@ if (onnx.wasm) onnx.wasm.wasmPaths = { mjs: absolut(ORT.mjs), wasm: absolut(ORT.
 let erkenner: Promise<AutomaticSpeechRecognitionPipeline> | null = null;
 
 const sende = (n: VomArbeiter) => bereich.postMessage(n);
+/** Grund eines Fehlers als Konsolenwarnung (Diagnose eines Rückfalls, L8-02) – nur Art und Meldung, nie Audio oder Abschrift. */
+const warne = (bei: string, e: unknown) => console.warn(`[sprechen] ${bei}:`, e instanceof Error ? `${e.name}: ${e.message}` : String(e));
 
-/** ORT-`.wasm` aus dem Vorrat (sonst Netz, dann in den Vorrat) als `wasmBinary` – der offline belegte Weg (Beleg S2 L6b). */
-async function wasmAusVorrat(): Promise<void> {
-  const adresse = absolut(ORT.wasm);
-  const vorrat = typeof caches === 'undefined' ? null : await caches.open(VORRAT_MODELLE);
-  let antwort = await vorrat?.match(adresse);
-  if (!antwort) {
-    antwort = await fetch(adresse, { credentials: 'same-origin' });
-    if (!antwort.ok) throw new Error(`ORT ${antwort.status}`);
-    await vorrat?.put(adresse, antwort.clone());
-  }
-  if (onnx.wasm) onnx.wasm.wasmBinary = await antwort.arrayBuffer();
+/** Download in den Vorrat (je Datei ein Abruf, mit Fortschritt), dann die ORT-`.wasm` als `wasmBinary` daraus (Beleg S2 L6b). */
+async function vorratUndWasm(): Promise<void> {
+  const vorrat = await caches.open(VORRAT_MODELLE);
+  await fuelleVorrat(
+    vorrat,
+    (adresse, init) => fetch(adresse, init),
+    bereich.location.origin,
+    (datei, geladen, gesamt) => sende({ art: 'fortschritt', datei, geladen, gesamt }),
+  );
+  const wasm = await vorrat.match(absolut(ORT.wasm));
+  if (!wasm) throw new Error('ORT nicht im Vorrat');
+  if (onnx.wasm) onnx.wasm.wasmBinary = await wasm.arrayBuffer();
 }
 
 function lade(): Promise<AutomaticSpeechRecognitionPipeline> {
   erkenner ??= (async () => {
-    await wasmAusVorrat();
+    await vorratUndWasm();
+    // ohne Fortschrittsmeldung: Sie löste in transformers.js 4.3 die Vorabfrage jeder Datei aus (siehe vorrat.ts)
     return (await pipeline('automatic-speech-recognition', MODELL.name, {
       dtype: MODELL.dtype,
       device: 'wasm',
-      progress_callback: (p: { status?: string; file?: string; loaded?: number; total?: number }) => {
-        if (p.status === 'progress' && p.file) sende({ art: 'fortschritt', datei: p.file, geladen: p.loaded ?? 0, gesamt: p.total ?? 0 });
-      },
     })) as AutomaticSpeechRecognitionPipeline;
   })();
   return erkenner;
@@ -93,7 +89,8 @@ bereich.onmessage = async (e: MessageEvent<AnArbeiter>) => {
     try {
       await lade();
       sende({ art: 'bereit' });
-    } catch {
+    } catch (grund) {
+      warne('laden', grund);
       erkenner = null;
       sende({ art: 'fehler', bei: 'laden' });
     }
@@ -103,7 +100,8 @@ bereich.onmessage = async (e: MessageEvent<AnArbeiter>) => {
       const start = performance.now();
       await erkenne(asr, probeClip(), 'de', 8);
       sende({ art: 'probe', ms: Math.round(performance.now() - start) });
-    } catch {
+    } catch (grund) {
+      warne('probe', grund);
       sende({ art: 'fehler', bei: 'probe' });
     }
   } else if (n.art === 'erkenne') {
@@ -112,7 +110,8 @@ bereich.onmessage = async (e: MessageEvent<AnArbeiter>) => {
       const tokens = asr.tokenizer.encode(n.ziel).length;
       const abschrift = await erkenne(asr, n.pcm, n.sprache, tokens);
       sende({ art: 'ergebnis', id: n.id, ergebnis: werteAus(abschrift, n.ziel, n.sprache) });
-    } catch {
+    } catch (grund) {
+      warne('erkennung', grund);
       sende({ art: 'fehler', bei: 'erkennung', id: n.id });
     }
   }
