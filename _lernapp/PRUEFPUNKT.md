@@ -1,5 +1,28 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 24.10.2026 10:35 UTC – nach dem Limit (≈ 07:00, Reset 10:00) fortgesetzt:**
+  - **Fertig:**
+    - A2 tr Schlussprüfung (da8c5eb6): A2 de und tr sind komplett.
+    - Nachprüfung SL2-Rest grün: check 3.534, Integration 3.847, Sprachen, Religion, Wortlaut.
+    - L8-02 Bericht (a0dafd59 im Arbeitsbaum l8):
+      - Budgets eingehalten, Zugänglichkeit 100 auf 25 Routen.
+      - INP ≤ 200 ms bei CPU ×6, axe 0 Befunde.
+      - Lasttest mit 200 Konten: 0 % Fehler, Idempotenz erfüllt.
+      - CLS-Behebung mit Regeltest.
+    - Wissen: Nachprüfung aufbau.e03/e04 (Neufassung Nūr al-Īḍāḥ), Belegprüfung vertiefung.e02/e03, Entwürfe vertiefung.e06–e08.
+      Damit sind alle 26 nicht zurückgestellten Einheiten entworfen.
+    - A2 ar: Übersetzung e01–e10.
+    - B1 de: Plan (1.300 Lemmata) und Entwurf e01–e04.
+    - B1 tr: Plan (1.284 Lemmata) und Entwurf e02; ZWISCHENSTAND e01 842b8764.
+  - **Neu gestartet:**
+    - L8-02, nur Gegenprüfung: `wf_79c7e194-b7c`.
+    - A2 ar `wf_9a516d04-ac5`.
+    - Wissen `wf_456ab194-786`: Belegprüfung vertiefung.e06–e08.
+    - B1 de `wf_9be04472-043`.
+    - B1 tr `wf_76e3ba35-b92`.
+    - B1 ar `wf_9f4d5430-d19`: neu, mit Plan.
+  - **A1-Freigabe:** wartet weiter auf die Erlaubnis des Nutzers (120 gestagte Dateien).
+
 - **Stand 24.10.2026 05:45 UTC – nach dem Limit (≈ 20:50, Reset 00:00) fortgesetzt:**
   - **Fertig seit 19:15:**
     - A1-Schlussprüfungen de/tr/ar: 0 blockierend; 87613b1e, 2a770dab, 9ca48e68.
