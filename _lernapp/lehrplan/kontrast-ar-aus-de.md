@@ -217,7 +217,7 @@ Die Tabellen folgen der Grammatikfolge des Rahmenplans (`ar.rahmen.json`, 126 ID
 | `ar.g.notwendigkeit` (A2-e09) | „müssen“ ist unpersönlich: yaǧibu an + Konjunktiv oder ʿalā + Person + an. yaǧibu bleibt gleich; die Person steckt im zweiten Verb. | „aǧibu an adrusa“ · „anā yaǧibu adrus“ | „Ich muss lernen“ heißt „es ist nötig, dass ich lerne“: yaǧibu an adrusa oder ʿalayya an adrusa. |
 | `ar.g.praep_zeit` (A2-e10) | munḏu (seit) mit Präsens für Andauerndes – vertraut aus dem Deutschen („Ich wohne seit …“). Vor Verben stehen qabla an und baʿda an. | „qabla aḏhab“ ohne an | Wie im Deutschen: askunu fī Wetzlar munḏu ʿašr sanawāt. Vor einem Verb brauchen qabla und baʿda ein an: qabla an anāma. |
 | `ar.g.li_anna` (A2-e10) | li-anna („weil“) steht mit Nomen oder angehängtem Pronomen; die Wortstellung bleibt wie im Hauptsatz. | „li-anna huwa marīḍ“ · Verb ans Satzende wie nach „weil“ | Nach li-anna hängt das Pronomen an: li-annahu marīḍ, li-annanī mutʿab. Kein Verb ans Ende. |
-| `ar.g.partizip1` (A2-e11) | fāʿil (einer, der etwas tut) und mafʿūl (etwas, das getan wurde) dienen als Adjektiv oder Nomen. anā ḏāhib heißt auch „ich bin unterwegs“. | „al-ḥadīqa fataḥat“ für „Der Park ist geöffnet“ | kātib = Schreiber, maktūb = geschrieben. Auf Schildern: maftūḥ (geöffnet), maġlūq (geschlossen). |
+| `ar.g.partizip1` (A2-e11) | fāʿil (einer, der etwas tut) und mafʿūl (etwas, das getan wurde) dienen als Adjektiv oder Nomen. anā ḏāhib heißt auch „ich bin unterwegs“. | „al-ḥadīqa fataḥat“ für „Der Park ist geöffnet“ | kātib = Schreiber, maktūb = geschrieben. Auf Schildern: maftūḥ (geöffnet), muġlaq (geschlossen; Partizip des IV. Stamms, im Kurs Lemma ar.a1.e03.maghluq – maġlūq ist selten). |
 | `ar.g.kollektiv` (A2-e11) | Sammelnomen (tuffāḥ = Äpfel, Obstsorte) und Einzelstück auf -a (tuffāḥa = ein Apfel). | „tuffāḥāt“ für Äpfel allgemein · „šaǧar“ für einen Baum | tuffāḥ meint Äpfel als Sorte oder Menge, tuffāḥa einen Apfel – ähnlich wie „Obst“ und „ein Stück Obst“. |
 | `ar.g.verbalnomen` (A2-e12) | Tätigkeiten als Nomen (qirāʾa, kitāba, sibāḥa). Vertraut: „das Lesen“. Die Muster des Grundstamms sind nicht vorhersagbar. | „uḥibbu aqraʾu“ für „Ich lese gern“ | Wie „das Lesen“: uḥibbu l-qirāʾa. Das Verbalnomen mit dem Verb zusammen lernen. |
 | `ar.g.koennen` (A2-e12) | „können“: istaṭāʿa an + Konjunktiv; yumkinu an (es ist möglich) ist unpersönlich. | „astaṭīʿu uṣliḥu“ ohne an | astaṭīʿu an uṣalliḥa d-darrāǧa. Höflich fragen: hal yumkinu an asʾala suʾālan? |
@@ -765,7 +765,7 @@ Die Umgangssprache ist eine Stärke: Laute wie ḥ, ʿ, ṣ und viel Wortschatz 
 | 146 | ar.a2.e11 | kātib und maktūb: wer tut und was getan wurde | `ar.g.partizip1` |
 | 147 | ar.a2.e11 | anā ḏāhib: ich bin unterwegs | `ar.g.partizip1` |
 | 148 | ar.a2.e11 | šaǧar und šaǧara: Bäume und ein Baum | `ar.g.kollektiv` |
-| 149 | ar.a2.e11 | Schilder lesen: maftūḥ und maġlūq | `ar.g.partizip1` |
+| 149 | ar.a2.e11 | Schilder lesen: maftūḥ und muġlaq | `ar.g.partizip1` |
 | 150 | ar.a2.e12 | Wie „das Lesen“: al-qirāʾa | `ar.g.verbalnomen` |
 | 151 | ar.a2.e12 | astaṭīʿu an + Verb: können | `ar.g.koennen` |
 | 152 | ar.a2.e12 | hal yumkinu an …? – höflich fragen, ob es geht | `ar.g.koennen` |
