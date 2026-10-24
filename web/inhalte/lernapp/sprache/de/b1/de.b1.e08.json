@@ -1,0 +1,5231 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e08",
+    "reihenfolge": 9,
+    "thema": {
+      "de": "Besuch in der Ferne",
+      "tr": "Uzak bir ülkeye ziyaret",
+      "ar": "زيارة إلى بلد آخر"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann eine Reise planen, Verbindungen vergleichen und eine Unterkunft buchen.",
+        "tr": "Bir yolculuk planlayabilir, bağlantıları karşılaştırabilir ve konaklama için rezervasyon yapabilirim.",
+        "ar": "أستطيع أن أخطط لرحلة وأن أقارن بين المواصلات وأن أحجز مكانًا للإقامة."
+      },
+      {
+        "de": "Ich kann von einer Reise mit ihren schönen und schwierigen Momenten lebendig erzählen.",
+        "tr": "Bir yolculuğu güzel ve zor anlarıyla canlı bir şekilde anlatabilirim.",
+        "ar": "أستطيع أن أحكي عن رحلة بلحظاتها الجميلة والصعبة بطريقة حيّة."
+      }
+    ],
+    "symbol": "plane",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e08.nachdem",
+      "lemma": "nachdem",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Nebensatz, Verb am Ende (Vorzeitigkeit, Plusquamperfekt)"
+      },
+      "frequenzRang": 344,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.hinaus",
+      "lemma": "hinaus",
+      "wortart": "adverb",
+      "frequenzRang": 627,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.fort",
+      "lemma": "fort",
+      "wortart": "adverb",
+      "frequenzRang": 1146,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.diesmal",
+      "lemma": "diesmal",
+      "wortart": "adverb",
+      "frequenzRang": 1263,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.jemals",
+      "lemma": "jemals",
+      "wortart": "adverb",
+      "frequenzRang": 1808,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.europaeisch",
+      "lemma": "europäisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "europäische",
+        "endung_en": "europäischen",
+        "endung_er": "europäischer",
+        "endung_es": "europäisches",
+        "endung_em": "europäischem"
+      },
+      "frequenzRang": 429,
+      "quelle": "wiktionary:de:europäisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚europäisch‘ (https://de.wiktionary.org/wiki/europäisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.franzoesisch",
+      "lemma": "französisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "französische",
+        "endung_en": "französischen",
+        "endung_er": "französischer",
+        "endung_es": "französisches",
+        "endung_em": "französischem"
+      },
+      "frequenzRang": 632,
+      "quelle": "wiktionary:de:französisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚französisch‘ (https://de.wiktionary.org/wiki/französisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.amerikanisch",
+      "lemma": "amerikanisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "amerikanische",
+        "endung_en": "amerikanischen",
+        "endung_er": "amerikanischer",
+        "endung_es": "amerikanisches",
+        "endung_em": "amerikanischem"
+      },
+      "frequenzRang": 795,
+      "quelle": "wiktionary:de:amerikanisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚amerikanisch‘ (https://de.wiktionary.org/wiki/amerikanisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.russisch",
+      "lemma": "russisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "russische",
+        "endung_en": "russischen",
+        "endung_er": "russischer",
+        "endung_es": "russisches",
+        "endung_em": "russischem"
+      },
+      "frequenzRang": 666,
+      "quelle": "wiktionary:de:russisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚russisch‘ (https://de.wiktionary.org/wiki/russisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.oesterreichisch",
+      "lemma": "österreichisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "österreichische",
+        "endung_en": "österreichischen",
+        "endung_er": "österreichischer",
+        "endung_es": "österreichisches",
+        "endung_em": "österreichischem"
+      },
+      "frequenzRang": 1008,
+      "quelle": "wiktionary:de:österreichisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚österreichisch‘ (https://de.wiktionary.org/wiki/österreichisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.britisch",
+      "lemma": "britisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "britische",
+        "endung_en": "britischen",
+        "endung_er": "britischer",
+        "endung_es": "britisches",
+        "endung_em": "britischem"
+      },
+      "frequenzRang": 1326,
+      "quelle": "wiktionary:de:britisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚britisch‘ (https://de.wiktionary.org/wiki/britisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.spanisch",
+      "lemma": "spanisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "spanische",
+        "endung_en": "spanischen",
+        "endung_er": "spanischer",
+        "endung_es": "spanisches",
+        "endung_em": "spanischem"
+      },
+      "frequenzRang": 1398,
+      "quelle": "wiktionary:de:spanisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚spanisch‘ (https://de.wiktionary.org/wiki/spanisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.griechisch",
+      "lemma": "griechisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "griechische",
+        "endung_en": "griechischen",
+        "endung_er": "griechischer",
+        "endung_es": "griechisches",
+        "endung_em": "griechischem"
+      },
+      "frequenzRang": 1642,
+      "quelle": "wiktionary:de:griechisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚griechisch‘ (https://de.wiktionary.org/wiki/griechisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.chinesisch",
+      "lemma": "chinesisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "chinesische",
+        "endung_en": "chinesischen",
+        "endung_er": "chinesischer",
+        "endung_es": "chinesisches",
+        "endung_em": "chinesischem"
+      },
+      "frequenzRang": 1505,
+      "quelle": "wiktionary:de:chinesisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚chinesisch‘ (https://de.wiktionary.org/wiki/chinesisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.japanisch",
+      "lemma": "japanisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "japanische",
+        "endung_en": "japanischen",
+        "endung_er": "japanischer",
+        "endung_es": "japanisches",
+        "endung_em": "japanischem"
+      },
+      "frequenzRang": 1751,
+      "quelle": "wiktionary:de:japanisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚japanisch‘ (https://de.wiktionary.org/wiki/japanisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.unglaublich",
+      "lemma": "unglaublich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "unglaubliche",
+        "endung_en": "unglaublichen",
+        "endung_er": "unglaublicher",
+        "endung_es": "unglaubliches",
+        "endung_em": "unglaublichem",
+        "komparativ": "unglaublicher",
+        "superlativ": "unglaublichsten",
+        "superlativ_e": "unglaublichste"
+      },
+      "frequenzRang": 1030,
+      "quelle": "wiktionary:de:unglaublich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚unglaublich‘ (https://de.wiktionary.org/wiki/unglaublich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.grossartig",
+      "lemma": "großartig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "großartige",
+        "endung_en": "großartigen",
+        "endung_er": "großartiger",
+        "endung_es": "großartiges",
+        "endung_em": "großartigem",
+        "komparativ": "großartiger",
+        "superlativ": "großartigsten",
+        "superlativ_e": "großartigste"
+      },
+      "frequenzRang": 1100,
+      "quelle": "wiktionary:de:großartig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚großartig‘ (https://de.wiktionary.org/wiki/großartig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.wunderschoen",
+      "lemma": "wunderschön",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "wunderschöne",
+        "endung_en": "wunderschönen",
+        "endung_er": "wunderschöner",
+        "endung_es": "wunderschönes",
+        "endung_em": "wunderschönem"
+      },
+      "frequenzRang": 1457,
+      "quelle": "wiktionary:de:wunderschön",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wunderschön‘ (https://de.wiktionary.org/wiki/wunderschön), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.zufaellig",
+      "lemma": "zufällig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "zufällige",
+        "endung_en": "zufälligen",
+        "endung_er": "zufälliger",
+        "endung_es": "zufälliges",
+        "endung_em": "zufälligem"
+      },
+      "frequenzRang": 1712,
+      "quelle": "wiktionary:de:zufällig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zufällig‘ (https://de.wiktionary.org/wiki/zufällig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.angenehm",
+      "lemma": "angenehm",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "angenehme",
+        "endung_en": "angenehmen",
+        "endung_er": "angenehmer",
+        "endung_es": "angenehmes",
+        "endung_em": "angenehmem",
+        "komparativ": "angenehmer",
+        "superlativ": "angenehmsten",
+        "superlativ_e": "angenehmste"
+      },
+      "frequenzRang": 1599,
+      "quelle": "wiktionary:de:angenehm",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚angenehm‘ (https://de.wiktionary.org/wiki/angenehm), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.ideal",
+      "lemma": "ideal",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ideale",
+        "endung_en": "idealen",
+        "endung_er": "idealer",
+        "endung_es": "ideales",
+        "endung_em": "idealem"
+      },
+      "frequenzRang": 1768,
+      "quelle": "wiktionary:de:ideal",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ideal‘ (https://de.wiktionary.org/wiki/ideal), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.besondere",
+      "lemma": "besondere",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "besondere",
+        "endung_en": "besonderen",
+        "endung_er": "besonderer",
+        "endung_es": "besonderes",
+        "endung_em": "besonderem"
+      },
+      "frequenzRang": 865,
+      "quelle": "wiktionary:de:besondere",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚besondere‘ (https://de.wiktionary.org/wiki/besondere), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.blick",
+      "lemma": "Blick",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Blicke"
+      },
+      "formen": {
+        "pl": "Blicke",
+        "dat_pl": "Blicken",
+        "gen_sg": "Blicks",
+        "gen_sg_2": "Blickes"
+      },
+      "frequenzRang": 469,
+      "quelle": "wiktionary:de:Blick",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Blick‘ (https://de.wiktionary.org/wiki/Blick), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.region",
+      "lemma": "Region",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Regionen"
+      },
+      "formen": {
+        "pl": "Regionen"
+      },
+      "frequenzRang": 553,
+      "quelle": "wiktionary:de:Region",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Region‘ (https://de.wiktionary.org/wiki/Region), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.eindruck",
+      "lemma": "Eindruck",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Eindrücke"
+      },
+      "formen": {
+        "pl": "Eindrücke",
+        "dat_pl": "Eindrücken",
+        "gen_sg": "Eindrucks",
+        "gen_sg_2": "Eindruckes"
+      },
+      "frequenzRang": 1066,
+      "quelle": "wiktionary:de:Eindruck",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Eindruck‘ (https://de.wiktionary.org/wiki/Eindruck), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.umgebung",
+      "lemma": "Umgebung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Umgebungen"
+      },
+      "formen": {
+        "pl": "Umgebungen"
+      },
+      "frequenzRang": 1137,
+      "quelle": "wiktionary:de:Umgebung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Umgebung‘ (https://de.wiktionary.org/wiki/Umgebung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.tour",
+      "lemma": "Tour",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Touren"
+      },
+      "formen": {
+        "pl": "Touren"
+      },
+      "frequenzRang": 1145,
+      "quelle": "wiktionary:de:Tour",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tour‘ (https://de.wiktionary.org/wiki/Tour), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.gelegenheit",
+      "lemma": "Gelegenheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Gelegenheiten"
+      },
+      "formen": {
+        "pl": "Gelegenheiten"
+      },
+      "frequenzRang": 1282,
+      "quelle": "wiktionary:de:Gelegenheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gelegenheit‘ (https://de.wiktionary.org/wiki/Gelegenheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.planung",
+      "lemma": "Planung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Planungen"
+      },
+      "formen": {
+        "pl": "Planungen"
+      },
+      "frequenzRang": 1761,
+      "quelle": "wiktionary:de:Planung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Planung‘ (https://de.wiktionary.org/wiki/Planung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.hauptstadt",
+      "lemma": "Hauptstadt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Hauptstädte"
+      },
+      "formen": {
+        "pl": "Hauptstädte",
+        "dat_pl": "Hauptstädten"
+      },
+      "frequenzRang": 1820,
+      "quelle": "wiktionary:de:Hauptstadt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hauptstadt‘ (https://de.wiktionary.org/wiki/Hauptstadt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.aufenthalt",
+      "lemma": "Aufenthalt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Aufenthalte"
+      },
+      "formen": {
+        "pl": "Aufenthalte",
+        "dat_pl": "Aufenthalten",
+        "gen_sg": "Aufenthalts",
+        "gen_sg_2": "Aufenthaltes"
+      },
+      "frequenzRang": 2626,
+      "quelle": "wiktionary:de:Aufenthalt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Aufenthalt‘ (https://de.wiktionary.org/wiki/Aufenthalt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.kueste",
+      "lemma": "Küste",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Küsten"
+      },
+      "formen": {
+        "pl": "Küsten"
+      },
+      "frequenzRang": 2666,
+      "quelle": "wiktionary:de:Küste",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Küste‘ (https://de.wiktionary.org/wiki/Küste), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.gebirge",
+      "lemma": "Gebirge",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gebirge"
+      },
+      "formen": {
+        "dat_pl": "Gebirgen",
+        "gen_sg": "Gebirges"
+      },
+      "frequenzRang": 4831,
+      "quelle": "wiktionary:de:Gebirge",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gebirge‘ (https://de.wiktionary.org/wiki/Gebirge), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.tourist",
+      "lemma": "Tourist",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Touristen",
+        "deklination": "n-Deklination",
+        "weiblich": "Touristin"
+      },
+      "formen": {
+        "pl": "Touristen",
+        "akk_dat_sg": "Touristen",
+        "gen_sg": "Touristen",
+        "weiblich": "Touristin",
+        "weiblich_pl": "Touristinnen"
+      },
+      "frequenzRang": 3024,
+      "quelle": "wiktionary:de:Tourist",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tourist‘ (https://de.wiktionary.org/wiki/Tourist), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.tourismus",
+      "lemma": "Tourismus",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Tourismus"
+      },
+      "frequenzRang": 3085,
+      "quelle": "wiktionary:de:Tourismus",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tourismus‘ (https://de.wiktionary.org/wiki/Tourismus), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.pension",
+      "lemma": "Pension",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Pensionen"
+      },
+      "formen": {
+        "pl": "Pensionen"
+      },
+      "frequenzRang": 4336,
+      "quelle": "wiktionary:de:Pension",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Pension‘ (https://de.wiktionary.org/wiki/Pension), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.zoll",
+      "lemma": "Zoll",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zölle"
+      },
+      "formen": {
+        "pl": "Zölle",
+        "dat_pl": "Zöllen",
+        "gen_sg": "Zolls",
+        "gen_sg_2": "Zolles"
+      },
+      "frequenzRang": 2617,
+      "quelle": "wiktionary:de:Zoll",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zoll‘ (https://de.wiktionary.org/wiki/Zoll), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.waehrung",
+      "lemma": "Währung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Währungen"
+      },
+      "formen": {
+        "pl": "Währungen"
+      },
+      "frequenzRang": 4286,
+      "quelle": "wiktionary:de:Währung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Währung‘ (https://de.wiktionary.org/wiki/Währung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.bargeld",
+      "lemma": "Bargeld",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Bargelds",
+        "gen_sg_2": "Bargeldes"
+      },
+      "frequenzRang": 4170,
+      "quelle": "wiktionary:de:Bargeld",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bargeld‘ (https://de.wiktionary.org/wiki/Bargeld), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.rucksack",
+      "lemma": "Rucksack",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Rucksäcke"
+      },
+      "formen": {
+        "pl": "Rucksäcke",
+        "dat_pl": "Rucksäcken",
+        "gen_sg": "Rucksacks",
+        "gen_sg_2": "Rucksackes"
+      },
+      "frequenzRang": 4436,
+      "quelle": "wiktionary:de:Rucksack",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rucksack‘ (https://de.wiktionary.org/wiki/Rucksack), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.schlange",
+      "lemma": "Schlange",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schlangen"
+      },
+      "formen": {
+        "pl": "Schlangen"
+      },
+      "frequenzRang": 3176,
+      "quelle": "wiktionary:de:Schlange",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schlange‘ (https://de.wiktionary.org/wiki/Schlange), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.rueckfahrt",
+      "lemma": "Rückfahrt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Rückfahrten"
+      },
+      "formen": {
+        "pl": "Rückfahrten"
+      },
+      "frequenzRang": 10334,
+      "quelle": "wiktionary:de:Rückfahrt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rückfahrt‘ (https://de.wiktionary.org/wiki/Rückfahrt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.hinfahrt",
+      "lemma": "Hinfahrt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Hinfahrten"
+      },
+      "formen": {
+        "pl": "Hinfahrten"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.reiseziel",
+      "lemma": "Reiseziel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Reiseziele"
+      },
+      "formen": {
+        "pl": "Reiseziele",
+        "dat_pl": "Reisezielen",
+        "gen_sg": "Reiseziels",
+        "gen_sg_2": "Reisezieles"
+      },
+      "frequenzRang": 22546,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.abflug",
+      "lemma": "Abflug",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Abflüge"
+      },
+      "formen": {
+        "pl": "Abflüge",
+        "dat_pl": "Abflügen",
+        "gen_sg": "Abflugs",
+        "gen_sg_2": "Abfluges"
+      },
+      "frequenzRang": 10185,
+      "quelle": "wiktionary:de:Abflug",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abflug‘ (https://de.wiktionary.org/wiki/Abflug), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.rueckflug",
+      "lemma": "Rückflug",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Rückflüge"
+      },
+      "formen": {
+        "pl": "Rückflüge",
+        "dat_pl": "Rückflügen",
+        "gen_sg": "Rückflugs",
+        "gen_sg_2": "Rückfluges"
+      },
+      "frequenzRang": 27550,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.missgeschick",
+      "lemma": "Missgeschick",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Missgeschicke"
+      },
+      "formen": {
+        "pl": "Missgeschicke",
+        "dat_pl": "Missgeschicken",
+        "gen_sg": "Missgeschicks",
+        "gen_sg_2": "Missgeschickes"
+      },
+      "frequenzRang": 32256,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.panne",
+      "lemma": "Panne",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Pannen"
+      },
+      "formen": {
+        "pl": "Pannen"
+      },
+      "frequenzRang": 7525,
+      "quelle": "wiktionary:de:Panne",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Panne‘ (https://de.wiktionary.org/wiki/Panne), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.ferne",
+      "lemma": "Ferne",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 6208,
+      "quelle": "wiktionary:de:Ferne",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ferne‘ (https://de.wiktionary.org/wiki/Ferne), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.gastfreundschaft",
+      "lemma": "Gastfreundschaft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 10304,
+      "quelle": "wiktionary:de:Gastfreundschaft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gastfreundschaft‘ (https://de.wiktionary.org/wiki/Gastfreundschaft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.jugendherberge",
+      "lemma": "Jugendherberge",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Jugendherbergen"
+      },
+      "formen": {
+        "pl": "Jugendherbergen"
+      },
+      "frequenzRang": 28342,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.reisebuero",
+      "lemma": "Reisebüro",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Reisebüros"
+      },
+      "formen": {
+        "pl": "Reisebüros",
+        "gen_sg": "Reisebüros"
+      },
+      "frequenzRang": 24971,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.reisefuehrer",
+      "lemma": "Reiseführer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Reiseführer"
+      },
+      "formen": {
+        "dat_pl": "Reiseführern",
+        "gen_sg": "Reiseführers"
+      },
+      "frequenzRang": 10544,
+      "quelle": "wiktionary:de:Reiseführer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Reiseführer‘ (https://de.wiktionary.org/wiki/Reiseführer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.stadtplan",
+      "lemma": "Stadtplan",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Stadtpläne"
+      },
+      "formen": {
+        "pl": "Stadtpläne",
+        "dat_pl": "Stadtplänen",
+        "gen_sg": "Stadtplans",
+        "gen_sg_2": "Stadtplanes"
+      },
+      "frequenzRang": 28945,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.verbindung",
+      "lemma": "Verbindung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Verbindungen"
+      },
+      "formen": {
+        "pl": "Verbindungen"
+      },
+      "frequenzRang": 930,
+      "quelle": "wiktionary:de:Verbindung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verbindung‘ (https://de.wiktionary.org/wiki/Verbindung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.faehre",
+      "lemma": "Fähre",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Fähren"
+      },
+      "formen": {
+        "pl": "Fähren"
+      },
+      "frequenzRang": 6587,
+      "quelle": "wiktionary:de:Fähre",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fähre‘ (https://de.wiktionary.org/wiki/Fähre), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.einreise",
+      "lemma": "Einreise",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Einreisen"
+      },
+      "formen": {
+        "pl": "Einreisen"
+      },
+      "frequenzRang": 8592,
+      "quelle": "wiktionary:de:Einreise",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Einreise‘ (https://de.wiktionary.org/wiki/Einreise), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.wartezeit",
+      "lemma": "Wartezeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Wartezeiten"
+      },
+      "formen": {
+        "pl": "Wartezeiten"
+      },
+      "frequenzRang": 5728,
+      "quelle": "wiktionary:de:Wartezeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wartezeit‘ (https://de.wiktionary.org/wiki/Wartezeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.uebernachtung",
+      "lemma": "Übernachtung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Übernachtungen"
+      },
+      "formen": {
+        "pl": "Übernachtungen"
+      },
+      "frequenzRang": 8252,
+      "quelle": "wiktionary:de:Übernachtung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Übernachtung‘ (https://de.wiktionary.org/wiki/Übernachtung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.rezeption",
+      "lemma": "Rezeption",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Rezeptionen"
+      },
+      "formen": {
+        "pl": "Rezeptionen"
+      },
+      "frequenzRang": 6151,
+      "quelle": "wiktionary:de:Rezeption",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rezeption‘ (https://de.wiktionary.org/wiki/Rezeption), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.mietwagen",
+      "lemma": "Mietwagen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Mietwagen"
+      },
+      "formen": {
+        "gen_sg": "Mietwagens"
+      },
+      "frequenzRang": 20407,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.fremdsprache",
+      "lemma": "Fremdsprache",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Fremdsprachen"
+      },
+      "formen": {
+        "pl": "Fremdsprachen"
+      },
+      "frequenzRang": 7050,
+      "quelle": "wiktionary:de:Fremdsprache",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fremdsprache‘ (https://de.wiktionary.org/wiki/Fremdsprache), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.fundbuero",
+      "lemma": "Fundbüro",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Fundbüros"
+      },
+      "formen": {
+        "pl": "Fundbüros",
+        "gen_sg": "Fundbüros"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.diebstahl",
+      "lemma": "Diebstahl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Diebstähle"
+      },
+      "formen": {
+        "pl": "Diebstähle",
+        "dat_pl": "Diebstählen",
+        "gen_sg": "Diebstahls",
+        "gen_sg_2": "Diebstahles"
+      },
+      "frequenzRang": 3826,
+      "quelle": "wiktionary:de:Diebstahl",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Diebstahl‘ (https://de.wiktionary.org/wiki/Diebstahl), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.souvenir",
+      "lemma": "Souvenir",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Souvenirs"
+      },
+      "formen": {
+        "pl": "Souvenirs",
+        "gen_sg": "Souvenirs"
+      },
+      "frequenzRang": 34471,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.stil",
+      "lemma": "Stil",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Stile"
+      },
+      "formen": {
+        "pl": "Stile",
+        "dat_pl": "Stilen",
+        "gen_sg": "Stils",
+        "gen_sg_2": "Stiles"
+      },
+      "frequenzRang": 1361,
+      "quelle": "wiktionary:de:Stil",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stil‘ (https://de.wiktionary.org/wiki/Stil), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.klappen",
+      "lemma": "klappen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "register": "umgangssprachlich"
+      },
+      "formen": {
+        "infinitiv": "klappen",
+        "praes_ich": "klappe",
+        "praes_du": "klappst",
+        "praes_er_sie_es": "klappt",
+        "praes_wir": "klappen",
+        "praes_ihr": "klappt",
+        "praes_sie_Sie": "klappen",
+        "praet_ich_er_sie_es": "klappte",
+        "praet_du": "klapptest",
+        "praet_wir_sie_Sie": "klappten",
+        "praet_ihr": "klapptet",
+        "partizip_2": "geklappt"
+      },
+      "frequenzRang": 1272,
+      "quelle": "wiktionary:de:klappen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚klappen‘ (https://de.wiktionary.org/wiki/klappen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.verlaufen",
+      "lemma": "verlaufen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "verlaufen",
+        "praes_ich": "verlaufe",
+        "praes_du": "verläufst",
+        "praes_er_sie_es": "verläuft",
+        "praes_wir": "verlaufen",
+        "praes_ihr": "verlauft",
+        "praes_sie_Sie": "verlaufen",
+        "praet_ich_er_sie_es": "verlief",
+        "praet_du": "verliefst",
+        "praet_wir_sie_Sie": "verliefen",
+        "praet_ihr": "verlieft",
+        "partizip_2": "verlaufen",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 1705,
+      "quelle": "wiktionary:de:verlaufen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verlaufen‘ (https://de.wiktionary.org/wiki/verlaufen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.wundern",
+      "lemma": "wundern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "wundern",
+        "praes_ich": "wundere",
+        "praes_du": "wunderst",
+        "praes_er_sie_es": "wundert",
+        "praes_wir": "wundern",
+        "praes_ihr": "wundert",
+        "praes_sie_Sie": "wundern",
+        "praet_ich_er_sie_es": "wunderte",
+        "praet_du": "wundertest",
+        "praet_wir_sie_Sie": "wunderten",
+        "praet_ihr": "wundertet",
+        "partizip_2": "gewundert",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 1960,
+      "quelle": "wiktionary:de:wundern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚wundern‘ (https://de.wiktionary.org/wiki/wundern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.stornieren",
+      "lemma": "stornieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "stornieren",
+        "praes_ich": "storniere",
+        "praes_du": "stornierst",
+        "praes_er_sie_es": "storniert",
+        "praes_wir": "stornieren",
+        "praes_ihr": "storniert",
+        "praes_sie_Sie": "stornieren",
+        "praet_ich_er_sie_es": "stornierte",
+        "praet_du": "storniertest",
+        "praet_wir_sie_Sie": "stornierten",
+        "praet_ihr": "storniertet",
+        "partizip_2": "storniert",
+        "imp_du": "stornier",
+        "imp_ihr": "storniert"
+      },
+      "frequenzRang": 39751,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.auspacken",
+      "lemma": "auspacken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "aus",
+        "grundverb": "packen (de.a2.e11.packen)"
+      },
+      "formen": {
+        "infinitiv": "auspacken",
+        "verbzusatz": "aus",
+        "partizip_2": "ausgepackt",
+        "zu_infinitiv": "auszupacken",
+        "nebensatz_er_sie_es": "auspackt",
+        "nebensatz_praet": "auspackte",
+        "nebensatz_praet_pl": "auspackten"
+      },
+      "frequenzRang": 7796,
+      "quelle": "wiktionary:de:auspacken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚auspacken‘ (https://de.wiktionary.org/wiki/auspacken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.einchecken",
+      "lemma": "einchecken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ein"
+      },
+      "formen": {
+        "infinitiv": "einchecken",
+        "verbzusatz": "ein",
+        "praes_ich": "checke",
+        "praes_du": "checkst",
+        "praes_er_sie_es": "checkt",
+        "praes_wir": "checken",
+        "praes_ihr": "checkt",
+        "praes_sie_Sie": "checken",
+        "praet_ich_er_sie_es": "checkte",
+        "praet_du": "checktest",
+        "praet_wir_sie_Sie": "checkten",
+        "praet_ihr": "checktet",
+        "partizip_2": "eingecheckt",
+        "zu_infinitiv": "einzuchecken",
+        "nebensatz_er_sie_es": "eincheckt",
+        "nebensatz_praet": "eincheckte",
+        "nebensatz_praet_pl": "eincheckten",
+        "imp_du": "check",
+        "imp_ihr": "checkt"
+      },
+      "frequenzRang": 44660,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.verreisen",
+      "lemma": "verreisen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "verreisen",
+        "praes_ich": "verreise",
+        "praes_du": "verreist",
+        "praes_er_sie_es": "verreist",
+        "praes_wir": "verreisen",
+        "praes_ihr": "verreist",
+        "praes_sie_Sie": "verreisen",
+        "praet_ich_er_sie_es": "verreiste",
+        "praet_du": "verreistest",
+        "praet_wir_sie_Sie": "verreisten",
+        "praet_ihr": "verreistet",
+        "partizip_2": "verreist"
+      },
+      "frequenzRang": 25457,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.restaurant",
+      "lemma": "Restaurant",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Restaurants"
+      },
+      "formen": {
+        "pl": "Restaurants",
+        "gen_sg": "Restaurants"
+      },
+      "frequenzRang": 1487,
+      "quelle": "wiktionary:de:Restaurant",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Restaurant‘ (https://de.wiktionary.org/wiki/Restaurant), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.uebersetzung",
+      "lemma": "Übersetzung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Übersetzungen"
+      },
+      "formen": {
+        "pl": "Übersetzungen"
+      },
+      "frequenzRang": 1613,
+      "quelle": "wiktionary:de:Übersetzung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Übersetzung‘ (https://de.wiktionary.org/wiki/Übersetzung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.roemisch",
+      "lemma": "römisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "römische",
+        "endung_en": "römischen",
+        "endung_er": "römischer",
+        "endung_es": "römisches",
+        "endung_em": "römischem"
+      },
+      "frequenzRang": 1744,
+      "quelle": "wiktionary:de:römisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚römisch‘ (https://de.wiktionary.org/wiki/römisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.turm",
+      "lemma": "Turm",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Türme"
+      },
+      "formen": {
+        "pl": "Türme",
+        "dat_pl": "Türmen",
+        "gen_sg": "Turms",
+        "gen_sg_2": "Turmes"
+      },
+      "frequenzRang": 2997,
+      "quelle": "wiktionary:de:Turm",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Turm‘ (https://de.wiktionary.org/wiki/Turm), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.denkmal",
+      "lemma": "Denkmal",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Denkmäler"
+      },
+      "formen": {
+        "pl": "Denkmäler",
+        "dat_pl": "Denkmälern",
+        "gen_sg": "Denkmals",
+        "gen_sg_2": "Denkmales"
+      },
+      "frequenzRang": 3166,
+      "quelle": "wiktionary:de:Denkmal",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Denkmal‘ (https://de.wiktionary.org/wiki/Denkmal), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.heimreise",
+      "lemma": "Heimreise",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Heimreisen"
+      },
+      "formen": {
+        "pl": "Heimreisen"
+      },
+      "frequenzRang": 24050,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.ruine",
+      "lemma": "Ruine",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ruinen"
+      },
+      "formen": {
+        "pl": "Ruinen"
+      },
+      "frequenzRang": 5895,
+      "quelle": "wiktionary:de:Ruine",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ruine‘ (https://de.wiktionary.org/wiki/Ruine), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e08.s0001",
+      "text": "Die türkische Küste ist ein beliebtes Reiseziel für Familien aus Deutschland.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0002",
+      "text": "Opa Kamāl träumt manchmal von einer langen Reise in die Ferne.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0003",
+      "text": "In der Umgebung unserer Stadt kann man gut wandern und Rad fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0004",
+      "text": "Diese Region ist für ihr gutes Essen und ihre alten Städte bekannt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0005",
+      "text": "In unserer Region regnet es im Herbst sehr viel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0006",
+      "text": "Im Sommer fahren viele Familien an die Küste.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0007",
+      "text": "An der Küste ist es oft windig, aber nicht so heiß.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0008",
+      "text": "Im Winter wollen wir ins Gebirge fahren, weil dort Schnee liegt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0009",
+      "text": "Ankara ist die Hauptstadt der Türkei.",
+      "quelle": "tatoeba:1339949",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1339949 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e08.s0010",
+      "text": "Amman ist die Hauptstadt von Jordanien.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0011",
+      "text": "Viele europäische Hauptstädte kann man gut mit dem Zug erreichen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0012",
+      "text": "In Paris haben wir jeden Morgen frisches französisches Brot gegessen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0013",
+      "text": "Der Cousin von Jan studiert an einer amerikanischen Universität.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0014",
+      "text": "Unsere Nachbarin Karin hat in der Schule Russisch gelernt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0015",
+      "text": "Die österreichischen Berge sind im Winter wunderschön.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0016",
+      "text": "Auf der Fähre haben wir eine britische Familie kennengelernt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0017",
+      "text": "Im spanischen Restaurant gibt es heute Fisch mit Reis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0018",
+      "text": "Die griechischen Inseln sind im Sommer voller Touristen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0019",
+      "text": "Magst du die chinesische Küche?",
+      "quelle": "tatoeba:3430356",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3430356 von Hikaru (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e08.s0020",
+      "text": "Japanisch ist schwieriger als Englisch.",
+      "quelle": "tatoeba:3864678",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3864678 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e08.s0021",
+      "text": "In Trier kann man noch viele römische Ruinen sehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0022",
+      "text": "Vom Turm hat man einen wunderschönen Blick über die ganze Stadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0023",
+      "text": "Auf dem Berg steht die Ruine einer alten Burg.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0024",
+      "text": "Viele Touristen besuchen jedes Jahr diese Insel.",
+      "quelle": "tatoeba:446414",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #446414 von Alba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e08.s0025",
+      "text": "In vielen Orten am Meer leben die Menschen vom Tourismus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0026",
+      "text": "Die Landschaft an der Küste ist wunderschön.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0027",
+      "text": "Der Turm ist unglaublich hoch, man sieht ihn schon von Weitem.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0028",
+      "text": "Haben Sie jemals Rom besucht?",
+      "quelle": "tatoeba:497074",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #497074 von Espi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e08.s0029",
+      "text": "Ich überlege, ob ich verreisen sollte.",
+      "quelle": "tatoeba:2976562",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2976562 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e08.s0030",
+      "text": "In diesem Sommer verreisen wir nicht, wir bleiben zu Hause.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0031",
+      "text": "Vom Balkon hatten wir einen Blick aufs Meer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0032",
+      "text": "Vor zwei Jahren waren wir an der griechischen Küste.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0033",
+      "text": "In drei Wochen fliegen wir in die Türkei, ich freue mich schon!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0034",
+      "text": "Wir bleiben für zwei Wochen in einer kleinen Pension am Meer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0035",
+      "text": "Seit drei Tagen sind wir in Rom, und es regnet jeden Tag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0036",
+      "text": "Wohin verreist ihr in den Ferien?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0037",
+      "text": "Wir fliegen in drei Wochen nach Rom.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0038",
+      "text": "Toll! Und was wollt ihr dort sehen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0039",
+      "text": "Vor allem die römischen Ruinen und die alten Denkmäler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0040",
+      "text": "Wir bleiben dort für zehn Tage.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0041",
+      "text": "Mit dem Zug dauert die Reise zu lange.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0042",
+      "text": "Warst du schon einmal in der Türkei?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0043",
+      "text": "Ja, vor drei Jahren. Wir waren an der Küste bei Izmir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0044",
+      "text": "Ja, in drei Wochen fahren wir ins Gebirge.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0045",
+      "text": "Nein, die Hauptstadt ist nicht Istanbul.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0046",
+      "text": "Ich war noch nie in Japan, aber ich möchte es gern einmal sehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0047",
+      "text": "Mein liebstes Reiseziel ist die Küste, weil ich das Meer liebe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0048",
+      "text": "Die Planung einer großen Reise dauert oft mehrere Wochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0049",
+      "text": "Lass uns in einem Reisebüro nachfragen.",
+      "quelle": "tatoeba:438271",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #438271 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e08.s0050",
+      "text": "Gibt es eine direkte Verbindung von Frankfurt nach Izmir?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0051",
+      "text": "Die Hinfahrt dauert sechs Stunden, die Rückfahrt nur fünf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0052",
+      "text": "Für die Hinfahrt nehmen wir den Zug, zurück fahren wir mit dem Bus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0053",
+      "text": "Haben Sie schon ein Ticket für die Rückfahrt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0054",
+      "text": "Der Abflug ist schon um sechs Uhr morgens.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0055",
+      "text": "Am Freitag ist der Rückflug viel teurer als am Dienstag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0056",
+      "text": "Die Pension ist klein, aber sehr sauber und gemütlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0057",
+      "text": "Eine Jugendherberge ist meistens günstiger als ein Hotel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0058",
+      "text": "Eine Übernachtung kostet 45 Euro pro Person.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0059",
+      "text": "Für unseren Aufenthalt in Rom haben wir eine kleine Wohnung gemietet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0060",
+      "text": "Die Hochzeit ist eine gute Gelegenheit, alle Verwandten zu sehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0061",
+      "text": "Im Mai ist das Wetter an der Küste angenehm warm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0062",
+      "text": "Haben Sie besondere Wünsche für die Unterkunft?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0063",
+      "text": "Am Flughafen holen wir einen Mietwagen ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0064",
+      "text": "Ein Mietwagen ist praktisch, aber nicht billig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0065",
+      "text": "Mit der Fähre fahren wir in einer Stunde auf die Insel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0066",
+      "text": "Bis zwei Wochen vor der Reise können Sie kostenlos stornieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0067",
+      "text": "Weil Thomas krank war, musste die Familie die Reise stornieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0068",
+      "text": "Man kann schon am Tag vor dem Abflug online einchecken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0069",
+      "text": "Schau mal, hier ist ein günstiges Angebot für eine Pension!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0070",
+      "text": "Komm doch mit ins Reisebüro, dann entscheiden wir zusammen!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0071",
+      "text": "Das ist ja viel teurer als letztes Jahr!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0072",
+      "text": "Mit dem Auto dauert die Fahrt eben länger als mit dem Flugzeug.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0073",
+      "text": "Wenn der Flug zu teuer ist, nehmen wir halt den Zug.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0074",
+      "text": "Können Sie mir mal die Verbindungen am Dienstag zeigen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0075",
+      "text": "Frag doch an der Rezeption, ob es noch ein Zimmer gibt!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0076",
+      "text": "Guten Tag, wir suchen eine Unterkunft an der Küste für eine Woche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0077",
+      "text": "Möchten Sie lieber in einem Hotel oder in einer Pension wohnen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0078",
+      "text": "In einer Pension, bitte. Sie sollte nicht zu teuer sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0079",
+      "text": "Dann habe ich hier ein schönes Angebot: 50 Euro pro Nacht mit Frühstück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0080",
+      "text": "Der Abflug ist leider erst am Abend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0081",
+      "text": "Nein, wir verreisen dieses Jahr nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0082",
+      "text": "Und was ist, wenn wir krank werden?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0083",
+      "text": "Dann können Sie die Reise bis zwei Wochen vorher kostenlos stornieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0084",
+      "text": "Dann nehmen wir eben den Mietwagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0085",
+      "text": "Die Fähre fährt jeden Tag um acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0086",
+      "text": "Das erste Angebot ist günstiger, aber das zweite hat die bessere Verbindung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0087",
+      "text": "Wir nehmen die Pension am Meer, weil sie ideal für Kinder ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0088",
+      "text": "Vor der Kontrolle stand eine lange Schlange.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0089",
+      "text": "Wir mussten fast eine Stunde in der Schlange stehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0090",
+      "text": "Die Wartezeit an der Kontrolle war heute besonders lang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0091",
+      "text": "Beim Zoll wollte der Beamte in unseren Koffer sehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0092",
+      "text": "Teure Geschenke muss man am Zoll manchmal anmelden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0093",
+      "text": "Für die Einreise braucht man einen gültigen Reisepass.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0094",
+      "text": "In vielen europäischen Ländern ist der Euro die Währung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0095",
+      "text": "Auf dem Markt kann man oft nur mit Bargeld bezahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0096",
+      "text": "Als Handgepäck nehme ich nur meinen Rucksack mit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0097",
+      "text": "Auf Reisen hilft es sehr, wenn man eine Fremdsprache spricht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0098",
+      "text": "Mit dem Handy bekommt man schnell eine Übersetzung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0099",
+      "text": "Das Restaurant ist voll.",
+      "quelle": "tatoeba:2518389",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2518389 von Gulo_Luscus (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e08.s0100",
+      "text": "Das Restaurant ist geschlossen.",
+      "quelle": "tatoeba:7667467",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7667467 von felix63 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e08.s0101",
+      "text": "Die Gastfreundschaft der Menschen dort hat uns sehr gefallen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0102",
+      "text": "Opa Kamāl liest lieber einen Stadtplan aus Papier als eine Karte im Handy.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0103",
+      "text": "Im Reiseführer stehen die wichtigsten Sehenswürdigkeiten der Stadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0104",
+      "text": "Am zweiten Tag haben wir eine Tour durch die Altstadt gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0105",
+      "text": "Elif wollte im Flugzeug unbedingt am Fenster sitzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0106",
+      "text": "Im Handgepäck durfte Emre keine große Flasche Wasser mitnehmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0107",
+      "text": "Wir konnten kein Wort Griechisch, aber alle waren sehr freundlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0108",
+      "text": "Musstest du am Flughafen lange warten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0109",
+      "text": "Guten Abend, wir haben ein Zimmer für drei Nächte gebucht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0110",
+      "text": "Herzlich willkommen! Auf welchen Namen, bitte?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0111",
+      "text": "Auf den Namen Polat. Kann man hier auch Geld wechseln?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0112",
+      "text": "Nein, leider nicht. Aber eine Bank ist gleich um die Ecke.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0113",
+      "text": "Ja, die Tour dauert zwei Stunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0114",
+      "text": "Das Frühstück gibt es ab sieben Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0115",
+      "text": "Entschuldigung, wo kann ich hier mit Bargeld bezahlen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0116",
+      "text": "Da drüben am Schalter. Karten nehmen wir leider nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0117",
+      "text": "Der Zoll ist im ersten Stock.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0118",
+      "text": "Tipps aus dem Reiseführer: Geld und Sprache",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0119",
+      "text": "In der Stadt können Sie fast überall mit Karte bezahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0120",
+      "text": "Auf dem Markt und in kleinen Restaurants brauchen Sie aber Bargeld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0121",
+      "text": "Geld wechseln Sie am besten in einer Bank, nicht am Flughafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0122",
+      "text": "Viele Menschen sprechen Englisch, doch ein paar Wörter in ihrer Sprache freuen jeden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0123",
+      "text": "Die Gastfreundschaft ist groß: Oft bekommen Gäste einen Tee angeboten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0124",
+      "text": "Am Flughafen kann man am besten Geld wechseln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0125",
+      "text": "Auf dem Markt braucht man Bargeld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0126",
+      "text": "Was freut die Menschen dort?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0127",
+      "text": "Wenn Gäste ein paar Wörter in ihrer Sprache sprechen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0128",
+      "text": "Wenn Gäste mit Karte bezahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0129",
+      "text": "Wenn Gäste ein Souvenir kaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0130",
+      "text": "Die Restaurants sind am Sonntag geschlossen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0131",
+      "text": "Wir mussten am Flughafen lange warten, weil die Schlange so lang war.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0132",
+      "text": "Über das Missgeschick mit dem Koffer lachen wir heute noch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0133",
+      "text": "Auf der Autobahn hatte unser Mietwagen plötzlich eine Panne.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0134",
+      "text": "Nach der Panne mussten wir zwei Stunden auf Hilfe warten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0135",
+      "text": "Damit es keinen Diebstahl gibt, sollte man auf dem Markt gut auf seine Tasche aufpassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0136",
+      "text": "Im Fundbüro am Bahnhof lag zum Glück der Rucksack von Elif.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0137",
+      "text": "Fragen Sie doch mal im Fundbüro nach!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0138",
+      "text": "Entschuldigung, ich habe mich verlaufen.",
+      "quelle": "tatoeba:13443216",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13443216 von mhr (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e08.s0139",
+      "text": "In der Altstadt haben wir uns ohne Stadtplan verlaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0140",
+      "text": "Die Reise ist am Ende doch noch gut verlaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0141",
+      "text": "Wir wunderten uns, warum der Bus nicht kam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0142",
+      "text": "Ich wundere mich, wie günstig das Essen hier ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0143",
+      "text": "Hat mit der Reise alles geklappt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0144",
+      "text": "Leider hat es mit dem Anschluss in Istanbul nicht geklappt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0145",
+      "text": "Das ist zufällig passiert.",
+      "quelle": "tatoeba:372328",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #372328 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e08.s0146",
+      "text": "In Rom haben wir ganz zufällig unsere Nachbarin Karin getroffen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0147",
+      "text": "Wir haben uns zufällig im Supermarkt getroffen.",
+      "quelle": "tatoeba:11170937",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11170937 von emitxab111 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e08.s0148",
+      "text": "Als wir am Bahnhof ankamen, war der Zug schon abgefahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0149",
+      "text": "Erst am Flughafen merkte Murat, dass er den Reisepass zu Hause vergessen hatte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0150",
+      "text": "Zum Glück hatten wir die Pension schon vorher gebucht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0151",
+      "text": "Nachdem wir zwei Stunden gewartet hatten, kam endlich der Bus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0152",
+      "text": "Nachdem wir die Koffer ausgepackt hatten, gingen wir sofort an den Strand.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0153",
+      "text": "Nachdem man das Auto repariert hatte, konnten wir endlich weiter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0154",
+      "text": "Nachdem wir uns verlaufen hatten, fragten wir eine Frau nach dem Weg.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0155",
+      "text": "Nachdem der Zug angekommen war, stiegen alle schnell aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0156",
+      "text": "Guten Tag, ich habe gestern im Zug meinen Rucksack vergessen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0157",
+      "text": "Wie sieht der Rucksack denn aus?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0158",
+      "text": "Er ist blau und ziemlich groß. Ein Stadtplan von Rom ist drin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0159",
+      "text": "Moment, ich schaue mal nach. Ja, hier ist er!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0160",
+      "text": "Nachdem wir gegessen hatten, gingen wir hinaus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0161",
+      "text": "Die Fähre fährt um acht Uhr ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0162",
+      "text": "Wie war eure Reise? Hat alles geklappt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0163",
+      "text": "Nicht ganz. Unser Mietwagen hatte eine Panne.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0164",
+      "text": "Ja, wir haben eine Reise gebucht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0165",
+      "text": "Informationen zu Gepäck und Verspätung",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0166",
+      "text": "Im Handgepäck dürfen Flüssigkeiten nur in kleinen Flaschen sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0167",
+      "text": "Scheren und große Flaschen gehören nicht ins Handgepäck, sondern in den Koffer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0168",
+      "text": "Pro Person ist ein Koffer mit höchstens 23 Kilo im Preis enthalten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0169",
+      "text": "Ist Ihr Koffer nicht angekommen, melden Sie das bitte sofort am Schalter für Gepäck.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0170",
+      "text": "Bei einer Verspätung von mehr als zwei Stunden bekommen Sie Getränke und etwas zu essen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0171",
+      "text": "Wenn ein Flug ausfällt, bieten wir Ihnen eine andere Verbindung an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0172",
+      "text": "Bei einer langen Wartezeit über Nacht zahlen wir auch die Übernachtung im Hotel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0173",
+      "text": "Heben Sie alle Rechnungen auf und fragen Sie am Schalter nach Ihren Rechten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0174",
+      "text": "Eine große Flasche Wasser darf man ins Handgepäck nehmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0175",
+      "text": "Schon bei einer kurzen Verspätung bekommt man eine Übernachtung im Hotel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0176",
+      "text": "Ein zweiter Koffer kostet 50 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0177",
+      "text": "Was soll man tun, wenn der Koffer nicht angekommen ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0178",
+      "text": "Man meldet es sofort am Schalter für Gepäck.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0179",
+      "text": "Man ruft sofort die Polizei an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0180",
+      "text": "Man wartet bis zum nächsten Tag am Flughafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0181",
+      "text": "Wenn der Flug ausfällt, bekommt man eine andere Verbindung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0182",
+      "text": "Auf unserer letzten Reise ist leider einiges schiefgegangen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0183",
+      "text": "Zuerst hatten wir eine Panne, und dann haben wir uns auch noch verlaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0184",
+      "text": "Welchen Eindruck hattest du von der Stadt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0185",
+      "text": "Mein erster Eindruck von Izmir war: laut, warm und sehr freundlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0186",
+      "text": "Wir sind mit vielen neuen Eindrücken nach Hause gekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0187",
+      "text": "Am letzten Tag begann schon früh am Morgen die lange Heimreise.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0188",
+      "text": "Auf der Heimreise waren alle müde, aber glücklich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0189",
+      "text": "Nach der Reise hatte niemand Lust, die Koffer auszupacken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0190",
+      "text": "Beim Auspacken fand Elif die Souvenirs für ihre Freundinnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0191",
+      "text": "Als Souvenir hat Jan eine kleine Tasse aus Griechenland mitgebracht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0192",
+      "text": "Auf dem Markt gibt es viele Souvenirs, aber nicht alle sind schön.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0193",
+      "text": "Die Häuser in der Altstadt sind in einem alten Stil gebaut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0194",
+      "text": "Jede Region hat ihren eigenen Stil beim Kochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0195",
+      "text": "Wir waren drei Wochen fort, und die Pflanzen hatten kein Wasser bekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0196",
+      "text": "Als wir zum Hafen kamen, war die Fähre schon fort.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0197",
+      "text": "Vom Balkon sahen wir jeden Morgen hinaus aufs Meer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0198",
+      "text": "Diesmal sind wir mit dem Zug gefahren und nicht mit dem Auto.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0199",
+      "text": "Letztes Jahr hat es nur geregnet, aber diesmal hatten wir Glück mit dem Wetter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0200",
+      "text": "Als wir in Izmir ankamen, war es schon dunkel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0201",
+      "text": "Wenn wir in der Türkei sind, besuchen wir immer die Schwester von Oma Sevim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0202",
+      "text": "Während wir flogen, schlief Elif die ganze Zeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0203",
+      "text": "Bevor wir verreisen, bringen wir unsere Pflanzen zu den Nachbarn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0204",
+      "text": "Seit wir zurück sind, denke ich jeden Tag an das Meer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0205",
+      "text": "Aus unserem Blog: Eine Hochzeit am Meer",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0206",
+      "text": "Letzten Monat waren wir für eine Woche an der türkischen Küste.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0207",
+      "text": "Kerem, ein Cousin von Murat, hat in einem kleinen Ort bei Izmir geheiratet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0208",
+      "text": "Die Feier fand in einem Garten direkt am Wasser statt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0209",
+      "text": "Über hundert Gäste waren da, und die Gastfreundschaft der Familie war unglaublich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0210",
+      "text": "Wir haben in einer kleinen Pension gewohnt, von der man einen wunderschönen Blick aufs Meer hatte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0211",
+      "text": "Nach der Hochzeit hatten wir noch Zeit für einen Ausflug zu alten römischen Ruinen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0212",
+      "text": "Die Heimreise war lang, aber wir haben viele schöne Eindrücke mitgebracht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0213",
+      "text": "Diesmal hat alles geklappt, sogar der Flug war pünktlich!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0214",
+      "text": "Die Feier war in einem Garten am Meer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0215",
+      "text": "Die Familie hat in einem großen Hotel gewohnt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0216",
+      "text": "Es hat während der ganzen Woche geregnet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0217",
+      "text": "Was hat die Familie nach der Hochzeit besichtigt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0218",
+      "text": "Alte römische Ruinen in der Umgebung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0219",
+      "text": "Einen hohen Turm in der Hauptstadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0220",
+      "text": "Ein Museum in Istanbul.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0221",
+      "text": "Wie war dein erster Eindruck von Amman?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0222",
+      "text": "Die Stadt ist sehr groß, und die Leute waren unglaublich freundlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0223",
+      "text": "Ich bin am Sonntag zurückgekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0224",
+      "text": "Ich habe meinen Stadtplan vergessen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0225",
+      "text": "Schreiben Sie Ihrer Familie einen kurzen Reisebericht. Wohin sind Sie gefahren, was haben Sie erlebt, und was hat nicht geklappt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0226",
+      "text": "Liebe Oma, lieber Opa, wir sind seit gestern wieder zu Hause. Die Reise nach Österreich war großartig! Wir haben in einer kleinen Pension im Gebirge gewohnt. Jeden Tag sind wir gewandert, und der Blick von den Bergen war wunderschön. Am zweiten Tag hatten wir aber ein Missgeschick: Nachdem wir lange gewandert waren, hatten wir uns verlaufen. Zum Glück hat uns ein freundlicher Tourist den Weg gezeigt. Am Abend haben wir in einem kleinen Restaurant gegessen. Die Gastfreundschaft der Leute dort hat uns sehr gefallen. Für euch habe ich ein kleines Souvenir mitgebracht. Bis bald, euer Jan",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0227",
+      "text": "Als wir in Rom waren, haben wir uns in der Altstadt verlaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0228",
+      "text": "Warten am Flughafen",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0229",
+      "text": "Im Juni wollte Familie Yılmaz zu einer Hochzeit nach Izmir fliegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0230",
+      "text": "Ein Cousin von Murat heiratete dort, und die ganze Familie war eingeladen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0231",
+      "text": "Der Abflug in Frankfurt war für zehn Uhr morgens geplant.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0232",
+      "text": "Nachdem sie eingecheckt hatten, setzten sie sich in die große Halle und warteten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0233",
+      "text": "Doch auf dem Bildschirm stand immer wieder eine neue Zeit für den Abflug.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0234",
+      "text": "Elif fragte immer wieder, wann sie endlich fliegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0235",
+      "text": "Ich weiß es auch nicht. Wir müssen eben warten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0236",
+      "text": "Nachdem sie fast vier Stunden gewartet hatten, kam die schlechte Nachricht: Der Flug fällt aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0237",
+      "text": "Das ist ja unglaublich! Die Hochzeit ist doch schon morgen!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0238",
+      "text": "Vor dem Schalter stand sofort eine lange Schlange.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0239",
+      "text": "Emre blieb ruhig und suchte mit dem Handy nach einer anderen Verbindung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0240",
+      "text": "Schaut mal, es gibt noch einen Flug über Istanbul!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0241",
+      "text": "Und wann kommen wir dann in Izmir an?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0242",
+      "text": "Um elf Uhr abends. Das ist spät, aber wir sind rechtzeitig zur Hochzeit da.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0243",
+      "text": "Emre ging zum Schalter und buchte den neuen Flug für die ganze Familie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0244",
+      "text": "Als sie spät in der Nacht in Izmir ankamen, warteten alle Verwandten am Flughafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0245",
+      "text": "Nur die Koffer waren leider nicht mitgekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0246",
+      "text": "Am nächsten Morgen brachte ein Taxi die Koffer, gerade noch rechtzeitig zur Hochzeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0247",
+      "text": "Emre, ohne dich wären wir jetzt noch in Frankfurt!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0248",
+      "text": "Was für eine Reise! Darüber lachen wir bestimmt noch lange.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0249",
+      "text": "Warum wollte Familie Yılmaz nach Izmir fliegen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0250",
+      "text": "Weil ein Cousin von Murat dort heiratete.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0251",
+      "text": "Weil sie dort Urlaub am Meer machen wollten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0252",
+      "text": "Weil Oma Sevim dort Geburtstag hatte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0253",
+      "text": "Wie lange hatte die Familie schon gewartet, als der Flug ausfiel?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0254",
+      "text": "Fast vier Stunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0255",
+      "text": "Eine halbe Stunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0256",
+      "text": "Zwei ganze Tage.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0257",
+      "text": "Wer hat eine neue Verbindung gefunden?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0258",
+      "text": "Emre hat sie mit dem Handy gefunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0259",
+      "text": "Der Mann am Schalter hat sie gefunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0260",
+      "text": "Oma Sevim hat sie im Reisebüro gefunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0261",
+      "text": "Welches Missgeschick gab es nach der Ankunft?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0262",
+      "text": "Die Koffer kamen erst am nächsten Morgen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0263",
+      "text": "Die Familie hat sich in Izmir verlaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0264",
+      "text": "Die Hochzeit fiel aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0265",
+      "text": "Nachdem wir vier Stunden gewartet hatten, fiel der Flug aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0266",
+      "text": "Im Reisebüro",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0267",
+      "text": "Im Sommer wollen Laylā und ihre Mutter die Verwandten in Amman besuchen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0268",
+      "text": "Am Samstag gehen die beiden in ein Reisebüro in der Stadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0269",
+      "text": "Guten Tag! Wie kann ich Ihnen helfen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0270",
+      "text": "Wir suchen einen Flug nach Amman, Anfang Juli, für zwei Personen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0271",
+      "text": "Moment, ich schaue mal. Es gibt einen Flug ohne Umsteigen und einen mit Umsteigen in Istanbul.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0272",
+      "text": "Und was ist der Unterschied beim Preis?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0273",
+      "text": "Der Flug ohne Umsteigen kostet 420 Euro pro Person, der andere 310 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0274",
+      "text": "Und wie lange dauert die Reise mit Umsteigen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0275",
+      "text": "Etwa neun Stunden, mit drei Stunden Wartezeit in Istanbul.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0276",
+      "text": "Neun Stunden? Das ist ja ewig!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0277",
+      "text": "Aber wir sparen über 200 Euro. Davon kaufen wir schöne Geschenke für die Verwandten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0278",
+      "text": "Na gut. Dann nehmen wir halt den günstigen Flug.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0279",
+      "text": "Gern. Den Rückflug können Sie bis zwei Wochen vorher kostenlos ändern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0280",
+      "text": "Großartig, dann buchen wir das so.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0281",
+      "text": "Laylā freut sich schon sehr auf Amman und auf ihre Cousinen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0282",
+      "text": "Wohin möchten Laylā und ihre Mutter fliegen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0283",
+      "text": "Nach Amman zu den Verwandten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0284",
+      "text": "Nach Istanbul zu einer Hochzeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0285",
+      "text": "An die griechische Küste.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0286",
+      "text": "Wie viel kostet der Flug ohne Umsteigen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0287",
+      "text": "420 Euro pro Person.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0288",
+      "text": "310 Euro pro Person.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0289",
+      "text": "200 Euro für beide zusammen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0290",
+      "text": "Welchen Flug nehmen die beiden?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0291",
+      "text": "Den günstigen Flug mit Umsteigen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0292",
+      "text": "Den teuren Flug ohne Umsteigen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0293",
+      "text": "Sie fahren lieber mit dem Zug.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0294",
+      "text": "Was kann man bis zwei Wochen vorher kostenlos ändern?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0295",
+      "text": "Man kann den Rückflug ändern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0296",
+      "text": "Man kann das Reiseziel ändern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0297",
+      "text": "Man kann nichts mehr ändern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0298",
+      "text": "Wir nehmen den günstigen Flug, auch wenn die Reise länger dauert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0299",
+      "text": "Bist du jemals mit einem Schiff gefahren?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0300",
+      "text": "Die Tour kostet 15 Euro, für Kinder ist sie kostenlos.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0301",
+      "text": "Im Gebirge haben wir in einer einfachen Pension übernachtet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0302",
+      "text": "Am Zoll mussten wir zum Glück nichts bezahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0303",
+      "text": "Wegen des starken Windes fuhr die Fähre heute nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0304",
+      "text": "Mir gefällt der Stil der alten Häuser am Hafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0305",
+      "text": "Das Denkmal in der Mitte der Stadt ist über hundert Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0306",
+      "text": "Nachdem Ranā den Flug gebucht hatte, rief sie ihre Schwester in Amman an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0307",
+      "text": "Wir waren schon einmal in dieser Region gewesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0308",
+      "text": "Bleib doch noch ein paar Tage bei uns!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0309",
+      "text": "Das Hotel liegt ja direkt am Strand!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0310",
+      "text": "Eine Karte aus Österreich",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0311",
+      "text": "Lieber Yazan, viele Grüße aus dem Gebirge!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0312",
+      "text": "Wir sind seit Montag hier und wohnen in einer Jugendherberge mit großartigem Blick.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0313",
+      "text": "Gestern haben wir eine Tour zu einer alten Burg gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0314",
+      "text": "Auf der Rückfahrt hatte unser Bus eine Panne, aber nach einer Stunde ging es weiter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0315",
+      "text": "Am Freitag beginnt schon die Heimreise. Bis bald, dein Jan",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0316",
+      "text": "Jan wohnt in einer Pension.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0317",
+      "text": "Was ist auf der Rückfahrt passiert?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0318",
+      "text": "Der Bus hatte eine Panne.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0319",
+      "text": "Jan hat sich verlaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0320",
+      "text": "Die Burg war geschlossen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0321",
+      "text": "Jan fährt am Freitag nach Hause.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0322",
+      "text": "Ich habe meinen Koffer verloren. Was soll ich tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0323",
+      "text": "Gehen Sie doch zum Fundbüro, das ist gleich neben dem Ausgang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0324",
+      "text": "Ja, die Rückfahrt dauert fünf Stunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0325",
+      "text": "Nachdem wir im Restaurant gegessen hatten, machten wir einen Spaziergang am Hafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0326",
+      "text": "Laylā wollte schon lange einmal in die Ferne reisen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e08.s0327",
+      "text": "Für die Tour durch die Region haben wir einen Mietwagen gebucht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e08.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Reiseziele beschreiben und sagen, wann ich wohin fahre.",
+        "tr": "Gezi yerlerini anlatabilir ve ne zaman nereye gideceğimi söyleyebilirim.",
+        "ar": "أستطيع أن أصف أماكن السفر وأن أقول متى أسافر وإلى أين."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e08.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.reiseziel",
+          "ablenker": ["de.a2.e11.flughafen", "de.a2.e11.unterkunft"]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e08.kueste",
+            "de.b1.e08.gebirge",
+            "de.b1.e08.hauptstadt",
+            "de.b1.e08.turm",
+            "de.b1.e08.denkmal",
+            "de.b1.e08.ruine"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e08.s0006",
+          "ablenker": ["de.b1.e08.s0008", "de.b1.e08.s0005", "de.b1.e08.s0007"]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a04",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e08.franzoesisch",
+            "de.b1.e08.spanisch",
+            "de.b1.e08.griechisch",
+            "de.b1.e08.japanisch",
+            "de.b1.e08.russisch",
+            "de.b1.e08.chinesisch"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a05",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0032",
+          "wort": 0,
+          "ablenker": ["Ab", "In"]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e08.umgebung",
+          "ablenker": ["de.b1.e08.ferne", "de.b1.e08.region"]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0036"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e08.s0037"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0038"
+            }
+          ],
+          "antwort": "de.b1.e08.s0039",
+          "ablenker": ["de.b1.e08.s0040", "de.b1.e08.s0041", "de.b1.e08.s0033"]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.tourist",
+          "ablenker": ["de.b1.e08.tourismus", "de.b1.e06.besucher"]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a10",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0034",
+          "wort": 2,
+          "ablenker": ["vor", "nach"]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a11",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e08.europaeisch",
+            "de.b1.e08.amerikanisch",
+            "de.b1.e08.oesterreichisch",
+            "de.b1.e08.britisch",
+            "de.b1.e08.roemisch",
+            "de.b1.e08.grossartig"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e08.s0011",
+          "nach": "ziel",
+          "alternativen": [
+            "Man kann viele europäische Hauptstädte gut mit dem Zug erreichen.",
+            "Mit dem Zug kann man viele europäische Hauptstädte gut erreichen."
+          ],
+          "ablenker": ["Bus", "Hauptstadt"]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e08.s0022",
+          "alternativen": [
+            "Man hat vom Turm einen wunderschönen Blick über die ganze Stadt.",
+            "Einen wunderschönen Blick über die ganze Stadt hat man vom Turm."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.blick",
+          "ablenker": ["de.b1.e08.verreisen", "de.b1.e08.unglaublich"]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e08.s0030",
+          "nach": "ziel",
+          "alternativen": [
+            "Diesen Sommer verreisen wir nicht, wir bleiben zu Hause.",
+            "In diesem Sommer verreisen wir nicht, wir bleiben daheim.",
+            "Wir verreisen in diesem Sommer nicht, wir bleiben zu Hause.",
+            "In diesem Sommer fahren wir nicht weg, wir bleiben zu Hause."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e08.s0046"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e08.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Angebote vergleichen und eine Reise buchen.",
+        "tr": "Teklifleri karşılaştırabilir ve bir yolculuk için rezervasyon yapabilirim.",
+        "ar": "أستطيع أن أقارن بين العروض وأن أحجز رحلة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e08.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.reisebuero",
+          "ablenker": ["de.a2.e11.hotel", "de.a1.e09.bahnhof"]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e08.hinfahrt",
+            "de.b1.e08.rueckflug",
+            "de.b1.e08.pension",
+            "de.b1.e08.jugendherberge",
+            "de.b1.e08.mietwagen",
+            "de.b1.e08.faehre"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e08.verbindung",
+            "de.b1.e08.planung",
+            "de.b1.e08.uebernachtung",
+            "de.b1.e08.gelegenheit",
+            "de.b1.e08.stornieren",
+            "de.b1.e08.einchecken"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e08.s0051",
+          "ablenker": ["de.b1.e08.s0053", "de.b1.e08.s0055", "de.b1.e08.s0052"]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0076"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e08.s0077"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0078"
+            }
+          ],
+          "antwort": "de.b1.e08.s0079",
+          "ablenker": ["de.b1.e08.s0080", "de.b1.e08.s0081", "de.b1.e08.s0068"]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0066",
+          "wort": 9,
+          "ablenker": ["einchecken", "verreisen"]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a08",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a09",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0069",
+          "wort": 1,
+          "ablenker": ["ob", "wann"]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e08.s0057",
+          "nach": "ziel",
+          "alternativen": ["Meistens ist eine Jugendherberge günstiger als ein Hotel."],
+          "ablenker": ["teurer", "Pension"]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.abflug",
+          "ablenker": ["de.a2.e02.ankunft", "de.b1.e08.aufenthalt"]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e08.s0059",
+          "alternativen": [
+            "Wir haben für unseren Aufenthalt in Rom eine kleine Wohnung gemietet.",
+            "Eine kleine Wohnung haben wir für unseren Aufenthalt in Rom gemietet.",
+            "Wir haben eine kleine Wohnung für unseren Aufenthalt in Rom gemietet.",
+            "In Rom haben wir für unseren Aufenthalt eine kleine Wohnung gemietet."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e08.ideal",
+          "ablenker": ["de.b1.e08.angenehm", "de.b1.e08.besondere"]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e08.s0063",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir holen am Flughafen einen Mietwagen ab.",
+            "Am Flughafen holen wir ein Mietauto ab.",
+            "Am Flughafen nehmen wir einen Mietwagen.",
+            "Wir holen einen Mietwagen am Flughafen ab.",
+            "Am Flughafen holen wir uns einen Mietwagen ab."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0082"
+            }
+          ],
+          "antwort": "de.b1.e08.s0083",
+          "ablenker": ["de.b1.e08.s0084", "de.b1.e08.s0085"]
+        },
+        {
+          "schluessel": "de.b1.e08.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e08.s0086"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e08.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann mich am Flughafen, an der Grenze und im Restaurant verständigen.",
+        "tr": "Havalimanında, sınırda ve restoranda derdimi anlatabilirim.",
+        "ar": "أستطيع أن أتفاهم في المطار وعلى الحدود وفي المطعم."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e08.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.zoll",
+          "ablenker": ["de.b1.e08.einreise", "de.a2.e11.grenze"]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e08.schlange",
+            "de.b1.e08.wartezeit",
+            "de.b1.e08.waehrung",
+            "de.b1.e08.bargeld",
+            "de.b1.e08.rucksack",
+            "de.b1.e08.rezeption"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e08.s0088",
+          "ablenker": ["de.b1.e08.s0090", "de.b1.e08.s0089", "de.b1.e08.s0091"]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a05",
+          "typ": "formen",
+          "zeilen": ["ich", "du", "er/sie/es", "wir", "ihr"],
+          "spalten": ["wollen", "können", "müssen", "dürfen"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["wollte"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["konnte"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["musste"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 3,
+              "loesungen": ["durfte"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["wolltest"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["konntest"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["musstest"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 3,
+              "loesungen": ["durftest"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["wollte"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["konnte"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["musste"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 2,
+              "spalte": 3,
+              "loesungen": ["durfte"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["wollten"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["konnten"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 2,
+              "loesungen": ["mussten"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 3,
+              "loesungen": ["durften"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["wolltet"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["konntet"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 2,
+              "loesungen": ["musstet"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 3,
+              "loesungen": ["durftet"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0106",
+          "wort": 2,
+          "ablenker": ["durften", "durftest"]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e08.fremdsprache",
+          "ablenker": ["de.b1.e08.uebersetzung", "de.a1.e01.sprache"]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0109"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e08.s0110"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0111"
+            }
+          ],
+          "antwort": "de.b1.e08.s0112",
+          "ablenker": ["de.b1.e08.s0113", "de.b1.e08.s0114", "de.b1.e08.s0099"]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a09",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e08.s0118",
+          "absaetze": ["de.b1.e08.s0119", "de.b1.e08.s0120", "de.b1.e08.s0121", "de.b1.e08.s0122", "de.b1.e08.s0123"],
+          "glossen": ["de.b1.e08.bargeld", "de.b1.e08.gastfreundschaft"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e08.s0124",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e08.s0125",
+              "richtig": "richtig"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e08.s0126",
+              "antwort": "de.b1.e08.s0127",
+              "ablenker": ["de.b1.e08.s0128", "de.b1.e08.s0129"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e08.s0130",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e08.s0095",
+          "nach": "ziel",
+          "alternativen": ["Man kann auf dem Markt oft nur mit Bargeld bezahlen.", "Oft kann man auf dem Markt nur mit Bargeld bezahlen."],
+          "ablenker": ["Karte", "nie"]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.stadtplan",
+          "ablenker": ["de.b1.e08.reisefuehrer", "de.a2.e06.prospekt"]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a12",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0107",
+          "wort": 1,
+          "ablenker": ["konnte", "konntet"]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e08.s0104",
+          "alternativen": [
+            "Wir haben am zweiten Tag eine Tour durch die Altstadt gemacht.",
+            "Eine Tour durch die Altstadt haben wir am zweiten Tag gemacht."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e08.restaurant",
+          "ablenker": ["de.b1.e08.gastfreundschaft", "de.b1.e08.tour"]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e08.s0096",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich nehme als Handgepäck nur meinen Rucksack mit.",
+            "Als Handgepäck nehme ich nur meinen Rucksack.",
+            "Ich nehme nur meinen Rucksack als Handgepäck mit.",
+            "Als Handgepäck habe ich nur meinen Rucksack dabei.",
+            "Ich nehme als Handgepäck nur meinen Rucksack."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e08.s0131"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e08.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann erzählen, was auf einer Reise schiefgegangen ist.",
+        "tr": "Bir yolculukta neyin ters gittiğini anlatabilirim.",
+        "ar": "أستطيع أن أحكي ما الذي لم ينجح في رحلة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e08.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.missgeschick",
+          "ablenker": ["de.b1.e08.panne", "de.b1.e08.diebstahl"]
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e08.fundbuero",
+            "de.b1.e08.zufaellig",
+            "de.b1.e08.klappen",
+            "de.b1.e08.verlaufen",
+            "de.b1.e08.wundern",
+            "de.b1.e08.nachdem"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a04",
+          "typ": "formen",
+          "zeilen": ["warten", "abfahren", "buchen", "ankommen", "vergessen", "sich verlaufen"],
+          "spalten": ["hatte oder war", "Partizip II"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["hatte"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["gewartet"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["war"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["abgefahren"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["hatte"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["gebucht"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["war"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["angekommen"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["hatte"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["vergessen"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["hatte"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["verlaufen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0148",
+          "wort": 5,
+          "ablenker": ["hatte", "wird"]
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a06",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0151",
+          "wort": 5,
+          "ablenker": ["haben", "waren"]
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a08",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e08.s0152",
+          "ablenker": ["de.b1.e08.s0154", "de.b1.e08.s0153", "de.b1.e08.s0155"]
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0156"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e08.s0157"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0158"
+            }
+          ],
+          "antwort": "de.b1.e08.s0159",
+          "ablenker": ["de.b1.e08.s0160", "de.b1.e08.s0161", "de.b1.e08.s0145"]
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a10",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e08.s0165",
+          "absaetze": [
+            "de.b1.e08.s0166",
+            "de.b1.e08.s0167",
+            "de.b1.e08.s0168",
+            "de.b1.e08.s0169",
+            "de.b1.e08.s0170",
+            "de.b1.e08.s0171",
+            "de.b1.e08.s0172",
+            "de.b1.e08.s0173"
+          ],
+          "glossen": ["de.a2.e11.handgepaeck", "de.b1.e08.wartezeit", "de.b1.e08.verbindung"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e08.s0174",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e08.s0175",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e08.s0176",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e08.s0177",
+              "antwort": "de.b1.e08.s0178",
+              "ablenker": ["de.b1.e08.s0179", "de.b1.e08.s0180"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e08.s0181",
+              "richtig": "richtig"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e08.s0137",
+          "ablenker": ["de.b1.e08.s0075", "de.b1.e08.s0070", "de.b1.e08.s0074"]
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e08.s0139",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir haben uns in der Altstadt ohne Stadtplan verlaufen.",
+            "Ohne Stadtplan haben wir uns in der Altstadt verlaufen.",
+            "Wir haben uns ohne Stadtplan in der Altstadt verlaufen."
+          ],
+          "ablenker": ["verloren", "Stadt"]
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e08.s0154",
+          "alternativen": ["Wir fragten eine Frau nach dem Weg, nachdem wir uns verlaufen hatten."]
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e08.s0146",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir haben in Rom ganz zufällig unsere Nachbarin Karin getroffen.",
+            "In Rom haben wir zufällig unsere Nachbarin Karin getroffen.",
+            "Ganz zufällig haben wir in Rom unsere Nachbarin Karin getroffen.",
+            "In Rom haben wir ganz zufällig Karin, unsere Nachbarin, getroffen.",
+            "In Rom trafen wir ganz zufällig unsere Nachbarin Karin."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a15",
+          "typ": "sprechen",
+          "satz": "de.b1.e08.s0182"
+        },
+        {
+          "schluessel": "de.b1.e08.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e08.s0183"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e08.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann einen Reisebericht verstehen und selbst einen schreiben.",
+        "tr": "Bir gezi yazısını anlayabilir ve kendim de bir tane yazabilirim.",
+        "ar": "أستطيع أن أفهم تقريرًا عن رحلة وأن أكتب تقريرًا بنفسي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e08.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.eindruck",
+          "ablenker": ["de.b1.e08.blick", "de.a2.e01.erinnerung"]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e08.heimreise",
+            "de.b1.e08.souvenir",
+            "de.b1.e08.stil",
+            "de.b1.e08.diesmal",
+            "de.b1.e08.fort",
+            "de.b1.e08.hinaus"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e08.s0188",
+          "ablenker": ["de.b1.e08.s0187", "de.b1.e08.s0191", "de.b1.e08.s0190"]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.jemals",
+          "ablenker": ["de.a1.e08.immer", "de.a1.e08.oft"]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0200",
+          "wort": 0,
+          "ablenker": ["Wann", "Ob"]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e08.s0205",
+          "absaetze": [
+            "de.b1.e08.s0206",
+            "de.b1.e08.s0207",
+            "de.b1.e08.s0208",
+            "de.b1.e08.s0209",
+            "de.b1.e08.s0210",
+            "de.b1.e08.s0211",
+            "de.b1.e08.s0212",
+            "de.b1.e08.s0213"
+          ],
+          "glossen": ["de.a2.e03.hochzeit", "de.b1.e08.gastfreundschaft", "de.b1.e08.eindruck"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e08.s0214",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e08.s0215",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e08.s0216",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e08.s0217",
+              "antwort": "de.b1.e08.s0218",
+              "ablenker": ["de.b1.e08.s0219", "de.b1.e08.s0220"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0221"
+            }
+          ],
+          "antwort": "de.b1.e08.s0222",
+          "ablenker": ["de.b1.e08.s0223", "de.b1.e08.s0224", "de.b1.e08.s0010"]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a08",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0189",
+          "wort": 8,
+          "ablenker": ["auspacken", "ausgepackt"]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e08.s0198",
+          "nach": "ziel",
+          "alternativen": ["Wir sind diesmal mit dem Zug gefahren und nicht mit dem Auto."],
+          "ablenker": ["immer", "Flugzeug"]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e08.auspacken",
+          "ablenker": ["de.a2.e11.packen", "de.b1.e08.einchecken"]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a11",
+          "typ": "satzbau",
+          "ziel": "de.b1.e08.s0203",
+          "alternativen": ["Wir bringen unsere Pflanzen zu den Nachbarn, bevor wir verreisen."]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e08.s0197",
+          "ablenker": ["de.b1.e08.s0195", "de.b1.e08.s0193", "de.b1.e08.s0199"]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e08.s0186",
+          "nach": "ziel",
+          "alternativen": [
+            "Mit vielen neuen Eindrücken sind wir nach Hause gekommen.",
+            "Wir kamen mit vielen neuen Eindrücken nach Hause.",
+            "Wir sind mit vielen neuen Eindrücken heimgekommen.",
+            "Wir sind mit vielen neuen Eindrücken zurück nach Hause gekommen.",
+            "Wir sind mit vielen neuen Eindrücken nach Hause zurückgekommen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e08.s0196"
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e08.s0225",
+          "woerter": {
+            "min": 90,
+            "max": 110
+          },
+          "pflichtwoerter": ["Reise", "Pension", "Souvenir"],
+          "muster": ["de.b1.e08.s0226"]
+        },
+        {
+          "schluessel": "de.b1.e08.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e08.s0227"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e08.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte und ein Gespräch über eine Reise verstehen.",
+        "tr": "Bir yolculuk hakkındaki bir hikâyeyi ve bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة وحوارًا عن رحلة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e08.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e08.s0228",
+          "zeilen": [
+            {
+              "satz": "de.b1.e08.s0229"
+            },
+            {
+              "satz": "de.b1.e08.s0230"
+            },
+            {
+              "satz": "de.b1.e08.s0231"
+            },
+            {
+              "satz": "de.b1.e08.s0232"
+            },
+            {
+              "satz": "de.b1.e08.s0233"
+            },
+            {
+              "satz": "de.b1.e08.s0234"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e08.s0235"
+            },
+            {
+              "satz": "de.b1.e08.s0236"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e08.s0237"
+            },
+            {
+              "satz": "de.b1.e08.s0238"
+            },
+            {
+              "satz": "de.b1.e08.s0239"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0240"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e08.s0241"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0242"
+            },
+            {
+              "satz": "de.b1.e08.s0243"
+            },
+            {
+              "satz": "de.b1.e08.s0244"
+            },
+            {
+              "satz": "de.b1.e08.s0245"
+            },
+            {
+              "satz": "de.b1.e08.s0246"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e08.s0247"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e08.s0248"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.b1.e08.s0249",
+              "antwort": "de.b1.e08.s0250",
+              "ablenker": ["de.b1.e08.s0251", "de.b1.e08.s0252"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.b1.e08.s0253",
+              "antwort": "de.b1.e08.s0254",
+              "ablenker": ["de.b1.e08.s0255", "de.b1.e08.s0256"]
+            },
+            {
+              "nach": 14,
+              "frage": "de.b1.e08.s0257",
+              "antwort": "de.b1.e08.s0258",
+              "ablenker": ["de.b1.e08.s0259", "de.b1.e08.s0260"]
+            },
+            {
+              "nach": 17,
+              "frage": "de.b1.e08.s0261",
+              "antwort": "de.b1.e08.s0262",
+              "ablenker": ["de.b1.e08.s0263", "de.b1.e08.s0264"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e08.s0238",
+          "ablenker": ["de.b1.e08.s0245", "de.b1.e08.s0243"]
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0232",
+          "wort": 3,
+          "ablenker": ["haben", "waren"]
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e08.s0239",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.b1.e08.s0266",
+          "zeilen": [
+            {
+              "satz": "de.b1.e08.s0267"
+            },
+            {
+              "satz": "de.b1.e08.s0268"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e08.s0269"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e08.s0270"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e08.s0271"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0272"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e08.s0273"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e08.s0274"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e08.s0275"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0276"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e08.s0277"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0278"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e08.s0279"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e08.s0280"
+            },
+            {
+              "satz": "de.b1.e08.s0281"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 3,
+              "frage": "de.b1.e08.s0282",
+              "antwort": "de.b1.e08.s0283",
+              "ablenker": ["de.b1.e08.s0284", "de.b1.e08.s0285"]
+            },
+            {
+              "nach": 6,
+              "frage": "de.b1.e08.s0286",
+              "antwort": "de.b1.e08.s0287",
+              "ablenker": ["de.b1.e08.s0288", "de.b1.e08.s0289"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.b1.e08.s0290",
+              "antwort": "de.b1.e08.s0291",
+              "ablenker": ["de.b1.e08.s0292", "de.b1.e08.s0293"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.b1.e08.s0294",
+              "antwort": "de.b1.e08.s0295",
+              "ablenker": ["de.b1.e08.s0296", "de.b1.e08.s0297"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0274"
+            }
+          ],
+          "antwort": "de.b1.e08.s0275",
+          "ablenker": ["de.b1.e08.s0273", "de.b1.e08.s0279"]
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0278",
+          "wort": 5,
+          "ablenker": ["ob", "wann"]
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.b1.e08.s0243",
+          "alternativen": ["Emre ging zum Schalter und buchte für die ganze Familie den neuen Flug."]
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a09",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e08.s0231",
+          "alternativen": ["Der Abflug in Frankfurt war für 10 Uhr morgens geplant."]
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e08.s0276",
+          "ablenker": ["de.b1.e08.s0278", "de.b1.e08.s0280"]
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e08.s0244",
+          "nach": "ziel",
+          "alternativen": [
+            "Als sie spät nachts in Izmir ankamen, warteten alle Verwandten am Flughafen.",
+            "Als sie spät in der Nacht in Izmir angekommen sind, haben alle Verwandten am Flughafen gewartet.",
+            "Alle Verwandten warteten am Flughafen, als sie spät in der Nacht in Izmir ankamen.",
+            "Als sie spät in der Nacht in Izmir landeten, warteten alle Verwandten am Flughafen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e08.s0246",
+          "nach": "ziel",
+          "alternativen": ["Ein Taxi brachte am nächsten Morgen die Koffer, gerade noch rechtzeitig zur Hochzeit."],
+          "ablenker": ["Bus", "gestern"]
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e08.s0271",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a14",
+          "typ": "sprechen",
+          "satz": "de.b1.e08.s0265"
+        },
+        {
+          "schluessel": "de.b1.e08.l06.a15",
+          "typ": "sprechen",
+          "satz": "de.b1.e08.s0298"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e08.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum.",
+        "ar": "أراجع كلمات الوحدة وجملها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e08.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e08.reiseziel",
+            "de.b1.e08.region",
+            "de.b1.e08.gebirge",
+            "de.b1.e08.tourismus",
+            "de.b1.e08.denkmal",
+            "de.b1.e08.ferne"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e08.wunderschoen",
+          "ablenker": ["de.a2.e06.haesslich", "de.a1.e03.klein"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e08.s0303",
+          "ablenker": ["de.b1.e08.s0065", "de.b1.e08.s0016", "de.b1.e08.s0092"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0306",
+          "wort": 5,
+          "ablenker": ["hat", "war"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a05",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e08.zoll",
+          "ablenker": ["de.a1.e08.toll"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e08.s0301",
+          "nach": "ziel",
+          "alternativen": ["Wir haben im Gebirge in einer einfachen Pension übernachtet."],
+          "ablenker": ["Hotel", "teuren"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.rueckfahrt",
+          "ablenker": ["de.a2.e02.abfahrt", "de.a2.e02.strecke"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0322"
+            }
+          ],
+          "antwort": "de.b1.e08.s0323",
+          "ablenker": ["de.b1.e08.s0324", "de.b1.e08.s0085"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a09",
+          "typ": "formen",
+          "zeilen": ["fliegen", "ankommen", "verlaufen", "stornieren", "einchecken", "auspacken"],
+          "spalten": ["er/sie/es – Präteritum", "Partizip II"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["flog"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["geflogen"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["kam an"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["angekommen"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["verlief"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["verlaufen"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["stornierte"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["storniert"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["checkte ein"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["eingecheckt"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["packte aus"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["ausgepackt"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e08.s0304",
+          "ablenker": ["de.b1.e08.s0305", "de.b1.e08.s0194", "de.b1.e08.s0023"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e08.stil",
+          "ablenker": ["de.a2.e12.still"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a12",
+          "typ": "satzbau",
+          "ziel": "de.b1.e08.s0306",
+          "alternativen": ["Ranā rief ihre Schwester in Amman an, nachdem sie den Flug gebucht hatte."]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.gelegenheit",
+          "ablenker": ["de.b1.e08.planung", "de.b1.e08.wartezeit"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a14",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0308",
+          "wort": 1,
+          "ablenker": ["ob", "denn"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a15",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e08.pension",
+            "de.b1.e08.uebernachtung",
+            "de.b1.e08.reisebuero",
+            "de.b1.e08.verbindung",
+            "de.b1.e08.rezeption",
+            "de.b1.e08.tour"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a16",
+          "typ": "frei",
+          "ziel": "de.b1.e08.s0302",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir mussten am Zoll zum Glück nichts bezahlen.",
+            "Zum Glück mussten wir am Zoll nichts bezahlen.",
+            "Am Zoll mussten wir zum Glück nichts zahlen.",
+            "Zum Glück mussten wir beim Zoll nichts bezahlen.",
+            "Am Zoll haben wir zum Glück nichts bezahlen müssen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a17",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e08.heimreise",
+          "ablenker": ["de.b1.e08.souvenir", "de.a2.e11.urlaub"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a18",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e08.s0141",
+          "ablenker": ["de.b1.e08.s0142", "de.b1.e08.s0143", "de.b1.e08.s0307"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a19",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e08.kueste",
+          "ablenker": ["de.a2.e04.kiste"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a20",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0184"
+            }
+          ],
+          "antwort": "de.b1.e08.s0185",
+          "ablenker": ["de.b1.e08.s0040", "de.b1.e08.s0100"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a21",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0309",
+          "wort": 3,
+          "ablenker": ["ob", "wann"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a22",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e08.mietwagen",
+            "de.b1.e08.faehre",
+            "de.b1.e08.abflug",
+            "de.b1.e08.einreise",
+            "de.b1.e08.zoll",
+            "de.b1.e08.bargeld"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a23",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e08.s0300",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a24",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.diebstahl",
+          "ablenker": ["de.b1.e08.fundbuero", "de.b1.e08.missgeschick"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a25",
+          "typ": "satzbau",
+          "ziel": "de.b1.e08.s0202",
+          "alternativen": ["Elif schlief die ganze Zeit, während wir flogen."]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a26",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e08.ideal",
+          "ablenker": ["de.b1.e08.zufaellig", "de.b1.e08.japanisch"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a27",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e08.s0299",
+          "ablenker": ["de.b1.e08.s0028", "de.b1.e08.s0029", "de.b1.e08.s0020"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a28",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0042"
+            }
+          ],
+          "antwort": "de.b1.e08.s0043",
+          "ablenker": ["de.b1.e08.s0044", "de.b1.e08.s0045"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a29",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e08.s0093"
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a30",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e08.s0105",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a31",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e08.s0144"
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a32",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e08.panne",
+          "ablenker": ["de.a2.e02.verspaetung", "de.a2.e11.kontrolle"]
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a33",
+          "typ": "sprechen",
+          "satz": "de.b1.e08.s0047"
+        },
+        {
+          "schluessel": "de.b1.e08.l07.a34",
+          "typ": "sprechen",
+          "satz": "de.b1.e08.s0087"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e08.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich eine Reise planen und von ihr erzählen kann.",
+        "tr": "Bir yolculuk planlayabildiğimi ve onu anlatabildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أخطط لرحلة وأن أحكي عنها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e08.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e08.verbindung",
+          "ablenker": ["de.b1.e08.jugendherberge", "de.a2.e11.koffer"]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e08.hauptstadt",
+            "de.b1.e08.kueste",
+            "de.b1.e08.rucksack",
+            "de.b1.e08.waehrung",
+            "de.b1.e08.panne",
+            "de.b1.e08.eindruck"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0325",
+          "wort": 5,
+          "ablenker": ["haben", "waren"]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e08.s0327",
+          "ablenker": ["de.b1.e08.s0064", "de.b1.e08.s0133", "de.b1.e08.s0067"]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0115"
+            }
+          ],
+          "antwort": "de.b1.e08.s0116",
+          "ablenker": ["de.b1.e08.s0117", "de.b1.e08.s0100"]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e08.s0326",
+          "nach": "ziel",
+          "alternativen": ["Schon lange wollte Laylā einmal in die Ferne reisen."],
+          "ablenker": ["will", "Nähe"]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e08.s0310",
+          "absaetze": ["de.b1.e08.s0311", "de.b1.e08.s0312", "de.b1.e08.s0313", "de.b1.e08.s0314", "de.b1.e08.s0315"],
+          "glossen": ["de.b1.e08.jugendherberge", "de.b1.e08.panne"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e08.s0316",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e08.s0317",
+              "antwort": "de.b1.e08.s0318",
+              "ablenker": ["de.b1.e08.s0319", "de.b1.e08.s0320"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e08.s0321",
+              "richtig": "richtig"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a08",
+          "typ": "luecke",
+          "ziel": "de.b1.e08.s0108",
+          "wort": 0,
+          "ablenker": ["Musste", "Musstet"]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.b1.e08.s0325",
+          "alternativen": ["Wir machten einen Spaziergang am Hafen, nachdem wir im Restaurant gegessen hatten."]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e08.stornieren",
+          "ablenker": ["de.b1.e08.verreisen", "de.a2.e11.landen"]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e08.s0150",
+          "nach": "ziel",
+          "alternativen": [
+            "Wir hatten die Pension zum Glück schon vorher gebucht.",
+            "Zum Glück hatten wir die Pension schon im Voraus gebucht.",
+            "Wir hatten zum Glück die Pension schon vorher gebucht.",
+            "Zum Glück hatten wir die Pension vorher schon gebucht."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e08.s0140",
+          "ablenker": ["de.b1.e08.s0134", "de.b1.e08.s0132", "de.b1.e08.s0147"]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e08.s0162"
+            }
+          ],
+          "antwort": "de.b1.e08.s0163",
+          "ablenker": ["de.b1.e08.s0164", "de.b1.e08.s0324"]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e08.s0054",
+          "alternativen": ["Der Abflug ist schon um 6 Uhr morgens."]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e08.tour",
+          "ablenker": ["de.a2.e08.tor"]
+        },
+        {
+          "schluessel": "de.b1.e08.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e08.s0182"
+        }
+      ]
+    }
+  ]
+}
