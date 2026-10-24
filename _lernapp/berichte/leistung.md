@@ -8,8 +8,8 @@
 | Werkzeuge | `_lernapp/werkzeuge/leistung/` (Kopien und Anpassungen von `_gemeinde/werkzeuge/`, dort unverändert), `web/scripts/lernapp-budget.mjs`, `web/scripts/messen.mjs` |
 | Rohdaten | außerhalb des Repos (`<scratchpad>/l8-leistung/lauf1/`): `lauf.log` mit `uptime` je Schritt, JSON je Werkzeug |
 
-**Stand dieses Berichts: ZWISCHENSTAND** – Budgets, `messen.mjs`, INP, Netzprotokoll Sprechübung und Lasttest liegen vor;
-Lighthouse aller Routen und axe laufen noch (Abschnitte 4 und 6).
+**Stand dieses Berichts: ZWISCHENSTAND** – erster Messlauf vollständig (Budgets, `messen.mjs`, INP, Netzprotokoll,
+Lasttest, Lighthouse aller Routen, axe); Behebung CLS (`fc95e675`) gebaut und in Nachmessung (Abschnitt 9).
 
 ## 1. Methode
 
@@ -84,7 +84,54 @@ Vorschlag: den Wortlaut von Z-L07 an KERN §9 angleichen (Orchestrator; ABNAHME 
 
 ## 4. Lighthouse je Route (mobil, Median aus 3 Läufen)
 
-*läuft – folgt im Abschluss-Commit.*
+Erster Messlauf (Stand `4d00cadf`), 25 Routen. JS = Summe gz -9 der geladenen Skripte (Grenze nach Art, KERN §9).
+„nachgemessen“: Das Werkzeug hat die Route nach einer verfehlten Schwelle bei Last > 1,5 einmal wiederholt, sobald die
+Last sank; die Tabelle zeigt dann die Nachmessung.
+
+| Route | Art | Leistung | Zugängl. | BP | SEO | LCP ms | CLS | TBT ms | JS KB (Grenze) | Last max | Ergebnis |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `/lern-app` (308 → `/lern-app/de`) | Start | 90 | 100 | 100 | 100 | 2442 | 0 | 259 | 149,3 (180) | 7,24 | erfüllt |
+| `/lern-app/de` | Start | 95 | 100 | 100 | 100 | 1876 | 0 | 210 | 149,3 (180) | 3,83 | erfüllt |
+| `/lern-app/tr` | Start | 95 | 100 | 100 | 100 | 1904 | 0,001 | 211 | 149,3 (180) | 3,21 | erfüllt |
+| `/lern-app/ar` (RTL) | Start | 91 | 100 | 100 | 100 | 2060 | 0 | 300 | 149,3 (180) | 3,64 | erfüllt |
+| `/lern-app/de/tr-aus-de` | Lernpfad | 93 | 100 | 100 | 100 | 1835 | 0,029 | 279 | 154,6 (180) | 2,61 | erfüllt |
+| `/lern-app/tr/de-aus-tr` | Lernpfad | 94 | 100 | 100 | 100 | 1858 | 0,031 | 233 | 154,6 (180) | 1,77 | erfüllt |
+| `/lern-app/ar/de-aus-ar` (RTL) | Lernpfad | 92 | 100 | 100 | 100 | 1914 | 0,067 | 267 | 154,6 (180) | 1,83 | erfüllt |
+| `/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l01` | Spieler | 92 | 100 | 100 | – | 1793 | 0,006 | 302 | 192,2 (210) | 1,73 | erfüllt |
+| `/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l01` | Spieler | 93 | 100 | 100 | – | 1815 | 0,011 | 264 | 192,2 (210) | 1,30 | erfüllt |
+| `/lern-app/ar/de-aus-ar/ueben?l=de-aus-ar.a1.e01.l01` (RTL) | Spieler | 90 | 100 | 100 | – | 1856 | 0,007 | 337 | 192,2 (210) | 1,37 | erfüllt |
+| `/lern-app/de/tr-aus-de/wiederholen` | Spieler | 95 | 100 | 100 | – | 1837 | 0 | 216 | 152,2 (210) | 1,83 | erfüllt |
+| `/lern-app/de/tr-aus-de/einstufung` | Spieler | 95 | 100 | 100 | – | 1834 | 0 | 200 | 152,2 (210) | 1,60 | erfüllt |
+| `/lern-app/de/tr-aus-de/tipps?e=tr.a1.e01` | Hülle | **87** | 100 | 100 | – | 1805 | **0,151** | 272 | 176,5 (180) | 1,80 | **verfehlt: Leistung, CLS** (nachgemessen) |
+| `/lern-app/de/quellen` | Hülle | 93 | 100 | 100 | 100 | 1908 | 0 | 273 | 143,8 (180) | 2,39 | erfüllt |
+| `/lern-app/de/fortschritt` | Start | 95 | 100 | 100 | – | 1792 | 0 | 233 | 153,3 (180) | 2,55 | erfüllt |
+| `/lern-app/de/wortschatz` | Hülle | 96 | 100 | 100 | – | 1787 | 0 | 178 | 138,0 (180) | 1,99 | erfüllt |
+| `/lern-app/de/einstellungen` | Hülle | 96 | 100 | 100 | – | 1912 | 0 | 180 | 149,9 (180) | 1,68 | erfüllt |
+| `/lern-app/de/gruppe` (ohne Anmeldung) | Hülle | 93 | 100 | 100 | – | 1821 | 0 | 261 | 148,5 (180) | 2,36 | erfüllt |
+| `/lern-app/de/anmelden` | Hülle | 95 | 100 | 100 | – | 1788 | 0 | 217 | 145,1 (180) | 2,29 | erfüllt |
+| `/lern-app/de/islam` (Wissenskurs) | Lernpfad | 96 | 100 | 100 | 100 | 1846 | 0 | 188 | 154,6 (180) | 2,07 | erfüllt |
+| `/lern-app/tr/koran` (Koran-Arabisch) | Lernpfad | **86** | 100 | 100 | 100 | 1842 | **0,19** | 224 | 154,6 (180) | 2,04 | **verfehlt: Leistung, CLS** (nachgemessen) |
+| `/lernen` (Website, Stationen) | Website | 95 | 100 | 100 | 100 | 1778 | 0 | 230 | 161,2 (180) | 2,81 | erfüllt |
+| Mein Bereich › Unterricht › Gruppe › Lern-App (Lehrkraft) | Mein Bereich | 93 | 100 | 100 | – | 1877 | 0 | 282 | 181,9 (230) | 3,57 | erfüllt |
+| Mein Bereich, Schüler-Start (Kind) | Mein Bereich | 94 | 100 | 100 | – | 1863 | 0 | 252 | 181,9 (230) | 2,92 | erfüllt |
+| Mein Bereich › Kinder › Lernwoche (Eltern) | Mein Bereich | 93 | 100 | 100 | – | 1991 | 0 | 256 | 186,3 (230) | 2,24 | erfüllt (nachgemessen) |
+
+- **Zugänglichkeit 100 auf allen 25 Routen**, Best Practices 100. SEO 100 auf allen indexierbaren Seiten; „–“ steht für
+  `noindex`-Seiten (Lighthouse wertet dort 63–66, gewollt).
+- **LCP ≤ 2,5 s überall** (1778–2060 ms; der Einstieg `/lern-app` 2442 ms, weil die Weiterleitung 308 einen Umlauf mit
+  150 ms RTT kostet). **CLS ≤ 0,1 überall außer Tipps und Koran-Arabisch.**
+- **Verfehlt (vor der Behebung): Tipps und Koran-Arabisch.** Das Werkzeug weist beide als „unter Last“ aus (Last max
+  1,8 bzw. 2,0). Die Ursache ist aber nicht die Last: Die Verschiebung ist in jedem Lauf gleich (0,151 bzw. 0,19), und
+  Lighthouse nennt als einziges verschobenes Element den Fuß (`body > footer`). Die Insel lädt ihr Verzeichnis bzw. das
+  Einheitenpaket erst im Browser; bis dahin steht nur „wird geladen“ da, der Fuß liegt im ersten Bildschirm und springt
+  nach unten. Der Leistungswert sinkt allein durch CLS (Gewicht 25 %). Behebung in Abschnitt 9.
+- **TBT** liegt auf den meisten Routen über 200 ms (151–337 ms, CPU ×4 bei Last 1,3–7,2). TBT ist kein Kriterium von
+  Z-L07 (dort INP, Abschnitt 5); Hinweis in Abschnitt 10.
+- Die Spieler-Routen liegen mit 192,2 KB unter 210 KB; die Tipps mit 176,5 KB knapp unter 180 KB (Tiptap-Darstellung
+  der Tipps, Hinweis in Abschnitt 10).
+- Nicht gemessen mit Lighthouse: `/lern-app/ar/koran` (Koran-Arabisch gibt es in der Oberfläche ar nicht,
+  `kurse.ts`), die übrigen Oberflächen von Tipps, Fortschritt usw. (gleicher Code wie de; axe prüft sie in allen drei).
+  `/de/lernen` heißt im Code `/lernen` (Standardsprache ohne Präfix).
 
 Zum Vergleich der Website-Messweg `scripts/messen.mjs` (je 1 Lauf, Last 2,7–2,8):
 
@@ -111,7 +158,18 @@ Einzellauf: 200 ms (Antwort wählen, l03, Last 5,65).
 
 ## 6. axe (de/tr/ar × 390/1440)
 
-*läuft – folgt im Abschluss-Commit.*
+`a11y.mjs`, erster Messlauf: **136 Prüfungen (68 Routen × 2 Breiten), 0 kritisch, 0 ernst – und auch 0 mittel, 0 gering,
+kein waagrechter Überlauf**, keine Fehlerseite statt Inhalt. Last 1,8–2,0.
+
+Geprüft je Oberfläche de, tr und ar (`dir="rtl"` in ar): Start, Lernpfad, Spieler l01 (Auswahl) vor und nach der Antwort
+(Rückmeldeblatt), l02 (Wortbank), l03 (Bildkarte), l04 (Dialog), Wiederholen, Einstufung, Tipps, Fortschritt, Wortschatz,
+Einstellungen, Quellen, Gruppe (ohne Anmeldung), Anmelden, Wissenskurs, Koran-Arabisch (nur de und tr), die eigene
+Fehlerseite (absichtlich); dazu `/lernen`, `/tr/ogren`, `/en/learn` und mit Anmeldung die Lern-App-Seiten in Mein Bereich
+in de/tr/en (Lehrkraft: Gruppe › Lern-App; Kind: Schüler-Start; Eltern: Lernwoche des Kindes). Jede Seite erst nach dem
+geladenen Zustand der Insel (Selektor je Route), damit der Client-Inhalt mitgeprüft wird.
+
+Die Prüfung mit Screenreadern (LM-19) und „jeder Übungstyp per Tastatur“ (E2E je Typ) gehören zu Z-L06 und sind nicht Teil
+dieses Laufs.
 
 ## 7. Sprechmodul: Whisper nur nach Klick (Netzprotokoll)
 

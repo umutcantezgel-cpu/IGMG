@@ -27,6 +27,13 @@ const merke = (r, quelle) =>
 kontext.on('request', (r) => merke(r, r.serviceWorker() ? 'Service Worker' : 'Seite/Worker'));
 const seite = await kontext.newPage();
 seite.setDefaultTimeout(60_000);
+// Diagnose (L8-02): Konsole von Seite und Workern, Seitenfehler; Endzustand der Sprachprüfung (bereit, Rückfall, Fehler)
+const konsole = [];
+const notiere = (quelle, typ, text) => konsole.length < 200 && konsole.push({ quelle, typ, text: String(text).slice(0, 300) });
+seite.on('console', (m) => ['error', 'warning'].includes(m.type()) && notiere('Seite', m.type(), m.text()));
+seite.on('pageerror', (e) => notiere('Seite', 'pageerror', e.message));
+seite.on('worker', (w) => w.on('console', (m) => notiere(`Worker ${new URL(w.url()).pathname}`, m.type(), m.text())));
+let endzustand = null;
 
 const knopf = (name) => seite.getByRole('button', { name, exact: true });
 const radio = (name) => seite.locator('main label').filter({ has: seite.getByRole('radio', { name, exact: true }) });
@@ -73,7 +80,14 @@ try {
   phase = 'nach dem Klick';
   const t0 = Date.now();
   await seite.getByRole('button', { name: /^Sprachprüfung laden/ }).click();
-  await seite.locator('main p[role="status"].sr-only').first().filter({ hasText: t.sprechen.bereit }).waitFor({ timeout: 600_000 });
+  // Ende bei „bereit“ oder beim Rückfall bzw. Fehler (die App fällt auf eigene Aufnahme zurück); Text irgendwo in main
+  const ende = { bereit: t.sprechen.bereit, rueckfall: t.sprechen.rueckfall, fehler: t.sprechen.fehler };
+  endzustand = await Promise.any(
+    Object.entries(ende).map(([art, text]) =>
+      seite.locator('main').getByText(text, { exact: true }).first().waitFor({ state: 'attached', timeout: 600_000 }).then(() => art),
+    ),
+  ).catch(() => 'zeitgrenze');
+  if (endzustand !== 'bereit') throw new Error(`Endzustand der Sprachprüfung: ${endzustand}`);
   bereit = true;
   ladenMs = Date.now() - t0;
   phase = 'nach „bereit“';
@@ -114,7 +128,9 @@ const ergebnis = {
   basis: BASIS,
   fehler,
   bereit,
+  endzustand,
   ladenMs,
+  konsole,
   last: { beginn: lastBeginn, ende: last() },
   anfragenVorKlick: vorher.length,
   modellVorKlick: vorher.filter(modell).map((z) => z.pfad),
@@ -132,8 +148,11 @@ const md = [
   `Lektion l04 (de, tr-aus-de) bis zur Sprechaufgabe: ${vorher.length} Anfragen, davon unter /lern-app/modelle/: ${ergebnis.modellVorKlick.length}${ergebnis.modellVorKlick.length ? ` (${ergebnis.modellVorKlick.join(', ')})` : ''}.`,
   `Nach dem Klick: ${ergebnis.modellNachKlick.length} Dateien unter /lern-app/modelle/ (≈ ${Math.round(summeMb)} MB laut Content-Length), „bereit“: ${bereit ? `ja, nach ${Math.round(ladenMs / 1000)} s` : 'nein'}${fehler ? ` · Fehler: ${fehler}` : ''}.`,
   `Andere Methoden als GET: ${ergebnis.nichtGet.length ? ergebnis.nichtGet.join(', ') : 'keine'} · fremde Ursprünge: ${ergebnis.fremd.length ? ergebnis.fremd.join(', ') : 'keine'}.`,
-  `Last: Beginn ${ergebnis.last.beginn.l1}, Ende ${ergebnis.last.ende.l1}.`,
+  `Last: Beginn ${ergebnis.last.beginn.l1}, Ende ${ergebnis.last.ende.l1}. Endzustand: ${endzustand ?? '–'}.`,
   '',
+  ...(konsole.length
+    ? ['Konsole (Fehler und Warnungen der Seite, alles aus Workern):', '', ...konsole.slice(0, 30).map((k) => `- ${k.quelle} · ${k.typ}: ${k.text}`), '']
+    : []),
   '| Datei nach dem Klick | Status | MB | Quelle |',
   '|---|---|---|---|',
   ...ergebnis.modellNachKlick.map((z) => `| ${z.pfad} | ${z.status ?? '–'} | ${z.mb ?? '–'} | ${z.quelle} |`),
