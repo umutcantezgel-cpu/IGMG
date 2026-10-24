@@ -42,7 +42,7 @@ dort Aussagen freigegeben werden.
 
 - **Ablagepfad:** Pfad unter `web/inhalte/lernapp/`.
 - **Lektionen:** Lektionen in der Datei. **Aussagen:** je Aussage zwei Freigaben. **Belege:** Belege aller Aussagen
-  (eine Aussage hat einen bis zehn). **Quizfragen:** Sie entstehen nur aus Aussagen und brauchen eigene Freigaben.
+  (eine Aussage hat einen bis sieben). **Quizfragen:** Sie entstehen nur aus Aussagen und brauchen eigene Freigaben.
 - **strittig:** Aussagen mit `strittig: true`. **mit Meinung:** Aussagen mit dem Feld `meinung` (Meinung innerhalb der
   Schule oder Meinung, nach der Fatwa gegeben wird).
 - **Unsicher:** Aussagen, in denen der Entwurf eine Unsicherheit vermerkt: „(Unsicher: …)“, „… ist unsicher“ oder „… unsicher)“.
