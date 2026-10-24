@@ -1,0 +1,5272 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e16",
+    "reihenfolge": 17,
+    "thema": {
+      "de": "Gemeinde und Grundrechte",
+      "tr": "Belediye ve temel haklar",
+      "ar": "البلدية والحقوق الأساسية"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann sachlich erklären, welche Aufgaben eine Gemeinde hat und wie Bürgerinnen und Bürger mitwirken können.",
+        "tr": "Bir belediyenin hangi görevleri olduğunu ve vatandaşların nasıl katılabileceğini tarafsız bir şekilde açıklayabilirim.",
+        "ar": "أستطيع أن أشرح بموضوعية ما مهامّ البلدية وكيف يمكن للمواطنين والمواطنات أن يشاركوا."
+      },
+      {
+        "de": "Ich kann einfache Texte über Grundrechte verstehen und mit eigenen Worten wiedergeben.",
+        "tr": "Temel haklarla ilgili basit metinleri anlayabilir ve kendi sözlerimle aktarabilirim.",
+        "ar": "أستطيع أن أفهم نصوصًا بسيطة عن الحقوق الأساسية وأن أعيد صياغتها بكلماتي."
+      }
+    ],
+    "symbol": "landmark",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e16.sowohl",
+      "lemma": "sowohl",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "sowohl … als auch"
+      },
+      "frequenzRang": 549,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.weder",
+      "lemma": "weder",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "weder … noch"
+      },
+      "frequenzRang": 746,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.entweder",
+      "lemma": "entweder",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "entweder … oder"
+      },
+      "frequenzRang": 873,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.generell",
+      "lemma": "generell",
+      "wortart": "adverb",
+      "frequenzRang": 1739,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.politisch",
+      "lemma": "politisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "politische",
+        "endung_en": "politischen",
+        "endung_er": "politischer",
+        "endung_es": "politisches",
+        "endung_em": "politischem"
+      },
+      "frequenzRang": 267,
+      "quelle": "wiktionary:de:politisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚politisch‘ (https://de.wiktionary.org/wiki/politisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.oeffentlich",
+      "lemma": "öffentlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "öffentliche",
+        "endung_en": "öffentlichen",
+        "endung_er": "öffentlicher",
+        "endung_es": "öffentliches",
+        "endung_em": "öffentlichem"
+      },
+      "frequenzRang": 327,
+      "quelle": "wiktionary:de:öffentlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚öffentlich‘ (https://de.wiktionary.org/wiki/öffentlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.staatlich",
+      "lemma": "staatlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "staatliche",
+        "endung_en": "staatlichen",
+        "endung_er": "staatlicher",
+        "endung_es": "staatliches",
+        "endung_em": "staatlichem"
+      },
+      "frequenzRang": 1039,
+      "quelle": "wiktionary:de:staatlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚staatlich‘ (https://de.wiktionary.org/wiki/staatlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.national",
+      "lemma": "national",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "nationale",
+        "endung_en": "nationalen",
+        "endung_er": "nationaler",
+        "endung_es": "nationales",
+        "endung_em": "nationalem"
+      },
+      "frequenzRang": 884,
+      "quelle": "wiktionary:de:national",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚national‘ (https://de.wiktionary.org/wiki/national), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.zentral",
+      "lemma": "zentral",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "zentrale",
+        "endung_en": "zentralen",
+        "endung_er": "zentraler",
+        "endung_es": "zentrales",
+        "endung_em": "zentralem",
+        "komparativ": "zentraler",
+        "superlativ": "zentralsten",
+        "superlativ_e": "zentralste"
+      },
+      "frequenzRang": 1139,
+      "quelle": "wiktionary:de:zentral",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zentral‘ (https://de.wiktionary.org/wiki/zentral), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.grundsaetzlich",
+      "lemma": "grundsätzlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "grundsätzliche",
+        "endung_en": "grundsätzlichen",
+        "endung_er": "grundsätzlicher",
+        "endung_es": "grundsätzliches",
+        "endung_em": "grundsätzlichem"
+      },
+      "frequenzRang": 1023,
+      "quelle": "wiktionary:de:grundsätzlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚grundsätzlich‘ (https://de.wiktionary.org/wiki/grundsätzlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.lokal",
+      "lemma": "lokal",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "lokale",
+        "endung_en": "lokalen",
+        "endung_er": "lokaler",
+        "endung_es": "lokales",
+        "endung_em": "lokalem"
+      },
+      "frequenzRang": 1099,
+      "quelle": "wiktionary:de:lokal",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚lokal‘ (https://de.wiktionary.org/wiki/lokal), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.rechtlich",
+      "lemma": "rechtlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "rechtliche",
+        "endung_en": "rechtlichen",
+        "endung_er": "rechtlicher",
+        "endung_es": "rechtliches",
+        "endung_em": "rechtlichem"
+      },
+      "frequenzRang": 1302,
+      "quelle": "wiktionary:de:rechtlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚rechtlich‘ (https://de.wiktionary.org/wiki/rechtlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.entscheidend",
+      "lemma": "entscheidend",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "entscheidende",
+        "endung_en": "entscheidenden",
+        "endung_er": "entscheidender",
+        "endung_es": "entscheidendes",
+        "endung_em": "entscheidendem",
+        "komparativ": "entscheidender",
+        "superlativ": "entscheidendsten",
+        "superlativ_e": "entscheidendste"
+      },
+      "frequenzRang": 1288,
+      "quelle": "wiktionary:de:entscheidend",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚entscheidend‘ (https://de.wiktionary.org/wiki/entscheidend), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.demokratisch",
+      "lemma": "demokratisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "demokratische",
+        "endung_en": "demokratischen",
+        "endung_er": "demokratischer",
+        "endung_es": "demokratisches",
+        "endung_em": "demokratischem",
+        "komparativ": "demokratischer",
+        "superlativ": "demokratischsten",
+        "superlativ_e": "demokratischste"
+      },
+      "frequenzRang": 1402,
+      "quelle": "wiktionary:de:demokratisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚demokratisch‘ (https://de.wiktionary.org/wiki/demokratisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.gesetzlich",
+      "lemma": "gesetzlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "gesetzliche",
+        "endung_en": "gesetzlichen",
+        "endung_er": "gesetzlicher",
+        "endung_es": "gesetzliches",
+        "endung_em": "gesetzlichem"
+      },
+      "frequenzRang": 1480,
+      "quelle": "wiktionary:de:gesetzlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gesetzlich‘ (https://de.wiktionary.org/wiki/gesetzlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.gerecht",
+      "lemma": "gerecht",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "gerechte",
+        "endung_en": "gerechten",
+        "endung_er": "gerechter",
+        "endung_es": "gerechtes",
+        "endung_em": "gerechtem",
+        "komparativ": "gerechter",
+        "superlativ": "gerechtesten",
+        "superlativ_e": "gerechteste"
+      },
+      "frequenzRang": 4663,
+      "quelle": "wiktionary:de:gerecht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gerecht‘ (https://de.wiktionary.org/wiki/gerecht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.ungerecht",
+      "lemma": "ungerecht",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ungerechte",
+        "endung_en": "ungerechten",
+        "endung_er": "ungerechter",
+        "endung_es": "ungerechtes",
+        "endung_em": "ungerechtem",
+        "komparativ": "ungerechter",
+        "superlativ": "ungerechtesten",
+        "superlativ_e": "ungerechteste"
+      },
+      "frequenzRang": 6590,
+      "quelle": "wiktionary:de:ungerecht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ungerecht‘ (https://de.wiktionary.org/wiki/ungerecht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.volljaehrig",
+      "lemma": "volljährig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "volljährige",
+        "endung_en": "volljährigen",
+        "endung_er": "volljähriger",
+        "endung_es": "volljähriges",
+        "endung_em": "volljährigem"
+      },
+      "frequenzRang": 11614,
+      "quelle": "wiktionary:de:volljährig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚volljährig‘ (https://de.wiktionary.org/wiki/volljährig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.staat",
+      "lemma": "Staat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Staaten"
+      },
+      "formen": {
+        "pl": "Staaten",
+        "gen_sg": "Staats",
+        "gen_sg_2": "Staates"
+      },
+      "frequenzRang": 313,
+      "quelle": "wiktionary:de:Staat",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Staat‘ (https://de.wiktionary.org/wiki/Staat), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.gesellschaft",
+      "lemma": "Gesellschaft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Gesellschaften"
+      },
+      "formen": {
+        "pl": "Gesellschaften"
+      },
+      "frequenzRang": 347,
+      "quelle": "wiktionary:de:Gesellschaft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gesellschaft‘ (https://de.wiktionary.org/wiki/Gesellschaft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.wahl",
+      "lemma": "Wahl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Wahlen"
+      },
+      "formen": {
+        "pl": "Wahlen"
+      },
+      "frequenzRang": 374,
+      "quelle": "wiktionary:de:Wahl",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wahl‘ (https://de.wiktionary.org/wiki/Wahl), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.regierung",
+      "lemma": "Regierung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Regierungen"
+      },
+      "formen": {
+        "pl": "Regierungen"
+      },
+      "frequenzRang": 387,
+      "quelle": "wiktionary:de:Regierung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Regierung‘ (https://de.wiktionary.org/wiki/Regierung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.politik",
+      "lemma": "Politik",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 409,
+      "quelle": "wiktionary:de:Politik",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Politik‘ (https://de.wiktionary.org/wiki/Politik), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.gemeinde",
+      "lemma": "Gemeinde",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Gemeinden"
+      },
+      "formen": {
+        "pl": "Gemeinden"
+      },
+      "frequenzRang": 476,
+      "quelle": "wiktionary:de:Gemeinde",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gemeinde‘ (https://de.wiktionary.org/wiki/Gemeinde), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.entscheidung",
+      "lemma": "Entscheidung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Entscheidungen"
+      },
+      "formen": {
+        "pl": "Entscheidungen"
+      },
+      "frequenzRang": 480,
+      "quelle": "wiktionary:de:Entscheidung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Entscheidung‘ (https://de.wiktionary.org/wiki/Entscheidung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.gesetz",
+      "lemma": "Gesetz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gesetze"
+      },
+      "formen": {
+        "pl": "Gesetze",
+        "dat_pl": "Gesetzen",
+        "gen_sg": "Gesetzes"
+      },
+      "frequenzRang": 515,
+      "quelle": "wiktionary:de:Gesetz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gesetz‘ (https://de.wiktionary.org/wiki/Gesetz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.freiheit",
+      "lemma": "Freiheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Freiheiten"
+      },
+      "formen": {
+        "pl": "Freiheiten"
+      },
+      "frequenzRang": 871,
+      "quelle": "wiktionary:de:Freiheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Freiheit‘ (https://de.wiktionary.org/wiki/Freiheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.bevoelkerung",
+      "lemma": "Bevölkerung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 718,
+      "quelle": "wiktionary:de:Bevölkerung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bevölkerung‘ (https://de.wiktionary.org/wiki/Bevölkerung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.grundlage",
+      "lemma": "Grundlage",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Grundlagen"
+      },
+      "formen": {
+        "pl": "Grundlagen"
+      },
+      "frequenzRang": 978,
+      "quelle": "wiktionary:de:Grundlage",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Grundlage‘ (https://de.wiktionary.org/wiki/Grundlage), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.buerger",
+      "lemma": "Bürger",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Bürger",
+        "weiblich": "Bürgerin"
+      },
+      "formen": {
+        "dat_pl": "Bürgern",
+        "gen_sg": "Bürgers",
+        "weiblich": "Bürgerin",
+        "weiblich_pl": "Bürgerinnen"
+      },
+      "frequenzRang": 757,
+      "quelle": "wiktionary:de:Bürger",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bürger‘ (https://de.wiktionary.org/wiki/Bürger), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.demokratie",
+      "lemma": "Demokratie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Demokratien"
+      },
+      "formen": {
+        "pl": "Demokratien"
+      },
+      "frequenzRang": 1207,
+      "quelle": "wiktionary:de:Demokratie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Demokratie‘ (https://de.wiktionary.org/wiki/Demokratie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.urteil",
+      "lemma": "Urteil",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Urteile"
+      },
+      "formen": {
+        "pl": "Urteile",
+        "dat_pl": "Urteilen",
+        "gen_sg": "Urteils",
+        "gen_sg_2": "Urteiles"
+      },
+      "frequenzRang": 1156,
+      "quelle": "wiktionary:de:Urteil",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Urteil‘ (https://de.wiktionary.org/wiki/Urteil), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.mehrheit",
+      "lemma": "Mehrheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Mehrheiten"
+      },
+      "formen": {
+        "pl": "Mehrheiten"
+      },
+      "frequenzRang": 1246,
+      "quelle": "wiktionary:de:Mehrheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mehrheit‘ (https://de.wiktionary.org/wiki/Mehrheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.parlament",
+      "lemma": "Parlament",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Parlamente"
+      },
+      "formen": {
+        "pl": "Parlamente",
+        "dat_pl": "Parlamenten",
+        "gen_sg": "Parlaments",
+        "gen_sg_2": "Parlamentes"
+      },
+      "frequenzRang": 1289,
+      "quelle": "wiktionary:de:Parlament",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Parlament‘ (https://de.wiktionary.org/wiki/Parlament), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.frieden",
+      "lemma": "Frieden",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Friedens"
+      },
+      "frequenzRang": 1176,
+      "quelle": "wiktionary:de:Frieden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Frieden‘ (https://de.wiktionary.org/wiki/Frieden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.prinzip",
+      "lemma": "Prinzip",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Prinzipien"
+      },
+      "formen": {
+        "pl": "Prinzipien",
+        "gen_sg": "Prinzips"
+      },
+      "frequenzRang": 1281,
+      "quelle": "wiktionary:de:Prinzip",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Prinzip‘ (https://de.wiktionary.org/wiki/Prinzip), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.buergermeister",
+      "lemma": "Bürgermeister",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Bürgermeister",
+        "weiblich": "Bürgermeisterin"
+      },
+      "formen": {
+        "dat_pl": "Bürgermeistern",
+        "gen_sg": "Bürgermeisters",
+        "weiblich": "Bürgermeisterin",
+        "weiblich_pl": "Bürgermeisterinnen"
+      },
+      "frequenzRang": 6181,
+      "quelle": "wiktionary:de:Bürgermeister",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bürgermeister‘ (https://de.wiktionary.org/wiki/Bürgermeister), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.richter",
+      "lemma": "Richter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Richter",
+        "weiblich": "Richterin"
+      },
+      "formen": {
+        "dat_pl": "Richtern",
+        "gen_sg": "Richters",
+        "weiblich": "Richterin",
+        "weiblich_pl": "Richterinnen"
+      },
+      "frequenzRang": 5353,
+      "quelle": "wiktionary:de:Richter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Richter‘ (https://de.wiktionary.org/wiki/Richter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.anwalt",
+      "lemma": "Anwalt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Anwälte",
+        "weiblich": "Anwältin"
+      },
+      "formen": {
+        "pl": "Anwälte",
+        "dat_pl": "Anwälten",
+        "gen_sg": "Anwalts",
+        "gen_sg_2": "Anwaltes",
+        "weiblich": "Anwältin",
+        "weiblich_pl": "Anwältinnen"
+      },
+      "frequenzRang": 1406,
+      "quelle": "wiktionary:de:Anwalt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anwalt‘ (https://de.wiktionary.org/wiki/Anwalt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.vertreter",
+      "lemma": "Vertreter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Vertreter",
+        "weiblich": "Vertreterin"
+      },
+      "formen": {
+        "dat_pl": "Vertretern",
+        "gen_sg": "Vertreters",
+        "weiblich": "Vertreterin",
+        "weiblich_pl": "Vertreterinnen"
+      },
+      "frequenzRang": 1096,
+      "quelle": "wiktionary:de:Vertreter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vertreter‘ (https://de.wiktionary.org/wiki/Vertreter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.landkreis",
+      "lemma": "Landkreis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Landkreise"
+      },
+      "formen": {
+        "pl": "Landkreise",
+        "dat_pl": "Landkreisen",
+        "gen_sg": "Landkreises"
+      },
+      "frequenzRang": 1091,
+      "quelle": "wiktionary:de:Landkreis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Landkreis‘ (https://de.wiktionary.org/wiki/Landkreis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.bezirk",
+      "lemma": "Bezirk",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Bezirke"
+      },
+      "formen": {
+        "pl": "Bezirke",
+        "dat_pl": "Bezirken",
+        "gen_sg": "Bezirks",
+        "gen_sg_2": "Bezirkes"
+      },
+      "frequenzRang": 1574,
+      "quelle": "wiktionary:de:Bezirk",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bezirk‘ (https://de.wiktionary.org/wiki/Bezirk), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.einwohner",
+      "lemma": "Einwohner",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Einwohner",
+        "weiblich": "Einwohnerin"
+      },
+      "formen": {
+        "dat_pl": "Einwohnern",
+        "gen_sg": "Einwohners",
+        "weiblich": "Einwohnerin",
+        "weiblich_pl": "Einwohnerinnen"
+      },
+      "frequenzRang": 1605,
+      "quelle": "wiktionary:de:Einwohner",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Einwohner‘ (https://de.wiktionary.org/wiki/Einwohner), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.bundesland",
+      "lemma": "Bundesland",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Bundesländer"
+      },
+      "formen": {
+        "pl": "Bundesländer",
+        "dat_pl": "Bundesländern",
+        "gen_sg": "Bundeslands",
+        "gen_sg_2": "Bundeslandes"
+      },
+      "frequenzRang": 1905,
+      "quelle": "wiktionary:de:Bundesland",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bundesland‘ (https://de.wiktionary.org/wiki/Bundesland), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.steuer",
+      "lemma": "Steuer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Steuern"
+      },
+      "formen": {
+        "pl": "Steuern"
+      },
+      "frequenzRang": 2459,
+      "quelle": "wiktionary:de:Steuer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Steuer‘ (https://de.wiktionary.org/wiki/Steuer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.minderheit",
+      "lemma": "Minderheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Minderheiten"
+      },
+      "formen": {
+        "pl": "Minderheiten"
+      },
+      "frequenzRang": 3241,
+      "quelle": "wiktionary:de:Minderheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Minderheit‘ (https://de.wiktionary.org/wiki/Minderheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.abstimmung",
+      "lemma": "Abstimmung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Abstimmungen"
+      },
+      "formen": {
+        "pl": "Abstimmungen"
+      },
+      "frequenzRang": 2877,
+      "quelle": "wiktionary:de:Abstimmung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abstimmung‘ (https://de.wiktionary.org/wiki/Abstimmung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.verfassung",
+      "lemma": "Verfassung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Verfassungen"
+      },
+      "formen": {
+        "pl": "Verfassungen"
+      },
+      "frequenzRang": 2273,
+      "quelle": "wiktionary:de:Verfassung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verfassung‘ (https://de.wiktionary.org/wiki/Verfassung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.grundgesetz",
+      "lemma": "Grundgesetz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Grundgesetzes"
+      },
+      "frequenzRang": 3937,
+      "quelle": "wiktionary:de:Grundgesetz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Grundgesetz‘ (https://de.wiktionary.org/wiki/Grundgesetz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.grundrecht",
+      "lemma": "Grundrecht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Grundrechte"
+      },
+      "formen": {
+        "pl": "Grundrechte",
+        "dat_pl": "Grundrechten",
+        "gen_sg": "Grundrechts",
+        "gen_sg_2": "Grundrechtes"
+      },
+      "frequenzRang": 4423,
+      "quelle": "wiktionary:de:Grundrecht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Grundrecht‘ (https://de.wiktionary.org/wiki/Grundrecht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.menschenrecht",
+      "lemma": "Menschenrecht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Menschenrechte"
+      },
+      "formen": {
+        "pl": "Menschenrechte",
+        "dat_pl": "Menschenrechten",
+        "gen_sg": "Menschenrechts",
+        "gen_sg_2": "Menschenrechtes"
+      },
+      "frequenzRang": 3124,
+      "quelle": "wiktionary:de:Menschenrecht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Menschenrecht‘ (https://de.wiktionary.org/wiki/Menschenrecht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.wuerde",
+      "lemma": "Würde",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 134,
+      "quelle": "wiktionary:de:Würde",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Würde‘ (https://de.wiktionary.org/wiki/Würde), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.gerechtigkeit",
+      "lemma": "Gerechtigkeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 2610,
+      "quelle": "wiktionary:de:Gerechtigkeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gerechtigkeit‘ (https://de.wiktionary.org/wiki/Gerechtigkeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.gleichberechtigung",
+      "lemma": "Gleichberechtigung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 7106,
+      "quelle": "wiktionary:de:Gleichberechtigung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gleichberechtigung‘ (https://de.wiktionary.org/wiki/Gleichberechtigung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.meinungsfreiheit",
+      "lemma": "Meinungsfreiheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 4993,
+      "quelle": "wiktionary:de:Meinungsfreiheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Meinungsfreiheit‘ (https://de.wiktionary.org/wiki/Meinungsfreiheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.stadtrat",
+      "lemma": "Stadtrat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Stadträte"
+      },
+      "formen": {
+        "pl": "Stadträte",
+        "dat_pl": "Stadträten",
+        "gen_sg": "Stadtrats",
+        "gen_sg_2": "Stadtrates"
+      },
+      "frequenzRang": 9362,
+      "quelle": "wiktionary:de:Stadtrat",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stadtrat‘ (https://de.wiktionary.org/wiki/Stadtrat), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.gemeinderat",
+      "lemma": "Gemeinderat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Gemeinderäte"
+      },
+      "formen": {
+        "pl": "Gemeinderäte",
+        "dat_pl": "Gemeinderäten",
+        "gen_sg": "Gemeinderats",
+        "gen_sg_2": "Gemeinderates"
+      },
+      "frequenzRang": 10485,
+      "quelle": "wiktionary:de:Gemeinderat",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gemeinderat‘ (https://de.wiktionary.org/wiki/Gemeinderat), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.stadtverordnete",
+      "lemma": "Stadtverordnete",
+      "wortart": "nomen",
+      "merkmale": {
+        "artikel": "der/die (Plural die)",
+        "deklination": "wie ein Adjektiv",
+        "hinweis": "subst. Adjektiv (der/die Stadtverordnete, ein Stadtverordneter)"
+      },
+      "formen": {
+        "sg_m": "Stadtverordneter",
+        "pl_n": "Stadtverordneten"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.waehler",
+      "lemma": "Wähler",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Wähler",
+        "weiblich": "Wählerin"
+      },
+      "formen": {
+        "dat_pl": "Wählern",
+        "gen_sg": "Wählers",
+        "weiblich": "Wählerin",
+        "weiblich_pl": "Wählerinnen"
+      },
+      "frequenzRang": 1716,
+      "quelle": "wiktionary:de:Wähler",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wähler‘ (https://de.wiktionary.org/wiki/Wähler), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.stimmzettel",
+      "lemma": "Stimmzettel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Stimmzettel"
+      },
+      "formen": {
+        "dat_pl": "Stimmzetteln",
+        "gen_sg": "Stimmzettels"
+      },
+      "frequenzRang": 10883,
+      "quelle": "wiktionary:de:Stimmzettel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stimmzettel‘ (https://de.wiktionary.org/wiki/Stimmzettel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.wahllokal",
+      "lemma": "Wahllokal",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Wahllokale"
+      },
+      "formen": {
+        "pl": "Wahllokale",
+        "dat_pl": "Wahllokalen",
+        "gen_sg": "Wahllokals",
+        "gen_sg_2": "Wahllokales"
+      },
+      "frequenzRang": 22632,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.wahlrecht",
+      "lemma": "Wahlrecht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Wahlrechts",
+        "gen_sg_2": "Wahlrechtes"
+      },
+      "frequenzRang": 5998,
+      "quelle": "wiktionary:de:Wahlrecht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wahlrecht‘ (https://de.wiktionary.org/wiki/Wahlrecht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.briefwahl",
+      "lemma": "Briefwahl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Briefwahlen"
+      },
+      "formen": {
+        "pl": "Briefwahlen"
+      },
+      "frequenzRang": 21986,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.kandidat",
+      "lemma": "Kandidat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kandidaten",
+        "deklination": "n-Deklination",
+        "weiblich": "Kandidatin"
+      },
+      "formen": {
+        "pl": "Kandidaten",
+        "akk_dat_sg": "Kandidaten",
+        "gen_sg": "Kandidaten",
+        "weiblich": "Kandidatin",
+        "weiblich_pl": "Kandidatinnen"
+      },
+      "frequenzRang": 2224,
+      "quelle": "wiktionary:de:Kandidat",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kandidat‘ (https://de.wiktionary.org/wiki/Kandidat), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.rechtsstaat",
+      "lemma": "Rechtsstaat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Rechtsstaaten"
+      },
+      "formen": {
+        "pl": "Rechtsstaaten",
+        "gen_sg": "Rechtsstaats"
+      },
+      "frequenzRang": 5946,
+      "quelle": "wiktionary:de:Rechtsstaat",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rechtsstaat‘ (https://de.wiktionary.org/wiki/Rechtsstaat), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.beteiligung",
+      "lemma": "Beteiligung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Beteiligungen"
+      },
+      "formen": {
+        "pl": "Beteiligungen"
+      },
+      "frequenzRang": 2523,
+      "quelle": "wiktionary:de:Beteiligung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Beteiligung‘ (https://de.wiktionary.org/wiki/Beteiligung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.ausschuss",
+      "lemma": "Ausschuss",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Ausschüsse"
+      },
+      "formen": {
+        "pl": "Ausschüsse",
+        "dat_pl": "Ausschüssen",
+        "gen_sg": "Ausschusses"
+      },
+      "frequenzRang": 2545,
+      "quelle": "wiktionary:de:Ausschuss",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ausschuss‘ (https://de.wiktionary.org/wiki/Ausschuss), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.toleranz",
+      "lemma": "Toleranz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 4048,
+      "quelle": "wiktionary:de:Toleranz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Toleranz‘ (https://de.wiktionary.org/wiki/Toleranz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.diskriminierung",
+      "lemma": "Diskriminierung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Diskriminierungen"
+      },
+      "formen": {
+        "pl": "Diskriminierungen"
+      },
+      "frequenzRang": 4669,
+      "quelle": "wiktionary:de:Diskriminierung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Diskriminierung‘ (https://de.wiktionary.org/wiki/Diskriminierung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.zwingen",
+      "lemma": "zwingen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "zwingen",
+        "praes_ich": "zwinge",
+        "praes_du": "zwingst",
+        "praes_er_sie_es": "zwingt",
+        "praes_wir": "zwingen",
+        "praes_ihr": "zwingt",
+        "praes_sie_Sie": "zwingen",
+        "praet_ich_er_sie_es": "zwang",
+        "praet_du": "zwangst",
+        "praet_wir_sie_Sie": "zwangen",
+        "praet_ihr": "zwangt",
+        "partizip_2": "gezwungen"
+      },
+      "frequenzRang": 1072,
+      "quelle": "wiktionary:de:zwingen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zwingen‘ (https://de.wiktionary.org/wiki/zwingen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.bundesrepublik",
+      "lemma": "Bundesrepublik",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 2139,
+      "quelle": "wiktionary:de:Bundesrepublik",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bundesrepublik‘ (https://de.wiktionary.org/wiki/Bundesrepublik), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.eigentum",
+      "lemma": "Eigentum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Eigentums",
+        "gen_sg_2": "Eigentumes"
+      },
+      "frequenzRang": 1641,
+      "quelle": "wiktionary:de:Eigentum",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Eigentum‘ (https://de.wiktionary.org/wiki/Eigentum), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.bilden",
+      "lemma": "bilden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bilden",
+        "praes_ich": "bilde",
+        "praes_du": "bildest",
+        "praes_er_sie_es": "bildet",
+        "praes_wir": "bilden",
+        "praes_ihr": "bildet",
+        "praes_sie_Sie": "bilden",
+        "praet_ich_er_sie_es": "bildete",
+        "praet_du": "bildetest",
+        "praet_wir_sie_Sie": "bildeten",
+        "praet_ihr": "bildetet",
+        "partizip_2": "gebildet"
+      },
+      "frequenzRang": 518,
+      "quelle": "wiktionary:de:bilden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bilden‘ (https://de.wiktionary.org/wiki/bilden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.vertreten",
+      "lemma": "vertreten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "vertreten",
+        "praes_ich": "vertrete",
+        "praes_du": "vertrittst",
+        "praes_er_sie_es": "vertritt",
+        "praes_wir": "vertreten",
+        "praes_ihr": "vertretet",
+        "praes_sie_Sie": "vertreten",
+        "praet_ich_er_sie_es": "vertrat",
+        "praet_du": "vertratest",
+        "praet_wir_sie_Sie": "vertraten",
+        "praet_ihr": "vertratet",
+        "partizip_2": "vertreten"
+      },
+      "frequenzRang": 904,
+      "quelle": "wiktionary:de:vertreten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vertreten‘ (https://de.wiktionary.org/wiki/vertreten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.beschliessen",
+      "lemma": "beschließen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "beschließen",
+        "praes_ich": "beschließe",
+        "praes_du": "beschließt",
+        "praes_er_sie_es": "beschließt",
+        "praes_wir": "beschließen",
+        "praes_ihr": "beschließt",
+        "praes_sie_Sie": "beschließen",
+        "praet_ich_er_sie_es": "beschloss",
+        "praet_du": "beschlossest",
+        "praet_wir_sie_Sie": "beschlossen",
+        "praet_ihr": "beschlosst",
+        "partizip_2": "beschlossen"
+      },
+      "frequenzRang": 1238,
+      "quelle": "wiktionary:de:beschließen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚beschließen‘ (https://de.wiktionary.org/wiki/beschließen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.abstimmen",
+      "lemma": "abstimmen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ab",
+        "grundverb": "stimmen (de.a1.e06.stimmen)"
+      },
+      "formen": {
+        "infinitiv": "abstimmen",
+        "verbzusatz": "ab",
+        "partizip_2": "abgestimmt",
+        "zu_infinitiv": "abzustimmen",
+        "nebensatz_er_sie_es": "abstimmt",
+        "nebensatz_praet": "abstimmte",
+        "nebensatz_praet_pl": "abstimmten"
+      },
+      "frequenzRang": 3119,
+      "quelle": "wiktionary:de:abstimmen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚abstimmen‘ (https://de.wiktionary.org/wiki/abstimmen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.regeln",
+      "lemma": "regeln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "regeln",
+        "praes_ich": "regle",
+        "praes_du": "regelst",
+        "praes_er_sie_es": "regelt",
+        "praes_wir": "regeln",
+        "praes_ihr": "regelt",
+        "praes_sie_Sie": "regeln",
+        "praet_ich_er_sie_es": "regelte",
+        "praet_du": "regeltest",
+        "praet_wir_sie_Sie": "regelten",
+        "praet_ihr": "regeltet",
+        "partizip_2": "geregelt"
+      },
+      "frequenzRang": 850,
+      "quelle": "wiktionary:de:regeln",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚regeln‘ (https://de.wiktionary.org/wiki/regeln), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.garantieren",
+      "lemma": "garantieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "garantieren",
+        "praes_ich": "garantiere",
+        "praes_du": "garantierst",
+        "praes_er_sie_es": "garantiert",
+        "praes_wir": "garantieren",
+        "praes_ihr": "garantiert",
+        "praes_sie_Sie": "garantieren",
+        "praet_ich_er_sie_es": "garantierte",
+        "praet_du": "garantiertest",
+        "praet_wir_sie_Sie": "garantierten",
+        "praet_ihr": "garantiertet",
+        "partizip_2": "garantiert"
+      },
+      "frequenzRang": 1872,
+      "quelle": "wiktionary:de:garantieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚garantieren‘ (https://de.wiktionary.org/wiki/garantieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.diskriminieren",
+      "lemma": "diskriminieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "diskriminieren",
+        "praes_ich": "diskriminiere",
+        "praes_du": "diskriminierst",
+        "praes_er_sie_es": "diskriminiert",
+        "praes_wir": "diskriminieren",
+        "praes_ihr": "diskriminiert",
+        "praes_sie_Sie": "diskriminieren",
+        "praet_ich_er_sie_es": "diskriminierte",
+        "praet_du": "diskriminiertest",
+        "praet_wir_sie_Sie": "diskriminierten",
+        "praet_ihr": "diskriminiertet",
+        "partizip_2": "diskriminiert"
+      },
+      "frequenzRang": 8140,
+      "quelle": "wiktionary:de:diskriminieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚diskriminieren‘ (https://de.wiktionary.org/wiki/diskriminieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.benachteiligen",
+      "lemma": "benachteiligen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "benachteiligen",
+        "praes_ich": "benachteilige",
+        "praes_du": "benachteiligst",
+        "praes_er_sie_es": "benachteiligt",
+        "praes_wir": "benachteiligen",
+        "praes_ihr": "benachteiligt",
+        "praes_sie_Sie": "benachteiligen",
+        "praet_ich_er_sie_es": "benachteiligte",
+        "praet_du": "benachteiligtest",
+        "praet_wir_sie_Sie": "benachteiligten",
+        "praet_ihr": "benachteiligtet",
+        "partizip_2": "benachteiligt"
+      },
+      "frequenzRang": 9914,
+      "quelle": "wiktionary:de:benachteiligen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚benachteiligen‘ (https://de.wiktionary.org/wiki/benachteiligen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.mitbestimmen",
+      "lemma": "mitbestimmen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "mit"
+      },
+      "formen": {
+        "infinitiv": "mitbestimmen",
+        "verbzusatz": "mit",
+        "praes_ich": "bestimme",
+        "praes_du": "bestimmst",
+        "praes_er_sie_es": "bestimmt",
+        "praes_wir": "bestimmen",
+        "praes_ihr": "bestimmt",
+        "praes_sie_Sie": "bestimmen",
+        "praet_ich_er_sie_es": "bestimmte",
+        "praet_du": "bestimmtest",
+        "praet_wir_sie_Sie": "bestimmten",
+        "praet_ihr": "bestimmtet",
+        "partizip_2": "mitbestimmt",
+        "zu_infinitiv": "mitzubestimmen",
+        "nebensatz_er_sie_es": "mitbestimmt",
+        "nebensatz_praet": "mitbestimmte",
+        "nebensatz_praet_pl": "mitbestimmten"
+      },
+      "frequenzRang": 38390,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.million",
+      "lemma": "Million",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Millionen"
+      },
+      "formen": {
+        "pl": "Millionen"
+      },
+      "frequenzRang": 341,
+      "quelle": "wiktionary:de:Million",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Million‘ (https://de.wiktionary.org/wiki/Million), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.wert",
+      "lemma": "Wert",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Werte"
+      },
+      "formen": {
+        "pl": "Werte",
+        "dat_pl": "Werten",
+        "gen_sg": "Werts",
+        "gen_sg_2": "Wertes"
+      },
+      "frequenzRang": 331,
+      "quelle": "wiktionary:de:Wert",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wert‘ (https://de.wiktionary.org/wiki/Wert), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.tatsache",
+      "lemma": "Tatsache",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Tatsachen"
+      },
+      "formen": {
+        "pl": "Tatsachen"
+      },
+      "frequenzRang": 1287,
+      "quelle": "wiktionary:de:Tatsache",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tatsache‘ (https://de.wiktionary.org/wiki/Tatsache), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.beweis",
+      "lemma": "Beweis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Beweise"
+      },
+      "formen": {
+        "pl": "Beweise",
+        "dat_pl": "Beweisen",
+        "gen_sg": "Beweises"
+      },
+      "frequenzRang": 1248,
+      "quelle": "wiktionary:de:Beweis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Beweis‘ (https://de.wiktionary.org/wiki/Beweis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e16.s0001",
+      "text": "Die Gemeinde kümmert sich um Kindergärten, Straßen, Spielplätze und den Müll.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0002",
+      "text": "Unsere Gemeinde ist klein, aber sie hat eine eigene Bibliothek und ein Schwimmbad.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0003",
+      "text": "Die Bürgermeisterin hat ihr Büro im ersten Stock des Rathauses.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0004",
+      "text": "Den Bürgermeister wählen die Bürgerinnen und Bürger direkt für mehrere Jahre.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0005",
+      "text": "Der Stadtrat trifft sich einmal im Monat zu einer öffentlichen Sitzung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0006",
+      "text": "In einem Dorf spricht man nicht vom Stadtrat, sondern vom Gemeinderat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0007",
+      "text": "Neue Einwohnerinnen und Einwohner müssen sich beim Bürgeramt anmelden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0008",
+      "text": "In welchem Bezirk wohnen Sie?",
+      "quelle": "tatoeba:13933137",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13933137 von ninefi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e16.s0009",
+      "text": "Große Städte wie Berlin oder Hamburg sind in mehrere Bezirke geteilt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0010",
+      "text": "Viele kleine Gemeinden bilden zusammen einen Landkreis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0011",
+      "text": "Der Landkreis ist zum Beispiel für die Busse zwischen den Dörfern zuständig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0012",
+      "text": "Die Bundesrepublik Deutschland besteht aus 16 Bundesländern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0013",
+      "text": "Mit unseren Steuern bezahlt der Staat zum Beispiel Schulen und Krankenhäuser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0014",
+      "text": "Ist die Steuer im Preis enthalten?",
+      "quelle": "tatoeba:2218713",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2218713 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e16.s0015",
+      "text": "Der Park ist öffentlich, alle Menschen dürfen ihn kostenlos benutzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0016",
+      "text": "In der lokalen Zeitung steht, dass im Viertel ein neuer Spielplatz gebaut wird.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0017",
+      "text": "Die Bevölkerung dieser Stadt wird jedes Jahr kleiner.",
+      "quelle": "tatoeba:688427",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #688427 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e16.s0018",
+      "text": "Die Bevölkerung wird regelmäßig über die Pläne der Stadt informiert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0019",
+      "text": "Das Rathaus liegt zentral, direkt neben dem Marktplatz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0020",
+      "text": "Elif und Jan gehen auf eine staatliche Schule, dort kostet der Unterricht nichts.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0021",
+      "text": "Der Staat sorgt für Sicherheit, Bildung und Gesundheit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0022",
+      "text": "Alle Bürgerinnen und Bürger haben die gleichen Rechte und Pflichten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0023",
+      "text": "Im Bürgeramt helfen die Mitarbeiter den Bürgern bei vielen Fragen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0024",
+      "text": "Die Hauptstadt der Bundesrepublik Deutschland ist Berlin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0025",
+      "text": "Der 3. Oktober ist in Deutschland ein nationaler Feiertag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0026",
+      "text": "Der öffentliche Eingang des Rathauses ist auf der Rückseite.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0027",
+      "text": "Die Bürgermeisterin der Stadt heißt Frau Hartmann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0028",
+      "text": "Während der Sitzung des Stadtrats sollen die Gäste ruhig zuhören.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0029",
+      "text": "Trotz des Regens kamen viele Einwohner zur Versammlung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0030",
+      "text": "Entschuldigung, ich bin neu hier. Zu welchem Bezirk gehört diese Straße?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0031",
+      "text": "Die Straße gehört zum Bezirk Nord.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0032",
+      "text": "Und wo muss ich mich als neue Einwohnerin anmelden?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0033",
+      "text": "Im Bürgeramt, das liegt ganz zentral im Rathaus am Marktplatz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0034",
+      "text": "Der Bürgermeister wird alle sechs Jahre gewählt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0035",
+      "text": "Die Gemeinde hat ungefähr 12.000 Einwohner.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0036",
+      "text": "Wer entscheidet eigentlich, ob in unserem Bezirk ein neuer Radweg gebaut wird?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0037",
+      "text": "Das beschließt der Stadtrat in einer öffentlichen Sitzung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0038",
+      "text": "Der neue Radweg ist drei Kilometer lang und führt durch zwei Bezirke.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0039",
+      "text": "Die Steuer für das Auto bezahlt man beim Finanzamt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0040",
+      "text": "In meiner Gemeinde gibt es einen schönen öffentlichen Park und eine Bibliothek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0041",
+      "text": "Die Wahl ist geheim, niemand darf sehen, wo man sein Kreuz macht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0042",
+      "text": "In Deutschland finden Wahlen an einem Sonntag statt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0043",
+      "text": "Junge Wählerinnen und Wähler interessieren sich oft für Themen wie Schule und Umwelt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0044",
+      "text": "Auf dem Stimmzettel macht man ein Kreuz bei einem Kandidaten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0045",
+      "text": "Das Wahllokal ist in der Grundschule bei uns um die Ecke.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0046",
+      "text": "Im Wahllokal zeigt man seine Benachrichtigung und den Personalausweis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0047",
+      "text": "Wer am Tag der Wahl im Urlaub ist, kann per Briefwahl wählen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0048",
+      "text": "Die Briefwahl muss man vorher bei der Gemeinde beantragen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0049",
+      "text": "Das Wahlrecht für den Bundestag hat man ab 18 Jahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0050",
+      "text": "Machen Sie von Ihrem Wahlrecht Gebrauch!",
+      "quelle": "tatoeba:7831841",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7831841 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e16.s0051",
+      "text": "In manchen Bundesländern haben Jugendliche bei Wahlen in der Gemeinde schon mit 16 das Wahlrecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0052",
+      "text": "Emre ist jetzt volljährig und darf zum ersten Mal wählen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0053",
+      "text": "Wir stimmen in der Klasse ab, wohin der Ausflug gehen soll.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0054",
+      "text": "Die Abstimmung ist ein gutes Mittel, um demokratisch zu entscheiden.",
+      "quelle": "tatoeba:8589036",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8589036 von felix63 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e16.s0055",
+      "text": "Das Ergebnis der Abstimmung war sehr knapp.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0056",
+      "text": "Auch eine Minderheit hat das Recht, ihre Meinung zu sagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0057",
+      "text": "Demokratie bedeutet, dass die Bürger selbst bestimmen, wer sie vertritt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0058",
+      "text": "In unserem Verein werden alle wichtigen Entscheidungen demokratisch getroffen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0059",
+      "text": "Der Bundestag ist das Parlament der Bundesrepublik und wird alle vier Jahre gewählt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0060",
+      "text": "Lehrerinnen und Lehrer müssen im Unterricht politisch neutral bleiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0061",
+      "text": "Am Ende war eine einzige Stimme entscheidend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0062",
+      "text": "Nächsten Sonntag werde ich zum ersten Mal bei einer Wahl meine Stimme abgeben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0063",
+      "text": "Am Abend werden wir das Ergebnis der Wahl im Fernsehen sehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0064",
+      "text": "Wenn ihr mich wählt, werde ich eure Wünsche gut vertreten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0065",
+      "text": "Man geht ins Wahllokal, bekommt einen Stimmzettel und macht ganz geheim sein Kreuz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0066",
+      "text": "Wer am Sonntag keine Zeit hat, kann vorher per Briefwahl wählen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0067",
+      "text": "Wählst du am Sonntag im Wahllokal oder per Briefwahl?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0068",
+      "text": "Ich gehe lieber selbst hin, das Wahllokal ist ja ganz in der Nähe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0069",
+      "text": "Weißt du, bis wann die Wahllokale am Sonntag offen sind?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0070",
+      "text": "Bis 18 Uhr, danach zählen die Helfer im Wahllokal die Stimmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0071",
+      "text": "Ja, ich bin seit letztem Jahr volljährig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0072",
+      "text": "Die Mehrheit hat sich für den neuen Park entschieden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0073",
+      "text": "Wie viele Stimmen braucht ein Kandidat, um zu gewinnen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0074",
+      "text": "Er braucht die Mehrheit der Stimmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0075",
+      "text": "Der Kandidat wohnt in unserem Bezirk.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0076",
+      "text": "Die nächste Wahl findet im Herbst statt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0077",
+      "text": "Das Grundgesetz ist seit 1949 die Verfassung der Bundesrepublik Deutschland.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0078",
+      "text": "Die wichtigsten Rechte sind im Grundgesetz geregelt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0079",
+      "text": "Viele Grundrechte gelten für alle Menschen, die in Deutschland leben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0080",
+      "text": "Bildung ist ein Menschenrecht, deshalb dürfen alle Kinder zur Schule gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0081",
+      "text": "Jeder Mensch hat eine Würde, egal woher er kommt oder wie alt er ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0082",
+      "text": "Die Freiheit des Einzelnen endet dort, wo die Freiheit des Anderen beginnt.",
+      "quelle": "tatoeba:12893072",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12893072 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e16.s0083",
+      "text": "Zur Freiheit gehört auch, dass man seinen Beruf selbst wählen kann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0084",
+      "text": "Wegen der Meinungsfreiheit darf jeder öffentlich sagen, was er denkt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0085",
+      "text": "Auch die Meinungsfreiheit hat Grenzen, zum Beispiel darf man andere nicht beleidigen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0086",
+      "text": "Gleichberechtigung heißt: Frauen und Männer haben die gleichen Rechte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0087",
+      "text": "Zur Gleichberechtigung gehört auch der gleiche Lohn für die gleiche Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0088",
+      "text": "Das Eigentum ist geschützt, niemand darf einem anderen einfach etwas wegnehmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0089",
+      "text": "Das Grundgesetz garantiert die Freiheit der Presse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0090",
+      "text": "Gesetze regeln das Zusammenleben in einer Gesellschaft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0091",
+      "text": "Auch jedes Bundesland hat seine eigene Verfassung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0092",
+      "text": "Das Grundgesetz ist die Grundlage für alle anderen Gesetze.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0093",
+      "text": "Ein wichtiges Prinzip der Demokratie lautet: Alle sind vor dem Gesetz gleich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0094",
+      "text": "Freiheit, Toleranz und Respekt sind wichtige Werte unserer Gesellschaft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0095",
+      "text": "Alle Menschen wollen in Frieden und Freiheit leben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0096",
+      "text": "In unserer Gesellschaft leben Menschen aus vielen Ländern zusammen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0097",
+      "text": "Niemand darf dich zwingen, deine Meinung zu ändern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0098",
+      "text": "Die Würde des Menschen ist durch das Grundgesetz geschützt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0099",
+      "text": "Diskriminierung ist in Deutschland gesetzlich verboten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0100",
+      "text": "Die Meinungsfreiheit ist im Grundgesetz garantiert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0101",
+      "text": "Unsere Grundrechte – kurz erklärt",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0102",
+      "text": "Das Grundgesetz gilt in der ganzen Bundesrepublik Deutschland.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0103",
+      "text": "Im ersten Teil stehen die Grundrechte, die allen Menschen Freiheit und Schutz garantieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0104",
+      "text": "Das erste und wichtigste Grundrecht ist die Würde des Menschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0105",
+      "text": "Das bedeutet: Der Staat muss jeden Menschen mit Respekt behandeln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0106",
+      "text": "Außerdem sind alle Menschen vor dem Gesetz gleich, egal welche Herkunft oder Sprache sie haben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0107",
+      "text": "Frauen und Männer haben die gleichen Rechte, das nennt man Gleichberechtigung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0108",
+      "text": "Durch die Meinungsfreiheit darf jeder seine Meinung sagen und schreiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0109",
+      "text": "Auch das Eigentum und die Wohnung jedes Menschen sind geschützt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0110",
+      "text": "Die Grundrechte sind die Grundlage für ein friedliches Leben in unserer Gesellschaft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0111",
+      "text": "Im Grundgesetz stehen die Grundrechte erst ganz am Ende.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0112",
+      "text": "Was bedeutet Gleichberechtigung?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0113",
+      "text": "Frauen und Männer sind vor dem Gesetz gleich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0114",
+      "text": "Jeder Bürger darf seine Meinung schreiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0115",
+      "text": "Der Staat bezahlt jedem Menschen eine Wohnung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0116",
+      "text": "Laut Text muss der Staat alle Menschen mit Respekt behandeln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0117",
+      "text": "Jedes Bundesland hat zusätzlich eine eigene Verfassung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0118",
+      "text": "Darf ich in der Zeitung unserer Schule öffentlich schreiben, dass mir das Essen nicht schmeckt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0119",
+      "text": "Natürlich, dafür gibt es die Meinungsfreiheit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0120",
+      "text": "Und wenn die Schulleitung den Text nicht mag? Kann sie mich zwingen, ihn zu ändern?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0121",
+      "text": "Grundsätzlich nicht, solange du sachlich bleibst und niemanden beleidigst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0122",
+      "text": "Die Zeitung der Schule erscheint generell zweimal im Jahr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0123",
+      "text": "Das Essen in der Schule kostet für alle Schüler gleich viel, das ist gerecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0124",
+      "text": "Was steht eigentlich im ersten Artikel des Grundgesetzes?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0125",
+      "text": "Dort steht, dass die Würde des Menschen geschützt ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0126",
+      "text": "Das Grundgesetz kann man in jeder Bibliothek lesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0127",
+      "text": "Die Bundesrepublik hat 16 Bundesländer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0128",
+      "text": "Für mich ist die Meinungsfreiheit das wichtigste Grundrecht, weil jeder sagen darf, was er denkt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0129",
+      "text": "In einem Rechtsstaat müssen sich alle an die Gesetze halten, auch der Staat selbst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0130",
+      "text": "Das verstößt gegen das Gesetz.",
+      "quelle": "tatoeba:582231",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #582231 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e16.s0131",
+      "text": "Neue Gesetze beschließt das Parlament mit der Mehrheit der Stimmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0132",
+      "text": "Bei rechtlichen Fragen kann man sich von einer Anwältin beraten lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0133",
+      "text": "Die Richterin hört beide Seiten an und entscheidet dann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0134",
+      "text": "Richter sind unabhängig, niemand darf ihnen sagen, wie sie entscheiden sollen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0135",
+      "text": "Das Gericht hat ein Urteil gesprochen: Der Vermieter muss die Heizung reparieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0136",
+      "text": "Das Foto vom Wasserschaden ist ein wichtiger Beweis für das Gericht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0137",
+      "text": "Heb die Rechnung gut auf, sie ist ein Beweis für den Kauf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0138",
+      "text": "Man muss zwischen Tatsachen und Meinungen unterscheiden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0139",
+      "text": "Die Kinder teilen den Kuchen gerecht, jeder bekommt ein gleich großes Stück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0140",
+      "text": "Jan findet seine Note ungerecht und spricht ruhig mit seiner Lehrerin darüber.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0141",
+      "text": "Viele Menschen wünschen sich mehr Gerechtigkeit in der Welt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0142",
+      "text": "Diskriminierung wegen der Herkunft, der Sprache oder des Geschlechts ist verboten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0143",
+      "text": "In unserer Klasse wird niemand diskriminiert, alle gehören dazu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0144",
+      "text": "Bei einer Bewerbung darf niemand wegen seines Alters benachteiligt werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0145",
+      "text": "Menschen im Rollstuhl dürfen nicht benachteiligt werden, deshalb gibt es in öffentlichen Gebäuden Aufzüge.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0146",
+      "text": "Toleranz bedeutet, andere Meinungen und Lebensweisen zu respektieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0147",
+      "text": "An unserer Schule lernen alle Kinder Toleranz und Respekt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0148",
+      "text": "Obwohl die Note schlecht ist, findet Jan sie gerecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0149",
+      "text": "Obwohl es den ganzen Tag regnete, gingen viele Menschen zur Wahl.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0150",
+      "text": "Das Urteil war für Herrn Neumann nicht gut. Trotzdem akzeptiert er es.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0151",
+      "text": "Emre hatte am Sonntag wenig Zeit. Trotzdem ist er ins Wahllokal gegangen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0152",
+      "text": "Mein Vermieter repariert die Heizung nicht. Ist das rechtlich in Ordnung?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0153",
+      "text": "Nein, das muss er. Haben Sie Beweise, zum Beispiel Fotos oder Briefe?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0154",
+      "text": "Ja, ich habe ihm drei Briefe geschrieben, aber er hat nie geantwortet. Das ist doch ungerecht!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0155",
+      "text": "Dann sollten Sie sich von einer Anwältin beraten lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0156",
+      "text": "Die Richterin arbeitet seit zehn Jahren am Gericht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0157",
+      "text": "In Deutschland gibt es 16 Bundesländer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0158",
+      "text": "Darf ein Vermieter jemanden wegen seines Namens benachteiligen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0159",
+      "text": "Nein, das ist Diskriminierung, und die ist gesetzlich verboten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0160",
+      "text": "Die Wohnung liegt sehr zentral und ist hell.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0161",
+      "text": "Der Anwalt hat heute leider keine Zeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0162",
+      "text": "Ich finde es ungerecht, wenn jemand wegen seiner Herkunft benachteiligt wird.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0163",
+      "text": "Die Beteiligung an der letzten Wahl war sehr hoch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0164",
+      "text": "Auch Kinder dürfen mitbestimmen, wenn ein neuer Spielplatz geplant wird.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0165",
+      "text": "Im Ausschuss bereiten die Stadtverordneten die Entscheidungen vor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0166",
+      "text": "Die Stadtverordneten vertreten die Interessen der Bürgerinnen und Bürger.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0167",
+      "text": "Der Stadtrat hat beschlossen, im Viertel mehr Bäume zu pflanzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0168",
+      "text": "Viele Stadtverordnete machen diese Arbeit ehrenamtlich neben ihrem Beruf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0169",
+      "text": "Die Schüler haben kleine Gruppen gebildet und sammeln Ideen für den Hof der Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0170",
+      "text": "Ich kann beides, sowohl Englisch sprechen als auch schreiben.",
+      "quelle": "tatoeba:12809013",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12809013 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e16.s0171",
+      "text": "Sowohl Kinder als auch Erwachsene dürfen ihre Ideen einbringen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0172",
+      "text": "In unserem Viertel gibt es weder einen Spielplatz noch einen Park.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0173",
+      "text": "Wir können uns entweder heute oder am Freitag treffen.",
+      "quelle": "tatoeba:13151607",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13151607 von Onurkizildag (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e16.s0174",
+      "text": "Man kann entweder im Wahllokal oder per Briefwahl wählen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0175",
+      "text": "Der Ausschuss, in dem auch zwei Jugendliche sitzen, plant den neuen Spielplatz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0176",
+      "text": "Das ist der Saal, in dem sich die Stadtverordneten treffen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0177",
+      "text": "Die Frau, mit der wir im Rathaus gesprochen haben, ist die Bürgermeisterin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0178",
+      "text": "Das ist die Gemeinde, in der meine Großeltern seit 40 Jahren wohnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0179",
+      "text": "Alles, was im Ausschuss besprochen wird, ist öffentlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0180",
+      "text": "Die Bürger, mit denen ich gesprochen habe, wünschen sich mehr Bänke im Park.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0181",
+      "text": "Ich wünsche mir von der Gemeinde einen sicheren Radweg, weil viele Kinder mit dem Rad fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0182",
+      "text": "Wir brauchen mehr Bänke im Park, damit sich auch ältere Bürger ausruhen können.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0183",
+      "text": "Was entscheiden die Stadtverordneten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0184",
+      "text": "In Hessen wählen die Bürgerinnen und Bürger alle fünf Jahre die Stadtverordneten ihrer Stadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0185",
+      "text": "Die Stadtverordneten treffen sich regelmäßig zu einer öffentlichen Sitzung im Rathaus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0186",
+      "text": "Dort beschließen sie zum Beispiel, wofür die Stadt ihr Geld verwendet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0187",
+      "text": "Bevor sie abstimmen, besprechen sie jedes Thema zuerst in einem Ausschuss.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0188",
+      "text": "In den Ausschüssen werden Fragen genau geprüft und Vorschläge gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0189",
+      "text": "In der Sitzung stimmen die Stadtverordneten dann über diese Vorschläge ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0190",
+      "text": "Für einen Beschluss braucht man die Mehrheit der Stimmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0191",
+      "text": "Die Bürgerinnen und Bürger dürfen zuhören, aber nicht mit abstimmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0192",
+      "text": "Vor manchen Entscheidungen fragt die Stadt die Bevölkerung nach ihrer Meinung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0193",
+      "text": "Die Sitzungen der Stadtverordneten sind geheim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0194",
+      "text": "Wo werden die Themen vor der Abstimmung besprochen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0195",
+      "text": "In einem Ausschuss der Stadtverordneten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0196",
+      "text": "In der Zeitung der Gemeinde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0197",
+      "text": "Im Büro des Bürgermeisters.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0198",
+      "text": "Die Bürger dürfen bei den Sitzungen zuhören.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0199",
+      "text": "Eine Sitzung der Stadtverordneten dauert meistens zwei Stunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0200",
+      "text": "Schreib einen kurzen Brief an das Jugendforum deiner Gemeinde. Mach einen Vorschlag für dein Viertel und begründe ihn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0201",
+      "text": "Liebe Mitglieder des Jugendforums, ich heiße Selin Arslan und wohne seit drei Jahren im Bezirk Nord. In unserem Viertel gibt es weder einen Spielplatz noch einen Park. Viele Kinder spielen deshalb auf der Straße, und das ist leider sehr gefährlich. Mein Vorschlag: Auf der freien Fläche neben der Schule könnte die Stadt einen kleinen Park bauen. Dort könnten sowohl Kinder als auch ältere Menschen ihre Freizeit verbringen. Ich würde auch gern helfen, zum Beispiel beim Pflanzen der Bäume. Bitte besprechen Sie meinen Vorschlag in Ihrer nächsten Sitzung. Vielen Dank und viele Grüße, Selin Arslan",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0202",
+      "text": "Weißt du, wer im Ausschuss für unser Viertel sitzt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0203",
+      "text": "Ja, Frau Zimmermann. Sie vertritt dort die Interessen der Einwohner.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0204",
+      "text": "Kann ich ihr meinen Vorschlag für einen öffentlichen Park schicken?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0205",
+      "text": "Ja, du kannst ihr entweder schreiben oder sie im Rathaus besuchen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0206",
+      "text": "Nein, der Ausschuss trifft sich nur im Winter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0207",
+      "text": "Der Park gehört der Gemeinde und ist öffentlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0208",
+      "text": "Wer darf denn im Jugendforum mitbestimmen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0209",
+      "text": "Sowohl Schüler als auch junge Leute in der Ausbildung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0210",
+      "text": "Das Jugendforum trifft sich im Saal der Stadtverordneten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0211",
+      "text": "Die Stadtverordneten werden alle fünf Jahre gewählt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0212",
+      "text": "Ein neuer Spielplatz für die Gemeinde",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0213",
+      "text": "Heute besucht die Klasse von Elif und Yazan mit Frau Becker das Rathaus ihrer Gemeinde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0214",
+      "text": "Frau Wagner arbeitet bei der Gemeinde und begrüßt die Kinder im großen Saal.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0215",
+      "text": "Herzlich willkommen! In diesem Saal treffen sich jeden Monat die Stadtverordneten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0216",
+      "text": "Was machen die Stadtverordneten hier genau?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0217",
+      "text": "Sie beschließen zum Beispiel, wo neue Spielplätze, Radwege oder Schulen gebaut werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0218",
+      "text": "Bei uns im Viertel ist der alte Spielplatz seit Monaten kaputt. Wer trifft die Entscheidung, ob er repariert wird?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0219",
+      "text": "Zuerst prüft ein Ausschuss die Pläne, dann stimmen alle Stadtverordneten darüber ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0220",
+      "text": "Das Geld dafür kommt aus den Steuern, die die Bürgerinnen und Bürger bezahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0221",
+      "text": "Und dürfen wir Kinder auch mitbestimmen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0222",
+      "text": "Ja! Für Kinder und Jugendliche gibt es bei uns das Jugendforum, eine Form der Beteiligung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0223",
+      "text": "Dort könnt ihr euren Wunsch vortragen, und Vertreter der Stadt hören euch zu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0224",
+      "text": "Eine Woche später vertreten Elif und Yazan ihre Klasse im Jugendforum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0225",
+      "text": "Obwohl Elif nervös ist, erklärt sie den Vertretern der Stadt ihren Wunsch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0226",
+      "text": "Wir wünschen uns einen Spielplatz, auf dem sowohl kleine als auch große Kinder spielen können.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0227",
+      "text": "Außerdem wünschen sich viele Einwohner Bänke für Eltern und Großeltern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0228",
+      "text": "Auch Frau Wagner von der Gemeinde ist dabei und schreibt alles genau auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0229",
+      "text": "Vielen Dank für eure Vorschläge! Der Ausschuss wird sie in der nächsten Sitzung besprechen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0230",
+      "text": "Zwei Monate später bekommt die Klasse einen Brief von der Bürgermeisterin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0231",
+      "text": "Die Stadtverordneten haben beschlossen, den Spielplatz im nächsten Frühling neu zu bauen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0232",
+      "text": "Die Kinder freuen sich sehr, denn ihre Beteiligung hat sich gelohnt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0233",
+      "text": "Wo treffen sich die Stadtverordneten jeden Monat?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0234",
+      "text": "In einem großen Saal im Rathaus der Gemeinde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0235",
+      "text": "Im Büro der Bürgermeisterin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0236",
+      "text": "Im Wahllokal in der Grundschule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0237",
+      "text": "Woher hat die Gemeinde das Geld für neue Spielplätze?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0238",
+      "text": "Das Geld kommt aus den Steuern der Bürger.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0239",
+      "text": "Die Bürgermeisterin bezahlt den Spielplatz mit ihrem eigenen Geld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0240",
+      "text": "Ein Anwalt schenkt der Gemeinde das Geld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0241",
+      "text": "Wer vertritt die Klasse im Jugendforum?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0242",
+      "text": "Elif und Yazan vertreten die Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0243",
+      "text": "Frau Becker und Frau Wagner vertreten die Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0244",
+      "text": "Die Bürgermeisterin vertritt die Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0245",
+      "text": "Was haben die Stadtverordneten am Ende beschlossen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0246",
+      "text": "Sie haben beschlossen, einen neuen Spielplatz zu bauen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0247",
+      "text": "Sie haben beschlossen, den Spielplatz zu schließen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0248",
+      "text": "Sie haben beschlossen, ein neues Rathaus zu bauen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0249",
+      "text": "Die erste Wahl von Emre",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0250",
+      "text": "Emre ist seit seinem letzten Geburtstag volljährig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0251",
+      "text": "Heute hat er seine erste Benachrichtigung zur Wahl im Briefkasten gefunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0252",
+      "text": "Im Treppenhaus trifft er Herrn Neumann und zeigt ihm den Brief der Gemeinde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0253",
+      "text": "Herr Neumann, ich darf zum ersten Mal wählen. Wie läuft so eine Wahl eigentlich ab?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0254",
+      "text": "Am Sonntag gehst du in dein Wahllokal, das steht hier auf dem Brief.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0255",
+      "text": "Nimm diesen Brief und deinen Ausweis mit, dann bekommst du einen Stimmzettel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0256",
+      "text": "Und sieht jemand, wo ich auf dem Stimmzettel mein Kreuz mache?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0257",
+      "text": "Nein, die Wahl ist geheim. Du gehst allein in eine Kabine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0258",
+      "text": "Danach faltest du den Stimmzettel und steckst ihn in einen großen Kasten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0259",
+      "text": "Und wenn ich am Sonntag nicht ins Wahllokal kommen kann?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0260",
+      "text": "Dann machst du Briefwahl. Die kannst du im Internet oder im Rathaus beantragen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0261",
+      "text": "Ich werde trotzdem ins Wahllokal gehen. Das ist doch viel spannender!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0262",
+      "text": "Sehr gut! Jede Stimme ist wichtig, und am Ende entscheidet die Mehrheit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0263",
+      "text": "Am Sonntag geht Emre mit seiner Mutter zum Wahllokal in der Grundschule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0264",
+      "text": "Was hat Emre von der Gemeinde bekommen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0265",
+      "text": "Eine Benachrichtigung zur Wahl.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0266",
+      "text": "Einen Brief von seinem Anwalt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0267",
+      "text": "Eine Rechnung für die Steuer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0268",
+      "text": "Warum geht man im Wahllokal allein in eine Kabine?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0269",
+      "text": "Weil die Wahl geheim ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0270",
+      "text": "Weil der Stimmzettel sehr groß ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0271",
+      "text": "Weil man dort den Kandidaten trifft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0272",
+      "text": "Was kann Emre tun, wenn er nicht ins Wahllokal kommen kann?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0273",
+      "text": "Er kann per Briefwahl wählen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0274",
+      "text": "Er kann seinen Stimmzettel Herrn Neumann geben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0275",
+      "text": "Er kann am Montag im Rathaus abstimmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0276",
+      "text": "Wir wünschen uns einen öffentlichen Spielplatz für kleine und große Kinder und Bänke für die Eltern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0277",
+      "text": "Am Sonntag gehe ich mit meinem Ausweis ins Wahllokal und wähle in der Kabine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0278",
+      "text": "Nach der Wahl wird aus der Mehrheit im Parlament eine Regierung gebildet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0279",
+      "text": "Auch die Wohnung ist durch ein Grundrecht geschützt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0280",
+      "text": "Die Würde jedes Menschen muss geachtet werden, auch die von Kindern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0281",
+      "text": "Entweder nehmen wir den Bus, oder wir gehen zu Fuß zum Rathaus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0282",
+      "text": "Ich habe heute weder Zeit noch Lust auf eine lange Sitzung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0283",
+      "text": "Sowohl die Eltern als auch die Lehrer haben für den Ausflug gestimmt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0284",
+      "text": "Die Anwältin, mit der ich gesprochen habe, war sehr freundlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0285",
+      "text": "Im nächsten Jahr wird das Parlament neu gewählt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0286",
+      "text": "Der Stimmzettel ist schon ausgefüllt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0287",
+      "text": "Die Wünsche der Bürger sind für die Stadtverordneten wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0288",
+      "text": "Obwohl Selin noch nicht volljährig ist, darf sie im Jugendforum mitbestimmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0289",
+      "text": "Für diese Behauptung gibt es weder Tatsachen noch Beweise.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0290",
+      "text": "Wann hast du eigentlich zum ersten Mal das Wahlrecht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0291",
+      "text": "Nächstes Jahr, dann bin ich volljährig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0292",
+      "text": "Im Wahllokal in der Grundschule bei uns.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0293",
+      "text": "Per Briefwahl, weil ich im Urlaub bin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0294",
+      "text": "Was macht eigentlich ein Richter?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0295",
+      "text": "Er entscheidet bei einem Streit, wer nach dem Gesetz recht hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0296",
+      "text": "Er vertritt die Interessen der Einwohner im Rathaus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0297",
+      "text": "Er zählt am Abend die Stimmen der Wähler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0298",
+      "text": "In einer Demokratie bestimmen die Bürger mit, wer sie im Parlament vertritt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0299",
+      "text": "Obwohl ich noch jung bin, möchte ich in meiner Gemeinde mitbestimmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0300",
+      "text": "Das Jugendforum – so könnt ihr mitbestimmen",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0301",
+      "text": "Seit zehn Jahren gibt es in unserer Gemeinde ein Jugendforum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0302",
+      "text": "Mitmachen können alle jungen Einwohnerinnen und Einwohner zwischen 12 und 21 Jahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0303",
+      "text": "Alle zwei Jahre wählen die Jugendlichen 20 Vertreterinnen und Vertreter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0304",
+      "text": "Die Vertreter treffen sich viermal im Jahr im Rathaus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0305",
+      "text": "Dort sammeln sie Wünsche der Jugend und bilden kleine Gruppen für einzelne Themen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0306",
+      "text": "Die besten Vorschläge stellt das Forum dann im Ausschuss der Stadtverordneten vor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0307",
+      "text": "Das Forum darf zwar nicht selbst beschließen, aber seine Meinung ist der Stadt wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0308",
+      "text": "Auch volljährige Einwohner über 30 dürfen im Jugendforum mitbestimmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0309",
+      "text": "Wie oft treffen sich die Vertreter des Jugendforums im Rathaus?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0310",
+      "text": "Die Vertreter treffen sich viermal im Jahr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0311",
+      "text": "Die Vertreter treffen sich jeden Monat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0312",
+      "text": "Die Vertreter treffen sich alle zwei Jahre.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0313",
+      "text": "Die Vorschläge des Forums kommen in einen Ausschuss.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0314",
+      "text": "Die Vertreter des Forums bekommen Geld für ihre Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0315",
+      "text": "Entschuldigung, ich habe meine Benachrichtigung zur Wahl verloren. Darf ich trotzdem wählen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0316",
+      "text": "Ja, natürlich. Zeigen Sie mir bitte Ihren Ausweis, dann bekommen Sie einen Stimmzettel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0317",
+      "text": "Nein, ohne Benachrichtigung ist eine Wahl leider nicht möglich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0318",
+      "text": "Das Wahllokal ist heute leider geschlossen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0319",
+      "text": "Wie ist die Abstimmung im Verein ausgegangen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0320",
+      "text": "Die Mehrheit war für den neuen Sportplatz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0321",
+      "text": "Die Abstimmung ist geheim und findet am Freitag statt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0322",
+      "text": "Ich habe bei der Abstimmung für den Sportplatz gestimmt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0323",
+      "text": "Als Vertreterin werde ich mich im Jugendforum für einen sicheren Radweg einsetzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0324",
+      "text": "Im Grundgesetz ist geregelt, dass Männer und Frauen gleiche Rechte haben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0325",
+      "text": "Der Ausschuss, mit dem wir gesprochen haben, hat unseren Vorschlag angenommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0326",
+      "text": "Das Wetter war schlecht. Trotzdem war die Beteiligung an der Wahl hoch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e16.s0327",
+      "text": "Ich schlage vor, dass die Gemeinde neben der Schule einen kleinen Park baut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e16.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann erklären, welche Aufgaben eine Gemeinde hat und wie Deutschland aufgebaut ist.",
+        "tr": "Bir belediyenin hangi görevleri olduğunu ve Almanya’nın nasıl yapılandığını açıklayabilirim.",
+        "ar": "أستطيع أن أشرح ما مهامّ البلدية وكيف تتكوّن ألمانيا من ولايات وبلديات."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e16.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.gemeinde",
+          "ablenker": ["de.a2.e09.behoerde", "de.a1.e04.viertel"]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e16.buergermeister",
+            "de.b1.e16.stadtrat",
+            "de.b1.e16.einwohner",
+            "de.b1.e16.steuer",
+            "de.b1.e16.million",
+            "de.b1.e16.regierung"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0027",
+          "wort": 2,
+          "ablenker": ["des", "die"]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.landkreis",
+          "ablenker": ["de.a2.e12.dorf", "de.a1.e01.land"]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a06",
+          "typ": "paare",
+          "lemmata": ["de.b1.e16.oeffentlich", "de.b1.e16.lokal", "de.b1.e16.zentral", "de.b1.e16.national", "de.a1.e08.frei"]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0030"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0031"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0032"
+            }
+          ],
+          "antwort": "de.b1.e16.s0033",
+          "ablenker": ["de.b1.e16.s0034", "de.b1.e16.s0035"]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.bundesland",
+          "ablenker": ["de.a2.e11.grenze", "de.a1.e09.stadt"]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e16.s0013",
+          "nach": "ziel",
+          "alternativen": [
+            "Der Staat bezahlt mit unseren Steuern zum Beispiel Schulen und Krankenhäuser.",
+            "Der Staat bezahlt zum Beispiel Schulen und Krankenhäuser mit unseren Steuern.",
+            "Zum Beispiel bezahlt der Staat mit unseren Steuern Schulen und Krankenhäuser.",
+            "Mit unseren Steuern bezahlt der Staat zum Beispiel Krankenhäuser und Schulen."
+          ],
+          "ablenker": ["Staates", "unsere"]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e16.s0018",
+          "ablenker": ["de.b1.e16.s0017", "de.b1.e16.s0023"]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a11",
+          "typ": "satzbau",
+          "ziel": "de.b1.e16.s0011",
+          "alternativen": [
+            "Zum Beispiel ist der Landkreis für die Busse zwischen den Dörfern zuständig.",
+            "Für die Busse zwischen den Dörfern ist zum Beispiel der Landkreis zuständig."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.staatlich",
+          "ablenker": ["de.b1.e14.international", "de.b1.e05.geheim"]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e16.s0022",
+          "nach": "ziel",
+          "alternativen": [
+            "Alle Bürger haben die gleichen Rechte und Pflichten.",
+            "Alle Bürgerinnen und Bürger haben dieselben Rechte und Pflichten.",
+            "Alle Bürger haben dieselben Rechte und Pflichten.",
+            "Alle Bürgerinnen und Bürger haben gleiche Rechte und Pflichten.",
+            "Alle Bürger haben gleiche Rechte und Pflichten."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e16.staat",
+          "ablenker": ["de.a1.e09.stadt"]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a15",
+          "typ": "formen",
+          "zeilen": ["der Staat", "die Gemeinde", "das Gesetz", "der Bürger", "die Bürger"],
+          "spalten": ["Genitiv"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["des Staates", "des Staats"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["der Gemeinde"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["des Gesetzes"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["des Bürgers"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["der Bürger"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e16.s0040"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e16.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann beschreiben, wie eine Wahl abläuft.",
+        "tr": "Bir seçimin nasıl yapıldığını anlatabilirim.",
+        "ar": "أستطيع أن أصف كيف تجري عملية التصويت."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e16.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.wahl",
+          "ablenker": ["de.a2.e08.ergebnis", "de.a2.e08.verein"]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e16.waehler",
+            "de.b1.e16.stimmzettel",
+            "de.b1.e16.wahllokal",
+            "de.b1.e16.briefwahl",
+            "de.b1.e16.kandidat",
+            "de.a2.e09.ausweis"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0062",
+          "wort": 2,
+          "ablenker": ["wird", "werden"]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.volljaehrig",
+          "ablenker": ["de.b1.e05.geheim", "de.a2.e14.fair"]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a06",
+          "typ": "paare",
+          "lemmata": ["de.b1.e16.mehrheit", "de.b1.e16.minderheit", "de.b1.e16.demokratie", "de.b1.e16.parlament", "de.b1.e16.politik"]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0067"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0068"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0069"
+            }
+          ],
+          "antwort": "de.b1.e16.s0070",
+          "ablenker": ["de.b1.e16.s0071", "de.b1.e16.s0072"]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.abstimmen",
+          "ablenker": ["de.a2.e08.teilnehmen", "de.a2.e06.entscheiden"]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e16.s0045",
+          "nach": "ziel",
+          "alternativen": ["Das Wahllokal ist bei uns um die Ecke in der Grundschule."],
+          "ablenker": ["Wahl", "unser"]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e16.s0047",
+          "ablenker": ["de.b1.e16.s0049", "de.b1.e16.s0046"]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a11",
+          "typ": "satzbau",
+          "ziel": "de.b1.e16.s0055",
+          "alternativen": ["Sehr knapp war das Ergebnis der Abstimmung."]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.entscheidung",
+          "ablenker": ["de.b1.e10.vorschlag", "de.a1.e06.problem"]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e16.s0056",
+          "nach": "ziel",
+          "alternativen": [
+            "Auch eine Minderheit hat das Recht, ihre Meinung zu äußern.",
+            "Eine Minderheit hat auch das Recht, ihre Meinung zu sagen.",
+            "Auch Minderheiten haben das Recht, ihre Meinung zu sagen.",
+            "Auch eine Minderheit darf ihre Meinung sagen.",
+            "Auch eine Minderheit hat ein Recht darauf, ihre Meinung zu sagen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.politisch",
+          "ablenker": ["de.b1.e16.demokratisch", "de.b1.e16.entscheidend"]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a15",
+          "typ": "formen",
+          "zeilen": ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"],
+          "spalten": ["Futur I von „wählen“"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["werde wählen"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["wirst wählen"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["wird wählen"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["werden wählen"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["werdet wählen"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["werden wählen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e16.s0065"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e16.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann wichtige Grundrechte nennen und einen einfachen Text darüber verstehen.",
+        "tr": "Önemli temel hakları sayabilir ve onlar hakkında basit bir metni anlayabilirim.",
+        "ar": "أستطيع أن أذكر حقوقًا أساسية مهمّة وأن أفهم نصًّا بسيطًا عنها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e16.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.grundgesetz",
+          "ablenker": ["de.a2.e07.regel", "de.b1.e02.vertrag"]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e16.wuerde",
+            "de.b1.e16.freiheit",
+            "de.b1.e16.eigentum",
+            "de.b1.e16.frieden",
+            "de.b1.e16.gesellschaft",
+            "de.b1.e16.gleichberechtigung"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0098",
+          "wort": 8,
+          "ablenker": ["schützt", "schützen"]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.grundrecht",
+          "ablenker": ["de.a2.e07.pflicht", "de.a2.e12.schutz"]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a06",
+          "typ": "paare",
+          "lemmata": ["de.b1.e16.garantieren", "de.b1.e16.regeln", "de.b1.e16.zwingen", "de.a2.e07.verbieten", "de.a2.e07.erlauben"]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e16.s0101",
+          "absaetze": [
+            "de.b1.e16.s0102",
+            "de.b1.e16.s0103",
+            "de.b1.e16.s0104",
+            "de.b1.e16.s0105",
+            "de.b1.e16.s0106",
+            "de.b1.e16.s0107",
+            "de.b1.e16.s0108",
+            "de.b1.e16.s0109",
+            "de.b1.e16.s0110"
+          ],
+          "glossen": ["de.b1.e16.wuerde", "de.b1.e16.gleichberechtigung"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e16.s0111",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e16.s0112",
+              "antwort": "de.b1.e16.s0113",
+              "ablenker": ["de.b1.e16.s0114", "de.b1.e16.s0115"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e16.s0116",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e16.s0117",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.menschenrecht",
+          "ablenker": ["de.b1.e02.bildung", "de.a2.e10.sicherheit"]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e16.s0092",
+          "nach": "ziel",
+          "alternativen": ["Die Grundlage für alle anderen Gesetze ist das Grundgesetz."],
+          "ablenker": ["Gesetz", "andere"]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e16.s0084",
+          "ablenker": ["de.b1.e16.s0085", "de.b1.e16.s0100"]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a11",
+          "typ": "satzbau",
+          "ziel": "de.b1.e16.s0094",
+          "alternativen": ["Wichtige Werte unserer Gesellschaft sind Freiheit, Toleranz und Respekt."]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.meinungsfreiheit",
+          "ablenker": ["de.a2.e07.meinung", "de.b1.e10.kritik"]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e16.s0095",
+          "nach": "ziel",
+          "alternativen": [
+            "Alle Menschen möchten in Frieden und Freiheit leben.",
+            "Alle Menschen wollen in Freiheit und Frieden leben.",
+            "Alle Menschen möchten in Freiheit und Frieden leben.",
+            "Jeder Mensch will in Frieden und Freiheit leben.",
+            "Alle Menschen wollen frei und in Frieden leben."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a14",
+          "typ": "formen",
+          "zeilen": ["öffnen", "schließen", "regeln", "garantieren", "schützen"],
+          "spalten": ["Partizip II", "Zustand: es ist …"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["geöffnet"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["ist geöffnet"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["geschlossen"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["ist geschlossen"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["geregelt"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["ist geregelt"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["garantiert"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["ist garantiert"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["geschützt"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["ist geschützt"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.prinzip",
+          "ablenker": ["de.b1.e16.grundlage", "de.b1.e16.wert"]
+        },
+        {
+          "schluessel": "de.b1.e16.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e16.s0128"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e16.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Recht und Gerechtigkeit sprechen und sagen, was ich gerecht oder ungerecht finde.",
+        "tr": "Hukuk ve adalet hakkında konuşabilir, neyi adil ya da adaletsiz bulduğumu söyleyebilirim.",
+        "ar": "أستطيع أن أتحدّث عن القانون والعدالة وأن أقول ما أراه عادلًا أو غير عادل."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e16.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.richter",
+          "ablenker": ["de.b1.e16.anwalt", "de.a1.e09.polizei"]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e16.gesetz",
+            "de.b1.e16.urteil",
+            "de.b1.e16.beweis",
+            "de.b1.e16.tatsache",
+            "de.b1.e16.toleranz",
+            "de.b1.e16.rechtsstaat"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0148",
+          "wort": 0,
+          "ablenker": ["Trotzdem", "Deshalb"]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.ungerecht",
+          "ablenker": ["de.b1.e14.unabhaengig", "de.b1.e05.geheim"]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a06",
+          "typ": "paare",
+          "lemmata": ["de.b1.e16.gerecht", "de.b1.e16.gesetzlich", "de.b1.e14.unabhaengig", "de.b1.e13.offiziell", "de.a1.e08.frei"]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0152"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0153"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0154"
+            }
+          ],
+          "antwort": "de.b1.e16.s0155",
+          "ablenker": ["de.b1.e16.s0156", "de.b1.e16.s0157"]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.diskriminierung",
+          "ablenker": ["de.a2.e14.streit", "de.b1.e09.strafe"]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e16.s0138",
+          "nach": "ziel",
+          "alternativen": ["Zwischen Tatsachen und Meinungen muss man unterscheiden."],
+          "ablenker": ["Tatsache", "unterscheidet"]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e16.s0134",
+          "ablenker": ["de.b1.e16.s0133", "de.b1.e16.s0132"]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a11",
+          "typ": "satzbau",
+          "ziel": "de.b1.e16.s0151",
+          "alternativen": [
+            "Emre hatte am Sonntag wenig Zeit. Er ist trotzdem ins Wahllokal gegangen.",
+            "Am Sonntag hatte Emre wenig Zeit. Trotzdem ist er ins Wahllokal gegangen.",
+            "Am Sonntag hatte Emre wenig Zeit. Er ist trotzdem ins Wahllokal gegangen.",
+            "Emre hatte am Sonntag wenig Zeit. Ins Wahllokal ist er trotzdem gegangen.",
+            "Am Sonntag hatte Emre wenig Zeit. Ins Wahllokal ist er trotzdem gegangen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.benachteiligen",
+          "ablenker": ["de.a2.e12.schuetzen", "de.b1.e07.akzeptieren"]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e16.s0141",
+          "nach": "ziel",
+          "alternativen": [
+            "Viele Menschen wünschen sich mehr Gerechtigkeit auf der Welt.",
+            "Viele Menschen wollen mehr Gerechtigkeit in der Welt.",
+            "Viele Leute wünschen sich mehr Gerechtigkeit in der Welt.",
+            "In der Welt wünschen sich viele Menschen mehr Gerechtigkeit.",
+            "Viele Menschen möchten mehr Gerechtigkeit auf der Welt."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e16.s0137"
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.diskriminieren",
+          "ablenker": ["de.a2.e07.erlauben", "de.b1.e14.beweisen"]
+        },
+        {
+          "schluessel": "de.b1.e16.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e16.s0162"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e16.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann erklären, wie man in der Stadt mitbestimmt, und einen Wunsch für mein Viertel vortragen und begründen.",
+        "tr": "Şehirde nasıl söz sahibi olunduğunu açıklayabilir, mahallem için bir isteği dile getirip gerekçelendirebilirim.",
+        "ar": "أستطيع أن أشرح كيف يشارك الناس في القرار في المدينة، وأن أعرض أمنية لحيّي وأعلّلها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e16.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.ausschuss",
+          "ablenker": ["de.b1.e06.versammlung", "de.a2.e08.verein"]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a03",
+          "typ": "paare",
+          "lemmata": ["de.b1.e16.sowohl", "de.b1.e16.weder", "de.b1.e16.entweder", "de.b1.e16.beteiligung", "de.b1.e16.vertreter"]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0172",
+          "wort": 8,
+          "ablenker": ["oder", "als"]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0171",
+          "wort": 2,
+          "ablenker": ["noch", "oder"]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e16.s0183",
+          "absaetze": [
+            "de.b1.e16.s0184",
+            "de.b1.e16.s0185",
+            "de.b1.e16.s0186",
+            "de.b1.e16.s0187",
+            "de.b1.e16.s0188",
+            "de.b1.e16.s0189",
+            "de.b1.e16.s0190",
+            "de.b1.e16.s0191",
+            "de.b1.e16.s0192"
+          ],
+          "glossen": ["de.b1.e16.stadtverordnete", "de.b1.e16.ausschuss"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e16.s0193",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e16.s0194",
+              "antwort": "de.b1.e16.s0195",
+              "ablenker": ["de.b1.e16.s0196", "de.b1.e16.s0197"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e16.s0198",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e16.s0199",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a07",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a08",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0176",
+          "wort": 5,
+          "ablenker": ["den", "der"]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e16.s0177",
+          "nach": "ziel",
+          "alternativen": ["Die Bürgermeisterin ist die Frau, mit der wir im Rathaus gesprochen haben."],
+          "ablenker": ["dem", "den"]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.beschliessen",
+          "ablenker": ["de.b1.e16.vertreten", "de.a2.e08.teilnehmen"]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0202"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0203"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0204"
+            }
+          ],
+          "antwort": "de.b1.e16.s0205",
+          "ablenker": ["de.b1.e16.s0206", "de.b1.e16.s0207"]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e16.s0175",
+          "ablenker": ["de.b1.e16.s0179", "de.b1.e16.s0165"]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e16.s0174",
+          "alternativen": ["Man kann entweder per Briefwahl oder im Wahllokal wählen."]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.stadtverordnete",
+          "ablenker": ["de.b1.e16.vertreter", "de.b1.e16.buergermeister"]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e16.s0200",
+          "woerter": {
+            "min": 90,
+            "max": 110
+          },
+          "pflichtwoerter": ["Viertel", "Vorschlag"],
+          "muster": ["de.b1.e16.s0201"]
+        },
+        {
+          "schluessel": "de.b1.e16.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e16.s0181"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e16.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über einen Besuch im Rathaus und ein Gespräch über die erste Wahl verstehen.",
+        "tr": "Belediye binasına yapılan bir ziyaret hakkındaki bir hikâyeyi ve ilk seçim hakkındaki bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصّة عن زيارة إلى مبنى البلدية وحوارًا عن التصويت لأوّل مرّة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e16.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e16.s0212",
+          "zeilen": [
+            {
+              "satz": "de.b1.e16.s0213"
+            },
+            {
+              "satz": "de.b1.e16.s0214"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0215"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0216"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0217"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e16.s0218"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0219"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0220"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0221"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0222"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0223"
+            },
+            {
+              "satz": "de.b1.e16.s0224"
+            },
+            {
+              "satz": "de.b1.e16.s0225"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0226"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e16.s0227"
+            },
+            {
+              "satz": "de.b1.e16.s0228"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0229"
+            },
+            {
+              "satz": "de.b1.e16.s0230"
+            },
+            {
+              "satz": "de.b1.e16.s0231"
+            },
+            {
+              "satz": "de.b1.e16.s0232"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.b1.e16.s0233",
+              "antwort": "de.b1.e16.s0234",
+              "ablenker": ["de.b1.e16.s0235", "de.b1.e16.s0236"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.b1.e16.s0237",
+              "antwort": "de.b1.e16.s0238",
+              "ablenker": ["de.b1.e16.s0239", "de.b1.e16.s0240"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.b1.e16.s0241",
+              "antwort": "de.b1.e16.s0242",
+              "ablenker": ["de.b1.e16.s0243", "de.b1.e16.s0244"]
+            },
+            {
+              "nach": 18,
+              "frage": "de.b1.e16.s0245",
+              "antwort": "de.b1.e16.s0246",
+              "ablenker": ["de.b1.e16.s0247", "de.b1.e16.s0248"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l06.a02",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e16.s0224",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e16.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0231",
+          "wort": 3,
+          "ablenker": ["beschließen", "beschloss"]
+        },
+        {
+          "schluessel": "de.b1.e16.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e16.s0220",
+          "ablenker": ["de.b1.e16.s0217", "de.b1.e16.s0223"]
+        },
+        {
+          "schluessel": "de.b1.e16.l06.a05",
+          "typ": "satzbau",
+          "ziel": "de.b1.e16.s0230",
+          "alternativen": [
+            "Die Klasse bekommt zwei Monate später einen Brief von der Bürgermeisterin.",
+            "Einen Brief von der Bürgermeisterin bekommt die Klasse zwei Monate später."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l06.a06",
+          "typ": "frei",
+          "ziel": "de.b1.e16.s0232",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Kinder freuen sich sehr, weil sich ihre Beteiligung gelohnt hat.",
+            "Die Kinder sind sehr froh, denn ihre Beteiligung hat sich gelohnt.",
+            "Die Kinder freuen sich sehr, denn ihre Teilnahme hat sich gelohnt.",
+            "Die Kinder freuen sich sehr, weil sich ihre Teilnahme gelohnt hat.",
+            "Die Kinder sind sehr froh, weil sich ihre Beteiligung gelohnt hat."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l06.a07",
+          "typ": "geschichte",
+          "titel": "de.b1.e16.s0249",
+          "zeilen": [
+            {
+              "satz": "de.b1.e16.s0250"
+            },
+            {
+              "satz": "de.b1.e16.s0251"
+            },
+            {
+              "satz": "de.b1.e16.s0252"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0253"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0254"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0255"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0256"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0257"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0258"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0259"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0260"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0261"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0262"
+            },
+            {
+              "satz": "de.b1.e16.s0263"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.b1.e16.s0264",
+              "antwort": "de.b1.e16.s0265",
+              "ablenker": ["de.b1.e16.s0266", "de.b1.e16.s0267"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.b1.e16.s0268",
+              "antwort": "de.b1.e16.s0269",
+              "ablenker": ["de.b1.e16.s0270", "de.b1.e16.s0271"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.b1.e16.s0272",
+              "antwort": "de.b1.e16.s0273",
+              "ablenker": ["de.b1.e16.s0274", "de.b1.e16.s0275"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l06.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0256"
+            }
+          ],
+          "antwort": "de.b1.e16.s0257",
+          "ablenker": ["de.b1.e16.s0260", "de.b1.e16.s0254"]
+        },
+        {
+          "schluessel": "de.b1.e16.l06.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e16.s0253",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e16.l06.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e16.s0250"
+        },
+        {
+          "schluessel": "de.b1.e16.l06.a11",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0261",
+          "wort": 1,
+          "ablenker": ["wirst", "wurde"]
+        },
+        {
+          "schluessel": "de.b1.e16.l06.a12",
+          "typ": "sprechen",
+          "satz": "de.b1.e16.s0276"
+        },
+        {
+          "schluessel": "de.b1.e16.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.b1.e16.s0277"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e16.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum.",
+        "ar": "أراجع كلمات الوحدة وجملها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e16.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e16.gemeinderat",
+            "de.b1.e16.bevoelkerung",
+            "de.b1.e16.bundesrepublik",
+            "de.b1.e16.wahlrecht",
+            "de.b1.e16.verfassung",
+            "de.b1.e16.gerechtigkeit"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.abstimmung",
+          "ablenker": ["de.a2.e08.ergebnis", "de.b1.e06.sitzung"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e16.s0285",
+          "ablenker": ["de.b1.e16.s0059", "de.b1.e16.s0278"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0286",
+          "wort": 4,
+          "ablenker": ["ausfüllt", "ausfüllen"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e16.s0284",
+          "nach": "ziel",
+          "ablenker": ["dem", "den"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.grundsaetzlich",
+          "ablenker": ["de.b1.e05.geheim", "de.b1.e13.offiziell"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0290"
+            }
+          ],
+          "antwort": "de.b1.e16.s0291",
+          "ablenker": ["de.b1.e16.s0292", "de.b1.e16.s0293"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a08",
+          "typ": "formen",
+          "zeilen": ["vertreten", "beschließen", "abstimmen", "zwingen"],
+          "spalten": ["er/sie/es (Präsens)", "er/sie/es (Präteritum)", "Partizip II"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["vertritt"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["vertrat"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["vertreten"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["beschließt"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["beschloss"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["beschlossen"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["stimmt ab"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["stimmte ab"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["abgestimmt"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["zwingt"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["zwang"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 2,
+              "loesungen": ["gezwungen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e16.s0145",
+          "ablenker": ["de.b1.e16.s0143", "de.b1.e16.s0147"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e16.steuer",
+          "ablenker": ["de.a1.e06.teuer"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a11",
+          "typ": "satzbau",
+          "ziel": "de.b1.e16.s0283",
+          "alternativen": [
+            "Sowohl die Lehrer als auch die Eltern haben für den Ausflug gestimmt.",
+            "Für den Ausflug haben sowohl die Eltern als auch die Lehrer gestimmt.",
+            "Für den Ausflug haben sowohl die Lehrer als auch die Eltern gestimmt."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.rechtlich",
+          "ablenker": ["de.b1.e14.international", "de.a2.e14.fair"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0287",
+          "wort": 2,
+          "ablenker": ["die", "den"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a14",
+          "typ": "paare",
+          "lemmata": ["de.b1.e16.mitbestimmen", "de.b1.e16.bilden", "de.b1.e16.beschliessen", "de.b1.e16.abstimmen", "de.a2.e07.verbieten"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e16.s0288",
+          "nach": "ziel",
+          "alternativen": [
+            "Selin darf im Jugendforum mitbestimmen, obwohl sie noch nicht volljährig ist.",
+            "Obwohl Selin noch nicht volljährig ist, kann sie im Jugendforum mitbestimmen.",
+            "Selin kann im Jugendforum mitbestimmen, obwohl sie noch nicht volljährig ist.",
+            "Obwohl Selin noch minderjährig ist, darf sie im Jugendforum mitbestimmen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a16",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.generell",
+          "ablenker": ["de.b1.e14.international", "de.a1.e08.frei"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a17",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0294"
+            }
+          ],
+          "antwort": "de.b1.e16.s0295",
+          "ablenker": ["de.b1.e16.s0296", "de.b1.e16.s0297"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a18",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e16.wert",
+          "ablenker": ["de.a1.e07.wort"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a19",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e16.s0278"
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a20",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.buerger",
+          "ablenker": ["de.a1.e05.mensch", "de.a2.e08.mitglied"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a21",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0282",
+          "wort": 5,
+          "ablenker": ["oder", "auch"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a22",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e16.s0289",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a23",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0036"
+            }
+          ],
+          "antwort": "de.b1.e16.s0037",
+          "ablenker": ["de.b1.e16.s0038", "de.b1.e16.s0039"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a24",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.verfassung",
+          "ablenker": ["de.b1.e13.regelung", "de.b1.e02.vertrag"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a25",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e16.wahl",
+          "ablenker": ["de.a1.e02.zahl"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a26",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.bezirk",
+          "ablenker": ["de.a2.e12.dorf", "de.a1.e09.stadt"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a27",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0073"
+            }
+          ],
+          "antwort": "de.b1.e16.s0074",
+          "ablenker": ["de.b1.e16.s0075", "de.b1.e16.s0076"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a28",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0118"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e16.s0119"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0120"
+            }
+          ],
+          "antwort": "de.b1.e16.s0121",
+          "ablenker": ["de.b1.e16.s0122", "de.b1.e16.s0123"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a29",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0158"
+            }
+          ],
+          "antwort": "de.b1.e16.s0159",
+          "ablenker": ["de.b1.e16.s0160", "de.b1.e16.s0161"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a30",
+          "typ": "satzbau",
+          "ziel": "de.b1.e16.s0281",
+          "alternativen": ["Entweder gehen wir zu Fuß zum Rathaus, oder wir nehmen den Bus."]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a31",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e16.s0280",
+          "ablenker": ["de.b1.e16.s0279", "de.b1.e16.s0098"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a32",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0124"
+            }
+          ],
+          "antwort": "de.b1.e16.s0125",
+          "ablenker": ["de.b1.e16.s0126", "de.b1.e16.s0127"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a33",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0208"
+            }
+          ],
+          "antwort": "de.b1.e16.s0209",
+          "ablenker": ["de.b1.e16.s0210", "de.b1.e16.s0211"]
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a34",
+          "typ": "sprechen",
+          "satz": "de.b1.e16.s0298"
+        },
+        {
+          "schluessel": "de.b1.e16.l07.a35",
+          "typ": "sprechen",
+          "satz": "de.b1.e16.s0299"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e16.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich sachlich über Gemeinde, Wahlen und Grundrechte sprechen kann.",
+        "tr": "Belediye, seçimler ve temel haklar hakkında tarafsız bir şekilde konuşabildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أتحدّث بموضوعية عن البلدية والتصويت والحقوق الأساسية."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e16.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.wahllokal",
+          "ablenker": ["de.a1.e09.rathaus", "de.a2.e09.buergeramt"]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e16.grundgesetz",
+            "de.b1.e16.buergermeister",
+            "de.b1.e16.mehrheit",
+            "de.b1.e16.beweis",
+            "de.b1.e16.toleranz",
+            "de.b1.e16.beteiligung"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e16.s0325",
+          "wort": 3,
+          "ablenker": ["den", "der"]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e16.s0324",
+          "ablenker": ["de.b1.e16.s0086", "de.b1.e16.s0107"]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0315"
+            }
+          ],
+          "antwort": "de.b1.e16.s0316",
+          "ablenker": ["de.b1.e16.s0317", "de.b1.e16.s0318"]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e16.s0326",
+          "nach": "ziel",
+          "alternativen": ["Das Wetter war schlecht. Die Beteiligung an der Wahl war trotzdem hoch."],
+          "ablenker": ["obwohl", "Wahlen"]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e16.s0300",
+          "absaetze": [
+            "de.b1.e16.s0301",
+            "de.b1.e16.s0302",
+            "de.b1.e16.s0303",
+            "de.b1.e16.s0304",
+            "de.b1.e16.s0305",
+            "de.b1.e16.s0306",
+            "de.b1.e16.s0307"
+          ],
+          "glossen": ["de.b1.e16.vertreter", "de.b1.e16.mitbestimmen"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e16.s0308",
+              "richtig": "falsch"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e16.s0309",
+              "antwort": "de.b1.e16.s0310",
+              "ablenker": ["de.b1.e16.s0311", "de.b1.e16.s0312"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e16.s0313",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e16.s0314",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.kandidat",
+          "ablenker": ["de.b1.e16.vertreter", "de.a2.e08.mitglied"]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.b1.e16.s0323",
+          "alternativen": ["Im Jugendforum werde ich mich als Vertreterin für einen sicheren Radweg einsetzen."]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a10",
+          "typ": "frei",
+          "ziel": "de.b1.e16.s0131",
+          "nach": "ziel",
+          "alternativen": [
+            "Das Parlament beschließt neue Gesetze mit der Mehrheit der Stimmen.",
+            "Neue Gesetze werden vom Parlament mit der Mehrheit der Stimmen beschlossen.",
+            "Mit der Mehrheit der Stimmen beschließt das Parlament neue Gesetze.",
+            "Das Parlament beschließt neue Gesetze mit Mehrheit.",
+            "Neue Gesetze beschließt das Parlament mit einer Mehrheit der Stimmen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e16.s0180",
+          "ablenker": ["de.b1.e16.s0182", "de.b1.e16.s0178"]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e16.s0319"
+            }
+          ],
+          "antwort": "de.b1.e16.s0320",
+          "ablenker": ["de.b1.e16.s0321", "de.b1.e16.s0322"]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e16.s0077",
+          "alternativen": ["Das Grundgesetz ist seit neunzehnhundertneunundvierzig die Verfassung der Bundesrepublik Deutschland."]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e16.gleichberechtigung",
+          "ablenker": ["de.b1.e16.meinungsfreiheit", "de.a2.e13.verantwortung"]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e16.oeffentlich",
+          "ablenker": ["de.b1.e16.lokal", "de.b1.e16.national"]
+        },
+        {
+          "schluessel": "de.b1.e16.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e16.s0327"
+        }
+      ]
+    }
+  ]
+}
