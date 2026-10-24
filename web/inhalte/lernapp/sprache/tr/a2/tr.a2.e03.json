@@ -3360,6 +3360,27 @@
           "schluessel": "tr.a2.e03.l01.a16",
           "typ": "sprechen",
           "satz": "tr.a2.e03.s0045"
+        },
+        {
+          "schluessel": "tr.a2.e03.l01.a17",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "tr.a2.e03.l01.a18",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a2.e03.s0022"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a2.e03.s0023"
+            }
+          ],
+          "antwort": "tr.a2.e03.s0026",
+          "ablenker": ["tr.a2.e03.s0072", "tr.a2.e03.s0032", "tr.a2.e03.s0030"]
         }
       ]
     },
@@ -4381,7 +4402,7 @@
           "schluessel": "tr.a2.e03.l08.a08",
           "typ": "luecke",
           "ziel": "tr.a2.e03.s0122",
-          "wort": 4,
+          "wort": 3,
           "ablenker": ["yüzmak", "yüzüyorum"]
         },
         {

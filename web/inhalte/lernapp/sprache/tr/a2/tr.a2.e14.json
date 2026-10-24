@@ -1672,7 +1672,7 @@
     },
     {
       "schluessel": "tr.a2.e14.s0003",
-      "text": "Postacı Orhan Bey mektupları her sabah saat onda getiriyor.",
+      "text": "Postacı Erkan Bey mektupları her sabah saat onda getiriyor.",
       "quelle": "ki:lernapp-inhalte/a2/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -4281,19 +4281,24 @@
         },
         {
           "schluessel": "tr.a2.e14.l07.a14",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "tr.a2.e14.l07.a15",
           "typ": "minimalpaare",
           "ziel": "tr.a2.e14.pil",
           "ablenker": ["tr.a2.e14.pul"]
         },
         {
-          "schluessel": "tr.a2.e14.l07.a15",
+          "schluessel": "tr.a2.e14.l07.a16",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "tr.a2.e14.s0114",
           "nach": "ausgang"
         },
         {
-          "schluessel": "tr.a2.e14.l07.a16",
+          "schluessel": "tr.a2.e14.l07.a17",
           "typ": "dialog",
           "zeilen": [
             {
@@ -4329,26 +4334,26 @@
           "ablenker": ["tr.a2.e14.s0116", "tr.a2.e14.s0037", "tr.a2.e14.s0031"]
         },
         {
-          "schluessel": "tr.a2.e14.l07.a17",
+          "schluessel": "tr.a2.e14.l07.a18",
           "typ": "luecke",
           "ziel": "tr.a2.e14.s0151",
           "wort": 4,
           "ablenker": ["kendin", "kendisi"]
         },
         {
-          "schluessel": "tr.a2.e14.l07.a18",
+          "schluessel": "tr.a2.e14.l07.a19",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a2.e14.bildirim",
           "ablenker": ["tr.a1.e02.soru", "tr.a2.e02.imza"]
         },
         {
-          "schluessel": "tr.a2.e14.l07.a19",
+          "schluessel": "tr.a2.e14.l07.a20",
           "typ": "sprechen",
           "satz": "tr.a2.e14.s0245"
         },
         {
-          "schluessel": "tr.a2.e14.l07.a20",
+          "schluessel": "tr.a2.e14.l07.a21",
           "typ": "hoeren_schreiben",
           "ziel": "tr.a2.e14.s0062",
           "alternativen": ["Bir lirada 100 kuruş var.", "1 lirada 100 kuruş var.", "1 lirada yüz kuruş var."]
