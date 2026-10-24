@@ -3,6 +3,7 @@ import { and, asc, eq, inArray, isNotNull, isNull, ne, sql } from 'drizzle-orm';
 import { protokolliere } from '@/lib/audit';
 import { db, schema, type Transaktion } from '@/lib/db';
 import { entschluessele, sha256, zufallsToken } from '@/lib/krypto';
+import { beendeLernappDerEltern, folgenNachBezugsende } from '@/lib/lernapp/schreiben/folgen';
 import type { LernendeDaten } from '@/lib/lernen/verwaltung';
 import { planeHinweis, SCHUTZROLLEN_EMPFAENGER } from '@/lib/mail/ausgang';
 import type { MailSprache } from '@/lib/mail/konto-vorlagen';
@@ -257,7 +258,9 @@ export async function beantrageBezugEnde(
 
 /**
  * Über das Beenden eines Eltern-Kind-Bezugs entscheiden (zweite Person; nie das Elternkonto selbst, nie wer beantragt
- * hat). Bestätigen löscht den Bezug und meldet es dem Elternkonto; Ablehnen nimmt den Antrag zurück.
+ * hat). Bestätigen löscht den Bezug und meldet es dem Elternkonto; Ablehnen nimmt den Antrag zurück. Mit dem Bezug endet
+ * die Einwilligung `lernapp` dieses Elternteils für das Kind; danach gehen Schreibabgaben und Lernstand des Kindes, die
+ * nur sie deckte (SL2-Rest, `lernapp/schreiben/folgen.ts`).
  */
 export async function entscheideBezugEnde(
   entscheider: Entscheider,
@@ -266,13 +269,15 @@ export async function entscheideBezugEnde(
   bestaetigen: boolean,
 ): Promise<EntscheidungsFehler | null> {
   if (!darfAntraegeEntscheiden(entscheider.rollen)) return 'keinRecht';
-  return db.transaction(async (tx: Transaktion): Promise<EntscheidungsFehler | null> => {
+  let lernapp: string[] = [];
+  const ergebnis = await db.transaction(async (tx: Transaktion): Promise<EntscheidungsFehler | null> => {
     const ziel = and(eq(schema.elternKind.lernendeId, lernendeId), eq(schema.elternKind.elternId, elternId));
     const [b] = await tx.select().from(schema.elternKind).where(ziel).for('update');
     if (!b || !b.beendenBeantragtAm) return 'nichtGefunden';
     if (b.elternId === entscheider.benutzerId || b.beendenBeantragtVon === entscheider.benutzerId) return 'keinRecht';
     if (bestaetigen) {
       await tx.delete(schema.elternKind).where(ziel);
+      lernapp = await beendeLernappDerEltern(tx, elternId, lernendeId);
       await meldeAnElternkonto(tx, elternId, 'beendet');
       await planeHinweis({ an: SCHUTZROLLEN_EMPFAENGER, art: 'elternbezug_beendet', pfad: '/verwaltung/gemeinde-im-blick' }, tx);
     } else {
@@ -290,4 +295,7 @@ export async function entscheideBezugEnde(
     );
     return null;
   });
+  // Folgen erst nach dem Speichern: Dann zählt die beendete Einwilligung schon nicht mehr
+  if (lernapp.length) await folgenNachBezugsende(lernapp, entscheider.benutzerId);
+  return ergebnis;
 }

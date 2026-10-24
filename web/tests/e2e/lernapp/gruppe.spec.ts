@@ -1,14 +1,14 @@
 import { existsSync } from 'node:fs';
 import { gzipSync } from 'node:zlib';
 import AxeBuilder from '@axe-core/playwright';
-import { expect, type Page, test } from '@playwright/test';
+import { type Browser, expect, type Page, test } from '@playwright/test';
 import pg from 'pg';
 import fehlerTexte from '../../../messages/bereiche/fehlerseiten.json';
 import kinderTexte from '../../../messages/bereiche/kinder.json';
 import meinBereichTexte from '../../../messages/bereiche/mein-bereich.json';
 import unterrichtTexte from '../../../messages/bereiche/unterricht.json';
 import de from '../../../messages/lernapp/de.json';
-import { beispielkonten, kindAnmelden, leitungAnmelden } from '../hilfen/gemeinde';
+import { beispielkonten, emailAnmelden, kindAnmelden, leitungAnmelden, passwort } from '../hilfen/gemeinde';
 import { eigeneAbsenderAdresse } from '../hilfen/konto';
 import { ernsteBefunde, KURS, LEKTION_1, liveRegion, spieleLektion1 } from './hilfen';
 
@@ -28,15 +28,60 @@ import { ernsteBefunde, KURS, LEKTION_1, liveRegion, spieleLektion1 } from './hi
  * Rückmeldung (Prüfliste, Einstufung ohne Note) zurück – einen Kommentar an Kinder gibt es nicht, solange D-L16 offen ist
  * (S-L2 M-1: das Feld fehlt, ein Hinweis sagt warum); die Aufsicht derselben Gruppe sieht weder Liste noch Text (ADR 0042
  * „Folgen“); das Kind sieht die Rückmeldung unter „Gruppe“ und löscht seine Abgaben unter „Mein Bereich › Konto“ (S-L2 N-2).
+ *
+ * Zu Beginn des ersten Ablaufs willigen die Eltern in „Mein Bereich › Meine Kinder“ für ihr Kind in die Lern-App ein (S-L3
+ * N-2: Text als Entwurf gekennzeichnet, Einvernehmen); unter „Mein Bereich › Konto“ erteilen und widerrufen sie die eigene
+ * Einwilligung „Lern-App“ (EL1) – mit axe auf beiden Seiten.
  * Beide Abläufe teilen Gruppe und Kind und laufen deshalb in dieser Datei nacheinander (nie parallel in zwei Dateien).
  */
 const u = unterrichtTexte.de.unterricht.lernapp;
 const s = kinderTexte.de.lernweg.lernapp;
 const an = (f: string) => ['an', 'true', '1'].includes(String(process.env[f] ?? '').toLowerCase());
 
+const kd = kinderTexte.de.kinder.detail;
+const kl = meinBereichTexte.de.meinBereich.konto.lernapp;
+
 /**
- * Testdaten (G-04): Einwilligung `lernapp` der Eltern für ihr Kind, wie sie die Eltern später selbst erteilen – nur, wenn
- * sie noch nicht vorliegt (beide Tests dieser Datei brauchen sie).
+ * Eltern in „Mein Bereich“ (S-L3 N-2): Einwilligung „Lern-App mit Konto“ für das Kind erteilen (mit Einvernehmen), dann
+ * die eigene Einwilligung „Lern-App“ unter „Konto“ erteilen und widerrufen. Rückgabe: ernste axe-Befunde.
+ */
+async function elternWilligenEin(browser: Browser, eltern: { email: string; passwort: string | null }, kindId: string) {
+  const befunde: string[] = [];
+  const kontext = await browser.newContext();
+  try {
+    const e = await kontext.newPage();
+    await eigeneAbsenderAdresse(e);
+    await emailAnmelden(e, eltern.email, passwort(eltern.passwort));
+    await e.goto(`/mein-bereich/kinder/${kindId}`);
+    const karte = e.locator('#einwilligung-lernapp');
+    await expect(karte.getByRole('heading', { level: 3, name: kd.einwilligung.lernapp.titel })).toBeVisible();
+    await expect(karte).toContainText(kd.einwilligung.lernapp.entwurf);
+    befunde.push(...(await ernsteBefunde(e, 'Kind mit Einwilligung Lern-App')));
+    await karte.getByLabel(kd.einvernehmen, { exact: true }).check();
+    await karte.getByRole('button', { name: kd.erteilenAria.replace('{titel}', kd.einwilligung.lernapp.titel), exact: true }).click();
+    await expect(e.locator('#einwilligung-lernapp')).toContainText(kd.ok.erteilt);
+
+    await e.goto('/mein-bereich/konto');
+    const lernapp = e.locator('#lern-app');
+    await expect(lernapp.getByRole('heading', { level: 2, name: kl.titel, exact: true })).toBeVisible();
+    await expect(lernapp).toContainText(kl.entwurf);
+    befunde.push(...(await ernsteBefunde(e, 'Konto mit Einwilligung Lern-App')));
+    await lernapp.getByLabel(kl.haken, { exact: true }).check();
+    await lernapp.getByRole('button', { name: kl.erteilen, exact: true }).click();
+    await expect(e.getByText(kl.ok.erteilt, { exact: true })).toBeVisible();
+    await expect(e.locator('#lern-app')).toContainText(kl.aktiv);
+    await e.locator('#lern-app').getByRole('button', { name: kl.widerrufen, exact: true }).click();
+    await expect(e.getByText(kl.ok.widerrufen, { exact: true })).toBeVisible();
+    await expect(e.locator('#lern-app')).toContainText(kl.inaktiv);
+  } finally {
+    await kontext.close();
+  }
+  return befunde;
+}
+
+/**
+ * Testdaten (G-04): Einwilligung `lernapp` der Eltern für ihr Kind, wie sie die Eltern selbst erteilen (erster Ablauf über
+ * „Mein Bereich“) – nur, wenn sie noch nicht vorliegt (der Korrekturweg läuft auch ohne den ersten Ablauf).
  */
 async function elternEinwilligung(elternEmail: string, lernendeId: string) {
   if (!process.env.DATABASE_URL && existsSync('.env')) process.loadEnvFile('.env');
@@ -117,7 +162,8 @@ test('Lehrkraft weist zu, Kind lernt ohne Bestenliste, Lehrkraft sieht „erledi
   const z = beispielkonten();
   const gruppe = z.lernplattform.gruppeId;
   const emre = z.lernplattform.kinder.emre;
-  await elternEinwilligung(z.eltern.email, emre.id);
+  // 0. Eltern willigen in „Mein Bereich“ ein (S-L3 N-2)
+  expect(await elternWilligenEin(browser, z.eltern, emre.id)).toEqual([]);
   const seite = `/mein-bereich/unterricht/${gruppe}/lern-app`;
 
   const lehrkraft = await browser.newContext();

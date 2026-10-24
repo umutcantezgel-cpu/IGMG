@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { and, eq } from 'drizzle-orm';
+import { and, eq, inArray } from 'drizzle-orm';
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { db as appDb, schema } from '@/lib/db';
 import { verschluessele } from '@/lib/krypto';
@@ -349,6 +349,28 @@ describe('Lehrkraft: nur die eigene Gruppe, nur lesbare Abgaben', () => {
     expect(await dienst.abgabenDerGruppe(await kontext(ids.lehrkraftB), ids.gruppe2)).toEqual([]);
   });
 
+  it('S-L2 N-1 (Altbestand): mit der Rolle Administration weder Leitung noch Kinder – Gruppenkontext ohne Bezug', async () => {
+    const [eine] = await dienst.abgabenDerGruppe(await kontext(ids.lehrkraftA), ids.gruppe1);
+    expect((await kontext(ids.eltern)).kinder.has(ids.kindL)).toBe(true);
+    // Verbindung, die die Vergabewege heute ablehnen – direkt in der Datenbank wie ein Altbestand
+    const R = schema.rolleZuweisung;
+    await db.insert(R).values([
+      { benutzerId: ids.lehrkraftA, rolle: 'administration' },
+      { benutzerId: ids.eltern, rolle: 'administration' },
+    ]);
+    const lehrkraft = await kontext(ids.lehrkraftA);
+    expect({ leitung: lehrkraft.leitung.size, eigene: lehrkraft.eigeneGruppen.size, kinder: lehrkraft.kinder.size }).toEqual({
+      leitung: 0,
+      eigene: 0,
+      kinder: 0,
+    });
+    await expect(dienst.abgabenDerGruppe(lehrkraft, ids.gruppe1)).rejects.toBeInstanceOf(dienst.KeinZugang);
+    await expect(dienst.abgabeFuerLehrkraft(lehrkraft, ids.gruppe1, eine!.id)).rejects.toBeInstanceOf(dienst.KeinZugang);
+    expect((await kontext(ids.eltern)).kinder.size).toBe(0);
+    await db.delete(R).where(and(eq(R.rolle, 'administration'), inArray(R.benutzerId, [ids.lehrkraftA, ids.eltern])));
+    expect((await kontext(ids.lehrkraftA)).leitung.get(ids.gruppe1)).toBe('lehrkraft');
+  });
+
   it('Rückgabe: Kommentar verschlüsselt, Prüfliste und Einstufung; die lernende Person sieht die Rückmeldung', async () => {
     const a = await kontext(ids.lehrkraftA);
     const zeilen = await dienst.abgabenDerGruppe(a, ids.gruppe1);
@@ -415,6 +437,31 @@ describe('Lehrkraft: nur die eigene Gruppe, nur lesbare Abgaben', () => {
       pruefliste: { aufgabe: 2 },
       einstufung: 'erreicht',
     });
+  });
+
+  it('Kind, Altkommentar (SL2-Rest): ein früher gespeicherter Kommentar erreicht das Kind nicht; der Export enthält ihn', async () => {
+    const a = await kontext(ids.lehrkraftA);
+    const kind = (await dienst.abgabenDerGruppe(a, ids.gruppe1)).find((z) => z.name === '[Kind] K')!;
+    const A = schema.lernappSchreibabgabe;
+    // Kommentar aus der Zeit vor der Sperre (direkt gespeichert, wie ihn die alte Rückgabe schrieb)
+    const alt = verschluessele({ text: KOMMENTAR });
+    await db
+      .update(A)
+      .set({ kommentarVerschluesselt: alt.daten, kommentarSchluesselId: alt.schluesselId, korrigiertAm: new Date() })
+      .where(eq(A.id, kind.id));
+    als(ids.kind);
+    const { abgaben } = (await (await liste()).json()) as ListeAntwort;
+    const meine = abgaben.find((x) => x.id === kind.id)!;
+    expect(meine.rueckmeldung).toMatchObject({ kommentar: null, einstufung: 'erreicht' });
+    expect(JSON.stringify(abgaben)).not.toContain('Endungen');
+    // Auskunft nach Art. 15/20 bleibt vollständig
+    const daten = (await exportiereKontodaten(ids.kind)) as { lernapp: { schreibabgaben: { id: string; rueckmeldung: unknown }[] } };
+    expect(daten.lernapp.schreibabgaben.find((x) => x.id === kind.id)?.rueckmeldung).toMatchObject({ kommentar: KOMMENTAR });
+    // Erwachsene sehen ihren Kommentar weiter
+    als(ids.erwachsen);
+    const eigene = ((await (await liste()).json()) as ListeAntwort).abgaben;
+    expect(eigene.some((x) => x.rueckmeldung?.kommentar === KOMMENTAR)).toBe(true);
+    await db.update(A).set({ kommentarVerschluesselt: null, kommentarSchluesselId: null }).where(eq(A.id, kind.id));
   });
 
   it('Rückgabe, während die Person ihre Abgabe löscht: KeinZugang und kein Audit-Eintrag „zurückgegeben“', async () => {

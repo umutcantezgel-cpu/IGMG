@@ -492,6 +492,33 @@ describe('Gemeinde-Plattform (PLAN 2.8/2.9, Z-12, Z-20)', () => {
     expect(befund(await pruefe(vorschauUmgebung()), 'gemeinde.lernapp-kommentar-kinder').status).toBe('warnung');
   });
 
+  it('S-L2 N-1: Administration mit Gruppenleitung oder Kontoart mit Gruppenzugang – Fehler in produktion, Warnung in vorschau', async () => {
+    const id = 'gemeinde.administration-gruppenzugang';
+    expect(befund(await pruefe(produktionsUmgebung()), id).status).toBe('ok');
+    const benutzer = ['a1', 'a2', 'a3'].map((x) => ({ id: x, name: '[Name]', email: `${x}@beispiel.invalid`, emailVerified: true }));
+    await db.insert(schema.user).values(benutzer).onConflictDoNothing();
+    await db.insert(schema.rolleZuweisung).values(benutzer.map((b) => ({ benutzerId: b.id, rolle: 'administration' as const })));
+    // a1: nur Kontoart „gemeinde“ – erlaubt
+    await db.insert(schema.gemeindeRolle).values({ benutzerId: 'a1', rolle: 'gemeinde' });
+    expect(befund(await pruefe(produktionsUmgebung()), id).status).toBe('ok');
+    // a2: Kontoart Eltern; a3: Gruppenleitung
+    await db.insert(schema.gemeindeRolle).values({ benutzerId: 'a2', rolle: 'eltern' });
+    const [g] = await db
+      .insert(schema.gruppe)
+      .values({ name: { de: '[Gruppe]' } })
+      .returning({ id: schema.gruppe.id });
+    await db.insert(schema.gruppenLeitung).values({ gruppeId: g!.id, benutzerId: 'a3' });
+    const e = await pruefe(produktionsUmgebung());
+    expect(befund(e, id)).toMatchObject({ status: 'fehler', bereich: 'gemeinde' });
+    expect(befund(e, id).meldung).toContain('2 Konten');
+    expect(befund(e, id).meldung).toContain('N-1');
+    expect(e.startklar).toBe(false);
+    expect(befund(await pruefe(vorschauUmgebung()), id).status).toBe('warnung');
+    await db.execute(sql`delete from gruppe where id = ${g!.id}`);
+    await db.execute(sql`delete from "user" where id in ('a1', 'a2', 'a3')`);
+    expect(befund(await pruefe(produktionsUmgebung()), id).status).toBe('ok');
+  });
+
   it('S-02: Gruppe mit Chat und nur einer Leitungsperson ergibt eine Warnung', async () => {
     await db
       .insert(schema.user)

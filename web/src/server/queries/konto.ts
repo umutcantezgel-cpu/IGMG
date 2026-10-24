@@ -4,6 +4,7 @@ import { db, schema } from '@/lib/db';
 import { entschluessele } from '@/lib/krypto';
 import { geraetAus, type Geraet } from '@/lib/konto/geraet';
 import { istKinderAdresse } from '@/lib/konto/regeln';
+import { lernappFuerExport } from '@/lib/lernapp/export';
 import { abgabenFuerExport } from '@/lib/lernapp/schreiben/dienst';
 
 /**
@@ -99,7 +100,8 @@ function lesbar(daten: Buffer, schluesselId: number): unknown {
  * Passwort-Hash, ohne TOTP-Geheimnis, ohne Sitzungs-Token und ohne öffentliche Passkey-Schlüssel (Sicherheitsdaten,
  * die der Person nichts sagen und bei Verlust der Datei schaden würden). Weitere Bereiche (Lernplattform, Chat)
  * ergänzen ihre Daten hier, sobald sie gebaut sind. Lern-App (L5-03): eigene Schreibabgaben mit Text, Selbsteinschätzung
- * und Rückmeldung der Lehrkraft (entschlüsselt; ohne Kennung der korrigierenden Lehrkraft).
+ * und Rückmeldung der Lehrkraft (entschlüsselt; ohne Kennung der korrigierenden Lehrkraft); dazu (S-L3 N-2) Lernprofil,
+ * Ereignisse, Kartenstand, Lerntage, Zustimmung zur Bestenliste und Familien-Bestenliste (`lernapp/export.ts`).
  */
 export async function exportiereKontodaten(benutzerId: string): Promise<Record<string, unknown>> {
   const [u] = await db
@@ -130,6 +132,7 @@ export async function exportiereKontodaten(benutzerId: string): Promise<Record<s
     antraege,
     zusammenfassung,
     schreibabgaben,
+    lernapp,
   ] = await Promise.all([
     db.select().from(schema.kontoProfil).where(eq(schema.kontoProfil.benutzerId, benutzerId)),
     db
@@ -204,6 +207,7 @@ export async function exportiereKontodaten(benutzerId: string): Promise<Record<s
       .from(schema.mailZusammenfassung)
       .where(eq(schema.mailZusammenfassung.benutzerId, benutzerId)),
     abgabenFuerExport(benutzerId),
+    lernappFuerExport(benutzerId),
   ]);
   const lernendeExport = (l: typeof schema.lernende.$inferSelect) => ({
     anzeigename: l.anzeigename,
@@ -238,7 +242,7 @@ export async function exportiereKontodaten(benutzerId: string): Promise<Record<s
     protokoll,
     antraege,
     zusammenfassungPerMail: zusammenfassung[0] ?? null,
-    lernapp: { schreibabgaben },
+    lernapp: { ...lernapp, schreibabgaben },
   };
 }
 

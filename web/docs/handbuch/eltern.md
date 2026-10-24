@@ -41,7 +41,7 @@ Es gibt keine Ranglisten und keinen Vergleich mit anderen Kindern.
 
 ## 4. Einwilligungen
 
-Für Kinder unter 16 Jahren brauchen wir Ihre Einwilligung. Es sind **vier getrennte Entscheidungen**. Jede hat ihren **eigenen Haken**, keiner ist vorangekreuzt. [Bildschirmfoto folgt]
+Für Kinder unter 16 Jahren brauchen wir Ihre Einwilligung. Es sind **vier getrennte Entscheidungen** (mit der Lern-App fünf, siehe unten). Jede hat ihren **eigenen Haken**, keiner ist vorangekreuzt. [Bildschirmfoto folgt]
 
 | Einwilligung                        | Wofür                                                                                                                                                                               | Wenn Sie **nicht** zustimmen                                                                   |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -58,6 +58,8 @@ Für Kinder unter 16 Jahren brauchen wir Ihre Einwilligung. Es sind **vier getre
 - Was bis zum Widerruf geschah, bleibt rechtmäßig.
 
 Die Einwilligung ist **freiwillig**. Die Teilnahme am Unterricht hängt davon nicht ab.
+
+**Lern-App mit Konto** (fünfte Einwilligung): Sie erscheint nur, wenn die Gemeinde den Abgleich oder die Gruppen der Lern-App eingeschaltet hat; der Text ist noch als **Entwurf** gekennzeichnet. Mit ihr speichert die Gemeinde den Lernstand Ihres Kindes aus der Lern-App mit seinem Zugang, Sie sehen seine Lernwoche, und die Lehrkraft sieht, was es von den Zuweisungen erledigt hat. Zustimmen können Sie erst, wenn die Gemeinde Ihren Bezug zum Kind bestätigt hat. **Widerrufen** Sie, werden der Lernstand Ihres Kindes auf dem Server und seine Schreibabgaben sofort gelöscht; auf seinem Gerät bleibt der Stand. Endet Ihr Bezug zum Kind (oder wird Ihr Konto gelöscht), endet auch Ihre Einwilligung – was nur sie abdeckte, wird gelöscht. Ab dem 16. Geburtstag entscheidet Ihr Kind selbst (siehe 11).
 
 ## 5. Zugang für Ihr Kind anlegen und verwalten
 
@@ -141,7 +143,7 @@ Die Zusammenfassung geht an die **bestätigte** E-Mail-Adresse Ihres Kontos. Kin
 
 ## 11. Wenn Ihr Kind 16 wird
 
-Mit dem **16. Geburtstag** entscheidet Ihr Kind über **Gruppenchat** und **Benachrichtigungen** selbst. Ihre Einwilligungen dafür gelten noch **30 Tage** weiter; die Seite Ihres Kindes nennt das Datum. Danach zählt nur noch die Zustimmung Ihres Kindes – es erteilt sie selbst in seinem Bereich. [Bildung entscheidet, ob Sie weiter Anwesenheit und Fortschritt sehen.]
+Mit dem **16. Geburtstag** entscheidet Ihr Kind über **Gruppenchat**, **Benachrichtigungen** und die **Lern-App mit Konto** selbst. Ihre Einwilligungen dafür gelten noch **30 Tage** weiter; die Seite Ihres Kindes nennt das Datum. Danach zählt nur noch die Zustimmung Ihres Kindes – es erteilt sie selbst in seinem Bereich. [Bildung entscheidet, ob Sie weiter Anwesenheit und Fortschritt sehen.]
 
 ## 12. Hilfe
 

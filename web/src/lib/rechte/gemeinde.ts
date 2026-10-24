@@ -111,11 +111,32 @@ export async function verlangeKontoRecht(rollen?: readonly GemeindeRolle[]): Pro
   return k;
 }
 
+/** Gruppenkontext ohne jeden Bezug: keine Leitung, kein Lerndatensatz, keine Kinder. */
+const ohneGruppenzugang = (benutzerId: string): GruppenKontext => ({
+  benutzerId,
+  leitung: new Map(),
+  eigeneLernendeId: null,
+  eigeneGruppen: new Set(),
+  kinder: new Map(),
+});
+
 /**
  * Lädt die Gruppenbezüge eines Kontos: nur aktive Gruppen und laufende Mitgliedschaften – für Leitung, eigene Gruppen
  * und Gruppen der Kinder gleichermaßen (S2/S3: in einer archivierten Gruppe liest und schreibt niemand mehr).
+ *
+ * Konten mit der Rolle Administration bekommen nie Gruppenzugang (NIE_PER_ADMINISTRATION, S-L2 N-1, Verteidigung in der
+ * Tiefe): Auch wenn ein Altbestand Administration und Gruppenleitung oder eine Kontoart mit Gruppenzugang verbindet
+ * (Startklar `gemeinde.administration-gruppenzugang`), liest ein solches Konto weder Schreibabgaben noch Gruppen- und
+ * Elternkanal noch Kinderdaten. Die Vergabewege lehnen die Verbindung schon ab (`benutzer.ts`, `gemeinde-konten.ts`,
+ * `gruppen.ts`, `konto/einladung.ts`).
  */
 export const ladeGruppenKontext = cache(async (benutzerId: string): Promise<GruppenKontext> => {
+  const [administration] = await db
+    .select({ id: schema.rolleZuweisung.id })
+    .from(schema.rolleZuweisung)
+    .where(and(eq(schema.rolleZuweisung.benutzerId, benutzerId), eq(schema.rolleZuweisung.rolle, 'administration')))
+    .limit(1);
+  if (administration) return ohneGruppenzugang(benutzerId);
   const aktiveGruppe = and(eq(schema.gruppe.id, schema.gruppenMitglied.gruppeId), eq(schema.gruppe.status, 'aktiv'));
   const [leitung, eigen, kinder] = await Promise.all([
     db
