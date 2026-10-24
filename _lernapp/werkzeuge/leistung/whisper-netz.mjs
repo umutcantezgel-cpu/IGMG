@@ -5,10 +5,16 @@
 // 1. Bis die Sprechaufgabe sichtbar ist, keine Anfrage unter /lern-app/modelle/ (Worker, ORT-WASM, Whisper-Gewichte).
 // 2. Erst der Klick auf „Sprachprüfung laden (≈ … MB)“ lädt sie – nur GET, nur eigener Ursprung; Liste mit Größen.
 // 3. Nach „bereit“ (oder Zeitgrenze) keine Anfrage an fremde Ursprünge.
+// 4. Jede der 10 Download-Dateien (`DOWNLOAD_PFADE` in web/src/lib/lernapp/sprechen/modell.ts: 7 Modell- und
+//    Konfigurationsdateien, ORT `.mjs` und `.wasm`, Worker) geht genau einmal über das Netz – keine fehlt (Tokenizer,
+//    Prozessor), keine kommt doppelt. „Über das Netz“: Anfrage des Service Workers, oder eine Anfrage der Seite bzw. eines
+//    Workers, die nicht der Service Worker beantwortet hat (Playwright zählt sonst jede Datei zweimal).
 // Gerät wie die E2E (typen-b.spec.ts `geraet`): 8 GB Arbeitsspeicher, 10 GB frei; Mikrofon als Attrappe von Chromium.
 // Aufruf: node whisper-netz.mjs [--aus whisper-netz]
 import { parseArgs } from 'node:util';
 import { BASIS, last, lernTexte, schreibe, starteBrowser } from './gemeinsam.mjs';
+// Node 24 entfernt die Typen selbst; modell.ts hat nur Typ-Importe
+import { DOWNLOAD_PFADE } from '../../../web/src/lib/lernapp/sprechen/modell.ts';
 
 const { values } = parseArgs({ options: { aus: { type: 'string', default: 'whisper-netz' } } });
 const t = lernTexte('de');
@@ -101,11 +107,14 @@ const zeilen = [];
 for (const a of anfragen) {
   let bytes = null;
   let status = null;
+  let vomSw = false;
   try {
     const antwort = await a.anfrage.response();
     status = antwort?.status() ?? null;
+    vomSw = antwort?.fromServiceWorker() ?? false;
     const laenge = antwort?.headers()['content-length'];
-    bytes = laenge ? Number(laenge) : null;
+    // ohne Content-Length (gepackte Antworten): übertragene Größe des Körpers
+    bytes = laenge ? Number(laenge) : ((await a.anfrage.sizes().catch(() => null))?.responseBodySize ?? null);
   } catch {
     /* ohne Antwort */
   }
@@ -115,6 +124,7 @@ for (const a of anfragen) {
     methode: a.methode,
     pfad: a.pfad,
     fremd: !a.url.startsWith(ursprung) && !a.url.startsWith('blob:') && !a.url.startsWith('data:'),
+    netz: a.quelle === 'Service Worker' || !vomSw,
     status,
     bytes,
   });
@@ -124,8 +134,19 @@ await browser.close();
 const modell = (z) => z.pfad.startsWith('/lern-app/modelle/');
 const vorher = zeilen.filter((z) => z.phase === 'vor der Sprechaufgabe');
 const nachher = zeilen.filter((z) => z.phase !== 'vor der Sprechaufgabe');
+// je Download-Datei die Abrufe über das Netz nach dem Klick (Pfad ohne Suchteil)
+const netzNachher = nachher.filter((z) => z.netz && modell(z));
+const abrufe = Object.fromEntries(DOWNLOAD_PFADE.map((d) => [d, netzNachher.filter((z) => z.pfad === d).length]));
+const fehlend = DOWNLOAD_PFADE.filter((d) => abrufe[d] === 0);
+const mehrfach = DOWNLOAD_PFADE.filter((d) => abrufe[d] > 1);
+const netzBytes = netzNachher.reduce((s, z) => s + (z.bytes ?? 0), 0);
 const ergebnis = {
   basis: BASIS,
+  erfuellt: bereit && !fehler && !fehlend.length && !mehrfach.length,
+  abrufe,
+  fehlend,
+  mehrfach,
+  netzMb: Math.round(netzBytes / 1e5) / 10,
   fehler,
   bereit,
   endzustand,
@@ -134,29 +155,34 @@ const ergebnis = {
   last: { beginn: lastBeginn, ende: last() },
   anfragenVorKlick: vorher.length,
   modellVorKlick: vorher.filter(modell).map((z) => z.pfad),
-  modellNachKlick: nachher
-    .filter(modell)
-    .map((z) => ({ pfad: z.pfad, status: z.status, mb: z.bytes ? Math.round((z.bytes / 1048576) * 10) / 10 : null, quelle: z.quelle })),
+  modellNachKlick: nachher.filter(modell).map((z) => ({
+    pfad: z.pfad,
+    status: z.status,
+    mb: z.bytes ? Math.round((z.bytes / 1e6) * 10) / 10 : null,
+    quelle: z.quelle,
+    netz: z.netz,
+  })),
   nichtGet: zeilen.filter((z) => z.methode !== 'GET').map((z) => `${z.methode} ${z.pfad}`),
   fremd: zeilen.filter((z) => z.fremd).map((z) => `${z.methode} ${z.pfad}`),
   anfragen: zeilen,
 };
-const summeMb = ergebnis.modellNachKlick.reduce((s, z) => s + (z.mb ?? 0), 0);
 const md = [
   `# Netzprotokoll Sprechübung (Whisper nur nach Klick) · ${BASIS}`,
   '',
   `Lektion l04 (de, tr-aus-de) bis zur Sprechaufgabe: ${vorher.length} Anfragen, davon unter /lern-app/modelle/: ${ergebnis.modellVorKlick.length}${ergebnis.modellVorKlick.length ? ` (${ergebnis.modellVorKlick.join(', ')})` : ''}.`,
-  `Nach dem Klick: ${ergebnis.modellNachKlick.length} Dateien unter /lern-app/modelle/ (≈ ${Math.round(summeMb)} MB laut Content-Length), „bereit“: ${bereit ? `ja, nach ${Math.round(ladenMs / 1000)} s` : 'nein'}${fehler ? ` · Fehler: ${fehler}` : ''}.`,
+  `Nach dem Klick: ${ergebnis.modellNachKlick.length} Anfragen unter /lern-app/modelle/, davon ${netzNachher.length} über das Netz (≈ ${ergebnis.netzMb} MB), „bereit“: ${bereit ? `ja, nach ${Math.round(ladenMs / 1000)} s` : 'nein'}${fehler ? ` · Fehler: ${fehler}` : ''}.`,
+  `Download-Dateien (${DOWNLOAD_PFADE.length}) je genau einmal über das Netz: ${!fehlend.length && !mehrfach.length ? 'ja' : 'nein'}${fehlend.length ? ` · fehlend: ${fehlend.join(', ')}` : ''}${mehrfach.length ? ` · mehrfach: ${mehrfach.map((d) => `${d} (${abrufe[d]})`).join(', ')}` : ''}. Ergebnis: ${ergebnis.erfuellt ? 'erfüllt' : 'NICHT erfüllt'}.`,
   `Andere Methoden als GET: ${ergebnis.nichtGet.length ? ergebnis.nichtGet.join(', ') : 'keine'} · fremde Ursprünge: ${ergebnis.fremd.length ? ergebnis.fremd.join(', ') : 'keine'}.`,
   `Last: Beginn ${ergebnis.last.beginn.l1}, Ende ${ergebnis.last.ende.l1}. Endzustand: ${endzustand ?? '–'}.`,
   '',
   ...(konsole.length
     ? ['Konsole (Fehler und Warnungen der Seite, alles aus Workern):', '', ...konsole.slice(0, 30).map((k) => `- ${k.quelle} · ${k.typ}: ${k.text}`), '']
     : []),
-  '| Datei nach dem Klick | Status | MB | Quelle |',
-  '|---|---|---|---|',
-  ...ergebnis.modellNachKlick.map((z) => `| ${z.pfad} | ${z.status ?? '–'} | ${z.mb ?? '–'} | ${z.quelle} |`),
+  '| Datei nach dem Klick | Status | MB | Quelle | über das Netz |',
+  '|---|---|---|---|---|',
+  ...ergebnis.modellNachKlick.map((z) => `| ${z.pfad} | ${z.status ?? '–'} | ${z.mb ?? '–'} | ${z.quelle} | ${z.netz ? 'ja' : 'nein (vom Service Worker)'} |`),
 ].join('\n');
 schreibe(`${values.aus}.md`, md);
 schreibe(`${values.aus}.json`, ergebnis);
 console.log(md);
+process.exitCode = ergebnis.erfuellt ? 0 : 1;

@@ -1,5 +1,6 @@
-// Gemeinsame Hilfen der Leistungsmessung der Lern-App (L8-02). Abhängigkeiten aus web/node_modules (Verweis
-// `node_modules` in diesem Ordner, nicht eingecheckt): @playwright/test, lighthouse, @axe-core/playwright, pg.
+// Gemeinsame Hilfen der Leistungsmessung der Lern-App (L8-02). Abhängigkeiten aus web/node_modules über den Verweis
+// `node_modules` in diesem Ordner (per .gitignore ausgeschlossen; messlauf.sh legt ihn an, für Einzelaufrufe hier
+// `ln -sfn ../../../web/node_modules node_modules`): @playwright/test, lighthouse, @axe-core/playwright, pg.
 // Chromium aus PLAYWRIGHT_BROWSERS_PATH (wie die E2E). Keine Drittanfragen: alle Messungen nur gegen den lokalen Server.
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';

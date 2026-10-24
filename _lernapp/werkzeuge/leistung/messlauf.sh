@@ -2,21 +2,29 @@
 # Messlauf der Lern-App (L8-02): EIN Produktionsbau mit allen Schaltern der Lern-App, Testkurs und Seeds wie in der
 # Lern-App-E2E (scripts/e2e-datenbank.mjs, eigene Wegwerf-Datenbank), Server auf eigenem Port, alle Messungen, Server per
 # gemerkter PID beenden, .next und .env löschen – alles unter EINEM Schloss (gemeinsames bau.lock), damit nie zwei .next
-# gleichzeitig existieren und der Lauf wiederholbar ist.
+# gleichzeitig existieren und der Lauf wiederholbar ist. Danach endet das Skript und gibt das Schloss frei.
 #
-# Aufruf (im Arbeitsbaum): bash _lernapp/werkzeuge/leistung/messlauf.sh [teile …]
+# Aufruf (im Arbeitsbaum): MESS_ENV=<.env-Vorlage> bash _lernapp/werkzeuge/leistung/messlauf.sh [teile …]
 #   teile: budget messen lighthouse inp axe whisper last (Standard: alle in dieser Reihenfolge)
+#   MESS_ENV=<datei>: .env-Vorlage mit Datenbank, Mail und Geheimnissen (Pflicht; wird nach web/.env kopiert, danach gelöscht)
 #   MESS_FILTER=<regulärer Ausdruck>: nur Routen, deren Pfad passt (Lighthouse und axe; Nachmessung nach einer Behebung)
 #   MESS_ZIEL=<ordner>: Ausgabe (Standard $TMPDIR/leistung); dort lauf.log mit `uptime` je Schritt
-#   MESS_HALTEN=<sekunden>: Server nach den Messungen weiterlaufen lassen (Ende mit `touch <ziel>/stopp`)
+#   MESS_HALTEN=<sekunden>: Server nach den Messungen weiterlaufen lassen (Ende mit `touch <ziel>/stopp`; Standard aus)
+#   MESS_AUFTRAG_S=<sekunden>: Auftragsschleife einschalten (Standard 0 = aus). Solange sie läuft, hält der Lauf das
+#     gemeinsame Schloss und führt jedes Skript aus, das als <ziel>/auftrag.sh erscheint (im Ordner web/, mit der Umgebung
+#     des Laufs) – nur mit eigenem, nicht geteiltem MESS_ZIEL verwenden. Ende mit `touch <ziel>/stopp` oder nach der Zeit.
 #   MESS_PLATTE_WARTEN=<sekunden>: höchstens so lange auf 4 GB freien Platz warten (Standard 1800); MESS_PLATTE_MB=<MiB>
-# Voraussetzungen: PostgreSQL (127.0.0.1:5432, Rolle igmg) und Mailpit laufen; .env-Vorlage eines Arbeitsbaums (MESS_ENV).
+#   MESS_SCRATCH=<ordner>: Ablage der Sitzung mit node24/ (Node 24), bau.lock (gemeinsames Schloss) und
+#     e2e-echt/pw-browsers (Chromium der Playwright-Version aus web/); einzeln: MESS_NODE_BIN, MESS_SCHLOSS, MESS_BROWSER
+# Voraussetzungen: PostgreSQL (127.0.0.1:5432, Rolle igmg) und Mailpit laufen; `pnpm install` in web/ (die Werkzeuge
+# importieren aus web/node_modules – den Verweis _lernapp/werkzeuge/leistung/node_modules legt das Skript selbst an).
 # Ergebnisse: <ziel>/{budget,messen,lighthouse,inp,a11y,whisper-netz,lasttest}.{md,json}; Rohdaten bleiben außerhalb des Repos.
 set -u
-S=/tmp/claude-0/-home-user-IGMG/5899b547-bfdb-5933-87a3-0b05226c4116/scratchpad
+S=${MESS_SCRATCH:-/tmp/claude-0/-home-user-IGMG/5899b547-bfdb-5933-87a3-0b05226c4116/scratchpad}
+SCHLOSS=${MESS_SCHLOSS:-$S/bau.lock}
 HIER=$(cd "$(dirname "$0")" && pwd)
 W=$(cd "$HIER/../../../web" && pwd)
-export PATH=$S/node24/bin:$HOME/.local/bin:$PATH NEXT_TELEMETRY_DISABLED=1
+export PATH=${MESS_NODE_BIN:-$S/node24/bin}:$HOME/.local/bin:$PATH NEXT_TELEMETRY_DISABLED=1
 export E2E_PORT=${E2E_PORT:-3224}
 export E2E_DATABASE_URL=${E2E_DATABASE_URL:-postgres://igmg:igmg-lokal@127.0.0.1:5432/igmg_lernapp_d_e2e}
 export TMPDIR=${TMPDIR:-$S/tmp-l8d}
@@ -24,8 +32,15 @@ export TMPDIR=${TMPDIR:-$S/tmp-l8d}
 export PLAYWRIGHT_BROWSERS_PATH=${MESS_BROWSER:-$S/e2e-echt/pw-browsers}
 export MESS_ZIEL=${MESS_ZIEL:-$TMPDIR/leistung}
 export MESS_BASIS=http://localhost:$E2E_PORT
-MESS_ENV=${MESS_ENV:-/home/user/IGMG/.claude/worktrees/agent-a360d92e270ea9f2f/web/.env}
 mkdir -p "$TMPDIR" "$MESS_ZIEL"
+if [ -z "${MESS_ENV:-}" ] || [ ! -f "$MESS_ENV" ]; then
+  echo "MESS_ENV fehlt: Pfad einer .env-Vorlage angeben (Datenbank, Mail, Geheimnisse; wird nie eingecheckt)" >&2
+  exit 2
+fi
+export MESS_ENV
+# Die Werkzeuge (.mjs) importieren aus web/node_modules über einen Verweis neben sich (per .gitignore ausgeschlossen)
+[ -d "$W/node_modules" ] || { echo "web/node_modules fehlt: erst \`pnpm install --frozen-lockfile\` in web/" >&2; exit 2; }
+ln -sfn ../../../web/node_modules "$HIER/node_modules"
 
 # Vor dem Schloss: mindestens 4 GB frei abwarten (andere Läufe räumen ihr .next auf), höchstens MESS_PLATTE_WARTEN Sekunden
 # Mindestplatz vor dem Bau: 4 GB (dezimal, Auftrag: „mindestens 4 GB frei“) = 3815 MiB; MESS_PLATTE_MB setzt ihn anders
@@ -41,7 +56,7 @@ if [ -z "${MESS_IM_SCHLOSS:-}" ]; then
     timeout 20 tail -f /dev/null
   done
   # Unter das gemeinsame Schloss: das Skript startet sich selbst einmal unter flock (ein Aufruf für Bau, Messung, Aufräumen)
-  exec env MESS_IM_SCHLOSS=1 flock "$S/bau.lock" bash "$0" "$@"
+  exec env MESS_IM_SCHLOSS=1 flock "$SCHLOSS" bash "$0" "$@"
 fi
 
 L=$MESS_ZIEL/lauf.log
@@ -149,18 +164,22 @@ if [ -n "${MESS_HALTEN:-}" ]; then
   rm -f "$MESS_ZIEL/stopp"
 fi
 
-# Aufträge gegen den laufenden Server (weiter unter demselben Schloss): ein Skript als <ziel>/auftrag.sh ablegen; es läuft im
-# Ordner web/ mit der Umgebung des Laufs. Ende mit `touch <ziel>/stopp` oder nach MESS_AUFTRAG_S Sekunden (Standard 3 h).
-export PLAYWRIGHT_BROWSERS_PATH=$S/e2e-echt/pw-browsers
-ende=$((SECONDS + ${MESS_AUFTRAG_S:-10800}))
-protokoll "Auftragsschleife bereit (Skript: $MESS_ZIEL/auftrag.sh, Ende: touch $MESS_ZIEL/stopp)"
-until [ -f "$MESS_ZIEL/stopp" ] || [ $SECONDS -ge $ende ]; do
-  if [ -f "$MESS_ZIEL/auftrag.sh" ]; then
-    mv "$MESS_ZIEL/auftrag.sh" "$MESS_ZIEL/auftrag-laeuft.sh"
-    protokoll "Auftrag beginnt: $(head -1 "$MESS_ZIEL/auftrag-laeuft.sh")"
-    (cd "$W" && bash "$MESS_ZIEL/auftrag-laeuft.sh") >> "$MESS_ZIEL/auftrag.log" 2>&1
-    protokoll "Auftrag Ende rc=$?"
-  fi
-  timeout 10 tail -f /dev/null
-done
-rm -f "$MESS_ZIEL/stopp"
+# MESS_AUFTRAG_S=<sekunden> (nur auf ausdrücklichen Wunsch, Standard 0 = aus): Aufträge gegen den laufenden Server, weiter
+# unter demselben Schloss – ein Skript als <ziel>/auftrag.sh ablegen; es läuft im Ordner web/ mit der Umgebung des Laufs.
+# Ende mit `touch <ziel>/stopp` oder nach MESS_AUFTRAG_S Sekunden. Ohne die Variable endet der Lauf hier und gibt das
+# gemeinsame Schloss frei.
+AUFTRAG_S=${MESS_AUFTRAG_S:-0}
+if [ "$AUFTRAG_S" -gt 0 ] 2>/dev/null; then
+  ende=$((SECONDS + AUFTRAG_S))
+  protokoll "Auftragsschleife für höchstens ${AUFTRAG_S} s (Skript: $MESS_ZIEL/auftrag.sh, Ende: touch $MESS_ZIEL/stopp)"
+  until [ -f "$MESS_ZIEL/stopp" ] || [ $SECONDS -ge $ende ]; do
+    if [ -f "$MESS_ZIEL/auftrag.sh" ]; then
+      mv "$MESS_ZIEL/auftrag.sh" "$MESS_ZIEL/auftrag-laeuft.sh"
+      protokoll "Auftrag beginnt: $(head -1 "$MESS_ZIEL/auftrag-laeuft.sh")"
+      (cd "$W" && bash "$MESS_ZIEL/auftrag-laeuft.sh") >> "$MESS_ZIEL/auftrag.log" 2>&1
+      protokoll "Auftrag Ende rc=$?"
+    fi
+    timeout 10 tail -f /dev/null
+  done
+  rm -f "$MESS_ZIEL/stopp"
+fi
