@@ -1830,7 +1830,7 @@
     },
     {
       "schluessel": "de.b1.e04.s0033",
-      "text": "Der Griff an der Tür ist gebrochen.",
+      "text": "Der Griff an der Tür ist abgebrochen.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2064,7 +2064,7 @@
     },
     {
       "schluessel": "de.b1.e04.s0071",
-      "text": "Warum ist der Fahrstuhl heute geschlossen?",
+      "text": "Warum fährt der Fahrstuhl heute nicht?",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2197,7 +2197,7 @@
     },
     {
       "schluessel": "de.b1.e04.s0093",
-      "text": "Der Griff ist gebrochen, aber ich kann ihn kleben.",
+      "text": "Der Griff ist abgebrochen, aber ich kann ihn kleben.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2578,7 +2578,7 @@
     },
     {
       "schluessel": "de.b1.e04.s0156",
-      "text": "Sind Sie an diesem Tag nicht zu Hause? Dann geben Sie bitte Ihren Schlüssel bei Herrn Arslan im Erdgeschoss ab.",
+      "text": "Sind Sie an diesem Tag nicht zu Hause? Dann geben Sie bitte Ihren Schlüssel beim Hausmeister, Herrn Arslan, im Erdgeschoss ab.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2772,7 +2772,7 @@
     },
     {
       "schluessel": "de.b1.e04.s0188",
-      "text": "Laylā, kannst du bitte den Boden in der Küche wischen?",
+      "text": "Yazan, kannst du bitte den Boden in der Küche wischen?",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2928,7 +2928,7 @@
     },
     {
       "schluessel": "de.b1.e04.s0214",
-      "text": "Sehr geehrte Frau Zimmermann, ich wohne im zweiten Stock links und möchte einen Schaden melden. Seit Montag tropft in unserer Küche der Wasserhahn laufend. Ich habe ihn fest zugedreht, aber das hilft nicht. Wahrscheinlich ist die Dichtung kaputt. Außerdem ist das Rohr unter dem Becken undicht, und auf dem Boden ist schon ein Fleck. Könnten Sie bitte einen Handwerker schicken? Am besten passt mir ein Termin am Vormittag, weil ich nachmittags arbeite. Vielen Dank! Mit freundlichen Grüßen Ranā an-Naǧǧār",
+      "text": "Sehr geehrte Frau Zimmermann, ich wohne im zweiten Stock links und möchte einen Schaden melden. Am Montag habe ich bemerkt, dass der Wasserhahn in unserer Küche laufend tropft. Ich habe ihn fest zugedreht, aber das hilft nicht. Wahrscheinlich ist die Dichtung kaputt. Außerdem ist das Rohr unter dem Becken undicht, und auf dem Boden ist schon ein Fleck. Könnten Sie bitte einen Handwerker schicken? Am besten passt mir ein Termin am Vormittag, weil ich nachmittags arbeite. Vielen Dank! Mit freundlichen Grüßen Ranā an-Naǧǧār",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2964,7 +2964,7 @@
     },
     {
       "schluessel": "de.b1.e04.s0220",
-      "text": "Ranā ruft bei der Hausverwaltung an. Frau Zimmermann verspricht, dass der Hausmeister gleich kommt.",
+      "text": "Ranā ruft bei der Hausverwaltung an. Frau Zimmermann verspricht, dass der Hausmeister bald kommt.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3505,7 +3505,7 @@
     },
     {
       "schluessel": "de.b1.e04.s0310",
-      "text": "Schwere Gegenstände trägt Herr Arslan gern für Sie nach oben. Klingeln Sie einfach bei ihm im Erdgeschoss.",
+      "text": "Schwere Gegenstände trägt unser Hausmeister, Herr Arslan, gern für Sie nach oben. Klingeln Sie einfach bei ihm im Erdgeschoss.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3790,7 +3790,10 @@
           "alternativen": [
             "Es gibt einige Mängel in der neuen Wohnung.",
             "In der neuen Wohnung gibt es ein paar Mängel.",
-            "Die neue Wohnung hat einige Mängel."
+            "Die neue Wohnung hat einige Mängel.",
+            "Es gibt ein paar Mängel in der neuen Wohnung.",
+            "Die neue Wohnung hat ein paar Mängel.",
+            "In der neuen Wohnung sind einige Mängel."
           ]
         },
         {
@@ -3949,7 +3952,10 @@
           "anweisung": "uebersetze",
           "satz": "de.b1.e04.s0055",
           "nach": "ziel",
-          "alternativen": ["Mit der Reparatur beauftragt die Hausverwaltung eine Firma."],
+          "alternativen": [
+            "Mit der Reparatur beauftragt die Hausverwaltung eine Firma.",
+            "Die Hausverwaltung beauftragt mit der Reparatur eine Firma."
+          ],
           "ablenker": ["Hausmeister", "beseitigt"]
         },
         {
@@ -4041,7 +4047,7 @@
           "schluessel": "de.b1.e04.l03.a08",
           "typ": "formen",
           "zeilen": ["stellen", "legen", "hängen"],
-          "spalten": ["Wohin? – ich (Präsens)", "Wo? – es (Präsens)"],
+          "spalten": ["Wohin? – ich (Präsens)", "Wo? (stehen, liegen, hängen) – es (Präsens)"],
           "zellen": [
             {
               "zeile": 0,
@@ -4314,7 +4320,8 @@
           "ziel": "de.b1.e04.s0121",
           "alternativen": [
             "Dass die Mieter kleine Reparaturen selbst bezahlen, steht im Mietvertrag.",
-            "Im Mietvertrag steht, dass die Mieter selbst kleine Reparaturen bezahlen."
+            "Im Mietvertrag steht, dass die Mieter selbst kleine Reparaturen bezahlen.",
+            "Dass die Mieter selbst kleine Reparaturen bezahlen, steht im Mietvertrag."
           ]
         },
         {
@@ -4326,7 +4333,10 @@
             "Die neuen Mieter ziehen am ersten April in die Wohnung ein.",
             "Am ersten April beziehen die neuen Mieter die Wohnung.",
             "Die neuen Mieter beziehen die Wohnung am 1. April.",
-            "Am 1. April ziehen die neuen Mieter in die Wohnung ein."
+            "Am 1. April ziehen die neuen Mieter in die Wohnung ein.",
+            "Am 1. April beziehen die neuen Mieter die Wohnung.",
+            "Am ersten April ziehen die neuen Mieter in die Wohnung ein.",
+            "Die neuen Mieter ziehen am 1. April in die Wohnung ein."
           ]
         },
         {
@@ -4476,7 +4486,11 @@
           "anweisung": "uebersetze",
           "satz": "de.b1.e04.s0171",
           "nach": "ziel",
-          "alternativen": ["Alle helfen bei uns im Haushalt mit.", "Im Haushalt helfen bei uns alle mit."],
+          "alternativen": [
+            "Alle helfen bei uns im Haushalt mit.",
+            "Im Haushalt helfen bei uns alle mit.",
+            "Bei uns helfen im Haushalt alle mit."
+          ],
           "ablenker": ["hilft", "Haus"]
         },
         {
@@ -4795,7 +4809,7 @@
           "anweisung": "uebersetze",
           "satz": "de.b1.e04.s0236",
           "nach": "ziel",
-          "alternativen": ["Endlich! Gleich bedanke ich mich bei Herrn Arslan."],
+          "alternativen": ["Endlich! Gleich bedanke ich mich bei Herrn Arslan.", "Endlich! Bei Herrn Arslan bedanke ich mich gleich."],
           "ablenker": ["Frau", "danke"]
         },
         {
@@ -4972,7 +4986,8 @@
           "nach": "ziel",
           "alternativen": [
             "Die Glühbirne ist kaputt, deshalb ist es dunkel im Gang.",
-            "Die Glühbirne ist kaputt, im Gang ist es deshalb dunkel."
+            "Die Glühbirne ist kaputt, im Gang ist es deshalb dunkel.",
+            "Die Glühbirne ist kaputt, es ist deshalb im Gang dunkel."
           ],
           "ablenker": ["hell", "Glühbirnen"]
         },
