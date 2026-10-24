@@ -1,5 +1,18 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 24.10.2026 23:35 UTC – Container-Neustart ≈ 23:28, B1 de neu gestartet:**
+  - **B1 de seit 20:05 (Arbeitsbaum sauber):**
+    - Entwürfe e11–e16 fertig, damit e01–e16.
+    - Lektorate e01, e02 und e09–e14 fertig, damit e01–e14.
+    - Übersetzungen e03–e08 in beiden Richtungen fertig.
+  - **Neu gestartet:** B1 de `wf_22e98787-c97`.
+    - Übersprungen: `entworfen` e01–e16, `lektoriert` e01–e14, `uebersetzt` e03–e08.
+    - Offen: Lektorat e15/e16, Übersetzungen e01/e02 und e09–e16, alle Rückübersetzungen, Schlussprüfung.
+  - **Taktung:**
+    - Auslastung 0,76 um 23:30, Taktlinie 0,63, Reset 01:00.
+    - Kontrolle um 00:40 (`trig_01NhNvX1yWuSHAoP9iTD4GY4`): bei ≥ 0,93 direkt nach dem nächsten Commit anhalten.
+  - **Warteschlange** unverändert (siehe unten): Prüfer-Mängelrunde, B1 ar, B1 tr, B2 de. Start nach dem Reset nach der Taktregel.
+
 - **Stand 24.10.2026 20:55 UTC – A1 und A2 live (L3-E15):**
   - **Freigabe:** Der Nutzer hat den Commit ausdrücklich erlaubt, „auch für alle zukünftigen Punkte“.
     - A1 de/tr/ar: 3bd40c46.
