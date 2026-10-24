@@ -1,0 +1,5307 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e15",
+    "reihenfolge": 16,
+    "thema": {
+      "de": "Klima und Energie im Alltag",
+      "tr": "Günlük hayatta iklim ve enerji",
+      "ar": "المناخ والطاقة في الحياة اليومية"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann über Möglichkeiten sprechen, im Alltag Energie und Wasser zu sparen.",
+        "tr": "Günlük hayatta enerji ve su tasarrufu yapma imkânları hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدث عن طرق توفير الطاقة والماء في الحياة اليومية."
+      },
+      {
+        "de": "Ich kann ausdrücken, was ich tun würde, wenn die Bedingungen anders wären.",
+        "tr": "Koşullar farklı olsaydı ne yapacağımı ifade edebilirim.",
+        "ar": "أستطيع أن أعبّر عمّا كنت سأفعله لو كانت الظروف مختلفة."
+      }
+    ],
+    "symbol": "leaf",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e15.indem",
+      "lemma": "indem",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Nebensatz, Verb am Ende (Mittel, Art und Weise)"
+      },
+      "frequenzRang": 784,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.zudem",
+      "lemma": "zudem",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Verbindungsadverb (außerdem, Schriftsprache)"
+      },
+      "frequenzRang": 491,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.teilweise",
+      "lemma": "teilweise",
+      "wortart": "adverb",
+      "frequenzRang": 745,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.vermutlich",
+      "lemma": "vermutlich",
+      "wortart": "adverb",
+      "frequenzRang": 856,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.hingegen",
+      "lemma": "hingegen",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Verbindungsadverb (Gegensatz, Schriftsprache)"
+      },
+      "frequenzRang": 1218,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.moeglicherweise",
+      "lemma": "möglicherweise",
+      "wortart": "adverb",
+      "frequenzRang": 1414,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.moeglichst",
+      "lemma": "möglichst",
+      "wortart": "adverb",
+      "frequenzRang": 1076,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.stattdessen",
+      "lemma": "stattdessen",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Verbindungsadverb, Verb auf Platz 2"
+      },
+      "frequenzRang": 1699,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.andererseits",
+      "lemma": "andererseits",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "einerseits … andererseits"
+      },
+      "frequenzRang": 1659,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.einerseits",
+      "lemma": "einerseits",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "einerseits … andererseits"
+      },
+      "frequenzRang": 2188,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.aeusserst",
+      "lemma": "äußerst",
+      "wortart": "adverb",
+      "frequenzRang": 1813,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.gering",
+      "lemma": "gering",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "geringe",
+        "endung_en": "geringen",
+        "endung_er": "geringer",
+        "endung_es": "geringes",
+        "endung_em": "geringem",
+        "komparativ": "geringer",
+        "superlativ": "geringsten",
+        "superlativ_e": "geringste"
+      },
+      "frequenzRang": 781,
+      "quelle": "wiktionary:de:gering",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gering‘ (https://de.wiktionary.org/wiki/gering), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.extrem",
+      "lemma": "extrem",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "extreme",
+        "endung_en": "extremen",
+        "endung_er": "extremer",
+        "endung_es": "extremes",
+        "endung_em": "extremem",
+        "komparativ": "extremer",
+        "superlativ": "extremsten",
+        "superlativ_e": "extremste"
+      },
+      "frequenzRang": 905,
+      "quelle": "wiktionary:de:extrem",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚extrem‘ (https://de.wiktionary.org/wiki/extrem), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.niedrig",
+      "lemma": "niedrig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "niedrige",
+        "endung_en": "niedrigen",
+        "endung_er": "niedriger",
+        "endung_es": "niedriges",
+        "endung_em": "niedrigem",
+        "komparativ": "niedriger",
+        "superlativ": "niedrigsten",
+        "superlativ_e": "niedrigste"
+      },
+      "frequenzRang": 1179,
+      "quelle": "wiktionary:de:niedrig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚niedrig‘ (https://de.wiktionary.org/wiki/niedrig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.alternativ",
+      "lemma": "alternativ",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "alternative",
+        "endung_en": "alternativen",
+        "endung_er": "alternativer",
+        "endung_es": "alternatives",
+        "endung_em": "alternativem"
+      },
+      "frequenzRang": 1127,
+      "quelle": "wiktionary:de:alternativ",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚alternativ‘ (https://de.wiktionary.org/wiki/alternativ), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.erheblich",
+      "lemma": "erheblich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "erhebliche",
+        "endung_en": "erheblichen",
+        "endung_er": "erheblicher",
+        "endung_es": "erhebliches",
+        "endung_em": "erheblichem",
+        "komparativ": "erheblicher",
+        "superlativ": "erheblichsten",
+        "superlativ_e": "erheblichste"
+      },
+      "frequenzRang": 1284,
+      "quelle": "wiktionary:de:erheblich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erheblich‘ (https://de.wiktionary.org/wiki/erheblich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.sinnvoll",
+      "lemma": "sinnvoll",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "sinnvolle",
+        "endung_en": "sinnvollen",
+        "endung_er": "sinnvoller",
+        "endung_es": "sinnvolles",
+        "endung_em": "sinnvollem",
+        "komparativ": "sinnvoller",
+        "superlativ": "sinnvollsten",
+        "superlativ_e": "sinnvollste"
+      },
+      "frequenzRang": 1450,
+      "quelle": "wiktionary:de:sinnvoll",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚sinnvoll‘ (https://de.wiktionary.org/wiki/sinnvoll), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.global",
+      "lemma": "global",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "globale",
+        "endung_en": "globalen",
+        "endung_er": "globaler",
+        "endung_es": "globales",
+        "endung_em": "globalem"
+      },
+      "frequenzRang": 1774,
+      "quelle": "wiktionary:de:global",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚global‘ (https://de.wiktionary.org/wiki/global), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.betroffen",
+      "lemma": "betroffen",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "betroffene",
+        "endung_en": "betroffenen",
+        "endung_er": "betroffener",
+        "endung_es": "betroffenes",
+        "endung_em": "betroffenem"
+      },
+      "frequenzRang": 1324,
+      "quelle": "wiktionary:de:betroffen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚betroffen‘ (https://de.wiktionary.org/wiki/betroffen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.heftig",
+      "lemma": "heftig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "heftige",
+        "endung_en": "heftigen",
+        "endung_er": "heftiger",
+        "endung_es": "heftiges",
+        "endung_em": "heftigem",
+        "komparativ": "heftiger",
+        "superlativ": "heftigsten",
+        "superlativ_e": "heftigste"
+      },
+      "frequenzRang": 1478,
+      "quelle": "wiktionary:de:heftig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚heftig‘ (https://de.wiktionary.org/wiki/heftig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.kuenftig",
+      "lemma": "künftig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "künftige",
+        "endung_en": "künftigen",
+        "endung_er": "künftiger",
+        "endung_es": "künftiges",
+        "endung_em": "künftigem"
+      },
+      "frequenzRang": 1598,
+      "quelle": "wiktionary:de:künftig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚künftig‘ (https://de.wiktionary.org/wiki/künftig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.abhaengig",
+      "lemma": "abhängig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "abhängige",
+        "endung_en": "abhängigen",
+        "endung_er": "abhängiger",
+        "endung_es": "abhängiges",
+        "endung_em": "abhängigem",
+        "komparativ": "abhängiger",
+        "superlativ": "abhängigsten",
+        "superlativ_e": "abhängigste"
+      },
+      "frequenzRang": 1911,
+      "quelle": "wiktionary:de:abhängig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚abhängig‘ (https://de.wiktionary.org/wiki/abhängig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.nachhaltig",
+      "lemma": "nachhaltig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "nachhaltige",
+        "endung_en": "nachhaltigen",
+        "endung_er": "nachhaltiger",
+        "endung_es": "nachhaltiges",
+        "endung_em": "nachhaltigem",
+        "komparativ": "nachhaltiger",
+        "superlativ": "nachhaltigsten",
+        "superlativ_e": "nachhaltigste"
+      },
+      "frequenzRang": 2253,
+      "quelle": "wiktionary:de:nachhaltig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚nachhaltig‘ (https://de.wiktionary.org/wiki/nachhaltig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.erneuerbar",
+      "lemma": "erneuerbar",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "erneuerbare",
+        "endung_en": "erneuerbaren",
+        "endung_er": "erneuerbarer",
+        "endung_es": "erneuerbares",
+        "endung_em": "erneuerbarem"
+      },
+      "frequenzRang": 5611,
+      "quelle": "wiktionary:de:erneuerbar",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erneuerbar‘ (https://de.wiktionary.org/wiki/erneuerbar), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.gebiet",
+      "lemma": "Gebiet",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gebiete"
+      },
+      "formen": {
+        "pl": "Gebiete",
+        "dat_pl": "Gebieten",
+        "gen_sg": "Gebiets",
+        "gen_sg_2": "Gebietes"
+      },
+      "frequenzRang": 777,
+      "quelle": "wiktionary:de:Gebiet",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gebiet‘ (https://de.wiktionary.org/wiki/Gebiet), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.massnahme",
+      "lemma": "Maßnahme",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Maßnahmen"
+      },
+      "formen": {
+        "pl": "Maßnahmen"
+      },
+      "frequenzRang": 885,
+      "quelle": "wiktionary:de:Maßnahme",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Maßnahme‘ (https://de.wiktionary.org/wiki/Maßnahme), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.anlage",
+      "lemma": "Anlage",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Anlagen"
+      },
+      "formen": {
+        "pl": "Anlagen"
+      },
+      "frequenzRang": 890,
+      "quelle": "wiktionary:de:Anlage",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anlage‘ (https://de.wiktionary.org/wiki/Anlage), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.einfluss",
+      "lemma": "Einfluss",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Einflüsse"
+      },
+      "formen": {
+        "pl": "Einflüsse",
+        "dat_pl": "Einflüssen",
+        "gen_sg": "Einflusses"
+      },
+      "frequenzRang": 921,
+      "quelle": "wiktionary:de:Einfluss",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Einfluss‘ (https://de.wiktionary.org/wiki/Einfluss), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.hoffnung",
+      "lemma": "Hoffnung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Hoffnungen"
+      },
+      "formen": {
+        "pl": "Hoffnungen"
+      },
+      "frequenzRang": 966,
+      "quelle": "wiktionary:de:Hoffnung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hoffnung‘ (https://de.wiktionary.org/wiki/Hoffnung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.vorteil",
+      "lemma": "Vorteil",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Vorteile"
+      },
+      "formen": {
+        "pl": "Vorteile",
+        "dat_pl": "Vorteilen",
+        "gen_sg": "Vorteils",
+        "gen_sg_2": "Vorteiles"
+      },
+      "frequenzRang": 986,
+      "quelle": "wiktionary:de:Vorteil",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vorteil‘ (https://de.wiktionary.org/wiki/Vorteil), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.flaeche",
+      "lemma": "Fläche",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Flächen"
+      },
+      "formen": {
+        "pl": "Flächen"
+      },
+      "frequenzRang": 1212,
+      "quelle": "wiktionary:de:Fläche",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fläche‘ (https://de.wiktionary.org/wiki/Fläche), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.bedingung",
+      "lemma": "Bedingung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bedingungen"
+      },
+      "formen": {
+        "pl": "Bedingungen"
+      },
+      "frequenzRang": 1232,
+      "quelle": "wiktionary:de:Bedingung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bedingung‘ (https://de.wiktionary.org/wiki/Bedingung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.veraenderung",
+      "lemma": "Veränderung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Veränderungen"
+      },
+      "formen": {
+        "pl": "Veränderungen"
+      },
+      "frequenzRang": 1277,
+      "quelle": "wiktionary:de:Veränderung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Veränderung‘ (https://de.wiktionary.org/wiki/Veränderung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.auswirkung",
+      "lemma": "Auswirkung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Auswirkungen"
+      },
+      "formen": {
+        "pl": "Auswirkungen"
+      },
+      "frequenzRang": 1797,
+      "quelle": "wiktionary:de:Auswirkung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Auswirkung‘ (https://de.wiktionary.org/wiki/Auswirkung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.gas",
+      "lemma": "Gas",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gase"
+      },
+      "formen": {
+        "pl": "Gase",
+        "dat_pl": "Gasen",
+        "gen_sg": "Gases"
+      },
+      "frequenzRang": 1819,
+      "quelle": "wiktionary:de:Gas",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gas‘ (https://de.wiktionary.org/wiki/Gas), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.bauer",
+      "lemma": "Bauer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Bauern",
+        "weiblich": "Bäuerin"
+      },
+      "formen": {
+        "pl": "Bauern",
+        "gen_sg": "Bauers",
+        "weiblich": "Bäuerin",
+        "weiblich_pl": "Bäuerinnen"
+      },
+      "frequenzRang": 1257,
+      "quelle": "wiktionary:de:Bauer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bauer‘ (https://de.wiktionary.org/wiki/Bauer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.klimawandel",
+      "lemma": "Klimawandel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Klimawandels"
+      },
+      "frequenzRang": 4152,
+      "quelle": "wiktionary:de:Klimawandel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Klimawandel‘ (https://de.wiktionary.org/wiki/Klimawandel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.stromverbrauch",
+      "lemma": "Stromverbrauch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Stromverbrauchs",
+        "gen_sg_2": "Stromverbrauches"
+      },
+      "frequenzRang": 25407,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.verbrauch",
+      "lemma": "Verbrauch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Verbrauchs",
+        "gen_sg_2": "Verbrauches"
+      },
+      "frequenzRang": 5590,
+      "quelle": "wiktionary:de:Verbrauch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verbrauch‘ (https://de.wiktionary.org/wiki/Verbrauch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.solaranlage",
+      "lemma": "Solaranlage",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Solaranlagen"
+      },
+      "formen": {
+        "pl": "Solaranlagen"
+      },
+      "frequenzRang": 38519,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.windkraft",
+      "lemma": "Windkraft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 10674,
+      "quelle": "wiktionary:de:Windkraft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Windkraft‘ (https://de.wiktionary.org/wiki/Windkraft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.umweltschutz",
+      "lemma": "Umweltschutz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Umweltschutzes"
+      },
+      "frequenzRang": 5858,
+      "quelle": "wiktionary:de:Umweltschutz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Umweltschutz‘ (https://de.wiktionary.org/wiki/Umweltschutz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.klimaschutz",
+      "lemma": "Klimaschutz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Klimaschutzes"
+      },
+      "frequenzRang": 5580,
+      "quelle": "wiktionary:de:Klimaschutz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Klimaschutz‘ (https://de.wiktionary.org/wiki/Klimaschutz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.recycling",
+      "lemma": "Recycling",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Recyclings"
+      },
+      "frequenzRang": 10151,
+      "quelle": "wiktionary:de:Recycling",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Recycling‘ (https://de.wiktionary.org/wiki/Recycling), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.abfall",
+      "lemma": "Abfall",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Abfälle"
+      },
+      "formen": {
+        "pl": "Abfälle",
+        "dat_pl": "Abfällen",
+        "gen_sg": "Abfalls",
+        "gen_sg_2": "Abfalles"
+      },
+      "frequenzRang": 4502,
+      "quelle": "wiktionary:de:Abfall",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abfall‘ (https://de.wiktionary.org/wiki/Abfall), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.kaelte",
+      "lemma": "Kälte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 4325,
+      "quelle": "wiktionary:de:Kälte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kälte‘ (https://de.wiktionary.org/wiki/Kälte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.trockenheit",
+      "lemma": "Trockenheit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 10773,
+      "quelle": "wiktionary:de:Trockenheit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Trockenheit‘ (https://de.wiktionary.org/wiki/Trockenheit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.unwetter",
+      "lemma": "Unwetter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Unwetter"
+      },
+      "formen": {
+        "dat_pl": "Unwettern",
+        "gen_sg": "Unwetters"
+      },
+      "frequenzRang": 7991,
+      "quelle": "wiktionary:de:Unwetter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Unwetter‘ (https://de.wiktionary.org/wiki/Unwetter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.hochwasser",
+      "lemma": "Hochwasser",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Hochwasser"
+      },
+      "formen": {
+        "dat_pl": "Hochwassern",
+        "gen_sg": "Hochwassers"
+      },
+      "frequenzRang": 8187,
+      "quelle": "wiktionary:de:Hochwasser",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hochwasser‘ (https://de.wiktionary.org/wiki/Hochwasser), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.gewitter",
+      "lemma": "Gewitter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gewitter"
+      },
+      "formen": {
+        "dat_pl": "Gewittern",
+        "gen_sg": "Gewitters"
+      },
+      "frequenzRang": 6624,
+      "quelle": "wiktionary:de:Gewitter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gewitter‘ (https://de.wiktionary.org/wiki/Gewitter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.abgas",
+      "lemma": "Abgas",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Abgase"
+      },
+      "formen": {
+        "pl": "Abgase",
+        "dat_pl": "Abgasen",
+        "gen_sg": "Abgases"
+      },
+      "frequenzRang": 39862,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.verschmutzung",
+      "lemma": "Verschmutzung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Verschmutzungen"
+      },
+      "formen": {
+        "pl": "Verschmutzungen"
+      },
+      "frequenzRang": 11641,
+      "quelle": "wiktionary:de:Verschmutzung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verschmutzung‘ (https://de.wiktionary.org/wiki/Verschmutzung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.kohle",
+      "lemma": "Kohle",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kohlen"
+      },
+      "formen": {
+        "pl": "Kohlen"
+      },
+      "frequenzRang": 3485,
+      "quelle": "wiktionary:de:Kohle",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kohle‘ (https://de.wiktionary.org/wiki/Kohle), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.landwirtschaft",
+      "lemma": "Landwirtschaft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 2312,
+      "quelle": "wiktionary:de:Landwirtschaft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Landwirtschaft‘ (https://de.wiktionary.org/wiki/Landwirtschaft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.insekt",
+      "lemma": "Insekt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Insekten"
+      },
+      "formen": {
+        "pl": "Insekten",
+        "gen_sg": "Insekts",
+        "gen_sg_2": "Insektes"
+      },
+      "frequenzRang": 4588,
+      "quelle": "wiktionary:de:Insekt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Insekt‘ (https://de.wiktionary.org/wiki/Insekt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.rohstoff",
+      "lemma": "Rohstoff",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Rohstoffe"
+      },
+      "formen": {
+        "pl": "Rohstoffe",
+        "dat_pl": "Rohstoffen",
+        "gen_sg": "Rohstoffs",
+        "gen_sg_2": "Rohstoffes"
+      },
+      "frequenzRang": 4427,
+      "quelle": "wiktionary:de:Rohstoff",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rohstoff‘ (https://de.wiktionary.org/wiki/Rohstoff), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.ressource",
+      "lemma": "Ressource",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ressourcen"
+      },
+      "formen": {
+        "pl": "Ressourcen"
+      },
+      "frequenzRang": 3046,
+      "quelle": "wiktionary:de:Ressource",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ressource‘ (https://de.wiktionary.org/wiki/Ressource), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.nachhaltigkeit",
+      "lemma": "Nachhaltigkeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 5943,
+      "quelle": "wiktionary:de:Nachhaltigkeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nachhaltigkeit‘ (https://de.wiktionary.org/wiki/Nachhaltigkeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.nachteil",
+      "lemma": "Nachteil",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Nachteile"
+      },
+      "formen": {
+        "pl": "Nachteile",
+        "dat_pl": "Nachteilen",
+        "gen_sg": "Nachteils",
+        "gen_sg_2": "Nachteiles"
+      },
+      "frequenzRang": 2463,
+      "quelle": "wiktionary:de:Nachteil",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nachteil‘ (https://de.wiktionary.org/wiki/Nachteil), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.muelltrennung",
+      "lemma": "Mülltrennung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.betreiben",
+      "lemma": "betreiben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "betreiben",
+        "praes_ich": "betreibe",
+        "praes_du": "betreibst",
+        "praes_er_sie_es": "betreibt",
+        "praes_wir": "betreiben",
+        "praes_ihr": "betreibt",
+        "praes_sie_Sie": "betreiben",
+        "praet_ich_er_sie_es": "betrieb",
+        "praet_du": "betriebst",
+        "praet_wir_sie_Sie": "betrieben",
+        "praet_ihr": "betriebt",
+        "partizip_2": "betrieben"
+      },
+      "frequenzRang": 667,
+      "quelle": "wiktionary:de:betreiben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚betreiben‘ (https://de.wiktionary.org/wiki/betreiben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.aspekt",
+      "lemma": "Aspekt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Aspekte"
+      },
+      "formen": {
+        "pl": "Aspekte",
+        "dat_pl": "Aspekten",
+        "gen_sg": "Aspekts",
+        "gen_sg_2": "Aspektes"
+      },
+      "frequenzRang": 1668,
+      "quelle": "wiktionary:de:Aspekt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Aspekt‘ (https://de.wiktionary.org/wiki/Aspekt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.letztlich",
+      "lemma": "letztlich",
+      "wortart": "adverb",
+      "frequenzRang": 1973,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.tierart",
+      "lemma": "Tierart",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Tierarten"
+      },
+      "formen": {
+        "pl": "Tierarten"
+      },
+      "frequenzRang": 9908,
+      "quelle": "wiktionary:de:Tierart",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tierart‘ (https://de.wiktionary.org/wiki/Tierart), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.verhindern",
+      "lemma": "verhindern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verhindern",
+        "praes_ich": "verhindere",
+        "praes_du": "verhinderst",
+        "praes_er_sie_es": "verhindert",
+        "praes_wir": "verhindern",
+        "praes_ihr": "verhindert",
+        "praes_sie_Sie": "verhindern",
+        "praet_ich_er_sie_es": "verhinderte",
+        "praet_du": "verhindertest",
+        "praet_wir_sie_Sie": "verhinderten",
+        "praet_ihr": "verhindertet",
+        "partizip_2": "verhindert"
+      },
+      "frequenzRang": 792,
+      "quelle": "wiktionary:de:verhindern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verhindern‘ (https://de.wiktionary.org/wiki/verhindern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.veraendern",
+      "lemma": "verändern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "verändern",
+        "praes_ich": "verändere",
+        "praes_du": "veränderst",
+        "praes_er_sie_es": "verändert",
+        "praes_wir": "verändern",
+        "praes_ihr": "verändert",
+        "praes_sie_Sie": "verändern",
+        "praet_ich_er_sie_es": "veränderte",
+        "praet_du": "verändertest",
+        "praet_wir_sie_Sie": "veränderten",
+        "praet_ihr": "verändertet",
+        "partizip_2": "verändert",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 883,
+      "quelle": "wiktionary:de:verändern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verändern‘ (https://de.wiktionary.org/wiki/verändern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.zerstoeren",
+      "lemma": "zerstören",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "zerstören",
+        "praes_ich": "zerstöre",
+        "praes_du": "zerstörst",
+        "praes_er_sie_es": "zerstört",
+        "praes_wir": "zerstören",
+        "praes_ihr": "zerstört",
+        "praes_sie_Sie": "zerstören",
+        "praet_ich_er_sie_es": "zerstörte",
+        "praet_du": "zerstörtest",
+        "praet_wir_sie_Sie": "zerstörten",
+        "praet_ihr": "zerstörtet",
+        "partizip_2": "zerstört"
+      },
+      "frequenzRang": 1060,
+      "quelle": "wiktionary:de:zerstören",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zerstören‘ (https://de.wiktionary.org/wiki/zerstören), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.verschwinden",
+      "lemma": "verschwinden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "verschwinden",
+        "praes_ich": "verschwinde",
+        "praes_du": "verschwindest",
+        "praes_er_sie_es": "verschwindet",
+        "praes_wir": "verschwinden",
+        "praes_ihr": "verschwindet",
+        "praes_sie_Sie": "verschwinden",
+        "praet_ich_er_sie_es": "verschwand",
+        "praet_du": "verschwandest",
+        "praet_wir_sie_Sie": "verschwanden",
+        "praet_ihr": "verschwandet",
+        "partizip_2": "verschwunden"
+      },
+      "frequenzRang": 913,
+      "quelle": "wiktionary:de:verschwinden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verschwinden‘ (https://de.wiktionary.org/wiki/verschwinden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.sinken",
+      "lemma": "sinken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "sinken",
+        "praes_ich": "sinke",
+        "praes_du": "sinkst",
+        "praes_er_sie_es": "sinkt",
+        "praes_wir": "sinken",
+        "praes_ihr": "sinkt",
+        "praes_sie_Sie": "sinken",
+        "praet_ich_er_sie_es": "sank",
+        "praet_du": "sankst",
+        "praet_wir_sie_Sie": "sanken",
+        "praet_ihr": "sankt",
+        "partizip_2": "gesunken"
+      },
+      "frequenzRang": 1581,
+      "quelle": "wiktionary:de:sinken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚sinken‘ (https://de.wiktionary.org/wiki/sinken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.reduzieren",
+      "lemma": "reduzieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "reduzieren",
+        "praes_ich": "reduziere",
+        "praes_du": "reduzierst",
+        "praes_er_sie_es": "reduziert",
+        "praes_wir": "reduzieren",
+        "praes_ihr": "reduziert",
+        "praes_sie_Sie": "reduzieren",
+        "praet_ich_er_sie_es": "reduzierte",
+        "praet_du": "reduziertest",
+        "praet_wir_sie_Sie": "reduzierten",
+        "praet_ihr": "reduziertet",
+        "partizip_2": "reduziert"
+      },
+      "frequenzRang": 1606,
+      "quelle": "wiktionary:de:reduzieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚reduzieren‘ (https://de.wiktionary.org/wiki/reduzieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.vermuten",
+      "lemma": "vermuten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "vermuten",
+        "praes_ich": "vermute",
+        "praes_du": "vermutest",
+        "praes_er_sie_es": "vermutet",
+        "praes_wir": "vermuten",
+        "praes_ihr": "vermutet",
+        "praes_sie_Sie": "vermuten",
+        "praet_ich_er_sie_es": "vermutete",
+        "praet_du": "vermutetest",
+        "praet_wir_sie_Sie": "vermuteten",
+        "praet_ihr": "vermutetet",
+        "partizip_2": "vermutet"
+      },
+      "frequenzRang": 1666,
+      "quelle": "wiktionary:de:vermuten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vermuten‘ (https://de.wiktionary.org/wiki/vermuten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.erzeugen",
+      "lemma": "erzeugen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erzeugen",
+        "praes_ich": "erzeuge",
+        "praes_du": "erzeugst",
+        "praes_er_sie_es": "erzeugt",
+        "praes_wir": "erzeugen",
+        "praes_ihr": "erzeugt",
+        "praes_sie_Sie": "erzeugen",
+        "praet_ich_er_sie_es": "erzeugte",
+        "praet_du": "erzeugtest",
+        "praet_wir_sie_Sie": "erzeugten",
+        "praet_ihr": "erzeugtet",
+        "partizip_2": "erzeugt"
+      },
+      "frequenzRang": 1753,
+      "quelle": "wiktionary:de:erzeugen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erzeugen‘ (https://de.wiktionary.org/wiki/erzeugen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.verbrauchen",
+      "lemma": "verbrauchen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verbrauchen",
+        "praes_ich": "verbrauche",
+        "praes_du": "verbrauchst",
+        "praes_er_sie_es": "verbraucht",
+        "praes_wir": "verbrauchen",
+        "praes_ihr": "verbraucht",
+        "praes_sie_Sie": "verbrauchen",
+        "praet_ich_er_sie_es": "verbrauchte",
+        "praet_du": "verbrauchtest",
+        "praet_wir_sie_Sie": "verbrauchten",
+        "praet_ihr": "verbrauchtet",
+        "partizip_2": "verbraucht"
+      },
+      "frequenzRang": 4528,
+      "quelle": "wiktionary:de:verbrauchen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verbrauchen‘ (https://de.wiktionary.org/wiki/verbrauchen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.heizen",
+      "lemma": "heizen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "heizen",
+        "praes_ich": "heize",
+        "praes_du": "heizt",
+        "praes_er_sie_es": "heizt",
+        "praes_wir": "heizen",
+        "praes_ihr": "heizt",
+        "praes_sie_Sie": "heizen",
+        "praet_ich_er_sie_es": "heizte",
+        "praet_du": "heiztest",
+        "praet_wir_sie_Sie": "heizten",
+        "praet_ihr": "heiztet",
+        "partizip_2": "geheizt",
+        "imp_du": "heiz",
+        "imp_ihr": "heizt"
+      },
+      "frequenzRang": 7387,
+      "quelle": "wiktionary:de:heizen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚heizen‘ (https://de.wiktionary.org/wiki/heizen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.abschalten",
+      "lemma": "abschalten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ab"
+      },
+      "formen": {
+        "infinitiv": "abschalten",
+        "verbzusatz": "ab",
+        "praes_ich": "schalte",
+        "praes_du": "schaltest",
+        "praes_er_sie_es": "schaltet",
+        "praes_wir": "schalten",
+        "praes_ihr": "schaltet",
+        "praes_sie_Sie": "schalten",
+        "praet_ich_er_sie_es": "schaltete",
+        "praet_du": "schaltetest",
+        "praet_wir_sie_Sie": "schalteten",
+        "praet_ihr": "schaltetet",
+        "partizip_2": "abgeschaltet",
+        "zu_infinitiv": "abzuschalten",
+        "nebensatz_er_sie_es": "abschaltet",
+        "nebensatz_praet": "abschaltete",
+        "nebensatz_praet_pl": "abschalteten",
+        "imp_du": "schalte",
+        "imp_ihr": "schaltet"
+      },
+      "frequenzRang": 4313,
+      "quelle": "wiktionary:de:abschalten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚abschalten‘ (https://de.wiktionary.org/wiki/abschalten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.recyceln",
+      "lemma": "recyceln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "recyceln",
+        "praes_ich": "recycle",
+        "praes_du": "recycelst",
+        "praes_er_sie_es": "recycelt",
+        "praes_wir": "recyceln",
+        "praes_ihr": "recycelt",
+        "praes_sie_Sie": "recyceln",
+        "praet_ich_er_sie_es": "recycelte",
+        "praet_du": "recyceltest",
+        "praet_wir_sie_Sie": "recycelten",
+        "praet_ihr": "recyceltet",
+        "partizip_2": "gerecycelt",
+        "imp_du": "recycle",
+        "imp_ihr": "recycelt"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.verschmutzen",
+      "lemma": "verschmutzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verschmutzen",
+        "praes_ich": "verschmutze",
+        "praes_du": "verschmutzt",
+        "praes_er_sie_es": "verschmutzt",
+        "praes_wir": "verschmutzen",
+        "praes_ihr": "verschmutzt",
+        "praes_sie_Sie": "verschmutzen",
+        "praet_ich_er_sie_es": "verschmutzte",
+        "praet_du": "verschmutztest",
+        "praet_wir_sie_Sie": "verschmutzten",
+        "praet_ihr": "verschmutztet",
+        "partizip_2": "verschmutzt"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.aussterben",
+      "lemma": "aussterben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "aus",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "aussterben",
+        "verbzusatz": "aus",
+        "praes_ich": "sterbe",
+        "praes_du": "stirbst",
+        "praes_er_sie_es": "stirbt",
+        "praes_wir": "sterben",
+        "praes_ihr": "sterbt",
+        "praes_sie_Sie": "sterben",
+        "praet_ich_er_sie_es": "starb",
+        "praet_du": "starbst",
+        "praet_wir_sie_Sie": "starben",
+        "praet_ihr": "starbt",
+        "partizip_2": "ausgestorben",
+        "zu_infinitiv": "auszusterben",
+        "nebensatz_er_sie_es": "ausstirbt",
+        "nebensatz_praet": "ausstarb",
+        "nebensatz_praet_pl": "ausstarben"
+      },
+      "frequenzRang": 6196,
+      "quelle": "wiktionary:de:aussterben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚aussterben‘ (https://de.wiktionary.org/wiki/aussterben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.milliarde",
+      "lemma": "Milliarde",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Milliarden"
+      },
+      "formen": {
+        "pl": "Milliarden"
+      },
+      "frequenzRang": 1262,
+      "quelle": "wiktionary:de:Milliarde",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Milliarde‘ (https://de.wiktionary.org/wiki/Milliarde), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.rest",
+      "lemma": "Rest",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Reste"
+      },
+      "formen": {
+        "pl": "Reste",
+        "dat_pl": "Resten",
+        "gen_sg": "Restes",
+        "gen_sg_2": "Rests"
+      },
+      "frequenzRang": 808,
+      "quelle": "wiktionary:de:Rest",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rest‘ (https://de.wiktionary.org/wiki/Rest), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e15.s0001",
+      "text": "Unser Stromverbrauch ist im Winter viel höher als im Sommer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0002",
+      "text": "Mit ein paar einfachen Regeln kann jede Familie ihren Stromverbrauch reduzieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0003",
+      "text": "Beim Baden ist der Verbrauch von Wasser viel höher als beim Duschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0004",
+      "text": "Ein alter Kühlschrank verbraucht oft doppelt so viel Strom wie ein neuer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0005",
+      "text": "Wie viel Energie verbrauchen wir eigentlich jeden Tag?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0006",
+      "text": "Eine moderne Lampe verbraucht viel weniger Strom als eine alte Glühbirne.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0007",
+      "text": "Wie heizt ihr das Haus?",
+      "quelle": "tatoeba:370033",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #370033 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e15.s0008",
+      "text": "Heizen ist hier teuer.",
+      "quelle": "tatoeba:5934895",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5934895 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e15.s0009",
+      "text": "Wir heizen unsere Wohnung mit Gas.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0010",
+      "text": "Wenn wir nur auf 20 Grad heizen, sparen wir viel Energie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0011",
+      "text": "Bitte schalte alle Geräte ab, wenn du das Zimmer verlässt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0012",
+      "text": "Nachts schalten wir den Computer ganz ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0013",
+      "text": "Vergiss nicht, den Fernseher abzuschalten!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0014",
+      "text": "Gas ist in den letzten Jahren deutlich teurer geworden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0015",
+      "text": "Früher hat man in Deutschland sehr viel Strom aus Kohle erzeugt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0016",
+      "text": "Als Oma Sevim ein Kind war, hat man viele Wohnungen noch mit Kohle geheizt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0017",
+      "text": "Die neue Anlage auf dem Dach erzeugt Strom für das ganze Haus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0018",
+      "text": "Mit der Sonne kann man Strom und warmes Wasser erzeugen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0019",
+      "text": "Die Kosten für das Licht sind eher gering.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0020",
+      "text": "In der Nacht ist die Temperatur in der Wohnung etwas niedriger.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0021",
+      "text": "Ein neuer Kühlschrank hat einen sehr niedrigen Verbrauch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0022",
+      "text": "Duscht möglichst kurz, dann spart ihr Wasser und Energie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0023",
+      "text": "Den Rest vom Essen stellen wir in den Kühlschrank.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0024",
+      "text": "Die Fenster in der alten Schule sind teilweise kaputt, deshalb geht viel Wärme verloren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0025",
+      "text": "Moderne Lampen halten sehr lange. Zudem brauchen sie wenig Strom.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0026",
+      "text": "Die Leute hier sind die Kälte gewohnt.",
+      "quelle": "tatoeba:396384",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #396384 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e15.s0027",
+      "text": "Durch das alte Fenster kommt die Kälte ins Zimmer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0028",
+      "text": "Bei dieser Kälte ziehe ich lieber einen Pullover an, statt die Heizung höher zu drehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0029",
+      "text": "Aus „der Strom“ und „der Verbrauch“ wird „der Stromverbrauch“.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0030",
+      "text": "Papa, warum ist die Heizung im Flur denn aus?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0031",
+      "text": "Wir heizen nur die Zimmer, in denen wir wirklich sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0032",
+      "text": "Aber im Flur ist die Kälte wirklich unangenehm!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0033",
+      "text": "Dann zieh dir doch einen warmen Pullover an, das kostet nichts.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0034",
+      "text": "Unser Kühlschrank ist schon zwanzig Jahre alt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0035",
+      "text": "Im Sommer fahren wir mit dem Zug an die Küste.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0036",
+      "text": "Wie viel Strom verbraucht eure Familie im Jahr?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0037",
+      "text": "Das weiß ich nicht genau, aber der Verbrauch steht auf der Rechnung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0038",
+      "text": "Wir heizen unser Haus mit Kohle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0039",
+      "text": "Unsere Heizung ist im Keller.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0040",
+      "text": "Wofür braucht ein Haushalt Energie?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0041",
+      "text": "Die Grafik zeigt, wofür ein durchschnittlicher Haushalt in Deutschland Energie verbraucht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0042",
+      "text": "Den größten Teil, etwa 70 Prozent, braucht man zum Heizen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0043",
+      "text": "Etwa 15 Prozent verbraucht man für warmes Wasser, zum Beispiel beim Duschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0044",
+      "text": "Der Rest geht an Geräte wie Kühlschrank, Herd und Waschmaschine und an das Licht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0045",
+      "text": "Der Stromverbrauch für das Licht ist heute relativ gering.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0046",
+      "text": "Wer Energie sparen möchte, sollte deshalb zuerst beim Heizen anfangen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0047",
+      "text": "Schon ein Grad weniger in der Wohnung reduziert den Verbrauch um etwa sechs Prozent.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0048",
+      "text": "Für das Heizen braucht ein Haushalt die meiste Energie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0049",
+      "text": "Das Licht verbraucht mehr Energie als das warme Wasser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0050",
+      "text": "Ein neuer Kühlschrank kostet etwa 500 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0051",
+      "text": "Wo sollte man laut Grafik zuerst Energie sparen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0052",
+      "text": "Beim Heizen der Wohnung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0053",
+      "text": "Beim Licht in der Küche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0054",
+      "text": "Beim Kühlschrank und beim Herd.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0055",
+      "text": "Wir sollten nachts alle Geräte abschalten, damit wir weniger Strom verbrauchen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0056",
+      "text": "Wenn wir ein eigenes Haus hätten, würden wir eine Solaranlage auf das Dach bauen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0057",
+      "text": "Eine kleine Solaranlage für den Balkon kostet heute nicht mehr viel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0058",
+      "text": "Unsere Solaranlage erzeugt im Sommer mehr Strom, als wir brauchen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0059",
+      "text": "An der Küste weht oft ein starker Wind, deshalb nutzt man dort die Windkraft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0060",
+      "text": "Wenn es keinen Wind gäbe, könnte man mit Windkraft keinen Strom erzeugen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0061",
+      "text": "Sonne, Wind und Wasser sind erneuerbare Energien.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0062",
+      "text": "Ein großer Vorteil der Solaranlage ist, dass sie keine Abgase erzeugt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0063",
+      "text": "Ein Nachteil der Windkraft ist, dass der Wind nicht immer gleich stark weht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0064",
+      "text": "Eine Bedingung für die Solaranlage ist, dass der Vermieter zustimmt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0065",
+      "text": "Ich habe die Hoffnung, dass unsere Enkel in einer sauberen Welt leben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0066",
+      "text": "Morgen regnet es vermutlich den ganzen Tag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0067",
+      "text": "Möglicherweise wird der Strom im nächsten Jahr wieder teurer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0068",
+      "text": "Ich vermute, dass der alte Kühlschrank zu viel Strom verbraucht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0069",
+      "text": "Einerseits ist ein Elektroauto teuer, andererseits braucht es kein Benzin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0070",
+      "text": "Einerseits möchte ich Strom sparen, andererseits möchte ich nicht im Dunkeln sitzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0071",
+      "text": "Jan fährt jeden Tag mit dem Fahrrad, sein Bruder hingegen nimmt lieber den Bus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0072",
+      "text": "Der Aufzug ist kaputt. Stattdessen nehmen wir die Treppe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0073",
+      "text": "Eine Solaranlage auf dem Balkon ist nur sinnvoll, wenn genug Sonne darauf scheint.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0074",
+      "text": "Darf ich einen alternativen Plan vorschlagen?",
+      "quelle": "tatoeba:12593045",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12593045 von Waldelfe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e15.s0075",
+      "text": "Wenn ich mehr Zeit hätte, würde ich möglichst oft mit dem Fahrrad zur Arbeit fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0076",
+      "text": "Wenn ich du wäre, würde ich den alten Kühlschrank nicht mehr benutzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0077",
+      "text": "Wenn die Sonne öfter scheinen würde, könnte die Solaranlage mehr Strom erzeugen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0078",
+      "text": "Wenn ich die Schule leiten würde, würde ich auf jedes Dach eine Solaranlage bauen lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0079",
+      "text": "Ich wünschte, unser Haus hätte eine Solaranlage.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0080",
+      "text": "Es wäre schön, wenn alle Schulen eine Solaranlage hätten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0081",
+      "text": "Was würdest du tun, wenn du eine Solaranlage auf dem Balkon hättest?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0082",
+      "text": "Ich würde mein Handy und meinen Laptop nur noch mit Strom von der Sonne aufladen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0083",
+      "text": "Wenn ich ein Auto hätte, würde ich vermutlich weniger zu Fuß gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0084",
+      "text": "Wenn morgen die Sonne scheint, erzeugt die Solaranlage viel Strom.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0085",
+      "text": "Sollen wir eine Solaranlage für den Balkon kaufen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0086",
+      "text": "Ich weiß nicht. Unser Balkon liegt im Norden, da scheint kaum Sonne.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0087",
+      "text": "Stimmt, dann wäre so eine Anlage vermutlich nicht sinnvoll.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0088",
+      "text": "Dann erzeugt die Anlage bestimmt sehr viel Strom.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0089",
+      "text": "An der Küste gibt es oft viel Wind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0090",
+      "text": "Was würdest du ändern, wenn du die Schule leiten würdest?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0091",
+      "text": "Ich würde zuerst in allen Klassen moderne Lampen einbauen lassen, die wenig Strom verbrauchen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0092",
+      "text": "Ich habe die Schule letztes Jahr verlassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0093",
+      "text": "Die Schule hat schon eine Solaranlage auf dem Dach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0094",
+      "text": "Die Reste von Obst und Gemüse gehören in den Biomüll.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0095",
+      "text": "In Deutschland ist die Mülltrennung sehr wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0096",
+      "text": "Yazan erklärt Opa Kamāl, wie die Mülltrennung in Deutschland funktioniert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0097",
+      "text": "Durch Recycling wird aus altem Papier wieder neues Papier.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0098",
+      "text": "Recycling spart Rohstoffe und Energie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0099",
+      "text": "Nicht jedes Plastik kann man recyceln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0100",
+      "text": "Glas lässt sich sehr gut recyceln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0101",
+      "text": "Alte Handys sollte man nicht wegwerfen, sondern recyceln lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0102",
+      "text": "Es gab immer weniger Rohstoffe, aber immer mehr Menschen.",
+      "quelle": "tatoeba:10244354",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #10244354 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e15.s0103",
+      "text": "Die Ressourcen sind begrenzt.",
+      "quelle": "tatoeba:12181207",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12181207 von xallace (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e15.s0104",
+      "text": "Die Verschmutzung der Luft ist in großen Städten besonders hoch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0105",
+      "text": "Man darf die Natur nicht verschmutzen.",
+      "quelle": "tatoeba:13027985",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13027985 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e15.s0106",
+      "text": "Ein Elektroauto erzeugt beim Fahren keine Abgase.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0107",
+      "text": "Man kann viel Müll vermeiden, indem man beim Einkaufen eine eigene Tasche benutzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0108",
+      "text": "Wir sparen Wasser, indem wir kürzer duschen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0109",
+      "text": "Nachhaltigkeit bedeutet, dass wir heute so leben, dass auch unsere Enkel gut leben können.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0110",
+      "text": "Es ist nachhaltiger, ein kaputtes Gerät zu reparieren, statt ein neues zu kaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0111",
+      "text": "Um die Abgase zu reduzieren, fahren in vielen Städten Busse mit Strom.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0112",
+      "text": "Auf der Welt leben acht Milliarden Menschen.",
+      "quelle": "tatoeba:12281812",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12281812 von felix63 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e15.s0113",
+      "text": "Familie Kaya betreibt einen kleinen Laden für gebrauchte Fahrräder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0114",
+      "text": "Ich nehme eine eigene Flasche mit, um keinen Abfall zu produzieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0115",
+      "text": "Wir trennen den Müll, damit man die Rohstoffe recyceln kann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0116",
+      "text": "Elif erklärt Oma Sevim die Tonnen, damit sie den Abfall richtig trennt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0117",
+      "text": "Die Stadt pflanzt neue Bäume, damit die Verschmutzung der Luft sinkt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0118",
+      "text": "Manche Menschen leben, um zu essen. Andere hingegen essen, um zu leben.",
+      "quelle": "tatoeba:6556418",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6556418 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e15.s0119",
+      "text": "Wohin gehört diese Verpackung aus Plastik?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0120",
+      "text": "In die gelbe Tonne. Das Plastik wird später recycelt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0121",
+      "text": "Und der Rest vom Apfel?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0122",
+      "text": "Der kommt in den Biomüll.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0123",
+      "text": "Der kommt ins Altpapier.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0124",
+      "text": "Die Äpfel sind vom Markt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0125",
+      "text": "Warum trennt ihr eigentlich den Müll?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0126",
+      "text": "Damit man die Rohstoffe noch einmal verwenden kann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0127",
+      "text": "Am Montag wird der Müll abgeholt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0128",
+      "text": "Wir haben leider keinen Garten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0129",
+      "text": "Ich nehme immer eine eigene Tasche mit, um weniger Abfall zu produzieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0130",
+      "text": "Wegen des Klimawandels werden die Sommer immer heißer und trockener.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0131",
+      "text": "Bei einem Unwetter bleibt man am besten im Haus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0132",
+      "text": "Bei Hochwasser darf man nicht in die Nähe des Flusses gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0133",
+      "text": "Bei einem Gewitter sollte man sofort aus dem Wasser gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0134",
+      "text": "Die lange Trockenheit ist ein großes Problem für die Bauern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0135",
+      "text": "Es regnete so heftig, dass die Straßen voller Wasser waren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0136",
+      "text": "Im Juli war es extrem heiß, sodass der Unterricht früher zu Ende war.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0137",
+      "text": "Ein Hochwasser im Sommer ist hier äußerst selten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0138",
+      "text": "Die Trockenheit hat große Auswirkungen auf die Ernte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0139",
+      "text": "Der Mensch hat einen großen Einfluss auf das Klima.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0140",
+      "text": "Die Veränderung des Klimas sieht man zum Beispiel an den Wintern ohne Schnee.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0141",
+      "text": "Die Welt verändert sich.",
+      "quelle": "tatoeba:13020704",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13020704 von Waldelfe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e15.s0142",
+      "text": "In der Nacht ist die Temperatur auf fünf Grad gesunken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0143",
+      "text": "Im Sommer sinkt das Wasser im See so stark, dass man die Steine sieht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0144",
+      "text": "Seit wir neue Fenster haben, ist unser Verbrauch deutlich gesunken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0145",
+      "text": "Auch Familie Polat war vom Hochwasser betroffen, aber allen geht es gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0146",
+      "text": "In manchen Gebieten der Welt regnet es fast nie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0147",
+      "text": "Im Frühling war es extrem trocken, sodass die Ernte klein war.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0148",
+      "text": "Hast du gehört? Für heute Nachmittag gibt es eine Warnung vor Gewitter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0149",
+      "text": "Oh nein, wir wollten doch im See schwimmen gehen!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0150",
+      "text": "Das sollten wir lieber verschieben. Bei Gewitter ist das Wasser gefährlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0151",
+      "text": "Dann nehmen wir eine Flasche Saft mit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0152",
+      "text": "Das Wasser im See ist sehr sauber.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0153",
+      "text": "Warum ist das Gemüse auf dem Markt so teuer?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0154",
+      "text": "Wegen der Trockenheit war die Ernte in diesem Jahr schlecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0155",
+      "text": "Weil der Markt nur am Samstag stattfindet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0156",
+      "text": "Die Tomaten sind heute besonders frisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0157",
+      "text": "Wegen des Klimawandels gibt es heute häufiger extremes Wetter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0158",
+      "text": "Überall sind Insekten.",
+      "quelle": "tatoeba:1464046",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1464046 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e15.s0159",
+      "text": "Viele Insekten brauchen Blumen, um Nahrung zu finden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0160",
+      "text": "Jedes Jahr sterben weltweit viele Tierarten aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0161",
+      "text": "Wenn die Bienen aussterben würden, hätten wir viel weniger Obst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0162",
+      "text": "Wenn die Wiesen verschwinden, verschwinden auch die Insekten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0163",
+      "text": "Das Eis in den Bergen verschwindet jedes Jahr ein bisschen mehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0164",
+      "text": "Wenn man einen Wald zerstört, verlieren viele Tiere ihr Zuhause.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0165",
+      "text": "Mit dem Pfand will man verhindern, dass Flaschen in der Natur landen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0166",
+      "text": "Die Schule plant mehrere Maßnahmen, um Energie zu sparen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0167",
+      "text": "Klimaschutz geht uns alle an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0168",
+      "text": "Schon Kinder können viel für den Umweltschutz tun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0169",
+      "text": "Ein wichtiger Aspekt ist auch, woher das Obst kommt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0170",
+      "text": "Letztlich muss jede Familie selbst entscheiden, wie sie Energie spart.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0171",
+      "text": "Der Klimawandel ist ein globales Problem.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0172",
+      "text": "Wir müssen auch an künftige Generationen denken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0173",
+      "text": "Die Ernte ist stark vom Wetter abhängig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0174",
+      "text": "Auf dem Markt verkauft eine Bäuerin Eier und Kartoffeln von ihrem Hof.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0175",
+      "text": "Die Fläche auf dem Dach reicht für eine große Solaranlage.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0176",
+      "text": "Wie wäre es, wenn wir im Garten der Schule eine Wiese für Insekten pflanzen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0177",
+      "text": "Mit der Bahn verbraucht man pro Person viel weniger Energie als mit dem Flugzeug.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0178",
+      "text": "Was können wir in unserer Klasse für den Klimaschutz tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0179",
+      "text": "Wir könnten zum Beispiel in den Pausen das Licht abschalten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0180",
+      "text": "Gute Idee! Und wer kümmert sich darum?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0181",
+      "text": "Jede Woche sind zwei andere Schüler dafür verantwortlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0182",
+      "text": "Das Licht im Flur ist schon seit gestern kaputt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0183",
+      "text": "In der Pause essen wir meistens einen Apfel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0184",
+      "text": "Warum gibt es im Garten der Schule jetzt eine wilde Wiese?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0185",
+      "text": "Damit die Insekten genug Blumen finden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0186",
+      "text": "Nein, an unserer Schule gibt es keinen Garten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0187",
+      "text": "Die Wiese liegt direkt hinter der Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0188",
+      "text": "Eine Schule spart Strom und Geld",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0189",
+      "text": "Die Schülerinnen und Schüler einer Schule in Wetzlar haben ein Jahr lang möglichst viel Energie gespart.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0190",
+      "text": "In jeder Klasse gibt es jetzt zwei Schüler, die für die Energie verantwortlich sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0191",
+      "text": "Sie schalten in den Pausen das Licht ab und kontrollieren abends die Geräte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0192",
+      "text": "Zudem öffnen die Klassen im Winter die Fenster nur noch kurz, aber ganz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0193",
+      "text": "Das Ergebnis: Der Stromverbrauch der Schule ist um 15 Prozent gesunken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0194",
+      "text": "Für das Heizen braucht die Schule außerdem deutlich weniger Gas.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0195",
+      "text": "Insgesamt hat die Schule so etwa 6000 Euro gespart.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0196",
+      "text": "Die Hälfte des Geldes bekommt die Schule von der Stadt zurück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0197",
+      "text": "Davon möchten die Schüler Bänke und Pflanzen für den Hof kaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0198",
+      "text": "Künftig sollen auch andere Schulen in der Stadt bei dem Projekt mitmachen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0199",
+      "text": "In jeder Klasse sind zwei Schüler für die Energie verantwortlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0200",
+      "text": "Der Stromverbrauch der Schule ist um die Hälfte gesunken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0201",
+      "text": "Die Schule hat auch eine Solaranlage auf dem Dach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0202",
+      "text": "Was möchten die Schüler mit dem Geld kaufen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0203",
+      "text": "Bänke und Pflanzen für den Hof.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0204",
+      "text": "Neue Computer für jede Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0205",
+      "text": "Eine große Solaranlage für das Dach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0206",
+      "text": "Ihre Schule möchte weniger Energie verbrauchen. Schreiben Sie einen Vorschlag an die Schülervertretung. Nennen Sie mindestens zwei Maßnahmen und erklären Sie, warum sie sinnvoll sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0207",
+      "text": "Liebe Schülervertretung, ich habe einen Vorschlag, wie wir an unserer Schule Energie sparen können. In vielen Klassen brennt in den Pausen das Licht, und nachts laufen oft die Computer. Deshalb sollte in jeder Klasse ein Team für die Energie verantwortlich sein. Es schaltet in den Pausen das Licht ab und prüft abends alle Geräte. Zudem könnten wir im Winter nur kurz lüften, statt die Fenster lange offen zu lassen. So würde die Schule weniger Energie verbrauchen. Mit dem gesparten Geld könnte sie zum Beispiel neue Bücher kaufen. Was meint ihr? Viele Grüße, Selin",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0208",
+      "text": "Ich schlage vor, dass jede Klasse ein Team für Energie hat, weil wir so den Stromverbrauch reduzieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0209",
+      "text": "Wer verbraucht nachts Strom?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0210",
+      "text": "Yazans Klasse macht ein Projekt zum Thema Energie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0211",
+      "text": "Eine Woche lang misst die Klasse den Stromverbrauch der Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0212",
+      "text": "Jeden Morgen und jeden Abend zeigt der Hausmeister den Schülern den Zähler im Keller.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0213",
+      "text": "Der Lehrer, Herr Hartmann, gibt der Klasse eine Aufgabe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0214",
+      "text": "Schreibt die Zahlen jeden Tag in eine Tabelle, damit wir sie am Ende vergleichen können.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0215",
+      "text": "Am Donnerstag sieht sich Yazan die Tabelle genau an, Jan sitzt neben ihm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0216",
+      "text": "Seltsam! Nachts verbraucht die Schule fast so viel Strom wie am Nachmittag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0217",
+      "text": "Das kann nicht sein. Nachts ist doch niemand in der Schule!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0218",
+      "text": "Vermutlich laufen viele Geräte die ganze Nacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0219",
+      "text": "Am Abend gehen die beiden mit dem Hausmeister durch die Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0220",
+      "text": "In vielen Räumen sind die Computer noch an, und die Kopierer laufen auch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0221",
+      "text": "Und im Flur brennt sogar das Licht, obwohl niemand da ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0222",
+      "text": "Wenn man alle Geräte abends abschalten würde, könnte die Schule viel Geld sparen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0223",
+      "text": "Am nächsten Tag rechnet die Klasse den Verbrauch genau aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0224",
+      "text": "Ihr habt recht: Der Verbrauch in der Nacht ist erheblich, fast ein Drittel der ganzen Woche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0225",
+      "text": "Die Klasse schreibt einen Brief mit drei Vorschlägen an die Schulleitung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0226",
+      "text": "Erstens soll jede Klasse ihre Geräte abends selbst abschalten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0227",
+      "text": "Zweitens soll das Licht im Flur nach zehn Minuten von allein ausgehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0228",
+      "text": "Drittens misst jede Woche eine andere Klasse den Verbrauch, sodass alle mitmachen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0229",
+      "text": "Zwei Wochen später antwortet die Schulleitung: Alle drei Vorschläge werden umgesetzt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0230",
+      "text": "Ich bin stolz auf euch! So sieht Klimaschutz im Alltag aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0231",
+      "text": "Was misst die Klasse eine Woche lang?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0232",
+      "text": "Den Stromverbrauch der Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0233",
+      "text": "Die Temperatur in den Klassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0234",
+      "text": "Den Abfall in der Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0235",
+      "text": "Was fällt Yazan am Donnerstag auf?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0236",
+      "text": "Die Schule verbraucht auch nachts viel Strom.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0237",
+      "text": "Am Nachmittag ist der Verbrauch sehr gering.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0238",
+      "text": "In der Tabelle fehlen viele Zahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0239",
+      "text": "Was finden Yazan und Jan am Abend in der Schule?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0240",
+      "text": "Viele Geräte und das Licht im Flur sind noch an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0241",
+      "text": "Alle Räume sind dunkel und leer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0242",
+      "text": "In vielen Räumen sind die Fenster offen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0243",
+      "text": "Was antwortet die Schulleitung?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0244",
+      "text": "Sie setzt alle drei Vorschläge um.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0245",
+      "text": "Sie lehnt die Vorschläge ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0246",
+      "text": "Sie möchte nur den ersten Vorschlag umsetzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0247",
+      "text": "Wenn alle Klassen ihre Geräte abends abschalten würden, könnte die Schule viel Strom sparen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0248",
+      "text": "Eine Solaranlage für den Balkon?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0249",
+      "text": "Oma Sevim und Derya trinken Tee auf dem Balkon.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0250",
+      "text": "Die Sonne scheint, und es ist schon am Vormittag sehr warm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0251",
+      "text": "Schau mal, Derya! Bei Familie Kaya hängt jetzt eine kleine Solaranlage am Balkon.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0252",
+      "text": "Ja, die habe ich auch gesehen. Damit erzeugen sie ihren eigenen Strom.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0253",
+      "text": "Wenn wir so eine Anlage hätten, würde ich die Waschmaschine nur noch mittags laufen lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0254",
+      "text": "Gute Idee! Dann würden wir den Strom direkt verbrauchen, wenn die Sonne scheint.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0255",
+      "text": "Und ich würde den Kuchen nicht mehr abends backen, sondern am Nachmittag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0256",
+      "text": "Möglicherweise wäre unsere Rechnung für den Strom dann um ein Viertel niedriger.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0257",
+      "text": "Aber wäre so eine Anlage nicht sehr teuer?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0258",
+      "text": "Einerseits kostet sie am Anfang etwas Geld, andererseits spart man dann jedes Jahr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0259",
+      "text": "Und müssten wir nicht zuerst den Vermieter fragen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0260",
+      "text": "Ja, das wäre die wichtigste Bedingung. Ohne seine Zustimmung geht es nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0261",
+      "text": "Dann ruf ihn doch morgen an! Wenn er Ja sagt, kaufen wir eine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0262",
+      "text": "Gern! Ich hätte nicht gedacht, dass dich das so interessiert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0263",
+      "text": "Warum nicht? Auch eine Oma möchte etwas für die Umwelt tun!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0264",
+      "text": "Am nächsten Tag ruft Derya den Vermieter an. Er hat nichts dagegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0265",
+      "text": "Was würde Oma Sevim mit einer Solaranlage anders machen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0266",
+      "text": "Sie würde die Waschmaschine mittags laufen lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0267",
+      "text": "Sie würde jeden Abend einen Kuchen backen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0268",
+      "text": "Sie würde weniger Tee auf dem Balkon trinken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0269",
+      "text": "Um wie viel wäre die Rechnung möglicherweise niedriger?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0270",
+      "text": "Um ein Viertel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0271",
+      "text": "Um die Hälfte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0272",
+      "text": "Um ein Drittel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0273",
+      "text": "Was ist die wichtigste Bedingung für die Anlage?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0274",
+      "text": "Der Vermieter muss zustimmen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0275",
+      "text": "Die Sonne muss jeden Tag scheinen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0276",
+      "text": "Familie Kaya muss helfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0277",
+      "text": "Was sagt der Vermieter?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0278",
+      "text": "Er hat nichts gegen die Anlage.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0279",
+      "text": "Er möchte keine Anlage am Balkon.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0280",
+      "text": "Er möchte zuerst mit Familie Kaya sprechen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0281",
+      "text": "Wenn wir eine Solaranlage hätten, würden wir den Strom direkt verbrauchen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0282",
+      "text": "Der Vorteil der Bahn ist, dass man unterwegs lesen kann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0283",
+      "text": "Wir fahren heute nicht mit dem Auto. Stattdessen nehmen wir die Fahrräder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0284",
+      "text": "Wenn ich einen Garten hätte, würde ich viele Blumen für Insekten pflanzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0285",
+      "text": "Wenn das Wetter schön wäre, würden wir mit dem Fahrrad zum See fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0286",
+      "text": "Ihr spart Energie, indem ihr das Licht ausschaltet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0287",
+      "text": "Herr Hartmann erklärt die Tabelle noch einmal, damit alle Schüler sie verstehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0288",
+      "text": "Die Trockenheit ist für den Wald ein großes Problem.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0289",
+      "text": "Die Kälte war so stark, dass wir die Heizung den ganzen Tag laufen ließen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0290",
+      "text": "Der Bus kam nicht, sodass Jan mit dem Fahrrad zur Schule fuhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0291",
+      "text": "Der letzte Sommer war extrem trocken.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0292",
+      "text": "Ohne die Bauern und die Landwirtschaft hätten wir nichts zu essen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0293",
+      "text": "Wenn ich die Schule leiten würde, würde ich mit allen Klassen eine Wiese für Insekten pflanzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0294",
+      "text": "Ich schlage vor, dass wir weniger Plastik kaufen, damit wir weniger Abfall produzieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0295",
+      "text": "Warum gehst du heute zu Fuß?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0296",
+      "text": "Ich möchte möglichst wenig Abgase erzeugen. Zudem ist das Wetter schön.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0297",
+      "text": "Ich fahre jeden Tag mit dem Bus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0298",
+      "text": "Die Schule beginnt um acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0299",
+      "text": "Würdest du gern auf dem Land leben?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0300",
+      "text": "Einerseits ja, andererseits hätte ich dort keinen Bus zur Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0301",
+      "text": "Ja, ich lebe seit zwei Jahren auf dem Land.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0302",
+      "text": "Ich fahre am Wochenende zu meinen Großeltern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0303",
+      "text": "Was kann man im Alltag tun, um möglichst viel Energie zu sparen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0304",
+      "text": "Man kann zum Beispiel das Licht abschalten, wenn man den Raum verlässt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0305",
+      "text": "Und was kann man beim Heizen tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0306",
+      "text": "Man sollte möglichst nicht über 20 Grad heizen und nur kurz lüften.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0307",
+      "text": "Man sollte die Fenster den ganzen Tag offen lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0308",
+      "text": "Die Anlage für die Heizung ist im Keller.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0309",
+      "text": "Was würdest du machen, wenn du einen großen Garten hättest?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0310",
+      "text": "Ich würde Gemüse pflanzen und eine Wiese für Insekten lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0311",
+      "text": "Ich habe einen großen Garten mit vielen Bäumen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0312",
+      "text": "Mein Opa hatte früher einen Garten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0313",
+      "text": "Tipps: So spart man Wasser",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0314",
+      "text": "Eine Familie mit vier Personen verbraucht in Deutschland etwa 500 Liter Wasser am Tag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0315",
+      "text": "Man kann den Verbrauch erheblich reduzieren, indem man duscht, statt zu baden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0316",
+      "text": "Wenn man die Zähne putzt, sollte man das Wasser möglichst nicht laufen lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0317",
+      "text": "Die Waschmaschine sollte man möglichst nur einschalten, wenn sie voll ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0318",
+      "text": "Zudem kann man Regen sammeln und damit die Pflanzen im Garten gießen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0319",
+      "text": "Wer duscht, verbraucht weniger Wasser als jemand, der badet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0320",
+      "text": "Wann sollte man die Waschmaschine einschalten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0321",
+      "text": "Wenn sie voll ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0322",
+      "text": "Jeden Morgen um sieben Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0323",
+      "text": "Nur am Wochenende.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0324",
+      "text": "Wasser ist in Deutschland teurer als Strom.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0325",
+      "text": "Wir fahren mit der Bahn, um weniger Abgase zu erzeugen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0326",
+      "text": "Die Lehrerin öffnet das Fenster nur kurz, damit die Kälte nicht in den Raum kommt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0327",
+      "text": "Es hat lange nicht geregnet, sodass die Felder äußerst trocken sind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0328",
+      "text": "Wenn ich mehr Geld hätte, würde ich mir möglicherweise ein Elektroauto kaufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0329",
+      "text": "Wenn es keine Kohle mehr gäbe, bräuchten wir mehr Strom aus Sonne und Wind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0330",
+      "text": "Der Umweltschutz ist für unsere Zukunft sehr wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0331",
+      "text": "Bei uns zu Hause schalten wir abends alle Geräte ab, die wir nicht brauchen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0332",
+      "text": "Ich schlage vor, dass wir weniger heizen und dafür einen warmen Pullover anziehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e15.s0333",
+      "text": "Wenn ich die Schule leiten würde, würde ich die Heizung nachts abschalten lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e15.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wofür wir im Haushalt Energie verbrauchen und wie man sie spart.",
+        "tr": "Evde enerjiyi ne için harcadığımızı ve nasıl tasarruf edileceğini söyleyebilirim.",
+        "ar": "أستطيع أن أقول فيمَ نستهلك الطاقة في البيت وكيف نوفّرها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e15.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.stromverbrauch",
+          "ablenker": ["de.a2.e04.heizung", "de.a2.e06.rechnung"]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.heizen",
+            "de.b1.e15.abschalten",
+            "de.b1.e15.erzeugen",
+            "de.b1.e15.kohle",
+            "de.b1.e15.gas",
+            "de.b1.e15.kaelte"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a04",
+          "typ": "formen",
+          "zeilen": [
+            "der Strom + der Verbrauch",
+            "der Müll + die Trennung",
+            "das Klima + der Schutz",
+            "der Wind + die Kraft",
+            "das Tier + die Art",
+            "die Umwelt + der Schutz"
+          ],
+          "spalten": ["zusammen mit Artikel"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["der Stromverbrauch"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["die Mülltrennung"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["der Klimaschutz"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["die Windkraft"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["die Tierart"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["der Umweltschutz"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0009",
+          "wort": 1,
+          "ablenker": ["sparen", "erzeugen"]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.niedrig",
+            "de.b1.e15.moeglichst",
+            "de.b1.e15.teilweise",
+            "de.b1.e15.zudem",
+            "de.b1.e15.rest",
+            "de.b1.e15.anlage"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0030"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0031"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0032"
+            }
+          ],
+          "antwort": "de.b1.e15.s0033",
+          "ablenker": ["de.b1.e15.s0034", "de.b1.e15.s0035"]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.gering",
+          "ablenker": ["de.a1.e11.hoch", "de.a1.e06.teuer"]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a09",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e15.s0040",
+          "absaetze": [
+            "de.b1.e15.s0041",
+            "de.b1.e15.s0042",
+            "de.b1.e15.s0043",
+            "de.b1.e15.s0044",
+            "de.b1.e15.s0045",
+            "de.b1.e15.s0046",
+            "de.b1.e15.s0047"
+          ],
+          "glossen": ["de.b1.e12.durchschnittlich", "de.b1.e09.relativ"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e15.s0048",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e15.s0049",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e15.s0050",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e15.s0051",
+              "antwort": "de.b1.e15.s0052",
+              "ablenker": ["de.b1.e15.s0053", "de.b1.e15.s0054"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e15.s0027",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Kälte kommt durch das alte Fenster ins Zimmer.",
+            "Ins Zimmer kommt die Kälte durch das alte Fenster.",
+            "Die Kälte kommt ins Zimmer durch das alte Fenster."
+          ],
+          "ablenker": ["Wärme", "aus"]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e15.heizen",
+          "ablenker": ["de.a1.e01.heissen"]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0036"
+            }
+          ],
+          "antwort": "de.b1.e15.s0037",
+          "ablenker": ["de.b1.e15.s0038", "de.b1.e15.s0039"]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e15.s0004",
+          "ablenker": ["de.b1.e15.s0021", "de.b1.e15.s0023"]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e15.s0012",
+          "alternativen": [
+            "Wir schalten nachts den Computer ganz ab.",
+            "Den Computer schalten wir nachts ganz ab.",
+            "Wir schalten den Computer nachts ganz ab."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e15.s0014",
+          "nach": "ziel",
+          "alternativen": [
+            "In den letzten Jahren ist Gas deutlich teurer geworden.",
+            "Gas ist in den letzten Jahren viel teurer geworden.",
+            "In den letzten Jahren ist Gas viel teurer geworden.",
+            "Gas ist in den vergangenen Jahren deutlich teurer geworden.",
+            "Gas wurde in den letzten Jahren deutlich teurer.",
+            "In den letzten Jahren wurde Gas deutlich teurer.",
+            "Das Gas ist in den letzten Jahren deutlich teurer geworden."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e15.s0055"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e15.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, was ich tun würde, wenn ich eine Solaranlage hätte.",
+        "tr": "Bir güneş enerjisi sistemim olsaydı ne yapacağımı söyleyebilirim.",
+        "ar": "أستطيع أن أقول ماذا كنت سأفعل لو كان عندي نظام للطاقة الشمسية."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e15.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.solaranlage",
+          "ablenker": ["de.a2.e04.heizung", "de.b1.e14.batterie"]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.windkraft",
+            "de.b1.e15.vorteil",
+            "de.b1.e15.nachteil",
+            "de.b1.e15.bedingung",
+            "de.b1.e15.hoffnung",
+            "de.b1.e15.erneuerbar"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0056",
+          "wort": 5,
+          "ablenker": ["haben", "hatten"]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a05",
+          "typ": "formen",
+          "zeilen": ["ich", "du", "er/sie/es", "wir", "ihr"],
+          "spalten": ["haben", "sein", "werden"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["hätte"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["wäre"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["würde"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["hättest"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["wärst", "wärest"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["würdest"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["hätte"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["wäre"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["würde"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["hätten"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["wären"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 2,
+              "loesungen": ["würden"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["hättet"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["wärt", "wäret"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 2,
+              "loesungen": ["würdet"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e15.moeglicherweise",
+          "ablenker": ["de.a1.e10.bestimmt", "de.a1.e11.kaum"]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0085"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0086"
+            }
+          ],
+          "antwort": "de.b1.e15.s0087",
+          "ablenker": ["de.b1.e15.s0088", "de.b1.e15.s0089"]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a08",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.einerseits",
+            "de.b1.e15.andererseits",
+            "de.b1.e15.stattdessen",
+            "de.b1.e15.sinnvoll",
+            "de.b1.e15.alternativ",
+            "de.b1.e15.vermuten"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.hingegen",
+          "ablenker": ["de.a1.e06.ausserdem", "de.a2.e14.deshalb"]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e15.s0069",
+          "nach": "ziel",
+          "alternativen": [
+            "Ein Elektroauto ist einerseits teuer, andererseits braucht es kein Benzin.",
+            "Einerseits ist ein Elektroauto teuer, es braucht andererseits kein Benzin.",
+            "Ein Elektroauto ist einerseits teuer, es braucht andererseits kein Benzin."
+          ],
+          "ablenker": ["billig", "deshalb"]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a11",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a12",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0075",
+          "wort": 5,
+          "ablenker": ["werde", "wurde"]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e15.s0076",
+          "alternativen": [
+            "Ich würde den alten Kühlschrank nicht mehr benutzen, wenn ich du wäre.",
+            "Den alten Kühlschrank würde ich nicht mehr benutzen, wenn ich du wäre."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e15.s0066",
+          "nach": "ziel",
+          "alternativen": [
+            "Morgen regnet es wahrscheinlich den ganzen Tag.",
+            "Es regnet morgen vermutlich den ganzen Tag.",
+            "Vermutlich regnet es morgen den ganzen Tag.",
+            "Es regnet morgen wahrscheinlich den ganzen Tag.",
+            "Wahrscheinlich regnet es morgen den ganzen Tag.",
+            "Morgen regnet es vermutlich den ganzen Tag lang.",
+            "Morgen wird es vermutlich den ganzen Tag regnen.",
+            "Es wird morgen vermutlich den ganzen Tag regnen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0090"
+            }
+          ],
+          "antwort": "de.b1.e15.s0091",
+          "ablenker": ["de.b1.e15.s0092", "de.b1.e15.s0093"]
+        },
+        {
+          "schluessel": "de.b1.e15.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e15.s0078"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e15.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Müll und Recycling sprechen und sagen, wozu wir etwas tun.",
+        "tr": "Çöp ve geri dönüşüm hakkında konuşabilir ve bir şeyi ne amaçla yaptığımızı söyleyebilirim.",
+        "ar": "أستطيع أن أتحدث عن النفايات وإعادة التدوير وأن أقول لأيّ غرض نفعل شيئًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e15.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.abfall",
+          "ablenker": ["de.a2.e12.verpackung", "de.a2.e12.papier"]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.muelltrennung",
+            "de.b1.e15.rohstoff",
+            "de.b1.e15.verschmutzung",
+            "de.b1.e15.abgas",
+            "de.b1.e15.milliarde",
+            "de.b1.e15.nachhaltigkeit"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0114",
+          "wort": 6,
+          "ablenker": ["damit", "weil"]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e15.recyceln",
+          "ablenker": ["de.a2.e12.wegwerfen", "de.a2.e12.trennen"]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0115",
+          "wort": 4,
+          "ablenker": ["um", "obwohl"]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0119"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0120"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0121"
+            }
+          ],
+          "antwort": "de.b1.e15.s0122",
+          "ablenker": ["de.b1.e15.s0123", "de.b1.e15.s0124"]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a08",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.recycling",
+            "de.b1.e15.ressource",
+            "de.b1.e15.verschmutzen",
+            "de.b1.e15.reduzieren",
+            "de.b1.e15.betreiben",
+            "de.b1.e15.nachhaltig"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.indem",
+          "ablenker": ["de.a2.e10.damit", "de.b1.e07.obwohl"]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e15.s0108",
+          "nach": "ziel",
+          "alternativen": ["Indem wir kürzer duschen, sparen wir Wasser."],
+          "ablenker": ["damit", "länger"]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a11",
+          "typ": "satzbau",
+          "ziel": "de.b1.e15.s0111",
+          "alternativen": ["In vielen Städten fahren Busse mit Strom, um die Abgase zu reduzieren."]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e15.s0100",
+          "ablenker": ["de.b1.e15.s0099", "de.b1.e15.s0098"]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e15.s0095",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Mülltrennung ist in Deutschland sehr wichtig.",
+            "In Deutschland ist Mülltrennung sehr wichtig.",
+            "Mülltrennung ist in Deutschland sehr wichtig.",
+            "In Deutschland ist die Trennung des Mülls sehr wichtig.",
+            "In Deutschland ist es sehr wichtig, den Müll zu trennen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0125"
+            }
+          ],
+          "antwort": "de.b1.e15.s0126",
+          "ablenker": ["de.b1.e15.s0127", "de.b1.e15.s0128"]
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e15.s0106"
+        },
+        {
+          "schluessel": "de.b1.e15.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e15.s0129"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e15.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über extremes Wetter und den Klimawandel sprechen und Folgen nennen.",
+        "tr": "Aşırı hava olayları ve iklim değişikliği hakkında konuşabilir ve sonuçlarını sayabilirim.",
+        "ar": "أستطيع أن أتحدث عن الطقس المتطرّف وتغيّر المناخ وأن أذكر نتائجهما."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e15.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.klimawandel",
+          "ablenker": ["de.a2.e11.klima", "de.a2.e12.umwelt"]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.hochwasser",
+            "de.b1.e15.gewitter",
+            "de.b1.e15.trockenheit",
+            "de.b1.e15.gebiet",
+            "de.b1.e15.veraenderung",
+            "de.b1.e15.einfluss"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0135",
+          "wort": 4,
+          "ablenker": ["weil", "wenn"]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e15.unwetter",
+          "ablenker": ["de.a1.e10.sonne", "de.a2.e11.hitze"]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a06",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.heftig",
+            "de.b1.e15.extrem",
+            "de.b1.e15.erheblich",
+            "de.b1.e15.betroffen",
+            "de.b1.e15.sinken",
+            "de.b1.e15.veraendern"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0148"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0149"
+            }
+          ],
+          "antwort": "de.b1.e15.s0150",
+          "ablenker": ["de.b1.e15.s0151", "de.b1.e15.s0152"]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.auswirkung",
+          "ablenker": ["de.a1.e06.problem", "de.b1.e04.schaden"]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a09",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0136",
+          "wort": 6,
+          "ablenker": ["damit", "obwohl"]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e15.aeusserst",
+          "ablenker": ["de.a1.e11.kaum", "de.a1.e10.vielleicht"]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e15.s0130",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Sommer werden wegen des Klimawandels immer heißer und trockener.",
+            "Wegen des Klimawandels werden die Sommer immer trockener und heißer.",
+            "Die Sommer werden wegen des Klimawandels immer trockener und heißer."
+          ],
+          "ablenker": ["kälter", "weil"]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e15.s0142",
+          "ablenker": ["de.b1.e15.s0144", "de.b1.e15.s0143"]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e15.s0139",
+          "alternativen": ["Einen großen Einfluss auf das Klima hat der Mensch.", "Auf das Klima hat der Mensch einen großen Einfluss."]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e15.s0137",
+          "nach": "ziel",
+          "alternativen": [
+            "Hochwasser im Sommer ist hier äußerst selten.",
+            "Ein Hochwasser im Sommer ist hier sehr selten.",
+            "Hier ist ein Hochwasser im Sommer äußerst selten.",
+            "Ein Hochwasser ist hier im Sommer äußerst selten.",
+            "Im Sommer ist ein Hochwasser hier äußerst selten.",
+            "Hochwasser im Sommer ist hier sehr selten.",
+            "Hier ist Hochwasser im Sommer äußerst selten."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0153"
+            }
+          ],
+          "antwort": "de.b1.e15.s0154",
+          "ablenker": ["de.b1.e15.s0155", "de.b1.e15.s0156"]
+        },
+        {
+          "schluessel": "de.b1.e15.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e15.s0157"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e15.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Vorschläge zum Schutz von Natur und Klima machen und begründen.",
+        "tr": "Doğayı ve iklimi korumak için önerilerde bulunabilir ve bunları gerekçelendirebilirim.",
+        "ar": "أستطيع أن أقدّم اقتراحات لحماية الطبيعة والمناخ وأن أعلّلها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e15.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.insekt",
+          "ablenker": ["de.a2.e12.biene", "de.a2.e12.pflanze"]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.tierart",
+            "de.b1.e15.aussterben",
+            "de.b1.e15.zerstoeren",
+            "de.b1.e15.verhindern",
+            "de.b1.e15.massnahme",
+            "de.b1.e15.bauer"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a03",
+          "typ": "formen",
+          "zeilen": ["sinken", "verschwinden", "aussterben", "zerstören"],
+          "spalten": ["er/sie/es – Präsens", "Präteritum", "Perfekt"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["sinkt"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["sank"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["ist gesunken"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["verschwindet"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["verschwand"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["ist verschwunden"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["stirbt aus"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["starb aus"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 2,
+              "loesungen": ["ist ausgestorben"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["zerstört"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["zerstörte"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 2,
+              "loesungen": ["hat zerstört"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e15.verschwinden",
+          "ablenker": ["de.a2.e12.entdecken", "de.a2.e12.wachsen"]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a05",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.landwirtschaft",
+            "de.b1.e15.flaeche",
+            "de.b1.e15.aspekt",
+            "de.b1.e15.letztlich",
+            "de.b1.e15.global",
+            "de.b1.e15.kuenftig"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a06",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0178"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0179"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0180"
+            }
+          ],
+          "antwort": "de.b1.e15.s0181",
+          "ablenker": ["de.b1.e15.s0182", "de.b1.e15.s0183"]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a08",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e15.s0188",
+          "absaetze": [
+            "de.b1.e15.s0189",
+            "de.b1.e15.s0190",
+            "de.b1.e15.s0191",
+            "de.b1.e15.s0192",
+            "de.b1.e15.s0193",
+            "de.b1.e15.s0194",
+            "de.b1.e15.s0195",
+            "de.b1.e15.s0196",
+            "de.b1.e15.s0197",
+            "de.b1.e15.s0198"
+          ],
+          "glossen": ["de.a2.e13.verantwortlich", "de.b1.e12.insgesamt"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e15.s0199",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e15.s0200",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e15.s0201",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e15.s0202",
+              "antwort": "de.b1.e15.s0203",
+              "ablenker": ["de.b1.e15.s0204", "de.b1.e15.s0205"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.umweltschutz",
+          "ablenker": ["de.a2.e12.umwelt", "de.a2.e13.projekt"]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a10",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0166",
+          "wort": 5,
+          "ablenker": ["damit", "weil"]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e15.abhaengig",
+          "ablenker": ["de.a2.e13.verantwortlich", "de.b1.e14.nuetzlich"]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e15.s0170",
+          "nach": "ziel",
+          "alternativen": ["Jede Familie muss letztlich selbst entscheiden, wie sie Energie spart."],
+          "ablenker": ["niemand", "weil"]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e15.s0162",
+          "ablenker": ["de.b1.e15.s0163", "de.b1.e15.s0159"]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0184"
+            }
+          ],
+          "antwort": "de.b1.e15.s0185",
+          "ablenker": ["de.b1.e15.s0186", "de.b1.e15.s0187"]
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a15",
+          "typ": "sprechen",
+          "satz": "de.b1.e15.s0208"
+        },
+        {
+          "schluessel": "de.b1.e15.l05.a16",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e15.s0206",
+          "woerter": {
+            "min": 90,
+            "max": 110
+          },
+          "pflichtwoerter": ["Energie", "Vorschlag"],
+          "muster": ["de.b1.e15.s0207"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e15.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte und ein Gespräch über Energie im Alltag verstehen.",
+        "tr": "Günlük hayatta enerji hakkında bir hikâyeyi ve bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة وحوارًا عن الطاقة في الحياة اليومية."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e15.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e15.s0209",
+          "zeilen": [
+            {
+              "satz": "de.b1.e15.s0210"
+            },
+            {
+              "satz": "de.b1.e15.s0211"
+            },
+            {
+              "satz": "de.b1.e15.s0212"
+            },
+            {
+              "satz": "de.b1.e15.s0213"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0214"
+            },
+            {
+              "satz": "de.b1.e15.s0215"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0216"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e15.s0217"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0218"
+            },
+            {
+              "satz": "de.b1.e15.s0219"
+            },
+            {
+              "satz": "de.b1.e15.s0220"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e15.s0221"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0222"
+            },
+            {
+              "satz": "de.b1.e15.s0223"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0224"
+            },
+            {
+              "satz": "de.b1.e15.s0225"
+            },
+            {
+              "satz": "de.b1.e15.s0226"
+            },
+            {
+              "satz": "de.b1.e15.s0227"
+            },
+            {
+              "satz": "de.b1.e15.s0228"
+            },
+            {
+              "satz": "de.b1.e15.s0229"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0230"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.b1.e15.s0231",
+              "antwort": "de.b1.e15.s0232",
+              "ablenker": ["de.b1.e15.s0233", "de.b1.e15.s0234"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.b1.e15.s0235",
+              "antwort": "de.b1.e15.s0236",
+              "ablenker": ["de.b1.e15.s0237", "de.b1.e15.s0238"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.b1.e15.s0239",
+              "antwort": "de.b1.e15.s0240",
+              "ablenker": ["de.b1.e15.s0241", "de.b1.e15.s0242"]
+            },
+            {
+              "nach": 19,
+              "frage": "de.b1.e15.s0243",
+              "antwort": "de.b1.e15.s0244",
+              "ablenker": ["de.b1.e15.s0245", "de.b1.e15.s0246"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e15.s0218",
+          "ablenker": ["de.b1.e15.s0221", "de.b1.e15.s0226"]
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0222",
+          "wort": 6,
+          "ablenker": ["wird", "wurde"]
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e15.s0226",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.b1.e15.s0248",
+          "zeilen": [
+            {
+              "satz": "de.b1.e15.s0249"
+            },
+            {
+              "satz": "de.b1.e15.s0250"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0251"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0252"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0253"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0254"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0255"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0256"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0257"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0258"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0259"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0260"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0261"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0262"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0263"
+            },
+            {
+              "satz": "de.b1.e15.s0264"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.b1.e15.s0265",
+              "antwort": "de.b1.e15.s0266",
+              "ablenker": ["de.b1.e15.s0267", "de.b1.e15.s0268"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.b1.e15.s0269",
+              "antwort": "de.b1.e15.s0270",
+              "ablenker": ["de.b1.e15.s0271", "de.b1.e15.s0272"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.b1.e15.s0273",
+              "antwort": "de.b1.e15.s0274",
+              "ablenker": ["de.b1.e15.s0275", "de.b1.e15.s0276"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.b1.e15.s0277",
+              "antwort": "de.b1.e15.s0278",
+              "ablenker": ["de.b1.e15.s0279", "de.b1.e15.s0280"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0257"
+            }
+          ],
+          "antwort": "de.b1.e15.s0258",
+          "ablenker": ["de.b1.e15.s0260", "de.b1.e15.s0262"]
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0254",
+          "wort": 3,
+          "ablenker": ["werden", "wurden"]
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.b1.e15.s0252",
+          "alternativen": [
+            "Ja, die habe ich auch gesehen. Sie erzeugen damit ihren eigenen Strom.",
+            "Ja, die habe ich auch gesehen. Ihren eigenen Strom erzeugen sie damit."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a09",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e15.s0264"
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e15.s0256",
+          "ablenker": ["de.b1.e15.s0258", "de.b1.e15.s0254"]
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e15.s0263",
+          "nach": "ziel",
+          "alternativen": [
+            "Warum nicht? Auch eine Oma will etwas für die Umwelt tun!",
+            "Wieso nicht? Auch eine Oma möchte etwas für die Umwelt tun!",
+            "Warum nicht? Auch eine Großmutter möchte etwas für die Umwelt tun!",
+            "Warum nicht? Eine Oma möchte auch etwas für die Umwelt tun!",
+            "Warum nicht? Auch Omas möchten etwas für die Umwelt tun!",
+            "Wieso nicht? Auch eine Oma will etwas für die Umwelt tun!"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e15.s0260",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.b1.e15.s0247"
+        },
+        {
+          "schluessel": "de.b1.e15.l06.a14",
+          "typ": "sprechen",
+          "satz": "de.b1.e15.s0281"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e15.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum.",
+        "ar": "أراجع كلمات الوحدة وجملها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e15.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.stromverbrauch",
+            "de.b1.e15.solaranlage",
+            "de.b1.e15.abfall",
+            "de.b1.e15.klimawandel",
+            "de.b1.e15.insekt",
+            "de.b1.e15.kohle"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e15.verbrauch",
+          "ablenker": ["de.b1.e15.rest", "de.a2.e06.rechnung"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e15.s0284",
+          "ablenker": ["de.b1.e15.s0285", "de.b1.e15.s0083"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0285",
+          "wort": 4,
+          "ablenker": ["ist", "war"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a05",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e15.rest",
+          "ablenker": ["de.b1.e07.test"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e15.s0283",
+          "nach": "ziel",
+          "alternativen": [
+            "Heute fahren wir nicht mit dem Auto. Stattdessen nehmen wir die Fahrräder.",
+            "Wir fahren heute nicht mit dem Auto. Wir nehmen stattdessen die Fahrräder.",
+            "Heute fahren wir nicht mit dem Auto. Wir nehmen stattdessen die Fahrräder."
+          ],
+          "ablenker": ["Bus", "deshalb"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.vermutlich",
+          "ablenker": ["de.a1.e11.kaum", "de.a1.e06.fast"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0295"
+            }
+          ],
+          "antwort": "de.b1.e15.s0296",
+          "ablenker": ["de.b1.e15.s0297", "de.b1.e15.s0298"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a09",
+          "typ": "formen",
+          "zeilen": ["müssen", "dürfen", "sollen", "wissen"],
+          "spalten": ["ich – Präteritum", "ich – Konjunktiv II"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["musste"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["müsste"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["durfte"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["dürfte"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["sollte"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["sollte"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["wusste"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["wüsste"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e15.s0289",
+          "ablenker": ["de.b1.e15.s0290", "de.b1.e15.s0147"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a11",
+          "typ": "satzbau",
+          "ziel": "de.b1.e15.s0287",
+          "alternativen": [
+            "Herr Hartmann erklärt noch einmal die Tabelle, damit alle Schüler sie verstehen.",
+            "Damit alle Schüler sie verstehen, erklärt Herr Hartmann die Tabelle noch einmal."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.klimaschutz",
+          "ablenker": ["de.a2.e12.natur", "de.a2.e12.energie"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0286",
+          "wort": 3,
+          "ablenker": ["damit", "um"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a14",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.vorteil",
+            "de.b1.e15.nachteil",
+            "de.b1.e15.hoffnung",
+            "de.b1.e15.aspekt",
+            "de.b1.e15.bauer",
+            "de.b1.e15.gebiet"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e15.s0291",
+          "nach": "ziel",
+          "alternativen": [
+            "Der letzte Sommer war sehr trocken.",
+            "Letzten Sommer war es extrem trocken.",
+            "Der vergangene Sommer war extrem trocken.",
+            "Der letzte Sommer war äußerst trocken.",
+            "Letzten Sommer war es sehr trocken."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a16",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e15.erzeugen",
+          "ablenker": ["de.b1.e15.verbrauchen", "de.a2.e12.sparen"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a17",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e15.s0288"
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a18",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0299"
+            }
+          ],
+          "antwort": "de.b1.e15.s0300",
+          "ablenker": ["de.b1.e15.s0301", "de.b1.e15.s0302"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a19",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e15.s0292",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a20",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.recyceln",
+            "de.b1.e15.verschmutzen",
+            "de.b1.e15.heizen",
+            "de.b1.e15.vermuten",
+            "de.b1.e15.reduzieren",
+            "de.b1.e15.betreiben"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a21",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0290",
+          "wort": 4,
+          "ablenker": ["damit", "obwohl"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a22",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.massnahme",
+          "ablenker": ["de.b1.e10.vorschlag", "de.a1.e07.plan"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a23",
+          "typ": "satzbau",
+          "ziel": "de.b1.e15.s0282",
+          "alternativen": ["Dass man unterwegs lesen kann, ist der Vorteil der Bahn."]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a24",
+          "typ": "frei",
+          "ziel": "de.b1.e15.s0171",
+          "nach": "ziel",
+          "alternativen": [
+            "Der Klimawandel ist ein weltweites Problem.",
+            "Klimawandel ist ein globales Problem.",
+            "Der Klimawandel ist ein Problem für die ganze Welt.",
+            "Klimawandel ist ein weltweites Problem."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a25",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e15.s0077",
+          "ablenker": ["de.b1.e15.s0084", "de.b1.e15.s0058"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a26",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e15.gas",
+          "ablenker": ["de.a2.e03.gast"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a27",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e15.flaeche",
+          "ablenker": ["de.a1.e06.flasche"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a28",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e15.teilweise",
+          "ablenker": ["de.a2.e02.mindestens", "de.a1.e11.sogar"]
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a29",
+          "typ": "sprechen",
+          "satz": "de.b1.e15.s0293"
+        },
+        {
+          "schluessel": "de.b1.e15.l07.a30",
+          "typ": "sprechen",
+          "satz": "de.b1.e15.s0294"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e15.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich sagen kann, wie man Energie spart und was ich unter anderen Bedingungen tun würde.",
+        "tr": "Enerji tasarrufu hakkında konuşabildiğimi ve başka koşullarda ne yapacağımı söyleyebildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أتحدث عن توفير الطاقة وأن أقول ماذا كنت سأفعل في ظروف أخرى."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e15.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e15.abschalten",
+          "ablenker": ["de.a2.e05.messen", "de.a2.e13.reparieren"]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e15.heizen",
+            "de.b1.e15.stromverbrauch",
+            "de.b1.e15.solaranlage",
+            "de.b1.e15.muelltrennung",
+            "de.b1.e15.unwetter",
+            "de.b1.e15.tierart"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0303"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e15.s0304"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0305"
+            }
+          ],
+          "antwort": "de.b1.e15.s0306",
+          "ablenker": ["de.b1.e15.s0307", "de.b1.e15.s0308"]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0328",
+          "wort": 4,
+          "ablenker": ["habe", "hatte"]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e15.s0309"
+            }
+          ],
+          "antwort": "de.b1.e15.s0310",
+          "ablenker": ["de.b1.e15.s0311", "de.b1.e15.s0312"]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e15.s0313",
+          "absaetze": ["de.b1.e15.s0314", "de.b1.e15.s0315", "de.b1.e15.s0316", "de.b1.e15.s0317", "de.b1.e15.s0318"],
+          "glossen": ["de.b1.e15.verbrauch"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e15.s0319",
+              "richtig": "richtig"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e15.s0320",
+              "antwort": "de.b1.e15.s0321",
+              "ablenker": ["de.b1.e15.s0322", "de.b1.e15.s0323"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e15.s0324",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e15.s0325",
+          "nach": "ziel",
+          "alternativen": ["Um weniger Abgase zu erzeugen, fahren wir mit der Bahn."],
+          "ablenker": ["damit", "Auto"]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a08",
+          "typ": "luecke",
+          "ziel": "de.b1.e15.s0326",
+          "wort": 7,
+          "ablenker": ["um", "obwohl"]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.b1.e15.s0327",
+          "alternativen": ["Lange hat es nicht geregnet, sodass die Felder äußerst trocken sind."]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e15.moeglichst",
+          "ablenker": ["de.a2.e02.hoechstens", "de.a1.e11.sogar"]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a11",
+          "typ": "formen",
+          "zeilen": ["haben", "sein", "werden", "können"],
+          "spalten": ["wir – Konjunktiv II"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["hätten"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["wären"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["würden"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["könnten"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e15.s0329",
+          "ablenker": ["de.b1.e15.s0060", "de.b1.e15.s0328"]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a13",
+          "typ": "frei",
+          "ziel": "de.b1.e15.s0330",
+          "nach": "ziel",
+          "alternativen": [
+            "Umweltschutz ist für unsere Zukunft sehr wichtig.",
+            "Der Umweltschutz ist sehr wichtig für unsere Zukunft.",
+            "Für unsere Zukunft ist der Umweltschutz sehr wichtig.",
+            "Umweltschutz ist sehr wichtig für unsere Zukunft.",
+            "Für unsere Zukunft ist Umweltschutz sehr wichtig."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e15.s0331"
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.b1.e15.s0332"
+        },
+        {
+          "schluessel": "de.b1.e15.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e15.s0333"
+        }
+      ]
+    }
+  ]
+}
