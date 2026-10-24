@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 // Lighthouse mobil je Route der Lern-App (L8-02), Median aus --laeufe Läufen (Standard 3). Kopie und Anpassung von
 // _gemeinde/werkzeuge/lighthouse.mjs (dort unverändert):
-// - Drosselung „devtools“ (angewandt: 150 ms RTT, 1,6 Mbit/s, CPU ×4 – maßgeblich gegen localhost, E-026); „simulate“ nur
-//   mit --simulate (gegen localhost zu pessimistisch, halbiert sonst die Laufzeit nicht).
+// - Drosselung „devtools“ mit dem mobilen Profil (Nennwerte 150 ms RTT, 1,6 Mbit/s, CPU ×4 – maßgeblich gegen localhost,
+//   E-026). Angewandt werden bei „devtools“ laut configSettings 562,5 ms Anfragelatenz (RTT × 3,75) und 1474,56 kbit/s
+//   (Durchsatz × 0,9) – strenger als die Nennwerte. „simulate“ nur mit --simulate (gegen localhost zu pessimistisch).
 // - Schwellen je Art (routen.mjs): JS gesamt 180/210/230 KB nach KERN 4.0 §9; SEO nur auf indexierbaren Seiten.
 // - JS je Route als Summe gz -9 je Datei (wie scripts/lernapp-budget.mjs), dazu die Übertragungsgröße laut Lighthouse.
 // - Je Route die Last der Maschine (`uptime`); verfehlt eine Route eine Schwelle bei Last > 1,5, wird sie einmal nachgemessen,
