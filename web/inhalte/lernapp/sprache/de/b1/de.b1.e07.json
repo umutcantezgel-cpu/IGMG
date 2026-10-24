@@ -1,0 +1,5198 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e07",
+    "reihenfolge": 8,
+    "thema": {
+      "de": "Elternabend und Zeugnis",
+      "tr": "Veli toplantısı ve karne",
+      "ar": "اجتماع أولياء الأمور والشهادة المدرسية"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann an einem Elterngespräch teilnehmen, Fragen zu Leistungen stellen und Vereinbarungen verstehen.",
+        "tr": "Bir veli görüşmesine katılabilir, başarı durumu hakkında sorular sorabilir ve varılan anlaşmaları anlayabilirim.",
+        "ar": "أستطيع أن أشارك في لقاء بين الأهل والمعلّمين، وأن أسأل عن مستوى الأداء، وأن أفهم الاتفاقات."
+      },
+      {
+        "de": "Ich kann einen Streit in der Klasse beschreiben und Lösungen vorschlagen.",
+        "tr": "Sınıftaki bir tartışmayı anlatabilir ve çözümler önerebilirim.",
+        "ar": "أستطيع أن أصف خلافًا في الصف وأن أقترح حلولًا."
+      }
+    ],
+    "symbol": "graduation-cap",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e07.obwohl",
+      "lemma": "obwohl",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Nebensatz, Verb am Ende (Gegensatz)"
+      },
+      "frequenzRang": 466,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.dennoch",
+      "lemma": "dennoch",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Verbindungsadverb, Verb auf Platz 2 (Gegensatz)"
+      },
+      "frequenzRang": 656,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.niemals",
+      "lemma": "niemals",
+      "wortart": "adverb",
+      "frequenzRang": 820,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.jedenfalls",
+      "lemma": "jedenfalls",
+      "wortart": "adverb",
+      "frequenzRang": 888,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.immerhin",
+      "lemma": "immerhin",
+      "wortart": "adverb",
+      "frequenzRang": 1014,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.bloss",
+      "lemma": "bloß",
+      "wortart": "adverb",
+      "frequenzRang": 869,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.leistung",
+      "lemma": "Leistung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Leistungen"
+      },
+      "formen": {
+        "pl": "Leistungen"
+      },
+      "frequenzRang": 579,
+      "quelle": "wiktionary:de:Leistung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Leistung‘ (https://de.wiktionary.org/wiki/Leistung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.satz",
+      "lemma": "Satz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Sätze"
+      },
+      "formen": {
+        "pl": "Sätze",
+        "dat_pl": "Sätzen",
+        "gen_sg": "Satzes"
+      },
+      "frequenzRang": 612,
+      "quelle": "wiktionary:de:Satz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Satz‘ (https://de.wiktionary.org/wiki/Satz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.test",
+      "lemma": "Test",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Tests"
+      },
+      "formen": {
+        "pl": "Tests",
+        "gen_sg": "Testes",
+        "gen_sg_2": "Tests"
+      },
+      "frequenzRang": 924,
+      "quelle": "wiktionary:de:Test",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Test‘ (https://de.wiktionary.org/wiki/Test), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.verhalten",
+      "lemma": "Verhalten",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Verhaltens"
+      },
+      "frequenzRang": 754,
+      "quelle": "wiktionary:de:Verhalten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verhalten‘ (https://de.wiktionary.org/wiki/Verhalten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.ansicht",
+      "lemma": "Ansicht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ansichten"
+      },
+      "formen": {
+        "pl": "Ansichten"
+      },
+      "frequenzRang": 1221,
+      "quelle": "wiktionary:de:Ansicht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ansicht‘ (https://de.wiktionary.org/wiki/Ansicht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.charakter",
+      "lemma": "Charakter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Charaktere"
+      },
+      "formen": {
+        "pl": "Charaktere",
+        "dat_pl": "Charakteren",
+        "gen_sg": "Charakters"
+      },
+      "frequenzRang": 1224,
+      "quelle": "wiktionary:de:Charakter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Charakter‘ (https://de.wiktionary.org/wiki/Charakter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.gegensatz",
+      "lemma": "Gegensatz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Gegensätze"
+      },
+      "formen": {
+        "pl": "Gegensätze",
+        "dat_pl": "Gegensätzen",
+        "gen_sg": "Gegensatzes"
+      },
+      "frequenzRang": 1150,
+      "quelle": "wiktionary:de:Gegensatz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gegensatz‘ (https://de.wiktionary.org/wiki/Gegensatz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.literatur",
+      "lemma": "Literatur",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 1168,
+      "quelle": "wiktionary:de:Literatur",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Literatur‘ (https://de.wiktionary.org/wiki/Literatur), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.konflikt",
+      "lemma": "Konflikt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Konflikte"
+      },
+      "formen": {
+        "pl": "Konflikte",
+        "dat_pl": "Konflikten",
+        "gen_sg": "Konflikts",
+        "gen_sg_2": "Konfliktes"
+      },
+      "frequenzRang": 1431,
+      "quelle": "wiktionary:de:Konflikt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Konflikt‘ (https://de.wiktionary.org/wiki/Konflikt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.foerderung",
+      "lemma": "Förderung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Förderungen"
+      },
+      "formen": {
+        "pl": "Förderungen"
+      },
+      "frequenzRang": 1575,
+      "quelle": "wiktionary:de:Förderung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Förderung‘ (https://de.wiktionary.org/wiki/Förderung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.aufmerksamkeit",
+      "lemma": "Aufmerksamkeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 1556,
+      "quelle": "wiktionary:de:Aufmerksamkeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Aufmerksamkeit‘ (https://de.wiktionary.org/wiki/Aufmerksamkeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.gymnasium",
+      "lemma": "Gymnasium",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gymnasien"
+      },
+      "formen": {
+        "pl": "Gymnasien",
+        "gen_sg": "Gymnasiums"
+      },
+      "frequenzRang": 1732,
+      "quelle": "wiktionary:de:Gymnasium",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gymnasium‘ (https://de.wiktionary.org/wiki/Gymnasium), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.schwierigkeit",
+      "lemma": "Schwierigkeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schwierigkeiten"
+      },
+      "formen": {
+        "pl": "Schwierigkeiten"
+      },
+      "frequenzRang": 1754,
+      "quelle": "wiktionary:de:Schwierigkeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schwierigkeit‘ (https://de.wiktionary.org/wiki/Schwierigkeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.konsequenz",
+      "lemma": "Konsequenz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Konsequenzen"
+      },
+      "formen": {
+        "pl": "Konsequenzen"
+      },
+      "frequenzRang": 1861,
+      "quelle": "wiktionary:de:Konsequenz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Konsequenz‘ (https://de.wiktionary.org/wiki/Konsequenz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.gegenteil",
+      "lemma": "Gegenteil",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gegenteile"
+      },
+      "formen": {
+        "pl": "Gegenteile",
+        "dat_pl": "Gegenteilen",
+        "gen_sg": "Gegenteils",
+        "gen_sg_2": "Gegenteiles"
+      },
+      "frequenzRang": 1722,
+      "quelle": "wiktionary:de:Gegenteil",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gegenteil‘ (https://de.wiktionary.org/wiki/Gegenteil), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.verstaendnis",
+      "lemma": "Verständnis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Verständnisses"
+      },
+      "frequenzRang": 1663,
+      "quelle": "wiktionary:de:Verständnis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verständnis‘ (https://de.wiktionary.org/wiki/Verständnis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.vorbereitung",
+      "lemma": "Vorbereitung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Vorbereitungen"
+      },
+      "formen": {
+        "pl": "Vorbereitungen"
+      },
+      "frequenzRang": 1713,
+      "quelle": "wiktionary:de:Vorbereitung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vorbereitung‘ (https://de.wiktionary.org/wiki/Vorbereitung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.absicht",
+      "lemma": "Absicht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Absichten"
+      },
+      "formen": {
+        "pl": "Absichten"
+      },
+      "frequenzRang": 1913,
+      "quelle": "wiktionary:de:Absicht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Absicht‘ (https://de.wiktionary.org/wiki/Absicht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.muehe",
+      "lemma": "Mühe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Mühen"
+      },
+      "formen": {
+        "pl": "Mühen"
+      },
+      "frequenzRang": 1893,
+      "quelle": "wiktionary:de:Mühe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mühe‘ (https://de.wiktionary.org/wiki/Mühe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.vorbild",
+      "lemma": "Vorbild",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Vorbilder"
+      },
+      "formen": {
+        "pl": "Vorbilder",
+        "dat_pl": "Vorbildern",
+        "gen_sg": "Vorbilds",
+        "gen_sg_2": "Vorbildes"
+      },
+      "frequenzRang": 1949,
+      "quelle": "wiktionary:de:Vorbild",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vorbild‘ (https://de.wiktionary.org/wiki/Vorbild), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.note",
+      "lemma": "Note",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Noten"
+      },
+      "formen": {
+        "pl": "Noten"
+      },
+      "frequenzRang": 4008,
+      "quelle": "wiktionary:de:Note",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Note‘ (https://de.wiktionary.org/wiki/Note), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.elternabend",
+      "lemma": "Elternabend",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Elternabende"
+      },
+      "formen": {
+        "pl": "Elternabende",
+        "dat_pl": "Elternabenden",
+        "gen_sg": "Elternabends"
+      },
+      "frequenzRang": 46718,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.klassenfahrt",
+      "lemma": "Klassenfahrt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Klassenfahrten"
+      },
+      "formen": {
+        "pl": "Klassenfahrten"
+      },
+      "frequenzRang": 30228,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.klassenrat",
+      "lemma": "Klassenrat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Klassenräte"
+      },
+      "formen": {
+        "pl": "Klassenräte",
+        "dat_pl": "Klassenräten",
+        "gen_sg": "Klassenrats",
+        "gen_sg_2": "Klassenrates"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.schulform",
+      "lemma": "Schulform",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schulformen"
+      },
+      "formen": {
+        "pl": "Schulformen"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.realschule",
+      "lemma": "Realschule",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Realschulen"
+      },
+      "formen": {
+        "pl": "Realschulen"
+      },
+      "frequenzRang": 5972,
+      "quelle": "wiktionary:de:Realschule",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Realschule‘ (https://de.wiktionary.org/wiki/Realschule), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.grundschule",
+      "lemma": "Grundschule",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Grundschulen"
+      },
+      "formen": {
+        "pl": "Grundschulen"
+      },
+      "frequenzRang": 2832,
+      "quelle": "wiktionary:de:Grundschule",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Grundschule‘ (https://de.wiktionary.org/wiki/Grundschule), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.ausdruck",
+      "lemma": "Ausdruck",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Ausdrücke"
+      },
+      "formen": {
+        "pl": "Ausdrücke",
+        "dat_pl": "Ausdrücken",
+        "gen_sg": "Ausdrucks",
+        "gen_sg_2": "Ausdruckes"
+      },
+      "frequenzRang": 1741,
+      "quelle": "wiktionary:de:Ausdruck",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ausdruck‘ (https://de.wiktionary.org/wiki/Ausdruck), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.lehrkraft",
+      "lemma": "Lehrkraft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Lehrkräfte"
+      },
+      "formen": {
+        "pl": "Lehrkräfte",
+        "dat_pl": "Lehrkräften"
+      },
+      "frequenzRang": 6568,
+      "quelle": "wiktionary:de:Lehrkraft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lehrkraft‘ (https://de.wiktionary.org/wiki/Lehrkraft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.klassenlehrer",
+      "lemma": "Klassenlehrer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Klassenlehrer",
+        "weiblich": "Klassenlehrerin"
+      },
+      "formen": {
+        "dat_pl": "Klassenlehrern",
+        "gen_sg": "Klassenlehrers",
+        "weiblich": "Klassenlehrerin",
+        "weiblich_pl": "Klassenlehrerinnen"
+      },
+      "frequenzRang": 45502,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.schulleitung",
+      "lemma": "Schulleitung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schulleitungen"
+      },
+      "formen": {
+        "pl": "Schulleitungen"
+      },
+      "frequenzRang": 24186,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.elternbrief",
+      "lemma": "Elternbrief",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Elternbriefe"
+      },
+      "formen": {
+        "pl": "Elternbriefe",
+        "dat_pl": "Elternbriefen",
+        "gen_sg": "Elternbriefs",
+        "gen_sg_2": "Elternbriefes"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.elterngespraech",
+      "lemma": "Elterngespräch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Elterngespräche"
+      },
+      "formen": {
+        "pl": "Elterngespräche",
+        "dat_pl": "Elterngesprächen",
+        "gen_sg": "Elterngesprächs",
+        "gen_sg_2": "Elterngespräches"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.klassenarbeit",
+      "lemma": "Klassenarbeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Klassenarbeiten"
+      },
+      "formen": {
+        "pl": "Klassenarbeiten"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.referat",
+      "lemma": "Referat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Referate"
+      },
+      "formen": {
+        "pl": "Referate",
+        "dat_pl": "Referaten",
+        "gen_sg": "Referats",
+        "gen_sg_2": "Referates"
+      },
+      "frequenzRang": 6886,
+      "quelle": "wiktionary:de:Referat",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Referat‘ (https://de.wiktionary.org/wiki/Referat), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.mitschueler",
+      "lemma": "Mitschüler",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Mitschüler",
+        "weiblich": "Mitschülerin"
+      },
+      "formen": {
+        "dat_pl": "Mitschülern",
+        "gen_sg": "Mitschülers",
+        "weiblich": "Mitschülerin",
+        "weiblich_pl": "Mitschülerinnen"
+      },
+      "frequenzRang": 7699,
+      "quelle": "wiktionary:de:Mitschüler",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mitschüler‘ (https://de.wiktionary.org/wiki/Mitschüler), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.halbjahr",
+      "lemma": "Halbjahr",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Halbjahre"
+      },
+      "formen": {
+        "pl": "Halbjahre",
+        "dat_pl": "Halbjahren",
+        "gen_sg": "Halbjahrs",
+        "gen_sg_2": "Halbjahres"
+      },
+      "frequenzRang": 7108,
+      "quelle": "wiktionary:de:Halbjahr",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Halbjahr‘ (https://de.wiktionary.org/wiki/Halbjahr), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.schuljahr",
+      "lemma": "Schuljahr",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Schuljahre"
+      },
+      "formen": {
+        "pl": "Schuljahre",
+        "dat_pl": "Schuljahren",
+        "gen_sg": "Schuljahrs",
+        "gen_sg_2": "Schuljahres"
+      },
+      "frequenzRang": 4532,
+      "quelle": "wiktionary:de:Schuljahr",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schuljahr‘ (https://de.wiktionary.org/wiki/Schuljahr), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.durchschnitt",
+      "lemma": "Durchschnitt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Durchschnitte"
+      },
+      "formen": {
+        "pl": "Durchschnitte",
+        "dat_pl": "Durchschnitten",
+        "gen_sg": "Durchschnitts",
+        "gen_sg_2": "Durchschnittes"
+      },
+      "frequenzRang": 12178,
+      "quelle": "wiktionary:de:Durchschnitt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Durchschnitt‘ (https://de.wiktionary.org/wiki/Durchschnitt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.wut",
+      "lemma": "Wut",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 3152,
+      "quelle": "wiktionary:de:Wut",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wut‘ (https://de.wiktionary.org/wiki/Wut), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.lob",
+      "lemma": "Lob",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Lobs",
+        "gen_sg_2": "Lobes"
+      },
+      "frequenzRang": 3427,
+      "quelle": "wiktionary:de:Lob",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lob‘ (https://de.wiktionary.org/wiki/Lob), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.erziehung",
+      "lemma": "Erziehung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 3289,
+      "quelle": "wiktionary:de:Erziehung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erziehung‘ (https://de.wiktionary.org/wiki/Erziehung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.motivation",
+      "lemma": "Motivation",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 2935,
+      "quelle": "wiktionary:de:Motivation",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Motivation‘ (https://de.wiktionary.org/wiki/Motivation), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.konzentration",
+      "lemma": "Konzentration",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 3424,
+      "quelle": "wiktionary:de:Konzentration",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Konzentration‘ (https://de.wiktionary.org/wiki/Konzentration), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.versetzung",
+      "lemma": "Versetzung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Versetzungen"
+      },
+      "formen": {
+        "pl": "Versetzungen"
+      },
+      "frequenzRang": 10776,
+      "quelle": "wiktionary:de:Versetzung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Versetzung‘ (https://de.wiktionary.org/wiki/Versetzung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.vereinbarung",
+      "lemma": "Vereinbarung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Vereinbarungen"
+      },
+      "formen": {
+        "pl": "Vereinbarungen"
+      },
+      "frequenzRang": 3066,
+      "quelle": "wiktionary:de:Vereinbarung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vereinbarung‘ (https://de.wiktionary.org/wiki/Vereinbarung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.foerdern",
+      "lemma": "fördern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "fördern",
+        "praes_ich": "fördere",
+        "praes_du": "förderst",
+        "praes_er_sie_es": "fördert",
+        "praes_wir": "fördern",
+        "praes_ihr": "fördert",
+        "praes_sie_Sie": "fördern",
+        "praet_ich_er_sie_es": "förderte",
+        "praet_du": "fördertest",
+        "praet_wir_sie_Sie": "förderten",
+        "praet_ihr": "fördertet",
+        "partizip_2": "gefördert"
+      },
+      "frequenzRang": 1157,
+      "quelle": "wiktionary:de:fördern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚fördern‘ (https://de.wiktionary.org/wiki/fördern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.verbessern",
+      "lemma": "verbessern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verbessern",
+        "praes_ich": "verbessere",
+        "praes_du": "verbesserst",
+        "praes_er_sie_es": "verbessert",
+        "praes_wir": "verbessern",
+        "praes_ihr": "verbessert",
+        "praes_sie_Sie": "verbessern",
+        "praet_ich_er_sie_es": "verbesserte",
+        "praet_du": "verbessertest",
+        "praet_wir_sie_Sie": "verbesserten",
+        "praet_ihr": "verbessertet",
+        "partizip_2": "verbessert"
+      },
+      "frequenzRang": 1144,
+      "quelle": "wiktionary:de:verbessern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verbessern‘ (https://de.wiktionary.org/wiki/verbessern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.begreifen",
+      "lemma": "begreifen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "begreifen",
+        "praes_ich": "begreife",
+        "praes_du": "begreifst",
+        "praes_er_sie_es": "begreift",
+        "praes_wir": "begreifen",
+        "praes_ihr": "begreift",
+        "praes_sie_Sie": "begreifen",
+        "praet_ich_er_sie_es": "begriff",
+        "praet_du": "begriffst",
+        "praet_wir_sie_Sie": "begriffen",
+        "praet_ihr": "begrifft",
+        "partizip_2": "begriffen"
+      },
+      "frequenzRang": 793,
+      "quelle": "wiktionary:de:begreifen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚begreifen‘ (https://de.wiktionary.org/wiki/begreifen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.akzeptieren",
+      "lemma": "akzeptieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "akzeptieren",
+        "praes_ich": "akzeptiere",
+        "praes_du": "akzeptierst",
+        "praes_er_sie_es": "akzeptiert",
+        "praes_wir": "akzeptieren",
+        "praes_ihr": "akzeptiert",
+        "praes_sie_Sie": "akzeptieren",
+        "praet_ich_er_sie_es": "akzeptierte",
+        "praet_du": "akzeptiertest",
+        "praet_wir_sie_Sie": "akzeptierten",
+        "praet_ihr": "akzeptiertet",
+        "partizip_2": "akzeptiert"
+      },
+      "frequenzRang": 1460,
+      "quelle": "wiktionary:de:akzeptieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚akzeptieren‘ (https://de.wiktionary.org/wiki/akzeptieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.konzentrieren",
+      "lemma": "konzentrieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "konzentrieren",
+        "praes_ich": "konzentriere",
+        "praes_du": "konzentrierst",
+        "praes_er_sie_es": "konzentriert",
+        "praes_wir": "konzentrieren",
+        "praes_ihr": "konzentriert",
+        "praes_sie_Sie": "konzentrieren",
+        "praet_ich_er_sie_es": "konzentrierte",
+        "praet_du": "konzentriertest",
+        "praet_wir_sie_Sie": "konzentrierten",
+        "praet_ihr": "konzentriertet",
+        "partizip_2": "konzentriert",
+        "imp_du": "konzentrier",
+        "imp_ihr": "konzentriert",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 1675,
+      "quelle": "wiktionary:de:konzentrieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚konzentrieren‘ (https://de.wiktionary.org/wiki/konzentrieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.trauen",
+      "lemma": "trauen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "trauen",
+        "praes_ich": "traue",
+        "praes_du": "traust",
+        "praes_er_sie_es": "traut",
+        "praes_wir": "trauen",
+        "praes_ihr": "traut",
+        "praes_sie_Sie": "trauen",
+        "praet_ich_er_sie_es": "traute",
+        "praet_du": "trautest",
+        "praet_wir_sie_Sie": "trauten",
+        "praet_ihr": "trautet",
+        "partizip_2": "getraut",
+        "imp_du": "trau",
+        "imp_ihr": "traut",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 1842,
+      "quelle": "wiktionary:de:trauen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚trauen‘ (https://de.wiktionary.org/wiki/trauen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.ansprechen",
+      "lemma": "ansprechen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an",
+        "unregelmaessig_praesens": "ja",
+        "grundverb": "sprechen (de.a1.e01.sprechen)"
+      },
+      "formen": {
+        "infinitiv": "ansprechen",
+        "verbzusatz": "an",
+        "partizip_2": "angesprochen",
+        "zu_infinitiv": "anzusprechen",
+        "nebensatz_er_sie_es": "anspricht",
+        "nebensatz_praet": "ansprach",
+        "nebensatz_praet_pl": "ansprachen"
+      },
+      "frequenzRang": 1995,
+      "quelle": "wiktionary:de:ansprechen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ansprechen‘ (https://de.wiktionary.org/wiki/ansprechen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.loben",
+      "lemma": "loben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "loben",
+        "praes_ich": "lobe",
+        "praes_du": "lobst",
+        "praes_er_sie_es": "lobt",
+        "praes_wir": "loben",
+        "praes_ihr": "lobt",
+        "praes_sie_Sie": "loben",
+        "praet_ich_er_sie_es": "lobte",
+        "praet_du": "lobtest",
+        "praet_wir_sie_Sie": "lobten",
+        "praet_ihr": "lobtet",
+        "partizip_2": "gelobt"
+      },
+      "frequenzRang": 2836,
+      "quelle": "wiktionary:de:loben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚loben‘ (https://de.wiktionary.org/wiki/loben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.erziehen",
+      "lemma": "erziehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erziehen",
+        "praes_ich": "erziehe",
+        "praes_du": "erziehst",
+        "praes_er_sie_es": "erzieht",
+        "praes_wir": "erziehen",
+        "praes_ihr": "erzieht",
+        "praes_sie_Sie": "erziehen",
+        "praet_ich_er_sie_es": "erzog",
+        "praet_du": "erzogst",
+        "praet_wir_sie_Sie": "erzogen",
+        "praet_ihr": "erzogt",
+        "partizip_2": "erzogen"
+      },
+      "frequenzRang": 4292,
+      "quelle": "wiktionary:de:erziehen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erziehen‘ (https://de.wiktionary.org/wiki/erziehen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.unterrichten",
+      "lemma": "unterrichten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "unterrichten",
+        "praes_ich": "unterrichte",
+        "praes_du": "unterrichtest",
+        "praes_er_sie_es": "unterrichtet",
+        "praes_wir": "unterrichten",
+        "praes_ihr": "unterrichtet",
+        "praes_sie_Sie": "unterrichten",
+        "praet_ich_er_sie_es": "unterrichtete",
+        "praet_du": "unterrichtetest",
+        "praet_wir_sie_Sie": "unterrichteten",
+        "praet_ihr": "unterrichtetet",
+        "partizip_2": "unterrichtet"
+      },
+      "frequenzRang": 2786,
+      "quelle": "wiktionary:de:unterrichten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚unterrichten‘ (https://de.wiktionary.org/wiki/unterrichten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.benehmen",
+      "lemma": "benehmen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "benehmen",
+        "praes_ich": "benehme",
+        "praes_du": "benimmst",
+        "praes_er_sie_es": "benimmt",
+        "praes_wir": "benehmen",
+        "praes_ihr": "benehmt",
+        "praes_sie_Sie": "benehmen",
+        "praet_ich_er_sie_es": "benahm",
+        "praet_du": "benahmst",
+        "praet_wir_sie_Sie": "benahmen",
+        "praet_ihr": "benahmt",
+        "partizip_2": "benommen",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 3930,
+      "quelle": "wiktionary:de:benehmen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚benehmen‘ (https://de.wiktionary.org/wiki/benehmen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.motivieren",
+      "lemma": "motivieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "motivieren",
+        "praes_ich": "motiviere",
+        "praes_du": "motivierst",
+        "praes_er_sie_es": "motiviert",
+        "praes_wir": "motivieren",
+        "praes_ihr": "motiviert",
+        "praes_sie_Sie": "motivieren",
+        "praet_ich_er_sie_es": "motivierte",
+        "praet_du": "motiviertest",
+        "praet_wir_sie_Sie": "motivierten",
+        "praet_ihr": "motiviertet",
+        "partizip_2": "motiviert"
+      },
+      "frequenzRang": 3179,
+      "quelle": "wiktionary:de:motivieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚motivieren‘ (https://de.wiktionary.org/wiki/motivieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.nerven",
+      "lemma": "nerven",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "register": "umgangssprachlich"
+      },
+      "formen": {
+        "infinitiv": "nerven",
+        "praes_ich": "nerve",
+        "praes_du": "nervst",
+        "praes_er_sie_es": "nervt",
+        "praes_wir": "nerven",
+        "praes_ihr": "nervt",
+        "praes_sie_Sie": "nerven",
+        "praet_ich_er_sie_es": "nervte",
+        "praet_du": "nervtest",
+        "praet_wir_sie_Sie": "nervten",
+        "praet_ihr": "nervtet",
+        "partizip_2": "genervt"
+      },
+      "frequenzRang": 1278,
+      "quelle": "wiktionary:de:nerven",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚nerven‘ (https://de.wiktionary.org/wiki/nerven), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.aussage",
+      "lemma": "Aussage",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Aussagen"
+      },
+      "formen": {
+        "pl": "Aussagen"
+      },
+      "frequenzRang": 1440,
+      "quelle": "wiktionary:de:Aussage",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Aussage‘ (https://de.wiktionary.org/wiki/Aussage), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.komisch",
+      "lemma": "komisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "komische",
+        "endung_en": "komischen",
+        "endung_er": "komischer",
+        "endung_es": "komisches",
+        "endung_em": "komischem",
+        "komparativ": "komischer",
+        "superlativ": "komischsten",
+        "superlativ_e": "komischste"
+      },
+      "frequenzRang": 1079,
+      "quelle": "wiktionary:de:komisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚komisch‘ (https://de.wiktionary.org/wiki/komisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.unmoeglich",
+      "lemma": "unmöglich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "unmögliche",
+        "endung_en": "unmöglichen",
+        "endung_er": "unmöglicher",
+        "endung_es": "unmögliches",
+        "endung_em": "unmöglichem"
+      },
+      "frequenzRang": 1377,
+      "quelle": "wiktionary:de:unmöglich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚unmöglich‘ (https://de.wiktionary.org/wiki/unmöglich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.ewig",
+      "lemma": "ewig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ewige",
+        "endung_en": "ewigen",
+        "endung_er": "ewiger",
+        "endung_es": "ewiges",
+        "endung_em": "ewigem"
+      },
+      "frequenzRang": 1303,
+      "quelle": "wiktionary:de:ewig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ewig‘ (https://de.wiktionary.org/wiki/ewig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.ausgezeichnet",
+      "lemma": "ausgezeichnet",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ausgezeichnete",
+        "endung_en": "ausgezeichneten",
+        "endung_er": "ausgezeichneter",
+        "endung_es": "ausgezeichnetes",
+        "endung_em": "ausgezeichnetem"
+      },
+      "frequenzRang": 1397,
+      "quelle": "wiktionary:de:ausgezeichnet",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ausgezeichnet‘ (https://de.wiktionary.org/wiki/ausgezeichnet), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.erwachsen",
+      "lemma": "erwachsen",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "erwachsene",
+        "endung_en": "erwachsenen",
+        "endung_er": "erwachsener",
+        "endung_es": "erwachsenes",
+        "endung_em": "erwachsenem"
+      },
+      "frequenzRang": 1515,
+      "quelle": "wiktionary:de:erwachsen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erwachsen‘ (https://de.wiktionary.org/wiki/erwachsen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.witzig",
+      "lemma": "witzig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "witzige",
+        "endung_en": "witzigen",
+        "endung_er": "witziger",
+        "endung_es": "witziges",
+        "endung_em": "witzigem",
+        "komparativ": "witziger",
+        "superlativ": "witzigsten",
+        "superlativ_e": "witzigste"
+      },
+      "frequenzRang": 1583,
+      "quelle": "wiktionary:de:witzig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚witzig‘ (https://de.wiktionary.org/wiki/witzig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.aufmerksam",
+      "lemma": "aufmerksam",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "aufmerksame",
+        "endung_en": "aufmerksamen",
+        "endung_er": "aufmerksamer",
+        "endung_es": "aufmerksames",
+        "endung_em": "aufmerksamem",
+        "komparativ": "aufmerksamer",
+        "superlativ": "aufmerksamsten",
+        "superlativ_e": "aufmerksamste"
+      },
+      "frequenzRang": 1837,
+      "quelle": "wiktionary:de:aufmerksam",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚aufmerksam‘ (https://de.wiktionary.org/wiki/aufmerksam), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.gewiss",
+      "lemma": "gewiss",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "gewisse",
+        "endung_en": "gewissen",
+        "endung_er": "gewisser",
+        "endung_es": "gewisses",
+        "endung_em": "gewissem"
+      },
+      "frequenzRang": 602,
+      "quelle": "wiktionary:en:gewiss",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gewiss‘ (https://en.wiktionary.org/wiki/gewiss#German), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.schuechtern",
+      "lemma": "schüchtern",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "schüchterne",
+        "endung_en": "schüchternen",
+        "endung_er": "schüchterner",
+        "endung_es": "schüchternes",
+        "endung_em": "schüchternem",
+        "komparativ": "schüchterner",
+        "superlativ": "schüchternsten",
+        "superlativ_e": "schüchternste"
+      },
+      "frequenzRang": 6576,
+      "quelle": "wiktionary:de:schüchtern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚schüchtern‘ (https://de.wiktionary.org/wiki/schüchtern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.neidisch",
+      "lemma": "neidisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "neidische",
+        "endung_en": "neidischen",
+        "endung_er": "neidischer",
+        "endung_es": "neidisches",
+        "endung_em": "neidischem",
+        "komparativ": "neidischer",
+        "superlativ": "neidischsten",
+        "superlativ_e": "neidischste"
+      },
+      "frequenzRang": 10939,
+      "quelle": "wiktionary:de:neidisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚neidisch‘ (https://de.wiktionary.org/wiki/neidisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.faul",
+      "lemma": "faul",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "faule",
+        "endung_en": "faulen",
+        "endung_er": "fauler",
+        "endung_es": "faules",
+        "endung_em": "faulem",
+        "komparativ": "fauler",
+        "superlativ": "faulsten",
+        "superlativ_e": "faulste"
+      },
+      "frequenzRang": 8905,
+      "quelle": "wiktionary:de:faul",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚faul‘ (https://de.wiktionary.org/wiki/faul), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.geduldig",
+      "lemma": "geduldig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "geduldige",
+        "endung_en": "geduldigen",
+        "endung_er": "geduldiger",
+        "endung_es": "geduldiges",
+        "endung_em": "geduldigem",
+        "komparativ": "geduldiger",
+        "superlativ": "geduldigsten",
+        "superlativ_e": "geduldigste"
+      },
+      "frequenzRang": 7846,
+      "quelle": "wiktionary:de:geduldig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚geduldig‘ (https://de.wiktionary.org/wiki/geduldig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.ton",
+      "lemma": "Ton",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Töne"
+      },
+      "formen": {
+        "pl": "Töne",
+        "dat_pl": "Tönen",
+        "gen_sg": "Tons",
+        "gen_sg_2": "Tones"
+      },
+      "frequenzRang": 1342,
+      "quelle": "wiktionary:de:Ton",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ton‘ (https://de.wiktionary.org/wiki/Ton), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.begriff",
+      "lemma": "Begriff",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Begriffe"
+      },
+      "formen": {
+        "pl": "Begriffe",
+        "dat_pl": "Begriffen",
+        "gen_sg": "Begriffs",
+        "gen_sg_2": "Begriffes"
+      },
+      "frequenzRang": 1943,
+      "quelle": "wiktionary:de:Begriff",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Begriff‘ (https://de.wiktionary.org/wiki/Begriff), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.druck",
+      "lemma": "Druck",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Drücke"
+      },
+      "formen": {
+        "pl": "Drücke",
+        "dat_pl": "Drücken",
+        "gen_sg": "Drucks",
+        "gen_sg_2": "Druckes"
+      },
+      "frequenzRang": 716,
+      "quelle": "wiktionary:de:Druck",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Druck‘ (https://de.wiktionary.org/wiki/Druck), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.umgang",
+      "lemma": "Umgang",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Umgangs",
+        "gen_sg_2": "Umganges"
+      },
+      "frequenzRang": 1609,
+      "quelle": "wiktionary:de:Umgang",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Umgang‘ (https://de.wiktionary.org/wiki/Umgang), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.vortrag",
+      "lemma": "Vortrag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Vorträge"
+      },
+      "formen": {
+        "pl": "Vorträge",
+        "dat_pl": "Vorträgen",
+        "gen_sg": "Vortrags",
+        "gen_sg_2": "Vortrages"
+      },
+      "frequenzRang": 1452,
+      "quelle": "wiktionary:de:Vortrag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vortrag‘ (https://de.wiktionary.org/wiki/Vortrag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.schrift",
+      "lemma": "Schrift",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Schriften"
+      },
+      "formen": {
+        "pl": "Schriften"
+      },
+      "frequenzRang": 1432,
+      "quelle": "wiktionary:de:Schrift",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schrift‘ (https://de.wiktionary.org/wiki/Schrift), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.handlung",
+      "lemma": "Handlung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Handlungen"
+      },
+      "formen": {
+        "pl": "Handlungen"
+      },
+      "frequenzRang": 1665,
+      "quelle": "wiktionary:de:Handlung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Handlung‘ (https://de.wiktionary.org/wiki/Handlung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e07.s0001",
+      "text": "Wann findet in diesem Halbjahr der Elternabend statt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0002",
+      "text": "Der Elternabend ist am Dienstag um 19 Uhr in der Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0003",
+      "text": "Der letzte Elternabend hat ewig gedauert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0004",
+      "text": "Hast du den Elternbrief schon gelesen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0005",
+      "text": "Bitte unterschreiben Sie den Elternbrief und geben Sie ihn bis Freitag zurück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0006",
+      "text": "Frau Schneider ist seit zwei Jahren unsere Klassenlehrerin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0007",
+      "text": "Beim Elternabend stellen sich alle Lehrkräfte der Klasse vor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0008",
+      "text": "Lehrkräfte spricht man mit „Sie“ und dem Familiennamen an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0009",
+      "text": "Die Schulleitung hat allen Eltern einen Brief geschickt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0010",
+      "text": "Am Ende des Halbjahres bekommen alle Kinder ein Zeugnis.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0011",
+      "text": "Am Ende des Schuljahres entscheiden die Lehrkräfte über die Versetzung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0012",
+      "text": "Wohin geht die Klassenfahrt in diesem Jahr?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0013",
+      "text": "Die Klassenfahrt kostet etwa 200 Euro pro Kind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0014",
+      "text": "In Deutschland ist die 1 die beste Note.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0015",
+      "text": "Die 6 ist die schlechteste Note.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0016",
+      "text": "Elif hat in Mathe eine gute Note bekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0017",
+      "text": "Yazan ärgert sich über seine Note in Mathe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0018",
+      "text": "Elif macht jeden Tag ihre Hausaufgaben, weil sie gute Noten haben möchte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0019",
+      "text": "Nächste Woche schreiben wir eine Klassenarbeit in Mathe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0020",
+      "text": "Frau Schneider gibt heute die Klassenarbeiten zurück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0021",
+      "text": "Darf ich fragen, wie viele Klassenarbeiten es in diesem Halbjahr gibt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0022",
+      "text": "Morgen schreiben wir einen kurzen Test über die neuen Wörter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0023",
+      "text": "Im Durchschnitt hat die Klasse eine 3 geschrieben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0024",
+      "text": "In Deutsch liegt Laylā über dem Durchschnitt der Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0025",
+      "text": "Keine Sorge, die Versetzung ist nicht in Gefahr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0026",
+      "text": "Vor den Sommerferien gibt es das Zeugnis für das ganze Schuljahr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0027",
+      "text": "Können Sie mir sagen, wann der Elternabend beginnt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0028",
+      "text": "Wissen Sie, ob die Klassenfahrt im Mai oder im Juni ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0029",
+      "text": "Ich möchte gern wissen, in welchem Raum der Elternabend stattfindet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0030",
+      "text": "Wissen Sie, wer die Klassenfahrt organisiert?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0031",
+      "text": "Zur Vorbereitung auf den Elternabend schreibt Ranā ihre Fragen auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0032",
+      "text": "Vielen Dank für Ihre Aufmerksamkeit!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0033",
+      "text": "Danke für Ihr Verständnis.",
+      "quelle": "tatoeba:6645686",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6645686 von Felixjp (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e07.s0034",
+      "text": "Guten Abend, Frau Schneider! Haben Sie kurz Zeit für eine Frage?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0035",
+      "text": "Einladung zum Elternabend",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0036",
+      "text": "Liebe Eltern, am Dienstag, dem 14. Oktober, laden wir Sie herzlich zum ersten Elternabend in diesem Schuljahr ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0037",
+      "text": "Er beginnt um 19 Uhr im Raum 204 und dauert etwa zwei Stunden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0038",
+      "text": "Zuerst stellen sich die Klassenlehrerin und alle Lehrkräfte der Klasse vor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0039",
+      "text": "Danach sprechen wir über die Klassenfahrt im Mai und über die Termine der Klassenarbeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0040",
+      "text": "Außerdem möchten wir mit Ihnen über die Regeln in der Klasse sprechen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0041",
+      "text": "Für Gespräche über die Leistungen Ihres Kindes gibt es im November Elterngespräche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0042",
+      "text": "Wenn Sie nicht kommen können, informieren Sie bitte die Klassenlehrerin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0043",
+      "text": "Bitte geben Sie den unteren Teil des Briefes bis Freitag unterschrieben zurück.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0044",
+      "text": "Mit freundlichen Grüßen, Ihre Klassenlehrerin Frau Schneider",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0045",
+      "text": "Der Elternabend findet am Abend statt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0046",
+      "text": "Die Klassenfahrt ist im Juni.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0047",
+      "text": "Beim Elternabend sprechen die Lehrkräfte über die Noten von jedem Kind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0048",
+      "text": "Die Klassenfahrt kostet für jedes Kind 200 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0049",
+      "text": "Bis wann soll der untere Teil des Briefes wieder in der Schule sein?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0050",
+      "text": "Er soll bis Freitag wieder in der Schule sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0051",
+      "text": "Er soll bis Dienstag wieder in der Schule sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0052",
+      "text": "Er soll bis November wieder in der Schule sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0053",
+      "text": "Frau Schneider, können Sie mir sagen, wann die nächste Klassenarbeit ist?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0054",
+      "text": "Die nächste Klassenarbeit in Deutsch schreiben wir am 20. November.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0055",
+      "text": "Und wissen Sie schon, ob es vorher noch einen Test gibt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0056",
+      "text": "Nein, vorher gibt es keinen Test, nur Hausaufgaben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0057",
+      "text": "Entschuldigung, können Sie mir sagen, wann die Klassenfahrt stattfindet?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0058",
+      "text": "Laylā zeigt in Deutsch sehr gute Leistungen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0059",
+      "text": "Ihre Leistungen in Mathe sind leider etwas schwächer geworden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0060",
+      "text": "Frau Schneider lobt Laylā vor der ganzen Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0061",
+      "text": "Über das Lob der Lehrerin freut sich Laylā sehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0062",
+      "text": "Die Schule fördert Kinder, die Deutsch als zweite Sprache lernen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0063",
+      "text": "Laylā bekommt zweimal pro Woche Förderung in Deutsch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0064",
+      "text": "Laylā hat ihr Deutsch in einem Jahr stark verbessert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0065",
+      "text": "Verbessern Sie mich bitte, wenn ich Fehler mache!",
+      "quelle": "tatoeba:1936586",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1936586 von Tamy2 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e07.s0066",
+      "text": "Am Morgen ist ihre Konzentration am besten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0067",
+      "text": "Yazan kann sich nicht gut konzentrieren, wenn sein Handy auf dem Tisch liegt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0068",
+      "text": "Ihre Motivation ist hoch, obwohl der Unterricht nicht in ihrer ersten Sprache ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0069",
+      "text": "Wie können wir unseren Sohn besser motivieren?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0070",
+      "text": "Laylā gibt sich große Mühe mit ihren Hausaufgaben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0071",
+      "text": "Hat sie in Mathe Schwierigkeiten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0072",
+      "text": "Laylā begreift neue Themen sehr schnell.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0073",
+      "text": "Ihr letzter Aufsatz war ausgezeichnet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0074",
+      "text": "Yazan ist nicht faul, er braucht nur einen festen Plan.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0075",
+      "text": "Ranā ist sehr geduldig, wenn Laylā Fragen zu den Hausaufgaben hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0076",
+      "text": "Laylā spricht schon gut Deutsch, obwohl sie erst seit einem Jahr hier ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0077",
+      "text": "Obwohl Yazan viel lernt, sind seine Noten in Mathe nicht besser geworden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0078",
+      "text": "Obwohl Elif müde war, hat sie ihre Hausaufgaben gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0079",
+      "text": "Elif war müde, trotzdem hat sie ihre Hausaufgaben gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0080",
+      "text": "Der Test war schwer, dennoch hat Laylā eine 2 bekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0081",
+      "text": "Yazan hat eine 4 geschrieben, aber immerhin ist das besser als beim letzten Mal.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0082",
+      "text": "Vor dem Elterngespräch schreibt Ḫālid seine Fragen auf einen Zettel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0083",
+      "text": "Ich hätte gern einen Termin für ein Elterngespräch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0084",
+      "text": "Am Ende des Gesprächs treffen wir eine Vereinbarung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0085",
+      "text": "Wir haben vereinbart, dass Yazan jeden Tag zwanzig Minuten Mathe übt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0086",
+      "text": "Sein Verhalten in der Klasse ist sehr gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0087",
+      "text": "Laylā benimmt sich immer höflich und freundlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0088",
+      "text": "In der Pause hat sich Yazan nicht gut benommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0089",
+      "text": "Ihre Schrift ist sehr ordentlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0090",
+      "text": "Ich finde, dass sich Laylā sehr verbessert hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0091",
+      "text": "Wir machen uns Sorgen, dass Yazan zu wenig schläft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0092",
+      "text": "Wie sind die Leistungen von Laylā in Mathe?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0093",
+      "text": "Sie gibt sich viel Mühe, aber lange Aufgaben sind noch schwer für sie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0094",
+      "text": "Was können wir zu Hause tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0095",
+      "text": "Üben Sie jeden Tag ein bisschen mit ihr, das hilft schon.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0096",
+      "text": "Ich finde, dass Laylā im Unterricht sehr aufmerksam ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0097",
+      "text": "Wir haben also vereinbart, dass Laylā jeden Tag zehn Minuten laut liest.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0098",
+      "text": "Welche Schulform passt am besten zu unserem Kind?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0099",
+      "text": "In Hessen gibt es verschiedene Schulformen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0100",
+      "text": "Die Grundschule dauert in Hessen vier Jahre.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0101",
+      "text": "Die Realschule endet nach der zehnten Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0102",
+      "text": "Nach der Realschule möchte Gül eine Ausbildung machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0103",
+      "text": "Am Gymnasium macht man das Abitur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0104",
+      "text": "Nach der sechsten Klasse wird Laylā vielleicht aufs Gymnasium wechseln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0105",
+      "text": "Ein Mitschüler erklärt Laylā die Aufgabe noch einmal.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0106",
+      "text": "Mia ist eine sehr nette Mitschülerin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0107",
+      "text": "Frau Schneider unterrichtet Deutsch und Englisch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0108",
+      "text": "Eltern und Schule erziehen die Kinder gemeinsam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0109",
+      "text": "Die Erziehung ist vor allem die Aufgabe der Eltern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0110",
+      "text": "Laylā hat die Absicht, später Ärztin zu werden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0111",
+      "text": "Emre ist für Elif ein großes Vorbild.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0112",
+      "text": "Eltern sind Vorbilder für ihre Kinder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0113",
+      "text": "Wenn ich erwachsen bin, werde ich Lehrerin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0114",
+      "text": "Emre ist mit 16 Jahren schon fast erwachsen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0115",
+      "text": "Es ist gewiss nicht leicht, das zu verstehen.",
+      "quelle": "tatoeba:1561802",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1561802 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e07.s0116",
+      "text": "Ich weiß noch nicht, welche Schule ich wähle, jedenfalls will ich das Abitur machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0117",
+      "text": "Viele schlechte Noten haben Konsequenzen für die Versetzung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0118",
+      "text": "Im nächsten Schuljahr werde ich mehr für Mathe lernen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0119",
+      "text": "Laylā wird nach den Sommerferien in die siebte Klasse gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0120",
+      "text": "Wir werden sehen, welche Schulform am besten passt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0121",
+      "text": "Du wirst das bestimmt schaffen!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0122",
+      "text": "Ich verspreche dir, ich werde mich mehr konzentrieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0123",
+      "text": "Nächstes Jahr gehe ich auf die Realschule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0124",
+      "text": "Was wirst du in den Sommerferien machen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0125",
+      "text": "Welche Schule kommt nach der Grundschule?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0126",
+      "text": "In Hessen gehen alle Kinder zuerst vier Jahre in die Grundschule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0127",
+      "text": "Danach wählen die Eltern eine neue Schulform für ihr Kind.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0128",
+      "text": "Die Grundschule gibt eine Empfehlung, aber die Eltern entscheiden selbst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0129",
+      "text": "Die Hauptschule endet meistens nach der neunten Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0130",
+      "text": "Die Realschule dauert bis zur zehnten Klasse und endet mit dem mittleren Abschluss.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0131",
+      "text": "Am Gymnasium lernen die Schülerinnen und Schüler bis zum Abitur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0132",
+      "text": "Mit dem Abitur kann man an einer Hochschule studieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0133",
+      "text": "An einer Gesamtschule gibt es mehrere Schulformen unter einem Dach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0134",
+      "text": "Wer gute Leistungen zeigt, kann auch später noch die Schulform wechseln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0135",
+      "text": "Die Grundschule dauert in Hessen sechs Jahre.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0136",
+      "text": "Die Eltern entscheiden, welche Schulform ihr Kind besucht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0137",
+      "text": "Am Gymnasium sind die Klassen kleiner.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0138",
+      "text": "Wie lange dauert die Realschule?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0139",
+      "text": "Sie dauert bis zur zehnten Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0140",
+      "text": "Sie dauert bis zur neunten Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0141",
+      "text": "Sie dauert bis zum Abitur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0142",
+      "text": "Was wirst du nach der zehnten Klasse machen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0143",
+      "text": "Ich werde wahrscheinlich auf dem Gymnasium bleiben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0144",
+      "text": "Und warum?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0145",
+      "text": "Ich will später studieren, deshalb brauche ich das Abitur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0146",
+      "text": "Im nächsten Schuljahr werde ich jeden Tag zwanzig Minuten auf Deutsch lesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0147",
+      "text": "Ich werde mich im Unterricht öfter melden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0148",
+      "text": "In der Klasse gibt es seit Wochen einen Konflikt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0149",
+      "text": "Wie können wir den Konflikt friedlich lösen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0150",
+      "text": "Jeden Freitag trifft sich der Klassenrat in der letzten Stunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0151",
+      "text": "Im Klassenrat sprechen die Kinder über Probleme in der Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0152",
+      "text": "Vor Wut ist Jan ganz rot geworden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0153",
+      "text": "Es nervt mich, dass Finn immer den Ball nimmt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0154",
+      "text": "Bitte sprecht in einem freundlichen Ton miteinander.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0155",
+      "text": "Im Klassenrat sprechen wir über den Umgang miteinander.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0156",
+      "text": "Jan hat einen ruhigen Charakter, aber heute war er wütend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0157",
+      "text": "Mia spricht das Problem im Klassenrat an.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0158",
+      "text": "Alle Kinder akzeptieren die neuen Regeln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0159",
+      "text": "Laylā traut sich nicht, im Unterricht etwas zu sagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0160",
+      "text": "Trau dich!",
+      "quelle": "tatoeba:5599050",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5599050 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e07.s0161",
+      "text": "Gestern hat sich Laylā endlich getraut, im Unterricht eine Frage zu stellen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0162",
+      "text": "Am Anfang war Laylā in der neuen Klasse sehr schüchtern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0163",
+      "text": "Finn war neidisch, weil Jan eine bessere Note hatte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0164",
+      "text": "Finn findet sich witzig, aber die anderen lachen nicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0165",
+      "text": "Ich hatte ein komisches Gefühl, als plötzlich alle still waren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0166",
+      "text": "Dein Verhalten heute war wirklich unmöglich!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0167",
+      "text": "So etwas mache ich niemals wieder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0168",
+      "text": "Gib niemals auf!",
+      "quelle": "tatoeba:2161826",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2161826 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e07.s0169",
+      "text": "Ich wollte doch bloß einmal den Ball haben!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0170",
+      "text": "Vor Klassenarbeiten spüren viele Kinder großen Druck.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0171",
+      "text": "Yazan ist nicht faul, ganz im Gegenteil!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0172",
+      "text": "Im Gegensatz zu ihrem Bruder ist Laylā eher ruhig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0173",
+      "text": "Es tut mir leid, das war keine Absicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0174",
+      "text": "Als Jan in der Pause den Ball holen wollte, gab es Streit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0175",
+      "text": "Wenn es Streit gibt, sprechen wir zuerst ruhig miteinander.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0176",
+      "text": "Während Mia spricht, hören die anderen aufmerksam zu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0177",
+      "text": "Seit dem Streit reden Jan und Finn nicht mehr miteinander.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0178",
+      "text": "Wir könnten einen Plan für den Ball machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0179",
+      "text": "Du solltest dich bei Finn entschuldigen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0180",
+      "text": "An deiner Stelle würde ich noch einmal mit ihm reden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0181",
+      "text": "Es wäre gut, wenn jede Gruppe den Ball an zwei Tagen bekommt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0182",
+      "text": "Warum bist du so wütend, Jan?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0183",
+      "text": "Finn hat einfach den Ball genommen, obwohl ich ihn zuerst hatte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0184",
+      "text": "Hast du schon mit ihm darüber gesprochen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0185",
+      "text": "Nein, ich traue mich nicht, weil er so laut wird.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0186",
+      "text": "Wir könnten zuerst ruhig miteinander sprechen und dann gemeinsam eine Lösung suchen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0187",
+      "text": "Im Fach Deutsch lesen wir auch Literatur für Jugendliche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0188",
+      "text": "Was bedeutet dieser Satz?",
+      "quelle": "tatoeba:341730",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #341730 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e07.s0189",
+      "text": "Schreib bitte kurze und klare Sätze.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0190",
+      "text": "Bilde bitte einfache Sätze.",
+      "quelle": "tatoeba:5714806",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5714806 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e07.s0191",
+      "text": "Die Handlung des Buches ist spannend, aber manchmal etwas lang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0192",
+      "text": "Erzähl mir kurz die Handlung, aber nicht das Ende!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0193",
+      "text": "Kennst du den Begriff „Klassenrat“?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0194",
+      "text": "Frau Schneider erklärt der Klasse einige neue Begriffe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0195",
+      "text": "Das ist ein schöner Ausdruck, den merke ich mir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0196",
+      "text": "Meiner Ansicht nach ist das Buch zu lang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0197",
+      "text": "Jan ist in dieser Frage anderer Ansicht als Mia.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0198",
+      "text": "Ist diese Aussage richtig oder falsch?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0199",
+      "text": "Welche Aussage passt zum Text?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0200",
+      "text": "Laylā hält einen kurzen Vortrag über ein Buch, das sie gern gelesen hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0201",
+      "text": "Während des Vortrags hören alle aufmerksam zu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0202",
+      "text": "Für das Referat haben Elif und Laylā zwei Wochen Zeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0203",
+      "text": "Die wichtigste Person im Buch hat einen schwierigen Charakter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0204",
+      "text": "Ich wüsste gern, wie das Buch endet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0205",
+      "text": "Obwohl das Buch dick ist, hat Elif es in einer Woche gelesen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0206",
+      "text": "Wie findest du das Buch, das wir gerade lesen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0207",
+      "text": "Die Handlung finde ich spannend, aber die Sätze sind oft sehr lang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0208",
+      "text": "Und welche Person magst du am liebsten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0209",
+      "text": "Die jüngere Schwester, weil sie so mutig ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0210",
+      "text": "Schreiben Sie eine Nachricht an die Klassenlehrerin Ihres Kindes. Bitten Sie um einen Termin für ein Gespräch. Nennen Sie den Grund und zwei mögliche Termine.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0211",
+      "text": "Sehr geehrte Frau Schneider, ich bin die Mutter von Laylā aus der Klasse 6. Ich würde gern mit Ihnen über ihre Leistungen in Mathe sprechen. Obwohl sie jeden Tag übt, hat sie in der letzten Klassenarbeit nur eine 4 bekommen. Ich mache mir deshalb ein bisschen Sorgen. Außerdem möchte ich wissen, ob es an der Schule eine Förderung in Mathe gibt. Hätten Sie nächste Woche Zeit für ein kurzes Gespräch? Am Dienstag oder am Donnerstag nach 15 Uhr könnte ich gut kommen. Vielen Dank für Ihre Antwort! Mit freundlichen Grüßen, Ranā",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0212",
+      "text": "Meiner Ansicht nach ist die Handlung spannend, obwohl das Ende etwas traurig ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0213",
+      "text": "Ein Gespräch über Laylā",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0214",
+      "text": "Am Donnerstag haben Ranā und Ḫālid ein Elterngespräch in der Schule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0215",
+      "text": "Sie sind ein bisschen nervös, obwohl Laylā gute Noten nach Hause bringt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0216",
+      "text": "Frau Schneider, die Klassenlehrerin, begrüßt die beiden freundlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0217",
+      "text": "Schön, dass Sie da sind! Ich möchte Ihnen zuerst etwas Gutes sagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0218",
+      "text": "Laylā hat sich in Deutsch sehr verbessert, obwohl sie erst seit einem Jahr in Deutschland ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0219",
+      "text": "Das freut uns sehr! Sie liest zu Hause jeden Abend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0220",
+      "text": "Das merkt man. Ihre Texte sind ausgezeichnet, und im Unterricht ist sie immer aufmerksam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0221",
+      "text": "Und wie ist es in Mathe? Dort hat sie manchmal Schwierigkeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0222",
+      "text": "Ja, in Mathe braucht sie noch etwas Förderung. Dennoch liegt sie im Durchschnitt der Klasse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0223",
+      "text": "Wir haben an der Schule einen Kurs am Nachmittag. Dort könnte sie zweimal pro Woche üben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0224",
+      "text": "Das ist eine gute Idee. Können Sie uns auch sagen, welche Schulform danach in Frage kommt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0225",
+      "text": "Nach der sechsten Klasse kann Laylā auf die Realschule oder aufs Gymnasium gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0226",
+      "text": "Bei ihrer Motivation würde ich das Gymnasium empfehlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0227",
+      "text": "Und wenn sie dort Schwierigkeiten hat?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0228",
+      "text": "Dann sprechen wir rechtzeitig miteinander. Die Schulform kann man auch später noch wechseln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0229",
+      "text": "Also: Laylā geht zweimal pro Woche in den Kurs, und wir üben zu Hause Mathe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0230",
+      "text": "Genau. Im Februar sprechen wir dann wieder über das Halbjahr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0231",
+      "text": "Auf dem Weg nach Hause sind Ranā und Ḫālid sehr stolz auf ihre Tochter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0232",
+      "text": "Am Abend erzählen sie Laylā vom Lob der Lehrerin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0233",
+      "text": "Laylā lacht und sagt, dass sie sich jetzt auch in Mathe mehr Mühe geben wird.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0234",
+      "text": "Worin hat sich Laylā sehr verbessert?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0235",
+      "text": "Sie hat sich in Deutsch verbessert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0236",
+      "text": "Sie hat sich in Mathe verbessert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0237",
+      "text": "Sie hat sich im Sport verbessert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0238",
+      "text": "Wo hat Laylā noch Schwierigkeiten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0239",
+      "text": "Sie hat in Mathe noch Schwierigkeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0240",
+      "text": "Sie hat in Deutsch noch Schwierigkeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0241",
+      "text": "Sie hat in Englisch noch Schwierigkeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0242",
+      "text": "Welche Schulform empfiehlt Frau Schneider?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0243",
+      "text": "Sie empfiehlt das Gymnasium.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0244",
+      "text": "Sie empfiehlt die Realschule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0245",
+      "text": "Sie empfiehlt die Hauptschule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0246",
+      "text": "Was haben die Eltern mit Frau Schneider vereinbart?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0247",
+      "text": "Laylā geht in einen Kurs, und die Eltern üben mit ihr Mathe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0248",
+      "text": "Laylā wechselt sofort aufs Gymnasium.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0249",
+      "text": "Laylā schreibt keine Klassenarbeiten mehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0250",
+      "text": "Wir haben also vereinbart, dass wir im Februar wieder über die Leistungen in Mathe sprechen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0251",
+      "text": "Der Klassenrat",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0252",
+      "text": "Am Freitag trifft sich wieder der Klassenrat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0253",
+      "text": "Mia schreibt heute das Protokoll und fragt, wer ein Thema hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0254",
+      "text": "Jan, du wolltest etwas ansprechen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0255",
+      "text": "Ja. Seit zwei Wochen gibt es in der Pause jeden Tag Streit um den Fußball.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0256",
+      "text": "Als ich gestern den Ball holen wollte, hat Yazan ihn einfach mitgenommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0257",
+      "text": "Das stimmt, aber das war keine Absicht. Ich wusste nicht, dass ihr spielen wolltet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0258",
+      "text": "Immer habt ihr den Ball! Das nervt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0259",
+      "text": "Bitte sprecht in einem ruhigen Ton. Jeder darf ausreden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0260",
+      "text": "Okay. Es tut mir leid, dass ich dich nicht gefragt habe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0261",
+      "text": "Was könnten wir machen, damit es keinen Streit mehr gibt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0262",
+      "text": "Wir könnten einen Plan machen: Jede Gruppe bekommt den Ball an festen Tagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0263",
+      "text": "Das wäre fair. Und wenn es trotzdem Streit gibt, sprechen wir mit einer Lehrkraft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0264",
+      "text": "Gut. Ab Montag gilt der Plan, und wir hängen ihn in der Klasse auf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0265",
+      "text": "Alle sind einverstanden, und Jan und Yazan geben sich die Hand.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0266",
+      "text": "Worüber streiten die Kinder in der Pause?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0267",
+      "text": "Sie streiten über den Fußball.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0268",
+      "text": "Sie streiten über die Noten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0269",
+      "text": "Sie streiten über das Protokoll.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0270",
+      "text": "Warum hat Yazan den Ball mitgenommen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0271",
+      "text": "Er wusste nicht, dass Jan spielen wollte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0272",
+      "text": "Er wollte Jan ärgern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0273",
+      "text": "Jan hat ihm den Ball geschenkt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0274",
+      "text": "Was vereinbart der Klassenrat?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0275",
+      "text": "Sie machen einen Plan für den Ball.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0276",
+      "text": "Niemand darf mehr Fußball spielen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0277",
+      "text": "Jan bekommt den Ball jeden Tag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0278",
+      "text": "Ich wüsste gern, ob Laylā im Unterricht genug mitarbeitet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0279",
+      "text": "Frau Schneider erklärt, dass die 1 die beste Note ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0280",
+      "text": "Obwohl der Elternabend lang war, sind alle bis zum Ende geblieben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0281",
+      "text": "Könnten Sie mir sagen, wie ich meinen Sohn besser fördern kann?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0282",
+      "text": "Nach der Grundschule wird Jan auf die Realschule gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0283",
+      "text": "Wenn ich mich ärgere, gehe ich kurz an die frische Luft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0284",
+      "text": "Seit Laylā im Kurs ist, hat sie in Mathe weniger Schwierigkeiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0285",
+      "text": "Die Lehrerin lobt die Kinder, weil sie sich gut vorbereitet haben.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0286",
+      "text": "Yazan war müde, dennoch hat er sich auf den Test konzentriert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0287",
+      "text": "Wir haben vereinbart, dass wir im Klassenrat immer ausreden lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0288",
+      "text": "Ich verstehe nicht, warum Finn so neidisch ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0289",
+      "text": "Bevor die Klassenfahrt beginnt, gibt es noch einen Elternabend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0290",
+      "text": "Ein guter Lehrer ist geduldig und erklärt alles gern noch einmal.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0291",
+      "text": "Mit viel Mühe hat Yazan seine Note in Mathe verbessert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0292",
+      "text": "Ich werde dir niemals böse sein, wenn du mir ehrlich sagst, was dich stört.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0293",
+      "text": "Laylā hat Respekt vor der Schulleitung, aber sie hat keine Angst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0294",
+      "text": "Hast du schon dein Zeugnis bekommen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0295",
+      "text": "Ja, heute. In Deutsch habe ich eine 2.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0296",
+      "text": "Super! Und wie war es in Mathe?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0297",
+      "text": "Nicht so gut, aber immerhin ist die Versetzung sicher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0298",
+      "text": "Obwohl die Klassenarbeit schwer war, habe ich eine gute Note bekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0299",
+      "text": "Können Sie mir sagen, ob Laylā in Mathe Förderung braucht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0300",
+      "text": "Laylā ist im Unterricht aufmerksam, obwohl sie manchmal müde ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0301",
+      "text": "Im nächsten Schuljahr werden wir öfter Referate halten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0302",
+      "text": "Als der Streit begann, war keine Lehrkraft in der Nähe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0303",
+      "text": "Ihr solltet einander zuhören, bevor ihr eine Lösung sucht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0304",
+      "text": "Die Schulleitung schreibt, dass der Elternabend eine Stunde später beginnt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0305",
+      "text": "Mit ausgezeichneten Leistungen kann man auch später aufs Gymnasium wechseln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0306",
+      "text": "Ich finde, dass jede Lehrkraft die Kinder fördern sollte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0307",
+      "text": "Er hat nichts begriffen, trotzdem hat er nicht gefragt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0308",
+      "text": "Die Klassenfahrt wird drei Tage dauern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0309",
+      "text": "Protokoll des Klassenrats",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0310",
+      "text": "Am Freitag hat sich der Klassenrat getroffen, alle Kinder waren da.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0311",
+      "text": "Jan hat den Streit um den Fußball in der Pause angesprochen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0312",
+      "text": "Yazan hat sich bei Jan entschuldigt, weil er den Ball ohne Frage mitgenommen hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0313",
+      "text": "Wir haben vereinbart, dass jede Gruppe den Ball an festen Tagen bekommt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0314",
+      "text": "Wenn es trotzdem Streit gibt, sprechen wir mit Frau Schneider.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0315",
+      "text": "Im nächsten Klassenrat sprechen wir über die Klassenfahrt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0316",
+      "text": "Beim Klassenrat haben einige Kinder gefehlt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0317",
+      "text": "Yazan hat sich bei Jan entschuldigt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0318",
+      "text": "Jede Gruppe bekommt den Ball jeden Tag.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0319",
+      "text": "Frau Schneider war beim Klassenrat dabei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0320",
+      "text": "Guten Tag, Herr Hartmann. Wie benimmt sich Yazan im Sport?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0321",
+      "text": "Er ist sehr motiviert, aber manchmal ist er zu laut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0322",
+      "text": "Was können wir da machen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0323",
+      "text": "Bitte sprechen Sie zu Hause mit ihm, damit er die Regeln akzeptiert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0324",
+      "text": "Wir haben also vereinbart, dass ich jeden Tag zwanzig Minuten Mathe übe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e07.s0325",
+      "text": "Im nächsten Schuljahr werde ich mich besser auf die Klassenarbeiten vorbereiten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e07.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann einen Elternbrief verstehen und höflich nach Terminen fragen.",
+        "tr": "Bir veli mektubunu anlayabilir ve tarihleri kibarca sorabilirim.",
+        "ar": "أستطيع أن أفهم رسالة المدرسة إلى الأهل وأن أسأل عن المواعيد بأدب."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e07.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.elternabend",
+          "ablenker": ["de.b1.e07.klassenfahrt", "de.a2.e13.zeugnis"]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e07.klassenlehrer",
+            "de.b1.e07.schulleitung",
+            "de.b1.e07.halbjahr",
+            "de.b1.e07.versetzung",
+            "de.b1.e07.durchschnitt",
+            "de.b1.e07.referat"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e07.note",
+          "ablenker": ["de.b1.e07.test", "de.b1.e07.schuljahr"]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e07.s0027",
+          "ablenker": ["de.b1.e07.s0029", "de.b1.e07.s0030"]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0028",
+          "wort": 2,
+          "ablenker": ["dass", "wenn"]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a07",
+          "typ": "formen",
+          "zeilen": ["die Lehrkraft", "die Note", "der Test", "die Klassenarbeit", "das Referat", "das Halbjahr"],
+          "spalten": ["Plural"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["die Lehrkräfte", "Lehrkräfte"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["die Noten", "Noten"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["die Tests", "Tests"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["die Klassenarbeiten", "Klassenarbeiten"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["die Referate", "Referate"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["die Halbjahre", "Halbjahre"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a08",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e07.elternbrief",
+            "de.b1.e07.klassenarbeit",
+            "de.b1.e07.aufmerksamkeit",
+            "de.b1.e07.verstaendnis",
+            "de.b1.e07.vorbereitung",
+            "de.b1.e07.lehrkraft"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0053"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0054"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0055"
+            }
+          ],
+          "antwort": "de.b1.e07.s0056",
+          "ablenker": ["de.b1.e07.s0014", "de.b1.e07.s0013"]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a10",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e07.s0035",
+          "absaetze": [
+            "de.b1.e07.s0036",
+            "de.b1.e07.s0037",
+            "de.b1.e07.s0038",
+            "de.b1.e07.s0039",
+            "de.b1.e07.s0040",
+            "de.b1.e07.s0041",
+            "de.b1.e07.s0042",
+            "de.b1.e07.s0043",
+            "de.b1.e07.s0044"
+          ],
+          "glossen": ["de.b1.e07.elternabend", "de.b1.e07.klassenfahrt", "de.b1.e07.klassenarbeit"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e07.s0045",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e07.s0046",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e07.s0047",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e07.s0048",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e07.s0049",
+              "antwort": "de.b1.e07.s0050",
+              "ablenker": ["de.b1.e07.s0051", "de.b1.e07.s0052"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e07.s0012",
+          "nach": "ziel",
+          "alternativen": ["Wohin geht in diesem Jahr die Klassenfahrt?"],
+          "ablenker": ["wann", "Klassenarbeit"]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e07.s0014",
+          "ablenker": ["de.b1.e07.s0015", "de.b1.e07.s0016"]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0011",
+          "wort": 3,
+          "ablenker": ["Schuljahr", "Schuljahre"],
+          "alternativen": ["Schuljahrs"]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e07.s0031",
+          "alternativen": [
+            "Ranā schreibt zur Vorbereitung auf den Elternabend ihre Fragen auf.",
+            "Ranā schreibt ihre Fragen zur Vorbereitung auf den Elternabend auf.",
+            "Ihre Fragen schreibt Ranā zur Vorbereitung auf den Elternabend auf."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e07.s0027",
+          "nach": "ziel",
+          "alternativen": [
+            "Können Sie mir sagen, wann der Elternabend anfängt?",
+            "Könnten Sie mir sagen, wann der Elternabend beginnt?",
+            "Könnten Sie mir sagen, wann der Elternabend anfängt?",
+            "Können Sie mir bitte sagen, wann der Elternabend beginnt?",
+            "Könnten Sie mir bitte sagen, wann der Elternabend beginnt?"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e07.s0057"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e07.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann im Elterngespräch nach Leistungen fragen und Lob und Sorgen äußern.",
+        "tr": "Veli görüşmesinde başarı durumunu sorabilir, övgü ve endişelerimi dile getirebilirim.",
+        "ar": "أستطيع في لقاء الأهل مع المعلّمة أن أسأل عن مستوى الأداء وأن أعبّر عن الثناء والقلق."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e07.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.leistung",
+          "ablenker": ["de.b1.e07.konzentration", "de.b1.e07.schwierigkeit"]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e07.loben",
+            "de.b1.e07.foerdern",
+            "de.b1.e07.verbessern",
+            "de.b1.e07.begreifen",
+            "de.b1.e07.motivieren",
+            "de.b1.e07.benehmen"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e07.aufmerksam",
+          "ablenker": ["de.b1.e07.faul", "de.b1.e07.geduldig"]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e07.s0076",
+          "ablenker": ["de.b1.e07.s0077", "de.b1.e07.s0080"]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0078",
+          "wort": 0,
+          "ablenker": ["Dennoch", "Trotzdem"]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a07",
+          "typ": "formen",
+          "lemma": "de.b1.e07.benehmen",
+          "zeilen": ["ich", "du", "er/sie/es"],
+          "spalten": ["Präsens", "Perfekt"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["benehme mich"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["habe mich benommen"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["benimmst dich"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["hast dich benommen"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["benimmt sich"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["hat sich benommen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a08",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e07.lob",
+            "de.b1.e07.foerderung",
+            "de.b1.e07.motivation",
+            "de.b1.e07.muehe",
+            "de.b1.e07.elterngespraech",
+            "de.b1.e07.vereinbarung"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0092"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0093"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0094"
+            }
+          ],
+          "antwort": "de.b1.e07.s0095",
+          "ablenker": ["de.b1.e07.s0086", "de.b1.e07.s0013"]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.dennoch",
+          "ablenker": ["de.b1.e07.immerhin", "de.b1.e07.obwohl"]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e07.s0080",
+          "nach": "ziel",
+          "alternativen": ["Der Test war schwer, Laylā hat dennoch eine 2 bekommen."],
+          "ablenker": ["obwohl", "deshalb"]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.ausgezeichnet",
+          "ablenker": ["de.a2.e05.schwach", "de.a2.e14.ehrlich"]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0067",
+          "wort": 5,
+          "ablenker": ["konzentriert", "konzentrierst"]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e07.s0088",
+          "alternativen": ["Yazan hat sich in der Pause nicht gut benommen.", "In der Pause hat Yazan sich nicht gut benommen."]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e07.s0090",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich finde, dass Laylā sich sehr verbessert hat.",
+            "Ich denke, dass sich Laylā sehr verbessert hat.",
+            "Ich denke, dass Laylā sich sehr verbessert hat.",
+            "Ich finde, Laylā hat sich sehr verbessert.",
+            "Ich glaube, dass sich Laylā sehr verbessert hat."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e07.s0096"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e07.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Schulformen sprechen und Pläne für das nächste Schuljahr äußern.",
+        "tr": "Okul türleri hakkında konuşabilir ve gelecek öğretim yılı için planlarımı anlatabilirim.",
+        "ar": "أستطيع أن أتحدث عن أنواع المدارس وأن أعبّر عن خططي للعام الدراسي القادم."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e07.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.gymnasium",
+          "ablenker": ["de.b1.e07.realschule", "de.b1.e07.grundschule"]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e07.schulform",
+            "de.b1.e07.mitschueler",
+            "de.b1.e07.absicht",
+            "de.b1.e07.vorbild",
+            "de.b1.e07.erziehung",
+            "de.b1.e07.konsequenz"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e07.unterrichten",
+          "ablenker": ["de.a1.e01.lernen", "de.a2.e13.bestehen"]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a05",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a06",
+          "typ": "formen",
+          "lemma": "de.a1.e12.werden",
+          "zeilen": ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"],
+          "spalten": ["werden (Futur I)"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["werde"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["wirst"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["wird"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["werden"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["werdet"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["werden"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e07.s0118",
+          "ablenker": ["de.b1.e07.s0119", "de.b1.e07.s0120"]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a08",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0121",
+          "wort": 1,
+          "ablenker": ["wird", "werdet"]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a09",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e07.s0125",
+          "absaetze": [
+            "de.b1.e07.s0126",
+            "de.b1.e07.s0127",
+            "de.b1.e07.s0128",
+            "de.b1.e07.s0129",
+            "de.b1.e07.s0130",
+            "de.b1.e07.s0131",
+            "de.b1.e07.s0132",
+            "de.b1.e07.s0133",
+            "de.b1.e07.s0134"
+          ],
+          "glossen": ["de.b1.e07.schulform", "de.b1.e07.grundschule", "de.b1.e07.realschule", "de.b1.e07.gymnasium"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e07.s0135",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e07.s0136",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e07.s0137",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e07.s0138",
+              "antwort": "de.b1.e07.s0139",
+              "ablenker": ["de.b1.e07.s0140", "de.b1.e07.s0141"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.erwachsen",
+          "ablenker": ["de.a1.e12.jung", "de.a1.e02.alt"]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0142"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0143"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0144"
+            }
+          ],
+          "antwort": "de.b1.e07.s0145",
+          "ablenker": ["de.b1.e07.s0100", "de.b1.e07.s0106"]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.erziehen",
+          "ablenker": ["de.a1.e07.helfen", "de.a1.e08.spielen"]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e07.jedenfalls",
+          "ablenker": ["de.b1.e07.gewiss", "de.a1.e10.vielleicht"]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e07.s0104",
+          "alternativen": [
+            "Laylā wird nach der sechsten Klasse vielleicht aufs Gymnasium wechseln.",
+            "Vielleicht wird Laylā nach der sechsten Klasse aufs Gymnasium wechseln.",
+            "Laylā wird vielleicht nach der sechsten Klasse aufs Gymnasium wechseln."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e07.s0108",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Eltern und die Schule erziehen die Kinder gemeinsam.",
+            "Eltern und Schule erziehen die Kinder zusammen.",
+            "Eltern und Schule erziehen gemeinsam die Kinder.",
+            "Die Eltern und die Schule erziehen die Kinder zusammen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e07.s0146"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e07.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Gefühle in einem Streit sprechen und Lösungen vorschlagen.",
+        "tr": "Bir tartışmadaki duygular hakkında konuşabilir ve çözümler önerebilirim.",
+        "ar": "أستطيع أن أتحدث عن المشاعر في خلاف وأن أقترح حلولًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e07.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.konflikt",
+          "ablenker": ["de.b1.e07.klassenrat", "de.b1.e07.verhalten"]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e07.wut", "de.b1.e07.ton", "de.b1.e07.umgang", "de.b1.e07.druck", "de.b1.e07.gegenteil"]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e07.schuechtern",
+          "ablenker": ["de.b1.e07.neidisch", "de.b1.e07.witzig"]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a04",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e07.ansprechen",
+            "de.b1.e07.akzeptieren",
+            "de.b1.e07.trauen",
+            "de.b1.e07.nerven",
+            "de.a2.e14.streiten",
+            "de.a2.e14.entschuldigen"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e07.s0174",
+          "ablenker": ["de.b1.e07.s0175", "de.b1.e07.s0177"]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0176",
+          "wort": 0,
+          "ablenker": ["Als", "Ob"]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a07",
+          "typ": "formen",
+          "zeilen": ["ich", "du", "er/sie/es", "wir"],
+          "spalten": ["sein (Konjunktiv II)", "sollen (Konjunktiv II)"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["wäre"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["sollte"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["wärst", "wärest"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["solltest"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["wäre"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["sollte"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["wären"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["sollten"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.witzig",
+          "ablenker": ["de.b1.e07.unmoeglich", "de.b1.e07.ewig"]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0182"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0183"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0184"
+            }
+          ],
+          "antwort": "de.b1.e07.s0185",
+          "ablenker": ["de.b1.e07.s0101", "de.b1.e07.s0016"]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e07.niemals",
+          "ablenker": ["de.b1.e07.bloss", "de.a1.e08.immer"]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e07.s0179",
+          "nach": "ziel",
+          "ablenker": ["mich", "für"]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.komisch",
+          "ablenker": ["de.a2.e14.traurig", "de.a2.e14.stolz"]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a13",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0180",
+          "wort": 3,
+          "ablenker": ["wäre", "wird"]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e07.s0177",
+          "alternativen": [
+            "Jan und Finn reden seit dem Streit nicht mehr miteinander.",
+            "Seit dem Streit reden Finn und Jan nicht mehr miteinander.",
+            "Finn und Jan reden seit dem Streit nicht mehr miteinander."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e07.s0157",
+          "nach": "ziel",
+          "alternativen": [
+            "Mia spricht im Klassenrat das Problem an.",
+            "Im Klassenrat spricht Mia das Problem an.",
+            "Mia spricht das Thema im Klassenrat an.",
+            "Mia spricht im Klassenrat das Thema an."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e07.s0186"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e07.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann meine Ansicht zu einem Buch sagen und eine Nachricht an die Lehrerin schreiben.",
+        "tr": "Bir kitap hakkındaki görüşümü söyleyebilir ve öğretmene bir mesaj yazabilirim.",
+        "ar": "أستطيع أن أقول رأيي في كتاب وأن أكتب رسالة إلى المعلّمة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e07.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.literatur",
+          "ablenker": ["de.a1.e07.buch", "de.b1.e05.autor"]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e07.satz",
+            "de.b1.e07.handlung",
+            "de.b1.e07.begriff",
+            "de.b1.e07.charakter",
+            "de.b1.e07.vortrag",
+            "de.b1.e07.schrift"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e07.ansicht",
+          "ablenker": ["de.b1.e07.aussage", "de.b1.e07.gegensatz"]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e07.s0191",
+          "ablenker": ["de.b1.e07.s0196", "de.b1.e07.s0205"]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0196",
+          "wort": 0,
+          "ablenker": ["Meine", "Mein"]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.ausdruck",
+          "ablenker": ["de.a1.e07.wort", "de.b1.e07.satz"]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0206"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0207"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0208"
+            }
+          ],
+          "antwort": "de.b1.e07.s0209",
+          "ablenker": ["de.b1.e07.s0190", "de.b1.e07.s0201"]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e07.s0194",
+          "nach": "ziel",
+          "alternativen": [
+            "Einige neue Begriffe erklärt Frau Schneider der Klasse.",
+            "Der Klasse erklärt Frau Schneider einige neue Begriffe."
+          ],
+          "ablenker": ["die", "Begriff"]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e07.s0189"
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a11",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e07.s0210",
+          "woerter": {
+            "min": 80,
+            "max": 100
+          },
+          "pflichtwoerter": ["Termin", "Gespräch", "Leistungen"],
+          "muster": ["de.b1.e07.s0211"]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a12",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0205",
+          "wort": 0,
+          "ablenker": ["Trotzdem", "Deshalb"]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e07.s0192",
+          "alternativen": ["Erzähl mir die Handlung kurz, aber nicht das Ende!"]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e07.s0196",
+          "nach": "ziel",
+          "alternativen": [
+            "Meiner Meinung nach ist das Buch zu lang.",
+            "Das Buch ist meiner Ansicht nach zu lang.",
+            "Das Buch ist meiner Meinung nach zu lang.",
+            "Ich finde das Buch zu lang.",
+            "Meiner Ansicht nach ist das Buch zu lange."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e07.s0198",
+          "ablenker": ["de.b1.e07.s0199", "de.b1.e07.s0193"]
+        },
+        {
+          "schluessel": "de.b1.e07.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e07.s0212"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e07.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann ein Elterngespräch und ein Gespräch im Klassenrat verstehen.",
+        "tr": "Bir veli görüşmesini ve sınıf meclisindeki bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم لقاءً بين الأهل والمعلّمة وحوارًا في مجلس الصف."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e07.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e07.s0213",
+          "zeilen": [
+            {
+              "satz": "de.b1.e07.s0214"
+            },
+            {
+              "satz": "de.b1.e07.s0215"
+            },
+            {
+              "satz": "de.b1.e07.s0216"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0217"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0218"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0219"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0220"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e07.s0221"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0222"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0223"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0224"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0225"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0226"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e07.s0227"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0228"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0229"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0230"
+            },
+            {
+              "satz": "de.b1.e07.s0231"
+            },
+            {
+              "satz": "de.b1.e07.s0232"
+            },
+            {
+              "satz": "de.b1.e07.s0233"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 5,
+              "frage": "de.b1.e07.s0234",
+              "antwort": "de.b1.e07.s0235",
+              "ablenker": ["de.b1.e07.s0236", "de.b1.e07.s0237"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.b1.e07.s0238",
+              "antwort": "de.b1.e07.s0239",
+              "ablenker": ["de.b1.e07.s0240", "de.b1.e07.s0241"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.b1.e07.s0242",
+              "antwort": "de.b1.e07.s0243",
+              "ablenker": ["de.b1.e07.s0244", "de.b1.e07.s0245"]
+            },
+            {
+              "nach": 16,
+              "frage": "de.b1.e07.s0246",
+              "antwort": "de.b1.e07.s0247",
+              "ablenker": ["de.b1.e07.s0248", "de.b1.e07.s0249"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l06.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e07.s0218",
+          "ablenker": ["de.b1.e07.s0215", "de.b1.e07.s0226"]
+        },
+        {
+          "schluessel": "de.b1.e07.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0226",
+          "wort": 3,
+          "ablenker": ["wäre", "hätte"]
+        },
+        {
+          "schluessel": "de.b1.e07.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e07.s0231",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e07.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.b1.e07.s0251",
+          "zeilen": [
+            {
+              "satz": "de.b1.e07.s0252"
+            },
+            {
+              "satz": "de.b1.e07.s0253"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0254"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0255"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0256"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e07.s0257"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0258"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0259"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e07.s0260"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0261"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.b1.e07.s0262"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0263"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0264"
+            },
+            {
+              "satz": "de.b1.e07.s0265"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.b1.e07.s0266",
+              "antwort": "de.b1.e07.s0267",
+              "ablenker": ["de.b1.e07.s0268", "de.b1.e07.s0269"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.b1.e07.s0270",
+              "antwort": "de.b1.e07.s0271",
+              "ablenker": ["de.b1.e07.s0272", "de.b1.e07.s0273"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.b1.e07.s0274",
+              "antwort": "de.b1.e07.s0275",
+              "ablenker": ["de.b1.e07.s0276", "de.b1.e07.s0277"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0261"
+            }
+          ],
+          "antwort": "de.b1.e07.s0262",
+          "ablenker": ["de.b1.e07.s0258", "de.b1.e07.s0254"]
+        },
+        {
+          "schluessel": "de.b1.e07.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0256",
+          "wort": 0,
+          "ablenker": ["Wenn", "Ob"]
+        },
+        {
+          "schluessel": "de.b1.e07.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.b1.e07.s0215",
+          "alternativen": ["Obwohl Laylā gute Noten nach Hause bringt, sind sie ein bisschen nervös."]
+        },
+        {
+          "schluessel": "de.b1.e07.l06.a09",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e07.s0252"
+        },
+        {
+          "schluessel": "de.b1.e07.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e07.s0260",
+          "ablenker": ["de.b1.e07.s0259", "de.b1.e07.s0264"]
+        },
+        {
+          "schluessel": "de.b1.e07.l06.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e07.s0226",
+          "nach": "ziel",
+          "alternativen": [
+            "Bei ihrer Motivation würde ich ihr das Gymnasium empfehlen.",
+            "Ich würde bei ihrer Motivation das Gymnasium empfehlen.",
+            "Weil sie so motiviert ist, würde ich das Gymnasium empfehlen.",
+            "Bei dieser Motivation würde ich das Gymnasium empfehlen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e07.s0265",
+          "nach": "ziel",
+          "alternativen": ["Alle sind einverstanden, und Yazan und Jan geben sich die Hand."],
+          "ablenker": ["nehmen", "euch"]
+        },
+        {
+          "schluessel": "de.b1.e07.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.b1.e07.s0250"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e07.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum.",
+        "ar": "أراجع كلمات الوحدة وجملها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e07.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.vereinbarung",
+          "ablenker": ["de.a1.e11.termin", "de.b1.e07.lob"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e07.konzentration",
+            "de.b1.e07.verstaendnis",
+            "de.b1.e07.vorbereitung",
+            "de.b1.e07.schwierigkeit",
+            "de.b1.e07.leistung"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e07.faul",
+          "ablenker": ["de.b1.e07.geduldig", "de.b1.e07.aufmerksam"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a04",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e07.ton",
+          "ablenker": ["de.a2.e08.tor"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e07.s0278",
+          "ablenker": ["de.b1.e07.s0281", "de.b1.e07.s0299"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0282",
+          "wort": 3,
+          "ablenker": ["werden", "wirst"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a07",
+          "typ": "formen",
+          "zeilen": ["begreifen", "loben", "unterrichten", "erziehen"],
+          "spalten": ["er/sie/es (Präteritum)", "Partizip II"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["begriff"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["begriffen"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["lobte"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["gelobt"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["unterrichtete"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["unterrichtet"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["erzog"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["erzogen"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.immerhin",
+          "ablenker": ["de.b1.e07.niemals", "de.b1.e07.gewiss"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a09",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e07.wut",
+          "ablenker": ["de.a1.e01.gut", "de.a2.e14.mut"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.nerven",
+          "ablenker": ["de.b1.e07.loben", "de.b1.e07.akzeptieren"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0294"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0295"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0296"
+            }
+          ],
+          "antwort": "de.b1.e07.s0297",
+          "ablenker": ["de.b1.e07.s0288", "de.b1.e07.s0101"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e07.s0280",
+          "nach": "ziel",
+          "alternativen": ["Alle sind bis zum Ende geblieben, obwohl der Elternabend lang war."],
+          "ablenker": ["Trotzdem", "ist"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e07.test",
+          "ablenker": ["de.a2.e03.fest"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e07.s0291",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e07.s0282"
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a16",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e07.s0286",
+          "ablenker": ["de.b1.e07.s0291", "de.b1.e07.s0080"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a17",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0284",
+          "wort": 0,
+          "ablenker": ["Als", "Ob"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a18",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e07.s0100",
+          "alternativen": ["Die Grundschule dauert in Hessen 4 Jahre."]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a19",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0279",
+          "wort": 3,
+          "ablenker": ["was", "obwohl"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a20",
+          "typ": "satzbau",
+          "ziel": "de.b1.e07.s0287",
+          "alternativen": ["Wir haben vereinbart, dass wir immer im Klassenrat ausreden lassen."]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a21",
+          "typ": "frei",
+          "ziel": "de.b1.e07.s0281",
+          "nach": "ziel",
+          "alternativen": [
+            "Können Sie mir sagen, wie ich meinen Sohn besser fördern kann?",
+            "Könnten Sie mir bitte sagen, wie ich meinen Sohn besser fördern kann?",
+            "Könnten Sie mir sagen, wie ich meinen Sohn besser unterstützen kann?",
+            "Können Sie mir sagen, wie ich meinen Sohn besser unterstützen kann?"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a22",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e07.s0290",
+          "ablenker": ["de.b1.e07.s0285", "de.b1.e07.s0293"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a23",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.referat",
+          "ablenker": ["de.b1.e07.halbjahr", "de.b1.e07.elternbrief"]
+        },
+        {
+          "schluessel": "de.b1.e07.l07.a24",
+          "typ": "sprechen",
+          "satz": "de.b1.e07.s0298"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e07.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich an einem Elterngespräch teilnehmen und einen Streit friedlich lösen kann.",
+        "tr": "Bir veli görüşmesine katılabildiğimi ve bir tartışmayı barışçıl şekilde çözebildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أشارك في لقاء مع المعلّمة وأن أحلّ خلافًا بسلام."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e07.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e07.konflikt",
+          "ablenker": ["de.b1.e07.vereinbarung", "de.b1.e07.leistung"]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e07.elternabend",
+            "de.b1.e07.klassenrat",
+            "de.a2.e13.zeugnis",
+            "de.b1.e07.versetzung",
+            "de.b1.e07.gymnasium",
+            "de.b1.e07.lehrkraft"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e07.s0299",
+          "ablenker": ["de.b1.e07.s0278", "de.b1.e07.s0028"]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0300",
+          "wort": 5,
+          "ablenker": ["dennoch", "trotzdem"]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e07.s0299",
+          "wort": 4,
+          "ablenker": ["dass", "was"]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e07.s0309",
+          "absaetze": ["de.b1.e07.s0310", "de.b1.e07.s0311", "de.b1.e07.s0312", "de.b1.e07.s0313", "de.b1.e07.s0314", "de.b1.e07.s0315"],
+          "glossen": ["de.b1.e07.klassenrat", "de.b1.e07.ansprechen"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e07.s0316",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e07.s0317",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e07.s0318",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e07.s0319",
+              "richtig": "nicht_im_text"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0320"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e07.s0321"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e07.s0322"
+            }
+          ],
+          "antwort": "de.b1.e07.s0323",
+          "ablenker": ["de.b1.e07.s0308", "de.b1.e07.s0123"]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e07.s0303",
+          "nach": "ziel",
+          "alternativen": ["Bevor ihr eine Lösung sucht, solltet ihr einander zuhören."],
+          "ablenker": ["dass", "zuhört"]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.b1.e07.s0304",
+          "alternativen": ["Dass der Elternabend eine Stunde später beginnt, schreibt die Schulleitung."]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a10",
+          "typ": "frei",
+          "ziel": "de.b1.e07.s0301",
+          "nach": "ziel",
+          "alternativen": [
+            "Im nächsten Schuljahr halten wir öfter Referate.",
+            "Wir werden im nächsten Schuljahr öfter Referate halten.",
+            "Im nächsten Schuljahr werden wir häufiger Referate halten.",
+            "Wir werden im nächsten Schuljahr häufiger Referate halten."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e07.s0308",
+          "alternativen": ["Die Klassenfahrt wird 3 Tage dauern."]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e07.akzeptieren",
+          "ablenker": ["de.b1.e07.ansprechen", "de.b1.e07.motivieren"]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e07.s0307",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e07.s0302",
+          "ablenker": ["de.b1.e07.s0303", "de.b1.e07.s0177"]
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.b1.e07.s0324"
+        },
+        {
+          "schluessel": "de.b1.e07.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e07.s0325"
+        }
+      ]
+    }
+  ]
+}
