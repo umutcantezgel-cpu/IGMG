@@ -22,6 +22,19 @@
     - Beide warten; wieder starten mit denselben Args, sobald die Auslastung unter der Taktlinie liegt.
     - Es laufen B1 de, B1 ar und die Prüfer-Gegenprüfung.
     - Die Regel steht in CLAUDE.md und im stündlichen Trigger.
+  - **20:28 – nachgemessen:**
+    - Auslastung 0,17 um 20:26 bei ≈ 5 Agenten (≈ 0,7 %/min); die Taktlinie liegt bei 0,08.
+    - B1 ar an der Einheitengrenze gestoppt, nach den Entwürfen e02 (817f1c5e) und e03 (b9074ac7).
+    - Es läuft nur noch B1 de (2 Plätze).
+    - **Warteschlange** in dieser Reihenfolge, jeweils erst wenn die Auslastung unter der Taktlinie liegt:
+      1. Prüfer-Mängelrunde (1 Agent).
+      2. B1 ar (`entworfen` e01–e03, `lektoriert` e01; e04 als Teildatei).
+      3. B1 tr (Args wie `wf_29e1505e-683`).
+      4. B2 de (Args wie `wf_efd14149-f78`).
+  - **Prüfer-Gegenprüfung (`wf_7cde5edd-950`): keine Freigabe**, 1 Mangel „mittel“ (Urteil in `scratchpad/pruefer-fa/urteil1.json`):
+    - Weil Register-Nebeneinträge gar nicht mehr melden, verstummen auch 3 echte derbe bzw. sexuelle Formen (tr 2, de 1), die im Inhalt 0-mal vorkommen.
+    - Behebung: den Hinweis behalten, wenn die markierten Lesarten derselben Ausgabe überwiegen.
+    - Dazu niedrig: die Verluste bei ǧinsiyya (Adjektivform), R-06/R-08 ohne Artikel und li-ḥaǧǧ im Handbuch nennen; den Test mit -hu an Tāʾ marbūṭa berichtigen.
   - **A1-Freigabe:** wartet weiter auf die Erlaubnis des Nutzers (120 gestagte Dateien).
 
 - **Stand 24.10.2026 16:50 UTC – Plan-Modus der Umgebung (≈ 16:20–16:40) beendet:**
