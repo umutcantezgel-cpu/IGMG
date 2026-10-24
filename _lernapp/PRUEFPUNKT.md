@@ -27,7 +27,7 @@
     - B1 ar an der Einheitengrenze gestoppt, nach den Entwürfen e02 (817f1c5e) und e03 (b9074ac7).
     - Es läuft nur noch B1 de (2 Plätze).
     - **Warteschlange** in dieser Reihenfolge, jeweils erst wenn die Auslastung unter der Taktlinie liegt:
-      1. Prüfer-Mängelrunde (1 Agent).
+      1. Prüfer-Mängelrunde (1 Agent): `scratchpad/lernapp-pruefer-maengel.workflow.js`, Args `{scratchpad}`.
       2. B1 ar (`entworfen` e01–e03, `lektoriert` e01; e04 als Teildatei).
       3. B1 tr (Args wie `wf_29e1505e-683`).
       4. B2 de (Args wie `wf_efd14149-f78`).
