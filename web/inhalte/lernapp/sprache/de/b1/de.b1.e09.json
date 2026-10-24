@@ -1,0 +1,5186 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "de.b1.e09",
+    "reihenfolge": 10,
+    "thema": {
+      "de": "Führerschein und Verkehr",
+      "tr": "Ehliyet ve trafik",
+      "ar": "رخصة القيادة والمرور"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann Verkehrsregeln und Hinweise im Straßenverkehr verstehen und erklären.",
+        "tr": "Trafik kurallarını ve yoldaki uyarıları anlayabilir ve açıklayabilirim.",
+        "ar": "أستطيع أن أفهم قواعد المرور والإرشادات على الطريق وأن أشرحها."
+      },
+      {
+        "de": "Ich kann über Vor- und Nachteile verschiedener Verkehrsmittel sprechen.",
+        "tr": "Farklı ulaşım araçlarının avantajları ve dezavantajları hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدّث عن مزايا وسائل النقل المختلفة وعيوبها."
+      }
+    ],
+    "symbol": "car",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b1.e09.trotz",
+      "lemma": "trotz",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Genitiv (im Alltag auch Dativ)"
+      },
+      "frequenzRang": 507,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.aufgrund",
+      "lemma": "aufgrund",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Genitiv"
+      },
+      "frequenzRang": 486,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.entlang",
+      "lemma": "entlang",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "nachgestellt mit Akkusativ (die Straße entlang)"
+      },
+      "frequenzRang": 1558,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.sodass",
+      "lemma": "sodass",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "satzbau": "Nebensatz, Verb am Ende (Folge); auch so … dass"
+      },
+      "frequenzRang": 1561,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.dadurch",
+      "lemma": "dadurch",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Verbindungsadverb, Verb auf Platz 2 (Folge, Mittel)"
+      },
+      "frequenzRang": 471,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.somit",
+      "lemma": "somit",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Verbindungsadverb, Verb auf Platz 2 (Folge)"
+      },
+      "frequenzRang": 658,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.erneut",
+      "lemma": "erneut",
+      "wortart": "adverb",
+      "frequenzRang": 670,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.offenbar",
+      "lemma": "offenbar",
+      "wortart": "adverb",
+      "frequenzRang": 932,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.dahin",
+      "lemma": "dahin",
+      "wortart": "adverb",
+      "frequenzRang": 1118,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.herum",
+      "lemma": "herum",
+      "wortart": "adverb",
+      "frequenzRang": 1357,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.davor",
+      "lemma": "davor",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Pronominaladverb (vor dem/der)"
+      },
+      "frequenzRang": 1441,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.mitten",
+      "lemma": "mitten",
+      "wortart": "adverb",
+      "frequenzRang": 1468,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.anscheinend",
+      "lemma": "anscheinend",
+      "wortart": "adverb",
+      "frequenzRang": 1891,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.weshalb",
+      "lemma": "weshalb",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Fragewort und Relativadverb (Grund)"
+      },
+      "frequenzRang": 1664,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.relativ",
+      "lemma": "relativ",
+      "wortart": "adverb",
+      "frequenzRang": 988,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.offensichtlich",
+      "lemma": "offensichtlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "offensichtliche",
+        "endung_en": "offensichtlichen",
+        "endung_er": "offensichtlicher",
+        "endung_es": "offensichtliches",
+        "endung_em": "offensichtlichem",
+        "komparativ": "offensichtlicher",
+        "superlativ": "offensichtlichsten",
+        "superlativ_e": "offensichtlichste"
+      },
+      "frequenzRang": 1189,
+      "quelle": "wiktionary:de:offensichtlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚offensichtlich‘ (https://de.wiktionary.org/wiki/offensichtlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.unmittelbar",
+      "lemma": "unmittelbar",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "unmittelbare",
+        "endung_en": "unmittelbaren",
+        "endung_er": "unmittelbarer",
+        "endung_es": "unmittelbares",
+        "endung_em": "unmittelbarem"
+      },
+      "frequenzRang": 1208,
+      "quelle": "wiktionary:de:unmittelbar",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚unmittelbar‘ (https://de.wiktionary.org/wiki/unmittelbar), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.sichtbar",
+      "lemma": "sichtbar",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "sichtbare",
+        "endung_en": "sichtbaren",
+        "endung_er": "sichtbarer",
+        "endung_es": "sichtbares",
+        "endung_em": "sichtbarem",
+        "komparativ": "sichtbarer",
+        "superlativ": "sichtbarsten",
+        "superlativ_e": "sichtbarste"
+      },
+      "frequenzRang": 1674,
+      "quelle": "wiktionary:de:sichtbar",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚sichtbar‘ (https://de.wiktionary.org/wiki/sichtbar), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.maximal",
+      "lemma": "maximal",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "maximale",
+        "endung_en": "maximalen",
+        "endung_er": "maximaler",
+        "endung_es": "maximales",
+        "endung_em": "maximalem"
+      },
+      "frequenzRang": 1507,
+      "quelle": "wiktionary:de:maximal",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚maximal‘ (https://de.wiktionary.org/wiki/maximal), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.fahrzeug",
+      "lemma": "Fahrzeug",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Fahrzeuge"
+      },
+      "formen": {
+        "pl": "Fahrzeuge",
+        "dat_pl": "Fahrzeugen",
+        "gen_sg": "Fahrzeugs",
+        "gen_sg_2": "Fahrzeuges"
+      },
+      "frequenzRang": 860,
+      "quelle": "wiktionary:de:Fahrzeug",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fahrzeug‘ (https://de.wiktionary.org/wiki/Fahrzeug), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.sicht",
+      "lemma": "Sicht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 996,
+      "quelle": "wiktionary:de:Sicht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sicht‘ (https://de.wiktionary.org/wiki/Sicht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.verbot",
+      "lemma": "Verbot",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Verbote"
+      },
+      "formen": {
+        "pl": "Verbote",
+        "dat_pl": "Verboten",
+        "gen_sg": "Verbots",
+        "gen_sg_2": "Verbotes"
+      },
+      "frequenzRang": 1508,
+      "quelle": "wiktionary:de:Verbot",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verbot‘ (https://de.wiktionary.org/wiki/Verbot), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.motor",
+      "lemma": "Motor",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Motoren"
+      },
+      "formen": {
+        "pl": "Motoren",
+        "gen_sg": "Motors"
+      },
+      "frequenzRang": 1570,
+      "quelle": "wiktionary:de:Motor",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Motor‘ (https://de.wiktionary.org/wiki/Motor), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.geschwindigkeit",
+      "lemma": "Geschwindigkeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Geschwindigkeiten"
+      },
+      "formen": {
+        "pl": "Geschwindigkeiten"
+      },
+      "frequenzRang": 1916,
+      "quelle": "wiktionary:de:Geschwindigkeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Geschwindigkeit‘ (https://de.wiktionary.org/wiki/Geschwindigkeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.spur",
+      "lemma": "Spur",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Spuren"
+      },
+      "formen": {
+        "pl": "Spuren"
+      },
+      "frequenzRang": 1975,
+      "quelle": "wiktionary:de:Spur",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Spur‘ (https://de.wiktionary.org/wiki/Spur), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.rand",
+      "lemma": "Rand",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Ränder"
+      },
+      "formen": {
+        "pl": "Ränder",
+        "dat_pl": "Rändern",
+        "gen_sg": "Rands",
+        "gen_sg_2": "Randes"
+      },
+      "frequenzRang": 1986,
+      "quelle": "wiktionary:de:Rand",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rand‘ (https://de.wiktionary.org/wiki/Rand), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.theorie",
+      "lemma": "Theorie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Theorien"
+      },
+      "formen": {
+        "pl": "Theorien"
+      },
+      "frequenzRang": 1376,
+      "quelle": "wiktionary:de:Theorie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Theorie‘ (https://de.wiktionary.org/wiki/Theorie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.autofahrer",
+      "lemma": "Autofahrer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Autofahrer",
+        "weiblich": "Autofahrerin"
+      },
+      "formen": {
+        "dat_pl": "Autofahrern",
+        "gen_sg": "Autofahrers",
+        "weiblich": "Autofahrerin",
+        "weiblich_pl": "Autofahrerinnen"
+      },
+      "frequenzRang": 3060,
+      "quelle": "wiktionary:de:Autofahrer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Autofahrer‘ (https://de.wiktionary.org/wiki/Autofahrer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.radfahrer",
+      "lemma": "Radfahrer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Radfahrer",
+        "weiblich": "Radfahrerin"
+      },
+      "formen": {
+        "dat_pl": "Radfahrern",
+        "gen_sg": "Radfahrers",
+        "weiblich": "Radfahrerin",
+        "weiblich_pl": "Radfahrerinnen"
+      },
+      "frequenzRang": 3272,
+      "quelle": "wiktionary:de:Radfahrer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Radfahrer‘ (https://de.wiktionary.org/wiki/Radfahrer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.fussgaenger",
+      "lemma": "Fußgänger",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Fußgänger",
+        "weiblich": "Fußgängerin"
+      },
+      "formen": {
+        "dat_pl": "Fußgängern",
+        "gen_sg": "Fußgängers",
+        "weiblich": "Fußgängerin",
+        "weiblich_pl": "Fußgängerinnen"
+      },
+      "frequenzRang": 5371,
+      "quelle": "wiktionary:de:Fußgänger",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fußgänger‘ (https://de.wiktionary.org/wiki/Fußgänger), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.fahrschule",
+      "lemma": "Fahrschule",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Fahrschulen"
+      },
+      "formen": {
+        "pl": "Fahrschulen"
+      },
+      "frequenzRang": 10506,
+      "quelle": "wiktionary:de:Fahrschule",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fahrschule‘ (https://de.wiktionary.org/wiki/Fahrschule), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.fahrlehrer",
+      "lemma": "Fahrlehrer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Fahrlehrer",
+        "weiblich": "Fahrlehrerin"
+      },
+      "formen": {
+        "dat_pl": "Fahrlehrern",
+        "gen_sg": "Fahrlehrers",
+        "weiblich": "Fahrlehrerin",
+        "weiblich_pl": "Fahrlehrerinnen"
+      },
+      "frequenzRang": 36415,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.fahrstunde",
+      "lemma": "Fahrstunde",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Fahrstunden"
+      },
+      "formen": {
+        "pl": "Fahrstunden"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.vorfahrt",
+      "lemma": "Vorfahrt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 19506,
+      "quelle": "wiktionary:de:Vorfahrt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vorfahrt‘ (https://de.wiktionary.org/wiki/Vorfahrt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.verkehrsschild",
+      "lemma": "Verkehrsschild",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Verkehrsschilder"
+      },
+      "formen": {
+        "pl": "Verkehrsschilder",
+        "dat_pl": "Verkehrsschildern",
+        "gen_sg": "Verkehrsschilds",
+        "gen_sg_2": "Verkehrsschildes"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.umleitung",
+      "lemma": "Umleitung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Umleitungen"
+      },
+      "formen": {
+        "pl": "Umleitungen"
+      },
+      "frequenzRang": 10892,
+      "quelle": "wiktionary:de:Umleitung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Umleitung‘ (https://de.wiktionary.org/wiki/Umleitung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.kurve",
+      "lemma": "Kurve",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kurven"
+      },
+      "formen": {
+        "pl": "Kurven"
+      },
+      "frequenzRang": 6105,
+      "quelle": "wiktionary:de:Kurve",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kurve‘ (https://de.wiktionary.org/wiki/Kurve), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.tempo",
+      "lemma": "Tempo",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Tempos"
+      },
+      "formen": {
+        "pl": "Tempos",
+        "gen_sg": "Tempos"
+      },
+      "frequenzRang": 3345,
+      "quelle": "wiktionary:de:Tempo",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tempo‘ (https://de.wiktionary.org/wiki/Tempo), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.vorschrift",
+      "lemma": "Vorschrift",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Vorschriften"
+      },
+      "formen": {
+        "pl": "Vorschriften"
+      },
+      "frequenzRang": 2530,
+      "quelle": "wiktionary:de:Vorschrift",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vorschrift‘ (https://de.wiktionary.org/wiki/Vorschrift), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.strafe",
+      "lemma": "Strafe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Strafen"
+      },
+      "formen": {
+        "pl": "Strafen"
+      },
+      "frequenzRang": 2054,
+      "quelle": "wiktionary:de:Strafe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Strafe‘ (https://de.wiktionary.org/wiki/Strafe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.bussgeld",
+      "lemma": "Bußgeld",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Bußgelder"
+      },
+      "formen": {
+        "pl": "Bußgelder",
+        "dat_pl": "Bußgeldern",
+        "gen_sg": "Bußgelds",
+        "gen_sg_2": "Bußgeldes"
+      },
+      "frequenzRang": 8262,
+      "quelle": "wiktionary:de:Bußgeld",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bußgeld‘ (https://de.wiktionary.org/wiki/Bußgeld), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.bremse",
+      "lemma": "Bremse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bremsen"
+      },
+      "formen": {
+        "pl": "Bremsen"
+      },
+      "frequenzRang": 8287,
+      "quelle": "wiktionary:de:Bremse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bremse‘ (https://de.wiktionary.org/wiki/Bremse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.reifen",
+      "lemma": "Reifen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Reifen"
+      },
+      "formen": {
+        "gen_sg": "Reifens"
+      },
+      "frequenzRang": 2715,
+      "quelle": "wiktionary:de:Reifen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Reifen‘ (https://de.wiktionary.org/wiki/Reifen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.tankstelle",
+      "lemma": "Tankstelle",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Tankstellen"
+      },
+      "formen": {
+        "pl": "Tankstellen"
+      },
+      "frequenzRang": 4823,
+      "quelle": "wiktionary:de:Tankstelle",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tankstelle‘ (https://de.wiktionary.org/wiki/Tankstelle), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.benzin",
+      "lemma": "Benzin",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Benzins"
+      },
+      "frequenzRang": 5484,
+      "quelle": "wiktionary:de:Benzin",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Benzin‘ (https://de.wiktionary.org/wiki/Benzin), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.diesel",
+      "lemma": "Diesel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Diesel"
+      },
+      "formen": {
+        "dat_pl": "Dieseln",
+        "gen_sg": "Diesels"
+      },
+      "frequenzRang": 3458,
+      "quelle": "wiktionary:de:Diesel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Diesel‘ (https://de.wiktionary.org/wiki/Diesel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.elektroauto",
+      "lemma": "Elektroauto",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Elektroautos"
+      },
+      "formen": {
+        "pl": "Elektroautos",
+        "gen_sg": "Elektroautos"
+      },
+      "frequenzRang": 6486,
+      "quelle": "wiktionary:de:Elektroauto",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Elektroauto‘ (https://de.wiktionary.org/wiki/Elektroauto), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.fahrbahn",
+      "lemma": "Fahrbahn",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Fahrbahnen"
+      },
+      "formen": {
+        "pl": "Fahrbahnen"
+      },
+      "frequenzRang": 6707,
+      "quelle": "wiktionary:de:Fahrbahn",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fahrbahn‘ (https://de.wiktionary.org/wiki/Fahrbahn), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.ursache",
+      "lemma": "Ursache",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ursachen"
+      },
+      "formen": {
+        "pl": "Ursachen"
+      },
+      "frequenzRang": 2096,
+      "quelle": "wiktionary:de:Ursache",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ursache‘ (https://de.wiktionary.org/wiki/Ursache), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.helm",
+      "lemma": "Helm",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Helme"
+      },
+      "formen": {
+        "pl": "Helme",
+        "dat_pl": "Helmen",
+        "gen_sg": "Helms",
+        "gen_sg_2": "Helmes"
+      },
+      "frequenzRang": 3754,
+      "quelle": "wiktionary:de:Helm",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Helm‘ (https://de.wiktionary.org/wiki/Helm), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.radweg",
+      "lemma": "Radweg",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Radwege"
+      },
+      "formen": {
+        "pl": "Radwege",
+        "dat_pl": "Radwegen",
+        "gen_sg": "Radwegs",
+        "gen_sg_2": "Radweges"
+      },
+      "frequenzRang": 4233,
+      "quelle": "wiktionary:de:Radweg",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Radweg‘ (https://de.wiktionary.org/wiki/Radweg), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.gehweg",
+      "lemma": "Gehweg",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Gehwege"
+      },
+      "formen": {
+        "pl": "Gehwege",
+        "dat_pl": "Gehwegen",
+        "gen_sg": "Gehwegs",
+        "gen_sg_2": "Gehweges"
+      },
+      "frequenzRang": 9142,
+      "quelle": "wiktionary:de:Gehweg",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gehweg‘ (https://de.wiktionary.org/wiki/Gehweg), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.zebrastreifen",
+      "lemma": "Zebrastreifen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zebrastreifen"
+      },
+      "formen": {
+        "gen_sg": "Zebrastreifens"
+      },
+      "frequenzRang": 32968,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.kreisverkehr",
+      "lemma": "Kreisverkehr",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kreisverkehre"
+      },
+      "formen": {
+        "pl": "Kreisverkehre",
+        "dat_pl": "Kreisverkehren",
+        "gen_sg": "Kreisverkehrs"
+      },
+      "frequenzRang": 21391,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.abstand",
+      "lemma": "Abstand",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Abstände"
+      },
+      "formen": {
+        "pl": "Abstände",
+        "dat_pl": "Abständen",
+        "gen_sg": "Abstands",
+        "gen_sg_2": "Abstandes"
+      },
+      "frequenzRang": 6188,
+      "quelle": "wiktionary:de:Abstand",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abstand‘ (https://de.wiktionary.org/wiki/Abstand), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.nebel",
+      "lemma": "Nebel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Nebel"
+      },
+      "formen": {
+        "dat_pl": "Nebeln",
+        "gen_sg": "Nebels"
+      },
+      "frequenzRang": 4125,
+      "quelle": "wiktionary:de:Nebel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nebel‘ (https://de.wiktionary.org/wiki/Nebel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.kennzeichen",
+      "lemma": "Kennzeichen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Kennzeichen"
+      },
+      "formen": {
+        "gen_sg": "Kennzeichens"
+      },
+      "frequenzRang": 3960,
+      "quelle": "wiktionary:de:Kennzeichen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kennzeichen‘ (https://de.wiktionary.org/wiki/Kennzeichen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.sicherheitsgurt",
+      "lemma": "Sicherheitsgurt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Sicherheitsgurte"
+      },
+      "formen": {
+        "pl": "Sicherheitsgurte",
+        "dat_pl": "Sicherheitsgurten",
+        "gen_sg": "Sicherheitsgurts"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.strassenverkehr",
+      "lemma": "Straßenverkehr",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Straßenverkehrs"
+      },
+      "frequenzRang": 5619,
+      "quelle": "wiktionary:de:Straßenverkehr",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Straßenverkehr‘ (https://de.wiktionary.org/wiki/Straßenverkehr), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.landstrasse",
+      "lemma": "Landstraße",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Landstraßen"
+      },
+      "formen": {
+        "pl": "Landstraßen"
+      },
+      "frequenzRang": 5546,
+      "quelle": "wiktionary:de:Landstraße",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Landstraße‘ (https://de.wiktionary.org/wiki/Landstraße), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.lastwagen",
+      "lemma": "Lastwagen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Lastwagen"
+      },
+      "formen": {
+        "gen_sg": "Lastwagens"
+      },
+      "frequenzRang": 8779,
+      "quelle": "wiktionary:de:Lastwagen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lastwagen‘ (https://de.wiktionary.org/wiki/Lastwagen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.navi",
+      "lemma": "Navi",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Navis",
+        "register": "umgangssprachlich"
+      },
+      "formen": {
+        "pl": "Navis",
+        "gen_sg": "Navis"
+      },
+      "frequenzRang": 9728,
+      "quelle": "wiktionary:de:Navi",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Navi‘ (https://de.wiktionary.org/wiki/Navi), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.fahrgemeinschaft",
+      "lemma": "Fahrgemeinschaft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Fahrgemeinschaften"
+      },
+      "formen": {
+        "pl": "Fahrgemeinschaften"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.geraten",
+      "lemma": "geraten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "geraten",
+        "praes_ich": "gerate",
+        "praes_du": "gerätst",
+        "praes_er_sie_es": "gerät",
+        "praes_wir": "geraten",
+        "praes_ihr": "geratet",
+        "praes_sie_Sie": "geraten",
+        "praet_ich_er_sie_es": "geriet",
+        "praet_du": "gerietest",
+        "praet_wir_sie_Sie": "gerieten",
+        "praet_ihr": "gerietet",
+        "partizip_2": "geraten"
+      },
+      "frequenzRang": 875,
+      "quelle": "wiktionary:de:geraten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚geraten‘ (https://de.wiktionary.org/wiki/geraten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.verursachen",
+      "lemma": "verursachen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verursachen",
+        "praes_ich": "verursache",
+        "praes_du": "verursachst",
+        "praes_er_sie_es": "verursacht",
+        "praes_wir": "verursachen",
+        "praes_ihr": "verursacht",
+        "praes_sie_Sie": "verursachen",
+        "praet_ich_er_sie_es": "verursachte",
+        "praet_du": "verursachtest",
+        "praet_wir_sie_Sie": "verursachten",
+        "praet_ihr": "verursachtet",
+        "partizip_2": "verursacht"
+      },
+      "frequenzRang": 1517,
+      "quelle": "wiktionary:de:verursachen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verursachen‘ (https://de.wiktionary.org/wiki/verursachen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.gefaehrden",
+      "lemma": "gefährden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "gefährden",
+        "praes_ich": "gefährde",
+        "praes_du": "gefährdest",
+        "praes_er_sie_es": "gefährdet",
+        "praes_wir": "gefährden",
+        "praes_ihr": "gefährdet",
+        "praes_sie_Sie": "gefährden",
+        "praet_ich_er_sie_es": "gefährdete",
+        "praet_du": "gefährdetest",
+        "praet_wir_sie_Sie": "gefährdeten",
+        "praet_ihr": "gefährdetet",
+        "partizip_2": "gefährdet"
+      },
+      "frequenzRang": 2423,
+      "quelle": "wiktionary:de:gefährden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gefährden‘ (https://de.wiktionary.org/wiki/gefährden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.ueberholen",
+      "lemma": "überholen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "überholen",
+        "praes_ich": "überhole",
+        "praes_du": "überholst",
+        "praes_er_sie_es": "überholt",
+        "praes_wir": "überholen",
+        "praes_ihr": "überholt",
+        "praes_sie_Sie": "überholen",
+        "praet_ich_er_sie_es": "überholte",
+        "praet_du": "überholtest",
+        "praet_wir_sie_Sie": "überholten",
+        "praet_ihr": "überholtet",
+        "partizip_2": "überholt"
+      },
+      "frequenzRang": 4065,
+      "quelle": "wiktionary:de:überholen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚überholen‘ (https://de.wiktionary.org/wiki/überholen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.bremsen",
+      "lemma": "bremsen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bremsen",
+        "praes_ich": "bremse",
+        "praes_du": "bremst",
+        "praes_er_sie_es": "bremst",
+        "praes_wir": "bremsen",
+        "praes_ihr": "bremst",
+        "praes_sie_Sie": "bremsen",
+        "praet_ich_er_sie_es": "bremste",
+        "praet_du": "bremstest",
+        "praet_wir_sie_Sie": "bremsten",
+        "praet_ihr": "bremstet",
+        "partizip_2": "gebremst",
+        "imp_du": "brems",
+        "imp_ihr": "bremst"
+      },
+      "frequenzRang": 3715,
+      "quelle": "wiktionary:de:bremsen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bremsen‘ (https://de.wiktionary.org/wiki/bremsen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.tanken",
+      "lemma": "tanken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "tanken",
+        "praes_ich": "tanke",
+        "praes_du": "tankst",
+        "praes_er_sie_es": "tankt",
+        "praes_wir": "tanken",
+        "praes_ihr": "tankt",
+        "praes_sie_Sie": "tanken",
+        "praet_ich_er_sie_es": "tankte",
+        "praet_du": "tanktest",
+        "praet_wir_sie_Sie": "tankten",
+        "praet_ihr": "tanktet",
+        "partizip_2": "getankt"
+      },
+      "frequenzRang": 7386,
+      "quelle": "wiktionary:de:tanken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚tanken‘ (https://de.wiktionary.org/wiki/tanken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.abbiegen",
+      "lemma": "abbiegen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "ab"
+      },
+      "formen": {
+        "infinitiv": "abbiegen",
+        "verbzusatz": "ab",
+        "praes_ich": "biege",
+        "praes_du": "biegst",
+        "praes_er_sie_es": "biegt",
+        "praes_wir": "biegen",
+        "praes_ihr": "biegt",
+        "praes_sie_Sie": "biegen",
+        "praet_ich_er_sie_es": "bog",
+        "praet_du": "bogst",
+        "praet_wir_sie_Sie": "bogen",
+        "praet_ihr": "bogt",
+        "partizip_2": "abgebogen",
+        "zu_infinitiv": "abzubiegen",
+        "nebensatz_er_sie_es": "abbiegt",
+        "nebensatz_praet": "abbog",
+        "nebensatz_praet_pl": "abbogen",
+        "imp_du": "bieg",
+        "imp_ihr": "biegt"
+      },
+      "frequenzRang": 8047,
+      "quelle": "wiktionary:de:abbiegen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚abbiegen‘ (https://de.wiktionary.org/wiki/abbiegen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.anschnallen",
+      "lemma": "anschnallen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "anschnallen",
+        "verbzusatz": "an",
+        "praes_ich": "schnalle",
+        "praes_du": "schnallst",
+        "praes_er_sie_es": "schnallt",
+        "praes_wir": "schnallen",
+        "praes_ihr": "schnallt",
+        "praes_sie_Sie": "schnallen",
+        "praet_ich_er_sie_es": "schnallte",
+        "praet_du": "schnalltest",
+        "praet_wir_sie_Sie": "schnallten",
+        "praet_ihr": "schnalltet",
+        "partizip_2": "angeschnallt",
+        "zu_infinitiv": "anzuschnallen",
+        "nebensatz_er_sie_es": "anschnallt",
+        "nebensatz_praet": "anschnallte",
+        "nebensatz_praet_pl": "anschnallten",
+        "imp_du": "schnall",
+        "imp_ihr": "schnallt",
+        "reflexiv": "sich"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.vorkommen",
+      "lemma": "vorkommen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "vor",
+        "grundverb": "kommen (de.a1.e01.kommen)"
+      },
+      "formen": {
+        "infinitiv": "vorkommen",
+        "verbzusatz": "vor",
+        "partizip_2": "vorgekommen",
+        "zu_infinitiv": "vorzukommen",
+        "nebensatz_er_sie_es": "vorkommt",
+        "nebensatz_praet": "vorkam",
+        "nebensatz_praet_pl": "vorkamen"
+      },
+      "frequenzRang": 1866,
+      "quelle": "wiktionary:de:vorkommen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vorkommen‘ (https://de.wiktionary.org/wiki/vorkommen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.drohen",
+      "lemma": "drohen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "drohen",
+        "praes_ich": "drohe",
+        "praes_du": "drohst",
+        "praes_er_sie_es": "droht",
+        "praes_wir": "drohen",
+        "praes_ihr": "droht",
+        "praes_sie_Sie": "drohen",
+        "praet_ich_er_sie_es": "drohte",
+        "praet_du": "drohtest",
+        "praet_wir_sie_Sie": "drohten",
+        "praet_ihr": "drohtet",
+        "partizip_2": "gedroht"
+      },
+      "frequenzRang": 1425,
+      "quelle": "wiktionary:de:drohen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚drohen‘ (https://de.wiktionary.org/wiki/drohen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.durchfallen",
+      "lemma": "durchfallen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "durch",
+        "unregelmaessig_praesens": "ja",
+        "grundverb": "fallen (de.a1.e10.fallen)"
+      },
+      "formen": {
+        "infinitiv": "durchfallen",
+        "verbzusatz": "durch",
+        "partizip_2": "durchgefallen",
+        "zu_infinitiv": "durchzufallen",
+        "nebensatz_er_sie_es": "durchfällt",
+        "nebensatz_praet": "durchfiel",
+        "nebensatz_praet_pl": "durchfielen"
+      },
+      "frequenzRang": 11330,
+      "quelle": "wiktionary:de:durchfallen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚durchfallen‘ (https://de.wiktionary.org/wiki/durchfallen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.pendeln",
+      "lemma": "pendeln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "pendeln",
+        "praes_ich": "pendle",
+        "praes_du": "pendelst",
+        "praes_er_sie_es": "pendelt",
+        "praes_wir": "pendeln",
+        "praes_ihr": "pendelt",
+        "praes_sie_Sie": "pendeln",
+        "praet_ich_er_sie_es": "pendelte",
+        "praet_du": "pendeltest",
+        "praet_wir_sie_Sie": "pendelten",
+        "praet_ihr": "pendeltet",
+        "partizip_2": "gependelt"
+      },
+      "frequenzRang": 21448,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.glatt",
+      "lemma": "glatt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "glatte",
+        "endung_en": "glatten",
+        "endung_er": "glatter",
+        "endung_es": "glattes",
+        "endung_em": "glattem",
+        "komparativ": "glatter",
+        "superlativ": "glattesten",
+        "superlativ_e": "glatteste"
+      },
+      "frequenzRang": 2355,
+      "quelle": "wiktionary:de:glatt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚glatt‘ (https://de.wiktionary.org/wiki/glatt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.ruecksichtsvoll",
+      "lemma": "rücksichtsvoll",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "rücksichtsvolle",
+        "endung_en": "rücksichtsvollen",
+        "endung_er": "rücksichtsvoller",
+        "endung_es": "rücksichtsvolles",
+        "endung_em": "rücksichtsvollem",
+        "komparativ": "rücksichtsvoller",
+        "superlativ": "rücksichtsvollsten",
+        "superlativ_e": "rücksichtsvollste"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.laenge",
+      "lemma": "Länge",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Längen"
+      },
+      "formen": {
+        "pl": "Längen"
+      },
+      "frequenzRang": 1559,
+      "quelle": "wiktionary:de:Länge",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Länge‘ (https://de.wiktionary.org/wiki/Länge), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.ermitteln",
+      "lemma": "ermitteln",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "ermitteln",
+        "praes_ich": "ermittle",
+        "praes_du": "ermittelst",
+        "praes_er_sie_es": "ermittelt",
+        "praes_wir": "ermitteln",
+        "praes_ihr": "ermittelt",
+        "praes_sie_Sie": "ermitteln",
+        "praet_ich_er_sie_es": "ermittelte",
+        "praet_du": "ermitteltest",
+        "praet_wir_sie_Sie": "ermittelten",
+        "praet_ihr": "ermitteltet",
+        "partizip_2": "ermittelt"
+      },
+      "frequenzRang": 1621,
+      "quelle": "wiktionary:de:ermitteln",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ermitteln‘ (https://de.wiktionary.org/wiki/ermitteln), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.parkverbot",
+      "lemma": "Parkverbot",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Parkverbote"
+      },
+      "formen": {
+        "pl": "Parkverbote",
+        "dat_pl": "Parkverboten",
+        "gen_sg": "Parkverbots",
+        "gen_sg_2": "Parkverbotes"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b1.e09.s0001",
+      "text": "Emre hat sich letzte Woche bei einer Fahrschule in Gießen angemeldet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0002",
+      "text": "Mit 17 darf Emre nur mit Begleitung ein Fahrzeug fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0003",
+      "text": "Der Führerschein kostet relativ viel Geld, oft mehr als 2000 Euro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0004",
+      "text": "Emres Fahrlehrerin heißt Jana und ist sehr geduldig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0005",
+      "text": "Den Unterricht in Theorie gibt es zweimal pro Woche am Abend.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0006",
+      "text": "Die Prüfung in Theorie hat Emre schon bestanden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0007",
+      "text": "Emre hat Angst, bei der Prüfung durchzufallen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0008",
+      "text": "Sein Freund Kerem ist zweimal durchgefallen, weil er zu wenig geübt hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0009",
+      "text": "Wer durchfällt, kann die Prüfung nach zwei Wochen erneut machen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0010",
+      "text": "Die erste Fahrstunde hat Emre am Montag um 16 Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0011",
+      "text": "Eine Fahrstunde dauert 45 Minuten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0012",
+      "text": "Vor der Fahrt schnallt sich Emre an und stellt den Spiegel ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0013",
+      "text": "Im Auto müssen sich alle anschnallen, auch die Leute hinten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0014",
+      "text": "Der Sicherheitsgurt ist in Deutschland für alle Pflicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0015",
+      "text": "Man darf ohne Sicherheitsgurt nicht fahren.",
+      "quelle": "tatoeba:13028106",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13028106 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e09.s0016",
+      "text": "Das Auto der Fahrlehrerin hat zwei Bremsen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0017",
+      "text": "Der Motor funktioniert nicht.",
+      "quelle": "tatoeba:800051",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #800051 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e09.s0018",
+      "text": "Serkans Auto ist schon zwölf Jahre alt, aber der Motor läuft noch gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0019",
+      "text": "Mit dem Führerschein der Klasse B darf man Autos fahren, aber keine Lastwagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0020",
+      "text": "Jedes Fahrzeug hat vorn und hinten ein Kennzeichen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0021",
+      "text": "Das Kennzeichen zeigt, aus welcher Stadt ein Auto kommt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0022",
+      "text": "Im Straßenverkehr gibt es viele Regeln, die man kennen muss.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0023",
+      "text": "Jana meint, ein guter Fahrer ist vor allem rücksichtsvoll.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0024",
+      "text": "Emre lernt relativ schnell, aber er ist noch nervös.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0025",
+      "text": "Das Auto der Fahrschule ist weiß.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0026",
+      "text": "Das Büro der Fahrschule ist neben der Bäckerei.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0027",
+      "text": "Das Geräusch des Motors ist ganz normal.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0028",
+      "text": "Am Ende des Kurses gibt es eine Prüfung in Theorie.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0029",
+      "text": "Elifs Fahrrad hat eine neue Bremse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0030",
+      "text": "Guten Tag, ich möchte mich in Ihrer Fahrschule anmelden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0031",
+      "text": "Gern. Haben Sie schon einen Sehtest und einen Kurs in Erster Hilfe gemacht?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0032",
+      "text": "Beides habe ich schon. Wann beginnt der Unterricht in Theorie?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0033",
+      "text": "Der nächste Kurs für die Theorie beginnt am Montag um 18 Uhr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0034",
+      "text": "Na, wie war deine erste Fahrstunde?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0035",
+      "text": "Ganz gut, aber ich habe viel zu stark gebremst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0036",
+      "text": "Und was hat deine Fahrlehrerin gesagt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0037",
+      "text": "Sie hat gesagt, dass ich früher bremsen soll.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0038",
+      "text": "Ich mache gerade den Führerschein und habe zweimal pro Woche eine Fahrstunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0039",
+      "text": "An einer Kreuzung ohne Verkehrsschild hat das Fahrzeug von rechts Vorfahrt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0040",
+      "text": "Dieses Verkehrsschild zeigt, dass du Vorfahrt hast.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0041",
+      "text": "An der Schule werden neue Verkehrsschilder aufgestellt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0042",
+      "text": "Im Kreisverkehr hat meistens der Verkehr im Kreis Vorfahrt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0043",
+      "text": "Immer mehr Kreuzungen werden als Kreisverkehr gebaut.",
+      "quelle": "tatoeba:1986563",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1986563 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e09.s0044",
+      "text": "Am Zebrastreifen müssen Autos halten, wenn jemand über die Straße gehen will.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0045",
+      "text": "Vor der Schule gibt es einen Zebrastreifen für die Kinder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0046",
+      "text": "An der nächsten Ampel biegst du bitte links ab.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0047",
+      "text": "Auf dieser Straße darf man nicht links abbiegen.",
+      "quelle": "tatoeba:771041",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #771041 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e09.s0048",
+      "text": "Beim Abbiegen muss man besonders auf Radfahrer achten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0049",
+      "text": "Hier ist Überholen verboten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0050",
+      "text": "Auf der Autobahn darf man nicht rechts überholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0051",
+      "text": "Halte immer genug Abstand zum Auto vor dir!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0052",
+      "text": "Bei Regen sollte der Abstand größer sein als sonst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0053",
+      "text": "In der Stadt darf man maximal 50 Kilometer pro Stunde fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0054",
+      "text": "Auf der Landstraße liegt die maximale Geschwindigkeit bei 100 Kilometern pro Stunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0055",
+      "text": "Auf dieser Straße wird die Geschwindigkeit oft kontrolliert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0056",
+      "text": "Vor Schulen und Kindergärten gilt oft Tempo 30.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0057",
+      "text": "Für Autofahrer gilt ein Verbot: Das Handy darf man beim Fahren nicht in der Hand halten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0058",
+      "text": "Hier ist Parkverbot, wir suchen lieber einen Parkplatz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0059",
+      "text": "Wer im Parkverbot steht, muss mit einem Bußgeld rechnen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0060",
+      "text": "Murat hat einen Brief bekommen: Er muss 30 Euro Bußgeld bezahlen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0061",
+      "text": "Das Bußgeld wird mit der Post geschickt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0062",
+      "text": "Für schwere Fehler im Straßenverkehr gibt es hohe Strafen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0063",
+      "text": "Wer viel zu schnell fährt, dem droht ein hohes Bußgeld.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0064",
+      "text": "Auf dem Gehweg dürfen Erwachsene nicht Fahrrad fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0065",
+      "text": "Kinder bis zehn Jahre dürfen mit dem Fahrrad auf dem Gehweg fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0066",
+      "text": "Jana sagt, ich soll beim Abbiegen auf Fußgänger achten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0067",
+      "text": "Heft für die Theorie: Wer hat Vorfahrt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0068",
+      "text": "An Kreuzungen ohne Ampel und ohne Verkehrsschild gilt die Regel „rechts vor links“.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0069",
+      "text": "Das bedeutet: Das Fahrzeug, das von rechts kommt, darf zuerst fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0070",
+      "text": "Ein gelbes Verkehrsschild mit weißem Rand zeigt: Du fährst auf einer Straße mit Vorfahrt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0071",
+      "text": "Ein Dreieck mit rotem Rand bedeutet: Die anderen haben Vorfahrt, du musst warten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0072",
+      "text": "Vor einem roten Verkehrsschild mit dem Wort „Stopp“ musst du immer ganz anhalten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0073",
+      "text": "Am Zebrastreifen müssen Autofahrer und Radfahrer Fußgänger über die Straße lassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0074",
+      "text": "Die Zeichen der Polizei sind immer wichtiger als Ampeln und Verkehrsschilder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0075",
+      "text": "Auch mit Vorfahrt sollst du vorsichtig und rücksichtsvoll fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0076",
+      "text": "Ohne Ampel und Schild hat das Fahrzeug von links Vorfahrt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0077",
+      "text": "Ein Verkehrsschild mit „Stopp“ bedeutet: immer ganz anhalten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0078",
+      "text": "Im Heft stehen auch die Regeln für Radwege.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0079",
+      "text": "Wenn die Polizei Zeichen gibt, sind die Verkehrsschilder weniger wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0080",
+      "text": "Was bedeutet „rechts vor links“ an einer Kreuzung ohne Verkehrsschild?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0081",
+      "text": "Das Fahrzeug von rechts fährt zuerst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0082",
+      "text": "Man darf nur rechts abbiegen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0083",
+      "text": "Man muss rechts überholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0084",
+      "text": "Hier gibt es kein Verkehrsschild. Wer hat jetzt Vorfahrt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0085",
+      "text": "Das Fahrzeug von rechts, also der Lastwagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0086",
+      "text": "Richtig. Und was machst du, wenn am Zebrastreifen jemand wartet?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0087",
+      "text": "Dann bremse ich und lasse die Person über die Straße gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0088",
+      "text": "Dann überhole ich schnell das Auto vor mir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0089",
+      "text": "Das rote Auto kommt von rechts, deshalb hat es Vorfahrt und ich warte.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0090",
+      "text": "Hier darf man nicht überholen, weil die Straße zu eng ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0091",
+      "text": "Wegen des starken Regens ist die Fahrbahn nass.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0092",
+      "text": "Trotz des Regens fährt Laylā mit dem Fahrrad zur Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0093",
+      "text": "Trotz des Nebels ist der Bus pünktlich angekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0094",
+      "text": "Aufgrund des dichten Nebels ist die Sicht sehr schlecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0095",
+      "text": "Aufgrund der glatten Fahrbahn ist die Landstraße gesperrt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0096",
+      "text": "Der Flughafen war auf Grund des Nebels gesperrt.",
+      "quelle": "tatoeba:412298",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #412298 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e09.s0097",
+      "text": "Bei Nebel muss man das Licht einschalten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0098",
+      "text": "Bei schlechter Sicht soll man langsam fahren und mehr Abstand halten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0099",
+      "text": "Die Fahrbahn ist nass, deshalb bremst Emre früher.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0100",
+      "text": "Bevor du die Spur wechselst, musst du in den Spiegel schauen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0101",
+      "text": "Ein Auto mit einer Panne steht am Rand der Fahrbahn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0102",
+      "text": "Vor einer Kurve sollte man langsamer fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0103",
+      "text": "Die Kurve ist so eng, dass man nur langsam fahren kann.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0104",
+      "text": "Im Winter braucht das Auto andere Reifen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0105",
+      "text": "An der Tankstelle prüft Murat die Luft in den Reifen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0106",
+      "text": "Ein Reifen ist kaputt, sodass wir am Rand warten müssen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0107",
+      "text": "Auf dem Weg nach Frankfurt ist Murat in einen langen Stau geraten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0108",
+      "text": "Wer zu schnell fährt, verursacht leicht einen Unfall.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0109",
+      "text": "Ein kaputter Lastwagen verursacht einen Stau auf der Autobahn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0110",
+      "text": "Die häufigste Ursache für Unfälle ist zu hohes Tempo.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0111",
+      "text": "Wer beim Fahren auf das Handy schaut, gefährdet sich und andere.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0112",
+      "text": "Zu schnelles Fahren vor der Schule gefährdet die Kinder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0113",
+      "text": "Im Dunkeln sollen Radfahrer gut sichtbar sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0114",
+      "text": "Es regnet sehr stark, sodass die Sicht schlecht ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0115",
+      "text": "Auf der Brücke gab es einen Unfall, sodass die Autos eine Stunde im Stau standen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0116",
+      "text": "Emre schaltet das Licht ein. Dadurch sehen ihn die anderen besser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0117",
+      "text": "Er hält genug Abstand und kann dadurch rechtzeitig bremsen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0118",
+      "text": "Die Ampel ist grün, somit dürfen wir fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0119",
+      "text": "Die Straße ist voller Schnee und somit glatt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0120",
+      "text": "Draußen ist so viel Nebel, dass man kaum etwas sieht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0121",
+      "text": "Dann fahre ich heute lieber mit dem Bus zur Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0122",
+      "text": "Gute Idee. Bei dieser Sicht ist das Fahrrad auch zu gefährlich.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0123",
+      "text": "Genau, wegen des Nebels bringe ich Elif und Can zur Haltestelle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0124",
+      "text": "Wegen des Nebels fahre ich heute langsamer und halte mehr Abstand.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0125",
+      "text": "Das Auto ist bequem, aber die Kosten für Benzin und Versicherung sind hoch.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0126",
+      "text": "Pendler können im Zug lesen, statt im Stau zu stehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0127",
+      "text": "In der Stadt sind Radfahrer oft schneller als Autofahrer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0128",
+      "text": "Wie viel kostet ein Liter Benzin?",
+      "quelle": "tatoeba:13844736",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13844736 von mhr (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e09.s0129",
+      "text": "Fährt euer Auto mit Benzin oder mit Diesel?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0130",
+      "text": "Die meisten Lastwagen fahren mit Diesel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0131",
+      "text": "Ich muss tanken.",
+      "quelle": "tatoeba:1415442",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1415442 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e09.s0132",
+      "text": "Am Abend kann man oft günstiger tanken als am Morgen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0133",
+      "text": "Ich kenne eine Tankstelle hier in der Nähe.",
+      "quelle": "tatoeba:6678928",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6678928 von manese (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e09.s0134",
+      "text": "Mitten auf der Kreuzung ging uns das Benzin aus.",
+      "quelle": "tatoeba:942172",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #942172 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e09.s0135",
+      "text": "Ein Elektroauto braucht kein Benzin, sondern Strom.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0136",
+      "text": "Elektroautos sind leise, aber sie kosten noch relativ viel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0137",
+      "text": "Ein Helm ist für Radfahrer keine Pflicht, aber er schützt den Kopf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0138",
+      "text": "Elif trägt auf dem Fahrrad immer einen Helm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0139",
+      "text": "In Gießen gibt es immer mehr Radwege.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0140",
+      "text": "Wenn es einen Radweg gibt, müssen Radfahrer ihn meistens benutzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0141",
+      "text": "Kinder bis acht Jahre müssen mit dem Fahrrad auf dem Gehweg fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0142",
+      "text": "An der Ampel dürfen Fußgänger nur bei Grün über die Straße gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0143",
+      "text": "Auf der Landstraße ist es schwer, einen Lastwagen zu überholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0144",
+      "text": "Die meisten Waren werden mit Lastwagen transportiert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0145",
+      "text": "Die Landstraße zum Dorf von Oma und Opa hat viele Kurven.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0146",
+      "text": "Stefan pendelt jeden Tag mit dem Zug nach Frankfurt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0147",
+      "text": "Für Pendler ist eine gute Verbindung mit Bus und Bahn sehr wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0148",
+      "text": "Derya fährt mit zwei Kolleginnen in einer Fahrgemeinschaft zur Klinik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0149",
+      "text": "Mit einer Fahrgemeinschaft spart man Geld und schützt die Umwelt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0150",
+      "text": "Das Navi zeigt uns einen anderen Weg.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0151",
+      "text": "Laut Navi gibt es auf der Autobahn einen Stau, also nehmen wir die Landstraße.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0152",
+      "text": "Was spricht für ein Elektroauto, und was spricht dagegen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0153",
+      "text": "Ein Ticket für den Bus ist günstiger als Benzin, aber auf dem Land fährt der Bus selten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0154",
+      "text": "Wie kommst du eigentlich jeden Morgen zur Arbeit?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0155",
+      "text": "Ich pendle mit dem Zug, aber er hat oft Verspätung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0156",
+      "text": "Möchtest du nicht in unserer Fahrgemeinschaft fahren?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0157",
+      "text": "Gern! Wie viel muss ich denn für das Benzin bezahlen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0158",
+      "text": "Ein Elektroauto ist leise, aber der Bus ist günstiger und besser für die Umwelt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0159",
+      "text": "Wegen der Baustelle fährt der Bus eine Umleitung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0160",
+      "text": "Die Umleitung ist acht Kilometer lang und kostet viel Zeit.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0161",
+      "text": "Die Umleitung geht am Fluss entlang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0162",
+      "text": "Gehen Sie diese Straße entlang bis zur Ampel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0163",
+      "text": "Die Busse fahren um die ganze Innenstadt herum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0164",
+      "text": "Bis dahin fahren die Busse über die Umleitung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0165",
+      "text": "Die Haltestelle ist geschlossen, aber davor steht ein Schild mit Informationen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0166",
+      "text": "Viele Fahrgäste haben Angst davor, ihren Anschluss zu verpassen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0167",
+      "text": "Die Baustelle liegt mitten in der Stadt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0168",
+      "text": "Deutschland liegt mitten in Europa.",
+      "quelle": "tatoeba:969211",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #969211 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.b1.e09.s0169",
+      "text": "Der Fahrer hat offenbar die Umleitung vergessen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0170",
+      "text": "Anscheinend fällt der Bus heute schon wieder aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0171",
+      "text": "Es ist offensichtlich, dass die Baustelle länger dauert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0172",
+      "text": "Weshalb gibt es an der Haltestelle keine Informationen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0173",
+      "text": "Die Brücke ist gesperrt, weshalb viele Leute zu spät zur Arbeit kommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0174",
+      "text": "Die Haltestelle liegt unmittelbar neben der Baustelle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0175",
+      "text": "Unmittelbar nach dem Unfall hat Jan die Polizei gerufen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0176",
+      "text": "Die Polizei ermittelt noch die Ursache des Unfalls.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0177",
+      "text": "Über das Kennzeichen konnte die Polizei den Fahrer ermitteln.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0178",
+      "text": "Solche Verspätungen kommen leider oft vor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0179",
+      "text": "So etwas darf nicht noch einmal vorkommen!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0180",
+      "text": "Die Brücke hat eine Länge von 200 Metern.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0181",
+      "text": "Seit drei Wochen fahren die Busse eine Umleitung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0182",
+      "text": "Ab Montag gilt eine neue Umleitung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0183",
+      "text": "Die Umleitung gilt voraussichtlich bis Ende Juni.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0184",
+      "text": "In zwei Wochen ist die Baustelle hoffentlich fertig, dann gibt es keine Umleitung mehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0185",
+      "text": "Vor einer Woche hat die Stadt die Umleitung eingerichtet.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0186",
+      "text": "Die Straße wird für zwei Monate gesperrt, deshalb gibt es eine Umleitung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0187",
+      "text": "Baustelle an der Brücke: Umleitung für Busse",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0188",
+      "text": "Ab Montag wird die alte Brücke über die Lahn repariert.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0189",
+      "text": "Die Arbeiten dauern voraussichtlich bis Ende Juni.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0190",
+      "text": "In dieser Zeit ist die Brücke für Autos und Lastwagen gesperrt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0191",
+      "text": "Fußgänger und Radfahrer können eine Spur am Rand der Brücke benutzen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0192",
+      "text": "Die Busse der Linien 3 und 7 fahren eine Umleitung am Fluss entlang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0193",
+      "text": "Dadurch brauchen die Busse etwa zehn Minuten länger.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0194",
+      "text": "An der Haltestelle unmittelbar vor der Brücke halten in dieser Zeit keine Busse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0195",
+      "text": "Die Stadt empfiehlt, Fahrgemeinschaften zu bilden oder mit dem Rad zu fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0196",
+      "text": "Weitere Informationen gibt es im Internet und an den Haltestellen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0197",
+      "text": "Fußgänger dürfen während der Arbeiten nicht über die Brücke gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0198",
+      "text": "Wegen der Umleitung brauchen die Busse länger.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0199",
+      "text": "Für Lastwagen gibt es eine eigene Umleitung über die Autobahn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0200",
+      "text": "Bis wann gilt die Umleitung?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0201",
+      "text": "Ihr Bus hat seit Wochen fast jeden Tag Verspätung, offenbar wegen einer Umleitung. Schreiben Sie eine Beschwerde an den Verkehrsverbund. Beschreiben Sie das Problem und die Folgen. Schreiben Sie auch, was sich ändern soll.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0202",
+      "text": "Sehr geehrte Damen und Herren, ich fahre jeden Morgen mit der Linie 7 zur Arbeit. Seit drei Wochen hat der Bus fast jeden Tag 15 Minuten Verspätung. Anscheinend liegt das an der Umleitung wegen der Baustelle an der Brücke. An der Haltestelle gibt es aber keine Informationen. Dadurch verpasse ich oft meinen Zug, sodass ich zu spät zur Arbeit komme. Viele andere Leute im Bus haben das gleiche Problem. Das darf nicht ständig vorkommen. Meine Bitte: Der Bus sollte während der Bauarbeiten zehn Minuten früher abfahren. Ich bitte Sie um eine schnelle Antwort. Mit freundlichen Grüßen Sabine Braun",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0203",
+      "text": "Entschuldigung, weshalb hält der Bus heute nicht an der Brücke?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0204",
+      "text": "Wegen der Baustelle fahren wir seit Montag eine Umleitung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0205",
+      "text": "Und wie komme ich jetzt zum Bahnhof?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0206",
+      "text": "Steigen Sie an der nächsten Haltestelle aus und gehen Sie die Straße entlang.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0207",
+      "text": "Guten Tag, hier ist die Auskunft. Was kann ich für Sie tun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0208",
+      "text": "Ich möchte mich beschweren: Mein Bus hat wegen der Umleitung ständig Verspätung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0209",
+      "text": "Das tut mir leid. Die Umleitung gilt leider noch bis Ende Juni.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0210",
+      "text": "Dann sollte der Bus wenigstens früher abfahren, sodass man den Zug noch erreicht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0211",
+      "text": "Seit drei Wochen hat mein Bus wegen der Umleitung jeden Tag Verspätung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0212",
+      "text": "Emres erste Fahrstunde",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0213",
+      "text": "Emre ist 17 Jahre alt und geht seit zwei Monaten in die Fahrschule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0214",
+      "text": "Die Theorie hat er schon gelernt, heute hat er seine erste Fahrstunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0215",
+      "text": "Seine Fahrlehrerin Jana wartet schon im Auto der Fahrschule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0216",
+      "text": "Wegen des starken Regens ist die Sicht heute schlecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0217",
+      "text": "Hallo Emre! Bitte schnall dich zuerst an und stell den Spiegel ein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0218",
+      "text": "Okay, der Sicherheitsgurt ist zu. Ich bin aber ein bisschen nervös.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0219",
+      "text": "Das ist normal. Trotz des Regens fahren wir ganz ruhig und langsam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0220",
+      "text": "Emre startet den Motor und fährt langsam los.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0221",
+      "text": "Der Regen ist so stark, dass die Fahrbahn wie ein kleiner Fluss aussieht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0222",
+      "text": "Achtung, vor uns ist eine Kurve. Bitte bremsen!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0223",
+      "text": "Emre bremst zu spät und zu stark, sodass Janas Tasche vom Sitz fällt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0224",
+      "text": "Entschuldigung! Ich habe die Kurve viel zu spät gesehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0225",
+      "text": "Kein Problem. Bei Regen musst du mehr Abstand halten und früher bremsen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0226",
+      "text": "Danach fahren sie durch die Stadt, über zwei Kreuzungen und durch einen Kreisverkehr.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0227",
+      "text": "An der zweiten Kreuzung gibt es kein Verkehrsschild. Wer hat hier Vorfahrt, Emre?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0228",
+      "text": "Hm, der Radfahrer von rechts?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0229",
+      "text": "Genau. Du machst das schon relativ gut.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0230",
+      "text": "Nach 45 Minuten parkt Emre das Fahrzeug vor der Fahrschule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0231",
+      "text": "Die Fahrstunde war so anstrengend, dass Emre jetzt viele Fragen hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0232",
+      "text": "Jana, warum muss man bei Regen eigentlich mehr Abstand halten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0233",
+      "text": "Weil die Bremsen auf einer nassen Fahrbahn nicht so gut funktionieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0234",
+      "text": "Und was mache ich bei Nebel?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0235",
+      "text": "Bei Nebel schaltest du das Licht ein und fährst langsam. Das üben wir nächste Woche.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0236",
+      "text": "Am Abend erzählt Emre seiner Tante Derya von der ersten Fahrstunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0237",
+      "text": "Wie ist das Wetter bei Emres erster Fahrstunde?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0238",
+      "text": "Es regnet stark, und die Sicht ist schlecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0239",
+      "text": "Es gibt dichten Nebel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0240",
+      "text": "Die Straßen sind glatt, weil es so kalt ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0241",
+      "text": "Was passiert, als Emre vor der Kurve bremst?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0242",
+      "text": "Er bremst so stark, dass Janas Tasche vom Sitz fällt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0243",
+      "text": "Jana bremst mit ihrer eigenen Bremse.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0244",
+      "text": "Ein Radfahrer fährt auf die Fahrbahn.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0245",
+      "text": "Wer hat an der zweiten Kreuzung Vorfahrt?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0246",
+      "text": "Der Radfahrer, der von rechts kommt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0247",
+      "text": "Der Autofahrer, der von links kommt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0248",
+      "text": "Der Lastwagen hinter Emre.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0249",
+      "text": "Warum soll man bei Regen mehr Abstand halten?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0250",
+      "text": "Weil die Bremsen auf nasser Fahrbahn schlechter funktionieren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0251",
+      "text": "Weil man bei Regen nicht überholen darf.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0252",
+      "text": "Weil der Motor bei Regen lauter ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0253",
+      "text": "Brauchen wir ein Elektroauto?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0254",
+      "text": "Murats altes Auto ist kaputt, und die Reparatur des Motors wäre sehr teuer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0255",
+      "text": "Am Abend überlegen Derya und Murat, ob die Familie ein neues Fahrzeug braucht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0256",
+      "text": "Ich finde, wir brauchen ein neues Auto, vielleicht ein Elektroauto.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0257",
+      "text": "Wirklich? Ich fahre doch fast jeden Tag auf dem Radweg zur Klinik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0258",
+      "text": "Ja, aber bei Regen und im Winter, wenn die Straßen glatt sind?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0259",
+      "text": "Dann nehme ich den Bus. Die Haltestelle ist unmittelbar vor unserem Haus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0260",
+      "text": "Aber ich pendle jeden Tag nach Wetzlar, und der Zug hat oft Verspätung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0261",
+      "text": "Du könntest doch mit deinem Kollegen Stefan eine Fahrgemeinschaft bilden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0262",
+      "text": "Das stimmt. Ein Auto kostet ja nicht nur Geld für Benzin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0263",
+      "text": "Genau. Versicherung, Reparaturen und Parkplatz sind relativ teuer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0264",
+      "text": "Und wie kommen wir zu Oma und Opa? Dahin fährt am Wochenende kaum ein Bus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0265",
+      "text": "Für die Fahrt über die Landstraße zu Oma nehmen wir dann einen Mietwagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0266",
+      "text": "Also gut. Wir probieren es ein halbes Jahr ohne eigenes Fahrzeug.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0267",
+      "text": "Elif findet die Idee super, denn auf dem Radweg ist sie sowieso am schnellsten.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0268",
+      "text": "Was für ein Auto möchte Murat vielleicht kaufen?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0269",
+      "text": "Ein Elektroauto.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0270",
+      "text": "Einen Lastwagen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0271",
+      "text": "Ein Auto mit Diesel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0272",
+      "text": "Weshalb braucht Murat ein Auto?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0273",
+      "text": "Weil er jeden Tag pendelt und der Zug oft Verspätung hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0274",
+      "text": "Weil er im Winter oft tanken muss.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0275",
+      "text": "Weil er jeden Tag zur Tankstelle fährt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0276",
+      "text": "Wie lange probiert die Familie es ohne eigenes Fahrzeug?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0277",
+      "text": "Ein halbes Jahr, dann denken sie erneut nach.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0278",
+      "text": "Zwei Wochen, dann kaufen sie ein Elektroauto.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0279",
+      "text": "Einen Monat, dann bilden sie eine Fahrgemeinschaft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0280",
+      "text": "Meine erste Fahrstunde war so anstrengend, dass ich danach sehr müde war.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0281",
+      "text": "Wegen des Nebels fährt der Lastwagen sehr langsam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0282",
+      "text": "Trotz der Umleitung ist Emre pünktlich zur Fahrstunde gekommen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0283",
+      "text": "Die Bremsen des Fahrzeugs werden in der Werkstatt geprüft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0284",
+      "text": "Der Radweg an der Hauptstraße wird im Sommer breiter gemacht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0285",
+      "text": "Es ist so kalt, dass die Fahrbahn glatt ist.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0286",
+      "text": "Das Kennzeichen von Stefans Elektroauto endet mit einem E.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0287",
+      "text": "Seit einer Woche hat Emre zweimal pro Woche Fahrstunde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0288",
+      "text": "In drei Wochen hat Emre seine letzte Fahrstunde vor der Prüfung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0289",
+      "text": "Hier darfst du nicht überholen, die Sicht ist zu schlecht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0290",
+      "text": "Weshalb hat der Bus heute schon wieder Verspätung?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0291",
+      "text": "Die Polizei ermittelt, wer den Unfall verursacht hat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0292",
+      "text": "Aufgrund des Wetters fallen heute viele Busse aus.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0293",
+      "text": "Die Tankstelle liegt unmittelbar an der Landstraße.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0294",
+      "text": "Elifs Helm ist rot und gut sichtbar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0295",
+      "text": "Morgen ist meine praktische Prüfung in der Fahrschule.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0296",
+      "text": "Du schaffst das! Du bist doch ein rücksichtsvoller Fahrer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0297",
+      "text": "Hoffentlich. Mein Freund Kerem ist zweimal durchgefallen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0298",
+      "text": "Du hattest so viele Fahrstunden, dass du bestimmt bestehst.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0299",
+      "text": "Bei Nebel und glatter Fahrbahn fahre ich langsam und bremse früh.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0300",
+      "text": "Wegen des Regens ist die Sicht so schlecht, dass wir langsam fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0301",
+      "text": "Trotz des Verbots parken viele Autos auf dem Radweg.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0302",
+      "text": "Auf dieser Straße wird oft zu schnell gefahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0303",
+      "text": "Am Zebrastreifen dürfen Fußgänger zuerst über die Straße gehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0304",
+      "text": "Vor einer Kurve sollst du nicht überholen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0305",
+      "text": "Mit dem Elektroauto ist man flexibel, der Bus ist dafür günstiger.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0306",
+      "text": "Die Polizei hat die Ursache des Unfalls schnell ermittelt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0307",
+      "text": "Ab nächster Woche fährt der Bus wieder ohne Umleitung.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0308",
+      "text": "Ich beschwere mich, weil der Bus wegen der Umleitung ständig zu spät kommt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0309",
+      "text": "Emre macht keinen Fehler und hat somit die Prüfung bestanden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0310",
+      "text": "Im Straßenverkehr muss man immer rücksichtsvoll sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0311",
+      "text": "Herzlichen Glückwunsch, Emre! Du hast bestanden.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0312",
+      "text": "Danke, Jana! Ohne die vielen Fahrstunden hätte ich das nicht geschafft.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0313",
+      "text": "Und was hast du jetzt vor? Fährst du mit dem Auto deines Vaters?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0314",
+      "text": "Ja, aber mit 17 darf ich nur mit Begleitung fahren, das ist die Vorschrift.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0315",
+      "text": "Die Polizei informiert: Radfahrer im Herbst und Winter",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0316",
+      "text": "Im Herbst und Winter wird es früh dunkel, und oft gibt es Nebel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0317",
+      "text": "Radfahrer müssen deshalb besonders gut sichtbar sein.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0318",
+      "text": "Laut Vorschrift braucht jedes Fahrrad vorn und hinten ein Licht.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0319",
+      "text": "Eine helle Jacke hilft, dass Autofahrer Sie früher sehen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0320",
+      "text": "Nasse Blätter machen den Radweg sehr glatt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0321",
+      "text": "Fahren Sie deshalb langsamer und bremsen Sie früher als im Sommer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0322",
+      "text": "Ein Helm ist keine Pflicht, aber bei einem Unfall ist er sehr wichtig.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0323",
+      "text": "Im Winter müssen Radfahrer einen Helm tragen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0324",
+      "text": "Mit nassen Blättern auf dem Radweg sollte man vorsichtig fahren.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0325",
+      "text": "Die Polizei kontrolliert im Winter jeden Radfahrer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0326",
+      "text": "Eine helle Jacke macht Radfahrer besser sichtbar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0327",
+      "text": "An dieser Kreuzung gibt es kein Verkehrsschild, deshalb hat der Radfahrer von rechts Vorfahrt.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b1.e09.s0328",
+      "text": "Ich nehme lieber den Bus, weil er günstiger ist und ich nicht tanken muss.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b1.e09.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über die Fahrschule sprechen und mit dem Genitiv sagen, wem etwas gehört.",
+        "tr": "Sürücü kursu hakkında konuşabilir ve Genitiv ile bir şeyin kime ait olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أتحدّث عن مدرسة تعليم القيادة وأن أعبّر عن الملكية بصيغة المضاف إليه."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e09.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.fahrschule",
+          "ablenker": ["de.a2.e02.fuehrerschein", "de.a2.e13.pruefung"]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e09.fahrlehrer",
+            "de.b1.e09.theorie",
+            "de.b1.e09.bremse",
+            "de.b1.e09.motor",
+            "de.b1.e09.kennzeichen",
+            "de.b1.e09.fahrstunde"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e09.anschnallen",
+          "ablenker": ["de.b1.e09.durchfallen", "de.a2.e02.parken"]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e09.s0026",
+          "ablenker": ["de.b1.e09.s0025", "de.b1.e09.s0027"]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0016",
+          "wort": 2,
+          "ablenker": ["des", "dem"]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a07",
+          "typ": "formen",
+          "zeilen": ["der Motor", "das Fahrzeug", "die Bremse", "die Fahrschule", "das Kennzeichen", "der Fahrlehrer"],
+          "spalten": ["Genitiv"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["des Motors"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["des Fahrzeugs", "des Fahrzeuges"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["der Bremse"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["der Fahrschule"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["des Kennzeichens"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["des Fahrlehrers"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a08",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e09.fahrzeug",
+            "de.b1.e09.sicherheitsgurt",
+            "de.b1.e09.strassenverkehr",
+            "de.b1.e09.relativ",
+            "de.b1.e09.erneut",
+            "de.b1.e09.ruecksichtsvoll"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0030"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0031"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0032"
+            }
+          ],
+          "antwort": "de.b1.e09.s0033",
+          "ablenker": ["de.b1.e09.s0011", "de.b1.e09.s0020"]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e09.s0028",
+          "nach": "ziel",
+          "alternativen": [
+            "Eine Prüfung in Theorie gibt es am Ende des Kurses.",
+            "Es gibt am Ende des Kurses eine Prüfung in Theorie.",
+            "Es gibt eine Prüfung in Theorie am Ende des Kurses."
+          ],
+          "ablenker": ["dem", "Kurs"]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e09.s0007",
+          "ablenker": ["de.b1.e09.s0006", "de.b1.e09.s0024"]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a12",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0004",
+          "wort": 0,
+          "ablenker": ["Emre", "Emren"]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e09.s0012",
+          "alternativen": [
+            "Vor der Fahrt schnallt Emre sich an und stellt den Spiegel ein.",
+            "Emre schnallt sich vor der Fahrt an und stellt den Spiegel ein."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.sicherheitsgurt",
+          "ablenker": ["de.a2.e04.spiegel", "de.b1.e09.kennzeichen"]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e09.s0007",
+          "nach": "ziel",
+          "alternativen": [
+            "Emre hat Angst, in der Prüfung durchzufallen.",
+            "Emre hat Angst, dass er bei der Prüfung durchfällt.",
+            "Emre hat Angst, dass er in der Prüfung durchfällt.",
+            "Emre fürchtet, bei der Prüfung durchzufallen.",
+            "Emre fürchtet, in der Prüfung durchzufallen."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e09.s0011",
+          "alternativen": ["Eine Fahrstunde dauert fünfundvierzig Minuten."]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a17",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0034"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0035"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0036"
+            }
+          ],
+          "antwort": "de.b1.e09.s0037",
+          "ablenker": ["de.b1.e09.s0014", "de.b1.e09.s0017"]
+        },
+        {
+          "schluessel": "de.b1.e09.l01.a18",
+          "typ": "sprechen",
+          "satz": "de.b1.e09.s0038"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e09.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Verkehrsregeln und Verkehrsschilder verstehen und erklären, was man darf und was man soll.",
+        "tr": "Trafik kurallarını ve levhalarını anlayabilir, neyin serbest olduğunu ve ne yapılması gerektiğini açıklayabilirim.",
+        "ar": "أستطيع أن أفهم قواعد المرور وإشاراته وأن أشرح ما هو مسموح وما يجب فعله."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e09.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.vorfahrt",
+          "ablenker": ["de.b1.e09.abstand", "de.b1.e09.umleitung"]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e09.verkehrsschild",
+            "de.b1.e09.kreisverkehr",
+            "de.b1.e09.zebrastreifen",
+            "de.b1.e09.vorschrift",
+            "de.b1.e09.bussgeld",
+            "de.b1.e09.tempo"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e09.ueberholen",
+          "ablenker": ["de.b1.e09.abbiegen", "de.b1.e09.bremsen"]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a05",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e09.s0067",
+          "absaetze": [
+            "de.b1.e09.s0068",
+            "de.b1.e09.s0069",
+            "de.b1.e09.s0070",
+            "de.b1.e09.s0071",
+            "de.b1.e09.s0072",
+            "de.b1.e09.s0042",
+            "de.b1.e09.s0073",
+            "de.b1.e09.s0074",
+            "de.b1.e09.s0075"
+          ],
+          "glossen": ["de.b1.e09.vorfahrt", "de.b1.e09.verkehrsschild", "de.b1.e09.zebrastreifen", "de.b1.e09.kreisverkehr"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e09.s0076",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e09.s0077",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e09.s0078",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e09.s0079",
+              "richtig": "richtig"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e09.s0080",
+              "antwort": "de.b1.e09.s0081",
+              "ablenker": ["de.b1.e09.s0082", "de.b1.e09.s0083"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a06",
+          "typ": "formen",
+          "zeilen": ["ich", "du", "er/sie/es", "wir", "ihr"],
+          "spalten": ["dürfen", "sollen"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["darf"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["soll"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["darfst"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["sollst"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["darf"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["soll"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["dürfen"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["sollen"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["dürft"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["sollt"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0050",
+          "wort": 3,
+          "ablenker": ["dürfen", "darfst"]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a08",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e09.s0053",
+          "ablenker": ["de.b1.e09.s0054", "de.b1.e09.s0056"]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a09",
+          "typ": "paare",
+          "lemmata": ["de.b1.e09.verbot", "de.b1.e09.strafe", "de.b1.e09.geschwindigkeit", "de.b1.e09.maximal", "de.b1.e09.drohen"]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0084"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0085"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0086"
+            }
+          ],
+          "antwort": "de.b1.e09.s0087",
+          "ablenker": ["de.b1.e09.s0088", "de.b1.e09.s0050"]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a11",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0055",
+          "wort": 3,
+          "ablenker": ["werden", "wirst"]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e09.s0053",
+          "nach": "ziel",
+          "alternativen": [
+            "Man darf in der Stadt maximal 50 Kilometer pro Stunde fahren.",
+            "Maximal 50 Kilometer pro Stunde darf man in der Stadt fahren."
+          ],
+          "ablenker": ["Minuten", "müssen"]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e09.s0052",
+          "alternativen": [
+            "Der Abstand sollte bei Regen größer sein als sonst.",
+            "Bei Regen sollte der Abstand größer als sonst sein.",
+            "Der Abstand sollte bei Regen größer als sonst sein."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e09.s0059",
+          "ablenker": ["de.b1.e09.s0061", "de.b1.e09.s0062"]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a15",
+          "typ": "frei",
+          "ziel": "de.b1.e09.s0064",
+          "nach": "ziel",
+          "alternativen": [
+            "Erwachsene dürfen auf dem Gehweg nicht Fahrrad fahren.",
+            "Erwachsene dürfen nicht auf dem Gehweg Fahrrad fahren.",
+            "Auf dem Gehweg dürfen Erwachsene kein Fahrrad fahren.",
+            "Erwachsene dürfen auf dem Gehweg kein Fahrrad fahren.",
+            "Auf dem Gehweg dürfen Erwachsene nicht mit dem Fahrrad fahren.",
+            "Erwachsene dürfen auf dem Gehweg nicht mit dem Fahrrad fahren."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e09.s0056",
+          "alternativen": ["Vor Schulen und Kindergärten gilt oft Tempo dreißig."]
+        },
+        {
+          "schluessel": "de.b1.e09.l02.a17",
+          "typ": "sprechen",
+          "satz": "de.b1.e09.s0089"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e09.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Gefahren bei schlechtem Wetter beschreiben und Gründe und Folgen nennen.",
+        "tr": "Kötü havadaki tehlikeleri anlatabilir, nedenleri ve sonuçları söyleyebilirim.",
+        "ar": "أستطيع أن أصف المخاطر في الطقس السيّئ وأن أذكر الأسباب والنتائج."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e09.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.nebel",
+          "ablenker": ["de.a1.e10.regen", "de.b1.e09.sicht"]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e09.glatt", "de.b1.e09.kurve", "de.b1.e09.reifen", "de.b1.e09.spur", "de.b1.e09.rand", "de.b1.e09.sichtbar"]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.trotz",
+          "ablenker": ["de.b1.e09.aufgrund", "de.a2.e02.ausser"]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e09.s0093",
+          "ablenker": ["de.b1.e09.s0094", "de.b1.e09.s0097"]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0091",
+          "wort": 1,
+          "ablenker": ["dem", "der"]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a07",
+          "typ": "formen",
+          "zeilen": ["der Regen", "der Nebel", "das Wetter", "die Baustelle", "der Unfall", "das Tempo"],
+          "spalten": ["wegen + Genitiv"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["wegen des Regens"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["wegen des Nebels"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["wegen des Wetters"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["wegen der Baustelle"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["wegen des Unfalls", "wegen des Unfalles"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["wegen des Tempos"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a08",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a09",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0103",
+          "wort": 3,
+          "ablenker": ["sehr", "zu"]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e09.verursachen",
+          "ablenker": ["de.b1.e09.gefaehrden", "de.b1.e09.geraten"]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0120"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0121"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0122"
+            }
+          ],
+          "antwort": "de.b1.e09.s0123",
+          "ablenker": ["de.b1.e09.s0118", "de.b1.e09.s0104"]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e09.s0117",
+          "nach": "ziel",
+          "alternativen": ["Er hält genug Abstand und dadurch kann er rechtzeitig bremsen."],
+          "ablenker": ["sodass", "spät"]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e09.sicht",
+          "ablenker": ["de.a2.e04.licht"]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a14",
+          "typ": "satzbau",
+          "ziel": "de.b1.e09.s0114"
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a15",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0119",
+          "wort": 6,
+          "ablenker": ["sodass", "trotz"]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a16",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e09.s0110",
+          "ablenker": ["de.b1.e09.s0108", "de.b1.e09.s0111"]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a17",
+          "typ": "frei",
+          "ziel": "de.b1.e09.s0094",
+          "nach": "ziel",
+          "alternativen": [
+            "Wegen des dichten Nebels ist die Sicht sehr schlecht.",
+            "Die Sicht ist aufgrund des dichten Nebels sehr schlecht.",
+            "Die Sicht ist wegen des dichten Nebels sehr schlecht.",
+            "Wegen des starken Nebels ist die Sicht sehr schlecht.",
+            "Aufgrund des starken Nebels ist die Sicht sehr schlecht.",
+            "Die Sicht ist wegen des starken Nebels sehr schlecht."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l03.a18",
+          "typ": "sprechen",
+          "satz": "de.b1.e09.s0124"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e09.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Verkehrsmittel vergleichen und Vor- und Nachteile abwägen.",
+        "tr": "Ulaşım araçlarını karşılaştırabilir, avantajlarını ve dezavantajlarını tartabilirim.",
+        "ar": "أستطيع أن أقارن بين وسائل النقل وأن أوازن بين مزاياها وعيوبها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e09.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.tankstelle",
+          "ablenker": ["de.a2.e02.parkplatz", "de.a1.e12.werkstatt"]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a02",
+          "typ": "paare",
+          "lemmata": ["de.b1.e09.benzin", "de.b1.e09.diesel", "de.b1.e09.helm", "de.b1.e09.navi", "de.b1.e09.lastwagen", "de.b1.e09.radweg"]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e09.pendeln",
+          "ablenker": ["de.b1.e09.tanken", "de.b1.e09.ueberholen"]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a05",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e09.autofahrer",
+            "de.b1.e09.radfahrer",
+            "de.b1.e09.fussgaenger",
+            "de.b1.e09.gehweg",
+            "de.b1.e09.landstrasse",
+            "de.b1.e09.fahrgemeinschaft"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e09.s0129",
+          "ablenker": ["de.b1.e09.s0130", "de.b1.e09.s0135"]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0141",
+          "wort": 4,
+          "ablenker": ["muss", "musst"]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a08",
+          "typ": "formen",
+          "lemma": "de.b1.e09.pendeln",
+          "zeilen": ["ich", "du", "er/sie/es", "wir"],
+          "spalten": ["Präsens", "Perfekt"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["pendle", "pendele"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["bin gependelt"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["pendelst"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["bist gependelt"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["pendelt"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["ist gependelt"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["pendeln"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["sind gependelt"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0154"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0155"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0156"
+            }
+          ],
+          "antwort": "de.b1.e09.s0157",
+          "ablenker": ["de.b1.e09.s0130", "de.b1.e09.s0139"]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.elektroauto",
+          "ablenker": ["de.a2.e02.motorrad", "de.a2.e02.taxi"]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e09.s0149",
+          "nach": "ziel",
+          "alternativen": [
+            "Man spart mit einer Fahrgemeinschaft Geld und schützt die Umwelt.",
+            "Mit einer Fahrgemeinschaft schützt man die Umwelt und spart Geld."
+          ],
+          "ablenker": ["kostet", "Benzin"]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e09.s0137",
+          "ablenker": ["de.b1.e09.s0140", "de.b1.e09.s0141"]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e09.s0146",
+          "alternativen": [
+            "Jeden Tag pendelt Stefan mit dem Zug nach Frankfurt.",
+            "Stefan pendelt mit dem Zug jeden Tag nach Frankfurt.",
+            "Mit dem Zug pendelt Stefan jeden Tag nach Frankfurt.",
+            "Nach Frankfurt pendelt Stefan jeden Tag mit dem Zug.",
+            "Stefan pendelt jeden Tag nach Frankfurt mit dem Zug."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e09.s0127",
+          "nach": "ziel",
+          "alternativen": [
+            "Radfahrer sind in der Stadt oft schneller als Autofahrer.",
+            "In der Stadt sind Radfahrer häufig schneller als Autofahrer.",
+            "Radfahrer sind in der Stadt häufig schneller als Autofahrer.",
+            "In der Stadt sind Fahrradfahrer oft schneller als Autofahrer."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e09.s0130"
+        },
+        {
+          "schluessel": "de.b1.e09.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e09.s0158"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e09.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Meldungen über Baustellen und Umleitungen verstehen und mich schriftlich beschweren.",
+        "tr": "Yol çalışmaları ve güzergâh değişiklikleriyle ilgili haberleri anlayabilir ve yazılı olarak şikâyet edebilirim.",
+        "ar": "أستطيع أن أفهم الأخبار عن أعمال الطرق وتحويلات السير وأن أقدّم شكوى مكتوبة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e09.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.umleitung",
+          "ablenker": ["de.a1.e12.baustelle", "de.a2.e02.richtung"]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e09.entlang",
+            "de.b1.e09.herum",
+            "de.b1.e09.davor",
+            "de.b1.e09.mitten",
+            "de.b1.e09.laenge",
+            "de.b1.e09.ermitteln"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e09.weshalb",
+          "ablenker": ["de.a1.e09.wohin", "de.b1.e09.dahin"]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e09.s0181",
+          "ablenker": ["de.b1.e09.s0185", "de.b1.e09.s0182"]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0181",
+          "wort": 0,
+          "ablenker": ["Vor", "Ab"]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e09.s0187",
+          "absaetze": [
+            "de.b1.e09.s0188",
+            "de.b1.e09.s0189",
+            "de.b1.e09.s0190",
+            "de.b1.e09.s0191",
+            "de.b1.e09.s0192",
+            "de.b1.e09.s0193",
+            "de.b1.e09.s0194",
+            "de.b1.e09.s0195",
+            "de.b1.e09.s0196"
+          ],
+          "glossen": ["de.b1.e09.umleitung", "de.b1.e09.entlang", "de.b1.e09.unmittelbar"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e09.s0197",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e09.s0198",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e09.s0199",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b1.e09.s0200",
+              "antwort": "de.b1.e09.s0183",
+              "ablenker": ["de.b1.e09.s0181", "de.b1.e09.s0184"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.offensichtlich",
+          "ablenker": ["de.b1.e09.unmittelbar", "de.b1.e09.relativ"]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0203"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0204"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0205"
+            }
+          ],
+          "antwort": "de.b1.e09.s0206",
+          "ablenker": ["de.b1.e09.s0180", "de.b1.e09.s0176"]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e09.s0163",
+          "nach": "ziel",
+          "ablenker": ["entlang", "hin"]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a10",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0173",
+          "wort": 4,
+          "ablenker": ["deshalb", "trotzdem"]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e09.s0169",
+          "ablenker": ["de.b1.e09.s0175", "de.b1.e09.s0179"]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a12",
+          "typ": "schreiben",
+          "aufgabe": "de.b1.e09.s0201",
+          "woerter": {
+            "min": 90,
+            "max": 110
+          },
+          "pflichtwoerter": ["Umleitung", "Verspätung", "Haltestelle"],
+          "muster": ["de.b1.e09.s0202"]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a13",
+          "typ": "satzbau",
+          "ziel": "de.b1.e09.s0174",
+          "alternativen": ["Unmittelbar neben der Baustelle liegt die Haltestelle."]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a14",
+          "typ": "frei",
+          "ziel": "de.b1.e09.s0183",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Umleitung gilt wahrscheinlich bis Ende Juni.",
+            "Voraussichtlich gilt die Umleitung bis Ende Juni.",
+            "Die Umleitung gilt vermutlich bis Ende Juni.",
+            "Bis Ende Juni gilt voraussichtlich die Umleitung.",
+            "Die Umleitung gilt voraussichtlich bis zum Ende des Monats Juni."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0207"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0208"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0209"
+            }
+          ],
+          "antwort": "de.b1.e09.s0210",
+          "ablenker": ["de.b1.e09.s0168", "de.b1.e09.s0150"]
+        },
+        {
+          "schluessel": "de.b1.e09.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e09.s0211"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e09.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über eine Fahrstunde und ein Gespräch über das Auto der Familie verstehen.",
+        "tr": "Bir direksiyon dersi hakkındaki hikâyeyi ve ailenin arabası hakkındaki bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن درس في القيادة وحوارًا عن سيارة العائلة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e09.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b1.e09.s0212",
+          "zeilen": [
+            {
+              "satz": "de.b1.e09.s0213"
+            },
+            {
+              "satz": "de.b1.e09.s0214"
+            },
+            {
+              "satz": "de.b1.e09.s0215"
+            },
+            {
+              "satz": "de.b1.e09.s0216"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0217"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0218"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0219"
+            },
+            {
+              "satz": "de.b1.e09.s0220"
+            },
+            {
+              "satz": "de.b1.e09.s0221"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0222"
+            },
+            {
+              "satz": "de.b1.e09.s0223"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0224"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0225"
+            },
+            {
+              "satz": "de.b1.e09.s0226"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0227"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0228"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0229"
+            },
+            {
+              "satz": "de.b1.e09.s0230"
+            },
+            {
+              "satz": "de.b1.e09.s0231"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0232"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0233"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0234"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0235"
+            },
+            {
+              "satz": "de.b1.e09.s0236"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 3,
+              "frage": "de.b1.e09.s0237",
+              "antwort": "de.b1.e09.s0238",
+              "ablenker": ["de.b1.e09.s0239", "de.b1.e09.s0240"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.b1.e09.s0241",
+              "antwort": "de.b1.e09.s0242",
+              "ablenker": ["de.b1.e09.s0243", "de.b1.e09.s0244"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.b1.e09.s0245",
+              "antwort": "de.b1.e09.s0246",
+              "ablenker": ["de.b1.e09.s0247", "de.b1.e09.s0248"]
+            },
+            {
+              "nach": 20,
+              "frage": "de.b1.e09.s0249",
+              "antwort": "de.b1.e09.s0250",
+              "ablenker": ["de.b1.e09.s0251", "de.b1.e09.s0252"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l06.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e09.s0221",
+          "ablenker": ["de.b1.e09.s0216", "de.b1.e09.s0225"]
+        },
+        {
+          "schluessel": "de.b1.e09.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0221",
+          "wort": 3,
+          "ablenker": ["sehr", "zu"]
+        },
+        {
+          "schluessel": "de.b1.e09.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e09.s0231",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e09.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.b1.e09.s0253",
+          "zeilen": [
+            {
+              "satz": "de.b1.e09.s0254"
+            },
+            {
+              "satz": "de.b1.e09.s0255"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0256"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0257"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0258"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0259"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0260"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0261"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0262"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0263"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0264"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0265"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0266"
+            },
+            {
+              "satz": "de.b1.e09.s0267"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.b1.e09.s0268",
+              "antwort": "de.b1.e09.s0269",
+              "ablenker": ["de.b1.e09.s0270", "de.b1.e09.s0271"]
+            },
+            {
+              "nach": 6,
+              "frage": "de.b1.e09.s0272",
+              "antwort": "de.b1.e09.s0273",
+              "ablenker": ["de.b1.e09.s0274", "de.b1.e09.s0275"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.b1.e09.s0276",
+              "antwort": "de.b1.e09.s0277",
+              "ablenker": ["de.b1.e09.s0278", "de.b1.e09.s0279"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0262"
+            }
+          ],
+          "antwort": "de.b1.e09.s0263",
+          "ablenker": ["de.b1.e09.s0259", "de.b1.e09.s0258"]
+        },
+        {
+          "schluessel": "de.b1.e09.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0259",
+          "wort": 8,
+          "ablenker": ["mitten", "entlang"]
+        },
+        {
+          "schluessel": "de.b1.e09.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.b1.e09.s0220"
+        },
+        {
+          "schluessel": "de.b1.e09.l06.a09",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e09.s0213",
+          "alternativen": [
+            "Emre ist siebzehn Jahre alt und geht seit zwei Monaten in die Fahrschule.",
+            "Emre ist 17 Jahre alt und geht seit 2 Monaten in die Fahrschule.",
+            "Emre ist siebzehn Jahre alt und geht seit 2 Monaten in die Fahrschule."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e09.s0260",
+          "ablenker": ["de.b1.e09.s0257", "de.b1.e09.s0264"]
+        },
+        {
+          "schluessel": "de.b1.e09.l06.a11",
+          "typ": "frei",
+          "ziel": "de.b1.e09.s0231",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Fahrstunde war so anstrengend, dass Emre nun viele Fragen hat.",
+            "Die Fahrstunde war so anstrengend, dass Emre danach viele Fragen hat.",
+            "Weil die Fahrstunde so anstrengend war, hat Emre jetzt viele Fragen.",
+            "Emre hat jetzt viele Fragen, weil die Fahrstunde so anstrengend war."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e09.s0265",
+          "nach": "ziel",
+          "alternativen": [
+            "Für die Fahrt zu Oma über die Landstraße nehmen wir dann einen Mietwagen.",
+            "Wir nehmen dann für die Fahrt über die Landstraße zu Oma einen Mietwagen.",
+            "Dann nehmen wir für die Fahrt über die Landstraße zu Oma einen Mietwagen."
+          ],
+          "ablenker": ["Bus", "Opa"]
+        },
+        {
+          "schluessel": "de.b1.e09.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.b1.e09.s0280"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e09.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum.",
+        "ar": "أراجع كلمات الوحدة وجملها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e09.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.ursache",
+          "ablenker": ["de.b1.e09.strafe", "de.b1.e09.umleitung"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e09.vorfahrt",
+            "de.b1.e09.kurve",
+            "de.b1.e09.helm",
+            "de.b1.e09.benzin",
+            "de.b1.e09.navi",
+            "de.b1.e09.parkverbot"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e09.glatt",
+          "ablenker": ["de.b1.e09.ruecksichtsvoll", "de.b1.e09.sichtbar"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a04",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e09.strafe",
+          "ablenker": ["de.a1.e09.strasse"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e09.s0281",
+          "ablenker": ["de.b1.e09.s0292", "de.b1.e09.s0300"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a06",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0283",
+          "wort": 4,
+          "ablenker": ["wird", "worden"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a07",
+          "typ": "formen",
+          "zeilen": ["überholen", "abbiegen", "tanken", "bremsen", "ermitteln"],
+          "spalten": ["er/sie/es (Präteritum)", "Partizip II"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["überholte"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["überholt"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["bog ab"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["abgebogen"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["tankte"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["getankt"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["bremste"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["gebremst"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["ermittelte"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["ermittelt"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.anscheinend",
+          "ablenker": ["de.b1.e09.erneut", "de.b1.e09.maximal"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a09",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e09.rand",
+          "ablenker": ["de.a1.e01.land"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.drohen",
+          "ablenker": ["de.b1.e09.ermitteln", "de.b1.e09.pendeln"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0295"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0296"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0297"
+            }
+          ],
+          "antwort": "de.b1.e09.s0298",
+          "ablenker": ["de.b1.e09.s0290", "de.b1.e09.s0131"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e09.s0282",
+          "nach": "ziel",
+          "alternativen": ["Emre ist trotz der Umleitung pünktlich zur Fahrstunde gekommen."],
+          "ablenker": ["Wegen", "zum"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.b1.e09.glatt",
+          "ablenker": ["de.a2.e12.blatt"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e09.s0291",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e09.s0293"
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a16",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e09.s0289",
+          "ablenker": ["de.b1.e09.s0285", "de.b1.e09.s0049"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a17",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0287",
+          "wort": 0,
+          "ablenker": ["Vor", "Für"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a18",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e09.s0180",
+          "alternativen": ["Die Brücke hat eine Länge von zweihundert Metern."]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a19",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0294",
+          "wort": 0,
+          "ablenker": ["Elif", "Elifen"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a20",
+          "typ": "satzbau",
+          "ziel": "de.b1.e09.s0293",
+          "alternativen": ["Unmittelbar an der Landstraße liegt die Tankstelle."]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a21",
+          "typ": "frei",
+          "ziel": "de.b1.e09.s0284",
+          "nach": "ziel",
+          "alternativen": [
+            "Der Radweg an der Hauptstraße wird im Sommer verbreitert.",
+            "Im Sommer wird der Radweg an der Hauptstraße breiter gemacht.",
+            "Im Sommer wird der Radweg an der Hauptstraße verbreitert."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a22",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e09.s0290",
+          "ablenker": ["de.b1.e09.s0291", "de.b1.e09.s0288"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a23",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.fahrgemeinschaft",
+          "ablenker": ["de.a2.e02.fahrkarte", "de.b1.e09.tankstelle"]
+        },
+        {
+          "schluessel": "de.b1.e09.l07.a24",
+          "typ": "sprechen",
+          "satz": "de.b1.e09.s0299"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b1.e09.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich Verkehrsregeln erklären und Verkehrsmittel abwägen kann.",
+        "tr": "Trafik kurallarını açıklayabildiğimi ve ulaşım araçlarını karşılaştırabildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أشرح قواعد المرور وأن أوازن بين وسائل النقل."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b1.e09.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b1.e09.vorschrift",
+          "ablenker": ["de.b1.e09.kennzeichen", "de.b1.e09.fahrschule"]
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b1.e09.verkehrsschild",
+            "de.b1.e09.zebrastreifen",
+            "de.b1.e09.radweg",
+            "de.b1.e09.tankstelle",
+            "de.b1.e09.fahrlehrer",
+            "de.b1.e09.elektroauto"
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b1.e09.s0300",
+          "ablenker": ["de.b1.e09.s0285", "de.b1.e09.s0103"]
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0301",
+          "wort": 1,
+          "ablenker": ["dem", "der"]
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a05",
+          "typ": "luecke",
+          "ziel": "de.b1.e09.s0300",
+          "wort": 6,
+          "ablenker": ["sehr", "sodass"]
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a06",
+          "typ": "lesen_fragen",
+          "titel": "de.b1.e09.s0315",
+          "absaetze": [
+            "de.b1.e09.s0316",
+            "de.b1.e09.s0317",
+            "de.b1.e09.s0318",
+            "de.b1.e09.s0319",
+            "de.b1.e09.s0320",
+            "de.b1.e09.s0321",
+            "de.b1.e09.s0322"
+          ],
+          "glossen": ["de.b1.e09.sichtbar", "de.b1.e09.radweg", "de.b1.e09.helm"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e09.s0323",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e09.s0324",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e09.s0325",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b1.e09.s0326",
+              "richtig": "richtig"
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0311"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b1.e09.s0312"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b1.e09.s0313"
+            }
+          ],
+          "antwort": "de.b1.e09.s0314",
+          "ablenker": ["de.b1.e09.s0302", "de.b1.e09.s0160"]
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e09.s0304",
+          "nach": "ziel",
+          "alternativen": ["Du sollst vor einer Kurve nicht überholen."],
+          "ablenker": ["musst", "hinter"]
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.b1.e09.s0309",
+          "alternativen": ["Emre macht keinen Fehler und hat die Prüfung somit bestanden."]
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a10",
+          "typ": "frei",
+          "ziel": "de.b1.e09.s0306",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Polizei hat die Unfallursache schnell ermittelt.",
+            "Die Ursache des Unfalls hat die Polizei schnell ermittelt.",
+            "Die Polizei hat schnell die Ursache des Unfalls ermittelt.",
+            "Die Polizei hat die Ursache für den Unfall schnell ermittelt.",
+            "Die Polizei hat schnell die Ursache für den Unfall ermittelt."
+          ]
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b1.e09.s0307"
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b1.e09.abbiegen",
+          "ablenker": ["de.b1.e09.anschnallen", "de.b1.e09.pendeln"]
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b1.e09.s0305",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b1.e09.s0303",
+          "ablenker": ["de.b1.e09.s0302", "de.b1.e09.s0310"]
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.b1.e09.s0327"
+        },
+        {
+          "schluessel": "de.b1.e09.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.b1.e09.s0328"
+        }
+      ]
+    }
+  ]
+}
