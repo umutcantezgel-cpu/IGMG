@@ -6,20 +6,26 @@
 | Paket | L8-02 (PLAN §14 L8), Abnahme Z-L07 (Leistung) und Z-L06 (axe-Anteil) |
 | Stand | Zweig `lernapp-l8`, Messbau aus `4d00cadf` (Merge `claude/trusting-lovelace-6nfolz` mit SL2-Rest `ac219eb0`) |
 | Werkzeuge | `_lernapp/werkzeuge/leistung/` (Kopien und Anpassungen von `_gemeinde/werkzeuge/`, dort unverändert), `web/scripts/lernapp-budget.mjs`, `web/scripts/messen.mjs` |
-| Rohdaten | außerhalb des Repos (`<scratchpad>/l8-leistung/lauf1/`): `lauf.log` mit `uptime` je Schritt, JSON je Werkzeug |
+| Rohdaten | außerhalb des Repos (`<scratchpad>/l8-leistung/lauf1/` und `…/lauf2/`): `lauf.log` mit `uptime` je Schritt, JSON und Markdown je Werkzeug, Lighthouse-Berichte des ersten Laufs je Route |
 
-**Stand dieses Berichts: ZWISCHENSTAND** – erster Messlauf vollständig (Budgets, `messen.mjs`, INP, Netzprotokoll,
-Lasttest, Lighthouse aller Routen, axe); Behebung CLS (`fc95e675`) gebaut und in Nachmessung (Abschnitt 9).
+**Ergebnis:** Nach der Behebung B-1 erfüllen alle 25 Lighthouse-Routen Leistung ≥ 90, Zugänglichkeit 100, LCP ≤ 2,5 s
+und CLS ≤ 0,1; alle INP-Szenarien ≤ 200 ms (CPU ×6, unter Last); axe 0 Befunde auf 136 + 22 Prüfungen; alle JS-Budgets
+nach KERN §9 eingehalten; Whisper lädt nur nach Klick; Abgleich mit 200 gleichzeitigen Konten ohne Fehler und idempotent.
+Offen bleiben Hinweise (TBT, Antwortzeit des Abgleichs unter Spitzenlast, Probelauf der Sprachprüfung auf echtem Gerät) und
+der veraltete Wortlaut von Z-L07 (Abschnitt 10).
 
 ## 1. Methode
 
-- **Ein Produktionsbau** (`pnpm build`, Turbopack, `output: standalone`) mit `FUNKTION_LERNAPP`, `…_SYNC`, `…_SPRECHEN`,
+- **Produktionsbau** (je Lauf einer; `pnpm build`, Turbopack, `output: standalone`) mit `FUNKTION_LERNAPP`, `…_SYNC`, `…_SPRECHEN`,
   `…_MELDUNGEN`, `…_GRUPPEN` und `FUNKTION_KONTEN` = `an` (nur in `web/.env`, nie eingecheckt), gebaut gegen die
   Wegwerf-Datenbank `igmg_lernapp_d_e2e` (PostgreSQL 16, Seeds, Inhalte und Testkurs wie die Lern-App-E2E über
   `scripts/e2e-datenbank.mjs`). Server `scripts/start-standalone.mjs` auf Port 3224, PID gemerkt.
-- **Ein Aufruf** `bash _lernapp/werkzeuge/leistung/messlauf.sh` unter dem gemeinsamen Schloss `bau.lock`: Datenbank,
+- **Zwei Bauten:** Lauf 1 (Stand `4d00cadf`) misst alles; Lauf 2 (Stand `fc95e675`, nach der Behebung B-1) misst nur die
+  betroffenen Routen nach (`MESS_FILTER`, Lighthouse, axe) und wiederholt das Netzprotokoll mit Endzustand.
+- **Je Lauf ein Aufruf** `bash _lernapp/werkzeuge/leistung/messlauf.sh` unter dem gemeinsamen Schloss `bau.lock`: Datenbank,
   Bau, Server, Anmeldungen (`konten.mjs`: Lehrkraft mit Gruppe, Kind, Eltern – Platzhalter, Wegwerf-Daten), Aufwärmen,
-  Messungen, Server per PID beenden, `.next`, `test-results` und `.env` löschen.
+  Messungen, Server per PID beenden, `.next`, `test-results` und `.env` löschen. Vor dem Schloss wartet das Skript auf
+  mindestens 4 GB freien Platz (dezimal, 3815 MiB; vorher 4096 MiB, bei 4,0 GB frei wartete es vergeblich).
 - **Berichtigung im Lauf:** Die Umgebung setzt `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` (Chromium-Build 1194); die
   Playwright-Version aus `web/` (1.64.0) erwartet Build 1248. Der erste Durchgang der Browser-Werkzeuge brach deshalb sofort
   ab; der Lasttest (ohne Browser) lief. Die Browser-Teile liefen danach gegen **denselben Bau und Server** als Auftrag der
@@ -48,9 +54,9 @@ Lasttest, Lighthouse aller Routen, axe); Behebung CLS (`fc95e675`) gebaut und in
 | Browser | Chromium 141.0.7390.37 (Headless Shell), Node 24.21.0 |
 | Server | Next.js 16.4.2 standalone, `NODE_ENV=production`, PostgreSQL 16 lokal, Pool höchstens 10 Verbindungen |
 | Parallel | Inhalts-Agenten mit `lernapp:pruefen`, `tsc`, Vitest (wenig, aber spürbar CPU) |
-| Last (1 min) | Bau 4,6–5,3 · `messen.mjs` 2,7–2,8 · Netzprotokoll 2,8–3,6 · Lasttest 4,4–4,7 · INP 3,6–7,2 · Lighthouse ab 7,2 (siehe 4) |
+| Last (1 min) | Lauf 1: Bau 4,6–5,3 · `messen.mjs` 2,7–2,8 · Netzprotokoll 2,8–3,6 · Lasttest 4,4–4,7 · INP 3,6–7,2 · Lighthouse 7,2 → 1,3 · axe 1,8–2,0. Lauf 2: Bau 4,8 · Lighthouse 2,8–3,8 · axe 2,1–3,4 · Netzprotokoll 2,1–2,6 |
 
-Die Last lag während des ganzen Laufs über 1,5. Alle Zeitwerte sind deshalb **obere Schätzungen**; wo eine Route trotzdem
+Die Last lag fast während der ganzen Messung über 1,5. Alle Zeitwerte sind deshalb **obere Schätzungen**; wo eine Route trotzdem
 erfüllt, ist das belastbar.
 
 ## 3. JavaScript beim ersten Laden (KERN §9)
@@ -182,9 +188,13 @@ dieses Laufs.
   zweimal (Seite/Worker und Service Worker, der die Anfrage weiterreicht); die Summe „≈ 147 MB laut Content-Length“ des
   Werkzeugs ist deshalb doppelt, über das Netz gehen ≈ 74 MB.
 - Nur GET, keine fremden Ursprünge.
-- **Offen:** „Bereit“ wurde im Kopflos-Chromium (ohne GPU, ohne Mikrofon, Last 2,8–3,6) innerhalb von 10 min nicht
-  erreicht. Ob das an der Umgebung (WASM-Initialisierung unter Last) oder an der App liegt, ist in diesem Lauf nicht
-  geklärt (kein Konsolenprotokoll des Workers erfasst). Vorschlag in Abschnitt 10.
+- **Endzustand:** Lauf 1 wartete 10 min vergeblich auf „bereit“. Lauf 2 erfasst deshalb auch Rückfall und Fehler sowie
+  die Konsole von Seite und Worker: Nach ≈ 11 s meldet die App **„läuft auf diesem Gerät nicht zuverlässig – du übst mit
+  deiner eigenen Aufnahme“** (`rueckfall`). Das ist der vorgesehene Rückfall nach dem Probelauf (`bewerteProbe`:
+  Probelauf ohne Ergebnis oder > 12 s → Rückfall); da alles in 11 s geschah, lieferte der Probelauf im Kopflos-Chromium
+  (ohne GPU, Mikrofon als Attrappe, Last 2–3) kein Ergebnis. Die Konsole zeigt nur die Warnung „Unable to determine
+  content-length“ (Seite und Worker), keinen Fehler. Laden und Rückfall arbeiten also wie vorgesehen; ob der Probelauf
+  auf einem echten Gerät gelingt, misst dieser Rechner nicht (Abschnitt 10).
 
 ## 8. Lasttest Abgleich (`POST /api/lernapp/sync`)
 
@@ -220,7 +230,8 @@ Anfragen einer Welle gleichzeitig (Node `fetch` + `Promise.all`, keine neue Abh�
 | B-1 | CLS 0,19 auf `/lern-app/tr/koran`, 0,151 auf `…/tipps?e=…` (Leistung 86 bzw. 87); kleiner auf den Sprach-Lernpfaden (0,029–0,067) | Insel lädt Verzeichnis bzw. Paket erst im Browser; der Fuß steht während „wird geladen“ im ersten Bildschirm und springt | `fc95e675`: Lernpfad-Abschnitt und Tipps reservieren eine Bildschirmhöhe (`min-h-svh`) – dieselbe Bauweise wie Üben, Einstufung und Wiederholen | `tests/unit/lernapp/platz-regeln.test.ts` (6 Fälle; ohne die Behebung 3 rot) | siehe Tabelle unten |
 | B-0 | (früherer Lauf dieses Pakets) Sprechübung lud Modelldateien mehrfach | – | `a0795f7b` | Unit `sprechen-einmal-laden` | im Netzprotokoll je Datei ein Abruf über das Netz (Seite und Service Worker zählen getrennt) |
 
-Nachmessung B-1 (zweiter Bau, Stand `fc95e675`, nur die betroffenen Routen, `MESS_FILTER`), Lighthouse mobil, Median aus 3:
+Nachmessung B-1 (zweiter Bau, Stand `fc95e675`, nur die betroffenen Routen, `MESS_FILTER`), Lighthouse mobil, Median aus 3,
+Last 2,8–3,8:
 
 | Route | Leistung vorher → nachher | CLS vorher → nachher | LCP ms nachher | TBT ms nachher | Last max nachher |
 |---|---|---|---|---|---|
@@ -231,20 +242,54 @@ Nachmessung B-1 (zweiter Bau, Stand `fc95e675`, nur die betroffenen Routen, `MES
 | `/lern-app/ar/de-aus-ar` (RTL) | 92 → 93 | 0,067 → **0** | 1899 | 250 | 3,55 |
 | `/lern-app/de/islam` | 96 → 95 | 0 → 0 | 1861 | 210 | 2,94 |
 
-Zugänglichkeit, Best Practices und SEO unverändert 100 (Tipps `noindex`). JS unverändert (nur eine Klasse).
+Zugänglichkeit, Best Practices und SEO unverändert 100 (Tipps `noindex`). JS unverändert (nur eine Klasse). axe nach der
+Behebung auf Lernpfad, Tipps, Wissenskurs und Koran-Arabisch in de/tr/ar × 390/1440: 22 Prüfungen, 0 Befunde jeder
+Schwere, kein Überlauf.
+
+Weitere Ursachen mit klarer, örtlicher Behebung fanden sich nicht: Budgets, INP, LCP und axe waren schon im ersten Lauf
+erfüllt.
 
 ## 10. Offene Befunde und Vorschläge
 
-1. **Whisper „bereit“ nicht erreicht** (Abschnitt 7): Einmal ohne Last und mit Konsolenprotokoll des Workers messen
-   (`whisper-netz.mjs` um `page.on('console')`/`worker.on('console')` ergänzen); erst dann einordnen.
-2. **Abgleich unter Spitzenlast** (Abschnitt 8): 0 Fehler, aber p95 ≈ 12 s bei 600 gleichzeitigen Paketen. Die
+1. **Z-L07-Wortlaut** nennt noch die Budgets vor der Fortschreibung von KERN §9 (Hülle 120, Start/Lernpfad 150,
+   Spieler 180 KB gesamt). Vorschlag: an KERN §9 angleichen (eigener Anteil 20/30/60 KB, gesamt 180/210/230 KB), sonst
+   ist Z-L07 allein wegen des Next/React-Grundstocks (135,3 KB) nicht erfüllbar. Orchestrator; ABNAHME hier nicht geändert.
+2. **Probelauf der Sprachprüfung** (Abschnitt 7): Auf diesem Rechner fällt die App nach dem Klick per Probelauf auf
+   „eigene Aufnahme“ zurück. Vorschlag: auf einem echten Mittelklasse-Telefon (Sichtabnahme, LM) einmal bis „bereit“
+   prüfen; optional den Grund eines fehlgeschlagenen Probelaufs im Worker als Konsolenwarnung ausgeben, damit ein
+   Rückfall diagnostizierbar ist. Kein Abnahmekriterium von Z-L07 („Whisper nur nach Klick“ ist erfüllt).
+3. **Abgleich unter Spitzenlast** (Abschnitt 8): 0 Fehler, aber p95 ≈ 12 s bei 600 gleichzeitigen Paketen. Die
    Ereignisse eines Pakets gehen schon in einem einzigen `INSERT … ON CONFLICT DO NOTHING`; je Konto serialisiert eine
    Sperre (`sperre(benutzerId)`) die Pakete, und der Pool hat lokal 10, auf Vercel 5 Verbindungen je Instanz
    (`src/lib/db/index.ts`). Rechnerisch ≈ 200 ms je Transaktion (Grenzen, Einfügen, Karten und Tage ableiten, Seite
-   fremder Ereignisse). Vorschlag für den Betrieb: Dauer je Transaktion im Betrieb beobachten und, falls nötig, die
-   Ableitung (`erneuereKarten`, `erneuereTage`) gezielt messen; kein Abnahmekriterium, keine Änderung in diesem Paket.
-3. **Z-L07-Wortlaut** an KERN §9 angleichen (Abschnitt 3).
+   fremder Ereignisse). Vorschlag für den Betrieb: Dauer je Transaktion beobachten und, falls nötig, die Ableitung
+   (`erneuereKarten`, `erneuereTage`) gezielt messen; kein Abnahmekriterium, keine Änderung in diesem Paket.
+4. **TBT** 178–337 ms auf den meisten Routen (Lighthouse CPU ×4, Last 1,3–7,2); `messen.mjs` wertet TBT ≤ 200 ms als
+   eigenen Labor-Ersatz und meldet „verfehlt: TBT“. Ursache ist im Wesentlichen die Hydrierung des Grundstocks (135 KB)
+   plus Insel; die Abnahme misst INP direkt (≤ 200 ms erfüllt). Vorschlag: TBT ohne Parallel-Last einmal nachmessen
+   (Tor L8, ruhige Maschine); keine örtliche Ursache gefunden.
+5. **Tipps nahe am Budget:** 176,5 KB von 180 KB (Darstellung der Tipps aus dem Paket). Bei weiterem Wachstum die
+   Darstellung per `import()` erst nach dem Laden des Pakets holen.
+6. **Werkzeug und Platte:** In Lauf 1 fiel der freie Platz nach dem Bau für gut eine Minute auf 1,15 GB (unter die
+   2-GB-Grenze), bis `.next/server` von Hand gelöscht war. `messlauf.sh` löscht es jetzt gleich nach dem Bau (Lauf 2:
+   2,4 GB frei) und setzt den Browserpfad selbst. Die Werkzeuge unter `_lernapp/werkzeuge/` sind nicht mit Prettier
+   formatiert (außerhalb von `web/`), wie bisher.
 
 ## 11. Vorschlag für Z-L07
 
-*folgt mit Lighthouse und axe.*
+**Vorschlag: „erfüllt“** mit dem Wortlaut der Budgets nach KERN §9 (Befund 10.1), Nachweis dieser Bericht:
+
+| Teil von Z-L07 | Stand | Nachweis |
+|---|---|---|
+| Budgets KERN §9 (Hülle, Start/Lernpfad, Spieler, Übungstyp, Tastatur, Mein Bereich) | erfüllt | Abschnitt 3 (`lernapp-budget.mjs`), Mein Bereich 181,9–186,3 ≤ 230 KB (Abschnitt 4) |
+| LCP ≤ 2,5 s | erfüllt | 25 Routen 1778–2442 ms |
+| INP ≤ 200 ms | erfüllt | 104–176 ms (Median, CPU ×6, unter Last) |
+| CLS ≤ 0,1 | erfüllt nach B-1 | vorher Tipps 0,151 und Koran-Arabisch 0,19; nachher 0 (`fc95e675`) |
+| Lighthouse Leistung ≥ 90, Zugänglichkeit 100 | erfüllt nach B-1 | 90–96 bzw. 100 auf allen 25 Routen |
+| Whisper nur nach Klick | erfüllt | 0 Modellanfragen vor dem Klick |
+
+Dazu für Z-L06 (axe-Anteil): 0 ernste und kritische Befunde auf allen Lern-App-Routen × 3 Sprachen × 2 Breiten (Abschnitt 6);
+die übrigen Teile von Z-L06 (Tastaturweg je Übungstyp, Screenreader LM-19) liegen außerhalb dieses Pakets.
+
+Vorbehalt: Alle Zeitwerte stammen von einer belasteten Maschine (Last 1,3–7,2); sie sind obere Schätzungen. Eine
+Gegenprüfung nach der Bereitstellung mit PageSpeed Insights (M-065) bleibt empfohlen.
