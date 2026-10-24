@@ -1,0 +1,325 @@
+# L8-02 – Leistung und Zugänglichkeit der Lern-App
+
+| | |
+|---|---|
+| Datum | 24.10.2026 |
+| Paket | L8-02 (PLAN §14 L8), Abnahme Z-L07 (Leistung) und Z-L06 (axe-Anteil) |
+| Stand | Zweig `lernapp-l8`, Messbau aus `4d00cadf` (Merge `claude/trusting-lovelace-6nfolz` mit SL2-Rest `ac219eb0`); nach der Gegenprüfung Behebung B-2 (`ebaa9d5a`) und Netzprotokoll aus `fd11a59d` (Lauf 3) |
+| Werkzeuge | `_lernapp/werkzeuge/leistung/` (Kopien und Anpassungen von `_gemeinde/werkzeuge/`, dort unverändert), `web/scripts/lernapp-budget.mjs`, `web/scripts/messen.mjs` |
+| Rohdaten | außerhalb des Repos (`<scratchpad>/l8-leistung/lauf1/`, `…/lauf2/` und `…/lauf3/`): `lauf.log` mit `uptime` je Schritt, JSON und Markdown je Werkzeug, Lighthouse-Berichte des ersten Laufs je Route |
+
+**Ergebnis:** Nach der Behebung B-1 erfüllen alle 25 Lighthouse-Routen Leistung ≥ 90, Zugänglichkeit 100, LCP ≤ 2,5 s
+und CLS ≤ 0,1; alle INP-Szenarien ≤ 200 ms (CPU ×6, unter Last); axe 0 Befunde auf 136 + 22 Prüfungen; alle JS-Budgets
+nach KERN §9 eingehalten; Whisper lädt nur nach Klick und nach der Behebung B-2 (Gegenprüfung) jede der 10 Dateien genau
+einmal bis „bereit“ samt Probelauf; Abgleich mit 200 gleichzeitigen Konten ohne Fehler und idempotent. Offen bleiben
+Hinweise (TBT, Antwortzeit des Abgleichs unter Spitzenlast, Probelauf auf einem echten Mittelklasse-Telefon) und der
+veraltete Wortlaut von Z-L07 (Abschnitt 10).
+
+## 1. Methode
+
+- **Produktionsbau** (je Lauf einer; `pnpm build`, Turbopack, `output: standalone`) mit `FUNKTION_LERNAPP`, `…_SYNC`, `…_SPRECHEN`,
+  `…_MELDUNGEN`, `…_GRUPPEN` und `FUNKTION_KONTEN` = `an` (nur in `web/.env`, nie eingecheckt), gebaut gegen die
+  Wegwerf-Datenbank `igmg_lernapp_d_e2e` (PostgreSQL 16, Seeds, Inhalte und Testkurs wie die Lern-App-E2E über
+  `scripts/e2e-datenbank.mjs`). Server `scripts/start-standalone.mjs` auf Port 3224, PID gemerkt.
+- **Drei Bauten:** Lauf 1 (Stand `4d00cadf`) misst alles; Lauf 2 (Stand `fc95e675`, nach der Behebung B-1) misst nur die
+  betroffenen Routen nach (`MESS_FILTER`, Lighthouse, axe) und wiederholt das Netzprotokoll mit Endzustand; Lauf 3 (Stand
+  `fd11a59d`, nach der Gegenprüfung und der Behebung B-2) wiederholt nur das Netzprotokoll (`messlauf.sh whisper`).
+- **Je Lauf ein Aufruf** `MESS_ENV=<.env-Vorlage> bash _lernapp/werkzeuge/leistung/messlauf.sh [teile]` unter dem gemeinsamen
+  Schloss `bau.lock` (Voraussetzungen und Schalter im Kopf des Skripts; den Verweis auf `web/node_modules` legt es selbst an): Datenbank,
+  Bau, Server, Anmeldungen (`konten.mjs`: Lehrkraft mit Gruppe, Kind, Eltern – Platzhalter, Wegwerf-Daten), Aufwärmen,
+  Messungen, Server per PID beenden, `.next`, `test-results` und `.env` löschen; danach endet es und gibt das Schloss frei
+  (die Auftragsschleife für Nachmessungen gegen denselben Server läuft seit der Gegenprüfung nur noch mit
+  `MESS_AUFTRAG_S=<sekunden>`; vorher hielt sie das Schloss standardmäßig bis zu 3 h). Vor dem Schloss wartet das Skript auf
+  mindestens 4 GB freien Platz (dezimal, 3815 MiB; vorher 4096 MiB, bei 4,0 GB frei wartete es vergeblich).
+- **Berichtigung im Lauf:** Die Umgebung setzt `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` (Chromium-Build 1194); die
+  Playwright-Version aus `web/` (1.64.0) erwartet Build 1248. Der erste Durchgang der Browser-Werkzeuge brach deshalb sofort
+  ab; der Lasttest (ohne Browser) lief. Die Browser-Teile liefen danach gegen **denselben Bau und Server** als Auftrag der
+  Auftragsschleife des Messlaufs mit dem Browserordner der E2E. `messlauf.sh` setzt den Pfad jetzt selbst (`MESS_BROWSER`)
+  und löscht nach dem Bau `.next/server` (Kopie liegt in `.next/standalone`, ≈ 1,4 GB): Nach dem Bau waren nur noch
+  1,15 GB frei, nach dem Löschen 2,5 GB.
+- **Lighthouse** 13.5.0 mobil, Drosselung „devtools“ mit dem mobilen Profil (Nennwerte 150 ms RTT, 1,6 Mbit/s, CPU ×4;
+  angewandt laut `configSettings` 562,5 ms Anfragelatenz und 1474,56 kbit/s – Lighthouse rechnet bei „devtools“ RTT × 3,75
+  und Durchsatz × 0,9, also strenger als die Nennwerte; „simulate“ ist gegen localhost zu pessimistisch, E-026), 3 Läufe je
+  Route, Median. Kategorien Leistung, Zugänglichkeit, Best Practices, SEO (SEO nur auf
+  indexierbaren Seiten gewertet).
+- **INP** (Labor): Playwright mit CPU-Drosselung ×6 (CDP `Emulation.setCPUThrottlingRate`), Event-Timing-API, 3 Läufe je
+  Szenario, Median; Interaktionen im Spieler (Antwort wählen, Prüfen, Weiter, Wortbank, Paare, Tastatur-Eingabe,
+  Bildschirmtastatur) und das Öffnen des Lernpfads (Seitenwechsel Start → Lernpfad) samt „offline speichern“.
+- **axe** (axe-core 4.13.0 über `@axe-core/playwright` 4.13.0), Regeln WCAG 2.0/2.1/2.2 A/AA, auf allen Lern-App-Routen in de/tr/ar
+  × 390/1440 px, dazu der Spieler nach der Antwort, die Fehlerseite, `/lernen` in de/tr/en und die Lern-App-Seiten in
+  Mein Bereich (mit Anmeldung, de/tr/en).
+- **JavaScript je Route:** `scripts/lernapp-budget.mjs` (KERN §9 in der Fassung nach Spike S1: Grundstock und
+  Lern-App-eigener Anteil, gz -9 je Datei, Service Worker gesperrt) und `scripts/messen.mjs` (Lighthouse-Weg der Website).
+- **Lastregel:** `uptime` vor jeder Messung; verfehlt eine Route eine lastabhängige Schwelle (Leistung, LCP, CLS, INP) bei
+  Last > 1,5, misst das Werkzeug sie einmal nach, sobald die Last sinkt (höchstens 5 min, danach 2 min); sonst „unter Last“.
+
+## 2. Gerätprofil und Last
+
+| | |
+|---|---|
+| Maschine | 4 Kerne, 15 GB Arbeitsspeicher, Linux 6.18 (Firecracker), Platte knapp (4,0 GB frei vor dem Bau) |
+| Browser | Chromium 141.0.7390.37 (Headless Shell), Node 24.21.0 |
+| Server | Next.js 16.4.2 standalone, `NODE_ENV=production`, PostgreSQL 16 lokal, Pool höchstens 10 Verbindungen |
+| Parallel | Inhalts-Agenten mit `lernapp:pruefen`, `tsc`, Vitest (wenig, aber spürbar CPU) |
+| Last (1 min) | Lauf 1: Bau 4,6–5,3 · `messen.mjs` 2,7–2,8 · Netzprotokoll 2,8–3,6 · Lasttest 4,4–4,7 · INP 3,6–7,2 · Lighthouse 7,2 → 1,3 · axe 1,8–2,0. Lauf 2: Bau 4,8 · Lighthouse 2,8–3,8 · axe 2,1–3,4 · Netzprotokoll 2,1–2,6 |
+
+Die Last lag fast während der ganzen Messung über 1,5. Alle Zeitwerte sind deshalb **obere Schätzungen**; wo eine Route trotzdem
+erfüllt, ist das belastbar.
+
+## 3. JavaScript beim ersten Laden (KERN §9)
+
+`lernapp-budget.mjs`, gz -9 je Datei. Grundstock Next/React (gemeinsam von `/` und der Hülle): **135,3 KB** (8 Dateien).
+
+| Teil | Route | gesamt KB | eigener Anteil KB | Budget | Ergebnis |
+|---|---|---|---|---|---|
+| Hülle | `/lern-app/de/quellen` | 143,8 | 8,4 | eigen ≤ 20 | erfüllt |
+| Start | `/lern-app/de` | 149,3 | 14,0 | ≤ 180, eigen ≤ 30 | erfüllt |
+| Lernpfad | `/lern-app/ar/de-aus-ar` | 154,6 | 19,2 | ≤ 180, eigen ≤ 30 | erfüllt |
+| Fortschritt | `/lern-app/de/fortschritt` | 153,3 | 17,9 | ≤ 180, eigen ≤ 30 | erfüllt |
+| Spieler (l01, erste Aufgabe) | `/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l01` | 192,2 | +55,4 über der Hülle | ≤ 210, zusätzlich ≤ 60 | erfüllt |
+| Spieler (l02, Wortbank zuerst) | `…/ueben?l=de-aus-tr.a1.e01.l02` | 194,5 | – | ≤ 210 | erfüllt |
+| Wiederholen ohne Karten | `/lern-app/de/tr-aus-de/wiederholen` | 152,2 (ohne Zod) | – | ≤ 210 | erfüllt |
+| Einstufung vor dem Start | `/lern-app/de/tr-aus-de/einstufung` | 152,2 (ohne Zod) | – | ≤ 210 | erfüllt |
+| Spieler-Chunk | – | 37,3 | – | (im Spieler-Anteil) | – |
+| Übungstypen (26) | – | 1,0 (grammatik_tipp) bis 11,6 (schrift_tr, schrift_latein) | – | je ≤ 15 | erfüllt |
+| Arabische Bildschirmtastatur | – | 1,5 | – | ≤ 10 | erfüllt |
+
+Übungstypen im Einzelnen (KB): auswahl 2 · paare 2,9 · wortbank 4,6 · bild_wort 3 · frei 5,2 · hoeren_waehlen 7,3 ·
+hoeren_schreiben 9,8 · minimalpaare 7,3 · luecke 8 · satzbau 4,6 · formen 6,6 · harakat 4,4 · wahr_falsch 3,2 ·
+zuordnen 3,9 · reihenfolge 3,2 · fallfrage 3,5 · koran_wort 2,7 · dialog 9,6 · geschichte 9,9 · lesen_fragen 5,5 ·
+grammatik_tipp 1 · schrift_ar 5,3 · schrift_tr 11,6 · schrift_latein 11,6 · sprechen 9,7 · schreiben 3,3.
+
+**Zu den Zahlen im Auftrag** („Hülle ≤ 120 KB, Start/Lernpfad ≤ 150 KB, Spieler-Route ≤ 180 KB“, ebenso der Wortlaut von
+Z-L07 in `ABNAHME.md`): Das sind die Budgets vor der Fortschreibung von KERN §9 am 16.10.2026 (Spike S1: Next/React allein
+≈ 128 KB, heute 135,3 KB). Gemessen wird nach der geltenden Fassung (eigener Anteil plus Gesamtgrenze 180/210/230 KB).
+Gegen die alten Gesamtzahlen läge nur die Hülle (143,8 > 120) bzw. jede Route über ihnen – allein wegen des Grundstocks.
+Vorschlag: den Wortlaut von Z-L07 an KERN §9 angleichen (Orchestrator; ABNAHME hier nicht geändert).
+
+## 4. Lighthouse je Route (mobil, Median aus 3 Läufen)
+
+Erster Messlauf (Stand `4d00cadf`), 25 Routen. JS = Summe gz -9 der geladenen Skripte (Grenze nach Art, KERN §9).
+„nachgemessen“: Das Werkzeug hat die Route nach einer verfehlten Schwelle bei Last > 1,5 einmal wiederholt, sobald die
+Last sank; die Tabelle zeigt dann die Nachmessung.
+
+| Route | Art | Leistung | Zugängl. | BP | SEO | LCP ms | CLS | TBT ms | JS KB (Grenze) | Last max | Ergebnis |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `/lern-app` (308 → `/lern-app/de`) | Start | 90 | 100 | 100 | 100 | 2442 | 0 | 259 | 149,3 (180) | 7,24 | erfüllt |
+| `/lern-app/de` | Start | 95 | 100 | 100 | 100 | 1876 | 0 | 210 | 149,3 (180) | 3,83 | erfüllt |
+| `/lern-app/tr` | Start | 95 | 100 | 100 | 100 | 1904 | 0,001 | 211 | 149,3 (180) | 3,21 | erfüllt |
+| `/lern-app/ar` (RTL) | Start | 91 | 100 | 100 | 100 | 2060 | 0 | 300 | 149,3 (180) | 3,64 | erfüllt |
+| `/lern-app/de/tr-aus-de` | Lernpfad | 93 | 100 | 100 | 100 | 1835 | 0,029 | 279 | 154,6 (180) | 2,61 | erfüllt |
+| `/lern-app/tr/de-aus-tr` | Lernpfad | 94 | 100 | 100 | 100 | 1858 | 0,031 | 233 | 154,6 (180) | 1,77 | erfüllt |
+| `/lern-app/ar/de-aus-ar` (RTL) | Lernpfad | 92 | 100 | 100 | 100 | 1914 | 0,067 | 267 | 154,6 (180) | 1,83 | erfüllt |
+| `/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l01` | Spieler | 92 | 100 | 100 | – | 1793 | 0,006 | 302 | 192,2 (210) | 1,73 | erfüllt |
+| `/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l01` | Spieler | 93 | 100 | 100 | – | 1815 | 0,011 | 264 | 192,2 (210) | 1,30 | erfüllt |
+| `/lern-app/ar/de-aus-ar/ueben?l=de-aus-ar.a1.e01.l01` (RTL) | Spieler | 90 | 100 | 100 | – | 1856 | 0,007 | 337 | 192,2 (210) | 1,37 | erfüllt |
+| `/lern-app/de/tr-aus-de/wiederholen` | Spieler | 95 | 100 | 100 | – | 1837 | 0 | 216 | 152,2 (210) | 1,83 | erfüllt |
+| `/lern-app/de/tr-aus-de/einstufung` | Spieler | 95 | 100 | 100 | – | 1834 | 0 | 200 | 152,2 (210) | 1,60 | erfüllt |
+| `/lern-app/de/tr-aus-de/tipps?e=tr.a1.e01` | Hülle | **87** | 100 | 100 | – | 1805 | **0,151** | 272 | 176,5 (180) | 1,80 | **verfehlt: Leistung, CLS** (nachgemessen) |
+| `/lern-app/de/quellen` | Hülle | 93 | 100 | 100 | 100 | 1908 | 0 | 273 | 143,8 (180) | 2,39 | erfüllt |
+| `/lern-app/de/fortschritt` | Start | 95 | 100 | 100 | – | 1792 | 0 | 233 | 153,3 (180) | 2,55 | erfüllt |
+| `/lern-app/de/wortschatz` | Hülle | 96 | 100 | 100 | – | 1787 | 0 | 178 | 138,0 (180) | 1,99 | erfüllt |
+| `/lern-app/de/einstellungen` | Hülle | 96 | 100 | 100 | – | 1912 | 0 | 180 | 149,9 (180) | 1,68 | erfüllt |
+| `/lern-app/de/gruppe` (ohne Anmeldung) | Hülle | 93 | 100 | 100 | – | 1821 | 0 | 261 | 148,5 (180) | 2,36 | erfüllt |
+| `/lern-app/de/anmelden` | Hülle | 95 | 100 | 100 | – | 1788 | 0 | 217 | 145,1 (180) | 2,29 | erfüllt |
+| `/lern-app/de/islam` (Wissenskurs) | Lernpfad | 96 | 100 | 100 | 100 | 1846 | 0 | 188 | 154,6 (180) | 2,07 | erfüllt |
+| `/lern-app/tr/koran` (Koran-Arabisch) | Lernpfad | **86** | 100 | 100 | 100 | 1842 | **0,19** | 224 | 154,6 (180) | 2,04 | **verfehlt: Leistung, CLS** (nachgemessen) |
+| `/lernen` (Website, Stationen) | Website | 95 | 100 | 100 | 100 | 1778 | 0 | 230 | 161,2 (180) | 2,81 | erfüllt |
+| Mein Bereich › Unterricht › Gruppe › Lern-App (Lehrkraft) | Mein Bereich | 93 | 100 | 100 | – | 1877 | 0 | 282 | 181,9 (230) | 3,57 | erfüllt |
+| Mein Bereich, Schüler-Start (Kind) | Mein Bereich | 94 | 100 | 100 | – | 1863 | 0 | 252 | 181,9 (230) | 2,92 | erfüllt |
+| Mein Bereich › Kinder › Lernwoche (Eltern) | Mein Bereich | 93 | 100 | 100 | – | 1991 | 0 | 256 | 186,3 (230) | 2,24 | erfüllt (nachgemessen) |
+
+- **Zugänglichkeit 100 auf allen 25 Routen**, Best Practices 100. SEO 100 auf allen indexierbaren Seiten; „–“ steht für
+  `noindex`-Seiten (Lighthouse wertet dort 63–66, gewollt).
+- **LCP ≤ 2,5 s überall** (1778–2060 ms; der Einstieg `/lern-app` 2442 ms, weil die Weiterleitung 308 eine zusätzliche
+  Anfrage mit der angewandten Latenz von 562,5 ms kostet). **CLS ≤ 0,1 überall außer Tipps und Koran-Arabisch.**
+- **Verfehlt (vor der Behebung): Tipps und Koran-Arabisch.** Das Werkzeug weist beide als „unter Last“ aus (Last max
+  1,8 bzw. 2,0). Die Ursache ist aber nicht die Last: Die Verschiebung ist in jedem Lauf gleich (0,151 bzw. 0,19), und
+  Lighthouse nennt als einziges verschobenes Element den Fuß (`body > footer`). Die Insel lädt ihr Verzeichnis bzw. das
+  Einheitenpaket erst im Browser; bis dahin steht nur „wird geladen“ da, der Fuß liegt im ersten Bildschirm und springt
+  nach unten. Der Leistungswert sinkt allein durch CLS (Gewicht 25 %). Behebung in Abschnitt 9.
+- **TBT** liegt auf den meisten Routen über 200 ms (178–337 ms, CPU ×4 bei Last 1,3–7,2). TBT ist kein Kriterium von
+  Z-L07 (dort INP, Abschnitt 5); Hinweis in Abschnitt 10.
+- Die Spieler-Routen liegen mit 192,2 KB unter 210 KB; die Tipps mit 176,5 KB knapp unter 180 KB (Tiptap-Darstellung
+  der Tipps, Hinweis in Abschnitt 10).
+- Nicht gemessen mit Lighthouse: `/lern-app/ar/koran` (Koran-Arabisch gibt es in der Oberfläche ar nicht,
+  `kurse.ts`), die übrigen Oberflächen von Tipps, Fortschritt usw. (gleicher Code wie de; axe prüft sie in allen drei).
+  `/de/lernen` heißt im Code `/lernen` (Standardsprache ohne Präfix).
+- **Nicht im Umfang:** die Verwaltungsseiten der Lern-App (`/verwaltung/lernapp/**`, 11 Seiten: Übersicht, Kurse,
+  Befunde, Meldungen, Quellen, Audio, Prüfende, Religiöse Bausteine, Sprachprüfung je mit Unterseiten). Z-L06 und Z-L07
+  gelten für die Lern-App-Routen in de/tr/ar und Mein Bereich; die Verwaltung (nur de, ADR 0016) misst weder Lighthouse
+  noch axe dieses Berichts.
+
+Zum Vergleich der Website-Messweg `scripts/messen.mjs` (je 1 Lauf, Last 2,7–2,8):
+
+| Route | Leistung | Zugängl. | BP | SEO | LCP ms | CLS | TBT ms | JS KB | simuliert (P / LCP) |
+|---|---|---|---|---|---|---|---|---|---|
+| `/lern-app/de` | 92 | 100 | 100 | 100 | 1988 | 0,001 | 277 | 162,1 | 85 / 3695 |
+| `/lern-app/ar/de-aus-ar` | 92 | 100 | 100 | 100 | 1957 | 0,067 | 246 | 167,3 | 93 / 2449 |
+| `/lern-app/tr/de-aus-tr/ueben?l=…l01` | 91 | 100 | 100 | (66, `noindex`) | 1807 | 0,011 | 319 | 161,7 | 82 / 3857 |
+
+`messen.mjs` wertet TBT ≤ 200 ms als Labor-Ersatz für INP und meldet deshalb „verfehlt: TBT“. Für die Abnahme zählt INP
+(Abschnitt 5); TBT steht hier als Hinweis.
+
+## 5. INP (CPU ×6, 3 Läufe, Median)
+
+| Szenario | INP ms | je Schritt (Median, ms) | Öffnen ms | Last (max) | Ergebnis |
+|---|---|---|---|---|---|
+| Spieler l01 (Auswahl, Paare, Wortbank) | 168 | Paare antippen 160 · Antwort wählen 128 · Prüfen 160 · Weiter 136 · Wortbank antippen 120 | – | 4,56 | erfüllt |
+| Spieler l03 (Bildkarte, Freitext mit Tastatur) | 176 | Antwort wählen 176 · Prüfen 128 · Weiter 96 · Tastatur-Eingabe 40 | – | 5,65 | erfüllt |
+| Spieler l03 ar-aus-de (Freitext mit Bildschirmtastatur) | 168 | Prüfen 136 · Bildschirmtastatur 112 · Antwort wählen 128 · Weiter 88 · Tastatur öffnen 48 | – | 6,26 | erfüllt |
+| Lernpfad öffnen (Start → Lernpfad) und Einheit offline speichern | 104 | offline speichern 104 · Lernpfad öffnen 40 | 1461 | 7,0 | erfüllt |
+
+Alle Szenarien ≤ 200 ms, obwohl die Last bei 3,6–7,2 lag (CPU ×6 auf einer ohnehin belegten Maschine). Der höchste
+Einzellauf: 200 ms (Antwort wählen, l03, Last 5,65).
+
+## 6. axe (de/tr/ar × 390/1440)
+
+`a11y.mjs`, erster Messlauf: **136 Prüfungen (68 Routen × 2 Breiten), 0 kritisch, 0 ernst – und auch 0 mittel, 0 gering,
+kein waagrechter Überlauf**, keine Fehlerseite statt Inhalt. Last 1,8–2,0.
+
+Geprüft je Oberfläche de, tr und ar (`dir="rtl"` in ar): Start, Lernpfad, Spieler l01 (Auswahl) vor und nach der Antwort
+(Rückmeldeblatt), l02 (Wortbank), l03 (Bildkarte), l04 (Dialog), Wiederholen, Einstufung, Tipps, Fortschritt, Wortschatz,
+Einstellungen, Quellen, Gruppe (ohne Anmeldung), Anmelden, Wissenskurs, Koran-Arabisch (nur de und tr), die eigene
+Fehlerseite (absichtlich); dazu `/lernen`, `/tr/ogren`, `/en/learn` und mit Anmeldung die Lern-App-Seiten in Mein Bereich
+in de/tr/en (Lehrkraft: Gruppe › Lern-App; Kind: Schüler-Start; Eltern: Lernwoche des Kindes). Jede Seite erst nach dem
+geladenen Zustand der Insel (Selektor je Route), damit der Client-Inhalt mitgeprüft wird.
+
+Die Prüfung mit Screenreadern (LM-19) und „jeder Übungstyp per Tastatur“ (E2E je Typ) gehören zu Z-L06 und sind nicht Teil
+dieses Laufs. Ebenfalls nicht im Umfang: die Verwaltungsseiten der Lern-App (`/verwaltung/lernapp/**`, Abschnitt 4).
+
+## 7. Sprechmodul: Whisper nur nach Klick (Netzprotokoll)
+
+`whisper-netz.mjs`, Lektion l04 (de, tr-aus-de) bis zur Sprechaufgabe. Seit der Gegenprüfung erwartet das Werkzeug jede der
+10 Download-Dateien (`DOWNLOAD_PFADE` in `web/src/lib/lernapp/sprechen/modell.ts`: 7 Modell- und Konfigurationsdateien, ORT
+`.mjs` und `.wasm`, Worker) **genau einmal über das Netz** – Anfrage des Service Workers oder eine nicht vom Service Worker
+beantwortete Anfrage der Seite bzw. eines Workers (Playwright meldet sonst jede Datei doppelt) – und wertet „erfüllt“ nur
+mit „bereit“.
+
+**Lauf 3 (Stand `fd11a59d`, nach B-2), Last 2,9 → 2,6:**
+
+- **Vor dem Klick: 79 Anfragen, davon 0 unter `/lern-app/modelle/`** – kein Modell, kein Worker, kein WASM.
+- **Nach dem Klick: alle 10 Download-Dateien je genau einmal über das Netz**, keine fehlt, keine doppelt; dazu 11
+  Anfragen von Seite und Worker, die der Service Worker aus seinem Vorrat beantwortet. Übertragen ≈ 81,5 MB (Encoder 23,2 MB
+  und Decoder 53,7 MB ungepackt, Tokenizer, Konfiguration, ORT-`.wasm` und Worker gepackt; ungepackt sind es die ≈ 95 MB
+  aus KERN §9).
+- **„bereit“ nach 7 s** – „bereit“ erscheint erst nach einem gelungenen Probelauf (`bewerteProbe` ≤ 12 s). Konsole von Seite
+  und Worker leer. Nur GET, keine fremden Ursprünge.
+
+**Läufe 1 und 2 (Stand mit `a0795f7b`) – richtiggestellt:** Beide endeten ohne „bereit“ (Lauf 1 wartete 10 min, Lauf 2
+fiel nach ≈ 11 s auf die eigene Aufnahme zurück). Die erste Fassung dieses Berichts schrieb das dem kopflosen Chromium zu
+(„Laden und Rückfall arbeiten also wie vorgesehen“). **Das war falsch.** Ursache war die Behebung B-0 (`a0795f7b`) selbst:
+Mit absolutem Modellordner meldete transformers.js 4.3 Tokenizer und Prozessor als fehlend (Abschnitt 9, B-2). Deshalb
+fehlten nach dem Klick `tokenizer.json`, `tokenizer_config.json` und `preprocessor_config.json` (nur 7 der 10 Dateien), und
+die „≈ 74 MB über das Netz“ waren nicht der vollständige Download, sondern nur diese 7 Dateien. Auf jedem Gerät mit leerem
+Vorrat wäre die Spracherkennung dauerhaft im Rückfall geblieben (`geraet.ts` merkt sich das Urteil je Gerät). `a0795f7b`
+war nie auf `main` oder `claude/trusting-lovelace-6nfolz`; kein ausgeliefertes Gerät ist betroffen.
+
+**Rauchtest ohne Next-Bau** (`web/scripts/lernapp/sprechen-rauchtest.mjs`, echter Worker und Service Worker, Kopfzeilen
+und CSP der Lern-App, nach B-2): Variante A (Vorrat über transformers.js) und B (nur über den Service Worker) bestanden –
+online Laden 2,5–2,7 s, Probelauf 2,7–3,6 s, eine Erkennung, danach ohne Netz ein neuer Worker aus dem Vorrat (Laden
+1,4–1,5 s, Probelauf 2,8–3,0 s); jede Download-Datei erreicht den Server genau einmal; 0 Konsolenmeldungen.
+
+## 8. Lasttest Abgleich (`POST /api/lernapp/sync`)
+
+`lasttest-sync.mjs`, Wegwerf-Datenbank `igmg_lernapp_d_e2e`: 200 Konten (Platzhalter, Einwilligung `lernapp` und Sitzung
+per SQL, Sitzungs-Cookie wie Better Auth signiert), je Konto 3 Pakete (je ein eigenes Gerät) à 40 Ereignisse, alle
+Anfragen einer Welle gleichzeitig (Node `fetch` + `Promise.all`, keine neue Abhängigkeit).
+
+| Welle | Anfragen | Dauer s | je s | p50 ms | p95 ms | p99 ms | max ms | Status | Fehler % | 429 % | angenommen | doppelt | DB-Verbindungen max (aktiv) | Last |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1: 200 × 3 gleichzeitig (neu) | 600 | 12,09 | 49,6 | 9157 | 11924 | 11944 | 11988 | 200: 600 | 0 | 0 | 24000 | 0 | 11 (6) | 4,52 → 4,53 |
+| 2: dieselben Pakete noch einmal | 600 | 7,13 | 84,2 | 5017 | 6909 | 7079 | 7096 | 200: 600 | 0 | 0 | 0 | 24000 | 12 (6) | 4,53 → 4,68 |
+| 3: 200 × 3 Folgeereignisse | 600 | 10,71 | 56,0 | 8799 | 10621 | 10640 | 10657 | 200: 600 | 0 | 0 | 24000 | 0 | 11 (8) | 4,68 → 4,42 |
+| Bremse: 5 Konten × 40 gleichzeitig | 200 | 1,33 | 150,8 | 924 | 1277 | 1305 | 1316 | 200: 105, 429: 95 | 0 | 47,5 | 0 | 0 | 11 (7) | 4,42 |
+
+- **Fehlerquote 0 %**, keine 5xx, keine Zeitüberschreitung; die Verbindungen zur Datenbank bleiben bei höchstens 12
+  (Pool 10 plus Messverbindung und Verwaltung).
+- **Idempotenz erfüllt:** nach Welle 1 24 000 Ereignisse, nach Welle 2 (gleiche Kennungen Gerät + seq) weiter 24 000,
+  0 Dubletten; Ableitungen gleich (Karten 800/800, Tage 200/200, Tage je Kurs 200/200, Prüfsummen gleich). Nach Welle 3
+  48 000 Ereignisse, 0 Dubletten.
+- **Raten-Grenze ehrlich eingeordnet:** Die Bremse gilt je Konto (30 Anfragen je Minute, `pruefeRate('lernapp-sync',
+  benutzerId)`), nicht je IP. 200 Konten mit je 3 Paketen je Welle (9 in gut 30 s) liegen darunter – es war **keine
+  Ausnahme** nötig, 429 = 0 in den Wellen 1–3. Die Bremsen-Welle zeigt, dass sie greift: je Konto 30 − 9 bereits
+  verbrauchte = 21 angenommen (5 × 21 = 105), der Rest 429 `bremse` mit `Retry-After`.
+- **Antwortzeit:** p50 ≈ 9 s, p95 ≈ 12 s, wenn 600 Pakete à 40 Ereignisse im selben Augenblick ankommen (Durchsatz
+  ≈ 50 Pakete bzw. ≈ 2000 Ereignisse je Sekunde, begrenzt durch den Pool von 10 Verbindungen und die Last 4,5 der
+  Maschine). Im Betrieb kommen Abgleiche verteilt (nach Lektionsende, beim Seitenwechsel); 600 gleichzeitige Pakete sind
+  der ungünstigste Fall. Keine Schwelle im Auftrag; Einordnung und Vorschlag in Abschnitt 10.
+
+## 9. Behebungen
+
+| Nr. | Befund | Ursache | Behebung | Test | Vorher → nachher |
+|---|---|---|---|---|---|
+| B-1 | CLS 0,19 auf `/lern-app/tr/koran`, 0,151 auf `…/tipps?e=…` (Leistung 86 bzw. 87); kleiner auf den Sprach-Lernpfaden (0,029–0,067) | Insel lädt Verzeichnis bzw. Paket erst im Browser; der Fuß steht während „wird geladen“ im ersten Bildschirm und springt | `fc95e675`: Lernpfad-Abschnitt und Tipps reservieren eine Bildschirmhöhe (`min-h-svh`) – dieselbe Bauweise wie Üben, Einstufung und Wiederholen | `tests/unit/lernapp/platz-regeln.test.ts` (6 Fälle; ohne die Behebung 3 rot) | siehe Tabelle unten |
+| B-0 | (früherer Lauf dieses Pakets) Sprechübung lud Encoder, Decoder und Tokenizer zweimal | – | `a0795f7b` (absoluter Modellordner) – **falsch, ersetzt durch B-2** (Gegenprüfung): Tokenizer und Prozessor galten als fehlend, Probelauf scheiterte | der damalige Unit-Test prüfte nur „kein Abruf“, nicht `exists` | Läufe 1 und 2: nur 7 von 10 Dateien, kein „bereit“ (Abschnitt 7) |
+| B-2 | Gegenprüfung: Spracherkennung auf jedem Gerät mit leerem Vorrat im Rückfall (Folge von B-0); ursprünglich doppelte Last | transformers.js 4.3: `get_file_metadata` prüft den eigenen Ursprung nur bei relativem Modellordner; die Fortschrittsmeldung an `pipeline()` löste je Datei eine Vorabfrage per vollständigem GET aus, die der Service Worker zusätzlich zur eigentlichen Anfrage aus dem Netz holte | `ebaa9d5a`: Modellordner wieder relativ (`TRANSFORMERS_UMGEBUNG`); der Worker legt Modell und ORT-`.wasm` vor dem Aufbau der Pipeline selbst in den Vorrat (`fuelleVorrat`: je Datei ein Abruf, Fortschritt nach Bytes, erst ganz lesen, dann ablegen) und übergibt der Pipeline keine Fortschrittsmeldung; Fehler im Worker als Konsolenwarnung (Art und Meldung) | Unit `sprechen-einmal-laden` (10 Fälle, am gebündelten Browser-Bau: `exists` für alle 7 Dateien, `get_pipeline_files` mit Tokenizer und Prozessor, WhisperTokenizer und WhisperProcessor laden, kein Abruf; Gegenprobe absoluter Pfad; mit absolutem Pfad 2 Fälle rot); Rauchtest mit Zählung je Datei | Lauf 3: 10 von 10 Dateien je einmal über das Netz, „bereit“ nach 7 s (Abschnitt 7) |
+
+Nachmessung B-1 (zweiter Bau, Stand `fc95e675`, nur die betroffenen Routen, `MESS_FILTER`), Lighthouse mobil, Median aus 3,
+Last 2,8–3,8:
+
+| Route | Leistung vorher → nachher | CLS vorher → nachher | LCP ms nachher | TBT ms nachher | Last max nachher |
+|---|---|---|---|---|---|
+| `/lern-app/tr/koran` | 86 → **92** | 0,19 → **0** | 1872 | 292 | 3,05 |
+| `/lern-app/de/tr-aus-de/tipps?e=tr.a1.e01` | 87 → **93** | 0,151 → **0** | 1798 | 276 | 3,36 |
+| `/lern-app/de/tr-aus-de` | 93 → 94 | 0,029 → **0** | 1826 | 231 | 3,80 |
+| `/lern-app/tr/de-aus-tr` | 94 → 94 | 0,031 → **0** | 1911 | 220 | 2,78 |
+| `/lern-app/ar/de-aus-ar` (RTL) | 92 → 93 | 0,067 → **0** | 1899 | 250 | 3,55 |
+| `/lern-app/de/islam` | 96 → 95 | 0 → 0 | 1861 | 210 | 2,94 |
+
+Zugänglichkeit, Best Practices und SEO unverändert 100 (Tipps `noindex`). JS unverändert (nur eine Klasse). axe nach der
+Behebung auf Lernpfad, Tipps, Wissenskurs und Koran-Arabisch in de/tr/ar × 390/1440: 22 Prüfungen, 0 Befunde jeder
+Schwere, kein Überlauf.
+
+Weitere Ursachen mit klarer, örtlicher Behebung fanden sich nicht: Budgets, INP, LCP und axe waren schon im ersten Lauf
+erfüllt.
+
+## 10. Offene Befunde und Vorschläge
+
+1. **Z-L07-Wortlaut** nennt noch die Budgets vor der Fortschreibung von KERN §9 (Hülle 120, Start/Lernpfad 150,
+   Spieler 180 KB gesamt). Vorschlag: an KERN §9 angleichen (eigener Anteil 20/30/60 KB, gesamt 180/210/230 KB), sonst
+   ist Z-L07 allein wegen des Next/React-Grundstocks (135,3 KB) nicht erfüllbar. Orchestrator; ABNAHME hier nicht geändert.
+2. **Probelauf der Sprachprüfung** (Abschnitt 7): Nach B-2 gelingt er auf diesem Rechner (kopflos, ohne GPU, Last 2–3) in
+   2,7–3,6 s, also „normal“ (≤ 5 s). Vorschlag: auf einem echten Mittelklasse-Telefon (Sichtabnahme, LM) einmal bis
+   „bereit“ prüfen – Speicher und Rechenzeit dort sind die offene Größe, nicht mehr das Laden. Ein Rückfall ist jetzt
+   diagnostizierbar: Der Worker gibt den Grund als Konsolenwarnung aus (`[sprechen] laden|probe|erkennung: …`).
+3. **Abgleich unter Spitzenlast** (Abschnitt 8): 0 Fehler, aber p95 ≈ 12 s bei 600 gleichzeitigen Paketen. Die
+   Ereignisse eines Pakets gehen schon in einem einzigen `INSERT … ON CONFLICT DO NOTHING`; je Konto serialisiert eine
+   Sperre (`sperre(benutzerId)`) die Pakete, und der Pool hat lokal 10, auf Vercel 5 Verbindungen je Instanz
+   (`src/lib/db/index.ts`). Rechnerisch ≈ 200 ms je Transaktion (Grenzen, Einfügen, Karten und Tage ableiten, Seite
+   fremder Ereignisse). Vorschlag für den Betrieb: Dauer je Transaktion beobachten und, falls nötig, die Ableitung
+   (`erneuereKarten`, `erneuereTage`) gezielt messen; kein Abnahmekriterium, keine Änderung in diesem Paket.
+4. **TBT** 178–337 ms auf den meisten Routen (Lighthouse CPU ×4, Last 1,3–7,2); `messen.mjs` wertet TBT ≤ 200 ms als
+   eigenen Labor-Ersatz und meldet „verfehlt: TBT“. Ursache ist im Wesentlichen die Hydrierung des Grundstocks (135 KB)
+   plus Insel; die Abnahme misst INP direkt (≤ 200 ms erfüllt). Vorschlag: TBT ohne Parallel-Last einmal nachmessen
+   (Tor L8, ruhige Maschine); keine örtliche Ursache gefunden.
+5. **Tipps nahe am Budget:** 176,5 KB von 180 KB (Darstellung der Tipps aus dem Paket). Bei weiterem Wachstum die
+   Darstellung per `import()` erst nach dem Laden des Pakets holen.
+6. **Werkzeug und Platte:** In Lauf 1 fiel der freie Platz nach dem Bau für gut eine Minute auf 1,15 GB (unter die
+   2-GB-Grenze), bis `.next/server` von Hand gelöscht war. `messlauf.sh` löscht es jetzt gleich nach dem Bau (Lauf 2:
+   2,4 GB frei) und setzt den Browserpfad selbst. Auch in Lauf 3 sank der freie Platz am Ende des Baus kurz auf ≈ 1,4 GB
+   (Start 3,86 GB; `.next/server` und `.next/standalone` liegen bis zum Löschen doppelt) – mit 4 GB vor dem Bau ist die
+   2-GB-Grenze nicht sicher einzuhalten; Vorschlag: vor einem Messlauf ≥ 5 GB frei. Seit der Gegenprüfung endet
+   `messlauf.sh` nach den Messungen (Auftragsschleife nur mit `MESS_AUFTRAG_S`), verlangt `MESS_ENV` ausdrücklich, legt den
+   Verweis auf `web/node_modules` selbst an und nimmt die Ablage der Sitzung aus `MESS_SCRATCH` (einzeln `MESS_NODE_BIN`,
+   `MESS_SCHLOSS`, `MESS_BROWSER`). Die Werkzeuge unter `_lernapp/werkzeuge/` sind nicht mit Prettier formatiert
+   (außerhalb von `web/`), wie bisher.
+
+## 11. Vorschlag für Z-L07
+
+**Vorschlag: „erfüllt“** mit dem Wortlaut der Budgets nach KERN §9 (Befund 10.1), Nachweis dieser Bericht:
+
+| Teil von Z-L07 | Stand | Nachweis |
+|---|---|---|
+| Budgets KERN §9 (Hülle, Start/Lernpfad, Spieler, Übungstyp, Tastatur, Mein Bereich) | erfüllt | Abschnitt 3 (`lernapp-budget.mjs`), Mein Bereich 181,9–186,3 ≤ 230 KB (Abschnitt 4) |
+| LCP ≤ 2,5 s | erfüllt | 25 Routen 1778–2442 ms |
+| INP ≤ 200 ms | erfüllt | 104–176 ms (Median, CPU ×6, unter Last) |
+| CLS ≤ 0,1 | erfüllt nach B-1 | vorher Tipps 0,151 und Koran-Arabisch 0,19; nachher 0 (`fc95e675`) |
+| Lighthouse Leistung ≥ 90, Zugänglichkeit 100 | erfüllt nach B-1 | 90–96 bzw. 100 auf allen 25 Routen |
+| Whisper nur nach Klick | erfüllt nach B-2 | 0 Modellanfragen vor dem Klick; danach 10 von 10 Dateien je einmal über das Netz und „bereit“ nach 7 s (Lauf 3, `ebaa9d5a`); vorher mit `a0795f7b` nur 7 Dateien und Rückfall |
+
+Dazu für Z-L06 (axe-Anteil): 0 ernste und kritische Befunde auf allen Lern-App-Routen × 3 Sprachen × 2 Breiten (Abschnitt 6);
+die übrigen Teile von Z-L06 (Tastaturweg je Übungstyp, Screenreader LM-19) liegen außerhalb dieses Pakets.
+
+Vorbehalt: Alle Zeitwerte stammen von einer belasteten Maschine (Last 1,3–7,2); sie sind obere Schätzungen. Eine
+Gegenprüfung nach der Bereitstellung mit PageSpeed Insights (M-065) bleibt empfohlen.

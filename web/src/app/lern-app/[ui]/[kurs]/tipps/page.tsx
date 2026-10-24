@@ -29,9 +29,12 @@ export default async function Tipps({ params }: PageProps<'/lern-app/[ui]/[kurs]
   return (
     <Rahmen ui={ui} bereich={null} pfad={`${kurs}/tipps`}>
       <Seitenkopf zurueck={{ adresse: lernpfad.adresse, text: kursTitel(ui, kurs) }} titel={t('tipps.titel')} />
-      <Suspense fallback={<p className="text-18 text-tinte-2">{t('tipps.laedt')}</p>}>
-        <TippsInsel kurs={kurs} texte={rohTexte(ui, 'tipps')} lernpfad={lernpfad} />
-      </Suspense>
+      {/* Platz für die Tipps (eine Bildschirmhöhe), damit der Fuß beim Laden des Pakets nicht springt (CLS, L8-02) */}
+      <div className="min-h-svh">
+        <Suspense fallback={<p className="text-18 text-tinte-2">{t('tipps.laedt')}</p>}>
+          <TippsInsel kurs={kurs} texte={rohTexte(ui, 'tipps')} lernpfad={lernpfad} />
+        </Suspense>
+      </div>
     </Rahmen>
   );
 }
