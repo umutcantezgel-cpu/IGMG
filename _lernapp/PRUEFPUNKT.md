@@ -1,5 +1,15 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 24.10.2026 16:50 UTC – Plan-Modus der Umgebung (≈ 16:20–16:40) beendet:**
+  - Die vier Inhaltsläufe haben den Plan-Modus überstanden und schreiben wieder (z. B. Lektorat de.b1.e03, 3d87f6a6); kein Neustart nötig.
+  - Prüfer-Fehlalarme: Der erste Lauf (`wf_9ea7a6d0-99a`) war blockiert und hat nichts geändert, aber die Ursachen analysiert:
+    - ar: zuerst das ganze bekannte Wort (kabīra, baʿīd, ǧinsiyya).
+    - R-10: Hamza-verträglicher Vergleich nur in religionsbezug.
+    - de: Kompositum-Grenze; tr: Endungsgrammatik.
+    - Register: Nebeneinträge melden nicht.
+    - Neu gestartet mit dieser Analyse als Fortsetzung: `wf_eb033b1b-1a6`.
+  - **A1-Freigabe:** wartet weiter auf die Erlaubnis des Nutzers (120 gestagte Dateien).
+
 - **Stand 24.10.2026 16:20 UTC – nach dem Limit (≈ 12:30, Reset 15:00; Neustart verspätet) fortgesetzt:**
   - **Fertig seit 10:35:**
     - L8-02: Gegenprüfung Runde 2 frei, gemergt (29518e3b). ABNAHME Z-L07 an KERN §9 angeglichen und erfüllt (28ef4aec).
