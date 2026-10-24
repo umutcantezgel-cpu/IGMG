@@ -145,3 +145,19 @@ if [ -n "${MESS_HALTEN:-}" ]; then
   until [ -f "$MESS_ZIEL/stopp" ] || [ $SECONDS -ge $ende ]; do timeout 10 tail -f /dev/null; done
   rm -f "$MESS_ZIEL/stopp"
 fi
+
+# Aufträge gegen den laufenden Server (weiter unter demselben Schloss): ein Skript als <ziel>/auftrag.sh ablegen; es läuft im
+# Ordner web/ mit der Umgebung des Laufs. Ende mit `touch <ziel>/stopp` oder nach MESS_AUFTRAG_S Sekunden (Standard 3 h).
+export PLAYWRIGHT_BROWSERS_PATH=$S/e2e-echt/pw-browsers
+ende=$((SECONDS + ${MESS_AUFTRAG_S:-10800}))
+protokoll "Auftragsschleife bereit (Skript: $MESS_ZIEL/auftrag.sh, Ende: touch $MESS_ZIEL/stopp)"
+until [ -f "$MESS_ZIEL/stopp" ] || [ $SECONDS -ge $ende ]; do
+  if [ -f "$MESS_ZIEL/auftrag.sh" ]; then
+    mv "$MESS_ZIEL/auftrag.sh" "$MESS_ZIEL/auftrag-laeuft.sh"
+    protokoll "Auftrag beginnt: $(head -1 "$MESS_ZIEL/auftrag-laeuft.sh")"
+    (cd "$W" && bash "$MESS_ZIEL/auftrag-laeuft.sh") >> "$MESS_ZIEL/auftrag.log" 2>&1
+    protokoll "Auftrag Ende rc=$?"
+  fi
+  timeout 10 tail -f /dev/null
+done
+rm -f "$MESS_ZIEL/stopp"
