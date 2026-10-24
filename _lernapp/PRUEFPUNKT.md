@@ -9,6 +9,12 @@
     - Register: Nebeneinträge melden nicht.
     - Neu gestartet mit dieser Analyse als Fortsetzung: `wf_eb033b1b-1a6`.
   - **A1-Freigabe:** wartet weiter auf die Erlaubnis des Nutzers (120 gestagte Dateien).
+  - **17:15 – A2 ar fertig** (Schlussprüfung 8ce35c2f):
+    - 14 Einheiten, 900/900 Lemmata, 3.685 Sätze, 2.038 Aufgaben; 0 blockierend, 0 menschlich_klaeren.
+    - Die im Plan-Modus nur geplanten Rückübersetzungs-Korrekturen e05–e11 (115) hat die Schlussprüfung eingespielt.
+    - Figuren-Kanon angeglichen; tr-Monatsnamen nach TDK.
+    - Damit ist A2 in allen drei Zielsprachen fertig.
+  - **Neu gestartet:** B2 de `wf_b4af519e-267` (Wortschatzplan gegen A1–B1, dann Einheiten).
 
 - **Stand 24.10.2026 16:20 UTC – nach dem Limit (≈ 12:30, Reset 15:00; Neustart verspätet) fortgesetzt:**
   - **Fertig seit 10:35:**
