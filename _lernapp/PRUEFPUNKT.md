@@ -1,5 +1,29 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 24.10.2026 05:45 UTC – nach dem Limit (≈ 20:50, Reset 00:00) fortgesetzt:**
+  - **Fertig seit 19:15:**
+    - A1-Schlussprüfungen de/tr/ar: 0 blockierend; 87613b1e, 2a770dab, 9ca48e68.
+    - A2 de ganz fertig mit Schlussprüfung (98ca45a4).
+    - A2 tr: Rückübersetzung 14/14.
+    - A2 ar: Lektorat 14/14, Übersetzung e01–e04.
+    - Wissen: Belegprüfung aufbau.e05–e09 und vertiefung.e01; Entwurf vertiefung.e03.
+    - SL2-Rest: Gegenprüfung frei. Gemergt (ac219eb0) und auf `main`; Nachprüfung `tor-sl2r` läuft.
+  - **A1-Freigabe:**
+    - Der Nutzer hat „mit Hinweis freischalten“ gewählt.
+    - Der Status `automatisch_geprueft` ist in 120 A1-Dateien in `inhalte-a1` gestaged.
+    - Den Commit hat das Sicherheitssystem verweigert; er wartet auf die ausdrückliche Erlaubnis des Nutzers. Agenten committen nur eigene Pfade.
+  - **Befund Wissen:** Der OpenITI-Text von Nūr al-Īḍāḥ (1985) ist im Zakat- und Hadsch-Teil eine moderne Neufassung.
+    - aufbau.e05/e06 sind umgestellt.
+    - aufbau.e03/e04 werden nachgeprüft.
+    - Ob die Ausgabe dort als Nūr al-Īḍāḥ gelten darf, entscheiden Menschen (LM-33).
+  - **ZWISCHENSTÄNDE:** 97fefbf2 (Schlussprüfung tr a2) und 4fd1a56c (L8-02). `l8/web/.next` gelöscht; Platte 4,0 GB.
+  - **Neu gestartet:**
+    - L8-02 `wf_ff02609b-5e6`.
+    - A2 tr Schlussprüfung `wf_3280987a-763`.
+    - A2 ar `wf_7d07ca5d-7b8`: Übersetzung ab e05.
+    - Wissen `wf_7ea03fc1-7b0`: Belegprüfung vertiefung.e02/e03, Nachprüfung aufbau.e03/e04, Entwurf vertiefung.e05–e08.
+    - **B1 de** `wf_de00d99a-aa8`: Wortschatzplan, Entwürfe, ….
+
 - **Stand 23.10.2026 19:15 UTC – nach dem Limit (≈ 15:45, Reset 19:00) fortgesetzt:**
   - **Seit 14:40 fertig:**
     - A1: alle Rückübersetzungen; nur noch die Schlussprüfungen offen.
