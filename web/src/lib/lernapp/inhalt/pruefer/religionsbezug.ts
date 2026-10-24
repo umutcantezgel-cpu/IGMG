@@ -4,7 +4,7 @@ import { type Leitfaden, verweiseVon } from '../schema';
 import type { Inhalte } from './dateien';
 import { ladeKaikki } from './daten';
 import { arabischeKandidaten, arabischNormal } from './sprache';
-import { tabuWoerter } from './tabu';
+import { arabischBekannt, tabuWoerter } from './tabu';
 import type { SprachStufe, TextEintrag } from './texte';
 import { Befunde } from './typen';
 
@@ -15,6 +15,11 @@ import { Befunde } from './typen';
  *   Formeln in Lateinschrift (F-de, F-tr) verlangen `religionsbezug: true` → sonst `menschlich_klaeren` (Kandidat, z. B. tr.
  *   „hoca“ ist auch die Lehrkraft). Gekennzeichnet, aber unter `ab_stufe` → ebenfalls an Menschen. Den harten, „fail closed“
  *   Teil leistet das Formel-Lexikon des Wächters (`religion.ts`).
+ * - **Arabisch:** Wörter in der Vergleichsform des Wächters ohne Klitika; ein bekanntes Wort des kaikki-Kernauszugs wird nicht
+ *   falsch zerlegt (`arabischeKandidaten`; sonst ergäbe „weit“ nach bi- das Wort für Fest). Die Vergleichsform
+ *   macht Alif mit Hamza oben und unten gleich; ein Treffer verlangt deshalb zusätzlich, dass kein Alif im Text ein anderes
+ *   Hamza bzw. Madda trägt als im Muster (Alif ohne Zeichen passt zu allen). So trifft das Wort für „vor/vorn“ (Hamza oben)
+ *   nicht das für den Vorbeter (Hamza unten). Der Wächter selbst bleibt unverändert.
  * - **kaikki-Thema Religion/Islam** (ADR 0045 Fortschreibung S7 Nr. 4): Ein Lemma mit Quelle `wiktionary:<ausgabe>:<titel>`, dessen
  *   Artikel im Kernauszug das Thema Religion/Islam trägt, ist ohne Kennzeichen ein Hinweis (Kandidat für Kennzeichen und
  *   Formel-Lexikon). Wörter im Fließtext werden nicht so geprüft: Viele Alltagswörter haben eine religiöse Nebenbedeutung.
@@ -23,7 +28,28 @@ import { Befunde } from './typen';
  *   Text des Wissenskurses (blockierend).
  */
 
-type Begriff = { id: string; abStufe: SprachStufe | null; latein: Partial<Record<'de' | 'tr', string[][]>>; ar: Set<string>[][] };
+/** Arabisches Muster: Vergleichsform → dieselben Wörter mit Hamza-Platzhaltern (`hamzaWoerter`) */
+type ArMuster = Map<string, string[]>;
+type Begriff = { id: string; abStufe: SprachStufe | null; latein: Partial<Record<'de' | 'tr', string[][]>>; ar: ArMuster[][] };
+
+/**
+ * Platzhalter für Alif mit Hamza oben, Hamza unten und Madda: Buchstaben, die die Normalisierung des Wächters unverändert
+ * lässt und die im Arabischen nicht vorkommen. So stehen die Wörter mit Hamza an derselben Stelle wie in `tabuWoerter`.
+ */
+const HAMZA_ALIF: Record<string, string> = { '\u0623': '\u06C6', '\u0625': '\u06C7', '\u0622': '\u06C8' };
+const PLATZHALTER = new Set(Object.values(HAMZA_ALIF));
+/** Wörter eines arabischen Texts wie `tabuWoerter`, aber Alif mit Hamza bzw. Madda als Platzhalter. */
+const hamzaWoerter = (text: string) =>
+  tabuWoerter(
+    text.normalize('NFC').replace(/[\u0622\u0623\u0625]/g, (z) => HAMZA_ALIF[z]!),
+    'ar',
+  );
+/** Gleich bis auf Alif: verschieden nur, wo beide ein Alif mit verschiedenem Hamza bzw. Madda tragen. */
+function hamzaVertraeglich(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  for (let i = 0; i < a.length; i++) if (a[i] !== b[i] && PLATZHALTER.has(a[i]!) && PLATZHALTER.has(b[i]!)) return false;
+  return true;
+}
 
 const teile = (s: string) =>
   s
@@ -38,16 +64,23 @@ function begriffe(leitfaden: Leitfaden, daten: string): Begriff[] {
   for (const e of ladeKaikki('ar', daten))
     if (e.rom) {
       const k = e.rom.normalize('NFC').toLowerCase();
-      rom.set(k, [...(rom.get(k) ?? []), arabischNormal(e.w), ...(e.pl ?? []).map(arabischNormal)]);
+      rom.set(k, [...(rom.get(k) ?? []), e.w, ...(e.pl ?? [])]);
     }
-  const umschrift = (u: string): Set<string>[] | null => {
-    const folge: Set<string>[] = [];
+  const umschrift = (u: string): ArMuster[] | null => {
+    const folge: ArMuster[] = [];
     for (const wort of u.split(/\s+/).filter(Boolean)) {
       let r = wort.normalize('NFC').toLowerCase();
       for (const [din, wikt] of Object.entries(tabelle)) r = r.split(din.toLowerCase()).join(wikt);
       r = r.replace(/^(?:a[lšṣṭḍẓṯḏnrstdz]-|l-)/u, '');
       const varianten = [r, `ʔ${r}`, r.replace(/ī$/, 'iyy')];
-      const muster = new Set(varianten.flatMap((v) => rom.get(v) ?? []).filter((m) => m.length >= 2));
+      const muster: ArMuster = new Map();
+      for (const w of varianten.flatMap((v) => rom.get(v) ?? [])) {
+        const n = arabischNormal(w);
+        if (n.length < 2) continue;
+        // ohne verwertbare Hamza-Form gilt die Vergleichsform selbst (Alif ohne Zeichen passt zu allen)
+        const h = hamzaWoerter(w).join('');
+        muster.set(n, [...(muster.get(n) ?? []), h.length === n.length ? h : n]);
+      }
       if (!muster.size) return null;
       folge.push(muster);
     }
@@ -77,10 +110,39 @@ function begriffe(leitfaden: Leitfaden, daten: string): Begriff[] {
 
 const passt = (token: string, wort: string) => token === wort || (wort.length >= 4 && token.startsWith(wort));
 
-/** Trifft der Begriff die Wörter eines Texts? `kandidaten`: je Wort die arabischen Lesarten ohne Klitika (nur ar). */
-function trifft(b: Begriff, tokens: readonly string[], sprache: Sprache, kandidaten: readonly string[][]): boolean {
+/**
+ * Passt das Muster auf ein arabisches Wort? `token` in Vergleichsform, `hamza` dasselbe Wort mit Hamza-Platzhaltern
+ * (fehlt es oder weicht die Länge ab, entfällt der Hamza-Vergleich), `kandidaten` seine Lesarten ohne Klitika.
+ */
+function passtArabisch(m: ArMuster, token: string, hamza: string | undefined, kandidaten: readonly string[]): boolean {
+  return kandidaten.some((k) => {
+    const formen = m.get(k);
+    if (!formen) return false;
+    if (hamza?.length !== token.length) return true;
+    // Lage des Kandidaten im Wort: hinter keinem oder einem Klitikum (höchstens drei Buchstaben)
+    for (let i = 0; i <= 3; i++)
+      if (token.startsWith(k, i) && formen.some((f) => hamzaVertraeglich(hamza.slice(i, i + k.length), f))) return true;
+    return false;
+  });
+}
+
+/**
+ * Trifft der Begriff die Wörter eines Texts? Nur ar: `hamza` die Wörter mit Hamza-Platzhaltern, `kandidaten` je Wort die
+ * Lesarten ohne Klitika.
+ */
+function trifft(
+  b: Begriff,
+  tokens: readonly string[],
+  sprache: Sprache,
+  hamza: readonly string[],
+  kandidaten: readonly string[][],
+): boolean {
   if (sprache === 'ar')
-    return b.ar.some((folge) => tokens.some((_, i) => folge.every((m, j) => kandidaten[i + j]?.some((k) => m.has(k)) ?? false)));
+    return b.ar.some((folge) =>
+      tokens.some((_, i) =>
+        folge.every((m, j) => i + j < tokens.length && passtArabisch(m, tokens[i + j]!, hamza[i + j], kandidaten[i + j]!)),
+      ),
+    );
   return (b.latein[sprache] ?? []).some(
     (folge) => folge.length > 0 && tokens.some((_, i) => folge.every((w, j) => tokens[i + j] !== undefined && passt(tokens[i + j]!, w))),
   );
@@ -101,12 +163,15 @@ export function pruefeReligionsbezug(inhalte: Inhalte, texte: readonly TextEintr
   const leitfaden = inhalte.leitfaden?.daten;
   if (leitfaden) {
     const liste = begriffe(leitfaden, daten);
+    const bekannt = arabischBekannt(daten);
     const gemeldet = new Set<string>();
     for (const t of texte) {
       const tokens = tabuWoerter(t.text, t.sprache);
-      const kandidaten = t.sprache === 'ar' ? tokens.map(arabischeKandidaten) : [];
+      const ar = t.sprache === 'ar';
+      const hamza = ar ? hamzaWoerter(t.text) : [];
+      const kandidaten = ar ? tokens.map((x) => arabischeKandidaten(x, bekannt)) : [];
       for (const begriff of liste) {
-        if (!trifft(begriff, tokens, t.sprache, kandidaten)) continue;
+        if (!trifft(begriff, tokens, t.sprache, hamza.length === tokens.length ? hamza : [], kandidaten)) continue;
         const k = `${t.datei}|${t.ort}|${begriff.id}`;
         if (gemeldet.has(k)) continue;
         gemeldet.add(k);

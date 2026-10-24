@@ -341,7 +341,9 @@ so, dass ihre Übersetzungen verschieden sein werden. Dublette mit einer gleichz
 
 ## 8 Bekannte Fallen aus den Rückgaben (A1)
 
-Stand 21.10.2026. Ein hier genannter Fehlalarm, der im aktuellen Bericht nicht mehr erscheint, ist erledigt.
+Stand 24.10.2026. Ein hier genannter Fehlalarm, der im aktuellen Bericht nicht mehr erscheint, ist erledigt. Behoben (Prüfer, 24.10.2026, nicht mehr umschreiben):
+Teilwörter mitten in einem anderen Wort (Verb fürs Buchstabieren, tr Zahlwort 80), Klitika an bekannten arabischen Wörtern (weibliche Form von „groß“, baʿīd,
+ǧinsiyya, al-fuṣḥā), amām gegen imām (Hamza), Register-Nebeneinträge (kız, hiç, Koffer, Präteritum von „schreiben“).
 
 **Alle Kurse**
 - Kein `symbol`, kein `bild_wort`, solange kein Motiv freigegeben ist; `satzbau` und `frei` nicht in A1.
@@ -358,11 +360,9 @@ Stand 21.10.2026. Ein hier genannter Fehlalarm, der im aktuellen Bericht nicht m
   Komposita zerlegen („Mein Hals tut weh.“).
 - Zahlen über 12, die keine Zehner sind, als Ziffern; im Diktat Ziffer und Zahlwort als Alternativen. Vorkurs-Sätze nicht wiederholen: Einwortsätze, Nomen mit Artikel („die
   Schule“), „X wie …“, Ziffern.
-- Bekannte Fehlalarme (melden, nichts kennzeichnen): das e01-Verb für das Aufsagen der Buchstaben eines Namens (`tabu`, `alkohol_rauschmittel`, Teilwort); `kaikki-religion` an
-  `de.a1.e02.vater`.
-- Für die Übersetzung nach tr: er/sie/es → „o“, ihr/Sie → „siz“, tschüss/auf Wiedersehen nie zusammen in einer Aufgabe mit Übersetzungsvergleich. Deutsche Glossen in `ar-aus-de`:
-  Präteritum von „schreiben“ trifft das kaikki-Register, Perfekt nehmen. Deutsche Tipps in `tr-aus-de`: die Verschmelzung von an + dem trifft ein tr-Registerwort; „beim“, „zu
-  Beginn“, „ganz hinten“.
+- Bekannte Fehlalarme (melden, nichts kennzeichnen): `kaikki-religion` an `de.a1.e02.vater`.
+- Für die Übersetzung nach tr: er/sie/es → „o“, ihr/Sie → „siz“, tschüss/auf Wiedersehen nie zusammen in einer Aufgabe mit Übersetzungsvergleich. Deutsche Tipps in `tr-aus-de`:
+  keine deutschen Wörter in Zitatblöcken (dort gilt das tr-Lexikon, die Verschmelzung von an + dem trifft ein tr-Registerwort).
 
 **tr**
 - Plan-Lemmata unverändert übernehmen; je Einheit bleibt 1 Lemma Reserve. Vergangenheits- und Wunschformen in A1 nur als feste Wendungen der Plan-Hinweise (z. B. hoş geldin, memnun
@@ -370,14 +370,12 @@ Stand 21.10.2026. Ein hier genannter Fehlalarm, der im aktuellen Bericht nicht m
 - Homographen (on/ön, su/şu, et/etmek, iç/içmek, yaz/yazmak, bin/binmek): der Prüfer ordnet dem frühesten Lemma zu.
 - Türkiye, Almanya, İzmir, Ankara, İstanbul, Mısır, Suriye kosten nichts; Wetzlar, Lahn und ar-Namen (Rim) kosten. Sprachnamen mit Endung ohne Apostroph (Türkçeyi).
 - „arkadaş“ nie mit vorangestelltem Geschlechtswort (Phrase in `beziehungen`); für Mitschüler „sınıf arkadaşı“. Akkusativ und Dativ von „hala“ meiden (Fehlalarm `musik_tanz`).
-- Bekannte Fehlalarme (melden, nicht verbiegen; im Vorkurs und in Tipps meiden): das Grundwort für Mädchen/Tochter (`sexualitaet`, Register), das Zahlwort 80 (`sexualitaet`,
-  Teilwort), das Wort für „gar nicht/nie“ (`fluchen_schimpfwoerter`, Register).
 - Vokalharmonie üben: Wortbank- und Lücken-Ablenker als Harmonie-Varianten (mı statt mi, da statt de). Kein tr-Audio: Hörtypen werden übersprungen. Tatoeba bietet viele kurze
   passende Sätze (§3.3).
 - Übersetzung nach tr: tr hat kein Genus (o, öğretmen, arkadaş); Geschlecht über Namen markieren, wo das Arabische es verlangt. siz/sen, o/onlar, Hoş geldin/Hoş geldiniz, Hoşça
   kal/Güle güle, Merhaba/İyi günler müssen sich in den Übersetzungen unterscheiden, wo sie in einer Aufgabe stehen.
-- Arabische Oberflächentexte und Tipps in `tr-aus-ar`: das Wort für „vorn“ (amām) trifft R-10, das Wort für Hochsprache (fuṣḥā) R-08, ein Wort für „vor“ (zeitlich) ist mehrdeutig,
-  die weibliche Form von „groß“ trifft per Klitikum `alkohol_rauschmittel`; umschreiben (yasbiqu, baʿda, al-ʿarabiyya al-miʿyāriyya, „Größe beschreiben“).
+- Arabische Oberflächentexte und Tipps in `tr-aus-ar`: das Wort für Hochsprache ohne Artikel (fuṣḥā) trifft R-08 (mit Artikel nicht), ein Wort für „vor“ (zeitlich) ist
+  mehrdeutig; umschreiben (al-fuṣḥā bzw. al-ʿarabiyya al-miʿyāriyya, baʿda).
 
 **ar**
 - Plan-Lemmata ohne `plan` und ohne `symbol` übernehmen; Budgets sind genau ausgeschöpft, keine Zusatzlemmata. Verben als Māḍī 3. Sg. m.; `formen` mit Präsens (8 Personen),
@@ -395,9 +393,9 @@ Stand 21.10.2026. Ein hier genannter Fehlalarm, der im aktuellen Bericht nicht m
 - Lücken- und Wortbank-Ablenker auch ohne Übersetzungshilfe eindeutig falsch (Genus über hiya oder anti festlegen).
 - Typen in A1: kein `frei`, `satzbau`, `hoeren_schreiben`, `harakat`; `luecke` nur mit Ablenkern. Tatoeba hat kaum voll vokalisierte A1-Sätze; übernommene Sätze vokalisieren und
   „bearbeitet (vokalisiert)“ vermerken.
-- Bekannte Fehlalarme (melden): die weibliche Form von „groß“ (`tabu` nach Abtrennen von ka-), baʿīd nach bi- (R-06/R-08), amāma (R-10); Mehrdeutigkeits-Warnungen bei einem Wort
-  für „vor“ (zeitlich) und für „Rückkehr“; `kaikki-religion` an Alltagswörtern (sāʿa, kalima, sana, ʿumr, ṭaqs, tilmīḏ), nicht kennzeichnen. Arabische Tipps (`de-aus-ar`,
-  `tr-aus-ar`): Hochsprache als al-ʿarabiyya al-miʿyāriyya (nicht fuṣḥā, R-08).
+- Bekannte Fehlalarme (melden): Mehrdeutigkeits-Warnungen bei einem Wort für „vor“ (zeitlich) und für „Rückkehr“; `kaikki-religion` an Alltagswörtern (sāʿa, kalima, sana,
+  ʿumr, ṭaqs, tilmīḏ), nicht kennzeichnen. Arabische Tipps (`de-aus-ar`, `tr-aus-ar`): Hochsprache mit Artikel (al-fuṣḥā) oder als al-ʿarabiyya al-miʿyāriyya (fuṣḥā ohne
+  Artikel trifft R-08).
 
 ## 9 Befehls-Schnipsel
 
