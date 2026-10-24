@@ -295,3 +295,17 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
 - **Entscheidung:** Ein Sicherheits-Fix einer festgelegten Abhängigkeit (gleiche Haupt- und Nebenversion, Patch-Stufe) wird
   sofort eingespielt; die Mindestreife von 14 Tagen (L0-E10) gilt dafür nicht. Next steht auf 16.4.2 (ADR 0001, Fortschreibung
   23.10.2026).
+
+## L3-E15 · 2026-10-24 · Nutzer · Sprachstufen mit Hinweis freischalten, auch künftig
+- **Entscheidung (Nutzer):**
+  - Am 23.10. wählte er „Mit Hinweis freischalten (Empfehlung)“ für A1.
+  - Am 24.10. erlaubte er den Commit ausdrücklich, wörtlich: „Ja, und auch für alle zukünftigen Punkte. Ja, du hast meine
+    Erlaubnis, meine vollständige Erlaubnis, das Projekt so optimal zu machen, wie nur möglich.“
+- **Folge:**
+  - Eine Sprachstufe einer Zielsprache wird nach bestandener Schlussprüfung auf `automatisch_geprueft` gesetzt. Das heißt
+    0 blockierend und 0 menschlich_klaeren, Religionswächter rc=0.
+  - Danach ist sie in der Produktion mit dem Hinweis „automatisch geprüft, noch nicht von Muttersprachlern geprüft“ sichtbar
+    (Schalter `lernapp_ungeprueft`).
+  - Erste Anwendung: A1 de/tr/ar (3bd40c46) und A2 de/tr/ar (304ec310), live seit dem 24.10.2026 um ≈ 20:45 UTC.
+  - Muttersprachler-Prüfung (LM-02) und das Wissen mit zwei Freigaben (L3-E09) bleiben unberührt: Wissen wird nie ohne zwei
+    menschliche Freigaben sichtbar.

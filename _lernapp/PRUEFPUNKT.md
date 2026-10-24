@@ -1,5 +1,19 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 24.10.2026 20:55 UTC – A1 und A2 live (L3-E15):**
+  - **Freigabe:** Der Nutzer hat den Commit ausdrücklich erlaubt, „auch für alle zukünftigen Punkte“.
+    - A1 de/tr/ar: 3bd40c46.
+    - A2 de/tr/ar: 304ec310.
+    - Inhaltszweig gemergt (a3521abe) und auf `main`.
+  - **Nachprüfung `tor-a1a2` grün:**
+    - check 3.563, Sprachen, Religion, Wortlaut.
+    - `lernapp:pruefen`: 302 Dateien, 0 blockierend, 0 menschlich_klaeren, 288 Warnungen.
+    - Import in die Bau-Datenbank: 269 Dateien, 94.694 Einträge.
+  - **Live** (https://igmg-wetzlarer.vercel.app/lern-app/pakete/tr-aus-de): 27 Einheiten (A1 mit Vorkurs + A2), `hinweis: true`.
+    B1 und Wissen bleiben verborgen (Entwurf).
+  - **Künftig:** Jede Stufe geht nach ihrer Schlussprüfung auf `automatisch_geprueft`. Danach Inhaltszweig mergen, schlanke
+    Nachprüfung, Push.
+
 - **Stand 24.10.2026 20:10 UTC – nach dem Limit (≈ 17:20, Reset 20:00) und einem zweiten Plan-Modus fortgesetzt:**
   - **Fertig seit 17:15:**
     - Prüfer-Fehlalarme umgesetzt (2362830f im Inhaltszweig).
@@ -35,7 +49,6 @@
     - Weil Register-Nebeneinträge gar nicht mehr melden, verstummen auch 3 echte derbe bzw. sexuelle Formen (tr 2, de 1), die im Inhalt 0-mal vorkommen.
     - Behebung: den Hinweis behalten, wenn die markierten Lesarten derselben Ausgabe überwiegen.
     - Dazu niedrig: die Verluste bei ǧinsiyya (Adjektivform), R-06/R-08 ohne Artikel und li-ḥaǧǧ im Handbuch nennen; den Test mit -hu an Tāʾ marbūṭa berichtigen.
-  - **A1-Freigabe:** wartet weiter auf die Erlaubnis des Nutzers (120 gestagte Dateien).
 
 - **Stand 24.10.2026 16:50 UTC – Plan-Modus der Umgebung (≈ 16:20–16:40) beendet:**
   - Die vier Inhaltsläufe haben den Plan-Modus überstanden und schreiben wieder (z. B. Lektorat de.b1.e03, 3d87f6a6); kein Neustart nötig.
@@ -45,7 +58,6 @@
     - de: Kompositum-Grenze; tr: Endungsgrammatik.
     - Register: Nebeneinträge melden nicht.
     - Neu gestartet mit dieser Analyse als Fortsetzung: `wf_eb033b1b-1a6`.
-  - **A1-Freigabe:** wartet weiter auf die Erlaubnis des Nutzers (120 gestagte Dateien).
   - **17:15 – A2 ar fertig** (Schlussprüfung 8ce35c2f):
     - 14 Einheiten, 900/900 Lemmata, 3.685 Sätze, 2.038 Aufgaben; 0 blockierend, 0 menschlich_klaeren.
     - Die im Plan-Modus nur geplanten Rückübersetzungs-Korrekturen e05–e11 (115) hat die Schlussprüfung eingespielt.
@@ -69,7 +81,6 @@
     - B1 tr `wf_aa554cf8-939`.
     - B1 ar `wf_64a40a30-ea4`.
     - Prüfer-Fehlalarme `wf_9ea7a6d0-99a`: Klitika, Teilwörter und Register in tabu/religionsbezug, mit Gegenprobe und Gegenprüfung; Religionswächter unverändert.
-  - **A1-Freigabe:** wartet weiter auf die Erlaubnis des Nutzers (120 gestagte Dateien).
 
 - **Stand 24.10.2026 10:35 UTC – nach dem Limit (≈ 07:00, Reset 10:00) fortgesetzt:**
   - **Fertig:**
@@ -92,7 +103,6 @@
     - B1 de `wf_9be04472-043`.
     - B1 tr `wf_76e3ba35-b92`.
     - B1 ar `wf_9f4d5430-d19`: neu, mit Plan.
-  - **A1-Freigabe:** wartet weiter auf die Erlaubnis des Nutzers (120 gestagte Dateien).
 
 - **Stand 24.10.2026 05:45 UTC – nach dem Limit (≈ 20:50, Reset 00:00) fortgesetzt:**
   - **Fertig seit 19:15:**
