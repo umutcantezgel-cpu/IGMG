@@ -1959,7 +1959,7 @@
     },
     {
       "schluessel": "de.b1.e16.s0060",
-      "text": "Lehrerinnen und Lehrer müssen im Unterricht politisch neutral bleiben.",
+      "text": "Im Unterricht lernen wir, wie politische Entscheidungen in der Gemeinde getroffen werden.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1983,7 +1983,7 @@
     },
     {
       "schluessel": "de.b1.e16.s0064",
-      "text": "Wenn ihr mich wählt, werde ich eure Wünsche gut vertreten.",
+      "text": "Wenn ihr mich wählt, werde ich eure Interessen gut vertreten.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2085,7 +2085,7 @@
     },
     {
       "schluessel": "de.b1.e16.s0081",
-      "text": "Jeder Mensch hat eine Würde, egal woher er kommt oder wie alt er ist.",
+      "text": "Jeder Mensch hat die gleiche Würde, egal woher er kommt oder wie alt er ist.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2332,7 +2332,7 @@
     },
     {
       "schluessel": "de.b1.e16.s0122",
-      "text": "Die Zeitung der Schule erscheint generell zweimal im Jahr.",
+      "text": "Ich lese die Zeitung der Schule generell sehr gern.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2477,7 +2477,7 @@
     },
     {
       "schluessel": "de.b1.e16.s0146",
-      "text": "Toleranz bedeutet, andere Meinungen und Lebensweisen zu respektieren.",
+      "text": "Toleranz bedeutet, andere Meinungen und Kulturen zu respektieren.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2519,7 +2519,7 @@
     },
     {
       "schluessel": "de.b1.e16.s0153",
-      "text": "Nein, das muss er. Haben Sie Beweise, zum Beispiel Fotos oder Briefe?",
+      "text": "Nein, die Heizung muss er reparieren. Haben Sie Beweise, zum Beispiel Fotos oder Briefe?",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2549,7 +2549,7 @@
     },
     {
       "schluessel": "de.b1.e16.s0158",
-      "text": "Darf ein Vermieter jemanden wegen seines Namens benachteiligen?",
+      "text": "Darf ein Vermieter eine Familie wegen ihres Namens benachteiligen?",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2941,7 +2941,7 @@
     },
     {
       "schluessel": "de.b1.e16.s0223",
-      "text": "Dort könnt ihr euren Wunsch vortragen, und Vertreter der Stadt hören euch zu.",
+      "text": "Dort könnt ihr eure Wünsche vortragen, und Vertreter der Stadt hören euch zu.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3660,7 +3660,12 @@
             "Der Staat bezahlt mit unseren Steuern zum Beispiel Schulen und Krankenhäuser.",
             "Der Staat bezahlt zum Beispiel Schulen und Krankenhäuser mit unseren Steuern.",
             "Zum Beispiel bezahlt der Staat mit unseren Steuern Schulen und Krankenhäuser.",
-            "Mit unseren Steuern bezahlt der Staat zum Beispiel Krankenhäuser und Schulen."
+            "Mit unseren Steuern bezahlt der Staat zum Beispiel Krankenhäuser und Schulen.",
+            "Der Staat bezahlt zum Beispiel mit unseren Steuern Schulen und Krankenhäuser.",
+            "Zum Beispiel bezahlt der Staat Schulen und Krankenhäuser mit unseren Steuern.",
+            "Der Staat bezahlt mit unseren Steuern zum Beispiel Krankenhäuser und Schulen.",
+            "Der Staat bezahlt zum Beispiel Krankenhäuser und Schulen mit unseren Steuern.",
+            "Zum Beispiel bezahlt der Staat mit unseren Steuern Krankenhäuser und Schulen."
           ],
           "ablenker": ["Staates", "unsere"]
         },
@@ -3832,7 +3837,11 @@
           "anweisung": "uebersetze",
           "satz": "de.b1.e16.s0045",
           "nach": "ziel",
-          "alternativen": ["Das Wahllokal ist bei uns um die Ecke in der Grundschule."],
+          "alternativen": [
+            "Das Wahllokal ist bei uns um die Ecke in der Grundschule.",
+            "In der Grundschule bei uns um die Ecke ist das Wahllokal.",
+            "Bei uns um die Ecke ist das Wahllokal in der Grundschule."
+          ],
           "ablenker": ["Wahl", "unser"]
         },
         {
@@ -4066,7 +4075,7 @@
           "schluessel": "de.b1.e16.l03.a14",
           "typ": "formen",
           "zeilen": ["öffnen", "schließen", "regeln", "garantieren", "schützen"],
-          "spalten": ["Partizip II", "Zustand: es ist …"],
+          "spalten": ["Partizip II", "Zustandspassiv (es …)"],
           "zellen": [
             {
               "zeile": 0,
@@ -4077,7 +4086,7 @@
             {
               "zeile": 0,
               "spalte": 1,
-              "loesungen": ["ist geöffnet"],
+              "loesungen": ["ist geöffnet", "es ist geöffnet"],
               "vorgabe": true
             },
             {
@@ -4088,7 +4097,7 @@
             {
               "zeile": 1,
               "spalte": 1,
-              "loesungen": ["ist geschlossen"]
+              "loesungen": ["ist geschlossen", "es ist geschlossen"]
             },
             {
               "zeile": 2,
@@ -4098,7 +4107,7 @@
             {
               "zeile": 2,
               "spalte": 1,
-              "loesungen": ["ist geregelt"]
+              "loesungen": ["ist geregelt", "es ist geregelt"]
             },
             {
               "zeile": 3,
@@ -4108,7 +4117,7 @@
             {
               "zeile": 3,
               "spalte": 1,
-              "loesungen": ["ist garantiert"]
+              "loesungen": ["ist garantiert", "es ist garantiert"]
             },
             {
               "zeile": 4,
@@ -4118,7 +4127,7 @@
             {
               "zeile": 4,
               "spalte": 1,
-              "loesungen": ["ist geschützt"]
+              "loesungen": ["ist geschützt", "es ist geschützt"]
             }
           ]
         },
@@ -4174,7 +4183,7 @@
           "typ": "luecke",
           "ziel": "de.b1.e16.s0148",
           "wort": 0,
-          "ablenker": ["Trotzdem", "Deshalb"]
+          "ablenker": ["Trotz", "Deshalb"]
         },
         {
           "schluessel": "de.b1.e16.l04.a05",
@@ -4380,7 +4389,10 @@
           "anweisung": "uebersetze",
           "satz": "de.b1.e16.s0177",
           "nach": "ziel",
-          "alternativen": ["Die Bürgermeisterin ist die Frau, mit der wir im Rathaus gesprochen haben."],
+          "alternativen": [
+            "Die Bürgermeisterin ist die Frau, mit der wir im Rathaus gesprochen haben.",
+            "Die Frau ist die Bürgermeisterin, mit der wir im Rathaus gesprochen haben."
+          ],
           "ablenker": ["dem", "den"]
         },
         {
@@ -4421,7 +4433,11 @@
           "schluessel": "de.b1.e16.l05.a13",
           "typ": "satzbau",
           "ziel": "de.b1.e16.s0174",
-          "alternativen": ["Man kann entweder per Briefwahl oder im Wahllokal wählen."]
+          "alternativen": [
+            "Man kann entweder per Briefwahl oder im Wahllokal wählen.",
+            "Wählen kann man entweder im Wahllokal oder per Briefwahl.",
+            "Wählen kann man entweder per Briefwahl oder im Wahllokal."
+          ]
         },
         {
           "schluessel": "de.b1.e16.l05.a14",
@@ -4589,7 +4605,8 @@
           "ziel": "de.b1.e16.s0230",
           "alternativen": [
             "Die Klasse bekommt zwei Monate später einen Brief von der Bürgermeisterin.",
-            "Einen Brief von der Bürgermeisterin bekommt die Klasse zwei Monate später."
+            "Einen Brief von der Bürgermeisterin bekommt die Klasse zwei Monate später.",
+            "Von der Bürgermeisterin bekommt die Klasse zwei Monate später einen Brief."
           ]
         },
         {
@@ -4775,7 +4792,8 @@
           "anweisung": "uebersetze",
           "satz": "de.b1.e16.s0284",
           "nach": "ziel",
-          "ablenker": ["dem", "den"]
+          "ablenker": ["dem", "den"],
+          "alternativen": ["Die Anwältin war sehr freundlich, mit der ich gesprochen habe."]
         },
         {
           "schluessel": "de.b1.e16.l07.a06",
@@ -5050,7 +5068,11 @@
           "schluessel": "de.b1.e16.l07.a30",
           "typ": "satzbau",
           "ziel": "de.b1.e16.s0281",
-          "alternativen": ["Entweder gehen wir zu Fuß zum Rathaus, oder wir nehmen den Bus."]
+          "alternativen": [
+            "Entweder gehen wir zu Fuß zum Rathaus, oder wir nehmen den Bus.",
+            "Wir nehmen entweder den Bus, oder wir gehen zu Fuß zum Rathaus.",
+            "Wir gehen entweder zu Fuß zum Rathaus, oder wir nehmen den Bus."
+          ]
         },
         {
           "schluessel": "de.b1.e16.l07.a31",
@@ -5156,7 +5178,7 @@
           "satz": "de.b1.e16.s0326",
           "nach": "ziel",
           "alternativen": ["Das Wetter war schlecht. Die Beteiligung an der Wahl war trotzdem hoch."],
-          "ablenker": ["obwohl", "Wahlen"]
+          "ablenker": ["deshalb", "Wahlen"]
         },
         {
           "schluessel": "de.b1.e16.l08.a07",
@@ -5207,7 +5229,13 @@
           "schluessel": "de.b1.e16.l08.a09",
           "typ": "satzbau",
           "ziel": "de.b1.e16.s0323",
-          "alternativen": ["Im Jugendforum werde ich mich als Vertreterin für einen sicheren Radweg einsetzen."]
+          "alternativen": [
+            "Im Jugendforum werde ich mich als Vertreterin für einen sicheren Radweg einsetzen.",
+            "Ich werde mich als Vertreterin im Jugendforum für einen sicheren Radweg einsetzen.",
+            "Ich werde mich im Jugendforum als Vertreterin für einen sicheren Radweg einsetzen.",
+            "Als Vertreterin im Jugendforum werde ich mich für einen sicheren Radweg einsetzen.",
+            "Für einen sicheren Radweg werde ich mich als Vertreterin im Jugendforum einsetzen."
+          ]
         },
         {
           "schluessel": "de.b1.e16.l08.a10",
