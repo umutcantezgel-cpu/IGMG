@@ -108,7 +108,8 @@ export default async function Lernpfad({ params }: PageProps<'/lern-app/[ui]/[ku
             ))}
           </ul>
         ) : null}
-        <section aria-labelledby="lernpfad" className="flex flex-col gap-4">
+        {/* Platz für die Stationen (eine Bildschirmhöhe), damit der Fuß beim Laden des Verzeichnisses nicht springt (CLS, L8-02) */}
+        <section aria-labelledby="lernpfad" className="flex min-h-svh flex-col gap-4">
           <h2 id="lernpfad" className="text-display-2">
             {t('lernpfad.einheiten')}
           </h2>
