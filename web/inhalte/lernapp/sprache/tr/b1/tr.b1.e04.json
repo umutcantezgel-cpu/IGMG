@@ -1,0 +1,5475 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "tr",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "tr.b1.e04",
+    "reihenfolge": 5,
+    "thema": {
+      "de": "Eine Reise nach Kappadokien",
+      "tr": "Kapadokya'ya bir yolculuk",
+      "ar": "رحلة إلى كابادوكيا"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann eine Reise planen und Unterkunft und Programm besprechen.",
+        "tr": "Bir gezi planlayabilir, konaklamayı ve programı konuşabilirim.",
+        "ar": "أستطيع أن أخطط لرحلة وأن أناقش مكان الإقامة والبرنامج."
+      },
+      {
+        "de": "Ich kann Handlungsfolgen knapp verbinden (aufstehen und losgehen).",
+        "tr": "Birbirini izleyen eylemleri -ip ekiyle kısaca bağlayabilirim (kalkıp gitmek).",
+        "ar": "أستطيع أن أربط الأفعال المتتالية باختصار (أن أستيقظ ثم أنطلق)."
+      },
+      {
+        "de": "Ich kann Sehenswürdigkeiten beschreiben und empfehlen.",
+        "tr": "Görülecek yerleri tarif edebilir ve tavsiye edebilirim.",
+        "ar": "أستطيع أن أصف المعالم السياحية وأن أوصي بها."
+      }
+    ],
+    "symbol": "map",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "tr.b1.e04.konaklama",
+      "lemma": "konaklama",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "konaklamalar",
+        "akk": "konaklamayı",
+        "dat": "konaklamaya",
+        "gen": "konaklamanın",
+        "ins": "konaklamayla",
+        "poss.1sg": "konaklamam",
+        "poss.2sg": "konaklaman",
+        "poss.3sg": "konaklaması",
+        "poss.1pl": "konaklamamız",
+        "poss.2pl": "konaklamanız",
+        "lok": "konaklamada",
+        "abl": "konaklamadan",
+        "poss.3pl": "konaklamaları"
+      },
+      "frequenzRang": 12640,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.pansiyon",
+      "lemma": "pansiyon",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "pansiyonlar",
+        "akk/poss.3sg": "pansiyonu",
+        "dat": "pansiyona",
+        "gen/poss.2sg": "pansiyonun",
+        "ins": "pansiyonla",
+        "poss.1sg": "pansiyonum",
+        "poss.1pl": "pansiyonumuz",
+        "poss.2pl": "pansiyonunuz",
+        "lok": "pansiyonda",
+        "abl": "pansiyondan",
+        "poss.3pl": "pansiyonları"
+      },
+      "frequenzRang": 30259,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.rota",
+      "lemma": "rota",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "rotalar",
+        "akk": "rotayı",
+        "dat": "rotaya",
+        "gen": "rotanın",
+        "ins": "rotayla",
+        "poss.1sg": "rotam",
+        "poss.2sg": "rotan",
+        "poss.3sg": "rotası",
+        "poss.1pl": "rotamız",
+        "poss.2pl": "rotanız",
+        "lok": "rotada",
+        "abl": "rotadan",
+        "poss.3pl": "rotaları"
+      },
+      "frequenzRang": 9568,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.vize",
+      "lemma": "vize",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "vizeler",
+        "akk": "vizeyi",
+        "dat": "vizeye",
+        "gen": "vizenin",
+        "ins": "vizeyle",
+        "poss.1sg": "vizem",
+        "poss.2sg": "vizen",
+        "poss.3sg": "vizesi",
+        "poss.1pl": "vizemiz",
+        "poss.2pl": "vizeniz",
+        "lok": "vizede",
+        "abl": "vizeden",
+        "poss.3pl": "vizeleri"
+      },
+      "frequenzRang": 3204,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.bagaj",
+      "lemma": "bagaj",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "bagajlar",
+        "akk/poss.3sg": "bagajı",
+        "dat": "bagaja",
+        "gen/poss.2sg": "bagajın",
+        "ins": "bagajla",
+        "poss.1sg": "bagajım",
+        "poss.1pl": "bagajımız",
+        "poss.2pl": "bagajınız",
+        "lok": "bagajda",
+        "abl": "bagajdan",
+        "poss.3pl": "bagajları"
+      },
+      "frequenzRang": 19527,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.carsi",
+      "lemma": "çarşı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "çarşılar",
+        "akk": "çarşıyı",
+        "dat": "çarşıya",
+        "gen": "çarşının",
+        "ins": "çarşıyla",
+        "poss.1sg": "çarşım",
+        "poss.2sg": "çarşın",
+        "poss.3sg": "çarşısı",
+        "poss.1pl": "çarşımız",
+        "poss.2pl": "çarşınız",
+        "lok": "çarşıda",
+        "abl": "çarşıdan",
+        "poss.3pl": "çarşıları"
+      },
+      "frequenzRang": 7051,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.vadi",
+      "lemma": "vadi",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "vadiler",
+        "akk": "vadiyi",
+        "dat": "vadiye",
+        "gen": "vadinin",
+        "ins": "vadiyle",
+        "poss.1sg": "vadim",
+        "poss.2sg": "vadin",
+        "poss.3sg": "vadisi",
+        "poss.1pl": "vadimiz",
+        "poss.2pl": "vadiniz",
+        "lok": "vadide",
+        "abl": "vadiden",
+        "poss.3pl": "vadileri"
+      },
+      "frequenzRang": 14307,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.kervansaray",
+      "lemma": "kervansaray",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "kervansaraylar",
+        "akk/poss.3sg": "kervansarayı",
+        "dat": "kervansaraya",
+        "gen/poss.2sg": "kervansarayın",
+        "ins": "kervansarayla",
+        "poss.1sg": "kervansarayım",
+        "poss.1pl": "kervansarayımız",
+        "poss.2pl": "kervansarayınız",
+        "lok": "kervansarayda",
+        "abl": "kervansaraydan",
+        "poss.3pl": "kervansarayları"
+      },
+      "frequenzRang": 43341,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.magara",
+      "lemma": "mağara",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "mağaralar",
+        "akk": "mağarayı",
+        "dat": "mağaraya",
+        "gen": "mağaranın",
+        "ins": "mağarayla",
+        "poss.1sg": "mağaram",
+        "poss.2sg": "mağaran",
+        "poss.3sg": "mağarası",
+        "poss.1pl": "mağaramız",
+        "poss.2pl": "mağaranız",
+        "lok": "mağarada",
+        "abl": "mağaradan",
+        "poss.3pl": "mağaraları"
+      },
+      "frequenzRang": 7803,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.yeralti",
+      "lemma": "yeraltı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "kompositum": "yer + alt + -ı; yeraltı şehri"
+      },
+      "formen": {
+        "dat": "yeraltına",
+        "lok": "yeraltında",
+        "abl": "yeraltından"
+      },
+      "frequenzRang": 5555,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.ova",
+      "lemma": "ova",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "ovalar",
+        "akk": "ovayı",
+        "dat": "ovaya",
+        "gen": "ovanın",
+        "ins": "ovayla",
+        "poss.1sg": "ovam",
+        "poss.2sg": "ovan",
+        "poss.3sg": "ovası",
+        "poss.1pl": "ovamız",
+        "poss.2pl": "ovanız",
+        "lok": "ovada",
+        "abl": "ovadan",
+        "poss.3pl": "ovaları"
+      },
+      "frequenzRang": 31345,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.selale",
+      "lemma": "şelale",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "şelaleler",
+        "akk": "şelaleyi",
+        "dat": "şelaleye",
+        "gen": "şelalenin",
+        "ins": "şelaleyle",
+        "poss.1sg": "şelalem",
+        "poss.2sg": "şelalen",
+        "poss.3sg": "şelalesi",
+        "poss.1pl": "şelalemiz",
+        "poss.2pl": "şelaleniz",
+        "lok": "şelalede",
+        "abl": "şelaleden",
+        "poss.3pl": "şelaleleri"
+      },
+      "frequenzRang": 19486,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.kaplica",
+      "lemma": "kaplıca",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "kaplıcalar",
+        "akk": "kaplıcayı",
+        "dat": "kaplıcaya",
+        "gen": "kaplıcanın",
+        "ins": "kaplıcayla",
+        "poss.1sg": "kaplıcam",
+        "poss.2sg": "kaplıcan",
+        "poss.3sg": "kaplıcası",
+        "poss.1pl": "kaplıcamız",
+        "poss.2pl": "kaplıcanız",
+        "lok": "kaplıcada",
+        "abl": "kaplıcadan",
+        "poss.3pl": "kaplıcaları"
+      },
+      "frequenzRang": 23703,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.harabe",
+      "lemma": "harabe",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "harabeler",
+        "akk": "harabeyi",
+        "dat": "harabeye",
+        "gen": "harabenin",
+        "ins": "harabeyle",
+        "poss.1sg": "harabem",
+        "poss.2sg": "haraben",
+        "poss.3sg": "harabesi",
+        "poss.1pl": "harabemiz",
+        "poss.2pl": "harabeniz",
+        "lok": "harabede",
+        "abl": "harabeden",
+        "poss.3pl": "harabeleri"
+      },
+      "frequenzRang": 32938,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.kalinti",
+      "lemma": "kalıntı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "kalıntılar",
+        "akk": "kalıntıyı",
+        "dat": "kalıntıya",
+        "gen": "kalıntının",
+        "ins": "kalıntıyla",
+        "poss.1sg": "kalıntım",
+        "poss.2sg": "kalıntın",
+        "poss.3sg": "kalıntısı",
+        "poss.1pl": "kalıntımız",
+        "poss.2pl": "kalıntınız",
+        "lok": "kalıntıda",
+        "abl": "kalıntıdan",
+        "poss.3pl": "kalıntıları"
+      },
+      "frequenzRang": 25112,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.eser",
+      "lemma": "eser",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "eserler",
+        "akk/poss.3sg": "eseri",
+        "dat": "esere",
+        "gen/poss.2sg": "eserin",
+        "ins": "eserle",
+        "poss.1sg": "eserim",
+        "poss.1pl": "eserimiz",
+        "poss.2pl": "eseriniz",
+        "lok": "eserde",
+        "abl": "eserden",
+        "poss.3pl": "eserleri"
+      },
+      "frequenzRang": 2013,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.mimari",
+      "lemma": "mimari",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "mimariler",
+        "akk": "mimariyi",
+        "dat": "mimariye",
+        "gen": "mimarinin",
+        "ins": "mimariyle",
+        "poss.1sg": "mimarim",
+        "poss.2sg": "mimarin",
+        "poss.3sg": "mimarisi",
+        "poss.1pl": "mimarimiz",
+        "poss.2pl": "mimariniz",
+        "lok": "mimaride",
+        "abl": "mimariden",
+        "poss.3pl": "mimarileri"
+      },
+      "frequenzRang": 3842,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.turizm",
+      "lemma": "turizm",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk/poss.3sg": "turizmi",
+        "dat": "turizme",
+        "gen/poss.2sg": "turizmin",
+        "ins": "turizmle",
+        "poss.1sg": "turizmim",
+        "poss.1pl": "turizmimiz",
+        "poss.2pl": "turizminiz",
+        "lok": "turizmde",
+        "abl": "turizmden"
+      },
+      "frequenzRang": 1744,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.transfer",
+      "lemma": "transfer",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "transferler",
+        "akk/poss.3sg": "transferi",
+        "dat": "transfere",
+        "gen/poss.2sg": "transferin",
+        "ins": "transferle",
+        "poss.1sg": "transferim",
+        "poss.1pl": "transferimiz",
+        "poss.2pl": "transferiniz",
+        "lok": "transferde",
+        "abl": "transferden",
+        "poss.3pl": "transferleri"
+      },
+      "frequenzRang": 1088,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.resepsiyon",
+      "lemma": "resepsiyon",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "resepsiyonlar",
+        "akk/poss.3sg": "resepsiyonu",
+        "dat": "resepsiyona",
+        "gen/poss.2sg": "resepsiyonun",
+        "ins": "resepsiyonla",
+        "poss.1sg": "resepsiyonum",
+        "poss.1pl": "resepsiyonumuz",
+        "poss.2pl": "resepsiyonunuz",
+        "lok": "resepsiyonda",
+        "abl": "resepsiyondan",
+        "poss.3pl": "resepsiyonları"
+      },
+      "frequenzRang": 23798,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.comlek",
+      "lemma": "çömlek",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "çömlek → çömleğ-"
+      },
+      "formen": {
+        "pl": "çömlekler",
+        "akk/poss.3sg": "çömleği",
+        "dat": "çömleğe",
+        "gen/poss.2sg": "çömleğin",
+        "ins": "çömlekle",
+        "poss.1sg": "çömleğim",
+        "poss.1pl": "çömleğimiz",
+        "poss.2pl": "çömleğiniz",
+        "lok": "çömlekte",
+        "abl": "çömlekten",
+        "poss.3pl": "çömlekleri"
+      },
+      "frequenzRang": 32079,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.kilim",
+      "lemma": "kilim",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "kilimler",
+        "akk/poss.3sg": "kilimi",
+        "dat": "kilime",
+        "gen/poss.2sg": "kilimin",
+        "ins": "kilimle",
+        "poss.1sg": "kilimim",
+        "poss.1pl": "kilimimiz",
+        "poss.2pl": "kiliminiz",
+        "lok": "kilimde",
+        "abl": "kilimden",
+        "poss.3pl": "kilimleri"
+      },
+      "frequenzRang": 35405,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.etraf",
+      "lemma": "etraf",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "etraflar",
+        "akk/poss.3sg": "etrafı",
+        "dat": "etrafa",
+        "poss.1sg": "etrafım",
+        "poss.2sg": "etrafın",
+        "poss.1pl": "etrafımız",
+        "poss.2pl": "etrafınız",
+        "lok": "etrafta",
+        "abl": "etraftan",
+        "postp.lok": "etrafında",
+        "postp.dat": "etrafına",
+        "postp.abl": "etrafından"
+      },
+      "frequenzRang": 23624,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.inis",
+      "lemma": "iniş",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "inişler",
+        "akk/poss.3sg": "inişi",
+        "dat": "inişe",
+        "gen/poss.2sg": "inişin",
+        "ins": "inişle",
+        "poss.1sg": "inişim",
+        "poss.1pl": "inişimiz",
+        "poss.2pl": "inişiniz",
+        "lok": "inişte",
+        "abl": "inişten",
+        "poss.3pl": "inişleri"
+      },
+      "frequenzRang": 4183,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.kalkis",
+      "lemma": "kalkış",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "kalkışlar",
+        "akk/poss.3sg": "kalkışı",
+        "dat": "kalkışa",
+        "gen/poss.2sg": "kalkışın",
+        "ins": "kalkışla",
+        "poss.1sg": "kalkışım",
+        "poss.1pl": "kalkışımız",
+        "poss.2pl": "kalkışınız",
+        "lok": "kalkışta",
+        "abl": "kalkıştan",
+        "poss.3pl": "kalkışları"
+      },
+      "frequenzRang": 9335,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.rotar",
+      "lemma": "rötar",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "rötarlar",
+        "akk/poss.3sg": "rötarı",
+        "dat": "rötara",
+        "gen/poss.2sg": "rötarın",
+        "ins": "rötarla",
+        "poss.1sg": "rötarım",
+        "poss.1pl": "rötarımız",
+        "poss.2pl": "rötarınız",
+        "lok": "rötarda",
+        "abl": "rötardan",
+        "poss.3pl": "rötarları"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.aktarma",
+      "lemma": "aktarma",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "aktarmalar",
+        "akk": "aktarmayı",
+        "dat": "aktarmaya",
+        "gen": "aktarmanın",
+        "ins": "aktarmayla",
+        "poss.1sg": "aktarmam",
+        "poss.2sg": "aktarman",
+        "poss.3sg": "aktarması",
+        "poss.1pl": "aktarmamız",
+        "poss.2pl": "aktarmanız",
+        "lok": "aktarmada",
+        "abl": "aktarmadan",
+        "poss.3pl": "aktarmaları"
+      },
+      "frequenzRang": 12000,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.gidis",
+      "lemma": "gidiş",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "gidişler",
+        "akk/poss.3sg": "gidişi",
+        "dat": "gidişe",
+        "gen/poss.2sg": "gidişin",
+        "ins": "gidişle",
+        "poss.1sg": "gidişim",
+        "poss.1pl": "gidişimiz",
+        "poss.2pl": "gidişiniz",
+        "lok": "gidişte",
+        "abl": "gidişten",
+        "poss.3pl": "gidişleri"
+      },
+      "frequenzRang": 9491,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.secenek",
+      "lemma": "seçenek",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "seçenek → seçeneğ-"
+      },
+      "formen": {
+        "pl": "seçenekler",
+        "akk/poss.3sg": "seçeneği",
+        "dat": "seçeneğe",
+        "gen/poss.2sg": "seçeneğin",
+        "ins": "seçenekle",
+        "poss.1sg": "seçeneğim",
+        "poss.1pl": "seçeneğimiz",
+        "poss.2pl": "seçeneğiniz",
+        "lok": "seçenekte",
+        "abl": "seçenekten",
+        "poss.3pl": "seçenekleri"
+      },
+      "frequenzRang": 3942,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.macera",
+      "lemma": "macera",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "maceralar",
+        "akk": "macerayı",
+        "dat": "maceraya",
+        "gen": "maceranın",
+        "ins": "macerayla",
+        "poss.1sg": "maceram",
+        "poss.2sg": "maceran",
+        "poss.3sg": "macerası",
+        "poss.1pl": "maceramız",
+        "poss.2pl": "maceranız",
+        "lok": "macerada",
+        "abl": "maceradan",
+        "poss.3pl": "maceraları"
+      },
+      "frequenzRang": 4515,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.mekan",
+      "lemma": "mekan",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "mekanlar",
+        "akk/poss.3sg": "mekanı",
+        "dat": "mekana",
+        "gen/poss.2sg": "mekanın",
+        "ins": "mekanla",
+        "poss.1sg": "mekanım",
+        "poss.1pl": "mekanımız",
+        "poss.2pl": "mekanınız",
+        "lok": "mekanda",
+        "abl": "mekandan",
+        "poss.3pl": "mekanları"
+      },
+      "frequenzRang": 4719,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.veda",
+      "lemma": "veda",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "vedalar",
+        "akk": "vedayı",
+        "dat": "vedaya",
+        "gen": "vedanın",
+        "ins": "vedayla",
+        "poss.1sg": "vedam",
+        "poss.2sg": "vedan",
+        "poss.3sg": "vedası",
+        "poss.1pl": "vedamız",
+        "poss.2pl": "vedanız",
+        "lok": "vedada",
+        "abl": "vedadan",
+        "poss.3pl": "vedaları"
+      },
+      "frequenzRang": 2418,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.doviz",
+      "lemma": "döviz",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "dövizler",
+        "akk/poss.3sg": "dövizi",
+        "dat": "dövize",
+        "gen/poss.2sg": "dövizin",
+        "ins": "dövizle",
+        "poss.1sg": "dövizim",
+        "poss.1pl": "dövizimiz",
+        "poss.2pl": "döviziniz",
+        "lok": "dövizde",
+        "abl": "dövizden",
+        "poss.3pl": "dövizleri"
+      },
+      "frequenzRang": 6668,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.kartpostal",
+      "lemma": "kartpostal",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "kartpostallar",
+        "akk/poss.3sg": "kartpostalı",
+        "dat": "kartpostala",
+        "gen/poss.2sg": "kartpostalın",
+        "ins": "kartpostalla",
+        "poss.1sg": "kartpostalım",
+        "poss.1pl": "kartpostalımız",
+        "poss.2pl": "kartpostalınız",
+        "lok": "kartpostalda",
+        "abl": "kartpostaldan",
+        "poss.3pl": "kartpostalları"
+      },
+      "frequenzRang": 38542,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.karavan",
+      "lemma": "karavan",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "karavanlar",
+        "akk/poss.3sg": "karavanı",
+        "dat": "karavana",
+        "gen/poss.2sg": "karavanın",
+        "ins": "karavanla",
+        "poss.1sg": "karavanım",
+        "poss.1pl": "karavanımız",
+        "poss.2pl": "karavanınız",
+        "lok": "karavanda",
+        "abl": "karavandan",
+        "poss.3pl": "karavanları"
+      },
+      "frequenzRang": 27036,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.gun-batimi",
+      "lemma": "gün batımı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "kompositum": "gün + batım + -ı; Endungen mit n"
+      },
+      "formen": {
+        "akk": "gün batımını",
+        "dat": "gün batımına",
+        "lok": "gün batımında",
+        "abl": "gün batımından"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.gun-dogumu",
+      "lemma": "gün doğumu",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u",
+        "kompositum": "gün + doğum + -u; Endungen mit n"
+      },
+      "formen": {
+        "akk": "gün doğumunu",
+        "dat": "gün doğumuna",
+        "lok": "gün doğumunda",
+        "abl": "gün doğumundan"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.tekne",
+      "lemma": "tekne",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "tekneler",
+        "akk": "tekneyi",
+        "dat": "tekneye",
+        "gen": "teknenin",
+        "ins": "tekneyle",
+        "poss.1sg": "teknem",
+        "poss.2sg": "teknen",
+        "poss.3sg": "teknesi",
+        "poss.1pl": "teknemiz",
+        "poss.2pl": "tekneniz",
+        "lok": "teknede",
+        "abl": "tekneden",
+        "poss.3pl": "tekneleri"
+      },
+      "frequenzRang": 4629,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.guzellik",
+      "lemma": "güzellik",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "güzellik → güzelliğ-"
+      },
+      "formen": {
+        "pl": "güzellikler",
+        "akk/poss.3sg": "güzelliği",
+        "dat": "güzelliğe",
+        "gen/poss.2sg": "güzelliğin",
+        "ins": "güzellikle",
+        "poss.1sg": "güzelliğim",
+        "poss.1pl": "güzelliğimiz",
+        "poss.2pl": "güzelliğiniz",
+        "lok": "güzellikte",
+        "abl": "güzellikten",
+        "poss.3pl": "güzellikleri"
+      },
+      "frequenzRang": 1927,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.patika",
+      "lemma": "patika",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "patikalar",
+        "akk": "patikayı",
+        "dat": "patikaya",
+        "gen": "patikanın",
+        "ins": "patikayla",
+        "poss.1sg": "patikam",
+        "poss.2sg": "patikan",
+        "poss.3sg": "patikası",
+        "poss.1pl": "patikamız",
+        "poss.2pl": "patikanız",
+        "lok": "patikada",
+        "abl": "patikadan",
+        "poss.3pl": "patikaları"
+      },
+      "frequenzRang": 29711,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.zirve",
+      "lemma": "zirve",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "zirveler",
+        "akk": "zirveyi",
+        "dat": "zirveye",
+        "gen": "zirvenin",
+        "ins": "zirveyle",
+        "poss.1sg": "zirvem",
+        "poss.2sg": "zirven",
+        "poss.3sg": "zirvesi",
+        "poss.1pl": "zirvemiz",
+        "poss.2pl": "zirveniz",
+        "lok": "zirvede",
+        "abl": "zirveden",
+        "poss.3pl": "zirveleri"
+      },
+      "frequenzRang": 5443,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.kanyon",
+      "lemma": "kanyon",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "kanyonlar",
+        "akk/poss.3sg": "kanyonu",
+        "dat": "kanyona",
+        "gen/poss.2sg": "kanyonun",
+        "ins": "kanyonla",
+        "poss.1sg": "kanyonum",
+        "poss.1pl": "kanyonumuz",
+        "poss.2pl": "kanyonunuz",
+        "lok": "kanyonda",
+        "abl": "kanyondan",
+        "poss.3pl": "kanyonları"
+      },
+      "frequenzRang": 25556,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.terminal",
+      "lemma": "terminal",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "harmonie_ausnahme": "helle Endungen trotz a (terminali, terminaller)"
+      },
+      "formen": {
+        "pl": "terminaller",
+        "akk/poss.3sg": "terminali",
+        "dat": "terminale",
+        "gen/poss.2sg": "terminalin",
+        "ins": "terminalle",
+        "poss.1sg": "terminalim",
+        "poss.1pl": "terminalimiz",
+        "poss.2pl": "terminaliniz",
+        "lok": "terminalde",
+        "abl": "terminalden",
+        "poss.3pl": "terminalleri"
+      },
+      "frequenzRang": 12447,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.yore",
+      "lemma": "yöre",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "yöreler",
+        "akk": "yöreyi",
+        "dat": "yöreye",
+        "gen": "yörenin",
+        "ins": "yöreyle",
+        "poss.1sg": "yörem",
+        "poss.2sg": "yören",
+        "poss.3sg": "yöresi",
+        "poss.1pl": "yöremiz",
+        "poss.2pl": "yöreniz",
+        "lok": "yörede",
+        "abl": "yöreden",
+        "poss.3pl": "yöreleri"
+      },
+      "frequenzRang": 14916,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.muthis",
+      "lemma": "müthiş",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 1573,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.inanilmaz",
+      "lemma": "inanılmaz",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 1853,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.etkileyici",
+      "lemma": "etkileyici",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 4374,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.buyuleyici",
+      "lemma": "büyüleyici",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 8899,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.essiz",
+      "lemma": "eşsiz",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 5255,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.meshur",
+      "lemma": "meşhur",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "frequenzRang": 3340,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.turistik",
+      "lemma": "turistik",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 7515,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.tarihi",
+      "lemma": "tarihî",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 286,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.antik",
+      "lemma": "antik",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 3084,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.uluslararasi",
+      "lemma": "uluslararası",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 362,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.kulturel",
+      "lemma": "kültürel",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 1569,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.yerli",
+      "lemma": "yerli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 1061,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.yoresel",
+      "lemma": "yöresel",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 11510,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.tenha",
+      "lemma": "tenha",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 34359,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.sirin",
+      "lemma": "şirin",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 3792,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.olaganustu",
+      "lemma": "olağanüstü",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "frequenzRang": 2129,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.luks",
+      "lemma": "lüks",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "frequenzRang": 4200,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.hediyelik",
+      "lemma": "hediyelik",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 28547,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.volkanik",
+      "lemma": "volkanik",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 20194,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.hayran",
+      "lemma": "hayran",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "kop.1sg": "hayranım",
+        "kop.1pl": "hayranız",
+        "kop.2sg": "hayransın",
+        "kop.2pl": "hayransınız"
+      },
+      "frequenzRang": 3540,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.manzarali",
+      "lemma": "manzaralı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 22466,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.rehberli",
+      "lemma": "rehberli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.konaklamak",
+      "lemma": "konaklamak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "konakla",
+        "harmonie": "a/ı",
+        "stammwechsel": "konakla → konaklı- vor -yor"
+      },
+      "formen": {
+        "stamm": "konakla",
+        "iyor.3sg": "konaklıyor",
+        "imp.2pl": "konaklayın",
+        "aor.3sg": "konaklar",
+        "iyor.neg.3sg": "konaklamıyor",
+        "aor.1sg": "konaklarım",
+        "aor.neg.3sg": "konaklamaz",
+        "aor.neg.1sg": "konaklamam",
+        "di.1sg": "konakladım",
+        "di.2sg": "konakladın",
+        "di.3sg": "konakladı",
+        "di.1pl": "konakladık",
+        "di.2pl": "konakladınız",
+        "di.neg.3sg": "konaklamadı",
+        "mis.3sg": "konaklamış",
+        "ecek.3sg": "konaklayacak",
+        "ecek.1sg": "konaklayacağım",
+        "ecek.1pl": "konaklayacağız",
+        "ebil.3sg": "konaklayabilir",
+        "eme.3sg": "konaklayamaz",
+        "meli.3sg": "konaklamalı",
+        "opt.1sg": "konaklayayım",
+        "opt.1pl": "konaklayalım",
+        "imp3.3sg": "konaklasın",
+        "iyordu.3sg": "konaklıyordu",
+        "mek.akk": "konaklamayı",
+        "part.en": "konaklayan",
+        "part.dik.3": "konakladığı",
+        "part.dik.1sg": "konakladığım",
+        "part.ecek.3": "konaklayacağı",
+        "konv.ip": "konaklayıp",
+        "konv.ince": "konaklayınca",
+        "konv.erek": "konaklayarak",
+        "konv.meden": "konaklamadan",
+        "kond.3sg": "konaklasa",
+        "nom.mesi": "konaklaması",
+        "mis.ti": "konaklamıştı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.ayirtmak",
+      "lemma": "ayırtmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "ayırt",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "ayırt",
+        "iyor.3sg": "ayırtıyor",
+        "imp.2pl": "ayırtın",
+        "aor.3sg": "ayırtır",
+        "iyor.neg.3sg": "ayırtmıyor",
+        "aor.1sg": "ayırtırım",
+        "aor.neg.3sg": "ayırtmaz",
+        "aor.neg.1sg": "ayırtmam",
+        "di.1sg": "ayırttım",
+        "di.2sg": "ayırttın",
+        "di.3sg": "ayırttı",
+        "di.1pl": "ayırttık",
+        "di.2pl": "ayırttınız",
+        "di.neg.3sg": "ayırtmadı",
+        "mis.3sg": "ayırtmış",
+        "ecek.3sg": "ayırtacak",
+        "ecek.1sg": "ayırtacağım",
+        "ecek.1pl": "ayırtacağız",
+        "ebil.3sg": "ayırtabilir",
+        "eme.3sg": "ayırtamaz",
+        "meli.3sg": "ayırtmalı",
+        "opt.1sg": "ayırtayım",
+        "opt.1pl": "ayırtalım",
+        "imp3.3sg": "ayırtsın",
+        "iyordu.3sg": "ayırtıyordu",
+        "mek.akk": "ayırtmayı",
+        "part.en": "ayırtan",
+        "part.dik.3": "ayırttığı",
+        "part.dik.1sg": "ayırttığım",
+        "part.ecek.3": "ayırtacağı",
+        "konv.ip": "ayırtıp",
+        "konv.ince": "ayırtınca",
+        "konv.erek": "ayırtarak",
+        "konv.meden": "ayırtmadan",
+        "kond.3sg": "ayırtsa",
+        "nom.mesi": "ayırtması",
+        "mis.ti": "ayırtmıştı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.kesfetmek",
+      "lemma": "keşfetmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "keşfet",
+        "harmonie": "e/i",
+        "stammwechsel": "keşfet → keşfed- vor Vokal"
+      },
+      "formen": {
+        "stamm": "keşfet",
+        "iyor.3sg": "keşfediyor",
+        "imp.2pl": "keşfedin",
+        "aor.3sg": "keşfeder",
+        "iyor.neg.3sg": "keşfetmiyor",
+        "aor.1sg": "keşfederim",
+        "aor.neg.3sg": "keşfetmez",
+        "aor.neg.1sg": "keşfetmem",
+        "di.1sg": "keşfettim",
+        "di.2sg": "keşfettin",
+        "di.3sg": "keşfetti",
+        "di.1pl": "keşfettik",
+        "di.2pl": "keşfettiniz",
+        "di.neg.3sg": "keşfetmedi",
+        "mis.3sg": "keşfetmiş",
+        "ecek.3sg": "keşfedecek",
+        "ecek.1sg": "keşfedeceğim",
+        "ecek.1pl": "keşfedeceğiz",
+        "ebil.3sg": "keşfedebilir",
+        "eme.3sg": "keşfedemez",
+        "meli.3sg": "keşfetmeli",
+        "opt.1sg": "keşfedeyim",
+        "opt.1pl": "keşfedelim",
+        "imp3.3sg": "keşfetsin",
+        "iyordu.3sg": "keşfediyordu",
+        "mek.akk": "keşfetmeyi",
+        "part.en": "keşfeden",
+        "part.dik.3": "keşfettiği",
+        "part.dik.1sg": "keşfettiğim",
+        "part.ecek.3": "keşfedeceği",
+        "konv.ip": "keşfedip",
+        "konv.ince": "keşfedince",
+        "konv.erek": "keşfederek",
+        "konv.meden": "keşfetmeden",
+        "kond.3sg": "keşfetse",
+        "nom.mesi": "keşfetmesi",
+        "mis.ti": "keşfetmişti"
+      },
+      "frequenzRang": 16931,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.dolasmak",
+      "lemma": "dolaşmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "dolaş",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "dolaş",
+        "iyor.3sg": "dolaşıyor",
+        "imp.2pl": "dolaşın",
+        "aor.3sg": "dolaşır",
+        "iyor.neg.3sg": "dolaşmıyor",
+        "aor.1sg": "dolaşırım",
+        "aor.neg.3sg": "dolaşmaz",
+        "aor.neg.1sg": "dolaşmam",
+        "di.1sg": "dolaştım",
+        "di.2sg": "dolaştın",
+        "di.3sg": "dolaştı",
+        "di.1pl": "dolaştık",
+        "di.2pl": "dolaştınız",
+        "di.neg.3sg": "dolaşmadı",
+        "mis.3sg": "dolaşmış",
+        "ecek.3sg": "dolaşacak",
+        "ecek.1sg": "dolaşacağım",
+        "ecek.1pl": "dolaşacağız",
+        "ebil.3sg": "dolaşabilir",
+        "eme.3sg": "dolaşamaz",
+        "meli.3sg": "dolaşmalı",
+        "opt.1sg": "dolaşayım",
+        "opt.1pl": "dolaşalım",
+        "imp3.3sg": "dolaşsın",
+        "iyordu.3sg": "dolaşıyordu",
+        "mek.akk": "dolaşmayı",
+        "part.en": "dolaşan",
+        "part.dik.3": "dolaştığı",
+        "part.dik.1sg": "dolaştığım",
+        "part.ecek.3": "dolaşacağı",
+        "konv.ip": "dolaşıp",
+        "konv.ince": "dolaşınca",
+        "konv.erek": "dolaşarak",
+        "konv.meden": "dolaşmadan",
+        "kond.3sg": "dolaşsa",
+        "nom.mesi": "dolaşması",
+        "mis.ti": "dolaşmıştı"
+      },
+      "frequenzRang": 12059,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.seyretmek",
+      "lemma": "seyretmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "seyret",
+        "harmonie": "e/i",
+        "stammwechsel": "seyret → seyred- vor Vokal"
+      },
+      "formen": {
+        "stamm": "seyret",
+        "iyor.3sg": "seyrediyor",
+        "imp.2pl": "seyredin",
+        "aor.3sg": "seyreder",
+        "iyor.neg.3sg": "seyretmiyor",
+        "aor.1sg": "seyrederim",
+        "aor.neg.3sg": "seyretmez",
+        "aor.neg.1sg": "seyretmem",
+        "di.1sg": "seyrettim",
+        "di.2sg": "seyrettin",
+        "di.3sg": "seyretti",
+        "di.1pl": "seyrettik",
+        "di.2pl": "seyrettiniz",
+        "di.neg.3sg": "seyretmedi",
+        "mis.3sg": "seyretmiş",
+        "ecek.3sg": "seyredecek",
+        "ecek.1sg": "seyredeceğim",
+        "ecek.1pl": "seyredeceğiz",
+        "ebil.3sg": "seyredebilir",
+        "eme.3sg": "seyredemez",
+        "meli.3sg": "seyretmeli",
+        "opt.1sg": "seyredeyim",
+        "opt.1pl": "seyredelim",
+        "imp3.3sg": "seyretsin",
+        "iyordu.3sg": "seyrediyordu",
+        "mek.akk": "seyretmeyi",
+        "part.en": "seyreden",
+        "part.dik.3": "seyrettiği",
+        "part.dik.1sg": "seyrettiğim",
+        "part.ecek.3": "seyredeceği",
+        "konv.ip": "seyredip",
+        "konv.ince": "seyredince",
+        "konv.erek": "seyrederek",
+        "konv.meden": "seyretmeden",
+        "kond.3sg": "seyretse",
+        "nom.mesi": "seyretmesi",
+        "mis.ti": "seyretmişti"
+      },
+      "frequenzRang": 13984,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.kacirmak",
+      "lemma": "kaçırmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kaçır",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "kaçır",
+        "iyor.3sg": "kaçırıyor",
+        "imp.2pl": "kaçırın",
+        "aor.3sg": "kaçırır",
+        "iyor.neg.3sg": "kaçırmıyor",
+        "aor.1sg": "kaçırırım",
+        "aor.neg.3sg": "kaçırmaz",
+        "aor.neg.1sg": "kaçırmam",
+        "di.1sg": "kaçırdım",
+        "di.2sg": "kaçırdın",
+        "di.3sg": "kaçırdı",
+        "di.1pl": "kaçırdık",
+        "di.2pl": "kaçırdınız",
+        "di.neg.3sg": "kaçırmadı",
+        "mis.3sg": "kaçırmış",
+        "ecek.3sg": "kaçıracak",
+        "ecek.1sg": "kaçıracağım",
+        "ecek.1pl": "kaçıracağız",
+        "ebil.3sg": "kaçırabilir",
+        "eme.3sg": "kaçıramaz",
+        "meli.3sg": "kaçırmalı",
+        "opt.1sg": "kaçırayım",
+        "opt.1pl": "kaçıralım",
+        "imp3.3sg": "kaçırsın",
+        "iyordu.3sg": "kaçırıyordu",
+        "mek.akk": "kaçırmayı",
+        "part.en": "kaçıran",
+        "part.dik.3": "kaçırdığı",
+        "part.dik.1sg": "kaçırdığım",
+        "part.ecek.3": "kaçıracağı",
+        "konv.ip": "kaçırıp",
+        "konv.ince": "kaçırınca",
+        "konv.erek": "kaçırarak",
+        "konv.meden": "kaçırmadan",
+        "kond.3sg": "kaçırsa",
+        "nom.mesi": "kaçırması",
+        "mis.ti": "kaçırmıştı"
+      },
+      "frequenzRang": 19317,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.ertelemek",
+      "lemma": "ertelemek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "ertele",
+        "harmonie": "e/i",
+        "stammwechsel": "ertele → erteli- vor -yor"
+      },
+      "formen": {
+        "stamm": "ertele",
+        "iyor.3sg": "erteliyor",
+        "imp.2pl": "erteleyin",
+        "aor.3sg": "erteler",
+        "iyor.neg.3sg": "ertelemiyor",
+        "aor.1sg": "ertelerim",
+        "aor.neg.3sg": "ertelemez",
+        "aor.neg.1sg": "ertelemem",
+        "di.1sg": "erteledim",
+        "di.2sg": "erteledin",
+        "di.3sg": "erteledi",
+        "di.1pl": "erteledik",
+        "di.2pl": "ertelediniz",
+        "di.neg.3sg": "ertelemedi",
+        "mis.3sg": "ertelemiş",
+        "ecek.3sg": "erteleyecek",
+        "ecek.1sg": "erteleyeceğim",
+        "ecek.1pl": "erteleyeceğiz",
+        "ebil.3sg": "erteleyebilir",
+        "eme.3sg": "erteleyemez",
+        "meli.3sg": "ertelemeli",
+        "opt.1sg": "erteleyeyim",
+        "opt.1pl": "erteleyelim",
+        "imp3.3sg": "ertelesin",
+        "iyordu.3sg": "erteliyordu",
+        "mek.akk": "ertelemeyi",
+        "part.en": "erteleyen",
+        "part.dik.3": "ertelediği",
+        "part.dik.1sg": "ertelediğim",
+        "part.ecek.3": "erteleyeceği",
+        "konv.ip": "erteleyip",
+        "konv.ince": "erteleyince",
+        "konv.erek": "erteleyerek",
+        "konv.meden": "ertelemeden",
+        "kond.3sg": "ertelese",
+        "nom.mesi": "ertelemesi",
+        "mis.ti": "ertelemişti"
+      },
+      "frequenzRang": 32259,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.gezdirmek",
+      "lemma": "gezdirmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "gezdir",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "gezdir",
+        "iyor.3sg": "gezdiriyor",
+        "imp.2pl": "gezdirin",
+        "aor.3sg": "gezdirir",
+        "iyor.neg.3sg": "gezdirmiyor",
+        "aor.1sg": "gezdiririm",
+        "aor.neg.3sg": "gezdirmez",
+        "aor.neg.1sg": "gezdirmem",
+        "di.1sg": "gezdirdim",
+        "di.2sg": "gezdirdin",
+        "di.3sg": "gezdirdi",
+        "di.1pl": "gezdirdik",
+        "di.2pl": "gezdirdiniz",
+        "di.neg.3sg": "gezdirmedi",
+        "mis.3sg": "gezdirmiş",
+        "ecek.3sg": "gezdirecek",
+        "ecek.1sg": "gezdireceğim",
+        "ecek.1pl": "gezdireceğiz",
+        "ebil.3sg": "gezdirebilir",
+        "eme.3sg": "gezdiremez",
+        "meli.3sg": "gezdirmeli",
+        "opt.1sg": "gezdireyim",
+        "opt.1pl": "gezdirelim",
+        "imp3.3sg": "gezdirsin",
+        "iyordu.3sg": "gezdiriyordu",
+        "mek.akk": "gezdirmeyi",
+        "part.en": "gezdiren",
+        "part.dik.3": "gezdirdiği",
+        "part.dik.1sg": "gezdirdiğim",
+        "part.ecek.3": "gezdireceği",
+        "konv.ip": "gezdirip",
+        "konv.ince": "gezdirince",
+        "konv.erek": "gezdirerek",
+        "konv.meden": "gezdirmeden",
+        "kond.3sg": "gezdirse",
+        "nom.mesi": "gezdirmesi",
+        "mis.ti": "gezdirmişti"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.ugramak",
+      "lemma": "uğramak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "uğra",
+        "harmonie": "a/ı",
+        "stammwechsel": "uğra → uğru- vor -yor"
+      },
+      "formen": {
+        "stamm": "uğra",
+        "iyor.3sg": "uğruyor",
+        "imp.2pl": "uğrayın",
+        "aor.3sg": "uğrar",
+        "iyor.neg.3sg": "uğramıyor",
+        "aor.1sg": "uğrarım",
+        "aor.neg.3sg": "uğramaz",
+        "aor.neg.1sg": "uğramam",
+        "di.1sg": "uğradım",
+        "di.2sg": "uğradın",
+        "di.3sg": "uğradı",
+        "di.1pl": "uğradık",
+        "di.2pl": "uğradınız",
+        "di.neg.3sg": "uğramadı",
+        "mis.3sg": "uğramış",
+        "ecek.3sg": "uğrayacak",
+        "ecek.1sg": "uğrayacağım",
+        "ecek.1pl": "uğrayacağız",
+        "ebil.3sg": "uğrayabilir",
+        "eme.3sg": "uğrayamaz",
+        "meli.3sg": "uğramalı",
+        "opt.1sg": "uğrayayım",
+        "opt.1pl": "uğrayalım",
+        "imp3.3sg": "uğrasın",
+        "iyordu.3sg": "uğruyordu",
+        "mek.akk": "uğramayı",
+        "part.en": "uğrayan",
+        "part.dik.3": "uğradığı",
+        "part.dik.1sg": "uğradığım",
+        "part.ecek.3": "uğrayacağı",
+        "konv.ip": "uğrayıp",
+        "konv.ince": "uğrayınca",
+        "konv.erek": "uğrayarak",
+        "konv.meden": "uğramadan",
+        "kond.3sg": "uğrasa",
+        "nom.mesi": "uğraması",
+        "mis.ti": "uğramıştı"
+      },
+      "frequenzRang": 30916,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.fotograflamak",
+      "lemma": "fotoğraflamak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "fotoğrafla",
+        "harmonie": "a/ı",
+        "stammwechsel": "fotoğrafla → fotoğraflı- vor -yor"
+      },
+      "formen": {
+        "iyor.3sg": "fotoğraflıyor",
+        "imp.2pl": "fotoğraflayın",
+        "iyor.neg.3sg": "fotoğraflamıyor",
+        "aor.1sg": "fotoğraflarım",
+        "aor.neg.3sg": "fotoğraflamaz",
+        "aor.neg.1sg": "fotoğraflamam",
+        "di.1sg": "fotoğrafladım",
+        "di.2sg": "fotoğrafladın",
+        "di.3sg": "fotoğrafladı",
+        "di.1pl": "fotoğrafladık",
+        "di.2pl": "fotoğrafladınız",
+        "di.neg.3sg": "fotoğraflamadı",
+        "mis.3sg": "fotoğraflamış",
+        "ecek.3sg": "fotoğraflayacak",
+        "ecek.1sg": "fotoğraflayacağım",
+        "ecek.1pl": "fotoğraflayacağız",
+        "ebil.3sg": "fotoğraflayabilir",
+        "eme.3sg": "fotoğraflayamaz",
+        "meli.3sg": "fotoğraflamalı",
+        "opt.1sg": "fotoğraflayayım",
+        "opt.1pl": "fotoğraflayalım",
+        "imp3.3sg": "fotoğraflasın",
+        "iyordu.3sg": "fotoğraflıyordu",
+        "mek.akk": "fotoğraflamayı",
+        "part.en": "fotoğraflayan",
+        "part.dik.3": "fotoğrafladığı",
+        "part.dik.1sg": "fotoğrafladığım",
+        "part.ecek.3": "fotoğraflayacağı",
+        "konv.ip": "fotoğraflayıp",
+        "konv.ince": "fotoğraflayınca",
+        "konv.erek": "fotoğraflayarak",
+        "konv.meden": "fotoğraflamadan",
+        "kond.3sg": "fotoğraflasa",
+        "nom.mesi": "fotoğraflaması",
+        "mis.ti": "fotoğraflamıştı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.vay",
+      "lemma": "vay",
+      "wortart": "interjektion",
+      "frequenzRang": 1433,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.suru",
+      "lemma": "sürü",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "pl": "sürüler",
+        "akk": "sürüyü",
+        "dat": "sürüye",
+        "gen": "sürünün",
+        "ins": "sürüyle",
+        "poss.1sg": "sürüm",
+        "poss.3sg": "sürüsü",
+        "poss.1pl": "sürümüz",
+        "poss.2pl": "sürünüz",
+        "lok": "sürüde",
+        "abl": "sürüden",
+        "poss.3pl": "sürüleri"
+      },
+      "frequenzRang": 1952,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.acente",
+      "lemma": "acente",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "acenteler",
+        "akk": "acenteyi",
+        "dat": "acenteye",
+        "gen": "acentenin",
+        "ins": "acenteyle",
+        "poss.1sg": "acentem",
+        "poss.2sg": "acenten",
+        "poss.3sg": "acentesi",
+        "poss.1pl": "acentemiz",
+        "poss.2pl": "acenteniz",
+        "lok": "acentede",
+        "abl": "acenteden",
+        "poss.3pl": "acenteleri"
+      },
+      "frequenzRang": 32118,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "tr.b1.e04.s0001",
+      "text": "Bu yaz ailece Kapadokya'da bir hafta konaklayacağız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0002",
+      "text": "Metin Dede de bizimle gelecek; rotayı birlikte planlayacağız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0003",
+      "text": "Sevim Babaanne bu sefer gelmeyecek, ama gezi rotamızı çok merak ediyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0004",
+      "text": "Annem dün akşam internette bir sürü pansiyon ilanına baktı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0005",
+      "text": "Konaklama için üç seçeneğimiz var: otel, pansiyon ya da karavan.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0006",
+      "text": "Otel çok lüks ve pahalı; bize daha sade bir yer lazım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0007",
+      "text": "Karavanla gitmek büyük bir macera olur, ama bizim karavanımız yok.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0008",
+      "text": "Babam bir karavan kiralamayı önerdi, ama annem pansiyonu daha rahat buluyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0009",
+      "text": "Yarın bir seyahat acentesine gidelim mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0010",
+      "text": "Acentedeki Lubnā Hanım bize üç farklı rota önerdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0011",
+      "text": "Birinci rota uzun: üç gün Kapadokya, iki gün Ankara.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0012",
+      "text": "İkinci rota daha kısa; sadece Kapadokya yöresini gezeceğiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0013",
+      "text": "Hangi rotayı seçelim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0014",
+      "text": "Bence ikinci seçenek daha iyi; dedem için daha az yorucu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0015",
+      "text": "Bir bakayım: Kapadokya'da konaklama fiyatları çok farklı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0016",
+      "text": "Turistik yerlerdeki oteller yazın çok pahalı oluyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0017",
+      "text": "Bu yörede insanların çoğu turizmden para kazanıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0018",
+      "text": "Turizm bu yöre için çok önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0019",
+      "text": "Kalabalık yerleri sevmiyorum; tenha bir pansiyon arayalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0020",
+      "text": "Tenha bir köyde, manzaralı bir pansiyon buldum!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0021",
+      "text": "Manzaralı odalar biraz daha pahalı, ama bence değer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0022",
+      "text": "Pansiyonu bu akşam telefonla ayırtacağım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0023",
+      "text": "İki oda ayırtalım: biri bize, biri çocuklara ve dedeye.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0024",
+      "text": "Bir oda ayırtmak istiyorum.",
+      "quelle": "tatoeba:4353063",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4353063 von civiricus"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0025",
+      "text": "Odaları ayırttın mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0026",
+      "text": "Ağustosta izin alamayacağım; tatili bir hafta erteleyelim mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0027",
+      "text": "Gezimizi ertelemek zorunda kaldık.",
+      "quelle": "tatoeba:4338189",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4338189 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0028",
+      "text": "Hayır, tatili ertelemeyelim; okullar eylülde başlıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0029",
+      "text": "Can macera filmlerini çok seviyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0030",
+      "text": "Bu gezi çocuklar için gerçek bir macera olacak.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0031",
+      "text": "Harika bir macera olacak.",
+      "quelle": "tatoeba:6028612",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6028612 von deyta"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0032",
+      "text": "Turistik bir tur istemiyorum; yöreyi gerçekten tanımak istiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0033",
+      "text": "Jan'ın ailesi bu yaz karavanla Norveç'e gidecek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0034",
+      "text": "Rim'in ailesi ise Ürdün'e gidecek; akrabalarının evinde konaklayacaklar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0035",
+      "text": "Lena'nın geçen yıl kaldığı pansiyon çok güzelmiş.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0036",
+      "text": "Lena'ya pansiyonun adını soralım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0037",
+      "text": "Pansiyonun gecelik fiyatı ne kadar?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0038",
+      "text": "Pansiyonda gecelik fiyat kahvaltı dahil yetmiş avro.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0039",
+      "text": "Lüks bir otelde kalmak bize göre değil.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0040",
+      "text": "Bu rota dedem için fazla uzun; daha kısa bir rota seçelim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0041",
+      "text": "Konaklama ve gezi programını birlikte hazırlayalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0042",
+      "text": "Acentede çok seçenek var, ama karar vermek zor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0043",
+      "text": "Biz rotamızı kendimiz planlayacağız; acenteye gerek yok.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0044",
+      "text": "Seçeneklere bir daha bakayım, sonra seni arayacağım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0045",
+      "text": "Peri Pansiyon, buyurun, ben Aslı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0046",
+      "text": "İyi günler, ben Derya Kaya; on iki ağustos için iki oda ayırtmak istiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0047",
+      "text": "Tabii, kaç gece konaklayacaksınız?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0048",
+      "text": "Beş gece kalacağız; üç büyük ve iki çocuğuz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0049",
+      "text": "Bir aile odamız ve manzaralı bir çift kişilik odamız boş.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0050",
+      "text": "Çok güzel; fiyata kahvaltı dahil mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0051",
+      "text": "Evet, kahvaltı dahil; her sabah yöresel bir kahvaltı hazırlıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0052",
+      "text": "Kahvaltı saat kaçta başlıyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0053",
+      "text": "Saat yedide, ama balonları seyredecek misafirler için beşte de çay var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0054",
+      "text": "Havalimanından pansiyona transfer hizmetiniz var mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0055",
+      "text": "Evet, kişi başı on beş avroya transfer yapıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0056",
+      "text": "Harika, o zaman transferi de ayırtalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0057",
+      "text": "Tamam, iki odayı ve transferi sizin adınıza yazdım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0058",
+      "text": "Çok teşekkürler, Aslı Hanım; ağustosta pansiyonda görüşürüz!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0059",
+      "text": "Bineceğimiz uçağın kalkış saati sabah dokuz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0060",
+      "text": "Frankfurt'tan İstanbul'a uçacağız ve İstanbul'da aktarma yapacağız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0061",
+      "text": "Aktarma süremiz sadece elli dakika; çok hızlı olmalıyız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0062",
+      "text": "Gidiş biletlerimiz hazır, ama dönüş biletini henüz almadık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0063",
+      "text": "Gidiş ve dönüş için iki ayrı bilet aldık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0064",
+      "text": "Bazı ülkelere gitmek için vize lazım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0065",
+      "text": "Türkiye için bizim vizeye ihtiyacımız yok.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0066",
+      "text": "Rim'in teyzesi bizi ziyaret etmek için vize aldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0067",
+      "text": "Benim bir vizem var.",
+      "quelle": "tatoeba:2000476",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2000476 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0068",
+      "text": "Havalimanında bir döviz bürosu var; biraz Türk lirası alalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0069",
+      "text": "Döviz kurunu kontrol ettin mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0070",
+      "text": "Bugün döviz kuru nedir?",
+      "quelle": "tatoeba:1416293",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1416293 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0071",
+      "text": "Bagajımız çok ağır; her şeyi yanımıza almayalım!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0072",
+      "text": "Her yolcunun yirmi kilo bagaj hakkı var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0073",
+      "text": "Bagaj arabaları nerede?",
+      "quelle": "tatoeba:1506408",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1506408 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0074",
+      "text": "Bagajın nerede?",
+      "quelle": "tatoeba:2522174",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2522174 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0075",
+      "text": "Bu benim bagajım.",
+      "quelle": "tatoeba:13946878",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13946878 von TATAR1"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0076",
+      "text": "Uluslararası uçuşlar bu terminalden kalkıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0077",
+      "text": "Uluslararası terminal çok büyük; birbirimizi kaybetmeyelim!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0078",
+      "text": "Nevşehir'e gidecek yolcular lütfen kapı on ikiye gitsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0079",
+      "text": "Kalkış saatine daha bir saat var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0080",
+      "text": "Ekranda yazıyor: uçağımızın kırk dakika rötarı var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0081",
+      "text": "Rötar yüzünden İstanbul'daki aktarmayı kaçıracağız!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0082",
+      "text": "Trenimizi kaçırdık.",
+      "quelle": "tatoeba:2694888",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2694888 von deyta"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0083",
+      "text": "Merak etme, bineceğimiz ikinci uçak da rötarlı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0084",
+      "text": "İniş sırasında herkes yerine oturmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0085",
+      "text": "İniş çok rahattı; Elif uyanmadı bile.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0086",
+      "text": "Uçak havalimanına zamanında iniş yaptı.",
+      "quelle": "tatoeba:13260975",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13260975 von boracasli2"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0087",
+      "text": "Vay, uçağın penceresinden bütün ova görünüyor!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0088",
+      "text": "Vay, buna bak.",
+      "quelle": "tatoeba:4084866",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4084866 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0089",
+      "text": "Pansiyonun şoförü bizi transfer için çıkışta bekleyecek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0090",
+      "text": "Transfer otuz dakika sürüyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0091",
+      "text": "Dedemin bineceği otobüs İzmir'den akşam sekizde kalkacak.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0092",
+      "text": "Dedem sabah Nevşehir otobüs terminaline varacak.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0093",
+      "text": "Bekleme salonunda bir sürü insan var.",
+      "quelle": "tatoeba:5075379",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5075379 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0094",
+      "text": "Orada bir sürü insan vardı.",
+      "quelle": "tatoeba:4051781",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4051781 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0095",
+      "text": "Elif uçağın penceresinden bir sürü bulut fotoğrafı çekti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0096",
+      "text": "Uçakta okuyacağım kitabı çantama koydum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0097",
+      "text": "Yanımıza alacağımız eşyaların listesini yaptım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0098",
+      "text": "Gideceğimiz yöre yazın çok sıcak oluyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0099",
+      "text": "Kalacağımız pansiyon bir vadinin yanında.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0100",
+      "text": "Resepsiyondaki genç adam bize oda anahtarlarını verdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0101",
+      "text": "Resepsiyon gece de açık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0102",
+      "text": "Sevim Babaanne telefonda bizimle vedalaştı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0103",
+      "text": "Veda etmek kolay değil, ama bir hafta sonra yine görüşeceğiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0104",
+      "text": "Komşumuz Becker Hanım'a veda edip anahtarı ona verdik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0105",
+      "text": "Yarın gelecek misafirler için resepsiyonda bir liste var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0106",
+      "text": "Affedersiniz, Nevşehir uçağı hangi terminalden kalkıyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0107",
+      "text": "Bütün iç uçuşlar A terminalinden kalkıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0108",
+      "text": "Uçağımızın kırk dakika rötarı var; aktarmayı kaçıracak mıyız?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0109",
+      "text": "Kapadokya'nın toprağı volkanik; burada eskiden volkanlar vardı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0110",
+      "text": "Volkanik kayalar rüzgar ve yağmurla binlerce yılda bu şekli aldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0111",
+      "text": "Sabah erken kalkıp gün doğumunu seyredeceğiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0112",
+      "text": "Gün doğumunda gökyüzünde yüzlerce balon var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0113",
+      "text": "Akşam vadiye yürüyüp gün batımını seyredelim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0114",
+      "text": "Gün batımında kayalar kırmızı ve pembe görünüyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0115",
+      "text": "Patika çok dar; dikkatli yürüyün!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0116",
+      "text": "Bu patika vadinin içinden geçip eski bir köye gidiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0117",
+      "text": "Rehberli bir yürüyüş mü yapalım, yoksa kendimiz mi gidelim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0118",
+      "text": "Rehberli turlar biraz pahalı, ama rehber her şeyi anlatıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0119",
+      "text": "Gül Vadisi'nde dört saat yürüdük.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0120",
+      "text": "Vadide yürüyüp öğle yemeğini bir köyde yedik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0121",
+      "text": "Zirveye çıkıp etrafı seyrettik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0122",
+      "text": "Sonunda dağın zirvesine ulaştık.",
+      "quelle": "tatoeba:3434715",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3434715 von yavuz"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0123",
+      "text": "Zirveden bütün ova görünüyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0124",
+      "text": "Kapadokya'nın etrafında geniş ovalar var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0125",
+      "text": "Ovada çiftçiler patates ve buğday yetiştiriyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0126",
+      "text": "Kanyon çok derin; aşağıya uzun bir merdivenden indik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0127",
+      "text": "Kanyonun içinde serin bir patika ve küçük bir şelale var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0128",
+      "text": "Şelalenin sesi çok güzel; burada biraz dinlenelim mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0129",
+      "text": "Kayalarda bir sürü mağara var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0130",
+      "text": "İnsanlar eskiden bu mağaralarda yaşıyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0131",
+      "text": "Mağaranın içi yazın serin, kışın sıcak.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0132",
+      "text": "Bazı pansiyonlar eski mağaralarda; odalar kayanın içinde!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0133",
+      "text": "Yarın yeraltı şehrini gezeceğiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0134",
+      "text": "Yeraltı şehrinin sekiz katı var; biz dört kat aşağı indik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0135",
+      "text": "Yeraltında hava serin ve biraz karanlık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0136",
+      "text": "Bölgeyi keşfetmek için bisiklet kiralayalım mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0137",
+      "text": "Bugün çok güzel bir yer keşfettim.",
+      "quelle": "tatoeba:2441698",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2441698 von meinung44"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0138",
+      "text": "Can ve Elif pansiyonun etrafını keşfetmeye çıktılar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0139",
+      "text": "Köyün dar sokaklarında saatlerce dolaştık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0140",
+      "text": "Biraz dolaşalım mı?",
+      "quelle": "tatoeba:3693226",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3693226 von vvv123"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0141",
+      "text": "Kızılırmak'ta küçük bir tekneyle yarım saat gezdik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0142",
+      "text": "Tekneden nehrin iki yanındaki kayaları seyrettik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0143",
+      "text": "Sabah beşte kalkıp balonları seyredeceğiz, sonra kahvaltı edip vadiye yürüyeceğiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0144",
+      "text": "Öğleden sonra yeraltı şehrine gidip akşam pansiyona döneceğiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0145",
+      "text": "Elif fotoğraf makinesini alıp balkona koştu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0146",
+      "text": "Dedem bir taşa oturup dinlendi, biz de etrafı dolaştık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0147",
+      "text": "Erken kalkıp patikada yürüdüm.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0148",
+      "text": "Otobüse binip vadinin girişine gideceğiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0149",
+      "text": "Hadi, kalkıp hazırlanın; rehber bizi bekliyor!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0150",
+      "text": "Rehberli tur sabah dokuzda başlayıp öğlen bitiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0151",
+      "text": "Mağaraya girip telefonlarımızın ışığını açtık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0152",
+      "text": "Kanyondan çıkıp köydeki bir kafede yemek yedik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0153",
+      "text": "Yarın ne yapacağız?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0154",
+      "text": "Kapadokya, peri bacalarıyla meşhur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0155",
+      "text": "Yolda tarihî bir kervansaraya uğradık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0156",
+      "text": "Kervansaraylar eskiden tüccarların ve yolcuların konakladığı yerlerdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0157",
+      "text": "Bu kervansaray yedi yüz yıllık bir eser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0158",
+      "text": "Kervansarayın taş kapısı çok etkileyici.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0159",
+      "text": "Bu binanın mimarisi çok sade ama çok güzel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0160",
+      "text": "Bu yöredeki taş evlerin mimarisi eşsiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0161",
+      "text": "Ovada antik bir şehrin kalıntıları var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0162",
+      "text": "Harabelerin arasında dolaşıp eski taşlara baktık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0163",
+      "text": "Bu harabeler iki bin yıllık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0164",
+      "text": "Antik kalıntılarda yürümek bir zaman yolculuğu gibi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0165",
+      "text": "Ziyaret ettiğimiz yeraltı şehri gerçekten inanılmazdı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0166",
+      "text": "Gördüğüm en güzel yer burası!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0167",
+      "text": "Kaldığımız pansiyon küçük ama çok şirindi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0168",
+      "text": "Dedemin en çok sevdiği yer kaplıcaydı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0169",
+      "text": "Kaplıcanın suyu çok sıcak; dedem orada iki saat dinlendi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0170",
+      "text": "Bu manzara gerçekten olağanüstü!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0171",
+      "text": "Gökyüzündeki yüzlerce balon müthiş görünüyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0172",
+      "text": "Çok etkileyici!",
+      "quelle": "tatoeba:7779402",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7779402 von ruth_tatoeba"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0173",
+      "text": "Yeraltı şehri çok etkileyici bir yer; mutlaka görün!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0174",
+      "text": "Gün batımında vadi büyüleyici görünüyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0175",
+      "text": "Bu yörenin güzelliğini anlatmak çok zor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0176",
+      "text": "Manzaranın güzelliğine hayran kaldık.",
+      "quelle": "tatoeba:1716228",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1716228 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0177",
+      "text": "Dedem kervansarayın mimarisine hayran kaldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0178",
+      "text": "Kapadokya'da tarihî ve kültürel yerler çok fazla.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0179",
+      "text": "Rehberin kervansaray hakkında anlattığı hikâyeler çok ilginçti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0180",
+      "text": "Kapadokya'da gezdiğimiz meşhur yerleri sana anlatayım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0181",
+      "text": "Lena'nın önerdiği pansiyon gerçekten çok güzeldi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0182",
+      "text": "Sana Kapadokya'yı tavsiye ederim; orası eşsiz bir yer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0183",
+      "text": "İnanılmaz! Evler kayaların içinde!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0184",
+      "text": "Tarihî yerleri seven herkes buraya gelmeli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0185",
+      "text": "Bu yöredeki en meşhur eser hangisi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0186",
+      "text": "Bu müzede antik çömlekler var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0187",
+      "text": "Gördüğümüz kervansaray yolun hemen yanındaydı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0188",
+      "text": "Bu tarihî köprü çok eski bir eser.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0189",
+      "text": "Rehberimiz Kerem Bey, yeraltı şehrinin tarihini çok iyi biliyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0190",
+      "text": "Elif'in en beğendiği yer volkanik kayaların arasındaki patikaydı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0191",
+      "text": "Kervansarayı mutlaka görmelisin; mimarisi müthiş.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0192",
+      "text": "Vay, bu kalıntılar ne kadar eski!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0193",
+      "text": "Kapadokya'da en çok neyi beğendin?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0194",
+      "text": "Kapadokya'ya gitmek istiyorum; bana bir yer tavsiye eder misin?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0195",
+      "text": "Geçen yaz gittiğimiz Kapadokya'yı herkese tavsiye ederim; orası gerçekten eşsiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0196",
+      "text": "Son gün çarşıya uğrayıp hediye alalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0197",
+      "text": "Çarşıda dolaştım.",
+      "quelle": "tatoeba:4778901",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4778901 von ruth_tatoeba"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0198",
+      "text": "Çarşıda hediyelik eşya satan bir sürü dükkân var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0199",
+      "text": "Hediyelik eşyalar turistik yerlerde biraz pahalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0200",
+      "text": "Bu yöre çömlekleriyle meşhur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0201",
+      "text": "Bir çömlek atölyesine uğradık; usta önümüzde güzel bir çömlek yaptı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0202",
+      "text": "Elif kendi çömleğini yapmayı denedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0203",
+      "text": "Elif'in yaptığı çömlek biraz eğri, ama çok şirin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0204",
+      "text": "Annem salon için kırmızı bir kilim aldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0205",
+      "text": "Bu kilimi yöreden yaşlı bir kadın elle dokumuş.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0206",
+      "text": "Yerli ürünler hem lezzetli hem ucuz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0207",
+      "text": "Yöresel yemekleri mutlaka deneyin!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0208",
+      "text": "Pazarda yerli üzüm ve elma var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0209",
+      "text": "Aslı Hanım bizi köyde gezdirdi ve komşularıyla tanıştırdı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0210",
+      "text": "Rehber bizi bütün gün vadilerde gezdirdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0211",
+      "text": "Seni şehirde gezdireyim mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0212",
+      "text": "Elif her şeyi fotoğrafladı: balonları, kayaları, kedileri.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0213",
+      "text": "Balonları fotoğraflamak için en iyi yer bu tepe.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0214",
+      "text": "Kartpostal alıp babaanneye gönderelim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0215",
+      "text": "Ona bir kartpostal göndereceğim.",
+      "quelle": "tatoeba:4032788",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4032788 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0216",
+      "text": "Babam kartpostal almak için dışarı gitti.",
+      "quelle": "tatoeba:1744825",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1744825 von duran"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0217",
+      "text": "Köydeki şirin bir kafede kahvaltı ettik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0218",
+      "text": "Bu mekan çok şirin; yemekleri de çok lezzetli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0219",
+      "text": "Pansiyonun bahçesi akşamları çok güzel bir mekan.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0220",
+      "text": "Son akşam Aslı Hanım'a veda edip teşekkür ettik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0221",
+      "text": "Bir dahaki sefere yine bu pansiyonda kalacağız!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0222",
+      "text": "Satıcı, kilimin fiyatında biraz indirim yaptı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0223",
+      "text": "Bu çömleği kaç liraya alabilirim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0224",
+      "text": "Hediyelik bir çömlek için üç yüz lira çok fazla.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0225",
+      "text": "Babam, Sevim Babaanne için yöresel bir tabak aldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0226",
+      "text": "Dönüşte dedeyi otogara götürüp onunla vedalaştık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0227",
+      "text": "Metin Dede İzmir'e gidecek otobüse binip bize el salladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0228",
+      "text": "Kapadokya'yı mutlaka görün; çok şirin köyleri var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0229",
+      "text": "Fotoğrafladığın balonları bana da gönderir misin?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0230",
+      "text": "Tabii, akşam hepsini sana göndereyim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0231",
+      "text": "Bu kilim kaç lira?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0232",
+      "text": "Dört bin lira; yöreden bir kadın elle dokudu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0233",
+      "text": "Biraz pahalı; indirim yapar mısınız?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0234",
+      "text": "Peki, sizin için üç bin beş yüz olsun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0235",
+      "text": "Kapadokya'daki bir pansiyona e-posta yazın: bir oda ayırtmak istiyorsunuz; tarih, kişi sayısı ve sorularınızı yazın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0236",
+      "text": "Sayın Aslı Hanım, ağustos ayında ailemle birlikte Kapadokya'ya gelmek istiyoruz. 12 ve 17 Ağustos arasında beş gece pansiyonunuzda konaklamak istiyoruz. Biz iki büyük ve iki çocuğuz. Bir aile odası ya da iki çift kişilik oda ayırtmak istiyorum. Manzaralı bir oda bizim için çok güzel olur. Fiyata kahvaltı dahil mi? Havalimanından pansiyona transfer hizmetiniz var mı? Ayrıca yakında rehberli vadi turları da var mı? Cevabınız için şimdiden teşekkür ederim. Saygılarımla, Derya Kaya",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0237",
+      "text": "Kapadokya: Anadolu'nun büyüleyici yöresi",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0238",
+      "text": "Kapadokya, Anadolu'nun ortasında volkanik bir bölge.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0239",
+      "text": "Çok uzun zaman önce buradaki volkanlar bütün ovayı küllerle kapladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0240",
+      "text": "Rüzgar ve yağmur, bu volkanik taşlardan ilginç kayalar ve peri bacaları yaptı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0241",
+      "text": "Eskiden insanlar kayaların içine evler ve yeraltı şehirleri yaptılar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0242",
+      "text": "Yöredeki kervansaraylar, tüccarların eski ticaret yolunu gösteriyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0243",
+      "text": "Bugün turizm bölgenin en önemli işi; her yıl çok sayıda turist geliyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0244",
+      "text": "Turistler vadilerde yürüyüp mağara pansiyonlarda konaklıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0245",
+      "text": "Sabahları gökyüzündeki yüzlerce sıcak hava balonu eşsiz bir manzara.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0246",
+      "text": "Kızılırmak'ın yanındaki kasabalar ise çömlekleriyle meşhur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0247",
+      "text": "Kapadokya'da eskiden volkanlar vardı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0248",
+      "text": "Kapadokya, Türkiye'nin kuzeyinde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0249",
+      "text": "Kapadokya'da yazın çok yağmur yağar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0250",
+      "text": "Kızılırmak'ın yanındaki kasabalar neyle meşhur?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0251",
+      "text": "Çömlekleriyle meşhur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0252",
+      "text": "Kilimleriyle meşhur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0253",
+      "text": "Kaplıcalarıyla meşhur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0254",
+      "text": "Peri Pansiyon hakkında misafir yorumları",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0255",
+      "text": "Jana: Pansiyon küçük ve şirin. Odamız manzaralıydı; her sabah balonları balkondan seyrettik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0256",
+      "text": "Fāris: Kahvaltı harikaydı; yöresel peynirler ve sıcak ekmek vardı. Aslı Hanım çok misafirperver.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0257",
+      "text": "Gamze: Pansiyon merkeze biraz uzak ve yol dik. Arabası olmayan misafirler transfer hizmetini kullanmalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0258",
+      "text": "Jana'nın odası manzaralıydı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0259",
+      "text": "Pansiyon şehrin merkezinde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0260",
+      "text": "Pansiyonda bir yüzme havuzu var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0261",
+      "text": "Fāris kahvaltı hakkında ne diyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0262",
+      "text": "Kahvaltıyı çok beğendi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0263",
+      "text": "Kahvaltı çok pahalıydı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0264",
+      "text": "Kahvaltıda sadece çay vardı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0265",
+      "text": "Vadiler, yeraltı şehri ve balonlar",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0266",
+      "text": "Kaya ailesi ve Metin Dede, Kapadokya'da şirin bir pansiyonda konaklıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0267",
+      "text": "İlk sabah herkes erken kalkıp Gül Vadisi'ne yürüyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0268",
+      "text": "Dede, bu patika nereye gidiyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0269",
+      "text": "Vadiyi geçip yukarıdaki eski köye çıkıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0270",
+      "text": "Vay, şu kayalara bakın! Kayaların içinde kapılar ve pencereler var!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0271",
+      "text": "Yüzlerce yıl önce insanlar bu kayaların içinde yaşıyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0272",
+      "text": "Öğle yemeğini vadideki küçük bir kafede yiyorlar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0273",
+      "text": "Dede, yorgun musun? Biraz dinlenelim mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0274",
+      "text": "Yorgun değilim; bu güzellik bana enerji veriyor!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0275",
+      "text": "Ertesi gün rehberli bir turla yeraltı şehrine gidiyorlar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0276",
+      "text": "Rehber Kerem Bey anlatıyor: \"Bu şehir yaklaşık üç bin yıllık.\"",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0277",
+      "text": "Burada kaç kişi yaşıyordu?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0278",
+      "text": "Kerem Bey: \"Binlerce kişi; hayvanlarıyla birlikte burada yaşıyorlardı.\"",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0279",
+      "text": "Yeraltında hava ne kadar serin!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0280",
+      "text": "Merdivenler dar; dikkatli inin, çocuklar!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0281",
+      "text": "Akşam pansiyona dönüp Aslı Hanım'ın hazırladığı yemeği yiyorlar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0282",
+      "text": "Son sabah saat beşte kalkıp seyir tepesine çıkıyorlar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0283",
+      "text": "Hava çok soğuk, ama gökyüzü pembe!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0284",
+      "text": "Gün doğumunda yüzlerce balon yavaş yavaş havalanıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0285",
+      "text": "İnanılmaz! Bu gördüğüm en güzel manzara!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0286",
+      "text": "Ben bu manzarayı gençliğimden beri görmek istiyordum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0287",
+      "text": "Dede, gelecek yıl babaanneyi de getirelim!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0288",
+      "text": "Tamam, söz! Ama önce kaplıcaya gidip biraz dinleneceğim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0289",
+      "text": "Elif balonları fotoğraflayıp hemen babaannesine gönderiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0290",
+      "text": "Patika nereye gidiyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0291",
+      "text": "Eski bir köye gidiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0292",
+      "text": "Yeraltı şehrine gidiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0293",
+      "text": "Metin Dede yorgun mu?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0294",
+      "text": "Hayır, yorgun değil.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0295",
+      "text": "Evet, çok yorgun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0296",
+      "text": "Yeraltı şehri kaç yıllık?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0297",
+      "text": "Yaklaşık üç bin yıllık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0298",
+      "text": "Yaklaşık üç yüz yıllık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0299",
+      "text": "Son sabah aile nereye çıkıyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0300",
+      "text": "Seyir tepesine çıkıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0301",
+      "text": "Kervansaraya gidiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0302",
+      "text": "Elif fotoğrafları kime gönderiyor?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0303",
+      "text": "Babaannesine gönderiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0304",
+      "text": "Lena'ya gönderiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0305",
+      "text": "Lüks oteller yerine küçük pansiyonları seçiyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0306",
+      "text": "Uygun fiyatları kaçırmayalım; biletleri bugün ayırtalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0307",
+      "text": "Kalkıştan önce telefonlarınızı kapatın, lütfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0308",
+      "text": "Gidiş uçuşumuz sabah, dönüş uçuşumuz akşam.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0309",
+      "text": "Uluslararası bir havalimanında her şey iki dilde yazıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0310",
+      "text": "Resepsiyona sorup bölgenin haritasını aldık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0311",
+      "text": "İnişten sonra bagajımızı alıp çıkışa yürüdük.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0312",
+      "text": "Şelaleye kadar yürüyüp orada piknik yaptık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0313",
+      "text": "Tekneyle nehrin karşı tarafına geçtik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0314",
+      "text": "Bugün yeni bir patika keşfedip vadinin sonuna kadar yürüdük.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0315",
+      "text": "Gün batımını kaçırmayalım; hemen tepeye çıkalım!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0316",
+      "text": "Kültürel geziler için en iyi mevsim ilkbahar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0317",
+      "text": "Zirvedeki manzara olağanüstüydü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0318",
+      "text": "Bu antik eser şimdi müzede duruyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0319",
+      "text": "Harabeleri rehberli bir turla gezdik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0320",
+      "text": "Kervansarayın büyüleyici taş salonunda biraz dinlendik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0321",
+      "text": "Balon turu müthişti; herkese tavsiye ederim!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0322",
+      "text": "Elif volkanik kayaların renklerine hayran kaldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0323",
+      "text": "Köydeki en sevdiğimiz mekan, küçük bir kitap kafeydi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0324",
+      "text": "Yerli ürünleri çarşıdaki küçük dükkânlardan alalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0325",
+      "text": "Çarşıda dolaşıp kartpostal ve hediyelik eşya aldık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0326",
+      "text": "Dönüşte Ankara'ya uğrayıp Orhan Amca'yı ziyaret ettik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0327",
+      "text": "Aslı Hanım bize köyü gezdirip eski fırını gösterdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0328",
+      "text": "Elif'in gezi defteri",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0329",
+      "text": "Aile kervansarayda biraz dinlendi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0330",
+      "text": "Kaplıcanın suyu soğuktu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0331",
+      "text": "Balon turu çok pahalıydı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0332",
+      "text": "Dedenin en çok sevdiği yer neresiydi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0333",
+      "text": "En çok kaplıcayı sevdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0334",
+      "text": "En çok kervansarayı sevdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0335",
+      "text": "En çok müzeyi sevdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0336",
+      "text": "Kalacağımız pansiyon nerede?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e04.s0337",
+      "text": "Gül Vadisi'nin yanında, tenha bir köyde.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "tr.b1.e04.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann eine Reise planen, eine Unterkunft wählen und Vorschläge machen.",
+        "tr": "Gezi planlamak, konaklama seçmek ve öneride bulunmak",
+        "ar": "التخطيط لرحلة واختيار مكان الإقامة وتقديم الاقتراحات"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e04.l01.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.pansiyon", "tr.b1.e04.karavan", "tr.b1.e04.acente", "tr.b1.e04.rota"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.secenek",
+          "ablenker": ["tr.a1.e07.fiyat", "tr.a2.e03.harita"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e04.ayirtmak",
+          "ablenker": ["tr.b1.e04.ertelemek", "tr.b1.e04.konaklamak"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a05",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.konaklama", "tr.b1.e04.luks", "tr.b1.e04.macera", "tr.b1.e04.tenha"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.yore",
+          "ablenker": ["tr.b1.e04.turizm", "tr.a1.e05.koy"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e04.manzarali",
+          "ablenker": ["tr.b1.e04.turistik", "tr.a1.e04.temiz"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a08",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0001",
+          "wort": 6,
+          "ablenker": ["konaklayaceğız", "konaklayacakız"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a09",
+          "typ": "formen",
+          "lemma": "tr.b1.e04.konaklamak",
+          "zeilen": ["ben", "sen", "o", "biz", "siz", "onlar"],
+          "spalten": ["-(y)ecek"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["konaklayacağım"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["konaklayacaksın"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["konaklayacak"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["konaklayacağız"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["konaklayacaksınız"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["konaklayacaklar"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e04.s0045"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0046"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e04.s0047"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0048",
+          "ablenker": ["tr.b1.e04.s0006", "tr.b1.e04.s0033", "tr.b1.e04.s0018"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e04.s0013",
+          "nach": "ziel",
+          "ablenker": ["seçeyim", "rotası"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0050"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0051",
+          "ablenker": ["tr.b1.e04.s0049", "tr.b1.e04.s0057", "tr.b1.e04.s0040"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a13",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e04.s0022",
+          "alternativen": [
+            "Bu akşam pansiyonu telefonla ayırtacağım.",
+            "Pansiyonu telefonla bu akşam ayırtacağım.",
+            "Bu akşam telefonla pansiyonu ayırtacağım.",
+            "Telefonla bu akşam pansiyonu ayırtacağım.",
+            "Telefonla pansiyonu bu akşam ayırtacağım."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a14",
+          "typ": "frei",
+          "ziel": "tr.b1.e04.s0019",
+          "nach": "ziel",
+          "alternativen": [
+            "Kalabalık yerleri sevmem; tenha bir pansiyon arayalım.",
+            "Ben kalabalık yerleri sevmiyorum; tenha bir pansiyon arayalım."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a15",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0009",
+          "wort": 4,
+          "ablenker": ["gidalım", "gidelım"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l01.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e04.s0014"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e04.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann mich am Flughafen und am Busbahnhof zurechtfinden.",
+        "tr": "Havalimanında ve otogarda yolunu bulmak",
+        "ar": "التنقل في المطار ومحطة الحافلات دون صعوبة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e04.l02.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.kalkis", "tr.b1.e04.inis", "tr.b1.e04.rotar", "tr.b1.e04.aktarma"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.bagaj",
+          "ablenker": ["tr.b1.e04.vize", "tr.b1.e04.veda"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a04",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.gidis", "tr.a2.e03.donus", "tr.b1.e04.terminal", "tr.b1.e04.resepsiyon"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e04.kacirmak",
+          "ablenker": ["tr.a1.e08.binmek", "tr.a2.e03.ulasmak"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.transfer",
+          "ablenker": ["tr.b1.e04.uluslararasi", "tr.a2.e03.ucus"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a07",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0059",
+          "wort": 0,
+          "ablenker": ["Binacağımız", "Bineceğumuz"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a08",
+          "typ": "formen",
+          "zeilen": ["ben", "sen", "o", "biz"],
+          "spalten": ["binmek: … uçak", "kalmak: … pansiyon"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["bineceğim"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["bineceğin"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["bineceği"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["bineceğimiz"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["kalacağım"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["kalacağın"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["kalacağı"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["kalacağımız"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0106"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0107",
+          "ablenker": ["tr.b1.e04.s0072", "tr.b1.e04.s0090", "tr.b1.e04.s0062"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e04.s0081",
+          "nach": "ziel",
+          "alternativen": ["İstanbul'daki aktarmayı rötar yüzünden kaçıracağız!"],
+          "ablenker": ["kaçırdık", "aktarmada"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0108"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0083",
+          "ablenker": ["tr.b1.e04.s0063", "tr.b1.e04.s0101", "tr.b1.e04.s0071"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a12",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0078",
+          "wort": 1,
+          "ablenker": ["gidacak", "gitecek"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a13",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e04.s0100",
+          "alternativen": [
+            "Resepsiyondaki genç adam oda anahtarlarını bize verdi.",
+            "Bize resepsiyondaki genç adam oda anahtarlarını verdi.",
+            "Oda anahtarlarını bize resepsiyondaki genç adam verdi."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e04.s0093",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a15",
+          "typ": "frei",
+          "ziel": "tr.b1.e04.s0068",
+          "nach": "ziel",
+          "alternativen": [
+            "Havalimanında döviz bürosu var; biraz Türk lirası alalım.",
+            "Havalimanında bir döviz bürosu var; biraz Türk parası alalım."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l02.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e04.s0087"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e04.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann ein Ausflugsprogramm in der Natur vorstellen.",
+        "tr": "Doğada bir gezi programını anlatmak",
+        "ar": "عرض برنامج نزهة في الطبيعة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e04.l03.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.vadi", "tr.b1.e04.kanyon", "tr.b1.e04.zirve", "tr.b1.e04.selale"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a03",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.magara", "tr.b1.e04.ova", "tr.b1.e04.patika", "tr.b1.e04.tekne"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.gun-dogumu",
+          "ablenker": ["tr.b1.e04.gun-batimi", "tr.a1.e11.gunes"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e04.kesfetmek",
+          "ablenker": ["tr.b1.e04.dolasmak", "tr.b1.e04.seyretmek"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.yeralti",
+          "ablenker": ["tr.b1.e04.volkanik", "tr.a2.e10.kaya"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a07",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0111",
+          "wort": 2,
+          "ablenker": ["kalkup", "kalkıyıp"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a08",
+          "typ": "formen",
+          "zeilen": ["kalkmak", "gitmek", "yürümek", "almak", "oturmak", "seyretmek"],
+          "spalten": ["-(y)ip"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["kalkıp"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["gidip"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["yürüyüp"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["alıp"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["oturup"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["seyredip"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e04.s0113",
+          "nach": "ziel",
+          "alternativen": ["Vadiye akşam yürüyüp gün batımını seyredelim."],
+          "ablenker": ["yürüdük", "seyredeceğiz"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0153"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0143",
+          "ablenker": ["tr.b1.e04.s0131", "tr.b1.e04.s0124", "tr.b1.e04.s0110"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a11",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0116",
+          "wort": 4,
+          "ablenker": ["geçüp", "geçerip"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a12",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e04.s0121",
+          "alternativen": ["Etrafı zirveye çıkıp seyrettik."]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0117"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0118",
+          "ablenker": ["tr.b1.e04.s0134", "tr.b1.e04.s0114", "tr.b1.e04.s0125"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a14",
+          "typ": "frei",
+          "ziel": "tr.b1.e04.s0127",
+          "nach": "ziel",
+          "alternativen": [
+            "Kanyonun içinde küçük bir şelale ve serin bir patika var.",
+            "Kanyonda serin bir patika ve küçük bir şelale var."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.s0139",
+          "ablenker": ["tr.b1.e04.s0140", "tr.b1.e04.s0119"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l03.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e04.s0143"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e04.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Sehenswürdigkeiten beschreiben und empfehlen.",
+        "tr": "Görülecek yerleri tarif etmek ve tavsiye etmek",
+        "ar": "وصف المعالم السياحية والتوصية بها"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e04.l04.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.kervansaray", "tr.b1.e04.kaplica", "tr.b1.e04.harabe", "tr.b1.e04.eser"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.mimari",
+          "ablenker": ["tr.a1.e09.tarih", "tr.a2.e03.kultur"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e04.antik",
+          "ablenker": ["tr.b1.e04.kulturel", "tr.b1.e04.tarihi"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a05",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.essiz", "tr.b1.e04.inanilmaz", "tr.b1.e04.etkileyici", "tr.b1.e04.buyuleyici"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.kalinti",
+          "ablenker": ["tr.a2.e03.kale", "tr.a2.e10.tas"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e04.olaganustu",
+          "ablenker": ["tr.b1.e04.meshur", "tr.b1.e04.luks"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a08",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0167",
+          "wort": 0,
+          "ablenker": ["Kaldıkımız", "Kaldığımüz"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a09",
+          "typ": "formen",
+          "zeilen": ["ben", "sen", "o", "biz", "siz", "onlar"],
+          "spalten": ["görmek: … yer", "gezmek: … şehir"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["gördüğüm"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["gördüğün"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["gördüğü"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["gördüğümüz"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 0,
+              "loesungen": ["gördüğünüz"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 0,
+              "loesungen": ["gördükleri", "gördüğü"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["gezdiğim"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["gezdiğin"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["gezdiği"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["gezdiğimiz"]
+            },
+            {
+              "zeile": 4,
+              "spalte": 1,
+              "loesungen": ["gezdiğiniz"]
+            },
+            {
+              "zeile": 5,
+              "spalte": 1,
+              "loesungen": ["gezdikleri", "gezdiği"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0193"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0165",
+          "ablenker": ["tr.b1.e04.s0072", "tr.b1.e04.s0026", "tr.b1.e04.s0079"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e04.s0177",
+          "nach": "ziel",
+          "alternativen": ["Kervansarayın mimarisine dedem hayran kaldı."],
+          "ablenker": ["mimarisini", "kaldık"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0194"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0191",
+          "ablenker": ["tr.b1.e04.s0100", "tr.b1.e04.s0081", "tr.b1.e04.s0097"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a13",
+          "typ": "lesen_fragen",
+          "titel": "tr.b1.e04.s0328",
+          "absaetze": [
+            "tr.b1.e04.s0154",
+            "tr.b1.e04.s0155",
+            "tr.b1.e04.s0158",
+            "tr.b1.e04.s0320",
+            "tr.b1.e04.s0319",
+            "tr.b1.e04.s0168",
+            "tr.b1.e04.s0169",
+            "tr.b1.e04.s0321"
+          ],
+          "glossen": ["tr.b1.e04.kervansaray", "tr.b1.e04.harabe", "tr.b1.e04.kaplica", "tr.b1.e04.muthis"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e04.s0329",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e04.s0330",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e04.s0331",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e04.s0332",
+              "antwort": "tr.b1.e04.s0333",
+              "ablenker": ["tr.b1.e04.s0334", "tr.b1.e04.s0335"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a14",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0174",
+          "wort": 3,
+          "ablenker": ["büyüleyeci", "büyülüyici"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a15",
+          "typ": "frei",
+          "ziel": "tr.b1.e04.s0175",
+          "nach": "ziel",
+          "alternativen": ["Bu bölgenin güzelliğini anlatmak çok zor.", "Bu yörenin güzelliğini anlatmak çok güç."]
+        },
+        {
+          "schluessel": "tr.b1.e04.l04.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e04.s0195"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e04.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann auf dem Basar einkaufen, Bewertungen lesen und eine Reservierungsanfrage schreiben.",
+        "tr": "Çarşıda alışveriş yapmak, yorumları okumak ve rezervasyon için e-posta yazmak",
+        "ar": "التسوق في السوق وقراءة التقييمات وكتابة طلب حجز"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e04.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.carsi", "tr.b1.e04.comlek", "tr.b1.e04.kilim", "tr.b1.e04.kartpostal"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.sirin",
+          "ablenker": ["tr.a1.e04.temiz", "tr.a2.e04.sessiz"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e04.ugramak",
+          "ablenker": ["tr.b1.e04.gezdirmek", "tr.b1.e04.fotograflamak"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a05",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.hediyelik", "tr.b1.e04.yoresel", "tr.b1.e04.mekan", "tr.a1.e07.ucuz"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.yerli",
+          "ablenker": ["tr.a1.e07.pahali", "tr.b1.e04.luks"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a07",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0203",
+          "wort": 1,
+          "ablenker": ["yaptıkı", "yapdığı"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a08",
+          "typ": "formen",
+          "zeilen": ["ben", "biz"],
+          "spalten": ["bakmak", "gitmek", "ayırtmak", "dolaşmak"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["bakayım"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["bakalım"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["gideyim"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["gidelim"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 2,
+              "loesungen": ["ayırtayım"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 2,
+              "loesungen": ["ayırtalım"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 3,
+              "loesungen": ["dolaşayım"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 3,
+              "loesungen": ["dolaşalım"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0231"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e04.s0232"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0233"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0234",
+          "ablenker": ["tr.b1.e04.s0324", "tr.b1.e04.s0219", "tr.b1.e04.s0202"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a10",
+          "typ": "lesen_fragen",
+          "titel": "tr.b1.e04.s0254",
+          "absaetze": ["tr.b1.e04.s0255", "tr.b1.e04.s0256", "tr.b1.e04.s0257"],
+          "glossen": ["tr.b1.e04.sirin", "tr.b1.e04.manzarali", "tr.b1.e04.yoresel", "tr.b1.e04.transfer"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e04.s0258",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e04.s0259",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e04.s0260",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e04.s0261",
+              "antwort": "tr.b1.e04.s0262",
+              "ablenker": ["tr.b1.e04.s0263", "tr.b1.e04.s0264"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e04.s0214",
+          "nach": "ziel",
+          "ablenker": ["gönderelım", "alıyor"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a12",
+          "typ": "schreiben",
+          "aufgabe": "tr.b1.e04.s0235",
+          "woerter": {
+            "min": 60,
+            "max": 100
+          },
+          "muster": ["tr.b1.e04.s0236"],
+          "pflichtwoerter": ["oda", "kahvaltı"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a13",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e04.s0204",
+          "alternativen": ["Salon için annem kırmızı bir kilim aldı."]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a14",
+          "typ": "frei",
+          "ziel": "tr.b1.e04.s0207",
+          "nach": "ziel",
+          "alternativen": ["Yöresel yemekleri mutlaka deneyiniz!", "Mutlaka yöresel yemekleri deneyin!"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0229"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0230",
+          "ablenker": ["tr.b1.e04.s0223", "tr.b1.e04.s0222", "tr.b1.e04.s0199"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l05.a16",
+          "typ": "sprechen",
+          "satz": "tr.b1.e04.s0220"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e04.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Geschichte: Täler, eine unterirdische Stadt und Ballons",
+        "tr": "Hikâye: Vadiler, yeraltı şehri ve balonlar",
+        "ar": "قصة: الوديان والمدينة تحت الأرض والمناطيد"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e04.l06.a01",
+          "typ": "geschichte",
+          "titel": "tr.b1.e04.s0265",
+          "zeilen": [
+            {
+              "satz": "tr.b1.e04.s0266"
+            },
+            {
+              "satz": "tr.b1.e04.s0267"
+            },
+            {
+              "satz": "tr.b1.e04.s0268",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e04.s0269",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e04.s0270",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.b1.e04.s0271",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e04.s0272"
+            },
+            {
+              "satz": "tr.b1.e04.s0273",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e04.s0274",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e04.s0275"
+            },
+            {
+              "satz": "tr.b1.e04.s0276"
+            },
+            {
+              "satz": "tr.b1.e04.s0277",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.b1.e04.s0278"
+            },
+            {
+              "satz": "tr.b1.e04.s0279",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e04.s0280",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e04.s0281"
+            },
+            {
+              "satz": "tr.b1.e04.s0282"
+            },
+            {
+              "satz": "tr.b1.e04.s0283",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e04.s0284"
+            },
+            {
+              "satz": "tr.b1.e04.s0285",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.b1.e04.s0286",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e04.s0287",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e04.s0288",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e04.s0289"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 3,
+              "frage": "tr.b1.e04.s0290",
+              "antwort": "tr.b1.e04.s0291",
+              "ablenker": ["tr.b1.e04.s0292"]
+            },
+            {
+              "nach": 8,
+              "frage": "tr.b1.e04.s0293",
+              "antwort": "tr.b1.e04.s0294",
+              "ablenker": ["tr.b1.e04.s0295"]
+            },
+            {
+              "nach": 12,
+              "frage": "tr.b1.e04.s0296",
+              "antwort": "tr.b1.e04.s0297",
+              "ablenker": ["tr.b1.e04.s0298"]
+            },
+            {
+              "nach": 16,
+              "frage": "tr.b1.e04.s0299",
+              "antwort": "tr.b1.e04.s0300",
+              "ablenker": ["tr.b1.e04.s0301"]
+            },
+            {
+              "nach": 23,
+              "frage": "tr.b1.e04.s0302",
+              "antwort": "tr.b1.e04.s0303",
+              "ablenker": ["tr.b1.e04.s0304"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l06.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0268"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0269",
+          "ablenker": ["tr.b1.e04.s0283", "tr.b1.e04.s0280", "tr.b1.e04.s0272"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l06.a03",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0267",
+          "wort": 4,
+          "ablenker": ["kalkup", "kalkerek"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e04.s0284",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e04.l06.a05",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e04.s0272",
+          "alternativen": ["Vadideki küçük bir kafede öğle yemeğini yiyorlar."]
+        },
+        {
+          "schluessel": "tr.b1.e04.l06.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e04.s0287",
+          "nach": "ziel",
+          "alternativen": ["Dede, babaanneyi de gelecek yıl getirelim!"],
+          "ablenker": ["getireyim", "babaanne"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l06.a07",
+          "typ": "frei",
+          "ziel": "tr.b1.e04.s0279",
+          "nach": "ziel",
+          "alternativen": ["Yeraltında hava ne serin!"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l06.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.s0285",
+          "ablenker": ["tr.b1.e04.s0279", "tr.b1.e04.s0274"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.b1.e04.s0288",
+          "ablenker": ["tr.b1.e04.s0287", "tr.b1.e04.s0273"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l06.a10",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0281",
+          "wort": 5,
+          "ablenker": ["hazırladıkı", "hazırlayan"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l06.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0273"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0274",
+          "ablenker": ["tr.b1.e04.s0286", "tr.b1.e04.s0297", "tr.b1.e04.s0300"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l06.a12",
+          "typ": "sprechen",
+          "satz": "tr.b1.e04.s0282"
+        },
+        {
+          "schluessel": "tr.b1.e04.l06.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.b1.e04.s0266"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e04.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Wiederholung: Eine Reise nach Kappadokien",
+        "tr": "Tekrar: Kapadokya'ya bir yolculuk",
+        "ar": "مراجعة: رحلة إلى كابادوكيا"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e04.l07.a01",
+          "typ": "lesen_fragen",
+          "titel": "tr.b1.e04.s0237",
+          "absaetze": [
+            "tr.b1.e04.s0238",
+            "tr.b1.e04.s0239",
+            "tr.b1.e04.s0240",
+            "tr.b1.e04.s0241",
+            "tr.b1.e04.s0242",
+            "tr.b1.e04.s0243",
+            "tr.b1.e04.s0244",
+            "tr.b1.e04.s0245",
+            "tr.b1.e04.s0246"
+          ],
+          "glossen": ["tr.b1.e04.volkanik", "tr.b1.e04.yeralti", "tr.b1.e04.kervansaray", "tr.b1.e04.turizm", "tr.b1.e04.ova"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e04.s0247",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e04.s0248",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e04.s0249",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e04.s0250",
+              "antwort": "tr.b1.e04.s0251",
+              "ablenker": ["tr.b1.e04.s0252", "tr.b1.e04.s0253"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a02",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.rota", "tr.b1.e04.bagaj", "tr.b1.e04.vadi", "tr.b1.e04.eser"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a03",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.gidis", "tr.b1.e04.kalkis", "tr.b1.e04.zirve", "tr.b1.e04.kilim"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.s0306",
+          "ablenker": ["tr.b1.e04.s0315", "tr.b1.e04.s0082"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e04.s0308",
+          "ablenker": ["tr.b1.e04.s0307", "tr.b1.e04.s0311"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a06",
+          "typ": "minimalpaare",
+          "ziel": "tr.b1.e04.carsi",
+          "ablenker": ["tr.a1.e08.karsi"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a07",
+          "typ": "minimalpaare",
+          "ziel": "tr.b1.e04.suru",
+          "ablenker": ["tr.a2.e11.sure"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a08",
+          "typ": "formen",
+          "lemma": "tr.b1.e04.seyretmek",
+          "zeilen": ["ben", "biz"],
+          "spalten": ["gelecek zaman", "istek kipi"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["seyredeceğim"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["seyredeceğiz"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["seyredeyim"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["seyredelim"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a09",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0043",
+          "wort": 3,
+          "ablenker": ["planlayacağiz", "planlayacakız"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0052"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0053",
+          "ablenker": ["tr.b1.e04.s0048", "tr.b1.e04.s0055", "tr.b1.e04.s0049"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e04.s0136",
+          "nach": "ziel",
+          "ablenker": ["kiralayayım", "keşfettik"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.b1.e04.s0141",
+          "ablenker": ["tr.b1.e04.s0124", "tr.b1.e04.s0142"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.b1.e04.s0061",
+          "alternativen": ["Aktarma süremiz sadece 50 dakika; çok hızlı olmalıyız."]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.s0156",
+          "ablenker": ["tr.b1.e04.s0187", "tr.b1.e04.s0188"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a15",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e04.s0150"
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a16",
+          "typ": "frei",
+          "ziel": "tr.b1.e04.s0157",
+          "nach": "ziel",
+          "alternativen": ["Bu kervansaray 700 yıllık bir eser."]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a17",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0336"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0337",
+          "ablenker": ["tr.b1.e04.s0207", "tr.b1.e04.s0204", "tr.b1.e04.s0039"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a18",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0120",
+          "wort": 1,
+          "ablenker": ["yürüyip", "yürüyüb"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a19",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.kaplica", "tr.b1.e04.sirin", "tr.b1.e04.acente", "tr.b1.e04.kanyon"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l07.a20",
+          "typ": "sprechen",
+          "satz": "tr.b1.e04.s0228"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e04.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Prüfstein: Eine Reise nach Kappadokien",
+        "tr": "Değerlendirme: Kapadokya'ya bir yolculuk",
+        "ar": "اختبار: رحلة إلى كابادوكيا"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e04.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.s0305",
+          "ablenker": ["tr.b1.e04.s0039", "tr.b1.e04.s0020"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e04.aktarma",
+          "ablenker": ["tr.b1.e04.inis", "tr.b1.e04.rotar"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e04.patika",
+          "ablenker": ["tr.b1.e04.zirve", "tr.b1.e04.magara"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e04.etkileyici",
+          "ablenker": ["tr.b1.e04.tenha", "tr.b1.e04.yerli"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a05",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.kervansaray", "tr.b1.e04.selale", "tr.b1.e04.doviz", "tr.b1.e04.hediyelik"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a06",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e04.ertelemek", "tr.b1.e04.kacirmak", "tr.b1.e04.gezdirmek", "tr.b1.e04.dolasmak"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a07",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0165",
+          "wort": 1,
+          "ablenker": ["etdiğimiz", "ettikimiz"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a08",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0096",
+          "wort": 1,
+          "ablenker": ["okuyacağim", "okuyacakım"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a09",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0146",
+          "wort": 3,
+          "ablenker": ["oturıp", "oturub"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a10",
+          "typ": "luecke",
+          "ziel": "tr.b1.e04.s0128",
+          "wort": 6,
+          "ablenker": ["dinlenelım", "dinlenalim"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e04.s0114",
+          "nach": "ziel",
+          "alternativen": [
+            "Gün batımında kayalar pembe ve kırmızı görünüyor.",
+            "Kayalar gün batımında kırmızı ve pembe görünüyor.",
+            "Kayalar gün batımında pembe ve kırmızı görünüyor."
+          ],
+          "ablenker": ["kayaları", "doğumunda"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e04.s0198",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e04.s0026",
+          "nach": "ziel",
+          "ablenker": ["erteleyeyim", "alacağım"]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a14",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e04.s0134",
+          "alternativen": ["Yeraltı şehrinin sekiz katı var; biz aşağı dört kat indik."]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a15",
+          "typ": "frei",
+          "ziel": "tr.b1.e04.s0021",
+          "nach": "ziel",
+          "alternativen": [
+            "Manzaralı odalar biraz daha pahalı ama bence buna değer.",
+            "Bence manzaralı odalar biraz daha pahalı, ama değer."
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e04.l08.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e04.s0054"
+            }
+          ],
+          "antwort": "tr.b1.e04.s0055",
+          "ablenker": ["tr.b1.e04.s0049", "tr.b1.e04.s0053", "tr.b1.e04.s0101"]
+        }
+      ]
+    }
+  ]
+}
