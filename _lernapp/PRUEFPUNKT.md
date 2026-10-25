@@ -2,7 +2,9 @@
 
 - **Stand 25.10.2026 22:40 UTC – B1 ar freigegeben, Nacharbeit gedrosselt:**
   - **B1 ar fertig:** Schlussprüfung 1736ddb6 (16 Einheiten, 1.300/1.300 Lemmata, 5.067 Sätze, 0 blockierend, 0 menschlich_klaeren).
-    - Freigabe aller 16 Einheiten (3d2797d7), Merge 5404aa06 auf `main`; tor-a1a2 läuft, live prüfen um 23:00.
+    - Freigabe aller 16 Einheiten (3d2797d7), Merge 5404aa06 auf `main`.
+    - tor-a1a2 grün: check 3.565; lernapp:pruefen über 435 Dateien und 137.493 Einträge, 0 blockierend; Import 155.485.
+    - **Live 23:00:** ar-aus-de und ar-aus-tr je A1 13, A2 14, B1 16 (e01–e16, alle mit Hinweis).
     - **Damit A1–B1 in allen 6 Richtungen fertig**; nur de e16 und tr e16 bleiben Entwurf.
   - **Fragen für die Redaktion (B1 ar):**
     - Wortzahl der ar-Schreibaufgaben (Faktor ≈ 0,75).
