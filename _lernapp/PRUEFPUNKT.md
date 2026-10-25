@@ -1,5 +1,19 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 19:30 UTC – L8-05 Stufe C begonnen (parallel zu B1 ar):**
+  - **B1 ar** `wf_dd49afe9-2ca`: Lektorate 16/16, Übersetzungen e01–e08 und e10, e09 läuft; danach Rückübersetzungen und Schlussprüfung.
+  - **Belege A** `wf_d66ad2f6-7fa`: Gruppe „religion“ (Z-L02, Z-L03, Z-L10, Teil Z-L21) und „lizenzen“ (Z-L15, Z-L17–Z-L22), je mit skeptischer Gegenprüfung. Protokolle unter `_lernapp/protokolle/C-*.md`.
+  - **Prüfskript** `scratchpad/tor-stufe-c.sh` im Arbeitsbaum `l8` (FF auf den Branch):
+    - check, volle Integration, Sprachen, Religion, Wortlaut, lernapp:pruefen, startklar;
+    - Import-Bau wie Vercel (Zeit, Seiten, Sweep, Lern-App ohne Datenbank);
+    - Produktionsbau mit Budget und allen Lern-App-E2E.
+    - Log `scratchpad/tor-stufe-c.log`.
+  - **Platz:** Caches geleert, 3 gemergte und saubere Arbeitsbäume des Gemeinde-Laufs entfernt (a212ace6, ada6de67, a01e5910; Branches bleiben); 5,8 GB frei.
+  - **Danach:**
+    1. Belege B (Z-L04/05/06/07/08/09/11/12/13/16) aus dem Prüfskript.
+    2. Nach B1 ar: Freigabe, Belege Inhalte (Z-L01, Z-L14).
+    3. Frischer Endprüfer, ABNAHME, BERICHT mit Vorführpfad, ABSCHLUSS.
+
 - **Stand 25.10.2026 17:35 UTC – B1 tr fertig:**
   - **Schlussprüfung** a315ff02: 16 Einheiten, 1.284/1.300 Lemmata, 5.296 Sätze, 2.031 Aufgaben, 0 blockierend.
     - 3 menschlich_klaeren, alle in e16: R-06 in tr-aus-ar, weil das arabische Wort für Pilz unvokalisiert gleich dem religiösen Kandidaten geschrieben wird.
