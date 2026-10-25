@@ -1,5 +1,24 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 22:40 UTC – B1 ar freigegeben, Nacharbeit gedrosselt:**
+  - **B1 ar fertig:** Schlussprüfung 1736ddb6 (16 Einheiten, 1.300/1.300 Lemmata, 5.067 Sätze, 0 blockierend, 0 menschlich_klaeren).
+    - Freigabe aller 16 Einheiten (3d2797d7), Merge 5404aa06 auf `main`; tor-a1a2 läuft, live prüfen um 23:00.
+    - **Damit A1–B1 in allen 6 Richtungen fertig**; nur de e16 und tr e16 bleiben Entwurf.
+  - **Fragen für die Redaktion (B1 ar):**
+    - Wortzahl der ar-Schreibaufgaben (Faktor ≈ 0,75).
+    - Kanon: Yāsmīn neu; Nizār erst Mechaniker, dann Lehrer.
+    - tamma + Maṣdar.
+    - OF-10 in e10/e11.
+    - Ausnahme im Vokalisierungsprüfer für li + Artikel vor Sonnenbuchstaben.
+    - Kinderregel e14.
+  - **Taktregel:** 22:35 Auslastung 0,48 > Taktlinie 0,26 + 0,15 → `wf_0d015add-5b5` an der Einheitengrenze angehalten (beide Arbeitsbäume sauber).
+    - N3 committet: f638ac16, 454f5497, 46301580, 65c91543.
+    - N2 committet: 78fe7c90, f33ee39b.
+    - N4 noch nicht begonnen.
+  - **Fortsetzung**, sobald N1 fertig ist (1 Agent, seriell N3 → N2 → N4):
+    - Skript `scratchpad/lernapp-nacharbeit-n2-n4-fortsetzung.js`, Args `scratchpad/n2-n4-fortsetzung-args.json`.
+  - **N1** `wf_ec40915b-8e6`: Gegenprüfung 1 nicht frei, Mängelrunde läuft.
+
 - **Stand 25.10.2026 21:20 UTC – Nacharbeit läuft (neues Fenster ab 21:10, Reset 02:10):**
   - **N1** `wf_ec40915b-8e6` (`l3-05`): Testkurs getrennt (bb873e8e); Bau mit E2E, dann Gegenprüfung.
   - **N2/N3/N4** `wf_0d015add-5b5` (Pipeline, 2 Plätze), je Bau → Gegenprüfung → ggf. Mängelrunde:
