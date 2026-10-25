@@ -1,5 +1,22 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 21:20 UTC – Nacharbeit läuft (neues Fenster ab 21:10, Reset 02:10):**
+  - **N1** `wf_ec40915b-8e6` (`l3-05`): Testkurs getrennt (bb873e8e); Bau mit E2E, dann Gegenprüfung.
+  - **N2/N3/N4** `wf_0d015add-5b5` (Pipeline, 2 Plätze), je Bau → Gegenprüfung → ggf. Mängelrunde:
+    - N3 Auslieferung Wissen und Koran-404: Arbeitsbaum `agent-ac281c5b…`, Branch `lernapp-n3`.
+    - N2 Freigabe-Härtung: Arbeitsbaum `agent-a6ffb449…`, Branch `lernapp-n2`.
+    - N4 Kleinkram: Arbeitsbaum `l8`.
+  - **Prüfskript Stufe C:** Import-Bau 693 s, 2.328 Seiten, Sweep 0 × 5xx, Lern-App ohne DB 13 × 200; Produktionsbau und Budgets grün.
+    - Lern-App-E2E: 86 grün, 16 rot. Die Ursache ist der Testkurs in einer E2E-Datenbank mit allen Inhalten; das behebt N1.
+    - webServer-Zeitgrenze 600 s (e1f96f0b).
+  - **Platte:** 4 weitere gemergte und saubere Gemeinde-Arbeitsbäume entfernt; 2 alte für N2/N3 wiederverwendet.
+  - **B1 ar:** Rückübersetzungen bis e10.
+  - **Danach:**
+    1. N1–N4 mergen.
+    2. Volle E2E und Import-Bau auf dem Merge-Stand, Push, live prüfen.
+    3. Belege B (Technik/Oberfläche).
+    4. Nach B1 ar: Freigabe, Belege Inhalte, Endprüfer, ABNAHME, BERICHT, ABSCHLUSS.
+
 - **Stand 25.10.2026 20:05 UTC – Stufe C: Belege A fertig, Nacharbeit N1 läuft:**
   - **Belege A** (`wf_d66ad2f6-7fa`, Protokolle `_lernapp/protokolle/C-religion*.md`, `C-lizenzen*.md`), Urteil nach Gegenprüfung:
     - erfüllt: Z-L03, Z-L18, Z-L21 (religiöser Teil);
