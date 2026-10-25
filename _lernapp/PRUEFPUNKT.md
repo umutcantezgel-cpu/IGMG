@@ -4,7 +4,8 @@
   - **Schlussprüfung** a315ff02: 16 Einheiten, 1.284/1.300 Lemmata, 5.296 Sätze, 2.031 Aufgaben, 0 blockierend.
     - 3 menschlich_klaeren, alle in e16: R-06 in tr-aus-ar, weil das arabische Wort für Pilz unvokalisiert gleich dem religiösen Kandidaten geschrieben wird.
     - Freigabe e01–e15 (0745164d). e16 bleibt Entwurf.
-  - **Gemergt** b30e16a9 und auf `main`. Nachprüfung `tor-a1a2` läuft, danach live prüfen (Kurse tr-aus-de/tr-aus-ar).
+  - **Gemergt** b30e16a9 und auf `main`. Nachprüfung `tor-a1a2` grün (check 3.565, Sprachen, Religion, Wortlaut, lernapp:pruefen 0 blockierend, Import 147.216).
+  - **Live geprüft 18:07:** tr-aus-de und tr-aus-ar zeigen je 15 B1-Einheiten (tr.b1.e01–e15, alle mit Hinweis); e16 nicht sichtbar.
   - **Es läuft nur noch B1 ar** `wf_dd49afe9-2ca`.
   - **Danach:** L8-05 Stufe C, BERICHT, ABSCHLUSS.
   - **Offen für die Redaktion:**
