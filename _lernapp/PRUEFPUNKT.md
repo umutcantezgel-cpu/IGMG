@@ -1,5 +1,19 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 12:50 UTC – B1 de live:**
+  - **B1 de live:** de-aus-tr und de-aus-ar haben je 15 B1-Einheiten mit `hinweis: true`; e16 ist ausgeblendet. Der Vercel-Bau mit Import-Fix ist grün.
+  - **Taktung:**
+    - Auslastung 0,55 um 12:46 bei einer Taktlinie von 0,29; Ursache sind Opus-Lektorate in tr und ar.
+    - B1 ar `wf_79f0b24f-65e` nach dem Commit a452f2c3 angehalten.
+    - Stand B1 ar: Entwürfe e01–e16, Lektorate e01–e08, Übersetzungen e01/e02, Rückübersetzung e01.
+  - **Es läuft:** B1 tr `wf_058f8fa1-7d9`. Lektorate fertig bis e15, danach Übersetzungen und Rückübersetzungen mit Haiku (günstig).
+  - **Warteschlange** (erst wenn die Auslastung unter der Taktlinie liegt):
+    1. B1 ar fortsetzen: `entworfen` e01–e16, `lektoriert` e01–e08, `uebersetzt` e01/e02, `rueckgeprueft` e01, Haiku.
+       Bei knapper Auslastung `seriell: true`.
+    2. B2 de: `plan` `scratchpad/l3/b2/plan-de.json`, `entworfen` e01–e08.
+    3. B2 tr.
+    4. B2 ar.
+
 - **Stand 25.10.2026 12:20 UTC – Import-Fehler im Bau behoben:**
   - **Befund (Nachprüfung):** Der Import in die Bau-Datenbank brach ab, mit 34.904 „verweist auf unbekanntes …“. Damit wäre auch der Vercel-Bau gescheitert.
   - **Ursache:** `pruefeVerweise` (`web/src/lib/lernapp/inhalt/import.ts`) fragte alle Verweise in einer einzigen `inArray`-Abfrage ab. Ab B1 waren das über 32.767 Parameter, die 16-Bit-Grenze des PostgreSQL-Protokolls.
