@@ -4482,23 +4482,58 @@
         },
         {
           "schluessel": "ar.b1.e05.l07.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.b1.e05.baraa",
+          "ablenker": ["ar.b1.e05.adha-v"]
+        },
+        {
+          "schluessel": "ar.b1.e05.l07.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.b1.e05.mawsimi",
+          "ablenker": ["ar.b1.e05.mustawsaf"]
+        },
+        {
+          "schluessel": "ar.b1.e05.l07.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.b1.e05.irtada",
+          "ablenker": ["ar.b1.e05.sabun"]
+        },
+        {
+          "schluessel": "ar.b1.e05.l07.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.b1.e05.araq-n",
+          "ablenker": ["ar.b1.e05.dam"]
+        },
+        {
+          "schluessel": "ar.b1.e05.l07.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.b1.e05.didda",
+          "ablenker": ["ar.b1.e05.ilaj"]
+        },
+        {
+          "schluessel": "ar.b1.e05.l07.a10",
           "typ": "paare",
           "lemmata": ["ar.b1.e05.harwala", "ar.b1.e05.mustawsaf", "ar.b1.e05.sabun", "ar.b1.e05.dam"]
         },
         {
-          "schluessel": "ar.b1.e05.l07.a06",
+          "schluessel": "ar.b1.e05.l07.a11",
           "typ": "paare",
           "lemmata": ["ar.b1.e05.shafa", "ar.b1.e05.ilaj", "ar.b1.e05.mandil", "ar.b1.e05.nazla"]
         },
         {
-          "schluessel": "ar.b1.e05.l07.a07",
+          "schluessel": "ar.b1.e05.l07.a12",
           "typ": "luecke",
           "ziel": "ar.b1.e05.s0240",
           "wort": 1,
           "ablenker": ["صَحْنًا"]
         },
         {
-          "schluessel": "ar.b1.e05.l07.a08",
+          "schluessel": "ar.b1.e05.l07.a13",
           "typ": "dialog",
           "zeilen": [
             {
@@ -4522,7 +4557,7 @@
           "ablenker": ["ar.b1.e05.s0139", "ar.b1.e05.s0007"]
         },
         {
-          "schluessel": "ar.b1.e05.l07.a09",
+          "schluessel": "ar.b1.e05.l07.a14",
           "typ": "dialog",
           "zeilen": [
             {
@@ -4546,7 +4581,7 @@
           "ablenker": ["ar.b1.e05.s0282", "ar.b1.e05.s0034"]
         },
         {
-          "schluessel": "ar.b1.e05.l07.a10",
+          "schluessel": "ar.b1.e05.l07.a15",
           "typ": "dialog",
           "zeilen": [
             {
@@ -4566,7 +4601,7 @@
           "ablenker": ["ar.b1.e05.s0191", "ar.b1.e05.s0143"]
         },
         {
-          "schluessel": "ar.b1.e05.l07.a11",
+          "schluessel": "ar.b1.e05.l07.a16",
           "typ": "formen",
           "lemma": "ar.b1.e05.shafa",
           "zeilen": ["هُوَ", "هِيَ"],
@@ -4596,24 +4631,24 @@
           ]
         },
         {
-          "schluessel": "ar.b1.e05.l07.a12",
+          "schluessel": "ar.b1.e05.l07.a17",
           "typ": "harakat",
           "ziel": "ar.b1.e05.s0141",
           "varianten": ["يِحُكُّ الطِّفْلُ جِلْدِهُ لِأِنِّهُ يِشْعُرُ بِالْحِكِّةِ بِعْدِ لِعِبِهِ فِي الْحِدِيقِةِ."]
         },
         {
-          "schluessel": "ar.b1.e05.l07.a13",
+          "schluessel": "ar.b1.e05.l07.a18",
           "typ": "satzbau",
           "ziel": "ar.b1.e05.s0276"
         },
         {
-          "schluessel": "ar.b1.e05.l07.a14",
+          "schluessel": "ar.b1.e05.l07.a19",
           "typ": "frei",
           "ziel": "ar.b1.e05.s0278",
           "nach": "ziel"
         },
         {
-          "schluessel": "ar.b1.e05.l07.a15",
+          "schluessel": "ar.b1.e05.l07.a20",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.b1.e05.s0281",
