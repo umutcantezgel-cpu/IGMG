@@ -2,8 +2,12 @@
 // Alltagssätzen, Übersetzungen für alle sechs Richtungen, die Übungstypen aus L1 (Auswahl, Wortbank, Paare; Lektionen l01,
 // l02) und je eine Aufgabe der Typen aus L2-01 (Lektion l03: Bildkarte, Freitext, Hören ohne und mit Ton, Diktat,
 // Minimalpaar, Lücke, Satzbau, Formen, im Arabischen Harakat).
-// Nur für Beispielmodus, E2E und Tests – nie in der Produktion: `pnpm lernapp:import --testkurs` (Bau ohne Datenbank,
-// scripts/bau-datenbank.mjs; E2E-Datenbank), nicht `pnpm db:seed`.
+// Nur für E2E, Tests und einen Beispielmodus, der ihn ausdrücklich anfordert – nie in der Produktion: `pnpm lernapp:import
+// --testkurs` (E2E-Datenbank; Bau ohne Datenbank nur mit LERNAPP_TESTKURS=1, scripts/bau-datenbank.mjs), nicht `pnpm db:seed`.
+// - Eigener Ort (Stufe C, L15-1): Einheit `<kurs>.a1.test` statt eines Schlüssels der echten Inhalte – die Testeinheit ersetzt
+//   nie eine echte Einheit (früher `<kurs>.a1.e01`), und ihre Töne hängen nur an Einträgen mit Quelle `test:…`
+//   (`clipZulaessig`, audio/stimmen.ts). Reihenfolge 1 wie die Vorkurs-Einheiten `<kurs>.a1.e00-*`, vor der echten e01
+//   (Reihenfolge 2): Im Lernpfad steht sie unter den ersten beiden Einheiten, die automatisch gespeichert werden (E2E).
 // - KEIN Religionsbezug, keine Formeln, keine Koran- oder Hadith-Wörter (KI-Regel 2, KERN 4.0 §2). Sätze mit höchstens drei
 //   Wörtern (kein 4-Gramm möglich, KERN 4.0 §3 b/c).
 // - Arabisch nur als Codepunkt-Escapes (KERN 4.0 §3: arabische Schrift nicht in Code-Dateien).
@@ -169,7 +173,9 @@ const HARAKAT_VARIANTEN = ['\u0643\u064E\u062A\u064E\u0627\u0628', '\u0643\u0650
 
 const THEMA = { de: 'Testeinheit: Alltag', tr: 'Test ünitesi: Gündelik hayat' };
 
-const einheitVon = (kurs: Sprache) => `${kurs}.a1.e01`;
+/** Schlüssel der Testeinheit je Zielsprache (eigener Ort, kollidiert mit keinem Schlüssel der echten Inhalte). */
+export const testEinheit = (kurs: Sprache) => `${kurs}.a1.test`;
+const einheitVon = testEinheit;
 
 export function sprachDatei(kurs: Sprache): SprachEinheitDatei {
   const e = einheitVon(kurs);

@@ -32,8 +32,8 @@ test('Einheit offline speichern, Netz abklemmen: Lektion vollständig spielbar, 
   expect(vorrat).toEqual(
     expect.arrayContaining([
       `igmg-lernapp-schale /lern-app/de/${KURS}/ueben`,
-      expect.stringMatching(new RegExp(`^igmg-lernapp-pakete /lern-app/pakete/${KURS}/tr\\.a1\\.e01/[0-9a-f]{64}$`)),
-      expect.stringMatching(/^igmg-lernapp-audio \/lern-app\/audio\/tr\/tr\.a1\.e01-[0-9a-f]{16}\.lpa$/),
+      expect.stringMatching(new RegExp(`^igmg-lernapp-pakete /lern-app/pakete/${KURS}/tr\\.a1\\.test/[0-9a-f]{64}$`)),
+      expect.stringMatching(/^igmg-lernapp-audio \/lern-app\/audio\/tr\/tr\.a1\.test-[0-9a-f]{16}\.lpa$/),
     ]),
   );
   // Dauerhafter Speicher erst beim bewussten Speichern erbeten; der Eintrag im Speicher „pakete“ ist offline markiert
@@ -51,7 +51,7 @@ test('Einheit offline speichern, Netz abklemmen: Lektion vollständig spielbar, 
     db.close();
     return alle;
   });
-  expect(eintrag).toEqual(expect.arrayContaining([expect.objectContaining({ einheit: 'tr.a1.e01', offline: true })]));
+  expect(eintrag).toEqual(expect.arrayContaining([expect.objectContaining({ einheit: 'tr.a1.test', offline: true })]));
 
   // Netz abklemmen: Seite und Kontext (auch Anfragen des Service Workers)
   const abgeklemmt: string[] = [];

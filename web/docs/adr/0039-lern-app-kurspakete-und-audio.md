@@ -118,6 +118,21 @@ Gilt vor Nr. 3, 6, 9 und der Fortschreibung S-L1 Nr. 2, wo es abweicht.
     Adresse unter `LERNAPP_BLOB_BASIS` melden. Ältere Bündel holt das Skript nur, soweit der Neubau Clips aus ihnen übernimmt,
     je Bündel einmal (`src/lib/lernapp/audio/blob.ts`, `alteBuendelFuerNeubau`).
 
+## Fortschreibung nach Stufe C (25.10.2026, Befund L15-1 in `_lernapp/protokolle/C-lizenzen.md`, Z-L15/Z-L20/Z-L21)
+
+Gilt vor Nr. 11 und vor der Fortschreibung L3-05 Nr. 2, wo es abweicht. Anlass: Der Vercel-Bau ohne Datenbank importierte den
+Testkurs unter `<kurs>.a1.e01` und ersetzte damit die echte Einheit; über den Text-Hash bekamen echte Einträge Testtöne.
+
+1. **Testkurs am eigenen Ort:** Einheiten `<kurs>.a1.test` (`drizzle/seeds/lernapp-test.ts`, `testEinheit`), Testbündel
+   `<kurs>.a1.test-<sha16>.lpa`. Der Bau ohne Datenbank (`scripts/bau-datenbank.mjs`) importiert ihn nur mit
+   `LERNAPP_TESTKURS=1`; die öffentliche Test-Domain zeigt nur echte Einheiten. E2E und Integration importieren ihn selbst.
+2. **Zulässige Clips je Eintrag** (`clipZulaessig` in `src/lib/lernapp/audio/stimmen.ts`, Paketbau und Audio-Studio):
+   Testtöne nur an Einträgen mit Quelle `test:…`; für echte Einträge Sprachausgabe nur mit der freigegebenen Stimme und
+   `mensch:<id>` nur mit hinterlegter Vereinbarung (Medium nicht im Papierkorb). Ohne zulässigen Clip „Audio folgt“.
+3. **Hörabnahme im Register:** `Stimme.hoerabnahme` (`'offen' | 'bestanden'`); freigegeben ist eine Stimme erst mit
+   `'bestanden'` (LM-06, nur Mensch). Der Prüfer „audio“ blockiert Sprachausgabe einer Stimme mit offener Hörabnahme im
+   eingecheckten Manifest; Arbeitsliste und Manifest-Bau nutzen die registrierte Stimme weiter.
+
 ## Alternativen
 
 - Ein JSON je Kurs: verworfen. Zu groß für das Offline-Speichern einzelner Stufen, und jede Freigabe änderte die ganze Datei.

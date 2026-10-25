@@ -14,7 +14,7 @@ import { ernsteBefunde, KURS, LEKTION_1, liveRegion } from './hilfen';
  */
 const m = de.melden;
 const v = verwaltung.lernapp.meldungen;
-const AUFGABE = 'tr.a1.e01.l01.a01';
+const AUFGABE = 'tr.a1.test.l01.a01';
 
 test.describe.configure({ mode: 'serial' });
 

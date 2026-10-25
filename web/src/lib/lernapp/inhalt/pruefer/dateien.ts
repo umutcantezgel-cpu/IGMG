@@ -28,9 +28,15 @@ export type Inhalte = {
   aussprache: { pfad: string; daten: AusspracheDatei }[];
   audio: { pfad: string; daten: AudioManifestDatei }[];
   symbole: { pfad: string; daten: SymbolDatei } | null;
+  /** Vorsilbe der Quellen des Testkurses (`testkurs/`, `PruefOptionen.praefix`); leer bei den echten Inhalten */
+  praefix: string;
 };
 
-export const leereInhalte = (): Inhalte => ({
+/** Datei des Testkurses (Pfad mit der Vorsilbe `praefix`)? Nur dort sind Testeinheiten und Quellen `test:…` zulässig. */
+export const ausTestkurs = (inhalte: Pick<Inhalte, 'praefix'>, pfad: string): boolean =>
+  inhalte.praefix !== '' && pfad.startsWith(inhalte.praefix);
+
+export const leereInhalte = (praefix = ''): Inhalte => ({
   sprache: [],
   uebersetzung: [],
   rahmen: new Map(),
@@ -40,6 +46,7 @@ export const leereInhalte = (): Inhalte => ({
   aussprache: [],
   audio: [],
   symbole: null,
+  praefix,
 });
 
 /**
@@ -52,7 +59,7 @@ export function leseInhalte(
   { praefix = '', pfadePruefen = true }: { praefix?: string; pfadePruefen?: boolean } = {},
 ): { inhalte: Inhalte; befunde: Befunde } {
   const b = new Befunde('schema');
-  const inhalte = leereInhalte();
+  const inhalte = leereInhalte(praefix);
   for (const q of quellen) {
     const pfad = praefix && q.pfad.startsWith(praefix) ? q.pfad.slice(praefix.length) : q.pfad;
     const art = dateiArtVon(pfad);

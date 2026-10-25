@@ -64,7 +64,7 @@ describe('Import: ein ausgeschlossener Tatoeba-Satz bricht ab, bevor geschrieben
   it('pruefeTatoebaAusschluss meldet nur ausgeschlossene IDs, ohne Text', () => {
     const id = [...TATOEBA_AUSSCHLUSS][0]!;
     const befunde = pruefeTatoebaAusschluss(leseDateien(mitQuelle(id)));
-    expect(befunde).toEqual([expect.stringMatching(new RegExp(`ar\\.a1\\.e01\\.s0001: Tatoeba-Satz ${id} ausgeschlossen`))]);
+    expect(befunde).toEqual([expect.stringMatching(new RegExp(`ar\\.a1\\.test\\.s0001: Tatoeba-Satz ${id} ausgeschlossen`))]);
     expect(pruefeTatoebaAusschluss(leseDateien(mitQuelle(78)))).toEqual([]);
   });
 

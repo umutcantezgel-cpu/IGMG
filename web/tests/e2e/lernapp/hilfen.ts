@@ -5,16 +5,16 @@ import { formatiere } from '../../../src/lib/lernapp/format';
 
 /**
  * Hilfen für die E2E der Lern-App (L1): Testkurs aus dem Seed (`drizzle/seeds/lernapp-test.ts`, neutrale Alltagswörter,
- * synthetische Töne), Lektion `tr-aus-de.a1.e01.l01` in der deutschen Oberfläche:
+ * synthetische Töne), Lektion `tr-aus-de.a1.test.l01` in der deutschen Oberfläche:
  * 1. Auswahl „su“ → „Wasser“  2. Paare su/Wasser, ekmek/Brot, ev/Haus, kitap/Buch  3. Wortbank „Su içiyorum.“
  * 4. Auswahl „Buch“ → „kitap“.
  */
 
 export const KURS = 'tr-aus-de';
-export const LEKTION_1 = 'tr-aus-de.a1.e01.l01';
-export const LEKTION_2 = 'tr-aus-de.a1.e01.l02';
-export const EINHEIT = 'tr.a1.e01';
-export const KARTE_WASSER = 'tr-aus-de:tr.a1.e01.w001';
+export const LEKTION_1 = 'tr-aus-de.a1.test.l01';
+export const LEKTION_2 = 'tr-aus-de.a1.test.l02';
+export const EINHEIT = 'tr.a1.test';
+export const KARTE_WASSER = 'tr-aus-de:tr.a1.test.w001';
 export const PAARE: [string, string][] = [
   ['su', 'Wasser'],
   ['ekmek', 'Brot'],

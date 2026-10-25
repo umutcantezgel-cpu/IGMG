@@ -59,7 +59,7 @@ test('Deutsch lernen: Hörübung spielt den Clip aus dem Bündel der Einheit bis
       return spiele.call(this);
     };
   });
-  await page.goto('/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l03');
+  await page.goto('/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.test.l03');
   const bedeutung = page.getByRole('heading', { name: t.aufgaben.hoeren_waehlen.waehleBedeutung });
 
   // Bildkarte, Freitext, erste Hörübung (ohne Testton „Audio folgt“, im Probelauf mit Clip) bis zur Hörübung „Bedeutung“
@@ -93,6 +93,6 @@ test('Deutsch lernen: Hörübung spielt den Clip aus dem Bündel der Einheit bis
   await hoere(page);
   await hoere(page, true);
   expect(buendel.length).toBeGreaterThan(0);
-  for (const b of buendel) expect(b).toMatch(/^\/lern-app\/audio\/de\/de\.a1\.e01-[0-9a-f]{16}\.lpa$/);
+  for (const b of buendel) expect(b).toMatch(/^\/lern-app\/audio\/de\/de\.a1\.test-[0-9a-f]{16}\.lpa$/);
   if (process.env.E2E_AUDIO_BUENDEL) expect(new Set(buendel)).toEqual(new Set([`/lern-app/audio/de/${process.env.E2E_AUDIO_BUENDEL}`]));
 });

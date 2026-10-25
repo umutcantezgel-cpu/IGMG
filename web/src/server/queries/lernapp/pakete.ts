@@ -1,10 +1,11 @@
 import 'server-only';
-import { and, asc, eq, inArray, sql } from 'drizzle-orm';
+import { and, asc, eq, inArray, isNull, sql } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import { datenbankVerfuegbar, ohneLaufzeitDatenbank } from '@/lib/db/verfuegbar';
 import { funktionAn } from '@/lib/funktionen';
+import { clipZulaessig, istTestQuelle } from '@/lib/lernapp/audio/stimmen';
 import { type Pruefung, sprachlichGesperrt } from '@/lib/lernapp/freigabe';
 import { AufgabeVorlageSchema, verweiseVon } from '@/lib/lernapp/inhalt/schema';
 import {
@@ -97,6 +98,22 @@ export async function ladePruefungen(ids: readonly { typ: InhaltTyp; id: string 
     ]);
   }
   return ergebnis;
+}
+
+/**
+ * Sprecherinnen und Sprecher der Clips `mensch:<id>` mit hinterlegter Vereinbarung (ADR 0029 Nr. 4): Medium der Vereinbarung
+ * nicht im Papierkorb, die Stimme passt zur Spalte `sprecherId`. Nur ihre Aufnahmen werden ausgeliefert (`clipZulaessig`).
+ */
+export async function sprecherMitVereinbarung(clips: readonly { stimme: string; sprecherId: string | null }[]): Promise<Set<string>> {
+  const ids = [...new Set(clips.flatMap((c) => (c.sprecherId && c.stimme === `mensch:${c.sprecherId}` ? [c.sprecherId] : [])))];
+  const zeilen = await inBloecken(ids, (block) =>
+    db
+      .select({ id: schema.lernappSprecher.id })
+      .from(schema.lernappSprecher)
+      .innerJoin(schema.medium, eq(schema.medium.id, schema.lernappSprecher.vereinbarungMediumId))
+      .where(and(inArray(schema.lernappSprecher.id, block), isNull(schema.medium.imPapierkorbSeit))),
+  );
+  return new Set(zeilen.map((z) => z.id));
 }
 
 /**
@@ -263,7 +280,11 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
     });
   }
 
-  // Audio: nur Zieltexte ohne Religionsbezug, je Text die Stimme mit Vorrang (Mensch vor Sprachausgabe vor Testton)
+  // Audio (Z-L15, Z-L20, Z-L21): nur Zieltexte ohne Religionsbezug, je Text die Stimme mit Vorrang (Mensch vor Sprachausgabe
+  // vor Testton) unter den zulässigen (`clipZulaessig`): Testtöne nur für Einträge des Testkurses (Quelle `test:…`),
+  // Sprachausgabe für echte Einträge nur mit freigegebener Stimme (Hörabnahme bestanden), menschliche Aufnahmen nur mit
+  // hinterlegter Vereinbarung. Die Clips hängen am Text-Hash; ein echter Eintrag mit demselben Text wie ein Eintrag des
+  // Testkurses bekommt deshalb nie dessen Testton (Stufe C, L15-1).
   const hashes = [...new Set([...eintraege.values()].filter((e) => !e.religionsbezug).map((e) => textHashGemerkt(e.text)))];
   const [alleClips, wahlen] = await Promise.all([
     inBloecken(hashes, (block) =>
@@ -289,6 +310,7 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
       !(ohneMensch.has(c.textHash) && c.stimme.startsWith('mensch:')) &&
       !sprachlichGesperrt(c.sha256, clipPruefungen.get(`audio:${c.id}`) ?? []),
   );
+  const vereinbarung = await sprecherMitVereinbarung(clips);
   const buendelNamen = [...new Set(clips.map((c) => c.buendel))];
   const groessen = new Map<string, number>(
     (
@@ -304,18 +326,25 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
       )
     ).map((z) => [z.buendel, Number(z.bytes)]),
   );
-  const audio = new Map<string, BauAudio>();
-  for (const c of [...clips].sort((a, b) => vorrang(a.stimme) - vorrang(b.stimme) || (a.stimme < b.stimme ? -1 : 1))) {
-    if (audio.has(c.textHash)) continue;
-    audio.set(c.textHash, {
-      adresse: buendelAdresse(ziel, c.buendel),
-      buendelBytes: groessen.get(c.buendel) ?? c.versatz + c.laenge,
-      versatz: c.versatz,
-      laenge: c.laenge,
-      dauerMs: c.dauerMs,
-      stimme: c.stimme,
-    });
-  }
+  const nachVorrang = [...clips].sort((a, b) => vorrang(a.stimme) - vorrang(b.stimme) || (a.stimme < b.stimme ? -1 : 1));
+  /** Clip je Text-Hash für echte Einträge bzw. für Einträge des Testkurses. */
+  const audioFuer = (testinhalt: boolean) => {
+    const audio = new Map<string, BauAudio>();
+    for (const c of nachVorrang) {
+      if (audio.has(c.textHash) || !clipZulaessig(c.stimme, { sprache: ziel, testinhalt, vereinbarung })) continue;
+      audio.set(c.textHash, {
+        adresse: buendelAdresse(ziel, c.buendel),
+        buendelBytes: groessen.get(c.buendel) ?? c.versatz + c.laenge,
+        versatz: c.versatz,
+        laenge: c.laenge,
+        dauerMs: c.dauerMs,
+        stimme: c.stimme,
+      });
+    }
+    return audio;
+  };
+  const audioEcht = audioFuer(false);
+  const audioTest = audioFuer(true);
 
   return einheiten.map((e) => {
     const eigene = verweise.get(e.id) ?? new Set<string>();
@@ -345,7 +374,10 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
           })),
       }));
     const eigeneEintraege = nur(eintraege);
-    const eigeneHashes = new Set([...eigeneEintraege.values()].map((x) => textHashGemerkt(x.text)));
+    const hashesVon = (test: boolean) =>
+      new Set([...eigeneEintraege.values()].filter((x) => istTestQuelle(x.quelle) === test).map((x) => textHashGemerkt(x.text)));
+    const echteHashes = hashesVon(false);
+    const testHashes = hashesVon(true);
     return {
       richtung,
       einheit: {
@@ -376,7 +408,11 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
           verfasstVon: t.verfasstVon,
           pruefungen: p('tipp', t.id),
         })),
-      audio: new Map([...audio].filter(([h]) => eigeneHashes.has(h))),
+      // gleicher Text in einem echten und einem Test-Eintrag derselben Einheit: es gilt die strengere Regel (echt)
+      audio: new Map([
+        ...[...audioTest].filter(([h]) => testHashes.has(h) && !echteHashes.has(h)),
+        ...[...audioEcht].filter(([h]) => echteHashes.has(h)),
+      ]),
     };
   });
 }

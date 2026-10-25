@@ -84,7 +84,7 @@ Hinweise:
   überspringen das Senden des Kindes bzw. die Regeln-Bestätigung mit Begründung – den vollen Lauf daher zwischen 08 und
   19 Uhr starten.
 - Verwaltung der Lern-App (L3-06): `lernapp/verwaltung-sprachpruefung.spec.ts` (Rolle „Sprachprüfung“ mit Prüfsprache
-  Deutsch, Stichprobe der Zieltexte von `de.a1.e01` bleibt offen) und `lernapp/verwaltung-audio.spec.ts` (Ersatz-Mikrofon
+  Deutsch, Stichprobe der Zieltexte der Testeinheit `de.a1.test` bleibt offen) und `lernapp/verwaltung-audio.spec.ts` (Ersatz-Mikrofon
   von Chromium, Ablage unter `MEDIEN_VERZEICHNIS`) brauchen `FUNKTION_LERNAPP=an`; beide nur im Projekt `desktop`.
 - Religiöse Prüfung der Lern-App (L6-03): `lernapp/verwaltung-religioes.spec.ts` legt Platzhalter-Bausteine des
   Wissenskurses (`islam.grund.e90…`, keine religiösen Texte) per SQL an und gibt eine Aussage mit zwei neuen Konten der Rolle

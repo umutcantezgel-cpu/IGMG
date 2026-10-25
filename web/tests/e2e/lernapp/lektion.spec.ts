@@ -16,7 +16,7 @@ import { ergebnisText, ernsteBefunde, KURS, LEKTION_1, LEKTION_2, spieleLektion1
 
 type Ui = 'de' | 'tr' | 'ar';
 const TEXTE = { de, tr, ar } as const;
-/** Je Oberfläche ein Kurs, dessen Ausgangssprache sie ist (Testkurs: Einheit a1.e01 je Zielsprache). */
+/** Je Oberfläche ein Kurs, dessen Ausgangssprache sie ist (Testkurs: Einheit a1.test je Zielsprache). */
 const KURS_VON: Record<Ui, string> = { de: 'tr-aus-de', tr: 'de-aus-tr', ar: 'de-aus-ar' };
 
 async function ueberlauf(page: Page) {

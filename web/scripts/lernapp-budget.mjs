@@ -31,8 +31,8 @@ const ROUTEN = {
   start: { pfad: '/lern-app/de' },
   lernpfad: { pfad: '/lern-app/ar/de-aus-ar', warte: 'main a[href*="/ueben?l="]' },
   fortschritt: { pfad: '/lern-app/de/fortschritt' },
-  spieler: { pfad: '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l01', warte: 'main input[type="radio"]' },
-  spielerWortbank: { pfad: '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l02', warte: 'main [role="toolbar"]' },
+  spieler: { pfad: '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.test.l01', warte: 'main input[type="radio"]' },
+  spielerWortbank: { pfad: '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.test.l02', warte: 'main [role="toolbar"]' },
   // L2-04: neues Gerät – ohne Karten bzw. vor „Test beginnen“ darf kein Zod laden (TBT der Spieler-Routen)
   wiederholen: { pfad: '/lern-app/de/tr-aus-de/wiederholen', warte: '#wiederholen-sitzung p' },
   einstufung: { pfad: '/lern-app/de/tr-aus-de/einstufung', warte: '#einstufung-test button' },

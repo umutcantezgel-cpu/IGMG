@@ -2,7 +2,7 @@ import type { Sprache } from '../kurse';
 
 /**
  * Stimmen der Sprachausgabe je Zielsprache (KERN 4.0 §4, L3-E10/L3-E10a, ADR 0045 Nr. 11 mit Fortschreibung S3): je Sprache
- * genau eine freigegebene synthetische Stimme oder keine. Ohne Stimme bleibt es bei „Audio folgt“ (bis eigene Aufnahmen bzw.
+ * genau eine registrierte synthetische Stimme oder keine. Ohne Stimme bleibt es bei „Audio folgt“ (bis eigene Aufnahmen bzw.
  * eine eigene Stimme die Prüfkette bestehen) – `pnpm lernapp:audio-liste` liefert dann nichts.
  *
  * - **de:** Coqui-VITS Thorsten, erzeugt über den eigenen ONNX-Export (`_lernapp/werkzeuge/tts/`, Beleg S3). Gewichte
@@ -10,6 +10,11 @@ import type { Sprache } from '../kurse';
  *   16 Hex-Zeichen des SHA-256 der ONNX-Datei; ein neuer Export ist eine neue Stimme (alle Clips werden neu erzeugt).
  * - **tr:** keine (glow-tts zurückgestellt bis zur Bestätigung der Datenrechte, LM-24; Chatterbox kein Übergang).
  * - **ar:** keine (Chatterbox hat den Vokalisierungstest nicht bestanden; eigene Stimme bzw. Aufnahmen, LM-25/LM-26).
+ *
+ * **Hörabnahme** (`hoerabnahme`, LM-06, Z-L21): Eine Stimme ist erst mit `'bestanden'` freigegeben. Bis dahin bleibt sie im
+ * Register (Herkunftskette, Namensnennung, Arbeitsliste der Sprachausgabe), aber der Prüfer „Audio“ lässt sie in keinem
+ * eingecheckten Manifest zu und der Paketbau liefert ihre Clips an keinen echten Eintrag aus – dort steht „Audio folgt“.
+ * Auf `'bestanden'` setzt sie nur ein Mensch nach der Hörabnahme (MENSCHEN.md, LM-06).
  *
  * Sprachneutrale Angaben (Eigennamen, Lizenzkennungen, Adressen); die Oberflächentexte stehen in den Nachrichtendateien.
  */
@@ -35,6 +40,8 @@ export type Stimme = {
   quelle: { modell: string; sha256: string; onnxSha256: string };
   /** Wasserzeichen des Modells (offenzulegen, ADR 0039 Nr. 9) */
   wasserzeichen: false;
+  /** Hörabnahme durch Menschen (LM-06): erst `'bestanden'` gibt die Stimme für Manifest und Pakete frei */
+  hoerabnahme: 'offen' | 'bestanden';
 };
 
 export const THORSTEN: Stimme = {
@@ -54,16 +61,45 @@ export const THORSTEN: Stimme = {
     onnxSha256: 'd09293d41bc9427e30c7c3befd2ca44533ac9b847e860797140dbc3b8cf0a35f',
   },
   wasserzeichen: false,
+  // LM-06 offen: objektive Tests bestanden (Beleg S3), die Hörabnahme durch Menschen fehlt noch
+  hoerabnahme: 'offen',
 };
 
-/** Freigegebene Stimme je Zielsprache (`null`: keine – „Audio folgt“). */
+/** Registrierte Stimme je Zielsprache (`null`: keine – „Audio folgt“); freigegeben erst nach der Hörabnahme. */
 export const STIMMEN: Readonly<Record<Sprache, Stimme | null>> = { de: THORSTEN, tr: null, ar: null };
 
-/** Alle freigegebenen Stimmen (für Quellen und Prüfer). */
+/** Alle registrierten Stimmen (für Quellen und Prüfer). */
 export const ALLE_STIMMEN: readonly Stimme[] = Object.values(STIMMEN).filter((s): s is Stimme => s !== null);
 
-/** Stimme einer Zielsprache. */
+/** Registrierte Stimme einer Zielsprache (auch vor der Hörabnahme: Arbeitsliste, Manifest-Bau, Herkunftskette). */
 export const stimmeFuer = (sprache: Sprache): Stimme | null => STIMMEN[sprache];
+
+/** Freigegebene Stimme einer Zielsprache: registriert und Hörabnahme bestanden (LM-06); sonst `null` – „Audio folgt“. */
+export const freigegebeneStimme = (sprache: Sprache): Stimme | null => {
+  const s = STIMMEN[sprache];
+  return s?.hoerabnahme === 'bestanden' ? s : null;
+};
+
+/** Vorsilbe der Quelle von Einträgen des Testkurses (`drizzle/seeds/lernapp-test.ts`) und der Testton-Stimme. */
+export const TEST_VORSILBE = 'test:';
+
+/** Eintrag des Testkurses (Quelle `test:…`)? Nur solche Einträge bekommen Testtöne. */
+export const istTestQuelle = (quelle: string): boolean => quelle.startsWith(TEST_VORSILBE);
+
+/**
+ * Darf ein Clip an einen Eintrag ausgeliefert werden (Z-L15, Z-L20, Z-L21)? Paketbau (`server/queries/lernapp/pakete.ts`)
+ * und Audio-Studio (wirksame Stimme) wenden dieselbe Regel an:
+ * - Echte Einträge: menschliche Aufnahme `mensch:<id>` nur mit hinterlegter Vereinbarung (`vereinbarung` enthält die id);
+ *   Sprachausgabe nur mit der freigegebenen Stimme der Sprache (registriert und Hörabnahme bestanden); keine Testtöne.
+ * - Einträge des Testkurses (`testinhalt`, Quelle `test:…`): zusätzlich Testtöne (`test:`) und die registrierte Stimme auch
+ *   vor der Hörabnahme (Probelauf der Audio-Kette im Testkurs, nie an echten Einträgen).
+ * Alles andere (unbekannte Stimme, fremde Sprachausgabe) nie.
+ */
+export function clipZulaessig(stimme: string, o: { sprache: Sprache; testinhalt: boolean; vereinbarung: ReadonlySet<string> }): boolean {
+  if (stimme.startsWith('mensch:')) return o.vereinbarung.has(stimme.slice('mensch:'.length));
+  if (stimme.startsWith('tts:')) return stimme === (o.testinhalt ? stimmeFuer(o.sprache) : freigegebeneStimme(o.sprache))?.id;
+  return o.testinhalt && stimme.startsWith(TEST_VORSILBE);
+}
 
 /** Eintrag der Stimme im Audio-Manifest (`audio-manifest/<sprache>.json`, Feld `stimmen`). */
 export function manifestStimme(s: Stimme) {

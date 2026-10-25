@@ -26,7 +26,7 @@ test('ohne Konto: nur GET an den eigenen Ursprung, keine API, keine Cookies', as
   await expect(page.getByRole('status').filter({ hasText: de.einstellungen.gespeichert })).toBeVisible();
   await page.goto(`/lern-app/de/${KURS}/wiederholen`);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(de.wiederholen.titel);
-  await page.goto(`/lern-app/de/${KURS}/tipps?e=tr.a1.e01`);
+  await page.goto(`/lern-app/de/${KURS}/tipps?e=tr.a1.test`);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(de.tipps.titel);
   await page.goto('/lern-app/de');
   await expect(page.getByText(de.heute.nochNichts)).toHaveCount(0);

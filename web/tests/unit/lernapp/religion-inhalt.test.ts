@@ -43,7 +43,7 @@ describe('Inhaltsdateien: Formel-Lexikon mit Kennzeichen, 4-Gramme über Satzgre
       if (pfad.includes('sprache/de/')) (d as Json).saetze[0]!.text = 'Wir gehen zur Moschee.';
     });
     expect(pruefe(ohne)).toEqual([
-      expect.stringMatching(/sprache\/de\/.*: de\.a1\.e01\.s0001: Formel-Lexikon \(Moschee\) ohne religionsbezug: true$/),
+      expect.stringMatching(/sprache\/de\/.*: de\.a1\.test\.s0001: Formel-Lexikon \(Moschee\) ohne religionsbezug: true$/),
     ]);
     const mit = geaendert((pfad, d) => {
       if (pfad.includes('sprache/de/')) Object.assign((d as Json).saetze[0]!, { text: 'Wir gehen zur Moschee.', religionsbezug: true });
@@ -84,7 +84,7 @@ describe('Inhaltsdateien: Formel-Lexikon mit Kennzeichen, 4-Gramme über Satzgre
         Object.assign(s[1]!, { text: VIER.slice(2).join(' '), religionsbezug: true, tokens: undefined });
       }),
     );
-    expect(befunde).toEqual([expect.stringMatching(/sprache\/ar\/.*: ar\.a1\.e01\.s0001: Koran-4-Gramm \(Sure \d+:\d+\)$/)]);
+    expect(befunde).toEqual([expect.stringMatching(/sprache\/ar\/.*: ar\.a1\.test\.s0001: Koran-4-Gramm \(Sure \d+:\d+\)$/)]);
   });
 
   it('der Import bricht bei einem Befund ab, bevor er schreibt (ImportFehler mit den Befunden)', async () => {

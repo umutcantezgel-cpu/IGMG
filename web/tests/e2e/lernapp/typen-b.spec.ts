@@ -336,7 +336,7 @@ test.describe('Übungstypen L2-02 – Oberfläche de, Kurs tr-aus-de', () => {
       expect(await ueberlauf(page), `${name}: Überlauf`).toBe(0);
     };
     await geraet(page);
-    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l04');
+    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l04');
     await expect(page.locator('html')).toHaveAttribute('dir', 'ltr');
 
     await ueberschrift(page, t.aufgaben2.dialog.anweisung);
@@ -389,7 +389,7 @@ test.describe('Übungstypen L2-02 – Oberfläche ar (RTL), Kurs ar-aus-de', () 
       expect(await ueberlauf(page), `${name}: Überlauf`).toBe(0);
     };
     await geraet(page);
-    await page.goto('/lern-app/ar/ar-aus-de/ueben?l=ar-aus-de.a1.e01.l04');
+    await page.goto('/lern-app/ar/ar-aus-de/ueben?l=ar-aus-de.a1.test.l04');
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
 
     await ueberschrift(page, t.aufgaben2.dialog.anweisung);
@@ -452,7 +452,7 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
     test.setTimeout(120_000);
     const t = de;
     await geraet(page, 2);
-    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l04');
+    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l04');
     await dialog(page, 'tastatur', t, 'İyiyim, teşekkürler.', false);
     await geschichte(page, 'tastatur', t, 'kitap', 'de');
     await lesen(page, 'tastatur', t, null, 'kitap', { ui: 'de', glossen: 2 });

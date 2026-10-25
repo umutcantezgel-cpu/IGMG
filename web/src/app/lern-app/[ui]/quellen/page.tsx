@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { NamensnennungInsel } from '@/components/lernapp/inseln/NamensnennungInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
-import { STIMMEN } from '@/lib/lernapp/audio/stimmen';
+import { freigegebeneStimme, STIMMEN } from '@/lib/lernapp/audio/stimmen';
 import { RICHTUNGEN, type RichtungId, SPRACHEN } from '@/lib/lernapp/kurse';
 import { kursTitel, kursUntertitel } from '@/lib/lernapp/kurstitel';
 import { LIZENZTEXTE, type LizenzName } from '@/lib/lernapp/lizenztexte';
@@ -48,8 +48,9 @@ export default async function Quellen() {
   await verlangeLernApp();
   const ui = await oberflaeche();
   const t = lernTexte(ui);
+  // Registrierte Stimmen mit Herkunftskette; „noch ohne freigegebene Stimme“ sind Sprachen ohne bestandene Hörabnahme (LM-06)
   const mitStimme = SPRACHEN.filter((x) => STIMMEN[x]);
-  const ohneStimme = SPRACHEN.filter((x) => !STIMMEN[x]);
+  const ohneStimme = SPRACHEN.filter((x) => !freigegebeneStimme(x));
   const liste = (id: string, titel: string, eintraege: readonly LernQuelle[], text?: string) => {
     const lizenzen = [...new Set(eintraege.map((e) => e.lizenz))];
     return (

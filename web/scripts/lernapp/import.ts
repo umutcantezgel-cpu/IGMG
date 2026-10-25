@@ -1,10 +1,12 @@
 // Import der Lern-App-Inhalte (PLAN §6.6, ADR 0041 Nr. 6): web/inhalte/lernapp/{sprache,uebersetzung}/**/*.json in die
 // Datenbank, idempotent über SHA-256 je Datei und inhaltHash je Eintrag (src/lib/lernapp/inhalt/import.ts).
-// Läuft im Bau nach scripts/inhalte-import.ts (vercel-bau.mjs mit Datenbank; bau-datenbank.mjs mit `--testkurs`) und von Hand.
+// Läuft im Bau nach scripts/inhalte-import.ts (vercel-bau.mjs mit Datenbank; bau-datenbank.mjs ohne Datenbank, den Testkurs
+// nur mit LERNAPP_TESTKURS=1), in der E2E-Datenbank (mit `--testkurs`) und von Hand.
 // Danach die Audio-Manifeste web/inhalte/lernapp/audio-manifest/<sprache>.json nach lernapp_audio (abgeglichen: Clips, die
 // nicht mehr im Manifest stehen, entfallen; src/lib/lernapp/audio/import.ts).
 // Aufruf: pnpm lernapp:import [--erzwingen] [--testkurs] [--audio-manifest <pfad>]…
-//   --testkurs: zusätzlich den Testkurs (drizzle/seeds/lernapp-test.ts) – nur Beispielmodus, E2E und Entwicklung.
+//   --testkurs: zusätzlich den Testkurs (drizzle/seeds/lernapp-test.ts, Einheiten `<kurs>.a1.test`) – nur E2E, Entwicklung
+//     und ausdrücklich angeforderter Beispielmodus, nie die öffentliche Test-Domain.
 //   --audio-manifest: zusätzlich ein lokales Manifest (Probelauf der Audio-Kette, Bündel unter LERNAPP_AUDIO_LOKAL), nur
 //     ergänzend – nie in der Produktion.
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
