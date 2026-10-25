@@ -1,5 +1,19 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 17:35 UTC – B1 tr fertig:**
+  - **Schlussprüfung** a315ff02: 16 Einheiten, 1.284/1.300 Lemmata, 5.296 Sätze, 2.031 Aufgaben, 0 blockierend.
+    - 3 menschlich_klaeren, alle in e16: R-06 in tr-aus-ar, weil das arabische Wort für Pilz unvokalisiert gleich dem religiösen Kandidaten geschrieben wird.
+    - Freigabe e01–e15 (0745164d). e16 bleibt Entwurf.
+  - **Gemergt** b30e16a9 und auf `main`. Nachprüfung `tor-a1a2` läuft, danach live prüfen (Kurse tr-aus-de/tr-aus-ar).
+  - **Es läuft nur noch B1 ar** `wf_dd49afe9-2ca`.
+  - **Danach:** L8-05 Stufe C, BERICHT, ABSCHLUSS.
+  - **Offen für die Redaktion:**
+    - Pilz/R-06 (tr e16).
+    - Politik OF-10 (de e16).
+    - Schreibweise iş birliği.
+    - Namen mit Längezeichen im tr-Kurs (Samīr/Rim).
+    - Vokalisierung tr-aus-ar einheitlich.
+
 - **Stand 25.10.2026 16:50 UTC – Umfang bis B1 (Nutzer, L3-E16):**
   - B2 de `wf_ee651951-2ab` angehalten. Die Entwürfe e01–e12 bleiben als Entwurf (unsichtbar) erhalten.
   - Es wird kein B2 tr, B2 ar und kein C1 gestartet.
