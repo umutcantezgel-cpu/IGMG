@@ -35,13 +35,16 @@ import { Befunde } from './typen';
  *   Bedeutung hat (`sexualitaet`); Verweise (form-of, alt-of) zählen nicht als Bedeutung. Eine unmarkierte Bedeutung hat keine
  *   Gebrauchsangabe (nur plural/singular). **Treffer** ist eine Form nur, wenn eine Wiktionary-Ausgabe (`q`) sie ganz markiert,
  *   dieselbe Ausgabe keinen Eintrag mit unmarkierter Bedeutung für sie hat und sie keine Beugungsform (`kf`) eines Lemmas ohne
- *   Register ist. Sonst ist der ganz markierte Eintrag ein Nebeneintrag und ergibt nichts, auch keinen Hinweis: Die
- *   Hauptlesart der Form ist unmarkiert (z. B. ein Adjektiv-Eintrag neben dem Grundwortschatz-Nomen, ein Nomen gleich einer
- *   Präteritumform). Einträge mit nur teils markierten Bedeutungen ergeben ebenfalls nichts: ein Register an einer
- *   Nebenbedeutung ist kein Treffer, sonst wären Alltagswörter dauerhaft Fehlalarme (Entscheidung L3-02, Standard bis zur
- *   Antwort der Redaktion, LM-09). Die Ausgaben zählen einzeln, weil sie Register verschieden auszeichnen (die deutsche und
- *   die türkische lassen derbe Wörter oft ohne Angabe); ein unmarkierter Eintrag einer anderen Ausgabe machte sonst echte
- *   Register-Wörter zunichte.
+ *   Register ist. Sonst ist der ganz markierte Eintrag ein Nebeneintrag. Er ergibt einen **Hinweis** („möglicher Treffer
+ *   (mehrdeutig)“), wenn in einer Ausgabe die markierten Lesarten überwiegen: Lesart ist ein Eintrag mit Bedeutung, markiert,
+ *   wenn seine Hauptbedeutung (die erste) das Register trägt; jedes Lemma ohne Register, dessen Beugungsform die Form ist,
+ *   zählt in jeder Ausgabe als unmarkierte Lesart. Überwiegen die markierten Lesarten nicht, ist die Hauptlesart der Form
+ *   unmarkiert und es bleibt still (z. B. ein Adjektiv-Eintrag neben dem Grundwortschatz-Nomen, ein Nomen gleich einer
+ *   Präteritumform, ein Vorname neben einem Schimpfwort). Einträge mit nur teils markierten Bedeutungen ergeben allein
+ *   nichts: ein Register an einer Nebenbedeutung ist kein Treffer, sonst wären Alltagswörter dauerhaft Fehlalarme
+ *   (Entscheidung L3-02, Standard bis zur Antwort der Redaktion, LM-09). Die Ausgaben zählen einzeln, weil sie Register
+ *   verschieden auszeichnen (die deutsche und die türkische lassen derbe Wörter oft ohne Angabe); ein unmarkierter Eintrag
+ *   einer anderen Ausgabe machte sonst echte Register-Wörter zunichte.
  * - **Tipps:** Zitatblöcke sind Beispiele in der Zielsprache (wie im Paketbau, `tippAbschnitte`) und werden nur in ihr
  *   geprüft. Titel und übriger Fließtext werden in der Sprache des Tipps geprüft, in der Zielsprache nur die Wörter, die in der
  *   Tipp-Sprache kein bekanntes Wort sind (Stichwort, Plural oder Beugungsform im kaikki-Kernauszug; bekannte Wörter werden zu
@@ -81,6 +84,8 @@ export type TabuLexikon = {
   kategorien: Kategorie[];
   /** Register aus kaikki je Sprache: Wortform → Kategorien der Treffer (geurteilt über alle Einträge der Form) */
   register: Record<Sprache, Map<string, string[]>>;
+  /** Register-Hinweise je Sprache: Wortform → Kategorien, deren Nebeneintrag nur einen Hinweis ergibt (markierte Lesarten überwiegen) */
+  registerHinweise: Record<Sprache, Map<string, string[]>>;
   /** Bekannte Wortformen (Stichwort, Plural, Beugungsformen) im kaikki-Kernauszug – für den Fließtext der Tipps */
   bekannt: Record<'de' | 'tr', Set<string>>;
   /**
@@ -199,8 +204,17 @@ const ANGABE_SCHIMPF = /vulgar|offensive|derogatory|slur|pejorative|ethnic/;
 const GRAMMATIK = new Set(['plural', 'singular']);
 const ohneAngabe = (r: string | undefined) => (r ?? '').split(/\s+/).every((x) => !x || GRAMMATIK.has(x));
 
-/** Einträge einer Wortform: ganz markierte je Ausgabe (`q`) mit Kategorien, Ausgaben mit unmarkierter Bedeutung. */
-type FormSicht = { ganz: Map<string, Set<string>>; unmarkiert: Set<string> };
+/** Lesarten einer Wortform in einer Ausgabe: Einträge, deren Hauptbedeutung das Register trägt (je Kategorie), und übrige. */
+type Lesarten = { markiert: Map<string, number>; ohne: number };
+
+/**
+ * Einträge einer Wortform: ganz markierte je Ausgabe (`q`) mit Kategorien, Ausgaben mit unmarkierter Bedeutung, Lesarten je
+ * Ausgabe (für die Hinweise der Nebeneinträge).
+ */
+type FormSicht = { ganz: Map<string, Set<string>>; unmarkiert: Set<string>; lesarten: Map<string, Lesarten> };
+
+/** Register einer Sprache: Treffer und Hinweise (Nebeneinträge mit überwiegend markierten Lesarten), je Wortform Kategorien. */
+type RegisterSprache = { treffer: Map<string, string[]>; hinweise: Map<string, string[]> };
 
 const normalCache = new Map<string, Map<string, string>>();
 /** Normalform eines Worts aus dem Kernauszug (wie die Wörter der Texte); null, wenn es mehr als ein Wort ergibt. */
@@ -282,19 +296,27 @@ function tuerkischeBedeutungen(daten: string): Map<string, Bedeutung> {
   return bedeutungen;
 }
 
-const registerCache = new Map<string, Map<string, string[]>>();
+const registerCache = new Map<string, RegisterSprache>();
 
-/** Register einer Sprache aus dem kaikki-Kernauszug: Wortform → Kategorien der Treffer; einmal je Prozess. */
-function registerAus(sprache: Sprache, daten: string, vorhanden: ReadonlySet<string>): Map<string, string[]> {
+/**
+ * Register einer Sprache aus dem kaikki-Kernauszug: Wortform → Kategorien der Treffer bzw. der Hinweise; einmal je Prozess.
+ * Lesart einer Form ist ein Eintrag mit Bedeutung (Stichwort oder Plural), beurteilt nach seiner Hauptbedeutung (der ersten,
+ * Wiktionary ordnet nach Gebrauch). Ein Lemma ohne Register, dessen Beugungsform (`kf`) die Form ist, zählt in jeder Ausgabe
+ * als Lesart ohne Register, weil die Ausgaben Beugungsformen verschieden vollständig führen (das Präteritum von „schreiben“
+ * steht nur in der englischen).
+ */
+function registerAus(sprache: Sprache, daten: string, vorhanden: ReadonlySet<string>): RegisterSprache {
   const schluessel = `${sprache}|${daten}|${[...vorhanden].sort().join(',')}`;
   const fertig = registerCache.get(schluessel);
   if (fertig) return fertig;
   const formen = new Map<string, FormSicht>();
   /** Beugungsformen von Lemmata ohne Register (mit unmarkierter Bedeutung) */
   const gebeugt = new Set<string>();
+  /** je Beugungsform: Anzahl Lemmata ohne Register, deren Stichwort und Plural sie nicht ist (fremde Lesarten) */
+  const gebeugtFremd = new Map<string, number>();
   for (const e of ladeKaikki(sprache, daten)) {
-    const stichwoerter = [e.w, ...(e.pl ?? [])];
-    const beugungen = (e.kf ?? []).map(([f]) => f);
+    const stichwoerter = new Set([e.w, ...(e.pl ?? [])].map((w) => einzeln(w, sprache)).filter((f) => f !== null));
+    const beugungen = new Set((e.kf ?? []).map(([w]) => einzeln(w, sprache)).filter((f) => f !== null));
     const mk = e.mk ?? [];
     const gefunden = mk.some((m) => REGISTER_SCHIMPF.test(m))
       ? 'fluchen_schimpfwoerter'
@@ -309,30 +331,43 @@ function registerAus(sprache: Sprache, daten: string, vorhanden: ReadonlySet<str
       (kategorie === 'sexualitaet' ? gl.length === 1 : gl.every(([, r]) => ANGABE_SCHIMPF.test(r ?? '')));
     const unmarkiert = !ganz && gl.some(([, r]) => ohneAngabe(r));
     if (unmarkiert && !gefunden)
-      for (const w of beugungen) {
-        const f = einzeln(w, sprache);
-        if (f) gebeugt.add(f);
+      for (const f of beugungen) {
+        gebeugt.add(f);
+        if (!stichwoerter.has(f)) gebeugtFremd.set(f, (gebeugtFremd.get(f) ?? 0) + 1);
       }
-    if (!ganz && !unmarkiert) continue;
-    for (const w of stichwoerter) {
-      const f = einzeln(w, sprache);
-      if (!f) continue;
-      const sicht = formen.get(f) ?? { ganz: new Map<string, Set<string>>(), unmarkiert: new Set<string>() };
+    if (!gl.length) continue;
+    // Hauptbedeutung mit Register: erste Bedeutung mit Schimpf-Angabe bzw. der Eintrag ganz markiert (sexualitaet)
+    const hauptMarkiert = gefunden === 'sexualitaet' ? gl.length === 1 : gefunden !== null && ANGABE_SCHIMPF.test(gl[0]![1] ?? '');
+    for (const f of stichwoerter) {
+      const sicht = formen.get(f) ?? { ganz: new Map<string, Set<string>>(), unmarkiert: new Set<string>(), lesarten: new Map() };
       formen.set(f, sicht);
       if (ganz && kategorie) sicht.ganz.set(e.q, (sicht.ganz.get(e.q) ?? new Set<string>()).add(kategorie));
-      else sicht.unmarkiert.add(e.q);
+      else if (unmarkiert) sicht.unmarkiert.add(e.q);
+      const l = sicht.lesarten.get(e.q) ?? { markiert: new Map<string, number>(), ohne: 0 };
+      sicht.lesarten.set(e.q, l);
+      if (!hauptMarkiert) l.ohne++;
+      else if (kategorie) l.markiert.set(kategorie, (l.markiert.get(kategorie) ?? 0) + 1);
     }
   }
-  const register = new Map<string, string[]>();
-  for (const [f, { ganz, unmarkiert }] of formen) {
-    // Nebeneintrag (Beugungsform eines Lemmas ohne Register, unmarkierter Eintrag derselben Ausgabe): nichts
-    if (gebeugt.has(f)) continue;
-    const kategorien = new Set<string>();
-    for (const [q, ks] of ganz) if (!unmarkiert.has(q)) for (const k of ks) kategorien.add(k);
-    if (kategorien.size) register.set(f, [...kategorien]);
+  const treffer = new Map<string, string[]>();
+  const hinweise = new Map<string, string[]>();
+  for (const [f, { ganz, unmarkiert, lesarten }] of formen) {
+    if (!ganz.size) continue;
+    const t = new Set<string>();
+    if (!gebeugt.has(f)) for (const [q, ks] of ganz) if (!unmarkiert.has(q)) for (const k of ks) t.add(k);
+    if (t.size) treffer.set(f, [...t]);
+    // Nebeneintrag (Beugungsform eines Lemmas ohne Register, unmarkierter Eintrag derselben Ausgabe): ein Hinweis nur, wenn in
+    // einer Ausgabe die Lesarten mit Register überwiegen; sonst ist die Hauptlesart unmarkiert und es bleibt still
+    const fremd = gebeugtFremd.get(f) ?? 0;
+    const h = new Set<string>();
+    for (const ks of ganz.values())
+      for (const k of ks)
+        if (!t.has(k) && [...lesarten.values()].some(({ markiert, ohne }) => (markiert.get(k) ?? 0) > ohne + fremd)) h.add(k);
+    if (h.size) hinweise.set(f, [...h]);
   }
-  registerCache.set(schluessel, register);
-  return register;
+  const ergebnis = { treffer, hinweise };
+  registerCache.set(schluessel, ergebnis);
+  return ergebnis;
 }
 
 /** Lexikon aus dem Leitfaden und dem kaikki-Kernauszug bauen (einmal je Lauf). */
@@ -375,10 +410,15 @@ export function baueTabuLexikon(leitfaden: Leitfaden, daten: string): TabuLexiko
   });
 
   const vorhanden = new Set(kategorien.map((k) => k.id));
-  const sprachen = ['de', 'tr', 'ar'] as const;
+  const register = {
+    de: registerAus('de', daten, vorhanden),
+    tr: registerAus('tr', daten, vorhanden),
+    ar: registerAus('ar', daten, vorhanden),
+  };
   return {
     kategorien,
-    register: Object.fromEntries(sprachen.map((s) => [s, registerAus(s, daten, vorhanden)])) as TabuLexikon['register'],
+    register: { de: register.de.treffer, tr: register.tr.treffer, ar: register.ar.treffer },
+    registerHinweise: { de: register.de.hinweise, tr: register.tr.hinweise, ar: register.ar.hinweise },
     bekannt: { de: bekannteFormen('de', daten), tr: bekannteFormen('tr', daten) },
     woerter: { de: bekannteFormen('de', daten, true), tr: bekannteFormen('tr', daten, true) },
     arabisch: arabischBekannt(daten),
@@ -491,12 +531,14 @@ function trefferInWoertern(tokens: string[], sprache: Sprache, lexikon: TabuLexi
     } else if (trifftLatein(k, sprache, tokens, { woerter: lexikon.woerter[sprache], bedeutungen: lexikon.bedeutungen }))
       ergebnis.set(k.id, false);
   }
-  const register = lexikon.register[sprache];
-  for (const c of kandidaten.flat()) for (const kategorie of register.get(c) ?? []) ergebnis.set(kategorie, false);
+  for (const c of kandidaten.flat()) {
+    for (const kategorie of lexikon.registerHinweise[sprache].get(c) ?? []) if (!ergebnis.has(kategorie)) ergebnis.set(kategorie, true);
+    for (const kategorie of lexikon.register[sprache].get(c) ?? []) ergebnis.set(kategorie, false);
+  }
   return [...ergebnis].map(([kategorie, hinweis]) => ({ kategorie, hinweis }));
 }
 
-/** Treffer eines Texts: Kategorie und ob er nur ein Hinweis ist (mehrdeutig). */
+/** Treffer eines Texts: Kategorie und ob er nur ein Hinweis ist (mehrdeutig, Register-Nebeneintrag). */
 export function tabuTreffer(text: string, sprache: Sprache, lexikon: TabuLexikon): Treffer[] {
   return trefferInWoertern(tabuWoerter(text, sprache), sprache, lexikon);
 }

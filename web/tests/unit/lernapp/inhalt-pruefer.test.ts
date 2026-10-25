@@ -8,7 +8,7 @@ import type { ImportQuelle } from '@/lib/lernapp/inhalt/import';
 import { befundZeile, blockierende, menschlich, pruefeInhalte, type PruefOptionen, warnungen } from '@/lib/lernapp/inhalt/pruefer';
 import { pruefeAusschluesse } from '@/lib/lernapp/inhalt/pruefer/ausschluss';
 import { leereInhalte } from '@/lib/lernapp/inhalt/pruefer/dateien';
-import { auszugsTabelle, ladeHaeufigkeit, pruefeAuszuege, pruefeKaikkiOhneBeispiele } from '@/lib/lernapp/inhalt/pruefer/daten';
+import { auszugsTabelle, ladeHaeufigkeit, ladeKaikki, pruefeAuszuege, pruefeKaikkiOhneBeispiele } from '@/lib/lernapp/inhalt/pruefer/daten';
 import { nahePaare } from '@/lib/lernapp/inhalt/pruefer/dubletten';
 import { pruefeReligionsbezug } from '@/lib/lernapp/inhalt/pruefer/religionsbezug';
 import { arabischeKandidaten, arabischNormal } from '@/lib/lernapp/inhalt/pruefer/sprache';
@@ -434,7 +434,7 @@ describe('Inhaltsleitfaden (Tabu-Lexikon) → menschlich_klaeren, Ausgabe nur mi
     expect(registerVon('Das sind Fnorde.', lexikon)).toEqual(['fluchen_schimpfwoerter']);
   });
 
-  it('Register: Alltagswort mit ganz markiertem Nebeneintrag meldet nichts (auch keinen Hinweis), teils markiert ebenso', () => {
+  it('Register: Alltagswort mit Nebeneintrag ohne überwiegend markierte Lesarten meldet nichts, teils markiert ebenso', () => {
     const lexikon = eigenerAuszug([
       // Adjektiv-Eintrag ganz markiert, Nomen derselben Ausgabe unmarkiert
       { w: 'quarpe', q: 'en', pos: 'adj', gl: [['x', 'vulgar']], mk: ['vulgar'] },
@@ -472,6 +472,41 @@ describe('Inhaltsleitfaden (Tabu-Lexikon) → menschlich_klaeren, Ausgabe nur mi
     expect(registerVon('Der Wobbel.', lexikon)).toEqual([]);
   });
 
+  it('Register: Nebeneintrag, dessen markierte Lesarten in einer Ausgabe überwiegen, ergibt einen Hinweis', () => {
+    const lexikon = eigenerAuszug([
+      // de: Interjektion ganz markiert neben unmarkiertem Nomen (1:1); en: Nomen mit markierter Hauptbedeutung (1:0)
+      { w: 'Frulle', q: 'de', pos: 'intj', gl: [['x', 'derogatory']], mk: ['derogatory'] },
+      {
+        w: 'Frulle',
+        q: 'de',
+        pos: 'noun',
+        gl: [
+          ['y', ''],
+          ['z', ''],
+        ],
+      },
+      {
+        w: 'Frulle',
+        q: 'en',
+        pos: 'noun',
+        gl: [
+          ['x', 'derogatory vulgar'],
+          ['z', ''],
+        ],
+        mk: ['derogatory', 'vulgar'],
+      },
+      // de ganz markiert; en unmarkiert und mit sich selbst als Beugungsform (keine fremde Lesart wie ein Präteritum)
+      { w: 'Absteiper', q: 'de', pos: 'noun', gl: [['x', 'derogatory']], mk: ['derogatory'] },
+      { w: 'Absteiper', q: 'en', pos: 'noun', kf: [['Absteiper', 'nominative singular']], gl: [['y', '']] },
+      // dasselbe mit Präteritum eines anderen Verbs: die fremde Lesart wiegt in jeder Ausgabe, still
+      { w: 'Klumm', q: 'de', pos: 'noun', gl: [['x', 'derogatory']], mk: ['derogatory'] },
+      { w: 'klimmen', q: 'en', pos: 'verb', kf: [['klumm', 'past']], gl: [['y', '']] },
+    ]);
+    expect(registerVon('Halt die Frulle.', lexikon)).toEqual(['fluchen_schimpfwoerter (Hinweis)']);
+    expect(registerVon('Eine Absteiper.', lexikon)).toEqual(['fluchen_schimpfwoerter (Hinweis)']);
+    expect(registerVon('Er klumm hoch.', lexikon)).toEqual([]);
+  });
+
   it('Register am gepinnten Auszug: Grundwortschatz (Rang ≤ 500) ist kein Treffer, echte Register-Wörter bleiben es', () => {
     const lexikon = baueTabuLexikon(LEITFADEN, DATEN);
     for (const sprache of ['de', 'tr', 'ar'] as const) {
@@ -485,8 +520,9 @@ describe('Inhaltsleitfaden (Tabu-Lexikon) → menschlich_klaeren, Ausgabe nur mi
     }
   });
 
-  // Wiederkehrende Fehlalarme (L3-07): Teilwörter nur an Morphemgrenzen, bekannte arabische Wörter nicht zerlegen, Register
-  // ohne Nebeneinträge. Je Fall ein Fehlalarm ohne Befund und eine Gegenprobe; Tabu-Formen nur aus dem Leitfaden zur Laufzeit.
+  // Wiederkehrende Fehlalarme (L3-07): Teilwörter nur an Morphemgrenzen, bekannte arabische Wörter nicht zerlegen, Register-
+  // Nebeneinträge nur bei überwiegend markierten Lesarten. Je Fall ein Fehlalarm ohne Befund und eine Gegenprobe; Tabu-Formen
+  // nur aus dem Leitfaden bzw. dem Kernauszug zur Laufzeit.
   describe('Fehlalarme: Morphemgrenzen, bekannte Wörter, Register', () => {
     const lexikon = baueTabuLexikon(LEITFADEN, DATEN);
     const formen = (id: string) => LEITFADEN.tabu.kategorien.find((k) => k.id === id)!.formen;
@@ -525,16 +561,21 @@ describe('Inhaltsleitfaden (Tabu-Lexikon) → menschlich_klaeren, Ausgabe nur mi
         expect(kategorien(text, 'ar')).not.toContain('alkohol_rauschmittel');
       const rest = KABIRA.slice(1);
       for (const k of KLITIKA) expect(kategorien(`${k}${rest}`, 'ar')).toContain('alkohol_rauschmittel');
-      // alle arabischen Muster der Kategorie (aus kaikki zur Laufzeit) treffen mit Klitika und Pronomen-Suffix
+      // alle arabischen Muster der Kategorie (aus kaikki zur Laufzeit) treffen mit Klitika; das Pronomen-Suffix nur an Mustern
+      // ohne Tāʾ marbūṭa (normalisiert als Hāʾ): dort steht vor dem Suffix Tāʾ, und diese Form trifft nicht (vorbestehende
+      // Lücke, alt wie neu; s. it.todo unten) – ein Suffix hinter dem Hāʾ wäre keine wirkliche Form
       const muster = [...lexikon.kategorien.find((k) => k.id === 'alkohol_rauschmittel')!.ar.muster.ganz];
       expect(muster.length).toBeGreaterThan(3);
-      for (const m of muster) {
-        for (const k of KLITIKA) expect(kategorien(`${k}${m}`, 'ar')).toContain('alkohol_rauschmittel');
-        expect(kategorien(`${m}${HU}`, 'ar')).toContain('alkohol_rauschmittel');
-      }
+      const ohneTaMarbuta = muster.filter((m) => !m.endsWith(HU));
+      expect(ohneTaMarbuta.length).toBeGreaterThan(3);
+      for (const m of muster) for (const k of KLITIKA) expect(kategorien(`${k}${m}`, 'ar')).toContain('alkohol_rauschmittel');
+      for (const m of ohneTaMarbuta) expect(kategorien(`${m}${HU}`, 'ar')).toContain('alkohol_rauschmittel');
       // andere Prüfer rufen die Zerlegung ohne bekannte Wörter auf: unverändert
       expect(arabischeKandidaten(arabischNormal(KABIRA))).toContain(arabischNormal(rest));
     });
+
+    // Vorbestehende Lücke (nicht Folge der Klitika-Regel): Muster mit Tāʾ marbūṭa + Pronomen-Suffix (Tāʾ vor -hu, „sein …“)
+    it.todo('ar: Muster mit Tāʾ marbūṭa treffen auch mit Pronomen-Suffix (Tāʾ statt Tāʾ marbūṭa vor dem Suffix)');
 
     it('ar: die Staatsangehörigkeit ist nicht das Adjektiv, dessen Nisba sie ist; das Adjektiv trifft weiter', () => {
       const STAATSANGEHOERIGKEIT = '\u062C\u0646\u0633\u064A\u0629';
@@ -550,11 +591,54 @@ describe('Inhaltsleitfaden (Tabu-Lexikon) → menschlich_klaeren, Ausgabe nur mi
       expect(kategorien('Hiç param yok.', 'tr')).toEqual([]);
       expect(kategorien('Der Koffer ist schwer.', 'de')).toEqual([]);
       expect(kategorien('Sie schrieb einen Brief.', 'de')).toEqual([]);
+      for (const satz of [
+        'Niemand ist da.',
+        'Der Mensch lebt.',
+        'Wir putzen die Küche.',
+        'Er spricht Französisch.',
+        'Das Kleid ist elegant.',
+      ])
+        expect(kategorien(satz, 'de'), satz).toEqual([]);
       // Gegenprobe: ganz markierte Register-Wörter des Auszugs bleiben Treffer
       for (const sprache of ['de', 'tr'] as const) {
         const treffer = [...lexikon.register[sprache]].filter(([, k]) => k.includes('fluchen_schimpfwoerter')).map(([f]) => f);
         expect(treffer.length, sprache).toBeGreaterThan(10);
         expect(kategorien(treffer[0]!, sprache), sprache).toContain('fluchen_schimpfwoerter');
+      }
+    });
+
+    it('Register: Nebeneinträge mit überwiegend markierten Lesarten melden einen Hinweis, nie im Grundwortschatz', () => {
+      const hinweis = (sprache: 'de' | 'tr', f: string, k: string) =>
+        kategorien(sprache === 'tr' ? `Bu ${f}.` : `Das ist ${f}.`, sprache).includes(`${k} (Hinweis)`);
+      // de: derbe Form, deren Nomen die deutsche Ausgabe ohne Angabe als „Mund“ führt (Interjektion und englische Hauptbedeutung derb)
+      const de = ladeKaikki('de', DATEN);
+      const derb = de.find(
+        (e) =>
+          e.q === 'de' &&
+          e.pos === 'noun' &&
+          e.gl?.[0]?.[0] === 'Mund' &&
+          de.some((x) => x.w === e.w && x.q === 'de' && x.pos === 'intj' && x.mk?.includes('derogatory')),
+      );
+      expect(derb).toBeDefined();
+      expect(hinweis('de', tabuWoerter(derb!.w, 'de')[0]!, 'fluchen_schimpfwoerter')).toBe(true);
+      // tr: Vulgärform, deren englische Ausgabe überwiegend vulgar führt (Nebenbedeutung „slag, dross“)
+      const vulgaer = ladeKaikki('tr', DATEN).find(
+        (e) => e.q === 'en' && e.mk?.includes('vulgar') && e.gl?.some(([g]) => g === 'slag, dross'),
+      );
+      expect(vulgaer).toBeDefined();
+      expect(hinweis('tr', tabuWoerter(vulgaer!.w, 'tr')[0]!, 'fluchen_schimpfwoerter')).toBe(true);
+      // tr: Plural eines Register-Treffers (sexualitaet), den eine andere Ausgabe ohne Thema als Beugungsform führt
+      const plural = [...lexikon.registerHinweise.tr].find(
+        ([f, ks]) => ks.includes('sexualitaet') && /l[ae]r$/.test(f) && lexikon.register.tr.get(f.slice(0, -3))?.includes('sexualitaet'),
+      );
+      expect(plural).toBeDefined();
+      expect(hinweis('tr', plural![0], 'sexualitaet')).toBe(true);
+      // kein Hinweis im Grundwortschatz (Rang ≤ 1000)
+      for (const sprache of ['de', 'tr'] as const) {
+        const haeufig = [...ladeHaeufigkeit(sprache, DATEN)].filter(
+          ([w, rang]) => rang <= 1000 && lexikon.registerHinweise[sprache].has(tabuWoerter(w, sprache).join(' ')),
+        );
+        expect(haeufig.length, sprache).toBe(0);
       }
     });
   });

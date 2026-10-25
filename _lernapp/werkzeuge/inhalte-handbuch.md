@@ -341,9 +341,21 @@ so, dass ihre Übersetzungen verschieden sein werden. Dublette mit einer gleichz
 
 ## 8 Bekannte Fallen aus den Rückgaben (A1)
 
-Stand 24.10.2026. Ein hier genannter Fehlalarm, der im aktuellen Bericht nicht mehr erscheint, ist erledigt. Behoben (Prüfer, 24.10.2026, nicht mehr umschreiben):
+Stand 25.10.2026. Ein hier genannter Fehlalarm, der im aktuellen Bericht nicht mehr erscheint, ist erledigt. Behoben (Prüfer, 24.10.2026, nicht mehr umschreiben):
 Teilwörter mitten in einem anderen Wort (Verb fürs Buchstabieren, tr Zahlwort 80), Klitika an bekannten arabischen Wörtern (weibliche Form von „groß“, baʿīd,
-ǧinsiyya, al-fuṣḥā), amām gegen imām (Hamza), Register-Nebeneinträge (kız, hiç, Koffer, Präteritum von „schreiben“).
+ǧinsiyya, al-fuṣḥā), amām gegen imām (Hamza), Register-Nebeneinträge (kız, hiç, Koffer, niemand, Mensch, putzen, französisch, Präteritum von „schreiben“). Ein
+Register-Nebeneintrag meldet seit 25.10.2026 nur noch dann einen Hinweis („möglicher Treffer (mehrdeutig)“), wenn in einer Wiktionary-Ausgabe die Lesarten mit Register
+überwiegen (Hauptbedeutung je Eintrag); so melden derbe und sexuelle Formen außerhalb des Leitfadens weiter, die Alltagswörter bleiben still.
+
+**Bewusste Verluste der Prüfer-Änderung (24.10.2026; für die Redaktion, keine Folge eigener Texte)**
+- ǧinsiyya: Ohne Vokalzeichen fällt das Wort für Staatsangehörigkeit mit der weiblichen Form des Adjektivs „sexuell“ zusammen (gleiche Schreibung). Feste Wendungen mit
+  dieser Form melden `sexualitaet` nicht mehr (vorher `menschlich_klaeren`); das Adjektiv selbst (ǧinsī) meldet weiter. Vorschlag an die Redaktion: die typischen
+  Wendungen (Nomen + weibliche Adjektivform, etwa zu Erziehung, Beziehung, Belästigung) als `phrase` in `sexualitaet` des Leitfadens aufnehmen.
+- Religionsbezug: Ohne Artikel melden wa- und bi- vor ʿīd (auch mit -hu) R-06/R-08 nicht mehr, weil sie ohne Vokalzeichen mit waʿīd („Drohung“) und baʿīd („fern“)
+  zusammenfallen; ebenso li-ḥaǧǧ (R-12, gleich geschrieben wie laḥḥaja). Allein, mit Artikel (al-, wa-l-, bi-l-, li-l-, ka-l-) und mit Suffixen melden sie weiter.
+- Vorbestehende Lücken (alt wie neu, keine Folge der Änderung): Komposita, deren Grundwort eine `anfang`-Form von `sexualitaet` oder `gewalt_waffen` ist (Vorderteile
+  wie Kinder-, Telefon- bzw. Atom-), melden nichts, weil diese Formen nur am Wortanfang greifen; bei Bedarf als `teil`-Form in den Leitfaden. Arabische Muster mit Tāʾ
+  marbūṭa melden mit Pronomen-Suffix nicht (dort steht Tāʾ vor dem Suffix); ḫammāra meldet nicht.
 
 **Alle Kurse**
 - Kein `symbol`, kein `bild_wort`, solange kein Motiv freigegeben ist; `satzbau` und `frei` nicht in A1.
