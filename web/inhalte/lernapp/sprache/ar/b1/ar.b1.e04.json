@@ -3702,7 +3702,7 @@
         {
           "schluessel": "ar.b1.e04.l01.a01",
           "typ": "grammatik_tipp",
-          "tipp": "t04"
+          "tipp": "t01"
         },
         {
           "schluessel": "ar.b1.e04.l01.a02",
@@ -3819,20 +3819,13 @@
         },
         {
           "schluessel": "ar.b1.e04.l01.a09",
-          "typ": "luecke",
-          "ziel": "ar.b1.e04.s0006",
-          "wort": 6,
-          "ablenker": ["الْأَوْسَطِ", "الْعَرَبِيِّ"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l01.a10",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.b1.e04.s0014",
           "nach": "ausgang"
         },
         {
-          "schluessel": "ar.b1.e04.l01.a11",
+          "schluessel": "ar.b1.e04.l01.a10",
           "typ": "satzbau",
           "ziel": "ar.b1.e04.s0029",
           "alternativen": [
@@ -3844,7 +3837,7 @@
           ]
         },
         {
-          "schluessel": "ar.b1.e04.l01.a12",
+          "schluessel": "ar.b1.e04.l01.a11",
           "typ": "frei",
           "ziel": "ar.b1.e04.s0024",
           "nach": "ziel",
@@ -3856,7 +3849,7 @@
           ]
         },
         {
-          "schluessel": "ar.b1.e04.l01.a13",
+          "schluessel": "ar.b1.e04.l01.a12",
           "typ": "dialog",
           "zeilen": [
             {
@@ -3880,7 +3873,7 @@
           "ablenker": ["ar.b1.e04.s0052", "ar.b1.e04.s0053"]
         },
         {
-          "schluessel": "ar.b1.e04.l01.a14",
+          "schluessel": "ar.b1.e04.l01.a13",
           "typ": "dialog",
           "zeilen": [
             {
@@ -3892,20 +3885,20 @@
           "ablenker": ["ar.b1.e04.s0057", "ar.b1.e04.s0108"]
         },
         {
-          "schluessel": "ar.b1.e04.l01.a15",
+          "schluessel": "ar.b1.e04.l01.a14",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.b1.e04.s0012",
           "ablenker": ["ar.b1.e04.s0013", "ar.b1.e04.s0001"]
         },
         {
-          "schluessel": "ar.b1.e04.l01.a16",
+          "schluessel": "ar.b1.e04.l01.a15",
           "typ": "harakat",
           "ziel": "ar.b1.e04.s0013",
           "varianten": ["سَنُغَادِرُ تُونُسُ يَوْمَ الْأَرْبِعَاءِ ١٥ يُولْيُو.", "سَنُغَادِرُ تُونُسَ يَوْمُ الْأَرْبِعَاءِ ١٥ يُولْيُو."]
         },
         {
-          "schluessel": "ar.b1.e04.l01.a17",
+          "schluessel": "ar.b1.e04.l01.a16",
           "typ": "sprechen",
           "satz": "ar.b1.e04.s0047"
         }
@@ -3923,7 +3916,7 @@
         {
           "schluessel": "ar.b1.e04.l02.a01",
           "typ": "grammatik_tipp",
-          "tipp": "t03"
+          "tipp": "t02"
         },
         {
           "schluessel": "ar.b1.e04.l02.a02",
@@ -4029,50 +4022,31 @@
         },
         {
           "schluessel": "ar.b1.e04.l02.a08",
-          "typ": "wortbank",
-          "anweisung": "uebersetze",
-          "satz": "ar.b1.e04.s0096",
-          "nach": "ziel",
-          "alternativen": [
-            "بَقِينَا ثَلَاثَةَ أَيَّامٍ وَثَلَاثَ لَيَالٍ فِي تُونُسَ.",
-            "فِي تُونُسَ بَقِينَا ثَلَاثَةَ أَيَّامٍ وَثَلَاثَ لَيَالٍ."
-          ],
-          "ablenker": ["ثَلَاثُونَ", "لَيْلَةً"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l02.a09",
           "typ": "luecke",
           "ziel": "ar.b1.e04.s0096",
           "wort": 3,
           "ablenker": ["ثَلَاثَ", "ثَلَاثِينَ"]
         },
         {
-          "schluessel": "ar.b1.e04.l02.a10",
-          "typ": "luecke",
-          "ziel": "ar.b1.e04.s0095",
-          "wort": 5,
-          "ablenker": ["غُرَفٍ", "غُرْفَتَانِ"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l02.a11",
+          "schluessel": "ar.b1.e04.l02.a09",
           "typ": "grammatik_tipp",
-          "tipp": "t01"
+          "tipp": "t03"
         },
         {
-          "schluessel": "ar.b1.e04.l02.a12",
+          "schluessel": "ar.b1.e04.l02.a10",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.b1.e04.s0062",
           "nach": "ausgang"
         },
         {
-          "schluessel": "ar.b1.e04.l02.a13",
+          "schluessel": "ar.b1.e04.l02.a11",
           "typ": "satzbau",
           "ziel": "ar.b1.e04.s0061",
           "alternativen": ["فِي الْجَنَاحِ كَمْ سِعْرُ اللَّيْلَةِ؟"]
         },
         {
-          "schluessel": "ar.b1.e04.l02.a14",
+          "schluessel": "ar.b1.e04.l02.a12",
           "typ": "frei",
           "ziel": "ar.b1.e04.s0058",
           "nach": "ziel",
@@ -4084,7 +4058,7 @@
           ]
         },
         {
-          "schluessel": "ar.b1.e04.l02.a15",
+          "schluessel": "ar.b1.e04.l02.a13",
           "typ": "dialog",
           "zeilen": [
             {
@@ -4104,36 +4078,20 @@
           "ablenker": ["ar.b1.e04.s0108", "ar.b1.e04.s0104"]
         },
         {
-          "schluessel": "ar.b1.e04.l02.a16",
-          "typ": "dialog",
-          "zeilen": [
-            {
-              "sprecher": "a",
-              "satz": "ar.b1.e04.s0103"
-            },
-            {
-              "sprecher": "b",
-              "satz": "ar.b1.e04.s0104"
-            }
-          ],
-          "antwort": "ar.b1.e04.s0105",
-          "ablenker": ["ar.b1.e04.s0074", "ar.b1.e04.s0078"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l02.a17",
+          "schluessel": "ar.b1.e04.l02.a14",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "ar.b1.e04.s0066",
           "ablenker": ["ar.b1.e04.s0067", "ar.b1.e04.s0068"]
         },
         {
-          "schluessel": "ar.b1.e04.l02.a18",
+          "schluessel": "ar.b1.e04.l02.a15",
           "typ": "harakat",
           "ziel": "ar.b1.e04.s0062",
           "varianten": ["سِعْرُ اللَّيْلَةِ مِئَتَا دِينَارٌ مَعَ الْفُطُورِ.", "سِعْرَ اللَّيْلَةِ مِئَتَا دِينَارٍ مَعَ الْفُطُورِ."]
         },
         {
-          "schluessel": "ar.b1.e04.l02.a19",
+          "schluessel": "ar.b1.e04.l02.a16",
           "typ": "sprechen",
           "satz": "ar.b1.e04.s0100"
         }
@@ -4151,7 +4109,7 @@
         {
           "schluessel": "ar.b1.e04.l03.a01",
           "typ": "grammatik_tipp",
-          "tipp": "t05"
+          "tipp": "t04"
         },
         {
           "schluessel": "ar.b1.e04.l03.a02",
@@ -4209,25 +4167,18 @@
         },
         {
           "schluessel": "ar.b1.e04.l03.a10",
-          "typ": "wortbank",
-          "anweisung": "uebersetze",
-          "satz": "ar.b1.e04.s0123",
-          "nach": "ausgang"
-        },
-        {
-          "schluessel": "ar.b1.e04.l03.a11",
           "typ": "satzbau",
           "ziel": "ar.b1.e04.s0143",
           "alternativen": ["حَقًّا هٰذَا مَبْنًى عَظِيمٌ!", "هٰذَا حَقًّا مَبْنًى عَظِيمٌ!"]
         },
         {
-          "schluessel": "ar.b1.e04.l03.a12",
+          "schluessel": "ar.b1.e04.l03.a11",
           "typ": "frei",
           "ziel": "ar.b1.e04.s0133",
           "nach": "ausgang"
         },
         {
-          "schluessel": "ar.b1.e04.l03.a13",
+          "schluessel": "ar.b1.e04.l03.a12",
           "typ": "dialog",
           "zeilen": [
             {
@@ -4247,46 +4198,26 @@
           "ablenker": ["ar.b1.e04.s0157", "ar.b1.e04.s0158"]
         },
         {
-          "schluessel": "ar.b1.e04.l03.a14",
-          "typ": "dialog",
-          "zeilen": [
-            {
-              "sprecher": "a",
-              "satz": "ar.b1.e04.s0134"
-            },
-            {
-              "sprecher": "b",
-              "satz": "ar.b1.e04.s0135"
-            },
-            {
-              "sprecher": "a",
-              "satz": "ar.b1.e04.s0159"
-            }
-          ],
-          "antwort": "ar.b1.e04.s0160",
-          "ablenker": ["ar.b1.e04.s0161", "ar.b1.e04.s0162"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l03.a15",
+          "schluessel": "ar.b1.e04.l03.a13",
           "typ": "minimalpaare",
           "ziel": "ar.b1.e04.qadim",
           "ablenker": ["ar.a1.e03.qadim"]
         },
         {
-          "schluessel": "ar.b1.e04.l03.a16",
+          "schluessel": "ar.b1.e04.l03.a14",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.b1.e04.s0127",
           "ablenker": ["ar.b1.e04.s0128", "ar.b1.e04.s0129"]
         },
         {
-          "schluessel": "ar.b1.e04.l03.a17",
+          "schluessel": "ar.b1.e04.l03.a15",
           "typ": "harakat",
           "ziel": "ar.b1.e04.s0128",
           "varianten": ["زُرْنَا الْقَصْرَيْنُ فِي يَوْمٍ وَاحِدٍ.", "زُرْنَا الْقَصْرَيْنِ فِي يَوْمٌ وَاحِدٌ."]
         },
         {
-          "schluessel": "ar.b1.e04.l03.a18",
+          "schluessel": "ar.b1.e04.l03.a16",
           "typ": "sprechen",
           "satz": "ar.b1.e04.s0135"
         }
@@ -4304,7 +4235,7 @@
         {
           "schluessel": "ar.b1.e04.l04.a01",
           "typ": "grammatik_tipp",
-          "tipp": "t02"
+          "tipp": "t05"
         },
         {
           "schluessel": "ar.b1.e04.l04.a02",
@@ -4408,39 +4339,12 @@
         },
         {
           "schluessel": "ar.b1.e04.l04.a09",
-          "typ": "wortbank",
-          "anweisung": "uebersetze",
-          "satz": "ar.b1.e04.s0168",
-          "nach": "ziel",
-          "ablenker": ["تَتَنَزَّهُونَ", "أَمْسِ"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l04.a10",
-          "typ": "wortbank",
-          "anweisung": "uebersetze",
-          "satz": "ar.b1.e04.s0194",
-          "nach": "ausgang"
-        },
-        {
-          "schluessel": "ar.b1.e04.l04.a11",
-          "typ": "grammatik_tipp",
-          "tipp": "t06"
-        },
-        {
-          "schluessel": "ar.b1.e04.l04.a12",
-          "typ": "luecke",
-          "ziel": "ar.b1.e04.s0184",
-          "wort": 1,
-          "ablenker": ["يَتَنَزَّهُونَ", "يَتَنَزَّهَانِ"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l04.a13",
           "typ": "satzbau",
           "ziel": "ar.b1.e04.s0206",
           "alternativen": ["فِي الْمُنْتَزَهِ رِيمُ وَلَيْلَى تَتَنَزَّهَانِ.", "رِيمُ وَلَيْلَى فِي الْمُنْتَزَهِ تَتَنَزَّهَانِ."]
         },
         {
-          "schluessel": "ar.b1.e04.l04.a14",
+          "schluessel": "ar.b1.e04.l04.a10",
           "typ": "frei",
           "ziel": "ar.b1.e04.s0173",
           "nach": "ziel",
@@ -4453,7 +4357,7 @@
           ]
         },
         {
-          "schluessel": "ar.b1.e04.l04.a15",
+          "schluessel": "ar.b1.e04.l04.a11",
           "typ": "dialog",
           "zeilen": [
             {
@@ -4473,20 +4377,20 @@
           "ablenker": ["ar.b1.e04.s0213", "ar.b1.e04.s0214"]
         },
         {
-          "schluessel": "ar.b1.e04.l04.a16",
+          "schluessel": "ar.b1.e04.l04.a12",
           "typ": "minimalpaare",
           "ziel": "ar.b1.e04.qarib",
           "ablenker": ["ar.a1.e05.qarib"]
         },
         {
-          "schluessel": "ar.b1.e04.l04.a17",
+          "schluessel": "ar.b1.e04.l04.a13",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.b1.e04.s0195",
           "ablenker": ["ar.b1.e04.s0168", "ar.b1.e04.s0199"]
         },
         {
-          "schluessel": "ar.b1.e04.l04.a18",
+          "schluessel": "ar.b1.e04.l04.a14",
           "typ": "harakat",
           "ziel": "ar.b1.e04.s0178",
           "varianten": [
@@ -4495,7 +4399,7 @@
           ]
         },
         {
-          "schluessel": "ar.b1.e04.l04.a19",
+          "schluessel": "ar.b1.e04.l04.a15",
           "typ": "sprechen",
           "satz": "ar.b1.e04.s0202"
         }
@@ -4512,13 +4416,18 @@
       "aufgaben": [
         {
           "schluessel": "ar.b1.e04.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "ar.b1.e04.l05.a02",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "ar.b1.e04.ilgha",
           "ablenker": ["ar.b1.e04.hajz", "ar.a1.e09.wusul", "ar.a2.e01.mughadara"]
         },
         {
-          "schluessel": "ar.b1.e04.l05.a02",
+          "schluessel": "ar.b1.e04.l05.a03",
           "typ": "dialog",
           "zeilen": [
             {
@@ -4538,7 +4447,7 @@
           "ablenker": ["ar.b1.e04.s0232", "ar.b1.e04.s0093"]
         },
         {
-          "schluessel": "ar.b1.e04.l05.a03",
+          "schluessel": "ar.b1.e04.l05.a04",
           "typ": "dialog",
           "zeilen": [
             {
@@ -4558,7 +4467,7 @@
           "ablenker": ["ar.b1.e04.s0256", "ar.b1.e04.s0108"]
         },
         {
-          "schluessel": "ar.b1.e04.l05.a04",
+          "schluessel": "ar.b1.e04.l05.a05",
           "typ": "dialog",
           "zeilen": [
             {
@@ -4572,22 +4481,6 @@
           ],
           "antwort": "ar.b1.e04.s0226",
           "ablenker": ["ar.b1.e04.s0077", "ar.b1.e04.s0137"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l05.a05",
-          "typ": "dialog",
-          "zeilen": [
-            {
-              "sprecher": "b",
-              "satz": "ar.b1.e04.s0226"
-            },
-            {
-              "sprecher": "b",
-              "satz": "ar.b1.e04.s0227"
-            }
-          ],
-          "antwort": "ar.b1.e04.s0228",
-          "ablenker": ["ar.b1.e04.s0074", "ar.b1.e04.s0199"]
         },
         {
           "schluessel": "ar.b1.e04.l05.a06",
@@ -4671,33 +4564,26 @@
         },
         {
           "schluessel": "ar.b1.e04.l05.a09",
-          "typ": "wortbank",
-          "anweisung": "uebersetze",
-          "satz": "ar.b1.e04.s0231",
-          "nach": "ausgang"
-        },
-        {
-          "schluessel": "ar.b1.e04.l05.a10",
           "typ": "luecke",
           "ziel": "ar.b1.e04.s0226",
           "wort": 1,
           "ablenker": ["يَبْعُدُ", "يَتُوهُ"]
         },
         {
-          "schluessel": "ar.b1.e04.l05.a11",
+          "schluessel": "ar.b1.e04.l05.a10",
           "typ": "luecke",
           "ziel": "ar.b1.e04.s0259",
           "wort": 2,
           "ablenker": ["دِينَارٍ", "دَنَانِيرَ"]
         },
         {
-          "schluessel": "ar.b1.e04.l05.a12",
+          "schluessel": "ar.b1.e04.l05.a11",
           "typ": "satzbau",
           "ziel": "ar.b1.e04.s0223",
           "alternativen": ["شُكْرًا عَلَى مُسَاعَدَتِكَ، لَا مُشْكِلَةَ."]
         },
         {
-          "schluessel": "ar.b1.e04.l05.a13",
+          "schluessel": "ar.b1.e04.l05.a12",
           "typ": "frei",
           "ziel": "ar.b1.e04.s0230",
           "nach": "ziel",
@@ -4709,14 +4595,14 @@
           ]
         },
         {
-          "schluessel": "ar.b1.e04.l05.a14",
+          "schluessel": "ar.b1.e04.l05.a13",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "ar.b1.e04.s0231",
           "ablenker": ["ar.b1.e04.s0226", "ar.b1.e04.s0229"]
         },
         {
-          "schluessel": "ar.b1.e04.l05.a15",
+          "schluessel": "ar.b1.e04.l05.a14",
           "typ": "harakat",
           "ziel": "ar.b1.e04.s0228",
           "varianten": [
@@ -4725,12 +4611,12 @@
           ]
         },
         {
-          "schluessel": "ar.b1.e04.l05.a16",
+          "schluessel": "ar.b1.e04.l05.a15",
           "typ": "sprechen",
           "satz": "ar.b1.e04.s0257"
         },
         {
-          "schluessel": "ar.b1.e04.l05.a17",
+          "schluessel": "ar.b1.e04.l05.a16",
           "typ": "sprechen",
           "satz": "ar.b1.e04.s0260"
         }
@@ -5014,28 +4900,16 @@
         },
         {
           "schluessel": "ar.b1.e04.l07.a05",
-          "typ": "auswahl",
-          "anweisung": "waehleUebersetzung",
-          "ziel": "ar.b1.e04.shab",
-          "ablenker": ["ar.b1.e04.arab", "ar.a1.e05.nas"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l07.a06",
           "typ": "paare",
           "lemmata": ["ar.b1.e04.amriki", "ar.b1.e04.urubbi", "ar.b1.e04.ifriqi", "ar.b1.e04.isbani", "ar.b1.e04.rusi", "ar.b1.e04.irani"]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a07",
-          "typ": "paare",
-          "lemmata": ["ar.b1.e04.qasr", "ar.b1.e04.hisn", "ar.b1.e04.masrah", "ar.b1.e04.sinama", "ar.b1.e04.waha", "ar.b1.e04.mina"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l07.a08",
+          "schluessel": "ar.b1.e04.l07.a06",
           "typ": "paare",
           "lemmata": ["ar.b1.e04.hajz", "ar.b1.e04.ilgha", "ar.b1.e04.taklifa", "ar.b1.e04.sarf", "ar.b1.e04.janah"]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a09",
+          "schluessel": "ar.b1.e04.l07.a07",
           "typ": "formen",
           "lemma": "ar.b1.e04.bata",
           "zeilen": ["هُمَا (يَزَنُ وَأَبُوهُ)", "أَنْتُمَا", "هُنَّ", "أَنْتُنَّ"],
@@ -5085,58 +4959,7 @@
           ]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a10",
-          "typ": "formen",
-          "lemma": "ar.b1.e04.qasr",
-          "zeilen": ["قَصْرٌ", "حِصْنٌ", "مَسْرَحٌ", "وَاحَةٌ"],
-          "spalten": ["فِي الْمَدِينَةِ …", "زُرْنَا …"],
-          "zellen": [
-            {
-              "zeile": 0,
-              "spalte": 0,
-              "loesungen": ["قَصْرَانِ"],
-              "vorgabe": true
-            },
-            {
-              "zeile": 0,
-              "spalte": 1,
-              "loesungen": ["قَصْرَيْنِ"],
-              "vorgabe": true
-            },
-            {
-              "zeile": 1,
-              "spalte": 0,
-              "loesungen": ["حِصْنَانِ"]
-            },
-            {
-              "zeile": 1,
-              "spalte": 1,
-              "loesungen": ["حِصْنَيْنِ"]
-            },
-            {
-              "zeile": 2,
-              "spalte": 0,
-              "loesungen": ["مَسْرَحَانِ"]
-            },
-            {
-              "zeile": 2,
-              "spalte": 1,
-              "loesungen": ["مَسْرَحَيْنِ"]
-            },
-            {
-              "zeile": 3,
-              "spalte": 0,
-              "loesungen": ["وَاحَتَانِ"]
-            },
-            {
-              "zeile": 3,
-              "spalte": 1,
-              "loesungen": ["وَاحَتَيْنِ"]
-            }
-          ]
-        },
-        {
-          "schluessel": "ar.b1.e04.l07.a11",
+          "schluessel": "ar.b1.e04.l07.a08",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.b1.e04.s0013",
@@ -5145,7 +4968,7 @@
           "ablenker": ["غَادَرْنَا", "الْخَمِيسِ"]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a12",
+          "schluessel": "ar.b1.e04.l07.a09",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.b1.e04.s0129",
@@ -5154,47 +4977,27 @@
           "ablenker": ["مُرْشِدَيْنِ", "مُرْشِدٌ"]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a13",
-          "typ": "wortbank",
-          "anweisung": "uebersetze",
-          "satz": "ar.b1.e04.s0090",
-          "nach": "ausgang"
-        },
-        {
-          "schluessel": "ar.b1.e04.l07.a14",
+          "schluessel": "ar.b1.e04.l07.a10",
           "typ": "luecke",
           "ziel": "ar.b1.e04.s0070",
           "wort": 5,
           "ablenker": ["وَعَشْرُ", "وَعِشْرُونَ"]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a15",
+          "schluessel": "ar.b1.e04.l07.a11",
           "typ": "luecke",
           "ziel": "ar.b1.e04.s0027",
           "wort": 4,
           "ablenker": ["وِلَايَاتٍ", "وِلَايَتَانِ"]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a16",
-          "typ": "luecke",
-          "ziel": "ar.b1.e04.s0136",
-          "wort": 1,
-          "ablenker": ["الَّذِي", "الَّذِينَ"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l07.a17",
+          "schluessel": "ar.b1.e04.l07.a12",
           "typ": "satzbau",
           "ziel": "ar.b1.e04.s0199",
           "alternativen": ["هٰذَا التِّذْكَارُ بِكَمْ؟"]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a18",
-          "typ": "satzbau",
-          "ziel": "ar.b1.e04.s0137",
-          "alternativen": ["هَلْ نَذْهَبُ هٰذَا الْمَسَاءَ إِلَى السِّينَمَا؟"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l07.a19",
+          "schluessel": "ar.b1.e04.l07.a13",
           "typ": "frei",
           "ziel": "ar.b1.e04.s0073",
           "nach": "ziel",
@@ -5207,13 +5010,7 @@
           ]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a20",
-          "typ": "frei",
-          "ziel": "ar.b1.e04.s0182",
-          "nach": "ausgang"
-        },
-        {
-          "schluessel": "ar.b1.e04.l07.a21",
+          "schluessel": "ar.b1.e04.l07.a14",
           "typ": "dialog",
           "zeilen": [
             {
@@ -5225,37 +5022,20 @@
           "ablenker": ["ar.b1.e04.s0017", "ar.b1.e04.s0024"]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a22",
-          "typ": "dialog",
-          "zeilen": [
-            {
-              "sprecher": "a",
-              "satz": "ar.b1.e04.s0065"
-            }
-          ],
-          "antwort": "ar.b1.e04.s0066",
-          "ablenker": ["ar.b1.e04.s0062", "ar.b1.e04.s0135"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l07.a23",
+          "schluessel": "ar.b1.e04.l07.a15",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.b1.e04.s0184",
           "ablenker": ["ar.b1.e04.s0185", "ar.b1.e04.s0186"]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a24",
+          "schluessel": "ar.b1.e04.l07.a16",
           "typ": "hoeren_schreiben",
           "ziel": "ar.b1.e04.s0069",
           "alternativen": ["يَبِيتُ فِي الْفُنْدُقِ ٢٠٠ نَزِيلٍ تَقْرِيبًا."]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a25",
-          "typ": "hoeren_schreiben",
-          "ziel": "ar.b1.e04.s0137"
-        },
-        {
-          "schluessel": "ar.b1.e04.l07.a26",
+          "schluessel": "ar.b1.e04.l07.a17",
           "typ": "harakat",
           "ziel": "ar.b1.e04.s0014",
           "varianten": [
@@ -5264,19 +5044,13 @@
           ]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a27",
+          "schluessel": "ar.b1.e04.l07.a18",
           "typ": "minimalpaare",
           "ziel": "ar.b1.e04.masrah",
           "ablenker": ["ar.a2.e02.masbah"]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a28",
-          "typ": "minimalpaare",
-          "ziel": "ar.b1.e04.shab",
-          "ablenker": ["ar.a2.e10.shabb"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l07.a29",
+          "schluessel": "ar.b1.e04.l07.a19",
           "typ": "schreiben",
           "aufgabe": "ar.b1.e04.s0323",
           "woerter": {
@@ -5286,7 +5060,7 @@
           "muster": ["ar.b1.e04.s0324", "ar.b1.e04.s0325"]
         },
         {
-          "schluessel": "ar.b1.e04.l07.a30",
+          "schluessel": "ar.b1.e04.l07.a20",
           "typ": "sprechen",
           "satz": "ar.b1.e04.s0012"
         }
@@ -5357,105 +5131,61 @@
         {
           "schluessel": "ar.b1.e04.l08.a07",
           "typ": "luecke",
-          "ziel": "ar.b1.e04.s0094",
-          "wort": 2,
-          "ablenker": ["نُزَلَاءَ", "نَزِيلَانِ"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l08.a08",
-          "typ": "luecke",
           "ziel": "ar.b1.e04.s0069",
           "wort": 4,
           "ablenker": ["نُزَلَاءَ", "نَزِيلًا"]
         },
         {
-          "schluessel": "ar.b1.e04.l08.a09",
-          "typ": "wortbank",
-          "anweisung": "uebersetze",
-          "satz": "ar.b1.e04.s0070",
-          "nach": "ziel",
-          "ablenker": ["غُرَفٍ", "جَنَاحًا"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l08.a10",
-          "typ": "luecke",
-          "ziel": "ar.b1.e04.s0207",
-          "wort": 4,
-          "ablenker": ["أَنْتُنَّ", "أَنْتِ"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l08.a11",
+          "schluessel": "ar.b1.e04.l08.a08",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.b1.e04.hisn",
           "ablenker": ["ar.b1.e04.qasr", "ar.a2.e04.burj"]
         },
         {
-          "schluessel": "ar.b1.e04.l08.a12",
-          "typ": "dialog",
-          "zeilen": [
-            {
-              "sprecher": "b",
-              "satz": "ar.b1.e04.s0224"
-            },
-            {
-              "sprecher": "a",
-              "satz": "ar.b1.e04.s0225"
-            }
-          ],
-          "antwort": "ar.b1.e04.s0226",
-          "ablenker": ["ar.b1.e04.s0135", "ar.b1.e04.s0037"]
-        },
-        {
-          "schluessel": "ar.b1.e04.l08.a13",
+          "schluessel": "ar.b1.e04.l08.a09",
           "typ": "wortbank",
           "anweisung": "uebersetze",
           "satz": "ar.b1.e04.s0125",
           "nach": "ausgang"
         },
         {
-          "schluessel": "ar.b1.e04.l08.a14",
+          "schluessel": "ar.b1.e04.l08.a10",
           "typ": "satzbau",
           "ziel": "ar.b1.e04.s0142",
           "alternativen": ["عِنْدَ السُّيَّاحِ الْحِصْنُ أَشْهَرُ مِنَ الْقَصْرِ."]
         },
         {
-          "schluessel": "ar.b1.e04.l08.a15",
+          "schluessel": "ar.b1.e04.l08.a11",
           "typ": "paare",
           "lemmata": ["ar.b1.e04.mashhad", "ar.b1.e04.turath", "ar.b1.e04.hadara", "ar.b1.e04.iftitah"]
         },
         {
-          "schluessel": "ar.b1.e04.l08.a16",
-          "typ": "frei",
-          "ziel": "ar.b1.e04.s0130",
-          "nach": "ausgang"
-        },
-        {
-          "schluessel": "ar.b1.e04.l08.a17",
+          "schluessel": "ar.b1.e04.l08.a12",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "ar.b1.e04.s0230",
           "ablenker": ["ar.b1.e04.s0227", "ar.b1.e04.s0114"]
         },
         {
-          "schluessel": "ar.b1.e04.l08.a18",
+          "schluessel": "ar.b1.e04.l08.a13",
           "typ": "harakat",
           "ziel": "ar.b1.e04.s0126",
           "varianten": ["هٰذَا مِنْ أَجْمَلُ الْمَشَاهِدِ الَّتِي رَأَيْتُهَا.", "هٰذَا مِنْ أَجْمَلِ الْمَشَاهِدُ الَّتِي رَأَيْتُهَا."]
         },
         {
-          "schluessel": "ar.b1.e04.l08.a19",
+          "schluessel": "ar.b1.e04.l08.a14",
           "typ": "minimalpaare",
           "ziel": "ar.b1.e04.hisn",
           "ablenker": ["ar.a2.e11.hisan"]
         },
         {
-          "schluessel": "ar.b1.e04.l08.a20",
+          "schluessel": "ar.b1.e04.l08.a15",
           "typ": "hoeren_schreiben",
           "ziel": "ar.b1.e04.s0332"
         },
         {
-          "schluessel": "ar.b1.e04.l08.a21",
+          "schluessel": "ar.b1.e04.l08.a16",
           "typ": "sprechen",
           "satz": "ar.b1.e04.s0258"
         }
