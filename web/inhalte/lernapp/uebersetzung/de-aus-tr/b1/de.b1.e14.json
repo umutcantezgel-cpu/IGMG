@@ -1,7 +1,7 @@
 {
   "format": "igmg-lernapp-uebersetzung",
   "version": 1,
-  "status": "entwurf",
+  "status": "automatisch_geprueft",
   "richtung": "de-aus-tr",
   "einheit": "de.b1.e14",
   "eintraege": [
@@ -557,7 +557,7 @@
     {
       "bezug": "de.b1.e14.s0008",
       "text": "Yeni pillere ihtiyacımız var.",
-      "alternativen": ["Bize yeni piller lazım.", "Yeni pil lazım.", "Yeni pil almamız gerekiyor."],
+      "alternativen": ["Bize yeni piller lazım.", "Yeni piller lazım.", "Yeni piller almamız gerekiyor."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -567,7 +567,7 @@
       "alternativen": [
         "Lütfen tam mikrofona konuş, yoksa arkada seni duymuyorlar.",
         "Lütfen doğrudan mikrofona konuş, aksi halde arkada seni duyamazlar.",
-        "Doğrudan mikrofona konuş lütfen, yoksa arkadan seni kimse duymaz."
+        "Doğrudan mikrofona konuş lütfen, yoksa arkada seni kimse duymaz."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -735,7 +735,7 @@
       "alternativen": [
         "Yeni kulaklığım kablosuz, spor yaparken bu çok pratik.",
         "Yeni kulaklıklarım kablosuz; spor yaparken bu çok kullanışlı.",
-        "Yeni kulaklıklarım kablosuz, bu sporda çok pratik."
+        "Yeni kulaklıklarım kablosuz, spor yaparken çok pratik."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -811,7 +811,7 @@
       "alternativen": [
         "Kâğıdı köşedeki mağazadan satın aldım.",
         "Kâğıdı köşedeki dükkândan satın aldım.",
-        "Kâğıtları köşedeki dükkândan aldım."
+        "Kâğıdı köşedeki mağazadan aldım."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -837,14 +837,18 @@
     {
       "bezug": "de.b1.e14.s0036",
       "text": "Evet, mikrofon açık.",
-      "alternativen": ["Evet, mikrofon açıldı.", "Evet, mikrofon açık durumda.", "Evet, mikrofon şu an açık."],
+      "alternativen": ["Evet, mikrofon açılmış durumda.", "Evet, mikrofon açık durumda.", "Evet, mikrofon şu an açık."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "de.b1.e14.s0037",
       "text": "Telefonu erkek kardeşimden aldım.",
-      "alternativen": ["Telefonu ağabeyimden aldım.", "Bu cep telefonunu erkek kardeşimden aldım.", "Telefonu bana kardeşim verdi."],
+      "alternativen": [
+        "Telefonu erkek kardeşimden edindim.",
+        "Bu cep telefonunu erkek kardeşimden aldım.",
+        "Telefonu bana kardeşim verdi."
+      ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -853,7 +857,7 @@
       "text": "Bu benim şarj aletim. Küçük, hafif ve telefonu çok hızlı şarj ediyor.",
       "alternativen": [
         "Bu, benim şarj aletim. Küçük ve hafiftir, telefonu da çok çabuk şarj eder.",
-        "İşte şarj aletim. Küçük ve hafif, telefonu çok hızlı dolduruyor.",
+        "İşte şarj aletim. Küçük ve hafif, telefonu çok hızlı şarj ediyor.",
         "Bu benim şarj cihazım. Küçük ve hafif, cep telefonunu çok hızlı şarj ediyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -887,7 +891,7 @@
       "alternativen": [
         "Çocuklar teknik kursunda küçük bir robot programlamayı öğreniyorlar.",
         "Teknoloji kursunda çocuklar küçük bir robot programlamayı öğrenir.",
-        "Teknik kursunda çocuklar küçük bir robotun nasıl programlandığını öğreniyor."
+        "Teknik kursunda çocuklar küçük bir robotu programlamayı öğrenir."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -919,7 +923,7 @@
       "text": "Robot, bir işi otomatik olarak yapan bir makinedir.",
       "alternativen": [
         "Robot, bir işi kendiliğinden yapan makinedir.",
-        "Bir robot, bir işi otomatik olarak gören bir makine.",
+        "Bir robot, bir işi otomatik olarak gerçekleştiren bir makinedir.",
         "Robot, işleri otomatik yapan bir makinedir."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -984,7 +988,7 @@
       "bezug": "de.b1.e14.s0050",
       "text": "Metalin önemli bir özelliği elektriği iyi iletmesidir.",
       "alternativen": [
-        "Metalin önemli özelliklerinden biri, elektriği iyi iletmesi.",
+        "Metalin önemli bir niteliği, elektriği iyi iletmesi.",
         "Metalin önemli bir özelliği, elektriği iyi iletmesi.",
         "Metalin önemli bir özelliği akımı iyi iletmesidir."
       ],
@@ -1017,9 +1021,9 @@
       "bezug": "de.b1.e14.s0053",
       "text": "Bugün makineler, eskiden insanların yaptığı birçok işin yerini alıyor.",
       "alternativen": [
-        "Günümüzde makineler eskiden insanların yaptığı pek çok işi üstleniyor.",
+        "Günümüzde makineler eskiden insanların yaptığı pek çok işin yerini alıyor.",
         "Makineler bugün, önceden insanların yaptığı birçok işin yerini alıyor.",
-        "Bugün eskiden insanların yaptığı birçok işi makineler yapıyor."
+        "Bugün eskiden insanların yaptığı birçok işin yerini makineler alıyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1059,10 +1063,10 @@
     },
     {
       "bezug": "de.b1.e14.s0057",
-      "text": "Yeni treni geliştiren mühendisi tanıyor musun?",
+      "text": "Yeni treni geliştiren kadın mühendisi tanıyor musun?",
       "alternativen": [
-        "Yeni treni geliştiren kadın mühendisi tanıyor musun?",
-        "Yeni treni geliştiren mühendisi tanır mısın?",
+        "Yeni treni geliştiren bayan mühendisi tanıyor musun?",
+        "Yeni treni geliştiren kadın mühendisi tanır mısın?",
         "Yeni treni geliştiren mühendis hanımı tanıyor musun?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1118,7 +1122,7 @@
       "alternativen": [
         "Bekleyen müşteriler girişte yeni telefonu şimdiden test ediyor.",
         "Bekleyen müşteriler, girişte yeni cep telefonunu deniyorlar bile.",
-        "Bekleyen müşteriler girişte yeni telefonu deniyorlar."
+        "Bekleyen müşteriler girişte yeni telefonu şimdiden deniyorlar."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1162,7 +1166,7 @@
       "alternativen": [
         "Sadece cam ya da mikrodalgaya uygun plastik tabak ve kaseler kullanın.",
         "Yalnızca cam veya mikrodalgaya dayanıklı plastikten tabak ve kaseler kullanınız.",
-        "Sadece camdan veya mikrodalga için uygun plastikten tabak ve kase kullanın."
+        "Sadece camdan veya mikrodalga için uygun plastikten tabak ve kaseler kullanın."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1183,7 +1187,7 @@
       "text": "Düğmeyle süreyi seçin, sonra Start'a basın.",
       "alternativen": [
         "Düğmeyle süreyi seçin ve ardından Start tuşuna basın.",
-        "Süreyi düğmeden seçin, sonra Başlat'a basın.",
+        "Süreyi düğmeyle seçin, sonra Başlat'a basın.",
         "Düğme ile zamanı seçin ve sonra Start'a basın."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1204,7 +1208,7 @@
       "bezug": "de.b1.e14.s0070",
       "text": "Dikkat: Yemek çok sıcak olabilir. Çocuklar cihazı yalnızca yetişkinlerle birlikte kullanmalıdır.",
       "alternativen": [
-        "Dikkat: Yiyecek çok sıcak olabilir. Çocuklar cihazı sadece bir yetişkinle kullanmalı.",
+        "Dikkat: Yiyecek çok sıcak olabilir. Çocuklar cihazı sadece yetişkinlerle kullanmalı.",
         "Dikkat! Yemek çok sıcak olabilir. Çocuklar cihazı ancak yetişkinlerin yanında kullanmalı.",
         "Dikkat: Yemek çok sıcak olabilir. Çocuklar cihazı yalnızca büyüklerle birlikte kullanmalı."
       ],
@@ -1250,7 +1254,7 @@
     {
       "bezug": "de.b1.e14.s0075",
       "text": "Işık birden kırmızı oluyor.",
-      "alternativen": ["Işık aniden kırmızıya dönüyor.", "Işık birdenbire kırmızı olur.", "Lamba birden kırmızı yanıyor."],
+      "alternativen": ["Işık aniden kırmızıya dönüyor.", "Işık birdenbire kırmızı olur.", "Işık birden kırmızı yanıyor."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1292,10 +1296,10 @@
     },
     {
       "bezug": "de.b1.e14.s0080",
-      "text": "Peki nereye gideceğini nereden biliyor?",
+      "text": "Peki nereye gitmesi gerektiğini nereden biliyor?",
       "alternativen": [
         "Peki nereye gitmesi gerektiğini nasıl biliyor?",
-        "Nereye gideceğini nereden bilir peki?",
+        "Nereye gitmesi gerektiğini nereden bilir peki?",
         "Ya nereye gitmesi gerektiğini nereden biliyor?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1358,7 +1362,7 @@
       "alternativen": [
         "Başlangıçta interneti en çok üniversitelerdeki bilim insanları kullanıyordu.",
         "İnternet ilk zamanlarda daha çok üniversitelerdeki bilim insanları tarafından kullanılıyordu.",
-        "Aslında internet ilk başta özellikle üniversitelerdeki bilim insanları tarafından kullanılırdı."
+        "İnternet ilk başta özellikle üniversitelerdeki bilim insanları tarafından kullanılırdı."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1387,11 +1391,11 @@
     },
     {
       "bezug": "de.b1.e14.s0089",
-      "text": "Eskiden kitaplar elle yazılırdı, sonra basılmaya başlandı.",
+      "text": "Eskiden kitaplar elle yazılırdı, sonra basıldı.",
       "alternativen": [
         "Eskiden kitaplar elle yazılıyordu, daha sonra basıldılar.",
         "Önceleri kitaplar el yazısıyla yazılırdı, sonraları basıldı.",
-        "Eskiden kitaplar elle yazılırdı, daha sonra matbaada basıldı."
+        "Eskiden kitaplar elle yazılırdı, daha sonra basılırdı."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1413,7 +1417,7 @@
       "alternativen": [
         "Günümüzde insanlar dünya çapında, çok küçük köylerde bile cep telefonu kullanıyor.",
         "Bugün dünyanın her yerinde insanlar cep telefonu kullanıyor, çok küçük köylerde de.",
-        "Bugün insanlar tüm dünyada telefon kullanıyor, çok küçük köylerde bile."
+        "Bugün insanlar tüm dünyada cep telefonu kullanıyor, çok küçük köylerde bile."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1479,7 +1483,7 @@
       "alternativen": [
         "Şehrimizdeki fabrika bisikletler için parça üretiyor.",
         "Bizim şehirdeki fabrika bisiklet parçaları üretir.",
-        "Kentimizdeki fabrika bisiklet parçası üretiyor."
+        "Kentimizdeki fabrika bisiklet parçaları üretiyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1495,8 +1499,8 @@
       "bezug": "de.b1.e14.s0099",
       "text": "Eskiden ayakkabılar elle yapılırdı, bugün bunu çoğunlukla bir makine yapıyor.",
       "alternativen": [
-        "Eskiden ayakkabılar el ile üretilirdi, günümüzde bu işi genellikle makineler yapıyor.",
-        "Önceden ayakkabılar elde yapılırdı, bugün bunu çoğu zaman bir makine yapar.",
+        "Eskiden ayakkabılar el ile üretilirdi, günümüzde bu işi genellikle bir makine yapıyor.",
+        "Önceden ayakkabılar elle yapılırdı, bugün bunu çoğu zaman bir makine yapar.",
         "Eskiden ayakkabılar elle imal edilirdi, şimdi bunu çoğunlukla makine yapıyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1515,10 +1519,10 @@
     },
     {
       "bezug": "de.b1.e14.s0101",
-      "text": "Ninem çocukken henüz cep telefonları yoktu.",
+      "text": "Büyükannem çocukken henüz cep telefonları yoktu.",
       "alternativen": [
-        "Anneannem çocukken cep telefonu diye bir şey yoktu.",
-        "Babaannem küçükken henüz cep telefonları mevcut değildi.",
+        "Büyükannem çocukken cep telefonu diye bir şey yoktu.",
+        "Büyükannem küçükken henüz cep telefonları mevcut değildi.",
         "Büyükannem çocukken daha cep telefonu yoktu."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1551,7 +1555,7 @@
       "text": "İlk bisiklet 1817'de yapıldı ve neredeyse tamamen tahtadandı.",
       "alternativen": [
         "İlk bisiklet 1817 yılında yapıldı ve hemen hemen tamamen ahşaptı.",
-        "İlk bisiklet 1817'de yapılmıştı ve neredeyse bütünüyle tahtadandı.",
+        "İlk bisiklet 1817'de yapıldı ve neredeyse bütünüyle tahtadandı.",
         "1817'de yapılan ilk bisiklet neredeyse tamamen ahşaptandı."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1585,7 +1589,7 @@
       "alternativen": [
         "Rakamlarımız ve sıfır, Arap dünyası üzerinden Avrupa'ya geldi.",
         "Bizim rakamlarımız ve sıfır Avrupa'ya Arap dünyası yoluyla geldi.",
-        "Rakamlarımız ile sıfır Arap dünyası üzerinden Avrupa'ya ulaştı.",
+        "Rakamlarımız ve sıfır Arap dünyası üzerinden Avrupa'ya ulaştı.",
         "Kullandığımız rakamlar ve sıfır Avrupa'ya Arap dünyası aracılığıyla geldi.",
         "Rakamlarımız ve sıfır Avrupa'ya Arap dünyasından geçerek geldi.",
         "Rakamlarımız ve sıfır Arap dünyası yoluyla Avrupa'ya geldi.",
@@ -1610,7 +1614,7 @@
       "text": "Birden cebindeki çikolatanın tamamen yumuşadığını fark etti.",
       "alternativen": [
         "Aniden cebindeki çikolatanın iyice yumuşamış olduğunu fark etti.",
-        "Birdenbire cebindeki çikolatanın bütünüyle yumuşadığını gördü.",
+        "Birdenbire cebindeki çikolatanın bütünüyle yumuşadığını fark etti.",
         "Birden cebindeki çikolatanın iyice yumuşadığını fark etti."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1632,7 +1636,7 @@
       "text": "Gözlük okumayı nasıl kolaylaştırdı",
       "alternativen": [
         "Gözlük okumayı nasıl daha kolay hâle getirdi",
-        "Gözlüğün okumayı kolaylaştırması",
+        "Gözlüğün okumayı nasıl kolaylaştırdığı",
         "Gözlük sayesinde okumak nasıl kolaylaştı"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1676,8 +1680,8 @@
       "text": "Daha önce bazı insanlar harfler daha büyük görünsün diye metnin üzerine bir parça cam koyardı.",
       "alternativen": [
         "Ondan önce bazı insanlar, harfler daha büyük görünsün diye yazının üstüne bir cam parçası koyardı.",
-        "Önceden bazı insanlar harfleri daha büyük görmek için metnin üzerine bir parça cam koyuyordu.",
-        "Daha önce bazı kişiler harfler büyük görünsün diye metnin üstüne bir cam parçası yerleştirirdi."
+        "Önceden bazı insanlar harflerin daha büyük görünmesi için metnin üzerine bir parça cam koyuyordu.",
+        "Daha önce bazı kişiler harfler daha büyük görünsün diye metnin üstüne bir cam parçası yerleştirirdi."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1686,8 +1690,8 @@
       "bezug": "de.b1.e14.s0116",
       "text": "İlk gözlüklerin henüz sapları yoktu, onları burnun üzerinde tutmak gerekiyordu.",
       "alternativen": [
-        "İlk gözlüklerde daha sap yoktu, onları burnun üstünde elle tutmak gerekiyordu.",
-        "İlk gözlüklerin sapı yoktu; insanlar onları burunlarının üzerinde tutmak zorundaydı.",
+        "İlk gözlüklerde daha sap yoktu, onları burnun üstünde tutmak gerekiyordu.",
+        "İlk gözlüklerin sapları yoktu; insanlar onları burunlarının üzerinde tutmak zorundaydı.",
         "İlk gözlüklerin henüz sapları yoktu, burnun üzerinde tutulmaları gerekiyordu."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1695,21 +1699,21 @@
     },
     {
       "bezug": "de.b1.e14.s0117",
-      "text": "1450 civarında Mainz'da matbaa icat edilince birden çok daha fazla kitap oldu.",
+      "text": "1450 civarında Mainz'da matbaa icat edilince birden çok daha fazla kitap vardı.",
       "alternativen": [
         "1450 dolaylarında Mainz'da matbaa icat edildiğinde birdenbire çok daha fazla kitap vardı.",
         "Mainz'da 1450 civarında matbaa icat edilince aniden çok daha fazla kitap ortaya çıktı.",
-        "1450 civarında Mainz'da kitap baskısı icat edildiğinde birden çok daha fazla kitap oldu."
+        "1450 civarında Mainz'da kitap baskısı icat edildiğinde birden çok daha fazla kitap vardı."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "de.b1.e14.s0118",
-      "text": "Bu yüzden çok daha fazla insanın gözlüğe ihtiyacı oldu ve gözlükler ucuzladı.",
+      "text": "Bu yüzden çok daha fazla insanın da gözlüğe ihtiyacı oldu ve gözlükler ucuzladı.",
       "alternativen": [
         "Bu nedenle çok daha fazla insan gözlüğe ihtiyaç duydu ve gözlükler daha ucuz oldu.",
-        "Bu yüzden çok daha çok insan gözlük ihtiyacı duydu, gözlükler de ucuzladı.",
+        "Bu yüzden çok daha fazla insan gözlüğe ihtiyaç duydu, gözlükler de ucuzladı.",
         "Bundan dolayı çok daha fazla kişinin gözlüğe ihtiyacı oldu ve gözlüklerin fiyatı düştü."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1719,7 +1723,7 @@
       "bezug": "de.b1.e14.s0119",
       "text": "Bugün Almanya'da yetişkinlerin yarısından fazlasının gözlüğe ihtiyacı var.",
       "alternativen": [
-        "Günümüzde Almanya'da yetişkinlerin yarısından çoğu gözlük kullanmak zorunda.",
+        "Günümüzde Almanya'da yetişkinlerin yarısından fazlasına gözlük gerekiyor.",
         "Bugün Almanya'da yetişkinlerin yarıdan fazlası gözlüğe ihtiyaç duyuyor.",
         "Bugün Almanya'da yetişkinlerin yarısından fazlası gözlüğe muhtaç."
       ],
@@ -1732,7 +1736,7 @@
       "alternativen": [
         "Bu buluş olmasaydı, yaşlılıkta okumak pek çok insan için çok zor olurdu.",
         "Bu icat olmadan birçok insan için yaşlılıkta okumak çok zor olurdu.",
-        "Bu icat olmasaydı birçok insan yaşlandığında çok zor okurdu."
+        "Bu icat olmasaydı birçok insan yaşlandığında okumak çok zor olurdu."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1743,7 +1747,7 @@
       "alternativen": [
         "İlk gözlüğü Almanya'da icat ettiler.",
         "Gözlük ilk olarak Almanya'da icat edildi.",
-        "İlk gözlük Almanya'da yapıldı."
+        "Almanya'da ilk gözlük icat edildi."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1762,7 +1766,7 @@
     {
       "bezug": "de.b1.e14.s0123",
       "text": "Çünkü çok daha fazla kitap vardı.",
-      "alternativen": ["Çünkü çok daha çok kitap vardı.", "Çok daha fazla kitap olduğu için.", "Çünkü kitap sayısı çok artmıştı."],
+      "alternativen": ["Çünkü kitaplar çok daha fazlaydı.", "Çok daha fazla kitap olduğu için.", "Çünkü kitap sayısı çok artmıştı."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1778,7 +1782,7 @@
       "text": "Çünkü insanlar daha kötü görüyordu.",
       "alternativen": [
         "Çünkü insanların gözleri daha kötü görüyordu.",
-        "İnsanlar daha az gördüğü için.",
+        "İnsanlar daha kötü gördüğü için.",
         "Çünkü insanların görme gücü azalmıştı."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1790,7 +1794,7 @@
       "alternativen": [
         "Gözlüğü icat eden kişinin adını bilmiyoruz.",
         "Gözlüğün mucidinin adı bilinmiyor.",
-        "Gözlüğü bulan kişinin adı bilinmiyor."
+        "Gözlüğü icat eden insanın adı bilinmiyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1811,7 +1815,7 @@
       "text": "Bisikletin ne zaman icat edildiğini biliyor musun?",
       "alternativen": [
         "Bisiklet ne zaman icat edildi, biliyor musun?",
-        "Bisikletin ne zaman bulunduğunu biliyor musun?",
+        "Bisikletin ne zaman icat edildiğini bilir misin?",
         "Bisikletin icat edildiği zamanı biliyor musun?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1837,7 +1841,7 @@
       "alternativen": [
         "Ahşaptan yapılmıştı ve pedalları yoktu, ayaklarla itiliyordu.",
         "Tahtadan yapılmıştı, pedalı yoktu; insanlar onu ayaklarıyla hareket ettiriyordu.",
-        "Ahşaptı ve pedalı yoktu, ayaklarla yürütülüyordu."
+        "Ahşaptı ve pedalı yoktu, onu ayaklarıyla hareket ettiriyorlardı."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1866,7 +1870,7 @@
       "alternativen": [
         "Gözlük 1300 yılı civarında İtalya'da icat edildi ama mucidi bilinmiyor.",
         "Gözlük yaklaşık 1300'de İtalya'da icat edildi, fakat mucidini kimse tanımıyor.",
-        "Gözlük 1300 dolaylarında İtalya'da bulundu, ama onu kimin icat ettiğini kimse bilmiyor."
+        "Gözlük 1300 dolaylarında İtalya'da icat edildi, ama onu kimin icat ettiğini kimse bilmiyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1875,9 +1879,9 @@
       "bezug": "de.b1.e14.s0135",
       "text": "Yeni bir ürün satılmadan önce iyice test edilmelidir.",
       "alternativen": [
-        "Yeni bir ürün satışa çıkmadan önce dikkatlice test edilmeli.",
+        "Yeni bir ürün satışa çıkmadan önce ayrıntılı olarak test edilmeli.",
         "Yeni bir ürünün satılmadan önce ayrıntılı olarak test edilmesi gerekir.",
-        "Yeni bir ürün satılmadan önce esaslı bir şekilde denenmelidir."
+        "Yeni bir ürün satılmadan önce iyice denenmelidir."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1923,8 +1927,8 @@
       "bezug": "de.b1.e14.s0139",
       "text": "Doktorlar sırt ağrısına karşı yeni bir yöntemi deniyor.",
       "alternativen": [
-        "Doktorlar bel ağrısına karşı yeni bir yöntem test ediyor.",
-        "Hekimler sırt ağrısı için yeni bir yöntemi deniyor.",
+        "Doktorlar sırt ağrısına karşı yeni bir yöntem test ediyor.",
+        "Hekimler sırt ağrısına karşı yeni bir yöntemi deniyor.",
         "Doktorlar sırt ağrılarına karşı yeni bir yöntem deniyorlar."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1935,7 +1939,7 @@
       "text": "Bugün bilimde eskiye göre çok daha fazla kadın çalışıyor.",
       "alternativen": [
         "Bugün bilim alanında eskisinden çok daha fazla kadın çalışıyor.",
-        "Günümüzde bilimde geçmişe kıyasla çok daha çok kadın var.",
+        "Günümüzde bilimde geçmişe kıyasla çok daha fazla kadın çalışıyor.",
         "Bugün bilimde eskiden olduğundan çok daha fazla kadın çalışıyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1945,7 +1949,7 @@
       "bezug": "de.b1.e14.s0141",
       "text": "Doğan Hanım bilim insanı olarak bitkilerin az suyla nasıl büyüdüğünü araştırıyor.",
       "alternativen": [
-        "Bilim insanı Doğan Hanım, bitkilerin az suyla nasıl yetiştiğini inceliyor.",
+        "Bilim insanı Doğan Hanım, bitkilerin az suyla nasıl büyüdüğünü inceliyor.",
         "Doğan Hanım bir bilim insanı olarak bitkilerin az suyla nasıl büyüdüğünü inceliyor.",
         "Bilim insanı olan Doğan Hanım, bitkilerin az suyla nasıl büyüdüğünü araştırıyor."
       ],
@@ -1965,11 +1969,11 @@
     },
     {
       "bezug": "de.b1.e14.s0143",
-      "text": "Profesör Hartmann on yıldır tıp için küçük robotlar üzerinde araştırma yapıyor.",
+      "text": "Profesör Hartmann Hanım on yıldır tıp için küçük robotlar üzerinde araştırma yapıyor.",
       "alternativen": [
-        "Profesör Hartmann on yıldan beri tıp alanında küçük robotlar üzerine araştırma yapıyor.",
-        "On yıldır Profesör Hartmann tıp için küçük robotları araştırıyor.",
-        "Profesör Hartmann on senedir tıpta kullanılacak küçük robotlar üzerinde çalışıyor."
+        "Profesör Hartmann Hanım on yıldan beri tıp alanında küçük robotlar üzerine araştırma yapıyor.",
+        "On yıldır Profesör Hartmann Hanım tıp için küçük robotları araştırıyor.",
+        "Profesör Hartmann Hanım on senedir tıpta kullanılacak küçük robotlar üzerinde çalışıyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1979,7 +1983,7 @@
       "text": "Çocuklar araştırmayı sever: Birçok soru sorar ve her şeyi denerler.",
       "alternativen": [
         "Çocuklar araştırma yapmayı sever: Çok soru sorar, her şeyi denerler.",
-        "Çocuklar keşfetmeyi sever: Bir sürü soru sorarlar ve her şeyi denerler.",
+        "Çocuklar araştırmayı severler: Bir sürü soru sorarlar ve her şeyi denerler.",
         "Çocuklar araştırmaktan hoşlanır: Pek çok soru sorup her şeyi denerler."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2013,7 +2017,7 @@
       "alternativen": [
         "1928'de bakterilere karşı önemli bir ilaç rastlantıyla keşfedildi.",
         "Bakterilere karşı önemli bir ilaç 1928 yılında tesadüfen keşfedildi.",
-        "1928 yılında bakterilere karşı etkili önemli bir ilaç tesadüfen bulundu."
+        "1928 yılında bakterilere karşı önemli bir ilaç tesadüfen ortaya çıkarıldı."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2089,7 +2093,7 @@
       "text": "Yeni bir şey icat eden insana mucit denir.",
       "alternativen": [
         "Yeni bir şey icat eden kişiye mucit denir.",
-        "Yeni bir şey bulan insana mucit adı verilir.",
+        "Yeni bir şey icat eden insana mucit adı verilir.",
         "Yeni bir şey icat eden bir insan mucit olarak adlandırılır."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2162,7 +2166,7 @@
       "text": "Bugün biyolojide ne yapıyorsunuz?",
       "alternativen": [
         "Bugün biyoloji dersinde ne yapıyorsunuz?",
-        "Bugün biyolojide ne yapacaksınız?",
+        "Bugün biyolojide neler yapıyorsunuz?",
         "Bugünkü biyoloji dersinde ne yapıyorsunuz?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2182,7 +2186,7 @@
     {
       "bezug": "de.b1.e14.s0163",
       "text": "Peki orada ne görülebiliyor?",
-      "alternativen": ["Peki orada ne görebiliyorsunuz?", "Peki neler görülüyor?", "Peki orada ne görünüyor?"],
+      "alternativen": ["Peki orada ne görebiliyorsunuz?", "Peki orada neler görülüyor?", "Peki orada ne görülebilir?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2255,7 +2259,7 @@
     {
       "bezug": "de.b1.e14.s0170",
       "text": "500 çocuğa sorduk.",
-      "alternativen": ["Beş yüz çocuğa sorduk.", "500 çocuğa soru sorduk.", "500 çocukla görüştük."],
+      "alternativen": ["Beş yüz çocuğa sorduk.", "500 çocuğa soru sorduk.", "500 çocuğa anket yaptık."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2265,7 +2269,7 @@
       "alternativen": [
         "Deney için bize su, tuz ve iki bardak lazım. İlk önce tuz tartılır.",
         "Deney için su, tuz ve iki bardak gerekiyor. Önce tuz tartılıyor.",
-        "Deneyde su, tuz ve iki bardağa ihtiyacımız var. İlk olarak tuz tartılır."
+        "Deney için su, tuz ve iki bardağa gereksinimimiz var. İlk olarak tuz tartılır."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2447,8 +2451,8 @@
       "text": "Sanmıyorum, çünkü bir robot bir çocuğun kendini nasıl hissettiğini anlamaz.",
       "alternativen": [
         "Hiç sanmıyorum, çünkü robot bir çocuğun nasıl hissettiğini anlayamaz.",
-        "Bence alamaz, çünkü bir robot çocuğun kendini nasıl hissettiğini anlamıyor.",
-        "Zannetmiyorum, çünkü bir robot bir çocuğun neler hissettiğini anlamaz."
+        "Bence değil, çünkü bir robot çocuğun kendini nasıl hissettiğini anlamıyor.",
+        "Zannetmiyorum, çünkü bir robot bir çocuğun nasıl hissettiğini anlamaz."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2459,7 +2463,7 @@
       "alternativen": [
         "Yapay zekâ yararlıdır, ama sonuçlarını hep eleştirel şekilde kontrol etmeliyiz.",
         "Yapay zekâ işe yarar, fakat sonuçlar her zaman eleştirel olarak kontrol edilmeli.",
-        "Yapay zekâ faydalıdır ama sonuçları her zaman dikkatle kontrol etmek lazım."
+        "Yapay zekâ faydalıdır ama sonuçları her zaman eleştirel olarak kontrol etmek lazım."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2477,11 +2481,11 @@
     },
     {
       "bezug": "de.b1.e14.s0191",
-      "text": "Kesinlikle cep telefonu. Onunla telefon edebiliyor, fotoğraf çekebiliyor ve ders çalışabiliyorum.",
+      "text": "Kesinlikle cep telefonu. Onunla telefon edebiliyorum, fotoğraf çekebiliyorum ve ders çalışabiliyorum.",
       "alternativen": [
-        "Tabii ki cep telefonu. Onunla konuşabiliyor, fotoğraf çekebiliyor ve öğrenebiliyorum.",
-        "Elbette cep telefonu. Telefonla arayabiliyor, fotoğraf çekebiliyor ve öğrenebiliyorum.",
-        "Açıkça cep telefonu. Onunla telefon görüşmesi yapıyor, fotoğraf çekiyor ve ders çalışıyorum."
+        "Tabii ki cep telefonu. Onunla konuşabiliyorum, fotoğraf çekebiliyorum ve öğrenebiliyorum.",
+        "Elbette cep telefonu. Telefonla arayabiliyorum, fotoğraf çekebiliyorum ve öğrenebiliyorum.",
+        "Açıkça cep telefonu. Onunla telefon görüşmesi yapabiliyorum, fotoğraf çekebiliyorum ve ders çalışabiliyorum."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2521,10 +2525,10 @@
     },
     {
       "bezug": "de.b1.e14.s0195",
-      "text": "En çok akşamları ninemle telefonda konuşmayı severim.",
+      "text": "En çok akşamları büyükannemle telefonda konuşmayı severim.",
       "alternativen": [
-        "En sevdiğim, akşamları babaannemle telefonda konuşmak.",
-        "Akşamları anneannemle telefonlaşmayı her şeyden çok severim.",
+        "En sevdiğim, akşamları büyükannemle telefonda konuşmak.",
+        "Akşamları büyükannemle telefonlaşmayı her şeyden çok severim.",
         "En çok akşamları büyükannemle telefonda konuşuyorum."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2622,7 +2626,7 @@
     {
       "bezug": "de.b1.e14.s0205",
       "text": "Sevim Nine'nin bahçesi için su",
-      "alternativen": ["Sevim Nine'nin bahçesine su", "Sevim Nine'nin bahçesi için sulama", "Sevim Ninenin bahçesi için su"],
+      "alternativen": ["Sevim Nine'nin bahçesine su", "Sevim Nine'nin bahçesi için sulama", "Sevim Nine'nin bahçesi için su temini"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2672,11 +2676,11 @@
     },
     {
       "bezug": "de.b1.e14.s0210",
-      "text": "Ninemin büyük bir bahçesi var ama her gün bitkileri sulamaya vakti yok.",
+      "text": "Büyükannemin büyük bir bahçesi var ama her gün bitkileri sulamaya vakti yok.",
       "alternativen": [
-        "Babaannemin büyük bir bahçesi var, ama bitkileri sulamak için her gün zamanı olmuyor.",
-        "Anneannemin geniş bir bahçesi var ama her gün bitkileri sulayacak zamanı yok.",
-        "Ninemin büyük bir bahçesi var, ancak bitkileri sulamaya her gün vakit bulamıyor."
+        "Büyükannemin büyük bir bahçesi var, ama bitkileri sulamak için her gün zamanı olmuyor.",
+        "Büyükannemin geniş bir bahçesi var ama her gün bitkileri sulayacak zamanı yok.",
+        "Büyükannemin büyük bir bahçesi var, ancak bitkileri sulamaya her gün vakit bulamıyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2686,7 +2690,7 @@
       "text": "Üçü, bitkilere otomatik olarak su veren bir sistem yapmak istiyor.",
       "alternativen": [
         "Üç kız, bitkileri otomatik olarak sulayan bir sistem kurmak istiyor.",
-        "Üçü de bitkilere kendiliğinden su veren bir sistem yapmak istiyorlar.",
+        "Üçü bitkilere kendiliğinden su veren bir sistem yapmak istiyorlar.",
         "Üçü, bitkileri otomatik sulayan bir sistem yapmak istiyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2705,11 +2709,11 @@
     },
     {
       "bezug": "de.b1.e14.s0213",
-      "text": "Üçü, Laylā'nın annesi Ranā'dan yardım istiyor, çünkü o bir mühendis.",
+      "text": "Üçü, Laylā'nın annesi Ranā'dan yardım istiyor, çünkü o bir kadın mühendis.",
       "alternativen": [
-        "Üç kız Laylā'nın annesi Ranā'dan yardım istiyor, çünkü Ranā mühendis.",
-        "Üçü de Laylā'nın annesi Ranā'dan yardım istiyor, çünkü Ranā bir mühendis.",
-        "Üçü, mühendis olan Laylā'nın annesi Ranā'dan yardım istiyor."
+        "Üç kız Laylā'nın annesi Ranā'dan yardım istiyor, çünkü Ranā bayan mühendis.",
+        "Üçü Laylā'nın annesi Ranā'dan yardım istiyor, çünkü Ranā bir kadın mühendis.",
+        "Üçü, Laylā'nın annesi Ranā'dan yardım istiyor, çünkü o bir mühendis hanım."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2802,8 +2806,8 @@
       "bezug": "de.b1.e14.s0222",
       "text": "Merak etmeyin, hatalar da işin parçası. Onu mutlaka buluruz!",
       "alternativen": [
-        "Endişelenmeyin, hata yapmak işin bir parçası. Hatayı kesinlikle bulacağız!",
-        "Üzülmeyin, hatalar da bu işe dahil. Onu mutlaka bulacağız!",
+        "Endişelenmeyin, hatalar da işin bir parçası. Hatayı kesinlikle bulacağız!",
+        "Endişelenmeyin, hatalar da bu işe dahil. Onu mutlaka bulacağız!",
         "Merak etmeyin, hatalar da işin içinde var. Onu kesin buluruz!"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2811,22 +2815,22 @@
     },
     {
       "bezug": "de.b1.e14.s0223",
-      "text": "Bir saat sonra hatayı buluyorlar ve pompa çalışıyor.",
+      "text": "Bir saat sonra hatayı buldular ve pompa çalışıyor.",
       "alternativen": [
         "Bir saat sonra hatayı bulmuşlar, pompa da çalışıyor.",
-        "Bir saat sonra hatayı buldular ve pompa çalışıyor.",
-        "Bir saatin sonunda hatayı buluyorlar ve pompa çalışmaya başlıyor."
+        "Bir saatin sonunda hatayı buldular, pompa da çalışıyor.",
+        "Bir saatin sonunda hatayı buldular ve pompa çalışmaya başladı."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "de.b1.e14.s0224",
-      "text": "Cumartesi günü sistem Sevim Nine'nin bahçesine kuruluyor.",
+      "text": "Cumartesi günü sistem Sevim Nine'nin bahçesinde kuruluyor.",
       "alternativen": [
-        "Cumartesi sistem Sevim Nine'nin bahçesinde kuruluyor.",
-        "Cumartesi günü sistemi Sevim Nine'nin bahçesine kuruyorlar.",
-        "Sistem cumartesi günü Sevim Nine'nin bahçesine kurulacak."
+        "Cumartesi sistem Sevim Nine'nin bahçesinde kurulacak.",
+        "Cumartesi günü sistemi Sevim Nine'nin bahçesinde kuruyorlar.",
+        "Sistem cumartesi günü Sevim Nine'nin bahçesinde kurulacak."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2836,7 +2840,7 @@
       "text": "Peki bu nasıl çalışıyor? Artık hiç sulamam gerekmiyor mu?",
       "alternativen": [
         "Bu nasıl çalışıyor peki? Şimdi hiç sulamak zorunda değil miyim?",
-        "Bu nasıl işliyor? Artık hiç sulamayacak mıyım?",
+        "Bu nasıl işliyor? Artık hiç sulamam gerekmez mi?",
         "Peki bu nasıl çalışıyor? Artık hiç sulama yapmam gerekmeyecek mi?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2848,7 +2852,7 @@
       "alternativen": [
         "Hayır, nineciğim. Toprak ne kadar kuru olursa bitkiler o kadar fazla su alır.",
         "Hayır, nine. Toprak kurudukça bitkiler daha çok su alıyor.",
-        "Hayır, babaanne. Toprak ne kadar kuruysa bitkilere o kadar çok su gidiyor."
+        "Hayır, büyükanne. Toprak ne kadar kuruysa bitkilere o kadar çok su gidiyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2858,7 +2862,7 @@
       "text": "Su, Sevim Nine'nin yağmur suyu biriktirdiği büyük bir kovadan geliyor.",
       "alternativen": [
         "Su, Sevim Nine'nin yağmuru topladığı büyük bir kovadan geliyor.",
-        "Su, Sevim Nine'nin içinde yağmur suyu biriktirdiği büyük bir kovadan geliyor.",
+        "Su, içinde Sevim Nine'nin yağmur suyu biriktirdiği büyük bir kovadan geliyor.",
         "Su, Sevim Nine'nin yağmur topladığı büyük bir kovadan gelir."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2892,7 +2896,7 @@
       "alternativen": [
         "Öğretmenler, özellikle yağmur fikrine bayılıyor.",
         "Kadın ve erkek öğretmenler çok beğeniyor, özellikle yağmur fikrini.",
-        "Öğretmenler büyük beğeni duyuyor, özellikle yağmur suyu fikrine."
+        "Öğretmenler büyük beğeni duyuyor, özellikle yağmur fikrine."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2924,7 +2928,7 @@
       "text": "Kızlar icatlarını kimin için yapıyor?",
       "alternativen": [
         "Kızlar buluşlarını kimin için yapıyorlar?",
-        "Kızlar icatlarını kime yapıyor?",
+        "Kızlar icatlarını kimler için yapıyorlar?",
         "Kızlar bu icadı kimin için yapıyor?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2932,8 +2936,8 @@
     },
     {
       "bezug": "de.b1.e14.s0234",
-      "text": "Elif'in ninesi için.",
-      "alternativen": ["Elif'in babaannesi için.", "Elif'in anneannesi için.", "Elif'in büyükannesi için."],
+      "text": "Elif'in büyükannesi için.",
+      "alternativen": ["Elif'in büyükannesine.", "Elif'in büyükannesi için yapıyorlar.", "Elif'in büyükannesi için hazırlıyorlar."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2946,8 +2950,8 @@
     },
     {
       "bezug": "de.b1.e14.s0236",
-      "text": "Öğretmenleri için.",
-      "alternativen": ["Kendi öğretmenleri için.", "Öğretmenlerine.", "Öğretmenleri için yapıyorlar."],
+      "text": "Kadın öğretmenleri için.",
+      "alternativen": ["Kendi kadın öğretmenleri için.", "Kadın öğretmenlerine.", "Kadın öğretmenleri için yapıyorlar."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2978,8 +2982,8 @@
     },
     {
       "bezug": "de.b1.e14.s0240",
-      "text": "Mia'nın öğretmeni.",
-      "alternativen": ["Mia'nın kadın öğretmeni.", "Mia'nın öğretmeni yardım ediyor.", "Mia'nın öğretmen hanımı."],
+      "text": "Mia'nın kadın öğretmeni.",
+      "alternativen": ["Mia'nın bayan öğretmeni.", "Mia'nın kadın öğretmeni yardım ediyor.", "Mia'nın öğretmen hanımı."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3099,17 +3103,16 @@
     },
     {
       "bezug": "de.b1.e14.s0255",
-      "text": "Jan halasından hediye olarak bir mikroskop aldı ve onu Kamāl Dede'ye gösteriyor.",
+      "text": "Jan teyzesinden hediye olarak bir mikroskop aldı ve onu Kamāl Dede'ye gösteriyor.",
       "alternativen": [
-        "Jan teyzesinden hediye olarak bir mikroskop aldı ve onu Kamāl Dede'ye gösteriyor.",
-        "Jan halasından bir mikroskop hediye aldı ve onu Kamāl Dede'ye gösteriyor.",
-        "Jan teyzesinden bir mikroskop hediye aldı ve onu Kamāl Dede'ye gösteriyor.",
-        "Jan'a halası bir mikroskop hediye etti ve Jan onu Kamāl Dede'ye gösteriyor.",
+        "Jan'a teyzesi hediye olarak bir mikroskop verdi ve onu Kamāl Dede'ye gösteriyor.",
+        "Jan teyzesinden bir mikroskop hediye aldı ve Kamāl Dede'ye gösteriyor.",
         "Jan'a teyzesi bir mikroskop hediye etti ve Jan onu Kamāl Dede'ye gösteriyor.",
-        "Jan halasından hediye olarak bir mikroskop aldı ve Kamāl Dede'ye gösteriyor.",
+        "Jan'a teyzesi bir mikroskop hediye etti ve Jan bunu Kamāl Dede'ye gösteriyor.",
         "Jan teyzesinden hediye olarak bir mikroskop aldı ve Kamāl Dede'ye gösteriyor.",
-        "Jan, halasının hediye ettiği mikroskobu Kamāl Dede'ye gösteriyor.",
-        "Jan, teyzesinin hediye ettiği mikroskobu Kamāl Dede'ye gösteriyor."
+        "Jan teyzesinden hediye olarak bir mikroskop aldı, sonra Kamāl Dede'ye gösteriyor.",
+        "Jan, teyzesinin hediye ettiği mikroskobu Kamāl Dede'ye gösteriyor.",
+        "Jan, teyzesinin verdiği mikroskobu Kamāl Dede'ye gösteriyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3182,7 +3185,7 @@
       "alternativen": [
         "Elbette! Bu vidayla görüntüyü net hâle getirirsin.",
         "Tabii ki! Görüntüyü bu vida ile netleştiriyorsun.",
-        "Tabii! Bu vidayla resmi netleştirebilirsin."
+        "Tabii! Bu vidayla resmi netleştiriyorsun."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3233,8 +3236,8 @@
     },
     {
       "bezug": "de.b1.e14.s0267",
-      "text": "Jan halasından ne aldı?",
-      "alternativen": ["Jan teyzesinden ne aldı?", "Jan'a halası ne hediye etti?", "Jan'a teyzesi ne verdi?"],
+      "text": "Jan teyzesinden ne aldı?",
+      "alternativen": ["Jan'ın teyzesinden ne aldı?", "Jan'a teyzesi ne hediye etti?", "Jan'a teyzesi ne verdi?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3287,14 +3290,14 @@
     {
       "bezug": "de.b1.e14.s0274",
       "text": "Gözleri korurlar.",
-      "alternativen": ["Gözleri koruyorlar.", "Gözlerin korunmasını sağlarlar.", "Gözü korurlar."],
+      "alternativen": ["Gözleri koruyorlar.", "Gözlerin korunmasını sağlarlar.", "Gözleri muhafaza ederler."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "de.b1.e14.s0275",
-      "text": "Yaprak neden oluşuyor?",
-      "alternativen": ["Yaprak neyden oluşur?", "Yaprak nelerden oluşuyor?", "Yaprak neden meydana geliyor?"],
+      "text": "Yaprak neyden oluşuyor?",
+      "alternativen": ["Yaprak neyden oluşur?", "Yaprak nelerden oluşuyor?", "Yaprak neyden meydana geliyor?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3346,7 +3349,7 @@
       "text": "Müzede tanıştığımız mucit kadın çok nazikti.",
       "alternativen": [
         "Müzede tanıştığımız kadın mucit çok kibardı.",
-        "Müzede tanıdığımız mucit çok nazik biriydi.",
+        "Müzede tanıdığımız kadın mucit çok nazik biriydi.",
         "Müzede tanıştığımız mucit hanım çok cana yakındı."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -3358,18 +3361,18 @@
       "alternativen": [
         "Bozuk şarj aletini mağazaya geri götürüyoruz.",
         "Bozuk şarj cihazını dükkâna geri götürüyoruz.",
-        "Bozulan şarj aletini dükkâna iade ediyoruz."
+        "Bozulmuş şarj aletini dükkâna iade ediyoruz."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "de.b1.e14.s0283",
-      "text": "Ne kadar çok kitap olduysa o kadar çok insan okumayı öğrendi.",
+      "text": "Ne kadar çok kitap vardıysa o kadar çok insan okumayı öğrendi.",
       "alternativen": [
         "Kitap sayısı arttıkça daha çok insan okumayı öğrendi.",
         "Kitaplar çoğaldıkça daha fazla insan okuma öğrendi.",
-        "Ne kadar çok kitap vardıysa o kadar çok insan okumayı öğrendi."
+        "Kitaplar ne kadar çoksa okumayı o kadar çok insan öğrendi."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3391,7 +3394,7 @@
       "alternativen": [
         "İlk mikroskop dört yüz yıldan uzun bir süre önce yapıldı.",
         "İlk mikroskop 400 yıldan fazla zaman önce yapıldı.",
-        "İlk mikroskop 400 yıldan fazla bir süre önce yapılmıştı."
+        "İlk mikroskop 400 yıldan fazla bir süre önce yapıldı."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3401,7 +3404,7 @@
       "text": "Bu üretici, cihazlarının iyi kalitesiyle tanınıyor.",
       "alternativen": [
         "Bu üretici, cihazlarının kalitesinin iyi olmasıyla bilinir.",
-        "Bu üretici firma cihazlarının yüksek kalitesiyle tanınır.",
+        "Bu üretici firma cihazlarının iyi kalitesiyle tanınır.",
         "Bu üretici, cihazlarının iyi kalitesiyle biliniyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -3438,9 +3441,9 @@
       "bezug": "de.b1.e14.s0289",
       "text": "Araştırma olmadan yeni ilaç olmaz.",
       "alternativen": [
-        "Araştırma yapılmazsa yeni ilaçlar da olmaz.",
+        "Araştırma yapılmazsa yeni ilaçlar olmaz.",
         "Araştırma olmadan yeni ilaçlar ortaya çıkmaz.",
-        "Araştırma olmazsa yeni ilaç da olmaz."
+        "Araştırma olmazsa yeni ilaç olmaz."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3484,7 +3487,7 @@
       "alternativen": [
         "Gözlük sayesinde birçok insan yaşlılıkta da iyi okuyabiliyor.",
         "Gözlük pek çok insana yaşlandığında da iyi okuma imkânı veriyor.",
-        "Gözlük, birçok kişinin yaşlılıkta da rahat okumasını sağlıyor."
+        "Gözlük, birçok kişinin yaşlılıkta da iyi okumasını sağlıyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3495,7 +3498,7 @@
       "alternativen": [
         "Küçük robot bir uygulama ile kontrol ediliyor.",
         "Küçük robot bir uygulamayla yönetiliyor.",
-        "Küçük robota bir uygulamayla kumanda ediliyor."
+        "Küçük robot bir uygulama ile yönlendiriliyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3517,7 +3520,7 @@
       "alternativen": [
         "Eskiden buzdolabı yoktu, yiyecekler de çabucak bozulurdu.",
         "Önceden buzdolabı yoktu ve yemekler hemen bozuluyordu.",
-        "Eskiden buzdolabı olmadığı için yemek çabuk bozulurdu."
+        "Eskiden buzdolabı yoktu ve yemek hemen bozulurdu."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3535,10 +3538,10 @@
     },
     {
       "bezug": "de.b1.e14.s0298",
-      "text": "Kışın göllerden buz getirilir ve yaz için biriktirilirdi.",
+      "text": "Kışın göllerden buz getirilirdi ve yaz için biriktirilirdi.",
       "alternativen": [
         "Kış aylarında göllerden buz alınıp yaz için toplanırdı.",
-        "Kışın göllerden buz çıkarılır ve yaz için saklanırdı.",
+        "Kışın göllerden buz çıkarılırdı ve yaz için saklanırdı.",
         "Kışın göllerden buz getirilip yaz için biriktiriliyordu."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -3763,7 +3766,7 @@
       "alternativen": [
         "Cihaz satışa çıkmadan önce yazılım daha test edilmeli.",
         "Cihaz satılmadan önce yazılımın henüz test edilmesi lazım.",
-        "Cihazın satışından önce yazılımın da test edilmesi gerekiyor."
+        "Cihazın satışından önce yazılımın henüz test edilmesi gerekiyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3876,7 +3879,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Türkçede edilgen geçmiş zaman tek bir kelimedir: icat edildi, basıldı. Almancada wurde (çoğulda wurden) ikinci sıraya, ortaç (erfunden, gedruckt) cümlenin sonuna gelir; işi yapanı von ile söylersiniz (von Wissenschaftlern)."
+                "text": "Türkçede edilgen geçmiş zaman bir ekle kurulur: icat edildi, basıldı. Almancada wurde (çoğulda wurden) ikinci sıraya, ortaç (erfunden, gedruckt) cümlenin sonuna gelir; işi yapanı von ile söylersiniz (von Wissenschaftlern)."
               }
             ]
           },
