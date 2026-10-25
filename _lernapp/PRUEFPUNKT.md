@@ -1,5 +1,14 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 14:05 UTC:**
+  - **B1 tr** `wf_058f8fa1-7d9` läuft mit Haiku, ≈ 0,11 %/min. Fertig sind alle Lektorate, die Übersetzungen e01/e02 und die Rückübersetzungen e03–e07.
+  - **B1 ar** `wf_ff6dce59-04b` seriell neu gestartet: `entworfen` e01–e16, `lektoriert` e01–e08, `uebersetzt` e01/e02, `rueckgeprueft` e01.
+  - **Taktung:** Auslastung 0,65 um 13:54. Der Rest des Fensters (0,35 bis 16:10) trägt 1 zusätzlichen Agenten. Kontrolle um 15:45 (`trig_0128FBwLhmoeWa4bgHuP79gr`).
+  - **Warteschlange nach 16:10:**
+    1. B2 de: `plan` `scratchpad/l3/b2/plan-de.json`, `entworfen` e01–e08.
+    2. B2 tr.
+    3. B2 ar.
+
 - **Stand 25.10.2026 12:50 UTC – B1 de live:**
   - **B1 de live:** de-aus-tr und de-aus-ar haben je 15 B1-Einheiten mit `hinweis: true`; e16 ist ausgeblendet. Der Vercel-Bau mit Import-Fix ist grün.
   - **Taktung:**
