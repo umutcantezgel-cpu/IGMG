@@ -5,89 +5,504 @@
   "richtung": "tr-aus-de",
   "einheit": "tr.b1.e13",
   "eintraege": [
-    { "bezug": "tr.b1.e13.donusum", "text": "Umwandlung", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.iklim", "text": "Klima (Erdklima)", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kirlilik", "text": "Verschmutzung", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.tasarruf", "text": "Sparen, Ersparnis", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kuraklik", "text": "Dürre", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.sicaklik", "text": "Temperatur, Hitze", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.isi", "text": "Wärme (Energie)", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.sel", "text": "Überschwemmung", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.atik", "text": "Abfall, Müll", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.plastik", "text": "Plastik, Kunststoff", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.cam", "text": "Glas", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.metal", "text": "Metall", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.ambalaj", "text": "Verpackung", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.sera", "text": "Treibhaus, Gewächshaus", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.etki", "text": "Wirkung, Einfluss", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.degisim", "text": "Wandel, Veränderung", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.artis", "text": "Anstieg, Zunahme", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.tuketim", "text": "Verbrauch, Konsum", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.israf", "text": "Verschwendung", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.komur", "text": "Kohle", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.petrol", "text": "Erdöl", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.panel", "text": "Platte, Paneel", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kok", "text": "Wurzel", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.fidan", "text": "junger Baum, Setzling", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.buzul", "text": "Gletscher", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kutup", "text": "Pol", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.okyanus", "text": "Ozean", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kiyi", "text": "Küste, Ufer", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.col", "text": "Wüste", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.yagis", "text": "Niederschlag", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.yildirim", "text": "Blitz", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.bahar", "text": "Frühling", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.oksijen", "text": "Sauerstoff", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.arazi", "text": "Gelände, Grundstück", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.baraj", "text": "Staudamm", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.egzoz", "text": "Abgas, Auspuff", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.karton", "text": "Pappe, Karton", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.rekor", "text": "Rekord", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.gezegen", "text": "Planet", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.atmosfer", "text": "Atmosphäre", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.bilinc", "text": "Bewusstsein", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.tarim", "text": "Landwirtschaft", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.hasat", "text": "Ernte", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.ciftlik", "text": "Bauernhof", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kirletmek", "text": "verschmutzen", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kirlenmek", "text": "verschmutzt werden", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.donusturmek", "text": "umwandeln, verwandeln", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kurumak", "text": "austrocknen, verdorren", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.sogumak", "text": "abkühlen", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.yetismek", "text": "gedeihen, heranwachsen", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.solmak", "text": "verwelken", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.olmek", "text": "sterben", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.yukselmek", "text": "steigen, ansteigen", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.etkilemek", "text": "beeinflussen", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kurtulmak", "text": "sich befreien von", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.tukenmek", "text": "aufgebraucht werden", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.esmek", "text": "wehen", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kuresel", "text": "global, weltweit", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.cevreci", "text": "umweltfreundlich", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.yenilenebilir", "text": "erneuerbar", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.ilik", "text": "lauwarm, mild", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.yagisli", "text": "regnerisch", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kocaman", "text": "riesig", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.parlak", "text": "hell, strahlend", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kimyasal", "text": "chemisch", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.zehirli", "text": "giftig", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kurak", "text": "dürr, trocken", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.alternatif", "text": "alternativ", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.gereksiz", "text": "unnötig, überflüssig", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.nadir", "text": "selten", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.siddetli", "text": "heftig, stark", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.dayanikli", "text": "haltbar, widerstandsfähig", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.tasarruflu", "text": "sparsam", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.of", "text": "ach je (Ausruf)", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.boylece", "text": "so, auf diese Weise", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.dolayisiyla", "text": "folglich, daher", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.oysa", "text": "dabei doch", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.aksine", "text": "im Gegenteil", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.hizla", "text": "schnell, rasch", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.kismen", "text": "teilweise", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.milyonlarca", "text": "millionenfach", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.sifir", "text": "null", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
-    { "bezug": "tr.b1.e13.mucadele", "text": "Bekämpfung", "quelle": "ki:lernapp-inhalte/b1/v1", "lizenz": "CC-BY-SA-4.0" },
+    {
+      "bezug": "tr.b1.e13.donusum",
+      "text": "Umwandlung",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.iklim",
+      "text": "Klima (Erdklima)",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kirlilik",
+      "text": "Verschmutzung",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.tasarruf",
+      "text": "Sparen, Ersparnis",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kuraklik",
+      "text": "Dürre",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.sicaklik",
+      "text": "Temperatur, Hitze",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.isi",
+      "text": "Wärme (Energie)",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.sel",
+      "text": "Überschwemmung",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.atik",
+      "text": "Abfall, Müll",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.plastik",
+      "text": "Plastik, Kunststoff",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.cam",
+      "text": "Glas",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.metal",
+      "text": "Metall",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.ambalaj",
+      "text": "Verpackung",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.sera",
+      "text": "Treibhaus, Gewächshaus",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.etki",
+      "text": "Wirkung, Einfluss",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.degisim",
+      "text": "Wandel, Veränderung",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.artis",
+      "text": "Anstieg, Zunahme",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.tuketim",
+      "text": "Verbrauch, Konsum",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.israf",
+      "text": "Verschwendung",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.komur",
+      "text": "Kohle",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.petrol",
+      "text": "Erdöl",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.panel",
+      "text": "Platte, Paneel",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kok",
+      "text": "Wurzel",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.fidan",
+      "text": "junger Baum, Setzling",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.buzul",
+      "text": "Gletscher",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kutup",
+      "text": "Pol",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.okyanus",
+      "text": "Ozean",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kiyi",
+      "text": "Küste, Ufer",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.col",
+      "text": "Wüste",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.yagis",
+      "text": "Niederschlag",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.yildirim",
+      "text": "Blitz",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.bahar",
+      "text": "Frühling",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.oksijen",
+      "text": "Sauerstoff",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.arazi",
+      "text": "Gelände, Grundstück",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.baraj",
+      "text": "Staudamm",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.egzoz",
+      "text": "Abgas, Auspuff",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.karton",
+      "text": "Pappe, Karton",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.rekor",
+      "text": "Rekord",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.gezegen",
+      "text": "Planet",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.atmosfer",
+      "text": "Atmosphäre",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.bilinc",
+      "text": "Bewusstsein",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.tarim",
+      "text": "Landwirtschaft",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.hasat",
+      "text": "Ernte",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.ciftlik",
+      "text": "Bauernhof",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kirletmek",
+      "text": "verschmutzen",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kirlenmek",
+      "text": "verschmutzt werden",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.donusturmek",
+      "text": "umwandeln, verwandeln",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kurumak",
+      "text": "austrocknen, verdorren",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.sogumak",
+      "text": "abkühlen",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.yetismek",
+      "text": "gedeihen, heranwachsen",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.solmak",
+      "text": "verwelken",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.olmek",
+      "text": "sterben",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.yukselmek",
+      "text": "steigen, ansteigen",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.etkilemek",
+      "text": "beeinflussen",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kurtulmak",
+      "text": "sich befreien von",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.tukenmek",
+      "text": "aufgebraucht werden",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.esmek",
+      "text": "wehen",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kuresel",
+      "text": "global, weltweit",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.cevreci",
+      "text": "umweltfreundlich",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.yenilenebilir",
+      "text": "erneuerbar",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.ilik",
+      "text": "lauwarm, mild",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.yagisli",
+      "text": "regnerisch",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kocaman",
+      "text": "riesig",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.parlak",
+      "text": "hell, strahlend",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kimyasal",
+      "text": "chemisch",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.zehirli",
+      "text": "giftig",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kurak",
+      "text": "dürr, trocken",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.alternatif",
+      "text": "alternativ",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.gereksiz",
+      "text": "unnötig, überflüssig",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.nadir",
+      "text": "selten",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.siddetli",
+      "text": "heftig, stark",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.dayanikli",
+      "text": "haltbar, widerstandsfähig",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.tasarruflu",
+      "text": "sparsam",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.of",
+      "text": "ach je (Ausruf)",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.boylece",
+      "text": "so, auf diese Weise",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.dolayisiyla",
+      "text": "folglich, daher",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.oysa",
+      "text": "dabei doch",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.aksine",
+      "text": "im Gegenteil",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.hizla",
+      "text": "schnell, rasch",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.kismen",
+      "text": "teilweise",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.milyonlarca",
+      "text": "millionenfach",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.sifir",
+      "text": "null",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "bezug": "tr.b1.e13.mucadele",
+      "text": "Bekämpfung",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
     {
       "bezug": "tr.b1.e13.s0001",
       "text": "Je höher die Temperatur steigt, desto mehr nimmt auch die Dürre zu.",
@@ -148,7 +563,7 @@
     },
     {
       "bezug": "tr.b1.e13.s0008",
-      "text": "Je länger die Dürre andauert, desto langsamer verdorren die Pflanzen.",
+      "text": "Je länger die Dürre andauert, desto mehr verdorren die Pflanzen allmählich.",
       "alternativen": [
         "Wenn die Dürre anhält, verdorren die Pflanzen allmählich.",
         "Mit andauernder Dürre trocknen die Pflanzen nach und nach aus."
@@ -205,7 +620,7 @@
     },
     {
       "bezug": "tr.b1.e13.s0014",
-      "text": "Wenn es nicht regnet, gedeihen die Pflanzen auf dem Feld nicht gut.",
+      "text": "Wenn es nicht regnet, gedeihen die Feldfrüchte nicht gut.",
       "alternativen": [
         "Ohne Regen gedeihen die Feldfrüchte nicht gut.",
         "Solange es nicht regnet, wachsen die Ernteprodukte auf dem Feld nicht gut heran."
@@ -242,10 +657,10 @@
     },
     {
       "bezug": "tr.b1.e13.s0018",
-      "text": "Wenn wir Dinge reparieren, kaufen wir weniger neue.",
+      "text": "Wenn wir Dinge reparieren, kaufen wir weniger.",
       "alternativen": [
         "Je öfter wir Sachen reparieren, desto weniger kaufen wir.",
-        "Je mehr wir Gegenstände ausbessern, desto seltener kaufen wir Neues."
+        "Je mehr wir Gegenstände ausbessern, desto weniger Dinge kaufen wir."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -273,10 +688,7 @@
     {
       "bezug": "tr.b1.e13.s0021",
       "text": "Millionen von Menschen benutzen jeden Tag Plastikflaschen.",
-      "alternativen": [
-        "Jeden Tag benutzen millionenfach Menschen Plastikflaschen.",
-        "Täglich verwenden Millionen Menschen Plastikflaschen."
-      ],
+      "alternativen": ["Jeden Tag benutzen Millionen Menschen Plastikflaschen.", "Täglich verwenden Millionen Menschen Plastikflaschen."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -285,7 +697,7 @@
       "text": "Ein Leben ohne Abfall bedeutet, unnötige Dinge zu reduzieren.",
       "alternativen": [
         "Null Abfall zu leben heißt, überflüssige Dinge zu verringern.",
-        "Null-Abfall-Leben bedeutet, unnötige Dinge zu vermeiden."
+        "Null-Abfall-Leben bedeutet, unnötige Dinge zu verringern."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -302,7 +714,7 @@
     },
     {
       "bezug": "tr.b1.e13.s0024",
-      "text": "Um umweltfreundlich zu sein, können wir jeden Tag kleine Schritte gehen.",
+      "text": "Um umweltfreundlich zu sein, können wir jeden Tag kleine Schritte unternehmen.",
       "alternativen": [
         "Wir können jeden Tag kleine Schritte machen, um umweltfreundlich zu leben.",
         "Für mehr Umweltschutz können wir täglich kleine Schritte unternehmen."
@@ -343,7 +755,7 @@
     {
       "bezug": "tr.b1.e13.s0028",
       "text": "Wälder geben Sauerstoff ab und schützen den Boden.",
-      "alternativen": ["Wälder liefern Sauerstoff und schützen die Erde.", "Wälder erzeugen Sauerstoff und bewahren den Boden."],
+      "alternativen": ["Wälder liefern Sauerstoff und schützen den Boden.", "Wälder erzeugen Sauerstoff und bewahren den Boden."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -362,7 +774,7 @@
       "text": "Die Gletscher in den Polregionen schmelzen weiter schnell.",
       "alternativen": [
         "Die Eismassen in den Polargebieten schmelzen rasch weiter.",
-        "Die Gletscher der Polarregionen tauen unaufhaltsam schnell weiter."
+        "Die Gletscher der Polarregionen schmelzen rasch weiter."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -382,7 +794,7 @@
       "text": "Diese Woche haben wir im Schulgarten neue Setzlinge gepflanzt.",
       "alternativen": [
         "In dieser Woche haben wir neue junge Bäumchen in den Schulgarten gepflanzt.",
-        "Diese Woche haben wir im Schulhof neue Bäumchen eingepflanzt."
+        "Diese Woche haben wir im Schulgarten neue Bäumchen eingepflanzt."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -476,7 +888,7 @@
       "text": "Je mehr die Wasserquellen verschmutzt werden, desto schwieriger wird es, an sauberes Wasser zu kommen.",
       "alternativen": [
         "Wenn Wasserquellen verschmutzen, wird der Zugang zu sauberem Wasser schwerer.",
-        "Mit der Verschmutzung der Wasserquellen wird sauberes Wasser knapp."
+        "Mit der Verschmutzung der Wasserquellen wird es schwieriger, an sauberes Wasser zu gelangen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -504,14 +916,14 @@
     {
       "bezug": "tr.b1.e13.s0045",
       "text": "Erdöl und Kohle sind natürliche Ressourcen.",
-      "alternativen": ["Erdöl und Kohle zählen zu den natürlichen Rohstoffen.", "Erdöl und Kohle sind Naturschätze."],
+      "alternativen": ["Erdöl und Kohle zählen zu den natürlichen Rohstoffen.", "Erdöl und Kohle sind natürliche Bodenschätze."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.b1.e13.s0046",
-      "text": "Die Wurzeln des Baumes halten die Erde fest.",
-      "alternativen": ["Die Baumwurzeln halten den Boden zusammen.", "Wurzeln eines Baumes binden den Boden."],
+      "text": "Die Wurzeln des Baumes halten den Boden fest.",
+      "alternativen": ["Baumwurzeln halten den Boden fest.", "Wurzeln eines Baumes binden den Boden."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -529,7 +941,7 @@
       "bezug": "tr.b1.e13.s0048",
       "text": "Weil dieses Gelände trocken ist, kann dort keine Landwirtschaft betrieben werden.",
       "alternativen": [
-        "Da dieses Land trocken ist, ist dort kein Ackerbau möglich.",
+        "Da dieses Land trocken ist, ist dort keine Landwirtschaft möglich.",
         "Auf diesem Gelände ist wegen der Trockenheit keine Landwirtschaft möglich."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -540,7 +952,7 @@
       "text": "In diesem Jahr haben wir einen Rekord beim Wassersparen aufgestellt.",
       "alternativen": [
         "Dieses Jahr haben wir beim Wassersparen einen neuen Rekord erreicht.",
-        "Heuer haben wir einen Rekord im Wassersparen gebrochen."
+        "In diesem Jahr haben wir im Wassersparen einen Rekord gebrochen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -585,10 +997,10 @@
     },
     {
       "bezug": "tr.b1.e13.s0055",
-      "text": "Um Plastiktüten loszuwerden, benutzen wir Stoffbeutel.",
+      "text": "Um Plastiktüten loszuwerden, sollten wir Stoffbeutel benutzen.",
       "alternativen": [
         "Lasst uns Stoffbeutel nehmen, um uns von Plastiktüten zu befreien.",
-        "Damit wir Plastiktüten vermeiden, nehmen wir Stoffbeutel."
+        "Nehmen wir Stoffbeutel, um Plastiktüten loszuwerden."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -636,15 +1048,15 @@
     },
     {
       "bezug": "tr.b1.e13.s0061",
-      "text": "Chemische Stoffe können Boden und Wasser schaden.",
-      "alternativen": ["Chemikalien können dem Boden und dem Wasser schaden.", "Chemische Substanzen können Erde und Wasser schädigen."],
+      "text": "Chemische Stoffe können dem Boden und dem Wasser schaden.",
+      "alternativen": ["Chemikalien können dem Boden und dem Wasser schaden.", "Chemische Substanzen können Boden und Wasser schädigen."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.b1.e13.s0062",
       "text": "Abgase können giftig sein.",
-      "alternativen": ["Auspuffgase können giftig sein.", "Abgase können gesundheitsschädlich sein."],
+      "alternativen": ["Auspuffgase können giftig sein.", "Abgase sind möglicherweise giftig."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -684,7 +1096,7 @@
       "text": "Ach je, schon wieder habe ich das Wasser laufen lassen, dabei wollte ich doch sparen.",
       "alternativen": [
         "Oh nein, ich habe schon wieder das Wasser laufen lassen, dabei wollte ich sparen.",
-        "Ach, ich habe das Wasser wieder laufen lassen, dabei wollte ich doch Wasser sparen."
+        "Ach, ich habe das Wasser wieder laufen lassen, dabei wollte ich doch sparen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -725,7 +1137,7 @@
       "text": "Um unseren Planeten zu schützen, kann jeder von uns etwas tun.",
       "alternativen": [
         "Jeder von uns kann etwas tun, um unseren Planeten zu schützen.",
-        "Damit unser Planet geschützt wird, kann jede und jeder von uns etwas beitragen."
+        "Damit unser Planet geschützt wird, kann jede und jeder von uns etwas tun."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -781,7 +1193,7 @@
       "bezug": "tr.b1.e13.s0078",
       "text": "Im Sommer ist es heiß, im Winter dagegen kalt und regnerisch.",
       "alternativen": [
-        "Im Sommer ist die Luft warm, im Winter hingegen kühl und nass.",
+        "Im Sommer ist die Luft warm, im Winter hingegen kalt und regnerisch.",
         "Der Sommer ist heiß, der Winter aber kalt und regnerisch."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -801,7 +1213,7 @@
       "bezug": "tr.b1.e13.s0080",
       "text": "Der Regen gibt dem Boden Wasser, die Sonne dagegen lässt ihn austrocknen.",
       "alternativen": [
-        "Der Regen versorgt die Erde mit Wasser, während die Sonne sie austrocknen lässt.",
+        "Der Regen versorgt den Boden mit Wasser, während die Sonne ihn austrocknen lässt.",
         "Regen bringt dem Boden Wasser, die Sonne dagegen trocknet ihn aus."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -811,8 +1223,8 @@
       "bezug": "tr.b1.e13.s0081",
       "text": "Im Winter gehen die Blumen im Garten zurück, im Frühling dagegen belebt sich der Garten wieder.",
       "alternativen": [
-        "Im Winter nehmen die Blumen im Garten ab, doch im Frühling blüht der Garten wieder auf.",
-        "Im Winter verschwinden die Blumen im Garten, im Frühling dagegen erwacht er neu."
+        "Im Winter nehmen die Blumen im Garten ab, doch im Frühling erwacht der Garten wieder zum Leben.",
+        "Im Winter gehen die Blumen im Garten zurück, im Frühling dagegen erwacht er neu."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -840,7 +1252,7 @@
     {
       "bezug": "tr.b1.e13.s0084",
       "text": "Gestern war es sehr kalt, heute dagegen ist es lau.",
-      "alternativen": ["Gestern war es sehr kalt, doch heute ist es lauwarm.", "Gestern war die Luft sehr kalt, dabei ist es heute mild."],
+      "alternativen": ["Gestern war es sehr kalt, doch heute ist es mild.", "Gestern war die Luft sehr kalt, dabei ist es heute mild."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -886,7 +1298,7 @@
     },
     {
       "bezug": "tr.b1.e13.s0089",
-      "text": "Mein Geschwisterkind lässt das Licht an, Vater dagegen schaltet es jeden Abend aus.",
+      "text": "Mein Geschwisterkind lässt das Licht an, mein Vater dagegen schaltet es jeden Abend aus.",
       "alternativen": [
         "Mein Geschwister lässt das Licht brennen, während mein Vater es jeden Abend ausschaltet.",
         "Mein Geschwister lässt das Licht brennen, Papa dagegen macht es jeden Abend aus."
@@ -897,7 +1309,7 @@
     {
       "bezug": "tr.b1.e13.s0090",
       "text": "Wir müssen sparen, sonst ist das Wasser alle.",
-      "alternativen": ["Wir müssen sparen, sonst geht das Wasser aus.", "Wir sollten sparen, sonst wird das Wasser knapp."],
+      "alternativen": ["Wir müssen sparen, sonst geht das Wasser aus.", "Wir müssen sparen, sonst ist das Wasser bald aufgebraucht."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -996,14 +1408,14 @@
       "text": "Die natürlichen Ressourcen sind begrenzt, dabei steigen die Bedürfnisse der Menschen jedes Jahr.",
       "alternativen": [
         "Natürliche Rohstoffe sind begrenzt, doch der Bedarf der Menschen wächst jedes Jahr.",
-        "Die Naturschätze sind knapp, während der Bedarf der Menschen von Jahr zu Jahr steigt."
+        "Die natürlichen Ressourcen sind begrenzt, während der Bedarf der Menschen von Jahr zu Jahr steigt."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.b1.e13.s0101",
-      "text": "In unserer Klasse kommen zehn Kinder mit dem Rad, die anderen hingegen mit dem Bus.",
+      "text": "In unserer Klasse kommen zehn Personen mit dem Rad, die anderen hingegen mit dem Bus.",
       "alternativen": [
         "Zehn aus unserer Klasse kommen mit dem Rad, die übrigen mit dem Bus.",
         "In unserer Klasse fahren zehn mit dem Fahrrad, die anderen dagegen mit dem Bus."
@@ -1033,7 +1445,7 @@
     },
     {
       "bezug": "tr.b1.e13.s0104",
-      "text": "Heuer war der Sommer heiß, voriges Jahr dagegen war es kühler.",
+      "text": "In diesem Jahr war der Sommer heiß, letztes Jahr dagegen war es kühler.",
       "alternativen": [
         "Der Sommer war in diesem Jahr heiß, im vergangenen Jahr hingegen kühler.",
         "Dieses Jahr war der Sommer heiß, letztes Jahr dagegen war er kühler."
@@ -1065,7 +1477,7 @@
       "bezug": "tr.b1.e13.s0107",
       "text": "Morgens ist es kühl, am Nachmittag dagegen sehr heiß.",
       "alternativen": [
-        "Am Morgen ist die Luft kühl, am Nachmittag hingegen sehr warm.",
+        "Am Morgen ist die Luft kühl, am Nachmittag hingegen sehr heiß.",
         "Vormittags ist es kühl, nachmittags dagegen sehr heiß."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1119,7 +1531,7 @@
       "bezug": "tr.b1.e13.s0113",
       "text": "Wenn die Temperatur dreißig Grad übersteigt, gehen wir nicht in den Schulgarten hinaus.",
       "alternativen": [
-        "Steigt die Temperatur über dreißig Grad, gehen wir nicht in den Schulhof.",
+        "Steigt die Temperatur über dreißig Grad, gehen wir nicht in den Schulgarten.",
         "Übersteigt die Temperatur dreißig Grad, verzichten wir auf den Gang in den Schulgarten."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1130,15 +1542,15 @@
       "text": "Wenn es zu wenig Wasser gibt, können die Pflanzen nicht genug wachsen.",
       "alternativen": [
         "Ist zu wenig Wasser da, können die Pflanzen nicht ausreichend wachsen.",
-        "Bei zu wenig Wasser wachsen die Pflanzen nicht richtig."
+        "Bei zu wenig Wasser können die Pflanzen nicht genug wachsen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.b1.e13.s0115",
-      "text": "Wenn du kommst, gießen wir gemeinsam den Garten.",
-      "alternativen": ["Kommst du, bewässern wir zusammen den Garten.", "Wenn du kommst, sollten wir gemeinsam den Garten gießen."],
+      "text": "Wenn du kommst, lass uns gemeinsam den Garten gießen.",
+      "alternativen": ["Kommst du, lass uns zusammen den Garten bewässern.", "Wenn du kommst, sollten wir gemeinsam den Garten gießen."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1167,7 +1579,7 @@
       "text": "Wenn wir Bäume pflanzen, gibt es Schatten und die Temperatur sinkt.",
       "alternativen": [
         "Pflanzen wir Bäume, entsteht Schatten und die Temperatur geht zurück.",
-        "Wenn wir einen Baum pflanzen, spendet er Schatten und die Hitze sinkt."
+        "Wenn wir einen Baum pflanzen, spendet er Schatten und die Temperatur sinkt."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1177,7 +1589,7 @@
       "text": "Wenn es morgen regnet, halten wir die Setzlinge im Haus.",
       "alternativen": [
         "Regnet es morgen, bewahren wir die Setzlinge drinnen auf.",
-        "Falls es morgen regnet, bringen wir die Bäumchen ins Haus."
+        "Falls es morgen regnet, halten wir die Bäumchen im Haus."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1187,7 +1599,7 @@
       "text": "Wenn dieser Sommer trocken wird, gehen wir noch sorgfältiger mit dem Wasser um.",
       "alternativen": [
         "Sollte dieser Sommer trocken werden, werden wir das Wasser sorgfältiger nutzen.",
-        "Ist der Sommer trocken, verwenden wir das Wasser umsichtiger."
+        "Wird der Sommer trocken, verwenden wir das Wasser umsichtiger."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1226,7 +1638,7 @@
     {
       "bezug": "tr.b1.e13.s0125",
       "text": "Wenn du krank wirst, ruf sofort den Arzt an.",
-      "alternativen": ["Wirst du krank, ruf sofort den Doktor an.", "Falls du krank wirst, ruf bitte gleich den Arzt an."],
+      "alternativen": ["Wirst du krank, ruf sofort den Doktor an.", "Falls du krank wirst, ruf gleich den Arzt an."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1240,7 +1652,7 @@
     {
       "bezug": "tr.b1.e13.s0127",
       "text": "Wenn das Wetter mild ist, können wir im Park ein Picknick machen.",
-      "alternativen": ["Ist es lauwarm, können wir im Park picknicken.", "Falls es mild ist, können wir im Park picknicken."],
+      "alternativen": ["Ist es mild, können wir im Park picknicken.", "Falls es mild ist, können wir im Park picknicken."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1254,7 +1666,10 @@
     {
       "bezug": "tr.b1.e13.s0129",
       "text": "Wenn der Boden austrocknet, wird auch der Baum schwach.",
-      "alternativen": ["Trocknet der Boden aus, wird auch der Baum schwächer.", "Wenn die Erde verdorrt, schwächt sich auch der Baum."],
+      "alternativen": [
+        "Trocknet der Boden aus, wird auch der Baum schwächer.",
+        "Wenn der Erdboden austrocknet, schwächt sich auch der Baum."
+      ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1263,7 +1678,7 @@
       "text": "Wenn der Niederschlag nicht ausreicht, sinkt der Stauseepegel schnell.",
       "alternativen": [
         "Reicht der Niederschlag nicht aus, fällt der Wasserstand im Staudamm rasch.",
-        "Bleibt der Regen aus, sinkt der Pegel des Staudamms schnell."
+        "Bleibt der Niederschlag zu gering, sinkt der Pegel des Staudamms schnell."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1303,7 +1718,7 @@
       "text": "Wenn wir im Garten Regenwasser sammeln, können wir beim Gießen Wasser sparen.",
       "alternativen": [
         "Sammeln wir im Garten Regenwasser, können wir beim Bewässern Wasser sparen.",
-        "Fangen wir im Garten Regenwasser auf, sparen wir beim Gießen Wasser."
+        "Fangen wir im Garten Regenwasser auf, können wir beim Gießen Wasser sparen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1317,10 +1732,10 @@
     },
     {
       "bezug": "tr.b1.e13.s0136",
-      "text": "Wenn sich die Gelegenheit ergibt, organisieren wir im Viertel einen Aufräumtag.",
+      "text": "Wenn sich die Gelegenheit ergibt, lasst uns im Viertel einen Aufräumtag veranstalten.",
       "alternativen": [
-        "Bietet sich die Gelegenheit, veranstalten wir im Viertel einen Putztag.",
-        "Wenn sich eine Gelegenheit bietet, planen wir im Stadtteil einen Reinigungstag."
+        "Bietet sich die Gelegenheit, lasst uns im Viertel einen Putztag veranstalten.",
+        "Wenn sich eine Gelegenheit bietet, sollten wir im Stadtteil einen Reinigungstag planen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1347,7 +1762,7 @@
       "text": "Wenn die heißen Tage länger andauern, verdorren manche Pflanzen früh.",
       "alternativen": [
         "Dauern die heißen Tage länger an, trocknen einige Pflanzen früh aus.",
-        "Werden die heißen Tage länger, verwelken manche Pflanzen zu früh."
+        "Werden die heißen Tage länger, verwelken manche Pflanzen früh."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1363,7 +1778,7 @@
       "bezug": "tr.b1.e13.s0141",
       "text": "Wenn du das Radio einschaltest, kannst du den Wetterbericht hören.",
       "alternativen": [
-        "Schaltest du das Radio ein, hörst du den Wetterbericht.",
+        "Schaltest du das Radio ein, kannst du den Wetterbericht hören.",
         "Falls du das Radio anmachst, kannst du die Wettervorhersage hören."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1384,7 +1799,7 @@
       "text": "Wenn du diese Woche deine Hausaufgaben fertig machst, darfst du in den Park gehen.",
       "alternativen": [
         "Beendest du diese Woche deine Hausaufgaben, kannst du in den Park gehen.",
-        "Falls du diese Woche deine Hausaufgaben beendest, darfst du in den Park."
+        "Falls du diese Woche deine Hausaufgaben beendest, darfst du in den Park gehen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1394,7 +1809,7 @@
       "text": "Wenn im Schulgarten ein neuer Setzling gepflanzt wird, freut sich jeder.",
       "alternativen": [
         "Wird im Schulgarten ein neues Bäumchen gepflanzt, freuen sich alle.",
-        "Pflanzt man im Schulhof ein neues Bäumchen, freut sich jeder."
+        "Pflanzt man im Schulgarten ein neues Bäumchen, freut sich jeder."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1438,7 +1853,7 @@
       "text": "Ich öffne das Fenster nicht, denn draußen ist es sehr kalt.",
       "alternativen": [
         "Ich mache das Fenster nicht auf, weil es draußen sehr kalt ist.",
-        "Das Fenster bleibt zu, denn draußen ist es sehr kalt."
+        "Ich lasse das Fenster geschlossen, denn draußen ist es sehr kalt."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1487,7 +1902,7 @@
       "bezug": "tr.b1.e13.s0154",
       "text": "Weil die Energiepreise gestiegen sind, heizen wir zu Hause weniger.",
       "alternativen": [
-        "Da die Energiepreise steigen, heizen wir zu Hause weniger.",
+        "Da die Energiepreise gestiegen sind, heizen wir daheim weniger.",
         "Wegen der gestiegenen Energiepreise heizen wir daheim weniger."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1575,7 +1990,7 @@
       "text": "Jeder sollte die Umwelt schützen, denn wir alle leben auf derselben Welt.",
       "alternativen": [
         "Alle sollten die Umwelt schützen, weil wir alle in derselben Welt leben.",
-        "Jeder muss die Umwelt schützen, denn wir leben alle in derselben Welt."
+        "Jeder sollte die Umwelt schützen, denn wir leben alle in derselben Welt."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1585,7 +2000,7 @@
       "text": "Wir trennen den Abfall, denn Recycling schützt die Natur.",
       "alternativen": [
         "Wir sortieren den Müll, weil Recycling die Natur schützt.",
-        "Wir trennen unseren Müll, denn Recycling bewahrt die Natur."
+        "Wir trennen den Müll, denn Recycling bewahrt die Natur."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1605,7 +2020,7 @@
       "text": "Abends schalte ich das Licht aus, denn Energie ist wichtig.",
       "alternativen": [
         "Ich schalte abends das Licht aus, weil Energie wichtig ist.",
-        "Am Abend mache ich das Licht aus, da Energie wertvoll ist."
+        "Am Abend mache ich das Licht aus, da Energie wichtig ist."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1624,7 +2039,7 @@
       "bezug": "tr.b1.e13.s0168",
       "text": "Deshalb veranstalten wir jedes Jahr an der Schule eine Baumpflanzaktion.",
       "alternativen": [
-        "Darum organisieren wir jedes Jahr an unserer Schule eine Aktion zum Bäumepflanzen.",
+        "Darum organisieren wir jedes Jahr an der Schule eine Aktion zum Baumpflanzen.",
         "Aus diesem Grund führen wir jährlich an der Schule eine Baumpflanzaktion durch."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1634,7 +2049,7 @@
       "bezug": "tr.b1.e13.s0169",
       "text": "Weil die Niederschläge abgenommen haben, ist der Wasserstand im Stausee gesunken.",
       "alternativen": [
-        "Da der Regen weniger geworden ist, ist der Wasserpegel im Stausee gefallen.",
+        "Da der Niederschlag weniger geworden ist, ist der Wasserpegel im Stausee gefallen.",
         "Im Stausee ist der Wasserstand gesunken, weil weniger Niederschlag fiel."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1644,7 +2059,7 @@
       "bezug": "tr.b1.e13.s0170",
       "text": "Weil die heißen Tage länger wurden, sind manche Pflanzen früh verdorrt.",
       "alternativen": [
-        "Da die heißen Tage länger andauerten, sind einige Pflanzen zu früh vertrocknet.",
+        "Da die heißen Tage länger andauerten, sind einige Pflanzen früh vertrocknet.",
         "Manche Pflanzen sind früh vertrocknet, weil die heißen Tage sich verlängert haben."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1659,9 +2074,9 @@
     },
     {
       "bezug": "tr.b1.e13.s0172",
-      "text": "Weil die Kinder Blumen züchten wollten, haben sie einen kleinen Garten angelegt.",
+      "text": "Weil die Kinder Blumen ziehen wollten, haben sie einen kleinen Garten angelegt.",
       "alternativen": [
-        "Da die Kinder Blumen ziehen wollten, legten sie einen kleinen Garten an.",
+        "Da die Kinder Blumen anbauen wollten, legten sie einen kleinen Garten an.",
         "Die Kinder legten einen kleinen Garten an, weil sie Blumen anbauen wollten."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1680,7 +2095,7 @@
     {
       "bezug": "tr.b1.e13.s0174",
       "text": "Wir duschen kurz, so sparen wir Wasser.",
-      "alternativen": ["Wir nehmen kurze Duschen, dadurch sparen wir Wasser.", "Wir duschen nur kurz und sparen so Wasser."],
+      "alternativen": ["Wir nehmen kurze Duschen, dadurch sparen wir Wasser.", "Wir duschen kurz und sparen so Wasser."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1708,7 +2123,7 @@
       "bezug": "tr.b1.e13.s0177",
       "text": "Diese Woche war es mild, folglich haben die Kinder draußen gespielt.",
       "alternativen": [
-        "In dieser Woche war das Wetter lauwarm, daher spielten die Kinder draußen.",
+        "In dieser Woche war das Wetter mild, daher spielten die Kinder draußen.",
         "Weil das Wetter diese Woche mild war, spielten die Kinder im Freien."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1770,7 +2185,7 @@
       "text": "Weil unser Nachbar seine Blumen jeden Tag gießt, ist sein Garten sehr schön geworden.",
       "alternativen": [
         "Da unser Nachbar seine Blumen täglich gießt, ist sein Garten wunderschön geworden.",
-        "Sein Garten ist sehr schön geworden, weil unser Nachbar die Blumen jeden Tag gießt."
+        "Sein Garten ist sehr schön geworden, weil unser Nachbar seine Blumen jeden Tag gießt."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1825,8 +2240,11 @@
     },
     {
       "bezug": "tr.b1.e13.s0191",
-      "text": "Unser Nachbar hat ein neues Auto gekauft.",
-      "alternativen": ["Der Nachbar hat sich ein neues Auto angeschafft.", "Unser Nachbar hat sich ein neues Auto zugelegt."],
+      "text": "Anscheinend hat unser Nachbar ein neues Auto gekauft.",
+      "alternativen": [
+        "Wie man hört, hat unser Nachbar sich ein neues Auto angeschafft.",
+        "Unser Nachbar hat sich, wie es scheint, ein neues Auto zugelegt."
+      ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1892,7 +2310,7 @@
       "text": "Kleine Gewohnheiten sparen am Ende des Jahres viel Wasser.",
       "alternativen": [
         "Kleine Gewohnheiten bringen am Jahresende viel Wasser ein.",
-        "Am Jahresende haben kleine Gewohnheiten viel Wasser gespart."
+        "Am Jahresende sparen kleine Gewohnheiten viel Wasser."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1941,7 +2359,7 @@
     {
       "bezug": "tr.b1.e13.s0204",
       "text": "Im Garten und in der Garage.",
-      "alternativen": ["Im Garten und im Hof.", "Im Garten sowie in der Garage."],
+      "alternativen": ["In der Garage und im Garten.", "Im Garten sowie in der Garage."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1956,7 +2374,7 @@
       "bezug": "tr.b1.e13.s0206",
       "text": "Je länger die Dürre andauert, desto mehr verwelken die Blumen im Garten nach und nach.",
       "alternativen": [
-        "Mit andauernder Dürre verwelken die Blumen im Garten langsam.",
+        "Mit andauernder Dürre verwelken die Blumen im Garten allmählich.",
         "Solange die Dürre anhält, welken die Blumen im Garten allmählich."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1964,10 +2382,10 @@
     },
     {
       "bezug": "tr.b1.e13.s0207",
-      "text": "Um Energie zu sparen, schalten wir das Licht aus und duschen kurz.",
+      "text": "Um Energie zu sparen, sollten wir das Licht ausschalten und kurz duschen.",
       "alternativen": [
         "Lasst uns zum Energiesparen das Licht ausmachen und kurz duschen.",
-        "Für Energieeinsparung schalten wir die Lichter aus und nehmen kurze Duschen."
+        "Für Energieeinsparung sollten wir die Lichter ausschalten und kurze Duschen nehmen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1975,14 +2393,14 @@
     {
       "bezug": "tr.b1.e13.s0208",
       "text": "Die Lehrkraft erinnerte: „Spart Wasser!“",
-      "alternativen": ["Der Lehrer mahnte: „Sparen Sie Wasser!“", "Die Lehrerin erinnerte daran: „Spart Wasser!“"],
+      "alternativen": ["Der Lehrer erinnerte: „Sparen Sie Wasser!“", "Die Lehrkraft erinnerte daran: „Spart Wasser!“"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.b1.e13.s0209",
       "text": "Meine Mutter rief: „Macht das Licht aus!“",
-      "alternativen": ["Mama rief: „Schaltet die Lichter aus!“", "Meine Mutter rief laut: „Schaltet die Lampen aus!“"],
+      "alternativen": ["Mama rief: „Schaltet die Lichter aus!“", "Meine Mutter rief laut: „Schaltet die Lichter aus!“"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1990,7 +2408,7 @@
       "bezug": "tr.b1.e13.s0210",
       "text": "Damit wir Wasser sparen, haben wir unsere Duschzeit verkürzt.",
       "alternativen": [
-        "Um Wasser zu sparen, haben wir die Duschzeit verkürzt.",
+        "Um Wasser zu sparen, haben wir unsere Duschzeit verkürzt.",
         "Wir haben unsere Duschzeit verkürzt, um Wasser zu sparen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2168,9 +2586,9 @@
     },
     {
       "bezug": "tr.b1.e13.s0228",
-      "text": "Im Sommer Blumen auf dem Balkon zu ziehen, ist sowohl schön als auch nützlich.",
+      "text": "Im Sommer Blumen auf dem Balkon zu ziehen, ist sowohl angenehm als auch nützlich.",
       "alternativen": [
-        "Im Sommer auf dem Balkon Blumen zu züchten, macht Freude und ist nützlich.",
+        "Im Sommer auf dem Balkon Blumen zu ziehen, macht Freude und ist nützlich.",
         "Blumen im Sommer auf dem Balkon zu ziehen, ist angenehm und sinnvoll."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2181,7 +2599,7 @@
       "text": "Mit unserer Familie gehen wir jedes Wochenende im Park spazieren.",
       "alternativen": [
         "Jedes Wochenende machen wir mit unserer Familie einen Spaziergang im Park.",
-        "Wir machen mit der Familie jeden Wochenende einen Spaziergang im Park."
+        "Wir machen mit der Familie jedes Wochenende einen Spaziergang im Park."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2191,7 +2609,7 @@
       "text": "Die Kinder haben in der Schule an der Baumpflanzaktion teilgenommen.",
       "alternativen": [
         "In der Schule haben die Kinder an einer Baumpflanzaktion mitgemacht.",
-        "Die Schulkinder beteiligten sich an der Aktion zum Bäumepflanzen."
+        "Die Schulkinder beteiligten sich an der Aktion zum Baumpflanzen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2199,7 +2617,7 @@
     {
       "bezug": "tr.b1.e13.s0231",
       "text": "Ein Wasserprojekt im Park",
-      "alternativen": ["Ein Projekt zum Wasser im Park", "Ein Wasserprojekt im Stadtpark"],
+      "alternativen": ["Ein Projekt zum Thema Wasser im Park.", "Ein Projekt rund ums Wasser im Park."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2218,7 +2636,7 @@
       "text": "Eines Morgens ging Elifs Klasse mit dem Biologielehrer, Herrn Lange, in den Park.",
       "alternativen": [
         "Eines Morgens ging Elifs Klasse zusammen mit Biologielehrer Herrn Lange in den Park.",
-        "An einem Morgen machte sich Elifs Klasse mit Herrn Lange, dem Biologielehrer, auf in den Park."
+        "An einem Morgen machte sich Elifs Klasse mit Herrn Lange, dem Biologielehrer, auf den Weg in den Park."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2235,9 +2653,9 @@
     },
     {
       "bezug": "tr.b1.e13.s0235",
-      "text": "Heute werden wir die Setzlinge gießen, aber zuerst messen wir die Wassermenge.",
+      "text": "Heute werden wir die Setzlinge gießen, aber zuerst lasst uns die Wassermenge messen.",
       "alternativen": [
-        "Heute gießen wir die Bäumchen, doch zuerst messen wir die Wassermenge.",
+        "Heute gießen wir die Bäumchen, doch zuerst lasst uns die Wassermenge messen.",
         "Wir werden heute die Setzlinge gießen, aber vorher sollten wir die Wassermenge messen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2253,7 +2671,7 @@
     {
       "bezug": "tr.b1.e13.s0237",
       "text": "Ich dagegen werde die Ergebnisse ins Heft schreiben.",
-      "alternativen": ["Ich schreibe die Ergebnisse dagegen in mein Heft.", "Ich hingegen werde die Ergebnisse in das Heft eintragen."],
+      "alternativen": ["Ich schreibe die Ergebnisse dagegen ins Heft.", "Ich hingegen werde die Ergebnisse in das Heft eintragen."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2271,7 +2689,7 @@
       "bezug": "tr.b1.e13.s0239",
       "text": "Zwei Eimer Wasser reichten für den trockenen Boden nicht aus.",
       "alternativen": [
-        "Für die trockene Erde reichten zwei Eimer Wasser nicht.",
+        "Für den trockenen Boden reichten zwei Eimer Wasser nicht.",
         "Zwei Eimer Wasser waren für den trockenen Boden zu wenig."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2282,7 +2700,7 @@
       "text": "Lass uns früh am Morgen gießen, so geht das Wasser nicht verloren.",
       "alternativen": [
         "Gießen wir früh am Morgen, dann geht kein Wasser verloren.",
-        "Wir sollten früh morgens gießen, dadurch verschwendet sich das Wasser nicht."
+        "Wir sollten früh morgens gießen, dadurch wird kein Wasser verschwendet."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2332,7 +2750,7 @@
       "text": "Deshalb habe auch ich angefangen, jeden Tag Wasser zu sparen.",
       "alternativen": [
         "Darum habe ich ebenfalls begonnen, täglich Wasser zu sparen.",
-        "Aus diesem Grund fing ich an, jeden Tag Wasser zu sparen."
+        "Aus diesem Grund fing auch ich an, jeden Tag Wasser zu sparen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2454,7 +2872,7 @@
     {
       "bezug": "tr.b1.e13.s0261",
       "text": "Sie hat eine kleine Broschüre vorbereitet.",
-      "alternativen": ["Eine kleine Broschüre wurde angefertigt.", "Die Klasse hat eine kleine Broschüre erstellt."],
+      "alternativen": ["Die Klasse hat eine kleine Broschüre vorbereitet.", "Die Klasse hat eine kleine Broschüre erstellt."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2513,7 +2931,7 @@
       "bezug": "tr.b1.e13.s0268",
       "text": "Am Ende des Projekts sind die meisten Bäume wieder aufgelebt.",
       "alternativen": [
-        "Zum Abschluss des Projekts erholten sich die meisten Bäume.",
+        "Zum Abschluss des Projekts erholten sich die meisten Bäume wieder.",
         "Am Projektende belebten sich die meisten Bäume wieder."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2524,7 +2942,7 @@
       "text": "Außerdem haben die Schüler eine Broschüre über das Wassersparen erstellt.",
       "alternativen": [
         "Zusätzlich haben die Schüler eine Broschüre zum Thema Wassersparen angefertigt.",
-        "Darüber hinaus hat die Klasse eine Broschüre zum Wassersparen erstellt."
+        "Darüber hinaus haben die Schüler eine Broschüre zum Wassersparen erstellt."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2533,7 +2951,7 @@
       "bezug": "tr.b1.e13.s0270",
       "text": "Dieses Projekt hat gezeigt, dass auch kleine Schritte große Ergebnisse bringen können.",
       "alternativen": [
-        "Das Projekt zeigte, dass auch kleine Schritte große Wirkung haben können.",
+        "Das Projekt zeigte, dass auch kleine Schritte große Ergebnisse erzielen können.",
         "Dieses Projekt machte deutlich, dass selbst kleine Schritte Großes bewirken können."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2549,7 +2967,7 @@
     {
       "bezug": "tr.b1.e13.s0272",
       "text": "Die Schüler haben gelernt, die Wassermenge zu messen.",
-      "alternativen": ["Die Schüler lernten, die Wassermenge zu messen.", "Die Schüler haben es gelernt, Wassermengen zu messen."],
+      "alternativen": ["Die Schüler lernten, die Wassermenge zu messen.", "Die Schüler haben es gelernt, die Wassermenge zu messen."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2584,7 +3002,7 @@
     {
       "bezug": "tr.b1.e13.s0277",
       "text": "Der Park wurde ein neuer Parkplatz.",
-      "alternativen": ["Aus dem Park wurde ein neuer Parkplatz.", "Der Park ist nun ein neuer Parkplatz geworden."],
+      "alternativen": ["Aus dem Park wurde ein neuer Parkplatz.", "Der Park ist ein neuer Parkplatz geworden."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2617,7 +3035,7 @@
     },
     {
       "bezug": "tr.b1.e13.s0281",
-      "text": "Gut, ich werde auch zu Hause den Zähler ablesen.",
+      "text": "Gut, ich werde auch zu Hause auf den Zähler schauen.",
       "alternativen": ["Okay, ich schaue auch zu Hause auf den Zähler.", "In Ordnung, ich sehe mir zu Hause ebenfalls den Zähler an."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2625,7 +3043,7 @@
     {
       "bezug": "tr.b1.e13.s0282",
       "text": "In dieser Klasse hat niemand Wasser gemessen.",
-      "alternativen": ["Niemand in dieser Klasse hat das Wasser gemessen.", "In diesem Klassenzimmer hat keiner Wasser gemessen."],
+      "alternativen": ["Niemand in dieser Klasse hat Wasser gemessen.", "In diesem Klassenzimmer hat keiner Wasser gemessen."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2651,7 +3069,7 @@
       "text": "Bleibt die Tür offen, entweicht die Wärme aus dem Raum sofort nach draußen.",
       "alternativen": [
         "Lässt man die Tür offen, entweicht die Wärme aus dem Zimmer sofort.",
-        "Ist die Tür offen, entweicht die Hitze des Raums sofort nach draußen."
+        "Steht die Tür offen, entweicht die Wärme des Raums sofort nach draußen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2661,7 +3079,7 @@
       "text": "Wenn du deine eigene Tasche mitbringst, brauchst du keine Plastiktüte.",
       "alternativen": [
         "Bringst du deine eigene Tasche mit, brauchst du keine Plastiktüte.",
-        "Bringst du eine eigene Tasche mit, benötigst du keine Plastiktüte."
+        "Bringst du deine eigene Tasche mit, benötigst du keine Plastiktüte."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2676,7 +3094,7 @@
     {
       "bezug": "tr.b1.e13.s0288",
       "text": "Weißt du, welche Bäume mehr Wasser brauchen?",
-      "alternativen": ["Weißt du, welche Bäume mehr Wasser benötigen?", "Kennst du die Bäume, die mehr Wasser brauchen?"],
+      "alternativen": ["Weißt du, welche Bäume mehr Wasser benötigen?", "Ist dir bekannt, welche Bäume mehr Wasser brauchen?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2705,7 +3123,7 @@
       "text": "In diesem Jahr wurde an der Schule ein neuer Umweltclub gegründet.",
       "alternativen": [
         "Dieses Jahr gründete sich an der Schule ein neuer Umweltklub.",
-        "Heuer wurde in der Schule ein neuer Umweltclub gegründet."
+        "Dieses Jahr wurde in der Schule ein neuer Umweltclub gegründet."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2723,7 +3141,10 @@
     {
       "bezug": "tr.b1.e13.s0293",
       "text": "Die Lehrkraft erklärte, wie wir Energie sparen können.",
-      "alternativen": ["Der Lehrer erklärte uns, wie wir Energie sparen können.", "Die Lehrerin hat erklärt, wie man Energie sparen kann."],
+      "alternativen": [
+        "Die Lehrkraft erklärte uns, wie wir Energie sparen können.",
+        "Die Lehrkraft hat erklärt, wie man Energie sparen kann."
+      ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2812,7 +3233,7 @@
       "text": "Um unseren Planeten zu schützen, kann jeder von uns einen kleinen Schritt tun.",
       "alternativen": [
         "Jeder von uns kann einen kleinen Schritt machen, um unseren Planeten zu schützen.",
-        "Damit unser Planet geschützt wird, kann jede und jeder von uns einen kleinen Schritt gehen."
+        "Damit unser Planet geschützt wird, kann jede und jeder von uns einen kleinen Schritt unternehmen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2842,7 +3263,7 @@
       "text": "Bevor man die Mülltonne füllt, ist es klug, den Abfall zu trennen.",
       "alternativen": [
         "Es ist klug, den Abfall zu trennen, bevor die Mülltonne voll ist.",
-        "Ehe die Mülltonne überquillt, sollte man den Müll sortieren – das ist klug."
+        "Bevor die Mülltonne voll wird, sollte man den Müll sortieren – das ist klug."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2851,8 +3272,8 @@
       "bezug": "tr.b1.e13.s0306",
       "text": "Alte Gegenstände zu reparieren ist gut für das Geld und die Natur.",
       "alternativen": [
-        "Veraltete Sachen zu reparieren ist gut für den Geldbeutel und die Natur.",
-        "Das Reparieren alter Dinge ist gut für den Geldbeutel und die Umwelt."
+        "Abgenutzte Sachen zu reparieren ist gut für den Geldbeutel und die Natur.",
+        "Das Reparieren alter Dinge ist gut für den Geldbeutel und die Natur."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2862,7 +3283,7 @@
       "text": "Es ist besser, den Garten früh am Morgen bei kühler Luft zu gießen.",
       "alternativen": [
         "Den Garten früh am Morgen in der kühlen Luft zu gießen, ist besser.",
-        "Am besten gießt man den Garten früh morgens, wenn es kühl ist."
+        "Besser gießt man den Garten früh morgens, wenn es kühl ist."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2880,7 +3301,7 @@
       "bezug": "tr.b1.e13.s0309",
       "text": "Trennen wir unseren Müll richtig! An unserer Schule gibt es vier farbige Tonnen. Papier und Karton werft ihr in die blaue Tonne. Glasflaschen gehören in die grüne Tonne. Plastik- und Metallverpackungen legt ihr in die gelbe Tonne. Organische Abfälle wie Obstschalen kommen in die braune Tonne. Wenn wir den Müll trennen, wird das Recycling einfacher. Je mehr recycelt wird, desto weniger Bäume werden gefällt und desto weniger Energie wird verbraucht. So werden die natürlichen Ressourcen später erschöpft. Denkt daran: Jeder Abfall gehört in die richtige Tonne!",
       "alternativen": [
-        "Sortieren wir unseren Müll richtig! Unsere Schule hat vier farbige Behälter. Papier und Karton kommen in die blaue Tonne, Glasflaschen in die grüne. Plastik- und Metallverpackungen gehören in die gelbe Tonne, Bioabfälle wie Obstschalen in die braune. Trennen wir den Müll, wird das Recycling leichter. Je mehr recycelt wird, desto weniger Bäume werden gefällt und desto weniger Energie wird verbraucht. Merkt euch: Jeder Abfall in die richtige Tonne!"
+        "Sortieren wir unseren Müll richtig! Unsere Schule hat vier farbige Behälter. Papier und Karton kommen in die blaue Tonne, Glasflaschen in die grüne. Plastik- und Metallverpackungen gehören in die gelbe Tonne, Bioabfälle wie Obstschalen in die braune. Trennen wir den Müll, wird das Recycling leichter. Je mehr recycelt wird, desto weniger Bäume werden gefällt und desto weniger Energie wird verbraucht. So werden die natürlichen Ressourcen später erschöpft. Merkt euch: Jeder Abfall in die richtige Tonne!"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2889,7 +3310,7 @@
       "bezug": "tr.b1.e13.s0310",
       "text": "In unserer Klasse trennen wir jetzt den Müll. Papier und Karton gehören in die blaue Tonne, Glas in die grüne. Plastikflaschen und Metallverpackungen werfen wir in die gelbe Tonne. Organische Abfälle kommen in die braune Tonne. Flaschen sollte man vor dem Wegwerfen leeren, denn sauberer Abfall lässt sich leichter verwerten. Jeden Freitag bringen zwei Schüler die Kisten zum Recyclinghof. Warum ist das wichtig? Wenn der Abfall nicht getrennt wird, ist kein Recycling möglich. Je mehr getrennt wird, desto weniger Müll fällt an, und unsere Schule belastet die Umwelt weniger.",
       "alternativen": [
-        "Ab jetzt sortieren wir in unserer Klasse den Abfall. Papier und Karton kommen in die blaue Tonne, Glas in die grüne, Plastikflaschen und Metallverpackungen in die gelbe, organische Abfälle in die braune. Die Flaschen soll man vor dem Wegwerfen leeren, weil sauberer Müll leichter recycelt werden kann. Jeden Freitag bringen zwei Schüler die Behälter zur Recyclingstelle. Wichtig ist das, weil ohne Trennung kein Recycling möglich ist. Je mehr wir trennen, desto weniger Müll entsteht und desto weniger belastet unsere Schule die Umwelt."
+        "Ab jetzt sortieren wir in unserer Klasse den Abfall. Papier und Karton kommen in die blaue Tonne, Glas in die grüne, Plastikflaschen und Metallverpackungen in die gelbe, organische Abfälle in die braune. Die Flaschen soll man vor dem Wegwerfen leeren, weil sauberer Müll leichter recycelt werden kann. Jeden Freitag bringen zwei Schüler die Behälter zur Recyclingstelle. Warum ist das wichtig? Weil ohne Trennung kein Recycling möglich ist. Je mehr wir trennen, desto weniger Müll entsteht und desto weniger belastet unsere Schule die Umwelt."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2903,7 +3324,7 @@
     },
     {
       "bezug": "tr.b1.e13.s0312",
-      "text": "Ja, deshalb gehen wir nicht in den Park, bei der Hitze wirst du müde.",
+      "text": "Ja, deshalb lass uns nicht in den Park gehen, bei der Hitze wirst du müde.",
       "alternativen": [
         "Ja, darum sollten wir nicht in den Park gehen, du wirst in der Hitze schnell müde.",
         "Ja, also gehen wir besser nicht in den Park, bei der Hitze ermüdest du schnell."
@@ -2914,16 +3335,16 @@
     {
       "bezug": "tr.b1.e13.s0313",
       "text": "Gut, können wir denn am Abend hingehen, wenn es kühl ist?",
-      "alternativen": ["Na schön, dürfen wir abends gehen, wenn es kühler ist?", "Also, könnten wir gehen, wenn es am Abend kühl wird?"],
+      "alternativen": ["Na schön, dürfen wir abends gehen, wenn es kühl wird?", "Also, könnten wir gehen, wenn es am Abend kühl wird?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.b1.e13.s0314",
-      "text": "Natürlich, sobald es Abend ist, gehen wir zusammen spazieren.",
+      "text": "Natürlich, sobald es Abend wird, lass uns zusammen spazieren gehen.",
       "alternativen": [
-        "Natürlich, wenn es Abend wird, machen wir zusammen einen Spaziergang.",
-        "Klar, am Abend gehen wir gemeinsam spazieren."
+        "Natürlich, wenn es Abend wird, sollten wir zusammen einen Spaziergang machen.",
+        "Klar, am Abend sollten wir gemeinsam spazieren gehen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2931,7 +3352,7 @@
     {
       "bezug": "tr.b1.e13.s0315",
       "text": "Lass die Tür nicht offen, es ist sehr kalt.",
-      "alternativen": ["Lass die Tür nicht auf, die Luft ist sehr kalt.", "Lass die Tür nicht offen stehen, es ist sehr kalt draußen."],
+      "alternativen": ["Lass die Tür nicht auf, die Luft ist sehr kalt.", "Lass die Tür nicht offen stehen, es ist sehr kalt."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2947,7 +3368,7 @@
       "text": "Wenn es wenig regnet, ist es besser, die Blumen im Garten abends zu gießen.",
       "alternativen": [
         "Regnet es wenig, ist es besser, die Blumen im Garten am Abend zu bewässern.",
-        "Bei wenig Regen gießt man die Gartenblumen am besten abends."
+        "Bei wenig Regen gießt man die Gartenblumen besser abends."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2976,8 +3397,8 @@
       "bezug": "tr.b1.e13.s0320",
       "text": "In den Sommerferien sind wir ins Dorf gefahren und haben dort einen großen Bauernhof gesehen.",
       "alternativen": [
-        "Während der Sommerferien fuhren wir aufs Land und sahen dort einen großen Hof.",
-        "Wir fuhren in den Sommerferien ins Dorf und besichtigten dort einen großen Bauernhof."
+        "Während der Sommerferien fuhren wir ins Dorf und sahen dort einen großen Hof.",
+        "Wir fuhren in den Sommerferien ins Dorf und sahen dort einen großen Bauernhof."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2994,7 +3415,7 @@
       "text": "Millionen von Menschen arbeiten daran, die Wasserquellen zu schützen.",
       "alternativen": [
         "Millionen Menschen setzen sich dafür ein, die Wasserquellen zu bewahren.",
-        "Millionenfach arbeiten Menschen daran, Wasserquellen zu schützen."
+        "Millionen Menschen arbeiten daran, Wasserquellen zu schützen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3014,7 +3435,7 @@
       "text": "Wenn wir alle zusammenarbeiten, können wir große Ergebnisse erzielen.",
       "alternativen": [
         "Arbeiten wir alle zusammen, können wir Großes erreichen.",
-        "Wenn wir gemeinsam arbeiten, können wir Großes bewirken."
+        "Wenn wir alle gemeinsam arbeiten, können wir Großes bewirken."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3057,15 +3478,44 @@
           {
             "type": "blockquote",
             "content": [
-              { "type": "paragraph", "content": [{ "type": "text", "text": "Okudukça öğreniyorsun." }] },
-              { "type": "paragraph", "content": [{ "type": "text", "text": "Sıcaklık arttıkça kuraklık da artıyor." }] }
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Okudukça öğreniyorsun."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Sıcaklık arttıkça kuraklık da artıyor."
+                  }
+                ]
+              }
             ]
           },
           {
             "type": "paragraph",
-            "content": [{ "type": "text", "text": "Okudukça öğreniyorsun heißt: Je mehr du liest, desto mehr lernst du." }]
+            "content": [
+              {
+                "type": "text",
+                "text": "Okudukça öğreniyorsun heißt: Je mehr du liest, desto mehr lernst du."
+              }
+            ]
           },
-          { "type": "paragraph", "content": [{ "type": "text", "text": "Achtung: iklim heißt Klima (das Erdklima), nicht Klimaanlage." }] }
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Achtung: iklim heißt Klima (das Erdklima), nicht Klimaanlage."
+              }
+            ]
+          }
         ]
       }
     },
@@ -3088,8 +3538,24 @@
           {
             "type": "blockquote",
             "content": [
-              { "type": "paragraph", "content": [{ "type": "text", "text": "Elif okula bisikletle gidiyor, Can ise otobüse biniyor." }] },
-              { "type": "paragraph", "content": [{ "type": "text", "text": "Ben ise her sabah kısa duş alıyorum." }] }
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Elif okula bisikletle gidiyor, Can ise otobüse biniyor."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Ben ise her sabah kısa duş alıyorum."
+                  }
+                ]
+              }
             ]
           },
           {
@@ -3123,14 +3589,48 @@
           {
             "type": "blockquote",
             "content": [
-              { "type": "paragraph", "content": [{ "type": "text", "text": "Yağmur yağarsa park ıslanır." }] },
-              { "type": "paragraph", "content": [{ "type": "text", "text": "Hasta olursan hemen doktora git." }] }
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Yağmur yağarsa park ıslanır."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Hasta olursan hemen doktora git."
+                  }
+                ]
+              }
             ]
           },
-          { "type": "paragraph", "content": [{ "type": "text", "text": "„Sonst“ heißt yoksa und steht am Anfang des zweiten Satzes." }] },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "„Sonst“ heißt yoksa und steht am Anfang des zweiten Satzes."
+              }
+            ]
+          },
           {
             "type": "blockquote",
-            "content": [{ "type": "paragraph", "content": [{ "type": "text", "text": "Tasarruf yapmalıyız, yoksa su biter." }] }]
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Tasarruf yapmalıyız, yoksa su biter."
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
@@ -3154,8 +3654,24 @@
           {
             "type": "blockquote",
             "content": [
-              { "type": "paragraph", "content": [{ "type": "text", "text": "Pencereyi açmıyorum, çünkü dışarısı çok soğuk." }] },
-              { "type": "paragraph", "content": [{ "type": "text", "text": "Hava çok sıcak olduğu için evde kaldık." }] }
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Pencereyi açmıyorum, çünkü dışarısı çok soğuk."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Hava çok sıcak olduğu için evde kaldık."
+                  }
+                ]
+              }
             ]
           },
           {
@@ -3189,11 +3705,35 @@
           {
             "type": "blockquote",
             "content": [
-              { "type": "paragraph", "content": [{ "type": "text", "text": "Su tasarrufu yapalım diye duş süremizi kısalttık." }] },
-              { "type": "paragraph", "content": [{ "type": "text", "text": "Bahçeye ağaç dikelim diye herkes birer fidan getirdi." }] }
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Su tasarrufu yapalım diye duş süremizi kısalttık."
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Bahçeye ağaç dikelim diye herkes birer fidan getirdi."
+                  }
+                ]
+              }
             ]
           },
-          { "type": "paragraph", "content": [{ "type": "text", "text": "Damit wir Wasser sparen, haben wir unsere Duschzeit verkürzt." }] }
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Damit wir Wasser sparen, haben wir unsere Duschzeit verkürzt."
+              }
+            ]
+          }
         ]
       }
     }
