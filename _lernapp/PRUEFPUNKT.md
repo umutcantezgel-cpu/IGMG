@@ -1,5 +1,12 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 16:15 UTC – Fenster 16:10–21:10:**
+  - **Fenster 11:10–16:10** endete bei 0,88 ohne Abbruch.
+  - **B1 tr:** Übersetzungen 16/16 fertig, Rückübersetzungen e01–e08 fertig, Rest läuft.
+  - **B1 ar seriell:** Übersetzungen und Rückübersetzungen bis e04 fertig, Rest läuft.
+  - **B2 de neu gestartet:** `wf_ee651951-2ab`, `entworfen` e01–e08, Lektorate ab e01 mit Opus.
+  - **Taktung:** Messung um 16:45 (`trig_01Crf4UPYLeDZTYhR1SYtXuX`); danach ggf. B2 tr (Plan mit Opus).
+
 - **Stand 25.10.2026 14:05 UTC:**
   - **B1 tr** `wf_058f8fa1-7d9` läuft mit Haiku, ≈ 0,11 %/min. Fertig sind alle Lektorate, die Übersetzungen e01/e02 und die Rückübersetzungen e03–e07.
   - **B1 ar** `wf_ff6dce59-04b` seriell neu gestartet: `entworfen` e01–e16, `lektoriert` e01–e08, `uebersetzt` e01/e02, `rueckgeprueft` e01.
