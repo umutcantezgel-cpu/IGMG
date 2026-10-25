@@ -1,5 +1,14 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 09:12 UTC – Umstellung auf Haiku für Texte (Nutzer):**
+  - **Neue Aufteilung:** Entwurf, Übersetzung und Rückübersetzung laufen mit Haiku 5.5. Wortschatzplan, Lektorat und Schlussprüfung bleiben als Qualitätstor bei Opus, ebenso Technik und Infrastruktur.
+  - **Skript `lernapp-inhalte.workflow.js`:** neue Optionen `args.modelle` (Modell je Schritt) und `args.seriell` (1 Agent).
+  - **Laufende Opus-Läufe angehalten, mit Haiku neu gestartet:**
+    - B1 de `wf_1f3338b3-0ce`: Übersetzungen e01–e14 fertig, e15 de-aus-ar als Teilstand; offen sind e15/e16, alle Rückübersetzungen und die Schlussprüfung.
+    - B1 ar `wf_79f0b24f-65e`: e01 komplett, e02 lektoriert, e03 entworfen, e04 als Teilentwurf.
+    - B1 tr `wf_058f8fa1-7d9`: Entwürfe e01–e08, Lektorate e03–e08; e01/e02 werden aus den Plänen übernommen.
+  - **Warteschlange:** B2 de (Plan mit Opus, Rest mit Haiku), wenn die Auslastung es nach der ersten Messung mit Haiku trägt.
+
 - **Stand 25.10.2026 07:55 UTC:**
   - **Prüfer-Mängelrunde frei:** bbdae93c, Gegenprüfung 2 ohne Mangel kritisch, hoch oder mittel. Gemergt und auf `main` (645e76cd). Damit ist das Paket Prüfer-Fehlalarme abgeschlossen.
   - **Neu:** `lernapp-inhalte.workflow.js` kennt `args.seriell` (Einheiten nacheinander, nur 1 Agent zur Zeit) für die Taktregel. Sicherung: `….bak-seriell`.
