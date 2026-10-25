@@ -29,7 +29,8 @@ test.describe('Lektion des Testkurses (de)', () => {
     test.setTimeout(90_000);
     await page.goto(`/lern-app/de/${KURS}`);
     const lektion = page.locator(`main a[href="/lern-app/de/${KURS}/ueben?l=${LEKTION_1}"]`);
-    await expect(lektion).toBeVisible();
+    // erstes Laden des Lernpfads: Kursverzeichnis, Vorrat und die zwei automatisch gespeicherten Einheiten
+    await expect(lektion).toBeVisible({ timeout: 15_000 });
     await lektion.focus();
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL((u) => u.pathname === `/lern-app/de/${KURS}/ueben` && u.searchParams.get('l') === LEKTION_1);
