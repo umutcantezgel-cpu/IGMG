@@ -1,5 +1,12 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 12:20 UTC – Import-Fehler im Bau behoben:**
+  - **Befund (Nachprüfung):** Der Import in die Bau-Datenbank brach ab, mit 34.904 „verweist auf unbekanntes …“. Damit wäre auch der Vercel-Bau gescheitert.
+  - **Ursache:** `pruefeVerweise` (`web/src/lib/lernapp/inhalt/import.ts`) fragte alle Verweise in einer einzigen `inArray`-Abfrage ab. Ab B1 waren das über 32.767 Parameter, die 16-Bit-Grenze des PostgreSQL-Protokolls.
+  - **Behebung:** 7455b846 und d4d923dc. Abfrage in Blöcken zu 5.000 Schlüsseln (`VERWEISE_JE_ABFRAGE`).
+  - **Nachweis:** Bau-Datenbank rc=0, 350 Dateien, 133.042 Einträge, 0 Konflikte. Integrationstest lernapp-import 9/9, Typen, ESLint, Prettier grün.
+  - **Nebenbefund:** Zwei Unit-Tests überschritten unter Last ihre Zeitgrenze (speicher-probe, religion-waechter ≤ 30 s). Einzeln grün; ohne Bezug zum Inhalt.
+
 - **Stand 25.10.2026 12:03 UTC – B1 de fertig:**
   - **Schlussprüfung** dcac498f: 16 Einheiten, 1.300 Lemmata, 5.254 Sätze, 2.242 Aufgaben, 0 blockierend.
     - 12 menschlich_klaeren, alle in e16: Kategorie politik in ar/tr, Thema Staatskunde, offene Frage OF-10.
