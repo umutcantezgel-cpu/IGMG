@@ -566,7 +566,7 @@ async function importiereUebersetzung(l: Lauf, d: UebersetzungDatei, pfad: strin
 }
 
 /** Höchstzahl Schlüssel je Verweis-Abfrage (deutlich unter der Parametergrenze des PostgreSQL-Protokolls). */
-export const VERWEISE_JE_ABFRAGE = 5000
+export const VERWEISE_JE_ABFRAGE = 5000;
 
 /** Verweise aller Aufgaben der importierten Einheiten müssen auf Lemmata oder Sätze zeigen, die es gibt. */
 async function pruefeVerweise(tx: Transaktion, dateien: readonly { pfad: string; d: SprachEinheitDatei }[]): Promise<void> {
