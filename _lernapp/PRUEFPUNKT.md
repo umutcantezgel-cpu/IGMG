@@ -1,5 +1,13 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 07:25 UTC – nach Leerlauf fortgesetzt:**
+  - **Leerlauf 00:41–07:23:** Mehrere Worker-Neustarts unterbrachen jedes Mal die Freigabe des Plan-Modus. Das Fenster 01:00–06:00 blieb ungenutzt (Auslastung 0,03).
+  - **Neu gestartet:**
+    - B1 de `wf_335727f4-a16`: übersprungen werden `lektoriert` e01–e16 und `uebersetzt` e01–e09. Offen: Übersetzungen e10–e16, Rückübersetzungen, Schlussprüfung.
+    - Prüfer-Mängelrunde `lernapp-pruefer-maengel` (1 Agent, danach Gegenprüfung 2).
+  - **Taktung:** Fenster 06:00–11:00, Auslastung 0,03 um 07:23 bei einer Taktlinie von 0,25.
+  - **Warteschlange:** B1 ar, B1 tr, B2 de, sobald die Mängelrunde fertig ist und die Auslastung es trägt.
+
 - **Stand 25.10.2026 00:42 UTC – vor dem Reset angehalten (Taktregel):**
   - Auslastung 0,96 um 00:39; das Fenster wäre gegen 00:47 leer gewesen.
   - B1 de `wf_22e98787-c97` direkt nach dem Commit 5f12bf3c angehalten; Arbeitsbaum sauber.
