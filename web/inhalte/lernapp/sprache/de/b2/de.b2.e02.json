@@ -1,0 +1,5594 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "b2",
+  "einheit": {
+    "schluessel": "de.b2.e02",
+    "reihenfolge": 3,
+    "thema": {
+      "de": "Rechte und Pflichten im Job",
+      "tr": "İşte haklar ve yükümlülükler",
+      "ar": "الحقوق والواجبات في العمل"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann die wichtigsten Regelungen eines Arbeitsvertrags verstehen und gezielt nachfragen.",
+        "tr": "İş sözleşmesindeki en önemli düzenlemeleri anlayabilir ve gerektiğinde doğru soruları sorabilirim.",
+        "ar": "أستطيع أن أفهم أهم بنود عقد العمل وأن أسأل عن التفاصيل بدقة."
+      },
+      {
+        "de": "Ich kann im Arbeitsalltag meine Rechte sachlich ansprechen, etwa bei Überstunden oder Urlaub.",
+        "tr": "İş hayatında, örneğin fazla mesai ya da izin konusunda haklarımı sakin ve net biçimde dile getirebilirim.",
+        "ar": "أستطيع أن أطرح حقوقي في الحياة المهنية اليومية بهدوء وموضوعية، مثلاً عند العمل الإضافي أو الإجازة."
+      }
+    ],
+    "symbol": "briefcase",
+    "kinderGeeignet": false
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.b2.e02.wofuer",
+      "lemma": "wofür",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Fragewort und Relativadverb (für + was)"
+      },
+      "frequenzRang": 2460,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.wozu",
+      "lemma": "wozu",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Fragewort und Relativadverb (zu + was)"
+      },
+      "frequenzRang": 2421,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.wovon",
+      "lemma": "wovon",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Fragewort und Relativadverb (von + was)"
+      },
+      "frequenzRang": 2897,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.woran",
+      "lemma": "woran",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Fragewort und Relativadverb (an + was)"
+      },
+      "frequenzRang": 3205,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.worueber",
+      "lemma": "worüber",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Fragewort und Relativadverb (über + was)"
+      },
+      "frequenzRang": 5335,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.worum",
+      "lemma": "worum",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Fragewort und Relativadverb (um + was)"
+      },
+      "frequenzRang": 4858,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.wonach",
+      "lemma": "wonach",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Fragewort und Relativadverb (nach + was)"
+      },
+      "frequenzRang": 3150,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.normalerweise",
+      "lemma": "normalerweise",
+      "wortart": "adverb",
+      "frequenzRang": 2053,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.anstrengung",
+      "lemma": "Anstrengung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Anstrengungen"
+      },
+      "formen": {
+        "pl": "Anstrengungen"
+      },
+      "frequenzRang": 4769,
+      "quelle": "wiktionary:de:Anstrengung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anstrengung‘ (https://de.wiktionary.org/wiki/Anstrengung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.posten",
+      "lemma": "Posten",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Posten"
+      },
+      "formen": {
+        "gen_sg": "Postens"
+      },
+      "frequenzRang": 1154,
+      "quelle": "wiktionary:de:Posten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Posten‘ (https://de.wiktionary.org/wiki/Posten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.profitieren",
+      "lemma": "profitieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "profitieren",
+        "praes_ich": "profitiere",
+        "praes_du": "profitierst",
+        "praes_er_sie_es": "profitiert",
+        "praes_wir": "profitieren",
+        "praes_ihr": "profitiert",
+        "praes_sie_Sie": "profitieren",
+        "praet_ich_er_sie_es": "profitierte",
+        "praet_du": "profitiertest",
+        "praet_wir_sie_Sie": "profitierten",
+        "praet_ihr": "profitiertet",
+        "partizip_2": "profitiert",
+        "partizip_1": "profitierend"
+      },
+      "frequenzRang": 2071,
+      "quelle": "wiktionary:de:profitieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚profitieren‘ (https://de.wiktionary.org/wiki/profitieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.arbeiter",
+      "lemma": "Arbeiter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Arbeiter",
+        "weiblich": "Arbeiterin"
+      },
+      "formen": {
+        "dat_pl": "Arbeitern",
+        "gen_sg": "Arbeiters",
+        "weiblich": "Arbeiterin",
+        "weiblich_pl": "Arbeiterinnen"
+      },
+      "frequenzRang": 8928,
+      "quelle": "wiktionary:de:Arbeiter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Arbeiter‘ (https://de.wiktionary.org/wiki/Arbeiter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.versetzen",
+      "lemma": "versetzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "versetzen",
+        "praes_ich": "versetze",
+        "praes_du": "versetzt",
+        "praes_er_sie_es": "versetzt",
+        "praes_wir": "versetzen",
+        "praes_ihr": "versetzt",
+        "praes_sie_Sie": "versetzen",
+        "praet_ich_er_sie_es": "versetzte",
+        "praet_du": "versetztest",
+        "praet_wir_sie_Sie": "versetzten",
+        "praet_ihr": "versetztet",
+        "partizip_2": "versetzt",
+        "partizip_1": "versetzend"
+      },
+      "frequenzRang": 2449,
+      "quelle": "wiktionary:de:versetzen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚versetzen‘ (https://de.wiktionary.org/wiki/versetzen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.entlassen",
+      "lemma": "entlassen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "entlassen",
+        "praes_ich": "entlasse",
+        "praes_du": "entlässt",
+        "praes_er_sie_es": "entlässt",
+        "praes_wir": "entlassen",
+        "praes_ihr": "entlasst",
+        "praes_sie_Sie": "entlassen",
+        "praet_ich_er_sie_es": "entließ",
+        "praet_du": "entließest",
+        "praet_wir_sie_Sie": "entließen",
+        "praet_ihr": "entließt",
+        "partizip_2": "entlassen",
+        "partizip_1": "entlassend"
+      },
+      "frequenzRang": 2481,
+      "quelle": "wiktionary:de:entlassen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚entlassen‘ (https://de.wiktionary.org/wiki/entlassen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.anstellen",
+      "lemma": "anstellen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an",
+        "grundverb": "stellen (de.a1.e03.stellen)"
+      },
+      "formen": {
+        "infinitiv": "anstellen",
+        "verbzusatz": "an",
+        "partizip_2": "angestellt",
+        "partizip_1": "anstellend",
+        "zu_infinitiv": "anzustellen",
+        "nebensatz_er_sie_es": "anstellt",
+        "nebensatz_praet": "anstellte",
+        "nebensatz_praet_pl": "anstellten"
+      },
+      "frequenzRang": 2576,
+      "quelle": "wiktionary:de:anstellen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚anstellen‘ (https://de.wiktionary.org/wiki/anstellen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.antreten",
+      "lemma": "antreten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein/haben",
+        "trennbar": "ja",
+        "verbzusatz": "an",
+        "unregelmaessig_praesens": "ja",
+        "grundverb": "treten (de.a2.e08.treten)"
+      },
+      "formen": {
+        "infinitiv": "antreten",
+        "verbzusatz": "an",
+        "partizip_2": "angetreten",
+        "partizip_1": "antretend",
+        "zu_infinitiv": "anzutreten",
+        "nebensatz_er_sie_es": "antritt",
+        "nebensatz_praet": "antrat",
+        "nebensatz_praet_pl": "antraten"
+      },
+      "frequenzRang": 2677,
+      "quelle": "wiktionary:de:antreten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚antreten‘ (https://de.wiktionary.org/wiki/antreten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.ausueben",
+      "lemma": "ausüben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "aus",
+        "grundverb": "üben (de.a2.e08.ueben)"
+      },
+      "formen": {
+        "infinitiv": "ausüben",
+        "verbzusatz": "aus",
+        "partizip_2": "ausgeübt",
+        "partizip_1": "ausübend",
+        "zu_infinitiv": "auszuüben",
+        "nebensatz_er_sie_es": "ausübt",
+        "nebensatz_praet": "ausübte",
+        "nebensatz_praet_pl": "ausübten"
+      },
+      "frequenzRang": 3268,
+      "quelle": "wiktionary:de:ausüben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚ausüben‘ (https://de.wiktionary.org/wiki/ausüben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.langjaehrig",
+      "lemma": "langjährig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "langjährige",
+        "endung_en": "langjährigen",
+        "endung_er": "langjähriger",
+        "endung_es": "langjähriges",
+        "endung_em": "langjährigem"
+      },
+      "frequenzRang": 2606,
+      "quelle": "wiktionary:de:langjährig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚langjährig‘ (https://de.wiktionary.org/wiki/langjährig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.kompromiss",
+      "lemma": "Kompromiss",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kompromisse"
+      },
+      "formen": {
+        "pl": "Kompromisse",
+        "dat_pl": "Kompromissen",
+        "gen_sg": "Kompromisses"
+      },
+      "frequenzRang": 4020,
+      "quelle": "wiktionary:de:Kompromiss",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kompromiss‘ (https://de.wiktionary.org/wiki/Kompromiss), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.gewerkschaft",
+      "lemma": "Gewerkschaft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Gewerkschaften"
+      },
+      "formen": {
+        "pl": "Gewerkschaften"
+      },
+      "frequenzRang": 2780,
+      "quelle": "wiktionary:de:Gewerkschaft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gewerkschaft‘ (https://de.wiktionary.org/wiki/Gewerkschaft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.mindestlohn",
+      "lemma": "Mindestlohn",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Mindestlöhne"
+      },
+      "formen": {
+        "pl": "Mindestlöhne",
+        "dat_pl": "Mindestlöhnen",
+        "gen_sg": "Mindestlohns",
+        "gen_sg_2": "Mindestlohnes"
+      },
+      "frequenzRang": 4079,
+      "quelle": "wiktionary:de:Mindestlohn",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mindestlohn‘ (https://de.wiktionary.org/wiki/Mindestlohn), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.streik",
+      "lemma": "Streik",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Streiks"
+      },
+      "formen": {
+        "pl": "Streiks",
+        "gen_sg": "Streiks"
+      },
+      "frequenzRang": 4380,
+      "quelle": "wiktionary:de:Streik",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Streik‘ (https://de.wiktionary.org/wiki/Streik), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.kuendigung",
+      "lemma": "Kündigung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kündigungen"
+      },
+      "formen": {
+        "pl": "Kündigungen"
+      },
+      "frequenzRang": 3951,
+      "quelle": "wiktionary:de:Kündigung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kündigung‘ (https://de.wiktionary.org/wiki/Kündigung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.beschaeftigung",
+      "lemma": "Beschäftigung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Beschäftigungen"
+      },
+      "formen": {
+        "pl": "Beschäftigungen"
+      },
+      "frequenzRang": 3556,
+      "quelle": "wiktionary:de:Beschäftigung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Beschäftigung‘ (https://de.wiktionary.org/wiki/Beschäftigung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.befoerdern",
+      "lemma": "befördern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "befördern",
+        "praes_ich": "befördere",
+        "praes_du": "beförderst",
+        "praes_er_sie_es": "befördert",
+        "praes_wir": "befördern",
+        "praes_ihr": "befördert",
+        "praes_sie_Sie": "befördern",
+        "praet_ich_er_sie_es": "beförderte",
+        "praet_du": "befördertest",
+        "praet_wir_sie_Sie": "beförderten",
+        "praet_ihr": "befördertet",
+        "partizip_2": "befördert",
+        "partizip_1": "befördernd"
+      },
+      "frequenzRang": 3580,
+      "quelle": "wiktionary:de:befördern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚befördern‘ (https://de.wiktionary.org/wiki/befördern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.regulaer",
+      "lemma": "regulär",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "reguläre",
+        "endung_en": "regulären",
+        "endung_er": "regulärer",
+        "endung_es": "reguläres",
+        "endung_em": "regulärem"
+      },
+      "frequenzRang": 3491,
+      "quelle": "wiktionary:de:regulär",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚regulär‘ (https://de.wiktionary.org/wiki/regulär), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.ausserordentlich",
+      "lemma": "außerordentlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "außerordentliche",
+        "endung_en": "außerordentlichen",
+        "endung_er": "außerordentlicher",
+        "endung_es": "außerordentliches",
+        "endung_em": "außerordentlichem"
+      },
+      "frequenzRang": 3498,
+      "quelle": "wiktionary:de:außerordentlich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚außerordentlich‘ (https://de.wiktionary.org/wiki/außerordentlich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.arbeitslos",
+      "lemma": "arbeitslos",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "arbeitslose",
+        "endung_en": "arbeitslosen",
+        "endung_er": "arbeitsloser",
+        "endung_es": "arbeitsloses",
+        "endung_em": "arbeitslosem"
+      },
+      "frequenzRang": 3283,
+      "quelle": "wiktionary:de:arbeitslos",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚arbeitslos‘ (https://de.wiktionary.org/wiki/arbeitslos), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.arbeitslosigkeit",
+      "lemma": "Arbeitslosigkeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 4540,
+      "quelle": "wiktionary:de:Arbeitslosigkeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Arbeitslosigkeit‘ (https://de.wiktionary.org/wiki/Arbeitslosigkeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.durchgehend",
+      "lemma": "durchgehend",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "durchgehende",
+        "endung_en": "durchgehenden",
+        "endung_er": "durchgehender",
+        "endung_es": "durchgehendes",
+        "endung_em": "durchgehendem"
+      },
+      "frequenzRang": 4535,
+      "quelle": "wiktionary:en:durchgehend",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚durchgehend‘ (https://en.wiktionary.org/wiki/durchgehend#German), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.bezahlung",
+      "lemma": "Bezahlung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bezahlungen"
+      },
+      "formen": {
+        "pl": "Bezahlungen"
+      },
+      "frequenzRang": 4251,
+      "quelle": "wiktionary:de:Bezahlung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bezahlung‘ (https://de.wiktionary.org/wiki/Bezahlung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.verkuerzen",
+      "lemma": "verkürzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verkürzen",
+        "praes_ich": "verkürze",
+        "praes_du": "verkürzt",
+        "praes_er_sie_es": "verkürzt",
+        "praes_wir": "verkürzen",
+        "praes_ihr": "verkürzt",
+        "praes_sie_Sie": "verkürzen",
+        "praet_ich_er_sie_es": "verkürzte",
+        "praet_du": "verkürztest",
+        "praet_wir_sie_Sie": "verkürzten",
+        "praet_ihr": "verkürztet",
+        "partizip_2": "verkürzt",
+        "partizip_1": "verkürzend"
+      },
+      "frequenzRang": 4244,
+      "quelle": "wiktionary:de:verkürzen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verkürzen‘ (https://de.wiktionary.org/wiki/verkürzen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.vertretung",
+      "lemma": "Vertretung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Vertretungen"
+      },
+      "formen": {
+        "pl": "Vertretungen"
+      },
+      "frequenzRang": 4608,
+      "quelle": "wiktionary:de:Vertretung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vertretung‘ (https://de.wiktionary.org/wiki/Vertretung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.kuendigungsfrist",
+      "lemma": "Kündigungsfrist",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kündigungsfristen"
+      },
+      "formen": {
+        "pl": "Kündigungsfristen"
+      },
+      "frequenzRang": 31229,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.kuendigungsschutz",
+      "lemma": "Kündigungsschutz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Kündigungsschutzes"
+      },
+      "frequenzRang": 45525,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.kuendigungsgrund",
+      "lemma": "Kündigungsgrund",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kündigungsgründe"
+      },
+      "formen": {
+        "pl": "Kündigungsgründe",
+        "dat_pl": "Kündigungsgründen",
+        "gen_sg": "Kündigungsgrunds",
+        "gen_sg_2": "Kündigungsgrundes"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.fristlos",
+      "lemma": "fristlos",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "fristlose",
+        "endung_en": "fristlosen",
+        "endung_er": "fristloser",
+        "endung_es": "fristloses",
+        "endung_em": "fristlosem"
+      },
+      "frequenzRang": 34764,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.abmahnung",
+      "lemma": "Abmahnung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Abmahnungen"
+      },
+      "formen": {
+        "pl": "Abmahnungen"
+      },
+      "frequenzRang": 9130,
+      "quelle": "wiktionary:de:Abmahnung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abmahnung‘ (https://de.wiktionary.org/wiki/Abmahnung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.abfindung",
+      "lemma": "Abfindung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Abfindungen"
+      },
+      "formen": {
+        "pl": "Abfindungen"
+      },
+      "frequenzRang": 23060,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.aufhebungsvertrag",
+      "lemma": "Aufhebungsvertrag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Aufhebungsverträge"
+      },
+      "formen": {
+        "pl": "Aufhebungsverträge",
+        "dat_pl": "Aufhebungsverträgen",
+        "gen_sg": "Aufhebungsvertrags",
+        "gen_sg_2": "Aufhebungsvertrages"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.urlaubsanspruch",
+      "lemma": "Urlaubsanspruch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Urlaubsansprüche"
+      },
+      "formen": {
+        "pl": "Urlaubsansprüche",
+        "dat_pl": "Urlaubsansprüchen",
+        "gen_sg": "Urlaubsanspruchs",
+        "gen_sg_2": "Urlaubsanspruches"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.urlaubstag",
+      "lemma": "Urlaubstag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Urlaubstage"
+      },
+      "formen": {
+        "pl": "Urlaubstage",
+        "dat_pl": "Urlaubstagen",
+        "gen_sg": "Urlaubstags",
+        "gen_sg_2": "Urlaubstages"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.urlaubsgeld",
+      "lemma": "Urlaubsgeld",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Urlaubsgelds",
+        "gen_sg_2": "Urlaubsgeldes"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.weihnachtsgeld",
+      "lemma": "Weihnachtsgeld",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Weihnachtsgelds",
+        "gen_sg_2": "Weihnachtsgeldes"
+      },
+      "frequenzRang": 37988,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.ueberstunde",
+      "lemma": "Überstunde",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Überstunden"
+      },
+      "formen": {
+        "pl": "Überstunden"
+      },
+      "frequenzRang": 8429,
+      "quelle": "wiktionary:de:Überstunde",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Überstunde‘ (https://de.wiktionary.org/wiki/Überstunde), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.freizeitausgleich",
+      "lemma": "Freizeitausgleich",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Freizeitausgleichs",
+        "gen_sg_2": "Freizeitausgleiches"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.gleitzeit",
+      "lemma": "Gleitzeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.wochenarbeitszeit",
+      "lemma": "Wochenarbeitszeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Wochenarbeitszeiten"
+      },
+      "formen": {
+        "pl": "Wochenarbeitszeiten"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.betriebsrat",
+      "lemma": "Betriebsrat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Betriebsräte"
+      },
+      "formen": {
+        "pl": "Betriebsräte",
+        "dat_pl": "Betriebsräten",
+        "gen_sg": "Betriebsrats",
+        "gen_sg_2": "Betriebsrates"
+      },
+      "frequenzRang": 11776,
+      "quelle": "wiktionary:de:Betriebsrat",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Betriebsrat‘ (https://de.wiktionary.org/wiki/Betriebsrat), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.betriebsversammlung",
+      "lemma": "Betriebsversammlung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Betriebsversammlungen"
+      },
+      "formen": {
+        "pl": "Betriebsversammlungen"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.arbeitsrecht",
+      "lemma": "Arbeitsrecht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Arbeitsrechts",
+        "gen_sg_2": "Arbeitsrechtes"
+      },
+      "frequenzRang": 9803,
+      "quelle": "wiktionary:de:Arbeitsrecht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Arbeitsrecht‘ (https://de.wiktionary.org/wiki/Arbeitsrecht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.arbeitsgericht",
+      "lemma": "Arbeitsgericht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Arbeitsgerichte"
+      },
+      "formen": {
+        "pl": "Arbeitsgerichte",
+        "dat_pl": "Arbeitsgerichten",
+        "gen_sg": "Arbeitsgerichts",
+        "gen_sg_2": "Arbeitsgerichtes"
+      },
+      "frequenzRang": 31515,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.arbeitsbedingungen",
+      "lemma": "Arbeitsbedingungen",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 9711,
+      "quelle": "wiktionary:en:Arbeitsbedingungen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Arbeitsbedingungen‘ (https://en.wiktionary.org/wiki/Arbeitsbedingungen#German), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.arbeitsklima",
+      "lemma": "Arbeitsklima",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Arbeitsklimas"
+      },
+      "frequenzRang": 47337,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.arbeitsalltag",
+      "lemma": "Arbeitsalltag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Arbeitsalltags",
+        "gen_sg_2": "Arbeitsalltages"
+      },
+      "frequenzRang": 31514,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.brutto",
+      "lemma": "brutto",
+      "wortart": "adverb",
+      "frequenzRang": 8173,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.netto",
+      "lemma": "netto",
+      "wortart": "adverb",
+      "frequenzRang": 5945,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.lohnabrechnung",
+      "lemma": "Lohnabrechnung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Lohnabrechnungen"
+      },
+      "formen": {
+        "pl": "Lohnabrechnungen"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.stundenlohn",
+      "lemma": "Stundenlohn",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Stundenlöhne"
+      },
+      "formen": {
+        "pl": "Stundenlöhne",
+        "dat_pl": "Stundenlöhnen",
+        "gen_sg": "Stundenlohns",
+        "gen_sg_2": "Stundenlohnes"
+      },
+      "frequenzRang": 33934,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.gehaltserhoehung",
+      "lemma": "Gehaltserhöhung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Gehaltserhöhungen"
+      },
+      "formen": {
+        "pl": "Gehaltserhöhungen"
+      },
+      "frequenzRang": 29219,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.befoerderung",
+      "lemma": "Beförderung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Beförderungen"
+      },
+      "formen": {
+        "pl": "Beförderungen"
+      },
+      "frequenzRang": 5990,
+      "quelle": "wiktionary:de:Beförderung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Beförderung‘ (https://de.wiktionary.org/wiki/Beförderung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.praemie",
+      "lemma": "Prämie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Prämien"
+      },
+      "formen": {
+        "pl": "Prämien"
+      },
+      "frequenzRang": 6282,
+      "quelle": "wiktionary:de:Prämie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Prämie‘ (https://de.wiktionary.org/wiki/Prämie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.zuschlag",
+      "lemma": "Zuschlag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Zuschläge"
+      },
+      "formen": {
+        "pl": "Zuschläge",
+        "dat_pl": "Zuschlägen",
+        "gen_sg": "Zuschlages"
+      },
+      "frequenzRang": 7930,
+      "quelle": "wiktionary:de:Zuschlag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zuschlag‘ (https://de.wiktionary.org/wiki/Zuschlag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.schichtarbeit",
+      "lemma": "Schichtarbeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.krankschreibung",
+      "lemma": "Krankschreibung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Krankschreibungen"
+      },
+      "formen": {
+        "pl": "Krankschreibungen"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.krankschreiben",
+      "lemma": "krankschreiben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "krank",
+        "grundverb": "schreiben (de.a1.e07.schreiben)"
+      },
+      "formen": {
+        "infinitiv": "krankschreiben",
+        "verbzusatz": "krank",
+        "partizip_2": "krankgeschrieben",
+        "partizip_1": "krankschreibend",
+        "zu_infinitiv": "krankzuschreiben",
+        "nebensatz_er_sie_es": "krankschreibt",
+        "nebensatz_praet": "krankschrieb",
+        "nebensatz_praet_pl": "krankschrieben"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.attest",
+      "lemma": "Attest",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Atteste"
+      },
+      "formen": {
+        "pl": "Atteste",
+        "dat_pl": "Attesten",
+        "gen_sg": "Attestes",
+        "gen_sg_2": "Attests"
+      },
+      "frequenzRang": 31006,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.lohnfortzahlung",
+      "lemma": "Lohnfortzahlung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.krankengeld",
+      "lemma": "Krankengeld",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Krankengelds",
+        "gen_sg_2": "Krankengeldes"
+      },
+      "frequenzRang": 47660,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.mutterschutz",
+      "lemma": "Mutterschutz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Mutterschutzes"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.elternzeit",
+      "lemma": "Elternzeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Elternzeiten"
+      },
+      "formen": {
+        "pl": "Elternzeiten"
+      },
+      "frequenzRang": 23175,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.elterngeld",
+      "lemma": "Elterngeld",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Elterngelds",
+        "gen_sg_2": "Elterngeldes"
+      },
+      "frequenzRang": 34161,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.arbeitsschutz",
+      "lemma": "Arbeitsschutz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural"
+      },
+      "formen": {
+        "gen_sg": "Arbeitsschutzes"
+      },
+      "frequenzRang": 29551,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.schutzkleidung",
+      "lemma": "Schutzkleidung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 44318,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.arbeitsunfall",
+      "lemma": "Arbeitsunfall",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Arbeitsunfälle"
+      },
+      "formen": {
+        "pl": "Arbeitsunfälle",
+        "dat_pl": "Arbeitsunfällen",
+        "gen_sg": "Arbeitsunfalls",
+        "gen_sg_2": "Arbeitsunfalles"
+      },
+      "frequenzRang": 45872,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.unfallversicherung",
+      "lemma": "Unfallversicherung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Unfallversicherungen"
+      },
+      "formen": {
+        "pl": "Unfallversicherungen"
+      },
+      "frequenzRang": 27605,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.sozialversicherung",
+      "lemma": "Sozialversicherung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Sozialversicherungen"
+      },
+      "formen": {
+        "pl": "Sozialversicherungen"
+      },
+      "frequenzRang": 9673,
+      "quelle": "wiktionary:de:Sozialversicherung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sozialversicherung‘ (https://de.wiktionary.org/wiki/Sozialversicherung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.rentenversicherung",
+      "lemma": "Rentenversicherung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Rentenversicherungen"
+      },
+      "formen": {
+        "pl": "Rentenversicherungen"
+      },
+      "frequenzRang": 8513,
+      "quelle": "wiktionary:de:Rentenversicherung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rentenversicherung‘ (https://de.wiktionary.org/wiki/Rentenversicherung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.lohnsteuer",
+      "lemma": "Lohnsteuer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Lohnsteuern"
+      },
+      "formen": {
+        "pl": "Lohnsteuern"
+      },
+      "frequenzRang": 28374,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.steuerklasse",
+      "lemma": "Steuerklasse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Steuerklassen"
+      },
+      "formen": {
+        "pl": "Steuerklassen"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.sozialabgaben",
+      "lemma": "Sozialabgaben",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 45710,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.tarifvertrag",
+      "lemma": "Tarifvertrag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Tarifverträge"
+      },
+      "formen": {
+        "pl": "Tarifverträge",
+        "dat_pl": "Tarifverträgen",
+        "gen_sg": "Tarifvertrags",
+        "gen_sg_2": "Tarifvertrages"
+      },
+      "frequenzRang": 21147,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.befristet",
+      "lemma": "befristet",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "befristete",
+        "endung_en": "befristeten",
+        "endung_er": "befristeter",
+        "endung_es": "befristetes",
+        "endung_em": "befristetem"
+      },
+      "frequenzRang": 9780,
+      "quelle": "wiktionary:de:befristet",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚befristet‘ (https://de.wiktionary.org/wiki/befristet), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.unbefristet",
+      "lemma": "unbefristet",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "unbefristete",
+        "endung_en": "unbefristeten",
+        "endung_er": "unbefristeter",
+        "endung_es": "unbefristetes",
+        "endung_em": "unbefristetem"
+      },
+      "frequenzRang": 10789,
+      "quelle": "wiktionary:de:unbefristet",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚unbefristet‘ (https://de.wiktionary.org/wiki/unbefristet), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.vorgesetzte",
+      "lemma": "Vorgesetzte",
+      "wortart": "nomen",
+      "merkmale": {
+        "artikel": "der/die (Plural die)",
+        "deklination": "wie ein Adjektiv",
+        "hinweis": "subst. Adjektiv (der/die Vorgesetzte, ein Vorgesetzter)"
+      },
+      "formen": {
+        "sg_m": "Vorgesetzter",
+        "pl_n": "Vorgesetzten"
+      },
+      "frequenzRang": 6544,
+      "quelle": "wiktionary:de:Vorgesetzte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vorgesetzte‘ (https://de.wiktionary.org/wiki/Vorgesetzte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.gleichbehandlung",
+      "lemma": "Gleichbehandlung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 28304,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.gleichstellung",
+      "lemma": "Gleichstellung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 7744,
+      "quelle": "wiktionary:de:Gleichstellung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gleichstellung‘ (https://de.wiktionary.org/wiki/Gleichstellung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.personalgespraech",
+      "lemma": "Personalgespräch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Personalgespräche"
+      },
+      "formen": {
+        "pl": "Personalgespräche",
+        "dat_pl": "Personalgesprächen",
+        "gen_sg": "Personalgesprächs",
+        "gen_sg_2": "Personalgespräches"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.weisung",
+      "lemma": "Weisung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Weisungen"
+      },
+      "formen": {
+        "pl": "Weisungen"
+      },
+      "frequenzRang": 23440,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.zustehen",
+      "lemma": "zustehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "zu",
+        "grundverb": "stehen (de.a1.e03.stehen)"
+      },
+      "formen": {
+        "infinitiv": "zustehen",
+        "verbzusatz": "zu",
+        "partizip_2": "zugestanden",
+        "partizip_1": "zustehend",
+        "zu_infinitiv": "zuzustehen",
+        "nebensatz_er_sie_es": "zusteht",
+        "nebensatz_praet": "zustand",
+        "nebensatz_praet_pl": "zustanden"
+      },
+      "frequenzRang": 1155,
+      "quelle": "wiktionary:de:zustehen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zustehen‘ (https://de.wiktionary.org/wiki/zustehen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.einarbeitung",
+      "lemma": "Einarbeitung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Einarbeitungen"
+      },
+      "formen": {
+        "pl": "Einarbeitungen"
+      },
+      "frequenzRang": 45346,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.einarbeiten",
+      "lemma": "einarbeiten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ein",
+        "grundverb": "arbeiten (de.a1.e12.arbeiten)",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "einarbeiten",
+        "verbzusatz": "ein",
+        "partizip_2": "eingearbeitet",
+        "partizip_1": "einarbeitend",
+        "zu_infinitiv": "einzuarbeiten",
+        "nebensatz_er_sie_es": "einarbeitet",
+        "nebensatz_praet": "einarbeitete",
+        "nebensatz_praet_pl": "einarbeiteten",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 35823,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.freistellen",
+      "lemma": "freistellen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "frei",
+        "grundverb": "stellen (de.a1.e03.stellen)"
+      },
+      "formen": {
+        "infinitiv": "freistellen",
+        "verbzusatz": "frei",
+        "partizip_2": "freigestellt",
+        "partizip_1": "freistellend",
+        "zu_infinitiv": "freizustellen",
+        "nebensatz_er_sie_es": "freistellt",
+        "nebensatz_praet": "freistellte",
+        "nebensatz_praet_pl": "freistellten"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.kurzarbeit",
+      "lemma": "Kurzarbeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 44870,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.zeitarbeit",
+      "lemma": "Zeitarbeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural"
+      },
+      "frequenzRang": 32463,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.aushilfe",
+      "lemma": "Aushilfe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Aushilfen"
+      },
+      "formen": {
+        "pl": "Aushilfen"
+      },
+      "frequenzRang": 24695,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.dienstreise",
+      "lemma": "Dienstreise",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Dienstreisen"
+      },
+      "formen": {
+        "pl": "Dienstreisen"
+      },
+      "frequenzRang": 37551,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.fahrtkosten",
+      "lemma": "Fahrtkosten",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 37607,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.streiken",
+      "lemma": "streiken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "streiken",
+        "praes_ich": "streike",
+        "praes_du": "streikst",
+        "praes_er_sie_es": "streikt",
+        "praes_wir": "streiken",
+        "praes_ihr": "streikt",
+        "praes_sie_Sie": "streiken",
+        "praet_ich_er_sie_es": "streikte",
+        "praet_du": "streiktest",
+        "praet_wir_sie_Sie": "streikten",
+        "praet_ihr": "streiktet",
+        "partizip_2": "gestreikt",
+        "partizip_1": "streikend"
+      },
+      "frequenzRang": 9137,
+      "quelle": "wiktionary:de:streiken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚streiken‘ (https://de.wiktionary.org/wiki/streiken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.arbeitgeberverband",
+      "lemma": "Arbeitgeberverband",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Arbeitgeberverbände"
+      },
+      "formen": {
+        "pl": "Arbeitgeberverbände",
+        "dat_pl": "Arbeitgeberverbänden",
+        "gen_sg": "Arbeitgeberverbands",
+        "gen_sg_2": "Arbeitgeberverbandes"
+      },
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.zeitweise",
+      "lemma": "zeitweise",
+      "wortart": "adverb",
+      "frequenzRang": 4050,
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.besetzung",
+      "lemma": "Besetzung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Besetzungen"
+      },
+      "formen": {
+        "pl": "Besetzungen"
+      },
+      "frequenzRang": 3421,
+      "quelle": "wiktionary:de:Besetzung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Besetzung‘ (https://de.wiktionary.org/wiki/Besetzung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.problemlos",
+      "lemma": "problemlos",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "problemlose",
+        "endung_en": "problemlosen",
+        "endung_er": "problemloser",
+        "endung_es": "problemloses",
+        "endung_em": "problemlosem"
+      },
+      "frequenzRang": 4043,
+      "quelle": "wiktionary:de:problemlos",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚problemlos‘ (https://de.wiktionary.org/wiki/problemlos), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.kapazitaet",
+      "lemma": "Kapazität",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kapazitäten"
+      },
+      "formen": {
+        "pl": "Kapazitäten"
+      },
+      "frequenzRang": 3829,
+      "quelle": "wiktionary:de:Kapazität",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kapazität‘ (https://de.wiktionary.org/wiki/Kapazität), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.sektor",
+      "lemma": "Sektor",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Sektoren"
+      },
+      "formen": {
+        "pl": "Sektoren",
+        "gen_sg": "Sektors"
+      },
+      "frequenzRang": 4082,
+      "quelle": "wiktionary:de:Sektor",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sektor‘ (https://de.wiktionary.org/wiki/Sektor), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.b2.e02.s0001",
+      "text": "Auszug aus einem Arbeitsvertrag",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0002",
+      "text": "Die Probezeit beträgt sechs Monate.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0003",
+      "text": "Während der Probezeit kann der Vertrag von beiden Seiten mit einer Frist von zwei Wochen gekündigt werden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0004",
+      "text": "Der Arbeitgeber zahlt das Gehalt jeweils am Ende des Monats auf Ihr Konto.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0005",
+      "text": "Die regelmäßige Arbeitszeit beträgt 38 Stunden pro Woche.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0006",
+      "text": "Ihr Urlaubsanspruch beträgt 30 Tage im Jahr.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0007",
+      "text": "Änderungen dieses Vertrags müssen schriftlich erfolgen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0008",
+      "text": "Der Arbeitnehmer verpflichtet sich, die Regeln für Sicherheit einzuhalten und Schutzkleidung zu tragen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0009",
+      "text": "Die Probezeit dauert länger als sechs Monate.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0010",
+      "text": "Das Gehalt wird am Monatsende überwiesen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0011",
+      "text": "Der Arbeitgeber zahlt jeden Monat ein Weihnachtsgeld.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0012",
+      "text": "Wie viele Urlaubstage stehen dem Arbeitnehmer zu?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0013",
+      "text": "Ihm stehen 30 Urlaubstage im Jahr zu.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0014",
+      "text": "Ihm stehen 15 Urlaubstage im Jahr zu.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0015",
+      "text": "Ihm stehen 30 Urlaubstage pro Woche zu.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0016",
+      "text": "Was gilt bei Krankheit im Job?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0017",
+      "text": "Wer krank ist, muss den Arbeitgeber am ersten Tag der Krankheit informieren.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0018",
+      "text": "Dauert die Krankheit länger als drei Tage, verlangt der Betrieb meistens ein Attest.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0019",
+      "text": "In den ersten sechs Wochen gilt die Lohnfortzahlung: Der Arbeitgeber zahlt den Lohn weiter.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0020",
+      "text": "Danach zahlt in der Regel die Krankenkasse das Krankengeld.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0021",
+      "text": "Wer sich krankschreiben lässt, bekommt vom Arzt eine Bescheinigung für den Betrieb.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0022",
+      "text": "Ein Attest ersetzt aber nicht die Information an den Vorgesetzten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0023",
+      "text": "Wer sich nicht an diese Pflichten hält, muss mit einer Abmahnung rechnen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0024",
+      "text": "Man muss den Arbeitgeber erst nach einer Woche informieren.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0025",
+      "text": "Bei einer Krankheit über drei Tage verlangt der Betrieb oft ein Attest.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0026",
+      "text": "Die Krankenkasse zahlt von Anfang an den vollen Lohn.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0027",
+      "text": "Der Ratgeber nennt die genaue Höhe des Krankengelds.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0028",
+      "text": "Wer zahlt in den ersten sechs Wochen den Lohn?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0029",
+      "text": "Der Arbeitgeber zahlt den Lohn in den ersten sechs Wochen weiter.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0030",
+      "text": "Die Krankenkasse zahlt den Lohn in den ersten sechs Wochen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0031",
+      "text": "Der Arzt zahlt den Lohn in den ersten sechs Wochen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0032",
+      "text": "Interview über die Arbeit im Betriebsrat",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0033",
+      "text": "Frau Krüger arbeitet seit acht Jahren in einem Krankenhaus und ist Mitglied im Betriebsrat.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0034",
+      "text": "Ihre Aufgabe ist es, die Interessen der Beschäftigten gegenüber der Leitung zu vertreten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0035",
+      "text": "Oft geht es um Überstunden, Schichten oder Urlaubswünsche.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0036",
+      "text": "Wir versuchen immer, einen Kompromiss zu finden, bevor es zu einem Streit kommt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0037",
+      "text": "Viele wissen nicht, dass sie bei einer Kündigung innerhalb von drei Wochen Klage erheben müssen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0038",
+      "text": "Deshalb berate ich Kolleginnen und Kollegen gern, bevor sie etwas unterschreiben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0039",
+      "text": "Mir ist wichtig, dass alle ihre Rechte kennen, denn nur dann können sie sich wehren.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0040",
+      "text": "Frau Krüger arbeitet erst seit einem Jahr im Betrieb.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0041",
+      "text": "Der Betriebsrat vertritt die Interessen der Beschäftigten gegenüber der Leitung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0042",
+      "text": "Laut dem Interview haben die Beschäftigten fast nie Streit mit der Leitung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0043",
+      "text": "Was rät Frau Krüger den Kollegen vor dem Unterschreiben?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0044",
+      "text": "Sie rät ihnen, sich vorher beraten zu lassen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0045",
+      "text": "Sie rät ihnen, den Vertrag sofort zu unterschreiben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0046",
+      "text": "Sie rät ihnen, die Arbeit sofort zu kündigen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0047",
+      "text": "Der erste Arbeitsvertrag",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0048",
+      "text": "Emre hat seine Ausbildung in einer Werkstatt abgeschlossen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0049",
+      "text": "Jetzt bekommt er seinen ersten Arbeitsvertrag, und er ist ziemlich aufgeregt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0050",
+      "text": "Ḫālid, kannst du mir helfen? Ich verstehe nicht alles in diesem Vertrag.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0051",
+      "text": "Natürlich. Lies mir einfach die wichtigsten Punkte vor.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0052",
+      "text": "Die Probezeit dauert sechs Monate, das steht ganz oben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0053",
+      "text": "Gut, das ist normal. Während der Probezeit gilt meistens eine kürzere Kündigungsfrist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0054",
+      "text": "Wie lang ist die denn?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0055",
+      "text": "Zwei Wochen, wenn im Vertrag nichts anderes steht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0056",
+      "text": "Emre blättert weiter und findet den Abschnitt über den Urlaub.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0057",
+      "text": "Hier steht: Ich habe Anspruch auf 30 Urlaubstage im Jahr.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0058",
+      "text": "Das ist viel. Prüf aber, ob der Tarifvertrag für deinen Betrieb noch mehr vorsieht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0059",
+      "text": "Das schaue ich mir gleich an. Und was ist mit der Kündigung?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0060",
+      "text": "Achte auf die Kündigungsfrist. Sie steht meistens im Vertrag, im Abschnitt über das Ende.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0061",
+      "text": "Emre nickt und schreibt sich die wichtigsten Punkte auf.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0062",
+      "text": "Danke, Ḫālid. Jetzt weiß ich, was ich meinem Chef sagen kann.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0063",
+      "text": "Frag nach, wenn etwas unklar ist. Das ist ganz normal.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0064",
+      "text": "Wie lang ist die Kündigungsfrist in der Probezeit?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0065",
+      "text": "Sie beträgt zwei Wochen, wenn im Vertrag nichts anderes steht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0066",
+      "text": "Sie beträgt drei Monate, wenn im Vertrag nichts anderes steht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0067",
+      "text": "Sie beträgt zwei Jahre, wenn im Vertrag nichts anderes steht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0068",
+      "text": "Wie viele Urlaubstage stehen Emre laut Vertrag zu?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0069",
+      "text": "Laut Vertrag stehen ihm 30 Urlaubstage im Jahr zu.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0070",
+      "text": "Laut Vertrag steht ihm im ersten Jahr kein Urlaub zu.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0071",
+      "text": "Laut Vertrag stehen ihm 30 Urlaubstage pro Woche zu.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0072",
+      "text": "Was sollte Emre bei der Kündigung beachten?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0073",
+      "text": "Er sollte auf die Kündigungsfrist im Vertrag achten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0074",
+      "text": "Er sollte den Vertrag ungelesen unterschreiben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0075",
+      "text": "Er sollte die Probezeit schon am ersten Tag beenden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0076",
+      "text": "Was rät Ḫālid Emre am Ende?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0077",
+      "text": "Er rät ihm, bei Unklarheiten nachzufragen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0078",
+      "text": "Er rät ihm, den Chef auf keinen Fall anzusprechen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0079",
+      "text": "Er rät ihm, den Vertrag am besten nicht zu lesen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0080",
+      "text": "Herr Braun, haben Sie kurz Zeit? Ich möchte etwas mit Ihnen besprechen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0081",
+      "text": "Ja, natürlich. Worum geht es denn?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0082",
+      "text": "In den letzten drei Monaten habe ich sehr viele Überstunden gemacht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0083",
+      "text": "Das ist mir auch aufgefallen. Im Moment fehlt uns leider Personal.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0084",
+      "text": "Deshalb schlage ich vor, die Nachtschichten anders zu verteilen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0085",
+      "text": "Wie stellen Sie sich das vor?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0086",
+      "text": "Wir könnten die Nachtschichten im Wechsel machen, dann wird niemand so stark belastet.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0087",
+      "text": "Das klingt vernünftig. Ich möchte aber vorher mit dem Team darüber sprechen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0088",
+      "text": "Könnten Sie mir bis Freitag eine Antwort geben?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0089",
+      "text": "Ja, bis Freitag bekommen Sie eine Antwort von mir.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0090",
+      "text": "Mein Urlaub beginnt am Montag, deshalb bin ich nächste Woche nicht da.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0091",
+      "text": "Der Plan hängt im Flur neben dem Aufzug.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0092",
+      "text": "Ich möchte gern mit Ihnen über meine Arbeitszeit sprechen, weil ich in den letzten Monaten viele Überstunden gemacht habe.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0093",
+      "text": "Wenn Sie krank sind, rufen Sie am ersten Tag im Betrieb an und sagen Bescheid.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0094",
+      "text": "Schreiben Sie an Ihre Vorgesetzte eine E-Mail. Bitten Sie um zwei Wochen Urlaub im Juli und begründen Sie Ihren Wunsch. Machen Sie auch einen Vorschlag für die Vertretung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0095",
+      "text": "Sehr geehrte Frau Schneider, ich möchte Sie um zwei Wochen Urlaub im Juli bitten. Ich habe im vergangenen Jahr nur wenige Tage Urlaub genommen und plane meine Reise schon seit einiger Zeit. Mein Urlaubsanspruch reicht dafür aus, und ich habe noch genug Urlaubstage übrig. Damit die Arbeit gut weiterläuft, schlage ich vor, dass mich meine Kollegin Derya in dieser Zeit vertritt. Sie kennt die Abläufe und hat schon oft Aufgaben übernommen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0096",
+      "text": "Die Vertretung ist damit geregelt, und ich kann alle offenen Aufgaben vor dem Urlaub abschließen. Gern bespreche ich mit Ihnen auch die Einzelheiten in einem kurzen Gespräch. Den Antrag habe ich mit allen Unterlagen beigefügt. Könnten Sie mir bis Ende der Woche Bescheid geben? Vielen Dank für Ihre Unterstützung und viele Grüße, Ihr Mitarbeiter.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0097",
+      "text": "Schreiben Sie eine Nachricht an Ihren Arbeitgeber. Sie sind heute krank, wissen noch nicht, wie lange Sie fehlen, und fragen, ob Sie ein Attest brauchen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0098",
+      "text": "Sehr geehrter Herr Braun, ich bin heute krank und kann leider nicht zur Arbeit kommen. Ich rechne damit, dass ich bis Ende der Woche fehle, und melde mich, sobald es mir besser geht. Die Arbeit an meinem Projekt habe ich vorher mit meiner Kollegin Derya besprochen, damit sie die wichtigsten Punkte kennt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0099",
+      "text": "Ein Attest reiche ich nach, falls die Krankheit länger als drei Tage dauert. Bitte geben Sie meine Vertretung im Team Bescheid. Ich bin telefonisch erreichbar, wenn Sie Fragen zu meiner Arbeit haben. Vielen Dank und viele Grüße.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0100",
+      "text": "Die Firma stellt mich zum ersten Mai an.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0101",
+      "text": "Ich trete meine neue Stelle am Montag an.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0102",
+      "text": "Der Vertrag ist zunächst befristet, für sechs Monate.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0103",
+      "text": "Nach der Probezeit soll der Vertrag unbefristet gelten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0104",
+      "text": "Wer den Vertrag vorzeitig beenden will, schließt einen Aufhebungsvertrag ab.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0105",
+      "text": "In dieser Branche gilt ein Tarifvertrag, der Löhne und Arbeitszeiten regelt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0106",
+      "text": "Ein Blick ins Arbeitsrecht zeigt, welche Rechte Beschäftigte haben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0107",
+      "text": "Der Arbeitgeberverband verhandelt jedes Jahr über neue Tarife.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0108",
+      "text": "Die Arbeiter im Lager beginnen morgens um sechs Uhr.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0109",
+      "text": "Der Posten ist seit einem Monat frei, deshalb suchen wir jemanden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0110",
+      "text": "Die Besetzung der Stelle dauert meistens mehrere Wochen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0111",
+      "text": "Unsere Kapazität reicht im Moment nicht für alle Aufträge.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0112",
+      "text": "Im Sektor Pflege fehlt dringend neues Personal.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0113",
+      "text": "Viele Menschen arbeiten in der Zeitarbeit, oft über eine Agentur.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0114",
+      "text": "Eine Aushilfe hilft im Büro, wenn besonders viel zu tun ist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0115",
+      "text": "Weil weniger Aufträge kommen, gibt es im Werk Kurzarbeit.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0116",
+      "text": "Die Chefin möchte Frau Schneider in ein anderes Team versetzen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0117",
+      "text": "Die Arbeitsbedingungen im neuen Team sind deutlich besser.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0118",
+      "text": "Laut Vertrag stehen mir auch Pausen zu, wenn ich länger arbeite.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0119",
+      "text": "Die Einarbeitung dauert zwei Wochen, danach arbeiten Sie selbstständig.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0120",
+      "text": "Während der Einarbeitung begleitet Sie eine erfahrene Kollegin.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0121",
+      "text": "Die neuen Kolleginnen müssen sich schnell in das System einarbeiten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0122",
+      "text": "Wegen der Krise wurde die Zahl der befristeten Verträge erhöht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0123",
+      "text": "Die Gehälter werden im Tarifvertrag festgelegt, nicht von der Firma allein.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0124",
+      "text": "Wer nach einem Jahr unbefristet arbeitet, hat mehr Sicherheit.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0125",
+      "text": "Im Handel gibt es viele Teilzeitstellen, aber nur wenige Vollzeitstellen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0126",
+      "text": "Die Aushilfe arbeitet nur am Wochenende im Lager.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0127",
+      "text": "Wer neu anfängt, bekommt eine Einarbeitung und einen festen Ansprechpartner.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0128",
+      "text": "Der Betrieb hofft, dass die Kurzarbeit im Herbst endet.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0129",
+      "text": "Der Arbeitsvertrag muss schriftlich vorliegen, bevor die Arbeit beginnt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0130",
+      "text": "Mit einem Aufhebungsvertrag einigen sich beide Seiten auf das Ende der Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0131",
+      "text": "Die neue Stelle war nach drei Monaten schon wieder besetzt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0132",
+      "text": "Viele Betriebe suchen Personal, aber die Zeit für die Einarbeitung fehlt oft.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0133",
+      "text": "Nach dem Umbau wurden drei Kollegen in ein anderes Gebäude versetzt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0134",
+      "text": "Der Tarifvertrag gilt für alle Beschäftigten im Betrieb, auch für Aushilfen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0135",
+      "text": "Ein erfahrener Arbeiter kennt die Maschinen besser als jeder Neuling.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0136",
+      "text": "Die Firma sucht eine Fachkraft, die ab Oktober anfangen kann.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0137",
+      "text": "Für die Stelle gibt es nur wenige Bewerbungen, deshalb ist die Besetzung schwierig.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0138",
+      "text": "Er hat sich in das neue Programm schnell eingearbeitet.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0139",
+      "text": "Die Kurzarbeit betrifft fast alle Abteilungen im Sektor Produktion.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0140",
+      "text": "Laut dem Vertrag steht der Kollegin eine Prämie zu.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0141",
+      "text": "Ich bewerbe mich auf die Stelle, die im Internet angeboten wird.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0142",
+      "text": "Die Agentur schickt Frau Schneider für drei Monate in eine Firma.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0143",
+      "text": "Man kann mit einem befristeten Vertrag auch eine feste Stelle bekommen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0144",
+      "text": "Die Arbeiter wechseln sich an der Maschine ab, damit niemand überlastet ist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0145",
+      "text": "Eine Tätigkeit im Handel verlangt oft Geduld und gute Laune.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0146",
+      "text": "Für die Einarbeitung braucht man keine besonderen Kenntnisse.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0147",
+      "text": "Die Stelle bleibt frei, bis die Besetzung geklärt ist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0148",
+      "text": "Wer ein Jahr im Betrieb arbeitet, dem stehen mehr Urlaubstage zu.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0149",
+      "text": "Die Verträge der Aushilfen laufen nur bis zum Sommer.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0150",
+      "text": "Falls der Vertrag nichts anderes sagt, gilt die gesetzliche Kündigungsfrist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0151",
+      "text": "Aufgrund der Krise fehlt der Firma das Geld für neue Stellen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0152",
+      "text": "Den Kunden müssen wir am Montag über die neue Regel informieren.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0153",
+      "text": "Ich habe dem Kollegen die Unterlagen für den Vertrag gegeben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0154",
+      "text": "Wer die Einstellung verschiebt, riskiert, dass der Bewerber absagt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0155",
+      "text": "Eine Stelle in der Pflege ist im Moment besonders schwer zu besetzen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0156",
+      "text": "Die Firma verspricht eine Einarbeitung von vier Wochen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0157",
+      "text": "Der befristete Vertrag endet am Ende des Sommers, ohne dass man kündigen muss.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0158",
+      "text": "Die Chancen auf eine unbefristete Stelle sind im Handel gut, sagen Experten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0159",
+      "text": "Man sollte den Arbeitsvertrag genau prüfen, bevor man ihn unterschreibt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0160",
+      "text": "Jede Änderung des Arbeitsvertrags braucht die Zustimmung beider Seiten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0161",
+      "text": "Der Arbeitgeberverband gibt Empfehlungen, die aber nicht für alle Betriebe gelten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0162",
+      "text": "Viele Arbeiter wechseln nach einigen Jahren in eine Stelle im Büro.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0163",
+      "text": "Dieser Posten ist attraktiv, weil er eine hohe Verantwortung hat.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0164",
+      "text": "Die Kapazität der Werkstatt reicht nicht für alle Reparaturen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0165",
+      "text": "Im Sektor Bau ist die Arbeit oft körperlich anstrengend.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0166",
+      "text": "Die Aushilfen erhalten einen Stundenlohn und keine Prämie.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0167",
+      "text": "Wer sich bewirbt, sollte die Stelle und die Arbeitsbedingungen genau kennen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0168",
+      "text": "Die Kurzarbeit hat die Arbeit vieler Beschäftigter verändert.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0169",
+      "text": "Die Kollegin wurde nach ihrer Elternzeit in ihr altes Team versetzt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0170",
+      "text": "Der Vertrag wurde nach der Probezeit um ein Jahr verlängert.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0171",
+      "text": "Mit einer befristeten Stelle kann man Erfahrung sammeln, bevor man sich weiter bewirbt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0172",
+      "text": "Die Besetzung der Leitung ist für den Betrieb sehr wichtig.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0173",
+      "text": "Der Lohn wird nicht vom Arbeitgeber allein festgelegt, sondern oft im Tarifvertrag.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0174",
+      "text": "Normalerweise beginnt meine Arbeit um acht Uhr, aber mit Gleitzeit kann ich früher kommen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0175",
+      "text": "Die regelmäßige Wochenarbeitszeit beträgt 38 Stunden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0176",
+      "text": "Wer viele Überstunden macht, kann sie später als Freizeitausgleich nehmen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0177",
+      "text": "Die Vorgesetzte prüft jeden Antrag auf Urlaub sorgfältig.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0178",
+      "text": "Der Urlaubsanspruch gilt für jedes Kalenderjahr.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0179",
+      "text": "Viele Kollegen nehmen im Sommer mehrere Urlaubstage, um länger zu verreisen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0180",
+      "text": "Das Urlaubsgeld wird zusammen mit dem Gehalt im Juni überwiesen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0181",
+      "text": "Die Arbeitszeit wird verkürzt, wenn der Betrieb weniger Aufträge hat.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0182",
+      "text": "Der Kollege arbeitet seit einem Jahr durchgehend am Wochenende.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0183",
+      "text": "Zeitweise fehlen im Betrieb so viele Leute, dass wir Überstunden machen müssen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0184",
+      "text": "Das Team ist auch am Abend problemlos zu erreichen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0185",
+      "text": "Er arbeitet langjährig in der Pflege und kennt die Abläufe genau.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0186",
+      "text": "Die Anstrengung hat sich gelohnt, denn die Arbeit macht jetzt Spaß.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0187",
+      "text": "Die Schichtarbeit ist anstrengend, und man sollte die Belastung nicht unterschätzen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0188",
+      "text": "Wer seine Rechte ausübt, muss dabei sachlich bleiben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0189",
+      "text": "Der Betriebsrat übt seine Rechte gegenüber der Leitung aus.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0190",
+      "text": "Eine außerordentliche Kündigung ist nur bei schweren Gründen möglich.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0191",
+      "text": "Die Schichtarbeit im Krankenhaus ist anstrengend, aber sie ist gut bezahlt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0192",
+      "text": "Mit der Gleitzeit ist man zwischen zehn und fünfzehn Uhr im Betrieb.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0193",
+      "text": "Die Vorgesetzte hat ihn für einen Tag freigestellt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0194",
+      "text": "Auf der Betriebsversammlung informiert die Leitung über neue Regeln.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0195",
+      "text": "Die Betriebsversammlung findet einmal im Quartal statt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0196",
+      "text": "Mein Chef erlaubt mir, am Freitag früher zu gehen, wenn ich Überstunden habe.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0197",
+      "text": "Die Wochenarbeitszeit darf laut Gesetz nicht zu lang sein.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0198",
+      "text": "Viele Beschäftigte wünschen sich mehr Freizeit und weniger Überstunden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0199",
+      "text": "Wer am Wochenende arbeitet, bekommt oft einen Zuschlag.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0200",
+      "text": "Die Kollegin hat einen Urlaubstag für den Umzug genommen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0201",
+      "text": "Den Urlaub muss man rechtzeitig bei der Vorgesetzten anmelden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0202",
+      "text": "Im Juli waren wir zeitweise nur zu viert im Team.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0203",
+      "text": "Die Freizeit kann man als Freizeitausgleich nehmen, wenn der Betrieb zustimmt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0204",
+      "text": "Er wollte seine Arbeitszeit verkürzen, weil er eine Ausbildung macht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0205",
+      "text": "Die Überstunden werden normalerweise im nächsten Monat ausgezahlt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0206",
+      "text": "Der Betrieb gibt jedem Beschäftigten 30 Tage Urlaub im Jahr.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0207",
+      "text": "Im Team gibt es eine klare Regel für Gleitzeit und Kernzeit.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0208",
+      "text": "Die Schichtarbeit ist im Betrieb nicht immer gleich verteilt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0209",
+      "text": "Die Abteilung arbeitet normalerweise ohne Probleme.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0210",
+      "text": "Nach der Betriebsversammlung wurde die Arbeitszeit neu geregelt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0211",
+      "text": "Er bekam für die lange Arbeit am Wochenende einen Freizeitausgleich.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0212",
+      "text": "Die Vorgesetzte bittet die Kollegen, die Urlaubstage bis März zu planen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0213",
+      "text": "Eine langjährige Mitarbeiterin darf ihre Urlaubstage meistens früher planen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0214",
+      "text": "Wer regulär arbeitet, hat Anspruch auf bezahlte Pausen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0215",
+      "text": "In dieser Woche war die Belastung außerordentlich hoch.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0216",
+      "text": "Der Antrag wurde gestern abgelehnt, weil zu wenige Kollegen da sind.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0217",
+      "text": "Die Überstunden müssen bis Freitag angemeldet werden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0218",
+      "text": "Vorausgesetzt, der Betrieb stimmt zu, können Sie den Urlaub im Juli nehmen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0219",
+      "text": "Ich kümmere mich um die Urlaubsplanung und warte auf die Antwort der Leitung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0220",
+      "text": "Ich habe dem Kollegen erklärt, wie die Gleitzeit funktioniert.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0221",
+      "text": "Die Kollegin verkürzt ihre Arbeitszeit, weil sie ein Kind betreut.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0222",
+      "text": "Die Abteilung braucht dringend mehr Leute, deshalb arbeiten einige durchgehend.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0223",
+      "text": "Die Gleitzeit erlaubt es, morgens früher zu beginnen und nachmittags früher zu gehen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0224",
+      "text": "Eine Kollegin hat die Arbeitszeit verkürzt, um mehr Zeit für die Familie zu haben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0225",
+      "text": "Die Überstunden werden mit dem Freizeitausgleich verrechnet.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0226",
+      "text": "Die Schichtarbeit wird im Betrieb regelmäßig neu verteilt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0227",
+      "text": "Viele Beschäftigte sind mit der Wochenarbeitszeit zufrieden, aber nicht mit den Überstunden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0228",
+      "text": "Er freut sich auf den Urlaub im Sommer und plant seine Reise schon im Winter.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0229",
+      "text": "Die Vorgesetzte hat die Urlaubstage genehmigt, obwohl es viele Anfragen gab.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0230",
+      "text": "Im Winter sind die Abteilungen zeitweise unterbesetzt, weil viele krank sind.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0231",
+      "text": "Die Anstrengung der letzten Monate hat die Mitarbeiter müde gemacht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0232",
+      "text": "Die Betriebsversammlung wurde auf den Donnerstag verschoben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0233",
+      "text": "Das Gesetz erlaubt Ausnahmen, wenn der Betrieb dringend Hilfe braucht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0234",
+      "text": "Die Mitarbeiter dürfen bei Bedarf eine Gleitzeit nutzen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0235",
+      "text": "Ein regulärer Arbeitstag beginnt für die Frühschicht um sechs Uhr.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0236",
+      "text": "Nach der langen Schicht braucht man eine Pause und genug Schlaf.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0237",
+      "text": "Wer sich regelmäßig Überstunden aufschreibt, kann später besser verhandeln.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0238",
+      "text": "Der Urlaub bleibt auch dann bestehen, wenn die Vorgesetzte ihn nicht sofort genehmigt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0239",
+      "text": "Mein Gehalt ist brutto 2.800 Euro, netto bleibt davon deutlich weniger.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0240",
+      "text": "Auf der Lohnabrechnung steht, wie viel netto am Monatsende auf dem Konto ist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0241",
+      "text": "Der Stundenlohn liegt über dem gesetzlichen Mindestlohn.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0242",
+      "text": "Die Bezahlung in der Pflege ist vielen Beschäftigten zu niedrig.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0243",
+      "text": "Nach drei Jahren gab es endlich eine Gehaltserhöhung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0244",
+      "text": "Wer befördert wird, übernimmt meistens mehr Verantwortung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0245",
+      "text": "Die Firma will ihn im nächsten Jahr befördern.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0246",
+      "text": "Die Beförderung kam überraschend, aber sie freut ihn sehr.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0247",
+      "text": "Für gute Arbeit gibt es manchmal eine Prämie am Ende des Jahres.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0248",
+      "text": "Wer nachts arbeitet, bekommt meistens einen Zuschlag auf den Lohn.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0249",
+      "text": "Das Weihnachtsgeld wird im November zusammen mit dem Gehalt ausgezahlt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0250",
+      "text": "Der gesetzliche Mindestlohn gilt für fast alle Beschäftigten in Deutschland.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0251",
+      "text": "Die Lohnsteuer wird direkt vom Bruttogehalt abgezogen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0252",
+      "text": "Die Steuerklasse entscheidet mit darüber, wie viel Lohnsteuer man zahlt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0253",
+      "text": "Die Sozialabgaben umfassen Beiträge für Krankenversicherung, Rente und Pflege.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0254",
+      "text": "Die Sozialversicherung schützt bei Krankheit, Arbeitslosigkeit und im Alter.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0255",
+      "text": "Ein Teil der Beiträge zur Rentenversicherung zahlt auch der Arbeitgeber.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0256",
+      "text": "Für die Fahrtkosten zur Arbeit bekommt man manchmal einen Zuschuss.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0257",
+      "text": "Auf einer Dienstreise erstattet der Betrieb die Fahrtkosten und das Hotel.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0258",
+      "text": "Auf der Dienstreise muss man Belege für alle Ausgaben aufbewahren.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0259",
+      "text": "Der Betrieb profitiert von gut ausgebildeten Beschäftigten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0260",
+      "text": "Wer sich weiterbildet, profitiert später oft von einem höheren Lohn.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0261",
+      "text": "Ich übernehme die Vertretung der Kollegin, die im Urlaub ist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0262",
+      "text": "Die Vertretung wird pro Stunde extra bezahlt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0263",
+      "text": "Die Kollegin bekommt für die Vertretung eine Prämie.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0264",
+      "text": "Bei einer Beförderung steigt meistens auch das Gehalt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0265",
+      "text": "Wer die Abrechnung nicht versteht, sollte nachfragen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0266",
+      "text": "Vom Bruttolohn bleibt nach allen Abzügen oft nur ein Teil netto übrig.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0267",
+      "text": "Die Stundenlöhne in Restaurants sind je nach Region sehr unterschiedlich.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0268",
+      "text": "Der Betrieb zahlt die Fahrtkosten nur, wenn die Dienstreise genehmigt ist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0269",
+      "text": "Die Gehaltserhöhung wird ab dem ersten Juli wirksam.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0270",
+      "text": "Viele Beschäftigte wünschen sich eine höhere Bezahlung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0271",
+      "text": "Die Sozialabgaben steigen nicht, aber der Mindestlohn steigt im nächsten Jahr.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0272",
+      "text": "Ein Zuschlag für Arbeit an Feiertagen ist in vielen Verträgen geregelt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0273",
+      "text": "Der Lohn bleibt gleich, aber die Prämie wird pro Quartal ausgezahlt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0274",
+      "text": "Auf der Lohnabrechnung stehen die Abzüge für Steuern und Sozialabgaben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0275",
+      "text": "Die Weiterbildung hat den Betrieb etwas Geld gekostet, aber sie lohnt sich.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0276",
+      "text": "Für die Lohnsteuer ist die Steuerklasse wichtig, nicht die Arbeitszeit.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0277",
+      "text": "Die Lohnabrechnung zeigt Brutto und Netto nebeneinander.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0278",
+      "text": "Der Lohn wird jeden Monat auf das Konto überwiesen, meistens am Monatsende.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0279",
+      "text": "Die Gehaltserhöhung wurde im Gespräch mit der Vorgesetzten vereinbart.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0280",
+      "text": "Wer eine Dienstreise plant, sollte die Fahrtkosten vorher mit dem Betrieb klären.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0281",
+      "text": "Eine Prämie ist freiwillig, aber viele Betriebe zahlen sie regelmäßig.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0282",
+      "text": "Der Stundenlohn für Aushilfen ist in dieser Branche oft niedrig.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0283",
+      "text": "Die Lohnsteuer hängt von der Steuerklasse und vom Einkommen ab.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0284",
+      "text": "Der Arbeitgeber zahlt einen Teil der Sozialversicherung, der Arbeitnehmer den anderen Teil.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0285",
+      "text": "Die Rentenversicherung zahlt im Alter eine monatliche Rente aus.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0286",
+      "text": "Ein Zuschlag für Schichtarbeit ist in vielen Tarifverträgen festgelegt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0287",
+      "text": "Ohne Vertretung im Team wäre die Arbeit kaum zu schaffen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0288",
+      "text": "Die Bezahlung ist gut, aber die Arbeitszeiten sind sehr unregelmäßig.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0289",
+      "text": "Er hat mit dem Chef über die Beförderung gesprochen und hofft auf eine Zusage.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0290",
+      "text": "Bei höheren Gehältern bleibt netto ein kleinerer Anteil übrig.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0291",
+      "text": "Die Abrechnung für den Monat März ist noch nicht fertig.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0292",
+      "text": "Der Betrieb profitiert von einer guten Vertretung im Urlaub.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0293",
+      "text": "Wer krank ist, muss sich am ersten Tag im Betrieb melden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0294",
+      "text": "Eine Krankschreibung braucht man, wenn die Krankheit länger dauert.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0295",
+      "text": "Der Arzt kann mich für zwei Wochen krankschreiben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0296",
+      "text": "Das Attest muss die Dauer der Krankheit eindeutig angeben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0297",
+      "text": "Während der Lohnfortzahlung bekommt man das volle Gehalt weiter.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0298",
+      "text": "Nach sechs Wochen zahlt die Krankenkasse das Krankengeld.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0299",
+      "text": "Der Arbeitsschutz verlangt, dass Maschinen sicher sind und Pausen eingehalten werden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0300",
+      "text": "Im Lager trägt man Schutzkleidung, zum Beispiel Handschuhe.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0301",
+      "text": "Nach einem Arbeitsunfall muss man den Vorgesetzten sofort informieren.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0302",
+      "text": "Die Unfallversicherung zahlt die Behandlung, wenn der Unfall bei der Arbeit passiert.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0303",
+      "text": "Im Mutterschutz darf eine Frau vor und nach der Geburt nicht arbeiten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0304",
+      "text": "Nach dem Mutterschutz können Mutter oder Vater Elternzeit nehmen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0305",
+      "text": "Die Elternzeit gibt Eltern Zeit für ihre Kinder, meist ohne Gehalt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0306",
+      "text": "Während der Elternzeit bekommt man in der Regel Elterngeld vom Staat.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0307",
+      "text": "Die Gleichbehandlung im Betrieb verbietet eine Benachteiligung wegen des Geschlechts.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0308",
+      "text": "Die Gleichstellung von Frauen und Männern ist im Betrieb ein wichtiges Ziel.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0309",
+      "text": "Die Gewerkschaft fordert höhere Löhne für alle Beschäftigten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0310",
+      "text": "Am Montag gab es einen Streik im Betrieb.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0311",
+      "text": "Die Beschäftigten wollten am Freitag streiken, bis der Betrieb ein Angebot machte.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0312",
+      "text": "Der Betriebsrat sucht gemeinsam mit der Leitung nach einem Kompromiss.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0313",
+      "text": "Der Arbeitsalltag im Betrieb ist für viele Kollegen anstrengend.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0314",
+      "text": "Ein gutes Arbeitsklima hilft, wenn der Arbeitsalltag stressig ist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0315",
+      "text": "Der Betriebsrat vertritt die Beschäftigten gegenüber der Leitung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0316",
+      "text": "Die Kollegin hat sich ein Attest geholt, weil ihr Fuß nach dem Unfall schmerzt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0317",
+      "text": "Krank zur Arbeit zu gehen ist keine gute Idee, denn man steckt die anderen an.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0318",
+      "text": "Wer länger als drei Tage fehlt, braucht meistens ein Attest.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0319",
+      "text": "Für die Schutzkleidung zahlt der Betrieb, nicht der Beschäftigte.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0320",
+      "text": "Viele Beschäftigte wünschen sich ein gutes Arbeitsklima und einen fairen Umgang.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0321",
+      "text": "Die Unfallversicherung gilt auch auf dem Weg zur Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0322",
+      "text": "Die Lohnfortzahlung endet nach sechs Wochen, wenn die Krankheit weiter besteht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0323",
+      "text": "Eine Frau in der Elternzeit darf in der Regel nicht gekündigt werden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0324",
+      "text": "Die Gleichbehandlung gilt unabhängig von Herkunft oder Alter.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0325",
+      "text": "Der Streik endete nach einer Woche mit einem Kompromiss.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0326",
+      "text": "Nach dem Unfall kümmerte sich die Gewerkschaft um die Rechte des Kollegen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0327",
+      "text": "Der Arbeitsschutz ist Aufgabe des Arbeitgebers, aber alle sollen mithelfen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0328",
+      "text": "Sollten Sie länger krank sein, rufen Sie den Betrieb bitte noch einmal an.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0329",
+      "text": "Er kümmert sich um die Unterlagen, die er für die Krankschreibung braucht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0330",
+      "text": "Die Kollegen warten auf die Antwort des Betriebsrats.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0331",
+      "text": "Viele Beschäftigte haben Angst vor einem Arbeitsunfall, besonders in der Produktion.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0332",
+      "text": "Die Kollegin hat sich über die Schutzkleidung beschwert, weil sie zu eng war.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0333",
+      "text": "Die Gewerkschaft berät ihre Mitglieder bei Fragen zum Arbeitsrecht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0334",
+      "text": "Wer ein Attest vorlegt, zeigt dem Betrieb, dass die Krankheit echt ist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0335",
+      "text": "Die Elternzeit kann man in zwei Abschnitte aufteilen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0336",
+      "text": "Während des Mutterschutzes bekommt die Frau von der Kasse Geld.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0337",
+      "text": "Ein Arbeitsunfall auf dem Weg zur Arbeit gilt in vielen Fällen als Unfall bei der Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0338",
+      "text": "Der Betrieb muss die Arbeitsplätze so gestalten, dass sie sicher sind.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0339",
+      "text": "Gleichstellung bedeutet, dass Frauen und Männer dieselben Chancen haben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0340",
+      "text": "Die Beschäftigten streiken nur, wenn alle Verhandlungen gescheitert sind.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0341",
+      "text": "Ein Streik kostet den Betrieb viel Geld, deshalb suchen beide Seiten nach einer Lösung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0342",
+      "text": "Der Betriebsrat hat die Leitung zu einem Gespräch eingeladen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0343",
+      "text": "Im Krankenhaus gibt es strenge Regeln für den Arbeitsschutz.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0344",
+      "text": "Das Krankengeld wird von der Krankenkasse berechnet und überwiesen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0345",
+      "text": "Viele Kollegen warten auf das Ergebnis der Verhandlung mit der Gewerkschaft.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0346",
+      "text": "Nach der Krankheit muss man dem Betrieb nicht immer ein Attest vorlegen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0347",
+      "text": "Die Kündigung kam überraschend, aber ich habe mit meiner Vorgesetzten darüber gesprochen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0348",
+      "text": "Die Kündigungsfrist beträgt bei uns vier Wochen zum Monatsende.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0349",
+      "text": "Nach sechs Monaten im Betrieb gilt der Kündigungsschutz.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0350",
+      "text": "Ein Kündigungsgrund muss schwer genug sein, sonst ist die Kündigung unwirksam.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0351",
+      "text": "Eine fristlose Kündigung ist nur bei einem schweren Grund möglich.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0352",
+      "text": "Bevor der Betrieb kündigt, gibt es oft eine Abmahnung als Warnung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0353",
+      "text": "Mit einer Abfindung bekommt man Geld, wenn man den Betrieb verlassen muss.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0354",
+      "text": "Der Chef hat ihn wegen häufiger Fehlzeiten entlassen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0355",
+      "text": "Wer arbeitslos wird, meldet sich sofort bei der Agentur für Arbeit.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0356",
+      "text": "Die Arbeitslosigkeit ist in der Region in diesem Jahr gesunken.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0357",
+      "text": "Wenn die Kündigung unfair ist, kann man vor dem Arbeitsgericht klagen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0358",
+      "text": "Das Arbeitsgericht entscheidet, ob die Kündigung wirksam war.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0359",
+      "text": "Das Personalgespräch findet am Donnerstag um zehn Uhr statt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0360",
+      "text": "Im Personalgespräch besprechen wir Ihre Ziele und Ihre Wünsche.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0361",
+      "text": "Die Weisung kam von der Leitung, deshalb müssen wir sie befolgen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0362",
+      "text": "Eine Weisung muss sachlich begründet sein und darf nicht unfair sein.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0363",
+      "text": "Die Beschäftigung von Aushilfen ist im Sommer besonders häufig.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0364",
+      "text": "Wofür brauchen Sie die Unterlagen?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0365",
+      "text": "Wozu dient diese Regel, wenn niemand sie kennt?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0366",
+      "text": "Wovon leben Sie, wenn Sie arbeitslos sind?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0367",
+      "text": "Woran erkennt man einen fairen Arbeitgeber?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0368",
+      "text": "Worüber sollen wir im Personalgespräch sprechen?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0369",
+      "text": "Worum geht es in diesem Schreiben vom Arbeitsgericht?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0370",
+      "text": "Wonach richtet sich die Kündigungsfrist, wenn der Vertrag nichts sagt?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0371",
+      "text": "Ich erkläre Ihnen gern, wofür die Abfindung gedacht ist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0372",
+      "text": "Er weiß genau, wozu die Abmahnung nötig war.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0373",
+      "text": "Der Betrieb verstand nicht, woran die Zusammenarbeit gescheitert ist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0374",
+      "text": "Man sollte wissen, wovon die Entscheidung abhängt, bevor man unterschreibt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0375",
+      "text": "Die Kollegin fragte, worum es im Personalgespräch gehe.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0376",
+      "text": "Das Arbeitsgericht hat die fristlose Kündigung für unwirksam erklärt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0377",
+      "text": "Nach dem Gespräch verstand die Kollegin besser, wonach die Leitung entscheidet.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0378",
+      "text": "Die Mitarbeiterin fürchtete eine Abmahnung, weil sie oft gefehlt hatte.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0379",
+      "text": "Ohne die Abfindung hätte er die Stelle nicht verlassen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0380",
+      "text": "Wer arbeitslos ist, hat unter Umständen Anspruch auf Unterstützung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0381",
+      "text": "Bei einer Kündigung zählt die Frist, die im Vertrag steht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0382",
+      "text": "Die Beschäftigten fürchten die Arbeitslosigkeit, wenn der Betrieb schließt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0383",
+      "text": "Vor dem Arbeitsgericht sollte man Beweise sammeln, zum Beispiel E-Mails.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0384",
+      "text": "Die Abfindung wird in vielen Fällen vor Gericht im Vergleich vereinbart.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0385",
+      "text": "Die fristlose Kündigung wurde am Freitag ausgesprochen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0386",
+      "text": "Ich weiß nicht, wozu die Weisung gut sein soll, aber ich folge ihr.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0387",
+      "text": "Mit der Kündigung endet die Arbeit am letzten Tag der Frist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0388",
+      "text": "Er hat einen Anwalt gefragt, ob die Abmahnung rechtens ist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0389",
+      "text": "Wer seine Abmahnung nicht ernst nimmt, riskiert die Kündigung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0390",
+      "text": "Wegen der Krise gab es weniger Arbeit und deshalb mehr Arbeitslosigkeit.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0391",
+      "text": "Falls der Betrieb kündigt, sollte man sofort das Gespräch suchen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0392",
+      "text": "Die Beschäftigten fragen, worüber der Betriebsrat mit der Leitung verhandelt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0393",
+      "text": "Die Kündigung muss schriftlich erfolgen, sonst ist sie unwirksam.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0394",
+      "text": "Ein Aufhebungsvertrag ist keine Kündigung, aber er beendet die Arbeit ebenfalls.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0395",
+      "text": "Wer auf eine Abmahnung nicht reagiert, riskiert eine Kündigung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0396",
+      "text": "Die Abfindung wird oft nach Verhandlungen mit dem Betriebsrat vereinbart.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0397",
+      "text": "Die Entlassung war für ihn ein harter Schlag, aber er hat sich schnell erholt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0398",
+      "text": "Die Arbeitslosigkeit traf viele Beschäftigte in der Krise besonders hart.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0399",
+      "text": "Vor dem Gericht muss man beweisen, dass die Kündigung unwirksam war.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0400",
+      "text": "Das Personalgespräch hilft, Probleme früh zu erkennen und zu lösen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0401",
+      "text": "Die Weisung betrifft alle Mitarbeiter, die in der Nachtschicht arbeiten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0402",
+      "text": "Wegen der Kündigung hat er sich einen neuen Job gesucht.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0403",
+      "text": "Die Beschäftigung von Aushilfen wird im Betrieb kritisch gesehen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0404",
+      "text": "Wofür sich die Kollegin entschieden hat, bleibt noch offen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0405",
+      "text": "Worüber haben Sie mit dem Chef gesprochen, bevor er Sie entlassen hat?",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0406",
+      "text": "Der Betriebsrat fragt die Beschäftigten, woran sie im Alltag am meisten leiden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0407",
+      "text": "Ich weiß nicht, wonach die Firma die neuen Stellen besetzt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0408",
+      "text": "Die Kündigungsfrist verlängert sich manchmal mit den Jahren im Betrieb.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0409",
+      "text": "Das Gespräch hat uns geholfen, einen Kompromiss zu finden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0410",
+      "text": "Wer Urlaub nehmen möchte, muss ihn rechtzeitig anmelden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0411",
+      "text": "Die Lohnabrechnung zeigt die Abzüge, die vom Bruttogehalt abgezogen werden.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0412",
+      "text": "Im Betrieb wurde die Arbeitszeit für die Nachtschicht verkürzt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0413",
+      "text": "Eine Abmahnung muss der Betrieb schriftlich und sachlich begründen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0414",
+      "text": "Der Arbeitnehmer hat Anspruch auf Urlaub, der im Vertrag festgelegt ist.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0415",
+      "text": "Die Kolleginnen wurden für die Schulung von der Arbeit freigestellt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0416",
+      "text": "Der Antrag wurde nicht genehmigt, weil die Vertretung fehlte.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0417",
+      "text": "Wer Rechte im Betrieb kennt, kann sie sachlich und sicher vertreten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0418",
+      "text": "Die Kollegin hat den Vertrag genau gelesen, bevor sie unterschrieben hat.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0419",
+      "text": "Ein Attest sollte immer das Datum enthalten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0420",
+      "text": "Die Kündigungsfrist steht im Vertrag, und man sollte sie kennen.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0421",
+      "text": "Wer mit der Leitung spricht, sollte Argumente und Vorschläge vorbereiten.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0422",
+      "text": "Der Betriebsrat hilft, wenn Beschäftigte Fragen zu Rechten und Pflichten haben.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0423",
+      "text": "Man darf eine Weisung nicht einfach ignorieren, sonst droht eine Abmahnung.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.b2.e02.s0424",
+      "text": "Im Gespräch habe ich mich bei der Chefin für die Unterstützung bedankt.",
+      "quelle": "ki:lernapp-inhalte/b2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.b2.e02.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann die wichtigsten Angaben im Arbeitsvertrag verstehen.",
+        "tr": "İş sözleşmesindeki temel bilgileri anlayabilirim.",
+        "ar": "أستطيع أن أفهم المعلومات الأساسية في عقد العمل."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b2.e02.l01.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.anstellen",
+            "de.b2.e02.antreten",
+            "de.b2.e02.befristet",
+            "de.b2.e02.unbefristet",
+            "de.b2.e02.aufhebungsvertrag",
+            "de.b2.e02.tarifvertrag"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.arbeitsrecht",
+            "de.b2.e02.arbeitgeberverband",
+            "de.b2.e02.arbeiter",
+            "de.b2.e02.posten",
+            "de.b2.e02.kapazitaet",
+            "de.b2.e02.sektor"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.zeitarbeit",
+            "de.b2.e02.kurzarbeit",
+            "de.b2.e02.versetzen",
+            "de.b2.e02.arbeitsbedingungen",
+            "de.b2.e02.besetzung",
+            "de.b2.e02.einarbeitung"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.aushilfe",
+          "ablenker": ["de.b2.e02.befristet", "de.b2.e02.posten"]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b2.e02.einarbeiten",
+          "ablenker": ["de.b2.e02.posten", "de.b2.e02.zustehen"]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.zustehen",
+          "ablenker": ["de.b2.e02.anstellen", "de.b2.e02.tarifvertrag"]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0100",
+          "nach": "ziel",
+          "alternativen": ["Zum ersten Mai stellt mich die Firma an."],
+          "ablenker": ["gestern", "kündigt"]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0101",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a09",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0102",
+          "wort": 4,
+          "ablenker": ["unbefristet", "gekündigt"]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a10",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0107",
+          "wort": 2,
+          "ablenker": ["bezahlt", "vergisst"]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a11",
+          "typ": "satzbau",
+          "ziel": "de.b2.e02.s0101",
+          "alternativen": ["Am Montag trete ich meine neue Stelle an."]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a12",
+          "typ": "frei",
+          "ziel": "de.b2.e02.s0118",
+          "nach": "ziel",
+          "alternativen": ["Laut dem Vertrag stehen mir auch Pausen zu, wenn ich länger arbeite."]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b2.e02.s0103",
+          "ablenker": ["de.b2.e02.s0102", "de.b2.e02.s0111"]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b2.e02.s0002",
+          "alternativen": ["Die Probezeit beträgt 6 Monate."]
+        },
+        {
+          "schluessel": "de.b2.e02.l01.a15",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b2.e02.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Regeln zu Arbeitszeit, Urlaub und Überstunden erklären.",
+        "tr": "Çalışma saatleri, izin ve fazla mesai kurallarını açıklayabilirim.",
+        "ar": "أستطيع أن أشرح القواعد المتعلقة بساعات العمل والإجازة والعمل الإضافي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b2.e02.l02.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.ueberstunde",
+            "de.b2.e02.freizeitausgleich",
+            "de.b2.e02.gleitzeit",
+            "de.b2.e02.wochenarbeitszeit",
+            "de.b2.e02.schichtarbeit",
+            "de.b2.e02.urlaubsanspruch"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.urlaubstag",
+            "de.b2.e02.urlaubsgeld",
+            "de.b2.e02.verkuerzen",
+            "de.b2.e02.durchgehend",
+            "de.b2.e02.normalerweise",
+            "de.b2.e02.zeitweise"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.problemlos",
+            "de.b2.e02.langjaehrig",
+            "de.b2.e02.anstrengung",
+            "de.b2.e02.ausueben",
+            "de.b2.e02.ausserordentlich",
+            "de.b2.e02.regulaer"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.vorgesetzte",
+          "ablenker": ["de.b2.e02.betriebsversammlung", "de.b2.e02.freizeitausgleich"]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b2.e02.freistellen",
+          "ablenker": ["de.b2.e02.verkuerzen", "de.b2.e02.urlaubsgeld"]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.betriebsversammlung",
+          "ablenker": ["de.b2.e02.schichtarbeit", "de.b2.e02.gleitzeit"]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0174",
+          "nach": "ziel",
+          "alternativen": ["Meine Arbeit beginnt normalerweise um acht Uhr, aber mit Gleitzeit kann ich früher kommen."],
+          "ablenker": ["gestern", "Sonntags"]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0176",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a09",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0175",
+          "wort": 3,
+          "ablenker": ["bezahlt", "vergisst"]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a10",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0177",
+          "wort": 2,
+          "ablenker": ["schläft", "kocht"]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a11",
+          "typ": "satzbau",
+          "ziel": "de.b2.e02.s0196",
+          "alternativen": ["Wenn ich Überstunden habe, erlaubt mir mein Chef, am Freitag früher zu gehen."]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a12",
+          "typ": "frei",
+          "ziel": "de.b2.e02.s0186",
+          "nach": "ziel",
+          "alternativen": ["Die Mühe hat sich gelohnt, denn die Arbeit macht jetzt Spaß."]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b2.e02.s0193",
+          "ablenker": ["de.b2.e02.s0203", "de.b2.e02.s0212"]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b2.e02.s0206",
+          "alternativen": ["Der Betrieb gibt jedem Beschäftigten dreißig Tage Urlaub im Jahr."]
+        },
+        {
+          "schluessel": "de.b2.e02.l02.a15",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b2.e02.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann eine Lohnabrechnung grob verstehen und dazu Fragen stellen.",
+        "tr": "Bir maaş bordrosunu genel olarak anlayabilir ve bu konuda soru sorabilirim.",
+        "ar": "أستطيع أن أفهم كشف الراتب بشكل عام وأن أطرح أسئلة عنه."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b2.e02.l03.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.brutto",
+            "de.b2.e02.netto",
+            "de.b2.e02.lohnabrechnung",
+            "de.b2.e02.stundenlohn",
+            "de.b2.e02.bezahlung",
+            "de.b2.e02.gehaltserhoehung"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.befoerderung",
+            "de.b2.e02.praemie",
+            "de.b2.e02.zuschlag",
+            "de.b2.e02.weihnachtsgeld",
+            "de.b2.e02.mindestlohn",
+            "de.b2.e02.profitieren"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.befoerdern",
+            "de.b2.e02.lohnsteuer",
+            "de.b2.e02.steuerklasse",
+            "de.b2.e02.sozialabgaben",
+            "de.b2.e02.sozialversicherung",
+            "de.b2.e02.rentenversicherung"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.fahrtkosten",
+          "ablenker": ["de.b2.e02.vertretung", "de.b2.e02.brutto"]
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b2.e02.dienstreise",
+          "ablenker": ["de.b2.e02.stundenlohn", "de.b2.e02.netto"]
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.vertretung",
+          "ablenker": ["de.b2.e02.dienstreise", "de.b2.e02.befoerdern"]
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0239",
+          "nach": "ziel",
+          "alternativen": ["Netto bleibt davon deutlich weniger, mein Gehalt ist brutto 2.800 Euro."],
+          "ablenker": ["gestern", "Sonntags"]
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0240",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a09",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0243",
+          "wort": 7,
+          "ablenker": ["Wecker", "Kantine"]
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a10",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0244",
+          "wort": 3,
+          "ablenker": ["verkauft", "vergisst"]
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a11",
+          "typ": "satzbau",
+          "ziel": "de.b2.e02.s0253",
+          "alternativen": ["Beiträge für Krankenversicherung, Rente und Pflege umfassen die Sozialabgaben."]
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a12",
+          "typ": "frei",
+          "ziel": "de.b2.e02.s0257",
+          "nach": "ziel",
+          "alternativen": ["Der Betrieb erstattet auf einer Dienstreise die Fahrtkosten und das Hotel."]
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b2.e02.s0250",
+          "ablenker": ["de.b2.e02.s0247", "de.b2.e02.s0249"]
+        },
+        {
+          "schluessel": "de.b2.e02.l03.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b2.e02.s0239",
+          "alternativen": ["Mein Gehalt ist brutto zweitausendachthundert Euro, netto bleibt davon deutlich weniger."]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b2.e02.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann im Krankheitsfall erklären, was ich tun muss.",
+        "tr": "Hastalık durumunda ne yapmam gerektiğini açıklayabilirim.",
+        "ar": "أستطيع أن أشرح ما يجب عليّ فعله في حالة المرض."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b2.e02.l04.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.kompromiss",
+            "de.b2.e02.gewerkschaft",
+            "de.b2.e02.streik",
+            "de.b2.e02.betriebsrat",
+            "de.b2.e02.arbeitsklima",
+            "de.b2.e02.arbeitsalltag"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.gleichbehandlung",
+            "de.b2.e02.arbeitsschutz",
+            "de.b2.e02.schutzkleidung",
+            "de.b2.e02.arbeitsunfall",
+            "de.b2.e02.unfallversicherung",
+            "de.b2.e02.mutterschutz"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.gleichstellung",
+            "de.b2.e02.elternzeit",
+            "de.b2.e02.elterngeld",
+            "de.b2.e02.lohnfortzahlung",
+            "de.b2.e02.krankengeld",
+            "de.b2.e02.streiken"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.krankschreibung",
+          "ablenker": ["de.b2.e02.elternzeit", "de.b2.e02.gewerkschaft"]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b2.e02.krankschreiben",
+          "ablenker": ["de.b2.e02.streiken", "de.b2.e02.kompromiss"]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.attest",
+          "ablenker": ["de.b2.e02.arbeitsklima", "de.b2.e02.gleichstellung"]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0293",
+          "nach": "ziel",
+          "alternativen": ["Wer krank ist, muss sich im Betrieb am ersten Tag melden."],
+          "ablenker": ["gestern", "Sonntags"]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0297",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a09",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0295",
+          "wort": 7,
+          "ablenker": ["kündigen", "bezahlen"]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a10",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0299",
+          "wort": 2,
+          "ablenker": ["vergisst", "bezahlt"]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a11",
+          "typ": "satzbau",
+          "ziel": "de.b2.e02.s0302",
+          "alternativen": ["Wenn der Unfall bei der Arbeit passiert, zahlt die Unfallversicherung die Behandlung."]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a12",
+          "typ": "frei",
+          "ziel": "de.b2.e02.s0306",
+          "nach": "ziel",
+          "alternativen": ["In der Regel bekommt man während der Elternzeit Elterngeld vom Staat."]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b2.e02.s0309",
+          "ablenker": ["de.b2.e02.s0310", "de.b2.e02.s0312"]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a14",
+          "typ": "sprechen",
+          "satz": "de.b2.e02.s0093"
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a15",
+          "typ": "lesen_fragen",
+          "titel": "de.b2.e02.s0016",
+          "absaetze": [
+            "de.b2.e02.s0017",
+            "de.b2.e02.s0018",
+            "de.b2.e02.s0019",
+            "de.b2.e02.s0020",
+            "de.b2.e02.s0021",
+            "de.b2.e02.s0022",
+            "de.b2.e02.s0023"
+          ],
+          "glossen": ["de.b2.e02.krankengeld", "de.b2.e02.lohnfortzahlung", "de.b2.e02.attest"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b2.e02.s0024",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b2.e02.s0025",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b2.e02.s0026",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b2.e02.s0027",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b2.e02.s0028",
+              "antwort": "de.b2.e02.s0029",
+              "ablenker": ["de.b2.e02.s0030", "de.b2.e02.s0031"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l04.a16",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b2.e02.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann ein Gespräch mit dem Vorgesetzten vorbereiten und führen.",
+        "tr": "Amirimle bir görüşmeyi hazırlayabilir ve yürütebilirim.",
+        "ar": "أستطيع أن أحضّر لمحادثة مع المسؤول المباشر وأن أديرها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b2.e02.l05.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.kuendigung",
+            "de.b2.e02.kuendigungsfrist",
+            "de.b2.e02.kuendigungsschutz",
+            "de.b2.e02.kuendigungsgrund",
+            "de.b2.e02.fristlos",
+            "de.b2.e02.abmahnung"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.abfindung",
+            "de.b2.e02.entlassen",
+            "de.b2.e02.arbeitslos",
+            "de.b2.e02.arbeitsgericht",
+            "de.b2.e02.personalgespraech",
+            "de.b2.e02.weisung"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.arbeitslosigkeit",
+            "de.b2.e02.beschaeftigung",
+            "de.b2.e02.wofuer",
+            "de.b2.e02.woran",
+            "de.b2.e02.wovon",
+            "de.b2.e02.wonach"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.worueber",
+          "ablenker": ["de.b2.e02.weisung", "de.b2.e02.arbeitsgericht"]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b2.e02.worum",
+          "ablenker": ["de.b2.e02.abfindung", "de.b2.e02.kuendigungsschutz"]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.wozu",
+          "ablenker": ["de.b2.e02.personalgespraech", "de.b2.e02.abmahnung"]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0348",
+          "nach": "ziel",
+          "alternativen": ["Bei uns beträgt die Kündigungsfrist vier Wochen zum Monatsende."],
+          "ablenker": ["gestern", "Urlaubsreise"]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0351",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a09",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0352",
+          "wort": 8,
+          "ablenker": ["Urlaubsgeld", "Gleitzeit"]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a10",
+          "typ": "satzbau",
+          "ziel": "de.b2.e02.s0365",
+          "alternativen": ["Wenn niemand sie kennt, wozu dient diese Regel?"]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a11",
+          "typ": "frei",
+          "ziel": "de.b2.e02.s0363",
+          "nach": "ziel",
+          "alternativen": ["Im Sommer ist die Beschäftigung von Aushilfen besonders häufig."]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b2.e02.s0376",
+          "ablenker": ["de.b2.e02.s0379", "de.b2.e02.s0359"]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a13",
+          "typ": "sprechen",
+          "satz": "de.b2.e02.s0092"
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a14",
+          "typ": "lesen_fragen",
+          "titel": "de.b2.e02.s0001",
+          "absaetze": [
+            "de.b2.e02.s0002",
+            "de.b2.e02.s0003",
+            "de.b2.e02.s0004",
+            "de.b2.e02.s0005",
+            "de.b2.e02.s0006",
+            "de.b2.e02.s0007",
+            "de.b2.e02.s0008"
+          ],
+          "glossen": ["de.b2.e02.urlaubsanspruch", "de.b2.e02.kuendigungsfrist", "de.b2.e02.tarifvertrag"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b2.e02.s0009",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b2.e02.s0010",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b2.e02.s0011",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b2.e02.s0012",
+              "antwort": "de.b2.e02.s0013",
+              "ablenker": ["de.b2.e02.s0014", "de.b2.e02.s0015"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.b2.e02.s0094",
+          "woerter": {
+            "min": 120,
+            "max": 150
+          },
+          "pflichtwoerter": ["Urlaub", "Vertretung", "Urlaubsanspruch"],
+          "muster": ["de.b2.e02.s0095", "de.b2.e02.s0096"]
+        },
+        {
+          "schluessel": "de.b2.e02.l05.a16",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0371",
+          "wort": 4,
+          "ablenker": ["worüber", "womit"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b2.e02.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann die Geschichte vom ersten Arbeitsvertrag verstehen.",
+        "tr": "İlk iş sözleşmesi hikâyesini anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة أول عقد عمل."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b2.e02.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.b2.e02.s0047",
+          "zeilen": [
+            {
+              "satz": "de.b2.e02.s0048"
+            },
+            {
+              "satz": "de.b2.e02.s0049"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b2.e02.s0050"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b2.e02.s0051"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b2.e02.s0052"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b2.e02.s0053"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b2.e02.s0054"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b2.e02.s0055"
+            },
+            {
+              "satz": "de.b2.e02.s0056"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b2.e02.s0057"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b2.e02.s0058"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b2.e02.s0059"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b2.e02.s0060"
+            },
+            {
+              "satz": "de.b2.e02.s0061"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b2.e02.s0062"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b2.e02.s0063"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 7,
+              "frage": "de.b2.e02.s0064",
+              "antwort": "de.b2.e02.s0065",
+              "ablenker": ["de.b2.e02.s0066", "de.b2.e02.s0067"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.b2.e02.s0068",
+              "antwort": "de.b2.e02.s0069",
+              "ablenker": ["de.b2.e02.s0070", "de.b2.e02.s0071"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.b2.e02.s0072",
+              "antwort": "de.b2.e02.s0073",
+              "ablenker": ["de.b2.e02.s0074", "de.b2.e02.s0075"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.b2.e02.s0076",
+              "antwort": "de.b2.e02.s0077",
+              "ablenker": ["de.b2.e02.s0078", "de.b2.e02.s0079"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l06.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.b2.e02.s0080"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b2.e02.s0081"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b2.e02.s0082"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b2.e02.s0083"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b2.e02.s0084"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b2.e02.s0085"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b2.e02.s0086"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.b2.e02.s0087"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.b2.e02.s0088"
+            }
+          ],
+          "antwort": "de.b2.e02.s0089",
+          "ablenker": ["de.b2.e02.s0090", "de.b2.e02.s0091"]
+        },
+        {
+          "schluessel": "de.b2.e02.l06.a03",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0317",
+          "nach": "ziel",
+          "alternativen": ["Denn man steckt die anderen an, deshalb ist es keine gute Idee, krank zur Arbeit zu gehen."],
+          "ablenker": ["gestern", "Sonntags"]
+        },
+        {
+          "schluessel": "de.b2.e02.l06.a04",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0062",
+          "wort": 8,
+          "ablenker": ["Vertrag", "Urlaub"]
+        },
+        {
+          "schluessel": "de.b2.e02.l06.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b2.e02.s0057",
+          "ablenker": ["de.b2.e02.s0055", "de.b2.e02.s0059"]
+        },
+        {
+          "schluessel": "de.b2.e02.l06.a06",
+          "typ": "satzbau",
+          "ziel": "de.b2.e02.s0052",
+          "alternativen": ["Das steht ganz oben: Die Probezeit dauert sechs Monate."]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b2.e02.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann die Wörter und Sätze dieser Einheit sicher anwenden.",
+        "tr": "Bu ünitedeki kelimeleri ve cümleleri güvenle kullanabilirim.",
+        "ar": "أستطيع أن أستخدم كلمات هذه الوحدة وجملها بثقة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b2.e02.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.zustehen",
+            "de.b2.e02.fristlos",
+            "de.b2.e02.streiken",
+            "de.b2.e02.zeitweise",
+            "de.b2.e02.betriebsversammlung",
+            "de.b2.e02.lohnabrechnung"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.mindestlohn",
+            "de.b2.e02.krankengeld",
+            "de.b2.e02.elternzeit",
+            "de.b2.e02.kapazitaet",
+            "de.b2.e02.weisung",
+            "de.b2.e02.arbeitsunfall"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.befoerdern",
+          "ablenker": ["de.b2.e02.kuendigung", "de.b2.e02.freistellen"]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b2.e02.regulaer",
+          "ablenker": ["de.b2.e02.weisung", "de.b2.e02.abfindung"]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.arbeitslosigkeit",
+          "ablenker": ["de.b2.e02.gleitzeit", "de.b2.e02.beschaeftigung"]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0254",
+          "nach": "ziel",
+          "alternativen": ["Bei Krankheit, Arbeitslosigkeit und im Alter schützt die Sozialversicherung."],
+          "ablenker": ["gestern", "Sonntags"]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0244",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a08",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0358",
+          "wort": 2,
+          "ablenker": ["vergisst", "bezahlt"]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a09",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0301",
+          "wort": 8,
+          "ablenker": ["bezahlen", "vergessen"]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a10",
+          "typ": "satzbau",
+          "ziel": "de.b2.e02.s0370",
+          "alternativen": ["Wenn der Vertrag nichts sagt, wonach richtet sich die Kündigungsfrist?"]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a11",
+          "typ": "frei",
+          "ziel": "de.b2.e02.s0203",
+          "nach": "ziel",
+          "alternativen": ["Man kann die Freizeit als Freizeitausgleich nehmen, wenn der Betrieb zustimmt."]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.b2.e02.ausueben",
+          "ablenker": ["de.b2.e02.verkuerzen", "de.b2.e02.posten"]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b2.e02.s0305",
+          "ablenker": ["de.b2.e02.s0304", "de.b2.e02.s0306"]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.b2.e02.s0348",
+          "alternativen": ["Die Kündigungsfrist beträgt bei uns 4 Wochen zum Monatsende."]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a15",
+          "typ": "formen",
+          "lemma": "de.b2.e02.entlassen",
+          "zeilen": ["ich", "du", "er/sie/es"],
+          "spalten": ["Präsens", "Präteritum"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["entlasse"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["entlässt"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["entlässt"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["entließ"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["entließest"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["entließ"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a16",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0129",
+          "wort": 3,
+          "ablenker": ["mündlich", "heimlich"]
+        },
+        {
+          "schluessel": "de.b2.e02.l07.a17",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0138",
+          "nach": "ziel",
+          "alternativen": ["Er hat sich schnell in das neue Programm eingearbeitet."],
+          "ablenker": ["gestern", "Krankengeld"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.b2.e02.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann Rechte im Job sachlich ansprechen und schriftlich festhalten.",
+        "tr": "İş hayatındaki haklarımı sakin biçimde dile getirebilir ve yazılı olarak kaydedebilirim.",
+        "ar": "أستطيع أن أطرح حقوقي في العمل بهدوء وأن أدوّنها كتابةً."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.b2.e02.l08.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.anstellen",
+            "de.b2.e02.kuendigungsfrist",
+            "de.b2.e02.gleichbehandlung",
+            "de.b2.e02.lohnsteuer",
+            "de.b2.e02.betriebsrat",
+            "de.b2.e02.elterngeld"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.b2.e02.befoerderung",
+            "de.b2.e02.arbeitslos",
+            "de.b2.e02.weihnachtsgeld",
+            "de.b2.e02.schutzkleidung",
+            "de.b2.e02.gleitzeit",
+            "de.b2.e02.krankengeld"
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.arbeitsrecht",
+          "ablenker": ["de.b2.e02.gewerkschaft", "de.b2.e02.streik"]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.b2.e02.fahrtkosten",
+          "ablenker": ["de.b2.e02.streik", "de.b2.e02.urlaubstag"]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.b2.e02.verkuerzen",
+          "ablenker": ["de.b2.e02.betriebsrat", "de.b2.e02.profitieren"]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0360",
+          "nach": "ziel",
+          "alternativen": ["Wir besprechen im Personalgespräch Ihre Ziele und Ihre Wünsche."],
+          "ablenker": ["gestern", "Dienstreise"]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0191",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a08",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0254",
+          "wort": 2,
+          "ablenker": ["verkauft", "vergisst"]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a09",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0357",
+          "wort": 10,
+          "ablenker": ["zahlen", "schlafen"]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a10",
+          "typ": "satzbau",
+          "ziel": "de.b2.e02.s0198",
+          "alternativen": ["Mehr Freizeit und weniger Überstunden wünschen sich viele Beschäftigte."]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a11",
+          "typ": "frei",
+          "ziel": "de.b2.e02.s0381",
+          "nach": "ziel",
+          "alternativen": ["Die Frist, die im Vertrag steht, zählt bei einer Kündigung."]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a12",
+          "typ": "lesen_fragen",
+          "titel": "de.b2.e02.s0032",
+          "absaetze": [
+            "de.b2.e02.s0033",
+            "de.b2.e02.s0034",
+            "de.b2.e02.s0035",
+            "de.b2.e02.s0036",
+            "de.b2.e02.s0037",
+            "de.b2.e02.s0038",
+            "de.b2.e02.s0039"
+          ],
+          "glossen": ["de.b2.e02.betriebsrat", "de.b2.e02.kompromiss", "de.b2.e02.kuendigung"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.b2.e02.s0040",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b2.e02.s0041",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.b2.e02.s0042",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.b2.e02.s0043",
+              "antwort": "de.b2.e02.s0044",
+              "ablenker": ["de.b2.e02.s0045", "de.b2.e02.s0046"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.b2.e02.s0119",
+          "ablenker": ["de.b2.e02.s0120", "de.b2.e02.s0140"]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a14",
+          "typ": "schreiben",
+          "aufgabe": "de.b2.e02.s0097",
+          "woerter": {
+            "min": 80,
+            "max": 100
+          },
+          "pflichtwoerter": ["Attest", "Vertretung"],
+          "muster": ["de.b2.e02.s0098", "de.b2.e02.s0099"]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a15",
+          "typ": "luecke",
+          "ziel": "de.b2.e02.s0322",
+          "wort": 2,
+          "ablenker": ["steigt", "wächst"]
+        },
+        {
+          "schluessel": "de.b2.e02.l08.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.b2.e02.s0250",
+          "nach": "ausgang"
+        }
+      ]
+    }
+  ]
+}
