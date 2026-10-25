@@ -1,5 +1,32 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 20:05 UTC – Stufe C: Belege A fertig, Nacharbeit N1 läuft:**
+  - **Belege A** (`wf_d66ad2f6-7fa`, Protokolle `_lernapp/protokolle/C-religion*.md`, `C-lizenzen*.md`), Urteil nach Gegenprüfung:
+    - erfüllt: Z-L03, Z-L18, Z-L21 (religiöser Teil);
+    - teilweise: Z-L02, Z-L10, Z-L15, Z-L17, Z-L19, Z-L20, Z-L21, Z-L22.
+  - **Wichtigster Befund (live bestätigt):** Alle 6 Kurse liefern unter *.a1.e01 die Seed-„Testeinheit: Alltag“ statt der echten Einheit; Testtöne hängen an echten Einträgen (4 Hörübungen je Richtungssatz).
+    - **N1** `wf_ec40915b-8e6` im Arbeitsbaum `l3-05` (1 Agent, seriell): Testkurs trennen, Paketbau nur freigegebene Stimmen, Hörabnahme-Feld in `stimmen.ts`. Danach Bau mit E2E, Gegenprüfung, ggf. Mängelrunde.
+  - **Warteschlange Nacharbeit (nach dem Reset 21:10, im Takt):**
+    - **N2 Freigabe-Härtung** (Z-L02, Z-L10):
+      - `religioese_pruefung` in die Schutzrollen-Regel: nie mit `administration`, nie an sich selbst.
+      - Formelliste-Status im Prüfer und im Paketbau erzwingen; `formelliste` als religiöser Baustein.
+      - F-ar über Umschrift prüfen.
+      - Wächter: Friedensgruß mit Artikel und in umgekehrter Reihenfolge (ohne neuen Wortlaut).
+    - **N3 Auslieferung** (Z-L02, Z-L03):
+      - Wissens-Paketbau aus `sichtbareWissensLektion`; `pakete.ts:407` liefert immer [].
+      - Koran-Pakete: 78 von 80 live 404, nur e01 lädt.
+    - **N4 Kleinkram:**
+      - `sharp` aus `lernapp-audio.ts` lösen und Regeltest (Z-L19).
+      - ThirdPartyNotices von onnxruntime offline (Z-L17).
+      - CAMeL-`requirements` mit Hashes (Z-L22).
+      - Vermerk in `WISSEN.md` zu e06/e08.
+      - Testnamen in ABNAHME.
+    - **Menschen:**
+      - Wissen: 26/28 als AUSNAHME (LM-04).
+      - Formelliste (LM-09), Hörabnahme (LM-06), Hidaya-Ausgabe (LM-33).
+  - **Prüfskript** `tor-stufe-c.sh`: check 3.565 und Integration 3.847 grün; Sprachen, Religion, Wortlaut und lernapp:pruefen grün; startklar ohne DB wie erwartet rot (13 Umgebungsfehler); Import-Bau läuft.
+  - **Auslastung** 0,66 um 19:57 (Taktlinie 0,68).
+
 - **Stand 25.10.2026 19:30 UTC – L8-05 Stufe C begonnen (parallel zu B1 ar):**
   - **B1 ar** `wf_dd49afe9-2ca`: Lektorate 16/16, Übersetzungen e01–e08 und e10, e09 läuft; danach Rückübersetzungen und Schlussprüfung.
   - **Belege A** `wf_d66ad2f6-7fa`: Gruppe „religion“ (Z-L02, Z-L03, Z-L10, Teil Z-L21) und „lizenzen“ (Z-L15, Z-L17–Z-L22), je mit skeptischer Gegenprüfung. Protokolle unter `_lernapp/protokolle/C-*.md`.
