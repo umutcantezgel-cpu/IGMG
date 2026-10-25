@@ -1,5 +1,19 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 00:42 UTC – vor dem Reset angehalten (Taktregel):**
+  - Auslastung 0,96 um 00:39; das Fenster wäre gegen 00:47 leer gewesen.
+  - B1 de `wf_22e98787-c97` direkt nach dem Commit 5f12bf3c angehalten; Arbeitsbaum sauber.
+  - **B1 de fertig:**
+    - Entwürfe und Lektorate e01–e16.
+    - Übersetzungen e01–e09 in beiden Richtungen.
+    - Offen: Übersetzungen e10–e16, alle Rückübersetzungen, Schlussprüfung.
+  - **Nach dem Reset 01:00 (neues Fenster), Warteschlange in dieser Reihenfolge, nach der Taktregel (≈ 2 Agenten):**
+    1. **B1 de fortsetzen:** Args wie `wf_22e98787-c97`, aber `lektoriert` e01–e16 und `uebersetzt` e01–e09.
+    2. Prüfer-Mängelrunde (`scratchpad/lernapp-pruefer-maengel.workflow.js`, Args `{scratchpad}`; 1 Agent, erst wenn Luft ist).
+    3. B1 ar.
+    4. B1 tr.
+    5. B2 de.
+
 - **Stand 24.10.2026 23:35 UTC – Container-Neustart ≈ 23:28, B1 de neu gestartet:**
   - **B1 de seit 20:05 (Arbeitsbaum sauber):**
     - Entwürfe e11–e16 fertig, damit e01–e16.
