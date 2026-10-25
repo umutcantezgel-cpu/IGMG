@@ -226,6 +226,8 @@ export default async function Quellen() {
                   <p className="self-start rounded-pill bg-sand px-3 py-0.5 text-16 font-bold text-tinte-2">
                     {t('sprachausgabe.synthetisch')}
                   </p>
+                  {/* Registriert, aber vor der Hörabnahme (LM-06) nirgends eingesetzt: „Audio folgt“ (Z-L21) */}
+                  {s.hoerabnahme === 'bestanden' ? null : <p className="text-16 text-tinte-2">{t('sprachausgabe.hoerabnahmeOffen')}</p>}
                   <h3 lang="de" dir="ltr" className="self-start text-24 leading-ueberschrift">
                     {s.bezeichnung}
                   </h3>

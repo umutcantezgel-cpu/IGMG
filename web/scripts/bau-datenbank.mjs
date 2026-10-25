@@ -3,6 +3,7 @@
 import { execFileSync } from 'node:child_process';
 import { rmSync } from 'node:fs';
 import { join } from 'node:path';
+import { testkursImBau } from './lernapp/testkurs-im-bau.mjs';
 
 const wurzel = join(import.meta.dirname, '..');
 const verzeichnis = join(wurzel, '.pglite-bau');
@@ -14,9 +15,9 @@ execFileSync('pnpm', ['exec', 'tsx', '--conditions=react-server', 'drizzle/seeds
 execFileSync('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/inhalte-import.ts'], { cwd: wurzel, env, stdio: 'inherit' });
 // Lern-App-Inhalte (PLAN §6.6). Den Testkurs mit synthetischen Tönen (ADR 0039 Nr. 11) nur auf ausdrücklichen Wunsch
 // (LERNAPP_TESTKURS=1, z. B. für eine Vorführung im Beispielmodus): Der Vercel-Bau ohne Datenbank ist die öffentliche
-// Test-Domain und zeigt nur die echten Einheiten – keine Testeinheit, keine Testtöne (Stufe C, L15-1; E2E und Tests
-// importieren den Testkurs selbst, scripts/e2e-datenbank.mjs).
-const testkurs = process.env.LERNAPP_TESTKURS === '1';
+// Test-Domain und zeigt nur die echten Einheiten – keine Testeinheit, keine Testtöne (Stufe C, L15-1; Bedingung und
+// Regeltest: scripts/lernapp/testkurs-im-bau.mjs; E2E und Tests importieren den Testkurs selbst, scripts/e2e-datenbank.mjs).
+const testkurs = testkursImBau(process.env);
 execFileSync('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/lernapp/import.ts', ...(testkurs ? ['--testkurs'] : [])], {
   cwd: wurzel,
   env,

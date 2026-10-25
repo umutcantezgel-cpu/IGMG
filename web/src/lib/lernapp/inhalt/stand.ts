@@ -14,6 +14,9 @@ export type ImportStand = { dateien: Record<string, DateiStand>; konflikte: Konf
 /** Präfix der Einstellungen, unter denen Importe ihren Stand ablegen. */
 export const STAND_PRAEFIX = 'lernapp_';
 
+/** Stand des Testkurses (`drizzle/seeds/lernapp-test.ts`); vorhanden genau dann, wenn der Testkurs importiert ist. */
+export const TESTKURS_STAND = 'lernapp_testkurs';
+
 /** Schlüssel der als entfernt geführten Einträge aus den Werten der Import-Stände (fremde oder alte Formen: leer). */
 export function entfernteAusStaenden(werte: readonly unknown[]): Set<string> {
   const ergebnis = new Set<string>();

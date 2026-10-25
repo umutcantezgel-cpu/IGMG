@@ -1,10 +1,12 @@
 import { ExternalLink, Info } from 'lucide-react';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Abschnitt, Rechtsgliederung } from '@/components/website/rechtliches/Rechtstext';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { freigegebeneStimme } from '@/lib/lernapp/audio/stimmen';
+import { SPRACHEN } from '@/lib/lernapp/kurse';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { ABSCHNITTE, BIBLIOTHEKEN, type QuellenEintrag } from './verzeichnis';
 
@@ -108,9 +110,13 @@ async function Eintrag({ e }: { e: QuellenEintrag }) {
  * Urheber, Lizenz, Fassung, Verwendung und Änderungen; jeder Abschnitt und jeder Eintrag hat einen Anker
  * (z. B. /quellen#hadith). Belege in web/daten/<quelle>/QUELLE.md. Statisch. Lern-App (L8-03, ADR 0045 Nr. 15): Sprachdaten
  * mit Namensnennung, Bildkarten, Spracherkennung mit den Drittlizenzen von ONNX Runtime (Volltext vom eigenen Ursprung).
+ * Sprachausgabe: vorgesehene Stimmen mit Herkunftskette; Sprachen ohne freigegebene Stimme aus `audio/stimmen.ts` (Stufe C).
  */
 export default async function QuellenSeite() {
   const t = await getTranslations('quellen');
+  // Sprachen der Lern-App ohne freigegebene Stimme (keine Stimme oder Hörabnahme LM-06 offen): dort „Audio folgt“ (Z-L21)
+  const ohneStimme = SPRACHEN.filter((x) => !freigegebeneStimme(x));
+  const aufzaehlung = new Intl.ListFormat(await getLocale(), { type: 'conjunction' });
   const punkte = [...ABSCHNITTE.map((a) => a.id), 'bibliotheken'].map((id) => ({ id, titel: t(`abschnitte.${id}`) }));
   return (
     <Seitenrahmen bereich="keiner" seite="quellen" sprachZiel="/quellen" pfad={[{ label: t('titel') }]}>
@@ -142,6 +148,11 @@ export default async function QuellenSeite() {
                   </blockquote>
                 </figure>
               </div>
+            ) : null}
+            {a.zusatz === 'stimmen' && ohneStimme.length ? (
+              <p className="max-w-(--container-text) text-pretty text-tinte-2">
+                {t('stimmen.ohneFreigabe', { sprachen: aufzaehlung.format(ohneStimme.map((x) => t(`stimmen.sprachen.${x}`))) })}
+              </p>
             ) : null}
             {a.eintraege.map((e) => (
               <Eintrag key={e.id} e={e} />

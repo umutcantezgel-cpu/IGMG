@@ -1,8 +1,9 @@
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { eq, sql } from 'drizzle-orm';
+import { and, eq, like, sql } from 'drizzle-orm';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { db as appDb, schema } from '@/lib/db';
+import type { ImportStand } from '@/lib/lernapp/inhalt/stand';
 import { RICHTUNGEN, type Sprache, zerlegeRichtung } from '@/lib/lernapp/kurse';
 import { sha256Hex, textHash } from '@/lib/lernapp/paket/hash';
 import { verwaltungsUmgebung } from './hilfen/verwaltung';
@@ -17,15 +18,19 @@ import { verwaltungsUmgebung } from './hilfen/verwaltung';
  * - Paketbau: echte Einträge mit demselben Text wie ein Eintrag des Testkurses bekommen keinen Testton; die Testeinheit
  *   behält ihn.
  * - Echte Einträge bekommen nur Clips einer freigegebenen Stimme (Hörabnahme bestanden) oder `mensch:<id>` mit Vereinbarung;
- *   das Audio-Studio zeigt dieselbe wirksame Stimme.
+ *   das Audio-Studio zeigt dieselbe wirksame Stimme und zählt für die Lage nur zulässige Clips.
+ * - Die Audio-Route liefert Testbündel nur, solange der Testkurs importiert ist (Stand `lernapp_testkurs`).
+ * - Ein Stand des Testkurses aus der Zeit vor Stufe C (Pfade auf `<kurs>.a1.e01`) wird bereinigt und sperrt die echte e01 nicht.
  */
 const { client } = await verwaltungsUmgebung();
 const { importiereLernapp } = await import('@/lib/lernapp/inhalt/import');
-const { lernappTestkurs, testEinheit, testkursClipTexte, TEST_STIMME } = await import('../../drizzle/seeds/lernapp-test');
+const { lernappTestkurs, testEinheit, testkursClipTexte, TEST_STIMME, TESTAUDIO_VERZEICHNIS } =
+  await import('../../drizzle/seeds/lernapp-test');
 const { inhaltsdateien, INHALT_WURZEL } = await import('../../scripts/lernapp/inhaltsdateien');
 const pakete = await import('@/server/queries/lernapp/pakete');
 const { ladeStudio, STUDIO_SEITE } = await import('@/server/queries/lernapp/audio-studio');
 const { THORSTEN } = await import('@/lib/lernapp/audio/stimmen');
+const audioRoute = await import('@/app/lern-app/audio/[...pfad]/route');
 afterAll(() => client.close());
 
 /** Echte Inhalte der Stufe A1: Sprachdateien und Übersetzungen aller Richtungen. */
@@ -44,8 +49,22 @@ const echteTexte = (z: Sprache) =>
 beforeAll(async () => {
   const echt = await importiereLernapp(appDb, A1);
   expect(echt.konflikte).toEqual([]);
-  await lernappTestkurs(appDb);
+  expect((await lernappTestkurs(appDb)).alteEinheiten).toEqual([]);
 }, 240_000);
+
+/** Eintrag im Audio-Studio (Kurs de, Filter „alle“): seine Seite nach Schlüssel wie `ladeStudio`. */
+async function studioEintrag(schluessel: string) {
+  const vorher = await appDb.execute<{ n: number }>(sql`
+    select count(*)::int as n from (
+      select schluessel from lernapp_lemma where kurs_id = 'de' and not religionsbezug and status <> 'gesperrt'
+      union all
+      select schluessel from lernapp_satz where kurs_id = 'de' and not religionsbezug and status <> 'gesperrt'
+    ) t where schluessel < ${schluessel}`);
+  const s = await ladeStudio('de', 'alle', Math.floor(vorher.rows[0]!.n / STUDIO_SEITE));
+  const e = s.eintraege.find((x) => x.schluessel === schluessel);
+  if (!e) throw new Error(`${schluessel} nicht im Studio`);
+  return e;
+}
 
 describe('Testkurs am eigenen Ort (Stufe C, L15-1)', () => {
   it('Regression: a1.e01 ist in allen sechs Richtungen die echte Einheit; nur die Testeinheit verweist auf Testbündel', async () => {
@@ -133,29 +152,23 @@ describe('Testkurs am eigenen Ort (Stufe C, L15-1)', () => {
     ]);
     const audio = async () => (await pakete.ladeBauEingaben('de-aus-tr', 'de.a1.e01'))[0]!.audio;
     const stimme = async (text: string) => (await audio()).get(textHash(text))?.stimme ?? null;
-    /** Wirksame Stimme im Audio-Studio: Seite des Eintrags (Filter „alle“, nach Schlüssel wie `ladeStudio`). */
-    const wirksam = async (schluessel: string) => {
-      const vorher = await appDb.execute<{ n: number }>(sql`
-        select count(*)::int as n from (
-          select schluessel from lernapp_lemma where kurs_id = 'de' and not religionsbezug and status <> 'gesperrt'
-          union all
-          select schluessel from lernapp_satz where kurs_id = 'de' and not religionsbezug and status <> 'gesperrt'
-        ) t where schluessel < ${schluessel}`);
-      const s = await ladeStudio('de', 'alle', Math.floor(vorher.rows[0]!.n / STUDIO_SEITE));
-      const e = s.eintraege.find((x) => x.schluessel === schluessel);
-      if (!e) throw new Error(`${schluessel} nicht im Studio`);
-      return e.wirksam;
-    };
+    /** Wirksame Stimme im Audio-Studio. */
+    const wirksam = async (schluessel: string) => (await studioEintrag(schluessel)).wirksam;
+    /** Lage im Audio-Studio: „fehlt“, solange kein zulässiger Clip vorliegt (im Paket „Audio folgt“). */
+    const lage = async (schluessel: string) => (await studioEintrag(schluessel)).lage;
 
     // Hörabnahme offen (LM-06): kein Clip der Sprachausgabe an einem echten Eintrag – „Audio folgt“
     expect(THORSTEN.hoerabnahme).toBe('offen');
     expect(await stimme(sprachausgabe!.lemma)).toBeNull();
     expect(await wirksam(sprachausgabe!.schluessel)).toBeNull();
+    expect(await lage(sprachausgabe!.schluessel)).toBe('fehlt');
     // Mensch mit Vereinbarung: ausgeliefert; ohne Vereinbarung nie
     expect(await stimme(mensch!.lemma)).toBe(`mensch:${sprecher!.id}`);
     expect(await wirksam(mensch!.schluessel)).toBe(`mensch:${sprecher!.id}`);
+    expect(await lage(mensch!.schluessel)).toBe('vorhanden');
     expect(await stimme(ohne!.lemma)).toBeNull();
     expect(await wirksam(ohne!.schluessel)).toBeNull();
+    expect(await lage(ohne!.schluessel)).toBe('fehlt');
     // Vereinbarung im Papierkorb: die Aufnahme wird nicht mehr ausgeliefert
     await appDb.update(schema.medium).set({ imPapierkorbSeit: new Date() }).where(eq(schema.medium.id, medium!.id));
     expect(await stimme(mensch!.lemma)).toBeNull();
@@ -166,6 +179,7 @@ describe('Testkurs am eigenen Ort (Stufe C, L15-1)', () => {
     try {
       expect(await stimme(sprachausgabe!.lemma)).toBe(THORSTEN.id);
       expect(await wirksam(sprachausgabe!.schluessel)).toBe(THORSTEN.id);
+      expect(await lage(sprachausgabe!.schluessel)).toBe('vorhanden');
     } finally {
       THORSTEN.hoerabnahme = 'offen';
     }
@@ -176,6 +190,106 @@ describe('Testkurs am eigenen Ort (Stufe C, L15-1)', () => {
       .find((x) => testkursClipTexte('de').includes(x.text));
     expect(geteilt).toBeDefined();
     expect(await wirksam(geteilt!.schluessel)).toBeNull();
+    expect(await lage(geteilt!.schluessel)).toBe('fehlt');
     expect(await wirksam(`${testEinheit('de')}.w003`)).toBe(TEST_STIMME);
+    expect(await lage(`${testEinheit('de')}.w003`)).toBe('vorhanden');
+  });
+
+  it('Audio-Route: Testbündel nur, solange der Testkurs importiert ist (öffentliche Test-Domain: 404)', async () => {
+    const kontext = (pfad: string[]) => ({ params: Promise.resolve({ pfad }) }) as never;
+    const anfrage = () => new Request('https://example.test/');
+    const STAND = eq(schema.einstellung.schluessel, 'lernapp_testkurs');
+    for (const sprache of ['de', 'tr', 'ar'] as const) {
+      const datei = readdirSync(join(TESTAUDIO_VERZEICHNIS, sprache)).find((d) => d.endsWith('.lpa'))!;
+      expect(datei, sprache).toMatch(new RegExp(`^${sprache}\\.a1\\.test-[0-9a-f]{16}\\.lpa$`));
+      expect((await audioRoute.GET(anfrage(), kontext([sprache, datei]))).status, sprache).toBe(200);
+    }
+    const [stand] = await appDb.select().from(schema.einstellung).where(STAND);
+    await appDb.delete(schema.einstellung).where(STAND);
+    try {
+      for (const sprache of ['de', 'tr', 'ar'] as const) {
+        const datei = readdirSync(join(TESTAUDIO_VERZEICHNIS, sprache)).find((d) => d.endsWith('.lpa'))!;
+        expect((await audioRoute.GET(anfrage(), kontext([sprache, datei]))).status, sprache).toBe(404);
+      }
+    } finally {
+      await appDb.insert(schema.einstellung).values(stand!);
+    }
+
+    // Beispielmodus ohne Laufzeit-Datenbank (Vercel, ADR 0019): wie beim Bau nur mit LERNAPP_TESTKURS=1
+    const env = process.env as Record<string, string | undefined>;
+    const vorher = {
+      NODE_ENV: env.NODE_ENV,
+      DATABASE_URL: env.DATABASE_URL,
+      BAU_PGLITE: env.BAU_PGLITE,
+      FUNKTION_LERNAPP: env.FUNKTION_LERNAPP,
+    };
+    Object.assign(env, { NODE_ENV: 'production', FUNKTION_LERNAPP: 'an' });
+    delete env.DATABASE_URL;
+    delete env.BAU_PGLITE;
+    try {
+      const datei = readdirSync(join(TESTAUDIO_VERZEICHNIS, 'tr')).find((d) => d.endsWith('.lpa'))!;
+      expect((await audioRoute.GET(anfrage(), kontext(['tr', datei]))).status).toBe(404);
+      env.LERNAPP_TESTKURS = '1';
+      expect((await audioRoute.GET(anfrage(), kontext(['tr', datei]))).status).toBe(200);
+    } finally {
+      delete env.LERNAPP_TESTKURS;
+      for (const [k, w] of Object.entries(vorher))
+        if (w === undefined) delete env[k];
+        else env[k] = w;
+    }
+  });
+
+  it('Stand des Testkurses aus der Zeit vor Stufe C: bereinigt, die echte e01 bleibt ungesperrt', async () => {
+    const STAND = eq(schema.einstellung.schluessel, 'lernapp_testkurs');
+    const [z] = await appDb.select().from(schema.einstellung).where(STAND);
+    const stand = z!.wert as ImportStand;
+    const altSprache = 'testkurs/sprache/de/a1/de.a1.e01.json';
+    const altUebersetzung = 'testkurs/uebersetzung/de-aus-tr/a1/de.a1.e01.json';
+    const altSchluessel = 'de.a1.e01.w001';
+    await appDb
+      .update(schema.einstellung)
+      .set({
+        wert: {
+          ...stand,
+          dateien: {
+            ...stand.dateien,
+            [altSprache]: { sha: '0'.repeat(64), art: 'sprache', einheit: 'de.a1.e01' },
+            [altUebersetzung]: { sha: '0'.repeat(64), art: 'uebersetzung', einheit: 'de.a1.e01', richtung: 'de-aus-tr' },
+          },
+          entfernt: [...(stand.entfernt ?? []), altSchluessel],
+        } satisfies ImportStand,
+      })
+      .where(STAND);
+    const gesperrt = async () => {
+      const zeilen = [];
+      for (const t of [schema.lernappEinheit, schema.lernappLektion, schema.lernappLemma, schema.lernappSatz, schema.lernappTipp])
+        zeilen.push(
+          ...(await appDb
+            .select({ s: t.schluessel })
+            .from(t)
+            .where(and(like(t.schluessel, 'de.a1.e01%'), eq(t.status, 'gesperrt')))),
+        );
+      const ueb = await appDb.execute<{ n: number }>(sql`
+        select count(*)::int as n from lernapp_uebersetzung u
+          left join lernapp_lemma l on l.id = u.lemma_id left join lernapp_satz s on s.id = u.satz_id
+        where u.status = 'gesperrt' and (l.schluessel like 'de.a1.e01.%' or s.schluessel like 'de.a1.e01.%')`);
+      return { zeilen: zeilen.map((x) => x.s).sort(), uebersetzungen: ueb.rows[0]!.n };
+    };
+    const vorher = await gesperrt();
+
+    const t = await lernappTestkurs(appDb);
+    // ohne Bereinigung sperrte der Import die echte Einheit, ihre Übersetzungen und Tipps als „entfernt“
+    expect(await gesperrt()).toEqual(vorher);
+    expect(t.alteEinheiten).toEqual(['de.a1.e01']);
+    const [neu] = await appDb.select().from(schema.einstellung).where(STAND);
+    const neuStand = neu!.wert as ImportStand;
+    expect(Object.keys(neuStand.dateien)).not.toContain(altSprache);
+    expect(Object.keys(neuStand.dateien)).not.toContain(altUebersetzung);
+    expect(Object.values(neuStand.dateien).every((d) => d.einheit.endsWith('.a1.test'))).toBe(true);
+    expect(neuStand.entfernt ?? []).not.toContain(altSchluessel);
+    // die echte e01 steht weiter im Verzeichnis; ein zweiter Lauf findet nichts mehr zu bereinigen
+    const v = await pakete.verzeichnisVon('de-aus-tr', true);
+    expect(v.einheiten.find((e) => e.schluessel === 'de.a1.e01')?.thema).toEqual(echteE01('de').einheit.thema);
+    expect((await lernappTestkurs(appDb)).alteEinheiten).toEqual([]);
   });
 });

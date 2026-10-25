@@ -41,6 +41,15 @@ async function main() {
     console.log(
       `Lern-App-Testkurs: ${t.bericht.neu} neu, ${t.bericht.geaendert} geändert, ${t.bericht.unveraendert} gleich, ${t.clips} Clips (Testtöne).`,
     );
+    // Stand aus der Zeit vor Stufe C (Testeinheit unter `<kurs>.a1.e01`): Der alte Testkurs hatte Zeilen der echten
+    // Einheiten überschrieben, die der Import oben als unverändert übersprungen hat – einmal erzwungen neu importieren.
+    if (t.alteEinheiten.length) {
+      const e = await importiereLernapp(db, quellen, { erzwingen: true });
+      console.log(
+        `Lern-App-Import erzwungen (alter Testkurs auf ${t.alteEinheiten.join(', ')}): ${e.geaendert} geändert, ${e.gesperrt} gesperrt, ` +
+          `${e.konflikte.length} Konflikte.`,
+      );
+    }
   }
   // Audio: eingecheckte Manifeste (abgeglichen), dann lokale Manifeste (nur ergänzend)
   const ordner = join(INHALT_WURZEL, 'audio-manifest');

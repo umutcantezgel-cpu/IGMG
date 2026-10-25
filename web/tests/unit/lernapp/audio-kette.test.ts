@@ -565,9 +565,12 @@ describe('Stimmen, Aussprache und Namensnennung', () => {
     expect(THORSTEN.id).toBe(`tts:coqui-vits-thorsten-onnx@${THORSTEN.quelle.onnxSha256.slice(0, 16)}`);
     expect(ALLE_STIMMEN).toEqual([THORSTEN]);
     expect([THORSTEN.modellLizenz, THORSTEN.datenLizenz]).toEqual(['Apache-2.0', 'CC0-1.0']);
-    const eintrag = ABSCHNITTE.find((a) => a.id === 'sprachausgabe')?.eintraege.find((e) => e.id === 'thorsten-vits');
+    const abschnitt = ABSCHNITTE.find((a) => a.id === 'sprachausgabe');
+    const eintrag = abschnitt?.eintraege.find((e) => e.id === 'thorsten-vits');
     expect(eintrag?.url).toBe(THORSTEN.modellAdresse);
     expect(eintrag?.herkunft?.url).toBe(THORSTEN.datenAdresse);
+    // /quellen nennt die Sprachen ohne freigegebene Stimme aus dem Register (wie /lern-app/*/quellen, Stufe C)
+    expect(abschnitt?.zusatz).toBe('stimmen');
   });
 
   it('aussprache/de.json: Schema; Phoneme nur für die Thorsten-Stimme und einzelne Wörter; Buchstabennamen vollständig', () => {

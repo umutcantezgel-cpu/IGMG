@@ -69,6 +69,11 @@ docs/deploy/VERCEL.md 2.1, docs/BETRIEB.md 6a, docs/GO-LIVE.md G1.
    `zwei-geraete.spec.ts` selbst (Testdaten, G-04). JS-Budgets am laufenden Server: `node scripts/lernapp-budget.mjs
    http://localhost:<port> --aus <datei.json>` (KERN 4.0 §9; Lighthouse dazu: `MESSEN_ZIEL=<ordner> pnpm messen …`).
 
+   Seit Stufe C liegt die Testeinheit unter `<kurs>.a1.test` (früher `<kurs>.a1.e01`). Eine Entwicklungsdatenbank mit dem
+   alten Testkurs bereinigt `pnpm lernapp:import --testkurs` selbst und importiert die echten Inhalte dann einmal erzwungen
+   neu (ADR 0039, Fortschreibung Stufe C Nr. 5); im Zweifel die Datenbank neu anlegen. Die Testbündel liefert
+   `/lern-app/audio` nur aus, wenn der Testkurs importiert ist.
+
 2. Entwicklungsdatenbank füllen und bauen: `pnpm db:migrate && pnpm db:seed && pnpm inhalte:import && pnpm build`
    (standalone; die Schalter gelten auch beim Bau, weil Seiten vorgerendert werden).
 3. `pnpm test:e2e` legt `igmg_e2e` frisch an (migriert, Seeds, Inhalte) und startet den Standalone-Server auf Port 3100.

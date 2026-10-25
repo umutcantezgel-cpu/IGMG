@@ -132,6 +132,15 @@ Testkurs unter `<kurs>.a1.e01` und ersetzte damit die echte Einheit; über den T
 3. **Hörabnahme im Register:** `Stimme.hoerabnahme` (`'offen' | 'bestanden'`); freigegeben ist eine Stimme erst mit
    `'bestanden'` (LM-06, nur Mensch). Der Prüfer „audio“ blockiert Sprachausgabe einer Stimme mit offener Hörabnahme im
    eingecheckten Manifest; Arbeitsliste und Manifest-Bau nutzen die registrierte Stimme weiter.
+4. **Testbündel nur mit Testkurs:** Ohne Blob-Speicher liefert `/lern-app/audio/…` die Testbündel aus
+   `drizzle/seeds/lernapp-testaudio/` nur, wenn der Testkurs importiert ist (Stand `lernapp_testkurs`); sonst 404. Die
+   Bedingung des Baus steht in `testkursImBau` (`scripts/lernapp/testkurs-im-bau.mjs`, Regeltest). Das Audio-Studio zählt für die Lage
+   („fehlt“/„vorhanden“) nur zulässige Clips, wie Paketbau und wirksame Stimme.
+5. **Alte Entwicklungsdatenbanken:** Ein Stand `lernapp_testkurs` aus der Zeit vor Stufe C (Pfade
+   `testkurs/…/<kurs>.a1.e01.json`) wird beim nächsten `pnpm lernapp:import --testkurs` bereinigt, bevor der Import läuft
+   (sonst sperrte er die echte e01 als „entfernt“); danach importiert das Skript die echten Inhalte einmal erzwungen neu, weil
+   der alte Testkurs ihre Zeilen überschrieben hatte. Wer ganz sicher gehen will, legt die Entwicklungsdatenbank neu an.
+   Geräte früherer Besucher der Test-Domain behalten ihren lokalen Lernstand zu `…a1.e01.l01`–`l04` der alten Testeinheit.
 
 ## Alternativen
 
