@@ -1,5 +1,14 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 09:38 UTC – Haiku gemessen:**
+  - **Verbrauch:** 0,46 um 09:07 → 0,54 um 09:34. Das sind ≈ 0,30 %/min für 6 Haiku-Agenten, ≈ 0,05 je Agent (Opus ≈ 0,14).
+  - **Durchsatz:** 11 Commits in 27 Minuten.
+    - de: Übersetzungen e15/e16, Rückübersetzung e01.
+    - ar: Entwürfe e04–e06.
+    - tr: Entwürfe e09/e10.
+  - **Neu gestartet:** B2 de `wf` (Wortschatzplan mit Opus, danach Haiku).
+  - **Es laufen 4 Inhalts-Workflows:** B1 de, B1 ar, B1 tr, B2 de.
+
 - **Stand 25.10.2026 09:12 UTC – Umstellung auf Haiku für Texte (Nutzer):**
   - **Neue Aufteilung:** Entwurf, Übersetzung und Rückübersetzung laufen mit Haiku 5.5. Wortschatzplan, Lektorat und Schlussprüfung bleiben als Qualitätstor bei Opus, ebenso Technik und Infrastruktur.
   - **Skript `lernapp-inhalte.workflow.js`:** neue Optionen `args.modelle` (Modell je Schritt) und `args.seriell` (1 Agent).
