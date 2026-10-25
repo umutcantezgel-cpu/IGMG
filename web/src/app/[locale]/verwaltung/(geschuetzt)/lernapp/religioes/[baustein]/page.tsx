@@ -15,7 +15,7 @@ import { type BelegFundstelle, ladeReligioesenBaustein } from '@/server/queries/
 
 const STAND_FARBE = ['bg-sand text-tinte-2', 'bg-info-toenung text-info', 'bg-gruen-50 text-gruen-800'] as const;
 
-/** `<typ>-<uuid>` aus der Adresse (z. B. `aussage-…`, `koran_bedeutung-…`). */
+/** `<typ>-<uuid>` aus der Adresse (z. B. `aussage-…`, `koran_bedeutung-…`; die Formelliste hat eine feste Kennung). */
 function zerlege(segment: string): { typ: ReligioeserBausteinTyp; id: string } | null {
   const m = /^([a-z_]+)-([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/.exec(decodeURIComponent(segment));
   return m && istReligioeserBaustein(m[1]) ? { typ: m[1], id: m[2]! } : null;
@@ -72,7 +72,14 @@ export default async function ReligioeserBaustein({ params }: PageProps<'/[local
       </li>
     );
   };
-  const wert = (label: string, w: string) => (label === 'strittig' || label === 'kinderGeeignet' ? (w === 'ja' ? t('ja') : t('nein')) : w);
+  const wert = (label: string, w: string) =>
+    label === 'strittig' || label === 'kinderGeeignet'
+      ? w === 'ja'
+        ? t('ja')
+        : t('nein')
+      : label === 'listenstatus'
+        ? t(w === 'freigegeben' ? 'listenstatusWert.freigegeben' : 'listenstatusWert.gesperrt')
+        : w;
   const darfUrteilen = !b.verfasser && !b.lage.kiHerkunft && !(b.typ === 'aussage' && b.lage.belegFehlt);
 
   return (
@@ -102,6 +109,7 @@ export default async function ReligioeserBaustein({ params }: PageProps<'/[local
         {b.lektion ? <p className="text-16 text-tinte-2">{t('lektion', { schluessel: b.lektion })}</p> : null}
       </section>
 
+      {b.typ === 'formelliste' ? <Meldung art="info">{t('meldung.formelliste')}</Meldung> : null}
       {b.lage.kiHerkunft ? <Meldung art="fehler">{t('meldung.kiHerkunft')}</Meldung> : null}
       {b.typ === 'aussage' && b.lage.belegFehlt ? <Meldung art="fehler">{t('meldung.belegFehlt')}</Meldung> : null}
       {b.unsicher ? <Meldung art="info">{t('meldung.unsicher')}</Meldung> : null}

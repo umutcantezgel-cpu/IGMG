@@ -334,7 +334,7 @@ export function ausgeliefert(basis: string, abruf: typeof fetch = fetch): KoranP
 /**
  * Abfrage am Live-Stand (Tor L6, Z-L03; Tor L6 „Integration + Abfrage“): prüft jede gezeigte Bedeutung der Pakete beider
  * Sprachen gegen die Datenbank, ohne `freigabe.ts` zu fragen – Text gleich der Zeile in `quran_wortbedeutung`, Website-Status
- * nicht „Entwurf“, keine Abweichung an der Stelle, mindestens zwei Personen mit Rolle `religioese_pruefung`, deren jüngste
+ * nicht „Entwurf“, keine Abweichung an der Stelle, mindestens zwei Personen mit Rolle `religioese_pruefung` (ohne Administration), deren jüngste
  * religiöse Prüfung zum aktuellen Hash „ok“ ist und die nicht verfasst haben, und niemand mit der Rolle, der zum aktuellen Hash
  * zuletzt anders urteilt. Dazu: Wortformen nur aus `quran_wort`, kein Audio-Feld, Wortzeiten nur geprüft. Die Pakete kommen
  * frisch aus der Datenbank ({@link frischGebaut}) oder von den ausgelieferten Adressen ({@link ausgeliefert}: findet auch einen
@@ -455,7 +455,8 @@ export async function pruefeKoranSichtbarkeit(quelle: KoranPaketQuelle = frischG
         .where(and(eq(schema.quranWortbedeutung.sprache, sprache), inArray(schema.quranWortbedeutung.formId, block))),
     );
     const bedeutungJe = new Map(bedeutungen.map((b) => [b.formId, b]));
-    // jüngste religiöse Prüfung je Person und Bedeutung, nur Personen mit der Rolle (Administration zählt nie)
+    // jüngste religiöse Prüfung je Person und Bedeutung, nur Personen mit der Rolle und ohne Administration (zählt nie, auch
+    // nicht zusammen mit der Rolle – Stufe C N2)
     const pruefungen = await inBloecken(
       bedeutungen.map((b) => b.id),
       (block) =>
@@ -479,6 +480,7 @@ export async function pruefeKoranSichtbarkeit(quelle: KoranPaketQuelle = frischG
               eq(schema.lernappPruefung.inhaltTyp, 'koran_bedeutung'),
               eq(schema.lernappPruefung.art, 'religioes'),
               inArray(schema.lernappPruefung.inhaltId, block),
+              sql`not exists (select 1 from ${schema.rolleZuweisung} as admin where admin.benutzer_id = ${schema.lernappPruefung.pruefendeId} and admin.rolle = 'administration')`,
             ),
           )
           .orderBy(

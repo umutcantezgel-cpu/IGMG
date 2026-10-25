@@ -9,13 +9,15 @@ import {
   sprachSichtbarkeit,
   stichprobeBestanden,
   wissenSichtbar,
+  zaehltReligioes,
 } from '@/lib/lernapp/freigabe';
 
 /**
  * Zwei-Prüfer-Freigabe (ADR 0040 Nr. 5, KERN 4.0 §2.3) und Sichtbarkeit der Sprachkurse (ADR 0041 Nr. 2/5/7/11).
  * Die Wahrheitstafel unten leitet die Erwartung NICHT aus `freigabe.ts` ab, sondern aus den Regeln:
- * geprüft ⇔ mindestens zwei verschiedene Personen mit Rolle `religioese_pruefung`, je mit „ok“ zum aktuellen Hash, keine
- * davon Verfasser, jeder aktuelle Beleg mit aktuellem Hash bestätigt – und niemand mit der Rolle lehnt zum aktuellen Hash ab.
+ * geprüft ⇔ mindestens zwei verschiedene Personen mit Rolle `religioese_pruefung` (ohne Administration), je mit „ok“ zum
+ * aktuellen Hash, keine davon Verfasser, jeder aktuelle Beleg mit aktuellem Hash bestätigt – und niemand mit der Rolle lehnt
+ * zum aktuellen Hash ab.
  */
 const HASH = 'a'.repeat(64);
 const ALT = 'b'.repeat(64);
@@ -145,11 +147,20 @@ describe('Zwei-Prüfer-Freigabe: Einzelregeln', () => {
     expect(religioesGeprueft({ ...aussage(), inhaltHash: ALT }, pruefungen)).toBe(false);
   });
 
-  it('die Administration zählt nicht, auch nicht mit weiteren Rollen außer religioese_pruefung', () => {
+  it('die Administration zählt nie – auch nicht zusammen mit religioese_pruefung (Stufe C N2, Z-L02)', () => {
     expect(religioesGeprueft(aussage(), [ok('imam'), ok('admin', { pruefendeRollen: ['administration', 'bildung'] })])).toBe(false);
     expect(religioesGeprueft(aussage(), [ok('imam'), ok('admin', { pruefendeRollen: ['administration', 'religioese_pruefung'] })])).toBe(
-      true,
+      false,
     );
+    // zwei eigene Konten der Administration mit beiden Rollen ergeben keine Freigabe
+    const beide = { pruefendeRollen: ['religioese_pruefung', 'administration'] };
+    expect(religioeseLage(aussage(), [ok('admin-1', beide), ok('admin-2', beide)]).freigaben).toEqual([]);
+    // … und auch keinen Einwand: ein Konto mit beiden Rollen zählt weder als Freigabe noch als Sperre
+    const einwand = ok('admin-1', { ...beide, urteil: 'abgelehnt' });
+    expect(religioeseLage(aussage(), [ok('imam'), ok('hoca'), einwand])).toMatchObject({ gesperrt: false, geprueft: true });
+    expect(zaehltReligioes(['religioese_pruefung'])).toBe(true);
+    expect(zaehltReligioes(['religioese_pruefung', 'administration'])).toBe(false);
+    expect(zaehltReligioes(['administration'])).toBe(false);
   });
 
   it('Verfasser des aktuellen Stands (Redaktion, die einen Vorschlag eingearbeitet hat) zählt nicht', () => {
@@ -238,16 +249,40 @@ describe('Sprachkurse: Status, Schalter lernapp_ungeprueft, Religionsbezug (ADR 
   });
 
   it('Religionsbezug: nur mit zwei religiösen Freigaben – unabhängig von Status und Schalter; Stichprobe ersetzt sie nie', () => {
+    const anFrei = { ...an, formellisteFrei: true };
+    const ausFrei = { ...aus, formellisteFrei: true };
     for (const status of ['automatisch_geprueft', 'veroeffentlicht'] as const)
-      for (const o of [an, aus]) {
+      for (const o of [an, aus, anFrei, ausFrei]) {
         expect(sprachSichtbarkeit(eintrag(status, true), [], o)).toBe('verborgen');
         expect(sprachSichtbarkeit(eintrag(status, true), [sprach('ok'), ok('imam', { belegeGeprueft: [] })], o)).toBe('verborgen');
       }
     const zwei = [ok('imam', { belegeGeprueft: [] }), ok('hoca', { belegeGeprueft: [] })];
-    expect(sprachSichtbarkeit(eintrag('veroeffentlicht', true), zwei, aus)).toBe('sichtbar');
-    expect(sprachSichtbarkeit(eintrag('automatisch_geprueft', true), zwei, an)).toBe('mit_hinweis');
-    expect(sprachSichtbarkeit(eintrag('automatisch_geprueft', true), zwei, aus)).toBe('verborgen');
-    expect(sprachSichtbarkeit(eintrag('entwurf', true), zwei, an)).toBe('verborgen');
+    expect(sprachSichtbarkeit(eintrag('veroeffentlicht', true), zwei, ausFrei)).toBe('sichtbar');
+    expect(sprachSichtbarkeit(eintrag('automatisch_geprueft', true), zwei, anFrei)).toBe('mit_hinweis');
+    expect(sprachSichtbarkeit(eintrag('automatisch_geprueft', true), zwei, ausFrei)).toBe('verborgen');
+    expect(sprachSichtbarkeit(eintrag('entwurf', true), zwei, anFrei)).toBe('verborgen');
+    // die Administration (auch mit der Rolle) ersetzt keine der beiden Freigaben
+    const mitAdmin = [
+      ok('imam', { belegeGeprueft: [] }),
+      ok('admin', { belegeGeprueft: [], pruefendeRollen: ['religioese_pruefung', 'administration'] }),
+    ];
+    expect(sprachSichtbarkeit(eintrag('veroeffentlicht', true), mitAdmin, ausFrei)).toBe('verborgen');
+  });
+
+  it('Formelliste (Stufe C N2, Z-L10): gesperrt → Eintrag mit Religionsbezug unsichtbar trotz zwei Freigaben; freigegeben → sichtbar', () => {
+    const zwei = [ok('imam', { belegeGeprueft: [] }), ok('hoca', { belegeGeprueft: [] })];
+    for (const o of [an, aus]) {
+      // Liste gesperrt (bzw. ohne Angabe): unsichtbar, gleich wie viele Eintragsfreigaben und welcher Status
+      expect(sprachSichtbarkeit(eintrag('veroeffentlicht', true), zwei, o)).toBe('verborgen');
+      expect(sprachSichtbarkeit(eintrag('veroeffentlicht', true), zwei, { ...o, formellisteFrei: false })).toBe('verborgen');
+      expect(sprachSichtbarkeit(eintrag('automatisch_geprueft', true), zwei, { ...o, formellisteFrei: false })).toBe('verborgen');
+      // Liste freigegeben + zwei Eintragsfreigaben: sichtbar (veröffentlicht ohne Hinweis)
+      expect(sprachSichtbarkeit(eintrag('veroeffentlicht', true), zwei, { ...o, formellisteFrei: true })).toBe('sichtbar');
+      // Liste freigegeben ersetzt die Eintragsfreigaben nicht
+      expect(sprachSichtbarkeit(eintrag('veroeffentlicht', true), zwei.slice(0, 1), { ...o, formellisteFrei: true })).toBe('verborgen');
+      // Einträge ohne Religionsbezug hängen nicht an der Liste
+      expect(sprachSichtbarkeit(eintrag('veroeffentlicht'), [], { ...o, formellisteFrei: false })).toBe('sichtbar');
+    }
   });
 
   it('Annahmeregel: 0 kritische, höchstens 2 leichte je 20 (anteilig)', () => {

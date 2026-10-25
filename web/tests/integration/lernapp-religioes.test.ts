@@ -259,6 +259,69 @@ describe('Zwei Freigaben: sichtbar erst nach zwei verschiedenen Personen zum akt
   });
 });
 
+describe('Administration zählt nie – auch nicht mit der Rolle religiöse Prüfung (Stufe C N2, Z-L02)', () => {
+  it('Konto mit beiden Rollen: Urteil abgewiesen; Altbestand zweier solcher Konten ergibt keine Freigabe', async () => {
+    await db
+      .update(schema.lernappLektion)
+      .set({ inhaltHash: h('7') })
+      .where(eq(schema.lernappLektion.id, ids.lektion));
+    const beide: RollenZuweisung[] = [{ rolle: 'religioese_pruefung' }, { rolle: 'administration' }];
+    const admin = (await angemeldetAls(beide))!;
+    expect(await urteil('lektion', ids.lektion)).toEqual({ fehler: 'urteil_administration' });
+    expect(await db.select().from(schema.lernappPruefung).where(eq(schema.lernappPruefung.pruefendeId, admin))).toHaveLength(0);
+    // Altbestand (vor N2): zwei Konten mit beiden Rollen haben „ok“ zum aktuellen Hash gegeben
+    for (const person of [admin, (await angemeldetAls(beide))!])
+      await db.insert(schema.lernappPruefung).values({
+        inhaltTyp: 'lektion',
+        inhaltId: ids.lektion,
+        inhaltHash: h('7'),
+        art: 'religioes',
+        pruefendeId: person,
+        urteil: 'ok',
+      });
+    expect(await religioesSichtbar('lektion', ids.lektion)).toBe(false);
+    expect((await ladeReligioesenBaustein('lektion', ids.lektion, 'niemand'))!.stand).toBe(0);
+    // zwei Personen nur mit der Rolle: geprüft
+    await angemeldetAls(RELIGIOES);
+    expect(await urteil('lektion', ids.lektion)).toMatchObject({ hinweis: 'stand_1' });
+    await angemeldetAls(RELIGIOES);
+    expect(await urteil('lektion', ids.lektion)).toMatchObject({ hinweis: 'stand_2' });
+    expect(await religioesSichtbar('lektion', ids.lektion)).toBe(true);
+  });
+});
+
+describe('Formelliste als Ganzes (Stufe C N2, Z-L10, LM-09)', () => {
+  it('in der Warteschlange; zwei Freigaben zum aktuellen Stand → 2/2, sichtbar aber erst mit Status „freigegeben“ im Leitfaden', async () => {
+    const { FORMELLISTE_ID, FORMELN } = await import('@/lib/lernapp/formelliste');
+    const imam = (await angemeldetAls(RELIGIOES))!;
+    const eintrag = (await ladeReligioeseBausteine(imam)).find((b) => b.typ === 'formelliste')!;
+    expect(eintrag).toMatchObject({ id: FORMELLISTE_ID, kurs: null, stand: 0 });
+    const detail = (await ladeReligioesenBaustein('formelliste', FORMELLISTE_ID, imam))!;
+    expect(detail.angaben.map((a) => a.label)).toEqual(['listenstatus', 'formeln']);
+    expect(detail.angaben[1]!.wert.split('\n')).toHaveLength(FORMELN.liste.length);
+    expect(detail.belege).toEqual([]);
+    // ohne Haken „Liste geprüft“ kein „ok“; die Administration (mit Rolle) urteilt nicht
+    expect(await urteil('formelliste', FORMELLISTE_ID, { bestaetigt: '' })).toEqual({ fehler: 'urteil_inhaltBestaetigen' });
+    expect(await urteil('formelliste', FORMELLISTE_ID)).toMatchObject({ hinweis: 'stand_1' });
+    await angemeldetAls([{ rolle: 'religioese_pruefung' }, { rolle: 'administration' }]);
+    expect(await urteil('formelliste', FORMELLISTE_ID)).toEqual({ fehler: 'urteil_administration' });
+    await angemeldetAls(RELIGIOES);
+    expect(await urteil('formelliste', FORMELLISTE_ID)).toMatchObject({ hinweis: 'stand_2' });
+    // 2/2 macht die Sprachkurse neu (Cache-Tag aller drei), sichtbar wird aber nichts, solange der Leitfaden „gesperrt“ sagt
+    expect(aufrufe.updateTag).toEqual(expect.arrayContaining(['lernapp-kurs-de', 'lernapp-kurs-tr', 'lernapp-kurs-ar']));
+    expect((await ladeReligioesenBaustein('formelliste', FORMELLISTE_ID, 'niemand'))!.stand).toBe(2);
+    expect(FORMELN.status).toBe('gesperrt');
+    expect(await religioesSichtbar('formelliste', FORMELLISTE_ID)).toBe(false);
+    // Verlauf wie bei den übrigen Bausteinen
+    const verlauf = await db.select().from(schema.freigabe).where(eq(schema.freigabe.inhaltId, FORMELLISTE_ID));
+    expect(verlauf.map((v) => [v.inhaltTyp, v.status])).toEqual([
+      ['lernapp_formelliste', 'zur_pruefung'],
+      ['lernapp_formelliste', 'geprueft'],
+    ]);
+    await db.delete(schema.lernappPruefung).where(eq(schema.lernappPruefung.inhaltId, FORMELLISTE_ID));
+  });
+});
+
 describe('Koran-Bedeutungen im Lern-App-Pfad', () => {
   it('von Menschen verfasst: zwei andere Personen geben frei; die Verfasserin nicht', async () => {
     expect(await religioesSichtbar('koran_bedeutung', ids.bedeutung)).toBe(false);

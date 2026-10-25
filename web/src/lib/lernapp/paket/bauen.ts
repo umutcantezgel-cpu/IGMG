@@ -22,7 +22,7 @@ import {
  *
  * **Nur Ausgeliefertes** (ADR 0041 Nr. 2, ADR 0040 Nr. 5): Jeder Baustein – Einheit, Lektion, Aufgabe, Zieltext,
  * Übersetzung, Tipp – geht durch `sprachSichtbarkeit` aus `freigabe.ts` (Status, Sprachprüfungen zum aktuellen Hash,
- * zwei religiöse Freigaben bei `religionsbezug`, Schalter `lernapp_ungeprueft`). Eine Aufgabe, deren Ziel oder Übersetzung
+ * zwei religiöse Freigaben und freigegebene Formelliste bei `religionsbezug`, Schalter `lernapp_ungeprueft`). Eine Aufgabe, deren Ziel oder Übersetzung
  * verborgen ist, fällt aus dem Paket; verborgene Ablenker und Paare fallen einzeln weg, solange die Aufgabe spielbar bleibt.
  * Eine Lektion ohne Aufgabe und eine Einheit ohne Lektion gibt es nicht im Paket.
  *
@@ -99,7 +99,11 @@ export type BauEingabe = {
   symbole?: ReadonlyMap<string, SymbolEintrag>;
 };
 
-export type BauOptionen = { ungeprueftZeigen: boolean };
+export type BauOptionen = {
+  ungeprueftZeigen: boolean;
+  /** Formelliste freigegeben (`formelliste.ts`); ohne Angabe gesperrt – dann bleibt jeder Eintrag mit Religionsbezug verborgen. */
+  formellisteFrei?: boolean;
+};
 
 export type BauErgebnis = { paket: Paket; json: string; hash: string; bytes: number; warnungen: string[] };
 

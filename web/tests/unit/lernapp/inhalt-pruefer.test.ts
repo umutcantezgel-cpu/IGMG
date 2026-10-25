@@ -745,6 +745,112 @@ describe('Religionsbezug', () => {
     for (const x of [unten, ohne, artikel]) expect(x).toEqual(['R-10']);
   });
 
+  describe('Formeln der Formelliste (Stufe C N2, Z-L10)', () => {
+    type Formel = (typeof LEITFADEN.religionsbezug.formeln.liste)[number];
+    const leitfaden = (status: 'gesperrt' | 'freigegeben', zusatz: Formel[] = []) => ({
+      ...LEITFADEN,
+      religionsbezug: {
+        ...LEITFADEN.religionsbezug,
+        formeln: { ...LEITFADEN.religionsbezug.formeln, status, liste: [...LEITFADEN.religionsbezug.formeln.liste, ...zusatz] },
+      },
+    });
+    /** Befunde (Schwere und Meldung) je Text; nur die Formel `id`. */
+    const befunde = (
+      l: ReturnType<typeof leitfaden>,
+      id: string,
+      texte: { text: string; sprache: 'de' | 'tr' | 'ar'; religionsbezug?: boolean }[],
+    ) => {
+      const liste = pruefeReligionsbezug(
+        { ...leereInhalte(), leitfaden: { pfad: 'rahmen/leitfaden.json', daten: l } },
+        texte.map((t, i) => ({
+          datei: `sprache/${t.sprache}/b1/${t.sprache}.b1.e01.json`,
+          ort: `s${i}`,
+          sprache: t.sprache,
+          text: t.text,
+          kurs: t.sprache,
+          stufe: 'b1' as const,
+          einheit: `${t.sprache}.b1.e01`,
+          art: 'satz' as const,
+          religionsbezug: t.religionsbezug ?? false,
+          kinder: true,
+        })),
+        DATEN,
+      ).liste;
+      return texte.map((_, i) => befunde0(liste.filter((b) => b.ort === `s${i}` && b.kategorie === id)));
+    };
+    const befunde0 = (l: { schwere: string; text: string }[]) => l.map((b) => `${b.schwere}: ${b.text.split(' – ')[0]}`);
+
+    it('Lateinschrift (F-tr): ohne Kennzeichen blockierend, solange die Liste gesperrt ist; mit Kennzeichen an Menschen', () => {
+      const formel = LEITFADEN.religionsbezug.formeln.liste.find((f) => f.id === 'F-tr-04')!;
+      const satz = `Yarın gelirim, ${formel.begriff}.`;
+      const [ohne, mit] = befunde(leitfaden('gesperrt'), 'F-tr-04', [
+        { text: satz, sprache: 'tr' },
+        { text: satz, sprache: 'tr', religionsbezug: true },
+      ]);
+      expect(ohne).toEqual(['blockierend: Formel aus der Formelliste ohne Kennzeichen religionsbezug: true']);
+      expect(mit).toEqual(['mensch: Formel bei gesperrter Formelliste']);
+      // freigegebene Liste: wie die R-Kandidaten (ohne Kennzeichen an Menschen, mit Kennzeichen nichts)
+      const [frei, freiMit] = befunde(leitfaden('freigegeben'), 'F-tr-04', [
+        { text: satz, sprache: 'tr' },
+        { text: satz, sprache: 'tr', religionsbezug: true },
+      ]);
+      expect(frei).toEqual(['mensch: Religionsbezug-Kandidat ohne Kennzeichen religionsbezug: true']);
+      expect(freiMit).toEqual([]);
+    });
+
+    // Arabisch: ein Formelname, den kaikki nur mit Thema Religion führt (Umschrift aus den Daten, nie von Hand)
+    const kaikki = ladeKaikki('ar', DATEN);
+    const religioes = (e: (typeof kaikki)[number]) => (e.mk ?? []).some((x) => /^thema:(?:islam|religion)$/i.test(x));
+    const name = kaikki.find(
+      (e) =>
+        e.rom &&
+        /^[a-zāīūḥṣḍṭẓʕʔ]{4,}$/u.test(e.rom) &&
+        !e.rom.startsWith('ʔ') &&
+        e.kanon &&
+        /[\u064E\u064F\u0650]/.test(e.kanon) &&
+        !e.kanon.endsWith('\u0629') &&
+        religioes(e) &&
+        kaikki.filter((x) => x.rom && [e.rom, `ʔ${e.rom}`].includes(x.rom)).every(religioes),
+    )!;
+    const F_AR: Formel = { id: 'F-ar-98', sprache: 'ar', begriff: name?.rom ?? '' };
+
+    it('Arabisch (F-ar über die Umschrift): blockierend; Vokale und Tāʾ marbūṭa schärfen das Muster', () => {
+      expect(name).toBeDefined();
+      const kanon = name.kanon!;
+      const VOKALE = ['\u064E', '\u064F', '\u0650'];
+      const erster = [...kanon].findIndex((z) => VOKALE.includes(z));
+      const andererVokal = [...kanon].map((z, i) => (i === erster ? VOKALE[(VOKALE.indexOf(z) + 1) % 3]! : z)).join('');
+      const [vokalisiert, ohneVokale, widerspruch, taMarbuta, pronomen, gekennzeichnet] = befunde(
+        leitfaden('gesperrt', [F_AR]),
+        'F-ar-98',
+        [
+          { text: kanon, sprache: 'ar' },
+          { text: name.w, sprache: 'ar' },
+          { text: andererVokal, sprache: 'ar' },
+          { text: `${kanon}\u0629`, sprache: 'ar' },
+          { text: `${kanon}\u0647`, sprache: 'ar' },
+          { text: kanon, sprache: 'ar', religionsbezug: true },
+        ],
+      );
+      const rot = ['blockierend: Formel aus der Formelliste ohne Kennzeichen religionsbezug: true'];
+      expect(vokalisiert).toEqual(rot);
+      expect(ohneVokale).toEqual(rot);
+      expect(pronomen).toEqual(rot);
+      // anderer Vokal an derselben Stelle: anderes Wort; Tāʾ marbūṭa ist kein abgetrenntes Pronomen
+      expect(widerspruch).toEqual([]);
+      expect(taMarbuta).toEqual([]);
+      expect(gekennzeichnet).toEqual(['mensch: Formel bei gesperrter Formelliste']);
+    });
+
+    it('Arabisch: Namen, die kaikki auch als Alltagswort führt, zählen nicht (Leitfaden: Salām, Qasam)', () => {
+      const salam = kaikki.find((e) => e.rom === 'salām' && e.kanon)!;
+      const qasam = kaikki.find((e) => e.rom === 'qasam' && e.kanon)!;
+      expect(salam.mk ?? []).not.toContainEqual(expect.stringMatching(/religion|islam/i));
+      expect(befunde(leitfaden('gesperrt'), 'F-ar-01', [{ text: salam.kanon!, sprache: 'ar' }])).toEqual([[]]);
+      expect(befunde(leitfaden('gesperrt'), 'F-ar-17', [{ text: qasam.kanon!, sprache: 'ar' }])).toEqual([[]]);
+    });
+  });
+
   it('Prüfstein mit gekennzeichnetem Eintrag und Clip für gekennzeichneten Text sind blockierend', () => {
     const quellen = geaendert('de', (d) => {
       d.saetze[1]!.religionsbezug = true;

@@ -85,7 +85,8 @@ export async function einladen(_vorher: BenutzerZustand, fd: FormData): Promise<
   };
   const p = einladungSchema.safeParse(roh);
   if (!p.success) return { fehler: 'pruefen', feldFehler: feldFehler(p.error), werte };
-  // Schutzrollen (leitung, kinderschutz): nie mit Administration; wirksam erst nach Bestätigung (bei der Annahme beantragt)
+  // Schutzrollen (leitung, kinderschutz, religioese_pruefung): nie mit Administration; wirksam erst nach Bestätigung (bei
+  // der Annahme beantragt)
   const schutz = schutzrollenRegel([], alsZuweisungen(p.data), false);
   if (schutz) return { fehler: schutz, werte };
   const belegt = await emailBelegt(p.data.email);
@@ -152,10 +153,11 @@ const istAdministration = (rollen: { rolle: string }[]) => rollen.some((r) => r.
 const hat = (rollen: { rolle: string }[], rolle: string) => rollen.some((r) => r.rolle === rolle);
 
 /**
- * Rollen speichern. Schutzrollen `leitung` und `kinderschutz` (S-11, ADR 0026; M-2 der Sicherheitsprüfung S1, S2/S3):
- * nie zusammen mit `administration`, nie an sich selbst, und neu vergeben erst wirksam, wenn eine zweite Person mit
- * Leitung oder Kinderschutz bestätigt (`src/lib/rechte/schutzrollen.ts`) – sonst gäbe sich die Administration über
- * „leitung“ den Weg zu Chat-Inhalten selbst frei. Ebenso der Entzug von Leitung, Kinderschutz und religiöser Prüfung bei
+ * Rollen speichern. Schutzrollen `leitung`, `kinderschutz` und `religioese_pruefung` (S-11, ADR 0026; M-2 der
+ * Sicherheitsprüfung S1, S2/S3; Stufe C N2): nie zusammen mit `administration`, nie an sich selbst, und neu vergeben erst
+ * wirksam, wenn eine zweite Person mit Leitung oder Kinderschutz bestätigt (`src/lib/rechte/schutzrollen.ts`) – sonst gäbe
+ * sich die Administration über „leitung“ den Weg zu Chat-Inhalten selbst frei bzw. erzeugte über zwei eigene Konten mit
+ * „religioese_pruefung“ beide religiösen Freigaben allein. Ebenso der Entzug von Leitung, Kinderschutz und religiöser Prüfung bei
  * anderen Konten (N4): beantragt, bis zur Bestätigung weiter wirksam, Mail an die betroffene Person. Jede Vergabe und
  * jeder Entzug steht im Audit und geht als Hinweis an Leitung und Kinderschutz. Administration nie an ein Konto mit
  * Kontoart mit Gruppenzugang oder Gruppenleitung (S-L2 N-1, Gegenrichtung zu `gemeinde-konten.ts` und `gruppen.ts`).
@@ -177,8 +179,8 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
     if (selbst) return { fehler: 'eigeneAdministration', werte: roh };
     if ((await zaehleAdministration(konto.id)) === 0) return { fehler: 'letzteAdministration', werte: roh };
   }
-  // N4: Geschützte Rollen, die wegfallen sollen. Bei anderen Konten bleibt Leitung/Kinderschutz bis zur Bestätigung des
-  // Entzugs wirksam – dann darf das Konto nicht zugleich Administration bekommen (S-11)
+  // N4: Geschützte Rollen, die wegfallen sollen. Bei anderen Konten bleibt die Schutzrolle bis zur Bestätigung des Entzugs
+  // wirksam – dann darf das Konto nicht zugleich Administration bekommen (S-11)
   const entzug = ENTZUG_GESCHUETZT.filter((r) => hat(konto.rollen, r) && !hat(neu, r));
   if (
     !selbst &&

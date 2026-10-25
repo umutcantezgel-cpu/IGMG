@@ -74,6 +74,7 @@
       "bestaetigen": "Bitte das Sperren ausdrücklich bestätigen.",
       "bestaetigenFreigabe": "Bitte die Freigabe ausdrücklich bestätigen.",
       "urteil_keineRolle": "Nur Personen mit der Rolle „Religiöse Prüfung“ prüfen religiöse Bausteine. Die Administration ersetzt keine Prüfung.",
+      "urteil_administration": "Ein Konto mit der Rolle Administration gibt keine religiösen Bausteine frei – auch nicht zusammen mit der Rolle „Religiöse Prüfung“. Beide Rollen gehören in getrennte Hände.",
       "urteil_veraltet": "Der Baustein wurde inzwischen geändert. Bitte die Seite neu laden und den neuen Stand prüfen.",
       "urteil_verfasser": "Sie haben diesen Stand verfasst oder überarbeitet. Prüfen müssen ihn zwei andere Personen.",
       "urteil_kiHerkunft": "KI-Regel 2: Dieser Inhalt darf nicht von einer KI stammen, ist aber so gekennzeichnet. Er lässt sich nicht freigeben – bitte von einem Menschen verfassen lassen.",
@@ -453,7 +454,7 @@
     },
     "religioes": {
       "titel": "Religiöse Prüfung",
-      "einleitung": "Aussagen, Quizfragen und Lektionen des Wissenskurses sowie Koran-Wortbedeutungen im Lern-App-Pfad. Sichtbar wird ein Baustein erst mit zwei Freigaben von zwei verschiedenen Personen zum aktuellen Stand.",
+      "einleitung": "Aussagen, Quizfragen und Lektionen des Wissenskurses, Koran-Wortbedeutungen im Lern-App-Pfad und die Liste erlaubter Alltagsformeln. Sichtbar wird ein Baustein erst mit zwei Freigaben von zwei verschiedenen Personen zum aktuellen Stand.",
       "regeln": "Prüfen Sie jede Aussage an Ihrem eigenen Exemplar des genannten Werks; hier steht nur die Fundstelle. Wer einen Stand verfasst hat, prüft ihn nicht. Jede Änderung setzt beide Freigaben zurück. Sie sehen nicht, wer sonst geprüft hat.",
       "ansichten": "Ansicht",
       "offen": "Zu prüfen ({anzahl})",
@@ -475,7 +476,8 @@
         "aussage": "Aussage",
         "aufgabe": "Quizfrage",
         "lektion": "Lektion",
-        "koran_bedeutung": "Koran-Wortbedeutung"
+        "koran_bedeutung": "Koran-Wortbedeutung",
+        "formelliste": "Formelliste (Alltagsformeln)"
       },
       "kurs": {
         "islam": "Islamisches Wissen",
@@ -539,7 +541,13 @@
         "sprache": "Sprache",
         "bedeutung": "Bedeutung",
         "wurzel": "Wurzel",
-        "anmerkung": "Anmerkung"
+        "anmerkung": "Anmerkung",
+        "listenstatus": "Status im Leitfaden",
+        "formeln": "Formeln (Kennung · Begriff · Art · Anlass · Vorschlag)"
+      },
+      "listenstatusWert": {
+        "gesperrt": "gesperrt – Formeln erscheinen nicht",
+        "freigegeben": "freigegeben"
       },
       "ja": "ja",
       "nein": "nein",
@@ -571,7 +579,8 @@
         "unsicher": "Die Belegprüfung hält mindestens einen Beleg nur für teilweise oder nicht belegt. Bitte besonders genau prüfen.",
         "verfasser": "Sie haben diesen Stand verfasst oder überarbeitet. Prüfen müssen ihn zwei andere Personen.",
         "eigenes": "Ihr Urteil zum aktuellen Stand: {urteil}. Sie können es mit einem neuen Urteil ersetzen.",
-        "belegFehlt": "Diese Aussage hat keinen Beleg und lässt sich nicht freigeben."
+        "belegFehlt": "Diese Aussage hat keinen Beleg und lässt sich nicht freigeben.",
+        "formelliste": "Die Liste erlaubter Alltagsformeln wird als Ganzes geprüft (LM-09). Formeln erscheinen in den Sprachkursen erst, wenn die Liste zwei Freigaben zum aktuellen Stand hat und im Leitfaden als „freigegeben“ steht; bis dahin bleibt jeder Eintrag mit Religionsbezug verborgen, auch mit eigenen Freigaben. Jede Änderung der Liste setzt beide Freigaben zurück. Formeln haben nie eine Sprachausgabe."
       },
       "formular": {
         "titel": "Ihr Urteil",
@@ -580,7 +589,8 @@
         "inhaltHaken": {
           "aufgabe": "Quizfrage geprüft, sie stimmt nach hanefitischer Lehre und passt zur Aussage",
           "lektion": "Lektion geprüft (Lernziel und Eignung für Kinder)",
-          "koran_bedeutung": "Bedeutung geprüft, sie stimmt für diese Wortform"
+          "koran_bedeutung": "Bedeutung geprüft, sie stimmt für diese Wortform",
+          "formelliste": "Liste geprüft: Jede Formel darf als Alltagsformel in den Sprachkursen erscheinen (gekennzeichnet, ohne Sprachausgabe)"
         },
         "urteil": "Urteil",
         "urteile": {

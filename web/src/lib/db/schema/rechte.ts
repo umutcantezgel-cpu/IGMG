@@ -65,9 +65,9 @@ export const einladung = pgTable(
 
 /**
  * Offene Vergabe oder offener Entzug einer Schutzrolle – Vier-Augen-Prinzip (M-2 der Sicherheitsprüfung S1, S2/S3,
- * Nacharbeit N4): Die Administration beantragt, eine zweite Person mit `leitung` oder `kinderschutz` (ohne
+ * Nacharbeit N4, Stufe C N2): Die Administration beantragt, eine zweite Person mit `leitung` oder `kinderschutz` (ohne
  * Administration, nicht die beantragende und nicht die betroffene Person) bestätigt. Erst dann entsteht (Vergabe) bzw.
- * verschwindet (Entzug) die Zeile in `rolle_zuweisung`. Vergabe nur für `leitung`/`kinderschutz`; Entzug zusätzlich für
+ * verschwindet (Entzug) die Zeile in `rolle_zuweisung`. Vergabe und Entzug für `leitung`, `kinderschutz` und
  * `religioese_pruefung`.
  */
 export const rollenAntrag = pgTable(
@@ -85,9 +85,6 @@ export const rollenAntrag = pgTable(
   (t) => [
     unique('rollen_antrag_eindeutig').on(t.benutzerId, t.rolle),
     check('rollen_antrag_art', sql`${t.art} in ('vergabe', 'entzug')`),
-    check(
-      'rollen_antrag_schutzrolle',
-      sql`${t.rolle} in ('leitung', 'kinderschutz') or (${t.art} = 'entzug' and ${t.rolle} = 'religioese_pruefung')`,
-    ),
+    check('rollen_antrag_schutzrolle', sql`${t.rolle} in ('leitung', 'kinderschutz', 'religioese_pruefung')`),
   ],
 );

@@ -5,6 +5,7 @@ import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import { datenbankVerfuegbar, ohneLaufzeitDatenbank } from '@/lib/db/verfuegbar';
 import { funktionAn } from '@/lib/funktionen';
+import { FORMELLISTE_ID, FORMELN, formellisteFrei } from '@/lib/lernapp/formelliste';
 import { type Pruefung, sprachlichGesperrt } from '@/lib/lernapp/freigabe';
 import { AufgabeVorlageSchema, verweiseVon } from '@/lib/lernapp/inhalt/schema';
 import {
@@ -381,10 +382,20 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
   });
 }
 
+/**
+ * Formelliste freigegeben (KERN 4.0 §2.3, LM-09; `formelliste.ts`)? Zwei religiöse Freigaben zum aktuellen Stand der Liste
+ * und Status „freigegeben“ im Leitfaden. Sonst bleiben alle Einträge mit Religionsbezug verborgen.
+ */
+export async function formellisteFreigegeben(): Promise<boolean> {
+  const p = await ladePruefungen([{ typ: 'formelliste', id: FORMELLISTE_ID }]);
+  return formellisteFrei(FORMELN, p.get(`formelliste:${FORMELLISTE_ID}`) ?? []);
+}
+
 /** Alle ausgelieferten Einheiten einer Richtung (bzw. eine). */
 export async function baueRichtung(richtung: RichtungId, ungeprueftZeigen: boolean, einheit?: string): Promise<BauErgebnis[]> {
-  return (await ladeBauEingaben(richtung, einheit)).flatMap((e) => {
-    const r = baueEinheit(e, { ungeprueftZeigen });
+  const [eingaben, frei] = await Promise.all([ladeBauEingaben(richtung, einheit), formellisteFreigegeben()]);
+  return eingaben.flatMap((e) => {
+    const r = baueEinheit(e, { ungeprueftZeigen, formellisteFrei: frei });
     return r ? [r] : [];
   });
 }

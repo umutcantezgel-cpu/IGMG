@@ -15,7 +15,7 @@ import {
   standBaum,
   type StatusZaehlung,
 } from '@/lib/lernapp/verwaltung/quoten';
-import { ladeBauEingaben } from './pakete';
+import { formellisteFreigegeben, ladeBauEingaben } from './pakete';
 import { zaehleOffeneLernappMeldungen } from './meldungen';
 
 /**
@@ -246,7 +246,8 @@ export async function ladeKursBaum(kurs: KursId): Promise<BaumAbschnitt[]> {
 /**
  * Lektion für die Vorschau im echten Spieler (PLAN §7.1): Entwürfe und automatisch geprüfte Einträge sichtbar, ohne Hinweis;
  * gesperrte nie. Sprachprüfungen bleiben außen vor (die Vorschau zeigt den Entwurf), die religiöse Freigabe nicht: Einträge
- * mit Religionsbezug erscheinen auch hier erst mit zwei Freigaben (KERN 4.0 §2.3). Kein Ereignis, keine Speicherung.
+ * mit Religionsbezug erscheinen auch hier erst mit zwei Freigaben und freigegebener Formelliste (KERN 4.0 §2.3). Kein
+ * Ereignis, keine Speicherung.
  */
 export async function ladeVorschau(richtung: RichtungId, lektion: string): Promise<{ lektion: Lektion; warnungen: string[] } | null> {
   const einheit = lektion.split('.').slice(0, 3).join('.');
@@ -266,7 +267,7 @@ export async function ladeVorschau(richtung: RichtungId, lektion: string): Promi
       uebersetzungen: new Map([...eingabe.uebersetzungen].map(([k, v]) => [k, vorschau(v)])),
       tipps: eingabe.tipps.map(vorschau),
     },
-    { ungeprueftZeigen: true },
+    { ungeprueftZeigen: true, formellisteFrei: await formellisteFreigegeben() },
   );
   const kurs = einheit.split('.')[0] as KursId;
   const gesucht = lektionImPaket(richtung, kurs, lektion);

@@ -76,6 +76,11 @@ describe('pruefeUrteil – wer darf welches Urteil abgeben', () => {
       expect(pruefeUrteil(antrag({ pruefendeRollen: ['administration'], urteil }), [])).toBe('keineRolle');
   });
 
+  it('Administration mit der Rolle religiöse Prüfung: administration – urteilt nie (Stufe C N2, Z-L02)', () => {
+    for (const urteil of ['ok', 'aenderungsvorschlag', 'abgelehnt'] as const)
+      expect(pruefeUrteil(antrag({ pruefendeRollen: ['religioese_pruefung', 'administration'], urteil }), [])).toBe('administration');
+  });
+
   it('veralteter Hash (Inhalt seit dem Öffnen geändert): veraltet', () => {
     expect(pruefeUrteil(antrag({ gesehenerHash: NEU }), [])).toBe('veraltet');
   });

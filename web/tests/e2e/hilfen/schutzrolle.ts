@@ -11,11 +11,12 @@ function datenbankAdresse(): string {
 
 /**
  * Testdaten (G-04): macht den offenen Antrag auf eine Schutzrolle eines Testkontos sofort wirksam – ohne zweite Person.
- * Eine Einladung mit `kinderschutz` ergibt seit N4 nur einen Antrag (Vier-Augen-Prinzip, `lib/rechte/schutzrollen.ts`);
+ * Eine Einladung mit `kinderschutz` (seit N4) bzw. `religioese_pruefung` (seit Stufe C N2) ergibt nur einen Antrag
+ * (Vier-Augen-Prinzip, `lib/rechte/schutzrollen.ts`);
  * diesen Ablauf prüft `tests/integration/sicherheit-n4-vier-augen.test.ts`. Specs, die nur die Oberfläche der Rolle
  * prüfen (Z-07), brauchen die Rolle unabhängig davon, ob in diesem Lauf schon eine Leitung wirksam ist.
  */
-export async function schutzrolleWirksam(email: string, rolle: 'kinderschutz' | 'leitung') {
+export async function schutzrolleWirksam(email: string, rolle: 'kinderschutz' | 'leitung' | 'religioese_pruefung') {
   const client = new pg.Client({ connectionString: datenbankAdresse() });
   await client.connect();
   try {
