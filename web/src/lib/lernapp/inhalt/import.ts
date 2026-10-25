@@ -565,6 +565,9 @@ async function importiereUebersetzung(l: Lauf, d: UebersetzungDatei, pfad: strin
   );
 }
 
+/** Höchstzahl Schlüssel je Verweis-Abfrage (deutlich unter der Parametergrenze des PostgreSQL-Protokolls). */
+export const VERWEISE_JE_ABFRAGE = 5000
+
 /** Verweise aller Aufgaben der importierten Einheiten müssen auf Lemmata oder Sätze zeigen, die es gibt. */
 async function pruefeVerweise(tx: Transaktion, dateien: readonly { pfad: string; d: SprachEinheitDatei }[]): Promise<void> {
   const verweise = new Map<string, string>();
@@ -572,11 +575,17 @@ async function pruefeVerweise(tx: Transaktion, dateien: readonly { pfad: string;
     for (const l of d.lektionen) for (const a of l.aufgaben) for (const v of verweiseVon(a)) verweise.set(v, `${pfad}: ${a.schluessel}`);
   if (!verweise.size) return;
   const liste = [...verweise.keys()];
-  const [lemmata, saetze] = await Promise.all([
-    tx.select({ s: schema.lernappLemma.schluessel }).from(schema.lernappLemma).where(inArray(schema.lernappLemma.schluessel, liste)),
-    tx.select({ s: schema.lernappSatz.schluessel }).from(schema.lernappSatz).where(inArray(schema.lernappSatz.schluessel, liste)),
-  ]);
-  const bekannt = new Set([...lemmata, ...saetze].map((z) => z.s));
+  // In Blöcken abfragen: Das PostgreSQL-Protokoll zählt Parameter mit 16 Bit (höchstens 32.767 je Abfrage). Bei mehr
+  // Verweisen lief die Abfrage über und meldete jeden Verweis als unbekannt (Import aller Stufen ab B1, 25.10.2026).
+  const bekannt = new Set<string>();
+  for (let i = 0; i < liste.length; i += VERWEISE_JE_ABFRAGE) {
+    const block = liste.slice(i, i + VERWEISE_JE_ABFRAGE);
+    const [lemmata, saetze] = await Promise.all([
+      tx.select({ s: schema.lernappLemma.schluessel }).from(schema.lernappLemma).where(inArray(schema.lernappLemma.schluessel, block)),
+      tx.select({ s: schema.lernappSatz.schluessel }).from(schema.lernappSatz).where(inArray(schema.lernappSatz.schluessel, block)),
+    ]);
+    for (const z of [...lemmata, ...saetze]) bekannt.add(z.s);
+  }
   const fehlen = liste.filter((v) => !bekannt.has(v));
   if (fehlen.length) throw new ImportFehler(fehlen.map((v) => `${verweise.get(v)} verweist auf unbekanntes ${v}`));
 }
