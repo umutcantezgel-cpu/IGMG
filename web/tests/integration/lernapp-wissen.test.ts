@@ -304,11 +304,16 @@ describe('Testeinheit aus dem Seed (Vorführpfad Station 6)', () => {
     expect((await paket(TEST_WISSEN_EINHEIT)).hash).toBe(erster.hash);
   });
 
-  it('verweigert die Testfreigaben in der Produktion mit eigener Datenbank', async () => {
+  it('verweigert die Testfreigaben in der Produktion mit eigener Datenbank und auf der öffentlichen Test-Domain', async () => {
     vi.stubEnv('SITE_MODE', 'produktion');
     vi.stubEnv('BAU_PGLITE', '');
     expect(await lernappTestWissen(appDb)).toBeNull();
+    // Vercel-Bau (Beispielmodus): nur mit ausdrücklich angefordertem Testkurs
     vi.stubEnv('BAU_PGLITE', '1');
+    vi.stubEnv('VERCEL', '1');
+    vi.stubEnv('LERNAPP_TESTKURS', '');
+    expect(await lernappTestWissen(appDb)).toBeNull();
+    vi.stubEnv('LERNAPP_TESTKURS', '1');
     expect(await lernappTestWissen(appDb, new Date('2026-10-23T12:00:00Z'))).not.toBeNull();
   });
 });

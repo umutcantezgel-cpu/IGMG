@@ -1,7 +1,8 @@
 // Testeinheit des Wissenskurses mit Testfreigaben zweier Prüfkonten (AUFTRAG §6 Station 6, PLAN §3.11, ADR 0040 Nr. 5).
-// Nur für E2E, Entwicklung und einen Beispielmodus, der den Testkurs anfordert – nie in der Produktion: läuft nur mit
-// `pnpm lernapp:import --testkurs` (scripts/lernapp/import.ts) und verweigert die Testfreigaben in der Betriebsart
-// „produktion“ mit eigener Datenbank. In der Produktion zeigt der Wissenskurs ohne echte Freigaben nur den Platzhalter.
+// Nur für E2E, Entwicklung und einen Beispielmodus, der den Testkurs anfordert (LERNAPP_TESTKURS=1) – nie in der Produktion
+// und nie auf der öffentlichen Test-Domain: läuft nur mit `pnpm lernapp:import --testkurs` (scripts/lernapp/import.ts) und
+// verweigert die Testfreigaben in der Betriebsart „produktion“ mit eigener Datenbank sowie im Vercel-Bau ohne
+// LERNAPP_TESTKURS=1. Dort zeigt der Wissenskurs ohne echte Freigaben nur den Platzhalter.
 // - KI-Regel 2 (ADR 0040, KERN 4.0 §2): KEINE religiösen Inhalte – Lektion, Aussagen, Beleg und Quizfragen sind Platzhalter
 //   in eckigen Klammern; die Quelle ist eine Testquelle, kein Werk des Registers. Keine arabische Schrift.
 // - Eigener Ort wie die Testeinheiten der Sprachkurse (`<kurs>.a1.test`, Paket N1): Einheit `islam.grund.test` – sie ersetzt
@@ -99,8 +100,13 @@ export const TEST_WISSEN: { thema: string; lektionen: Lektion[] } = {
   ],
 };
 
-/** Testfreigaben nur außerhalb der Produktion mit eigener Datenbank (Bau ohne Datenbank, E2E, Entwicklung). */
+/**
+ * Testfreigaben nur außerhalb der Produktion mit eigener Datenbank (Bau ohne Datenbank, E2E, Entwicklung) – und im
+ * Vercel-Bau nur, wenn der Testkurs ausdrücklich angefordert ist (`LERNAPP_TESTKURS=1`): Die öffentliche Test-Domain zeigt
+ * keine Testeinheit mit Prüfvermerk (wie die Testeinheiten der Sprachkurse, Paket N1 / Stufe C L15-1).
+ */
 export function testfreigabenErlaubt(env: NodeJS.ProcessEnv = process.env): boolean {
+  if (env.VERCEL === '1' && env.LERNAPP_TESTKURS !== '1') return false;
   return betriebsart(env) !== 'produktion' || env.BAU_PGLITE === '1';
 }
 
