@@ -1,5 +1,18 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 10:48 UTC:**
+  - **Durchsatz mit Haiku:** 19 Commits von 10:03 bis 10:46.
+    - B1 de: Rückübersetzungen e01–e10.
+    - B1 tr: Entwürfe e09–e16, Lektorate e01/e02, Übersetzungen e03/e04.
+    - B1 ar: Entwürfe e04–e11.
+    - B2 de: Wortschatzplan (`scratchpad/l3/b2/plan-de.json`) und Entwürfe e01–e03.
+  - **Taktung:** Auslastung 0,88 um 10:43, Reset 11:10. B2 de `wf_f539bb09-380` direkt nach dem Commit 419b6bab angehalten.
+  - **Nach dem Reset (≈ 11:12) zuerst B2 de fortsetzen:**
+    - `plan` = `scratchpad/l3/b2/plan-de.json`, `entworfen` e01–e03.
+    - modelle haiku für entwurf, uebersetzung und rueck.
+    - Teilstand e04 in `scratchpad/l3/b2/e04`.
+  - **Danach Warteschlange:** B2 tr (neuer Plan), B2 ar, dann C1.
+
 - **Stand 25.10.2026 09:38 UTC – Haiku gemessen:**
   - **Verbrauch:** 0,46 um 09:07 → 0,54 um 09:34. Das sind ≈ 0,30 %/min für 6 Haiku-Agenten, ≈ 0,05 je Agent (Opus ≈ 0,14).
   - **Durchsatz:** 11 Commits in 27 Minuten.
