@@ -46,7 +46,8 @@ export default defineConfig({
     command: 'node scripts/e2e-datenbank.mjs && node scripts/start-standalone.mjs',
     url: `${BASIS}/api/health`,
     reuseExistingServer: false,
-    timeout: 120_000,
+    // Die E2E-Datenbank importiert alle Lern-App-Inhalte (Stand 25.10.2026: ≈ 147.000 Einträge, gemessen 158 s) vor dem Start.
+    timeout: 600_000,
     env: {
       PORT: String(PORT),
       APP_URL: BASIS,
