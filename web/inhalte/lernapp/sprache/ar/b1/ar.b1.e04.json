@@ -120,8 +120,6 @@
       },
       "formen": {
         "plural": "حُصُون",
-        "plural_2": "حِصَنَة",
-        "plural_obl": "حُصِينَ",
         "akkusativ_indef": "حِصْنًا",
         "dual": "حِصْنَانِ",
         "dual_obl": "حِصْنَيْنِ"
@@ -721,7 +719,7 @@
       "wortart": "nomen",
       "merkmale": {
         "umschrift": "raḥḥāla",
-        "genus": "f"
+        "genus": "m"
       },
       "formen": {
         "dual": "رَحَّالَتَانِ",
@@ -897,9 +895,7 @@
         "subjunktiv_3du_m": "يَبْعُدَا",
         "praesens_2du": "تَبْعُدَانِ",
         "subjunktiv_2du": "تَبْعُدَا",
-        "praesens_3pl_f": "يَبْعُدْنَ",
-        "partizip_aktiv": "بَاعِد",
-        "partizip_aktiv_f": "بَاعِدَة"
+        "praesens_3pl_f": "يَبْعُدْنَ"
       },
       "frequenzRang": 358,
       "quelle": "wiktionary:en:بعد",
@@ -1026,7 +1022,7 @@
       "formen": {
         "feminin": "وُسْطَى",
         "plural_m": "أَوَاسِط",
-        "plural_f": "وُسَط"
+        "plural_f": "وُسْطَيَات"
       },
       "frequenzRang": 543,
       "quelle": "wiktionary:en:أوسط",
@@ -1351,10 +1347,12 @@
         "genus": "f"
       },
       "formen": {
-        "plural": "لَيْلَاتٌ",
+        "plural": "لَيَالٍ",
         "dual": "لَيْلَتَانِ",
         "dual_obl": "لَيْلَتَيْنِ",
-        "stamm_vor_suffix": "لَيْلَت"
+        "stamm_vor_suffix": "لَيْلَت",
+        "plural_def": "لَيَالِي",
+        "plural_2": "لَيْلَات"
       },
       "frequenzRang": 1398,
       "quelle": "wiktionary:en:ليلة",
@@ -1841,7 +1839,7 @@
     },
     {
       "schluessel": "ar.b1.e04.s0029",
-      "text": "يَتَعَلَّمُ يَزَنُ اللُّغَةَ الرُّوسِيَّةَ فِي الْجَامِعَةِ.",
+      "text": "يَتَعَلَّمُ يَزَنُ اللُّغَةَ الْإِسْبَانِيَّةَ فِي الْمَدْرَسَةِ.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1989,7 +1987,7 @@
     },
     {
       "schluessel": "ar.b1.e04.s0053",
-      "text": "نُفَضِّلُ الطَّائِرَةَ، فَهِيَ أَسْرَعُ مِنَ الْقَارِبِ.",
+      "text": "نُفَضِّلُ الطَّائِرَةَ، فَهِيَ أَسْرَعُ مِنَ السَّفِينَةِ.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2269,7 +2267,7 @@
     },
     {
       "schluessel": "ar.b1.e04.s0099",
-      "text": "صَبَاحَ الْخَيْرِ، اسْتِقْبَالُ الْفُنْدُقِ، كَيْفَ أُسَاعِدُكِ؟",
+      "text": "صَبَاحَ الْخَيْرِ، اسْتِقْبَالُ الْفُنْدُقِ، كَيْفَ أُسَاعِدُكُمْ؟",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3315,7 +3313,7 @@
     },
     {
       "schluessel": "ar.b1.e04.s0272",
-      "text": "سَاعَدَهُمْ تَاجِرٌ لَطِيفٌ، وَمَشَى مَعَهُمْ حَتَّى الْمِينَاءِ.",
+      "text": "سَاعَدَهُمْ تَاجِرٌ لَطِيفٌ، وَمَشَى مَعَهُمْ حَتَّى الْفُنْدُقِ.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3687,6 +3685,12 @@
       "text": "عِنْدَنَا غُرْفَةٌ مُزْدَوِجَةٌ وَجَنَاحٌ.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "ar.b1.e04.s0334",
+      "text": "الْحَجْزُ لِشَهْرِ تَمُّوزَ، أَيْ لِشَهْرِ يُولْيُو.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     }
   ],
   "lektionen": [
@@ -3821,7 +3825,7 @@
           "schluessel": "ar.b1.e04.l01.a09",
           "typ": "wortbank",
           "anweisung": "uebersetze",
-          "satz": "ar.b1.e04.s0014",
+          "satz": "ar.b1.e04.s0032",
           "nach": "ausgang"
         },
         {
@@ -3829,11 +3833,11 @@
           "typ": "satzbau",
           "ziel": "ar.b1.e04.s0029",
           "alternativen": [
-            "يَزَنُ يَتَعَلَّمُ اللُّغَةَ الرُّوسِيَّةَ فِي الْجَامِعَةِ.",
-            "فِي الْجَامِعَةِ يَتَعَلَّمُ يَزَنُ اللُّغَةَ الرُّوسِيَّةَ.",
-            "يَتَعَلَّمُ يَزَنُ فِي الْجَامِعَةِ اللُّغَةَ الرُّوسِيَّةَ.",
-            "يَزَنُ يَتَعَلَّمُ فِي الْجَامِعَةِ اللُّغَةَ الرُّوسِيَّةَ.",
-            "فِي الْجَامِعَةِ يَزَنُ يَتَعَلَّمُ اللُّغَةَ الرُّوسِيَّةَ."
+            "يَزَنُ يَتَعَلَّمُ اللُّغَةَ الْإِسْبَانِيَّةَ فِي الْمَدْرَسَةِ.",
+            "فِي الْمَدْرَسَةِ يَتَعَلَّمُ يَزَنُ اللُّغَةَ الْإِسْبَانِيَّةَ.",
+            "يَتَعَلَّمُ يَزَنُ فِي الْمَدْرَسَةِ اللُّغَةَ الْإِسْبَانِيَّةَ.",
+            "يَزَنُ يَتَعَلَّمُ فِي الْمَدْرَسَةِ اللُّغَةَ الْإِسْبَانِيَّةَ.",
+            "فِي الْمَدْرَسَةِ يَزَنُ يَتَعَلَّمُ اللُّغَةَ الْإِسْبَانِيَّةَ."
           ]
         },
         {
@@ -4125,7 +4129,14 @@
         {
           "schluessel": "ar.b1.e04.l03.a05",
           "typ": "paare",
-          "lemmata": ["ar.b1.e04.tarikhi", "ar.b1.e04.rumani", "ar.b1.e04.thaqafi", "ar.b1.e04.siyahi", "ar.b1.e04.ifriqi"]
+          "lemmata": [
+            "ar.b1.e04.tarikhi",
+            "ar.b1.e04.rumani",
+            "ar.b1.e04.thaqafi",
+            "ar.b1.e04.siyahi",
+            "ar.b1.e04.ifriqi",
+            "ar.b1.e04.athari"
+          ]
         },
         {
           "schluessel": "ar.b1.e04.l03.a06",
@@ -4382,6 +4393,13 @@
             "يَبْعُدُ الْمِينَاءَ عَنِ الْفُنْدُقِ عَشْرَ دَقَائِقَ بِالسَّيَّارَةِ.",
             "يَبْعُدُ الْمِينَاءُ عَنِ الْفُنْدُقُ عَشْرَ دَقَائِقَ بِالسَّيَّارَةِ."
           ]
+        },
+        {
+          "schluessel": "ar.b1.e04.l04.a15",
+          "typ": "luecke",
+          "ziel": "ar.b1.e04.s0207",
+          "wort": 8,
+          "ablenker": ["الْأَوْسَطِ", "أَوْسَطُ"]
         }
       ]
     },
@@ -4593,7 +4611,14 @@
         {
           "schluessel": "ar.b1.e04.l05.a15",
           "typ": "sprechen",
-          "satz": "ar.b1.e04.s0257"
+          "satz": "ar.b1.e04.s0100"
+        },
+        {
+          "schluessel": "ar.b1.e04.l05.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "ar.b1.e04.s0334",
+          "nach": "ausgang"
         }
       ]
     },
@@ -4950,7 +4975,7 @@
           "schluessel": "ar.b1.e04.l07.a10",
           "typ": "luecke",
           "ziel": "ar.b1.e04.s0070",
-          "wort": 5,
+          "wort": 4,
           "ablenker": ["وَعَشْرُ", "وَعِشْرُونَ"]
         },
         {
@@ -5032,7 +5057,7 @@
         {
           "schluessel": "ar.b1.e04.l07.a20",
           "typ": "sprechen",
-          "satz": "ar.b1.e04.s0012"
+          "satz": "ar.b1.e04.s0257"
         }
       ]
     },
@@ -5042,7 +5067,7 @@
       "ziel": {
         "de": "Ich kann zeigen, dass ich eine Reise planen, eine Unterkunft buchen und von Sehenswürdigkeiten berichten kann.",
         "tr": "Bir yolculuk planlayabildiğimi, konaklama ayırtabildiğimi ve görülecek yerleri anlatabildiğimi gösterebilirim.",
-        "ar": "أستطيع أن أبين أنني أخطط لرحلة وأحجز مكانا للإقامة وأتحدث عن الأماكن السياحية."
+        "ar": "أستطيع أن أبين أنني قادر على التخطيط لرحلة وحجز مكان للإقامة والحديث عن الأماكن السياحية."
       },
       "aufgaben": [
         {
@@ -5132,10 +5157,19 @@
         },
         {
           "schluessel": "ar.b1.e04.l08.a12",
-          "typ": "hoeren_waehlen",
-          "anweisung": "waehleBedeutung",
-          "ziel": "ar.b1.e04.s0230",
-          "ablenker": ["ar.b1.e04.s0227", "ar.b1.e04.s0114"]
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "ar.b1.e04.s0224"
+            },
+            {
+              "sprecher": "a",
+              "satz": "ar.b1.e04.s0225"
+            }
+          ],
+          "antwort": "ar.b1.e04.s0229",
+          "ablenker": ["ar.b1.e04.s0232", "ar.b1.e04.s0223"]
         },
         {
           "schluessel": "ar.b1.e04.l08.a13",
