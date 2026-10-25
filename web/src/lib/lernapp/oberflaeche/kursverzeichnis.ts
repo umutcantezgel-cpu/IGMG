@@ -1,6 +1,6 @@
 import type { Lektion } from '../aufgaben/schema';
 import type { Oberflaeche, Sprache, Stufe } from '../kurse';
-import type { Verzeichnis, VerzeichnisEinheit } from '../paket/typen';
+import type { Verzeichnis, VerzeichnisEinheit, WissensLektionVermerk } from '../paket/typen';
 
 /**
  * Lernpfad aus dem Kursverzeichnis (PLAN §3.1, §3.10; ADR 0039): Abschnitte (Stufen) → Einheiten (Stationen) → Lektionen.
@@ -35,10 +35,18 @@ export function themaVon(
   return null;
 }
 
-/** Was der Lernpfad aus einem Paket liest (volles `Paket` oder nur sein Kopf aus `lokal/vorrat.ts`). */
-export type PaketInhalt = { lektionen: readonly Pick<Lektion, 'schluessel' | 'titel' | 'art'>[]; tipps: readonly unknown[] };
+/** Prüfvermerk einer Lektion des Wissenskurses (Datum der Freigabe, „für Kinder geeignet“). */
+export type LektionsVermerk = Pick<WissensLektionVermerk, 'geprueftAm' | 'kinderGeeignet'>;
 
-export type LektionsEintrag = Pick<Lektion, 'schluessel' | 'titel' | 'art'> & { erledigt: boolean };
+/** Was der Lernpfad aus einem Paket liest (volles `Paket` oder nur sein Kopf aus `lokal/vorrat.ts`). */
+export type PaketInhalt = {
+  lektionen: readonly Pick<Lektion, 'schluessel' | 'titel' | 'art'>[];
+  tipps: readonly unknown[];
+  /** nur Wissenskurs: Prüfvermerk je Lektion */
+  wissen?: Readonly<Record<string, LektionsVermerk>>;
+};
+
+export type LektionsEintrag = Pick<Lektion, 'schluessel' | 'titel' | 'art'> & { erledigt: boolean; vermerk?: LektionsVermerk };
 
 export type Station = {
   einheit: VerzeichnisEinheit;
@@ -64,12 +72,16 @@ export function abschnitte(v: Verzeichnis, erledigt: ReadonlySet<string>, pakete
     const praefix = lektionsPraefix(v, einheit.schluessel);
     const paket = pakete.get(einheit.schluessel);
     const lektionen = paket
-      ? paket.lektionen.map((l) => ({
-          schluessel: l.schluessel,
-          art: l.art,
-          ...(l.titel ? { titel: l.titel } : {}),
-          erledigt: erledigt.has(l.schluessel),
-        }))
+      ? paket.lektionen.map((l) => {
+          const v = paket.wissen?.[l.schluessel];
+          return {
+            schluessel: l.schluessel,
+            art: l.art,
+            ...(l.titel ? { titel: l.titel } : {}),
+            erledigt: erledigt.has(l.schluessel),
+            ...(v ? { vermerk: { geprueftAm: v.geprueftAm, kinderGeeignet: v.kinderGeeignet } } : {}),
+          };
+        })
       : null;
     const geschafft = lektionen ? lektionen.filter((l) => l.erledigt).length : [...erledigt].filter((l) => l.startsWith(praefix)).length;
     const aktuell = !aktuellGesetzt && geschafft < einheit.lektionen;

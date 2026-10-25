@@ -15,7 +15,8 @@ export const ZuordnenSchema = z
     ...wissen,
     typ: z.literal('zuordnen'),
     anweisung: z.enum(['ordneZu']),
-    kategorien: liste(text(80), 2, 6),
+    /** Kategorien (bis 120 Zeichen wie `rechts` in den Inhaltsdateien des Wissenskurses) */
+    kategorien: liste(text(120), 2, 6),
     /** Einträge mit dem Index ihrer Kategorie (Anzeige gemischt) */
     eintraege: liste(z.strictObject({ text: text(300), kategorie: ab(0) }), 2, 12),
   })

@@ -1,5 +1,5 @@
 import type { Lektion } from '../aufgaben/schema';
-import { istKurs, istKursSlug, istRichtung, istSprache, type KursSlug, STUFEN } from '../kurse';
+import { istKurs, istKursSlug, istPaketKurs, istSprache, type KursSlug, STUFEN } from '../kurse';
 import { INHALT_LIZENZ, PAKET_FORMAT, paketAdresse, VERZEICHNIS_FORMAT, verzeichnisAdresse } from '../paket/kennungen';
 import type { Paket, Verzeichnis, VerzeichnisEinheit } from '../paket/typen';
 import type { PaketEintrag, Speicher } from './db';
@@ -109,13 +109,17 @@ export function istVerzeichnis(x: unknown): x is Verzeichnis {
 /** Ein Einheitenpaket, so weit Lernpfad und Offline-Speichern es lesen (Lektionen nur mit Kopf). */
 export type PaketKopf = Omit<Paket, 'lektionen'> & { lektionen: Pick<Lektion, 'schluessel' | 'titel' | 'art'>[] };
 
-/** Kopf eines Einheitenpakets (Format, Richtung, Einheit, Lektionen mit Schlüssel und Art); die volle Prüfung macht `pakete.ts`. */
+/**
+ * Kopf eines Einheitenpakets (Format, Richtung bzw. Wissenskurs, Einheit, Lektionen mit Schlüssel und Art); die volle Prüfung
+ * macht `pakete.ts`. Der Prüfvermerk des Wissenskurses (`wissen`) ist ein Objekt oder fehlt.
+ */
 export function istPaketKopf(x: unknown): x is PaketKopf {
   return (
     istObjekt(x) &&
     x.format === PAKET_FORMAT &&
     x.version === 1 &&
-    istRichtung(x.kurs) &&
+    istPaketKurs(x.kurs) &&
+    (x.wissen === undefined || istObjekt(x.wissen)) &&
     istSprache(x.zielsprache) &&
     istSprache(x.ausgangssprache) &&
     istObjekt(x.einheit) &&

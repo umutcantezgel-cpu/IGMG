@@ -11,7 +11,9 @@ import { bietePaketeAn, lektion } from './synthetisch';
  * Übungstypen aus L2-03 (PLAN §4 „Wissenskurs“, Koran-Arabisch; KERN 4.0 §7–§8): `wahr_falsch`, `zuordnen`, `reihenfolge`,
  * `fallfrage` und `koran_wort` je per Tastatur (desktop) und per Tippen (telefon), dazu die arabische Oberfläche von rechts
  * nach links mit deutschem Inhalt. Die Inhalte sind Platzhalter (KI-Regel 2) in einem synthetischen Paket, das der Test
- * selbst ausliefert: Wissenskurs und Koran-Pfad bekommen echte Pakete erst mit geprüften Bausteinen (L6, `paket/wissen.ts`).
+ * selbst ausliefert. Dazu der Wissenskurs mit echten Paketen (Endabnahme Z-L02, Vorführpfad Station 6): die Testeinheit
+ * `islam.grund.test` aus dem Seed (Testfreigaben zweier Prüfkonten, `drizzle/seeds/lernapp-test-wissen.ts`) im Lernpfad mit
+ * Prüfvermerk ohne Namen, die Gegenprobe mit nur einer Freigabe fehlt, die Lektion ist spielbar mit Quellenzeile.
  */
 
 test.use({ serviceWorkers: 'block' });
@@ -139,7 +141,7 @@ async function sortiere(page: Page, t: Texte, art: Bedienung, ui: 'de' | 'ar', a
   for (let ziel = 0; ziel < folge.length; ziel++) {
     while (folge.indexOf(ziel) > ziel) {
       const pos = folge.indexOf(ziel);
-      const text = RF.schritte[ziel]!;
+      const text = aufgabe.schritte[ziel]!;
       const hoch = page.getByRole('button', { name: formatiere(t.aufgaben.reihenfolge.hoch, { text }, ui), exact: true });
       if (art === 'tippen') await hoch.tap();
       else {
@@ -157,7 +159,7 @@ async function sortiere(page: Page, t: Texte, art: Bedienung, ui: 'de' | 'ar', a
     }
   }
   const reihe = await uebung(page, 'reihenfolge').locator('ol > li span[lang="de"]').allInnerTexts();
-  expect(reihe).toEqual(RF.schritte);
+  expect(reihe).toEqual(aufgabe.schritte);
 }
 
 async function richtig(page: Page, t: Texte, art: Bedienung) {
@@ -305,5 +307,74 @@ test.describe('Übungstypen aus L2-03 (Wissenskurs, Koran-Arabisch)', () => {
     await richtig(page, t, art);
     await expect(page.getByRole('heading', { name: t.spieler.fertigTitel })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBe(0);
+  });
+});
+
+test.describe('Wissenskurs mit echten Paketen (Testeinheit aus dem Seed, Vorführpfad Station 6)', () => {
+  const E = 'islam.grund.test';
+  const QUELLE = '[Testquelle – Platzhalter], [Kitab] › [Bab], [Testausgabe], Bd. 1, S. 1';
+  // wie im Paket (`wissensAufgabe`): Startfolge der Übung hängt an Schlüssel und Schritten
+  const RF_TEST: AufgabeVon<'reihenfolge'> = {
+    typ: 'reihenfolge',
+    schluessel: `${E}.l01.q03`,
+    anweisung: 'ordne',
+    sprache: 'de',
+    quelle: '[Testquelle – Platzhalter], [Kitab] › [Bab], [Testausgabe], Bd. 1, S. 2',
+    schritte: ['[Schritt 1]', '[Schritt 2]', '[Schritt 3]'],
+  };
+
+  test('Lernpfad mit Prüfvermerk ohne Namen, Gegenprobe fehlt; Lektion spielbar mit Quellenzeile', async ({ page }, info) => {
+    test.setTimeout(150_000);
+    const art: Bedienung = info.project.name === 'telefon' ? 'tippen' : 'tastatur';
+    const t = de;
+    await page.goto('/lern-app/de/islam');
+    const link = page.locator(`main a[href="/lern-app/de/islam/ueben?l=${E}.l01"]`);
+    await expect(link).toBeVisible();
+    await expect(link).toContainText('[Testlektion Wissen – Platzhalter]');
+    // Gegenprobe: eine Aussage mit nur einer Freigabe → ihre Lektion ist nirgends
+    await expect(page.locator(`main a[href*="${E}.l02"]`)).toHaveCount(0);
+    const vermerk = page.locator(`[data-pruefvermerk="${E}.l01"]`);
+    await expect(vermerk).toContainText(t.lernpfad.pruefvermerk.split('{datum}')[0]!);
+    await expect(vermerk).toContainText(t.lernpfad.fuerKinder);
+    await expect(page.locator('main')).not.toContainText('Testprüfung');
+    if (art === 'tastatur') expect(await ernsteBefunde(page, 'wissen-lernpfad')).toEqual([]);
+
+    await page.goto(`/lern-app/de/islam/ueben?l=${E}.l01`);
+    // 1 wahr_falsch mit Quellenzeile der Aussage
+    await expect(page.getByRole('heading', { name: t.aufgaben.wahr_falsch.stimmtDas })).toBeVisible();
+    await expect(uebung(page, 'wahr_falsch').locator('p[lang="de"]').first()).toHaveText('[Testbehauptung – Platzhalter]');
+    await waehle(page, t, art, radio(page, t.aufgaben.wahr_falsch.stimmt));
+    await expect(liveRegion(page)).toContainText(t.spieler.richtig);
+    await druecke(page, page.getByText(t.aufgaben.wissen.quelleZeigen, { exact: true }), art);
+    await expect(page.getByText(QUELLE, { exact: true })).toBeVisible();
+    if (art === 'tastatur') expect(await ernsteBefunde(page, 'wissen wahr_falsch')).toEqual([]);
+    await weiter(page, t, art);
+
+    // 2 zuordnen: Kategorien aus den rechten Seiten der Paare
+    await expect(page.getByRole('heading', { name: t.aufgaben.zuordnen.ordneZu })).toBeVisible();
+    const paare = [
+      ['[Eintrag A]', '[Kategorie 1]'],
+      ['[Eintrag B]', '[Kategorie 2]'],
+      ['[Eintrag C]', '[Kategorie 1]'],
+    ] as const;
+    for (const [i, [eintrag, kategorie]] of paare.entries())
+      await waehle(page, t, art, radio(page.getByRole('group', { name: eintrag, exact: true }), kategorie), {
+        abgeben: i === paare.length - 1,
+      });
+    await richtig(page, t, art);
+
+    // 3 reihenfolge
+    await expect(page.getByRole('heading', { name: t.aufgaben.reihenfolge.ordne })).toBeVisible();
+    await sortiere(page, t, art, 'de', RF_TEST);
+    await pruefen(page, t, art);
+    await richtig(page, t, art);
+
+    // 4 fallfrage
+    await expect(page.getByRole('heading', { name: t.aufgaben.fallfrage.waehleAntwort })).toBeVisible();
+    await expect(page.getByText(t.aufgaben.fallfrage.hinweis)).toBeVisible();
+    await waehle(page, t, art, radio(page, '[Antwort B]'));
+    await richtig(page, t, art);
+
+    await expect(page.getByRole('heading', { name: t.spieler.fertigTitel })).toBeVisible();
   });
 });

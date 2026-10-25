@@ -26,7 +26,7 @@ import {
   koranBedeutungStatus,
 } from '@/lib/lernapp/paket/koran';
 import { inBloecken } from './bloecke';
-import { ladePruefungen } from './pakete';
+import { ladePruefungen } from './pruefungen';
 
 /**
  * Koran-Arabisch-Pfad aus `web/inhalte/lernapp/koran/pfad.json` (nur Verweise) und der Datenbank (L6-05, ADR 0040 Nr. 5):

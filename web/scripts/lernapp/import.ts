@@ -4,13 +4,15 @@
 // Danach die Audio-Manifeste web/inhalte/lernapp/audio-manifest/<sprache>.json nach lernapp_audio (abgeglichen: Clips, die
 // nicht mehr im Manifest stehen, entfallen; src/lib/lernapp/audio/import.ts).
 // Aufruf: pnpm lernapp:import [--erzwingen] [--testkurs] [--audio-manifest <pfad>]…
-//   --testkurs: zusätzlich den Testkurs (drizzle/seeds/lernapp-test.ts) – nur Beispielmodus, E2E und Entwicklung.
+//   --testkurs: zusätzlich den Testkurs (drizzle/seeds/lernapp-test.ts) und die Testeinheit des Wissenskurses mit Testfreigaben
+//     (drizzle/seeds/lernapp-test-wissen.ts) – nur Beispielmodus, E2E und Entwicklung.
 //   --audio-manifest: zusätzlich ein lokales Manifest (Probelauf der Audio-Kette, Bündel unter LERNAPP_AUDIO_LOKAL), nur
 //     ergänzend – nie in der Produktion.
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { lernappTestkurs } from '../../drizzle/seeds/lernapp-test';
+import { lernappTestWissen } from '../../drizzle/seeds/lernapp-test-wissen';
 import { holeDb } from '../../src/lib/db';
 import { AudioImportFehler, importiereAudioManifest, religionsHashes } from '../../src/lib/lernapp/audio/import';
 import { leseManifest } from '../../src/lib/lernapp/audio/manifest';
@@ -38,6 +40,13 @@ async function main() {
     const t = await lernappTestkurs(db);
     console.log(
       `Lern-App-Testkurs: ${t.bericht.neu} neu, ${t.bericht.geaendert} geändert, ${t.bericht.unveraendert} gleich, ${t.clips} Clips (Testtöne).`,
+    );
+    // Wissenskurs: Testeinheit mit Testfreigaben zweier Prüfkonten (Vorführpfad Station 6); in der Produktion verweigert
+    const w = await lernappTestWissen(db);
+    console.log(
+      w
+        ? `Lern-App-Testeinheit Wissen: ${w.lektionen} Lektionen, ${w.freigaben} Testfreigaben (nur Platzhalter).`
+        : 'Lern-App-Testeinheit Wissen: in der Produktion nicht angelegt.',
     );
   }
   // Audio: eingecheckte Manifeste (abgeglichen), dann lokale Manifeste (nur ergänzend)

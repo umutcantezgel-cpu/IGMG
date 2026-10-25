@@ -21,7 +21,7 @@ import {
 } from '@/lib/lernapp/freigabe';
 import type { KursId } from '@/lib/lernapp/kurse';
 import { koranBedeutungHash, koranBedeutungStatus } from '@/lib/lernapp/paket/koran';
-import { ladePruefungen } from './pakete';
+import { ladePruefungen } from './pruefungen';
 
 /**
  * Zwei-Prüfer-Freigabe religiöser Bausteine (L6-02/03, ADR 0040 Nr. 5, KERN 4.0 §2.3, PLAN §6.7 Nr. 5–7): Aussagen, Quizfragen

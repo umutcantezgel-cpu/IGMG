@@ -341,6 +341,7 @@ describe('sichtbareWissensLektion: nur ganz, nur Typen des Kurses, ohne Audio', 
       kurs: 'islam',
       lektion: kopf,
       freigabe: mit(2, ohneBeleg()),
+      aussagen: [mit(2)],
       aufgaben: [WF, ZO, RF, FF].map(geprueft),
     });
     expect(l?.aufgaben.map((a) => a.typ)).toEqual(['wahr_falsch', 'zuordnen', 'reihenfolge', 'fallfrage']);
@@ -349,21 +350,43 @@ describe('sichtbareWissensLektion: nur ganz, nur Typen des Kurses, ohne Audio', 
 
   it('ein ungeprüfter Baustein (Aufgabe, Aussage oder Lektion) → keine Lektion', () => {
     const aufgaben = [WF, ZO].map(geprueft);
-    expect(sichtbareWissensLektion({ kurs: 'islam', lektion: kopf, freigabe: mit(1, ohneBeleg()), aufgaben })).toBeNull();
+    const alle = [mit(2), mit(2)];
+    expect(sichtbareWissensLektion({ kurs: 'islam', lektion: kopf, freigabe: mit(1, ohneBeleg()), aussagen: alle, aufgaben })).toBeNull();
     expect(
       sichtbareWissensLektion({
         kurs: 'islam',
         lektion: kopf,
         freigabe: mit(2, ohneBeleg()),
+        aussagen: alle,
         aufgaben: [aufgaben[0]!, { ...aufgaben[1]!, aussagen: [mit(1)] }],
       }),
     ).toBeNull();
-    expect(sichtbareWissensLektion({ kurs: 'islam', lektion: kopf, freigabe: mit(2, ohneBeleg()), aufgaben: [] })).toBeNull();
+    expect(
+      sichtbareWissensLektion({ kurs: 'islam', lektion: kopf, freigabe: mit(2, ohneBeleg()), aussagen: alle, aufgaben: [] }),
+    ).toBeNull();
+  });
+
+  it('eine Aussage ohne Quizfrage zählt mit (alle Bausteine der Lektion); ohne Aussagen keine Lektion', () => {
+    const aufgaben = [WF, ZO].map(geprueft);
+    const lektion = (aussagen: FreigabeBaustein[]) =>
+      sichtbareWissensLektion({ kurs: 'islam', lektion: kopf, freigabe: mit(2, ohneBeleg()), aussagen, aufgaben });
+    expect(lektion([mit(2), mit(2)])?.aufgaben).toHaveLength(2);
+    expect(lektion([mit(2), mit(1)])).toBeNull();
+    expect(lektion([mit(2), mit(2, undefined, { status: 'gesperrt' })])).toBeNull();
+    expect(lektion([])).toBeNull();
   });
 
   it('fremde Typen und Audio machen die Lektion ungültig', () => {
     const koranImWissen = { aufgabe: KW as never, freigabe: mit(2, ohneBeleg()), aussagen: [mit(2)] };
-    expect(sichtbareWissensLektion({ kurs: 'islam', lektion: kopf, freigabe: mit(2, ohneBeleg()), aufgaben: [koranImWissen] })).toBeNull();
+    expect(
+      sichtbareWissensLektion({
+        kurs: 'islam',
+        lektion: kopf,
+        freigabe: mit(2, ohneBeleg()),
+        aussagen: [mit(2)],
+        aufgaben: [koranImWissen],
+      }),
+    ).toBeNull();
     const auswahlMitAudio = {
       aufgabe: {
         typ: 'auswahl' as const,
@@ -379,7 +402,13 @@ describe('sichtbareWissensLektion: nur ganz, nur Typen des Kurses, ohne Audio', 
       aussagen: [mit(2)],
     };
     expect(
-      sichtbareWissensLektion({ kurs: 'islam', lektion: kopf, freigabe: mit(2, ohneBeleg()), aufgaben: [auswahlMitAudio] }),
+      sichtbareWissensLektion({
+        kurs: 'islam',
+        lektion: kopf,
+        freigabe: mit(2, ohneBeleg()),
+        aussagen: [mit(2)],
+        aufgaben: [auswahlMitAudio],
+      }),
     ).toBeNull();
     expect(WISSENSKURS_TYPEN).not.toContain('koran_wort');
     expect(KORAN_TYPEN).toEqual(['koran_wort']);
