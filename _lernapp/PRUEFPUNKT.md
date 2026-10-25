@@ -5,7 +5,7 @@
   - Es wird kein B2 tr, B2 ar und kein C1 gestartet.
   - **Es laufen bis zur Freigabe:**
     - B1 tr `wf_058f8fa1-7d9`: Rückübersetzungen 12/16, dann Schlussprüfung.
-    - B1 ar `wf_ff6dce59-04b`, seriell: Lektorate 8/16, Übersetzungen und Rückübersetzungen 5/16.
+    - B1 ar `wf_dd49afe9-2ca` (2 Plätze, neu 16:55): Lektorate 8/16, Übersetzungen e01–e05 und e06 ar-aus-de, Rückübersetzungen 5/16.
   - **Danach:**
     1. Freigabe B1 tr/ar nach L3-E15. Merge, schlanke Nachprüfung (`tor-a1a2.sh`), Push, live prüfen.
     2. L8-05 Stufe C: frischer Endprüfer über Z-L01…Z-L22, Umfang A1–B1.
