@@ -1,5 +1,15 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 07:55 UTC:**
+  - **Prüfer-Mängelrunde frei:** bbdae93c, Gegenprüfung 2 ohne Mangel kritisch, hoch oder mittel. Gemergt und auf `main` (645e76cd). Damit ist das Paket Prüfer-Fehlalarme abgeschlossen.
+  - **Neu:** `lernapp-inhalte.workflow.js` kennt `args.seriell` (Einheiten nacheinander, nur 1 Agent zur Zeit) für die Taktregel. Sicherung: `….bak-seriell`.
+  - **Neu gestartet:** B1 ar `wf_e5e700c1-be1`, seriell.
+    - `entworfen` e01–e03, `lektoriert` e01.
+    - e04 setzt den Teilentwurf f6faaa73 fort.
+  - **Es laufen:** B1 de `wf_335727f4-a16` (2 Plätze) und B1 ar (1 Platz).
+  - **Taktung:** Fenster bis 11:10. Auslastung 0,13 um 07:51, Taktlinie 0,30.
+  - **Warteschlange:** B1 tr, B2 de.
+
 - **Stand 25.10.2026 07:25 UTC – nach Leerlauf fortgesetzt:**
   - **Leerlauf 00:41–07:23:** Mehrere Worker-Neustarts unterbrachen jedes Mal die Freigabe des Plan-Modus. Das Fenster 01:00–06:00 blieb ungenutzt (Auslastung 0,03).
   - **Neu gestartet:**
