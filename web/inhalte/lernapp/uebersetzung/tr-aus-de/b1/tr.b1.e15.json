@@ -1,7 +1,7 @@
 {
   "format": "igmg-lernapp-uebersetzung",
   "version": 1,
-  "status": "entwurf",
+  "status": "automatisch_geprueft",
   "richtung": "tr-aus-de",
   "einheit": "tr.b1.e15",
   "eintraege": [
@@ -223,7 +223,7 @@
     },
     {
       "bezug": "tr.b1.e15.heyecanlanmak",
-      "text": "sich aufregen, aufgeregt sein",
+      "text": "aufgeregt werden, sich begeistern",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -645,10 +645,7 @@
     {
       "bezug": "tr.b1.e15.s0017",
       "text": "Meine Pflichten erfülle ich rechtzeitig.",
-      "alternativen": [
-        "Ich erledige meine Verantwortlichkeiten termingerecht.",
-        "Ich nehme meine Pflichten ernst und erfülle sie rechtzeitig."
-      ],
+      "alternativen": ["Ich erledige meine Verantwortlichkeiten termingerecht.", "Ich erfülle meine Pflichten pünktlich."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -677,7 +674,7 @@
       "text": "Die Stellenbeschreibung habe ich sorgfältig gelesen.",
       "alternativen": [
         "Die Beschreibung der Position habe ich aufmerksam gelesen.",
-        "Die Aufgaben der Stelle habe ich genau durchgelesen."
+        "Die Beschreibung der Stelle habe ich genau durchgelesen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -702,7 +699,7 @@
     {
       "bezug": "tr.b1.e15.s0023",
       "text": "Für dieses Zertifikat gab es eine Prüfung.",
-      "alternativen": ["Für das Zertifikat musste man eine Prüfung ablegen.", "Um dieses Zertifikat zu erhalten, gab es eine Prüfung."],
+      "alternativen": ["Für das Zertifikat musste man eine Prüfung ablegen.", "Für dieses Zertifikat war eine Prüfung nötig."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -734,7 +731,7 @@
       "bezug": "tr.b1.e15.s0027",
       "text": "Ich bin sicher, dass ein kurzer und klarer Lebenslauf einen guten Eindruck hinterlässt.",
       "alternativen": [
-        "Ich bin überzeugt, ein knapper und klarer Lebenslauf macht einen guten Eindruck.",
+        "Ich bin überzeugt, dass ein knapper und klarer Lebenslauf einen guten Eindruck macht.",
         "Ein kurzer, übersichtlicher Lebenslauf hinterlässt sicher einen guten Eindruck."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -765,7 +762,7 @@
       "text": "Im Vorstellungsgespräch sollte ich meine bisherige Arbeit beschreiben.",
       "alternativen": [
         "Im Gespräch bat man mich, die Tätigkeit zu schildern, die ich ausgeübt habe.",
-        "Man forderte mich im Vorstellungsgespräch auf, meine frühere Arbeit zu erklären."
+        "Man forderte mich im Vorstellungsgespräch auf, meine frühere Arbeit zu schildern."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -982,7 +979,7 @@
       "text": "Mit einer erfahrenen Fachkraft zusammenzuarbeiten, bringt mich weiter.",
       "alternativen": [
         "Wenn ich mit einem erfahrenen Kollegen arbeite, entwickle ich mich weiter.",
-        "Zusammen mit einem erfahrenen Kollegen wachse ich an meinen Aufgaben."
+        "Zusammen mit einem erfahrenen Kollegen entwickle ich mich weiter."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1106,17 +1103,14 @@
     {
       "bezug": "tr.b1.e15.s0069",
       "text": "Realistisch zu sein ist ein guter Start für den Erfolg.",
-      "alternativen": ["Realismus ist ein guter Anfang für den Erfolg.", "Ein realistischer Blick ist eine gute Grundlage für Erfolg."],
+      "alternativen": ["Realismus ist ein guter Anfang für den Erfolg.", "Realistisch zu sein ist eine gute Grundlage für Erfolg."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.b1.e15.s0070",
       "text": "Auch bei schwierigen Aufgaben bleibe ich geduldig.",
-      "alternativen": [
-        "Selbst bei anspruchsvollen Aufgaben behalte ich meine Geduld.",
-        "Auch schwere Aufgaben nehme ich geduldig in Angriff."
-      ],
+      "alternativen": ["Selbst bei anspruchsvollen Aufgaben behalte ich meine Geduld.", "Auch bei schweren Aufgaben bleibe ich geduldig."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1202,7 +1196,7 @@
       "bezug": "tr.b1.e15.s0080",
       "text": "Meiner Meinung nach sollten Kompetenz und Qualifikation zusammengehören.",
       "alternativen": [
-        "Meiner Ansicht nach sollten Kompetenz und Qualifikation gemeinsam auftreten.",
+        "Meiner Ansicht nach gehören Kompetenz und Qualifikation zusammen.",
         "Ich finde, Kompetenz und Qualifikation gehören zusammen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1437,7 +1431,7 @@
       "bezug": "tr.b1.e15.s0105",
       "text": "Viele junge Menschen, die Arzt werden wollen, lernen sehr viel für die Prüfungen.",
       "alternativen": [
-        "Viele junge Leute, die Medizin studieren wollen, lernen intensiv für die Prüfungen.",
+        "Viele junge Leute, die Ärztin oder Arzt werden wollen, lernen intensiv für die Prüfungen.",
         "Zahlreiche junge Menschen, die Ärztin oder Arzt werden möchten, bereiten sich hart auf die Prüfungen vor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1506,10 +1500,10 @@
     },
     {
       "bezug": "tr.b1.e15.s0113",
-      "text": "Um Psychologie beruflich auszuüben, muss man ein Universitätsstudium abschließen.",
+      "text": "Um Psychologe oder Psychologin zu werden, muss man ein Universitätsstudium abschließen.",
       "alternativen": [
-        "Ein Universitätsstudium muss man abgeschlossen haben, um in der Psychologie zu arbeiten.",
-        "Für den Beruf in der Psychologie ist ein Studium an der Universität nötig."
+        "Ein Universitätsstudium muss man abgeschlossen haben, um Psychologe oder Psychologin zu werden.",
+        "Für den Beruf des Psychologen ist ein Studium an der Universität nötig."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1539,7 +1533,7 @@
       "text": "Akademiker zeigen den Studierenden neue Methoden.",
       "alternativen": [
         "Den Studierenden präsentieren Akademiker neue Methoden.",
-        "Die Studierenden lernen von Akademikern neue Verfahren kennen."
+        "Akademiker stellen den Studierenden neue Verfahren vor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1549,7 +1543,7 @@
       "text": "Ein Gründer in meiner Nachbarschaft hat ein neues Café eröffnet.",
       "alternativen": [
         "In meinem Viertel hat ein Unternehmer ein neues Café eröffnet.",
-        "Ein Nachbar von mir, ein Unternehmer, hat ein Café eröffnet."
+        "Ein Nachbar von mir, ein Unternehmer, hat ein neues Café eröffnet."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1568,7 +1562,7 @@
       "bezug": "tr.b1.e15.s0119",
       "text": "Bevor du eine befristete Stelle antrittst, musst du den Vertrag sorgfältig lesen.",
       "alternativen": [
-        "Lies den Vertrag genau, bevor du eine Stelle mit befristetem Vertrag annimmst.",
+        "Lies den Vertrag genau, bevor du eine Stelle mit befristetem Vertrag antrittst.",
         "Ehe du einen befristeten Job beginnst, solltest du den Vertrag aufmerksam lesen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1598,7 +1592,7 @@
       "bezug": "tr.b1.e15.s0122",
       "text": "Bei der Wahl deines Fachgebiets solltest du auch an dein Interesse denken.",
       "alternativen": [
-        "Wenn du dein Fachgebiet wählst, solltest du auch an deine Interessen denken.",
+        "Wenn du dein Fachgebiet wählst, solltest du auch an dein Interesse denken.",
         "Bei der Auswahl des Spezialgebiets sollst du auch auf deine Neigung achten."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1626,7 +1620,7 @@
     },
     {
       "bezug": "tr.b1.e15.s0125",
-      "text": "Ein Arzt muss sich aufmerksam um die Patienten kümmern.",
+      "text": "Ein Arzt muss sich aufmerksam um einen Patienten kümmern.",
       "alternativen": [
         "Ärztinnen und Ärzte müssen Patienten sorgfältig versorgen.",
         "Ärzte sind verpflichtet, Patienten aufmerksam zu behandeln."
@@ -1693,7 +1687,7 @@
       "text": "Ich weiß, dass ich diese Arbeit erfolgreich machen kann.",
       "alternativen": [
         "Ich bin überzeugt, dass ich diese Tätigkeit gut bewältigen kann.",
-        "Mir ist klar, dass ich diesen Job erfolgreich ausführen werde."
+        "Mir ist klar, dass ich diesen Job erfolgreich ausführen kann."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1777,10 +1771,10 @@
     },
     {
       "bezug": "tr.b1.e15.s0141",
-      "text": "Die Erwartungen der Führungskraft sind klar und deutlich.",
+      "text": "Die Erwartung der Führungskraft ist klar und deutlich.",
       "alternativen": [
         "Was die Führungskraft erwartet, ist eindeutig und klar.",
-        "Die Vorgesetzten haben klare und eindeutige Erwartungen."
+        "Die Führungskraft hat klare und eindeutige Erwartungen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1838,7 +1832,7 @@
       "text": "Ehrlich gesagt kann ich diese Frage nicht sofort beantworten.",
       "alternativen": [
         "Um die Wahrheit zu sagen, kann ich diese Frage nicht auf der Stelle beantworten.",
-        "Genau genommen fällt mir die Antwort auf diese Frage nicht sofort ein."
+        "Ehrlich gesagt fällt mir die Antwort auf diese Frage nicht sofort ein."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1884,7 +1878,7 @@
       "bezug": "tr.b1.e15.s0153",
       "text": "Ich stehe früh auf, damit ich nicht zu spät zur Arbeit komme.",
       "alternativen": [
-        "Damit ich nicht zu spät ins Büro komme, stehe ich früh auf.",
+        "Damit ich nicht zu spät zur Arbeit komme, stehe ich früh auf.",
         "Ich stehe zeitig auf, um pünktlich bei der Arbeit zu sein."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1915,7 +1909,7 @@
       "text": "Wenn du mehr Verantwortung übernehmen willst, musst du zuerst Vertrauen gewinnen.",
       "alternativen": [
         "Willst du mehr Verantwortung tragen, musst du dir zuerst Vertrauen verdienen.",
-        "Möchtest du größere Aufgaben übernehmen, musst du erst Vertrauen aufbauen."
+        "Möchtest du mehr Verantwortung übernehmen, musst du erst Vertrauen aufbauen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2126,7 +2120,7 @@
       "text": "Im Dankesbrief genügt es, kurz und höflich zu schreiben.",
       "alternativen": [
         "Für den Dankesbrief genügt es, kurz und höflich zu formulieren.",
-        "Ein Dankesbrief darf kurz und freundlich geschrieben sein."
+        "Für einen Dankesbrief reicht es, kurz und freundlich zu schreiben."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2134,7 +2128,7 @@
     {
       "bezug": "tr.b1.e15.s0179",
       "text": "Welche Aufgaben werde ich auf dieser Stelle übernehmen?",
-      "alternativen": ["Was werden meine Aufgaben auf dieser Stelle sein?", "Welche Tätigkeiten gehören zu dieser Position?"],
+      "alternativen": ["Was werden meine Aufgaben auf dieser Stelle sein?", "Welche Tätigkeiten werde ich auf dieser Position ausüben?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2151,13 +2145,16 @@
     {
       "bezug": "tr.b1.e15.s0181",
       "text": "Was erwartest du am meisten von einem Praktikum?",
-      "alternativen": ["Was möchtest du in einem Praktikum am meisten lernen?", "Worauf freust du dich bei einem Praktikum am meisten?"],
+      "alternativen": [
+        "Was möchtest du in einem Praktikum am meisten lernen?",
+        "Was erwartest du bei einem Praktikum am meisten zu lernen?"
+      ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.b1.e15.s0182",
-      "text": "Ich möchte sehr gern lernen, wie man Computerprogramme nutzt.",
+      "text": "Ich möchte sehr gern Computerprogramme lernen.",
       "alternativen": [
         "Ich bin sehr daran interessiert, Computerprogramme zu erlernen.",
         "Am liebsten würde ich den Umgang mit Computerprogrammen lernen."
@@ -2214,7 +2211,7 @@
       "text": "Ich kann selbstständig arbeiten, aber ich scheue mich nicht, um Hilfe zu bitten.",
       "alternativen": [
         "Selbstständig kann ich arbeiten, doch ich bitte auch gern um Unterstützung.",
-        "Allein arbeite ich gut, und Hilfe anzunehmen fällt mir ebenfalls nicht schwer."
+        "Allein arbeite ich gut, und um Hilfe zu bitten fällt mir ebenfalls nicht schwer."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2289,7 +2286,7 @@
     {
       "bezug": "tr.b1.e15.s0196",
       "text": "Was sind Ihre Pläne für die Zukunft in diesem Bereich?",
-      "alternativen": ["Welche Zukunftspläne haben Sie in diesem Feld?", "Was planen Sie für die kommenden Jahre in diesem Bereich?"],
+      "alternativen": ["Welche Zukunftspläne haben Sie in diesem Feld?", "Was planen Sie für die Zukunft in diesem Bereich?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2361,7 +2358,7 @@
     {
       "bezug": "tr.b1.e15.s0205",
       "text": "Ich schätze das Team dieser Firma wirklich sehr.",
-      "alternativen": ["Das Team dieses Unternehmens bewundere ich sehr.", "Ich habe große Achtung vor dem Team dieser Firma."],
+      "alternativen": ["Das Team dieses Unternehmens schätze ich sehr.", "Ich habe große Achtung vor dem Team dieser Firma."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2388,14 +2385,14 @@
     {
       "bezug": "tr.b1.e15.s0208",
       "text": "Natürlich. Stell dich zuerst kurz vor.",
-      "alternativen": ["Gern. Zuerst stellst du dich kurz vor.", "Klar. Stell dich zunächst kurz vor."],
+      "alternativen": ["Gern. Stell dich bitte zuerst kurz vor.", "Klar. Stell dich zunächst kurz vor."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.b1.e15.s0209",
-      "text": "Ich bin in der sechsten Klasse und mag Teamarbeit.",
-      "alternativen": ["Ich besuche die sechste Klasse und mag Teamarbeit.", "Ich bin in der 6. Klasse und arbeite gern in einer Gruppe."],
+      "text": "Ich bin in der achten Klasse und mag Teamarbeit.",
+      "alternativen": ["Ich besuche die achte Klasse und mag Teamarbeit.", "Ich bin in der 8. Klasse und arbeite gern in einer Gruppe."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2411,15 +2408,15 @@
       "text": "Ich mag Computer sehr, deshalb möchte ich in diesem Bereich Erfahrung sammeln.",
       "alternativen": [
         "Computer finde ich toll, darum will ich auf diesem Gebiet Erfahrung gewinnen.",
-        "Weil ich Computer so mag, möchte ich in diesem Feld praktische Erfahrungen sammeln."
+        "Weil ich Computer so mag, möchte ich in diesem Feld Erfahrungen sammeln."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.b1.e15.s0212",
-      "text": "Dieses Praktikum findet am Wochenende statt, nicht wahr?",
-      "alternativen": ["Das Praktikum läuft am Wochenende, stimmt's?", "Dieses Praktikum wird am Wochenende gemacht, richtig?"],
+      "text": "Dieses Praktikum findet an den Wochenenden statt, nicht wahr?",
+      "alternativen": ["Das Praktikum läuft an den Wochenenden, stimmt’s?", "Dieses Praktikum wird an den Wochenenden gemacht, richtig?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2436,7 +2433,7 @@
     {
       "bezug": "tr.b1.e15.s0214",
       "text": "Was ist deine Stärke? Sag mal!",
-      "alternativen": ["Was ist deine größte Stärke? Sag schon.", "Welche Stärke hast du? Sag doch mal."],
+      "alternativen": ["Was ist deine Stärke? Sag schon.", "Welche Stärke hast du? Sag doch mal."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2459,7 +2456,7 @@
     },
     {
       "bezug": "tr.b1.e15.s0217",
-      "text": "In der Schule habe ich ein Projektteam geleitet, und wir haben rechtzeitig fertig.",
+      "text": "In der Schule habe ich ein Projektteam geleitet, und wir haben es rechtzeitig abgeschlossen.",
       "alternativen": [
         "An der Schule führte ich ein Projektteam, und wir waren rechtzeitig fertig.",
         "Ich war in der Schule Leiter eines Projektteams, und wir haben termingerecht fertiggestellt."
@@ -2471,7 +2468,7 @@
       "bezug": "tr.b1.e15.s0218",
       "text": "Sehr gut. Vergiss nach dem Gespräch nicht, eine kurze Dankesnachricht zu schreiben.",
       "alternativen": [
-        "Prima. Denk daran, nach dem Gespräch eine kurze Dankesnachricht zu schicken.",
+        "Prima. Denk daran, nach dem Gespräch eine kurze Dankesnachricht zu schreiben.",
         "Sehr schön. Nach dem Gespräch nicht vergessen: kurz danke schreiben."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2541,7 +2538,7 @@
       "bezug": "tr.b1.e15.s0225",
       "text": "Für Autoreparaturen interessiere ich mich sehr, und bei technischen Arbeiten bin ich gut.",
       "alternativen": [
-        "Autoreparatur interessiert mich sehr, und ich bin im technischen Bereich begabt.",
+        "Autoreparaturen interessieren mich sehr, und im technischen Bereich bin ich gut.",
         "Ich begeistere mich sehr für die Reparatur von Autos und bin bei technischen Dingen geschickt."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2573,10 +2570,10 @@
     },
     {
       "bezug": "tr.b1.e15.s0229",
-      "text": "Das weiß ich. Ich bin auch bereit, am Wochenende zu arbeiten.",
+      "text": "Das weiß ich. Ich bin auch bereit, an den Wochenenden zu arbeiten.",
       "alternativen": [
-        "Ich weiß. Auch an den Wochenenden bin ich bereit zu arbeiten.",
-        "Dessen bin ich mir bewusst, und am Wochenende arbeite ich ebenfalls gern."
+        "Dessen bin ich mir bewusst, und an den Wochenenden bin ich ebenfalls bereit.",
+        "Ich weiß. Auch an den Wochenenden bin ich bereit zu arbeiten."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2629,7 +2626,7 @@
       "bezug": "tr.b1.e15.s0235",
       "text": "Danke. Auch ich wünsche mir dieses Praktikum sehr.",
       "alternativen": [
-        "Danke schön. Auch ich möchte dieses Praktikum unbedingt machen.",
+        "Danke schön. Auch ich möchte dieses Praktikum sehr gern machen.",
         "Vielen Dank. Ich wünsche mir dieses Praktikum auch sehr."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2650,7 +2647,7 @@
       "text": "Das Praktikum dauert zwei Monate, und du arbeitest dreimal pro Woche.",
       "alternativen": [
         "Das Praktikum läuft zwei Monate, du arbeitest an drei Tagen in der Woche.",
-        "Zwei Monate dauert das Praktikum, und an drei Tagen pro Woche musst du arbeiten."
+        "Zwei Monate dauert das Praktikum, und an drei Tagen pro Woche wirst du arbeiten."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2659,7 +2656,7 @@
       "bezug": "tr.b1.e15.s0238",
       "text": "Das passt gut zu mir. Von meiner Schule kann ich mir auch frei nehmen lassen.",
       "alternativen": [
-        "Das geht für mich in Ordnung. Von meiner Schule bekomme ich bestimmt Urlaub.",
+        "Das geht für mich in Ordnung. Von meiner Schule kann ich eine Erlaubnis bekommen.",
         "Das ist mir recht. Auch von der Schule kann ich mir eine Freistellung holen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2752,7 +2749,7 @@
       "text": "Für die Bewerbung sind ein kurzer Lebenslauf und ein Anschreiben nötig.",
       "alternativen": [
         "Zur Bewerbung gehören ein kurzer Lebenslauf und ein Anschreiben.",
-        "Für die Anmeldung sind ein knapper Lebenslauf und ein Anschreiben erforderlich."
+        "Für die Bewerbung sind ein knapper Lebenslauf und ein Anschreiben erforderlich."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2792,7 +2789,7 @@
       "bezug": "tr.b1.e15.s0254",
       "text": "Die Firma vermittelt den Praktikanten eine Unterkunft.",
       "alternativen": [
-        "Das Unternehmen vermittelt den Praktikanten eine Wohnung.",
+        "Das Unternehmen besorgt den Praktikanten eine Unterkunft.",
         "Für die Praktikanten sucht die Firma eine Unterkunft."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2831,7 +2828,7 @@
       "text": "In der ersten Woche meines Praktikums war ich sehr aufgeregt, weil alles neu war.",
       "alternativen": [
         "In meiner ersten Praktikumswoche war ich ganz aufgeregt, denn alles war neu für mich.",
-        "Die erste Woche im Praktikum machte mich nervös, weil mir alles fremd war."
+        "Die erste Woche im Praktikum machte mich nervös, weil mir alles neu war."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2841,7 +2838,7 @@
       "text": "Mein Team hat mich herzlich aufgenommen und mir einen Mentor gegeben.",
       "alternativen": [
         "Das Team nahm mich herzlich auf und gab mir einen Mentor.",
-        "Mein Team begrüßte mich warm und stellte mir einen erfahrenen Begleiter zur Seite."
+        "Mein Team begrüßte mich warm und stellte mir einen Mentor zur Seite."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2861,7 +2858,7 @@
       "text": "Jetzt schreibe ich Berichte schneller und genieße es, mit Kunden zu sprechen.",
       "alternativen": [
         "Heute verfasse ich Berichte zügiger und spreche gern mit Kunden.",
-        "Inzwischen schreibe ich Protokolle schneller und habe Freude an Kundengesprächen."
+        "Inzwischen schreibe ich Berichte schneller und habe Freude an Kundengesprächen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2879,7 +2876,7 @@
     {
       "bezug": "tr.b1.e15.s0264",
       "text": "In der ersten Woche war der Praktikant aufgeregt.",
-      "alternativen": ["In seiner ersten Woche war der Praktikant ganz nervös.", "Die erste Woche verlief für den Praktikanten aufregend."],
+      "alternativen": ["In seiner ersten Woche war der Praktikant ganz nervös.", "Der Praktikant war in der ersten Woche sehr aufgeregt."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2907,7 +2904,7 @@
     {
       "bezug": "tr.b1.e15.s0268",
       "text": "Es hat ihm geholfen, seine Karrierepläne zu klären.",
-      "alternativen": ["Es half ihm, seinen Karriereplan zu konkretisieren.", "Sie half ihm dabei, seine berufliche Richtung festzulegen."],
+      "alternativen": ["Es half ihm, seinen Karriereplan zu konkretisieren.", "Es half ihm dabei, seine berufliche Richtung zu klären."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2920,10 +2917,10 @@
     },
     {
       "bezug": "tr.b1.e15.s0270",
-      "text": "Hallo, ich heiße Elif und bin in der sechsten Klasse. Ich bin planvoll und geduldig und habe an der Schule ein Projektteam geleitet.",
+      "text": "Hallo, ich heiße Elif und bin in der achten Klasse. Ich bin planvoll und geduldig und habe an der Schule ein Projektteam geleitet.",
       "alternativen": [
-        "Hallo, mein Name ist Elif und ich besuche die sechste Klasse. Ich bin geduldig und plane gern, außerdem habe ich in der Schule ein Projektteam geführt.",
-        "Guten Tag, ich bin Elif, sechste Klasse. Ich bin planvoll und geduldig und habe an der Schule ein Projektteam angeführt."
+        "Hallo, mein Name ist Elif und ich besuche die achte Klasse. Ich bin geduldig und planvoll, außerdem habe ich in der Schule ein Projektteam geführt.",
+        "Guten Tag, ich bin Elif, achte Klasse. Ich bin planvoll und geduldig und habe an der Schule ein Projektteam angeführt."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2950,20 +2947,20 @@
     },
     {
       "bezug": "tr.b1.e15.s0273",
-      "text": "Lebenslauf. Name: Elif. Alter: 12. Schule: sechste Klasse. Sprachen: Türkisch, Deutsch, etwas Englisch. Stärken: planvoll und geduldig. Erfahrung: Schulzeitung, Leitung eines Projektteams. Interessen: Computer und Schach.",
+      "text": "Lebenslauf. Name: Elif. Alter: 14. Schule: achte Klasse. Sprachen: Türkisch, Deutsch, etwas Englisch. Stärken: planvoll und geduldig. Erfahrung: Schulzeitung, Leitung eines Projektteams. Interessen: Computer und Schach.",
       "alternativen": [
-        "Lebenslauf: Elif, 12 Jahre, sechste Klasse. Sprachen: Türkisch, Deutsch und ein wenig Englisch. Stärken: Planung und Geduld. Erfahrung: Schulzeitung, Projektteamleitung. Interessen: Computer, Schach.",
-        "Lebenslauf – Name: Elif. Alter: 12 Jahre. Klasse: sechs. Sprachen: Türkisch, Deutsch, etwas Englisch. Stärken: planvoll, geduldig. Erfahrung: Schulzeitung und Projektleitung im Team. Interessen: Computer und Schach."
+        "Lebenslauf: Elif, 14 Jahre, achte Klasse. Sprachen: Türkisch, Deutsch und ein wenig Englisch. Stärken: planvoll und geduldig. Erfahrung: Schulzeitung, Projektteamleitung. Interessen: Computer, Schach.",
+        "Lebenslauf – Name: Elif. Alter: 14 Jahre. Klasse: acht. Sprachen: Türkisch, Deutsch, etwas Englisch. Stärken: planvoll, geduldig. Erfahrung: Schulzeitung und Projektleitung im Team. Interessen: Computer und Schach."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "tr.b1.e15.s0274",
-      "text": "Sehr geehrte Damen und Herren, ich bewerbe mich um Ihr Computerpraktikum. Ich besuche die sechste Klasse und möchte neue Technologien lernen. An der Schule habe ich ein Projektteam geleitet, und wir sind termingerecht fertig geworden. Im Team bin ich aufgeschlossen und übernehme gern Verantwortung. Meinen Lebenslauf habe ich beigefügt. Für ein Gespräch stehe ich jederzeit zur Verfügung. Mit freundlichen Grüßen, Elif",
+      "text": "Sehr geehrte Damen und Herren, ich bewerbe mich um Ihr Computerpraktikum. Ich besuche die achte Klasse und bin begeistert, neue Technologien zu lernen. An der Schule habe ich ein Projektteam geleitet, und wir sind termingerecht fertig geworden. Im Team bin ich anpassungsfähig und übernehme gern Verantwortung. Meinen Lebenslauf habe ich beigefügt. Für ein Gespräch stehe ich jederzeit zur Verfügung. Mit freundlichen Grüßen, Elif",
       "alternativen": [
-        "Sehr geehrte Damen und Herren, hiermit bewerbe ich mich für Ihr Computerpraktikum. Ich bin in der sechsten Klasse und begeistere mich für neue Technologien. Im Team bin ich offen und übernehme gern Verantwortung. In der Schule habe ich ein Projektteam geleitet. Meinen Lebenslauf füge ich bei. Für ein Gespräch stehe ich jederzeit bereit. Mit freundlichen Grüßen, Elif",
-        "Guten Tag, ich möchte mich um Ihr Computerpraktikum bewerben. Ich besuche die sechste Klasse, lerne sehr gern neue Technik und habe in der Schule ein Projektteam angeführt. Ich arbeite gern im Team, übernehme Verantwortung und bin jederzeit für ein Gespräch erreichbar. Lebenslauf im Anhang. Viele Grüße, Elif"
+        "Sehr geehrte Damen und Herren, ich möchte mich um Ihr Computerpraktikum bewerben. Ich besuche die achte Klasse, lerne sehr gern neue Technik und habe in der Schule ein Projektteam angeführt, und wir haben es termingerecht abgeschlossen. Ich arbeite gern im Team, übernehme Verantwortung und bin jederzeit für ein Gespräch erreichbar. Lebenslauf im Anhang. Mit freundlichen Grüßen, Elif",
+        "Guten Tag, ich möchte mich um Ihr Computerpraktikum bewerben. Ich besuche die achte Klasse, lerne sehr gern neue Technik und habe in der Schule ein Projektteam angeführt. Ich arbeite gern im Team, übernehme Verantwortung und bin jederzeit für ein Gespräch erreichbar. Lebenslauf im Anhang. Viele Grüße, Elif"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2973,7 +2970,7 @@
       "text": "Diese Firma sucht zwei Personen für eine neue Position.",
       "alternativen": [
         "Für eine neue Stelle sucht dieses Unternehmen zwei Personen.",
-        "Das Unternehmen braucht zwei Leute für eine neue Position."
+        "Das Unternehmen braucht zwei Personen für eine neue Position."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3003,7 +3000,7 @@
       "text": "Wie soll ich meine Karriere nach dem Bachelorstudium planen?",
       "alternativen": [
         "Wie plane ich meinen beruflichen Weg nach dem Bachelor am besten?",
-        "Wie sollte ich nach dem Studium meine Karriere planen?"
+        "Wie sollte ich nach dem Bachelorstudium meine Karriere planen?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3011,10 +3008,7 @@
     {
       "bezug": "tr.b1.e15.s0279",
       "text": "Akademiker forschen oft lange.",
-      "alternativen": [
-        "Wissenschaftler forschen meist über lange Zeit.",
-        "Akademiker arbeiten häufig über viele Jahre an Forschungsprojekten."
-      ],
+      "alternativen": ["Wissenschaftler forschen meist über lange Zeit.", "Akademiker forschen häufig über eine lange Zeit."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3041,7 +3035,7 @@
     {
       "bezug": "tr.b1.e15.s0282",
       "text": "Softwareentwickler arbeiten meistens im Team.",
-      "alternativen": ["Entwickler arbeiten in der Regel in Teams.", "Programmierer sind meist in Teams tätig."],
+      "alternativen": ["Softwareentwickler arbeiten in der Regel in Teams.", "Softwareentwickler sind meist in Teams tätig."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3060,7 +3054,7 @@
       "text": "Ein Unternehmer entscheidet, indem er die Risiken abwägt.",
       "alternativen": [
         "Gründer treffen Entscheidungen, indem sie Risiken abwägen.",
-        "Unternehmer entscheiden, nachdem sie die Risiken berechnet haben."
+        "Unternehmer entscheiden, indem sie die Risiken berechnen."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3077,7 +3071,7 @@
       "text": "In den Kursen Recht und Wirtschaft habe ich viel mitgeschrieben.",
       "alternativen": [
         "In den Fächern Recht und Wirtschaft habe ich viele Notizen gemacht.",
-        "Im Recht- und Wirtschaftsstudium habe ich mir viele Notizen gemacht."
+        "In den Kursen zu Recht und Wirtschaft habe ich mir viele Notizen gemacht."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3096,7 +3090,7 @@
       "bezug": "tr.b1.e15.s0288",
       "text": "Mit einer psychologischen Fachkraft zu sprechen, hilft manchen Menschen sehr.",
       "alternativen": [
-        "Ein Gespräch mit einer Fachperson aus der Psychologie hilft vielen Menschen.",
+        "Ein Gespräch mit einer Fachperson aus der Psychologie hilft manchen Menschen sehr.",
         "Manchen Leuten hilft es sehr, mit einer Psychologin oder einem Psychologen zu reden."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -3202,7 +3196,7 @@
       "text": "Ein entschlossener Mensch gibt in schwierigen Situationen nicht auf.",
       "alternativen": [
         "Wer entschlossen ist, gibt in schweren Lagen nicht auf.",
-        "Eine standhafte Person lässt sich auch in schwierigen Zeiten nicht entmutigen."
+        "Eine standhafte Person gibt auch in schwierigen Zeiten nicht auf."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3212,7 +3206,7 @@
       "text": "Wir haben ein Teamtreffen abgehalten, um eine kreative Lösung zu finden.",
       "alternativen": [
         "Für eine kreative Lösung veranstalteten wir eine Teambesprechung.",
-        "Um eine originelle Lösung zu entwickeln, trafen wir uns im Team."
+        "Um eine kreative Lösung zu entwickeln, trafen wir uns im Team."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3248,7 +3242,7 @@
     {
       "bezug": "tr.b1.e15.s0306",
       "text": "Analytisches Denken ist bei der Planung sehr nützlich.",
-      "alternativen": ["Für die Planung ist analytisches Denken äußerst hilfreich.", "Wer analytisch denkt, kann besser planen."],
+      "alternativen": ["Für die Planung ist analytisches Denken äußerst hilfreich.", "Analytisches Denken hilft beim Planen sehr."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3284,8 +3278,8 @@
     },
     {
       "bezug": "tr.b1.e15.s0310",
-      "text": "Wir danken euch für euren Einsatz.",
-      "alternativen": ["Wir danken Ihnen für Ihren Einsatz.", "Danke für eure Bemühungen."],
+      "text": "Wir danken Ihnen für Ihren Einsatz.",
+      "alternativen": ["Wir danken Ihnen für Ihre Bemühungen.", "Vielen Dank für Ihre Mühe."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3293,8 +3287,8 @@
       "bezug": "tr.b1.e15.s0311",
       "text": "Eine Rückmeldung nach dem Vorstellungsgespräch ist sehr wertvoll.",
       "alternativen": [
-        "Rückmeldung nach dem Gespräch ist sehr wertvoll.",
-        "Eine Rückmeldung nach der Bewerbung zu bekommen, ist sehr wertvoll."
+        "Rückmeldung nach dem Vorstellungsgespräch zu erhalten, ist sehr wertvoll.",
+        "Nach dem Vorstellungsgespräch eine Rückmeldung zu bekommen, ist sehr wertvoll."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3358,7 +3352,7 @@
       "text": "Von Praktikanten wird erwartet, dass sie in puncto Pünktlichkeit sehr gut sind.",
       "alternativen": [
         "Man erwartet von Praktikanten, dass sie besonders pünktlich sind.",
-        "Praktikanten sollen beim Thema Pünktlichkeit sehr zuverlässig sein."
+        "Praktikanten sollen beim Thema Pünktlichkeit sehr gut sein."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3377,7 +3371,7 @@
       "bezug": "tr.b1.e15.s0320",
       "text": "Ich bin so begeistert, dass ich jeden Tag etwas Neues lernen möchte.",
       "alternativen": [
-        "Ich bin so motiviert, dass ich täglich etwas Neues lernen will.",
+        "Ich brenne so darauf, dass ich jeden Tag etwas Neues lernen möchte.",
         "Ich brenne so darauf, dass ich jeden Tag Neues entdecken möchte."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -3584,7 +3578,7 @@
                 "content": [
                   {
                     "type": "text",
-                    "text": "Lisans eğitimimi bu yıl tamamlayacağım."
+                    "text": "Lisans eğitimimi bu yıl tamamlayacağım. Diplomamı bu yıl alacağım."
                   }
                 ]
               }
@@ -3595,7 +3589,7 @@
             "content": [
               {
                 "type": "text",
-                "text": "Ich werde mein Bachelorstudium in diesem Jahr abschließen."
+                "text": "Ich werde mein Bachelorstudium in diesem Jahr abschließen. Mein Abschlusszeugnis bekomme ich in diesem Jahr."
               }
             ]
           }
