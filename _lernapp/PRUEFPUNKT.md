@@ -1,5 +1,22 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 12:03 UTC – B1 de fertig:**
+  - **Schlussprüfung** dcac498f: 16 Einheiten, 1.300 Lemmata, 5.254 Sätze, 2.242 Aufgaben, 0 blockierend.
+    - 12 menschlich_klaeren, alle in e16: Kategorie politik in ar/tr, Thema Staatskunde, offene Frage OF-10.
+    - Freigabe e01–e15 mit Hinweis (4350ee98, L3-E15). e16 bleibt Entwurf bis zur Redaktionsentscheidung OF-10.
+    - Gemergt 5a7c160b und auf `main`. Nachprüfung `tor-a1a2` läuft.
+  - **Taktung:**
+    - Fenster 11:10–16:10, Auslastung 0,29 um 11:59, Taktlinie 0,15.
+    - Gründe: B1-de-Schlussprüfung und Lektorate mit Opus.
+    - B2 de `wf_3df39f1c-1b7` direkt nach dem Commit 0a10eb48 angehalten (Entwürfe e01–e08 fertig, Lektorat 0).
+  - **Befund zur Qualität:** Das Opus-Lektorat findet je Haiku-Entwurf 1–3 Mängel „hoch“ und 5–10 „mittel“. Lektorat und Schlussprüfung bleiben deshalb bei Opus.
+  - **Es laufen:** B1 ar `wf_79f0b24f-65e`, B1 tr `wf_058f8fa1-7d9`.
+  - **Warteschlange:**
+    1. B2 de: `plan` `scratchpad/l3/b2/plan-de.json`, `entworfen` e01–e08, Haiku.
+    2. B2 tr (Plan mit Opus).
+    3. B2 ar.
+    4. C1.
+
 - **Stand 25.10.2026 11:16 UTC – neues Fenster 11:10–16:10:**
   - Die B1-Läufe de/ar/tr haben die Fenstergrenze ohne Abbruch überstanden: Die Auslastung erreichte höchstens 0,94 und liegt jetzt bei 0,01.
   - **B2 de fortgesetzt:** `wf_3df39f1c-1b7` (`plan` aus der Datei, `entworfen` e01–e03, Haiku).
