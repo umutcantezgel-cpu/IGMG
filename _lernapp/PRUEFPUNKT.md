@@ -1,5 +1,22 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 16:50 UTC – Umfang bis B1 (Nutzer, L3-E16):**
+  - B2 de `wf_ee651951-2ab` angehalten. Die Entwürfe e01–e12 bleiben als Entwurf (unsichtbar) erhalten.
+  - Es wird kein B2 tr, B2 ar und kein C1 gestartet.
+  - **Es laufen bis zur Freigabe:**
+    - B1 tr `wf_058f8fa1-7d9`: Rückübersetzungen 12/16, dann Schlussprüfung.
+    - B1 ar `wf_ff6dce59-04b`, seriell: Lektorate 8/16, Übersetzungen und Rückübersetzungen 5/16.
+  - **Danach:**
+    1. Freigabe B1 tr/ar nach L3-E15. Merge, schlanke Nachprüfung (`tor-a1a2.sh`), Push, live prüfen.
+    2. L8-05 Stufe C: frischer Endprüfer über Z-L01…Z-L22, Umfang A1–B1.
+    3. BERICHT mit Vorführpfad.
+    4. ABSCHLUSS.
+  - **Offen für Menschen:**
+    - OF-10 (Politik, B1 de e16).
+    - Zwei religiöse Prüfer.
+    - Blob-Token für Audio.
+    - Muttersprachler.
+
 - **Stand 25.10.2026 16:15 UTC – Fenster 16:10–21:10:**
   - **Fenster 11:10–16:10** endete bei 0,88 ohne Abbruch.
   - **B1 tr:** Übersetzungen 16/16 fertig, Rückübersetzungen e01–e08 fertig, Rest läuft.

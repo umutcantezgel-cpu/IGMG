@@ -309,3 +309,11 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
   - Erste Anwendung: A1 de/tr/ar (3bd40c46) und A2 de/tr/ar (304ec310), live seit dem 24.10.2026 um ≈ 20:45 UTC.
   - Muttersprachler-Prüfung (LM-02) und das Wissen mit zwei Freigaben (L3-E09) bleiben unberührt: Wissen wird nie ohne zwei
     menschliche Freigaben sichtbar.
+
+## L3-E16 · 2026-10-25 · Nutzer · Umfang der Sprachkurse vorerst bis B1
+- **Entscheidung (Nutzer, wörtlich):** „Bis B1 reicht erstmal“.
+- **Folge:**
+  - Die Sprachkurse werden in allen sechs Richtungen bis einschließlich B1 fertiggestellt und freigeschaltet (L3-E15).
+  - B2 und C1 werden vorerst nicht weiter erstellt. Die vorhandenen B2-Entwürfe de e01–e12 und der Wortschatzplan B2 de bleiben als Entwurf (unsichtbar) für eine spätere Fortsetzung erhalten.
+  - Z-L01 (Umfang A1–C1) gilt für die Abnahme als „Umfang A1–B1 nach Nutzerentscheidung“. B2/C1 stehen als offener Ausbau im BERICHT.
+  - Nach B1 tr/ar folgen L8-05 (Stufe C), BERICHT und ABSCHLUSS.
