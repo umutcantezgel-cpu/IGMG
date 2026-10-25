@@ -1,5 +1,11 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 25.10.2026 11:16 UTC – neues Fenster 11:10–16:10:**
+  - Die B1-Läufe de/ar/tr haben die Fenstergrenze ohne Abbruch überstanden: Die Auslastung erreichte höchstens 0,94 und liegt jetzt bei 0,01.
+  - **B2 de fortgesetzt:** `wf_3df39f1c-1b7` (`plan` aus der Datei, `entworfen` e01–e03, Haiku).
+  - **Es laufen 4 Inhalts-Workflows:** B1 de `wf_1f3338b3-0ce`, B1 ar `wf_79f0b24f-65e`, B1 tr `wf_058f8fa1-7d9`, B2 de `wf_3df39f1c-1b7`.
+  - **Warteschlange:** B2 tr (Plan mit Opus), B2 ar, C1 de/tr/ar.
+
 - **Stand 25.10.2026 10:48 UTC:**
   - **Durchsatz mit Haiku:** 19 Commits von 10:03 bis 10:46.
     - B1 de: Rückübersetzungen e01–e10.
