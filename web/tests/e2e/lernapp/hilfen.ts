@@ -11,6 +11,8 @@ import { formatiere } from '../../../src/lib/lernapp/format';
  */
 
 export const KURS = 'tr-aus-de';
+/** Thema der Testeinheit in der Oberfläche de (Station im Lernpfad; daneben stehen in der E2E-Datenbank die echten Einheiten). */
+export const THEMA_TEST = 'Testeinheit: Alltag';
 export const LEKTION_1 = 'tr-aus-de.a1.test.l01';
 export const LEKTION_2 = 'tr-aus-de.a1.test.l02';
 export const EINHEIT = 'tr.a1.test';
@@ -43,6 +45,9 @@ export async function ernsteBefunde(page: Page, kennzeichen: string): Promise<st
           .join(' ; ')}`,
     );
 }
+
+/** Station der Testeinheit im Lernpfad (Oberfläche de): Abschnitt mit ihrem Thema als Überschrift. */
+export const testStation = (page: Page) => page.getByRole('region', { name: THEMA_TEST, exact: true });
 
 /** Die eine Live-Region des Spielers (Rückmeldeblatt). */
 export const liveRegion = (page: Page) => page.locator('main p[role="status"].sr-only').first();
@@ -134,7 +139,8 @@ async function wortbank(page: Page, art: Bedienung, woerter: string[]) {
  */
 export async function spieleLektion1(page: Page, art: Bedienung, { ersteFalsch = false } = {}) {
   const status = liveRegion(page);
-  await expect(page.getByRole('heading', { name: de.aufgaben.auswahl.waehleUebersetzung })).toBeVisible();
+  // erstes Laden der Lektion: Kursverzeichnis und Paket der Einheit (mit den echten Inhalten daneben etwas länger)
+  await expect(page.getByRole('heading', { name: de.aufgaben.auswahl.waehleUebersetzung })).toBeVisible({ timeout: 15_000 });
   await auswahl(page, art, ersteFalsch ? 'Brot' : 'Wasser', { ziffer: !ersteFalsch });
   if (ersteFalsch) {
     await expect(status).toContainText(t.falsch);

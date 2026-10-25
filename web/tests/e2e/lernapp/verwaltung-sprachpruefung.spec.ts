@@ -42,6 +42,8 @@ async function pruefspracheDeutsch(email: string) {
 const eintragKopf = (page: Page) => page.getByRole('heading', { level: 2, name: /^Eintrag \d+ von \d+$/ });
 
 test('Sprachprüfung: Warteschlange, Stichprobe ziehen, Tastenkürzel, Korrektur, Sprachwahl', async ({ page }) => {
+  // Warteschlange und Stichprobe laufen über alle Einheiten der E2E-Datenbank (Testkurs und echte Inhalte A1–B1)
+  test.setTimeout(90_000);
   await angemeldetesKonto(page, 'sprachpruefung', undefined, pruefspracheDeutsch, /\/verwaltung\/lernapp\/sprachpruefung$/);
   await expect(page.getByRole('heading', { level: 1, name: d.titel })).toBeVisible();
   await expect(page.getByText(d.eigeneSprachen.replace('{sprachen}', d.sprachname.de))).toBeVisible();

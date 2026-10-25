@@ -46,7 +46,9 @@ export default defineConfig({
     command: 'node scripts/e2e-datenbank.mjs && node scripts/start-standalone.mjs',
     url: `${BASIS}/api/health`,
     reuseExistingServer: false,
-    timeout: 120_000,
+    // Datenbank frisch anlegen samt Import aller Lern-App-Inhalte (A1–B1, über 400 Dateien) und Serverstart: unter Last
+    // mehr als 2 min (Stufe C, 25.10.2026)
+    timeout: 300_000,
     env: {
       PORT: String(PORT),
       APP_URL: BASIS,

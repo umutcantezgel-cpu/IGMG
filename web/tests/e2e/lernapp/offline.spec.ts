@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import de from '../../../messages/lernapp/de.json';
-import { ergebnisText, KURS, LEKTION_1, spieleLektion1, swSteuert, xpText } from './hilfen';
+import { ergebnisText, KURS, LEKTION_1, spieleLektion1, swSteuert, testStation, xpText } from './hilfen';
 
 /**
  * Offline (ADR 0038, ADR 0039 Nr. 12, ADR 0037 Fortschreibung Nr. 7, AUFTRAG §6 Station 3): Einheit im Lernpfad offline
@@ -17,7 +17,8 @@ test('Einheit offline speichern, Netz abklemmen: Lektion vollständig spielbar, 
   await swSteuert(page);
   // einmal unter dem Worker laden, damit Seite, Programmteile und Schriften durch ihn gehen
   await page.reload();
-  const speichern = page.getByRole('button', { name: de.lernpfad.offline });
+  // die Station der Testeinheit (in der E2E-Datenbank stehen daneben die echten Einheiten mit eigenem Knopf)
+  const speichern = testStation(page).getByRole('button', { name: de.lernpfad.offline });
   await expect(speichern).toBeVisible();
   await speichern.click();
   await expect(page.locator('main').getByText(de.lernpfad.offlineFertig.split(' (')[0]!).first()).toBeVisible({ timeout: 60_000 });
