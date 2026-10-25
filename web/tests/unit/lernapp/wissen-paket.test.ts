@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { FreigabeBaustein, Pruefung, ReligioeserBaustein } from '@/lib/lernapp/freigabe';
 import { istPaketKopf } from '@/lib/lernapp/lokal/vorrat';
+import { abschnitte } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
 import { sha256Hex } from '@/lib/lernapp/paket/hash';
 import { type Paket, PaketSchema } from '@/lib/lernapp/paket/typen';
 import {
@@ -181,5 +182,37 @@ describe('PaketSchema: Wissenskurs nur auf Deutsch, mit Prüfvermerk je Lektion,
     expect(pruefe({ ...sprachkurs, wissen: undefined })).toBe(true);
     expect(pruefe({ ...gut, kurs: 'koran' })).toBe(false);
     expect(istPaketKopf({ ...gut, kurs: 'koran' })).toBe(false);
+  });
+});
+
+describe('Lernpfad: Prüfvermerk je Lektion aus dem Paket', () => {
+  it('gültiger Vermerk erscheint an der Lektion, ein ungültiger nicht', () => {
+    const r = baueWissensEinheit(einheit([lektion()]))!;
+    const v = {
+      format: 'igmg-lernapp-verzeichnis' as const,
+      version: 1 as const,
+      kurs: 'islam' as const,
+      kursId: 'islam' as const,
+      zielsprache: 'de' as const,
+      ausgangssprache: null,
+      stand: 1,
+      einheiten: [
+        {
+          schluessel: 'islam.grund.e01',
+          stufe: 'grund' as const,
+          reihenfolge: 1,
+          thema: { de: '[Thema]' },
+          hash: r.hash,
+          bytes: r.bytes,
+          lektionen: 1,
+          hinweis: false,
+          audio: [],
+        },
+      ],
+    };
+    const lektionen = (p: typeof r.paket) => abschnitte(v, new Set(), new Map([['islam.grund.e01', p]]))[0]!.stationen[0]!.lektionen;
+    expect(lektionen(r.paket)?.[0]?.vermerk).toEqual({ geprueftAm: '2026-10-21', kinderGeeignet: false });
+    const kaputt = { ...r.paket, wissen: { 'islam.grund.e01.l01': { ...r.paket.wissen!['islam.grund.e01.l01']!, geprueftAm: 'gestern' } } };
+    expect(lektionen(kaputt)?.[0]?.vermerk).toBeUndefined();
   });
 });

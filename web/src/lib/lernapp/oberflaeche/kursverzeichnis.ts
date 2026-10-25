@@ -73,13 +73,15 @@ export function abschnitte(v: Verzeichnis, erledigt: ReadonlySet<string>, pakete
     const paket = pakete.get(einheit.schluessel);
     const lektionen = paket
       ? paket.lektionen.map((l) => {
-          const v = paket.wissen?.[l.schluessel];
+          // Prüfvermerk nur in gültiger Form (der Kopf aus dem Vorrat ist nicht voll geprüft)
+          const roh = paket.wissen?.[l.schluessel];
+          const gueltig = roh && /^\d{4}-\d{2}-\d{2}$/.test(String(roh.geprueftAm)) && typeof roh.kinderGeeignet === 'boolean';
           return {
             schluessel: l.schluessel,
             art: l.art,
             ...(l.titel ? { titel: l.titel } : {}),
             erledigt: erledigt.has(l.schluessel),
-            ...(v ? { vermerk: { geprueftAm: v.geprueftAm, kinderGeeignet: v.kinderGeeignet } } : {}),
+            ...(gueltig ? { vermerk: { geprueftAm: roh.geprueftAm, kinderGeeignet: roh.kinderGeeignet } } : {}),
           };
         })
       : null;
