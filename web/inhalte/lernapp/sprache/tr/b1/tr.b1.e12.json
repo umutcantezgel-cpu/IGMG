@@ -20,7 +20,7 @@
       },
       {
         "de": "Ich kann eine Aufgabe im Verein übernehmen und Absprachen treffen.",
-        "tr": "Derneklerde bir görevi üstlenebilir ve anlaşmalar yapabilirim.",
+        "tr": "Dernekte bir görev üstlenebilir ve başkalarıyla anlaşabilirim.",
         "ar": "أستطيع أن أتولّى مهمة في الجمعية وأن أتفق على ترتيبات."
       },
       {
@@ -492,19 +492,18 @@
         "harmonie": "e/i"
       },
       "formen": {
-        "pl": "huzureviler",
-        "akk": "huzureviyi",
-        "dat": "huzureviye",
+        "pl": "huzurevleri",
+        "akk": "huzurevini",
+        "dat": "huzurevine",
         "gen": "huzurevinin",
         "ins": "huzureviyle",
         "poss.1sg": "huzurevim",
         "poss.2sg": "huzurevin",
-        "poss.3sg": "huzurevisi",
         "poss.1pl": "huzurevimiz",
         "poss.2pl": "huzureviniz",
-        "lok": "huzurevide",
-        "abl": "huzureviden",
-        "poss.3pl": "huzurevileri"
+        "lok": "huzurevinde",
+        "abl": "huzurevinden",
+        "pl.akk": "huzurevlerini"
       },
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1186,8 +1185,8 @@
       },
       "formen": {
         "pl": "ihtiyaç sahipleri",
-        "akk": "ihtiyaç sahiplerini",
-        "dat": "ihtiyaç sahiplerine"
+        "pl.akk": "ihtiyaç sahiplerini",
+        "pl.dat": "ihtiyaç sahiplerine"
       },
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2049,19 +2048,12 @@
         "harmonie": "e/ü"
       },
       "formen": {
-        "pl": "işbölümüler",
-        "akk": "işbölümüyü",
-        "dat": "işbölümüye",
+        "akk": "işbölümünü",
+        "dat": "işbölümüne",
         "gen": "işbölümünün",
         "ins": "işbölümüyle",
-        "poss.1sg": "işbölümüm",
-        "poss.2sg": "işbölümün",
-        "poss.3sg": "işbölümüsü",
-        "poss.1pl": "işbölümümüz",
-        "poss.2pl": "işbölümünüz",
-        "lok": "işbölümüde",
-        "abl": "işbölümüden",
-        "poss.3pl": "işbölümüleri"
+        "lok": "işbölümünde",
+        "abl": "işbölümünden"
       },
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2151,7 +2143,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0002",
-      "text": "Derneğin başkanı Susanne, yeni gönüllüleri tanımak diye her pazartesi toplantı yapıyor.",
+      "text": "Derneğin koordinatörü Susanne, yeni gönüllüler birbirini tanısın diye her pazartesi bir toplantı yapıyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2175,7 +2167,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0006",
-      "text": "Elif, ailesine gönüllülük hakkında bilgi vermek diye broşür getirdi.",
+      "text": "Elif, ailesi gönüllülük hakkında bilgi alsın diye bir broşür getirdi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2199,7 +2191,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0010",
-      "text": "Toplum için yapılan işler, herkes için büyük bir katkıdır.",
+      "text": "Toplum için yapılan işler herkese büyük bir katkı sağlar.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2217,13 +2209,13 @@
     },
     {
       "schluessel": "tr.b1.e12.s0013",
-      "text": "“Hiçbir gönüllü işi küçük değildir.” diye sözünü tekrarladı Susanne.",
+      "text": "Susanne, “Hiçbir gönüllü işi küçük değildir.” diye tekrarladı.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0014",
-      "text": "Can, kurulun kararlarını öğrenmek diye her toplantıda not alıyor.",
+      "text": "Can, kurulun kararlarını unutmayayım diye her toplantıda not alıyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2253,7 +2245,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0019",
-      "text": "Can, arkadaşlarına derneğin etkinliklerini ve yardım faaliyetini anlattı.",
+      "text": "Can, arkadaşlarına derneğin faaliyetlerini anlattı.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2265,7 +2257,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0021",
-      "text": "Yeni gönüllülere ilk hafta bir eşlik eden kişi atanır.",
+      "text": "Yeni gönüllülere ilk hafta eski bir gönüllü eşlik ediyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2301,43 +2293,43 @@
     },
     {
       "schluessel": "tr.b1.e12.s0027",
-      "text": "Bu işte sabır ve düzen en önemli özelliklerdir.",
+      "text": "Dernek, gençlere yeni şeyler öğrenme imkanı veriyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0028",
-      "text": "Murat, dernekte sevinçle gönüllü olarak yardım ediyordu.",
+      "text": "Can, başkalarına yardım etmeyi çok anlamlı bulduğunu söyledi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0029",
-      "text": "Her gönüllü ilk gün bir kimlik kartı aldı.",
+      "text": "Dernekte hem gençler hem de yetişkinler gönüllü olarak çalışıyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0030",
-      "text": "Can, derneğin kartını cebine koydu ve hemen sınıfa koştu.",
+      "text": "Can, derneğin kartını cebine koydu ve hemen çocukların yanına koştu.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0031",
-      "text": "Derneğin üyeleri ayda bir kez ortak bir organizasyon yapıyor.",
+      "text": "Dernek, mahalledeki en eski kuruluşlardan biri.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0032",
-      "text": "Gönüllüler yemekten sonra masayı birlikte topluyor ve her işe katkı veriyor.",
+      "text": "Gönüllüler yemekten sonra masayı birlikte topluyor ve her işe katkıda bulunuyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0033",
-      "text": "“Haydi, başlayalım!” diye seslendi Susanne.",
+      "text": "Susanne, “Haydi, başlayalım!” diye seslendi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2361,7 +2353,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0037",
-      "text": "Bu derneğin aidatı yok, ama katılım isteniyor.",
+      "text": "Gönüllülük, toplumsal hayatın önemli bir parçasıdır.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2373,7 +2365,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0039",
-      "text": "Teşekkür belgesi, emeklerin karşılığı olarak verilen bir takdirdir.",
+      "text": "Gönüllüler, çalışmalarının karşılığında para almıyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2409,7 +2401,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0045",
-      "text": "Katılımcıların kıyafetlerini düzenlemesi kermesin en zor işiydi.",
+      "text": "Gönüllülerin bağışlanan kıyafetleri düzenlemesi kermesin en zor işiydi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2433,7 +2425,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0049",
-      "text": "İhtiyaç sahiplerine erzak dağıtmak, dayanışmanın somut bir biçimidir.",
+      "text": "İhtiyaç sahiplerine erzak dağıtmak, dayanışmanın somut bir örneğidir.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2445,13 +2437,13 @@
     },
     {
       "schluessel": "tr.b1.e12.s0051",
-      "text": "Derya, bağışlanan oyuncakların hepsini bir odaya taşıdı.",
+      "text": "Derya, bağışlanan oyuncakları çocuklara eşit olarak paylaştırdı.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0052",
-      "text": "Sevim, kermeste satılan kekleri kendi elleriyle yaptığını söyledi.",
+      "text": "Gönüllüler, kermesten kalan kekleri kendi aralarında bölüştü.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2487,7 +2479,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0058",
-      "text": "Kermeste gönüllü bir yardımcının kahve ikramına bakmasını istiyoruz.",
+      "text": "Kermeste yer sınırlı olduğu için her aile sadece bir masa kurabiliyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2505,19 +2497,19 @@
     },
     {
       "schluessel": "tr.b1.e12.s0061",
-      "text": "Mektubun imzalanması için derneğin başkanı burada bulunmalı.",
+      "text": "Kermesin açılışı saat onda başkanın kısa bir konuşmasıyla yapılacak.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0062",
-      "text": "Ailelerin destek istemesi, derneğin en temel işlerinden biridir.",
+      "text": "Destek isteyen ailelere yardım etmek, derneğin en önemli işlerinden biridir.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0063",
-      "text": "Maddi bağışlar için toplama yöntemi bu yıl değiştirildi.",
+      "text": "Maddi bağışların toplanma şekli bu yıl değiştirildi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2535,13 +2527,13 @@
     },
     {
       "schluessel": "tr.b1.e12.s0066",
-      "text": "Gönüllülerin yaptığı işlerin listelenmesi için bir tablo hazırlandı.",
+      "text": "Gönüllülerin yaptığı işleri göstermek için bir liste hazırlandı.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0067",
-      "text": "Tablodaki isimlerin doğru yazılması Can’ın sorumluluğundaydı.",
+      "text": "Listedeki isimlerin doğru yazılması Can’ın göreviydi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2583,19 +2575,19 @@
     },
     {
       "schluessel": "tr.b1.e12.s0074",
-      "text": "Komşular, ihtiyaç sahibi ailelere sıcak yemek getirmeleri için davet edildi.",
+      "text": "Komşular, ihtiyaç sahibi ailelere sıcak yemek getirmeye davet edildi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0075",
-      "text": "Kermesin yarısında yağmur başladı, ama kimse dağılmadı.",
+      "text": "Kermes sırasında yağmur başladı, ama kimse eve gitmedi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0076",
-      "text": "Yağmur yüzünden bir kısım etkinlik iptal edildi.",
+      "text": "Yağmur yüzünden etkinliklerin bir kısmı iptal edildi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2673,13 +2665,13 @@
     },
     {
       "schluessel": "tr.b1.e12.s0089",
-      "text": "Murat’ın ekibi deprem durumuna da hazırlıklı olmak için çalışıyor.",
+      "text": "Murat’ın ekibi deprem gibi afetlere de hazırlıklı olmak için çalışıyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0090",
-      "text": "Depremde önlem olarak çantaya su ve el feneri koymak gerekir.",
+      "text": "Depreme karşı önlem olarak bir çantaya su ve el feneri koymak gerekir.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2727,7 +2719,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0098",
-      "text": "Can, sınıfta bu konuyu anlatıp arkadaşlarını dinletti.",
+      "text": "Can, sınıfta bu konuyu anlatıp arkadaşlarının sorularını cevapladı.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2745,7 +2737,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0101",
-      "text": "Murat, eğitim sonunda bütün ekibe teşekkür etti.",
+      "text": "Can’a göre babası bir kahraman, ama Murat sadece gülümsüyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2769,7 +2761,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0105",
-      "text": "Derneğin başkanı, planı herkese dağıtmasını istedi.",
+      "text": "Ekibin lideri, planı herkese dağıtması için Murat’ı görevlendirdi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2829,7 +2821,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0115",
-      "text": "Sahte bir yangını söndürdük ve bir kişiyi kurtardık.",
+      "text": "Temsili bir yangını söndürdük ve bir kişiyi kurtardık.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2859,7 +2851,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0120",
-      "text": "Derya, yaşlı komşularının hayatını dinlemenin ne kadar değerli olduğunu anlatıyor.",
+      "text": "Derya, yaşlıların hayat hikâyelerini dinlemenin ne kadar değerli olduğunu anlatıyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2877,7 +2869,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0123",
-      "text": "Derya, sohbet ederken bir yaşlı kadının eski mahallesini anlattığını dinledi.",
+      "text": "Derya, sohbet ederken yaşlı bir kadının eski mahallesini anlattığını dinledi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2901,7 +2893,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0127",
-      "text": "Engelli bir gönüllü, rampa yapılmasının çok önemli olduğunu vurguladı.",
+      "text": "Engelli bir gönüllü, rampa yapılmasının çok önemli olduğunu söyledi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2919,7 +2911,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0130",
-      "text": "Barınakta çalışan gönüllüler, hayvanların bakımı için yapılan işleri anlattı.",
+      "text": "Barınaktaki gönüllüler, bir kediyi sahiplenmek isteyen ailelere bilgi veriyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2949,7 +2941,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0135",
-      "text": "Derya, huzurevindeki odaları ziyaret edip herkesle selamlaştı.",
+      "text": "Derya, huzurevindeki odaları ziyaret edip herkese merhaba dedi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2985,7 +2977,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0141",
-      "text": "Derneğin kurulu, eşit haklar için yeni bir çalışma grubu kurmayı kabul etti.",
+      "text": "Derneğin kurulu, engelli üyelerin eşit katılımı için bir çalışma grubu kurdu.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3003,7 +2995,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0144",
-      "text": "Gönüllülerden biri, toplumda engellerin önemli bir konu olduğunu vurguladı.",
+      "text": "Gönüllülerden biri, binalardaki engellerin önemli bir sorun olduğunu söyledi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3057,7 +3049,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0153",
-      "text": "Yaşlılar gençlere hayat tecrübelerini aktardıklarını söylüyor.",
+      "text": "Yaşlılar, gençlere eski hikâyeler anlatmayı çok sevdiklerini söylüyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3075,7 +3067,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0156",
-      "text": "Yaşlı komşularla sohbet etmek zor değil mi?",
+      "text": "Yaşlılarla sohbet etmek zor değil mi?",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3105,7 +3097,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0161",
-      "text": "Turnuvaya on iki takım katılacak, bazı takımlar henüz kayıt yaptırmadı.",
+      "text": "Turnuvaya mahalledeki amatör ligden on iki takım katılacak.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3153,7 +3145,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0169",
-      "text": "Koordinatör, her gönüllünün bir görev listesine bakmasını istedi.",
+      "text": "Koordinatör, görev dağılımını bir listeye yazıp herkese gönderdi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3201,25 +3193,25 @@
     },
     {
       "schluessel": "tr.b1.e12.s0177",
-      "text": "Protokol: Toplantıya katılım zorunlu değildir, ama önemlidir.",
+      "text": "Tutanağa göre toplantıya katılım zorunlu değil, ama önemli.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0178",
-      "text": "Protokol: Karar, oy çokluğuyla kabul edildi.",
+      "text": "Tutanağa göre karar, oy çokluğuyla kabul edildi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0179",
-      "text": "Protokol: Gelecek ay ilk yardım eğitimi için bir eğitmen davet edilecek.",
+      "text": "Tutanağa göre gelecek ay ilk yardım eğitimi için bir eğitmen davet edilecek.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0180",
-      "text": "Derneğin sorumluluk alanları ve görevleri yazılı olarak paylaşıldı.",
+      "text": "Derneğin bütün görevleri yazılı olarak paylaşıldı.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3237,13 +3229,13 @@
     },
     {
       "schluessel": "tr.b1.e12.s0183",
-      "text": "Derya, festival için bütçenin nasıl harcanacağını hesaplamayı üstlendi.",
+      "text": "Derya, festival bütçesinin nasıl harcanacağını planlamayı üstlendi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0184",
-      "text": "Bütçe için maddi destek almak amacıyla bir dilekçe yazılacak.",
+      "text": "Festival için maddi destek istemek üzere belediyeye bir dilekçe yazılacak.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3267,7 +3259,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0188",
-      "text": "Kurallara uymayan takımın puanı silinecek, ama bu nadiren olur.",
+      "text": "Çocuklar ve yetişkinler aynı turnuvada birlikte yarışabiliyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3285,7 +3277,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0191",
-      "text": "Liste sayesinde bir sonraki etkinlik için eksikler hemen görülebiliyor.",
+      "text": "Susanne’ye göre bu başarıda her gönüllünün payı var.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3297,7 +3289,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0193",
-      "text": "Festival alanındaki hava durumu için bir yedek plan hazırlandı.",
+      "text": "Kötü havaya karşı festival için bir yedek plan hazırlandı.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3327,7 +3319,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0198",
-      "text": "Herkes sahnede birlikte fotoğraf çektirip eğlenceli bir an yaşadı.",
+      "text": "Kazanan takım, zaferini sahnede seyircilerle birlikte kutladı.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3351,19 +3343,19 @@
     },
     {
       "schluessel": "tr.b1.e12.s0202",
-      "text": "O zaman kupa için yarışma uzayabilir.",
+      "text": "Peki, kayıtlar ne zaman bitiyor?",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0203",
-      "text": "Evet, ama herkesin kayıt işini bu hafta bitirmesini istiyoruz.",
+      "text": "Bütün takımların kaydını bu hafta tamamlamasını istiyoruz.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0204",
-      "text": "Hayır, kupa kazananına madalya verilmeyecek.",
+      "text": "Kupa ve madalyalar sahnede verilecek.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3375,7 +3367,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0206",
-      "text": "Can ve semtin derneği",
+      "text": "Can ve semt derneği",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3393,7 +3385,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0209",
-      "text": "Can sonbahardan beri gönüllü, ama birçok çocuğu tanıyor.",
+      "text": "Can ancak sonbahardan beri gönüllü, ama şimdiden birçok çocuğu tanıyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3405,7 +3397,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0211",
-      "text": "Evet Can. İki çocuk odada, seni bekliyor.",
+      "text": "Evet, Can. İki çocuk odada, seni bekliyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3417,7 +3409,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0213",
-      "text": "Bugün okul ve günlük hayat kelimelerini çalışacağız, sonra bir oyun oynarız.",
+      "text": "Bugün okul kelimelerini çalışacağız, sonra da birlikte bir oyun oynayacağız.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3435,19 +3427,19 @@
     },
     {
       "schluessel": "tr.b1.e12.s0216",
-      "text": "Can, çocukken okurken kendisine yardım edildiğini anlatıyor.",
+      "text": "Can, ilkokuldayken burada kendisine de yardım edildiğini anlatıyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0217",
-      "text": "Bu güzel bir sebep. Alınan yardımı sevinçle geri vermek güzel bir şey.",
+      "text": "Bu çok güzel bir sebep. Aldığın yardımı geri vermek harika bir şey.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0218",
-      "text": "Birden telefon çaldı.",
+      "text": "Birden telefon çalıyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3459,7 +3451,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0220",
-      "text": "Susanne geri geldi ve gülümsedi: Başvuru onaylanmış.",
+      "text": "Susanne geri geliyor ve gülümsüyor: Başvuru onaylanmış.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3471,13 +3463,13 @@
     },
     {
       "schluessel": "tr.b1.e12.s0222",
-      "text": "Tabii. Afişleri dağıtabilir misin?",
+      "text": "Çok iyi. Afişleri dağıtabilir misin?",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0223",
-      "text": "Tabii. Yarın okula götürürüm.",
+      "text": "Tabii, yarın okula götürürüm.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3549,31 +3541,31 @@
     },
     {
       "schluessel": "tr.b1.e12.s0235",
-      "text": "Yolda bugün ne kadar sevinç verdiğini düşünüyor.",
+      "text": "Yolda, bugün insanlara ne kadar sevinç verdiğini düşünüyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0236",
-      "text": "Can hangi dönemde derneğe katıldı?",
+      "text": "Can ne zamandan beri dernekte gönüllü?",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0237",
-      "text": "Can sonbahardan beri derneğe katılıyor.",
+      "text": "Sonbahardan beri gönüllü.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0238",
-      "text": "Can yazın tatile gitti.",
+      "text": "Geçen haftadan beri gönüllü.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0239",
-      "text": "Can geçen hafta taşındı.",
+      "text": "İki yıldır gönüllü.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3699,13 +3691,13 @@
     },
     {
       "schluessel": "tr.b1.e12.s0260",
-      "text": "Elif ve ödev yardımı",
+      "text": "Özge ve ödev yardımı",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0261",
-      "text": "Elif on sekiz yaşında ve bu semtte yaşıyor.",
+      "text": "Özge on yedi yaşında ve bu semtte yaşıyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3723,13 +3715,13 @@
     },
     {
       "schluessel": "tr.b1.e12.s0264",
-      "text": "Bugün çocuklarla büyük bir abla gibi hissediyor.",
+      "text": "Bugün çocukların yanında kendini bir abla gibi hissediyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0265",
-      "text": "Elif’e göre en önemli şey sabır ve nazik bir sözdür.",
+      "text": "Özge’ye göre en önemli şey sabır ve nazik bir sözdür.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3741,31 +3733,31 @@
     },
     {
       "schluessel": "tr.b1.e12.s0267",
-      "text": "Elif ileride öğretmen olmak istiyor.",
+      "text": "Özge, gelecekte öğretmen olmak istiyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0268",
-      "text": "Elif, derneğin ödev yardımında gönüllü olarak çalışıyor.",
+      "text": "Özge, derneğin ödev yardımında gönüllü olarak çalışıyor.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0269",
-      "text": "Elif, ilk başta hiç gergin değildi.",
+      "text": "Özge, ilk başta hiç gergin değildi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0270",
-      "text": "Elif, ileride pilot olmak istiyor.",
+      "text": "Özge’nin iki kardeşi var.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0271",
-      "text": "Elif’e göre en önemli şey nedir?",
+      "text": "Özge’ye göre en önemli şey nedir?",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3789,7 +3781,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0275",
-      "text": "Protokoll: Dernek toplantısı",
+      "text": "Tutanak: Dernek toplantısı",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3843,7 +3835,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0284",
-      "text": "Derya, tatbikatı organize edecek.",
+      "text": "Derya, tatbikatı planlayacak.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3873,13 +3865,13 @@
     },
     {
       "schluessel": "tr.b1.e12.s0289",
-      "text": "Murat tatbikatı planladı.",
+      "text": "Murat oyunların organizasyonunu üstlendi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0290",
-      "text": "Sevim broşürleri dağıttı.",
+      "text": "Sevim oyunların organizasyonunu üstlendi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3897,7 +3889,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0293",
-      "text": "Peki, o zaman Derya seni değiştirir.",
+      "text": "Peki, o zaman Derya senin yerine gelir.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3909,7 +3901,7 @@
     },
     {
       "schluessel": "tr.b1.e12.s0295",
-      "text": "Tamam, ben bugün bütün afişleri asarım.",
+      "text": "Tamam, yarın dağıtım masasında olurum.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3921,25 +3913,31 @@
     },
     {
       "schluessel": "tr.b1.e12.s0297",
-      "text": "Derneğe yaptığın bir gönüllü çalışmayı anlatan kısa bir rapor yaz.",
+      "text": "Dernekte yaptığın bir gönüllü çalışmayı anlatan kısa bir rapor yaz.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0298",
-      "text": "Geçen cumartesi derneğin kermesinde gönüllü olarak çalıştım, çünkü çocuklara yardım etmek istiyordum. Standı birlikte kurduk, pasta sattık ve bağış kutusunu düzenli olarak kontrol ettik.",
+      "text": "Geçen cumartesi derneğimizin kermesinde gönüllü olarak çalıştım, çünkü çocuklar için bağış toplamak istiyordum. Sabah erkenden gelip standımızı kurduk. Komşularımız da evde yaptıkları kekleri getirdi. Ben kek ve çay sattım, Elif ise bağış kutusunu kontrol etti. Öğleden sonra yağmur başladı, ama kimse eve gitmedi.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0299",
-      "text": "Gönüllü olarak yaptığım en güzel iş, çocuklara kitap okumaktı.",
+      "text": "Huzurevinde gönüllüyüm, çünkü yaşlılarla sohbet etmeyi seviyorum.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.b1.e12.s0300",
       "text": "Toplantıda kermesin 12 Mayıs’ta yapılacağı kararlaştırıldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e12.s0301",
+      "text": "Akşam bağışları birlikte saydık ve üç yüz avro toplandığını öğrendik. Koordinatörümüz, paranın ödev yardımı için yeni kitaplara harcanacağını söyledi. Bu gün çok yorucuydu, ama başkalarına yardım etmek bana çok anlamlı geldi. Gelecek kermeste yine gönüllü olmak istiyorum.",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     }
@@ -3990,34 +3988,41 @@
         {
           "schluessel": "tr.b1.e12.l01.a06",
           "typ": "paare",
-          "lemmata": ["tr.b1.e12.gonullu", "tr.b1.e12.uyelik", "tr.b1.e12.kurul", "tr.b1.e12.baskan"]
+          "lemmata": [
+            "tr.b1.e12.gonulluluk",
+            "tr.b1.e12.kurul",
+            "tr.b1.e12.baskan",
+            "tr.b1.e12.kurulus",
+            "tr.b1.e12.imkan",
+            "tr.b1.e12.karsilik"
+          ]
         },
         {
           "schluessel": "tr.b1.e12.l01.a07",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0008",
           "wort": 3,
-          "ablenker": ["pahalı", "kapalı"]
+          "ablenker": ["ücretsizi", "ücretsizden"]
         },
         {
           "schluessel": "tr.b1.e12.l01.a08",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0020",
           "wort": 4,
-          "ablenker": ["zayıflatmaktır", "kapatmaktır"]
+          "ablenker": ["güçlendirmeyi", "güçlendirdi"]
         },
         {
           "schluessel": "tr.b1.e12.l01.a09",
           "typ": "luecke",
-          "ziel": "tr.b1.e12.s0017",
-          "wort": 5,
-          "ablenker": ["düşük", "kısa"]
+          "ziel": "tr.b1.e12.s0037",
+          "wort": 1,
+          "ablenker": ["toplum", "toplumlar"]
         },
         {
           "schluessel": "tr.b1.e12.l01.a10",
           "typ": "satzbau",
           "ziel": "tr.b1.e12.s0012",
-          "alternativen": ["Herkesin bir rol üstlenebileceğini Susanne söyledi.", "Susanne söyledi, herkesin bir rol üstlenebileceğini."]
+          "alternativen": ["Herkesin bir rol üstlenebileceğini Susanne söyledi."]
         },
         {
           "schluessel": "tr.b1.e12.l01.a11",
@@ -4038,7 +4043,7 @@
         {
           "schluessel": "tr.b1.e12.l01.a13",
           "typ": "frei",
-          "ziel": "tr.b1.e12.s0010",
+          "ziel": "tr.b1.e12.s0028",
           "nach": "ausgang"
         },
         {
@@ -4047,6 +4052,39 @@
           "anweisung": "waehleGehoertes",
           "ziel": "tr.b1.e12.s0001",
           "ablenker": ["tr.b1.e12.s0003", "tr.b1.e12.s0004"]
+        },
+        {
+          "schluessel": "tr.b1.e12.l01.a15",
+          "typ": "luecke",
+          "ziel": "tr.b1.e12.s0033",
+          "wort": 3,
+          "ablenker": ["dedi", "için"]
+        },
+        {
+          "schluessel": "tr.b1.e12.l01.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e12.s0006",
+          "nach": "ziel",
+          "ablenker": ["almak", "dün"]
+        },
+        {
+          "schluessel": "tr.b1.e12.l01.a17",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e12.s0021",
+          "alternativen": ["İlk hafta yeni gönüllülere eski bir gönüllü eşlik ediyor."]
+        },
+        {
+          "schluessel": "tr.b1.e12.l01.a18",
+          "typ": "frei",
+          "ziel": "tr.b1.e12.s0034",
+          "nach": "ziel",
+          "alternativen": [
+            "Yeni katılımcılar için tanıtım toplantısı düzenlendi.",
+            "Yeni katılımcılar için bir tanıtım toplantısı yapıldı.",
+            "Yeni katılımcılar için tanıtım toplantısı yapıldı.",
+            "Yeni katılımcılara yönelik bir tanıtım toplantısı düzenlendi."
+          ]
         }
       ]
     },
@@ -4086,21 +4124,28 @@
         {
           "schluessel": "tr.b1.e12.l02.a05",
           "typ": "paare",
-          "lemmata": ["tr.b1.e12.kermes", "tr.b1.e12.erzak", "tr.b1.e12.koli", "tr.b1.e12.afis"]
+          "lemmata": [
+            "tr.b1.e12.kermes",
+            "tr.b1.e12.erzak",
+            "tr.b1.e12.koli",
+            "tr.b1.e12.kampanya",
+            "tr.b1.e12.malzeme",
+            "tr.b1.e12.faaliyet"
+          ]
         },
         {
           "schluessel": "tr.b1.e12.l02.a06",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0047",
           "wort": 5,
-          "ablenker": ["düzensiz", "dağınık"]
+          "ablenker": ["düzenle", "düzende"]
         },
         {
           "schluessel": "tr.b1.e12.l02.a07",
           "typ": "luecke",
-          "ziel": "tr.b1.e12.s0057",
-          "wort": 6,
-          "ablenker": ["sıkıntı", "korku"]
+          "ziel": "tr.b1.e12.s0055",
+          "wort": 3,
+          "ablenker": ["astı", "asmak"]
         },
         {
           "schluessel": "tr.b1.e12.l02.a08",
@@ -4113,8 +4158,8 @@
           "schluessel": "tr.b1.e12.l02.a09",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0045",
-          "wort": 5,
-          "ablenker": ["kolay", "hafif"]
+          "wort": 3,
+          "ablenker": ["düzenledi", "düzenlemek"]
         },
         {
           "schluessel": "tr.b1.e12.l02.a10",
@@ -4134,19 +4179,48 @@
           "schluessel": "tr.b1.e12.l02.a12",
           "typ": "wortbank",
           "anweisung": "uebersetze",
-          "satz": "tr.b1.e12.s0071",
+          "satz": "tr.b1.e12.s0051",
           "nach": "ausgang"
         },
         {
           "schluessel": "tr.b1.e12.l02.a13",
           "typ": "frei",
-          "ziel": "tr.b1.e12.s0070",
+          "ziel": "tr.b1.e12.s0074",
           "nach": "ausgang"
         },
         {
           "schluessel": "tr.b1.e12.l02.a14",
           "typ": "hoeren_schreiben",
           "ziel": "tr.b1.e12.s0065"
+        },
+        {
+          "schluessel": "tr.b1.e12.l02.a15",
+          "typ": "luecke",
+          "ziel": "tr.b1.e12.s0053",
+          "wort": 6,
+          "ablenker": ["diye", "gibi"]
+        },
+        {
+          "schluessel": "tr.b1.e12.l02.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e12.s0052",
+          "nach": "ziel",
+          "alternativen": ["Gönüllüler kendi aralarında kermesten kalan kekleri bölüştü."],
+          "ablenker": ["kalacak", "dün"]
+        },
+        {
+          "schluessel": "tr.b1.e12.l02.a17",
+          "typ": "luecke",
+          "ziel": "tr.b1.e12.s0061",
+          "wort": 1,
+          "ablenker": ["açılış", "açılışta"]
+        },
+        {
+          "schluessel": "tr.b1.e12.l02.a18",
+          "typ": "frei",
+          "ziel": "tr.b1.e12.s0058",
+          "nach": "ausgang"
         }
       ]
     },
@@ -4183,12 +4257,19 @@
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.b1.e12.yangin",
-          "ablenker": ["tr.b1.e09.kavga", "tr.b1.e09.tartisma", "tr.b1.e09.anlasmazlik"]
+          "ablenker": ["tr.b1.e12.deprem", "tr.b1.e12.onlem", "tr.b1.e12.tahliye"]
         },
         {
           "schluessel": "tr.b1.e12.l03.a05",
           "typ": "paare",
-          "lemmata": ["tr.b1.e12.itfaiye", "tr.b1.e12.tatbikat", "tr.b1.e12.deprem", "tr.b1.e12.sahne"]
+          "lemmata": [
+            "tr.b1.e12.itfaiye",
+            "tr.b1.e12.tatbikat",
+            "tr.b1.e12.alarm",
+            "tr.b1.e12.afet",
+            "tr.b1.e12.kahraman",
+            "tr.b1.e12.lider"
+          ]
         },
         {
           "schluessel": "tr.b1.e12.l03.a06",
@@ -4215,35 +4296,39 @@
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0081",
           "wort": 1,
-          "ablenker": ["ücretli", "resmi"]
+          "ablenker": ["gönüllülük", "gönüllüyü"]
         },
         {
           "schluessel": "tr.b1.e12.l03.a08",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0083",
           "wort": 6,
-          "ablenker": ["yavaş", "sessiz"]
+          "ablenker": ["hızlılık", "hızın"]
         },
         {
           "schluessel": "tr.b1.e12.l03.a09",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0095",
           "wort": 7,
-          "ablenker": ["dinleniyor", "dinlemedi"]
+          "ablenker": ["dinlenip", "dinlenmek"]
         },
         {
           "schluessel": "tr.b1.e12.l03.a10",
           "typ": "satzbau",
           "ziel": "tr.b1.e12.s0090",
-          "alternativen": ["Depremde önlem olarak su ve el feneri çantaya koymak gerekir."]
+          "alternativen": [
+            "Depreme karşı önlem olarak su ve el feneri bir çantaya koymak gerekir.",
+            "Önlem olarak depreme karşı bir çantaya su ve el feneri koymak gerekir."
+          ]
         },
         {
           "schluessel": "tr.b1.e12.l03.a11",
           "typ": "wortbank",
           "anweisung": "uebersetze",
-          "satz": "tr.b1.e12.s0088",
+          "satz": "tr.b1.e12.s0096",
           "nach": "ziel",
-          "ablenker": ["ödev", "dün"]
+          "ablenker": ["buluşuyor", "dün"],
+          "alternativen": ["Sabahları ekip arkadaşları buluşup kontrol listesini okuyor."]
         },
         {
           "schluessel": "tr.b1.e12.l03.a12",
@@ -4257,7 +4342,12 @@
           "typ": "frei",
           "ziel": "tr.b1.e12.s0100",
           "nach": "ziel",
-          "alternativen": ["Bu işte herkesin sorumluluğu, zamanında gelmektir."]
+          "alternativen": [
+            "Bu işte herkesin sorumluluğu, zamanında gelmektir.",
+            "Zamanında gelmek, bu işte herkesin sorumluluğudur.",
+            "Bu işte zamanında gelmek herkesin sorumluluğu.",
+            "Bu işte zamanında gelmek, herkesin görevidir."
+          ]
         },
         {
           "schluessel": "tr.b1.e12.l03.a14",
@@ -4265,6 +4355,26 @@
           "anweisung": "waehleGehoertes",
           "ziel": "tr.b1.e12.s0085",
           "ablenker": ["tr.b1.e12.s0084", "tr.b1.e12.s0086"]
+        },
+        {
+          "schluessel": "tr.b1.e12.l03.a15",
+          "typ": "luecke",
+          "ziel": "tr.b1.e12.s0089",
+          "wort": 4,
+          "ablenker": ["afetler", "afetin"]
+        },
+        {
+          "schluessel": "tr.b1.e12.l03.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e12.s0105",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e12.l03.a17",
+          "typ": "frei",
+          "ziel": "tr.b1.e12.s0101",
+          "nach": "ausgang"
         }
       ]
     },
@@ -4306,7 +4416,14 @@
         {
           "schluessel": "tr.b1.e12.l04.a05",
           "typ": "paare",
-          "lemmata": ["tr.b1.e12.huzurevi", "tr.b1.e12.barinak", "tr.b1.e12.engelli", "tr.b1.e12.bakici"]
+          "lemmata": [
+            "tr.b1.e12.huzurevi",
+            "tr.b1.e12.barinak",
+            "tr.b1.e12.engelli",
+            "tr.b1.e12.bakici",
+            "tr.b1.e12.esit",
+            "tr.b1.e12.sahiplenmek"
+          ]
         },
         {
           "schluessel": "tr.b1.e12.l04.a06",
@@ -4333,38 +4450,38 @@
           "typ": "formen",
           "lemma": "tr.b1.e12.kurtarmak",
           "zeilen": ["ben", "sen", "biz"],
-          "spalten": ["Geçmiş (-dı)", "Gelecek (-acak)"],
+          "spalten": ["-dığını (geçmiş, şimdi)", "-acağını (gelecek)"],
           "zellen": [
             {
               "zeile": 0,
               "spalte": 0,
-              "loesungen": ["kurtardım"],
+              "loesungen": ["kurtardığımı"],
               "vorgabe": true
             },
             {
               "zeile": 0,
               "spalte": 1,
-              "loesungen": ["kurtaracağım"]
+              "loesungen": ["kurtaracağımı"]
             },
             {
               "zeile": 1,
               "spalte": 0,
-              "loesungen": ["kurtardın"]
+              "loesungen": ["kurtardığını"]
             },
             {
               "zeile": 1,
               "spalte": 1,
-              "loesungen": ["kurtaracaksın"]
+              "loesungen": ["kurtaracağını"]
             },
             {
               "zeile": 2,
               "spalte": 0,
-              "loesungen": ["kurtardık"]
+              "loesungen": ["kurtardığımızı"]
             },
             {
               "zeile": 2,
               "spalte": 1,
-              "loesungen": ["kurtaracağız"]
+              "loesungen": ["kurtaracağımızı"]
             }
           ]
         },
@@ -4372,28 +4489,28 @@
           "schluessel": "tr.b1.e12.l04.a08",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0119",
-          "wort": 6,
-          "ablenker": ["üzülüyor", "sıkılıyor"]
+          "wort": 3,
+          "ablenker": ["geldi", "gelmek"]
         },
         {
           "schluessel": "tr.b1.e12.l04.a09",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0140",
           "wort": 5,
-          "ablenker": ["zor", "yavaş"]
+          "ablenker": ["rahatlık", "rahatla"]
         },
         {
           "schluessel": "tr.b1.e12.l04.a10",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0131",
           "wort": 5,
-          "ablenker": ["istediği", "isteyeceğini"]
+          "ablenker": ["istediği", "istedi"]
         },
         {
           "schluessel": "tr.b1.e12.l04.a11",
           "typ": "satzbau",
           "ziel": "tr.b1.e12.s0120",
-          "alternativen": ["Yaşlı komşularının hayatını dinlemenin ne kadar değerli olduğunu Derya anlatıyor."]
+          "alternativen": ["Yaşlıların hayat hikâyelerini dinlemenin ne kadar değerli olduğunu Derya anlatıyor."]
         },
         {
           "schluessel": "tr.b1.e12.l04.a12",
@@ -4415,12 +4532,33 @@
           "typ": "frei",
           "ziel": "tr.b1.e12.s0138",
           "nach": "ziel",
-          "alternativen": ["Huzurevi için tekerlekli sandalye bağışı toplamak üzere karar verildi."]
+          "alternativen": [
+            "Huzurevi için tekerlekli sandalye bağışı toplanmasına karar verildi.",
+            "Huzurevi için tekerlekli sandalye bağışı toplanması kararlaştırıldı.",
+            "Huzurevi için tekerlekli sandalye bağışı toplamaya karar verdiler.",
+            "Huzurevi için tekerlekli sandalye bağışı toplanmasına karar verdiler."
+          ]
         },
         {
           "schluessel": "tr.b1.e12.l04.a15",
           "typ": "hoeren_schreiben",
           "ziel": "tr.b1.e12.s0152"
+        },
+        {
+          "schluessel": "tr.b1.e12.l04.a16",
+          "typ": "luecke",
+          "ziel": "tr.b1.e12.s0144",
+          "wort": 7,
+          "ablenker": ["oldu", "olacak"]
+        },
+        {
+          "schluessel": "tr.b1.e12.l04.a17",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e12.s0130",
+          "nach": "ziel",
+          "alternativen": ["Barınaktaki gönüllüler, bir kediyi sahiplenmek isteyen ailelere bilgi veriyorlar."],
+          "ablenker": ["istediği", "dün"]
         }
       ]
     },
@@ -4457,7 +4595,7 @@
         {
           "schluessel": "tr.b1.e12.l05.a04",
           "typ": "paare",
-          "lemmata": ["tr.b1.e12.turnuva", "tr.b1.e12.kupa", "tr.b1.e12.madalya", "tr.b1.e12.lig"]
+          "lemmata": ["tr.b1.e12.madalya", "tr.b1.e12.lig", "tr.b1.e12.seyirci", "tr.b1.e12.zafer", "tr.b1.e12.pay", "tr.b1.e12.gosteri"]
         },
         {
           "schluessel": "tr.b1.e12.l05.a05",
@@ -4507,15 +4645,18 @@
         {
           "schluessel": "tr.b1.e12.l05.a07",
           "typ": "luecke",
-          "ziel": "tr.b1.e12.s0168",
-          "wort": 4,
-          "ablenker": ["zararı", "gecikmesi"]
+          "ziel": "tr.b1.e12.s0184",
+          "wort": 2,
+          "ablenker": ["madde", "maddeyi"]
         },
         {
           "schluessel": "tr.b1.e12.l05.a08",
           "typ": "satzbau",
           "ziel": "tr.b1.e12.s0181",
-          "alternativen": ["Herkesin neyi ne zaman yapacağını bilmesini yazılı paylaşım sağlıyor."]
+          "alternativen": [
+            "Herkesin neyi ne zaman yapacağını bilmesini yazılı paylaşım sağlıyor.",
+            "Yazılı paylaşım, herkesin ne zaman neyi yapacağını bilmesini sağlıyor."
+          ]
         },
         {
           "schluessel": "tr.b1.e12.l05.a09",
@@ -4523,7 +4664,11 @@
           "anweisung": "uebersetze",
           "satz": "tr.b1.e12.s0196",
           "nach": "ziel",
-          "ablenker": ["kapalı", "hangi"]
+          "ablenker": ["kapalı", "hangi"],
+          "alternativen": [
+            "Turnuvada çay ve su bedava dağıtılacağı için kimse susuz kalmayacak.",
+            "Turnuvada bedava su ve çay dağıtılacağı için kimse susuz kalmayacak."
+          ]
         },
         {
           "schluessel": "tr.b1.e12.l05.a10",
@@ -4535,46 +4680,56 @@
         {
           "schluessel": "tr.b1.e12.l05.a11",
           "typ": "frei",
-          "ziel": "tr.b1.e12.s0183",
+          "ziel": "tr.b1.e12.s0169",
           "nach": "ausgang"
         },
         {
           "schluessel": "tr.b1.e12.l05.a12",
           "typ": "formen",
-          "lemma": "tr.b1.e12.sahiplenmek",
-          "zeilen": ["ben", "sen", "biz"],
-          "spalten": ["Geçmiş (-dı)", "Gelecek (-acak)"],
+          "lemma": "tr.b1.e12.bagislamak",
+          "zeilen": ["ben", "sen", "o", "biz"],
+          "spalten": ["-mesi (özne)", "-mesini (nesne)"],
           "zellen": [
             {
               "zeile": 0,
               "spalte": 0,
-              "loesungen": ["sahiplendim"],
+              "loesungen": ["bağışlamam"],
               "vorgabe": true
             },
             {
               "zeile": 0,
               "spalte": 1,
-              "loesungen": ["sahipleneceğim"]
+              "loesungen": ["bağışlamamı"]
             },
             {
               "zeile": 1,
               "spalte": 0,
-              "loesungen": ["sahiplendin"]
+              "loesungen": ["bağışlaman"]
             },
             {
               "zeile": 1,
               "spalte": 1,
-              "loesungen": ["sahipleneceksin"]
+              "loesungen": ["bağışlamanı"]
             },
             {
               "zeile": 2,
               "spalte": 0,
-              "loesungen": ["sahiplendik"]
+              "loesungen": ["bağışlaması"]
             },
             {
               "zeile": 2,
               "spalte": 1,
-              "loesungen": ["sahipleneceğiz"]
+              "loesungen": ["bağışlamasını"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 0,
+              "loesungen": ["bağışlamamız"]
+            },
+            {
+              "zeile": 3,
+              "spalte": 1,
+              "loesungen": ["bağışlamamızı"]
             }
           ]
         },
@@ -4589,6 +4744,33 @@
           "anweisung": "waehleGehoertes",
           "ziel": "tr.b1.e12.s0163",
           "ablenker": ["tr.b1.e12.s0164", "tr.b1.e12.s0165"]
+        },
+        {
+          "schluessel": "tr.b1.e12.l05.a15",
+          "typ": "luecke",
+          "ziel": "tr.b1.e12.s0161",
+          "wort": 2,
+          "ablenker": ["amatörler", "amatörü"]
+        },
+        {
+          "schluessel": "tr.b1.e12.l05.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e12.s0188",
+          "nach": "ziel",
+          "alternativen": [
+            "Yetişkinler ve çocuklar aynı turnuvada birlikte yarışabiliyor.",
+            "Çocuklar ve yetişkinler aynı turnuvada birlikte yarışabiliyorlar.",
+            "Çocuklar ve yetişkinler birlikte aynı turnuvada yarışabiliyor."
+          ],
+          "ablenker": ["yarışma", "dün"]
+        },
+        {
+          "schluessel": "tr.b1.e12.l05.a17",
+          "typ": "luecke",
+          "ziel": "tr.b1.e12.s0198",
+          "wort": 2,
+          "ablenker": ["zafer", "zaferde"]
         }
       ]
     },
@@ -4677,7 +4859,7 @@
               "satz": "tr.b1.e12.s0226"
             },
             {
-              "sprecher": "b",
+              "sprecher": "a",
               "satz": "tr.b1.e12.s0227"
             },
             {
@@ -4723,7 +4905,7 @@
               "ablenker": ["tr.b1.e12.s0242", "tr.b1.e12.s0243"]
             },
             {
-              "nach": 15,
+              "nach": 16,
               "frage": "tr.b1.e12.s0244",
               "antwort": "tr.b1.e12.s0245",
               "ablenker": ["tr.b1.e12.s0246", "tr.b1.e12.s0247"]
@@ -4759,14 +4941,14 @@
           "schluessel": "tr.b1.e12.l06.a03",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0212",
-          "wort": 5,
-          "ablenker": ["yavaş", "hızlı"]
+          "wort": 2,
+          "ablenker": ["koordinatör", "koordinatörün"]
         },
         {
           "schluessel": "tr.b1.e12.l06.a04",
           "typ": "satzbau",
           "ziel": "tr.b1.e12.s0225",
-          "alternativen": ["Her yazıyı dikkatle okuyor, yaşlı bir kadın duruyor."]
+          "alternativen": ["Yaşlı bir kadın duruyor ve dikkatle her yazıyı okuyor."]
         },
         {
           "schluessel": "tr.b1.e12.l06.a05",
@@ -4799,7 +4981,7 @@
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0231",
           "wort": 6,
-          "ablenker": ["saydı", "sayacak"]
+          "ablenker": ["sayıp", "saymak"]
         },
         {
           "schluessel": "tr.b1.e12.l06.a10",
@@ -4912,21 +5094,21 @@
           "schluessel": "tr.b1.e12.l07.a07",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0069",
-          "wort": 5,
-          "ablenker": ["gereksizdir", "kolaydır"]
+          "wort": 2,
+          "ablenker": ["bağışladı", "bağışlayan"]
         },
         {
           "schluessel": "tr.b1.e12.l07.a08",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0179",
-          "wort": 8,
-          "ablenker": ["öğrenci", "müşteri"]
+          "wort": 9,
+          "ablenker": ["eğitimi", "eğitmenler"]
         },
         {
           "schluessel": "tr.b1.e12.l07.a09",
           "typ": "satzbau",
           "ziel": "tr.b1.e12.s0032",
-          "alternativen": ["Yemekten sonra gönüllüler masayı birlikte topluyor ve her işe katkı veriyor."]
+          "alternativen": ["Yemekten sonra gönüllüler masayı birlikte topluyor ve her işe katkıda bulunuyor."]
         },
         {
           "schluessel": "tr.b1.e12.l07.a10",
@@ -4934,14 +5116,19 @@
           "anweisung": "uebersetze",
           "satz": "tr.b1.e12.s0102",
           "nach": "ziel",
-          "ablenker": ["sınıfa", "kapı"]
+          "ablenker": ["sınıfa", "kapı"],
+          "alternativen": ["Ekip, eğitimin bitmesini ortak bir yemekle kutladı."]
         },
         {
           "schluessel": "tr.b1.e12.l07.a11",
           "typ": "frei",
           "ziel": "tr.b1.e12.s0049",
           "nach": "ziel",
-          "alternativen": ["İhtiyaç sahiplerine erzak dağıtmak, dayanışmanın somut bir şeklidir."]
+          "alternativen": [
+            "İhtiyaç sahiplerine erzak dağıtmak, dayanışmanın somut bir şeklidir.",
+            "İhtiyaç sahiplerine erzak dağıtmak, dayanışmanın somut bir biçimidir.",
+            "İhtiyaç sahiplerine erzak dağıtmak dayanışmanın somut bir örneği."
+          ]
         },
         {
           "schluessel": "tr.b1.e12.l07.a12",
@@ -4953,20 +5140,19 @@
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0136",
           "wort": 7,
-          "ablenker": ["sınav", "ödev"]
+          "ablenker": ["hediyeler", "hediyeden"]
         },
         {
           "schluessel": "tr.b1.e12.l07.a14",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0045",
-          "wort": 4,
-          "ablenker": ["hiç", "biraz"]
+          "wort": 6,
+          "ablenker": ["zorla", "zoru"]
         },
         {
           "schluessel": "tr.b1.e12.l07.a15",
           "typ": "satzbau",
-          "ziel": "tr.b1.e12.s0168",
-          "alternativen": ["Komşuların birbirini tanımasıdır bu festivalin en büyük katkısı."]
+          "ziel": "tr.b1.e12.s0168"
         }
       ]
     },
@@ -4988,7 +5174,7 @@
             "max": 120
           },
           "pflichtwoerter": ["gönüllü", "bağış"],
-          "muster": ["tr.b1.e12.s0298"]
+          "muster": ["tr.b1.e12.s0298", "tr.b1.e12.s0301"]
         },
         {
           "schluessel": "tr.b1.e12.l08.a02",
@@ -5021,8 +5207,8 @@
           "schluessel": "tr.b1.e12.l08.a04",
           "typ": "luecke",
           "ziel": "tr.b1.e12.s0005",
-          "wort": 7,
-          "ablenker": ["hazırlanmadı", "hazırlanmıştı"]
+          "wort": 3,
+          "ablenker": ["etmek", "etmesi"]
         },
         {
           "schluessel": "tr.b1.e12.l08.a05",
