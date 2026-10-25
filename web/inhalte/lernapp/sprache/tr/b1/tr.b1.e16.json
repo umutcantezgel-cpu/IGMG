@@ -1,0 +1,5600 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "tr",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "tr.b1.e16",
+    "reihenfolge": 17,
+    "thema": {
+      "de": "Wir kochen für Gäste",
+      "tr": "Misafirler için yemek yapıyoruz",
+      "ar": "نطبخ للضيوف"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann ein Rezept verstehen und Schritte erklären.",
+        "tr": "Bir tarifi anlayabilir ve adımları açıklayabilirim.",
+        "ar": "أستطيع أن أفهم وصفة وأشرح خطواتها."
+      },
+      {
+        "de": "Ich kann gezielt nachfragen und betonen, wer oder was gemeint ist.",
+        "tr": "Neyin ya da kimin kastedildiğini sorabilir ve vurgulayabilirim.",
+        "ar": "أستطيع أن أسأل بدقة وأؤكد من أو ما المقصود."
+      },
+      {
+        "de": "Ich kann Gäste empfangen und bewirten.",
+        "tr": "Misafirleri karşılayabilir ve ağırlayabilirim.",
+        "ar": "أستطيع أن أستقبل الضيوف وأقدّم لهم الطعام."
+      }
+    ],
+    "symbol": "chef-hat",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "tr.b1.e16.adet",
+      "lemma": "adet",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "adet → aded-"
+      },
+      "formen": {
+        "pl": "adetler",
+        "akk/poss.3sg": "adedi",
+        "dat": "adede",
+        "gen/poss.2sg": "adedin",
+        "ins": "adetle",
+        "poss.1sg": "adedim",
+        "poss.1pl": "adedimiz",
+        "poss.2pl": "adediniz",
+        "lok": "adette",
+        "abl": "adetten",
+        "poss.3pl": "adetleri"
+      },
+      "frequenzRang": 801,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.gram",
+      "lemma": "gram",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "gramlar",
+        "akk/poss.3sg": "gramı",
+        "dat": "grama",
+        "gen/poss.2sg": "gramın",
+        "ins": "gramla",
+        "poss.1sg": "gramım",
+        "poss.1pl": "gramımız",
+        "poss.2pl": "gramınız",
+        "lok": "gramda",
+        "abl": "gramdan",
+        "poss.3pl": "gramları"
+      },
+      "frequenzRang": 3539,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.litre",
+      "lemma": "litre",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "litreler",
+        "akk": "litreyi",
+        "dat": "litreye",
+        "gen": "litrenin",
+        "ins": "litreyle",
+        "poss.1sg": "litrem",
+        "poss.2sg": "litren",
+        "poss.3sg": "litresi",
+        "poss.1pl": "litremiz",
+        "poss.2pl": "litreniz",
+        "lok": "litrede",
+        "abl": "litreden",
+        "poss.3pl": "litreleri"
+      },
+      "frequenzRang": 8324,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.tutam",
+      "lemma": "tutam",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "tutamlar",
+        "akk/poss.3sg": "tutamı",
+        "dat": "tutama",
+        "gen/poss.2sg": "tutamın",
+        "ins": "tutamla",
+        "poss.1sg": "tutamım",
+        "poss.1pl": "tutamımız",
+        "poss.2pl": "tutamınız",
+        "lok": "tutamda",
+        "abl": "tutamdan",
+        "poss.3pl": "tutamları"
+      },
+      "frequenzRang": 17694,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.dilim",
+      "lemma": "dilim",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "dilimler",
+        "akk/poss.3sg": "dilimi",
+        "dat": "dilime",
+        "gen/poss.2sg": "dilimin",
+        "ins": "dilimle",
+        "poss.1sg": "dilimim",
+        "poss.1pl": "dilimimiz",
+        "poss.2pl": "diliminiz",
+        "lok": "dilimde",
+        "abl": "dilimden",
+        "poss.3pl": "dilimleri"
+      },
+      "frequenzRang": 6663,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.tava",
+      "lemma": "tava",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "tavalar",
+        "akk": "tavayı",
+        "dat": "tavaya",
+        "gen": "tavanın",
+        "ins": "tavayla",
+        "poss.1sg": "tavam",
+        "poss.2sg": "tavan",
+        "poss.3sg": "tavası",
+        "poss.1pl": "tavamız",
+        "poss.2pl": "tavanız",
+        "lok": "tavada",
+        "abl": "tavadan",
+        "poss.3pl": "tavaları"
+      },
+      "frequenzRang": 19814,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.kapak",
+      "lemma": "kapak",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "kapak → kapağ-"
+      },
+      "formen": {
+        "pl": "kapaklar",
+        "akk/poss.3sg": "kapağı",
+        "dat": "kapağa",
+        "gen/poss.2sg": "kapağın",
+        "ins": "kapakla",
+        "poss.1sg": "kapağım",
+        "poss.1pl": "kapağımız",
+        "poss.2pl": "kapağınız",
+        "lok": "kapakta",
+        "abl": "kapaktan",
+        "poss.3pl": "kapakları"
+      },
+      "frequenzRang": 3045,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.kase",
+      "lemma": "kase",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "kaseler",
+        "akk": "kaseyi",
+        "dat": "kaseye",
+        "gen": "kasenin",
+        "ins": "kaseyle",
+        "poss.1sg": "kasem",
+        "poss.2sg": "kasen",
+        "poss.3sg": "kasesi",
+        "poss.1pl": "kasemiz",
+        "poss.2pl": "kaseniz",
+        "lok": "kasede",
+        "abl": "kaseden",
+        "poss.3pl": "kaseleri"
+      },
+      "frequenzRang": 18260,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.kup",
+      "lemma": "küp",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "pl": "küpler",
+        "akk/poss.3sg": "küpü",
+        "dat": "küpe",
+        "gen/poss.2sg": "küpün",
+        "ins": "küple",
+        "poss.1sg": "küpüm",
+        "poss.1pl": "küpümüz",
+        "poss.2pl": "küpünüz",
+        "lok": "küpte",
+        "abl": "küpten",
+        "poss.3pl": "küpleri"
+      },
+      "frequenzRang": 13435,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.sos",
+      "lemma": "sos",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "soslar",
+        "akk/poss.3sg": "sosu",
+        "dat": "sosa",
+        "gen/poss.2sg": "sosun",
+        "ins": "sosla",
+        "poss.1sg": "sosum",
+        "poss.1pl": "sosumuz",
+        "poss.2pl": "sosunuz",
+        "lok": "sosta",
+        "abl": "sostan",
+        "poss.3pl": "sosları"
+      },
+      "frequenzRang": 9768,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.baharat",
+      "lemma": "baharat",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "baharatlar",
+        "akk/poss.3sg": "baharatı",
+        "dat": "baharata",
+        "gen/poss.2sg": "baharatın",
+        "ins": "baharatla",
+        "poss.1sg": "baharatım",
+        "poss.1pl": "baharatımız",
+        "poss.2pl": "baharatınız",
+        "lok": "baharatta",
+        "abl": "baharattan",
+        "poss.3pl": "baharatları"
+      },
+      "frequenzRang": 14648,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.karabiber",
+      "lemma": "karabiber",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk/poss.3sg": "karabiberi",
+        "dat": "karabibere",
+        "gen/poss.2sg": "karabiberin",
+        "ins": "karabiberle",
+        "poss.1sg": "karabiberim",
+        "poss.1pl": "karabiberimiz",
+        "poss.2pl": "karabiberiniz",
+        "lok": "karabiberde",
+        "abl": "karabiberden"
+      },
+      "frequenzRang": 41923,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.maydanoz",
+      "lemma": "maydanoz",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "akk/poss.3sg": "maydanozu",
+        "dat": "maydanoza",
+        "gen/poss.2sg": "maydanozun",
+        "ins": "maydanozla",
+        "poss.1sg": "maydanozum",
+        "poss.1pl": "maydanozumuz",
+        "poss.2pl": "maydanozunuz",
+        "lok": "maydanozda",
+        "abl": "maydanozdan"
+      },
+      "frequenzRang": 28092,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.sarimsak",
+      "lemma": "sarımsak",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "sarımsak → sarımsağ-"
+      },
+      "formen": {
+        "pl": "sarımsaklar",
+        "akk/poss.3sg": "sarımsağı",
+        "dat": "sarımsağa",
+        "gen/poss.2sg": "sarımsağın",
+        "ins": "sarımsakla",
+        "poss.1sg": "sarımsağım",
+        "poss.1pl": "sarımsağımız",
+        "poss.2pl": "sarımsağınız",
+        "lok": "sarımsakta",
+        "abl": "sarımsaktan",
+        "poss.3pl": "sarımsakları"
+      },
+      "frequenzRang": 15743,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.salca",
+      "lemma": "salça",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "akk": "salçayı",
+        "dat": "salçaya",
+        "gen": "salçanın",
+        "ins": "salçayla",
+        "poss.1sg": "salçam",
+        "poss.2sg": "salçan",
+        "poss.3sg": "salçası",
+        "poss.1pl": "salçamız",
+        "poss.2pl": "salçanız",
+        "lok": "salçada",
+        "abl": "salçadan"
+      },
+      "frequenzRang": 24760,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.tereyagi",
+      "lemma": "tereyağı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "kompositum": "tere + yağ + -ı; Endungen mit n (tereyağında)"
+      },
+      "formen": {
+        "akk": "tereyağını",
+        "lok": "tereyağında",
+        "ins": "tereyağıyla",
+        "abl": "tereyağından"
+      },
+      "frequenzRang": 13245,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.zeytinyagi",
+      "lemma": "zeytinyağı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "kompositum": "zeytin + yağ + -ı; Endungen mit n (zeytinyağıyla)"
+      },
+      "formen": {
+        "akk": "zeytinyağını",
+        "lok": "zeytinyağında",
+        "ins": "zeytinyağıyla",
+        "abl": "zeytinyağından"
+      },
+      "frequenzRang": 19864,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.pirinc",
+      "lemma": "pirinç",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "pirinç → pirinc-"
+      },
+      "formen": {
+        "akk/poss.3sg": "pirinci",
+        "dat": "pirince",
+        "gen/poss.2sg": "pirincin",
+        "ins": "pirinçle",
+        "poss.1sg": "pirincim",
+        "poss.1pl": "pirincimiz",
+        "poss.2pl": "pirinciniz",
+        "lok": "pirinçte",
+        "abl": "pirinçten"
+      },
+      "frequenzRang": 5042,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.bulgur",
+      "lemma": "bulgur",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "akk/poss.3sg": "bulguru",
+        "dat": "bulgura",
+        "gen/poss.2sg": "bulgurun",
+        "ins": "bulgurla",
+        "poss.1sg": "bulgurum",
+        "poss.1pl": "bulgurumuz",
+        "poss.2pl": "bulgurunuz",
+        "lok": "bulgurda",
+        "abl": "bulgurdan"
+      },
+      "frequenzRang": 23565,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.kiyma",
+      "lemma": "kıyma",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "akk": "kıymayı",
+        "dat": "kıymaya",
+        "gen": "kıymanın",
+        "ins": "kıymayla",
+        "poss.1sg": "kıymam",
+        "poss.2sg": "kıyman",
+        "poss.3sg": "kıyması",
+        "poss.1pl": "kıymamız",
+        "poss.2pl": "kıymanız",
+        "lok": "kıymada",
+        "abl": "kıymadan"
+      },
+      "frequenzRang": 27583,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.hindi",
+      "lemma": "hindi",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "hindiler",
+        "akk": "hindiyi",
+        "dat": "hindiye",
+        "gen": "hindinin",
+        "ins": "hindiyle",
+        "poss.1sg": "hindim",
+        "poss.2sg": "hindin",
+        "poss.3sg": "hindisi",
+        "poss.1pl": "hindimiz",
+        "poss.2pl": "hindiniz",
+        "lok": "hindide",
+        "abl": "hindiden",
+        "poss.3pl": "hindileri"
+      },
+      "frequenzRang": 17546,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.fasulye",
+      "lemma": "fasulye",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "fasulyeler",
+        "akk": "fasulyeyi",
+        "dat": "fasulyeye",
+        "gen": "fasulyenin",
+        "ins": "fasulyeyle",
+        "poss.1sg": "fasulyem",
+        "poss.2sg": "fasulyen",
+        "poss.3sg": "fasulyesi",
+        "poss.1pl": "fasulyemiz",
+        "poss.2pl": "fasulyeniz",
+        "lok": "fasulyede",
+        "abl": "fasulyeden",
+        "poss.3pl": "fasulyeleri"
+      },
+      "frequenzRang": 8925,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.nohut",
+      "lemma": "nohut",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u",
+        "erweichung": "nohut → nohud-"
+      },
+      "formen": {
+        "pl": "nohutlar",
+        "akk/poss.3sg": "nohudu",
+        "dat": "nohuda",
+        "gen/poss.2sg": "nohudun",
+        "ins": "nohutla",
+        "poss.1sg": "nohudum",
+        "poss.1pl": "nohudumuz",
+        "poss.2pl": "nohudunuz",
+        "lok": "nohutta",
+        "abl": "nohuttan",
+        "poss.3pl": "nohutları"
+      },
+      "frequenzRang": 21201,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.ispanak",
+      "lemma": "ıspanak",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "ıspanak → ıspanağ-"
+      },
+      "formen": {
+        "akk/poss.3sg": "ıspanağı",
+        "dat": "ıspanağa",
+        "gen/poss.2sg": "ıspanağın",
+        "ins": "ıspanakla",
+        "poss.1sg": "ıspanağım",
+        "poss.1pl": "ıspanağımız",
+        "poss.2pl": "ıspanağınız",
+        "lok": "ıspanakta",
+        "abl": "ıspanaktan"
+      },
+      "frequenzRang": 36941,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.patlican",
+      "lemma": "patlıcan",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "patlıcanlar",
+        "akk/poss.3sg": "patlıcanı",
+        "dat": "patlıcana",
+        "gen/poss.2sg": "patlıcanın",
+        "ins": "patlıcanla",
+        "poss.1sg": "patlıcanım",
+        "poss.1pl": "patlıcanımız",
+        "poss.2pl": "patlıcanınız",
+        "lok": "patlıcanda",
+        "abl": "patlıcandan",
+        "poss.3pl": "patlıcanları"
+      },
+      "frequenzRang": 17300,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.kabak",
+      "lemma": "kabak",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "kabak → kabağ-"
+      },
+      "formen": {
+        "pl": "kabaklar",
+        "akk/poss.3sg": "kabağı",
+        "dat": "kabağa",
+        "gen/poss.2sg": "kabağın",
+        "ins": "kabakla",
+        "poss.1sg": "kabağım",
+        "poss.1pl": "kabağımız",
+        "poss.2pl": "kabağınız",
+        "lok": "kabakta",
+        "abl": "kabaktan",
+        "poss.3pl": "kabakları"
+      },
+      "frequenzRang": 14760,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.mantar",
+      "lemma": "mantar",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "mantarlar",
+        "akk/poss.3sg": "mantarı",
+        "dat": "mantara",
+        "gen/poss.2sg": "mantarın",
+        "ins": "mantarla",
+        "poss.1sg": "mantarım",
+        "poss.1pl": "mantarımız",
+        "poss.2pl": "mantarınız",
+        "lok": "mantarda",
+        "abl": "mantardan",
+        "poss.3pl": "mantarları"
+      },
+      "frequenzRang": 6578,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.sis",
+      "lemma": "şiş",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "şişler",
+        "akk/poss.3sg": "şişi",
+        "gen/poss.2sg": "şişin",
+        "ins": "şişle",
+        "poss.1sg": "şişim",
+        "poss.1pl": "şişimiz",
+        "poss.2pl": "şişiniz",
+        "lok": "şişte",
+        "abl": "şişten",
+        "poss.3pl": "şişleri"
+      },
+      "frequenzRang": 19891,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.sutlac",
+      "lemma": "sütlaç",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "sütlaç → sütlac-"
+      },
+      "formen": {
+        "akk/poss.3sg": "sütlacı",
+        "dat": "sütlaca",
+        "gen/poss.2sg": "sütlacın",
+        "ins": "sütlaçla",
+        "poss.1sg": "sütlacım",
+        "poss.1pl": "sütlacımız",
+        "poss.2pl": "sütlacınız",
+        "lok": "sütlaçta",
+        "abl": "sütlaçtan"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.hamur",
+      "lemma": "hamur",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "hamurlar",
+        "akk/poss.3sg": "hamuru",
+        "dat": "hamura",
+        "gen/poss.2sg": "hamurun",
+        "ins": "hamurla",
+        "poss.1sg": "hamurum",
+        "poss.1pl": "hamurumuz",
+        "poss.2pl": "hamurunuz",
+        "lok": "hamurda",
+        "abl": "hamurdan",
+        "poss.3pl": "hamurları"
+      },
+      "frequenzRang": 8939,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.yufka",
+      "lemma": "yufka",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "yufkalar",
+        "akk": "yufkayı",
+        "dat": "yufkaya",
+        "gen": "yufkanın",
+        "ins": "yufkayla",
+        "poss.1sg": "yufkam",
+        "poss.2sg": "yufkan",
+        "poss.3sg": "yufkası",
+        "poss.1pl": "yufkamız",
+        "poss.2pl": "yufkanız",
+        "lok": "yufkada",
+        "abl": "yufkadan",
+        "poss.3pl": "yufkaları"
+      },
+      "frequenzRang": 23000,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.kebap",
+      "lemma": "kebap",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "kebap → kebab-"
+      },
+      "formen": {
+        "pl": "kebaplar",
+        "akk/poss.3sg": "kebabı",
+        "dat": "kebaba",
+        "gen/poss.2sg": "kebabın",
+        "ins": "kebapla",
+        "poss.1sg": "kebabım",
+        "poss.1pl": "kebabımız",
+        "poss.2pl": "kebabınız",
+        "lok": "kebapta",
+        "abl": "kebaptan",
+        "poss.3pl": "kebapları"
+      },
+      "frequenzRang": 15394,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.manti",
+      "lemma": "mantı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "mantılar",
+        "akk": "mantıyı",
+        "dat": "mantıya",
+        "gen": "mantının",
+        "ins": "mantıyla",
+        "poss.1sg": "mantım",
+        "poss.2sg": "mantın",
+        "poss.3sg": "mantısı",
+        "poss.1pl": "mantımız",
+        "poss.2pl": "mantınız",
+        "lok": "mantıda",
+        "abl": "mantıdan",
+        "poss.3pl": "mantıları"
+      },
+      "frequenzRang": 24212,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.simit",
+      "lemma": "simit",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "simit → simid-"
+      },
+      "formen": {
+        "pl": "simitler",
+        "akk/poss.3sg": "simidi",
+        "dat": "simide",
+        "gen/poss.2sg": "simidin",
+        "ins": "simitle",
+        "poss.1sg": "simidim",
+        "poss.1pl": "simidimiz",
+        "poss.2pl": "simidiniz",
+        "lok": "simitte",
+        "abl": "simitten",
+        "poss.3pl": "simitleri"
+      },
+      "frequenzRang": 15467,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.cacik",
+      "lemma": "cacık",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "cacık → cacığ-"
+      },
+      "formen": {
+        "akk/poss.3sg": "cacığı",
+        "dat": "cacığa",
+        "gen/poss.2sg": "cacığın",
+        "ins": "cacıkla",
+        "poss.1sg": "cacığım",
+        "poss.1pl": "cacığımız",
+        "poss.2pl": "cacığınız",
+        "lok": "cacıkta",
+        "abl": "cacıktan"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.tursu",
+      "lemma": "turşu",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "turşular",
+        "akk": "turşuyu",
+        "dat": "turşuya",
+        "gen": "turşunun",
+        "ins": "turşuyla",
+        "poss.1sg": "turşum",
+        "poss.2sg": "turşun",
+        "poss.3sg": "turşusu",
+        "poss.1pl": "turşumuz",
+        "poss.2pl": "turşunuz",
+        "lok": "turşuda",
+        "abl": "turşudan",
+        "poss.3pl": "turşuları"
+      },
+      "frequenzRang": 14585,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.recel",
+      "lemma": "reçel",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "reçeller",
+        "akk/poss.3sg": "reçeli",
+        "dat": "reçele",
+        "gen/poss.2sg": "reçelin",
+        "ins": "reçelle",
+        "poss.1sg": "reçelim",
+        "poss.1pl": "reçelimiz",
+        "poss.2pl": "reçeliniz",
+        "lok": "reçelde",
+        "abl": "reçelden",
+        "poss.3pl": "reçelleri"
+      },
+      "frequenzRang": 20877,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.iltifat",
+      "lemma": "iltifat",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "iltifatlar",
+        "akk/poss.3sg": "iltifatı",
+        "dat": "iltifata",
+        "gen/poss.2sg": "iltifatın",
+        "ins": "iltifatla",
+        "poss.1sg": "iltifatım",
+        "poss.1pl": "iltifatımız",
+        "poss.2pl": "iltifatınız",
+        "lok": "iltifatta",
+        "abl": "iltifattan",
+        "poss.3pl": "iltifatları"
+      },
+      "frequenzRang": 11846,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.lezzet",
+      "lemma": "lezzet",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "lezzetler",
+        "akk/poss.3sg": "lezzeti",
+        "dat": "lezzete",
+        "gen/poss.2sg": "lezzetin",
+        "ins": "lezzetle",
+        "poss.1sg": "lezzetim",
+        "poss.1pl": "lezzetimiz",
+        "poss.2pl": "lezzetiniz",
+        "lok": "lezzette",
+        "abl": "lezzetten",
+        "poss.3pl": "lezzetleri"
+      },
+      "frequenzRang": 8808,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.tat",
+      "lemma": "tat",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "tatlar",
+        "akk/poss.3sg": "tatı",
+        "dat": "tata",
+        "gen/poss.2sg": "tatın",
+        "ins": "tatla",
+        "poss.1sg": "tatım",
+        "poss.1pl": "tatımız",
+        "poss.2pl": "tatınız",
+        "lok": "tatta",
+        "abl": "tattan",
+        "poss.3pl": "tatları"
+      },
+      "frequenzRang": 8517,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.konuk",
+      "lemma": "konuk",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u",
+        "erweichung": "konuk → konuğ-"
+      },
+      "formen": {
+        "pl": "konuklar",
+        "akk/poss.3sg": "konuğu",
+        "dat": "konuğa",
+        "gen/poss.2sg": "konuğun",
+        "ins": "konukla",
+        "poss.1sg/kop.1sg": "konuğum",
+        "poss.1pl": "konuğumuz",
+        "poss.2pl": "konuğunuz",
+        "lok": "konukta",
+        "abl": "konuktan",
+        "poss.3pl": "konukları",
+        "kop.1pl": "konuğuz",
+        "kop.2sg": "konuksun",
+        "kop.2pl": "konuksunuz"
+      },
+      "frequenzRang": 2072,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.dogramak",
+      "lemma": "doğramak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "doğra",
+        "harmonie": "a/ı",
+        "stammwechsel": "doğra → doğru- vor -yor"
+      },
+      "formen": {
+        "stamm": "doğra",
+        "iyor.3sg": "doğruyor",
+        "imp.2pl": "doğrayın",
+        "aor.3sg": "doğrar",
+        "iyor.neg.3sg": "doğramıyor",
+        "aor.1sg": "doğrarım",
+        "aor.neg.3sg": "doğramaz",
+        "aor.neg.1sg": "doğramam",
+        "di.1sg": "doğradım",
+        "di.2sg": "doğradın",
+        "di.3sg": "doğradı",
+        "di.1pl": "doğradık",
+        "di.2pl": "doğradınız",
+        "di.neg.3sg": "doğramadı",
+        "mis.3sg": "doğramış",
+        "ecek.3sg": "doğrayacak",
+        "ecek.1sg": "doğrayacağım",
+        "ecek.1pl": "doğrayacağız",
+        "ebil.3sg": "doğrayabilir",
+        "eme.3sg": "doğrayamaz",
+        "meli.3sg": "doğramalı",
+        "opt.1sg": "doğrayayım",
+        "opt.1pl": "doğrayalım",
+        "imp3.3sg": "doğrasın",
+        "iyordu.3sg": "doğruyordu",
+        "mek.akk": "doğramayı",
+        "part.en": "doğrayan",
+        "part.dik.3": "doğradığı",
+        "part.dik.1sg": "doğradığım",
+        "part.ecek.3": "doğrayacağı",
+        "konv.ip": "doğrayıp",
+        "konv.ince": "doğrayınca",
+        "konv.erek": "doğrayarak",
+        "konv.meden": "doğramadan",
+        "kond.3sg": "doğrasa",
+        "nom.mesi": "doğraması",
+        "mis.ti": "doğramıştı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.kizartmak",
+      "lemma": "kızartmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kızart",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "kızart",
+        "iyor.3sg": "kızartıyor",
+        "imp.2pl": "kızartın",
+        "aor.3sg": "kızartır",
+        "iyor.neg.3sg": "kızartmıyor",
+        "aor.1sg": "kızartırım",
+        "aor.neg.3sg": "kızartmaz",
+        "aor.neg.1sg": "kızartmam",
+        "di.1sg": "kızarttım",
+        "di.2sg": "kızarttın",
+        "di.3sg": "kızarttı",
+        "di.1pl": "kızarttık",
+        "di.2pl": "kızarttınız",
+        "di.neg.3sg": "kızartmadı",
+        "mis.3sg": "kızartmış",
+        "ecek.3sg": "kızartacak",
+        "ecek.1sg": "kızartacağım",
+        "ecek.1pl": "kızartacağız",
+        "ebil.3sg": "kızartabilir",
+        "eme.3sg": "kızartamaz",
+        "meli.3sg": "kızartmalı",
+        "opt.1sg": "kızartayım",
+        "opt.1pl": "kızartalım",
+        "imp3.3sg": "kızartsın",
+        "iyordu.3sg": "kızartıyordu",
+        "mek.akk": "kızartmayı",
+        "part.en": "kızartan",
+        "part.dik.3": "kızarttığı",
+        "part.dik.1sg": "kızarttığım",
+        "part.ecek.3": "kızartacağı",
+        "konv.ip": "kızartıp",
+        "konv.ince": "kızartınca",
+        "konv.erek": "kızartarak",
+        "konv.meden": "kızartmadan",
+        "kond.3sg": "kızartsa",
+        "nom.mesi": "kızartması",
+        "mis.ti": "kızartmıştı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.haslamak",
+      "lemma": "haşlamak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "haşla",
+        "harmonie": "a/ı",
+        "stammwechsel": "haşla → haşlı- vor -yor"
+      },
+      "formen": {
+        "stamm": "haşla",
+        "iyor.3sg": "haşlıyor",
+        "imp.2pl": "haşlayın",
+        "aor.3sg": "haşlar",
+        "iyor.neg.3sg": "haşlamıyor",
+        "aor.1sg": "haşlarım",
+        "aor.neg.3sg": "haşlamaz",
+        "aor.neg.1sg": "haşlamam",
+        "di.1sg": "haşladım",
+        "di.2sg": "haşladın",
+        "di.3sg": "haşladı",
+        "di.1pl": "haşladık",
+        "di.2pl": "haşladınız",
+        "di.neg.3sg": "haşlamadı",
+        "mis.3sg": "haşlamış",
+        "ecek.3sg": "haşlayacak",
+        "ecek.1sg": "haşlayacağım",
+        "ecek.1pl": "haşlayacağız",
+        "ebil.3sg": "haşlayabilir",
+        "eme.3sg": "haşlayamaz",
+        "meli.3sg": "haşlamalı",
+        "opt.1sg": "haşlayayım",
+        "opt.1pl": "haşlayalım",
+        "imp3.3sg": "haşlasın",
+        "iyordu.3sg": "haşlıyordu",
+        "mek.akk": "haşlamayı",
+        "part.en": "haşlayan",
+        "part.dik.3": "haşladığı",
+        "part.dik.1sg": "haşladığım",
+        "part.ecek.3": "haşlayacağı",
+        "konv.ip": "haşlayıp",
+        "konv.ince": "haşlayınca",
+        "konv.erek": "haşlayarak",
+        "konv.meden": "haşlamadan",
+        "kond.3sg": "haşlasa",
+        "nom.mesi": "haşlaması",
+        "mis.ti": "haşlamıştı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.kavurmak",
+      "lemma": "kavurmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kavur",
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "stamm": "kavur",
+        "iyor.3sg": "kavuruyor",
+        "imp.2pl": "kavurun",
+        "aor.3sg": "kavurur",
+        "iyor.neg.3sg": "kavurmuyor",
+        "aor.1sg": "kavururum",
+        "aor.neg.3sg": "kavurmaz",
+        "aor.neg.1sg": "kavurmam",
+        "di.1sg": "kavurdum",
+        "di.2sg": "kavurdun",
+        "di.3sg": "kavurdu",
+        "di.1pl": "kavurduk",
+        "di.2pl": "kavurdunuz",
+        "di.neg.3sg": "kavurmadı",
+        "mis.3sg": "kavurmuş",
+        "ecek.3sg": "kavuracak",
+        "ecek.1sg": "kavuracağım",
+        "ecek.1pl": "kavuracağız",
+        "ebil.3sg": "kavurabilir",
+        "eme.3sg": "kavuramaz",
+        "meli.3sg": "kavurmalı",
+        "opt.1sg": "kavurayım",
+        "opt.1pl": "kavuralım",
+        "imp3.3sg": "kavursun",
+        "iyordu.3sg": "kavuruyordu",
+        "mek.akk": "kavurmayı",
+        "part.en": "kavuran",
+        "part.dik.3": "kavurduğu",
+        "part.dik.1sg": "kavurduğum",
+        "part.ecek.3": "kavuracağı",
+        "konv.ip": "kavurup",
+        "konv.ince": "kavurunca",
+        "konv.erek": "kavurarak",
+        "konv.meden": "kavurmadan",
+        "kond.3sg": "kavursa",
+        "nom.mesi": "kavurması",
+        "mis.ti": "kavurmuştu"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.karistirmak",
+      "lemma": "karıştırmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "karıştır",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "karıştır",
+        "iyor.3sg": "karıştırıyor",
+        "imp.2pl": "karıştırın",
+        "aor.3sg": "karıştırır",
+        "iyor.neg.3sg": "karıştırmıyor",
+        "aor.1sg": "karıştırırım",
+        "aor.neg.3sg": "karıştırmaz",
+        "aor.neg.1sg": "karıştırmam",
+        "di.1sg": "karıştırdım",
+        "di.2sg": "karıştırdın",
+        "di.3sg": "karıştırdı",
+        "di.1pl": "karıştırdık",
+        "di.2pl": "karıştırdınız",
+        "di.neg.3sg": "karıştırmadı",
+        "mis.3sg": "karıştırmış",
+        "ecek.3sg": "karıştıracak",
+        "ecek.1sg": "karıştıracağım",
+        "ecek.1pl": "karıştıracağız",
+        "ebil.3sg": "karıştırabilir",
+        "eme.3sg": "karıştıramaz",
+        "meli.3sg": "karıştırmalı",
+        "opt.1sg": "karıştırayım",
+        "opt.1pl": "karıştıralım",
+        "imp3.3sg": "karıştırsın",
+        "iyordu.3sg": "karıştırıyordu",
+        "mek.akk": "karıştırmayı",
+        "part.en": "karıştıran",
+        "part.dik.3": "karıştırdığı",
+        "part.dik.1sg": "karıştırdığım",
+        "part.ecek.3": "karıştıracağı",
+        "konv.ip": "karıştırıp",
+        "konv.ince": "karıştırınca",
+        "konv.erek": "karıştırarak",
+        "konv.meden": "karıştırmadan",
+        "kond.3sg": "karıştırsa",
+        "nom.mesi": "karıştırması",
+        "mis.ti": "karıştırmıştı"
+      },
+      "frequenzRang": 19692,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.dokmek",
+      "lemma": "dökmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "dök",
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "stamm": "dök",
+        "iyor.3sg": "döküyor",
+        "imp.2pl": "dökün",
+        "aor.3sg": "döker",
+        "iyor.neg.3sg": "dökmüyor",
+        "aor.1sg": "dökerim",
+        "aor.neg.3sg": "dökmez",
+        "aor.neg.1sg": "dökmem",
+        "di.1sg": "döktüm",
+        "di.2sg": "döktün",
+        "di.3sg": "döktü",
+        "di.1pl": "döktük",
+        "di.2pl": "döktünüz",
+        "di.neg.3sg": "dökmedi",
+        "mis.3sg": "dökmüş",
+        "ecek.3sg": "dökecek",
+        "ecek.1sg": "dökeceğim",
+        "ecek.1pl": "dökeceğiz",
+        "ebil.3sg": "dökebilir",
+        "eme.3sg": "dökemez",
+        "meli.3sg": "dökmeli",
+        "opt.1sg": "dökeyim",
+        "opt.1pl": "dökelim",
+        "imp3.3sg": "döksün",
+        "iyordu.3sg": "döküyordu",
+        "mek.akk": "dökmeyi",
+        "part.en": "döken",
+        "part.dik.3": "döktüğü",
+        "part.dik.1sg": "döktüğüm",
+        "part.ecek.3": "dökeceği",
+        "konv.ip": "döküp",
+        "konv.ince": "dökünce",
+        "konv.erek": "dökerek",
+        "konv.meden": "dökmeden",
+        "kond.3sg": "dökse",
+        "nom.mesi": "dökmesi",
+        "mis.ti": "dökmüştü"
+      },
+      "frequenzRang": 19222,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.suzmek",
+      "lemma": "süzmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "süz",
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "stamm": "süz",
+        "iyor.3sg": "süzüyor",
+        "imp.2pl": "süzün",
+        "aor.3sg": "süzer",
+        "iyor.neg.3sg": "süzmüyor",
+        "aor.1sg": "süzerim",
+        "aor.neg.3sg": "süzmez",
+        "aor.neg.1sg": "süzmem",
+        "di.1sg": "süzdüm",
+        "di.2sg": "süzdün",
+        "di.3sg": "süzdü",
+        "di.1pl": "süzdük",
+        "di.2pl": "süzdünüz",
+        "di.neg.3sg": "süzmedi",
+        "mis.3sg": "süzmüş",
+        "ecek.3sg": "süzecek",
+        "ecek.1sg": "süzeceğim",
+        "ecek.1pl": "süzeceğiz",
+        "ebil.3sg": "süzebilir",
+        "eme.3sg": "süzemez",
+        "meli.3sg": "süzmeli",
+        "opt.1sg": "süzeyim",
+        "opt.1pl": "süzelim",
+        "imp3.3sg": "süzsün",
+        "iyordu.3sg": "süzüyordu",
+        "mek.akk": "süzmeyi",
+        "part.en": "süzen",
+        "part.dik.3": "süzdüğü",
+        "part.dik.1sg": "süzdüğüm",
+        "part.ecek.3": "süzeceği",
+        "konv.ip": "süzüp",
+        "konv.ince": "süzünce",
+        "konv.erek": "süzerek",
+        "konv.meden": "süzmeden",
+        "kond.3sg": "süzse",
+        "nom.mesi": "süzmesi",
+        "mis.ti": "süzmüştü"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.islatmak",
+      "lemma": "ıslatmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "ıslat",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "ıslat",
+        "iyor.3sg": "ıslatıyor",
+        "imp.2pl": "ıslatın",
+        "aor.3sg": "ıslatır",
+        "iyor.neg.3sg": "ıslatmıyor",
+        "aor.1sg": "ıslatırım",
+        "aor.neg.3sg": "ıslatmaz",
+        "aor.neg.1sg": "ıslatmam",
+        "di.1sg": "ıslattım",
+        "di.2sg": "ıslattın",
+        "di.3sg": "ıslattı",
+        "di.1pl": "ıslattık",
+        "di.2pl": "ıslattınız",
+        "di.neg.3sg": "ıslatmadı",
+        "mis.3sg": "ıslatmış",
+        "ecek.3sg": "ıslatacak",
+        "ecek.1sg": "ıslatacağım",
+        "ecek.1pl": "ıslatacağız",
+        "ebil.3sg": "ıslatabilir",
+        "eme.3sg": "ıslatamaz",
+        "meli.3sg": "ıslatmalı",
+        "opt.1sg": "ıslatayım",
+        "opt.1pl": "ıslatalım",
+        "imp3.3sg": "ıslatsın",
+        "iyordu.3sg": "ıslatıyordu",
+        "mek.akk": "ıslatmayı",
+        "part.en": "ıslatan",
+        "part.dik.3": "ıslattığı",
+        "part.dik.1sg": "ıslattığım",
+        "part.ecek.3": "ıslatacağı",
+        "konv.ip": "ıslatıp",
+        "konv.ince": "ıslatınca",
+        "konv.erek": "ıslatarak",
+        "konv.meden": "ıslatmadan",
+        "kond.3sg": "ıslatsa",
+        "nom.mesi": "ıslatması",
+        "mis.ti": "ıslatmıştı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.bekletmek",
+      "lemma": "bekletmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "beklet",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "beklet",
+        "iyor.3sg": "bekletiyor",
+        "imp.2pl": "bekletin",
+        "aor.3sg": "bekletir",
+        "iyor.neg.3sg": "bekletmiyor",
+        "aor.1sg": "bekletirim",
+        "aor.neg.3sg": "bekletmez",
+        "aor.neg.1sg": "bekletmem",
+        "di.1sg": "beklettim",
+        "di.2sg": "beklettin",
+        "di.3sg": "bekletti",
+        "di.1pl": "beklettik",
+        "di.2pl": "beklettiniz",
+        "di.neg.3sg": "bekletmedi",
+        "mis.3sg": "bekletmiş",
+        "ecek.3sg": "bekletecek",
+        "ecek.1sg": "bekleteceğim",
+        "ecek.1pl": "bekleteceğiz",
+        "ebil.3sg": "bekletebilir",
+        "eme.3sg": "bekletemez",
+        "meli.3sg": "bekletmeli",
+        "opt.1sg": "bekleteyim",
+        "opt.1pl": "bekletelim",
+        "imp3.3sg": "bekletsin",
+        "iyordu.3sg": "bekletiyordu",
+        "mek.akk": "bekletmeyi",
+        "part.en": "bekleten",
+        "part.dik.3": "beklettiği",
+        "part.dik.1sg": "beklettiğim",
+        "part.ecek.3": "bekleteceği",
+        "konv.ip": "bekletip",
+        "konv.ince": "bekletince",
+        "konv.erek": "bekleterek",
+        "konv.meden": "bekletmeden",
+        "kond.3sg": "bekletse",
+        "nom.mesi": "bekletmesi",
+        "mis.ti": "bekletmişti"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.kaynamak",
+      "lemma": "kaynamak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kayna",
+        "harmonie": "a/ı",
+        "stammwechsel": "kayna → kaynı- vor -yor"
+      },
+      "formen": {
+        "stamm": "kayna",
+        "iyor.3sg": "kaynıyor",
+        "imp.2pl": "kaynayın",
+        "aor.3sg": "kaynar",
+        "iyor.neg.3sg": "kaynamıyor",
+        "aor.1sg": "kaynarım",
+        "aor.neg.3sg": "kaynamaz",
+        "aor.neg.1sg": "kaynamam",
+        "di.1sg": "kaynadım",
+        "di.2sg": "kaynadın",
+        "di.3sg": "kaynadı",
+        "di.1pl": "kaynadık",
+        "di.2pl": "kaynadınız",
+        "di.neg.3sg": "kaynamadı",
+        "mis.3sg": "kaynamış",
+        "ecek.3sg": "kaynayacak",
+        "ecek.1sg": "kaynayacağım",
+        "ecek.1pl": "kaynayacağız",
+        "ebil.3sg": "kaynayabilir",
+        "eme.3sg": "kaynayamaz",
+        "meli.3sg": "kaynamalı",
+        "opt.1sg": "kaynayayım",
+        "opt.1pl": "kaynayalım",
+        "imp3.3sg": "kaynasın",
+        "iyordu.3sg": "kaynıyordu",
+        "mek.akk": "kaynamayı",
+        "part.en": "kaynayan",
+        "part.dik.3": "kaynadığı",
+        "part.dik.1sg": "kaynadığım",
+        "part.ecek.3": "kaynayacağı",
+        "konv.ip": "kaynayıp",
+        "konv.ince": "kaynayınca",
+        "konv.erek": "kaynayarak",
+        "konv.meden": "kaynamadan",
+        "kond.3sg": "kaynasa",
+        "nom.mesi": "kaynaması",
+        "mis.ti": "kaynamıştı"
+      },
+      "frequenzRang": 21154,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.kaynatmak",
+      "lemma": "kaynatmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kaynat",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "kaynat",
+        "iyor.3sg": "kaynatıyor",
+        "imp.2pl": "kaynatın",
+        "aor.3sg": "kaynatır",
+        "iyor.neg.3sg": "kaynatmıyor",
+        "aor.1sg": "kaynatırım",
+        "aor.neg.3sg": "kaynatmaz",
+        "aor.neg.1sg": "kaynatmam",
+        "di.1sg": "kaynattım",
+        "di.2sg": "kaynattın",
+        "di.3sg": "kaynattı",
+        "di.1pl": "kaynattık",
+        "di.2pl": "kaynattınız",
+        "di.neg.3sg": "kaynatmadı",
+        "mis.3sg": "kaynatmış",
+        "ecek.3sg": "kaynatacak",
+        "ecek.1sg": "kaynatacağım",
+        "ecek.1pl": "kaynatacağız",
+        "ebil.3sg": "kaynatabilir",
+        "eme.3sg": "kaynatamaz",
+        "meli.3sg": "kaynatmalı",
+        "opt.1sg": "kaynatayım",
+        "opt.1pl": "kaynatalım",
+        "imp3.3sg": "kaynatsın",
+        "iyordu.3sg": "kaynatıyordu",
+        "mek.akk": "kaynatmayı",
+        "part.en": "kaynatan",
+        "part.dik.3": "kaynattığı",
+        "part.dik.1sg": "kaynattığım",
+        "part.ecek.3": "kaynatacağı",
+        "konv.ip": "kaynatıp",
+        "konv.ince": "kaynatınca",
+        "konv.erek": "kaynatarak",
+        "konv.meden": "kaynatmadan",
+        "kond.3sg": "kaynatsa",
+        "nom.mesi": "kaynatması",
+        "mis.ti": "kaynatmıştı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.pismek",
+      "lemma": "pişmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "piş",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "piş",
+        "iyor.3sg": "pişiyor",
+        "imp.2pl": "pişin",
+        "aor.3sg": "pişer",
+        "iyor.neg.3sg": "pişmiyor",
+        "aor.1sg": "pişerim",
+        "aor.neg.3sg": "pişmez",
+        "aor.neg.1sg": "pişmem",
+        "di.1sg": "piştim",
+        "di.2sg": "piştin",
+        "di.3sg": "pişti",
+        "di.1pl": "piştik",
+        "di.2pl": "piştiniz",
+        "di.neg.3sg": "pişmedi",
+        "mis.3sg": "pişmiş",
+        "ecek.3sg": "pişecek",
+        "ecek.1sg": "pişeceğim",
+        "ecek.1pl": "pişeceğiz",
+        "ebil.3sg": "pişebilir",
+        "eme.3sg": "pişemez",
+        "meli.3sg": "pişmeli",
+        "opt.1sg": "pişeyim",
+        "opt.1pl": "pişelim",
+        "imp3.3sg": "pişsin",
+        "iyordu.3sg": "pişiyordu",
+        "mek.akk": "pişmeyi",
+        "part.en": "pişen",
+        "part.dik.3": "piştiği",
+        "part.dik.1sg": "piştiğim",
+        "part.ecek.3": "pişeceği",
+        "konv.ip": "pişip",
+        "konv.ince": "pişince",
+        "konv.erek": "pişerek",
+        "konv.meden": "pişmeden",
+        "kond.3sg": "pişse",
+        "nom.mesi": "pişmesi",
+        "mis.ti": "pişmişti"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.soymak",
+      "lemma": "soymak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "soy",
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "stamm": "soy",
+        "iyor.3sg": "soyuyor",
+        "imp.2pl": "soyun",
+        "aor.3sg": "soyar",
+        "iyor.neg.3sg": "soymuyor",
+        "aor.1sg": "soyarım",
+        "aor.neg.3sg": "soymaz",
+        "aor.neg.1sg": "soymam",
+        "di.1sg": "soydum",
+        "di.2sg": "soydun",
+        "di.3sg": "soydu",
+        "di.1pl": "soyduk",
+        "di.2pl": "soydunuz",
+        "di.neg.3sg": "soymadı",
+        "mis.3sg": "soymuş",
+        "ecek.3sg": "soyacak",
+        "ecek.1sg": "soyacağım",
+        "ecek.1pl": "soyacağız",
+        "ebil.3sg": "soyabilir",
+        "eme.3sg": "soyamaz",
+        "meli.3sg": "soymalı",
+        "opt.1sg": "soyayım",
+        "opt.1pl": "soyalım",
+        "imp3.3sg": "soysun",
+        "iyordu.3sg": "soyuyordu",
+        "mek.akk": "soymayı",
+        "part.en": "soyan",
+        "part.dik.3": "soyduğu",
+        "part.dik.1sg": "soyduğum",
+        "part.ecek.3": "soyacağı",
+        "konv.ip": "soyup",
+        "konv.ince": "soyunca",
+        "konv.erek": "soyarak",
+        "konv.meden": "soymadan",
+        "kond.3sg": "soysa",
+        "nom.mesi": "soyması",
+        "mis.ti": "soymuştu"
+      },
+      "frequenzRang": 45026,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.rendelemek",
+      "lemma": "rendelemek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "rendele",
+        "harmonie": "e/i",
+        "stammwechsel": "rendele → rendeli- vor -yor"
+      },
+      "formen": {
+        "stamm": "rendele",
+        "iyor.3sg": "rendeliyor",
+        "imp.2pl": "rendeleyin",
+        "aor.3sg": "rendeler",
+        "iyor.neg.3sg": "rendelemiyor",
+        "aor.1sg": "rendelerim",
+        "aor.neg.3sg": "rendelemez",
+        "aor.neg.1sg": "rendelemem",
+        "di.1sg": "rendeledim",
+        "di.2sg": "rendeledin",
+        "di.3sg": "rendeledi",
+        "di.1pl": "rendeledik",
+        "di.2pl": "rendelediniz",
+        "di.neg.3sg": "rendelemedi",
+        "mis.3sg": "rendelemiş",
+        "ecek.3sg": "rendeleyecek",
+        "ecek.1sg": "rendeleyeceğim",
+        "ecek.1pl": "rendeleyeceğiz",
+        "ebil.3sg": "rendeleyebilir",
+        "eme.3sg": "rendeleyemez",
+        "meli.3sg": "rendelemeli",
+        "opt.1sg": "rendeleyeyim",
+        "opt.1pl": "rendeleyelim",
+        "imp3.3sg": "rendelesin",
+        "iyordu.3sg": "rendeliyordu",
+        "mek.akk": "rendelemeyi",
+        "part.en": "rendeleyen",
+        "part.dik.3": "rendelediği",
+        "part.dik.1sg": "rendelediğim",
+        "part.ecek.3": "rendeleyeceği",
+        "konv.ip": "rendeleyip",
+        "konv.ince": "rendeleyince",
+        "konv.erek": "rendeleyerek",
+        "konv.meden": "rendelemeden",
+        "kond.3sg": "rendelese",
+        "nom.mesi": "rendelemesi",
+        "mis.ti": "rendelemişti"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.ezmek",
+      "lemma": "ezmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "ez",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "ez",
+        "iyor.3sg": "eziyor",
+        "imp.2pl": "ezin",
+        "aor.3sg": "ezer",
+        "iyor.neg.3sg": "ezmiyor",
+        "aor.1sg": "ezerim",
+        "aor.neg.3sg": "ezmez",
+        "aor.neg.1sg": "ezmem",
+        "di.1sg": "ezdim",
+        "di.2sg": "ezdin",
+        "di.3sg": "ezdi",
+        "di.1pl": "ezdik",
+        "di.2pl": "ezdiniz",
+        "di.neg.3sg": "ezmedi",
+        "mis.3sg": "ezmiş",
+        "ecek.3sg": "ezecek",
+        "ecek.1sg": "ezeceğim",
+        "ecek.1pl": "ezeceğiz",
+        "ebil.3sg": "ezebilir",
+        "eme.3sg": "ezemez",
+        "meli.3sg": "ezmeli",
+        "opt.1sg": "ezeyim",
+        "opt.1pl": "ezelim",
+        "imp3.3sg": "ezsin",
+        "iyordu.3sg": "eziyordu",
+        "mek.akk": "ezmeyi",
+        "part.en": "ezen",
+        "part.dik.3": "ezdiği",
+        "part.dik.1sg": "ezdiğim",
+        "part.ecek.3": "ezeceği",
+        "konv.ip": "ezip",
+        "konv.ince": "ezince",
+        "konv.erek": "ezerek",
+        "konv.meden": "ezmeden",
+        "kond.3sg": "ezse",
+        "nom.mesi": "ezmesi",
+        "mis.ti": "ezmişti"
+      },
+      "frequenzRang": 33453,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.yogurmak",
+      "lemma": "yoğurmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "yoğur",
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "stamm": "yoğur",
+        "iyor.3sg": "yoğuruyor",
+        "imp.2pl": "yoğurun",
+        "aor.3sg": "yoğurur",
+        "iyor.neg.3sg": "yoğurmuyor",
+        "aor.1sg": "yoğururum",
+        "aor.neg.3sg": "yoğurmaz",
+        "aor.neg.1sg": "yoğurmam",
+        "di.1pl": "yoğurduk",
+        "di.neg.3sg": "yoğurmadı",
+        "mis.3sg": "yoğurmuş",
+        "ecek.3sg": "yoğuracak",
+        "ecek.1sg": "yoğuracağım",
+        "ecek.1pl": "yoğuracağız",
+        "ebil.3sg": "yoğurabilir",
+        "eme.3sg": "yoğuramaz",
+        "meli.3sg": "yoğurmalı",
+        "opt.1sg": "yoğurayım",
+        "opt.1pl": "yoğuralım",
+        "imp3.3sg": "yoğursun",
+        "iyordu.3sg": "yoğuruyordu",
+        "mek.akk": "yoğurmayı",
+        "part.en": "yoğuran",
+        "part.dik.3": "yoğurduğu",
+        "part.dik.1sg": "yoğurduğum",
+        "part.ecek.3": "yoğuracağı",
+        "konv.ip": "yoğurup",
+        "konv.ince": "yoğurunca",
+        "konv.erek": "yoğurarak",
+        "konv.meden": "yoğurmadan",
+        "kond.3sg": "yoğursa",
+        "nom.mesi": "yoğurması",
+        "mis.ti": "yoğurmuştu"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.sarmak",
+      "lemma": "sarmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "sar",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "sar",
+        "iyor.3sg": "sarıyor",
+        "imp.2pl": "sarın",
+        "aor.3sg": "sarar",
+        "iyor.neg.3sg": "sarmıyor",
+        "aor.1sg": "sararım",
+        "aor.neg.3sg": "sarmaz",
+        "aor.neg.1sg": "sarmam",
+        "di.1sg": "sardım",
+        "di.2sg": "sardın",
+        "di.3sg": "sardı",
+        "di.1pl": "sardık",
+        "di.2pl": "sardınız",
+        "di.neg.3sg": "sarmadı",
+        "mis.3sg": "sarmış",
+        "ecek.3sg": "saracak",
+        "ecek.1sg": "saracağım",
+        "ecek.1pl": "saracağız",
+        "ebil.3sg": "sarabilir",
+        "eme.3sg": "saramaz",
+        "meli.3sg": "sarmalı",
+        "opt.1sg": "sarayım",
+        "opt.1pl": "saralım",
+        "imp3.3sg": "sarsın",
+        "iyordu.3sg": "sarıyordu",
+        "mek.akk": "sarmayı",
+        "part.en": "saran",
+        "part.dik.3": "sardığı",
+        "part.dik.1sg": "sardığım",
+        "part.ecek.3": "saracağı",
+        "konv.ip": "sarıp",
+        "konv.ince": "sarınca",
+        "konv.erek": "sararak",
+        "konv.meden": "sarmadan",
+        "kond.3sg": "sarsa",
+        "nom.mesi": "sarması",
+        "mis.ti": "sarmıştı"
+      },
+      "frequenzRang": 31376,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.serpmek",
+      "lemma": "serpmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "serp",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "serp",
+        "iyor.3sg": "serpiyor",
+        "imp.2pl": "serpin",
+        "aor.3sg": "serper",
+        "iyor.neg.3sg": "serpmiyor",
+        "aor.1sg": "serperim",
+        "aor.neg.3sg": "serpmez",
+        "aor.neg.1sg": "serpmem",
+        "di.1sg": "serptim",
+        "di.2sg": "serptin",
+        "di.3sg": "serpti",
+        "di.1pl": "serptik",
+        "di.2pl": "serptiniz",
+        "di.neg.3sg": "serpmedi",
+        "mis.3sg": "serpmiş",
+        "ecek.3sg": "serpecek",
+        "ecek.1sg": "serpeceğim",
+        "ecek.1pl": "serpeceğiz",
+        "ebil.3sg": "serpebilir",
+        "eme.3sg": "serpemez",
+        "meli.3sg": "serpmeli",
+        "opt.1sg": "serpeyim",
+        "opt.1pl": "serpelim",
+        "imp3.3sg": "serpsin",
+        "iyordu.3sg": "serpiyordu",
+        "mek.akk": "serpmeyi",
+        "part.en": "serpen",
+        "part.dik.3": "serptiği",
+        "part.dik.1sg": "serptiğim",
+        "part.ecek.3": "serpeceği",
+        "konv.ip": "serpip",
+        "konv.ince": "serpince",
+        "konv.erek": "serperek",
+        "konv.meden": "serpmeden",
+        "kond.3sg": "serpse",
+        "nom.mesi": "serpmesi",
+        "mis.ti": "serpmişti"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.cirpmak",
+      "lemma": "çırpmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "çırp",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "çırp",
+        "iyor.3sg": "çırpıyor",
+        "imp.2pl": "çırpın",
+        "aor.3sg": "çırpar",
+        "iyor.neg.3sg": "çırpmıyor",
+        "aor.1sg": "çırparım",
+        "aor.neg.3sg": "çırpmaz",
+        "aor.neg.1sg": "çırpmam",
+        "di.1sg": "çırptım",
+        "di.2sg": "çırptın",
+        "di.3sg": "çırptı",
+        "di.1pl": "çırptık",
+        "di.2pl": "çırptınız",
+        "di.neg.3sg": "çırpmadı",
+        "mis.3sg": "çırpmış",
+        "ecek.3sg": "çırpacak",
+        "ecek.1sg": "çırpacağım",
+        "ecek.1pl": "çırpacağız",
+        "ebil.3sg": "çırpabilir",
+        "eme.3sg": "çırpamaz",
+        "meli.3sg": "çırpmalı",
+        "opt.1sg": "çırpayım",
+        "opt.1pl": "çırpalım",
+        "imp3.3sg": "çırpsın",
+        "iyordu.3sg": "çırpıyordu",
+        "mek.akk": "çırpmayı",
+        "part.en": "çırpan",
+        "part.dik.3": "çırptığı",
+        "part.dik.1sg": "çırptığım",
+        "part.ecek.3": "çırpacağı",
+        "konv.ip": "çırpıp",
+        "konv.ince": "çırpınca",
+        "konv.erek": "çırparak",
+        "konv.meden": "çırpmadan",
+        "kond.3sg": "çırpsa",
+        "nom.mesi": "çırpması",
+        "mis.ti": "çırpmıştı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.eritmek",
+      "lemma": "eritmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "erit",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "erit",
+        "iyor.3sg": "eritiyor",
+        "imp.2pl": "eritin",
+        "aor.3sg": "eritir",
+        "iyor.neg.3sg": "eritmiyor",
+        "aor.1sg": "eritirim",
+        "aor.neg.3sg": "eritmez",
+        "aor.neg.1sg": "eritmem",
+        "di.1sg": "erittim",
+        "di.2sg": "erittin",
+        "di.3sg": "eritti",
+        "di.1pl": "erittik",
+        "di.2pl": "erittiniz",
+        "di.neg.3sg": "eritmedi",
+        "mis.3sg": "eritmiş",
+        "ecek.3sg": "eritecek",
+        "ecek.1sg": "eriteceğim",
+        "ecek.1pl": "eriteceğiz",
+        "ebil.3sg": "eritebilir",
+        "eme.3sg": "eritemez",
+        "meli.3sg": "eritmeli",
+        "opt.1sg": "eriteyim",
+        "opt.1pl": "eritelim",
+        "imp3.3sg": "eritsin",
+        "iyordu.3sg": "eritiyordu",
+        "mek.akk": "eritmeyi",
+        "part.en": "eriten",
+        "part.dik.3": "erittiği",
+        "part.dik.1sg": "erittiğim",
+        "part.ecek.3": "eriteceği",
+        "konv.ip": "eritip",
+        "konv.ince": "eritince",
+        "konv.erek": "eriterek",
+        "konv.meden": "eritmeden",
+        "kond.3sg": "eritse",
+        "nom.mesi": "eritmesi",
+        "mis.ti": "eritmişti"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.yanmak",
+      "lemma": "yanmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "yan",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "iyor.3sg": "yanıyor",
+        "aor.3sg": "yanar",
+        "iyor.neg.3sg": "yanmıyor",
+        "aor.1sg": "yanarım",
+        "aor.neg.3sg": "yanmaz",
+        "aor.neg.1sg": "yanmam",
+        "di.1sg": "yandım",
+        "di.2sg": "yandın",
+        "di.3sg": "yandı",
+        "di.1pl": "yandık",
+        "di.2pl": "yandınız",
+        "di.neg.3sg": "yanmadı",
+        "mis.3sg": "yanmış",
+        "ecek.3sg": "yanacak",
+        "ecek.1sg": "yanacağım",
+        "ecek.1pl": "yanacağız",
+        "ebil.3sg": "yanabilir",
+        "eme.3sg": "yanamaz",
+        "meli.3sg": "yanmalı",
+        "opt.1sg": "yanayım",
+        "opt.1pl": "yanalım",
+        "imp3.3sg": "yansın",
+        "iyordu.3sg": "yanıyordu",
+        "mek.akk": "yanmayı",
+        "part.en": "yanan",
+        "part.dik.3": "yandığı",
+        "part.dik.1sg": "yandığım",
+        "part.ecek.3": "yanacağı",
+        "konv.ip": "yanıp",
+        "konv.ince": "yanınca",
+        "konv.erek": "yanarak",
+        "konv.meden": "yanmadan",
+        "kond.3sg": "yansa",
+        "nom.mesi": "yanması",
+        "mis.ti": "yanmıştı"
+      },
+      "frequenzRang": 4946,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.sogutmak",
+      "lemma": "soğutmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "soğut",
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "stamm": "soğut",
+        "iyor.3sg": "soğutuyor",
+        "imp.2pl": "soğutun",
+        "aor.3sg": "soğutur",
+        "iyor.neg.3sg": "soğutmuyor",
+        "aor.1sg": "soğuturum",
+        "aor.neg.3sg": "soğutmaz",
+        "aor.neg.1sg": "soğutmam",
+        "di.1sg": "soğuttum",
+        "di.2sg": "soğuttun",
+        "di.3sg": "soğuttu",
+        "di.1pl": "soğuttuk",
+        "di.2pl": "soğuttunuz",
+        "di.neg.3sg": "soğutmadı",
+        "mis.3sg": "soğutmuş",
+        "ecek.3sg": "soğutacak",
+        "ecek.1sg": "soğutacağım",
+        "ecek.1pl": "soğutacağız",
+        "ebil.3sg": "soğutabilir",
+        "eme.3sg": "soğutamaz",
+        "meli.3sg": "soğutmalı",
+        "opt.1sg": "soğutayım",
+        "opt.1pl": "soğutalım",
+        "imp3.3sg": "soğutsun",
+        "iyordu.3sg": "soğutuyordu",
+        "mek.akk": "soğutmayı",
+        "part.en": "soğutan",
+        "part.dik.3": "soğuttuğu",
+        "part.dik.1sg": "soğuttuğum",
+        "part.ecek.3": "soğutacağı",
+        "konv.ip": "soğutup",
+        "konv.ince": "soğutunca",
+        "konv.erek": "soğutarak",
+        "konv.meden": "soğutmadan",
+        "kond.3sg": "soğutsa",
+        "nom.mesi": "soğutması",
+        "mis.ti": "soğutmuştu"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.koklamak",
+      "lemma": "koklamak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kokla",
+        "harmonie": "a/ı",
+        "stammwechsel": "kokla → koklu- vor -yor"
+      },
+      "formen": {
+        "stamm": "kokla",
+        "iyor.3sg": "kokluyor",
+        "imp.2pl": "koklayın",
+        "aor.3sg": "koklar",
+        "iyor.neg.3sg": "koklamıyor",
+        "aor.1sg": "koklarım",
+        "aor.neg.3sg": "koklamaz",
+        "aor.neg.1sg": "koklamam",
+        "di.1sg": "kokladım",
+        "di.2sg": "kokladın",
+        "di.3sg": "kokladı",
+        "di.1pl": "kokladık",
+        "di.2pl": "kokladınız",
+        "di.neg.3sg": "koklamadı",
+        "mis.3sg": "koklamış",
+        "ecek.3sg": "koklayacak",
+        "ecek.1sg": "koklayacağım",
+        "ecek.1pl": "koklayacağız",
+        "ebil.3sg": "koklayabilir",
+        "eme.3sg": "koklayamaz",
+        "meli.3sg": "koklamalı",
+        "opt.1sg": "koklayayım",
+        "opt.1pl": "koklayalım",
+        "imp3.3sg": "koklasın",
+        "iyordu.3sg": "kokluyordu",
+        "mek.akk": "koklamayı",
+        "part.en": "koklayan",
+        "part.dik.3": "kokladığı",
+        "part.dik.1sg": "kokladığım",
+        "part.ecek.3": "koklayacağı",
+        "konv.ip": "koklayıp",
+        "konv.ince": "koklayınca",
+        "konv.erek": "koklayarak",
+        "konv.meden": "koklamadan",
+        "kond.3sg": "koklasa",
+        "nom.mesi": "koklaması",
+        "mis.ti": "koklamıştı"
+      },
+      "frequenzRang": 43351,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.tatmak",
+      "lemma": "tatmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "tat",
+        "harmonie": "a/ı",
+        "stammwechsel": "tat → tad- vor Vokal"
+      },
+      "formen": {
+        "stamm": "tat",
+        "iyor.3sg": "tadıyor",
+        "imp.2pl": "tadın",
+        "aor.3sg": "tadar",
+        "iyor.neg.3sg": "tatmıyor",
+        "aor.1sg": "tadarım",
+        "aor.neg.3sg": "tatmaz",
+        "aor.neg.1sg": "tatmam",
+        "di.1sg": "tattım",
+        "di.2sg": "tattın",
+        "di.3sg": "tattı",
+        "di.1pl": "tattık",
+        "di.2pl": "tattınız",
+        "di.neg.3sg": "tatmadı",
+        "mis.3sg": "tatmış",
+        "ecek.3sg": "tadacak",
+        "ecek.1sg": "tadacağım",
+        "ecek.1pl": "tadacağız",
+        "ebil.3sg": "tadabilir",
+        "eme.3sg": "tadamaz",
+        "meli.3sg": "tatmalı",
+        "opt.1sg": "tadayım",
+        "opt.1pl": "tadalım",
+        "imp3.3sg": "tatsın",
+        "iyordu.3sg": "tadıyordu",
+        "mek.akk": "tatmayı",
+        "part.en": "tadan",
+        "part.dik.3": "tattığı",
+        "part.dik.1sg": "tattığım",
+        "part.ecek.3": "tadacağı",
+        "konv.ip": "tadıp",
+        "konv.ince": "tadınca",
+        "konv.erek": "tadarak",
+        "konv.meden": "tatmadan",
+        "kond.3sg": "tatsa",
+        "nom.mesi": "tatması",
+        "mis.ti": "tatmıştı"
+      },
+      "frequenzRang": 20904,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.cig",
+      "lemma": "çiğ",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 6904,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.citir",
+      "lemma": "çıtır",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 8061,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.yumusak",
+      "lemma": "yumuşak",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 2600,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.baharatli",
+      "lemma": "baharatlı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 24000,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.sulu",
+      "lemma": "sulu",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "frequenzRang": 7502,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.enfes",
+      "lemma": "enfes",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 11587,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.klasik",
+      "lemma": "klasik",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 1511,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.turlu",
+      "lemma": "türlü",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "frequenzRang": 684,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.vejetaryen",
+      "lemma": "vejetaryen",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 22590,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.acili",
+      "lemma": "acılı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 11526,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.keskin",
+      "lemma": "keskin",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 2520,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.kaliteli",
+      "lemma": "kaliteli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 2070,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.olgun",
+      "lemma": "olgun",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "frequenzRang": 3846,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.ozgu",
+      "lemma": "özgü",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "frequenzRang": 3146,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.sahane",
+      "lemma": "şahane",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 4760,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.iri",
+      "lemma": "iri",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 4803,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.ev-yapimi",
+      "lemma": "ev yapımı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.ekshi",
+      "lemma": "ekşi",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 9291,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.zevk",
+      "lemma": "zevk",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "zevkler",
+        "akk/poss.3sg": "zevki",
+        "dat": "zevke",
+        "gen/poss.2sg": "zevkin",
+        "ins": "zevkle",
+        "poss.1sg": "zevkim",
+        "poss.1pl": "zevkimiz",
+        "poss.2pl": "zevkiniz",
+        "lok": "zevkte",
+        "abl": "zevkten",
+        "poss.3pl": "zevkleri"
+      },
+      "frequenzRang": 1470,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.halka",
+      "lemma": "halka",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "halkalar",
+        "akk": "halkayı",
+        "dat": "halkaya",
+        "gen": "halkanın",
+        "ins": "halkayla",
+        "poss.1sg": "halkam",
+        "poss.2sg": "halkan",
+        "poss.3sg": "halkası",
+        "poss.1pl": "halkamız",
+        "poss.2pl": "halkanız",
+        "lok": "halkada",
+        "abl": "halkadan",
+        "poss.3pl": "halkaları"
+      },
+      "frequenzRang": 1448,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "tr.b1.e16.s0001",
+      "text": "Bu akşam misafirlere sütlaç ve mantı yapıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0002",
+      "text": "Annem her zaman iki kişilik tarifte bir tutam tuz kullanır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0003",
+      "text": "Bu tarifte üç adet soğan var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0004",
+      "text": "Kıymanın yanına bir tutam karabiber koy.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0005",
+      "text": "Bir kase yoğurt ve iki dilim ekmek yeter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0006",
+      "text": "Tavaya bir kapak koyup kısık ateşte bekletin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0007",
+      "text": "Pazardan bir kilo domates ve bir demet maydanoz aldım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0008",
+      "text": "Salçayı tencereye koyup iki dakika kavurun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0009",
+      "text": "Bu sosu biraz tuz ile tatlandır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0010",
+      "text": "Zeytinyağı ve limon suyu ile güzel bir salata olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0011",
+      "text": "Bulgurun üstüne sıcak su dök ve kapağını kapat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0012",
+      "text": "Pirinci iyice yıkayıp tencereye koy.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0013",
+      "text": "Fırında bir küp peynir ve iki adet yumurta pişirdim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0014",
+      "text": "Hindi etini küçük küp hâlinde doğrayın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0015",
+      "text": "Mantarları ince dilimler hâlinde kesmek lazım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0016",
+      "text": "Kıymayı yağlı tavada kızartıp sarımsağı ekleyin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0017",
+      "text": "Baharatlı kıymalı börek çok lezzetli oldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0018",
+      "text": "Bu reçeli kahvaltıda yanında simitle yiyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0019",
+      "text": "Turşuyu tabağın kenarına koymayı unutma.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0020",
+      "text": "Ispanaktan yapılan yemekler bana çok iyi geliyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0021",
+      "text": "Patlıcanı tavada yağsız kızartabilirsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0022",
+      "text": "Kabağı bir fırın tepsisine koyup baharatla kavurun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0023",
+      "text": "Nohudu bir gece önceden suya koymak gerekir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0024",
+      "text": "Fasulyeyi haşlayıp soğanla birlikte kavuruyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0025",
+      "text": "Sütlaca üstüne bir tutam tarçın serpilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0026",
+      "text": "Yufkaya kıyma ve peynir koyup dürümü sarın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0027",
+      "text": "Hamuru iyice yoğurduktan sonra on dakika dinlendirin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0028",
+      "text": "Kebabın yanına bulgur pilavı ve cacık koyduk.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0029",
+      "text": "Mantının üstüne yoğurt ve kırmızı sos eklenir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0030",
+      "text": "Cacık için salatalık, sarımsak ve yoğurt gerekiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0031",
+      "text": "Şişleri ateşin üstünde çevirerek pişirin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0032",
+      "text": "Tatlıya birkaç dilim muz ekleyebilirsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0033",
+      "text": "Bu yemeğin lezzeti ilk kaşıktan belli oldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0034",
+      "text": "Yemeğin tadına bakmak için bir kaşık hazırla.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0035",
+      "text": "Bu sarımsak çok taze ve kokusu güzel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0036",
+      "text": "Kapağını açmadan bir dakika bekletin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0037",
+      "text": "Tereyağını eritip hamurun üstüne sürün.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0038",
+      "text": "Zeytinyağında kavrulmuş soğan çok güzel kokuyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0039",
+      "text": "Dolmaya iki kaşık salça ile biraz nane koydum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0040",
+      "text": "Bu yemekte bir litre süt kullandım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0041",
+      "text": "Küçük bir tutam tuz yeter, fazlası zarar verir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0042",
+      "text": "Her tarifte önce kaseleri masaya dizin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0043",
+      "text": "Bu kıymalı yemekte kaç adet biber var?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0044",
+      "text": "Balkonda sarımsak ve maydanoz yetiştiriyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0045",
+      "text": "Kaya ailesi bu hafta Becker ailesini ve Samīr ailesini kebap yemeğine çağırdı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0046",
+      "text": "Murat Bey sabah erkenden pazara gitti ve birkaç adet biber aldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0047",
+      "text": "Can ise kıymalı biber dolması için salçayı hazırladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0048",
+      "text": "Elif sütlaç yapmaya karar verdi, çünkü bu tatlıyı herkes sever.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0049",
+      "text": "Konuklar saat yedide gelecek, o yüzden hâlâ acele etmemiz gerekiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0050",
+      "text": "Derya mutfağa girip kaseleri masaya dizdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0051",
+      "text": "Becker Hanım bir kek getirmek istedi ama Elif ona tatlı yapmamasını söyledi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0052",
+      "text": "Samīr'in annesi nohut ezmesi hazırladı ve herkese bir kase verdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0053",
+      "text": "Samīr'in babası bulgurlu maydanozlu salata yapmayı çok seviyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0054",
+      "text": "Rīm, Elif'in en yakın arkadaşı ve bu akşam konuklar arasında geliyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0055",
+      "text": "Lena yanında bir şişe zeytinyağı getirdi, çünkü her yemeğe biraz koyuyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0056",
+      "text": "Murat bugün yemeğin tadına üç kez baktı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0057",
+      "text": "Herkes masaya oturduğunda Murat ilk dilim sütlacı Becker Hanım'a uzattı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0058",
+      "text": "Becker Hanım tatlı bir gülümsemeyle teşekkür etti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0059",
+      "text": "Samīr'in annesi dolmaların gerçekten lezzetli olduğunu söyledi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0060",
+      "text": "Derya salatayı karıştırırken bir tutam nane ekledi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0061",
+      "text": "Can kebabı pişirirken ateşin yanından ayrılmadı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0062",
+      "text": "Elif'in sütlacı soğuduktan sonra buzdolabına konacak.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0063",
+      "text": "Herkes sofraya oturunca Murat bir kase yoğurt uzattı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0064",
+      "text": "Konuklar yemeği çok beğendi ve birkaç kez tekrar istedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0065",
+      "text": "Becker Hanım sarımsaklı yoğurdun nasıl yapıldığını sordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0066",
+      "text": "Samīr'in kardeşi yufkayı açmaya yardım etti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0067",
+      "text": "Bu akşam tavuk yerine hindi eti kullanmaya karar verdik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0068",
+      "text": "Mutfak küçük olduğu için herkes kebabı esas odada yedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0069",
+      "text": "Rīm, Elif'e tatlının üstüne biraz reçel koymasını önerdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0070",
+      "text": "Murat bu sütlaç tarifini kendi annesinden öğrendiğini anlattı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0071",
+      "text": "Derya fırının kapağını açtı ve sıcak hamurun kokusunu içine çekti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0072",
+      "text": "Yemekten sonra herkes çayını ve tatlısını beraber içti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0073",
+      "text": "Can mutfağı temizlerken yere bir kapak düşürdü ve güldü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0074",
+      "text": "Becker Hanım yemeğin her tabağında farklı bir baharat olduğunu fark etti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0075",
+      "text": "Elif bir litre süt aldı ama sütlaç için bir litreden biraz fazlası gerekti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0076",
+      "text": "Samīr'in ailesi bu akşam bizi sütlaçla çok güzel ağırladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0077",
+      "text": "Konuklar gittikten sonra Derya bulaşıkları yıkamaya başladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0078",
+      "text": "Murat mutfağın dolabından iki büyük tava çıkardı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0079",
+      "text": "Hindi etini ince dilimler hâlinde doğrayıp yağda kızarttık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0080",
+      "text": "Ispanaklı börek hem sağlıklı hem de lezzetli bir yemek olabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0081",
+      "text": "Rīm, Lena'ya pirinç pilavının nasıl yapıldığını gösterdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0082",
+      "text": "Elif, tatlının üstüne bir tutam fındık koymayı önerdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0083",
+      "text": "Becker Hanım yemeği yerken hiç konuşmadı, sadece gülümsedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0084",
+      "text": "Can kaşıkla sosun tadına baktı ve tuzunu kontrol etti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0085",
+      "text": "Murat sosun tuzunu son kez kontrol etti ve memnun oldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0086",
+      "text": "Samīr'in babası sıcak mantıyı sofraya koydu ve herkes sessizce yedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0087",
+      "text": "Derya misafirlere küçük bir kase soğuk cacık ikram etti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0088",
+      "text": "Bu tarifi yazmadan önce kabakları tek tek kontrol ettim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0089",
+      "text": "Elif sütlacı pişirdikten sonra üstüne tarçın serpti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0090",
+      "text": "Yoğurdu karıştırıp üç dakika bekletince kıvamı güzel oluyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0091",
+      "text": "Kıymayı kızartırken sürekli karıştırarak yanmasını önlemelisin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0092",
+      "text": "Baharatları ekleyip biraz daha kavurunca koku yayıldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0093",
+      "text": "Patatesleri soyup küçük dilimler hâlinde kesin ve tavaya dizin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0094",
+      "text": "Hamuru açıp ince bir yufka hâline getirdikten sonra içine peynir koyun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0095",
+      "text": "Fırından çıkan kekin üstüne limon suyu dökmeyi unutma.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0096",
+      "text": "Bulgur suyunu emince kapağını kapatıp on dakika bekletin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0097",
+      "text": "Maydanozu iyice yıkayıp ince doğramak hem güzel hem lezzetli olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0098",
+      "text": "Tavuğu yağda kızartıp sonra sosla birlikte fırına koyduk.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0099",
+      "text": "Sosun kıvamını kontrol ederken kaşığı karıştırmaya devam et.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0100",
+      "text": "Soğanı rengi değişene kadar kavurup salçayı ekleyin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0101",
+      "text": "Kaynayan suya pirinci koyunca tencerenin kapağını hemen kapatın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0102",
+      "text": "Dolmayı sararken yaprakları çok sıkı sarmamaya dikkat et.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0103",
+      "text": "Mantarları haşladıktan sonra süzüp tavaya koyduk.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0104",
+      "text": "Kabakları ince doğrayıp tuzlu suda birkaç dakika bekletin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0105",
+      "text": "Elif mutfakta çalışırken hamur yoğurmayı çok severdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0106",
+      "text": "Samīr'in annesi biber dolmasını pişirirken hep tadına bakar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0107",
+      "text": "Tatlıyı soğutmadan önce üstünü kaşıkla düzgünce yayın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0108",
+      "text": "Derya ateşi açıp suyun kaynamasını bekledi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0109",
+      "text": "Murat yemek pişerken kapağı açmamaya çok dikkat etti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0110",
+      "text": "Becker Hanım sütlacın tarifini sorduğunda Elif ona not defterini uzattı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0111",
+      "text": "Sosu karıştırmadan bırakırsan alt kısmı yapışabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0112",
+      "text": "Hindi kıymasını yağsız tavada kızartmak daha sağlıklı olabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0113",
+      "text": "Kapak açıkken yemek daha hızlı soğur, o yüzden kapağı kapalı tutun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0114",
+      "text": "Yoğurdun kıvamını ayarlamak için biraz su ekleyebilirsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0115",
+      "text": "Ekmeği dilimleyip tabağın kenarına dizin ve masaya koyun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0116",
+      "text": "Konuklar yemeği bitirdikten sonra tatlıya geçmek istedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0117",
+      "text": "Kebap pişerken etrafına soğan ve domates dizmeyi unutmayın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0118",
+      "text": "Derya mutfakta yardım ederken kaseleri sırayla masaya taşıdı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0119",
+      "text": "Patlıcanı kızartmadan önce tuzlu suda beklettim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0120",
+      "text": "Sütlacın yüzeyinde ince bir tabaka oluşunca fırından çıkar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0121",
+      "text": "Yemeğe pul biber ekleyince tadı çok güzel oldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0122",
+      "text": "Elif hamuru yoğururken unu yavaş yavaş ekledi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0123",
+      "text": "Bu kek soğuduktan sonra dilim dilim kesilmelidir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0124",
+      "text": "Pişirme süresi bittiğinde tencereyi ocaktan indirin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0125",
+      "text": "Yufkaları üst üste koyup tepsiye dizin ve kenarlarını kapatın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0126",
+      "text": "Kuru fasulyeyi bir gece suda beklettikten sonra pişirmek gerekir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0127",
+      "text": "Salçayı biraz yağla kavurmadan yemeğe koyma.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0128",
+      "text": "Tatlı için iki litre süte ihtiyacımız var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0129",
+      "text": "Kaşığı ve kaseyi mutfak masasına koymayı unutmayın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0130",
+      "text": "Bu sosu sen mi yaptın?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0131",
+      "text": "Bu lezzetli sosu dün sen mi hazırladın?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0132",
+      "text": "Yemeği bu sabah mı pişirdin, yoksa dün akşam mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0133",
+      "text": "Tatlıyı bugün mü yaptın, yoksa dün mü?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0134",
+      "text": "Kıymalı biberi Can mı doldurdu?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0135",
+      "text": "Sütlacın tarifini sen mi buldun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0136",
+      "text": "Elinize sağlık, bu yemek çok lezzetli olmuş.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0137",
+      "text": "Eline sağlık, bu kıymalı börek harika olmuş.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0138",
+      "text": "Tadı çok güzel, reçeteyi bana verir misin?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0139",
+      "text": "Bu salata gerçekten enfes, malzemeleri ne?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0140",
+      "text": "Mutfakta ne kadar güzel kokuyor, bu sarımsağın kokusu mu?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0141",
+      "text": "Yemeğiniz çok lezzetli, tarifini merak ettim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0142",
+      "text": "Teşekkür ederim, bu mantı tarifi annemden kalma.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0143",
+      "text": "Biraz daha alır mısınız? Kebap var ve pilav da var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0144",
+      "text": "Hiçbir şey eksik değil, sütlaç da çok güzel.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0145",
+      "text": "Biri bana sarımsak ekmeği getirsin, lütfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0146",
+      "text": "Bu tatlıdan herkes bir tane alabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0147",
+      "text": "Sosta bir şey eksik gibi, tuz mu yoksa karabiber mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0148",
+      "text": "Bu sosta ne var, bu kadar lezzetli olmasının sebebi ne?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0149",
+      "text": "Ben kendi mantı tarifimi değiştirdim, siz ne dersiniz?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0150",
+      "text": "Mutfakta hiç kimse yok, kaseleri kim masaya koyacak?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0151",
+      "text": "Elif, sütlaç mı yoksa kek mi yapacağını düşünüyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0152",
+      "text": "Murat, Can'a tencerenin ne zaman kaynayacağını sordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0153",
+      "text": "Derya Becker Hanım'a sütlacın nereye konacağını sordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0154",
+      "text": "Samīr hangi baharatın bu yemeğe daha iyi gideceğini bilmek istedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0155",
+      "text": "Konuklar tatlının nasıl yapıldığını anlatmamızı istedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0156",
+      "text": "Sütlacın ne zaman hazır olacağını kimse bilmiyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0157",
+      "text": "Rīm, Elif'in kaç kişilik mantı hazırladığını öğrenmek istedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0158",
+      "text": "Lena bu kadar çok kıymayı kimin aldığını sordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0159",
+      "text": "Murat, dedesinin bu mantı tarifini nereden öğrendiğini hatırlıyor mu?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0160",
+      "text": "Yemek yenirken çocukların tatlıyı beklemekten sıkıldığını fark ettim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0161",
+      "text": "Can kıymalı yemeğe ne kadar baharat koyduğunu tam bilmiyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0162",
+      "text": "Becker Hanım sofraya gelmeden önce kimin bu kadar güzel sütlaç yaptığını sordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0163",
+      "text": "Derya, sosun tuzsuz olup olmadığını dikkatlice kontrol etti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0164",
+      "text": "Elif'in sütlacı ne kadar sürede soğuyacağını hesaplıyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0165",
+      "text": "Samīr'in annesi mantının içine ne koyduğunu anlatmaktan hoşlanır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0166",
+      "text": "Konuklar, pilavı kimin pişirdiğini merak ederek mutfağa baktı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0167",
+      "text": "Bu sütlacı hazırlayan kişi ben değil, Can'dır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0168",
+      "text": "Tatlıyı soğuttuktan sonra kim servis yapacak?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0169",
+      "text": "Kimi konuk olarak davet edeceğimizi henüz bilmiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0170",
+      "text": "Bu tarifte ne zaman tereyağı ekleyeceğimizi yazmamış.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0171",
+      "text": "Murat bu kadar çok kıyma olduğu için şaşırdı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0172",
+      "text": "Kebabı hazırlayan herkes sofraya oturmadan önce ellerini yıkadı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0173",
+      "text": "Dolmalar güzel görünüyor, ama acaba içi yeterince baharatlı mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0174",
+      "text": "Sütlacı yerken anlattığı hikâye herkesi güldürdü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0175",
+      "text": "Mutfaktan gelen kokular konukları sabırsızlandırdı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0176",
+      "text": "Samīr'in babasının defterindeki kıymalı tarif hâlâ mutfakta duruyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0177",
+      "text": "Hangi tatlının daha lezzetli olduğunu siz mi söylersiniz?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0178",
+      "text": "Herkes sofrada yeni bir şey denemek istedi, o yüzden sütlaç da koyduk.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0179",
+      "text": "Bir cumartesi günü Kaya ailesi mutfakta sütlaç için telaşla çalışıyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0180",
+      "text": "Murat sabah pazardan taze ıspanak ve et aldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0181",
+      "text": "Can, Elif'e yardım etmek için kaseleri hazırlamaya başladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0182",
+      "text": "Derya fırında tatlı için bir tepsi hazırladı, sonra tekrar mutfağa döndü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0183",
+      "text": "Akşam olunca kapı zili çaldı ve ilk konuklar geldi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0184",
+      "text": "Becker Hanım, elinde sıcak bir kase ile kapıda gülümsüyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0185",
+      "text": "\"Hoş geldiniz!\" dedi Murat ve konukları içeri aldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0186",
+      "text": "Mutfaktan gelen sarımsak kokusu herkesin iştahını açmıştı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0187",
+      "text": "Elif sütlacın kıvamını kontrol ederken telefonu çaldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0188",
+      "text": "Samīr ailesi biraz geç geldi, çünkü sütlacı da yanlarında getirdiler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0189",
+      "text": "Samīr'in annesi nohut ezmesini masanın ortasına koydu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0190",
+      "text": "Murat, Samīr'in babasına kıymalı biber dolmasından bir tane uzattı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0191",
+      "text": "\"Bu sütlacı sen mi yaptın?\" diye sordu Becker Hanım Elif'e.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0192",
+      "text": "Elif gülümseyerek, \"Hayır, bu mantıyı Can yaptı,\" dedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0193",
+      "text": "Can kulaklarına kadar kızardı ve herkes güldü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0194",
+      "text": "Derya kaseleri masaya dizdi ve herkese bir kaşık verdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0195",
+      "text": "Samīr'in kardeşi tatlıyı çok merak etmişti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0196",
+      "text": "Yemek yenirken Rīm bulgur salatasının tadını beğendi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0197",
+      "text": "Lena, pirinç pilavına biraz tereyağı eklenirse daha güzel olacağını söyledi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0198",
+      "text": "Murat, konukların bardaklarına su koymayı unutmadı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0199",
+      "text": "Konuklar tatlıdan sonra çaylarını da içti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0200",
+      "text": "Becker Hanım konukları ertesi hafta kendi evine davet etti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0201",
+      "text": "Kapıdan çıkarken konuklar Kaya ailesine teşekkür etti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0202",
+      "text": "Ev sessizleşince Elif ve Can kaseleri yıkamaya başladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0203",
+      "text": "Murat, bu akşamın sütlaçla çok güzel geçtiğini düşünüyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0204",
+      "text": "Derya tavayı yıkarken pencereden dışarıya baktı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0205",
+      "text": "Elif, sütlacın kalan kısmını küçük kaselere paylaştırdı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0206",
+      "text": "Can, ertesi gün Becker Hanım'a sütlaç tarifini yazılı olarak götürmeyi kabul etti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0207",
+      "text": "Konuklar evine dönerken hafif bir yağmur başlamıştı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0208",
+      "text": "Yemekten sonra yapılan tatlı hem güzel görünüyor hem de çok lezzetliydi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0209",
+      "text": "Dana kıymalı biber dolması dört kişilik bir yemektir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0210",
+      "text": "Önce altı adet kırmızı biberin üst kısmını kesip içini temizleyin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0211",
+      "text": "Bir kase kıymaya bir soğan, bir kaşık pirinç ve biraz baharat ekleyin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0212",
+      "text": "Karışımı biberlerin içine doldurun ve kapaklarını tekrar kapatın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0213",
+      "text": "Bir tencereye iki kaşık salça ve bir litre sıcak su koyup karıştırın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0214",
+      "text": "Biberleri sosun içine dizin ve kapağını kapatarak kısık ateşte pişirin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0215",
+      "text": "Yemeğin üstüne bir kaşık tereyağı gezdirip hemen servis yapın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0216",
+      "text": "Bu tarifte sarımsaklı yoğurt da güzel bir eşlikçi olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0217",
+      "text": "Tarif bittikten sonra kalan sosu ekmekle birlikte sofraya koyabilirsiniz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0218",
+      "text": "Bu yemek hem sıcak hem soğuk olarak yenebilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0219",
+      "text": "Bu masada üç farklı mutfak var ve her biri kendi tadını taşıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0220",
+      "text": "Kaya ailesi Türk mantısını, Becker ailesi Alman kekini, Samīr'in ailesi nohut ezmesini seviyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0221",
+      "text": "Kaynatılmış patates ve turşu, Alman sofrasının eski bir alışkanlığıdır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0222",
+      "text": "Suriye mutfağında nohut ve bulgur çok sık kullanılan malzemelerdir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0223",
+      "text": "Türk sofrasında zeytinyağlı sebzeler ve yoğurt hiç eksik olmaz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0224",
+      "text": "Herkes bu sofrada kendi yemeğini biraz tadar ve birlikte konuşur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0225",
+      "text": "Üç mutfağın ortak yanı, yemeği paylaşmaya verilen değerdir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0226",
+      "text": "Elif bu konuklarla buluşunca her seferinde yeni bir tarif öğreniyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0227",
+      "text": "Becker Hanım sofraya bir kase getirince herkes ona teşekkür eder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0228",
+      "text": "Samīr'in annesi yeni bir kıymalı salata tarifi anlatmayı çok seviyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0229",
+      "text": "Murat ise her yemeğe biraz biber ekleyerek tadına bakar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0230",
+      "text": "Yemek boyunca herkes bir şeyler öğrenir ve birbirine sütlaç tarifi sorar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0231",
+      "text": "Üç mutfağın yemekleri farklı olsa da bu sofrada herkes ortak bir lezzet paylaşır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0232",
+      "text": "Soğan, sarımsak ve maydanoz neredeyse her yemekte bulunur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0233",
+      "text": "Hangi sütlacın hangi bölgede yapıldığını bilmek çok ilginç olabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0234",
+      "text": "Tatlılar ise herkesin ortak sevincidir, çünkü herkes bir parça ister.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0235",
+      "text": "Soğanı doğrayıp tavaya koyduktan sonra kavurmaya başladım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0236",
+      "text": "Tavukları haşlayıp suyunu süzünce pilava karıştırdık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0237",
+      "text": "Patatesleri kızartmadan önce iyice kurulayın, yoksa yağ sıçrar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0238",
+      "text": "Malzemeleri doğrayıp kasede karıştırmak sana zaman kazandırır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0239",
+      "text": "Hamuru yoğurup hazırlayınca üstünü temiz bir bezle örtün.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0240",
+      "text": "Kıymayı tavaya koymadan önce tuz ve biberle tatlandırdım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0241",
+      "text": "Sosu iyice süzmeden kullanırsanız tencere çok ağır olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0242",
+      "text": "Yemeği ocakta bırakmadan önce ocağı kapatmayı unutmayın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0243",
+      "text": "Tatlıyı dolaba koymadan önce üzerine biraz şeker serpin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0244",
+      "text": "Elif sütlacı pişirirken sürekli karıştırdı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0245",
+      "text": "Can biberi doldururken yanındaki tabağa iki kaşık pirinç koydu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0246",
+      "text": "Murat sofrayı kurarken bir kaseyi yere düşürdü ve güldü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0247",
+      "text": "Kebabı çevirirken dikkatli olun, ateş çok sıcak.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0248",
+      "text": "Keskin bıçakla çalışırken parmağınızı kesmemeye dikkat edin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0249",
+      "text": "Yağı ısıtırken yanına bir kapak hazır tutun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0250",
+      "text": "Bulgur pilavını pişirirken tencerenin altını çok kısık tutun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0251",
+      "text": "Çorbayı karıştırırken kaşık tencerenin dibine değmemeli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0252",
+      "text": "Kaynayan yağın yanına su dökmek tehlikelidir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0253",
+      "text": "Sıcak tavayı tutarken mutfak eldivenini takmayı unutmayın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0254",
+      "text": "Kaşıkla tadına bakarken dili yakmamak için soğumasını bekle.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0255",
+      "text": "Derya salatayı hazırlarken maydanozu ince ince kıydı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0256",
+      "text": "Elif, tavanın ısındığını anlamak için elini yaklaştırdı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0257",
+      "text": "Yemek pişerken mutfak penceresini biraz açmak iyi olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0258",
+      "text": "Lezzetli bir tatlıyı herkesle paylaşmak insanı mutlu eder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0259",
+      "text": "Bu yemeğin zevkini sofrada birlikte çıkarırsınız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0260",
+      "text": "Bu sosun tadı biraz ekşi ama hoşuma gitti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0261",
+      "text": "Çiğ soğan bazılarına çok keskin gelebilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0262",
+      "text": "Taze nane ile ev yapımı yoğurt çok güzel bir eşleşme.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0263",
+      "text": "Bu biber acılı mı, yoksa tatlı mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0264",
+      "text": "Kıyma yeterince kızarmamış görünüyor, biraz daha bekleyin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0265",
+      "text": "Dilimlenmiş kabakları tavada kızartınca rengi altın sarısı olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0266",
+      "text": "Yemeğin üstüne serpilen çıtır soğan herkesin dikkatini çekti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0267",
+      "text": "Büyük bir halka kek yapmak için iki kase un yeterli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0268",
+      "text": "Ekmeği ince halka hâlinde kesip kızarttık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0269",
+      "text": "Komşumuz soframız için çok güzel bir kase getirdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0270",
+      "text": "Yemeğe nasıl bir iltifat yapacağımı bilemedim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0271",
+      "text": "Konuk olarak gelen herkes sofrada kendine güzel bir yer buldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0272",
+      "text": "Hindinin tadı tavuktan biraz farklı ama çok lezzetli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0273",
+      "text": "Yufkanın üstüne sürülen tereyağı pişerken altını kızartır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0274",
+      "text": "Elinizdeki kaşıkla sosu biraz daha karıştırın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0275",
+      "text": "Tatlının içine konan fıstık ezmesi çok güzel bir tat katar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0276",
+      "text": "Dışarıdan gelen konuklar ellerini yıkayıp mutfağa geçti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0277",
+      "text": "Yemeği servis ederken herkesin önüne bir tabak koyun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0278",
+      "text": "Sütlacın yanında bir kase meyve ikram edebilirsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0279",
+      "text": "Herkes çok yorulduğu için yemek masasında uzun konuştu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0280",
+      "text": "Biri mutfağa bir kase daha getirsin, lütfen.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0281",
+      "text": "Murat, bu mantıyı kimsenin bizim kadar iyi yapamayacağını söyleyip güldü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0282",
+      "text": "Herkes sofraya oturduğunda sütlaç hazırdı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0283",
+      "text": "Her şey hazır, şimdi sadece konukları bekliyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0284",
+      "text": "Bugün sofrada bir şey eksik gibi, belki bir kase daha lazım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0285",
+      "text": "Hiçbir şey yapmadan sadece bir kaşık tatmak da bazen keyiflidir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0286",
+      "text": "Biri kapağı yıkamayı unutmuş, tavayı bulamadık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0287",
+      "text": "Bu sofrada herkes kendi tabağından bir kase alıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0288",
+      "text": "Hiçbir sos bu kadar sıcak bir sofrada soğuk kalmaz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0289",
+      "text": "Sütlaç için her şeyi hazırlayan biri vardı ama kim olduğunu bilmiyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0290",
+      "text": "Sofrada herkesin sevdiği bir sütlaç olmalı, değil mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0291",
+      "text": "Biri pazardan sarımsak almayı unutmuş.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0292",
+      "text": "Mutfakta kimse kalmadı, konuklar salonda sohbet ediyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0293",
+      "text": "Elif'in pişirdiği sütlaç, yarın gelecek olan misafirler için hazırlandı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0294",
+      "text": "Kapıdan giren çocuk, sofradaki sıcak sütlaca bakıp gülümsedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0295",
+      "text": "Bu akşam eve gelecek olan konukları bekliyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0296",
+      "text": "Mutfakta yeni bir mantı tarifi denemek isteyen kişiyi ben seçeceğim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0297",
+      "text": "Ocakta kaynayan sos için tuzu yarım kaşık ekleyin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0298",
+      "text": "Elif'in gittiği pazarda taze fasulye ve nohut bulunuyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0299",
+      "text": "Sarımsak kokusu yayılırken yanımızda çalan telefon herkesi güldürdü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0300",
+      "text": "Kebabı bitirince herkes masadan kalkıp salona geçti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0301",
+      "text": "Sütlacı servis ederken tabağın kenarına bir tutam tarçın koy.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0302",
+      "text": "Tavayı yıkadıktan sonra kurulamadan dolaba koymayın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0303",
+      "text": "Sosu kaşıkla tatmadan ocaktan indirmeyin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0304",
+      "text": "Kebabı her tabağa eşit olarak paylaştır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0305",
+      "text": "Sofrayı kurarken her konuğun yanına bir peçete koy.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0306",
+      "text": "Kızarmış hamurun kokusu bütün eve yayılmıştı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0307",
+      "text": "Akşam olunca herkes çay ve sütlaç için salona geçti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0308",
+      "text": "Kek soğuyunca üstüne bir tutam toz şeker serpin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0309",
+      "text": "Konuklar yemekten önce ellerini yıkamak için mutfağa yöneldi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0310",
+      "text": "Yemek yapmayı öğrenen çocuk, bugün ilk kez iki adet börek hazırladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0311",
+      "text": "Pazarda gördüğü taze balık ve bir demet maydanoz akşam yemeğinin ana malzemesi oldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0312",
+      "text": "Yeni tarifi denemek isteyen Derya, bütün ıspanakları masaya dizdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0313",
+      "text": "Annesinin bıraktığı defterde yazılı lezzet tariflerini okumak hoşuma gidiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0314",
+      "text": "Gelecek hafta eve gelecek misafirler için mantı hazırlıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0315",
+      "text": "Kapının önünde bekleyen konuklar, sıcak yemeğin kokusunu hissetti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0316",
+      "text": "Pişen kabakları servis etmeden önce tuzunu kontrol edin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0317",
+      "text": "Mutfakta çalışırken sos kaynamadan sesi biraz kısarsan konuşmak daha kolay olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0318",
+      "text": "Sütlacı hazırladıktan sonra masayı kurmak için herkes bir şey yaptı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0319",
+      "text": "Sana bir tutam daha baharat koyayım mı, yoksa tatlıya mı geçelim?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0320",
+      "text": "Gülerek konuşan Samīr, misafirlere sütlacın sırrını anlattı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0321",
+      "text": "Mutfağa ilk giren kişi Rīm'dir, çünkü bütün kaseleri o getirdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0322",
+      "text": "Elif bir kaşık sütlacı tadınca hemen gülümsedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0323",
+      "text": "Babaannemin tarifi, bugün bizim soframızda hâlâ çok sevilen bir sütlaç.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0324",
+      "text": "Her zaman sofrayı güzel süslemek Derya'nın işidir ama bu kez kase de Elif'in.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0325",
+      "text": "Kaç kişi geleceğini bilmediğimiz için iki kat hamur hazırladık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0326",
+      "text": "Mutfak masasının üstünde hâlâ bir kase yoğurt duruyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0327",
+      "text": "Kendi tarifini yaz: malzemeleri, adetleri ve adımları anlat.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0328",
+      "text": "Kendi tarifimi yazarken her malzemenin miktarını da belirtmek istiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0329",
+      "text": "Hayır, bu sosu Can yaptı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0330",
+      "text": "Tabii, tarifi yarın sana yazarım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0331",
+      "text": "Kaç kişilik hazırladın?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0332",
+      "text": "Altı kişilik, ama biraz fazla yaptım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0333",
+      "text": "Peki, tuzunu ben ayarlayayım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0334",
+      "text": "Kıymanın içine ne kadar sarımsak koydun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0335",
+      "text": "İki diş sarımsak ve bir tutam karabiber koydum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0336",
+      "text": "Çok iyi olmuş, bence bu sosa biraz daha salça lazım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0337",
+      "text": "Murat pazardan ne aldı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0338",
+      "text": "Taze ıspanak ve et aldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0339",
+      "text": "Kapıda kim vardı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0340",
+      "text": "Becker Hanım elinde bir kase ile kapıdaydı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0341",
+      "text": "Bu mantıyı kim yaptı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0342",
+      "text": "Bu mantıyı Can yaptı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0343",
+      "text": "Bu kıymalı yemek kaç kişilik?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e16.s0344",
+      "text": "Tarifte patlıcan da kullanılıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "tr.b1.e16.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Zutaten und Mengen nennen.",
+        "tr": "Malzemeleri ve miktarları söyleyebilirim.",
+        "ar": "أستطيع أن أذكر المكونات والكميات."
+      },
+      "aufgaben": [
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.adet",
+          "ablenker": ["tr.b1.e16.gram", "tr.b1.e16.litre"],
+          "schluessel": "tr.b1.e16.l01.a01"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.gram",
+          "ablenker": ["tr.b1.e16.litre", "tr.b1.e16.tutam"],
+          "schluessel": "tr.b1.e16.l01.a02"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.adet", "tr.b1.e16.gram", "tr.b1.e16.litre", "tr.b1.e16.tutam", "tr.b1.e16.dilim"],
+          "schluessel": "tr.b1.e16.l01.a03"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.tava",
+          "ablenker": ["tr.b1.e16.kase", "tr.b1.e16.kapak"],
+          "schluessel": "tr.b1.e16.l01.a04"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.kup",
+          "ablenker": ["tr.b1.e16.dilim", "tr.b1.e16.sos"],
+          "schluessel": "tr.b1.e16.l01.a05"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.karabiber", "tr.b1.e16.maydanoz", "tr.b1.e16.sarimsak", "tr.b1.e16.salca"],
+          "schluessel": "tr.b1.e16.l01.a06"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.tereyagi", "tr.b1.e16.zeytinyagi", "tr.b1.e16.baharat"],
+          "schluessel": "tr.b1.e16.l01.a07"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.tereyagi",
+          "ablenker": ["tr.a1.e10.sut", "tr.a1.e10.yumurta"],
+          "schluessel": "tr.b1.e16.l01.a08"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.sarimsak",
+          "ablenker": ["tr.a1.e07.sogan", "tr.a1.e07.domates"],
+          "schluessel": "tr.b1.e16.l01.a09"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.salca",
+          "ablenker": ["tr.a1.e07.domates", "tr.a1.e10.tuz"],
+          "schluessel": "tr.b1.e16.l01.a10"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0005",
+          "nach": "ziel",
+          "ablenker": ["bardak", "kaşık"],
+          "schluessel": "tr.b1.e16.l01.a11"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0004",
+          "nach": "ausgang",
+          "schluessel": "tr.b1.e16.l01.a12"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0004",
+          "wort": 3,
+          "ablenker": ["şişe", "tabak"],
+          "schluessel": "tr.b1.e16.l01.a13"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0005",
+          "wort": 5,
+          "ablenker": ["kaşık", "bardak"],
+          "schluessel": "tr.b1.e16.l01.a14"
+        },
+        {
+          "typ": "satzbau",
+          "ziel": "tr.b1.e16.s0010",
+          "schluessel": "tr.b1.e16.l01.a15"
+        },
+        {
+          "typ": "grammatik_tipp",
+          "tipp": "t01",
+          "schluessel": "tr.b1.e16.l01.a16"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e16.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Zutaten vorbereiten und Arbeitsschritte beschreiben.",
+        "tr": "Malzemeleri hazırlayabilir ve yapılış adımlarını anlatabilirim.",
+        "ar": "أستطيع أن أجهّز المكونات وأصف خطوات العمل."
+      },
+      "aufgaben": [
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.pirinc",
+          "ablenker": ["tr.b1.e16.kabak", "tr.b1.e16.mantar"],
+          "schluessel": "tr.b1.e16.l02.a01"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.nohut",
+          "ablenker": ["tr.b1.e16.fasulye", "tr.a1.e10.mercimek"],
+          "schluessel": "tr.b1.e16.l02.a02"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.ispanak",
+          "ablenker": ["tr.b1.e16.patlican", "tr.b1.e16.kabak"],
+          "schluessel": "tr.b1.e16.l02.a03"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.bulgur", "tr.b1.e16.kiyma", "tr.b1.e16.hindi", "tr.b1.e16.fasulye"],
+          "schluessel": "tr.b1.e16.l02.a04"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.ispanak", "tr.b1.e16.patlican", "tr.b1.e16.kabak", "tr.b1.e16.mantar"],
+          "schluessel": "tr.b1.e16.l02.a05"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.dogramak",
+          "ablenker": ["tr.b1.e16.suzmek", "tr.b1.e16.dokmek"],
+          "schluessel": "tr.b1.e16.l02.a06"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.kizartmak",
+          "ablenker": ["tr.b1.e16.suzmek", "tr.b1.e16.karistirmak"],
+          "schluessel": "tr.b1.e16.l02.a07"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.kavurmak",
+          "ablenker": ["tr.b1.e16.karistirmak", "tr.b1.e16.dogramak"],
+          "schluessel": "tr.b1.e16.l02.a08"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.dogramak", "tr.b1.e16.suzmek", "tr.b1.e16.dokmek", "tr.b1.e16.haslamak"],
+          "schluessel": "tr.b1.e16.l02.a09"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0235",
+          "nach": "ziel",
+          "ablenker": ["bardak", "kapak"],
+          "schluessel": "tr.b1.e16.l02.a10"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0236",
+          "nach": "ausgang",
+          "schluessel": "tr.b1.e16.l02.a11"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0237",
+          "wort": 1,
+          "ablenker": ["kızartıp", "kızartırken"],
+          "schluessel": "tr.b1.e16.l02.a12"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0016",
+          "wort": 3,
+          "ablenker": ["kızartmak", "kızartmadan"],
+          "schluessel": "tr.b1.e16.l02.a13"
+        },
+        {
+          "typ": "satzbau",
+          "ziel": "tr.b1.e16.s0250",
+          "schluessel": "tr.b1.e16.l02.a14"
+        },
+        {
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.b1.e16.s0238",
+          "ablenker": ["tr.b1.e16.s0023", "tr.b1.e16.s0024"],
+          "schluessel": "tr.b1.e16.l02.a15"
+        },
+        {
+          "typ": "grammatik_tipp",
+          "tipp": "t02",
+          "schluessel": "tr.b1.e16.l02.a16"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e16.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Gerichte benennen und ihre Zubereitung erklären.",
+        "tr": "Yemekleri adlandırabilir ve nasıl yapıldığını açıklayabilirim.",
+        "ar": "أستطيع أن أسمّي الأطباق وأشرح طريقة إعدادها."
+      },
+      "aufgaben": [
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.sis",
+          "ablenker": ["tr.b1.e16.manti", "tr.b1.e16.simit"],
+          "schluessel": "tr.b1.e16.l03.a01"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.kebap",
+          "ablenker": ["tr.b1.e16.cacik", "tr.b1.e16.simit"],
+          "schluessel": "tr.b1.e16.l03.a02"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.manti",
+          "ablenker": ["tr.b1.e16.yufka", "tr.b1.e16.hamur"],
+          "schluessel": "tr.b1.e16.l03.a03"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.sutlac",
+          "ablenker": ["tr.b1.e16.kebap", "tr.b1.e16.recel"],
+          "schluessel": "tr.b1.e16.l03.a04"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.cacik",
+          "ablenker": ["tr.b1.e16.tursu", "tr.b1.e16.recel"],
+          "schluessel": "tr.b1.e16.l03.a05"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.tursu",
+          "ablenker": ["tr.b1.e16.recel", "tr.b1.e16.simit"],
+          "schluessel": "tr.b1.e16.l03.a06"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.kebap", "tr.b1.e16.manti", "tr.b1.e16.cacik", "tr.b1.e16.sutlac"],
+          "schluessel": "tr.b1.e16.l03.a07"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.recel", "tr.b1.e16.tursu", "tr.b1.e16.simit", "tr.b1.e16.yufka"],
+          "schluessel": "tr.b1.e16.l03.a08"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.islatmak", "tr.b1.e16.bekletmek", "tr.b1.e16.pismek", "tr.b1.e16.rendelemek"],
+          "schluessel": "tr.b1.e16.l03.a09"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.kaynamak",
+          "ablenker": ["tr.b1.e16.islatmak", "tr.b1.e16.soymak"],
+          "schluessel": "tr.b1.e16.l03.a10"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.soymak",
+          "ablenker": ["tr.b1.e16.rendelemek", "tr.b1.e16.islatmak"],
+          "schluessel": "tr.b1.e16.l03.a11"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0300",
+          "nach": "ziel",
+          "ablenker": ["simit", "yufka"],
+          "schluessel": "tr.b1.e16.l03.a12"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0031",
+          "nach": "ausgang",
+          "schluessel": "tr.b1.e16.l03.a13"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0028",
+          "wort": 6,
+          "ablenker": ["koyun", "koyar"],
+          "schluessel": "tr.b1.e16.l03.a14"
+        },
+        {
+          "typ": "satzbau",
+          "ziel": "tr.b1.e16.s0029",
+          "schluessel": "tr.b1.e16.l03.a15"
+        },
+        {
+          "typ": "grammatik_tipp",
+          "tipp": "t03",
+          "schluessel": "tr.b1.e16.l03.a16"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e16.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Geschmack und Aussehen beschreiben und Fragen zum Essen stellen.",
+        "tr": "Yemeğin tadını ve görünüşünü anlatabilir, yemekle ilgili soru sorabilirim.",
+        "ar": "أستطيع أن أصف الطعم والمظهر وأسأل عن الطعام."
+      },
+      "aufgaben": [
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.ezmek",
+          "ablenker": ["tr.b1.e16.rendelemek", "tr.b1.e16.karistirmak"],
+          "schluessel": "tr.b1.e16.l04.a01"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.yogurmak",
+          "ablenker": ["tr.b1.e16.ezmek", "tr.b1.e16.cirpmak"],
+          "schluessel": "tr.b1.e16.l04.a02"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.eritmek",
+          "ablenker": ["tr.b1.e16.sogutmak", "tr.b1.e16.yanmak"],
+          "schluessel": "tr.b1.e16.l04.a03"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.sarmak",
+          "ablenker": ["tr.b1.e16.serpmek", "tr.b1.e16.eritmek"],
+          "schluessel": "tr.b1.e16.l04.a04"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.tatmak",
+          "ablenker": ["tr.b1.e16.koklamak", "tr.b1.e16.sogutmak"],
+          "schluessel": "tr.b1.e16.l04.a05"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.koklamak",
+          "ablenker": ["tr.b1.e16.tatmak", "tr.b1.e16.yanmak"],
+          "schluessel": "tr.b1.e16.l04.a06"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.ezmek", "tr.b1.e16.yogurmak", "tr.b1.e16.sarmak", "tr.b1.e16.serpmek", "tr.b1.e16.cirpmak"],
+          "schluessel": "tr.b1.e16.l04.a07"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.eritmek", "tr.b1.e16.yanmak", "tr.b1.e16.sogutmak", "tr.b1.e16.koklamak"],
+          "schluessel": "tr.b1.e16.l04.a08"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.cig", "tr.b1.e16.yumusak", "tr.b1.e16.baharatli", "tr.b1.e16.sulu"],
+          "schluessel": "tr.b1.e16.l04.a09"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.enfes",
+          "ablenker": ["tr.b1.e16.klasik", "tr.b1.e16.cig"],
+          "schluessel": "tr.b1.e16.l04.a10"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.cig",
+          "ablenker": ["tr.b1.e16.yumusak", "tr.b1.e16.citir"],
+          "schluessel": "tr.b1.e16.l04.a11"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0107",
+          "nach": "ziel",
+          "ablenker": ["sarın", "yanar"],
+          "schluessel": "tr.b1.e16.l04.a12"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0091",
+          "wort": 4,
+          "ablenker": ["yanmadan", "yanarak"],
+          "schluessel": "tr.b1.e16.l04.a13"
+        },
+        {
+          "typ": "satzbau",
+          "ziel": "tr.b1.e16.s0026",
+          "schluessel": "tr.b1.e16.l04.a14"
+        },
+        {
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e16.s0138"
+            }
+          ],
+          "antwort": "tr.b1.e16.s0330",
+          "ablenker": ["tr.b1.e16.s0332", "tr.b1.e16.s0331"],
+          "schluessel": "tr.b1.e16.l04.a15"
+        },
+        {
+          "typ": "grammatik_tipp",
+          "tipp": "t04",
+          "schluessel": "tr.b1.e16.l04.a16"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e16.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Gäste empfangen und auf Komplimente antworten.",
+        "tr": "Misafirleri karşılayabilir ve iltifatlara cevap verebilirim.",
+        "ar": "أستطيع أن أستقبل الضيوف وأرد على المجاملات."
+      },
+      "aufgaben": [
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.konuk",
+          "ablenker": ["tr.a2.e13.sofra", "tr.a2.e04.tepsi"],
+          "schluessel": "tr.b1.e16.l05.a01"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.lezzet",
+          "ablenker": ["tr.b1.e16.iltifat", "tr.b1.e16.halka"],
+          "schluessel": "tr.b1.e16.l05.a02"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.iltifat",
+          "ablenker": ["tr.b1.e16.zevk", "tr.b1.e16.halka"],
+          "schluessel": "tr.b1.e16.l05.a03"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.halka",
+          "ablenker": ["tr.b1.e16.iltifat", "tr.b1.e16.zevk"],
+          "schluessel": "tr.b1.e16.l05.a04"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.tat",
+          "ablenker": ["tr.b1.e16.iltifat", "tr.b1.e16.konuk"],
+          "schluessel": "tr.b1.e16.l05.a05"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.konuk", "tr.b1.e16.halka", "tr.b1.e16.iltifat", "tr.b1.e16.zevk"],
+          "schluessel": "tr.b1.e16.l05.a06"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.lezzet", "tr.b1.e16.turlu", "tr.b1.e16.vejetaryen"],
+          "schluessel": "tr.b1.e16.l05.a07"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.vejetaryen",
+          "ablenker": ["tr.b1.e16.iri", "tr.b1.e16.kaliteli"],
+          "schluessel": "tr.b1.e16.l05.a08"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0151",
+          "wort": 3,
+          "ablenker": ["ama", "ve"],
+          "schluessel": "tr.b1.e16.l05.a09"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.sahane",
+          "ablenker": ["tr.b1.e16.klasik", "tr.b1.e16.olgun"],
+          "schluessel": "tr.b1.e16.l05.a10"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.acili", "tr.b1.e16.ekshi", "tr.b1.e16.olgun", "tr.b1.e16.ev-yapimi", "tr.b1.e16.ozgu"],
+          "schluessel": "tr.b1.e16.l05.a11"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0294",
+          "nach": "ziel",
+          "ablenker": ["misafirler", "tepsi"],
+          "schluessel": "tr.b1.e16.l05.a12"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0159",
+          "wort": 6,
+          "ablenker": ["öğrenmek", "öğrenecek"],
+          "schluessel": "tr.b1.e16.l05.a13"
+        },
+        {
+          "typ": "satzbau",
+          "ziel": "tr.b1.e16.s0220",
+          "schluessel": "tr.b1.e16.l05.a14"
+        },
+        {
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e16.s0331"
+            }
+          ],
+          "antwort": "tr.b1.e16.s0332",
+          "ablenker": ["tr.b1.e16.s0329", "tr.b1.e16.s0333"],
+          "schluessel": "tr.b1.e16.l05.a15"
+        },
+        {
+          "typ": "grammatik_tipp",
+          "tipp": "t05",
+          "schluessel": "tr.b1.e16.l05.a16"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e16.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über einen Abend mit Gästen verstehen.",
+        "tr": "Misafirli bir akşamın hikâyesini anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن أمسية مع الضيوف."
+      },
+      "aufgaben": [
+        {
+          "typ": "geschichte",
+          "zeilen": [
+            {
+              "satz": "tr.b1.e16.s0179"
+            },
+            {
+              "satz": "tr.b1.e16.s0180"
+            },
+            {
+              "satz": "tr.b1.e16.s0181"
+            },
+            {
+              "satz": "tr.b1.e16.s0182"
+            },
+            {
+              "satz": "tr.b1.e16.s0183"
+            },
+            {
+              "satz": "tr.b1.e16.s0184"
+            },
+            {
+              "satz": "tr.b1.e16.s0185",
+              "sprecher": "a"
+            },
+            {
+              "satz": "tr.b1.e16.s0186"
+            },
+            {
+              "satz": "tr.b1.e16.s0187"
+            },
+            {
+              "satz": "tr.b1.e16.s0188"
+            },
+            {
+              "satz": "tr.b1.e16.s0191",
+              "sprecher": "b"
+            },
+            {
+              "satz": "tr.b1.e16.s0192",
+              "sprecher": "c"
+            },
+            {
+              "satz": "tr.b1.e16.s0193"
+            },
+            {
+              "satz": "tr.b1.e16.s0194"
+            },
+            {
+              "satz": "tr.b1.e16.s0195"
+            },
+            {
+              "satz": "tr.b1.e16.s0196"
+            },
+            {
+              "satz": "tr.b1.e16.s0197"
+            },
+            {
+              "satz": "tr.b1.e16.s0199"
+            },
+            {
+              "satz": "tr.b1.e16.s0200"
+            },
+            {
+              "satz": "tr.b1.e16.s0201"
+            },
+            {
+              "satz": "tr.b1.e16.s0202"
+            },
+            {
+              "satz": "tr.b1.e16.s0203"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "tr.b1.e16.s0337",
+              "antwort": "tr.b1.e16.s0338",
+              "ablenker": ["tr.b1.e16.s0182"]
+            },
+            {
+              "nach": 4,
+              "frage": "tr.b1.e16.s0339",
+              "antwort": "tr.b1.e16.s0340",
+              "ablenker": ["tr.b1.e16.s0188"]
+            },
+            {
+              "nach": 11,
+              "frage": "tr.b1.e16.s0341",
+              "antwort": "tr.b1.e16.s0342",
+              "ablenker": ["tr.b1.e16.s0194"]
+            }
+          ],
+          "schluessel": "tr.b1.e16.l06.a01"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.sos",
+          "ablenker": ["tr.a1.e10.corba", "tr.a1.e10.yogurt"],
+          "schluessel": "tr.b1.e16.l06.a02"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.kapak",
+          "ablenker": ["tr.b1.e16.tava", "tr.a2.e04.tepsi"],
+          "schluessel": "tr.b1.e16.l06.a03"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.sutlac", "tr.b1.e16.kebap", "tr.b1.e16.manti"],
+          "schluessel": "tr.b1.e16.l06.a04"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0180",
+          "wort": 4,
+          "ablenker": ["yarın", "gece"],
+          "schluessel": "tr.b1.e16.l06.a05"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0195",
+          "wort": 4,
+          "ablenker": ["korku", "sevinç"],
+          "schluessel": "tr.b1.e16.l06.a06"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0199",
+          "nach": "ziel",
+          "ablenker": ["kaşık", "yoğurt"],
+          "schluessel": "tr.b1.e16.l06.a07"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0187",
+          "nach": "ausgang",
+          "schluessel": "tr.b1.e16.l06.a08"
+        },
+        {
+          "typ": "frei",
+          "ziel": "tr.b1.e16.s0188",
+          "nach": "ziel",
+          "schluessel": "tr.b1.e16.l06.a09"
+        },
+        {
+          "typ": "frei",
+          "ziel": "tr.b1.e16.s0194",
+          "nach": "ausgang",
+          "schluessel": "tr.b1.e16.l06.a10"
+        },
+        {
+          "typ": "satzbau",
+          "ziel": "tr.b1.e16.s0197",
+          "schluessel": "tr.b1.e16.l06.a11"
+        },
+        {
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.b1.e16.s0203",
+          "ablenker": ["tr.b1.e16.s0202", "tr.b1.e16.s0207"],
+          "schluessel": "tr.b1.e16.l06.a12"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e16.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann Rezepte und Gespräche über Essen wiederholen.",
+        "tr": "Tarifleri ve yemek sohbetlerini tekrar edebilirim.",
+        "ar": "أستطيع أن أراجع الوصفات والأحاديث عن الطعام."
+      },
+      "aufgaben": [
+        {
+          "typ": "formen",
+          "zeilen": ["doğramak", "kavurmak", "haşlamak"],
+          "spalten": ["-(y)ip", "-(y)erek"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["doğrayıp"]
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["doğrayarak"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["kavurup"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["kavurarak"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["haşlayıp"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["haşlayarak"]
+            }
+          ],
+          "schluessel": "tr.b1.e16.l07.a01"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0093",
+          "wort": 1,
+          "ablenker": ["soymak", "soyar"],
+          "schluessel": "tr.b1.e16.l07.a02"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0094",
+          "wort": 1,
+          "ablenker": ["açmak", "açar"],
+          "schluessel": "tr.b1.e16.l07.a03"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0104",
+          "wort": 7,
+          "ablenker": ["beklemek", "bekliyor"],
+          "schluessel": "tr.b1.e16.l07.a04"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.karabiber",
+          "ablenker": ["tr.a1.e10.tuz", "tr.a1.e10.seker"],
+          "schluessel": "tr.b1.e16.l07.a05"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.patlican",
+          "ablenker": ["tr.b1.e16.kabak", "tr.b1.e16.fasulye"],
+          "schluessel": "tr.b1.e16.l07.a06"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.yumusak",
+          "ablenker": ["tr.b1.e16.cig", "tr.b1.e16.keskin"],
+          "schluessel": "tr.b1.e16.l07.a07"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.kaynatmak",
+          "ablenker": ["tr.b1.e16.suzmek", "tr.b1.e16.dokmek"],
+          "schluessel": "tr.b1.e16.l07.a08"
+        },
+        {
+          "typ": "frei",
+          "ziel": "tr.b1.e16.s0014",
+          "nach": "ziel",
+          "schluessel": "tr.b1.e16.l07.a09"
+        },
+        {
+          "typ": "frei",
+          "ziel": "tr.b1.e16.s0119",
+          "nach": "ausgang",
+          "schluessel": "tr.b1.e16.l07.a10"
+        },
+        {
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.b1.e16.s0240",
+          "schluessel": "tr.b1.e16.l07.a11"
+        },
+        {
+          "typ": "lesen_fragen",
+          "absaetze": [
+            "tr.b1.e16.s0209",
+            "tr.b1.e16.s0210",
+            "tr.b1.e16.s0211",
+            "tr.b1.e16.s0212",
+            "tr.b1.e16.s0213",
+            "tr.b1.e16.s0214",
+            "tr.b1.e16.s0215",
+            "tr.b1.e16.s0216",
+            "tr.b1.e16.s0217",
+            "tr.b1.e16.s0218"
+          ],
+          "fragen": [
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e16.s0343",
+              "antwort": "tr.b1.e16.s0209",
+              "ablenker": ["tr.b1.e16.s0210"]
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e16.s0216",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e16.s0344",
+              "richtig": "nicht_im_text"
+            }
+          ],
+          "schluessel": "tr.b1.e16.l07.a12"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0167",
+          "nach": "ziel",
+          "ablenker": ["kişiyi", "yemek"],
+          "schluessel": "tr.b1.e16.l07.a13"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0334",
+          "nach": "ziel",
+          "ablenker": ["tuz", "biber"],
+          "schluessel": "tr.b1.e16.l07.a14"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.kup", "tr.b1.e16.kase", "tr.b1.e16.tava", "tr.b1.e16.tutam"],
+          "schluessel": "tr.b1.e16.l07.a15"
+        },
+        {
+          "typ": "satzbau",
+          "ziel": "tr.b1.e16.s0301",
+          "schluessel": "tr.b1.e16.l07.a16"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e16.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann ein eigenes Rezept aufschreiben und Gäste bewirten.",
+        "tr": "Kendi tarifimi yazabilir ve misafirleri ağırlayabilirim.",
+        "ar": "أستطيع أن أكتب وصفتي الخاصة وأستضيف الضيوف."
+      },
+      "aufgaben": [
+        {
+          "typ": "schreiben",
+          "aufgabe": "tr.b1.e16.s0327",
+          "woerter": {
+            "min": 80,
+            "max": 120
+          },
+          "pflichtwoerter": ["kıyma", "adet"],
+          "muster": ["tr.b1.e16.s0209", "tr.b1.e16.s0216"],
+          "schluessel": "tr.b1.e16.l08.a01"
+        },
+        {
+          "typ": "sprechen",
+          "satz": "tr.b1.e16.s0210",
+          "schluessel": "tr.b1.e16.l08.a02"
+        },
+        {
+          "typ": "sprechen",
+          "satz": "tr.b1.e16.s0136",
+          "schluessel": "tr.b1.e16.l08.a03"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e16.adet",
+          "ablenker": ["tr.b1.e16.gram", "tr.b1.e16.tutam"],
+          "schluessel": "tr.b1.e16.l08.a04"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.sarimsak",
+          "ablenker": ["tr.b1.e16.maydanoz", "tr.a1.e10.tuz"],
+          "schluessel": "tr.b1.e16.l08.a05"
+        },
+        {
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e16.iltifat",
+          "ablenker": ["tr.b1.e16.tat", "tr.a2.e13.sofra"],
+          "schluessel": "tr.b1.e16.l08.a06"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0240",
+          "wort": 4,
+          "ablenker": ["dilim", "küp"],
+          "schluessel": "tr.b1.e16.l08.a07"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0247",
+          "wort": 1,
+          "ablenker": ["çevirmeden", "çevirin"],
+          "schluessel": "tr.b1.e16.l08.a08"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0111",
+          "wort": 1,
+          "ablenker": ["karıştırmak", "karıştırırsan"],
+          "schluessel": "tr.b1.e16.l08.a09"
+        },
+        {
+          "typ": "luecke",
+          "ziel": "tr.b1.e16.s0215",
+          "wort": 5,
+          "ablenker": ["gezdirmek", "gezdirir"],
+          "schluessel": "tr.b1.e16.l08.a10"
+        },
+        {
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.b1.e16.s0136",
+          "ablenker": ["tr.b1.e16.s0143", "tr.b1.e16.s0309"],
+          "schluessel": "tr.b1.e16.l08.a11"
+        },
+        {
+          "typ": "paare",
+          "lemmata": ["tr.b1.e16.kiyma", "tr.b1.e16.hindi", "tr.a1.e10.dana", "tr.a1.e10.tavuk"],
+          "schluessel": "tr.b1.e16.l08.a12"
+        },
+        {
+          "typ": "satzbau",
+          "ziel": "tr.b1.e16.s0042",
+          "schluessel": "tr.b1.e16.l08.a13"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0201",
+          "nach": "ziel",
+          "ablenker": ["yemek", "sofrada"],
+          "schluessel": "tr.b1.e16.l08.a14"
+        },
+        {
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e16.s0319",
+          "nach": "ziel",
+          "ablenker": ["bardak", "kaşık"],
+          "schluessel": "tr.b1.e16.l08.a15"
+        },
+        {
+          "typ": "frei",
+          "ziel": "tr.b1.e16.s0121",
+          "nach": "ausgang",
+          "schluessel": "tr.b1.e16.l08.a16"
+        }
+      ]
+    }
+  ]
+}
