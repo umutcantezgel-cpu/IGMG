@@ -79,7 +79,7 @@
     },
     {
       "bezug": "de.b1.e02.student",
-      "text": "üniversite öğrencisi (Studentin: kız öğrenci)",
+      "text": "üniversite öğrencisi (Studentin: kadın öğrenci)",
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -560,7 +560,7 @@
       "alternativen": [
         "Şef hanım ekibi için istekli insanlar arıyor.",
         "Müdire ekibi için motivasyonu yüksek insanlar arıyor.",
-        "Şef, ekibine motive insanlar arıyor."
+        "Şef, ekibine motivasyonlu insanlar arıyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -676,11 +676,11 @@
     },
     {
       "bezug": "de.b1.e02.s0020",
-      "text": "İstediğin bir meslek var mı?",
+      "text": "Şimdiden istediğin bir meslek var mı?",
       "alternativen": [
         "Bir meslek hayalin var mı artık?",
         "Hangi mesleği istediğini biliyor musun?",
-        "Şimdiden istediğin bir meslek var mı?"
+        "Şimdiden bir meslek hayalin var mı?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -835,7 +835,7 @@
       "text": "Marangozun hâlâ boş bir çıraklık yeri var.",
       "alternativen": [
         "Marangozda hâlâ bir çıraklık yeri boş.",
-        "Marangozun daha boş bir çıraklık yeri var.",
+        "Marangozda henüz boş bir çıraklık yeri var.",
         "Marangozun bir çıraklık yeri hâlâ boş."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1087,26 +1087,34 @@
     },
     {
       "bezug": "de.b1.e02.s0061",
-      "text": "Ağabeyim üniversitede okuyor.",
-      "alternativen": ["Kardeşim üniversitede okuyor.", "Abim üniversitede okuyor.", "Erkek kardeşim üniversitede okuyor."],
+      "text": "Erkek kardeşim üniversitede okuyor.",
+      "alternativen": [
+        "Kardeşim üniversitede okuyor.",
+        "Erkek kardeşim üniversitede öğrenim görüyor.",
+        "Kardeşim üniversitede öğrenim görüyor."
+      ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "de.b1.e02.s0062",
-      "text": "Ağabeyim meslek okulunda okuyor.",
+      "text": "Erkek kardeşim meslek okulunda okuyor.",
       "alternativen": [
         "Kardeşim meslek okuluna gidiyor.",
-        "Abim meslek okulunda öğrenim görüyor.",
-        "Erkek kardeşim meslek okulunda okuyor."
+        "Erkek kardeşim meslek okulunda öğrenim görüyor.",
+        "Kardeşim meslek okulunda öğrenim görüyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "de.b1.e02.s0063",
-      "text": "Ağabeyim bir atölyede çırak.",
-      "alternativen": ["Kardeşim bir atölyede çıraklık yapıyor.", "Abim bir atölyede çırak.", "Erkek kardeşim bir atölyede çırak."],
+      "text": "Erkek kardeşim bir atölyede çırak.",
+      "alternativen": [
+        "Kardeşim bir atölyede çıraklık yapıyor.",
+        "Erkek kardeşim bir atölyede çıraklık yapıyor.",
+        "Kardeşim bir atölyede çırak."
+      ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1139,7 +1147,7 @@
         "Bu meslek eğitimi için ön koşullar nelerdir?",
         "Bu meslek eğitiminin şartları nelerdir?",
         "Bu meslek eğitimi için şartlar neler?",
-        "Bu meslek eğitiminin ön koşulları neler?",
+        "Bu meslek eğitimine başlamak için neler gerekiyor?",
         "Bu eğitimin şartları nelerdir?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1270,7 +1278,7 @@
       "alternativen": [
         "Emre'nin tatilde bir fırında ek işi vardı.",
         "Tatilde Emre bir fırında yan işte çalıştı.",
-        "Emre tatilde bir fırında çalıştı."
+        "Emre tatilde bir fırında ek işte çalışmıştı."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1297,7 +1305,7 @@
       "bezug": "de.b1.e02.s0083",
       "text": "Her kadın çalışanın izin hakkı vardır.",
       "alternativen": [
-        "Her çalışanın yıllık izin hakkı var.",
+        "Her kadın çalışanın izin alma hakkı vardır.",
         "Her kadın çalışanın tatil hakkı vardır.",
         "Her çalışan kadının izin hakkı var."
       ],
@@ -1534,10 +1542,10 @@
     },
     {
       "bezug": "de.b1.e02.s0109",
-      "text": "Göreviniz: Makineler yapar, elektroniği kontrol eder ve müşterilerimizde cihazları tamir edersiniz.",
+      "text": "Görevleriniz: Makineler yaparsınız, elektroniği kontrol edersiniz ve müşterilerimizde cihazları tamir edersiniz.",
       "alternativen": [
         "Görevleriniz: Makine kurmak, elektroniği kontrol etmek ve müşterilerimizin yanında cihaz tamir etmek.",
-        "İşleriniz: Makineler üretir, elektronik sistemleri kontrol eder ve müşterilerimizdeki cihazları onarırsınız."
+        "İşleriniz: Makineler üretirsiniz, elektronik sistemleri kontrol edersiniz ve müşterilerimizdeki cihazları onarırsınız."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1787,7 +1795,7 @@
     },
     {
       "bezug": "de.b1.e02.s0136",
-      "text": "Geleceğin hakkında bir fikrin var mı?",
+      "text": "Geleceğin hakkında şimdiden bir fikrin var mı?",
       "alternativen": [
         "Geleceğinle ilgili şimdiden bir fikrin var mı?",
         "Geleceğini nasıl hayal ettiğine dair bir fikrin var mı?",
@@ -2306,7 +2314,7 @@
     {
       "bezug": "de.b1.e02.s0187",
       "text": "Deneme süresi dört ay sürer.",
-      "alternativen": ["Deneme süresi dört ay sürüyor.", "Deneme süresi 4 ay sürer.", "Deneme süresi dört aydır."],
+      "alternativen": ["Deneme süresi dört ay sürüyor.", "Deneme süresi 4 ay sürer.", "Deneme süresi dört aylıktır."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2426,8 +2434,8 @@
       "bezug": "de.b1.e02.s0199",
       "text": "İyi günler, adım Emre Yılmaz. Mart ayında hâlâ boş bir staj yeriniz var mı?",
       "alternativen": [
-        "İyi günler, benim adım Emre Yılmaz. Martta staj için boş yeriniz var mı?",
-        "Merhaba, adım Emre Yılmaz. Mart ayında staj için hâlâ yeriniz var mı?"
+        "İyi günler, benim adım Emre Yılmaz. Martta staj için hâlâ boş yeriniz var mı?",
+        "Merhaba, adım Emre Yılmaz. Mart ayında staj için hâlâ boş yeriniz var mı?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2442,7 +2450,7 @@
     {
       "bezug": "de.b1.e02.s0201",
       "text": "İki hafta, 3 Mart'tan 14 Mart'a kadar.",
-      "alternativen": ["İki hafta, 3-14 Mart arası.", "3'ünden 14 Mart'a kadar, iki hafta."],
+      "alternativen": ["İki hafta, 3-14 Mart arası.", "3 Mart'tan 14 Mart'a kadar, iki hafta."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2524,7 +2532,11 @@
     {
       "bezug": "de.b1.e02.s0211",
       "text": "Çarşamba günü boş bir randevunuz var mı?",
-      "alternativen": ["Çarşamba boş randevunuz var mı?", "Çarşamba günü için boş randevunuz var mı?", "Çarşambaya randevunuz var mı?"],
+      "alternativen": [
+        "Çarşamba boş randevunuz var mı?",
+        "Çarşamba günü için boş randevunuz var mı?",
+        "Çarşamba günü müsait bir randevunuz var mı?"
+      ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2579,7 +2591,7 @@
       "text": "Yazın okul bitiyor ama Emre'nin henüz bir meslek eğitimi yeri yok.",
       "alternativen": [
         "Okul yazın bitiyor, fakat Emre'nin hâlâ Ausbildung yeri yok.",
-        "Yaz gelince okul bitiyor ama Emre henüz meslek eğitimi yeri bulamadı.",
+        "Yaz gelince okul bitiyor ama Emre'nin henüz meslek eğitimi yeri yok.",
         "Yazın okul bitiyor, ancak Emre'nin henüz meslek eğitimi yeri yok."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -3007,7 +3019,7 @@
       "bezug": "de.b1.e02.s0265",
       "text": "Dakik ol ve çok soru sor. İstekli olursan iş arkadaşların sevinir.",
       "alternativen": [
-        "Zamanında git ve bolca soru sor. Motive olduğunu görünce meslektaşların sevinir.",
+        "Zamanında git ve bolca soru sor. Motivasyonlu olduğunu görünce meslektaşların sevinir.",
         "Dakik ol, çok soru sor. İş arkadaşları istekli olmana sevinir."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -3045,7 +3057,7 @@
       "bezug": "de.b1.e02.s0269",
       "text": "Selin Abitur'dan sonra tıp okumak istiyor.",
       "alternativen": [
-        "Selin Abitur'dan sonra tıp fakültesinde okumak istiyor.",
+        "Selin Abitur'dan sonra tıp öğrenimi görmek istiyor.",
         "Abitur'dan sonra Selin tıp okumak istiyor.",
         "Selin Abitur'dan sonra tıp eğitimi almak istiyor.",
         "Selin liseyi bitirdikten sonra tıp okumak istiyor.",
@@ -3164,7 +3176,7 @@
     {
       "bezug": "de.b1.e02.s0283",
       "text": "Tıp okumak istiyor.",
-      "alternativen": ["O, tıp okumak istiyor.", "Tıp eğitimi almak istiyor.", "Tıp fakültesinde okumak istiyor."],
+      "alternativen": ["O, tıp okumak istiyor.", "Tıp eğitimi almak istiyor.", "Tıp öğrenimi görmek istiyor."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3181,11 +3193,11 @@
     },
     {
       "bezug": "de.b1.e02.s0285",
-      "text": "Bir meslek eğitimi yeri buldun mu?",
+      "text": "Şimdiden bir meslek eğitimi yeri buldun mu?",
       "alternativen": [
         "Meslek eğitimi yeri buldun mu artık?",
         "Ausbildung yeri bulabildin mi?",
-        "Şimdiden bir meslek eğitimi yeri buldun mu?"
+        "Şimdiye kadar bir meslek eğitimi yeri buldun mu?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3203,8 +3215,8 @@
     },
     {
       "bezug": "de.b1.e02.s0287",
-      "text": "Peki bir cevap aldın mı?",
-      "alternativen": ["Peki şimdiye kadar cevap aldın mı?", "Ya bir yanıt aldın mı?", "Peki şimdiden bir cevap aldın mı?"],
+      "text": "Peki şimdiden bir cevap aldın mı?",
+      "alternativen": ["Peki şimdiye kadar cevap aldın mı?", "Ya bir yanıt aldın mı?", "Şimdiden bir cevap geldi mi?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3319,7 +3331,7 @@
       "alternativen": [
         "Nina üniversiteye giderken bir laboratuvarda yarı zamanlı çalışıyor.",
         "Üniversite yanında Nina bir laboratuvarda yarı zamanlı çalışıyor.",
-        "Nina okulun yanında bir laboratuvarda part-time çalışıyor."
+        "Nina üniversiteye devam ederken bir laboratuvarda yarı zamanlı çalışıyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3367,7 +3379,7 @@
     {
       "bezug": "de.b1.e02.s0303",
       "text": "Aday çok istekli.",
-      "alternativen": ["Adayın motivasyonu çok yüksek.", "Başvuran kişi çok istekli.", "Aday çok motive."],
+      "alternativen": ["Adayın motivasyonu çok yüksek.", "Başvuran kişi çok istekli.", "Aday çok motivasyonlu."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3493,7 +3505,7 @@
       "alternativen": [
         "Umarım öyle olur. Patron elimin çok yatkın olduğunu söyledi.",
         "Öyle umuyorum. Şef çok becerikli olduğumu söyledi.",
-        "Umarım. Usta çok becerikli olduğumu söyledi."
+        "Umarım. Patron çok becerikli olduğumu söyledi."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"

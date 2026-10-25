@@ -1,0 +1,5114 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "tr",
+  "stufe": "b1",
+  "einheit": {
+    "schluessel": "tr.b1.e13",
+    "reihenfolge": 14,
+    "thema": {
+      "de": "Wenn es wärmer wird",
+      "tr": "Hava ısındığında: doğa, çevre ve tasarruf",
+      "ar": "عندما يصبح الجو أدفأ: الطبيعة والبيئة والتوفير"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann fortschreitende Veränderungen beschreiben (je …, desto …).",
+        "tr": "Adım adım gelişen değişimleri -dıkça kalıbıyla anlatabilirim.",
+        "ar": "أستطيع أن أصف التغيّرات التدريجية (كلما …، كلما …)."
+      },
+      {
+        "de": "Ich kann über Umweltschutz im Alltag sprechen und Vorschläge machen.",
+        "tr": "Günlük hayatta çevre korumasını konuşabilir ve öneriler sunabilirim.",
+        "ar": "أستطيع أن أتحدث عن حماية البيئة في الحياة اليومية وأن أقدّم اقتراحات."
+      },
+      {
+        "de": "Ich kann Gegensätze zwischen Personen ausdrücken (ben ise …).",
+        "tr": "İki kişi arasındaki zıtlıkları anlatabilirim (ben ise …).",
+        "ar": "أستطيع أن أعبّر عن التناقض بين شخصين (أمّا أنا فـ…)."
+      }
+    ],
+    "symbol": "leaf",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "tr.b1.e13.donusum",
+      "lemma": "dönüşüm",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "pl": "dönüşümler",
+        "akk/poss.3sg": "dönüşümü",
+        "dat": "dönüşüme",
+        "gen/poss.2sg": "dönüşümün",
+        "ins": "dönüşümle",
+        "poss.1sg": "dönüşümüm",
+        "poss.1pl": "dönüşümümüz",
+        "poss.2pl": "dönüşümünüz",
+        "lok": "dönüşümde",
+        "abl": "dönüşümden",
+        "poss.3pl": "dönüşümleri"
+      },
+      "frequenzRang": 5483,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.iklim",
+      "lemma": "iklim",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "iklimler",
+        "akk/poss.3sg": "iklimi",
+        "dat": "iklime",
+        "gen/poss.2sg": "iklimin",
+        "ins": "iklimle",
+        "poss.1sg": "iklimim",
+        "poss.1pl": "iklimimiz",
+        "poss.2pl": "ikliminiz",
+        "lok": "iklimde",
+        "abl": "iklimden",
+        "poss.3pl": "iklimleri"
+      },
+      "frequenzRang": 3829,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kirlilik",
+      "lemma": "kirlilik",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "kirlilik → kirliliğ-"
+      },
+      "formen": {
+        "akk/poss.3sg": "kirliliği",
+        "dat": "kirliliğe",
+        "gen/poss.2sg": "kirliliğin",
+        "ins": "kirlilikle",
+        "poss.1sg": "kirliliğim",
+        "poss.1pl": "kirliliğimiz",
+        "poss.2pl": "kirliliğiniz",
+        "lok": "kirlilikte",
+        "abl": "kirlilikten"
+      },
+      "frequenzRang": 22842,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.tasarruf",
+      "lemma": "tasarruf",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "akk/poss.3sg": "tasarrufu",
+        "dat": "tasarrufa",
+        "gen/poss.2sg": "tasarrufun",
+        "ins": "tasarrufla",
+        "poss.1sg": "tasarrufum",
+        "poss.1pl": "tasarrufumuz",
+        "poss.2pl": "tasarrufunuz",
+        "lok": "tasarrufta",
+        "abl": "tasarruftan"
+      },
+      "frequenzRang": 11038,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kuraklik",
+      "lemma": "kuraklık",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "kuraklık → kuraklığ-"
+      },
+      "formen": {
+        "akk/poss.3sg": "kuraklığı",
+        "dat": "kuraklığa",
+        "gen/poss.2sg": "kuraklığın",
+        "ins": "kuraklıkla",
+        "poss.1sg": "kuraklığım",
+        "poss.1pl": "kuraklığımız",
+        "poss.2pl": "kuraklığınız",
+        "lok": "kuraklıkta",
+        "abl": "kuraklıktan"
+      },
+      "frequenzRang": 20447,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.sicaklik",
+      "lemma": "sıcaklık",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "sıcaklık → sıcaklığ-"
+      },
+      "formen": {
+        "pl": "sıcaklıklar",
+        "akk/poss.3sg": "sıcaklığı",
+        "dat": "sıcaklığa",
+        "gen/poss.2sg": "sıcaklığın",
+        "ins": "sıcaklıkla",
+        "poss.1sg": "sıcaklığım",
+        "poss.1pl": "sıcaklığımız",
+        "poss.2pl": "sıcaklığınız",
+        "lok": "sıcaklıkta",
+        "abl": "sıcaklıktan",
+        "poss.3pl": "sıcaklıkları"
+      },
+      "frequenzRang": 3198,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.isi",
+      "lemma": "ısı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "ısılar",
+        "akk": "ısıyı",
+        "dat": "ısıya",
+        "ins": "ısıyla",
+        "poss.1sg": "ısım",
+        "poss.3sg": "ısısı",
+        "poss.1pl": "ısımız",
+        "poss.2pl": "ısınız",
+        "lok": "ısıda",
+        "abl": "ısıdan",
+        "poss.3pl": "ısıları"
+      },
+      "frequenzRang": 2937,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.sel",
+      "lemma": "sel",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "seller",
+        "akk/poss.3sg": "seli",
+        "dat": "sele",
+        "ins": "selle",
+        "poss.1pl": "selimiz",
+        "poss.2pl": "seliniz",
+        "lok": "selde",
+        "abl": "selden",
+        "poss.3pl": "selleri"
+      },
+      "frequenzRang": 4731,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.atik",
+      "lemma": "atık",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "atık → atığ-"
+      },
+      "formen": {
+        "pl": "atıklar",
+        "akk/poss.3sg": "atığı",
+        "dat": "atığa",
+        "gen/poss.2sg": "atığın",
+        "ins": "atıkla",
+        "poss.1sg": "atığım",
+        "poss.1pl": "atığımız",
+        "poss.2pl": "atığınız",
+        "lok": "atıkta",
+        "abl": "atıktan",
+        "poss.3pl": "atıkları"
+      },
+      "frequenzRang": 8079,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.plastik",
+      "lemma": "plastik",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "plastik → plastiğ-"
+      },
+      "formen": {
+        "pl": "plastikler",
+        "akk/poss.3sg": "plastiği",
+        "dat": "plastiğe",
+        "gen/poss.2sg": "plastiğin",
+        "ins": "plastikle",
+        "poss.1sg": "plastiğim",
+        "poss.1pl": "plastiğimiz",
+        "poss.2pl": "plastiğiniz",
+        "lok": "plastikte",
+        "abl": "plastikten",
+        "poss.3pl": "plastikleri"
+      },
+      "frequenzRang": 3346,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.cam",
+      "lemma": "cam",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "camlar",
+        "dat": "cama",
+        "gen/poss.2sg": "camın",
+        "ins": "camla",
+        "poss.1sg": "camım",
+        "poss.1pl": "camımız",
+        "poss.2pl": "camınız",
+        "lok": "camda",
+        "abl": "camdan",
+        "poss.3pl": "camları"
+      },
+      "frequenzRang": 2435,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.metal",
+      "lemma": "metal",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "harmonie_ausnahme": "helle Endungen trotz a (metali, metaller)"
+      },
+      "formen": {
+        "pl": "metaller",
+        "akk/poss.3sg": "metali",
+        "dat": "metale",
+        "gen/poss.2sg": "metalin",
+        "ins": "metalle",
+        "poss.1sg": "metalim",
+        "poss.1pl": "metalimiz",
+        "poss.2pl": "metaliniz",
+        "lok": "metalde",
+        "abl": "metalden",
+        "poss.3pl": "metalleri"
+      },
+      "frequenzRang": 1614,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.ambalaj",
+      "lemma": "ambalaj",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "ambalajlar",
+        "akk/poss.3sg": "ambalajı",
+        "dat": "ambalaja",
+        "gen/poss.2sg": "ambalajın",
+        "ins": "ambalajla",
+        "poss.1sg": "ambalajım",
+        "poss.1pl": "ambalajımız",
+        "poss.2pl": "ambalajınız",
+        "lok": "ambalajda",
+        "abl": "ambalajdan",
+        "poss.3pl": "ambalajları"
+      },
+      "frequenzRang": 24908,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.sera",
+      "lemma": "sera",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "seralar",
+        "akk": "serayı",
+        "dat": "seraya",
+        "gen": "seranın",
+        "ins": "serayla",
+        "poss.1sg": "seram",
+        "poss.2sg": "seran",
+        "poss.3sg": "serası",
+        "poss.1pl": "seramız",
+        "poss.2pl": "seranız",
+        "lok": "serada",
+        "abl": "seradan",
+        "poss.3pl": "seraları"
+      },
+      "frequenzRang": 11469,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.etki",
+      "lemma": "etki",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "etkiler",
+        "akk": "etkiyi",
+        "dat": "etkiye",
+        "gen": "etkinin",
+        "ins": "etkiyle",
+        "poss.1sg": "etkim",
+        "poss.2sg": "etkin",
+        "poss.3sg": "etkisi",
+        "poss.1pl": "etkimiz",
+        "poss.2pl": "etkiniz",
+        "lok": "etkide",
+        "abl": "etkiden",
+        "poss.3pl": "etkileri"
+      },
+      "frequenzRang": 1843,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.degisim",
+      "lemma": "değişim",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "değişimler",
+        "akk/poss.3sg": "değişimi",
+        "dat": "değişime",
+        "gen/poss.2sg": "değişimin",
+        "ins": "değişimle",
+        "poss.1sg": "değişimim",
+        "poss.1pl": "değişimimiz",
+        "poss.2pl": "değişiminiz",
+        "lok": "değişimde",
+        "abl": "değişimden",
+        "poss.3pl": "değişimleri"
+      },
+      "frequenzRang": 3164,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.artis",
+      "lemma": "artış",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "artışlar",
+        "akk/poss.3sg": "artışı",
+        "dat": "artışa",
+        "gen/poss.2sg": "artışın",
+        "ins": "artışla",
+        "poss.1sg": "artışım",
+        "poss.1pl": "artışımız",
+        "poss.2pl": "artışınız",
+        "lok": "artışta",
+        "abl": "artıştan",
+        "poss.3pl": "artışları"
+      },
+      "frequenzRang": 3733,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.tuketim",
+      "lemma": "tüketim",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk/poss.3sg": "tüketimi",
+        "dat": "tüketime",
+        "gen/poss.2sg": "tüketimin",
+        "ins": "tüketimle",
+        "poss.1sg": "tüketimim",
+        "poss.1pl": "tüketimimiz",
+        "poss.2pl": "tüketiminiz",
+        "lok": "tüketimde",
+        "abl": "tüketimden"
+      },
+      "frequenzRang": 11048,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.israf",
+      "lemma": "israf",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "akk/poss.3sg": "israfı",
+        "dat": "israfa",
+        "gen/poss.2sg": "israfın",
+        "ins": "israfla",
+        "poss.1sg": "israfım",
+        "poss.1pl": "israfımız",
+        "poss.2pl": "israfınız",
+        "lok": "israfta",
+        "abl": "israftan"
+      },
+      "frequenzRang": 14184,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.komur",
+      "lemma": "kömür",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "pl": "kömürler",
+        "akk/poss.3sg": "kömürü",
+        "dat": "kömüre",
+        "gen/poss.2sg": "kömürün",
+        "ins": "kömürle",
+        "poss.1sg": "kömürüm",
+        "poss.1pl": "kömürümüz",
+        "poss.2pl": "kömürünüz",
+        "lok": "kömürde",
+        "abl": "kömürden",
+        "poss.3pl": "kömürleri"
+      },
+      "frequenzRang": 4511,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.petrol",
+      "lemma": "petrol",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü",
+        "harmonie_ausnahme": "helle Endungen trotz o (petrolü, petroller)"
+      },
+      "formen": {
+        "pl": "petroller",
+        "akk/poss.3sg": "petrolü",
+        "dat": "petrole",
+        "gen/poss.2sg": "petrolün",
+        "ins": "petrolle",
+        "poss.1sg": "petrolüm",
+        "poss.1pl": "petrolümüz",
+        "poss.2pl": "petrolünüz",
+        "lok": "petrolde",
+        "abl": "petrolden",
+        "poss.3pl": "petrolleri"
+      },
+      "frequenzRang": 1703,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.panel",
+      "lemma": "panel",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "paneller",
+        "akk/poss.3sg": "paneli",
+        "dat": "panele",
+        "gen/poss.2sg": "panelin",
+        "ins": "panelle",
+        "poss.1sg": "panelim",
+        "poss.1pl": "panelimiz",
+        "poss.2pl": "paneliniz",
+        "lok": "panelde",
+        "abl": "panelden",
+        "poss.3pl": "panelleri"
+      },
+      "frequenzRang": 9943,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kok",
+      "lemma": "kök",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "pl": "kökler",
+        "akk/poss.3sg": "kökü",
+        "dat": "köke",
+        "gen/poss.2sg": "kökün",
+        "ins": "kökle",
+        "poss.1sg": "köküm",
+        "poss.1pl": "kökümüz",
+        "poss.2pl": "kökünüz",
+        "lok": "kökte",
+        "abl": "kökten",
+        "poss.3pl": "kökleri"
+      },
+      "frequenzRang": 5155,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.fidan",
+      "lemma": "fidan",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "fidanlar",
+        "akk/poss.3sg": "fidanı",
+        "dat": "fidana",
+        "gen/poss.2sg": "fidanın",
+        "ins": "fidanla",
+        "poss.1sg": "fidanım",
+        "poss.1pl": "fidanımız",
+        "poss.2pl": "fidanınız",
+        "lok": "fidanda",
+        "abl": "fidandan",
+        "poss.3pl": "fidanları"
+      },
+      "frequenzRang": 7939,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.buzul",
+      "lemma": "buzul",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "buzullar",
+        "akk/poss.3sg": "buzulu",
+        "dat": "buzula",
+        "gen/poss.2sg": "buzulun",
+        "ins": "buzulla",
+        "poss.1sg": "buzulum",
+        "poss.1pl": "buzulumuz",
+        "poss.2pl": "buzulunuz",
+        "lok": "buzulda",
+        "abl": "buzuldan",
+        "poss.3pl": "buzulları"
+      },
+      "frequenzRang": 25418,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kutup",
+      "lemma": "kutup",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u",
+        "vokalausfall": "kutup → kutb-"
+      },
+      "formen": {
+        "pl": "kutuplar",
+        "akk/poss.3sg": "kutbu",
+        "dat": "kutba",
+        "gen/poss.2sg": "kutbun",
+        "ins": "kutupla",
+        "poss.1sg": "kutbum",
+        "poss.1pl": "kutbumuz",
+        "poss.2pl": "kutbunuz",
+        "lok": "kutupta",
+        "abl": "kutuptan",
+        "poss.3pl": "kutupları"
+      },
+      "frequenzRang": 10131,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.okyanus",
+      "lemma": "okyanus",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "okyanuslar",
+        "akk/poss.3sg": "okyanusu",
+        "dat": "okyanusa",
+        "gen/poss.2sg": "okyanusun",
+        "ins": "okyanusla",
+        "poss.1sg": "okyanusum",
+        "poss.1pl": "okyanusumuz",
+        "poss.2pl": "okyanusunuz",
+        "lok": "okyanusta",
+        "abl": "okyanustan",
+        "poss.3pl": "okyanusları"
+      },
+      "frequenzRang": 7150,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kiyi",
+      "lemma": "kıyı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "kıyılar",
+        "akk": "kıyıyı",
+        "dat": "kıyıya",
+        "gen": "kıyının",
+        "ins": "kıyıyla",
+        "poss.1sg": "kıyım",
+        "poss.2sg": "kıyın",
+        "poss.3sg": "kıyısı",
+        "poss.1pl": "kıyımız",
+        "poss.2pl": "kıyınız",
+        "lok": "kıyıda",
+        "abl": "kıyıdan",
+        "poss.3pl": "kıyıları"
+      },
+      "frequenzRang": 7626,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.col",
+      "lemma": "çöl",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "pl": "çöller",
+        "akk/poss.3sg": "çölü",
+        "dat": "çöle",
+        "gen/poss.2sg": "çölün",
+        "ins": "çölle",
+        "poss.1sg": "çölüm",
+        "poss.1pl": "çölümüz",
+        "poss.2pl": "çölünüz",
+        "lok": "çölde",
+        "abl": "çölden",
+        "poss.3pl": "çölleri"
+      },
+      "frequenzRang": 9063,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.yagis",
+      "lemma": "yağış",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "yağışlar",
+        "akk/poss.3sg": "yağışı",
+        "dat": "yağışa",
+        "gen/poss.2sg": "yağışın",
+        "ins": "yağışla",
+        "poss.1sg": "yağışım",
+        "poss.1pl": "yağışımız",
+        "poss.2pl": "yağışınız",
+        "lok": "yağışta",
+        "abl": "yağıştan",
+        "poss.3pl": "yağışları"
+      },
+      "frequenzRang": 5554,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.yildirim",
+      "lemma": "yıldırım",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "yıldırımlar",
+        "akk/poss.3sg": "yıldırımı",
+        "dat": "yıldırıma",
+        "gen/poss.2sg": "yıldırımın",
+        "ins": "yıldırımla",
+        "poss.1sg": "yıldırımım",
+        "poss.1pl": "yıldırımımız",
+        "poss.2pl": "yıldırımınız",
+        "lok": "yıldırımda",
+        "abl": "yıldırımdan",
+        "poss.3pl": "yıldırımları"
+      },
+      "frequenzRang": 1223,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.bahar",
+      "lemma": "bahar",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "baharlar",
+        "akk/poss.3sg": "baharı",
+        "dat": "bahara",
+        "gen/poss.2sg": "baharın",
+        "ins": "baharla",
+        "poss.1sg": "baharım",
+        "poss.1pl": "baharımız",
+        "poss.2pl": "baharınız",
+        "lok": "baharda",
+        "abl": "bahardan",
+        "poss.3pl": "baharları"
+      },
+      "frequenzRang": 2320,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.oksijen",
+      "lemma": "oksijen",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "akk/poss.3sg": "oksijeni",
+        "dat": "oksijene",
+        "gen/poss.2sg": "oksijenin",
+        "ins": "oksijenle",
+        "poss.1sg": "oksijenim",
+        "poss.1pl": "oksijenimiz",
+        "poss.2pl": "oksijeniniz",
+        "lok": "oksijende",
+        "abl": "oksijenden"
+      },
+      "frequenzRang": 3844,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.arazi",
+      "lemma": "arazi",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "araziler",
+        "akk": "araziyi",
+        "dat": "araziye",
+        "gen": "arazinin",
+        "ins": "araziyle",
+        "poss.1sg": "arazim",
+        "poss.2sg": "arazin",
+        "poss.3sg": "arazisi",
+        "poss.1pl": "arazimiz",
+        "poss.2pl": "araziniz",
+        "lok": "arazide",
+        "abl": "araziden",
+        "poss.3pl": "arazileri"
+      },
+      "frequenzRang": 3295,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.baraj",
+      "lemma": "baraj",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "barajlar",
+        "akk/poss.3sg": "barajı",
+        "dat": "baraja",
+        "gen/poss.2sg": "barajın",
+        "ins": "barajla",
+        "poss.1sg": "barajım",
+        "poss.1pl": "barajımız",
+        "poss.2pl": "barajınız",
+        "lok": "barajda",
+        "abl": "barajdan",
+        "poss.3pl": "barajları"
+      },
+      "frequenzRang": 5092,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.egzoz",
+      "lemma": "egzoz",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "egzozlar",
+        "akk/poss.3sg": "egzozu",
+        "dat": "egzoza",
+        "gen/poss.2sg": "egzozun",
+        "ins": "egzozla",
+        "poss.1sg": "egzozum",
+        "poss.1pl": "egzozumuz",
+        "poss.2pl": "egzozunuz",
+        "lok": "egzozda",
+        "abl": "egzozdan",
+        "poss.3pl": "egzozları"
+      },
+      "frequenzRang": 21855,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.karton",
+      "lemma": "karton",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "kartonlar",
+        "akk/poss.3sg": "kartonu",
+        "dat": "kartona",
+        "gen/poss.2sg": "kartonun",
+        "ins": "kartonla",
+        "poss.1sg": "kartonum",
+        "poss.1pl": "kartonumuz",
+        "poss.2pl": "kartonunuz",
+        "lok": "kartonda",
+        "abl": "kartondan",
+        "poss.3pl": "kartonları"
+      },
+      "frequenzRang": 18939,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.rekor",
+      "lemma": "rekor",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "rekorlar",
+        "akk/poss.3sg": "rekoru",
+        "dat": "rekora",
+        "gen/poss.2sg": "rekorun",
+        "ins": "rekorla",
+        "poss.1sg": "rekorum",
+        "poss.1pl": "rekorumuz",
+        "poss.2pl": "rekorunuz",
+        "lok": "rekorda",
+        "abl": "rekordan",
+        "poss.3pl": "rekorları"
+      },
+      "frequenzRang": 3940,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.gezegen",
+      "lemma": "gezegen",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "gezegenler",
+        "akk/poss.3sg": "gezegeni",
+        "dat": "gezegene",
+        "gen/poss.2sg": "gezegenin",
+        "ins": "gezegenle",
+        "poss.1sg": "gezegenim",
+        "poss.1pl": "gezegenimiz",
+        "poss.2pl": "gezegeniniz",
+        "lok": "gezegende",
+        "abl": "gezegenden",
+        "poss.3pl": "gezegenleri"
+      },
+      "frequenzRang": 5129,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.atmosfer",
+      "lemma": "atmosfer",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "atmosferler",
+        "akk/poss.3sg": "atmosferi",
+        "dat": "atmosfere",
+        "gen/poss.2sg": "atmosferin",
+        "ins": "atmosferle",
+        "poss.1sg": "atmosferim",
+        "poss.1pl": "atmosferimiz",
+        "poss.2pl": "atmosferiniz",
+        "lok": "atmosferde",
+        "abl": "atmosferden",
+        "poss.3pl": "atmosferleri"
+      },
+      "frequenzRang": 8884,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.bilinc",
+      "lemma": "bilinç",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "bilinç → bilinc-"
+      },
+      "formen": {
+        "pl": "bilinçler",
+        "akk/poss.3sg": "bilinci",
+        "dat": "bilince",
+        "gen/poss.2sg": "bilincin",
+        "ins": "bilinçle",
+        "poss.1sg": "bilincim",
+        "poss.1pl": "bilincimiz",
+        "poss.2pl": "bilinciniz",
+        "lok": "bilinçte",
+        "abl": "bilinçten",
+        "poss.3pl": "bilinçleri"
+      },
+      "frequenzRang": 8569,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.tarim",
+      "lemma": "tarım",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "akk/poss.3sg": "tarımı",
+        "dat": "tarıma",
+        "gen/poss.2sg": "tarımın",
+        "ins": "tarımla",
+        "poss.1sg": "tarımım",
+        "poss.1pl": "tarımımız",
+        "poss.2pl": "tarımınız",
+        "lok": "tarımda",
+        "abl": "tarımdan"
+      },
+      "frequenzRang": 1137,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.hasat",
+      "lemma": "hasat",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "hasat → hasad-"
+      },
+      "formen": {
+        "pl": "hasatlar",
+        "akk/poss.3sg": "hasadı",
+        "dat": "hasada",
+        "gen/poss.2sg": "hasadın",
+        "ins": "hasatla",
+        "poss.1sg": "hasadım",
+        "poss.1pl": "hasadımız",
+        "poss.2pl": "hasadınız",
+        "lok": "hasatta",
+        "abl": "hasattan",
+        "poss.3pl": "hasatları"
+      },
+      "frequenzRang": 10526,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.ciftlik",
+      "lemma": "çiftlik",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "çiftlik → çiftliğ-"
+      },
+      "formen": {
+        "pl": "çiftlikler",
+        "akk/poss.3sg": "çiftliği",
+        "dat": "çiftliğe",
+        "gen/poss.2sg": "çiftliğin",
+        "ins": "çiftlikle",
+        "poss.1sg": "çiftliğim",
+        "poss.1pl": "çiftliğimiz",
+        "poss.2pl": "çiftliğiniz",
+        "lok": "çiftlikte",
+        "abl": "çiftlikten",
+        "poss.3pl": "çiftlikleri"
+      },
+      "frequenzRang": 5559,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kirletmek",
+      "lemma": "kirletmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kirlet",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "kirlet",
+        "iyor.3sg": "kirletiyor",
+        "imp.2pl": "kirletin",
+        "aor.3sg": "kirletir",
+        "iyor.neg.3sg": "kirletmiyor",
+        "aor.1sg": "kirletirim",
+        "aor.neg.3sg": "kirletmez",
+        "aor.neg.1sg": "kirletmem",
+        "di.1sg": "kirlettim",
+        "di.2sg": "kirlettin",
+        "di.3sg": "kirletti",
+        "di.1pl": "kirlettik",
+        "di.2pl": "kirlettiniz",
+        "di.neg.3sg": "kirletmedi",
+        "mis.3sg": "kirletmiş",
+        "ecek.3sg": "kirletecek",
+        "ecek.1sg": "kirleteceğim",
+        "ecek.1pl": "kirleteceğiz",
+        "ebil.3sg": "kirletebilir",
+        "eme.3sg": "kirletemez",
+        "meli.3sg": "kirletmeli",
+        "opt.1sg": "kirleteyim",
+        "opt.1pl": "kirletelim",
+        "imp3.3sg": "kirletsin",
+        "iyordu.3sg": "kirletiyordu",
+        "mek.akk": "kirletmeyi",
+        "part.en": "kirleten",
+        "part.dik.3": "kirlettiği",
+        "part.dik.1sg": "kirlettiğim",
+        "part.ecek.3": "kirleteceği",
+        "konv.ip": "kirletip",
+        "konv.ince": "kirletince",
+        "konv.erek": "kirleterek",
+        "konv.meden": "kirletmeden",
+        "kond.3sg": "kirletse",
+        "nom.mesi": "kirletmesi",
+        "mis.ti": "kirletmişti"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kirlenmek",
+      "lemma": "kirlenmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kirlen",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "kirlen",
+        "iyor.3sg": "kirleniyor",
+        "imp.2pl": "kirlenin",
+        "aor.3sg": "kirlenir",
+        "iyor.neg.3sg": "kirlenmiyor",
+        "aor.1sg": "kirlenirim",
+        "aor.neg.3sg": "kirlenmez",
+        "aor.neg.1sg": "kirlenmem",
+        "di.1sg": "kirlendim",
+        "di.2sg": "kirlendin",
+        "di.3sg": "kirlendi",
+        "di.1pl": "kirlendik",
+        "di.2pl": "kirlendiniz",
+        "di.neg.3sg": "kirlenmedi",
+        "mis.3sg": "kirlenmiş",
+        "ecek.3sg": "kirlenecek",
+        "ecek.1sg": "kirleneceğim",
+        "ecek.1pl": "kirleneceğiz",
+        "ebil.3sg": "kirlenebilir",
+        "eme.3sg": "kirlenemez",
+        "meli.3sg": "kirlenmeli",
+        "opt.1sg": "kirleneyim",
+        "opt.1pl": "kirlenelim",
+        "imp3.3sg": "kirlensin",
+        "iyordu.3sg": "kirleniyordu",
+        "mek.akk": "kirlenmeyi",
+        "part.en": "kirlenen",
+        "part.dik.3": "kirlendiği",
+        "part.dik.1sg": "kirlendiğim",
+        "part.ecek.3": "kirleneceği",
+        "konv.ip": "kirlenip",
+        "konv.ince": "kirlenince",
+        "konv.erek": "kirlenerek",
+        "konv.meden": "kirlenmeden",
+        "kond.3sg": "kirlense",
+        "nom.mesi": "kirlenmesi",
+        "mis.ti": "kirlenmişti"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.donusturmek",
+      "lemma": "dönüştürmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "dönüştür",
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "stamm": "dönüştür",
+        "iyor.3sg": "dönüştürüyor",
+        "imp.2pl": "dönüştürün",
+        "aor.3sg": "dönüştürür",
+        "iyor.neg.3sg": "dönüştürmüyor",
+        "aor.1sg": "dönüştürürüm",
+        "aor.neg.3sg": "dönüştürmez",
+        "aor.neg.1sg": "dönüştürmem",
+        "di.1sg": "dönüştürdüm",
+        "di.2sg": "dönüştürdün",
+        "di.3sg": "dönüştürdü",
+        "di.1pl": "dönüştürdük",
+        "di.2pl": "dönüştürdünüz",
+        "di.neg.3sg": "dönüştürmedi",
+        "mis.3sg": "dönüştürmüş",
+        "ecek.3sg": "dönüştürecek",
+        "ecek.1sg": "dönüştüreceğim",
+        "ecek.1pl": "dönüştüreceğiz",
+        "ebil.3sg": "dönüştürebilir",
+        "eme.3sg": "dönüştüremez",
+        "meli.3sg": "dönüştürmeli",
+        "opt.1sg": "dönüştüreyim",
+        "opt.1pl": "dönüştürelim",
+        "imp3.3sg": "dönüştürsün",
+        "iyordu.3sg": "dönüştürüyordu",
+        "mek.akk": "dönüştürmeyi",
+        "part.en": "dönüştüren",
+        "part.dik.3": "dönüştürdüğü",
+        "part.dik.1sg": "dönüştürdüğüm",
+        "part.ecek.3": "dönüştüreceği",
+        "konv.ip": "dönüştürüp",
+        "konv.ince": "dönüştürünce",
+        "konv.erek": "dönüştürerek",
+        "konv.meden": "dönüştürmeden",
+        "kond.3sg": "dönüştürse",
+        "nom.mesi": "dönüştürmesi",
+        "mis.ti": "dönüştürmüştü"
+      },
+      "frequenzRang": 18868,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kurumak",
+      "lemma": "kurumak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kuru",
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "imp.2pl": "kuruyun",
+        "aor.3sg": "kurur",
+        "iyor.neg.3sg": "kurumuyor",
+        "aor.1sg": "kururum",
+        "aor.neg.3sg": "kurumaz",
+        "aor.neg.1sg": "kurumam",
+        "di.1sg": "kurudum",
+        "di.2sg": "kurudun",
+        "di.3sg": "kurudu",
+        "di.1pl": "kuruduk",
+        "di.2pl": "kurudunuz",
+        "di.neg.3sg": "kurumadı",
+        "ecek.3sg": "kuruyacak",
+        "ecek.1sg": "kuruyacağım",
+        "ecek.1pl": "kuruyacağız",
+        "ebil.3sg": "kuruyabilir",
+        "eme.3sg": "kuruyamaz",
+        "meli.3sg": "kurumalı",
+        "opt.1sg": "kuruyayım",
+        "opt.1pl": "kuruyalım",
+        "imp3.3sg": "kurusun",
+        "mek.akk": "kurumayı",
+        "part.en": "kuruyan",
+        "part.dik.3": "kuruduğu",
+        "part.dik.1sg": "kuruduğum",
+        "part.ecek.3": "kuruyacağı",
+        "konv.ip": "kuruyup",
+        "konv.ince": "kuruyunca",
+        "konv.erek": "kuruyarak",
+        "konv.meden": "kurumadan",
+        "kond.3sg": "kurusa",
+        "nom.mesi": "kuruması",
+        "mis.ti": "kurumuştu"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.sogumak",
+      "lemma": "soğumak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "soğu",
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "stamm": "soğu",
+        "iyor.3sg": "soğuyor",
+        "imp.2pl": "soğuyun",
+        "aor.3sg": "soğur",
+        "iyor.neg.3sg": "soğumuyor",
+        "aor.1sg": "soğurum",
+        "aor.neg.3sg": "soğumaz",
+        "aor.neg.1sg": "soğumam",
+        "di.1sg": "soğudum",
+        "di.2sg": "soğudun",
+        "di.3sg": "soğudu",
+        "di.1pl": "soğuduk",
+        "di.2pl": "soğudunuz",
+        "di.neg.3sg": "soğumadı",
+        "mis.3sg": "soğumuş",
+        "ecek.3sg": "soğuyacak",
+        "ecek.1sg": "soğuyacağım",
+        "ecek.1pl": "soğuyacağız",
+        "ebil.3sg": "soğuyabilir",
+        "eme.3sg": "soğuyamaz",
+        "meli.3sg": "soğumalı",
+        "opt.1sg": "soğuyayım",
+        "opt.1pl": "soğuyalım",
+        "imp3.3sg": "soğusun",
+        "iyordu.3sg": "soğuyordu",
+        "mek.akk": "soğumayı",
+        "part.en": "soğuyan",
+        "part.dik.3": "soğuduğu",
+        "part.dik.1sg": "soğuduğum",
+        "part.ecek.3": "soğuyacağı",
+        "konv.ip": "soğuyup",
+        "konv.ince": "soğuyunca",
+        "konv.erek": "soğuyarak",
+        "konv.meden": "soğumadan",
+        "kond.3sg": "soğusa",
+        "nom.mesi": "soğuması",
+        "mis.ti": "soğumuştu"
+      },
+      "frequenzRang": 43547,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.yetismek",
+      "lemma": "yetişmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "yetiş",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "yetiş",
+        "iyor.3sg": "yetişiyor",
+        "imp.2pl": "yetişin",
+        "aor.3sg": "yetişir",
+        "iyor.neg.3sg": "yetişmiyor",
+        "aor.1sg": "yetişirim",
+        "aor.neg.3sg": "yetişmez",
+        "aor.neg.1sg": "yetişmem",
+        "di.1sg": "yetiştim",
+        "di.2sg": "yetiştin",
+        "di.3sg": "yetişti",
+        "di.1pl": "yetiştik",
+        "di.2pl": "yetiştiniz",
+        "di.neg.3sg": "yetişmedi",
+        "mis.3sg": "yetişmiş",
+        "ecek.3sg": "yetişecek",
+        "ecek.1sg": "yetişeceğim",
+        "ecek.1pl": "yetişeceğiz",
+        "ebil.3sg": "yetişebilir",
+        "eme.3sg": "yetişemez",
+        "meli.3sg": "yetişmeli",
+        "opt.1sg": "yetişeyim",
+        "opt.1pl": "yetişelim",
+        "imp3.3sg": "yetişsin",
+        "iyordu.3sg": "yetişiyordu",
+        "mek.akk": "yetişmeyi",
+        "part.en": "yetişen",
+        "part.dik.3": "yetiştiği",
+        "part.dik.1sg": "yetiştiğim",
+        "part.ecek.3": "yetişeceği",
+        "konv.ip": "yetişip",
+        "konv.ince": "yetişince",
+        "konv.erek": "yetişerek",
+        "konv.meden": "yetişmeden",
+        "kond.3sg": "yetişse",
+        "nom.mesi": "yetişmesi",
+        "mis.ti": "yetişmişti"
+      },
+      "frequenzRang": 27759,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.solmak",
+      "lemma": "solmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "sol",
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "iyor.3sg": "soluyor",
+        "aor.3sg": "solar",
+        "iyor.neg.3sg": "solmuyor",
+        "aor.1sg": "solarım",
+        "aor.neg.3sg": "solmaz",
+        "aor.neg.1sg": "solmam",
+        "di.1sg": "soldum",
+        "di.2sg": "soldun",
+        "di.3sg": "soldu",
+        "di.1pl": "solduk",
+        "di.2pl": "soldunuz",
+        "di.neg.3sg": "solmadı",
+        "mis.3sg": "solmuş",
+        "ecek.3sg": "solacak",
+        "ecek.1sg": "solacağım",
+        "ecek.1pl": "solacağız",
+        "ebil.3sg": "solabilir",
+        "eme.3sg": "solamaz",
+        "meli.3sg": "solmalı",
+        "opt.1sg": "solayım",
+        "opt.1pl": "solalım",
+        "imp3.3sg": "solsun",
+        "iyordu.3sg": "soluyordu",
+        "mek.akk": "solmayı",
+        "part.en": "solan",
+        "part.dik.3": "solduğu",
+        "part.dik.1sg": "solduğum",
+        "part.ecek.3": "solacağı",
+        "konv.ip": "solup",
+        "konv.ince": "solunca",
+        "konv.erek": "solarak",
+        "konv.meden": "solmadan",
+        "kond.3sg": "solsa",
+        "nom.mesi": "solması",
+        "mis.ti": "solmuştu"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.olmek",
+      "lemma": "ölmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "öl",
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "stamm": "öl",
+        "iyor.3sg": "ölüyor",
+        "imp.2pl": "ölün",
+        "aor.3sg": "ölür",
+        "iyor.neg.3sg": "ölmüyor",
+        "aor.1sg": "ölürüm",
+        "aor.neg.3sg": "ölmez",
+        "aor.neg.1sg": "ölmem",
+        "di.1sg": "öldüm",
+        "di.2sg": "öldün",
+        "di.3sg": "öldü",
+        "di.1pl": "öldük",
+        "di.2pl": "öldünüz",
+        "di.neg.3sg": "ölmedi",
+        "mis.3sg": "ölmüş",
+        "ecek.3sg": "ölecek",
+        "ecek.1sg": "öleceğim",
+        "ecek.1pl": "öleceğiz",
+        "ebil.3sg": "ölebilir",
+        "eme.3sg": "ölemez",
+        "meli.3sg": "ölmeli",
+        "opt.1sg": "öleyim",
+        "opt.1pl": "ölelim",
+        "imp3.3sg": "ölsün",
+        "iyordu.3sg": "ölüyordu",
+        "mek.akk": "ölmeyi",
+        "part.en": "ölen",
+        "part.dik.3": "öldüğü",
+        "part.dik.1sg": "öldüğüm",
+        "part.ecek.3": "öleceği",
+        "konv.ip": "ölüp",
+        "konv.ince": "ölünce",
+        "konv.erek": "ölerek",
+        "konv.meden": "ölmeden",
+        "kond.3sg": "ölse",
+        "nom.mesi": "ölmesi",
+        "mis.ti": "ölmüştü"
+      },
+      "frequenzRang": 2728,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.yukselmek",
+      "lemma": "yükselmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "yüksel",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "yüksel",
+        "iyor.3sg": "yükseliyor",
+        "imp.2pl": "yükselin",
+        "aor.3sg": "yükselir",
+        "iyor.neg.3sg": "yükselmiyor",
+        "aor.1sg": "yükselirim",
+        "aor.neg.3sg": "yükselmez",
+        "aor.neg.1sg": "yükselmem",
+        "di.1sg": "yükseldim",
+        "di.2sg": "yükseldin",
+        "di.3sg": "yükseldi",
+        "di.1pl": "yükseldik",
+        "di.2pl": "yükseldiniz",
+        "di.neg.3sg": "yükselmedi",
+        "mis.3sg": "yükselmiş",
+        "ecek.3sg": "yükselecek",
+        "ecek.1sg": "yükseleceğim",
+        "ecek.1pl": "yükseleceğiz",
+        "ebil.3sg": "yükselebilir",
+        "eme.3sg": "yükselemez",
+        "meli.3sg": "yükselmeli",
+        "opt.1sg": "yükseleyim",
+        "opt.1pl": "yükselelim",
+        "imp3.3sg": "yükselsin",
+        "iyordu.3sg": "yükseliyordu",
+        "mek.akk": "yükselmeyi",
+        "part.en": "yükselen",
+        "part.dik.3": "yükseldiği",
+        "part.dik.1sg": "yükseldiğim",
+        "part.ecek.3": "yükseleceği",
+        "konv.ip": "yükselip",
+        "konv.ince": "yükselince",
+        "konv.erek": "yükselerek",
+        "konv.meden": "yükselmeden",
+        "kond.3sg": "yükselse",
+        "nom.mesi": "yükselmesi",
+        "mis.ti": "yükselmişti"
+      },
+      "frequenzRang": 8535,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.etkilemek",
+      "lemma": "etkilemek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "etkile",
+        "harmonie": "e/i",
+        "stammwechsel": "etkile → etkili- vor -yor"
+      },
+      "formen": {
+        "stamm": "etkile",
+        "iyor.3sg": "etkiliyor",
+        "imp.2pl": "etkileyin",
+        "aor.3sg": "etkiler",
+        "iyor.neg.3sg": "etkilemiyor",
+        "aor.1sg": "etkilerim",
+        "aor.neg.3sg": "etkilemez",
+        "aor.neg.1sg": "etkilemem",
+        "di.1sg": "etkiledim",
+        "di.2sg": "etkiledin",
+        "di.3sg": "etkiledi",
+        "di.1pl": "etkiledik",
+        "di.2pl": "etkilediniz",
+        "di.neg.3sg": "etkilemedi",
+        "mis.3sg": "etkilemiş",
+        "ecek.3sg": "etkileyecek",
+        "ecek.1sg": "etkileyeceğim",
+        "ecek.1pl": "etkileyeceğiz",
+        "ebil.3sg": "etkileyebilir",
+        "eme.3sg": "etkileyemez",
+        "meli.3sg": "etkilemeli",
+        "opt.1sg": "etkileyeyim",
+        "opt.1pl": "etkileyelim",
+        "imp3.3sg": "etkilesin",
+        "iyordu.3sg": "etkiliyordu",
+        "mek.akk": "etkilemeyi",
+        "part.en": "etkileyen",
+        "part.dik.3": "etkilediği",
+        "part.dik.1sg": "etkilediğim",
+        "part.ecek.3": "etkileyeceği",
+        "konv.ip": "etkileyip",
+        "konv.ince": "etkileyince",
+        "konv.erek": "etkileyerek",
+        "konv.meden": "etkilemeden",
+        "kond.3sg": "etkilese",
+        "nom.mesi": "etkilemesi",
+        "mis.ti": "etkilemişti"
+      },
+      "frequenzRang": 12565,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kurtulmak",
+      "lemma": "kurtulmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "kurtul",
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "stamm": "kurtul",
+        "iyor.3sg": "kurtuluyor",
+        "imp.2pl": "kurtulun",
+        "aor.3sg": "kurtulur",
+        "iyor.neg.3sg": "kurtulmuyor",
+        "aor.1sg": "kurtulurum",
+        "aor.neg.3sg": "kurtulmaz",
+        "aor.neg.1sg": "kurtulmam",
+        "di.1sg": "kurtuldum",
+        "di.2sg": "kurtuldun",
+        "di.3sg": "kurtuldu",
+        "di.1pl": "kurtulduk",
+        "di.2pl": "kurtuldunuz",
+        "di.neg.3sg": "kurtulmadı",
+        "mis.3sg": "kurtulmuş",
+        "ecek.3sg": "kurtulacak",
+        "ecek.1sg": "kurtulacağım",
+        "ecek.1pl": "kurtulacağız",
+        "ebil.3sg": "kurtulabilir",
+        "eme.3sg": "kurtulamaz",
+        "meli.3sg": "kurtulmalı",
+        "opt.1sg": "kurtulayım",
+        "opt.1pl": "kurtulalım",
+        "imp3.3sg": "kurtulsun",
+        "iyordu.3sg": "kurtuluyordu",
+        "mek.akk": "kurtulmayı",
+        "part.en": "kurtulan",
+        "part.dik.3": "kurtulduğu",
+        "part.dik.1sg": "kurtulduğum",
+        "part.ecek.3": "kurtulacağı",
+        "konv.ip": "kurtulup",
+        "konv.ince": "kurtulunca",
+        "konv.erek": "kurtularak",
+        "konv.meden": "kurtulmadan",
+        "kond.3sg": "kurtulsa",
+        "nom.mesi": "kurtulması",
+        "mis.ti": "kurtulmuştu"
+      },
+      "frequenzRang": 3838,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.tukenmek",
+      "lemma": "tükenmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "tüken",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "tüken",
+        "iyor.3sg": "tükeniyor",
+        "imp.2pl": "tükenin",
+        "aor.3sg": "tükenir",
+        "iyor.neg.3sg": "tükenmiyor",
+        "aor.1sg": "tükenirim",
+        "aor.neg.3sg": "tükenmez",
+        "aor.neg.1sg": "tükenmem",
+        "di.1sg": "tükendim",
+        "di.2sg": "tükendin",
+        "di.3sg": "tükendi",
+        "di.1pl": "tükendik",
+        "di.2pl": "tükendiniz",
+        "di.neg.3sg": "tükenmedi",
+        "mis.3sg": "tükenmiş",
+        "ecek.3sg": "tükenecek",
+        "ecek.1sg": "tükeneceğim",
+        "ecek.1pl": "tükeneceğiz",
+        "ebil.3sg": "tükenebilir",
+        "eme.3sg": "tükenemez",
+        "meli.3sg": "tükenmeli",
+        "opt.1sg": "tükeneyim",
+        "opt.1pl": "tükenelim",
+        "imp3.3sg": "tükensin",
+        "iyordu.3sg": "tükeniyordu",
+        "mek.akk": "tükenmeyi",
+        "part.en": "tükenen",
+        "part.dik.3": "tükendiği",
+        "part.dik.1sg": "tükendiğim",
+        "part.ecek.3": "tükeneceği",
+        "konv.ip": "tükenip",
+        "konv.ince": "tükenince",
+        "konv.erek": "tükenerek",
+        "konv.meden": "tükenmeden",
+        "kond.3sg": "tükense",
+        "nom.mesi": "tükenmesi",
+        "mis.ti": "tükenmişti"
+      },
+      "frequenzRang": 29818,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.esmek",
+      "lemma": "esmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "es",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "es",
+        "iyor.3sg": "esiyor",
+        "imp.2pl": "esin",
+        "aor.3sg": "eser",
+        "iyor.neg.3sg": "esmiyor",
+        "aor.1sg": "eserim",
+        "aor.neg.3sg": "esmez",
+        "aor.neg.1sg": "esmem",
+        "di.1sg": "estim",
+        "di.2sg": "estin",
+        "di.3sg": "esti",
+        "di.1pl": "estik",
+        "di.2pl": "estiniz",
+        "di.neg.3sg": "esmedi",
+        "mis.3sg": "esmiş",
+        "ecek.3sg": "esecek",
+        "ecek.1sg": "eseceğim",
+        "ecek.1pl": "eseceğiz",
+        "ebil.3sg": "esebilir",
+        "eme.3sg": "esemez",
+        "meli.3sg": "esmeli",
+        "opt.1sg": "eseyim",
+        "opt.1pl": "eselim",
+        "imp3.3sg": "essin",
+        "iyordu.3sg": "esiyordu",
+        "mek.akk": "esmeyi",
+        "part.en": "esen",
+        "part.dik.3": "estiği",
+        "part.dik.1sg": "estiğim",
+        "part.ecek.3": "eseceği",
+        "konv.ip": "esip",
+        "konv.ince": "esince",
+        "konv.erek": "eserek",
+        "konv.meden": "esmeden",
+        "kond.3sg": "esse",
+        "nom.mesi": "esmesi",
+        "mis.ti": "esmişti"
+      },
+      "frequenzRang": 23620,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kuresel",
+      "lemma": "küresel",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 1774,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.cevreci",
+      "lemma": "çevreci",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 25812,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.yenilenebilir",
+      "lemma": "yenilenebilir",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 17374,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.ilik",
+      "lemma": "ılık",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 11093,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.yagisli",
+      "lemma": "yağışlı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 12724,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kocaman",
+      "lemma": "kocaman",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 1898,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.parlak",
+      "lemma": "parlak",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 1738,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kimyasal",
+      "lemma": "kimyasal",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 2025,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.zehirli",
+      "lemma": "zehirli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 5556,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kurak",
+      "lemma": "kurak",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 15695,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.alternatif",
+      "lemma": "alternatif",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 2153,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.gereksiz",
+      "lemma": "gereksiz",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 2889,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.nadir",
+      "lemma": "nadir",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 3555,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.siddetli",
+      "lemma": "şiddetli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 3011,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.dayanikli",
+      "lemma": "dayanıklı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 6111,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.tasarruflu",
+      "lemma": "tasarruflu",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.of",
+      "lemma": "of",
+      "wortart": "interjektion",
+      "frequenzRang": 679,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.boylece",
+      "lemma": "böylece",
+      "wortart": "adverb",
+      "frequenzRang": 385,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.dolayisiyla",
+      "lemma": "dolayısıyla",
+      "wortart": "adverb",
+      "frequenzRang": 1380,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.oysa",
+      "lemma": "oysa",
+      "wortart": "konjunktion",
+      "merkmale": {
+        "gebrauch": "dagegen, jedoch (Gegensatz)"
+      },
+      "frequenzRang": 1814,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.aksine",
+      "lemma": "aksine",
+      "wortart": "adverb",
+      "frequenzRang": 2049,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.hizla",
+      "lemma": "hızla",
+      "wortart": "adverb",
+      "frequenzRang": 1605,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.kismen",
+      "lemma": "kısmen",
+      "wortart": "adverb",
+      "frequenzRang": 4514,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.milyonlarca",
+      "lemma": "milyonlarca",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "Millionen"
+      },
+      "frequenzRang": 2348,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.sifir",
+      "lemma": "sıfır",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "0"
+      },
+      "formen": {
+        "akk": "sıfırı",
+        "dat": "sıfıra",
+        "lok": "sıfırda",
+        "abl": "sıfırdan"
+      },
+      "frequenzRang": 2301,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.mucadele",
+      "lemma": "mücadele",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "mücadeleler",
+        "akk": "mücadeleyi",
+        "dat": "mücadeleye",
+        "gen": "mücadelenin",
+        "ins": "mücadeleyle",
+        "poss.1sg": "mücadelem",
+        "poss.2sg": "mücadelen",
+        "poss.3sg": "mücadelesi",
+        "poss.1pl": "mücadelemiz",
+        "poss.2pl": "mücadeleniz",
+        "lok": "mücadelede",
+        "abl": "mücadeleden",
+        "poss.3pl": "mücadeleleri"
+      },
+      "frequenzRang": 482,
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "tr.b1.e13.s0001",
+      "text": "Sıcaklık arttıkça kuraklık da artıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0002",
+      "text": "Yağmur az yağdıkça topraklar daha çabuk kurur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0003",
+      "text": "Tasarruf ettikçe paramız da artar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0004",
+      "text": "Ambalajı azalttıkça atık da azalır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0005",
+      "text": "Ağaç sayısı azaldıkça hava daha sıcak oluyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0006",
+      "text": "Bahar geldikçe bahçedeki çiçekler açıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0007",
+      "text": "Gün ilerledikçe hava soğuyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0008",
+      "text": "Kuraklık sürdükçe bitkiler yavaş yavaş kurur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0009",
+      "text": "Ağaçları ne kadar çok korursak, hava o kadar temiz olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0010",
+      "text": "Kömür yaktıkça hava kirliliği de artar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0011",
+      "text": "Su tasarrufu arttıkça bahçeye daha az su vermemiz gerekir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0012",
+      "text": "Tüketim arttıkça doğal kaynaklar daha çabuk tükenir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0013",
+      "text": "Sıcaklık yükseldikçe ilkbahar daha erken geliyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0014",
+      "text": "Yağmur yağmadıkça tarladaki ürünler iyi yetişmez.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0015",
+      "text": "Güneş ne kadar çok ısıtırsa, toprak o kadar hızla kurur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0016",
+      "text": "Buzullar eridikçe deniz seviyesi yükselir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0017",
+      "text": "Plastik kullandıkça çöp miktarı büyür.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0018",
+      "text": "Eşyaları onardıkça daha az şey satın alırız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0019",
+      "text": "Hava kirlendikçe insanlar temiz havaya daha çok ihtiyaç duyar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0020",
+      "text": "Ne kadar çok tüketirsek, o kadar çok atık çıkar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0021",
+      "text": "Milyonlarca insan her gün plastik şişe kullanıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0022",
+      "text": "Sıfır atık yaşam, gereksiz şeyleri azaltmak demektir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0023",
+      "text": "Yenilenebilir enerji kaynakları her yıl biraz daha artıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0024",
+      "text": "Çevreci olmak için her gün küçük adımlar atabiliriz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0025",
+      "text": "Kıyılardaki kum ve kayalar rüzgârla ve dalgalarla yavaş yavaş değişir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0026",
+      "text": "Tarım alanları kurak yıllarda daha az ürün verir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0027",
+      "text": "Sera gazları atmosferde birikirse dünya daha da ısınır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0028",
+      "text": "Ormanlar oksijen verir ve toprağı korur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0029",
+      "text": "Baraj gölleri kuraklıkta suyunu hızla kaybedebilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0030",
+      "text": "Kutup bölgelerindeki buzullar hızla erimeye devam ediyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0031",
+      "text": "Fabrikalardan çıkan egzoz gazları havayı kirletiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0032",
+      "text": "Bu hafta okul bahçesine yeni fidanlar diktik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0033",
+      "text": "Her yıl birkaç milyon ağaç daha dikilmesi gerekiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0034",
+      "text": "Yağış azaldıkça göllerdeki su seviyesi de düşer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0035",
+      "text": "Kuraklık uzun sürerse bazı bitkiler ölür.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0036",
+      "text": "Trafik arttıkça hava kirliliği de artar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0037",
+      "text": "Güneş enerjisi kullandıkça faturalar düşüyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0038",
+      "text": "Okyanuslar ısındıkça deniz canlıları zor durumda kalır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0039",
+      "text": "Kuraklık arttıkça su fiyatları da yükselebilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0040",
+      "text": "Ormanlar azaldıkça iklim daha hızlı değişiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0041",
+      "text": "Hava ısındıkça kuzeydeki buzullar daha hızlı erir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0042",
+      "text": "Su kaynakları kirlendikçe temiz suya ulaşmak zorlaşır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0043",
+      "text": "Bazı yerlerde sel, bazı yerlerde kuraklık görülüyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0044",
+      "text": "Sera gazlarının etkisi her yıl daha da büyüyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0045",
+      "text": "Petrol ve kömür doğal kaynaklardır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0046",
+      "text": "Ağacın kökleri toprağı tutar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0047",
+      "text": "Gök gürültüsü ve yıldırım bazen yağmurla birlikte gelir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0048",
+      "text": "Bu arazi kurak olduğu için tarım yapılamıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0049",
+      "text": "Bu yıl su tasarrufu rekoru kırdık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0050",
+      "text": "Çevre bilinci her geçen gün artıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0051",
+      "text": "Hasat zamanı geldi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0052",
+      "text": "Ailemiz köyde küçük bir çiftlik işletiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0053",
+      "text": "Atıkları yeni ürünlere dönüştürmek mümkün.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0054",
+      "text": "Kuraklık tarımı çok etkiliyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0055",
+      "text": "Bu eski alışkanlıklardan kurtulmak zor olabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0056",
+      "text": "Kuvvetli rüzgâr esmeye başladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0057",
+      "text": "Küresel ısınma herkesi ilgilendiriyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0058",
+      "text": "Yağışlı günlerde bahçeye su vermek gerekmez.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0059",
+      "text": "Bahçenin ortasında kocaman bir ağaç var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0060",
+      "text": "Güneş bugün çok parlak.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0061",
+      "text": "Kimyasal maddeler toprağa ve suya zarar verebilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0062",
+      "text": "Egzoz gazları zehirli olabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0063",
+      "text": "Alternatif ulaşım için bisiklet iyi bir seçenek.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0064",
+      "text": "Bu bitki nadir görülür.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0065",
+      "text": "Şiddetli sıcaklar bazı bitkilere zarar veriyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0066",
+      "text": "Dayanıklı ürünler daha uzun süre kullanılır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0067",
+      "text": "Of, yine suyu kapatmayı unuttum!",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0068",
+      "text": "Bu sorun kısmen çözüldü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0069",
+      "text": "Kuraklıkla mücadele için birlikte çalışmalıyız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0070",
+      "text": "Her ay sayacı kontrol edersek faturadaki artışı daha erken görürüz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0071",
+      "text": "Okyanus akıntıları iklimi etkiler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0072",
+      "text": "Gezegenimizi korumak için her birimiz bir şey yapabiliriz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0073",
+      "text": "Atmosferdeki karbon miktarı arttıkça iklim değişimi hızlanır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0074",
+      "text": "Yenilenebilir enerji kullanmak hem tasarruf hem çevre için iyi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0075",
+      "text": "Elif bisikletle okula gidiyor, Can ise otobüse biniyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0076",
+      "text": "Ben ise her sabah kısa duş alıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0077",
+      "text": "Derya bahçede çalışıyor, Murat ise mutfakta yemek hazırlıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0078",
+      "text": "Yazın hava sıcak, kışın ise soğuk ve yağışlı olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0079",
+      "text": "Plastik çok yavaş bozulur, kâğıt ise birkaç ayda çözülür.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0080",
+      "text": "Yağmur toprağa su verir, güneş ise toprağı kurutur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0081",
+      "text": "Kışın bahçedeki çiçekler azalır, ilkbaharda ise bahçe yeniden canlanır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0082",
+      "text": "Şehir merkezinde hava kirli, köyde ise daha temiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0083",
+      "text": "Yağmur yağmadı, oysa haberde yağış bekleniyordu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0084",
+      "text": "Dün hava çok soğuktu, oysa bugün ılık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0085",
+      "text": "Dünya ısınıyor, oysa birçok insan bunun farkında değil.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0086",
+      "text": "Ağaç dikmek hava kirliliğini azaltır. Aksine, ağaçları kesersek hava daha çok kirlenir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0087",
+      "text": "Ben tasarruf yapmaya çalışıyorum, Elif ise hep unutuyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0088",
+      "text": "Komşumuz her gün arabasını yıkıyor, oysa bu su israfı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0089",
+      "text": "Çocuklar ışığı açık bırakıyor, annem ise her akşam kapatıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0090",
+      "text": "Tasarruf yapmalıyız, yoksa su biter.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0091",
+      "text": "Dışarı çıkalım, yoksa bütün gün evde sıkılacağız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0092",
+      "text": "Samīr sınıfta sessiz, Elif ise çok soru soruyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0093",
+      "text": "Öğretmen ders anlatıyor, öğrenciler ise dikkatle dinliyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0094",
+      "text": "Ben plastik şişeleri toplarım, kardeşim ise sadece kullanıp atıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0095",
+      "text": "Kimi insanlar bisikletle gider, kimi ise toplu taşımayı tercih eder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0096",
+      "text": "Sen arabayla gidiyorsun, ben ise yürüyerek okula gidiyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0097",
+      "text": "Bu odada ışık açık, diğer odalarda ise karanlık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0098",
+      "text": "Yazın mavi gökyüzü var, kışın ise bulutlar çoğalır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0099",
+      "text": "Eski kâğıtları yakmak yerine geri dönüştürmek daha iyidir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0100",
+      "text": "Doğal kaynaklar sınırlı, oysa insanların ihtiyaçları her yıl artıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0101",
+      "text": "Kaç kişi bisikletle gelir, kaç kişi ise otobüse biner?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0102",
+      "text": "Kimi günler güneşli, kimi günler ise yağmurlu geçiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0103",
+      "text": "Annem sabah erken kalkar, babam ise geç uyanır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0104",
+      "text": "Bu sene yaz sıcaktı, geçen sene ise daha serindi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0105",
+      "text": "Biz tarlada çalışıyoruz, komşular ise evde dinleniyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0106",
+      "text": "Ağaçlar gölge yapar, çiçekler ise güneşi sever.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0107",
+      "text": "Sabah hava serin, öğleden sonra ise çok sıcak.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0108",
+      "text": "Yeni öğrenciler sessiz, eski öğrenciler ise çok konuşkan.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0109",
+      "text": "Bu kitap kolay, oysa diğeri çok zor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0110",
+      "text": "Pazar günü dinleniyoruz, oysa cumartesi çok çalışıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0111",
+      "text": "Yağmur yağarsa park ıslanır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0112",
+      "text": "Hava açarsa dışarıda oynayabiliriz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0113",
+      "text": "Sıcaklık otuz dereceyi geçerse okul bahçesine çıkmayız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0114",
+      "text": "Su az olursa bitkiler yeterince büyüyemez.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0115",
+      "text": "Gelirsen birlikte bahçeyi sulayalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0116",
+      "text": "Okula yürürsen hem sağlıklı olursun hem de hava kirlenmez.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0117",
+      "text": "Plastik poşet kullanmazsak çöp miktarı azalmaz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0118",
+      "text": "Ağaç dikersek gölge olur ve sıcaklık düşer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0119",
+      "text": "Yarın yağmur yağarsa fidanları evde tutacağız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0120",
+      "text": "Bu yaz kurak olursa bahçeyi daha az sulayacağız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0121",
+      "text": "Enerjiyi tasarruf etmezsek faturalar artar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0122",
+      "text": "Pencereyi açık bırakırsan oda hızla soğur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0123",
+      "text": "Bisikletin varsa okula onunla gidebilirsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0124",
+      "text": "Hasta olursan hemen doktora git.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0125",
+      "text": "Hasta olmazsan hemen doktora git.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0126",
+      "text": "Hasta olursan hemen eve git.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0127",
+      "text": "Hava ılık olursa parkta piknik yapabiliriz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0128",
+      "text": "Ağaçlar büyürse gölgeleri serinlik verir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0129",
+      "text": "Kuru dal kırılırsa ağaç da zayıflar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0130",
+      "text": "Yağış yetersiz kalırsa, baraj seviyesi hızla düşer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0131",
+      "text": "Sen bu işte bana yardım edebilirsen çok sevinirim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0132",
+      "text": "Güneş paneli kullanırsan, elektrik faturası düşer.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0133",
+      "text": "Ormanlar korunursa, hayvanlar yaşam alanını kaybetmez.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0134",
+      "text": "Bahçede yağmur suyu toplarsak, sulamada su tasarrufu yapabiliriz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0135",
+      "text": "Kışın bu kadar kar yağarsa baraj gölleri biraz dolar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0136",
+      "text": "Fırsat olursa mahallede bir temizlik günü düzenleyelim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0137",
+      "text": "Sen de katılmak istersen, çevre kulübüne yazılabilirsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0138",
+      "text": "Atıklar ayrılmazsa, geri dönüşüm yapılamaz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0139",
+      "text": "Sıcak günler uzarsa bazı bitkiler erken kurur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0140",
+      "text": "Yağmur durursa biz de dışarı çıkabiliriz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0141",
+      "text": "Radyoyu açarsan hava durumunu duyabilirsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0142",
+      "text": "Trafik sıkışırsa bisikletle daha hızlı gidersin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0143",
+      "text": "Bu hafta ödevini bitirirsen parka gidebilirsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0144",
+      "text": "Okul bahçesine yeni bir fidan dikilirse herkes sevinir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0145",
+      "text": "Elektrik kesilirse mumla oturmak zorunda kalırız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0146",
+      "text": "Ağaçları budarsak daha çok meyve verirler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0147",
+      "text": "Hava çok sıcak olduğu için parka gittik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0148",
+      "text": "Su az olduğundan bahçeye her gün su veremiyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0149",
+      "text": "Pencereyi açmıyorum, çünkü dışarısı çok soğuk.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0150",
+      "text": "Ağaçlar kurudu, çünkü yağmur neredeyse hiç yağmadı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0151",
+      "text": "Kuraklık sürdüğü için çiftçiler tarlayı sulamakta zorlanıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0152",
+      "text": "Ağaçlar kesildiği için kuşların yuvası azaldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0153",
+      "text": "Yaz boyunca yağmur az yağdığından bahçedeki çiçekler soldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0154",
+      "text": "Enerji fiyatları arttığı için evde daha az ısıtıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0155",
+      "text": "Plastik atık çok olduğundan geri dönüşüm çok önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0156",
+      "text": "Kirlilik arttığı için bazı şehirlerde bisiklet yolları yapıldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0157",
+      "text": "Deniz suyu ısındığı için bazı balıklar başka yerlere gitti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0158",
+      "text": "Bu yıl yağışlar dengeli olduğundan ürün iyi oldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0159",
+      "text": "Komşular ağaç diktiler, dolayısıyla bahçemiz serinledi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0160",
+      "text": "Trafik azaldı, böylece hava biraz temizlendi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0161",
+      "text": "Enerji tasarrufu yaptık, böylece faturalar düştü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0162",
+      "text": "Yağmur yağmadı, bu yüzden bahçe kurudu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0163",
+      "text": "Herkes çevreyi korumalı, çünkü hepimiz aynı dünyada yaşıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0164",
+      "text": "Atıkları ayırıyoruz, çünkü geri dönüşüm doğayı korur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0165",
+      "text": "Çiftçiler daha az ilaç kullanıyor, böylece toprak daha temiz kalıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0166",
+      "text": "Ben akşamları ışığı kapatıyorum, çünkü enerji önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0167",
+      "text": "Yağmur yağmadığı için fidanları sulamak zorunda kaldık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0168",
+      "text": "Bu yüzden her yıl okulda bir ağaç dikme etkinliği düzenliyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0169",
+      "text": "Yağışlar azaldığı için baraj gölünde su seviyesi düştü.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0170",
+      "text": "Sıcak günler uzadığı için bazı bitkiler erken kurudu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0171",
+      "text": "Kuşlar yuvalarını yaparken dalları ve otları kullanır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0172",
+      "text": "Çocuklar çiçek yetiştirmek istedikleri için küçük bir bahçe yaptılar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0173",
+      "text": "Sera gazlarının artması dünyayı ısıtıyor, dolayısıyla iklim değişiyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0174",
+      "text": "Kısa duş alıyoruz, böylece su tasarrufu yapıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0175",
+      "text": "Hava kirliliği arttığı için doktor çocukların dışarıda spor yapmasını önerdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0176",
+      "text": "Yağmur suyu topladığımız için bahçeye daha az musluk suyu veriyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0177",
+      "text": "Bu hafta hava ılıktı, dolayısıyla çocuklar dışarıda oynadılar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0178",
+      "text": "Akşam olduğu için lambaları yaktık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0179",
+      "text": "Hasta olduğum için bugün okula gitmedim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0180",
+      "text": "Trafik yoğun olduğu için otobüs geç kaldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0181",
+      "text": "Kitabı kaybettiğim için ödevimi yapamadım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0182",
+      "text": "Sıcak olduğu için dondurma yedik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0183",
+      "text": "Kardeşim çok yorulduğu için erken uyudu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0184",
+      "text": "Komşumuz yeni bir bahçe yaptığından çiçekler çok güzel oldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0185",
+      "text": "Havalar soğuduğundan sıcak çorba içtik.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0186",
+      "text": "Bu ay elektrik faturası çok yüksek geldi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0187",
+      "text": "Evet, banyoda duş çok uzun sürüyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0188",
+      "text": "Peki, ne yapabiliriz?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0189",
+      "text": "Duşu kısaltalım, ışıkları da kapatalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0190",
+      "text": "Bu akşam sinemaya gidelim mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0191",
+      "text": "Komşumuz yeni bir araba almış.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0192",
+      "text": "Evde su tasarrufu",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0193",
+      "text": "Su değerlidir, ama çoğu zaman boşa akar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0194",
+      "text": "Evde en çok su banyoda ve mutfakta kullanılır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0195",
+      "text": "Kısa duş almak, uzun duştan daha az su harcar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0196",
+      "text": "Dişleri fırçalarken musluğu kapatmak da çok işe yarar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0197",
+      "text": "Bulaşıkları makinede yıkamak, elle yıkamaktan genellikle daha tasarruflu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0198",
+      "text": "Küçük alışkanlıklar, yıl sonunda büyük bir fark getirir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0199",
+      "text": "Bu yüzden her aile kendi evinde suyu dikkatle kullanmalıdır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0200",
+      "text": "Bulaşıkları elle yıkamak her zaman daha tasarruflu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0201",
+      "text": "Metinde okullarda su tasarrufu anlatılıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0202",
+      "text": "Metne göre evde su en çok nerede kullanılır?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0203",
+      "text": "Banyoda ve mutfakta.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0204",
+      "text": "Bahçede ve garajda.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0205",
+      "text": "Salonda ve balkonda.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0206",
+      "text": "Kuraklık sürdükçe, bahçedeki çiçekler yavaş yavaş solar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0207",
+      "text": "Enerji tasarrufu için ışıkları kapatalım ve kısa duş alalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0208",
+      "text": "Öğretmen 'Su tasarrufu yapın' diye hatırlattı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0209",
+      "text": "Annem 'Işıkları kapatın' diye seslendi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0210",
+      "text": "Su tasarrufu yapalım diye duş süremizi kısalttık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0211",
+      "text": "Bahçeye ağaç dikelim diye herkes birer fidan getirdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0212",
+      "text": "Ailece bisiklete binelim diye hafta sonu plan yaptık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0213",
+      "text": "Kardeşim 'Ben hallederim' diye odasına koştu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0214",
+      "text": "Bence her hafta bir kere bisikletle markete gidelim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0215",
+      "text": "Bu akşam ışıkları kapatıp birlikte oturalım mı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0216",
+      "text": "Atıkları ayırırsak geri dönüşüm kutusu daha çok işe yarar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0217",
+      "text": "Kağıtları iki yüzüne de yazalım, böylece ağaç daha az kesilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0218",
+      "text": "Alışverişe bez çanta götürmeyi önerebilirim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0219",
+      "text": "Hafta sonu okul bahçesine birlikte fidan dikmeye ne dersin?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0220",
+      "text": "Evde bir kova koyup duşta bekleyen suyu bahçede kullanabiliriz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0221",
+      "text": "Enerji tasarrufu yapan aile ayda daha az para öder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0222",
+      "text": "Ev bitkilerini sık sık değil, az ama düzenli sulayabilirsin.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0223",
+      "text": "Mutfak atıklarından kompost yaparsak toprak daha iyi olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0224",
+      "text": "Çalışma odasında gereksiz lambaları kapatmak iyi bir alışkanlıktır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0225",
+      "text": "Ailece tatilde su ve enerji tüketimine dikkat edebiliriz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0226",
+      "text": "Her ay elektrik sayacına bakmak tasarruf için iyi bir alışkanlık.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0227",
+      "text": "Çamaşırları dolu makinede yıkamak da su tasarrufu sağlar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0228",
+      "text": "Yazın balkonda çiçek yetiştirmek hem keyifli hem faydalı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0229",
+      "text": "Ailemizle her hafta sonu parka yürüyüşe çıkıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0230",
+      "text": "Çocuklar okulda ağaç dikme etkinliğine katıldılar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0231",
+      "text": "Parkta bir su projesi",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0232",
+      "text": "Yaz çok kurak geçiyordu ve parktaki genç ağaçlar kurumak üzereydi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0233",
+      "text": "Bir sabah sınıfımız biyoloji öğretmeni Lange Bey ile parka gitti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0234",
+      "text": "Öğrenciler genç ağaçları sulamak için kovalar getirmişti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0235",
+      "text": "Bugün fidanları sulayacağız, ama önce su miktarını ölçelim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0236",
+      "text": "Ben suyun miktarını ölçeceğim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0237",
+      "text": "Ben ise ağaçların dibine suyu koyacağım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0238",
+      "text": "Elif ile Samīr, her kovanın içindeki suyu dikkatle ölçtüler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0239",
+      "text": "İki kova su, kuru toprak için yetersizdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0240",
+      "text": "Sulamayı kısa tutalım, böylece su boşa gitmez.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0241",
+      "text": "Bence yağmur suyunu toplayıp bahçede kullanabiliriz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0242",
+      "text": "Harika bir fikir! Bu projeyi okul panosunda da tanıtalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0243",
+      "text": "Haftalar sonra genç ağaçların yaprakları yeniden canlandı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0244",
+      "text": "Gerçekten işe yaradı, demek ki her damla önemli.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0245",
+      "text": "Bu yüzden ben de her gün su tasarrufu yapmaya başladım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0246",
+      "text": "Projenin sonunda sınıf parka küçük bir broşür hazırladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0247",
+      "text": "Siz de evde suyu iyi kullanırsanız, bu iş çok daha büyük olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0248",
+      "text": "Öğrenciler parka neden kova getirmişti?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0249",
+      "text": "Genç ağaçları sulamak için.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0250",
+      "text": "Parkta piknik yapmak için.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0251",
+      "text": "Kuşları beslemek için.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0252",
+      "text": "Elif ile Samīr ne yaptı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0253",
+      "text": "Her kovadaki suyu ölçtüler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0254",
+      "text": "Ağaçların dallarını kestiler.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0255",
+      "text": "Parkta futbol oynadılar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0256",
+      "text": "Haftalar sonra ağaçlara ne oldu?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0257",
+      "text": "Yaprakları yeniden canlandı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0258",
+      "text": "Bütün ağaçlar tamamen kurudu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0259",
+      "text": "Park bir süre kapatıldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0260",
+      "text": "Projenin sonunda sınıf ne hazırladı?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0261",
+      "text": "Küçük bir broşür hazırladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0262",
+      "text": "Büyük bir heykel yaptı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0263",
+      "text": "Yeni bir oyun buldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0264",
+      "text": "Parktaki ağaçlar için bir proje",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0265",
+      "text": "Sınıf 6B, geçen yaz parktaki genç ağaçlar için bir proje başlattı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0266",
+      "text": "Öğrenciler her hafta birlikte parka gidip ağaçları suladılar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0267",
+      "text": "Biyoloji öğretmeni onlara su miktarını ölçmeyi öğretti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0268",
+      "text": "Proje sonunda ağaçların çoğu yeniden canlandı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0269",
+      "text": "Ayrıca öğrenciler su tasarrufu hakkında bir broşür hazırladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0270",
+      "text": "Bu proje, küçük adımların büyük bir fark yaratabileceğini gösterdi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0271",
+      "text": "Proje geçen kış başladı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0272",
+      "text": "Öğrenciler su miktarını ölçmeyi öğrendi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0273",
+      "text": "Projede bir kuş yuvası da yapıldı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0274",
+      "text": "Metne göre proje sonunda ne oldu?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0275",
+      "text": "Ağaçların çoğu yeniden canlandı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0276",
+      "text": "Bütün ağaçlar kesildi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0277",
+      "text": "Park yeni bir otopark oldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0278",
+      "text": "Samīr, bu hafta suyu ne kadar kullandık?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0279",
+      "text": "Ben saydım, ama tam emin değilim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0280",
+      "text": "Önemli değil, yarın tekrar ölçeriz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0281",
+      "text": "Tamam, ben de evde sayaca bakacağım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0282",
+      "text": "Bu sınıfta kimse su ölçmedi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0283",
+      "text": "Ben bugün okula bisikletle gelmedim.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0284",
+      "text": "Okulumuzda güneş panelleri var, bu yüzden elektrik tasarrufu yapıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0285",
+      "text": "Kapı açık kalırsa, odadaki ısı hemen dışarı kaçar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0286",
+      "text": "Kendi çantanı getirirsen, plastik poşete ihtiyacın olmaz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0287",
+      "text": "Bahar mevsiminde ağaçlar yeniden yaprak açar.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0288",
+      "text": "Hangi ağaçların daha çok su istediğini biliyor musun?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0289",
+      "text": "Hava ısınırken bahçedeki toprağın nemi azalır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0290",
+      "text": "Yağmur suyunu toplamak hem para hem su kazandırır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0291",
+      "text": "Bu yıl okulda yeni bir çevre kulübü kuruldu.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0292",
+      "text": "Kulübümüzde her hafta geri dönüşüm üzerine konuşuyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0293",
+      "text": "Öğretmen, enerjiyi nasıl koruyabileceğimizi anlattı.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0294",
+      "text": "Hava kirliliğini azaltmak için toplu taşımayı tercih ediyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0295",
+      "text": "Çevreyi korumak herkesin ortak sorumluluğudur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0296",
+      "text": "Bu proje bize doğayı daha iyi anlamayı öğretti.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0297",
+      "text": "Doğa bize sabır öğretir, ama biz onu çabuk unutuyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0298",
+      "text": "Yaz aylarında kuraklık çok zarar verebilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0299",
+      "text": "Sonbaharda yaprakları dökülen ağaçlar kışa hazırlanır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0300",
+      "text": "Her sabah pencereyi açıp temiz hava alıyorum.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0301",
+      "text": "Çöller büyüdükçe tarım alanları azalıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0302",
+      "text": "Gezegenimizi korumak için her birimiz küçük bir adım atabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0303",
+      "text": "Kağıt tüketimini azaltmak için kağıtları iki yüzüne yazıyoruz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0304",
+      "text": "Bahçedeki yabani otları elle temizlemek bazen yorucu olabilir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0305",
+      "text": "Çöp kutusunu doldurmadan önce atıkları ayırmak akıllıca olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0306",
+      "text": "Eskiyen eşyaları tamir etmek para ve doğa için iyidir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0307",
+      "text": "Sabah erken kalkıp bahçeyi sulamak serin havada daha iyidir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0308",
+      "text": "Okul panosu için bir bilgi afişi yazın. Afişte çöplerin nasıl ayrılacağını ve neden önemli olduğunu anlatın.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0309",
+      "text": "Okulumuzda çöpler dört kutuya ayrılıyor. Kağıt ve karton mavi kutuya atılır. Cam şişeleri yeşil kutuya, plastik ve metal ambalajları sarı kutuya koyuyoruz. Organik atıklar ise kahverengi kutuya gider. Böylece geri dönüşüm kolaylaşır.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0310",
+      "text": "Her sınıf kendi kutusunu düzenli boşaltmalı. Kutular dolunca sorumlu öğrenci onları geri dönüşüm alanına götürür. Önce boş şişeleri ve kağıtları ayırmak çok işe yarar, çünkü temiz atık daha kolay dönüşür. Bu küçük alışkanlık okulumuzun çevreye verdiği zararı azaltır. Böylece okulumuz tasarruf eder.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0311",
+      "text": "Yarın hava çok sıcak olacakmış, değil mi?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0312",
+      "text": "Evet, bu yüzden parka gitmeyelim, sıcakta yorulursun.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0313",
+      "text": "Peki, akşam serin olunca gidebilir miyiz?",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0314",
+      "text": "Tabii, akşam olunca birlikte yürüyüşe çıkalım.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0315",
+      "text": "Kapıyı açık bırakma, hava çok soğuk.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0316",
+      "text": "Yarın okulda bir sınav var.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0317",
+      "text": "Yağmur azsa, bahçedeki çiçekleri akşamları sulamak daha iyi olur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0318",
+      "text": "Yarın birlikte fidan dikeriz ve bahçeyi sulamayı unutmayız.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0319",
+      "text": "Bisikletle çalışmaya gitmek sağlıklı ve çevre dostudur.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0320",
+      "text": "Yaz tatilinde köye gittik ve orada büyük bir bahçe gördük.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0321",
+      "text": "Hepimiz atıkları ayırmayı öğrenmeliyiz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0322",
+      "text": "Milyonlarca insan su kaynaklarını korumak için çalışıyor.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0323",
+      "text": "Bu yıl okulumuzda çevre haftası düzenlendi.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0324",
+      "text": "Hep birlikte çalışırsak büyük sonuçlar elde edebiliriz.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.b1.e13.s0325",
+      "text": "Doğayı korumak bir gün değil, her gün yapılması gereken bir iştir.",
+      "quelle": "ki:lernapp-inhalte/b1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "tr.b1.e13.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann beschreiben, wie sich etwas Schritt für Schritt verändert.",
+        "tr": "Bir şeyin adım adım nasıl değiştiğini anlatabilirim.",
+        "ar": "أستطيع أن أصف كيف يتغير شيء خطوة بخطوة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e13.l01.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e13.sicaklik",
+          "ablenker": ["tr.b1.e13.tasarruf", "tr.b1.e13.kuraklik"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e13.kurumak",
+          "ablenker": ["tr.b1.e13.sogumak", "tr.b1.e13.yetismek"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a04",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e13.kurak", "tr.b1.e13.ilik", "tr.b1.e13.yagisli", "tr.b1.e13.kocaman"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a05",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0001",
+          "wort": 1,
+          "ablenker": ["geldikçe", "azaldıkça"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a06",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0003",
+          "alternativen": ["Paramız da artar, tasarruf ettikçe."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0004",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0005",
+          "nach": "ziel",
+          "alternativen": ["Hava daha sıcak oluyor, ağaç sayısı azaldıkça."],
+          "ablenker": ["yağmur", "kardeşim"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a09",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0006",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a10",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0007",
+          "nach": "ziel",
+          "alternativen": ["Gün ilerledikçe hava daha da soğuyor."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a11",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0008",
+          "alternativen": ["Bitkiler kuraklık sürdükçe yavaş yavaş kurur."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.b1.e13.s0009",
+          "ablenker": ["tr.b1.e13.s0010", "tr.b1.e13.s0013"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a13",
+          "typ": "sprechen",
+          "satz": "tr.b1.e13.s0206"
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a14",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0014",
+          "wort": 1,
+          "ablenker": ["yağdıkça", "yağmıştı"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l01.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e13.tuketim",
+          "ablenker": ["tr.b1.e13.israf", "tr.b1.e13.kiyi"]
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e13.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann zwei Personen oder Dinge gegenüberstellen.",
+        "tr": "İki kişiyi ya da iki şeyi karşılaştırabilirim.",
+        "ar": "أستطيع أن أقارن بين شخصين أو شيئين."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e13.l02.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e13.oysa",
+          "ablenker": ["tr.b1.e13.aksine", "tr.b1.e13.boylece"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e13.aksine",
+          "ablenker": ["tr.b1.e13.kismen", "tr.b1.e13.hizla"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a04",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e13.oysa", "tr.b1.e13.hizla", "tr.b1.e13.kismen", "tr.b1.e13.milyonlarca"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0075",
+          "nach": "ziel",
+          "alternativen": ["Can ise otobüse biniyor, Elif bisikletle okula gidiyor."],
+          "ablenker": ["yürüyor", "annesi"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0078",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a07",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0076",
+          "alternativen": ["Her sabah ben ise kısa duş alıyorum."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a08",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0080",
+          "wort": 5,
+          "ablenker": ["değil", "yoksa"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a09",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.b1.e13.s0077"
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a10",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0084",
+          "nach": "ziel",
+          "alternativen": ["Bugün ılık, oysa dün hava çok soğuktu."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0087",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a12",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0093",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a13",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0091",
+          "wort": 2,
+          "ablenker": ["değil", "oysa"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a14",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0092",
+          "alternativen": ["Elif ise çok soru soruyor, Samīr sınıfta sessiz."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l02.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e13.dolayisiyla",
+          "ablenker": ["tr.b1.e13.oysa", "tr.b1.e13.aksine"]
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e13.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Bedingungen nennen und sagen, was dann passiert.",
+        "tr": "Koşulları söyleyebilir ve o zaman ne olacağını anlatabilirim.",
+        "ar": "أستطيع أن أذكر الشروط وأقول ماذا يحدث حينئذ."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e13.l03.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e13.yagis",
+          "ablenker": ["tr.b1.e13.kuraklik", "tr.b1.e13.bahar"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e13.baraj",
+          "ablenker": ["tr.b1.e13.fidan", "tr.b1.e13.kok"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a04",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e13.panel", "tr.b1.e13.petrol", "tr.b1.e13.komur", "tr.b1.e13.rekor"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0111",
+          "nach": "ziel",
+          "alternativen": ["Park ıslanır, yağmur yağarsa."],
+          "ablenker": ["güneşli", "kışın"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0115",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a07",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0116",
+          "wort": 1,
+          "ablenker": ["yürümezsen", "yürüdün"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a08",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0122",
+          "wort": 2,
+          "ablenker": ["bırakmazsan", "kapatırsan"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a09",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0119",
+          "alternativen": ["Yağmur yağarsa yarın fidanları evde tutacağız."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a10",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0120",
+          "nach": "ziel",
+          "alternativen": ["Bu yaz kuraksa bahçeyi daha az sulayacağız."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a11",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0127",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.b1.e13.s0124",
+          "ablenker": ["tr.b1.e13.s0125", "tr.b1.e13.s0126"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0129",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a14",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0130",
+          "alternativen": ["Baraj seviyesi hızla düşer, yağış yetersiz kalırsa."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l03.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e13.gereksiz",
+          "ablenker": ["tr.b1.e13.dayanikli", "tr.b1.e13.nadir"]
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e13.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Gründe angeben und Folgen erklären.",
+        "tr": "Nedenleri belirtebilir ve sonuçları açıklayabilirim.",
+        "ar": "أستطيع أن أذكر الأسباب وأشرح النتائج."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e13.l04.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a02",
+          "typ": "formen",
+          "lemma": "tr.b1.e13.kurumak",
+          "zeilen": ["ben", "sen", "o"],
+          "spalten": ["Geçmiş (-dı)", "Gelecek (-acak)"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["kurudum"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["kuruyacağım"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["kurudun"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["kuruyacaksın"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["kurudu"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["kuruyacak"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e13.cevreci",
+          "ablenker": ["tr.b1.e13.zehirli", "tr.b1.e13.kimyasal"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a04",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0149",
+          "wort": 2,
+          "ablenker": ["yoksa", "böylece"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a05",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0147",
+          "alternativen": ["Parka gittik, hava çok sıcak olduğu için."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0153",
+          "nach": "ziel",
+          "alternativen": ["Bahçedeki çiçekler soldu, yaz boyunca yağmur az yağdığından."],
+          "ablenker": ["tasarruf", "kışın"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0156",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a08",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0158",
+          "nach": "ziel",
+          "alternativen": ["Bu yıl yağış dengeli olduğundan ürün iyi oldu."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a09",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0159",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.b1.e13.s0160"
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a11",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0163",
+          "alternativen": ["Hepimiz aynı dünyada yaşıyoruz, çünkü herkes çevreyi korumalı."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a12",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0165",
+          "wort": 5,
+          "ablenker": ["yoksa", "çabucak"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a13",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e13.atik", "tr.b1.e13.cam", "tr.b1.e13.karton", "tr.b1.e13.plastik"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e13.esmek",
+          "ablenker": ["tr.b1.e13.yukselmek", "tr.b1.e13.olmek"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l04.a15",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0166",
+          "wort": 4,
+          "ablenker": ["yoksa", "böylece"]
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e13.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Vorschläge machen und sagen, warum ich etwas tue.",
+        "tr": "Öneriler sunabilirim ve neden bir şey yaptığımı söyleyebilirim.",
+        "ar": "أستطيع أن أقدّم اقتراحات وأقول لماذا أفعل شيئًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e13.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e13.s0186"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e13.s0187"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e13.s0188"
+            }
+          ],
+          "antwort": "tr.b1.e13.s0189",
+          "ablenker": ["tr.b1.e13.s0190", "tr.b1.e13.s0191"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a03",
+          "typ": "lesen_fragen",
+          "titel": "tr.b1.e13.s0192",
+          "absaetze": [
+            "tr.b1.e13.s0193",
+            "tr.b1.e13.s0194",
+            "tr.b1.e13.s0195",
+            "tr.b1.e13.s0196",
+            "tr.b1.e13.s0197",
+            "tr.b1.e13.s0198",
+            "tr.b1.e13.s0199"
+          ],
+          "glossen": ["tr.b1.e13.tasarruf", "tr.b1.e13.israf"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e13.s0200",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e13.s0195",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e13.s0201",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e13.s0202",
+              "antwort": "tr.b1.e13.s0203",
+              "ablenker": ["tr.b1.e13.s0204", "tr.b1.e13.s0205"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a04",
+          "typ": "sprechen",
+          "satz": "tr.b1.e13.s0207"
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e13.israf",
+          "ablenker": ["tr.b1.e13.tasarruf", "tr.b1.e13.tuketim"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a06",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0210",
+          "alternativen": ["Duş süremizi su tasarrufu yapalım diye kısalttık."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a07",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0208",
+          "wort": 4,
+          "ablenker": ["için", "yoksa"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0209",
+          "nach": "ziel",
+          "alternativen": ["Annem 'Işıkları kapatın' diye yüksek sesle seslendi."],
+          "ablenker": ["sessizce", "dün"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0213",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a10",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0218",
+          "nach": "ziel",
+          "alternativen": ["Alışverişe giderken bez çanta götürmeyi önerebilirim."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a11",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0217",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a12",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0216",
+          "wort": 1,
+          "ablenker": ["ayırmazsak", "ayırırsın"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.b1.e13.s0219",
+          "ablenker": ["tr.b1.e13.s0214", "tr.b1.e13.s0215"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a14",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e13.tarim", "tr.b1.e13.ciftlik", "tr.b1.e13.hasat", "tr.b1.e13.arazi"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l05.a15",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0212",
+          "alternativen": ["Hafta sonu plan yaptık, ailece bisiklete binelim diye."]
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e13.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann einer Geschichte über ein Projekt folgen und Fragen dazu beantworten.",
+        "tr": "Bir proje hakkındaki hikâyeyi takip edebilir ve sorulara cevap verebilirim.",
+        "ar": "أستطيع أن أتابع قصة عن مشروع وأجيب عن أسئلة عنها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e13.l06.a01",
+          "typ": "geschichte",
+          "titel": "tr.b1.e13.s0231",
+          "zeilen": [
+            {
+              "satz": "tr.b1.e13.s0232"
+            },
+            {
+              "satz": "tr.b1.e13.s0233"
+            },
+            {
+              "satz": "tr.b1.e13.s0234"
+            },
+            {
+              "sprecher": "c",
+              "satz": "tr.b1.e13.s0235"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e13.s0236"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e13.s0237"
+            },
+            {
+              "satz": "tr.b1.e13.s0238"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e13.s0239"
+            },
+            {
+              "sprecher": "c",
+              "satz": "tr.b1.e13.s0240"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e13.s0241"
+            },
+            {
+              "sprecher": "c",
+              "satz": "tr.b1.e13.s0242"
+            },
+            {
+              "satz": "tr.b1.e13.s0243"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e13.s0244"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e13.s0245"
+            },
+            {
+              "satz": "tr.b1.e13.s0246"
+            },
+            {
+              "sprecher": "c",
+              "satz": "tr.b1.e13.s0247"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "tr.b1.e13.s0248",
+              "antwort": "tr.b1.e13.s0249",
+              "ablenker": ["tr.b1.e13.s0250", "tr.b1.e13.s0251"]
+            },
+            {
+              "nach": 6,
+              "frage": "tr.b1.e13.s0252",
+              "antwort": "tr.b1.e13.s0253",
+              "ablenker": ["tr.b1.e13.s0254", "tr.b1.e13.s0255"]
+            },
+            {
+              "nach": 11,
+              "frage": "tr.b1.e13.s0256",
+              "antwort": "tr.b1.e13.s0257",
+              "ablenker": ["tr.b1.e13.s0258", "tr.b1.e13.s0259"]
+            },
+            {
+              "nach": 14,
+              "frage": "tr.b1.e13.s0260",
+              "antwort": "tr.b1.e13.s0261",
+              "ablenker": ["tr.b1.e13.s0262", "tr.b1.e13.s0263"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e13.l06.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a2.e04.sulamak",
+          "ablenker": ["tr.a2.e10.dikmek", "tr.a2.e06.isinmak"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l06.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e13.kurumak",
+          "ablenker": ["tr.a2.e09.buyumek", "tr.b1.e13.sogumak"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l06.a04",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e13.kocaman", "tr.b1.e13.parlak", "tr.b1.e13.dayanikli", "tr.b1.e13.nadir"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l06.a05",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0237",
+          "wort": 5,
+          "ablenker": ["koyacaksın", "koydu"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l06.a06",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0240",
+          "wort": 6,
+          "ablenker": ["gitmeli", "gitti"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l06.a07",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0243",
+          "alternativen": ["Genç ağaçların yaprakları haftalar sonra yeniden canlandı."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l06.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0245",
+          "nach": "ziel",
+          "alternativen": ["Bu yüzden her gün ben de su tasarrufu yapmaya başladım."],
+          "ablenker": ["dün", "ağaçlar"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l06.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0246",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l06.a10",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0238",
+          "nach": "ziel",
+          "alternativen": ["Elif ve Samīr her kovadaki suyu dikkatle ölçtüler."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l06.a11",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0247",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l06.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.b1.e13.s0235",
+          "ablenker": ["tr.b1.e13.s0239", "tr.b1.e13.s0243"]
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e13.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Wendungen der Einheit.",
+        "tr": "Ünitedeki kelimeleri ve kalıpları tekrar ederim.",
+        "ar": "أكرّر كلمات الوحدة وتعبيراتها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e13.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e13.iklim",
+          "ablenker": ["tr.b1.e13.atmosfer", "tr.b1.e13.gezegen"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e13.mucadele",
+          "ablenker": ["tr.b1.e12.yardimlasmak", "tr.b1.e13.bilinc"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a03",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e13.oksijen", "tr.b1.e13.sera", "tr.b1.e13.okyanus", "tr.b1.e13.kutup"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a04",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0028",
+          "wort": 2,
+          "ablenker": ["vermez", "tüketir"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a05",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0015",
+          "wort": 4,
+          "ablenker": ["ısıtmazsa", "ısındı"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a06",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0022",
+          "alternativen": ["Gereksiz şeyleri azaltmak demektir, sıfır atık yaşam."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0024",
+          "nach": "ziel",
+          "alternativen": ["Her gün küçük adımlar atarak çevreci olabiliriz."],
+          "ablenker": ["kömür", "petrol"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0019",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a09",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0026",
+          "nach": "ziel",
+          "alternativen": ["Kurak yıllarda tarım alanları daha az ürün verir."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a10",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0284",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e13.s0278"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e13.s0279"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e13.s0280"
+            }
+          ],
+          "antwort": "tr.b1.e13.s0281",
+          "ablenker": ["tr.b1.e13.s0282", "tr.b1.e13.s0283"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a12",
+          "typ": "lesen_fragen",
+          "titel": "tr.b1.e13.s0264",
+          "absaetze": ["tr.b1.e13.s0265", "tr.b1.e13.s0266", "tr.b1.e13.s0267", "tr.b1.e13.s0268", "tr.b1.e13.s0269", "tr.b1.e13.s0270"],
+          "glossen": ["tr.b1.e13.tasarruf", "tr.b1.e12.gonullu"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e13.s0271",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e13.s0272",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.b1.e13.s0273",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.b1.e13.s0274",
+              "antwort": "tr.b1.e13.s0275",
+              "ablenker": ["tr.b1.e13.s0276", "tr.b1.e13.s0277"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a13",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0285",
+          "alternativen": ["Odadaki ısı hemen dışarı kaçar, kapı açık kalırsa."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a14",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0005",
+          "wort": 5,
+          "ablenker": ["soğuk"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e13.atik",
+          "ablenker": ["tr.b1.e13.cam", "tr.b1.e13.metal"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0286",
+          "nach": "ziel",
+          "alternativen": ["Plastik poşete ihtiyacın olmaz, kendi çantanı getirirsen."],
+          "ablenker": ["kömür", "dün"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l07.a17",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.b1.e13.s0287"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.b1.e13.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann ein kurzes Hinweisplakat schreiben und einen Sachtext verstehen.",
+        "tr": "Kısa bir bilgi afişi yazabilir ve bir bilgi metnini anlayabilirim.",
+        "ar": "أستطيع أن أكتب لافتة إرشادية قصيرة وأفهم نصًا معرفيًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.b1.e13.l08.a01",
+          "typ": "schreiben",
+          "aufgabe": "tr.b1.e13.s0308",
+          "woerter": {
+            "min": 60,
+            "max": 110
+          },
+          "pflichtwoerter": ["geri dönüşüm", "tasarruf"],
+          "muster": ["tr.b1.e13.s0309", "tr.b1.e13.s0310"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e13.s0311"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.b1.e13.s0312"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.b1.e13.s0313"
+            }
+          ],
+          "antwort": "tr.b1.e13.s0314",
+          "ablenker": ["tr.b1.e13.s0315", "tr.b1.e13.s0316"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a03",
+          "typ": "sprechen",
+          "satz": "tr.b1.e13.s0317"
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a04",
+          "typ": "formen",
+          "lemma": "tr.b1.e13.sogumak",
+          "zeilen": ["ben", "sen", "o"],
+          "spalten": ["Geçmiş (-dı)", "Şimdiki (-iyor)"],
+          "zellen": [
+            {
+              "zeile": 0,
+              "spalte": 0,
+              "loesungen": ["soğudum"],
+              "vorgabe": true
+            },
+            {
+              "zeile": 0,
+              "spalte": 1,
+              "loesungen": ["soğuyorum"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 0,
+              "loesungen": ["soğudun"]
+            },
+            {
+              "zeile": 1,
+              "spalte": 1,
+              "loesungen": ["soğuyorsun"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 0,
+              "loesungen": ["soğudu"]
+            },
+            {
+              "zeile": 2,
+              "spalte": 1,
+              "loesungen": ["soğuyor"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.b1.e13.yenilenebilir",
+          "ablenker": ["tr.b1.e13.dayanikli", "tr.b1.e13.alternatif"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.b1.e13.kirletmek",
+          "ablenker": ["tr.b1.e13.donusturmek", "tr.b1.e13.esmek"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a07",
+          "typ": "paare",
+          "lemmata": ["tr.b1.e13.bilinc", "tr.b1.e13.mucadele", "tr.b1.e13.gezegen", "tr.b1.e13.hasat"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a08",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0322",
+          "wort": 0,
+          "ablenker": ["Birkaç", "Tek"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a09",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0195",
+          "wort": 6,
+          "ablenker": ["çok", "fazla"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a10",
+          "typ": "satzbau",
+          "ziel": "tr.b1.e13.s0318"
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a11",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0319",
+          "nach": "ziel",
+          "alternativen": ["Çalışmaya bisikletle gitmek sağlıklı ve çevre dostudur."]
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a12",
+          "typ": "frei",
+          "ziel": "tr.b1.e13.s0320",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.b1.e13.s0321",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.b1.e13.kuresel",
+          "ablenker": ["tr.b1.e13.kocaman", "tr.b1.e13.nadir"]
+        },
+        {
+          "schluessel": "tr.b1.e13.l08.a15",
+          "typ": "luecke",
+          "ziel": "tr.b1.e13.s0199",
+          "wort": 4,
+          "ablenker": ["bizim", "onların"]
+        }
+      ]
+    }
+  ]
+}

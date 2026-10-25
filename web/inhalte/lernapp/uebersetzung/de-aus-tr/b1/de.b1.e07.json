@@ -530,7 +530,7 @@
       "bezug": "de.b1.e07.s0002",
       "text": "Veli toplantısı salı günü saat 19'da okulda.",
       "alternativen": [
-        "Veli toplantısı salı akşamı saat 19.00'da okulda yapılıyor.",
+        "Veli toplantısı salı günü saat 19.00'da okulda yapılıyor.",
         "Veli toplantısı salı günü saat 19'da okulda yapılacak.",
         "Salı günü saat 19'da okulda veli toplantısı var."
       ],
@@ -542,7 +542,7 @@
       "text": "Son veli toplantısı bitmek bilmedi.",
       "alternativen": [
         "Son veli toplantısı çok uzun sürdü.",
-        "Geçen veli toplantısı saatlerce sürdü.",
+        "Geçen veli toplantısı bitmek bilmedi.",
         "Son veli toplantısı bir türlü bitmedi."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -550,7 +550,7 @@
     },
     {
       "bezug": "de.b1.e07.s0004",
-      "text": "Veli mektubunu okudun mu?",
+      "text": "Veli mektubunu şimdiden okudun mu?",
       "alternativen": [
         "Velilere gönderilen mektubu okudun mu?",
         "Veli mektubunu okudun mu artık?",
@@ -661,14 +661,14 @@
     {
       "bezug": "de.b1.e07.s0014",
       "text": "Almanya'da en iyi not 1'dir.",
-      "alternativen": ["Almanya'da 1 en iyi nottur.", "Almanya'da en yüksek not 1.", "Almanya'da en iyi not 1."],
+      "alternativen": ["Almanya'da 1 en iyi nottur.", "Almanya'da notların en iyisi 1'dir.", "Almanya'da en iyi not 1."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "de.b1.e07.s0015",
       "text": "6 en kötü nottur.",
-      "alternativen": ["En kötü not 6'dır.", "6 en düşük not.", "En kötü not 6."],
+      "alternativen": ["En kötü not 6'dır.", "Notların en kötüsü 6'dır.", "En kötü not 6."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -752,7 +752,7 @@
     {
       "bezug": "de.b1.e07.s0023",
       "text": "Sınıfın ortalaması 3 oldu.",
-      "alternativen": ["Sınıf ortalama 3 aldı.", "Sınıfın not ortalaması 3.", "Ortalamada sınıf 3 aldı."],
+      "alternativen": ["Sınıf ortalamada 3 aldı.", "Sınıfın not ortalaması 3.", "Ortalamada sınıf 3 aldı."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -838,8 +838,8 @@
       "text": "Ranā veli toplantısına hazırlanmak için sorularını yazıyor.",
       "alternativen": [
         "Ranā, veli toplantısına hazırlık olarak sorularını not ediyor.",
-        "Veli toplantısına hazırlanırken Ranā sorularını yazıyor.",
-        "Ranā veli toplantısına hazırlık için sorularını bir kenara yazıyor."
+        "Ranā sorularını veli toplantısına hazırlanmak üzere yazıyor.",
+        "Ranā, veli toplantısına hazırlık için sorularını bir kâğıda yazıyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -848,7 +848,7 @@
       "bezug": "de.b1.e07.s0032",
       "text": "Dikkatiniz için çok teşekkürler!",
       "alternativen": [
-        "İlginiz için çok teşekkür ederim!",
+        "Dikkatiniz için çok teşekkür ederim!",
         "Dikkatiniz için çok teşekkür ederiz!",
         "Beni dinlediğiniz için çok teşekkürler!"
       ],
@@ -876,7 +876,7 @@
     {
       "bezug": "de.b1.e07.s0035",
       "text": "Veli toplantısına davet",
-      "alternativen": ["Veli toplantısı daveti", "Veli toplantısına davetiye", "Veli toplantısına çağrı"],
+      "alternativen": ["Veli toplantısı daveti", "Veli toplantısına davetiye", "Veli toplantısı davetnamesi"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1072,7 +1072,7 @@
     },
     {
       "bezug": "de.b1.e07.s0054",
-      "text": "Almancadaki bir sonraki yazılıyı 20 Kasım'da olacağız.",
+      "text": "Almancadaki bir sonraki yazılıyı 20 Kasım'da yazacağız.",
       "alternativen": [
         "Sonraki Almanca yazılısını 20 Kasım'da yapacağız.",
         "Bir sonraki Almanca yazılı sınavı 20 Kasım'da.",
@@ -1160,7 +1160,7 @@
       "alternativen": [
         "Okul, ikinci dil olarak Almanca öğrenen çocuklara destek veriyor.",
         "Okul, Almancayı ikinci dil olarak öğrenen çocukları destekler.",
-        "Okul, Almancayı ikinci dili olarak öğrenen çocukları destekliyor."
+        "Okul, Almancayı ikinci dil olarak öğrenen çocuklara yardım ediyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1280,9 +1280,9 @@
     },
     {
       "bezug": "de.b1.e07.s0074",
-      "text": "Yazan tembel değil, sadece belirli bir plana ihtiyacı var.",
+      "text": "Yazan tembel değil, sadece sabit bir plana ihtiyacı var.",
       "alternativen": [
-        "Yazan tembel değil, yalnızca sabit bir plana ihtiyacı var.",
+        "Yazan tembel değil, yalnızca düzenli bir plana ihtiyacı var.",
         "Yazan tembel değil, ona sadece düzenli bir plan lazım.",
         "Yazan tembel değil; sadece sabit bir plan gerekiyor."
       ],
@@ -1302,7 +1302,7 @@
     },
     {
       "bezug": "de.b1.e07.s0076",
-      "text": "Laylā daha bir yıldır burada olmasına rağmen iyi Almanca konuşuyor.",
+      "text": "Laylā daha bir yıldır burada olmasına rağmen şimdiden iyi Almanca konuşuyor.",
       "alternativen": [
         "Laylā bir yıldır burada olduğu hâlde şimdiden iyi Almanca konuşuyor.",
         "Laylā sadece bir yıldır burada olmasına rağmen Almancayı iyi konuşuyor.",
@@ -1422,7 +1422,7 @@
       "text": "Laylā her zaman kibar ve güler yüzlü davranıyor.",
       "alternativen": [
         "Laylā her zaman nazik ve dostça davranır.",
-        "Laylā hep kibar ve sevimli davranıyor.",
+        "Laylā hep kibar ve sevecen davranıyor.",
         "Laylā her zaman nazik ve güler yüzlü davranıyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -1485,7 +1485,7 @@
     {
       "bezug": "de.b1.e07.s0094",
       "text": "Evde ne yapabiliriz?",
-      "alternativen": ["Biz evde ne yapabiliriz?", "Evde neler yapabiliriz?", "Evde ne yapabiliriz biz?"],
+      "alternativen": ["Biz evde ne yapabiliriz?", "Evde neler yapabiliriz?", "Evde biz ne yapabiliriz?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1768,7 +1768,7 @@
       "alternativen": [
         "Söz veriyorum, dikkatimi daha çok toplayacağım.",
         "Sana söz, daha fazla konsantre olacağım.",
-        "Sana söz veriyorum, kendimi daha çok vereceğim."
+        "Sana söz veriyorum, daha çok odaklanacağım."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -1826,7 +1826,7 @@
     },
     {
       "bezug": "de.b1.e07.s0128",
-      "text": "İlkokul bir tavsiye verir, ama kararı anne babalar kendisi verir.",
+      "text": "İlkokul bir tavsiye verir, ama kararı anne babalar kendileri verir.",
       "alternativen": [
         "İlkokul bir öneride bulunur ama anne babalar kendileri karar verir.",
         "İlkokul bir tavsiyede bulunur, fakat kararı veliler kendileri verir.",
@@ -1850,7 +1850,7 @@
       "bezug": "de.b1.e07.s0130",
       "text": "Realschule onuncu sınıfa kadar sürer ve orta düzey diploma ile biter.",
       "alternativen": [
-        "Realschule onuncu sınıfa kadar devam eder ve ortaokul diplomasıyla sona erer.",
+        "Realschule onuncu sınıfa kadar devam eder ve orta düzeyde bir diplomayla sona erer.",
         "Realschule 10. sınıfa kadar sürer ve orta diploma ile biter.",
         "Realschule onuncu sınıfa kadar sürüyor ve orta öğretim diplomasıyla bitiyor."
       ],
@@ -2002,7 +2002,7 @@
       "bezug": "de.b1.e07.s0146",
       "text": "Gelecek öğretim yılında her gün yirmi dakika Almanca okuyacağım.",
       "alternativen": [
-        "Önümüzdeki ders yılında her gün yirmi dakika Almanca kitap okuyacağım.",
+        "Önümüzdeki ders yılında her gün yirmi dakika Almanca metin okuyacağım.",
         "Gelecek yıl her gün 20 dakika Almanca okuyacağım.",
         "Yeni öğretim yılında her gün yirmi dakika Almanca okuyacağım."
       ],
@@ -2063,7 +2063,11 @@
     {
       "bezug": "de.b1.e07.s0152",
       "text": "Jan öfkeden kıpkırmızı oldu.",
-      "alternativen": ["Jan öfkesinden kıpkırmızı kesildi.", "Jan öfkeden kıpkırmızı kesildi.", "Öfkeden Jan'ın yüzü kıpkırmızı oldu."],
+      "alternativen": [
+        "Jan öfkesinden bütün yüzü kıpkırmızı oldu.",
+        "Öfkesinden Jan tamamen kızardı.",
+        "Öfkeden Jan'ın yüzü kıpkırmızı oldu."
+      ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2082,7 +2086,7 @@
       "bezug": "de.b1.e07.s0154",
       "text": "Lütfen birbirinizle dostça bir tonda konuşun.",
       "alternativen": [
-        "Lütfen birbirinizle nazik bir dille konuşun.",
+        "Lütfen birbirinizle nazik bir ses tonuyla konuşun.",
         "Lütfen birbirinize dostça bir üslupla konuşun.",
         "Lütfen birbirinizle kibar bir ses tonuyla konuşun."
       ],
@@ -2208,7 +2212,7 @@
     },
     {
       "bezug": "de.b1.e07.s0166",
-      "text": "Bugünkü davranışın gerçekten olmayacak bir şeydi!",
+      "text": "Bugünkü davranışın gerçekten yakışıksızdı!",
       "alternativen": [
         "Bugün davranışın gerçekten çok yakışıksızdı!",
         "Bugünkü davranışın gerçekten kabul edilemezdi!",
@@ -2241,7 +2245,7 @@
       "alternativen": [
         "Ben yalnızca bir kez top bende olsun istedim!",
         "Sadece bir kerecik topu almak istemiştim!",
-        "Ben sadece bir kez topla oynamak istedim!"
+        "Ben sadece bir kez topu elimde tutmak istedim!"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2329,7 +2333,7 @@
     {
       "bezug": "de.b1.e07.s0178",
       "text": "Top için bir plan yapabiliriz.",
-      "alternativen": ["Top için bir plan hazırlayabiliriz.", "Topla ilgili bir plan yapabiliriz.", "Top konusunda bir plan yapabilirdik."],
+      "alternativen": ["Top için bir plan hazırlayabiliriz.", "Topla ilgili bir plan yapabiliriz.", "Top için bir plan yapsak iyi olur."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2345,7 +2349,7 @@
       "text": "Senin yerinde olsam onunla bir kez daha konuşurdum.",
       "alternativen": [
         "Yerinde olsam onunla bir daha konuşurdum.",
-        "Senin yerinde olsaydım onunla tekrar konuşurdum.",
+        "Senin yerinde olsam onunla yine konuşurdum.",
         "Yerinde olsam onunla yeniden konuşurdum."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2356,7 +2360,7 @@
       "text": "Belki her grup topu iki gün alabilir.",
       "alternativen": [
         "Belki her grup iki gün topu alabilirdi.",
-        "Belki her grup topu haftada iki gün alabilir.",
+        "Belki her gruba topu iki gün verilebilir.",
         "Topu belki her grup iki gün kullanabilir."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2371,7 +2375,7 @@
     },
     {
       "bezug": "de.b1.e07.s0183",
-      "text": "Top önce bendeyken Finn onu öylece aldı.",
+      "text": "Top önce bende olmasına rağmen Finn onu öylece aldı.",
       "alternativen": [
         "Top önce bende olmasına rağmen Finn onu alıverdi.",
         "Topu önce ben almış olmama rağmen Finn onu öylece aldı.",
@@ -2382,7 +2386,7 @@
     },
     {
       "bezug": "de.b1.e07.s0184",
-      "text": "Onunla bu konuyu konuştun mu?",
+      "text": "Onunla bu konuyu şimdiden konuştun mu?",
       "alternativen": ["Bu konuda onunla konuştun mu artık?", "Onunla bu konuda konuştun mu?", "Bunu onunla konuştun mu?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2400,11 +2404,11 @@
     },
     {
       "bezug": "de.b1.e07.s0186",
-      "text": "Önce sakin sakin konuşabilir, sonra birlikte bir çözüm arayabiliriz.",
+      "text": "Önce sakin sakin birbirimizle konuşabiliriz, sonra birlikte bir çözüm arayabiliriz.",
       "alternativen": [
         "Önce sakince konuşup sonra beraber bir çözüm arayabiliriz.",
-        "Önce sakin bir şekilde konuşabilir ve sonra birlikte çözüm arayabiliriz.",
-        "Önce sakin sakin birbirimizle konuşabilir, sonra birlikte çözüm bulabiliriz."
+        "Önce sakin bir şekilde konuşabiliriz ve sonra birlikte çözüm arayabiliriz.",
+        "Önce sakin sakin birbirimizle konuşabiliriz, sonra birlikte çözüm bulabiliriz."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2498,8 +2502,8 @@
     },
     {
       "bezug": "de.b1.e07.s0196",
-      "text": "Bana göre kitap çok uzun.",
-      "alternativen": ["Bence kitap fazla uzun.", "Benim görüşüme göre kitap çok uzun.", "Kanımca kitap fazla uzun."],
+      "text": "Bana göre kitap fazla uzun.",
+      "alternativen": ["Bence kitap fazla uzun.", "Benim görüşüme göre kitap gereğinden uzun.", "Kanımca kitap fazla uzun."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2517,14 +2521,14 @@
     {
       "bezug": "de.b1.e07.s0198",
       "text": "Bu ifade doğru mu, yanlış mı?",
-      "alternativen": ["Bu önerme doğru mu yoksa yanlış mı?", "Bu ifade doğru mu yoksa yanlış mı?", "Bu cümle doğru mu yanlış mı?"],
+      "alternativen": ["Bu önerme doğru mu yoksa yanlış mı?", "Bu ifade doğru mu yoksa yanlış mı?", "Bu iddia doğru mu yanlış mı?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "bezug": "de.b1.e07.s0199",
       "text": "Hangi ifade metne uyuyor?",
-      "alternativen": ["Hangi önerme metne uygun?", "Metne hangi ifade uyuyor?", "Hangi cümle metne uyuyor?"],
+      "alternativen": ["Hangi önerme metne uygun?", "Metne hangi ifade uyuyor?", "Hangi iddia metne uyuyor?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2552,7 +2556,7 @@
     },
     {
       "bezug": "de.b1.e07.s0202",
-      "text": "Elif ve Laylā'nın sunum ödevi için iki haftaları var.",
+      "text": "Elif ve Laylā'nın sunum ödevi için iki hafta zamanı var.",
       "alternativen": [
         "Elif ile Laylā'nın sunum ödevi için iki hafta zamanı var.",
         "Sunum ödevi için Elif ve Laylā'ya iki hafta süre verildi.",
@@ -2599,7 +2603,7 @@
       "text": "Şu an okuduğumuz kitabı nasıl buluyorsun?",
       "alternativen": [
         "Şimdi okuduğumuz kitap hakkında ne düşünüyorsun?",
-        "Şu anda okuduğumuz kitabı nasıl buldun?",
+        "Şu anda okuduğumuz kitabı nasıl değerlendiriyorsun?",
         "Okumakta olduğumuz kitabı beğendin mi?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -2809,7 +2813,7 @@
     },
     {
       "bezug": "de.b1.e07.s0226",
-      "text": "Onun motivasyonuyla Gymnasium'u tavsiye ederim.",
+      "text": "Onun motivasyonuyla Gymnasium'u tavsiye ederdim.",
       "alternativen": [
         "Bu motivasyonla ben Gymnasium'u önerirdim.",
         "Motivasyonu bu kadar yüksekken Gymnasium'u tavsiye ederdim.",
@@ -2878,7 +2882,7 @@
       "alternativen": [
         "Akşamleyin Laylā'ya, Schneider Hanım'ın onu çok övdüğünü söylüyorlar.",
         "Akşam, Schneider Hanım'ın onu çok övdüğünü Laylā'ya anlatıyorlar.",
-        "Akşam Laylā'ya, Schneider Hanım'ın kendisini çok övdüğünü anlatıyorlar."
+        "Akşam Laylā'ya, Schneider Hanım'ın onu çok takdir ettiğini anlatıyorlar."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -2988,7 +2992,7 @@
     },
     {
       "bezug": "de.b1.e07.s0246",
-      "text": "Anne babası Schneider Hanım'la ne konusunda anlaştı?",
+      "text": "Veliler Schneider Hanım'la ne konusunda anlaştı?",
       "alternativen": [
         "Veliler Schneider Hanım ile neye karar verdi?",
         "Ebeveynler Schneider Hanım'la hangi konuda anlaştılar?",
@@ -3019,7 +3023,7 @@
       "bezug": "de.b1.e07.s0249",
       "text": "Laylā artık yazılıya girmiyor.",
       "alternativen": [
-        "Laylā artık yazılı sınav olmuyor.",
+        "Laylā artık yazılılara girmiyor.",
         "Laylā bundan sonra yazılıya girmeyecek.",
         "Laylā artık hiç yazılı sınava girmiyor."
       ],
@@ -3156,7 +3160,7 @@
     },
     {
       "bezug": "de.b1.e07.s0262",
-      "text": "Bir plan yapabiliriz: Her grup topu belirli günlerde alır.",
+      "text": "Bir plan yapabiliriz: Her grup topu sabit günlerde alır.",
       "alternativen": [
         "Bir plan yapabiliriz: Top her gruba belli günlerde verilir.",
         "Bir plan yapabilirdik: Her grup topu sabit günlerde alır.",
@@ -3203,8 +3207,8 @@
       "text": "Çocuklar teneffüste ne yüzünden kavga ediyor?",
       "alternativen": [
         "Çocuklar teneffüste ne hakkında tartışıyor?",
-        "Teneffüste çocuklar neden kavga ediyor?",
-        "Çocuklar teneffüste ne için tartışıyor?"
+        "Teneffüste çocuklar ne konuda kavga ediyor?",
+        "Çocuklar teneffüste ne konusunda tartışıyor?"
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3258,7 +3262,7 @@
     {
       "bezug": "de.b1.e07.s0273",
       "text": "Jan topu ona hediye etti.",
-      "alternativen": ["Jan ona topu hediye etti.", "Jan topu ona armağan etti.", "Jan, topu ona verdi ve geri istemedi."],
+      "alternativen": ["Jan ona topu hediye etti.", "Jan topu ona armağan etti.", "Jan topu ona bağışladı."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3286,11 +3290,11 @@
     },
     {
       "bezug": "de.b1.e07.s0276",
-      "text": "Artık kimse futbol oynayamaz.",
+      "text": "Artık kimsenin futbol oynamasına izin yok.",
       "alternativen": [
         "Bundan sonra hiç kimse futbol oynamayacak.",
-        "Artık hiç kimsenin futbol oynamasına izin yok.",
-        "Kimse artık futbol oynayamaz."
+        "Artık kimseye futbol oynamak serbest değil.",
+        "Kimse artık futbol oynamamalı."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3483,7 +3487,7 @@
     },
     {
       "bezug": "de.b1.e07.s0294",
-      "text": "Karneni aldın mı?",
+      "text": "Karneni şimdiden aldın mı?",
       "alternativen": ["Karneni aldın mı artık?", "Karneni almış mıydın?", "Sen karneni aldın mı?"],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3550,7 +3554,7 @@
       "bezug": "de.b1.e07.s0301",
       "text": "Gelecek öğretim yılında daha sık sunum yapacağız.",
       "alternativen": [
-        "Önümüzdeki ders yılında daha sık sunum ödevi hazırlayacağız.",
+        "Önümüzdeki ders yılında sunumları daha sık yapacağız.",
         "Gelecek yıl daha sık sunum yapacağız.",
         "Yeni öğretim yılında daha çok sunum yapacağız."
       ],
@@ -3559,10 +3563,10 @@
     },
     {
       "bezug": "de.b1.e07.s0302",
-      "text": "Kavga başladığında yakında hiç öğretmen yoktu.",
+      "text": "Kavga başladığında yakınlarda hiç öğretmen yoktu.",
       "alternativen": [
         "Kavga çıktığında yakınlarda hiçbir öğretmen yoktu.",
-        "Tartışma başladığı zaman yakında öğretmen yoktu.",
+        "Tartışma başladığı zaman yakınlarda öğretmen yoktu.",
         "Kavga başladığında çevrede hiç öğretmen yoktu."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -3574,7 +3578,7 @@
       "alternativen": [
         "Çözüm aramadan önce birbirinizi dinlemeniz gerekir.",
         "Bir çözüm aramadan önce birbirinizi dinleseniz iyi olur.",
-        "Çözüm aramadan önce birbirinizi dinlemelisiniz."
+        "Çözüm aramadan önce birbirinizi iyice dinleyin."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
@@ -3584,7 +3588,7 @@
       "text": "Okul yönetimi, veli toplantısının bir saat daha geç başlayacağını yazıyor.",
       "alternativen": [
         "Okul müdürlüğü veli toplantısının bir saat sonra başlayacağını yazıyor.",
-        "Okul yönetimi, veli toplantısının bir saat geç başladığını yazıyor.",
+        "Okul yönetimine göre veli toplantısı bir saat geç başlıyor.",
         "Okul yönetiminin yazdığına göre veli toplantısı bir saat daha geç başlıyor."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
@@ -3666,7 +3670,7 @@
       "bezug": "de.b1.e07.s0312",
       "text": "Yazan, topu öylece alıp götürdüğü için Jan'dan özür diledi.",
       "alternativen": [
-        "Yazan topu sormadan götürdüğü için Jan'dan özür diledi.",
+        "Yazan, topu basitçe alıp götürdüğü için Jan'dan özür diledi.",
         "Topu öylece alıp götürdüğü için Yazan Jan'dan özür diledi.",
         "Yazan, topu alıp gittiği için Jan'dan özür diledi."
       ],
@@ -3675,7 +3679,7 @@
     },
     {
       "bezug": "de.b1.e07.s0313",
-      "text": "Her grubun topu belirli günlerde alması konusunda anlaştık.",
+      "text": "Her grubun topu sabit günlerde alması konusunda anlaştık.",
       "alternativen": [
         "Her grubun topu belirli günlerde alacağı konusunda anlaştık.",
         "Topun her gruba belirli günlerde verilmesinde anlaştık.",
@@ -3720,7 +3724,7 @@
     {
       "bezug": "de.b1.e07.s0317",
       "text": "Yazan Jan'dan özür diledi.",
-      "alternativen": ["Yazan Jan'dan af diledi.", "Jan'dan Yazan özür diledi."],
+      "alternativen": ["Yazan Jan'dan özrünü diledi.", "Jan'dan Yazan özür diledi."],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -3777,7 +3781,7 @@
       "alternativen": [
         "Kuralları kabul etmesi için lütfen evde onunla konuşun.",
         "Lütfen evde onunla konuşun, kuralları kabul etsin diye.",
-        "Kurallara uyması için lütfen onunla evde konuşun."
+        "Kuralları benimsemesi için lütfen onunla evde konuşun."
       ],
       "quelle": "ki:lernapp-inhalte/b1/v1",
       "lizenz": "CC-BY-SA-4.0"
