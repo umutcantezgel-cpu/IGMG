@@ -37,6 +37,8 @@ const SEITEN: { sprache: Sprache; pfad: string; h1: string | RegExp }[] = [
 
 for (const s of SEITEN) {
   test(`${s.pfad}: 200, lang="${s.sprache}", genau eine h1, kein Seitenscroll, axe ohne Befund`, async ({ page }) => {
+    // Cüz-Seiten sind sehr groß (Cüz 30 ≈ 6.700 Elemente): axe über die ganze Seite braucht unter paralleler Last bis ≈ 33 s.
+    test.slow(/\/(cuz|juz)\//.test(s.pfad), 'sehr große Seite (Cüz)');
     const antwort = await page.goto(s.pfad);
     expect(antwort?.status()).toBe(200);
     await expect(page.locator('html')).toHaveAttribute('lang', s.sprache);

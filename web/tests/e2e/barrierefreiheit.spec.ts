@@ -20,6 +20,11 @@ type Route = {
   pfad: Record<Sprache, string>;
   /** Nur Detailseiten: Name der Listenroute, deren erster Link „Details ansehen“ den Slug liefert. */
   slugAus?: string;
+  /**
+   * Sehr große Seite: Zeitgrenze des Tests verdreifacht (test.slow), Prüfung unverändert. Cüz 30 hat ≈ 6.700 Elemente;
+   * Laden und axe über die ganze Seite brauchten im vollen Lauf am 26.10.2026 unter paralleler Last 28–35 s (20.10.: 16–20 s).
+   */
+  gross?: true;
 };
 
 /** Öffentliche Routen; Deutsch ohne Präfix, /tr und /en mit Präfix. */
@@ -60,7 +65,7 @@ const ROUTEN: Route[] = [
   { name: 'Korankurse', pfad: { de: '/bildung/korankurse', tr: '/tr/egitim/kuran-kurslari', en: '/en/education/quran-courses' } },
   { name: 'Quran', pfad: { de: '/quran', tr: '/tr/kuran', en: '/en/quran' } },
   { name: 'Quran, Sure', pfad: { de: '/quran/36', tr: '/tr/kuran/36', en: '/en/quran/36' } },
-  { name: 'Quran, Cüz', pfad: { de: '/quran/cuz/30', tr: '/tr/kuran/cuz/30', en: '/en/quran/juz/30' } },
+  { name: 'Quran, Cüz', pfad: { de: '/quran/cuz/30', tr: '/tr/kuran/cuz/30', en: '/en/quran/juz/30' }, gross: true },
   { name: 'Quran, Tajwid', pfad: { de: '/quran/tajwid', tr: '/tr/kuran/tecvid', en: '/en/quran/tajweed' } },
   { name: 'Gebetszeiten', pfad: { de: '/gebetszeiten', tr: '/tr/namaz-vakitleri', en: '/en/prayer-times' } },
   { name: 'Islamisches Wissen', pfad: { de: '/islamisches-wissen', tr: '/tr/islami-bilgiler', en: '/en/islamic-knowledge' } },
@@ -174,6 +179,7 @@ async function detailPfad(page: Page, route: Route, sprache: Sprache): Promise<s
 for (const route of ROUTEN) {
   for (const sprache of SPRACHEN) {
     test(`${route.name} (${sprache}) ist barrierefrei`, async ({ page }, info) => {
+      test.slow(route.gross === true, 'sehr große Seite (Route.gross)');
       const breite = BREITE[info.project.name];
       expect(breite, `Projekt „${info.project.name}“ hat keine Breite in BREITE`).toBeDefined();
       expect(page.viewportSize()?.width, 'Viewport-Breite des Projekts').toBe(breite);
