@@ -89,13 +89,13 @@ export function sichtbareWissensLektion(e: WissensLektionEingabe): Lektion | nul
 export type WissensAussageRoh = { schluessel: string; text: string; quelle: string; strittig: boolean; freigabe: FreigabeBaustein };
 /**
  * Quizfrage wie in `lernapp_aufgabe`: `daten` im Format der Inhaltsdatei (`IslamAufgabeSchema` ohne Kopf); `aussage` ist die
- * Aussage, aus der sie entsteht (Quellenzeile und Freigabelage; `null` ohne Aussage – dann nie sichtbar).
+ * Aussage, aus der sie entsteht (Quellenzeile, „strittig“ und Freigabelage; `null` ohne Aussage – dann nie sichtbar).
  */
 export type WissensAufgabeRoh = {
   schluessel: string;
   typ: string;
   daten: unknown;
-  aussage: Pick<WissensAussageRoh, 'quelle' | 'freigabe'> | null;
+  aussage: (Pick<WissensAussageRoh, 'quelle' | 'freigabe'> & { strittig?: boolean }) | null;
   freigabe: FreigabeBaustein;
 };
 export type WissensLektionRoh = {
@@ -123,14 +123,19 @@ type Daten = Record<string, unknown>;
 const istDaten = (x: unknown): x is Daten => typeof x === 'object' && x !== null && !Array.isArray(x);
 
 /**
- * Quizfrage aus der Datenbank (Format der Inhaltsdatei) als Aufgabe des Spielers, mit der Quellenzeile ihrer Aussage; gegen
- * `AufgabeSchema` geprüft. `null`, wenn sie nicht passt oder der Spieler für den Typ keine Quellenzeile zeigt (`auswahl`,
- * `luecke`): Dann fehlt die Lektion lieber, als dass eine Aussage ohne Quelle erscheint.
+ * Quizfrage aus der Datenbank (Format der Inhaltsdatei) als Aufgabe des Spielers, mit der Quellenzeile ihrer Aussage und – bei
+ * einem strittigen Thema (ADR 0040 Nr. 4) – der Kennzeichnung `strittig`; gegen `AufgabeSchema` geprüft. `null`, wenn sie nicht
+ * passt oder der Spieler für den Typ keine Quellenzeile zeigt (`auswahl`, `luecke`): Dann fehlt die Lektion lieber, als dass
+ * eine Aussage ohne Quelle erscheint.
  */
-export function wissensAufgabe(a: Pick<WissensAufgabeRoh, 'schluessel' | 'typ' | 'daten'>, quelle: string): Aufgabe | null {
+export function wissensAufgabe(
+  a: Pick<WissensAufgabeRoh, 'schluessel' | 'typ' | 'daten'>,
+  quelle: string,
+  strittig = false,
+): Aufgabe | null {
   const d = a.daten;
   if (!istDaten(d)) return null;
-  const kopf = { schluessel: a.schluessel, sprache: 'de' as const, quelle };
+  const kopf = { schluessel: a.schluessel, sprache: 'de' as const, quelle, ...(strittig ? { strittig: true as const } : {}) };
   let roh: unknown = null;
   if (a.typ === 'wahr_falsch')
     roh = { ...kopf, typ: 'wahr_falsch', anweisung: 'stimmtDas', aussage: d.behauptung, wahr: d.richtig, begruendung: d.begruendung };
@@ -175,7 +180,7 @@ export function freigegebenAm(b: FreigabeBaustein): Date | null {
 export function wissensLektionImPaket(l: WissensLektionRoh): { lektion: Lektion; vermerk: WissensLektionVermerk } | null {
   const aufgaben: WissensAufgabeEingabe[] = [];
   for (const a of l.aufgaben) {
-    const aufgabe = a.aussage ? wissensAufgabe(a, a.aussage.quelle) : null;
+    const aufgabe = a.aussage ? wissensAufgabe(a, a.aussage.quelle, a.aussage.strittig === true) : null;
     if (!a.aussage || !aufgabe) return null;
     aufgaben.push({ aufgabe, freigabe: a.freigabe, aussagen: [a.aussage.freigabe] });
   }

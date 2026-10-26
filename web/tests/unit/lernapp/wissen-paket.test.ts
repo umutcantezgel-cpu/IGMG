@@ -106,6 +106,12 @@ describe('wissensAufgabe: Quizfrage der Datenbank → Aufgabe des Spielers mit Q
     });
   });
 
+  it('strittige Aussage → Aufgabe mit Kennzeichnung `strittig` (ADR 0040 Nr. 4), sonst ohne', () => {
+    const a = { schluessel: 'islam.grund.e01.l01.q01', typ: 'wahr_falsch', daten: WF };
+    expect(wissensAufgabe(a, QUELLE, true)).toMatchObject({ strittig: true, quelle: QUELLE });
+    expect(wissensAufgabe(a, QUELLE, false)).not.toHaveProperty('strittig');
+  });
+
   it('ungültig oder ohne Quellenzeile im Spieler (auswahl, luecke) → null', () => {
     expect(k('wahr_falsch', { behauptung: '', richtig: true, begruendung: '[B]' })).toBeNull();
     expect(k('fallfrage', { fall: '[F]', frage: '[Q]', optionen: ['[A]', '[B]'], richtig: 5 })).toBeNull();
@@ -214,5 +220,15 @@ describe('Lernpfad: Prüfvermerk je Lektion aus dem Paket', () => {
     expect(lektionen(r.paket)?.[0]?.vermerk).toEqual({ geprueftAm: '2026-10-21', kinderGeeignet: false });
     const kaputt = { ...r.paket, wissen: { 'islam.grund.e01.l01': { ...r.paket.wissen!['islam.grund.e01.l01']!, geprueftAm: 'gestern' } } };
     expect(lektionen(kaputt)?.[0]?.vermerk).toBeUndefined();
+
+    // strittige Aussage: Paket trägt `strittig` an Aussage und Quizfrage, der Lernpfad weist die Lektion aus
+    const l = lektion();
+    const aussage = { ...l.aussagen[0]!, strittig: true };
+    const s = baueWissensEinheit(einheit([{ ...l, aussagen: [aussage], aufgaben: [{ ...l.aufgaben[0]!, aussage }] }]))!;
+    expect(PaketSchema.safeParse(JSON.parse(s.json)).success).toBe(true);
+    expect(s.hash).not.toBe(r.hash);
+    expect(s.paket.wissen!['islam.grund.e01.l01']!.aussagen[0]).toMatchObject({ strittig: true });
+    expect(s.paket.lektionen[0]!.aufgaben[0]).toMatchObject({ strittig: true });
+    expect(lektionen(s.paket)?.[0]?.vermerk).toEqual({ geprueftAm: '2026-10-21', kinderGeeignet: false, strittig: true });
   });
 });

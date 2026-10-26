@@ -35,15 +35,15 @@ export function themaVon(
   return null;
 }
 
-/** Prüfvermerk einer Lektion des Wissenskurses (Datum der Freigabe, „für Kinder geeignet“). */
-export type LektionsVermerk = Pick<WissensLektionVermerk, 'geprueftAm' | 'kinderGeeignet'>;
+/** Prüfvermerk einer Lektion des Wissenskurses (Datum der Freigabe, „für Kinder geeignet“, enthält ein strittiges Thema). */
+export type LektionsVermerk = Pick<WissensLektionVermerk, 'geprueftAm' | 'kinderGeeignet'> & { strittig?: true };
 
 /** Was der Lernpfad aus einem Paket liest (volles `Paket` oder nur sein Kopf aus `lokal/vorrat.ts`). */
 export type PaketInhalt = {
   lektionen: readonly Pick<Lektion, 'schluessel' | 'titel' | 'art'>[];
   tipps: readonly unknown[];
-  /** nur Wissenskurs: Prüfvermerk je Lektion */
-  wissen?: Readonly<Record<string, LektionsVermerk>>;
+  /** nur Wissenskurs: Prüfvermerk je Lektion (mit den Aussagen, soweit „strittig“ gebraucht wird) */
+  wissen?: Readonly<Record<string, LektionsVermerk & { aussagen?: readonly { strittig?: boolean }[] }>>;
 };
 
 export type LektionsEintrag = Pick<Lektion, 'schluessel' | 'titel' | 'art'> & { erledigt: boolean; vermerk?: LektionsVermerk };
@@ -73,15 +73,25 @@ export function abschnitte(v: Verzeichnis, erledigt: ReadonlySet<string>, pakete
     const paket = pakete.get(einheit.schluessel);
     const lektionen = paket
       ? paket.lektionen.map((l) => {
-          // Prüfvermerk nur in gültiger Form (der Kopf aus dem Vorrat ist nicht voll geprüft)
+          // Prüfvermerk nur in gültiger Form (der Kopf aus dem Vorrat ist nicht voll geprüft); „strittig“, wenn eine Aussage
+          // der Lektion zu einem strittigen Thema gehört (ADR 0040 Nr. 4)
           const roh = paket.wissen?.[l.schluessel];
           const gueltig = roh && /^\d{4}-\d{2}-\d{2}$/.test(String(roh.geprueftAm)) && typeof roh.kinderGeeignet === 'boolean';
+          const strittig = gueltig && Array.isArray(roh.aussagen) && roh.aussagen.some((a) => a?.strittig === true);
           return {
             schluessel: l.schluessel,
             art: l.art,
             ...(l.titel ? { titel: l.titel } : {}),
             erledigt: erledigt.has(l.schluessel),
-            ...(gueltig ? { vermerk: { geprueftAm: roh.geprueftAm, kinderGeeignet: roh.kinderGeeignet } } : {}),
+            ...(gueltig
+              ? {
+                  vermerk: {
+                    geprueftAm: roh.geprueftAm,
+                    kinderGeeignet: roh.kinderGeeignet,
+                    ...(strittig ? { strittig: true as const } : {}),
+                  },
+                }
+              : {}),
           };
         })
       : null;

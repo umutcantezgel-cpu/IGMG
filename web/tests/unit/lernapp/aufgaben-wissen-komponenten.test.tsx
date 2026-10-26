@@ -140,6 +140,24 @@ describe('wahr_falsch', () => {
     expect(h).toMatch(/<details[^>]*><summary[^>]*>Quelle zeigen<\/summary>/);
     expect(h).toContain('[Werk, Kapitel, Ausgabe]');
     expect(h).toMatch(/<fieldset[^>]*disabled=""/);
+    expect(h).not.toContain('data-strittig');
+  });
+
+  it('strittiges Thema: nach der Antwort sichtbar ausgewiesen (nicht nur aufgeklappt), vorher nicht', () => {
+    const strittig = { ...WF, strittig: true as const };
+    expect(html(<WahrFalsch {...props(strittig)} />)).not.toContain(de.aufgaben.wissen.strittig);
+    const h = html(
+      <WahrFalsch
+        {...props(strittig, { gesperrt: true, auswertung: geprueft('richtig'), antwort: { typ: 'wahr_falsch', wahr: false } })}
+      />,
+    );
+    expect(h).toContain(`<p data-strittig="true" class="text-16 font-bold">${de.aufgaben.wissen.strittig}</p>`);
+    expect(h.indexOf('data-strittig')).toBeLessThan(h.indexOf('<details'));
+    // ebenso in zuordnen, reihenfolge und fallfrage
+    const fertig = { gesperrt: true, auswertung: geprueft('richtig') };
+    expect(html(<Zuordnen {...props({ ...ZO, strittig: true }, fertig)} />)).toContain('data-strittig');
+    expect(html(<Reihenfolge {...props({ ...RF, strittig: true }, fertig)} />)).toContain('data-strittig');
+    expect(html(<Fallfrage {...props({ ...FF, strittig: true }, fertig)} />)).toContain('data-strittig');
   });
 
   it('arabische Oberfläche: Bedienung arabisch, Inhalt deutsch von links nach rechts', () => {

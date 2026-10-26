@@ -85,7 +85,9 @@ export default function Zuordnen({
           );
         })}
       </ol>
-      {auswertung ? <Erklaerung quelle={aufgabe.quelle} sprache={aufgabe.sprache} texte={texte.wissen} /> : null}
+      {auswertung ? (
+        <Erklaerung quelle={aufgabe.quelle} strittig={aufgabe.strittig} sprache={aufgabe.sprache} texte={texte.wissen} />
+      ) : null}
     </div>
   );
 }

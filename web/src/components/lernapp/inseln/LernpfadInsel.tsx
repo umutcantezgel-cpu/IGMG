@@ -33,6 +33,8 @@ export type LernpfadTexte = OfflineTexte & {
   /** Wissenskurs: „Nach hanefitischer Lehre; geprüft von zwei Gelehrten der Gemeinde am {datum}“ (ohne Namen, LM-20) */
   pruefvermerk: string;
   fuerKinder: string;
+  /** Wissenskurs: Lektion mit einer Aussage zu einem strittigen Thema (ADR 0040 Nr. 4) */
+  strittig: string;
 };
 
 /** Texte zu abgeschlossenen Stufen und Lektionsarten (Namensraum `ansichten.stufen`, L4-03). */
@@ -232,6 +234,7 @@ export function LernpfadInsel({
                                 <p data-pruefvermerk={l.schluessel} className="ps-7 text-16 text-tinte-2">
                                   {formatiere(texte.pruefvermerk, { datum: datum(l.vermerk.geprueftAm) }, ui, ziffern)}
                                   {l.vermerk.kinderGeeignet ? <> · {texte.fuerKinder}</> : null}
+                                  {l.vermerk.strittig ? <> · {texte.strittig}</> : null}
                                 </p>
                               ) : null}
                             </li>
