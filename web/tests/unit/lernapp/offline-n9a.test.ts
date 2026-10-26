@@ -203,7 +203,7 @@ describe('Stufe offline speichern: Speicherbedarf und Abbrechen', () => {
     expect(offlineBedarf([])).toBe(0);
   });
 
-  it('abgebrochen nach der ersten Einheit: Rest nicht geladen, Gespeichertes bleibt offline markiert', async () => {
+  it('abgebrochen nach der ersten Einheit (Töne und Paket): Rest nicht geladen, Gespeichertes bleibt offline markiert', async () => {
     const einheiten = [1, 2, 3].map((n) => einheit(n, [{ adresse: `/lern-app/audio/tr/[${n}].lpa`, bytes: 10 }]));
     const texte = new Map(
       einheiten.map((e) => [
@@ -223,11 +223,114 @@ describe('Stufe offline speichern: Speicherbedarf und Abbrechen', () => {
       abruf,
       vorrat: null,
       signal: steuerung.signal,
-      fortschritt: () => steuerung.abort(),
+      // nach Bündel und Paket der ersten Einheit
+      fortschritt: (geladen) => geladen >= einheiten[0]!.bytes + 10 && steuerung.abort(),
     });
-    expect(r).toMatchObject({ abgebrochen: true, einheiten: 1, bytes: einheiten[0]!.bytes, fehlgeschlagen: [] });
-    expect(abrufe).toEqual([paketAdresse('tr-aus-de', einheiten[0]!.schluessel, einheiten[0]!.hash)]);
+    expect(r).toMatchObject({ abgebrochen: true, einheiten: 1, bytes: einheiten[0]!.bytes + 10, fehlgeschlagen: [] });
+    expect(abrufe).toEqual(['/lern-app/audio/tr/[1].lpa', paketAdresse('tr-aus-de', einheiten[0]!.schluessel, einheiten[0]!.hash)]);
     expect((await sp.alle('pakete', [['tr-aus-de'], ['tr-aus-de', []]])).map((e) => [e.einheit, e.offline])).toEqual([['tr.a1.e01', true]]);
+  });
+
+  /** Pakete der Einheiten als Antwort; Bündel nach `buendel` (fehlt die Adresse dort: 10 Bytes). */
+  const netzFuer = (einheiten: VerzeichnisEinheit[], buendel: Record<string, () => Promise<Response>> = {}, abrufe: string[] = []) => {
+    const texte = new Map(
+      einheiten.map((e) => [
+        paketAdresse('tr-aus-de', e.schluessel, e.hash),
+        JSON.stringify({ ...sprachPaket, einheit: { ...sprachPaket.einheit, schluessel: e.schluessel } }),
+      ]),
+    );
+    return async (a: string) => {
+      abrufe.push(a);
+      return buendel[a]?.() ?? new Response(texte.get(a) ?? new Uint8Array(10));
+    };
+  };
+  const vermerkt = async (sp: ReturnType<typeof arbeitsspeicher>) =>
+    (await sp.alle('pakete', [['tr-aus-de'], ['tr-aus-de', []]])).map((e) => [e.einheit, e.offline]);
+
+  it('Abbruch in den Tönen: keine Einheit ohne ihre Töne als offline gespeichert (Gegenprüfung N9a)', async () => {
+    const einheiten = [1, 2, 3].map((n) => einheit(n, [{ adresse: `/lern-app/audio/tr/[${n}].lpa`, bytes: 1000 }]));
+    const steuerung = new AbortController();
+    const abrufe: string[] = [];
+    // der Abruf des zweiten Bündels bricht ab wie `fetch` mit einem abgebrochenen Signal
+    const abruf = netzFuer(
+      einheiten,
+      {
+        '/lern-app/audio/tr/[2].lpa': async () => {
+          steuerung.abort();
+          throw new DOMException('abgebrochen', 'AbortError');
+        },
+      },
+      abrufe,
+    );
+    const sp = arbeitsspeicher();
+    const r = await speichereOffline(sp, 'tr-aus-de', einheiten, { abruf, vorrat: null, signal: steuerung.signal });
+    expect(r).toMatchObject({ abgebrochen: true, einheiten: 1, bytes: einheiten[0]!.bytes + 1000, fehlgeschlagen: [] });
+    // das Paket der zweiten Einheit wird gar nicht erst geladen, die zweite Einheit nicht vermerkt
+    expect(abrufe).toEqual([
+      '/lern-app/audio/tr/[1].lpa',
+      paketAdresse('tr-aus-de', einheiten[0]!.schluessel, einheiten[0]!.hash),
+      '/lern-app/audio/tr/[2].lpa',
+    ]);
+    expect(await vermerkt(sp)).toEqual([['tr.a1.e01', true]]);
+  });
+
+  it('Bündel scheitert: Einheiten ohne ihre Töne bleiben ungespeichert und gemeldet, ein geteiltes Bündel wird einmal versucht', async () => {
+    const b1 = { adresse: '/lern-app/audio/tr/[eins].lpa', bytes: 100 };
+    const b2 = { adresse: '/lern-app/audio/tr/[zwei].lpa', bytes: 50 };
+    const einheiten = [einheit(1, [b1]), einheit(2, [b1, b2]), einheit(3)];
+    const abrufe: string[] = [];
+    const abruf = netzFuer(einheiten, { [b1.adresse]: async () => new Response('nicht da', { status: 404 }) }, abrufe);
+    const sp = arbeitsspeicher();
+    const r = await speichereOffline(sp, 'tr-aus-de', einheiten, { abruf, vorrat: null });
+    expect(r).toMatchObject({ abgebrochen: false, einheiten: 1, fehlgeschlagen: [b1.adresse, 'tr.a1.e01', 'tr.a1.e02'] });
+    expect(r.bytes).toBe(b2.bytes + einheiten[2]!.bytes);
+    expect(abrufe).toEqual([b1.adresse, b2.adresse, paketAdresse('tr-aus-de', einheiten[2]!.schluessel, einheiten[2]!.hash)]);
+    expect(await vermerkt(sp)).toEqual([['tr.a1.e03', true]]);
+  });
+
+  it('Nachladen einer neuen Fassung, deren Töne fehlen: der alte Vermerk „offline“ bleibt bis zum nächsten Versuch', async () => {
+    const neu = einheit(1, [{ adresse: '/lern-app/audio/tr/[neu].lpa', bytes: 10 }]);
+    const sp = arbeitsspeicher();
+    const alt = {
+      kurs: 'tr-aus-de',
+      einheit: neu.schluessel,
+      hash: 'a'.repeat(64),
+      bytes: 1,
+      offline: true,
+      geladen: new Date(0).toISOString(),
+    };
+    await sp.schreibe('pakete', [alt]);
+    const ohneTon = netzFuer([neu], { '/lern-app/audio/tr/[neu].lpa': async () => Promise.reject(new TypeError('offline')) });
+    const r = await speichereOffline(sp, 'tr-aus-de', [neu], { abruf: ohneTon, vorrat: null, nachladen: true });
+    expect(r.fehlgeschlagen).toEqual(['/lern-app/audio/tr/[neu].lpa', neu.schluessel]);
+    expect(await sp.lies('pakete', ['tr-aus-de', neu.schluessel])).toEqual(alt);
+    // mit Tönen: neue Fassung, weiter offline
+    await speichereOffline(sp, 'tr-aus-de', [neu], { abruf: netzFuer([neu]), vorrat: null, nachladen: true });
+    expect(await sp.lies('pakete', ['tr-aus-de', neu.schluessel])).toMatchObject({ hash: neu.hash, offline: true });
+  });
+
+  it('Töne gespeicherter Einheiten (`vorhanden`) zählen weder im Speicherbedarf noch im Ring', async () => {
+    const b1 = { adresse: '/lern-app/audio/tr/[eins].lpa', bytes: 1000 };
+    const b2 = { adresse: '/lern-app/audio/tr/[zwei].lpa', bytes: 500 };
+    const einheiten = [einheit(2, [b1, b2])];
+    const vorhanden = new Set([b1.adresse]);
+    expect(offlineBedarf(einheiten, vorhanden)).toBe(einheiten[0]!.bytes + 500);
+    const fortschritt: [number, number][] = [];
+    const sp = arbeitsspeicher();
+    const r = await speichereOffline(sp, 'tr-aus-de', einheiten, {
+      abruf: netzFuer(einheiten),
+      vorrat: null,
+      vorhanden,
+      fortschritt: (geladen, gesamt) => fortschritt.push([geladen, gesamt]),
+    });
+    const gesamt = einheiten[0]!.bytes + 500;
+    expect(fortschritt).toEqual([
+      [0, gesamt],
+      [500, gesamt],
+      [gesamt, gesamt],
+    ]);
+    expect(r).toMatchObject({ einheiten: 1, bytes: gesamt, fehlgeschlagen: [] });
+    expect(await vermerkt(sp)).toEqual([['tr.a1.e02', true]]);
   });
 
   it('ohne Abbruch: alle Einheiten und Bündel, nicht abgebrochen', async () => {

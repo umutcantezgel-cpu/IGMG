@@ -374,9 +374,15 @@ const buendelVon = (einheiten: readonly Pick<VerzeichnisEinheit, 'audio'>[]) => 
   ...new Map(einheiten.flatMap((e) => e.audio).map((a) => [a.adresse, a.bytes])).entries(),
 ];
 
-/** Speicherbedarf von Einheiten samt Tönen in Bytes – jedes Bündel einmal (vor dem Speichern genannt, Ring nach Bytes). */
-export function offlineBedarf(einheiten: readonly Pick<VerzeichnisEinheit, 'bytes' | 'audio'>[]): number {
-  return einheiten.reduce((s, e) => s + e.bytes, 0) + buendelVon(einheiten).reduce((s, [, b]) => s + b, 0);
+/**
+ * Speicherbedarf von Einheiten samt Tönen in Bytes – jedes Bündel einmal (vor dem Speichern genannt, Ring nach Bytes). `vorhanden`:
+ * Bündel, die schon im Vorrat liegen (etwa die Töne bereits gespeicherter Einheiten), zählen nicht mit.
+ */
+export function offlineBedarf(
+  einheiten: readonly Pick<VerzeichnisEinheit, 'bytes' | 'audio'>[],
+  vorhanden: ReadonlySet<string> = new Set(),
+): number {
+  return einheiten.reduce((s, e) => s + e.bytes, 0) + buendelVon(einheiten).reduce((s, [a, b]) => s + (vorhanden.has(a) ? 0 : b), 0);
 }
 
 /**
@@ -384,12 +390,23 @@ export function offlineBedarf(einheiten: readonly Pick<VerzeichnisEinheit, 'byte
  * markiert. Bittet vorher um dauerhaften Speicher (nicht beim Nachladen einer neuen Fassung, `nachladen`). `fortschritt`
  * meldet die geladenen Bytes für den Ring (B-27); zwischen den Schritten gibt die Funktion den Hauptfaden frei
  * (`nachgeben`). `signal` hält an: vor jedem Schritt geprüft, laufende Abrufe brechen ab; was schon gespeichert ist, bleibt.
+ *
+ * Je Einheit erst ihre Bündel, dann ihr Paket: Als offline gespeichert markiert (`offline: true` im Speicher `pakete`) wird eine
+ * Einheit erst, wenn ihre Töne im Vorrat liegen (Gegenprüfung N9a). Bricht das Speichern in den Tönen ab oder scheitert ein
+ * Bündel, bleibt die Einheit ungespeichert – „Stufe offline speichern“ bzw. „Einheit offline speichern“ steht wieder da, und
+ * beim Nachladen einer neuen Fassung (`nachladen`) bleibt der alte Vermerk, bis alles da ist (`raeumeAuf` nennt sie erneut).
+ * Ein Bündel, auf das mehrere Einheiten verweisen, wird einmal geladen; scheitert es, fehlt es allen. `vorhanden`: Bündel,
+ * die schon im Vorrat liegen – sie werden nur im Vorrat bestätigt und zählen für den Ring nicht (wie `offlineBedarf`).
  */
 export async function speichereOffline(
   sp: Speicher,
   kurs: string,
   einheiten: readonly VerzeichnisEinheit[],
-  o: PaketOptionen & { fortschritt?: (geladen: number, gesamt: number) => void; nachladen?: boolean } = {},
+  o: PaketOptionen & {
+    fortschritt?: (geladen: number, gesamt: number) => void;
+    nachladen?: boolean;
+    vorhanden?: ReadonlySet<string>;
+  } = {},
 ): Promise<OfflineErgebnis> {
   let dauerhaft: boolean | null = null;
   try {
@@ -397,11 +414,13 @@ export async function speichereOffline(
   } catch {
     dauerhaft = null;
   }
-  const buendel = buendelVon(einheiten);
-  const gesamt = offlineBedarf(einheiten);
+  const vorhanden = o.vorhanden ?? new Set<string>();
+  const gesamt = offlineBedarf(einheiten, vorhanden);
   let geladen = 0;
   let gespeichert = 0;
   const fehlgeschlagen: string[] = [];
+  // Bündel → im Vorrat? (je Adresse ein Versuch)
+  const buendel = new Map<string, boolean>();
   const ergebnis = (abgebrochen: boolean): OfflineErgebnis => ({
     einheiten: gespeichert,
     bytes: geladen,
@@ -409,21 +428,28 @@ export async function speichereOffline(
     dauerhaft,
     abgebrochen,
   });
-  // in Häppchen: vor jedem Paket und jedem Bündel nachgeben, damit Eingaben und der Ring nicht warten
+  // in Häppchen: vor jedem Bündel und jedem Paket nachgeben, damit Eingaben und der Ring nicht warten
   for (const e of einheiten) {
+    let toene = true;
+    for (const { adresse, bytes } of e.audio) {
+      if (!buendel.has(adresse)) {
+        await nachgeben();
+        if (o.signal?.aborted) return ergebnis(true);
+        const ok = Boolean(await ladeBuendel(adresse, o));
+        buendel.set(adresse, ok);
+        if (ok && !vorhanden.has(adresse)) geladen += bytes;
+        if (!ok) fehlgeschlagen.push(adresse);
+        o.fortschritt?.(geladen, gesamt);
+      }
+      toene &&= buendel.get(adresse) === true;
+    }
     await nachgeben();
     if (o.signal?.aborted) return ergebnis(true);
-    if (await ladePaketKopf(sp, kurs, e, { ...o, offline: true })) {
+    // ohne Töne nicht als gespeichert markieren (das Paket lädt der Spieler bei Bedarf)
+    if (toene && (await ladePaketKopf(sp, kurs, e, { ...o, offline: true }))) {
       geladen += e.bytes;
       gespeichert++;
     } else fehlgeschlagen.push(e.schluessel);
-    o.fortschritt?.(geladen, gesamt);
-  }
-  for (const [adresse, b] of buendel) {
-    await nachgeben();
-    if (o.signal?.aborted) return ergebnis(true);
-    if (await ladeBuendel(adresse, o)) geladen += b;
-    else fehlgeschlagen.push(adresse);
     o.fortschritt?.(geladen, gesamt);
   }
   return ergebnis(Boolean(o.signal?.aborted));

@@ -19,7 +19,10 @@ export type OfflineTexte = {
   offlineNichtMoeglich: string;
   /** Seiten des Kurses werden für den neuen Bau geholt (Stufe C N9a, G-1) */
   offlineAktualisieren: string;
-  /** Seiten des Kurses fehlen im Vorrat dieses Baus (ohne Verbindung nachzuholen gescheitert) */
+  /**
+   * Für die Nutzung ohne Verbindung fehlt noch etwas (Seiten des Kurses im Vorrat dieses Baus) – neutral, ob nach einer
+   * Aktualisierung oder beim ersten Speichern ohne Verbindung (Gegenprüfung N9a)
+   */
   offlineUnvollstaendig: string;
   offlineErneut: string;
 };
@@ -238,7 +241,9 @@ export function OfflineEinheit({
  * gespeichert sind – der Speicherbedarf steht vorher da (jedes Bündel einmal, `offlineBedarf`). Ring nach echten Bytes (B-27),
  * abbrechbar (Gespeichertes bleibt), dauerhafter Speicher erst hier (`speichereOffline`), danach die Seiten des Kurses.
  * In Häppchen wie „Einheit offline speichern“ (Stufe C N8, INP): `speichereOffline` gibt vor jedem Paket und Bündel nach.
- * Ergebnis in einer Live-Region; der Fokus springt beim Start auf „abbrechen“ und danach auf den Rahmen der Stufe.
+ * Ergebnis in einer Live-Region (Abbruch und Fehler auch sichtbar); der Fokus springt beim Start auf „abbrechen“ und danach
+ * auf den Rahmen der Stufe. Als gespeichert gilt eine Einheit erst mit ihren Tönen (`speichereOffline`); der Rest-Bedarf zählt
+ * die Töne gespeicherter Einheiten nicht mit.
  */
 export function OfflineStufe({
   ui,
@@ -270,6 +275,8 @@ export function OfflineStufe({
 }) {
   const [laeuft, setLaeuft] = useState<{ geladen: number; gesamt: number } | null>(null);
   const [meldung, setMeldung] = useState('');
+  // Abbruch und Fehler stehen auch sichtbar da (nicht nur in der Live-Region); „fertig“ sagt schon der Stand der Stufe
+  const [hinweis, setHinweis] = useState(false);
   const abbruch = useRef<AbortController | null>(null);
   const abbrechenKnopf = useRef<HTMLButtonElement>(null);
   const { rahmen, merke } = useFokusRahmen(Boolean(laeuft));
@@ -286,6 +293,8 @@ export function OfflineStufe({
   const f = (vorlage: string, werte: Record<string, string | number>) => formatiere(vorlage, werte, ui, ziffern);
   const fehlend = einheiten.filter((e) => !istOfflineGespeichert(e, offline));
   const alle = offlineBedarf(einheiten);
+  // Töne gespeicherter Einheiten liegen schon im Vorrat: Sie zählen für den Rest nicht mit (spätere Einheiten verweisen darauf)
+  const vorhanden = new Set(einheiten.filter((e) => istOfflineGespeichert(e, offline)).flatMap((e) => e.audio.map((a) => a.adresse)));
 
   async function speichern() {
     // zweites Tippen, bevor der Ring steht, startet nichts
@@ -297,23 +306,28 @@ export function OfflineStufe({
     await nachDemBild();
     gestartet.current = true;
     setMeldung('');
-    setLaeuft({ geladen: 0, gesamt: offlineBedarf(ziel) });
+    setHinweis(false);
+    setLaeuft({ geladen: 0, gesamt: offlineBedarf(ziel, vorhanden) });
     try {
       const sp = await speicher();
       const e = await speichereOffline(sp, kurs, ziel, {
         signal: steuerung.signal,
+        vorhanden,
         fortschritt: (geladen, gesamt) => setLaeuft({ geladen, gesamt }),
       });
       if (e.abgebrochen) {
         setMeldung(texte.stufeOfflineAbgebrochen);
+        setHinweis(true);
         await seitenPruefen();
       } else if (e.fehlgeschlagen.length) {
         if (e.einheiten) await seitenVorhalten();
         setMeldung(texte.offlineFehler);
+        setHinweis(true);
       } else setMeldung((await seitenVorhalten()) ? f(texte.stufeOfflineFertig, { stufe, mb: mb(alle) }) : texte.offlineUnvollstaendig);
       await onGespeichert();
     } catch {
       setMeldung(texte.offlineFehler);
+      setHinweis(true);
     } finally {
       abbruch.current = null;
       setLaeuft(null);
@@ -351,7 +365,7 @@ export function OfflineStufe({
               ? texte.offlineUnvollstaendig
               : fehlend.length === einheiten.length
                 ? f(texte.stufeOfflineText, { anzahl: einheiten.length, mb: mb(alle) })
-                : f(texte.stufeOfflineRest, { anzahl: fehlend.length, mb: mb(offlineBedarf(fehlend)) })}
+                : f(texte.stufeOfflineRest, { anzahl: fehlend.length, mb: mb(offlineBedarf(fehlend, vorhanden)) })}
           </p>
           <button type="button" onClick={() => void speichern()} className={KNOPF}>
             <Download aria-hidden className="size-5" />
@@ -362,6 +376,7 @@ export function OfflineStufe({
       <p role="status" className="sr-only">
         {meldung}
       </p>
+      {hinweis && meldung && !laeuft ? <p className="text-16 text-tinte-2">{meldung}</p> : null}
     </div>
   );
 }
