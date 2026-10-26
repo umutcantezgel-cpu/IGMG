@@ -95,7 +95,7 @@ async function koepfeAusDemVorrat(
  * währenddessen „wird aktualisiert“ (ein vollständiger Stand flackert nicht). `true`, wenn alles da ist – ohne Service Worker
  * (Entwicklung) wie bisher.
  */
-async function holeSeiten(
+export async function holeSeiten(
   ui: Oberflaeche,
   kurs: KursSlug,
   setSeiten: (s: SeitenZustand | ((alt: SeitenZustand) => SeitenZustand)) => void,

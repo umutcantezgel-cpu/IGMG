@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright';
-import { expect, type Page } from '@playwright/test';
+import { expect, type Locator, type Page } from '@playwright/test';
 import de from '../../../messages/lernapp/de.json';
 import { formatiere } from '../../../src/lib/lernapp/format';
 
@@ -51,6 +51,23 @@ export const testStation = (page: Page) => page.getByRole('region', { name: THEM
 
 /** Die eine Live-Region des Spielers (Rückmeldeblatt). */
 export const liveRegion = (page: Page) => page.locator('main p[role="status"].sr-only').first();
+
+/**
+ * Tastaturweg ohne `locator.focus()` (Gegenprüfung N9a): Ausgangspunkt ist ein Klick auf ein nicht fokussierbares Element vor
+ * dem Ziel (etwa die Überschrift der Stufe oder der Station) – dort beginnt der Browser die Tab-Reihenfolge –, dann Tab, bis das
+ * Ziel den Fokus hat (höchstens `max` Schritte). Hat das Ziel den Fokus schon (etwa „abbrechen“ nach dem Start), bleibt es dabei.
+ */
+export async function perTab(page: Page, ziel: Locator, ab: Locator, max = 20) {
+  const hatFokus = () => ziel.evaluate((el) => el === document.activeElement);
+  if (await hatFokus()) return;
+  await ab.click();
+  let erreicht = false;
+  for (let i = 0; i < max && !erreicht; i++) {
+    await page.keyboard.press('Tab');
+    erreicht = await hatFokus();
+  }
+  expect(erreicht, `per Tab nicht erreicht (höchstens ${max} Schritte): ${ziel}`).toBe(true);
+}
 
 export type Bedienung = 'tastatur' | 'tippen';
 

@@ -1,13 +1,14 @@
 import { expect, test } from '@playwright/test';
 import de from '../../../messages/lernapp/de.json';
 import { formatiere } from '../../../src/lib/lernapp/format';
-import { ernsteBefunde, KURS, LEKTION_1 } from './hilfen';
+import { ernsteBefunde, KURS, LEKTION_1, perTab } from './hilfen';
 
 /**
  * Lernpfad mit echten Kursgrößen (Stufe C N8/N9a, Gegenprüfung N8 Nr. 5b/5c): Die Stufe der aktuellen Einheit steht offen, die
- * übrigen klappen als `<details>` auf. „Stufe aufklappen“ per Tastatur (Summary mit Stufe und Handlung im Namen), danach sind
- * alle Stationen der Stufe da und ihre Knöpfe per Tastatur erreichbar; nach der ersten Eingabe stehen auch alle Stationen der
- * offenen Stufe (Häppchen). „Stufe offline speichern“ steht an jeder Stufe, auch an zugeklappten. axe ohne ernste Befunde.
+ * übrigen klappen als `<details>` auf. „Stufe aufklappen“ per Tastatur (Summary mit Stufe und Handlung im Namen, per Tab von
+ * der Überschrift der Stufe aus erreicht – kein `locator.focus()`), danach sind alle Stationen der Stufe da und ihre Knöpfe per
+ * Tab erreichbar; nach der ersten Eingabe stehen auch alle Stationen der offenen Stufe (Häppchen). „Stufe offline speichern“
+ * steht an jeder Stufe, auch an zugeklappten. axe ohne ernste Befunde.
  */
 
 type Verzeichnis = { einheiten: { schluessel: string; stufe: string }[] };
@@ -33,19 +34,21 @@ test('Stufe aufklappen per Tastatur: alle Stationen, Knöpfe erreichbar, axe', a
         .getByRole('button', { name: formatiere(de.lernpfad.stufeOffline, { stufe: name }, 'de'), exact: true }),
     ).toBeVisible();
 
-  // Summary per Tastatur: Name mit Stufe und Handlung
+  // Summary per Tastatur: Name mit Stufe und Handlung; von der Überschrift der Stufe aus per Tab („A2: ganze Stufe offline
+  // speichern“, dann die Summary)
   const stufe = page.locator('main details[data-stufe-zu="a2"]');
   const summary = stufe.locator('summary');
   await expect(summary).toHaveText(formatiere(de.lernpfad.stufeZeigen, { stufe: 'A2', anzahl: zahl('a2') }, 'de'));
-  await summary.focus();
+  await perTab(page, summary, page.locator('#stufe-a2'), 4);
   await page.keyboard.press('Enter');
   await expect(stufe).toHaveAttribute('open', '');
   // nach allen Takten: alle Stationen der aufgeklappten Stufe und der offenen Stufe A1
   await expect(stufe.locator('ol > li')).toHaveCount(zahl('a2'), { timeout: 15_000 });
   await expect(page.locator('section[aria-labelledby="stufe-a1"] > ol > li')).toHaveCount(zahl('a1'), { timeout: 15_000 });
 
-  // Tastatur: von der Summary aus in die Stationen der Stufe bis „Einheit offline speichern“ der ersten Station
-  await summary.focus();
+  // Tastatur: von der Summary aus (der Fokus blieb dort) in die Stationen der Stufe bis „Einheit offline speichern“ der ersten
+  // Station
+  await expect(summary).toBeFocused();
   let erreicht = false;
   for (let i = 0; i < 8 && !erreicht; i++) {
     await page.keyboard.press('Tab');

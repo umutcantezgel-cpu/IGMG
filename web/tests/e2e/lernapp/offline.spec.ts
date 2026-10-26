@@ -1,17 +1,29 @@
-import { type BrowserContext, expect, type Page, type Route, test } from '@playwright/test';
+import { type BrowserContext, expect, type Locator, type Page, type Route, test } from '@playwright/test';
 import de from '../../../messages/lernapp/de.json';
 import { formatiere } from '../../../src/lib/lernapp/format';
-import { EINHEIT, ergebnisText, KURS, LEKTION_1, spieleLektion1, swSteuert, testStation, wiederholeBisFertig, xpText } from './hilfen';
+import {
+  EINHEIT,
+  ergebnisText,
+  KURS,
+  LEKTION_1,
+  perTab,
+  spieleLektion1,
+  swSteuert,
+  testStation,
+  wiederholeBisFertig,
+  xpText,
+} from './hilfen';
 import { beobachteAudio, spieleTurkisch } from './l03';
 
 /**
  * Offline (ADR 0038, ADR 0039 Nr. 12, ADR 0037 Fortschreibung Nr. 7, AUFTRAG §6 Station 3, ABNAHME Z-L04):
  * - Einheit im Lernpfad offline speichern, dann das Netz abklemmen – über `page.route` und `context.route` – und die Lektion
  *   vollständig spielen. Der Fortschritt bleibt auf dem Gerät.
- * - Stufe C N9a: „Stufe offline speichern“ (Speicherbedarf vorher, abbrechbar), dann ohne Netz – `context.setOffline(true)`
- *   (`navigator.onLine` ist `false`) UND Abklemmen per Route (erfasst auch die Anfragen des Service Workers) – die Lektion
- *   einer Einheit, die nur die Stufe gespeichert hat, die Hörübung aus dem Bündel, Wiederholen bis „fertig“; der Fortschritt
- *   bleibt.
+ * - Stufe C N9a: „Stufe offline speichern“ (Speicherbedarf vorher, abbrechbar – auch mitten in den Tönen, dann bleibt keine
+ *   Einheit ohne ihre Töne als gespeichert), dann ohne Netz – `context.setOffline(true)` (`navigator.onLine` ist `false`) UND
+ *   Abklemmen per Route (erfasst auch die Anfragen des Service Workers) – die Lektion einer Einheit, die nur die Stufe
+ *   gespeichert hat, startet; die Hörübung spielt aus dem Bündel, das erst „Stufe offline speichern“ ablegte; Wiederholen bis
+ *   „fertig“; der Fortschritt bleibt. Desktop bedient die Knöpfe per Tab und Enter (kein `locator.focus()`).
  * - Befund G-1: Nach einem Bauwechsel (Lern-App-Worker mit neuer `?v=`) bleibt eine gespeicherte Einheit ohne Netz spielbar –
  *   erst aus dem Kursvorrat des alten Baus, nach der Wiederherstellung aus dem eigenen; der Lernpfad sagt ehrlich, solange etwas
  *   fehlt.
@@ -82,10 +94,12 @@ async function vorraete(page: Page): Promise<Record<string, string[]>> {
 const bisMb = (vorlage: string, werte: Record<string, string | number> = {}) =>
   formatiere(vorlage, { ...werte, mb: '§' }, 'de').split('§')[0]!;
 
-/** Station des Lernpfads per Tastatur (desktop) oder Tippen (telefon) bedienen. */
-async function druecke(page: Page, knopf: import('@playwright/test').Locator, tastatur: boolean) {
+/**
+ * Knopf des Lernpfads per Tastatur (desktop: per Tab von `ab` aus, dann Enter) oder Tippen (telefon) bedienen.
+ */
+async function druecke(page: Page, knopf: Locator, tastatur: boolean, ab: Locator) {
   if (tastatur) {
-    await knopf.focus();
+    await perTab(page, knopf, ab);
     await page.keyboard.press('Enter');
   } else await knopf.tap();
 }
@@ -172,27 +186,38 @@ test('Einheit offline speichern, Netz abklemmen: Lektion vollständig spielbar, 
   await expect(page.locator(`main a[href="${lernpfad}/ueben?l=${LEKTION_1}"]`)).toContainText(`(${de.lernpfad.geschafft})`);
 });
 
-test('Stufe offline speichern ist abbrechbar: Speicherbedarf vorher, Abbrechen, Gespeichertes bleibt', async ({ page, context }, info) => {
+test('Stufe offline speichern ist abbrechbar: Speicherbedarf vorher, Abbrechen mitten in den Tönen, Gespeichertes bleibt', async ({
+  page,
+  context,
+}, info) => {
   test.setTimeout(120_000);
   const tastatur = info.project.name === 'desktop';
   await page.goto(`/lern-app/de/${KURS}`);
   await swSteuert(page);
   const v = (await page.evaluate(async (k) => (await fetch(`/lern-app/pakete/${k}`)).json(), KURS)) as Verzeichnis;
   const a1 = v.einheiten.filter((e) => e.stufe === 'a1');
+  // Voraussetzung (E2E-Datenbank): Töne hat in A1 nur die Testeinheit, und vor ihr steht mindestens eine Einheit ohne Töne
+  const mitToenen = a1.findIndex((e) => e.audio.length > 0);
+  expect(a1[mitToenen]?.schluessel).toBe(EINHEIT);
+  expect(mitToenen).toBeGreaterThan(0);
+  const ueberschrift = page.locator('#stufe-a1');
   const stufe = page.locator('section[aria-labelledby="stufe-a1"] [data-stufe-offline]');
   // Speicherbedarf vorher: alle Einheiten der Stufe samt MB
   await expect(stufe).toContainText(bisMb(de.lernpfad.stufeOfflineText, { anzahl: a1.length }));
   await expect(stufe).toContainText(/\d+,\d MB\)/);
-  // Pakete langsam ausliefern (auch die Anfragen des Workers), damit der Abbruch mitten im Speichern liegt
+  // Pakete und Töne langsam ausliefern (auch die Anfragen des Workers), damit der Abbruch mitten in den Tönen liegt
+  let toeneAngefragt = 0;
   await context.route(`**/lern-app/pakete/${KURS}/*/*`, async (route) => {
     await new Promise((weiter) => setTimeout(weiter, 1_500));
     await route.continue().catch(() => undefined);
   });
-  await druecke(
-    page,
-    stufe.getByRole('button', { name: formatiere(de.lernpfad.stufeOffline, { stufe: 'A1' }, 'de'), exact: true }),
-    tastatur,
-  );
+  await context.route('**/lern-app/audio/**', async (route) => {
+    toeneAngefragt++;
+    await new Promise((weiter) => setTimeout(weiter, 10_000));
+    await route.continue().catch(() => undefined);
+  });
+  const knopf = stufe.getByRole('button', { name: formatiere(de.lernpfad.stufeOffline, { stufe: 'A1' }, 'de'), exact: true });
+  await druecke(page, knopf, tastatur, ueberschrift);
   const abbrechen = stufe.getByRole('button', { name: de.lernpfad.stufeOfflineAbbrechen, exact: true });
   await expect(abbrechen).toBeVisible();
   await expect(
@@ -200,16 +225,30 @@ test('Stufe offline speichern ist abbrechbar: Speicherbedarf vorher, Abbrechen, 
   ).toBeVisible();
   // Tastatur: der Fokus liegt auf „abbrechen“
   if (tastatur) await expect(abbrechen).toBeFocused();
-  await druecke(page, abbrechen, tastatur);
+  // abbrechen, während die Töne der Testeinheit laden – die Einheiten vor ihr sind dann gespeichert
+  await expect.poll(() => toeneAngefragt, { timeout: 60_000 }).toBeGreaterThan(0);
+  await druecke(page, abbrechen, tastatur, ueberschrift);
   await expect(stufe.locator('p[role="status"]')).toHaveText(de.lernpfad.stufeOfflineAbgebrochen);
-  // der Knopf ist wieder da, nicht alle Einheiten sind gespeichert
-  await expect(stufe.getByRole('button', { name: formatiere(de.lernpfad.stufeOffline, { stufe: 'A1' }, 'de'), exact: true })).toBeVisible();
-  const gespeichert = Object.entries(await paketEintraege(page)).filter(([e, offline]) => offline && a1.some((x) => x.schluessel === e));
+  // die Meldung steht auch sichtbar da, nicht nur in der Live-Region
+  await expect(stufe.locator('p:not([role="status"])').filter({ hasText: de.lernpfad.stufeOfflineAbgebrochen })).toBeVisible();
+  // der Knopf ist wieder da; gespeichert sind die Einheiten vor der Testeinheit, nicht sie selbst (ihre Töne fehlen) und
+  // nicht alle
+  await expect(knopf).toBeVisible();
+  const gespeichert = Object.entries(await paketEintraege(page))
+    .filter(([e, offline]) => offline && a1.some((x) => x.schluessel === e))
+    .map(([e]) => e);
+  expect(gespeichert.length).toBeGreaterThanOrEqual(mitToenen);
   expect(gespeichert.length).toBeLessThan(a1.length);
+  expect(gespeichert).not.toContain(EINHEIT);
+  await expect(stufe).toContainText(bisMb(de.lernpfad.stufeOfflineRest, { anzahl: a1.length - gespeichert.length }));
+  // keine gespeicherte Einheit ohne ihre Töne
+  const audio = (await vorraete(page))['igmg-lernapp-audio'] ?? [];
+  for (const e of a1.filter((x) => gespeichert.includes(x.schluessel)))
+    expect(audio, e.schluessel).toEqual(expect.arrayContaining(e.audio.map((a) => a.adresse)));
   await context.unrouteAll({ behavior: 'ignoreErrors' });
 });
 
-test('Stufe offline speichern, Netz weg: Lektion einer anderen Einheit, Hörübung aus dem Bündel, Wiederholen bis fertig, Fortschritt bleibt', async ({
+test('Stufe offline speichern, Netz weg: Lektion einer anderen Einheit startet, Hörübung aus dem gespeicherten Bündel, Wiederholen bis fertig, Fortschritt bleibt', async ({
   page,
   context,
 }, info) => {
@@ -230,12 +269,18 @@ test('Stufe offline speichern, Netz weg: Lektion einer anderen Einheit, Hörübu
   await expect(page.locator(`main a[href="${lernpfad}/ueben?l=${LEKTION_1}"]`)).toBeVisible({ timeout: 15_000 });
   expect((await paketEintraege(page))[andere.schluessel]).toBeUndefined();
 
+  // die Töne der Testeinheit liegen noch nicht im Vorrat (erst „Stufe offline speichern“ legt sie ab)
+  const buendel = a1.find((e) => e.schluessel === EINHEIT)!.audio.map((a) => a.adresse);
+  expect(buendel.length).toBeGreaterThan(0);
+  expect(((await vorraete(page))['igmg-lernapp-audio'] ?? []).filter((a) => buendel.includes(a))).toEqual([]);
+
   const stufe = page.locator('section[aria-labelledby="stufe-a1"] [data-stufe-offline]');
   await expect(stufe).toContainText(bisMb(de.lernpfad.stufeOfflineText, { anzahl: a1.length }));
   await druecke(
     page,
     stufe.getByRole('button', { name: formatiere(de.lernpfad.stufeOffline, { stufe: 'A1' }, 'de'), exact: true }),
     tastatur,
+    page.locator('#stufe-a1'),
   );
   await expect(stufe).toContainText(bisMb(de.lernpfad.stufeOfflineFertig, { stufe: 'A1' }), { timeout: 120_000 });
   await expect(stufe.locator('p[role="status"]')).toContainText(bisMb(de.lernpfad.stufeOfflineFertig, { stufe: 'A1' }));
@@ -255,13 +300,12 @@ test('Stufe offline speichern, Netz weg: Lektion einer anderen Einheit, Hörübu
     ]),
   );
   expect(vorrat['igmg-lernapp-pakete']).toEqual(expect.arrayContaining([`/lern-app/pakete/${KURS}/${andere.schluessel}/${andere.hash}`]));
-  const buendel = a1.find((e) => e.schluessel === EINHEIT)!.audio.map((a) => a.adresse);
-  expect(buendel.length).toBeGreaterThan(0);
   expect(vorrat['igmg-lernapp-audio']).toEqual(expect.arrayContaining(buendel));
 
   const netz = await netzWeg(page, context);
 
-  // Lektion einer anderen Einheit der Stufe (nur durch „Stufe offline speichern“ auf dem Gerät): die erste Aufgabe steht
+  // Lektion einer anderen Einheit der Stufe (nur durch „Stufe offline speichern“ auf dem Gerät) startet: die erste Aufgabe
+  // steht (durchgespielt werden die Lektionen der Testeinheit – die Lösungen echter Lektionen kennt der Test nicht)
   await page.goto(`${lernpfad}/ueben?l=${KURS}${andere.schluessel.slice(2)}.l01`);
   await expect(page.locator('main form[data-aufgabe]')).toBeVisible({ timeout: 15_000 });
 
@@ -298,7 +342,7 @@ test('Bauwechsel (G-1): gespeicherte Einheit bleibt ohne Netz spielbar – Lekti
   await page.goto(lernpfad);
   await swSteuert(page);
   await page.reload();
-  await druecke(page, testStation(page).getByRole('button', { name: de.lernpfad.offline }), tastatur);
+  await druecke(page, testStation(page).getByRole('button', { name: de.lernpfad.offline }), tastatur, testStation(page).locator('h4'));
   await expect(testStation(page).getByText(bisMb(de.lernpfad.offlineFertig)).first()).toBeVisible({ timeout: 60_000 });
   const bau = await page.evaluate(() => new URL(navigator.serviceWorker.controller!.scriptURL).searchParams.get('v'));
   expect(bau).toMatch(/^[a-z0-9]+$/);

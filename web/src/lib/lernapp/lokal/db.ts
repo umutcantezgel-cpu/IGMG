@@ -24,6 +24,13 @@ import type { KartenBasis } from '../srs';
  */
 
 export const DB_NAME = 'igmg-lernapp';
+/**
+ * Version der Datenbank. Nach einem Bauwechsel liefert der Lern-App-Worker ohne Netz Seiten und Programmteile des alten Baus aus
+ * dessen Kursvorrat, bis die Wiederherstellung fertig ist (ADR 0039 Fortschreibung N9a Nr. 2) – sie öffnen die Datenbank mit
+ * ihrer eigenen, älteren Version und scheitern mit `VersionError`, sobald eine neue Seite die Version angehoben hat. Wer sie
+ * anhebt, lässt deshalb den Worker die Kursvorräte älterer Bauten nicht mehr ausliefern (gespeicherte Einheiten starten dann
+ * erst nach der Wiederherstellung mit Netz wieder offline).
+ */
 export const DB_VERSION = 1;
 
 export type { Sprache };
