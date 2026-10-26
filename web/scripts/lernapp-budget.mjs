@@ -6,7 +6,11 @@
 // - Hülle: eigener Anteil von `/lern-app/de/quellen` über dem Grundstock ≤ 20 KB.
 // - Start `/lern-app/de`, Lernpfad `/lern-app/ar/de-aus-ar`, Fortschritt `/lern-app/de/fortschritt`: gesamt ≤ 180 KB,
 //   eigener Anteil ≤ 30 KB.
-// - Spieler `/lern-app/tr/de-aus-tr/ueben?l=…` (erste Aufgabe sichtbar): gesamt ≤ 210 KB, zusätzlich zur Hülle ≤ 60 KB.
+// - Spieler `/lern-app/tr/de-aus-tr/ueben?l=…` (erste Aufgabe sichtbar): gesamt ≤ 210 KB, zusätzlich zur Hülle ≤ 60 KB. Der
+//   Typ-Chunk der ersten Aufgabe zählt mit. Gemessen werden die Testlektion (Auswahl zuerst) und echte Lektionen, die mit
+//   den Typen mit den größten Chunks beginnen (`ECHTE_SPIELER`, Stufe C N6: Geschichte wie 136 echte Lektionen, Lücke,
+//   Sprechen, Lesen mit Fragen); es zählt die ungünstigste. Braucht die Inhalte der E2E-Datenbank bzw. des Import-Baus;
+//   `--ohne-echt` lässt sie aus.
 // - je Übungstyp ≤ 15 KB: der Chunk des Typs (`TYP_ERKENNUNG`: Datei aus `.next/static/chunks`, in der alle
 //   Erkennungstexte des Typs stehen – Turbopack legt die gemeinsamen Bausteine wie Optionsgruppe oder Texteingabe in jeden
 //   Typ-Chunk; mehrere passende Dateien sind Chunks verschiedener Typen gleicher Bauart, gezählt wird die größte) plus
@@ -19,11 +23,22 @@ import { join } from 'node:path';
 import { gzipSync } from 'node:zlib';
 import { chromium } from '@playwright/test';
 
-const args = process.argv.slice(2);
+const args = process.argv.slice(2).filter((a) => a !== '--ohne-echt');
+const ohneEcht = process.argv.includes('--ohne-echt');
 const ausIndex = args.indexOf('--aus');
 const aus = ausIndex >= 0 ? args[ausIndex + 1] : null;
 const basis = args.find((a, i) => !a.startsWith('--') && (ausIndex < 0 || i !== ausIndex + 1)) ?? 'http://localhost:3100';
 const KB = 1024;
+
+/** Echte Lektionen je Typ der ersten Aufgabe (Stand 26.10.2026; Inhalte aus `web/inhalte/lernapp`). */
+const ECHTE_SPIELER = {
+  geschichte: 'tr-aus-de.b1.e01.l06',
+  luecke: 'tr-aus-de.b1.e14.l07',
+  sprechen: 'tr-aus-de.b1.e15.l08',
+  lesen_fragen: 'tr-aus-de.a1.e02.l07',
+};
+/** Erste Aufgabe steht: Formular mit Typ, ohne „wird geladen“ (Ersatz während des Typ-Chunks). */
+const ERSTE_AUFGABE = (typ) => `main form[data-aufgabe="${typ}"] > :nth-child(2):not(p)`;
 
 const ROUTEN = {
   website: { pfad: '/' },
@@ -33,6 +48,14 @@ const ROUTEN = {
   fortschritt: { pfad: '/lern-app/de/fortschritt' },
   spieler: { pfad: '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.test.l01', warte: 'main input[type="radio"]' },
   spielerWortbank: { pfad: '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.test.l02', warte: 'main [role="toolbar"]' },
+  ...(ohneEcht
+    ? {}
+    : Object.fromEntries(
+        Object.entries(ECHTE_SPIELER).map(([typ, l]) => [
+          `echt_${typ}`,
+          { pfad: `/lern-app/de/tr-aus-de/ueben?l=${l}`, warte: ERSTE_AUFGABE(typ) },
+        ]),
+      )),
   // L2-04: neues Gerät – ohne Karten bzw. vor „Test beginnen“ darf kein Zod laden (TBT der Spieler-Routen)
   wiederholen: { pfad: '/lern-app/de/tr-aus-de/wiederholen', warte: '#wiederholen-sitzung p' },
   einstufung: { pfad: '/lern-app/de/tr-aus-de/einstufung', warte: '#einstufung-test button' },
@@ -114,6 +137,7 @@ const BUDGET = {
   fortschrittEigen: 30,
   spielerGesamt: 210,
   spielerZusaetzlich: 60,
+  ...(ohneEcht ? {} : { spielerEchtGesamt: 210, spielerEchtZusaetzlich: 60 }),
   wiederholenGesamt: 210,
   einstufungGesamt: 210,
   uebungstyp: 15,
@@ -207,12 +231,24 @@ const werte = {
   spielerGesamt: kb(summe(gemessen.spieler)),
   spielerZusaetzlich: kb(summe(gemessen.spieler, (d) => !gemessen.huelle.has(d))),
   spielerWortbankGesamt: kb(summe(gemessen.spielerWortbank)),
+  // echte Lektionen je Typ der ersten Aufgabe; Budget gegen die ungünstigste
+  spielerEcht: Object.fromEntries(
+    Object.keys(ohneEcht ? {} : ECHTE_SPIELER).map((typ) => [
+      typ,
+      { gesamt: kb(summe(gemessen[`echt_${typ}`])), zusaetzlich: kb(summe(gemessen[`echt_${typ}`], (d) => !gemessen.huelle.has(d))) },
+    ]),
+  ),
   wiederholenGesamt: kb(summe(gemessen.wiederholen)),
   einstufungGesamt: kb(summe(gemessen.einstufung)),
   uebungstyp: Object.fromEntries(Object.entries(uebungstypen).map(([t, { gz }]) => [t, kb(gz)])),
   arabischeTastatur: kb(typen.arabischeTastatur.gz),
   spielerChunk: kb(typen.spieler.gz),
 };
+
+if (!ohneEcht) {
+  werte.spielerEchtGesamt = Math.max(...Object.values(werte.spielerEcht).map((x) => x.gesamt));
+  werte.spielerEchtZusaetzlich = Math.max(...Object.values(werte.spielerEcht).map((x) => x.zusaetzlich));
+}
 
 const verfehlt = [];
 for (const [k, grenze] of Object.entries(BUDGET)) {
@@ -236,6 +272,13 @@ const zeilen = [
   `Fortschritt /lern-app/de/fortschritt: gesamt ${werte.fortschrittGesamt} KB (≤ ${BUDGET.fortschrittGesamt}), eigener Anteil ${werte.fortschrittEigen} KB (≤ ${BUDGET.fortschrittEigen})`,
   `Spieler-Route (Lektion 1, erste Aufgabe): gesamt ${werte.spielerGesamt} KB (≤ ${BUDGET.spielerGesamt}), zusätzlich zur Hülle ${werte.spielerZusaetzlich} KB (≤ ${BUDGET.spielerZusaetzlich})`,
   `Spieler-Route (Lektion 2, Wortbank zuerst): gesamt ${werte.spielerWortbankGesamt} KB`,
+  ohneEcht
+    ? 'Spieler-Route echte Lektionen: nicht gemessen (--ohne-echt)'
+    : `Spieler-Route echte Lektionen (erste Aufgabe: ${Object.entries(werte.spielerEcht)
+        .map(([typ, x]) => `${typ} ${ECHTE_SPIELER[typ]} ${x.gesamt}/+${x.zusaetzlich}`)
+        .join(
+          ', ',
+        )} KB): ungünstigste gesamt ${werte.spielerEchtGesamt} KB (≤ ${BUDGET.spielerEchtGesamt}), zusätzlich zur Hülle ${werte.spielerEchtZusaetzlich} KB (≤ ${BUDGET.spielerEchtZusaetzlich})`,
   `Wiederholen ohne Karten: gesamt ${werte.wiederholenGesamt} KB (≤ ${BUDGET.wiederholenGesamt}), Zod: ${gemessen.wiederholen.zod.size ? 'ja' : 'nein'}`,
   `Einstufung vor dem Start: gesamt ${werte.einstufungGesamt} KB (≤ ${BUDGET.einstufungGesamt}), Zod: ${gemessen.einstufung.zod.size ? 'ja' : 'nein'}`,
   `Spieler-Chunk: ${werte.spielerChunk} KB · Übungstypen: ${Object.entries(werte.uebungstyp)

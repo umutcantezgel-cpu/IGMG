@@ -12,7 +12,7 @@ import { Fortschrittsleiste } from '../Fortschrittsleiste';
 import { InhaltText } from '../InhaltText';
 import { richtung } from '../typen';
 import type { AufgabenProps } from '../typen';
-import { type LaufendeAufnahme, mikrofonErlaubtHier, starteAufnahme } from './aufnahme';
+import type { LaufendeAufnahme } from './aufnahme';
 import { erhebeUmgebung, Erkennung, erkennbar, imVorrat, liesStand, merkeStand } from './erkennung';
 import { Pegel, zeigePegel } from './Pegel';
 
@@ -33,6 +33,12 @@ type Phase = 'start' | 'aufnahme' | 'verarbeitung' | 'ergebnis';
 const KNOPF = 'min-h-12 druck rounded-pill border-2 border-gruen-700 bg-weiss px-6 font-bold text-gruen-800 hover:bg-gruen-50';
 const HAUPT = 'min-h-12 druck rounded-pill bg-gruen-700 px-6 font-bold text-weiss hover:bg-gruen-800';
 const LEISE = 'min-h-11 font-bold text-gruen-800 underline underline-offset-4';
+
+/**
+ * Aufnahme (Mikrofon, Pegel, Umwandlung in PCM) erst mit dem Klick auf „Aufnehmen“ (Stufe C N6): Beginnt eine Lektion mit
+ * der Sprechübung, zählt ihr Typ-Chunk zum Spieler-Budget (KERN §9, zusätzlich zur Hülle ≤ 60 KB).
+ */
+const ladeAufnahme = () => import('./aufnahme');
 
 /**
  * Sprechübung (PLAN §4.2, ADR 0042 mit Fortschreibung S2/S5, KERN 4.0 §6 und §8):
@@ -173,13 +179,20 @@ export default function Sprechen({
   }
 
   async function aufnehmen() {
-    if (!mikrofonErlaubtHier(location.pathname)) {
+    let a: Awaited<ReturnType<typeof ladeAufnahme>>;
+    try {
+      a = await ladeAufnahme();
+    } catch {
+      setMikrofon(false);
+      return sage(t.keinMikrofon);
+    }
+    if (!a.mikrofonErlaubtHier(location.pathname)) {
       setMikrofon(false);
       return sage(t.keinMikrofon);
     }
     try {
       setErgebnis(null);
-      aufnahme.current = await starteAufnahme({
+      aufnahme.current = await a.starteAufnahme({
         onPegel: (p) => zeigePegel(pegelBalken.current, p),
         onEnde: () => void beenden(),
       });
