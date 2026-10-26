@@ -687,7 +687,8 @@ export const VARIABLEN: readonly Variable[] = [
   },
   {
     name: 'LERNAPP_BLOB_BASIS',
-    zweck: 'Öffentliche Basisadresse des Blob-Speichers „lernapp“ (Audio-Bündel der Lern-App, ADR 0039); ohne sie nur Testbündel',
+    zweck:
+      'Öffentliche Basisadresse des Blob-Speichers „lernapp“ (Audio-Bündel der Lern-App, ADR 0039); ohne sie kein Audio (Testbündel nur mit LERNAPP_TESTKURS=1)',
     muster: false,
     pflicht: NIE,
     bereich: ['Production', 'Preview'],
@@ -697,7 +698,8 @@ export const VARIABLEN: readonly Variable[] = [
     erzeugbar: false,
     pruefung: httpUrl,
     regel: 'eine http- oder https-Adresse',
-    abhilfe: 'Die öffentliche Adresse des Blob-Speichers „lernapp“ eintragen oder weglassen (dann liefert /lern-app/audio nur Testbündel).',
+    abhilfe:
+      'Die öffentliche Adresse des Blob-Speichers „lernapp“ eintragen oder weglassen (dann liefert /lern-app/audio kein Audio, Testbündel nur mit LERNAPP_TESTKURS=1).',
   },
   {
     name: 'LERNAPP_AUDIO_LOKAL',
@@ -716,18 +718,17 @@ export const VARIABLEN: readonly Variable[] = [
   {
     name: 'LERNAPP_TESTKURS',
     zweck:
-      'Testkurs der Lern-App (Einheiten <kurs>.a1.test, Testeinheit islam.grund.test mit Testfreigaben) im Bau ohne Datenbank, nur für eine Vorführung',
+      'Nimmt den Testkurs (<kurs>.a1.test mit synthetischen Tönen, islam.grund.test mit Testfreigaben) in den Bau ohne Datenbank auf und liefert seine Testbündel aus',
     muster: false,
     pflicht: NIE,
     bereich: [],
     beispiel: '1',
-    herkunft:
-      'Von Menschen, nur für eine Vorführung im Beispielmodus (scripts/lernapp/testkurs-im-bau.mjs); auf der öffentlichen Test-Domain nie setzen',
+    herkunft: 'Nur für eine Vorführung im Beispielmodus oder lokal; auf der öffentlichen Test-Domain nicht setzen (Stufe C, N1)',
     geheim: false,
     erzeugbar: false,
     pruefung: z.literal('1'),
     regel: 'nur 1',
-    abhilfe: 'Weglassen (dann nur echte Einheiten) oder für eine Vorführung im Beispielmodus 1 eintragen.',
+    abhilfe: 'Weglassen (Normalfall): Der Bau ohne Datenbank enthält dann nur die echten Kurse ohne Testtöne.',
   },
   {
     name: 'LERNAPP_BLOB_READ_WRITE_TOKEN',
