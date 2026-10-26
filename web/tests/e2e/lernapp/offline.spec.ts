@@ -95,7 +95,8 @@ const bisMb = (vorlage: string, werte: Record<string, string | number> = {}) =>
   formatiere(vorlage, { ...werte, mb: '§' }, 'de').split('§')[0]!;
 
 /**
- * Knopf des Lernpfads per Tastatur (desktop: per Tab von `ab` aus, dann Enter) oder Tippen (telefon) bedienen.
+ * Knopf des Lernpfads per Tastatur (desktop: per Tab vom Anfang des Inhalts aus – Klick auf `ab` fokussiert `main` –, dann
+ * Enter) oder Tippen (telefon) bedienen.
  */
 async function druecke(page: Page, knopf: Locator, tastatur: boolean, ab: Locator) {
   if (tastatur) {

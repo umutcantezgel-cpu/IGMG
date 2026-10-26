@@ -53,20 +53,25 @@ export const testStation = (page: Page) => page.getByRole('region', { name: THEM
 export const liveRegion = (page: Page) => page.locator('main p[role="status"].sr-only').first();
 
 /**
- * Tastaturweg ohne `locator.focus()` (Gegenprüfung N9a): Ausgangspunkt ist ein Klick auf ein nicht fokussierbares Element vor
- * dem Ziel (etwa die Überschrift der Stufe oder der Station) – dort beginnt der Browser die Tab-Reihenfolge –, dann Tab, bis das
- * Ziel den Fokus hat (höchstens `max` Schritte). Hat das Ziel den Fokus schon (etwa „abbrechen“ nach dem Start), bleibt es dabei.
+ * Tastaturweg ohne `locator.focus()` (Gegenprüfung N9a): von einem festen Ausgangspunkt per Tab bis zum Ziel (höchstens `max`
+ * Schritte). Ausgangspunkt ist der Inhalt `main` – das Ziel von „Zum Inhalt springen“ (tabindex −1): Ein Klick auf ein nicht
+ * bedienbares Element darin (`ab`, etwa eine Überschrift) setzt den Fokus dorthin, geprüft. Von da an zählt die Tab-Reihenfolge
+ * der Seite. Hat das Ziel den Fokus schon (etwa „abbrechen“ nach dem Start), bleibt es dabei.
  */
-export async function perTab(page: Page, ziel: Locator, ab: Locator, max = 20) {
+export async function perTab(page: Page, ziel: Locator, ab: Locator, max = 200) {
   const hatFokus = () => ziel.evaluate((el) => el === document.activeElement);
   if (await hatFokus()) return;
   await ab.click();
+  await expect(page.locator('main')).toBeFocused();
+  let schritte = 0;
   let erreicht = false;
-  for (let i = 0; i < max && !erreicht; i++) {
+  while (!erreicht && schritte < max) {
     await page.keyboard.press('Tab');
+    schritte++;
     erreicht = await hatFokus();
   }
-  expect(erreicht, `per Tab nicht erreicht (höchstens ${max} Schritte): ${ziel}`).toBe(true);
+  expect(erreicht, `per Tab nicht erreicht (höchstens ${max} Schritte ab main): ${ziel}`).toBe(true);
+  return schritte;
 }
 
 export type Bedienung = 'tastatur' | 'tippen';
