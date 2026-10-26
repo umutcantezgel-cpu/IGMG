@@ -325,7 +325,7 @@ export type StationsKontext = {
 };
 
 /** Stationen je Takt beim Aufbau einer Stufe (`Stationen`). */
-const STATIONEN_JE_TAKT = 2;
+const STATIONEN_JE_TAKT = 4;
 
 /**
  * Stationen einer Stufe an der Linie (B-24): Die Linie zeichnet sich je Stufe von Station zu Station (`--i` Station in der

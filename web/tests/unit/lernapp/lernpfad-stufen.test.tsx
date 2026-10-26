@@ -94,8 +94,7 @@ describe('Lernpfad: nur die aktuelle Stufe mit Stationen (LernpfadStufen)', () =
 
   it('A1 geschafft: A2 offen (aktuelle Einheit), A1 zu, „Stufe abgeschlossen“ bleibt sichtbar an A1', async () => {
     const html = await stufen(ALLE_A1);
-    // A2 hat drei Einheiten; im ersten Takt stehen zwei (die dritte folgt im nächsten)
-    expect(anzahl(html, /lernweg-station/g)).toBe(2);
+    expect(anzahl(html, /lernweg-station/g)).toBe(3);
     expect(html).toContain('[Thema a2 1]');
     expect(html).not.toContain('[Thema a1 1]');
     expect(html).toContain('data-stufe-zu="a1"');
@@ -110,7 +109,7 @@ describe('Lernpfad: nur die aktuelle Stufe mit Stationen (LernpfadStufen)', () =
     expect(html).toContain('data-stufe-zu="b1"');
   });
 
-  it('große Stufe: zuerst zwei Stationen, die übrigen folgen je Takt (kein langer Block beim Aufbau)', async () => {
+  it('große Stufe: zuerst vier Stationen, die übrigen folgen je Takt (kein langer Block beim Aufbau)', async () => {
     const gross: Verzeichnis = { ...V, einheiten: [1, 2, 3, 4, 5, 6, 7].map((n) => einheit('a1', n)) };
     const html = await vorrendern(
       <LernpfadStufen
@@ -121,9 +120,9 @@ describe('Lernpfad: nur die aktuelle Stufe mit Stationen (LernpfadStufen)', () =
         k={kontext()}
       />,
     );
-    expect(anzahl(html, /lernweg-station/g)).toBe(2);
-    expect(html).toContain('[Thema a1 2]');
-    expect(html).not.toContain('[Thema a1 3]');
+    expect(anzahl(html, /lernweg-station/g)).toBe(4);
+    expect(html).toContain('[Thema a1 4]');
+    expect(html).not.toContain('[Thema a1 5]');
   });
 
   it('arabische Oberfläche: Zahl der Einheiten mit arabischer Pluralform und östlichen Ziffern', async () => {
