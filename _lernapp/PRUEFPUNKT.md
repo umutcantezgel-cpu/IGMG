@@ -1,5 +1,19 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 00:20 UTC – N1 gemergt, Fortsetzung N3 → N2 → N4 läuft (1 Agent):**
+  - **N1** (Testkurs getrennt) gemergt in 25515a23 und auf `main`. Die Testeinheit liegt jetzt unter `<kurs>.a1.test`; im Bau ohne Datenbank nur mit `LERNAPP_TESTKURS=1`.
+    - Gegenprüfung 2: ein „mittel“ übrig, die Messwerkzeuge Z-L07 suchen noch `a1.e01`. Das macht N4 (6).
+    - Nachtrag ce439430: `LERNAPP_TESTKURS` in VARIABLEN und VERCEL-ENV (Unit umgebung war rot).
+    - Nachprüfung: Integration 34/34, Sprachen und Religion grün; Unit nach ce439430 grün (umgebung, vercel-env-doku 155/155), Typen grün.
+    - Live nach dem Vercel-Bau prüfen: `tr-aus-de` → `tr.a1.e01` = „Begrüßung und Vorstellung“ (8 Lektionen, ohne Audio).
+  - **Fortsetzung** `wf_c9221533-927` (seriell N3 → N2 → N4): Jedes Paket merged zuerst den Branch, dann Bau fortsetzen → Gegenprüfung → ggf. Mängelrunde. Ohne MCP-Werkzeuge (ein Gegenprüfer hing an einem Vercel-MCP-Aufruf).
+  - **Auslastung** 0,54 um 00:03 (Taktlinie 0,52), Reset 02:10.
+  - **Danach:**
+    1. N2–N4 mergen.
+    2. Volle E2E und Import-Bau auf dem Merge-Stand.
+    3. Belege B (Technik/Oberfläche) und Belege Inhalte (Z-L01, Z-L14).
+    4. Frischer Endprüfer, ABNAHME, BERICHT, ABSCHLUSS.
+
 - **Stand 25.10.2026 22:40 UTC – B1 ar freigegeben, Nacharbeit gedrosselt:**
   - **B1 ar fertig:** Schlussprüfung 1736ddb6 (16 Einheiten, 1.300/1.300 Lemmata, 5.067 Sätze, 0 blockierend, 0 menschlich_klaeren).
     - Freigabe aller 16 Einheiten (3d2797d7), Merge 5404aa06 auf `main`.
