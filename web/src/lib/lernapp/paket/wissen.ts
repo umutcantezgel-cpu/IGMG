@@ -15,7 +15,7 @@ import type { Sprache, Stufe } from '../kurse';
 import type { BauErgebnis } from './bauen';
 import { kanonischGeprueft, sha256Hex } from './hash';
 import { INHALT_LIZENZ, PAKET_FORMAT } from './kennungen';
-import type { Paket, WissensLektionVermerk } from './typen';
+import { type Paket, PaketSchema, WissensLektionSchema, type WissensLektionVermerk } from './typen';
 
 /**
  * Lektionen des Wissenskurses und des Koran-Arabisch-Pfads für den Paketbau (ADR 0039 Nr. 1, ADR 0040 Nr. 5, KERN 4.0
@@ -127,6 +127,10 @@ const istDaten = (x: unknown): x is Daten => typeof x === 'object' && x !== null
  * einem strittigen Thema (ADR 0040 Nr. 4) – der Kennzeichnung `strittig`; gegen `AufgabeSchema` geprüft. `null`, wenn sie nicht
  * passt oder der Spieler für den Typ keine Quellenzeile zeigt (`auswahl`, `luecke`): Dann fehlt die Lektion lieber, als dass
  * eine Aussage ohne Quelle erscheint.
+ *
+ * Alles, was die Prüfenden freigegeben haben, kommt an: Bei `zuordnen` und `reihenfolge` wird die inhaltliche `anweisung` der
+ * Inhaltsdatei zur `frage` der Aufgabe (der Spieler zeigt sie unter der festen Überschrift „Ordne zu“/„Ordne“). Fehlt sie, ist
+ * die Quizfrage nicht lösbar → `null`.
  */
 export function wissensAufgabe(
   a: Pick<WissensAufgabeRoh, 'schluessel' | 'typ' | 'daten'>,
@@ -136,13 +140,15 @@ export function wissensAufgabe(
   const d = a.daten;
   if (!istDaten(d)) return null;
   const kopf = { schluessel: a.schluessel, sprache: 'de' as const, quelle, ...(strittig ? { strittig: true as const } : {}) };
+  // inhaltliche Frage von `zuordnen`/`reihenfolge` (Feld `anweisung` der Inhaltsdatei)
+  const frage = typeof d.anweisung === 'string' && d.anweisung.trim() ? d.anweisung : null;
   let roh: unknown = null;
   if (a.typ === 'wahr_falsch')
     roh = { ...kopf, typ: 'wahr_falsch', anweisung: 'stimmtDas', aussage: d.behauptung, wahr: d.richtig, begruendung: d.begruendung };
   else if (a.typ === 'fallfrage')
     roh = { ...kopf, typ: 'fallfrage', anweisung: 'waehleAntwort', fall: d.fall, frage: d.frage, optionen: d.optionen, richtig: d.richtig };
-  else if (a.typ === 'reihenfolge') roh = { ...kopf, typ: 'reihenfolge', anweisung: 'ordne', schritte: d.schritte };
-  else if (a.typ === 'zuordnen' && Array.isArray(d.paare)) {
+  else if (a.typ === 'reihenfolge' && frage) roh = { ...kopf, typ: 'reihenfolge', anweisung: 'ordne', frage, schritte: d.schritte };
+  else if (a.typ === 'zuordnen' && frage && Array.isArray(d.paare)) {
     // Paare „links → rechts“: die rechten Seiten sind die Kategorien (Reihenfolge des ersten Auftretens)
     const paare = d.paare.filter(istDaten);
     const kategorien = [...new Set(paare.map((p) => p.rechts))];
@@ -150,6 +156,7 @@ export function wissensAufgabe(
       ...kopf,
       typ: 'zuordnen',
       anweisung: 'ordneZu',
+      frage,
       kategorien,
       eintraege: paare.map((p) => ({ text: p.links, kategorie: kategorien.indexOf(p.rechts) })),
     };
@@ -206,25 +213,26 @@ export function wissensLektionImPaket(l: WissensLektionRoh): { lektion: Lektion;
   ].map(freigegebenAm);
   if (zeiten.some((t) => t === null)) return null;
   const am = new Date(Math.max(...zeiten.map((t) => t!.getTime())));
-  return {
-    lektion,
-    vermerk: {
-      geprueftAm: am.toISOString().slice(0, 10),
-      kinderGeeignet: l.kinderGeeignet,
-      aussagen: l.aussagen.map((a) => ({
-        schluessel: a.schluessel,
-        text: a.text,
-        quelle: a.quelle,
-        ...(a.strittig ? { strittig: true } : {}),
-      })),
-    },
-  };
+  // Vermerk im Format des Pakets (Länge von Text und Quellenzeile, Anzahl der Aussagen): Ein Paket, das der Client verwirft
+  // (`PaketSchema` in `lokal/pakete.ts`), entsteht nie – lieber keine Lektion als eine kaputte (wie bei den Quizfragen)
+  const vermerk = WissensLektionSchema.safeParse({
+    geprueftAm: am.toISOString().slice(0, 10),
+    kinderGeeignet: l.kinderGeeignet,
+    aussagen: l.aussagen.map((a) => ({
+      schluessel: a.schluessel,
+      text: a.text,
+      quelle: a.quelle,
+      ...(a.strittig ? { strittig: true } : {}),
+    })),
+  });
+  return vermerk.success ? { lektion, vermerk: vermerk.data } : null;
 }
 
 /**
  * Einheitenpaket des Wissenskurses (Format `PaketSchema`, `kurs: 'islam'`, Inhalt Deutsch): nur Lektionen, deren Bausteine
  * alle zwei Freigaben zum aktuellen Hash haben; je Lektion der Prüfvermerk und die Aussagen mit Quellenzeile. Keine Einträge,
- * Tipps oder Audio (keine Sprachausgabe, KERN 4.0 §4). `null`, wenn die Einheit zurückgezogen ist oder keine Lektion bleibt.
+ * Tipps oder Audio (keine Sprachausgabe, KERN 4.0 §4). `null`, wenn die Einheit zurückgezogen ist, keine Lektion bleibt oder das
+ * Paket nicht dem `PaketSchema` entspricht.
  */
 export function baueWissensEinheit(e: WissensEinheitEingabe): BauErgebnis | null {
   if (e.einheit.status === 'gesperrt') return null;
@@ -258,6 +266,8 @@ export function baueWissensEinheit(e: WissensEinheitEingabe): BauErgebnis | null
     lizenz: INHALT_LIZENZ,
     wissen,
   };
+  // Gegenprobe am fertigen Paket (wie der Client, `lokal/pakete.ts`): Was er verwerfen würde, nennt auch das Verzeichnis nie
+  if (!PaketSchema.safeParse(paket).success) return null;
   const json = kanonischGeprueft(paket);
   return { paket, json, hash: sha256Hex(json), bytes: new TextEncoder().encode(json).length, warnungen: [] };
 }

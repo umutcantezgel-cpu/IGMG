@@ -1,12 +1,10 @@
 import 'server-only';
 import { and, asc, eq, inArray } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
-import type { LernappStelle } from '@/lib/db/schema/lernapp';
 import type { FreigabeBaustein, Pruefung } from '@/lib/lernapp/freigabe';
 import type { BauErgebnis } from '@/lib/lernapp/paket/bauen';
+import { quellenzeile } from '@/lib/lernapp/paket/quellenzeile';
 import { baueWissensEinheit, type WissensEinheitEingabe } from '@/lib/lernapp/paket/wissen';
-import de from '../../../../messages/lernapp/de.json';
-import { formatiere } from '@/lib/lernapp/format';
 import { inBloecken } from './bloecke';
 import { ladePruefungen } from './pruefungen';
 
@@ -17,32 +15,17 @@ import { ladePruefungen } from './pruefungen';
  * Belegpflicht und ihren aktuellen Belegen, Verfasser = wer zuletzt geändert hat. Ob etwas ausgeliefert wird, entscheiden
  * allein `freigabe.ts` und `paket/wissen.ts` (`sichtbareWissensLektion`). Ungecacht; die gecachten Wege stehen in `pakete.ts`.
  *
- * Quellenzeile je Aussage: aus den Belegen (Werk, Autor, Kitab › Bab › Fasl, Ausgabe, Band, Seite), nie der Wortlaut der
- * Quelle (ADR 0040 Fortschreibung S8 Nr. 2) und keine arabische Schrift aus Inhaltsdateien (KERN 4.0 §2.2 Nr. 4). Die
- * Formate „Bd.“/„S.“ kommen aus `messages/lernapp/de.json` über den kleinen Formatierer (`format.ts`), nicht über next-intl:
- * `pakete.ts` lädt dieses Modul, und Skripte mit `--conditions=react-server` (z. B. `scripts/beispielkonten.ts` über
- * `lib/lernapp/sync/server.ts`) scheitern am Client-Teil von next-intl.
+ * Quellenzeile je Aussage aus den Belegen (`paket/quellenzeile.ts`), nie der Wortlaut der Quelle.
+ *
+ * Abbildung Inhaltsdatei → Datenbank, die dieses Modul liest (Vertrag für den künftigen Wissens-Import; die Vertragsprobe
+ * `tests/unit/lernapp/wissen-vertrag.test.ts` spielt sie mit allen echten Dateien `inhalte/lernapp/islam/**` durch):
+ * - `lernapp_lektion`: `ziel.de` = `titel` der Lektion, `kinderGeeignet`, Reihenfolge wie in der Datei.
+ * - `lernapp_aussage`: `text`, `strittig`, Reihenfolge wie in der Datei; Belege in `lernapp_beleg` (`stelle.kitab` = `kapitel`,
+ *   `band`, `seite`, `passage`) mit Werk, Autor und Ausgabe aus `lernapp_quelle`.
+ * - `lernapp_aufgabe`: `typ`, `daten` = die Quizfrage der Datei ohne `schluessel`, `typ`, `aussage`, `quelle`, `lizenz` (bei
+ *   `zuordnen`/`reihenfolge` also mit der inhaltlichen `anweisung`), `aussageId` = die Aussage mit dem Schlüssel `aussage` in
+ *   derselben Einheit.
  */
-
-type Beleg = { werk: string; autor: string | null; ausgabe: string | null; stelle: LernappStelle };
-
-/** Quellenzeile einer Aussage aus ihren Belegen (mehrere durch Semikolon getrennt; Inhalt deutsch wie der Kurs). */
-export function quellenzeile(belege: readonly Beleg[]): string {
-  const t = (vorlage: string, werte: Record<string, string>) => formatiere(vorlage, werte, 'de');
-  return belege
-    .map((b) =>
-      [
-        b.autor ? `${b.werk} (${b.autor})` : b.werk,
-        [b.stelle.kitab, b.stelle.bab, b.stelle.fasl].filter(Boolean).join(' › '),
-        b.ausgabe,
-        b.stelle.band ? t(de.quellenzeile.band, { band: b.stelle.band }) : null,
-        b.stelle.seite ? t(de.quellenzeile.seite, { seite: b.stelle.seite }) : null,
-      ]
-        .filter((x): x is string => Boolean(x))
-        .join(', '),
-    )
-    .join('; ');
-}
 
 /** Bausteine der Einheiten des Wissenskurses (bzw. einer). Leer, wenn der Kurs nicht aktiv ist. */
 export async function ladeWissensEingaben(einheit?: string): Promise<WissensEinheitEingabe[]> {
@@ -147,6 +130,11 @@ export async function ladeWissensEingaben(einheit?: string): Promise<WissensEinh
     }),
   );
 
+  // Einheit jeder Aussage: Eine Quizfrage zählt nur mit einer Aussage derselben Einheit. Sonst nennte das Verzeichnis (alle
+  // Einheiten geladen) einen Hash, den die Einheitenroute (nur ihre Einheit geladen) nie liefert.
+  const einheitDerLektion = new Map(lektionen.map((l) => [l.id, l.einheitId]));
+  const einheitDerAussage = new Map(aussagen.map((a) => [a.id, einheitDerLektion.get(a.lektionId)]));
+
   return einheiten.map((e) => ({
     einheit: { schluessel: e.schluessel, stufe: e.stufe, reihenfolge: e.reihenfolge, thema: e.thema, symbol: e.symbol, status: e.status },
     lektionen: lektionen
@@ -164,8 +152,8 @@ export async function ladeWissensEingaben(einheit?: string): Promise<WissensEinh
             schluessel: a.schluessel,
             typ: a.typ,
             daten: a.daten,
-            // Aussage aus dieser oder einer früheren Lektion der Einheit; eine fehlende (z. B. andere Einheit) → nie sichtbar
-            aussage: (a.aussageId && aussageRoh.get(a.aussageId)) || null,
+            // Aussage aus einer Lektion derselben Einheit; eine fehlende oder aus einer anderen Einheit → nie sichtbar
+            aussage: (a.aussageId && einheitDerAussage.get(a.aussageId) === e.id && aussageRoh.get(a.aussageId)) || null,
             freigabe: ohneBelege(a, 'aufgabe', a.id),
           })),
       })),

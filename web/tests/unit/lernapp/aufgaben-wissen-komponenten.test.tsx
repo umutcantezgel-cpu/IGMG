@@ -185,6 +185,14 @@ describe('zuordnen', () => {
     expect(anzahl(h, /Richtig zugeordnet\./g)).toBe(2);
     expect(h).toContain('Gehört zu: <bdi lang="de" dir="ltr">[Kategorie B]</bdi>');
   });
+
+  it('inhaltliche Frage (Wissenskurs) vor den Einträgen in der Sprache des Inhalts, auch in der arabischen Oberfläche', () => {
+    const mitFrage = { ...ZO, frage: '[Ordne nach dem Maßstab – Platzhalter]' };
+    const frage = /<p lang="de" dir="ltr" class="[^"]*">\[Ordne nach dem Maßstab – Platzhalter\]<\/p>/;
+    expect(html(<Zuordnen {...props(mitFrage)} />)).toMatch(frage);
+    expect(html(<Zuordnen {...props(mitFrage, { sprache: 'ar', texte: TEXTE_AR.aufgaben })} />)).toMatch(frage);
+    expect(html(<Zuordnen {...props(ZO)} />)).not.toContain('Maßstab');
+  });
 });
 
 describe('reihenfolge', () => {
@@ -207,6 +215,13 @@ describe('reihenfolge', () => {
     expect(h).toContain('An der richtigen Stelle.');
     expect(h).toContain('Gehört an Stelle 3.');
     expect(h).toContain('Gehört an Stelle 2.');
+  });
+
+  it('inhaltliche Frage (Wissenskurs) vor der Liste, beschreibt sie (aria-describedby)', () => {
+    const h = html(<Reihenfolge {...props({ ...RF, frage: '[Ordne nach dem Maßstab – Platzhalter]' })} />);
+    const id = h.match(/<p id="([^"]+)" lang="de" dir="ltr" class="[^"]*">\[Ordne nach dem Maßstab – Platzhalter\]<\/p>/)?.[1];
+    expect(id).toBeTruthy();
+    expect(h).toContain(`aria-describedby="${id} `);
   });
 });
 
