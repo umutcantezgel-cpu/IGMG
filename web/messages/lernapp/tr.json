@@ -94,7 +94,7 @@
     "lektion": "Ders {n, number}",
     "geschafft": "tamamlandı",
     "aktuell": "Buradan devam",
-    "einheitenZahl": "{anzahl, plural, one {# ünite} other {# ünite}}",
+    "stufeZeigen": "{stufe}: {anzahl, plural, one {# üniteyi göster} other {# üniteyi göster}}",
     "lektionenZeigen": "Dersleri göster",
     "nichtGeladen": "Bu ünite bağlantı olmadan henüz cihazda yok.",
     "tipps": "Dil bilgisi ipuçları",
@@ -111,7 +111,18 @@
     "offlineFortschritt": "Ünite kaydediliyor",
     "offlineFertig": "Çevrimdışı kaydedildi ({mb} MB).",
     "offlineFehler": "Her şey kaydedilemedi. Bağlantı varken tekrar dene.",
-    "offlineNichtMoeglich": "Bu tarayıcı üniteleri çevrimdışı kaydedemiyor."
+    "offlineNichtMoeglich": "Bu tarayıcı üniteleri çevrimdışı kaydedemiyor.",
+    "offlineAktualisieren": "Bağlantısız kullanım için güncelleniyor …",
+    "offlineUnvollstaendig": "Uygulama güncellendikten sonra bağlantısız kullanım için hâlâ bir şey eksik.",
+    "offlineErneut": "Yeniden kaydet",
+    "stufeOffline": "{stufe}: tüm seviyeyi çevrimdışı kaydet",
+    "stufeOfflineText": "Bu seviyedeki tüm üniteleri ({anzahl, plural, one {# ünite} other {# ünite}}) sesleriyle birlikte bu cihaza kaydeder ({mb} MB). Böylece bağlantı olmadan da çalışabilirsin.",
+    "stufeOfflineRest": "Henüz çevrimdışı kaydedilmedi: bu seviyeden {anzahl, plural, one {# ünite} other {# ünite}} ({mb} MB).",
+    "stufeOfflineLaeuft": "Kaydediliyor … {mb} / {gesamt} MB",
+    "stufeOfflineFortschritt": "{stufe} kaydediliyor",
+    "stufeOfflineFertig": "{stufe} çevrimdışı kaydedildi ({mb} MB).",
+    "stufeOfflineAbbrechen": "Kaydetmeyi durdur",
+    "stufeOfflineAbgebrochen": "Kaydetme durduruldu. Kaydedilmiş olanlar cihazda kalır."
   },
   "koranpfad": {
     "laedt": "Kur’an yolu yükleniyor …",

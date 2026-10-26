@@ -94,7 +94,7 @@
     "lektion": "Lektion {n, number}",
     "geschafft": "geschafft",
     "aktuell": "Hier geht es weiter",
-    "einheitenZahl": "{anzahl, plural, one {# Einheit} other {# Einheiten}}",
+    "stufeZeigen": "{stufe}: {anzahl, plural, one {# Einheit zeigen} other {# Einheiten zeigen}}",
     "lektionenZeigen": "Lektionen zeigen",
     "nichtGeladen": "Ohne Verbindung ist diese Einheit noch nicht auf dem Gerät.",
     "tipps": "Grammatik-Tipps",
@@ -111,7 +111,18 @@
     "offlineFortschritt": "Speichern der Einheit",
     "offlineFertig": "Offline gespeichert ({mb} MB).",
     "offlineFehler": "Nicht alles konnte gespeichert werden. Versuche es mit Verbindung noch einmal.",
-    "offlineNichtMoeglich": "Dieser Browser kann Einheiten nicht offline speichern."
+    "offlineNichtMoeglich": "Dieser Browser kann Einheiten nicht offline speichern.",
+    "offlineAktualisieren": "Wird für die Nutzung ohne Verbindung aktualisiert …",
+    "offlineUnvollstaendig": "Nach einer Aktualisierung der App fehlt für die Nutzung ohne Verbindung noch etwas.",
+    "offlineErneut": "Erneut speichern",
+    "stufeOffline": "{stufe}: ganze Stufe offline speichern",
+    "stufeOfflineText": "Speichert alle {anzahl, plural, one {# Einheit} other {# Einheiten}} dieser Stufe samt Tönen auf diesem Gerät ({mb} MB). Dann kannst du sie auch ohne Verbindung üben.",
+    "stufeOfflineRest": "Noch nicht offline gespeichert: {anzahl, plural, one {# Einheit} other {# Einheiten}} dieser Stufe ({mb} MB).",
+    "stufeOfflineLaeuft": "Wird gespeichert … {mb} von {gesamt} MB",
+    "stufeOfflineFortschritt": "Speichern von {stufe}",
+    "stufeOfflineFertig": "{stufe} ist offline gespeichert ({mb} MB).",
+    "stufeOfflineAbbrechen": "Speichern abbrechen",
+    "stufeOfflineAbgebrochen": "Speichern abgebrochen. Was schon gespeichert ist, bleibt auf dem Gerät."
   },
   "koranpfad": {
     "laedt": "Der Koran-Pfad wird geladen …",
