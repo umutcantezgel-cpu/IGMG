@@ -22,9 +22,11 @@ const Spieler = lazy(() => ladeSpieler().then((m) => ({ default: m.Spieler })));
 /**
  * Was erst die Lektion braucht – volle Prüfung der gespielten Lektion (Zod, `ladeLektion`) – als eigener Chunk, beim Öffnen
  * parallel zu Gerät, Einstellungen und Kursverzeichnis geladen: Die Seite selbst bleibt klein (LCP, TBT). Der Ausgang der
- * Ereignisse kommt erst mit der ersten Handlung (`./ausgang.ts`).
+ * Ereignisse kommt erst mit der ersten Handlung (`./ausgang.ts`). `lektion.ts` statt `pakete.ts` (Stufe C N8): ohne
+ * `PaketSchema`, Bündel-Leser und Koran-Verzeichnis; der Koran-Pfad lädt `pakete.ts` (`ladeKoranLektion`).
  */
-const ladeLektionsteile = () => import('@/lib/lernapp/lokal/pakete');
+const ladeLektionsteile = () => import('@/lib/lernapp/lokal/lektion');
+const ladeKoranTeile = () => import('@/lib/lernapp/lokal/pakete');
 
 export type UebenTexte = { laedt: string; ohneLektion: string; nichtVerfuegbar: string };
 
@@ -119,7 +121,7 @@ export function UebenInsel({
         const [{ sp, profil }, e, { ladeKoranLektion }] = await Promise.all([
           geraet(ui),
           einstellungsSpeicher(ui).laden(),
-          ladeLektionsteile(),
+          ladeKoranTeile(),
         ]);
         const k = await ladeKoranLektion(ui, l);
         if (!k) return { art: 'fehlt' };

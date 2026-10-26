@@ -4,15 +4,7 @@ import { findeClip, leseBuendelKopf, schneideClip, type BuendelKopf } from '../p
 import { type Paket, PaketSchema } from '../paket/typen';
 import type { Speicher } from './db';
 import { ladeKoranPaket, ladeKoranVerzeichnis } from './koran';
-import {
-  type EinheitVerweis,
-  istPaketKopf,
-  ladePaketGeprueft,
-  type PaketKopf,
-  type PaketOptionen,
-  paketImVorratGeprueft,
-  type Pruefung,
-} from './vorrat';
+import { type EinheitVerweis, ladePaketGeprueft, type PaketOptionen, paketImVorratGeprueft, type Pruefung } from './vorrat';
 
 /**
  * Pakete und Audio-Bündel auf dem Gerät (ADR 0039 Nr. 2, 3, 12; Fortschreibung S4/S5 Nr. 8). Client-Modul.
@@ -29,8 +21,10 @@ import {
  *
  * Der Kern ohne Zod liegt in `vorrat.ts` (Lernpfad, Offline-Speichern); hier kommt die volle Prüfung des Pakets gegen
  * `PaketSchema` dazu, die Wiederholung, Einstufung und Tipps vor dem Lesen der Aufgaben brauchen. Der Spieler prüft nur die
- * gespielte Lektion voll (`ladeLektion`, Stufe C N8).
+ * gespielte Lektion voll (`ladeLektion` aus `lektion.ts`, eigener kleinerer Chunk; Stufe C N8).
  */
+
+export { ladeLektion, type LektionImPaket, nurLektion } from './lektion';
 
 export {
   type Abruf,
@@ -65,33 +59,6 @@ export const ladePaket = (
   einheit: EinheitVerweis,
   o: PaketOptionen & { offline?: boolean } = {},
 ): Promise<Paket | null> => ladePaketGeprueft(sp, kurs, einheit, voll, o);
-
-/** Eine Lektion zum Spielen samt dem Kopf ihres Pakets (Einheit, Lektionen mit Schlüssel und Titel für „Weiter lernen“). */
-export type LektionImPaket = { paket: PaketKopf; lektion: Lektion };
-
-/**
- * Prüfung für den Spieler (Stufe C N8): das Paket nur im Kopf (ohne Zod, wie im Lernpfad), die gespielte Lektion voll gegen
- * `LektionSchema`. Die volle Prüfung des ganzen Pakets (≈ 120 Aufgaben) kostete beim Öffnen einer Lektion ≈ 10–45 ms auf dem
- * Hauptfaden (CPU ungedrosselt); jede andere Lektion wird geprüft, wenn sie gespielt wird. Die Bytes sind wie immer über
- * SHA-256 gegen die Adresse geprüft.
- */
-export const nurLektion =
-  (schluessel: string): Pruefung<LektionImPaket> =>
-  (roh) => {
-    if (!istPaketKopf(roh)) return null;
-    const l = roh.lektionen.find((x) => x.schluessel === schluessel);
-    const geprueft = l ? LektionSchema.safeParse(l) : null;
-    return geprueft?.success ? { paket: roh, lektion: geprueft.data } : null;
-  };
-
-/** Lektion zum Spielen laden: Vorrat zuerst, sonst Netz (Hash geprüft); voll geprüft wird nur diese Lektion (`nurLektion`). */
-export const ladeLektion = (
-  sp: Speicher,
-  kurs: string,
-  einheit: EinheitVerweis,
-  schluessel: string,
-  o: PaketOptionen & { offline?: boolean } = {},
-): Promise<LektionImPaket | null> => ladePaketGeprueft(sp, kurs, einheit, nurLektion(schluessel), o);
 
 /** Kopf eines geladenen Bündels lesen (Index der Clips). */
 export async function buendelKopf(buendel: Blob): Promise<BuendelKopf> {
