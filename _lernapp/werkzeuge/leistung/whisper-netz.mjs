@@ -500,7 +500,7 @@ if (values.beleg) {
   // Belege ohne arabische Schrift (KI-Regel 2); Adressen und Meldungen sind ASCII, das ist nur die Sicherung
   const beleg = resolve(values.beleg);
   mkdirSync(dirname(beleg), { recursive: true });
-  writeFileSync(beleg, `${md.replace(/[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿]+/g, '[ar]')}\n`);
+  writeFileSync(beleg, `${md.replace(/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]+/g, '[ar]')}\n`);
 }
 console.log(md.split('\n## ')[0]);
 process.exitCode = ergebnis.erfuellt ? 0 : 1;
