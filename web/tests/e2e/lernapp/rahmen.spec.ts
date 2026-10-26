@@ -289,6 +289,13 @@ test.describe('Anmeldung im Scope der Lern-App', () => {
     await page.getByLabel(tr.anmelden.benutzername).fill(konten.kind.benutzername);
     await page.locator('#kind-passwort').fill(passwort(konten.kind.passwort));
     await page.locator('#bereich-kind').getByRole('button', { name: tr.anmelden.absenden, exact: true }).click();
+    // Ergebnis abwarten: Start der Lern-App oder eine Meldung im Formular – eine Ablehnung soll als solche auffallen, nicht
+    // als „Adresse bleibt …?zugang=kind“. Ohne Last dauert es vom Klick bis zur Adresse 0,5 s (Stufe C N5, Spur); rot war der
+    // Test nur in Läufen, in denen ein kalter Neubau der Kursverzeichnisse den Server blockierte (≈ 10 s je Richtung, z. B.
+    // nach der Cache-Erneuerung in koran.spec.ts) – dafür bis 15 s statt der 5 s des Standards.
+    const meldung = page.locator('#kind-meldung');
+    await expect(page.getByRole('heading', { level: 1, name: tr.start.titel }).or(meldung)).toBeVisible({ timeout: 15_000 });
+    await expect(meldung, 'Kinderanmeldung abgelehnt').toBeHidden();
     await expect(page).toHaveURL((url) => url.pathname === '/lern-app/tr');
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(tr.start.titel);
   });

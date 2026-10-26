@@ -93,7 +93,9 @@ hoch/kritisch“ ist erfüllt; die Auflagen binden die Schalter wie folgt. Stand
      die Datei `public/lern-app/sw-abmelden.js` (`web/src/proxy.ts`, Matcher mit Ausnahme für genau diese Datei). Geräte holen
      sie bei der nächsten Update-Prüfung: Sie löscht die Vorräte `igmg-lernapp-*` außer den Modellen, meldet sich ab und lädt
      offene Seiten der Lern-App neu; der Lernstand in IndexedDB bleibt. Tests: `tests/unit/lernapp/lernapp-sw-abmelden.test.ts`,
-     `tests/unit/lernapp/proxy.test.ts`. Abschalten nur über die Einstellung im Cockpit (ohne Umgebung) ersetzt den Worker
+     `tests/unit/lernapp/proxy.test.ts`. Am lokalen Produktionsbau geprüft (26.10.2026, `FUNKTION_LERNAPP=aus`):
+     `/lern-app/sw.js` liefert 200 mit dem Abmelde-Worker (`no-cache`, `application/javascript`), `/lern-app/de` 404,
+     `/lern-app/symbole/symbol-192.png` weiter 200. Abschalten nur über die Einstellung im Cockpit (ohne Umgebung) ersetzt den Worker
      **nicht** – zum vollständigen Abschalten immer die Umgebung setzen (das Cockpit sagt es im Hinweis zum Schalter).
   2. *Kosten beobachten (LM-15):* Datentransfer des Vercel-Projekts für `/lern-app/modelle/*` nach der Tarifentscheidung
      (LM-15) monatlich ansehen (Vercel › Usage › Data Transfer bzw. Observability); bei auffälligen Abrufen eine Ratenregel der
