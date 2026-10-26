@@ -1,4 +1,4 @@
-# L8-02 – Leistung und Zugänglichkeit der Lern-App (fortgeschrieben Stufe C N8, 26.10.2026)
+# L8-02 – Leistung und Zugänglichkeit der Lern-App (fortgeschrieben Stufe C N9b, 26.10.2026)
 
 | | |
 |---|---|
@@ -14,6 +14,99 @@ nach KERN §9 eingehalten; Whisper lädt nur nach Klick und nach der Behebung B-
 einmal bis „bereit“ samt Probelauf; Abgleich mit 200 gleichzeitigen Konten ohne Fehler und idempotent. Offen bleiben
 Hinweise (TBT, Antwortzeit des Abgleichs unter Spitzenlast, Probelauf auf einem echten Mittelklasse-Telefon) und der
 veraltete Wortlaut von Z-L07 (Abschnitt 10).
+
+## Stufe C, 26.10.2026, Zugänglichkeit und Datenfluss (N9b)
+
+| | |
+|---|---|
+| Paket | Stufe C N9b: Z-L06 (axe-Matrix, axe je Übungstyp, echte Tastaturwege, Ansage der 15 s) und Z-L08 (Datenfluss mit echtem Modell, Netzprotokoll), Befunde aus `protokolle/C-e2e*.md`; Nacharbeit nach der Gegenprüfung |
+| Stand | Zweig `lernapp-n9b`. Bau 1 aus `515a463f` (18:05 UTC, Beleg Z-L08, INP-Probe, volle Lern-App-E2E); Bau 2 aus `8e250aa4` (19:03 UTC, nach der Gegenprüfung: Tastaturhelfer, axe für `schrift_latein`, INP nachgemessen, volle Lern-App-E2E); Bau 3 und 4 aus `5b9de3fe` bzw. `d52a4133` (gebaut als `19f73636`, gleicher Baum, nur die Commit-Nachricht berichtigt; 19:36 und 19:48 UTC, nur `zugaenglichkeit.spec.ts` nach Korrekturen am neuen Test). Der App-Code der Bauten 2–4 ist der von Bau 1 bis auf Kommentare in `Sprechen.tsx` |
+| Bauten | je ein `pnpm build` ohne `E2E_ATTRAPPEN` (echter `whisper.worker.mjs`, 693 KB mit Lizenzkopf) unter dem Bauschloss; für die E2E danach nur der Worker gegen die Attrappe getauscht (`E2E_ATTRAPPEN=1 pnpm lernapp:modelle`, die einzige Bauausgabe, die davon abhängt). Wegwerf-Datenbank `igmg_lernapp_n9b_e2e`, Server auf 3322 (Werkzeuge) bzw. 3321 (E2E) |
+| Rohdaten | außerhalb des Repos (`<scratchpad>/n9b/`): `tor.status`, `tor2.status`, `tor3.status`, `bau*.log`, `whisper-netz.txt` und `mess/whisper-netz.json`, `budget*.txt`, `inp-probe.txt`, `inp-nach.txt` mit `mess2/inp-nach.{md,json}`, `e2e.log`, `e2e2.log`, `e2e3a.log` (Bau 3), `e2e3.log` (Bau 4) mit `e2e-ergebnis*/ergebnis.json` |
+
+**Ergebnis:** Z-L06 (Anteil axe und Tastatur) und Z-L08 (Netzprotokoll) sind belegt. axe-Matrix über alle Lern-App-Routen
+mit echten Inhalten × de/tr/ar × 390/1440 und axe je Übungstyp auf beiden Breiten: 0 ernste oder kritische Befunde. Jede
+Typgruppe ist nur mit Tasten spielbar, auch in `rtl`; zwei Mängel im Code sind behoben. Die Sprechübung sagt die 15 s vorher
+an. Datenfluss mit echtem Modell bis zum Erkennungsergebnis: nur GET an den eigenen Ursprung, 0 fremde Hosts, 0 Cookies,
+alle 11 Download-Dateien je genau einmal am Draht. Budgets eingehalten, INP der nachgemessenen Szenarien ≤ 200 ms. Volle
+Lern-App-E2E beider Projekte nach der Gegenprüfung: 143 bestanden, rot nur der neue `schrift_latein`-Test (Fehler im Test),
+der nach zwei Korrekturen mit der ganzen `zugaenglichkeit.spec.ts` grün ist (N9b.4). Offen bleiben die Screenreader-Prüfung
+(LM-19), die Wortschatz-Insel und die Bestätigung von L3-E17.
+
+### N9b.1 Zugänglichkeit (Z-L06)
+
+- **axe-Matrix** (`tests/e2e/lernapp/zugaenglichkeit.spec.ts`, WCAG 2.0/2.1/2.2 A und AA ohne Ausschlüsse, ernste und
+  kritische Befunde gezählt, dazu kein waagrechter Überlauf): je Oberfläche de/tr/ar und Breite 390/1440 Auswahl (alle
+  Ausgangssprachen aufgeklappt), Start, Einstellungen, Quellen, Anmelden, Gruppe, 404; Lernpfad mit aufgeklappter Stufe,
+  Spieler einer echten Lektion vor und nach der Antwort, Tipps, Einstufung (Start, erste Frage); mit eingelesenem Lernstand
+  Start, Wiederholen mit fälligen Karten vor und nach der Antwort, Wortschatz, Fortschritt; Wissenskurs (Lernpfad mit Inhalt,
+  erste Aufgabe vor und nach der Antwort) und Koran-Kurs (in ar die 404). Das sind 22 Prüfungen je Oberfläche und Breite,
+  132 zusammen; dazu `schrift_latein` (unten) mit 6 je Breite. **Ergebnis: 0 ernste oder kritische Befunde, kein Überlauf.**
+  Die Wortschatz-Seite zeigt auch mit Lernstand nur den Leerzustand (die Insel mit den Wörtern ist nicht eingehängt); die
+  Matrix prüft dort nur die Hülle – eine Produktlücke außerhalb von N9b.
+- **axe je Übungstyp auf beiden Breiten:** alle Typen. `typen-a`, `typen-b`, `typen-wissen`, `lektion` (paare, wortbank
+  über `spieleLektion1 { axe }`), `harakat` und `koran_wort` wie bisher bzw. in N9b auf das Telefon erweitert; als
+  einziger fehlte danach `schrift_latein` (Gegenprüfung), seither in `zugaenglichkeit.spec.ts` mit echten
+  Vorkurs-Lektionen (de-aus-ar, Oberfläche ar): Buchstabe mit Vorgabe vor der Antwort, nach falscher und nach richtiger
+  Antwort, groß/klein. Aufgaben nur mit Hörbeispiel baut der Paketbau ohne Aufnahme nicht ein (`paket/bauen.ts`), im E2E
+  fehlt das Vorkurs-Audio; ihr Abspieler ist der der Hörtypen und dort geprüft.
+- **Echte Tastaturwege** (`tastatur.spec.ts`, nur Tab, Umschalt+Tab, Enter, Leertaste, Pfeile, kein `locator.focus()`;
+  jeder Tab-Halt sichtbar, mit Fokusring und in Dokumentreihenfolge bzw. Leserichtung, auch `rtl`): L1 Lernpfad → Lektion 1,
+  L2-01 (l03), L2-02 de und ar (Nachspuren „auf Papier geschrieben“ per Tastatur), Vorkurs `schrift_latein`, Wissenstypen,
+  Wiederholen bis „fertig“ mit axe vor und nach jeder Antwort, Fokusreihenfolge ganzer Seiten in de/ar auf beiden Breiten.
+  Zwei Mängel im Code behoben (`733a6db4`: Antwortfelder ohne sichtbaren Fokusring, Fokusverlust in der Sprechübung).
+  Nach der Gegenprüfung: Tab wandert in `<audio controls>` durch die eingebauten Knöpfe, `document.activeElement` bleibt
+  dasselbe Element; der Helfer zählt diese Halte als einen und meldet erst mehr als 10 hintereinander als Fokusfalle (der
+  Fehlalarm „audio → audio“ machte L2-02 de/ar in Bau 1 rot). Als Fokusring zählt nur noch ein sichtbarer Umriss ≥ 2 px,
+  kein Schatten (dauerhafte Kartenschatten hätten einen fehlenden Ring verdeckt).
+- **Sprechen, 15 s:** sichtbar unter dem Knopf (`aria-describedby`), Ansage beim Start und beim Ende von selbst
+  (`2753f5a0`, Test „Höchstlänge 15 s“ in `typen-b.spec.ts`). Einordnung gegen WCAG 2.2.1 als Vorschlag in ENTSCHEIDUNGEN
+  L3-E17 (Ausnahme „wesentlich“), vom Orchestrator zu bestätigen.
+
+### N9b.2 Datenfluss (Z-L08)
+
+- **Sprechübung mit echtem Modell bis zur Erkennung:** Beleg `_lernapp/belege/Z-L08-sprechen-datenfluss.md`, Methode und
+  Zahlen in Abschnitt 7 (Nachtrag N9b). Erfüllt: nur GET an den eigenen Ursprung, 0 fremde Hosts, 0 Cookies, auch während
+  und nach Aufnahme und Erkennung.
+- **`netzprotokoll.spec.ts`** um Einstufung, Fortschritt, Wortschatz, Quellen, Wissens- und Koran-Kurs und eine gespielte
+  Wiederholungsrunde erweitert (`a135d9d6`), Anfragen des Service Workers eingeschlossen (`context.on('request')`): nur GET
+  an den eigenen Ursprung, keine API, keine Cookies.
+
+### N9b.3 INP und Budgets
+
+- **Budgets (KERN §9):** in beiden Bauten eingehalten, Spieler-Chunk 37,9 KB, jeder Typ-Chunk ≤ 15 KB (größter
+  `hoeren_schreiben` 10 KB), arabische Bildschirmtastatur 1,5 KB.
+- **INP:** Die Probe in Bau 1 (1 Lauf) zeigte für „Spieler echt `tr-aus-de.a1.e01.l01`“ 216 ms (auch nachgemessen bei
+  Last 1,45), die übrigen Szenarien ≤ 200 ms (B1 144, ar 176, Lernpfad 192). N9b ändert diesen Pfad nicht. Nachgemessen in
+  Bau 2 mit 3 Läufen (Last 2,2–2,6): `tr-aus-de.a1.e01.l01` **184 ms** (Läufe 184/192/160; Prüfen 184, Antwort wählen 128,
+  Weiter 128, Paare 128) und „Lernpfad öffnen und offline speichern“ **192 ms** (216/192/192; offline speichern 192,
+  Lernpfad öffnen 136, in allen drei Läufen erfasst, kein Schritt „< 16 ms“ oder lückenhaft), beide erfüllt. Die 216 ms der
+  Probe liegen damit in der Streuung eines einzelnen Laufs (N8: 176).
+- **Geänderte Messweise „Lernpfad öffnen“** (`inp-spieler.mjs`, seit N9b): Das Werkzeug verhindert die Standardaktion des
+  Klicks auf die Kurskarte, wartet auf die Meldung des Startdokuments (höchstens 1 s) und navigiert dann selbst. Gemessen
+  wird also der Klick ohne Beginn der Navigation; Werte bis N8 (z. B. 204 ms in N8.4) sind damit nicht deckungsgleich.
+  Interaktionen unter 16 ms meldet Event Timing nie; das Werkzeug zählt deshalb die zugestellten Eingaben je Dokument und
+  weist einen Schritt mit Eingabe, aber ohne Eintrag als „< 16 ms“ aus, nur einen ohne Eingabe als lückenhaft.
+
+### N9b.4 Prüfungen und E2E
+
+- Unit (`vitest --project unit tests/unit/lernapp tests/unit/navigation-lernapp.test.ts`): 76 Dateien, 2045 grün, 1 todo,
+  0 übersprungen. `pnpm typen`, ESLint und Prettier der geänderten Dateien grün.
+- **Volle Lern-App-E2E** (`tests/e2e/lernapp` und `mein-bereich-lernen.spec.ts`, Projekte telefon und desktop, Worker als
+  Attrappe):
+  - Bau 1 (`515a463f`): 141 bestanden, 43 übersprungen, **2 rot** – `tastatur.spec.ts` L2-02 de und ar (desktop): Fehlalarm
+    des Tastaturhelfers an `<audio controls>` (siehe N9b.1), kein Mangel der App.
+  - Bau 2 (`8e250aa4`, nach der Gegenprüfung): **143 bestanden**, 43 übersprungen, 2 rot – nur der neue
+    `schrift_latein`-Test (beide Projekte, Fehler im Test: `filter({ has })` mit einem Locator am Formular statt an der
+    Seite). Alle Tastaturwege grün, auch L2-02 de/ar mit Nachspuren und Sprechen per Tastatur. telefon 55/38/1, desktop
+    88/5/1 (bestanden/übersprungen/rot).
+  - Bau 3 (`5b9de3fe`): der neue Test lief an der Variante „nur mit Hörbeispiel“ auf, die das Paket ohne Audio nicht enthält;
+    Bau 4 (`d52a4133`): **`zugaenglichkeit.spec.ts` 26 von 26 grün** (beide Projekte, Matrix und `schrift_latein`).
+  - Übersprungen ist nur, was je Projekt bewusst einmal läuft („einmal je Lauf genügt“, Tippen auf dem Telefon bzw. Tastatur
+    auf dem Desktop) und die Bildschirmfotos für die Sichtabnahme (nur auf Wunsch).
+- **`gruppe.spec.ts:155`** (unter Last einmal rot nach 33,4 s, Details verloren; Trace bei Fehlschlag aufbewahrt): in beiden
+  vollen Läufen grün, 66,7 s (Bau 1) und 80,8 s (Bau 2) bei der seit vor N9b unveränderten Zeitgrenze von 300 s. Kein Rot
+  beobachtet, also keine Ursache zu belegen; die Zeitgrenze ist nicht angehoben.
 
 ## Stufe C, 26.10.2026, Leistung mit echten Inhalten (N8)
 
@@ -601,6 +694,30 @@ war nie auf `main` oder `claude/trusting-lovelace-6nfolz`; kein ausgeliefertes G
 und CSP der Lern-App, nach B-2): Variante A (Vorrat über transformers.js) und B (nur über den Service Worker) bestanden –
 online Laden 2,5–2,7 s, Probelauf 2,7–3,6 s, eine Erkennung, danach ohne Netz ein neuer Worker aus dem Vorrat (Laden
 1,4–1,5 s, Probelauf 2,8–3,0 s); jede Download-Datei erreicht den Server genau einmal; 0 Konsolenmeldungen.
+
+**Nachtrag Stufe C N9b (26.10.2026): echtes Modell bis zur Erkennung, Mitschrift am Draht.** Beleg
+`_lernapp/belege/Z-L08-sprechen-datenfluss.md`, Bau aus `515a463f` ohne `E2E_ATTRAPPEN` (echter Worker, 693 KB), Lauf
+18:14 UTC, Last 1,2 → 1,8.
+
+- **Zwei unabhängige Mitschriften.** (1) Playwright (`context.on('request')`) mit Seite, Workern und Service Worker;
+  Status und „vom Service Worker beantwortet“ hält das Werkzeug beim Ereignis fest – Playwright 1.64 liefert
+  `request.response()` für ältere Anfragen als `null` (im Probelauf um 15:09 ab der 20. Anfrage), deshalb galten dort alle
+  Download-Dateien fälschlich als doppelt. (2) **Am Draht:** Chromium schickt jede Anfrage über einen Proxy im Werkzeug
+  (`proxy` mit `<-loopback>`, also auch die an `localhost`). Er leitet nur an den eigenen Ursprung weiter, lehnt alles
+  andere mit 403 ab (`CONNECT` ebenso) und schreibt je Anfrage Methode, URL, Status, Bytes und ob ein `Cookie`- bzw.
+  `Set-Cookie`-Kopf dabei war. Nur was dort erscheint, hat den Browser verlassen; „genau einmal über das Netz“ zählt seither
+  am Draht, nicht mehr aus der Playwright-Mitschrift.
+- **Ablauf:** Lektion l04 (de, tr-aus-de) bis zur Sprechaufgabe, „Sprachprüfung laden“, Warten auf „bereit“, Aufnahme über
+  das Testmikrofon von Chromium (`--use-fake-device-for-media-stream`, `--use-file-for-fake-audio-capture` mit einer WAV aus
+  dem synthetischen Testbündel tr, 8 Clips, 6,7 s), Erkennung bis zum Ergebnis („nicht verstanden“ nach 6,6 s – bei
+  synthetischem Ton erwartet).
+- **Ergebnis erfüllt:** vor dem Klick 79 Anfragen, 0 unter `/lern-app/modelle/`. Nach dem Klick alle **11 Download-Dateien
+  (`DOWNLOAD_PFADE`: 7 Modell- und Konfigurationsdateien, ORT `.mjs` und `.wasm`, Worker, Lizenzhinweise von ONNX Runtime)
+  je genau einmal am Draht, ≈ 81,5 MB**; „bereit“ nach 17 s. Während der Aufnahme ein nachgeladener Chunk (GET, eigener
+  Ursprung), während der Erkennung nur eine `blob:`-Adresse im Browser, danach nichts. Über alle Phasen **nur GET an den
+  eigenen Ursprung, 0 fremde Hosts, 0 Anfragen mit `Cookie`, 0 Antworten mit `Set-Cookie`, 0 Cookies im Kontext**; am
+  Draht 65 Anfragen (82,2 MB), in Playwright 105 (Seite und Worker 51, davon 25 vom Service Worker beantwortet; Service
+  Worker 54). Konsole von Seite und Workern leer.
 
 ## 8. Lasttest Abgleich (`POST /api/lernapp/sync`)
 
