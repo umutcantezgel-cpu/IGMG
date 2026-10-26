@@ -244,3 +244,16 @@ describe('Fortschritt je Einheit in einem Durchlauf (geschafftJeEinheit)', () =>
     expect(aktuelleUndNaechste(V, ERLEDIGT).map((e) => e.schluessel)).toEqual(['tr.a1.e01', 'tr.a1.e1']);
   });
 });
+
+describe('Spieler: Lexikon der Lektion erst bei Bedarf (lexikonVon)', () => {
+  it('je Lektion einmal bereitet und gemerkt; ohne Lexikon keines; die Sitzung trägt keines mehr', async () => {
+    const { lexikonVon, starte } = await import('@/lib/lernapp/engine/sitzung');
+    const l = { ...LektionSchema.parse(PAKET.lektionen[0]), lexikon: ['[Wort]', 'Ekmek'] };
+    const s = starte(l);
+    expect('lexikon' in s).toBe(false);
+    const lex = lexikonVon(s.lektion);
+    expect(lex?.woerter.has('ekmek')).toBe(true);
+    expect(lexikonVon(s.lektion)).toBe(lex);
+    expect(lexikonVon(LektionSchema.parse(PAKET.lektionen[0]))).toBeUndefined();
+  });
+});
