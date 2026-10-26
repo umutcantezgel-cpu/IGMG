@@ -1,5 +1,5 @@
 import { SPRACH_STUFEN, type Sprache } from '../../kurse';
-import type { Inhalte } from './dateien';
+import { ausTestkurs, type Inhalte } from './dateien';
 import type { SprachStufe } from './texte';
 import { Befunde } from './typen';
 
@@ -9,7 +9,7 @@ import { Befunde } from './typen';
  * - Rahmenplan ↔ Leitfaden: Themen und Religionsbezug-Kandidaten der Einheiten gibt es im Leitfaden (blockierend); die
  *   Budgets der Einheiten ergeben das Budget der Stufe (Warnung).
  * - Inhalt ↔ Rahmenplan: Jede Einheit steht im Rahmenplan (blockierend; Vorkurs-Einheiten mit `nurFuerAusgang` nur
- *   Warnung); Stationen wie im Rahmenplan (Warnung).
+ *   Warnung; die Testeinheiten des Testkurses gehören nicht dazu); Stationen wie im Rahmenplan (Warnung).
  * - Abdeckung je Kurs und Stufe ({@link AbdeckungZeile}): Einheiten vorhanden, Lemmata gegen das Budget. Ist eine Stufe
  *   vollständig, muss die Lemma-Zahl innerhalb von ±5 % des Budgets liegen (blockierend), sonst nur Bericht.
  */
@@ -62,7 +62,8 @@ export function pruefeAbdeckung(inhalte: Inhalte): { befunde: Befunde; zeilen: A
       const soll = rahmenEinheiten.get(e);
       if (!soll) {
         if (d.einheit.nurFuerAusgang) b.warnung(pfad, 'Vorkurs-Einheit ohne Eintrag im Rahmenplan', e);
-        else b.blockierend(pfad, 'Einheit steht nicht im Rahmenplan', e);
+        // Testkurs (`<kurs>.a1.test`, eigener Ort außerhalb des Rahmenplans, Stufe C L15-1): kein Befund
+        else if (!ausTestkurs(inhalte, pfad)) b.blockierend(pfad, 'Einheit steht nicht im Rahmenplan', e);
       } else {
         const zaehle = (arten: readonly string[]) => arten.reduce((m, a) => m.set(a, (m.get(a) ?? 0) + 1), new Map<string, number>());
         const ist = zaehle(d.lektionen.map((l) => l.art));

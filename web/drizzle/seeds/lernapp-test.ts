@@ -2,8 +2,12 @@
 // Alltagssätzen, Übersetzungen für alle sechs Richtungen, die Übungstypen aus L1 (Auswahl, Wortbank, Paare; Lektionen l01,
 // l02) und je eine Aufgabe der Typen aus L2-01 (Lektion l03: Bildkarte, Freitext, Hören ohne und mit Ton, Diktat,
 // Minimalpaar, Lücke, Satzbau, Formen, im Arabischen Harakat).
-// Nur für Beispielmodus, E2E und Tests – nie in der Produktion: `pnpm lernapp:import --testkurs` (Bau ohne Datenbank,
-// scripts/bau-datenbank.mjs; E2E-Datenbank), nicht `pnpm db:seed`.
+// Nur für E2E, Tests und einen Beispielmodus, der ihn ausdrücklich anfordert – nie in der Produktion: `pnpm lernapp:import
+// --testkurs` (E2E-Datenbank; Bau ohne Datenbank nur mit LERNAPP_TESTKURS=1, scripts/bau-datenbank.mjs), nicht `pnpm db:seed`.
+// - Eigener Ort (Stufe C, L15-1): Einheit `<kurs>.a1.test` statt eines Schlüssels der echten Inhalte – die Testeinheit ersetzt
+//   nie eine echte Einheit (früher `<kurs>.a1.e01`), und ihre Töne hängen nur an Einträgen mit Quelle `test:…`
+//   (`clipZulaessig`, audio/stimmen.ts). Reihenfolge 1 wie die Vorkurs-Einheiten `<kurs>.a1.e00-*`, vor der echten e01
+//   (Reihenfolge 2): Im Lernpfad steht sie unter den ersten beiden Einheiten, die automatisch gespeichert werden (E2E).
 // - KEIN Religionsbezug, keine Formeln, keine Koran- oder Hadith-Wörter (KI-Regel 2, KERN 4.0 §2). Sätze mit höchstens drei
 //   Wörtern (kein 4-Gramm möglich, KERN 4.0 §3 b/c).
 // - Arabisch nur als Codepunkt-Escapes (KERN 4.0 §3: arabische Schrift nicht in Code-Dateien).
@@ -16,10 +20,12 @@
 // - Bildkarten: Motive aus `inhalte/lernapp/symbole/symbole.json` (im Testkurs auch ohne Freigabe der Redaktion).
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { eq } from 'drizzle-orm';
 import type { Datenbank } from '../../src/lib/db';
 import { schema } from '../../src/lib/db';
 import { type ImportBericht, importiereLernapp, type ImportQuelle } from '../../src/lib/lernapp/inhalt/import';
 import type { SprachEinheitDatei, UebersetzungDatei } from '../../src/lib/lernapp/inhalt/schema';
+import { type ImportStand, TESTKURS_STAND } from '../../src/lib/lernapp/inhalt/stand';
 import type { Sprache } from '../../src/lib/lernapp/kurse';
 import { leseBuendelKopf, leseBuendelPfad } from '../../src/lib/lernapp/paket/buendel';
 import { sha256Hex } from '../../src/lib/lernapp/paket/hash';
@@ -169,7 +175,9 @@ const HARAKAT_VARIANTEN = ['\u0643\u064E\u062A\u064E\u0627\u0628', '\u0643\u0650
 
 const THEMA = { de: 'Testeinheit: Alltag', tr: 'Test ünitesi: Gündelik hayat' };
 
-const einheitVon = (kurs: Sprache) => `${kurs}.a1.e01`;
+/** Schlüssel der Testeinheit je Zielsprache (eigener Ort, kollidiert mit keinem Schlüssel der echten Inhalte). */
+export const testEinheit = (kurs: Sprache) => `${kurs}.a1.test`;
+const einheitVon = testEinheit;
 
 export function sprachDatei(kurs: Sprache): SprachEinheitDatei {
   const e = einheitVon(kurs);
@@ -419,9 +427,40 @@ export function testbuendel(verzeichnis = TESTAUDIO_VERZEICHNIS) {
   return zeilen;
 }
 
-/** Testkurs importieren (eigener Stand `lernapp_testkurs`) und die Clips der Testbündel eintragen. */
-export async function lernappTestkurs(db: Datenbank): Promise<{ bericht: ImportBericht; clips: number }> {
-  const bericht = await importiereLernapp(db, testkursQuellen(), { standSchluessel: 'lernapp_testkurs' });
+/**
+ * Stand `lernapp_testkurs` aus der Zeit vor Stufe C bereinigen (dauerhafte Entwicklungsdatenbanken): Damals lag die
+ * Testeinheit unter `<kurs>.a1.e01`, dem Schlüssel der echten Einheit. Ohne Bereinigung hielte der Import die alten Pfade für
+ * entfernt und sperrte die echte Einheit samt Übersetzungen und Tipps (`entfernteDateien` → `sperreFehlende`); die Liste
+ * `entfernt` führte zudem Schlüssel der echten Einheit. Es bleibt nur, was zur Testeinheit `<kurs>.a1.test` gehört.
+ * Rückgabe: die Einheiten der alten Einträge – deren Zeilen hatte der alte Testkurs überschrieben; `scripts/lernapp/import.ts`
+ * importiert die echten Inhalte dann einmal erzwungen neu.
+ */
+async function bereinigeAltenStand(db: Datenbank): Promise<string[]> {
+  const [z] = await db.select().from(schema.einstellung).where(eq(schema.einstellung.schluessel, TESTKURS_STAND));
+  const stand = z?.wert as ImportStand | undefined;
+  if (!stand?.dateien) return [];
+  const eigen = (['de', 'tr', 'ar'] as const).map(testEinheit);
+  const fremd = Object.entries(stand.dateien).filter(([, d]) => !eigen.includes(d.einheit));
+  const entfernt = stand.entfernt?.filter((x) => eigen.some((e) => x.startsWith(`${e}.`)));
+  if (!fremd.length && entfernt?.length === stand.entfernt?.length) return [];
+  const alt = new Set(fremd.map(([pfad]) => pfad));
+  const neu: ImportStand = {
+    ...stand,
+    dateien: Object.fromEntries(Object.entries(stand.dateien).filter(([pfad]) => !alt.has(pfad))),
+    konflikte: (stand.konflikte ?? []).filter((k) => !alt.has(k.datei)),
+    ...(entfernt ? { entfernt } : {}),
+  };
+  await db.update(schema.einstellung).set({ wert: neu }).where(eq(schema.einstellung.schluessel, TESTKURS_STAND));
+  return [...new Set(fremd.map(([, d]) => d.einheit))].sort();
+}
+
+/**
+ * Testkurs importieren (eigener Stand `lernapp_testkurs`) und die Clips der Testbündel eintragen. `alteEinheiten`: echte
+ * Einheiten, die ein Stand aus der Zeit vor Stufe C noch dem Testkurs zuschrieb (siehe `bereinigeAltenStand`).
+ */
+export async function lernappTestkurs(db: Datenbank): Promise<{ bericht: ImportBericht; clips: number; alteEinheiten: string[] }> {
+  const alteEinheiten = await bereinigeAltenStand(db);
+  const bericht = await importiereLernapp(db, testkursQuellen(), { standSchluessel: TESTKURS_STAND });
   const clips = testbuendel();
   for (const c of clips)
     await db
@@ -431,5 +470,5 @@ export async function lernappTestkurs(db: Datenbank): Promise<{ bericht: ImportB
         target: [schema.lernappAudio.sprache, schema.lernappAudio.textHash, schema.lernappAudio.stimme],
         set: { buendel: c.buendel, versatz: c.versatz, laenge: c.laenge, dauerMs: c.dauerMs, sha256: c.sha256 },
       });
-  return { bericht, clips: clips.length };
+  return { bericht, clips: clips.length, alteEinheiten };
 }

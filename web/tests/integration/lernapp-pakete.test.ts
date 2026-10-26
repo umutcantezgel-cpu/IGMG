@@ -48,7 +48,7 @@ async function verzeichnis(kurs: string): Promise<Verzeichnis> {
   return VerzeichnisSchema.parse(await r.json());
 }
 
-async function paket(kurs: string, einheit = `${kurs.slice(0, 2)}.a1.e01`): Promise<{ paket: Paket; hash: string; antwort: Response }> {
+async function paket(kurs: string, einheit = `${kurs.slice(0, 2)}.a1.test`): Promise<{ paket: Paket; hash: string; antwort: Response }> {
   const v = await verzeichnis(kurs);
   const e = v.einheiten.find((x) => x.schluessel === einheit)!;
   const antwort = await einheitRoute.GET(
@@ -76,7 +76,7 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
       expect(v).toMatchObject({ kurs, zielsprache: kurs.slice(0, 2), ausgangssprache: kurs.slice(-2) });
       expect(v.einheiten).toHaveLength(1);
       const e = v.einheiten[0]!;
-      expect(e).toMatchObject({ schluessel: `${kurs.slice(0, 2)}.a1.e01`, stufe: 'a1', lektionen: 4, hinweis: true });
+      expect(e).toMatchObject({ schluessel: `${kurs.slice(0, 2)}.a1.test`, stufe: 'a1', lektionen: 4, hinweis: true });
       expect(e.audio).toEqual([
         { adresse: expect.stringMatching(new RegExp(`^/lern-app/audio/${kurs.slice(0, 2)}/`)), bytes: expect.any(Number) },
       ]);
@@ -101,11 +101,11 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
 
   it('L2-02: Aufgaben aus den Vorlagen – Zieltexte mit Übersetzung, Optionen der Zielsprache, Karten je Richtung, Tipp als Karte', async () => {
     const { paket: p } = await paket('tr-aus-de');
-    const l04 = p.lektionen.find((l) => l.schluessel === 'tr-aus-de.a1.e01.l04')!;
+    const l04 = p.lektionen.find((l) => l.schluessel === 'tr-aus-de.a1.test.l04')!;
     const [dialog, geschichte, lesen, tipp, schrift, sprechen, schreiben] = l04.aufgaben;
     expect(dialog).toMatchObject({
       typ: 'dialog',
-      karten: ['tr-aus-de:tr.a1.e01.s0007'],
+      karten: ['tr-aus-de:tr.a1.test.s0007'],
       verlauf: [
         { sprecher: 'a', zeile: { text: 'Günaydın!', sprache: 'tr' }, uebersetzung: { text: 'Guten Morgen!', sprache: 'de' } },
         { sprecher: 'b', zeile: { text: 'Nasılsın?', sprache: 'tr' } },
@@ -113,7 +113,7 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
       optionen: [{ text: 'İyiyim, teşekkürler.' }, { text: 'Ev büyük.' }, { text: 'Kitap yeni.' }],
       richtig: 0,
     });
-    expect(geschichte).toMatchObject({ typ: 'geschichte', fragen: [{ nach: 2, karte: 'tr-aus-de:tr.a1.e01.w004', richtig: 0 }] });
+    expect(geschichte).toMatchObject({ typ: 'geschichte', fragen: [{ nach: 2, karte: 'tr-aus-de:tr.a1.test.w004', richtig: 0 }] });
     expect(lesen).toMatchObject({
       typ: 'lesen_fragen',
       glossen: [{ wort: 'ev', glosse: { text: 'Haus', sprache: 'de' } }, { wort: 'kitap' }],
@@ -131,7 +131,7 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
     });
     expect(sprechen).toMatchObject({
       typ: 'sprechen',
-      karten: ['tr-aus-de:tr.a1.e01.s0001'],
+      karten: ['tr-aus-de:tr.a1.test.s0001'],
       vorgabe: { text: 'Su içiyorum.', sprache: 'tr' },
     });
     expect(schreiben).toMatchObject({
@@ -143,29 +143,34 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
     // Arabisch: Buchstaben über Schlüssel (keine Wörter), Nachspuren ohne Ablenker
     const ar = (await paket('ar-aus-de')).paket.lektionen.find((l) => l.schluessel.endsWith('.l04'))!.aufgaben;
     expect(ar.filter((a) => a.typ === 'schrift_ar')).toEqual([
-      { typ: 'schrift_ar', schluessel: 'ar.a1.e01.l04.a05', art: 'erkennen', ziel: 'be', ablenker: ['te', 'se'] },
-      { typ: 'schrift_ar', schluessel: 'ar.a1.e01.l04.a06', art: 'nachspuren', ziel: 'elif' },
+      { typ: 'schrift_ar', schluessel: 'ar.a1.test.l04.a05', art: 'erkennen', ziel: 'be', ablenker: ['te', 'se'] },
+      { typ: 'schrift_ar', schluessel: 'ar.a1.test.l04.a06', art: 'nachspuren', ziel: 'elif' },
     ]);
   });
 
   it('Lektionen, Aufgaben, Karten je Richtung, Audio nur an Zieltexten, Herkunft je Eintrag, Tipps der Ausgangssprache', async () => {
     const { paket: p } = await paket('tr-aus-de');
     expect(p.lektionen.map((l) => l.schluessel)).toEqual([
-      'tr-aus-de.a1.e01.l01',
-      'tr-aus-de.a1.e01.l02',
-      'tr-aus-de.a1.e01.l03',
-      'tr-aus-de.a1.e01.l04',
+      'tr-aus-de.a1.test.l01',
+      'tr-aus-de.a1.test.l02',
+      'tr-aus-de.a1.test.l03',
+      'tr-aus-de.a1.test.l04',
     ]);
     expect(p.lektionen[0]).toMatchObject({ kurs: 'tr-aus-de', zielsprache: 'tr', ausgangssprache: 'de', titel: 'Erste Wörter' });
     const [a01, a02, a03] = p.lektionen[0]!.aufgaben;
-    expect(a01).toMatchObject({ typ: 'auswahl', karten: ['tr-aus-de:tr.a1.e01.w001'], vorgabe: { text: 'su', sprache: 'tr' }, richtig: 0 });
-    expect(a01?.typ === 'auswahl' && a01.vorgabe?.audio?.buendel).toMatch(/^\/lern-app\/audio\/tr\/tr\.a1\.e01-[0-9a-f]{16}\.lpa$/);
+    expect(a01).toMatchObject({
+      typ: 'auswahl',
+      karten: ['tr-aus-de:tr.a1.test.w001'],
+      vorgabe: { text: 'su', sprache: 'tr' },
+      richtig: 0,
+    });
+    expect(a01?.typ === 'auswahl' && a01.vorgabe?.audio?.buendel).toMatch(/^\/lern-app\/audio\/tr\/tr\.a1\.test-[0-9a-f]{16}\.lpa$/);
     expect(a01?.typ === 'auswahl' && a01.optionen.map((o) => o.text)).toEqual(['Wasser', 'Brot', 'Haus']);
     expect(a02?.typ === 'paare' && a02.paare.map((x) => [x.links.text, x.rechts.text, x.karte])).toEqual([
-      ['su', 'Wasser', 'tr-aus-de:tr.a1.e01.w001'],
-      ['ekmek', 'Brot', 'tr-aus-de:tr.a1.e01.w002'],
-      ['ev', 'Haus', 'tr-aus-de:tr.a1.e01.w003'],
-      ['kitap', 'Buch', 'tr-aus-de:tr.a1.e01.w004'],
+      ['su', 'Wasser', 'tr-aus-de:tr.a1.test.w001'],
+      ['ekmek', 'Brot', 'tr-aus-de:tr.a1.test.w002'],
+      ['ev', 'Haus', 'tr-aus-de:tr.a1.test.w003'],
+      ['kitap', 'Buch', 'tr-aus-de:tr.a1.test.w004'],
     ]);
     expect(a03).toMatchObject({
       typ: 'wortbank',
@@ -182,16 +187,16 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
       vorgabe: { text: 'Ev büyük.', sprache: 'tr' },
     });
     expect(zurueck.typ === 'wortbank' && zurueck.kacheln.length).toBeGreaterThan(4);
-    expect(p.eintraege['tr.a1.e01.s0001']).toMatchObject({
+    expect(p.eintraege['tr.a1.test.s0001']).toMatchObject({
       sprache: 'tr',
       quelle: 'test:lernapp-testkurs',
       lizenz: 'CC-BY-SA-4.0',
       stimme: 'test:ton',
       hinweis: true,
     });
-    expect(p.eintraege['tr.a1.e01.s0001@de']).toMatchObject({ sprache: 'de', text: 'Ich trinke Wasser.' });
-    expect(p.eintraege['tr.a1.e01.s0001@de']?.stimme).toBeUndefined();
-    expect(p.tipps.map((t) => t.schluessel)).toEqual(['tr.a1.e01.de.t01']);
+    expect(p.eintraege['tr.a1.test.s0001@de']).toMatchObject({ sprache: 'de', text: 'Ich trinke Wasser.' });
+    expect(p.eintraege['tr.a1.test.s0001@de']?.stimme).toBeUndefined();
+    expect(p.tipps.map((t) => t.schluessel)).toEqual(['tr.a1.test.de.t01']);
     expect((await paket('de-aus-ar')).paket.tipps).toEqual([]);
     expect(p.lizenz).toBe('CC-BY-SA-4.0');
   });
@@ -272,17 +277,17 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
     expect((await verzeichnis('tr-aus-ar')).einheiten.map((e) => e.lektionen)).toEqual([2]);
     const nurZiel = (await paket('tr-aus-ar')).paket.lektionen.flatMap((l) => l.aufgaben);
     expect(nurZiel.map((a) => a.schluessel)).toEqual([
-      'tr.a1.e01.l03.a05',
-      'tr.a1.e01.l03.a06',
-      'tr.a1.e01.l03.a07',
-      'tr.a1.e01.l03.a08',
-      'tr.a1.e01.l03.a09',
-      'tr.a1.e01.l04.a01',
-      'tr.a1.e01.l04.a02',
-      'tr.a1.e01.l04.a03',
-      'tr.a1.e01.l04.a05',
-      'tr.a1.e01.l04.a07',
-      'tr.a1.e01.l04.a08',
+      'tr.a1.test.l03.a05',
+      'tr.a1.test.l03.a06',
+      'tr.a1.test.l03.a07',
+      'tr.a1.test.l03.a08',
+      'tr.a1.test.l03.a09',
+      'tr.a1.test.l04.a01',
+      'tr.a1.test.l04.a02',
+      'tr.a1.test.l04.a03',
+      'tr.a1.test.l04.a05',
+      'tr.a1.test.l04.a07',
+      'tr.a1.test.l04.a08',
     ]);
     expect(nurZiel.filter((a) => a.schluessel.includes('.l04.')).map((a) => a.typ)).toEqual([
       'dialog',
@@ -301,7 +306,7 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
 
   it('kritischer Sprachbefund zum aktuellen Hash verbirgt den Eintrag und die Aufgaben, die ihn brauchen', async () => {
     const vorher = await paket('de-aus-tr');
-    const [s] = await db.select().from(schema.lernappSatz).where(eq(schema.lernappSatz.schluessel, 'de.a1.e01.s0001'));
+    const [s] = await db.select().from(schema.lernappSatz).where(eq(schema.lernappSatz.schluessel, 'de.a1.test.s0001'));
     const pruefer = randomUUID();
     await db
       .insert(schema.user)
@@ -327,8 +332,8 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
     });
     const nachher = await paket('de-aus-tr');
     expect(nachher.hash).not.toBe(vorher.hash);
-    expect(aufgabenSchluessel(nachher.paket)).not.toContain('de.a1.e01.l01.a03');
-    expect(nachher.paket.eintraege['de.a1.e01.s0001']).toBeUndefined();
+    expect(aufgabenSchluessel(nachher.paket)).not.toContain('de.a1.test.l01.a03');
+    expect(nachher.paket.eintraege['de.a1.test.s0001']).toBeUndefined();
     await db.delete(schema.lernappPruefung).where(eq(schema.lernappPruefung.inhaltId, s!.id));
   });
 
@@ -336,10 +341,10 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
     const [l] = await db
       .update(schema.lernappLemma)
       .set({ religionsbezug: true })
-      .where(eq(schema.lernappLemma.schluessel, 'tr.a1.e01.w002'))
+      .where(eq(schema.lernappLemma.schluessel, 'tr.a1.test.w002'))
       .returning();
     const ohne = (await paket('tr-aus-de')).paket;
-    expect(ohne.eintraege['tr.a1.e01.w002']).toBeUndefined();
+    expect(ohne.eintraege['tr.a1.test.w002']).toBeUndefined();
     const a01 = ohne.lektionen[0]!.aufgaben[0]!;
     expect(a01.typ === 'auswahl' && a01.optionen.map((o) => o.text)).toEqual(['Wasser', 'Haus']);
     const paare = ohne.lektionen[0]!.aufgaben[1]!;
@@ -361,7 +366,7 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
         .values({ inhaltTyp: 'lemma', inhaltId: l!.id, inhaltHash: l!.inhaltHash, art: 'religioes', pruefendeId: id, urteil: 'ok' });
     await frei(await person('religioese_pruefung'));
     await frei(await person('administration'));
-    expect((await paket('tr-aus-de')).paket.eintraege['tr.a1.e01.w002']).toBeUndefined();
+    expect((await paket('tr-aus-de')).paket.eintraege['tr.a1.test.w002']).toBeUndefined();
     await frei(await person('religioese_pruefung'));
     // ohne Freigabe der Formelliste bleibt der Eintrag trotz zwei Eintragsfreigaben verborgen (Stufe C N2, Z-L10)
     expect((await paket('tr-aus-de')).paket.eintraege[l!.schluessel]).toBeUndefined();
@@ -376,8 +381,8 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
         urteil: 'ok',
       });
     const mit = (await paket('tr-aus-de')).paket;
-    expect(mit.eintraege['tr.a1.e01.w002']).toMatchObject({ text: 'ekmek' });
-    expect(mit.eintraege['tr.a1.e01.w002']?.stimme).toBeUndefined();
+    expect(mit.eintraege['tr.a1.test.w002']).toMatchObject({ text: 'ekmek' });
+    expect(mit.eintraege['tr.a1.test.w002']?.stimme).toBeUndefined();
     const ekmek = mit.lektionen[0]!.aufgaben[1]!;
     expect(ekmek.typ === 'paare' && ekmek.paare.find((x) => x.links.text === 'ekmek')?.links.audio).toBeUndefined();
     await db.update(schema.lernappLemma).set({ religionsbezug: false }).where(eq(schema.lernappLemma.id, l!.id));
@@ -385,35 +390,35 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
   });
 
   it('Einheit nur für eine Ausgangssprache und gesperrte Übersetzungen wirken je Richtung', async () => {
-    await db.update(schema.lernappEinheit).set({ nurFuerAusgang: 'ar' }).where(eq(schema.lernappEinheit.schluessel, 'tr.a1.e01'));
+    await db.update(schema.lernappEinheit).set({ nurFuerAusgang: 'ar' }).where(eq(schema.lernappEinheit.schluessel, 'tr.a1.test'));
     expect((await verzeichnis('tr-aus-de')).einheiten).toEqual([]);
     expect((await verzeichnis('tr-aus-ar')).einheiten).toHaveLength(1);
-    await db.update(schema.lernappEinheit).set({ nurFuerAusgang: null }).where(eq(schema.lernappEinheit.schluessel, 'tr.a1.e01'));
+    await db.update(schema.lernappEinheit).set({ nurFuerAusgang: null }).where(eq(schema.lernappEinheit.schluessel, 'tr.a1.test'));
     const ids = (
-      await db.select({ id: schema.lernappSatz.id }).from(schema.lernappSatz).where(eq(schema.lernappSatz.schluessel, 'tr.a1.e01.s0002'))
+      await db.select({ id: schema.lernappSatz.id }).from(schema.lernappSatz).where(eq(schema.lernappSatz.schluessel, 'tr.a1.test.s0002'))
     ).map((z) => z.id);
     await db
       .update(schema.lernappUebersetzung)
       .set({ status: 'gesperrt' })
       .where(and(eq(schema.lernappUebersetzung.sprache, 'de'), inArray(schema.lernappUebersetzung.satzId, ids)));
-    expect(aufgabenSchluessel((await paket('tr-aus-de')).paket)).not.toContain('tr.a1.e01.l02.a01');
-    expect(aufgabenSchluessel((await paket('tr-aus-ar')).paket)).toContain('tr.a1.e01.l02.a01');
+    expect(aufgabenSchluessel((await paket('tr-aus-de')).paket)).not.toContain('tr.a1.test.l02.a01');
+    expect(aufgabenSchluessel((await paket('tr-aus-ar')).paket)).toContain('tr.a1.test.l02.a01');
   });
 
   it('Zurückziehen: Status gesperrt, Kursstand steigt, updateTag(lernapp-kurs-<id>), alter Hash 404', async () => {
     const vorher = await paket('de-aus-ar');
     const stand = (await verzeichnis('de-aus-ar')).stand;
     aufrufe.updateTag.length = 0;
-    expect(await zieheZurueck('lektion', 'de.a1.e01.l02')).toBe(true);
+    expect(await zieheZurueck('lektion', 'de.a1.test.l02')).toBe(true);
     expect(aufrufe.updateTag).toEqual(['lernapp-kurs-de']);
     const v = await verzeichnis('de-aus-ar');
     expect(v.stand).toBe(stand + 1);
     // vier Lektionen (l01–l04), eine zurückgezogen
     expect(v.einheiten[0]?.lektionen).toBe(3);
-    const alt = await einheitRoute.GET(anfrage('/'), kontext({ kurs: 'de-aus-ar', einheit: 'de.a1.e01', hash: vorher.hash }));
+    const alt = await einheitRoute.GET(anfrage('/'), kontext({ kurs: 'de-aus-ar', einheit: 'de.a1.test', hash: vorher.hash }));
     expect(alt.status).toBe(404);
-    expect(await zieheZurueck('uebersetzung', 'de.a1.e01.w004@ar')).toBe(true);
-    expect(aufgabenSchluessel((await paket('de-aus-ar')).paket)).not.toContain('de.a1.e01.l01.a04');
+    expect(await zieheZurueck('uebersetzung', 'de.a1.test.w004@ar')).toBe(true);
+    expect(aufgabenSchluessel((await paket('de-aus-ar')).paket)).not.toContain('de.a1.test.l01.a04');
     expect(await zieheZurueck('satz', 'xx.a1.e01.s0001')).toBe(false);
   });
 });
@@ -435,10 +440,10 @@ describe('Routen', () => {
     // Kurs-Tag (Zurückziehen) und `einstellungen` (Schalter): keine Jahreskopie überdauert sie (S-L1 N-3)
     expect(antwort.headers.get('vercel-cache-tag')).toBe('lernapp,lernapp-kurs-ar,einstellungen');
     expect(antwort.headers.get('x-content-type-options')).toBe('nosniff');
-    expect((await einheitRoute.GET(anfrage('/'), kontext({ kurs: 'ar-aus-tr', einheit: 'ar.a1.e01', hash: '0'.repeat(64) }))).status).toBe(
+    expect((await einheitRoute.GET(anfrage('/'), kontext({ kurs: 'ar-aus-tr', einheit: 'ar.a1.test', hash: '0'.repeat(64) }))).status).toBe(
       404,
     );
-    expect((await einheitRoute.GET(anfrage('/'), kontext({ kurs: 'ar-aus-tr', einheit: 'tr.a1.e01', hash }))).status).toBe(404);
+    expect((await einheitRoute.GET(anfrage('/'), kontext({ kurs: 'ar-aus-tr', einheit: 'tr.a1.test', hash }))).status).toBe(404);
     expect((await einheitRoute.GET(anfrage('/'), kontext({ kurs: 'islam', einheit: 'islam.grund.e01', hash }))).status).toBe(404);
   });
 
@@ -446,12 +451,12 @@ describe('Routen', () => {
     const { hash } = await paket('tr-aus-de');
     process.env.FUNKTION_LERNAPP = 'aus';
     expect((await verzeichnisRoute.GET(anfrage('/'), kontext({ kurs: 'tr-aus-de' }))).status).toBe(404);
-    expect((await einheitRoute.GET(anfrage('/'), kontext({ kurs: 'tr-aus-de', einheit: 'tr.a1.e01', hash }))).status).toBe(404);
+    expect((await einheitRoute.GET(anfrage('/'), kontext({ kurs: 'tr-aus-de', einheit: 'tr.a1.test', hash }))).status).toBe(404);
     const datei = audioDatei('tr');
     expect((await audioRoute.GET(anfrage('/'), kontext({ pfad: ['tr', datei] }))).status).toBe(404);
     expect(await pakete.ladePaketParameter()).toEqual([{ kurs: 'tr-aus-de', einheit: 'tr.a1.e00', hash: '0'.repeat(64) }]);
     delete process.env.FUNKTION_LERNAPP;
-    expect(await pakete.ladePaketParameter()).toContainEqual({ kurs: 'tr-aus-de', einheit: 'tr.a1.e01', hash });
+    expect(await pakete.ladePaketParameter()).toContainEqual({ kurs: 'tr-aus-de', einheit: 'tr.a1.test', hash });
   });
 });
 
@@ -486,7 +491,7 @@ describe('Audio-Route', () => {
     expect(daneben.status).toBe(416);
     expect(daneben.headers.get('cache-control')).toBe('no-store');
     for (const pfad of [
-      ['de', 'de.a1.e01-0000000000000000.lpa'],
+      ['de', 'de.a1.test-0000000000000000.lpa'],
       ['de', '..', datei],
       ['xx', datei],
       ['ar', datei],
@@ -506,7 +511,7 @@ describe('Audio-Route', () => {
         headers: { 'content-length': '10', ...(range ? { 'content-range': 'bytes 0-9/50' } : {}) },
       });
     });
-    const datei = 'tr.a1.e01-0123456789abcdef.lpa';
+    const datei = 'tr.a1.test-0123456789abcdef.lpa';
     const r = await audioRoute.GET(anfrage('/', { range: 'bytes=0-9' }), kontext({ pfad: ['tr', datei] }));
     expect(r.status).toBe(206);
     expect(r.headers.get('content-range')).toBe('bytes 0-9/50');
@@ -576,8 +581,8 @@ describe('Client: Pakete und Bündel auf dem Gerät (lokal/pakete.ts)', async ()
     expect(v?.einheiten).toHaveLength(1);
     const e = v!.einheiten[0]!;
     const p = await lokal.ladePaket(sp, 'tr-aus-de', e, { abruf, vorrat });
-    expect(p?.einheit.schluessel).toBe('tr.a1.e01');
-    expect(await sp.lies('pakete', ['tr-aus-de', 'tr.a1.e01'])).toMatchObject({ hash: e.hash, bytes: e.bytes, offline: false });
+    expect(p?.einheit.schluessel).toBe('tr.a1.test');
+    expect(await sp.lies('pakete', ['tr-aus-de', 'tr.a1.test'])).toMatchObject({ hash: e.hash, bytes: e.bytes, offline: false });
     // offline: kein Netz, Verzeichnis und Paket aus dem Vorrat
     const offline = async () => {
       throw new TypeError('offline');
@@ -603,7 +608,7 @@ describe('Client: Pakete und Bündel auf dem Gerät (lokal/pakete.ts)', async ()
     const r = await lokal.speichereOffline(sp, 'tr-aus-de', v.einheiten, { abruf, vorrat, fortschritt: (g) => fortschritt.push(g) });
     expect(r).toMatchObject({ einheiten: 1, fehlgeschlagen: [], bytes: e.bytes + e.audio[0]!.bytes });
     expect(fortschritt.at(-1)).toBe(r.bytes);
-    expect(await sp.lies('pakete', ['tr-aus-de', 'tr.a1.e01'])).toMatchObject({ offline: true });
+    expect(await sp.lies('pakete', ['tr-aus-de', 'tr.a1.test'])).toMatchObject({ offline: true });
 
     const p = (await lokal.paketImVorrat('tr-aus-de', e, { vorrat }))!;
     const buendel = (await lokal.ladeBuendel(e.audio[0]!.adresse, { abruf: async () => Response.error(), vorrat }))!;
@@ -621,7 +626,7 @@ describe('Client: Pakete und Bündel auf dem Gerät (lokal/pakete.ts)', async ()
     // (alter Hash, `offline`) bis zum Nachladen und wird zum Neuladen gemeldet (vorrat.ts, Restliste L8 a)
     const neu = { ...v, einheiten: [{ ...e, hash: 'f'.repeat(64) }] };
     expect(await lokal.raeumeAuf(sp, neu, { vorrat })).toEqual(neu.einheiten);
-    expect(await sp.lies('pakete', ['tr-aus-de', 'tr.a1.e01'])).toMatchObject({ hash: e.hash, offline: true });
+    expect(await sp.lies('pakete', ['tr-aus-de', 'tr.a1.test'])).toMatchObject({ hash: e.hash, offline: true });
     expect(await lokal.paketImVorrat('tr-aus-de', e, { vorrat })).toBeNull();
   });
 });

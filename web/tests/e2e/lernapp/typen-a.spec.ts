@@ -144,10 +144,10 @@ async function wortbank(page: Page, t: Texte, art: Bedienung, woerter: string[],
 /** Lektion l03 in der deutschen Oberfläche (Türkisch lernen). */
 async function spieleTurkisch(page: Page, art: Bedienung) {
   const t = de;
-  await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l03');
+  await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l03');
 
-  // 1 Bildkarte: vor der Antwort nur der Hinweis „Bildübung“, danach die Beschreibung
-  await expect(page.getByRole('heading', { name: t.aufgaben.bild_wort.waehleWort })).toBeVisible();
+  // 1 Bildkarte: vor der Antwort nur der Hinweis „Bildübung“, danach die Beschreibung (erstes Laden mit Verzeichnis und Paket)
+  await expect(page.getByRole('heading', { name: t.aufgaben.bild_wort.waehleWort })).toBeVisible({ timeout: 15_000 });
   const bild = uebung(page, 'bild_wort').locator('figure');
   await expect(bild).toHaveAccessibleName(t.aufgaben.bild_wort.bild);
   await expect(bild.locator('svg path').first()).toBeAttached();
@@ -249,11 +249,11 @@ async function spieleTurkisch(page: Page, art: Bedienung) {
 /** Lektion l03 in der arabischen Oberfläche (Arabisch lernen aus dem Deutschen), von rechts nach links. */
 async function spieleArabisch(page: Page, art: Bedienung) {
   const t = ar as unknown as Texte;
-  await page.goto('/lern-app/ar/ar-aus-de/ueben?l=ar-aus-de.a1.e01.l03');
+  await page.goto('/lern-app/ar/ar-aus-de/ueben?l=ar-aus-de.a1.test.l03');
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
 
-  // 1 Bildkarte
-  await expect(page.getByRole('heading', { name: t.aufgaben.bild_wort.waehleWort })).toBeVisible();
+  // 1 Bildkarte (erstes Laden: Kursverzeichnis und Paket)
+  await expect(page.getByRole('heading', { name: t.aufgaben.bild_wort.waehleWort })).toBeVisible({ timeout: 15_000 });
   await waehle(page, t, art, AR.bayt);
   await expect(uebung(page, 'bild_wort').locator('figcaption bdi[lang="de"]')).toHaveText('Haus');
   await richtig(page, t, art);
@@ -380,7 +380,7 @@ test.describe('Übungstypen aus L2-01', () => {
     test.skip(info.project.name !== 'desktop', 'einmal genügt');
     test.setTimeout(90_000);
     const t = de;
-    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l03');
+    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l03');
     await waehle(page, t, 'tastatur', 'ev');
     await richtig(page, t, 'tastatur');
     await schreibe(page, t, 'tastatur', page.getByRole('textbox', { name: t.aufgaben.frei.eingabe }), 'ekmek');
@@ -401,7 +401,7 @@ test.describe('Wiedergabe: Rückfall bei Medienfehler', () => {
     test.setTimeout(90_000);
     await beobachteAudio(page, { webmFehler: true });
     const t = de;
-    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l03');
+    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l03');
     await waehle(page, t, 'tastatur', 'ev');
     await richtig(page, t, 'tastatur');
     await schreibe(page, t, 'tastatur', page.getByRole('textbox', { name: t.aufgaben.frei.eingabe }), 'ekmek');

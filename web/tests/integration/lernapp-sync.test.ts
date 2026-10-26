@@ -73,7 +73,7 @@ async function lernende(benutzerId: string, sechzehnAm = '2032-01-01'): Promise<
 const MIN = 60_000;
 const vor = (minuten: number) => new Date(Date.now() - minuten * MIN);
 const tagVon = (d: Date) => d.toISOString().slice(0, 10);
-const KARTE = 'tr-aus-de:tr.a1.e01.w001';
+const KARTE = 'tr-aus-de:tr.a1.test.w001';
 
 function bewertung(geraet: string, seq: number, note: Note, am: Date, karte = KARTE): Ereignis {
   return { geraet, seq, am: am.toISOString(), tag: tagVon(am), art: 'bewertung', daten: { karte, note, kurs: 'tr-aus-de' } };
@@ -323,7 +323,7 @@ describe('Schreiben und Lesen', () => {
     als(await konto());
     const g = randomUUID();
     const mitTypen = (seq: number, typen: unknown) => {
-      const e = lektion(g, seq, vor(10), `tr-aus-de.a1.e01.l0${seq + 1}`);
+      const e = lektion(g, seq, vor(10), `tr-aus-de.a1.test.l0${seq + 1}`);
       return { ...e, daten: { ...e.daten, typen } };
     };
     const a = await sync(g, [mitTypen(0, ['sprechen', 'schreiben']), mitTypen(1, ['hoeren'])]);
@@ -424,17 +424,17 @@ describe('Schreiben und Lesen', () => {
     expect(karte!.faellig?.toISOString()).toBe(erwartet!.faellig);
 
     const heute = vor(1);
-    await sync(g1, [lektion(g1, 2, heute, 'tr-aus-de.a1.e01.l01'), xp(g1, 3, heute, 10)]);
+    await sync(g1, [lektion(g1, 2, heute, 'tr-aus-de.a1.test.l01'), xp(g1, 3, heute, 10)]);
     const tage = await db.select().from(schema.lernappTag).where(eq(schema.lernappTag.benutzerId, id));
     expect(tage.find((t) => t.tag === tagVon(heute))).toMatchObject({ xp: 10, lektionen: 1, zielErreicht: true, pause: false });
 
     // S-L3 M-1: dieselben Tage je Kurs – Lektion über ihren Kurs, XP über den Bezug; ohne Bezug „unbekannt“ (zählt nirgends)
     const mit = (e: Ereignis, daten: Record<string, unknown>) => ({ ...e, daten: { ...e.daten, ...daten } }) as Ereignis;
     await sync(g1, [
-      mit(xp(g1, 4, heute, 7), { bezug: 'tr-aus-de.a1.e01.l01' }),
+      mit(xp(g1, 4, heute, 7), { bezug: 'tr-aus-de.a1.test.l01' }),
       mit(lektion(g1, 5, heute, 'islam.grund.e01.l01'), { kurs: 'islam' }),
       mit(xp(g1, 6, heute, 9), { bezug: 'islam.grund.e01.l01' }),
-      mit(lektion(g1, 7, heute, 'tr-aus-de.a1.e01.l02'), { kurs: 'islam' }),
+      mit(lektion(g1, 7, heute, 'tr-aus-de.a1.test.l02'), { kurs: 'islam' }),
     ]);
     const jeKurs = await db
       .select({ kurs: schema.lernappTagKurs.kurs, xp: schema.lernappTagKurs.xp, lektionen: schema.lernappTagKurs.lektionen })
@@ -482,10 +482,10 @@ describe('Schreiben und Lesen', () => {
           .values({ gruppeId: gr!.id, titel: 'Lektion üben', bezug: { art: 'lernapp', ...bezug } as never })
           .returning({ id: schema.aufgabe.id })
       )[0]!.id;
-    const zurLektion = await aufgabe({ kurs: 'tr-aus-de', einheit: 'tr.a1.e01', lektion: 'tr.a1.e01.l01' });
-    const zurEinheit = await aufgabe({ kurs: 'tr-aus-de', einheit: 'tr.a1.e01' });
+    const zurLektion = await aufgabe({ kurs: 'tr-aus-de', einheit: 'tr.a1.test', lektion: 'tr.a1.test.l01' });
+    const zurEinheit = await aufgabe({ kurs: 'tr-aus-de', einheit: 'tr.a1.test' });
     const zumKurs = await aufgabe({ kurs: 'tr-aus-de' });
-    const andereRichtung = await aufgabe({ kurs: 'tr-aus-ar', einheit: 'tr.a1.e01', lektion: 'tr.a1.e01.l01' });
+    const andereRichtung = await aufgabe({ kurs: 'tr-aus-ar', einheit: 'tr.a1.test', lektion: 'tr.a1.test.l01' });
     const erledigt = async () =>
       (await db.select().from(schema.aufgabeErledigt).where(eq(schema.aufgabeErledigt.lernendeId, lernendeId)))
         .map((z) => z.aufgabeId)
@@ -494,21 +494,21 @@ describe('Schreiben und Lesen', () => {
     const g = randomUUID();
 
     process.env.FUNKTION_LERNAPP_GRUPPEN = 'aus';
-    await sync(g, [lektion(g, 0, vor(30), 'tr-aus-de.a1.e01.l01')]);
+    await sync(g, [lektion(g, 0, vor(30), 'tr-aus-de.a1.test.l01')]);
     expect(await erledigt()).toEqual([]);
     delete process.env.FUNKTION_LERNAPP_GRUPPEN;
 
-    await sync(g, [lektion(g, 1, vor(20), 'tr-aus-de.a1.e01.l01')]);
+    await sync(g, [lektion(g, 1, vor(20), 'tr-aus-de.a1.test.l01')]);
     expect(await erledigt()).toEqual([zurLektion]);
-    await sync(g, [lektion(g, 2, vor(10), 'tr-aus-de.a1.e01.l02')]);
+    await sync(g, [lektion(g, 2, vor(10), 'tr-aus-de.a1.test.l02')]);
     // die Einheit hat vier Lektionen (l03: Typen aus L2-01, l04: Typen aus L2-02): erst mit der letzten ist sie erledigt
     expect(await erledigt()).toEqual([zurLektion]);
-    await sync(g, [lektion(g, 3, vor(8), 'tr-aus-de.a1.e01.l03')]);
+    await sync(g, [lektion(g, 3, vor(8), 'tr-aus-de.a1.test.l03')]);
     expect(await erledigt()).toEqual([zurLektion]);
-    await sync(g, [lektion(g, 4, vor(7), 'tr-aus-de.a1.e01.l04')]);
+    await sync(g, [lektion(g, 4, vor(7), 'tr-aus-de.a1.test.l04')]);
     expect(await erledigt()).toEqual([zurLektion, zurEinheit].sort());
     // erneut: idempotent; Kurs ohne Einheit und andere Richtung bleiben offen
-    await sync(g, [lektion(g, 5, vor(5), 'tr-aus-de.a1.e01.l02')]);
+    await sync(g, [lektion(g, 5, vor(5), 'tr-aus-de.a1.test.l02')]);
     expect(await erledigt()).toEqual([zurLektion, zurEinheit].sort());
     expect(await erledigt()).not.toContain(zumKurs);
     expect(await erledigt()).not.toContain(andereRichtung);
@@ -529,7 +529,7 @@ describe('Verdichtung im Löschlauf (ADR 0038 Nr. 10)', () => {
       ['gut', tage(2)],
     ] as const)
       await haengeAn(geraetA.sp, geraetA.profil, entwurf(note), { jetzt: d });
-    await haengeAn(geraetA.sp, geraetA.profil, entwurf('gut', 'tr-aus-de:tr.a1.e01.w002'), { jetzt: tage(400) });
+    await haengeAn(geraetA.sp, geraetA.profil, entwurf('gut', 'tr-aus-de:tr.a1.test.w002'), { jetzt: tage(400) });
     expect(await synchronisiere(geraetA.sp, geraetA.profil, { abruf })).toMatchObject({ ok: true, gesendet: 6 });
     const vorher = await serverKarten(id);
 
@@ -801,7 +801,7 @@ describe('S-L1 M-2: Grenzen je Konto und gezielte Ableitung', () => {
     const e = (geraet: string, seq: number, tag: string, art: Ereignis['art'], daten: unknown) =>
       ({ geraet, seq, am, tag, art, daten }) as Ereignis;
     const lektionAm = (geraet: string, seq: number, tag: string) =>
-      e(geraet, seq, tag, 'lektion', { kurs: 'tr-aus-de', lektion: 'tr-aus-de.a1.e01.l01', art: 'lektion', richtig: 3, gesamt: 4 });
+      e(geraet, seq, tag, 'lektion', { kurs: 'tr-aus-de', lektion: 'tr-aus-de.a1.test.l01', art: 'lektion', richtig: 3, gesamt: 4 });
     const runden: Ereignis[][] = [
       [
         lektionAm(g, 0, '2025-12-27'),

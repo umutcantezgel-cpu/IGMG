@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { TESTAUDIO_VERZEICHNIS, testkursClipTexte } from '../../drizzle/seeds/lernapp-test';
+import { TESTAUDIO_VERZEICHNIS, testEinheit, testkursClipTexte } from '../../drizzle/seeds/lernapp-test';
 import { baueBuendel, buendelDatei } from '../../src/lib/lernapp/paket/buendel';
 import { sha256Hex, textHash } from '../../src/lib/lernapp/paket/hash';
 
@@ -50,7 +50,7 @@ try {
       ]);
       return { textHash: textHash(text), daten: new Uint8Array(readFileSync(datei)) };
     });
-    const einheit = `${sprache}.a1.e01`;
+    const einheit = testEinheit(sprache);
     const { bytes } = baueBuendel({ sprache, einheit, clips });
     const ziel = join(TESTAUDIO_VERZEICHNIS, sprache);
     mkdirSync(ziel, { recursive: true });

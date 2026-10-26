@@ -50,13 +50,21 @@ export function clipLage(o: { clips: number; meldungen: number; ausspracheBefund
   return o.meldungen > 0 || o.ausspracheBefund ? 'auffaellig' : 'vorhanden';
 }
 
-/** Gewählte Stimme eines Clips aus Wahl und vorhandenen Stimmen (gleich dem Vorrang im Paketbau, `pakete.ts`). */
-export function wirksameStimme(stimmen: readonly string[], wahl: 'sprachausgabe' | 'mensch' | null): string | null {
+/**
+ * Gewählte Stimme eines Clips aus Wahl und vorhandenen Stimmen (gleich dem Vorrang im Paketbau, `pakete.ts`). `zulaessig`:
+ * dieselbe Regel wie im Paketbau (`audio/stimmen.ts` `clipZulaessig`: Testtöne nur im Testkurs, Sprachausgabe erst nach der
+ * Hörabnahme, menschliche Aufnahmen nur mit Vereinbarung); ohne Angabe zählt jede Stimme.
+ */
+export function wirksameStimme(
+  stimmen: readonly string[],
+  wahl: 'sprachausgabe' | 'mensch' | null,
+  zulaessig: (stimme: string) => boolean = () => true,
+): string | null {
   const vorrang = ['mensch:', 'tts:', 'test:'];
   const rang = (s: string) => {
     const i = vorrang.findIndex((p) => s.startsWith(p));
     return i < 0 ? vorrang.length : i;
   };
-  const moeglich = stimmen.filter((s) => !(wahl === 'sprachausgabe' && s.startsWith('mensch:')));
+  const moeglich = stimmen.filter((s) => zulaessig(s) && !(wahl === 'sprachausgabe' && s.startsWith('mensch:')));
   return [...moeglich].sort((a, b) => rang(a) - rang(b) || (a < b ? -1 : a > b ? 1 : 0))[0] ?? null;
 }

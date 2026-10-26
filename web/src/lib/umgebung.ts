@@ -687,7 +687,8 @@ export const VARIABLEN: readonly Variable[] = [
   },
   {
     name: 'LERNAPP_BLOB_BASIS',
-    zweck: 'Öffentliche Basisadresse des Blob-Speichers „lernapp“ (Audio-Bündel der Lern-App, ADR 0039); ohne sie nur Testbündel',
+    zweck:
+      'Öffentliche Basisadresse des Blob-Speichers „lernapp“ (Audio-Bündel der Lern-App, ADR 0039); ohne sie kein Audio (Testbündel nur mit LERNAPP_TESTKURS=1)',
     muster: false,
     pflicht: NIE,
     bereich: ['Production', 'Preview'],
@@ -697,7 +698,8 @@ export const VARIABLEN: readonly Variable[] = [
     erzeugbar: false,
     pruefung: httpUrl,
     regel: 'eine http- oder https-Adresse',
-    abhilfe: 'Die öffentliche Adresse des Blob-Speichers „lernapp“ eintragen oder weglassen (dann liefert /lern-app/audio nur Testbündel).',
+    abhilfe:
+      'Die öffentliche Adresse des Blob-Speichers „lernapp“ eintragen oder weglassen (dann liefert /lern-app/audio kein Audio, Testbündel nur mit LERNAPP_TESTKURS=1).',
   },
   {
     name: 'LERNAPP_AUDIO_LOKAL',
@@ -712,6 +714,20 @@ export const VARIABLEN: readonly Variable[] = [
     pruefung: nichtLeer,
     regel: 'ein Ordnerpfad',
     abhilfe: 'Weglassen (dann nur Testbündel bzw. Blob) oder den Ausgabeordner der Audio-Kette eintragen.',
+  },
+  {
+    name: 'LERNAPP_TESTKURS',
+    zweck: 'Nimmt den Testkurs (<kurs>.a1.test mit synthetischen Tönen) in den Bau ohne Datenbank auf und liefert seine Testbündel aus',
+    muster: false,
+    pflicht: NIE,
+    bereich: [],
+    beispiel: '1',
+    herkunft: 'Nur für eine Vorführung im Beispielmodus oder lokal; auf der öffentlichen Test-Domain nicht setzen (Stufe C, N1)',
+    geheim: false,
+    erzeugbar: false,
+    pruefung: z.literal('1'),
+    regel: 'nur 1',
+    abhilfe: 'Weglassen (Normalfall): Der Bau ohne Datenbank enthält dann nur die echten Kurse ohne Testtöne.',
   },
   {
     name: 'LERNAPP_BLOB_READ_WRITE_TOKEN',

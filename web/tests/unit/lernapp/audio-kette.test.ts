@@ -29,7 +29,16 @@ import {
   zahlenAlsWoerter,
   zahlwort,
 } from '@/lib/lernapp/audio/pruefung';
-import { ALLE_STIMMEN, manifestStimme, STIMMEN, THORSTEN } from '@/lib/lernapp/audio/stimmen';
+import {
+  ALLE_STIMMEN,
+  clipZulaessig,
+  freigegebeneStimme,
+  istTestQuelle,
+  manifestStimme,
+  STIMMEN,
+  stimmeFuer,
+  THORSTEN,
+} from '@/lib/lernapp/audio/stimmen';
 import type { ImportQuelle } from '@/lib/lernapp/inhalt/import';
 import { pruefeAudio } from '@/lib/lernapp/inhalt/pruefer/audio';
 import { leereInhalte } from '@/lib/lernapp/inhalt/pruefer/dateien';
@@ -54,8 +63,8 @@ const WAECHTER = {
 } as unknown as Waechter;
 
 /** Sprachkurs-Datei aus dem Testkurs, abgewandelt. */
-function datei(aendere: (d: SprachEinheitDatei) => void, pfad = 'sprache/de/a1/de.a1.e01.json'): ImportQuelle {
-  const roh = JSON.parse(testkursQuellen().find((q) => q.pfad === 'testkurs/sprache/de/a1/de.a1.e01.json')!.text) as SprachEinheitDatei;
+function datei(aendere: (d: SprachEinheitDatei) => void, pfad = 'sprache/de/a1/de.a1.test.json'): ImportQuelle {
+  const roh = JSON.parse(testkursQuellen().find((q) => q.pfad === 'testkurs/sprache/de/a1/de.a1.test.json')!.text) as SprachEinheitDatei;
   aendere(roh);
   return { pfad, text: JSON.stringify(roh) };
 }
@@ -65,7 +74,7 @@ describe('Arbeitsliste (audio-liste)', () => {
     const l = audioListe(testkursQuellen(), 'de', { waechter: WAECHTER, manifest: null })!;
     expect(l.zeilen).toHaveLength(16);
     expect(l.vertonbar).toBe(16);
-    expect(new Set(l.zeilen.map((z) => z.einheit))).toEqual(new Set(['de.a1.e01']));
+    expect(new Set(l.zeilen.map((z) => z.einheit))).toEqual(new Set(['de.a1.test']));
     expect(l.zeilen.every((z) => z.stimme === STIMME && z.textHash === textHash(z.text))).toBe(true);
     expect(l.zeilen.find((z) => z.text === 'Das Haus ist groß.')).toMatchObject({ art: 'satz', woerter: 4 });
     expect(l.zeilen.find((z) => z.text === 'Wasser')).toMatchObject({ art: 'lemma', woerter: 1 });
@@ -83,23 +92,24 @@ describe('Arbeitsliste (audio-liste)', () => {
       d.saetze[1]!.text = 'Das Zebra ist groß.';
     });
     const e01 = datei(() => {});
+    // zweite Einheit derselben Stufe, im Schlüssel nach der Testeinheit (Bündel der ersten Einheit nach Schlüssel)
     const zweite: ImportQuelle = {
-      pfad: 'sprache/de/a1/de.a1.e02.json',
-      text: e01.text.replaceAll('de.a1.e01', 'de.a1.e02').replace('"reihenfolge":1', '"reihenfolge":2'),
+      pfad: 'sprache/de/a1/de.a1.test2.json',
+      text: e01.text.replaceAll('de.a1.test', 'de.a1.test2').replace('"reihenfolge":1', '"reihenfolge":2'),
     };
     const { texte, ausgeschlossen } = vertonbareTexte([mitBezug, zweite], 'de', { waechter: WAECHTER });
     const hashes = new Set(texte.map((t) => t.textHash));
-    expect(hashes.has(textHash('Ich trinke Wasser.'))).toBe(false); // in e02 ohne Kennzeichen, trotzdem nie
+    expect(hashes.has(textHash('Ich trinke Wasser.'))).toBe(false); // in der zweiten ohne Kennzeichen, trotzdem nie
     expect(hashes.has(textHash('Das Zebra ist groß.'))).toBe(false);
     expect(ausgeschlossen).toEqual(
       expect.arrayContaining([
-        { schluessel: 'de.a1.e01.s0001', grund: 'religionsbezug' },
-        { schluessel: 'de.a1.e01.s0002', grund: 'waechter' },
+        { schluessel: 'de.a1.test.s0001', grund: 'religionsbezug' },
+        { schluessel: 'de.a1.test.s0002', grund: 'waechter' },
       ]),
     );
     // Texte aus beiden Einheiten liegen im Bündel der ersten
-    expect(texte.find((t) => t.text === 'Wasser')?.einheit).toBe('de.a1.e01');
-    expect(texte.find((t) => t.text === 'Das Haus ist groß.')?.einheit).toBe('de.a1.e02');
+    expect(texte.find((t) => t.text === 'Wasser')?.einheit).toBe('de.a1.test');
+    expect(texte.find((t) => t.text === 'Das Haus ist groß.')?.einheit).toBe('de.a1.test2');
 
     // Entwürfe werden schon vertont (ein neuer Text ergibt einen neuen Hash); gesperrt gibt es nur in der Datenbank
     const entwurf = datei((d) => {
@@ -123,7 +133,7 @@ describe('Arbeitsliste (audio-liste)', () => {
     const { texte } = vertonbareTexte(testkursQuellen(), 'de', { waechter: null });
     const clip = (t: string, stimme: string) => ({
       textHash: textHash(t),
-      buendel: 'lernapp/audio/de/de.a1.e01-0123456789abcdef.lpa',
+      buendel: 'lernapp/audio/de/de.a1.test-0123456789abcdef.lpa',
       versatz: 100,
       laenge: 10,
       dauerMs: 500,
@@ -153,7 +163,7 @@ describe('Arbeitsliste (audio-liste)', () => {
       clips: texte
         .map((t) => ({
           textHash: t.textHash,
-          buendel: 'lernapp/audio/de/de.a1.e01-0123456789abcdef.lpa',
+          buendel: 'lernapp/audio/de/de.a1.test-0123456789abcdef.lpa',
           versatz: 100,
           laenge: 10,
           dauerMs: 500,
@@ -436,7 +446,7 @@ describe('Prüfkette (audio-pruefen)', () => {
 describe('Wächter „nie vertont“ im Prüfer und im Import', () => {
   const clip = (t: string, stimme = STIMME) => ({
     textHash: textHash(t),
-    buendel: 'lernapp/audio/de/de.a1.e01-0123456789abcdef.lpa',
+    buendel: 'lernapp/audio/de/de.a1.test-0123456789abcdef.lpa',
     versatz: 100,
     laenge: 10,
     dauerMs: 500,
@@ -448,7 +458,7 @@ describe('Wächter „nie vertont“ im Prüfer und im Import', () => {
   it('Prüfer: Clip zu Religionsbezug oder Wissenstext blockiert; Sprachausgabe ohne Freigabe der Sprache blockiert', () => {
     const inhalte = leereInhalte();
     const d = JSON.parse(datei((x) => (x.saetze[0]!.religionsbezug = true)).text) as SprachEinheitDatei;
-    inhalte.sprache.push({ pfad: 'sprache/de/a1/de.a1.e01.json', daten: d });
+    inhalte.sprache.push({ pfad: 'sprache/de/a1/de.a1.test.json', daten: d });
     inhalte.islam.push({ pfad: 'islam/x.json', daten: { aussagen: [{ text: 'Ein Satz aus dem Wissenskurs.' }] } as never });
     inhalte.audio.push({
       pfad: 'audio-manifest/de.json',
@@ -464,15 +474,66 @@ describe('Wächter „nie vertont“ im Prüfer und im Import', () => {
       daten: {
         ...leeresManifest('tr'),
         stimmen: [{ id: tr, art: 'sprachausgabe', bezeichnung: 'x', namensnennung: 'x', wasserzeichen: false }],
-        clips: [{ ...clip('su', tr), buendel: 'lernapp/audio/tr/tr.a1.e01-0123456789abcdef.lpa' }],
+        clips: [{ ...clip('su', tr), buendel: 'lernapp/audio/tr/tr.a1.test-0123456789abcdef.lpa' }],
       },
     });
     const befunde = pruefeAudio(inhalte).liste;
     expect(befunde.map((b) => [b.datei, b.ort, b.schwere])).toEqual([
+      // Thorsten ist registriert, die Hörabnahme (LM-06) aber offen: Sprachausgabe im Manifest blockiert (Z-L21)
+      ['audio-manifest/de.json', 'stimmen.0', 'blockierend'],
       ['audio-manifest/de.json', 'clips.0', 'blockierend'],
       ['audio-manifest/de.json', 'clips.1', 'blockierend'],
       ['audio-manifest/tr.json', 'stimmen.0', 'blockierend'],
     ]);
+  });
+
+  it('Hörabnahme (LM-06, Z-L21): Sprachausgabe im Manifest nur mit „bestanden“; Thorsten steht auf „offen“', () => {
+    expect(THORSTEN.hoerabnahme).toBe('offen');
+    expect(stimmeFuer('de')).toBe(THORSTEN);
+    expect(freigegebeneStimme('de')).toBeNull();
+    const inhalte = leereInhalte();
+    inhalte.audio.push({
+      pfad: 'audio-manifest/de.json',
+      daten: { ...leeresManifest('de'), stimmen: [manifestStimme(THORSTEN)], clips: [clip('Wasser')] },
+    });
+    expect(pruefeAudio(inhalte).liste.map((b) => [b.ort, b.schwere, b.text])).toEqual([
+      ['stimmen.0', 'blockierend', expect.stringContaining('Hörabnahme offen (LM-06)')],
+    ]);
+    // nach bestandener Hörabnahme (nur Mensch) ist dasselbe Manifest zulässig
+    THORSTEN.hoerabnahme = 'bestanden';
+    try {
+      expect(freigegebeneStimme('de')).toBe(THORSTEN);
+      expect(pruefeAudio(inhalte).liste).toEqual([]);
+    } finally {
+      THORSTEN.hoerabnahme = 'offen';
+    }
+  });
+
+  it('zulässige Clips je Eintrag (Paketbau, Audio-Studio): Testtöne nur im Testkurs, Sprachausgabe erst nach der Hörabnahme', () => {
+    const mensch = '00000000-0000-4000-8000-000000000001';
+    const vereinbarung = new Set([mensch]);
+    const echt = { sprache: 'de' as const, testinhalt: false, vereinbarung };
+    const test = { ...echt, testinhalt: true };
+    expect(istTestQuelle('test:lernapp-testkurs')).toBe(true);
+    expect(istTestQuelle('ki:l3-04')).toBe(false);
+    // echte Einträge: kein Testton, keine Sprachausgabe vor der Hörabnahme, Mensch nur mit Vereinbarung
+    expect(clipZulaessig('test:ton', echt)).toBe(false);
+    expect(clipZulaessig(THORSTEN.id, echt)).toBe(false);
+    expect(clipZulaessig(`mensch:${mensch}`, echt)).toBe(true);
+    expect(clipZulaessig('mensch:00000000-0000-4000-8000-000000000002', echt)).toBe(false);
+    expect(clipZulaessig('tts:fremde-stimme@0123456789abcdef', echt)).toBe(false);
+    // Testkurs: Testtöne und die registrierte Stimme (Probelauf), fremde Stimmen nie
+    expect(clipZulaessig('test:ton', test)).toBe(true);
+    expect(clipZulaessig(THORSTEN.id, test)).toBe(true);
+    expect(clipZulaessig('tts:fremde-stimme@0123456789abcdef', test)).toBe(false);
+    expect(clipZulaessig(THORSTEN.id, { ...test, sprache: 'tr' })).toBe(false);
+    THORSTEN.hoerabnahme = 'bestanden';
+    try {
+      expect(clipZulaessig(THORSTEN.id, echt)).toBe(true);
+      expect(clipZulaessig(THORSTEN.id, { ...echt, sprache: 'ar' })).toBe(false);
+    } finally {
+      THORSTEN.hoerabnahme = 'offen';
+    }
   });
 
   it('Import: dieselben Regeln (fail closed)', () => {
@@ -504,9 +565,12 @@ describe('Stimmen, Aussprache und Namensnennung', () => {
     expect(THORSTEN.id).toBe(`tts:coqui-vits-thorsten-onnx@${THORSTEN.quelle.onnxSha256.slice(0, 16)}`);
     expect(ALLE_STIMMEN).toEqual([THORSTEN]);
     expect([THORSTEN.modellLizenz, THORSTEN.datenLizenz]).toEqual(['Apache-2.0', 'CC0-1.0']);
-    const eintrag = ABSCHNITTE.find((a) => a.id === 'sprachausgabe')?.eintraege.find((e) => e.id === 'thorsten-vits');
+    const abschnitt = ABSCHNITTE.find((a) => a.id === 'sprachausgabe');
+    const eintrag = abschnitt?.eintraege.find((e) => e.id === 'thorsten-vits');
     expect(eintrag?.url).toBe(THORSTEN.modellAdresse);
     expect(eintrag?.herkunft?.url).toBe(THORSTEN.datenAdresse);
+    // /quellen nennt die Sprachen ohne freigegebene Stimme aus dem Register (wie /lern-app/*/quellen, Stufe C)
+    expect(abschnitt?.zusatz).toBe('stimmen');
   });
 
   it('aussprache/de.json: Schema; Phoneme nur für die Thorsten-Stimme und einzelne Wörter; Buchstabennamen vollständig', () => {

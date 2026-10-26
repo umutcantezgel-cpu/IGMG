@@ -76,17 +76,17 @@ function koranWortfolge(): string {
 
 describe('Rechte und Schalter (Negativfälle)', () => {
   const aufrufeJeAction = () => [
-    () => sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.e01', art: 'zieltext' })),
+    () => sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.test', art: 'zieltext' })),
     () => sprache.eintragPruefen({}, formular({ stichprobe: '00000000-0000-0000-0000-000000000000', eintrag: 'x', urteil: 'ok' })),
     () => sprache.pruefsprachenSetzen({}, formular({ benutzerId: 'x' })),
     () => meldungen.meldungErledigen({}, formular({ id: '00000000-0000-0000-0000-000000000000' })),
     () => meldungen.alternativeErgaenzen({}, formular({ id: '00000000-0000-0000-0000-000000000000', alternative: 'x' })),
     () => meldungen.eintragSperren({}, formular({ id: '00000000-0000-0000-0000-000000000000', ziel: 'x' })),
-    () => meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.l01.a01', bestaetigt: '1' })),
+    () => meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.test.l01.a01', bestaetigt: '1' })),
     () => audio.sprecherAnlegen({}, formular({ name: 'Testperson Eins' })),
-    () => audio.aufnahmeSpeichern({}, formular({ eintrag: 'tr.a1.e01.w001' })),
+    () => audio.aufnahmeSpeichern({}, formular({ eintrag: 'tr.a1.test.w001' })),
     () => audio.aufnahmeVerwerfen({}, formular({ id: '00000000-0000-0000-0000-000000000000' })),
-    () => audio.stimmeWaehlen({}, formular({ eintrag: 'tr.a1.e01.w001', wahl: 'mensch' })),
+    () => audio.stimmeWaehlen({}, formular({ eintrag: 'tr.a1.test.w001', wahl: 'mensch' })),
   ];
 
   it('ohne Sitzung, ohne zweiten Faktor und ohne Rolle: keinRecht, nichts geschrieben', async () => {
@@ -107,7 +107,7 @@ describe('Rechte und Schalter (Negativfälle)', () => {
     await mitSprachen(SPRACHE, ['tr']);
     expect(await sprache.pruefsprachenSetzen({}, formular({ benutzerId: 'x' }))).toEqual({ fehler: 'keinRecht' });
     expect(await meldungen.meldungErledigen({}, formular({ id: '00000000-0000-0000-0000-000000000000' }))).toEqual({ fehler: 'keinRecht' });
-    expect(await audio.stimmeWaehlen({}, formular({ eintrag: 'tr.a1.e01.w001', wahl: 'mensch' }))).toEqual({ fehler: 'keinRecht' });
+    expect(await audio.stimmeWaehlen({}, formular({ eintrag: 'tr.a1.test.w001', wahl: 'mensch' }))).toEqual({ fehler: 'keinRecht' });
     // Bildung bearbeitet, prüft aber keine Sprache (Recht fehlt)
     await angemeldetAls(BILDUNG);
     expect(
@@ -150,21 +150,21 @@ describe('Stichprobe: ziehen, beurteilen, entscheiden', () => {
 
   it('nur in der eigenen Prüfsprache; Größe, Einlauf und Startwert gespeichert', async () => {
     await mitSprachen(SPRACHE, ['de']);
-    expect(await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.e01', art: 'zieltext' }))).toEqual({ fehler: 'keinRecht' });
+    expect(await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.test', art: 'zieltext' }))).toEqual({ fehler: 'keinRecht' });
     pruefer = await mitSprachen(SPRACHE, ['tr']);
     const warte = await ladeWarteschlange(['tr']);
-    expect(warte.find((w) => w.einheit === 'tr.a1.e01' && w.art === 'zieltext')).toMatchObject({ ziehbar: true, letzte: null });
-    const z = await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.e01', art: 'zieltext' }));
+    expect(warte.find((w) => w.einheit === 'tr.a1.test' && w.art === 'zieltext')).toMatchObject({ ziehbar: true, letzte: null });
+    const z = await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.test', art: 'zieltext' }));
     expect(z).toMatchObject({ gespeichert: expect.any(Number), id: expect.any(String) });
     stichprobe = z.id!;
     const [s] = await db.select().from(schema.lernappStichprobe).where(eq(schema.lernappStichprobe.id, stichprobe));
     // weniger als 20 Kandidaten: alle; Einlauf, weil noch keine Stichprobe dieser Sprache entschieden ist
     expect(s).toMatchObject({ sprache: 'tr', art: 'zieltext', einlauf: true, entscheidung: 'offen' });
     expect(s!.groesse).toBe(s!.auswahl.length);
-    expect(s!.seed).toContain('tr.a1.e01|zieltext|-|');
-    expect(await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.e01', art: 'zieltext' }))).toEqual({ fehler: 'offen' });
+    expect(s!.seed).toContain('tr.a1.test|zieltext|-|');
+    expect(await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.test', art: 'zieltext' }))).toEqual({ fehler: 'offen' });
     const [a] = await audits('lernapp.stichprobe_gezogen');
-    expect(a!.details).toMatchObject({ einheit: 'tr.a1.e01', art: 'zieltext', groesse: s!.groesse });
+    expect(a!.details).toMatchObject({ einheit: 'tr.a1.test', art: 'zieltext', groesse: s!.groesse });
   });
 
   it('Urteil: Kategorie Pflicht außer bei ok; Korrektur mit Wortfolge aus dem Koran rot; fremde Sprache abgewiesen', async () => {
@@ -199,18 +199,18 @@ describe('Stichprobe: ziehen, beurteilen, entscheiden', () => {
     for (const eintrag of s!.auswahl) letzte = await sprache.eintragPruefen({}, formular({ stichprobe, eintrag, urteil: 'ok' }));
     expect(letzte).toMatchObject({ hinweis: 'bestanden' });
     // Warteschlange zählt die beurteilten Einträge der Stichprobe (nicht die einer anderen Tabelle)
-    const zeile = (await ladeWarteschlange(['tr'])).find((w) => w.einheit === 'tr.a1.e01' && w.art === 'zieltext');
+    const zeile = (await ladeWarteschlange(['tr'])).find((w) => w.einheit === 'tr.a1.test' && w.art === 'zieltext');
     expect(zeile?.letzte).toMatchObject({ id: stichprobe, entscheidung: 'bestanden', geprueft: s!.auswahl.length, aktuell: true });
     const [nachher] = await db.select().from(schema.lernappStichprobe).where(eq(schema.lernappStichprobe.id, stichprobe));
     expect(nachher).toMatchObject({ entscheidung: 'bestanden', ergebnis: { geprueft: s!.auswahl.length, kritisch: 0, leicht: 0 } });
-    const [einheit] = await db.select().from(schema.lernappEinheit).where(eq(schema.lernappEinheit.schluessel, 'tr.a1.e01'));
+    const [einheit] = await db.select().from(schema.lernappEinheit).where(eq(schema.lernappEinheit.schluessel, 'tr.a1.test'));
     expect(einheit!.status).toBe('veroeffentlicht');
-    const saetze = await db.select().from(schema.lernappSatz).where(like(schema.lernappSatz.schluessel, 'tr.a1.e01.%'));
+    const saetze = await db.select().from(schema.lernappSatz).where(like(schema.lernappSatz.schluessel, 'tr.a1.test.%'));
     expect(saetze.every((x) => x.status === 'veroeffentlicht')).toBe(true);
     const aufgaben = await db
       .select({ status: schema.lernappAufgabe.status })
       .from(schema.lernappAufgabe)
-      .where(like(schema.lernappAufgabe.schluessel, 'tr.a1.e01.%'));
+      .where(like(schema.lernappAufgabe.schluessel, 'tr.a1.test.%'));
     expect(aufgaben.every((x) => x.status === 'veroeffentlicht')).toBe(true);
     expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
     const [a] = await audits('lernapp.stichprobe_entschieden');
@@ -219,13 +219,13 @@ describe('Stichprobe: ziehen, beurteilen, entscheiden', () => {
     for (const x of await audits('lernapp.geprueft'))
       expect(Object.keys(x.details ?? {}).sort()).toEqual(['art', 'inhaltTyp', 'kategorie', 'urteil']);
     // zum selben Stand gibt es keine neue Stichprobe
-    expect(await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.e01', art: 'zieltext' }))).toEqual({ fehler: 'schonGezogen' });
+    expect(await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.test', art: 'zieltext' }))).toEqual({ fehler: 'schonGezogen' });
     expect(pruefer).not.toBe('');
   });
 
   it('Übersetzung: kritisches Urteil verbirgt sofort, Entscheidung „nachbessern“, Übersetzungen bleiben unveröffentlicht', async () => {
     await mitSprachen(SPRACHE, ['de']);
-    const z = await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.e01', art: 'uebersetzung', richtung: 'tr-aus-de' }));
+    const z = await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.test', art: 'uebersetzung', richtung: 'tr-aus-de' }));
     expect(z.id).toEqual(expect.any(String));
     const [s] = await db.select().from(schema.lernappStichprobe).where(eq(schema.lernappStichprobe.id, z.id!));
     expect(s).toMatchObject({ sprache: 'de', richtungId: 'tr-aus-de' });
@@ -245,7 +245,7 @@ describe('Stichprobe: ziehen, beurteilen, entscheiden', () => {
       .select({ status: schema.lernappUebersetzung.status })
       .from(schema.lernappUebersetzung)
       .innerJoin(schema.lernappSatz, eq(schema.lernappSatz.id, schema.lernappUebersetzung.satzId))
-      .where(and(eq(schema.lernappUebersetzung.sprache, 'de'), like(schema.lernappSatz.schluessel, 'tr.a1.e01.%')));
+      .where(and(eq(schema.lernappUebersetzung.sprache, 'de'), like(schema.lernappSatz.schluessel, 'tr.a1.test.%')));
     expect(ue.every((x) => x.status === 'automatisch_geprueft')).toBe(true);
     const u = await ladeLernappUebersicht();
     expect(u.befunde.kritisch).toBeGreaterThanOrEqual(1);
@@ -257,7 +257,7 @@ describe('Stichprobe: ziehen, beurteilen, entscheiden', () => {
 
   it('gleichzeitige letzte Urteile: genau eine Entscheidung, ein Audit und eine neue Kursversion', async () => {
     await mitSprachen(SPRACHE, ['ar']);
-    const z = await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.e01', art: 'uebersetzung', richtung: 'tr-aus-ar' }));
+    const z = await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.test', art: 'uebersetzung', richtung: 'tr-aus-ar' }));
     const [s] = await db.select().from(schema.lernappStichprobe).where(eq(schema.lernappStichprobe.id, z.id!));
     expect(s!.auswahl.length).toBeGreaterThanOrEqual(2);
     const vorletzter = s!.auswahl.at(-2)!;
@@ -301,7 +301,7 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     const loesung = await altcha();
     const r = await sende({
       kurs: 'tr-aus-de',
-      aufgabe: 'tr.a1.e01.l02.a01',
+      aufgabe: 'tr.a1.test.l02.a01',
       kategorie: 'antwort_richtig',
       altcha: loesung,
       antwort: 'Das Haus ist sehr groß.',
@@ -311,13 +311,13 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     expect(r.headers.get('cache-control')).toContain('no-store');
     const [m] = await db.select().from(schema.lernappMeldung);
     expect(m).toMatchObject({
-      aufgabeSchluessel: 'tr-aus-de:tr.a1.e01.l02.a01',
+      aufgabeSchluessel: 'tr-aus-de:tr.a1.test.l02.a01',
       kategorie: 'antwort_richtig',
       antwort: null,
       status: 'offen',
     });
     // dieselbe Lösung noch einmal
-    expect((await sende({ kurs: 'tr-aus-de', aufgabe: 'tr.a1.e01.l02.a01', kategorie: 'sonstiges', altcha: loesung })).status).toBe(400);
+    expect((await sende({ kurs: 'tr-aus-de', aufgabe: 'tr.a1.test.l02.a01', kategorie: 'sonstiges', altcha: loesung })).status).toBe(400);
     expect(await betriebsSumme('meldung', 1)).toBe(1);
   });
 
@@ -326,24 +326,24 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     expect(
       (
         await sende(
-          { kurs: 'tr-aus-de', aufgabe: 'tr.a1.e01.l02.a01', kategorie: 'sonstiges', altcha: 'x' },
+          { kurs: 'tr-aus-de', aufgabe: 'tr.a1.test.l02.a01', kategorie: 'sonstiges', altcha: 'x' },
           { 'sec-fetch-site': 'cross-site' },
         )
       ).status,
     ).toBe(403);
     expect(
-      (await sende({ kurs: 'tr-aus-de', aufgabe: 'tr.a1.e01.l02.a01', kategorie: 'sonstiges', altcha: 'x', email: 'a@example.test' }))
+      (await sende({ kurs: 'tr-aus-de', aufgabe: 'tr.a1.test.l02.a01', kategorie: 'sonstiges', altcha: 'x', email: 'a@example.test' }))
         .status,
     ).toBe(400);
-    expect((await sende({ kurs: 'tr-aus-de', aufgabe: 'ar.a1.e01.l02.a01', kategorie: 'sonstiges', altcha: 'x' })).status).toBe(400);
+    expect((await sende({ kurs: 'tr-aus-de', aufgabe: 'ar.a1.test.l02.a01', kategorie: 'sonstiges', altcha: 'x' })).status).toBe(400);
     expect((await sende({ kurs: 'tr-aus-de', aufgabe: 'tr.a1.e09.l01.a01', kategorie: 'sonstiges', altcha: 'x' })).status).toBe(404);
     process.env.FUNKTION_LERNAPP_MELDUNGEN = 'aus';
-    expect((await sende({ kurs: 'tr-aus-de', aufgabe: 'tr.a1.e01.l02.a01', kategorie: 'sonstiges', altcha: 'x' })).status).toBe(404);
+    expect((await sende({ kurs: 'tr-aus-de', aufgabe: 'tr.a1.test.l02.a01', kategorie: 'sonstiges', altcha: 'x' })).status).toBe(404);
     delete process.env.FUNKTION_LERNAPP_MELDUNGEN;
     await db.delete(schema.ratenbegrenzung);
     const status: number[] = [];
     for (let i = 0; i < 11; i++)
-      status.push((await sende({ kurs: 'tr-aus-de', aufgabe: 'tr.a1.e01.l02.a01', kategorie: 'sonstiges', altcha: 'x' })).status);
+      status.push((await sende({ kurs: 'tr-aus-de', aufgabe: 'tr.a1.test.l02.a01', kategorie: 'sonstiges', altcha: 'x' })).status);
     expect(status.slice(0, 10).every((s) => s === 400)).toBe(true);
     expect(status[10]).toBe(429);
   });
@@ -353,7 +353,7 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     await angemeldetAls(ADMIN);
     const r = await sende({
       kurs: 'tr-aus-de',
-      aufgabe: 'tr.a1.e01.l02.a02',
+      aufgabe: 'tr.a1.test.l02.a02',
       kategorie: 'antwort_richtig',
       altcha: await altcha(),
       antwort: '[Antwort]',
@@ -362,7 +362,7 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     const [m] = await db
       .select()
       .from(schema.lernappMeldung)
-      .where(eq(schema.lernappMeldung.aufgabeSchluessel, 'tr-aus-de:tr.a1.e01.l02.a02'));
+      .where(eq(schema.lernappMeldung.aufgabeSchluessel, 'tr-aus-de:tr.a1.test.l02.a02'));
     expect(m!.antwort).toBe('[Antwort]');
   });
 
@@ -371,8 +371,8 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     const [nachAusgang] = await db
       .select()
       .from(schema.lernappMeldung)
-      .where(eq(schema.lernappMeldung.aufgabeSchluessel, 'tr-aus-de:tr.a1.e01.l02.a01'));
-    const [satz] = await db.select().from(schema.lernappSatz).where(eq(schema.lernappSatz.schluessel, 'tr.a1.e01.s0002'));
+      .where(eq(schema.lernappMeldung.aufgabeSchluessel, 'tr-aus-de:tr.a1.test.l02.a01'));
+    const [satz] = await db.select().from(schema.lernappSatz).where(eq(schema.lernappSatz.schluessel, 'tr.a1.test.s0002'));
     const [vorher] = await db
       .select()
       .from(schema.lernappUebersetzung)
@@ -395,14 +395,14 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     const [nachZiel] = await db
       .select()
       .from(schema.lernappMeldung)
-      .where(eq(schema.lernappMeldung.aufgabeSchluessel, 'tr-aus-de:tr.a1.e01.l02.a02'));
+      .where(eq(schema.lernappMeldung.aufgabeSchluessel, 'tr-aus-de:tr.a1.test.l02.a02'));
     expect(await meldungen.alternativeErgaenzen({}, formular({ id: nachZiel!.id, alternative: koranWortfolge() }))).toMatchObject({
       feldFehler: { alternative: 'waechter_wortfolge' },
     });
     expect(await meldungen.alternativeErgaenzen({}, formular({ id: nachZiel!.id, alternative: '[Fassung]' }))).toMatchObject({
       gespeichert: expect.any(Number),
     });
-    const [aufgabe] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l02.a02'));
+    const [aufgabe] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.test.l02.a02'));
     expect(aufgabe!.daten.alternativen).toContain('[Fassung]');
     expect(aufgabe!.menschlichGeprueft).toBe(true);
     // Die Antwort wurde mit dem Erledigen gelöscht
@@ -414,21 +414,21 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     await angemeldetAls(BILDUNG);
     const [m] = await db
       .insert(schema.lernappMeldung)
-      .values({ aufgabeSchluessel: 'tr-aus-de:tr.a1.e01.l01.a01', kategorie: 'fehler_zieltext' })
+      .values({ aufgabeSchluessel: 'tr-aus-de:tr.a1.test.l01.a01', kategorie: 'fehler_zieltext' })
       .returning();
     expect(await meldungen.alternativeErgaenzen({}, formular({ id: m!.id, alternative: '[x]' }))).toEqual({ fehler: 'keineAlternative' });
-    expect(await meldungen.eintragSperren({}, formular({ id: m!.id, ziel: 'de.a1.e01.w001', bestaetigt: '1' }))).toEqual({
+    expect(await meldungen.eintragSperren({}, formular({ id: m!.id, ziel: 'de.a1.test.w001', bestaetigt: '1' }))).toEqual({
       fehler: 'nichtGefunden',
     });
     // ohne ausdrückliche Bestätigung (zweiter Schritt des Knopfs) wird nichts gesperrt
-    expect(await meldungen.eintragSperren({}, formular({ id: m!.id, ziel: 'tr.a1.e01.l01.a01' }))).toEqual({ fehler: 'bestaetigen' });
-    const [vorher] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l01.a01'));
+    expect(await meldungen.eintragSperren({}, formular({ id: m!.id, ziel: 'tr.a1.test.l01.a01' }))).toEqual({ fehler: 'bestaetigen' });
+    const [vorher] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.test.l01.a01'));
     expect(vorher!.status).not.toBe('gesperrt');
     aufrufe.updateTag.length = 0;
-    expect(await meldungen.eintragSperren({}, formular({ id: m!.id, ziel: 'tr.a1.e01.l01.a01', bestaetigt: '1' }))).toMatchObject({
+    expect(await meldungen.eintragSperren({}, formular({ id: m!.id, ziel: 'tr.a1.test.l01.a01', bestaetigt: '1' }))).toMatchObject({
       gespeichert: expect.any(Number),
     });
-    const [a] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l01.a01'));
+    const [a] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.test.l01.a01'));
     expect(a!.status).toBe('gesperrt');
     expect(vorher!.status).not.toBe('gesperrt');
     expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
@@ -438,7 +438,7 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     expect(audit!.details).toEqual({
       aktion: 'gesperrt',
       kategorie: 'fehler_zieltext',
-      eintrag: 'tr.a1.e01.l01.a01',
+      eintrag: 'tr.a1.test.l01.a01',
       vorher: vorher!.status,
       hash: vorher!.inhaltHash,
     });
@@ -446,42 +446,42 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
 
   it('Wieder freigeben (L3-06b): nur über Meldungen gesperrte, mit Bestätigung, Stand vorher, sofort wirksam, Audit', async () => {
     await angemeldetAls(BILDUNG);
-    const [vorher] = (await audits('lernapp.meldung_bearbeitet')).filter((x) => x.details?.eintrag === 'tr.a1.e01.l01.a01');
+    const [vorher] = (await audits('lernapp.meldung_bearbeitet')).filter((x) => x.details?.eintrag === 'tr.a1.test.l01.a01');
     const gesperrte = await ladeGesperrte();
-    expect(gesperrte.map((g) => [g.schluessel, g.art, g.vorher])).toEqual([['tr.a1.e01.l01.a01', 'aufgabe', vorher!.details!.vorher]]);
+    expect(gesperrte.map((g) => [g.schluessel, g.art, g.vorher])).toEqual([['tr.a1.test.l01.a01', 'aufgabe', vorher!.details!.vorher]]);
     // Vom Import gesperrt (nicht über eine Meldung): hier nicht freizugeben
-    await db.update(schema.lernappLemma).set({ status: 'gesperrt' }).where(eq(schema.lernappLemma.schluessel, 'tr.a1.e01.w002'));
-    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.w002', bestaetigt: '1' }))).toEqual({
+    await db.update(schema.lernappLemma).set({ status: 'gesperrt' }).where(eq(schema.lernappLemma.schluessel, 'tr.a1.test.w002'));
+    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.test.w002', bestaetigt: '1' }))).toEqual({
       fehler: 'nichtGefunden',
     });
     await db
       .update(schema.lernappLemma)
       .set({ status: 'automatisch_geprueft' })
-      .where(eq(schema.lernappLemma.schluessel, 'tr.a1.e01.w002'));
+      .where(eq(schema.lernappLemma.schluessel, 'tr.a1.test.w002'));
     // ohne ausdrückliche Bestätigung nichts
-    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.l01.a01' }))).toEqual({ fehler: 'bestaetigenFreigabe' });
+    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.test.l01.a01' }))).toEqual({ fehler: 'bestaetigenFreigabe' });
     aufrufe.updateTag.length = 0;
-    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.l01.a01', bestaetigt: '1' }))).toMatchObject({
+    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.test.l01.a01', bestaetigt: '1' }))).toMatchObject({
       gespeichert: expect.any(Number),
     });
-    const [a] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l01.a01'));
+    const [a] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.test.l01.a01'));
     expect(a!.status).toBe(vorher!.details!.vorher);
     expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
-    expect((await ladeVorschau('tr-aus-de', 'tr.a1.e01.l01'))!.lektion.aufgaben.some((x) => x.schluessel === 'tr.a1.e01.l01.a01')).toBe(
+    expect((await ladeVorschau('tr-aus-de', 'tr.a1.test.l01'))!.lektion.aufgaben.some((x) => x.schluessel === 'tr.a1.test.l01.a01')).toBe(
       true,
     );
     const [audit] = await audits('lernapp.eintrag_entsperrt');
     expect(audit).toMatchObject({
       zielTyp: 'lernapp_eintrag',
-      zielId: 'tr.a1.e01.l01.a01',
+      zielId: 'tr.a1.test.l01.a01',
       details: { art: 'aufgabe', status: a!.status },
     });
     expect(await ladeGesperrte()).toEqual([]);
-    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.l01.a01', bestaetigt: '1' }))).toEqual({
+    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.test.l01.a01', bestaetigt: '1' }))).toEqual({
       fehler: 'nichtGefunden',
     });
     // für die Vorschau-Prüfung unten wieder gesperrt (wie vorher)
-    await db.update(schema.lernappAufgabe).set({ status: 'gesperrt' }).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l01.a01'));
+    await db.update(schema.lernappAufgabe).set({ status: 'gesperrt' }).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.test.l01.a01'));
   });
 });
 
@@ -509,21 +509,21 @@ describe('Audio-Studio', () => {
       fd.set('datei', new File([new Uint8Array(daten)], 'aufnahme.webm'));
       return audio.aufnahmeSpeichern({}, fd);
     };
-    expect(await sende('tr.a1.e01.w001', Buffer.from('keine audiodatei'))).toEqual({ fehler: 'audio_format' });
-    expect(await sende('tr.a1.e01.w001', webm(100))).toMatchObject({ hinweis: 'neu' });
-    expect(await sende('tr.a1.e01.w001', webm(100))).toMatchObject({ hinweis: 'unveraendert' });
-    expect(await sende('tr.a1.e01.w001', webm(200))).toMatchObject({ hinweis: 'ersetzt' });
+    expect(await sende('tr.a1.test.w001', Buffer.from('keine audiodatei'))).toEqual({ fehler: 'audio_format' });
+    expect(await sende('tr.a1.test.w001', webm(100))).toMatchObject({ hinweis: 'neu' });
+    expect(await sende('tr.a1.test.w001', webm(100))).toMatchObject({ hinweis: 'unveraendert' });
+    expect(await sende('tr.a1.test.w001', webm(200))).toMatchObject({ hinweis: 'ersetzt' });
     const aufnahmen = await db.select().from(schema.lernappAufnahme);
     expect(aufnahmen).toHaveLength(1);
     expect(aufnahmen[0]!.pfad).toMatch(/^lernapp\/aufnahmen\/tr\/[0-9a-f]{16}-[0-9a-f]{16}\.webm$/);
     expect(aufnahmen[0]!.bytes).toBe(204);
     // Religionsbezug: nie vertonbar (KERN 4.0 §4)
-    await db.update(schema.lernappSatz).set({ religionsbezug: true }).where(eq(schema.lernappSatz.schluessel, 'tr.a1.e01.s0004'));
-    expect(await sende('tr.a1.e01.s0004', webm(50))).toEqual({ fehler: 'nichtVertonbar' });
+    await db.update(schema.lernappSatz).set({ religionsbezug: true }).where(eq(schema.lernappSatz.schluessel, 'tr.a1.test.s0004'));
+    expect(await sende('tr.a1.test.s0004', webm(50))).toEqual({ fehler: 'nichtVertonbar' });
     expect(await sende('islam.grund.e01.s0001', webm(50))).toEqual({ fehler: 'nichtGefunden' });
     const studio = await ladeStudio('tr', 'alle', 0);
-    expect(studio.eintraege.some((e) => e.schluessel === 'tr.a1.e01.s0004')).toBe(false);
-    await db.update(schema.lernappSatz).set({ religionsbezug: false }).where(eq(schema.lernappSatz.schluessel, 'tr.a1.e01.s0004'));
+    expect(studio.eintraege.some((e) => e.schluessel === 'tr.a1.test.s0004')).toBe(false);
+    await db.update(schema.lernappSatz).set({ religionsbezug: false }).where(eq(schema.lernappSatz.schluessel, 'tr.a1.test.s0004'));
     // Anhören nur mit Recht
     const ctx = { params: Promise.resolve({ locale: 'de', id: aufnahmen[0]!.id }) } as never;
     const r = await aufnahmeRoute.GET(new Request('https://example.test/'), ctx);
@@ -538,7 +538,7 @@ describe('Audio-Studio', () => {
 
   it('Wahl Sprachausgabe ↔ Mensch je Clip wirkt auf den Paketbau', async () => {
     await angemeldetAls(BILDUNG);
-    const [lemma] = await db.select().from(schema.lernappLemma).where(eq(schema.lernappLemma.schluessel, 'tr.a1.e01.w001'));
+    const [lemma] = await db.select().from(schema.lernappLemma).where(eq(schema.lernappLemma.schluessel, 'tr.a1.test.w001'));
     const hash = textHash(lemma!.lemma);
     const [test] = await db
       .select()
@@ -547,28 +547,28 @@ describe('Audio-Studio', () => {
     expect(test).toBeDefined();
     // gebündelte menschliche Aufnahme (wie nach der Audio-Kette)
     await db.insert(schema.lernappAudio).values({ ...test!, id: undefined, stimme: `mensch:${sprecherId}`, sprecherId });
-    const stimme = async () => (await ladeBauEingaben('tr-aus-de', 'tr.a1.e01'))[0]!.audio.get(hash)!.stimme;
+    const stimme = async () => (await ladeBauEingaben('tr-aus-de', 'tr.a1.test'))[0]!.audio.get(hash)!.stimme;
     expect(await stimme()).toBe(`mensch:${sprecherId}`);
-    expect(await audio.stimmeWaehlen({}, formular({ eintrag: 'tr.a1.e01.w001', wahl: 'sprachausgabe' }))).toMatchObject({
+    expect(await audio.stimmeWaehlen({}, formular({ eintrag: 'tr.a1.test.w001', wahl: 'sprachausgabe' }))).toMatchObject({
       gespeichert: expect.any(Number),
     });
     expect(await stimme()).toBe('test:ton');
     expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
-    await audio.stimmeWaehlen({}, formular({ eintrag: 'tr.a1.e01.w001', wahl: 'mensch' }));
+    await audio.stimmeWaehlen({}, formular({ eintrag: 'tr.a1.test.w001', wahl: 'mensch' }));
     expect(await stimme()).toBe(`mensch:${sprecherId}`);
   });
 
   it('kritisches Audio-Urteil (Aussprache) verbirgt den Clip im Paket sofort; die nächste Stimme greift; Übersicht zählt es', async () => {
     const kritischVorher = (await ladeLernappUebersicht()).befunde.kritisch;
     await mitSprachen(SPRACHE, ['tr']);
-    const z = await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.e01', art: 'audio' }));
+    const z = await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.test', art: 'audio' }));
     expect(z.id).toEqual(expect.any(String));
     const [s] = await db.select().from(schema.lernappStichprobe).where(eq(schema.lernappStichprobe.id, z.id!));
-    const alle = await kandidaten('tr.a1.e01', 'audio');
-    const eintrag = s!.auswahl.includes('tr.a1.e01.w001') ? 'tr.a1.e01.w001' : s!.auswahl[0]!;
+    const alle = await kandidaten('tr.a1.test', 'audio');
+    const eintrag = s!.auswahl.includes('tr.a1.test.w001') ? 'tr.a1.test.w001' : s!.auswahl[0]!;
     const k = alle.find((x) => x.schluessel === eintrag)!;
     const hash = textHash(k.text);
-    const imPaket = async () => (await ladeBauEingaben('tr-aus-de', 'tr.a1.e01'))[0]!.audio.get(hash);
+    const imPaket = async () => (await ladeBauEingaben('tr-aus-de', 'tr.a1.test'))[0]!.audio.get(hash);
     expect((await imPaket())?.stimme).toBe(k.clip!.stimme);
     await angemeldetAls(null);
     const id = (await angemeldetAls(SPRACHE))!;
@@ -580,7 +580,7 @@ describe('Audio-Studio', () => {
     expect(p).toMatchObject({ inhaltTyp: 'audio', inhaltId: k.inhaltId, inhaltHash: k.inhaltHash, kategorie: 'aussprache' });
     // Der beurteilte Clip ist verborgen: eine andere Stimme oder „Audio folgt“ (kein Eintrag)
     expect((await imPaket())?.stimme).not.toBe(k.clip!.stimme);
-    if (eintrag === 'tr.a1.e01.w001') expect((await imPaket())?.stimme).toBe('test:ton');
+    if (eintrag === 'tr.a1.test.w001') expect((await imPaket())?.stimme).toBe('test:ton');
     expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
     // Audio-Studio: der beurteilte Clip ist gesperrt und nie die wirksame Stimme (Restmangel L3-06)
     const studio = (await ladeStudio('tr', 'alle', 0)).eintraege.find((e) => e.schluessel === eintrag)!;
@@ -589,19 +589,19 @@ describe('Audio-Studio', () => {
     expect(studio.wirksam).not.toBe(k.clip!.stimme);
     expect(studio.wirksam).toBe((await imPaket())?.stimme ?? null);
     // Kandidat bleibt (Stichprobe stabil); die Übersicht zählt den Befund
-    expect((await kandidaten('tr.a1.e01', 'audio')).find((x) => x.schluessel === eintrag)?.inhaltId).toBe(k.inhaltId);
+    expect((await kandidaten('tr.a1.test', 'audio')).find((x) => x.schluessel === eintrag)?.inhaltId).toBe(k.inhaltId);
     expect((await ladeLernappUebersicht()).befunde.kritisch).toBe(kritischVorher + 1);
   });
 });
 
 describe('Vorschau, Cockpit und Betriebszähler', () => {
   it('Vorschau baut Entwürfe als Lektion; gesperrte Aufgaben fehlen', async () => {
-    await db.update(schema.lernappSatz).set({ status: 'entwurf' }).where(eq(schema.lernappSatz.schluessel, 'de.a1.e01.s0002'));
-    const v = await ladeVorschau('de-aus-tr', 'de.a1.e01.l02');
-    expect(v?.lektion.schluessel).toBe('de-aus-tr.a1.e01.l02');
+    await db.update(schema.lernappSatz).set({ status: 'entwurf' }).where(eq(schema.lernappSatz.schluessel, 'de.a1.test.s0002'));
+    const v = await ladeVorschau('de-aus-tr', 'de.a1.test.l02');
+    expect(v?.lektion.schluessel).toBe('de-aus-tr.a1.test.l02');
     expect(v!.lektion.aufgaben.length).toBeGreaterThan(0);
-    const tr = await ladeVorschau('tr-aus-de', 'tr.a1.e01.l01');
-    expect(tr!.lektion.aufgaben.some((a) => a.schluessel === 'tr.a1.e01.l01.a01')).toBe(false);
+    const tr = await ladeVorschau('tr-aus-de', 'tr.a1.test.l01');
+    expect(tr!.lektion.aufgaben.some((a) => a.schluessel === 'tr.a1.test.l01.a01')).toBe(false);
     expect(await ladeVorschau('tr-aus-de', 'tr.a1.e09.l01')).toBeNull();
     // Baum: Aufgaben je Lektion gezählt (je Lektion mindestens eine im Testkurs)
     const baum = await ladeKursBaum('tr');
@@ -706,7 +706,7 @@ describe('Befunde der Prüfenden und Export der Korrekturen (L3-06b)', () => {
     const person = (await angemeldetAls(SPRACHE))!;
     const lemma = async (schluessel: string) =>
       (await db.select().from(schema.lernappLemma).where(eq(schema.lernappLemma.schluessel, schluessel)))[0]!;
-    const [w1, w3, w4] = [await lemma('de.a1.e01.w001'), await lemma('de.a1.e01.w003'), await lemma('de.a1.e01.w004')];
+    const [w1, w3, w4] = [await lemma('de.a1.test.w001'), await lemma('de.a1.test.w003'), await lemma('de.a1.test.w004')];
     const p = schema.lernappPruefung;
     const vor = (min: number) => new Date(Date.now() - min * 60_000);
     await db.insert(p).values([
@@ -766,29 +766,29 @@ describe('Befunde der Prüfenden und Export der Korrekturen (L3-06b)', () => {
         am: vor(2),
       },
     ]);
-    const befunde = (await ladeBefunde({ kurs: 'de' })).filter((b) => b.schluessel.startsWith('de.a1.e01.w00'));
+    const befunde = (await ladeBefunde({ kurs: 'de' })).filter((b) => b.schluessel.startsWith('de.a1.test.w00'));
     expect(befunde.map((b) => [b.schluessel, b.urteil, b.korrektur, b.kommentar])).toEqual([
-      ['de.a1.e01.w001', 'korrektur', '[Vorschlag]', '[Kommentar]'],
-      ['de.a1.e01.w004', 'ok', null, '[Hinweis]'],
+      ['de.a1.test.w001', 'korrektur', '[Vorschlag]', '[Kommentar]'],
+      ['de.a1.test.w004', 'ok', null, '[Hinweis]'],
     ]);
-    expect(befunde[0]).toMatchObject({ kurs: 'de', einheit: 'de.a1.e01', sprache: 'de', text: w1.lemma, art: 'sprache_ziel' });
+    expect(befunde[0]).toMatchObject({ kurs: 'de', einheit: 'de.a1.test', sprache: 'de', text: w1.lemma, art: 'sprache_ziel' });
     expect(await ladeBefunde({ kurs: 'tr' })).not.toEqual(expect.arrayContaining([expect.objectContaining({ kurs: 'de' })]));
 
     // menschliche Korrektur an einer Aufgabe (wie „Fassung ergänzen“)
-    const [aufgabe] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'de.a1.e01.l01.a01'));
+    const [aufgabe] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'de.a1.test.l01.a01'));
     await db
       .update(schema.lernappAufgabe)
       .set({ menschlichGeprueft: true, verfasstVon: person, daten: { ...aufgabe!.daten, alternativen: ['[Fassung B]'] } })
       .where(eq(schema.lernappAufgabe.id, aufgabe!.id));
     const korrigiert = await ladeKorrigiert({ kurs: 'de' });
     expect(korrigiert).toContainEqual(
-      expect.objectContaining({ inhaltTyp: 'aufgabe', schluessel: 'de.a1.e01.l01.a01', alternativen: ['[Fassung B]'] }),
+      expect.objectContaining({ inhaltTyp: 'aufgabe', schluessel: 'de.a1.test.l01.a01', alternativen: ['[Fassung B]'] }),
     );
 
     const exp = baueKorrekturExport(await ladeBefunde(), await ladeKorrigiert(), new Date('2026-10-21T12:00:00Z'));
     expect(exp.format).toBe(EXPORT_FORMAT);
-    const de = exp.kurse.find((k) => k.kurs === 'de')!.einheiten.find((e) => e.einheit === 'de.a1.e01')!;
-    expect(de.befunde.find((b) => b.schluessel === 'de.a1.e01.w001')).toEqual({
+    const de = exp.kurse.find((k) => k.kurs === 'de')!.einheiten.find((e) => e.einheit === 'de.a1.test')!;
+    expect(de.befunde.find((b) => b.schluessel === 'de.a1.test.w001')).toEqual({
       inhaltTyp: 'lemma',
       art: 'sprache_ziel',
       urteil: 'korrektur',
@@ -796,12 +796,12 @@ describe('Befunde der Prüfenden und Export der Korrekturen (L3-06b)', () => {
       korrektur: '[Vorschlag]',
       kommentar: '[Kommentar]',
       am: expect.stringMatching(/^\d{4}-\d{2}-\d{2}T/),
-      schluessel: 'de.a1.e01.w001',
+      schluessel: 'de.a1.test.w001',
       inhaltHash: w1.inhaltHash,
       sprache: 'de',
       text: w1.lemma,
     });
-    expect(de.korrigiert.map((k) => k.schluessel)).toContain('de.a1.e01.l01.a01');
+    expect(de.korrigiert.map((k) => k.schluessel)).toContain('de.a1.test.l01.a01');
     // ohne Personendaten: keine Kennung der Prüfenden oder Verfasser, keine Prüfungs-Kennungen
     const json = JSON.stringify(exp);
     expect(json).not.toContain(person);

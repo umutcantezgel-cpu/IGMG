@@ -1,7 +1,8 @@
+import { istTestQuelle } from '../../audio/stimmen';
 import { zerlegeRichtung } from '../../kurse';
 import { woerter as arabischeWoerter } from '../../waechter/kern.mjs';
 import { TATOEBA_AUSSCHLUSS, tatoebaId } from '../tatoeba';
-import type { Inhalte } from './dateien';
+import { ausTestkurs, type Inhalte } from './dateien';
 import { type KaikkiEintrag, ladeKaikki, ladeTatoeba, type TatoebaSatz } from './daten';
 import { Befunde } from './typen';
 
@@ -9,7 +10,8 @@ import { Befunde } from './typen';
  * Prüfer „Lizenz“ und „Ausschlussliste“ (PLAN §6.4, KERN 4.0 §1, ADR 0045; blockierend). Quelle und Lizenz je Eintrag sind
  * Pflicht (Schema, `ERLAUBTE_LIZENZEN` ohne NC/ND); hier zusätzlich:
  *
- * - **eigene Inhalte** (`ki:`, `redaktion`, `test:`) stehen unter CC BY-SA 4.0 (L0-E02).
+ * - **eigene Inhalte** (`ki:`, `redaktion`, `test:`) stehen unter CC BY-SA 4.0 (L0-E02); `test:` nur in den Dateien des
+ *   Testkurses (Vorsilbe `testkurs/`), nie in echten Inhalten (Stufe C, L15-1).
  * - **Tatoeba** (`tatoeba:<id>`): Satz im gepinnten Auszug, nicht auf der Ausschlussliste (Koran-/Hadith-4-Gramm), keine negative
  *   Bewertung, kein Wartungs-Tag `@…`, höchstens 12 Wörter (Standardfilter S7-E3), Lizenz wie im Auszug, Namensnennung
  *   „Satz #<id> von <benutzer>“ bzw. „Tatoeba-Mitwirkende“; abweichender Text nur mit Vermerk „bearbeitet“ (arabisch
@@ -162,6 +164,9 @@ export function pruefeLizenzen(inhalte: Inhalte, daten: string): { lizenz: Befun
   };
 
   for (const e of eintraege) {
+    // Quelle `test:` nur im Testkurs: Testeinheiten und Testtöne erscheinen nie in einem echten Kurs (Stufe C, L15-1)
+    if (istTestQuelle(e.quelle) && !ausTestkurs(inhalte, e.datei))
+      lizenz.blockierend(e.datei, 'Quelle test: gehört nur in den Testkurs (drizzle/seeds/lernapp-test.ts)', e.ort);
     if (eigen(e.quelle) && e.lizenz !== 'CC-BY-SA-4.0')
       lizenz.blockierend(e.datei, `eigene Inhalte stehen unter CC BY-SA 4.0 (nicht ${e.lizenz}, L0-E02)`, e.ort);
     const id = tatoebaId(e.quelle);

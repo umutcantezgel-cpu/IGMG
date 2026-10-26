@@ -1,5 +1,81 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 02:25 UTC – Belege B1 fertig, N3 in Gegenprüfung 2, N5 gestartet (neues Fenster ab 02:10):**
+  - **Live:** `tr.a1.e01` ist die echte Einheit (8 Lektionen); keine Testeinheit in den Kursen.
+  - **Belege B1** (`wf_7c5a1d1e-4a6`, Protokolle `C-technik*.md`, `C-oberflaeche*.md`):
+    - erfüllt: Z-L05, Z-L11, Z-L13.
+    - teilweise: Z-L07, Z-L09, Z-L12, Z-L16.
+  - **Offene Nacharbeit daraus:**
+    - Z-L07: LCP/INP/Lighthouse wurden 24.10. ohne Kursinhalte gemessen (fc95e675) → nach dem Merge von N3 neu messen mit echten Einheiten. Zählweise „Spieler zusätzlich“ mit dem Typ-Chunk der ersten Aufgabe klären (geschichte ≈ 63 KB).
+    - Z-L16:
+      - Vorschau-Bau.
+      - Volle Website-E2E (zuletzt 20.10.).
+      - Rauchtest im Beispielmodus.
+      - Vercel-Bauzeit, nur im Dashboard ablesbar (Mensch).
+    - Z-L12: L3-E12b, KERN §6, Cockpit-Text, S-L3 N-4 → **N5**.
+    - Z-L09: Test für Kinder-Meldung, gruppe.spec mit SYNC/GRUPPEN/RANGLISTE → **N5**.
+  - **Läufe:**
+    - Fortsetzung `wf_c9221533-927` (N3: Gegenprüfung 2; danach N2, N4).
+    - **N5** `wf_1ce1d158-080` (Arbeitsbaum `l3-05` auf 73bcdbdf).
+  - **Danach:**
+    1. N2–N5 mergen.
+    2. Volles Tor: Unit, Integration, Import- und Vorschau-Bau, Produktionsbau mit voller Website- und Lern-App-E2E.
+    3. N6 Leistung neu messen.
+    4. Belege E2E (Z-L04, Z-L06, Z-L08) und Inhalte (Z-L01, Z-L14).
+    5. Endprüfer, ABNAHME, BERICHT, ABSCHLUSS.
+
+- **Stand 26.10.2026 00:20 UTC – N1 gemergt, Fortsetzung N3 → N2 → N4 läuft (1 Agent):**
+  - **N1** (Testkurs getrennt) gemergt in 25515a23 und auf `main`. Die Testeinheit liegt jetzt unter `<kurs>.a1.test`; im Bau ohne Datenbank nur mit `LERNAPP_TESTKURS=1`.
+    - Gegenprüfung 2: ein „mittel“ übrig, die Messwerkzeuge Z-L07 suchen noch `a1.e01`. Das macht N4 (6).
+    - Nachtrag ce439430: `LERNAPP_TESTKURS` in VARIABLEN und VERCEL-ENV (Unit umgebung war rot).
+    - Nachprüfung: Integration 34/34, Sprachen und Religion grün; Unit nach ce439430 grün (umgebung, vercel-env-doku 155/155), Typen grün.
+    - Live nach dem Vercel-Bau prüfen: `tr-aus-de` → `tr.a1.e01` = „Begrüßung und Vorstellung“ (8 Lektionen, ohne Audio).
+  - **Fortsetzung** `wf_c9221533-927` (seriell N3 → N2 → N4): Jedes Paket merged zuerst den Branch, dann Bau fortsetzen → Gegenprüfung → ggf. Mängelrunde. Ohne MCP-Werkzeuge (ein Gegenprüfer hing an einem Vercel-MCP-Aufruf).
+  - **Auslastung** 0,54 um 00:03 (Taktlinie 0,52), Reset 02:10.
+  - **Danach:**
+    1. N2–N4 mergen.
+    2. Volle E2E und Import-Bau auf dem Merge-Stand.
+    3. Belege B (Technik/Oberfläche) und Belege Inhalte (Z-L01, Z-L14).
+    4. Frischer Endprüfer, ABNAHME, BERICHT, ABSCHLUSS.
+
+- **Stand 25.10.2026 22:40 UTC – B1 ar freigegeben, Nacharbeit gedrosselt:**
+  - **B1 ar fertig:** Schlussprüfung 1736ddb6 (16 Einheiten, 1.300/1.300 Lemmata, 5.067 Sätze, 0 blockierend, 0 menschlich_klaeren).
+    - Freigabe aller 16 Einheiten (3d2797d7), Merge 5404aa06 auf `main`.
+    - tor-a1a2 grün: check 3.565; lernapp:pruefen über 435 Dateien und 137.493 Einträge, 0 blockierend; Import 155.485.
+    - **Live 23:00:** ar-aus-de und ar-aus-tr je A1 13, A2 14, B1 16 (e01–e16, alle mit Hinweis).
+    - **Damit A1–B1 in allen 6 Richtungen fertig**; nur de e16 und tr e16 bleiben Entwurf.
+  - **Fragen für die Redaktion (B1 ar):**
+    - Wortzahl der ar-Schreibaufgaben (Faktor ≈ 0,75).
+    - Kanon: Yāsmīn neu; Nizār erst Mechaniker, dann Lehrer.
+    - tamma + Maṣdar.
+    - OF-10 in e10/e11.
+    - Ausnahme im Vokalisierungsprüfer für li + Artikel vor Sonnenbuchstaben.
+    - Kinderregel e14.
+  - **Taktregel:** 22:35 Auslastung 0,48 > Taktlinie 0,26 + 0,15 → `wf_0d015add-5b5` an der Einheitengrenze angehalten (beide Arbeitsbäume sauber).
+    - N3 committet: f638ac16, 454f5497, 46301580, 65c91543.
+    - N2 committet: 78fe7c90, f33ee39b.
+    - N4 noch nicht begonnen.
+  - **Fortsetzung**, sobald N1 fertig ist (1 Agent, seriell N3 → N2 → N4):
+    - Skript `scratchpad/lernapp-nacharbeit-n2-n4-fortsetzung.js`, Args `scratchpad/n2-n4-fortsetzung-args.json`.
+  - **N1** `wf_ec40915b-8e6`: Gegenprüfung 1 nicht frei, Mängelrunde läuft.
+
+- **Stand 25.10.2026 21:20 UTC – Nacharbeit läuft (neues Fenster ab 21:10, Reset 02:10):**
+  - **N1** `wf_ec40915b-8e6` (`l3-05`): Testkurs getrennt (bb873e8e); Bau mit E2E, dann Gegenprüfung.
+  - **N2/N3/N4** `wf_0d015add-5b5` (Pipeline, 2 Plätze), je Bau → Gegenprüfung → ggf. Mängelrunde:
+    - N3 Auslieferung Wissen und Koran-404: Arbeitsbaum `agent-ac281c5b…`, Branch `lernapp-n3`.
+    - N2 Freigabe-Härtung: Arbeitsbaum `agent-a6ffb449…`, Branch `lernapp-n2`.
+    - N4 Kleinkram: Arbeitsbaum `l8`.
+  - **Prüfskript Stufe C:** Import-Bau 693 s, 2.328 Seiten, Sweep 0 × 5xx, Lern-App ohne DB 13 × 200; Produktionsbau und Budgets grün.
+    - Lern-App-E2E: 86 grün, 16 rot. Die Ursache ist der Testkurs in einer E2E-Datenbank mit allen Inhalten; das behebt N1.
+    - webServer-Zeitgrenze 600 s (e1f96f0b).
+  - **Platte:** 4 weitere gemergte und saubere Gemeinde-Arbeitsbäume entfernt; 2 alte für N2/N3 wiederverwendet.
+  - **B1 ar:** Rückübersetzungen bis e10.
+  - **Danach:**
+    1. N1–N4 mergen.
+    2. Volle E2E und Import-Bau auf dem Merge-Stand, Push, live prüfen.
+    3. Belege B (Technik/Oberfläche).
+    4. Nach B1 ar: Freigabe, Belege Inhalte, Endprüfer, ABNAHME, BERICHT, ABSCHLUSS.
+
 - **Stand 25.10.2026 20:05 UTC – Stufe C: Belege A fertig, Nacharbeit N1 läuft:**
   - **Belege A** (`wf_d66ad2f6-7fa`, Protokolle `_lernapp/protokolle/C-religion*.md`, `C-lizenzen*.md`), Urteil nach Gegenprüfung:
     - erfüllt: Z-L03, Z-L18, Z-L21 (religiöser Teil);
