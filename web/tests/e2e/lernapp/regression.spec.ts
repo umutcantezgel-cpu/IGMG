@@ -2,13 +2,14 @@ import { readFileSync } from 'node:fs';
 import { expect, test } from '@playwright/test';
 import de from '../../../messages/lernapp/de.json';
 import { formatiere } from '../../../src/lib/lernapp/format';
-import { kartenstand, KARTE_WASSER, KURS, LEKTION_1, spieleLektion1, swSteuert } from './hilfen';
+import { kartenstand, KARTE_WASSER, KURS, LEKTION_1, spieleLektion1, swSteuert, testStation } from './hilfen';
 
 /**
  * Regressionen nach den Prüfungen von L1 (Gegenprüfung und S-L1):
  * - ADR 0042 Fortschreibung S2 Nr. 3: Die Lern-App ist `crossOriginIsolated` (COOP/COEP) – auch auf den Übungsseiten, auf
  *   denen Whisper mit Threads läuft; die Website nicht.
- * - ADR 0037 Folgen: Ein Update des Root-Service-Workers der Website löscht die Vorräte `igmg-lernapp-*` nicht.
+ * - ADR 0037 Folgen: Ein Update des Root-Service-Workers der Website löscht die Vorräte `igmg-lernapp-*` nicht – auch nicht
+ *   Kursseiten, Pakete und Töne einer offline gespeicherten Einheit (Stufe C N9a).
  * - KERN 4.0 §6, ADR 0038 Nr. 8: Lernstand als Datei sichern und auf einem anderen Gerät einlesen.
  * - S-L1 N-1: Seitennamen an der Stelle der Oberflächensprache liefern die 404 der Lern-App, nie die echte Seite.
  */
@@ -28,15 +29,50 @@ test('crossOriginIsolated auf den Übungsseiten und im ganzen /lern-app, nicht a
 });
 
 test('Update des Root-Service-Workers behält die Vorräte der Lern-App', async ({ page }) => {
-  test.setTimeout(90_000);
-  await page.goto('/lern-app/de');
+  test.setTimeout(120_000);
+  // vorher eine Einheit offline speichern (Stufe C N9a): dann liegen neben der Hülle auch Kursseiten, Paket und Töne im Vorrat
+  await page.goto(`/lern-app/de/${KURS}`);
   await swSteuert(page);
-  const lernVorraete = () => page.evaluate(async () => (await caches.keys()).filter((n) => n.startsWith('igmg-lernapp-')).sort());
-  await expect.poll(lernVorraete, { timeout: 30_000 }).toEqual(expect.arrayContaining([expect.stringMatching(/^igmg-lernapp-schale-v/)]));
-  const vorher = await lernVorraete();
+  await page.reload();
+  await testStation(page).getByRole('button', { name: de.lernpfad.offline }).click();
+  await expect(testStation(page).getByText(de.lernpfad.offlineFertig.split(' (')[0]!).first()).toBeVisible({ timeout: 60_000 });
+  /** Vorräte der Lern-App mit ihren Einträgen (Pfad samt Suchteil) */
+  const lernVorraete = () =>
+    page.evaluate(async () => {
+      const aus: Record<string, string[]> = {};
+      for (const name of (await caches.keys()).filter((n) => n.startsWith('igmg-lernapp-')).sort())
+        aus[name] = (await (await caches.open(name)).keys()).map((r) => new URL(r.url).pathname + new URL(r.url).search).sort();
+      return aus;
+    });
+  // warten, bis der Worker mit Hülle und Kursseiten fertig ist (zwei gleiche Stände nacheinander)
+  let vorher = await lernVorraete();
+  await expect
+    .poll(
+      async () => {
+        const jetzt = await lernVorraete();
+        const gleich = JSON.stringify(jetzt) === JSON.stringify(vorher);
+        vorher = jetzt;
+        return gleich;
+      },
+      { timeout: 30_000, intervals: [1_000] },
+    )
+    .toBe(true);
+  const namen = Object.keys(vorher);
+  expect(namen).toEqual(
+    expect.arrayContaining([
+      'igmg-lernapp-audio',
+      'igmg-lernapp-pakete',
+      expect.stringMatching(/^igmg-lernapp-schale-v/),
+      expect.stringMatching(/^igmg-lernapp-kurse-v/),
+    ]),
+  );
+  const kurse = vorher[namen.find((n) => n.startsWith('igmg-lernapp-kurse-v'))!]!;
+  expect(kurse).toEqual(expect.arrayContaining([`/lern-app/de/${KURS}/ueben`, `/lern-app/de/${KURS}?vorrat=vollstaendig`]));
+  expect(vorher['igmg-lernapp-pakete']!.some((p) => p.startsWith(`/lern-app/pakete/${KURS}/tr.a1.test/`))).toBe(true);
+  expect(vorher['igmg-lernapp-audio']!.length).toBeGreaterThan(0);
 
   // Website: Root-Worker zweimal mit neuer Adresse anmelden (= zwei Updates); jedes Aktivieren räumt seine alten Vorräte –
-  // ein veralteter Vorrat der Website verschwindet (Beleg, dass aufgeräumt wurde), die der Lern-App bleiben
+  // ein veralteter Vorrat der Website verschwindet (Beleg, dass aufgeräumt wurde), die der Lern-App bleiben samt Einträgen
   await page.goto('/');
   await page.evaluate(async () => void (await caches.open('igmg-v0-veraltet')));
   for (const v of ['regression-1', 'regression-2'])

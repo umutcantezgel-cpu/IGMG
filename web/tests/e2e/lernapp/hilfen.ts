@@ -205,3 +205,43 @@ export async function swSteuert(page: Page) {
     .poll(() => page.evaluate(() => navigator.serviceWorker.controller?.scriptURL ?? ''), { timeout: 30_000 })
     .toContain('/lern-app/sw.js');
 }
+
+/**
+ * Eine Aufgabe der Wiederholungsrunde (aus Lektion 1 des Testkurses, Oberfläche de) richtig lösen – Auswahl, Paare, Wortbank;
+ * danach „Weiter“.
+ */
+export async function loeseWiederholung(page: Page) {
+  const form = page.locator('main form[data-aufgabe]');
+  const typ = await form.getAttribute('data-aufgabe');
+  if (typ === 'auswahl') {
+    const ueberschrift = await page.locator('main form h2').innerText();
+    const ziel = ueberschrift === de.aufgaben.auswahl.waehleUebersetzung ? 'Wasser' : 'kitap';
+    await page
+      .locator('main label')
+      .filter({ has: page.getByRole('radio', { name: ziel, exact: true }) })
+      .click();
+    await page.getByRole('button', { name: t.pruefen, exact: true }).click();
+  } else if (typ === 'paare') {
+    for (const [links, rechts] of PAARE) {
+      await page.getByRole('button', { name: links, exact: true }).click();
+      await page.getByRole('button', { name: rechts, exact: true }).click();
+    }
+  } else if (typ === 'wortbank') {
+    for (const w of ['Su', 'içiyorum']) {
+      const kachel = page.getByRole('button', { name: formatiere(de.aufgaben.wortbank.hinzufuegen, { wort: w }, 'de'), exact: true });
+      await kachel.click();
+      await expect(kachel).toHaveCount(0);
+    }
+    await page.getByRole('button', { name: t.pruefen, exact: true }).click();
+  } else throw new Error(`unerwarteter Typ ${typ}`);
+  await expect(liveRegion(page)).toContainText(t.richtig);
+  await page.getByRole('button', { name: t.weiter, exact: true }).click();
+}
+
+/** Wiederholungsrunde bis „fertig“ spielen (höchstens acht Aufgaben). */
+export async function wiederholeBisFertig(page: Page) {
+  await expect(page.locator('main form[data-aufgabe]')).toBeVisible({ timeout: 15_000 });
+  for (let i = 0; i < 8 && (await page.locator('main form[data-aufgabe]').count()) > 0; i++) await loeseWiederholung(page);
+  await expect(page.getByRole('heading', { name: t.fertigTitel })).toBeVisible();
+  await expect(page.getByRole('link', { name: t.zurueck })).toBeVisible();
+}
