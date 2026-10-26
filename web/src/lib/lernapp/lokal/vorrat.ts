@@ -22,7 +22,8 @@ export const VORRAT_PAKETE = 'igmg-lernapp-pakete';
 export const VORRAT_AUDIO = 'igmg-lernapp-audio';
 
 export type Abruf = (adresse: string, init?: RequestInit) => Promise<Response>;
-export type PaketOptionen = { abruf?: Abruf; vorrat?: CacheStorage | null; jetzt?: Date };
+/** `signal`: bricht laufende Abrufe ab („Stufe offline speichern“ ist abbrechbar, Stufe C N9a). */
+export type PaketOptionen = { abruf?: Abruf; vorrat?: CacheStorage | null; jetzt?: Date; signal?: AbortSignal };
 
 const standardAbruf: Abruf = (adresse, init) => fetch(adresse, init);
 const vorratVon = (o: PaketOptionen): CacheStorage | null =>
@@ -185,6 +186,15 @@ const lies = (bytes: Uint8Array): unknown => {
   }
 };
 
+/** Bytes eines Pakets aus dem Vorrat (offline), nur wenn sie zum Hash passen; sonst `null` („nicht im Vorrat“). */
+async function bytesImVorrat(kurs: string, einheit: EinheitVerweis, o: PaketOptionen): Promise<Uint8Array | null> {
+  const cache = await oeffne(vorratVon(o), VORRAT_PAKETE);
+  const r = await cache?.match(paketAdresse(kurs, einheit.schluessel, einheit.hash));
+  if (!r) return null;
+  const bytes = new Uint8Array(await r.arrayBuffer());
+  return (await sha256Hex(bytes)) === einheit.hash ? bytes : null;
+}
+
 /** Paket aus dem Vorrat (offline); `null`, wenn es dort fehlt, nicht zum Hash passt oder die Prüfung scheitert. */
 export async function paketImVorratGeprueft<P>(
   kurs: string,
@@ -192,12 +202,8 @@ export async function paketImVorratGeprueft<P>(
   pruefe: Pruefung<P>,
   o: PaketOptionen = {},
 ): Promise<P | null> {
-  const cache = await oeffne(vorratVon(o), VORRAT_PAKETE);
-  const r = await cache?.match(paketAdresse(kurs, einheit.schluessel, einheit.hash));
-  if (!r) return null;
-  const bytes = new Uint8Array(await r.arrayBuffer());
-  if ((await sha256Hex(bytes)) !== einheit.hash) return null;
-  return pruefe(lies(bytes));
+  const bytes = await bytesImVorrat(kurs, einheit, o);
+  return bytes ? pruefe(lies(bytes)) : null;
 }
 
 /**
@@ -228,6 +234,10 @@ async function vermerke(
 /**
  * Einheitenpaket laden: Vorrat zuerst, sonst Netz mit Prüfung des Hashs; gespeichert im Vorrat und im Speicher `pakete`.
  * `offline: true` markiert es als bewusst gespeichert (Ring nach Bytes).
+ *
+ * Liegt das Paket mit passendem Hash im Vorrat, scheitert aber die Prüfung (etwa eine Lektion, die es in dieser Fassung
+ * nicht gibt – ein veraltetes `?l=`), bleibt es bei `null`: Das Netz lieferte dieselben Bytes, das ganze Paket wird nicht
+ * erneut geladen (Stufe C N9a, Gegenprüfung N8 Nr. 5f). Aus dem Netz kommt nur, was nicht im Vorrat liegt.
  */
 export async function ladePaketGeprueft<P>(
   sp: Speicher,
@@ -237,14 +247,15 @@ export async function ladePaketGeprueft<P>(
   o: PaketOptionen & { offline?: boolean } = {},
 ): Promise<P | null> {
   const adresse = paketAdresse(kurs, einheit.schluessel, einheit.hash);
-  const vorhanden = await paketImVorratGeprueft(kurs, einheit, pruefe, o);
-  if (vorhanden) {
-    if (o.offline) await vermerke(sp, kurs, einheit, true, o.jetzt, await oeffne(vorratVon(o), VORRAT_PAKETE));
+  const imVorrat = await bytesImVorrat(kurs, einheit, o);
+  if (imVorrat) {
+    const vorhanden = pruefe(lies(imVorrat));
+    if (vorhanden && o.offline) await vermerke(sp, kurs, einheit, true, o.jetzt, await oeffne(vorratVon(o), VORRAT_PAKETE));
     return vorhanden;
   }
   let bytes: Uint8Array;
   try {
-    const r = await (o.abruf ?? standardAbruf)(adresse, { credentials: 'omit' });
+    const r = await (o.abruf ?? standardAbruf)(adresse, { credentials: 'omit', signal: o.signal });
     if (!r.ok) return null;
     bytes = new Uint8Array(await r.arrayBuffer());
   } catch {
@@ -328,7 +339,7 @@ export async function ladeBuendel(adresse: string, o: PaketOptionen = {}): Promi
   const vorrat = await cache?.match(adresse);
   if (vorrat) return vorrat.blob();
   try {
-    const r = await (o.abruf ?? standardAbruf)(adresse, { credentials: 'omit' });
+    const r = await (o.abruf ?? standardAbruf)(adresse, { credentials: 'omit', signal: o.signal });
     if (r.status !== 200) return null;
     const blob = await r.blob();
     await cache?.put(adresse, new Response(blob, { headers: { 'content-type': 'application/octet-stream' } }));
@@ -349,12 +360,30 @@ export function nachgeben(): Promise<void> {
   return typeof planer?.yield === 'function' ? planer.yield() : new Promise((weiter) => setTimeout(weiter, 0));
 }
 
-export type OfflineErgebnis = { einheiten: number; bytes: number; fehlgeschlagen: string[]; dauerhaft: boolean | null };
+/** Ergebnis von `speichereOffline`; `abgebrochen`: auf Wunsch angehalten (`signal`), Gespeichertes bleibt gespeichert. */
+export type OfflineErgebnis = {
+  einheiten: number;
+  bytes: number;
+  fehlgeschlagen: string[];
+  dauerhaft: boolean | null;
+  abgebrochen: boolean;
+};
+
+/** Bündel der Einheiten, je Adresse einmal (spätere Einheiten verweisen auf die Bündel früherer). */
+const buendelVon = (einheiten: readonly Pick<VerzeichnisEinheit, 'audio'>[]) => [
+  ...new Map(einheiten.flatMap((e) => e.audio).map((a) => [a.adresse, a.bytes])).entries(),
+];
+
+/** Speicherbedarf von Einheiten samt Tönen in Bytes – jedes Bündel einmal (vor dem Speichern genannt, Ring nach Bytes). */
+export function offlineBedarf(einheiten: readonly Pick<VerzeichnisEinheit, 'bytes' | 'audio'>[]): number {
+  return einheiten.reduce((s, e) => s + e.bytes, 0) + buendelVon(einheiten).reduce((s, [, b]) => s + b, 0);
+}
 
 /**
- * „Einheit offline speichern“: Pakete und Audio-Bündel der Einheiten in den Vorrat, als offline markiert. Bittet vorher um
- * dauerhaften Speicher (nicht beim Nachladen einer neuen Fassung, `nachladen`). `fortschritt` meldet die geladenen Bytes
- * für den Ring (B-27); zwischen den Schritten gibt die Funktion den Hauptfaden frei (`nachgeben`).
+ * „Einheit offline speichern“ und „Stufe offline speichern“: Pakete und Audio-Bündel der Einheiten in den Vorrat, als offline
+ * markiert. Bittet vorher um dauerhaften Speicher (nicht beim Nachladen einer neuen Fassung, `nachladen`). `fortschritt`
+ * meldet die geladenen Bytes für den Ring (B-27); zwischen den Schritten gibt die Funktion den Hauptfaden frei
+ * (`nachgeben`). `signal` hält an: vor jedem Schritt geprüft, laufende Abrufe brechen ab; was schon gespeichert ist, bleibt.
  */
 export async function speichereOffline(
   sp: Speicher,
@@ -368,29 +397,36 @@ export async function speichereOffline(
   } catch {
     dauerhaft = null;
   }
-  const buendel = [...new Map(einheiten.flatMap((e) => e.audio).map((a) => [a.adresse, a.bytes])).entries()];
-  const gesamt = einheiten.reduce((s, e) => s + e.bytes, 0) + buendel.reduce((s, [, b]) => s + b, 0);
+  const buendel = buendelVon(einheiten);
+  const gesamt = offlineBedarf(einheiten);
   let geladen = 0;
+  let gespeichert = 0;
   const fehlgeschlagen: string[] = [];
+  const ergebnis = (abgebrochen: boolean): OfflineErgebnis => ({
+    einheiten: gespeichert,
+    bytes: geladen,
+    fehlgeschlagen: abgebrochen ? [] : fehlgeschlagen,
+    dauerhaft,
+    abgebrochen,
+  });
   // in Häppchen: vor jedem Paket und jedem Bündel nachgeben, damit Eingaben und der Ring nicht warten
   for (const e of einheiten) {
     await nachgeben();
-    if (await ladePaketKopf(sp, kurs, e, { ...o, offline: true })) geladen += e.bytes;
-    else fehlgeschlagen.push(e.schluessel);
+    if (o.signal?.aborted) return ergebnis(true);
+    if (await ladePaketKopf(sp, kurs, e, { ...o, offline: true })) {
+      geladen += e.bytes;
+      gespeichert++;
+    } else fehlgeschlagen.push(e.schluessel);
     o.fortschritt?.(geladen, gesamt);
   }
   for (const [adresse, b] of buendel) {
     await nachgeben();
+    if (o.signal?.aborted) return ergebnis(true);
     if (await ladeBuendel(adresse, o)) geladen += b;
     else fehlgeschlagen.push(adresse);
     o.fortschritt?.(geladen, gesamt);
   }
-  return {
-    einheiten: einheiten.length - fehlgeschlagen.filter((f) => !f.startsWith('/')).length,
-    bytes: geladen,
-    fehlgeschlagen,
-    dauerhaft,
-  };
+  return ergebnis(Boolean(o.signal?.aborted));
 }
 
 /**
