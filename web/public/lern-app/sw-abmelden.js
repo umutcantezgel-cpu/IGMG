@@ -14,13 +14,23 @@ self.addEventListener('install', () => {
   self.skipWaiting();
 });
 
+// Jeder Schritt fängt seine Fehler ab (Speicherfehler, Kontingent): Abmelden und Neuladen laufen auch, wenn das Aufräumen
+// scheitert; ein Vorrat, der sich nicht löschen lässt, hält die anderen nicht auf.
+const aufraeumen = () =>
+  caches
+    .keys()
+    .then((namen) =>
+      Promise.all(namen.filter((n) => n.startsWith(PRAEFIX) && !BEHALTEN.has(n)).map((n) => caches.delete(n).catch(() => false))),
+    )
+    .catch(() => undefined);
+
 self.addEventListener('activate', (ereignis) => {
   ereignis.waitUntil(
-    caches
-      .keys()
-      .then((namen) => Promise.all(namen.filter((n) => n.startsWith(PRAEFIX) && !BEHALTEN.has(n)).map((n) => caches.delete(n))))
+    aufraeumen()
       .then(() => self.registration.unregister())
+      .catch(() => undefined)
       .then(() => self.clients.matchAll({ type: 'window' }))
-      .then((fenster) => Promise.all(fenster.map((f) => f.navigate(f.url).catch(() => undefined)))),
+      .then((fenster) => Promise.all(fenster.map((f) => f.navigate(f.url).catch(() => undefined))))
+      .catch(() => undefined),
   );
 });

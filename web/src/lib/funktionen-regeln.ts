@@ -35,7 +35,8 @@ export type Funktion = (typeof FUNKTIONEN)[number];
  * Lern-App (KERN 4.0 §6): `lernapp_ungeprueft` (Hinweis statt Sperre, ADR 0041 Nr. 8) und `lernapp_meldungen` (anonym,
  * nur Kategorien). Sie wirken erst, wenn `lernapp` selbst an ist (`VORAUSSETZUNGEN`). `lernapp` (ohne Personendaten, Fortschritt
  * nur auf dem Gerät) ist an: Entscheidung des Nutzers vom 21.10.2026 („Die App ist ein Teil der Seite!“, „ich erlaube dir
- * alles“, L3-E12a); Abgleich, Gruppen, Bestenliste und Statistik bleiben aus (`MIT_PERSONENDATEN`).
+ * alles“, `_lernapp/ENTSCHEIDUNGEN.md` L3-E12b, ADR 0035 „Fortschreibung Lern-App 2“); Abgleich, Gruppen, Bestenliste und
+ * Statistik bleiben aus (`MIT_PERSONENDATEN`).
  */
 export const IN_PRODUKTION_AN: readonly Funktion[] = ['hadith_gesamt', 'lernapp', 'lernapp_ungeprueft', 'lernapp_meldungen'];
 

@@ -106,7 +106,7 @@ Nach Widerruf von `lernapp` oder dem Ende des Eltern-Kind-Bezugs (Stand SL2-Rest
 
 | Schalter | Personendaten | Vorschau | Produktion | Sperre im Cockpit |
 | --- | --- | --- | --- | --- |
-| `lernapp` | nein | an | an nach Abnahme | – |
+| `lernapp` | nein | an | an nach Abnahme; fortgeschrieben: an seit 21.10.2026 (Nutzerentscheidung, `_lernapp/ENTSCHEIDUNGEN.md` L3-E12b; zu prüfen in LM-08) | – |
 | `lernapp_ungeprueft` | nein | an | an | – |
 | `lernapp_sprechen` | nein (lokal) | an | aus bis Gerätetest (LM-07) | – |
 | `lernapp_meldungen` | nein | an | an | – |

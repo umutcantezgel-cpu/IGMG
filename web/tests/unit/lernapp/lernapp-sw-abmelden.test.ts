@@ -12,14 +12,20 @@ const QUELLE = readFileSync(join(import.meta.dirname, '../../../public/lern-app/
 
 type Hoerer = (e: Record<string, unknown>) => void;
 
-function ladeWorker(vorraete: string[], fenster: string[]) {
+type Fehler = { keys?: boolean; delete?: string; unregister?: boolean };
+
+function ladeWorker(vorraete: string[], fenster: string[], fehler: Fehler = {}) {
   const hoerer = new Map<string, Hoerer>();
   const speicher = new Set(vorraete);
   const ablauf: string[] = [];
   const caches = {
-    keys: async () => [...speicher],
+    keys: async () => {
+      if (fehler.keys) throw new DOMException('Speicherfehler', 'UnknownError');
+      return [...speicher];
+    },
     delete: async (name: string) => {
       ablauf.push(`delete ${name}`);
+      if (fehler.delete === name) throw new DOMException('Kontingent', 'QuotaExceededError');
       return speicher.delete(name);
     },
   };
@@ -33,6 +39,7 @@ function ladeWorker(vorraete: string[], fenster: string[]) {
     registration: {
       unregister: async () => {
         ablauf.push('unregister');
+        if (fehler.unregister) throw new DOMException('abgelehnt', 'InvalidStateError');
         return true;
       },
     },
@@ -90,6 +97,26 @@ describe('Abmelde-Worker der Lern-App (S-L3 N-4)', () => {
       'navigate https://igmg.test/lern-app/de',
       'navigate https://igmg.test/lern-app/tr/kaputt',
     ]);
+  });
+
+  it('ein Vorrat lässt sich nicht löschen: die anderen verschwinden trotzdem, Abmelden und Neuladen laufen', async () => {
+    const w = ladeWorker(['igmg-lernapp-schale-v1', 'igmg-lernapp-pakete', 'igmg-lernapp-audio'], ['https://igmg.test/lern-app/de'], {
+      delete: 'igmg-lernapp-pakete',
+    });
+    await expect(w.warte('activate')).resolves.not.toThrow();
+    expect([...w.speicher]).toEqual(['igmg-lernapp-pakete']);
+    expect(w.ablauf.slice(-3)).toEqual(['unregister', 'matchAll window', 'navigate https://igmg.test/lern-app/de']);
+  });
+
+  it('Vorräte nicht lesbar oder Abmelden scheitert: neu geladen wird trotzdem, das Aktivieren schlägt nicht fehl', async () => {
+    const ohneVorrat = ladeWorker(['igmg-lernapp-pakete'], ['https://igmg.test/lern-app/tr'], { keys: true });
+    await expect(ohneVorrat.warte('activate')).resolves.not.toThrow();
+    expect(ohneVorrat.ablauf).toEqual(['unregister', 'matchAll window', 'navigate https://igmg.test/lern-app/tr']);
+
+    const ohneAbmelden = ladeWorker(['igmg-lernapp-pakete'], ['https://igmg.test/lern-app/ar'], { unregister: true });
+    await expect(ohneAbmelden.warte('activate')).resolves.not.toThrow();
+    expect(ohneAbmelden.speicher.size).toBe(0);
+    expect(ohneAbmelden.ablauf.slice(-2)).toEqual(['matchAll window', 'navigate https://igmg.test/lern-app/ar']);
   });
 
   it('enthält keine Adresse außer dem eigenen Ursprung und speichert nichts', () => {
