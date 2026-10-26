@@ -9,7 +9,8 @@ import { textHash } from '@/lib/lernapp/paket/hash';
 import { clipLage, type ClipLage, stimmenArt, wirksameStimme } from '@/lib/lernapp/verwaltung/audio';
 import { textHashGemerkt } from './bloecke';
 import { verweiseDerAufgabe } from './meldungen';
-import { ladePruefungen, sprecherMitVereinbarung } from './pakete';
+import { sprecherMitVereinbarung } from './pakete';
+import { ladePruefungen } from './pruefungen';
 
 /**
  * Audio-Studio (L3-06, ADR 0039 Nr. 7/8): vertonbare Zieltexte eines Sprachkurses (Lemmata und Sätze ohne Religionsbezug,

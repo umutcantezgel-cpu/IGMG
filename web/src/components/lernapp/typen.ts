@@ -131,7 +131,7 @@ export type SpielerTexte = WeitereTexte & {
       zeichen: Record<string, string>;
     };
     /** Wissenskurs (L2-03): gemeinsam für Begründung und Quellenzeile */
-    wissen: { begruendung: string; quelle: string; quelleZeigen: string };
+    wissen: { begruendung: string; quelle: string; quelleZeigen: string; strittig: string };
     wahr_falsch: {
       stimmtDas: string;
       stimmt: string;

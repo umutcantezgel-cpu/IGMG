@@ -4,7 +4,7 @@ import { cacheLife, cacheTag } from 'next/cache';
 import pfadRoh from '../../../../inhalte/lernapp/koran/pfad.json';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
-import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
+import { datenbankVerfuegbar, ohneLaufzeitDatenbank } from '@/lib/db/verfuegbar';
 import { funktionAn } from '@/lib/funktionen';
 import type { KoranPfadDatei } from '@/lib/lernapp/inhalt/schema';
 import {
@@ -26,7 +26,7 @@ import {
   koranBedeutungStatus,
 } from '@/lib/lernapp/paket/koran';
 import { inBloecken } from './bloecke';
-import { ladePruefungen } from './pakete';
+import { ladePruefungen } from './pruefungen';
 
 /**
  * Koran-Arabisch-Pfad aus `web/inhalte/lernapp/koran/pfad.json` (nur Verweise) und der Datenbank (L6-05, ADR 0040 Nr. 5):
@@ -265,18 +265,24 @@ export async function ladeKoranEinheitJson(sprache: BedeutungsSprache, einheit: 
   return r ? { hash: r.hash, json: r.json } : null;
 }
 
-/** Statische Parameter der Pakete: je Sprache die erste Einheit (Cache Components verlangt einen), sonst ein Platzhalter. */
+/**
+ * Statische Parameter der Pakete (wie `ladePaketParameter` der Sprachkurse): im Beispielmodus ohne Laufzeit-Datenbank je
+ * Sprache **alle** Einheiten – dort gibt es zur Laufzeit keine Datenbank, eine nicht vorgerenderte Einheit wäre 404 (Z-L03,
+ * Endabnahme: live nur `koran.grund.e01`). Sonst je Sprache die erste Einheit (Cache Components verlangt einen Parameter; der
+ * Rest entsteht bei Bedarf). Ohne Datenbank oder mit Schalter `lernapp` aus ein Platzhalter, der 404 ergibt.
+ */
 export async function ladeKoranPaketParameter(): Promise<{ sprache: string; einheit: string; hash: string }[]> {
   'use cache: remote';
   cacheLife('max');
   TAGS();
   const liste: { sprache: string; einheit: string; hash: string }[] = [];
   const erste = KORAN_PFAD.einheiten[0]?.schluessel;
-  if (erste && datenbankVerfuegbar() && (await funktionAn('lernapp')))
-    for (const sprache of BEDEUTUNGS_SPRACHEN) {
-      const [r] = await baueKoranPfad(sprache, erste);
-      if (r) liste.push({ sprache, einheit: erste, hash: r.hash });
-    }
+  if (erste && datenbankVerfuegbar() && (await funktionAn('lernapp'))) {
+    const alle = ohneLaufzeitDatenbank();
+    for (const sprache of BEDEUTUNGS_SPRACHEN)
+      for (const r of await baueKoranPfad(sprache, alle ? undefined : erste))
+        liste.push({ sprache, einheit: r.paket.einheit.schluessel, hash: r.hash });
+  }
   return liste.length ? liste : [{ sprache: 'de', einheit: 'koran.grund.e01', hash: '0'.repeat(64) }];
 }
 

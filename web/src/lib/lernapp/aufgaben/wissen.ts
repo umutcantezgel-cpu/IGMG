@@ -8,10 +8,14 @@ import { SpracheSchema, text } from './grundlagen';
  * Paketbau liefert nur Freigegebenes aus. Die Aufgaben geben keine Auskunft zu persönlichen Fällen (KERN 4.0 §2.2 Nr. 3).
  *
  * - `sprache`: Sprache der Inhalte (der Wissenskurs ist deutsch, die Oberfläche kann tr oder ar sein → `lang`/`dir`).
- * - `quelle`: Quellenzeile der zugrunde liegenden Aussage(n) (Werk, Kapitel, Ausgabe), nach der Antwort aufklappbar
- *   (KERN 4.0 §2.3 „Kennzeichnung“). Der Text kommt aus dem Beleg, nie aus dem Gedächtnis.
+ * - `quelle`: Quellenzeile der zugrunde liegenden Aussage(n) (Werk, Kapitel, Ausgabe, Band, Seite – je Beleg, mehrere durch
+ *   Semikolon getrennt), nach der Antwort aufklappbar (KERN 4.0 §2.3 „Kennzeichnung“). Der Text kommt aus den Belegen, nie
+ *   aus dem Gedächtnis; bis zu 1.200 Zeichen, denn eine Aussage hat bis zu zehn Belege (gekürzt wird nie).
+ * - `strittig`: Die Aussage gehört zu einem strittigen Thema (Spalte `strittig` der Aussage, ADR 0040 Nr. 4); der Spieler weist
+ *   es nach der Antwort neben der Quellenzeile als solches aus (KERN 4.0 §2.3 „Kennzeichnung“).
  */
 export const wissen = {
   sprache: SpracheSchema,
-  quelle: z.optional(text(400)),
+  quelle: z.optional(text(1200)),
+  strittig: z.optional(z.literal(true)),
 };

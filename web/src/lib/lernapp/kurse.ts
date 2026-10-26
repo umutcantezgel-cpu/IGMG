@@ -79,6 +79,17 @@ export function istKursSlug(wert: unknown): wert is KursSlug {
   return typeof wert === 'string' && (KURS_SLUGS as readonly string[]).includes(wert);
 }
 
+/**
+ * Kurse mit Einheitenpaketen im Format `PaketSchema` (`/lern-app/pakete/<kurs>/<einheit>/<hash>`): die sechs Richtungen und
+ * der Wissenskurs. Koran-Arabisch hat eigene Pakete je Sprache der Bedeutungen (`/lern-app/pakete/koran/<sprache>/…`).
+ */
+export const PAKET_KURSE = [...RICHTUNGEN, 'islam'] as const;
+export type PaketKurs = (typeof PAKET_KURSE)[number];
+
+export function istPaketKurs(wert: unknown): wert is PaketKurs {
+  return typeof wert === 'string' && (PAKET_KURSE as readonly string[]).includes(wert);
+}
+
 /** Kurs in der Datenbank zum Slug der Adresse: Richtung → Zielsprache. */
 export function kursVonSlug(slug: KursSlug): KursId {
   return istRichtung(slug) ? zerlegeRichtung(slug).ziel : slug;

@@ -57,6 +57,7 @@ export default function WahrFalsch({
           kopf={<p className="text-18 font-bold">{aufgabe.wahr ? t.ergebnisWahr : t.ergebnisFalsch}</p>}
           begruendung={aufgabe.begruendung}
           quelle={aufgabe.quelle}
+          strittig={aufgabe.strittig}
           sprache={aufgabe.sprache}
           texte={texte.wissen}
         />

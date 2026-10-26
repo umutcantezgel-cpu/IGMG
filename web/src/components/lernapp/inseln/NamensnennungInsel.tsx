@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import { formatiere } from '@/lib/lernapp/format';
-import { KURS_SLUGS, richtung, STUFEN, type KursSlug, type Oberflaeche, type RichtungId } from '@/lib/lernapp/kurse';
+import { istRichtung, KURS_SLUGS, richtung, STUFEN, type Oberflaeche, type RichtungId } from '@/lib/lernapp/kurse';
 import { paketeImVorrat, type PaketKopf } from '@/lib/lernapp/lokal/vorrat';
 import { type EinheitNennungen, nennungenAus } from '@/lib/lernapp/namensnennung';
 import { themaVon } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
 
 export type NamensnennungTexte = { laedt: string; leer: string; anzahl: string; eigene: string; nurEigene: string };
 
-type Einheit = { kurs: KursSlug; paket: PaketKopf; nennungen: EinheitNennungen };
+type Einheit = { kurs: RichtungId; paket: PaketKopf & { kurs: RichtungId }; nennungen: EinheitNennungen };
 type Zustand = { art: 'laedt' } | { art: 'bereit'; einheiten: Einheit[] };
 
 const ordnung = (a: Einheit, b: Einheit) =>
@@ -85,8 +85,8 @@ function EinheitAbschnitt({ ui, e, kurs, texte }: { ui: Oberflaeche; e: Einheit;
 /**
  * Namensnennung je Satz und Eintrag (ADR 0039 Nr. 9, ADR 0045 Nr. 4, KERN 4.0 §1 „Quellenangaben auch offline“): liest die
  * Einheitenpakete im Vorrat des Geräts (ohne Netz; jede gespielte oder gespeicherte Einheit liegt dort) und zeigt je Einheit
- * die übernommenen Sätze und Einträge mit Urheber und Adresse aus dem Paket. Wissen und Koran-Arabisch haben kein Paket im
- * Format der Sprachkurse und erscheinen hier nicht; ihre Belege stehen je Aussage im Kurs.
+ * die übernommenen Sätze und Einträge mit Urheber und Adresse aus dem Paket. Der Wissenskurs (Paket ohne Einträge) und
+ * Koran-Arabisch (eigenes Paketformat) erscheinen hier nicht; ihre Belege stehen je Aussage im Kurs.
  */
 export function NamensnennungInsel({
   ui,
@@ -102,7 +102,15 @@ export function NamensnennungInsel({
   useEffect(() => {
     let aktiv = true;
     void paketeImVorrat()
-      .then((liste) => liste.map((x) => ({ ...x, nennungen: nennungenAus(x.paket.eintraege) })).sort(ordnung))
+      .then((liste) =>
+        liste
+          // nur Sprachkurse: der Wissenskurs hat keine Einträge, seine Quellenzeilen stehen je Aussage in der Lektion
+          .flatMap(({ kurs, paket }) =>
+            istRichtung(kurs) && istRichtung(paket.kurs) ? [{ kurs, paket: { ...paket, kurs: paket.kurs } }] : [],
+          )
+          .map((x) => ({ ...x, nennungen: nennungenAus(x.paket.eintraege) }))
+          .sort(ordnung),
+      )
       .catch((): Einheit[] => [])
       .then((einheiten) => aktiv && setZ({ art: 'bereit', einheiten }));
     return () => {

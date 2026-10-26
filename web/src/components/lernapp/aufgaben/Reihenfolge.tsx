@@ -19,7 +19,8 @@ type Knopf = 'hoch' | 'runter';
  * Übungstyp `reihenfolge` (Wissenskurs, PLAN §4): die Schritte als geordnete Liste, gemischt; je Schritt „nach oben“ und
  * „nach unten“ (≥ 44 px), Alt + Pfeil nach oben/unten verschiebt den Schritt, der Fokus bleibt bei ihm. Ziehen ist nie
  * nötig (WCAG 2.5.7). Jede Verschiebung sagt die Live-Region des Spielers an. Die gemischte Startfolge ist schon eine
- * Antwort. Nach dem Prüfen steht je Stelle in Worten, ob sie stimmt bzw. wohin der Schritt gehört.
+ * Antwort. Nach dem Prüfen steht je Stelle in Worten, ob sie stimmt bzw. wohin der Schritt gehört. Die inhaltliche Frage
+ * (`frage`, im Wissenskurs immer gesetzt) steht vor der Liste in der Sprache der Inhalte und beschreibt sie.
  */
 export default function Reihenfolge({
   aufgabe,
@@ -71,10 +72,24 @@ export default function Reihenfolge({
 
   return (
     <div className="flex flex-col gap-5">
+      {aufgabe.frage ? (
+        <p
+          id={`${id}-frage`}
+          lang={aufgabe.sprache}
+          dir={richtung(aufgabe.sprache)}
+          className="rounded-lg bg-sand px-4 py-5 text-20 font-bold"
+        >
+          {aufgabe.frage}
+        </p>
+      ) : null}
       <p id={`${id}-tasten`} className="sr-only">
         {t.tasten}
       </p>
-      <ol aria-label={t.liste} aria-describedby={`${id}-tasten`} className="flex flex-col gap-3">
+      <ol
+        aria-label={t.liste}
+        aria-describedby={aufgabe.frage ? `${id}-frage ${id}-tasten` : `${id}-tasten`}
+        className="flex flex-col gap-3"
+      >
         {folge.map((schritt, pos) => {
           const ok = geprueft?.[pos];
           const zustand = !geprueft ? 'border-rand' : ok ? 'border-gruen-700 bg-gruen-50' : 'border-fehler bg-fehler-toenung';
@@ -123,7 +138,9 @@ export default function Reihenfolge({
           );
         })}
       </ol>
-      {auswertung ? <Erklaerung quelle={aufgabe.quelle} sprache={aufgabe.sprache} texte={texte.wissen} /> : null}
+      {auswertung ? (
+        <Erklaerung quelle={aufgabe.quelle} strittig={aufgabe.strittig} sprache={aufgabe.sprache} texte={texte.wissen} />
+      ) : null}
     </div>
   );
 }

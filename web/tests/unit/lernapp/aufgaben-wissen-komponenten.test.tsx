@@ -140,6 +140,24 @@ describe('wahr_falsch', () => {
     expect(h).toMatch(/<details[^>]*><summary[^>]*>Quelle zeigen<\/summary>/);
     expect(h).toContain('[Werk, Kapitel, Ausgabe]');
     expect(h).toMatch(/<fieldset[^>]*disabled=""/);
+    expect(h).not.toContain('data-strittig');
+  });
+
+  it('strittiges Thema: nach der Antwort sichtbar ausgewiesen (nicht nur aufgeklappt), vorher nicht', () => {
+    const strittig = { ...WF, strittig: true as const };
+    expect(html(<WahrFalsch {...props(strittig)} />)).not.toContain(de.aufgaben.wissen.strittig);
+    const h = html(
+      <WahrFalsch
+        {...props(strittig, { gesperrt: true, auswertung: geprueft('richtig'), antwort: { typ: 'wahr_falsch', wahr: false } })}
+      />,
+    );
+    expect(h).toContain(`<p data-strittig="true" class="text-16 font-bold">${de.aufgaben.wissen.strittig}</p>`);
+    expect(h.indexOf('data-strittig')).toBeLessThan(h.indexOf('<details'));
+    // ebenso in zuordnen, reihenfolge und fallfrage
+    const fertig = { gesperrt: true, auswertung: geprueft('richtig') };
+    expect(html(<Zuordnen {...props({ ...ZO, strittig: true }, fertig)} />)).toContain('data-strittig');
+    expect(html(<Reihenfolge {...props({ ...RF, strittig: true }, fertig)} />)).toContain('data-strittig');
+    expect(html(<Fallfrage {...props({ ...FF, strittig: true }, fertig)} />)).toContain('data-strittig');
   });
 
   it('arabische Oberfläche: Bedienung arabisch, Inhalt deutsch von links nach rechts', () => {
@@ -167,6 +185,14 @@ describe('zuordnen', () => {
     expect(anzahl(h, /Richtig zugeordnet\./g)).toBe(2);
     expect(h).toContain('Gehört zu: <bdi lang="de" dir="ltr">[Kategorie B]</bdi>');
   });
+
+  it('inhaltliche Frage (Wissenskurs) vor den Einträgen in der Sprache des Inhalts, auch in der arabischen Oberfläche', () => {
+    const mitFrage = { ...ZO, frage: '[Ordne nach dem Maßstab – Platzhalter]' };
+    const frage = /<p lang="de" dir="ltr" class="[^"]*">\[Ordne nach dem Maßstab – Platzhalter\]<\/p>/;
+    expect(html(<Zuordnen {...props(mitFrage)} />)).toMatch(frage);
+    expect(html(<Zuordnen {...props(mitFrage, { sprache: 'ar', texte: TEXTE_AR.aufgaben })} />)).toMatch(frage);
+    expect(html(<Zuordnen {...props(ZO)} />)).not.toContain('Maßstab');
+  });
 });
 
 describe('reihenfolge', () => {
@@ -189,6 +215,13 @@ describe('reihenfolge', () => {
     expect(h).toContain('An der richtigen Stelle.');
     expect(h).toContain('Gehört an Stelle 3.');
     expect(h).toContain('Gehört an Stelle 2.');
+  });
+
+  it('inhaltliche Frage (Wissenskurs) vor der Liste, beschreibt sie (aria-describedby)', () => {
+    const h = html(<Reihenfolge {...props({ ...RF, frage: '[Ordne nach dem Maßstab – Platzhalter]' })} />);
+    const id = h.match(/<p id="([^"]+)" lang="de" dir="ltr" class="[^"]*">\[Ordne nach dem Maßstab – Platzhalter\]<\/p>/)?.[1];
+    expect(id).toBeTruthy();
+    expect(h).toContain(`aria-describedby="${id} `);
   });
 });
 

@@ -717,7 +717,8 @@ export const VARIABLEN: readonly Variable[] = [
   },
   {
     name: 'LERNAPP_TESTKURS',
-    zweck: 'Nimmt den Testkurs (<kurs>.a1.test mit synthetischen Tönen) in den Bau ohne Datenbank auf und liefert seine Testbündel aus',
+    zweck:
+      'Nimmt den Testkurs (<kurs>.a1.test mit synthetischen Tönen, islam.grund.test mit Testfreigaben) in den Bau ohne Datenbank auf und liefert seine Testbündel aus',
     muster: false,
     pflicht: NIE,
     bereich: [],

@@ -94,6 +94,14 @@ Hinweise:
 - Religiöse Prüfung der Lern-App (L6-03): `lernapp/verwaltung-religioes.spec.ts` legt Platzhalter-Bausteine des
   Wissenskurses (`islam.grund.e90…`, keine religiösen Texte) per SQL an und gibt eine Aussage mit zwei neuen Konten der Rolle
   „Religiöse Prüfung“ frei; braucht `FUNKTION_LERNAPP=an`, nur Projekt `desktop`.
+- Wissenskurs mit echten Paketen (Endabnahme Z-L02, Vorführpfad Station 6): `lernapp/typen-wissen.spec.ts` spielt die
+  Testeinheit `islam.grund.test` (Platzhalter, `drizzle/seeds/lernapp-test-wissen.ts`) mit Testfreigaben der nicht anmeldbaren
+  Prüfkonten `lernapp-testpruefung-1/-2`; die Gegenprobe `islam.grund.test.l02` (eine Freigabe) erscheint nirgends. Geprüft
+  werden auch der aufklappbare Inhalt der Lektion (alle Aussagen mit Quellenzeile), die inhaltliche Frage von Zuordnen und
+  Reihenfolge und die Kennzeichnung der als strittig markierten Platzhalter-Aussage `l01.s02`. Angelegt nur mit
+  `pnpm lernapp:import --testkurs` (E2E-Datenbank; Bau ohne Datenbank nur mit `LERNAPP_TESTKURS=1`), nie in der Produktion
+  mit eigener Datenbank. Die öffentliche Test-Domain zeigt deshalb den Platzhalter; die Vorführung von Station 6 braucht
+  eine Preview-Bereitstellung mit `LERNAPP_TESTKURS=1`.
 - Sprachausgabe (L3-05): `lernapp/audio-buendel.spec.ts` spielt regulär die Testbündel. Mit einem lokal gebauten Bündel der
   Audio-Kette (`_lernapp/werkzeuge/tts/LIESMICH.md` §4) zusätzlich `E2E_AUDIO_MANIFEST=<manifest>` (Import in die
   E2E-Datenbank), `LERNAPP_AUDIO_LOKAL=<ordner mit de/…lpa>` (Route) und `E2E_AUDIO_BUENDEL=<datei>.lpa` (genau dieses Bündel

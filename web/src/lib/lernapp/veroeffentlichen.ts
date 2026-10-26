@@ -20,6 +20,18 @@ export async function kursGeaendert(kurse: readonly KursId[]): Promise<void> {
   for (const k of eindeutig) updateTag(TAG.lernappKurs(k));
 }
 
+/**
+ * Die Menge der religiösen Prüfenden hat sich geändert (Rolle `religioese_pruefung` vergeben oder wirksam entzogen, Konto mit
+ * der Rolle gelöscht): Eine Freigabe zählt nur von einer Person mit der aktuellen Rolle (`freigabe.ts`), also kann jede
+ * religiös geprüfte Auslieferung kippen – Wissenskurs, Koran-Bedeutungen, Sprachkurs-Inhalte mit Religionsbezug. Alle Kurse
+ * entstehen neu (Kursstand, `updateTag`), damit z. B. eine Lektion nach dem Entzug sofort aus Verzeichnis, Paket und CDN
+ * verschwindet statt erst beim nächsten Deploy. Nur aus Server Actions aufrufen.
+ */
+export async function religioesePruefendeGeaendert(): Promise<void> {
+  const kurse = await db.select({ id: schema.lernappKurs.id }).from(schema.lernappKurs);
+  await kursGeaendert(kurse.map((k) => k.id).filter(istKurs));
+}
+
 /** Kursstand erhöhen (in einer offenen Transaktion oder direkt); `updateTag` folgt erst nach dem Abschluss. */
 async function erhoeheKursstand(tx: Pick<Datenbank, 'update'>, kurse: readonly KursId[]): Promise<void> {
   await tx

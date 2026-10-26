@@ -6,13 +6,15 @@ import { db, schema } from '@/lib/db';
 import { datenbankVerfuegbar, ohneLaufzeitDatenbank } from '@/lib/db/verfuegbar';
 import { funktionAn } from '@/lib/funktionen';
 import { clipZulaessig, istTestQuelle } from '@/lib/lernapp/audio/stimmen';
-import { type Pruefung, sprachlichGesperrt } from '@/lib/lernapp/freigabe';
+import { sprachlichGesperrt } from '@/lib/lernapp/freigabe';
 import { AufgabeVorlageSchema, verweiseVon } from '@/lib/lernapp/inhalt/schema';
 import {
+  EIGENE_STUFEN,
   istRichtung,
   type KursSlug,
-  kursArt,
   kursVonSlug,
+  PAKET_KURSE,
+  type PaketKurs,
   type RichtungId,
   RICHTUNGEN,
   SPRACH_STUFEN,
@@ -32,13 +34,18 @@ import {
 import { buendelAdresse } from '@/lib/lernapp/paket/buendel';
 import type { Verzeichnis } from '@/lib/lernapp/paket/typen';
 import { inBloecken, textHashGemerkt } from './bloecke';
+import { ladePruefungen } from './pruefungen';
+import { baueWissenskurs } from './wissen';
+
+export { ladePruefungen };
 
 /**
- * Kurspakete aus der Datenbank (ADR 0039 Nr. 1/2, PLAN §3.10). Gecacht mit `'use cache: remote'`, `cacheLife('max')` und
- * den Tags `TAG.lernapp` und `TAG.lernappKurs(<kurs der Datenbank>)` – jede Freigabe, Veröffentlichung und jedes
- * Zurückziehen ruft `updateTag(TAG.lernappKurs(id))` (KERN 4.0 §2.3), der Import wirkt über den Bau bzw. den Start
+ * Kurspakete aus der Datenbank (ADR 0039 Nr. 1/2, PLAN §3.10): die sechs Richtungen und der Wissenskurs (`wissen.ts`; nur
+ * Lektionen, deren Bausteine alle zwei religiöse Freigaben zum aktuellen Hash haben). Gecacht mit `'use cache: remote'`,
+ * `cacheLife('max')` und den Tags `TAG.lernapp` und `TAG.lernappKurs(<kurs der Datenbank>)` – jede Freigabe, Veröffentlichung
+ * und jedes Zurückziehen ruft `updateTag(TAG.lernappKurs(id))` (KERN 4.0 §2.3), der Import wirkt über den Bau bzw. den Start
  * (`TAG.lernapp` in `START_TAGS`). Schalter `lernapp` aus → null (Route 404); `lernapp_ungeprueft` steuert, ob Einträge
- * ohne bestandene Stichprobe mit Hinweis ausgeliefert werden (ADR 0041 Nr. 8).
+ * ohne bestandene Stichprobe mit Hinweis ausgeliefert werden (ADR 0041 Nr. 8) – für den Wissenskurs gilt er nie.
  */
 
 const STIMMEN_VORRANG = ['mensch:', 'tts:', 'test:'];
@@ -48,57 +55,6 @@ const vorrang = (stimme: string) => {
 };
 
 type InhaltTyp = (typeof schema.lernappInhaltTypEnum.enumValues)[number];
-
-/** Prüfungen je Baustein (`<typ>:<id>`), ergänzt um die aktuellen Rollen der Prüfenden (freigabe.ts); in Blöcken. */
-export async function ladePruefungen(ids: readonly { typ: InhaltTyp; id: string }[]): Promise<Map<string, Pruefung[]>> {
-  const ergebnis = new Map<string, Pruefung[]>();
-  if (!ids.length) return ergebnis;
-  const zeilen = await inBloecken(
-    ids.map((x) => x.id),
-    (block) =>
-      db
-        .select({
-          inhaltTyp: schema.lernappPruefung.inhaltTyp,
-          inhaltId: schema.lernappPruefung.inhaltId,
-          inhaltHash: schema.lernappPruefung.inhaltHash,
-          art: schema.lernappPruefung.art,
-          pruefendeId: schema.lernappPruefung.pruefendeId,
-          urteil: schema.lernappPruefung.urteil,
-          kategorie: schema.lernappPruefung.kategorie,
-          belegeGeprueft: schema.lernappPruefung.belegeGeprueft,
-          am: schema.lernappPruefung.am,
-        })
-        .from(schema.lernappPruefung)
-        .where(inArray(schema.lernappPruefung.inhaltId, block)),
-  );
-  if (!zeilen.length) return ergebnis;
-  const personen = zeilen.flatMap((z) => (z.pruefendeId ? [z.pruefendeId] : []));
-  const rollen = new Map<string, string[]>();
-  for (const r of await inBloecken(personen, (block) =>
-    db
-      .select({ benutzerId: schema.rolleZuweisung.benutzerId, rolle: schema.rolleZuweisung.rolle })
-      .from(schema.rolleZuweisung)
-      .where(inArray(schema.rolleZuweisung.benutzerId, block)),
-  ))
-    rollen.set(r.benutzerId, [...(rollen.get(r.benutzerId) ?? []), r.rolle]);
-  for (const z of zeilen) {
-    const k = `${z.inhaltTyp}:${z.inhaltId}`;
-    ergebnis.set(k, [
-      ...(ergebnis.get(k) ?? []),
-      {
-        pruefendeId: z.pruefendeId,
-        pruefendeRollen: z.pruefendeId ? (rollen.get(z.pruefendeId) ?? []) : [],
-        art: z.art,
-        urteil: z.urteil,
-        inhaltHash: z.inhaltHash,
-        kategorie: z.kategorie,
-        belegeGeprueft: z.belegeGeprueft,
-        am: z.am,
-      },
-    ]);
-  }
-  return ergebnis;
-}
 
 /**
  * Sprecherinnen und Sprecher der Clips `mensch:<id>` mit hinterlegter Vereinbarung (ADR 0029 Nr. 4): Medium der Vereinbarung
@@ -425,7 +381,15 @@ export async function baueRichtung(richtung: RichtungId, ungeprueftZeigen: boole
   });
 }
 
-/** Kursverzeichnis ungecacht (Tests). Wissen und Koran-Arabisch liefern bis L6 keine Einheiten (nichts ohne zwei Freigaben). */
+/** Ausgelieferte Einheiten eines Kurses mit Paketen (Richtung oder Wissenskurs; bzw. eine Einheit). */
+export async function baueKurs(kurs: PaketKurs, ungeprueftZeigen: boolean, einheit?: string): Promise<BauErgebnis[]> {
+  return kurs === 'islam' ? baueWissenskurs(einheit) : baueRichtung(kurs, ungeprueftZeigen, einheit);
+}
+
+/**
+ * Kursverzeichnis ungecacht (Tests). Wissenskurs: nur Einheiten mit mindestens einer vollständig freigegebenen Lektion.
+ * Koran-Arabisch hat unter dieser Adresse keine Einheiten – sein Verzeichnis steht je Sprache unter `/lern-app/pakete/koran/<sprache>`.
+ */
 export async function verzeichnisVon(kurs: KursSlug, ungeprueftZeigen: boolean): Promise<Verzeichnis> {
   const kursId = kursVonSlug(kurs);
   const [zeile] = await db
@@ -440,8 +404,8 @@ export async function verzeichnisVon(kurs: KursSlug, ungeprueftZeigen: boolean):
     zielsprache,
     ausgangssprache: richtung?.ausgang ?? null,
     stand: zeile?.version ?? 0,
-    einheiten: istRichtung(kurs) && kursArt(kursId) === 'sprache' ? await baueRichtung(kurs, ungeprueftZeigen) : [],
-    stufenFolge: SPRACH_STUFEN,
+    einheiten: kurs === 'koran' ? [] : await baueKurs(kurs, ungeprueftZeigen),
+    stufenFolge: richtung ? SPRACH_STUFEN : EIGENE_STUFEN,
   });
 }
 
@@ -458,12 +422,12 @@ export async function ladeVerzeichnisJson(kurs: KursSlug): Promise<string | null
 }
 
 /** Einheitenpaket als kanonisches JSON mit Hash (gecacht); null, wenn aus, unbekannt oder nicht ausgeliefert. */
-export async function ladeEinheitJson(kurs: RichtungId, einheit: string): Promise<{ hash: string; json: string } | null> {
+export async function ladeEinheitJson(kurs: PaketKurs, einheit: string): Promise<{ hash: string; json: string } | null> {
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.lernapp, TAG.lernappKurs(kursVonSlug(kurs)), TAG.einstellungen);
   if (!(await funktionAn('lernapp')) || !datenbankVerfuegbar()) return null;
-  const [r] = await baueRichtung(kurs, await funktionAn('lernapp_ungeprueft'), einheit);
+  const [r] = await baueKurs(kurs, await funktionAn('lernapp_ungeprueft'), einheit);
   return r ? { hash: r.hash, json: r.json } : null;
 }
 
@@ -471,8 +435,8 @@ export type PaketParameter = { kurs: string; einheit: string; hash: string };
 
 /**
  * Parameter der Einheitenpakete für `generateStaticParams`: im Beispielmodus ohne Laufzeit-Datenbank alle (ADR 0039 Nr. 2),
- * sonst je Richtung die erste Einheit (Cache Components verlangt mindestens einen Parameter; der Rest entsteht bei Bedarf).
- * Ohne Inhalte ein Platzhalter, der 404 ergibt.
+ * sonst je Kurs (sechs Richtungen, Wissenskurs) die erste Einheit (Cache Components verlangt mindestens einen Parameter; der
+ * Rest entsteht bei Bedarf). Ohne Inhalte ein Platzhalter, der 404 ergibt.
  */
 export async function ladePaketParameter(): Promise<PaketParameter[]> {
   'use cache: remote';
@@ -482,10 +446,10 @@ export async function ladePaketParameter(): Promise<PaketParameter[]> {
   const liste: PaketParameter[] = [];
   if (datenbankVerfuegbar() && (await funktionAn('lernapp'))) {
     const ungeprueft = await funktionAn('lernapp_ungeprueft');
-    for (const r of RICHTUNGEN) {
-      const gebaut = await baueRichtung(r, ungeprueft);
+    for (const k of PAKET_KURSE) {
+      const gebaut = await baueKurs(k, ungeprueft);
       const auswahl = alle ? gebaut : gebaut.slice(0, 1);
-      liste.push(...auswahl.map((x) => ({ kurs: r, einheit: x.paket.einheit.schluessel, hash: x.hash })));
+      liste.push(...auswahl.map((x) => ({ kurs: k, einheit: x.paket.einheit.schluessel, hash: x.hash })));
     }
   }
   return liste.length ? liste : [{ kurs: RICHTUNGEN[0], einheit: `${zerlegeRichtung(RICHTUNGEN[0]).ziel}.a1.e00`, hash: '0'.repeat(64) }];

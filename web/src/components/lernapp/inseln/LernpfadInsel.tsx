@@ -3,7 +3,7 @@
 import { Check, ChevronDown, Lightbulb } from 'lucide-react';
 import { type CSSProperties, useEffect, useRef, useState } from 'react';
 import { abgeschlosseneStufen } from '@/lib/lernapp/ereignisse/stufen';
-import { formatiere, zahl, type Ziffern } from '@/lib/lernapp/format';
+import { formatiere, intlSprache, zahl, type Ziffern } from '@/lib/lernapp/format';
 import { richtung, type KursSlug, type Oberflaeche, type Stufe } from '@/lib/lernapp/kurse';
 import { profilBereich, type PaketEintrag } from '@/lib/lernapp/lokal/db';
 import { ladePaketKopf, ladeVerzeichnis, type PaketKopf, paketKopfImVorrat, raeumeAuf, speichereOffline } from '@/lib/lernapp/lokal/vorrat';
@@ -30,6 +30,17 @@ export type LernpfadTexte = OfflineTexte & {
   nichtGeladen: string;
   tipps: string;
   ungeprueft: string;
+  /** Wissenskurs: „Nach hanefitischer Lehre; geprüft von zwei Gelehrten der Gemeinde am {datum}“ (ohne Namen, LM-20) */
+  pruefvermerk: string;
+  fuerKinder: string;
+  /** Wissenskurs: Lektion mit einer Aussage zu einem strittigen Thema (ADR 0040 Nr. 4) */
+  strittig: string;
+  /** Wissenskurs: aufklappbarer Inhalt der Lektion „Inhalt der Lektion ({anzahl} Aussagen)“ */
+  inhalt: string;
+  /** Wissenskurs: Beschriftung der Quellenzeile je Aussage */
+  quelle: string;
+  /** Wissenskurs: Kennzeichnung einer Aussage zu einem strittigen Thema */
+  strittigesThema: string;
 };
 
 /** Texte zu abgeschlossenen Stufen und Lektionsarten (Namensraum `ansichten.stufen`, L4-03). */
@@ -126,6 +137,13 @@ export function LernpfadInsel({
   if (z.art === 'leer') return <p className="text-18 text-tinte-2">{texte.leer}</p>;
 
   const f = (vorlage: string, werte: Record<string, number>) => formatiere(vorlage, werte, ui, ziffern);
+  // Prüfvermerk: Tag der Freigabe (UTC, wie im Paket) in der Oberflächensprache
+  const datum = (iso: string) =>
+    new Intl.DateTimeFormat(intlSprache(ui, ziffern), { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(
+      new Date(`${iso}T00:00:00Z`),
+    );
+  // Titel der Lektionen in der Sprache der Inhalte (Sprachkurse: Ausgangssprache; Wissenskurs: Deutsch)
+  const titelSprache = z.v.ausgangssprache ?? z.v.zielsprache;
   const gesamt = z.abschnitte.reduce((n, a) => n + a.stationen.length, 0);
 
   async function zeigeLektionen(s: Station) {
@@ -208,10 +226,7 @@ export function LernpfadInsel({
                                   <LernStern linie className="size-5 shrink-0 text-gruen-700" />
                                 )}
                                 {l.titel ? (
-                                  <span
-                                    lang={z.v.ausgangssprache ?? undefined}
-                                    dir={z.v.ausgangssprache ? richtung(z.v.ausgangssprache) : undefined}
-                                  >
+                                  <span lang={titelSprache} dir={richtung(titelSprache)}>
                                     {l.titel}
                                   </span>
                                 ) : (
@@ -220,6 +235,39 @@ export function LernpfadInsel({
                                 <LektionsArtMarke art={l.art} texte={stufenTexte.art} />
                                 {l.erledigt ? <span className="sr-only">({texte.geschafft})</span> : null}
                               </a>
+                              {l.vermerk ? (
+                                // Wissenskurs: Prüfvermerk ohne Namen und Kennzeichnung je Lektion (KERN 4.0 §2.3, PLAN §6.7 Nr. 7)
+                                <p data-pruefvermerk={l.schluessel} className="ps-7 text-16 text-tinte-2">
+                                  {formatiere(texte.pruefvermerk, { datum: datum(l.vermerk.geprueftAm) }, ui, ziffern)}
+                                  {l.vermerk.kinderGeeignet ? <> · {texte.fuerKinder}</> : null}
+                                  {l.vermerk.strittig ? <> · {texte.strittig}</> : null}
+                                </p>
+                              ) : null}
+                              {l.vermerk?.aussagen.length ? (
+                                // Wissenskurs: alle Aussagen der Lektion mit Quellenzeile, auch die ohne Quizfrage (KERN 4.0 §2.3)
+                                <details data-lektionsinhalt={l.schluessel} className="ps-7 text-16">
+                                  <summary className="inline-flex min-h-11 cursor-pointer items-center gap-2 font-bold">
+                                    <ChevronDown aria-hidden className="size-5 shrink-0" />
+                                    {formatiere(texte.inhalt, { anzahl: l.vermerk.aussagen.length }, ui, ziffern)}
+                                  </summary>
+                                  <ul className="flex flex-col gap-3 pb-2">
+                                    {l.vermerk.aussagen.map((x) => (
+                                      <li key={x.schluessel} className="flex flex-col gap-1">
+                                        <p lang="de" dir="ltr" className="text-18">
+                                          {x.text}
+                                        </p>
+                                        <p className="text-tinte-2">
+                                          {texte.quelle}:{' '}
+                                          <bdi lang="de" dir="ltr">
+                                            {x.quelle}
+                                          </bdi>
+                                        </p>
+                                        {x.strittig ? <p className="font-bold">{texte.strittigesThema}</p> : null}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </details>
+                              ) : null}
                             </li>
                           ))}
                         </ul>

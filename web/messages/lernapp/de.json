@@ -98,6 +98,12 @@
     "nichtGeladen": "Ohne Verbindung ist diese Einheit noch nicht auf dem Gerät.",
     "tipps": "Grammatik-Tipps",
     "ungeprueft": "Noch nicht von Muttersprachlern geprüft.",
+    "pruefvermerk": "Nach hanefitischer Lehre; geprüft von zwei Gelehrten der Gemeinde am {datum}",
+    "fuerKinder": "Für Kinder geeignet",
+    "strittig": "Enthält strittige Themen",
+    "inhalt": "Inhalt der Lektion ({anzahl, plural, one {# Aussage} other {# Aussagen}})",
+    "quelle": "Quelle",
+    "strittigesThema": "Strittiges Thema",
     "offline": "Einheit offline speichern",
     "offlineText": "Speichert die Einheit samt Tönen auf diesem Gerät ({mb} MB). Dann kannst du sie auch ohne Verbindung üben.",
     "offlineLaeuft": "Wird gespeichert … {mb} MB",
@@ -489,7 +495,8 @@
     "wissen": {
       "begruendung": "Begründung:",
       "quelle": "Quelle",
-      "quelleZeigen": "Quelle zeigen"
+      "quelleZeigen": "Quelle zeigen",
+      "strittig": "Strittiges Thema"
     },
     "wahr_falsch": {
       "stimmtDas": "Stimmt diese Aussage?",
@@ -1094,5 +1101,9 @@
       "woerter": "{n, plural, one {# Wort zum Text} other {# Wörter zum Text}}",
       "woerterText": "Alle markierten Wörter mit ihrer Bedeutung."
     }
+  },
+  "quellenzeile": {
+    "band": "Bd. {band}",
+    "seite": "S. {seite}"
   }
 }

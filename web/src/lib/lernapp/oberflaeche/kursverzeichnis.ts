@@ -1,6 +1,6 @@
 import type { Lektion } from '../aufgaben/schema';
 import type { Oberflaeche, Sprache, Stufe } from '../kurse';
-import type { Verzeichnis, VerzeichnisEinheit } from '../paket/typen';
+import type { Verzeichnis, VerzeichnisEinheit, WissensLektionVermerk } from '../paket/typen';
 
 /**
  * Lernpfad aus dem Kursverzeichnis (PLAN §3.1, §3.10; ADR 0039): Abschnitte (Stufen) → Einheiten (Stationen) → Lektionen.
@@ -35,10 +35,49 @@ export function themaVon(
   return null;
 }
 
-/** Was der Lernpfad aus einem Paket liest (volles `Paket` oder nur sein Kopf aus `lokal/vorrat.ts`). */
-export type PaketInhalt = { lektionen: readonly Pick<Lektion, 'schluessel' | 'titel' | 'art'>[]; tipps: readonly unknown[] };
+/** Aussage einer Lektion des Wissenskurses im Lernpfad: Text und Quellenzeile (Inhalt Deutsch), Kennzeichnung „strittig“. */
+export type VermerkAussage = { schluessel: string; text: string; quelle: string; strittig?: true };
 
-export type LektionsEintrag = Pick<Lektion, 'schluessel' | 'titel' | 'art'> & { erledigt: boolean };
+/**
+ * Prüfvermerk einer Lektion des Wissenskurses (Datum der Freigabe, „für Kinder geeignet“, enthält ein strittiges Thema) und
+ * ihre Aussagen mit Quellenzeile – auch die ohne Quizfrage (KERN 4.0 §2.3 „Quellenzeile je Aussage“).
+ */
+export type LektionsVermerk = Pick<WissensLektionVermerk, 'geprueftAm' | 'kinderGeeignet'> & {
+  strittig?: true;
+  aussagen: readonly VermerkAussage[];
+};
+
+/** Was der Lernpfad aus einem Paket liest (volles `Paket` oder nur sein Kopf aus `lokal/vorrat.ts`, dort nicht voll geprüft). */
+export type PaketInhalt = {
+  lektionen: readonly Pick<Lektion, 'schluessel' | 'titel' | 'art'>[];
+  tipps: readonly unknown[];
+  /** nur Wissenskurs: Prüfvermerk je Lektion mit den Aussagen */
+  wissen?: Readonly<Record<string, { geprueftAm?: unknown; kinderGeeignet?: unknown; aussagen?: unknown }>>;
+};
+
+const istText = (x: unknown): x is string => typeof x === 'string' && x.length > 0;
+
+/** Prüfvermerk nur in gültiger Form (der Kopf aus dem Vorrat ist nicht voll geprüft); Aussagen ohne Text oder Quelle fallen weg. */
+function vermerkVon(roh: NonNullable<PaketInhalt['wissen']>[string] | undefined): LektionsVermerk | null {
+  if (!roh || typeof roh.geprueftAm !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(roh.geprueftAm)) return null;
+  if (typeof roh.kinderGeeignet !== 'boolean') return null;
+  const aussagen: VermerkAussage[] = (Array.isArray(roh.aussagen) ? (roh.aussagen as unknown[]) : []).flatMap((a) => {
+    if (typeof a !== 'object' || a === null) return [];
+    const { schluessel, text, quelle, strittig } = a as Record<string, unknown>;
+    return istText(schluessel) && istText(text) && istText(quelle)
+      ? [{ schluessel, text, quelle, ...(strittig === true ? { strittig: true as const } : {}) }]
+      : [];
+  });
+  // „strittig“, wenn eine Aussage der Lektion zu einem strittigen Thema gehört (ADR 0040 Nr. 4)
+  return {
+    geprueftAm: roh.geprueftAm,
+    kinderGeeignet: roh.kinderGeeignet,
+    ...(aussagen.some((a) => a.strittig) ? { strittig: true as const } : {}),
+    aussagen,
+  };
+}
+
+export type LektionsEintrag = Pick<Lektion, 'schluessel' | 'titel' | 'art'> & { erledigt: boolean; vermerk?: LektionsVermerk };
 
 export type Station = {
   einheit: VerzeichnisEinheit;
@@ -64,12 +103,16 @@ export function abschnitte(v: Verzeichnis, erledigt: ReadonlySet<string>, pakete
     const praefix = lektionsPraefix(v, einheit.schluessel);
     const paket = pakete.get(einheit.schluessel);
     const lektionen = paket
-      ? paket.lektionen.map((l) => ({
-          schluessel: l.schluessel,
-          art: l.art,
-          ...(l.titel ? { titel: l.titel } : {}),
-          erledigt: erledigt.has(l.schluessel),
-        }))
+      ? paket.lektionen.map((l) => {
+          const vermerk = vermerkVon(paket.wissen?.[l.schluessel]);
+          return {
+            schluessel: l.schluessel,
+            art: l.art,
+            ...(l.titel ? { titel: l.titel } : {}),
+            erledigt: erledigt.has(l.schluessel),
+            ...(vermerk ? { vermerk } : {}),
+          };
+        })
       : null;
     const geschafft = lektionen ? lektionen.filter((l) => l.erledigt).length : [...erledigt].filter((l) => l.startsWith(praefix)).length;
     const aktuell = !aktuellGesetzt && geschafft < einheit.lektionen;

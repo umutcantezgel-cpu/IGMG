@@ -12,7 +12,8 @@ export { bewerteZuordnen as bewerte } from '@/lib/lernapp/aufgaben/auswertung/zu
 /**
  * Übungstyp `zuordnen` (Wissenskurs, PLAN §4): je Eintrag eine Radiogruppe mit den Kategorien (Legende = Eintrag mit
  * `lang`), Ziehen nie nötig (WCAG 2.5.7). „Prüfen“ erst, wenn jeder Eintrag eine Kategorie hat. Nach dem Prüfen steht je
- * Eintrag in Worten, ob er stimmt bzw. wohin er gehört – nicht nur als Farbe.
+ * Eintrag in Worten, ob er stimmt bzw. wohin er gehört – nicht nur als Farbe. Die inhaltliche Frage (`frage`, im Wissenskurs
+ * immer gesetzt) steht vor den Einträgen in der Sprache der Inhalte.
  */
 export default function Zuordnen({
   aufgabe,
@@ -40,6 +41,11 @@ export default function Zuordnen({
 
   return (
     <div className="flex flex-col gap-5">
+      {aufgabe.frage ? (
+        <p lang={aufgabe.sprache} dir={richtung(aufgabe.sprache)} className="rounded-lg bg-sand px-4 py-5 text-20 font-bold">
+          {aufgabe.frage}
+        </p>
+      ) : null}
       <ol className="flex flex-col gap-4">
         {reihe.map((i) => {
           const e = aufgabe.eintraege[i];
@@ -85,7 +91,9 @@ export default function Zuordnen({
           );
         })}
       </ol>
-      {auswertung ? <Erklaerung quelle={aufgabe.quelle} sprache={aufgabe.sprache} texte={texte.wissen} /> : null}
+      {auswertung ? (
+        <Erklaerung quelle={aufgabe.quelle} strittig={aufgabe.strittig} sprache={aufgabe.sprache} texte={texte.wissen} />
+      ) : null}
     </div>
   );
 }

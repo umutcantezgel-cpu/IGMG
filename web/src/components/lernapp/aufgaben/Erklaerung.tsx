@@ -42,23 +42,27 @@ export function MitEinschub({
 
 /**
  * Nach der Antwort im Wissenskurs (L2-03): das Ergebnis in Worten, die Begründung und die aufklappbare Quellenzeile der
- * Aussage (KERN 4.0 §2.3 „Kennzeichnung“), jeweils in der Sprache der Inhalte. Farbe trägt nie allein die Bedeutung.
+ * Aussage (KERN 4.0 §2.3 „Kennzeichnung“), jeweils in der Sprache der Inhalte; ein strittiges Thema als solches ausgewiesen
+ * (ADR 0040 Nr. 4, sichtbar, nicht nur aufgeklappt). Farbe trägt nie allein die Bedeutung.
  */
 export function Erklaerung({
   kopf,
   begruendung,
   quelle,
+  strittig,
   sprache,
   texte,
 }: {
   kopf?: ReactNode;
   begruendung?: string;
   quelle?: string;
+  /** Aussage zu einem strittigen Thema */
+  strittig?: boolean;
   /** Sprache der Inhalte (Wissenskurs: Deutsch) */
   sprache: UiSprache;
   texte: SpielerTexte['aufgaben']['wissen'];
 }) {
-  if (!kopf && !begruendung && !quelle) return null;
+  if (!kopf && !begruendung && !quelle && !strittig) return null;
   return (
     <div className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-4">
       {kopf}
@@ -68,6 +72,11 @@ export function Erklaerung({
           <bdi lang={sprache} dir={richtung(sprache)}>
             {begruendung}
           </bdi>
+        </p>
+      ) : null}
+      {strittig ? (
+        <p data-strittig className="text-16 font-bold">
+          {texte.strittig}
         </p>
       ) : null}
       {quelle ? (

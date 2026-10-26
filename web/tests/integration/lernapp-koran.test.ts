@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { and, eq } from 'drizzle-orm';
-import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest';
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { schema } from '@/lib/db';
 import { KORAN_PAKET_FORMAT, type KoranPaket, type KoranVerzeichnis } from '@/lib/lernapp/koran/typen';
 import { sha256Hex } from '@/lib/lernapp/paket/hash';
@@ -256,6 +256,42 @@ describe('Koran-Pfad: Verzeichnis und Paket', () => {
     process.env.FUNKTION_LERNAPP = 'aus';
     expect((await verzeichnisRoute.GET(anfrage('/x'), kontext({ sprache: 'de' }))).status).toBe(404);
     expect((await einheitRoute.GET(anfrage('/x'), kontext({ sprache: 'de', einheit: E01.schluessel, hash: e.hash }))).status).toBe(404);
+  });
+
+  // Endabnahme Z-L03 (C-religion-gegen): live lieferte nur e01 aus – der Beispielmodus hat zur Laufzeit keine Datenbank, also
+  // muss jede Einheit vorgerendert sein, und jede Adresse des Verzeichnisses muss genau dieses Paket liefern.
+  it('alle Einheiten: Einheitenroute liefert den Hash aus dem Verzeichnis; im Beispielmodus sind alle vorgerendert', async () => {
+    const sprachen = ['de', 'tr'] as const;
+    for (const sprache of sprachen) {
+      const v = await verzeichnis(sprache);
+      expect(v.einheiten.map((e) => e.schluessel)).toEqual(koran.KORAN_PFAD.einheiten.map((e) => e.schluessel));
+      for (const e of v.einheiten) {
+        const r = await einheitRoute.GET(
+          anfrage(`/lern-app/pakete/koran/${sprache}/${e.schluessel}/${e.hash}`),
+          kontext({ sprache, einheit: e.schluessel, hash: e.hash }),
+        );
+        expect(r.status, `${sprache} ${e.schluessel}`).toBe(200);
+        expect(sha256Hex(await r.text()), `${sprache} ${e.schluessel}`).toBe(e.hash);
+      }
+    }
+    // Server mit Datenbank: je Sprache nur die erste Einheit vorgerendert (der Rest entsteht bei Bedarf)
+    const mitDatenbank = await koran.ladeKoranPaketParameter();
+    expect(mitDatenbank.map((p) => `${p.sprache} ${p.einheit}`)).toEqual(sprachen.map((s) => `${s} ${E01.schluessel}`));
+    // Beispielmodus (Vercel-Bau mit PGlite, zur Laufzeit ohne Datenbank): alle 2 × 40 Einheiten mit dem Hash des Verzeichnisses
+    vi.stubEnv('VERCEL', '1');
+    vi.stubEnv('BAU_PGLITE', '1');
+    try {
+      const parameter = await koran.ladeKoranPaketParameter();
+      expect(parameter).toHaveLength(sprachen.length * koran.KORAN_PFAD.einheiten.length);
+      for (const sprache of sprachen) {
+        const v = await verzeichnis(sprache);
+        expect(parameter.filter((p) => p.sprache === sprache)).toEqual(
+          v.einheiten.map((e) => ({ sprache, einheit: e.schluessel, hash: e.hash })),
+        );
+      }
+    } finally {
+      vi.unstubAllEnvs();
+    }
   });
 });
 

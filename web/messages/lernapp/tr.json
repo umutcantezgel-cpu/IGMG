@@ -98,6 +98,12 @@
     "nichtGeladen": "Bu ünite bağlantı olmadan henüz cihazda yok.",
     "tipps": "Dil bilgisi ipuçları",
     "ungeprueft": "Henüz anadili konuşanlarca kontrol edilmedi.",
+    "pruefvermerk": "Hanefi mezhebine göre; cemaatin iki âlimi tarafından {datum} tarihinde incelendi",
+    "fuerKinder": "Çocuklar için uygun",
+    "strittig": "Tartışmalı konular içerir",
+    "inhalt": "Dersin içeriği ({anzahl, plural, one {# ifade} other {# ifade}})",
+    "quelle": "Kaynak",
+    "strittigesThema": "Tartışmalı konu",
     "offline": "Üniteyi çevrimdışı kaydet",
     "offlineText": "Üniteyi sesleriyle birlikte bu cihaza kaydeder ({mb} MB). Böylece bağlantı olmadan da çalışabilirsin.",
     "offlineLaeuft": "Kaydediliyor … {mb} MB",
@@ -489,7 +495,8 @@
     "wissen": {
       "begruendung": "Gerekçe:",
       "quelle": "Kaynak",
-      "quelleZeigen": "Kaynağı göster"
+      "quelleZeigen": "Kaynağı göster",
+      "strittig": "Tartışmalı konu"
     },
     "wahr_falsch": {
       "stimmtDas": "Bu ifade doğru mu?",
@@ -1094,5 +1101,9 @@
       "woerter": "{n, plural, one {Metinle ilgili # kelime} other {Metinle ilgili # kelime}}",
       "woerterText": "İşaretli bütün kelimeler ve anlamları."
     }
+  },
+  "quellenzeile": {
+    "band": "C. {band}",
+    "seite": "s. {seite}"
   }
 }

@@ -55,7 +55,13 @@ export default function Fallfrage({
         }
       />
       {auswertung ? (
-        <Erklaerung begruendung={aufgabe.begruendung} quelle={aufgabe.quelle} sprache={aufgabe.sprache} texte={texte.wissen} />
+        <Erklaerung
+          begruendung={aufgabe.begruendung}
+          quelle={aufgabe.quelle}
+          strittig={aufgabe.strittig}
+          sprache={aufgabe.sprache}
+          texte={texte.wissen}
+        />
       ) : null}
     </div>
   );

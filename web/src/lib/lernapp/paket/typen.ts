@@ -1,5 +1,5 @@
 import { LektionSchema } from '../aufgaben/schema';
-import { KURS_SLUGS, KURSE, RICHTUNGEN, SPRACHEN, STUFEN } from '../kurse';
+import { KURS_SLUGS, KURSE, PAKET_KURSE, SPRACHEN, STUFEN } from '../kurse';
 import * as z from '../z';
 import { INHALT_LIZENZ, PAKET_FORMAT, VERZEICHNIS_FORMAT } from './kennungen';
 
@@ -12,6 +12,9 @@ import { INHALT_LIZENZ, PAKET_FORMAT, VERZEICHNIS_FORMAT } from './kennungen';
  * - Das Verzeichnis `/lern-app/pakete/<kurs>` nennt je Einheit Hash und Größe (Bytes) des Pakets und des Audio-Bündels,
  *   damit der Client den Ring „offline speichern“ nach Bytes zeichnet (B-27).
  * - Quelle, Lizenz und Namensnennung stehen je Eintrag im Paket (`eintraege`), auch offline lesbar (ADR 0039 Nr. 9).
+ * - Wissenskurs (`kurs: 'islam'`, Inhalt nur Deutsch: Ziel- und Ausgangssprache `de`): dazu je Lektion der Prüfvermerk ohne
+ *   Namen (Datum, an dem alle Bausteine der Lektion zwei Freigaben hatten), „für Kinder geeignet“ und alle Aussagen der Lektion
+ *   mit ihrer Quellenzeile (KERN 4.0 §2.3 „Kennzeichnung“, PLAN §6.7 Nr. 7). Keine Einträge, keine Tipps, kein Audio.
  */
 
 export { INHALT_LIZENZ, PAKET_FORMAT, paketAdresse, VERZEICHNIS_FORMAT, verzeichnisAdresse } from './kennungen';
@@ -44,10 +47,28 @@ export const PaketTippSchema = z.strictObject({
   inhalt: z.looseObject({ type: z.literal('doc') }),
 });
 
-export const PaketSchema = z.strictObject({
+/** Aussage einer Lektion des Wissenskurses mit ihrer Quellenzeile (Werk, Kapitel, Ausgabe, Band, Seite – aus den Belegen). */
+export const WissensAussageSchema = z.strictObject({
+  schluessel: z.string(),
+  text: z.string().check(z.minLength(1), z.maxLength(800)),
+  quelle: z.string().check(z.minLength(1), z.maxLength(1200)),
+  /** Thema als strittig ausgewiesen (ADR 0040 Nr. 4) */
+  strittig: z.optional(z.literal(true)),
+});
+
+/** Prüfvermerk und Kennzeichnung einer Lektion des Wissenskurses (ohne Namen der Prüfenden, LM-20). */
+export const WissensLektionSchema = z.strictObject({
+  /** Tag (UTC), an dem der letzte Baustein der Lektion seine zweite Freigabe zum aktuellen Hash bekam */
+  geprueftAm: z.string().check(z.regex(/^\d{4}-\d{2}-\d{2}$/)),
+  kinderGeeignet: z.boolean(),
+  aussagen: z.array(WissensAussageSchema).check(z.minLength(1), z.maxLength(40)),
+});
+export type WissensLektionVermerk = z.infer<typeof WissensLektionSchema>;
+
+const PaketGrundSchema = z.strictObject({
   format: z.literal(PAKET_FORMAT),
   version: z.literal(1),
-  kurs: z.enum(RICHTUNGEN),
+  kurs: z.enum(PAKET_KURSE),
   zielsprache: z.enum(SPRACHEN),
   ausgangssprache: z.enum(SPRACHEN),
   einheit: z.strictObject({
@@ -65,7 +86,26 @@ export const PaketSchema = z.strictObject({
   /** Audio-Bündel, auf die das Paket verweist (meist das der Einheit; Wiederholungen früherer Wörter auch frühere); leer = „Audio folgt“ */
   audio: z.array(BuendelVerweisSchema).check(z.maxLength(40)),
   lizenz: z.literal(INHALT_LIZENZ),
+  /** nur Wissenskurs: Prüfvermerk, Kennzeichnung und Aussagen je Lektion (Schlüssel wie `lektionen[].schluessel`) */
+  wissen: z.optional(z.record(z.string(), WissensLektionSchema)),
 });
+
+export const PaketSchema = PaketGrundSchema.check(
+  z.superRefine((p, ctx) => {
+    if (p.kurs !== 'islam') {
+      if (p.wissen) ctx.addIssue({ code: 'custom', message: 'wissen nur im Wissenskurs', path: ['wissen'] });
+      return;
+    }
+    // Wissenskurs: Inhalt Deutsch, je Lektion ein Prüfvermerk, nichts aus den Sprachkursen
+    if (p.zielsprache !== 'de' || p.ausgangssprache !== 'de')
+      ctx.addIssue({ code: 'custom', message: 'Wissenskurs nur auf Deutsch', path: ['zielsprache'] });
+    if (Object.keys(p.eintraege).length || p.tipps.length || p.audio.length)
+      ctx.addIssue({ code: 'custom', message: 'Wissenskurs ohne Einträge, Tipps und Audio', path: ['eintraege'] });
+    const vermerke = p.wissen ?? {};
+    if (p.lektionen.some((l) => !vermerke[l.schluessel]) || Object.keys(vermerke).length !== p.lektionen.length)
+      ctx.addIssue({ code: 'custom', message: 'Prüfvermerk je Lektion fehlt', path: ['wissen'] });
+  }),
+);
 export type Paket = z.infer<typeof PaketSchema>;
 
 export const VerzeichnisEinheitSchema = z.strictObject({
