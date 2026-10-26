@@ -11,7 +11,7 @@ import { ergebnisText, ernsteBefunde, KURS, LEKTION_1, LEKTION_2, spieleLektion1
  * Lektion des Testkurses (L1, PLAN §13 E2E; KERN 4.0 §8): Auswahl, Paare und Wortbank nur mit der Tastatur (desktop) bzw.
  * per Tippen (telefon); Rückmeldung in der einen Live-Region; Ergebnis und XP stehen statisch (keine hochzählende Zahl);
  * danach Lernpfad und Start mit dem Stand auf dem Gerät. axe ohne ernste oder kritische Befunde auf Lernpfad und Spieler in
- * de/tr/ar. Mit `LERNAPP_BILDER=<ordner>` zusätzlich Bildschirmfotos von Lernpfad und Spieler.
+ * de/tr/ar und je Übungstyp der Lektion (Auswahl, Paare, Wortbank) auf beiden Breiten. Mit `LERNAPP_BILDER=<ordner>` zusätzlich Bildschirmfotos von Lernpfad und Spieler.
  */
 
 type Ui = 'de' | 'tr' | 'ar';
@@ -34,7 +34,10 @@ test.describe('Lektion des Testkurses (de)', () => {
     await lektion.focus();
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL((u) => u.pathname === `/lern-app/de/${KURS}/ueben` && u.searchParams.get('l') === LEKTION_1);
-    await spieleLektion1(page, 'tastatur');
+    // axe je Übungstyp (auch Paare und Wortbank, Stufe C N9b)
+    const befunde: string[] = [];
+    await spieleLektion1(page, 'tastatur', { axe: async (typ) => void befunde.push(...(await ernsteBefunde(page, `1440 ${typ}`))) });
+    expect(befunde).toEqual([]);
 
     // Ergebnis ohne hochzählende Zahl: sofort der Endwert und danach unverändert
     const xp = page.getByText(xpText(10), { exact: true });
@@ -80,7 +83,12 @@ test.describe('Lektion des Testkurses (de)', () => {
     test.skip(info.project.name !== 'telefon', 'Tippen auf dem Telefon, Tastatur auf dem Desktop');
     test.setTimeout(90_000);
     await page.goto(`/lern-app/de/${KURS}/ueben?l=${LEKTION_1}`);
-    await spieleLektion1(page, 'tippen', { ersteFalsch: true });
+    const befunde: string[] = [];
+    await spieleLektion1(page, 'tippen', {
+      ersteFalsch: true,
+      axe: async (typ) => void befunde.push(...(await ernsteBefunde(page, `390 ${typ}`))),
+    });
+    expect(befunde).toEqual([]);
     await expect(page.getByText(ergebnisText(3, 4), { exact: true })).toBeVisible();
     await expect(page.getByText(xpText(10), { exact: true })).toBeVisible();
     expect(await ueberlauf(page)).toBe(0);

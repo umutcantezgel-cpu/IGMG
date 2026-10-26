@@ -135,12 +135,18 @@ async function wortbank(page: Page, art: Bedienung, woerter: string[]) {
 
 /**
  * Spielt Lektion 1 des Testkurses (Oberfläche de) ganz durch. `ersteFalsch`: Die erste Aufgabe wird zuerst falsch beantwortet
- * und kommt am Ende ohne Strafe noch einmal. Prüft die Live-Region nach jeder Antwort.
+ * und kommt am Ende ohne Strafe noch einmal. Prüft die Live-Region nach jeder Antwort. `axe`: vor jeder Übung aufgerufen (Name
+ * des Übungstyps), z. B. für axe je Typ auf beiden Breiten (Stufe C N9b).
  */
-export async function spieleLektion1(page: Page, art: Bedienung, { ersteFalsch = false } = {}) {
+export async function spieleLektion1(
+  page: Page,
+  art: Bedienung,
+  { ersteFalsch = false, axe }: { ersteFalsch?: boolean; axe?: (typ: string) => Promise<void> } = {},
+) {
   const status = liveRegion(page);
   // erstes Laden der Lektion: Kursverzeichnis und Paket der Einheit (mit den echten Inhalten daneben etwas länger)
   await expect(page.getByRole('heading', { name: de.aufgaben.auswahl.waehleUebersetzung })).toBeVisible({ timeout: 15_000 });
+  await axe?.('auswahl');
   await auswahl(page, art, ersteFalsch ? 'Brot' : 'Wasser', { ziffer: !ersteFalsch });
   if (ersteFalsch) {
     await expect(status).toContainText(t.falsch);
@@ -149,16 +155,20 @@ export async function spieleLektion1(page: Page, art: Bedienung, { ersteFalsch =
   await weiter(page, art);
 
   await expect(page.getByRole('heading', { name: de.aufgaben.paare.findePaare })).toBeVisible();
+  await axe?.('paare');
   await paare(page, art);
   await expect(status).toHaveText(t.richtig);
   await weiter(page, art);
 
   await expect(page.getByRole('heading', { name: de.aufgaben.wortbank.uebersetze })).toBeVisible();
+  await axe?.('wortbank');
   await wortbank(page, art, ['Su', 'içiyorum']);
+  await axe?.('wortbank nach der Antwort');
   await expect(status).toHaveText(t.richtig);
   await weiter(page, art);
 
   await expect(page.getByRole('heading', { name: de.aufgaben.auswahl.waehleWort })).toBeVisible();
+  await axe?.('auswahl (Wort wählen)');
   await auswahl(page, art, 'kitap');
   await expect(status).toHaveText(t.richtig);
   await weiter(page, art);
@@ -204,4 +214,39 @@ export async function swSteuert(page: Page) {
   await expect
     .poll(() => page.evaluate(() => navigator.serviceWorker.controller?.scriptURL ?? ''), { timeout: 30_000 })
     .toContain('/lern-app/sw.js');
+}
+
+/**
+ * Die erste wertbare Aufgabe des Spielers beantworten, ohne die Lösung zu kennen (Stufe C N9b, echte Inhalte): Optionen →
+ * erste Option, Wortbank → erste Kachel, Textfeld → ein Zeichen; Tipps ohne Wertung werden bestätigt. Danach liegt der Fokus
+ * auf „Weiter“ (Rückmeldeblatt); `weiter` drückt es.
+ */
+export async function beantworteErste(page: Page, texte: typeof de = de, { weiter: auchWeiter = false } = {}) {
+  for (let i = 0; i < 6; i++) {
+    const form = page.locator('main form[data-aufgabe]');
+    await expect(form).toBeVisible({ timeout: 20_000 });
+    const verstanden = page.getByRole('button', { name: texte.aufgaben2.grammatikTipp.verstanden, exact: true });
+    if (await verstanden.count()) {
+      await verstanden.click();
+      continue;
+    }
+    // die Übung lädt als eigener Chunk: auf ein Bedienelement warten
+    const bedienung = form.getByRole('radio').or(form.getByRole('toolbar').getByRole('button')).or(form.getByRole('textbox'));
+    await expect(bedienung.first()).toBeAttached({ timeout: 20_000 });
+    if (await form.getByRole('radio').count())
+      await form
+        .locator('label')
+        .filter({ has: page.getByRole('radio') })
+        .first()
+        .click();
+    else if (await form.getByRole('toolbar').getByRole('button').count())
+      await form.getByRole('toolbar').getByRole('button').first().click();
+    else await form.getByRole('textbox').first().fill('x');
+    await page.getByRole('button', { name: texte.spieler.pruefen, exact: true }).click();
+    const w = page.getByRole('button', { name: texte.spieler.weiter, exact: true });
+    await expect(w).toBeFocused();
+    if (auchWeiter) await w.click();
+    return;
+  }
+  throw new Error('keine wertbare Aufgabe gefunden');
 }

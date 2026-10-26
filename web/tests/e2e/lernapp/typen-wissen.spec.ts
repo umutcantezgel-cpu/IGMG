@@ -176,7 +176,7 @@ async function spiele(page: Page, art: Bedienung) {
   // 1 wahr_falsch: Aussage in ihrer Sprache, Urteil, danach Ergebnis in Worten, Begründung, Quelle aufklappbar
   await expect(page.getByRole('heading', { name: t.aufgaben.wahr_falsch.stimmtDas })).toBeVisible();
   await expect(uebung(page, 'wahr_falsch').locator('p[lang="de"]').first()).toHaveText('[Aussage 1]');
-  if (art === 'tastatur') expect(await ernsteBefunde(page, 'wahr_falsch')).toEqual([]);
+  expect(await ernsteBefunde(page, `${art} wahr_falsch`)).toEqual([]);
   await waehle(page, t, art, radio(page, t.aufgaben.wahr_falsch.stimmtNicht));
   await expect(liveRegion(page)).toContainText(t.spieler.richtig);
   const weiterKnopf = page.getByRole('button', { name: t.spieler.weiter, exact: true });
@@ -186,12 +186,12 @@ async function spiele(page: Page, art: Bedienung) {
   // Quellenzeile aufklappen (eigenes Bedienelement, danach weiter mit „Weiter“)
   await druecke(page, page.getByText(t.aufgaben.wissen.quelleZeigen, { exact: true }), art);
   await expect(page.getByText('[Werk, Kapitel, Ausgabe]', { exact: true })).toBeVisible();
-  if (art === 'tastatur') expect(await ernsteBefunde(page, 'wahr_falsch nach der Antwort')).toEqual([]);
+  expect(await ernsteBefunde(page, `${art} wahr_falsch nach der Antwort`)).toEqual([]);
   await druecke(page, weiterKnopf, art);
 
   // 2 zuordnen: je Eintrag eine Radiogruppe (Legende = Eintrag)
   await expect(page.getByRole('heading', { name: t.aufgaben.zuordnen.ordneZu })).toBeVisible();
-  if (art === 'tastatur') expect(await ernsteBefunde(page, 'zuordnen')).toEqual([]);
+  expect(await ernsteBefunde(page, `${art} zuordnen`)).toEqual([]);
   const ziel = ['[Kategorie A]', '[Kategorie B]', '[Kategorie C]'];
   for (const [i, e] of ZO.eintraege.entries())
     await waehle(page, t, art, radio(page.getByRole('group', { name: e.text, exact: true }), ziel[i]!), {
@@ -203,13 +203,14 @@ async function spiele(page: Page, art: Bedienung) {
   // 3 reihenfolge: auf dem Desktop zuerst ungeordnet prüfen (Rückmeldung je Stelle, kommt am Ende noch einmal)
   await expect(page.getByRole('heading', { name: t.aufgaben.reihenfolge.ordne })).toBeVisible();
   if (art === 'tastatur') {
-    expect(await ernsteBefunde(page, 'reihenfolge')).toEqual([]);
+    expect(await ernsteBefunde(page, `${art} reihenfolge`)).toEqual([]);
     await pruefen(page, t, art);
     await expect(liveRegion(page)).toContainText(t.spieler.falsch);
     await expect(liveRegion(page)).toContainText(t.spieler.spaeter);
     await expect(uebung(page, 'reihenfolge')).toContainText(formatiere(t.aufgaben.reihenfolge.gehoertAn, { nr: 1 }, 'de'));
     await weiter(page, t, art);
   } else {
+    expect(await ernsteBefunde(page, `${art} reihenfolge`)).toEqual([]);
     await sortiere(page, t, art, 'de');
     await pruefen(page, t, art);
     await richtig(page, t, art);
@@ -218,7 +219,7 @@ async function spiele(page: Page, art: Bedienung) {
   // 4 fallfrage: Hinweis „keine Auskunft für eigene Fälle“
   await expect(page.getByRole('heading', { name: t.aufgaben.fallfrage.waehleAntwort })).toBeVisible();
   await expect(page.getByText(t.aufgaben.fallfrage.hinweis)).toBeVisible();
-  if (art === 'tastatur') expect(await ernsteBefunde(page, 'fallfrage')).toEqual([]);
+  expect(await ernsteBefunde(page, `${art} fallfrage`)).toEqual([]);
   await waehle(page, t, art, radio(page, '[Antwort B]'));
   await expect(uebung(page, 'fallfrage')).toContainText('[Begründung 2]');
   await richtig(page, t, art);
@@ -227,7 +228,7 @@ async function spiele(page: Page, art: Bedienung) {
   await expect(page.getByRole('heading', { name: t.aufgaben.koran_wort.waehleBedeutung })).toBeVisible();
   await expect(uebung(page, 'koran_wort').locator('p[lang="ar"][dir="rtl"].font-quran')).toHaveText('[Wortform 1]');
   await expect(uebung(page, 'koran_wort')).toContainText(formatiere(t.aufgaben.koran_wort.stelle, { stelle: '0:0:1' }, 'de'));
-  if (art === 'tastatur') expect(await ernsteBefunde(page, 'koran_wort')).toEqual([]);
+  expect(await ernsteBefunde(page, `${art} koran_wort`)).toEqual([]);
   await waehle(page, t, art, radio(page, '[Bedeutung 1]'));
   await richtig(page, t, art);
 
@@ -268,6 +269,7 @@ test.describe('Übungstypen aus L2-03 (Wissenskurs, Koran-Arabisch)', () => {
 
     await expect(page.getByRole('heading', { name: t.aufgaben.wahr_falsch.stimmtDas })).toBeVisible();
     await expect(uebung(page, 'wahr_falsch').locator('p[lang="de"][dir="ltr"]')).toHaveText('[Aussage 1]');
+    expect(await ernsteBefunde(page, `${art} ar wahr_falsch`)).toEqual([]);
     await waehle(page, t, art, radio(page, t.aufgaben.wahr_falsch.stimmtNicht));
     await expect(uebung(page, 'wahr_falsch')).toContainText(t.aufgaben.wahr_falsch.ergebnisFalsch);
     await richtig(page, t, art);
@@ -282,15 +284,17 @@ test.describe('Übungstypen aus L2-03 (Wissenskurs, Koran-Arabisch)', () => {
     // der dritte Eintrag gehört woandershin: Hinweis mit deutscher Kategorie, isoliert in der arabischen Zeile
     await expect(liveRegion(page)).toContainText(t.spieler.falsch);
     await expect(uebung(page, 'zuordnen').locator('bdi[lang="de"][dir="ltr"]', { hasText: '[Kategorie C]' })).toBeVisible();
-    if (art === 'tastatur') expect(await ernsteBefunde(page, 'ar zuordnen')).toEqual([]);
+    expect(await ernsteBefunde(page, `${art} ar zuordnen`)).toEqual([]);
     await weiter(page, t, art);
 
     await expect(page.getByRole('heading', { name: t.aufgaben.reihenfolge.ordne })).toBeVisible();
+    expect(await ernsteBefunde(page, `${art} ar reihenfolge`)).toEqual([]);
     await sortiere(page, t, art, 'ar', umbenannt(RF, 'l02'));
     await pruefen(page, t, art);
     await richtig(page, t, art);
 
     await expect(page.getByRole('heading', { name: t.aufgaben.fallfrage.waehleAntwort })).toBeVisible();
+    expect(await ernsteBefunde(page, `${art} ar fallfrage`)).toEqual([]);
     await waehle(page, t, art, radio(page, '[Antwort B]'));
     await richtig(page, t, art);
 
@@ -353,7 +357,7 @@ test.describe('Wissenskurs mit echten Paketen (Testeinheit aus dem Seed, Vorfüh
     ]);
     await expect(inhalt.locator('bdi[lang="de"]')).toHaveText([QUELLE, QUELLE.replace('S. 1', 'S. 2'), QUELLE.replace('S. 1', 'S. 3')]);
     await expect(inhalt.getByText(t.lernpfad.strittigesThema, { exact: true })).toHaveCount(1);
-    if (art === 'tastatur') expect(await ernsteBefunde(page, 'wissen-lernpfad')).toEqual([]);
+    expect(await ernsteBefunde(page, `${art} wissen-lernpfad`)).toEqual([]);
 
     await page.goto(`/lern-app/de/islam/ueben?l=${E}.l01`);
     // 1 wahr_falsch mit Quellenzeile der Aussage
@@ -366,7 +370,7 @@ test.describe('Wissenskurs mit echten Paketen (Testeinheit aus dem Seed, Vorfüh
     if (art === 'tastatur') await expect(weiterKnopf).toBeFocused();
     await druecke(page, page.getByText(t.aufgaben.wissen.quelleZeigen, { exact: true }), art);
     await expect(page.getByText(QUELLE, { exact: true })).toBeVisible();
-    if (art === 'tastatur') expect(await ernsteBefunde(page, 'wissen wahr_falsch')).toEqual([]);
+    expect(await ernsteBefunde(page, `${art} wissen wahr_falsch`)).toEqual([]);
     await druecke(page, weiterKnopf, art);
 
     // 2 zuordnen: Kategorien aus den rechten Seiten der Paare, die inhaltliche Frage der Quizfrage steht darüber

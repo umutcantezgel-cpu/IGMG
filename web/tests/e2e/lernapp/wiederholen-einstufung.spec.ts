@@ -78,7 +78,7 @@ test('Einstufung: adaptiv über zwei Stufen, Vorschlag mit Einheit, Ereignis und
   const start = page.getByRole('button', { name: t.einstufung.start, exact: true });
   await ruhig(page);
   expect(skripte.texte.some((s) => s.includes(ZOD_MARKE))).toBe(false);
-  if (tastatur) expect(await ernsteBefunde(page, 'einstufung start')).toEqual([]);
+  expect(await ernsteBefunde(page, `${info.project.name} einstufung start`)).toEqual([]);
   await start.click();
 
   // A1: richtig, richtig → A2: falsch, falsch → Ende
@@ -106,7 +106,7 @@ test('Einstufung: adaptiv über zwei Stufen, Vorschlag mit Einheit, Ereignis und
     await expect(liveRegion(page)).toContainText(stufe === 'a1' ? t.spieler.richtig : t.spieler.falsch);
     // keine Wiederholung im Test
     await expect(liveRegion(page)).not.toContainText(t.spieler.spaeter);
-    if (n === 1 && tastatur) expect(await ernsteBefunde(page, 'einstufung frage')).toEqual([]);
+    if (n === 1) expect(await ernsteBefunde(page, `${info.project.name} einstufung frage`)).toEqual([]);
     const weiter = page.getByRole('button', { name: t.spieler.weiter, exact: true });
     if (tastatur) {
       await expect(weiter).toBeFocused();
@@ -176,8 +176,15 @@ test('Wiederholen: ohne Karten leer und ohne Zod; nach einer Lektion mit Fehler 
   await page.goto(`/lern-app/de/${KURS}/wiederholen`);
   await expect(page.locator('main form[data-aufgabe]')).toBeVisible();
   await expect(page.getByRole('progressbar', { name: t.spieler.fortschritt })).toBeVisible();
-  for (let i = 0; i < 8 && (await page.locator('main form[data-aufgabe]').count()) > 0; i++) await loese(page);
+  // axe je Aufgabe der Runde auf beiden Breiten (Stufe C N9b)
+  const befunde: string[] = [];
+  for (let i = 0; i < 8 && (await page.locator('main form[data-aufgabe]').count()) > 0; i++) {
+    befunde.push(...(await ernsteBefunde(page, `${info.project.name} wiederholen ${i + 1}`)));
+    await loese(page);
+  }
   await expect(page.getByRole('heading', { name: t.spieler.fertigTitel })).toBeVisible();
+  befunde.push(...(await ernsteBefunde(page, `${info.project.name} wiederholen fertig`)));
+  expect(befunde).toEqual([]);
   await expect(page.getByRole('link', { name: t.spieler.zurueck })).toBeVisible();
   expect(skripte.texte.some((s) => s.includes(ZOD_MARKE))).toBe(true);
   const lektionen = await ereignisse(page, 'lektion');

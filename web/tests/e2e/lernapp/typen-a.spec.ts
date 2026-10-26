@@ -9,7 +9,8 @@ import { ernsteBefunde, liveRegion } from './hilfen';
  * Hörübung ohne Ton („Audio folgt“, übersprungen), Hören und wählen, Diktat, Minimalpaar, Lücke, Satzbau, Formen und im
  * Arabischen Harakat – je Typ per Tastatur (desktop) und per Tippen (telefon), in der deutschen Oberfläche (tr-aus-de) und in
  * der arabischen Oberfläche von rechts nach links (ar-aus-de: harakat, frei mit Bildschirmtastatur, luecke als Freitext).
- * Dazu: Wiedergabe normal und langsam bis `ended`, Rückfall über WAV bei Medienfehler, „Ich kann gerade nicht hören“, axe.
+ * Dazu: Wiedergabe normal und langsam bis `ended`, Rückfall über WAV bei Medienfehler, „Ich kann gerade nicht hören“, axe je
+ * Übungstyp auf beiden Breiten (Stufe C N9b: auch Hörübungen, Minimalpaar, Lücke und Satzbau).
  * Arabische Testdaten nur als Codepunkt-Escapes (neutrale Alltagswörter aus dem Seed).
  */
 
@@ -144,6 +145,9 @@ async function wortbank(page: Page, t: Texte, art: Bedienung, woerter: string[],
 /** Lektion l03 in der deutschen Oberfläche (Türkisch lernen). */
 async function spieleTurkisch(page: Page, art: Bedienung) {
   const t = de;
+  // axe je Übungstyp auf beiden Breiten (Stufe C N9b): Funde sammeln, am Ende leer
+  const befunde: string[] = [];
+  const axe = async (name: string) => befunde.push(...(await ernsteBefunde(page, `tr ${art} ${name}`)));
   await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l03');
 
   // 1 Bildkarte: vor der Antwort nur der Hinweis „Bildübung“, danach die Beschreibung (erstes Laden mit Verzeichnis und Paket)
@@ -151,7 +155,7 @@ async function spieleTurkisch(page: Page, art: Bedienung) {
   const bild = uebung(page, 'bild_wort').locator('figure');
   await expect(bild).toHaveAccessibleName(t.aufgaben.bild_wort.bild);
   await expect(bild.locator('svg path').first()).toBeAttached();
-  if (art === 'tastatur') expect(await ernsteBefunde(page, 'tr bild_wort')).toEqual([]);
+  await axe('bild_wort');
   await waehle(page, t, art, 'ev');
   await expect(bild.locator('figcaption')).toHaveText('Bild: Haus');
   await richtig(page, t, art);
@@ -161,6 +165,7 @@ async function spieleTurkisch(page: Page, art: Bedienung) {
   const frei = page.getByRole('textbox', { name: t.aufgaben.frei.eingabe });
   await expect(frei).toHaveAttribute('lang', 'tr');
   await expect(page.getByRole('toolbar', { name: t.tastatur.sonderzeichen })).toBeVisible();
+  await axe('frei');
   await schreibe(page, t, art, frei, 'ekmek');
   await richtig(page, t, art);
 
@@ -168,10 +173,12 @@ async function spieleTurkisch(page: Page, art: Bedienung) {
   await expect(page.getByRole('heading', { name: t.aufgaben.hoeren_waehlen.waehleGehoertes })).toBeVisible();
   await expect(page.getByText(t.aufgaben.hoeren.audioFolgt, { exact: true })).toBeVisible();
   await expect(page.getByRole('button', { name: t.spieler.pruefen, exact: true })).toHaveCount(0);
+  await axe('hoeren_waehlen ohne Ton');
   await druecke(page, page.getByRole('button', { name: t.aufgaben.hoeren.ueberspringen, exact: true }), art);
 
   // 4 Hören und wählen: normal und langsam (0,75, gleiche Tonhöhe) bis zum Ende, dann die Bedeutung
   await expect(page.getByRole('heading', { name: t.aufgaben.hoeren_waehlen.waehleBedeutung })).toBeVisible();
+  await axe('hoeren_waehlen');
   await anhoeren(page, t, art);
   await anhoeren(page, t, art, { langsam: true });
   const g = await gehoert(page);
@@ -181,10 +188,12 @@ async function spieleTurkisch(page: Page, art: Bedienung) {
   ]);
   await waehle(page, t, art, 'Wasser');
   await expect(uebung(page, 'hoeren_waehlen')).toContainText(`${t.aufgaben.hoeren.abschrift} su`);
+  await axe('hoeren_waehlen nach der Antwort (Abschrift)');
   await richtig(page, t, art);
 
   // 5 Diktat
   await expect(page.getByRole('heading', { name: t.aufgaben.hoeren_schreiben.schreibeGehoertes })).toBeVisible();
+  await axe('hoeren_schreiben');
   await anhoeren(page, t, art);
   await schreibe(page, t, art, page.getByRole('textbox', { name: t.aufgaben.hoeren_schreiben.eingabe }), 'kitap');
   await expect(uebung(page, 'hoeren_schreiben')).toContainText(`${t.aufgaben.hoeren.abschrift} kitap`);
@@ -192,6 +201,7 @@ async function spieleTurkisch(page: Page, art: Bedienung) {
 
   // 6 Minimalpaar
   await expect(page.getByRole('heading', { name: t.aufgaben.minimalpaare.waehleGehoertes })).toBeVisible();
+  await axe('minimalpaare');
   await anhoeren(page, t, art);
   await waehle(page, t, art, 'üç');
   await richtig(page, t, art);
@@ -199,11 +209,13 @@ async function spieleTurkisch(page: Page, art: Bedienung) {
   // 7 Lücke mit Optionen
   await expect(page.getByRole('heading', { name: t.aufgaben.luecke.ergaenze })).toBeVisible();
   await expect(uebung(page, 'luecke').locator('p[lang="tr"]').first()).toContainText('Su');
+  await axe('luecke');
   await waehle(page, t, art, 'içiyorum');
   await richtig(page, t, art);
 
   // 8 Satzbau
   await expect(page.getByRole('heading', { name: t.aufgaben.satzbau.ordne })).toBeVisible();
+  await axe('satzbau');
   await wortbank(page, t, art, ['Ev', 'büyük'], 'de');
   await richtig(page, t, art);
 
@@ -238,7 +250,7 @@ async function spieleTurkisch(page: Page, art: Bedienung) {
   }
   await expect(o).toHaveValue('içiyor');
   await expect(sen).toHaveValue('içiyorsun');
-  if (art === 'tastatur') expect(await ernsteBefunde(page, 'tr formen')).toEqual([]);
+  await axe('formen');
   if (art === 'tastatur') await page.keyboard.press('Enter');
   else await pruefen(page, t, art);
   await richtig(page, t, art);
@@ -246,16 +258,20 @@ async function spieleTurkisch(page: Page, art: Bedienung) {
   // Ende: acht gespielte Aufgaben (die ohne Ton zählt nicht), XP statisch
   await expect(page.getByRole('heading', { name: t.spieler.fertigTitel })).toBeVisible();
   await expect(page.getByText(formatiere(t.spieler.fertigText, { richtig: 8, gesamt: 8 }, 'de'), { exact: true })).toBeVisible();
+  expect(befunde).toEqual([]);
 }
 
 /** Lektion l03 in der arabischen Oberfläche (Arabisch lernen aus dem Deutschen), von rechts nach links. */
 async function spieleArabisch(page: Page, art: Bedienung) {
   const t = ar as unknown as Texte;
+  const befunde: string[] = [];
+  const axe = async (name: string) => befunde.push(...(await ernsteBefunde(page, `ar ${art} ${name}`)));
   await page.goto('/lern-app/ar/ar-aus-de/ueben?l=ar-aus-de.a1.test.l03');
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
 
   // 1 Bildkarte (erstes Laden: Kursverzeichnis und Paket)
   await expect(page.getByRole('heading', { name: t.aufgaben.bild_wort.waehleWort })).toBeVisible({ timeout: 15_000 });
+  await axe('bild_wort');
   await waehle(page, t, art, AR.bayt);
   await expect(uebung(page, 'bild_wort').locator('figcaption bdi[lang="de"]')).toHaveText('Haus');
   await richtig(page, t, art);
@@ -285,7 +301,7 @@ async function spieleArabisch(page: Page, art: Bedienung) {
     }
   } else for (const c of AR.khubz) await taste(c).tap();
   await expect(feld).toHaveValue(AR.khubz.join(''));
-  if (art === 'tastatur') expect(await ernsteBefunde(page, 'ar frei Tastatur')).toEqual([]);
+  await axe('frei mit Bildschirmtastatur');
   await pruefen(page, t, art);
   await richtig(page, t, art);
 
@@ -295,16 +311,21 @@ async function spieleArabisch(page: Page, art: Bedienung) {
 
   // 4 Hören und wählen (Bedeutung auf Deutsch)
   await expect(page.getByRole('heading', { name: t.aufgaben.hoeren_waehlen.waehleBedeutung })).toBeVisible();
+  await axe('hoeren_waehlen');
   await anhoeren(page, t, art);
   await waehle(page, t, art, 'Wasser');
   await richtig(page, t, art);
 
   // 5 Diktat (ohne Harakat angenommen)
+  await expect(page.getByRole('heading', { name: t.aufgaben.hoeren_schreiben.schreibeGehoertes })).toBeVisible();
+  await axe('hoeren_schreiben');
   await anhoeren(page, t, art);
   await schreibe(page, t, art, page.getByRole('textbox', { name: t.aufgaben.hoeren_schreiben.eingabe }), AR.kitabOhne);
   await richtig(page, t, art);
 
   // 6 Minimalpaar ḥāʾ/hāʾ
+  await expect(page.getByRole('heading', { name: t.aufgaben.minimalpaare.waehleGehoertes })).toBeVisible();
+  await axe('minimalpaare');
   await anhoeren(page, t, art);
   await waehle(page, t, art, AR.hal);
   await richtig(page, t, art);
@@ -313,10 +334,13 @@ async function spieleArabisch(page: Page, art: Bedienung) {
   await expect(page.getByRole('heading', { name: t.aufgaben.luecke.ergaenze })).toBeVisible();
   const luecke = page.getByRole('textbox', { name: t.aufgaben.luecke.luecke, exact: true });
   await expect(luecke).toHaveAttribute('dir', 'rtl');
+  await axe('luecke als Freitext');
   await schreibe(page, t, art, luecke, AR.ashrab);
   await richtig(page, t, art);
 
   // 8 Satzbau
+  await expect(page.getByRole('heading', { name: t.aufgaben.satzbau.ordne })).toBeVisible();
+  await axe('satzbau');
   await wortbank(page, t, art, [AR.albaytu, AR.kabirun], 'ar');
   await richtig(page, t, art);
 
@@ -324,6 +348,7 @@ async function spieleArabisch(page: Page, art: Bedienung) {
   await expect(page.getByRole('heading', { name: t.aufgaben.formen.ergaenze })).toBeVisible();
   const felder = uebung(page, 'formen').getByRole('textbox');
   await expect(felder).toHaveCount(2);
+  await axe('formen');
   for (const [i, wert] of [AR.tashrab, AR.yashrab].entries()) {
     const f = felder.nth(i);
     await expect(f).toHaveAttribute('dir', 'rtl');
@@ -341,12 +366,13 @@ async function spieleArabisch(page: Page, art: Bedienung) {
   await expect(kitab).toHaveAccessibleDescription(
     `${ar.aufgaben.harakat.zeichen.u0643} ${ar.aufgaben.harakat.zeichen.u0650}, ${ar.aufgaben.harakat.zeichen.u062A} ${ar.aufgaben.harakat.zeichen.u064E}, ${ar.aufgaben.harakat.zeichen.u0627}, ${ar.aufgaben.harakat.zeichen.u0628}`,
   );
-  if (art === 'tastatur') expect(await ernsteBefunde(page, 'ar harakat')).toEqual([]);
+  await axe('harakat');
   await waehle(page, t, art, AR.kitab);
   await richtig(page, t, art);
 
   await expect(page.getByRole('heading', { name: t.spieler.fertigTitel })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBe(0);
+  expect(befunde).toEqual([]);
 }
 
 test.describe('Übungstypen aus L2-01', () => {
