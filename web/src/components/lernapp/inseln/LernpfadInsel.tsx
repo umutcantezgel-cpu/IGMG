@@ -91,11 +91,16 @@ async function koepfeAusDemVorrat(
 }
 
 /**
- * Seiten des Kurses samt Programmteilen in den Kursvorrat dieses Baus holen (nur was fehlt, Stufe C N9a, G-1); währenddessen
- * „wird aktualisiert“. `true`, wenn alles da ist – ohne Service Worker (Entwicklung) wie bisher.
+ * Seiten des Kurses samt Programmteilen in den Kursvorrat dieses Baus holen (nur was fehlt, Stufe C N9a, G-1); fehlten sie,
+ * währenddessen „wird aktualisiert“ (ein vollständiger Stand flackert nicht). `true`, wenn alles da ist – ohne Service Worker
+ * (Entwicklung) wie bisher.
  */
-async function holeSeiten(ui: Oberflaeche, kurs: KursSlug, setSeiten: (s: SeitenZustand) => void): Promise<boolean> {
-  setSeiten('aktualisiert');
+async function holeSeiten(
+  ui: Oberflaeche,
+  kurs: KursSlug,
+  setSeiten: (s: SeitenZustand | ((alt: SeitenZustand) => SeitenZustand)) => void,
+): Promise<boolean> {
+  setSeiten((alt) => (alt === 'unvollstaendig' ? 'aktualisiert' : alt));
   const stand = await bereiteOfflineVor(ui, kurs);
   const ok = stand === 'vollstaendig' || stand === 'ohne';
   setSeiten(ok ? 'vollstaendig' : 'unvollstaendig');
