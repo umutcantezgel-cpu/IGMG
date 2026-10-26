@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import de from '../../../messages/lernapp/de.json';
-import { KURS, LEKTION_1, spieleLektion1 } from './hilfen';
+import { KURS, LEKTION_1, spieleLektion1, testStation } from './hilfen';
 
 /**
  * Netzprotokoll ohne Konto (KERN 4.0 §6, ADR 0038 Nr. 1, Abnahme Z-L08): Start, Lernpfad, Einheit offline speichern, eine
@@ -17,7 +17,7 @@ test('ohne Konto: nur GET an den eigenen Ursprung, keine API, keine Cookies', as
   await page.goto('/lern-app/de');
   await expect(page.getByText(de.heute.nochNichts)).toBeVisible();
   await page.goto(`/lern-app/de/${KURS}`);
-  await page.getByRole('button', { name: de.lernpfad.offline }).click();
+  await testStation(page).getByRole('button', { name: de.lernpfad.offline }).click();
   await expect(page.locator('main').getByText(de.lernpfad.offlineFertig.split(' (')[0]!).first()).toBeVisible({ timeout: 60_000 });
   await page.goto(`/lern-app/de/${KURS}/ueben?l=${LEKTION_1}`);
   await spieleLektion1(page, 'tastatur');
@@ -26,7 +26,7 @@ test('ohne Konto: nur GET an den eigenen Ursprung, keine API, keine Cookies', as
   await expect(page.getByRole('status').filter({ hasText: de.einstellungen.gespeichert })).toBeVisible();
   await page.goto(`/lern-app/de/${KURS}/wiederholen`);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(de.wiederholen.titel);
-  await page.goto(`/lern-app/de/${KURS}/tipps?e=tr.a1.e01`);
+  await page.goto(`/lern-app/de/${KURS}/tipps?e=tr.a1.test`);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(de.tipps.titel);
   await page.goto('/lern-app/de');
   await expect(page.getByText(de.heute.nochNichts)).toHaveCount(0);

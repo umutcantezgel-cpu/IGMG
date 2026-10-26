@@ -181,7 +181,7 @@ test('Lehrkraft weist zu, Kind lernt ohne Bestenliste, Lehrkraft sieht „erledi
     const kb = await jsKb(l);
     console.log(`Mein Bereich, Lehrkraft › Lern-App: JS ${kb.toFixed(1)} KB gzip (Budget 230 KB)`);
 
-    await l.getByLabel(u.zuweisen.einheit, { exact: true }).selectOption(`${KURS}|tr.a1.e01`);
+    await l.getByLabel(u.zuweisen.einheit, { exact: true }).selectOption(`${KURS}|tr.a1.test`);
     await l.getByRole('button', { name: u.zuweisen.waehlen }).click();
     await l.getByRole('radio', { name: u.zuweisen.lektion.replace('{nr}', '1'), exact: true }).check();
     await l.getByRole('button', { name: u.zuweisen.knopf }).click();
@@ -263,7 +263,7 @@ test('Lehrkraft weist zu, Kind lernt ohne Bestenliste, Lehrkraft sieht „erledi
 
 const sa = de.schreibabgabe;
 const kontoAbgaben = meinBereichTexte.de.meinBereich.konto.abgaben;
-const LEKTION_4 = `${KURS}.a1.e01.l04`;
+const LEKTION_4 = `${KURS}.a1.test.l04`;
 const TEXT = 'Ben su içiyorum. Kitap yeni.';
 /** Darf nirgends erscheinen: Das Kommentarfeld fehlt bei Kindern (S-L2 M-1). */
 const KOMMENTAR = '[Kommentar] Schöne Sätze. Schreibe beim nächsten Mal noch einen dritten Satz.';
@@ -337,7 +337,7 @@ test('Kind sendet einen Text an die Lehrkraft, die Lehrkraft gibt ihn mit Rückm
     await eigeneAbsenderAdresse(l);
     await leitungAnmelden(l, z.lehrkraft);
     await l.goto(seite);
-    await l.getByLabel(u.zuweisen.einheit, { exact: true }).selectOption(`${KURS}|tr.a1.e01`);
+    await l.getByLabel(u.zuweisen.einheit, { exact: true }).selectOption(`${KURS}|tr.a1.test`);
     await l.getByRole('button', { name: u.zuweisen.waehlen }).click();
     await l.getByRole('radio', { name: u.zuweisen.lektion.replace('{nr}', '4'), exact: true }).check();
     await l.getByRole('button', { name: u.zuweisen.knopf }).click();

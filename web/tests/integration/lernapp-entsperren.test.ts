@@ -68,7 +68,7 @@ const GESPEICHERT = { gespeichert: expect.any(Number) };
 
 describe('Wieder freigeben nur, was die Meldung gesperrt hat und unverändert ist (L3-06b)', () => {
   it('über eine Meldung gesperrt, danach in der Datei entfernt: nicht freizugeben, auch nach übersprungenem Import', async () => {
-    const ZIEL = 'tr.a1.e01.l01.a02';
+    const ZIEL = 'tr.a1.test.l01.a02';
     await angemeldetAls(BILDUNG);
     expect(await standEntfernt()).toEqual([]);
     expect(await sperren(await meldung(ZIEL), ZIEL)).toMatchObject(GESPEICHERT);
@@ -81,7 +81,7 @@ describe('Wieder freigeben nur, was die Meldung gesperrt hat und unverändert is
     expect(await gesperrte()).toEqual([]);
     expect(await entsperren(ZIEL)).toEqual({ fehler: 'nichtGefunden' });
     expect((await aufgabe(ZIEL)).status).toBe('gesperrt');
-    expect((await ladeVorschau('tr-aus-de', 'tr.a1.e01.l01'))!.lektion.aufgaben.some((x) => x.schluessel === ZIEL)).toBe(false);
+    expect((await ladeVorschau('tr-aus-de', 'tr.a1.test.l01'))!.lektion.aufgaben.some((x) => x.schluessel === ZIEL)).toBe(false);
 
     // Der nächste Import überspringt die unveränderten Dateien; die Liste bleibt
     const b2 = await importiereLernapp(appDb, mitTr(ohne(ZIEL)), QUELLE);
@@ -99,7 +99,7 @@ describe('Wieder freigeben nur, was die Meldung gesperrt hat und unverändert is
   });
 
   it('gesperrt bei „veroeffentlicht“, der Import ändert und entfernt ihn: nie „veroeffentlicht“ für den neuen Hash', async () => {
-    const ZIEL = 'tr.a1.e01.l01.a02';
+    const ZIEL = 'tr.a1.test.l01.a02';
     await angemeldetAls(BILDUNG);
     await veroeffentliche(ZIEL);
     const h1 = (await aufgabe(ZIEL)).inhaltHash;
@@ -117,7 +117,7 @@ describe('Wieder freigeben nur, was die Meldung gesperrt hat und unverändert is
   });
 
   it('Inhalt seit der Sperre geändert (Alternative ergänzt): nicht freizugeben; die Freigabe selbst prüft den Hash', async () => {
-    const ZIEL = 'tr.a1.e01.l02.a02';
+    const ZIEL = 'tr.a1.test.l02.a02';
     await angemeldetAls(BILDUNG);
     await veroeffentliche(ZIEL);
     const h1 = (await aufgabe(ZIEL)).inhaltHash;
@@ -135,7 +135,7 @@ describe('Wieder freigeben nur, was die Meldung gesperrt hat und unverändert is
   });
 
   it('zweite Sperre eines gesperrten Eintrags überschreibt den Stand nicht; nach einer Freigabe sperrt nur noch der Import', async () => {
-    const ZIEL = 'tr.a1.e01.l01.a04';
+    const ZIEL = 'tr.a1.test.l01.a04';
     await angemeldetAls(BILDUNG);
     await veroeffentliche(ZIEL);
     const erste = await meldung(ZIEL);
@@ -165,7 +165,7 @@ describe('Wieder freigeben nur, was die Meldung gesperrt hat und unverändert is
   });
 
   it('Sperre bzw. Freigabe und Audit in einer Transaktion: Scheitert das Audit, bleiben Status und Kursstand', async () => {
-    const ZIEL = 'tr.a1.e01.w003';
+    const ZIEL = 'tr.a1.test.w003';
     const vorher = await lemma(ZIEL);
     const stand = await kursstand();
     aufrufe.updateTag.length = 0;

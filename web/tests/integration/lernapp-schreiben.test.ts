@@ -103,8 +103,8 @@ async function gruppe(name: string): Promise<string> {
 
 const KURS = 'tr-aus-de' as const;
 /** Schreibaufgabe des Testkurses (Lektion l04) und eine Aufgabe anderen Typs */
-const AUFGABE = 'tr.a1.e01.l04.a08';
-const KEINE_SCHREIBAUFGABE = 'tr.a1.e01.l01.a01';
+const AUFGABE = 'tr.a1.test.l04.a08';
+const KEINE_SCHREIBAUFGABE = 'tr.a1.test.l01.a01';
 const TEXT = 'Ben su içiyorum. Kitap yeni.';
 const KIND_TEXT = 'Ev büyük.';
 const KOMMENTAR = '[Kommentar] Schöne Sätze; achte auf die Endungen.';
@@ -187,15 +187,15 @@ beforeAll(async () => {
   // Gruppe 1: Lektion l04 mit der Schreibaufgabe zugewiesen; Gruppe 2: nur Lektion l01
   await gruppenDienst.weiseZu(await kontext(ids.lehrkraftA), ids.gruppe1, {
     kurs: KURS,
-    einheit: 'tr.a1.e01',
-    lektion: 'tr.a1.e01.l04',
+    einheit: 'tr.a1.test',
+    lektion: 'tr.a1.test.l04',
     faellig: null,
     titel: 't',
   });
   await gruppenDienst.weiseZu(await kontext(ids.lehrkraftB), ids.gruppe2, {
     kurs: KURS,
-    einheit: 'tr.a1.e01',
-    lektion: 'tr.a1.e01.l01',
+    einheit: 'tr.a1.test',
+    lektion: 'tr.a1.test.l01',
     faellig: null,
     titel: 't',
   });

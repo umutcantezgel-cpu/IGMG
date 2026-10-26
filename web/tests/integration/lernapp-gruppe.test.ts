@@ -203,45 +203,45 @@ const kontext = (id: string) => ladeGruppenKontext(id);
 describe('Zuweisungen: nur die Lehrkraft der eigenen Gruppe', () => {
   it('Lehrkraft A weist eine Lektion zu; fremde Lehrkraft, Aufsicht, Lernende und Eltern nicht', async () => {
     const a = await kontext(ids.lehrkraftA);
-    const eingabe = { kurs: 'tr-aus-de', einheit: 'tr.a1.e01', lektion: 'tr.a1.e01.l01', faellig: null, titel: 't' };
+    const eingabe = { kurs: 'tr-aus-de', einheit: 'tr.a1.test', lektion: 'tr.a1.test.l01', faellig: null, titel: 't' };
     const id = await dienst.weiseZu(a, ids.gruppe1, eingabe);
     for (const fremd of [ids.lehrkraftB, ids.aufsicht, ids.jugend, ids.kind, ids.eltern])
-      await expect(dienst.weiseZu(await kontext(fremd), ids.gruppe1, { ...eingabe, lektion: 'tr.a1.e01.l02' })).rejects.toBeInstanceOf(
+      await expect(dienst.weiseZu(await kontext(fremd), ids.gruppe1, { ...eingabe, lektion: 'tr.a1.test.l02' })).rejects.toBeInstanceOf(
         dienst.KeinGruppenZugang,
       );
     await expect(dienst.weiseZu(a, ids.gruppe2, eingabe)).rejects.toBeInstanceOf(dienst.KeinGruppenZugang);
     // Audit ohne Inhalte: nur Kennungen
     const [eintrag] = await db.select().from(schema.auditEintrag).where(eq(schema.auditEintrag.aktion, 'lernapp.zuweisung_angelegt'));
-    expect(eintrag?.details).toEqual({ aufgabe: id, kurs: 'tr-aus-de', einheit: 'tr.a1.e01' });
+    expect(eintrag?.details).toEqual({ aufgabe: id, kurs: 'tr-aus-de', einheit: 'tr.a1.test' });
   });
 
   it('ungültige Einheit, fremde Lektion und doppelte Zuweisung werden abgelehnt', async () => {
     const a = await kontext(ids.lehrkraftA);
     const basis = { kurs: 'tr-aus-de', faellig: null, titel: 't' };
     await expect(dienst.weiseZu(a, ids.gruppe1, { ...basis, einheit: 'tr.a1.e99' })).rejects.toMatchObject({ grund: 'einheit' });
-    await expect(dienst.weiseZu(a, ids.gruppe1, { ...basis, einheit: 'tr.a1.e01', lektion: 'tr.a1.e01.l99' })).rejects.toMatchObject({
+    await expect(dienst.weiseZu(a, ids.gruppe1, { ...basis, einheit: 'tr.a1.test', lektion: 'tr.a1.test.l99' })).rejects.toMatchObject({
       grund: 'einheit',
     });
-    await expect(dienst.weiseZu(a, ids.gruppe1, { ...basis, einheit: 'tr.a1.e01', lektion: 'de.a1.e01.l01' })).rejects.toBeInstanceOf(
+    await expect(dienst.weiseZu(a, ids.gruppe1, { ...basis, einheit: 'tr.a1.test', lektion: 'de.a1.test.l01' })).rejects.toBeInstanceOf(
       dienst.UngueltigeZuweisung,
     );
     await expect(dienst.weiseZu(a, ids.gruppe1, { ...basis, kurs: 'islam', einheit: 'x.a1.e01' })).rejects.toMatchObject({
       grund: 'bezug',
     });
-    await expect(dienst.weiseZu(a, ids.gruppe1, { ...basis, einheit: 'tr.a1.e01', lektion: 'tr.a1.e01.l01' })).rejects.toMatchObject({
+    await expect(dienst.weiseZu(a, ids.gruppe1, { ...basis, einheit: 'tr.a1.test', lektion: 'tr.a1.test.l01' })).rejects.toMatchObject({
       grund: 'doppelt',
     });
   });
 
   it('Lektionen einer Einheit mit Paket-Schlüssel und Nummer', async () => {
-    const l = await dienst.lektionenVon('tr-aus-de', 'tr.a1.e01');
-    expect(l[0]).toMatchObject({ schluessel: 'tr.a1.e01.l01', paket: 'tr-aus-de.a1.e01.l01', nr: 1 });
+    const l = await dienst.lektionenVon('tr-aus-de', 'tr.a1.test');
+    expect(l[0]).toMatchObject({ schluessel: 'tr.a1.test.l01', paket: 'tr-aus-de.a1.test.l01', nr: 1 });
     expect(await dienst.lektionenVon('tr-aus-de', 'tr.a1.e99')).toEqual([]);
   });
 
   it('Entfernen nur durch die Lehrkraft der Gruppe der Zuweisung', async () => {
     const a = await kontext(ids.lehrkraftA);
-    const id = await dienst.weiseZu(a, ids.gruppe1, { kurs: 'tr-aus-de', einheit: 'tr.a1.e01', faellig: '2026-12-01', titel: 't' });
+    const id = await dienst.weiseZu(a, ids.gruppe1, { kurs: 'tr-aus-de', einheit: 'tr.a1.test', faellig: '2026-12-01', titel: 't' });
     await expect(dienst.entferneZuweisung(await kontext(ids.lehrkraftB), id)).rejects.toBeInstanceOf(dienst.KeinGruppenZugang);
     await expect(dienst.entferneZuweisung(await kontext(ids.aufsicht), id)).rejects.toBeInstanceOf(dienst.KeinGruppenZugang);
     expect(await db.select().from(schema.aufgabe).where(eq(schema.aufgabe.id, id))).toHaveLength(1);
@@ -303,7 +303,7 @@ describe('API /api/lernapp/gruppe: Isolation und Bestenliste', () => {
     for (const fremd of [ids.kind, ids.erwachsen, ids.fremd, ids.gruppe2, '[Kind]', '[Fremd]', '[Gruppe Zwei]'])
       expect(text).not.toContain(fremd);
     expect(a.zuweisungen.every((z) => z.gruppe === '[Gruppe Eins]')).toBe(true);
-    expect(a.zuweisungen[0]).toMatchObject({ kurs: 'tr-aus-de', lektion: 'tr-aus-de.a1.e01.l01', nr: 1, erledigt: false });
+    expect(a.zuweisungen[0]).toMatchObject({ kurs: 'tr-aus-de', lektion: 'tr-aus-de.a1.test.l01', nr: 1, erledigt: false });
     expect(a.zustimmung).toEqual({ erteilt: true });
   });
 
@@ -491,7 +491,7 @@ describe('S-L3 M-1: kein Rückschluss auf Wissenskurs und Koran-Arabisch (Art. 9
     const ohne = await dienst.standDerGruppe(b, ids.gruppe2, HEUTE);
     expect(ohne.kurse).toEqual([]);
     expect(ohne.zeilen.find((z) => z.name === '[Fremd] X')?.woche).toEqual({ xp: 0, lektionen: 0, lerntage: 0 });
-    await dienst.weiseZu(b, ids.gruppe2, { kurs: 'tr-aus-de', einheit: 'tr.a1.e01', faellig: null, titel: 't' });
+    await dienst.weiseZu(b, ids.gruppe2, { kurs: 'tr-aus-de', einheit: 'tr.a1.test', faellig: null, titel: 't' });
     const mit = await dienst.standDerGruppe(b, ids.gruppe2, HEUTE);
     expect(mit.kurse).toEqual(['tr-aus-de']);
     expect(mit.zeilen.find((z) => z.name === '[Fremd] X')?.woche).toEqual({ xp: 90, lektionen: 1, lerntage: 1 });

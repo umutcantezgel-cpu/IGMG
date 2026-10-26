@@ -8,7 +8,7 @@ import { ernsteBefunde } from './hilfen';
 /**
  * Verwaltung › Lern-App › Sprachprüfung (L3-06, ADR 0041 Nr. 3–5/10, PLAN §6.5/§7.2) mit dem Testkurs aus dem Seed: Die Rolle
  * „Sprachprüfung“ landet nach der Anmeldung direkt in der Warteschlange ihrer Prüfsprache (Deutsch), zieht die Stichprobe der
- * Zieltexte von `de.a1.e01`, beurteilt einen Eintrag mit dem Tastenkürzel 1 und einen mit Korrektur (2, leichte Kategorie,
+ * Zieltexte von `de.a1.test`, beurteilt einen Eintrag mit dem Tastenkürzel 1 und einen mit Korrektur (2, leichte Kategorie,
  * Korrekturvorschlag), prüft, dass die Kürzel nur im Prüfbereich wirken und sich ausschalten lassen (WCAG 2.1.4), und
  * wechselt die Sprache der Oberfläche (tr, ar: Gerüst links-nach-rechts, Texte mit `lang`/`dir`).
  * Die Stichprobe bleibt offen (weder veröffentlicht noch gesperrt), damit die übrigen Specs den Testkurs unverändert sehen.
@@ -42,13 +42,15 @@ async function pruefspracheDeutsch(email: string) {
 const eintragKopf = (page: Page) => page.getByRole('heading', { level: 2, name: /^Eintrag \d+ von \d+$/ });
 
 test('Sprachprüfung: Warteschlange, Stichprobe ziehen, Tastenkürzel, Korrektur, Sprachwahl', async ({ page }) => {
+  // Warteschlange und Stichprobe laufen über alle Einheiten der E2E-Datenbank (Testkurs und echte Inhalte A1–B1)
+  test.setTimeout(90_000);
   await angemeldetesKonto(page, 'sprachpruefung', undefined, pruefspracheDeutsch, /\/verwaltung\/lernapp\/sprachpruefung$/);
   await expect(page.getByRole('heading', { level: 1, name: d.titel })).toBeVisible();
   await expect(page.getByText(d.eigeneSprachen.replace('{sprachen}', d.sprachname.de))).toBeVisible();
 
   // Warteschlange: Zieltexte der deutschen Testeinheit, noch ohne Stichprobe
   const tabelle = page.getByRole('region', { name: d.warteschlange.beschriftung });
-  const zeile = tabelle.getByRole('row').filter({ hasText: 'de.a1.e01' }).filter({ hasText: d.art.zieltext });
+  const zeile = tabelle.getByRole('row').filter({ hasText: 'de.a1.test' }).filter({ hasText: d.art.zieltext });
   await expect(zeile).toHaveCount(1);
   await expect(zeile).toContainText(d.warteschlange.keine);
   expect(await ernsteBefunde(page, 'warteschlange')).toEqual([]);
@@ -61,7 +63,7 @@ test('Sprachprüfung: Warteschlange, Stichprobe ziehen, Tastenkürzel, Korrektur
   await expect(eintragKopf(page)).toHaveText(/^Eintrag 1 von \d+$/);
   const anzahl = Number((await eintragKopf(page).innerText()).match(/von (\d+)$/)![1]);
   expect(anzahl).toBeGreaterThan(2);
-  const liste = page.getByRole('list').filter({ has: page.getByRole('button', { name: /de\.a1\.e01\./ }) });
+  const liste = page.getByRole('list').filter({ has: page.getByRole('button', { name: /de\.a1\.test\./ }) });
 
   // Tastenkürzel 1: in Ordnung und weiter (Fokus nicht in einem Textfeld)
   await eintragKopf(page).focus();

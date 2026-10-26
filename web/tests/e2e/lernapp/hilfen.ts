@@ -5,16 +5,18 @@ import { formatiere } from '../../../src/lib/lernapp/format';
 
 /**
  * Hilfen für die E2E der Lern-App (L1): Testkurs aus dem Seed (`drizzle/seeds/lernapp-test.ts`, neutrale Alltagswörter,
- * synthetische Töne), Lektion `tr-aus-de.a1.e01.l01` in der deutschen Oberfläche:
+ * synthetische Töne), Lektion `tr-aus-de.a1.test.l01` in der deutschen Oberfläche:
  * 1. Auswahl „su“ → „Wasser“  2. Paare su/Wasser, ekmek/Brot, ev/Haus, kitap/Buch  3. Wortbank „Su içiyorum.“
  * 4. Auswahl „Buch“ → „kitap“.
  */
 
 export const KURS = 'tr-aus-de';
-export const LEKTION_1 = 'tr-aus-de.a1.e01.l01';
-export const LEKTION_2 = 'tr-aus-de.a1.e01.l02';
-export const EINHEIT = 'tr.a1.e01';
-export const KARTE_WASSER = 'tr-aus-de:tr.a1.e01.w001';
+/** Thema der Testeinheit in der Oberfläche de (Station im Lernpfad; daneben stehen in der E2E-Datenbank die echten Einheiten). */
+export const THEMA_TEST = 'Testeinheit: Alltag';
+export const LEKTION_1 = 'tr-aus-de.a1.test.l01';
+export const LEKTION_2 = 'tr-aus-de.a1.test.l02';
+export const EINHEIT = 'tr.a1.test';
+export const KARTE_WASSER = 'tr-aus-de:tr.a1.test.w001';
 export const PAARE: [string, string][] = [
   ['su', 'Wasser'],
   ['ekmek', 'Brot'],
@@ -43,6 +45,9 @@ export async function ernsteBefunde(page: Page, kennzeichen: string): Promise<st
           .join(' ; ')}`,
     );
 }
+
+/** Station der Testeinheit im Lernpfad (Oberfläche de): Abschnitt mit ihrem Thema als Überschrift. */
+export const testStation = (page: Page) => page.getByRole('region', { name: THEMA_TEST, exact: true });
 
 /** Die eine Live-Region des Spielers (Rückmeldeblatt). */
 export const liveRegion = (page: Page) => page.locator('main p[role="status"].sr-only').first();
@@ -134,7 +139,8 @@ async function wortbank(page: Page, art: Bedienung, woerter: string[]) {
  */
 export async function spieleLektion1(page: Page, art: Bedienung, { ersteFalsch = false } = {}) {
   const status = liveRegion(page);
-  await expect(page.getByRole('heading', { name: de.aufgaben.auswahl.waehleUebersetzung })).toBeVisible();
+  // erstes Laden der Lektion: Kursverzeichnis und Paket der Einheit (mit den echten Inhalten daneben etwas länger)
+  await expect(page.getByRole('heading', { name: de.aufgaben.auswahl.waehleUebersetzung })).toBeVisible({ timeout: 15_000 });
   await auswahl(page, art, ersteFalsch ? 'Brot' : 'Wasser', { ziffer: !ersteFalsch });
   if (ersteFalsch) {
     await expect(status).toContainText(t.falsch);

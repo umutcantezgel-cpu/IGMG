@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { NamensnennungInsel } from '@/components/lernapp/inseln/NamensnennungInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
-import { STIMMEN } from '@/lib/lernapp/audio/stimmen';
+import { freigegebeneStimme, STIMMEN } from '@/lib/lernapp/audio/stimmen';
 import { RICHTUNGEN, type RichtungId, SPRACHEN } from '@/lib/lernapp/kurse';
 import { kursTitel, kursUntertitel } from '@/lib/lernapp/kurstitel';
 import { LIZENZTEXTE, type LizenzName } from '@/lib/lernapp/lizenztexte';
@@ -48,8 +48,9 @@ export default async function Quellen() {
   await verlangeLernApp();
   const ui = await oberflaeche();
   const t = lernTexte(ui);
+  // Registrierte Stimmen mit Herkunftskette; „noch ohne freigegebene Stimme“ sind Sprachen ohne bestandene Hörabnahme (LM-06)
   const mitStimme = SPRACHEN.filter((x) => STIMMEN[x]);
-  const ohneStimme = SPRACHEN.filter((x) => !STIMMEN[x]);
+  const ohneStimme = SPRACHEN.filter((x) => !freigegebeneStimme(x));
   const liste = (id: string, titel: string, eintraege: readonly LernQuelle[], text?: string) => {
     const lizenzen = [...new Set(eintraege.map((e) => e.lizenz))];
     return (
@@ -225,6 +226,8 @@ export default async function Quellen() {
                   <p className="self-start rounded-pill bg-sand px-3 py-0.5 text-16 font-bold text-tinte-2">
                     {t('sprachausgabe.synthetisch')}
                   </p>
+                  {/* Registriert, aber vor der Hörabnahme (LM-06) nirgends eingesetzt: „Audio folgt“ (Z-L21) */}
+                  {s.hoerabnahme === 'bestanden' ? null : <p className="text-16 text-tinte-2">{t('sprachausgabe.hoerabnahmeOffen')}</p>}
                   <h3 lang="de" dir="ltr" className="self-start text-24 leading-ueberschrift">
                     {s.bezeichnung}
                   </h3>

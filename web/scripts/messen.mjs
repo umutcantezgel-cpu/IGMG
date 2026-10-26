@@ -21,7 +21,7 @@ const SCHWELLEN = { performance: 90, accessibility: 100, 'best-practices': 95, s
 const LERNAPP_SPIELER = /^\/lern-app\/(de|tr|ar)\/[a-z-]+\/(ueben|wiederholen|einstufung)(\?|$)/;
 const jsGrenze = (pfad) => (LERNAPP_SPIELER.test(pfad) ? 210 : SCHWELLEN.jsKb);
 const mitSeo = (pfad) => !LERNAPP_SPIELER.test(pfad);
-const LERNAPP_ROUTEN = ['/lern-app/de', '/lern-app/ar/de-aus-ar', '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l01'];
+const LERNAPP_ROUTEN = ['/lern-app/de', '/lern-app/ar/de-aus-ar', '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.test.l01'];
 const [basis = 'http://localhost:3100', ...pfadeArg] = process.argv.slice(2);
 
 async function standardPfade() {

@@ -2,10 +2,14 @@ import { createReadStream } from 'node:fs';
 import { stat } from 'node:fs/promises';
 import { join } from 'node:path';
 import { Readable } from 'node:stream';
+import { eq } from 'drizzle-orm';
 import { connection } from 'next/server';
 import { leseBereich } from '@/lib/audio/bereich';
 import { TAG } from '@/lib/cache/tags';
+import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { funktionAn } from '@/lib/funktionen';
+import { TESTKURS_STAND } from '@/lib/lernapp/inhalt/stand';
 import { buendelBlobSchluessel, leseBuendelPfad } from '@/lib/lernapp/paket/buendel';
 
 /**
@@ -25,21 +29,36 @@ import { buendelBlobSchluessel, leseBuendelPfad } from '@/lib/lernapp/paket/buen
  * Byte-Bereiche bleiben möglich (200/206/416); der Client lädt Bündel aber ganz und ohne `Range` (S4/S5).
  *
  * Ohne Blob-Speicher (Beispielmodus, E2E, Entwicklung) liefert die Route die synthetischen Testbündel des Testkurses aus
- * dem Dateisystem (`drizzle/seeds/lernapp-testaudio/`, ADR 0039 Nr. 11) – Töne, nie Rezitationen. Davor sucht sie in
+ * dem Dateisystem (`drizzle/seeds/lernapp-testaudio/`, ADR 0039 Nr. 11) – Töne, nie Rezitationen –, aber nur, wenn der
+ * Testkurs importiert ist: mit Datenbank der Stand `lernapp_testkurs` (E2E, Entwicklung), im Beispielmodus ohne
+ * Laufzeit-Datenbank `LERNAPP_TESTKURS=1` (dieselbe Bedingung wie beim Bau, `scripts/lernapp/testkurs-im-bau.mjs`). Auf der
+ * öffentlichen Test-Domain (Bau-Datenbank ohne Testkurs) antwortet sie für Testbündel mit 404 (Stufe C, L15-1). Davor sucht sie in
  * `LERNAPP_AUDIO_LOKAL` (Ordner mit `<sprache>/<datei>.lpa`), falls gesetzt: lokal gebaute Bündel der Audio-Kette
  * (`pnpm lernapp:audio-manifest`, L3-05) zum Anhören in der App vor dem Hochladen; nie zusammen mit dem Blob-Speicher.
  * Schalter `lernapp` aus → 404. Der Proxy läuft hier nicht (Matcher-Ausschluss aus L1-02).
  */
 const TESTAUDIO = join(process.cwd(), 'drizzle', 'seeds', 'lernapp-testaudio');
 
-/** Datei eines Bündels im Dateisystem: zuerst der lokale Ordner der Audio-Kette, dann die Testbündel. */
+/** Ist der Testkurs importiert? Nur dann liefert die Route seine Testbündel aus. */
+async function testkursImportiert(): Promise<boolean> {
+  // Beispielmodus (Vercel ohne Datenbank, ADR 0019): Den Testkurs hat der Bau nur mit LERNAPP_TESTKURS=1 importiert
+  if (!datenbankVerfuegbar()) return process.env.LERNAPP_TESTKURS === '1';
+  const [z] = await db
+    .select({ schluessel: schema.einstellung.schluessel })
+    .from(schema.einstellung)
+    .where(eq(schema.einstellung.schluessel, TESTKURS_STAND))
+    .limit(1);
+  return Boolean(z);
+}
+
+/** Datei eines Bündels im Dateisystem: zuerst der lokale Ordner der Audio-Kette, dann die Testbündel (nur mit Testkurs). */
 async function lokaleDatei(sprache: string, datei: string): Promise<{ pfad: string; groesse: number } | null> {
   const lokal = process.env.LERNAPP_AUDIO_LOKAL?.trim();
   for (const ordner of lokal ? [lokal, TESTAUDIO] : [TESTAUDIO]) {
     const pfad = join(ordner, sprache, datei);
     try {
       const s = await stat(pfad);
-      if (s.isFile()) return { pfad, groesse: s.size };
+      if (s.isFile() && (ordner !== TESTAUDIO || (await testkursImportiert()))) return { pfad, groesse: s.size };
     } catch {
       // nächster Ordner
     }

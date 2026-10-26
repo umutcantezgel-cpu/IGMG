@@ -1,4 +1,5 @@
 import { test as basis, expect } from '@playwright/test';
+import pg from 'pg';
 import texte from '../../../messages/verwaltung/lernapp.json';
 import { angemeldetesKonto } from '../hilfen/konto';
 import { ernsteBefunde } from './hilfen';
@@ -11,7 +12,30 @@ import { ernsteBefunde } from './hilfen';
  * prüft der Integrationstest (sie ändert die Pakete des Testkurses). Nur Desktop; Testdaten fiktiv (G-04).
  */
 const a = texte.lernapp.audio;
-const EINTRAG = 'de.a1.e01.w001';
+const EINTRAG = 'de.a1.test.w001';
+
+/**
+ * Seite des Studios mit dem Eintrag: Die Liste zeigt die vertonbaren Zieltexte nach Schlüssel, 40 je Seite (`STUDIO_SEITE`
+ * in `server/queries/lernapp/audio-studio.ts`); die E2E-Datenbank enthält neben dem Testkurs die echten Inhalte, deshalb
+ * steht die Testeinheit `de.a1.test` nicht auf der ersten Seite.
+ */
+async function seiteVon(schluessel: string): Promise<number> {
+  const client = new pg.Client({ connectionString: process.env.DATABASE_URL });
+  await client.connect();
+  try {
+    const { rows } = await client.query<{ n: number }>(
+      `select count(*)::int as n from (
+         select schluessel from lernapp_lemma where kurs_id = 'de' and not religionsbezug and status <> 'gesperrt'
+         union all
+         select schluessel from lernapp_satz where kurs_id = 'de' and not religionsbezug and status <> 'gesperrt'
+       ) t where schluessel < $1`,
+      [schluessel],
+    );
+    return Math.floor(rows[0]!.n / 40);
+  } finally {
+    await client.end();
+  }
+}
 
 /** Chromium mit Ersatz-Mikrofon (ohne Rückfrage) und ohne Autoplay-Sperre – wie die Rezitations-Werkstatt. */
 const test = basis.extend({
@@ -64,7 +88,7 @@ test.beforeEach(async ({ page }, info) => {
 
 test('Audio-Studio: Sprecherin mit Vereinbarung, Aufnahme, Anhören, Verwerfen', async ({ page }) => {
   await angemeldetesKonto(page, 'bildung');
-  const antwort = await page.goto('/verwaltung/lernapp/audio?kurs=de&filter=alle&seite=0');
+  const antwort = await page.goto(`/verwaltung/lernapp/audio?kurs=de&filter=alle&seite=${await seiteVon(EINTRAG)}`);
   const kopf = antwort!.headers();
   expect(kopf['permissions-policy']).toMatch(/microphone=\(self\)/);
   expect(kopf['content-security-policy']).toContain("media-src 'self' blob:");
