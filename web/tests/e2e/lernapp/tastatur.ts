@@ -5,9 +5,11 @@ import { expect, type Locator, type Page } from '@playwright/test';
  * Tab, Umschalt+Tab und Pfeiltasten – kein `locator.focus()`. Jeder Tab-Schritt wird festgehalten und geprüft:
  * - sichtbar: Das fokussierte Element (bei unsichtbaren Optionsfeldern die sichtbare Karte daneben bzw. das Label) liegt im
  *   Bild und trägt einen Fokusring: einen sichtbaren Umriss ≥ 2 px (der Fokusring der Lern-App, `globals.css` `:focus-visible`
- *   bzw. `peer-focus-visible:outline-2`). Ein Schatten zählt nicht – Karten tragen dauerhafte Schatten (`shadow-s1`), ein
- *   fehlender Fokusring fiele sonst nicht auf. Native Mediensteuerung (`<audio controls>`) zeichnet ihren Ring im eigenen
- *   Schatten-DOM; sie zählt als sichtbar, wenn sie im Bild liegt.
+ *   bzw. `peer-focus-visible:outline-2`). Gezählt wird nur der Umriss sichtbarer Elemente (> 2 × 2 px, nicht weggeschnitten);
+ *   der Umriss eines `sr-only`-Feldes selbst zählt nicht (Selbsttest: `tastatur-selbsttest.spec.ts`). Ein Schatten zählt
+ *   nicht – Karten tragen dauerhafte Schatten (`shadow-s1`), ein fehlender Fokusring fiele sonst nicht auf. Native
+ *   Mediensteuerung (`<audio controls>`) zeichnet ihren Ring im eigenen Schatten-DOM; sie zählt als sichtbar, wenn sie im Bild
+ *   liegt.
  * - Native Mediensteuerung: Tab wandert durch ihre eingebauten Knöpfe (Abspielen, Zeitleiste, Lautstärke, Menü), dabei bleibt
  *   `document.activeElement` dasselbe `<audio>`. Aufeinanderfolgende Halte darauf zählen als ein Halt; mehr als
  *   `MEDIEN_HALTE` hintereinander gelten als Fokusfalle (Tab muss das Element wieder verlassen, WCAG 2.1.2).
@@ -45,17 +47,20 @@ export function fokus(page: Page): Promise<FokusSchritt | null> {
     if (!el || el === document.body || el === document.documentElement) return null;
     const alle = document.getElementsByTagName('*');
     const dom = Array.prototype.indexOf.call(alle, el) as number;
-    const r0 = el.getBoundingClientRect();
-    const winzig = r0.width <= 2 || r0.height <= 2;
-    // unsichtbares Optionsfeld (`sr-only`, `peer`): der Ring liegt auf der Karte daneben bzw. auf dem Label
-    const kandidaten = [el, ...(winzig ? [el.nextElementSibling, el.closest('label'), el.parentElement] : [])].filter(
-      (k): k is HTMLElement => k instanceof HTMLElement,
+    // sichtbar heißt: größer als 2 × 2 px und nicht weggeschnitten (`sr-only`: `clip-path: inset(50%)` bzw. `clip: rect(0 …)`)
+    const zeigbar = (k: HTMLElement) => {
+      const r = k.getBoundingClientRect();
+      const s = getComputedStyle(k);
+      const geschnitten = s.clipPath.startsWith('inset(50%') || /^rect\(0(px)?,? 0(px)?,? 0(px)?,? 0(px)?\)$/.test(s.clip);
+      return r.width > 2 && r.height > 2 && !geschnitten;
+    };
+    // unsichtbares Optionsfeld (`sr-only`, `peer`): der Ring muss auf der Karte daneben, dem Label oder dem Elternelement
+    // liegen. Das Feld selbst zählt dann nicht – es trägt über die globale `:focus-visible`-Regel zwar einen berechneten Umriss,
+    // der ist aber nicht zu sehen (Gegenprüfung 2 N9b: sonst schlüge die Prüfung bei Karten ohne Fokusring nie an).
+    const kandidaten = (zeigbar(el) ? [el] : [el.nextElementSibling, el.closest('label'), el.parentElement]).filter(
+      (k): k is HTMLElement => k instanceof HTMLElement && zeigbar(k),
     );
-    const ziel =
-      kandidaten.find((k) => {
-        const r = k.getBoundingClientRect();
-        return r.width > 2 && r.height > 2;
-      }) ?? el;
+    const ziel = kandidaten[0] ?? el;
     const nativ = el instanceof HTMLMediaElement && el.controls;
     // sichtbarer Umriss ≥ 2 px; durchsichtig (`outline-hidden`) zählt nicht, ein Schatten ebenso wenig (dauerhafte Kartenschatten)
     const durchsichtig = (farbe: string) => farbe === 'transparent' || /^rgba\(.*,\s*0(\.0+)?\)$/.test(farbe);
