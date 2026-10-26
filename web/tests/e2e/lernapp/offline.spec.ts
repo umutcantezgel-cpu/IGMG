@@ -71,7 +71,9 @@ async function vorraete(page: Page): Promise<Record<string, string[]>> {
   return page.evaluate(async () => {
     const aus: Record<string, string[]> = {};
     for (const name of (await caches.keys()).filter((n) => n.startsWith('igmg-lernapp-')).sort())
-      aus[name] = (await (await caches.open(name)).keys()).map((r) => new URL(r.url).pathname + new URL(r.url).search).sort();
+      // nur noch vorhandene Vorräte öffnen: `caches.open` legte einen inzwischen gelöschten wieder an
+      if (await caches.has(name))
+        aus[name] = (await (await caches.open(name)).keys()).map((r) => new URL(r.url).pathname + new URL(r.url).search).sort();
     return aus;
   });
 }
@@ -301,11 +303,20 @@ test('Bauwechsel (G-1): gespeicherte Einheit bleibt ohne Netz spielbar – Lekti
   const bau = await page.evaluate(() => new URL(navigator.serviceWorker.controller!.scriptURL).searchParams.get('v'));
   expect(bau).toMatch(/^[a-z0-9]+$/);
 
-  // neuer Bau: der Lern-App-Worker mit neuer Kennung übernimmt (skipWaiting, clients.claim)
+  // neuer Bau: der Lern-App-Worker mit neuer Kennung übernimmt (skipWaiting, clients.claim). Die Seite wechselt schon beim
+  // Beginn des Aktivierens zu ihm (vor dem Ereignis `activate`); erst im Zustand `activated` ist das Aufräumen fertig – vorher
+  // läse `vorraete` die alte Hülle noch und öffnete sie per Name wieder
   await page.evaluate(() => navigator.serviceWorker.register('/lern-app/sw.js?v=n9aneubau1', { scope: '/lern-app/' }));
   await expect
-    .poll(() => page.evaluate(() => navigator.serviceWorker.controller?.scriptURL ?? ''), { timeout: 30_000 })
-    .toContain('v=n9aneubau1');
+    .poll(
+      () =>
+        page.evaluate(() => {
+          const w = navigator.serviceWorker.controller;
+          return w ? `${new URL(w.scriptURL).search} ${w.state}` : '';
+        }),
+      { timeout: 30_000 },
+    )
+    .toBe('?v=n9aneubau1 activated');
   // seine Hülle ist neu, der Kursvorrat des alten Baus bleibt (Merkzeichen)
   await expect
     .poll(async () => Object.keys(await vorraete(page)).filter((n) => /-(schale|kurse)-v/.test(n)), { timeout: 15_000 })
