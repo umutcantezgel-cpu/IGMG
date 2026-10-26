@@ -271,6 +271,9 @@ describe('satzbau, formen, harakat', () => {
     expect(h).toMatch(/<input id="[^"]+" type="text" lang="de" dir="ltr"[^>]*aria-labelledby="[^" ]+r1 [^" ]+s0"/);
     expect(h).toMatch(/<td lang="de" dir="ltr"[^>]*>trinke<\/td>/);
     expect(anzahl(h, /<input/g)).toBe(1);
+    // Zeichenhilfe erst mit dem ersten Fokus in einem Feld (eigener Chunk, Spieler-Budget); bis dahin ein leerer Platz
+    expect(h).not.toContain('role="toolbar"');
+    expect(h).toContain('<div aria-hidden="true" class="min-h-11"></div>');
     const n = html(
       <Formen {...props(fo, { gesperrt: true, auswertung: geprueft('falsch'), antwort: { typ: 'formen', werte: ['', 'trinke'] } })} />,
     );

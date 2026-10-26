@@ -56,6 +56,7 @@ const ladeAufnahme = () => import('./aufnahme');
  */
 export default function Sprechen({
   aufgabe,
+  texte,
   weitere,
   sprache,
   ziffern,
@@ -183,8 +184,8 @@ export default function Sprechen({
     try {
       a = await ladeAufnahme();
     } catch {
-      setMikrofon(false);
-      return sage(t.keinMikrofon);
+      // Nachladen gescheitert (ohne Netz, Einheit nicht offline gespeichert): das Mikrofon ist nicht der Grund, der Knopf bleibt
+      return sage(texte.hoeren.keinNetz);
     }
     if (!a.mikrofonErlaubtHier(location.pathname)) {
       setMikrofon(false);

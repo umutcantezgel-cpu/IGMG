@@ -190,7 +190,9 @@ const SZENARIEN_ECHT = [
     },
   },
   {
-    name: `Spieler echt ${ECHT.b1Geschichte} (Geschichte zuerst: Weiter lesen, Frage)`,
+    // gemessen wird „Weiter lesen“: In tr.b1.e01.l06 erreichen die sechs Schritte noch keine Frage (Stand 26.10.2026); erscheint
+    // eine, wird sie gewählt und geprüft
+    name: `Spieler echt ${ECHT.b1Geschichte} (Geschichte zuerst: Weiter lesen)`,
     pfad: `/lern-app/de/tr-aus-de/ueben?l=${ECHT.b1Geschichte}`,
     bereit: (s) => s.locator('main form[data-aufgabe="geschichte"] li').first().waitFor({ state: 'attached', timeout: 60_000 }),
     ablauf: async (s, schritt) => {

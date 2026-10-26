@@ -21,15 +21,17 @@ veraltete Wortlaut von Z-L07 (Abschnitt 10).
 |---|---|
 | Datum | 26.10.2026 |
 | Paket | Stufe C N6 (Befunde der Endabnahme `protokolle/C-technik.md`, `C-technik-gegen.md` zu Z-L07) |
-| Stand | Zweig `lernapp-n6` ab `9a8ca1f8`. Paketbau `aa0d3e8f`, E2E-Tag `3cecdd3f`; **Messbau 1** aus `3cecdd3f` (kalter Neubau am Server, Budget, Lighthouse, INP); **Messbau 2** mit Lücke und Sprechen verschlankt (Budget, erste Aufgabe je Typ, E2E); **Messbau 3** mit der Lücke als zwei Chunks (Budget, erste Aufgabe je Typ, E2E) = `c9e586ce` |
+| Stand | Zweig `lernapp-n6` ab `9a8ca1f8`. Paketbau `aa0d3e8f`, E2E-Tag `3cecdd3f`; **Messbau 1** aus `3cecdd3f` (kalter Neubau am Server, Budget, Lighthouse, INP); **Messbau 2** mit Lücke und Sprechen verschlankt (Budget, erste Aufgabe je Typ, E2E); **Messbau 3** mit der Lücke als zwei Chunks (Budget, erste Aufgabe je Typ, E2E) = `c9e586ce`; **Messbau 4** nach der Gegenprüfung (Formen ohne Zeichenhilfe bis zum ersten Fokus, Budget-Werkzeug mit abgeleiteten Lektionen und Schätzung; Budget, E2E) = Abschluss-Commit der Nacharbeit |
 | Inhalte | Wegwerf-Datenbank `igmg_lernapp_n6_e2e` mit allen Lern-App-Inhalten (A1–B1 bzw. B2, ≈ 147 000 Einträge) und dem Testkurs über `scripts/e2e-datenbank.mjs`; Bau gegen diese Datenbank (`E2E_ATTRAPPEN=1`), Server `scripts/start-standalone.mjs` auf Port 3282 mit `CACHE_ERNEUERN_BEIM_START=1` |
 | Werkzeuge | `web/scripts/lernapp/paketbau-messen.ts` (neu), `web/scripts/lernapp-budget.mjs` (echte Lektionen je Typ der ersten Aufgabe), `_lernapp/werkzeuge/leistung/` (`routen.mjs lighthouse-echt`, `inp-spieler.mjs --echt`, `messlauf.sh` Teile `lighthouse-echt`/`inp-echt`) |
-| Last (1 min) | Messbau 1: Bau 0,2 → 2,1 · kalter Neubau 2,7 · Budget 2,2 · Lighthouse 1,2–2,9 · INP 1,4–4,9. Messbau 2: Bau 2,3 → 2,7 · Budget 2,7 · E2E 2,4–4,9. Messbau 3: Bau 3,3 → 4,1 · Budget 4,1 · E2E 3,5–7,3. Parallel liefen Inhalts-Agenten (Prüfer, Vitest). |
-| Rohdaten | außerhalb des Repos (`<scratchpad>/tmp-n6/sitzung/`): Bau-, Server- und Auftragsprotokolle, `kalt.txt`, `budget*.{txt,json}`, `erste-typen*.txt`, `leistung/{lighthouse-echt,inp-echt}.{md,json}`, Lighthouse-Berichte je Route |
+| Last (1 min) | Messbau 1: Bau 0,2 → 2,1 · kalter Neubau 2,7 · Budget 2,2 · Lighthouse 1,2–2,9 · INP 1,4–4,9. Messbau 2: Bau 2,3 → 2,7 · Budget 2,7 · E2E 2,4–4,9. Messbau 3: Bau 3,3 → 4,1 · Budget 4,1 · E2E 3,5–7,3. Messbau 4: Bau 1,4 → 2,7 · Budget 2,7 · E2E 2,2 → 4,0. Parallel liefen Inhalts-Agenten (Prüfer, Vitest). |
+| Rohdaten | außerhalb des Repos (`<scratchpad>/tmp-n6/sitzung/`): Bau-, Server- und Auftragsprotokolle, `kalt.txt`, `budget*.{txt,json}` (Messbau 4: `budget5.*`, `auftrag5.log`, `e2e5.log`), `erste-typen*.txt`, `leistung/{lighthouse-echt,inp-echt}.{md,json}`, Lighthouse-Berichte je Route |
 
 **Ergebnis:** Der kalte Neubau eines Kursverzeichnisses dauert am Produktionsserver 2,2–3,7 s statt 8,9–10,5 s und
 blockiert ihn höchstens 0,4 s am Stück statt ≈ 6–10 s; die ausgelieferten Bytes sind gleich. Die JS-Budgets halten nach
-der Verschlankung von Lücke und Sprechen auch im ungünstigsten echten Fall (ungünstigste echte Lektion +59,8 KB über der Hülle bei ≤ 60 KB). **Mit echten Inhalten
+der Verschlankung von Lücke und Sprechen für alle ausgelieferten echten Lektionen (gemessen, ungünstigste +59,8 KB über der
+Hülle bei ≤ 60 KB) und nach der Gegenprüfung auch für die noch nicht ausgelieferten Formen der ersten Aufgabe (geschätzt,
+ungünstigste `formen` in tr.b1.e16 mit +58,7 KB statt ≈ +60,5 KB). **Mit echten Inhalten
 verfehlen aber alle sechs gemessenen Routen Lighthouse-Leistung ≥ 90 (72–86, TBT 458–1348 ms) und das Öffnen des
 Lernpfads samt „offline speichern“ INP ≤ 200 ms (416 ms).** LCP (1,87–2,09 s), CLS (≤ 0,007), Zugänglichkeit 100 und der
 INP im Spieler (168–184 ms) erfüllen. Ursachen und Vorschläge in C.5; Z-L07 neu eingeordnet in C.6.
@@ -90,18 +92,24 @@ bis N5 nur die Testlektion mit Auswahl (2 KB). Gemessen jetzt je Typ der ersten 
 53,8 KB in sieben Dateien (22,5 · 12,3 · 9,5 · 5,2 · 2,5 · 1,4 · 0,4; darunter der Spieler, Zod mit den Paket- und
 Aufgabenschemas, lokale Datenbank und Vorrat, Abgleich).
 
-| erste Aufgabe (echte Lektionen mit diesem Typ zuerst) | Lektion | zusätzlich KB Messbau 1 | Messbau 2 | Messbau 3 | gesamt KB (Messbau 3) |
-|---|---|---|---|---|---|
-| grammatik_tipp (392) | `tr-aus-de.b1.e01.l01` | 54,8 | 54,8 | 54,8 | 191,7 |
-| auswahl (432) | `tr-aus-de.a1.e01.l01` | 55,8 | 55,8 | 55,8 | 192,7 |
-| paare (138) | `tr-aus-de.a1.e01.l02` | 56,7 | 56,7 | 56,7 | 193,5 |
-| schreiben (11) | `tr-aus-de.b1.e12.l08` | 57,1 | 57,1 | 57,1 | 193,9 |
-| dialog (2) | `ar-aus-de.a2.e01.l08` | 57,2 | 57,2 | 57,2 | 194,0 |
-| **geschichte (136)** | `tr-aus-de.b1.e01.l06` | 57,5 | 57,5 | 57,5 | 194,3 |
-| minimalpaare (1) | `ar-aus-de.a2.e03.l07` | 59,2 | 59,2 | 59,2 | 196,0 |
-| lesen_fragen (16) | `tr-aus-de.a1.e02.l07` | 59,3 | 59,3 | 59,3 | 196,1 |
-| sprechen (1) | `tr-aus-de.b1.e15.l08` | **60,3** | 59,8 | **59,8** | 196,6 |
-| luecke (1) | `tr-aus-de.b1.e14.l07` | **61,8** | **60,1** | **59,0** | 195,8 |
+| erste Aufgabe (echte Lektionen mit diesem Typ zuerst) | Lektion | zusätzlich KB Messbau 1 | Messbau 2 | Messbau 3 | Messbau 4 | gesamt KB (Messbau 4) |
+|---|---|---|---|---|---|---|
+| grammatik_tipp (392) | `tr-aus-de.b1.e01.l01` | 54,8 | 54,8 | 54,8 | 54,8 | 191,7 |
+| auswahl (432) | `tr-aus-de.a1.e01.l01` | 55,8 | 55,8 | 55,8 | 55,8 | 192,7 |
+| paare (138) | `tr-aus-de.a1.e01.l02` | 56,7 | 56,7 | 56,7 | 56,7 | 193,5 |
+| schreiben (11) | `tr-aus-de.b1.e12.l08` | 57,1 | 57,1 | 57,1 | 57,1 | 193,9 |
+| dialog (2) | `ar-aus-de.a2.e01.l08` | 57,2 | 57,2 | 57,2 | 57,2 | 194,0 |
+| **geschichte (136)** | `tr-aus-de.b1.e01.l06` | 57,5 | 57,5 | 57,5 | 57,5 | 194,3 |
+| minimalpaare (1) | `ar-aus-de.a2.e03.l07` | 59,2 | 59,2 | 59,2 | 59,2 | 196,0 |
+| lesen_fragen (16) | `tr-aus-de.a1.e02.l07` | 59,3 | 59,3 | 59,3 | 59,3 | 196,1 |
+| sprechen (1) | `tr-aus-de.b1.e15.l08` | **60,3** | 59,8 | **59,8** | **59,8** | 196,6 |
+| luecke (1) | `tr-aus-de.b1.e14.l07` | **61,8** | **60,1** | **59,0** | 59,0 | 195,8 |
+| formen (1, Entwurf) | `tr.b1.e16.l07` – nicht ausgeliefert | – | – | ≈ 60,5 (geschätzt, Gegenprüfung) | 58,7 (geschätzt) | 195,5 (geschätzt) |
+| wahr_falsch (67), zuordnen (42), reihenfolge (28), fallfrage (9) – Wissenskurs, Entwurf | `islam.grund.*` – nicht ausgeliefert | – | – | – | 57,1 / 57,8 / 57,2 / 57,4 (geschätzt) | 193,9–194,6 (geschätzt) |
+
+Messbau 4 misst je Form die erste ausgelieferte Lektion aus `inhalte/lernapp` (für Auswahl, Paare, Geschichte, Tipp,
+Lesen mit Fragen, Dialog und Minimalpaare in `ar-aus-de`, z. B. `ar-aus-de.a1.e01.l06`); die Typ-Chunks und Bytes sind
+dieselben wie in den Lektionen der Tabelle.
 
 - Die Geschichte (136 Lektionen, Typ-Chunk im Spieler-Zusammenhang 3,7 KB; der Wert 9,9 KB aus N5 war die Summe aller
   Dateien mit ihren Bausteinen) hielt das Budget schon in Messbau 1. **Ungünstiger waren die Lücke unter Optionen (+8,0 KB)
@@ -110,20 +118,38 @@ Aufgabenschemas, lokale Datenbank und Vorrat, Abgleich).
   (−0,5 KB). Die Lücke lädt Feld und Zeichenhilfe nur in der Freitext-Form: Messbau 2 lud nur die Zeichenhilfe nach
   (−1,7 KB, noch 60,1 KB); Messbau 3 trennt die Freitext-Form ganz ab (`LueckeFeld.tsx`, gemeinsamer Satz `LueckeSatz.tsx`,
   Schreibmarke ohne Zeichenhilfe in `schreibmarke.ts`). Ergebnis Messbau 3: Lücke 59,0 KB, Sprechen 59,8 KB – alle gemessenen Fälle ≤ 60 KB (Reserve 0,2 KB).
-- `lernapp-budget.mjs` misst jetzt neben der Testlektion vier echte Lektionen (Geschichte, Lücke, Sprechen, Lesen mit
-  Fragen; `ECHTE_SPIELER`) und prüft die ungünstigste gegen ≤ 210 KB gesamt und ≤ 60 KB zusätzlich (`--ohne-echt` ohne
-  Inhalte). Messbau 3: „Alle Budgets eingehalten“; ungünstigste echte Lektion gesamt 196,6 KB (≤ 210), zusätzlich 59,8 KB (≤ 60).
-- Die Schätzung je Übungstyp (größte Datei mit allen Erkennungstexten plus ausgelagerte Bausteine) stieg für frei,
-  hoeren_schreiben und formen um 3,8 KB (5,2 / 9,8 / 6,6 → 9,0 / 13,5 / 10,4 KB), ohne dass sich diese Typen änderten: Als
-  „ausgelagerter Baustein“ zählt jetzt auch der Chunk von `LueckeFeld` (Feld und Zeichenhilfe), den diese Typen nicht laden.
-  Je ≤ 15 KB bleibt eingehalten; keine echte Lektion beginnt mit diesen Typen. Vorschlag: Erkennungstext für `LueckeFeld`
-  ergänzen und nur der Lücke zurechnen.
-- Übrige Budgets unverändert erfüllt (Messbau 3): Hülle eigener Anteil 9,4 KB (≤ 20) · Start 149,4 / eigen 14,0 KB · Lernpfad 155,8 / eigen 20,4 KB · Fortschritt 153,3 / eigen 17,9 KB · Testlektion 192,7 / +55,8 KB · Wiederholen 152,4 und Einstufung 153,3 KB, beide ohne Zod · Übungstypen 1,0–13,5 KB (je ≤ 15) · arabische Bildschirmtastatur 1,5 KB (≤ 10).
+- **Berichtigung nach der Gegenprüfung:** Messbau 3 und `c9e586ce` nannten das Budget „auch im ungünstigsten echten Fall“
+  erfüllt und schrieben, keine echte Lektion beginne mit frei, hoeren_schreiben oder formen. Für **formen** stimmte das
+  nicht: `tr.b1.e16.l07` (Einheit im Entwurf, noch nicht ausgeliefert, daher nicht gemessen) beginnt mit einer
+  Formentabelle. Aus Messbau 3 geschätzt: Kern 55 091 B + Formen-Chunk 6 889 B (Formen, Texteingabe, Zeichenhilfe) ≈ 60,5 KB
+  (> 60).
+- **Formen verschlankt (Messbau 4):** Die Zeichenhilfe (Sonderzeichenleiste bzw. Schalter der arabischen Tastatur) lädt als
+  eigener Chunk mit dem ersten Fokus in einem Feld; bis dahin hält ein leerer Platz eine Zeile frei (`Formen.tsx`;
+  `feldKlasse` aus `schreibmarke.ts` statt aus `Texteingabe.tsx`). Formen-Chunk 6 889 → 5 004 B; erste Aufgabe formen
+  geschätzt +58,7 KB (Reserve 1,3 KB). Offline: Der Service Worker folgt den Chunk-Verweisen und legt den Zeichenhilfe-Chunk
+  beim Speichern einer Einheit mit ab (wie bei `LueckeFeld`).
+- **`lernapp-budget.mjs` leitet die echten Lektionen ab (Messbau 4)** statt sie fest zu verdrahten (`ECHTE_SPIELER`
+  entfällt): je Form der ersten Aufgabe (Typ; Lücke ohne Ablenker als `luecke_frei`) die Lektionen aus `inhalte/lernapp`
+  (alle Stände); gemessen wird die erste, deren Einheit das Kursverzeichnis der Richtung ausliefert (bis zu drei Versuche).
+  Formen ohne ausgelieferte Lektion werden geschätzt: Spielerkern (Testlektion ohne Typ-Chunks, 53,8 KB) + größte Datei des
+  Typs (+ Feld bei `luecke_frei`). Das Budget gilt für Messung und Schätzung; wird tr.b1.e16 oder der Wissenskurs
+  ausgeliefert, misst das Werkzeug die Lektion selbst. Die Schätzung ist eine obere Schranke: gleich der Messung bei Auswahl,
+  Tipp, Paare, Schreiben, Lesen mit Fragen und Lücke, 2,0–2,3 KB darüber bei Geschichte, Dialog, Minimalpaare und Sprechen
+  (deren Komponenten liegen auch in größeren Chunks anderer Routen). Messbau 4: „Alle Budgets eingehalten“; ungünstigste
+  gesamt 196,6 KB (≤ 210), zusätzlich 59,8 KB (≤ 60, Sprechen gemessen).
+- **Schätzung je Übungstyp (≤ 15 KB):** eigener Erkennungstext für `LueckeFeld` (`luecke_feld`); er zählt nur bei der Lücke
+  (nachgeladen) und nicht mehr als ausgelagerter Baustein von frei, hoeren_schreiben und formen; ausgelagerte Bausteine zählen
+  nur, wenn der Typ-Chunk sie nicht selbst enthält. Messbau 4: frei 5,3 · hoeren_schreiben 9,9 · formen 6,7 (mit dem
+  Zeichenhilfe-Chunk) · luecke 8,8 KB (mit dem Feld; der Lauf in Messbau 4 zeigte 10,6 KB mit der Zeichenhilfe doppelt, danach
+  berichtigt und mit den Dateilisten des Laufs nachgerechnet).
+- **Sprechen:** Scheitert das Nachladen der Aufnahme (`aufnahme.ts`, ohne Netz und Einheit nicht offline gespeichert), zeigt
+  die Übung den Netzhinweis (`aufgaben.hoeren.keinNetz`) statt „Mikrofon nicht verfügbar“, und der Knopf „Aufnehmen“ bleibt.
+- Übrige Budgets unverändert erfüllt (Messbau 4 wie Messbau 3): Hülle eigener Anteil 9,4 KB (≤ 20) · Start 149,4 / eigen 14,0 KB · Lernpfad 155,8 / eigen 20,4 KB · Fortschritt 153,3 / eigen 17,9 KB · Testlektion 192,7 / +55,8 KB · Wiederholen 152,4 und Einstufung 153,3 KB, beide ohne Zod · Übungstypen 1,0–9,9 KB (je ≤ 15) · arabische Bildschirmtastatur 1,5 KB (≤ 10).
 
 ### C.3 Lighthouse mit echten Inhalten (mobil, Median aus 3 Läufen, Messbau 1)
 
-Die Verschlankung aus C.2 (Messbau 2/3) ändert keine der gemessenen Routen: Start, Lernpfade und die Spieler mit Auswahl bzw.
-Geschichte zuerst laden in Messbau 3 dieselben Bytes wie in Messbau 1 (Budget: 149,4 / 155,8 / 192,7 / 194,3 KB).
+Die Verschlankung aus C.2 (Messbau 2–4) ändert keine der gemessenen Routen: Start, Lernpfade und die Spieler mit Auswahl bzw.
+Geschichte zuerst laden in Messbau 3 und 4 dieselben Bytes wie in Messbau 1 (Budget: 149,4 / 155,8 / 192,7 / 194,3 KB).
 
 `lighthouse.mjs --routen routen-lighthouse-echt.json` (`routen.mjs lighthouse-echt`), Drosselung wie Abschnitt 1. Jede Route
 verfehlte die Leistung zuerst unter Last (1,5–2,9) und wurde nach dem Sinken der Last (1,2–1,5) nachgemessen; die Tabelle
@@ -144,7 +170,10 @@ Inhalten bei 458–1348 ms.
 
 ### C.4 INP mit echten Lektionen (CPU ×6, 3 Läufe, Median, Messbau 1)
 
-`inp-spieler.mjs --echt`: Antworten ohne Kenntnis der Lösung (erste Option), Paare je ein Wort links und rechts.
+`inp-spieler.mjs --echt`: Antworten ohne Kenntnis der Lösung (erste Option), Paare je ein Wort links und rechts. Im
+Geschichte-Szenario erreichen die sechs Schritte noch keine Frage; gemessen ist nur „Weiter lesen“ (Szenario nach der
+Gegenprüfung so benannt, vorher „Weiter lesen, Frage“). Die Spieler-Szenarien A1 und B1 liefen unter Last 4,8–4,9 und
+wurden, weil unter 200 ms, nicht nachgemessen.
 
 | Szenario | INP ms | je Schritt (Median, ms) | Öffnen ms | Last (max) | Ergebnis |
 |---|---|---|---|---|---|
@@ -176,12 +205,21 @@ einen weiteren Messbau braucht:
 4. **Kalter Neubau unter Last** (C.1): 2,2–3,7 s je Richtung am Server; Rest ≈ 0,6–1 s Datenbank und ≈ 1,2–1,5 s Bau.
    Weiter möglich: Ergebnisse je Einheit nach Eingabe-Hash merken (unveränderte Einheiten nach einer Freigabe nicht neu
    bauen). Kein Abnahmekriterium; die Blockade ist behoben.
+5. **Kalter Neubau auch durch fremde Einstellungen** (Gegenprüfung N6): Die Lern-App liest ihre Schalter über
+   `ladeEinstellung('funktionen')` (Tag `einstellungen`); Next gibt die Tags innerer Caches an den äußeren Eintrag weiter
+   (`propagateCacheLifeAndTagsToRevalidateStore`). Jede gespeicherte Einstellung (`inhaltGeaendert(TAG.einstellungen)`:
+   Gebetszeiten samt Import, Spenden, Startklar) lässt deshalb alle Kursverzeichnisse und Pakete verfallen – im Betrieb und
+   in der Website-E2E `verwaltung-gebetszeiten.spec.ts`; seit N6 kostet das 2–4 s je Richtung ohne lange Blockade. Den
+   ausdrücklichen Tag an `ladeVerzeichnisJson`/`ladeEinheitJson` zu streichen reicht nicht. **Vorschlag:** Tags je
+   Einstellung (`einstellung:<schlüssel>` in `ladeEinstellung`, die Schreiber lassen nur ihren Schlüssel verfallen) und in
+   der Lern-App nur `einstellung:funktionen`; die Schalter werden heute nur direkt in der Datenbank gesetzt und brauchen
+   danach `cache-erneuern` (BETRIEB.md). Nicht umgesetzt: betrifft die Cache-Tags der ganzen Website.
 
 ### C.6 Z-L07 neu eingeordnet (echte Inhalte)
 
 | Teil von Z-L07 | Stand 26.10.2026 | Nachweis |
 |---|---|---|
-| Budgets KERN §9 | erfüllt (seit `c9e586ce` auch im ungünstigsten echten Fall) | C.2 (Messbau 3), übrige Budgets wie Abschnitt 3 |
+| Budgets KERN §9 | erfüllt: ausgelieferte echte Lektionen gemessen ≤ 59,8 KB (Reserve 0,2 KB, Sprechen); noch nicht ausgelieferte Formen der ersten Aufgabe geschätzt ≤ 58,7 KB (formen seit der Nacharbeit; vorher ≈ 60,5 KB, die Aussage „auch im ungünstigsten echten Fall“ zu `c9e586ce` galt nur für Ausgeliefertes) | C.2 (Messbau 4), übrige Budgets wie Abschnitt 3 |
 | LCP ≤ 2,5 s | erfüllt | 6 Routen 1869–2088 ms |
 | INP ≤ 200 ms | **teilweise**: Spieler 168–184 ms erfüllt; Lernpfad „offline speichern“ **416 ms verfehlt** | C.4 |
 | CLS ≤ 0,1 | erfüllt | ≤ 0,007 |

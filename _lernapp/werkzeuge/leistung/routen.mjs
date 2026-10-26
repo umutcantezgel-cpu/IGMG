@@ -15,7 +15,8 @@ export const einheit = (kurs) => `${ziel(kurs)}.a1.test`;
 
 /**
  * Echte Lektionen (Stufe C N6, Z-L07 mit echten Inhalten): A1 aus `tr.a1.e01` (Auswahl zuerst) und die B1-Lektion
- * `tr.b1.e01.l06`, die mit einer Geschichte beginnt (wie 136 echte Lektionen; der ungünstigste Typ-Chunk der ersten Aufgabe),
+ * `tr.b1.e01.l06`, die mit einer Geschichte beginnt (wie 136 echte Lektionen; nicht der größte Typ-Chunk der ersten Aufgabe –
+ * Sprechen, Lesen mit Fragen und Minimalpaare laden mehr, das JS-Budget je Form misst `web/scripts/lernapp-budget.mjs`),
  * dazu RTL `de-aus-ar.a1.e01.l01`. Setzt die E2E-Datenbank mit allen Inhalten voraus (scripts/e2e-datenbank.mjs).
  */
 export const ECHT = { a1: 'tr-aus-de.a1.e01.l01', b1Geschichte: 'tr-aus-de.b1.e01.l06', ar: 'de-aus-ar.a1.e01.l01' };

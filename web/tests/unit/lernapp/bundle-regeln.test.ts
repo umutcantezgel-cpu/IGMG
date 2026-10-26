@@ -424,6 +424,7 @@ describe('Budget-Messung (scripts/lernapp-budget.mjs)', () => {
         'koran_wort',
         'lesen_fragen',
         'luecke',
+        'luecke_feld',
         'optionsgruppe',
         'paare',
         'reihenfolge',
