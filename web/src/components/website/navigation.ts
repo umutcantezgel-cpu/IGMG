@@ -46,7 +46,12 @@ type Uebersetzer = (schluessel: string) => string;
 const org = (slug: string): Ziel => ({ pathname: '/organisationen/[organisation]', params: { organisation: slug } });
 
 /** Menüpunkte hinter Funktionsschaltern (ADR 0035): ausgeschaltet erscheinen sie nicht. */
-export type MenueSchalter = { hatim?: boolean; newsletter?: boolean };
+export type MenueSchalter = {
+  hatim?: boolean;
+  newsletter?: boolean;
+  /** Adresse der Lern-App (`/lern-app/<ui>`, außerhalb der Website-Pfade, ADR 0037 Nr. 9); fehlt sie, kein Menüpunkt. */
+  lernApp?: string;
+};
 
 export function baueMenues(t: Uebersetzer, adresse: (ziel: Ziel) => string, schalter: MenueSchalter = {}): Menue[] {
   const p = (schluessel: string, label: string, beschreibung: string, ziel: Ziel, logo?: string): MenuePunkt => ({
@@ -100,6 +105,7 @@ export function baueMenues(t: Uebersetzer, adresse: (ziel: Ziel) => string, scha
       label: t('bildung'),
       punkte: [
         p('lernen', 'lernen', 'bLernen', '/lernen'),
+        ...(schalter.lernApp ? [{ schluessel: 'lern-app', label: t('lernApp'), beschreibung: t('bLernApp'), href: schalter.lernApp }] : []),
         p('elifbe', 'elifbe', 'bElifbe', '/elifbe'),
         p('voranmeldung', 'voranmeldung', 'bVoranmeldung', '/bildung/voranmeldung'),
         p('korankurse', 'korankurse', 'bKorankurse', '/bildung/korankurse'),
