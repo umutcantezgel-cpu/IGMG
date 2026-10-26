@@ -85,6 +85,8 @@ describe('Lernpfad: nur die aktuelle Stufe mit Stationen (LernpfadStufen)', () =
     const html = await stufen([]);
     expect(anzahl(html, /lernweg-station/g)).toBe(2);
     expect(anzahl(html, /zeichnen-bei-sicht/g)).toBe(2);
+    // Schätzhöhe je Karte nach der Zahl ihrer Lektionen (ohne Paket auf dem Gerät: keine, Gegenprüfung N8 Nr. 5d)
+    expect(anzahl(html, /--lektionen:0/g)).toBe(2);
     expect(html).toContain('[Thema a1 1]');
     expect(html).not.toContain('[Thema a2 1]');
     expect(html).toContain('data-stufe-zu="a2"');

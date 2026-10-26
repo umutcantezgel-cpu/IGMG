@@ -246,7 +246,9 @@
    Zugänglichkeitsbaum und in der Suche); bis zum ersten Zeichnen eine geschätzte Höhe, danach die zuletzt gezeichnete */
 @utility zeichnen-bei-sicht {
   content-visibility: auto;
-  contain-intrinsic-block-size: auto --spacing(72);
+  /* Schätzhöhe bis zum ersten Zeichnen (danach merkt sich der Browser die echte): Karte einer Station ohne Lektionen und je
+     Lektion eine Zeile (min-h-11 und gap-1); `--lektionen` setzt die Station (Stufe C N9a, Gegenprüfung N8 Nr. 5d) */
+  contain-intrinsic-block-size: auto calc(--spacing(88) + var(--lektionen, 0) * --spacing(12));
 }
 
 /* Werkzeugleiste des Editors (@container): ab 336 px Breite passt „Kursiv“ noch in die Zeile –

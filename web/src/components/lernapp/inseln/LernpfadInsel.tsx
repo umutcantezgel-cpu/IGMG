@@ -483,6 +483,7 @@ function StationEintrag({ s, i, letzte, k }: { s: Station; i: number; letzte: bo
         <section
           aria-labelledby={`einheit-${s.nummer}`}
           className={`flex flex-col gap-3 rounded-lg border bg-weiss p-5 shadow-s1 zeichnen-bei-sicht ${s.aktuell ? 'border-gruen-700' : 'border-linie'}`}
+          style={{ '--lektionen': s.lektionen?.length ?? 0 } as CSSProperties}
         >
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-16 font-bold text-gruen-800">
             <span>{kennung}</span>
