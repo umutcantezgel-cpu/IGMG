@@ -57,7 +57,7 @@ Rechner nur knapp erreichbar.
 | Commit | Änderung | Wirkung (Spurprofil bzw. Messbau) |
 |---|---|---|
 | `1c9727b4`, `6a9997c8`, `2b285cb1` | Lernpfad: nur die Stufe der aktuellen Einheit mit Stationen (`aufgeklappteStufe`); übrige Stufen behalten Überschrift und „Stufe abgeschlossen“ und zeigen die Zahl ihrer Einheiten in einem `<details>` (`lernpfad.einheitenZahl` de/tr/ar, KI-Entwurf vermerkt), Stationen erst beim Aufklappen; Karte jeder Station mit `content-visibility: auto` (Utility `zeichnen-bei-sicht`); Paketköpfe nur für sichtbare Stufen; nach „Lektionen zeigen“ und „offline speichern“ nur die Station neu statt Verzeichnis und Vorrat neu zu laden; Fortschritt je Einheit in einem Durchlauf (`geschafftJeEinheit`). Spieler: `ladeLektion` prüft nur die gespielte Lektion gegen `LektionSchema` (Paketkopf ohne Zod; Hash wie bisher), nächste Einheit erst nach dem Zeichnen und nur im Kopf. `speichereOffline` gibt vor jedem Paket und Bündel den Hauptthread frei (`nachgeben`: `scheduler.yield` bzw. Zeitgeber) | Lernpfad DOM 1398 → 594, TBT (Spur) 1521 → 650 ms (de) bzw. 1856 → 1091 ms (ar); `safeParse` A1 228 → 61 ms, B1 316 → 90 ms |
-| `db36bcb0`, `1de8935b` | `format.ts` schreibt ganze Zahlen 0–999 in de/tr/ar selbst (östlich-arabische Ziffern wie Intl) und bestimmt die Pluralkategorie ganzer Zahlen nach CLDR; sonst Intl. Megabyte im Ring „offline speichern“ ohne Intl (`megabyte` in `OfflineEinheit`, nur Lernpfad). Unit-Test: gleich wie Intl für 0–1200, Dezimal-, große und negative Zahlen in de, tr, ar (östlich/westlich) | erstes Intl-Objekt je Seite entfällt (Start 83 ms, Spieler 50–91 ms Eigenzeit); Größe 1,07 KB gz (N8.7 Nr. 5) |
+| `db36bcb0`, `1de8935b` | `format.ts` schreibt ganze Zahlen 0–999 in de/tr/ar selbst (östlich-arabische Ziffern wie Intl) und bestimmt die Pluralkategorie ganzer Zahlen nach CLDR; sonst Intl. Megabyte im Ring „offline speichern“ ohne Intl (`megabyte` in `OfflineEinheit`, nur Lernpfad). Unit-Test: gleich wie Intl für 0–1200, Dezimal-, große und negative Zahlen in de, tr, ar (östlich/westlich) | erstes Intl-Objekt je Seite entfällt (Start 83 ms, Spieler 50–91 ms Eigenzeit); Größe minifiziert 829 B gz (N8.7 Nr. 5, berichtigt in N9b) |
 | `23af6310` | Lexikon der Lektion (`lexikonVon`, je Lektion gemerkt) erst bei der ersten Textbewertung (frei, Lücke, Hören-Schreiben, Formen) | B1 ≈ 80 ms weniger beim Öffnen |
 | `f9aedd1e` | Lernpfad: „bereit“ und das Neuberechnen als `startTransition`; eine Stufe zeigt zuerst vier Stationen, je Takt (Zeitgeber, Übergang) vier weitere | kein Block für Rendern/Layout der ganzen Stufe (Spur C: Stil/Layout 122 + 52 ms statt 658 ms) |
 | `76008f63` | `ladeLektion`/`nurLektion` in `lokal/lektion.ts` (nur `LektionSchema` und Vorrat), der Koran-Pfad weiter über `pakete.ts` | Spieler ohne `PaketSchema` und Bündel-Leser; mit `1de8935b` Lektion 1 +56,4 → +54,2 KB über der Hülle, Sprechen 60,3 → 58,2 KB (Grenze 60) |
@@ -166,9 +166,10 @@ Offen (Vorschläge, nicht umgesetzt):
    ohnehin an.
 4. **Spieler ar (RTL):** INP 200 ms in C (Läufe 168/256/200), 168 ms in D bei gleichem Code – an der Grenze; Prüfen und Antwort
    wählen sind die längsten Schritte (Verarbeitung bis 132 ms).
-5. **`format.ts` ≈ 1,07 KB gz** statt „< 1 KB“ (PLAN §3.3, ADR 0037 Nr. 5): Grenze im Unit-Test auf 1,1 KB angehoben, weil die
-   eigenen ganzen Zahlen das erste Intl-Objekt je Seite sparen. Abweichung vom Plan; Entscheidung offen (zurück auf < 1 KB
-   heißt Intl zurück auf Start und Spieler).
+5. **`format.ts` minifiziert 829 B gz**, also unter 1 KB wie PLAN §3.3 und ADR 0037 Nr. 5 verlangen (berichtigt in N9b). Die
+   frühere Angabe „≈ 1,07 KB gz“ maß die übersetzte, nicht minifizierte Quelle (1.068 B); im Client-Bündel kommt die Datei
+   minifiziert an. Der Unit-Test minifiziert jetzt mit Terser aus Next (`next/dist/compiled/terser`) und verlangt < 1.024 B;
+   die Anhebung der Grenze auf 1,1 KB ist zurückgenommen. Keine Abweichung vom Plan.
 6. **Spieler A1 ohne messbaren Gewinn** in Lighthouse (A 83, C 80, D 80; Läufe 77–85), obwohl die Zod-Prüfung von 228 auf
    61 ms sank: Hochfahren und Zod-Chunk überwiegen bei der kleinen Lektion.
 

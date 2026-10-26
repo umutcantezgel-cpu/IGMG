@@ -9,7 +9,13 @@
 // Mit --echt (Stufe C N6): Szenarien mit echten Lektionen (routen.mjs `ECHT`: A1 Auswahl/Paare, B1 mit Geschichte zuerst,
 // ar-Oberfläche RTL) statt des Testkurses; gewählt wird ohne Kenntnis der Lösung (erste Option), der Lernpfad zeigt alle
 // echten Einheiten.
-// Aufruf: node inp-spieler.mjs [--laeufe 3] [--drossel 6] [--echt] [--aus name]
+// „Lernpfad öffnen“ (Stufe C N9b): Die Kurskarte ist ein gewöhnlicher Link. Bis N8 ging der Eintrag des Startdokuments in
+// manchen Läufen mit dem Dokumentwechsel verloren (der Beobachter meldet erst nach dem nächsten Bild, das Dokument war dann
+// schon weg). Jetzt hält das Werkzeug die Navigation an, bis das Startdokument die Interaktion gemeldet hat, und navigiert
+// dann selbst zur Adresse des Links; die gehaltene Zeit zählt nicht zu „Öffnen“. Dazu leert der Beobachter beim `pagehide`
+// seine Warteschlange (`takeRecords`). Je Lauf stehen die Zahl der erfassten Interaktionen und die Schritte ohne Eintrag im
+// Protokoll; fehlt ein Schritt, ist der Lauf als lückenhaft markiert.
+// Aufruf: node inp-spieler.mjs [--laeufe 3] [--drossel 6] [--echt] [--nur <Muster im Szenarionamen>] [--aus name]
 import { parseArgs } from 'node:util';
 import { BASIS, LAST_GRENZE, last, lernTexte, median, schreibe, starteBrowser, warteAufLast } from './gemeinsam.mjs';
 import { ECHT } from './routen.mjs';
@@ -19,6 +25,7 @@ const { values } = parseArgs({
     laeufe: { type: 'string', default: '3' },
     drossel: { type: 'string', default: '6' },
     echt: { type: 'boolean', default: false },
+    nur: { type: 'string' },
     aus: { type: 'string' },
   },
 });
@@ -32,19 +39,27 @@ function BEOBACHTER() {
   // Jede Interaktion sofort an Node melden (`__inpMelde`, exposeFunction): Die Kurskarte ist ein gewöhnlicher Link, „Lernpfad
   // öffnen“ wechselt also das Dokument – Einträge des alten Dokuments wären danach verloren. Zeiten absolut (timeOrigin +
   // startTime), Kennung je Dokument (interactionId zählt je Dokument neu).
+  // Die Bindung `__inpMelde` sendet sofort (auch aus `pagehide`); `__inpGemeldet` zählt die Meldungen dieses Dokuments.
+  window.__inpGemeldet = 0;
+  const melde = (liste) => {
+    for (const e of liste)
+      if (e.interactionId) {
+        window.__inpGemeldet += 1;
+        window.__inpMelde?.({
+          id: `${performance.timeOrigin}-${e.interactionId}`,
+          name: e.name,
+          start: performance.timeOrigin + e.startTime,
+          dauer: e.duration,
+          verarbeitung: e.processingEnd - e.processingStart,
+          verzoegerung: e.processingStart - e.startTime,
+        });
+      }
+  };
   try {
-    new PerformanceObserver((liste) => {
-      for (const e of liste.getEntries())
-        if (e.interactionId)
-          window.__inpMelde?.({
-            id: `${performance.timeOrigin}-${e.interactionId}`,
-            name: e.name,
-            start: performance.timeOrigin + e.startTime,
-            dauer: e.duration,
-            verarbeitung: e.processingEnd - e.processingStart,
-            verzoegerung: e.processingStart - e.startTime,
-          });
-    }).observe({ type: 'event', durationThreshold: 16, buffered: true });
+    const beobachter = new PerformanceObserver((liste) => melde(liste.getEntries()));
+    beobachter.observe({ type: 'event', durationThreshold: 16, buffered: true });
+    // Dokumentwechsel: noch nicht zugestellte Einträge nicht verlieren
+    addEventListener('pagehide', () => melde(beobachter.takeRecords()));
   } catch {
     /* Event Timing fehlt */
   }
@@ -139,14 +154,35 @@ const SZENARIEN = [
     bereit: (s) => s.locator('main a[href="/lern-app/de/tr-aus-de"]').first().waitFor({ timeout: 60_000 }),
     ablauf: async (s, schritt, mess) => {
       // Antippen der Kurskarte (gewöhnlicher Link, Dokumentwechsel) bis die Lektionen sichtbar sind; die Interaktion selbst
-      // meldet das alte Dokument, die Ladezeit bis zu den Lektionen steht getrennt als „Öffnen“
+      // meldet das alte Dokument, die Ladezeit bis zu den Lektionen steht getrennt als „Öffnen“. Die Navigation wartet, bis
+      // das Startdokument die Interaktion gemeldet hat (Event Timing vor dem Dokumentwechsel, höchstens 5 s).
+      const karte = s.locator('main a[href="/lern-app/de/tr-aus-de"]').first();
+      await karte.evaluate((a) => {
+        a.addEventListener(
+          'click',
+          (e) => {
+            e.preventDefault();
+            window.__inpZiel = a.href;
+          },
+          { capture: true, once: true },
+        );
+      });
       const t0 = Date.now();
       await schritt('lernpfadOeffnen', async () => {
-        await s.locator('main a[href="/lern-app/de/tr-aus-de"]').first().tap();
+        const vorher = await s.evaluate(() => window.__inpGemeldet);
+        await karte.tap();
+        const h0 = Date.now();
+        await s
+          .waitForFunction((n) => window.__inpGemeldet > n && window.__inpZiel, vorher, { timeout: 5_000, polling: 'raf' })
+          .catch(() => undefined);
+        // ein Bild Luft, damit die Bindung die Meldung zugestellt hat
+        await bilder(s);
+        mess.gehaltenMs = Date.now() - h0;
+        await s.evaluate(() => location.assign(window.__inpZiel ?? '/lern-app/de/tr-aus-de'));
         await s.waitForURL(/\/lern-app\/de\/tr-aus-de$/);
         await s.locator('main a[href*="/ueben?l="]').first().waitFor({ timeout: 60_000 });
       });
-      mess.oeffnenMs = Date.now() - t0;
+      mess.oeffnenMs = Date.now() - t0 - mess.gehaltenMs;
       const speichern = knopf(s, de.lernpfad.offline);
       if (await speichern.count()) await schritt('offlineSpeichern', () => speichern.first().tap());
     },
@@ -277,11 +313,17 @@ async function messe(sz) {
     const jeSchritt = {};
     for (const e of liste) jeSchritt[e.schritt] = Math.max(jeSchritt[e.schritt] ?? 0, Math.round(e.dauer));
     const inp = liste.length ? Math.round(liste[0].dauer) : null;
+    // Schritte, die ausgelöst wurden, aber keine Interaktion ≥ 16 ms gemeldet haben (lückenhafter Lauf)
+    const ohneEintrag = [...new Set(marken.map((m) => m.name))].filter((name) => !(name in jeSchritt));
+    const jeSchrittAnzahl = {};
+    for (const e of liste) jeSchrittAnzahl[e.schritt] = (jeSchrittAnzahl[e.schritt] ?? 0) + 1;
     laeufe.push({
       lauf: n,
       fehler,
       last: lastVorher,
       interaktionen: liste.length,
+      jeSchrittAnzahl,
+      ohneEintrag,
       inpMs: inp,
       jeSchrittMs: jeSchritt,
       ...mess,
@@ -294,7 +336,7 @@ async function messe(sz) {
       })),
     });
     console.log(
-      `${sz.name} Lauf ${n}: INP ${inp ?? '–'} ms · ${JSON.stringify(jeSchritt)}${mess.oeffnenMs ? ` · Öffnen ${mess.oeffnenMs} ms` : ''} · Last ${lastVorher.l1}${fehler ? ` · FEHLER ${fehler}` : ''}`,
+      `${sz.name} Lauf ${n}: INP ${inp ?? '–'} ms · ${liste.length} Interaktionen erfasst ${JSON.stringify(jeSchrittAnzahl)}${ohneEintrag.length ? ` · OHNE EINTRAG: ${ohneEintrag.join(', ')}` : ''} · ${JSON.stringify(jeSchritt)}${mess.oeffnenMs ? ` · Öffnen ${mess.oeffnenMs} ms (gehalten ${mess.gehaltenMs} ms)` : ''} · Last ${lastVorher.l1}${fehler ? ` · FEHLER ${fehler}` : ''}`,
     );
   }
   return laeufe;
@@ -305,7 +347,8 @@ const lastMax = (laeufe) => Math.max(...laeufe.map((l) => l.last.l1));
 // Lastregel (Auftrag L8-02 Nr. 5): über 200 ms bei Last > 1,5 einmal nachmessen, sobald die Last sinkt (höchstens 5 min,
 // nach einem vergeblichen Warten 2 min); sonst „unter Last“
 let wartenMs = 5 * 60_000;
-for (const sz of values.echt ? SZENARIEN_ECHT : SZENARIEN) {
+const auswahl = (values.echt ? SZENARIEN_ECHT : SZENARIEN).filter((sz) => !values.nur || new RegExp(values.nur).test(sz.name));
+for (const sz of auswahl) {
   let laeufe = await messe(sz);
   let nachgemessen = null;
   if (median2(laeufe) > 200 && lastMax(laeufe) > LAST_GRENZE) {
@@ -327,6 +370,8 @@ for (const sz of values.echt ? SZENARIEN_ECHT : SZENARIEN) {
     jeSchrittMedianMs: jeSchrittMedian,
     oeffnenMedianMs: laeufe.some((l) => l.oeffnenMs) ? median(laeufe.map((l) => l.oeffnenMs ?? NaN)) : null,
     lastMax: lastMax(laeufe),
+    interaktionenJeLauf: laeufe.map((l) => l.interaktionen),
+    lueckenhaft: laeufe.filter((l) => l.ohneEintrag.length).map((l) => `Lauf ${l.lauf}: ${l.ohneEintrag.join(', ')}`),
     unterLast: median2(laeufe) > 200 && lastMax(laeufe) > LAST_GRENZE,
     nachgemessen,
     fehler: laeufe.filter((l) => l.fehler).map((l) => `Lauf ${l.lauf}: ${l.fehler}`),
@@ -338,15 +383,15 @@ await browser.close();
 const md = [
   `# INP (Labor) · CPU ×${DROSSEL} · ${LAEUFE} Läufe je Szenario · ${values.echt ? 'echte Lektionen' : 'Testkurs'} · ${BASIS}`,
   '',
-  '| Szenario | INP Median (ms) | je Schritt (Median, ms) | Öffnen (ms) | Last (max) | Ergebnis | Fehler |',
-  '|---|---|---|---|---|---|---|',
+  '| Szenario | INP Median (ms) | je Schritt (Median, ms) | Öffnen (ms) | Interaktionen je Lauf | Last (max) | Ergebnis | Fehler |',
+  '|---|---|---|---|---|---|---|---|',
   ...ergebnis.szenarien.map(
     (z) =>
       `| ${z.name} | ${z.inpMedianMs} | ${Object.entries(z.jeSchrittMedianMs)
         .map(([k, v]) => `${k} ${v}`)
         .join(
           ' · ',
-        )} | ${z.oeffnenMedianMs ?? '–'} | ${z.lastMax} | ${z.inpMedianMs <= 200 ? 'erfüllt' : `verfehlt${z.unterLast ? ' (unter Last)' : ''}`}${z.nachgemessen ? ` · nachgemessen (vorher ${z.nachgemessen.inpMedianMs} ms bei Last ${z.nachgemessen.lastMax})` : ''} | ${z.fehler.length ? z.fehler.join('; ') : '–'} |`,
+        )} | ${z.oeffnenMedianMs ?? '–'} | ${z.interaktionenJeLauf.join(' / ')}${z.lueckenhaft.length ? ` (ohne Eintrag: ${z.lueckenhaft.join('; ')})` : ''} | ${z.lastMax} | ${z.inpMedianMs <= 200 ? 'erfüllt' : `verfehlt${z.unterLast ? ' (unter Last)' : ''}`}${z.nachgemessen ? ` · nachgemessen (vorher ${z.nachgemessen.inpMedianMs} ms bei Last ${z.nachgemessen.lastMax})` : ''} | ${z.fehler.length ? z.fehler.join('; ') : '–'} |`,
   ),
 ].join('\n');
 schreibe(`${values.aus}.md`, md);

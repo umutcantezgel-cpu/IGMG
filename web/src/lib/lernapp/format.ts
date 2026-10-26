@@ -1,6 +1,6 @@
 /**
- * Kleiner ICU-Teilformatierer für den Client der Lern-App (ADR 0037 Nr. 5, PLAN §3.3; < 1 KB gz, seit Stufe C N8 mit eigenen
- * ganzen Zahlen ≤ 1,1 KB): `{name}`, `{n, number}`, `{n, plural, =0 {…} one {…} other {…}}` mit `#` und
+ * Kleiner ICU-Teilformatierer für den Client der Lern-App (ADR 0037 Nr. 5, PLAN §3.3; < 1 KB gz minifiziert, mit den eigenen
+ * ganzen Zahlen aus Stufe C N8 829 B): `{name}`, `{n, number}`, `{n, plural, =0 {…} one {…} other {…}}` mit `#` und
  * `{x, select, … other {…}}`, verschachtelt. Wie intl-messageformat schreibt `{n}` die Zahl unverändert; Ziffern der
  * Oberfläche nur über `{n, number}` und `#`. Plural für ganze Zahlen nach CLDR, sonst über `Intl.PluralRules` (Arabisch: zero,
  * one, two, few, many, other). Apostroph-Regel wie ICU („'{'“, „''“). Ziffern der arabischen Oberfläche östlich-arabisch,

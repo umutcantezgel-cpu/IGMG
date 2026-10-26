@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import { join } from 'node:path';
 import { gzipSync } from 'node:zlib';
 import { createTranslator } from 'next-intl';
@@ -9,10 +10,15 @@ import de from '../../../messages/lernapp/de.json';
 import tr from '../../../messages/lernapp/tr.json';
 import { formatiere, intlSprache, zahl, type Werte, type Ziffern } from '@/lib/lernapp/format';
 
+/** Terser aus Next (ohne eigene Typen; derselbe Minifizierer wie für die Client-Chunks). */
+const { minify } = createRequire(import.meta.url)('next/dist/compiled/terser') as {
+  minify: (code: string, optionen: Record<string, unknown>) => Promise<{ code?: string }>;
+};
+
 /**
  * Teilformatierer der Lern-App (ADR 0037 Nr. 5): gleiche Ausgabe wie `createTranslator` von next-intl (nur im Test) für
  * `{name}`, Zahlen, plural mit `#` und `=n`, select, Verschachtelung und Apostroph-Regel; Arabisch mit sechs
- * Pluralkategorien und östlichen bzw. westlichen Ziffern (O-5). Größe < 1 KB gz.
+ * Pluralkategorien und östlichen bzw. westlichen Ziffern (O-5). Größe < 1 KB gz, minifiziert (Terser wie im Client-Bündel).
  */
 function vergleiche(vorlage: string, werte: Werte, sprache: 'de' | 'tr' | 'ar', ziffern: Ziffern = 'oestlich') {
   const t = createTranslator({ locale: intlSprache(sprache, ziffern), messages: { m: vorlage } });
@@ -118,12 +124,16 @@ describe('Zahlen und Plural ohne Intl gleich wie Intl', () => {
 });
 
 describe('Größe', () => {
-  it('höchstens 1,1 KB gz (übersetzt, ohne Kommentare, nicht minifiziert; < 1 KB bis Stufe C N8, dazu ganze Zahlen ohne Intl)', () => {
+  it('unter 1 KB gz, minifiziert wie im Client-Bündel (PLAN §3.3, ADR 0037 Nr. 5)', async () => {
     const quelle = readFileSync(join(import.meta.dirname, '..', '..', '..', 'src', 'lib', 'lernapp', 'format.ts'), 'utf8');
     const js = ts.transpileModule(quelle, {
       compilerOptions: { target: ts.ScriptTarget.ES2020, module: ts.ModuleKind.ESNext, removeComments: true },
     }).outputText;
-    expect(gzipSync(js, { level: 9 }).length).toBeLessThanOrEqual(1126);
+    // Modul-Modus: Exporte bleiben, Interna werden kürzer
+    const { code } = await minify(js, { module: true, ecma: 2020 });
+    expect(code).toBeTruthy();
+    // Stufe C N9b: minifiziert 829 B gz (übersetzt und unminifiziert 1.068 B, das war die Messweise bis N8)
+    expect(gzipSync(code!, { level: 9 }).length).toBeLessThan(1024);
   });
 });
 
