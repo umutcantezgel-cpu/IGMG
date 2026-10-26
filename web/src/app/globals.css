@@ -246,7 +246,15 @@
    Zugänglichkeitsbaum und in der Suche); bis zum ersten Zeichnen eine geschätzte Höhe, danach die zuletzt gezeichnete */
 @utility zeichnen-bei-sicht {
   content-visibility: auto;
-  contain-intrinsic-block-size: auto --spacing(72);
+  /* Schätzhöhe bis zum ersten Zeichnen (danach merkt sich der Browser die echte): Karte einer Station ohne Lektionen und je
+     Lektion ein Zuschlag; `--lektionen` setzt die Station (Stufe C N9a, Gegenprüfung N8 Nr. 5d). Gemessen mit echten Inhalten
+     (tr-aus-de, Stufe A1): auf dem Telefon (390 px) Karte ohne Lektionen 434–511 px, mit acht Lektionen 917–1213 px – Titel
+     und Thema brechen meist um, eine Lektion braucht dort ≈ 72 px statt einer Zeile (min-h-11 und gap-1); ab md (1440 px)
+     336 px ohne und 672 px mit acht Lektionen, also 42 px je Lektion */
+  contain-intrinsic-block-size: auto calc(--spacing(116) + var(--lektionen, 0) * --spacing(18));
+  @variant md {
+    contain-intrinsic-block-size: auto calc(--spacing(84) + var(--lektionen, 0) * --spacing(10.5));
+  }
 }
 
 /* Werkzeugleiste des Editors (@container): ab 336 px Breite passt „Kursiv“ noch in die Zeile –

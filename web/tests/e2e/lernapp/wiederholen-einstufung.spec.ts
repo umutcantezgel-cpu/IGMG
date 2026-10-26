@@ -2,7 +2,7 @@ import { expect, type Page, test } from '@playwright/test';
 import de from '../../../messages/lernapp/de.json';
 import type { AufgabeVon } from '../../../src/lib/lernapp/aufgaben/schema';
 import { formatiere } from '../../../src/lib/lernapp/format';
-import { ernsteBefunde, KURS, LEKTION_1, liveRegion, PAARE, spieleLektion1 } from './hilfen';
+import { ernsteBefunde, KURS, LEKTION_1, liveRegion, loeseWiederholung, spieleLektion1 } from './hilfen';
 import { bietePaketeAn, lektion, sammleSkripte, ZOD_MARKE } from './synthetisch';
 
 /**
@@ -132,35 +132,6 @@ test('Einstufung: adaptiv über zwei Stufen, Vorschlag mit Einheit, Ereignis und
   await expect(page.locator(`main a[href="/lern-app/de/${KURS}/ueben?l=tr-aus-de.a2.e01.l01"]`)).toContainText(t.heute.weiter);
 });
 
-/** Eine Aufgabe der Wiederholungsrunde (aus Lektion 1 des Testkurses) richtig lösen. */
-async function loese(page: Page) {
-  const form = page.locator('main form[data-aufgabe]');
-  const typ = await form.getAttribute('data-aufgabe');
-  if (typ === 'auswahl') {
-    const ueberschrift = await page.locator('main form h2').innerText();
-    const ziel = ueberschrift === t.aufgaben.auswahl.waehleUebersetzung ? 'Wasser' : 'kitap';
-    await page
-      .locator('main label')
-      .filter({ has: page.getByRole('radio', { name: ziel, exact: true }) })
-      .click();
-    await page.getByRole('button', { name: t.spieler.pruefen, exact: true }).click();
-  } else if (typ === 'paare') {
-    for (const [links, rechts] of PAARE) {
-      await page.getByRole('button', { name: links, exact: true }).click();
-      await page.getByRole('button', { name: rechts, exact: true }).click();
-    }
-  } else if (typ === 'wortbank') {
-    for (const w of ['Su', 'içiyorum']) {
-      const kachel = page.getByRole('button', { name: formatiere(t.aufgaben.wortbank.hinzufuegen, { wort: w }, 'de'), exact: true });
-      await kachel.click();
-      await expect(kachel).toHaveCount(0);
-    }
-    await page.getByRole('button', { name: t.spieler.pruefen, exact: true }).click();
-  } else throw new Error(`unerwarteter Typ ${typ}`);
-  await expect(liveRegion(page)).toContainText(t.spieler.richtig);
-  await page.getByRole('button', { name: t.spieler.weiter, exact: true }).click();
-}
-
 test('Wiederholen: ohne Karten leer und ohne Zod; nach einer Lektion mit Fehler eine Runde bis zum Ende', async ({ page }, info) => {
   test.setTimeout(150_000);
   const skripte = sammleSkripte(page);
@@ -180,7 +151,7 @@ test('Wiederholen: ohne Karten leer und ohne Zod; nach einer Lektion mit Fehler 
   const befunde: string[] = [];
   for (let i = 0; i < 8 && (await page.locator('main form[data-aufgabe]').count()) > 0; i++) {
     befunde.push(...(await ernsteBefunde(page, `${info.project.name} wiederholen ${i + 1}`)));
-    await loese(page);
+    await loeseWiederholung(page);
   }
   await expect(page.getByRole('heading', { name: t.spieler.fertigTitel })).toBeVisible();
   befunde.push(...(await ernsteBefunde(page, `${info.project.name} wiederholen fertig`)));

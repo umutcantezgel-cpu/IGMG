@@ -63,7 +63,11 @@ Schreibe einen kurzen Text zur Aufgabe. Die App zählt die Wörter und prüft, o
 
 1. Öffne im Lernpfad eine Einheit.
 2. Tippe auf **„Einheit offline speichern“**. Die App zeigt vorher, wie viele MB es sind.
-3. Wenn „Offline gespeichert“ erscheint, geht die Einheit auch ohne Internet – mit Tönen.
+3. Wenn „Offline gespeichert“ erscheint, geht die Einheit auch ohne Internet – mit Tönen, Lektionen und Wiederholen.
+
+**Eine ganze Stufe auf einmal:** Unter jeder Stufe (z. B. A1) steht **„A1: ganze Stufe offline speichern“**. Die App nennt vorher, wie viele Einheiten und wie viele MB es sind. Du kannst das Speichern jederzeit **abbrechen**; was schon gespeichert ist, bleibt auf dem Gerät. Als gespeichert gilt eine Einheit erst, wenn auch ihre Töne da sind – fehlt nach einem Abbruch noch etwas, steht der Knopf wieder da und speichert nur den Rest. Erst beim bewussten Speichern bittet die App den Browser, die Daten dauerhaft zu behalten.
+
+**Nach einer Aktualisierung der App** holt die App die Seiten für das Lernen ohne Internet beim nächsten Öffnen mit Internet selbst neu. Solange steht bei der Einheit „Wird für die Nutzung ohne Verbindung aktualisiert …“. Klappt das gerade nicht (kein Internet), steht dort „Für die Nutzung ohne Verbindung fehlt noch etwas …“ mit dem Knopf **„Erneut speichern“** – derselbe Hinweis erscheint, wenn schon beim ersten Speichern die Verbindung abriss. Bis dahin funktionieren deine gespeicherten Einheiten ohne Internet trotzdem weiter.
 
 Ohne gespeicherte Einheit siehst du ohne Internet den Hinweis „Ohne Verbindung ist diese Einheit noch nicht auf dem Gerät“.
 
@@ -131,7 +135,7 @@ Dafür braucht es deine **Einwilligung „Lern-App“** im Konto (bei Kindern di
 
 | Problem                                     | Was du tust                                                                               |
 | ------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| Lektion lädt nicht ohne Internet            | Einheit vorher mit Internet „offline speichern“                                           |
+| Lektion lädt nicht ohne Internet            | Einheit oder ganze Stufe vorher mit Internet „offline speichern“                          |
 | „Audio folgt“                               | Für diese Übung gibt es noch keine Aufnahme; sie wird übersprungen                        |
 | Mikrofon geht nicht                         | Im Browser das Mikrofon für die Lern-App erlauben; sonst „Ich kann gerade nicht sprechen“ |
 | Lernstand ist weg                           | Warst du in einem privaten Fenster? Hast du eine Sicherung („Datei einlesen“)?            |

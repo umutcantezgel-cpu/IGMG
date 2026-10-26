@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright';
-import { expect, type Page } from '@playwright/test';
+import { expect, type Locator, type Page } from '@playwright/test';
 import de from '../../../messages/lernapp/de.json';
 import { formatiere } from '../../../src/lib/lernapp/format';
 
@@ -51,6 +51,28 @@ export const testStation = (page: Page) => page.getByRole('region', { name: THEM
 
 /** Die eine Live-Region des Spielers (Rückmeldeblatt). */
 export const liveRegion = (page: Page) => page.locator('main p[role="status"].sr-only').first();
+
+/**
+ * Tastaturweg ohne `locator.focus()` (Gegenprüfung N9a): von einem festen Ausgangspunkt per Tab bis zum Ziel (höchstens `max`
+ * Schritte). Ausgangspunkt ist der Inhalt `main` – das Ziel von „Zum Inhalt springen“ (tabindex −1): Ein Klick auf ein nicht
+ * bedienbares Element darin (`ab`, etwa eine Überschrift) setzt den Fokus dorthin, geprüft. Von da an zählt die Tab-Reihenfolge
+ * der Seite. Hat das Ziel den Fokus schon (etwa „abbrechen“ nach dem Start), bleibt es dabei.
+ */
+export async function perTab(page: Page, ziel: Locator, ab: Locator, max = 200) {
+  const hatFokus = () => ziel.evaluate((el) => el === document.activeElement);
+  if (await hatFokus()) return;
+  await ab.click();
+  await expect(page.locator('main')).toBeFocused();
+  let schritte = 0;
+  let erreicht = false;
+  while (!erreicht && schritte < max) {
+    await page.keyboard.press('Tab');
+    schritte++;
+    erreicht = await hatFokus();
+  }
+  expect(erreicht, `per Tab nicht erreicht (höchstens ${max} Schritte ab main): ${ziel}`).toBe(true);
+  return schritte;
+}
 
 export type Bedienung = 'tastatur' | 'tippen';
 
@@ -249,4 +271,44 @@ export async function beantworteErste(page: Page, texte: typeof de = de, { weite
     return;
   }
   throw new Error('keine wertbare Aufgabe gefunden');
+}
+
+/**
+ * Eine Aufgabe der Wiederholungsrunde (aus Lektion 1 des Testkurses, Oberfläche de) richtig lösen – Auswahl, Paare, Wortbank;
+ * danach „Weiter“.
+ */
+export async function loeseWiederholung(page: Page) {
+  const form = page.locator('main form[data-aufgabe]');
+  const typ = await form.getAttribute('data-aufgabe');
+  if (typ === 'auswahl') {
+    const ueberschrift = await page.locator('main form h2').innerText();
+    const ziel = ueberschrift === de.aufgaben.auswahl.waehleUebersetzung ? 'Wasser' : 'kitap';
+    await page
+      .locator('main label')
+      .filter({ has: page.getByRole('radio', { name: ziel, exact: true }) })
+      .click();
+    await page.getByRole('button', { name: t.pruefen, exact: true }).click();
+  } else if (typ === 'paare') {
+    for (const [links, rechts] of PAARE) {
+      await page.getByRole('button', { name: links, exact: true }).click();
+      await page.getByRole('button', { name: rechts, exact: true }).click();
+    }
+  } else if (typ === 'wortbank') {
+    for (const w of ['Su', 'içiyorum']) {
+      const kachel = page.getByRole('button', { name: formatiere(de.aufgaben.wortbank.hinzufuegen, { wort: w }, 'de'), exact: true });
+      await kachel.click();
+      await expect(kachel).toHaveCount(0);
+    }
+    await page.getByRole('button', { name: t.pruefen, exact: true }).click();
+  } else throw new Error(`unerwarteter Typ ${typ}`);
+  await expect(liveRegion(page)).toContainText(t.richtig);
+  await page.getByRole('button', { name: t.weiter, exact: true }).click();
+}
+
+/** Wiederholungsrunde bis „fertig“ spielen (höchstens acht Aufgaben). */
+export async function wiederholeBisFertig(page: Page) {
+  await expect(page.locator('main form[data-aufgabe]')).toBeVisible({ timeout: 15_000 });
+  for (let i = 0; i < 8 && (await page.locator('main form[data-aufgabe]').count()) > 0; i++) await loeseWiederholung(page);
+  await expect(page.getByRole('heading', { name: t.fertigTitel })).toBeVisible();
+  await expect(page.getByRole('link', { name: t.zurueck })).toBeVisible();
 }

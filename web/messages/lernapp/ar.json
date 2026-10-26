@@ -94,7 +94,7 @@
     "lektion": "الدرس {n, number}",
     "geschafft": "أُنجز",
     "aktuell": "تابع من هنا",
-    "einheitenZahl": "{anzahl, plural, zero {لا وحدات} one {وحدة واحدة} two {وحدتان} few {# وحدات} many {# وحدة} other {# وحدة}}",
+    "stufeZeigen": "{stufe}: {anzahl, plural, zero {لا وحدات} one {اعرض وحدة واحدة} two {اعرض الوحدتين} few {اعرض # وحدات} many {اعرض # وحدة} other {اعرض # وحدة}}",
     "lektionenZeigen": "اعرض الدروس",
     "nichtGeladen": "هذه الوحدة ليست على الجهاز بعد للاستخدام دون اتصال.",
     "tipps": "نصائح نحوية",
@@ -111,7 +111,18 @@
     "offlineFortschritt": "حفظ الوحدة",
     "offlineFertig": "حُفظت للاستخدام دون اتصال ({mb} ميغابايت).",
     "offlineFehler": "تعذّر حفظ كل شيء. حاول مرة أخرى عند وجود اتصال.",
-    "offlineNichtMoeglich": "لا يستطيع هذا المتصفح حفظ الوحدات للاستخدام دون اتصال."
+    "offlineNichtMoeglich": "لا يستطيع هذا المتصفح حفظ الوحدات للاستخدام دون اتصال.",
+    "offlineAktualisieren": "جارٍ التحديث للاستخدام دون اتصال …",
+    "offlineUnvollstaendig": "ما زال ينقص شيء للاستخدام دون اتصال. احفظ مرة أخرى عند وجود اتصال.",
+    "offlineErneut": "احفظ مرة أخرى",
+    "stufeOffline": "{stufe}: احفظ المستوى كله للاستخدام دون اتصال",
+    "stufeOfflineText": "تُحفظ كل وحدات هذا المستوى ({anzahl, plural, zero {لا وحدات} one {وحدة واحدة} two {وحدتان} few {# وحدات} many {# وحدة} other {# وحدة}}) مع أصواتها على هذا الجهاز ({mb} ميغابايت). وبعدها يمكنك التمرّن دون اتصال.",
+    "stufeOfflineRest": "لم تُحفظ بعد للاستخدام دون اتصال: {anzahl, plural, zero {لا وحدات} one {وحدة واحدة} two {وحدتان} few {# وحدات} many {# وحدة} other {# وحدة}} من هذا المستوى ({mb} ميغابايت).",
+    "stufeOfflineLaeuft": "جارٍ الحفظ … {mb} من {gesamt} ميغابايت",
+    "stufeOfflineFortschritt": "حفظ {stufe}",
+    "stufeOfflineFertig": "حُفظ {stufe} للاستخدام دون اتصال ({mb} ميغابايت).",
+    "stufeOfflineAbbrechen": "أوقف الحفظ",
+    "stufeOfflineAbgebrochen": "توقّف الحفظ. يبقى ما حُفظ على الجهاز."
   },
   "koranpfad": {
     "laedt": "جارٍ التحميل …",

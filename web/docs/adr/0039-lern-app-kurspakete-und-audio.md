@@ -142,6 +142,54 @@ Testkurs unter `<kurs>.a1.e01` und ersetzte damit die echte Einheit; über den T
    der alte Testkurs ihre Zeilen überschrieben hatte. Wer ganz sicher gehen will, legt die Entwicklungsdatenbank neu an.
    Geräte früherer Besucher der Test-Domain behalten ihren lokalen Lernstand zu `…a1.e01.l01`–`l04` der alten Testeinheit.
 
+## Fortschreibung nach Stufe C N9a (26.10.2026, Befund G-1 in `_lernapp/protokolle/C-e2e-gegen2.md`, Z-L04)
+
+Gilt vor Nr. 12, wo es abweicht. Anlass: Jede Bereitstellung ist ein neuer Lern-App-Worker; sein Aktivieren löschte die Hülle des
+vorigen Baus und mit ihr die Kursseiten, die „Einheit offline speichern“ vorgehalten hatte – die Station zeigte weiter
+„Offline gespeichert“, ohne Netz landete man auf der Startseite. „Stufe offline speichern“ fehlte.
+
+1. **Kursvorrat je Bau:** `igmg-lernapp-kurse-v<bau>` hält die Seiten gespeicherter Kurse (Lernpfad, Üben, Wiederholen, Tipps)
+   samt aller, auch nachgeladener Programmteile – getrennt von der Hülle und ohne deren Obergrenze von 400 Einträgen, die beim
+   Stöbern die ältesten Einträge verdrängt. Ein Merkzeichen je Kurs und Oberflächensprache sagt „vollständig“; die Seite fragt
+   ohne Netz danach (`kursStand`) und bittet sonst um das Holen (`kurs`).
+2. **Bauwechsel:** Das Aktivieren behält ältere Kursvorräte mit Merkzeichen. Die nächste Bitte einer Seite um die Hülle holt
+   diese Kurse tief in den Kursvorrat des neuen Baus; der alte Vorrat geht erst, wenn alles da ist (oder der Server einen
+   Kurs nicht mehr hat). Bis dahin liefert der Worker ohne Netz die Seiten und Programmteile des alten Baus (in sich stimmig,
+   Programmteile tragen den Inhalts-Hash im Namen) – auch, wenn eine noch offene Seite des alten Baus einen Programmteil
+   nachlädt, den der Server nicht mehr hat. Übergang von Workern vor N9a: Gab es noch keinen Kursvorrat, gilt ein Kurs, dessen
+   vier Seiten in der alten Hülle liegen, als gespeichert.
+   Der alte Worker, beim Wechsel noch bei der Arbeit (Hülle, Programmteile), ist ab dann überholt (`registration.active` ist ein
+   anderer): Er schreibt nicht mehr in Hülle und Kursvorrat seines Baus und löscht nichts. Sonst legte ein `caches.open` die
+   eben gelöschte alte Hülle wieder an, und seine Wiederherstellung hielte die Vorräte des neuen Baus für ältere (Nachprüfung
+   im vollen E2E-Lauf, `offline.spec` Bauwechsel).
+   Grenze (Gegenprüfung N9a): Die Seiten des alten Baus öffnen die lokale Datenbank mit ihrer eigenen `DB_VERSION`
+   (`lokal/db.ts`, heute 1). Hebt ein späterer Bau sie an und hat die Person online schon eine neue Seite geöffnet, scheitert
+   eine alte Seite ohne Netz mit `VersionError`. Wer `DB_VERSION` anhebt, lässt deshalb den Worker die Kursvorräte älterer
+   Bauten nicht mehr ausliefern; gespeicherte Einheiten starten dann erst nach der Wiederherstellung mit Netz wieder offline.
+3. **Ehrlicher Stand:** Der Lernpfad zeigt „Offline gespeichert“ erst, wenn auch die Kursseiten im Vorrat dieses Baus
+   vollständig sind; sonst „wird aktualisiert“ (er holt sie selbst) bzw. – ohne Verbindung – „Erneut speichern“.
+4. **„Stufe offline speichern“** je Stufe im Lernpfad: Speicherbedarf vorher (Pakete und jedes Bündel einmal; ist schon ein
+   Teil gespeichert, ohne die Töne der gespeicherten Einheiten), Ring nach echten Bytes (B-27), `navigator.storage.persist()`
+   erst hier, abbrechbar (Gespeichertes bleibt), Häppchen wie „Einheit offline speichern“ (Stufe C N8, INP), Ergebnis in einer
+   Live-Region, Abbruch und Fehler auch sichtbar; danach die Kursseiten nach Nr. 1. Als offline gespeichert gilt eine Einheit
+   – bei beiden Knöpfen – erst mit ihren Tönen (Gegenprüfung N9a): je Einheit erst ihre Bündel, dann das Paket mit dem
+   Vermerk `offline`. Ein Abbruch oder Fehler in den Tönen lässt keine Einheit ohne Töne als gespeichert; der Knopf bleibt,
+   und beim Nachladen einer neuen Fassung bleibt der alte Vermerk, bis alles da ist. Bei beiden Knöpfen
+   zeichnet der Klick zuerst nur den gedrückten Knopf; Ring und Speichern folgen nach dem nächsten Bild (INP ≤ 200 ms,
+   gemessen in `_lernapp/berichte/leistung.md` Abschnitt N9a: Einheit 152/160 ms in N9a.1 und 144 ms im Nachtrag der
+   Gegenprüfung; Stufe 152 ms und „Speichern abbrechen“ mitten im Speichern 136 ms ebenda). Die übrigen Stationen einer
+   Stufe folgen in Häppchen nach Klick, Taste oder Ruhezeit, nicht nach Bildlauf.
+5. **Root-Worker unverändert:** Er behält alle Vorräte mit dem Präfix `igmg-lernapp-`, also auch den Kursvorrat; der
+   Abmelde-Worker (GO-LIVE „Abschalten“) räumt ihn wie die übrigen Vorräte außer den Modellen.
+6. **Tests:** Unit `lernapp-sw` (Kursvorrat, Merkzeichen, Bauwechsel mit und ohne Netz, alter Worker noch bei der Arbeit,
+   Übergang, keine Verdrängung),
+   `offline-n9a` (Speicherbedarf, Abbrechen auch mitten in den Tönen, Bündel scheitert, Nachladen ohne Töne),
+   `seiten-zustand` (fehlt → wird aktualisiert → vollständig bzw. unvollständig); E2E `offline.spec` (Stufe speichern und
+   mitten in den Tönen abbrechen; ohne Netz mit `setOffline` und Abklemmen per Route: die Lektion einer nur über die Stufe
+   gespeicherten Einheit startet, die Hörübung spielt aus dem Bündel, das erst die Stufe ablegte, Wiederholen bis „fertig“;
+   Bauwechsel per Worker mit neuer `?v=`; desktop per Tab und Enter), `lernpfad.spec` (Stufe per Tab aufklappen),
+   `regression.spec` (Root-SW-Update mit gespeicherter Einheit).
+
 ## Alternativen
 
 - Ein JSON je Kurs: verworfen. Zu groß für das Offline-Speichern einzelner Stufen, und jede Freigabe änderte die ganze Datei.

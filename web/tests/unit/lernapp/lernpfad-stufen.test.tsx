@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import { prerenderToNodeStream } from 'react-dom/static';
-import { describe, expect, it } from 'vitest';
-import { LernpfadStufen, type StationsKontext } from '@/components/lernapp/inseln/LernpfadInsel';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { LernpfadStufen, naechsterTakt, type StationsKontext } from '@/components/lernapp/inseln/LernpfadInsel';
 import { formatiere } from '@/lib/lernapp/format';
 import type { Stufe } from '@/lib/lernapp/kurse';
 import { abschnitte, type PaketInhalt } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
@@ -62,6 +62,10 @@ function kontext(ui: 'de' | 'ar' = 'de'): StationsKontext {
     fehlt: new Set(),
     zeigeLektionen: () => undefined,
     gespeichert: async () => undefined,
+    seiten: 'vollstaendig',
+    seitenVorhalten: async () => true,
+    seitenPruefen: async () => undefined,
+    stufeGespeichert: async () => undefined,
   };
 }
 
@@ -81,13 +85,17 @@ describe('Lernpfad: nur die aktuelle Stufe mit Stationen (LernpfadStufen)', () =
     const html = await stufen([]);
     expect(anzahl(html, /lernweg-station/g)).toBe(2);
     expect(anzahl(html, /zeichnen-bei-sicht/g)).toBe(2);
+    // Schätzhöhe je Karte nach der Zahl ihrer Lektionen (ohne Paket auf dem Gerät: keine, Gegenprüfung N8 Nr. 5d)
+    expect(anzahl(html, /--lektionen:0/g)).toBe(2);
     expect(html).toContain('[Thema a1 1]');
     expect(html).not.toContain('[Thema a2 1]');
     expect(html).toContain('data-stufe-zu="a2"');
     expect(html).toContain('data-stufe-zu="b1"');
     expect(html).not.toContain('data-stufe-zu="a1"');
-    expect(html).toContain(`${formatiere(de.lernpfad.einheitenZahl, { anzahl: 3 }, 'de')}</summary>`);
-    expect(html).toContain(`${formatiere(de.lernpfad.einheitenZahl, { anzahl: 1 }, 'de')}</summary>`);
+    // Knopfname mit Stufe und Handlung (Gegenprüfung N8 Nr. 5c)
+    expect(html).toContain(`${formatiere(de.lernpfad.stufeZeigen, { stufe: 'A2', anzahl: 3 }, 'de')}</summary>`);
+    expect(html).toContain(`${formatiere(de.lernpfad.stufeZeigen, { stufe: 'B1', anzahl: 1 }, 'de')}</summary>`);
+    expect(formatiere(de.lernpfad.stufeZeigen, { stufe: 'A2', anzahl: 3 }, 'de')).toBe('A2: 3 Einheiten zeigen');
     // alle Stufen behalten ihre Überschrift
     for (const s of ['a1', 'a2', 'b1']) expect(html).toContain(`id="stufe-${s}"`);
   });
@@ -127,7 +135,78 @@ describe('Lernpfad: nur die aktuelle Stufe mit Stationen (LernpfadStufen)', () =
 
   it('arabische Oberfläche: Zahl der Einheiten mit arabischer Pluralform und östlichen Ziffern', async () => {
     const html = await stufen([], [], 'ar');
-    expect(html).toContain(`${formatiere(ar.lernpfad.einheitenZahl, { anzahl: 3 }, 'ar')}</summary>`);
-    expect(formatiere(ar.lernpfad.einheitenZahl, { anzahl: 3 }, 'ar')).toContain('٣');
+    expect(html).toContain(`${formatiere(ar.lernpfad.stufeZeigen, { stufe: ar.lernpfad.stufe.a2, anzahl: 3 }, 'ar')}</summary>`);
+    expect(formatiere(ar.lernpfad.stufeZeigen, { stufe: ar.lernpfad.stufe.a2, anzahl: 3 }, 'ar')).toContain('٣');
+  });
+});
+
+describe('Häppchen: die übrigen Stationen erst nach der ersten Eingabe oder nach einer Ruhezeit (Stufe C N9a, INP)', () => {
+  const g = globalThis as unknown as Record<string, unknown>;
+  afterEach(() => {
+    vi.useRealTimers();
+    delete g.window;
+    delete g.requestAnimationFrame;
+    vi.resetModules();
+  });
+
+  /** Frisches Modul (der Auslöser gilt einmal je Seite) mit einem Fenster aus `EventTarget` und Bildern über Zeitgeber. */
+  async function frisch() {
+    vi.useFakeTimers();
+    const fenster = new EventTarget();
+    g.window = fenster;
+    g.requestAnimationFrame = (f: () => void) => setTimeout(f, 16);
+    vi.resetModules();
+    const m = await import('@/components/lernapp/inseln/LernpfadInsel');
+    let fertig = false;
+    void m.nachEingabeOderRuhe().then(() => {
+      fertig = true;
+    });
+    return { m, fenster, fertig: () => fertig };
+  }
+
+  it('nach allen Takten stehen alle Stationen (je Takt vier, nie mehr als die Stufe hat)', () => {
+    for (const n of [1, 4, 5, 14, 16]) {
+      const takte = [naechsterTakt(0, n)];
+      while (takte.at(-1)! < n) takte.push(naechsterTakt(takte.at(-1)!, n));
+      expect(takte.at(-1), String(n)).toBe(n);
+      expect(takte.length, String(n)).toBe(Math.ceil(n / 4));
+      expect(naechsterTakt(n, n)).toBe(n);
+    }
+  });
+
+  it('erste Eingabe (Klick, Taste): weiter nach dem nächsten Bild, nicht vorher', async () => {
+    for (const art of ['click', 'keyup']) {
+      const { fenster, fertig } = await frisch();
+      await vi.advanceTimersByTimeAsync(100);
+      expect(fertig(), art).toBe(false);
+      fenster.dispatchEvent(new Event(art));
+      expect(fertig(), art).toBe(false);
+      await vi.advanceTimersByTimeAsync(20);
+      expect(fertig(), art).toBe(true);
+      vi.useRealTimers();
+    }
+  });
+
+  it('Bildlauf und Rad lösen nichts aus (das Tippen danach träfe sonst auf die Häppchen); die Ruhezeit gilt weiter', async () => {
+    const { m, fenster, fertig } = await frisch();
+    for (const art of ['scroll', 'wheel']) fenster.dispatchEvent(new Event(art));
+    await vi.advanceTimersByTimeAsync(m.RUHE_MS - 50);
+    expect(fertig()).toBe(false);
+    await vi.advanceTimersByTimeAsync(100);
+    expect(fertig()).toBe(true);
+  });
+
+  it('ohne Eingabe nach der Ruhezeit; einmal je Seite, danach sofort', async () => {
+    const { m, fertig } = await frisch();
+    await vi.advanceTimersByTimeAsync(m.RUHE_MS - 50);
+    expect(fertig()).toBe(false);
+    await vi.advanceTimersByTimeAsync(100);
+    expect(fertig()).toBe(true);
+    let wieder = false;
+    void m.nachEingabeOderRuhe().then(() => {
+      wieder = true;
+    });
+    await vi.advanceTimersByTimeAsync(0);
+    expect(wieder).toBe(true);
   });
 });

@@ -13,15 +13,45 @@ import { type EinheitVerweis, istPaketKopf, ladePaketGeprueft, type PaketKopf, t
 export type LektionImPaket = { paket: PaketKopf; lektion: Lektion };
 
 /**
+ * Prüfvermerk einer Lektion des Wissenskurses in gültiger Form (wie `WissensLektionSchema`, ohne Zod): Tag der zweiten
+ * Freigabe, „für Kinder geeignet“ und mindestens eine Aussage mit Text und Quelle.
+ */
+function hatPruefvermerk(roh: Record<string, unknown>, schluessel: string): boolean {
+  const wissen = roh.wissen as Record<string, unknown> | undefined;
+  const v = wissen && typeof wissen === 'object' ? (wissen[schluessel] as Record<string, unknown> | undefined) : undefined;
+  if (!v || typeof v !== 'object') return false;
+  const aussagen = v.aussagen;
+  return (
+    typeof v.geprueftAm === 'string' &&
+    /^\d{4}-\d{2}-\d{2}$/.test(v.geprueftAm) &&
+    typeof v.kinderGeeignet === 'boolean' &&
+    Array.isArray(aussagen) &&
+    aussagen.length > 0 &&
+    aussagen.every(
+      (a: unknown) =>
+        typeof a === 'object' &&
+        a !== null &&
+        typeof (a as Record<string, unknown>).text === 'string' &&
+        typeof (a as Record<string, unknown>).quelle === 'string',
+    )
+  );
+}
+
+/**
  * Prüfung für den Spieler: das Paket nur im Kopf (ohne Zod, wie im Lernpfad), die gespielte Lektion voll gegen
  * `LektionSchema`. Die volle Prüfung des ganzen Pakets (≈ 120 Aufgaben) kostete beim Öffnen einer Lektion ≈ 10–45 ms auf dem
  * Hauptfaden (CPU ungedrosselt); jede andere Lektion wird geprüft, wenn sie gespielt wird. Die Bytes sind wie immer über
  * SHA-256 gegen die Adresse geprüft.
+ *
+ * Wissenskurs (KI-Regel 2, ADR 0040; Absicherung in der Tiefe, Stufe C N9a): Eine Lektion ist nur mit ihrem Prüfvermerk
+ * spielbar (`wissen[schluessel]`, zwei Freigaben zum aktuellen Hash) – wie es `PaketSchema` für das ganze Paket verlangt.
+ * Ein Paket ohne Vermerk für diese Lektion kann der Server nicht ausliefern; fehlt er trotzdem, gibt es nichts zu spielen.
  */
 export const nurLektion =
   (schluessel: string): Pruefung<LektionImPaket> =>
   (roh) => {
     if (!istPaketKopf(roh)) return null;
+    if (roh.kurs === 'islam' && !hatPruefvermerk(roh as unknown as Record<string, unknown>, schluessel)) return null;
     const l = roh.lektionen.find((x) => x.schluessel === schluessel);
     const geprueft = l ? LektionSchema.safeParse(l) : null;
     return geprueft?.success ? { paket: roh, lektion: geprueft.data } : null;

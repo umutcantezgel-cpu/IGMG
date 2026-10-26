@@ -8,7 +8,8 @@
 // (arabischer Freitext), Lernpfad öffnen (Antippen der Kurskarte bis die Lektionen sichtbar sind) und „Einheit offline speichern“.
 // Mit --echt (Stufe C N6): Szenarien mit echten Lektionen (routen.mjs `ECHT`: A1 Auswahl/Paare, B1 mit Geschichte zuerst,
 // ar-Oberfläche RTL) statt des Testkurses; gewählt wird ohne Kenntnis der Lösung (erste Option), der Lernpfad zeigt alle
-// echten Einheiten.
+// echten Einheiten. Dazu (Stufe C N9a): eine zugeklappte Stufe des Lernpfads aufklappen; „Stufe offline speichern“ (A1) und
+// mitten im Speichern „Speichern abbrechen“ (Gegenprüfung N9a).
 // „Lernpfad öffnen“ (Stufe C N9b): Die Kurskarte ist ein gewöhnlicher Link. Bis N8 ging der Eintrag des Startdokuments in
 // manchen Läufen mit dem Dokumentwechsel verloren (der Beobachter meldet erst nach dem nächsten Bild, das Dokument war dann
 // schon weg). Jetzt verhindert das Werkzeug die Standardaktion des Klicks (`preventDefault` auf der Kurskarte), wartet, bis
@@ -278,6 +279,44 @@ const SZENARIEN_ECHT = [
   },
   // Lernpfad mit allen echten Einheiten (A1–B1) öffnen und die erste Einheit offline speichern
   SZENARIEN[SZENARIEN.length - 1],
+  {
+    // Stufe C N9a (Gegenprüfung N8, Nr. 5b): eine zugeklappte Stufe (`<details>`, Stationen erst beim Aufklappen) antippen, bis
+    // ihre erste Station steht; ausgewählt über `data-stufe-zu`, damit derselbe Schritt vor und nach N9a misst
+    name: 'Lernpfad öffnen und eine zugeklappte Stufe aufklappen (A2)',
+    pfad: '/lern-app/de/tr-aus-de',
+    bereit: (s) => s.locator('main a[href*="/ueben?l="]').first().waitFor({ timeout: 60_000 }),
+    ablauf: async (s, schritt) => {
+      const stufe = s.locator('main details[data-stufe-zu="a2"]');
+      await schritt('stufeAufklappen', async () => {
+        await stufe.locator('summary').tap();
+        await stufe.locator('.lernweg-station').first().waitFor({ timeout: 30_000 });
+      });
+    },
+  },
+  {
+    // Gegenprüfung N9a: „Stufe offline speichern“ an A1 (alle echten Einheiten) antippen, bis „Speichern abbrechen“ steht; kurz
+    // danach – mitten im Speichern, das in Häppchen läuft (Pakete prüfen, lesen, vermerken) – abbrechen, bis die Meldung steht.
+    // Netz ungebremst: Mit gebremstem Netz läge das Abbrechen in einer Pause zwischen zwei Paketen.
+    name: 'Lernpfad: Stufe A1 offline speichern und mitten im Speichern abbrechen',
+    pfad: '/lern-app/de/tr-aus-de',
+    bereit: (s) => s.locator('main a[href*="/ueben?l="]').first().waitFor({ timeout: 60_000 }),
+    ablauf: async (s, schritt) => {
+      const stufe = s.locator('section[aria-labelledby="stufe-a1"] [data-stufe-offline]');
+      const abbrechen = knopf(stufe, de.lernpfad.stufeOfflineAbbrechen);
+      await schritt('stufeOfflineSpeichern', async () => {
+        await knopf(stufe, f(de.lernpfad.stufeOffline, { stufe: de.lernpfad.stufe.a1 })).tap();
+        await abbrechen.waitFor({ timeout: 30_000 });
+      });
+      await s.waitForTimeout(300);
+      await schritt('stufeOfflineAbbrechen', async () => {
+        await abbrechen.tap({ timeout: 5_000 });
+        await stufe
+          .locator('p[role="status"]')
+          .filter({ hasText: de.lernpfad.stufeOfflineAbgebrochen })
+          .waitFor({ state: 'attached', timeout: 30_000 });
+      });
+    },
+  },
 ];
 
 const browser = await starteBrowser();

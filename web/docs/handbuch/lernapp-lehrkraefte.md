@@ -66,7 +66,7 @@ Die Tabelle **„Stand dieser Woche“** zeigt je Lernender/Lernendem: **Lerntag
 
 ## 7. Die Lern-App im Unterricht – auch ohne Konto
 
-- **Vor der Stunde** (mit WLAN): Jede/r öffnet die Einheit und tippt auf **„Einheit offline speichern“**. Dann geht sie auch ohne Netz.
+- **Vor der Stunde** (mit WLAN): Jede/r öffnet die Einheit und tippt auf **„Einheit offline speichern“** – oder speichert gleich die ganze Stufe (**„A1: ganze Stufe offline speichern“**, die App nennt vorher die MB). Dann geht sie auch ohne Netz. Nach einer Aktualisierung der App holt sie die nötigen Seiten beim nächsten Öffnen mit WLAN selbst nach; steht bei einer Einheit „Erneut speichern“, kurz mit WLAN antippen.
 - **Einstieg finden:** Der **„Einstufungstest“** im Lernpfad schlägt eine Stufe vor. Das ist nur ein Vorschlag.
 - **Hören und Sprechen:** Wer gerade nicht hören oder sprechen kann (Lärm, keine Kopfhörer), tippt auf „Ich kann gerade nicht hören“ bzw. „Ich kann gerade nicht sprechen“. Die Übung wird übersprungen.
 - **„Audio folgt“** heißt: Für diese Übung gibt es noch keine Aufnahme (vor allem bei Türkisch und Arabisch). Lies die Sätze dann selbst vor.

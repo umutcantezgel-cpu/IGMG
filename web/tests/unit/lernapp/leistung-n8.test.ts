@@ -126,7 +126,8 @@ describe('offline speichern in Häppchen (nachgeben)', () => {
     expect(aufrufe).toBe(1);
   });
 
-  it('speichereOffline gibt vor jedem Paket und jedem Bündel nach und meldet die Bytes', async () => {
+  // je Einheit erst die Töne, dann das Paket (Gegenprüfung N9a: gespeichert erst mit den Tönen)
+  it('speichereOffline gibt vor jedem Bündel und jedem Paket nach und meldet die Bytes', async () => {
     (globalThis as { scheduler?: unknown }).scheduler = undefined;
     const { einheit, abruf: paketAbruf } = bereitstellen(PAKET);
     const reihe: string[] = [];
@@ -150,8 +151,8 @@ describe('offline speichern in Häppchen (nachgeben)', () => {
       vorrat: null,
       fortschritt: (geladen) => fortschritt.push(geladen),
     });
-    expect(reihe).toEqual(['zeitgeber', 'paket', 'bündel']);
-    expect(fortschritt).toEqual([e.bytes, e.bytes + 10]);
+    expect(reihe).toEqual(['zeitgeber', 'bündel', 'paket']);
+    expect(fortschritt).toEqual([10, e.bytes + 10]);
     expect(r).toMatchObject({ einheiten: 1, bytes: e.bytes + 10, fehlgeschlagen: [] });
   });
 });
