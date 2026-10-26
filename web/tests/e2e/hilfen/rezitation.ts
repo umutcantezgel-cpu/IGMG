@@ -46,11 +46,17 @@ export function entferneTestRezitation(r: { id: string; vorhanden: boolean }): v
 /**
  * Inhalts-Caches verfallen lassen (wie global-setup.ts), damit vorgerenderte Seiten die neue bzw. entfernte Rezitation
  * zeigen. Ohne WARTUNG_TOKEN (z. B. Entwicklungsserver ohne Token) wird nichts erneuert.
+ *
+ * `tags` (z. B. `[TAG.lernappKurs('koran')]`): nur diese Tags verfallen lassen. Mitten im parallelen Lauf ist das der Weg:
+ * Alle Tags verfallen zu lassen baut die Kursverzeichnisse aller Richtungen kalt neu (je ≈ 10 s Rechenzeit, der Server
+ * antwortet währenddessen kaum), und Tests im anderen Worker überschreiten ihre Wartezeiten (N5, Stufe C).
  */
-export async function erneuereCaches(basis: string): Promise<void> {
+export async function erneuereCaches(basis: string, tags: readonly string[] = []): Promise<void> {
   const token = process.env.WARTUNG_TOKEN;
   if (!token) return;
-  const antwort = await fetch(new URL('/api/wartung/cache-erneuern', basis), {
+  const adresse = new URL('/api/wartung/cache-erneuern', basis);
+  for (const tag of tags) adresse.searchParams.append('tag', tag);
+  const antwort = await fetch(adresse, {
     method: 'POST',
     headers: { authorization: `Bearer ${token}` },
   });
