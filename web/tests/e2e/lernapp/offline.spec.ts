@@ -100,15 +100,17 @@ const bisMb = (vorlage: string, werte: Record<string, string | number> = {}) =>
  */
 /**
  * „Stufe offline speichern“ steht am Ende der Stufe (seit b9e581e8): erst bedienen, wenn alle Stationen gezeichnet sind
- * (Zeitscheiben), das automatische Speichern der aktuellen und der nächsten Einheit durch ist und der Knopf still steht –
- * sonst rutscht er beim Tippen weiter nach unten und der Tipp trifft eine Station.
+ * (Zeitscheiben), das automatische Speichern der aktuellen und der nächsten Einheit durch ist und der Knopf in Sicht still
+ * steht. Die Stationskarten zeichnen sich erst in Sichtweite (`zeichnen-bei-sicht`, Schätzhöhe): Beim Hinscrollen bekommen sie
+ * ihre echte Höhe und schieben den Knopf – ohne diese Ruhe träfe der Tipp eine Station.
  */
 async function stufeRuhig(page: Page, anzahl: number) {
   await expect(page.locator('section[aria-labelledby="stufe-a1"] > ol > li')).toHaveCount(anzahl, { timeout: 15_000 });
   await page.waitForLoadState('networkidle');
   const knopf = page.locator('section[aria-labelledby="stufe-a1"] [data-stufe-offline] button').first();
-  let vorher = JSON.stringify(await knopf.boundingBox());
+  let vorher = '';
   for (let i = 0; i < 20; i++) {
+    await knopf.scrollIntoViewIfNeeded();
     await page.waitForTimeout(250);
     const jetzt = JSON.stringify(await knopf.boundingBox());
     if (jetzt === vorher) return;
