@@ -1,140 +1,35 @@
 # Mengenbericht Lern-App
 
-Erzeugt mit `node _lernapp/werkzeuge/mengen.mjs --rev 3296d727683477b5ba3bd09a6460417de0f3ba87 --rev aa0471d1ad47cec68121c858278672e9a1f802c3 --aus _lernapp/berichte/mengen.md` (L8-03).
+Erzeugt mit `node _lernapp/werkzeuge/mengen.mjs --rev ee75cbc109a8bccc115bc4205a5110754fd1a1c1 --aus _lernapp/berichte/mengen.md` (L8-03, Stufenauswahl N7).
 Liest nur `web/inhalte/lernapp/**` des jeweiligen Stands (ohne Datenbank, ohne Netz); gleicher Stand → gleicher Bericht.
 Ziele: `_lernapp/PLAN.md` §5.1–§5.3; Abnahme `_lernapp/ABNAHME.md` Z-L01 (erfüllt ab Ziel − 5 %), Z-L02, Z-L03.
 
-## Stand: 3296d727683477b5ba3bd09a6460417de0f3ba87 (Commit `3296d7276834`, 2026-10-21T22:07:58+00:00)
+## Stand: ee75cbc109a8bccc115bc4205a5110754fd1a1c1 (Commit `ee75cbc109a8`, 2026-10-26T06:26:32+00:00)
 
-Gelesen: 15 JSON-Dateien unter `web/inhalte/lernapp/`.
+Gelesen: 444 JSON-Dateien unter `web/inhalte/lernapp/`.
 
-Status der Spracheinheiten: keine.
+Umfang: A1–B1 (Standard nach L3-E16 „Bis B1 reicht erstmal“; B2/C1 offener Ausbau, nicht bewertet). Ziele: Summe dieser Stufen aus PLAN §5.1; Aufgaben, Einstufungsbank und Tipp-Karten anteilig nach Einheiten (42 von 72).
 
-### Sprachkurse je Zielsprache und Stufe (Ist / Ziel PLAN §5.1)
-
-| Ziel | Stufe | Einheiten | Stationen | Lemmata | Sätze | Dialoge + Geschichten | Lesetexte | Sprechen | Schreiben |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| de | A1 | 0 / 12 | 0 / 96 | 0 / 600 | 0 / 2.400 | 0 / 24 | 0 / 6 | 0 / 24 | 0 / 0 |
-| de | A2 | 0 / 14 | 0 / 112 | 0 / 900 | 0 / 3.600 | 0 / 28 | 0 / 14 | 0 / 28 | 0 / 14 |
-| de | B1 | 0 / 16 | 0 / 128 | 0 / 1.300 | 0 / 5.200 | 0 / 32 | 0 / 32 | 0 / 32 | 0 / 16 |
-| de | B2 | 0 / 16 | 0 / 128 | 0 / 1.700 | 0 / 6.800 | 0 / 32 | 0 / 48 | 0 / 32 | 0 / 32 |
-| de | C1 | 0 / 14 | 0 / 112 | 0 / 2.000 | 0 / 8.000 | 0 / 28 | 0 / 56 | 0 / 28 | 0 / 28 |
-| **de** | **Σ** | **0 / 72** | **0 / 576** | **0 / 6.500** | **0 / 26.000** | **0 / 144** | **0 / 156** | **0 / 144** | **0 / 90** |
-| tr | A1 | 0 / 12 | 0 / 96 | 0 / 600 | 0 / 2.400 | 0 / 24 | 0 / 6 | 0 / 24 | 0 / 0 |
-| tr | A2 | 0 / 14 | 0 / 112 | 0 / 900 | 0 / 3.600 | 0 / 28 | 0 / 14 | 0 / 28 | 0 / 14 |
-| tr | B1 | 0 / 16 | 0 / 128 | 0 / 1.300 | 0 / 5.200 | 0 / 32 | 0 / 32 | 0 / 32 | 0 / 16 |
-| tr | B2 | 0 / 16 | 0 / 128 | 0 / 1.700 | 0 / 6.800 | 0 / 32 | 0 / 48 | 0 / 32 | 0 / 32 |
-| tr | C1 | 0 / 14 | 0 / 112 | 0 / 2.000 | 0 / 8.000 | 0 / 28 | 0 / 56 | 0 / 28 | 0 / 28 |
-| **tr** | **Σ** | **0 / 72** | **0 / 576** | **0 / 6.500** | **0 / 26.000** | **0 / 144** | **0 / 156** | **0 / 144** | **0 / 90** |
-| ar | A1 | 0 / 12 | 0 / 96 | 0 / 600 | 0 / 2.400 | 0 / 24 | 0 / 6 | 0 / 24 | 0 / 0 |
-| ar | A2 | 0 / 14 | 0 / 112 | 0 / 900 | 0 / 3.600 | 0 / 28 | 0 / 14 | 0 / 28 | 0 / 14 |
-| ar | B1 | 0 / 16 | 0 / 128 | 0 / 1.300 | 0 / 5.200 | 0 / 32 | 0 / 32 | 0 / 32 | 0 / 16 |
-| ar | B2 | 0 / 16 | 0 / 128 | 0 / 1.700 | 0 / 6.800 | 0 / 32 | 0 / 48 | 0 / 32 | 0 / 32 |
-| ar | C1 | 0 / 14 | 0 / 112 | 0 / 2.000 | 0 / 8.000 | 0 / 28 | 0 / 56 | 0 / 28 | 0 / 28 |
-| **ar** | **Σ** | **0 / 72** | **0 / 576** | **0 / 6.500** | **0 / 26.000** | **0 / 144** | **0 / 156** | **0 / 144** | **0 / 90** |
-
-Zählweise: Einheiten und Stationen ohne Schrift-Vorkurse (`nurFuerAusgang`); Stationen = Lektionen aller Arten;
-Dialoge + Geschichten = Aufgaben `dialog` (je eine kurze Wechselrede) und `geschichte`; Lesetexte = Aufgaben
-`lesen_fragen`; Sprechen und Schreiben = Lektionen dieser Art bzw. Aufgaben `sprechen`/`schreiben` in anderen Lektionen.
-Die Abnahme Z-L01 bewertet Einheiten, Stationen, Lemmata, Sätze (je Zielsprache), die Übersetzungen je Richtung, die
-Schrift-Vorkurse und die Einstufungsbank; die Tipp-Karten je Ausgangssprache stehen zum Vergleich mit PLAN §5.1 dabei.
-
-### Bewertung Z-L01 je Zielsprache (Σ A1–C1, erfüllt ab Ziel − 5 %)
-
-| Ziel | Einheiten | Stationen | Lemmata | Sätze | Aufgaben (Ziel ≈ 8.000) |
-|---|---|---|---|---|---|
-| de | 0 (0 %) – offen | 0 (0 %) – offen | 0 (0 %) – offen | 0 (0 %) – offen | 0 (0 %) – offen |
-| tr | 0 (0 %) – offen | 0 (0 %) – offen | 0 (0 %) – offen | 0 (0 %) – offen | 0 (0 %) – offen |
-| ar | 0 (0 %) – offen | 0 (0 %) – offen | 0 (0 %) – offen | 0 (0 %) – offen | 0 (0 %) – offen |
-
-### Übersetzungen je Richtung
-
-| Richtung | Dateien | Einträge | Alternativen | Tipps | Zielsätze übersetzt | Lemmata übersetzt |
-|---|---:|---:|---:|---:|---|---|
-| tr-aus-de | 0 | 0 | 0 | 0 | 0 / 0 (–) | 0 / 0 (–) |
-| ar-aus-de | 0 | 0 | 0 | 0 | 0 / 0 (–) | 0 / 0 (–) |
-| de-aus-tr | 0 | 0 | 0 | 0 | 0 / 0 (–) | 0 / 0 (–) |
-| ar-aus-tr | 0 | 0 | 0 | 0 | 0 / 0 (–) | 0 / 0 (–) |
-| de-aus-ar | 0 | 0 | 0 | 0 | 0 / 0 (–) | 0 / 0 (–) |
-| tr-aus-ar | 0 | 0 | 0 | 0 | 0 / 0 (–) | 0 / 0 (–) |
-
-Ziel (PLAN §5.1, Z-L01): je Richtung Übersetzungen für 100 % der Zielsätze; ≈ 3 Alternativen je Satz; ≈ 300 Tipps.
-
-### Einstufungsbank und Tipp-Karten (Z-L01, PLAN §5.1)
-
-| Ziel | A1 | A2 | B1 | B2 | C1 | Σ (Ziel ≈ 400) | vorhanden |
-|---|---:|---:|---:|---:|---:|---|---|
-| de | 0 | 0 | 0 | 0 | 0 | 0 (0 %) – offen | nein |
-| tr | 0 | 0 | 0 | 0 | 0 | 0 (0 %) – offen | nein |
-| ar | 0 | 0 | 0 | 0 | 0 | 0 (0 %) – offen | nein |
-
-Einstufungsbank = Aufgaben der Typen aus `EINSTUFUNG_TYPEN` in den Lektionen der Einheiten (ohne Vorkurse), aus denen
-der Einstufungstest auf dem Gerät wählt; Hörtypen zählen hier ohne Prüfung des Audios. „vorhanden“: jede Stufe mit
-Einheiten bietet mindestens zwei Kandidaten.
-
-| Richtung | Tipp-Karten (Ziel ≈ 300 je Ausgangssprache) |
-|---|---|
-| tr-aus-de | 0 (0 %) – offen |
-| ar-aus-de | 0 (0 %) – offen |
-| de-aus-tr | 0 (0 %) – offen |
-| ar-aus-tr | 0 (0 %) – offen |
-| de-aus-ar | 0 (0 %) – offen |
-| tr-aus-ar | 0 (0 %) – offen |
-
-Tipp-Karten = Tipps der Übersetzungsdateien je Richtung (kontrastiv, in der Ausgangssprache; Seite „Tipps“ je Einheit).
-
-### Schrift-Vorkurse
-
-Keine.
-
-Ziel (PLAN §5.1): 8 Lektionen Arabisch-Schrift, 6 Latein, 2 Türkisch.
-
-### Aufgaben je Typ (Sprachkurse, mit Vorkursen in der Summe oben)
-
-Keine.
-
-### Herkunft (Sprachkurse ohne Vorkurse)
-
-- Sätze: keine
-- Lemmata: keine
-
-### Wissenskurs und Koran-Arabisch
-
-| Kurs | Ist | Ziel (PLAN §5.2/§5.3) |
-|---|---|---|
-| Wissen | 0 Einheiten, 0 Lektionen (davon 0 für Kinder geeignet), 0 Aussagen, 0 Belege, 0 Quizfragen | 28 Einheiten, ≈ 170 Lektionen, ≈ 1.400 Aussagen, ≈ 2.000 Belege, ≈ 1.700 Quizfragen |
-| Koran-Arabisch | 0 Einheiten, 0 Lektionen, 0 Wortformen-Verweise, 0 Aufgaben | ≈ 10 Einheiten, ≈ 60 Lektionen, 500–1.000 Wortformen |
-
-Sichtbarkeit (zwei Freigaben, Z-L02/Z-L03) zählt dieser Bericht nicht; sie steht in der Datenbank (Verwaltung → Lern-App).
-
-## Stand: aa0471d1ad47cec68121c858278672e9a1f802c3 (Commit `aa0471d1ad47`, 2026-10-21T22:18:00+00:00)
-
-Gelesen: 82 JSON-Dateien unter `web/inhalte/lernapp/`.
-
-Status der Spracheinheiten: entwurf 42.
+Status der Spracheinheiten im Umfang: automatisch_geprueft 130, entwurf 2; außerhalb: entwurf 12.
 
 ### Sprachkurse je Zielsprache und Stufe (Ist / Ziel PLAN §5.1)
 
 | Ziel | Stufe | Einheiten | Stationen | Lemmata | Sätze | Dialoge + Geschichten | Lesetexte | Sprechen | Schreiben |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|
 | de | A1 | 12 / 12 | 96 / 96 | 600 / 600 | 2.438 / 2.400 | 262 / 24 | 6 / 6 | 80 / 24 | 0 / 0 |
-| de | A2 | 0 / 14 | 0 / 112 | 0 / 900 | 0 / 3.600 | 0 / 28 | 0 / 14 | 0 / 28 | 0 / 14 |
-| de | B1 | 0 / 16 | 0 / 128 | 0 / 1.300 | 0 / 5.200 | 0 / 32 | 0 / 32 | 0 / 32 | 0 / 16 |
-| de | B2 | 0 / 16 | 0 / 128 | 0 / 1.700 | 0 / 6.800 | 0 / 32 | 0 / 48 | 0 / 32 | 0 / 32 |
-| de | C1 | 0 / 14 | 0 / 112 | 0 / 2.000 | 0 / 8.000 | 0 / 28 | 0 / 56 | 0 / 28 | 0 / 28 |
-| **de** | **Σ** | **12 / 72** | **96 / 576** | **600 / 6.500** | **2.438 / 26.000** | **262 / 144** | **6 / 156** | **80 / 144** | **0 / 90** |
+| de | A2 | 14 / 14 | 112 / 112 | 900 / 900 | 3.641 / 3.600 | 206 / 28 | 14 / 14 | 120 / 28 | 14 / 14 |
+| de | B1 | 16 / 16 | 128 / 128 | 1.300 / 1.300 | 5.254 / 5.200 | 223 / 32 | 49 / 32 | 156 / 32 | 16 / 16 |
+| **de** | **Σ** | **42 / 42** | **336 / 336** | **2.800 / 2.800** | **11.333 / 11.200** | **691 / 84** | **69 / 52** | **356 / 84** | **30 / 30** |
 | tr | A1 | 12 / 12 | 96 / 96 | 588 / 600 | 2.534 / 2.400 | 259 / 24 | 6 / 6 | 128 / 24 | 0 / 0 |
-| tr | A2 | 0 / 14 | 0 / 112 | 0 / 900 | 0 / 3.600 | 0 / 28 | 0 / 14 | 0 / 28 | 0 / 14 |
-| tr | B1 | 0 / 16 | 0 / 128 | 0 / 1.300 | 0 / 5.200 | 0 / 32 | 0 / 32 | 0 / 32 | 0 / 16 |
-| tr | B2 | 0 / 16 | 0 / 128 | 0 / 1.700 | 0 / 6.800 | 0 / 32 | 0 / 48 | 0 / 32 | 0 / 32 |
-| tr | C1 | 0 / 14 | 0 / 112 | 0 / 2.000 | 0 / 8.000 | 0 / 28 | 0 / 56 | 0 / 28 | 0 / 28 |
-| **tr** | **Σ** | **12 / 72** | **96 / 576** | **588 / 6.500** | **2.534 / 26.000** | **259 / 144** | **6 / 156** | **128 / 144** | **0 / 90** |
-| ar | A1 | 12 / 12 | 96 / 96 | 600 / 600 | 2.610 / 2.400 | 183 / 24 | 7 / 6 | 91 / 24 | 0 / 0 |
-| ar | A2 | 0 / 14 | 0 / 112 | 0 / 900 | 0 / 3.600 | 0 / 28 | 0 / 14 | 0 / 28 | 0 / 14 |
-| ar | B1 | 0 / 16 | 0 / 128 | 0 / 1.300 | 0 / 5.200 | 0 / 32 | 0 / 32 | 0 / 32 | 0 / 16 |
-| ar | B2 | 0 / 16 | 0 / 128 | 0 / 1.700 | 0 / 6.800 | 0 / 32 | 0 / 48 | 0 / 32 | 0 / 32 |
-| ar | C1 | 0 / 14 | 0 / 112 | 0 / 2.000 | 0 / 8.000 | 0 / 28 | 0 / 56 | 0 / 28 | 0 / 28 |
-| **ar** | **Σ** | **12 / 72** | **96 / 576** | **600 / 6.500** | **2.610 / 26.000** | **183 / 144** | **7 / 156** | **91 / 144** | **0 / 90** |
+| tr | A2 | 14 / 14 | 112 / 112 | 886 / 900 | 3.658 / 3.600 | 246 / 28 | 15 / 14 | 87 / 28 | 13 / 14 |
+| tr | B1 | 16 / 16 | 128 / 128 | 1.284 / 1.300 | 5.296 / 5.200 | 174 / 32 | 38 / 32 | 79 / 32 | 16 / 16 |
+| **tr** | **Σ** | **42 / 42** | **336 / 336** | **2.758 / 2.800** | **11.488 / 11.200** | **679 / 84** | **59 / 52** | **294 / 84** | **29 / 30** |
+| ar | A1 | 12 / 12 | 96 / 96 | 600 / 600 | 2.611 / 2.400 | 183 / 24 | 7 / 6 | 91 / 24 | 0 / 0 |
+| ar | A2 | 14 / 14 | 112 / 112 | 900 / 900 | 3.685 / 3.600 | 337 / 28 | 15 / 14 | 84 / 28 | 14 / 14 |
+| ar | B1 | 16 / 16 | 128 / 128 | 1.300 / 1.300 | 5.067 / 5.200 | 119 / 32 | 34 / 32 | 81 / 32 | 16 / 16 |
+| **ar** | **Σ** | **42 / 42** | **336 / 336** | **2.800 / 2.800** | **11.363 / 11.200** | **639 / 84** | **56 / 52** | **256 / 84** | **30 / 30** |
+
+Außerhalb des Umfangs (offener Ausbau, nicht bewertet): de B2 12 Einheiten (davon freigegeben 0), 1.275 Lemmata, 5.145 Sätze.
 
 Zählweise: Einheiten und Stationen ohne Schrift-Vorkurse (`nurFuerAusgang`); Stationen = Lektionen aller Arten;
 Dialoge + Geschichten = Aufgaben `dialog` (je eine kurze Wechselrede) und `geschichte`; Lesetexte = Aufgaben
@@ -142,47 +37,61 @@ Dialoge + Geschichten = Aufgaben `dialog` (je eine kurze Wechselrede) und `gesch
 Die Abnahme Z-L01 bewertet Einheiten, Stationen, Lemmata, Sätze (je Zielsprache), die Übersetzungen je Richtung, die
 Schrift-Vorkurse und die Einstufungsbank; die Tipp-Karten je Ausgangssprache stehen zum Vergleich mit PLAN §5.1 dabei.
 
-### Bewertung Z-L01 je Zielsprache (Σ A1–C1, erfüllt ab Ziel − 5 %)
+### Bewertung Z-L01 je Zielsprache (Σ A1–B1, erfüllt ab Ziel − 5 %)
 
-| Ziel | Einheiten | Stationen | Lemmata | Sätze | Aufgaben (Ziel ≈ 8.000) |
+| Ziel | Einheiten | Stationen | Lemmata | Sätze | Aufgaben (Ziel ≈ 4.667, anteilig) |
 |---|---|---|---|---|---|
-| de | 12 (16,7 %) – offen | 96 (16,7 %) – offen | 600 (9,2 %) – offen | 2.438 (9,4 %) – offen | 1.659 (20,7 %) – offen |
-| tr | 12 (16,7 %) – offen | 96 (16,7 %) – offen | 588 (9 %) – offen | 2.534 (9,7 %) – offen | 1.586 (19,8 %) – offen |
-| ar | 12 (16,7 %) – offen | 96 (16,7 %) – offen | 600 (9,2 %) – offen | 2.610 (10 %) – offen | 1.798 (22,5 %) – offen |
+| de | 42 (100 %) – erfüllt | 336 (100 %) – erfüllt | 2.800 (100 %) – erfüllt | 11.333 (101,2 %) – erfüllt | 5.724 (122,6 %) – erfüllt |
+| tr | 42 (100 %) – erfüllt | 336 (100 %) – erfüllt | 2.758 (98,5 %) – erfüllt | 11.488 (102,6 %) – erfüllt | 5.421 (116,2 %) – erfüllt |
+| ar | 42 (100 %) – erfüllt | 336 (100 %) – erfüllt | 2.800 (100 %) – erfüllt | 11.363 (101,5 %) – erfüllt | 5.828 (124,9 %) – erfüllt |
 
-### Übersetzungen je Richtung
+### Freigegeben, in Aufgaben verwiesen und live (Σ A1–B1)
+
+| Ziel | Einheiten frei | Stationen frei | Lemmata frei | Sätze frei | Sätze in Aufgaben verwiesen | Sätze live | Lemmata in Aufgaben verwiesen | Lemmata live |
+|---|---|---|---|---|---:|---:|---:|---:|
+| de | 41 (97,6 %) – erfüllt | 328 (97,6 %) – erfüllt | 2.715 (97 %) – erfüllt | 11.006 (98,3 %) – erfüllt | 9.587 / 11.333 (84,6 %) | 9.333 (83,3 % des Ziels) | 2.752 / 2.800 (98,3 %) | 2.666 (95,2 % des Ziels) |
+| tr | 41 (97,6 %) – erfüllt | 328 (97,6 %) – erfüllt | 2.674 (95,5 %) – erfüllt | 11.144 (99,5 %) – erfüllt | 7.720 / 11.488 (67,2 %) | 7.572 (67,6 % des Ziels) | 2.654 / 2.758 (96,2 %) | 2.570 (91,8 % des Ziels) |
+| ar | 42 (100 %) – erfüllt | 336 (100 %) – erfüllt | 2.800 (100 %) – erfüllt | 11.363 (101,5 %) – erfüllt | 7.591 / 11.363 (66,8 %) | 7.591 (67,8 % des Ziels) | 2.647 / 2.800 (94,5 %) | 2.647 (94,5 % des Ziels) |
+
+Freigegeben = Einheiten mit Status ≠ `entwurf` (L3-E15: `automatisch_geprueft`, live mit Hinweis), Prozent vom Ziel.
+In Aufgaben verwiesen = Lemmata und Sätze des Umfangs, auf die irgendeine Aufgabe verweist; der übrige Korpus ist Vorrat
+(Handbuch §5) und erreicht kein Gerät, denn der Paketbau übernimmt nur verwiesene Einträge. Live = verwiesen von einer
+freigegebenen Einheit, selbst in einer freigegebenen Einheit und ohne Kennzeichen `religionsbezug` (der braucht zwei
+Freigaben in der Datenbank); eine Obergrenze, denn Formel-Kandidaten und Sichtbarkeit je Richtung zählt der Bericht nicht.
+
+### Übersetzungen je Richtung (A1–B1)
 
 | Richtung | Dateien | Einträge | Alternativen | Tipps | Zielsätze übersetzt | Lemmata übersetzt |
 |---|---:|---:|---:|---:|---|---|
-| tr-aus-de | 3 | 516 | 916 | 23 | 433 / 2.534 (17,1 %) | 83 / 588 (14,1 %) |
-| ar-aus-de | 1 | 50 | 25 | 20 | 50 / 2.660 (1,9 %) | 0 / 600 (0 %) |
-| de-aus-tr | 9 | 2.033 | 4.619 | 53 | 1.628 / 2.445 (66,6 %) | 405 / 600 (67,5 %) |
-| ar-aus-tr | 1 | 50 | 21 | 20 | 0 / 2.610 (0 %) | 0 / 600 (0 %) |
-| de-aus-ar | 9 | 2.085 | 4.395 | 65 | 1.680 / 2.497 (67,3 %) | 405 / 600 (67,5 %) |
-| tr-aus-ar | 3 | 516 | 797 | 24 | 433 / 2.534 (17,1 %) | 83 / 588 (14,1 %) |
+| tr-aus-de | 43 | 14.246 | 28.204 | 244 | 11.488 / 11.488 (100 %) | 2.758 / 2.758 (100 %) |
+| ar-aus-de | 43 | 14.213 | 29.820 | 263 | 11.413 / 11.413 (100 %) | 2.800 / 2.800 (100 %) |
+| de-aus-tr | 43 | 14.140 | 32.047 | 242 | 11.340 / 11.340 (100 %) | 2.800 / 2.800 (100 %) |
+| ar-aus-tr | 43 | 14.213 | 29.665 | 263 | 11.363 / 11.363 (100 %) | 2.800 / 2.800 (100 %) |
+| de-aus-ar | 43 | 14.192 | 32.216 | 254 | 11.392 / 11.392 (100 %) | 2.800 / 2.800 (100 %) |
+| tr-aus-ar | 43 | 14.246 | 27.954 | 245 | 11.488 / 11.488 (100 %) | 2.758 / 2.758 (100 %) |
 
-Ziel (PLAN §5.1, Z-L01): je Richtung Übersetzungen für 100 % der Zielsätze; ≈ 3 Alternativen je Satz; ≈ 300 Tipps.
+Ziel (PLAN §5.1, Z-L01): je Richtung Übersetzungen für 100 % der Zielsätze; ≈ 3 Alternativen je Satz; Tipps unten.
 
 ### Einstufungsbank und Tipp-Karten (Z-L01, PLAN §5.1)
 
-| Ziel | A1 | A2 | B1 | B2 | C1 | Σ (Ziel ≈ 400) | vorhanden |
-|---|---:|---:|---:|---:|---:|---|---|
-| de | 1.009 | 0 | 0 | 0 | 0 | 1.009 (252,3 %) – erfüllt | ja |
-| tr | 897 | 0 | 0 | 0 | 0 | 897 (224,3 %) – erfüllt | ja |
-| ar | 988 | 0 | 0 | 0 | 0 | 988 (247 %) – erfüllt | ja |
+| Ziel | A1 | A2 | B1 | Σ (Ziel ≈ 233, anteilig) | vorhanden |
+|---|---:|---:|---:|---|---|
+| de | 1.009 | 1.281 | 1.531 | 3.821 (1.639,9 %) – erfüllt | ja |
+| tr | 900 | 1.176 | 1.391 | 3.467 (1.488 %) – erfüllt | ja |
+| ar | 990 | 1.294 | 1.424 | 3.708 (1.591,4 %) – erfüllt | ja |
 
 Einstufungsbank = Aufgaben der Typen aus `EINSTUFUNG_TYPEN` in den Lektionen der Einheiten (ohne Vorkurse), aus denen
 der Einstufungstest auf dem Gerät wählt; Hörtypen zählen hier ohne Prüfung des Audios. „vorhanden“: jede Stufe mit
 Einheiten bietet mindestens zwei Kandidaten.
 
-| Richtung | Tipp-Karten (Ziel ≈ 300 je Ausgangssprache) |
+| Richtung | Tipp-Karten (Ziel ≈ 175 je Ausgangssprache, anteilig) |
 |---|---|
-| tr-aus-de | 23 (7,7 %) – offen |
-| ar-aus-de | 20 (6,7 %) – offen |
-| de-aus-tr | 53 (17,7 %) – offen |
-| ar-aus-tr | 20 (6,7 %) – offen |
-| de-aus-ar | 65 (21,7 %) – offen |
-| tr-aus-ar | 24 (8 %) – offen |
+| tr-aus-de | 244 (139,4 %) – erfüllt |
+| ar-aus-de | 263 (150,3 %) – erfüllt |
+| de-aus-tr | 242 (138,3 %) – erfüllt |
+| ar-aus-tr | 263 (150,3 %) – erfüllt |
+| de-aus-ar | 254 (145,1 %) – erfüllt |
+| tr-aus-ar | 245 (140 %) – erfüllt |
 
 Tipp-Karten = Tipps der Übersetzungsdateien je Richtung (kontrastiv, in der Ausgangssprache; Seite „Tipps“ je Einheit).
 
@@ -199,33 +108,38 @@ Tipp-Karten = Tipps der Übersetzungsdateien je Richtung (kontrastiv, in der Aus
 
 Ziel (PLAN §5.1): 8 Lektionen Arabisch-Schrift, 6 Latein, 2 Türkisch.
 
-### Aufgaben je Typ (Sprachkurse, mit Vorkursen in der Summe oben)
+### Aufgaben je Typ (Sprachkurse A1–B1 ohne Vorkurse; die Summe oben zählt die Vorkurse mit)
 
 | Typ | de | tr | ar |
 |---|---:|---:|---:|
-| `auswahl` | 281 | 324 | 346 |
-| `dialog` | 237 | 246 | 165 |
-| `geschichte` | 25 | 13 | 18 |
-| `grammatik_tipp` | 69 | 70 | 72 |
-| `hoeren_schreiben` | 77 | 58 | 0 |
-| `hoeren_waehlen` | 187 | 77 | 163 |
-| `lesen_fragen` | 6 | 6 | 7 |
-| `luecke` | 211 | 185 | 173 |
-| `minimalpaare` | 68 | 53 | 50 |
-| `paare` | 99 | 152 | 155 |
-| `sprechen` | 80 | 128 | 91 |
-| `wortbank` | 185 | 200 | 256 |
+| `auswahl` | 1.028 | 1.082 | 1.109 |
+| `dialog` | 606 | 635 | 589 |
+| `formen` | 70 | 65 | 67 |
+| `frei` | 223 | 254 | 142 |
+| `geschichte` | 85 | 44 | 50 |
+| `grammatik_tipp` | 234 | 235 | 249 |
+| `harakat` | 0 | 0 | 191 |
+| `hoeren_schreiben` | 241 | 110 | 93 |
+| `hoeren_waehlen` | 623 | 150 | 340 |
+| `lesen_fragen` | 69 | 59 | 56 |
+| `luecke` | 706 | 788 | 600 |
+| `minimalpaare` | 173 | 91 | 176 |
+| `paare` | 389 | 584 | 588 |
+| `satzbau` | 242 | 228 | 261 |
+| `schreiben` | 30 | 29 | 30 |
+| `sprechen` | 356 | 294 | 256 |
+| `wortbank` | 515 | 699 | 729 |
 
-### Herkunft (Sprachkurse ohne Vorkurse)
+### Herkunft (Sprachkurse A1–B1 ohne Vorkurse)
 
-- Sätze: `ki` 6.917, `tatoeba` 665
-- Lemmata: `ki` 937, `wiktionary` 851
+- Sätze: `ki` 32.747, `tatoeba` 1.437
+- Lemmata: `ki` 3.885, `wiktionary` 4.473
 
 ### Wissenskurs und Koran-Arabisch
 
 | Kurs | Ist | Ziel (PLAN §5.2/§5.3) |
 |---|---|---|
-| Wissen | 0 Einheiten, 0 Lektionen (davon 0 für Kinder geeignet), 0 Aussagen, 0 Belege, 0 Quizfragen | 28 Einheiten, ≈ 170 Lektionen, ≈ 1.400 Aussagen, ≈ 2.000 Belege, ≈ 1.700 Quizfragen |
-| Koran-Arabisch | 0 Einheiten, 0 Lektionen, 0 Wortformen-Verweise, 0 Aufgaben | ≈ 10 Einheiten, ≈ 60 Lektionen, 500–1.000 Wortformen |
+| Wissen | 26 Einheiten, 146 Lektionen (davon 135 für Kinder geeignet), 2.124 Aussagen, 4.603 Belege, 1.041 Quizfragen | 28 Einheiten, ≈ 170 Lektionen, ≈ 1.400 Aussagen, ≈ 2.000 Belege, ≈ 1.700 Quizfragen |
+| Koran-Arabisch | 40 Einheiten, 187 Lektionen, 936 Wortformen-Verweise, 936 Aufgaben | ≈ 10 Einheiten, ≈ 60 Lektionen, 500–1.000 Wortformen |
 
 Sichtbarkeit (zwei Freigaben, Z-L02/Z-L03) zählt dieser Bericht nicht; sie steht in der Datenbank (Verwaltung → Lern-App).

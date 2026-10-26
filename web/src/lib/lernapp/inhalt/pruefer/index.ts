@@ -12,12 +12,14 @@ import { pruefeAuszuege, pruefeKaikkiOhneBeispiele, standardDaten } from './date
 import { pruefeDubletten } from './dubletten';
 import { pruefeKinder } from './kinder';
 import { pruefeLizenzen } from './lizenz';
+import { pruefePaketbau } from './paketbau';
 import { pruefeReligionsbezug } from './religionsbezug';
 import { vergleichsform } from './sprache';
 import { pruefeSymbole } from './symbole';
 import { baueTabuLexikon, pruefeTabu } from './tabu';
 import { sammleTexte } from './texte';
 import { type Befund, Befunde, PRUEFER } from './typen';
+import { pruefeUebersetzungen } from './uebersetzung';
 import { pruefeVokalisierung } from './vokalisierung';
 import { pruefeWortschatz } from './wortschatz';
 
@@ -143,8 +145,10 @@ export function pruefeInhalte(quellen: readonly ImportQuelle[], optionen: PruefO
   // Audio-Manifeste: nie vertont (Religionsbezug, Wissen, Koran-Pfad), nur die freigegebene Stimme je Sprache
   befunde.push(...pruefeAudio(inhalte).liste);
 
-  // 4. Sprache: Dubletten, Wortschatz, Satzlänge, Budget, Vokalisierung, Abdeckung, Kinder, Bildkarten
+  // 4. Sprache: Dubletten, Abgleich, Übersetzungen (Kopie des Zieltexts, Schrift), Paketbau-Probe, Wortschatz, Satzlänge,
+  // Budget, Vokalisierung, Abdeckung, Kinder, Bildkarten
   befunde.push(...pruefeDubletten(inhalte).liste, ...pruefeAbgleich(inhalte).liste);
+  befunde.push(...pruefeUebersetzungen(inhalte).liste, ...pruefePaketbau(inhalte).liste);
   const w = pruefeWortschatz(inhalte, { daten, namen: namenAus(inhalte) });
   befunde.push(...w.wortschatz.liste, ...w.satzlaenge.liste, ...w.lemmabudget.liste);
   befunde.push(...pruefeVokalisierung(inhalte).liste);

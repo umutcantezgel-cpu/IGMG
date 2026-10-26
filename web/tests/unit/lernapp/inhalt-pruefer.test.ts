@@ -10,10 +10,12 @@ import { pruefeAusschluesse } from '@/lib/lernapp/inhalt/pruefer/ausschluss';
 import { leereInhalte } from '@/lib/lernapp/inhalt/pruefer/dateien';
 import { auszugsTabelle, ladeHaeufigkeit, ladeKaikki, pruefeAuszuege, pruefeKaikkiOhneBeispiele } from '@/lib/lernapp/inhalt/pruefer/daten';
 import { nahePaare } from '@/lib/lernapp/inhalt/pruefer/dubletten';
+import { nurMitClip } from '@/lib/lernapp/inhalt/pruefer/paketbau';
 import { formelMusterZahl, pruefeReligionsbezug } from '@/lib/lernapp/inhalt/pruefer/religionsbezug';
 import { arabischeKandidaten, arabischNormal } from '@/lib/lernapp/inhalt/pruefer/sprache';
 import { baueTabuLexikon, tabuTreffer, tabuWoerter } from '@/lib/lernapp/inhalt/pruefer/tabu';
 import type { TextEintrag } from '@/lib/lernapp/inhalt/pruefer/texte';
+import { buchstabiert } from '@/lib/lernapp/inhalt/pruefer/uebersetzung';
 import { vokalLuecken } from '@/lib/lernapp/inhalt/pruefer/vokalisierung';
 import { ladeWaechter } from '@/lib/lernapp/inhalt/religion';
 import { LeitfadenSchema } from '@/lib/lernapp/inhalt/schema';
@@ -267,6 +269,200 @@ describe('Abgleich-Selbsttest: Vorlagen aus L2-01 (Lektion l03)', () => {
     expect(von(echt, 'symbole').map(befundZeile)).toEqual([
       expect.stringMatching(/de\.a1\.test\.w001: Motiv wasserglas ohne Freigabe der Redaktion \(LM-34\)/),
     ]);
+  });
+});
+
+describe('Übersetzung: Kopie des Zieltexts und falsche Schrift (Stufe C, Befund G1)', () => {
+  type U = { status: string; eintraege: { bezug: string; text: string; alternativen?: string[] }[] };
+  /** Übersetzungsdatei einer Richtung im Testkurs ändern. */
+  const uebersetzt = (richtung: string, aendere: (u: U) => void, quellen: ImportQuelle[] = testkursQuellen()) =>
+    quellen.map((q) => {
+      if (!q.pfad.includes(`uebersetzung/${richtung}/`)) return q;
+      const u = JSON.parse(q.text) as U;
+      aendere(u);
+      return { pfad: q.pfad, text: JSON.stringify(u) };
+    });
+  const eintrag = (u: U, endung: string) => u.eintraege.find((e) => e.bezug.endsWith(endung))!;
+
+  it('der Zieltext als Übersetzung oder Alternative (ab drei Wörtern) ist für freigegebene Einheiten blockierend', () => {
+    const quellen = uebersetzt('de-aus-tr', (u) => {
+      // wie de.b1.e04.s0071: der deutsche Satz steht als „türkische“ Übersetzung
+      eintrag(u, '.s0001').text = 'Ich trinke Wasser.';
+      eintrag(u, '.s0002').alternativen = ['das haus ist groß'];
+    });
+    expect(von(pruefe(quellen), 'uebersetzung').map(befundZeile)).toEqual([
+      expect.stringMatching(/de\.a1\.test\.s0001@de-aus-tr: Übersetzung gleich dem Zieltext \(nicht übersetzt\)$/),
+      expect.stringMatching(/de\.a1\.test\.s0002@de-aus-tr: Alternative 1 gleich dem Zieltext \(nicht übersetzt\)$/),
+    ]);
+  });
+
+  it('im Entwurf ist derselbe Treffer eine Warnung', () => {
+    const b = pruefe(
+      uebersetzt('de-aus-tr', (u) => {
+        u.status = 'entwurf';
+        eintrag(u, '.s0001').text = 'Ich trinke Wasser.';
+      }),
+    );
+    expect(von(b, 'uebersetzung')).toEqual([]);
+    expect(von(b, 'uebersetzung', 'warnung').map(befundZeile)).toEqual([
+      expect.stringMatching(/de\.a1\.test\.s0001@de-aus-tr: Übersetzung gleich/),
+    ]);
+  });
+
+  it('kein Befund: Gleichheit unter drei Wörtern (Lehnwort, Name, kurze Wendung), Buchstabiersätze, Zahlen in *-aus-ar', () => {
+    // de s0004 als Buchstabiersatz; seine Übersetzungen bleiben Lateinschrift (auch in de-aus-ar)
+    let quellen = geaendert('de', (d) => (d.saetze.find((s) => String(s.schluessel).endsWith('.s0004'))!.text = 'Jan. J – A – N.'));
+    quellen = uebersetzt(
+      'de-aus-tr',
+      (u) => {
+        eintrag(u, '.w001').text = 'Wasser';
+        eintrag(u, '.s0007').text = 'Danke, gut.';
+        eintrag(u, '.s0004').text = 'Jan. J – A – N.';
+      },
+      quellen,
+    );
+    quellen = uebersetzt('de-aus-ar', (u) => (eintrag(u, '.s0004').text = 'J – A – N.'), quellen);
+    quellen = uebersetzt('tr-aus-ar', (u) => (eintrag(u, '.s0002').alternativen = ['3.']), quellen);
+    const b = pruefe(quellen);
+    expect([...von(b, 'uebersetzung'), ...von(b, 'uebersetzung', 'warnung')].map(befundZeile)).toEqual([]);
+  });
+
+  it('lateinische Schrift in *-aus-ar und arabische in *-aus-de/*-aus-tr sind blockierend', () => {
+    let quellen = uebersetzt('de-aus-ar', (u) => (eintrag(u, '.w002').text = 'Brot'));
+    quellen = uebersetzt('tr-aus-de', (u) => (eintrag(u, '.w003').alternativen = ['Haus \u0628\u064E\u064A\u0652\u062A']), quellen);
+    expect(von(pruefe(quellen), 'uebersetzung').map(befundZeile).sort()).toEqual([
+      expect.stringMatching(/de\.a1\.test\.w002@de-aus-ar: Übersetzung in falscher Schrift \(Ausgangssprache ar\)$/),
+      expect.stringMatching(/tr\.a1\.test\.w003@tr-aus-de: Alternative 1 in falscher Schrift \(Ausgangssprache de\)$/),
+    ]);
+  });
+
+  it('Buchstabiersatz: mindestens drei Einzelbuchstaben mit Strich', () => {
+    expect(buchstabiert('Konrad. K – O – N – R – A – D.')).toBe(true);
+    expect(buchstabiert('Can: C-A-N.')).toBe(true);
+    expect(buchstabiert('Schreib mir eine E-Mail.')).toBe(false);
+    expect(buchstabiert('Wir fahren mit der U-Bahn.')).toBe(false);
+    expect(buchstabiert('A – B')).toBe(false);
+  });
+});
+
+describe('Paketbau-Probe (Stufe C, Z-L14 Nacharbeit 3)', () => {
+  type Aufgaben = Record<string, unknown>[];
+
+  it('verworfene Aufgaben (Satzbau, Harakat, Lücke) sind je Richtung blockierend, mit dem Grund des Paketbaus', () => {
+    const de = geaendert('de', (d) => {
+      // l03.a08 Satzbau „Das Haus ist groß.“: eine Fassung aus anderen Wörtern als den Kacheln
+      (d.lektionen[2]!.aufgaben as Aufgaben)[7]!.alternativen = ['Das Haus ist sehr groß.'];
+    });
+    const ar = geaendert('ar', (d) => {
+      const l03 = d.lektionen[2]!.aufgaben as Aufgaben;
+      // l03.a10 Harakat zu w004: eine Variante mit Alif am Ende (anderes Gerüst)
+      l03[9]!.varianten = ['\u0643\u064E\u062A\u064E\u0627\u0628', '\u0643\u0650\u062A\u064E\u0627\u0628\u064B\u0627'];
+      // l03.a07 Lücke (Wort 1, das Verb): zwei Ablenker, die sich nur in den Vokalzeichen unterscheiden
+      l03[6]!.ablenker = ['\u062A\u064E\u0634\u0652\u0631\u064E\u0628\u064F', '\u062A\u064F\u0634\u0652\u0631\u064E\u0628\u064F'];
+    }).filter((q) => q.pfad.includes('sprache/ar/'));
+    const zeilen = von(pruefe([...de.filter((q) => !q.pfad.includes('sprache/ar/')), ...ar]), 'paketbau').map(befundZeile);
+    expect(zeilen.sort()).toEqual([
+      expect.stringMatching(/ar\.a1\.test\.l03\.a07: Paketbau verwirft die Aufgabe \(ar-aus-de\): Optionen doppelt$/),
+      expect.stringMatching(/ar\.a1\.test\.l03\.a07: Paketbau verwirft die Aufgabe \(ar-aus-tr\): Optionen doppelt$/),
+      expect.stringMatching(/ar\.a1\.test\.l03\.a10: Paketbau verwirft die Aufgabe \(ar-aus-de\): Optionen mit verschiedenem Gerüst$/),
+      expect.stringMatching(/ar\.a1\.test\.l03\.a10: Paketbau verwirft die Aufgabe \(ar-aus-tr\): Optionen mit verschiedenem Gerüst$/),
+      expect.stringMatching(/de\.a1\.test\.l03\.a08: Paketbau verwirft die Aufgabe \(de-aus-ar\): Fassung 2 passt nicht zu den Kacheln$/),
+      expect.stringMatching(/de\.a1\.test\.l03\.a08: Paketbau verwirft die Aufgabe \(de-aus-tr\): Fassung 2 passt nicht zu den Kacheln$/),
+    ]);
+  });
+
+  it('im Entwurf ist eine verworfene Aufgabe eine Warnung; eine fehlende Übersetzung nennt den Verweis als Grund', () => {
+    const quellen = geaendert('de', (d) => {
+      (d as Json & { status: string }).status = 'entwurf';
+      (d.lektionen[2]!.aufgaben as Aufgaben)[7]!.alternativen = ['Das Haus ist sehr groß.'];
+    });
+    const b = pruefe(quellen);
+    expect(von(b, 'paketbau')).toEqual([]);
+    expect(von(b, 'paketbau', 'warnung').map(befundZeile)).toEqual(
+      expect.arrayContaining([
+        expect.stringMatching(/de\.a1\.test\.l03\.a08: Paketbau verwirft die Aufgabe \(de-aus-tr\): Fassung 2 passt nicht/),
+        expect.stringMatching(/de\.a1\.test\.l03\.a08: Paketbau verwirft die Aufgabe \(de-aus-ar\): Fassung 2 passt nicht/),
+      ]),
+    );
+    // Übersetzung von s0001 fehlt in de-aus-tr: die Wortbank l01.a03 (Ziel und Übersetzung nötig) fällt dort weg
+    const ohne = pruefe(
+      testkursQuellen().map((q) => {
+        if (!q.pfad.includes('uebersetzung/de-aus-tr/')) return q;
+        const u = JSON.parse(q.text) as { eintraege: { bezug: string }[] };
+        u.eintraege = u.eintraege.filter((e) => !e.bezug.endsWith('.s0001'));
+        return { pfad: q.pfad, text: JSON.stringify(u) };
+      }),
+    );
+    expect(von(ohne, 'paketbau').map(befundZeile)).toEqual([
+      expect.stringMatching(
+        /de\.a1\.test\.l01\.a03: Paketbau verwirft die Aufgabe \(de-aus-tr\): Verweis ohne Übersetzung \(de\.a1\.test\.s0001\)$/,
+      ),
+    ]);
+  });
+
+  it('ein fehlender Tipp in einer Ausgangssprache ist nur im Testkurs (keine arabischen Tipps) eine Warnung, sonst blockierend', () => {
+    const tippFehlt = [
+      expect.stringMatching(
+        /de\.a1\.test\.l04\.a04: Paketbau lässt die Aufgabe weg \(de-aus-ar\): Tipp t01 fehlt für die Ausgangssprache ar$/,
+      ),
+      expect.stringMatching(
+        /tr\.a1\.test\.l04\.a04: Paketbau lässt die Aufgabe weg \(tr-aus-ar\): Tipp t01 fehlt für die Ausgangssprache ar$/,
+      ),
+    ];
+    expect(von(pruefe(testkursQuellen()), 'paketbau', 'warnung').map(befundZeile).sort()).toEqual(tippFehlt);
+    // dieselben Dateien als echte Inhalte (ohne die Vorsilbe des Testkurses): freigegeben, also blockierend
+    const echt = pruefe(
+      testkursQuellen().map((q) => ({ ...q, pfad: q.pfad.replace(/^testkurs\//, '') })),
+      { praefix: '' },
+    );
+    expect(von(echt, 'paketbau', 'warnung')).toEqual([]);
+    expect(von(echt, 'paketbau').map(befundZeile).sort()).toEqual(tippFehlt);
+  });
+
+  it('fehlt einer freigegebenen Einheit die Übersetzungsdatei einer Richtung, ist das blockierend, auch je Aufgabe; im Entwurf nicht', () => {
+    const ohneDatei = (quellen: ImportQuelle[]) => quellen.filter((q) => !q.pfad.includes('uebersetzung/de-aus-tr/'));
+    const zeilen = von(pruefe(ohneDatei(testkursQuellen())), 'paketbau').map(befundZeile);
+    expect(zeilen[0]).toMatch(/de\.a1\.test: Übersetzungsdatei der Richtung de-aus-tr fehlt \(freigegebene Einheit\)$/);
+    expect(zeilen.slice(1)).toEqual(
+      expect.arrayContaining([
+        expect.stringMatching(/de\.a1\.test\.l01\.a03: Paketbau verwirft die Aufgabe \(de-aus-tr\): Verweis ohne Übersetzung/),
+      ]),
+    );
+    expect(zeilen.length).toBeGreaterThan(10);
+    expect(zeilen.every((z) => z.includes('de-aus-tr'))).toBe(true);
+    // Entwurf ohne Übersetzungsdatei (wie B2): die Richtung wird nicht geprüft
+    const entwurf = pruefe(ohneDatei(geaendert('de', (d) => ((d as Json & { status: string }).status = 'entwurf'))));
+    expect(von(entwurf, 'paketbau')).toEqual([]);
+    expect(von(entwurf, 'paketbau', 'warnung').filter((x) => x.text.includes('de-aus-tr'))).toEqual([]);
+  });
+
+  it('Hör-Aufgaben ohne Vorgabe, die nur mit Clip spielbar sind, sind ausgenommen', () => {
+    const quellen = geaendert('de', (d) => {
+      const a = (d.lektionen[3]!.aufgaben as Aufgaben).find((x) => x.typ === 'schrift_latein')!;
+      delete a.vorgabe;
+      a.hoeren = 'de.a1.test.w003';
+    });
+    expect(von(pruefe(quellen), 'paketbau')).toEqual([]);
+    expect(
+      nurMitClip({
+        schluessel: 'de.a1.test.l04.a05',
+        typ: 'schrift_latein',
+        anweisung: 'waehleBuchstabe',
+        hoeren: 'de.a1.test.w003',
+        optionen: ['a', 'b'],
+        richtig: 0,
+      }),
+    ).toBe(true);
+    expect(
+      nurMitClip({
+        schluessel: 'de.a1.test.l04.a05',
+        typ: 'schrift_latein',
+        anweisung: 'waehleBuchstabe',
+        vorgabe: 'H_us',
+        optionen: ['a', 'b'],
+        richtig: 0,
+      }),
+    ).toBe(false);
   });
 });
 

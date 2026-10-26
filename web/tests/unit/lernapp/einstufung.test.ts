@@ -10,6 +10,7 @@ import {
   einstufungsEreignis,
   ergebnis,
   gekonnt,
+  istVorkursEinheit,
   type Kandidat,
   kandidatenAus,
   nichtGekonnt,
@@ -187,6 +188,20 @@ describe('Bank, Stufen und Ereignis', () => {
     expect(einheitenFuer([{ schluessel: 'x', stufe: 'a1' as const }], 'a1')).toHaveLength(1);
     expect(einheitenFuer(EINHEITEN, 'grund')).toEqual([]);
     expect(stufenAus(EINHEITEN)).toEqual(STUFEN);
+  });
+
+  it('einheitenFuer überspringt Schrift-Vorkurse (A1: erste Einheit ist e01, nicht e00-<ausgang>)', () => {
+    const mitVorkurs = [
+      { schluessel: 'ar.a1.e00-de', stufe: 'a1' as const },
+      ...EINHEITEN.map((e) => ({ ...e, schluessel: e.schluessel.replace('tr.', 'ar.') })),
+    ];
+    expect(einheitenFuer(mitVorkurs, 'a1').map((e) => e.schluessel)).toEqual(['ar.a1.e01', 'ar.a1.e03']);
+    expect(einheitenFuer([{ schluessel: 'de.a1.e00-tr', stufe: 'a1' as const }], 'a1')).toEqual([]);
+    expect(istVorkursEinheit('tr.a1.e00-ar')).toBe(true);
+    expect(istVorkursEinheit('tr.a1.e00')).toBe(true);
+    expect(istVorkursEinheit('tr.a1.e01')).toBe(false);
+    expect(istVorkursEinheit('tr.b1.e10')).toBe(false);
+    expect(istVorkursEinheit('de.a1.test')).toBe(false);
   });
 
   it('Ereignis `einstufung` gültig nach dem Schema; ohne Sprachstufe keines', () => {
