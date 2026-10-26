@@ -331,8 +331,9 @@ export const BILDKARTEN = {
  * unter MPL-2.0, der Quellcode ist frei erhältlich (MPL-2.0 §3.2).
  */
 export const ORT_DRITTLIZENZEN = {
-  pfad: ORT_HINWEISE.pfad,
+  /** Link mit Fassung (`?v=`, wie der Schlüssel im Vorrat); die Datei selbst liegt unter `ORT_HINWEISE.pfad`. */
+  pfad: ORT_HINWEISE.adresse,
   stand: '8d85527a010e294a26b274749f74294b2a32cec5',
-  sha256: '143764b952fdb1a7c69ce653bfba74a7744d6a8a573bfb73e235fba356c83de3',
+  sha256: ORT_HINWEISE.sha256,
   eigen: { name: 'Eigen', lizenz: 'MPL-2.0', adresse: 'https://gitlab.com/libeigen/eigen' },
 } as const;

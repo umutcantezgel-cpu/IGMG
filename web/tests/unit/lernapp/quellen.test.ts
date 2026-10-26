@@ -210,13 +210,16 @@ describe('Quellen der Lern-App', () => {
   it('Drittlizenzen von ONNX Runtime (ADR 0042 Nr. 10): Volltext gepinnt und ausgeliefert, Stand wie onnxruntime-web', () => {
     const sha = (pfad: string) => createHash('sha256').update(readFileSync(pfad)).digest('hex');
     const gepinnt = join(WEB, 'daten', 'lernapp-lizenzen', 'onnxruntime-ThirdPartyNotices.txt');
-    const ausgeliefert = join(WEB, 'public', ...ORT_DRITTLIZENZEN.pfad.split('/').filter(Boolean));
+    // Link mit Fassung (`?v=` = SHA-256-Präfix, wie der Schlüssel im Vorrat), Datei ohne
+    const [datei, suche] = ORT_DRITTLIZENZEN.pfad.split('?') as [string, string];
+    expect(suche).toBe(`v=${ORT_DRITTLIZENZEN.sha256.slice(0, 12)}`);
+    const ausgeliefert = join(WEB, 'public', ...datei.split('/').filter(Boolean));
     expect(sha(gepinnt)).toBe(ORT_DRITTLIZENZEN.sha256);
     expect(sha(ausgeliefert)).toBe(ORT_DRITTLIZENZEN.sha256);
     const quelle = readFileSync(join(WEB, 'daten', 'lernapp-lizenzen', 'QUELLE.md'), 'utf8');
     expect(quelle).toContain(`\`${ORT_DRITTLIZENZEN.sha256}\``);
     expect(quelle).toContain(ORT_DRITTLIZENZEN.stand);
-    expect(quelle).toContain(`public${ORT_DRITTLIZENZEN.pfad}`);
+    expect(quelle).toContain(`public${datei}`);
     // gleicher Commit wie die ausgelieferte Laufzeit (Fassungskennung endet auf die ersten 9 Zeichen des Commits)
     expect(ORT.version.endsWith(ORT_DRITTLIZENZEN.stand.slice(0, 9))).toBe(true);
     const text = readFileSync(gepinnt, 'utf8');
@@ -232,7 +235,9 @@ describe('Quellen der Lern-App', () => {
       const t = JSON.parse(readFileSync(join(WEB, 'messages', 'lernapp', `${ui}.json`), 'utf8')) as {
         lizenzverzeichnis: { drittlizenzenText: string };
       };
-      expect(t.lizenzverzeichnis.drittlizenzenText, ui).toMatch({ de: /ohne Verbindung/, tr: /bağlantı olmadan/, ar: /دون اتصال/ }[ui]!);
+      expect(t.lizenzverzeichnis.drittlizenzenText, ui).toMatch(
+        { de: /ohne Verbindung/, tr: /bağlantı olmadan/, ar: /\u062F\u0648\u0646 \u0627\u062A\u0635\u0627\u0644/ }[ui]!,
+      );
     }
   });
 

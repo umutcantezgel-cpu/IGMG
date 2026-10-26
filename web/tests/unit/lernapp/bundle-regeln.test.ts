@@ -1,5 +1,5 @@
 import { existsSync, readdirSync, readFileSync, realpathSync, statSync } from 'node:fs';
-import { basename, dirname, join, relative } from 'node:path';
+import { basename, dirname, join, relative, sep } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
 /**
@@ -288,22 +288,23 @@ describe('Kein GPL/LGPL im Client der Lern-App', () => {
   });
 });
 
-// ——— sharp/libvips nicht in Funktionen der Lern-App (ADR 0042 Nr. 10, Z-L19) ———
+// ——— sharp/libvips und onnxruntime-node nicht in Funktionen der Lern-App (ADR 0042 Nr. 10, Z-L19) ———
 
 /**
- * Serverseitige Startpunkte der Lern-App: Seiten und Routen unter `app/lern-app` und der Verwaltung › Lern-App, alle Module
- * unter `components/lernapp`, `lib/lernapp`, `server/queries/lernapp` und die Actions `server/actions/lernapp*`. Worker
- * (`*.worker.ts`) laufen nur im Browser (eigener Bau nach `public/`) und zählen nicht.
+ * Serverseitige Startpunkte der Lern-App: jedes Modul unter `src`, dessen Pfad einen Abschnitt `lernapp*` oder `lern-app*`
+ * hat – u. a. `app/lern-app`, die API `app/api/lernapp/**` (sync, sitzung, schreiben, gruppe, meldung), Verwaltung › Lern-App,
+ * Mein Bereich › Unterricht › Lern-App, `components/lernapp`, `components/verwaltung/lernapp`, `lib/lernapp`,
+ * `server/queries/lernapp` und die Actions `server/actions/lernapp*`. Worker (`*.worker.ts`) laufen nur im Browser (eigener
+ * Bau nach `public/`) und zählen nicht.
  */
 const AKTIONEN = join(WURZEL, 'server', 'actions');
-const lernappServer = [
-  ...lernappDateien,
-  ...dateien(join(WURZEL, 'server', 'queries', 'lernapp')),
-  ...dateien(join(WURZEL, 'app', '[locale]', 'verwaltung', '(geschuetzt)', 'lernapp')),
-  ...readdirSync(AKTIONEN)
-    .filter((n) => /^lernapp.*\.ts$/.test(n))
-    .map((n) => join(AKTIONEN, n)),
-].filter((p) => !p.endsWith('.worker.ts'));
+const LERNAPP_ABSCHNITT = /^(lernapp|lern-app)/;
+const lernappServer = dateien(WURZEL).filter(
+  (p) =>
+    kurz(p)
+      .split(sep)
+      .some((t) => LERNAPP_ABSCHNITT.test(t)) && !p.endsWith('.worker.ts'),
+);
 
 /** Ganzer Modulgraph einer Funktion: statische und dynamische Importe sowie `require()`, auch über `'use server'`/`'use client'`. */
 function funktionsGraph(starts: string[]): Map<string, string[]> {
@@ -328,7 +329,8 @@ function funktionsGraph(starts: string[]): Map<string, string[]> {
   return graph;
 }
 
-const istSharp = (name: string) => name === 'sharp' || name.startsWith('@img/sharp');
+/** sharp mit libvips (LGPL-3.0, `@img/sharp*`) und `onnxruntime-node` (ADR 0042 Nr. 10: nie in Funktionen der Lern-App). */
+const istSharp = (name: string) => name === 'sharp' || name.startsWith('@img/sharp') || name === 'onnxruntime-node';
 
 /**
  * Funde von sharp/libvips: direkte Importe im Modulgraph und Pakete, die sharp über `dependencies` oder
@@ -362,26 +364,38 @@ function sharpFunde(graph: Map<string, string[]>): string[] {
   return funde;
 }
 
-describe('Kein sharp/libvips (LGPL-3.0) in Funktionen der Lern-App', () => {
+describe('Kein sharp/libvips (LGPL-3.0) und kein onnxruntime-node in Funktionen der Lern-App', () => {
   it('die Prüfung greift (Startpunkte gefunden; die Website-Action „Medien“ zieht sharp, M-060)', () => {
     expect(lernappServer.map(kurz)).toEqual(
       expect.arrayContaining([
         join('server', 'actions', 'lernapp-audio.ts'),
         join('app', 'lern-app', 'audio', '[...pfad]', 'route.ts'),
         join('server', 'queries', 'lernapp', 'audio-studio.ts'),
+        // API der Lern-App (Abgleich, Sitzung, Schreibabgabe, Gruppe, Meldung) und die Lern-App-Seite in Mein Bereich
+        ...['sync', 'sitzung', 'schreiben', 'gruppe', 'meldung'].map((r) => join('app', 'api', 'lernapp', r, 'route.ts')),
+        join('app', '[locale]', '(konto)', 'mein-bereich', 'unterricht', '[gruppe]', 'lern-app', 'page.tsx'),
+        join('app', '[locale]', 'verwaltung', '(geschuetzt)', 'lernapp', 'audio', 'page.tsx'),
+        join('components', 'verwaltung', 'lernapp', 'ClipAnhoeren.tsx'),
       ]),
     );
     expect(lernappServer.some((p) => p.endsWith('.worker.ts'))).toBe(false);
+    // keine Website-Module (die Website-Action „Medien“ und ihre Bildpipeline gehören nicht dazu)
+    expect(lernappServer.map(kurz)).not.toContain(join('server', 'actions', 'medien.ts'));
     expect(sharpFunde(funktionsGraph([join(AKTIONEN, 'medien.ts')]))).toContain(`${join('lib', 'medien', 'verarbeiten.ts')} → sharp`);
-    // über Paket-Abhängigkeiten: der Worker (nur Browser) bringt sharp über @huggingface/transformers mit
+    // über Paket-Abhängigkeiten: der Worker (nur Browser) bringt sharp und onnxruntime-node über @huggingface/transformers mit
     const worker = join(WURZEL, 'components', 'lernapp', 'sprechen', 'whisper.worker.ts');
-    expect(sharpFunde(funktionsGraph([worker]))).toContain(`${kurz(worker)} → @huggingface/transformers → sharp`);
+    expect(sharpFunde(funktionsGraph([worker]))).toEqual(
+      expect.arrayContaining([
+        `${kurz(worker)} → @huggingface/transformers → sharp`,
+        `${kurz(worker)} → @huggingface/transformers → onnxruntime-node`,
+      ]),
+    );
     const graph = funktionsGraph([join(AKTIONEN, 'lernapp-audio.ts')]);
     expect(graph.has(join(WURZEL, 'lib', 'medien', 'typ.ts'))).toBe(true);
     expect(graph.has(join(WURZEL, 'lib', 'medien', 'verarbeiten.ts'))).toBe(false);
   });
 
-  it('kein Modul der Lern-App erreicht sharp, auch nicht über Pakete', () => {
+  it('kein Modul der Lern-App erreicht sharp oder onnxruntime-node, auch nicht über Pakete', () => {
     expect(sharpFunde(funktionsGraph(lernappServer))).toEqual([]);
   });
 });

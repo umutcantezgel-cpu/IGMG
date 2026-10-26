@@ -47,6 +47,12 @@ class VorratAttrappe implements Vorrat {
       kopf: antwort.headers,
     });
   }
+  async keys(): Promise<readonly Request[]> {
+    return [...this.eintraege.keys()].map((u) => new Request(u));
+  }
+  async delete(anfrage: RequestInfo | URL): Promise<boolean> {
+    return this.eintraege.delete(new URL(String(anfrage instanceof Request ? anfrage.url : anfrage), URSPRUNG).href);
+  }
 }
 
 /** Eigener Ursprung: echte Konfigurationsdateien aus public/; Gewichte und ORT als kleine Platzhalter (nur die Bytes zählen). */
@@ -99,12 +105,16 @@ describe('Sprechübung: Download in den Vorrat (fuelleVorrat)', () => {
     expect(VORRAT_DATEIEN.map((d) => d.pfad)).toEqual([
       ...MODELL_DATEIEN.map((d) => modellAdresse(d.pfad)),
       ortAdresse(ORT.wasm),
-      ORT_HINWEISE.pfad,
+      ORT_HINWEISE.adresse,
     ]);
-    expect(VORRAT_DATEIEN.filter((d) => d.lizenz).map((d) => d.pfad)).toEqual([ORT_HINWEISE.pfad]);
+    expect(VORRAT_DATEIEN.filter((d) => d.lizenz).map((d) => d.pfad)).toEqual([ORT_HINWEISE.adresse]);
+    // Drittlizenzen mit Fassung im Schlüssel (SHA-256-Präfix des Textes)
+    expect(ORT_HINWEISE.adresse).toBe(`${ORT_HINWEISE.pfad}?v=${ORT_HINWEISE.sha256.slice(0, 12)}`);
     expect(DOWNLOAD_PFADE).toHaveLength(11);
     expect(new Set(DOWNLOAD_PFADE).size).toBe(11);
-    expect(DOWNLOAD_PFADE).toEqual(expect.arrayContaining([...VORRAT_DATEIEN.map((d) => d.pfad), ortAdresse(ORT.mjs)]));
+    // DOWNLOAD_PFADE: Pfade ohne Suchteil (Netzprotokoll)
+    expect(DOWNLOAD_PFADE.filter((p) => p.includes('?'))).toEqual([]);
+    expect(DOWNLOAD_PFADE).toEqual(expect.arrayContaining([...VORRAT_DATEIEN.map((d) => d.pfad.split('?')[0]!), ortAdresse(ORT.mjs)]));
   });
 
   it('holt jede fehlende Datei genau einmal, meldet den Fortschritt bis zum Ende und holt aus dem vollen Vorrat nichts mehr', async () => {
@@ -141,11 +151,39 @@ describe('Sprechübung: Download in den Vorrat (fuelleVorrat)', () => {
       new URL(adresse, URSPRUNG).pathname === ORT_HINWEISE.pfad ? Promise.reject(new TypeError('Failed to fetch')) : abruf(adresse, init);
     await fuelleVorrat(vorrat, ohneLizenz, URSPRUNG);
     const imVorrat = (pfad: string) => vorrat.eintraege.has(new URL(pfad, URSPRUNG).href);
-    expect(VORRAT_DATEIEN.filter((d) => !imVorrat(d.pfad)).map((d) => d.pfad)).toEqual([ORT_HINWEISE.pfad]);
+    expect(VORRAT_DATEIEN.filter((d) => !imVorrat(d.pfad)).map((d) => d.pfad)).toEqual([ORT_HINWEISE.adresse]);
     abrufe.length = 0;
     await fuelleVorrat(vorrat, abruf, URSPRUNG);
-    expect(abrufe).toEqual([ORT_HINWEISE.pfad]);
-    expect(imVorrat(ORT_HINWEISE.pfad)).toBe(true);
+    expect(abrufe).toEqual([ORT_HINWEISE.adresse]);
+    expect(imVorrat(ORT_HINWEISE.adresse)).toBe(true);
+  });
+
+  it('Drittlizenzen von ORT, Fassungswechsel: eine alte Kopie hält die neue nicht auf; die neue wird geholt, ältere fallen weg', async () => {
+    const vorrat = new VorratAttrappe();
+    const { abrufe, abruf } = ursprung();
+    await fuelleVorrat(vorrat, abruf, URSPRUNG);
+    const neu = new URL(ORT_HINWEISE.adresse, URSPRUNG).href;
+    // Gerät mit dem Stand davor: Drittlizenzen unter einer anderen Fassung bzw. noch ohne Fassung, die neue fehlt
+    const altText = vorrat.eintraege.get(neu)!;
+    vorrat.eintraege.delete(neu);
+    const alt = [new URL(`${ORT_HINWEISE.pfad}?v=000000000000`, URSPRUNG).href, new URL(ORT_HINWEISE.pfad, URSPRUNG).href];
+    for (const a of alt) vorrat.eintraege.set(a, altText);
+    const vorher = [...vorrat.eintraege.keys()].filter((k) => !alt.includes(k)).sort();
+
+    abrufe.length = 0;
+    await fuelleVorrat(vorrat, abruf, URSPRUNG);
+    expect(abrufe).toEqual([ORT_HINWEISE.adresse]);
+    expect([...vorrat.eintraege.keys()].filter((k) => new URL(k).pathname === ORT_HINWEISE.pfad)).toEqual([neu]);
+    // Modell und ORT bleiben unberührt
+    expect([...vorrat.eintraege.keys()].sort()).toEqual([...vorher, neu].sort());
+
+    // ohne Netz: Die alte Kopie fällt trotzdem weg – der Lern-App-SW liefert sie für die neue Adresse ohnehin nie (Abgleich
+    // samt Suchteil) –, und die Sprachprüfung startet weiter (Lizenztext ist kein Pflichtteil)
+    vorrat.eintraege.delete(neu);
+    for (const a of alt) vorrat.eintraege.set(a, altText);
+    const offline: Abruf = () => Promise.reject(new TypeError('Failed to fetch'));
+    await fuelleVorrat(vorrat, offline, URSPRUNG);
+    expect([...vorrat.eintraege.keys()].filter((k) => new URL(k).pathname === ORT_HINWEISE.pfad)).toEqual([]);
   });
 
   it('bricht bei einem Abbruch mitten in der Datei ab (mit Stand) und legt sie nicht in den Vorrat', async () => {

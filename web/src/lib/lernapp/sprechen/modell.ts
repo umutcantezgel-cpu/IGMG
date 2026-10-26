@@ -18,8 +18,9 @@ import type { SprechErgebnis } from './auswertung';
  * unter `/lern-app/modelle/`. Sie gehören nicht zum Download, nicht zum Vorrat und nicht zu `GESAMT_BYTES` (ihr Volltext steht
  * auf der Seite „Quellen“, die der Lern-App-SW vorhält).
  *
- * Dazu die Drittlizenzen von ONNX Runtime (`ORT_HINWEISE`, ThirdPartyNotices unter `/lern-app/lizenzen/`): Sie kommen mit dem
- * Download in den Vorrat, damit sie offline neben der ORT-`.wasm` liegen (Z-L17, „onnxruntime-web mit ThirdPartyNotices“).
+ * Dazu die Drittlizenzen von ONNX Runtime (`ORT_HINWEISE`, ThirdPartyNotices unter `/lern-app/lizenzen/`, Adresse mit
+ * Fassung `?v=`): Sie kommen mit dem Download in den Vorrat, damit sie offline neben der ORT-`.wasm` liegen (Z-L17,
+ * „onnxruntime-web mit ThirdPartyNotices“; ADR 0042 Fortschreibung Nr. 25).
  */
 
 export const MODELLE_BASIS = '/lern-app/modelle/';
@@ -50,11 +51,23 @@ export const LIZENZ_DATEIEN: readonly { pfad: string; bytes: number }[] = [
   { pfad: 'LIZENZ-Apache-2.0.txt', bytes: 11_358 },
 ];
 
+const ORT_HINWEISE_PFAD = '/lern-app/lizenzen/onnxruntime-ThirdPartyNotices.txt';
+const ORT_HINWEISE_SHA256 = '143764b952fdb1a7c69ce653bfba74a7744d6a8a573bfb73e235fba356c83de3';
+
 /**
  * Drittlizenzen von ONNX Runtime (ThirdPartyNotices; Herkunft und SHA-256 in `web/daten/lernapp-lizenzen/QUELLE.md`, Link auf
  * den Seiten „Quellen“ über `ORT_DRITTLIZENZEN`). Teil des Downloads und des Vorrats, aber nicht Pflicht für den Start.
+ * - `pfad`: statische Datei unter `public/` (Netzprotokoll, `DOWNLOAD_PFADE`);
+ * - `adresse`: Link und Schlüssel im Vorrat, mit der Fassung `?v=<SHA-256, 12 Zeichen>`. Ein neuer Text ist eine neue
+ *   Adresse: Der Lern-App-SW findet die alte Kopie dafür nicht (Abgleich samt Suchteil) und fragt das Netz, `fuelleVorrat`
+ *   holt die neue Fassung und nimmt ältere derselben Datei aus dem Vorrat. Ohne Fassung bliebe eine alte Kopie für immer.
  */
-export const ORT_HINWEISE = { pfad: '/lern-app/lizenzen/onnxruntime-ThirdPartyNotices.txt', bytes: 338_088 } as const;
+export const ORT_HINWEISE = {
+  pfad: ORT_HINWEISE_PFAD,
+  adresse: `${ORT_HINWEISE_PFAD}?v=${ORT_HINWEISE_SHA256.slice(0, 12)}`,
+  sha256: ORT_HINWEISE_SHA256,
+  bytes: 338_088,
+} as const;
 
 export const ORT = {
   version: '1.31.0-dev.20260914-8d85527a0',
@@ -97,7 +110,8 @@ export const arbeiterAdresse = (bau: string): string =>
 /**
  * Die 11 Download-Dateien der Sprechübung (KERN 4.0 §9, ≈ 95 MB): 7 Modell- und Konfigurationsdateien, ORT `.mjs` und
  * `.wasm`, der Worker und die Drittlizenzen von ORT. Das Netzprotokoll (`_lernapp/werkzeuge/leistung/whisper-netz.mjs`)
- * erwartet nach dem Klick jede genau einmal über das Netz.
+ * erwartet nach dem Klick jede genau einmal über das Netz. Pfade ohne Suchteil (Worker `?v=<bau>`, Drittlizenzen
+ * `?v=<fassung>` fallen weg).
  */
 export const DOWNLOAD_PFADE: readonly string[] = [
   ...MODELL_DATEIEN.map((d) => modellAdresse(d.pfad)),

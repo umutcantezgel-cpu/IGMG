@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { ORT_DRITTLIZENZEN } from '@/lib/lernapp/quellen';
 
 /**
  * Service Worker der Lern-App (PLAN §3.5, ADR 0037 Nr. 8): Vorräte `igmg-lernapp-schale-v<bau>`, `-pakete`, `-audio`,
@@ -38,10 +39,14 @@ function ladeWorker({ bau = 'abc123', vorraete = {} as Record<string, string[]>,
     },
     keys: async () => [...speicher.keys()],
     delete: async (name: string) => speicher.delete(name),
-    match: async (r: Request | string, o?: { cacheName?: string }) => {
+    match: async (r: Request | string, o?: { cacheName?: string; ignoreSearch?: boolean }) => {
       const namen = o?.cacheName ? [o.cacheName] : [...speicher.keys()];
       for (const n of namen) {
-        const a = speicher.get(n)?.get(url(r));
+        // wie die Cache-API: Abgleich samt Suchteil, mit `ignoreSearch` nur nach dem Pfad
+        const ohneSuche = (u: string) => u.split('?')[0];
+        const a = o?.ignoreSearch
+          ? [...(speicher.get(n)?.entries() ?? [])].find(([k]) => ohneSuche(k) === ohneSuche(url(r)))?.[1]
+          : speicher.get(n)?.get(url(r));
         if (a) return a.clone();
       }
       return undefined;
@@ -227,7 +232,8 @@ describe('Service Worker der Lern-App', () => {
   });
 
   it('Drittlizenzen von ORT (Z-L17): aus dem Vorrat der Modelle, den die Sprachprüfung füllt, auch ohne Netz; sonst Netz, ohne Vorhalten', async () => {
-    const pfad = '/lern-app/lizenzen/onnxruntime-ThirdPartyNotices.txt';
+    const pfad = ORT_DRITTLIZENZEN.pfad;
+    expect(pfad).toMatch(/^\/lern-app\/lizenzen\/onnxruntime-ThirdPartyNotices\.txt\?v=[0-9a-f]{12}$/);
     const ohne = ladeWorker({ bau: 'b6' });
     expect((await ohne.anfrage(pfad)!).status).toBe(200);
     await new Promise((r) => setTimeout(r, 0));
@@ -238,6 +244,19 @@ describe('Service Worker der Lern-App', () => {
     const antwort = await mit.anfrage(pfad)!;
     expect(await antwort.text()).toBe(`alt ${URSPRUNG}${pfad}`);
     expect(mit.abgerufen).toEqual([]);
+  });
+
+  it('Drittlizenzen von ORT, Fassungswechsel: eine alte Kopie (andere Fassung oder ohne Fassung) liefert er nie für die neue Adresse', async () => {
+    const neu = ORT_DRITTLIZENZEN.pfad;
+    const datei = neu.split('?')[0]!;
+    const alt = [`${URSPRUNG}${datei}?v=000000000000`, `${URSPRUNG}${datei}`];
+    // mit Netz: die neue Fassung kommt aus dem Netz, nicht die alte Kopie
+    const online = ladeWorker({ bau: 'b7', vorraete: { 'igmg-lernapp-modelle': alt } });
+    expect(await (await online.anfrage(neu)!).text()).not.toMatch(/^alt /);
+    expect(online.abgerufen).toEqual([`${URSPRUNG}${neu}`]);
+    // ohne Netz: keine veraltete Kopie unter der neuen Fassung (die Seite nennt sonst den neuen Stand über altem Text)
+    const offline = ladeWorker({ bau: 'b7', vorraete: { 'igmg-lernapp-modelle': alt }, netz: false });
+    await expect(offline.anfrage(neu)!).rejects.toThrow('offline');
   });
 
   it('Hülle einer Oberflächensprache auf Bitte der Seite: Start, Fortschritt, Wortschatz, Einstellungen, Quellen und ihre Programmteile', async () => {
