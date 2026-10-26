@@ -227,4 +227,6 @@ export async function spieleTurkisch(page: Page, art: Bedienung, { axe = art ===
   // Ende: acht gespielte Aufgaben (die ohne Ton zählt nicht), XP statisch
   await expect(page.getByRole('heading', { name: t.spieler.fertigTitel })).toBeVisible();
   await expect(page.getByText(formatiere(t.spieler.fertigText, { richtig: 8, gesamt: 8 }, 'de'), { exact: true })).toBeVisible();
+  // der Weg zurück erscheint, sobald Ereignisse und Ableitung auf dem Gerät gespeichert sind (wie `spieleLektion1`)
+  await expect(page.getByRole('link', { name: t.spieler.zurueck })).toBeVisible();
 }

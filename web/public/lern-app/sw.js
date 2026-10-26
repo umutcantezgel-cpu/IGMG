@@ -10,10 +10,11 @@
  *   Stöbern in der Hülle nie verdrängt. Ein Merkzeichen je Kurs und Oberflächensprache (`…/<ui>/<kurs>?vorrat=vollstaendig`)
  *   sagt: alles da (Bitte `{ art: 'kurs', ui, kurs }`, Abfrage ohne Netz `{ art: 'kursStand', ui, kurs }`).
  * - Bauwechsel: Das Aktivieren eines neuen Workers löscht die Hülle des vorigen Baus, behält aber jeden älteren Kursvorrat mit
- *   Merkzeichen. Mit der nächsten Bitte um die Hülle (jede Seite beim Laden) holt der neue Worker diese Kurse tief neu in
- *   seinen Kursvorrat und löscht den alten erst, wenn alles da ist (`stelleKurseWiederHer`). Bis dahin liefert er ohne Netz
- *   die Seiten und Programmteile des alten Baus (in sich stimmig). Übergang von Workern vor N9a: Lag noch kein Kursvorrat
- *   vor, gilt ein Kurs, dessen vier Seiten in der alten Hülle liegen, als gespeichert.
+ *   Merkzeichen; der alte Worker, noch bei der Arbeit, legt seine gelöschten Vorräte nicht neu an (`aktuell`). Mit der nächsten
+ *   Bitte um die Hülle (jede Seite beim Laden) holt der neue Worker diese Kurse tief neu in seinen Kursvorrat und löscht den
+ *   alten erst, wenn alles da ist (`stelleKurseWiederHer`). Bis dahin liefert er ohne Netz die Seiten und Programmteile des
+ *   alten Baus (in sich stimmig). Übergang von Workern vor N9a: Lag noch kein Kursvorrat vor, gilt ein Kurs, dessen vier
+ *   Seiten in der alten Hülle liegen, als gespeichert.
  * - `igmg-lernapp-pakete`: Kursverzeichnis `/lern-app/pakete/<kurs>` Netz zuerst, Einheiten `…/<kurs>/<einheit>/<hash>`
  *   Vorrat zuerst (unveränderlich, ADR 0039).
  * - `igmg-lernapp-audio`: Bündel `/lern-app/audio/…`, Vorrat zuerst; Bereichsanfragen gehen ans Netz.
@@ -61,23 +62,46 @@ const MERK = '?vorrat=vollstaendig';
 const merkzeichen = (ui, kurs) => `/lern-app/${ui}/${kurs}${MERK}`;
 const ja = () => new Response('1', { headers: { 'content-type': 'text/plain' } });
 
+/**
+ * Ist dieser Worker noch der aktive seiner Registrierung? Nach einem Bauwechsel arbeitet der alte Worker begonnene Aufgaben zu
+ * Ende (Hülle, Programmteile, Kursseiten). Dann schreibt er nicht mehr in seine Hülle und seinen Kursvorrat – ein
+ * `caches.open` legte die beim Aktivieren des neuen Baus gelöschten Vorräte wieder an (so blieb die alte Hülle stehen, Stufe C
+ * N9a, Nachprüfung G-1) – und löscht nichts: Die Vorräte des neuen Baus hielte er für ältere.
+ */
+function aktuell() {
+  const aktiv = self.registration && self.registration.active;
+  return !aktiv || aktiv.scriptURL === self.location.href;
+}
+
+/**
+ * Hülle und Kursvorrat dieses Baus, je Laufzeit des Workers einmal geöffnet; für einen überholten Worker `null`. Was er noch in
+ * einen schon geöffneten, inzwischen gelöschten Vorrat schreibt, bleibt folgenlos (die Cache-API legt ihn dafür nicht neu an).
+ * Andere Vorräte wie bisher.
+ */
+const eigene = new Map();
+function oeffne(name) {
+  if (name !== SCHALE && name !== KURSE) return caches.open(name);
+  if (!aktuell()) return Promise.resolve(null);
+  if (!eigene.has(name)) eigene.set(name, caches.open(name));
+  return eigene.get(name);
+}
+
 function begrenze(name) {
-  return caches
-    .open(name)
-    .then((c) =>
+  return oeffne(name).then(
+    (c) =>
+      c &&
       c
         .keys()
         .then((schluessel) => Promise.all(schluessel.slice(0, Math.max(0, schluessel.length - GRENZE_SCHALE)).map((k) => c.delete(k)))),
-    );
+  );
 }
 
 /** Speichert eine gelungene, eigene, vollständige Antwort (keine Teilantwort, keine Weiterleitung). */
 function vorhalten(name, schluessel, antwort) {
   if (!antwort || !antwort.ok || antwort.status !== 200 || antwort.type !== 'basic' || antwort.redirected) return Promise.resolve();
   const kopie = antwort.clone();
-  return caches
-    .open(name)
-    .then((c) => c.put(schluessel, kopie).then(() => (name === MODELLE ? alteFassungenWeg(c, schluessel) : undefined)))
+  return oeffne(name)
+    .then((c) => c && c.put(schluessel, kopie).then(() => (name === MODELLE ? alteFassungenWeg(c, schluessel) : undefined)))
     .then(() => (name === SCHALE ? begrenze(SCHALE) : undefined));
 }
 
@@ -210,10 +234,14 @@ function halteSeitenVor(pfade, ziel, tief) {
     if (x === 'netz' || x === 'fehlt') stand[x]++;
     return typeof x === 'string' ? null : x;
   };
-  return caches
-    .open(ziel)
-    .then((c) =>
-      Promise.all(
+  return oeffne(ziel)
+    .then((c) => {
+      // überholter Worker (ein neuerer Bau ist aktiv): nichts holen; die Seite fragt den neuen
+      if (!c) {
+        stand.netz++;
+        return undefined;
+      }
+      return Promise.all(
         pfade.map((pfad) =>
           holeInVorrat(c, ziel, pfad, { credentials: 'same-origin' })
             .then(zaehle)
@@ -254,8 +282,8 @@ function halteSeitenVor(pfade, ziel, tief) {
           ).then(naechste);
         };
         return naechste();
-      }),
-    )
+      });
+    })
     .then(() => (stand.netz ? 'netz' : stand.fehlt ? 'fehlt' : 'vollstaendig'));
 }
 
@@ -298,12 +326,7 @@ function halteKursVor(ui, kurs) {
                 KURSE,
                 true,
               ).then((neu) =>
-                neu === 'vollstaendig'
-                  ? caches
-                      .open(KURSE)
-                      .then((c) => c.put(merkzeichen(ui, kurs), ja()))
-                      .then(() => neu)
-                  : neu,
+                neu === 'vollstaendig' ? oeffne(KURSE).then((c) => (c ? c.put(merkzeichen(ui, kurs), ja()).then(() => neu) : 'netz')) : neu,
               ),
         )
         .catch(() => 'netz')
@@ -315,11 +338,11 @@ function halteKursVor(ui, kurs) {
   return laufend.get(k);
 }
 
-/** Kurse mit Merkzeichen in einem Vorrat. */
+/** Kurse mit Merkzeichen in einem Vorrat (nur lesen: ein inzwischen gelöschter Vorrat entsteht nicht neu). */
 function kurseMitMerkzeichen(name) {
   return caches
-    .open(name)
-    .then((c) => c.keys())
+    .has(name)
+    .then((da) => (da ? caches.open(name).then((c) => c.keys()) : []))
     .then((schluessel) =>
       schluessel.flatMap((r) => {
         const u = new URL(r.url);
@@ -357,6 +380,7 @@ let wiederherstellung = null;
  * liefert er weiter Seiten und Programmteile – und die nächste Seite versucht es erneut.
  */
 function stelleKurseWiederHer() {
+  if (!aktuell()) return Promise.resolve();
   if (!wiederherstellung)
     wiederherstellung = aeltereBauten()
       .then((alte) =>
@@ -370,7 +394,7 @@ function stelleKurseWiederHer() {
                     Promise.resolve(true),
                   ),
                 )
-                .then((fertig) => (fertig ? caches.delete(name) : undefined)),
+                .then((fertig) => (fertig && aktuell() ? caches.delete(name) : undefined)),
             ),
           Promise.resolve(),
         ),

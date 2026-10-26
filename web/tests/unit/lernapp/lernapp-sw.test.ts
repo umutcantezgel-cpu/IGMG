@@ -9,7 +9,9 @@ import { ORT_DRITTLIZENZEN } from '@/lib/lernapp/quellen';
  * Netz aus der Hülle (ohne Suchteil, `ignoreSearch`), dem Kursvorrat oder einem älteren Bau, sonst der Start der Oberfläche;
  * Hülle je Oberflächensprache auf Bitte der Seite; Kursseiten gespeicherter Kurse überleben einen Bauwechsel (Befund G-1).
  * Der Worker läuft hier in einer kleinen Nachbildung der Worker-Umgebung mit Cache Storage im Speicher; zwei Worker können
- * sich den Speicher teilen (Bauwechsel).
+ * sich den Speicher teilen (Bauwechsel). Wie die Cache-API: Ein geöffneter Vorrat bleibt an seinen Speicher gebunden, auch
+ * wenn ihn jemand löscht (Schreiben dort bleibt folgenlos); erst ein neues `open` legt ihn wieder an. `installiert`: Hülle
+ * und Kursvorrat des Baus liegen schon vor, wie nach dem Installieren (das jedem Abruf vorausgeht).
  */
 const QUELLE = readFileSync(join(import.meta.dirname, '../../../public/lern-app/sw.js'), 'utf8');
 const URSPRUNG = 'https://igmg.test';
@@ -24,26 +26,28 @@ function ladeWorker({
   zusatz = '',
   speicher = new Map<string, Vorrat>(),
   fehlend = [] as string[],
+  installiert = true,
 } = {}) {
   const hoerer = new Map<string, Hoerer>();
   for (const [n, urls] of Object.entries(vorraete)) speicher.set(n, new Map(urls.map((u) => [u, new Response(`alt ${u}`)])));
+  const kennung = bau.replace(/[^a-z0-9]/g, '').slice(0, 12) || '1';
+  if (installiert)
+    for (const n of [`igmg-lernapp-schale-v${kennung}`, `igmg-lernapp-kurse-v${kennung}`]) if (!speicher.has(n)) speicher.set(n, new Map());
   const abgerufen: string[] = [];
   const url = (r: Request | string) => new URL(typeof r === 'string' ? r : r.url, URSPRUNG).href;
   const vorratVon = (name: string) => {
     if (!speicher.has(name)) speicher.set(name, new Map());
     return speicher.get(name)!;
   };
-  const cacheObjekt = (name: string) => ({
-    put: async (r: Request | string, a: Response) => void vorratVon(name).set(url(r), a),
-    match: async (r: Request | string) => vorratVon(name).get(url(r))?.clone(),
-    keys: async () => [...vorratVon(name).keys()].map((u) => new Request(u)),
-    delete: async (r: Request | string) => vorratVon(name).delete(url(r)),
+  const cacheObjekt = (v: Vorrat) => ({
+    put: async (r: Request | string, a: Response) => void v.set(url(r), a),
+    match: async (r: Request | string) => v.get(url(r))?.clone(),
+    keys: async () => [...v.keys()].map((u) => new Request(u)),
+    delete: async (r: Request | string) => v.delete(url(r)),
   });
   const caches = {
-    open: async (name: string) => {
-      vorratVon(name);
-      return cacheObjekt(name);
-    },
+    open: async (name: string) => cacheObjekt(vorratVon(name)),
+    has: async (name: string) => speicher.has(name),
     keys: async () => [...speicher.keys()],
     delete: async (name: string) => speicher.delete(name),
     match: async (r: Request | string, o?: { cacheName?: string; ignoreSearch?: boolean }) => {
@@ -77,6 +81,8 @@ function ladeWorker({
   };
   const self = {
     location: { origin: URSPRUNG, href: `${URSPRUNG}/lern-app/sw.js?v=${bau}` },
+    // der aktive Worker der Registrierung (`null`: noch keiner bekannt, gilt als dieser)
+    registration: { active: null as { scriptURL: string } | null },
     addEventListener: (art: string, f: Hoerer) => hoerer.set(art, f),
     skipWaiting: () => Promise.resolve(),
     clients: { claim: () => Promise.resolve() },
@@ -106,7 +112,17 @@ function ladeWorker({
     await warte('message', daten, [{ postMessage: (d) => antworten.push(d) }]);
     return antworten;
   };
-  return { anfrage, warte, frage, inhalt, speicher, abgerufen, setNetz: (an: boolean) => (netz = an) };
+  return {
+    anfrage,
+    warte,
+    frage,
+    inhalt,
+    speicher,
+    abgerufen,
+    setNetz: (an: boolean) => (netz = an),
+    /** Ein neuerer Bau ist der aktive Worker der Registrierung (Bauwechsel aus Sicht des alten Workers). */
+    ueberholtVon: (neuerBau: string) => (self.registration.active = { scriptURL: `${URSPRUNG}/lern-app/sw.js?v=${neuerBau}` }),
+  };
 }
 
 /** Vier Seiten eines Kurses (Lernpfad, Üben, Wiederholen, Tipps) */
@@ -133,6 +149,7 @@ describe('Service Worker der Lern-App', () => {
     expect([...w.speicher.keys()].sort()).toEqual([
       'igmg-koran-v1',
       'igmg-lernapp-audio',
+      'igmg-lernapp-kurse-vneu1',
       'igmg-lernapp-modelle',
       'igmg-lernapp-pakete',
       'igmg-lernapp-schale-vneu1',
@@ -146,7 +163,7 @@ describe('Service Worker der Lern-App', () => {
       ['../X?<>', '1'],
       ['', '1'],
     ]) {
-      const w = ladeWorker({ bau });
+      const w = ladeWorker({ bau, installiert: false });
       await w.warte('install');
       expect([...w.speicher.keys()], bau).toEqual([`igmg-lernapp-schale-v${kennung}`, `igmg-lernapp-kurse-v${kennung}`]);
     }
@@ -413,6 +430,41 @@ describe('Service Worker der Lern-App', () => {
     expect(await b.frage({ art: 'kursStand', ui: 'de', kurs: 'tr-aus-de' })).toEqual([{ fertig: true, stand: 'vollstaendig' }]);
     b.setNetz(false);
     expect(await (await b.anfrage('/lern-app/de/tr-aus-de/tipps')!).text()).toContain('/lern-app/de/tr-aus-de/tipps');
+  });
+
+  it('Bauwechsel, der alte Worker noch bei der Arbeit: er legt seine gelöschten Vorräte nicht neu an und löscht die des neuen Baus nicht', async () => {
+    const speicher = new Map<string, Vorrat>();
+    const a = ladeWorker({ bau: 'bau1', speicher });
+    await a.warte('activate');
+    await a.anfrage('/lern-app/de')!;
+    await new Promise((r) => setTimeout(r, 0));
+    expect(a.inhalt('igmg-lernapp-schale-vbau1')).toEqual(['/lern-app/de']);
+
+    const b = ladeWorker({ bau: 'bau2', speicher });
+    await b.warte('install');
+    await b.warte('activate');
+    const neu = ['igmg-lernapp-kurse-vbau2', 'igmg-lernapp-schale-vbau2'];
+    expect([...speicher.keys()].sort()).toEqual(neu);
+
+    // noch bevor der alte Worker vom Wechsel weiß: eine begonnene Seite und ein Programmteil landen im schon geöffneten,
+    // gelöschten Vorrat – die alte Hülle entsteht nicht neu
+    await a.anfrage('/lern-app/de/fortschritt')!;
+    await a.anfrage('/_next/static/chunks/x.js', { mode: 'cors' })!;
+    await new Promise((r) => setTimeout(r, 0));
+    expect([...speicher.keys()].sort()).toEqual(neu);
+
+    // weiß er es: Hülle samt Wiederherstellung und Kursseiten bitten ihn vergeblich – er schreibt nichts, löscht nichts
+    a.ueberholtVon('bau2');
+    expect(await a.frage({ art: 'schale', ui: 'tr' })).toEqual([{ fertig: true }]);
+    expect(await a.frage({ art: 'kurs', ui: 'de', kurs: 'tr-aus-de' })).toEqual([{ fertig: true, stand: 'netz' }]);
+    await a.anfrage('/lern-app/de/wortschatz')!;
+    await new Promise((r) => setTimeout(r, 0));
+    expect([...speicher.keys()].sort()).toEqual(neu);
+    expect(b.inhalt('igmg-lernapp-schale-vbau2')).toEqual([]);
+
+    // der neue Worker arbeitet ungestört
+    expect(await b.frage({ art: 'kurs', ui: 'de', kurs: 'tr-aus-de' })).toEqual([{ fertig: true, stand: 'vollstaendig' }]);
+    expect(b.inhalt('igmg-lernapp-kurse-vbau2')).toEqual(expect.arrayContaining(kursSeiten('de', 'tr-aus-de')));
   });
 
   it('Bauwechsel: ältere Hülle ohne Kurse und Kursvorrat ohne Merkzeichen gehen beim Aktivieren', async () => {

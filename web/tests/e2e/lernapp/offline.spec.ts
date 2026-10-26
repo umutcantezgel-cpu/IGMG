@@ -103,7 +103,8 @@ test('Einheit offline speichern, Netz abklemmen: Lektion vollständig spielbar, 
   await speichern.click();
   await expect(page.locator('main').getByText(de.lernpfad.offlineFertig.split(' (')[0]!).first()).toBeVisible({ timeout: 60_000 });
 
-  // Vorrat: Seite der Übung (ohne Suchteil), Paket der Einheit, Bündel der Töne
+  // Vorrat: Seite der Übung (ohne Suchteil) im Kursvorrat des Baus (seit Stufe C N9a, G-1, nicht mehr in der Hülle) samt
+  // Merkzeichen, Paket der Einheit, Bündel der Töne
   const vorrat = await page.evaluate(async () => {
     const aus: string[] = [];
     for (const name of await caches.keys())
@@ -112,7 +113,8 @@ test('Einheit offline speichern, Netz abklemmen: Lektion vollständig spielbar, 
   });
   expect(vorrat).toEqual(
     expect.arrayContaining([
-      `igmg-lernapp-schale /lern-app/de/${KURS}/ueben`,
+      `igmg-lernapp-kurse /lern-app/de/${KURS}/ueben`,
+      `igmg-lernapp-kurse /lern-app/de/${KURS}`,
       expect.stringMatching(new RegExp(`^igmg-lernapp-pakete /lern-app/pakete/${KURS}/tr\\.a1\\.test/[0-9a-f]{64}$`)),
       expect.stringMatching(/^igmg-lernapp-audio \/lern-app\/audio\/tr\/tr\.a1\.test-[0-9a-f]{16}\.lpa$/),
     ]),
