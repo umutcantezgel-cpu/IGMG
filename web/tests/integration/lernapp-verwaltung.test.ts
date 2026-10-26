@@ -366,6 +366,79 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     expect(m!.antwort).toBe('[Antwort]');
   });
 
+  it('angemeldetes Kinderkonto (Z-L09, KERN 4.0 §5): Meldung möglich, Antwort verworfen, kein Antwortweg zum Kind', async () => {
+    /** Konto der Gemeinde (Schüler) mit Zugang; `istKind` wie im Profil der Kinderanmeldung (fiktive Testperson). */
+    const schueler = async (istKind: boolean) => {
+      const id = (await angemeldetAls([]))!;
+      await db.insert(schema.kontoProfil).values({ benutzerId: id, anzeigename: istKind ? '[Kind]' : '[Schüler]', istKind });
+      await db.insert(schema.gemeindeRolle).values({ benutzerId: id, rolle: 'schueler' });
+      return id;
+    };
+    const meldungZu = async (aufgabe: string) =>
+      db
+        .select()
+        .from(schema.lernappMeldung)
+        .where(eq(schema.lernappMeldung.aufgabeSchluessel, `tr-aus-de:${aufgabe}`));
+    const ausgang = async () => ({
+      mail: (await db.select().from(schema.mailAusgang)).length,
+      push: (await db.select().from(schema.pushVersand)).length,
+      chat: (await db.select().from(schema.chatNachricht)).length,
+      postfach: (await db.select().from(schema.postfachNachricht)).length,
+    });
+
+    // Gegenprobe: dasselbe Konto ohne Kinderkennzeichen behält die Antwort – es liegt also nur an `istKind`
+    await db.delete(schema.ratenbegrenzung);
+    await schueler(false);
+    const gross = await sende({
+      kurs: 'tr-aus-de',
+      aufgabe: 'tr.a1.test.l02.a03',
+      kategorie: 'antwort_richtig',
+      altcha: await altcha(),
+      antwort: '[Antwort Schüler]',
+    });
+    expect(gross.status).toBe(201);
+    expect((await meldungZu('tr.a1.test.l02.a03')).map((m) => m.antwort)).toEqual(['[Antwort Schüler]']);
+    await db.delete(schema.lernappMeldung).where(eq(schema.lernappMeldung.aufgabeSchluessel, 'tr-aus-de:tr.a1.test.l02.a03'));
+
+    // Kind: die Meldung kommt an, die eigene Antwort nie
+    await db.delete(schema.ratenbegrenzung);
+    const kind = await schueler(true);
+    const r = await sende({
+      kurs: 'tr-aus-de',
+      aufgabe: 'tr.a1.test.l02.a03',
+      kategorie: 'antwort_richtig',
+      altcha: await altcha(),
+      antwort: '[Antwort Kind]',
+    });
+    expect(r.status).toBe(201);
+    expect(r.headers.get('set-cookie')).toBeNull();
+    expect(await r.text()).toBe('');
+    const [m] = await meldungZu('tr.a1.test.l02.a03');
+    expect(m).toMatchObject({ kategorie: 'antwort_richtig', antwort: null, status: 'offen', erledigtVon: null });
+    // Kein Antwortweg: die Meldung trägt weder Konto noch Adresse des Kindes, nur Aufgabe, Kategorie und Bearbeitung
+    expect(Object.keys(m!).sort()).toEqual([
+      'am',
+      'antwort',
+      'aufgabeSchluessel',
+      'erledigtAm',
+      'erledigtVon',
+      'id',
+      'kategorie',
+      'status',
+    ]);
+    expect(JSON.stringify(m)).not.toContain(kind);
+    expect(JSON.stringify(m)).not.toContain(kind.slice(0, 8));
+
+    // Erledigen benachrichtigt niemanden: keine Mail, kein Push, kein Chat, kein Postfach, nichts nachgelagert
+    const vorher = await ausgang();
+    await angemeldetAls(BILDUNG);
+    expect(await meldungen.meldungErledigen({}, formular({ id: m!.id }))).toMatchObject({ gespeichert: expect.any(Number) });
+    expect(await ausgang()).toEqual(vorher);
+    expect(aufrufe.nachher).toHaveLength(0);
+    const [erledigt] = await meldungZu('tr.a1.test.l02.a03');
+    expect(erledigt).toMatchObject({ status: 'erledigt', antwort: null });
+  });
+
   it('Alternative ergänzen: an der Übersetzung (nach Ausgang) bzw. an der Aufgabe (nach Ziel); menschlich geprüft, neuer Hash', async () => {
     await angemeldetAls(BILDUNG);
     const [nachAusgang] = await db
