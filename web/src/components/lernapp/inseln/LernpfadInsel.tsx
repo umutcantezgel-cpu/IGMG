@@ -1,7 +1,7 @@
 'use client';
 
 import { Check, ChevronDown, Lightbulb } from 'lucide-react';
-import { type CSSProperties, useEffect, useRef, useState } from 'react';
+import { type CSSProperties, startTransition, useEffect, useRef, useState } from 'react';
 import { abgeschlosseneStufen } from '@/lib/lernapp/ereignisse/stufen';
 import { formatiere, intlSprache, zahl, type Ziffern } from '@/lib/lernapp/format';
 import { richtung, type KursSlug, type Oberflaeche, type Sprache, type Stufe } from '@/lib/lernapp/kurse';
@@ -151,7 +151,9 @@ export function LernpfadInsel({
         }
       await koepfeAusDemVorrat(kurs, v, sichtbar(), pakete.current);
       const offline = new Map((await sp.alle('pakete', [[kurs], [kurs, []]])).map((e) => [e.einheit, e]));
-      if (aktiv) setZ({ art: 'bereit', v, abschnitte: abschnitte(v, erledigt, pakete.current), offline, fertig, erledigt });
+      // als Übergang: React zeichnet die Stationen in Zeitscheiben statt in einem langen Block (Stufe C N8, TBT)
+      if (aktiv)
+        startTransition(() => setZ({ art: 'bereit', v, abschnitte: abschnitte(v, erledigt, pakete.current), offline, fertig, erledigt }));
     }
     const neu = () => void laden().catch(() => aktiv && setZ((alt) => (alt.art === 'laedt' ? { art: 'leer' } : alt)));
     neu();
@@ -172,8 +174,12 @@ export function LernpfadInsel({
   const v = z.v;
   // Stationen neu berechnen, ohne Verzeichnis und Speicher neu zu laden (nur der Lernpfad liest die Paketköpfe)
   const aktualisiere = (offline?: Map<string, PaketEintrag>) =>
-    setZ((alt) =>
-      alt.art === 'bereit' ? { ...alt, abschnitte: abschnitte(alt.v, alt.erledigt, pakete.current), ...(offline ? { offline } : {}) } : alt,
+    startTransition(() =>
+      setZ((alt) =>
+        alt.art === 'bereit'
+          ? { ...alt, abschnitte: abschnitte(alt.v, alt.erledigt, pakete.current), ...(offline ? { offline } : {}) }
+          : alt,
+      ),
     );
 
   async function zeigeLektionen(s: Station) {
@@ -318,15 +324,26 @@ export type StationsKontext = {
   gespeichert: (e: VerzeichnisEinheit) => Promise<void>;
 };
 
+/** Stationen je Takt beim Aufbau einer Stufe (`Stationen`). */
+const STATIONEN_JE_TAKT = 4;
+
 /**
  * Stationen einer Stufe an der Linie (B-24): Die Linie zeichnet sich je Stufe von Station zu Station (`--i` Station in der
  * Stufe, `--n` Abschnitte der Stufe), auch beim späteren Aufklappen ohne Wartezeit.
  */
 function Stationen({ abschnitt, k }: { abschnitt: Abschnitt; k: StationsKontext }) {
   const n = abschnitt.stationen.length;
+  // In Häppchen (Stufe C N8): zuerst die ersten Stationen, dann je Takt weitere – Rendern, Stil und Layout einer ganzen Stufe
+  // (bis 16 Einheiten) liefen sonst in einem langen Block auf dem Hauptfaden (TBT, INP)
+  const [gezeigt, setGezeigt] = useState(() => Math.min(n, STATIONEN_JE_TAKT));
+  useEffect(() => {
+    if (gezeigt >= n) return;
+    const takt = setTimeout(() => startTransition(() => setGezeigt((g) => Math.min(n, g + STATIONEN_JE_TAKT))), 0);
+    return () => clearTimeout(takt);
+  }, [gezeigt, n]);
   return (
     <ol className="relative flex flex-col" style={{ '--n': Math.max(1, n - 1) } as CSSProperties}>
-      {abschnitt.stationen.map((s, i) => (
+      {abschnitt.stationen.slice(0, gezeigt).map((s, i) => (
         <StationEintrag key={s.einheit.schluessel} s={s} i={i} letzte={i === n - 1} k={k} />
       ))}
     </ol>

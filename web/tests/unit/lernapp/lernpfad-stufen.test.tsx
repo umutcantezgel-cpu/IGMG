@@ -109,6 +109,22 @@ describe('Lernpfad: nur die aktuelle Stufe mit Stationen (LernpfadStufen)', () =
     expect(html).toContain('data-stufe-zu="b1"');
   });
 
+  it('große Stufe: zuerst vier Stationen, die übrigen folgen je Takt (kein langer Block beim Aufbau)', async () => {
+    const gross: Verzeichnis = { ...V, einheiten: [1, 2, 3, 4, 5, 6, 7].map((n) => einheit('a1', n)) };
+    const html = await vorrendern(
+      <LernpfadStufen
+        abschnitte={abschnitte(gross, new Set(), new Map<string, PaketInhalt>())}
+        fertig={new Set()}
+        offen={new Set()}
+        onAufklappen={() => undefined}
+        k={kontext()}
+      />,
+    );
+    expect(anzahl(html, /lernweg-station/g)).toBe(4);
+    expect(html).toContain('[Thema a1 4]');
+    expect(html).not.toContain('[Thema a1 5]');
+  });
+
   it('arabische Oberfläche: Zahl der Einheiten mit arabischer Pluralform und östlichen Ziffern', async () => {
     const html = await stufen([], [], 'ar');
     expect(html).toContain(`${formatiere(ar.lernpfad.einheitenZahl, { anzahl: 3 }, 'ar')}</summary>`);
