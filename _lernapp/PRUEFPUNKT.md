@@ -1,5 +1,22 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 08:30 UTC – N1–N7 gemergt (e06a648b auf `main`); volles Tor und N8 laufen:**
+  - **Gemergt:**
+    - N7 25ce3abf: Prüfer `uebersetzung` und `paketbau`; 25 Aufgaben berichtigt; Mengenbericht A1–B1; Einstufung ohne Vorkurs.
+    - N6 e06a648b: Paketbau einer Richtung ≈ 2 s statt ≈ 9 s, Blockade ≤ 0,2 s, Bytes gleich; gezielte Cache-Erneuerung im E2E; Spieler-Budget im ungünstigsten Fall ≤ 60 KB.
+    - Inhalte: de-aus-tr de.b1.e04.s0071 übersetzt (452102ea); MENSCHEN um die Redaktionsfragen B1, OF-10 (de e16, ar e10/e11) und R-06 (tr e16) ergänzt.
+  - **Belege:** Protokolle C-religion, C-lizenzen, C-technik, C-oberflaeche, C-inhalte, je mit Gegenprüfung.
+  - **Z-L07 mit echten Inhalten (N6):**
+    - Lighthouse-Leistung 72–86 statt ≥ 90 (TBT Lernpfad 1,3 s).
+    - INP „offline speichern“ 416 ms.
+    - → **N8** `wf_9dc01dcc-4d5` (Arbeitsbaum `agent-a6ffb449…`, Branch `lernapp-n8`).
+  - **Volles Tor** `scratchpad/tor-final.sh` im Arbeitsbaum `l3-05` (Stand e06a648b, Log `scratchpad/tor-final.log`): Unit, Integration, Import- und Vorschau-Bau, Produktionsbau mit voller Website- und Lern-App-E2E.
+  - **Platte:** 4 weitere gemergte Gemeinde-Arbeitsbäume entfernt (a2e7dbaf, a4cbd4b5, a68d2a29, a9358d96).
+  - **Danach:**
+    1. N8 mergen, betroffene E2E erneut.
+    2. Belege E2E (Z-L04, Z-L06, Z-L08) aus dem Tor.
+    3. Frischer Endprüfer, ABNAHME, BERICHT, ABSCHLUSS (Ziel heute ≈ 15–16 Uhr MEZ).
+
 - **Stand 26.10.2026 05:40 UTC – Nacharbeit N1–N5 gemergt und auf `main` (9a8ca1f8):**
   - **Merges (Konflikte selbst aufgelöst):**
     - N3 aa8b273f: Auslieferung Wissenskurs, Koran-Pakete alle vorgerendert; live 40/40 Koran-Einheiten 200.
