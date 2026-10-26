@@ -86,3 +86,21 @@ Entscheidungen des Orchestrators.
 - LM-33 erweitert: Marāqī al-Falāḥ zurückgestellt (in der OpenITI-Ḥāshiya nicht enthalten); Siyar und Koran-/Hadith-Grundwissen
   bis zur Quellenklärung zurückgestellt (23 von 28 Einheiten belegbar).
 - LM-09: offene Fragen OF-01…OF-18 des Inhaltsleitfadens (`_lernapp/lehrplan/INHALTSLEITFADEN.md` §7), jeweils mit Standard.
+
+**Nachträge Stufe C (26.10.2026; Redaktionsfragen aus den Schlussprüfungen B1, Belege `protokolle/C-inhalte*.md`):**
+- **LM-09 (OF-10 Politik und Staatskunde):**
+  - de.b1.e16 bleibt Entwurf bis zur Entscheidung (12 Befunde `politik` im Inhaltsprüfer).
+  - Sachlich gehalten und mit Hinweis freigegeben (L3-E15) sind ar.b1.e10 (Vereinswahlen, Nachhilfe im Jugendtreff) und ar.b1.e11 (Staat, Regierung, Verfassung, Ministerium; Antrag für den Austausch).
+  - Lautet die Entscheidung „nein“, nimmt die Redaktion diese drei Einheiten bzw. Abschnitte zurück.
+- **LM-02 und LM-03 (R-06, Fehltreffer „Pilz“):**
+  - tr.b1.e16 bleibt Entwurf. Das arabische Wort für Pilz (Lemma *mantar*) steht in tr-aus-ar und wird unvokalisiert gleich einem religiösen Kandidaten geschrieben (3 Befunde R-06).
+  - Die Redaktion entscheidet „Fehltreffer“ oder „ersetzen“; danach gibt der Orchestrator nach L3-E15 frei.
+- **LM-02, Redaktionsfragen B1 tr und ar (Standard: Stand wie ausgeliefert):**
+  - Schreibweise *iş birliği* (getrennt).
+  - Namen mit Längezeichen im tr-Kurs (z. B. Samīr, Rīm).
+  - Vokalisierung in tr-aus-ar einheitlich.
+  - Wortzahl der ar-Schreibaufgaben: Vorschlag Faktor ≈ 0,75 auf die Rahmen-Spannen, danach ar.b1.e09 angleichen.
+  - Figuren-Kanon: Yāsmīn (ältere Tochter von Lubnā und Samīr) neu; Nizār erst Mechaniker, dann Lehrer bis zum Ruhestand. Rahmen ar.b1.e01/e03 nachziehen.
+  - Umschreibendes Passiv mit *tamma* + Maṣdar (laut Rahmen B2) an 13 Stellen in ar B1.
+  - Kinderregel ar.b1.e14: Laylā und Jan bauen als Schulprojekt zu zweit ein Solarauto.
+  - Ausnahme im Vokalisierungsprüfer für *li-* mit Artikel vor Sonnenbuchstaben (dann kursweit zurückformulieren).
