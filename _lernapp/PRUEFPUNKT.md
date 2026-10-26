@@ -1,5 +1,29 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 02:25 UTC – Belege B1 fertig, N3 in Gegenprüfung 2, N5 gestartet (neues Fenster ab 02:10):**
+  - **Live:** `tr.a1.e01` ist die echte Einheit (8 Lektionen); keine Testeinheit in den Kursen.
+  - **Belege B1** (`wf_7c5a1d1e-4a6`, Protokolle `C-technik*.md`, `C-oberflaeche*.md`):
+    - erfüllt: Z-L05, Z-L11, Z-L13.
+    - teilweise: Z-L07, Z-L09, Z-L12, Z-L16.
+  - **Offene Nacharbeit daraus:**
+    - Z-L07: LCP/INP/Lighthouse wurden 24.10. ohne Kursinhalte gemessen (fc95e675) → nach dem Merge von N3 neu messen mit echten Einheiten. Zählweise „Spieler zusätzlich“ mit dem Typ-Chunk der ersten Aufgabe klären (geschichte ≈ 63 KB).
+    - Z-L16:
+      - Vorschau-Bau.
+      - Volle Website-E2E (zuletzt 20.10.).
+      - Rauchtest im Beispielmodus.
+      - Vercel-Bauzeit, nur im Dashboard ablesbar (Mensch).
+    - Z-L12: L3-E12b, KERN §6, Cockpit-Text, S-L3 N-4 → **N5**.
+    - Z-L09: Test für Kinder-Meldung, gruppe.spec mit SYNC/GRUPPEN/RANGLISTE → **N5**.
+  - **Läufe:**
+    - Fortsetzung `wf_c9221533-927` (N3: Gegenprüfung 2; danach N2, N4).
+    - **N5** `wf_1ce1d158-080` (Arbeitsbaum `l3-05` auf 73bcdbdf).
+  - **Danach:**
+    1. N2–N5 mergen.
+    2. Volles Tor: Unit, Integration, Import- und Vorschau-Bau, Produktionsbau mit voller Website- und Lern-App-E2E.
+    3. N6 Leistung neu messen.
+    4. Belege E2E (Z-L04, Z-L06, Z-L08) und Inhalte (Z-L01, Z-L14).
+    5. Endprüfer, ABNAHME, BERICHT, ABSCHLUSS.
+
 - **Stand 26.10.2026 00:20 UTC – N1 gemergt, Fortsetzung N3 → N2 → N4 läuft (1 Agent):**
   - **N1** (Testkurs getrennt) gemergt in 25515a23 und auf `main`. Die Testeinheit liegt jetzt unter `<kurs>.a1.test`; im Bau ohne Datenbank nur mit `LERNAPP_TESTKURS=1`.
     - Gegenprüfung 2: ein „mittel“ übrig, die Messwerkzeuge Z-L07 suchen noch `a1.e01`. Das macht N4 (6).
