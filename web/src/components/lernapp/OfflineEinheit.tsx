@@ -52,7 +52,7 @@ function Ring({ anteil, beschriftung }: { anteil: number; beschriftung: string }
 /**
  * Megabyte mit höchstens einer Nachkommastelle (mindestens 0,1) in der Schreibweise der Oberfläche – wie
  * `Intl.NumberFormat(…, { maximumFractionDigits: 1 })`, unter 1000 MB aber ohne Intl (Stufe C N8: das erste Intl-Objekt
- * einer Seite kostet ≈ 20 ms, jede Station zeigt ihre Größe). Komma de/tr „,“, ar östlich „٫“ (U+066B), westlich „.“.
+ * einer Seite kostet ≈ 20 ms, jede Station zeigt ihre Größe). Komma de/tr „,“, ar östlich U+066B (arabisches Dezimalkomma), westlich „.“.
  */
 export function megabyte(bytes: number, ui: Oberflaeche, ziffern: Ziffern): string {
   const zehntel = Math.round(Math.max(0.1, bytes / 1e6) * 10);
