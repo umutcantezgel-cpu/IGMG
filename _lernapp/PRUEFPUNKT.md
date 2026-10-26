@@ -1,5 +1,13 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 14:05 UTC – N8 gemergt (2d6c1adc auf `main`), N9 läuft:**
+  - **N8:** Gegenprüfung frei (nur niedrig). Unit 3.684, `typen`, Religion und Sprachen auf dem Merge-Stand grün.
+    - Endstand: Lighthouse 80–89 (vorher 74–88); INP Spieler 176/176/200 ms; „offline speichern“ 216 ms (vorher 480); Budgets eingehalten. Z-L07 bleibt teilweise (`leistung.md` N8).
+    - Der ursprüngliche Workflow `wf_9dc01dcc-4d5` startete den am Limit abgebrochenen Agenten selbst neu; parallel lief meine Fortsetzung per SendMessage → zwei Schreiber. **Lehre: einen am Limit abgebrochenen Workflow-Agenten nicht zusätzlich per SendMessage fortsetzen.**
+  - **N9** `wf_22fb5e57-675` (2 Plätze): N9a Offline in `l8` (Branch `lernapp-n9a`), N9b Zugänglichkeit/Datenfluss in `l3-05` (Branch `lernapp-n9b`). Niedrige Befunde der N8-Gegenprüfung sind eingearbeitet.
+  - **Auslastung** 0,46 um 14:03 (Taktlinie 0,34). Das restliche Fenster trägt 2 Agenten bis zum Reset um 17:10. Taktkontrolle um 16:35 (send_later).
+  - **Danach:** N9 mergen → frischer Endprüfer mit Vollständigkeitskritik (`lernapp-stufe-c-schluss.workflow.js`, Belege/Gegen aus `wf_5370d2fe-641`, Hinweis auf N9) → ABNAHME, BERICHT, ABSCHLUSS.
+
 - **Stand 26.10.2026 12:55 UTC – Belege E2E fertig (e1887076), N8 misst Bau C, N9 vorbereitet:**
   - **Belege E2E** mit zwei Gegenprüfungen (Logs/Specs und Code/live): Z-L04 teilweise, Z-L06 teilweise, Z-L08 erfüllt (eine Gegenprüfung: teilweise).
     - G-1 (Fehler): Nach jeder Bereitstellung löscht der neue Lern-App-Worker die vorgehaltenen Kursseiten gespeicherter Einheiten; die Oberfläche zeigt weiter „offline gespeichert“.
