@@ -329,7 +329,7 @@ describe('Übersetzung: Kopie des Zieltexts und falsche Schrift (Stufe C, Befund
 
   it('lateinische Schrift in *-aus-ar und arabische in *-aus-de/*-aus-tr sind blockierend', () => {
     let quellen = uebersetzt('de-aus-ar', (u) => (eintrag(u, '.w002').text = 'Brot'));
-    quellen = uebersetzt('tr-aus-de', (u) => (eintrag(u, '.w003').alternativen = ['Haus بَيْت']), quellen);
+    quellen = uebersetzt('tr-aus-de', (u) => (eintrag(u, '.w003').alternativen = ['Haus \u0628\u064E\u064A\u0652\u062A']), quellen);
     expect(von(pruefe(quellen), 'uebersetzung').map(befundZeile).sort()).toEqual([
       expect.stringMatching(/de\.a1\.test\.w002@de-aus-ar: Übersetzung in falscher Schrift \(Ausgangssprache ar\)$/),
       expect.stringMatching(/tr\.a1\.test\.w003@tr-aus-de: Alternative 1 in falscher Schrift \(Ausgangssprache de\)$/),
@@ -356,9 +356,9 @@ describe('Paketbau-Probe (Stufe C, Z-L14 Nacharbeit 3)', () => {
     const ar = geaendert('ar', (d) => {
       const l03 = d.lektionen[2]!.aufgaben as Aufgaben;
       // l03.a10 Harakat zu w004: eine Variante mit Alif am Ende (anderes Gerüst)
-      l03[9]!.varianten = ['كَتَاب', 'كِتَابًا'];
+      l03[9]!.varianten = ['\u0643\u064E\u062A\u064E\u0627\u0628', '\u0643\u0650\u062A\u064E\u0627\u0628\u064B\u0627'];
       // l03.a07 Lücke (Wort 1, das Verb): zwei Ablenker, die sich nur in den Vokalzeichen unterscheiden
-      l03[6]!.ablenker = ['تَشْرَبُ', 'تُشْرَبُ'];
+      l03[6]!.ablenker = ['\u062A\u064E\u0634\u0652\u0631\u064E\u0628\u064F', '\u062A\u064F\u0634\u0652\u0631\u064E\u0628\u064F'];
     }).filter((q) => q.pfad.includes('sprache/ar/'));
     const zeilen = von(pruefe([...de.filter((q) => !q.pfad.includes('sprache/ar/')), ...ar]), 'paketbau').map(befundZeile);
     expect(zeilen.sort()).toEqual([
@@ -400,15 +400,40 @@ describe('Paketbau-Probe (Stufe C, Z-L14 Nacharbeit 3)', () => {
     ]);
   });
 
-  it('ein fehlender Tipp in einer Ausgangssprache ist nur eine Warnung (Testkurs: keine arabischen Tipps)', () => {
-    expect(von(pruefe(testkursQuellen()), 'paketbau', 'warnung').map(befundZeile).sort()).toEqual([
+  it('ein fehlender Tipp in einer Ausgangssprache ist nur im Testkurs (keine arabischen Tipps) eine Warnung, sonst blockierend', () => {
+    const tippFehlt = [
       expect.stringMatching(
         /de\.a1\.test\.l04\.a04: Paketbau lässt die Aufgabe weg \(de-aus-ar\): Tipp t01 fehlt für die Ausgangssprache ar$/,
       ),
       expect.stringMatching(
         /tr\.a1\.test\.l04\.a04: Paketbau lässt die Aufgabe weg \(tr-aus-ar\): Tipp t01 fehlt für die Ausgangssprache ar$/,
       ),
-    ]);
+    ];
+    expect(von(pruefe(testkursQuellen()), 'paketbau', 'warnung').map(befundZeile).sort()).toEqual(tippFehlt);
+    // dieselben Dateien als echte Inhalte (ohne die Vorsilbe des Testkurses): freigegeben, also blockierend
+    const echt = pruefe(
+      testkursQuellen().map((q) => ({ ...q, pfad: q.pfad.replace(/^testkurs\//, '') })),
+      { praefix: '' },
+    );
+    expect(von(echt, 'paketbau', 'warnung')).toEqual([]);
+    expect(von(echt, 'paketbau').map(befundZeile).sort()).toEqual(tippFehlt);
+  });
+
+  it('fehlt einer freigegebenen Einheit die Übersetzungsdatei einer Richtung, ist das blockierend, auch je Aufgabe; im Entwurf nicht', () => {
+    const ohneDatei = (quellen: ImportQuelle[]) => quellen.filter((q) => !q.pfad.includes('uebersetzung/de-aus-tr/'));
+    const zeilen = von(pruefe(ohneDatei(testkursQuellen())), 'paketbau').map(befundZeile);
+    expect(zeilen[0]).toMatch(/de\.a1\.test: Übersetzungsdatei der Richtung de-aus-tr fehlt \(freigegebene Einheit\)$/);
+    expect(zeilen.slice(1)).toEqual(
+      expect.arrayContaining([
+        expect.stringMatching(/de\.a1\.test\.l01\.a03: Paketbau verwirft die Aufgabe \(de-aus-tr\): Verweis ohne Übersetzung/),
+      ]),
+    );
+    expect(zeilen.length).toBeGreaterThan(10);
+    expect(zeilen.every((z) => z.includes('de-aus-tr'))).toBe(true);
+    // Entwurf ohne Übersetzungsdatei (wie B2): die Richtung wird nicht geprüft
+    const entwurf = pruefe(ohneDatei(geaendert('de', (d) => ((d as Json & { status: string }).status = 'entwurf'))));
+    expect(von(entwurf, 'paketbau')).toEqual([]);
+    expect(von(entwurf, 'paketbau', 'warnung').filter((x) => x.text.includes('de-aus-tr'))).toEqual([]);
   });
 
   it('Hör-Aufgaben ohne Vorgabe, die nur mit Clip spielbar sind, sind ausgenommen', () => {

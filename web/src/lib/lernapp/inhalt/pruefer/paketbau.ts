@@ -9,7 +9,7 @@ import {
   baueEinheit,
 } from '../../paket/bauen';
 import { type AufgabeVorlage, type SprachEinheitDatei, verweiseVon } from '../schema';
-import type { Inhalte } from './dateien';
+import { ausTestkurs, type Inhalte } from './dateien';
 import { Befunde } from './typen';
 
 /**
@@ -21,8 +21,12 @@ import { Befunde } from './typen';
  * Die Probe sieht alle Bausteine als sichtbar an (kein Religionsbezug, keine Formel-Kandidaten, kein Status): Verborgene
  * Einträge sind gewollt und kein Inhaltsfehler. Ausgenommen sind Hör-Aufgaben, die ohne Clip nicht spielbar sind
  * (`schrift_tr`/`schrift_latein` nur mit `hoeren`, ohne `vorgabe`): Der Paketbau lässt sie weg, solange es kein Audio gibt.
- * Fehlt der Tipp einer Karte `grammatik_tipp` für eine Ausgangssprache, ist das eine Warnung (Abdeckung, wie im Testkurs ohne
- * arabische Tipps), keine kaputte Aufgabe. Richtungen ohne Übersetzungsdatei der Einheit (B2-Entwurf) prüft die Probe nicht.
+ * Fehlt der Tipp einer Karte `grammatik_tipp` für eine Ausgangssprache, verwirft der Paketbau die Aufgabe ebenfalls: Befund
+ * wie jede andere verworfene Aufgabe; nur im Testkurs (bewusst ohne arabische Tipps) eine Warnung.
+ *
+ * Fehlt einer Einheit die Übersetzungsdatei einer Richtung, prüft die Probe diese Richtung nur bei Entwürfen nicht (z. B. B2).
+ * Bei freigegebenen Einheiten ist die fehlende Datei blockierend, und die Probe läuft mit den übrigen Übersetzungen und ohne
+ * Tipps, damit jede Aufgabe, die dadurch wegfällt, einzeln gemeldet wird (Gegenprüfung N7).
  */
 
 /** Baustein ohne Prüfungen, immer sichtbar (`veroeffentlicht`, ohne Religionsbezug). */
@@ -176,22 +180,28 @@ export function pruefePaketbau(inhalte: Inhalte): Befunde {
     const vorlagen = d.lektionen.flatMap((l) => l.aufgaben);
     // freigegeben (Status der Datei nicht `entwurf`): Befunde blockieren
     const schwere = d.status === 'entwurf' ? 'warnung' : 'blockierend';
+    // Testkurs: fehlende Tipps einer Ausgangssprache sind dort gewollt (keine arabischen Tipps) – nur Warnung
+    const schwereTipp = ausTestkurs(inhalte, pfad) ? 'warnung' : schwere;
     for (const richtung of RICHTUNGEN) {
       const { ziel, ausgang } = zerlegeRichtung(richtung);
       if (ziel !== d.kurs || (d.einheit.nurFuerAusgang && d.einheit.nurFuerAusgang !== ausgang)) continue;
-      // Richtung ohne Übersetzungsdatei der Einheit (z. B. B2-Entwurf): fehlende Übersetzungen sind kein Befund der Probe
-      if (!tippsJe.has(`${richtung}|${d.einheit.schluessel}`)) continue;
+      const tipps = tippsJe.get(`${richtung}|${d.einheit.schluessel}`);
+      if (!tipps) {
+        // Entwurf ohne Übersetzungsdatei der Richtung (z. B. B2): fehlende Übersetzungen sind kein Befund der Probe
+        if (d.status === 'entwurf') continue;
+        b.blockierend(pfad, `Übersetzungsdatei der Richtung ${richtung} fehlt (freigegebene Einheit)`, d.einheit.schluessel);
+      }
       const q: ProbeQuellen = {
         ziel: zielJe.get(d.kurs) ?? new Map(),
         uebersetzungen: uebersetzungJe.get(richtung) ?? new Map(),
-        tipps: tippsJe.get(`${richtung}|${d.einheit.schluessel}`) ?? [],
+        tipps: tipps ?? [],
       };
       const { imPaket, grund } = baueProbe(d, richtung, q);
       for (const a of vorlagen) {
         if (imPaket.has(a.schluessel) || nurMitClip(a)) continue;
-        // Tipp fehlt in dieser Ausgangssprache: Lücke der Abdeckung (Tipps je Ausgang können nachkommen), keine kaputte Aufgabe
         if (a.typ === 'grammatik_tipp' && !q.tipps.some((t) => t.schluessel === `${d.einheit.schluessel}.${ausgang}.${a.tipp}`)) {
-          b.warnung(
+          b.add(
+            schwereTipp,
             pfad,
             `Paketbau lässt die Aufgabe weg (${richtung}): Tipp ${a.tipp} fehlt für die Ausgangssprache ${ausgang}`,
             a.schluessel,
