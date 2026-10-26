@@ -1,5 +1,5 @@
 // Messrouten der Lern-App (L8-02), aus dem Code abgeleitet (web/src/app/lern-app/**, Konto-Seiten in Mein Bereich, Station
-// auf /lernen) mit dem Testkurs der E2E (drizzle/seeds/lernapp-test.ts: je Richtung Einheit a1.e01, Lektionen l01–l04).
+// auf /lernen) mit dem Testkurs der E2E (drizzle/seeds/lernapp-test.ts: je Richtung Einheit a1.test, Lektionen l01–l04).
 // Budgets je Art nach KERN 4.0 §9 (Messweise wie web/scripts/messen.mjs bzw. lernapp-budget.mjs, gz -9 je Datei):
 //   huelle/start/lernpfad (statische Seiten der Lern-App) ≤ 180 KB gesamt · spieler (Üben, Wiederholen, Einstufung) ≤ 210 KB ·
 //   meinbereich ≤ 230 KB · website (Station /lernen) ≤ 180 KB (K-12).
@@ -10,8 +10,8 @@ export const JS_GRENZE = { huelle: 180, start: 180, lernpfad: 180, spieler: 210,
 /** Lernpfad je Oberfläche: Richtung mit der Oberfläche als Ausgangssprache (Standard UI = Ausgang). */
 export const KURS_JE_UI = { de: 'tr-aus-de', tr: 'de-aus-tr', ar: 'de-aus-ar' };
 const ziel = (kurs) => kurs.split('-aus-')[0];
-export const lektion = (kurs, n) => `${kurs}.a1.e01.l0${n}`;
-export const einheit = (kurs) => `${ziel(kurs)}.a1.e01`;
+export const lektion = (kurs, n) => `${kurs}.a1.test.l0${n}`;
+export const einheit = (kurs) => `${ziel(kurs)}.a1.test`;
 
 /** Lighthouse: Lern-App-Routen (öffentlich, ohne Konto), /lernen und die Lern-App-Seiten in Mein Bereich (mit Anmeldung). */
 export function lighthouseRouten(konto = {}) {

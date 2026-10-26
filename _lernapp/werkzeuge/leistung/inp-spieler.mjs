@@ -54,7 +54,7 @@ async function pruefenWeiter(s, schritt) {
 const SZENARIEN = [
   {
     name: 'Spieler l01 (Auswahl, Paare, Wortbank)',
-    pfad: '/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l01',
+    pfad: '/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l01',
     bereit: (s) => s.getByRole('radio', { name: 'Wasser', exact: true }).waitFor({ state: 'attached', timeout: 60_000 }),
     ablauf: async (s, schritt) => {
       await schritt('antwortWaehlen', () => radio(s, 'Wasser').tap());
@@ -82,7 +82,7 @@ const SZENARIEN = [
   },
   {
     name: 'Spieler l03 (Bildkarte, Freitext mit Tastatur)',
-    pfad: '/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l03',
+    pfad: '/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l03',
     bereit: (s) => s.locator('main input[type="radio"]').first().waitFor({ state: 'attached', timeout: 60_000 }),
     ablauf: async (s, schritt) => {
       await schritt('antwortWaehlen', () =>
@@ -103,7 +103,7 @@ const SZENARIEN = [
   },
   {
     name: 'Spieler l03 ar-aus-de (Freitext mit Bildschirmtastatur)',
-    pfad: '/lern-app/de/ar-aus-de/ueben?l=ar-aus-de.a1.e01.l03',
+    pfad: '/lern-app/de/ar-aus-de/ueben?l=ar-aus-de.a1.test.l03',
     bereit: (s) => s.locator('main input[type="radio"]').first().waitFor({ state: 'attached', timeout: 60_000 }),
     ablauf: async (s, schritt) => {
       await schritt('antwortWaehlen', () =>

@@ -5,8 +5,9 @@
 // 1. Bis die Sprechaufgabe sichtbar ist, keine Anfrage unter /lern-app/modelle/ (Worker, ORT-WASM, Whisper-Gewichte).
 // 2. Erst der Klick auf „Sprachprüfung laden (≈ … MB)“ lädt sie – nur GET, nur eigener Ursprung; Liste mit Größen.
 // 3. Nach „bereit“ (oder Zeitgrenze) keine Anfrage an fremde Ursprünge.
-// 4. Jede der 10 Download-Dateien (`DOWNLOAD_PFADE` in web/src/lib/lernapp/sprechen/modell.ts: 7 Modell- und
-//    Konfigurationsdateien, ORT `.mjs` und `.wasm`, Worker) geht genau einmal über das Netz – keine fehlt (Tokenizer,
+// 4. Jede der 11 Download-Dateien (`DOWNLOAD_PFADE` in web/src/lib/lernapp/sprechen/modell.ts: 7 Modell- und
+//    Konfigurationsdateien, ORT `.mjs` und `.wasm`, Worker, seit Stufe C (Z-L17) auch die Drittlizenzen von ORT unter
+//    /lern-app/lizenzen/) geht genau einmal über das Netz – keine fehlt (Tokenizer,
 //    Prozessor), keine kommt doppelt. „Über das Netz“: Anfrage des Service Workers, oder eine Anfrage der Seite bzw. eines
 //    Workers, die nicht der Service Worker beantwortet hat (Playwright zählt sonst jede Datei zweimal).
 // Gerät wie die E2E (typen-b.spec.ts `geraet`): 8 GB Arbeitsspeicher, 10 GB frei; Mikrofon als Attrappe von Chromium.
@@ -54,7 +55,7 @@ let fehler = null;
 let bereit = false;
 let ladenMs = null;
 try {
-  await seite.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.e01.l04', { waitUntil: 'load' });
+  await seite.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l04', { waitUntil: 'load' });
   // dialog
   await ueberschrift(t.aufgaben2.dialog.anweisung);
   await radio('İyiyim, teşekkürler.').click();
@@ -131,7 +132,8 @@ for (const a of anfragen) {
 }
 await browser.close();
 
-const modell = (z) => z.pfad.startsWith('/lern-app/modelle/');
+// Dateien der Sprachprüfung: alles unter /lern-app/modelle/ und die übrigen Download-Dateien (Drittlizenzen von ORT)
+const modell = (z) => z.pfad.startsWith('/lern-app/modelle/') || DOWNLOAD_PFADE.includes(z.pfad);
 const vorher = zeilen.filter((z) => z.phase === 'vor der Sprechaufgabe');
 const nachher = zeilen.filter((z) => z.phase !== 'vor der Sprechaufgabe');
 // je Download-Datei die Abrufe über das Netz nach dem Klick (Pfad ohne Suchteil)
