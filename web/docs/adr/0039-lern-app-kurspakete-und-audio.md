@@ -158,6 +158,10 @@ vorigen Baus und mit ihr die Kursseiten, die „Einheit offline speichern“ vor
    Programmteile tragen den Inhalts-Hash im Namen) – auch, wenn eine noch offene Seite des alten Baus einen Programmteil
    nachlädt, den der Server nicht mehr hat. Übergang von Workern vor N9a: Gab es noch keinen Kursvorrat, gilt ein Kurs, dessen
    vier Seiten in der alten Hülle liegen, als gespeichert.
+   Der alte Worker, beim Wechsel noch bei der Arbeit (Hülle, Programmteile), ist ab dann überholt (`registration.active` ist ein
+   anderer): Er schreibt nicht mehr in Hülle und Kursvorrat seines Baus und löscht nichts. Sonst legte ein `caches.open` die
+   eben gelöschte alte Hülle wieder an, und seine Wiederherstellung hielte die Vorräte des neuen Baus für ältere (Nachprüfung
+   im vollen E2E-Lauf, `offline.spec` Bauwechsel).
 3. **Ehrlicher Stand:** Der Lernpfad zeigt „Offline gespeichert“ erst, wenn auch die Kursseiten im Vorrat dieses Baus
    vollständig sind; sonst „wird aktualisiert“ (er holt sie selbst) bzw. – ohne Verbindung – „Erneut speichern“.
 4. **„Stufe offline speichern“** je Stufe im Lernpfad: Speicherbedarf vorher (Pakete und jedes Bündel einmal), Ring nach
@@ -168,7 +172,8 @@ vorigen Baus und mit ihr die Kursseiten, die „Einheit offline speichern“ vor
    oder Ruhezeit, nicht nach Bildlauf.
 5. **Root-Worker unverändert:** Er behält alle Vorräte mit dem Präfix `igmg-lernapp-`, also auch den Kursvorrat; der
    Abmelde-Worker (GO-LIVE „Abschalten“) räumt ihn wie die übrigen Vorräte außer den Modellen.
-6. **Tests:** Unit `lernapp-sw` (Kursvorrat, Merkzeichen, Bauwechsel mit und ohne Netz, Übergang, keine Verdrängung),
+6. **Tests:** Unit `lernapp-sw` (Kursvorrat, Merkzeichen, Bauwechsel mit und ohne Netz, alter Worker noch bei der Arbeit,
+   Übergang, keine Verdrängung),
    `offline-n9a` (Speicherbedarf, Abbrechen); E2E `offline.spec` (Stufe speichern, ohne Netz mit `setOffline` und Abklemmen
    per Route: Lektion einer nur über die Stufe gespeicherten Einheit, Hörübung aus dem Bündel, Wiederholen; Bauwechsel per
    Worker mit neuer `?v=`), `regression.spec` (Root-SW-Update mit gespeicherter Einheit).
