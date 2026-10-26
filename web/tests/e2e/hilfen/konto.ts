@@ -42,6 +42,10 @@ export async function angemeldetesKonto(
   const totp = new OTPAuth.TOTP({ secret: OTPAuth.Secret.fromBase32(geheimnis), digits: 6, period: 30 });
   await page.getByLabel('Schritt 3: Code eingeben').filter({ visible: true }).fill(totp.generate());
   await page.getByRole('button', { name: 'Einrichtung abschließen' }).click();
-  await expect(page).toHaveURL(ziel);
+  // Die Action leitet auf /verwaltung, die Übersicht leitet Rollen ohne Übersicht weiter (Sprachprüfung → Prüfoberfläche).
+  // Die Adresse wechselt erst, wenn die Zielseite gerendert ist; die Warteschlange der Sprachprüfung rechnet über alle
+  // Einheiten der E2E-Datenbank (A1–B1: ≈ 20.000 Zieltexte und 57.000 Übersetzungen je Sprache, gemessen 2,2–3,9 s ohne
+  // Browser, mit zwei Workern länger; Stufe C N5). Deshalb hier nicht nur die 5 s des Standards.
+  await expect(page).toHaveURL(ziel, { timeout: 30_000 });
   return { email, totp };
 }
