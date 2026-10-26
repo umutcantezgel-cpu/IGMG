@@ -147,7 +147,7 @@ describe('Zwei-Prüfer-Freigabe: Einzelregeln', () => {
     expect(religioesGeprueft({ ...aussage(), inhaltHash: ALT }, pruefungen)).toBe(false);
   });
 
-  it('die Administration zählt nie – auch nicht zusammen mit religioese_pruefung (Stufe C N2, Z-L02)', () => {
+  it('die Administration zählt nie als Freigabe – auch nicht zusammen mit religioese_pruefung (Stufe C N2, Z-L02)', () => {
     expect(religioesGeprueft(aussage(), [ok('imam'), ok('admin', { pruefendeRollen: ['administration', 'bildung'] })])).toBe(false);
     expect(religioesGeprueft(aussage(), [ok('imam'), ok('admin', { pruefendeRollen: ['administration', 'religioese_pruefung'] })])).toBe(
       false,
@@ -155,9 +155,15 @@ describe('Zwei-Prüfer-Freigabe: Einzelregeln', () => {
     // zwei eigene Konten der Administration mit beiden Rollen ergeben keine Freigabe
     const beide = { pruefendeRollen: ['religioese_pruefung', 'administration'] };
     expect(religioeseLage(aussage(), [ok('admin-1', beide), ok('admin-2', beide)]).freigaben).toEqual([]);
-    // … und auch keinen Einwand: ein Konto mit beiden Rollen zählt weder als Freigabe noch als Sperre
-    const einwand = ok('admin-1', { ...beide, urteil: 'abgelehnt' });
-    expect(religioeseLage(aussage(), [ok('imam'), ok('hoca'), einwand])).toMatchObject({ gesperrt: false, geprueft: true });
+    // sein Einwand (Altbestand) sperrt aber weiter – fail closed (Gegenprüfung N2): nur Freigaben solcher Konten fallen weg
+    for (const urteil of ['abgelehnt', 'aenderungsvorschlag', 'korrektur'] as const)
+      expect(religioeseLage(aussage(), [ok('imam'), ok('hoca'), ok('admin-1', { ...beide, urteil })])).toMatchObject({
+        gesperrt: true,
+        geprueft: false,
+      });
+    // ein Einwand der Administration ohne die Rolle zählt wie bisher nicht
+    const ohneRolle = ok('admin-3', { pruefendeRollen: ['administration'], urteil: 'abgelehnt' });
+    expect(religioeseLage(aussage(), [ok('imam'), ok('hoca'), ohneRolle])).toMatchObject({ gesperrt: false, geprueft: true });
     expect(zaehltReligioes(['religioese_pruefung'])).toBe(true);
     expect(zaehltReligioes(['religioese_pruefung', 'administration'])).toBe(false);
     expect(zaehltReligioes(['administration'])).toBe(false);

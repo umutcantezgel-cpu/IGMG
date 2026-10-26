@@ -1,4 +1,5 @@
 import leitfaden from '../../../inhalte/lernapp/rahmen/leitfaden.json';
+import { lateinFormeln, type LateinFormel } from './formelkandidat';
 import { type Pruefung, religioesGeprueft, type ReligioeserBaustein } from './freigabe';
 import { inhaltHash } from './paket/hash';
 
@@ -13,7 +14,8 @@ import { inhaltHash } from './paket/hash';
  *   religiöse Freigabe (`freigabe.ts`: zwei Personen mit `religioese_pruefung`, ohne Administration, zum aktuellen Hash).
  * - **Freigegeben** ist die Liste erst mit beidem: zwei Freigaben zum aktuellen Hash **und** `status: "freigegeben"` im
  *   Leitfaden (der Beschluss, den auch `pnpm lernapp:pruefen` liest). Bis dahin verbirgt der Paketbau jeden Eintrag mit
- *   `religionsbezug`, auch mit zwei eigenen Freigaben (`freigabe.ts` `sprachSichtbarkeit`).
+ *   `religionsbezug`, auch mit zwei eigenen Freigaben (`freigabe.ts` `sprachSichtbarkeit`). Lateinische Formel-Kandidaten
+ *   (F-de, F-tr; {@link LATEIN_FORMELN}) gelten dort auch ohne Kennzeichen als Religionsbezug (`paket/bauen.ts`).
  *
  * Nur auf dem Server (Paketbau, Verwaltung): Das Modul lädt den Leitfaden.
  */
@@ -31,6 +33,9 @@ export const FORMELN: Formeln = (() => {
   const f = leitfaden.religionsbezug.formeln as { status: string; liste: FormelEintrag[] };
   return { status: f.status === 'freigegeben' ? 'freigegeben' : 'gesperrt', liste: f.liste };
 })();
+
+/** Lateinische Einträge der Liste (F-de, F-tr) als Wortfolgen für Paketbau und Verwaltung (`formelkandidat.ts`). */
+export const LATEIN_FORMELN: readonly LateinFormel[] = lateinFormeln(FORMELN.liste);
 
 const normal = (wert: unknown): unknown =>
   typeof wert === 'string'

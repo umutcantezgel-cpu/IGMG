@@ -1,5 +1,5 @@
 import 'server-only';
-import { asc, and, count, eq, inArray, isNotNull, sql } from 'drizzle-orm';
+import { asc, and, count, eq, inArray, isNotNull, isNull, notInArray, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
 import { KRITISCHE_FEHLER, type Status } from '@/lib/lernapp/freigabe';
@@ -142,10 +142,23 @@ export async function ladeLernappUebersicht(): Promise<Uebersicht> {
     .from(schema.lernappKurs)
     .orderBy(asc(schema.lernappKurs.id));
 
+  // Religiöse Prüfung: nur Personen, deren Freigabe zählt – nicht gesperrt und ohne Administration (Altbestand vor Stufe C
+  // N2, `freigabe.ts` `zaehltReligioes`); gleiche Bedingung wie im Startklar-Cockpit (`startklar/lernapp.ts`)
+  const administration = db
+    .select({ id: schema.rolleZuweisung.benutzerId })
+    .from(schema.rolleZuweisung)
+    .where(eq(schema.rolleZuweisung.rolle, 'administration'));
   const [religioes] = await db
     .select({ n: sql<number>`count(distinct ${schema.rolleZuweisung.benutzerId})`.mapWith(Number) })
     .from(schema.rolleZuweisung)
-    .where(eq(schema.rolleZuweisung.rolle, 'religioese_pruefung'));
+    .innerJoin(schema.user, eq(schema.user.id, schema.rolleZuweisung.benutzerId))
+    .where(
+      and(
+        eq(schema.rolleZuweisung.rolle, 'religioese_pruefung'),
+        isNull(schema.user.gesperrtAm),
+        notInArray(schema.rolleZuweisung.benutzerId, administration),
+      ),
+    );
   const sprachPruefende = await db
     .select({ sprache: schema.lernappPrueferSprache.sprache, n: count() })
     .from(schema.lernappPrueferSprache)

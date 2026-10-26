@@ -10,7 +10,7 @@ import { pruefeAusschluesse } from '@/lib/lernapp/inhalt/pruefer/ausschluss';
 import { leereInhalte } from '@/lib/lernapp/inhalt/pruefer/dateien';
 import { auszugsTabelle, ladeHaeufigkeit, ladeKaikki, pruefeAuszuege, pruefeKaikkiOhneBeispiele } from '@/lib/lernapp/inhalt/pruefer/daten';
 import { nahePaare } from '@/lib/lernapp/inhalt/pruefer/dubletten';
-import { pruefeReligionsbezug } from '@/lib/lernapp/inhalt/pruefer/religionsbezug';
+import { formelMusterZahl, pruefeReligionsbezug } from '@/lib/lernapp/inhalt/pruefer/religionsbezug';
 import { arabischeKandidaten, arabischNormal } from '@/lib/lernapp/inhalt/pruefer/sprache';
 import { baueTabuLexikon, tabuTreffer, tabuWoerter } from '@/lib/lernapp/inhalt/pruefer/tabu';
 import type { TextEintrag } from '@/lib/lernapp/inhalt/pruefer/texte';
@@ -866,6 +866,23 @@ describe('Religionsbezug', () => {
       expect(salam.mk ?? []).not.toContainEqual(expect.stringMatching(/religion|islam/i));
       expect(befunde(leitfaden('gesperrt'), 'F-ar-01', [{ text: salam.kanon!, sprache: 'ar' }])).toEqual([[]]);
       expect(befunde(leitfaden('gesperrt'), 'F-ar-17', [{ text: qasam.kanon!, sprache: 'ar' }])).toEqual([[]]);
+    });
+
+    it('Wirksamkeit an der echten Liste festgehalten (Gegenprüfung N2): F-ar heute 0 von 17, F-de und F-tr alle', () => {
+      // Ändert sich diese Zahl (neue Daten oder Namen), muss die Aussage in ABNAHME und Bericht mitwandern: Heute schützt
+      // arabische Formeln nur das Formel-Lexikon des Wächters, der Prüfer erkennt keine (nicht in kaikki, deutscher Zusatz,
+      // als Alltagswort mehrdeutig).
+      const zahl = formelMusterZahl(LEITFADEN, DATEN);
+      const ar = LEITFADEN.religionsbezug.formeln.liste.filter((f) => f.sprache === 'ar').map((f) => f.id);
+      expect(ar).toHaveLength(17);
+      expect(ar.filter((id) => (zahl.get(id) ?? 0) > 0)).toEqual([]);
+      const latein = LEITFADEN.religionsbezug.formeln.liste.filter((f) => f.sprache !== 'ar').map((f) => f.id);
+      expect(latein.filter((id) => !((zahl.get(id) ?? 0) > 0))).toEqual([]);
+      // der deutsche Zusatz („-Gruß“) fällt vor der Auflösung weg: Ein Formelname aus den Daten wirkt auch mit Zusatz
+      const mitZusatz: Formel = { ...F_AR, id: 'F-ar-97', begriff: `${F_AR.begriff}-Gruß` };
+      const z = formelMusterZahl(leitfaden('gesperrt', [F_AR, mitZusatz]), DATEN);
+      expect(z.get('F-ar-98')).toBeGreaterThan(0);
+      expect(z.get('F-ar-97')).toBe(z.get('F-ar-98'));
     });
   });
 

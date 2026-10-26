@@ -1,3 +1,4 @@
+import { lateinWoerter } from '../../formelkandidat';
 import { SPRACH_STUFEN, type Sprache } from '../../kurse';
 import type { Leitfaden, TabuKategorie } from '../schema';
 import { type KaikkiEintrag, ladeKaikki } from './daten';
@@ -103,30 +104,18 @@ export type TabuLexikon = {
 
 // ——— Normalisierung ———
 
-const ZIRKUMFLEX: Record<string, string> = { â: 'a', î: 'i', û: 'u', Â: 'a', Î: 'i', Û: 'u' };
-
-/** Wörter eines Texts in der Normalform des Leitfadens (de mit Teilwörtern am Bindestrich). */
+/**
+ * Wörter eines Texts in der Normalform des Leitfadens (de mit Teilwörtern am Bindestrich). Lateinschrift wie
+ * `formelkandidat.ts` `lateinWoerter` (dieselbe Zerlegung für Formel-Kandidaten in Paketbau und Verwaltung).
+ */
 export function tabuWoerter(text: string, sprache: Sprache): string[] {
-  const t = text.normalize('NFC');
   if (sprache === 'ar')
-    return t
+    return text
+      .normalize('NFC')
       .split(/\s+/u)
       .flatMap((w) => arabischNormal(w).split(/[^\u0621-\u064A\u0671-\u06D3]+/u))
       .filter(Boolean);
-  if (sprache === 'tr')
-    return t
-      .replace(/[âîûÂÎÛ]/g, (z) => ZIRKUMFLEX[z]!)
-      .toLocaleLowerCase('tr')
-      .replace(/['’]/g, '')
-      .split(/[^\p{L}\p{N}-]+/u)
-      .flatMap((w) => (w.includes('-') ? [w, ...w.split('-')] : [w]))
-      .filter(Boolean);
-  return t
-    .toLowerCase()
-    .replace(/ß/g, 'ss')
-    .split(/[^\p{L}\p{N}-]+/u)
-    .flatMap((w) => (w.includes('-') ? [w.replace(/-/g, ''), ...w.split('-')] : [w]))
-    .filter(Boolean);
+  return lateinWoerter(text, sprache);
 }
 
 const form = (f: string, sprache: 'de' | 'tr') => tabuWoerter(f, sprache).join(' ');

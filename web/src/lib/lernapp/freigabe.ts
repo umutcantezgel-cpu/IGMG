@@ -9,11 +9,12 @@ import { kiHerkunftVerboten } from '../religioes/freigabe';
  * - Gezählt wird je Person nur ihre jüngste religiöse Prüfung zum aktuellen Hash; „ok“ zählt nur mit der Rolle
  *   `religioese_pruefung` (die Administration ersetzt keine Prüfung), ohne Verfasserschaft und mit jedem aktuellen Beleg
  *   „am Original geprüft“.
- * - Ein Konto, das (auch) die Rolle `administration` trägt, zählt nie – weder als Freigabe noch als Einwand (Stufe C N2,
- *   Z-L02: sonst erzeugte die Administration über zwei eigene Konten mit beiden Rollen die Freigaben allein; beide Rollen
- *   zusammen vergibt „Benutzer und Rollen“ nicht mehr, `rechte/schutzrollen.ts`).
- * - Ein „abgelehnt“, „Änderungsvorschlag“ oder „Korrektur“ einer prüfenden Person zum aktuellen Hash sperrt, bis ein neuer
- *   Stand (neuer Hash) vorliegt.
+ * - Ein Konto, das (auch) die Rolle `administration` trägt, zählt nie als Freigabe (Stufe C N2, Z-L02: sonst erzeugte die
+ *   Administration über zwei eigene Konten mit beiden Rollen die Freigaben allein; beide Rollen zusammen vergibt „Benutzer
+ *   und Rollen“ nicht mehr, `rechte/schutzrollen.ts`). Sein Einwand sperrt aber weiter (fail closed, Gegenprüfung N2):
+ *   Neue Urteile solcher Konten nimmt `pruefeUrteil` nicht an, ein gespeichertes „abgelehnt“ aus dem Altbestand bleibt wirksam.
+ * - Ein „abgelehnt“, „Änderungsvorschlag“ oder „Korrektur“ einer Person mit der Rolle `religioese_pruefung` zum aktuellen
+ *   Hash sperrt, bis ein neuer Stand (neuer Hash) vorliegt.
  * - Prüfungen ohne Person (gelöschtes Konto) zählen nicht.
  */
 
@@ -100,7 +101,7 @@ function alleBelegeBestaetigt(b: ReligioeserBaustein, p: Pruefung): boolean {
 export type ReligioeseLage = {
   /** Personen, deren Freigabe zählt. */
   freigaben: string[];
-  /** Jemand mit der Rolle hat zum aktuellen Hash abgelehnt, einen Änderungsvorschlag oder eine Korrektur gemacht. */
+  /** Jemand mit der Rolle (auch mit Administration) hat zum aktuellen Hash abgelehnt, geändert oder korrigiert. */
   gesperrt: boolean;
   /** Pflichtbeleg fehlt (Aussage ohne Beleg). */
   belegFehlt: boolean;
@@ -115,12 +116,13 @@ export function religioeseLage(b: ReligioeserBaustein, pruefungen: readonly Prue
   const freigaben: string[] = [];
   let gesperrt = false;
   for (const [person, p] of juengsteJePerson(pruefungen, b.inhaltHash, ['religioes'])) {
-    if (!zaehltReligioes(p.pruefendeRollen)) continue;
+    if (!p.pruefendeRollen.includes(RELIGIOESE_ROLLE)) continue;
+    // Einwand jeder Person mit der Rolle sperrt – auch mit Administration (strengere Lesart)
     if (p.urteil !== 'ok') {
       gesperrt = true;
       continue;
     }
-    if (verfasser.has(person) || !alleBelegeBestaetigt(b, p)) continue;
+    if (!zaehltReligioes(p.pruefendeRollen) || verfasser.has(person) || !alleBelegeBestaetigt(b, p)) continue;
     freigaben.push(person);
   }
   const belegFehlt = b.belegPflicht && b.belege.length === 0;
@@ -186,9 +188,10 @@ export function sprachlichGesperrt(inhaltHash: string, pruefungen: readonly Prue
  * Sichtbarkeit eines Sprachkurs-Eintrags (ADR 0041 Nr. 2, 8, 11):
  * - `entwurf` und `gesperrt` nie; „abgelehnt“ oder kritischer Fehler zum aktuellen Hash nie.
  * - `religionsbezug` nur mit zwei religiösen Freigaben **und** freigegebener Formelliste – unabhängig von Status und
- *   Schalter `lernapp_ungeprueft`. Die Formelliste gilt für jeden gekennzeichneten Eintrag (Stufe C N2, Z-L10): Ob ein
- *   Eintrag eine Formel (F-Kandidat) oder nur ein Ort bzw. Termin (R-Kandidat) ist, weiß der Paketbau nicht sicher – das
- *   erkennt nur der Inhaltsprüfer mit den kaikki-Daten –, also die strengere Lesart.
+ *   Schalter `lernapp_ungeprueft`. Die Formelliste gilt für jeden gekennzeichneten Eintrag (Stufe C N2, Z-L10), nicht nur
+ *   für Formeln: Ob ein gekennzeichneter Eintrag eine Formel (F-Kandidat) oder nur ein Ort bzw. Termin (R-Kandidat) ist,
+ *   weiß diese Regel nicht, also die strengere Lesart. Lateinische Formel-Kandidaten ohne Kennzeichen setzt der Paketbau
+ *   selbst auf `religionsbezug` (`paket/bauen.ts`, `formelkandidat.ts`).
  * - `automatisch_geprueft` nur mit dem Schalter und dann mit Hinweis; `veroeffentlicht` ohne Hinweis.
  */
 export function sprachSichtbarkeit(e: SprachEintrag, pruefungen: readonly Pruefung[], o: SprachOptionen): Sichtbarkeit {

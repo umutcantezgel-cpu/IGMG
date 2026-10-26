@@ -38,6 +38,7 @@ beforeAll(async () => {
 });
 afterEach(() => {
   delete process.env.FUNKTION_LERNAPP;
+  delete process.env.FUNKTION_LERNAPP_UNGEPRUEFT;
   leitfaden.status = 'gesperrt';
 });
 
@@ -122,5 +123,38 @@ describe('Formelliste im Paketbau', () => {
     await db.delete(schema.lernappPruefung).where(eq(schema.lernappPruefung.inhaltId, lemma.id));
     expect((await paket()).eintraege[lemma.schluessel]).toBeUndefined();
     await db.delete(schema.lernappPruefung).where(eq(schema.lernappPruefung.inhaltTyp, 'formelliste'));
+  });
+});
+
+describe('Formel-Kandidat ohne Kennzeichen im Paketbau (Gegenprüfung N2, Z-L10)', () => {
+  it('unmarkierter Satz mit einer lateinischen Formel der Liste: verborgen, auch mit lernapp_ungeprueft und bei freigegebener Liste ohne eigene Freigaben', async () => {
+    process.env.FUNKTION_LERNAPP = 'an';
+    process.env.FUNKTION_LERNAPP_UNGEPRUEFT = 'an';
+    const schluessel = Object.keys((await paket()).eintraege).find((k) => /^tr\.a1\.[^.]+\.s\d+$/.test(k))!;
+    const [s] = await db.select().from(schema.lernappSatz).where(eq(schema.lernappSatz.schluessel, schluessel));
+    expect(s!.religionsbezug).toBe(false);
+    // Wortlaut aus dem Leitfaden (zur Laufzeit), nicht von Hand; diese Formel kennt das Formel-Lexikon des Wächters nicht
+    const formel = FORMELN.liste
+      .find((f) => f.id === 'F-tr-03')!
+      .begriff.split(',')[1]!
+      .trim();
+    await db
+      .update(schema.lernappSatz)
+      .set({ text: `${s!.text} ${formel}` })
+      .where(eq(schema.lernappSatz.id, s!.id));
+    try {
+      expect((await paket()).eintraege[schluessel]).toBeUndefined();
+      // Liste freigegeben (Status und zwei Listenfreigaben): ohne zwei Freigaben des Satzes weiter verborgen
+      leitfaden.status = 'freigegeben';
+      for (const id of [await person(['religioese_pruefung']), await person(['religioese_pruefung'])])
+        await pruefung('formelliste', FORMELLISTE_ID, formellisteHash(FORMELN.liste), id);
+      expect(await formellisteFreigegeben()).toBe(true);
+      expect((await paket()).eintraege[schluessel]).toBeUndefined();
+    } finally {
+      await db.update(schema.lernappSatz).set({ text: s!.text }).where(eq(schema.lernappSatz.id, s!.id));
+      await db.delete(schema.lernappPruefung).where(eq(schema.lernappPruefung.inhaltTyp, 'formelliste'));
+    }
+    leitfaden.status = 'gesperrt';
+    expect((await paket()).eintraege[schluessel]).toMatchObject({ text: s!.text });
   });
 });

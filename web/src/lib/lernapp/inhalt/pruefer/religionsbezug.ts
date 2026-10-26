@@ -1,3 +1,4 @@
+import { begriffTeile as teile, lateinFormeln, passtWort as passt } from '../../formelkandidat';
 import { SPRACH_STUFEN, type Sprache } from '../../kurse';
 import { textHash } from '../../paket/hash';
 import { type Leitfaden, verweiseVon } from '../schema';
@@ -21,7 +22,11 @@ import { Befunde } from './typen';
  *   Listenfreigabe verborgen, `freigabe.ts`). Bei freigegebener Liste gilt wie bei den R-Kandidaten `menschlich_klaeren` ohne
  *   Kennzeichen. Arabische F-Kandidaten sind schärfer gefasst: Namen, die kaikki auch als Alltagswort ohne Thema Religion
  *   führt, zählen nicht (Name des Grußes = „Frieden“); ein Treffer verlangt, dass die Vokalzeichen im Text denen der kaikki-
- *   Form nicht widersprechen (`vokalVertraeglich`) und keine Tāʾ marbūṭa als Pronomen abgetrennt ist.
+ *   Form nicht widersprechen (`vokalVertraeglich`) und keine Tāʾ marbūṭa als Pronomen abgetrennt ist. Deutsche Zusätze
+ *   („ʿĪd-Gruß“) fallen vor der Auflösung weg. **Wirksam** ist der arabische Zweig heute für keinen der 17 Einträge (Stand
+ *   26.10.2026, `formelMusterZahl`, im Unit-Test festgehalten): Die meisten Namen stehen nicht im kaikki-Kernauszug, die
+ *   übrigen sind als Alltagswort mehrdeutig. Arabische Formeln schützt damit nur das Formel-Lexikon des Wächters; was dort
+ *   fehlt (Fest-, Ramadan-, Freitagsgruß), ergänzt nur ein Mensch (LM-09).
  * - **Arabisch:** Wörter in der Vergleichsform des Wächters ohne Klitika; ein bekanntes Wort des kaikki-Kernauszugs wird nicht
  *   falsch zerlegt (`arabischeKandidaten`; sonst ergäbe „weit“ nach bi- das Wort für Fest). Die Vergleichsform
  *   macht Alif mit Hamza oben und unten gleich; ein Treffer verlangt deshalb zusätzlich, dass kein Alif im Text ein anderes
@@ -126,12 +131,8 @@ function hamzaVertraeglich(a: string, b: string): boolean {
   return true;
 }
 
-const teile = (s: string) =>
-  s
-    .replace(/\([^)]*\)/g, ' ')
-    .split(/[,/]/)
-    .map((x) => x.trim())
-    .filter(Boolean);
+/** Deutscher Zusatz am Namen einer arabischen Formel („-Gruß“, „-Formel“): gehört nicht zur Umschrift. */
+const ohneDeutschenZusatz = (t: string) => t.replace(/-\p{Lu}\p{Ll}+$/u, '');
 
 function begriffe(leitfaden: Leitfaden, daten: string): Begriff[] {
   const tabelle = leitfaden.umschrift.din_zu_wiktionary;
@@ -197,7 +198,7 @@ function begriffe(leitfaden: Leitfaden, daten: string): Begriff[] {
             // Schwurformel „Eid“; ihr Treffer sagt nichts über eine Formel (Stand 25.10.2026: 14 bzw. 94 Fehltreffer in den
             // Inhalten, u. a. „in Frieden leben“, „Abteilung“). Den Gruß selbst fängt das Formel-Lexikon des Wächters.
             ar: teile(f.begriff)
-              .flatMap((t) => umschrift(t) ?? [])
+              .flatMap((t) => umschrift(ohneDeutschenZusatz(t)) ?? [])
               .filter((x) => x.eindeutig)
               .flatMap((x) => x.folge)
               .map((m) => [m]),
@@ -206,7 +207,8 @@ function begriffe(leitfaden: Leitfaden, daten: string): Begriff[] {
         : {
             id: f.id,
             abStufe: null,
-            latein: { [f.sprache]: teile(f.begriff).map((t) => tabuWoerter(t, f.sprache as 'de' | 'tr')) },
+            // gleiche Wortfolgen wie im Paketbau und in der Verwaltung (`formelkandidat.ts`)
+            latein: Object.fromEntries(lateinFormeln([f]).map((x) => [x.sprache, x.folgen.map((w) => [...w])])),
             ar: [],
             formel: true,
           },
@@ -214,7 +216,18 @@ function begriffe(leitfaden: Leitfaden, daten: string): Begriff[] {
   return ergebnis;
 }
 
-const passt = (token: string, wort: string) => token === wort || (wort.length >= 4 && token.startsWith(wort));
+/**
+ * Wirksamkeit der Formelliste im Prüfer: je Eintrag (F-…) die Zahl seiner Muster (lateinische Wortfolgen bzw. arabische
+ * Muster aus der kaikki-Umschrift). 0 heißt: Der Prüfer erkennt diese Formel nicht (Stand 26.10.2026 alle 17 F-ar-Einträge:
+ * nicht in kaikki, deutscher Zusatz oder als Alltagswort mehrdeutig) – dann schützt nur das Formel-Lexikon des Wächters.
+ */
+export function formelMusterZahl(leitfaden: Leitfaden, daten: string): Map<string, number> {
+  return new Map(
+    begriffe(leitfaden, daten)
+      .filter((b) => b.formel)
+      .map((b) => [b.id, b.ar.length + Object.values(b.latein).reduce((n, folgen) => n + folgen.filter((f) => f.length).length, 0)]),
+  );
+}
 
 /** Strengerer Vergleich für Formeln (F-Kandidaten): Vokale des Worts im Text, sofern sie sich zuordnen lassen. */
 type Streng = { vokale: readonly (string | null)[] | undefined };
