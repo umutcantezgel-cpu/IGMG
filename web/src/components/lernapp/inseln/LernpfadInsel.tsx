@@ -402,16 +402,21 @@ export const STATIONEN_JE_TAKT = 4;
 export const naechsterTakt = (gezeigt: number, n: number): number => Math.min(n, gezeigt + STATIONEN_JE_TAKT);
 /** Ruhe nach dem Aufbau der ersten Stationen, nach der die übrigen ohne Eingabe folgen (ms). */
 export const RUHE_MS = 1500;
-/** Eingaben, nach denen die übrigen Stationen folgen: Klick bzw. Tippen, Taste (losgelassen), Rad, Bildlauf. */
-const EINGABEN = ['click', 'keyup', 'wheel', 'scroll'] as const;
+/**
+ * Eingaben, nach denen die übrigen Stationen folgen: Klick bzw. Tippen und Taste (losgelassen). Bildlauf und Rad nicht (Stufe C
+ * N9a, Spur der Messbau-Stufe): Wer zu einem Knopf blättert, tippt ihn Augenblicke später an – die Häppchen liefen dann genau
+ * in dieses Tippen hinein (Übernahme und Stil eines Häppchens ≈ 120 ms bei CPU ×6). Blättern holt die Stationen nach der
+ * Ruhezeit; der Browser hält die Ansicht dabei an ihrem Platz (Scroll Anchoring).
+ */
+const EINGABEN = ['click', 'keyup'] as const;
 
 let weitereStationen: Promise<void> | null = null;
 
 /**
  * Wann die übrigen Stationen folgen dürfen (Stufe C N9a, Gegenprüfung N8 Nr. 5a): erst nach der ersten Eingabe auf der Seite
- * oder nach `RUHE_MS` – und dann erst nach dem nächsten Bild. So trifft die erste Eingabe (etwa „offline speichern“ direkt
- * nach dem Öffnen) nie auf Rendern, Übernahme und Layout weiterer Häppchen (INP); wer blättert, löst sie sofort aus. Einmal je
- * Seite; danach (z. B. beim Aufklappen einer Stufe) folgen die Takte sofort.
+ * (`EINGABEN`) oder nach `RUHE_MS` – und dann erst nach dem nächsten Bild. So trifft die erste Eingabe (etwa „offline
+ * speichern“ direkt nach dem Öffnen) nie auf Rendern, Übernahme und Layout weiterer Häppchen (INP). Einmal je Seite; danach
+ * (z. B. beim Aufklappen einer Stufe) folgen die Takte sofort.
  */
 export function nachEingabeOderRuhe(): Promise<void> {
   if (!weitereStationen)

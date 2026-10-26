@@ -99,6 +99,15 @@ const KNOPF =
   'inline-flex min-h-12 druck items-center gap-2 rounded-pill border border-rand bg-weiss px-4 text-16 font-bold text-tinte hover:border-gruen-700';
 
 /**
+ * Erst nach dem nächsten Bild weiter (Stufe C N9a, INP „offline speichern“): Der Klick zeichnet zuerst nur den gedrückten
+ * Knopf (`druck`); der Wechsel zum Ring, die Meldung und das Speichern folgen in eigenen Aufgaben. Sonst übernähme React den
+ * Wechsel noch im Klick, bevor das Bild erscheint (gemessen 40–130 ms Verarbeitung bei CPU ×6, Spur der Messbau-Stufe N9a).
+ */
+export function nachDemBild(): Promise<void> {
+  return new Promise((weiter) => requestAnimationFrame(() => setTimeout(weiter, 0)));
+}
+
+/**
  * Fokus nicht verlieren (WCAG 2.4.3): Während des Speichern verschwindet der Knopf; danach kommt der Fokus auf den Rahmen
  * zurück, wenn er vorher in diesem Teil lag.
  */
@@ -155,6 +164,7 @@ export function OfflineEinheit({
   const [meldung, setMeldung] = useState('');
   // hier gespeichert, bevor der Lernpfad den Speicher neu gelesen hat
   const [hier, setHier] = useState(false);
+  const startet = useRef(false);
   const { rahmen, merke } = useFokusRahmen(Boolean(laeuft));
   const moeglich = typeof caches !== 'undefined';
   const mb = (bytes: number) => megabyte(bytes, ui, ziffern);
@@ -163,7 +173,11 @@ export function OfflineEinheit({
   const fertig = gespeichert || hier;
 
   async function speichern() {
+    // zweites Tippen, bevor der Ring steht, startet nichts
+    if (startet.current) return;
+    startet.current = true;
     merke();
+    await nachDemBild();
     setMeldung('');
     setLaeuft({ geladen: 0, gesamt });
     try {
@@ -179,6 +193,7 @@ export function OfflineEinheit({
     } catch {
       setMeldung(texte.offlineFehler);
     } finally {
+      startet.current = false;
       setLaeuft(null);
     }
   }
@@ -273,11 +288,14 @@ export function OfflineStufe({
   const alle = offlineBedarf(einheiten);
 
   async function speichern() {
+    // zweites Tippen, bevor der Ring steht, startet nichts
+    if (abbruch.current) return;
     const ziel = fehlend.length ? fehlend : einheiten;
     const steuerung = new AbortController();
     abbruch.current = steuerung;
-    gestartet.current = true;
     merke();
+    await nachDemBild();
+    gestartet.current = true;
     setMeldung('');
     setLaeuft({ geladen: 0, gesamt: offlineBedarf(ziel) });
     try {

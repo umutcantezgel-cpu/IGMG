@@ -174,8 +174,8 @@ describe('Häppchen: die übrigen Stationen erst nach der ersten Eingabe oder na
     }
   });
 
-  it('erste Eingabe (Klick, Taste, Rad, Bildlauf): weiter nach dem nächsten Bild, nicht vorher', async () => {
-    for (const art of ['click', 'keyup', 'wheel', 'scroll']) {
+  it('erste Eingabe (Klick, Taste): weiter nach dem nächsten Bild, nicht vorher', async () => {
+    for (const art of ['click', 'keyup']) {
       const { fenster, fertig } = await frisch();
       await vi.advanceTimersByTimeAsync(100);
       expect(fertig(), art).toBe(false);
@@ -185,6 +185,15 @@ describe('Häppchen: die übrigen Stationen erst nach der ersten Eingabe oder na
       expect(fertig(), art).toBe(true);
       vi.useRealTimers();
     }
+  });
+
+  it('Bildlauf und Rad lösen nichts aus (das Tippen danach träfe sonst auf die Häppchen); die Ruhezeit gilt weiter', async () => {
+    const { m, fenster, fertig } = await frisch();
+    for (const art of ['scroll', 'wheel']) fenster.dispatchEvent(new Event(art));
+    await vi.advanceTimersByTimeAsync(m.RUHE_MS - 50);
+    expect(fertig()).toBe(false);
+    await vi.advanceTimersByTimeAsync(100);
+    expect(fertig()).toBe(true);
   });
 
   it('ohne Eingabe nach der Ruhezeit; einmal je Seite, danach sofort', async () => {
