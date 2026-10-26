@@ -9,6 +9,8 @@ import { ARABISCH } from '../../waechter/kern.mjs';
  *   Religionsbezug-Kandidaten. Der Eintrag bleibt bis zur Entscheidung der Redaktion im Status `entwurf`.
  * - `warnung`: Hinweis (z. B. mehrdeutige arabische Tabu-Treffer, Vorgriff innerhalb der Stufe, Abdeckung einer
  *   unvollständigen Stufe).
+ * - `uebersetzung` (Übersetzung gleich dem Zieltext, falsche Schrift) und `paketbau` (Aufgabe, die der Paketbau verwirft):
+ *   blockierend für freigegebene Einheiten, Warnung für Entwürfe.
  *
  * Ausgaben enthalten nie arabische Schrift ({@link ohneArabisch}) und nie die Wörter des Tabu-Lexikons, nur Kategorie-IDs.
  */
@@ -17,6 +19,8 @@ export const PRUEFER = [
   'schema',
   'dubletten',
   'abgleich',
+  'uebersetzung',
+  'paketbau',
   'lizenz',
   'ausschluss',
   'wortschatz',

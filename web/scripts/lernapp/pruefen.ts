@@ -1,6 +1,7 @@
 // Automatische Prüfer der Lern-App-Inhalte (PLAN §6.4, Tor L3 „lernapp:pruefen 0“; Module in src/lib/lernapp/inhalt/pruefer/):
 // Auszugs-Prüfsummen (Abbruch bei Abweichung), Schema und Ablage, eindeutige Schlüssel, Dubletten, Lizenz und Herkunft,
-// Ausschlüsse, Stufen-Wortschatz, Satzlänge, Lemma-Budget, Abdeckung des Rahmenplans, Vokalisierung (ar), kindgeeignet,
+// Ausschlüsse, Übersetzungen (Kopie des Zieltexts, falsche Schrift), Paketbau-Probe (Aufgaben, die der Paketbau verwerfen
+// würde), Stufen-Wortschatz, Satzlänge, Lemma-Budget, Abdeckung des Rahmenplans, Vokalisierung (ar), kindgeeignet,
 // Bildkarten, Religionswächter, Religionsbezug und Inhaltsleitfaden (Tabu-Lexikon → menschlich_klaeren).
 // Ausgaben ohne arabische Schrift und ohne Wörter des Tabu-Lexikons (nur Kategorie-IDs).
 // Aufruf: pnpm lernapp:pruefen [--testkurs] [--json <datei>] [--alle-warnungen]
