@@ -169,9 +169,15 @@ export function kandidatenAus(
   }));
 }
 
-/** Einheiten, deren Pakete für eine Stufe geladen werden: die erste und die letzte der Stufe (sie umspannen die Stufe). */
+/** Schrift-Vorkurs (`<kurs>.a1.e00-<ausgang>`): Schriftübungen ohne Kandidaten des Einstufungstests. */
+export const istVorkursEinheit = (schluessel: string): boolean => /\.e00(?:-[a-z]{2})?$/.test(schluessel);
+
+/**
+ * Einheiten, deren Pakete für eine Stufe geladen werden: die erste und die letzte der Stufe (sie umspannen die Stufe), ohne
+ * Schrift-Vorkurse – sonst wäre in A1 der Vorkurs die erste Einheit und die Bank käme fast ganz aus der letzten (Stufe C).
+ */
 export function einheitenFuer<E extends { schluessel: string; stufe: Stufe }>(einheiten: readonly E[], stufe: Stufe): E[] {
-  const der = einheiten.filter((e) => e.stufe === stufe);
+  const der = einheiten.filter((e) => e.stufe === stufe && !istVorkursEinheit(e.schluessel));
   const erste = der[0];
   const letzte = der.at(-1);
   return !erste ? [] : letzte && letzte !== erste ? [erste, letzte] : [erste];
