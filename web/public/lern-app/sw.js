@@ -2,10 +2,18 @@
  * Service Worker der Lern-App (ADR 0037 Nr. 8, PLAN §3.5, Spike L0-S6): Scope `/lern-app/`, neben dem Root-Worker `/sw.js`
  * (Scope `/`). Der genauere Scope steuert die Lern-App-Seiten.
  * Vorräte nur mit dem Präfix `igmg-lernapp-` (der Root-Worker behält sie beim Aktivieren):
- * - `igmg-lernapp-schale-v<bau>`: Hülle – Seiten der Lern-App und /_next/static/** (Vorrat zuerst). `<bau>` ist die
- *   Bau-Kennung aus der Anmeldung (`/lern-app/sw.js?v=<bau>`): Ein neuer Bau ist ein neuer Worker, sein Aktivieren löscht
- *   die Hülle des vorigen Baus. Auf Bitte der Seite (`{ art: 'schale', ui }`) hält er die Hülle der Oberflächensprache vor,
- *   nach „Einheit offline speichern“ (`{ art: 'seiten', pfade }`) die Seiten des Kurses samt Programmteilen.
+ * - `igmg-lernapp-schale-v<bau>`: Hülle – Seiten der Lern-App und /_next/static/** (Vorrat zuerst), höchstens 400 Einträge
+ *   (die ältesten fallen heraus). `<bau>` ist die Bau-Kennung aus der Anmeldung (`/lern-app/sw.js?v=<bau>`): Ein neuer Bau ist
+ *   ein neuer Worker. Auf Bitte der Seite (`{ art: 'schale', ui }`) hält er die Hülle der Oberflächensprache vor.
+ * - `igmg-lernapp-kurse-v<bau>` (Stufe C N9a, Befund G-1): Seiten der Kurse, die jemand offline gespeichert hat (Lernpfad,
+ *   Üben, Wiederholen, Tipps) samt aller Programmteile, auch der nachgeladenen – ein eigener Vorrat ohne Obergrenze, den das
+ *   Stöbern in der Hülle nie verdrängt. Ein Merkzeichen je Kurs und Oberflächensprache (`…/<ui>/<kurs>?vorrat=vollstaendig`)
+ *   sagt: alles da (Bitte `{ art: 'kurs', ui, kurs }`, Abfrage ohne Netz `{ art: 'kursStand', ui, kurs }`).
+ * - Bauwechsel: Das Aktivieren eines neuen Workers löscht die Hülle des vorigen Baus, behält aber jeden älteren Kursvorrat mit
+ *   Merkzeichen. Mit der nächsten Bitte um die Hülle (jede Seite beim Laden) holt der neue Worker diese Kurse tief neu in
+ *   seinen Kursvorrat und löscht den alten erst, wenn alles da ist (`stelleKurseWiederHer`). Bis dahin liefert er ohne Netz
+ *   die Seiten und Programmteile des alten Baus (in sich stimmig). Übergang von Workern vor N9a: Lag noch kein Kursvorrat
+ *   vor, gilt ein Kurs, dessen vier Seiten in der alten Hülle liegen, als gespeichert.
  * - `igmg-lernapp-pakete`: Kursverzeichnis `/lern-app/pakete/<kurs>` Netz zuerst, Einheiten `…/<kurs>/<einheit>/<hash>`
  *   Vorrat zuerst (unveränderlich, ADR 0039).
  * - `igmg-lernapp-audio`: Bündel `/lern-app/audio/…`, Vorrat zuerst; Bereichsanfragen gehen ans Netz.
@@ -17,24 +25,41 @@
  *   selbst in diesen Vorrat (`fuelleVorrat`, er räumt dabei ältere Fassungen weg); der Worker liefert sie von dort – Abgleich
  *   samt Suchteil, eine alte Fassung nie für eine neue Adresse –, sonst aus dem Netz (ohne sie vorzuhalten).
  * Seiten: Netz zuerst, gelungene Antworten in die Hülle – unter dem Pfad ohne Suchteil (`ignoreSearch`, z. B.
- * `…/ueben?l=…`); ohne Netz die vorgehaltene Seite, sonst der Start der Oberflächensprache.
+ * `…/ueben?l=…`); ohne Netz die Seite aus der Hülle, dem Kursvorrat oder einem älteren Bau, sonst der Start der
+ * Oberflächensprache.
  * Nie vorgehalten: /api/**, /lern-app/<ui>/anmelden, RSC-Abrufe, alles außer GET, fremde Ursprünge.
  */
 const PRAEFIX = 'igmg-lernapp-';
 const BAU = (new URL(self.location.href).searchParams.get('v') || '1').replace(/[^a-z0-9]/g, '').slice(0, 12) || '1';
-const SCHALE = `${PRAEFIX}schale-v${BAU}`;
+const SCHALE_PRAEFIX = `${PRAEFIX}schale-v`;
+const KURSE_PRAEFIX = `${PRAEFIX}kurse-v`;
+const SCHALE = `${SCHALE_PRAEFIX}${BAU}`;
+const KURSE = `${KURSE_PRAEFIX}${BAU}`;
 const PAKETE = `${PRAEFIX}pakete`;
 const AUDIO = `${PRAEFIX}audio`;
 const MODELLE = `${PRAEFIX}modelle`;
 const DAUERHAFT = [PAKETE, AUDIO, MODELLE];
 const OBERFLAECHEN = ['de', 'tr', 'ar'];
+/** Kurse der Lern-App (wie `KURS_SLUGS` in `src/lib/lernapp/kurse.ts`, Unit-Test hält beide gleich) */
+const KURS_SLUGS = ['tr-aus-de', 'ar-aus-de', 'de-aus-tr', 'ar-aus-tr', 'de-aus-ar', 'tr-aus-ar', 'islam', 'koran'];
 /** Seiten der Hülle je Oberflächensprache (statisch, ohne Kurs) */
 const SCHALEN_SEITEN = ['', '/fortschritt', '/wortschatz', '/einstellungen', '/quellen'];
-/** Obergrenze der Hülle: älteste Einträge fallen heraus */
+/** Seiten eines Kurses für den Start ohne Netz (wie `bereiteOfflineVor`): Lernpfad, Üben, Wiederholen, Tipps */
+const KURS_SEITEN = ['', '/ueben', '/wiederholen', '/tipps'];
+/** Obergrenze der Hülle: älteste Einträge fallen heraus (nur die Hülle, nie der Kursvorrat) */
 const GRENZE_SCHALE = 400;
+/** Obergrenze der Programmteile je Bitte (Hülle bzw. Kurs) */
+const GRENZE_DATEIEN = 600;
 
 const istSeitePfad = (pfad) => /^\/lern-app\/(de|tr|ar)(\/[a-z0-9-]+)*$/.test(pfad);
 const istAnmeldung = (pfad) => /^\/lern-app\/[^/]+\/anmelden(\/|$)/.test(pfad);
+const istBauVorrat = (name) => name.startsWith(SCHALE_PRAEFIX) || name.startsWith(KURSE_PRAEFIX);
+const istKurs = (ui, kurs) => OBERFLAECHEN.includes(ui) && KURS_SLUGS.includes(kurs);
+const LERNPFAD = /^\/lern-app\/(de|tr|ar)\/([a-z0-9-]+)$/;
+/** Merkzeichen „Seiten des Kurses vollständig im Kursvorrat“ (mit Suchteil: nie eine Seite) */
+const MERK = '?vorrat=vollstaendig';
+const merkzeichen = (ui, kurs) => `/lern-app/${ui}/${kurs}${MERK}`;
+const ja = () => new Response('1', { headers: { 'content-type': 'text/plain' } });
 
 function begrenze(name) {
   return caches
@@ -67,6 +92,16 @@ function alteFassungenWeg(c, schluessel) {
     );
 }
 
+/** Der erste Treffer in den genannten Vorräten, der Reihe nach. */
+function ersterTreffer(anfrage, namen) {
+  return namen.reduce((p, name) => p.then((a) => a || caches.match(anfrage, { cacheName: name })), Promise.resolve(undefined));
+}
+
+/** Hüllen und Kursvorräte älterer Bauten, der jüngste zuerst. */
+function aeltereBauten() {
+  return caches.keys().then((namen) => namen.filter((n) => istBauVorrat(n) && n !== SCHALE && n !== KURSE).reverse());
+}
+
 /** Vorrat zuerst, sonst Netz (und vorhalten). */
 function vorratZuerst(anfrage, name) {
   return caches.match(anfrage, { cacheName: name }).then(
@@ -79,6 +114,27 @@ function vorratZuerst(anfrage, name) {
   );
 }
 
+/**
+ * Programmteile: Hülle und Kursvorrat dieses Baus, sonst Netz (in die Hülle); ohne Netz – oder wenn der Server die Datei
+ * nicht mehr hat, etwa für eine noch offene Seite des vorigen Baus – die Kopie eines älteren Baus. Die Seiten eines älteren
+ * Baus verweisen nur auf seine eigenen Programmteile (Inhalts-Hash im Namen).
+ */
+function programmteil(anfrage) {
+  const ausAelterem = () => aeltereBauten().then((alte) => ersterTreffer(anfrage, alte));
+  return ersterTreffer(anfrage, [SCHALE, KURSE]).then(
+    (vorrat) =>
+      vorrat ||
+      fetch(anfrage).then(
+        (antwort) => {
+          if (!antwort.ok) return ausAelterem().then((alt) => alt || antwort);
+          vorhalten(SCHALE, anfrage, antwort);
+          return antwort;
+        },
+        (fehler) => ausAelterem().then((alt) => alt || Promise.reject(fehler)),
+      ),
+  );
+}
+
 /** Netz zuerst (und vorhalten), ohne Netz der Vorrat. */
 function netzZuerst(anfrage, name, schluessel) {
   return fetch(anfrage)
@@ -87,6 +143,15 @@ function netzZuerst(anfrage, name, schluessel) {
       return antwort;
     })
     .catch(() => caches.match(schluessel, { cacheName: name }).then((vorrat) => vorrat || Promise.reject(new Error('offline'))));
+}
+
+/** Seite ohne Netz: Kursvorrat dieses Baus, dann ältere Bauten (jüngster zuerst), sonst der Start der Oberflächensprache. */
+function seiteOhneNetz(pfad, ui) {
+  return caches
+    .match(pfad, { cacheName: KURSE })
+    .then((seite) => seite || aeltereBauten().then((alte) => ersterTreffer(pfad, alte)))
+    .then((seite) => seite || caches.match(`/lern-app/${ui}`, { cacheName: SCHALE }))
+    .then((seite) => seite || Response.error());
 }
 
 /**
@@ -107,101 +172,283 @@ function istProgrammteil(datei) {
 const CHUNK_VERWEIS = /(?:\/_next\/)?static\/chunks\/[A-Za-z0-9_.~-]+\.js/g;
 const chunkVerweise = (text) =>
   [...new Set(text.match(CHUNK_VERWEIS) || [])].map((t) => (t.startsWith('/_next/') ? t : `/_next/${t}`)).filter(istProgrammteil);
-/** Obergrenze der Programmteile je Bitte */
-const GRENZE_DATEIEN = 300;
 
-/** Eine Datei aus der Hülle oder aus dem Netz (dann vorgehalten); `null` ohne beides. */
-function dateiHolen(c, datei) {
-  if (!istProgrammteil(datei)) return Promise.resolve(null);
-  return c.match(datei).then(
-    (da) =>
-      da ||
-      fetch(datei)
-        .then((antwort) => vorhalten(SCHALE, datei, antwort).then(() => (antwort.ok ? c.match(datei) : null)))
-        .catch(() => null),
-  );
+/**
+ * Eine Datei bzw. Seite für den Vorrat `ziel` (Cache `c`): schon da, sonst eine Kopie aus der Hülle dieses Baus (gleiche
+ * Fassung, kein Datenverbrauch), sonst aus dem Netz. Ergebnis: die Antwort aus dem Vorrat; `'fehlt'`, wenn der Server sie
+ * nicht (mehr) hat (kein 200, Weiterleitung); `'netz'` ohne Verbindung.
+ */
+function holeInVorrat(c, ziel, schluessel, init) {
+  return c.match(schluessel).then((da) => {
+    if (da) return da;
+    return (ziel !== SCHALE ? caches.match(schluessel, { cacheName: SCHALE }) : Promise.resolve(undefined)).then((kopie) => {
+      if (kopie) return c.put(schluessel, kopie.clone()).then(() => kopie);
+      return fetch(schluessel, init).then(
+        (antwort) => {
+          if (!antwort.ok || antwort.status !== 200 || antwort.redirected) return 'fehlt';
+          return c
+            .put(schluessel, antwort.clone())
+            .then(() => (ziel === SCHALE ? begrenze(SCHALE) : undefined))
+            .then(() => antwort);
+        },
+        () => 'netz',
+      );
+    });
+  });
 }
 
 /**
- * Seiten der Lern-App vorhalten: die Seiten und die Programmteile, die sie laden. Geholt wird nur, was in der Hülle dieses
- * Baus noch fehlt (die Seiten sind statisch je Bau, aufgefrischt werden sie beim Besuch „Netz zuerst“) – kein
- * Datenverbrauch bei jedem Seitenwechsel. `tief`: auch die nachgeladenen Programmteile (Spieler, Übungstypen, lokale
- * Datenbank), auf die die Programmteile der Seiten verweisen – damit eine Übung ohne Netz startet.
+ * Seiten der Lern-App in den Vorrat `ziel`: die Seiten und die Programmteile, die sie laden. Geholt wird nur, was dort noch
+ * fehlt (die Seiten sind statisch je Bau) – kein Datenverbrauch bei jedem Seitenwechsel. `tief`: auch die nachgeladenen
+ * Programmteile (Spieler, Übungstypen, lokale Datenbank), auf die die Programmteile der Seiten verweisen – damit eine Übung
+ * ohne Netz startet. Ergebnis: `'vollstaendig'`, `'netz'` (etwas fehlt, ohne Verbindung) oder `'fehlt'` (der Server hat
+ * etwas nicht).
  */
-function halteSeitenVor(pfade, tief = false) {
-  return caches.open(SCHALE).then((c) =>
-    Promise.all(
-      pfade.map((pfad) =>
-        c.match(pfad).then((da) =>
-          (da
-            ? da.clone().text()
-            : fetch(pfad, { credentials: 'same-origin' }).then((antwort) => {
-                if (!antwort.ok || antwort.redirected) return '';
-                return c.put(pfad, antwort.clone()).then(() => antwort.text());
-              })
-          )
+function halteSeitenVor(pfade, ziel, tief) {
+  const stand = { netz: 0, fehlt: 0 };
+  const zaehle = (x) => {
+    if (x === 'netz' || x === 'fehlt') stand[x]++;
+    return typeof x === 'string' ? null : x;
+  };
+  return caches
+    .open(ziel)
+    .then((c) =>
+      Promise.all(
+        pfade.map((pfad) =>
+          holeInVorrat(c, ziel, pfad, { credentials: 'same-origin' })
+            .then(zaehle)
+            .then((seite) => (seite ? seite.clone().text() : ''))
             .then((html) => [...new Set(html.match(/\/_next\/static\/[^"'\s)\\]+/g) || [])].filter(istProgrammteil))
-            .catch(() => []),
+            .catch(() => {
+              stand.netz++;
+              return [];
+            }),
         ),
-      ),
-    ).then((listen) => {
-      const gesehen = new Set();
-      const offen = [...new Set(listen.flat())];
-      const naechste = () => {
-        const runde = offen.splice(0).filter((d) => !gesehen.has(d) && gesehen.size < GRENZE_DATEIEN);
-        if (!runde.length) return Promise.resolve();
-        for (const d of runde) gesehen.add(d);
-        return Promise.all(
-          runde.map((datei) =>
-            dateiHolen(c, datei).then((antwort) =>
-              tief && antwort && datei.endsWith('.js') ? antwort.text().then((text) => offen.push(...chunkVerweise(text))) : undefined,
+      ).then((listen) => {
+        const gesehen = new Set();
+        const offen = [...new Set(listen.flat())];
+        const naechste = () => {
+          const runde = offen.splice(0).filter((d) => !gesehen.has(d));
+          if (!runde.length) return Promise.resolve();
+          if (gesehen.size + runde.length > GRENZE_DATEIEN) {
+            stand.fehlt++;
+            return Promise.resolve();
+          }
+          for (const d of runde) gesehen.add(d);
+          return Promise.all(
+            runde.map((datei) =>
+              holeInVorrat(c, ziel, datei)
+                .then(zaehle)
+                .then((antwort) =>
+                  tief && antwort && datei.endsWith('.js')
+                    ? antwort
+                        .clone()
+                        .text()
+                        .then((text) => offen.push(...chunkVerweise(text)))
+                    : undefined,
+                )
+                .catch(() => {
+                  stand.netz++;
+                }),
             ),
-          ),
-        ).then(naechste);
-      };
-      return naechste();
-    }),
-  );
+          ).then(naechste);
+        };
+        return naechste();
+      }),
+    )
+    .then(() => (stand.netz ? 'netz' : stand.fehlt ? 'fehlt' : 'vollstaendig'));
 }
 
 /** Hülle einer Oberflächensprache (Start, Fortschritt, Wortschatz, Einstellungen, Quellen); jede Seite bittet beim Laden darum. */
 function halteSchaleVor(ui) {
   if (!OBERFLAECHEN.includes(ui)) return Promise.resolve();
-  return halteSeitenVor(SCHALEN_SEITEN.map((rest) => `/lern-app/${ui}${rest}`));
+  return halteSeitenVor(
+    SCHALEN_SEITEN.map((rest) => `/lern-app/${ui}${rest}`),
+    SCHALE,
+    false,
+  );
+}
+
+/** Ob die Seiten eines Kurses vollständig im Kursvorrat dieses Baus liegen (ohne Netz). */
+function kursStand(ui, kurs) {
+  if (!istKurs(ui, kurs)) return Promise.resolve('fehlt');
+  return caches.match(merkzeichen(ui, kurs), { cacheName: KURSE }).then((da) => (da ? 'vollstaendig' : 'fehlt'));
+}
+
+/** Laufende Bitten je Kurs: zwei Seiten (oder Seite und Wiederherstellung) holen denselben Kurs nur einmal. */
+const laufend = new Map();
+
+/**
+ * Seiten eines Kurses für den Start ohne Netz (nach „offline speichern“, ADR 0039 Nr. 12) in den Kursvorrat dieses Baus:
+ * Lernpfad, Üben, Wiederholen, Tipps samt aller Programmteile; ist alles da, folgt das Merkzeichen. Nur Kurse der Lern-App
+ * (nie die Anmeldung). Ergebnis wie `halteSeitenVor`.
+ */
+function halteKursVor(ui, kurs) {
+  if (!istKurs(ui, kurs)) return Promise.resolve('fehlt');
+  const k = `${ui}/${kurs}`;
+  if (!laufend.has(k))
+    laufend.set(
+      k,
+      kursStand(ui, kurs)
+        .then((stand) =>
+          stand === 'vollstaendig'
+            ? stand
+            : halteSeitenVor(
+                KURS_SEITEN.map((teil) => `/lern-app/${ui}/${kurs}${teil}`),
+                KURSE,
+                true,
+              ).then((neu) =>
+                neu === 'vollstaendig'
+                  ? caches
+                      .open(KURSE)
+                      .then((c) => c.put(merkzeichen(ui, kurs), ja()))
+                      .then(() => neu)
+                  : neu,
+              ),
+        )
+        .catch(() => 'netz')
+        .then((stand) => {
+          laufend.delete(k);
+          return stand;
+        }),
+    );
+  return laufend.get(k);
+}
+
+/** Kurse mit Merkzeichen in einem Vorrat. */
+function kurseMitMerkzeichen(name) {
+  return caches
+    .open(name)
+    .then((c) => c.keys())
+    .then((schluessel) =>
+      schluessel.flatMap((r) => {
+        const u = new URL(r.url);
+        const m = LERNPFAD.exec(u.pathname);
+        return m && u.search === MERK && istKurs(m[1], m[2]) ? [{ ui: m[1], kurs: m[2] }] : [];
+      }),
+    );
 }
 
 /**
- * Seiten eines Kurses für den Start ohne Netz (nach „Einheit offline speichern“, ADR 0039 Nr. 12): nur Seiten der Lern-App
- * (nie die Anmeldung), höchstens zehn je Bitte, samt nachgeladenen Programmteilen. Die Antwort über den Kanal sagt der
- * Seite, dass alles vorgehalten ist.
+ * Behält ein älterer Bau-Vorrat Kurse für die Wiederherstellung? Kursvorrat: wenn er Merkzeichen hat. Hülle: nur im Übergang
+ * von Workern vor N9a (`uebergang`, noch kein älterer Kursvorrat) – dann bekommt jeder Kurs, dessen vier Seiten dort liegen,
+ * ein Merkzeichen.
  */
-function halteKursVor(pfade) {
-  const gueltig = (Array.isArray(pfade) ? pfade : [])
-    .filter((p) => typeof p === 'string' && istSeitePfad(p) && !istAnmeldung(p))
-    .slice(0, 10);
-  return halteSeitenVor(gueltig, true);
+function behalten(name, uebergang) {
+  if (name.startsWith(KURSE_PRAEFIX)) return kurseMitMerkzeichen(name).then((kurse) => kurse.length > 0);
+  if (!uebergang) return Promise.resolve(false);
+  return caches.open(name).then((c) =>
+    c.keys().then((schluessel) => {
+      const pfade = new Set(schluessel.map((r) => new URL(r.url).pathname));
+      const kurse = [...pfade].flatMap((p) => {
+        const m = LERNPFAD.exec(p);
+        return m && istKurs(m[1], m[2]) && KURS_SEITEN.every((teil) => pfade.has(`${p}${teil}`)) ? [m] : [];
+      });
+      return Promise.all(kurse.map((m) => c.put(merkzeichen(m[1], m[2]), ja()))).then(() => kurse.length > 0);
+    }),
+  );
 }
 
+let wiederherstellung = null;
+
+/**
+ * Nach einem Bauwechsel: die Kurse aus älteren Bauten (Merkzeichen) tief in den Kursvorrat dieses Baus holen; ein älterer
+ * Vorrat geht erst, wenn alle seine Kurse da sind (oder der Server sie nicht mehr hat). Ohne Verbindung bleibt er – ohne Netz
+ * liefert er weiter Seiten und Programmteile – und die nächste Seite versucht es erneut.
+ */
+function stelleKurseWiederHer() {
+  if (!wiederherstellung)
+    wiederherstellung = aeltereBauten()
+      .then((alte) =>
+        alte.reduce(
+          (kette, name) =>
+            kette.then(() =>
+              kurseMitMerkzeichen(name)
+                .then((kurse) =>
+                  kurse.reduce(
+                    (fertig, { ui, kurs }) => fertig.then((ok) => halteKursVor(ui, kurs).then((stand) => ok && stand !== 'netz')),
+                    Promise.resolve(true),
+                  ),
+                )
+                .then((fertig) => (fertig ? caches.delete(name) : undefined)),
+            ),
+          Promise.resolve(),
+        ),
+      )
+      .catch(() => undefined)
+      .then(() => {
+        wiederherstellung = null;
+      });
+  return wiederherstellung;
+}
+
+/** Ältere Seiten (vor N9a) bitten mit `{ art: 'seiten', pfade }`: der Kurs aus dem Lernpfad in der Liste. */
+function kursAusPfaden(pfade) {
+  for (const p of Array.isArray(pfade) ? pfade : []) {
+    const m = typeof p === 'string' ? LERNPFAD.exec(p) : null;
+    if (m && istKurs(m[1], m[2])) return { ui: m[1], kurs: m[2] };
+  }
+  return null;
+}
+
+// Der Kursvorrat entsteht schon beim Installieren: Beim nächsten Bauwechsel zeigt er, dass dieser Worker kein Übergang von
+// einem Worker vor N9a mehr ist (`behalten`), auch wenn nie etwas gespeichert wurde
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(SCHALE).then(() => self.skipWaiting()));
+  e.waitUntil(
+    caches
+      .open(SCHALE)
+      .then(() => caches.open(KURSE))
+      .then(() => self.skipWaiting()),
+  );
 });
 
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches
       .keys()
-      .then((namen) =>
-        Promise.all(namen.filter((n) => n.startsWith(PRAEFIX) && n !== SCHALE && !DAUERHAFT.includes(n)).map((n) => caches.delete(n))),
-      )
+      .then((namen) => {
+        const uebergang = !namen.some((n) => n.startsWith(KURSE_PRAEFIX) && n !== KURSE);
+        return Promise.all(
+          namen
+            .filter((n) => n.startsWith(PRAEFIX) && n !== SCHALE && n !== KURSE && !DAUERHAFT.includes(n))
+            .map((n) =>
+              (istBauVorrat(n) ? behalten(n, uebergang).catch(() => false) : Promise.resolve(false)).then((bleibt) =>
+                bleibt ? undefined : caches.delete(n),
+              ),
+            ),
+        );
+      })
       .then(() => self.clients.claim()),
   );
 });
 
 self.addEventListener('message', (e) => {
   const daten = e.data || {};
-  const antworte = () => e.ports && e.ports[0] && e.ports[0].postMessage({ fertig: true });
-  if (daten.art === 'schale') e.waitUntil(halteSchaleVor(String(daten.ui)).then(antworte));
-  else if (daten.art === 'seiten') e.waitUntil(halteKursVor(daten.pfade).then(antworte, antworte));
+  const port = e.ports && e.ports[0];
+  const antworte = (inhalt) => port && port.postMessage({ fertig: true, ...inhalt });
+  const ui = String(daten.ui);
+  const kurs = String(daten.kurs);
+  if (daten.art === 'schale')
+    e.waitUntil(
+      halteSchaleVor(ui)
+        .then(stelleKurseWiederHer)
+        .then(
+          () => antworte({}),
+          () => antworte({}),
+        ),
+    );
+  else if (daten.art === 'kurs') e.waitUntil(halteKursVor(ui, kurs).then((stand) => antworte({ stand })));
+  else if (daten.art === 'kursStand')
+    e.waitUntil(
+      kursStand(ui, kurs).then(
+        (stand) => antworte({ stand }),
+        () => antworte({ stand: 'fehlt' }),
+      ),
+    );
+  else if (daten.art === 'seiten') {
+    const k = kursAusPfaden(daten.pfade);
+    e.waitUntil((k ? halteKursVor(k.ui, k.kurs) : Promise.resolve('fehlt')).then((stand) => antworte({ stand })));
+  }
 });
 
 self.addEventListener('fetch', (e) => {
@@ -215,7 +462,7 @@ self.addEventListener('fetch', (e) => {
   if (url.searchParams.has('_rsc') || anfrage.headers.get('RSC') || anfrage.headers.get('Range')) return;
 
   if (pfad.startsWith('/_next/static/')) {
-    e.respondWith(vorratZuerst(anfrage, SCHALE));
+    e.respondWith(programmteil(anfrage));
     return;
   }
   if (pfad.startsWith('/lern-app/pakete/')) {
@@ -241,10 +488,6 @@ self.addEventListener('fetch', (e) => {
   }
   if (anfrage.mode === 'navigate' && istSeitePfad(pfad)) {
     const ui = pfad.split('/')[2];
-    e.respondWith(
-      netzZuerst(anfrage, SCHALE, pfad).catch(() =>
-        caches.match(`/lern-app/${ui}`, { cacheName: SCHALE }).then((start) => start || Response.error()),
-      ),
-    );
+    e.respondWith(netzZuerst(anfrage, SCHALE, pfad).catch(() => seiteOhneNetz(pfad, ui)));
   }
 });
