@@ -61,6 +61,7 @@ function kontext(ui: 'de' | 'ar' = 'de'): StationsKontext {
     offline: new Map(),
     fehlt: new Set(),
     zeigeLektionen: () => undefined,
+    gespeichert: async () => undefined,
   };
 }
 

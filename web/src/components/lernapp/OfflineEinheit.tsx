@@ -64,6 +64,7 @@ export function OfflineEinheit({
   kurs,
   einheit,
   gespeichert,
+  onGespeichert,
   texte,
 }: {
   ui: Oberflaeche;
@@ -72,6 +73,11 @@ export function OfflineEinheit({
   einheit: VerzeichnisEinheit;
   /** schon bewusst offline gespeichert (Speicher `pakete`, gleicher Hash) */
   gespeichert: boolean;
+  /**
+   * Nach dem Speichern: die Seite aktualisiert nur, was sich geändert hat (Lernpfad: diese Station, Stufe C N8). Ohne ihn
+   * meldet die Einheit `STAND_GEAENDERT` an alle Inseln der Seite.
+   */
+  onGespeichert?: () => Promise<void>;
   texte: OfflineTexte;
 }) {
   const [laeuft, setLaeuft] = useState<{ geladen: number; gesamt: number } | null>(null);
@@ -94,7 +100,8 @@ export function OfflineEinheit({
         setFertig(true);
         setMeldung(f(texte.offlineFertig, e.bytes));
       }
-      meldeStand();
+      if (onGespeichert) void onGespeichert().catch(() => undefined);
+      else meldeStand();
     } catch {
       setMeldung(texte.offlineFehler);
     } finally {

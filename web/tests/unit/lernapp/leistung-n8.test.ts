@@ -5,9 +5,17 @@ import { dezimal, formatiere, zahl } from '@/lib/lernapp/format';
 import { arbeitsspeicher } from '@/lib/lernapp/lokal/db';
 import { ladeLektion, nurLektion } from '@/lib/lernapp/lokal/pakete';
 import { nachgeben, speichereOffline } from '@/lib/lernapp/lokal/vorrat';
-import { type Abschnitt, aufgeklappteStufe, type Station } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
-import { INHALT_LIZENZ, PAKET_FORMAT, paketAdresse } from '@/lib/lernapp/paket/kennungen';
-import { PaketSchema, type VerzeichnisEinheit } from '@/lib/lernapp/paket/typen';
+import {
+  type Abschnitt,
+  abschnitte,
+  aktuelleUndNaechste,
+  aufgeklappteStufe,
+  geschafftJeEinheit,
+  lektionsPraefix,
+  type Station,
+} from '@/lib/lernapp/oberflaeche/kursverzeichnis';
+import { INHALT_LIZENZ, PAKET_FORMAT, paketAdresse, VERZEICHNIS_FORMAT } from '@/lib/lernapp/paket/kennungen';
+import { PaketSchema, type Verzeichnis, type VerzeichnisEinheit } from '@/lib/lernapp/paket/typen';
 
 /**
  * Stufe C N8 (Z-L07 mit echten Inhalten: Lighthouse-Leistung, INP): Der Spieler prüft nur die gespielte Lektion voll
@@ -181,5 +189,58 @@ describe('Formatierer mit gemerkten Intl-Objekten', () => {
       expect(formatiere('{n, plural, one {# Einheit} other {# Einheiten}}', { n: 1 }, 'de')).toBe('1 Einheit');
       expect(formatiere('{n, plural, one {# Einheit} other {# Einheiten}}', { n: 14 }, 'de')).toBe('14 Einheiten');
     }
+  });
+});
+
+describe('Fortschritt je Einheit in einem Durchlauf (geschafftJeEinheit)', () => {
+  const einheit = (schluessel: string, lektionen: number): VerzeichnisEinheit => ({
+    schluessel,
+    stufe: 'a1',
+    reihenfolge: 1,
+    thema: { de: '[Thema]' },
+    hash: '0'.repeat(64),
+    bytes: 1,
+    lektionen,
+    hinweis: false,
+    audio: [],
+  });
+  const V: Verzeichnis = {
+    format: VERZEICHNIS_FORMAT,
+    version: 1,
+    kurs: 'tr-aus-de',
+    kursId: 'tr',
+    zielsprache: 'tr',
+    ausgangssprache: 'de',
+    stand: 1,
+    einheiten: [einheit('tr.a1.e00-de', 2), einheit('tr.a1.e01', 3), einheit('tr.a1.e1', 1), einheit('tr.a1.e10', 2)],
+  };
+  // geschaffte Lektionen auch anderer Kurse und Einheiten mit ähnlichem Präfix
+  const ERLEDIGT = new Set([
+    'tr-aus-de.a1.e00-de.l01',
+    'tr-aus-de.a1.e00-de.l02',
+    'tr-aus-de.a1.e01.l01',
+    'tr-aus-de.a1.e10.l01',
+    'ar-aus-de.a1.e01.l02',
+    'tr-aus-ar.a1.e01.l03',
+  ]);
+  /** frühere Zählung: je Einheit ein Durchlauf über alle geschafften Lektionen mit ihrem Präfix */
+  const alt = (e: string) => [...ERLEDIGT].filter((l) => l.startsWith(lektionsPraefix(V, e))).length;
+
+  it('gleiche Zahlen wie die Zählung über das Präfix der Einheit', () => {
+    const neu = geschafftJeEinheit(V, ERLEDIGT);
+    for (const e of V.einheiten) expect(neu.get(e.schluessel) ?? 0).toBe(alt(e.schluessel));
+    expect(neu.get('tr.a1.e00-de')).toBe(2);
+    expect(neu.get('tr.a1.e1')).toBeUndefined();
+  });
+
+  it('Lernpfad und „aktuelle und nächste Einheit“ unverändert', () => {
+    const liste = abschnitte(V, ERLEDIGT, new Map());
+    expect(liste[0]!.stationen.map((s) => [s.erledigt, s.aktuell])).toEqual([
+      [2, false],
+      [1, true],
+      [0, false],
+      [1, false],
+    ]);
+    expect(aktuelleUndNaechste(V, ERLEDIGT).map((e) => e.schluessel)).toEqual(['tr.a1.e01', 'tr.a1.e1']);
   });
 });

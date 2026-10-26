@@ -65,7 +65,29 @@ type Zustand =
       offline: Map<string, PaketEintrag>;
       /** in diesem Kurs abgeschlossene Stufen (alle Prüfsteine der Stufe geschafft, `stufen.ts`) */
       fertig: ReadonlySet<string>;
+      /** geschaffte Lektionen (Speicher `lektionen`), für das Neuberechnen ohne erneutes Laden */
+      erledigt: ReadonlySet<string>;
     };
+
+/**
+ * Paketköpfe aus dem Vorrat (ohne Netz) für die Einheiten der genannten Stufen, die noch keinen Kopf haben. Ein Kopf heißt:
+ * Paket lesen, SHA-256 prüfen und das ganze JSON parsen – deshalb nur für Stufen, die Stationen zeigen (Stufe C N8).
+ */
+async function koepfeAusDemVorrat(
+  kurs: KursSlug,
+  v: Verzeichnis,
+  stufen: ReadonlySet<Stufe | null>,
+  pakete: Map<string, PaketKopf>,
+): Promise<void> {
+  await Promise.all(
+    v.einheiten
+      .filter((e) => stufen.has(e.stufe) && pakete.get(e.schluessel)?.einheit.schluessel !== e.schluessel)
+      .map(async (e) => {
+        const p = await paketKopfImVorrat(kurs, e);
+        if (p) pakete.set(e.schluessel, p);
+      }),
+  );
+}
 
 /**
  * Lernpfad eines Kurses (PLAN §3.1, B-24, ADR 0039 Nr. 12): Abschnitte (Stufen) → Einheiten als Stationen an der Linie →
@@ -96,6 +118,7 @@ export function LernpfadInsel({
   const [fehlt, setFehlt] = useState<ReadonlySet<string>>(new Set());
   // von Hand aufgeklappte Stufen (die Stufe der aktuellen Einheit ist immer offen)
   const [offen, setOffen] = useState<ReadonlySet<Stufe>>(new Set());
+  const offenJetzt = useRef<ReadonlySet<Stufe>>(offen);
   const pakete = useRef(new Map<string, PaketKopf>());
 
   useEffect(() => {
@@ -117,21 +140,18 @@ export function LernpfadInsel({
       const geschafft = profil ? await sp.alle('lektionen', profilBereich(profil.id)) : [];
       const erledigt = new Set(geschafft.map((l) => l.lektion));
       const fertig = new Set<string>(abgeschlosseneStufen(geschafft).get(kurs) ?? []);
-      // Pakete auf dem Gerät (ohne Netz), dann die aktuelle und die nächste Einheit automatisch (ADR 0039 Nr. 12)
-      await Promise.all(
-        v.einheiten.map(async (e) => {
-          if (pakete.current.get(e.schluessel)?.einheit.schluessel === e.schluessel) return;
-          const p = await paketKopfImVorrat(kurs, e);
-          if (p) pakete.current.set(e.schluessel, p);
-        }),
-      );
+      // Pakete auf dem Gerät (ohne Netz) für die Stufen mit Stationen, dann die aktuelle und die nächste Einheit
+      // automatisch (ADR 0039 Nr. 12). Verschiebt ein gelesener Kopf die aktuelle Stufe (selten), kommt auch deren Stufe dazu.
+      const sichtbar = () => new Set([aufgeklappteStufe(abschnitte(v, erledigt, pakete.current)), ...offenJetzt.current]);
+      await koepfeAusDemVorrat(kurs, v, sichtbar(), pakete.current);
       for (const e of aktuelleUndNaechste(v, erledigt))
         if (!pakete.current.has(e.schluessel)) {
           const p = await ladePaketKopf(sp, kurs, e);
           if (p) pakete.current.set(e.schluessel, p);
         }
+      await koepfeAusDemVorrat(kurs, v, sichtbar(), pakete.current);
       const offline = new Map((await sp.alle('pakete', [[kurs], [kurs, []]])).map((e) => [e.einheit, e]));
-      if (aktiv) setZ({ art: 'bereit', v, abschnitte: abschnitte(v, erledigt, pakete.current), offline, fertig });
+      if (aktiv) setZ({ art: 'bereit', v, abschnitte: abschnitte(v, erledigt, pakete.current), offline, fertig, erledigt });
     }
     const neu = () => void laden().catch(() => aktiv && setZ((alt) => (alt.art === 'laedt' ? { art: 'leer' } : alt)));
     neu();
@@ -149,13 +169,37 @@ export function LernpfadInsel({
   if (z.art === 'laedt') return <p className="text-18 text-tinte-2">{texte.laedt}</p>;
   if (z.art === 'leer') return <p className="text-18 text-tinte-2">{texte.leer}</p>;
 
+  const v = z.v;
+  // Stationen neu berechnen, ohne Verzeichnis und Speicher neu zu laden (nur der Lernpfad liest die Paketköpfe)
+  const aktualisiere = (offline?: Map<string, PaketEintrag>) =>
+    setZ((alt) =>
+      alt.art === 'bereit' ? { ...alt, abschnitte: abschnitte(alt.v, alt.erledigt, pakete.current), ...(offline ? { offline } : {}) } : alt,
+    );
+
   async function zeigeLektionen(s: Station) {
     const sp = await speicher();
     const p = await ladePaketKopf(sp, kurs, s.einheit);
     if (p) {
       pakete.current.set(s.einheit.schluessel, p);
-      window.dispatchEvent(new Event(STAND_GEAENDERT));
+      aktualisiere();
     } else setFehlt((alt) => new Set([...alt, s.einheit.schluessel]));
+  }
+
+  // Stufe von Hand aufgeklappt: erst dann ihre Stationen und die Paketköpfe ihrer Einheiten aus dem Vorrat
+  async function zeigeStufe(stufe: Stufe) {
+    if (offenJetzt.current.has(stufe)) return;
+    offenJetzt.current = new Set([...offenJetzt.current, stufe]);
+    setOffen(offenJetzt.current);
+    await koepfeAusDemVorrat(kurs, v, new Set([stufe]), pakete.current);
+    aktualisiere();
+  }
+
+  // Einheit offline gespeichert: nur ihr Kopf und der Speicher `pakete` neu, nicht der ganze Lernpfad (Stufe C N8, INP)
+  async function gespeichert(e: VerzeichnisEinheit) {
+    const p = await paketKopfImVorrat(kurs, e);
+    if (p) pakete.current.set(e.schluessel, p);
+    const sp = await speicher();
+    aktualisiere(new Map((await sp.alle('pakete', [[kurs], [kurs, []]])).map((x) => [x.einheit, x])));
   }
 
   const kontext: StationsKontext = {
@@ -171,6 +215,7 @@ export function LernpfadInsel({
     offline: z.offline,
     fehlt,
     zeigeLektionen: (s) => void zeigeLektionen(s),
+    gespeichert: (e) => gespeichert(e).catch(() => undefined),
   };
 
   return (
@@ -178,7 +223,7 @@ export function LernpfadInsel({
       abschnitte={z.abschnitte}
       fertig={z.fertig}
       offen={offen}
-      onAufklappen={(stufe) => setOffen((alt) => (alt.has(stufe) ? alt : new Set([...alt, stufe])))}
+      onAufklappen={(stufe) => void zeigeStufe(stufe).catch(() => undefined)}
       k={kontext}
     />
   );
@@ -269,6 +314,8 @@ export type StationsKontext = {
   /** Einheiten, deren Lektionen ohne Verbindung nicht zu laden waren */
   fehlt: ReadonlySet<string>;
   zeigeLektionen: (s: Station) => void;
+  /** nach „Einheit offline speichern“: Station und Speicher `pakete` neu lesen */
+  gespeichert: (e: VerzeichnisEinheit) => Promise<void>;
 };
 
 /**
@@ -424,6 +471,7 @@ function StationEintrag({ s, i, letzte, k }: { s: Station; i: number; letzte: bo
             kurs={k.kurs}
             einheit={s.einheit}
             gespeichert={Boolean(eintrag?.offline && eintrag.hash === s.einheit.hash)}
+            onGespeichert={() => k.gespeichert(s.einheit)}
             texte={texte}
           />
         </section>
