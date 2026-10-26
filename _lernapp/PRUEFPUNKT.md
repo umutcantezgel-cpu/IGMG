@@ -1,5 +1,14 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 16:40 UTC – Taktpause bis 17:10, N9 vorbereitet:**
+  - N9a um 16:04 bei Auslastung 0,90 nach einem sauberen Commit angehalten (aca518b0: INP Lernpfad, `leistung.md` N9a, ADR 0039 Nr. 4).
+  - Der Orchestrator hat in der Pause Bau und alle Lern-App-E2E von N9a gefahren:
+    - Ergebnis: 109 grün, 5 rot, 34 übersprungen.
+    - Rot ist nur `offline.spec`: Ablage `kurse` statt `schale`, alte Hülle bleibt nach dem Bauwechsel, „geschafft“ fehlt nach der Offline-Lektion.
+    - Auszug: `scratchpad/tmp-n9a/e2e-voll-rot.txt`.
+  - Fortsetzung N9a und N9b ab 17:12 mit `scratchpad/n9-fortsetzung-1712.json`.
+  - `main` = dieser Stand (N1–N8). N9 ist noch nicht gemergt.
+
 - **Stand 26.10.2026 15:12 UTC – Taktregel-Halt, N9a läuft allein, N9b nach dem Reset:**
   - **Halt:** Auslastung 0,74 um 15:08, Taktlinie 0,53 (Vorlauf > 0,15). Mit 2 Agenten wäre das Fenster ≈ 16:10 leer gewesen. Deshalb N9 `wf_22fb5e57-675` gestoppt.
     - N9a war gerade sauber committet.

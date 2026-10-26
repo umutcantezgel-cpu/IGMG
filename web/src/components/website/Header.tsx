@@ -61,7 +61,12 @@ export async function Header({
   const bestand = baueMenues(
     (k) => t(k),
     (ziel) => pfadFuer(ziel, sprache),
-    { hatim: entscheide('hatim', process.env, null), newsletter: entscheide('newsletter', process.env, null) },
+    {
+      hatim: entscheide('hatim', process.env, null),
+      newsletter: entscheide('newsletter', process.env, null),
+      // Oberflächen der Lern-App: de, tr, ar – die englische Website führt in die deutsche (wie /lernen)
+      lernApp: entscheide('lernapp', process.env, null) ? `/lern-app/${sprache === 'tr' ? 'tr' : 'de'}` : undefined,
+    },
   );
   // Menü aus der Verwaltung (ADR 0032), sonst der Bestand
   const ausDb = await ladeKopfMenue(sprache);
