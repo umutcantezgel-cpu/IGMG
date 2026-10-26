@@ -11,10 +11,16 @@
 // echten Einheiten.
 // „Lernpfad öffnen“ (Stufe C N9b): Die Kurskarte ist ein gewöhnlicher Link. Bis N8 ging der Eintrag des Startdokuments in
 // manchen Läufen mit dem Dokumentwechsel verloren (der Beobachter meldet erst nach dem nächsten Bild, das Dokument war dann
-// schon weg). Jetzt hält das Werkzeug die Navigation an, bis das Startdokument die Interaktion gemeldet hat, und navigiert
-// dann selbst zur Adresse des Links; die gehaltene Zeit zählt nicht zu „Öffnen“. Dazu leert der Beobachter beim `pagehide`
-// seine Warteschlange (`takeRecords`). Je Lauf stehen die Zahl der erfassten Interaktionen und die Schritte ohne Eintrag im
-// Protokoll; fehlt ein Schritt, ist der Lauf als lückenhaft markiert.
+// schon weg). Jetzt verhindert das Werkzeug die Standardaktion des Klicks (`preventDefault` auf der Kurskarte), wartet, bis
+// das Startdokument die Interaktion gemeldet hat (höchstens 1 s nach dem Klick), und navigiert dann selbst zur Adresse des
+// Links; die gehaltene Zeit zählt nicht zu „Öffnen“. Dazu leert der Beobachter beim `pagehide` seine Warteschlange
+// (`takeRecords`). GEÄNDERTE MESSWEISE: Gemessen wird seit N9b der Klick ohne Standardaktion, also ohne den Beginn der
+// Navigation, den die Interaktion bis N8 enthielt – Werte von „lernpfadOeffnen“ vor und nach N9b sind nicht deckungsgleich.
+// Lücken: Event Timing meldet Interaktionen unter 16 ms nie (`durationThreshold` 16). Das Werkzeug zählt deshalb je Dokument
+// die zugestellten Eingaben (pointerdown, keydown, click; ohne Rückruf an Node im Ereignis, damit die Messung nicht leidet)
+// und unterscheidet je Schritt: Eingabe zugestellt, aber kein Eintrag → „< 16 ms“ (schnell, für den Median als obere Schranke
+// 16 ms); keine Eingabe und kein Eintrag → „ohne Eintrag“ (lückenhafter Lauf). Je Lauf stehen die Zahl der erfassten
+// Interaktionen und beide Listen im Protokoll.
 // Aufruf: node inp-spieler.mjs [--laeufe 3] [--drossel 6] [--echt] [--nur <Muster im Szenarionamen>] [--aus name]
 import { parseArgs } from 'node:util';
 import { BASIS, LAST_GRENZE, last, lernTexte, median, schreibe, starteBrowser, warteAufLast } from './gemeinsam.mjs';
@@ -40,7 +46,11 @@ function BEOBACHTER() {
   // öffnen“ wechselt also das Dokument – Einträge des alten Dokuments wären danach verloren. Zeiten absolut (timeOrigin +
   // startTime), Kennung je Dokument (interactionId zählt je Dokument neu).
   // Die Bindung `__inpMelde` sendet sofort (auch aus `pagehide`); `__inpGemeldet` zählt die Meldungen dieses Dokuments.
+  // `__inpEingaben`: Zeitpunkte zugestellter Eingaben (absolut), erst beim `pagehide` bzw. am Ende gemeldet.
   window.__inpGemeldet = 0;
+  window.__inpEingaben = [];
+  for (const typ of ['pointerdown', 'keydown', 'click'])
+    addEventListener(typ, (e) => void window.__inpEingaben.push(performance.timeOrigin + e.timeStamp), { capture: true, passive: true });
   const melde = (liste) => {
     for (const e of liste)
       if (e.interactionId) {
@@ -58,8 +68,11 @@ function BEOBACHTER() {
   try {
     const beobachter = new PerformanceObserver((liste) => melde(liste.getEntries()));
     beobachter.observe({ type: 'event', durationThreshold: 16, buffered: true });
-    // Dokumentwechsel: noch nicht zugestellte Einträge nicht verlieren
-    addEventListener('pagehide', () => melde(beobachter.takeRecords()));
+    // Dokumentwechsel: noch nicht zugestellte Einträge und die Eingaben dieses Dokuments nicht verlieren
+    addEventListener('pagehide', () => {
+      melde(beobachter.takeRecords());
+      window.__inpMelde?.({ eingaben: window.__inpEingaben });
+    });
   } catch {
     /* Event Timing fehlt */
   }
@@ -154,8 +167,9 @@ const SZENARIEN = [
     bereit: (s) => s.locator('main a[href="/lern-app/de/tr-aus-de"]').first().waitFor({ timeout: 60_000 }),
     ablauf: async (s, schritt, mess) => {
       // Antippen der Kurskarte (gewöhnlicher Link, Dokumentwechsel) bis die Lektionen sichtbar sind; die Interaktion selbst
-      // meldet das alte Dokument, die Ladezeit bis zu den Lektionen steht getrennt als „Öffnen“. Die Navigation wartet, bis
-      // das Startdokument die Interaktion gemeldet hat (Event Timing vor dem Dokumentwechsel, höchstens 5 s).
+      // meldet das alte Dokument, die Ladezeit bis zu den Lektionen steht getrennt als „Öffnen“. Gemessen wird der Klick ohne
+      // Standardaktion (siehe Kopf); die Navigation wartet, bis das Startdokument die Interaktion gemeldet hat, höchstens 1 s
+      // nach dem Klick (unter 16 ms gibt es keinen Eintrag, der Rest kommt beim `pagehide`).
       const karte = s.locator('main a[href="/lern-app/de/tr-aus-de"]').first();
       await karte.evaluate((a) => {
         a.addEventListener(
@@ -163,6 +177,7 @@ const SZENARIEN = [
           (e) => {
             e.preventDefault();
             window.__inpZiel = a.href;
+            window.__inpKlick = performance.now();
           },
           { capture: true, once: true },
         );
@@ -173,7 +188,10 @@ const SZENARIEN = [
         await karte.tap();
         const h0 = Date.now();
         await s
-          .waitForFunction((n) => window.__inpGemeldet > n && window.__inpZiel, vorher, { timeout: 5_000, polling: 'raf' })
+          .waitForFunction((n) => window.__inpZiel && (window.__inpGemeldet > n || performance.now() - window.__inpKlick > 1_000), vorher, {
+            timeout: 5_000,
+            polling: 'raf',
+          })
           .catch(() => undefined);
         // ein Bild Luft, damit die Bindung die Meldung zugestellt hat
         await bilder(s);
@@ -276,7 +294,8 @@ async function messe(sz) {
     });
     const seite = await kontext.newPage();
     const gesammelt = [];
-    await seite.exposeFunction('__inpMelde', (e) => void gesammelt.push(e));
+    const eingaben = [];
+    await seite.exposeFunction('__inpMelde', (e) => void (e.eingaben ? eingaben.push(...e.eingaben) : gesammelt.push(e)));
     await seite.addInitScript(BEOBACHTER);
     const cdp = await kontext.newCDPSession(seite);
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: DROSSEL });
@@ -298,8 +317,9 @@ async function messe(sz) {
     } catch (e) {
       fehler = String(e.message ?? e).split('\n')[0];
     }
-    // gemeldete Einträge der letzten Bilder abwarten (Bindung ist asynchron)
+    // gemeldete Einträge der letzten Bilder abwarten (Bindung ist asynchron); Eingaben des letzten Dokuments abholen
     await bilder(seite).catch(() => undefined);
+    eingaben.push(...((await seite.evaluate(() => window.__inpEingaben ?? []).catch(() => [])) ?? []));
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 }).catch(() => undefined);
     await kontext.close();
     const jeInteraktion = new Map();
@@ -313,8 +333,13 @@ async function messe(sz) {
     const jeSchritt = {};
     for (const e of liste) jeSchritt[e.schritt] = Math.max(jeSchritt[e.schritt] ?? 0, Math.round(e.dauer));
     const inp = liste.length ? Math.round(liste[0].dauer) : null;
-    // Schritte, die ausgelöst wurden, aber keine Interaktion ≥ 16 ms gemeldet haben (lückenhafter Lauf)
-    const ohneEintrag = [...new Set(marken.map((m) => m.name))].filter((name) => !(name in jeSchritt));
+    // Schritte ohne gemeldete Interaktion ≥ 16 ms: mit zugestellter Eingabe schnell (< 16 ms, obere Schranke 16 ms für den
+    // Median), ohne Eingabe lückenhaft
+    const mitEingabe = new Set(eingaben.map(zuordnen));
+    const ohneMeldung = [...new Set(marken.map((m) => m.name))].filter((name) => !(name in jeSchritt));
+    const unter16 = ohneMeldung.filter((name) => mitEingabe.has(name));
+    const ohneEintrag = ohneMeldung.filter((name) => !mitEingabe.has(name));
+    const jeSchrittMedianWert = { ...jeSchritt, ...Object.fromEntries(unter16.map((k) => [k, 16])) };
     const jeSchrittAnzahl = {};
     for (const e of liste) jeSchrittAnzahl[e.schritt] = (jeSchrittAnzahl[e.schritt] ?? 0) + 1;
     laeufe.push({
@@ -323,9 +348,12 @@ async function messe(sz) {
       last: lastVorher,
       interaktionen: liste.length,
       jeSchrittAnzahl,
+      eingaben: eingaben.length,
+      unter16,
       ohneEintrag,
       inpMs: inp,
       jeSchrittMs: jeSchritt,
+      jeSchrittMedianWert,
       ...mess,
       laengste: liste.slice(0, 3).map((e) => ({
         schritt: e.schritt,
@@ -336,7 +364,7 @@ async function messe(sz) {
       })),
     });
     console.log(
-      `${sz.name} Lauf ${n}: INP ${inp ?? '–'} ms · ${liste.length} Interaktionen erfasst ${JSON.stringify(jeSchrittAnzahl)}${ohneEintrag.length ? ` · OHNE EINTRAG: ${ohneEintrag.join(', ')}` : ''} · ${JSON.stringify(jeSchritt)}${mess.oeffnenMs ? ` · Öffnen ${mess.oeffnenMs} ms (gehalten ${mess.gehaltenMs} ms)` : ''} · Last ${lastVorher.l1}${fehler ? ` · FEHLER ${fehler}` : ''}`,
+      `${sz.name} Lauf ${n}: INP ${inp ?? '–'} ms · ${liste.length} Interaktionen erfasst ${JSON.stringify(jeSchrittAnzahl)}${unter16.length ? ` · < 16 ms: ${unter16.join(', ')}` : ''}${ohneEintrag.length ? ` · OHNE EINTRAG: ${ohneEintrag.join(', ')}` : ''} · ${JSON.stringify(jeSchritt)}${mess.oeffnenMs ? ` · Öffnen ${mess.oeffnenMs} ms (gehalten ${mess.gehaltenMs} ms)` : ''} · Last ${lastVorher.l1}${fehler ? ` · FEHLER ${fehler}` : ''}`,
     );
   }
   return laeufe;
@@ -361,8 +389,8 @@ for (const sz of auswahl) {
       laeufe = await messe(sz);
     } else wartenMs = 2 * 60_000;
   }
-  const schritte = [...new Set(laeufe.flatMap((l) => Object.keys(l.jeSchrittMs)))];
-  const jeSchrittMedian = Object.fromEntries(schritte.map((k) => [k, median(laeufe.map((l) => l.jeSchrittMs[k] ?? NaN))]));
+  const schritte = [...new Set(laeufe.flatMap((l) => Object.keys(l.jeSchrittMedianWert)))];
+  const jeSchrittMedian = Object.fromEntries(schritte.map((k) => [k, median(laeufe.map((l) => l.jeSchrittMedianWert[k] ?? NaN))]));
   ergebnis.szenarien.push({
     name: sz.name,
     pfad: sz.pfad,
@@ -371,6 +399,7 @@ for (const sz of auswahl) {
     oeffnenMedianMs: laeufe.some((l) => l.oeffnenMs) ? median(laeufe.map((l) => l.oeffnenMs ?? NaN)) : null,
     lastMax: lastMax(laeufe),
     interaktionenJeLauf: laeufe.map((l) => l.interaktionen),
+    unter16: laeufe.filter((l) => l.unter16.length).map((l) => `Lauf ${l.lauf}: ${l.unter16.join(', ')}`),
     lueckenhaft: laeufe.filter((l) => l.ohneEintrag.length).map((l) => `Lauf ${l.lauf}: ${l.ohneEintrag.join(', ')}`),
     unterLast: median2(laeufe) > 200 && lastMax(laeufe) > LAST_GRENZE,
     nachgemessen,
@@ -391,7 +420,7 @@ const md = [
         .map(([k, v]) => `${k} ${v}`)
         .join(
           ' · ',
-        )} | ${z.oeffnenMedianMs ?? '–'} | ${z.interaktionenJeLauf.join(' / ')}${z.lueckenhaft.length ? ` (ohne Eintrag: ${z.lueckenhaft.join('; ')})` : ''} | ${z.lastMax} | ${z.inpMedianMs <= 200 ? 'erfüllt' : `verfehlt${z.unterLast ? ' (unter Last)' : ''}`}${z.nachgemessen ? ` · nachgemessen (vorher ${z.nachgemessen.inpMedianMs} ms bei Last ${z.nachgemessen.lastMax})` : ''} | ${z.fehler.length ? z.fehler.join('; ') : '–'} |`,
+        )} | ${z.oeffnenMedianMs ?? '–'} | ${z.interaktionenJeLauf.join(' / ')}${z.unter16.length ? ` (< 16 ms: ${z.unter16.join('; ')})` : ''}${z.lueckenhaft.length ? ` (ohne Eintrag: ${z.lueckenhaft.join('; ')})` : ''} | ${z.lastMax} | ${z.inpMedianMs <= 200 ? 'erfüllt' : `verfehlt${z.unterLast ? ' (unter Last)' : ''}`}${z.nachgemessen ? ` · nachgemessen (vorher ${z.nachgemessen.inpMedianMs} ms bei Last ${z.nachgemessen.lastMax})` : ''} | ${z.fehler.length ? z.fehler.join('; ') : '–'} |`,
   ),
 ].join('\n');
 schreibe(`${values.aus}.md`, md);
