@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -494,11 +495,27 @@ describe('Audio-Studio', () => {
   it('Sprecher nur mit Vereinbarung (PDF), B1 und B2 getrennt', async () => {
     await angemeldetAls(ADMIN);
     expect(await audio.sprecherAnlegen({}, formular({ name: '[Sprecherin A]' }))).toMatchObject({ feldFehler: { datei: 'dateiFehlt' } });
+    // Prüfung ohne Bildpipeline (lib/medien/typ.ts, kein sharp): Bild → „kein PDF“, Unbekanntes → Typfehler
+    const mitDatei = (bytes: Buffer, name: string) => {
+      const f = formular({ name: '[Sprecherin A]' });
+      f.set('datei', new File([new Uint8Array(bytes)], name));
+      return audio.sprecherAnlegen({}, f);
+    };
+    const png = Buffer.concat([Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]), Buffer.alloc(32)]);
+    expect(await mitDatei(png, 'bild.png')).toMatchObject({ feldFehler: { datei: 'keinPdf' } });
+    expect(await mitDatei(Buffer.from('<svg/>xxxxxxxxxxxx'), 'vereinbarung.pdf')).toMatchObject({ feldFehler: { datei: 'datei_typ' } });
     const fd = formular({ name: '[Sprecherin A]', b1: '1' });
     fd.set('datei', new File([new Uint8Array(PDF)], 'vereinbarung.pdf', { type: 'application/pdf' }));
     expect(await audio.sprecherAnlegen({}, fd)).toMatchObject({ gespeichert: expect.any(Number) });
     const [s] = await db.select().from(schema.lernappSprecher);
     expect(s).toMatchObject({ name: '[Sprecherin A]', kiSyntheseErlaubt: true, klonenErlaubt: false });
+    // PDF unverändert, Schlüssel mit Inhalts-Hash wie in der Medien-Pipeline der Website (gleiche Datei = gleiches Medium)
+    const [vereinbarung] = await db.select().from(schema.medium).where(eq(schema.medium.id, s!.vereinbarungMediumId!));
+    expect(vereinbarung).toMatchObject({
+      typ: 'application/pdf',
+      groesse: PDF.length,
+      schluessel: `${createHash('sha256').update(PDF).digest('hex').slice(0, 16)}/vereinbarung.pdf`,
+    });
     sprecherId = s!.id;
   });
 

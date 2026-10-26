@@ -28,7 +28,7 @@ function dateien(ordner: string): string[] {
 /** Laufzeit-Importe (statisch, ohne `import type`) und dynamische `import()` einer Datei. */
 function importe(text: string): { statisch: string[]; dynamisch: string[] } {
   const ohneTypen = text.replace(/^import type [\s\S]*?from '[^']+';$/gm, '').replace(/^export type [\s\S]*?from '[^']+';$/gm, '');
-  const statisch = [...ohneTypen.matchAll(/^(?:import|export)\s[\s\S]*?\sfrom\s'([^']+)';?$|^import\s'([^']+)';?$/gm)].map(
+  const statisch = [...ohneTypen.matchAll(/^(?:import|export)\s(?!['"])[^;]*?\sfrom\s'([^']+)';?$|^import\s'([^']+)';?$/gm)].map(
     (m) => m[1] ?? m[2],
   );
   const dynamisch = [...text.matchAll(/\bimport\(\s*'([^']+)'\s*\)/g)].map((m) => m[1]);
@@ -81,6 +81,12 @@ describe('Lern-App: Client ohne next-intl und ohne @/lib/utils', () => {
     expect(clientDateien.length).toBeGreaterThan(8);
     expect(importe("import { a } from '@/x';\nimport type { B } from 'y';\nconst c = import('./z');").statisch).toEqual(['@/x']);
     expect(importe("const c = import('./aufgaben/Auswahl');").dynamisch).toEqual(['./aufgaben/Auswahl']);
+    // Seiteneffekt-Importe verschlucken den folgenden Import nicht; `export const` reicht nicht bis zum nächsten `from`
+    expect(importe("import 'server-only';\nimport { a } from '@/x';\nexport const b = 1;\nexport { c } from './c';").statisch).toEqual([
+      'server-only',
+      '@/x',
+      './c',
+    ]);
     const graph = clientGraph(join(WURZEL, 'components', 'lernapp', 'anmelden', 'AnmeldeFormulare.tsx'));
     // Server Actions sind im Browser nur Verweise: der Graph endet dort
     expect(graph.get(join(WURZEL, 'server', 'actions', 'konto.ts'))).toEqual([]);
@@ -279,6 +285,104 @@ describe('Kein GPL/LGPL im Client der Lern-App', () => {
     const verboten = [...gesehen.values()].filter((i) => /GPL/i.test(i.lizenz) || !ERLAUBT.test(i.lizenz));
     expect(verboten.map((i) => `${i.name}: ${i.lizenz || 'ohne Lizenz'}`)).toEqual([]);
     expect(gesehen.size).toBeGreaterThanOrEqual(direkt.size);
+  });
+});
+
+// ——— sharp/libvips nicht in Funktionen der Lern-App (ADR 0042 Nr. 10, Z-L19) ———
+
+/**
+ * Serverseitige Startpunkte der Lern-App: Seiten und Routen unter `app/lern-app` und der Verwaltung › Lern-App, alle Module
+ * unter `components/lernapp`, `lib/lernapp`, `server/queries/lernapp` und die Actions `server/actions/lernapp*`. Worker
+ * (`*.worker.ts`) laufen nur im Browser (eigener Bau nach `public/`) und zählen nicht.
+ */
+const AKTIONEN = join(WURZEL, 'server', 'actions');
+const lernappServer = [
+  ...lernappDateien,
+  ...dateien(join(WURZEL, 'server', 'queries', 'lernapp')),
+  ...dateien(join(WURZEL, 'app', '[locale]', 'verwaltung', '(geschuetzt)', 'lernapp')),
+  ...readdirSync(AKTIONEN)
+    .filter((n) => /^lernapp.*\.ts$/.test(n))
+    .map((n) => join(AKTIONEN, n)),
+].filter((p) => !p.endsWith('.worker.ts'));
+
+/** Ganzer Modulgraph einer Funktion: statische und dynamische Importe sowie `require()`, auch über `'use server'`/`'use client'`. */
+function funktionsGraph(starts: string[]): Map<string, string[]> {
+  const graph = new Map<string, string[]>();
+  const offen = [...starts];
+  while (offen.length) {
+    const datei = offen.pop()!;
+    if (graph.has(datei)) continue;
+    const text = readFileSync(datei, 'utf8');
+    const { statisch, dynamisch } = importe(text);
+    const erforderlich = [...text.matchAll(/\brequire\(\s*'([^']+)'\s*\)/g)].map((m) => m[1]!);
+    const alle = [...statisch, ...dynamisch, ...erforderlich].filter((z): z is string => Boolean(z));
+    graph.set(
+      datei,
+      alle.filter((z) => !z.startsWith('.') && !z.startsWith('@/') && !z.startsWith('node:')),
+    );
+    for (const z of alle) {
+      const pfad = aufloesen(datei, z);
+      if (pfad) offen.push(pfad);
+    }
+  }
+  return graph;
+}
+
+const istSharp = (name: string) => name === 'sharp' || name.startsWith('@img/sharp');
+
+/**
+ * Funde von sharp/libvips: direkte Importe im Modulgraph und Pakete, die sharp über `dependencies` oder
+ * `optionalDependencies` mitbringen (z. B. `@huggingface/transformers`). Next selbst gehört zum Grundstock: Sein optionales
+ * sharp dient nur der Bildoptimierung (`/_next/image`), die nicht in den Funktionen der Lern-App läuft (Bau-Ausgabe: `.nft.json`).
+ */
+function sharpFunde(graph: Map<string, string[]>): string[] {
+  const funde: string[] = [];
+  const gesehen = new Set<string>();
+  const offen: { n: string; von: string; weg: string }[] = [];
+  for (const [datei, pakete] of graph)
+    for (const x of pakete) {
+      const n = paketName(x);
+      if (istSharp(n)) funde.push(`${kurz(datei)} → ${n}`);
+      else if (n !== 'next') offen.push({ n, von: NODE_MODULES, weg: `${kurz(datei)} → ${n}` });
+    }
+  while (offen.length) {
+    const { n, von, weg } = offen.pop()!;
+    const ordner = paketOrdner(n, von);
+    if (!ordner || gesehen.has(ordner)) continue;
+    gesehen.add(ordner);
+    const pj = JSON.parse(readFileSync(join(ordner, 'package.json'), 'utf8')) as {
+      dependencies?: Record<string, string>;
+      optionalDependencies?: Record<string, string>;
+    };
+    for (const a of new Set([...Object.keys(pj.dependencies ?? {}), ...Object.keys(pj.optionalDependencies ?? {})])) {
+      if (istSharp(a)) funde.push(`${weg} → ${a}`);
+      else offen.push({ n: a, von: ordner, weg: `${weg} → ${a}` });
+    }
+  }
+  return funde;
+}
+
+describe('Kein sharp/libvips (LGPL-3.0) in Funktionen der Lern-App', () => {
+  it('die Prüfung greift (Startpunkte gefunden; die Website-Action „Medien“ zieht sharp, M-060)', () => {
+    expect(lernappServer.map(kurz)).toEqual(
+      expect.arrayContaining([
+        join('server', 'actions', 'lernapp-audio.ts'),
+        join('app', 'lern-app', 'audio', '[...pfad]', 'route.ts'),
+        join('server', 'queries', 'lernapp', 'audio-studio.ts'),
+      ]),
+    );
+    expect(lernappServer.some((p) => p.endsWith('.worker.ts'))).toBe(false);
+    expect(sharpFunde(funktionsGraph([join(AKTIONEN, 'medien.ts')]))).toContain(`${join('lib', 'medien', 'verarbeiten.ts')} → sharp`);
+    // über Paket-Abhängigkeiten: der Worker (nur Browser) bringt sharp über @huggingface/transformers mit
+    const worker = join(WURZEL, 'components', 'lernapp', 'sprechen', 'whisper.worker.ts');
+    expect(sharpFunde(funktionsGraph([worker]))).toContain(`${kurz(worker)} → @huggingface/transformers → sharp`);
+    const graph = funktionsGraph([join(AKTIONEN, 'lernapp-audio.ts')]);
+    expect(graph.has(join(WURZEL, 'lib', 'medien', 'typ.ts'))).toBe(true);
+    expect(graph.has(join(WURZEL, 'lib', 'medien', 'verarbeiten.ts'))).toBe(false);
+  });
+
+  it('kein Modul der Lern-App erreicht sharp, auch nicht über Pakete', () => {
+    expect(sharpFunde(funktionsGraph(lernappServer))).toEqual([]);
   });
 });
 

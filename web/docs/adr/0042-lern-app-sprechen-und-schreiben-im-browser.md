@@ -33,6 +33,7 @@
    - Die Website behält ihre Header unverändert.
 10. **Abhängigkeiten:**
     - transformers.js nur im Browser bzw. Worker; `sharp` und `onnxruntime-node` gelangen nie in Client-Bündel oder Funktionen (Regeltest `tests/unit/lernapp/bundle-regeln.test.ts`).
+      Fortschreibung (Stufe C, Z-L19, 26.10.2026): Gemeint sind die Funktionen der Lern-App (`app/lern-app`, Verwaltung › Lern-App, `lib/lernapp`, `components/lernapp`, `server/queries/lernapp`, `server/actions/lernapp*`); der Regeltest „Kein sharp/libvips in Funktionen der Lern-App“ folgt ihrem ganzen Modulgraphen samt Paket-Abhängigkeiten. Die PDF-Prüfung des Audio-Studios nutzt `lib/medien/typ.ts` ohne sharp. Die Bildpipeline der Website (`lib/medien/verarbeiten.ts`, Medien und Rezitation) bleibt durch M-060 und ADR 0001 („Lizenz-Ausnahmen“) gedeckt.
     - Versionen nach Mindestreife (L0-E10): transformers.js 4.3.0, ab 20.10.2026 4.3.1, exakt gepinnt. Der Entwicklungs-Build von onnxruntime-web, den transformers.js mitbringt, wird im Lockfile festgehalten.
     - Lizenzverzeichnis: MIT (OpenAI) **und** Apache-2.0 für Whisper, Apache-2.0 für transformers.js, MIT und `ThirdPartyNotices.txt` für onnxruntime-web (aus dem Repository, das npm-Paket enthält sie nicht), Quellenangabe für Eigen (MPL-2.0).
 11. **Schreiben (B1–C1):**
