@@ -1,5 +1,20 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 20:25 UTC – N9a gemergt (11e45cbe auf `main`), N9b Runde 3 läuft:**
+  - **Live:** Menüpunkt „Sprachen lernen“ (1482184c) im Kopf- und Telefonmenü auf de/tr/en.
+  - **N9a frei** (Gegenprüfung 2: nur niedrig):
+    - Behoben: G-1 Bauwechsel (Kursvorrat `igmg-lernapp-kurse-v…`; ein überholter Worker schreibt und löscht nichts mehr); Stufe offline speichern; Wissenskurs nur mit Prüfvermerk.
+    - Alle Lern-App-E2E grün: 114 grün, 0 rot, 34 übersprungen.
+    - Nach dem Merge: `typen`, Religion und Sprachen grün. Unit 3.709 grün; 4 Zeitgrenzen unter Last, einzeln grün.
+  - **N9b nicht frei:** Gegenprüfung 2 meldet ein „mittel“. Der Fokusring-Helfer `fokus()` kann bei sr-only-Radios nie fehlschlagen.
+    - Beim Merge in den Branch gab es Konflikte mit N9a (verschobene Test-Helfer), deshalb abgebrochen.
+    - **Runde 3** `wf_6668d03f-778` in `l3-05`: Merge des Branches mit Konflikten lösen, `fokus()` mit Selbsttest, Live-Region der 15-s-Ansage, Regex; Bau und alle Lern-App-E2E; Gegenprüfung.
+  - **Bau-Schloss:** Es klemmte, weil PostgreSQL und Mailpit innerhalb von flock gestartet waren und den Deskriptor geerbt hatten. Dienste neu gestartet; `e2e-echt/start.sh` schließt jetzt geerbte Deskriptoren.
+  - **Danach:**
+    1. N9b mergen.
+    2. Frischer Endprüfer und Vollständigkeitskritik (`lernapp-stufe-c-schluss.workflow.js`; Belege und Gegen in `scratchpad/schluss-belege-gegen.json`).
+    3. ABNAHME, BERICHT, ABSCHLUSS.
+
 - **Stand 26.10.2026 16:40 UTC – Taktpause bis 17:10, N9 vorbereitet:**
   - N9a um 16:04 bei Auslastung 0,90 nach einem sauberen Commit angehalten (aca518b0: INP Lernpfad, `leistung.md` N9a, ADR 0039 Nr. 4).
   - Der Orchestrator hat in der Pause Bau und alle Lern-App-E2E von N9a gefahren:
