@@ -83,7 +83,7 @@ if (!probe.ok || !probeText.includes('"angemeldet":true') || !probeText.includes
 
 // ——— Ereignisse ———
 const heute = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' });
-const KARTEN = ['w001', 'w002', 'w003', 'w004'].map((w) => `tr-aus-de:tr.a1.e01.${w}`);
+const KARTEN = ['w001', 'w002', 'w003', 'w004'].map((w) => `tr-aus-de:tr.a1.test.${w}`);
 function paket(konto, p, ab) {
   const geraet = konto.geraete[p];
   const am = new Date().toISOString();
@@ -97,10 +97,17 @@ function paket(konto, p, ab) {
         am,
         tag: heute,
         art: 'lektion',
-        daten: { kurs: 'tr-aus-de', lektion: 'tr-aus-de.a1.e01.l01', art: 'lektion', richtig: 4, gesamt: 4 },
+        daten: { kurs: 'tr-aus-de', lektion: 'tr-aus-de.a1.test.l01', art: 'lektion', richtig: 4, gesamt: 4 },
       });
     else if (n === E - 1)
-      ereignisse.push({ geraet, seq: s, am, tag: heute, art: 'xp', daten: { menge: 10, grund: 'lektion', bezug: 'tr-aus-de.a1.e01.l01' } });
+      ereignisse.push({
+        geraet,
+        seq: s,
+        am,
+        tag: heute,
+        art: 'xp',
+        daten: { menge: 10, grund: 'lektion', bezug: 'tr-aus-de.a1.test.l01' },
+      });
     else
       ereignisse.push({
         geraet,

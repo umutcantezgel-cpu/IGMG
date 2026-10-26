@@ -143,7 +143,7 @@ for teil in $TEILE; do
   case $teil in
     budget) node scripts/lernapp-budget.mjs "$MESS_BASIS" --aus "$MESS_ZIEL/budget.json" > "$MESS_ZIEL/budget.txt" 2>&1 ;;
     messen) MESSEN_ZIEL=$MESS_ZIEL/messen node scripts/messen.mjs "$MESS_BASIS" /lern-app/de /lern-app/ar/de-aus-ar \
-      '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l01' > "$MESS_ZIEL/messen.txt" 2>&1 ;;
+      '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.test.l01' > "$MESS_ZIEL/messen.txt" 2>&1 ;;
     lighthouse) node "$HIER/lighthouse.mjs" --routen "$MESS_ZIEL/routen-lighthouse.json" --laeufe 3 > "$MESS_ZIEL/lighthouse.txt" 2>&1 ;;
     inp) node "$HIER/inp-spieler.mjs" --laeufe 3 --drossel 6 > "$MESS_ZIEL/inp.txt" 2>&1 ;;
     axe) node "$HIER/a11y.mjs" --routen "$MESS_ZIEL/routen-axe.json" > "$MESS_ZIEL/a11y.txt" 2>&1 ;;

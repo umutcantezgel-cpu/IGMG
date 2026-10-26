@@ -5,10 +5,14 @@ nur lokal und nur mit der Datenbank `calima-msa-r13` (Paket `morphology-db-msa-r
 Ergebnis `<aus>/vorschlaege-camel.tsv`: nr, eingabe, wurzeln (nach Haeufigkeit der Analysen), analysen.
 Nur Vorschlaege fuer die Pruefung durch die Lehrkraft (LM-31); nichts davon ungeprueft ins Repository.
 
-Einrichtung (Scratchpad, ausserhalb des Repositorys):
-  python3 -m venv <venv> && <venv>/bin/pip install --no-deps camel-tools==1.6.0
-  <venv>/bin/pip install cachetools six pyrsistent regex requests tqdm docopt future dill muddler tabulate
+Einrichtung (Scratchpad, ausserhalb des Repositorys; alle Pakete mit Fassung und SHA-256, kompiliert mit
+--exclude-newer 2026-10-07 = Aufnahme 21.10.2026 minus 14 Tage, L0-E10; Python 3.11 bis 3.13):
+  python3 -m venv <venv>
+  <venv>/bin/pip install --require-hashes --no-deps -r _lernapp/werkzeuge/wurzeln/requirements-camel.txt
+  <venv>/bin/pip install --require-hashes -r _lernapp/werkzeuge/wurzeln/requirements.txt
   CAMELTOOLS_DATA=<daten> <venv>/bin/camel_data -i morphology-db-msa-r13
+camel-tools kommt ohne seine Abhaengigkeiten (--no-deps; sonst torch, transformers, scikit-learn ...); requirements.in nennt
+nur, was der Analysator braucht (dazu emoji fuer camel_tools.utils.charsets). Neu kompilieren: Befehle im Kopf der .in-Dateien.
 Aufruf:
   CAMELTOOLS_DATA=<daten> <venv>/bin/python -I _lernapp/werkzeuge/wurzeln/camel_vorschlag.py --aus <ordner>
 """

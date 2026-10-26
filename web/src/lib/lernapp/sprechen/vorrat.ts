@@ -1,9 +1,10 @@
-import { MODELL_DATEIEN, modellAdresse, ORT, ortAdresse } from './modell';
+import { MODELL_DATEIEN, modellAdresse, ORT, ORT_HINWEISE, ortAdresse } from './modell';
 
 /**
  * Download der Sprechübung in den Vorrat `igmg-lernapp-modelle` (L8-02, Gegenprüfung zu `a0795f7b`): Der Worker legt die
- * 7 Modell- und Konfigurationsdateien und die ORT-`.wasm` selbst in den Vorrat, bevor er die Pipeline baut – je Datei
- * genau ein Abruf, Fortschritt nach gelesenen Bytes. transformers.js findet danach jede Datei im Vorrat: keine
+ * 7 Modell- und Konfigurationsdateien, die ORT-`.wasm` und deren Drittlizenzen (ThirdPartyNotices, Z-L17) selbst in den
+ * Vorrat, bevor er die Pipeline baut – je Datei genau ein Abruf, Fortschritt nach gelesenen Bytes. Der Lern-App-SW liefert
+ * die Drittlizenzen danach auch ohne Netz aus dem Vorrat (Link auf der Seite „Quellen“). transformers.js findet danach jede Datei im Vorrat: keine
  * Vorabfrage der Größe (`get_file_metadata`), kein zweiter Abruf, und Tokenizer und Prozessor gelten als vorhanden.
  *
  * Vorher (bis `a0795f7b`) übergab der Worker transformers.js eine Fortschrittsmeldung; dafür fragte es vorab jede Datei per
@@ -17,20 +18,25 @@ import { MODELL_DATEIEN, modellAdresse, ORT, ortAdresse } from './modell';
  * `scripts/lernapp/sprechen-rauchtest.mjs` (echter Worker und Service Worker).
  */
 
-/** Was der Worker vom Vorrat braucht (Teil der Cache-API). */
-export type Vorrat = Pick<Cache, 'match' | 'put'>;
+/** Was der Worker vom Vorrat braucht (Teil der Cache-API; `keys`/`delete` zum Wegräumen älterer Fassungen). */
+export type Vorrat = Pick<Cache, 'match' | 'put' | 'keys' | 'delete'>;
 /** Abruf vom eigenen Ursprung (im Worker `fetch`). */
 export type Abruf = (adresse: string, init?: RequestInit) => Promise<Response>;
 /** Fortschritt je Datei: gelesene Bytes und erwartete Größe. */
 export type Meldung = (datei: string, geladen: number, gesamt: number) => void;
 
-/** Eine Datei des Downloads: Name für die Fortschrittsanzeige, Pfad unter `/lern-app/modelle/`, Größe. */
-export type VorratDatei = { datei: string; pfad: string; bytes: number };
+/**
+ * Eine Datei des Downloads: Name für die Fortschrittsanzeige, Adresse und Schlüssel im Vorrat (`/lern-app/modelle/…`,
+ * Drittlizenzen `/lern-app/lizenzen/…?v=<fassung>`), Größe. `lizenz`: Lizenztext – ein Fehler bricht den Download nicht ab (der nächste Start holt
+ * ihn nach); so bleibt ein Gerät, das das Modell schon offline hat, auch ohne Netz bei der Sprachprüfung.
+ */
+export type VorratDatei = { datei: string; pfad: string; bytes: number; lizenz?: true };
 
-/** Alles, was transformers.js und ORT aus dem Vorrat lesen (Worker und ORT-`.mjs` lädt der Browser selbst). */
+/** Alles, was transformers.js und ORT aus dem Vorrat lesen, und die Drittlizenzen von ORT (Worker und ORT-`.mjs` lädt der Browser selbst). */
 export const VORRAT_DATEIEN: readonly VorratDatei[] = [
   ...MODELL_DATEIEN.map((d) => ({ datei: d.pfad, pfad: modellAdresse(d.pfad), bytes: d.bytes })),
   { datei: ORT.wasm, pfad: ortAdresse(ORT.wasm), bytes: ORT.wasmBytes },
+  { datei: 'onnxruntime-ThirdPartyNotices.txt', pfad: ORT_HINWEISE.adresse, bytes: ORT_HINWEISE.bytes, lizenz: true },
 ];
 
 /** Fortschritt höchstens je Megabyte melden (sonst eine Nachricht je Netzstück, ≈ 1500 für den ganzen Download). */
@@ -83,15 +89,35 @@ async function eineDatei(vorrat: Vorrat, abruf: Abruf, ursprung: string, d: Vorr
 }
 
 /**
+ * Ältere Fassungen derselben Datei aus dem Vorrat nehmen: gleicher Pfad wie eine Datei aus `VORRAT_DATEIEN`, aber andere
+ * Adresse (anderer Suchteil, z. B. die Drittlizenzen mit `?v=<fassung>` oder noch ohne Fassung). Der Lern-App-SW gleicht samt
+ * Suchteil ab und würde sie nie mehr ausliefern; sie belegten nur Platz.
+ */
+async function alteFassungenWeg(vorrat: Vorrat, ursprung: string): Promise<void> {
+  const aktuell = new Map(VORRAT_DATEIEN.map((d) => [new URL(d.pfad, ursprung).pathname, new URL(d.pfad, ursprung).href]));
+  const eigen = new URL(ursprung).origin;
+  const alt = (await vorrat.keys()).filter((k) => {
+    const u = new URL(k.url);
+    return u.origin === eigen && aktuell.has(u.pathname) && aktuell.get(u.pathname) !== u.href;
+  });
+  await Promise.all(alt.map((k) => vorrat.delete(k)));
+}
+
+/**
  * Legt jede fehlende Datei aus `VORRAT_DATEIEN` mit genau einem Abruf in den Vorrat; vorhandene bleiben unberührt (kein
- * Netz). Wirft bei einer fehlgeschlagenen Datei (Status ≠ 200, Abbruch) – die Übung fällt dann auf die eigene Aufnahme zurück.
+ * Netz). Wirft bei einer fehlgeschlagenen Datei (Status ≠ 200, Abbruch) – die Übung fällt dann auf die eigene Aufnahme zurück;
+ * ausgenommen Lizenztexte (`lizenz`), die beim nächsten Start erneut versucht werden. Danach fallen ältere Fassungen derselben
+ * Dateien weg (`alteFassungenWeg`): Ein neuer Text der Drittlizenzen hat eine neue Adresse und kommt so beim nächsten Start
+ * mit Netz in den Vorrat, statt dass die alte Kopie für immer bleibt.
  */
 export async function fuelleVorrat(vorrat: Vorrat, abruf: Abruf, ursprung: string, melde: Meldung = () => undefined): Promise<void> {
   await Promise.all(
     VORRAT_DATEIEN.map((d) =>
       eineDatei(vorrat, abruf, ursprung, d, melde).catch((e: unknown) => {
+        if (d.lizenz) return;
         throw new Error(`${d.datei}: ${e instanceof Error ? `${e.name}: ${e.message}` : String(e)}`);
       }),
     ),
   );
+  await alteFassungenWeg(vorrat, ursprung);
 }

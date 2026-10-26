@@ -71,9 +71,9 @@
 | 23 | `islam.vertiefung.e03` | akhlaq | Anstand III: Erwerb, Fürsorge und Wettkampf | 4 | belegbar |
 | 24 | `islam.vertiefung.e04` | siyar | Geschichte I: Das Leben des Propheten (Grundlagen) | 5 | zurückgestellt |
 | 25 | `islam.vertiefung.e05` | siyar | Geschichte II: Die Gefährten und die ersten Kalifen | 5 | zurückgestellt |
-| 26 | `islam.vertiefung.e06` | siyar | Geschichte III: Abū Ḥanīfa, seine Schüler und die hanefitische Schule | 5 | zurückgestellt |
+| 26 | `islam.vertiefung.e06` | siyar | Geschichte III: Abū Ḥanīfa, seine Schüler und die hanefitische Schule | 5 | zurückgestellt – Entwurf liegt vor (Belegbasis Register), unsichtbar; Aufnahme in den Prüfumfang entscheidet LM-04/LM-03. |
 | 27 | `islam.vertiefung.e07` | grundwissen | Grundwissen I: Fiqh – Urteilsarten, Meinungen der Schule und Fatwa | 4 | teilweise belegbar |
-| 28 | `islam.vertiefung.e08` | grundwissen | Grundwissen II: Umgang mit Koran und Hadith | 4 | teilweise belegbar |
+| 28 | `islam.vertiefung.e08` | grundwissen | Grundwissen II: Umgang mit Koran und Hadith | 4 | teilweise belegbar – l03–l05: Entwurf liegt vor (Belegbasis Register), unsichtbar; Aufnahme in den Prüfumfang entscheidet LM-04/LM-03. |
 
 Summe: 28 Einheiten, 155 Lektionen. Je Bereich: taharah 3, salah 5, akaid 3, sawm 2, zakat 2, hajj 2, halal_haram 3, akhlaq 3, siyar 3, grundwissen 2 (PLAN §5.2).
 
@@ -688,6 +688,9 @@ Summe: 28 Einheiten, 155 Lektionen. Je Bereich: taharah 3, salah 5, akaid 3, saw
   - kann Abū Ḥanīfa, Abū Yūsuf und Muḥammad ash-Shaybānī einordnen und die Entstehung der Schule beschreiben
 - **Belegbasis:** keine im Quellenregister (S8 §3.5). Zurückgestellt bis Menschen ein Werk benennen (LM-04);
   kein Entwurf aus dem Gedächtnis (KERN §2.2 Nr. 5).
+- **Stand (Stufe C, `_lernapp/protokolle/C-religion.md` Z-L02):** Entwurf liegt vor (Belegbasis Register), unsichtbar; Aufnahme in den Prüfumfang entscheidet LM-04/LM-03. Abweichung von Regel 10 (§1): Der Entwurf
+  `web/inhalte/lernapp/islam/siyar/islam.vertiefung.e06.json` hat 5 Lektionen, 37 Aussagen und 85 Belege nur aus Werken des
+  Registers (`radd_al_muhtar` 73, `ikhtiyar` 6, `hidaya` 6); ohne zwei religiöse Freigaben bleibt er verborgen.
 
 | Lektion | Titel | Kinder | Hinweis | Belegbasis (Grundtext) |
 |---|---|---|---|---|
@@ -722,6 +725,10 @@ Summe: 28 Einheiten, 155 Lektionen. Je Bereich: taharah 3, salah 5, akaid 3, saw
   - kennt die Reinheitsregeln für das Berühren und Rezitieren des Korans
   - kann die Rolle der Rezitation im Gebet nach den Werken beschreiben (Verse nur als Verweis)
   - Hadith- und Koranwissenschaften: zurückgestellt bis ein Werk benannt ist (LM-04)
+- **Stand l03–l05 (Stufe C, `_lernapp/protokolle/C-religion.md` Z-L02):** Entwurf liegt vor (Belegbasis Register), unsichtbar; Aufnahme in den Prüfumfang entscheidet LM-04/LM-03. Der Entwurf
+  `web/inhalte/lernapp/islam/grundwissen/islam.vertiefung.e08.json` weicht von der Tabelle ab: `l03` und `l04` mit anderem
+  Zuschnitt, dazu eine zusätzliche `l05` (zusammen 25 Aussagen, 53 Belege nur aus Werken des Registers: `radd_al_muhtar`,
+  `hidaya`, `ikhtiyar`); ohne zwei religiöse Freigaben bleiben sie verborgen.
 - **Belegbasis der Einheit (Begründung, Vergleich, Fatwa-Meinung):**
   - Nūr al-Īḍāḥ, Mā yaḥrumu bi-l-Ḥayḍ …; bi-l-Janāba; ʿalā l-Muḥdith – `nur_al_idah.ms0010`, Bd. 1, S. 32 (Kap. k0064–k0068)
   - al-Ikhtiyār, Mā yaḥrumu ʿalā l-Muḥdith wa-l-Junub wa-l-Ḥāʾiḍ – `ikhtiyar.ms0009`–`ms0010`, Bd. 1, S. 13 (Kap. k0008)
@@ -731,8 +738,8 @@ Summe: 28 Einheiten, 155 Lektionen. Je Bereich: taharah 3, salah 5, akaid 3, saw
 |---|---|---|---|---|
 | `islam.vertiefung.e08.l01` | Den Koran berühren und rezitieren: Reinheitsregeln | ja |  | Nūr al-Īḍāḥ, Mā yaḥrumu bi-l-Janāba; Mā yaḥrumu ʿalā l-Muḥdith – `nur_al_idah.ms0010`, Bd. 1, S. 32 (Kap. k0067–k0068) |
 | `islam.vertiefung.e08.l02` | Rezitation im Gebet | ja |  | Nūr al-Īḍāḥ, Arkān aṣ-Ṣalāh – `nur_al_idah.ms0014`, Bd. 1, S. 42 (Kap. k0096)<br>Nūr al-Īḍāḥ, Faṣl fī Wājib aṣ-Ṣalāh – `nur_al_idah.ms0015`–`ms0016`, Bd. 1, S. 45–46 (Kap. k0106)<br>al-Ikhtiyār, Bāb al-Qirāʾa fī ṣ-Ṣalāh – `ikhtiyar.ms0060`–`ms0062`, Bd. 1, S. 56–57 (Kap. k0031) |
-| `islam.vertiefung.e08.l03` | Was ein Hadith ist und wie er überliefert wird | ja | zurückgestellt | – |
-| `islam.vertiefung.e08.l04` | Offenbarung, Suren und Anordnung des Korans | ja | zurückgestellt | – |
+| `islam.vertiefung.e08.l03` | Was ein Hadith ist und wie er überliefert wird | ja | zurückgestellt; Entwurf liegt vor (siehe Stand) | – |
+| `islam.vertiefung.e08.l04` | Offenbarung, Suren und Anordnung des Korans | ja | zurückgestellt; Entwurf liegt vor (siehe Stand) | – |
 
 ## 6. Abdeckung und Lücken
 

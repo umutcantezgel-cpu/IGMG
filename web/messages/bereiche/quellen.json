@@ -6,7 +6,7 @@
       "untertitel": "Woher die Texte, Daten, Schriften und Programme dieser Website stammen – mit Urheber, Lizenz und Verweis auf die Quelle.",
       "fussLink": "Quellen",
       "inhaltsverzeichnis": "Inhalt",
-      "standTitel": "Stand: 21. Oktober 2026",
+      "standTitel": "Stand: 26. Oktober 2026",
       "standText": "Übernommene Dateien liegen mit Prüfsumme im Quellcode der Website: unverändert oder, wo es hier vermerkt ist, gefiltert, gekürzt bzw. umformatiert. Religiöse Inhalte erscheinen öffentlich erst nach der Prüfung durch den Imam bzw. die Lehrkraft.",
       "felder": {
         "urheber": "Urheber",
@@ -202,11 +202,15 @@
           "rrule": "Wiederkehrende Termine",
           "uqr": "QR-Codes",
           "sharp": "Bildverarbeitung",
+          "libvips": "Bildverarbeitung hinter sharp (mitgeliefertes Binärpaket, unverändert, nur auf dem Server)",
           "nodemailer": "E-Mail-Versand",
           "idb": "Lokale Datenbank der Lern-App",
           "ts-fsrs": "Wiederholungsplan der Lern-App",
           "fastest-levenshtein": "Antwortabgleich der Lern-App"
         }
+      },
+      "ofl": {
+        "titel": "Lizenztext der SIL Open Font License 1.1 (englisch)"
       }
     }
   },
@@ -217,7 +221,7 @@
       "untertitel": "Bu web sitesindeki metinlerin, verilerin, yazı tiplerinin ve programların nereden geldiği – hak sahibi, lisans ve kaynak bağlantısıyla.",
       "fussLink": "Kaynaklar",
       "inhaltsverzeichnis": "İçindekiler",
-      "standTitel": "Tarih: 21 Ekim 2026",
+      "standTitel": "Tarih: 26 Ekim 2026",
       "standText": "Alınan dosyalar sağlama toplamıyla web sitesinin kaynak kodunda yer alır: değiştirilmeden ya da burada belirtildiği yerde filtrelenmiş, kısaltılmış veya yeniden biçimlendirilmiş olarak. Dinî içerikler ancak imam ya da öğretmen tarafından incelendikten sonra yayımlanır.",
       "felder": {
         "urheber": "Hak sahibi",
@@ -413,11 +417,15 @@
           "rrule": "Tekrarlanan etkinlikler",
           "uqr": "QR kodları",
           "sharp": "Görsel işleme",
+          "libvips": "sharp’ın kullandığı görsel işleme kütüphanesi (birlikte gelen ikili paket, değiştirilmeden, yalnızca sunucuda)",
           "nodemailer": "E-posta gönderimi",
           "idb": "Öğrenme uygulamasının yerel veritabanı",
           "ts-fsrs": "Öğrenme uygulamasının tekrar planı",
           "fastest-levenshtein": "Öğrenme uygulamasında cevap karşılaştırması"
         }
+      },
+      "ofl": {
+        "titel": "SIL Open Font License 1.1 lisans metni (İngilizce)"
       }
     }
   },
@@ -428,7 +436,7 @@
       "untertitel": "Where the texts, data, fonts and software of this website come from – with author, licence and a link to the source.",
       "fussLink": "Sources",
       "inhaltsverzeichnis": "Contents",
-      "standTitel": "As of 21 October 2026",
+      "standTitel": "As of 26 October 2026",
       "standText": "Adopted files are kept with a checksum in the website’s source code: unchanged or, where noted here, filtered, shortened or reformatted. Religious content is published only after it has been reviewed by the imam or the teacher.",
       "felder": {
         "urheber": "Author",
@@ -624,11 +632,15 @@
           "rrule": "Recurring events",
           "uqr": "QR codes",
           "sharp": "Image processing",
+          "libvips": "Image processing behind sharp (bundled binary package, unmodified, server only)",
           "nodemailer": "Sending e-mail",
           "idb": "Local database of the learning app",
           "ts-fsrs": "Review schedule of the learning app",
           "fastest-levenshtein": "Answer matching in the learning app"
         }
+      },
+      "ofl": {
+        "titel": "Full text of the SIL Open Font License 1.1"
       }
     }
   }

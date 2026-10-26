@@ -7,6 +7,8 @@
 // cspLernApp() in der Produktion) und den echten Service Worker. Protokolliert werden Anfragen (auch aus Workern und dem SW),
 // fremde Hosts, CSP-Verstöße, Konsolenfehler, der Vorrat und die Zeiten. Seit L8-02 zusätzlich: Online erreicht jede der 10
 // Download-Dateien (`DOWNLOAD_PFADE`) den Server genau einmal – keine fehlt (Tokenizer, Prozessor), keine kommt doppelt.
+// Seit Stufe C (N4, Z-L17) liegen die ThirdPartyNotices von onnxruntime-web zusätzlich im Vorrat: 11 Einträge, und die
+// Notices kommen in der Offline-Phase aus dem Vorrat.
 // Voraussetzung: `pnpm lernapp:modelle` ohne E2E_ATTRAPPEN (echter Worker). Aufruf:
 //   node scripts/lernapp/sprechen-rauchtest.mjs [--aus <datei.json>]   (Exit 1, wenn eine Variante nicht besteht)
 // Für den Versionswechsel (Nr. 8) zusätzlich je Sprache 3 Sätze mit menschlicher Aufnahme – das geht nur lokal mit
@@ -105,6 +107,7 @@ const TYPEN = {
   '.js': 'text/javascript',
   '.json': 'application/json',
   '.wasm': 'application/wasm',
+  '.txt': 'text/plain; charset=utf-8',
 };
 const serverAnfragen = [];
 const server = http.createServer((req, res) => {
@@ -179,7 +182,8 @@ try {
       online.felder?.join() === 'art,ergebnis,id' &&
       offline.ladenMs !== null &&
       offline.probeMs !== null &&
-      modelle.length === 10 &&
+      modelle.length === 11 &&
+      modelle.some((p) => p.startsWith('/lern-app/lizenzen/onnxruntime-ThirdPartyNotices.txt')) &&
       !fehlend.length &&
       !mehrfach.length &&
       !fremd.length &&

@@ -1,0 +1,6 @@
+# camel-tools fuer die Wurzel-Vorschlaege (camel_vorschlag.py, L6-06) - nur lokal. Installation OHNE seine Abhaengigkeiten
+# (`--no-deps`): Laut Paket braeuchte es torch, transformers, scikit-learn, pandas u. a.; der Morphologie-Analysator braucht nur
+# die Pakete aus requirements.in.
+# Kompiliert mit: uv pip compile requirements-camel.in --no-deps --generate-hashes --python-version 3.13 \
+#   --exclude-newer 2026-10-07T00:00:00Z -o requirements-camel.txt   (Mindestreife 14 Tage, L0-E10; Aufnahme 21.10.2026)
+camel-tools==1.6.0

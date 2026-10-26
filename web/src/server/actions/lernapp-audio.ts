@@ -10,7 +10,7 @@ import { db, schema } from '@/lib/db';
 import { type LernappZustand, mitLernappRecht } from '@/lib/lernapp/verwaltung/aktion';
 import { AUFNAHME_MAX_BYTES, AUFNAHME_MAX_MS, aufnahmeSchluessel, vertonbar } from '@/lib/lernapp/verwaltung/audio';
 import { kursGeaendert } from '@/lib/lernapp/veroeffentlichen';
-import { MedienFehler, verarbeiteDatei } from '@/lib/medien/verarbeiten';
+import { MedienFehler, verarbeitePdf } from '@/lib/medien/typ';
 import { darf } from '@/lib/rechte/pruefe';
 import { speicher } from '@/lib/storage';
 import { ladeVertonbarenEintrag } from '@/server/queries/lernapp/audio-studio';
@@ -19,8 +19,8 @@ import { ladeVertonbarenEintrag } from '@/server/queries/lernapp/audio-studio';
  * Verwaltung › Lern-App › Audio-Studio (L3-06, ADR 0039 Nr. 8, KERN 4.0 §4). Recht `lernapp.audio.bearbeiten` (Bildung,
  * Administration), Schalter `lernapp`; Audit ohne Inhalte.
  *
- * - **Sprecher:** nur mit hinterlegter Vereinbarung (PDF, Medien-Prüfung mit Magic Bytes; neue Datei braucht zusätzlich
- *   `medium.hochladen`), Modul B1 (Training) und B2 (Klonen) getrennt.
+ * - **Sprecher:** nur mit hinterlegter Vereinbarung (PDF, Medien-Prüfung mit Magic Bytes aus `lib/medien/typ.ts`, ohne sharp
+ *   nach ADR 0042 Nr. 10; neue Datei braucht zusätzlich `medium.hochladen`), Modul B1 (Training) und B2 (Klonen) getrennt.
  * - **Aufnahme:** wie die Rezitations-Werkstatt (Aufnahme im Browser oder Datei, Format nur über Magic Bytes, Ablage unter
  *   dem Inhalts-Hash), aber klein genug für den direkten Weg über die Action (≤ 5 MB). Nur für vertonbare Einträge: Sprachkurs,
  *   ohne Religionsbezug, nicht gesperrt. Eine neue Aufnahme derselben Person ersetzt die alte. Die Audio-Kette (L3-05)
@@ -40,13 +40,14 @@ export async function sprecherAnlegen(_vorher: LernappZustand, fd: FormData): Pr
     let mediumId: string;
     if (datei instanceof File && datei.size > 0) {
       if (!darf(a.rollen, 'medium.hochladen')) return { fehler: 'keinRecht', werte };
+      // Nur PDF, unverändert (Magic Bytes, Größe, Hash) – ohne Bildpipeline: sharp/libvips nie in Lern-App-Funktionen
       let v;
       try {
-        v = await verarbeiteDatei(Buffer.from(await datei.arrayBuffer()), datei.name);
+        v = verarbeitePdf(Buffer.from(await datei.arrayBuffer()), datei.name);
       } catch (e) {
         return { fehler: 'pruefen', feldFehler: { datei: e instanceof MedienFehler ? `datei_${e.grund}` : 'datei_defekt' }, werte };
       }
-      if (v.typ !== 'application/pdf') return { fehler: 'pruefen', feldFehler: { datei: 'keinPdf' }, werte };
+      if (!v) return { fehler: 'pruefen', feldFehler: { datei: 'keinPdf' }, werte };
       const [vorhanden] = await db
         .select({ id: m.id, papierkorb: m.imPapierkorbSeit })
         .from(m)

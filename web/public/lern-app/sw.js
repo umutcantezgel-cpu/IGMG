@@ -12,7 +12,10 @@
  * - `igmg-lernapp-modelle`: Whisper und ORT `/lern-app/modelle/…`, Vorrat zuerst (ADR 0042); als Originalantwort samt
  *   Kopfzeilen (COEP). Den Worker der Sprechübung (`…/modelle/sprechen/…?v=<bau>`) gibt es je Bau neu: Beim Vorhalten
  *   fallen ältere Fassungen derselben Datei weg. Die Lizenztexte neben den Gewichten (`…/LIZENZ-*.txt`, ADR 0042
- *   Fortschreibung Nr. 11) gehören nicht zum Vorrat; sie gehen ans Netz.
+ *   Fortschreibung Nr. 11) gehören nicht zum Vorrat; sie gehen ans Netz (Volltext auf der Seite „Quellen“).
+ *   Die Drittlizenzen von ONNX Runtime (`/lern-app/lizenzen/…?v=<fassung>`, Z-L17) legt der Download der Sprachprüfung
+ *   selbst in diesen Vorrat (`fuelleVorrat`, er räumt dabei ältere Fassungen weg); der Worker liefert sie von dort – Abgleich
+ *   samt Suchteil, eine alte Fassung nie für eine neue Adresse –, sonst aus dem Netz (ohne sie vorzuhalten).
  * Seiten: Netz zuerst, gelungene Antworten in die Hülle – unter dem Pfad ohne Suchteil (`ignoreSearch`, z. B.
  * `…/ueben?l=…`); ohne Netz die vorgehaltene Seite, sonst der Start der Oberflächensprache.
  * Nie vorgehalten: /api/**, /lern-app/<ui>/anmelden, RSC-Abrufe, alles außer GET, fremde Ursprünge.
@@ -229,6 +232,11 @@ self.addEventListener('fetch', (e) => {
   }
   if (pfad.startsWith('/lern-app/modelle/')) {
     if (!/\/LIZENZ-[^/]+\.txt$/.test(pfad)) e.respondWith(vorratZuerst(anfrage, MODELLE));
+    return;
+  }
+  if (pfad.startsWith('/lern-app/lizenzen/')) {
+    // ohne `ignoreSearch`: Die Fassung (`?v=`) gehört zum Schlüssel
+    e.respondWith(caches.match(anfrage, { cacheName: MODELLE }).then((vorrat) => vorrat || fetch(anfrage)));
     return;
   }
   if (anfrage.mode === 'navigate' && istSeitePfad(pfad)) {

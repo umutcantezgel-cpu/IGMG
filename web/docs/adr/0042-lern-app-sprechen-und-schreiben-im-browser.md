@@ -33,6 +33,7 @@
    - Die Website behält ihre Header unverändert.
 10. **Abhängigkeiten:**
     - transformers.js nur im Browser bzw. Worker; `sharp` und `onnxruntime-node` gelangen nie in Client-Bündel oder Funktionen (Regeltest `tests/unit/lernapp/bundle-regeln.test.ts`).
+      Fortschreibung (Stufe C, Z-L19, 26.10.2026): Gemeint sind die Funktionen der Lern-App, das heißt jedes Modul unter `src`, dessen Pfad einen Abschnitt `lernapp*` oder `lern-app*` hat – u. a. `app/lern-app`, die API `app/api/lernapp/**` (sync, sitzung, schreiben, gruppe, meldung), Verwaltung › Lern-App, Mein Bereich › Unterricht › Lern-App, `components/lernapp`, `components/verwaltung/lernapp`, `lib/lernapp`, `server/queries/lernapp`, `server/actions/lernapp*`; ausgenommen nur `*.worker.ts` (Browser). Der Regeltest „Kein sharp/libvips (LGPL-3.0) und kein onnxruntime-node in Funktionen der Lern-App“ folgt ihrem ganzen Modulgraphen (statische Importe, `import()`, `require()`) samt `dependencies` und `optionalDependencies` der Pakete. Die PDF-Prüfung des Audio-Studios nutzt `lib/medien/typ.ts` ohne sharp. Die Bildpipeline der Website (`lib/medien/verarbeiten.ts`, Medien und Rezitation) bleibt durch M-060 und ADR 0001 („Lizenz-Ausnahmen“) gedeckt. Der Modulgraph belegt nicht die Bau-Ausgabe: Ob Vercel eine Lern-App-Route mit einer Website-Route (sharp) in einer Funktion bündelt, zeigt nur die Dateiliste je Funktion (`.vercel/output/functions/**` eines `vercel build` bzw. des Deployments), nicht die `.nft.json` allein.
     - Versionen nach Mindestreife (L0-E10): transformers.js 4.3.0, ab 20.10.2026 4.3.1, exakt gepinnt. Der Entwicklungs-Build von onnxruntime-web, den transformers.js mitbringt, wird im Lockfile festgehalten.
     - Lizenzverzeichnis: MIT (OpenAI) **und** Apache-2.0 für Whisper, Apache-2.0 für transformers.js, MIT und `ThirdPartyNotices.txt` für onnxruntime-web (aus dem Repository, das npm-Paket enthält sie nicht), Quellenangabe für Eigen (MPL-2.0).
 11. **Schreiben (B1–C1):**
@@ -71,7 +72,7 @@ Gilt vor Nr. 1–12, wo es abweicht. Gemessen auf 4 vCPU (Xeon, 2,1 GHz) im head
 
 Gilt vor Nr. 1–12 und den Abschnitten oben, wo es abweicht.
 
-11. **Nr. 3 und 10, Lizenztexte an der Auslieferung:** Neben den Gewichten liegen `LIZENZ-whisper-MIT.txt` (OpenAI) und `LIZENZ-Apache-2.0.txt` (ONNX-Fassung von Xenova, transformers.js), gleich den gepinnten Fassungen in `web/daten/lernapp-modelle/` (SHA-256 in `QUELLE.md`). Unter `/lern-app/modelle/` liegen damit **12 Dateien**: die 10 der Sprechübung (Fortschreibung Nr. 5) und die 2 Lizenztexte; diese gehören nicht zum Download, nicht zum Vorrat `igmg-lernapp-modelle` (der Lern-App-SW lässt sie ans Netz) und nicht zur angezeigten Größe. Der Bauschritt `scripts/lernapp-modelle.mjs` prüft sie und gibt dem Worker einen Lizenzkopf (transformers.js Apache-2.0, onnxruntime-web MIT, Verweis auf den Lizenztext). Die Seite „Quellen“ der Lern-App nennt transformers.js und ONNX Runtime Web bei den Programmbibliotheken sowie Whisper (OpenAI, MIT) und die ONNX-Fassung (Xenova, Apache-2.0) unter „Spracherkennung“, jeweils mit Lizenztext. Die Drittlizenzen von onnxruntime-web (`ThirdPartyNotices.txt`) folgen in L8 (Nr. 10).
+11. **Nr. 3 und 10, Lizenztexte an der Auslieferung:** Neben den Gewichten liegen `LIZENZ-whisper-MIT.txt` (OpenAI) und `LIZENZ-Apache-2.0.txt` (ONNX-Fassung von Xenova, transformers.js), gleich den gepinnten Fassungen in `web/daten/lernapp-modelle/` (SHA-256 in `QUELLE.md`). Unter `/lern-app/modelle/` liegen damit **12 Dateien**: die 10 der Sprechübung (Fortschreibung Nr. 5) und die 2 Lizenztexte; diese gehören nicht zum Download, nicht zum Vorrat `igmg-lernapp-modelle` (der Lern-App-SW lässt sie ans Netz) und nicht zur angezeigten Größe. Der Bauschritt `scripts/lernapp-modelle.mjs` prüft sie und gibt dem Worker einen Lizenzkopf (transformers.js Apache-2.0, onnxruntime-web MIT, Verweis auf den Lizenztext). Die Seite „Quellen“ der Lern-App nennt transformers.js und ONNX Runtime Web bei den Programmbibliotheken sowie Whisper (OpenAI, MIT) und die ONNX-Fassung (Xenova, Apache-2.0) unter „Spracherkennung“, jeweils mit Lizenztext. Die Drittlizenzen von onnxruntime-web (`ThirdPartyNotices.txt`) folgen in L8 (Nr. 10; umgesetzt in Stufe C, Nr. 25).
 12. **Fortschreibung Nr. 4 und 6, Vorrat:** Ausgeliefert ist die offline belegte Variante aus Nr. 6: `env.useBrowserCache = true` mit `env.cacheKey = 'igmg-lernapp-modelle'` und `wasmBinary` aus diesem Vorrat. `useBrowserCache = false` aus Nr. 4 gilt erst, wenn L5 es per E2E ohne Netz belegt.
 13. **Nr. 4, Laden nur auf Wunsch, auch beim zweiten Mal:** Die Übung startet den Worker ohne Knopf nur, wenn der lokal gemerkte Stand „geladen“ ist **und** Encoder, Decoder und ORT-`.wasm` im Vorrat liegen. Hat der Browser den Vorrat geräumt (Speicherdruck; `localStorage` bleibt erhalten), erscheint wieder das Angebot mit Größe; es gibt kein stilles Nachladen. Der Pegel der Aufnahme (B-35) setzt den Balken direkt am Element, ohne die Übung je Animationsbild neu zu rendern; „Ich kann gerade nicht sprechen“ überspringt auch die übrigen Sprechübungen der Lektion (wie beim Hören).
 
@@ -154,6 +155,25 @@ Gilt vor Nr. 1–12 und den Abschnitten oben, wo es abweicht.
     Elternkonto gelöscht (`loescheGemeindeKonto`), endet in derselben Transaktion die Einwilligung `lernapp`, die dieses
     Elternteil für das Kind gegeben hat (`beendeLernappDerEltern`); danach gehen Schreibabgaben und Lernstand des Kindes, die
     nur sie deckte (Anlass „bezug“). Deckt die Einwilligung des anderen Elternteils sie, bleiben sie.
+
+## Fortschreibung Stufe C (26.10.2026, Z-L17)
+
+Gilt vor Nr. 4, Fortschreibung Nr. 6 und 11, wo es abweicht.
+
+25. **Drittlizenzen von onnxruntime-web offline:** `ThirdPartyNotices.txt` (gepinnt, Herkunft und SHA-256 in
+    `web/daten/lernapp-lizenzen/QUELLE.md`) liegt statisch unter `/lern-app/lizenzen/onnxruntime-ThirdPartyNotices.txt`,
+    nicht unter `/lern-app/modelle/` (dort bleiben es 12 Dateien). Sie gehört zum Download der Sprachprüfung: **11
+    Download-Dateien** (`DOWNLOAD_PFADE`), `GESAMT_BYTES` samt 338 088 Byte (weiter ≈ 95 MB). `fuelleVorrat` legt sie neben
+    die ORT-`.wasm` in den Vorrat `igmg-lernapp-modelle`; sie ist kein Pflichtteil (`VORRAT_PFLICHT`): Ein Fehler bei ihr
+    bricht den Download nicht ab, der nächste Start holt sie nach. Der Lern-App-SW liefert `/lern-app/lizenzen/…` aus diesem
+    Vorrat, sonst aus dem Netz, ohne sie selbst vorzuhalten.
+    - **Fassung in der Adresse:** Link auf den Seiten „Quellen“ (Lern-App und Website) und Schlüssel im Vorrat ist
+      `…/onnxruntime-ThirdPartyNotices.txt?v=<SHA-256, 12 Zeichen>` (`ORT_HINWEISE.adresse`). Der SW gleicht samt Suchteil ab
+      (kein `ignoreSearch`) und gibt eine alte Kopie nie für eine neue Adresse aus; `fuelleVorrat` holt beim nächsten Start
+      mit Netz die neue Fassung und nimmt ältere derselben Datei (anderer oder kein Suchteil) aus dem Vorrat. So bleibt nach
+      einem Wechsel von onnxruntime-web kein veralteter Text unter einem neuen Stand stehen.
+    - Belegt durch Units (`sprechen-einmal-laden`, `lernapp-sw`, `quellen`); ein E2E ohne Netz nach geladener Sprachprüfung
+      steht aus.
 
 ## Alternativen
 
