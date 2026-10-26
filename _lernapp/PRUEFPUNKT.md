@@ -1,5 +1,19 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 11:50 UTC – volles Tor fertig, N8 baut und misst:**
+  - **Volles Tor** (Stand e06a648b): alles grün bis auf 9 rote E2E von 1.222. Zusammenfassung in `scratchpad/tor-final/zusammenfassung.md`.
+    - Unit 3.656 und Integration 3.878 grün; Sprachen, Religion, Wortlaut und lernapp:pruefen rc=0 (0 blockierend).
+    - Import-Bau 609 s (2.438 Seiten, 0×5xx, Pakete 334/334 mit gleichem Hash); Vorschau-Bau 647 s (2.779 Seiten); Budgets eingehalten.
+    - E2E: 1.086 grün, 9 rot, 127 übersprungen.
+      - 7 rote = Zeitgrenze 30 s auf Cüz-Seiten (≈ 6.700 Elemente, axe). Behoben in f56f74bd (`test.slow`, Prüfung unverändert); danach 12/12 grün.
+      - 1 rot = `gruppe.spec:155` desktop unter Last; einzeln grün.
+    - Aufrufe mit `--project desktop <dateien>` scheitern unter Playwright 1.64 (variadisch) → `--project=desktop`.
+  - **N8** `wf_9dc01dcc-4d5` hält jetzt das Bau-Schloss: Messbau vorher/nachher, Lighthouse, INP, E2E → Gegenprüfung.
+  - **Danach:**
+    1. Ab 12:10 (neues Fenster) `scratchpad/lernapp-stufe-c-schluss.workflow.js`: Belege E2E (Z-L04, Z-L06, Z-L08) → Gegenprüfung → frischer Endprüfer.
+    2. N8 mergen.
+    3. ABNAHME, BERICHT, ABSCHLUSS.
+
 - **Stand 26.10.2026 08:30 UTC – N1–N7 gemergt (e06a648b auf `main`); volles Tor und N8 laufen:**
   - **Gemergt:**
     - N7 25ce3abf: Prüfer `uebersetzung` und `paketbau`; 25 Aufgaben berichtigt; Mengenbericht A1–B1; Einstufung ohne Vorkurs.
