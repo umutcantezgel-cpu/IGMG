@@ -68,6 +68,12 @@ das Szenario „Lernpfad öffnen + offline speichern“ insgesamt einmal 208 ms 
 N8.7 Nr. 1) und einmal 160 ms. Die Spieler-Szenarien (ohne Codeänderung) streuen zwischen den Durchgängen um ± 30 ms um die
 Grenze; Z-L07 bleibt wegen Lighthouse-Leistung (N8.3) und dieser Streuung **teilweise**.
 
+**Nachtrag N9a (Fortsetzung 2, Bau `e6409f71`, 26.10.2026 17:52 UTC):** Nach dem Merge von `1482184c` („Sprachen lernen“ im
+Website-Kopf) und der Nachbesserung im Lern-App-Worker (überholter Worker schreibt und löscht nichts, `e6409f71`) dieselben
+Budgets wie Messbau C: Lernpfad 160,3 / 25,0 KB, Spieler +54,5 KB, ungünstigste echte erste Aufgabe +58,4 KB, Start 149,5 KB,
+Hülle 9,7 KB – alle eingehalten. INP nicht neu gemessen: Geändert sind nur der Service Worker (eigener Thread, kein Code im
+Hauptthread des Lernpfads) und Tests.
+
 ## Stufe C, 26.10.2026, Leistung mit echten Inhalten (N8)
 
 | | |
