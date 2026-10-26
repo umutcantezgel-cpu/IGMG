@@ -199,7 +199,7 @@ for (const ui of UIS) {
 }
 
 type VorkursAufgabe = { typ: string; anweisung?: string; hoeren?: unknown; vorgabe?: unknown; optionen?: string[]; richtig?: number };
-/** Vorkurs Deutsch für Arabischsprachige (`de.a1.e00-ar`): l01 Buchstaben mit Vorgabe, dann nur mit Hörbeispiel; l02 groß/klein. */
+/** Vorkurs Deutsch für Arabischsprachige (`de.a1.e00-ar`): l01 Buchstaben mit Vorgabe, l02 groß/klein. */
 const VORKURS = (
   JSON.parse(readFileSync(join(__dirname, '../../../inhalte/lernapp/sprache/de/a1/de.a1.e00-ar.json'), 'utf8')) as {
     lektionen: { aufgaben: VorkursAufgabe[] }[];
@@ -207,12 +207,13 @@ const VORKURS = (
 ).lektionen;
 
 /**
- * `schrift_latein` auf beiden Breiten in seinen Darstellungen: Buchstabe mit Vorgabe (vor der Antwort, nach einer falschen und
- * nach einer richtigen Antwort), nur mit Hörbeispiel (Abspieler wie bei den Hörtypen; ohne Bündel mit „Audio folgt“) und
- * groß/klein. „Welches Wort“ (`waehleWort`, l02 ab Aufgabe 16) hat denselben Aufbau wie groß/klein – Vorgabe und Antwortgruppe,
- * nur eine andere Anweisung. Gewählt wird nach dem Inhalt (richtige Option bzw. absichtlich die nächste).
+ * `schrift_latein` auf beiden Breiten: Buchstabe mit Vorgabe (vor der Antwort, nach einer falschen und nach einer richtigen
+ * Antwort) und groß/klein. „Welches Wort“ (`waehleWort`, l02 ab Aufgabe 16) hat denselben Aufbau wie groß/klein – Vorgabe und
+ * Antwortgruppe, nur eine andere Anweisung. Aufgaben nur mit Hörbeispiel baut der Paketbau ohne Aufnahme nicht ein
+ * (`paket/bauen.ts`), und die E2E-Datenbank hat kein Vorkurs-Audio; ihr Abspieler ist derselbe wie bei den Hörtypen und dort
+ * mit axe geprüft (typen-a). Gewählt wird nach dem Inhalt (richtige Option bzw. absichtlich die nächste).
  */
-test('ar Vorkurs de-aus-ar: schrift_latein mit Vorgabe (vor, falsch, richtig), nur mit Hörbeispiel, groß/klein', async ({ page }, info) => {
+test('ar Vorkurs de-aus-ar: schrift_latein mit Vorgabe (vor, falsch, richtig) und groß/klein', async ({ page }, info) => {
   test.setTimeout(150_000);
   const t = ar as unknown as typeof de;
   const { befunde, pruefe } = pruefer(page, 'ar', info.project.name === 'telefon' ? 390 : 1440);
@@ -243,24 +244,12 @@ test('ar Vorkurs de-aus-ar: schrift_latein mit Vorgabe (vor, falsch, richtig), n
   const [l01, l02] = VORKURS as [{ aufgaben: VorkursAufgabe[] }, { aufgaben: VorkursAufgabe[] }];
   await page.goto('/lern-app/ar/de-aus-ar/ueben?l=de-aus-ar.a1.e00-ar.l01');
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-  // l01: Tipp, fünf Buchstaben mit Vorgabe (der erste falsch beantwortet – er kommt erst am Ende wieder), Tipp, dann nur Hören
+  // l01: Tipp, dann Buchstaben mit Vorgabe (der erste falsch beantwortet – er kommt erst am Ende wieder)
   const a = l01.aufgaben;
-  expect(a.slice(1, 6).every((x) => x.typ === 'schrift_latein' && x.vorgabe && x.anweisung === 'waehleBuchstabe')).toBe(true);
-  expect(a[7]).toMatchObject({ typ: 'schrift_latein', anweisung: 'waehleBuchstabe' });
-  expect(a[7]!.hoeren && !a[7]!.vorgabe).toBeTruthy();
+  expect(a.slice(1, 3).every((x) => x.typ === 'schrift_latein' && x.vorgabe && x.anweisung === 'waehleBuchstabe')).toBe(true);
   await spiele(a[0]!);
   await spiele(a[1]!, 'schrift_latein Buchstabe mit Vorgabe', { falsch: true });
   await spiele(a[2]!, 'schrift_latein Buchstabe mit Vorgabe');
-  for (const x of a.slice(3, 7)) await spiele(x);
-  await expect(form).toHaveAttribute('data-aufgabe', 'schrift_latein');
-  const hoeren = t.aufgaben.hoeren;
-  await expect(
-    form
-      .getByRole('button', { name: hoeren.anhoeren, exact: true })
-      .or(form.getByRole('button', { name: hoeren.ueberspringen, exact: true }))
-      .first(),
-  ).toBeVisible({ timeout: 20_000 });
-  await pruefe('schrift_latein nur mit Hörbeispiel vor der Antwort');
 
   // l02: Tipp, dann groß/klein
   await page.goto('/lern-app/ar/de-aus-ar/ueben?l=de-aus-ar.a1.e00-ar.l02');
