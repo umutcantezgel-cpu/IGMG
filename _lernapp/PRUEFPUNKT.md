@@ -1,5 +1,41 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 16:40 UTC – Taktpause bis 17:10, N9 vorbereitet:**
+  - N9a um 16:04 bei Auslastung 0,90 nach einem sauberen Commit angehalten (aca518b0: INP Lernpfad, `leistung.md` N9a, ADR 0039 Nr. 4).
+  - Der Orchestrator hat in der Pause Bau und alle Lern-App-E2E von N9a gefahren:
+    - Ergebnis: 109 grün, 5 rot, 34 übersprungen.
+    - Rot ist nur `offline.spec`: Ablage `kurse` statt `schale`, alte Hülle bleibt nach dem Bauwechsel, „geschafft“ fehlt nach der Offline-Lektion.
+    - Auszug: `scratchpad/tmp-n9a/e2e-voll-rot.txt`.
+  - Fortsetzung N9a und N9b ab 17:12 mit `scratchpad/n9-fortsetzung-1712.json`.
+  - `main` = dieser Stand (N1–N8). N9 ist noch nicht gemergt.
+
+- **Stand 26.10.2026 15:12 UTC – Taktregel-Halt, N9a läuft allein, N9b nach dem Reset:**
+  - **Halt:** Auslastung 0,74 um 15:08, Taktlinie 0,53 (Vorlauf > 0,15). Mit 2 Agenten wäre das Fenster ≈ 16:10 leer gewesen. Deshalb N9 `wf_22fb5e57-675` gestoppt.
+    - N9a war gerade sauber committet.
+    - N9b: ZWISCHENSTAND 827235f5 (whisper-netz.mjs); Server 3322 beendet, `.next` in `l3-05` gelöscht.
+  - **N9a** (`l8`, `lernapp-n9a`) läuft als Fortsetzung `wf_1d1ca705-1a3`. Committet sind:
+    - 432d199f: Wissenskurs nur mit Prüfvermerk, fehlende Lektion ohne Neuladen;
+    - acc972ee: Stufe offline speichern, ehrlicher Stand nach Bauwechsel;
+    - 9e8c1701: E2E Stufe, Abbrechen, Bauwechsel G-1, Root-SW;
+    - 7a987cfe, 6aafb2e9: Feinheiten, ADR 0039.
+    - Offen: Bau, alle Lern-App-E2E, INP, Gegenprüfung.
+  - **N9b** (`l3-05`, `lernapp-n9b`) pausiert. Committet sind:
+    - db0deac4: format.ts minifiziert, inp-Werkzeug;
+    - 2753f5a0: 15-s-Ansage;
+    - 101c23c8: axe-Matrix, axe je Typ beide Breiten;
+    - 733a6db4: echte Tastaturwege;
+    - a135d9d6: Netzprotokoll erweitert;
+    - 827235f5: ZWISCHENSTAND.
+    - Fortsetzung per send_later um 17:12.
+
+- **Stand 26.10.2026 14:05 UTC – N8 gemergt (2d6c1adc auf `main`), N9 läuft:**
+  - **N8:** Gegenprüfung frei (nur niedrig). Unit 3.684, `typen`, Religion und Sprachen auf dem Merge-Stand grün.
+    - Endstand: Lighthouse 80–89 (vorher 74–88); INP Spieler 176/176/200 ms; „offline speichern“ 216 ms (vorher 480); Budgets eingehalten. Z-L07 bleibt teilweise (`leistung.md` N8).
+    - Der ursprüngliche Workflow `wf_9dc01dcc-4d5` startete den am Limit abgebrochenen Agenten selbst neu; parallel lief meine Fortsetzung per SendMessage → zwei Schreiber. **Lehre: einen am Limit abgebrochenen Workflow-Agenten nicht zusätzlich per SendMessage fortsetzen.**
+  - **N9** `wf_22fb5e57-675` (2 Plätze): N9a Offline in `l8` (Branch `lernapp-n9a`), N9b Zugänglichkeit/Datenfluss in `l3-05` (Branch `lernapp-n9b`). Niedrige Befunde der N8-Gegenprüfung sind eingearbeitet.
+  - **Auslastung** 0,46 um 14:03 (Taktlinie 0,34). Das restliche Fenster trägt 2 Agenten bis zum Reset um 17:10. Taktkontrolle um 16:35 (send_later).
+  - **Danach:** N9 mergen → frischer Endprüfer mit Vollständigkeitskritik (`lernapp-stufe-c-schluss.workflow.js`, Belege/Gegen aus `wf_5370d2fe-641`, Hinweis auf N9) → ABNAHME, BERICHT, ABSCHLUSS.
+
 - **Stand 26.10.2026 12:55 UTC – Belege E2E fertig (e1887076), N8 misst Bau C, N9 vorbereitet:**
   - **Belege E2E** mit zwei Gegenprüfungen (Logs/Specs und Code/live): Z-L04 teilweise, Z-L06 teilweise, Z-L08 erfüllt (eine Gegenprüfung: teilweise).
     - G-1 (Fehler): Nach jeder Bereitstellung löscht der neue Lern-App-Worker die vorgehaltenen Kursseiten gespeicherter Einheiten; die Oberfläche zeigt weiter „offline gespeichert“.
