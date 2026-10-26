@@ -1,4 +1,4 @@
-import { createHash } from 'node:crypto';
+import { hash } from 'node:crypto';
 import { kanonisch } from '../ereignisse/zusammenfuehren';
 
 /**
@@ -27,9 +27,12 @@ function pruefeEndlich(wert: unknown, pfad: string): void {
     for (const [k, v] of Object.entries(wert as Record<string, unknown>)) pruefeEndlich(v, `${pfad}.${k}`);
 }
 
-/** SHA-256 (hex) von Text (UTF-8) oder Bytes. */
+/**
+ * SHA-256 (hex) von Text (UTF-8) oder Bytes. Einmal-Aufruf `crypto.hash` (Node ≥ 20.12) statt `createHash().update().digest()`:
+ * gleiches Ergebnis ohne Hash-Objekt je Aufruf – der Paketbau braucht viele kleine Hashes (Stufe C N6).
+ */
 export function sha256Hex(daten: string | Uint8Array): string {
-  return createHash('sha256').update(daten).digest('hex');
+  return hash('sha256', daten, 'hex');
 }
 
 /** Kanonisches JSON mit Prüfung auf endliche Zahlen (NaN und Infinity wären in JSON `null`). */

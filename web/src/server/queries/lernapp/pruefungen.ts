@@ -1,8 +1,7 @@
 import 'server-only';
-import { inArray } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import type { Pruefung } from '@/lib/lernapp/freigabe';
-import { inBloecken } from './bloecke';
+import { inBloecken, inListe } from './bloecke';
 
 /**
  * Prüfungen der Lern-App-Bausteine aus `lernapp_pruefung`, ergänzt um die aktuellen Rollen der Prüfenden (`freigabe.ts` zählt
@@ -31,7 +30,7 @@ export async function ladePruefungen(ids: readonly { typ: InhaltTyp; id: string 
           am: schema.lernappPruefung.am,
         })
         .from(schema.lernappPruefung)
-        .where(inArray(schema.lernappPruefung.inhaltId, block)),
+        .where(inListe(schema.lernappPruefung.inhaltId, block)),
   );
   if (!zeilen.length) return ergebnis;
   const personen = zeilen.flatMap((z) => (z.pruefendeId ? [z.pruefendeId] : []));
@@ -40,7 +39,7 @@ export async function ladePruefungen(ids: readonly { typ: InhaltTyp; id: string 
     db
       .select({ benutzerId: schema.rolleZuweisung.benutzerId, rolle: schema.rolleZuweisung.rolle })
       .from(schema.rolleZuweisung)
-      .where(inArray(schema.rolleZuweisung.benutzerId, block)),
+      .where(inListe(schema.rolleZuweisung.benutzerId, block)),
   ))
     rollen.set(r.benutzerId, [...(rollen.get(r.benutzerId) ?? []), r.rolle]);
   for (const z of zeilen) {

@@ -1,6 +1,6 @@
 import { zerlege } from '../abgleich/tokens';
 import { AufgabeSchema, type Aufgabe, type Inhalt, type Lektion } from '../aufgaben/schema';
-import { formelTreffer, type LateinFormel, texteIn } from '../formelkandidat';
+import { formelTreffer, type LateinFormel } from '../formelkandidat';
 import { LATEIN_FORMELN } from '../formelliste';
 import { sprachSichtbarkeit, type Pruefung, type Sichtbarkeit, type Status } from '../freigabe';
 import { AufgabeVorlageSchema, type AufgabeVorlage } from '../inhalt/schema';
@@ -73,7 +73,13 @@ export type BauUebersetzung = Baustein & {
   namensnennung: string | null;
 };
 
-export type BauAufgabe = Baustein & { schluessel: string; typ: string; daten: unknown };
+export type BauAufgabe = Baustein & {
+  schluessel: string;
+  typ: string;
+  daten: unknown;
+  /** schon geprüfte Vorlage aus `daten`, `schluessel` und `typ` (Laden, `pakete.ts`; Stufe C N6); fehlt sie, prüft der Bau selbst */
+  vorlage?: AufgabeVorlage;
+};
 export type BauLektion = Baustein & {
   schluessel: string;
   art: Lektion['art'];
@@ -143,13 +149,16 @@ export function lektionAusPaket(schluesselImPaket: string): { richtung: string; 
   return { richtung: m[1] ?? '', schluessel: `${m[2]}${m[4]}` };
 }
 
-/** Deterministische Auswahl ohne Zufall: nach SHA-256 aus Saat und Wert sortiert. */
-function stabilSortiert(werte: readonly string[], saat: string): string[] {
-  return [...werte].sort((a, b) => {
-    const ha = sha256Hex(`${saat}|${a}`);
-    const hb = sha256Hex(`${saat}|${b}`);
-    return ha < hb ? -1 : ha > hb ? 1 : 0;
-  });
+/**
+ * Deterministische Auswahl ohne Zufall: nach SHA-256 aus Saat und Wert sortiert. Der Hash entsteht je Wert einmal (vorher
+ * zweimal je Vergleich, ≈ 2·n·log n Hashes je Wortbank-Aufgabe; Stufe C N6) – gleiche Reihenfolge, denn der Vergleich ist
+ * derselbe.
+ */
+export function stabilSortiert(werte: readonly string[], saat: string): string[] {
+  return werte
+    .map((wert) => ({ wert, h: sha256Hex(`${saat}|${wert}`) }))
+    .sort((a, b) => (a.h < b.h ? -1 : a.h > b.h ? 1 : 0))
+    .map((x) => x.wert);
 }
 
 const vergleichsform = (s: string) => s.normalize('NFC').toLocaleLowerCase();
@@ -201,6 +210,10 @@ class Werkbank {
   readonly buendel = new Map<string, number>();
   readonly lexikon = new Set<string>();
   readonly warnungen: string[] = [];
+  /** Gemerktes je Einheit (Stufe C N6): Sichtbarkeit je Baustein, Text-Hash je Zieltext, Wörter der Übersetzungen. */
+  private readonly sichten = new Map<Baustein, Sichtbarkeit>();
+  private readonly textHashes = new Map<string, string>();
+  private uebersetzungsWoerter?: { bezug: string; woerter: { wort: string; form: string }[] }[];
 
   constructor(
     readonly e: BauEingabe,
@@ -211,9 +224,44 @@ class Werkbank {
     this.ausgang = r.ausgang;
   }
 
+  /** Sichtbarkeit eines Bausteins (rein; je Baustein einmal berechnet). */
+  sicht(b: Baustein): Sichtbarkeit {
+    let s = this.sichten.get(b);
+    if (s === undefined) {
+      s = sicht(b, this.o);
+      this.sichten.set(b, s);
+    }
+    return s;
+  }
+
+  private textHash(text: string): string {
+    let h = this.textHashes.get(text);
+    if (h === undefined) {
+      h = textHash(text);
+      this.textHashes.set(text, h);
+    }
+    return h;
+  }
+
+  /**
+   * Wörter der sichtbaren Übersetzungen der Einheit, deren Zieleintrag auch sichtbar ist (Ablenker der Wortbank in die
+   * Ausgangssprache), mit Vergleichsform; je Einheit einmal statt je Aufgabe.
+   */
+  woerterSichtbarerUebersetzungen(): { bezug: string; woerter: { wort: string; form: string }[] }[] {
+    if (!this.uebersetzungsWoerter) {
+      this.uebersetzungsWoerter = [];
+      for (const [bezug, u] of this.e.uebersetzungen) {
+        const ziel = this.e.eintraege.get(bezug);
+        if (!ziel || this.sicht(ziel) === 'verborgen' || this.sicht(u) === 'verborgen') continue;
+        this.uebersetzungsWoerter.push({ bezug, woerter: zerlege(u.text).map((wort) => ({ wort, form: vergleichsform(wort) })) });
+      }
+    }
+    return this.uebersetzungsWoerter;
+  }
+
   /** Sichtbarkeit merken (Hinweis „noch nicht von Muttersprachlern geprüft“). */
   sichtbar(b: Baustein, name: string): boolean {
-    const s = sicht(b, this.o);
+    const s = this.sicht(b);
     if (s === 'mit_hinweis') this.hinweise.add(name);
     return s !== 'verborgen';
   }
@@ -222,10 +270,10 @@ class Werkbank {
   zielInhalt(schluessel: string): Inhalt | null {
     const e = this.e.eintraege.get(schluessel);
     if (!e) return null;
-    const s = sicht(e, this.o);
+    const s = this.sicht(e);
     if (s === 'verborgen') return null;
     // Audio nie für Religionsbezug (ADR 0039 Nr. 7)
-    const clip = e.religionsbezug ? undefined : this.e.audio.get(textHash(e.text));
+    const clip = e.religionsbezug ? undefined : this.e.audio.get(this.textHash(e.text));
     if (!this.herkunft.has(schluessel)) {
       this.herkunft.set(schluessel, {
         text: e.text,
@@ -251,7 +299,7 @@ class Werkbank {
   uebersetzung(schluessel: string): BauUebersetzung | null {
     const u = this.e.uebersetzungen.get(schluessel);
     if (!u) return null;
-    const s = sicht(u, this.o);
+    const s = this.sicht(u);
     if (s === 'verborgen') return null;
     const k = `${schluessel}@${this.ausgang}`;
     if (!this.herkunft.has(k)) {
@@ -277,7 +325,7 @@ class Werkbank {
   beide(schluessel: string): { ziel: Inhalt; ausgang: Inhalt; u: BauUebersetzung } | null {
     const e = this.e.eintraege.get(schluessel);
     const u = this.e.uebersetzungen.get(schluessel);
-    if (!e || !u || sicht(e, this.o) === 'verborgen' || sicht(u, this.o) === 'verborgen') return null;
+    if (!e || !u || this.sicht(e) === 'verborgen' || this.sicht(u) === 'verborgen') return null;
     const ziel = this.zielInhalt(schluessel);
     const ausgang = this.ausgangInhalt(schluessel);
     return ziel && ausgang ? { ziel, ausgang, u } : null;
@@ -304,12 +352,16 @@ class Werkbank {
 
   /** Aufgabe des Spielers aus einer Vorlage (oder null). */
   aufgabe(a: BauAufgabe): Aufgabe | null {
-    const v = AufgabeVorlageSchema.safeParse({ ...(a.daten as object), schluessel: a.schluessel, typ: a.typ });
-    if (!v.success) {
-      this.warnungen.push(`${a.schluessel}: Vorlage ungültig`);
-      return null;
+    let vorlage = a.vorlage;
+    if (!vorlage) {
+      const v = AufgabeVorlageSchema.safeParse({ ...(a.daten as object), schluessel: a.schluessel, typ: a.typ });
+      if (!v.success) {
+        this.warnungen.push(`${a.schluessel}: Vorlage ungültig`);
+        return null;
+      }
+      vorlage = v.data;
     }
-    const roh = this.ausVorlage(v.data);
+    const roh = this.ausVorlage(vorlage);
     if (!roh) return null;
     const p = AufgabeSchema.safeParse(roh);
     if (!p.success) {
@@ -516,10 +568,9 @@ class Werkbank {
       // Ablenker aus anderen sichtbaren Übersetzungen der Einheit, deterministisch je Aufgabe – nur, wenn auch ihr Zieleintrag
       // sichtbar ist (sonst kämen Wörter eines verborgenen Eintrags, z. B. mit Religionsbezug ohne Freigaben, ins Paket)
       const kandidaten = new Set<string>();
-      for (const [bezug, u] of this.e.uebersetzungen) {
-        const ziel = this.e.eintraege.get(bezug);
-        if (bezug === v.satz || !ziel || sicht(ziel, this.o) === 'verborgen' || sicht(u, this.o) === 'verborgen') continue;
-        for (const w of zerlege(u.text)) if (!vorhanden.has(vergleichsform(w))) kandidaten.add(w);
+      for (const { bezug, woerter } of this.woerterSichtbarerUebersetzungen()) {
+        if (bezug === v.satz) continue;
+        for (const w of woerter) if (!vorhanden.has(w.form)) kandidaten.add(w.wort);
       }
       kacheln.push(...stabilSortiert([...kandidaten], v.schluessel).slice(0, 3));
       return {
@@ -721,6 +772,53 @@ export function tippAbschnitte(doc: { type: 'doc' } & Record<string, unknown>, z
 }
 
 /**
+ * Formel-Treffer gemerkt je Formelliste, Sprache und Text (Stufe C N6): Schlüssel, Ablenker und Texte wiederholen sich in
+ * allen Einheiten und bei jedem Neubau. Der Speicher ist begrenzt; ist er voll, beginnt er neu.
+ */
+const FORMEL_TREFFER = new WeakMap<readonly LateinFormel[], Map<Sprache, Map<string, boolean>>>();
+const FORMEL_TREFFER_HOECHSTENS = 200_000;
+
+function hatFormel(text: string, sprache: Sprache, formeln: readonly LateinFormel[]): boolean {
+  // nur lateinische Formeln (`formelTreffer` ist für ar immer null)
+  if (sprache !== 'de' && sprache !== 'tr') return false;
+  let jeSprache = FORMEL_TREFFER.get(formeln);
+  if (!jeSprache) {
+    jeSprache = new Map();
+    FORMEL_TREFFER.set(formeln, jeSprache);
+  }
+  let gemerkt = jeSprache.get(sprache);
+  if (!gemerkt) {
+    gemerkt = new Map();
+    jeSprache.set(sprache, gemerkt);
+  }
+  let treffer = gemerkt.get(text);
+  if (treffer === undefined) {
+    treffer = formelTreffer(text, sprache, formeln) !== null;
+    if (gemerkt.size >= FORMEL_TREFFER_HOECHSTENS) gemerkt.clear();
+    gemerkt.set(text, treffer);
+  }
+  return treffer;
+}
+
+/** Enthält eine Zeichenkette in `wert` (Text, Liste, Objekt; wie `texteIn`) eine Formel in einer der Sprachen? Ohne Zwischenlisten. */
+function formelIn(wert: unknown, sprachen: readonly Sprache[], formeln: readonly LateinFormel[]): boolean {
+  if (typeof wert === 'string') return sprachen.some((s) => hatFormel(wert, s, formeln));
+  if (Array.isArray(wert)) return wert.some((x) => formelIn(x, sprachen, formeln));
+  if (wert && typeof wert === 'object') return Object.values(wert).some((x) => formelIn(x, sprachen, formeln));
+  return false;
+}
+
+/** Bausteine einer Liste nach Schlüssel neu kennzeichnen; ohne Änderung bleibt es dieselbe Liste. */
+function jeEintrag<T>(m: ReadonlyMap<string, T>, f: (x: T) => T): ReadonlyMap<string, T> {
+  let neu: Map<string, T> | null = null;
+  for (const [k, x] of m) {
+    const y = f(x);
+    if (y !== x) (neu ??= new Map(m)).set(k, y);
+  }
+  return neu ?? m;
+}
+
+/**
  * Bausteine mit einem Formel-Kandidaten (siehe oben) als Religionsbezug kennzeichnen: Zieltexte in der Zielsprache,
  * Übersetzungen samt Alternativen in der Ausgangssprache, Aufgaben (alle Texte ihrer Daten, etwa Alternativen und
  * Ablenker), Tipps, Lektionsziele und das Thema der Einheit in beiden Sprachen der Richtung.
@@ -728,21 +826,19 @@ export function tippAbschnitte(doc: { type: 'doc' } & Record<string, unknown>, z
 function mitFormelKandidaten(e: BauEingabe, formeln: readonly LateinFormel[]): BauEingabe {
   if (!formeln.length) return e;
   const { ziel, ausgang } = zerlegeRichtung(e.richtung);
-  const trifft = (texte: readonly string[], sprachen: readonly Sprache[]) =>
-    texte.some((t) => sprachen.some((s) => formelTreffer(t, s, formeln) !== null));
-  const markiert = <T extends Baustein>(b: T, texte: readonly string[], sprachen: readonly Sprache[]): T =>
-    b.religionsbezug || !trifft(texte, sprachen) ? b : { ...b, religionsbezug: true };
+  const markiert = <T extends Baustein>(b: T, texte: unknown, sprachen: readonly Sprache[]): T =>
+    b.religionsbezug || !formelIn(texte, sprachen, formeln) ? b : { ...b, religionsbezug: true };
   const beide = [ziel, ausgang];
   return {
     ...e,
-    einheit: markiert(e.einheit, texteIn(e.einheit.thema), beide),
+    einheit: markiert(e.einheit, e.einheit.thema, beide),
     lektionen: e.lektionen.map((l) => ({
-      ...markiert(l, texteIn(l.ziel), beide),
-      aufgaben: l.aufgaben.map((a) => markiert(a, texteIn(a.daten), beide)),
+      ...markiert(l, l.ziel, beide),
+      aufgaben: l.aufgaben.map((a) => markiert(a, a.daten, beide)),
     })),
-    eintraege: new Map([...e.eintraege].map(([k, x]) => [k, markiert(x, [x.text], [ziel])])),
-    uebersetzungen: new Map([...e.uebersetzungen].map(([k, u]) => [k, markiert(u, [u.text, ...u.alternativen], [ausgang])])),
-    tipps: e.tipps.map((t) => markiert(t, texteIn(t.inhalt), beide)),
+    eintraege: jeEintrag(e.eintraege, (x) => markiert(x, x.text, [ziel])),
+    uebersetzungen: jeEintrag(e.uebersetzungen, (u) => markiert(u, [u.text, ...u.alternativen], [ausgang])),
+    tipps: e.tipps.map((t) => markiert(t, t.inhalt, beide)),
   };
 }
 

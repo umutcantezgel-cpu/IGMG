@@ -15,14 +15,22 @@ export const ereignisSchluessel = (e: Pick<Ereignis, 'geraet' | 'seq'>): string 
 export const vergleicheEreignisse = (a: Pick<Ereignis, 'am' | 'geraet' | 'seq'>, b: Pick<Ereignis, 'am' | 'geraet' | 'seq'>): number =>
   vergleicheBewertungen(a, b);
 
-/** JSON mit sortierten Schlüsseln (stabil für Vergleich und Hash). */
+/**
+ * JSON mit sortierten Schlüsseln (stabil für Vergleich und Hash). Schlüssel nach UTF-16-Codeeinheiten sortiert (Standard-
+ * Sortierung von Zeichenketten), `undefined` entfällt. Ohne Zwischenlisten je Objekt (Paketbau, Stufe C N6) – Ausgabe
+ * unverändert.
+ */
 export function kanonisch(wert: unknown): string {
   if (wert === null || typeof wert !== 'object') return JSON.stringify(wert) ?? 'null';
   if (Array.isArray(wert)) return `[${wert.map(kanonisch).join(',')}]`;
-  const eintraege = Object.entries(wert as Record<string, unknown>)
-    .filter(([, v]) => v !== undefined)
-    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));
-  return `{${eintraege.map(([k, v]) => `${JSON.stringify(k)}:${kanonisch(v)}`).join(',')}}`;
+  const objekt = wert as Record<string, unknown>;
+  let json = '{';
+  for (const k of Object.keys(objekt).sort()) {
+    const v = objekt[k];
+    if (v === undefined) continue;
+    json += `${json.length > 1 ? ',' : ''}${JSON.stringify(k)}:${kanonisch(v)}`;
+  }
+  return `${json}}`;
 }
 
 /** Vereinigung beliebig vieler Listen; Ergebnis ohne Doppelte, sortiert nach `vergleicheEreignisse`. */
