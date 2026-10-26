@@ -1,4 +1,5 @@
 import 'server-only';
+import { type AnyColumn, type SQL, sql } from 'drizzle-orm';
 import { textHash } from '@/lib/lernapp/paket/hash';
 
 /**
@@ -8,6 +9,15 @@ import { textHash } from '@/lib/lernapp/paket/hash';
  * der Anweisung; Tests setzen sie klein, um die Zerlegung zu prüfen.
  */
 export const BLOECKE = { groesse: 10_000 };
+
+/**
+ * `spalte = any($1)` mit der Liste als EINEM Parameter (Array; PostgreSQL leitet den Typ aus der Spalte ab) – gleiche
+ * Treffer wie `inArray`, aber ohne je Wert einen eigenen Parameter: Drizzle baut die Anweisung mit 10.000 Einzelparametern
+ * spürbar langsam (Paketbau, Stufe C N6: ≈ 0,8 s je Richtung nur für den Aufbau der Anweisungen).
+ */
+export function inListe(spalte: AnyColumn, werte: readonly unknown[]): SQL {
+  return sql`${spalte} = any(${sql.param(werte)})`;
+}
 
 /** `f` je Block von `werte` (ohne Dubletten), Ergebnisse aneinandergehängt; leere Liste ohne Abfrage. */
 export async function inBloecken<T, E>(werte: readonly T[], f: (block: T[]) => Promise<E[]>): Promise<E[]> {

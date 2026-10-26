@@ -12,7 +12,7 @@ import { Fortschrittsleiste } from '../Fortschrittsleiste';
 import { InhaltText } from '../InhaltText';
 import { richtung } from '../typen';
 import type { AufgabenProps } from '../typen';
-import { type LaufendeAufnahme, mikrofonErlaubtHier, starteAufnahme } from './aufnahme';
+import type { LaufendeAufnahme } from './aufnahme';
 import { erhebeUmgebung, Erkennung, erkennbar, imVorrat, liesStand, merkeStand } from './erkennung';
 import { Pegel, zeigePegel } from './Pegel';
 
@@ -35,6 +35,12 @@ const HAUPT = 'min-h-12 druck rounded-pill bg-gruen-700 px-6 font-bold text-weis
 const LEISE = 'min-h-11 font-bold text-gruen-800 underline underline-offset-4';
 
 /**
+ * Aufnahme (Mikrofon, Pegel, Umwandlung in PCM) erst mit dem Klick auf „Aufnehmen“ (Stufe C N6): Beginnt eine Lektion mit
+ * der Sprechübung, zählt ihr Typ-Chunk zum Spieler-Budget (KERN §9, zusätzlich zur Hülle ≤ 60 KB).
+ */
+const ladeAufnahme = () => import('./aufnahme');
+
+/**
  * Sprechübung (PLAN §4.2, ADR 0042 mit Fortschreibung S2/S5, KERN 4.0 §6 und §8):
  * - Zielsatz in seiner Sprache, optional Vorlage anhören und Übersetzung; „Aufnehmen“ per Taste (Enter/Leertaste), Pegel
  *   (B-35), höchstens 15 s, Ansagen in der Live-Region des Spielers.
@@ -50,6 +56,7 @@ const LEISE = 'min-h-11 font-bold text-gruen-800 underline underline-offset-4';
  */
 export default function Sprechen({
   aufgabe,
+  texte,
   weitere,
   sprache,
   ziffern,
@@ -173,13 +180,20 @@ export default function Sprechen({
   }
 
   async function aufnehmen() {
-    if (!mikrofonErlaubtHier(location.pathname)) {
+    let a: Awaited<ReturnType<typeof ladeAufnahme>>;
+    try {
+      a = await ladeAufnahme();
+    } catch {
+      // Nachladen gescheitert (ohne Netz, Einheit nicht offline gespeichert): das Mikrofon ist nicht der Grund, der Knopf bleibt
+      return sage(texte.hoeren.keinNetz);
+    }
+    if (!a.mikrofonErlaubtHier(location.pathname)) {
       setMikrofon(false);
       return sage(t.keinMikrofon);
     }
     try {
       setErgebnis(null);
-      aufnahme.current = await starteAufnahme({
+      aufnahme.current = await a.starteAufnahme({
         onPegel: (p) => zeigePegel(pegelBalken.current, p),
         onEnde: () => void beenden(),
       });

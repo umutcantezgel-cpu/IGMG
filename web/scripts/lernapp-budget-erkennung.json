@@ -27,6 +27,10 @@
     "datei": "src/components/lernapp/aufgaben/Luecke.tsx",
     "text": "mx-1 inline-block min-w-24 border-b-2 px-2 text-center font-bold"
   },
+  "luecke_feld": {
+    "datei": "src/components/lernapp/aufgaben/LueckeFeld.tsx",
+    "text": "mx-1 inline-block w-40 align-baseline "
+  },
   "formen": {
     "datei": "src/components/lernapp/aufgaben/Formen.tsx",
     "text": "border border-linie bg-sand p-2 text-start text-18"
@@ -64,7 +68,7 @@
     "text": "druck inline-flex min-h-12 items-center gap-2 rounded-pill border-2 border-gruen-700 px-5 font-bold disabled:border-linie disabled:text-tinte-3"
   },
   "texteingabe": {
-    "datei": "src/components/lernapp/aufgaben/Texteingabe.tsx",
+    "datei": "src/components/lernapp/aufgaben/schreibmarke.ts",
     "text": "min-h-12 rounded-md border-2 bg-weiss px-3 py-1 "
   },
   "zeichenhilfe": {

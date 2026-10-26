@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, asc, eq, inArray, isNull, sql } from 'drizzle-orm';
+import { and, asc, eq, isNull, sql } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
@@ -8,7 +8,7 @@ import { funktionAn } from '@/lib/funktionen';
 import { clipZulaessig, istTestQuelle } from '@/lib/lernapp/audio/stimmen';
 import { FORMELLISTE_ID, FORMELN, formellisteFrei } from '@/lib/lernapp/formelliste';
 import { sprachlichGesperrt } from '@/lib/lernapp/freigabe';
-import { AufgabeVorlageSchema, verweiseVon } from '@/lib/lernapp/inhalt/schema';
+import { type AufgabeVorlage, AufgabeVorlageSchema, verweiseVon } from '@/lib/lernapp/inhalt/schema';
 import {
   EIGENE_STUFEN,
   istRichtung,
@@ -34,7 +34,7 @@ import {
 } from '@/lib/lernapp/paket/bauen';
 import { buendelAdresse } from '@/lib/lernapp/paket/buendel';
 import type { Verzeichnis } from '@/lib/lernapp/paket/typen';
-import { inBloecken, textHashGemerkt } from './bloecke';
+import { inBloecken, inListe, textHashGemerkt } from './bloecke';
 import { ladePruefungen } from './pruefungen';
 import { baueWissenskurs } from './wissen';
 
@@ -68,7 +68,7 @@ export async function sprecherMitVereinbarung(clips: readonly { stimme: string; 
       .select({ id: schema.lernappSprecher.id })
       .from(schema.lernappSprecher)
       .innerJoin(schema.medium, eq(schema.medium.id, schema.lernappSprecher.vereinbarungMediumId))
-      .where(and(inArray(schema.lernappSprecher.id, block), isNull(schema.medium.imPapierkorbSeit))),
+      .where(and(inListe(schema.lernappSprecher.id, block), isNull(schema.medium.imPapierkorbSeit))),
   );
   return new Set(zeilen.map((z) => z.id));
 }
@@ -110,21 +110,24 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
     liste.sort((a, b) => a.reihenfolge - b.reihenfolge || (a.schluessel < b.schluessel ? -1 : a.schluessel > b.schluessel ? 1 : 0));
   // alle Abfragen über Listen in Blöcken (Parametergrenze); die Reihenfolge stellt die Sortierung danach her
   const lektionen = nachReihe(
-    await inBloecken(einheitIds, (block) => db.select().from(schema.lernappLektion).where(inArray(schema.lernappLektion.einheitId, block))),
+    await inBloecken(einheitIds, (block) => db.select().from(schema.lernappLektion).where(inListe(schema.lernappLektion.einheitId, block))),
   );
   const aufgaben = nachReihe(
     await inBloecken(
       lektionen.map((l) => l.id),
-      (block) => db.select().from(schema.lernappAufgabe).where(inArray(schema.lernappAufgabe.lektionId, block)),
+      (block) => db.select().from(schema.lernappAufgabe).where(inListe(schema.lernappAufgabe.lektionId, block)),
     ),
   );
 
   // Verweise der Aufgaben (Lemmata und Sätze, auch aus früheren Einheiten)
+  // (die geprüfte Vorlage geht mit in die Bau-Eingabe; der Bau prüft sie nicht noch einmal, Stufe C N6)
   const verweise = new Map<string, Set<string>>();
+  const vorlagen = new Map<string, AufgabeVorlage>();
   const lektionEinheit = new Map(lektionen.map((l) => [l.id, l.einheitId]));
   for (const a of aufgaben) {
     const v = AufgabeVorlageSchema.safeParse({ ...(a.daten as object), schluessel: a.schluessel, typ: a.typ });
     if (!v.success) continue;
+    vorlagen.set(a.id, v.data);
     const e = lektionEinheit.get(a.lektionId)!;
     const menge = verweise.get(e) ?? new Set<string>();
     for (const s of verweiseVon(v.data)) menge.add(s);
@@ -136,13 +139,13 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
       db
         .select()
         .from(schema.lernappLemma)
-        .where(and(eq(schema.lernappLemma.kursId, ziel), inArray(schema.lernappLemma.schluessel, block))),
+        .where(and(eq(schema.lernappLemma.kursId, ziel), inListe(schema.lernappLemma.schluessel, block))),
     ),
     inBloecken(alleVerweise, (block) =>
       db
         .select()
         .from(schema.lernappSatz)
-        .where(and(eq(schema.lernappSatz.kursId, ziel), inArray(schema.lernappSatz.schluessel, block))),
+        .where(and(eq(schema.lernappSatz.kursId, ziel), inListe(schema.lernappSatz.schluessel, block))),
     ),
   ]);
   const u = schema.lernappUebersetzung;
@@ -153,7 +156,7 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
         db
           .select()
           .from(u)
-          .where(and(eq(u.sprache, ausgang), inArray(u.lemmaId, block))),
+          .where(and(eq(u.sprache, ausgang), inListe(u.lemmaId, block))),
     )),
     ...(await inBloecken(
       saetze.map((s) => s.id),
@@ -161,7 +164,7 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
         db
           .select()
           .from(u)
-          .where(and(eq(u.sprache, ausgang), inArray(u.satzId, block))),
+          .where(and(eq(u.sprache, ausgang), inListe(u.satzId, block))),
     )),
   ];
   const tipps = nachReihe(
@@ -169,9 +172,24 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
       db
         .select()
         .from(schema.lernappTipp)
-        .where(and(inArray(schema.lernappTipp.einheitId, block), eq(schema.lernappTipp.ausgangssprache, ausgang))),
+        .where(and(inListe(schema.lernappTipp.einheitId, block), eq(schema.lernappTipp.ausgangssprache, ausgang))),
     ),
   );
+
+  // je Einheit bzw. Lektion gruppiert, in der sortierten Reihenfolge (vorher je Einheit über alle Lektionen und je Lektion
+  // über alle Aufgaben des Kurses gefiltert, Stufe C N6)
+  const gruppiert = <T>(liste: readonly T[], schluessel: (x: T) => string) => {
+    const m = new Map<string, T[]>();
+    for (const x of liste) {
+      const k = schluessel(x);
+      const g = m.get(k);
+      if (g) g.push(x);
+      else m.set(k, [x]);
+    }
+    return m;
+  };
+  const lektionenJe = gruppiert(lektionen, (l) => l.einheitId);
+  const aufgabenJe = gruppiert(aufgaben, (a) => a.lektionId);
 
   const pruefungen = await ladePruefungen([
     ...einheiten.map((x) => ({ typ: 'einheit' as const, id: x.id })),
@@ -248,14 +266,14 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
       db
         .select()
         .from(schema.lernappAudio)
-        .where(and(eq(schema.lernappAudio.sprache, ziel), inArray(schema.lernappAudio.textHash, block))),
+        .where(and(eq(schema.lernappAudio.sprache, ziel), inListe(schema.lernappAudio.textHash, block))),
     ),
     // Wahl im Audio-Studio (L3-06): „Sprachausgabe“ liefert eine vorhandene menschliche Aufnahme nicht aus
     inBloecken(hashes, (block) =>
       db
         .select({ textHash: schema.lernappAudioWahl.textHash, wahl: schema.lernappAudioWahl.wahl })
         .from(schema.lernappAudioWahl)
-        .where(and(eq(schema.lernappAudioWahl.sprache, ziel), inArray(schema.lernappAudioWahl.textHash, block))),
+        .where(and(eq(schema.lernappAudioWahl.sprache, ziel), inListe(schema.lernappAudioWahl.textHash, block))),
     ),
   ]);
   const ohneMensch = new Set(wahlen.filter((w) => w.wahl === 'sprachausgabe').map((w) => w.textHash));
@@ -278,7 +296,7 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
             bytes: sql<number>`max(${schema.lernappAudio.versatz} + ${schema.lernappAudio.laenge})`,
           })
           .from(schema.lernappAudio)
-          .where(and(eq(schema.lernappAudio.sprache, ziel), inArray(schema.lernappAudio.buendel, block)))
+          .where(and(eq(schema.lernappAudio.sprache, ziel), inListe(schema.lernappAudio.buendel, block)))
           .groupBy(schema.lernappAudio.buendel),
       )
     ).map((z) => [z.buendel, Number(z.bytes)]),
@@ -302,39 +320,51 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
   };
   const audioEcht = audioFuer(false);
   const audioTest = audioFuer(true);
+  // Stellen in den Kurs-Listen: die Auszüge je Einheit behalten deren Reihenfolge (Stufe C N6: je Einheit nur die eigenen
+  // Verweise nachschlagen statt den ganzen Kurs zu filtern)
+  const stellen = <T>(m: ReadonlyMap<string, T>) => new Map([...m.keys()].map((k, i) => [k, i]));
+  const stelleEintrag = stellen(eintraege);
+  const stelleUebersetzung = stellen(uebersetzungJe);
 
   return einheiten.map((e) => {
     const eigene = verweise.get(e.id) ?? new Set<string>();
-    const nur = <T>(m: ReadonlyMap<string, T>) => new Map([...m].filter(([k]) => eigene.has(k)));
-    const bauLektionen: BauLektion[] = lektionen
-      .filter((l) => l.einheitId === e.id)
-      .map((l) => ({
-        schluessel: l.schluessel,
-        art: l.art,
-        ziel: l.ziel,
-        status: l.status,
-        inhaltHash: l.inhaltHash,
-        religionsbezug: false,
-        verfasstVon: l.verfasstVon,
-        pruefungen: p('lektion', l.id),
-        aufgaben: aufgaben
-          .filter((a) => a.lektionId === l.id)
-          .map((a) => ({
-            schluessel: a.schluessel,
-            typ: a.typ,
-            daten: a.daten,
-            status: a.status,
-            inhaltHash: a.inhaltHash,
-            religionsbezug: a.religionsbezug,
-            verfasstVon: a.verfasstVon,
-            pruefungen: p('aufgabe', a.id),
-          })),
-      }));
-    const eigeneEintraege = nur(eintraege);
+    const nur = <T>(m: ReadonlyMap<string, T>, stelle: ReadonlyMap<string, number>) =>
+      new Map(
+        [...eigene]
+          .filter((k) => m.has(k))
+          .sort((a, b) => stelle.get(a)! - stelle.get(b)!)
+          .map((k) => [k, m.get(k)!] as const),
+      );
+    const bauLektionen: BauLektion[] = (lektionenJe.get(e.id) ?? []).map((l) => ({
+      schluessel: l.schluessel,
+      art: l.art,
+      ziel: l.ziel,
+      status: l.status,
+      inhaltHash: l.inhaltHash,
+      religionsbezug: false,
+      verfasstVon: l.verfasstVon,
+      pruefungen: p('lektion', l.id),
+      aufgaben: (aufgabenJe.get(l.id) ?? []).map((a) => ({
+        schluessel: a.schluessel,
+        typ: a.typ,
+        daten: a.daten,
+        ...(vorlagen.has(a.id) ? { vorlage: vorlagen.get(a.id) } : {}),
+        status: a.status,
+        inhaltHash: a.inhaltHash,
+        religionsbezug: a.religionsbezug,
+        verfasstVon: a.verfasstVon,
+        pruefungen: p('aufgabe', a.id),
+      })),
+    }));
+    const eigeneEintraege = nur(eintraege, stelleEintrag);
     const hashesVon = (test: boolean) =>
       new Set([...eigeneEintraege.values()].filter((x) => istTestQuelle(x.quelle) === test).map((x) => textHashGemerkt(x.text)));
     const echteHashes = hashesVon(false);
     const testHashes = hashesVon(true);
+    // gleicher Text in einem echten und einem Test-Eintrag derselben Einheit: es gilt die strengere Regel (echt)
+    const audio = new Map<string, BauAudio>();
+    for (const h of testHashes) if (!echteHashes.has(h) && audioTest.has(h)) audio.set(h, audioTest.get(h)!);
+    for (const h of echteHashes) if (audioEcht.has(h)) audio.set(h, audioEcht.get(h)!);
     return {
       richtung,
       einheit: {
@@ -352,7 +382,7 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
       },
       lektionen: bauLektionen,
       eintraege: eigeneEintraege,
-      uebersetzungen: nur(uebersetzungJe),
+      uebersetzungen: nur(uebersetzungJe, stelleUebersetzung),
       tipps: tipps
         .filter((t) => t.einheitId === e.id)
         .map((t) => ({
@@ -365,11 +395,7 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
           verfasstVon: t.verfasstVon,
           pruefungen: p('tipp', t.id),
         })),
-      // gleicher Text in einem echten und einem Test-Eintrag derselben Einheit: es gilt die strengere Regel (echt)
-      audio: new Map([
-        ...[...audioTest].filter(([h]) => testHashes.has(h) && !echteHashes.has(h)),
-        ...[...audioEcht].filter(([h]) => echteHashes.has(h)),
-      ]),
+      audio,
     };
   });
 }
@@ -383,13 +409,22 @@ export async function formellisteFreigegeben(): Promise<boolean> {
   return formellisteFrei(FORMELN, p.get(`formelliste:${FORMELLISTE_ID}`) ?? []);
 }
 
-/** Alle ausgelieferten Einheiten einer Richtung (bzw. eine). */
+/** Gibt die Ereignisschleife frei (andere Anfragen, z. B. statische Dateien, kommen zwischen zwei Einheiten dran). */
+const freigeben = () => new Promise<void>((weiter) => setImmediate(weiter));
+
+/**
+ * Alle ausgelieferten Einheiten einer Richtung (bzw. eine). Gebaut wird Einheit für Einheit mit Pause dazwischen (Stufe C
+ * N6): Der Neubau einer ganzen Richtung nach einer Cache-Erneuerung blockiert den Server so nur für eine Einheit am Stück.
+ */
 export async function baueRichtung(richtung: RichtungId, ungeprueftZeigen: boolean, einheit?: string): Promise<BauErgebnis[]> {
   const [eingaben, frei] = await Promise.all([ladeBauEingaben(richtung, einheit), formellisteFreigegeben()]);
-  return eingaben.flatMap((e) => {
+  const gebaut: BauErgebnis[] = [];
+  for (const [i, e] of eingaben.entries()) {
+    if (i > 0) await freigeben();
     const r = baueEinheit(e, { ungeprueftZeigen, formellisteFrei: frei });
-    return r ? [r] : [];
-  });
+    if (r) gebaut.push(r);
+  }
+  return gebaut;
 }
 
 /** Ausgelieferte Einheiten eines Kurses mit Paketen (Richtung oder Wissenskurs; bzw. eine Einheit). */

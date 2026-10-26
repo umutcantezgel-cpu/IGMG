@@ -13,7 +13,8 @@ const GEZIELT_ERLAUBT: ReadonlySet<string> = new Set<string>([...START_TAGS, ...
  *
  * Gezielt (`?tag=<tag>`, mehrfach möglich): nur diese Tags, z. B. `lernapp-kurs-koran` nach einer Änderung direkt in der
  * Datenbank. Die anderen Caches bleiben warm – ein Verfallen von `lernapp` baut alle Kursverzeichnisse kalt neu (je
- * Richtung ≈ 10 s Rechenzeit). Unbekannte Tags → 400, nichts verfällt.
+ * Richtung ≈ 2–4 s Rechenzeit in Häppchen je Einheit, Blockade ≤ 0,4 s; vor Stufe C N6 ≈ 10 s am Stück). Unbekannte
+ * Tags → 400, nichts verfällt.
  */
 export async function POST(anfrage: Request) {
   if (!wartungErlaubt(anfrage)) return new Response(null, { status: 401 });

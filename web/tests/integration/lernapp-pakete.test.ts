@@ -69,7 +69,54 @@ const setzeStatus = async (
   status: 'veroeffentlicht' | 'automatisch_geprueft',
 ) => db.update(tabelle).set({ status }).where(like(tabelle.schluessel, muster));
 
+/**
+ * Paketbau schneller, Bytes gleich (Stufe C N6): Laden (`ladeBauEingaben` mit `= any($1)`, Gruppierung, Stellen-Sortierung,
+ * Reihenfolge der Audio-Einträge, geprüfte Vorlage) und Bau ergeben für den Testkurs dieselben Verzeichnisse und Pakete wie
+ * vor N6. Die festen Werte stammen aus dem Stand vor N6 (9a8ca1f8; bestätigt, indem dieser Test mit den alten Fassungen von
+ * `pakete.ts`, `bloecke.ts`, `pruefungen.ts`, `bauen.ts`, `hash.ts` und `zusammenfuehren.ts` lief). Ändern sich der Seed
+ * oder der Paketbau absichtlich, werden sie mit Begründung neu gesetzt. Läuft zuerst, solange die Daten unverändert sind.
+ */
+const VOR_N6: Record<string, { verzeichnis: string; einheit: string }> = {
+  'tr-aus-de': {
+    verzeichnis: '59a3077053b24f40e5b87dc2e811443bf67aa3ede64126012ae51048810e36b4',
+    einheit: '8a28746d018185ad1e545a103fa6feb710887565798cc6b23404ebb4006025a4',
+  },
+  'ar-aus-de': {
+    verzeichnis: '61568f138d24fc5d1d1c76afb8fb57898d9b033749f5a440dd71d3b71c211926',
+    einheit: 'f1c073bf4c2f0fbab0289befdc0ee51f63e9f8f496a89b0816a619092ee09e31',
+  },
+  'de-aus-tr': {
+    verzeichnis: 'f58f3f0e464ae7ae2ab13d0a7fb997e13b0bfd2463607e4e0b3a294247425768',
+    einheit: '5e696a3565f82604496ca45812352e9e32c3a1ece108287dffb1367c70ebbe01',
+  },
+  'ar-aus-tr': {
+    verzeichnis: 'ad035d4f93d6994330b419e25b1623ccce3a7ecba1f6c74e93380a2f1ac8f7fd',
+    einheit: '9e6a086497bab3a09d575716432def227129a5045c9976d50fe5869202e61629',
+  },
+  'de-aus-ar': {
+    verzeichnis: '4f7f3e1750375f9ddede1a39be70c34fb2576627298e1fd7cba3498834e3da93',
+    einheit: 'fd8f77578e75b283cc488be656f419d3f874b3f5e82f7f68075ee90ffd86be73',
+  },
+  'tr-aus-ar': {
+    verzeichnis: 'eaa90aec785480d600b009c95f81b49c9abb23bb6c56e36301d71f8e02d40880',
+    einheit: '695ba2963527d18afe82110869334ef47ef0c8860d342595440e072fe87e6b93',
+  },
+};
+
 describe('Kursverzeichnis und Einheitenpaket', () => {
+  it('Stufe C N6: Verzeichnis und Paket je Richtung wie vor N6 (feste Hashes)', async () => {
+    const ist: Record<string, { verzeichnis: string; einheit: string }> = {};
+    for (const kurs of ['tr-aus-de', 'ar-aus-de', 'de-aus-tr', 'ar-aus-tr', 'de-aus-ar', 'tr-aus-ar']) {
+      const r = await verzeichnisRoute.GET(anfrage(`/lern-app/pakete/${kurs}`), kontext({ kurs }));
+      const text = await r.text();
+      const v = VerzeichnisSchema.parse(JSON.parse(text));
+      const { hash } = await paket(kurs);
+      expect(v.einheiten.map((e) => e.hash)).toEqual([hash]);
+      ist[kurs] = { verzeichnis: sha256Hex(text), einheit: hash };
+    }
+    expect(ist).toEqual(VOR_N6);
+  });
+
   it('alle sechs Richtungen: eine Einheit mit Hash, Größe, Hinweis und Audio-Bündel; Paket kanonisch und unter seinem Hash', async () => {
     for (const kurs of ['tr-aus-de', 'ar-aus-de', 'de-aus-tr', 'ar-aus-tr', 'de-aus-ar', 'tr-aus-ar']) {
       const v = await verzeichnis(kurs);

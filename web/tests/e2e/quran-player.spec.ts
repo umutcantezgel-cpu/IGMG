@@ -1,6 +1,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { test as basis, expect, type Page } from '@playwright/test';
 import quran from '../../messages/bereiche/quran.json';
+import { TAG } from '../../src/lib/cache/tags';
 import { entferneTestRezitation, erneuereCaches, legeTestRezitationAn, type TestRezitation } from './hilfen/rezitation';
 
 /**
@@ -15,9 +16,10 @@ import { entferneTestRezitation, erneuereCaches, legeTestRezitationAn, type Test
  * Anlegen, damit kein paralleler Lauf sie mit der Test-Rezitation sieht.
  *
  * Echter Lauf (playwright.config.ts, PostgreSQL + Mailpit): legt die Rezitation über das Skript in der E2E-Datenbank an
- * und erneuert die Caches mit WARTUNG_TOKEN (.env). Ersatzlauf gegen einen Entwicklungsserver mit PGlite
- * (playwright.lokal.config.ts): die Rezitation VOR dem Serverstart anlegen (`… rezitation-anlegen.ts --json > datei`) und
- * E2E_TESTREZITATION=<datei> setzen – dann legt die Spec nichts an und entfernt nichts.
+ * und lässt mit WARTUNG_TOKEN (.env) nur den Cache der Rezitationen verfallen (`REZITATION_CACHE`). Ersatzlauf gegen einen
+ * Entwicklungsserver mit PGlite (playwright.lokal.config.ts): die Rezitation VOR dem Serverstart anlegen
+ * (`… rezitation-anlegen.ts --json > datei`) und E2E_TESTREZITATION=<datei> setzen – dann legt die Spec nichts an und
+ * entfernt nichts.
  */
 const T = quran.de.quranSeite;
 const P = T.player;
@@ -35,6 +37,13 @@ const test = basis.extend({
 });
 test.describe.configure({ mode: 'serial' });
 
+/**
+ * Gezielte Cache-Erneuerung (Stufe C N6, wie `lernapp/koran.spec.ts`): derselbe Tag, den die Verwaltung beim Aktivieren und
+ * Entfernen einer Rezitation verfallen lässt (`server/actions/rezitationen.ts`). Alle Start-Tags verfallen zu lassen, baute
+ * mitten im parallelen Lauf auch alle Kursverzeichnisse der Lern-App kalt neu (`lernapp`, `einstellungen`).
+ */
+const REZITATION_CACHE = [TAG.rezitationen];
+
 let rez: (TestRezitation & { vorhanden: boolean }) | null = null;
 
 test.beforeEach(async ({ context }, info) => {
@@ -51,7 +60,7 @@ test.beforeEach(async ({ context }, info) => {
 test.afterAll(async ({ baseURL }) => {
   if (!rez || rez.vorhanden) return;
   entferneTestRezitation(rez);
-  await erneuereCaches(baseURL ?? 'http://localhost:3100');
+  await erneuereCaches(baseURL ?? 'http://localhost:3100', REZITATION_CACHE);
 });
 
 async function leserBereit(page: Page) {
@@ -95,7 +104,7 @@ test('ohne aktive Rezitation: ruhiger Hinweis statt Abspiel-Knopf (390 und 1440 
 test('Testdaten: aktive Rezitation mit synthetischem Testton, Vereinbarung und Zeiten', async ({ baseURL, request }) => {
   test.setTimeout(120_000);
   rez = legeTestRezitationAn();
-  await erneuereCaches(baseURL ?? 'http://localhost:3100');
+  await erneuereCaches(baseURL ?? 'http://localhost:3100', REZITATION_CACHE);
   expect(rez.id).toMatch(/^e2e-testton-/);
   expect(rez.verse).toBeGreaterThanOrEqual(2);
   // Audio über die eigene Route, mit Byte-Bereichen (Springen an Versanfänge)

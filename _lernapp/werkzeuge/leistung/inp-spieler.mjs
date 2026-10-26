@@ -6,13 +6,23 @@
 // --laeufe Läufe des größten Werts im Lauf. Muster: _gemeinde/werkzeuge/inp.mjs (dort unverändert).
 // Schritte: Antwort wählen, Prüfen, Weiter, Paare antippen, Wortbank antippen, Tastatur-Eingabe (Freitext), Bildschirmtastatur
 // (arabischer Freitext), Lernpfad öffnen (Antippen der Kurskarte bis die Lektionen sichtbar sind) und „Einheit offline speichern“.
-// Aufruf: node inp-spieler.mjs [--laeufe 3] [--drossel 6] [--aus name]
+// Mit --echt (Stufe C N6): Szenarien mit echten Lektionen (routen.mjs `ECHT`: A1 Auswahl/Paare, B1 mit Geschichte zuerst,
+// ar-Oberfläche RTL) statt des Testkurses; gewählt wird ohne Kenntnis der Lösung (erste Option), der Lernpfad zeigt alle
+// echten Einheiten.
+// Aufruf: node inp-spieler.mjs [--laeufe 3] [--drossel 6] [--echt] [--aus name]
 import { parseArgs } from 'node:util';
 import { BASIS, LAST_GRENZE, last, lernTexte, median, schreibe, starteBrowser, warteAufLast } from './gemeinsam.mjs';
+import { ECHT } from './routen.mjs';
 
 const { values } = parseArgs({
-  options: { laeufe: { type: 'string', default: '3' }, drossel: { type: 'string', default: '6' }, aus: { type: 'string', default: 'inp' } },
+  options: {
+    laeufe: { type: 'string', default: '3' },
+    drossel: { type: 'string', default: '6' },
+    echt: { type: 'boolean', default: false },
+    aus: { type: 'string' },
+  },
 });
+values.aus ??= values.echt ? 'inp-echt' : 'inp';
 const LAEUFE = Math.max(1, Number(values.laeufe));
 const DROSSEL = Number(values.drossel);
 const de = lernTexte('de');
@@ -143,8 +153,81 @@ const SZENARIEN = [
   },
 ];
 
+/** Erste Option der aktuellen Auswahl antippen (ohne Kenntnis der Lösung), dann Prüfen und Weiter (Texte der Oberfläche). */
+async function ersteOptionPruefenWeiter(s, schritt, t) {
+  await s.locator('main input[type="radio"]').first().waitFor({ state: 'attached', timeout: 30_000 });
+  await schritt('antwortWaehlen', () =>
+    s
+      .locator('main label')
+      .filter({ has: s.locator('input[type="radio"]') })
+      .first()
+      .tap(),
+  );
+  await schritt('pruefen', () => knopf(s, t.spieler.pruefen).tap());
+  await knopf(s, t.spieler.weiter).waitFor();
+  await schritt('weiter', () => knopf(s, t.spieler.weiter).tap());
+}
+
+/** Paare: je ein Wort der linken und der rechten Liste antippen (zwei Paare, richtig oder nicht). */
+async function paareAntippen(s, schritt) {
+  const listen = s.locator('main form[data-aufgabe="paare"] ul');
+  await listen.nth(1).locator('button').first().waitFor({ timeout: 30_000 });
+  for (const n of [0, 1]) {
+    await schritt('paareAntippen', () => listen.nth(0).locator('button').nth(n).tap());
+    await schritt('paareAntippen', () => listen.nth(1).locator('button').nth(n).tap());
+  }
+}
+
+const SZENARIEN_ECHT = [
+  {
+    name: `Spieler echt ${ECHT.a1} (Auswahl, Auswahl, Paare)`,
+    pfad: `/lern-app/de/tr-aus-de/ueben?l=${ECHT.a1}`,
+    bereit: (s) => s.locator('main input[type="radio"]').first().waitFor({ state: 'attached', timeout: 60_000 }),
+    ablauf: async (s, schritt) => {
+      await ersteOptionPruefenWeiter(s, schritt, de);
+      await ersteOptionPruefenWeiter(s, schritt, de);
+      await paareAntippen(s, schritt);
+    },
+  },
+  {
+    // gemessen wird „Weiter lesen“: In tr.b1.e01.l06 erreichen die sechs Schritte noch keine Frage (Stand 26.10.2026); erscheint
+    // eine, wird sie gewählt und geprüft
+    name: `Spieler echt ${ECHT.b1Geschichte} (Geschichte zuerst: Weiter lesen)`,
+    pfad: `/lern-app/de/tr-aus-de/ueben?l=${ECHT.b1Geschichte}`,
+    bereit: (s) => s.locator('main form[data-aufgabe="geschichte"] li').first().waitFor({ state: 'attached', timeout: 60_000 }),
+    ablauf: async (s, schritt) => {
+      const g = de.aufgaben2.geschichte;
+      const letzte = 'main form[data-aufgabe="geschichte"] li:last-child';
+      for (let i = 0; i < 6; i++) {
+        const frage = s.locator(`${letzte} input[type="radio"]:not(:disabled)`);
+        if (await frage.count()) {
+          await schritt('antwortWaehlen', () => s.locator(`${letzte} label`).filter({ has: frage.first() }).first().tap());
+          await schritt('fragePruefen', () => knopf(s, g.fragePruefen).tap());
+          continue;
+        }
+        const weiterLesen = knopf(s, g.weiterLesen);
+        if (!(await weiterLesen.count())) break;
+        await schritt('weiterLesen', () => weiterLesen.tap());
+      }
+    },
+  },
+  {
+    name: `Spieler echt ar-Oberfläche ${ECHT.ar} (RTL: Auswahl, Auswahl, Paare)`,
+    pfad: `/lern-app/ar/de-aus-ar/ueben?l=${ECHT.ar}`,
+    bereit: (s) => s.locator('main input[type="radio"]').first().waitFor({ state: 'attached', timeout: 60_000 }),
+    ablauf: async (s, schritt) => {
+      const ar = lernTexte('ar');
+      await ersteOptionPruefenWeiter(s, schritt, ar);
+      await ersteOptionPruefenWeiter(s, schritt, ar);
+      await paareAntippen(s, schritt);
+    },
+  },
+  // Lernpfad mit allen echten Einheiten (A1–B1) öffnen und die erste Einheit offline speichern
+  SZENARIEN[SZENARIEN.length - 1],
+];
+
 const browser = await starteBrowser();
-const ergebnis = { basis: BASIS, drossel: DROSSEL, laeufe: LAEUFE, schwelleMs: 200, szenarien: [] };
+const ergebnis = { basis: BASIS, drossel: DROSSEL, laeufe: LAEUFE, echt: values.echt, schwelleMs: 200, szenarien: [] };
 /** Drei (--laeufe) Läufe eines Szenarios. */
 async function messe(sz) {
   const laeufe = [];
@@ -222,7 +305,7 @@ const lastMax = (laeufe) => Math.max(...laeufe.map((l) => l.last.l1));
 // Lastregel (Auftrag L8-02 Nr. 5): über 200 ms bei Last > 1,5 einmal nachmessen, sobald die Last sinkt (höchstens 5 min,
 // nach einem vergeblichen Warten 2 min); sonst „unter Last“
 let wartenMs = 5 * 60_000;
-for (const sz of SZENARIEN) {
+for (const sz of values.echt ? SZENARIEN_ECHT : SZENARIEN) {
   let laeufe = await messe(sz);
   let nachgemessen = null;
   if (median2(laeufe) > 200 && lastMax(laeufe) > LAST_GRENZE) {
@@ -253,7 +336,7 @@ for (const sz of SZENARIEN) {
 await browser.close();
 
 const md = [
-  `# INP (Labor) · CPU ×${DROSSEL} · ${LAEUFE} Läufe je Szenario · ${BASIS}`,
+  `# INP (Labor) · CPU ×${DROSSEL} · ${LAEUFE} Läufe je Szenario · ${values.echt ? 'echte Lektionen' : 'Testkurs'} · ${BASIS}`,
   '',
   '| Szenario | INP Median (ms) | je Schritt (Median, ms) | Öffnen (ms) | Last (max) | Ergebnis | Fehler |',
   '|---|---|---|---|---|---|---|',

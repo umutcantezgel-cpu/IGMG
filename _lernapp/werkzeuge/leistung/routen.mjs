@@ -13,6 +13,31 @@ const ziel = (kurs) => kurs.split('-aus-')[0];
 export const lektion = (kurs, n) => `${kurs}.a1.test.l0${n}`;
 export const einheit = (kurs) => `${ziel(kurs)}.a1.test`;
 
+/**
+ * Echte Lektionen (Stufe C N6, Z-L07 mit echten Inhalten): A1 aus `tr.a1.e01` (Auswahl zuerst) und die B1-Lektion
+ * `tr.b1.e01.l06`, die mit einer Geschichte beginnt (wie 136 echte Lektionen; nicht der größte Typ-Chunk der ersten Aufgabe –
+ * Sprechen, Lesen mit Fragen und Minimalpaare laden mehr, das JS-Budget je Form misst `web/scripts/lernapp-budget.mjs`),
+ * dazu RTL `de-aus-ar.a1.e01.l01`. Setzt die E2E-Datenbank mit allen Inhalten voraus (scripts/e2e-datenbank.mjs).
+ */
+export const ECHT = { a1: 'tr-aus-de.a1.e01.l01', b1Geschichte: 'tr-aus-de.b1.e01.l06', ar: 'de-aus-ar.a1.e01.l01' };
+
+/** Lighthouse mit echten Inhalten: Start, Lernpfade (de, ar RTL) und der Spieler je einer echten Lektion. */
+export function lighthouseRoutenEcht() {
+  return [
+    { name: 'Start de', pfad: '/lern-app/de', art: 'start', seo: true },
+    { name: 'Lernpfad de · tr-aus-de (echt)', pfad: '/lern-app/de/tr-aus-de', art: 'lernpfad', seo: true },
+    { name: 'Lernpfad ar · de-aus-ar (echt, RTL)', pfad: '/lern-app/ar/de-aus-ar', art: 'lernpfad', seo: true },
+    { name: `Spieler de · ${ECHT.a1} (Auswahl)`, pfad: `/lern-app/de/tr-aus-de/ueben?l=${ECHT.a1}`, art: 'spieler', seo: false },
+    {
+      name: `Spieler de · ${ECHT.b1Geschichte} (Geschichte)`,
+      pfad: `/lern-app/de/tr-aus-de/ueben?l=${ECHT.b1Geschichte}`,
+      art: 'spieler',
+      seo: false,
+    },
+    { name: `Spieler ar · ${ECHT.ar} (RTL)`, pfad: `/lern-app/ar/de-aus-ar/ueben?l=${ECHT.ar}`, art: 'spieler', seo: false },
+  ];
+}
+
 /** Lighthouse: Lern-App-Routen (öffentlich, ohne Konto), /lernen und die Lern-App-Seiten in Mein Bereich (mit Anmeldung). */
 export function lighthouseRouten(konto = {}) {
   const r = [
@@ -131,15 +156,16 @@ export function axeRouten(konto = {}) {
   return r;
 }
 
-// Aufruf als Skript: node routen.mjs <lighthouse|axe> [konten.json] [filter] → JSON auf stdout (für lighthouse.mjs/a11y.mjs
-// --routen); `filter` ist ein regulärer Ausdruck auf den Pfad (Nachmessung einzelner Routen nach einer Behebung).
+// Aufruf als Skript: node routen.mjs <lighthouse|lighthouse-echt|axe> [konten.json] [filter] → JSON auf stdout (für
+// lighthouse.mjs/a11y.mjs --routen); `filter` ist ein regulärer Ausdruck auf den Pfad (Nachmessung einzelner Routen).
 if (import.meta.url === `file://${process.argv[1]}`) {
   const { readFileSync } = await import('node:fs');
   const [art, kontenDatei, filter] = process.argv.slice(2);
   const konto = kontenDatei ? JSON.parse(readFileSync(kontenDatei, 'utf8')) : {};
-  const liste = art === 'axe' ? axeRouten(konto) : art === 'lighthouse' ? lighthouseRouten(konto) : null;
+  const routen = { axe: axeRouten, lighthouse: lighthouseRouten, 'lighthouse-echt': lighthouseRoutenEcht };
+  const liste = routen[art]?.(konto) ?? null;
   if (!liste) {
-    console.error('Aufruf: node routen.mjs <lighthouse|axe> [konten.json] [filter]');
+    console.error('Aufruf: node routen.mjs <lighthouse|lighthouse-echt|axe> [konten.json] [filter]');
     process.exit(2);
   }
   const passt = filter ? new RegExp(filter) : null;

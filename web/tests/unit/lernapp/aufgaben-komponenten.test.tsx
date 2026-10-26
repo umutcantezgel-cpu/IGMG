@@ -1,5 +1,6 @@
 import type { ReactElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { prerender } from 'react-dom/static';
 import { describe, expect, it } from 'vitest';
 import BildWort from '@/components/lernapp/aufgaben/BildWort';
 import Formen from '@/components/lernapp/aufgaben/Formen';
@@ -214,13 +215,19 @@ describe('luecke', () => {
     expect(h).toMatch(new RegExp(`<fieldset[^>]*aria-describedby="${satz} [^"]+-tasten"`));
   });
 
-  it('ohne Optionen: beschriftetes Feld im Satz, Beschreibung mit „…“, arabisch von rechts nach links', () => {
-    const h = html(<Luecke {...props({ ...lw, optionen: undefined })} />);
+  it('ohne Optionen: beschriftetes Feld im Satz, Beschreibung mit „…“, arabisch von rechts nach links', async () => {
+    // Feld und Zeichenhilfe als eigener Chunk (Stufe C N6): statisch erst der Satz mit Platzhalter, fertig gerendert das Feld
+    const fertig = async (e: ReactElement) => new Response((await prerender(e)).prelude).text();
+    const tr = <Luecke {...props({ ...lw, optionen: undefined })} />;
+    expect(html(tr)).toMatch(
+      /<p lang="tr" dir="ltr" class="[^"]*">Su <span aria-hidden="true" class="mx-1 inline-block min-h-12 w-40"><\/span>/,
+    );
+    const h = await fertig(tr);
     expect(h).toMatch(
       /<label for="([^"]+)" class="sr-only">Lücke<\/label><input id="\1" type="text" lang="tr" dir="ltr"[^>]*aria-describedby="([^"]+)"/,
     );
     expect(h).toMatch(/<p id="[^"]+" lang="tr" dir="ltr" class="sr-only">Su  … .<\/p>/);
-    const a = html(
+    const a = await fertig(
       <Luecke {...props({ ...lw, optionen: undefined, sprache: 'ar', vor: `${ar('>anaA')} `, nach: '.', loesungen: [ar('>a$orabu')] })} />,
     );
     expect(a).toMatch(/<p lang="ar" dir="rtl" class="[^"]*font-arabic text-arabisch-2/);
@@ -264,6 +271,9 @@ describe('satzbau, formen, harakat', () => {
     expect(h).toMatch(/<input id="[^"]+" type="text" lang="de" dir="ltr"[^>]*aria-labelledby="[^" ]+r1 [^" ]+s0"/);
     expect(h).toMatch(/<td lang="de" dir="ltr"[^>]*>trinke<\/td>/);
     expect(anzahl(h, /<input/g)).toBe(1);
+    // Zeichenhilfe erst mit dem ersten Fokus in einem Feld (eigener Chunk, Spieler-Budget); bis dahin ein leerer Platz
+    expect(h).not.toContain('role="toolbar"');
+    expect(h).toContain('<div aria-hidden="true" class="min-h-11"></div>');
     const n = html(
       <Formen {...props(fo, { gesperrt: true, auswertung: geprueft('falsch'), antwort: { typ: 'formen', werte: ['', 'trinke'] } })} />,
     );

@@ -207,7 +207,8 @@ async function spieleTurkisch(page: Page, art: Bedienung) {
   await wortbank(page, t, art, ['Ev', 'büyük'], 'de');
   await richtig(page, t, art);
 
-  // 9 Formen: Felder mit Kopfbezug; „ç“ aus der Sonderzeichenleiste an der Schreibmarke
+  // 9 Formen: Felder mit Kopfbezug; „ç“ aus der Sonderzeichenleiste an der Schreibmarke (die Leiste lädt mit dem ersten
+  // Fokus in einem Feld, Stufe C N6)
   await expect(page.getByRole('heading', { name: t.aufgaben.formen.ergaenze })).toBeVisible();
   const sen = page.getByRole('textbox', { name: 'sen şimdiki zaman', exact: true });
   const o = page.getByRole('textbox', { name: 'o şimdiki zaman', exact: true });
@@ -224,6 +225,7 @@ async function spieleTurkisch(page: Page, art: Bedienung) {
   } else {
     await o.focus();
     await page.keyboard.insertText('i');
+    await expect(cZeichen).toBeVisible();
     await page.keyboard.press('Tab');
     await expect(cZeichen).toBeFocused();
     await page.keyboard.press('Enter');

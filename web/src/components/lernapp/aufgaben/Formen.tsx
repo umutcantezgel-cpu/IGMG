@@ -1,22 +1,29 @@
 'use client';
 
-import { useId, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useId, useMemo, useRef, useState } from 'react';
 import { pruefeZellen } from '@/lib/lernapp/aufgaben/auswertung/formen';
 import { ANTWORT_MAX } from '@/lib/lernapp/aufgaben/hilfen';
 import { einfuegen, type Feldstand, loesche } from '../tastatur/einfuegen';
 import { InhaltText } from '../InhaltText';
 import { richtung, type AufgabenProps } from '../typen';
-import { feldKlasse } from './Texteingabe';
-import { Zeichenhilfe } from './Zeichenhilfe';
+import { feldKlasse } from './schreibmarke';
 
 /** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
 export { bewerteFormen as bewerte } from '@/lib/lernapp/aufgaben/auswertung/formen';
 
 /**
+ * Zeichenhilfe als eigener Chunk, geladen mit dem ersten Fokus in einem Feld (Stufe C N6, Nacharbeit): Beginnt eine Lektion
+ * mit `formen` (tr.b1.e16.l07), zählt der Typ-Chunk zum Spieler-Budget (KERN §9, zusätzlich zur Hülle ≤ 60 KB). Bis dahin
+ * hält ein leerer Platz die Höhe einer Zeile; sie erscheint unter der Tabelle, die Felder verschieben sich nicht.
+ */
+const Zeichenhilfe = lazy(() => import('./Zeichenhilfe').then((m) => ({ default: m.Zeichenhilfe })));
+const PLATZ = <div aria-hidden className="min-h-11" />;
+
+/**
  * Übungstyp `formen` (Konjugation, Endungen; PLAN §4): Tabelle mit Zeilen- und Spaltenköpfen (`th` mit `scope`); offene
  * Zellen sind Felder, beschriftet über ihre Köpfe (`aria-labelledby`, „Kopfbezug“); vorgegebene Zellen stehen als Text.
- * Enter prüft. Die Zeichenhilfe darunter schreibt in das zuletzt fokussierte Feld. Nach dem Prüfen steht unter jeder
- * nicht angenommenen Zelle die richtige Form.
+ * Enter prüft. Die Zeichenhilfe darunter (ab dem ersten Fokus in einem Feld) schreibt in das zuletzt fokussierte Feld. Nach
+ * dem Prüfen steht unter jeder nicht angenommenen Zelle die richtige Form.
  */
 export default function Formen({
   aufgabe,
@@ -34,6 +41,7 @@ export default function Formen({
   const [werte, setWerte] = useState<string[]>(() => antwort?.werte ?? aufgabe.zellen.map(() => ''));
   const [aktiv, setAktiv] = useState(() => aufgabe.zellen.findIndex((c) => !c.vorgabe));
   const [offen, setOffen] = useState(false);
+  const [hilfe, setHilfe] = useState(false);
   const felder = useRef(new Map<number, HTMLInputElement>());
   const marken = useRef(new Map<number, { anfang: number; ende: number }>());
   const kopfSprache = aufgabe.kopfsprache ?? aufgabe.sprache;
@@ -93,7 +101,10 @@ export default function Formen({
           inputMode={offen ? 'none' : undefined}
           aria-labelledby={`${id}-r${zeile} ${aufgabe.spalten.length > 1 ? `${id}-s${spalte}` : `${id}-s0`}`}
           aria-describedby={e && e.urteil !== 'richtig' ? `${id}-l${i}` : undefined}
-          onFocus={() => setAktiv(i)}
+          onFocus={() => {
+            setAktiv(i);
+            setHilfe(true);
+          }}
           onChange={(ev) => setze(i, ev.target.value)}
           onSelect={(ev) =>
             marken.current.set(i, {
@@ -157,18 +168,24 @@ export default function Formen({
           </tbody>
         </table>
       </div>
-      <Zeichenhilfe
-        sprache={aufgabe.sprache}
-        feldId={`${id}-z${Math.max(0, aktiv)}`}
-        gesperrt={gesperrt}
-        tastatur={tastatur}
-        namen={texte.harakat.zeichen}
-        ui={sprache}
-        ziffern={ziffern}
-        onZeichen={(z) => anwenden((s) => einfuegen(s, z, ANTWORT_MAX))}
-        onLoeschen={() => anwenden(loesche)}
-        onOffen={setOffen}
-      />
+      {hilfe ? (
+        <Suspense fallback={PLATZ}>
+          <Zeichenhilfe
+            sprache={aufgabe.sprache}
+            feldId={`${id}-z${Math.max(0, aktiv)}`}
+            gesperrt={gesperrt}
+            tastatur={tastatur}
+            namen={texte.harakat.zeichen}
+            ui={sprache}
+            ziffern={ziffern}
+            onZeichen={(z) => anwenden((s) => einfuegen(s, z, ANTWORT_MAX))}
+            onLoeschen={() => anwenden(loesche)}
+            onOffen={setOffen}
+          />
+        </Suspense>
+      ) : (
+        PLATZ
+      )}
     </div>
   );
 }
