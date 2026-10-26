@@ -30,7 +30,12 @@ import { pruefe, starte, ueberspringe, weiter, zusammenfassung } from '@/lib/ler
 import { EreignisEntwurfSchema } from '@/lib/lernapp/ereignisse/typen';
 import { tippAbschnitte } from '@/lib/lernapp/paket/bauen';
 import { AbgabeAnfrageSchema } from '@/lib/lernapp/schreiben/abgabe';
+import { formatiere } from '@/lib/lernapp/format';
+import { MAX_AUFNAHME_MS } from '@/lib/lernapp/sprechen/auswertung';
+import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
+import entwurf from '../../../messages/lernapp/entwurf.json';
+import tr from '../../../messages/lernapp/tr.json';
 import {
   DIALOG,
   GESCHICHTE,
@@ -483,6 +488,22 @@ describe('Komponenten (Server-Rendering, Semantik)', () => {
     expect(html).toContain('<span lang="de" dir="ltr">Ich trinke Wasser.</span>');
     expect(html).toContain('>Aufnehmen</button>');
     expect(html).toContain(de.sprechen.kannNicht);
+  });
+
+  it('sprechen: Höchstlänge 15 s sichtbar unter „Aufnehmen“ und als Beschreibung des Knopfs (N9b, keine unangekündigte Zeitgrenze)', async () => {
+    const html = await vorrendern(<Sprechen {...props<'sprechen'>(SPRECHEN as Aufgabe)} />);
+    expect(MAX_AUFNAHME_MS).toBe(15_000);
+    const knopf = /<button[^>]*>Aufnehmen<\/button>/.exec(html)?.[0] ?? '';
+    const bezug = /aria-describedby="([^"]+)"/.exec(knopf)?.[1];
+    expect(bezug).toBeTruthy();
+    expect(html).toContain(`<p id="${bezug}" class="text-16 text-tinte-2">Die Aufnahme endet nach 15 Sekunden von selbst.</p>`);
+    // tr und ar (KI-Entwurf, entwurf.json): dieselbe Zahl in der Schrift der Oberfläche
+    expect(formatiere(tr.sprechen.grenze, { s: 15 }, 'tr')).toContain('15');
+    expect(formatiere(ar.sprechen.grenze, { s: 15 }, 'ar', 'oestlich')).toContain('\u0661\u0665');
+    for (const k of ['sprechen.grenze', 'sprechen.laeuftAnsage', 'sprechen.grenzeErreicht']) {
+      expect(entwurf.tr, k).toContain(k);
+      expect(entwurf.ar, k).toContain(k);
+    }
   });
 
   it('schreiben: Textfeld mit lang/dir und spellcheck, Zähler, Hinweis „bleibt auf dem Gerät“', async () => {

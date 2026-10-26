@@ -3,7 +3,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { SPRECH_TYPEN } from '@/lib/lernapp/aufgaben/hilfen';
 import type { Note } from '@/lib/lernapp/bewertung';
-import { pruefePegel, type SprechErgebnis, zielWoerter } from '@/lib/lernapp/sprechen/auswertung';
+import { MAX_AUFNAHME_MS, pruefePegel, type SprechErgebnis, zielWoerter } from '@/lib/lernapp/sprechen/auswertung';
 import { type GeraetBefund, pruefeGeraet } from '@/lib/lernapp/sprechen/geraet';
 import { ABTASTRATE, bewerteProbe, GESAMT_MB } from '@/lib/lernapp/sprechen/modell';
 import { formatiere } from '@/lib/lernapp/format';
@@ -33,6 +33,8 @@ type Phase = 'start' | 'aufnahme' | 'verarbeitung' | 'ergebnis';
 const KNOPF = 'min-h-12 druck rounded-pill border-2 border-gruen-700 bg-weiss px-6 font-bold text-gruen-800 hover:bg-gruen-50';
 const HAUPT = 'min-h-12 druck rounded-pill bg-gruen-700 px-6 font-bold text-weiss hover:bg-gruen-800';
 const LEISE = 'min-h-11 font-bold text-gruen-800 underline underline-offset-4';
+/** Höchstlänge einer Aufnahme in Sekunden (angekündigt, Stufe C N9b: WCAG 2.2.1 – keine unangekündigte Zeitgrenze). */
+const SEKUNDEN = MAX_AUFNAHME_MS / 1000;
 
 /**
  * Aufnahme (Mikrofon, Pegel, Umwandlung in PCM) erst mit dem Klick auf „Aufnehmen“ (Stufe C N6): Beginnt eine Lektion mit
@@ -43,7 +45,9 @@ const ladeAufnahme = () => import('./aufnahme');
 /**
  * Sprechübung (PLAN §4.2, ADR 0042 mit Fortschreibung S2/S5, KERN 4.0 §6 und §8):
  * - Zielsatz in seiner Sprache, optional Vorlage anhören und Übersetzung; „Aufnehmen“ per Taste (Enter/Leertaste), Pegel
- *   (B-35), höchstens 15 s, Ansagen in der Live-Region des Spielers.
+ *   (B-35), höchstens 15 s, Ansagen in der Live-Region des Spielers. Die Höchstlänge steht sichtbar unter dem Knopf
+ *   (`aria-describedby`), die Ansage beim Start nennt sie, und endet die Aufnahme von selbst, sagt die Übung das an
+ *   (Stufe C N9b, KERN 4.0 §8: keine unangekündigte Zeitgrenze; Wiederholen bleibt jederzeit möglich).
  * - Die Aufnahme bleibt im Arbeitsspeicher (eigene Aufnahme anhören über eine Objekt-Adresse); nach der Übung wird alles
  *   verworfen. Mikrofon nur auf `…/ueben` und `…/wiederholen`.
  * - Spracherkennung nur mit Schalter `lernapp_sprechen`, nur für de/tr, nach Gerätecheck und auf Wunsch geladen (Knopf mit
@@ -84,6 +88,9 @@ export default function Sprechen({
   const aufnahme = useRef<LaufendeAufnahme | null>(null);
   const eigeneAdresse = useRef<string | null>(null);
   const ergebnisTitel = useRef<HTMLHeadingElement>(null);
+  // Ende nach 15 s von selbst (Zeitgeber in `aufnahme.ts`) statt mit „Aufnahme beenden“
+  const vonSelbst = useRef(false);
+  const [vonSelbstBeendet, setVonSelbstBeendet] = useState(false);
   // der Stopp nach 15 s läuft aus einer älteren Darstellung: den aktuellen Modus über eine Referenz lesen
   const modusJetzt = useRef(modus);
   useEffect(() => {
@@ -193,12 +200,17 @@ export default function Sprechen({
     }
     try {
       setErgebnis(null);
+      setVonSelbstBeendet(false);
+      vonSelbst.current = false;
       aufnahme.current = await a.starteAufnahme({
         onPegel: (p) => zeigePegel(pegelBalken.current, p),
-        onEnde: () => void beenden(),
+        onEnde: () => {
+          vonSelbst.current = true;
+          void beenden();
+        },
       });
       setPhase('aufnahme');
-      sage(t.laeuft);
+      sage(f(t.laeuftAnsage, { s: SEKUNDEN }));
     } catch {
       setMikrofon(false);
       sage(t.keinMikrofon);
@@ -209,7 +221,11 @@ export default function Sprechen({
     const laufend = aufnahme.current;
     if (!laufend) return;
     aufnahme.current = null;
+    const vonSelbstJetzt = vonSelbst.current;
+    vonSelbst.current = false;
+    setVonSelbstBeendet(vonSelbstJetzt);
     setPhase('verarbeitung');
+    if (vonSelbstJetzt) sage(f(t.grenzeErreicht, { s: SEKUNDEN }));
     try {
       const a = await laufend.stopp();
       if (eigeneAdresse.current) URL.revokeObjectURL(eigeneAdresse.current);
@@ -230,7 +246,7 @@ export default function Sprechen({
           setModus({ art: 'ohne', grund: 'fehler' });
           sage(t.fehler);
         }
-      } else sage(t.beendet);
+      } else sage(vonSelbstJetzt ? f(t.grenzeErreicht, { s: SEKUNDEN }) : t.beendet);
       setPhase('ergebnis');
     } catch {
       setPhase('start');
@@ -323,7 +339,7 @@ export default function Sprechen({
           {phase === 'aufnahme' ? (
             <>
               <Pegel balken={pegelBalken} text={t.laeuft} />
-              <button type="button" onClick={() => void beenden()} className={`${HAUPT} self-start`}>
+              <button type="button" onClick={() => void beenden()} aria-describedby={`${id}-grenze`} className={`${HAUPT} self-start`}>
                 {t.stopp}
               </button>
             </>
@@ -334,10 +350,16 @@ export default function Sprechen({
               type="button"
               onClick={() => void aufnehmen()}
               disabled={modus.art === 'laedt' || modus.art === 'probe'}
+              aria-describedby={`${id}-grenze`}
               className={`${phase === 'ergebnis' ? KNOPF : HAUPT} self-start disabled:opacity-60`}
             >
               {phase === 'ergebnis' ? t.nochmal : t.aufnehmen}
             </button>
+          ) : null}
+          {phase === 'aufnahme' || (phase !== 'verarbeitung' && mikrofon) ? (
+            <p id={`${id}-grenze`} className="text-16 text-tinte-2">
+              {f(t.grenze, { s: SEKUNDEN })}
+            </p>
           ) : null}
           {meldung && phase !== 'aufnahme' ? (
             <p aria-hidden className="text-16 text-tinte-2">
@@ -353,6 +375,8 @@ export default function Sprechen({
           <h3 id={`${id}-ergebnis`} ref={ergebnisTitel} tabIndex={-1} className="text-20 font-bold outline-none">
             {ergebnis && mitErkennung ? t[ergebnis.status] : t.selbstVergleich}
           </h3>
+          {/* mit Spracherkennung überschreibt das Ergebnis die Ansage „von selbst geendet“: hier bleibt sie lesbar */}
+          {vonSelbstBeendet && ergebnis && mitErkennung ? <p className="text-16">{f(t.grenzeErreicht, { s: SEKUNDEN })}</p> : null}
           {ergebnis && mitErkennung ? (
             <>
               <ul aria-label={t.wortListe} lang={ziel.sprache} dir={richtung(ziel.sprache)} className="flex flex-wrap gap-2">
