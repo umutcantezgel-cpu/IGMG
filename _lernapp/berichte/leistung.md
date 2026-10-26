@@ -102,6 +102,10 @@ in diesem Durchgang knapp (200 ms), in C einmal nicht (208 ms). Es liegt nicht a
 einer Wartezeit nach der Hydration bzw. zu beheben auf der Startseite. (2) Streuung der Spieler-Szenarien ohne Codeänderung
 (± 30 ms um die Grenze). Z-L07 bleibt **teilweise**.
 
+Prüfungen zu diesem Nachtrag: Unit `tests/unit/lernapp` 76 Dateien, 2067 grün (1 todo); Typen sauber; alle Lern-App-E2E
+(`tests/e2e/lernapp`, `mein-bereich-lernen.spec.ts`, telefon und desktop) gegen denselben Bau an `75ad9038`: 114 grün, 0 rot,
+34 übersprungen (projektbedingte Ausschlüsse wie zuvor), 10,7 min.
+
 ## Stufe C, 26.10.2026, Leistung mit echten Inhalten (N8)
 
 | | |
