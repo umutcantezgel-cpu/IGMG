@@ -634,12 +634,22 @@ describe('Vorschau, Cockpit und Betriebszähler', () => {
       await lernappPruefen(db as unknown as Datenbank, { FUNKTION_LERNAPP: 'an' }, true, new Date(), (p) => liste.push(p));
       return liste.find((p) => p.id === 'lernapp.pruefende-unabhaengig')!;
     };
+    /** Zahl der Prüfenden, die zählen (Karte „Religiöse Prüfung (zwei Personen)“). */
+    const zaehlende = async () => {
+      const liste: { id: string; meldung: string }[] = [];
+      await lernappPruefen(db as unknown as Datenbank, { FUNKTION_LERNAPP: 'an' }, true, new Date(), (p) => liste.push(p));
+      return Number(/(\d+) Person/.exec(liste.find((p) => p.id === 'lernapp.pruefende-religioes')!.meldung)?.[1]);
+    };
     await angemeldetAls([{ rolle: 'religioese_pruefung' }]);
     expect((await pruefen()).status).toBe('ok');
+    const vorher = await zaehlende();
     await angemeldetAls([{ rolle: 'religioese_pruefung' }, { rolle: 'administration' }]);
     const einer = await pruefen();
     expect(einer.status).toBe('hinweis');
     expect(einer.meldung).toMatch(/^1 Person mit der Rolle/);
+    expect(einer.meldung).toMatch(/zählt nie als religiöse Freigabe/);
+    // Stufe C N2: ein Konto mit Administration zählt auch in der Karte der Prüfenden nicht mit
+    expect(await zaehlende()).toBe(vorher);
     await angemeldetAls([{ rolle: 'religioese_pruefung' }, ...BILDUNG]);
     expect((await pruefen()).meldung).toMatch(/^2 Personen mit der Rolle/);
     // gesperrte Konten zählen nicht
