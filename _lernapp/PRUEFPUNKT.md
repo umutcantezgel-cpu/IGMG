@@ -1,5 +1,24 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 15:12 UTC – Taktregel-Halt, N9a läuft allein, N9b nach dem Reset:**
+  - **Halt:** Auslastung 0,74 um 15:08, Taktlinie 0,53 (Vorlauf > 0,15). Mit 2 Agenten wäre das Fenster ≈ 16:10 leer gewesen. Deshalb N9 `wf_22fb5e57-675` gestoppt.
+    - N9a war gerade sauber committet.
+    - N9b: ZWISCHENSTAND 827235f5 (whisper-netz.mjs); Server 3322 beendet, `.next` in `l3-05` gelöscht.
+  - **N9a** (`l8`, `lernapp-n9a`) läuft als Fortsetzung `wf_1d1ca705-1a3`. Committet sind:
+    - 432d199f: Wissenskurs nur mit Prüfvermerk, fehlende Lektion ohne Neuladen;
+    - acc972ee: Stufe offline speichern, ehrlicher Stand nach Bauwechsel;
+    - 9e8c1701: E2E Stufe, Abbrechen, Bauwechsel G-1, Root-SW;
+    - 7a987cfe, 6aafb2e9: Feinheiten, ADR 0039.
+    - Offen: Bau, alle Lern-App-E2E, INP, Gegenprüfung.
+  - **N9b** (`l3-05`, `lernapp-n9b`) pausiert. Committet sind:
+    - db0deac4: format.ts minifiziert, inp-Werkzeug;
+    - 2753f5a0: 15-s-Ansage;
+    - 101c23c8: axe-Matrix, axe je Typ beide Breiten;
+    - 733a6db4: echte Tastaturwege;
+    - a135d9d6: Netzprotokoll erweitert;
+    - 827235f5: ZWISCHENSTAND.
+    - Fortsetzung per send_later um 17:12.
+
 - **Stand 26.10.2026 14:05 UTC – N8 gemergt (2d6c1adc auf `main`), N9 läuft:**
   - **N8:** Gegenprüfung frei (nur niedrig). Unit 3.684, `typen`, Religion und Sprachen auf dem Merge-Stand grün.
     - Endstand: Lighthouse 80–89 (vorher 74–88); INP Spieler 176/176/200 ms; „offline speichern“ 216 ms (vorher 480); Budgets eingehalten. Z-L07 bleibt teilweise (`leistung.md` N8).
