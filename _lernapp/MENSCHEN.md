@@ -4,6 +4,7 @@ Format: Kennung · Aufgabe · Wer · Aufwand · Standard bis zur Antwort · Stan
 (L3-E12, kein Warten).
 - **LM-01…LM-20** stammen aus der Verfeinerung (`PLAN.md` Entwurf §16), fortgeschrieben nach dem Lizenzbefund und
   `ENTSCHEIDUNGEN.md`.
+- **LM-37** stammt aus der Stufe C (L3-E18).
 - **LM-21…LM-36** sind die Entscheidungen L0-E01…L0-E19 des Lizenzberichts (`berichte/lizenzen-l0.md` §3), ohne Dubletten:
   L0-E02, L0-E13 und L0-E18 sind in LM-12, LM-16 und LM-05 aufgegangen (Zuordnung unten).
 - Die Liste des Vorlaufs (`_gemeinde/MENSCHEN.md`, MN-00…MN-29) gilt weiter. Für die Lern-App wichtig sind besonders MN-03
@@ -47,6 +48,7 @@ Format: Kennung · Aufgabe · Wer · Aufwand · Standard bis zur Antwort · Stan
 | LM-34 | (L0-E16, O-4) Lebewesen auf Bildkarten (OpenMoji); Motivliste freigeben | Redaktion / Vorstand | `[Aufwand schätzen]` | keine Menschen- oder Tierdarstellungen, keine Fotos, keine Gesichter; nur Gegenstände und Symbole | offen |
 | LM-35 | (L0-E17) Spendenaufrufe, Mitgliederwerbung oder Förderhinweise in der Lern-App? | Vorstand | 5 min | keine in der Lern-App | offen |
 | LM-36 | (L0-E19) GER-Kann-Beschreibungen: eigene Formulierungen oder Genehmigung des Europarats für Auszüge und Übersetzungen? | Vorstand | 5 min | eigene „Ich kann …“-Formulierungen mit dem Hinweis „orientiert am GER (Europarat 2001/2020)“ | offen |
+| LM-37 | (L3-E18, Z-L19) Ausnahme M-060 (libvips, LGPL-3.0, nur serverseitig) auch für die Lern-App-Seiten in der Website-Hülle bestätigen (Verwaltung › Lern-App, Mein Bereich › Unterricht › Lern-App); oder den Umbau der Hülle beauftragen (Actions mit sharp nur in den Upload-Seiten) | Vorstand / Technik | 10 min | M-060 gilt mit; die öffentliche Lern-App (`/lern-app/**`) bleibt frei von libvips | offen |
 
 ## Zuordnungen
 

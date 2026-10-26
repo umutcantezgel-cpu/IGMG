@@ -337,7 +337,7 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
   - Z-L01 (Umfang A1–C1) gilt für die Abnahme als „Umfang A1–B1 nach Nutzerentscheidung“. B2/C1 stehen als offener Ausbau im BERICHT.
   - Nach B1 tr/ar folgen L8-05 (Stufe C), BERICHT und ABSCHLUSS.
 
-## L3-E17 · 2026-10-26 · Paket N9b (Vorschlag, vom Orchestrator zu bestätigen) · Höchstlänge der Sprechaufnahme und WCAG 2.2.1
+## L3-E17 · 2026-10-26 · Paket N9b, vom Orchestrator bestätigt (26.10.2026, Vollmacht des Nutzers) · Höchstlänge der Sprechaufnahme und WCAG 2.2.1
 - **Anlass:** Die Sprechübung beendet eine Aufnahme nach 15 s selbst (`MAX_AUFNAHME_MS`, ADR 0042, Fortschreibung S2:
   Schutz vor Halluzination). Z-L06 verlangt „keine Zeitgrenzen“; WCAG 2.2.1 verlangt bei einer Zeitgrenze Abschalten,
   Anpassen oder Verlängern, sofern keine Ausnahme greift. Das Ankündigen allein (N9b, `Sprechen.tsx`) erfüllt den Auftrag,
@@ -351,5 +351,31 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
   - „Ich kann gerade nicht sprechen“ überspringt ohne Wertung; ohne Sprachprüfung gibt es die Selbstbewertung.
   - Die Grenze steht vorher sichtbar unter dem Knopf (`aria-describedby`), die Ansage beim Start nennt sie, das selbsttätige
     Ende wird angesagt (Test `typen-b.spec.ts` „Höchstlänge 15 s“).
-- **Folge:** Z-L06 „keine Zeitgrenzen“ gilt mit dieser Ausnahme als erfüllt, sofern der Orchestrator sie bestätigt; sonst
-  wäre eine einstellbare Länge nötig (bis zum 30-s-Fenster von Whisper), mit erneuter Prüfung gegen S2.
+- **Folge:** Z-L06 „keine Zeitgrenzen“ gilt mit dieser Ausnahme als erfüllt. Bestätigt am 26.10.2026 nach dem Urteil des
+  frischen Endprüfers (`berichte/stufe-c.md`). Eine einstellbare Länge (bis zum 30-s-Fenster von Whisper) bleibt ein möglicher
+  Ausbau; er bräuchte eine erneute Prüfung gegen S2.
+
+## L3-E18 · 2026-10-26 · Orchestrator (Vollmacht des Nutzers; Bestätigung durch Menschen: MENSCHEN LM-37) · libvips in Lern-App-Seiten der Website-Hülle (Z-L19)
+- **Anlass:** Der frische Endprüfer (Stufe C, `berichte/stufe-c.md`) fand libvips (`@img/sharp-libvips`, LGPL-3.0) in der Bau-Ausgabe
+  von 11 der 12 Seiten unter Verwaltung › Lern-App und unter Mein Bereich › Unterricht › Lern-App. Die Ursache liegt in der
+  Website-Hülle `[locale]`: Die Server-Actions für Medien und Rezitationen binden `lib/medien/verarbeiten.ts` (sharp) ein, und das
+  Tracing nimmt sharp in fast alle Funktionen der Website auf (176 von 191 Seiten). Für die Website gilt dafür bereits die
+  menschliche Ausnahme **M-060** (`_lauf/MENSCHEN.md`, ADR 0001 „Lizenz-Ausnahmen“): libvips liegt als eigene, dynamisch
+  gebundene Bibliothek nur auf dem Server, nie im Browser.
+- **Entscheidung:** M-060 gilt auch für die Lern-App-Seiten innerhalb der Website-Hülle (Verwaltung › Lern-App, Mein Bereich ›
+  Unterricht › Lern-App). Diese Seiten sind Teil der Website und erben ihre Funktionen. Für die **öffentliche Lern-App** mit eigenem
+  Wurzel-Layout (`/lern-app/**`, 13 Seiten, Pakete, Audio, Service Worker) bleibt Z-L19 unverändert streng: 0 Treffer in der
+  Bau-Ausgabe, 0 GPL/LGPL in Client-Bündeln und `web/public` (Regeltest `lernapp/bundle-regeln`, Prüfung des Endprüfers).
+- **Warum keine Änderung am Tracing jetzt:** Ein Ausschluss von sharp aus dem Tracing einzelner Routen (`outputFileTracingExcludes`)
+  würde die Uploads der Verwaltung auf Vercel brechen, wenn die Action in einer ausgeschlossenen Funktion läuft. Der saubere Weg ist
+  ein Umbau der Website-Hülle (Actions mit sharp nur in den Upload-Seiten); das gehört zum Lauf der Website, nicht zur Abnahme der
+  Lern-App, und steht als Ausbau in ABSCHLUSS.
+- **Folge:** Z-L19 gilt als AUSNAHME mit Ersatz: öffentliche Lern-App frei; libvips nur serverseitig in der Website-Hülle nach M-060.
+  ADR 0042 Nr. 10 ist entsprechend fortgeschrieben.
+
+## L3-E19 · 2026-10-26 · Orchestrator (Vollmacht des Nutzers) · Wissenskurs mit 26 von 28 Einheiten (Z-L02)
+- **Anlass:** Z-L02 verlangt 28 Einheiten (≥ Ziel − 5 %, also mindestens 27). Zwei Einheiten (Siyar) sind zurückgestellt, bis die
+  Gemeinde die Werke benennt (LM-04); ohne benannte Werke dürfen keine Belege entstehen (KI-Regel 2, KERN §2.4).
+- **Entscheidung:** Z-L02 gilt als AUSNAHME mit Ersatz: 26 Einheiten entworfen und belegt, die zwei zurückgestellten sind unsichtbar
+  und im Lehrplan als „zurückgestellt (LM-04)“ geführt. Sichtbar ist ohnehin nichts ohne zwei menschliche Freigaben (LM-03).
+
