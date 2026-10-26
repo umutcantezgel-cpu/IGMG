@@ -1,5 +1,15 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 23:21 UTC – LAUF ABGESCHLOSSEN (`ABSCHLUSS.md`).** Nichts fortzusetzen; der CLAUDE.md-Block ist entfernt,
+  der stündliche Trigger beendet.
+  - Endprüfer (frisch, Stand `e0292127`): „abgenommen mit Auflagen“ (16/3/3), wörtlich in `BERICHT.md`; Kritik ohne Widerlegung.
+  - Auflagen: Fokus „Sprechen“ 243aecfe; LCP Lernpfad live 5,7 s → b9e581e8; Beschriftung A1–B1 0e3a03a0; L3-E17 bestätigt;
+    AUSNAHMEN L3-E18 (Z-L19), L3-E19 (Z-L02), L3-E20 (Z-L07), L3-E21 (Z-L16); LM-37…LM-39.
+  - Schluss-Tor am Endstand (`scratchpad/tor-ende.log`): Bau grün; Lern-App-E2E 159 grün, 1 rot (Test, behoben in 808edeed; Nachlauf 20 grün, 0 rot); Website-E2E 323 grün, 0 rot;
+    Integration 3.878 grün; `pnpm check` grün (Unit 3.717).
+  - App-Endstand `390b6715` live (`data-bau` `390b67150bac`); danach nur Tests und Unterlagen.
+  - Für einen neuen Lauf (z. B. B2/C1): neuer Auftrag des Nutzers, eigener Block in `CLAUDE.md`.
+
 - **Stand 26.10.2026 20:25 UTC – N9a gemergt (11e45cbe auf `main`), N9b Runde 3 läuft:**
   - **Live:** Menüpunkt „Sprachen lernen“ (1482184c) im Kopf- und Telefonmenü auf de/tr/en.
   - **N9a frei** (Gegenprüfung 2: nur niedrig):

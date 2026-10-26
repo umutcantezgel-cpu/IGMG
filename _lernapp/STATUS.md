@@ -1,4 +1,4 @@
-STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe L0/L8 (Grundlagen) · main f2dc1a1 (ABSCHLUSS Gemeinde-Plattform) · Läuft: L0 – Werkstatt `_lernapp/` übernehmen · Nächster Schritt: Werkstatt und ADR 0037–0045 übernehmen, Spikes S1–S8, Tor L0
+STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe L8 abgeschlossen · main = Abschluss-Commit Lern-App (App-Endstand 390b6715) · Läuft: nichts – Lauf abgeschlossen am 26.10.2026 · Nächster Schritt: Übergabe an Menschen (`MENSCHEN.md`, `GO-LIVE.md`, `ABSCHLUSS.md`)
 
 # STATUS – Lauf „Lern-App“
 
@@ -33,3 +33,9 @@ STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe L0/L8 (Grundlagen) ·
 - 2026-10-16 · Gegenprüfung der Entwürfe: Widersprüche behoben. Wo der genehmigte Plan strenger ist als der Entwurf der
   Verfeinerung, gilt er: zwei Freigaben auch für Sprachkurs-Einträge mit Religionsbezug, Formelliste, Koran-Bedeutungen und
   Wurzeltabelle; Hadith-N-Gramm ab 4 Wörtern (O-2, O-10, O-11).
+- 2026-10-17 … 2026-10-26 · Etappen L0–L8 nach `PLAN.md` §14; Verlauf je Stand in `PRUEFPUNKT.md`, Commits auf dem Branch.
+- 2026-10-26 · Stufe C (L8-05): fünf Prüfgruppen mit Gegenprüfung, Nacharbeit N1–N9, volles Tor (`e06a648b`), frischer Endprüfer
+  „abgenommen mit Auflagen“ (`berichte/stufe-c.md`), Vollständigkeitskritik (`protokolle/C-endpruefer-kritik.md`).
+- 2026-10-26 · Auflagen behoben bzw. entschieden: Fokus „Sprechen“ (243aecfe), LCP Lernpfad (b9e581e8), Beschriftung A1–B1
+  (0e3a03a0), L3-E17…L3-E21; Schluss-Tor am Endstand; ABNAHME, BERICHT (Urteil wörtlich, Galerie live), ABSCHLUSS. Lauf beendet,
+  CLAUDE.md-Block entfernt, stündlicher Trigger beendet.

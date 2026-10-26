@@ -1,12 +1,12 @@
 # BERICHT – Lauf „Lern-App“
 
-> **Entwurf, Stand 26.10.2026, ≈ 09:15 UTC** (`main` = 528b0af2; live auf https://igmg-wetzlarer.vercel.app der Bau
-> 25ce3abf, also der Stand nach N7; N6 ist auf `main`, seine Bereitstellung stand bei den Aufnahmen noch aus).
-> **Vorläufig.** Die Stufe C hat alle 22 Kriterien in fünf Gruppen geprüft, jede mit Gegenprüfung (`protokolle/C-*.md`). Die
-> Nacharbeit N1–N7 ist gemergt; N8 (Leistung) und das volle Tor laufen noch. Das Urteil des frischen Endprüfers folgt. Danach
-> werden `_lernapp/ABNAHME.md` und dieser Bericht nachgeführt.
-> - Lauf vom 16.10. bis 26.10.2026, Etappen L0–L8, ≈ 1.170 Commits auf `claude/trusting-lovelace-6nfolz`.
-> - Grundlage: `AUFTRAG.md`, Entscheidungen L3-E01…L3-E16 (`ENTSCHEIDUNGEN.md`), Mengen `berichte/mengen.md`, Leistung
+> **Stand 26.10.2026, 23:21 UTC** – App-Endstand `390b6715` auf `main`, live auf https://igmg-wetzlarer.vercel.app
+> (`data-bau` `390b67150bac`; danach nur Tests und Unterlagen). Stufe C ist abgeschlossen: Fünf Prüfgruppen mit Gegenprüfung (`protokolle/C-*.md`), Nacharbeit N1–N9,
+> frischer Endprüfer (`berichte/stufe-c.md`) und Vollständigkeitskritik (`protokolle/C-endpruefer-kritik.md`). Die Auflagen des
+> Endprüfers sind behoben oder entschieden (L3-E17…L3-E21, `ENTSCHEIDUNGEN.md`); Status und Belege je Kriterium stehen in
+> `ABNAHME.md`, der Abschluss in `ABSCHLUSS.md`.
+> - Lauf vom 16.10. bis 26.10.2026, Etappen L0–L8, ≈ 1.240 Commits auf `claude/trusting-lovelace-6nfolz`.
+> - Grundlage: `AUFTRAG.md`, Entscheidungen L3-E01…L3-E21 (`ENTSCHEIDUNGEN.md`), Mengen `berichte/mengen.md`, Leistung
 >   `berichte/leistung.md`, Schalter `GO-LIVE.md`.
 
 ## Ergebnis in drei Sätzen
@@ -24,24 +24,25 @@
    - Der Koran-Arabisch-Pfad hat 40 Einheiten mit 936 häufigen Wortformen und noch keine Bedeutungen.
    - Sichtbar wird beides erst nach zwei menschlichen Schritten: Zwei Prüfende der Gemeinde (Imam und Hoca) geben jeden
      Baustein frei (LM-03), und die Hoca verfasst die Wortbedeutungen (LM-13). Bis dahin zeigt die App einen ruhigen Platzhalter.
-3. **Offen sind vor allem Aufgaben für Menschen und eine technische Restarbeit.**
+3. **Offen sind Aufgaben für Menschen; technisch ist der Lauf abgenommen.**
+   - Urteil des frischen Endprüfers: **abgenommen mit Auflagen** (unten wörtlich). Die Auflagen sind seitdem behoben oder als
+     AUSNAHME mit Grund und Ersatz entschieden: Fokus in „Sprechen“ (243aecfe), Ladezeit des Lernpfads (b9e581e8), libvips nur
+     in der Website-Hülle (L3-E18), Lighthouse-Note auf dem Messrechner (L3-E20); die Vercel-Bauzeit ist belegt (L3-E21).
    - Für Menschen: die Stichprobe durch Muttersprachler, die religiösen Freigaben, die Stimmen bzw. eigene Aufnahmen. Live gibt
      es noch kein Audio; Hörübungen zeigen „Audio folgt“.
    - Alles mit Konto ist gebaut und getestet: Abgleich, Gruppen und Lehrkräfte, Bestenliste, Schreibabgaben. Es bleibt aus, bis
-     die Datenbank (G1) und der Datenschutz (LM-08) freigegeben sind.
-   - Technisch: Startseite, Lernpfad und Übungsseite verfehlen mit echten Inhalten die Ladezeit-Note (Lighthouse-Leistung
-     72–86 statt ≥ 90). Die Nacharbeit N8 läuft. B2 und C1 sind offener Ausbau.
+     die Datenbank (G1) und der Datenschutz (LM-08) freigegeben sind. B2 und C1 sind offener Ausbau.
 
 ## Was du heute live siehst (igmg-wetzlarer.vercel.app)
 
-Die Zahlen der Kurstabellen sind am 26.10.2026 um ≈ 09:05 UTC live nachgezählt: Kursverzeichnisse, alle 254 Sprachpakete und
+Die Zahlen der Kurstabellen sind am 26.10.2026 um ≈ 09:05 UTC live nachgezählt (vom Endprüfer am Endstand bestätigt): Kursverzeichnisse, alle 254 Sprachpakete und
 40 Koran-Pakete per curl, alle mit 200. Wortschatz und Sätze stammen aus dem Mengenbericht (`berichte/mengen.md`).
 
 | Bereich | Adresse | Was es kann |
 |---|---|---|
-| Einstieg | `/lernen`, Abschnitt „Üben in der Lern-App“ | Stationen „Sprachen lernen“ und „Wissen üben“ führen in die Lern-App |
+| Einstieg | Menü „Bildung › Sprachen lernen“ im Kopf und im Telefonmenü (de/tr/en); `/lernen`, Abschnitt „Üben in der Lern-App“ | der Menüpunkt führt direkt nach `/lern-app/de` (bzw. `/lern-app/tr`); die Stationen „Sprachen lernen“ und „Wissen üben“ auf `/lernen` ebenso |
 | Start | `/lern-app/de`, `/lern-app/tr`, `/lern-app/ar` | Oberfläche in drei Sprachen; Kurswahl nach Ausgangssprache; „Heute“ mit Tagesziel und nach der ersten Lektion „Weiter lernen“; weitere Kurse (Wissen, Koran) |
-| Lernpfad | `/lern-app/<oberfläche>/<kurs>` | Stufen A1–B1. Jede Einheit ist eine Station am Lernweg mit acht Teilen: Lektionen, eine Geschichte, eine Wiederholung und ein Prüfstein. Dazu Grammatik-Tipps und „Einheit offline speichern“ |
+| Lernpfad | `/lern-app/<oberfläche>/<kurs>` | Stufen A1–B1. Jede Einheit ist eine Station am Lernweg mit acht Teilen: Lektionen, eine Geschichte, eine Wiederholung und ein Prüfstein. Dazu Grammatik-Tipps, „Einheit offline speichern“ an jeder Station und „Stufe offline speichern“ am Ende jeder Stufe |
 | Üben | `…/<kurs>/ueben?l=<lektion>` | 17 Übungstypen, u. a. Auswahl, Lücke, Wortbank, Paare, Satzbau, Dialog, Geschichte, Lesetext mit Fragen, Formen, Harakat (Arabisch), Sprechen und Schreiben mit Selbstbewertung. Rückmeldung nach jeder Aufgabe, ruhiger Abschluss, XP stehen fest |
 | Wiederholen, Einstufung, Tipps | `…/<kurs>/wiederholen`, `…/einstufung`, `…/tipps` | fällige Karten nach Vergessenskurve (FSRS); Einstufungstest aus den Aufgaben der Einheiten (ohne Vorkurs); 242–263 Tipp-Karten je Richtung, die die beiden Sprachen vergleichen |
 | Fortschritt, Wortschatz, Einstellungen | `/lern-app/de/fortschritt`, `/wortschatz`, `/einstellungen` | Tagesziel (auch „kein Tagesziel“), Serie mit 0–3 Pausetagen je Woche und Ruhezeit bis 30 Tage im Jahr, Abzeichen; Hör- und Sprechübungen abschaltbar; Lernstand als Datei sichern und einlesen |
@@ -69,15 +70,15 @@ Menschen tun können“.
   - 2.758–2.800 Wörter und 11.333–11.488 Sätze, alle in die jeweils zwei Ausgangssprachen übersetzt (100 %).
   - Über Aufgaben erreichen 9.333 (de), 7.572 (tr) und 7.591 (ar) Sätze ein Gerät. Der Rest ist Vorrat für spätere Übungen
     und wird nicht ausgeliefert.
-- **Offline:** Jede Einheit lässt sich mit „Einheit offline speichern“ auf das Gerät holen (je Einheit ≈ 0,1–0,4 MB). Danach
-  ist sie ohne Netz spielbar. Der Lernstand liegt auf dem Gerät (keine Cookies, keine Tracker) und lässt sich als Datei sichern.
+- **Offline:** Jede Einheit lässt sich mit „Einheit offline speichern“ auf das Gerät holen (je Einheit ≈ 0,1–0,4 MB), eine
+  ganze Stufe mit „Stufe offline speichern“ (Speicherbedarf vorher, abbrechbar). Danach ist sie ohne Netz spielbar, auch nach
+  einer neuen Bereitstellung (N9a, G-1). Der Lernstand liegt auf dem Gerät (keine Cookies, keine Tracker) und lässt sich als Datei sichern.
 - **Spielerisch, aber sanft:** XP, Tagesziel, Serie mit Pausetagen, Abzeichen, Lernpfad. Es gibt keine Herzen, keine Ligen,
   keine Zeitgrenzen und keine Schuld-Texte. Ist das Tagesziel erreicht, steht dort „Schön, dass du da bist.“
 - **Von rechts nach links:** Die arabische Oberfläche (`/lern-app/ar/…`) läuft vollständig von rechts nach links, mit
   östlich-arabischen Ziffern (Standard nach LM-18). Vokalisierte Kursinhalte stehen in einer eigenen arabischen Schrift. Die
   übrige Website bleibt Deutsch, Türkisch, Englisch.
-- **Hinweis zu einer Beschriftung:** Die Kurskarten auf der Startseite der Lern-App und der Einstieg `/lernen` nennen noch
-  „A1 bis C1“. Ausgeliefert sind A1–B1. Der Text ist noch anzupassen.
+- **Beschriftung:** Kurskarten, Einstieg `/lernen` und Menüpunkt nennen „A1 bis B1“ (0e3a03a0), wie ausgeliefert.
 
 **Bewusst aus** (Nutzer, L3-E12b: „Die App ist ein Teil der Seite!“ – an, aber ohne Personendaten; KERN §6, `GO-LIVE.md`):
 
@@ -100,8 +101,8 @@ Menschen tun können“.
 - Die Stationen 7–9 brauchen eine **Datenbank**: lokal mit Testdaten, in der Produktion erst nach G1 und den Freigaben.
 
 1. **Einstieg – live.**
-   - Weg: https://igmg-wetzlarer.vercel.app/lernen → „Üben in der Lern-App“ → „Sprachen lernen“ → „Zur Lern-App“ →
-     `/lern-app/de`.
+   - Weg: https://igmg-wetzlarer.vercel.app → Menü „Bildung“ → „Sprachen lernen“ → `/lern-app/de`. Alternativ `/lernen` →
+     „Üben in der Lern-App“ → „Sprachen lernen“ → „Zur Lern-App“.
    - Zeigen: die Kurswahl (Türkisch, Arabisch; „Mit einer anderen Ausgangssprache lernen“) und „Tagesziel ändern“. Nach der
      ersten Lektion steht dort „Weiter lernen“.
 2. **Türkisch lernen auf Deutsch – live.**
@@ -115,7 +116,8 @@ Menschen tun können“.
    - Im Lernpfad bei einer Einheit „Einheit offline speichern“ wählen; ein Ring zeigt den Fortschritt nach Bytes.
    - Dann Flugmodus an (am Rechner: Entwicklerwerkzeuge → Netzwerk → Offline), die Lektion vollständig spielen und wieder online
      gehen. Der Fortschritt bleibt.
-   - Bekannte Schwäche: Der Knopf reagiert mit ≈ 0,4 s spürbar träge (INP 416 ms). Das behebt N8.
+   - Ganze Stufe: am Ende der Stufe A1 „Stufe offline speichern“; der Speicherbedarf steht vorher dort, Abbrechen ist möglich.
+   - Der Knopf reagiert nach N8/N9a ohne spürbare Verzögerung (INP 160–208 ms statt 416 ms, `leistung.md` N9a.1).
 4. **Deutsch lernen auf Arabisch – live.**
    - Weg: `/lern-app/ar/de-aus-ar`. Die Oberfläche läuft von rechts nach links.
    - Einheit 1 ist der Vorkurs Lateinschrift mit 6 Lektionen, z. B. `/lern-app/ar/de-aus-ar/ueben?l=de-aus-ar.a1.e00-ar.l01`.
@@ -169,7 +171,7 @@ Menschen tun können“.
 
 ## Was nur Menschen tun können
 
-Liste und Standards: `_lernapp/MENSCHEN.md` (LM-01…LM-36, Nachträge Stufe C). Die Reihenfolge beim Freischalten steht in
+Liste und Standards: `_lernapp/MENSCHEN.md` (LM-01…LM-39, Nachträge Stufe C). Die Reihenfolge beim Freischalten steht in
 `_lernapp/GO-LIVE.md`. Alles läuft bis zur Antwort mit dem Standard weiter; nichts Religiöses wird ohne zwei Menschen sichtbar.
 
 | Rang | Schritt | Wer | Aufwand | Standard bis zur Antwort |
@@ -185,67 +187,72 @@ Liste und Standards: `_lernapp/MENSCHEN.md` (LM-01…LM-36, Nachträge Stufe C).
 | 9 | **Koran-Bedeutungen und Wurzeln (LM-13, LM-31):** die Bedeutungen der 936 Wortformen verfassen (Arbeitsliste liegt bereit); eine Lehrkraft für die Wurzeltabelle benennen | Hoca; Vorstand | 25–50 h; Benennung 5 min | nur Wortformen ohne Bedeutung, keine Wurzel-Übungen |
 | 10 | **Gerätetest Sprechen (LM-07, LM-27):** iPhone, Android-Mittelklasse, Laptop | Technik | 2 h | Spracherkennung aus, Sprechen nur als Selbstvergleich |
 | 11 | **Kurze Entscheidungen des Vorstands** (je ≈ 5 min): Veröffentlichung vor der Stichprobe (LM-11), Bestenliste (LM-10), Prüfvermerk ohne Namen (LM-20), Ziffern im Arabischen (LM-18), Motivliste der Bildkarten (LM-34), Lizenz CC BY-SA 4.0 (LM-12), keine Spendenaufrufe (LM-35), eigene „Ich kann …“-Sätze (LM-36), kein NC-/ND-Material (LM-21) | Vorstand | ≈ 1 h zusammen | jeweils der Standard in MENSCHEN.md (ja mit Hinweis; Bestenliste aus; ohne Namen; östlich-arabisch; keine Lebewesen; CC BY-SA 4.0; keine; eigene Sätze; nein) |
-| 12 | **Weitere:** Lehrkräfte schulen (LM-14); Screenreader-Prüfung mit NVDA, VoiceOver und TalkBack (LM-19); İlmihal-Zitaterlaubnis und Anfrage bei der IGMG e. V. (LM-05); eigene Sammlung von Bittgebeten (LM-16); kindgerechter Pfad (LM-17); Trainingsdaten-Frage (LM-22); OpenITI-Anfrage (LM-30); Joseph Hell 1923 (LM-32); Vercel-Bauzeit im Dashboard ablesen (Z-L16) | Bildung, Technik, Imam, Hoca, Vorstand, Recht | je nach Punkt | Handbuch; UMGEBUNGSAUSNAHME; nur Seitenverweis; nur Bittgebete aus dem Koran per Verweis; Kennzeichnung „für Kinder geeignet“; konservativ; nicht nötig; nicht verwendet; – |
+| 12 | **Weitere:** Lehrkräfte schulen (LM-14); Screenreader-Prüfung mit NVDA, VoiceOver und TalkBack (LM-19); İlmihal-Zitaterlaubnis und Anfrage bei der IGMG e. V. (LM-05); eigene Sammlung von Bittgebeten (LM-16); kindgerechter Pfad (LM-17); Trainingsdaten-Frage (LM-22); OpenITI-Anfrage (LM-30); Joseph Hell 1923 (LM-32) | Bildung, Technik, Imam, Hoca, Vorstand, Recht | je nach Punkt | Handbuch; UMGEBUNGSAUSNAHME; nur Seitenverweis; nur Bittgebete aus dem Koran per Verweis; Kennzeichnung „für Kinder geeignet“; konservativ; nicht nötig; nicht verwendet |
+| 13 | **Aus der Abnahme (Stufe C):** libvips in den Lern-App-Seiten der Website-Hülle unter M-060 bestätigen oder den Umbau beauftragen (LM-37, L3-E18); Vercel-Bauzeit im Dashboard bestätigen (LM-38, L3-E21); Lighthouse-Leistung auf einem Referenzgerät bzw. mit PageSpeed Insights gegenmessen (LM-39, L3-E20) | Vorstand, Technik | je ≈ 10 min | M-060 gilt mit; Beleg Push bis live 11 min 24 s; Ersatz Messung live auf dem Messrechner |
 
-## Stand der Prüfungen (vorläufig, Endprüfer folgt)
+## Stand der Prüfungen
 
-- **Volles Tor auf e06a648b (läuft seit 08:49 UTC):**
-  - Unit 3.656 grün (188 Dateien, dazu 3 erwartete Fehlschläge und 1 vorgemerkter Test); die Integration läuft.
-  - Danach kommen der Import- und der Vorschau-Bau sowie der Produktionsbau mit voller Website- und Lern-App-E2E.
-  - Zuletzt vollständig grün: Integration 3.847 am 25.10.; Nachprüfung N1–N5 mit 684/684 in 12 Dateien.
-- **Inhalte:**
-  - `lernapp:pruefen`: 0 blockierende Befunde über 435 Dateien und 137.493 Einträge. Die 15 offenen Fragen
-    („menschlich klären“) liegen nur in den zwei Entwürfen de.b1.e16 und tr.b1.e16.
-  - Quelle, Lizenz und Namensnennung je Eintrag 100 %, Dubletten 0,00 %.
-  - Lektorat 126/126, Rückübersetzung 126/126, Schlussprüfungen 9/9.
-- **Religion:**
-  - `religion-pruefung` 0 Befunde (6.547 Dateien, Wächter 384).
-  - Live heute 0 Einträge mit Religionsbezug in 254 Sprachpaketen mit 116.763 Einträgen; 0 Audio zu Religion, Wissen und
-    Koran; 0 von 936 Koran-Bedeutungen stammen von einer KI.
-- **Live heute (curl):**
-  - 254/254 Sprachpakete und 40/40 Koran-Pakete antworten mit 200; alle Einheiten tragen den Hinweis.
-  - Es gibt keine Test- und keine B2-Einheit und 0 Testtöne.
-  - Anmelden und Gruppe antworten mit 404, `/api/lernapp/sitzung` ebenfalls.
-- **Bau:** Import-Bau lokal 636–693 s (Grenze 15 min), 2.328 Seiten, keine Website-Route fehlt.
-- **Leistung mit echten Inhalten (N6):**
-  - Erfüllt: JS-Budgets (Spieler ≤ 60 KB über der Hülle), LCP 1,87–2,09 s, CLS ≤ 0,007, Lighthouse-Zugänglichkeit 100, INP
-    in der Übung 168–184 ms.
-  - Verfehlt: Lighthouse-Leistung 72–86 (Lernpfad TBT 1,3 s) und INP 416 ms beim Knopf „offline speichern“.
+- **Schluss-Tor am Endstand** (`b9e581e8`, Arbeitsbaum `l3-05`; Nachläufe am Code-Endstand `808edeed` in `l8`; PostgreSQL/Mailpit, alle Lern-App-Schalter an):
+  - Produktionsbau grün (5 min).
+  - Lern-App-E2E (telefon + desktop): 159 grün, 1 rot, 46 übersprungen. Das Rote (`offline.spec`, Telefon) kam von der Verschiebung in b9e581e8: Die
+    Stationen über „Stufe offline speichern“ zeichnen sich erst in Sichtweite, der Knopf rutschte beim Tippen. Der Test tippt jetzt
+    erst, wenn der Knopf still steht (808edeed); Nachlauf `offline.spec` und `lernpfad.spec` je zweimal: **20 grün, 0 rot**.
+  - Übrige Website-E2E: **323 grün, 0 rot**, 89 übersprungen (meist nur-Desktop- bzw. nur-Telefon-Tests). Die sechs Specs zu Kopf und Menü liefen am Stand `e0292127` mit 663 grün, 0 rot,
+    7 übersprungen; an Kopf und Menü hat sich seither nichts geändert.
+  - Integration voll: **3.878 grün**, 2 erwartet rot, 4 übersprungen (93 Dateien). `pnpm check` (Typen, Lint, Unit): Typen und Lint grün, **Unit 3.717 grün** (194 Dateien; im Tor lief
+    parallel zur E2E einmal eine 5-s-Zeitgrenze ab, ohne Last wiederholt grün).
+- **Volles Tor** (Stand `e06a648b`, `scratchpad/tor-final/zusammenfassung.md`):
+  - Unit 3.656 grün; Integration 3.878 grün.
+  - `sprachen:pruefen`, Religion und Wortlaut rc=0; `lernapp:pruefen` 0 blockierend.
+  - Import-Bau wie Vercel 609 s, 2.438 Seiten, Sweep ohne 5xx; Vorschau-Bau 647 s.
+  - E2E 1.222 Tests: rot nur sieben Zeitgrenzen der Cüz-Seiten (f56f74bd, danach 12/12 grün) und einmal `gruppe.spec:155` unter
+    Volllast (an Bau 5 grün).
+- **Nach der Nacharbeit:**
+  - N9a: Lern-App-E2E 114 grün, 0 rot. N9b an Bau 5 (Merge N9a + N9b): 159 grün, 0 rot, 45 übersprungen.
+  - Endstand `e0292127`: `pnpm typen` und Unit 3.717 grün, Religion und Sprachen grün, Website-E2E Kopf 663 grün, 0 rot.
+- **Inhalte:** `lernapp:pruefen` 0 blockierend über 435 Dateien und 137.493 Einträge; Quelle, Lizenz und Namensnennung 100 %,
+  Dubletten 0,00 %. Lektorat 126/126, Rückübersetzung 126/126, Schlussprüfungen 9/9.
+- **Religion:** `religion-pruefung` 0 Befunde. Live 0 Einträge mit Religionsbezug in 254 Sprachpaketen; 0 Audio zu Religion,
+  Wissen und Koran; 0 von 936 Koran-Bedeutungen von einer KI.
+- **Leistung live** (Lighthouse mobil auf dem Messrechner, Median aus 3 Läufen, `berichte/leistung.md` Abschnitt „Schluss“):
+  - Vorher (Endstand des Endprüfers): Start 92, Übungen 83–90, aber der Lernpfad nur 69–71 mit **LCP 5,6–5,8 s** – der Block
+    „Stufe offline speichern“ aus N9a wurde spät gezeichnet und war das größte Element im ersten Bildschirm.
+  - Nachher (b9e581e8, Block am Ende der Stufe; gemessen parallel zum Schluss-Tor unter Last 4,6–10,7): Start 92 · LCP 1,9 s,
+    Lernpfad de 92 · LCP 1,9 s, Lernpfad ar 88 · LCP 1,9 s. Zugänglichkeit überall 100, CLS ≤ 0,007, JS-Budgets eingehalten.
+  - Die Übungsseiten bleiben auf dem Messrechner bei 83–90 (TBT 360–560 ms aus der Drosselung) → AUSNAHME L3-E20, LM-39.
+- **Bereitstellung:** Vom Push auf `main` bis live vergingen für `b9e581e8` **11 min 24 s** (22:01:17 → 22:12:41 UTC) – eine
+  Obergrenze für Bau und Bereitstellung, also ≤ 15 min (L3-E21). Andere Stände brauchten 20–34 min, weil mehrere Vercel-Projekte
+  und die Vorschau des Branches dasselbe Repository nacheinander bauen. Lokal wie Vercel 609 s; das Dashboard bestätigt LM-38.
 
-**Kriterien Z-L01…Z-L22** (Schwellen in `ABNAHME.md`; „Protokoll“ = Urteil nach der Gegenprüfung in `protokolle/C-*.md`):
+**Kriterien Z-L01…Z-L22** (Schwellen und Belege in `ABNAHME.md`; Endprüfer = `berichte/stufe-c.md`):
 
-| Z | Kriterium | Protokoll | Beleg und Nacharbeit seitdem |
-|---|---|---|---|
-| Z-L01 | Umfang Sprachkurse | teilweise | Mengen A1–B1 je Zielsprache erfüllt: 42/42 Einheiten, 336/336 Stationen, 2.758–2.800 Lemmata, 11.333–11.488 Sätze, Übersetzungen 100 % in 6 Richtungen. Herabgestuft wegen eines Satzes, der als Übersetzung den Quellsatz trug; behoben in 452102ea. N7 ergänzt eine Prüferregel gegen solche Fälle. Umfang A1–B1 nach L3-E16 |
-| Z-L02 | Wissenskurs | teilweise | 2.124/2.124 Aussagen mit Beleg, 0 arabische Schrift, live 0 sichtbare Bausteine. N2 schließt die Lücke „Administration gibt sich die Prüfrolle selbst“; N3 baut den Auslieferungsweg samt E2E. Bleibt: 26/28 Einheiten, weil zwei ohne benanntes Werk sind (AUSNAHME-fähig, LM-04) |
-| Z-L03 | Koran-Arabisch | erfüllt | 0/936 Bedeutungen, keine Sprachausgabe, Wortzeiten nur aus geprüften, aktiven Rezitationen. N3: live 40/40 Pakete statt 1/40 |
-| Z-L04 | Offline | offen | E2E `offline.spec.ts` vorhanden; der Beleg aus dem vollen Tor steht aus |
-| Z-L05 | Abgleich | erfüllt | Eigenschaftstests (idempotent, kommutativ, assoziativ), Integration 27/27, E2E zwei Geräte in drei Läufen grün; live 404 ohne Schalter |
-| Z-L06 | Zugänglichkeit | offen | axe 0 ernste und kritische Befunde auf 136 + 22 Prüfungen (24.10., Testkurs); Lighthouse-Zugänglichkeit 100 mit echten Inhalten. Der Beleg aus dem vollen Tor steht aus; die Screenreader-Prüfung (LM-19) ist UMGEBUNGSAUSNAHME |
-| Z-L07 | Leistung | teilweise | N6 erfüllt Budgets, LCP, CLS, Zugänglichkeit und den INP der Übung. Lighthouse-Leistung 72–86 und INP 416 ms verfehlen; **N8 läuft** |
-| Z-L08 | Datenfluss | offen | E2E `netzprotokoll.spec.ts` auf dem N6-Messbau grün; der Beleg aus dem vollen Tor steht aus |
-| Z-L09 | Kinderschutz | teilweise | Bestenliste ab 16 im Code, Gruppen- und Elterntrennung, Schreibabgaben nur an die eigene Lehrkraft (Unit 197, Integration 768 grün); 0 externe Links, 0 Spendenaufrufe. N5 ergänzt den Test „Meldung aus Kinderkonto“. `gruppe.spec.ts` läuft im vollen Tor |
-| Z-L10 | Religion-Prüfung | teilweise | Live 0 Einträge mit Religionsbezug. Herabgestuft, weil die Formelliste technisch nicht erzwungen war. N2 erzwingt sie in Prüfer und Paketbau und erweitert den Wächter |
-| Z-L11 | Bewegung | erfüllt | `bewegung-regeln` 25/25: Register B-28…B-35, jede Bewegung mit reduzierter Variante |
-| Z-L12 | Betrieb | teilweise | Schalter in Code und live wie KERN §6, Cockpit-Karte vollständig. N5 trägt L3-E12b nach, baut den Abmelde-Worker und führt S-L3 N-4 als AUSNAHME |
-| Z-L13 | Sprachen und RTL | erfüllt | `sprachen:pruefen` grün (868 Schlüssel), `rtl-regeln`, `sanfte-texte`; live `dir="rtl"`, 390 px ohne Überlauf |
-| Z-L14 | Inhaltsprüfer | teilweise | 0 blockierend, Dubletten 0,00 %. N7: Prüferregeln für Übersetzung und Paketbau, 25 vom Paketbau verworfene Aufgaben berichtigt; die Restfragen stehen jetzt in MENSCHEN.md |
-| Z-L15 | Audio | teilweise | „Audio folgt“ ohne Sackgasse. Herabgestuft wegen Testtönen an echten Einheiten; N1 trennt den Testkurs, live heute 0 Testtöne. Bleibt AUSNAHME „Audio folgt“ bis LM-06 bzw. LM-24…LM-26 |
-| Z-L16 | Bau | teilweise | Import-Bau < 15 min, 2.328 Seiten vollständig. Vorschau-Bau und volle Website-E2E laufen im Tor. Die Vercel-Bauzeit lässt sich nur im Dashboard ablesen (Mensch) |
-| Z-L17 | Lizenzverzeichnis | teilweise | Namensnennung in 222 Paketen vollständig, `/quellen` live. N4 legt die Lizenzhinweise von ONNX Runtime offline ab |
-| Z-L18 | Ausschlüsse | erfüllt | 0 Material unter NC, ND oder „nur Forschung“, 0 OpenITI- und QAC-Daten, 0 Tatoeba-Audio |
-| Z-L19 | Werkzeuge nur lokal | teilweise | keine GPL in Client-Bündeln, keine Sprachausgabe im Browser. N4 entfernt `sharp`/libvips aus den Funktionen der Lern-App |
-| Z-L20 | Herkunft der Stimmen | teilweise | eine Stimme (Thorsten) mit vollständiger Kette. N1: der Paketbau nimmt nur freigegebene Stimmen, Testtöne nur im Testkurs |
-| Z-L21 | Qualität der Stimmen | teilweise | Religionsteil erfüllt (0 Audio zu Religion). Keine Stimme eingesetzt. Nach N1 AUSNAHME „Audio folgt“ bis zur Hörabnahme (LM-06) bzw. zu eigenen Aufnahmen |
-| Z-L22 | Versionen und Modelle | teilweise | npm exakt gepinnt und ≥ 14 Tage alt (Next 16.4.2 nach L3-E14), Whisper 11/11 SHA. N4 pinnt die Python-Abhängigkeiten des Wurzel-Werkzeugs mit Hashes |
+| Z | Kriterium | Endprüfer | Nach den Auflagen | Kurz |
+|---|---|---|---|---|
+| Z-L01 | Umfang Sprachkurse | erfüllt | erfüllt | 42 Einheiten, 336 Stationen, 2.758–2.800 Lemmata, 11.333–11.488 Sätze je Zielsprache, Übersetzungen 100 %; gezählt sind die Inhaltsdateien, in Aufgaben ausgeliefert Sätze 67,6–83,3 % und Lemmata 91,8–95,2 % des Ziels |
+| Z-L02 | Wissenskurs | AUSNAHME | AUSNAHME (L3-E19) | 26/28 Einheiten, zwei bis zur Benennung der Werke zurückgestellt (LM-04); live 0 sichtbar |
+| Z-L03 | Koran-Arabisch | erfüllt | erfüllt | 80/80 Pakete ohne Bedeutungen; Bedeutungen nur durch Menschen |
+| Z-L04 | Offline | erfüllt | erfüllt | Einheit und Stufe offline, Bauwechsel G-1, Root-SW |
+| Z-L05 | Abgleich | erfüllt | erfüllt | Eigenschaftstests, Integration, zwei Geräte |
+| Z-L06 | Zugänglichkeit | erfüllt (L3-E17 offen) | erfüllt | axe-Matrix 26/26, alle Typen per Tastatur; L3-E17 bestätigt; Fokus in „Sprechen“ behoben (243aecfe) |
+| Z-L07 | Leistung | teilweise | AUSNAHME (L3-E20) | Budgets, LCP, CLS, INP erfüllt; Lighthouse live: Start und Lernpfad de 92, Lernpfad ar 88 (unter Last), Übungen 83–90 (TBT); LCP des Lernpfads 5,7 → 1,9 s (b9e581e8) |
+| Z-L08 | Datenfluss | erfüllt | erfüllt | nur GET an den eigenen Ursprung, auch mit echtem Modell |
+| Z-L09 | Kinderschutz | erfüllt | erfüllt | Bestenliste ab 16, Gruppen- und Elterntrennung |
+| Z-L10 | Religion-Prüfung | erfüllt | erfüllt | 0 Befunde, Formelliste erzwungen |
+| Z-L11 | Bewegung | erfüllt | erfüllt | Register B-28…B-35 mit reduzierter Variante |
+| Z-L12 | Betrieb | erfüllt | erfüllt | Schalter wie KERN §6, Cockpit-Karte |
+| Z-L13 | Sprachen und RTL | erfüllt | erfüllt | `sprachen:pruefen`, RTL ohne Überlauf |
+| Z-L14 | Inhaltsprüfer | erfüllt | erfüllt | 0 blockierend, Quelle/Lizenz 100 % |
+| Z-L15 | Audio | AUSNAHME | AUSNAHME | „Audio folgt“ bis zur Hörabnahme (LM-06) |
+| Z-L16 | Bau | teilweise | erfüllt (L3-E21) | Push bis live 11 min 24 s ≤ 15 min; Bau beider Betriebsarten, Website-Suiten ohne Rückschritt |
+| Z-L17 | Lizenzverzeichnis | erfüllt | erfüllt | `/quellen` live vollständig |
+| Z-L18 | Ausschlüsse | erfüllt | erfüllt | 0 NC/ND, 0 OpenITI-Dateien, 0 QAC |
+| Z-L19 | Werkzeuge nur lokal | teilweise | AUSNAHME (L3-E18) | öffentliche Lern-App frei von libvips; Verwaltung/Mein Bereich über die Website-Hülle nach M-060 (LM-37) |
+| Z-L20 | Herkunft der Stimmen | erfüllt | erfüllt | 0 Clips; Thorsten mit voller Kette, nicht freigegeben |
+| Z-L21 | Qualität der Stimmen | AUSNAHME | AUSNAHME | „Audio folgt“; 0 Audio zu Religion |
+| Z-L22 | Versionen und Modelle | erfüllt | erfüllt | exakt gepinnt, Whisper-SHA live gleich |
 
-**Zählung nach den Protokollen:** 5 erfüllt, 14 teilweise, 3 offen. Die Nacharbeit N1–N7 behebt die meisten Lücken; das Urteil
-darüber fällt der Endprüfer. Nach heutigem Stand bleiben offen:
-- Z-L07 Leistung: N8 läuft.
-- Z-L02 Menge: AUSNAHME wegen LM-04.
-- Z-L15 und Z-L21 Audio: AUSNAHME „Audio folgt“.
-- Z-L16: die Vercel-Bauzeit (Mensch).
-- Z-L04, Z-L06, Z-L08: die drei E2E-Belege aus dem vollen Tor.
+**Zählung:** Endprüfer 16 erfüllt, 3 AUSNAHME, 3 teilweise. Nach den Auflagen 17 erfüllt, 5 AUSNAHME, 0 teilweise – jedes Kriterium erfüllt oder AUSNAHME mit
+Grund und Ersatz, wie es das Tor L8 verlangt (`PLAN.md` §14).
 
 **Nacharbeit nach der Stufe C:**
 
@@ -258,28 +265,51 @@ darüber fällt der Endprüfer. Nach heutigem Stand bleiben offen:
 | N5 | Test „Meldung aus Kinderkonto“; L3-E12b und KERN §6 nachgetragen; Abmelde-Worker beim Abschalten (S-L3 N-4 als AUSNAHME); Warteschlange der Sprachprüfung 7,3 → 2,3–3,0 s; E2E stabilisiert | Z-L09, Z-L12 | 9a8ca1f8 |
 | N6 | Paketbau einer Richtung ≈ 2 s statt ≈ 9 s, der Server blockiert höchstens 0,4 s statt 6–10 s; gezielte Cache-Erneuerung in der E2E; Leistung mit echten Inhalten gemessen; Spieler-Budget ≤ 60 KB | Z-L07 (Budgets), Z-L16 | e06a648b |
 | N7 | Prüferregeln (Übersetzung gleich Quelltext oder falsche Schrift, Probe des Paketbaus); 25 Aufgaben berichtigt; Mengenbericht A1–B1; Einstufung ohne Vorkurs; dazu ein Satz in de-aus-tr übersetzt (452102ea) | Z-L01, Z-L14 | 25ce3abf |
-| N8 | **läuft:** Lernpfad schlank rendern, „offline speichern“ in kleinen Schritten, Paketprüfung im Spieler entlasten | Z-L07 (Lighthouse, INP) | Branch `lernapp-n8` |
+| N8 | Lernpfad schlank (zugeklappte Stufen, Stationen in Zeitscheiben), „offline speichern“ in kleinen Schritten, Paketprüfung im Spieler entlastet | Z-L07 (TBT, INP) | 2d6c1adc |
+| N9a | Offline: Bauwechsel G-1 (Kursvorrat je Bau, überholter Worker schreibt und löscht nichts), „Stufe offline speichern“, Wiederholen ohne Netz, Wissenskurs nur mit Prüfvermerk, INP des Lernpfads | Z-L04, Z-L07 | 11e45cbe |
+| N9b | Zugänglichkeit und Datenfluss: axe-Matrix über alle Routen × de/tr/ar × 390/1440, echte Tastaturwege, Ansage der 15-s-Grenze, Netzprotokoll mit echtem Whisper-Modell | Z-L06, Z-L08 | a9a79302, e0292127 |
+| Schluss | Menüpunkt „Sprachen lernen“ (1482184c); Fokus in „Sprechen“ nach „zu leise“/„kein Mikrofon“ (243aecfe); „Stufe offline speichern“ ans Ende der Stufe, LCP des Lernpfads (b9e581e8); Beschriftung A1–B1 (0e3a03a0); E2E robuster (808edeed); Entscheidungen L3-E17…L3-E21 | Z-L06, Z-L07, Z-L16, Z-L19 | `main` |
 
 **Offener Ausbau:**
 - B2 und C1 (L3-E16). Für Deutsch B2 liegen 12 Einheiten als unsichtbarer Entwurf bereit (1.275 Lemmata, 5.145 Sätze).
-- Wissenskurs: 1.041 Quizfragen statt ≈ 1.700.
-- Siyar-Einheiten nach LM-04.
+- Wissenskurs: 1.041 Quizfragen statt ≈ 1.700; Siyar-Einheiten nach LM-04.
+- Website-Hülle so umbauen, dass `sharp` nur in den Upload-Seiten gebunden wird (L3-E18).
+- Mehr Sätze aus dem Vorrat in Aufgaben bringen (Z-L01-Auslegung).
 
 ## Urteil des Endprüfers (wörtlich)
 
-[folgt nach Stufe C]
+Frischer Endprüfer, Stufe C, 26.10.2026, Stand `e0292127` (`berichte/stufe-c.md`):
+
+> **Gesamt: abgenommen mit Auflagen.** Am Endstand `e0292127` sind 16 der 22 Kriterien erfüllt. Drei sind als begründete AUSNAHME mit wirksamem Ersatz belegt: Z-L02, weil der Wissenskurs bis zur Benennung der Werke 26 von 28 Einheiten umfasst (LM-04), sowie Z-L15 und Z-L21 mit „Audio folgt“, solange keine Stimme die Hörabnahme bestanden hat. Die Sprachkurse A1–B1 sind in allen sechs Richtungen vollständig: je Zielsprache 42 Einheiten, 336 Stationen, 2.758–2.800 Lemmata und 11.333–11.488 Sätze, Übersetzungen zu 100 %. Sie sind live mit dem Hinweis „noch nicht von Muttersprachlern geprüft“. Wissensinhalte, Koran-Bedeutungen und Audio sind ohne zwei menschliche Freigaben bzw. ohne Hörabnahme nicht sichtbar. Offline, Abgleich, Zugänglichkeit, Datenfluss, Kinderschutz, Religion-Prüfung, Inhaltsprüfer und Lizenzen habe ich mit eigenen Proben an Code, Logs und live bestätigt. Die Lücken der Gruppenprotokolle sind am Endstand geschlossen, darunter Bauwechsel G-1, „Stufe offline speichern“, die axe-Matrix, das Netzprotokoll mit echtem Modell, die Testtöne und die Formelliste.
+>
+> Drei Kriterien bleiben teilweise; sie sind die Auflagen:
+> - **Z-L07 Leistung:** Die Lighthouse-Leistung liegt bei 80–89 statt ≥ 90, gemessen auf einem langsameren Rechner unter Last. Budgets, LCP, CLS und INP sind im Wesentlichen eingehalten.
+> - **Z-L19:** Die Lern-App-Seiten in Verwaltung und Mein Bereich tragen über die Website-Hülle libvips (LGPL-3.0) in der Bau-Ausgabe. Die öffentliche Lern-App ist frei davon.
+> - **Z-L16:** Die Vercel-Bauzeit ≤ 15 min ist nicht belegt. Bau und Website-E2E des Endstands sind grün (663/0), und der Endstand ist live.
+>
+> Vor der Übergabe sind diese drei Punkte zu beheben oder ausdrücklich zu entscheiden. Außerdem ist die Ausnahme L3-E17 (Aufnahme bis 15 s) zu bestätigen. Was nur Menschen tun können, steht in `MENSCHEN.md`: Muttersprachler-Stichproben, zwei religiöse Prüfende, Werke für den Wissenskurs, Hörabnahme der Stimmen, Gerätetest und Screenreader, Produktionsdatenbank und Geheimnisse. Solange diese Schritte fehlen, ist nichts Ungeprüftes sichtbar.
+
+**Was seitdem geschah** (Orchestrator, nach der Vollständigkeitskritik `protokolle/C-endpruefer-kritik.md`):
+- L3-E17 (Aufnahme bis 15 s) bestätigt; Fokusverlust in „Sprechen“ behoben (243aecfe, E2E-Schritt).
+- Z-L19: AUSNAHME L3-E18 – libvips nur serverseitig in der Website-Hülle nach M-060; Bestätigung LM-37.
+- Z-L02: AUSNAHME L3-E19 festgehalten.
+- Z-L07: Live gemessen. Dabei zeigte sich eine LCP von 5,7 s auf dem Lernpfad durch den spät gezeichneten Block „Stufe offline
+  speichern“; behoben (b9e581e8). Die Lighthouse-Note bleibt auf dem Messrechner unter 90 → AUSNAHME L3-E20 mit Ersatz und LM-39.
+- Z-L16: erfüllt – vom Push bis live 11 min 24 s am Endstand (L3-E21); das Dashboard bestätigt LM-38.
+- Prüfumfang am Endstand offengelegt: Schluss-Tor mit Lern-App- und Website-E2E, voller Integration und Unit (oben).
 
 ## Galerie
 
-- Die Aufnahmen stammen live von https://igmg-wetzlarer.vercel.app (Bau 25ce3abf), gemacht am 26.10.2026 gegen 09:10 UTC.
+- Die Aufnahmen stammen live von https://igmg-wetzlarer.vercel.app am Endstand (`data-bau` `390b67150bac`), gemacht am 26.10.2026
+  gegen 22:45 UTC mit `galerie-live.mjs` (Scratchpad).
 - Handy 390 px (doppelte Pixeldichte), Desktop 1440 px, jeweils ein frisches Gerät ohne Konto und ohne Lernstand.
-- Der einmalige Hinweis „Konzept-Website“ der Website ist weggeklickt.
+- Der einmalige Hinweis „Konzept-Website“ der Website ist geschlossen (Merker im Gerätespeicher).
 
 | | |
 |---|---|
 | ![Start, Handy](galerie/01-start-390.jpg) Start mit „Heute“ und Tagesziel | ![Start, Desktop](galerie/02-start-1440.jpg) Kurswahl: Sprachen und weitere Kurse |
-| ![Lernpfad, Handy](galerie/03-lernpfad-390.jpg) Lernpfad Türkisch, Einheit 1 mit „offline speichern“ | ![Lernpfad, Desktop](galerie/04-lernpfad-1440.jpg) Lernpfad A1 mit Hinweis „Noch nicht von Muttersprachlern geprüft“ |
-| ![Lektion, Handy](galerie/05-lektion-390.jpg) Erste Aufgabe der ersten Lektion | ![Rückmeldung, Desktop](galerie/06-lektion-1440.jpg) Dieselbe Aufgabe nach „Prüfen“: Rückmeldung |
+| ![Lernpfad, Handy](galerie/03-lernpfad-390.jpg) Lernpfad Türkisch: Einstufung, Wiederholen, Stufe A1 | ![Lernpfad, Desktop](galerie/04-lernpfad-1440.jpg) Lernpfad A1 mit Hinweis „Noch nicht von Muttersprachlern geprüft“ |
+| ![Lektion, Handy](galerie/05-lektion-390.jpg) Erste Aufgabe der ersten Lektion | ![Rückmeldung, Desktop](galerie/06-lektion-1440.jpg) Dieselbe Aufgabe nach „Prüfen“: Rückmeldung mit „Fehler melden“ |
 | ![RTL, Handy](galerie/07-rtl-lernpfad-390.jpg) Deutsch für Arabischsprachige: von rechts nach links | ![RTL, Desktop](galerie/08-rtl-lernpfad-1440.jpg) Vorkurs Lateinschrift im Lernpfad |
 | ![Wissen](galerie/09-wissen-platzhalter-390.jpg) Wissenskurs: Platzhalter ohne Freigaben | ![Koran-Arabisch](galerie/10-koran-platzhalter-1440.jpg) Koran-Arabisch: Wortformen, 0 geprüfte Bedeutungen |
-| ![Einstieg, Handy](galerie/11-lernen-einstieg-390.jpg) Einstieg `/lernen` | ![Einstieg, Desktop](galerie/12-lernen-einstieg-1440.jpg) „Üben in der Lern-App“ auf `/lernen` |
+| ![Einstieg, Handy](galerie/11-lernen-einstieg-390.jpg) Einstieg `/lernen` | ![Menü, Desktop](galerie/12-menue-sprachen-lernen-1440.jpg) Menü „Bildung › Sprachen lernen“ im Kopf der Website |

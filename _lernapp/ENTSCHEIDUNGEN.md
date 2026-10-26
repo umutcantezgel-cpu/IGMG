@@ -397,6 +397,7 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
   sehen das Projekt nicht (Vercel-Verbindung ohne Zugriff, GitHub ohne Deployments-API).
 - **Entscheidung:** Als Beleg gilt die Zeit vom Push auf `main` bis zum Wechsel von `data-bau` auf der Test-Domain – eine
   Obergrenze für Warteschlange, Bau und Bereitstellung. Gemessen: `b9e581e8`, Push 22:01:17 UTC, live 22:12:41 UTC, also
-  **11 min 24 s ≤ 15 min** (`scratchpad/live-b9e581e8.log`, Abfrage alle 20 s). Frühere Stände brauchten 23–34 min, weil mehrere
-  Vercel-Projekte dasselbe Repository nacheinander bauen (Warteschlange, nicht Bauzeit). Dazu lokal der Bau wie ein frischer
+  **11 min 24 s ≤ 15 min** (`scratchpad/live-b9e581e8.log`, Abfrage alle 20 s). Andere Stände brauchten 20–34 min (`390b6715`:
+  22:23:42 → 22:43:36), weil mehrere Vercel-Projekte und die Vorschau des Branches dasselbe Repository nacheinander bauen
+  (Warteschlange, nicht Bauzeit); jede Messung ist eine Obergrenze, die kleinste zählt. Dazu lokal der Bau wie ein frischer
   Vercel-Import: 609 s. Z-L16 ist damit **erfüllt**; LM-38 bestätigt die Zahl im Dashboard und räumt überzählige Projekte auf.
