@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { existsSync } from 'node:fs';
-import { expect, test } from '@playwright/test';
+import { expect, type Page, test } from '@playwright/test';
 import pg from 'pg';
 import de from '../../../messages/lernapp/de.json';
 import tr from '../../../messages/lernapp/tr.json';
@@ -123,6 +123,18 @@ async function wegraeumen(a: Angelegt) {
   });
 }
 
+/**
+ * axe im Koran-Spieler auf beiden Breiten (Stufe C N9b): Der Test läuft wegen der Datenbank-Änderungen nur im Projekt desktop,
+ * die Telefonbreite (390 × 844) prüft er deshalb im selben Lauf und kehrt danach zu 1440 × 900 zurück.
+ */
+async function axeBeideBreiten(page: Page, name: string) {
+  const befunde = await ernsteBefunde(page, `${name} 1440`);
+  await page.setViewportSize({ width: 390, height: 844 });
+  befunde.push(...(await ernsteBefunde(page, `${name} 390`)));
+  await page.setViewportSize({ width: 1440, height: 900 });
+  return befunde;
+}
+
 test('Koran-Lektion mit zwei Freigaben je Bedeutung ist spielbar (Platzhalter, ohne Audio)', async ({ page, baseURL }, info) => {
   test.skip(info.project.name !== 'desktop', 'Datenbank-Änderungen nur einmal je Lauf');
   const einheit = pfad.einheiten[0]!;
@@ -150,13 +162,14 @@ test('Koran-Lektion mit zwei Freigaben je Bedeutung ist spielbar (Platzhalter, o
       ).toBeVisible();
       await expect(page.locator('main figure [lang="ar"][dir="rtl"]')).toBeVisible();
       if (i === 0) {
-        expect(await ernsteBefunde(page, 'koran_wort')).toEqual([]);
+        expect(await axeBeideBreiten(page, 'koran_wort vor der Antwort')).toEqual([]);
         await expect(page.locator('main audio')).toHaveCount(0);
       }
       const radio = page.getByRole('radio', { name: angelegt.je.get(aufgabe.wortform)!, exact: true });
       await page.locator('main label').filter({ has: radio }).click();
       await expect(radio).toBeChecked();
       await page.getByRole('button', { name: s.pruefen, exact: true }).click();
+      if (i === 0) expect(await axeBeideBreiten(page, 'koran_wort nach der Antwort')).toEqual([]);
       await page.getByRole('button', { name: s.weiter, exact: true }).click();
     }
     await expect(page.getByText(s.fertigTitel, { exact: true })).toBeVisible();
