@@ -449,6 +449,54 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
     await ueberschrift(page, t.schreiben.anweisung);
   });
 
+  test('Fokus bleibt nach „zu leise“ und „kein Mikrofon“ (Stufe C, WCAG 2.4.3)', async ({ page }, info) => {
+    test.skip(info.project.name !== 'desktop', 'einmal genügt');
+    test.setTimeout(120_000);
+    const t = de;
+    await geraet(page);
+    // erste Aufnahme: stummer Strom (Oszillator mit Lautstärke 0) → „zu leise“; danach verweigert der Browser das Mikrofon
+    await page.addInitScript(() => {
+      let aufrufe = 0;
+      navigator.mediaDevices.getUserMedia = async () => {
+        aufrufe += 1;
+        if (aufrufe > 1) throw new DOMException('verweigert', 'NotAllowedError');
+        const ctx = new AudioContext();
+        const ton = ctx.createOscillator();
+        const stumm = ctx.createGain();
+        stumm.gain.value = 0;
+        const ziel = ctx.createMediaStreamDestination();
+        ton.connect(stumm).connect(ziel);
+        ton.start();
+        return ziel.stream;
+      };
+    });
+    await page.goto('/lern-app/de/tr-aus-de/ueben?l=tr-aus-de.a1.test.l04');
+    await dialog(page, 'tastatur', t, 'İyiyim, teşekkürler.', false);
+    await geschichte(page, 'tastatur', t, 'kitap', 'de');
+    await lesen(page, 'tastatur', t, null, 'kitap', { ui: 'de', glossen: 2 });
+    await tipp(page, 'tastatur', t, 'Su içiyorum.');
+    await waehle(page, 'tastatur', page.getByRole('radio', { name: 'Ş', exact: true }));
+    await pruefenUndWeiter(page, 'tastatur', t);
+    await ueberschrift(page, t.sprechen.anweisung);
+    const ohne = page.getByRole('button', { name: t.sprechen.ohne, exact: true });
+    if (await ohne.count()) await druecke(page, 'tastatur', ohne);
+    const aufnehmen = page.getByRole('button', { name: t.sprechen.aufnehmen, exact: true });
+    await druecke(page, 'tastatur', aufnehmen);
+    const stopp = page.getByRole('button', { name: t.sprechen.stopp, exact: true });
+    await expect(stopp).toBeFocused();
+    await page.waitForTimeout(1_500);
+    await page.keyboard.press('Enter');
+    // „zu leise“: „Aufnahme beenden“ verschwindet, der Fokus steht wieder auf „Aufnehmen“
+    await expect(liveRegion(page)).toHaveText(t.sprechen.zuLeise);
+    await expect(aufnehmen).toBeFocused();
+    // „kein Mikrofon“: „Aufnehmen“ verschwindet, der Fokus steht auf der Selbstbewertung
+    await page.keyboard.press('Enter');
+    await expect(liveRegion(page)).toHaveText(t.sprechen.keinMikrofon);
+    await expect(aufnehmen).toHaveCount(0);
+    await expect(page.getByRole('heading', { level: 3, name: t.sprechen.selbstVergleich, exact: true })).toBeFocused();
+    await druecke(page, 'tastatur', page.getByRole('button', { name: t.sprechen.selbst.gut, exact: true }));
+  });
+
   for (const mitPruefung of [false, true])
     test(`Höchstlänge 15 s: vorher sichtbar und angesagt, die Aufnahme endet von selbst mit Ansage (N9b)${
       mitPruefung ? ', mit Sprachprüfung: die Ansage steht vor dem Ergebnis' : ''

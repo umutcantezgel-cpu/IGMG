@@ -94,10 +94,18 @@ export default function Sprechen({
   const eigeneAdresse = useRef<string | null>(null);
   const ergebnisTitel = useRef<HTMLHeadingElement>(null);
   // Fokus nicht verlieren, wenn ein Knopf verschwindet (Stufe C N9b, WCAG 2.4.3): „Aufnehmen“ → „Aufnahme beenden“, nach
-  // „Ohne Sprachprüfung üben“ und nach dem Laden der Sprachprüfung zurück auf „Aufnehmen“
+  // „Ohne Sprachprüfung üben“, nach dem Laden der Sprachprüfung und nach „zu leise“ zurück auf „Aufnehmen“; ohne Mikrofon auf
+  // die Selbstbewertung (Stufe C). Das Ziel steht erst nach dem nächsten Rendern im DOM: einige Bilder lang erneut versuchen.
   const aufnehmenKnopf = useRef<HTMLButtonElement>(null);
   const stoppKnopf = useRef<HTMLButtonElement>(null);
-  const fokusAufAufnehmen = () => requestAnimationFrame(() => aufnehmenKnopf.current?.focus());
+  const fokusAuf = (ziel: { current: HTMLElement | null }, rest = 10): void => {
+    requestAnimationFrame(() => {
+      if (ziel.current) ziel.current.focus();
+      else if (rest > 0) fokusAuf(ziel, rest - 1);
+    });
+  };
+  const fokusAufAufnehmen = () => fokusAuf(aufnehmenKnopf);
+  const fokusAufErgebnis = () => fokusAuf(ergebnisTitel);
   // Ende nach 15 s von selbst (Zeitgeber in `aufnahme.ts`) statt mit „Aufnahme beenden“
   const vonSelbst = useRef(false);
   const [vonSelbstBeendet, setVonSelbstBeendet] = useState(false);
@@ -208,6 +216,7 @@ export default function Sprechen({
     }
     if (!a.mikrofonErlaubtHier(location.pathname)) {
       setMikrofon(false);
+      fokusAufErgebnis();
       return sage(t.keinMikrofon);
     }
     try {
@@ -225,6 +234,7 @@ export default function Sprechen({
       sage(f(t.laeuftAnsage, { s: SEKUNDEN }));
     } catch {
       setMikrofon(false);
+      fokusAufErgebnis();
       sage(t.keinMikrofon);
     }
   }
@@ -248,6 +258,7 @@ export default function Sprechen({
       setEigene(eigeneAdresse.current);
       if (!pruefePegel(a.pcm, ABTASTRATE).ok) {
         setPhase('start');
+        fokusAufAufnehmen();
         return sage(mitGrenze(t.zuLeise));
       }
       const e = erkennung.current;
@@ -266,6 +277,7 @@ export default function Sprechen({
     } catch {
       setPhase('start');
       setMikrofon(false);
+      fokusAufErgebnis();
       sage(mitGrenze(t.keinMikrofon));
     }
   }
