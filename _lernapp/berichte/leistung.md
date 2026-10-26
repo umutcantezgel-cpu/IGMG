@@ -74,6 +74,34 @@ Budgets wie Messbau C: Lernpfad 160,3 / 25,0 KB, Spieler +54,5 KB, ungünstigste
 Hülle 9,7 KB – alle eingehalten. INP nicht neu gemessen: Geändert sind nur der Service Worker (eigener Thread, kein Code im
 Hauptthread des Lernpfads) und Tests.
 
+**Nachtrag Gegenprüfung N9a (Fortsetzung 3, Bau `dee0ace6`, 26.10.2026 18:46 UTC):** Geändert im Hauptthread:
+`speichereOffline` lädt je Einheit erst die Töne, dann das Paket (Häppchen wie bisher: vor jedem Bündel und Paket
+`nachgeben`), „Stufe offline speichern“ zeigt Abbruch und Fehler sichtbar und nennt den Rest-Bedarf ohne schon gespeicherte
+Töne. Neu gemessen mit `inp-spieler.mjs --echt` (CPU ×6, Telefon 390 px, 3 Läufe, Median; Server Port 3312, Datenbank
+`igmg_lernapp_n9a_e2e`; Rohdaten `<scratchpad>/tmp-n9a/s4/mess-vier`), neu das Szenario für den Stufen-Knopf (Gegenprüfung
+N9a: bis dahin war „beide Knöpfe ≤ 200 ms“ in ADR 0039 nur für den Einheiten-Knopf belegt):
+
+| Szenario | INP Median | je Schritt (Median) | Läufe | Last max | Ergebnis |
+|---|---|---|---|---|---|
+| Lernpfad: Stufe A1 offline speichern und mitten im Speichern abbrechen (neu) | **160** | Stufe offline speichern **152** · Speichern abbrechen **136** | 160 / 136 / 192 | 1,52 | erfüllt |
+| Lernpfad öffnen (Start → `tr-aus-de`) und Einheit offline speichern | **200** | Lernpfad öffnen 196 · offline speichern **144** | 200 / 192 / 216 | 1,38 | erfüllt (Grenzwert) |
+| Lernpfad öffnen und Stufe A2 aufklappen | **112** | Stufe aufklappen 112 | 88 / 120 / 112 | 1,56 | erfüllt |
+| zum Vergleich ohne Codeänderung: Spieler A1 / B1 / ar | 168 / 216 / 184 | – | – | 1,32 | Streuung wie N9a.1 (B1 über der Grenze) |
+
+Je Klick bleibt die Verarbeitung klein (Stufe speichern 4–5 ms, abbrechen 14/18/29 ms, Einheit speichern 5–7 ms); der Rest ist
+Eingabeverzögerung (Häppchen des laufenden Speicherns bzw. die Takte der Stationen nach der ersten Eingabe). „Abbrechen“ lag
+in allen Läufen mitten im Speichern (die Meldung „Speichern abgebrochen“ kam, der Knopf stand also noch). Der Lauf mit 216 ms
+im Einheiten-Szenario ist das Speichern selbst (165 ms Eingabeverzögerung bei 7 ms Verarbeitung), Median 144 ms.
+
+Budgets (`lernapp-budget.mjs`, derselbe Bau): Lernpfad 160,4 / 25,1 KB (≤ 180 / 30), Spieler +54,6 KB, ungünstigste echte
+erste Aufgabe +58,5 KB (≤ 60), Start 149,5 KB, Hülle 9,8 KB – alle eingehalten (je +0,1 KB).
+
+Offene Punkte (eigens geführt, Gegenprüfung N9a): (1) **Startseiten-Anteil** (N8.7 Nr. 1) – „Lernpfad öffnen“ ist das Antippen
+der noch hochfahrenden Startseite (hier 194/182 ms Eingabeverzögerung bei 7–8 ms Verarbeitung); das Szenario hält die Grenze
+in diesem Durchgang knapp (200 ms), in C einmal nicht (208 ms). Es liegt nicht am Lernpfad; zu messen wäre es getrennt mit
+einer Wartezeit nach der Hydration bzw. zu beheben auf der Startseite. (2) Streuung der Spieler-Szenarien ohne Codeänderung
+(± 30 ms um die Grenze). Z-L07 bleibt **teilweise**.
+
 ## Stufe C, 26.10.2026, Leistung mit echten Inhalten (N8)
 
 | | |
