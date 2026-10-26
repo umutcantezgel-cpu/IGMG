@@ -111,7 +111,7 @@ Prüfungen zu diesem Nachtrag: Unit `tests/unit/lernapp` 76 Dateien, 2067 grün 
 | | |
 |---|---|
 | Paket | Stufe C N9b: Z-L06 (axe-Matrix, axe je Übungstyp, echte Tastaturwege, Ansage der 15 s) und Z-L08 (Datenfluss mit echtem Modell, Netzprotokoll), Befunde aus `protokolle/C-e2e*.md`; Nacharbeit nach der Gegenprüfung |
-| Stand | Zweig `lernapp-n9b`. Bau 1 aus `515a463f` (18:05 UTC, Beleg Z-L08, INP-Probe, volle Lern-App-E2E); Bau 2 aus `8e250aa4` (19:03 UTC, nach der Gegenprüfung: Tastaturhelfer, axe für `schrift_latein`, INP nachgemessen, volle Lern-App-E2E); Bau 3 und 4 aus `5b9de3fe` bzw. `d52a4133` (gebaut als `19f73636`, gleicher Baum, nur die Commit-Nachricht berichtigt; 19:36 und 19:48 UTC, nur `zugaenglichkeit.spec.ts` nach Korrekturen am neuen Test). Der App-Code der Bauten 2–4 ist der von Bau 1 bis auf Kommentare in `Sprechen.tsx` |
+| Stand | Zweig `lernapp-n9b`. Bau 1 aus `515a463f` (18:05 UTC, Beleg Z-L08, INP-Probe, volle Lern-App-E2E); Bau 2 aus `8e250aa4` (19:03 UTC, nach der Gegenprüfung: Tastaturhelfer, axe für `schrift_latein`, INP nachgemessen, volle Lern-App-E2E); Bau 3 und 4 aus `5b9de3fe` bzw. `d52a4133` (gebaut als `19f73636`, gleicher Baum, nur die Commit-Nachricht berichtigt; 19:36 und 19:48 UTC, nur `zugaenglichkeit.spec.ts` nach Korrekturen am neuen Test). Der App-Code der Bauten 2–4 ist der von Bau 1 bis auf Kommentare in `Sprechen.tsx`. Bau 5 aus `78f79978` (20:29 UTC, Runde 3 nach dem Merge von N9a: Ansage in `Sprechen.tsx`, volle Lern-App-E2E und Budget, Abschnitt N9b.5) |
 | Bauten | je ein `pnpm build` ohne `E2E_ATTRAPPEN` (echter `whisper.worker.mjs`, 693 KB mit Lizenzkopf) unter dem Bauschloss; für die E2E danach nur der Worker gegen die Attrappe getauscht (`E2E_ATTRAPPEN=1 pnpm lernapp:modelle`, die einzige Bauausgabe, die davon abhängt). Wegwerf-Datenbank `igmg_lernapp_n9b_e2e`, Server auf 3322 (Werkzeuge) bzw. 3321 (E2E) |
 | Rohdaten | außerhalb des Repos (`<scratchpad>/n9b/`): `tor.status`, `tor2.status`, `tor3.status`, `bau*.log`, `whisper-netz.txt` und `mess/whisper-netz.json`, `budget*.txt`, `inp-probe.txt`, `inp-nach.txt` mit `mess2/inp-nach.{md,json}`, `e2e.log`, `e2e2.log`, `e2e3a.log` (Bau 3), `e2e3.log` (Bau 4) mit `e2e-ergebnis*/ergebnis.json` |
 
@@ -198,6 +198,32 @@ der nach zwei Korrekturen mit der ganzen `zugaenglichkeit.spec.ts` grün ist (N9
 - **`gruppe.spec.ts:155`** (unter Last einmal rot nach 33,4 s, Details verloren; Trace bei Fehlschlag aufbewahrt): in beiden
   vollen Läufen grün, 66,7 s (Bau 1) und 80,8 s (Bau 2) bei der seit vor N9b unveränderten Zeitgrenze von 300 s. Kein Rot
   beobachtet, also keine Ursache zu belegen; die Zeitgrenze ist nicht angehoben.
+
+### N9b.5 Runde 3: Merge N9a und Restbefunde der Gegenprüfung 2 (26.10.2026)
+
+- **Merge** `claude/trusting-lovelace-6nfolz` (N9a, `11e45cbe`): `spieleTurkisch` liegt seit N9a in `tests/e2e/lernapp/l03.ts`;
+  die axe-Prüfung je Übungstyp aus N9b steckt dort hinter der Option `axe` (Standard an, `offline.spec.ts` ohne axe, damit der
+  Offline-Lauf nicht langsamer wird). Wiederholungsrunde: axe je Aufgabe mit dem gemeinsamen `loeseWiederholung` (auch
+  `netzprotokoll.spec.ts` nutzt ihn statt einer Kopie). `inp-spieler.mjs`: Szenarien aus N9a (Stufe aufklappen, Stufe
+  speichern, abbrechen) und Messweise aus N9b zusammen.
+- **Fokusring-Prüfung (mittel):** `tastatur.ts` `fokus()` zählte den berechneten Umriss eines `sr-only`-Optionsfeldes mit (über
+  die globale `:focus-visible`-Regel) und konnte bei Karten ohne Fokusring nie anschlagen. Jetzt zählen nur sichtbare
+  Kandidaten (> 2 × 2 px, nicht weggeschnitten; beim winzigen Feld Karte daneben, Label, Elternelement). Selbsttest ohne App
+  (`tastatur-selbsttest.spec.ts`, `page.setContent`): Karte ohne `peer-focus-visible`-Umriss → „kein sichtbarer Fokusring“,
+  mit Umriss → kein Mangel; mit dem alten Helfer rot. Alle Tastaturwege der App bleiben mit der strengeren Prüfung grün.
+- **Sprechen (niedrig):** „Die Aufnahme hat nach 15 Sekunden von selbst geendet …“ stand allein in der Live-Region und wurde
+  sofort von „Einen Moment …“ bzw. dem Ergebnis ersetzt. Jetzt steht die Ansage vor der folgenden Meldung (Ergebnis, „zu
+  leise“, Fehler, „kein Mikrofon“) in derselben Ansage. E2E zusätzlich mit Sprachprüfung (Attrappen-Worker): Live-Region =
+  Grenze + Ergebnis nach ≥ 14 s.
+- **`fokus-regeln.test.ts` (niedrig):** Klassenlisten über den TypeScript-Parser statt eines regulären Ausdrucks (der an `${…}`
+  mit eigenen Anführungszeichen abbrach); Template-Literale als statische Teile und je Zweig einer Bedingung, mit Probe-Tests.
+- **Kleinere Nachträge:** echter Tab-Weg für Lektion l03 in ar (RTL: Bildschirmtastatur mit Pfeilen, `luecke` als Freitext,
+  `harakat`); axe im Koran-Spieler vor und nach der Antwort auf beiden Breiten (1440 und 390 im selben desktop-Lauf, weil der
+  Test die Datenbank ändert).
+- **Prüfungen:** `pnpm typen` grün; Unit `tests/unit/lernapp` 77 Dateien, 2071 grün, 1 todo; ESLint/Prettier der geänderten
+  Dateien grün. Bau 5 aus `78f79978` (Attrappe, 280 s): **alle Lern-App-E2E 159 bestanden, 0 rot, 45 übersprungen** (telefon
+  62/40/0, desktop 97/5/0; bestanden/übersprungen/rot; 15,1 min); `gruppe.spec.ts:155` grün in 54,7 s. Budget gegen
+  denselben Bau: alle eingehalten (Spieler-Chunk 37,9 KB, `sprechen` 8,6 KB, Bildschirmtastatur 1,5 KB).
 
 ## Stufe C, 26.10.2026, Leistung mit echten Inhalten (N8)
 
