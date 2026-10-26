@@ -8,7 +8,7 @@
 // (arabischer Freitext), Lernpfad öffnen (Antippen der Kurskarte bis die Lektionen sichtbar sind) und „Einheit offline speichern“.
 // Mit --echt (Stufe C N6): Szenarien mit echten Lektionen (routen.mjs `ECHT`: A1 Auswahl/Paare, B1 mit Geschichte zuerst,
 // ar-Oberfläche RTL) statt des Testkurses; gewählt wird ohne Kenntnis der Lösung (erste Option), der Lernpfad zeigt alle
-// echten Einheiten.
+// echten Einheiten. Dazu (Stufe C N9a): eine zugeklappte Stufe des Lernpfads aufklappen.
 // Aufruf: node inp-spieler.mjs [--laeufe 3] [--drossel 6] [--echt] [--aus name]
 import { parseArgs } from 'node:util';
 import { BASIS, LAST_GRENZE, last, lernTexte, median, schreibe, starteBrowser, warteAufLast } from './gemeinsam.mjs';
@@ -224,6 +224,20 @@ const SZENARIEN_ECHT = [
   },
   // Lernpfad mit allen echten Einheiten (A1–B1) öffnen und die erste Einheit offline speichern
   SZENARIEN[SZENARIEN.length - 1],
+  {
+    // Stufe C N9a (Gegenprüfung N8, Nr. 5b): eine zugeklappte Stufe (`<details>`, Stationen erst beim Aufklappen) antippen, bis
+    // ihre erste Station steht; ausgewählt über `data-stufe-zu`, damit derselbe Schritt vor und nach N9a misst
+    name: 'Lernpfad öffnen und eine zugeklappte Stufe aufklappen (A2)',
+    pfad: '/lern-app/de/tr-aus-de',
+    bereit: (s) => s.locator('main a[href*="/ueben?l="]').first().waitFor({ timeout: 60_000 }),
+    ablauf: async (s, schritt) => {
+      const stufe = s.locator('main details[data-stufe-zu="a2"]');
+      await schritt('stufeAufklappen', async () => {
+        await stufe.locator('summary').tap();
+        await stufe.locator('.lernweg-station').first().waitFor({ timeout: 30_000 });
+      });
+    },
+  },
 ];
 
 const browser = await starteBrowser();
