@@ -1,5 +1,20 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 12:55 UTC – Belege E2E fertig (e1887076), N8 misst Bau C, N9 vorbereitet:**
+  - **Belege E2E** mit zwei Gegenprüfungen (Logs/Specs und Code/live): Z-L04 teilweise, Z-L06 teilweise, Z-L08 erfüllt (eine Gegenprüfung: teilweise).
+    - G-1 (Fehler): Nach jeder Bereitstellung löscht der neue Lern-App-Worker die vorgehaltenen Kursseiten gespeicherter Einheiten; die Oberfläche zeigt weiter „offline gespeichert“.
+    - „Stufe offline speichern“ (ADR 0039 Nr. 12) fehlt; Wiederholen ohne Netz ist nicht belegt.
+    - axe-Matrix auf dem aktuellen Stand fehlt (Wiederholen, Tipps, Wortschatz, 390 px …); Tastaturwege nur mit focus(); Nachspuren mit Maus; Aufnahmegrenze 15 s nicht angekündigt.
+    - Kein Netzprotokoll mit echtem Whisper-Modell und Aufnahme in der echten App.
+  - **N8** (Messbau B): Lighthouse Start 92, Lernpfad 84/82, Spieler 85/81/86; INP Spieler 160–184 ms, „offline speichern“ 272 ms (vorher 480). Bau C mit weiteren Commits (Budget ≤ 60 KB) folgt, danach volle Lern-App-E2E (Auftrag 3).
+  - **Platte:** 4 gemergte Gemeinde-Arbeitsbäume entfernt (aad315d2, adda99eb, ac6673f9, ae898deb) → 7,9 GB frei.
+  - **Auslastung** 0,22 um 12:39 (Taktlinie 0,09) → neue Läufe erst, wenn N8 fertig ist.
+  - **Danach:**
+    1. N8 Gegenprüfung (`scratchpad/lernapp-n8-gegen.workflow.js` mit `args.bau`), mergen.
+    2. N9 (`scratchpad/lernapp-nacharbeit-n9.workflow.js`): N9a Offline in `l8`, N9b Zugänglichkeit/Datenfluss in `l3-05`; je Gegenprüfung.
+    3. Merge, Lern-App-E2E voll, frischer Endprüfer mit Vollständigkeitskritik (`lernapp-stufe-c-schluss.workflow.js`, `args.belege`/`gegen` aus `wf_5370d2fe-641`).
+    4. ABNAHME, BERICHT, ABSCHLUSS.
+
 - **Stand 26.10.2026 11:50 UTC – volles Tor fertig, N8 baut und misst:**
   - **Volles Tor** (Stand e06a648b): alles grün bis auf 9 rote E2E von 1.222. Zusammenfassung in `scratchpad/tor-final/zusammenfassung.md`.
     - Unit 3.656 und Integration 3.878 grün; Sprachen, Religion, Wortlaut und lernapp:pruefen rc=0 (0 blockierend).
