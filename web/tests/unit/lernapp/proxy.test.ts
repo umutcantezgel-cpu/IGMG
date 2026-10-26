@@ -156,6 +156,20 @@ describe('Schalter lernapp aus der Umgebung (ausgeschaltet heißt 404, ADR 0035)
     vi.stubEnv('FUNKTION_LERNAPP', '');
     expect(proxy(anfrage('/lern-app/de')).headers.get('x-middleware-next')).toBe('1');
   });
+
+  it('S-L3 N-4: FUNKTION_LERNAPP=aus – unter /lern-app/sw.js der Abmelde-Worker; sonst die Datei aus public/', () => {
+    vi.stubEnv('FUNKTION_LERNAPP', 'aus');
+    const aus = proxy(anfrage('/lern-app/sw.js?v=abc123'));
+    expect(aus.headers.get('x-middleware-rewrite')).toBe(`${BASIS}/lern-app/sw-abmelden.js`);
+    expect(aus.status).toBe(200);
+    for (const wert of ['an', '']) {
+      vi.stubEnv('FUNKTION_LERNAPP', wert);
+      const an = proxy(anfrage('/lern-app/sw.js?v=abc123'));
+      // Durchlass zur statischen Datei – nicht die 404 einer „unbekannten Oberflächensprache“ sw.js
+      expect(an.headers.get('x-middleware-next'), wert).toBe('1');
+      expect(an.headers.get('x-middleware-rewrite'), wert).toBeNull();
+    }
+  });
 });
 
 describe('Matcher: Pakete, Audio und Modelle ohne Proxy (ADR 0039 Fortschreibung S5 Nr. 7)', () => {
@@ -167,11 +181,13 @@ describe('Matcher: Pakete, Audio und Modelle ohne Proxy (ADR 0039 Fortschreibung
     '/lern-app/audio/tr/tr.a1.e01-0123456789abcdef',
     '/lern-app/modelle/whisper-base-64da572/config',
     '/lern-app/pakete',
-    '/lern-app/sw.js',
+    '/lern-app/sw-abmelden.js',
+    '/lern-app/symbole/symbol-192.png',
     '/lern-app/de/manifest.webmanifest',
   ])('%s: kein Proxy', (url) => expect(trifft(url)).toBe(false));
 
-  it.each(['/lern-app', '/lern-app/de', '/lern-app/de/anmelden', '/lern-app/paketewelt', '/de/lern-app', '/quran/1'])('%s: Proxy', (url) =>
-    expect(trifft(url)).toBe(true),
+  it.each(['/lern-app', '/lern-app/de', '/lern-app/de/anmelden', '/lern-app/paketewelt', '/de/lern-app', '/quran/1', '/lern-app/sw.js'])(
+    '%s: Proxy',
+    (url) => expect(trifft(url)).toBe(true),
   );
 });

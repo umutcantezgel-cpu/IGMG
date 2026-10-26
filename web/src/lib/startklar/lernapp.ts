@@ -57,7 +57,9 @@ export async function lernappPruefen(
             .map((s) => s.name)
             .join(', ') || '–'
         }.`
-      : 'Die Lern-App ist ausgeschaltet (in der Produktion bis zur Abnahme). Seiten und Links erscheinen erst danach.',
+      : 'Die Lern-App ist ausgeschaltet; Seiten und Links erscheinen erst nach dem Einschalten. In der Produktion ist sie ' +
+        'standardmäßig an (Nutzerentscheidung 21.10.2026, L3-E12b). Nur FUNKTION_LERNAPP=aus in der Umgebung ersetzt auch ' +
+        'den Service Worker auf den Geräten durch den Abmelde-Worker (S-L3 N-4).',
     ort: 'Umgebung FUNKTION_LERNAPP=an|aus bzw. Einstellung „funktionen“ (ADR 0035, KERN 4.0 §6)',
     aufwand: '5 min',
   });

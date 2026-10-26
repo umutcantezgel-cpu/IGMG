@@ -287,6 +287,25 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
 - **Folge:** Fertige Stände gehen per Fast-Forward auf `main`, ohne auf ein Tor zu warten; nie erzwungen, kein Deploy von Hand.
   Prüfungen laufen schlank danach (nur Betroffenes, keine Testschleifen); Rotes wird gezielt nachgezogen, bei Ausfall der
   Produktion Revert-Commit. Die Lern-App bleibt in Produktion hinter `FUNKTION_LERNAPP`, bis der Nutzer anders entscheidet.
+  (Fortgeschrieben durch L3-E12b: Der Nutzer hat noch am 21.10.2026 anders entschieden.)
+
+## L3-E12b · 2026-10-21 · Nutzer · Lern-App in der Produktion an (Fortschreibung von L3-E12a)
+- **Entscheidung (Nutzer, wörtlich):** „Die App ist ein Teil der Seite!“ und „ich erlaube dir alles“ (21.10.2026, vermerkt in
+  `PRUEFPUNKT.md` „Stand 21.10.2026 14:40 UTC“). Umgesetzt mit `a023cf1` (21.10.2026): `IN_PRODUKTION_AN` in
+  `web/src/lib/funktionen-regeln.ts`.
+- **Folge:**
+  - In der Produktion standardmäßig **an**, ohne Angabe in der Umgebung: `lernapp`; `lernapp_ungeprueft` (Einheiten nach
+    automatischer Prüfung mit dem Hinweis „noch nicht von Muttersprachlern geprüft“, L3-E15, ADR 0041 Nr. 8);
+    `lernapp_meldungen` (anonym, nur Aufgabenschlüssel und Kategorie; wirkt erst mit Datenbank und `ALTCHA_GEHEIMNIS`, G1).
+    Dazu `hadith_gesamt` der Website.
+  - Alle Schalter mit Personendaten bleiben in der Produktion **aus**, bis Menschen sie freigeben (KERN §6, `MIT_PERSONENDATEN`):
+    `lernapp_sync`, `lernapp_gruppen`, `lernapp_rangliste`, `lernapp_statistik`, `push_lernapp`. Ebenso `lernapp_sprechen`
+    bis zum Gerätetest (LM-07).
+  - Der Fortschritt bleibt ohne Konto auf dem Gerät; die Produktion läuft ohne Datenbank im Beispielmodus (G1 offen).
+  - Abschalten bleibt jederzeit möglich: `FUNKTION_LERNAPP=aus` in der Umgebung und neu bereitstellen (GO-LIVE „So wird
+    geschaltet“). Dann liefert der Proxy unter `/lern-app/sw.js` den Abmelde-Worker (S-L3 N-4, GO-LIVE „Ausnahme N-4“).
+- **Nachgetragen:** am 26.10.2026 nach der Endabnahme (Stufe C, Z-L12: `protokolle/C-technik.md` Lücke 2); KERN §6 ist
+  entsprechend fortgeschrieben.
 
 ## L3-E14 – Sicherheits-Fixes ohne Mindestreife (23.10.2026)
 - **Anlass:** `next@16.4.0` (Produktion) ist von zwei kritischen und einer hohen Lücke betroffen (GHSA-2464-fhr4-w9xw,

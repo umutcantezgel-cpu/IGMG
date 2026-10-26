@@ -136,6 +136,8 @@ describe('Kopfzeilen der Lern-App (ADR 0042 Nr. 9, Fortschreibung S2/S5; KERN 4.
     expect(modell['cross-origin-embedder-policy']).toBe('require-corp');
     expect((await kopfzeilenFuer('/lern-app/sw.js'))['cache-control']).toBe('no-cache');
     expect((await kopfzeilenFuer('/lern-app/sw.js'))['service-worker-allowed']).toBeUndefined();
+    // Abmelde-Worker (S-L3 N-4): ebenso nie aus dem HTTP-Vorrat
+    expect((await kopfzeilenFuer('/lern-app/sw-abmelden.js'))['cache-control']).toBe('no-cache');
     expect(lernAppHeaderRegeln().every((r) => r.source.startsWith('/lern-app/'))).toBe(true);
   });
 });

@@ -696,9 +696,23 @@ describe('Vorschau, Cockpit und Betriebszähler', () => {
     expect(je['lernapp.pruefende-sprache']!.status).toBe('ok');
     expect(je['lernapp.einheiten']!.meldung).toMatch(/veröffentlicht/);
     expect(je['lernapp.grenzen']!.status).toBe('hinweis');
-    const aus: { id: string }[] = [];
+    const aus: { id: string; status: string; meldung: string }[] = [];
     await lernappPruefen(db as unknown as Datenbank, { FUNKTION_LERNAPP: 'aus' }, true, new Date(), (p) => aus.push(p));
     expect(aus.map((p) => p.id)).toEqual(['lernapp.schalter']);
+    // L3-E12b (Nutzer 21.10.2026): in der Produktion standardmäßig an – kein „bis zur Abnahme“ mehr; abschalten über die
+    // Umgebung bringt den Abmelde-Worker (S-L3 N-4)
+    expect(aus[0]!.status).toBe('hinweis');
+    expect(aus[0]!.meldung).not.toMatch(/Abnahme/);
+    expect(aus[0]!.meldung).toContain('L3-E12b');
+    expect(aus[0]!.meldung).toContain('Abmelde-Worker');
+    const standard: { id: string; status: string; meldung: string }[] = [];
+    await lernappPruefen(db as unknown as Datenbank, { SITE_MODE: 'produktion' }, true, new Date(), (p) => standard.push(p));
+    // Produktion ohne Angaben: die drei Schalter ohne Personendaten an (IN_PRODUKTION_AN), alle übrigen aus
+    expect(standard.find((p) => p.id === 'lernapp.schalter')).toMatchObject({
+      status: 'ok',
+      meldung:
+        'Eingeschaltet: Lern-App, Einheiten vor der Stichprobe (mit Hinweis), Fehlermeldungen. Ausgeschaltet: Sprechübungen, Abgleich, Gruppen.',
+    });
   });
 
   it('Cockpit-Hinweis: religiöse Prüfung zusammen mit Administration oder Lern-App-Redaktion (Unabhängigkeit, ADR 0040)', async () => {
