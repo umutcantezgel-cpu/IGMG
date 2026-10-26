@@ -1,5 +1,21 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 26.10.2026 05:40 UTC – Nacharbeit N1–N5 gemergt und auf `main` (9a8ca1f8):**
+  - **Merges (Konflikte selbst aufgelöst):**
+    - N3 aa8b273f: Auslieferung Wissenskurs, Koran-Pakete alle vorgerendert; live 40/40 Koran-Einheiten 200.
+    - N2 7029a828: religioese_pruefung als Schutzrolle, Formelliste erzwungen, Wächter. Wissens-Test an den Rollenantrag angepasst: b39b8e95.
+    - N4 0eb19c2e, mit dem Fix zum Rauchtest der Sprechübung e91c1fb9: Rauchtest im Browser A/B bestanden, Vorrat 11.
+    - N5 9a8ca1f8: Kinder-Meldung-Test, L3-E12b, KERN §6, Abmelde-Worker, Ausnahme S-L3 N-4, Warteschlange Sprachprüfung 7,3 → 2,3–3,0 s, E2E stabilisiert.
+  - **Nachprüfung auf 9a8ca1f8:** Unit 3.633, Integration 12 Dateien 684/684, lernapp:pruefen 0 blockierend, Sprachen und Religion grün.
+  - **Läufe:**
+    - **N6** `wf_069e81fc-5c2` (Arbeitsbaum `agent-a6ffb449…`, Branch `lernapp-n6`): Kursverzeichnis-Neubau beschleunigen (heute 8,9–10,5 s, blockiert den Server), gezielte Cache-Erneuerung im Website-E2E, Z-L07 mit echten Einheiten neu messen.
+    - **Belege Inhalte** `wf_8e971afc-40f` (Z-L01, Z-L14).
+  - **Danach:**
+    1. N6 mergen.
+    2. Volles Tor (`tor-stufe-c.sh` erweitert: volle Integration, Import- und Vorschau-Bau, Produktionsbau mit voller Website- und Lern-App-E2E).
+    3. Belege E2E (Z-L04, Z-L06, Z-L08).
+    4. Frischer Endprüfer über Z-L01…Z-L22, ABNAHME, BERICHT mit Vorführpfad, ABSCHLUSS.
+
 - **Stand 26.10.2026 02:25 UTC – Belege B1 fertig, N3 in Gegenprüfung 2, N5 gestartet (neues Fenster ab 02:10):**
   - **Live:** `tr.a1.e01` ist die echte Einheit (8 Lektionen); keine Testeinheit in den Kursen.
   - **Belege B1** (`wf_7c5a1d1e-4a6`, Protokolle `C-technik*.md`, `C-oberflaeche*.md`):
