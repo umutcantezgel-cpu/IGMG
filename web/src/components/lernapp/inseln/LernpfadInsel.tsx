@@ -149,11 +149,6 @@ export function LernpfadInsel({
   if (z.art === 'laedt') return <p className="text-18 text-tinte-2">{texte.laedt}</p>;
   if (z.art === 'leer') return <p className="text-18 text-tinte-2">{texte.leer}</p>;
 
-  // Aufgeklappt ist die Stufe der aktuellen Einheit („Hier geht es weiter“; ist alles geschafft, die letzte). Die übrigen
-  // Stufen zeigen Überschrift, „Stufe abgeschlossen“ und die Zahl ihrer Einheiten und rendern ihre Stationen erst beim
-  // Aufklappen (Stufe C N8: ein Kurs mit 43 Einheiten blockierte sonst Hauptfaden und Layout, TBT und INP)
-  const aktuelleStufe = aufgeklappteStufe(z.abschnitte);
-
   async function zeigeLektionen(s: Station) {
     const sp = await speicher();
     const p = await ladePaketKopf(sp, kurs, s.einheit);
@@ -179,14 +174,46 @@ export function LernpfadInsel({
   };
 
   return (
+    <LernpfadStufen
+      abschnitte={z.abschnitte}
+      fertig={z.fertig}
+      offen={offen}
+      onAufklappen={(stufe) => setOffen((alt) => (alt.has(stufe) ? alt : new Set([...alt, stufe])))}
+      k={kontext}
+    />
+  );
+}
+
+/**
+ * Die Stufen des Lernpfads (Stufe C N8): Überschrift und „Stufe abgeschlossen“ je Stufe; Stationen nur für die Stufe der
+ * aktuellen Einheit (`aufgeklappteStufe`) und für von Hand aufgeklappte Stufen (`offen`), die übrigen als `<details>` mit der
+ * Zahl ihrer Einheiten.
+ */
+export function LernpfadStufen({
+  abschnitte: liste,
+  fertig,
+  offen,
+  onAufklappen,
+  k,
+}: {
+  abschnitte: readonly Abschnitt[];
+  /** in diesem Kurs abgeschlossene Stufen */
+  fertig: ReadonlySet<string>;
+  offen: ReadonlySet<Stufe>;
+  onAufklappen: (stufe: Stufe) => void;
+  k: StationsKontext;
+}) {
+  const { texte, stufenTexte, ui, ziffern } = k;
+  const aktuelleStufe = aufgeklappteStufe(liste);
+  return (
     <div className="flex flex-col gap-8">
-      {z.abschnitte.map((a) => (
+      {liste.map((a) => (
         <section key={a.stufe} aria-labelledby={`stufe-${a.stufe}`} className="flex flex-col gap-4">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <h3 id={`stufe-${a.stufe}`} className="text-30">
               {texte.stufe[a.stufe]}
             </h3>
-            {z.fertig.has(a.stufe) ? (
+            {fertig.has(a.stufe) ? (
               <p
                 data-stufe-abgeschlossen={a.stufe}
                 className="inline-flex items-center gap-2 rounded-pill bg-gruen-50 px-3 py-1 text-16 font-bold text-gruen-800"
@@ -197,13 +224,13 @@ export function LernpfadInsel({
             ) : null}
           </div>
           {a.stufe === aktuelleStufe ? (
-            <Stationen abschnitt={a} k={kontext} />
+            <Stationen abschnitt={a} k={k} />
           ) : (
             <details
               data-stufe-zu={a.stufe}
               className="group"
               onToggle={(e) => {
-                if (e.currentTarget.open) setOffen((alt) => (alt.has(a.stufe) ? alt : new Set([...alt, a.stufe])));
+                if (e.currentTarget.open) onAufklappen(a.stufe);
               }}
             >
               <summary className="inline-flex min-h-11 cursor-pointer items-center gap-2 font-bold">
@@ -215,7 +242,7 @@ export function LernpfadInsel({
               </summary>
               {offen.has(a.stufe) ? (
                 <div className="pt-4">
-                  <Stationen abschnitt={a} k={kontext} />
+                  <Stationen abschnitt={a} k={k} />
                 </div>
               ) : null}
             </details>
@@ -227,7 +254,7 @@ export function LernpfadInsel({
 }
 
 /** Was jede Station braucht (gleich für alle Stationen eines Lernpfads). */
-type StationsKontext = {
+export type StationsKontext = {
   ui: Oberflaeche;
   ziffern: Ziffern;
   kurs: KursSlug;
