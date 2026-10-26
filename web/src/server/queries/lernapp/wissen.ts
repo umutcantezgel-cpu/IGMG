@@ -5,7 +5,8 @@ import type { LernappStelle } from '@/lib/db/schema/lernapp';
 import type { FreigabeBaustein, Pruefung } from '@/lib/lernapp/freigabe';
 import type { BauErgebnis } from '@/lib/lernapp/paket/bauen';
 import { baueWissensEinheit, type WissensEinheitEingabe } from '@/lib/lernapp/paket/wissen';
-import { lernTexte } from '@/lib/lernapp/texte';
+import de from '../../../../messages/lernapp/de.json';
+import { formatiere } from '@/lib/lernapp/format';
 import { inBloecken } from './bloecke';
 import { ladePruefungen } from './pruefungen';
 
@@ -17,22 +18,25 @@ import { ladePruefungen } from './pruefungen';
  * allein `freigabe.ts` und `paket/wissen.ts` (`sichtbareWissensLektion`). Ungecacht; die gecachten Wege stehen in `pakete.ts`.
  *
  * Quellenzeile je Aussage: aus den Belegen (Werk, Autor, Kitab › Bab › Fasl, Ausgabe, Band, Seite), nie der Wortlaut der
- * Quelle (ADR 0040 Fortschreibung S8 Nr. 2) und keine arabische Schrift aus Inhaltsdateien (KERN 4.0 §2.2 Nr. 4).
+ * Quelle (ADR 0040 Fortschreibung S8 Nr. 2) und keine arabische Schrift aus Inhaltsdateien (KERN 4.0 §2.2 Nr. 4). Die
+ * Formate „Bd.“/„S.“ kommen aus `messages/lernapp/de.json` über den kleinen Formatierer (`format.ts`), nicht über next-intl:
+ * `pakete.ts` lädt dieses Modul, und Skripte mit `--conditions=react-server` (z. B. `scripts/beispielkonten.ts` über
+ * `lib/lernapp/sync/server.ts`) scheitern am Client-Teil von next-intl.
  */
 
 type Beleg = { werk: string; autor: string | null; ausgabe: string | null; stelle: LernappStelle };
 
 /** Quellenzeile einer Aussage aus ihren Belegen (mehrere durch Semikolon getrennt; Inhalt deutsch wie der Kurs). */
 export function quellenzeile(belege: readonly Beleg[]): string {
-  const t = lernTexte('de');
+  const t = (vorlage: string, werte: Record<string, string>) => formatiere(vorlage, werte, 'de');
   return belege
     .map((b) =>
       [
         b.autor ? `${b.werk} (${b.autor})` : b.werk,
         [b.stelle.kitab, b.stelle.bab, b.stelle.fasl].filter(Boolean).join(' › '),
         b.ausgabe,
-        b.stelle.band ? t('quellenzeile.band', { band: b.stelle.band }) : null,
-        b.stelle.seite ? t('quellenzeile.seite', { seite: b.stelle.seite }) : null,
+        b.stelle.band ? t(de.quellenzeile.band, { band: b.stelle.band }) : null,
+        b.stelle.seite ? t(de.quellenzeile.seite, { seite: b.stelle.seite }) : null,
       ]
         .filter((x): x is string => Boolean(x))
         .join(', '),

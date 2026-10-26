@@ -345,10 +345,13 @@ test.describe('Wissenskurs mit echten Paketen (Testeinheit aus dem Seed, Vorfüh
     await expect(uebung(page, 'wahr_falsch').locator('p[lang="de"]').first()).toHaveText('[Testbehauptung – Platzhalter]');
     await waehle(page, t, art, radio(page, t.aufgaben.wahr_falsch.stimmt));
     await expect(liveRegion(page)).toContainText(t.spieler.richtig);
+    // nach der Antwort liegt der Fokus auf „Weiter“; die Quellenzeile ist ein eigenes Bedienelement (wie im synthetischen Teil)
+    const weiterKnopf = page.getByRole('button', { name: t.spieler.weiter, exact: true });
+    if (art === 'tastatur') await expect(weiterKnopf).toBeFocused();
     await druecke(page, page.getByText(t.aufgaben.wissen.quelleZeigen, { exact: true }), art);
     await expect(page.getByText(QUELLE, { exact: true })).toBeVisible();
     if (art === 'tastatur') expect(await ernsteBefunde(page, 'wissen wahr_falsch')).toEqual([]);
-    await weiter(page, t, art);
+    await druecke(page, weiterKnopf, art);
 
     // 2 zuordnen: Kategorien aus den rechten Seiten der Paare
     await expect(page.getByRole('heading', { name: t.aufgaben.zuordnen.ordneZu })).toBeVisible();

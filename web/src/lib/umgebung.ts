@@ -714,6 +714,22 @@ export const VARIABLEN: readonly Variable[] = [
     abhilfe: 'Weglassen (dann nur Testbündel bzw. Blob) oder den Ausgabeordner der Audio-Kette eintragen.',
   },
   {
+    name: 'LERNAPP_TESTKURS',
+    zweck:
+      'Testkurs der Lern-App (Einheiten <kurs>.a1.test, Testeinheit islam.grund.test mit Testfreigaben) im Bau ohne Datenbank, nur für eine Vorführung',
+    muster: false,
+    pflicht: NIE,
+    bereich: [],
+    beispiel: '1',
+    herkunft:
+      'Von Menschen, nur für eine Vorführung im Beispielmodus (scripts/lernapp/testkurs-im-bau.mjs); auf der öffentlichen Test-Domain nie setzen',
+    geheim: false,
+    erzeugbar: false,
+    pruefung: z.literal('1'),
+    regel: 'nur 1',
+    abhilfe: 'Weglassen (dann nur echte Einheiten) oder für eine Vorführung im Beispielmodus 1 eintragen.',
+  },
+  {
     name: 'LERNAPP_BLOB_READ_WRITE_TOKEN',
     zweck: 'Schreibschlüssel des öffentlichen Blob-Speichers „lernapp“, nur für pnpm lernapp:audio-manifest --hochladen (ADR 0039)',
     muster: false,
